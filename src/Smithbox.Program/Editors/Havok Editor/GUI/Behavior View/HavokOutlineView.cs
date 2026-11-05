@@ -22,7 +22,6 @@ public class HavokOutlineView
     /// </summary>
     public object Selected;
 
-    private bool FocusTabRequested = false;
     private bool ScrollToSelected = false;
 
     /// <summary>
@@ -137,7 +136,8 @@ public class HavokOutlineView
         Selected = node;
         RevealNodes = symbols.GetOutlinePath(node);
         ScrollToSelected = true;
-        FocusTabRequested = true;
+        Owner.ContentsMode = HavokBehaviorContentsMode.Outline;
+        Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
     }
 
     public bool CanGoBack => HistoryIndex > 0;
@@ -170,7 +170,6 @@ public class HavokOutlineView
 
         RevealNodes.Clear();
         ScrollToSelected = false;
-        FocusTabRequested = false;
     }
     #endregion
 
@@ -179,32 +178,18 @@ public class HavokOutlineView
         IsCurrentTab = state;
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
         if (Owner.Symbols == null)
-        {
-            SetTabState(false);
             return;
-        }
 
-        var flags = FocusTabRequested ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
-        FocusTabRequested = false;
+        Shortcuts();
 
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Outline")}##tabOutline", flags))
-        {
-            SetTabState(true);
-
-            Shortcuts();
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     private void Shortcuts()

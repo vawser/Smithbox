@@ -52,22 +52,13 @@ public class HavokAnimationSelectorView
         IsCurrentTab = state;
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Anim_Selectors")}##tabAnimSelectors"))
-        {
-            SetTabState(true);
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
-
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     public void DisplayTabContents()

@@ -161,6 +161,9 @@ public static class FocusManager
             or EditorFocusContext.HavokEditor_CategoryList
             or EditorFocusContext.HavokEditor_BinderList
             or EditorFocusContext.HavokEditor_FileList
+            or EditorFocusContext.HavokEditor_BehaviorCategories
+            or EditorFocusContext.HavokEditor_Contents
+            or EditorFocusContext.HavokEditor_Graph
             or EditorFocusContext.HavokEditor_Properties
             or EditorFocusContext.HavokEditor_Tools)
             return true;
@@ -261,6 +264,9 @@ public enum EditorFocusContext
     HavokEditor_CategoryList,
     HavokEditor_BinderList,
     HavokEditor_FileList,
+    HavokEditor_BehaviorCategories,
+    HavokEditor_Contents,
+    HavokEditor_Graph,
     HavokEditor_Properties,
     HavokEditor_Tools,
 

@@ -243,6 +243,76 @@ public class HavokEditorView : IEditorView
 
         ImGui.End();
 
+        // The behavior symbols are built from the shown file before the behavior windows draw
+        // (the Properties window used to do this, but it now draws after them)
+        if (Selection.CategoryMode is HavokCategoryMode.Behavior && Selection.SelectedFileWrapper?.Root is { } shownRoot)
+        {
+            Selection.ApplyFileSpecificTreeSearches(shownRoot);
+        }
+
+        var behaviorView = PropertyView.BehaviorView;
+
+        // Behavior Categories
+        // -> What the Contents window lists (Outline, Animations, State Machines ...)
+
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Behavior_Categories")}##havokeditor_BehaviorCategories_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.HavokEditor_BehaviorCategories);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            behaviorView.DisplayCategoryWindow();
+        }
+
+        ImGui.End();
+
+        // Contents
+        // -> The selected category's list (the Outline tree, the Animations table ...)
+
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Contents")}##havokeditor_Contents_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.HavokEditor_Contents);
+                Editor.ViewHandler.ActiveView = this;
+
+                // The property panel follows the window clicked last
+                if (ImGui.IsMouseClicked(ImGuiMouseButton.Left) || ImGui.IsMouseClicked(ImGuiMouseButton.Right))
+                    behaviorView.SelectionSource = HavokBehaviorSelectionSource.Contents;
+            }
+
+            behaviorView.DisplayContentsWindow();
+        }
+
+        ImGui.End();
+
+        // Graph
+        // -> The state machine of the Contents selection
+
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Graph")}##havokeditor_Graph_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.HavokEditor_Graph);
+                Editor.ViewHandler.ActiveView = this;
+
+                if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+                    behaviorView.SelectionSource = HavokBehaviorSelectionSource.Graph;
+            }
+
+            behaviorView.DisplayGraphWindow();
+        }
+
+        ImGui.End();
+
         // Properties
         // -> Editor for the havok properties (copy MapHavokPropertyView)
 
@@ -285,6 +355,10 @@ public class HavokEditorView : IEditorView
 
             ImGui.End();
         }
+
+        // The behavior dialogs (Add Animation, Clone State ...) can be opened from the Contents or Graph window,
+        // so they're drawn here, outside both, where they're opened and drawn in the same place
+        behaviorView.ActionsView.DisplayDialogs();
 
         Tools.CollisionGeneratorTool.DetectFlverSelectionMenu();
         Tools.CollisionGeneratorTool.DisplayFlverSelectionMenu();

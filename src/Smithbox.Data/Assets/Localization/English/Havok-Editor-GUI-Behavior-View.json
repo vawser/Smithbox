@@ -17,6 +17,78 @@
       "Text": "Variables"
     },
     {
+      "Key": "HAVOK_BehaviorView_No_Behavior",
+      "Text": "Select a behavior file (Behavior category) to browse it here."
+    },
+    {
+      "Key": "HAVOK_GraphView_No_Behavior",
+      "Text": "Select a behavior file (Behavior category) to see its state machines here."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Outline_TT",
+      "Text": "The behavior as a tree of its state machines, states and generators. Right-click a node for Add Animation, Clone State and Add Transition."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Animations_TT",
+      "Text": "One row per animation selector (CMSG), with its animation ID, state, clips, and what the character has for it."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_State_Machines_TT",
+      "Text": "Every state machine in the file."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Selectors_TT",
+      "Text": "Every animation selector (CMSG) in the file."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Clips_TT",
+      "Text": "Every animation clip in the file."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Variables_TT",
+      "Text": "The behavior's variables, with the bindings that use each one. Add Variable is here."
+    },
+    {
+      "Key": "HAVOK_BehaviorCategory_Problems_TT",
+      "Text": "Mistakes that make the game crash or silently do nothing: missing indices, mismatched lists, duplicate state IDs, broken bindings."
+    },
+    {
+      "Key": "HAVOK_BehaviorView_Tab_Graph",
+      "Text": "Graph"
+    },
+    {
+      "Key": "HAVOK_GraphView_Back_TT",
+      "Text": "Back to the state machine this one was opened from."
+    },
+    {
+      "Key": "HAVOK_GraphView_No_Machine",
+      "Text": "Select something in a state machine to show it."
+    },
+    {
+      "Key": "HAVOK_GraphView_Follow",
+      "Text": "Follow selection"
+    },
+    {
+      "Key": "HAVOK_GraphView_Follow_TT",
+      "Text": "Show the state machine of whatever is selected in the Outline.\n\nIn the graph: links are transitions from one state to another (hover for their events). Wildcard transitions, which can be taken from any state, are listed on the state they lead to (* events). Double-click a state whose generator is a state machine to open it. Drag from a state's Out to another state to add a transition."
+    },
+    {
+      "Key": "HAVOK_GraphView_Out",
+      "Text": "Out"
+    },
+    {
+      "Key": "HAVOK_GraphView_Wildcards_TT",
+      "Text": "Reached from any state on {0} events:"
+    },
+    {
+      "Key": "HAVOK_GraphView_Link_TT",
+      "Text": "{0} transitions, on:"
+    },
+    {
+      "Key": "HAVOK_GraphView_Transition",
+      "Text": "Transition {0}"
+    },
+    {
       "Key": "HAVOK_BehaviorActions_Add_Animation",
       "Text": "Add Animation..."
     },

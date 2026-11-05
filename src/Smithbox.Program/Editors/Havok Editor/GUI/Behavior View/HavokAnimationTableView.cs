@@ -75,27 +75,13 @@ public class HavokAnimationTableView
         IsCurrentTab = state;
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
-        if (Owner.Symbols == null || Owner.Symbols.Selectors.Count == 0)
-        {
-            SetTabState(false);
-            return;
-        }
-
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Animations")}##tabAnimationTable"))
-        {
-            SetTabState(true);
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     public void DisplayTabHeader()

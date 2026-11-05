@@ -70,23 +70,13 @@ public class HavokAnimationClipView
         IsCurrentTab = state;
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
-        // Clip Generators
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Clip_Generators")}##tabClipGenerators"))
-        {
-            SetTabState(true);
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
-
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     public void DisplayTabContents()

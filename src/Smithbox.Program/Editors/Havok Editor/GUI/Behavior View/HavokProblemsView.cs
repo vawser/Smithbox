@@ -46,35 +46,36 @@ public class HavokProblemsView
         Problems = HavokBehaviorValidator.Run(Project, Owner.Symbols);
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// The number of problems found, for the category list (checked the first time it is asked for a file)
+    /// </summary>
+    public int ProblemCount
+    {
+        get
+        {
+            if (Owner.Symbols == null)
+                return 0;
+
+            if (Problems == null)
+                Check();
+
+            return Problems.Count;
+        }
+    }
+
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
         if (Owner.Symbols == null)
-        {
-            SetTabState(false);
             return;
-        }
 
-        // A file shown for the first time is checked straight away
         if (Problems == null)
             Check();
 
-        var label = Problems.Count > 0
-            ? LOC.Get("HAVOK_BehaviorView_Tab_Problems_Count", Problems.Count)
-            : LOC.Get("HAVOK_BehaviorView_Tab_Problems");
-
-        if (ImGui.BeginTabItem($"{label}###tabProblems"))
-        {
-            SetTabState(true);
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     private void DisplayTabHeader()

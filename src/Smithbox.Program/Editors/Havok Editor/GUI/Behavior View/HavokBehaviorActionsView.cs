@@ -121,7 +121,12 @@ public class HavokBehaviorActionsView
         Request(Dialog.CloneState);
     }
 
-    public void RequestAddTransition(object stateMachine, object fromState)
+    public void RequestAddTransition(object stateMachine, object fromState) => RequestAddTransition(stateMachine, fromState, null);
+
+    /// <summary>
+    /// Opens Add Transition for a machine, from a state (or any state, if null), to a state (or the first, if null)
+    /// </summary>
+    public void RequestAddTransition(object stateMachine, object fromState, object toState)
     {
         if (stateMachine == null)
             return;
@@ -134,7 +139,7 @@ public class HavokBehaviorActionsView
         TransitionEventIndex = -1;
         TransitionNewEvent = false;
         TransitionNewEventName = "";
-        TransitionToIndex = 0;
+        TransitionToIndex = toState == null ? 0 : Math.Max(0, states.IndexOf(toState));
 
         Request(Dialog.AddTransition);
     }

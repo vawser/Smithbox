@@ -21,6 +21,18 @@
       "Text": "Properties"
     },
     {
+      "Key": "HAVOK_Window_Behavior_Categories",
+      "Text": "Behavior Categories"
+    },
+    {
+      "Key": "HAVOK_Window_Contents",
+      "Text": "Contents"
+    },
+    {
+      "Key": "HAVOK_Window_Graph",
+      "Text": "Graph"
+    },
+    {
       "Key": "HAVOK_Window_Tools",
       "Text": "Tools"
     },

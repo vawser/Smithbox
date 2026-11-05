@@ -24,7 +24,6 @@ public class HavokSelection
     public HavokFileWrapper SelectedFileWrapper => View.HavokBank.GetFileWrapper(CategoryMode, BinderFileEntry, FilePath);
 
     // Properties
-    public HavokPropertyViewType PropertyViewType = HavokPropertyViewType.Structured;
 
     // File-specific State
     public bool AppliedHavokTreeSearch = false;

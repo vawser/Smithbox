@@ -48,16 +48,7 @@ public class HavokPropertyView
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
         {
-            if (View.PropertyView.BehaviorView.IsBehaviorGraph &&
-                View.Selection.PropertyViewType is HavokPropertyViewType.Structured)
-            {
-                // No standard header
-            }
-            else
-            {
-                DisplayHeader();
-            }
-
+            DisplayHeader();
             DisplayPropertyEditor(data.BehaviorBank);
         }
         else if (View.Selection.CategoryMode is HavokCategoryMode.Character)
@@ -166,13 +157,6 @@ public class HavokPropertyView
             "HAVOK_PropertyView_PropBag_Show",
             "HAVOK_PropertyView_PropBag_TT");
 
-        // Property View Type
-        if (View.Selection.CategoryMode is HavokCategoryMode.Behavior)
-        {
-            ImGui.SameLine();
-            BehaviorView.DisplayHeader(true);
-        }
-
         GUI.EndHeader();
     }
 
@@ -227,54 +211,34 @@ public class HavokPropertyView
             return;
         }
 
-        if (View.Selection.PropertyViewType is HavokPropertyViewType.Flat)
+        var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath].Root;
+
+        if (sourceObject == null)
         {
             ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath].Root;
-
-            if (sourceObject != null)
-            {
-                View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
-
-                HavokPropEdit(sourceObject);
-            }
-            else
-            {
-                GUI.WrappedText(LOC.Get("HAVOK_PropertyView_File_Not_Loaded"));
-            }
+            GUI.WrappedText(LOC.Get("HAVOK_PropertyView_File_Not_Loaded"));
 
             ImGui.EndChild();
+
+            return;
+        }
+
+        View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
+
+        // A behavior graph is browsed in the Behavior Categories, Contents and Graph windows;
+        // this window edits what's selected there
+        if (BehaviorView.IsShown)
+        {
+            BehaviorView.DisplayProperties();
         }
         else
         {
-            var sourceObject = bankDict[View.Selection.BinderFileEntry][View.Selection.FilePath].Root;
+            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
 
-            if (sourceObject != null)
-            {
-                View.Selection.ApplyFileSpecificTreeSearches(sourceObject);
+            HavokPropEdit(sourceObject);
 
-                if (View.PropertyView.BehaviorView.IsBehaviorGraph)
-                {
-                    BehaviorView.Draw(sourceObject);
-                }
-                else
-                {
-                    ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
-
-                    HavokPropEdit(sourceObject);
-
-                    ImGui.EndChild();
-                }
-            }
-            else
-            {
-                ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
-
-                GUI.WrappedText(LOC.Get("HAVOK_PropertyView_File_Not_Loaded"));
-
-                ImGui.EndChild();
-            }
+            ImGui.EndChild();
         }
     }
 

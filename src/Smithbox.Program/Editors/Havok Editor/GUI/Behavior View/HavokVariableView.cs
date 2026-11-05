@@ -24,8 +24,6 @@ public class HavokVariableView
     /// <summary>
     /// Set by <see cref="RequestSelect"/>, so the tab is brought to the front on the next draw
     /// </summary>
-    private bool FocusTabRequested = false;
-
     private bool ScrollToSelection = false;
 
     public HavokVariableView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
@@ -57,7 +55,8 @@ public class HavokVariableView
     public void RequestSelect(int index)
     {
         SelectedIndex = index;
-        FocusTabRequested = true;
+        Owner.ContentsMode = HavokBehaviorContentsMode.Variables;
+        Owner.SelectionSource = HavokBehaviorSelectionSource.Contents;
         ScrollToSelection = true;
     }
 
@@ -66,30 +65,13 @@ public class HavokVariableView
         IsCurrentTab = state;
     }
 
-    public void DisplayTab()
+    /// <summary>
+    /// Draws this view in the Contents window (its category is selected)
+    /// </summary>
+    public void DisplayContents()
     {
-        if (Owner.Symbols == null)
-        {
-            SetTabState(false);
-            return;
-        }
-
-        var flags = FocusTabRequested ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
-        FocusTabRequested = false;
-
-        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables", flags))
-        {
-            SetTabState(true);
-
-            DisplayTabHeader();
-            DisplayTabContents();
-
-            ImGui.EndTabItem();
-        }
-        else
-        {
-            SetTabState(false);
-        }
+        DisplayTabHeader();
+        DisplayTabContents();
     }
 
     public void DisplayTabContents()

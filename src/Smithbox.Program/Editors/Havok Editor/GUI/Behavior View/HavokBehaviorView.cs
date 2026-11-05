@@ -21,6 +21,7 @@ public class HavokBehaviorView
     public HavokAnimationTableView AnimationTableView;
     public HavokProblemsView ProblemsView;
     public HavokBehaviorActionsView ActionsView;
+    public HavokStateMachineGraphView GraphView;
 
     /// <summary>
     /// The names the file's indices refer to, or null if the shown file isn't a behavior graph
@@ -46,6 +47,7 @@ public class HavokBehaviorView
         AnimationTableView = new(view, this, project);
         ProblemsView = new(view, this, project);
         ActionsView = new(view, this, project);
+        GraphView = new(view, this, project);
     }
 
     public void ResetSelection()
@@ -61,6 +63,7 @@ public class HavokBehaviorView
         OutlineView.ResetSelection();
         AnimationTableView.ResetSelection();
         ProblemsView.ResetSelection();
+        GraphView.ResetSelection();
     }
 
     public void SetupBehaviorView(object sourceObject)
@@ -101,88 +104,156 @@ public class HavokBehaviorView
         OutlineView.Setup(sourceObject);
         AnimationTableView.Setup(sourceObject);
         ProblemsView.Setup(sourceObject);
+        GraphView.Setup(sourceObject);
     }
 
-    public void Draw(object sourceObject)
+    #region Windows
+    /// <summary>
+    /// The category selected in the Behavior Categories window, which the Contents window shows
+    /// </summary>
+    public HavokBehaviorContentsMode ContentsMode = HavokBehaviorContentsMode.Outline;
+
+    /// <summary>
+    /// Which window the property panel follows: the Contents window, or the Graph window
+    /// (whichever was clicked last)
+    /// </summary>
+    public HavokBehaviorSelectionSource SelectionSource = HavokBehaviorSelectionSource.Contents;
+
+    private static readonly (HavokBehaviorContentsMode Mode, string Key, string Tooltip)[] Categories =
     {
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.Resizable;
+        (HavokBehaviorContentsMode.Outline, "HAVOK_BehaviorView_Tab_Outline", "HAVOK_BehaviorCategory_Outline_TT"),
+        (HavokBehaviorContentsMode.Animations, "HAVOK_BehaviorView_Tab_Animations", "HAVOK_BehaviorCategory_Animations_TT"),
+        (HavokBehaviorContentsMode.StateMachines, "HAVOK_BehaviorView_Tab_State_Machines", "HAVOK_BehaviorCategory_State_Machines_TT"),
+        (HavokBehaviorContentsMode.Selectors, "HAVOK_BehaviorView_Tab_Anim_Selectors", "HAVOK_BehaviorCategory_Selectors_TT"),
+        (HavokBehaviorContentsMode.Clips, "HAVOK_BehaviorView_Tab_Clip_Generators", "HAVOK_BehaviorCategory_Clips_TT"),
+        (HavokBehaviorContentsMode.Variables, "HAVOK_BehaviorView_Tab_Variables", "HAVOK_BehaviorCategory_Variables_TT"),
+        (HavokBehaviorContentsMode.Problems, "HAVOK_BehaviorView_Tab_Problems", "HAVOK_BehaviorCategory_Problems_TT"),
+    };
 
-        if (ImGui.BeginTable($"behaviorLayoutTable", 2, tblFlags))
+    /// <summary>
+    /// Whether the shown file is a behavior graph the behavior windows can show
+    /// </summary>
+    public bool IsShown => IsBehaviorGraph && Symbols != null;
+
+    /// <summary>
+    /// Sets which view the property panel draws: the selected category's, or the graph's
+    /// </summary>
+    private void SyncCurrentViews()
+    {
+        var contents = SelectionSource is HavokBehaviorSelectionSource.Contents || !GraphView.HasSelection;
+
+        OutlineView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Outline);
+        AnimationTableView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Animations);
+        StateMachineView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.StateMachines);
+        AnimationSelectorView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Selectors);
+        AnimationClipView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Clips);
+        VariableView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Variables);
+        ProblemsView.SetTabState(contents && ContentsMode is HavokBehaviorContentsMode.Problems);
+        GraphView.SetTabState(!contents);
+    }
+
+    /// <summary>
+    /// The Behavior Categories window: picks what the Contents window lists
+    /// </summary>
+    public void DisplayCategoryWindow()
+    {
+        if (!IsShown)
         {
-            ImGui.TableSetupColumn("Tabs", ImGuiTableColumnFlags.WidthStretch);
-            ImGui.TableSetupColumn("Properties", ImGuiTableColumnFlags.WidthStretch);
-
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            DisplayBehaviorTabs();
-
-            ImGui.TableSetColumnIndex(1);
-
-            DisplayTabPropertyHeader();
-            DisplayProperties();
-
-            ImGui.EndTable();
+            GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Behavior"));
+            return;
         }
 
-        ActionsView.DisplayDialogs();
-    }
-
-    public void DisplayHeader(bool minimized = false)
-    {
-        var previewName = LOC.Get(View.Selection.PropertyViewType.GetDisplayName());
-
-        if(minimized)
-            ImGui.SetNextItemWidth(100f * DPI.UIScale());
-
-        if (ImGui.BeginCombo("##subEditorMode", previewName))
+        foreach (var (mode, key, tooltip) in Categories)
         {
-            foreach (var entry in Enum.GetValues(typeof(HavokPropertyViewType)))
+            var label = LOC.Get(key);
+
+            if (mode is HavokBehaviorContentsMode.Problems && ProblemsView.ProblemCount > 0)
+                label = LOC.Get("HAVOK_BehaviorView_Tab_Problems_Count", ProblemsView.ProblemCount);
+
+            // The Animations table needs selectors to list
+            if (mode is HavokBehaviorContentsMode.Animations && Symbols.Selectors.Count == 0)
+                continue;
+
+            if (ImGui.Selectable($"{label}###behaviorCategory_{mode}", ContentsMode == mode))
             {
-                var curType = (HavokPropertyViewType)entry;
-
-                var displayName = LOC.Get(curType.GetDisplayName());
-
-                if (ImGui.Selectable(displayName, curType == View.Selection.PropertyViewType))
-                {
-                    View.Selection.PropertyViewType = curType;
-                }
+                ContentsMode = mode;
+                SelectionSource = HavokBehaviorSelectionSource.Contents;
             }
 
-            ImGui.EndCombo();
+            GUI.Tooltip(LOC.Get(tooltip));
         }
-        GUI.Tooltip(LOC.Get("HAVOK_PropertyView_DisplayType_TT"));
     }
 
-    public void DisplayBehaviorTabs()
+    /// <summary>
+    /// The Contents window: the list of the selected category
+    /// </summary>
+    public void DisplayContentsWindow()
     {
-        // EndTabBar must only be called when BeginTabBar returned true
-        if (ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown))
+        if (!IsShown)
         {
-            OutlineView.DisplayTab();
-            AnimationTableView.DisplayTab();
-            StateMachineView.DisplayTab();
-            AnimationSelectorView.DisplayTab();
-            AnimationClipView.DisplayTab();
-            VariableView.DisplayTab();
-            ProblemsView.DisplayTab();
+            GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Behavior"));
+            return;
+        }
 
-            ImGui.EndTabBar();
+        SyncCurrentViews();
+
+        switch (ContentsMode)
+        {
+            case HavokBehaviorContentsMode.Outline: OutlineView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Animations: AnimationTableView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.StateMachines: StateMachineView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Selectors: AnimationSelectorView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Clips: AnimationClipView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Variables: VariableView.DisplayContents(); break;
+            case HavokBehaviorContentsMode.Problems: ProblemsView.DisplayContents(); break;
         }
     }
 
-    public void DisplayTabPropertyHeader()
+    /// <summary>
+    /// The Graph window: the state machine of the Contents selection
+    /// </summary>
+    public void DisplayGraphWindow()
     {
-        View.PropertyView.DisplayHeader();
+        if (!IsShown)
+        {
+            GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Behavior"));
+            return;
+        }
+
+        GraphView.DisplayWindow();
     }
+
+    /// <summary>
+    /// The selected object of the Contents window's category (not the graph's), or null
+    /// </summary>
+    public object GetContentsSelectedObject()
+    {
+        return ContentsMode switch
+        {
+            HavokBehaviorContentsMode.Outline => OutlineView.Selected,
+            HavokBehaviorContentsMode.Animations => AnimationTableView.Selected,
+            HavokBehaviorContentsMode.StateMachines => StateMachineView.SelectedStateMachines.FirstOrDefault(),
+            HavokBehaviorContentsMode.Selectors => AnimationSelectorView.SelectedAnimSelectors.FirstOrDefault(),
+            HavokBehaviorContentsMode.Clips => AnimationClipView.SelectedAnimationClips.FirstOrDefault(),
+            _ => null
+        };
+    }
+    #endregion
+
 
     public void DisplayProperties()
     {
+        SyncCurrentViews();
+
         DisplayUsedBy();
 
         if (OutlineView.CanDisplayProperties())
         {
             OutlineView.DisplayProperties();
+        }
+        else if (GraphView.CanDisplayProperties())
+        {
+            GraphView.DisplayProperties();
         }
         else if (AnimationTableView.CanDisplayProperties())
         {
@@ -218,6 +289,9 @@ public class HavokBehaviorView
     {
         if (OutlineView.CanDisplayProperties())
             return OutlineView.Selected;
+
+        if (GraphView.CanDisplayProperties())
+            return GraphView.GetSelectedObject();
 
         if (AnimationTableView.CanDisplayProperties())
             return AnimationTableView.Selected;
@@ -305,4 +379,27 @@ public class HavokBehaviorView
         if (unlinkParent != null)
             ActionsView.Unlink(unlinkParent, selected);
     }
+}
+
+/// <summary>
+/// What the Contents window lists, picked in the Behavior Categories window
+/// </summary>
+public enum HavokBehaviorContentsMode
+{
+    Outline,
+    Animations,
+    StateMachines,
+    Selectors,
+    Clips,
+    Variables,
+    Problems
+}
+
+/// <summary>
+/// The window the property panel shows the selection of
+/// </summary>
+public enum HavokBehaviorSelectionSource
+{
+    Contents,
+    Graph
 }

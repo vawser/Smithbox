@@ -339,6 +339,7 @@ class Survey
     public Dictionary<int, HashSet<long>> TimeActs;
     public HashSet<string> AnimFiles;
     bool CreationOncePerFile;
+    int MaxStates;
     public string FileKind = "";
     HashSet<long> AllAnimations;
 
@@ -635,6 +636,24 @@ class Survey
             var wildCount = (Get(wild, "m_transitions") as IList)?.Count ?? 0;
             var stateTransitions = ((IList)Get(obj, "m_states")).Cast<object>().Sum(s => (Get(Get(s, "m_transitions"), "m_transitions") as IList)?.Count ?? 0);
             Count($"create.sm transitions {(wildCount > 0 ? "wildcard" : "")}{(stateTransitions > 0 ? "+state" : "")}");
+
+            // Phase 5: graph shape
+            var stateList = ((IList)Get(obj, "m_states")).Cast<object>().Where(s => s != null).ToList();
+            var wildTargets = ((Get(wild, "m_transitions") as IList)?.Cast<object>() ?? Enumerable.Empty<object>())
+                .Select(t => GetInt(t, "m_toStateId")).Distinct().Count();
+            var pairs = stateList.SelectMany(s => ((Get(Get(s, "m_transitions"), "m_transitions") as IList)?.Cast<object>() ?? Enumerable.Empty<object>())
+                .Select(t => (GetInt(s, "m_stateId"), GetInt(t, "m_toStateId")))).Distinct().Count();
+            string Bucket(int n) => n switch { 0 => "0", 1 => "1", <= 5 => "2-5", <= 20 => "6-20", <= 60 => "21-60", _ => "61+" };
+            Count($"graph.states {Bucket(stateList.Count)}");
+            Count($"graph.state->state pairs {Bucket(pairs)}");
+            if (stateList.Count > 0)
+            {
+                var share = wildTargets * 100 / stateList.Count;
+                Count($"graph.wildcard targets {(share == 0 ? "none" : share < 50 ? "<50% of states" : share < 100 ? "50-99% of states" : "all states")}");
+            }
+            Example("graph largest", $"{stateList.Count} states, {wildCount} wildcards to {wildTargets}, {pairs} pairs", 1);
+            MaxStates = Math.Max(MaxStates, stateList.Count);
+            Count($"graph.max states in a machine (this file) {MaxStates}", 0);
         }
     }
 

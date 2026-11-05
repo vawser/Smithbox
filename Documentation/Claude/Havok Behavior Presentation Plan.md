@@ -13,6 +13,16 @@ A behavior file is a graph of objects held together by references and integer in
 
 This plan moves the editor from showing **how the file is stored** to showing **what the behavior does**. It's split into phases so each one is useful on its own.
 
+## Window layout (2026-11-05, after Phase 5)
+
+At the user's request, the behavior views are no longer tabs inside the Properties window:
+- **Behavior Categories:** picks what Contents lists: Outline, Animations, State Machines, Selectors, Clips, Variables, Problems (with its count).
+- **Contents:** the selected category's list. Each view's `DisplayContents()` replaced its tab.
+- **Graph:** its own window, showing the state machine of the Contents selection.
+- **Properties:** edits the selection, with Used By. It follows whichever of Contents or Graph was clicked last (`HavokBehaviorView.SelectionSource`); jumps to the Outline switch it back to Contents.
+- **Tabs/Tree combo removed:** the behavior arrangement is always used for behavior graphs; other files still show the raw tree. `HavokPropertyViewType` was moved to `.archive`.
+- The behavior symbols are built at the start of `HavokEditorView.Display`, before these windows draw. The dialogs are drawn once a frame there too, outside the windows, since they can be opened from Contents or Graph.
+
 ## Current state
 
 - **Behavior View** (`GUI/Behavior View/`): flat, filterable lists of clip generators, selectors (CMSG), state machines and variables. The Variables tab is commented out. Each entry opens the generic property grid (`HavokPropertyView.HavokPropEditGeneric`).
@@ -195,6 +205,27 @@ Each of these is **one undoable step**, built from existing `HavokChangeField` /
 **Done when:** you can add a new attack (event, state, CMSG and clip) without editing a raw list.
 
 ## Phase 5: State machine graph
+
+> **Status (2026-11-05): implemented, not yet checked in the app. `Smithbox.Program` builds.** D4: static nodes with an automatic layout (the user asked for static, well-arranged nodes), so nothing is stored.
+> - **Graph tab** (`GUI/Behavior View/HavokStateMachineGraphView.cs`, second tab). It shows the state machine of the Outline's selection (*Follow selection*), and only follows when that selection changes.
+> - **Nodes and links:**
+>   - One node per state. The title is the state label, with the start state highlighted; the body shows the generator, and `* events` for the wildcard events leading to the state (hover for the full list).
+>   - One link per (from, to) state pair of state-to-state transitions; hover for its events.
+>   - Wildcards aren't drawn as links (see the survey below).
+> - **Layout:** each group of linked states in layers, left to right along its transitions, groups stacked; then the unlinked states in a grid in state order, start state first. Cells are sized to the largest drawn node, so it's laid out again once after the first draw. Nodes are placed every frame and not draggable.
+> - **Interaction:**
+>   - Select a state to edit it, with Used By; select a link to edit its transitions.
+>   - Double-click a state whose generator is a state machine to open it, and use Back to return.
+>   - Drag from a state's *Out* to another state to open *Add Transition* with both filled in.
+> - The API was read from the package (`Tools/ImNodesApiDump`). The ImNodes context is created by the renderer; each view has its own editor context.
+
+### Graph survey (2026-11-05)
+
+| Question | Result |
+|---|---|
+| Wildcard reach | Wildcards reach every state in 5,236 of 5,553 ER machines (NR 5,879 of 6,197; DS3 3,679 of 3,743) |
+| State-to-state links | None in 4,407 ER machines; 1–5 pairs in most of the rest; at most 21–60 |
+| Machine size | Mostly 1–5 states; the largest are ER c0000 147, NR 157, DS3 88 |
 
 A node view of the selected state machine, using `Hexa.NET.ImNodes`:
 
