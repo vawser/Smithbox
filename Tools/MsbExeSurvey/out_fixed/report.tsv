@@ -203,19 +203,73 @@ Point.Shape	0x20	1		CSMsbPoint	1	140CFEA70	cmp 0
 Point.Shape	0x81	1		CSMsbPoint	1	140CFEA90	cmp 0
 Point.Shape	0x82	1		CSMsbPoint	1	140CFEA90	cmp 0
 Point.Shape	0x86	1		CSMsbPoint	1	140CFEA70	cmp 0
-Point.Type	0x0	8/2/4	Priority [InvasionPoint] | UnkT00 [EnvironmentMapPoint,MufflingBox,MufflingPortal,SoundRegion,PatrolRoute,AutoDrawGroupPoint,Hitset,Dummy] | SoundType [Sound] | EffectID [SFX,WindSFX] | MessageID [Message] | DisplayDistance [EnvironmentMapEffectBox] | TargetMapID[0] [Connection] | WorldMapPointParamID [MapPoint] | WeatherLotParamID [WeatherOverride] | RandomAppearParamID [GroupDefeatReward] | EventFlagID [FastTravelRestriction] | PlayRegionID [PlayArea] | JumpHeight [MountJump,LockedMountJump] | TextID [MapNameOverride] | OverrideType [HorseRideOverride]	CSMsbPoint,game	4	140D0C470 140D0A720 140D08EB0 140D11E90	ret x3; xor x2; or -1
-Point.Type	0x2	2	Priority [InvasionPoint] | UnkT00 [EnvironmentMapPoint,MufflingBox,MufflingPortal,PatrolRoute,AutoDrawGroupPoint,Hitset,Dummy] | SoundType [Sound] | EffectID [SFX,WindSFX] | UnkT02 [Message,SoundRegion] | DisplayDistance [EnvironmentMapEffectBox] | TargetMapID[2] [Connection] | WorldMapPointParamID [MapPoint] | WeatherLotParamID [WeatherOverride] | RandomAppearParamID [GroupDefeatReward] | EventFlagID [FastTravelRestriction] | PlayRegionID [PlayArea] | JumpHeight [MountJump,LockedMountJump] | TextID [MapNameOverride] | OverrideType [HorseRideOverride]	CSMsbPoint	1	140D0A6E0	ret; xor
-Point.Type	0x4	4/1	UnkT04 [EnvironmentMapPoint,MapPoint,WeatherOverride,PlayArea,MountJump,LockedMountJump] | SoundID [Sound] | StartDisabled [SFX] | Hidden [Message] | FadeDistance [EnvironmentMapEffectBox] | WwiseEnvPlaceTypeID [SoundRegion]	CSMsbPoint	2	140D08D60 140D0A6C0	test; arg2 140CF5B20; ret; xor
-Point.Type	0x8	4	UnkT08 [WindSFX,SoundRegion,MapPoint,WeatherOverride] | ItemLotParamID [Message] | ParallaxCorrection [EnvironmentMapEffectBox] | EnableEventFlagID [LockedMountJump,LockedMountJumpFall]	CSMsbPoint	1	140D0A700	ret; or -1
-Point.Type	0xC	4	MessageSfxID [Message] | UnkT0C [SoundRegion,MapPoint]	CSMsbPoint	1	140D0A740	test; cmovns
-Point.Type	0x10	4	UnkT10 [EnvironmentMapPoint,MapPoint] | EnableEventFlagID [Message]	CSMsbPoint	1	140D0A780	test; cmp -1
-Point.Type	0x14	4	UnkT14 [EnvironmentMapPoint,MapPoint] | CharacterModelName [Message]	CSMsbPoint	2	140D089D0 140D0A600	test x2; arg3 140CEFBE0; cmovns
-Point.Type	0x18	4	UnkMapID[0] [EnvironmentMapPoint] | NPCParamID [Message] | UnkT18 [MapPoint]	CSMsbPoint	1	140D0A680	test; cmovns
+Point.Type	0x0	8/2/4	Priority [InvasionPoint] | UnkT00 [EnvironmentMapPoint,MufflingBox,MufflingPortal,SoundRegion,PatrolRoute,AutoDrawGroupPoint,Hitset,Dummy] | SoundType [Sound] | EffectID [SFX,WindSFX] | MessageID [Message] | DisplayDistance [EnvironmentMapEffectBox] | TargetMapID[0] [Connection] | WorldMapPointParamID [MapPoint] | WeatherLotParamID [WeatherOverride] | RandomAppearParamID [GroupPlacementPoint] | EventFlagID [FastTravelRestriction] | PlayRegionID [PlayArea] | JumpHeight [MountJump,LockedMountJump] | TextID [MapNameOverride] | OverrideType [HorseRideOverride]	CSMsbPoint,game	4	140D0C470 140D0A720 140D08EB0 140D11E90	ret x3; xor x2; or -1
+Point.Type	0x2	2	UnkT02 [Message]	CSMsbPoint	1	140D0A6E0	ret; xor
+Point.Type	0x4	4/1	Hidden [Message]	CSMsbPoint	2	140D08D60 140D0A6C0	test; arg2 140CF5B20; ret; xor
+Point.Type	0x8	4	ItemLotParamID [Message]	CSMsbPoint	1	140D0A700	ret; or -1
+Point.Type	0xC	4	MessageSfxID [Message]	CSMsbPoint	1	140D0A740	test; cmovns
+Point.Type	0x10	4	EnableEventFlagID [Message]	CSMsbPoint	1	140D0A780	test; cmp -1
+Point.Type	0x14	4	CharacterModelName [Message]	CSMsbPoint	2	140D089D0 140D0A600	test x2; arg3 140CEFBE0; cmovns
+Point.Type	0x18	4	NPCParamID [Message]	CSMsbPoint	1	140D0A680	test; cmovns
 Point.Type	0x1C	4	AnimationID [Message]	CSMsbPoint	1	140D0A5C0	test; cmovns
-Point.Type	0x20	4	UnkT20 [EnvironmentMapPoint] | CharaInitParamID [Message]	CSMsbPoint	1	140D0A640	test; cmovns
+Point.Type	0x20	4	CharaInitParamID [Message]	CSMsbPoint	1	140D0A640	test; cmovns
 Point.Type	0x30	2	UnkT30 [EnvironmentMapEffectBox]	CSMsbPoint	1	140CFDBE0	ret
-Point.Type	0x34	4	UnkT34 [EnvironmentMapEffectBox,MufflingBox]	CSMsbPoint	1	140D08B70	test; arg3 140CEFBE0; arg3 14062FA00
-Point.Type	0x54	4	EstusFlaskRecoveryID [GroupDefeatReward]	CSMsbPoint	1	140D08D40	ret; or -1
+Point.Type	0x34	4		CSMsbPoint	1	140D08B70	test; arg3 140CEFBE0; arg3 14062FA00
+Point.Type	0x54	4	EstusFlaskRecoveryID [GroupPlacementPoint]	CSMsbPoint	1	140D08D40	ret; or -1
+Point.Type@1	0x0	4	Priority [InvasionPoint]	game	2	140A0C3C3 140A0C6B0	store [RSP+60]; store [RSP+20]
+Point.Type@17	0x0	4	DisplayDistance [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	store [RBP+39C] x3
+Point.Type@17	0x4	4	FadeDistance [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x8	1	ParallaxCorrection [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	cmp 0 x3
+Point.Type@17	0x9	1	Priority [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	store [RBP+3A4] x3
+Point.Type@17	0xA	2	UnkT0A [EnvironmentMapEffectBox]	game	5	140B391D0 140B3A6C0 140B392BC 140B393E2 140B3A773	store [RBP+FFFFFF98] x6; arg2 140B38B50 x5; arg2 140B38260 x5; store [RSP+54] x3; store [RSP+58] x3; test x3; xor x3
+Point.Type@17	0xC	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x10	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x14	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x18	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x1C	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x20	4		game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x24	4	AmbientDiffuseIntensity [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	store [RBP+3B0] x3
+Point.Type@17	0x28	4	AmbientSpecularIntensity [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	store [RBP+3B4] x3
+Point.Type@17	0x2C	1	UnkT2C [EnvironmentMapEffectBox]	game	4	140B38260 140B391D0 140B392BC 140B393E2	test x4; sub 1 x4; cmp 1 x4; store [RBP+3D1] x3; arg0 140E51940 x3
+Point.Type@17	0x2D	1	UnkT2C [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	cmp 0 x3
+Point.Type@17	0x2E	1	IsModifyLight [EnvironmentMapEffectBox]	game	4	140B38260 140B391D0 140B392BC 140B393E2	cmp 0 x11
+Point.Type@17	0x2F	1	UnkT2F [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	cmp 0 x6
+Point.Type@17	0x32	1	UnkT32 [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	cmp 0 x6
+Point.Type@17	0x33	1	UnkT33 [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	cmp 0 x6
+Point.Type@17	0x34	2	UnkT34 [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@17	0x36	1	UnkT36 [EnvironmentMapEffectBox]	game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@2	0x18	1	UnkMapID[0] [EnvironmentMapPoint]	game	3	140B391D0 140B392BC 140B393E2	test x3
+Point.Type@2	0x19	1	UnkMapID[1] [EnvironmentMapPoint]	game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@2	0x1A	1	UnkMapID[2] [EnvironmentMapPoint]	game	3	140B391D0 140B392BC 140B393E2	
+Point.Type@27	0x0	4		game	4	14069BF70 14069BFC0 14069BFBB 14069BF67	ret x2; or -1 x2; cmp -1 x2; arg1 140D4C0F0 x2
+Point.Type@32	0x0	4	UnkT00 [PatrolRoute]	game	2	14036CEF0 14036CF62	arg2 140364740 x2
+Point.Type@35	0x0	4	WeatherLotParamID [WeatherOverride]	game	2	140640820 140640870	or -1 x2; ret; arg1 140D557D0
+Point.Type@35	0x4	4	UnkT04 [WeatherOverride]	game	1	1406407A0	ret; or -1
+Point.Type@35	0x8	1	UnkT08 [WeatherOverride]	game	1	1406407C0	ret
+Point.Type@35	0x9	1	UnkT09 [WeatherOverride]	game	1	1406407E0	ret
+Point.Type@35	0xA	1	UnkT0A [WeatherOverride]	game	1	140640800	ret
+Point.Type@41	0x0	4	EventFlagID [FastTravelRestriction]	game	1	140A6E680	ret
+Point.Type@45	0x0	1		game	2	140346200 1403461F5	ret x2
+Point.Type@46	0x0	4	JumpHeight [MountJump]	game	1	140A7B460	ret; xorps
+Point.Type@46	0x4	4	UnkT04 [MountJump]	game	1	140A7B520	test
+Point.Type@47	0x0	2		game	1	140A792A0	ret; or -1
+Point.Type@5	0x0	4	EffectID [SFX]	game	3	140ABE480 140ABE220 140ABE5FF	store [RSP+50] x3; arg1 140CFC020 x3
+Point.Type@5	0x4	1	StartDisabled [SFX]	game	4	140ABDD50 140ABDEB9 140ABDF50 140ABDF15	cmp 0 x4
+Point.Type@5	0x5	1	StartDisabled [SFX]	game	3	140ABE480 140ABE220 140ABE5FF	cmp 0 x3
+Point.Type@51	0x0	4	TextID [MapNameOverride]	game	1	140A749D0	ret; or -1
+Point.Type@52	0x0	4		game	1	140A7B1A0	test
+Point.Type@52	0x4	4		game	2	140A7B1A0 140A7B222	
+Point.Type@53	0x0	1	OverrideType [HorseRideOverride]	game	1	140A6BFD0	ret
+Point.Type@54	0x0	4	JumpHeight [LockedMountJump]	game	1	140A6E150	ret; xorps
+Point.Type@54	0x4	4	UnkT04 [LockedMountJump]	game	1	140A6E3B0	test
+Point.Type@54	0x8	4	EnableEventFlagID [LockedMountJump]	game	2	140A6E1B0 140A6E2F6	cmp -1 x2
+Point.Type@54	0xC	4		game	2	140A6E3B0 140A6E435	test x2
+Point.Type@55	0x0	4		game	1	140A6DEF0	test
+Point.Type@55	0x4	4		game	2	140A6DEF0 140A6DF7B	
+Point.Type@55	0x8	4	EnableEventFlagID [LockedMountJumpFall]	game	2	140A6DD10 140A6DE36	cmp -1 x2
+Point.Type@6	0x0	4	EffectID [WindSFX]	game	3	140ABE480 140ABE220 140ABE5FF	store [RSP+50] x3
+Point.Type@6	0x4	4		game	3	140ABE480 140ABE220 140ABE5FF	test x3; arg3 140CFC020 x3
+Point.Type@6	0x8	4	UnkT08 [WindSFX]	game	3	140ABE480 140ABE220 140ABE5FF	
 Point.Unk4	0x0	4	MapID	CSMsbPoint	1	140CFDF60	cmp -1; store W.Point+0
 Point.Unk4	0x4	1	UnkS04	CSMsbPoint	1	140CFDFF0	
 Point.Unk4	0xC	4	UnkS0C	CSMsbPoint	1	140CFDFB0	test; ret

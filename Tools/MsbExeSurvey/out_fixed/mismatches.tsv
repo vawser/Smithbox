@@ -6,3 +6,19 @@ NO PROPERTY	Part.Type	0x20	2	Part.Enemy,Part.DummyEnemy	game,CSMsbPartsEne	store
 SPLIT	Part.Type	0x36	1	Part.Asset,Part.DummyAsset	CSMsbPartsGeom	inside BreakItemLotParamID(4)	140CF2800
 SPLIT	Part.Type	0x37	1	Part.Asset,Part.DummyAsset	CSMsbPartsGeom	inside BreakItemLotParamID(4)	140CF30D0
 NO PROPERTY	Point.Entity	0x0	4		CSMsbPoint	ret; or -1; test	140CFDC50
+NO PROPERTY	Point.Type@17	0xC	4		game		140B391D0
+NO PROPERTY	Point.Type@17	0x10	4		game		140B391D0
+NO PROPERTY	Point.Type@17	0x14	4		game		140B391D0
+NO PROPERTY	Point.Type@17	0x18	4		game		140B391D0
+NO PROPERTY	Point.Type@17	0x1C	4		game		140B391D0
+NO PROPERTY	Point.Type@17	0x20	4		game		140B391D0
+SPLIT	Point.Type@17	0x2C	1		game	inside UnkT2C(2)	140B38260
+SPLIT	Point.Type@17	0x2D	1		game	inside UnkT2C(2)	140B391D0
+SPLIT	Point.Type@17	0x36	1		game	inside UnkT36(2)	140B391D0
+SPLIT	Point.Type@5	0x4	1		game	inside StartDisabled(4)	140ABDD50
+SPLIT	Point.Type@5	0x5	1		game	inside StartDisabled(4)	140ABE480
+SPLIT	Point.Type@53	0x0	1		game	inside OverrideType(4)	140A6BFD0
+NO PROPERTY	Point.Type@54	0xC	4		game	test	140A6E3B0
+NO PROPERTY	Point.Type@55	0x0	4		game	test	140A6DEF0
+NO PROPERTY	Point.Type@55	0x4	4		game		140A6DEF0
+NO PROPERTY	Point.Type@6	0x4	4		game	test; arg3 140CFC020	140ABE480

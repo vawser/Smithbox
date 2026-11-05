@@ -2349,6 +2349,159 @@ Point.Type	0x20	4	R	140D0A666	140D0A640		mov ecx,[rcx+20h]
 Point.Type	0x30	2	R	140CFDBFB	140CFDBE0	Point=17	movzx eax,word ptr [rcx+30h]
 Point.Type	0x34	4	R	140D08BD2	140D08B70		mov ebp,[rcx+rax*4+34h] [idx]
 Point.Type	0x54	4	R	140D08D52	140D08D40		mov eax,[rax+54h]
+Point.Type@1	0x0	4	R	140A0C491	140A0C3C3		mov ecx,[rax]
+Point.Type@1	0x0	4	R	140A0C73A	140A0C6B0		mov edi,[rax]
+Point.Type@17	0x0	4	R	140B39A1E	140B391D0		movss xmm0,dword ptr [r15]
+Point.Type@17	0x0	4	R	140B39A1E	140B392BC		movss xmm0,dword ptr [r15]
+Point.Type@17	0x0	4	R	140B39A1E	140B393E2		movss xmm0,dword ptr [r15]
+Point.Type@17	0x4	4	R	140B39A44	140B391D0		comiss xmm0,dword ptr [rax]
+Point.Type@17	0x4	4	R	140B39A44	140B392BC		comiss xmm0,dword ptr [rax]
+Point.Type@17	0x4	4	R	140B39A44	140B393E2		comiss xmm0,dword ptr [rax]
+Point.Type@17	0x8	1	R	140B39A75	140B391D0		cmp byte ptr [r15+8],0
+Point.Type@17	0x8	1	R	140B39A75	140B392BC		cmp byte ptr [r15+8],0
+Point.Type@17	0x8	1	R	140B39A75	140B393E2		cmp byte ptr [r15+8],0
+Point.Type@17	0x9	1	R	140B39A6A	140B391D0		movzx eax,byte ptr [r15+9]
+Point.Type@17	0x9	1	R	140B39A6A	140B392BC		movzx eax,byte ptr [r15+9]
+Point.Type@17	0x9	1	R	140B39A6A	140B393E2		movzx eax,byte ptr [r15+9]
+Point.Type@17	0xA	2	R	140B394AE	140B391D0		movzx eax,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B394AE	140B392BC		movzx eax,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B394AE	140B393E2		movzx eax,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39D79	140B391D0		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39D79	140B392BC		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39D79	140B393E2		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39E3A	140B391D0		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39E3A	140B392BC		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B39E3A	140B393E2		movsx edi,word ptr [r15+0Ah]
+Point.Type@17	0xA	2	R	140B3A82B	140B3A6C0		movzx ecx,word ptr [r14+0Ah]
+Point.Type@17	0xA	2	R	140B3A82B	140B3A773		movzx ecx,word ptr [r14+0Ah]
+Point.Type@17	0xC	4	R	140B395DE	140B391D0		subss xmm3,dword ptr [r15+0Ch]
+Point.Type@17	0xC	4	R	140B395DE	140B392BC		subss xmm3,dword ptr [r15+0Ch]
+Point.Type@17	0xC	4	R	140B395DE	140B393E2		subss xmm3,dword ptr [r15+0Ch]
+Point.Type@17	0x10	4	R	140B395D1	140B391D0		subss xmm2,dword ptr [r15+10h]
+Point.Type@17	0x10	4	R	140B395D1	140B392BC		subss xmm2,dword ptr [r15+10h]
+Point.Type@17	0x10	4	R	140B395D1	140B393E2		subss xmm2,dword ptr [r15+10h]
+Point.Type@17	0x14	4	R	140B395C4	140B391D0		subss xmm0,dword ptr [r15+14h]
+Point.Type@17	0x14	4	R	140B395C4	140B392BC		subss xmm0,dword ptr [r15+14h]
+Point.Type@17	0x14	4	R	140B395C4	140B393E2		subss xmm0,dword ptr [r15+14h]
+Point.Type@17	0x18	4	R	140B39600	140B391D0		addss xmm6,dword ptr [r15+18h]
+Point.Type@17	0x18	4	R	140B39600	140B392BC		addss xmm6,dword ptr [r15+18h]
+Point.Type@17	0x18	4	R	140B39600	140B393E2		addss xmm6,dword ptr [r15+18h]
+Point.Type@17	0x1C	4	R	140B395FA	140B391D0		addss xmm5,dword ptr [r15+1Ch]
+Point.Type@17	0x1C	4	R	140B395FA	140B392BC		addss xmm5,dword ptr [r15+1Ch]
+Point.Type@17	0x1C	4	R	140B395FA	140B393E2		addss xmm5,dword ptr [r15+1Ch]
+Point.Type@17	0x20	4	R	140B395F4	140B391D0		addss xmm4,dword ptr [r15+20h]
+Point.Type@17	0x20	4	R	140B395F4	140B392BC		addss xmm4,dword ptr [r15+20h]
+Point.Type@17	0x20	4	R	140B395F4	140B393E2		addss xmm4,dword ptr [r15+20h]
+Point.Type@17	0x24	4	R	140B39A99	140B391D0		movss xmm1,dword ptr [r15+24h]
+Point.Type@17	0x24	4	R	140B39A99	140B392BC		movss xmm1,dword ptr [r15+24h]
+Point.Type@17	0x24	4	R	140B39A99	140B393E2		movss xmm1,dword ptr [r15+24h]
+Point.Type@17	0x28	4	R	140B39A8B	140B391D0		movss xmm0,dword ptr [r15+28h]
+Point.Type@17	0x28	4	R	140B39A8B	140B392BC		movss xmm0,dword ptr [r15+28h]
+Point.Type@17	0x28	4	R	140B39A8B	140B393E2		movss xmm0,dword ptr [r15+28h]
+Point.Type@17	0x2C	1	R	140B38318	140B38260		movzx ecx,byte ptr [rsi+2Ch]
+Point.Type@17	0x2C	1	R	140B39AF4	140B391D0		movzx ecx,byte ptr [r15+2Ch]
+Point.Type@17	0x2C	1	R	140B39AF4	140B392BC		movzx ecx,byte ptr [r15+2Ch]
+Point.Type@17	0x2C	1	R	140B39AF4	140B393E2		movzx ecx,byte ptr [r15+2Ch]
+Point.Type@17	0x2D	1	R	140B39B24	140B391D0		cmp byte ptr [r15+2Dh],0
+Point.Type@17	0x2D	1	R	140B39B24	140B392BC		cmp byte ptr [r15+2Dh],0
+Point.Type@17	0x2D	1	R	140B39B24	140B393E2		cmp byte ptr [r15+2Dh],0
+Point.Type@17	0x2E	1	R	140B38508	140B38260		cmp byte ptr [rax+2Eh],0
+Point.Type@17	0x2E	1	R	140B3883D	140B38260		cmp byte ptr [rax+2Eh],0
+Point.Type@17	0x2E	1	R	140B39AA7	140B391D0		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39AA7	140B392BC		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39AA7	140B393E2		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39D6B	140B391D0		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39D6B	140B392BC		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39D6B	140B393E2		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39E2C	140B391D0		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39E2C	140B392BC		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2E	1	R	140B39E2C	140B393E2		cmp byte ptr [r15+2Eh],0
+Point.Type@17	0x2F	1	R	140B39DBA	140B391D0		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x2F	1	R	140B39DBA	140B392BC		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x2F	1	R	140B39DBA	140B393E2		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x2F	1	R	140B39E7B	140B391D0		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x2F	1	R	140B39E7B	140B392BC		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x2F	1	R	140B39E7B	140B393E2		cmp byte ptr [r15+2Fh],0
+Point.Type@17	0x32	1	R	140B39DCA	140B391D0		cmp byte ptr [r15+32h],0
+Point.Type@17	0x32	1	R	140B39DCA	140B392BC		cmp byte ptr [r15+32h],0
+Point.Type@17	0x32	1	R	140B39DCA	140B393E2		cmp byte ptr [r15+32h],0
+Point.Type@17	0x32	1	R	140B39E8B	140B391D0		cmp byte ptr [r15+32h],0
+Point.Type@17	0x32	1	R	140B39E8B	140B392BC		cmp byte ptr [r15+32h],0
+Point.Type@17	0x32	1	R	140B39E8B	140B393E2		cmp byte ptr [r15+32h],0
+Point.Type@17	0x33	1	R	140B39DC2	140B391D0		cmp byte ptr [r15+33h],0
+Point.Type@17	0x33	1	R	140B39DC2	140B392BC		cmp byte ptr [r15+33h],0
+Point.Type@17	0x33	1	R	140B39DC2	140B393E2		cmp byte ptr [r15+33h],0
+Point.Type@17	0x33	1	R	140B39E83	140B391D0		cmp byte ptr [r15+33h],0
+Point.Type@17	0x33	1	R	140B39E83	140B392BC		cmp byte ptr [r15+33h],0
+Point.Type@17	0x33	1	R	140B39E83	140B393E2		cmp byte ptr [r15+33h],0
+Point.Type@17	0x34	2	R	140B39A63	140B391D0		movzx eax,word ptr [r15+34h]
+Point.Type@17	0x34	2	R	140B39A63	140B392BC		movzx eax,word ptr [r15+34h]
+Point.Type@17	0x34	2	R	140B39A63	140B393E2		movzx eax,word ptr [r15+34h]
+Point.Type@17	0x36	1	R	140B39D58	140B391D0		movzx eax,byte ptr [r15+36h]
+Point.Type@17	0x36	1	R	140B39D58	140B392BC		movzx eax,byte ptr [r15+36h]
+Point.Type@17	0x36	1	R	140B39D58	140B393E2		movzx eax,byte ptr [r15+36h]
+Point.Type@2	0x18	1	R	140B39521	140B391D0		movzx eax,byte ptr [rax+18h]
+Point.Type@2	0x18	1	R	140B39521	140B392BC		movzx eax,byte ptr [rax+18h]
+Point.Type@2	0x18	1	R	140B39521	140B393E2		movzx eax,byte ptr [rax+18h]
+Point.Type@2	0x19	1	R	140B39551	140B391D0		movzx eax,byte ptr [rdx+19h]
+Point.Type@2	0x19	1	R	140B39551	140B392BC		movzx eax,byte ptr [rdx+19h]
+Point.Type@2	0x19	1	R	140B39551	140B393E2		movzx eax,byte ptr [rdx+19h]
+Point.Type@2	0x1A	1	R	140B39561	140B391D0		movzx eax,byte ptr [rdx+1Ah]
+Point.Type@2	0x1A	1	R	140B39561	140B392BC		movzx eax,byte ptr [rdx+1Ah]
+Point.Type@2	0x1A	1	R	140B39561	140B393E2		movzx eax,byte ptr [rdx+1Ah]
+Point.Type@27	0x0	4	R	14069BF7E	14069BF70		mov eax,[rax]
+Point.Type@27	0x0	4	R	14069BF7E	14069BF67		mov eax,[rax]
+Point.Type@27	0x0	4	R	14069C00B	14069BFC0		mov edx,[rax]
+Point.Type@27	0x0	4	R	14069C00B	14069BFBB		mov edx,[rax]
+Point.Type@32	0x0	4	R	14036D086	14036CEF0		mov r8d,[r15]
+Point.Type@32	0x0	4	R	14036D086	14036CF62		mov r8d,[r15]
+Point.Type@35	0x0	4	R	14064082E	140640820		mov eax,[rax]
+Point.Type@35	0x0	4	R	1406408BB	140640870		mov edx,[rax]
+Point.Type@35	0x4	4	R	1406407AE	1406407A0		mov eax,[rax+4]
+Point.Type@35	0x8	1	R	1406407CE	1406407C0		movsx eax,byte ptr [rax+8]
+Point.Type@35	0x9	1	R	1406407EE	1406407E0		movsx eax,byte ptr [rax+9]
+Point.Type@35	0xA	1	R	14064080E	140640800		movsx eax,byte ptr [rax+0Ah]
+Point.Type@41	0x0	4	R	140A6E69F	140A6E680		mov eax,[rax]
+Point.Type@45	0x0	1	R	14034621F	140346200		movzx eax,byte ptr [rax]
+Point.Type@45	0x0	1	R	14034621F	1403461F5		movzx eax,byte ptr [rax]
+Point.Type@46	0x0	4	R	140A7B47B	140A7B460		movss xmm0,dword ptr [rax]
+Point.Type@46	0x4	4	R	140A7B570	140A7B520		mov edi,[rax+4]
+Point.Type@47	0x0	2	R	140A792BB	140A792A0		movsx eax,word ptr [rax]
+Point.Type@5	0x0	4	R	140ABE629	140ABE480		mov esi,[rax]
+Point.Type@5	0x0	4	R	140ABE629	140ABE220		mov esi,[rax]
+Point.Type@5	0x0	4	R	140ABE629	140ABE5FF		mov esi,[rax]
+Point.Type@5	0x4	1	R	140ABDF9E	140ABDD50		cmp byte ptr [rax+4],0
+Point.Type@5	0x4	1	R	140ABDF9E	140ABDEB9		cmp byte ptr [rax+4],0
+Point.Type@5	0x4	1	R	140ABDF9E	140ABDF50		cmp byte ptr [rax+4],0
+Point.Type@5	0x4	1	R	140ABDF9E	140ABDF15		cmp byte ptr [rax+4],0
+Point.Type@5	0x5	1	R	140ABE6B9	140ABE480		cmp byte ptr [rax+5],0
+Point.Type@5	0x5	1	R	140ABE6B9	140ABE220		cmp byte ptr [rax+5],0
+Point.Type@5	0x5	1	R	140ABE6B9	140ABE5FF		cmp byte ptr [rax+5],0
+Point.Type@51	0x0	4	R	140A749EB	140A749D0		mov eax,[rax]
+Point.Type@52	0x0	4	R	140A7B1F6	140A7B1A0		mov edi,[rax]
+Point.Type@52	0x4	4	R	140A7B24E	140A7B1A0		movss xmm6,dword ptr [rax+4]
+Point.Type@52	0x4	4	R	140A7B24E	140A7B222		movss xmm6,dword ptr [rax+4]
+Point.Type@53	0x0	1	R	140A6BFEB	140A6BFD0		movzx eax,byte ptr [rax]
+Point.Type@54	0x0	4	R	140A6E16B	140A6E150		movss xmm0,dword ptr [rax]
+Point.Type@54	0x4	4	R	140A6E409	140A6E3B0		mov esi,[rax+4]
+Point.Type@54	0x8	4	R	140A6E1EB	140A6E1B0		mov ecx,[rax+8]
+Point.Type@54	0x8	4	R	140A6E313	140A6E2F6		mov ecx,[rax+8]
+Point.Type@54	0xC	4	R	140A6E4DC	140A6E3B0		mov esi,[rax+0Ch]
+Point.Type@54	0xC	4	R	140A6E4DC	140A6E435		mov esi,[rax+0Ch]
+Point.Type@55	0x0	4	R	140A6DF4F	140A6DEF0		mov esi,[rax]
+Point.Type@55	0x4	4	R	140A6DFA7	140A6DEF0		movss xmm6,dword ptr [rax+4]
+Point.Type@55	0x4	4	R	140A6DFA7	140A6DF7B		movss xmm6,dword ptr [rax+4]
+Point.Type@55	0x8	4	R	140A6DD4B	140A6DD10		mov ecx,[rax+8]
+Point.Type@55	0x8	4	R	140A6DE53	140A6DE36		mov ecx,[rax+8]
+Point.Type@6	0x0	4	R	140ABE77E	140ABE480		mov edi,[rax]
+Point.Type@6	0x0	4	R	140ABE77E	140ABE220		mov edi,[rax]
+Point.Type@6	0x0	4	R	140ABE77E	140ABE5FF		mov edi,[rax]
+Point.Type@6	0x4	4	R	140ABE8BD	140ABE480		mov r9d,[rax+4]
+Point.Type@6	0x4	4	R	140ABE8BD	140ABE220		mov r9d,[rax+4]
+Point.Type@6	0x4	4	R	140ABE8BD	140ABE5FF		mov r9d,[rax+4]
+Point.Type@6	0x8	4	R	140ABE89E	140ABE480		movss xmm1,dword ptr [rax+8]
+Point.Type@6	0x8	4	R	140ABE89E	140ABE220		movss xmm1,dword ptr [rax+8]
+Point.Type@6	0x8	4	R	140ABE89E	140ABE5FF		movss xmm1,dword ptr [rax+8]
 Point.Unk4	0x0	4	R	140CFDF8B	140CFDF60		mov eax,[rax]
 Point.Unk4	0x4	1	R	140CFE037	140CFDFF0		movzx eax,byte ptr [rcx+4]
 Point.Unk4	0xC	4	R	140CFDFC2	140CFDFB0		mov ecx,[rdx+0Ch]

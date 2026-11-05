@@ -164,6 +164,46 @@ public static class Flow
         Console.Error.WriteLine($"probe: {added} functions given argument kinds");
     }
 
+    /// <summary>
+    /// The typed type-data accessors of the CSMsbPoint unit: mov rax,[rcx+18h] / cmp dword ptr [rax+8],T /
+    /// mov rax,[rax+58h] / ret. They return the region's type data only for type T, and the game reads the fields
+    /// from the returned pointer itself. Their return is labelled "Point.Type@T", so those reads are typed.
+    /// Wrappers seeded here keep their label: the iterations only replace a return when every return agrees.
+    /// </summary>
+    static void SeedTypedRegionGetters(List<(ulong Begin, ulong End)> funcs)
+    {
+        var n = 0;
+        foreach (var (b, e) in funcs.Where(f => f.Begin >= 0x140CFBD00 && f.Begin < 0x140D20000))
+        {
+            Register entry = Register.None;
+            uint? type = null;
+            var found = false;
+            var i = 0;
+            foreach (var ins in Exe.Function(b, 16))
+            {
+                if (ins.IsInvalid || ++i > 12) break;
+                if (ins.Mnemonic == Mnemonic.Mov && ins.Op0Kind == OpKind.Register && ins.Op1Kind == OpKind.Memory
+                    && ins.MemoryBase == Register.RCX && ins.MemoryDisplacement64 == 0x18 && ins.MemoryIndex == Register.None)
+                    entry = ins.Op0Register.GetFullRegister();
+                else if (ins.Mnemonic == Mnemonic.Cmp && ins.Op0Kind == OpKind.Memory && entry != Register.None
+                         && ins.MemoryBase.GetFullRegister() == entry && ins.MemoryDisplacement64 == 8 && ins.Op1Kind is OpKind.Immediate8to32 or OpKind.Immediate32)
+                    type = (uint)ins.GetImmediate(1);
+                else if (type != null && ins.Mnemonic == Mnemonic.Mov && ins.Op0Kind == OpKind.Register && ins.Op0Register == Register.RAX
+                         && ins.Op1Kind == OpKind.Memory && ins.MemoryBase.GetFullRegister() == entry && ins.MemoryDisplacement64 == 0x58)
+                    found = true;
+                else if (found && ins.Mnemonic == Mnemonic.Ret) break;
+                else if (found) { found = false; break; }
+            }
+            if (!found || type == null) continue;
+            Returns[b] = new Label($"Point.Type@{type}", 0);
+            TypedRegionGetters[b] = type.Value;
+            n++;
+        }
+        Console.Error.WriteLine($"typed region getters: {n}");
+    }
+
+    public static Dictionary<ulong, uint> TypedRegionGetters = new();
+
     sealed class Observed
     {
         public Dictionary<ulong, List<Label?[]>> CallArgs = new();
@@ -179,6 +219,7 @@ public static class Flow
         Probe(funcs, 0x140CF5600, 0x140CF6300, "W.Event", "Event", "MRC");
         Probe(funcs, 0x140CF6300, 0x140CFBD00, "MRC", "Part", "Point", "Event");
         Probe(funcs, 0x140CFBD00, 0x140D10000, "W.Point", "Point", "MRC");
+        SeedTypedRegionGetters(funcs);
         for (var it = 0; it < iterations; it++)
         {
             var obs = new Observed();
@@ -208,6 +249,7 @@ public static class Flow
             }
             foreach (var (fn, rets) in obs.Rets)
             {
+                if (TypedRegionGetters.ContainsKey(fn)) continue;   // keep the typed label
                 var known = rets.Where(l => l != null).Distinct().ToList();
                 if (Rejected.Contains(fn)) { Returns.Remove(fn); continue; }
                 if (known.Count == 1 && !rets.Contains(null))

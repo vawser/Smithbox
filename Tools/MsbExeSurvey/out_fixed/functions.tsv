@@ -645,7 +645,7 @@ F8B6AD65	Label { Kind = C:DLLG::DLCategoryRepository, Off = 0 },-,-,-	ret=-
 1401B91C0	Label { Kind = C:Scaleform::SysAllocMalloc, Off = 0 },-,-,-	ret=Label { Kind = C:Scaleform::SysAllocMalloc, Off = 0 }
 1401B9210	Label { Kind = C:Scaleform::SysAllocMalloc, Off = 0 },-,-,-	ret=-
 1401B9370	Label { Kind = C:Scaleform::SysAllocMalloc, Off = 0 },-,-,-	ret=-
-1401B9390	Label { Kind = TblG.Model, Off = 0 },-,-,Label { Kind = TblG.Part, Off = 0 }	ret=-
+1401B9390	Label { Kind = TblG.Model, Off = 0 },-,-,-	ret=-
 1401B9630	Label { Kind = C:Scaleform::SysAllocMalloc, Off = 0 },-,-,-	ret=-
 1401B97E0	-,Label { Kind = TblG.Model, Off = 0 },-,-	ret=-
 1401BB930	Label { Kind = C:Scaleform::SysAllocBase, Off = 0 },-,-,-	ret=-
@@ -29840,6 +29840,7 @@ F8B6AD65	Label { Kind = C:DLLG::DLCategoryRepository, Off = 0 },-,-,-	ret=-
 140B32F60	Label { Kind = C:CS::CSModelDispEntity, Off = 0 },-,-,-	ret=-
 140B33050	Label { Kind = C:CS::CSModelDispEntity, Off = 0 },-,-,-	ret=-
 140B34760	-,Label { Kind = C:CS::MapIns, Off = 152 },-,-	ret=-
+140B38260	-,-,-,Label { Kind = Point.Type@17, Off = 0 }	ret=-
 140B3BE70	Label { Kind = C:CS::CSModelViewerInsStep_forSkybox, Off = 576 },-,-,-	ret=-
 140B3C700	Label { Kind = C:CS::WorldAreaResBase, Off = 3256 },-,-,-	ret=-
 140B3C860	Label { Kind = C:CS::CSFD4FadePlate, Off = 0 },-,-,-	ret=-
@@ -63399,6 +63400,8 @@ F8B6AD65	Label { Kind = C:DLLG::DLCategoryRepository, Off = 0 },-,-,-	ret=-
 140A58B56	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140A58B82	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140A58B9D	-	ret=Label { Kind = TblG.Event, Off = 0 }
+140A6E150	-	ret=Label { Kind = Point.Type@54, Off = 0 }
+140A7B460	-	ret=Label { Kind = Point.Type@46, Off = 0 }
 140A873C0	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140A873D0	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140A873F0	-	ret=Label { Kind = TblG.Event, Off = 0 }
@@ -63447,7 +63450,25 @@ F8B6AD65	Label { Kind = C:DLLG::DLCategoryRepository, Off = 0 },-,-,-	ret=-
 140CE590C	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140CE590F	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140CF61D9	-	ret=Label { Kind = Event, Off = 0 }
+140CFD920	-	ret=Label { Kind = Point.Type@35, Off = 0 }
+140CFDAE0	-	ret=Label { Kind = Point.Type@53, Off = 0 }
+140CFDB00	-	ret=Label { Kind = Point.Type@54, Off = 0 }
+140CFDB20	-	ret=Label { Kind = Point.Type@55, Off = 0 }
+140CFDB50	-	ret=Label { Kind = Point.Type@2, Off = 0 }
+140CFDB70	-	ret=Label { Kind = Point.Type@17, Off = 0 }
+140CFDBC0	-	ret=Label { Kind = Point.Type@41, Off = 0 }
 140CFDC04	-	ret=Label { Kind = Part, Off = 0 }
+140CFDC70	-	ret=Label { Kind = Point.Type@9, Off = 0 }
+140CFDEA0	-	ret=Label { Kind = Point.Type@1, Off = 0 }
+140CFDEC0	-	ret=Label { Kind = Point.Type@51, Off = 0 }
+140CFDF00	-	ret=Label { Kind = Point.Type@45, Off = 0 }
+140CFDF40	-	ret=Label { Kind = Point.Type@47, Off = 0 }
+140CFE110	-	ret=Label { Kind = Point.Type@46, Off = 0 }
+140CFE130	-	ret=Label { Kind = Point.Type@52, Off = 0 }
+140CFE150	-	ret=Label { Kind = Point.Type@27, Off = 0 }
+140CFE170	-	ret=Label { Kind = Point.Type@32, Off = 0 }
+140CFE190	-	ret=Label { Kind = Point.Type@5, Off = 0 }
+140CFE1F0	-	ret=Label { Kind = Point.Type@6, Off = 0 }
 140D05720	-	ret=Label { Kind = TblG.Model, Off = 112 }
 140D88790	-	ret=Label { Kind = TblG.Event, Off = 0 }
 140D887F0	-	ret=Label { Kind = TblG.Event, Off = 0 }

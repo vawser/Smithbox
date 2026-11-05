@@ -20,6 +20,22 @@ public static class Report
         (0x140CFBD00, 0x140D10000, "CSMsbPoint", null),
     };
 
+    /// <summary>
+    /// A layout field at this kind and offset (any offset when off is null). "Point.Type@T" is region type data of
+    /// type T only.
+    /// </summary>
+    static bool Fits(Layout.Field f, string kind, int? off)
+    {
+        var k = kind;
+        if (kind.StartsWith("Point.Type@"))
+        {
+            k = "Point.Type";
+            var t = uint.Parse(kind[11..]);
+            if (!RegionTypes.Names.TryGetValue(t, out var entry) || f.Entry != entry) return false;
+        }
+        return f.Kind == k && (off == null || (off >= f.Off && off < f.Off + Math.Max(1, f.Size)));
+    }
+
     public static string UnitOf(ulong fn) => Units.FirstOrDefault(u => fn >= u.Lo && fn < u.Hi).Unit ?? "game";
 
     public static void Write(string dir)
@@ -27,6 +43,7 @@ public static class Report
         var layout = Layout.Build();
         var sb = new StringBuilder();
         var read = new HashSet<(string Entry, string Path)>();
+        var regionAttr = RegionTypes.Attribute(dir);
 
         foreach (var g in Flow.Accesses.Where(a => !a.Write).GroupBy(a => (a.Kind, a.Off)).OrderBy(g => g.Key.Kind).ThenBy(g => g.Key.Off))
         {
@@ -34,10 +51,21 @@ public static class Report
             var units = g.Select(a => UnitOf(a.Func)).Distinct().ToList();
             var entries = units.SelectMany(u => Units.FirstOrDefault(x => x.Unit == u).Entries ?? Array.Empty<string>()).Distinct().ToList();
 
-            var cands = layout.Where(f => f.Kind == kind && off >= f.Off && off < f.Off + Math.Max(1, f.Size)).ToList();
+            var cands = layout.Where(f => Fits(f, kind, off)).ToList();
             // type data differs per type: keep the types of the units that read it, when they say
             if (kind.StartsWith("Part.Type") && entries.Count > 0 && cands.Any(c => entries.Contains(c.Entry)))
                 cands = cands.Where(c => entries.Contains(c.Entry)).ToList();
+            // region type data: the types the reading functions were attributed to (unattributed reads keep every type)
+            if (kind == "Point.Type")
+            {
+                var fnsTyped = g.Select(a => a.Func).Distinct().ToList();
+                if (fnsTyped.All(regionAttr.ContainsKey))
+                {
+                    var rt = fnsTyped.SelectMany(f => regionAttr[f]).ToHashSet();
+                    if (cands.Any(c => rt.Contains(c.Entry))) cands = cands.Where(c => rt.Contains(c.Entry)).ToList();
+                    else cands = new();   // attributed, but no property of those types there
+                }
+            }
             foreach (var c in cands) read.Add((c.Entry, c.Path));
 
             var names = cands.GroupBy(c => c.Path).Select(c => kind.Contains("Type") ? $"{c.Key} [{string.Join(",", c.Select(x => x.Entry.Split('.')[1]).Distinct())}]" : c.Key);
@@ -73,7 +101,7 @@ public static class Report
             if (kind == "Part.Type" && size == 8 && off >= 0x68) continue;
             var units = g.Select(a => UnitOf(a.Func)).Distinct().ToList();
             var entries = units.SelectMany(u => Units.FirstOrDefault(x => x.Unit == u).Entries ?? Array.Empty<string>()).Distinct().ToList();
-            var fields = layout.Where(f => f.Kind == kind && (!kind.StartsWith("Part.Type") || entries.Count == 0 || entries.Contains(f.Entry))).ToList();
+            var fields = layout.Where(f => Fits(f, kind, null) && (!kind.StartsWith("Part.Type") || entries.Count == 0 || entries.Contains(f.Entry))).ToList();
             if (fields.Count == 0) continue;
             var hit = fields.Where(f => off >= f.Off && off < f.Off + Math.Max(1, f.Size)).ToList();
             var where = string.Join(",", units);
@@ -95,7 +123,7 @@ public static class Report
         string Name(Flow.Access a)
         {
             var entries = Units.FirstOrDefault(x => x.Unit == UnitOf(a.Func)).Entries;
-            var c = layout.Where(f => f.Kind == a.Kind && a.Off >= f.Off && a.Off < f.Off + Math.Max(1, f.Size)
+            var c = layout.Where(f => Fits(f, a.Kind, a.Off)
                                       && (!a.Kind.StartsWith("Part.Type") || entries == null || entries.Contains(f.Entry))).Select(f => f.Path).Distinct().Take(3);
             return $"{a.Kind}+{a.Off:X}({string.Join("/", c)})";
         }
