@@ -20,6 +20,7 @@ public class HavokBehaviorView
     public HavokOutlineView OutlineView;
     public HavokAnimationTableView AnimationTableView;
     public HavokProblemsView ProblemsView;
+    public HavokBehaviorActionsView ActionsView;
 
     /// <summary>
     /// The names the file's indices refer to, or null if the shown file isn't a behavior graph
@@ -44,6 +45,7 @@ public class HavokBehaviorView
         OutlineView = new(view, this, project);
         AnimationTableView = new(view, this, project);
         ProblemsView = new(view, this, project);
+        ActionsView = new(view, this, project);
     }
 
     public void ResetSelection()
@@ -122,6 +124,8 @@ public class HavokBehaviorView
 
             ImGui.EndTable();
         }
+
+        ActionsView.DisplayDialogs();
     }
 
     public void DisplayHeader(bool minimized = false)
@@ -263,6 +267,8 @@ public class HavokBehaviorView
         var rowHeight = ImGui.GetTextLineHeightWithSpacing();
         var height = Math.Min(parents.Count, 8) * rowHeight + ImGui.GetStyle().WindowPadding.Y * 2;
 
+        object unlinkParent = null;
+
         ImGui.BeginChild("havokUsedByList", new System.Numerics.Vector2(0, height), ImGuiChildFlags.Borders);
 
         for (var i = 0; i < parents.Count; i++)
@@ -270,6 +276,16 @@ public class HavokBehaviorView
             var parent = parents[i];
             var field = HavokBehaviorSymbols.FindFieldSegment(parent, selected) ?? "?";
             var label = $"{HavokBehaviorSymbols.GetLabel(parent)}  .{field}";
+
+            // Unlink: remove this reference (undoable). The last one removes the object from the file.
+            if (ImGui.SmallButton($"{LOC.Get("HAVOK_UsedBy_Unlink")}##unlink{i}"))
+                unlinkParent = parent;
+
+            GUI.Tooltip(parents.Count == 1
+                ? LOC.Get("HAVOK_UsedBy_Unlink_Last_TT")
+                : LOC.Get("HAVOK_UsedBy_Unlink_TT", parents.Count - 1));
+
+            ImGui.SameLine();
 
             if (ImGui.Selectable($"{label}##usedBy{i}"))
                 OutlineView.Navigate(parent);
@@ -284,5 +300,9 @@ public class HavokBehaviorView
         }
 
         ImGui.EndChild();
+
+        // After the list is drawn, since the edit changes it
+        if (unlinkParent != null)
+            ActionsView.Unlink(unlinkParent, selected);
     }
 }

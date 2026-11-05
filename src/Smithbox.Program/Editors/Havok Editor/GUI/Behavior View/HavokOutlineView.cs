@@ -46,6 +46,16 @@ public class HavokOutlineView
     /// </summary>
     private const int MaxDepth = 128;
 
+    /// <summary>
+    /// A node to select once the symbols are rebuilt (after an edit that added it, it isn't in them yet)
+    /// </summary>
+    private object PendingNavigate;
+
+    public void NavigateAfterRebuild(object obj)
+    {
+        PendingNavigate = obj;
+    }
+
     public HavokOutlineView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
         View = view;
@@ -84,6 +94,14 @@ public class HavokOutlineView
         HistoryIndex = Math.Clamp(HistoryIndex, -1, History.Count - 1);
 
         MatchCache.Clear();
+
+        if (PendingNavigate != null)
+        {
+            if (symbols != null && symbols.Contains(PendingNavigate))
+                Navigate(PendingNavigate);
+
+            PendingNavigate = null;
+        }
     }
 
     #region Navigation
@@ -293,6 +311,12 @@ public class HavokOutlineView
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             SelectFromTree(node);
+
+        if (ImGui.BeginPopupContextItem("##outlineNodeMenu"))
+        {
+            Owner.ActionsView.DisplayNodeMenu(node);
+            ImGui.EndPopup();
+        }
 
         if (isSelected && ScrollToSelected)
         {

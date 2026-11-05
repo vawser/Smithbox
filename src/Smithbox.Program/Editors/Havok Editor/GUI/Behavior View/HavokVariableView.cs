@@ -134,6 +134,11 @@ public class HavokVariableView
         EditorFilters.DisplaySearchbar("havokBehaviorTabListSearch", ref Owner.PropFilter, ref Owner.ExactPropFilter);
 
         ImGui.EndChild();
+
+        if (ImGui.Button($"{LOC.Get("HAVOK_BehaviorActions_Add_Variable")}##addVariable"))
+            Owner.ActionsView.RequestAddVariable();
+
+        GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Add_Variable_TT"));
     }
 
     public bool CanDisplayProperties()

@@ -21,6 +21,84 @@ var maxBinders = args.Length > 2 ? int.Parse(args[2]) : 5;
 
 using var fs = BuildFS(game, gamePaths[gameName]);
 
+if (args.Length > 3 && args[3] == "chardata")
+{
+    // chardata: does the behbnd's character file list animations, and how do they relate to the behavior's?
+    var charBinders = fs.GetFileNamesMatching("/chr", @"(?i)\.behbnd(\.dcx)?$").Select(x => x.Replace('\\', '/'))
+        .Where(x => filter.IsMatch(x)).OrderBy(x => x).Take(maxBinders).ToList();
+
+    foreach (var bp in charBinders)
+    {
+        var rawB = fs.ReadFile(bp).Value.ToArray();
+        var bb = BND4.Read(DCX.Is(rawB) ? DCX.Decompress(rawB).ToArray() : rawB);
+        byte[] comp = bb.Files.FirstOrDefault(f => f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase)) is { } cc ? cc.Bytes.ToArray() : null;
+
+        var behaviorAnims = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var characterLists = new List<string>();
+
+        foreach (var f in bb.Files.Where(f => f.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase)))
+        {
+            object r;
+            try { r = ReadRoot(game, f.Bytes.ToArray(), comp); } catch { continue; }
+            var s = new Survey();
+            var objs = Survey.CollectAll(r);
+
+            foreach (var o in objs)
+            {
+                var tn = o.GetType().Name;
+                if (tn == "hkbBehaviorGraphStringData" && Survey.Get(o, "m_animationNames") is IList an)
+                    foreach (var n in an) behaviorAnims.Add(Path.GetFileNameWithoutExtension((n as string ?? "").Replace('\\', '/')));
+                if (tn == "hkbCharacterStringData")
+                {
+                    foreach (var field in new[] { "m_animationBundleNameData", "m_animationBundleFilenameData" })
+                    {
+                        var bundles = Survey.Get(o, field) as IList;
+                        var bundleTotal = 0; var sample = "";
+                        if (bundles != null)
+                            foreach (var b in bundles)
+                            {
+                                var names = Survey.Get(b, "m_assetNames") as IList;
+                                bundleTotal += names?.Count ?? 0;
+                                if (sample == "" && names?.Count > 0) sample = $"{Survey.Get(b, "m_bundleName")}: {string.Join(",", names.Cast<object>().Take(3))}";
+                            }
+                        characterLists.Add($"{Path.GetFileName(f.Name)} {field}: bundles {bundles?.Count ?? -1}, names {bundleTotal} ({sample})");
+                    }
+                    Console.WriteLine($"  {Path.GetFileName(f.Name)} hkbCharacterStringData fields: {string.Join(", ", Survey.Fields(o.GetType()).Select(x => x.Name + "=" + (x.GetValue(o) is IList l ? $"[{l.Count}]" : x.GetValue(o)?.ToString())))}");
+                }
+            }
+        }
+
+        Console.WriteLine($"{bp}: behavior animation names {behaviorAnims.Count}");
+        foreach (var l in characterLists) Console.WriteLine("  " + l);
+
+        // DS3: do clip internal IDs index the character's bundle names?
+        var bundleNames = new List<string>();
+        var clipPairs = new List<(int Id, string Name)>();
+        foreach (var f in bb.Files.Where(f => f.Name.Contains(".hkx", StringComparison.OrdinalIgnoreCase)))
+        {
+            object r;
+            try { r = ReadRoot(game, f.Bytes.ToArray(), comp); } catch { continue; }
+            foreach (var o in Survey.CollectAll(r))
+            {
+                if (o.GetType().Name == "hkbCharacterStringData" && Survey.Get(o, "m_animationBundleNameData") is IList bl)
+                    foreach (var b in bl)
+                        if (Survey.Get(b, "m_assetNames") is IList names)
+                            foreach (var n in names) bundleNames.Add(n as string ?? "");
+                if (o.GetType().Name == "hkbClipGenerator")
+                    clipPairs.Add((Survey.GetInt(o, "m_animationInternalId"), Survey.Get(o, "m_animationName") as string ?? ""));
+            }
+        }
+        if (bundleNames.Count > 0)
+        {
+            var match = clipPairs.Count(p => p.Id >= 0 && p.Id < bundleNames.Count && string.Equals(Path.GetFileNameWithoutExtension(bundleNames[p.Id].Replace('\\', '/')), p.Name, StringComparison.OrdinalIgnoreCase));
+            var inList = clipPairs.Count(p => bundleNames.Contains(p.Name, StringComparer.OrdinalIgnoreCase));
+            Console.WriteLine($"  bundle names {bundleNames.Count}: clips {clipPairs.Count}, internal id -> bundle name matches {match}, clip name in bundle list {inList}, distinct clip names {clipPairs.Select(p => p.Name.ToLowerInvariant()).Distinct().Count()}");
+            Console.WriteLine($"  sample: {string.Join(" | ", clipPairs.Take(4).Select(p => $"{p.Name} id {p.Id} -> {(p.Id >= 0 && p.Id < bundleNames.Count ? bundleNames[p.Id] : "out")}"))}");
+        }
+    }
+    return;
+}
+
 if (args.Length > 3 && args[3] == "taedump")
 {
     // taedump: the anibnd time acts of the first matching chr, and its clip names by time act
@@ -228,6 +306,28 @@ class Survey
         return f;
     }
 
+    public static List<object> CollectAll(object root)
+    {
+        var all = new List<object>();
+        var seen = new HashSet<object>(ReferenceEqualityComparer.Instance);
+        var stack = new Stack<object>();
+        stack.Push(root);
+        while (stack.Count > 0)
+        {
+            var o = stack.Pop();
+            if (o == null || !seen.Add(o)) continue;
+            all.Add(o);
+            foreach (var f in Fields(o.GetType()))
+            {
+                if (f.FieldType == typeof(string) || f.FieldType.IsValueType) continue;
+                var v = f.GetValue(o);
+                if (v is IList l) { foreach (var e in l) if (IsObj(e)) stack.Push(e); }
+                else if (IsObj(v)) stack.Push(v);
+            }
+        }
+        return all;
+    }
+
     public static object Get(object o, string n) => o?.GetType().GetField(n, BindingFlags.Instance | BindingFlags.Public)?.GetValue(o);
     public static int GetInt(object o, string n) => Get(o, n) is { } v ? Convert.ToInt32(v) : int.MinValue;
 
@@ -238,6 +338,7 @@ class Survey
     // Counters (name -> count), and example lists
     public Dictionary<int, HashSet<long>> TimeActs;
     public HashSet<string> AnimFiles;
+    bool CreationOncePerFile;
     public string FileKind = "";
     HashSet<long> AllAnimations;
 
@@ -399,7 +500,145 @@ class Survey
                 Example("clip m_animationName", animName ?? "null");
             }
 
-            // Phase 3: clips and CMSGs against the chr's time acts
+            // Phase 4: the values the game's own objects have, so new ones can copy them
+
+
+    void CheckCreationPatterns(object obj, string tn, object stringData, object graphData)
+    {
+        if (!CreationOncePerFile)
+        {
+            CreationOncePerFile = true;
+
+            // Events
+            if (Get(graphData, "m_eventInfos") is IList infos)
+                foreach (var info in infos) Count($"create.eventInfo.flags {Get(info, "m_flags")}");
+            if (Get(stringData, "m_eventNames") is IList en && en.Count > 0)
+                Example("create event names (last)", string.Join(",", en.Cast<object>().Skip(Math.Max(0, en.Count - 4))), 8);
+
+            // Variables: type, role, bounds and initial word value per type
+            var vNames = Get(stringData, "m_variableNames") as IList;
+            string names(int k) => vNames != null && k < vNames.Count ? vNames[k] as string : "?";
+            var vInfos = Get(graphData, "m_variableInfos") as IList;
+            var vBounds = Get(graphData, "m_variableBounds") as IList;
+            var initial = Get(graphData, "m_variableInitialValues");
+            var words = Get(initial, "m_wordVariableValues") as IList;
+            var quads = Get(initial, "m_quadVariableValues") as IList;
+            var variants = Get(initial, "m_variantVariableValues") as IList;
+            if (vInfos != null)
+            {
+                var vectorCount = 0; var pointerCount = 0;
+                for (var i = 0; i < vInfos.Count; i++)
+                {
+                    var type = Get(vInfos[i], "m_type")?.ToString();
+                    var role = Get(Get(vInfos[i], "m_role"), "m_role")?.ToString();
+                    var roleFlags = Get(Get(vInfos[i], "m_role"), "m_flags")?.ToString();
+                    Count($"create.var {type} role {role} flags {roleFlags}");
+                    if (type == "VARIABLE_TYPE_REAL" && words != null && i < words.Count)
+                    {
+                        // Is a real's word value the bits of a float? (1.0 = 1065353216)
+                        var w = GetInt(words[i], "m_value");
+                        var asFloat = BitConverter.Int32BitsToSingle(w);
+                        Count(w == 0 ? "create.var real word 0" : float.IsFinite(asFloat) && Math.Abs(asFloat) < 1e7 && Math.Abs(asFloat) > 1e-7 ? "create.var real word = plausible float bits" : "create.var real word NOT float-like");
+                        if (w != 0) Example("create real word values", $"{(names(i))}: {w} -> {asFloat}", 12);
+                        if (vBounds != null && i < vBounds.Count)
+                        {
+                            var bmax = GetInt(Get(vBounds[i], "m_max"), "m_value");
+                            if (bmax != 0) Example("create real bounds max", $"{bmax} -> {BitConverter.Int32BitsToSingle(bmax)}", 8);
+                        }
+                    }
+                    if (type is "VARIABLE_TYPE_VECTOR3" or "VARIABLE_TYPE_VECTOR4" or "VARIABLE_TYPE_QUATERNION")
+                    {
+                        var w = words != null && i < words.Count ? GetInt(words[i], "m_value") : int.MinValue;
+                        Count(w == vectorCount ? "create.var quad word value == running quad index" : "create.var quad word value OTHER");
+                        vectorCount++;
+                    }
+                    if (type == "VARIABLE_TYPE_POINTER")
+                    {
+                        var w = words != null && i < words.Count ? GetInt(words[i], "m_value") : int.MinValue;
+                        Count(w == pointerCount ? "create.var pointer word value == running variant index" : "create.var pointer word value OTHER");
+                        pointerCount++;
+                    }
+                    if (vBounds != null && i < vBounds.Count)
+                    {
+                        var min = GetInt(Get(vBounds[i], "m_min"), "m_value"); var max = GetInt(Get(vBounds[i], "m_max"), "m_value");
+                        Count($"create.var bounds {(min == 0 && max == 0 ? "0/0" : "set")}");
+                    }
+                }
+                Count(quads?.Count == vectorCount ? "create.quad list == vector variable count" : "create.quad list OTHER count");
+                Count(variants?.Count == pointerCount ? "create.variant list == pointer variable count" : "create.variant list OTHER count");
+            }
+
+            // Animation names: one per distinct clip animation? Same path template?
+            if (Get(stringData, "m_animationNames") is IList an && an.Count > 0)
+            {
+                var distinct = an.Cast<object>().Select(o => (o as string ?? "").ToLowerInvariant()).Distinct().Count();
+                Count(distinct == an.Count ? "create.animationNames no duplicates" : "create.animationNames HAS duplicates");
+                var template = Regex.Replace(an[0] as string ?? "", @"a\d+_\d+", "{anim}");
+                template = Regex.Replace(template, @"a\d{3}\\", "aXXX\\");
+                Example("create animationNames template", template, 4);
+                var clips = All.Where(o => o.GetType().Name == "hkbClipGenerator").ToList();
+                var idsPerName = clips.GroupBy(c => (Get(c, "m_animationName") as string ?? "").ToLowerInvariant())
+                    .Select(g => g.Select(c => GetInt(c, "m_animationInternalId")).Distinct().Count());
+                Count(idsPerName.All(n => n == 1) ? "create.internalId one per animation name" : "create.internalId SEVERAL per name");
+                Count(clips.Select(c => GetInt(c, "m_animationInternalId")).Distinct().Count() == clips.Select(c => (Get(c, "m_animationName") as string ?? "").ToLowerInvariant()).Distinct().Count()
+                    ? "create.internalId count == distinct names" : "create.internalId count != distinct names");
+                Count(an.Count == clips.Select(c => (Get(c, "m_animationName") as string ?? "").ToLowerInvariant()).Distinct().Count()
+                    ? "create.animationNames count == distinct clip names" : "create.animationNames count != distinct clip names");
+            }
+        }
+
+        if (tn == "hkbClipGenerator")
+        {
+            Count($"create.clip mode {Get(obj, "m_mode")} speed {Get(obj, "m_playbackSpeed")} flags {Get(obj, "m_flags")}");
+            Count($"create.clip crop {Get(obj, "m_cropStartAmountLocalTime")}/{Get(obj, "m_cropEndAmountLocalTime")} start {Get(obj, "m_startTime")} enforced {Get(obj, "m_enforcedDuration")} ucf {Get(obj, "m_userControlledTimeFraction")} mask {Get(obj, "m_userPartitionMask")}");
+            Count("create.clip triggers " + (Get(obj, "m_triggers") == null ? "null" : "set"));
+            Count("create.clip bindings " + (Get(obj, "m_variableBindingSet") == null ? "null" : "set"));
+            var name = Get(obj, "m_name") as string ?? "";
+            var anim = Get(obj, "m_animationName") as string ?? "";
+            Count(name == anim ? "create.clip name == animation" : name.Contains(anim) ? "create.clip name contains animation" : "create.clip name other");
+            if (name != anim) Example("create clip names", $"{name} ({anim})", 8);
+            Count($"create.clip userData {Get(obj, "m_userData")}");
+        }
+
+        if (tn == "CustomManualSelectorGenerator")
+        {
+            var gens = (IList)Get(obj, "m_generators");
+            Count($"create.cmsg generators types {string.Join("+", gens.Cast<object>().Select(g => g?.GetType().Name ?? "null").Distinct())}");
+            Count($"create.cmsg selectedIndexAfterActivate {Get(obj, "m_changeTypeOfSelectedIndexAfterActivate")} end {Get(obj, "m_animeEndEventType")} tae {Get(obj, "m_enableTae")} script {Get(obj, "m_enableScript")}");
+            Count("create.cmsg generatorChangedTransitionEffect " + (Get(obj, "m_generatorChangedTransitionEffect")?.GetType().Name ?? "null"));
+            Example("create cmsg names", $"{Get(obj, "m_name")} ({Get(obj, "m_animId")})", 8);
+        }
+
+        if (tn is "TransitionInfo" or "hkbStateMachineTransitionInfo")
+        {
+            var array = Parents.GetValueOrDefault(obj)?.FirstOrDefault();
+            var wild = array != null && Parents.GetValueOrDefault(array.Value.Parent)?.Any(p => p.Field == "m_wildcardTransitions") == true;
+            Count($"create.transition {(wild ? "wildcard" : "state")} flags {Get(obj, "m_flags")} priority {Get(obj, "m_priority")}");
+            Count($"create.transition effect {Get(obj, "m_transition")?.GetType().Name ?? "null"} condition {Get(obj, "m_condition")?.GetType().Name ?? "null"}");
+        }
+
+        if (tn is "StateInfo" or "hkbStateMachineStateInfo")
+        {
+            Count($"create.state probability {Get(obj, "m_probability")} enable {Get(obj, "m_enable")} listeners {((IList)Get(obj, "m_listeners"))?.Count}");
+            Count($"create.state enter {(Get(obj, "m_enterNotifyEvents") == null ? "null" : "set")} exit {(Get(obj, "m_exitNotifyEvents") == null ? "null" : "set")} transitions {(Get(obj, "m_transitions") == null ? "null" : "set")} bindings {(Get(obj, "m_variableBindingSet") == null ? "null" : "set")}");
+            Count("create.state generator " + (Get(obj, "m_generator")?.GetType().Name ?? "null"));
+            // How are a machine's state IDs laid out?
+        }
+
+        if (tn == "hkbStateMachine")
+        {
+            var ids = ((IList)Get(obj, "m_states")).Cast<object>().Where(s => s != null).Select(s => GetInt(s, "m_stateId")).ToList();
+            var sorted = ids.OrderBy(i => i).ToList();
+            Count(ids.SequenceEqual(sorted) ? "create.sm state ids in ascending order" : "create.sm state ids NOT ordered");
+            Count(sorted.Count == 0 || sorted.Last() - sorted.First() + 1 == sorted.Count ? "create.sm state ids contiguous" : "create.sm state ids gaps");
+            var wild = Get(obj, "m_wildcardTransitions");
+            var wildCount = (Get(wild, "m_transitions") as IList)?.Count ?? 0;
+            var stateTransitions = ((IList)Get(obj, "m_states")).Cast<object>().Sum(s => (Get(Get(s, "m_transitions"), "m_transitions") as IList)?.Count ?? 0);
+            Count($"create.sm transitions {(wildCount > 0 ? "wildcard" : "")}{(stateTransitions > 0 ? "+state" : "")}");
+        }
+    }
+
+    // Phase 3: clips and CMSGs against the chr's time acts
     void CheckTimeActs(object obj, string tn)
     {
         if (TimeActs == null)
@@ -453,6 +692,7 @@ class Survey
     }
 
             CheckTimeActs(obj, tn);
+            CheckCreationPatterns(obj, tn, stringData, graphData);
 
     // NR's extra CMSG field: how it's used, and what else is set on CMSGs that have it
             if (tn == "CustomManualSelectorGenerator" && Get(obj, "m_isBasePoseAnim") is bool basePose)

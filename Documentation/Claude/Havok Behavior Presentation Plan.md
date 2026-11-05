@@ -153,6 +153,37 @@ Not covered:
 
 ## Phase 4: Composite actions
 
+> **Status (2026-11-05): implemented, not yet checked in the app. `Smithbox.Program` builds.** D2 decided: copy, keeping shared generators shared.
+> - **Framework:**
+>   - `Actions/HavokCompoundAction.cs`: one undo step, counted as a structural edit.
+>   - Steps are `HavokDelegateAction` apply/revert pairs, rather than `HavokChangeField` (which looks the field's owner up recursively).
+>   - `Utilities/HavokBehaviorOperations.cs` holds the operations; `Utilities/HavokBehaviorCloner.cs` copies objects.
+>   - `GUI/Behavior View/HavokBehaviorActionsView.cs` has the Outline's right-click menu and the dialogs. After an edit, the Outline selects the new object once the symbols are rebuilt.
+> - **Operations:**
+>   - *Add Variable* (Variables tab): the name, `hkbVariableInfo`, bounds (only if the file has bounds), and initial word value. A real is stored as float bits. A vector or quaternion stores the next quad index and adds a quad value; a pointer stores the next variant index and adds a null variant.
+>   - *Add Transition* (state machine or state menu): from a state or from any state (wildcard), on an existing or new event (a new one adds the name and an `hkbEventInfo` with flags 0). It copies a transition from the same list (or the machine's wildcards), keeping the effect shared. From a state, flags are 0; a wildcard with no template gets ALLOW_SELF \| GLOBAL \| LOCAL (3584). It creates the `TransitionInfoArray` if the state has none.
+>   - *Clone State*: the next free state ID (max + 1), appended. The subtree is copied, keeping objects that have parents outside it (D2), with an option to copy those too. Transition effects always stay shared.
+>   - *Add Animation* (CMSG menu): a clip `aCCC_{animId}` copied from one of the selector's clips. Its name is the template's with the animation swapped (`a000_041600_hkx_AutoSet_00` becomes `a001_041600_hkx_AutoSet_00`). Its internal ID is that of a clip with the same animation, or a new `m_animationNames` entry made from the last one (the animation and its `aXXX` folder replaced; enemy paths have no folder).
+>   - *Unlink* (Used By): removes one reference. The last one removes the object from the file.
+> - New objects get their embedded members and lists created (`NewObject`/`FillEmbedded`), since HKX2's constructors leave them null (`hkbVariableInfo.m_role`), which can't be saved.
+> - **DS3 limit:** a clip for an animation the behavior doesn't use yet is refused with an explanation. DS3 clips have no internal ID; the character file (`Characters/cXXXX.hkx`, `m_animationBundleNameData`) lists every animation the behavior uses, and that's a different file. Supporting it needs cross-file edits.
+
+### Creation survey (2026-11-05, ER / NR / DS3)
+
+| Question | Result |
+|---|---|
+| `hkbEventInfo.m_flags` | 0 on every event (558,794 ER, 385,137 NR, 125,214 DS3) |
+| Variable role | `ROLE_DEFAULT`, flags none, on every variable |
+| Vector/quaternion word value | The running index into `m_quadVariableValues`, for every one; the quad list is exactly one per such variable |
+| Pointer word value | The running index into `m_variantVariableValues`, for every one |
+| Real word value | The bits of a float (`StaminaPercentage` 1065353216 = 1.0) |
+| Bounds | Set or 0/0; the list is either one per variable or empty |
+| `m_animationNames` | One entry per distinct clip animation, no duplicates; internal ID = its index; path template `..\..\..\..\Model\chr\cXXXX\hkx\aXXX\{anim}.hkx` (player, c9997), no folder for enemies, one more `..\` in NR |
+| Character file animation lists | Empty in ER/NR (`m_animationBundleNameData` has no names). DS3: one name per distinct clip animation (c0000: 5,721) |
+| Clips | Triggers null, crop/start/enforced 0, speed 1, flags 0; `MODE_SINGLE_PLAY` (77%) or `MODE_LOOPING`; the name contains the animation (`…hkx_AutoSet_00`, `.hkx06`) |
+| Transitions | From a state: flags 0, priority 0, `CustomTransitionEffect`, no condition (all of them). Wildcards: mostly flags 3584, some 2048 or 3072 |
+| States | Probability 1, enabled, no listeners; mostly no notify events. IDs aren't always ascending (ER: 10,483 machines) or contiguous (7,066) |
+
 Each of these is **one undoable step**, built from existing `HavokChangeField` / `HavokAddListEntry` / `HavokRemoveListEntry` actions grouped together. They're staged until Save, like every other edit (review U1).
 
 1. **Register event / variable / character property:** appends to every parallel array together. Variables get a type, initial value and bounds.

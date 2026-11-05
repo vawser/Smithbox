@@ -17,6 +17,206 @@
       "Text": "Variables"
     },
     {
+      "Key": "HAVOK_BehaviorActions_Add_Animation",
+      "Text": "Add Animation..."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Animation_TT",
+      "Text": "Add a clip to this selector for another animation category (aCCC_ plus the selector's animation ID). The clip copies one of the selector's clips, and is given an animation name entry if the animation is new to the file."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Clone_State",
+      "Text": "Clone State..."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Clone_State_TT",
+      "Text": "Copy this state into the same state machine, with a new name and state ID. Its transitions out are copied; transitions into it aren't."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Transition_From_State",
+      "Text": "Add Transition From This State..."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Transition",
+      "Text": "Add Transition..."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Transition_TT",
+      "Text": "Add a transition to a state on an event, from one state or from any state (a wildcard transition). The event can be a new one."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Copy_Name",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Variable",
+      "Text": "Add Variable..."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Add_Variable_TT",
+      "Text": "Add a variable, with its info, bounds and initial value kept in step."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Selector",
+      "Text": "Selector: {0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Category",
+      "Text": "Category"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Category_TT",
+      "Text": "The animation category: the aCCC in aCCC_YYYYYY. For the player, each category has its own time act (a000, a020 ...)."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_New_Clip",
+      "Text": "New clip: {0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_State",
+      "Text": "State: {0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Copy_Shared",
+      "Text": "Copy shared generators too"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Copy_Shared_TT",
+      "Text": "Off: generators also used outside this state stay shared, so the copy refers to the same ones (an edit to them changes both).\nOn: everything below the state is copied.\n\nTransition effects always stay shared."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_New_State_ID",
+      "Text": "New state ID: {0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_State_Machine",
+      "Text": "State machine: {0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Any_State",
+      "Text": "Any state (wildcard)"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_From",
+      "Text": "From"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_From_TT",
+      "Text": "A wildcard transition can be taken from any state of the machine, and is how most of the game's transitions are made."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_New_Event",
+      "Text": "New event"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_New_Event_Hint",
+      "Text": "Event name (e.g. W_MyAttack)"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Pick_Event",
+      "Text": "Pick an event"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_To",
+      "Text": "To"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Variable_Name_Hint",
+      "Text": "Variable name"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Variable_Type",
+      "Text": "Type"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Variable_Initial",
+      "Text": "Initial value"
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Variable_Initial_TT",
+      "Text": "The variable's value when the behavior starts."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Variable_Not_Word",
+      "Text": "Starts at zero (vector, quaternion as identity) or null (pointer). Edit it afterwards in the Variables tab."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Name",
+      "Text": "Enter a name."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Graph_Data",
+      "Text": "This file has no behavior graph data to add to."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Event_Exists",
+      "Text": "There's already an event called {0}."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Variable_Exists",
+      "Text": "There's already a variable called {0}."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Cannot_Create",
+      "Text": "Couldn't create a {0}."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Generators",
+      "Text": "This selector has no generator list."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Clip_Exists",
+      "Text": "This selector already has a clip for {0}."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Template_Clip",
+      "Text": "There's no clip in this file to copy."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Character_Bundle",
+      "Text": "{0} isn't used by any clip in this behavior yet. In this game the behbnd's character file (Characters/cXXXX.hkx, m_animationBundleNameData) lists every animation the behavior uses, so add {0} there first. Adding a clip for an animation the behavior already uses works here."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Animation_Names",
+      "Text": "This file has no animation names to add the new animation to."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_State_Machine",
+      "Text": "The state's state machine wasn't found."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_State_Exists",
+      "Text": "The state machine already has a state called {0}."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_No_Event",
+      "Text": "Pick an event, or enter a new one."
+    },
+    {
+      "Key": "HAVOK_BehaviorActions_Error_Not_Referenced",
+      "Text": "The object isn't referenced from there any more."
+    },
+    {
+      "Key": "HAVOK_UsedBy_Unlink",
+      "Text": "Unlink"
+    },
+    {
+      "Key": "HAVOK_UsedBy_Unlink_TT",
+      "Text": "Remove this reference to the selected object. It's still used in {0} other places. Can be undone."
+    },
+    {
+      "Key": "HAVOK_UsedBy_Unlink_Last_TT",
+      "Text": "Remove this reference to the selected object. It's the only one, so the object leaves the file. Can be undone.\n\nRemoving a state leaves any transitions to it pointing at a missing state; the Problems tab lists those."
+    },
+    {
       "Key": "HAVOK_BehaviorView_Tab_Animations",
       "Text": "Animations"
     },
