@@ -59,6 +59,12 @@ namespace SoulsFormats
         public bool WideStrings { get; set; }
         private bool HasComments { get; set; }
 
+        /// <summary>
+        /// V2 (DS2) only: the bytes after the last section. The game pads these files to 16 bytes with
+        /// uninitialised memory, so the original bytes are kept and reused when writing the padding.
+        /// </summary>
+        public byte[] Padding { get; set; }
+
         public GPARAM()
         {
             Unk0D = true;
@@ -72,7 +78,9 @@ namespace SoulsFormats
             clone.Unk0D = Unk0D;
             clone.Count14 = Count14;
             clone.Data30 = Data30;
+            clone.Padding = Padding;
 
+            clone.Unk40 = Unk40;
             clone.Unk50 = Unk50;
             clone.WideStrings = WideStrings;
             clone.HasComments = HasComments;
@@ -199,6 +207,15 @@ namespace SoulsFormats
             for (int index = 0; index < capacity; ++index)
             {
                 UnkParamExtras.Add(new UnkParamExtra(br, Version, baseOffsets));
+            }
+
+            // V2 ends with the extra IDs, then padding to 16 bytes
+            Padding = null;
+            if (Version is GparamVersion.V2)
+            {
+                long contentEnd = baseOffsets.ParamExtraIds + UnkParamExtras.Sum(e => (long)e.Ids.Count) * 4;
+                if (contentEnd < br.Length)
+                    Padding = br.GetBytes(contentEnd, (int)(br.Length - contentEnd));
             }
 
             // Comments
@@ -343,6 +360,16 @@ namespace SoulsFormats
             for (int index = 0; index < UnkParamExtras.Count; ++index)
             {
                 UnkParamExtras[index].WriteIds(bw, baseOffsets, index);
+            }
+
+            // V2: pad to 16 bytes as the game's files are, reusing the read padding bytes
+            if (Version is GparamVersion.V2)
+            {
+                int padCount = (int)((16 - bw.Position % 16) % 16);
+                for (int i = 0; i < padCount; i++)
+                {
+                    bw.WriteByte(Padding != null && i < Padding.Length ? Padding[i] : (byte)0);
+                }
             }
 
             // Comments
