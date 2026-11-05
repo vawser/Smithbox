@@ -109,7 +109,10 @@ namespace Veldrid
         
         internal struct PerFrameData
         {
-            public List<CommandBufferPool> CommandBufferPools;
+            // Command pools are externally synchronized in Vulkan (allocation and recording both draw on the pool),
+            // and command lists are taken from any thread (e.g. UpdateBuffer while a viewport is built in the
+            // background), so each thread gets its own set of pools for each frame, one per queue type
+            public ConcurrentDictionary<int, CommandBufferPool[]> CommandBufferPools;
             public List<BufferPool.Block> StagingBlocks;
             public BufferPool.Block DeviceStagingBlock;
             
@@ -124,13 +127,9 @@ namespace Veldrid
 
             public PerFrameData(GraphicsDevice device, int index)
             {
-                CommandBufferPools = new List<CommandBufferPool>();
+                CommandBufferPools = new ConcurrentDictionary<int, CommandBufferPool[]>();
                 StagingBlocks = new List<BufferPool.Block>();
                 DeviceStagingBlock = null;
-                for (int i = 0; i < (int)QueueType.QueueTypeCount; i++)
-                {
-                    CommandBufferPools.Add(new CommandBufferPool(device, device._queueFamilyIndices[i]));
-                }
 
                 DestroyedBuffers = new List<BufferInfo>();
                 DestroyedImages = new List<ImageInfo>();
@@ -156,9 +155,10 @@ namespace Veldrid
                     WaitFences.Clear();
                 }
 
-                foreach (var pool in CommandBufferPools)
+                foreach (var pools in CommandBufferPools.Values)
                 {
-                    pool.Reset();
+                    foreach (var pool in pools)
+                        pool.Reset();
                 }
 
                 foreach (var block in StagingBlocks)
@@ -187,10 +187,24 @@ namespace Veldrid
 
             public void Destroy(GraphicsDevice device)
             {
-                foreach (var pool in CommandBufferPools)
+                foreach (var pools in CommandBufferPools.Values)
                 {
-                    pool.Dispose();
+                    foreach (var pool in pools)
+                        pool.Dispose();
                 }
+                CommandBufferPools.Clear();
+            }
+
+            public CommandBufferPool GetThreadPool(GraphicsDevice device, QueueType type)
+            {
+                var pools = CommandBufferPools.GetOrAdd(Environment.CurrentManagedThreadId, static (_, d) =>
+                {
+                    var created = new CommandBufferPool[(int)QueueType.QueueTypeCount];
+                    for (int i = 0; i < created.Length; i++)
+                        created[i] = new CommandBufferPool(d, d._queueFamilyIndices[i]);
+                    return created;
+                }, device);
+                return pools[(int)type];
             }
         }
 
@@ -1426,7 +1440,7 @@ namespace Veldrid
 
         internal CommandList GetCommandList(QueueType type)
         {
-            var buffer = _perFrameData[_currentFrame].CommandBufferPools[(int)type].GetCommandBuffer();
+            var buffer = _perFrameData[Volatile.Read(ref _currentFrame)].GetThreadPool(this, type).GetCommandBuffer();
             
             var ret = _commandListPool.Get();
             ret.Initialize(this, buffer, type);

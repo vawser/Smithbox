@@ -25,6 +25,10 @@
       "Text": "Behavior Categories"
     },
     {
+      "Key": "HAVOK_Window_Categories",
+      "Text": "Categories"
+    },
+    {
       "Key": "HAVOK_Window_Contents",
       "Text": "Contents"
     },
@@ -47,6 +51,18 @@
     {
       "Key": "HAVOK_Undo_Showing_Binder",
       "Text": "Showing {0}, whose file list the undo/redo changes."
+    },
+    {
+      "Key": "HAVOK_FileOutline_No_File",
+      "Text": "Select a file to browse it here."
+    },
+    {
+      "Key": "HAVOK_FileOutline_Category_Outline",
+      "Text": "Outline"
+    },
+    {
+      "Key": "HAVOK_FileOutline_Category_Outline_TT",
+      "Text": "The file as a tree of its objects (skeletons, animations, shapes, physics systems ...). Select one to edit it in the Properties window; click it again to edit the whole file."
     }
   ]
 }

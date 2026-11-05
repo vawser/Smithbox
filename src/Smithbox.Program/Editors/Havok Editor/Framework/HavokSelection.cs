@@ -43,6 +43,7 @@ public class HavokSelection
         AppliedHavokTreeSearch = false;
 
         View.PropertyView.BehaviorView.ResetSelection();
+        View.PropertyView.FileOutlineView.ResetSelection();
     }
 
     public void ClearFileSelection()
@@ -53,6 +54,7 @@ public class HavokSelection
         AppliedHavokTreeSearch = false;
 
         View.PropertyView.BehaviorView.ResetSelection();
+        View.PropertyView.FileOutlineView.ResetSelection();
     }
 
     public void ApplyFileSpecificTreeSearches(object sourceObject)
@@ -61,6 +63,12 @@ public class HavokSelection
             return;
 
         View.PropertyView.BehaviorView.SetupBehaviorView(sourceObject);
+
+        // A file the behavior windows don't show is browsed as an outline instead
+        if (View.PropertyView.BehaviorView.IsShown)
+            View.PropertyView.FileOutlineView.ResetSelection();
+        else
+            View.PropertyView.FileOutlineView.Setup(sourceObject);
 
         AppliedHavokTreeSearch = true;
     }

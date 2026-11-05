@@ -243,21 +243,23 @@ public class HavokEditorView : IEditorView
 
         ImGui.End();
 
-        // The behavior symbols are built from the shown file before the behavior windows draw
-        // (the Properties window used to do this, but it now draws after them)
-        if (Selection.CategoryMode is HavokCategoryMode.Behavior && Selection.SelectedFileWrapper?.Root is { } shownRoot)
+        // The behavior symbols (or the file outline) are built from the shown file before the
+        // Categories and Contents windows draw (the Properties window used to do this, but it now draws after them)
+        if (Selection.SelectedFileWrapper?.Root is { } shownRoot)
         {
             Selection.ApplyFileSpecificTreeSearches(shownRoot);
         }
 
         var behaviorView = PropertyView.BehaviorView;
+        var fileOutlineView = PropertyView.FileOutlineView;
 
-        // Behavior Categories
-        // -> What the Contents window lists (Outline, Animations, State Machines ...)
+        // Categories
+        // -> What the Contents window lists: for a behavior (Outline, Animations, State Machines ...),
+        //    for any other file (Outline)
 
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Behavior_Categories")}##havokeditor_BehaviorCategories_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Categories")}###havokeditor_BehaviorCategories_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
@@ -265,7 +267,10 @@ public class HavokEditorView : IEditorView
                 Editor.ViewHandler.ActiveView = this;
             }
 
-            behaviorView.DisplayCategoryWindow();
+            if (behaviorView.IsShown)
+                behaviorView.DisplayCategoryWindow();
+            else
+                fileOutlineView.DisplayCategoryWindow();
         }
 
         ImGui.End();
@@ -287,31 +292,42 @@ public class HavokEditorView : IEditorView
                     behaviorView.SelectionSource = HavokBehaviorSelectionSource.Contents;
             }
 
-            behaviorView.DisplayContentsWindow();
+            if (behaviorView.IsShown)
+                behaviorView.DisplayContentsWindow();
+            else
+                fileOutlineView.DisplayContentsWindow();
         }
 
         ImGui.End();
 
         // Graph
         // -> The state machine of the Contents selection
+        // Hidden unless a behavior graph is shown, or the Behavior category is picked and its file is still to be chosen
+        // (a window that isn't submitted keeps its dock slot, so it comes back where it was)
 
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
-        if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Graph")}##havokeditor_Graph_{viewIndex}", GUI.GetInnerWindowFlags()))
+        var showGraph = behaviorView.IsShown
+            || (Selection.CategoryMode is HavokCategoryMode.Behavior && Selection.SelectedFileWrapper?.Root == null);
+
+        if (showGraph)
         {
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_HavokEditorView);
+            if (ImGui.Begin($@"{LOC.Get("HAVOK_Window_Graph")}##havokeditor_Graph_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
-                FocusManager.SetFocus(EditorFocusContext.HavokEditor_Graph);
-                Editor.ViewHandler.ActiveView = this;
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.HavokEditor_Graph);
+                    Editor.ViewHandler.ActiveView = this;
 
-                if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
-                    behaviorView.SelectionSource = HavokBehaviorSelectionSource.Graph;
+                    if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+                        behaviorView.SelectionSource = HavokBehaviorSelectionSource.Graph;
+                }
+
+                behaviorView.DisplayGraphWindow();
             }
 
-            behaviorView.DisplayGraphWindow();
+            ImGui.End();
         }
-
-        ImGui.End();
 
         // Properties
         // -> Editor for the havok properties (copy MapHavokPropertyView)

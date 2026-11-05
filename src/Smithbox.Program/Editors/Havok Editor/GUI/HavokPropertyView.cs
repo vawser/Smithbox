@@ -23,12 +23,18 @@ public class HavokPropertyView
 
     public HavokBehaviorView BehaviorView;
 
+    /// <summary>
+    /// The Categories and Contents windows for files that aren't behavior graphs
+    /// </summary>
+    public HavokFileOutlineView FileOutlineView;
+
     public HavokPropertyView(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
 
         BehaviorView = new(view, project);
+        FileOutlineView = new(view, project);
     }
 
     public void Draw()
@@ -234,11 +240,9 @@ public class HavokPropertyView
         }
         else
         {
-            ImGui.BeginChild("havokPropEditSection", ImGuiChildFlags.Borders);
-
-            HavokPropEdit(sourceObject);
-
-            ImGui.EndChild();
+            // Any other file is browsed in the Categories and Contents windows (its outline);
+            // this window edits the node selected there, or the whole file
+            FileOutlineView.DisplayProperties(sourceObject);
         }
     }
 
