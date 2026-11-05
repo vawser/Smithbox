@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -305,6 +306,11 @@ public class ViewportMenu
                 CFG.Current.Interface_TimeActEditor_ToolWindow = true;
                 CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering = true;
                 timeAct.View.RenderingTool.FocusRequested = true;
+                break;
+            case GparamUniverse gparam:
+                CFG.Current.Interface_GparamEditor_ToolWindow = true;
+                CFG.Current.Interface_GparamEditor_Tool_ViewportRendering = true;
+                gparam.View.RenderingTool.FocusRequested = true;
                 break;
         }
     }

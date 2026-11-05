@@ -66,34 +66,29 @@ public class LightProbeGridBank
     public int ShadedGridCount { get; private set; }
 
     /// <summary>
-    /// Adds the shaders' entries for the probe grids of the loaded maps whose textures are on the GPU, uploading
-    /// those not made yet, and lets go of the textures of grids no longer loaded. Called every frame with the
-    /// irradiance volume table.
+    /// Adds the shaders' entries for the probe grids whose textures are on the GPU, uploading those not made yet,
+    /// and lets go of the textures of grids no longer given. Called every frame with the irradiance volume table.
+    /// Each group comes with the world matrix it is placed by (see <see cref="GetGroups" />), and is lit with
+    /// <paramref name="shColor" />: the GPARAM's Dominant Light Map SH Color Scale x SH R/G/B Scale (DS3 m30: 0.5).
     /// </summary>
-    public void AppendEntries(IEnumerable<MapContainer> maps, List<(IrradianceVolumeData Data, int Priority, float Size)> found)
+    public void AppendEntries(IEnumerable<(Matrix4x4 World, BTPB.Group Group)> groups,
+        List<(IrradianceVolumeData Data, int Priority, float Size)> found, Vector3 shColor)
     {
         var seen = new HashSet<BTPB.Group>(ReferenceEqualityComparer.Instance);
         var shaded = 0;
 
-        // The GPARAM's Dominant Light Map SH Color Scale x SH R/G/B Scale (DS3 m30: 0.5), from the lighting resolved
-        // last frame
-        var shColor = SceneRenderer.MapLighting?.ShColor ?? Vector3.One;
-
         if (CanUse() && SceneRenderer.GlobalVolumeTexturePool != null)
         {
-            foreach (var map in maps)
+            foreach (var (world, group) in groups)
             {
-                foreach (var (world, group) in GetGroups(map))
-                {
-                    seen.Add(group);
+                seen.Add(group);
 
-                    if (!TryGetGrid(group, out var grid) || !grid.Uploaded ||
-                        grid.Textures.Any(t => t == null || !t.Resident))
-                        continue;
+                if (!TryGetGrid(group, out var grid) || !grid.Uploaded ||
+                    grid.Textures.Any(t => t == null || !t.Resident))
+                    continue;
 
-                    found.Add((BuildEntry(grid, world, found.Count, shColor), 0, MinSpacing(grid)));
-                    shaded++;
-                }
+                found.Add((BuildEntry(grid, world, found.Count, shColor), 0, MinSpacing(grid)));
+                shaded++;
             }
         }
 
@@ -113,7 +108,7 @@ public class LightProbeGridBank
     /// The groups of a map's light probe file, with the world matrix they are placed by (the map's offset). The
     /// file ending _0000 if the map has several, else the first.
     /// </summary>
-    private static IEnumerable<(Matrix4x4 World, BTPB.Group Group)> GetGroups(MapContainer map)
+    public static IEnumerable<(Matrix4x4 World, BTPB.Group Group)> GetGroups(MapContainer map)
     {
         var parents = map.LightProbeParents;
 

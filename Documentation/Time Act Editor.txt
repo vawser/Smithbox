@@ -2,8 +2,6 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Tools:
-    - Combo Builder:
-        - User can define a set of animations for X model
-        - Combo builder can then allow them to be played in order
-        - Used to help visualize what a moveset could look like.
+- Animations: add representation of
+    - Blending
+    - Root Motion

@@ -1,0 +1,160 @@
+{
+  "Entries": [
+    {
+      "Key": "GPARAM_Viewport_Map_Not_Found",
+      "Text": "The map {0} could not be found in the project."
+    },
+    {
+      "Key": "GPARAM_Viewport_Map_Read_Failed",
+      "Text": "The MSB of {0} could not be read for the GPARAM viewport."
+    },
+    {
+      "Key": "GPARAM_Viewport_Map_Load_Failed",
+      "Text": "The models of {0} could not all be loaded for the GPARAM viewport."
+    },
+    {
+      "Key": "GPARAM_ToolWindow_View_Toggle_ViewportPreview",
+      "Text": "Viewport Preview"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Header",
+      "Text": "Viewport Preview"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Hint",
+      "Text": "The viewport shows the map pieces and assets of a map, lit by the selected GPARAM, including its unsaved edits. Switch the viewport to Game render mode to see the lighting. Its time of day, weather and other lighting settings are in the Viewport Rendering section."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_No_Maps",
+      "Text": "Maps can't be shown: the Map Editor has to be enabled for this project, its maps readable, and the Vulkan renderer in use."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_Header",
+      "Text": "Status"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_Header_TT",
+      "Text": "The map the viewport shows, and the map of the selected GPARAM."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_Loading",
+      "Text": "Reading {0}..."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_Loaded",
+      "Text": "Showing {0}: {1} parts."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_Environment",
+      "Text": "Lit by {0} irradiance volumes, {1} of {2} BTL lights near the camera and {3} lightmapped map pieces."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Status_None",
+      "Text": "No map is shown."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_File_Map",
+      "Text": "{0} is the GPARAM of {1}."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_File_No_Map",
+      "Text": "{0} is not the GPARAM of a map. Pick a map to show it on."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Lighting_Unsupported",
+      "Text": "GPARAM lighting is not read for this game, so the viewport uses the default lighting."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Map_Header",
+      "Text": "Map"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Map_Header_TT",
+      "Text": "Pick a map to show the selected GPARAM on. Double-click a map to load it."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Actions_Header_TT",
+      "Text": "Load, frame or unload the map shown in the viewport."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_File_Map",
+      "Text": "Load GPARAM's Map"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_File_Map_TT",
+      "Text": "Loads the map the selected GPARAM belongs to."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_Chosen_Map",
+      "Text": "Load Picked Map"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_Chosen_Map_TT",
+      "Text": "Loads the map picked in the list above."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Frame_Map",
+      "Text": "Frame Map"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Frame_Map_TT",
+      "Text": "Moves the camera so the whole map is in view."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Unload_Map",
+      "Text": "Unload Map"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Unload_Map_TT",
+      "Text": "Removes the map from the viewport."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Options_Header_TT",
+      "Text": "How the map is chosen and loaded."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Auto_Load",
+      "Text": "Load the GPARAM's map when it is selected"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Auto_Load_TT",
+      "Text": "When a GPARAM of a map is selected, its map is loaded into the viewport."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_Assets",
+      "Text": "Load assets"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Load_Assets_TT",
+      "Text": "Shows the map's assets (objects) as well as its map pieces. Applies the next time a map is loaded."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Time_Header",
+      "Text": "Time of Day"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Time_Header_TT",
+      "Text": "The viewport is lit at the Map Editor's time of day and weather, set in the Viewport Rendering section's Map Lighting tab, so both editors light a map alike."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Follow_Value_Time",
+      "Text": "Follow the selected value's time"
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Follow_Value_Time_TT",
+      "Text": "When a value of a field that changes through the day is selected, the viewport is lit at that value's time of day instead of the Map Editor's."
+    },
+    {
+      "Key": "GPARAM_ViewportPreview_Lit_At",
+      "Text": "Lit at {0}."
+    }
+  ]
+}

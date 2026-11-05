@@ -42,10 +42,13 @@ public class DolLightmapBank
     {
         public bool Done;
         public LightmapBinding Binding;
+
+        // The mesh the lightmap was last put on
+        public MeshRenderableProxy Proxy;
     }
 
     private readonly Dictionary<string, AreaIndex> Areas = new(StringComparer.OrdinalIgnoreCase);
-    private readonly Dictionary<Entity, PartState> Parts = new(ReferenceEqualityComparer.Instance);
+    private readonly Dictionary<object, PartState> Parts = new(ReferenceEqualityComparer.Instance);
 
     // The maps whose parts were reported once settled (temporary diagnostics)
     private readonly HashSet<string> ReportedMaps = new(StringComparer.OrdinalIgnoreCase);
@@ -68,47 +71,71 @@ public class DolLightmapBank
     public int PendingPartCount { get; private set; }
 
     /// <summary>
+    /// A map piece to light: <see cref="Key" /> names it from frame to frame (the Map Editor's entity), and the
+    /// lightmap goes on <see cref="Proxy" />, its current mesh
+    /// </summary>
+    public record LightmapPart(object Key, MSB3.Part.MapPiece Piece, MeshRenderableProxy Proxy);
+
+    /// <summary>
+    /// A map's pieces, and its BTAB entries by part name, read only if a piece needs them
+    /// </summary>
+    public record LightmapMap(string MapId, IEnumerable<LightmapPart> Parts,
+        Func<Dictionary<string, List<BTAB.Entry>>> GetAtlas);
+
+    /// <summary>
     /// Gives the loaded maps' pieces their lightmaps once their textures are on the GPU, lets go of those of parts no
     /// longer loaded, and uploads the table with the GPARAM's Dominant Light Map values. Called every frame.
     /// </summary>
     public void Update(IEnumerable<MapContainer> maps, GparamLighting lighting)
+    {
+        Update(maps.Select(map => new LightmapMap(
+            map.Name,
+            map.Parts
+                .Where(entity => entity.WrappedObject is MSB3.Part.MapPiece)
+                .Select(entity => new LightmapPart(entity, (MSB3.Part.MapPiece)entity.WrappedObject,
+                    entity.RenderSceneMesh as MeshRenderableProxy)),
+            () => GetAtlasEntries(map))), lighting);
+    }
+
+    /// <summary>
+    /// <see cref="Update(IEnumerable{MapContainer}, GparamLighting)" /> for any map pieces, which don't have to be
+    /// the Map Editor's: the Gparam Editor's viewport draws its map on its own, with a bank of its own
+    /// </summary>
+    public void Update(IEnumerable<LightmapMap> maps, GparamLighting lighting)
     {
         var table = SceneRenderer.Lightmaps;
 
         if (table == null)
             return;
 
-        var seen = new HashSet<Entity>(ReferenceEqualityComparer.Instance);
+        var seen = new HashSet<object>(ReferenceEqualityComparer.Instance);
         var pending = 0;
 
         if (CanUse())
         {
             foreach (var map in maps)
             {
-                var code = GetMapCode(map.Name);
+                var code = GetMapCode(map.MapId);
 
                 if (code == null)
                     continue;
 
-                var index = GetAreaIndex(map.Name.Substring(0, 3));
+                var index = GetAreaIndex(map.MapId.Substring(0, 3));
                 Dictionary<string, List<BTAB.Entry>> atlas = null;
                 var mapPending = 0;
                 var mapLit = 0;
                 var mapPieces = 0;
 
-                foreach (var entity in map.Parts)
+                foreach (var part in map.Parts)
                 {
-                    if (entity.WrappedObject is not MSB3.Part.MapPiece piece)
-                        continue;
-
                     mapPieces++;
 
-                    seen.Add(entity);
+                    seen.Add(part.Key);
 
-                    if (!Parts.TryGetValue(entity, out var state))
+                    if (!Parts.TryGetValue(part.Key, out var state))
                     {
                         state = new PartState();
-                        Parts[entity] = state;
+                        Parts[part.Key] = state;
                     }
 
                     if (!state.Done)
@@ -120,9 +147,9 @@ public class DolLightmapBank
                             continue;
                         }
 
-                        atlas ??= GetAtlasEntries(map);
+                        atlas ??= map.GetAtlas();
 
-                        if (!TryResolve(table, index, code, piece, atlas, state))
+                        if (!TryResolve(table, index, code, part.Piece, atlas, state))
                         {
                             pending++;
                             mapPending++;
@@ -134,22 +161,24 @@ public class DolLightmapBank
                         mapLit++;
 
                     // Also after the part's mesh is made again, as for a new model
-                    if (entity.RenderSceneMesh is MeshRenderableProxy proxy && !ReferenceEquals(proxy.Lightmap, state.Binding))
-                        proxy.Lightmap = state.Binding;
+                    state.Proxy = part.Proxy;
+
+                    if (part.Proxy != null && !ReferenceEquals(part.Proxy.Lightmap, state.Binding))
+                        part.Proxy.Lightmap = state.Binding;
                 }
 
                 // Temporary diagnostics until checked in the app
-                if (mapPending == 0 && mapPieces > 0 && ReportedMaps.Add(map.Name))
-                    Smithbox.Log(this, $"Lightmaps of {map.Name}: {mapLit} of {mapPieces} map pieces lit, {table.Count} entries");
+                if (mapPending == 0 && mapPieces > 0 && ReportedMaps.Add(map.MapId))
+                    Smithbox.Log(this, $"Lightmaps of {map.MapId}: {mapLit} of {mapPieces} map pieces lit, {table.Count} entries");
             }
         }
 
         PendingPartCount = pending;
 
-        foreach (var entity in Parts.Keys.Where(e => !seen.Contains(e)).ToList())
+        foreach (var key in Parts.Keys.Where(k => !seen.Contains(k)).ToList())
         {
-            Release(table, entity, Parts[entity]);
-            Parts.Remove(entity);
+            Release(table, Parts[key]);
+            Parts.Remove(key);
         }
 
         // The game's scale of the lightmaps isn't known, so the profile's and the viewport's go on the GPARAM's color
@@ -250,7 +279,7 @@ public class DolLightmapBank
         return true;
     }
 
-    private static void Release(LightmapTable table, Entity entity, PartState state)
+    private static void Release(LightmapTable table, PartState state)
     {
         if (state.Binding == null)
             return;
@@ -258,8 +287,8 @@ public class DolLightmapBank
         foreach (var entry in state.Binding.Entries)
             table.Remove(entry);
 
-        if (entity.RenderSceneMesh is MeshRenderableProxy proxy && ReferenceEquals(proxy.Lightmap, state.Binding))
-            proxy.Lightmap = null;
+        if (state.Proxy != null && ReferenceEquals(state.Proxy.Lightmap, state.Binding))
+            state.Proxy.Lightmap = null;
 
         state.Binding = null;
     }
@@ -389,10 +418,10 @@ public class DolLightmapBank
     {
         var table = SceneRenderer.Lightmaps;
 
-        foreach (var (entity, state) in Parts)
+        foreach (var state in Parts.Values)
         {
             if (table != null)
-                Release(table, entity, state);
+                Release(table, state);
         }
 
         Parts.Clear();

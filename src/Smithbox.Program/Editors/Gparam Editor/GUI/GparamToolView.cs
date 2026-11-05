@@ -37,6 +37,24 @@ public class GparamToolView
 
         Sections.Begin();
 
+        if (CFG.Current.Interface_GparamEditor_Tool_ViewportPreview)
+        {
+            // Viewport Preview
+            View.ViewportPreviewTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_ViewportRendering)
+        {
+            // Viewport Rendering
+            View.RenderingTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_GridConfiguration)
+        {
+            // Grid Configuration
+            View.GridTool.OnToolWindow();
+        }
+
         if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
         {
             // Data Transfer
@@ -108,6 +126,29 @@ public class GparamToolView
                 CFG.Current.Interface_GparamEditor_Tool_Finder = !CFG.Current.Interface_GparamEditor_Tool_Finder;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_Finder);
+
+            ImGui.Separator();
+
+            // Viewport Preview
+            if (ImGui.MenuItem($"{LOC.Get("GPARAM_ToolWindow_View_Toggle_ViewportPreview")}##viewportPreviewToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_ViewportPreview = !CFG.Current.Interface_GparamEditor_Tool_ViewportPreview;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_ViewportPreview);
+
+            // Viewport Rendering
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##viewportRenderingToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_ViewportRendering = !CFG.Current.Interface_GparamEditor_Tool_ViewportRendering;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_ViewportRendering);
+
+            // Grid Configuration
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##gridConfigurationToggle"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_GridConfiguration = !CFG.Current.Interface_GparamEditor_Tool_GridConfiguration;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_GridConfiguration);
 
             ImGui.EndMenu();
         }

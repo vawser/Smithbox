@@ -1911,6 +1911,30 @@
     {
       "Key": "VIEWPORT_Rendering_Section_Display_TT",
       "Text": "How grass and collisions are drawn."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_Source_TT",
+      "Text": "The Gparam Editor lights its map with the GPARAM selected in its file list, including unsaved edits. Pick the map in the Viewport Preview section. The weather and time of day are the Map Editor's, so both editors light a map alike."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_File",
+      "Text": "GPARAM: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_Map",
+      "Text": "Map: {0}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_None",
+      "Text": "none"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_Following_Value",
+      "Text": "Following the selected value's time of day: {0}."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_Gparam_GI_Map",
+      "Text": "{0}: {1} volumes in bake {2}"
     }
   ]
 }

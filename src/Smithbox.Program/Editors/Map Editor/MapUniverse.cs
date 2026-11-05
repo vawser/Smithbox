@@ -427,13 +427,18 @@ public class MapUniverse : IUniverse
         }
     }
 
-    private BTL LoadBTL(FileDictionaryEntry curEntry)
+    private BTL LoadBTL(FileDictionaryEntry curEntry) => ReadBTL(View.Project, curEntry);
+
+    /// <summary>
+    /// Reads a map's BTL file (in DS2, the light.btl in its gibhd binder). Null if it can't be read.
+    /// </summary>
+    public static BTL ReadBTL(ProjectEntry project, FileDictionaryEntry curEntry)
     {
         BTL btl = null;
 
-        var fs = View.Project.Handler.MapData.PrimaryBank.TargetFS;
+        var fs = project.Handler.MapData.PrimaryBank.TargetFS;
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             var bhdPath = curEntry.Path;
             var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
@@ -442,8 +447,8 @@ public class MapUniverse : IUniverse
             {
                 if (fs.FileExists(bdtPath) && fs.FileExists(bhdPath))
                 {
-                    var bdtFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
-                    var bhdFile = (Memory<byte>)View.Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+                    var bdtFile = (Memory<byte>)fs.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)fs.ReadFile(bhdPath);
 
                     using var bdt = BXF4.Read(bhdFile, bdtFile);
 
@@ -459,27 +464,27 @@ public class MapUniverse : IUniverse
                             }
                             catch (Exception e)
                             {
-                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTL", file.Name), e);
+                                Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Read_BTL", file.Name), e);
                             }
                         }
                         else
                         {
-                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_Light_BTL_File", bhdPath));
+                            Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Find_GI_Light_BTL_File", bhdPath));
                         }
                     }
                     else
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI_Binder", bhdPath));
+                        Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Read_GI_Binder", bhdPath));
                     }
                 }
                 else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
+                    Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Find_GI_File", bhdPath));
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
+                Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Read_GI", bhdPath), e);
             }
         }
         else
@@ -496,17 +501,17 @@ public class MapUniverse : IUniverse
                     }
                     catch (Exception e)
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_BTL", curEntry.Path), e);
+                        Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Read_BTL", curEntry.Path), e);
                     }
                 }
                 else
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_GI", curEntry.Path));
+                    Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Read_GI", curEntry.Path));
                 }
             }
             else
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_GI_File", curEntry.Path));
+                Smithbox.LogError<MapUniverse>(LOC.Get("MAP_Data_Failed_Find_GI_File", curEntry.Path));
             }
         }
 

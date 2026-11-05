@@ -65,7 +65,7 @@ public class MapLightCollector
         var found = new List<(float Distance, MapLightData Data)>();
 
         var radius = Math.Max(CFG.Current.Viewport_BTL_Light_Radius, 0.0f);
-        var intensityScale = GetIntensityScale();
+        var intensityScale = GetIntensityScale(SceneRenderer.MapLighting);
 
         foreach (var map in maps)
         {
@@ -100,7 +100,7 @@ public class MapLightCollector
         table.Upload(Entries, count);
     }
 
-    private static bool IsNearCamera(BTL.Light light, float distance, float radius)
+    public static bool IsNearCamera(BTL.Light light, float distance, float radius)
     {
         if (!CFG.Current.Viewport_BTL_Lights_Near_Camera || distance > radius)
             return false;
@@ -114,11 +114,11 @@ public class MapLightCollector
 
     /// <summary>
     /// BTL power is in the game's units, like the GPARAM's lights, so with map lighting it takes the same exposure;
-    /// otherwise the viewport's light intensity scale
+    /// otherwise the viewport's light intensity scale. <paramref name="mapLighting" /> is the lighting the lights are
+    /// drawn with.
     /// </summary>
-    private static float GetIntensityScale()
+    public static float GetIntensityScale(GparamLighting mapLighting)
     {
-        var mapLighting = SceneRenderer.MapLighting;
 
         return mapLighting != null
             ? mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale
@@ -142,7 +142,7 @@ public class MapLightCollector
         return lights;
     }
 
-    private static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
+    public static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
     {
         var outerAngle = btlLight.ConeAngle / 2.0f;
 

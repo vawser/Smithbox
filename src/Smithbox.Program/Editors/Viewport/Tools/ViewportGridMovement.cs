@@ -10,7 +10,7 @@ namespace StudioCore.Editors.Viewport;
 /// </summary>
 public static class ViewportGridMovement
 {
-    private static readonly ViewportGridType?[] MovingGrids = new ViewportGridType?[3];
+    private static readonly ViewportGridType?[] MovingGrids = new ViewportGridType?[Enum.GetValues<ViewportGridEditor>().Length];
 
     public static ViewportGridType? GetMovingGrid(ViewportGridEditor editor)
     {

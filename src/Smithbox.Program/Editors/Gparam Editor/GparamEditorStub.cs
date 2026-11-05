@@ -2,6 +2,8 @@
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -64,6 +66,7 @@ public class GparamEditorStub : IEditorStub
             if (Project.Handler.GparamEditor != null)
             {
                 Project.Handler.FocusedEditor = Project.Handler.GparamEditor;
+                Project.Handler.GparamEditor.Update(dt);
             }
         }
         else
@@ -71,6 +74,22 @@ public class GparamEditorStub : IEditorStub
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
             ImGui.End();
+        }
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        if (Project.Handler.GparamEditor != null && Project.Handler.FocusedEditor is GparamEditorScreen)
+        {
+            Project.Handler.GparamEditor.EditorResized(window, device);
+        }
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (Project.Handler.GparamEditor != null && Project.Handler.FocusedEditor is GparamEditorScreen)
+        {
+            Project.Handler.GparamEditor.Draw(device, cl);
         }
     }
 }

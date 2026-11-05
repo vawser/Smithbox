@@ -103,18 +103,23 @@ public static class EntityHelper
     /// <summary>
     /// Returns true if this entity is an Asset
     /// </summary>
-    public static bool IsPartAsset(Entity ent)
+    public static bool IsPartAsset(Entity ent) => IsPartAsset(ent.WrappedObject);
+
+    /// <summary>
+    /// Returns true if this MSB part is an Asset (an Object in the older games)
+    /// </summary>
+    public static bool IsPartAsset(object part)
     {
-        return ent.WrappedObject is MSB1.Part.Object ||
-            ent.WrappedObject is MSB2.Part.Object ||
-            ent.WrappedObject is MSB3.Part.Object ||
-            ent.WrappedObject is MSBB.Part.Object ||
-            ent.WrappedObject is MSBD.Part.Object ||
-            ent.WrappedObject is MSBE.Part.Asset ||
-            ent.WrappedObject is MSBS.Part.Object ||
-            ent.WrappedObject is MSB_AC6.Part.Asset ||
-            ent.WrappedObject is MSB_NR.Part.Asset ||
-            ent.WrappedObject is MSB_DB_NT.Part.Asset ? true : false;
+        return part is MSB1.Part.Object ||
+            part is MSB2.Part.Object ||
+            part is MSB3.Part.Object ||
+            part is MSBB.Part.Object ||
+            part is MSBD.Part.Object ||
+            part is MSBE.Part.Asset ||
+            part is MSBS.Part.Object ||
+            part is MSB_AC6.Part.Asset ||
+            part is MSB_NR.Part.Asset ||
+            part is MSB_DB_NT.Part.Asset ? true : false;
     }
 
     /// <summary>
@@ -155,18 +160,23 @@ public static class EntityHelper
     /// <summary>
     /// Returns true if this entity is an MapPiece
     /// </summary>
-    public static bool IsPartMapPiece(Entity ent)
+    public static bool IsPartMapPiece(Entity ent) => IsPartMapPiece(ent.WrappedObject);
+
+    /// <summary>
+    /// Returns true if this MSB part is a MapPiece
+    /// </summary>
+    public static bool IsPartMapPiece(object part)
     {
-        return ent.WrappedObject is MSB1.Part.MapPiece ||
-            ent.WrappedObject is MSB2.Part.MapPiece ||
-            ent.WrappedObject is MSB3.Part.MapPiece ||
-            ent.WrappedObject is MSBB.Part.MapPiece ||
-            ent.WrappedObject is MSBD.Part.MapPiece ||
-            ent.WrappedObject is MSBE.Part.MapPiece ||
-            ent.WrappedObject is MSBS.Part.MapPiece ||
-            ent.WrappedObject is MSB_AC6.Part.MapPiece ||
-            ent.WrappedObject is MSB_NR.Part.MapPiece ||
-            ent.WrappedObject is MSB_DB_NT.Part.MapPiece ? true : false;
+        return part is MSB1.Part.MapPiece ||
+            part is MSB2.Part.MapPiece ||
+            part is MSB3.Part.MapPiece ||
+            part is MSBB.Part.MapPiece ||
+            part is MSBD.Part.MapPiece ||
+            part is MSBE.Part.MapPiece ||
+            part is MSBS.Part.MapPiece ||
+            part is MSB_AC6.Part.MapPiece ||
+            part is MSB_NR.Part.MapPiece ||
+            part is MSB_DB_NT.Part.MapPiece ? true : false;
     }
 
     /// <summary>

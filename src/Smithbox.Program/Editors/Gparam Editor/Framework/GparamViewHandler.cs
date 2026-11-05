@@ -86,6 +86,10 @@ public class GparamViewHandler
             return false;
         }
 
+        // The map the view's viewport shows is its own, so it goes with it
+        view.Universe.UnloadMap();
+        view.Universe.Environment.Dispose();
+
         TexViews[view.ViewIndex] = null;
 
         if (view == ActiveView || ActiveView == null)
@@ -130,7 +134,8 @@ public class GparamViewHandler
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditor);
-            if (ImGui.Begin($@"{displayTitle}###GparamEditorView##{view.ViewIndex}", GUI.GetInnerWindowFlags()))
+            // No background, as the viewport is drawn behind the windows
+            if (ImGui.Begin($@"{displayTitle}###GparamEditorView##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {

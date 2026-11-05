@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -97,7 +98,11 @@ public class ViewportRenderingTool
         ImGui.BeginTabBar("viewportRenderingTabs", ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.ListPopupButton);
 
         var mapView = (viewport.Owner as MapUniverse)?.View;
-        var environment = mapView == null ? GetEnvironment(viewport) : null;
+        var gparamView = (viewport.Owner as GparamUniverse)?.View;
+        var environment = mapView == null && gparamView == null ? GetEnvironment(viewport) : null;
+
+        // The Gparam Editor lights its own map with the selected GPARAM, read with the editor's copies
+        var gparamBank = gparamView?.ViewportWindow.LightingBank is { } candidate && candidate.CanUse() ? candidate : null;
 
         // The GPARAMs the Post Effects tab reads, and the maps it lists, where there are any
         GparamLightingBank postBank = null;
@@ -123,6 +128,18 @@ public class ViewportRenderingTool
                     postBank.ChooseFile(environment.MapId, CFG.Current.Viewport_Environment_Lighting_File)));
             }
         }
+        else if (gparamBank != null)
+        {
+            postBank = gparamBank;
+
+            var file = gparamView.ViewportWindow.GetSelectedFile();
+            var mapId = gparamView.Universe.LoadedMapId;
+
+            if (file != null || mapId != null)
+            {
+                postMaps.Add((mapId, file));
+            }
+        }
 
         // Map Lighting
         if (mapView != null && mapView.GparamLightingBank.CanUse())
@@ -139,6 +156,15 @@ public class ViewportRenderingTool
             if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
             {
                 EnvironmentLightingTab(viewport, environment);
+
+                ImGui.EndTabItem();
+            }
+        }
+        else if (gparamBank != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
+            {
+                GparamLightingTab(viewport, gparamView, gparamBank);
 
                 ImGui.EndTabItem();
             }
@@ -171,13 +197,36 @@ public class ViewportRenderingTool
                 ImGui.EndTabItem();
             }
         }
+        else if (gparamView?.Universe.Environment.VolumeTable != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
+            {
+                GparamGlobalIlluminationTab(viewport, gparamView);
+
+                ImGui.EndTabItem();
+            }
+        }
 
         // BTL Lights
         if (mapView != null)
         {
             if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
             {
-                BtlLightsTab(mapView);
+                var collector = mapView.ViewportWindow.LightCollector;
+
+                BtlLightsTab(SceneRenderer.MapLighting, collector.ShadedCount, collector.InRangeCount);
+
+                ImGui.EndTabItem();
+            }
+        }
+        else if (gparamView != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
+            {
+                var gparamEnvironment = gparamView.Universe.Environment;
+
+                BtlLightsTab(gparamView.ViewportWindow.Lighting, gparamEnvironment.ShadedLightCount,
+                    gparamEnvironment.InRangeCount);
 
                 ImGui.EndTabItem();
             }
@@ -212,9 +261,10 @@ public class ViewportRenderingTool
 
     /// <summary>
     /// Which of the loaded maps' BTL lights light the viewports, and how brightly. These apply at once, as the
-    /// lights are gathered every frame.
+    /// lights are gathered every frame. <paramref name="lighting" /> is the lighting the lights take their exposure
+    /// from, and the counts are of the lights lit and in range last frame.
     /// </summary>
-    private void BtlLightsTab(MapEditorView view)
+    private void BtlLightsTab(GparamLighting lighting, int shadedCount, int inRangeCount)
     {
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Gathering"), LOC.Get("VIEWPORT_Rendering_Section_Gathering_TT"));
 
@@ -246,7 +296,7 @@ public class ViewportRenderingTool
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Intensity"), LOC.Get("VIEWPORT_Rendering_Section_Intensity_TT"));
 
         // With map lighting, the lights take the GPARAM's exposure, as the sun does
-        var exposureFromMap = SceneRenderer.MapLighting != null;
+        var exposureFromMap = lighting != null;
 
         if (exposureFromMap)
         {
@@ -260,13 +310,84 @@ public class ViewportRenderingTool
         ImGui.EndDisabled();
         GUI.Tooltip(exposureFromMap
             ? LOC.Get("VIEWPORT_Rendering_BTL_Intensity_Map_TT",
-                SceneRenderer.MapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
+                lighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale)
             : LOC.Get("PREF_Viewport_Light_Intensity_Scale_TT"));
 
         if (StatusHeader())
         {
-            var collector = view.ViewportWindow.LightCollector;
-            ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", collector.ShadedCount, collector.InRangeCount));
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_BTL_Status", shadedCount, inRangeCount));
+        }
+    }
+
+    /// <summary>
+    /// The Gparam Editor's map lighting: the settings every viewport shares, then the GPARAM selected in the editor
+    /// (unsaved edits and all) and the map it lights, and the Map Editor's weather and time of day it is read at
+    /// </summary>
+    private void GparamLightingTab(VulkanViewport viewport, GparamEditorView view, GparamLightingBank bank)
+    {
+        MapLightingSettings();
+
+        var file = view.ViewportWindow.GetSelectedFile();
+        var mapId = view.Universe.LoadedMapId;
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_Gparam_Source_TT"));
+
+        // The file is picked in the editor's file list, and the map in its Viewport Preview section
+        ImGui.Text(LOC.Get("VIEWPORT_Rendering_Gparam_File", file ?? LOC.Get("VIEWPORT_Rendering_Gparam_None")));
+        ImGui.Text(LOC.Get("VIEWPORT_Rendering_Gparam_Map", mapId ?? LOC.Get("VIEWPORT_Rendering_Gparam_None")));
+
+        if (mapId != null)
+        {
+            WeatherCombo(bank, bank.ListWeathers(mapId));
+        }
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day"), LOC.Get("VIEWPORT_Rendering_Section_Time_Of_Day_TT"));
+
+        TimeOfDaySettings(view.Project, view.Universe.Environment.VolumeBank.CanUse());
+
+        if (CFG.Current.GparamEditor_Viewport_Follow_Value_Time)
+        {
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_Gparam_Following_Value", view.ViewportWindow.GetHours().ToString("0.00")));
+        }
+
+        LightingDebugSection();
+
+        MapLightingStatus(viewport);
+
+        if ((file != null || mapId != null) && ResolvedValuesHeader())
+        {
+            LightingTable(bank, mapId, file);
+        }
+    }
+
+    /// <summary>
+    /// The Gparam Editor's irradiance volumes: the settings every viewport shares, then how many of its map's
+    /// volumes and probe grids light it
+    /// </summary>
+    private void GparamGlobalIlluminationTab(VulkanViewport viewport, GparamEditorView view)
+    {
+        var environment = view.Universe.Environment;
+
+        GlobalIlluminationSettings(viewport, environment.VolumeBank.BakesFollowTime);
+
+        if (StatusHeader())
+        {
+            var mapId = environment.MapId;
+
+            if (mapId == null)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_No_Maps"));
+            }
+            else if (environment.VolumeBank.GetMap(mapId) is { } volumes)
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Gparam_GI_Map", mapId,
+                    volumes.CountInBake(CFG.Current.Viewport_GI_Bake), CFG.Current.Viewport_GI_Bake));
+            }
+
+            ImGui.Text(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes", environment.ShadedVolumeCount, IrradianceVolumeTable.Capacity));
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Shaded_Volumes_TT"));
         }
     }
 

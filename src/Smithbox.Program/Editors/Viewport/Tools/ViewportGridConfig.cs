@@ -7,7 +7,8 @@ public enum ViewportGridEditor
 {
     Map,
     Model,
-    TimeAct
+    TimeAct,
+    Gparam
 }
 
 public enum ViewportGridType
@@ -23,7 +24,7 @@ public enum ViewportGridType
 public static class ViewportGridConfig
 {
     // The grid shown in each editor's grid tool, see ViewportGridTool
-    private static readonly ViewportGridType[] CurrentGrids = new ViewportGridType[3];
+    private static readonly ViewportGridType[] CurrentGrids = new ViewportGridType[Enum.GetValues<ViewportGridEditor>().Length];
 
     /// <summary>
     /// The grid shown in the editor's grid tool. The gizmo snaps to this grid.
@@ -48,6 +49,7 @@ public static class ViewportGridConfig
             ViewportGridEditor.Map => cfg.MapEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.Model => cfg.ModelEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.TimeAct => cfg.TimeActEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Gparam => cfg.GparamEditor_Grids ??= new ViewportGridSet(),
             _ => throw new ArgumentOutOfRangeException(nameof(editor))
         };
     }

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TimeActEditor;
@@ -151,6 +152,13 @@ public class VulkanViewport : IViewport
             ActionManager = timeActUniverse.View.ViewportActionManager;
         }
 
+        if (owner is GparamUniverse gparamUniverse)
+        {
+            RenderScene = gparamUniverse.View.RenderScene;
+            ViewportSelection = gparamUniverse.View.ViewportSelection;
+            ActionManager = gparamUniverse.View.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -182,6 +190,30 @@ public class VulkanViewport : IViewport
                 {
                     ViewPipeline.UseIrradianceVolumes = true;
                     ViewPipeline.VolumeTable = environment.Table;
+                }
+            }
+
+            // The Gparam Editor shows a map of its own, lit by the GPARAM it has selected, unsaved edits and all.
+            // The viewport is made while its window is, so the window is looked up when the lighting is drawn.
+            if (owner is GparamUniverse gparamOwner &&
+                GparamProfile.For(gparamOwner.Project.Descriptor.ProjectType).Supported)
+            {
+                var gparamView = gparamOwner.View;
+
+                ViewPipeline.UseMapLighting = true;
+                ViewPipeline.MapLightingSource = () => gparamView.ViewportWindow?.Lighting;
+            }
+
+            // Its map's volumes go in a table of its own, and its BTL lights in the shared one, which the editor in
+            // focus fills (see GparamMapEnvironment)
+            if (owner is GparamUniverse gparamMap)
+            {
+                ViewPipeline.UseMapLights = true;
+
+                if (gparamMap.Environment.VolumeTable != null)
+                {
+                    ViewPipeline.UseIrradianceVolumes = true;
+                    ViewPipeline.VolumeTable = gparamMap.Environment.VolumeTable;
                 }
             }
 
@@ -239,7 +271,7 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -272,6 +304,7 @@ public class VulkanViewport : IViewport
             HandleMapEditorFocus();
             HandleModelEditorFocus();
             HandleTimeActEditorFocus();
+            HandleGparamEditorFocus();
 
             HandleCompass();
 
@@ -406,6 +439,14 @@ public class VulkanViewport : IViewport
                 && view.ViewportWindow.Viewport == this;
         }
 
+        if (Owner is GparamUniverse gparamUniverse)
+        {
+            var view = gparamUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportWindow.Viewport == this;
+        }
+
         return false;
     }
 
@@ -496,6 +537,33 @@ public class VulkanViewport : IViewport
                     if (wrapper.ViewportWindow.Viewport == this)
                     {
                         timeActUniverse.View.Editor.ViewHandler.ActiveView = wrapper;
+                        IsActiveViewport = true;
+                    }
+                }
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleGparamEditorFocus()
+    {
+        if (Owner is GparamUniverse gparamUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.GparamEditor_Viewport);
+
+                foreach (var view in gparamUniverse.View.Editor.ViewHandler.TexViews)
+                {
+                    if (view == null)
+                        continue;
+
+                    if (view.ViewportWindow.Viewport == this)
+                    {
+                        gparamUniverse.View.Editor.ViewHandler.ActiveView = view;
                         IsActiveViewport = true;
                     }
                 }
@@ -740,6 +808,11 @@ public class VulkanViewport : IViewport
             case TimeActUniverse timeActUniverse:
                 editor = ViewportGridEditor.TimeAct;
                 isEditorFocused = timeActUniverse.Project.Handler.FocusedEditor is TimeActEditorScreen;
+                return true;
+
+            case GparamUniverse gparamUniverse:
+                editor = ViewportGridEditor.Gparam;
+                isEditorFocused = gparamUniverse.Project.Handler.FocusedEditor is GparamEditorScreen;
                 return true;
         }
 

@@ -358,7 +358,7 @@ public class IrradianceVolumeBank
     }
 
     /// <inheritdoc cref="ResolveBakes(IEnumerable{MapContainer})" />
-    public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<string> mapIds)
+    public (int Bake, int BlendBake, float BlendRatio) ResolveBakes(IEnumerable<string> mapIds, float? hours = null)
     {
         if (!BakesFollowTime)
         {
@@ -369,7 +369,8 @@ public class IrradianceVolumeBank
                 CFG.Current.Viewport_GI_Blend_Ratio);
         }
 
-        var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+        // The time of day of the Map Editor's lighting, unless a viewport lights at its own
+        var wanted = GparamLighting.TimezonesAt(hours ?? CFG.Current.Viewport_Map_Lighting_Hours);
         var ready = true;
 
         foreach (var mapId in mapIds)
@@ -554,10 +555,40 @@ public class IrradianceVolumeBank
     /// <param name="blendRatio">How far towards it, 0 to 1</param>
     public void UpdateGpuTable(IEnumerable<MapContainer> maps, int bake, int blendBake, float blendRatio)
     {
-        var table = SceneRenderer.IrradianceVolumes;
+        var mapList = maps.ToList();
 
+        var sources = mapList.Select(map => new VolumeSource(
+            map.Name,
+            map.Regions.Select(entity => (entity.WrappedObject, (Func<Matrix4x4>)entity.GetWorldMatrix)),
+            LightProbeGridBank.GetGroups(map)));
+
+        // The probes take the GPARAM's scale from the lighting resolved last frame
+        UpdateTable(SceneRenderer.IrradianceVolumes, sources, bake, blendBake, blendRatio,
+            SceneRenderer.MapLighting?.ShColor ?? Vector3.One);
+    }
+
+    /// <summary>
+    /// What one map gives a volume table: its regions, of which the linked EnvMapEffectBoxes are lit with, and its
+    /// light probe groups, each with the world matrix it is placed by
+    /// </summary>
+    public record VolumeSource(
+        string MapId,
+        IEnumerable<(object Region, Func<Matrix4x4> GetWorld)> Regions,
+        IEnumerable<(Matrix4x4 World, BTPB.Group Group)> ProbeGroups);
+
+    /// <summary>
+    /// <see cref="UpdateGpuTable" /> for any table and any maps, which don't have to be loaded in the Map Editor: the
+    /// Gparam Editor's viewport reads its map on its own, into a table of its own. The maps' volumes have to have been
+    /// read with <see cref="LoadVolumes" /> on this bank.
+    /// </summary>
+    /// <param name="shColor">The GPARAM's scale on the light probes' light</param>
+    public void UpdateTable(IrradianceVolumeTable table, IEnumerable<VolumeSource> maps, int bake, int blendBake,
+        float blendRatio, Vector3 shColor)
+    {
         if (table == null)
             return;
+
+        var mapList = maps.ToList();
 
         var found = new List<(IrradianceVolumeData Data, int Priority, float Size)>();
         var luminanceSum = 0.0;
@@ -565,16 +596,16 @@ public class IrradianceVolumeBank
 
         if (CanUse())
         {
-            foreach (var map in maps)
+            foreach (var map in mapList)
             {
-                var volumes = GetMap(map.Name);
+                var volumes = GetMap(map.MapId);
 
                 if (volumes == null)
                     continue;
 
-                foreach (var entity in map.Regions)
+                foreach (var (region, getWorld) in map.Regions)
                 {
-                    if (TryBuildEntry(map.Name, entity, volumes, bake, blendBake, blendRatio,
+                    if (TryBuildEntry(map.MapId, region, getWorld, volumes, bake, blendBake, blendRatio,
                             out var data, out var priority, out var size))
                     {
                         found.Add((data, priority, size));
@@ -593,7 +624,7 @@ public class IrradianceVolumeBank
         }
 
         // DS3 and Bloodborne's light probe grids, lit with as volumes
-        ProbeGrids.AppendEntries(maps, found);
+        ProbeGrids.AppendEntries(mapList.SelectMany(m => m.ProbeGroups), found, shColor);
 
         // Coarse first, so finer volumes blend over them, as nested boxes do in game
         found.Sort((a, b) => a.Priority != b.Priority ? a.Priority.CompareTo(b.Priority) : b.Size.CompareTo(a.Size));
@@ -635,14 +666,13 @@ public class IrradianceVolumeBank
         return true;
     }
 
-    private bool TryBuildEntry(string mapId, Entity entity, MapVolumes volumes, int bake, int blendBake,
-        float blendRatio, out IrradianceVolumeData data, out int priority, out float size)
+    private bool TryBuildEntry(string mapId, object region, Func<Matrix4x4> getWorld, MapVolumes volumes, int bake,
+        int blendBake, float blendRatio, out IrradianceVolumeData data, out int priority, out float size)
     {
         data = default;
         priority = 0;
         size = 0;
 
-        var region = entity.WrappedObject;
         var id = ResolveVolumeId(region, out _);
 
         // AC6 boxes aren't checked by name, so their shape is checked here; the region's scale is a Box's size
@@ -680,7 +710,7 @@ public class IrradianceVolumeBank
                 return false;
         }
 
-        var world = entity.GetWorldMatrix();
+        var world = getWorld();
 
         if (!TryBuildEntry(mapId, volumes, id, bake, blendBake, blendRatio, world, fadeDistance, diffuseScale,
                 specularScale, out data))

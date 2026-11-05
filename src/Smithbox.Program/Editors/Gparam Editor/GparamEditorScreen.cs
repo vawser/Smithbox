@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -56,6 +59,13 @@ public class GparamEditorScreen : EditorScreen
             if(activeView != null)
             {
                 activeView.ToolView.DisplayDropdown();
+            }
+
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL)
+            {
+                ImGui.Separator();
+
+                ImGui.Text(LOC.Get("SYS_OpenGL_Viewport_Blocked"));
             }
 
             ImGui.EndMenuBar();
@@ -227,6 +237,45 @@ public class GparamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        foreach (var view in ViewHandler.TexViews)
+        {
+            if (view == null || view == ViewHandler.ViewToClose)
+                continue;
+
+            if (view.ViewportWindow.Viewport is VulkanViewport vulkanViewport && vulkanViewport.Visible)
+            {
+                view.ViewportWindow.Draw(device, cl);
+            }
+        }
+    }
+
+    public void Update(float dt)
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        if (activeView == null)
+            return;
+
+        activeView.ViewportWindow.Update(dt);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        foreach (var view in ViewHandler.TexViews)
+        {
+            view?.ViewportWindow.EditorResized(window, device);
+        }
+    }
+
+    public bool InputCaptured()
+    {
+        var activeView = ViewHandler.ActiveView;
+
+        return activeView != null && activeView.ViewportWindow.InputCaptured();
     }
 
     public async void Save(bool autoSave = false)

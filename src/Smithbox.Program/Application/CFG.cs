@@ -1076,6 +1076,15 @@ public class CFG
     public bool Interface_GparamEditor_Tool_DataTransfer = true;
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
     public bool Interface_GparamEditor_Tool_Finder = true;
+    public bool Interface_GparamEditor_Tool_ViewportPreview = true;
+    public bool Interface_GparamEditor_Tool_ViewportRendering = true;
+    public bool Interface_GparamEditor_Tool_GridConfiguration = true;
+
+    // Viewport: the map shown is the selected GPARAM's (or the one chosen), lit by the editor's copy of the GPARAM.
+    // The time of day and weather are the Map Editor's (Viewport Rendering: Map Lighting), unless following the value.
+    public bool GparamEditor_Viewport_Auto_Load_Map = false;
+    public bool GparamEditor_Viewport_Load_Assets = true;
+    public bool GparamEditor_Viewport_Follow_Value_Time = false;
 
     // Saving
     public bool Project_Automatic_Save_Include_Gparam_Editor = false;
@@ -1554,6 +1563,7 @@ public class CFG
     public ViewportGridSet MapEditor_Grids = new();
     public ViewportGridSet ModelEditor_Grids = new();
     public ViewportGridSet TimeActEditor_Grids = new();
+    public ViewportGridSet GparamEditor_Grids = new();
 
     // Anim Editor: Primary Grid
     public bool AnimEditor_DisplayPrimaryGrid = false;

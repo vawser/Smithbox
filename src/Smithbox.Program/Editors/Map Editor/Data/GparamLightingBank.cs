@@ -372,8 +372,18 @@ public class GparamLightingBank
         return cached;
     }
 
+    /// <summary>
+    /// Where a GPARAM is taken from before the project's file, null to read the file: the Gparam Editor's viewport
+    /// lights with the editor's copies, so its unsaved edits show. What it gives isn't cached, so an edit shows the
+    /// next time the lighting is resolved.
+    /// </summary>
+    public Func<string, GPARAM> FileOverride;
+
     private GPARAM GetFile(string name)
     {
+        if (FileOverride?.Invoke(name) is { } overridden)
+            return overridden;
+
         lock (Files)
         {
             if (Files.TryGetValue(name, out var cached))
@@ -415,14 +425,15 @@ public class GparamLightingBank
     /// The lighting of a map, looked up in the chosen weather's shared overlays first (see
     /// <see cref="GetWeatherOverlays" />), then <paramref name="file" /> (the map's own GPARAM if null or empty), then
     /// mapbase, then default, with <paramref name="lightSetId" /> for the LightSet group and ID 0 for the others,
-    /// at <paramref name="hours" /> on the GPARAMs' TimeOfDay scale
+    /// at <paramref name="hours" /> on the GPARAMs' TimeOfDay scale. <paramref name="weatherOverride" /> stands in for
+    /// the viewport menu's weather when given; 0 reads no weather overlays.
     /// </summary>
-    public GparamLighting Resolve(string mapId, string file, int lightSetId, float hours)
+    public GparamLighting Resolve(string mapId, string file, int lightSetId, float hours, int? weatherOverride = null)
     {
         if (string.IsNullOrEmpty(file))
             file = GetDefaultFile(mapId);
 
-        var weather = CFG.Current.Viewport_Map_Lighting_Weather;
+        var weather = weatherOverride ?? CFG.Current.Viewport_Map_Lighting_Weather;
 
         var profile = Profile;
 

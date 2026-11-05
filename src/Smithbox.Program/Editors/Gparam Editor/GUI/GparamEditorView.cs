@@ -1,7 +1,11 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
+using StudioCore.Renderer;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -11,6 +15,21 @@ public class GparamEditorView : IEditorView
     public ProjectEntry Project;
 
     public ActionManager ActionManager = new();
+
+    public Sdl2Window Window;
+    public GraphicsDevice Device;
+    public RenderScene RenderScene;
+
+    public ViewportActionManager ViewportActionManager = new();
+    public ViewportSelection ViewportSelection = new();
+
+    public GparamUniverse Universe;
+    public GparamViewportWindow ViewportWindow;
+
+    // Viewport tools
+    public GparamViewportPreviewTool ViewportPreviewTool;
+    public ViewportRenderingTool RenderingTool;
+    public ViewportGridTool GridTool;
 
     public int ViewIndex;
 
@@ -33,6 +52,10 @@ public class GparamEditorView : IEditorView
 
         ViewIndex = imguiId;
 
+        Window = Smithbox.Instance._context.Window;
+        Device = Smithbox.Instance._context.Device;
+        RenderScene = new();
+
         Selection = new GparamSelection(this, Project);
 
         PropertyEditor = new GparamPropertyEditor(this, Project);
@@ -42,6 +65,16 @@ public class GparamEditorView : IEditorView
         GroupListView = new GparamGroupList(this, Project);
         FieldListView = new GparamFieldList(this, Project);
         FieldValueListView = new GparamValueList(this, Project);
+        Universe = new GparamUniverse(this, Project);
+        ViewportWindow = new GparamViewportWindow(this, Project);
+
+        // An edit, or its undo, changes the lighting the viewport shows
+        ActionManager.ActionPerformed += ViewportWindow.MarkLightingDirty;
+
+        ViewportPreviewTool = new GparamViewportPreviewTool(this, Project);
+        RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Gparam, () => ViewportWindow?.Viewport as VulkanViewport);
+
         ToolView = new GparamToolView(this, Project);
     }
 
@@ -122,6 +155,9 @@ public class GparamEditorView : IEditorView
         }
 
         ImGui.End();
+
+        // Viewport
+        ViewportWindow.Display(dockspaceId);
 
         if (CFG.Current.Interface_GparamEditor_ToolWindow)
         {

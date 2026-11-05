@@ -95,7 +95,8 @@ public static class FocusManager
             or EditorFocusContext.GparamEditor_GroupList
             or EditorFocusContext.GparamEditor_FieldList
             or EditorFocusContext.GparamEditor_Properties
-            or EditorFocusContext.GparamEditor_Tools)
+            or EditorFocusContext.GparamEditor_Tools
+            or EditorFocusContext.GparamEditor_Viewport)
             return true;
 
         return false;
@@ -236,6 +237,7 @@ public enum EditorFocusContext
     GparamEditor_FieldList,
     GparamEditor_Properties,
     GparamEditor_Tools,
+    GparamEditor_Viewport,
 
     MaterialEditor_None,
     MaterialEditor_FileList,

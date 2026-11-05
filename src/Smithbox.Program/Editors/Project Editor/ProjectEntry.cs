@@ -46,6 +46,9 @@ public class ProjectEntry
             if (Handler.TimeActEditorStub != null)
                 Handler.TimeActEditorStub.Draw(device, cl);
 
+            if (Handler.GparamEditorStub != null)
+                Handler.GparamEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
         }
     }
@@ -115,6 +118,9 @@ public class ProjectEntry
 
             if (Handler.TimeActEditorStub != null)
                 Handler.TimeActEditorStub.EditorResized(window, device);
+
+            if (Handler.GparamEditorStub != null)
+                Handler.GparamEditorStub.EditorResized(window, device);
         }
     }
 
