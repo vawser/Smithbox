@@ -74,7 +74,7 @@ Part.MapPiece	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.MapPiece	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.MapPiece	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.MapPiece	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.MapPiece	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.MapPiece	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.MapPiece	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.MapPiece	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.MapPiece	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -188,7 +188,7 @@ Part.Enemy	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.Enemy	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.Enemy	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.Enemy	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.Enemy	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.Enemy	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.Enemy	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.Enemy	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.Enemy	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -317,7 +317,7 @@ Part.Player	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.Player	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.Player	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.Player	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.Player	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.Player	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.Player	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.Player	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.Player	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -450,7 +450,7 @@ Part.Collision	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.Collision	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.Collision	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.Collision	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.Collision	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.Collision	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.Collision	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.Collision	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.Collision	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -589,7 +589,7 @@ Part.DummyAsset	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.DummyAsset	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.DummyAsset	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.DummyAsset	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.DummyAsset	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.DummyAsset	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.DummyAsset	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.DummyAsset	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.DummyAsset	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -702,7 +702,7 @@ Part.DummyEnemy	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.DummyEnemy	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.DummyEnemy	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.DummyEnemy	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.DummyEnemy	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.DummyEnemy	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.DummyEnemy	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.DummyEnemy	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.DummyEnemy	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -842,7 +842,7 @@ Part.ConnectCollision	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.ConnectCollision	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.ConnectCollision	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.ConnectCollision	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.ConnectCollision	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.ConnectCollision	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.ConnectCollision	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.ConnectCollision	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.ConnectCollision	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte
@@ -988,7 +988,7 @@ Part.Asset	Part.TileLoad	0x0	1	TileLoadConfig.MapID[0]	Byte
 Part.Asset	Part.TileLoad	0x1	1	TileLoadConfig.MapID[1]	Byte
 Part.Asset	Part.TileLoad	0x2	1	TileLoadConfig.MapID[2]	Byte
 Part.Asset	Part.TileLoad	0x3	1	TileLoadConfig.MapID[3]	Byte
-Part.Asset	Part.TileLoad	0x4	1	TileLoadConfig.TileLoadConfig_Unk04	Byte
+Part.Asset	Part.TileLoad	0x4	1	TileLoadConfig.NamePrefixLength	Byte
 Part.Asset	Part.TileLoad	0x5	1	TileLoadConfig.TileLoadConfig_Unk05	Byte
 Part.Asset	Part.TileLoad	0x6	1	TileLoadConfig.TileLoadConfig_Unk06	Byte
 Part.Asset	Part.TileLoad	0x7	1	TileLoadConfig.TileLoadConfig_Unk07	Byte

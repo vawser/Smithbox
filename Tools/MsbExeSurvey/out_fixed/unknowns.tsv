@@ -111,7 +111,6 @@ Part.Asset	Part.Entity	0x3C	UnkE3C	READ
 Part.Asset	Part.Entity	0x3E	UnkE3E	READ
 Part.Asset	Part.Grass	0x18	GrassConfigStruct.GrassConfigStruct_Unk18	READ
 Part.Asset	Part.Grass	0x1A	GrassConfigStruct.GrassConfigStruct_Unk1a	READ
-Part.Asset	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.Asset	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.Asset	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.Asset	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -209,7 +208,6 @@ Part.Collision	Part.SceneGparam	0x1C	SceneGparamConfigStruct.Unk1C	READ
 Part.Collision	Part.SceneGparam	0x1D	SceneGparamConfigStruct.Unk1D	READ
 Part.Collision	Part.SceneGparam	0x20	SceneGparamConfigStruct.Unk20	READ
 Part.Collision	Part.SceneGparam	0x21	SceneGparamConfigStruct.Unk21	-
-Part.Collision	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.Collision	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.Collision	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.Collision	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -242,7 +240,6 @@ Part.ConnectCollision	Part.Entity	0x1A	UnkE1A	-
 Part.ConnectCollision	Part.Entity	0x1B	UnkE1B	-
 Part.ConnectCollision	Part.Entity	0x3C	UnkE3C	READ
 Part.ConnectCollision	Part.Entity	0x3E	UnkE3E	READ
-Part.ConnectCollision	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.ConnectCollision	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.ConnectCollision	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.ConnectCollision	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -265,7 +262,6 @@ Part.DummyAsset	Part.Entity	0x1A	UnkE1A	-
 Part.DummyAsset	Part.Entity	0x1B	UnkE1B	-
 Part.DummyAsset	Part.Entity	0x3C	UnkE3C	READ
 Part.DummyAsset	Part.Entity	0x3E	UnkE3E	READ
-Part.DummyAsset	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.DummyAsset	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.DummyAsset	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.DummyAsset	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -283,7 +279,6 @@ Part.DummyEnemy	Part.Entity	0x1A	UnkE1A	-
 Part.DummyEnemy	Part.Entity	0x1B	UnkE1B	-
 Part.DummyEnemy	Part.Entity	0x3C	UnkE3C	READ
 Part.DummyEnemy	Part.Entity	0x3E	UnkE3E	READ
-Part.DummyEnemy	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.DummyEnemy	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.DummyEnemy	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.DummyEnemy	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -306,7 +301,6 @@ Part.Enemy	Part.Entity	0x1A	UnkE1A	-
 Part.Enemy	Part.Entity	0x1B	UnkE1B	-
 Part.Enemy	Part.Entity	0x3C	UnkE3C	READ
 Part.Enemy	Part.Entity	0x3E	UnkE3E	READ
-Part.Enemy	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.Enemy	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.Enemy	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.Enemy	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -331,7 +325,6 @@ Part.MapPiece	Part.Entity	0x3C	UnkE3C	READ
 Part.MapPiece	Part.Entity	0x3E	UnkE3E	READ
 Part.MapPiece	Part.Grass	0x18	GrassConfigStruct.GrassConfigStruct_Unk18	READ
 Part.MapPiece	Part.Grass	0x1A	GrassConfigStruct.GrassConfigStruct_Unk1a	READ
-Part.MapPiece	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.MapPiece	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.MapPiece	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.MapPiece	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-
@@ -355,7 +348,6 @@ Part.Player	Part.Entity	0x1A	UnkE1A	-
 Part.Player	Part.Entity	0x1B	UnkE1B	-
 Part.Player	Part.Entity	0x3C	UnkE3C	READ
 Part.Player	Part.Entity	0x3E	UnkE3E	READ
-Part.Player	Part.TileLoad	0x4	TileLoadConfig.TileLoadConfig_Unk04	READ
 Part.Player	Part.TileLoad	0x5	TileLoadConfig.TileLoadConfig_Unk05	-
 Part.Player	Part.TileLoad	0x6	TileLoadConfig.TileLoadConfig_Unk06	-
 Part.Player	Part.TileLoad	0x7	TileLoadConfig.TileLoadConfig_Unk07	-

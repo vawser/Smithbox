@@ -124,6 +124,34 @@ if (args.Length > 2 && args[2] == "stats")
             if (t34 > 0) Add("C Asset int +34 values", t34);
             Add("C Asset UnkT50", a.UnkT50);
         }
+        // groups D, E, F
+        foreach (var p in msb.Parts.GetEntries())
+        {
+            var t = p.GetType().Name;
+            var tl = p.GetType().GetProperty("TileLoadConfig")?.GetValue(p) as MSBE.Part.TileLoadConfig;
+            if (tl != null)
+            {
+                Add("F TileLoad Unk04 (name prefix length?)", tl.NamePrefixLength);
+                if (tl.NamePrefixLength != 0) Add("F Unk04 examples", $"{t} {p.Name} skip {tl.NamePrefixLength} -> '{(p.Name.Length >= tl.NamePrefixLength ? p.Name[tl.NamePrefixLength..] : "?")}'");
+                Add("F Unk04 == prefix up to '-'+1", tl.NamePrefixLength == 0 ? "0" : (p.Name.IndexOf('-') + 1 == tl.NamePrefixLength ? "yes" : "no"));
+                Add("F TileLoad Unk0C", tl.TileLoadConfig_Unk0C);
+                // is Unk0C the index of the collision the part refers to?
+                string colName = (p.GetType().GetProperty("CollisionPartName")?.GetValue(p) as string);
+                if (colName == null && p is MSBE.Part.Asset asset) colName = !string.IsNullOrEmpty(asset.PartNames[5]) ? asset.PartNames[5] : asset.PartNames[4];
+                if (tl.TileLoadConfig_Unk0C >= 0 && !string.IsNullOrEmpty(colName))
+                {
+                    var ci = msb.Parts.Collisions.FindIndex(c => c.Name == colName);
+                    var cci = msb.Parts.ConnectCollisions.FindIndex(c => c.Name == colName);
+                    Add("F Unk0C vs referenced collision index", ci < 0 ? "collision not found" : ci == tl.TileLoadConfig_Unk0C ? "== collision index" : $"differs");
+                }
+                if (tl.TileLoadConfig_Unk0C >= 0) Add("F Unk0C examples", $"{map} {t} {p.Name} = {tl.TileLoadConfig_Unk0C} col={colName} ncol={msb.Parts.Collisions.Count}");
+                Add("F TileLoad Unk10", tl.TileLoadConfig_Unk10);
+            }
+            var s9 = p.GetType().GetProperty("UnkStruct9")?.GetValue(p) as MSBE.Part.UnkStruct9;
+            if (s9 != null) Add("D UnkStruct9_Unk00 by type", $"{t} {s9.UnkStruct9_Unk00}");
+            var g = p.GetType().GetProperty("GrassConfigStruct")?.GetValue(p) as MSBE.Part.GrassConfigStruct;
+            if (g != null) Add("E Grass Unk18 / Unk1a", $"{t} {g.GrassConfigStruct_Unk18} / {g.GrassConfigStruct_Unk1a}");
+        }
         foreach (var p in msb.Events.PlatoonInfo)
             Add("Platoon State bytes", $"{p.State} {p.EnableDeactiveMove} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
@@ -149,6 +177,45 @@ if (args.Length > 2 && args[2] == "stats")
         Param("MapGridCreateHeightDetailLimitInfo", "MapGridCreateHeightDetailLimitInfo");
     }
     catch (Exception e) { Add("B regulation error", e.Message); }
+
+    // F: is TileLoad Unk0C the index of the part's collision in the source tile (TileLoadConfig.MapID)?
+    {
+        var cols = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);     // map -> collision names
+        var parts = new Dictionary<string, MSBE.Part>(StringComparer.OrdinalIgnoreCase);        // "map|part" -> part
+        foreach (var path in paths)
+        {
+            MSBE m; try { m = MSBE.Read(fs.ReadFile(path).Value.ToArray()); } catch { continue; }
+            var mn = path.Split('/').Last()[..12];
+            cols[mn] = m.Parts.Collisions.Select(c => c.Name).ToList();
+            foreach (var p in m.Parts.GetEntries()) parts[mn + "|" + p.Name] = p;
+        }
+        foreach (var (key, p) in parts)
+        {
+            var tl = p.GetType().GetProperty("TileLoadConfig")?.GetValue(p) as MSBE.Part.TileLoadConfig;
+            if (tl == null || tl.TileLoadConfig_Unk0C < 0) continue;
+            var id = tl.MapID;
+            var src = $"m{id[3]:D2}_{id[2]:D2}_{id[1]:D2}_{id[0]:D2}";
+            Add("F Unk0C MapID examples", $"{key} id=[{string.Join(",", id)}] -> {src} unk0c={tl.TileLoadConfig_Unk0C}");
+            if (!cols.TryGetValue(src, out var srcCols)) { Add("F Unk0C source tile", "source MSB not found"); continue; }
+            Add("F Unk0C < collisions in source tile", tl.TileLoadConfig_Unk0C < srcCols.Count ? "yes" : $"NO ({srcCols.Count})");
+            // the same part in the source tile, and its collision
+            var shortName = tl.NamePrefixLength > 0 && p.Name.Length > tl.NamePrefixLength ? p.Name[tl.NamePrefixLength..] : p.Name;
+            if (parts.TryGetValue(src + "|" + shortName, out var orig))
+            {
+                string col = orig.GetType().GetProperty("CollisionPartName")?.GetValue(orig) as string;
+                if (col == null && orig is MSBE.Part.Asset oa) col = !string.IsNullOrEmpty(oa.PartNames[5]) ? oa.PartNames[5] : oa.PartNames[4];
+                if (string.IsNullOrEmpty(col)) { Add("F Unk0C vs source part's collision", "source part has no collision"); continue; }
+                var ci = srcCols.IndexOf(col);
+                Add("F Unk0C vs source part's collision", ci == tl.TileLoadConfig_Unk0C ? "== its index" : ci < 0 ? "collision not in source" : "differs");
+            }
+            else
+            {
+                Add("F Unk0C vs source part's collision", "source part not found");
+                if (hist.GetValueOrDefault("F source names sample")?.Count is null or < 5)
+                    Add("F source names sample", string.Join(" ", parts.Keys.Where(k => k.StartsWith(src + "|")).Take(4)) + $"  (looked for {shortName})");
+            }
+        }
+    }
 
     // membership: every distinct MSB value against the param values it falls back to
     void Member(string msbKey, string regKey)

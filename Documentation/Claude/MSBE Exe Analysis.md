@@ -397,6 +397,19 @@ doesn't apply.
 
 Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_C.txt`.
 
+## Draw flags, grass, tile load (seventh pass: groups D, E, F)
+
+| field | consumer | finding | retail | result |
+|---|---|---|---|---|
+| TileLoad `+4` (`_Unk04`) | getter `CF0A80` (13 callers) | returns `partName + value*2`: a pointer past the first `value` characters of the UTF-16 name | 13 on 97,838 parts, every one named `mAA_BB_CC_DD-…` (13 characters); else 0 | **`NamePrefixLength`** |
+| TileLoad `+0C` | `1406E1450`, `1406E2570` | `-1` sets bit 3 of the geometry's `+90h`; otherwise an index into the `CS::HitIns` array (0x368 bytes each; count `+5Ch`, data `+60h`) of the map in `MapID`, looked up through `CS::WorldHitManImp` | -1, 0–9; always below the source tile's collision count where that tile has an MSB (91,193 parts); the copied parts on LOD tiles don't exist by name in their source tiles, so the collision couldn't be matched | Unk, summary |
+| TileLoad `+10` | — | not traced | 0 except three parts (1) | Unk, summary |
+| UnkStruct9 `+0` | draw setup `1406DAAE0` / `14071E030` | 1 or 2 → bit 6, 2 → also bit 7 of render-flag byte 1, behind a global (`[143B4F624h]`, never written, so on); flags copied into `CS::CSGeomModelIns +150h` (`1409F3690`) and from there into renderer queues (`141AE4AEF`, `141B309BA`, `141B9F314`) | 0; 1, 2 on ~770 parts; 3 on five map pieces | Unk, summary (render internals) |
+| Grass `+18`, `+1A` | `CS::CSGrassMapPart_Geom` / `_Map` virtuals #1 / #2 | returned as signed shorts; callers are indirect | -1 everywhere (0/0 on two map pieces) | Unk, summary |
+
+Also fixed: the meta key `GrassConfigStruct_Unk1A` didn't match the property `GrassConfigStruct_Unk1a`.
+Round trip identical to the baseline. Stats: `Tools/MsbExeSurvey/out_fixed/stats_DEF.txt`.
+
 ## PlatoonInfo flags named from Lua bindings (group H)
 
 The platoon object has no RTTI class; `watch … '0x140353CA0:0=S:Platoon'` traces it. Both bytes are copied into it

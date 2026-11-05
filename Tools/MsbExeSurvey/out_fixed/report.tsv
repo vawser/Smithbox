@@ -94,7 +94,7 @@ Part.SceneGparam	0x1C	1	SceneGparamConfigStruct.Unk1C	CSMsbPartsHit	1	140CF4E80	
 Part.SceneGparam	0x1D	1	SceneGparamConfigStruct.Unk1D	CSMsbPartsHit	1	140CF4DA0	ret
 Part.SceneGparam	0x20	2	SceneGparamConfigStruct.Unk20	CSMsbPartsHit	1	140CF4E80	ret
 Part.TileLoad	0x0	4	TileLoadConfig.MapID[0]	CSMsbParts	1	140CF0A00	cmp -1; store W.Parts+0
-Part.TileLoad	0x4	4/1	TileLoadConfig.TileLoadConfig_Unk04	MsbResCap,CSMsbParts	2	140CFB150 140CF0A80	
+Part.TileLoad	0x4	4/1	TileLoadConfig.NamePrefixLength	MsbResCap,CSMsbParts	2	140CFB150 140CF0A80	
 Part.TileLoad	0xC	4	TileLoadConfig.TileLoadConfig_Unk0C	CSMsbPartsGeom	1	140CF3440	ret; or -1
 Part.TileLoad	0x10	8	TileLoadConfig.TileLoadConfig_Unk10	MsbResCap	1	140CFB150	xor
 Part.TileLoad	0x14	4	TileLoadConfig.CullingHeightBehavior	CSMsbParts	1	140CF0A50	test; ret

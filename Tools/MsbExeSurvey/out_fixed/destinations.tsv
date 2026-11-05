@@ -6,19 +6,6 @@ Part+80() Part.Grass+18(GrassConfigStruct.GrassConfigStruct_Unk18)	140CF03C0	140
 Part+80() Part.Grass+18(GrassConfigStruct.GrassConfigStruct_Unk18)	140CF03C0	140BA11EC	140BA1020		
 Part+60() Part.Entity+3E(UnkE3E)	140CF07C0	1406DAE65	1406DAAE0		
 Part+60() Part.Entity+3E(UnkE3E)	140CF07C0	14071E24B	14071E030		
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	14036685F	1403664F0		arg1 of 140121DB0
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140437934	1404377E0		
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140494071	140493E40		arg0 of 1425206C4
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140494191	140493E40		arg0 of 1425206C4
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140518EA3	140518D30		test
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	1406C575A	1406C56D0		
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	1406C5887	1406C56D0		arg1 of 14011E360
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	1406C5B44	1406C5B20		test
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	1406E1814	1406E17B0		
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	1407076E4	1407075B0		
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140CF1D6D	140CF17C0		arg0 of 142524A1C
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140CF21F8	140CF2060		test
-Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	140CF0A80	140D094EA	140D0925E		
 Part+88() Part.Unk8+0(UnkStruct8.UnkStruct8_Unk00)	140CF10E0	1406C0EAF	1406C09F0		test; test; test
 Part+88() Part.Unk8+0(UnkStruct8.UnkStruct8_Unk00)	140CF10E0	1406C623D	1406C6111		test; test
 Part+88() Part.Unk8+0(UnkStruct8.UnkStruct8_Unk00)	140CF10E0	1406DCBBF	1406DCB40		test
@@ -70,7 +57,7 @@ Part+90() Part.Unk9+4(UnkStruct9.UnkStruct9_Unk04)	140CF9120	140CFF0BE	140CFEAF0
 Part+90() Part.Unk9+4(UnkStruct9.UnkStruct9_Unk04)	140CF9120	140D0C5E7	140D0C2E0		cmp; arg3 of 140CFC020
 Part+90() Part.Unk9+4(UnkStruct9.UnkStruct9_Unk04)	140CF9120	140D122EE	140D11FF0		
 Part+90() Part.Unk9+4(UnkStruct9.UnkStruct9_Unk04)	140CF9120	140D127AE	140D11FF0		
-Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04) Part.TileLoad+10(TileLoadConfig.TileLoadConfig_Unk10)	140CFB150	140CFA4CB	140CF92E0		
+Part+98() Part.TileLoad+4(TileLoadConfig.NamePrefixLength) Part.TileLoad+10(TileLoadConfig.TileLoadConfig_Unk10)	140CFB150	140CFA4CB	140CF92E0		
 Point+8() Point+58() Point.Type+30(UnkT30)	140CFDBE0	140B39E13	140B391D0		test
 Point+60() Point.Unk4+0(MapID)	140CFDF60	140A0C702	140A0C530		arg0 of 1401B76E0
 Point+60() Point.Unk4+0(MapID)	140CFDF60	140A0D10E	140A0CA80		arg0 of 1401B76E0

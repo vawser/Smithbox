@@ -1161,12 +1161,12 @@ namespace SoulsFormats
                 public int GrassParamId5 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Returned (signed) by virtual #1 of CSGrassMapPart_Geom / _Map. -1 in retail, 0 on two map pieces.
                 /// </summary>
                 public short GrassConfigStruct_Unk18 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Returned (signed) by virtual #2 of CSGrassMapPart_Geom / _Map. -1 in retail, 0 on two map pieces.
                 /// </summary>
                 public short GrassConfigStruct_Unk1a { get; set; }
 
@@ -1271,7 +1271,9 @@ namespace SoulsFormats
             public class UnkStruct9
             {
                 /// <summary>
-                /// Unknown. The game reads it as a byte and compares it to 1, 2 and 3.
+                /// Unknown. The game reads it as a byte and compares it to 1, 2 and 3. In the draw setup, 1 or 2 sets bit 6
+                /// and 2 also bit 7 of byte 1 of the part's render flags (copied into CS::CSGeomModelIns +150h and on into
+                /// the renderer). 0 on most parts; 1, 2 (and 3 on five map pieces) in retail.
                 /// </summary>
                 public byte UnkStruct9_Unk00 { get; set; }
 
@@ -1345,14 +1347,16 @@ namespace SoulsFormats
             public class TileLoadConfig
             {
                 /// <summary>
-                /// Unknown.
+                /// The map the part comes from (on LOD tiles, the detailed tile it was copied from), as four bytes
+                /// (block, ..., area); the game uses it to find that map's data.
                 /// </summary>
                 public byte[] MapID { get; set; }
 
                 /// <summary>
-                /// Unknown. The game reads it as a byte.
+                /// Number of characters at the start of the part's name that the game skips to get its plain name: 13 for
+                /// parts named "mAA_BB_CC_DD-" + name (open-world tiles), else 0.
                 /// </summary>
-                public byte TileLoadConfig_Unk04 { get; set; }
+                public byte NamePrefixLength { get; set; }
 
                 /// <summary>
                 /// Unknown; not read by the game.
@@ -1370,12 +1374,14 @@ namespace SoulsFormats
                 public byte TileLoadConfig_Unk07 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Used as an index into the collision instances (CS::HitIns) of the map in MapID; -1 for none,
+                /// which sets a flag on the part's geometry. -1 or 0 to 9 in retail, always less than the source tile's
+                /// collision count where that tile has an MSB.
                 /// </summary>
                 public int TileLoadConfig_Unk0C { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. 0 in retail except three parts (1).
                 /// </summary>
                 public int TileLoadConfig_Unk10 { get; set; }
 
@@ -1405,7 +1411,7 @@ namespace SoulsFormats
                 internal TileLoadConfig(BinaryReaderEx br)
                 {
                     MapID = br.ReadBytes(4);
-                    TileLoadConfig_Unk04 = br.ReadByte();
+                    NamePrefixLength = br.ReadByte();
                     TileLoadConfig_Unk05 = br.ReadByte();
                     TileLoadConfig_Unk06 = br.ReadByte();
                     TileLoadConfig_Unk07 = br.ReadByte();
@@ -1420,7 +1426,7 @@ namespace SoulsFormats
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteBytes(MapID);
-                    bw.WriteByte(TileLoadConfig_Unk04);
+                    bw.WriteByte(NamePrefixLength);
                     bw.WriteByte(TileLoadConfig_Unk05);
                     bw.WriteByte(TileLoadConfig_Unk06);
                     bw.WriteByte(TileLoadConfig_Unk07);

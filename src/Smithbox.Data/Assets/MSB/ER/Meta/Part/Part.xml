@@ -331,11 +331,11 @@
 
     <GrassConfigStruct_Unk18
     AltName="Unknown: 0x18"
-    Wiki="" />
+    Wiki="Returned by a virtual of the grass map part. -1 in retail." />
 
-    <GrassConfigStruct_Unk1A
+    <GrassConfigStruct_Unk1a
     AltName="Unknown: 0x1A"
-    Wiki="" />
+    Wiki="Returned by a virtual of the grass map part. -1 in retail." />
 
 
     <UnkStruct8
@@ -353,7 +353,7 @@
 
     <UnkStruct9_Unk00
     AltName="Unknown: 0x0"
-    Wiki="" />
+    Wiki="Render flag: 1 or 2 sets one bit of the part's render flags, 2 also a second; copied into the model instance and the renderer." />
 
     <UnkStruct9_Unk01
     AltName="Unknown: 0x1"
@@ -381,9 +381,9 @@
     Wiki="The map ID to target."
     ArrayProperty="" />
 
-    <TileLoadConfig_Unk04
-    AltName="Unknown: 0x4"
-    Wiki="" />
+    <NamePrefixLength
+    AltName="Name Prefix Length"
+    Wiki="Characters at the start of the part name the game skips to get its plain name: 13 for names starting mAA_BB_CC_DD-, else 0." />
 
     <TileLoadConfig_Unk05
     AltName="Unknown: 0x5"
@@ -398,8 +398,8 @@
     Wiki="Not read by the game." />
 
     <TileLoadConfig_Unk0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
+    AltName="Unknown: 0xC"
+    Wiki="Index into the collision instances of the map in Map ID; -1 for none." />
 
     <TileLoadConfig_Unk10
     AltName="Unknown: 0x10"

@@ -200,6 +200,13 @@ most trails end inside the geometry manager's lists or the Wwise SDK. Evidence: 
 geometry setup". Survey caveat confirmed: Geom getters that fall back to the referenced collision make collision
 offsets show up as Asset reads (`+35`–`+37`); check the getter before trusting an Asset row in `report.tsv`.
 
+### 2026-11-05: groups D, E, F done
+
+One rename: TileLoadConfig `_Unk04` → `NamePrefixLength` (the getter returns the part name past that many
+characters; 13 = the `mAA_BB_CC_DD-` prefix on all 97,838 retail uses). Summaries for TileLoad `_Unk0C` (an index into
+the source map's `CS::HitIns` list), `_Unk10`, UnkStruct9 `_Unk00` (render-flag bits) and the grass shorts.
+Remaining open groups: G (regions, needs the coverage fix first), I, J.
+
 ### Known limits
 
 * `Extra.FuncStart` merges chained `.pdata` fragments, so leaf functions and tail-called neighbours are reported

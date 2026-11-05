@@ -102,7 +102,7 @@
     1406CAA41 in 1406CA320 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     1406CAA56 in 1406CA320 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     1406CAA66 in 1406CA320 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CF0A80	CSMsbParts	Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04)	13 callers
+140CF0A80	CSMsbParts	Part+0() Part+98() Part.TileLoad+4(TileLoadConfig.NamePrefixLength)	13 callers
     14036685F in 1403664F0 game  w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h | Tried to create container with incompatible heap. | list<T> too long | CSFile
     140437934 in 1404377E0 game  
     140494071 in 140493E40 game  
@@ -369,7 +369,7 @@
     140D0C5E7 in 140D0C2E0 CSMsbPoint  
     140D122EE in 140D11FF0 game  Tried to create container with incompatible heap. | w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
     140D127AE in 140D11FF0 game  Tried to create container with incompatible heap. | w:\gr\rootbranch\source\library\fd4\dist_win64_vc2015\include\Core/Singleton/FD4Singleton.h
-140CFB150	MsbResCap	Part+98() Part.TileLoad+4(TileLoadConfig.TileLoadConfig_Unk04) Part.TileLoad+10(TileLoadConfig.TileLoadConfig_Unk10)	1 callers
+140CFB150	MsbResCap	Part+98() Part.TileLoad+4(TileLoadConfig.NamePrefixLength) Part.TileLoad+10(TileLoadConfig.TileLoadConfig_Unk10)	1 callers
     140CFA4CB in 140CF92E0 MsbResCap  u:MODEL_PARAM_ST | u:EVENT_PARAM_ST | u:POINT_PARAM_ST | u:MAPSTUDIO_BONE_NAME_STRING
 140CFD940	CSMsbPoint	Point+10() Point+48()	7 callers
     1405E80A4 in 1405E7B20 game CS::CSEventRegionBox#1 
