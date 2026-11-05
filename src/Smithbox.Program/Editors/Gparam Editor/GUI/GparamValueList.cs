@@ -80,58 +80,134 @@ public class GparamValueList
         if (field == null)
             return;
 
-        var columnCount = 3;
+        // The field's information is one block for the whole field, which a table row can't span, so it sits in a
+        // column of its own beside the values
+        var showInfo = CFG.Current.GparamEditor_Value_List_Display_Information_Column;
 
-        if (CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
-            columnCount++;
+        if (showInfo)
+        {
+            var layoutFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchProp;
 
-        if (CFG.Current.GparamEditor_Value_List_Display_Information_Column)
-            columnCount++;
+            if (ImGui.BeginTable("gparamValueListLayout", 2, layoutFlags))
+            {
+                ImGui.TableSetupColumn("##gparamValueListValues", ImGuiTableColumnFlags.WidthStretch, 3.0f);
+                ImGui.TableSetupColumn("##gparamValueListInfo", ImGuiTableColumnFlags.WidthStretch, 1.0f);
 
-        ImGui.Columns(columnCount);
+                ImGui.TableNextRow();
 
-        DisplayColumn_Row(fileEntry, data, group, field);
-        DisplayColumn_ID(data, group, field);
-        DisplayColumn_TimeOfDay(data, group, field);
-        DisplayColumn_Value(data, group, field);
-        DisplayColumn_Info(data, group, field);
+                ImGui.TableNextColumn();
+                DisplayValueRows(fileEntry, data, group, field);
 
-        ImGui.Columns(1);
+                ImGui.TableNextColumn();
+                DisplayInfo(field);
+
+                ImGui.EndTable();
+            }
+        }
+        else
+        {
+            DisplayValueRows(fileEntry, data, group, field);
+        }
 
         Shortcuts(data, group, field);
     }
 
-    // Row
-    private void DisplayColumn_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
+    /// <summary>
+    /// The field's values, one row each: the row's selectable, its ID, its time of day and its value
+    /// </summary>
+    private void DisplayValueRows(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group, IField field)
     {
-        ImGui.BeginChild("GparamPropList_Row");
+        var showTimeOfDay = CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column;
+        var columnCount = showTimeOfDay ? 4 : 3;
 
-        GUI.SimpleHeader(
-            LOC.Get("GPARAM_ValueList_Row_Header"),
-            LOC.Get("GPARAM_ValueList_Row_Header_TT"));
+        var tableFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV |
+                         ImGuiTableFlags.BordersOuterH | ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingStretchProp;
+
+        if (!ImGui.BeginTable("gparamValueListTable", columnCount, tableFlags))
+            return;
+
+        var scale = DPI.UIScale();
+
+        ImGui.TableSetupScrollFreeze(0, 1);
+
+        ImGui.TableSetupColumn(LOC.Get("GPARAM_ValueList_Row_Header"), ImGuiTableColumnFlags.WidthFixed, 80.0f * scale);
+        ImGui.TableSetupColumn(LOC.Get("GPARAM_ValueList_Row_ID_Header"), ImGuiTableColumnFlags.WidthFixed, 100.0f * scale);
+
+        if (showTimeOfDay)
+        {
+            ImGui.TableSetupColumn(LOC.Get("GPARAM_ValueList_Row_Time_of_Day_Header"), ImGuiTableColumnFlags.WidthFixed, 100.0f * scale);
+        }
+
+        ImGui.TableSetupColumn(LOC.Get("GPARAM_ValueList_Row_Value_Header"), ImGuiTableColumnFlags.WidthStretch);
+
+        // The headers, each with its tooltip
+        ImGui.TableNextRow(ImGuiTableRowFlags.Headers);
+
+        HeaderCell("GPARAM_ValueList_Row_Header");
+        HeaderCell("GPARAM_ValueList_Row_ID_Header");
+
+        if (showTimeOfDay)
+        {
+            HeaderCell("GPARAM_ValueList_Row_Time_of_Day_Header");
+        }
+
+        HeaderCell("GPARAM_ValueList_Row_Value_Header");
 
         for (int i = 0; i < field.Values.Count; i++)
         {
             var value = field.Values[i];
+
             if (value == null)
                 continue;
 
-            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
-
-            if (!isMatch)
+            if (!EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter))
                 continue;
 
-            GparamProperty_Row(fileEntry, data, group, field, value, i);
-        }
+            ImGui.TableNextRow();
 
+            // The values' widgets share their IDs between columns, so each row gets its own ID scope
+            ImGui.PushID(i);
+
+            // Row
+            ImGui.TableNextColumn();
+            GparamProperty_Row(fileEntry, data, group, field, value, i);
+
+            // ID
+            ImGui.TableNextColumn();
+            GparamProperty_ID(data, group, field, value, i);
+
+            // Time of Day
+            if (showTimeOfDay)
+            {
+                ImGui.TableNextColumn();
+                GparamProperty_TimeOfDay(data, group, field, value, i);
+            }
+
+            // Value
+            ImGui.TableNextColumn();
+            GparamProperty_Value(data, group, field, value, i);
+
+            ImGui.PopID();
+        }
 
         if (field.Values.Count == 0)
         {
+            ImGui.TableNextRow();
+            ImGui.TableNextColumn();
+
             DisplayDummySelectable(fileEntry, data, group, field);
         }
 
-        ImGui.EndChild();
+        ImGui.EndTable();
     }
+
+    private static void HeaderCell(string key)
+    {
+        ImGui.TableNextColumn();
+        ImGui.TableHeader(LOC.Get(key));
+        GUI.Tooltip(LOC.Get($"{key}_TT"));
+    }
+
     public void GparamProperty_Row(FileDictionaryEntry fileEntry, GPARAM data, GPARAM.Param group,
         IField field, IFieldValue value, int index)
     {
@@ -146,118 +222,30 @@ public class GparamValueList
         ContextMenu(fileEntry, data, group, field, value, index);
     }
 
-    // ID
-    private void DisplayColumn_ID(GPARAM data, GPARAM.Param group, IField field)
-    {
-        ImGui.NextColumn();
-
-        ImGui.BeginChild("GparamPropList_ID");
-
-        GUI.SimpleHeader(
-            LOC.Get("GPARAM_ValueList_Row_ID_Header"),
-            LOC.Get("GPARAM_ValueList_Row_ID_Header_TT"));
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            var value = field.Values[i];
-            if (value == null)
-                continue;
-
-            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
-
-            if (!isMatch)
-                continue;
-
-            GparamProperty_ID(data, group, field, value, i);
-        }
-
-        ImGui.EndChild();
-    }
-
-    public void GparamProperty_ID(GPARAM data, GPARAM.Param group, 
+    public void GparamProperty_ID(GPARAM data, GPARAM.Param group,
         IField field, IFieldValue value, int index)
     {
         ImGui.AlignTextToFramePadding();
         View.PropertyEditor.IdField(data, group, field, value, index);
     }
 
-    // Time of Day
-    private void DisplayColumn_TimeOfDay(GPARAM data, GPARAM.Param group, IField field)
-    {
-        if (!CFG.Current.GparamEditor_Value_List_Display_Time_Of_Day_Column)
-            return;
-
-        ImGui.NextColumn();
-
-        ImGui.BeginChild("GparamPropList_TimeOfDay");
-
-        GUI.SimpleHeader(
-            LOC.Get("GPARAM_ValueList_Row_Time_of_Day_Header"),
-            LOC.Get("GPARAM_ValueList_Row_Time_of_Day_Header_TT"));
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            var value = field.Values[i];
-            if (value == null)
-                continue;
-
-            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
-
-            if (!isMatch)
-                continue;
-
-            GparamProperty_TimeOfDay(data, group, field, value, i);
-        }
-
-        ImGui.EndChild();
-    }
     public void GparamProperty_TimeOfDay(GPARAM data, Param group, IField field, IFieldValue value, int index)
     {
         ImGui.AlignTextToFramePadding();
         View.PropertyEditor.TimeOfDayField(data, group, field, value, index);
     }
 
-    // Value
-    private void DisplayColumn_Value(GPARAM data, GPARAM.Param group, IField field)
-    {
-        ImGui.NextColumn();
-
-        ImGui.BeginChild("GparamPropList_Value");
-
-        GUI.SimpleHeader(
-            LOC.Get("GPARAM_ValueList_Row_Value_Header"),
-            LOC.Get("GPARAM_ValueList_Row_Value_Header_TT"));
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            var value = field.Values[i];
-            if (value == null)
-                continue;
-
-            var isMatch = EditorFilters.IsMatch(ValueListFilter, value.ID.ToString(), ExactValueListFilter);
-
-            if (!isMatch)
-                continue;
-
-            GparamProperty_Value(data, group, field, value, i);
-        }
-
-        ImGui.EndChild();
-    }
     public void GparamProperty_Value(GPARAM data, Param group, IField field, IFieldValue value, int index)
     {
         ImGui.AlignTextToFramePadding();
         View.PropertyEditor.ValueField(data, group, field, value, index);
     }
 
-    // Information
-    private void DisplayColumn_Info(GPARAM data, GPARAM.Param group, IField field)
+    /// <summary>
+    /// The field's type, description and enum options, beside the values
+    /// </summary>
+    private void DisplayInfo(IField field)
     {
-        if (!CFG.Current.GparamEditor_Value_List_Display_Information_Column)
-            return;
-
-        ImGui.NextColumn();
-
         ImGui.BeginChild("GparamPropList_Info");
 
         GUI.SimpleHeader(
