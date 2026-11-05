@@ -283,9 +283,21 @@ Retail value counts come from `MsbRoundTrip <out> ER stats`. All renames still r
   in `0x14071AD80`) right after the PartsDrawParam flags are applied, under a condition on the map's block data. Not
   named.
 
-## Suggested next steps
+* **`DisplayGroupStruct.Condition` stays an int.** The byte reads at `0x140CF890E` belong to a different struct.
+  `0x140CF8880` walks `MsbResCap +468h/+470h`, which is the per-type slot for region type 21 (Connection), and reads
+  `[region+58h]`, the region's type data. Its callers (`CSMsbPointConnectionRefe`) compare
+  `TargetMapID[0..2]` with three bytes of a map ID. SoulsFormats already has `TargetMapID` as bytes. The survey had
+  labelled that region as a part. The only real read of `Condition` is the Hit getter, which reads the whole int (1–201
+  in byte 0 on collisions, -1 otherwise).
 
-1. Name UnkE3E, UnkE3C and Asset UnkT51 at runtime: set them on a test asset and watch what changes. Static analysis
-   ends in unnamed accessors.
-2. `DisplayGroupStruct.Condition` is read as an int by Hit and as bytes `+0..+2` by `MsbResCap` (`0x140CF890E`). Read
-   that loader path to decide whether it is really bytes.
+Retail patterns for the three unnamed fields (from `MsbRoundTrip ... stats`):
+* `UnkE3E = 1` on 16,692 assets and 2,331 map pieces, concentrated in the LOD-overview maps (`_02`/`_12`: 12,074
+  assets; `_00`: 2,531).
+* `UnkE3C` is set on 143 parts, with values in clusters (400s, 800s, 900–999).
+* `UnkT51` is non-zero only on 99 large `AEG010_*`-style assets in `m60_09_12_02` and `m61_11_11_02`/`_12`.
+
+## Status
+
+Static analysis is finished. UnkE3E, UnkE3C and Asset UnkT51 stay unnamed; their meta descriptions give the retail
+patterns above. `MSBE Runtime Tests.md` has the in-game tests that would name them. They were not run (skipped,
+2026-11-05).

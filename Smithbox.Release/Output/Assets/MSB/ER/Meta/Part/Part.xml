@@ -141,11 +141,11 @@
 
     <UnkE3C
     AltName="Unknown: 0x3C"
-    Wiki="-1 when unused." />
+    Wiki="An ID, -1 when unused. Set on few map objects (values such as 400-437, 800-837, 900-999)." />
 
     <UnkE3E
     AltName="Unknown: 0x3E"
-    Wiki="Becomes one of the map object's render flags." />
+    Wiki="Becomes one of the map object's render flags. Mostly set on objects in the distant-view (LOD) maps." />
 
     <DisableRTAO
     AltName="Disable RTAO"

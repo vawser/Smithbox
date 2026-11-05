@@ -48,6 +48,24 @@ if (args.Length > 2 && args[2] == "stats")
             Add("Asset UnkT13", a.ExcludeActivateRatioOverride_PS4);
             Add("Asset UnkT52", a.ExcludeActivateRatioOverride_XboxOne);
         }
+        var map = path.Split('/').Last()[..12];
+        foreach (var p in msb.Parts.GetEntries())
+        {
+            if (p.UnkE3E != 0) Add("UnkE3E examples", $"{map} {p.GetType().Name} {p.Name} = {p.UnkE3E}");
+            if (p.UnkE3E != 0 && map.EndsWith("_00") && map.StartsWith("m1")) Add("UnkE3E legacy _00", $"{map} {p.GetType().Name} {p.Name} ({p.ModelName})");
+            Add("UnkE3E by map suffix", $"_{map[10..12]} {p.GetType().Name} {p.UnkE3E}");
+            if (p.UnkE3C != -1) Add("UnkE3C examples", $"{map} {p.GetType().Name} {p.Name} = {p.UnkE3C}");
+            Add("UnkE3E by type", $"{p.GetType().Name} {p.UnkE3E}");
+            Add("UnkE3C by type", $"{p.GetType().Name} {p.UnkE3C}");
+        }
+        foreach (var a in msb.Parts.Assets)
+            if (a.UnkT51 != 0) Add("UnkT51 examples", $"{map} {a.Name} ({a.ModelName}) = {a.UnkT51}");
+        foreach (var c in msb.Parts.Collisions)
+        {
+            var v = c.DisplayGroupStruct.Condition;
+            Add("Collision DisplayGroupStruct.Condition bytes", v == -1 ? "-1" : $"{v & 0xFF} {(v >> 8) & 0xFF} {(v >> 16) & 0xFF} {(v >> 24) & 0xFF}");
+            if (v != -1 && v != 0) Add("Collision Condition (own map)", $"{path.Split('/').Last()[..12]} -> m{v & 0xFF:D2}_{(v >> 8) & 0xFF:D2}_{(v >> 16) & 0xFF:D2}");
+        }
         foreach (var p in msb.Events.PlatoonInfo)
             Add("Platoon State bytes", $"{p.State} {p.UnkT05} {p.UnkT06} {p.UseMemberEntityIDs} ids {p.MemberEntityIDs[0]},{p.MemberEntityIDs[1]}");
     }
