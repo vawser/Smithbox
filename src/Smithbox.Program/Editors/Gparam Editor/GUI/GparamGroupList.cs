@@ -292,15 +292,8 @@ public class GparamGroupList
             ImGui.Separator();
 
             // Quick Target
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_QuickEdit_Header")}##quickEditHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_GroupList_Context_Target_Header")}##targetHeader"))
             {
-                // Target in Quick Edit
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Quick_Edit")}##quickEditTarget"))
-                {
-                    View.QuickEditHandler.UpdateGroupFilter(group.Key);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_GroupList_Context_Target_In_Quick_Edit_TT"));
-
                 // Target in Local Search
                 if (ImGui.Selectable($"{LOC.Get("GPARAM_GroupList_Context_Target_In_Local_Search")}##localSearchTarget"))
                 {

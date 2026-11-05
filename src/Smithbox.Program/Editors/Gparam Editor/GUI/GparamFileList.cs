@@ -258,15 +258,8 @@ public class GparamFileList
             ImGui.Separator();
 
             // Quick Target
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_QuickEdit_Header")}##quickEditHeader"))
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FileList_Context_Target_Header")}##targetHeader"))
             {
-                // Target in Quick Edit
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Quick_Edit")}##quickEditTarget"))
-                {
-                    View.QuickEditHandler.UpdateFileFilter(fileEntry.Filename);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_FileList_Context_Target_In_Quick_Edit_TT"));
-
                 // Target in Global Search: a local search has the selected file only
                 if (ImGui.Selectable($"{LOC.Get("GPARAM_FileList_Context_Target_In_Global_Search")}##globalSearchTarget"))
                 {

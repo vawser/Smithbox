@@ -17,9 +17,11 @@ namespace StudioCore.Application;
 
 [JsonSerializable(typeof(KeybindStore))]
 [JsonSerializable(typeof(KeyBinding))]
+[JsonSerializable(typeof(List<KeyBinding>))]
 
 [JsonSerializable(typeof(MousebindStore))]
 [JsonSerializable(typeof(MouseBinding))]
+[JsonSerializable(typeof(List<MouseBinding>))]
 
 // Project
 [JsonSerializable(typeof(ProjectDescriptor))]

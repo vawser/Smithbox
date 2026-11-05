@@ -161,16 +161,8 @@
       "Text": "Copy the value to clipboard."
     },
     {
-      "Key": "GPARAM_ValueList_Context_QuickEdit_Header",
+      "Key": "GPARAM_ValueList_Context_Target_Header",
       "Text": "Quick Target"
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Target_In_Quick_Edit",
-      "Text": "Target in Quick Edit"
-    },
-    {
-      "Key": "GPARAM_ValueList_Context_Target_In_Quick_Edit_TT",
-      "Text": "Add this value to the Value Filter in the Quick Edit window."
     },
     {
       "Key": "GPARAM_ValueList_Context_Target_In_Local_Search",

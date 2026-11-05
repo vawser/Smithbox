@@ -58,24 +58,6 @@ public class GparamShortcuts
                     activeView.ActionManager.RedoAction();
                 }
             }
-
-            // Execute Quick Edit
-            if (InputManager.IsPressed(KeybindID.GparamEditor_Execute_Quick_Edit))
-            {
-                activeView.QuickEditHandler.ExecuteQuickEdit();
-            }
-
-            // Generate Quick Edit
-            if (InputManager.IsPressed(KeybindID.GparamEditor_Generate_Quick_Edit))
-            {
-                activeView.QuickEditHandler.GenerateQuickEditCommands();
-            }
-
-            // Clear Quick Edit
-            if (InputManager.IsPressed(KeybindID.GparamEditor_Clear_Quick_Edit))
-            {
-                activeView.QuickEditHandler.ClearQuickEditCommands();
-            }
         }
     }
 }

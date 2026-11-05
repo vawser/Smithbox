@@ -397,15 +397,6 @@ public enum KeybindID
     [Display(Name = "KEY_GparamEditor_Add_Missing_Fields", Description = "KEY_GparamEditor_Add_Missing_Fields_TT")]
     GparamEditor_Add_Missing_Fields,
 
-    [Display(Name = "KEY_GparamEditor_Execute_Quick_Edit", Description = "KEY_GparamEditor_Execute_Quick_Edit_TT")]
-    GparamEditor_Execute_Quick_Edit,
-
-    [Display(Name = "KEY_GparamEditor_Generate_Quick_Edit", Description = "KEY_GparamEditor_Generate_Quick_Edit_TT")]
-    GparamEditor_Generate_Quick_Edit,
-
-    [Display(Name = "KEY_GparamEditor_Clear_Quick_Edit", Description = "KEY_GparamEditor_Clear_Quick_Edit_TT")]
-    GparamEditor_Clear_Quick_Edit,
-
     // Material Editor
 
     // Texture Viewer
@@ -586,9 +577,6 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.TextEditor_Create_New_Entry, new() { Key = Key.Insert });
 
         // Gparam Editor
-        InputManager.Bind(KeybindID.GparamEditor_Execute_Quick_Edit, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.GparamEditor_Generate_Quick_Edit, new() { Key = Key.Unknown });
-        InputManager.Bind(KeybindID.GparamEditor_Clear_Quick_Edit, new() { Key = Key.Unknown });
 
         // Material Editor
 
@@ -745,9 +733,6 @@ public static class KeybindMetadata
         { KeybindID.TextEditor_Create_New_Entry, InputCategory.TextEditor },
 
         // Gparam Editor
-        { KeybindID.GparamEditor_Execute_Quick_Edit, InputCategory.GparamEditor },
-        { KeybindID.GparamEditor_Generate_Quick_Edit, InputCategory.GparamEditor },
-        { KeybindID.GparamEditor_Clear_Quick_Edit, InputCategory.GparamEditor },
 
         // Material Editor
 

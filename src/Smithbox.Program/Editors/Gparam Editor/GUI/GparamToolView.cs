@@ -86,21 +86,6 @@ public class GparamToolView
             MassEditTool.OnToolWindow();
         }
 
-        if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
-        {
-            // Quick Edit
-            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Quick_Edit")}##quickEditHeader"))
-            {
-                View.QuickEditHandler.DisplayInputWindow();
-            }
-
-            // Quick Edit
-            if (ToolSections.Header($"{LOC.Get("GPARAM_Tools_Quick_Edit_Commands")}##quickEditCommandsHeader"))
-            {
-                QuickEditCheatsheet.Display();
-            }
-        }
-
         Sections.End();
     }
 
@@ -125,13 +110,6 @@ public class GparamToolView
                 CFG.Current.Interface_GparamEditor_Tool_DataTransfer = !CFG.Current.Interface_GparamEditor_Tool_DataTransfer;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_DataTransfer);
-
-            // Quick Edit
-            if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Quick_Edit")}##quickEditToggle"))
-            {
-                CFG.Current.Interface_GparamEditor_Tool_QuickEdit = !CFG.Current.Interface_GparamEditor_Tool_QuickEdit;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
 
             // Local Search
             if (ImGui.MenuItem($"{LOC.Get("GPARAM_Tools_View_Local_Search")}##localSearchToggle"))

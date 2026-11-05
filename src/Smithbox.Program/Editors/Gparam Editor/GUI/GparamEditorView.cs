@@ -37,8 +37,6 @@ public class GparamEditorView : IEditorView
 
     public GparamPropertyEditor PropertyEditor;
 
-    public GparamQuickEdit QuickEditHandler;
-
     public GparamFileList FileListView;
     public GparamGroupList GroupListView;
     public GparamFieldList FieldListView;
@@ -59,7 +57,6 @@ public class GparamEditorView : IEditorView
         Selection = new GparamSelection(this, Project);
 
         PropertyEditor = new GparamPropertyEditor(this, Project);
-        QuickEditHandler = new GparamQuickEdit(this, Project);
 
         FileListView = new GparamFileList(this, Project);
         GroupListView = new GparamGroupList(this, Project);

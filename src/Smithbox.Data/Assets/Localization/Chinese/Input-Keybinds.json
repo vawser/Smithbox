@@ -1001,30 +1001,6 @@
       "Text": "为当前选中的组添加所有缺失的字段。"
     },
     {
-      "Key": "KEY_GparamEditor_Execute_Quick_Edit",
-      "Text": "应用快速编辑"
-    },
-    {
-      "Key": "KEY_GparamEditor_Execute_Quick_Edit_TT",
-      "Text": "应用当前的快速编辑（如果已配置）。"
-    },
-    {
-      "Key": "KEY_GparamEditor_Generate_Quick_Edit",
-      "Text": "从选择生成快速编辑"
-    },
-    {
-      "Key": "KEY_GparamEditor_Generate_Quick_Edit_TT",
-      "Text": "根据当前选择填充快速编辑工具。"
-    },
-    {
-      "Key": "KEY_GparamEditor_Clear_Quick_Edit",
-      "Text": "清除快速编辑"
-    },
-    {
-      "Key": "KEY_GparamEditor_Clear_Quick_Edit_TT",
-      "Text": "清除快速编辑工具的输入。"
-    },
-    {
       "Key": "KEY_TextureViewer_Export_Texture",
       "Text": "导出纹理"
     },

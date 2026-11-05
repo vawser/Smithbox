@@ -89,16 +89,8 @@
       "Text": "Copy the group name to clipboard."
     },
     {
-      "Key": "GPARAM_GroupList_Context_QuickEdit_Header",
+      "Key": "GPARAM_GroupList_Context_Target_Header",
       "Text": "Quick Target"
-    },
-    {
-      "Key": "GPARAM_GroupList_Context_Target_In_Quick_Edit",
-      "Text": "Target in Quick Edit"
-    },
-    {
-      "Key": "GPARAM_GroupList_Context_Target_In_Quick_Edit_TT",
-      "Text": "Add this group to the Group Filter in the Quick Edit window."
     },
     {
       "Key": "GPARAM_GroupList_Context_Target_In_Local_Search",

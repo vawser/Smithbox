@@ -282,16 +282,9 @@ public class GparamFieldList
 
             ImGui.Separator();
             
-            // Quick Edit
-            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_QuickEdit_Header")}##quickEditHeader"))
+            // Quick Target
+            if (ImGui.BeginMenu($"{LOC.Get("GPARAM_FieldList_Context_Target_Header")}##targetHeader"))
             {
-                // Target in Quick Edit
-                if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Quick_Edit")}##targetQuickEdit"))
-                {
-                    View.QuickEditHandler.UpdateFieldFilter(field.Key);
-                }
-                GUI.Tooltip(LOC.Get("GPARAM_FieldList_Context_Target_In_Quick_Edit_TT"));
-
                 // Target in Local Search
                 if (ImGui.Selectable($"{LOC.Get("GPARAM_FieldList_Context_Target_In_Local_Search")}##targetLocalSearch"))
                 {

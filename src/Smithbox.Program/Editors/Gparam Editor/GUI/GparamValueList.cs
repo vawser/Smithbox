@@ -443,29 +443,9 @@ public class GparamValueList
 
                 ImGui.Separator();
 
-                // Quick Edit
-                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_QuickEdit_Header")}##quickEditHeader"))
+                // Quick Target
+                if (ImGui.BeginMenu($"{LOC.Get("GPARAM_ValueList_Context_Target_Header")}##targetHeader"))
                 {
-                    // Target in Quick Edit
-                    if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Quick_Edit")}##targetQuickEdit"))
-                    {
-                        var fieldIndex = -1;
-                        for (int i = 0; i < field.Values.Count; i++)
-                        {
-                            if (field.Values[i] == value)
-                            {
-                                fieldIndex = i;
-                                break;
-                            }
-                        }
-
-                        if (fieldIndex != -1)
-                        {
-                            View.QuickEditHandler.UpdateValueRowFilter(fieldIndex);
-                        }
-                    }
-                    GUI.Tooltip(LOC.Get("GPARAM_ValueList_Context_Target_In_Quick_Edit_TT"));
-
                     // Target in Local Search
                     if (ImGui.Selectable($"{LOC.Get("GPARAM_ValueList_Context_Target_In_Local_Search")}##targetLocalSearch"))
                     {

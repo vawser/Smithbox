@@ -119,6 +119,10 @@
     {
       "Key": "INPUT_Mousebinds_Failed_Load",
       "Text": "Failed to load mousebinds JSON."
+    },
+    {
+      "Key": "INPUT_Bindings_Skipped",
+      "Text": "Skipped bindings in {0} that no longer exist or couldn't be read: {1}"
     }
   ]
 }

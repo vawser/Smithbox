@@ -1,6 +1,8 @@
 ﻿using StudioCore.Application;
+using Microsoft.Extensions.Logging;
 using System.Numerics;
 using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Keybinds.InputManager;
@@ -79,6 +81,27 @@ public static class InputManager
     public static IReadOnlyDictionary<KeybindID, List<KeyBinding>> Bindings => _bindings.Entries;
     public static IReadOnlyDictionary<MousebindID, List<MouseBinding>> MouseBindings => _mouseBindings.Entries;
 
+    // Init runs before the logger exists, so what it has to say waits here until FlushPendingLogs
+    private static readonly List<(LogLevel Level, string Message, Exception Exception)> PendingLogs = new();
+
+    private static void LogLater(LogLevel level, string message, Exception exception = null)
+    {
+        PendingLogs.Add((level, message, exception));
+    }
+
+    /// <summary>
+    /// Logs what <see cref="Init"/> found while loading the bindings. Called once the logger has been set up.
+    /// </summary>
+    public static void FlushPendingLogs()
+    {
+        foreach (var (level, message, exception) in PendingLogs)
+        {
+            Smithbox.Log<Smithbox>(message, level, exception);
+        }
+
+        PendingLogs.Clear();
+    }
+
     public static void Init()
     {
         var folder = ProjectUtils.GetConfigurationFolder();
@@ -86,15 +109,21 @@ public static class InputManager
 
         DefaultKeyBindings.CreateDefaultBindings();
 
+        // A file that can't be read is left as it is, rather than saved over with the defaults, so the bindings
+        // in it aren't lost
+        var keybindsRead = true;
+        var mousebindsRead = true;
+
         if (File.Exists(KeybindPath))
         {
             try
             {
                 LoadKeybinds(KeybindPath);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                Smithbox.LogError<Smithbox>(LOC.Get("INPUT_Keybinds_Failed_Load"), ex);
+                keybindsRead = false;
+                LogLater(LogLevel.Error, LOC.Get("INPUT_Keybinds_Failed_Load"), ex);
             }
         }
 
@@ -110,12 +139,20 @@ public static class InputManager
             }
             catch (Exception ex)
             {
-                Smithbox.LogError<Smithbox>(LOC.Get("INPUT_Mousebinds_Failed_Load"), ex);
+                mousebindsRead = false;
+                LogLater(LogLevel.Error, LOC.Get("INPUT_Mousebinds_Failed_Load"), ex);
             }
         }
 
-        SaveKeybinds();
-        SaveMousebinds();
+        if (keybindsRead)
+        {
+            SaveKeybinds();
+        }
+
+        if (mousebindsRead)
+        {
+            SaveMousebinds();
+        }
     }
 
     public static void Update(Sdl2Window window, InputSnapshot snapshot, double delta)
@@ -382,41 +419,60 @@ public static class InputManager
 
     public static void LoadKeybinds(string path)
     {
-        if (!File.Exists(path))
-            return;
-
-        var json = File.ReadAllText(path);
-        var data = JsonSerializer.Deserialize(json, ProjectJsonSerializerContext.Default.KeybindStore);
-
-        if (data != null)
-        {
-            foreach (var kv in data.Entries)
-            {
-                if (_bindings.Entries.ContainsKey(kv.Key))
-                {
-                    _bindings.Entries[kv.Key] = kv.Value;
-                }
-            }
-        }
+        LoadBindings(path, _bindings.Entries, ProjectJsonSerializerContext.Default.ListKeyBinding);
     }
 
     public static void LoadMousebinds(string path)
     {
+        LoadBindings(path, _mouseBindings.Entries, ProjectJsonSerializerContext.Default.ListMouseBinding);
+    }
+
+    /// <summary>
+    /// Reads the saved bindings over the defaults, one entry at a time. The entries are keyed by the name of their
+    /// binding, so a file saved before a binding was removed or renamed still names it. Such an entry, or one that
+    /// can't be read, is skipped and logged, rather than failing the whole file: the file is saved again straight
+    /// after loading, so a failed load would replace every binding the user had set with the defaults.
+    /// </summary>
+    private static void LoadBindings<TId, TBinding>(string path, Dictionary<TId, List<TBinding>> target,
+        JsonTypeInfo<List<TBinding>> typeInfo) where TId : struct, Enum
+    {
         if (!File.Exists(path))
             return;
 
-        var json = File.ReadAllText(path);
-        var data = JsonSerializer.Deserialize(json, ProjectJsonSerializerContext.Default.MousebindStore);
+        using var document = JsonDocument.Parse(File.ReadAllText(path));
 
-        if (data != null)
+        if (!document.RootElement.TryGetProperty("Entries", out var entries) || entries.ValueKind != JsonValueKind.Object)
+            return;
+
+        var skipped = new List<string>();
+
+        foreach (var entry in entries.EnumerateObject())
         {
-            foreach (var kv in data.Entries)
+            // Only a name the enum still has: TryParse also takes numbers, which could stand for any binding
+            if (!Enum.TryParse<TId>(entry.Name, out var id) || id.ToString() != entry.Name || !target.ContainsKey(id))
             {
-                if (_mouseBindings.Entries.ContainsKey(kv.Key))
+                skipped.Add(entry.Name);
+                continue;
+            }
+
+            try
+            {
+                var bindings = entry.Value.Deserialize(typeInfo);
+
+                if (bindings != null)
                 {
-                    _mouseBindings.Entries[kv.Key] = kv.Value;
+                    target[id] = bindings;
                 }
             }
+            catch (JsonException)
+            {
+                skipped.Add(entry.Name);
+            }
+        }
+
+        if (skipped.Count > 0)
+        {
+            LogLater(LogLevel.Information, LOC.Get("INPUT_Bindings_Skipped", Path.GetFileName(path), string.Join(", ", skipped)));
         }
     }
 

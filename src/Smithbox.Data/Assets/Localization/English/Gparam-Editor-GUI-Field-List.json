@@ -77,16 +77,8 @@
       "Text": "Copy the field name to clipboard."
     },
     {
-      "Key": "GPARAM_FieldList_Context_QuickEdit_Header",
+      "Key": "GPARAM_FieldList_Context_Target_Header",
       "Text": "Quick Target"
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Target_In_Quick_Edit",
-      "Text": "Target in Quick Edit"
-    },
-    {
-      "Key": "GPARAM_FieldList_Context_Target_In_Quick_Edit_TT",
-      "Text": "Add this field to the Field Filter in the Quick Edit window."
     },
     {
       "Key": "GPARAM_FieldList_Context_Target_In_Local_Search",

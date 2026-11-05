@@ -331,7 +331,6 @@ public class GparamSelection
 
         _selectedParamFieldKey = entry.Key;
         _selectedParamFieldIndex = index;
-        Parent.QuickEditHandler.targetParamField = entry;
     }
 
     public bool HasSpecificFieldValueSelection(int index)

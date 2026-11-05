@@ -93,16 +93,8 @@
       "Text": "Copy the file path to clipboard."
     },
     {
-      "Key": "GPARAM_FileList_Context_QuickEdit_Header",
+      "Key": "GPARAM_FileList_Context_Target_Header",
       "Text": "Quick Target"
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Target_In_Quick_Edit",
-      "Text": "Target in Quick Edit"
-    },
-    {
-      "Key": "GPARAM_FileList_Context_Target_In_Quick_Edit_TT",
-      "Text": "Add this file to the File Filter in the Quick Edit window."
     },
     {
       "Key": "GPARAM_FileList_Context_Target_In_Global_Search",

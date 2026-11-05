@@ -1017,30 +1017,6 @@
       "Text": "Adds all of the missing fields for the currently selected group."
     },
     {
-      "Key": "KEY_GparamEditor_Execute_Quick_Edit",
-      "Text": "Apply Quick Edit"
-    },
-    {
-      "Key": "KEY_GparamEditor_Execute_Quick_Edit_TT",
-      "Text": "Applies the current quick edit (if configured)."
-    },
-    {
-      "Key": "KEY_GparamEditor_Generate_Quick_Edit",
-      "Text": "Generate Quick Edit from Selection"
-    },
-    {
-      "Key": "KEY_GparamEditor_Generate_Quick_Edit_TT",
-      "Text": "Fills the Quick Edit tool based on current selection."
-    },
-    {
-      "Key": "KEY_GparamEditor_Clear_Quick_Edit",
-      "Text": "Clear Quick Edit"
-    },
-    {
-      "Key": "KEY_GparamEditor_Clear_Quick_Edit_TT",
-      "Text": "Clears the Quick Edit tool inputs."
-    },
-    {
       "Key": "KEY_TextureViewer_Export_Texture",
       "Text": "Export Texture"
     },

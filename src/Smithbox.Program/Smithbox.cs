@@ -153,6 +153,9 @@ public class Smithbox
             evt => evt.Priority == LogPriority.High
         );
 
+        // The bindings are loaded in Setup, before there was a logger to report on them
+        InputManager.FlushPendingLogs();
+
         _context.Initialize();
         _context.Window.Title = _programTitle;
 
