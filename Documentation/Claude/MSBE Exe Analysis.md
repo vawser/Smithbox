@@ -253,8 +253,39 @@ Renamed to the exe meaning; old ER names are not kept. Round trip (`Tools/MsbRou
   display (`MsbEntity.RefreshShadowFlags`, `GparamUniverse`) uses the override pairs for ER. The map editor's render
   groups now read the real draw groups, because `DrawGroups` is at `+60h`.
 
+## Named from their callers (second pass)
+
+Retail value counts come from `MsbRoundTrip <out> ER stats`. All renames still round-trip identically to the baseline.
+
+* **Enemy `UnkT28..2B` → `ActivateTimeStartHour`, `ActivateTimeStartMinute`, `ActivateTimeEndHour`,
+  `ActivateTimeEndMinute`.** `0x140438A80` stores `T28*60+T29` and `T2A*60+T2B` as start and end minutes of the in-game
+  clock. The defaults come from the `ChrActivateConditionParam` row (`ChrActivateCondParamID`), whose
+  `timeStartHour/Min` and `timeEndHour/Min` sit at `+2..+5`. The MSB values replace them when any of the four is
+  non-zero. Retail: 34,618 are `00:00-00:00`; the rest are `20:00-05:00`, `20:00-05:30`, `19:30-04:30` (night-only
+  enemies) or `06:00-19:59`.
+* **Asset `UnkT13` → `ExcludeActivateRatioOverride_PS4`, `UnkT52` → `ExcludeActivateRatioOverride_XboxOne`.**
+  `0x1406CAF30` picks the AssetGeometryParam's `excludeActivateRatio_Xboxone_Grid/Legacy` (`+11Ch`/`+11Dh`) or
+  `_PS4_Grid/Legacy` (`+11Eh`/`+11Fh`) by platform. A non-zero MSB byte replaces the param value. `UnkT52` is only
+  read for MSB version `>= 0x45`. Neither applies on PC; both are 0 in retail.
+* **PlatoonInfo `State` (int) → `State`, `UnkT05`, `UnkT06`, `UseMemberEntityIDs` (bytes) plus a new
+  `MemberEntityIDs[2]` at `+8`.**
+  * `0x140353CA0` reads `+4` and `+5` as flags. It loops over `GroupPartsNames` and requires each part to be an Enemy.
+  * When `+7` is set, it also adds the characters whose entity IDs are at `+8`/`+0Ch`. The value `10000` (the player)
+    sets a flag on the platoon instead.
+  * Retail: `State` 0/1, `UnkT05` 1 on two platoons, everything else 0.
+* **PatrolInfo `+3` → `UseAllWalkRegions`** (default 1, always 1 in retail). The walk-region loop (`0x14036BB90`) reads
+  all 64 region indices when it is set, otherwise only the first 24.
+* **Asset `UnkT51`:** a 0/1/2 category (0 on 624,888 of 624,987 assets). 1 and 2 put the asset into separate instance
+  lists of the geometry manager (`+528h`/`+548h`), checked next to `DisableRTAO`. Not named.
+* **Entity `UnkE3E`:** becomes bit 0 of byte 2 of the part's render flags. Those flags are copied into
+  `CS::CSGeomModelIns +150h` (`0x1409F0AA0`), and their readers are generic accessors. Not named.
+* **Entity `UnkE3C`:** a `u16`, `-1` = none. It's copied into geometry setup structs (`+148h` in `0x1406C6111`, `+7Ch`
+  in `0x14071AD80`) right after the PartsDrawParam flags are applied, under a condition on the map's block data. Not
+  named.
+
 ## Suggested next steps
 
-1. Trace the callers in `getters.tsv` for the remaining unnamed reads (UnkE3E, UnkE3C, Asset `UnkT51`/`UnkT52`, Enemy
-   `UnkT28..2B`) to name them.
-2. Check the event type-data bytes per event type, then split the ones that are really bytes.
+1. Name UnkE3E, UnkE3C and Asset UnkT51 at runtime: set them on a test asset and watch what changes. Static analysis
+   ends in unnamed accessors.
+2. `DisplayGroupStruct.Condition` is read as an int by Hit and as bytes `+0..+2` by `MsbResCap` (`0x140CF890E`). Read
+   that loader path to decide whether it is really bytes.

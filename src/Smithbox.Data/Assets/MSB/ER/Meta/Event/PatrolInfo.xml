@@ -8,6 +8,11 @@
     AltName="Patrol Type"
     Wiki="The type of patrol this represents."
     Enum="PATROL_TYPE" />
+
+    <UseAllWalkRegions
+    AltName="Use All Walk Regions"
+    Wiki="If ON (always, in retail), all 64 walk regions are used; otherwise only the first 24."
+    IsBool="" />
     
     <WalkRegionNames
     AltName="Walk Region"
