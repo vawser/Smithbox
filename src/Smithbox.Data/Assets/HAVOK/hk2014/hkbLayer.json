@@ -1,0 +1,17 @@
+{
+  "Type": "HKX2.hkbLayer",
+  "Fields": [
+      {
+          "Field": "m_onEventId",
+          "Name": "On Event",
+          "Description": "The event that blends this in. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_offEventId",
+          "Name": "Off Event",
+          "Description": "The event that blends this out. -1 for none.",
+          "EventID": true
+      }
+  ]
+}

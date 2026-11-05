@@ -1,0 +1,17 @@
+{
+  "Type": "HKLib.hk2018.hkbStateMachine+TimeInterval",
+  "Fields": [
+      {
+          "Field": "m_enterEventId",
+          "Name": "Enter Event",
+          "Description": "The event sent when the interval is entered. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_exitEventId",
+          "Name": "Exit Event",
+          "Description": "The event sent when the interval is left. -1 for none.",
+          "EventID": true
+      }
+  ]
+}

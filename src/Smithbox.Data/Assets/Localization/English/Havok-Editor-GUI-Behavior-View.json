@@ -17,6 +17,50 @@
       "Text": "Variables"
     },
     {
+      "Key": "HAVOK_BehaviorView_Tab_Outline",
+      "Text": "Outline"
+    },
+    {
+      "Key": "HAVOK_OutlineView_Back_TT",
+      "Text": "Go back to the previously selected node."
+    },
+    {
+      "Key": "HAVOK_OutlineView_Forward_TT",
+      "Text": "Go forward again after going back."
+    },
+    {
+      "Key": "HAVOK_OutlineView_Cycle",
+      "Text": "{0} (reference cycle, not drawn further)"
+    },
+    {
+      "Key": "HAVOK_OutlineView_Shared",
+      "Text": "shared x{0}"
+    },
+    {
+      "Key": "HAVOK_OutlineView_Shared_TT",
+      "Text": "This object is referenced from {0} places, so it's shown under each of them. An edit to it changes it everywhere it's used.\n\nThe Used By list shows where."
+    },
+    {
+      "Key": "HAVOK_UsedBy_Header",
+      "Text": "Used By ({0})"
+    },
+    {
+      "Key": "HAVOK_UsedBy_Header_TT",
+      "Text": "The objects that reference the selected object, with the field each one holds it in. Click one to show it in the Outline."
+    },
+    {
+      "Key": "HAVOK_UsedBy_Show_In_Outline",
+      "Text": "Show in Outline"
+    },
+    {
+      "Key": "HAVOK_UsedBy_Show_In_Outline_TT",
+      "Text": "Select this object in the Outline tab, with the tree opened down to it."
+    },
+    {
+      "Key": "HAVOK_UsedBy_Entry_Via_TT",
+      "Text": "This object isn't shown in the Outline itself, so the Outline shows the node above it:\n{0}"
+    },
+    {
       "Key": "HAVOK_BehaviorView_No_Entry_Selected",
       "Text": "No entry selected yet."
     },
@@ -35,6 +79,102 @@
     {
       "Key": "HAVOK_BehaviorView_Display_Alias_TT",
       "Text": "Toggle the display of aliases in certain entry lists.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Role_Event",
+      "Text": "Event"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Role_Variable",
+      "Text": "Variable"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Role_Character_Property",
+      "Text": "Character Property"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Role_State",
+      "Text": "State"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Role_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_None",
+      "Text": "None (-1)"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Unnamed",
+      "Text": "(unnamed {0})"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Missing",
+      "Text": "Missing {0} ({1})"
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_TT",
+      "Text": "The {0} this number refers to. Pick another here, or edit the number in the row above."
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Missing_TT",
+      "Text": "No {0} has the index {1} in this file, so the game won't find it."
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_Search_Hint",
+      "Text": "Search by name or index..."
+    },
+    {
+      "Key": "HAVOK_BehaviorIndex_No_State_Machine",
+      "Text": "No state machine found above this object."
+    },
+    {
+      "Key": "HAVOK_BehaviorBinding_Label",
+      "Text": "Bound to"
+    },
+    {
+      "Key": "HAVOK_BehaviorBinding_TT",
+      "Text": "This field is set from a variable binding while the behavior runs.\n\nMember path: {0}\nIndex: {1}\nBit index: {2}\n\nClick a variable to show it in the Variables tab."
+    },
+    {
+      "Key": "HAVOK_VariableView_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "HAVOK_VariableView_Name_TT",
+      "Text": "The variable's name, at index {0} in the behavior graph's variable names."
+    },
+    {
+      "Key": "HAVOK_VariableView_Info",
+      "Text": "Info"
+    },
+    {
+      "Key": "HAVOK_VariableView_Bounds",
+      "Text": "Bounds"
+    },
+    {
+      "Key": "HAVOK_VariableView_Initial_Value",
+      "Text": "Initial Value"
+    },
+    {
+      "Key": "HAVOK_VariableView_Initial_Value_TT",
+      "Text": "The variable's initial word value. For vector and pointer variables, this is the index of its value in the quad or variant value list."
+    },
+    {
+      "Key": "HAVOK_VariableView_Bindings",
+      "Text": "Bindings: {0}"
+    },
+    {
+      "Key": "HAVOK_VariableView_Bindings_TT",
+      "Text": "The objects whose fields are set from this variable."
+    },
+    {
+      "Key": "HAVOK_VariableView_Bindings_Object",
+      "Text": "Object"
+    },
+    {
+      "Key": "HAVOK_VariableView_Bindings_Member",
+      "Text": "Member Path"
     }
   ]
 }

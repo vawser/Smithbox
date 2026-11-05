@@ -1,0 +1,11 @@
+{
+  "Type": "HKLib.hk2018.hkbVariableBindingSet+Binding",
+  "Fields": [
+      {
+          "Field": "m_variableIndex",
+          "Name": "Variable",
+          "Description": "The variable (or character property, depending on the binding type) bound to the member path.",
+          "VariableIndex": true
+      }
+  ]
+}

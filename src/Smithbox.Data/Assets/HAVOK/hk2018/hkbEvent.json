@@ -1,0 +1,11 @@
+{
+  "Type": "HKLib.hk2018.hkbEvent",
+  "Fields": [
+      {
+          "Field": "m_id",
+          "Name": "Event",
+          "Description": "The event sent. -1 for none.",
+          "EventID": true
+      }
+  ]
+}

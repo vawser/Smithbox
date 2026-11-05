@@ -1,0 +1,11 @@
+{
+  "Type": "HKX2.hkbEventProperty",
+  "Fields": [
+      {
+          "Field": "m_id",
+          "Name": "Event",
+          "Description": "The event sent. -1 for none.",
+          "EventID": true
+      }
+  ]
+}

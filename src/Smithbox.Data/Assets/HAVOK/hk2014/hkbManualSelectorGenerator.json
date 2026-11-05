@@ -1,0 +1,11 @@
+{
+  "Type": "HKX2.hkbManualSelectorGenerator",
+  "Fields": [
+      {
+          "Field": "m_endOfClipEventId",
+          "Name": "End Of Clip Event",
+          "Description": "The event sent when the selected clip ends. -1 for none.",
+          "EventID": true
+      }
+  ]
+}

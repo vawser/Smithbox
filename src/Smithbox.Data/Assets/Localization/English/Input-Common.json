@@ -41,6 +41,10 @@
       "Text": "Texture Viewer"
     },
     {
+      "Key": "INPUT_CATEGORY_Havok_Editor",
+      "Text": "Havok Editor"
+    },
+    {
       "Key": "INPUT_CATEGORY_Developer",
       "Text": "Developer"
     },

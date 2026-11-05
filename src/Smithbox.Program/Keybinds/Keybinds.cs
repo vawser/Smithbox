@@ -406,6 +406,13 @@ public enum KeybindID
     [Display(Name = "KEY_TextureViewer_Reset_Zoom_Level", Description = "KEY_TextureViewer_Reset_Zoom_Level_TT")]
     TextureViewer_Reset_Zoom_Level,
 
+    // Havok Editor
+    [Display(Name = "KEY_HavokEditor_Navigate_Back", Description = "KEY_HavokEditor_Navigate_Back_TT")]
+    HavokEditor_Navigate_Back,
+
+    [Display(Name = "KEY_HavokEditor_Navigate_Forward", Description = "KEY_HavokEditor_Navigate_Forward_TT")]
+    HavokEditor_Navigate_Forward,
+
     // Developer
     [Display(Name = "KEY_CaptureThumbnailImage", Description = "KEY_CaptureThumbnailImage_TT")]
     CaptureThumbnailImage
@@ -585,6 +592,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.TextureViewer_Reset_Zoom_Level, new() { Key = Key.R, Ctrl = true });
 
         // Developer
+        InputManager.Bind(KeybindID.HavokEditor_Navigate_Back, new() { Key = Key.Left, Alt = true });
+        InputManager.Bind(KeybindID.HavokEditor_Navigate_Forward, new() { Key = Key.Right, Alt = true });
+
         InputManager.Bind(KeybindID.CaptureThumbnailImage, new() { Key = Key.F8 });
     }
 }
@@ -741,6 +751,9 @@ public static class KeybindMetadata
         { KeybindID.TextureViewer_Reset_Zoom_Level, InputCategory.TextureViewer },
 
         // Developer
+        { KeybindID.HavokEditor_Navigate_Back, InputCategory.HavokEditor },
+        { KeybindID.HavokEditor_Navigate_Forward, InputCategory.HavokEditor },
+
         { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
     };
 }

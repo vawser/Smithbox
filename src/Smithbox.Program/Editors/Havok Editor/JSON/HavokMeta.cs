@@ -1,4 +1,6 @@
-﻿namespace StudioCore.Application;
+﻿using StudioCore.Editors.HavokEditor;
+
+namespace StudioCore.Application;
 
 public class HavokMeta : Dictionary<string, Dictionary<string, HavokClass>>;
 
@@ -27,6 +29,11 @@ public class HavokField
     // Tags: Clip Generator
     public bool ClipGeneratorFlags { get; set; } = false;
     public bool AnimationInternalID { get; set; } = false;
+
+    // Tags: Behavior indices (resolved to names from the behavior graph string data)
+    public bool EventID { get; set; } = false;
+    public bool VariableIndex { get; set; } = false;
+    public bool StateID { get; set; } = false;
 }
 
 public static class HavokMetaHelper
@@ -108,6 +115,31 @@ public static class HavokMetaHelper
         }
 
         return description;
+    }
+
+    /// <summary>
+    /// What the field indexes into, from its meta tags
+    /// </summary>
+    public static HavokIndexRole GetIndexRole(HavokClass havokMeta, string internalName)
+    {
+        if (havokMeta == null)
+            return HavokIndexRole.None;
+
+        var entry = havokMeta.Fields.FirstOrDefault(f => f.Field == internalName);
+
+        if (entry == null)
+            return HavokIndexRole.None;
+
+        if (entry.EventID)
+            return HavokIndexRole.Event;
+
+        if (entry.VariableIndex)
+            return HavokIndexRole.Variable;
+
+        if (entry.StateID)
+            return HavokIndexRole.State;
+
+        return HavokIndexRole.None;
     }
 
     public static bool IsRawData(HavokClass havokMeta, string internalName)

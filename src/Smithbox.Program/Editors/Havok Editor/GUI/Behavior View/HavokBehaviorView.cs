@@ -17,6 +17,12 @@ public class HavokBehaviorView
     public HavokAnimationSelectorView AnimationSelectorView;
     public HavokStateMachineView StateMachineView;
     public HavokVariableView VariableView;
+    public HavokOutlineView OutlineView;
+
+    /// <summary>
+    /// The names the file's indices refer to, or null if the shown file isn't a behavior graph
+    /// </summary>
+    public HavokBehaviorSymbols Symbols;
 
     public HavokBehaviorView(HavokEditorView view, ProjectEntry project)
     {
@@ -27,16 +33,19 @@ public class HavokBehaviorView
         AnimationSelectorView = new(view, this, project);
         StateMachineView = new(view, this, project);
         VariableView = new(view, this, project);
+        OutlineView = new(view, this, project);
     }
 
     public void ResetSelection()
     {
         IsBehaviorGraph = false;
+        Symbols = null;
 
         AnimationClipView.ResetSelection();
         AnimationSelectorView.ResetSelection();
         StateMachineView.ResetSelection();
         VariableView.ResetSelection();
+        OutlineView.ResetSelection();
     }
 
     public void SetupBehaviorView(object sourceObject)
@@ -44,6 +53,11 @@ public class HavokBehaviorView
         // Determine if selected file is a Behavior Graph
         // (this also re-runs after structural edits, so it starts from scratch)
         IsBehaviorGraph = false;
+
+        // Built for any version (it reads fields by name), but only for behavior files, since it walks the whole file
+        Symbols = View.Selection.CategoryMode is HavokCategoryMode.Behavior
+            ? HavokBehaviorSymbols.Build(sourceObject, View.PropertyCache.GetCachedHavokFields)
+            : null;
 
         if (HavokTypeUtils.IsHKX3(Project))
         {
@@ -64,6 +78,7 @@ public class HavokBehaviorView
         AnimationSelectorView.Setup(sourceObject);
         StateMachineView.Setup(sourceObject);
         VariableView.Setup(sourceObject);
+        OutlineView.Setup(sourceObject);
     }
 
     public void Draw(object sourceObject)
@@ -120,6 +135,7 @@ public class HavokBehaviorView
         // EndTabBar must only be called when BeginTabBar returned true
         if (ImGui.BeginTabBar("behaviorTabs", ImGuiTabBarFlags.FittingPolicyResizeDown))
         {
+            OutlineView.DisplayTab();
             StateMachineView.DisplayTab();
             AnimationSelectorView.DisplayTab();
             AnimationClipView.DisplayTab();
@@ -136,7 +152,13 @@ public class HavokBehaviorView
 
     public void DisplayProperties()
     {
-        if (StateMachineView.CanDisplayProperties())
+        DisplayUsedBy();
+
+        if (OutlineView.CanDisplayProperties())
+        {
+            OutlineView.DisplayProperties();
+        }
+        else if (StateMachineView.CanDisplayProperties())
         {
             StateMachineView.DisplayProperties();
         }
@@ -156,5 +178,82 @@ public class HavokBehaviorView
         {
             GUI.WrappedText(LOC.Get("HAVOK_BehaviorView_No_Entry_Selected"));
         }
+    }
+
+    /// <summary>
+    /// The object shown in the property panel by the current tab, or null (the Variables tab shows a variable,
+    /// which isn't one object)
+    /// </summary>
+    public object GetSelectedObject()
+    {
+        if (OutlineView.CanDisplayProperties())
+            return OutlineView.Selected;
+
+        if (StateMachineView.CanDisplayProperties())
+            return StateMachineView.SelectedStateMachines.FirstOrDefault();
+
+        if (AnimationSelectorView.CanDisplayProperties())
+            return AnimationSelectorView.SelectedAnimSelectors.FirstOrDefault();
+
+        if (AnimationClipView.CanDisplayProperties())
+            return AnimationClipView.SelectedAnimationClips.FirstOrDefault();
+
+        return null;
+    }
+
+    /// <summary>
+    /// What references the selected object, each with the field it's held in. Clicking one shows it in the outline.
+    /// </summary>
+    private void DisplayUsedBy()
+    {
+        var selected = GetSelectedObject();
+
+        if (selected == null || Symbols == null)
+            return;
+
+        var parents = Symbols.GetParents(selected);
+
+        var headerOpen = ImGui.CollapsingHeader($"{LOC.Get("HAVOK_UsedBy_Header", parents.Count)}###havokUsedBy");
+        GUI.Tooltip(LOC.Get("HAVOK_UsedBy_Header_TT"));
+
+        // Show in Outline, for a selection made in another tab
+        if (!OutlineView.IsCurrentTab)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.SmallButton($"{LOC.Get("HAVOK_UsedBy_Show_In_Outline")}##showInOutline"))
+                OutlineView.Navigate(selected);
+
+            GUI.Tooltip(LOC.Get("HAVOK_UsedBy_Show_In_Outline_TT"));
+        }
+
+        if (!headerOpen || parents.Count == 0)
+            return;
+
+        // At most 8 rows tall, so the property grid below keeps its space
+        var rowHeight = ImGui.GetTextLineHeightWithSpacing();
+        var height = Math.Min(parents.Count, 8) * rowHeight + ImGui.GetStyle().WindowPadding.Y * 2;
+
+        ImGui.BeginChild("havokUsedByList", new System.Numerics.Vector2(0, height), ImGuiChildFlags.Borders);
+
+        for (var i = 0; i < parents.Count; i++)
+        {
+            var parent = parents[i];
+            var field = HavokBehaviorSymbols.FindFieldSegment(parent, selected) ?? "?";
+            var label = $"{HavokBehaviorSymbols.GetLabel(parent)}  .{field}";
+
+            if (ImGui.Selectable($"{label}##usedBy{i}"))
+                OutlineView.Navigate(parent);
+
+            // The outline shows nodes only, so a reference from an object between nodes jumps to the node above it
+            if (!HavokBehaviorSymbols.IsOutlineNode(parent))
+            {
+                var node = Symbols.FindOutlineNode(parent);
+                GUI.Tooltip(LOC.Get("HAVOK_UsedBy_Entry_Via_TT",
+                    node == null ? "-" : HavokBehaviorSymbols.GetOutlineLabel(node)));
+            }
+        }
+
+        ImGui.EndChild();
     }
 }

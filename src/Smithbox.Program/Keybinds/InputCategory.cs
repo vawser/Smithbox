@@ -39,6 +39,9 @@ public enum InputCategory
     [Display(Name = "INPUT_CATEGORY_Texture_Viewer")]
     TextureViewer,
 
+    [Display(Name = "INPUT_CATEGORY_Havok_Editor")]
+    HavokEditor,
+
     [Display(Name = "INPUT_CATEGORY_Developer")]
     Developer
 }

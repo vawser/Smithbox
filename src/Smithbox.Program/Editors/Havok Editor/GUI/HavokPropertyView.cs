@@ -843,6 +843,16 @@ public class HavokPropertyView
             committed = true;
         }
 
+        // Event, variable and state indices: the name they refer to
+        if (HavokPropertyDecorators.BehaviorIndexRow(View, havokMeta, prop, oldval, containerObj, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
+        // Fields driven by a variable binding
+        HavokPropertyDecorators.BehaviorBindingRow(View, prop, containerObj, arrayIndex);
+
         UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
 
         ImGui.NextColumn();

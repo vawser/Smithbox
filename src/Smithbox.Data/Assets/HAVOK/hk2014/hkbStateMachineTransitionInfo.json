@@ -1,0 +1,17 @@
+{
+  "Type": "HKX2.hkbStateMachineTransitionInfo",
+  "Fields": [
+      {
+          "Field": "m_eventId",
+          "Name": "Event",
+          "Description": "The event that triggers this transition.",
+          "EventID": true
+      },
+      {
+          "Field": "m_toStateId",
+          "Name": "To State",
+          "Description": "The state this transition goes to, in the same state machine.",
+          "StateID": true
+      }
+  ]
+}

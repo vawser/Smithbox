@@ -1,0 +1,41 @@
+{
+  "Type": "HKLib.hk2018.hkbStateMachine",
+  "Fields": [
+      {
+          "Field": "m_startStateId",
+          "Name": "Start State",
+          "Description": "The state the state machine starts in.",
+          "StateID": true
+      },
+      {
+          "Field": "m_returnToPreviousStateEventId",
+          "Name": "Return To Previous State Event",
+          "Description": "The event that returns to the previous state. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_randomTransitionEventId",
+          "Name": "Random Transition Event",
+          "Description": "The event that moves to a random state. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_transitionToNextHigherStateEventId",
+          "Name": "Next Higher State Event",
+          "Description": "The event that moves to the state with the next higher state ID. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_transitionToNextLowerStateEventId",
+          "Name": "Next Lower State Event",
+          "Description": "The event that moves to the state with the next lower state ID. -1 for none.",
+          "EventID": true
+      },
+      {
+          "Field": "m_syncVariableIndex",
+          "Name": "Sync Variable",
+          "Description": "The variable the current state ID is written to. -1 for none.",
+          "VariableIndex": true
+      }
+  ]
+}

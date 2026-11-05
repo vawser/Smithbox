@@ -1,9 +1,13 @@
-﻿using Havok.Shared;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using System.Reflection;
 
 namespace StudioCore.Editors.HavokEditor;
 
+/// <summary>
+/// The behavior graph's variables, from its string data and graph data:
+/// name, info, bounds, initial value, and the bindings that use each one
+/// </summary>
 public class HavokVariableView
 {
     private HavokEditorView View;
@@ -12,8 +16,17 @@ public class HavokVariableView
 
     public bool IsCurrentTab = false;
 
-    public List<HavokVariableWrapper> SelectedVariableWrappers = new();
-    private List<HavokVariableWrapper> VariableWrappers = new();
+    /// <summary>
+    /// The selected variable's index, or -1
+    /// </summary>
+    public int SelectedIndex = -1;
+
+    /// <summary>
+    /// Set by <see cref="RequestSelect"/>, so the tab is brought to the front on the next draw
+    /// </summary>
+    private bool FocusTabRequested = false;
+
+    private bool ScrollToSelection = false;
 
     public HavokVariableView(HavokEditorView view, HavokBehaviorView ownerView, ProjectEntry project)
     {
@@ -24,24 +37,28 @@ public class HavokVariableView
 
     public void ResetSelection()
     {
-        SelectedVariableWrappers.Clear();
+        SelectedIndex = -1;
     }
 
     public void Setup(object sourceObject)
     {
-        //var bindingSets = HavokTreeSearch.FindAll<HKX2.hkbVariableBindingSet>(
-        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
+        // Drop a selection that is no longer in the list (after a structural edit)
+        var names = Owner.Symbols?.VariableNames;
 
-        //var valueSets = HavokTreeSearch.FindAll<HKX2.hkbVariableValueSet>(
-        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
+        if (names == null || SelectedIndex >= names.Count)
+        {
+            SelectedIndex = -1;
+        }
+    }
 
-        //var infos = HavokTreeSearch.FindAll<HKX2.hkbVariableInfo>(
-        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
-
-        //var bounds = HavokTreeSearch.FindAll<HKX2.hkbVariableBounds>(
-        //    sourceObject, View.PropertyCache.GetCachedHavokFields);
-
-        //Smithbox.Log(this, "");
+    /// <summary>
+    /// Select a variable and show this tab (used by the binding rows in the property view)
+    /// </summary>
+    public void RequestSelect(int index)
+    {
+        SelectedIndex = index;
+        FocusTabRequested = true;
+        ScrollToSelection = true;
     }
 
     public void SetTabState(bool state)
@@ -51,49 +68,61 @@ public class HavokVariableView
 
     public void DisplayTab()
     {
-        //if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables"))
-        //{
-        //    SetTabState(true);
+        if (Owner.Symbols == null)
+        {
+            SetTabState(false);
+            return;
+        }
 
-        //    DisplayTabHeader();
-        //    DisplayTabContents();
+        var flags = FocusTabRequested ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+        FocusTabRequested = false;
 
-        //    ImGui.EndTabItem();
-        //}
-        //else
-        //{
-        //    SetTabState(false);
-        //}
+        if (ImGui.BeginTabItem($"{LOC.Get("HAVOK_BehaviorView_Tab_Variables")}##tabVariables", flags))
+        {
+            SetTabState(true);
 
+            DisplayTabHeader();
+            DisplayTabContents();
+
+            ImGui.EndTabItem();
+        }
+        else
+        {
+            SetTabState(false);
+        }
     }
 
     public void DisplayTabContents()
     {
         ImGui.BeginChild("havokBehaviorElementListSection");
 
-        //foreach (var entry in ClipGenerators)
-        //{
-        //    var clipName = entry.m_name;
-        //    var selected = SelectedVariables.Contains(entry);
+        var names = Owner.Symbols?.VariableNames;
 
-        //    var isMatch = EditorFilters.IsMatch(Owner.PropFilter, clipName, Owner.ExactPropFilter);
+        if (names != null)
+        {
+            for (int i = 0; i < names.Count; i++)
+            {
+                var name = names[i] as string ?? "";
 
-        //    if (!isMatch)
-        //        continue;
+                var isMatch = EditorFilters.IsMatch(Owner.PropFilter, name, Owner.ExactPropFilter);
 
-        //    if (ImGui.Selectable($"{clipName}##clipGenerator_{clipName}", selected))
-        //    {
-        //        if (InputManager.HasCtrlDown())
-        //        {
-        //            SelectedVariables.Add(entry);
-        //        }
-        //        else
-        //        {
-        //            SelectedVariables.Clear();
-        //            SelectedVariables.Add(entry);
-        //        }
-        //    }
-        //}
+                if (!isMatch)
+                    continue;
+
+                var selected = SelectedIndex == i;
+
+                if (ImGui.Selectable($"{i}: {name}##variable_{i}", selected))
+                {
+                    SelectedIndex = i;
+                }
+
+                if (selected && ScrollToSelection)
+                {
+                    ImGui.SetScrollHereY();
+                    ScrollToSelection = false;
+                }
+            }
+        }
 
         ImGui.EndChild();
     }
@@ -109,26 +138,27 @@ public class HavokVariableView
 
     public bool CanDisplayProperties()
     {
-        var firstSelection = SelectedVariableWrappers.FirstOrDefault();
-
         if (!IsCurrentTab)
             return false;
 
-        if (firstSelection == null)
+        if (Owner.Symbols == null)
             return false;
 
-        return true;
+        return HavokBehaviorSymbols.GetName(Owner.Symbols.VariableNames, SelectedIndex) != null;
     }
 
     public void DisplayProperties()
     {
-        // Only edit the first selection (multi-select is only for the entry manipulation actions)
-        var firstSelection = SelectedVariableWrappers.FirstOrDefault();
+        var symbols = Owner.Symbols;
 
-        if (firstSelection == null)
+        if (symbols == null)
             return;
 
-        var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
+        var index = SelectedIndex;
+        var name = HavokBehaviorSymbols.GetName(symbols.VariableNames, index);
+
+        if (name == null)
+            return;
 
         ImGui.BeginChild("havokBehaviorPropEditSection");
 
@@ -140,15 +170,115 @@ public class HavokVariableView
 
         ImGui.Columns(columnCount);
 
-        View.PropertyView.HavokPropEditGeneric(firstSelection, havokMeta);
+        DisplayNameRow(symbols, index, name);
+
+        DisplayObjectNode(LOC.Get("HAVOK_VariableView_Info"), symbols.GetVariableInfo(index));
+        DisplayObjectNode(LOC.Get("HAVOK_VariableView_Bounds"), symbols.GetVariableBounds(index));
+        DisplayObjectNode(LOC.Get("HAVOK_VariableView_Initial_Value"), symbols.GetVariableInitialValue(index),
+            LOC.Get("HAVOK_VariableView_Initial_Value_TT"));
 
         ImGui.Columns(1);
 
+        DisplayBindings(symbols, index);
+
         ImGui.EndChild();
     }
-}
 
-public class HavokVariableWrapper
-{
+    /// <summary>
+    /// The variable's name, editable (an edit to the string data's name list)
+    /// </summary>
+    private void DisplayNameRow(HavokBehaviorSymbols symbols, int index, string name)
+    {
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text(LOC.Get("HAVOK_VariableView_Name"));
+        GUI.Tooltip(LOC.Get("HAVOK_VariableView_Name_TT", index));
 
+        ImGui.NextColumn();
+
+        ImGui.SetNextItemWidth(-1);
+        var newName = name;
+
+        ImGui.InputText("##variableName", ref newName, 255);
+
+        if (ImGui.IsItemDeactivatedAfterEdit() && newName != name)
+        {
+            var field = HavokBehaviorSymbols.GetField(symbols.StringData.GetType(), "m_variableNames");
+
+            if (field != null)
+            {
+                var action = new HavokChangeField(View.Selection.SelectedFileWrapper, field, symbols.StringData, newName, index);
+                View.ActionManager.ExecuteAction(action);
+            }
+        }
+
+        ImGui.NextColumn();
+
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+    }
+
+    /// <summary>
+    /// An object (info, bounds, initial value) as an open tree node, edited like any other object
+    /// </summary>
+    private void DisplayObjectNode(string label, object obj, string tooltip = "")
+    {
+        if (obj == null)
+            return;
+
+        var open = ImGui.TreeNodeEx($"{label}##variableNode_{label}", ImGuiTreeNodeFlags.DefaultOpen);
+        GUI.Tooltip(tooltip);
+
+        ImGui.NextColumn();
+        ImGui.NextColumn();
+
+        if (CFG.Current.HavokEditor_Properties_Display_Type_Column)
+        {
+            ImGui.TextDisabled(obj.GetType().FullName);
+            ImGui.NextColumn();
+        }
+
+        if (open)
+        {
+            View.PropertyView.HavokPropEditGeneric(obj, HavokMetaHelper.GetMeta(Project, obj.GetType()));
+            ImGui.TreePop();
+        }
+    }
+
+    /// <summary>
+    /// Every binding that reads this variable, and the object it drives
+    /// </summary>
+    private void DisplayBindings(HavokBehaviorSymbols symbols, int index)
+    {
+        ImGui.Separator();
+
+        var bindings = symbols.FindBindingsTo(index, characterProperty: false);
+
+        ImGui.Text(LOC.Get("HAVOK_VariableView_Bindings", bindings.Count));
+        GUI.Tooltip(LOC.Get("HAVOK_VariableView_Bindings_TT"));
+
+        if (bindings.Count == 0)
+            return;
+
+        if (ImGui.BeginTable("variableBindingsTable", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.Resizable))
+        {
+            ImGui.TableSetupColumn(LOC.Get("HAVOK_VariableView_Bindings_Object"), ImGuiTableColumnFlags.WidthStretch);
+            ImGui.TableSetupColumn(LOC.Get("HAVOK_VariableView_Bindings_Member"), ImGuiTableColumnFlags.WidthStretch);
+            ImGui.TableHeadersRow();
+
+            foreach (var (bindable, binding) in bindings)
+            {
+                ImGui.TableNextRow();
+
+                ImGui.TableSetColumnIndex(0);
+                ImGui.Text(HavokBehaviorSymbols.GetLabel(bindable));
+
+                ImGui.TableSetColumnIndex(1);
+                ImGui.Text(HavokBehaviorSymbols.GetMemberPath(binding));
+            }
+
+            ImGui.EndTable();
+        }
+    }
 }

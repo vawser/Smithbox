@@ -1039,6 +1039,22 @@
     {
       "Key": "KEY_CaptureThumbnailImage_TT",
       "Text": "Captures a thumbnail based on the current viewport."
+    },
+    {
+      "Key": "KEY_HavokEditor_Navigate_Back",
+      "Text": "Navigate Back"
+    },
+    {
+      "Key": "KEY_HavokEditor_Navigate_Back_TT",
+      "Text": "In the Havok Editor's behavior outline, go back to the previously selected node."
+    },
+    {
+      "Key": "KEY_HavokEditor_Navigate_Forward",
+      "Text": "Navigate Forward"
+    },
+    {
+      "Key": "KEY_HavokEditor_Navigate_Forward_TT",
+      "Text": "In the Havok Editor's behavior outline, go forward again after going back."
     }
   ]
 }
