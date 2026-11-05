@@ -178,7 +178,63 @@
     },
     {
       "Key": "PARAM_RowWindow_Context_Action_Unpin_All_TT",
-      "Text": "Unpin all of the currently pinned rows."
+      "Text": "Unpin all of the pinned rows in the current param."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All_Params",
+      "Text": "Unpin All in All Params"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Unpin_All_Params_TT",
+      "Text": "Unpin all of the pinned rows in every param."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Edit_Applies_To_Selection",
+      "Text": "Applies to the {0} selected row(s) when you press Enter or click away."
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Same_ID_Warning",
+      "Text": "All {0} selected rows will get this ID."
+    },
+    {
+      "Key": "PARAM_RowWindow_Search_Match_Count",
+      "Text": "{0} / {1} rows"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Header",
+      "Text": "Offset reference fields by the duplicate offset:"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_None",
+      "Text": "This param has no reference fields to offset."
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Attack",
+      "Text": "Attack references"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Bullet",
+      "Text": "Bullet references"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Behavior",
+      "Text": "Behavior references"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_SpEffect",
+      "Text": "SpEffect references"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Source",
+      "Text": "Source references"
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Offset_Zero",
+      "Text": "The offset is 0, so no reference fields will change."
+    },
+    {
+      "Key": "PARAM_Duplicate_Reference_Preview",
+      "Text": "These fields will be offset by {0} (values of -1 are left alone):"
     },
     {
       "Key": "PARAM_RowWindow_Context_Search_Header",

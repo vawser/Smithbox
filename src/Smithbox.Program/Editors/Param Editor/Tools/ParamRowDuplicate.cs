@@ -21,7 +21,7 @@ public static class ParamRowDuplicate
             return;
 
         Param param = curView.GetPrimaryBank().Params[curParamKey];
-        List<Param.Row> rows = curView.Selection.GetSelectedRows();
+        List<Param.Row> rows = curView.Selection.GetSelectedRows().Where(r => r != null).ToList();
 
         if (rows.Count == 0)
         {
@@ -130,6 +130,129 @@ public static class ParamRowDuplicate
             });
 
             curView.Editor.ActionManager.ExecuteAction(compoundAction);
+        }
+    }
+    #endregion
+
+    #region Reference Offsets
+    // The DeepCopyTarget kinds in the param meta, each with its option. A duplicate offsets the reference fields
+    // of every ticked kind by the duplicate offset, so the copy points at the matching copies of its attacks etc.
+    private const string Target_Attack = "Attack";
+    private const string Target_Bullet = "Bullet";
+    private const string Target_Behavior = "Behavior";
+    private const string Target_SpEffect = "SpEffect";
+    private const string Target_Source = "Source";
+
+    /// <summary>
+    /// The DeepCopyTarget kinds whose option is ticked
+    /// </summary>
+    public static HashSet<string> GetEnabledDeepCopyTargets()
+    {
+        var enabled = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        if (CFG.Current.Param_Toolbar_Duplicate_AffectAttackField)
+            enabled.Add(Target_Attack);
+
+        if (CFG.Current.Param_Toolbar_Duplicate_AffectBulletField)
+            enabled.Add(Target_Bullet);
+
+        if (CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField)
+            enabled.Add(Target_Behavior);
+
+        if (CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField)
+            enabled.Add(Target_SpEffect);
+
+        if (CFG.Current.Param_Toolbar_Duplicate_AffectSourceField)
+            enabled.Add(Target_Source);
+
+        return enabled;
+    }
+
+    /// <summary>
+    /// The active param's fields that have a DeepCopyTarget, with their target kinds
+    /// </summary>
+    public static List<(string Field, List<string> Targets)> GetDeepCopyFields(ParamEditorView curView)
+    {
+        var result = new List<(string, List<string>)>();
+        var paramKey = curView.Selection.GetActiveParam();
+
+        if (paramKey == null || !curView.GetPrimaryBank().Params.TryGetValue(paramKey, out var param))
+            return result;
+
+        if (param.AppliedParamdef == null)
+            return result;
+
+        var paramMeta = curView.GetParamData().GetParamMeta(param.AppliedParamdef);
+
+        if (paramMeta == null)
+            return result;
+
+        foreach (var fieldDef in param.AppliedParamdef.Fields)
+        {
+            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
+
+            if (fieldMeta?.DeepCopyTargetType == null || fieldMeta.DeepCopyTargetType.Count == 0)
+                continue;
+
+            result.Add((fieldDef.InternalName, fieldMeta.DeepCopyTargetType.Select(t => t.Trim()).ToList()));
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// The reference-offset options for the active param (only the kinds it has), and a preview of the fields a
+    /// duplicate will change. Drawn in the Duplicate menu.
+    /// </summary>
+    public static void DisplayReferenceOffsetOptions(ParamEditorView curView)
+    {
+        var fields = GetDeepCopyFields(curView);
+
+        ImGui.Separator();
+        ImGui.TextDisabled(LOC.Get("PARAM_Duplicate_Reference_Header"));
+
+        if (fields.Count == 0)
+        {
+            ImGui.TextDisabled(LOC.Get("PARAM_Duplicate_Reference_None"));
+            return;
+        }
+
+        var kinds = new HashSet<string>(fields.SelectMany(f => f.Targets), StringComparer.OrdinalIgnoreCase);
+
+        if (kinds.Contains(Target_Attack))
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Attack")}##dupRefAttack", ref CFG.Current.Param_Toolbar_Duplicate_AffectAttackField);
+
+        if (kinds.Contains(Target_Bullet))
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Bullet")}##dupRefBullet", ref CFG.Current.Param_Toolbar_Duplicate_AffectBulletField);
+
+        if (kinds.Contains(Target_Behavior))
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Behavior")}##dupRefBehavior", ref CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField);
+
+        if (kinds.Contains(Target_SpEffect))
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_SpEffect")}##dupRefSpEffect", ref CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField);
+
+        if (kinds.Contains(Target_Source))
+            ImGui.Checkbox($"{LOC.Get("PARAM_Duplicate_Reference_Source")}##dupRefSource", ref CFG.Current.Param_Toolbar_Duplicate_AffectSourceField);
+
+        var enabled = GetEnabledDeepCopyTargets();
+        var affected = fields.Where(f => f.Targets.Any(enabled.Contains)).Select(f => f.Field).ToList();
+
+        if (affected.Count == 0)
+            return;
+
+        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
+
+        if (offset == 0)
+        {
+            ImGui.TextDisabled(LOC.Get("PARAM_Duplicate_Reference_Offset_Zero"));
+            return;
+        }
+
+        ImGui.TextDisabled(LOC.Get("PARAM_Duplicate_Reference_Preview", offset));
+
+        foreach (var field in affected)
+        {
+            ImGui.BulletText(field);
         }
     }
     #endregion

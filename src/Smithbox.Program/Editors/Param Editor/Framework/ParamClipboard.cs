@@ -56,6 +56,9 @@ public class ParamClipboard
 
         foreach (Param.Row r in selectionState.GetSelectedRows())
         {
+            if (r == null)
+                continue;
+
             Project.Handler.ParamData.PrimaryBank.ClipboardRows.Add(
                 new Param.Row(r)); // make a clone
 
@@ -66,37 +69,32 @@ public class ParamClipboard
         _clipboardBaseRow = baseValue;
         _currentCtrlVValue = _clipboardBaseRow.ToString();
 
-        var lines = "";
+        // Copy the selected rows to the OS clipboard, one line each.
+        // Only Name mode skips unnamed rows; ID and ID;Name always have something to write.
+        var lines = new List<string>();
 
-        // Copy the first row name to the actual clipboard
         foreach (Param.Row r in selectionState.GetSelectedRows())
         {
-            var appendSymbol = "\n";
+            if (r == null)
+                continue;
 
-            if (r == selectionState.GetSelectedRows().Last())
+            switch (CFG.Current.Param_RowCopyBehavior)
             {
-                appendSymbol = "";
-            }
+                case ParamRowCopyBehavior.ID:
+                    lines.Add($"{r.ID}");
+                    break;
 
-            if (r.Name != null)
-            {
-                switch (CFG.Current.Param_RowCopyBehavior)
-                {
-                    case ParamRowCopyBehavior.ID:
-                        lines = lines + $"{r.ID}{appendSymbol}";
-                        break;
+                case ParamRowCopyBehavior.Name:
+                    if (r.Name != null)
+                        lines.Add(r.Name);
+                    break;
 
-                    case ParamRowCopyBehavior.Name:
-                        lines = lines + $"{r.Name}{appendSymbol}";
-                        break;
-
-                    case ParamRowCopyBehavior.ID_Name:
-                        lines = lines + $"{r.ID};{r.Name}{appendSymbol}";
-                        break;
-                }
+                case ParamRowCopyBehavior.ID_Name:
+                    lines.Add($"{r.ID};{r.Name ?? ""}");
+                    break;
             }
         }
 
-        PlatformUtils.Instance.SetClipboardText(lines);
+        PlatformUtils.Instance.SetClipboardText(string.Join("\n", lines));
     }
 }

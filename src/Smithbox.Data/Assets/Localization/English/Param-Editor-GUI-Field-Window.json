@@ -29,6 +29,10 @@
       "Text": "Search <{0}>"
     },
     {
+      "Key": "PARAM_FieldWindow_Search_Match_Count",
+      "Text": "{0} / {1} fields"
+    },
+    {
       "Key": "PARAM_FieldWindow_FieldNameMode_Hint",
       "Text": "Toggle field name display type between Internal and Community.\n\nCurrent Mode:\n{0}"
     },
@@ -161,6 +165,10 @@
       "Text": "Reset to Vanilla"
     },
     {
+      "Key": "PARAM_FieldWindow_Context_Action_Reset_to_Vanilla_Count",
+      "Text": "Reset to Vanilla ({0} rows)"
+    },
+    {
       "Key": "PARAM_FieldWindow_Context_Action_View_Value_Distribution",
       "Text": "View Value Distribution"
     },
@@ -207,6 +215,18 @@
     {
       "Key": "PARAM_FieldWindow_Context_Action_Unpin_All",
       "Text": "Unpin All"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_TT",
+      "Text": "Unpin all of the pinned fields in the current param."
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_Params",
+      "Text": "Unpin All in All Params"
+    },
+    {
+      "Key": "PARAM_FieldWindow_Context_Action_Unpin_All_Params_TT",
+      "Text": "Unpin all of the pinned fields in every param."
     },
     {
       "Key": "PARAM_FieldWindow_Context_Comparison_Header",

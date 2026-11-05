@@ -158,8 +158,20 @@ public class ParamListWindow
                 "PARAM_ParamWindow_ToggleFarModelParams_Hint");
         }
 
+        // Match count, from the previous frame's list (drawn after this header)
+        if (_shownParamCount >= 0 && _totalParamCount >= 0)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextDisabled(LOC.Get("PARAM_ParamWindow_Search_Match_Count",
+                _shownParamCount.ToString("N0"), _totalParamCount.ToString("N0")));
+        }
+
         ImGui.EndChild();
     }
+
+    private int _shownParamCount = -1;
+    private int _totalParamCount = -1;
 
     private bool AllowTableGroupToggle()
     {
@@ -185,42 +197,18 @@ public class ParamListWindow
 
         if (pinnedParamKeyList.Count > 0)
         {
-            var height = 10 + (20 * pinnedParamKeyList.Count);
+            // Size from the font-based line height (already DPI-scaled), so it doesn't clip at high DPI or with
+            // compact mode off. Past 10 entries the panel scrolls instead of pushing the main list down.
+            var visibleEntries = Math.Min(pinnedParamKeyList.Count, 10);
+            var height = ImGui.GetFrameHeightWithSpacing() * visibleEntries + ImGui.GetStyle().WindowPadding.Y * 2;
 
-            var searchHeight = new Vector2(0, height) * DPI.UIScale();
-            ImGui.BeginChild("ParamFilePinnedSection", searchHeight, ImGuiChildFlags.Borders);
+            ImGui.BeginChild("ParamFilePinnedSection", new Vector2(0, height), ImGuiChildFlags.Borders);
 
             foreach (var paramKey in pinnedParamKeyList)
             {
-                HashSet<Param.Row> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-
-                if (Editor.Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
+                if (Editor.Project.Handler.ParamData.PrimaryBank.Params.TryGetValue(paramKey, out var p))
                 {
-                    Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
-                    if (p != null)
-                    {
-                        var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                        var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.AppliedParamdef.ParamType);
-
-                        var Wiki = annotations?.Description;
-                        if (Wiki != null)
-                        {
-                            EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true);
-                        }
-                    }
-
-                    ImGui.Indent(15.0f);
-                    // Mark params with unsaved changes
-                    var pinnedName = ParentView.GetPrimaryBank().IsParamDirty(paramKey) ? $"{paramKey}*" : paramKey;
-
-                    if (ImGui.Selectable($"{pinnedName}##pin{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
-                    {
-                        SelectParam(paramKey);
-                    }
-
-                    DisplayContextMenu(p, paramKey, true);
-
-                    ImGui.Unindent(15.0f);
+                    DisplayParamEntry(paramKey, p, true, false);
                 }
             }
 
@@ -262,6 +250,10 @@ public class ParamListWindow
                 return keyList;
             }
         });
+
+        // Count for the search bar (U6), shown in the header next frame
+        _shownParamCount = paramKeyList.Count;
+        _totalParamCount = Editor.Project.Handler.ParamData.PrimaryBank.Params.Count;
 
         // SDT Far Model Params are shown in their own section instead of the main list
         var farModelParams = Project.Handler.ParamData.PrimaryBank.FarModelParams;
@@ -394,83 +386,98 @@ public class ParamListWindow
     {
         foreach (var paramKey in paramKeyList)
         {
-            HashSet<Param.Row> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
-
             if (!visibleParams.Contains(paramKey))
                 continue;
 
-            if (p != null)
-            {
-                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.AppliedParamdef.ParamType);
+            Param p = Editor.Project.Handler.ParamData.PrimaryBank.Params[paramKey];
 
-                var Wiki = annotations?.Description;
-                if (Wiki != null)
-                {
-                    EditorTableUtils.HelpIcon(paramKey + "wiki", ref Wiki, true);
-                }
-            }
-
-            ImGui.Indent(15.0f);
-
-            var popColor = false;
-
-            if (primary != null ? primary.Any() : false)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
-                popColor = true;
-            }
-
-            var displayedName = paramKey;
-
-            if (CFG.Current.ParamEditor_Param_List_Display_Community_Names)
-            {
-                var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
-                var names = meta?.DisplayNames;
-
-                if (names != null)
-                {
-                    var paramDisplayName = names.Where(e => e.Param == paramKey).FirstOrDefault();
-
-                    if (paramDisplayName != null)
-                    {
-                        displayedName = paramDisplayName.Name;
-                    }
-                }
-            }
-
-            // Mark params with unsaved changes
-            if (ParamDirtyTracker.IsDirty(p))
-            {
-                displayedName = $"{displayedName}*";
-            }
-
-            if (ImGui.Selectable($"{displayedName}##{paramKey}", paramKey == ParentView.Selection.GetActiveParam()))
-            {
-                SelectParam(paramKey);
-            }
-
-            if (popColor)
-            {
-                ImGui.PopStyleColor(1);
-            }
-
-            if (doFocus && paramKey == ParentView.Selection.GetActiveParam())
-            {
-                scrollTo = ImGui.GetCursorPosY();
-            }
-
-            // Context Menu
-            DisplayContextMenu(p, paramKey);
-
-            ImGui.Unindent(15.0f);
+            DisplayParamEntry(paramKey, p, false, doFocus);
         }
+    }
 
-        if (doFocus)
+    /// <summary>
+    /// One param entry: wiki icon, modified colour, community name, unsaved marker, context menu.
+    /// Shared by the main list and the pinned list, so the two look the same.
+    /// </summary>
+    private void DisplayParamEntry(string paramKey, Param p, bool isPinnedEntry, bool doFocus)
+    {
+        if (p?.AppliedParamdef != null)
         {
-            ImGui.SetScrollFromPosY(scrollTo - ImGui.GetScrollY());
+            var annotations = Editor.Project.Handler.ParamData.GetParamAnnotations(p.AppliedParamdef.ParamType);
+
+            var Wiki = annotations?.Description;
+            if (Wiki != null)
+            {
+                EditorTableUtils.HelpIcon(paramKey + (isPinnedEntry ? "pinwiki" : "wiki"), ref Wiki, true);
+            }
         }
+
+        ImGui.Indent(15.0f);
+
+        HashSet<Param.Row> primary = Editor.Project.Handler.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+
+        var popColor = false;
+
+        if (primary != null && primary.Count > 0)
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+            popColor = true;
+        }
+
+        var displayedName = GetParamDisplayName(paramKey, p);
+
+        // Mark params with unsaved changes
+        if (ParamDirtyTracker.IsDirty(p))
+        {
+            displayedName = $"{displayedName}*";
+        }
+
+        var id = isPinnedEntry ? $"pin{paramKey}" : paramKey;
+
+        if (ImGui.Selectable($"{displayedName}##{id}", IsSelectedParam(paramKey)))
+        {
+            SelectParam(paramKey);
+        }
+
+        if (popColor)
+        {
+            ImGui.PopStyleColor(1);
+        }
+
+        // Scroll to the active param right here. This used to record the position and scroll after the loop,
+        // but this method runs once per category, so the later calls scrolled to their own stale position.
+        if (!isPinnedEntry && doFocus && paramKey == ParentView.Selection.GetActiveParam())
+        {
+            ImGui.SetScrollHereY();
+        }
+
+        // Context Menu
+        DisplayContextMenu(p, paramKey, isPinnedEntry);
+
+        ImGui.Unindent(15.0f);
+    }
+
+    /// <summary>
+    /// The param's community name when that option is on and the meta has one, otherwise its key
+    /// </summary>
+    private string GetParamDisplayName(string paramKey, Param p)
+    {
+        if (!CFG.Current.ParamEditor_Param_List_Display_Community_Names || p?.AppliedParamdef == null)
+            return paramKey;
+
+        var meta = Editor.Project.Handler.ParamData.GetParamMeta(p.AppliedParamdef);
+        var paramDisplayName = meta?.DisplayNames?.FirstOrDefault(e => e.Param == paramKey);
+
+        return paramDisplayName?.Name ?? paramKey;
+    }
+
+    /// <summary>
+    /// The normal param is shown as selected only while no stay param is open in its place
+    /// </summary>
+    private bool IsSelectedParam(string paramKey)
+    {
+        return ParentView.Selection.ActiveStayParam == null
+            && paramKey == ParentView.Selection.GetActiveParam();
     }
 
     /// <summary>
@@ -595,7 +602,8 @@ public class ParamListWindow
 
     private void SelectStayParam(string paramKey)
     {
-        ParentView.Selection.CleanAllSelectionState();
+        // Only switch the view to the stay param. The normal param's row selection, searches and history are
+        // kept, so going back to it (or pressing Back) picks up where the user left off.
         ParentView.Selection.ActiveStayParam = paramKey;
 
         Smithbox.TextureManager.IconManager.PurgeCache();

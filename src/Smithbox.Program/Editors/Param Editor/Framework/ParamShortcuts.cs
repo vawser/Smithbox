@@ -32,6 +32,10 @@ public class ParamShortcuts
             CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
         }
 
+        // Row shortcuts only apply while the row list is shown. With a stay param open, the normal param's
+        // selection is kept but hidden, so acting on it would change rows the user can't see.
+        var rowsShown = activeView.Selection.ActiveStayParam == null;
+
         if (AllowContextualShortcuts(activeView))
         {
             // Save
@@ -40,28 +44,20 @@ public class ParamShortcuts
                 Editor.Save();
             }
 
-            // Undo
-            if (InputManager.IsPressed(KeybindID.Undo))
+            // Undo (the repeat variant keeps undoing while held, as in the other editors)
+            if (InputManager.IsPressed(KeybindID.Undo) || InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
-                if (Editor.ActionManager.CanUndo())
-                {
-                    Editor.ActionManager.UndoAction();
-                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
-                }
+                Editor.Undo();
             }
 
             // Redo
-            if (InputManager.IsPressed(KeybindID.Redo))
+            if (InputManager.IsPressed(KeybindID.Redo) || InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
-                if (Editor.ActionManager.CanRedo())
-                {
-                    Editor.ActionManager.RedoAction();
-                    Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
-                }
+                Editor.Redo();
             }
 
             // Select All
-            if (InputManager.IsPressed(KeybindID.SelectAll))
+            if (rowsShown && InputManager.IsPressed(KeybindID.SelectAll))
             {
                 if (activeView.Selection.ActiveParamExists())
                 {
@@ -70,7 +66,7 @@ public class ParamShortcuts
             }
 
             // Copy
-            if (InputManager.IsPressed(KeybindID.Copy))
+            if (rowsShown && InputManager.IsPressed(KeybindID.Copy))
             {
                 if (activeView.Selection.RowSelectionExists())
                 {
@@ -79,16 +75,18 @@ public class ParamShortcuts
             }
 
             // Paste
-            if (InputManager.IsPressed(KeybindID.Paste))
+            if (rowsShown && InputManager.IsPressed(KeybindID.Paste))
             {
-                if (Editor.Clipboard.HasClipboardContents(activeView))
+                // Opens even when the rows came from another param: the popup explains where they'll go
+                // (matching the Edit menu and right-click Paste)
+                if (Project.Handler.ParamData.PrimaryBank.ClipboardRows.Count > 0)
                 {
                     Editor.PasteMenu.Open();
                 }
             }
 
             // Duplicate
-            if (InputManager.IsPressed(KeybindID.Duplicate))
+            if (rowsShown && InputManager.IsPressed(KeybindID.Duplicate))
             {
                 if (activeView.Selection.RowSelectionExists())
                 {
@@ -100,7 +98,7 @@ public class ParamShortcuts
             }
 
             // Delete
-            if (InputManager.IsPressed(KeybindID.Delete))
+            if (rowsShown && InputManager.IsPressed(KeybindID.Delete))
             {
                 if (activeView.Selection.RowSelectionExists())
                 {
@@ -112,7 +110,7 @@ public class ParamShortcuts
             }
 
             // Jump
-            if (InputManager.IsPressed(KeybindID.Jump))
+            if (rowsShown && InputManager.IsPressed(KeybindID.Jump))
             {
                 if (activeView.Selection.RowSelectionExists())
                 {

@@ -198,7 +198,12 @@ public class ParamSelection
 
             s.activeRow = row;
             s.selectionRows.Clear();
-            s.selectionRows.Add(row);
+
+            // A null row means "no active row": never put null into the selection, or every
+            // selection-based operation (copy, duplicate, delete) would act on it
+            if (row != null)
+                s.selectionRows.Add(row);
+
             if (s.activeRow != null)
                 Editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
@@ -251,7 +256,7 @@ public class ParamSelection
 
     public void ToggleRowInSelection(Param.Row row)
     {
-        if (_activeParam != null)
+        if (_activeParam != null && row != null)
         {
             ParamSelectionState s = _paramStates[_activeParam];
 
@@ -282,7 +287,7 @@ public class ParamSelection
 
     public void AddRowToSelection(Param.Row row)
     {
-        if (_activeParam != null)
+        if (_activeParam != null && row != null)
         {
             ParamSelectionState s = _paramStates[_activeParam];
 

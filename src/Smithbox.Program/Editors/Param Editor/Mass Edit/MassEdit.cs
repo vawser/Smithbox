@@ -67,6 +67,16 @@ public class MassEdit
 
     public void ExecuteMassEdit(string commandString, ParamBank targetBank, ParamSelection context)
     {
+        // Mass edits apply their changes directly (through a child ActionManager), so the save guard on the
+        // editor's ActionManager doesn't cover them. Refuse the whole edit while a save is running.
+        if (CurrentView.Editor.IsSaving)
+        {
+            var reason = LOC.Get("PARAM_Action_Blocked_During_Save");
+            Smithbox.Log(this, reason, Microsoft.Extensions.Logging.LogLevel.Warning);
+            State.MassEditResult = reason;
+            return;
+        }
+
         CurrentView.Selection.SortSelection();
 
         MassParamEditRegex = new MassParamEditRegex(CurrentView);

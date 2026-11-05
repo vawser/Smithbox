@@ -21,6 +21,10 @@
       "Text": "Search <{0}>"
     },
     {
+      "Key": "PARAM_ParamWindow_Search_Match_Count",
+      "Text": "{0} / {1}"
+    },
+    {
       "Key": "PARAM_ParamWindow_ToggleTableGroup_Hidden",
       "Text": "Hidden"
     },

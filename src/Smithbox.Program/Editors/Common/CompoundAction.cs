@@ -17,6 +17,14 @@ public class CompoundAction : EditorAction
 
     public bool HasActions => Actions.Any();
 
+    /// <summary>
+    /// True if every child action is a <typeparamref name="T"/> (nested compound actions are checked too)
+    /// </summary>
+    public bool ContainsOnly<T>() where T : EditorAction
+    {
+        return Actions.All(a => a == null || a is T || (a is CompoundAction c && c.ContainsOnly<T>()));
+    }
+
     public void SetPostExecutionAction(Action<bool> action)
     {
         PostExecutionAction = action;

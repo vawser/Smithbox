@@ -133,7 +133,7 @@ public class ParamFieldWindow
 
             if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
-                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
+                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
             }
 
             if (showParamCompare)
@@ -173,15 +173,7 @@ public class ParamFieldWindow
             // ID and Name
             DisplayRowFields(curRow, meta, annotations, vanillaRow, auxRows, compareRow, ref infoImGuiID, activeParam, columnCount);
 
-            var search = propSearchString;
-            List<(ParamEditorPseudoColumn, Param.Column)> cols = CacheBank.GetCached(Editor, curRow, "fieldFilter",
-                () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
-
-            List<(ParamEditorPseudoColumn, Param.Column)> vcols = CacheBank.GetCached(Editor, vanillaRow, "vFieldFilter",
-                () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
-
-            List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols = CacheBank.GetCached(Editor, auxRows,
-                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+            var (cols, vcols, auxCols) = GetFilteredColumns(curRow, auxRows, propSearchString, activeParam);
 
             if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
@@ -214,15 +206,7 @@ public class ParamFieldWindow
         // Determine column count
         var columnCount = GetColumnCount(showParamCompare, showRowCompare, auxRows);
 
-        var search = propSearchString;
-        var cols = CacheBank.GetCached(Editor, curRow, "fieldFilter",
-            () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
-
-        var vcols = CacheBank.GetCached(Editor, vanillaRow, "vFieldFilter",
-             () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
-
-        var auxCols = CacheBank.GetCached(Editor, auxRows,
-            "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+        var (cols, vcols, auxCols) = GetFilteredColumns(curRow, auxRows, propSearchString, activeParam);
 
         var pinnedFields = Editor.Project.Descriptor.PinnedFields.GetValueOrDefault(activeParam, null);
 
@@ -231,7 +215,7 @@ public class ParamFieldWindow
         {
             if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible)
             {
-                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
+                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + GetPinnedFrozenRowCount(pinnedFields));
             }
 
             if (showParamCompare)
@@ -308,6 +292,46 @@ public class ParamFieldWindow
 
         ImGui.EndChild();
     }
+
+    /// <summary>
+    /// The columns that pass the field search, for the current row and the matching vanilla and aux columns.
+    /// <para>
+    /// Every key here must be stable from frame to frame, because CacheBank compares context objects by reference
+    /// and only drops entries on a global clear, so a fresh object each frame adds an entry that's never read again. All three use the current row as the context. The vanilla row isn't used,
+    /// since it is null for every row the mod added, so those rows would all share one entry. The aux row list
+    /// isn't used either, since it's rebuilt each frame. The view index is in the key, so two views showing the
+    /// same row with different field searches don't share results.
+    /// </para>
+    /// </summary>
+    private (List<(ParamEditorPseudoColumn, Param.Column)> cols,
+        List<(ParamEditorPseudoColumn, Param.Column)> vcols,
+        List<List<(ParamEditorPseudoColumn, Param.Column)>> auxCols)
+        GetFilteredColumns(Param.Row curRow, List<(string, Param.Row)> auxRows, string propSearchString, string activeParam)
+    {
+        var search = propSearchString;
+        var viewIndex = ParentView.ViewIndex;
+
+        var cols = CacheBank.GetCached(Editor, curRow, $"fieldFilter_{viewIndex}",
+            () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
+
+        var vcols = CacheBank.GetCached(Editor, curRow, $"vFieldFilter_{viewIndex}",
+            () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
+
+        // The aux columns depend on which aux banks are loaded, so their names go in the key
+        var auxBankKey = string.Join("|", auxRows.Select(r => r.Item1));
+
+        var auxCols = CacheBank.GetCached(Editor, curRow, $"auxFieldFilter_{viewIndex}_{auxBankKey}",
+            () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.Handler.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+
+        // Count for the search bar (U6), shown in the header next frame. Only real fields, not pseudo-columns.
+        _shownFieldCount = cols.Count(c => c.Item2 != null);
+        _totalFieldCount = curRow.Columns.Count();
+
+        return (cols, vcols, auxCols);
+    }
+
+    private int _shownFieldCount = -1;
+    private int _totalFieldCount = -1;
 
     private int GetColumnCount(bool showParamCompare, bool showRowCompare, List<(string, Param.Row)> auxRows)
     {
@@ -436,6 +460,15 @@ public class ParamFieldWindow
                 "PARAM_FieldWindow_ModifiedBg_Hidden",
                 "PARAM_FieldWindow_ModifiedBg_Visible",
                 "PARAM_FieldWindow_ModifiedBg_Hint");
+
+            // Match count while a field search is active (without one, hidden padding would make it misleading)
+            if (!string.IsNullOrEmpty(propSearchString) && _shownFieldCount >= 0 && _totalFieldCount >= 0)
+            {
+                ImGui.SameLine();
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextDisabled(LOC.Get("PARAM_FieldWindow_Search_Match_Count",
+                    _shownFieldCount.ToString("N0"), _totalFieldCount.ToString("N0")));
+            }
         }
 
         ImGui.EndChild();
@@ -462,6 +495,15 @@ public class ParamFieldWindow
 
             ImGui.EndChild();
         }
+    }
+
+    /// <summary>
+    /// Extra rows to freeze below Name and ID when pinned fields stay visible: the pins plus the separator
+    /// drawn after them, or nothing when there are no pins (no separator is drawn then either).
+    /// </summary>
+    private static int GetPinnedFrozenRowCount(List<string> pinnedFields)
+    {
+        return pinnedFields?.Count > 0 ? pinnedFields.Count + 1 : 0;
     }
 
     private void DisplayRowFields(Param.Row row, ParamMeta meta, ParamAnnotationEntry annotations, Param.Row vrow,
@@ -572,13 +614,8 @@ public class ParamFieldWindow
         }
         else
         {
-            // Pinned Fields
-            if (CFG.Current.ParamEditor_Field_List_Pinned_Stay_Visible && pinnedFields?.Count > 0)
-            {
-                int pi = 0;
-                DisplayPinnedFields(pinnedFields, meta, annotations, row, vrow, auxRows, crow,
-                    cols, vcols, auxCols, ref imguiId, activeParam, ref pi, columnCount);
-            }
+            // Pinned fields are not drawn here: grouped mode is only reached from DisplayLayoutTable, which
+            // already draws them in its top table when "Pinned stay visible" is on
 
             // Grouped Mode
             var groupedFieldNames = new HashSet<string>(
@@ -1078,8 +1115,9 @@ public class ParamFieldWindow
 
         var matchDefault = nullableCell?.Def.Default != null && nullableCell.Value.Def.Default.Equals(oldval);
 
-        // Ignore for the Name field as this is almost always true if the user has named rows
-        if (internalName == "Name")
+        // Ignore for the Name field as this is almost always true if the user has named rows.
+        // Check the property itself: internalName holds the localised label, which is only "Name" in English.
+        if (col == null && proprow?.Name == nameof(Param.Row.Name))
             diffVanilla = false;
 
         if (ImGui.TableNextColumn())
@@ -1133,11 +1171,16 @@ public class ParamFieldWindow
             // Clicks
             ParentView.FieldDecorators.HandleClick(metaContext, row, oldval);
 
+            // The row's ID property (not a column). The row-level link buttons go in its value column, near the top.
+            // This used to test imguiId == 1, which was the ID row's index before the info rows moved to a separate
+            // ID range; afterwards it only matched by accident (after a hidden padding field or a separator).
+            var isRowIdField = col == null && proprow?.Name == nameof(Param.Row.ID);
+
             // Param Reference Buttons
             if (CFG.Current.ParamEditor_Field_List_Display_Map_Link)
             {
-                // These are placed at the top, below the ID row
-                if (imguiId == 1)
+                // These are placed at the top, in the ID row
+                if (isRowIdField)
                 {
                     ParamMapReferences.ReturnPointParam(Editor, activeParam, row, internalName);
                     ParamMapReferences.BonfireWarpParam(Editor, activeParam, row, internalName);
@@ -1148,8 +1191,8 @@ public class ParamFieldWindow
 
             if (CFG.Current.ParamEditor_Field_List_Display_Model_Link)
             {
-                // These are placed at the top, below the ID row
-                if (imguiId == 1)
+                // These are placed at the top, in the ID row
+                if (isRowIdField)
                 {
                     ParamMapReferences.AssetGeometryParam(Editor, activeParam, row, internalName);
                     ParamMapReferences.BuddyStoneParam(Editor, activeParam, row, internalName);
@@ -1486,8 +1529,14 @@ public class ParamFieldWindow
         // Value
         if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Value_Header")}##valueMenuHeader"))
         {
-            // Reset to vanilla
-            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Reset_to_Vanilla")}##resetToVanillaAction"))
+            // Reset to vanilla: applies to every selected row that exists in vanilla (the "!added" filter), so the
+            // label says how many rows that is
+            var vanillaParam = ParentView.GetVanillaBank()?.GetParamFromName(activeParam);
+            var resetCount = ParentView.Selection.GetSelectedRows()?
+                .Count(r => r != null && vanillaParam?[r.ID] != null) ?? 0;
+
+            if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Reset_to_Vanilla_Count", resetCount)}##resetToVanillaAction",
+                false, resetCount > 0 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
             {
                 ParentView.MassEdit.ApplyMassEdit($"selection && !added: {Regex.Escape(internalName)}: = vanilla;");
             }
@@ -1502,7 +1551,7 @@ public class ParamFieldWindow
         }
 
         // Mass Edit
-        if (ImGui.BeginMenu("Mass Edit"))
+        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_MassEdit_Header")}##massEditMenuHeader"))
         {
             // Add to Palette
             if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldWindow_Context_Action_Add_to_Palette")}##addToPaletteAction"))
@@ -1571,11 +1620,22 @@ public class ParamFieldWindow
                         internalName);
                 }
 
-                // Unpin All
+                // Unpin All (this param only)
                 if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Unpin_All")}##unpinAllAction"))
+                {
+                    if (activeParam != null)
+                    {
+                        Editor.Project.Descriptor.PinnedFields.Remove(activeParam);
+                    }
+                }
+                GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_Unpin_All_TT"));
+
+                // Unpin All in All Params (the old Unpin All behaviour)
+                if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Unpin_All_Params")}##unpinAllParamsAction"))
                 {
                     Editor.Project.Descriptor.PinnedFields.Clear();
                 }
+                GUI.Tooltip(LOC.Get("PARAM_FieldWindow_Context_Action_Unpin_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
@@ -1603,7 +1663,8 @@ public class ParamFieldWindow
         }
 
         // Name Manipulation
-        if (ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Comparison_Name_Manipulation")}##nameManipMenuHeader"))
+        // Not shown for the Name and ID rows: they're row properties, not columns, so there's no field to target
+        if (col != null && ImGui.BeginMenu($"{LOC.Get("PARAM_FieldWindow_Context_Comparison_Name_Manipulation")}##nameManipMenuHeader"))
         {
             // Set Target Field
             if (ImGui.Selectable($"{LOC.Get("PARAM_FieldWindow_Context_Action_Set_Target_Field")}##setTargetFieldAction"))

@@ -29,6 +29,38 @@
       "Text": "Submit"
     },
     {
+      "Key": "PARAM_PasteMenu_Clipboard_Empty",
+      "Text": "No rows have been copied."
+    },
+    {
+      "Key": "PARAM_PasteMenu_Target",
+      "Text": "Paste {0} row(s) into {1}"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Different_Param",
+      "Text": "These rows were copied from {0}, but {1} is selected. Rows can only be pasted into the param they were copied from."
+    },
+    {
+      "Key": "PARAM_PasteMenu_Action_Go_To_Param",
+      "Text": "Go to {0}"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Invalid_Number",
+      "Text": "Row and Offset must be whole numbers."
+    },
+    {
+      "Key": "PARAM_PasteMenu_ID_Out_Of_Range",
+      "Text": "The resulting row IDs would be outside the valid ID range."
+    },
+    {
+      "Key": "PARAM_PasteMenu_Resulting_ID",
+      "Text": "New row ID: {0} (if taken, the next free ID is used)"
+    },
+    {
+      "Key": "PARAM_PasteMenu_Resulting_IDs",
+      "Text": "New row IDs: {0} to {1} (any taken ID moves to the next free one)"
+    },
+    {
       "Key": "PARAM_StatisticsMenu_Occurences",
       "Text": "Occurences of {0}"
     },

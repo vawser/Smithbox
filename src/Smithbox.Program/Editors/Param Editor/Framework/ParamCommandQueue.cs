@@ -55,8 +55,10 @@ public class ParamCommandQueue
                         var cmdIndex = -1;
                         var parsable = int.TryParse(args[1], out cmdIndex);
 
+                        // Closed views leave a null slot in the list, so fall back to the active view
                         if (parsable && cmdIndex >= 0 &&
-                            cmdIndex < viewHandler.ParamEditorViews.Count)
+                            cmdIndex < viewHandler.ParamEditorViews.Count &&
+                            viewHandler.ParamEditorViews[cmdIndex] != null)
                         {
                             viewToModify = viewHandler.ParamEditorViews[cmdIndex];
                         }

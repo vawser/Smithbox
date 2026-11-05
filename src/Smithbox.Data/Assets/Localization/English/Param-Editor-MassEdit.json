@@ -503,6 +503,18 @@
     {
       "Key": "PARAM_MassEdit_Current_Page",
       "Text": "Page {0}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Rolled_Back",
+      "Text": "The commands before this one were undone, so no params were changed."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Failing_Command",
+      "Text": "Failing command ({0}): {1}"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Rollback_Failed",
+      "Text": "Undoing the earlier commands failed ({0}); some of their changes may still be applied."
     }
   ]
 }

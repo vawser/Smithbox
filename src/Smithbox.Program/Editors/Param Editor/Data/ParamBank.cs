@@ -132,6 +132,15 @@ public class ParamBank : IDisposable
             return false;
         }
 
+        // Snapshot the edit versions before writing, so edits made while the save runs stay dirty
+        var dirtySnapshot = TakeDirtySnapshot();
+
+        // The params with changes in this save, for the save log
+        var modifiedParams = _params.Where(e => ParamDirtyTracker.IsDirty(e.Value)).Select(e => e.Key)
+            .Concat(StayParams.Where(e => ParamDirtyTracker.IsDirty(e.Value)).Select(e => e.Key))
+            .OrderBy(e => e)
+            .ToList();
+
         var successfulSave = false;
 
         switch (Project.Descriptor.ProjectType)
@@ -167,10 +176,57 @@ public class ParamBank : IDisposable
 
         if (successfulSave)
         {
-            ClearDirtyState();
+            ClearDirtyState(dirtySnapshot);
+            LastSaveModifiedParams = modifiedParams;
         }
 
         return successfulSave;
+    }
+
+    /// <summary>
+    /// The params that had changes when the last successful save started (sorted by name)
+    /// </summary>
+    public IReadOnlyList<string> LastSaveModifiedParams { get; private set; } = new List<string>();
+
+    /// <summary>
+    /// The current edit version of every param and stay param in the bank
+    /// </summary>
+    private List<(object Param, long Version)> TakeDirtySnapshot()
+    {
+        var snapshot = new List<(object, long)>();
+
+        foreach (var param in _params.Values)
+        {
+            snapshot.Add((param, ParamDirtyTracker.GetVersion(param)));
+        }
+
+        foreach (var stayParam in StayParams.Values)
+        {
+            snapshot.Add((stayParam, ParamDirtyTracker.GetVersion(stayParam)));
+        }
+
+        return snapshot;
+    }
+
+    /// <summary>
+    /// Clear the dirty state of the params in the snapshot that haven't been edited since it was taken
+    /// </summary>
+    private void ClearDirtyState(List<(object Param, long Version)> snapshot)
+    {
+        var editedDuringSave = 0;
+
+        foreach (var (param, version) in snapshot)
+        {
+            if (!ParamDirtyTracker.ClearDirtyIfUnchanged(param, version))
+            {
+                editedDuringSave++;
+            }
+        }
+
+        if (editedDuringSave > 0)
+        {
+            Smithbox.Log(this, LOC.Get("PARAM_Data_Edited_During_Save", editedDuringSave), LogLevel.Warning);
+        }
     }
 
     #region Dirty State

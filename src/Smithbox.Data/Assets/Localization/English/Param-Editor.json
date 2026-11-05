@@ -69,12 +69,64 @@
       "Text": "Params saved."
     },
     {
+      "Key": "PARAM_Params_Saving",
+      "Text": "Saving params..."
+    },
+    {
+      "Key": "PARAM_Params_Saved_Modified",
+      "Text": "Saved changes in {0} param(s): {1}"
+    },
+    {
+      "Key": "PARAM_Params_Saved_More",
+      "Text": " and {0} more"
+    },
+    {
+      "Key": "PARAM_Menubar_Saving",
+      "Text": "Saving..."
+    },
+    {
+      "Key": "PARAM_Undo_All_Dialog_Prompt",
+      "Text": "Undo all {0} action(s) in this session? They can be redone afterwards, but any new edit will clear the redo history."
+    },
+    {
+      "Key": "PARAM_Action_Name_Edit_Value",
+      "Text": "Edit Value"
+    },
+    {
+      "Key": "PARAM_Action_Name_Edit_Values",
+      "Text": "Edit Values"
+    },
+    {
+      "Key": "PARAM_Action_Name_Add_Rows",
+      "Text": "Add Rows"
+    },
+    {
+      "Key": "PARAM_Action_Name_Delete_Rows",
+      "Text": "Delete Rows"
+    },
+    {
+      "Key": "PARAM_Action_Name_Reorder_Rows",
+      "Text": "Reorder Rows"
+    },
+    {
+      "Key": "PARAM_Action_Name_Multiple",
+      "Text": "Multiple Changes"
+    },
+    {
       "Key": "PARAM_Data_Skip_Save",
       "Text": "Params have not been modified, so save was ignored: {0}"
     },
     {
       "Key": "PARAM_Param_Save_in_Progress",
       "Text": "Param saving already in progress."
+    },
+    {
+      "Key": "PARAM_Data_Edited_During_Save",
+      "Text": "{0} param(s) were edited while saving. They are still marked as modified, so save again to write those edits."
+    },
+    {
+      "Key": "PARAM_Action_Blocked_During_Save",
+      "Text": "Params are being saved. Adding, removing or reordering rows, undo/redo and mass edits are disabled until the save finishes."
     }
   ]
 }

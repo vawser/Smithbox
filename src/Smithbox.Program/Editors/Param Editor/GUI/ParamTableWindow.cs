@@ -395,7 +395,10 @@ public class ParamTableWindow
 
     public void Shortcuts()
     {
-        if (FocusManager.Focus is EditorFocusContext.ParamEditor_TableList)
+        // The focus context is shared by every view, so also require this to be the active view.
+        // Otherwise one key press duplicates/deletes the current group in each open view.
+        if (FocusManager.Focus is EditorFocusContext.ParamEditor_TableList &&
+            Editor.ViewHandler.ActiveView == ParentView)
         {
             if (!ImGui.IsAnyItemActive() && CurrentTableGroupID != -1)
             {
@@ -429,6 +432,10 @@ public class ParamTableWindow
         var newId = -1;
 
         var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroupID).ToList();
+
+        // The group may no longer exist (e.g. it was just deleted)
+        if (targetRows.Count == 0)
+            return;
 
         newId = targetRows.First().ID + idOffset;
 
@@ -464,6 +471,10 @@ public class ParamTableWindow
 
         var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroupID).ToList();
 
+        // Nothing to delete: don't push an empty action onto the undo stack
+        if (targetRows.Count == 0)
+            return;
+
         ParentView.Selection.ClearRowSelection();
 
         foreach (var entry in targetRows)
@@ -476,6 +487,14 @@ public class ParamTableWindow
         ParamRowDelete.ApplyDelete(ParentView);
 
         UpdateTableSelection(curParamKey);
+
+        // Only drop the group selection if the rows actually went (the delete is refused while saving)
+        if (!param.Rows.Any(e => e.ID == CurrentTableGroupID))
+        {
+            CurrentTableGroupID = -1;
+            RollChances = new();
+            TotalChance = 0;
+        }
     }
 
     public void UpdateTableGroupNames(string activeParam, TableGroupParamEntry curTableGroup, int groupKey, string curName)

@@ -52,10 +52,28 @@ public class ParamRowWindow
     public int _gotoParamRow = -1;
 
     private RowListContext Context;
+    // Alt-click inline editing: the row being edited and its edit buffer. The buffers persist across frames,
+    // so the committed value doesn't depend on which frame ImGui reports the deactivation in.
     private Param.Row ID_EditRow { get; set; }
     private Param.Row Name_EditRow { get; set; }
+    private int _idEditBuffer;
+    private string _nameEditBuffer = "";
+    private bool _focusEditInput;
+
+    // Buffers for the row context menu's ID / Name inputs, filled when the menu opens
+    private int _contextIdBuffer;
+    private string _contextNameBuffer = "";
 
     private Param.Row DragSourceRow;
+
+    // Keyboard navigation: the row the last key or click moved to (the far end of a Shift range), and a row
+    // that Home/End/PageUp/PageDown moved to, still waiting to be scrolled to and focused
+    private Param.Row _keyCursorRow;
+    private Param.Row _keyFocusRow;
+
+    // Rows shown after the search (and table-group filter) vs. rows in the param, from the last frame's list
+    private int _shownRowCount = -1;
+    private int _totalRowCount = -1;
 
 
     public ParamRowWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
@@ -218,6 +236,15 @@ public class ParamRowWindow
             ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
         }
 
+        // Match count, e.g. "312 / 4,120 rows" (from the previous frame's list, which is drawn after this header)
+        if (_shownRowCount >= 0 && _totalRowCount >= 0)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextDisabled(LOC.Get("PARAM_RowWindow_Search_Match_Count",
+                _shownRowCount.ToString("N0"), _totalRowCount.ToString("N0")));
+        }
+
         ImGui.EndChild();
     }
 
@@ -289,11 +316,10 @@ public class ParamRowWindow
 
         if (pinnedRowList.Count > 0)
         {
-            var height = 20 + (20 * pinnedRowList.Count);
-
-            // Limit height and enable scrollbar beyond this height
-            if (height > 250)
-                height = 250;
+            // Header row plus one row per pin, from the font-based row height (DPI-scaled, and matching
+            // compact mode or not). Past 10 pins the panel scrolls.
+            var visibleRows = Math.Min(pinnedRowList.Count, 10) + 1;
+            var height = ImGui.GetFrameHeightWithSpacing() * visibleRows;
 
             ImGui.BeginChild("PinnedRowSection", new Vector2(0, height), ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
@@ -402,32 +428,33 @@ public class ParamRowWindow
                 enableGrouping = CFG.Current.ParamEditor_Row_List_Enable_Row_Grouping && Context.CurMeta.ConsecutiveIDs;
             }
 
-            // Rows
-            var selectionCache = ParentView.Selection.GetSelectionCache(rows, "regular");
+            // In table-group mode only the current group's rows are shown. Filter first so the clipper
+            // (and the selection cache and shift-click ranges, which index into this list) see only those rows.
+            var inTableGroupMode = ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam);
+            var tableGroupID = ParentView.ParamTableWindow.CurrentTableGroupID;
 
-            for (var i = 0; i < rows.Count; i++)
+            List<Param.Row> displayRows = inTableGroupMode
+                ? rows.Where(r => r.ID == tableGroupID).ToList()
+                : rows;
+
+            // The cache version includes the group, since each group gives a different list
+            // Count for the search bar (U6), shown in the header next frame
+            _shownRowCount = displayRows.Count;
+            _totalRowCount = Context.CurParam.Rows.Count;
+
+            var selectionCache = ParentView.Selection.GetSelectionCache(displayRows,
+                inTableGroupMode ? $"regular_{tableGroupID}" : "regular");
+
+            HandlePageKeys(displayRows);
+
+            // Page keys change the selection, so rebuild the cache this frame rather than drawing stale highlights
+            if (_keyFocusRow != null)
             {
-                Param.Row currentRow = rows[i];
-
-                var displayRow = false;
-
-                if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
-                {
-                    if (currentRow.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
-                    {
-                        displayRow = true;
-                    }
-                }
-                else
-                {
-                    displayRow = true;
-                }
-
-                if (displayRow)
-                {
-                    HandleRowPresentation(selectionCache, i, rows, currentRow, false);
-                }
+                selectionCache = ParentView.Selection.GetSelectionCache(displayRows,
+                    inTableGroupMode ? $"regular_{tableGroupID}" : "regular");
             }
+
+            DisplayRows(displayRows, selectionCache);
 
             if (Context.DoFocus)
             {
@@ -438,6 +465,95 @@ public class ParamRowWindow
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Draws the rows, using a list clipper so only the rows in view are submitted each frame.
+    /// <para>
+    /// Go to row, Jump to selected and the search-change focus all scroll by calling ImGui from inside the target
+    /// row's draw code (SetScrollHereY / GetCursorPosY). So those rows are always included, even when they're off
+    /// screen.
+    /// </para>
+    /// <para>
+    /// The clipper assumes every row is the same height. With line wrapping on, rows can be up to three lines
+    /// tall, so in that mode every row is still drawn.
+    /// </para>
+    /// </summary>
+    private void DisplayRows(List<Param.Row> displayRows, bool[] selectionCache)
+    {
+        if (CFG.Current.ParamEditor_Row_List_Enable_Line_Wrapping)
+        {
+            for (var i = 0; i < displayRows.Count; i++)
+            {
+                HandleRowPresentation(selectionCache, i, displayRows, displayRows[i], false);
+            }
+
+            return;
+        }
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(displayRows.Count);
+
+        foreach (var index in GetForcedRowIndices(displayRows))
+        {
+            clipper.IncludeItemByIndex(index);
+        }
+
+        while (clipper.Step())
+        {
+            for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                HandleRowPresentation(selectionCache, i, displayRows, displayRows[i], false);
+            }
+        }
+
+        clipper.End();
+    }
+
+    /// <summary>
+    /// Indices of rows that must be drawn this frame even if they're scrolled out of view, because a pending
+    /// scroll targets them. These use the same matching rules as the checks in <see cref="DisplayRow"/>.
+    /// </summary>
+    private List<int> GetForcedRowIndices(List<Param.Row> displayRows)
+    {
+        var indices = new List<int>();
+        var activeRow = ParentView.Selection.GetActiveRow();
+
+        // Go to row: matched by ID
+        if (_gotoParamRow != -1)
+        {
+            var index = displayRows.FindIndex(r => r.ID == _gotoParamRow);
+            if (index >= 0)
+                indices.Add(index);
+        }
+
+        // Jump to selected row: matched by ID
+        if (ParentView.JumpToSelectedRow && activeRow != null)
+        {
+            var index = displayRows.FindIndex(r => r.ID == activeRow.ID);
+            if (index >= 0)
+                indices.Add(index);
+        }
+
+        // Focus after a search or selection command: matched by reference
+        if (Context.DoFocus && activeRow != null)
+        {
+            var index = displayRows.IndexOf(activeRow);
+            if (index >= 0)
+                indices.Add(index);
+        }
+
+        // Home/End/PageUp/PageDown target, scrolled to and focused in DisplayRowID
+        if (_keyFocusRow != null)
+        {
+            var index = displayRows.IndexOf(_keyFocusRow);
+            if (index >= 0)
+                indices.Add(index);
+            else
+                _keyFocusRow = null;
+        }
+
+        return indices;
     }
 
     private void HandleRowPresentation(bool[] selectionCache, int selectionCacheIndex,
@@ -489,6 +605,203 @@ public class ParamRowWindow
         }
     }
 
+    /// <summary>
+    /// Mouse and keyboard handling shared by a row's ID and Name selectables. Call it straight after the
+    /// Selectable, so the ImGui "last item" queries refer to it.
+    /// </summary>
+    /// <param name="clicked">The Selectable's return value</param>
+    /// <param name="rowList">The displayed row list (null for the pinned rows, which don't support ranges)</param>
+    /// <param name="isIdColumn">Alt-click edits the ID in the ID column and the name in the Name column</param>
+    private void HandleRowSelectableInput(bool clicked, List<Param.Row> rowList, Param.Row r, bool isIdColumn)
+    {
+        var selection = ParentView.Selection;
+
+        if (clicked)
+        {
+            FocusThisView();
+
+            _focusRows = true;
+
+            if (InputManager.HasCtrlDown())
+            {
+                selection.ToggleRowInSelection(r);
+                _keyCursorRow = r;
+            }
+            else if (rowList != null && InputManager.HasShiftDown() && selection.GetActiveRow() != null)
+            {
+                ClearEditRows();
+                SelectRangeFromActiveRow(rowList, r);
+            }
+            else if (InputManager.HasAltDown())
+            {
+                // Edits the clicked row only, whatever is selected
+                if (isIdColumn && Name_EditRow == null)
+                {
+                    ID_EditRow = r;
+                    _idEditBuffer = r.ID;
+                    _focusEditInput = true;
+                }
+                else if (!isIdColumn && ID_EditRow == null)
+                {
+                    Name_EditRow = r;
+                    _nameEditBuffer = r.Name ?? "";
+                    _focusEditInput = true;
+                }
+            }
+            else
+            {
+                ClearEditRows();
+                selection.SetActiveRow(r, true);
+                _keyCursorRow = r;
+            }
+        }
+
+        // Right-click on a row outside the selection selects it first, so the context menu acts on the row
+        // under the mouse. Right-clicking inside a multi-selection keeps it.
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+        {
+            var selectedRows = selection.GetSelectedRows();
+
+            if (selectedRows == null || !selectedRows.Contains(r))
+            {
+                FocusThisView();
+                ClearEditRows();
+                selection.SetActiveRow(r, true);
+                _keyCursorRow = r;
+            }
+        }
+
+        // Arrow-key navigation: ImGui moves nav focus between the selectables, and the selection follows it.
+        // Shift extends a range from the active row, Ctrl adds to the selection.
+        if (_arrowKeyPressed && ImGui.IsItemFocused())
+        {
+            if (rowList != null && InputManager.HasShiftDown() && selection.GetActiveRow() != null)
+            {
+                ClearEditRows();
+                SelectRangeFromActiveRow(rowList, r);
+                _arrowKeyPressed = false;
+            }
+            else if (r != selection.GetActiveRow())
+            {
+                ClearEditRows();
+
+                if (InputManager.HasCtrlDown())
+                {
+                    selection.AddRowToSelection(r);
+                }
+                else
+                {
+                    selection.SetActiveRow(r, true);
+                }
+
+                _keyCursorRow = r;
+                _arrowKeyPressed = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Makes this the active view (queued, as the click handlers always did), if it isn't already
+    /// </summary>
+    private void FocusThisView()
+    {
+        if (Editor.ViewHandler.ActiveView.ViewIndex != ParentView.ViewIndex)
+        {
+            EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{ParentView.Selection.GetActiveParam()}");
+        }
+    }
+
+    /// <summary>
+    /// Selects every displayed row between the active row (the anchor, which stays active) and <paramref name="target"/>
+    /// </summary>
+    private void SelectRangeFromActiveRow(List<Param.Row> rowList, Param.Row target)
+    {
+        var selection = ParentView.Selection;
+
+        // Keeps only the active row
+        selection.CleanSelectedRows();
+
+        var start = rowList.IndexOf(selection.GetActiveRow());
+        var end = rowList.IndexOf(target);
+
+        if (start == -1 || end == -1)
+        {
+            selection.AddRowToSelection(target);
+        }
+        else
+        {
+            for (var i = Math.Min(start, end); i <= Math.Max(start, end); i++)
+            {
+                selection.AddRowToSelection(rowList[i]);
+            }
+        }
+
+        _keyCursorRow = target;
+    }
+
+    /// <summary>
+    /// Home / End / PageUp / PageDown in the row list: move the keyboard cursor to the first / last row or by a
+    /// page, selecting it (or, with Shift, extending the range from the active row to it).
+    /// Called inside the row table (its scrolling window), before the rows are drawn.
+    /// </summary>
+    private void HandlePageKeys(List<Param.Row> displayRows)
+    {
+        if (displayRows.Count == 0)
+            return;
+
+        if (!ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows) || ImGui.IsAnyItemActive())
+            return;
+
+        if (ID_EditRow != null || Name_EditRow != null)
+            return;
+
+        var home = ImGui.IsKeyPressed(ImGuiKey.Home);
+        var end = ImGui.IsKeyPressed(ImGuiKey.End);
+        var pageUp = ImGui.IsKeyPressed(ImGuiKey.PageUp);
+        var pageDown = ImGui.IsKeyPressed(ImGuiKey.PageDown);
+
+        if (!home && !end && !pageUp && !pageDown)
+            return;
+
+        // The cursor is the row the last key or click moved to. With a Shift range that's the range's far end,
+        // not the active row.
+        var cursor = _keyCursorRow != null && displayRows.Contains(_keyCursorRow)
+            ? _keyCursorRow
+            : ParentView.Selection.GetActiveRow();
+
+        var current = cursor != null ? displayRows.IndexOf(cursor) : -1;
+        // Rows that fit in the (scrolling) table window, less one for the frozen header row
+        var pageSize = Math.Max(1, (int)(ImGui.GetWindowHeight() / ImGui.GetFrameHeightWithSpacing()) - 1);
+
+        int target;
+
+        if (home)
+            target = 0;
+        else if (end)
+            target = displayRows.Count - 1;
+        else if (pageUp)
+            target = current < 0 ? 0 : current - pageSize;
+        else
+            target = current < 0 ? 0 : current + pageSize;
+
+        target = Math.Clamp(target, 0, displayRows.Count - 1);
+
+        var targetRow = displayRows[target];
+
+        if (InputManager.HasShiftDown() && ParentView.Selection.GetActiveRow() != null)
+        {
+            SelectRangeFromActiveRow(displayRows, targetRow);
+        }
+        else
+        {
+            ParentView.Selection.SetActiveRow(targetRow, true);
+            _keyCursorRow = targetRow;
+        }
+
+        // Scrolled to and focused when the row is drawn (it's force-included in the clipper)
+        _keyFocusRow = targetRow;
+    }
+
     private void DisplayRowID(bool[] selectionCache, int selectionCacheIndex,
         List<Param.Row> p, Param.Row r, bool isPinned)
     {
@@ -503,81 +816,18 @@ public class ParamRowWindow
 
         if (ID_EditRow == null || ID_EditRow != r)
         {
-            if (ImGui.Selectable($@"{label}##{selectionCacheIndex}_id", selected))
+            // Home/End/PageUp/PageDown moved the keyboard cursor here: scroll to it and give it nav focus,
+            // so the next arrow key continues from this row
+            if (!isPinned && _keyFocusRow == r)
             {
-                if (Editor.ViewHandler.ActiveView.ViewIndex != ParentView.ViewIndex)
-                {
-                    EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{ParentView.Selection.GetActiveParam()}");
-                }
-
-                _focusRows = true;
-
-                if (InputManager.HasCtrlDown())
-                {
-                    ParentView.Selection.ToggleRowInSelection(r);
-                }
-                else if (p != null && (InputManager.HasShiftDown())
-                    && ParentView.Selection.GetActiveRow() != null)
-                {
-                    ParentView.Selection.CleanSelectedRows();
-
-                    var start = p.IndexOf(ParentView.Selection.GetActiveRow());
-                    var end = p.IndexOf(r);
-
-                    if (start != end && start != -1 && end != -1)
-                    {
-                        foreach (Param.Row r2 in p.GetRange(start < end ? start : end, Math.Abs(end - start)))
-                        {
-                            if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
-                            {
-                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
-                                {
-                                    ClearEditRows();
-                                    ParentView.Selection.AddRowToSelection(r2);
-                                }
-                            }
-                            else
-                            {
-                                ClearEditRows();
-                                ParentView.Selection.AddRowToSelection(r2);
-                            }
-                        }
-                    }
-
-                    ClearEditRows();
-                    ParentView.Selection.AddRowToSelection(r);
-                }
-                else if (InputManager.HasAltDown())
-                {
-                    if (Name_EditRow == null)
-                    {
-                        ID_EditRow = r;
-                    }
-                }
-                else
-                {
-                    ClearEditRows();
-                    ParentView.Selection.SetActiveRow(r, true);
-                }
+                ImGui.SetScrollHereY();
+                ImGui.SetKeyboardFocusHere();
+                _keyFocusRow = null;
             }
 
-            if (_arrowKeyPressed && ImGui.IsItemFocused() && r != ParentView.Selection.GetActiveRow())
-            {
-                if (InputManager.HasCtrlDown())
-                {
-                    // Add to selection
-                    ClearEditRows();
-                    ParentView.Selection.AddRowToSelection(r);
-                }
-                else
-                {
-                    // Exclusive selection
-                    ClearEditRows();
-                    ParentView.Selection.SetActiveRow(r, true);
-                }
+            var clicked = ImGui.Selectable($@"{label}##{selectionCacheIndex}_id", selected);
 
-                _arrowKeyPressed = false;
-            }
+            HandleRowSelectableInput(clicked, p, r, true);
 
             // Drag source
             if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
@@ -632,16 +882,27 @@ public class ParamRowWindow
         }
         else if (r == ID_EditRow)
         {
-            var tempID = r.ID;
+            // SetNextItemWidth rather than PushItemWidth: the old push was never popped
+            ImGui.SetNextItemWidth(-1);
 
-            var width = ImGui.GetWindowWidth();
-            ImGui.PushItemWidth(width);
-            ImGui.InputInt($"##rowIdInput_{r.ID}", ref tempID, 255);
+            if (_focusEditInput)
+            {
+                ImGui.SetKeyboardFocusHere();
+                _focusEditInput = false;
+            }
+
+            ImGui.InputInt("##rowIdInput", ref _idEditBuffer, 255);
+
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                var editCommand = $"selection: ID := {tempID}";
-                ParentView.Selection.SortSelection();
-                ParentView.MassEdit.ApplyMassEdit(editCommand);
+                // Enter or click-away commits. Escape restores the original value, so it's a no-op here.
+                ParamRowOperations.SetRowID(ParentView, new[] { r }, _idEditBuffer);
+                ClearEditRows();
+            }
+            else if (ImGui.IsItemDeactivated())
+            {
+                // Left without editing
+                ClearEditRows();
             }
         }
     }
@@ -741,81 +1002,9 @@ public class ParamRowWindow
 
         if (Name_EditRow == null || Name_EditRow != r)
         {
-            if (ImGui.Selectable($@"{label}##{selectionCacheIndex}_name", selected))
-            {
-                if (Editor.ViewHandler.ActiveView.ViewIndex != ParentView.ViewIndex)
-                {
-                    EditorCommandQueue.AddCommand($@"param/view/{ParentView.ViewIndex}/{ParentView.Selection.GetActiveParam()}");
-                }
+            var clicked = ImGui.Selectable($@"{label}##{selectionCacheIndex}_name", selected);
 
-                _focusRows = true;
-
-                if (InputManager.HasCtrlDown())
-                {
-                    ParentView.Selection.ToggleRowInSelection(r);
-                }
-                else if (p != null && (InputManager.HasShiftDown())
-                    && ParentView.Selection.GetActiveRow() != null)
-                {
-                    ParentView.Selection.CleanSelectedRows();
-
-                    var start = p.IndexOf(ParentView.Selection.GetActiveRow());
-                    var end = p.IndexOf(r);
-
-                    if (start != end && start != -1 && end != -1)
-                    {
-                        foreach (Param.Row r2 in p.GetRange(start < end ? start : end, Math.Abs(end - start)))
-                        {
-                            if (ParentView.ParamTableWindow.IsInTableGroupMode(Context.ActiveParam))
-                            {
-                                if (r2.ID == ParentView.ParamTableWindow.CurrentTableGroupID)
-                                {
-                                    ClearEditRows();
-                                    ParentView.Selection.AddRowToSelection(r2);
-                                }
-                            }
-                            else
-                            {
-                                ClearEditRows();
-                                ParentView.Selection.AddRowToSelection(r2);
-                            }
-                        }
-                    }
-
-                    ClearEditRows();
-                    ParentView.Selection.AddRowToSelection(r);
-                }
-                else if (InputManager.HasAltDown())
-                {
-                    if (ID_EditRow == null)
-                    {
-                        Name_EditRow = r;
-                    }
-                }
-                else
-                {
-                    ClearEditRows();
-                    ParentView.Selection.SetActiveRow(r, true);
-                }
-            }
-
-            if (_arrowKeyPressed && ImGui.IsItemFocused() && r != ParentView.Selection.GetActiveRow())
-            {
-                if (InputManager.HasCtrlDown())
-                {
-                    // Add to selection
-                    ClearEditRows();
-                    ParentView.Selection.AddRowToSelection(r);
-                }
-                else
-                {
-                    // Exclusive selection
-                    ClearEditRows();
-                    ParentView.Selection.SetActiveRow(r, true);
-                }
-
-                _arrowKeyPressed = false;
-            }
+            HandleRowSelectableInput(clicked, p, r, false);
 
             if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg)
             {
@@ -853,23 +1042,37 @@ public class ParamRowWindow
         }
         else if (Name_EditRow == r)
         {
+            // The modified-row header colour pushed above is only popped in the selectable branch, so pop it here too
+            if (CFG.Current.ParamEditor_Row_List_Display_Modified_Row_Bg && diffVanilla && selected)
+            {
+                ImGui.PopStyleColor(1);
+            }
+
             if (popColor)
             {
                 ImGui.PopStyleColor(1);
             }
 
-            var tempName = r.Name;
+            ImGui.SetNextItemWidth(-1);
 
-            var width = ImGui.GetWindowWidth();
-            ImGui.PushItemWidth(width);
-
-            var input = new DelayedInputTextHandler(tempName);
-
-            if (input.Draw($"##rowNameInput_{r.ID}", out string newValue))
+            if (_focusEditInput)
             {
-                var editCommand = $"selection: Name := {newValue}";
-                ParentView.Selection.SortSelection();
-                ParentView.MassEdit.ApplyMassEdit(editCommand);
+                ImGui.SetKeyboardFocusHere();
+                _focusEditInput = false;
+            }
+
+            ImGui.InputText("##rowNameInput", ref _nameEditBuffer, 1024);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                // Enter or click-away commits. Escape restores the original name, so it's a no-op here.
+                ParamRowOperations.SetRowName(ParentView, new[] { r }, _nameEditBuffer);
+                ClearEditRows();
+            }
+            else if (ImGui.IsItemDeactivated())
+            {
+                // Left without editing
+                ClearEditRows();
             }
         }
     }
@@ -878,45 +1081,49 @@ public class ParamRowWindow
     {
         if (ImGui.BeginPopupContextItem($"{imguiKey}_{r.ID}_{selectionCacheIndex}"))
         {
-            // Name Input
+            // ID / Name inputs: these apply to every selected row (e.g. to rename a batch, or to move rows
+            // into one table group), so the count is shown in the tooltip
+            var selectedRows = ParentView.Selection.GetSelectedRows()?.Where(row => row != null).ToList()
+                ?? new List<Param.Row>();
+            var sourceRow = ParentView.Selection.GetActiveRow() ?? selectedRows.FirstOrDefault();
+
+            if (ImGui.IsWindowAppearing() && sourceRow != null)
+            {
+                _contextIdBuffer = sourceRow.ID;
+                _contextNameBuffer = sourceRow.Name ?? "";
+            }
+
             if (imguiKey == "id")
             {
-                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input)
+                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
                 {
-                    if (ParentView.Selection.RowSelectionExists())
-                    {
-                        var id = ParentView.Selection.GetActiveRow().ID;
-                        ImGui.InputInt("##newRowId", ref id);
+                    ImGui.InputInt("##newRowId", ref _contextIdBuffer);
+                    GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Edit_Applies_To_Selection", selectedRows.Count));
 
-                        if (ImGui.IsItemDeactivatedAfterEdit())
-                        {
-                            var editCommand = $"selection: ID := {id}";
-                            ParentView.Selection.SortSelection();
-                            ParentView.MassEdit.ApplyMassEdit(editCommand);
-                        }
+                    // Every selected row gets this one ID (useful for table groups, but easy to do by accident)
+                    if (selectedRows.Count > 1)
+                    {
+                        ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color,
+                            LOC.Get("PARAM_RowWindow_Context_Same_ID_Warning", selectedRows.Count));
+                    }
+
+                    if (ImGui.IsItemDeactivatedAfterEdit())
+                    {
+                        ParamRowOperations.SetRowID(ParentView, selectedRows, _contextIdBuffer);
                     }
                 }
             }
 
             if (imguiKey == "name")
             {
-                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input)
+                if (CFG.Current.ParamEditor_Row_Context_Display_Row_Name_Input && sourceRow != null)
                 {
-                    if (ParentView.Selection.RowSelectionExists())
+                    ImGui.InputText("##nameMassEdit", ref _contextNameBuffer, 1024);
+                    GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Edit_Applies_To_Selection", selectedRows.Count));
+
+                    if (ImGui.IsItemDeactivatedAfterEdit())
                     {
-                        var name = ParentView.Selection.GetActiveRow().Name;
-                        if (name != null)
-                        {
-                            ImGui.InputText("##nameMassEdit", ref name, 255);
-
-                            if (ImGui.IsItemDeactivatedAfterEdit())
-                            {
-                                var editCommand = $"selection: Name := {name}";
-                                ParentView.Selection.SortSelection();
-
-                                ParentView.MassEdit.ApplyMassEdit(editCommand);
-                            }
-                        }
+                        ParamRowOperations.SetRowName(ParentView, selectedRows, _contextNameBuffer);
                     }
                 }
             }
@@ -965,6 +1172,11 @@ public class ParamRowWindow
                     ref CFG.Current.Param_Toolbar_Duplicate_Amount);
 
                 GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_DuplicateAmount_TT"));
+
+                // Reference fields to offset, and which fields that will change
+                ParamRowDuplicate.DisplayReferenceOffsetOptions(ParentView);
+
+                ImGui.Separator();
 
                 // Apply
                 if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_DuplicateApply")}##duplicateApplyAction",
@@ -1099,12 +1311,22 @@ public class ParamRowWindow
                     GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Unpin_TT"));
                 }
 
-                // Unpin All
+                // Unpin All (this param only, as the tooltip says)
                 if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Unpin_All")}##unpinAllAction"))
+                {
+                    if (Context.ActiveParam != null)
+                    {
+                        Editor.Project.Descriptor.PinnedRows.Remove(Context.ActiveParam);
+                    }
+                }
+                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Unpin_All_TT"));
+
+                // Unpin All in All Params (the old Unpin All behaviour)
+                if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Unpin_All_Params")}##unpinAllParamsAction"))
                 {
                     Editor.Project.Descriptor.PinnedRows.Clear();
                 }
-                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Unpin_All_TT"));
+                GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Unpin_All_Params_TT"));
 
                 ImGui.EndMenu();
             }
@@ -1165,7 +1387,8 @@ public class ParamRowWindow
                     StringBuilder _builder = new();
                     foreach (var entry in selection)
                     {
-                        _builder.AppendLine(entry.Name.ToString());
+                        // Unnamed rows copy as an empty line, so the line count still matches the selection
+                        _builder.AppendLine(entry.Name ?? "");
                     }
 
                     PlatformUtils.Instance.SetClipboardText(_builder.ToString());
@@ -1179,7 +1402,7 @@ public class ParamRowWindow
                     StringBuilder _builder = new();
                     foreach (var entry in selection)
                     {
-                        _builder.AppendLine($"{entry.ID.ToString()};{entry.Name.ToString()}");
+                        _builder.AppendLine($"{entry.ID};{entry.Name ?? ""}");
                     }
 
                     PlatformUtils.Instance.SetClipboardText(_builder.ToString());

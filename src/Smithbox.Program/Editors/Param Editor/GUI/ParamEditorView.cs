@@ -61,11 +61,6 @@ public class ParamEditorView : IEditorView
         var activeParam = Selection.GetActiveParam();
         Param.Row activeRow = Selection.GetActiveRow();
 
-        if (ParamTableWindow.IsInTableGroupMode(activeParam))
-        {
-
-        }
-
         // Params
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
@@ -74,7 +69,7 @@ public class ParamEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            if (IsWindowActivated())
             {
                 FocusManager.SetFocus(EditorFocusContext.ParamEditor_ParamList);
                 Editor.ViewHandler.ActiveView = this;
@@ -86,7 +81,7 @@ public class ParamEditorView : IEditorView
         ImGui.End();
 
         // Tables
-        if (Editor.ViewHandler.ActiveView.Selection.ActiveStayParam == null)
+        if (Selection.ActiveStayParam == null)
         {
             if (ParamTableWindow.IsInTableGroupMode(activeParam))
             {
@@ -97,7 +92,7 @@ public class ParamEditorView : IEditorView
                     var width = ImGui.GetContentRegionAvail().X;
                     var height = ImGui.GetContentRegionAvail().Y;
 
-                    if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    if (IsWindowActivated())
                     {
                         FocusManager.SetFocus(EditorFocusContext.ParamEditor_TableList);
                         Editor.ViewHandler.ActiveView = this;
@@ -111,7 +106,7 @@ public class ParamEditorView : IEditorView
         }
 
         // Rows
-        if (Editor.ViewHandler.ActiveView.Selection.ActiveStayParam == null)
+        if (Selection.ActiveStayParam == null)
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
@@ -120,7 +115,7 @@ public class ParamEditorView : IEditorView
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (IsWindowActivated())
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_RowList);
                     Editor.ViewHandler.ActiveView = this;
@@ -132,7 +127,7 @@ public class ParamEditorView : IEditorView
             ImGui.End();
         }
 
-        if (Editor.ViewHandler.ActiveView.Selection.ActiveStayParam == null)
+        if (Selection.ActiveStayParam == null)
         {
             // Fields
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -142,7 +137,7 @@ public class ParamEditorView : IEditorView
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (IsWindowActivated())
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_FieldList);
                     Editor.ViewHandler.ActiveView = this;
@@ -155,7 +150,7 @@ public class ParamEditorView : IEditorView
         }
 
         // Stay Param: Fields
-        if (Editor.ViewHandler.ActiveView.Selection.ActiveStayParam != null)
+        if (Selection.ActiveStayParam != null)
         {
             // Fields
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
@@ -165,7 +160,7 @@ public class ParamEditorView : IEditorView
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (IsWindowActivated())
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_StayParamFieldList);
                     Editor.ViewHandler.ActiveView = this;
@@ -187,7 +182,7 @@ public class ParamEditorView : IEditorView
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (IsWindowActivated())
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
                     Editor.ViewHandler.ActiveView = this;
@@ -206,7 +201,7 @@ public class ParamEditorView : IEditorView
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
             if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Projectile_Simulator")}###paramEditor_ProjectileSimulator_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                if (IsWindowActivated())
                 {
                     FocusManager.SetFocus(EditorFocusContext.ParamEditor_Tools);
                     Editor.ViewHandler.ActiveView = this;
@@ -217,6 +212,20 @@ public class ParamEditorView : IEditorView
 
             ImGui.End();
         }
+    }
+
+    /// <summary>
+    /// Whether the current window (or a child of it) should make this the active view: it has keyboard focus,
+    /// or it was just clicked (left or right, so a right-click context menu also acts on this view).
+    /// This used to be "hovered", which made shortcuts act on whichever view the mouse was resting over.
+    /// </summary>
+    private static bool IsWindowActivated()
+    {
+        if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows))
+            return true;
+
+        return ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows)
+            && (ImGui.IsMouseClicked(ImGuiMouseButton.Left) || ImGui.IsMouseClicked(ImGuiMouseButton.Right));
     }
 
     public ParamData GetParamData()

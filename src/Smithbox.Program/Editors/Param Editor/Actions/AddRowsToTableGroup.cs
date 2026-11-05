@@ -14,11 +14,17 @@ public class AddRowsToTableGroup : EditorAction
     private readonly List<Param.Row> Clones = new();
     private readonly int InsertIndex;
     private readonly Param Param;
-    private readonly List<Param.Row> Removed = new();
-    private readonly List<int> RemovedIndex = new();
     private bool AppendOnly = false;
     private Action<bool> PostExecutionAction;
     private bool IgnoreNameAppend = false;
+
+    /// <summary>
+    /// Index each clone was inserted at by the first Execute (-1 if it wasn't inserted), parallel to Clones.
+    /// Redo re-inserts the same row instances at these indices, so later actions that reference a new row still
+    /// point at the row that's in the param.
+    /// </summary>
+    private readonly List<int> InsertedIndices = new();
+    private bool HasExecuted = false;
 
     public AddRowsToTableGroup(ParamEditorScreen editor, Param param, List<Param.Row> rows, int insertIndex, bool appendOnly = false, bool ignoreNameAppend = false)
     {
@@ -32,11 +38,38 @@ public class AddRowsToTableGroup : EditorAction
 
     public override ActionEvent Execute()
     {
+        if (!HasExecuted)
+        {
+            FirstExecute();
+            HasExecuted = true;
+        }
+        else
+        {
+            // Undo restored the state the first Execute saw, so the same indices give the same result
+            for (var i = 0; i < Clones.Count; i++)
+            {
+                if (InsertedIndices[i] > -1)
+                {
+                    Param.InsertRow(InsertedIndices[i], Clones[i]);
+                }
+            }
+        }
+
+        ParamDirtyTracker.MarkDirty(Param);
+
+        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+
+        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
+        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
+
+        return ActionEvent.NoEvent;
+    }
+
+    private void FirstExecute()
+    {
         foreach (Param.Row row in Clonables)
         {
             var newrow = new Param.Row(row);
-
-            var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(row.Def);
 
             if (InsertIndex > -1)
             {
@@ -82,17 +115,9 @@ public class AddRowsToTableGroup : EditorAction
                 }
             }
 
+            InsertedIndices.Add(Param.IndexOfRow(newrow));
             Clones.Add(newrow);
         }
-
-        ParamDirtyTracker.MarkDirty(Param);
-
-        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
-
-        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
-
-        return ActionEvent.NoEvent;
     }
 
     public List<Param.Row> GetResultantRows()
@@ -102,19 +127,14 @@ public class AddRowsToTableGroup : EditorAction
 
     public override ActionEvent Undo()
     {
-        for (var i = 0; i < Clones.Count(); i++)
+        // Last inserted first, so each recorded index is valid when it's used on redo
+        for (var i = Clones.Count - 1; i >= 0; i--)
         {
-            Param.RemoveRow(Clones[i]);
+            if (InsertedIndices[i] > -1)
+            {
+                Param.RemoveRow(Clones[i]);
+            }
         }
-
-        for (var i = Removed.Count() - 1; i >= 0; i--)
-        {
-            Param.InsertRow(RemovedIndex[i], Removed[i]);
-        }
-
-        Clones.Clear();
-        RemovedIndex.Clear();
-        Removed.Clear();
 
         ParamDirtyTracker.MarkDirty(Param);
 

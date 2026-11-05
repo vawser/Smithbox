@@ -54,15 +54,21 @@ public class MassParamEditRegex
         ParamSelection context)
     {
         int currentLine = 0;
+        string currentCommand = null;
+
+        // Each command is applied as it is parsed, so the child manager is the only record of what has changed.
+        // If a later command fails, it is used to roll the earlier ones back.
+        ActionManager childManager = new();
+
         try
         {
             var commands = commandsString.Split(';');
             var changeCount = 0;
-            ActionManager childManager = new();
             foreach (var cmd in commands)
             {
                 currentLine++;
                 var command = cmd;
+                currentCommand = cmd;
 
                 // Ignore comments
                 if (command.StartsWith("##") || string.IsNullOrWhiteSpace(command))
@@ -96,7 +102,7 @@ public class MassParamEditRegex
 
                 if (result.Type != ParamMassEditResultType.SUCCESS)
                 {
-                    return (result, null);
+                    return (RollBack(childManager, WithFailingCommand(result, currentLine, currentCommand)), null);
                 }
 
                 changeCount += actions.Count;
@@ -115,8 +121,55 @@ public class MassParamEditRegex
                 ParamMassEditResultType.PARSEERROR,
                 LOC.Get("PARAM_MassEdit_Result_Error_Unknown", currentLine, e.ToString()));
 
-            return (finalResult, null);
+            return (RollBack(childManager, WithFailingCommand(finalResult, currentLine, currentCommand)), null);
         }
+    }
+
+    /// <summary>
+    /// Adds the failing command's text to a failure, so the user doesn't have to count semicolons to find it.
+    /// Long commands are shortened.
+    /// </summary>
+    private static MassEditResult WithFailingCommand(MassEditResult failure, int commandNumber, string command)
+    {
+        if (string.IsNullOrWhiteSpace(command))
+        {
+            return failure;
+        }
+
+        var text = command.Trim().ReplaceLineEndings(" ");
+
+        if (text.Length > 200)
+        {
+            text = text[..200] + "...";
+        }
+
+        return new MassEditResult(failure.Type,
+            $"{failure.Information}\n{LOC.Get("PARAM_MassEdit_Result_Failing_Command", commandNumber, text)}");
+    }
+
+    /// <summary>
+    /// Undo the commands that had already been applied before a later command failed, so a failed script leaves
+    /// the params as they were. Returns the failure result, noting the roll-back if there was anything to undo.
+    /// </summary>
+    private MassEditResult RollBack(ActionManager childManager, MassEditResult failure)
+    {
+        if (!childManager.CanUndo())
+        {
+            return failure;
+        }
+
+        try
+        {
+            childManager.UndoAllAction();
+        }
+        catch (Exception e)
+        {
+            return new MassEditResult(failure.Type,
+                $"{failure.Information}\n{LOC.Get("PARAM_MassEdit_Result_Rollback_Failed", e.Message)}");
+        }
+
+        return new MassEditResult(failure.Type,
+            $"{failure.Information}\n{LOC.Get("PARAM_MassEdit_Result_Rolled_Back")}");
     }
 
     private (MassEditResult, List<EditorAction>) ParseGlobalOpStep(int currentLine, string restOfStages)

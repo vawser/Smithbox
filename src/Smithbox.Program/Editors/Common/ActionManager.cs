@@ -19,6 +19,25 @@ public class ActionManager
     /// </summary>
     public event Action ActionPerformed;
 
+    /// <summary>
+    /// Optional check run before an action is executed, undone or redone. Returns a reason to refuse it (which is
+    /// logged as a warning), or null to allow it.
+    /// </summary>
+    public Func<EditorAction, string> ExecutionGuard;
+
+    private bool IsBlocked(EditorAction a)
+    {
+        var reason = ExecutionGuard?.Invoke(a);
+
+        if (reason == null)
+        {
+            return false;
+        }
+
+        Smithbox.Log(this, reason, Microsoft.Extensions.Logging.LogLevel.Warning);
+        return true;
+    }
+
     public void AddEventHandler(IActionEventHandler handler)
     {
         _eventHandlers.Add(handler);
@@ -37,13 +56,23 @@ public class ActionManager
         }
     }
 
-    public void ExecuteAction(EditorAction a)
+    /// <summary>
+    /// Executes the action and records it for undo. Returns false if the <see cref="ExecutionGuard"/> refused it.
+    /// </summary>
+    public bool ExecuteAction(EditorAction a)
     {
+        if (IsBlocked(a))
+        {
+            return false;
+        }
+
         NotifyHandlers(a.Execute());
         ActionPerformed?.Invoke();
         UndoStack.Push(a);
         RedoStack.Clear();
         CacheBank.ClearCaches();
+
+        return true;
     }
 
     public void PushSubManager(ActionManager child)
@@ -66,9 +95,26 @@ public class ActionManager
         return UndoStack.Peek();
     }
 
+    public EditorAction PeekRedoAction()
+    {
+        if (RedoStack.Count == 0)
+        {
+            return null;
+        }
+
+        return RedoStack.Peek();
+    }
+
+    public int UndoCount => UndoStack.Count;
+
     public void UndoAction()
     {
         if (UndoStack.Count() == 0)
+        {
+            return;
+        }
+
+        if (IsBlocked(UndoStack.Peek()))
         {
             return;
         }
@@ -89,6 +135,11 @@ public class ActionManager
 
         while (UndoStack.Count() > 0)
         {
+            if (IsBlocked(UndoStack.Peek()))
+            {
+                return;
+            }
+
             EditorAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
             ActionPerformed?.Invoke();
@@ -100,6 +151,11 @@ public class ActionManager
     public void RedoAction()
     {
         if (RedoStack.Count() == 0)
+        {
+            return;
+        }
+
+        if (IsBlocked(RedoStack.Peek()))
         {
             return;
         }

@@ -15,6 +15,49 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamRowOperations
 {
+    #region Set Row Name / ID
+    /// <summary>
+    /// Renames the given rows, as one undoable step.
+    /// The change is applied directly rather than through a mass-edit command string, so any name
+    /// works, including ones containing ';' or starting with '##', which the mass-edit grammar treats as syntax.
+    /// </summary>
+    public static bool SetRowName(ParamEditorView curView, IEnumerable<Param.Row> rows, string newName)
+    {
+        return SetRowProperty(curView, rows, nameof(Param.Row.Name), newName ?? "");
+    }
+
+    /// <summary>
+    /// Sets the ID of the given rows, as one undoable step. Several rows may end up sharing an ID; that is
+    /// intended for table-group params, where a group is a set of rows with the same ID.
+    /// </summary>
+    public static bool SetRowID(ParamEditorView curView, IEnumerable<Param.Row> rows, int newID)
+    {
+        return SetRowProperty(curView, rows, nameof(Param.Row.ID), newID);
+    }
+
+    private static bool SetRowProperty(ParamEditorView curView, IEnumerable<Param.Row> rows, string propertyName, object value)
+    {
+        var prop = typeof(Param.Row).GetProperty(propertyName);
+
+        // Only rows whose value actually changes, so an unchanged commit doesn't add an empty undo step
+        var actions = rows
+            .Where(row => row != null && !Equals(prop.GetValue(row), value))
+            .Select(row => (EditorAction)new PropertiesChangedAction(prop, -1, row, value))
+            .ToList();
+
+        if (actions.Count == 0)
+            return false;
+
+        // Refused while a save is running
+        if (!curView.Editor.ActionManager.ExecuteAction(new CompoundAction(actions)))
+            return false;
+
+        curView.GetParamData().RefreshParamDifferenceCacheTask();
+
+        return true;
+    }
+    #endregion
+
     #region Set Row to Default
     public static void SetRowToDefault(ParamEditorView curView)
     {
