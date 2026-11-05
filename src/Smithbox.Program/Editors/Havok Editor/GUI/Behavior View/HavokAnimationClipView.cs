@@ -49,6 +49,20 @@ public class HavokAnimationClipView
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
                 .ToList<IClipGenerator>();
         }
+
+        // Drop selections that are no longer in the graph (after a structural edit)
+        SelectedAnimationClips.RemoveAll(e => !AnimationClips.Contains(e));
+
+        RequestAliasRebuild();
+    }
+
+    /// <summary>
+    /// Rebuild the alias column on the next draw (after the clip list or a community name changed)
+    /// </summary>
+    public void RequestAliasRebuild()
+    {
+        _aliasCache.Clear();
+        RebuildAliasCache = true;
     }
 
     public void SetTabState(bool state)
@@ -89,27 +103,27 @@ public class HavokAnimationClipView
                 if (HavokTypeUtils.IsHKX3(Project))
                 {
                     var curClipGenerator = (HKLib.hk2018.hkbClipGenerator)entry;
-                    entryName = curClipGenerator.m_name;
+                    entryName = curClipGenerator.m_name ?? "";
 
                     if (RebuildAliasCache)
                     {
                         var id = entryName;
                         var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
 
-                        _aliasCache.Add(id, curAlias);
+                        _aliasCache.TryAdd(id, curAlias);
                     }
                 }
                 else if (HavokTypeUtils.IsHKX2(Project))
                 {
                     var curClipGenerator = (HKX2.hkbClipGenerator)entry;
-                    entryName = curClipGenerator.m_name;
+                    entryName = curClipGenerator.m_name ?? "";
 
                     if (RebuildAliasCache)
                     {
                         var id = entryName;
                         var curAlias = Project.Handler.HavokData.GetHavokObjectName(View.Selection.FilePath, id);
 
-                        _aliasCache.Add(id, curAlias);
+                        _aliasCache.TryAdd(id, curAlias);
                     }
                 }
 

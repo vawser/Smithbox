@@ -190,7 +190,11 @@ public class HavokFileView
                         // 'Soft' select used for multi-selecting for the binder actions
                         if (InputManager.HasCtrlDown())
                         {
-                            SoftSelectEntries.Add(filepath);
+                            // Toggle, so a second Ctrl+click deselects instead of adding a duplicate
+                            if (!SoftSelectEntries.Remove(filepath))
+                            {
+                                SoftSelectEntries.Add(filepath);
+                            }
                         }
                         else
                         {
@@ -687,8 +691,7 @@ public class HavokFileView
             data.PasteHavokFile(fileAction);
         }
 
-        // Update file list
-        View.BinderView.PopulateFileList();
+        RefreshAfterFileAction(fileAction, false);
     }
 
     public void DeleteFile(FileAction fileAction)
@@ -704,8 +707,7 @@ public class HavokFileView
             data.DeleteHavokFile(fileAction);
         }
 
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        RefreshAfterFileAction(fileAction, true);
     }
 
     public void RenameFile(FileAction fileAction)
@@ -721,8 +723,92 @@ public class HavokFileView
             data.RenameHavokFile(fileAction);
         }
 
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        RefreshAfterFileAction(fileAction, true);
+    }
+
+    /// <summary>
+    /// Refresh the file list after a file action changed the binder, keeping every view that shows
+    /// this binder pointed at files that still exist: renamed files keep their selection under the new name,
+    /// removed files are dropped from the selection.
+    /// </summary>
+    private void RefreshAfterFileAction(FileAction fileAction, bool clearCache)
+    {
+        var views = View.Editor.ViewHandler.Views
+            .Where(e => e != null
+                && e.Selection.CategoryMode == View.Selection.CategoryMode
+                && Equals(e.Selection.BinderFileEntry, fileAction.BinderEntry))
+            .ToList();
+
+        // Renames first, so the bank sees each view's selected file under its new name and keeps it loaded
+        foreach (var view in views)
+        {
+            view.FileView.ApplyRenames(fileAction.Renames);
+        }
+
+        View.BinderView.PopulateFileList(clearCache);
+
+        foreach (var view in views)
+        {
+            view.FileView.PruneSelection();
+
+            if (view != View)
+            {
+                view.BinderView.RebuildFileAliasCache();
+            }
+        }
+    }
+
+    private void ApplyRenames(Dictionary<string, string> renames)
+    {
+        if (renames.Count == 0)
+            return;
+
+        if (View.Selection.FilePath != null && renames.TryGetValue(View.Selection.FilePath, out var newPath))
+        {
+            View.Selection.FilePath = newPath;
+            SetRenameInput(newPath);
+        }
+
+        SoftSelectEntries = SoftSelectEntries
+            .Select(e => renames.TryGetValue(e, out var renamed) ? renamed : e)
+            .ToList();
+    }
+
+    /// <summary>
+    /// Drop selected files that no longer exist in the binder, and reload the selected file if it was unloaded
+    /// </summary>
+    private void PruneSelection()
+    {
+        var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
+
+        if (bankDict == null || View.Selection.BinderFileEntry == null ||
+            !bankDict.TryGetValue(View.Selection.BinderFileEntry, out var files))
+        {
+            View.Selection.ClearFileSelection();
+            return;
+        }
+
+        SoftSelectEntries = SoftSelectEntries
+            .Where(files.ContainsKey)
+            .Distinct()
+            .ToList();
+
+        if (View.Selection.FilePath == null)
+            return;
+
+        if (!files.TryGetValue(View.Selection.FilePath, out var fileWrapper))
+        {
+            View.Selection.ClearFileSelection();
+            return;
+        }
+
+        if (!fileWrapper.IsLoaded())
+        {
+            View.Selection.AppliedHavokTreeSearch = false;
+            View.PropertyView.BehaviorView.ResetSelection();
+
+            LoadHavokFile();
+        }
     }
 
     public void SetRenameInput(string filepath)
@@ -751,8 +837,7 @@ public class HavokFileView
             data.InsertHavokFile(fileAction);
         }
 
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        RefreshAfterFileAction(fileAction, true);
     }
     public void ExportFile(FileAction fileAction)
     {
@@ -767,8 +852,7 @@ public class HavokFileView
             data.ExportHavokFile(fileAction);
         }
 
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        // Export only reads the binder, so the file list doesn't need refreshing
     }
 
     public void CompressFile(FileAction fileAction)
@@ -784,12 +868,8 @@ public class HavokFileView
             data.CompressHavokFile(fileAction);
         }
 
-        // Compressing renames the entries (.hkx -> .hkx.dcx), so the old selection is stale
-        View.Selection.ClearFileSelection();
-        SoftSelectEntries = new();
-
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        // Compressing renames the entries (.hkx -> .hkx.dcx); the selection follows the new names
+        RefreshAfterFileAction(fileAction, true);
     }
 
     public void ChangeCompressionFile(FileAction fileAction)
@@ -805,12 +885,8 @@ public class HavokFileView
             data.ChangeCompressionHavokFile(fileAction);
         }
 
-        // File names are unchanged, but the bank was loaded from the old bytes, so refresh
-        View.Selection.ClearFileSelection();
-        SoftSelectEntries = new();
-
-        // Update file list
-        View.BinderView.PopulateFileList(true);
+        // File names and contents are unchanged, only the compression of the stored bytes
+        RefreshAfterFileAction(fileAction, true);
     }
 
     public class FileAction
@@ -827,6 +903,11 @@ public class HavokFileView
         public DCX.Type NewCompressionType = DCX.Type.Unknown;
 
         public List<NewFileInsert> Inserts = new();
+
+        /// <summary>
+        /// Filled in by the bank: the old and new name of every file the action renamed
+        /// </summary>
+        public Dictionary<string, string> Renames = new();
 
         public FileDictionaryEntry ClipboardBinder = new();
 

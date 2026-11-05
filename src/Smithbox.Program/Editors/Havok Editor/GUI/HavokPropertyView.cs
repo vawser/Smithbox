@@ -330,6 +330,12 @@ public class HavokPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
             Project.Handler.HavokData.UpdateHavokObjectName(View.Selection.CategoryMode, View.Selection.BinderFileEntry, View.Selection.FilePath, havokObjectKey, havokObjectName);
+
+            // The clip list shows these names in its alias column
+            foreach (var view in View.Editor.ViewHandler.Views)
+            {
+                view?.PropertyView.BehaviorView.AnimationClipView.RequestAliasRebuild();
+            }
         }
 
         ImGui.NextColumn();
@@ -351,14 +357,15 @@ public class HavokPropertyView
 
         FieldInfo[] fields = View.PropertyCache.GetCachedHavokFields(type);
 
+        // The passed meta belongs to the caller's object; this object's fields and name use its own type's meta
+        classMeta = HavokMetaHelper.GetMeta(Project, type);
+
         DisplayCommunityNameInput(type, obj, fields, classMeta);
 
         // Properties
         var id = 0;
         foreach (FieldInfo prop in fields)
         {
-            classMeta = HavokMetaHelper.GetMeta(Project, type);
-
             var treeFlags = ImGuiTreeNodeFlags.None;
 
             if(CFG.Current.HavokEditor_Properties_Auto_Open_Tree)
@@ -928,67 +935,70 @@ public class HavokPropertyView
                 isChanged = true;
             }
         }
+        else if (typ == typeof(Quaternion))
+        {
+            // Edited as raw X, Y, Z, W
+            var quat = (Quaternion)oldval;
+            var val = new Vector4(quat.X, quat.Y, quat.Z, quat.W);
+
+            if (ImGui.DragFloat4("##value", ref val, 0.01f))
+            {
+                newval = new Quaternion(val.X, val.Y, val.Z, val.W);
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(Matrix4x4))
+        {
+            var matrix = (Matrix4x4)oldval;
+
+            if (MatrixRowsEditor(ref matrix, 4))
+            {
+                newval = matrix;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(HKLib.ValueTypes.Matrix3x3))
+        {
+            Matrix4x4 matrix = (HKLib.ValueTypes.Matrix3x3)oldval;
+
+            if (MatrixRowsEditor(ref matrix, 3))
+            {
+                newval = (HKLib.ValueTypes.Matrix3x3)matrix;
+                isChanged = true;
+            }
+        }
+        else if (typ == typeof(double))
+        {
+            var val = (double)oldval;
+
+            if (ImGui.InputDouble("##value", ref val))
+            {
+                newval = val;
+                isChanged = true;
+            }
+        }
         else if (typ.BaseType == typeof(Enum))
         {
             Array enumVals = typ.GetEnumValues();
             var enumNames = typ.GetEnumNames();
             var intVals = new int[enumVals.Length];
 
-            if (typ.GetEnumUnderlyingType() == typeof(byte))
-            {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (byte)enumVals.GetValue(i);
-                }
+            // The values are only used for the labels; the combo works on the enum values themselves
+            var isUnsigned64 = typ.GetEnumUnderlyingType() == typeof(ulong);
 
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
-            }
-            else if (typ.GetEnumUnderlyingType() == typeof(sbyte))
+            for (var i = 0; i < enumVals.Length; i++)
             {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (sbyte)enumVals.GetValue(i);
-                }
+                var enumVal = enumVals.GetValue(i);
 
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
+                intVals[i] = isUnsigned64
+                    ? unchecked((int)Convert.ToUInt64(enumVal))
+                    : unchecked((int)Convert.ToInt64(enumVal));
             }
-            else if (typ.GetEnumUnderlyingType() == typeof(int))
-            {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (int)enumVals.GetValue(i);
-                }
 
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
-            }
-            else if (typ.GetEnumUnderlyingType() == typeof(uint))
+            if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
             {
-                for (var i = 0; i < enumVals.Length; i++)
-                {
-                    intVals[i] = (int)(uint)enumVals.GetValue(i);
-                }
-
-                if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-                {
-                    newval = val;
-                    isChanged = true;
-                }
-            }
-            else
-            {
-                ImGui.Text("ImplementMe");
+                newval = val;
+                isChanged = true;
             }
         }
         else if (typ == typeof(Color))
@@ -1055,6 +1065,55 @@ public class HavokPropertyView
         return (isChanged, isDeactivatedAfterEdit);
     }
 
+    /// <summary>
+    /// Edit the first rowCount rows of a matrix (the first rowCount columns of each), one drag row per matrix row.
+    /// Drawn as a group, so the caller's IsItemDeactivatedAfterEdit check covers every row.
+    /// </summary>
+    private static bool MatrixRowsEditor(ref Matrix4x4 matrix, int rowCount)
+    {
+        var changed = false;
+
+        ImGui.BeginGroup();
+
+        for (var row = 0; row < rowCount; row++)
+        {
+            ImGui.PushID(row);
+            ImGui.SetNextItemWidth(-1);
+
+            if (rowCount == 4)
+            {
+                var val = new Vector4(matrix[row, 0], matrix[row, 1], matrix[row, 2], matrix[row, 3]);
+
+                if (ImGui.DragFloat4("##row", ref val, 0.01f))
+                {
+                    matrix[row, 0] = val.X;
+                    matrix[row, 1] = val.Y;
+                    matrix[row, 2] = val.Z;
+                    matrix[row, 3] = val.W;
+                    changed = true;
+                }
+            }
+            else
+            {
+                var val = new Vector3(matrix[row, 0], matrix[row, 1], matrix[row, 2]);
+
+                if (ImGui.DragFloat3("##row", ref val, 0.01f))
+                {
+                    matrix[row, 0] = val.X;
+                    matrix[row, 1] = val.Y;
+                    matrix[row, 2] = val.Z;
+                    changed = true;
+                }
+            }
+
+            ImGui.PopID();
+        }
+
+        ImGui.EndGroup();
+
+        return changed;
+    }
+
     private void PropEditorGenericList(
         HavokClass havokMeta,
         object obj,
@@ -1075,33 +1134,34 @@ public class HavokPropertyView
         if (list != null)
         {
             ImGui.AlignTextToFramePadding();
+
+            // Abstract element types (hkbGenerator, hknpShape, ...) can't be created directly,
+            // so the new entry takes the type of the first existing entry.
+            // With no entry to copy, the button is disabled rather than adding a null entry.
+            var newEntryType = GetNewListEntryType(list, elementType);
+
+            ImGui.BeginDisabled(newEntryType == null);
+
             if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
             {
-                // Intercept these types and peek at the first list entry to get the appropriate type
-                if (HavokTypeUtils.IsHKX3(Project) && elementType == typeof(HKLib.hk2018.hkbGenerator) && list.Count > 0)
-                {
-                    var firstElem = list[0];
+                var newEntry = PropFinderUtil.CreateDefaultListElement(newEntryType);
+                var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
+                View.ActionManager.ExecuteAction(action);
+            }
 
-                    var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
-                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
-                    View.ActionManager.ExecuteAction(action);
-                }
-                else if (HavokTypeUtils.IsHKX2(Project) && elementType == typeof(HKX2.hkbGenerator) && list.Count > 0)
-                {
-                    var firstElem = list[0];
+            ImGui.EndDisabled();
 
-                    var newEntry = PropFinderUtil.CreateDefaultListElement(firstElem.GetType());
-                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
-                    View.ActionManager.ExecuteAction(action);
-                }
-                else
+            if (newEntryType == null)
+            {
+                if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
                 {
-                    var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
-                    var action = new HavokAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
-                    View.ActionManager.ExecuteAction(action);
+                    ImGui.SetTooltip(LOC.Get("HAVOK_PropertyView_Add_List_Entry_Abstract_TT", elementType.Name));
                 }
             }
-            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
+            else
+            {
+                GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
+            }
         }
 
         ImGui.NextColumn();
@@ -1186,80 +1246,45 @@ public class HavokPropertyView
         ImGui.PopID();
     }
 
-    public object GetSourceObject()
+    /// <summary>
+    /// The type to create when adding an entry to the list, or null if no entry can be created.
+    /// Abstract and interface element types use the type of the first existing entry.
+    /// </summary>
+    private static Type GetNewListEntryType(IList list, Type elementType)
     {
-        var data = View.HavokBank;
-        var binderEntry = View.Selection.BinderFileEntry;
-        var filePath = View.Selection.FilePath;
+        var newEntryType = elementType;
 
-        object sorceObject = null;
-
-        switch(View.Selection.CategoryMode)
+        if (elementType.IsAbstract || elementType.IsInterface)
         {
-            case HavokCategoryMode.Animation:
-                if (data.AnimationBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.AnimationBank[binderEntry][filePath];
-                }
-                break;
+            newEntryType = null;
 
-            case HavokCategoryMode.Behavior:
-                if (data.BehaviorBank[binderEntry].ContainsKey(filePath))
+            foreach (var entry in list)
+            {
+                if (entry != null)
                 {
-                    sorceObject = data.BehaviorBank[binderEntry][filePath];
+                    newEntryType = entry.GetType();
+                    break;
                 }
-                break;
+            }
 
-            case HavokCategoryMode.Character:
-                if (data.CharacterBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.CharacterBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Map_Collision:
-                if (data.MapCollisionBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.MapCollisionBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Asset_Collision:
-                if (data.AssetCollisionBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.AssetCollisionBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Navmesh:
-                if (data.NavmeshBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.NavmeshBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Cutscene:
-                if (data.CutsceneBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.CutsceneBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Part_Collidable:
-                if (data.PartBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.PartBank[binderEntry][filePath];
-                }
-                break;
-
-            case HavokCategoryMode.Rumble:
-                if (data.RumbleBank[binderEntry].ContainsKey(filePath))
-                {
-                    sorceObject = data.RumbleBank[binderEntry][filePath];
-                }
-                break;
+            if (newEntryType == null)
+                return null;
         }
 
-        return sorceObject;
+        if (newEntryType == typeof(string) || newEntryType.IsValueType)
+            return newEntryType;
+
+        if (newEntryType.IsAbstract || newEntryType.GetConstructor(Type.EmptyTypes) == null)
+            return null;
+
+        return newEntryType;
+    }
+
+    /// <summary>
+    /// The root container of the selected file, or null if no file is selected or it isn't loaded
+    /// </summary>
+    public IRootContainer GetSourceObject()
+    {
+        return View.Selection.SelectedFileWrapper?.Root;
     }
 }

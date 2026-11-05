@@ -42,6 +42,9 @@ public class HavokAnimationSelectorView
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
                 .ToList<ICustomManualSelectorGenerator>();
         }
+
+        // Drop selections that are no longer in the graph (after a structural edit)
+        SelectedAnimSelectors.RemoveAll(e => !AnimSelectors.Contains(e));
     }
 
     public void SetTabState(bool state)
@@ -79,12 +82,12 @@ public class HavokAnimationSelectorView
             if (HavokTypeUtils.IsHKX3(Project))
             {
                 var curCMSG = (HKLib.hk2018.CustomManualSelectorGenerator)entry;
-                entryName = curCMSG.m_name;
+                entryName = curCMSG.m_name ?? "";
             }
             else if (HavokTypeUtils.IsHKX2(Project))
             {
                 var curCMSG = (HKX2.CustomManualSelectorGenerator)entry;
-                entryName = curCMSG.m_name;
+                entryName = curCMSG.m_name ?? "";
             }
 
             var selected = SelectedAnimSelectors.Contains(entry);

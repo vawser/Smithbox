@@ -30,6 +30,16 @@ public static class HavokBinderUtils
         return newFile;
     }
 
+    /// <summary>
+    /// The ID after the highest ID in the binder (files aren't always sorted by ID), or 0 for an empty binder
+    /// </summary>
+    public static int GetNextFileId(IEnumerable<BinderFile> files)
+    {
+        var ids = files.Select(e => e.ID).ToList();
+
+        return ids.Count == 0 ? 0 : ids.Max() + 1;
+    }
+
     public static string GetUniqueFileName(string baseName, IEnumerable<string> existingNames, string primaryExtension)
     {
         // Use a HashSet for O(1) lookups instead of scanning the collection each time

@@ -42,6 +42,9 @@ public class HavokStateMachineView
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
                 .ToList<IStateMachine>();
         }
+
+        // Drop selections that are no longer in the graph (after a structural edit)
+        SelectedStateMachines.RemoveAll(e => !StateMachines.Contains(e));
     }
 
     public void SetTabState(bool state)
@@ -79,12 +82,12 @@ public class HavokStateMachineView
             if (HavokTypeUtils.IsHKX3(Project))
             {
                 var curSM = (HKLib.hk2018.hkbStateMachine)entry;
-                entryName = curSM.m_name;
+                entryName = curSM.m_name ?? "";
             }
             else if (HavokTypeUtils.IsHKX2(Project))
             {
                 var curSM = (HKX2.hkbStateMachine)entry;
-                entryName = curSM.m_name;
+                entryName = curSM.m_name ?? "";
             }
 
             var selected = SelectedStateMachines.Contains(entry);

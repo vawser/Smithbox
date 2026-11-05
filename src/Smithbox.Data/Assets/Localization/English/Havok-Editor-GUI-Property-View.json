@@ -115,6 +115,10 @@
     {
       "Key": "HAVOK_PropertyView_Context_Action_Copy_Type_TT",
       "Text": "Copy the type of this field to the clipboard."
+    },
+    {
+      "Key": "HAVOK_PropertyView_Add_List_Entry_Abstract_TT",
+      "Text": "{0} is an abstract type, so an entry can only be added by copying the type of an existing entry. This list has no entries to copy."
     }
   ]
 }

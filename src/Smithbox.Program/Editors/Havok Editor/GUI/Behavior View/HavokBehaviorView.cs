@@ -42,6 +42,9 @@ public class HavokBehaviorView
     public void SetupBehaviorView(object sourceObject)
     {
         // Determine if selected file is a Behavior Graph
+        // (this also re-runs after structural edits, so it starts from scratch)
+        IsBehaviorGraph = false;
+
         if (HavokTypeUtils.IsHKX3(Project))
         {
             var behaviorGraphs = HavokTreeSearch.FindAll<HKLib.hk2018.hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);

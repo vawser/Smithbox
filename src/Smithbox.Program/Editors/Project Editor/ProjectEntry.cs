@@ -374,7 +374,7 @@ public class ProjectEntry
                     {
                         if (Handler.HavokEditor != null)
                         {
-                            Handler.HavokEditor.Save(true);
+                            Handler.HavokEditor.SaveAll(true);
                         }
                     }
                 }

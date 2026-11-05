@@ -4,14 +4,16 @@ using System.Reflection;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokAddListEntry : EditorAction
+public class HavokAddListEntry : EditorAction, IHavokFileAction
 {
+    public bool ChangesStructure => true;
+
     private readonly object ChangedObject;
     private readonly int Index;
     private readonly object NewValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
-    private readonly HavokFileWrapper FileWrapper;
+    public HavokFileWrapper FileWrapper { get; }
 
     public HavokAddListEntry(HavokFileWrapper fileWrapper, FieldInfo prop, object changed, object newValue, int index)
     {

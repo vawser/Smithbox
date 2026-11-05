@@ -8,7 +8,10 @@ public class HavokEditorView : IEditorView
     public HavokEditorScreen Editor;
     public ProjectEntry Project;
 
-    public HavokBank HavokBank;
+    /// <summary>
+    /// The file bank, shared by every view so they all edit and save the same objects
+    /// </summary>
+    public HavokBank HavokBank => Editor.HavokBank;
 
     public ActionManager ActionManager;
 
@@ -30,13 +33,15 @@ public class HavokEditorView : IEditorView
         Editor = editor;
         Project = project;
 
-        HavokBank = new(project);
-
         ViewIndex = imguiId;
         _imguiId = imguiId;
 
         Selection = new(this, project);
         ActionManager = new();
+
+        // ActionPerformed is raised before the action is pushed onto the undo/redo stack,
+        // so the stacks are checked on the next frame instead
+        ActionManager.ActionPerformed += () => CheckForStructureChange = true;
 
         CategoryView = new(this, project);
         BinderView = new(this, project);
@@ -45,8 +50,38 @@ public class HavokEditorView : IEditorView
         Tools = new(this, project);
     }
 
+    private bool CheckForStructureChange = false;
+
+    /// <summary>
+    /// After an action that can add or remove objects (or its undo/redo), every view rebuilds
+    /// the object lists it built from the file (the behavior tabs), since the views share the files
+    /// </summary>
+    private void HandleStructureChange()
+    {
+        if (!CheckForStructureChange)
+            return;
+
+        CheckForStructureChange = false;
+
+        var changed = ActionManager.PeekUndoAction() is IHavokFileAction { ChangesStructure: true }
+            || ActionManager.PeekRedoAction() is IHavokFileAction { ChangesStructure: true };
+
+        if (!changed)
+            return;
+
+        foreach (var view in Editor.ViewHandler.Views)
+        {
+            if (view != null)
+            {
+                view.Selection.AppliedHavokTreeSearch = false;
+            }
+        }
+    }
+
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
+        HandleStructureChange();
+
         // Category
         // -> Type of hkx to populate/reference
 

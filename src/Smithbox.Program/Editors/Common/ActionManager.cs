@@ -107,6 +107,14 @@ public class ActionManager
 
     public int UndoCount => UndoStack.Count;
 
+    /// <summary>
+    /// Every action that can still be undone or redone
+    /// </summary>
+    public IEnumerable<EditorAction> GetHistory()
+    {
+        return UndoStack.Concat(RedoStack);
+    }
+
     public void UndoAction()
     {
         if (UndoStack.Count() == 0)

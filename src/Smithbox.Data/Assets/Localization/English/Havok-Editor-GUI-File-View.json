@@ -179,6 +179,22 @@
     {
       "Key": "HAVOK_FileView_ContextAction_ChangeCompression_FAIL",
       "Text": "Failed to recompress file: {0}"
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Rename_Invalid_Name",
+      "Text": "Can't rename to \"{0}\": the name must be a non-empty file name without path separators or invalid characters."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Rename_Name_Taken",
+      "Text": "Can't rename to {0}: another file in {1} already uses that name."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Insert_Empty_Binder",
+      "Text": "Can't insert into {0}: the binder has no existing file to copy the folder and flags from."
+    },
+    {
+      "Key": "HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
+      "Text": "Used the unsaved changes of {0}"
     }
   ]
 }

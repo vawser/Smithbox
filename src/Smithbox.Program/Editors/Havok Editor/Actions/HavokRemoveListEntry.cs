@@ -7,14 +7,16 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokRemoveListEntry : EditorAction
+public class HavokRemoveListEntry : EditorAction, IHavokFileAction
 {
+    public bool ChangesStructure => true;
+
     private readonly object ChangedObject;
     private readonly int Index;
     private object OldValue;
     private readonly FieldInfo Property;
     private Action<bool> PostExecutionAction;
-    private readonly HavokFileWrapper FileWrapper;
+    public HavokFileWrapper FileWrapper { get; }
 
     public HavokRemoveListEntry(HavokFileWrapper fileWrapper, FieldInfo prop, object changed, int index)
     {

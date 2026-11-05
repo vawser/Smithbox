@@ -196,6 +196,35 @@ public static class HavokShapeGenerator_HKX3_2019
         return true;
     }
 
+    /// <summary>
+    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// </summary>
+    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+        HavokFileWrapper fileWrapper,
+        hkRootLevelContainer container,
+        hknpExternMeshShape newShape,
+        int bodyIndex = 0,
+        bool force = false)
+    {
+        var bodyCinfos = GetBodyCinfos(container);
+        if (bodyCinfos == null || bodyIndex < 0 || bodyIndex >= bodyCinfos.Count)
+        {
+            return null;
+        }
+
+        var body = bodyCinfos[bodyIndex];
+        if (!force && !IsReplaceableMeshShape(body.m_shape))
+        {
+            return null;
+        }
+
+        var oldShape = body.m_shape;
+
+        return new HavokDelegateAction(fileWrapper,
+            () => body.m_shape = newShape,
+            () => body.m_shape = oldShape);
+    }
+
     private static List<hknpPhysicsSystemData.bodyCinfoWithAttachment> GetBodyCinfos(hkRootLevelContainer container)
     {
         // Asset collision can hold an hkxScene alongside the physics scene

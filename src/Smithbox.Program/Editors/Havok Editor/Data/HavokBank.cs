@@ -19,6 +19,12 @@ public class HavokBank : IDisposable
     public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> MapCollisionBank = new();
     public Dictionary<FileDictionaryEntry, Dictionary<string, HavokFileWrapper>> AssetCollisionBank = new();
 
+    /// <summary>
+    /// The files that must not be unloaded or replaced: those in the undo/redo history (otherwise an undo would
+    /// change a discarded copy instead of the displayed file) and those selected in a view (so its panels stay valid).
+    /// </summary>
+    public Func<HashSet<HavokFileWrapper>> GetPinnedWrappers;
+
     public HavokBank(ProjectEntry project)
     {
         Project = project;
@@ -227,11 +233,12 @@ public class HavokBank : IDisposable
     }
 
     /// <summary>
-    /// Save all binders that contain modified files
+    /// Save all binders that contain modified files. Returns whether any binder was written
+    /// (failures are logged per binder).
     /// </summary>
     public bool SaveAllHavokFiles()
     {
-        var success = true;
+        var anyWritten = false;
 
         foreach (var category in Enum.GetValues<HavokCategoryMode>())
         {
@@ -246,12 +253,17 @@ public class HavokBank : IDisposable
                 if (!IsBinderDirty(files))
                     continue;
 
-                if (!SaveBinder(fileEntry, files, null, IsCombinedCategory(category)))
-                    success = false;
+                // SaveBinder clears IsDirty on the files it wrote, so fewer dirty files means the binder was written
+                var dirtyBefore = files.Values.Count(e => e.IsDirty);
+
+                SaveBinder(fileEntry, files, null, IsCombinedCategory(category));
+
+                if (files.Values.Count(e => e.IsDirty) < dirtyBefore)
+                    anyWritten = true;
             }
         }
 
-        return success;
+        return anyWritten;
     }
     #endregion
 
@@ -376,6 +388,8 @@ public class HavokBank : IDisposable
                     if (file.Name == oldName)
                         continue;
 
+                    fileAction.Renames[oldName] = file.Name;
+
                     if (files.Remove(oldName, out var fileWrapper))
                     {
                         fileWrapper.Key = file.Name;
@@ -397,6 +411,41 @@ public class HavokBank : IDisposable
     {
         return name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase);
     }
+
+    /// <summary>
+    /// The bytes of the binder file as the editor currently has it: re-serialized (and re-compressed the way it
+    /// is stored) when it has unsaved changes, otherwise the stored bytes. Used by Paste and Export, so they
+    /// produce what the editor shows. The serializer is created on first use, with the binder's compendium if
+    /// the files refer to it, like Save.
+    /// </summary>
+    private Memory<byte> GetCurrentFileBytes(IBinder binder, BinderFile file,
+        Dictionary<string, HavokFileWrapper> files, ref HavokTagSerializer serializer)
+    {
+        if (files == null || !files.TryGetValue(file.Name, out var fileWrapper) ||
+            !fileWrapper.IsLoaded() || !fileWrapper.IsDirty)
+        {
+            return file.Bytes;
+        }
+
+        if (serializer == null && HavokTypeUtils.IsHKX3(Project))
+        {
+            serializer = HavokTagSerializer.Create(Project);
+
+            if (serializer.UsesBinderCompendium)
+            {
+                LoadCompendium(binder, serializer);
+            }
+        }
+
+        var fileBytes = WriteRoot(fileWrapper.Root, serializer);
+
+        Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
+            Path.GetFileName(file.Name)));
+
+        return IsDcxFile(file.Name)
+            ? DCX.Compress(fileBytes, GetExistingDCXType(file))
+            : fileBytes;
+    }
     #endregion
 
     #region Populate Internals
@@ -406,12 +455,17 @@ public class HavokBank : IDisposable
         bool isCombined,
         bool clearCache = false)
     {
-        // Binders with unsaved changes are kept so the changes are not lost
+        var pinned = GetPinnedWrappers?.Invoke() ?? new HashSet<HavokFileWrapper>();
+
+        // Binders with unsaved changes are kept so the changes are not lost,
+        // and binders with pinned files are kept so undo and the views still apply to them
         if (clearCache)
         {
             foreach (var key in bankDict.Keys.ToList())
             {
-                if (!IsBinderDirty(bankDict[key]))
+                var binderFiles = bankDict[key];
+
+                if (!IsBinderDirty(binderFiles) && !binderFiles.Values.Any(pinned.Contains))
                 {
                     bankDict.Remove(key);
                 }
@@ -436,21 +490,17 @@ public class HavokBank : IDisposable
 
                 HavokFileWrapper fileWrapper = null;
 
-                // Keep the existing state if the file has unsaved changes, or if the binder is not being refreshed
+                // Keep the existing state if the file has unsaved changes, is pinned (undo history or a view's selection),
+                // or if the binder is not being refreshed
                 if (existingFiles != null && existingFiles.TryGetValue(file.Name, out var existingWrapper))
                 {
-                    if (existingWrapper.IsDirty || !clearCache)
+                    if (existingWrapper.IsDirty || !clearCache || pinned.Contains(existingWrapper))
                     {
                         fileWrapper = existingWrapper;
                     }
                 }
 
                 files.Add(file.Name, fileWrapper ?? new HavokFileWrapper(file.Name));
-
-                if (!isCombined)
-                {
-                    Project.Handler.HavokEditor.ViewHandler.ActiveView.Selection.AddToFileAliasCache(file.Name);
-                }
             }
 
             bankDict[fileEntry] = files;
@@ -478,8 +528,10 @@ public class HavokBank : IDisposable
         if (!files.TryGetValue(internalFilePath, out var fileWrapper))
             return;
 
-        // Keep the unsaved changes instead of replacing them with the stored version
-        if (fileWrapper.IsDirty)
+        // Keep the unsaved changes instead of replacing them with the stored version.
+        // A loaded file is also kept: replacing its objects would leave the undo history pointing at the old ones.
+        // (A binder refresh replaces the wrappers of loaded files that need re-reading.)
+        if (fileWrapper.IsDirty || fileWrapper.IsLoaded())
             return;
 
         if (!HavokTypeUtils.IsHKX2(Project) && !HavokTypeUtils.IsHKX3(Project))
@@ -795,12 +847,23 @@ public class HavokBank : IDisposable
             if (filesToCopy.Count == 0)
                 return;
 
+            // Files with unsaved changes are copied as the editor has them
+            fileAction.BankDict.TryGetValue(fileAction.ClipboardBinder, out var sourceFiles);
+            HavokTagSerializer serializer = null;
+
+            var copiedBytes = new Dictionary<BinderFile, Memory<byte>>();
+
+            foreach (var file in filesToCopy)
+            {
+                copiedBytes[file] = GetCurrentFileBytes(sourceBinder, file, sourceFiles, ref serializer);
+            }
+
             ModifyContainer(fileAction, isCombined, targetBinder =>
             {
                 // Get names for unique naming of pasted file
                 var currentNames = targetBinder.Files.Select(e => e.Name).ToList();
 
-                var newIdBase = targetBinder.Files.Last().ID + 1;
+                var newIdBase = HavokBinderUtils.GetNextFileId(targetBinder.Files);
 
                 // Add in new BinderFiles to target (current binder selection)
                 foreach (var file in filesToCopy)
@@ -812,7 +875,7 @@ public class HavokBank : IDisposable
                         Flags = file.Flags,
                         ID = newIdBase,
                         Name = newName,
-                        Bytes = file.Bytes,
+                        Bytes = copiedBytes[file],
                         CompressionType = file.CompressionType
                     };
 
@@ -875,6 +938,30 @@ public class HavokBank : IDisposable
         if (!files.ContainsKey(fileAction.FilePath))
             return;
 
+        // The new name must be a plain file name that no other file in the binder uses
+        var newName = fileAction.NewFilename?.Trim() ?? "";
+
+        if (newName == "" ||
+            newName.IndexOfAny(Path.GetInvalidFileNameChars()) != -1 ||
+            newName.Contains('/') || newName.Contains('\\'))
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Invalid_Name", fileAction.NewFilename ?? ""));
+            return;
+        }
+
+        var newPath = HavokBinderUtils.ReplaceFileName(fileAction.FilePath, newName);
+
+        if (string.Equals(newPath, fileAction.FilePath, StringComparison.Ordinal))
+            return;
+
+        if (files.Keys.Any(e => e != fileAction.FilePath && string.Equals(e, newPath, StringComparison.OrdinalIgnoreCase)))
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_Rename_Name_Taken", newName, fileAction.BinderEntry.Filename));
+            return;
+        }
+
+        fileAction.NewFilename = newName;
+
         ModifyContainer(fileAction, isCombined, binder =>
         {
             var anyRenamed = false;
@@ -909,6 +996,15 @@ public class HavokBank : IDisposable
 
         ModifyContainer(fileAction, isCombined, binder =>
         {
+            // The new files copy the folder, flags and compression of an existing file
+            if (binder.Files.Count == 0)
+            {
+                Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_Insert_Empty_Binder", fileAction.BinderEntry.Filename));
+                return false;
+            }
+
+            var currentNames = binder.Files.Select(e => e.Name).ToList();
+
             foreach (var entry in fileAction.Inserts)
             {
                 var lastFile = binder.Files.Last();
@@ -916,6 +1012,11 @@ public class HavokBank : IDisposable
                 var filename = Path.GetFileName(entry.FilePath);
                 var insertFile = HavokBinderUtils.GetInsertFile(fileAction, lastFile, filename, entry.FileData);
 
+                // Same rules as paste: a unique name and an unused ID
+                insertFile.Name = HavokBinderUtils.GetUniqueFileName(insertFile.Name, currentNames, "hkx");
+                insertFile.ID = HavokBinderUtils.GetNextFileId(binder.Files);
+
+                currentNames.Add(insertFile.Name);
                 binder.Files.Add(insertFile);
 
                 var logName = Path.GetFileNameWithoutExtension(insertFile.Name);
@@ -945,6 +1046,9 @@ public class HavokBank : IDisposable
             if (binder == null)
                 return;
 
+            // Files with unsaved changes are exported as the editor has them
+            HavokTagSerializer serializer = null;
+
             foreach (var entry in fileAction.MultipleFilePaths)
             {
                 foreach (var file in binder.Files)
@@ -963,7 +1067,7 @@ public class HavokBank : IDisposable
 
                     var exportPath = Path.Join(Project.Descriptor.ProjectPath, $"{name}{extension}");
 
-                    File.WriteAllBytes(exportPath, file.Bytes.ToArray());
+                    File.WriteAllBytes(exportPath, GetCurrentFileBytes(binder, file, files, ref serializer).ToArray());
 
                     Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
                 }

@@ -187,6 +187,10 @@
     {
       "Key": "HAVOK_FlverSelection_Filter_TT",
       "Text": "Filter the model list entries."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_No_Replaceable_Shape",
+      "Text": "{0} has no mesh collision shape that can be replaced."
     }
   ]
 }

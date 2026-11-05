@@ -512,6 +512,50 @@ public static class HavokShapeGenerator_HKX2
         return replaced;
     }
 
+    /// <summary>
+    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// </summary>
+    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+        HavokFileWrapper fileWrapper,
+        hkRootLevelContainer container,
+        hknpExternMeshShape newShape,
+        int bodyIndex = 0,
+        bool force = false)
+    {
+        var bodyCinfos = GetBodyCinfos(container);
+        if (bodyCinfos == null || bodyIndex < 0 || bodyIndex >= bodyCinfos.Count)
+        {
+            return null;
+        }
+
+        var body = bodyCinfos[bodyIndex];
+        if (!force && !IsReplaceableMeshShape(body.m_shape))
+        {
+            return null;
+        }
+
+        var systemData = GetPhysicsSystemData(container);
+        var oldShape = body.m_shape;
+        var oldReferencedObjects = systemData.m_referencedObjects.ToList();
+
+        return new HavokDelegateAction(fileWrapper,
+            () =>
+            {
+                body.m_shape = newShape;
+
+                // Update referenced objects
+                systemData.m_referencedObjects.Clear();
+                systemData.m_referencedObjects.Add(newShape);
+            },
+            () =>
+            {
+                body.m_shape = oldShape;
+
+                systemData.m_referencedObjects.Clear();
+                systemData.m_referencedObjects.AddRange(oldReferencedObjects);
+            });
+    }
+
     private static hknpPhysicsSystemData GetPhysicsSystemData(hkRootLevelContainer container)
     {
         if (container.m_namedVariants.Count == 0)

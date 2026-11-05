@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.Common;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System;
 using System.Collections.Generic;
@@ -24,10 +25,16 @@ public class HavokShortcuts
         if (!FocusManager.IsInHavokEditor())
             return;
 
+        // Saves every binder with unsaved changes (marked * in the binder list)
         if (InputManager.IsPressed(KeybindID.Save))
         {
-            Editor.Save();
+            Editor.SaveAll();
         }
+
+        // While a text box has focus, its keys belong to the text box:
+        // Delete, Copy, Paste and Undo would otherwise act on the files or the action history
+        if (ImGui.GetIO().WantTextInput)
+            return;
 
         if (activeView != null)
         {

@@ -387,37 +387,53 @@ public class CollisionGeneratorTool
     public void BuildAndReplaceShape(List<Vector3> verts, List<int> indices)
     {
         var collisionName = Path.GetFileName(View.Selection.FilePath);
-        var sourceObject = View.PropertyView.GetSourceObject();
+        var fileWrapper = View.Selection.SelectedFileWrapper;
+        var sourceObject = fileWrapper?.Root;
+
+        if (sourceObject == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_No_Collision_Selected"));
+            return;
+        }
+
+        // The replacement goes through the action manager, so it can be undone and marks the file as modified
+        HavokDelegateAction action = null;
 
         if (HavokTypeUtils.IsHKX3_2019(Project))
         {
-            var shape = HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
-
-            if (HavokShapeGenerator_HKX3_2019.ReplaceExternMeshShape((HKLib.hk2019.hkRootLevelContainer)sourceObject, shape))
+            if (sourceObject is HKLib.hk2019.hkRootLevelContainer root)
             {
-                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+                var shape = HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX3_2019.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
             }
         }
         else if (HavokTypeUtils.IsHKX3(Project))
         {
-            var shape = HavokShapeGenerator_HKX3.BuildExternMeshShape(
-                verts, indices);
-
-            if (HavokShapeGenerator_HKX3.ReplaceExternMeshShape((HKLib.hk2018.hkRootLevelContainer)sourceObject, shape))
+            if (sourceObject is HKLib.hk2018.hkRootLevelContainer root)
             {
-                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+                var shape = HavokShapeGenerator_HKX3.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX3.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
             }
         }
         else
         {
             // TODO: need to check this actually works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
-            var shape = HavokShapeGenerator_HKX2.BuildExternMeshShape(
-                verts, indices);
-
-            if (HavokShapeGenerator_HKX2.ReplaceExternMeshShape((HKX2.hkRootLevelContainer)sourceObject, shape))
+            if (sourceObject is HKX2.hkRootLevelContainer root)
             {
-                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+                var shape = HavokShapeGenerator_HKX2.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX2.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
             }
+        }
+
+        if (action == null)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Generate_No_Replaceable_Shape", collisionName));
+            return;
+        }
+
+        if (View.ActionManager.ExecuteAction(action))
+        {
+            Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
         }
     }
 

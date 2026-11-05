@@ -136,15 +136,48 @@ public class ViewportHavokChangeField : ViewportAction
     }
 }
 
-public class HavokChangeField : EditorAction
+public class HavokChangeField : EditorAction, IHavokFileAction
 {
     private readonly List<FieldChange> Changes = new();
-    private readonly HavokFileWrapper FileWrapper;
+    public HavokFileWrapper FileWrapper { get; }
+
+    /// <summary>
+    /// True when the changed value is an object reference (such as a generator or a binding set),
+    /// so the change can add or remove objects from the graph
+    /// </summary>
+    public bool ChangesStructure { get; }
+
+    /// <summary>
+    /// Whether the value being set (the field, or its element when an index is given) is an object reference
+    /// </summary>
+    private static bool IsReferenceValue(Type fieldType, int index)
+    {
+        var valueType = fieldType;
+
+        if (index != -1)
+        {
+            if (fieldType.IsArray)
+            {
+                valueType = fieldType.GetElementType();
+            }
+            else if (fieldType.IsGenericType)
+            {
+                valueType = fieldType.GetGenericArguments()[0];
+            }
+            else if (fieldType.BaseType is { IsGenericType: true })
+            {
+                valueType = fieldType.BaseType.GetGenericArguments()[0];
+            }
+        }
+
+        return valueType != null && !valueType.IsValueType && valueType != typeof(string);
+    }
 
     public HavokChangeField(HavokFileWrapper fileWrapper, FieldInfo prop, object obj, object newval,
         int index = -1, int classIndex = -1)
     {
         FileWrapper = fileWrapper;
+        ChangesStructure = IsReferenceValue(prop.FieldType, index);
 
         var propObj = PropFinderUtil.FindFieldObject(prop, obj, index, classIndex, false);
         if (propObj != null)

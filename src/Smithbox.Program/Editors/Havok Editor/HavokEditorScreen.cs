@@ -19,15 +19,54 @@ public class HavokEditorScreen : EditorScreen
     public HavokShortcuts Shortcuts;
     public HavokCommandQueue CommandQueue;
 
+    /// <summary>
+    /// The file bank, shared by every view
+    /// </summary>
+    public HavokBank HavokBank;
+
     public HavokEditorScreen(ProjectEntry project)
     {
         Project = project;
+
+        HavokBank = new(project);
+        HavokBank.GetPinnedWrappers = GetPinnedWrappers;
 
         ViewHandler = new HavokViewHandler(this, project);
 
         Shortcuts = new HavokShortcuts(this, project);
         CommandQueue = new HavokCommandQueue(this, Project);
     }
+    /// <summary>
+    /// The files the bank must keep as they are: the files in any view's undo/redo history
+    /// (so undo applies to the displayed objects) and each view's selected file (so its panels stay valid).
+    /// </summary>
+    private HashSet<HavokFileWrapper> GetPinnedWrappers()
+    {
+        var pinned = new HashSet<HavokFileWrapper>();
+
+        if (ViewHandler == null)
+            return pinned;
+
+        foreach (var view in ViewHandler.Views)
+        {
+            if (view == null)
+                continue;
+
+            foreach (var action in view.ActionManager.GetHistory().OfType<IHavokFileAction>())
+            {
+                if (action.FileWrapper != null)
+                    pinned.Add(action.FileWrapper);
+            }
+
+            var selected = view.Selection.SelectedFileWrapper;
+
+            if (selected != null)
+                pinned.Add(selected);
+        }
+
+        return pinned;
+    }
+
     public string EditorName => "Havok Editor##HavokEditor";
     public string CommandEndpoint => "hkx";
     public string SaveType => "Havok";
@@ -68,14 +107,14 @@ public class HavokEditorScreen : EditorScreen
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
             // Save
-            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction"))
             {
                 Save();
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Action_Save_TT"));
 
-            // Save All
-            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction"))
+            // Save All (the Save keybind and autosave use this)
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##saveAllAction", $"{InputManager.GetHint(KeybindID.Save)}"))
             {
                 SaveAll();
             }
@@ -163,8 +202,16 @@ public class HavokEditorScreen : EditorScreen
         }
     }
 
-    public async void Save(bool autoSave = false)
+    /// <summary>
+    /// Save the modified files in the selected binder.
+    /// Runs on the UI thread, so the files can't be edited while they are being serialized.
+    /// </summary>
+    public void Save(bool autoSave = false)
     {
+        // Autosave is checked first, so a disabled autosave does nothing (and logs nothing)
+        if (autoSave && !CFG.Current.HavokEditor_Allow_Automatic_Save)
+            return;
+
         var activeView = ViewHandler.ActiveView;
 
         if (activeView == null)
@@ -177,29 +224,34 @@ public class HavokEditorScreen : EditorScreen
 
         if (fileEntry == null)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_BINDER_SELECT"));
+            if (!autoSave)
+                Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_BINDER_SELECT"));
+
             return;
         }
 
         if (filePath == null)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_FILE_SELECT"));
+            if (!autoSave)
+                Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_NO_FILE_SELECT"));
+
             return;
         }
 
-        if (autoSave && CFG.Current.HavokEditor_Allow_Automatic_Save || !autoSave)
+        if (RunSave(() => data.SaveHavokFile(category, fileEntry, filePath), fileEntry.Path))
         {
-            await RunSaveTask(() => data.SaveHavokFile(category, fileEntry, filePath), fileEntry.Path);
+            OnSaveComplete();
         }
-
-        OnSaveComplete();
     }
 
     /// <summary>
     /// Save all modified Havok files
     /// </summary>
-    public async void SaveAll(bool autoSave = false)
+    public void SaveAll(bool autoSave = false)
     {
+        if (autoSave && !CFG.Current.HavokEditor_Allow_Automatic_Save)
+            return;
+
         var activeView = ViewHandler.ActiveView;
 
         if (activeView == null)
@@ -207,40 +259,25 @@ public class HavokEditorScreen : EditorScreen
 
         var data = activeView.HavokBank;
 
-        if (autoSave && CFG.Current.HavokEditor_Allow_Automatic_Save || !autoSave)
+        if (RunSave(() => data.SaveAllHavokFiles(), ""))
         {
-            await RunSaveTask(() => data.SaveAllHavokFiles(), "");
+            OnSaveComplete();
         }
-
-        OnSaveComplete();
     }
 
-    private bool IsSavingHavokFile = false;
-
     /// <summary>
-    /// Run the save off the main thread, preventing saves from overlapping
+    /// Run the save, logging any failure. Returns whether anything was written.
     /// </summary>
-    private async Task RunSaveTask(Func<bool> saveFunc, string path)
+    private bool RunSave(Func<bool> saveFunc, string path)
     {
-        if (IsSavingHavokFile)
-        {
-            Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_IN_PROGRESS"));
-            return;
-        }
-
-        IsSavingHavokFile = true;
-
         try
         {
-            await Task.Run(saveFunc);
+            return saveFunc();
         }
         catch (Exception ex)
         {
             Smithbox.LogError(this, LOC.Get("HAVOK_Data_Save_File_FAIL", path), ex);
-        }
-        finally
-        {
-            IsSavingHavokFile = false;
+            return false;
         }
     }
 
@@ -248,9 +285,11 @@ public class HavokEditorScreen : EditorScreen
     {
         // Clear collision cache bank when Havok Editor saves so collision edits
         // appear immediately in Map Editor (on map reload)
-        if(Project.Handler.MapEditor != null)
+        var mapView = Project.Handler.MapEditor?.ViewHandler.ActiveView;
+
+        if (mapView != null)
         {
-            Project.Handler.MapEditor.ViewHandler.ActiveView.HavokCollisionBank.Clear();
+            mapView.HavokCollisionBank.Clear();
         }
 
         // Save the configuration JSONs

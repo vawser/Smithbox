@@ -255,5 +255,32 @@ public class HavokBinderView
         {
             View.HavokBank.PopulateRumbleBank(View.Selection.BinderFileEntry, clearCache);
         }
+
+        RebuildFileAliasCache();
+    }
+
+    /// <summary>
+    /// Rebuild this view's file aliases from the files in the selected binder
+    /// </summary>
+    public void RebuildFileAliasCache()
+    {
+        View.Selection.ClearFileAliasCache();
+
+        // Map collision files have no aliases
+        if (View.HavokBank.IsCombinedCategory(View.Selection.CategoryMode))
+            return;
+
+        var bankDict = View.HavokBank.GetBank(View.Selection.CategoryMode);
+
+        if (bankDict == null || View.Selection.BinderFileEntry == null)
+            return;
+
+        if (!bankDict.TryGetValue(View.Selection.BinderFileEntry, out var files))
+            return;
+
+        foreach (var filename in files.Keys)
+        {
+            View.Selection.AddToFileAliasCache(filename);
+        }
     }
 }

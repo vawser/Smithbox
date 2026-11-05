@@ -254,6 +254,35 @@ public static class HavokShapeGenerator_HKX3
         return true;
     }
 
+    /// <summary>
+    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// </summary>
+    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+        HavokFileWrapper fileWrapper,
+        hkRootLevelContainer container,
+        hknpExternMeshShape newShape,
+        int bodyIndex = 0,
+        bool force = false)
+    {
+        var bodyCinfos = GetBodyCinfos(container);
+        if (bodyCinfos == null || bodyIndex < 0 || bodyIndex >= bodyCinfos.Count)
+        {
+            return null;
+        }
+
+        var body = bodyCinfos[bodyIndex];
+        if (!force && !IsReplaceableMeshShape(body.m_shape))
+        {
+            return null;
+        }
+
+        var oldShape = body.m_shape;
+
+        return new HavokDelegateAction(fileWrapper,
+            () => body.m_shape = newShape,
+            () => body.m_shape = oldShape);
+    }
+
     public static int ReplaceAllExternMeshShapes(
         hkRootLevelContainer container,
         Func<int, hknpExternMeshShape> shapeFactory,
