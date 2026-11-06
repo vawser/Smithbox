@@ -122,6 +122,7 @@ public class MapEditorView : IEditorView
     public CompassTool CompassTool;
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
+    public CollisionMakerTool CollisionMakerTool;
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
@@ -219,6 +220,7 @@ public class MapEditorView : IEditorView
         CompassTool = new CompassTool(this, project);
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
+        CollisionMakerTool = new CollisionMakerTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);

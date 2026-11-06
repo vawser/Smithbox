@@ -1,0 +1,196 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_CollisionMaker_Header",
+      "Text": "Collision Maker"
+    },
+    {
+      "Key": "MAP_ToolWindow_View_Toggle_Collision_Maker",
+      "Text": "Collision Maker"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Unsupported_Game",
+      "Text": "This tool is only supported for Elden Ring, Nightreign and Armored Core VI."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Description",
+      "Text": "Reshape map collision by moving its vertices in the viewport. Edits are previewed until they are committed, which rebuilds the edited collision and writes it into the project."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Collision_Not_Loaded",
+      "Text": "Collision isn't loaded, so there is nothing to edit. Enable collision loading and load the map again."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Actions_Header_TT",
+      "Text": "Start or stop editing, and commit or discard the edits."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Start",
+      "Text": "Start Collision Edit"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Start_TT",
+      "Text": "Shows the cursor on the collision under the mouse, so its vertices can be moved with the keys below."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Stop",
+      "Text": "Stop Collision Edit"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Stop_TT",
+      "Text": "Hides the cursor. Edits that haven't been committed are kept, and can be committed or discarded later."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit",
+      "Text": "Commit Changes"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit_TT",
+      "Text": "Rebuilds the edited collision from the moved vertices and writes the collision binders it is in into the project. Can be undone."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Discard",
+      "Text": "Discard Changes"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Discard_TT",
+      "Text": "Puts every moved vertex back where it was."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Step_Header",
+      "Text": "Step"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Step_Header_TT",
+      "Text": "How far each press of the raise or lower key moves the vertex."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Step_Input_TT",
+      "Text": "The distance in world units, up or down."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Radius_Header",
+      "Text": "Radius"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Radius_Header_TT",
+      "Text": "Moves the vertices around the target as well, less the further they are from it."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Radius_Input_TT",
+      "Text": "The distance in world units. 0 moves the target vertex alone."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Size_Header",
+      "Text": "Cursor Size"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Size_Header_TT",
+      "Text": "The size of the cursor sphere. The vertex marker is a little smaller."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Size_Input_TT",
+      "Text": "The radius in world units."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Controls_Header",
+      "Text": "Controls"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Controls_Header_TT",
+      "Text": "The keys work while the mouse is over the viewport and no mouse button is held, as the mouse buttons fly the camera with the same keys. They can be changed in the keybind settings."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Control_Raise",
+      "Text": "{0}: raise the vertex."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Control_Lower",
+      "Text": "{0}: lower the vertex."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Control_Drag",
+      "Text": "Hold {0}: drag the vertex across the ground at its height."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Header",
+      "Text": "Cursor"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Header_TT",
+      "Text": "The collision and vertex under the cursor."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Collision_Hidden",
+      "Text": "Collision is hidden. It must be displayed to be edited."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Inactive",
+      "Text": "Start editing to show the cursor."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_File",
+      "Text": "Collision: {0} ({1})"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_Vertex",
+      "Text": "Vertex {0}: {1}"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Cursor_None",
+      "Text": "Move the mouse over a collision to place the cursor."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Pending_Header",
+      "Text": "Pending Edits"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Pending_Header_TT",
+      "Text": "The collision files with moved vertices that haven't been committed."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Pending_None",
+      "Text": "No edits."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Pending_File",
+      "Text": "{0}: {1} vertices moved"
+    },
+    {
+      "Key": "MAP_CollisionMaker_Discarded",
+      "Text": "Discarded the collision edits."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Decode_Failed",
+      "Text": "Failed to read the collision mesh of {0}."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit_No_Triangles",
+      "Text": "{0} would have no triangles left, so nothing was committed."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit_Build_Failed",
+      "Text": "Failed to rebuild the collision mesh of {0}, so nothing was committed."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit_Rebuilt",
+      "Text": "Rebuilt a mesh of {0}: {1} triangles decoded, {2} kept, {3} vertices, {4} materials."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Committed",
+      "Text": "Committed the collision edits of {0}."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Commit_Save_Failed",
+      "Text": "Committed the collision edits of {0}, but writing the collision binders failed. Save the map to try again."
+    },
+    {
+      "Key": "MAP_CollisionMaker_Refresh_Failed",
+      "Text": "The viewport couldn't redraw {0}. It shows the new shape once the map is loaded again."
+    }
+  ]
+}

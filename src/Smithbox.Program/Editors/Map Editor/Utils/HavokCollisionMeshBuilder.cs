@@ -50,6 +50,42 @@ public static class HavokCollisionMeshBuilder
     }
 
     /// <summary>
+    /// Rebuilds the GPU meshes of a loaded collision from an edited document, a submesh per body as loading builds
+    /// them, so the drawn mesh follows the edit. The submesh providers index into the resource's meshes, so the
+    /// count must stay the same: if it doesn't, nothing is changed and null is returned. Otherwise returns the old
+    /// submeshes, whose buffers are to be freed once nothing draws from them.
+    /// </summary>
+    public static CollisionSubmesh[] RefreshCollisionMesh(HavokCollisionResource resource, Havok.HavokDocument document)
+    {
+        var triangleLists = CollisionGeometry.Submeshes(document.Objects, (shape, e) =>
+            Smithbox.Log(typeof(HavokCollisionMeshBuilder), $"Failed to load collision ({shape?.GetType().Name}).",
+                LogLevel.Error, LogPriority.High, e));
+
+        if (resource.GPUMeshes == null || triangleLists.Count != resource.GPUMeshes.Length)
+            return null;
+
+        var bounds = new BoundingBox();
+        var submeshes = new CollisionSubmesh[triangleLists.Count];
+
+        for (var i = 0; i < triangleLists.Count; i++)
+        {
+            var triangles = triangleLists[i];
+            var mesh = new CollisionSubmesh();
+            RenderMesh(mesh, triangles, Enumerable.Range(0, triangles.Count).ToList(), resource.Color);
+
+            bounds = i == 0 ? mesh.Bounds : BoundingBox.Combine(bounds, mesh.Bounds);
+            submeshes[i] = mesh;
+        }
+
+        var old = resource.GPUMeshes;
+
+        resource.GPUMeshes = submeshes;
+        resource.Bounds = bounds;
+
+        return old;
+    }
+
+    /// <summary>
     /// Uploads a triangle list (indices in threes) as a collision submesh, with flat normals.
     /// </summary>
     internal static unsafe void RenderMesh(CollisionSubmesh dest, List<Vector3> verts, List<int> indices, Vector3 color)

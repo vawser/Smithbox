@@ -395,6 +395,13 @@ public class VulkanViewport : IViewport
         var painting = Owner is MapUniverse mapUniverse &&
                        mapUniverse.View.WallPaintTool.HandleViewportInput(ray, canPick);
 
+        // Dragging a collision vertex takes the clicks too
+        if (Owner is MapUniverse collisionUniverse &&
+            collisionUniverse.View.CollisionMakerTool.HandleViewportInput(ray, canPick))
+        {
+            painting = true;
+        }
+
         if (canPick)
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
