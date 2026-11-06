@@ -117,18 +117,14 @@ public class ProjectDescriptor
     }
 
     /// <summary>
-    /// Copies the settings the project configuration form edits from <paramref name="edited"/>. Identity (GUID) and
-    /// state kept by other editors (pins, auto-load, imported row names) are left as they are.
-    /// </summary>
-    /// <summary>
-    /// Whether the settings the project configuration form edits match <paramref name="other"/>'s.
+    /// Whether the settings the project configuration form edits match <paramref name="other"/>'s. The project type
+    /// isn't one of them: it is fixed once the project is created.
     /// </summary>
     public bool ConfigurationEquals(ProjectDescriptor other)
     {
         return ProjectName == other.ProjectName.Trim()
             && ProjectPath == other.ProjectPath
             && DataPath == other.DataPath
-            && ProjectType == other.ProjectType
             && FolderTag == other.FolderTag
             && EnableMapEditor == other.EnableMapEditor
             && EnableModelEditor == other.EnableModelEditor
@@ -144,12 +140,16 @@ public class ProjectDescriptor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
     }
 
+    /// <summary>
+    /// Copies the settings the project configuration form edits from <paramref name="edited"/>. Identity (GUID), the
+    /// project type (fixed once created) and state kept by other editors (pins, auto-load, imported row names) are
+    /// left as they are.
+    /// </summary>
     public void ApplyConfiguration(ProjectDescriptor edited)
     {
         ProjectName = edited.ProjectName.Trim();
         ProjectPath = edited.ProjectPath;
         DataPath = edited.DataPath;
-        ProjectType = edited.ProjectType;
 
         FolderTag = edited.FolderTag;
 

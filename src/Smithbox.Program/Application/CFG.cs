@@ -148,10 +148,6 @@ public class CFG
     public bool Param_Editor_Enable_Row_FMG_Annotation_Override = false;
     public bool Param_Editor_Enable_Row_FMG_Annotation_Addition = true;
 
-    public bool Interface_ProjectEditor_ProjectList = true;
-    public bool Interface_ProjectEditor_ProjectConfiguration = true;
-    public bool Interface_ProjectEditor_Tools = true;
-
     public bool ProjectEditor_Show_Tool_ProjectMerge = true;
     #endregion
 

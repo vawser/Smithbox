@@ -1,10 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
-using Silk.NET.SDL;
-using StudioCore.Application;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.GparamEditor;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,6 +8,10 @@ using System.Numerics;
 
 namespace StudioCore.Application;
 
+/// <summary>
+/// The project settings form: the descriptor being created or edited, the checks on it, the actions on the project,
+/// and the input widgets the Create Project view and the Project Overview are built from.
+/// </summary>
 public class ProjectConfigureMenu
 {
     public ProjectEditorMode EditorMode = ProjectEditorMode.Create;
@@ -40,6 +39,8 @@ public class ProjectConfigureMenu
         SetupForCreation();
     }
 
+    #region Setup
+
     public void SetupForCreation()
     {
         EditorMode = ProjectEditorMode.Create;
@@ -51,6 +52,35 @@ public class ProjectConfigureMenu
         Descriptor.ProjectType = ProjectType.Undefined;
 
         Descriptor.EnableAllEditors();
+    }
+
+    /// <summary>
+    /// Starts a new project for a game, with its Steam install as the data directory if one was found.
+    /// </summary>
+    public void SetupForCreation(ProjectType type)
+    {
+        SetupForCreation();
+
+        if (type is ProjectType.Undefined)
+            return;
+
+        Descriptor.ProjectType = type;
+
+        var steamPath = GetSteamDataPath(type);
+
+        if (!string.IsNullOrEmpty(steamPath))
+            Descriptor.DataPath = steamPath;
+    }
+
+    public void SetupForEdit(ProjectEntry project)
+    {
+        EditorMode = ProjectEditorMode.Edit;
+
+        if (project != null)
+        {
+            Project = project;
+            Descriptor = project.Descriptor.Clone();
+        }
     }
 
     /// <summary>
@@ -84,181 +114,746 @@ public class ProjectConfigureMenu
         SetupForEdit(Project);
     }
 
-    public void SetupForEdit(ProjectEntry project)
-    {
-        EditorMode = ProjectEditorMode.Edit;
+    #endregion
 
-        if (project != null)
+    #region Steam
+
+    /// <summary>
+    /// Looks up the Steam installs once, the first time they are needed.
+    /// </summary>
+    public void EnsureSteamPaths()
+    {
+        if (SteamPathsInitialized)
+            return;
+
+        FindSteamExecutables();
+        SteamPathsInitialized = true;
+    }
+
+    /// <summary>
+    /// The games Steam has installed, in the project type order, with their data directories.
+    /// </summary>
+    public List<(ProjectType Type, string Path)> GetDetectedGames()
+    {
+        EnsureSteamPaths();
+
+        var result = new List<(ProjectType, string)>();
+
+        foreach (var type in ProjectTypeOrder.Order)
         {
-            Project = project;
-            Descriptor = project.Descriptor.Clone();
+            var path = GetSteamDataPath(type);
+
+            if (!string.IsNullOrEmpty(path) && Directory.Exists(path))
+                result.Add((type, path));
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// The game's Steam install directory, if one was found.
+    /// </summary>
+    private string GetSteamDataPath(ProjectType type)
+    {
+        EnsureSteamPaths();
+
+        return type switch
+        {
+            ProjectType.DS1 => SteamExecutable_DS1,
+            ProjectType.DS1R => SteamExecutable_DS1R,
+            ProjectType.DS2 => SteamExecutable_DS2,
+            ProjectType.DS2S => SteamExecutable_DS2S,
+            ProjectType.DS3 => SteamExecutable_DS3,
+            ProjectType.SDT => SteamExecutable_SDT,
+            ProjectType.ER => SteamExecutable_ER,
+            ProjectType.AC6 => SteamExecutable_AC6,
+            ProjectType.NR => SteamExecutable_NR,
+            _ => null
+        };
+    }
+
+    public void UseSteamDataPathAction()
+    {
+        var steamPath = GetSteamDataPath(Descriptor.ProjectType);
+
+        if (!string.IsNullOrEmpty(steamPath))
+        {
+            Descriptor.DataPath = steamPath;
         }
     }
 
-    public void ResetSetup()
+    private void FindSteamExecutables()
     {
-        Descriptor = new ProjectDescriptor();
-        Project = new ProjectEntry();
+        SteamExecutable_DS1 = SteamGameLocator.FindGameExecutable(211420, "DATA\\DARKSOULS.exe");
+        SteamExecutable_DS1R = SteamGameLocator.FindGameExecutable(570940, "DarkSoulsRemastered.exe");
+        SteamExecutable_DS2 = SteamGameLocator.FindGameExecutable(236430, "Game\\DarkSoulsII.exe");
+        SteamExecutable_DS2S = SteamGameLocator.FindGameExecutable(335300, "Game\\DarkSoulsII.exe");
+        SteamExecutable_DS3 = SteamGameLocator.FindGameExecutable(374320, "Game\\DarkSoulsIII.exe");
+        SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
+        SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
+        SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
+        SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
     }
 
-    public void Display()
-    {
-        if (!SteamPathsInitialized)
-        {
-            FindSteamExecutables();
-            SteamPathsInitialized = true;
-        }
+    #endregion
 
-        DisplayMenu();
+    #region Checks
+
+    /// <summary>
+    /// How a form field stands, shown as an icon on its header.
+    /// </summary>
+    public enum FieldStatus
+    {
+        Valid,
+        Warning,
+        Invalid
     }
 
-    public void DisplayMenu()
+    /// <summary>
+    /// The name the project gets: the one entered, or else the project directory's folder name.
+    /// </summary>
+    public string GetEffectiveName()
     {
-        var columnCount = 2;
-        var windowFlags = ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+        var name = Descriptor.ProjectName?.Trim() ?? "";
 
-        if (ImGui.BeginTable("projectCreateTable", columnCount,
-            ImGuiTableFlags.Resizable |
-            ImGuiTableFlags.SizingStretchProp |
-            ImGuiTableFlags.BordersInnerV))
+        if (name != "")
+            return name;
+
+        if (!string.IsNullOrWhiteSpace(Descriptor.ProjectPath) && Directory.Exists(Descriptor.ProjectPath))
         {
-            ImGui.TableSetupColumn("##ProjectSettingsCol", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-            ImGui.TableSetupColumn("##ProjectEditorTogglesCol", ImGuiTableColumnFlags.WidthStretch, 0.25f);
-
-            // --- Column 1 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##ProjectSettingsArea", new Vector2(0, 0), ImGuiChildFlags.Borders, windowFlags);
-
-            DisplayProjectSettings();
-            DisplayProjectActions();
-
-            ImGui.EndChild();
-
-            // --- Column 2 ---
-            ImGui.TableNextColumn();
-
-            ImGui.BeginChild("##ProjectEditorToggles", new Vector2(0, 0), ImGuiChildFlags.Borders, windowFlags);
-
-            DisplayProjectEditorToggles();
-
-            ImGui.EndChild();
-
-            ImGui.EndTable();
+            return Path.GetFileName(Path.TrimEndingDirectorySeparator(Descriptor.ProjectPath)) ?? "";
         }
+
+        return "";
     }
 
-    public void DisplayProjectActions()
+    public string GetTypeIssue()
     {
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_Actions"), "");
+        return Descriptor.ProjectType is ProjectType.Undefined
+            ? LOC.Get("PROJECT_Field_Type_Missing")
+            : null;
+    }
 
-        if (!AllowCreation())
+    public string GetDataPathIssue()
+    {
+        if (string.IsNullOrWhiteSpace(Descriptor.DataPath))
+            return LOC.Get("PROJECT_Field_Data_Path_Missing");
+
+        if (!Directory.Exists(Descriptor.DataPath))
+            return LOC.Get("PROJECT_Field_Data_Path_Not_Found");
+
+        return null;
+    }
+
+    public string GetProjectPathIssue()
+    {
+        if (string.IsNullOrWhiteSpace(Descriptor.ProjectPath))
+            return LOC.Get("PROJECT_Field_Project_Path_Missing");
+
+        if (!Directory.Exists(Descriptor.ProjectPath))
+            return LOC.Get("PROJECT_Field_Project_Path_Not_Found");
+
+        return null;
+    }
+
+    public string GetNameIssue()
+    {
+        // In Edit mode the name is required; when creating, the folder name stands in for an empty one
+        if (EditorMode is ProjectEditorMode.Edit)
         {
-            if(EditorMode is ProjectEditorMode.Create)
-                GUI.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Create"));
-
-            if (EditorMode is ProjectEditorMode.Edit)
-                GUI.WrappedText(LOC.Get("PROJECT_Configuration_Project_Creation_Block_Edit"));
-
-            if (string.IsNullOrWhiteSpace(Descriptor.ProjectName))
-                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Name"));
-
-            if (!Directory.Exists(Descriptor.ProjectPath))
-                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Path"));
-
-            if (!Directory.Exists(Descriptor.DataPath))
-                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Data_Path"));
-
-            if (Descriptor.ProjectType is ProjectType.Undefined)
-                GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Invalid_Project_Type"));
-
-            GUI.Spacer();
+            return string.IsNullOrWhiteSpace(Descriptor.ProjectName)
+                ? LOC.Get("PROJECT_Field_Name_Missing_Edit")
+                : null;
         }
 
-        // Likely mistakes that don't stop the project from working
-        var warnings = GetConfigurationWarnings();
+        return GetEffectiveName() == "" ? LOC.Get("PROJECT_Field_Name_Missing") : null;
+    }
 
-        if (warnings.Count > 0)
+    /// <summary>
+    /// The first problem that stops the form being applied, or null if there is none.
+    /// </summary>
+    public string GetFirstIssue()
+    {
+        return GetTypeIssue() ?? GetDataPathIssue() ?? GetNameIssue() ?? GetProjectPathIssue();
+    }
+
+    public bool AllowCreation()
+    {
+        return GetFirstIssue() == null;
+    }
+
+    /// <summary>
+    /// The executable each game's data directory holds, relative to it. Games without a PC release are absent.
+    /// </summary>
+    private static readonly Dictionary<ProjectType, string> GameExecutables = new()
+    {
+        { ProjectType.DS1, "DARKSOULS.exe" },
+        { ProjectType.DS1R, "DarkSoulsRemastered.exe" },
+        { ProjectType.DS2, "DarkSoulsII.exe" },
+        { ProjectType.DS2S, "DarkSoulsII.exe" },
+        { ProjectType.DS3, "DarkSoulsIII.exe" },
+        { ProjectType.SDT, "sekiro.exe" },
+        { ProjectType.ER, "eldenring.exe" },
+        { ProjectType.AC6, "armoredcore6.exe" },
+        { ProjectType.NR, "nightreign.exe" },
+    };
+
+    // The warnings touch the disk, so they are only rebuilt when the inputs change
+    private string _warningsKey;
+    private List<string> _dataPathWarnings = new();
+    private List<string> _projectPathWarnings = new();
+
+    /// <summary>
+    /// Rebuilds the warnings for settings that are allowed but are probably mistakes, if their inputs changed.
+    /// </summary>
+    private void UpdateWarnings()
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        var key = $"{Descriptor.ProjectPath}|{Descriptor.DataPath}|{Descriptor.ProjectType}|{Project?.Descriptor?.ProjectGUID}|{orchestrator.Projects.Count}";
+
+        if (key == _warningsKey)
+            return;
+
+        _warningsKey = key;
+        _dataPathWarnings = new();
+        _projectPathWarnings = new();
+
+        var projectPath = Descriptor.ProjectPath;
+        var dataPath = Descriptor.DataPath;
+
+        if (Directory.Exists(projectPath) && Directory.Exists(dataPath))
         {
-            foreach (var warning in warnings)
+            if (ProjectUtils.IsSameOrInsideDirectory(projectPath, dataPath))
             {
-                GUI.WrappedYellowText(warning);
+                _projectPathWarnings.Add(LOC.Get("PROJECT_Configuration_Warning_Project_In_Data_Dir"));
             }
 
-            GUI.Spacer();
+            var duplicate = orchestrator.Projects.FirstOrDefault(e =>
+                e != Project &&
+                e.Descriptor.ProjectGUID != Project?.Descriptor?.ProjectGUID &&
+                PathsEqual(e.Descriptor.ProjectPath, projectPath));
+
+            if (duplicate != null)
+            {
+                _projectPathWarnings.Add(LOC.Get("PROJECT_Configuration_Warning_Duplicate_Project_Path", duplicate.Descriptor.ProjectName));
+            }
         }
 
-        var hasUnsavedChanges = HasUnsavedChanges();
-
-        if (hasUnsavedChanges)
+        if (Directory.Exists(dataPath) && GameExecutables.TryGetValue(Descriptor.ProjectType, out var exe))
         {
-            GUI.WrappedYellowText(LOC.Get("PROJECT_Configuration_Unsaved_Changes"));
-            GUI.Spacer();
-        }
-
-        if (EditorMode is ProjectEditorMode.Create)
-        {
-            GUI.ConditionalMultiButtonInput("projectCreateActions",
-                "createProject",
-                LOC.Get("PROJECT_Configuration_Action_Create_Project"),
-                LOC.Get("PROJECT_Configuration_Action_Create_Project_TT"),
-                CreateProjectAction, AllowCreation());
-        }
-        else if (EditorMode is ProjectEditorMode.Edit)
-        {
-            GUI.ConditionalMultiButtonInput("projectEditActions",
-                "editProject",
-                LOC.Get("PROJECT_Configuration_Action_Update_Project"),
-                LOC.Get("PROJECT_Configuration_Action_Update_Project_TT"),
-                UpdateProjectAction, AllowCreation() && hasUnsavedChanges,
-
-                "revertProject",
-                LOC.Get("PROJECT_Configuration_Action_Revert_Project"),
-                LOC.Get("PROJECT_Configuration_Action_Revert_Project_TT"),
-                RevertChangesAction, hasUnsavedChanges,
-
-                "deleteProject",
-                LOC.Get("PROJECT_Configuration_Action_Delete_Project"),
-                LOC.Get("PROJECT_Configuration_Action_Delete_Project_TT"), 
-                DeleteProjectAction, true,
-
-                "clearProjectBackups",
-                LOC.Get("PROJECT_Configuration_Action_Delete_Backup_Files"),
-                LOC.Get("PROJECT_Configuration_Action_Delete_Backup_Files_TT"),
-                DeleteBackupFilesAction, true,
-
-                "clearComprehensiveBackups",
-                LOC.Get("PROJECT_Configuration_Action_Delete_Comprehensive_Backups"),
-                LOC.Get("PROJECT_Configuration_Action_Delete_Comprehensive_Backups_TT"),
-                DeleteComprehensiveBackupsAction, true);
-        }
-
-        if (ModEngineHandler.IsME3Project(Project))
-        {
-            GUI.Spacer();
-            GUI.SimpleHeader(LOC.Get("PROJECT_Configuration_Header_ME3"), "");
-
-            GUI.ConditionalMultiButtonInput("me3Actions",
-                "launchMod",
-                LOC.Get("PROJECT_Configuration_Action_Launch_Mod"),
-                LOC.Get("PROJECT_Configuration_Action_Launch_Mod_TT"), 
-                LaunchModAction, ModEngineHandler.ME3ProfileExists(Project),
-
-                "createProfile",
-                LOC.Get("PROJECT_Configuration_Action_Create_Mod_Profile"),
-                LOC.Get("PROJECT_Configuration_Action_Create_Mod_Profile_TT"), 
-                CreateProfileAction, !ModEngineHandler.ME3ProfileExists(Project));
+            if (!File.Exists(Path.Combine(dataPath, exe)))
+            {
+                _dataPathWarnings.Add(LOC.Get("PROJECT_Configuration_Warning_Missing_Game_Executable", exe));
+            }
         }
     }
+
+    public List<string> GetDataPathWarnings()
+    {
+        UpdateWarnings();
+        return _dataPathWarnings;
+    }
+
+    public List<string> GetProjectPathWarnings()
+    {
+        UpdateWarnings();
+        return _projectPathWarnings;
+    }
+
+    private static bool PathsEqual(string a, string b)
+    {
+        if (string.IsNullOrWhiteSpace(a) || string.IsNullOrWhiteSpace(b))
+            return false;
+
+        try
+        {
+            return Path.TrimEndingDirectorySeparator(Path.GetFullPath(a))
+                .Equals(Path.TrimEndingDirectorySeparator(Path.GetFullPath(b)), StringComparison.OrdinalIgnoreCase);
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
+    #endregion
+
+    #region Fields
+
+    /// <summary>
+    /// A field's titled box, with an icon for how the field stands.
+    /// </summary>
+    public static void FieldHeader(string id, string title, string tooltip, FieldStatus status)
+    {
+        var icon = status switch
+        {
+            FieldStatus.Valid => Icons.CheckCircle,
+            FieldStatus.Warning => Icons.ExclamationTriangle,
+            _ => Icons.TimesCircle
+        };
+
+        var color = status switch
+        {
+            FieldStatus.Valid => UI.Current.ImGui_Benefit_Text_Color,
+            FieldStatus.Warning => UI.Current.ImGui_AliasName_Text,
+            _ => UI.Current.ImGui_Invalid_Text_Color
+        };
+
+        GUI.SimpleHeader(id, $"{icon} {title}", tooltip, color);
+    }
+
+    /// <summary>
+    /// The field's problem in the invalid colour, then its warnings, under its input.
+    /// </summary>
+    private static void FieldMessages(string issue, List<string> warnings)
+    {
+        if (issue != null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, issue);
+
+        if (warnings != null)
+        {
+            foreach (var warning in warnings)
+                GUI.WrappedYellowText(warning);
+        }
+    }
+
+    private static FieldStatus GetStatus(string issue, List<string> warnings = null)
+    {
+        if (issue != null)
+            return FieldStatus.Invalid;
+
+        if (warnings != null && warnings.Count > 0)
+            return FieldStatus.Warning;
+
+        return FieldStatus.Valid;
+    }
+
+    /// <summary>
+    /// The game combo. Picking a game fills an empty data directory from its Steam install.
+    /// </summary>
+    public void DisplayGameField(string title)
+    {
+        var issue = GetTypeIssue();
+
+        FieldHeader("projectGameHeader", title, LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"), GetStatus(issue));
+
+        ImGui.SetNextItemWidth(-1);
+
+        var previewName = LOC.Get(Descriptor.ProjectType.GetDisplayName());
+
+        if (ImGui.BeginCombo("##projectTypePicker", previewName))
+        {
+            foreach (var type in ProjectTypeOrder.Order)
+            {
+                var displayName = LOC.Get(type.GetDisplayName());
+
+                if (ImGui.Selectable($"{displayName}##projectType_{type}", type == Descriptor.ProjectType))
+                {
+                    Descriptor.ProjectType = type;
+
+                    // Only fill in an empty data directory, so a path the user entered isn't replaced
+                    var steamPath = GetSteamDataPath(type);
+
+                    if (string.IsNullOrWhiteSpace(Descriptor.DataPath) && !string.IsNullOrEmpty(steamPath))
+                    {
+                        Descriptor.DataPath = steamPath;
+                    }
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"));
+
+        FieldMessages(issue, null);
+    }
+
+    /// <summary>
+    /// The game, which can't be changed once the project is created.
+    /// </summary>
+    public void DisplayReadOnlyGameField()
+    {
+        GUI.SimpleHeader(
+            LOC.Get("PROJECT_Configuration_Header_Project_Type"),
+            LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"));
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(LOC.Get(Descriptor.ProjectType.GetDisplayName()));
+
+        ImGui.TextDisabled(LOC.Get("PROJECT_Field_Type_Fixed"));
+    }
+
+    public void DisplayDataDirectoryField(string title)
+    {
+        var issue = GetDataPathIssue();
+        var warnings = GetDataPathWarnings();
+
+        FieldHeader("projectDataDirHeader", title, GetDataDirectoryTooltip(), GetStatus(issue, warnings));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputTextWithHint("##DataDirPath", LOC.Get("PROJECT_Configuration_Data_Directory_Path_Hint"), ref Descriptor.DataPath, 255);
+        GUI.Tooltip(GetDataDirectoryTooltip());
+
+        FieldMessages(issue, warnings);
+
+        var steamDataPath = GetSteamDataPath(Descriptor.ProjectType);
+
+        GUI.ConditionalMultiButtonInput("dataDirActions",
+            "selectDir",
+            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory_TT"),
+            SelectDataDirectory, true,
+
+            "openDir",
+            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory_TT"),
+            OpenDataDirectory, Directory.Exists(Descriptor.DataPath),
+
+            "useSteamDir",
+            LOC.Get("PROJECT_Configuration_Action_Use_Steam_Data_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Use_Steam_Data_Directory_TT", steamDataPath ?? ""),
+            UseSteamDataPathAction,
+            !string.IsNullOrEmpty(steamDataPath) && steamDataPath != Descriptor.DataPath);
+    }
+
+    /// <param name="offerNewFolder">Offer to make a folder named after the project in the default mod
+    /// directory, for a new project.</param>
+    public void DisplayProjectDirectoryField(string title, bool offerNewFolder)
+    {
+        var issue = GetProjectPathIssue();
+        var warnings = GetProjectPathWarnings();
+
+        FieldHeader("projectDirHeader", title, LOC.Get("PROJECT_Configuration_Header_Project_Directory_TT"), GetStatus(issue, warnings));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputTextWithHint("##ProjectDirPath", LOC.Get("PROJECT_Configuration_Project_Directory_Path_Hint"), ref Descriptor.ProjectPath, 255);
+        GUI.Tooltip(LOC.Get("PROJECT_Configuration_Header_Project_Directory_TT"));
+
+        FieldMessages(issue, warnings);
+
+        GUI.ConditionalMultiButtonInput("projectDirActions",
+            "selectDir",
+            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory_TT"),
+            SelectProjectDirectory, true,
+
+            "openDir",
+            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory"),
+            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory_TT"),
+            OpenProjectDirectory, Directory.Exists(Descriptor.ProjectPath));
+
+        if (offerNewFolder)
+        {
+            var newFolder = GetNewProjectFolder();
+
+            if (newFolder != null && !PathsEqual(newFolder, Descriptor.ProjectPath))
+            {
+                if (GUI.ExplainedButton(
+                    $"{LOC.Get("PROJECT_Create_New_Folder")}##createProjectFolder",
+                    LOC.Get("PROJECT_Create_New_Folder_TT", newFolder),
+                    true))
+                {
+                    CreateProjectFolderAction(newFolder);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// A folder named after the project in the default mod directory, or null if there is no default directory or
+    /// no name yet.
+    /// </summary>
+    private string GetNewProjectFolder()
+    {
+        var root = CFG.Current.Project_Default_Mod_Directory;
+        var name = Descriptor.ProjectName?.Trim() ?? "";
+
+        if (string.IsNullOrWhiteSpace(root) || !Directory.Exists(root) || name == "")
+            return null;
+
+        foreach (var c in Path.GetInvalidFileNameChars())
+        {
+            name = name.Replace(c, '_');
+        }
+
+        return Path.Combine(root, name);
+    }
+
+    private void CreateProjectFolderAction(string folder)
+    {
+        try
+        {
+            Directory.CreateDirectory(folder);
+            Descriptor.ProjectPath = folder;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("PROJECT_Create_New_Folder_Failed", folder), e);
+        }
+    }
+
+    /// <param name="folderNameHint">Say that the folder name is used when the name is left empty.</param>
+    public void DisplayNameField(string title, bool folderNameHint)
+    {
+        var issue = GetNameIssue();
+
+        FieldHeader("projectNameHeader", title, LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"), GetStatus(issue));
+
+        var hint = LOC.Get("PROJECT_Configuration_Project_Name_Input_Hint");
+
+        if (folderNameHint)
+        {
+            var folderName = GetEffectiveName();
+
+            if (folderName != "" && string.IsNullOrWhiteSpace(Descriptor.ProjectName))
+                hint = folderName;
+        }
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputTextWithHint("##ProjectNameInput", hint, ref Descriptor.ProjectName, 255);
+        GUI.Tooltip(LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"));
+
+        if (folderNameHint && string.IsNullOrWhiteSpace(Descriptor.ProjectName) && issue == null)
+            ImGui.TextDisabled(LOC.Get("PROJECT_Field_Name_From_Folder"));
+
+        FieldMessages(issue, null);
+    }
+
+    public void DisplayGroupTagField()
+    {
+        GUI.SimpleHeader(
+            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag"),
+            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputTextWithHint("##FolderTagInput", LOC.Get("PROJECT_Configuration_Group_Tag_Hint"), ref Descriptor.FolderTag, 255);
+        GUI.Tooltip(LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag_TT"));
+    }
+
+    public void DisplayEditorToggles()
+    {
+        GUI.MultiButtonInput("editorToggleActions",
+            "enableAllEditors",
+            LOC.Get("PROJECT_Configuration_Action_Enable_All_Editors"),
+            LOC.Get("PROJECT_Configuration_Action_Enable_All_Editors_TT"),
+            () => SetAllEditors(true),
+
+            "disableAllEditors",
+            LOC.Get("PROJECT_Configuration_Action_Disable_All_Editors"),
+            LOC.Get("PROJECT_Configuration_Action_Disable_All_Editors_TT"),
+            () => SetAllEditors(false));
+
+        GUI.Spacer();
+
+        var type = Descriptor.ProjectType;
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Visual_Map_Editor",
+            ref Descriptor.EnableMapEditor, EditorConditions.SupportsMapEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Model_Editor",
+            ref Descriptor.EnableModelEditor, EditorConditions.SupportsModelEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_TimeAct_Editor",
+            ref Descriptor.EnableTimeActEditor, EditorConditions.SupportsTimeActEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Param_Editor",
+            ref Descriptor.EnableParamEditor, EditorConditions.SupportsParamEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Text_Editor",
+            ref Descriptor.EnableTextEditor, EditorConditions.SupportsTextEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Havok_Editor",
+            ref Descriptor.EnableHavokEditor, EditorConditions.SupportsHavokEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Gparam_Editor",
+            ref Descriptor.EnableGparamEditor, EditorConditions.SupportsGraphicsParamEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Material_Editor",
+            ref Descriptor.EnableMaterialEditor, EditorConditions.SupportsMaterialEditor(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_Texture_Viewer",
+            ref Descriptor.EnableTextureViewer, EditorConditions.SupportsTextureViewer(type));
+
+        EditorToggle("PROJECT_Configuration_Checkbox_File_Browser",
+            ref Descriptor.EnableFileBrowser, EditorConditions.SupportsFileBrowser(type));
+
+        // Material Data
+        EditorToggle("PROJECT_Configuration_Checkbox_Material_Data",
+            ref Descriptor.EnableExternalMaterialData, true);
+    }
+
+    /// <summary>
+    /// An editor's checkbox. Editors the game doesn't support are shown disabled, with the reason in the tooltip,
+    /// rather than hidden, so it's clear why they are missing.
+    /// </summary>
+    private void EditorToggle(string locKey, ref bool value, bool isSupported)
+    {
+        if (!isSupported)
+        {
+            var unsupported = false;
+
+            ImGui.BeginDisabled();
+            ImGui.Checkbox($"{LOC.Get(locKey)}##{locKey}", ref unsupported);
+            ImGui.EndDisabled();
+
+            if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            {
+                ImGui.SetTooltip(LOC.Get("PROJECT_Configuration_Checkbox_Unsupported_TT"));
+            }
+
+            return;
+        }
+
+        ImGui.Checkbox($"{LOC.Get(locKey)}##{locKey}", ref value);
+
+        GUI.Tooltip(LOC.Get($"{locKey}_TT"));
+    }
+
+    private void SetAllEditors(bool enabled)
+    {
+        Descriptor.EnableMapEditor = enabled;
+        Descriptor.EnableModelEditor = enabled;
+        Descriptor.EnableTimeActEditor = enabled;
+        Descriptor.EnableParamEditor = enabled;
+        Descriptor.EnableTextEditor = enabled;
+        Descriptor.EnableHavokEditor = enabled;
+        Descriptor.EnableGparamEditor = enabled;
+        Descriptor.EnableMaterialEditor = enabled;
+        Descriptor.EnableTextureViewer = enabled;
+        Descriptor.EnableFileBrowser = enabled;
+        Descriptor.EnableAnimEditor = enabled;
+    }
+
+    public string GetDataDirectoryTooltip()
+    {
+        var tooltip = LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Base");
+        if (Descriptor.ProjectType is ProjectType.DES)
+        {
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_DES")}";
+        }
+        else if (Descriptor.ProjectType is ProjectType.BB)
+        {
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_BB")}";
+        }
+        else
+        {
+            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Default")}";
+        }
+
+        return tooltip;
+    }
+
+    #endregion
+
+    #region Directories
+
+    public void SelectProjectDirectory()
+    {
+        var newProjectPath = "";
+        bool result;
+
+        if (CFG.Current.Project_Default_Mod_Directory != "")
+        {
+            result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"),
+                out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
+        }
+        else
+        {
+            result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"), out newProjectPath);
+        }
+
+        if (result)
+        {
+            Descriptor.ProjectPath = newProjectPath;
+        }
+    }
+
+    public void OpenProjectDirectory()
+    {
+        OpenDirectory(Descriptor.ProjectPath);
+    }
+
+    public void SelectDataDirectory()
+    {
+        var newDataPath = "";
+        bool result;
+
+        if (CFG.Current.Project_Default_Data_Directory != "")
+        {
+            result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
+        }
+        else
+        {
+            result = PlatformUtils.Instance.OpenFolderDialog(
+                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath);
+        }
+
+        if (result)
+        {
+            Descriptor.DataPath = newDataPath;
+        }
+    }
+
+    public void OpenDataDirectory()
+    {
+        OpenDirectory(Descriptor.DataPath);
+    }
+
+    /// <summary>
+    /// Opens a directory in the platform's file manager. Does nothing for an empty or missing path, rather than
+    /// opening a default location.
+    /// </summary>
+    public static void OpenDirectory(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path))
+            return;
+
+        try
+        {
+            using var process = Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(typeof(ProjectConfigureMenu), $"Failed to open the directory \"{path}\".", e);
+        }
+    }
+
+    #endregion
+
+    #region Actions
 
     public void CreateProjectAction()
     {
+        if (!AllowCreation())
+            return;
+
+        // An empty name takes the project folder's name
+        Descriptor.ProjectName = GetEffectiveName();
+
         var newProject = Smithbox.Orchestrator.CreateProject(Descriptor);
 
         // Switch to editing the new project, so pressing Create again doesn't register a duplicate
-        Editor.SelectedAvaliableEntry = newProject;
-        SetupForEdit(newProject);
+        Editor.OnProjectCreated(newProject);
+    }
+
+    public void CreateProjectFromJsonAction()
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        var projectJsonPath = "";
+        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PROJECT_Configuration_Action_Select_Project_JSON"), out projectJsonPath);
+
+        if (result)
+        {
+            var newProject = orchestrator.CreateProjectFromLegacyJson(projectJsonPath);
+
+            if (newProject != null)
+                Editor.OnProjectCreated(newProject);
+        }
     }
 
     public void UpdateProjectAction()
@@ -471,484 +1066,7 @@ public class ProjectConfigureMenu
         return $"{size:0.#} {units[unit]}";
     }
 
-    private void DisplayProjectEditorToggles()
-    {
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Available_Editors"), 
-            LOC.Get("PROJECT_Configuration_Header_Available_Editors_TT"));
-
-        GUI.MultiButtonInput("editorToggleActions",
-            "enableAllEditors",
-            LOC.Get("PROJECT_Configuration_Action_Enable_All_Editors"),
-            LOC.Get("PROJECT_Configuration_Action_Enable_All_Editors_TT"),
-            () => SetAllEditors(true),
-
-            "disableAllEditors",
-            LOC.Get("PROJECT_Configuration_Action_Disable_All_Editors"),
-            LOC.Get("PROJECT_Configuration_Action_Disable_All_Editors_TT"),
-            () => SetAllEditors(false));
-
-        GUI.Spacer();
-
-        var type = Descriptor.ProjectType;
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Visual_Map_Editor",
-            ref Descriptor.EnableMapEditor, EditorConditions.SupportsMapEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Model_Editor",
-            ref Descriptor.EnableModelEditor, EditorConditions.SupportsModelEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_TimeAct_Editor",
-            ref Descriptor.EnableTimeActEditor, EditorConditions.SupportsTimeActEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Param_Editor",
-            ref Descriptor.EnableParamEditor, EditorConditions.SupportsParamEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Text_Editor",
-            ref Descriptor.EnableTextEditor, EditorConditions.SupportsTextEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Havok_Editor",
-            ref Descriptor.EnableHavokEditor, EditorConditions.SupportsHavokEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Gparam_Editor",
-            ref Descriptor.EnableGparamEditor, EditorConditions.SupportsGraphicsParamEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Material_Editor",
-            ref Descriptor.EnableMaterialEditor, EditorConditions.SupportsMaterialEditor(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_Texture_Viewer",
-            ref Descriptor.EnableTextureViewer, EditorConditions.SupportsTextureViewer(type));
-
-        EditorToggle("PROJECT_Configuration_Checkbox_File_Browser",
-            ref Descriptor.EnableFileBrowser, EditorConditions.SupportsFileBrowser(type));
-
-        // Material Data
-        EditorToggle("PROJECT_Configuration_Checkbox_Material_Data",
-            ref Descriptor.EnableExternalMaterialData, true);
-    }
-
-    /// <summary>
-    /// An editor's checkbox. Editors the game doesn't support are shown disabled, with the reason in the tooltip,
-    /// rather than hidden, so it's clear why they are missing.
-    /// </summary>
-    private void EditorToggle(string locKey, ref bool value, bool isSupported)
-    {
-        if (!isSupported)
-        {
-            var unsupported = false;
-
-            ImGui.BeginDisabled();
-            ImGui.Checkbox($"{LOC.Get(locKey)}##{locKey}", ref unsupported);
-            ImGui.EndDisabled();
-
-            if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
-            {
-                ImGui.SetTooltip(LOC.Get("PROJECT_Configuration_Checkbox_Unsupported_TT"));
-            }
-
-            return;
-        }
-
-        ImGui.Checkbox($"{LOC.Get(locKey)}##{locKey}", ref value);
-
-        GUI.Tooltip(LOC.Get($"{locKey}_TT"));
-    }
-
-    private void SetAllEditors(bool enabled)
-    {
-        Descriptor.EnableMapEditor = enabled;
-        Descriptor.EnableModelEditor = enabled;
-        Descriptor.EnableTimeActEditor = enabled;
-        Descriptor.EnableParamEditor = enabled;
-        Descriptor.EnableTextEditor = enabled;
-        Descriptor.EnableHavokEditor = enabled;
-        Descriptor.EnableGparamEditor = enabled;
-        Descriptor.EnableMaterialEditor = enabled;
-        Descriptor.EnableTextureViewer = enabled;
-        Descriptor.EnableFileBrowser = enabled;
-        Descriptor.EnableAnimEditor = enabled;
-    }
-
-    public void DisplayProjectSettings()
-    {
-        GUI.MultiButtonInput("globalProjectActions",
-            "createNewProject",
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project"),
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_TT"),
-            SetupForCreation,
-
-            "createProjectFromJson",
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON"),
-            LOC.Get("PROJECT_Configuration_Global_Action_Create_Project_From_JSON_TT"),
-            CreateProjectFromJsonAction);
-
-        // Project Name
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Project_Name"),
-            LOC.Get("PROJECT_Configuration_Header_Project_Name_TT"));
-
-        GUI.HintTextInput(
-            "ProjectNameInput", 
-            ref Descriptor.ProjectName,
-            LOC.Get("PROJECT_Configuration_Project_Name_Input_Hint"));
-
-        // Project Type
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Project_Type"),
-            LOC.Get("PROJECT_Configuration_Header_Project_Type_TT"));
-
-        GUI.SetInputWidth();
-
-        var previewName = LOC.Get(Descriptor.ProjectType.GetDisplayName());
-
-        if (ImGui.BeginCombo("##projectTypePicker", previewName))
-        {
-            // Make the combo-box dropdown bigger so there is no need to scroll
-            ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
-
-            foreach (var entry in ProjectTypeOrder.Order)
-            {
-                var type = (ProjectType)entry;
-
-                var displayName = LOC.Get(type.GetDisplayName());
-
-                if (ImGui.Selectable(displayName))
-                {
-                    Descriptor.ProjectType = type;
-
-                    // Only fill in an empty data directory, so a path the user entered isn't replaced
-                    var steamPath = GetSteamDataPath(type);
-
-                    if (string.IsNullOrWhiteSpace(Descriptor.DataPath) && !string.IsNullOrEmpty(steamPath))
-                    {
-                        Descriptor.DataPath = steamPath;
-                    }
-                }
-            }
-            ImGui.EndCombo();
-        }
-
-        // Project Directory
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Project_Directory"),
-            LOC.Get("PROJECT_Configuration_Header_Project_Directory_TT"));
-
-        GUI.HintTextInput(
-            "ProjectDirPath", 
-            ref Descriptor.ProjectPath,
-            LOC.Get("PROJECT_Configuration_Project_Directory_Path_Hint"));
-
-        GUI.MultiButtonInput("projectDirActions",
-            "selectDir",
-            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory"),
-            LOC.Get("PROJECT_Configuration_Action_Select_Project_Directory_TT"),
-            SelectProjectDirectory,
-
-            "openDir",
-            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory"),
-            LOC.Get("PROJECT_Configuration_Action_Open_Project_Directory_TT"), 
-            OpenProjectDirectory);
-
-        // Data Directory
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Data_Directory"), GetDataDirectoryTooltip());
-
-        GUI.HintTextInput("DataDirPath", 
-            ref Descriptor.DataPath,
-            LOC.Get("PROJECT_Configuration_Data_Directory_Path_Hint"));
-
-        var steamDataPath = GetSteamDataPath(Descriptor.ProjectType);
-
-        GUI.ConditionalMultiButtonInput("dataDirActions",
-            "selectDir",
-            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory"),
-            LOC.Get("PROJECT_Configuration_Action_Select_Data_Directory_TT"),
-            SelectDataDirectory, true,
-
-            "openDir",
-            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory"),
-            LOC.Get("PROJECT_Configuration_Action_Open_Data_Directory_TT"),
-            OpenDataDirectory, true,
-
-            "useSteamDir",
-            LOC.Get("PROJECT_Configuration_Action_Use_Steam_Data_Directory"),
-            LOC.Get("PROJECT_Configuration_Action_Use_Steam_Data_Directory_TT", steamDataPath ?? ""),
-            UseSteamDataPathAction,
-            !string.IsNullOrEmpty(steamDataPath) && steamDataPath != Descriptor.DataPath);
-
-        // Group Tag
-        GUI.Spacer();
-        GUI.SimpleHeader(
-            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag"),
-            LOC.Get("PROJECT_Configuration_Data_Header_Group_Tag_TT"));
-
-        GUI.HintTextInput(
-            "FolderTagInput", 
-            ref Descriptor.FolderTag,
-            LOC.Get("PROJECT_Configuration_Group_Tag_Hint"));
-    }
-
-    public void SelectProjectDirectory()
-    {
-        if (CFG.Current.Project_Default_Mod_Directory != "")
-        {
-            var newProjectPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"), 
-                out newProjectPath, CFG.Current.Project_Default_Mod_Directory);
-
-            if (result)
-            {
-                Descriptor.ProjectPath = newProjectPath;
-            }
-        }
-        else
-        {
-            var newProjectPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PROJECT_Configuration_Dialog_Select_Project_Directory"), out newProjectPath);
-
-            if (result)
-            {
-                Descriptor.ProjectPath = newProjectPath;
-            }
-        }
-    }
-
-    public void OpenProjectDirectory()
-    {
-        OpenDirectory(Descriptor.ProjectPath);
-    }
-
-    /// <summary>
-    /// Opens a directory in the platform's file manager. Does nothing for an empty or missing path, rather than
-    /// opening a default location.
-    /// </summary>
-    private void OpenDirectory(string path)
-    {
-        if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path))
-            return;
-
-        try
-        {
-            using var process = Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, $"Failed to open the directory \"{path}\".", e);
-        }
-    }
-
-    public void SelectDataDirectory()
-    {
-        if (CFG.Current.Project_Default_Data_Directory != "")
-        {
-            var newDataPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath, CFG.Current.Project_Default_Data_Directory);
-
-            if (result)
-            {
-                Descriptor.DataPath = newDataPath;
-            }
-        }
-        else
-        {
-            var newDataPath = "";
-            var result = PlatformUtils.Instance.OpenFolderDialog(
-                LOC.Get("PROJECT_Configuration_Dialog_Select_Game_Directory"), out newDataPath);
-
-            if (result)
-            {
-                Descriptor.DataPath = newDataPath;
-            }
-        }
-    }
-    public void OpenDataDirectory()
-    {
-        OpenDirectory(Descriptor.DataPath);
-    }
-
-    private bool AllowCreation()
-    {
-        bool isAllowed = true;
-
-        if (string.IsNullOrWhiteSpace(Descriptor.ProjectName))
-            isAllowed = false;
-
-        if (!Directory.Exists(Descriptor.ProjectPath))
-            isAllowed = false;
-
-        if (!Directory.Exists(Descriptor.DataPath))
-            isAllowed = false;
-
-        if (Descriptor.ProjectType is ProjectType.Undefined)
-            isAllowed = false;
-
-        return isAllowed;
-    }
-
-    /// <summary>
-    /// The executable each game's data directory holds, relative to it. Games without a PC release are absent.
-    /// </summary>
-    private static readonly Dictionary<ProjectType, string> GameExecutables = new()
-    {
-        { ProjectType.DS1, "DARKSOULS.exe" },
-        { ProjectType.DS1R, "DarkSoulsRemastered.exe" },
-        { ProjectType.DS2, "DarkSoulsII.exe" },
-        { ProjectType.DS2S, "DarkSoulsII.exe" },
-        { ProjectType.DS3, "DarkSoulsIII.exe" },
-        { ProjectType.SDT, "sekiro.exe" },
-        { ProjectType.ER, "eldenring.exe" },
-        { ProjectType.AC6, "armoredcore6.exe" },
-        { ProjectType.NR, "nightreign.exe" },
-    };
-
-    // The warnings touch the disk, so they are only rebuilt when the inputs change
-    private string _warningsKey;
-    private List<string> _warnings = new();
-
-    /// <summary>
-    /// Warnings for settings that are allowed but are probably mistakes.
-    /// </summary>
-    private List<string> GetConfigurationWarnings()
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        var key = $"{Descriptor.ProjectPath}|{Descriptor.DataPath}|{Descriptor.ProjectType}|{Project?.Descriptor?.ProjectGUID}|{orchestrator.Projects.Count}";
-
-        if (key == _warningsKey)
-            return _warnings;
-
-        _warningsKey = key;
-        _warnings = new();
-
-        var projectPath = Descriptor.ProjectPath;
-        var dataPath = Descriptor.DataPath;
-
-        if (Directory.Exists(projectPath) && Directory.Exists(dataPath))
-        {
-            if (ProjectUtils.IsSameOrInsideDirectory(projectPath, dataPath))
-            {
-                _warnings.Add(LOC.Get("PROJECT_Configuration_Warning_Project_In_Data_Dir"));
-            }
-
-            var duplicate = orchestrator.Projects.FirstOrDefault(e =>
-                e != Project &&
-                e.Descriptor.ProjectGUID != Project?.Descriptor?.ProjectGUID &&
-                PathsEqual(e.Descriptor.ProjectPath, projectPath));
-
-            if (duplicate != null)
-            {
-                _warnings.Add(LOC.Get("PROJECT_Configuration_Warning_Duplicate_Project_Path", duplicate.Descriptor.ProjectName));
-            }
-        }
-
-        if (Directory.Exists(dataPath) && GameExecutables.TryGetValue(Descriptor.ProjectType, out var exe))
-        {
-            if (!File.Exists(Path.Combine(dataPath, exe)))
-            {
-                _warnings.Add(LOC.Get("PROJECT_Configuration_Warning_Missing_Game_Executable", exe));
-            }
-        }
-
-        return _warnings;
-    }
-
-    private static bool PathsEqual(string a, string b)
-    {
-        if (string.IsNullOrWhiteSpace(a) || string.IsNullOrWhiteSpace(b))
-            return false;
-
-        try
-        {
-            return Path.TrimEndingDirectorySeparator(Path.GetFullPath(a))
-                .Equals(Path.TrimEndingDirectorySeparator(Path.GetFullPath(b)), StringComparison.OrdinalIgnoreCase);
-        }
-        catch (Exception)
-        {
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// The game's Steam install directory, if one was found.
-    /// </summary>
-    private string GetSteamDataPath(ProjectType type)
-    {
-        return type switch
-        {
-            ProjectType.DS1 => SteamExecutable_DS1,
-            ProjectType.DS1R => SteamExecutable_DS1R,
-            ProjectType.DS2 => SteamExecutable_DS2,
-            ProjectType.DS2S => SteamExecutable_DS2S,
-            ProjectType.DS3 => SteamExecutable_DS3,
-            ProjectType.SDT => SteamExecutable_SDT,
-            ProjectType.ER => SteamExecutable_ER,
-            ProjectType.AC6 => SteamExecutable_AC6,
-            ProjectType.NR => SteamExecutable_NR,
-            _ => null
-        };
-    }
-
-    public void UseSteamDataPathAction()
-    {
-        var steamPath = GetSteamDataPath(Descriptor.ProjectType);
-
-        if (!string.IsNullOrEmpty(steamPath))
-        {
-            Descriptor.DataPath = steamPath;
-        }
-    }
-
-    public void FindSteamExecutables()
-    {
-        SteamExecutable_DS1 = SteamGameLocator.FindGameExecutable(211420, "DATA\\DARKSOULS.exe");
-        SteamExecutable_DS1R = SteamGameLocator.FindGameExecutable(570940, "DarkSoulsRemastered.exe");
-        SteamExecutable_DS2 = SteamGameLocator.FindGameExecutable(236430, "Game\\DarkSoulsII.exe");
-        SteamExecutable_DS2S = SteamGameLocator.FindGameExecutable(335300, "Game\\DarkSoulsII.exe");
-        SteamExecutable_DS3 = SteamGameLocator.FindGameExecutable(374320, "Game\\DarkSoulsIII.exe");
-        SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
-        SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
-        SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
-        SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
-    }
-
-    public string GetDataDirectoryTooltip()
-    {
-        var tooltip = LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Base");
-        if (Descriptor.ProjectType is ProjectType.DES)
-        {
-            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_DES")}";
-        }
-        else if (Descriptor.ProjectType is ProjectType.BB)
-        {
-            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_BB")}";
-        }
-        else
-        {
-            tooltip = $"{tooltip}{LOC.Get("PROJECT_Configuration_Header_Data_Directory_TT_Default")}";
-        }
-
-        return tooltip;
-    }
-
-    public void CreateProjectFromJsonAction()
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        var projectJsonPath = "";
-        var result = PlatformUtils.Instance.OpenFileDialog(LOC.Get("PROJECT_Configuration_Action_Select_Project_JSON"), out projectJsonPath);
-
-        if (result)
-        {
-            orchestrator.CreateProjectFromLegacyJson(projectJsonPath);
-        }
-    }
+    #endregion
 }
 
 public static class ProjectTypeOrder

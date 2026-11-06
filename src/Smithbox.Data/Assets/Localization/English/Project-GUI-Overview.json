@@ -1,0 +1,376 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECT_Sidebar_New_Project",
+      "Text": "New Project"
+    },
+    {
+      "Key": "PROJECT_Sidebar_New_Project_TT",
+      "Text": "Create a project for one of your mods."
+    },
+    {
+      "Key": "PROJECT_Sidebar_Import_Project",
+      "Text": "Import project.json"
+    },
+    {
+      "Key": "PROJECT_Sidebar_Import_Project_TT",
+      "Text": "Create a project from a 'project.json' file, as written by older versions of Smithbox or other tools."
+    },
+    {
+      "Key": "PROJECT_Sidebar_No_Projects",
+      "Text": "No projects yet."
+    },
+    {
+      "Key": "PROJECT_Sidebar_Open_Header",
+      "Text": "Open"
+    },
+    {
+      "Key": "PROJECT_Start_Title",
+      "Text": "Welcome to Smithbox"
+    },
+    {
+      "Key": "PROJECT_Start_Body",
+      "Text": "Everything you edit belongs to a project. A project pairs your mod's folder, where Smithbox saves your changes, with the game's data folder, which it reads the original files from. The game folder is only written to if you make it the project folder.\n\nCreate a project to get started."
+    },
+    {
+      "Key": "PROJECT_Start_Detected_Header",
+      "Text": "Installed Games"
+    },
+    {
+      "Key": "PROJECT_Start_Detected_Header_TT",
+      "Text": "The games found in your Steam libraries. Picking one fills in the game and its data folder."
+    },
+    {
+      "Key": "PROJECT_Start_Create_For_Game",
+      "Text": "Create a {0} project"
+    },
+    {
+      "Key": "PROJECT_Start_Create_For_Game_TT",
+      "Text": "Start a project with this game's data folder:\n{0}"
+    },
+    {
+      "Key": "PROJECT_Start_Other_Header",
+      "Text": "Other Ways to Start"
+    },
+    {
+      "Key": "PROJECT_Open_Title",
+      "Text": "No project selected"
+    },
+    {
+      "Key": "PROJECT_Open_Body",
+      "Text": "Select a project on the left to see its settings, or double-click it to load it."
+    },
+    {
+      "Key": "PROJECT_Open_Load_Last",
+      "Text": "Load {0}"
+    },
+    {
+      "Key": "PROJECT_Open_Load_Last_TT",
+      "Text": "Load the project that was last loaded."
+    },
+    {
+      "Key": "PROJECT_Create_Title",
+      "Text": "New Project"
+    },
+    {
+      "Key": "PROJECT_Create_Hint",
+      "Text": "Fill in each step. A tick shows a step is ready; a warning is worth checking but won't stop the project being created."
+    },
+    {
+      "Key": "PROJECT_Create_Step_Game",
+      "Text": "1. Game"
+    },
+    {
+      "Key": "PROJECT_Create_Step_Data",
+      "Text": "2. Game Data Directory"
+    },
+    {
+      "Key": "PROJECT_Create_Step_Name",
+      "Text": "3. Name"
+    },
+    {
+      "Key": "PROJECT_Create_Step_Project",
+      "Text": "4. Project Directory"
+    },
+    {
+      "Key": "PROJECT_Create_Advanced",
+      "Text": "Advanced"
+    },
+    {
+      "Key": "PROJECT_Create_Action",
+      "Text": "Create and Load"
+    },
+    {
+      "Key": "PROJECT_Create_Action_TT",
+      "Text": "Create the project and load it."
+    },
+    {
+      "Key": "PROJECT_Create_Blocked_TT",
+      "Text": "The project can't be created yet:\n{0}"
+    },
+    {
+      "Key": "PROJECT_Create_Loading_TT",
+      "Text": "Create the project. Another project is loading, so this one is created without being loaded; load it once the other has finished."
+    },
+    {
+      "Key": "PROJECT_Create_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "PROJECT_Create_Cancel_TT",
+      "Text": "Close this form without creating a project."
+    },
+    {
+      "Key": "PROJECT_Create_New_Folder",
+      "Text": "Create Folder in Default Mod Directory"
+    },
+    {
+      "Key": "PROJECT_Create_New_Folder_TT",
+      "Text": "Create a folder named after the project and use it as the project directory:\n{0}"
+    },
+    {
+      "Key": "PROJECT_Create_New_Folder_Failed",
+      "Text": "Failed to create the folder \"{0}\"."
+    },
+    {
+      "Key": "PROJECT_Field_Type_Missing",
+      "Text": "Pick the game this project is for."
+    },
+    {
+      "Key": "PROJECT_Field_Type_Fixed",
+      "Text": "The game can't be changed once a project is created. Create a new project for a different game."
+    },
+    {
+      "Key": "PROJECT_Field_Data_Path_Missing",
+      "Text": "Pick the game's data directory."
+    },
+    {
+      "Key": "PROJECT_Field_Data_Path_Not_Found",
+      "Text": "The data directory doesn't exist."
+    },
+    {
+      "Key": "PROJECT_Field_Project_Path_Missing",
+      "Text": "Pick the folder your mod is kept in."
+    },
+    {
+      "Key": "PROJECT_Field_Project_Path_Not_Found",
+      "Text": "The project directory doesn't exist."
+    },
+    {
+      "Key": "PROJECT_Field_Name_Missing",
+      "Text": "Enter a name, or pick a project directory to use its folder name."
+    },
+    {
+      "Key": "PROJECT_Field_Name_Missing_Edit",
+      "Text": "The project name can't be empty."
+    },
+    {
+      "Key": "PROJECT_Field_Name_From_Folder",
+      "Text": "Left empty, the project is named after its folder."
+    },
+    {
+      "Key": "PROJECT_Header_Project_Path",
+      "Text": "Project:"
+    },
+    {
+      "Key": "PROJECT_Header_Data_Path",
+      "Text": "Data:"
+    },
+    {
+      "Key": "PROJECT_Header_Open_Folder_TT",
+      "Text": "Open the folder."
+    },
+    {
+      "Key": "PROJECT_Header_Folder_Missing_TT",
+      "Text": "The folder doesn't exist. Fix the path in the Overview's settings."
+    },
+    {
+      "Key": "PROJECT_Header_Status_Loading",
+      "Text": "Loading..."
+    },
+    {
+      "Key": "PROJECT_Header_Status_Not_Loaded",
+      "Text": "Not loaded"
+    },
+    {
+      "Key": "PROJECT_Header_Status_Loaded",
+      "Text": "Loaded"
+    },
+    {
+      "Key": "PROJECT_Header_Status_Selected",
+      "Text": "Loaded and selected"
+    },
+    {
+      "Key": "PROJECT_Header_Unsaved",
+      "Text": "Unsaved: {0}"
+    },
+    {
+      "Key": "PROJECT_Header_Unsaved_Aliases",
+      "Text": "{0} alias types"
+    },
+    {
+      "Key": "PROJECT_Header_Unsaved_Enums",
+      "Text": "enums"
+    },
+    {
+      "Key": "PROJECT_Header_Load",
+      "Text": "Load"
+    },
+    {
+      "Key": "PROJECT_Header_Load_TT",
+      "Text": "Load this project. Other loaded projects stay loaded."
+    },
+    {
+      "Key": "PROJECT_Header_Switch",
+      "Text": "Switch To"
+    },
+    {
+      "Key": "PROJECT_Header_Switch_TT",
+      "Text": "Make this loaded project the one the editors show."
+    },
+    {
+      "Key": "PROJECT_Header_Reload_TT",
+      "Text": "Reload this project from disk."
+    },
+    {
+      "Key": "PROJECT_Header_Unload_TT",
+      "Text": "Unload this project, freeing its memory."
+    },
+    {
+      "Key": "PROJECT_Tab_Overview",
+      "Text": "Overview"
+    },
+    {
+      "Key": "PROJECT_Tab_Aliases",
+      "Text": "Aliases"
+    },
+    {
+      "Key": "PROJECT_Tab_Enums",
+      "Text": "Enums"
+    },
+    {
+      "Key": "PROJECT_Tab_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PROJECT_Tab_Aliases_Need",
+      "Text": "edit its aliases"
+    },
+    {
+      "Key": "PROJECT_Tab_Enums_Need",
+      "Text": "edit its enums"
+    },
+    {
+      "Key": "PROJECT_Tab_Tools_Need",
+      "Text": "use its tools"
+    },
+    {
+      "Key": "PROJECT_Tab_Loading_Title",
+      "Text": "Loading {0}..."
+    },
+    {
+      "Key": "PROJECT_Tab_Not_Loaded_Title",
+      "Text": "This project isn't loaded"
+    },
+    {
+      "Key": "PROJECT_Tab_Not_Loaded_Body",
+      "Text": "Load this project to {0}."
+    },
+    {
+      "Key": "PROJECT_Tab_Not_Selected_Title",
+      "Text": "Another project is selected"
+    },
+    {
+      "Key": "PROJECT_Tab_Not_Selected_Body",
+      "Text": "This project is loaded, but the editors are showing another one. Switch to this project to {0}."
+    },
+    {
+      "Key": "PROJECT_Tab_No_Data_Title",
+      "Text": "Project data unavailable"
+    },
+    {
+      "Key": "PROJECT_Tab_No_Data_Body",
+      "Text": "The project's data didn't load. Check the log, then reload the project."
+    },
+    {
+      "Key": "PROJECT_Tab_Enums_No_Params_Title",
+      "Text": "Enums need the Param Editor"
+    },
+    {
+      "Key": "PROJECT_Tab_Enums_No_Params_Body",
+      "Text": "Enums are param data, and the Param Editor is disabled for this project. Enable it in the Overview's Editors section, then press Update."
+    },
+    {
+      "Key": "PROJECT_Tab_Enums_Enable_Params",
+      "Text": "Go to Editors"
+    },
+    {
+      "Key": "PROJECT_Tab_Enums_Enable_Params_TT",
+      "Text": "Open the Overview's Editors section."
+    },
+    {
+      "Key": "PROJECT_Overview_Settings",
+      "Text": "Settings"
+    },
+    {
+      "Key": "PROJECT_Overview_Settings_TT",
+      "Text": "Show or hide the project's name, game, directories and group tag."
+    },
+    {
+      "Key": "PROJECT_Overview_Editors",
+      "Text": "Editors"
+    },
+    {
+      "Key": "PROJECT_Overview_Editors_TT",
+      "Text": "Show or hide the editors this project loads."
+    },
+    {
+      "Key": "PROJECT_Overview_ME3_TT",
+      "Text": "Show or hide the Mod Engine 3 actions."
+    },
+    {
+      "Key": "PROJECT_Overview_Maintenance_TT",
+      "Text": "Show or hide the backup cleanup and Remove Project actions."
+    },
+    {
+      "Key": "PROJECT_Overview_Editors_Hint",
+      "Text": "The editors this project loads. Changes are applied with Update, which reloads the project if it is loaded."
+    },
+    {
+      "Key": "PROJECT_Overview_ME3",
+      "Text": "Mod Engine 3"
+    },
+    {
+      "Key": "PROJECT_Overview_Maintenance",
+      "Text": "Maintenance"
+    },
+    {
+      "Key": "PROJECT_Overview_Maintenance_Hint",
+      "Text": "Clean up the backups Smithbox writes when saving, or remove the project from Smithbox."
+    },
+    {
+      "Key": "PROJECT_Overview_Remove_Project",
+      "Text": "Remove Project"
+    },
+    {
+      "Key": "PROJECT_Overview_Remove_Project_TT",
+      "Text": "Remove this project from Smithbox. The files in the project directory are not touched."
+    },
+    {
+      "Key": "PROJECT_Overview_No_Changes",
+      "Text": "No unsaved changes to the settings."
+    },
+    {
+      "Key": "PROJECT_Overview_Unsaved_Changes",
+      "Text": "Unsaved changes. Press Update to apply them, or Revert to discard them."
+    },
+    {
+      "Key": "PROJECT_Overview_Unsaved_Changes_Active",
+      "Text": "Unsaved changes. Press Update to apply them, which reloads the project, or Revert to discard them."
+    },
+    {
+      "Key": "PROJECT_Overview_Update_Blocked_TT",
+      "Text": "The changes can't be applied yet:\n{0}"
+    }
+  ]
+}

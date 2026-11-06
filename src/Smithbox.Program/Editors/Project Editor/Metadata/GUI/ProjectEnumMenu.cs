@@ -56,42 +56,16 @@ public class ProjectEnumMenu
             ProjectUtils.GetGameDirectory(project.Descriptor.ProjectType), "Param Enums");
     }
 
+    /// <summary>
+    /// Draws the editor for the selected project. The Project Editor only calls this once that project is loaded
+    /// and its Param Editor is enabled; it draws the menu bar into a child window that has one.
+    /// </summary>
     public void Display()
     {
-        if (Smithbox.Orchestrator.IsProjectLoading)
-            return;
-
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (curProject == null)
-        {
-            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
+        if (curProject?.Handler?.ProjectData == null)
             return;
-        }
-
-        if (curProject.Handler == null)
-        {
-            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (curProject.Handler.ProjectData == null)
-        {
-            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (curProject.Descriptor == null)
-        {
-            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
-        {
-            GUI.WrappedText(LOC.Get("META_EnumMenu_Error_No_Loaded_Project"));
-            return;
-        }
 
         if (ImGui.BeginMenuBar())
         {
@@ -202,7 +176,7 @@ public class ProjectEnumMenu
     }
     public void Shortcuts()
     {
-        if (FocusManager.IsFocus(EditorFocusContext.Metadata_EnumEditor))
+        if (FocusManager.IsFocus(EditorFocusContext.Project_EnumEditor))
         {
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
@@ -256,17 +230,13 @@ public class ProjectEnumMenu
             LOC.Get("META_EnumMenu_Header_Enums"),
             LOC.Get("META_EnumMenu_Header_Enums_TT"));
 
+        // The enums are param data; the Project Editor explains how to enable the Param Editor when it is off
         var project = Smithbox.Orchestrator.SelectedProject;
 
-        if (project.Handler != null && project.Handler.ParamData == null)
-        {
-            ImGui.Text(
-                LOC.Get("META_EnumMenu_Paran_Editor_Enable_Hint"));
-        }
-        else
-        {
-            DisplayEditorTable();
-        }
+        if (project.Handler?.ParamData == null)
+            return;
+
+        DisplayEditorTable();
     }
 
     private void DisplayEditorTable()

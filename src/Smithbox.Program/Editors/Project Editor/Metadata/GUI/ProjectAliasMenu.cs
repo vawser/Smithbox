@@ -112,43 +112,16 @@ public class ProjectAliasMenu
         File.WriteAllText(path, json);
     }
 
+    /// <summary>
+    /// Draws the editor for the selected project. The Project Editor only calls this once that project is loaded;
+    /// it draws the menu bar into a child window that has one.
+    /// </summary>
     public void Display()
     {
-        if (Smithbox.Orchestrator.IsProjectLoading)
-            return;
-
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
-        if (curProject == null)
-        {
-            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
+        if (curProject?.Handler?.ProjectData == null)
             return;
-        }
-
-        if (curProject.Handler == null)
-        {
-            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (curProject.Handler.ProjectData == null)
-        {
-            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (curProject.Descriptor == null)
-        {
-            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_Invalid_Project"));
-            return;
-        }
-
-        if (Smithbox.Orchestrator.ProjectEditor.SelectedLoadedEntry == null)
-        {
-            GUI.WrappedText(LOC.Get("META_AliasMenu_Error_No_Loaded_Project"));
-            return;
-        }
-
 
         if (ImGui.BeginMenuBar())
         {
@@ -173,6 +146,9 @@ public class ProjectAliasMenu
             {
                 SaveLocalAliases();
             }
+
+            var saveFolder = Path.Join(Smithbox.Orchestrator.SelectedProject.Descriptor.ProjectPath, ".smithbox", "Assets", "Aliases");
+            GUI.Tooltip(LOC.Get("META_AliasMenu_Menu_Save_Local_Aliases_TT", saveFolder));
 
             // Save Base Aliases
             if (CFG.Current.Developer_Enable_Tools)
@@ -355,7 +331,7 @@ public class ProjectAliasMenu
 
     public void Shortcuts()
     {
-        if (FocusManager.IsFocus(EditorFocusContext.Metadata_AliasEditor))
+        if (FocusManager.IsFocus(EditorFocusContext.Project_AliasEditor))
         {
             // Save
             if (InputManager.IsPressed(KeybindID.Save))
@@ -432,6 +408,9 @@ public class ProjectAliasMenu
     #region Type Column
     public void AliasEditor_TypeColumn()
     {
+        var project = Smithbox.Orchestrator.SelectedProject;
+        var aliases = project?.Handler?.ProjectData?.Aliases;
+
         foreach (var entry in Enum.GetValues<ProjectAliasType>())
         {
             if (entry == ProjectAliasType.None)
@@ -441,8 +420,12 @@ public class ProjectAliasMenu
 
             var displayName = LOC.Get(entry.GetDisplayName());
 
+            // The count, and a mark on types with edits not yet saved
+            var count = aliases != null && aliases.TryGetValue(entry, out var list) ? list.Count : 0;
+            var unsaved = project != null && project.UnsavedAliasTypes.Contains(entry) ? " *" : "";
+
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Selectable($"{Icons.List} {displayName}", selected))
+            if (ImGui.Selectable($"{Icons.List} {displayName} ({count}){unsaved}##aliasType_{entry}", selected))
             {
                 SelectedAliasType = entry;
                 SelectedEntries.Clear();
@@ -514,7 +497,9 @@ public class ProjectAliasMenu
 
         if (SelectedAliasType == ProjectAliasType.None)
         {
-            ImGui.TextDisabled(LOC.Get("META_AliasMenu_Select_Alias_Type"));
+            GUI.EmptyState(
+                LOC.Get("META_AliasMenu_Select_Alias_Type"),
+                LOC.Get("META_AliasMenu_Select_Alias_Type_Body"));
             return;
         }
 
@@ -636,6 +621,22 @@ public class ProjectAliasMenu
         ImGui.AlignTextToFramePadding();
         ImGui.Text(
             LOC.Get("META_AliasMenu_Alias_Count", $"{source.Count}"));
+
+        // Data sources, so it's clear which aliases are being shown without opening the menu
+        ImGui.SameLine();
+
+        var sources = new List<string>();
+
+        if (CFG.Current.Project_Alias_Editor_Use_Base_Source)
+            sources.Add(LOC.Get("META_AliasMenu_Source_Base"));
+
+        if (CFG.Current.Project_Alias_Editor_Use_Project_Source)
+            sources.Add(LOC.Get("META_AliasMenu_Source_Project"));
+
+        var sourceText = sources.Count > 0 ? string.Join(", ", sources) : LOC.Get("META_AliasMenu_Source_None");
+
+        ImGui.TextDisabled(LOC.Get("META_AliasMenu_Sources", sourceText));
+        GUI.Tooltip(LOC.Get("META_AliasMenu_Sources_TT"));
     }
     #endregion
 

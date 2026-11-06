@@ -1,510 +1,147 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MetadataEditor;
 using StudioCore.Utilities;
 using System.Numerics;
 
 namespace StudioCore.Application;
 
+/// <summary>
+/// The tabs shown for the project selected in the Project Editor.
+/// </summary>
+public enum ProjectDetailTab
+{
+    Overview,
+    Aliases,
+    Enums,
+    Tools
+}
+
+/// <summary>
+/// The sections of the Overview tab that can be opened from elsewhere.
+/// </summary>
+public enum ProjectOverviewSection
+{
+    None,
+    Settings,
+    Editors
+}
+
+/// <summary>
+/// The Project Editor: a list of the projects on the left, and on the right whatever fits the moment. That is a
+/// Get Started panel with no projects, the Create Project form, a prompt to pick a project, or the selected
+/// project's header and its Overview, Aliases, Enums and Tools tabs.
+/// </summary>
 public class ProjectScreen
 {
-    public ActionManager EditorActionManager = new();
-
     public ProjectConfigureMenu ConfigureMenu;
     public ProjectToolWindow ToolWindow;
 
-    public ProjectEntry SelectedLoadedEntry = null;
-    public ProjectEntry SelectedAvaliableEntry = null;
+    // Shared by every project; they edit the selected project's loaded data
+    public ProjectAliasMenu AliasMenu;
+    public ProjectEnumMenu EnumMenu;
 
-    public string LoadedListFilter = "";
-    public bool ExactLoadedListFilter = false;
+    public ProjectSidebar Sidebar;
+    public ProjectCreateView CreateView;
+    public ProjectOverviewView OverviewView;
 
-    public string AvailableListFilter = "";
-    public bool ExactAvailableListFilter = false;
+    /// <summary>
+    /// The project shown in the detail pane. It may not be loaded; the loaded one the editors show is
+    /// <see cref="ProjectOrchestrator.SelectedProject"/>.
+    /// </summary>
+    public ProjectEntry SelectedEntry = null;
+
+    /// <summary>
+    /// The detail pane shows the Create Project form.
+    /// </summary>
+    public bool IsCreating = false;
 
     public bool RequestFocus = false;
+
+    // Set to switch tab or open an Overview section from elsewhere; cleared once applied
+    private ProjectDetailTab? _pendingTab;
+    public ProjectOverviewSection PendingSection = ProjectOverviewSection.None;
 
     public ProjectScreen()
     {
         ConfigureMenu = new(this);
         ToolWindow = new(this);
+
+        AliasMenu = new();
+        EnumMenu = new();
+
+        Sidebar = new(this);
+        CreateView = new(this);
+        OverviewView = new(this);
     }
 
-    public unsafe void OnGUI(uint mainDockspaceID)
+    #region Navigation
+
+    /// <summary>
+    /// Opens the Create Project form, for a game if one is given.
+    /// </summary>
+    public void ShowCreate(ProjectType type = ProjectType.Undefined)
     {
-        if (RequestFocus)
-        {
-            ImGui.SetNextWindowFocus();
-            RequestFocus = false;
-        }
+        ConfigureMenu.SetupForCreation(type);
 
-        if (Smithbox.Instance._context.Device == null)
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
-        }
-        else
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
-        }
-
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-
-        ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", GUI.GetMainWindowFlags()))
-        {
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-
-            Shortcuts();
-
-            if (ImGui.BeginMenuBar())
-            {
-                ViewMenu();
-
-                ImGui.EndMenuBar();
-            }
-
-            var dsid = ImGui.GetID("DockSpace_ProjectEditor");
-            ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_ProjectEditor);
-
-            ImGui.SetNextWindowDockID(dsid, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditor);
-            if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_View")}###ProjectView", GUI.GetInnerWindowFlags()))
-            {
-            }
-
-            var viewDockId = ImGui.GetID($"DockSpace_ProjectEditorView");
-            ImGui.DockSpace(viewDockId, new Vector2(0, 0), ref GUI.DockGroup_ProjectEditorView);
-
-            Display(viewDockId);
-
-            ImGui.End();
-
-            ImGui.End();
-        }
-        else
-        {
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-            ImGui.End();
-        }
+        IsCreating = true;
+        RequestFocus = true;
     }
 
-    public void Display(uint editorDockspaceId)
+    /// <summary>
+    /// Shows a project, on a tab and, for the Overview, with a section opened.
+    /// </summary>
+    public void ShowProject(ProjectEntry project, ProjectDetailTab tab = ProjectDetailTab.Overview,
+        ProjectOverviewSection section = ProjectOverviewSection.None)
     {
-        if (CFG.Current.Interface_ProjectEditor_ProjectList)
-        {
-            // Active Projects
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Active_Projects")}###projectEditor_ActiveProjects", GUI.GetInnerWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
+        SelectEntry(project);
 
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_None);
-                }
+        _pendingTab = tab;
+        PendingSection = section;
 
-                DisplayActiveProjectList();
-            }
-
-            ImGui.End();
-
-            // Project List
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Available_Projects")}###projectEditor_AvaliableProjects", GUI.GetInnerWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_None);
-                }
-
-                DisplayAvailableProjectList();
-            }
-
-            ImGui.End();
-        }
-
-        if (CFG.Current.Interface_ProjectEditor_ProjectConfiguration)
-        {
-            // Project Configuration
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Configuration")}###projectEditor_ProjectConfiguration", GUI.GetInnerWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_None);
-                }
-
-                DisplayProjectCreator();
-            }
-
-            ImGui.End();
-        }
-
-        if(CFG.Current.Interface_ProjectEditor_Tools)
-        {
-            // Tools 
-            ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
-            ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PROJECT_Window_Project_Tools")}###projectEditor_Tools", GUI.GetInnerWindowFlags()))
-            {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
-                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                {
-                    FocusManager.SetFocus(EditorFocusContext.Project_None);
-                }
-
-                ToolWindow.Draw();
-            }
-
-            ImGui.End();
-        }
+        RequestFocus = true;
     }
 
-    public void DisplayActiveProjectList()
+    /// <summary>
+    /// Shows a project in the detail pane, without changing which project the editors show.
+    /// </summary>
+    public void SelectEntry(ProjectEntry project)
     {
-        GUI.TitleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Active_Projects"), 
-            LOC.Get("PROJECT_Configuration_Header_Active_Projects_TT"));
+        IsCreating = false;
 
-        EditorFilters.DisplayFramedListFilter("loadedProjectsFilter", ref LoadedListFilter, ref ExactLoadedListFilter);
-
-        ImGui.BeginChild("loadedProjectList", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-        DisplayLoadedProjectEntries();
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayAvailableProjectList()
-    {
-        GUI.TitleHeader(
-            LOC.Get("PROJECT_Configuration_Header_Available_Projects"),
-            LOC.Get("PROJECT_Configuration_Header_Available_Projects_TT"));
-
-        EditorFilters.DisplayFramedListFilter("availableProjectsFilter", ref AvailableListFilter, ref ExactAvailableListFilter);
-
-        ImGui.BeginChild("availableProjectList", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-        DisplayAvailableProjectEntries();
-
-        ImGui.EndChild();
-    }
-
-    public void DisplayLoadedProjectEntries()
-    {
-        string imguiKey = "loaded";
-        bool isLoaded = true;
-
-        var orchestrator = Smithbox.Orchestrator;
-
-        var projectList = orchestrator.Projects.ToList();
-
-        if (!projectList.Any())
+        if (SelectedEntry == project && ConfigureMenu.EditorMode is ProjectEditorMode.Edit && ConfigureMenu.Project == project)
             return;
 
-        foreach (var project in projectList)
-        {
-            // Projects initialized only for another project's comparison data aren't open projects
-            if (project.IsAuxiliary)
-                continue;
+        SelectedEntry = project;
 
-            var isMatch = EditorFilters.IsMatch(LoadedListFilter, project.Descriptor.ProjectName, ExactLoadedListFilter);
-
-            if (!isMatch)
-                continue;
-
-            DisplayProjectListEntry(project, imguiKey, isLoaded);
-        }
-    }
-
-    public void DisplayAvailableProjectEntries()
-    {
-        string imguiKey = "available";
-        bool isLoaded = false;
-
-        var orchestrator = Smithbox.Orchestrator;
-
-        ImGui.BeginTabBar($"##projectSelectionTabBar_{imguiKey}");
-
-        // One tab per game with projects, in the same order as the project type combo
-        foreach (var projectType in ProjectTypeOrder.Order)
-        {
-            if (!orchestrator.Projects.Any(e => e.Descriptor.ProjectType == projectType))
-                continue;
-
-            if (ImGui.BeginTabItem($"{LOC.Get($"EDITOR_Short_Project_Type_{projectType}")}##tab_{projectType}_{imguiKey}"))
-            {
-                DisplayProjectListGroup(projectType, imguiKey, isLoaded);
-                ImGui.EndTabItem();
-            }
-        }
-
-        ImGui.EndTabBar();
-    }
-
-    private void DisplayProjectListGroup(ProjectType projectType, string imguiKey, bool isLoaded)
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        var projectList = orchestrator.Projects.Where(e => e.Descriptor.ProjectType == projectType).ToList();
-
-        if (!projectList.Any())
-            return;
-
-        Dictionary<string, List<ProjectEntry>> _projectFolders = new();
-
-        if (projectList.Count > 0)
-        {
-            foreach (var project in projectList)
-            {
-                if (project.Descriptor.FolderTag != "")
-                {
-                    if (_projectFolders.ContainsKey(project.Descriptor.FolderTag))
-                    {
-                        _projectFolders[project.Descriptor.FolderTag].Add(project);
-                    }
-                    else
-                    {
-                        _projectFolders.Add(project.Descriptor.FolderTag, new List<ProjectEntry>() { project });
-                    }
-                }
-            }
-        }
-
-        // Associated Projects
-        foreach (var folder in _projectFolders)
-        {
-            var name = folder.Key;
-            var projects = folder.Value;
-
-            if (ImGui.CollapsingHeader($"{name}##projectFolder_{name}_{imguiKey}"))
-            {
-                foreach (var project in projects)
-                {
-                    if (isLoaded)
-                    {
-                        var isMatch = EditorFilters.IsMatch(LoadedListFilter, project.Descriptor.ProjectName, ExactLoadedListFilter);
-
-                        if (!isMatch)
-                            continue;
-
-                        DisplayProjectListEntry(project, imguiKey, isLoaded);
-                    }
-                    else
-                    {
-                        var isMatch = EditorFilters.IsMatch(AvailableListFilter, project.Descriptor.ProjectName, ExactAvailableListFilter);
-
-                        if (!isMatch)
-                            continue;
-
-                        DisplayProjectListEntry(project, imguiKey, isLoaded);
-                    }
-                }
-            }
-        }
-
-        if (_projectFolders.Count > 0 && projectList.Any(e => e.Descriptor.FolderTag == ""))
-        {
-            ImGui.Separator();
-        }
-
-        // Unassociated Projects
-        if (projectList.Count > 0)
-        {
-            foreach (var project in projectList)
-            {
-                // Skip these as they are handled above
-                if (project.Descriptor.FolderTag != "")
-                    continue;
-
-                if (isLoaded)
-                {
-                    var isMatch = EditorFilters.IsMatch(LoadedListFilter, project.Descriptor.ProjectName, ExactLoadedListFilter);
-
-                    if (!isMatch)
-                        continue;
-
-                    DisplayProjectListEntry(project, imguiKey, isLoaded);
-                }
-                else
-                {
-                    var isMatch = EditorFilters.IsMatch(AvailableListFilter, project.Descriptor.ProjectName, ExactAvailableListFilter);
-
-                    if (!isMatch)
-                        continue;
-
-                    DisplayProjectListEntry(project, imguiKey, isLoaded);
-                }
-            }
-        }
-    }
-    private void DisplayProjectListEntry(ProjectEntry project, string imguiKey, bool isLoaded)
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        var selectId = $"{project.Descriptor.ProjectGUID}_{imguiKey}";
-        var displayName = $"{project.Descriptor.ProjectName}";
-
-        if(isLoaded)
-        {
-            if(!project.IsActive)
-                return;
-
-            // Highlights the project the editors show, which can change outside this list (load, unload)
-            var isSelected = orchestrator.SelectedProject == project;
-
-            if(ImGui.Selectable($"{displayName}##{selectId}", isSelected))
-            {
-                orchestrator.SelectProject(project);
-
-                if (CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment)
-                {
-                    orchestrator.SetAsAutoLoad(project);
-                }
-
-                ConfigureMenu.SetupForEdit(project);
-
-                Smithbox.Orchestrator.ProjectMetadataEditor.AliasMenu.ActionManager.Clear();
-                Smithbox.Orchestrator.ProjectMetadataEditor.EnumMenu.ActionManager.Clear();
-            }
-        }
-        else
-        {
-            var isSelected = SelectedAvaliableEntry == project;
-            var isActive = project.IsActive;
-
-            if (isActive)
-            {
-                displayName = $"{displayName}{LOC.Get("PROJECT_List_Active_Suffix")}";
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
-            }
-
-            if (ImGui.Selectable($"{displayName}##{selectId}", isSelected))
-            {
-                SelectedAvaliableEntry = project;
-
-                ConfigureMenu.SetupForEdit(project);
-            }
-
-            if (isActive)
-            {
-                ImGui.PopStyleColor(1);
-            }
-
-            if (ImGui.IsItemHovered())
-            {
-                // Double-click loads the project, or switches to it if it is already active
-                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                {
-                    if (!isActive)
-                    {
-                        LoadProjectAction(project);
-                    }
-                    else if (orchestrator.SelectedProject != project)
-                    {
-                        orchestrator.SelectProject(project);
-                    }
-                }
-
-                GUI.Tooltip(GetProjectEntryTooltip(project));
-            }
-        }
-
-        ProjectContextMenu(project, imguiKey);
-    }
-
-    private static string GetProjectEntryTooltip(ProjectEntry project)
-    {
-        var descriptor = project.Descriptor;
-
-        return LOC.Get("PROJECT_List_Entry_TT",
-            LOC.Get(descriptor.ProjectType.GetDisplayName()),
-            descriptor.ProjectPath,
-            descriptor.DataPath);
-    }
-
-    public void ProjectContextMenu(ProjectEntry project, string imguiKey)
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        if (ImGui.BeginPopupContextItem($"##contextMenu_{project.Descriptor.ProjectGUID}_{imguiKey}"))
-        {
-            // The orchestrator selects the project once it has loaded. Other active projects stay loaded.
-            var isOpen = project.IsActive;
-
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Load")}##loadAction", false, !isOpen && !orchestrator.IsProjectLoading))
-            {
-                LoadProjectAction(project);
-            }
-
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Reload")}##reloadAction", false, isOpen && !orchestrator.IsProjectLoading))
-            {
-                orchestrator.RequestProjectAction(project, UnsavedChangesAction.Reload, () =>
-                {
-                    // Checked again, as the prompt can run this on a later frame
-                    if (!orchestrator.IsProjectLoading)
-                        _ = orchestrator.ReloadProject(project);
-                });
-            }
-
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_Global_Context_Unload")}##unloadAction", false, isOpen))
-            {
-                orchestrator.RequestProjectAction(project, UnsavedChangesAction.Unload, () =>
-                {
-                    orchestrator.UnloadProject(project);
-
-                    if (SelectedLoadedEntry == project)
-                        SelectedLoadedEntry = null;
-
-                    ConfigureMenu.SetupForCreation();
-                });
-            }
-
-            if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Global_Context_Header_Information")}##infoHeader"))
-            {
-                if (ImGui.Selectable($"{LOC.Get("PROJECT_Configuration_Global_Context_Copy_GUID")}##copyGuidAction"))
-                {
-                    PlatformUtils.Instance.SetClipboardText($"{project.Descriptor.ProjectGUID}");
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndPopup();
-        }
-    }
-
-    public void LoadSelectedProjectAction()
-    {
-        LoadProjectAction(SelectedAvaliableEntry);
-    }
-
-    private void LoadProjectAction(ProjectEntry project)
-    {
-        var orchestrator = Smithbox.Orchestrator;
-
-        if (project == null || orchestrator.IsProjectLoading)
-            return;
-
-        _ = orchestrator.StartupProject(project, () =>
-        {
-            SelectedLoadedEntry = project;
+        if (project != null)
             ConfigureMenu.SetupForEdit(project);
-        });
+        else
+            ConfigureMenu.SetupForCreation();
+    }
+
+    /// <summary>
+    /// Called by the orchestrator when a loaded project becomes the one the editors show.
+    /// </summary>
+    public void OnProjectSelected(ProjectEntry project)
+    {
+        // The alias and enum edits belong to the previously selected project
+        AliasMenu.ActionManager.Clear();
+        EnumMenu.ActionManager.Clear();
+
+        // Leave the Create form open if the user is filling it in
+        if (!IsCreating)
+            SelectEntry(project);
+    }
+
+    /// <summary>
+    /// Called once the Create Project form has registered a project.
+    /// </summary>
+    public void OnProjectCreated(ProjectEntry project)
+    {
+        IsCreating = false;
+
+        ShowProject(project);
     }
 
     /// <summary>
@@ -512,54 +149,432 @@ public class ProjectScreen
     /// </summary>
     public void OnProjectRemoved(ProjectEntry project)
     {
-        if (SelectedLoadedEntry == project)
-            SelectedLoadedEntry = null;
-
-        if (SelectedAvaliableEntry == project)
-            SelectedAvaliableEntry = null;
+        if (SelectedEntry == project)
+            SelectedEntry = null;
 
         if (ConfigureMenu.Project == project)
             ConfigureMenu.SetupForCreation();
     }
 
-    public void DisplayProjectCreator()
+    #endregion
+
+    #region Project Actions
+
+    /// <summary>
+    /// Loads a project, or switches to it if it is already loaded.
+    /// </summary>
+    public void LoadOrSwitch(ProjectEntry project)
     {
-        ImGui.BeginChild("ProjectEditorSection", ImGuiChildFlags.None);
+        var orchestrator = Smithbox.Orchestrator;
 
-        ConfigureMenu.Display();
+        if (project == null || orchestrator.IsProjectLoading)
+            return;
 
-        ImGui.EndChild();
+        if (project.IsActive)
+        {
+            if (orchestrator.SelectedProject != project)
+                orchestrator.SelectProject(project);
+
+            return;
+        }
+
+        _ = orchestrator.StartupProject(project);
     }
 
-    public void ViewMenu()
+    public void ReloadAction(ProjectEntry project)
     {
-        if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Configuration_Header_View")}##viewMenuHeader"))
+        var orchestrator = Smithbox.Orchestrator;
+
+        if (project == null || !project.IsActive || orchestrator.IsProjectLoading)
+            return;
+
+        orchestrator.RequestProjectAction(project, UnsavedChangesAction.Reload, () =>
         {
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Project_List")}##projectListToggle"))
-            {
-                CFG.Current.Interface_ProjectEditor_ProjectList = !CFG.Current.Interface_ProjectEditor_ProjectList;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectList);
+            // Checked again, as the prompt can run this on a later frame
+            if (!orchestrator.IsProjectLoading)
+                _ = orchestrator.ReloadProject(project);
+        });
+    }
 
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Project_Configuration")}##projectConfigurationToggle"))
-            {
-                CFG.Current.Interface_ProjectEditor_ProjectConfiguration = !CFG.Current.Interface_ProjectEditor_ProjectConfiguration;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_ProjectConfiguration);
+    public void UnloadAction(ProjectEntry project)
+    {
+        var orchestrator = Smithbox.Orchestrator;
 
-            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Configuration_View_Tools")}##projectToolsToggle"))
-            {
-                CFG.Current.Interface_ProjectEditor_Tools = !CFG.Current.Interface_ProjectEditor_Tools;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_ProjectEditor_Tools);
+        if (project == null || !project.IsActive)
+            return;
 
-            ImGui.EndMenu();
+        orchestrator.RequestProjectAction(project, UnsavedChangesAction.Unload, () =>
+        {
+            orchestrator.UnloadProject(project);
+
+            // The form is reset, so settings edited before the unload aren't kept for an unloaded project
+            if (SelectedEntry == project)
+                ConfigureMenu.SetupForEdit(project);
+        });
+    }
+
+    #endregion
+
+    #region Display
+
+    public void OnGUI(uint mainDockspaceID)
+    {
+        if (RequestFocus)
+        {
+            ImGui.SetNextWindowFocus();
+            RequestFocus = false;
+        }
+
+        ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
+
+        var flags = GUI.GetMainWindowFlags() & ~ImGuiWindowFlags.MenuBar;
+
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", flags))
+        {
+            Shortcuts();
+
+            Display();
+        }
+
+        ImGui.End();
+    }
+
+    private void Display()
+    {
+        var tableFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV;
+
+        if (ImGui.BeginTable("projectEditorLayout", 2, tableFlags))
+        {
+            ImGui.TableSetupColumn("##projectSidebarCol", ImGuiTableColumnFlags.WidthFixed, 280f * DPI.UIScale());
+            ImGui.TableSetupColumn("##projectDetailCol", ImGuiTableColumnFlags.WidthStretch);
+
+            ImGui.TableNextRow();
+
+            // Projects
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.BeginChild("projectSidebar", Vector2.Zero, ImGuiChildFlags.None);
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+            Sidebar.Display();
+
+            ImGui.EndChild();
+
+            // Detail
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.BeginChild("projectDetail", Vector2.Zero, ImGuiChildFlags.None);
+
+            DisplayDetail();
+
+            ImGui.EndChild();
+
+            ImGui.EndTable();
         }
     }
+
+    private void DisplayDetail()
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        // The stored projects are read on the first frames; until then there is nothing to say yet
+        if (!orchestrator.ExistingProjectsRead)
+            return;
+
+        if (SelectedEntry != null && !orchestrator.Projects.Contains(SelectedEntry))
+            SelectedEntry = null;
+
+        if (IsCreating)
+        {
+            CreateView.Display();
+            return;
+        }
+
+        if (orchestrator.Projects.Count == 0)
+        {
+            DisplayGetStarted();
+            return;
+        }
+
+        if (SelectedEntry == null)
+        {
+            DisplayOpenProject();
+            return;
+        }
+
+        // The form edits the shown project; something else (an unload, a removal) may have reset it
+        if (ConfigureMenu.EditorMode is not ProjectEditorMode.Edit || ConfigureMenu.Project != SelectedEntry)
+            ConfigureMenu.SetupForEdit(SelectedEntry);
+
+        OverviewView.DisplayHeader(SelectedEntry);
+
+        DisplayTabs(SelectedEntry);
+    }
+
+    /// <summary>
+    /// With no projects: what a project is, and buttons to make one.
+    /// </summary>
+    private void DisplayGetStarted()
+    {
+        if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+        GUI.EmptyState(LOC.Get("PROJECT_Start_Title"), LOC.Get("PROJECT_Start_Body"));
+
+        // Detected Games
+        var games = ConfigureMenu.GetDetectedGames();
+
+        if (games.Count > 0)
+        {
+            GUI.SimpleHeader(LOC.Get("PROJECT_Start_Detected_Header"), LOC.Get("PROJECT_Start_Detected_Header_TT"));
+
+            foreach (var (type, path) in games)
+            {
+                var gameName = LOC.Get(type.GetDisplayName());
+
+                if (GUI.ExplainedButton(
+                    $"{LOC.Get("PROJECT_Start_Create_For_Game", gameName)}##startCreate_{type}",
+                    LOC.Get("PROJECT_Start_Create_For_Game_TT", path),
+                    true))
+                {
+                    ShowCreate(type);
+                }
+            }
+
+            GUI.Spacer();
+        }
+
+        // Other Ways
+        GUI.SimpleHeader(LOC.Get("PROJECT_Start_Other_Header"), "");
+
+        GUI.MultiButtonInput("startActions",
+            "startNewProject",
+            LOC.Get("PROJECT_Sidebar_New_Project"),
+            LOC.Get("PROJECT_Sidebar_New_Project_TT"),
+            () => ShowCreate(),
+
+            "startImportProject",
+            LOC.Get("PROJECT_Sidebar_Import_Project"),
+            LOC.Get("PROJECT_Sidebar_Import_Project_TT"),
+            ConfigureMenu.CreateProjectFromJsonAction);
+    }
+
+    /// <summary>
+    /// With projects but none picked: how to pick one.
+    /// </summary>
+    private void DisplayOpenProject()
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+        GUI.EmptyState(LOC.Get("PROJECT_Open_Title"), LOC.Get("PROJECT_Open_Body"));
+
+        // The project that loads at start-up, if it isn't loaded (auto-load is off, or it failed)
+        var lastProject = orchestrator.Projects.FirstOrDefault(e => e.Descriptor.AutoSelect && !e.IsActive);
+
+        if (lastProject != null)
+        {
+            if (GUI.ExplainedButton(
+                $"{LOC.Get("PROJECT_Open_Load_Last", lastProject.Descriptor.ProjectName)}##openLoadLast",
+                LOC.Get("PROJECT_Open_Load_Last_TT"),
+                !orchestrator.IsProjectLoading))
+            {
+                SelectEntry(lastProject);
+                LoadOrSwitch(lastProject);
+            }
+        }
+
+        if (GUI.ExplainedButton(
+            $"{LOC.Get("PROJECT_Sidebar_New_Project")}##openNewProject",
+            LOC.Get("PROJECT_Sidebar_New_Project_TT"),
+            true))
+        {
+            ShowCreate();
+        }
+    }
+
+    private void DisplayTabs(ProjectEntry project)
+    {
+        if (!ImGui.BeginTabBar("projectDetailTabs"))
+            return;
+
+        // Overview
+        if (BeginTab(ProjectDetailTab.Overview, LOC.Get("PROJECT_Tab_Overview")))
+        {
+            ImGui.BeginChild("projectOverviewTab", Vector2.Zero, ImGuiChildFlags.None);
+
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+            OverviewView.DisplayOverview(project);
+
+            ImGui.EndChild();
+
+            ImGui.EndTabItem();
+        }
+
+        // Aliases
+        if (BeginTab(ProjectDetailTab.Aliases, LOC.Get("PROJECT_Tab_Aliases")))
+        {
+            if (IsReadyForLoadedData(project, LOC.Get("PROJECT_Tab_Aliases_Need")))
+            {
+                ImGui.BeginChild("projectAliasTab", Vector2.Zero, ImGuiChildFlags.None, ImGuiWindowFlags.MenuBar);
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    FocusManager.SetFocus(EditorFocusContext.Project_AliasEditor);
+
+                AliasMenu.Display();
+
+                ImGui.EndChild();
+            }
+
+            ImGui.EndTabItem();
+        }
+
+        // Enums
+        if (BeginTab(ProjectDetailTab.Enums, LOC.Get("PROJECT_Tab_Enums")))
+        {
+            if (IsReadyForLoadedData(project, LOC.Get("PROJECT_Tab_Enums_Need")))
+            {
+                if (project.Handler.ParamData == null)
+                {
+                    DisplayEnumsNeedParamEditor(project);
+                }
+                else
+                {
+                    ImGui.BeginChild("projectEnumTab", Vector2.Zero, ImGuiChildFlags.None, ImGuiWindowFlags.MenuBar);
+
+                    if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                        FocusManager.SetFocus(EditorFocusContext.Project_EnumEditor);
+
+                    EnumMenu.Display();
+
+                    ImGui.EndChild();
+                }
+            }
+
+            ImGui.EndTabItem();
+        }
+
+        // Tools
+        if (BeginTab(ProjectDetailTab.Tools, LOC.Get("PROJECT_Tab_Tools")))
+        {
+            if (IsReadyForLoadedData(project, LOC.Get("PROJECT_Tab_Tools_Need")))
+            {
+                ImGui.BeginChild("projectToolsTab", Vector2.Zero, ImGuiChildFlags.None, ImGuiWindowFlags.MenuBar);
+
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                    FocusManager.SetFocus(EditorFocusContext.Project_None);
+
+                ToolWindow.Draw();
+
+                ImGui.EndChild();
+            }
+
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+    }
+
+    private bool BeginTab(ProjectDetailTab tab, string label)
+    {
+        var flags = _pendingTab == tab ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+
+        if (_pendingTab == tab)
+            _pendingTab = null;
+
+        return ImGui.BeginTabItem($"{label}##projectTab_{tab}", flags);
+    }
+
+    /// <summary>
+    /// Whether the tabs that edit loaded data can show the project. If not, says why, with a button that fixes it.
+    /// </summary>
+    /// <param name="purpose">What the tab is for, finishing "Load this project to ...".</param>
+    private bool IsReadyForLoadedData(ProjectEntry project, string purpose)
+    {
+        var orchestrator = Smithbox.Orchestrator;
+
+        if (orchestrator.IsProjectLoading && orchestrator.LoadingProject == project)
+        {
+            GUI.EmptyState(LOC.Get("PROJECT_Tab_Loading_Title", project.Descriptor.ProjectName), "");
+            return false;
+        }
+
+        if (!project.IsActive)
+        {
+            GUI.EmptyState(LOC.Get("PROJECT_Tab_Not_Loaded_Title"), LOC.Get("PROJECT_Tab_Not_Loaded_Body", purpose));
+
+            if (GUI.ExplainedButton(
+                $"{LOC.Get("PROJECT_Header_Load")}##tabLoadProject",
+                LOC.Get("PROJECT_Header_Load_TT"),
+                !orchestrator.IsProjectLoading))
+            {
+                LoadOrSwitch(project);
+            }
+
+            return false;
+        }
+
+        if (orchestrator.SelectedProject != project)
+        {
+            GUI.EmptyState(LOC.Get("PROJECT_Tab_Not_Selected_Title"), LOC.Get("PROJECT_Tab_Not_Selected_Body", purpose));
+
+            if (GUI.ExplainedButton(
+                $"{LOC.Get("PROJECT_Header_Switch")}##tabSwitchProject",
+                LOC.Get("PROJECT_Header_Switch_TT"),
+                !orchestrator.IsProjectLoading))
+            {
+                LoadOrSwitch(project);
+            }
+
+            return false;
+        }
+
+        if (project.Handler?.ProjectData == null)
+        {
+            GUI.EmptyState(LOC.Get("PROJECT_Tab_No_Data_Title"), LOC.Get("PROJECT_Tab_No_Data_Body"));
+            return false;
+        }
+
+        return true;
+    }
+
+    private void DisplayEnumsNeedParamEditor(ProjectEntry project)
+    {
+        GUI.EmptyState(LOC.Get("PROJECT_Tab_Enums_No_Params_Title"), LOC.Get("PROJECT_Tab_Enums_No_Params_Body"));
+
+        if (GUI.ExplainedButton(
+            $"{LOC.Get("PROJECT_Tab_Enums_Enable_Params")}##enumsEnableParams",
+            LOC.Get("PROJECT_Tab_Enums_Enable_Params_TT"),
+            true))
+        {
+            ShowProject(project, ProjectDetailTab.Overview, ProjectOverviewSection.Editors);
+        }
+    }
+
+    #endregion
 
     public void Shortcuts()
     {
         if (!FocusManager.IsInProjectEditor())
             return;
+
+        // The editors check for their own focus context, which stays set after their tab is left, so the data
+        // they act on is checked here too
+        var project = Smithbox.Orchestrator.SelectedProject;
+
+        if (project?.Handler?.ProjectData == null || Smithbox.Orchestrator.IsProjectLoading)
+            return;
+
+        AliasMenu.Shortcuts();
+
+        if (project.Handler.ParamData != null)
+            EnumMenu.Shortcuts();
     }
 }

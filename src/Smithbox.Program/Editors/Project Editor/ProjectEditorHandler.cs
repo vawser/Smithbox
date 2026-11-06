@@ -325,6 +325,36 @@ public class ProjectEditorHandler : IDisposable
         FocusedEditor = firstEditor;
     }
 
+    /// <summary>
+    /// Brings an editor's window to the front.
+    /// </summary>
+    /// <returns>Whether the editor has a window to focus.</returns>
+    public bool FocusEditorWindow(EditorScreen editor)
+    {
+        // The window names the editor stubs draw their windows with
+        var windowName = editor switch
+        {
+            MapEditorScreen => "###mapEditor",
+            ModelEditorScreen => "###modelEditor",
+            TimeActEditorScreen => "###timeActEditor",
+            ParamEditorScreen => "###paramEditor",
+            TextEditorScreen => "###textEditorStub",
+            GparamEditorScreen => $"{LOC.Get("GPARAM_Editor_Stub")}##gparamEditorStub",
+            MaterialEditorScreen => "###materialEditor",
+            TextureViewerScreen => "###textureViewerStub",
+            FileBrowserScreen => "###fileBrowserStub",
+            HavokEditorScreen => "###havokEditor",
+            _ => null
+        };
+
+        if (windowName == null)
+            return false;
+
+        Hexa.NET.ImGui.ImGui.SetWindowFocus(windowName);
+
+        return true;
+    }
+
     #region Dispose
 
     public void Dispose()

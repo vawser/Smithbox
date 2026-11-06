@@ -1,4 +1,4 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -18,7 +18,6 @@ public static class GUI
     public static uint PARAM_EDITOR_DOCK_GROUP = 1009;
     public static uint TEXT_EDITOR_DOCK_GROUP = 1010;
     public static uint TEXTURE_VIEWER_DOCK_GROUP = 1011;
-    public static uint PROJECT_METADATA_EDITOR_DOCK_GROUP = 1012;
     public static uint HAVOK_EDITOR_DOCK_GROUP = 1013;
     public static uint TIME_ACT_EDITOR_DOCK_GROUP = 1014;
 
@@ -32,7 +31,6 @@ public static class GUI
     public static uint TEXT_EDITOR_VIEW_DOCK_GROUP = 1108;
     public static uint TEXTURE_VIEWER_VIEW_DOCK_GROUP = 1109;
     public static uint PROJECT_EDITOR_VIEW_DOCK_GROUP = 1110;
-    public static uint PROJECT_METADATA_EDITOR_VIEW_DOCK_GROUP = 1111;
     public static uint HAVOK_EDITOR_VIEW_DOCK_GROUP = 1112;
     public static uint TIME_ACT_EDITOR_VIEW_DOCK_GROUP = 1113;
 
@@ -42,10 +40,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectEditor = new(
         classId: PROJECT_EDITOR_DOCK_GROUP, 
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_ProjectMetadataEditor = new(
-        classId: PROJECT_METADATA_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_AnimEditor = new(
@@ -134,10 +128,6 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectEditorView = new(
         classId: PROJECT_EDITOR_VIEW_DOCK_GROUP,
-        dockingAllowUnclassed: false);
-
-    public static ImGuiWindowClass DockGroup_ProjectMetadataEditorView = new(
-        classId: PROJECT_METADATA_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_HavokEditorView = new(
@@ -270,6 +260,61 @@ public static class GUI
         ImGui.PushTextWrapPos(size.X);
         ImGui.TextUnformatted(text);
         ImGui.PopTextWrapPos();
+    }
+
+    /// <summary>
+    /// A panel shown in place of content that can't be shown yet: a centered title and a short explanation of what
+    /// to do. Follow it with the buttons that do it.
+    /// </summary>
+    public static void EmptyState(string title, string body)
+    {
+        var avail = ImGui.GetContentRegionAvail().X;
+
+        ImGui.Dummy(new Vector2(0, 12f * DPI.UIScale()));
+
+        var titleWidth = ImGui.CalcTextSize(title).X;
+        ImGui.SetCursorPosX(ImGui.GetCursorPosX() + MathF.Max(0, (avail - titleWidth) * 0.5f));
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, title);
+
+        ImGui.Dummy(new Vector2(0, 4f * DPI.UIScale()));
+
+        if (!string.IsNullOrEmpty(body))
+        {
+            ImGui.PushTextWrapPos(ImGui.GetCursorPosX() + avail);
+            ImGui.TextUnformatted(body);
+            ImGui.PopTextWrapPos();
+        }
+
+        ImGui.Dummy(new Vector2(0, 8f * DPI.UIScale()));
+    }
+
+    /// <summary>
+    /// A full-width button that can be disabled, whose tooltip still shows while it is, so it can say why.
+    /// </summary>
+    public static bool ExplainedButton(string label, string tooltip, bool enabled)
+    {
+        ImGui.PushStyleVar(ImGuiStyleVar.ButtonTextAlign, new Vector2(0.01f, 0.5f));
+
+        if (!enabled)
+            ImGui.BeginDisabled();
+
+        var pressed = ImGui.Button(label, new Vector2(-1, 24f));
+
+        if (!enabled)
+            ImGui.EndDisabled();
+
+        ImGui.PopStyleVar();
+
+        if (!string.IsNullOrEmpty(tooltip) && ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+        {
+            ImGui.BeginTooltip();
+            ImGui.PushTextWrapPos(450.0f);
+            ImGui.TextUnformatted(tooltip);
+            ImGui.PopTextWrapPos();
+            ImGui.EndTooltip();
+        }
+
+        return pressed && enabled;
     }
 
     public static void WrappedTextColored(Vector4 color, string text)

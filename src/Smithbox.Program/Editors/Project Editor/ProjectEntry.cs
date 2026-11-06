@@ -386,10 +386,10 @@ public class ProjectEntry
             AddUnsaved(result, screen.EditorName, () => screen.GetUnsavedFiles(), () => screen.SaveUnsaved());
         }
 
-        // The Project Metadata editor is shared by every project, so its edits are kept on the project
+        // The alias and enum editors are shared by every project, so their edits are kept on the project
         if (IsActive)
         {
-            var metadata = Smithbox.Orchestrator?.ProjectMetadataEditor;
+            var metadata = Smithbox.Orchestrator?.ProjectEditor;
 
             if (metadata != null)
             {

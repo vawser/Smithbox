@@ -1,14 +1,6 @@
 {
   "Entries": [
     {
-      "Key": "META_EnumMenu_Error_Invalid_Project",
-      "Text": "A valid project must be selected to use this editor."
-    },
-    {
-      "Key": "META_EnumMenu_Error_No_Loaded_Project",
-      "Text": "A loaded project must be selected to use this editor."
-    },
-    {
       "Key": "META_EnumMenu_Menu_File",
       "Text": "File"
     },
@@ -71,10 +63,6 @@
     {
       "Key": "META_EnumMenu_Header_Enums_TT",
       "Text": ""
-    },
-    {
-      "Key": "META_EnumMenu_Paran_Editor_Enable_Hint",
-      "Text": "Param Editor needs to be enabled to view and edit enums."
     },
     {
       "Key": "META_EnumMenu_Enum_Filter_Hint",

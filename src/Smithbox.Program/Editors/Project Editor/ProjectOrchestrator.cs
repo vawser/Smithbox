@@ -46,16 +46,22 @@ public class ProjectOrchestrator : IDisposable
 
     private bool InitExistingProjects = false;
 
+    /// <summary>
+    /// Whether the stored projects have been read into <see cref="Projects"/>, which happens on the first frames.
+    /// </summary>
+    public bool ExistingProjectsRead => InitExistingProjects;
+
     // Top-Level Editors
     public ProjectScreen ProjectEditor;
-    public ProjectMetadataScreen ProjectMetadataEditor;
+
+    // What is brought to the front once the load in progress finishes
+    private LoadFocus _loadFocus = LoadFocus.ProjectEditor;
 
     public ProjectOrchestrator()
     {
         ReportProgress = SetProgress;
 
         ProjectEditor = new();
-        ProjectMetadataEditor = new();
 
         ActionManager = new();
 
@@ -68,7 +74,6 @@ public class ProjectOrchestrator : IDisposable
         RunMainThreadActions();
 
         ProjectEditor.OnGUI(mainDockspaceID);
-        ProjectMetadataEditor.OnGUI(mainDockspaceID);
 
         // Project Dock
         if (SelectedProject != null && SelectedProject.Initialized)
@@ -83,10 +88,20 @@ public class ProjectOrchestrator : IDisposable
             _ = LoadExistingProjects();
         }
 
+        // After the project has drawn its editors this frame, so their windows exist to be focused
         if (FinishedProjectLoad)
         {
             FinishedProjectLoad = false;
-            ProjectEditor.RequestFocus = true;
+
+            if (_loadFocus is LoadFocus.FirstEditor && SelectedProject?.Handler != null &&
+                SelectedProject.Handler.FocusEditorWindow(SelectedProject.Handler.FocusedEditor))
+            {
+                // The project's first editor is in front
+            }
+            else
+            {
+                ProjectEditor.RequestFocus = true;
+            }
         }
 
         DrawProjectLoadingUI();
@@ -256,14 +271,8 @@ public class ProjectOrchestrator : IDisposable
 
             if (projectEntry != null && !IsProjectLoading)
             {
-                // StartupProject has already selected it; this points the project screen at it, on the main thread
-                await StartupProject(projectEntry, () =>
-                {
-                    ProjectEditor.SelectedLoadedEntry = projectEntry;
-                    ProjectEditor.SelectedAvaliableEntry = projectEntry;
-
-                    ProjectEditor.ConfigureMenu.SetupForEdit(projectEntry);
-                });
+                // StartupProject selects it, which also points the Project Editor at it
+                await StartupProject(projectEntry);
             }
         }
 
@@ -282,7 +291,8 @@ public class ProjectOrchestrator : IDisposable
 
         if (!IsProjectLoading)
         {
-            _ = StartupProject(newProject);
+            // The Project Editor stays in front, its overview confirming the new project loaded
+            _ = StartupProject(newProject, null, LoadFocus.ProjectEditor);
         }
         else
         {
@@ -350,15 +360,19 @@ public class ProjectOrchestrator : IDisposable
     /// Loads a project and selects it.
     /// </summary>
     /// <param name="onLoaded">Run on the main thread once the project is selected.</param>
+    /// <param name="focus">What to bring to the front once it has loaded.</param>
     /// <returns>Whether the project loaded.</returns>
-    public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null)
+    public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null, LoadFocus focus = LoadFocus.FirstEditor)
     {
-        return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded);
+        return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded, focus);
     }
 
+    /// <summary>
+    /// Reloads a project. Reloads are started from the Project Editor, which stays in front.
+    /// </summary>
     public Task ReloadProject(ProjectEntry curProject)
     {
-        return LoadProject(curProject, false, null);
+        return LoadProject(curProject, false, null, LoadFocus.ProjectEditor);
     }
 
     /// <summary>
@@ -369,7 +383,7 @@ public class ProjectOrchestrator : IDisposable
     /// selection every frame. So only the loading runs off the main thread: selecting the project is queued and
     /// applied at the start of the next <see cref="Update"/>.
     /// </remarks>
-    private async Task<bool> LoadProject(ProjectEntry curProject, bool assignAutoLoad, Action onLoaded)
+    private async Task<bool> LoadProject(ProjectEntry curProject, bool assignAutoLoad, Action onLoaded, LoadFocus focus)
     {
         // Checked before the open project is disposed, so a project that can't load leaves the open one in place
         if (!curProject.ValidateForInit(out var invalidReason))
@@ -450,6 +464,8 @@ public class ProjectOrchestrator : IDisposable
         {
             try
             {
+                _loadFocus = focus;
+
                 SelectLoadedProject(curProject, assignAutoLoad);
 
                 onLoaded?.Invoke();
@@ -490,6 +506,8 @@ public class ProjectOrchestrator : IDisposable
         {
             SetAsAutoLoad(curProject);
         }
+
+        ProjectEditor.OnProjectSelected(curProject);
 
         SetProgress(new ProjectLoadProgress
         {
@@ -664,11 +682,7 @@ public class ProjectOrchestrator : IDisposable
 
         Smithbox.Instance.SetProgramName(project);
 
-        ProjectEditor.SelectedLoadedEntry = project;
-
-        // The metadata edits belong to the previously selected project
-        ProjectMetadataEditor.AliasMenu.ActionManager.Clear();
-        ProjectMetadataEditor.EnumMenu.ActionManager.Clear();
+        ProjectEditor.OnProjectSelected(project);
     }
 
     /// <summary>
@@ -804,6 +818,18 @@ public class ProjectOrchestrator : IDisposable
         _disposed = true;
     }
     #endregion
+}
+
+/// <summary>
+/// What is brought to the front once a project has loaded.
+/// </summary>
+public enum LoadFocus
+{
+    /// <summary>The project's first editor, so the user can start working</summary>
+    FirstEditor,
+
+    /// <summary>The Project Editor, for loads started there whose result the user wants to see</summary>
+    ProjectEditor
 }
 
 public struct ProjectLoadProgress

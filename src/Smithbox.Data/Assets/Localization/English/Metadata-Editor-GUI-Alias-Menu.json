@@ -1,14 +1,6 @@
 {
   "Entries": [
     {
-      "Key": "META_AliasMenu_Error_Invalid_Project",
-      "Text": "A valid project must be selected to use this editor."
-    },
-    {
-      "Key": "META_AliasMenu_Error_No_Loaded_Project",
-      "Text": "A loaded project must be selected to use this editor."
-    },
-    {
       "Key": "META_AliasMenu_Menu_File",
       "Text": "File"
     },
@@ -139,6 +131,34 @@
     {
       "Key": "META_AliasMenu_Select_Alias_Type",
       "Text": "Select an alias type."
+    },
+    {
+      "Key": "META_AliasMenu_Select_Alias_Type_Body",
+      "Text": "Aliases are readable names for IDs, such as character, map piece and event flag IDs. The editors show them next to the IDs. Pick a type on the left to see and edit its aliases."
+    },
+    {
+      "Key": "META_AliasMenu_Source_Base",
+      "Text": "Base"
+    },
+    {
+      "Key": "META_AliasMenu_Source_Project",
+      "Text": "Project"
+    },
+    {
+      "Key": "META_AliasMenu_Source_None",
+      "Text": "None"
+    },
+    {
+      "Key": "META_AliasMenu_Sources",
+      "Text": "Sources: {0}"
+    },
+    {
+      "Key": "META_AliasMenu_Sources_TT",
+      "Text": "Where the aliases shown are read from: Base is the set that comes with Smithbox, Project is this project's own. Change them in the Data Source menu."
+    },
+    {
+      "Key": "META_AliasMenu_Menu_Save_Local_Aliases_TT",
+      "Text": "Save the aliases to this project:\n{0}"
     },
     {
       "Key": "META_AliasMenu_Action_Add_Alias",
