@@ -25,12 +25,6 @@ internal sealed class hkpStorageExtendedMeshShapeShapeSubpartStorageData : Havok
                 value = instance.m_materials;
                 return true;
             }
-            case "m_materialIndices16":
-            case "materialIndices16":
-            {
-                value = instance.m_materialIndices16;
-                return true;
-            }
             default:
             return false;
         }
@@ -50,15 +44,8 @@ internal sealed class hkpStorageExtendedMeshShapeShapeSubpartStorageData : Havok
             case "m_materials":
             case "materials":
             {
-                if (value is not List<Havok.hk55.hkpStorageExtendedMeshShapeMaterial> castValue) return false;
+                if (value is not List<Havok.hk55.hkpMeshMaterial> castValue) return false;
                 instance.m_materials = castValue;
-                return true;
-            }
-            case "m_materialIndices16":
-            case "materialIndices16":
-            {
-                if (value is not List<ushort> castValue) return false;
-                instance.m_materialIndices16 = castValue;
                 return true;
             }
             default:

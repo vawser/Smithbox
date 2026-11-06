@@ -1,12 +1,10 @@
-<class name="hkpStorageExtendedMeshShapeMeshSubpartStorage" version="3" signature="0x3b2f0b51" size="104" parent="hkReferencedObject" borrowed="DS1 hk_2010">
+<class name="hkpStorageExtendedMeshShapeMeshSubpartStorage" version="3" signature="0x3b2f0b51" size="80" parent="hkReferencedObject" manual="Fitted to DeS map collision bytes: no indices8 (as SoulsFormats' DeS reader has it), vertices data follows at 80. materials are 4-byte hkpMeshMaterials (the subparts' materialStriding is 4). The empty array at 68 is assumed to be materialIndices16.">
   <members>
     <member name="vertices" offset="8" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" />
-    <member name="indices8" offset="20" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
-    <member name="indices16" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
-    <member name="indices32" offset="44" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materialIndices" offset="56" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materials" offset="68" ctype="hkpStorageExtendedMeshShapeMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
-    <member name="namedMaterials" offset="80" ctype="hkpNamedMeshMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materialIndices16" offset="92" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="indices16" offset="20" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="indices32" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialIndices" offset="44" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materials" offset="56" ctype="hkpMeshMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialIndices16" offset="68" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

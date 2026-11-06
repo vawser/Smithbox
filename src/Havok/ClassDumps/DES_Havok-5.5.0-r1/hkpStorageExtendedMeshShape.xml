@@ -1,6 +1,6 @@
-<class name="hkpStorageExtendedMeshShape" version="0" signature="0xc22ca89e" size="272" parent="hkpExtendedMeshShape" borrowed="DS1 hk_2010">
+<class name="hkpStorageExtendedMeshShape" version="0" signature="0xc22ca89e" size="224" parent="hkpExtendedMeshShape" manual="Fitted to DeS map collision bytes: meshstorage at 192 (its pointers' local fixup), shapestorage at 204 (an empty array); the subparts' data follows at 224. The data size is 216, where CustomParamStorageExtendedMeshShape continues (PS3 tail reuse).">
   <members>
-    <member name="meshstorage" offset="240" ctype="hkpStorageExtendedMeshShapeMeshSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
-    <member name="shapestorage" offset="252" ctype="hkpStorageExtendedMeshShapeShapeSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="meshstorage" offset="192" ctype="hkpStorageExtendedMeshShapeMeshSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shapestorage" offset="204" ctype="hkpStorageExtendedMeshShapeShapeSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

@@ -37,12 +37,6 @@ internal sealed class hkpExtendedMeshShapeShapesSubpartData : Havok.Formats.Havo
                 value = instance.m_numMaterials;
                 return true;
             }
-            case "m_userData":
-            case "userData":
-            {
-                value = instance.m_userData;
-                return true;
-            }
             case "m_childShapes":
             case "childShapes":
             {
@@ -112,13 +106,6 @@ internal sealed class hkpExtendedMeshShapeShapesSubpartData : Havok.Formats.Havo
             {
                 if (value is not ushort castValue) return false;
                 instance.m_numMaterials = castValue;
-                return true;
-            }
-            case "m_userData":
-            case "userData":
-            {
-                if (value is not ulong castValue) return false;
-                instance.m_userData = castValue;
                 return true;
             }
             case "m_childShapes":

@@ -259,7 +259,7 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 
 **Phase 5: 32-bit packfiles (DeS Havok-5.x, DS1 hk_2010).** Hand-built registry for the classes SoulsFormats handles, 32-bit layout, big-endian for DeS. SoulsFormats only reads 61/329 DeS files and can't write skeletons or spline animations, so parity is the floor, not the target. Acceptance: skeletons, animations, collision and navmesh decode the same as SoulsFormats. Writing should at least be as good as SoulsFormats today (round trip re-reads equal).
 
-> **Status (2026-11-06): reading and writing done for DS1, DeS 5.5 and DeS 5.1. Still to do: DeS 5.5 extended mesh shapes (hand-fitted), and the decode comparison with SoulsFormats.** Nothing in Smithbox uses this yet (Phase 6).
+> **Status (2026-11-06): reading and writing done for DS1, DeS 5.5 and DeS 5.1, including DeS map collision (hand-fitted 5.5 mesh shapes). Still to do: the decode comparison with SoulsFormats, and two borrowed-class fixes (below).** Nothing in Smithbox uses this yet (Phase 6).
 > - **Decision (2026-11-06): the registries come from the games' own files, and the class sets are generated** (revises D2's "no full hk2010 class set"). DeS packfiles, and DS1's chr physics files, carry Havok's `hkClass` reflection in `__types__`. The layout is the same in Havok 5.5 and hk_2010, 32-bit:
 >   - `hkClass` 48 bytes, `hkClassMember` 24, `hkClassEnum` 20, enum items 8.
 >   - Type codes are `hkClassMember::Type`.
@@ -279,26 +279,37 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 >   - Its class-name section (old SDKs list every class), so names keep their offsets.
 >   - Its fixup-table lengths (Havok 5.5 leaves empty rows).
 >   - Each `hkArray`'s capacity/flags word (5.5 uses `0xC0000000`).
+>   - The bytes of unserialized members, where they weren't zero (DeS keeps a subpart's material stride in one).
 >   - `hkVariant` class pointers into the kept `__types__` section.
 >   - Unserialized `hkArray`s are written as empty arrays (`0x80000000`), as Havok writes them. This also helps DS3.
 >
 >   Reading: `hkUlong` is pointer-sized, and strings decode as Shift-JIS where that round-trips (DeS and DS3 hold Japanese names), else Latin-1. All the fidelity features apply only with `PreserveSource`, so the HKX2-header mode still checks HKX2 parity.
+> - **DeS 5.5 mesh shapes, hand-fitted (2026-11-06).** No DeS file describes `hkpExtendedMeshShape` and its storage classes, and DS1's 2010 versions are different classes, so DeS map collision lost its mesh storage on read. Their 5.5 layouts were fitted to the bytes of DeS map collision (`l0000b0`, `l0042b0`, `h5000b1`, `o5985`, `o3270`). They're written as dumps with `manual="…"` (the evidence), which later fills and extractions leave alone.
+>   - **`hkpExtendedMeshShape`** (192 bytes): `numBitsForSubpartIndex`@24, `scaling`@32 (as in DeS 5.1's `hkpMeshShape`), `aabbHalfExtents`@48, `aabbCenter`@64, `trianglesSubparts`/`shapesSubparts` as simple arrays @80/88, `weldingInfo`@96, `weldingType`@108 (6 = none), an embedded `TrianglesSubpart`@112, then four zero words.
+>   - **`Subpart`** is 16 bytes, with no userData. Its `materialStriding` is 4, the size of DeS's `hkpMeshMaterial`.
+>   - **`TrianglesSubpart`** is 64 bytes, with no transform and 32-bit strides. `IndexStridingType` uses the 5.x numbering (INT16 = 1).
+>   - **`hkpStorageExtendedMeshShape`** has `meshstorage`@192 and `shapestorage`@204, size 224, data size 216. `CustomParamStorageExtendedMeshShape.materialArray` is at 216, which is PS3 tail reuse.
+>   - **`MeshSubpartStorage`** is 80 bytes with no `indices8` (as in SoulsFormats' DeS reader), and its materials are 4-byte `hkpMeshMaterial`s.
+>   - **Cross-checks:** the subpart's triangle count equals the storage's material-index count, its vertex count the vertex count, and the 16-bit index count is 4 × the triangle count.
+>   - **Unverified:** `ShapesSubpart` and `ShapeSubpartStorage` (no surveyed file has one), and the empty array at `MeshSubpartStorage`+68 (assumed `materialIndices16`).
+>   - The fill now also borrows what the target's own classes refer to (`hkpMeshMaterial`).
+>   - **Verified:** every surveyed DeS map file (28 loose) and object file (56 objbnd) rewrites byte-identical, and every fixup lands on a member (`--layout`). DeS 5.5 byte identity is 267 → **303/327**. The other 24 are chr ragdolls (22 chrbnd, 2 loose). Survey reports now have a "Byte-identical writes by category" table, which names the files when a category has 5 or fewer misses.
 > - **Probes** (`Tools/HavokPackfileProbe`): `--types` dumps a file's reflection, `--diff` compares a rewrite part by part (naming the objects of lost fixups), and `--layout` now handles 32-bit big-endian files. Loose files: pass `-` as the inner name.
 > - **Verified** (`HavokLibSurvey <game> 30 8`):
 >
 >   | Game / SDK | Read: SoulsFormats → engine | Write | Graph round trip | Byte-identical: SoulsFormats → engine |
 >   |---|---|---|---|---|
 >   | DS1 hk_2010 | 328 → **331/331** | 331 | 331 | 38 → **298** |
->   | DeS Havok-5.5 | 59 → **327/327** | 327 | 327 | 0 → **267** |
+>   | DeS Havok-5.5 | 59 → **327/327** | 327 | 327 | 0 → **303** |
 >   | DeS Havok-5.1 | 2 → 2/2 | 2 | 2 | 0 → **2** |
 >
 >   The fidelity changes also raised the hk_2014 games: DS3 668 → **693/860**, BB 619 → **636/721**, DS2S 0 → **227/227** byte-identical. DS3 reads now differ from HKX2 in 25 files, all Shift-JIS names that HKX2 reads as `?` (`オブジェクト100093` vs `?I?u?W?F?N?g100093`).
 > - **Still to do:**
->   - **DeS 5.5 extended mesh shapes.** No DeS file describes `hkpExtendedMeshShape`, and DS1's 2010 version is a different class, so DeS map collision loses its mesh storage on read (the remaining DeS map rewrites are smaller). The bytes (`l0042b0.hkx`) give its layout, to be written as hand-made 5.5 dumps:
->     - `aabbHalfExtents`@48, `aabbCenter`@64, `trianglesSubparts` as a simple array @80, `weldingInfo`@96, `weldingType`@108.
->     - A 64-byte embedded `TrianglesSubpart`@112. Within it: triangle count @16, vertex stride @24, vertex count @28, index stride @52, striding type @56.
->     - Size 192. `hkpStorageExtendedMeshShape.meshstorage`@192 and `shapestorage`@204; `CustomParamStorageExtendedMeshShape.materialArray`@216.
->   - **Decode comparison with SoulsFormats** (the acceptance test): skeletons, spline animations, collision meshes.
+>   - **Two borrowed-class fixes, found by `--diff`:**
+>     - DS1 `o2770_1.hkx`: the convex shapes borrowed from DS3 (`hkpConvexVerticesShape`'s connectivity pointer, the `hkpConvexTranslateShape` chain) don't match DS1's 2010 versions, so pointers are dropped (3,184 bytes).
+>     - DeS chr ragdolls: same size, but one pointer sits 4 bytes off, probably in a constraint class borrowed from DS1.
+>
+>     Both need hand-fitted dumps, as for the mesh shapes.>   - **Decode comparison with SoulsFormats** (the acceptance test): skeletons, spline animations, collision meshes.
 >   - DS1's remaining 33 and DeS's other differences are same-size, mostly one byte at an odd offset (value-level). *(verify)*
 
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:

@@ -59,6 +59,9 @@ public sealed class HavokPackfileSerializer
     // each hkArray's capacity and flags word as read (Havok 5.5 sets 0x40000000 on some), kept for its list
     private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, StrongBox<uint>> ArrayFlagsRead = new();
 
+    // the bytes of each object's unserialized members as read, where they weren't all zero
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, Dictionary<string, byte[]>> UnserializedRead = new();
+
     /// <summary>
     /// Write back the header and __types__ section a root object was read with. When false, or for objects that weren't
     /// read, write HKX2's: the fixed DS3 hk_2014 header and an empty __types__ section.
@@ -231,7 +234,14 @@ public sealed class HavokPackfileSerializer
     {
         foreach (HavokType.Member field in type.Fields)
         {
-            if (field.NonSerializable) continue;
+            if (field.NonSerializable)
+            {
+                // kept as bytes, when not all zero, so a rewrite gives them back (DeS keeps a subpart's material stride here)
+                var raw = section.Data.AsSpan((int)(offset + field.Offset), field.Type.Size);
+                if (raw.ContainsAnyExcept((byte)0))
+                    UnserializedRead.GetOrCreateValue(access.Object)[field.Name] = raw.ToArray();
+                continue;
+            }
             object? value = ReadValue(state, section, field.Type, offset + (uint)field.Offset);
             if (!access.TrySetField(field.Name, value))
                 throw new InvalidOperationException($"Unable to set field \"{field.Name}\" of \"{type.Identity}\" to a {value?.GetType().Name ?? "null"} ({field.Type.Identity}, {field.Type.Kind}).");
@@ -710,8 +720,10 @@ public sealed class HavokPackfileSerializer
             while (_data.Position - start < field.Offset) _data.WriteByte(0);
             if (field.NonSerializable)
             {
-                // zeros, but an unserialized hkArray as an empty array: no data, DONT_DEALLOCATE
-                if (field.Type.Name == "hkArray" && NonSerializedArrayFlags)
+                // the bytes read, else zeros, but an unserialized hkArray as an empty array: no data, DONT_DEALLOCATE
+                if (PreserveSource && UnserializedRead.TryGetValue(obj, out var kept) && kept.TryGetValue(field.Name, out byte[]? bytes))
+                    _data.WriteBytes(bytes);
+                else if (field.Type.Name == "hkArray" && NonSerializedArrayFlags)
                 {
                     WritePointerZero();
                     _data.WriteUInt32(0);

@@ -245,7 +245,10 @@ public static class DumpFill
 
             XElement? Find(string n) => target.Classes.GetValueOrDefault(n) ?? (borrowed.TryGetValue(n, out var b) ? b.Class : null);
 
-            var queue = new Queue<string>(used.Where(n => !target.Classes.ContainsKey(n)).OrderBy(n => n, StringComparer.Ordinal));
+            // the classes the files use, and those the target's own classes refer to (hand-made dumps refer to borrowed ones)
+            var referenced = target.Classes.Values.SelectMany(c => c.Descendants("member").Select(m => m.Attribute("ctype")?.Value)
+                .Append(c.Attribute("parent")?.Value)).Where(n => n != null).Select(n => n!);
+            var queue = new Queue<string>(used.Concat(referenced).Distinct().Where(n => !target.Classes.ContainsKey(n)).OrderBy(n => n, StringComparer.Ordinal));
             while (queue.TryDequeue(out var name))
             {
                 if (Find(name) != null) continue;

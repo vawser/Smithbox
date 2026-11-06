@@ -159,6 +159,33 @@ public static class Report
         }
         sb.AppendLine();
 
+        sb.AppendLine("## Byte-identical writes by category");
+        sb.AppendLine();
+        sb.AppendLine("Written files identical to the original, of those written.");
+        sb.AppendLine();
+        sb.AppendLine($"| Category | {string.Join(" | ", libs)} |");
+        sb.AppendLine($"|---|{string.Concat(libs.Select(_ => "---|"))}");
+        foreach (var g in files.GroupBy(f => f.Category).OrderBy(g => g.Key))
+        {
+            var cells = libs.Select(lib =>
+            {
+                var l = g.SelectMany(f => f.Libs).Where(x => x.Lib == lib && x.Write).ToList();
+                return l.Count == 0 ? "—" : $"{l.Count(x => x.ByteIdentical)}/{l.Count}";
+            });
+            sb.AppendLine($"| {g.Key} | {string.Join(" | ", cells)} |");
+        }
+        sb.AppendLine();
+
+        // the few that aren't, by name, where a category is nearly all identical
+        foreach (var lib in libs)
+            foreach (var g in files.GroupBy(f => f.Category).OrderBy(g => g.Key))
+            {
+                var misses = g.Where(f => f.Libs.Any(x => x.Lib == lib && x.Write && !x.ByteIdentical)).ToList();
+                if (misses.Count is > 0 and <= 5)
+                    sb.AppendLine($"- {lib}, {g.Key}: not identical: {string.Join(", ", misses.Select(f => $"`{f.Container}` › `{f.Inner}`"))}");
+            }
+        sb.AppendLine();
+
         // Errors
         sb.AppendLine("## Failures (grouped by message)");
         sb.AppendLine();

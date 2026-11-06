@@ -12,6 +12,4 @@ public class hkpExtendedMeshShapeSubpart : IHavokObject
 
     public ushort m_numMaterials;
 
-    public ulong m_userData;
-
 }

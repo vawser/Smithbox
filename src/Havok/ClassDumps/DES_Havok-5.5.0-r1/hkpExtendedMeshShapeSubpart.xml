@@ -1,4 +1,4 @@
-<class name="hkpExtendedMeshShapeSubpart" version="2" signature="0x7c9435c7" size="20" borrowed="DS1 hk_2010">
+<class name="hkpExtendedMeshShapeSubpart" version="2" signature="0x7c9435c7" size="16" manual="Fitted to DeS map collision bytes: 16 bytes, no userData. materialStriding 4 = sizeof(hkpMeshMaterial); materialIndexStriding 1 and numMaterials 1 with 8-bit material indices.">
   <members>
     <member name="type" offset="0" etype="SubpartType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
     <member name="materialIndexStridingType" offset="1" etype="MaterialIndexStridingType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
@@ -7,6 +7,5 @@
     <member name="materialIndexStriding" offset="8" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
     <member name="numMaterials" offset="10" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
     <member name="materialBase" offset="12" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
-    <member name="userData" offset="16" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

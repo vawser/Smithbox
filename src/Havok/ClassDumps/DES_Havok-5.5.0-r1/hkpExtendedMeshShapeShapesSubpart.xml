@@ -1,6 +1,6 @@
-<class name="hkpExtendedMeshShapeShapesSubpart" version="1" signature="0xfce016a3" size="64" parent="hkpExtendedMeshShapeSubpart" borrowed="DS1 hk_2010">
+<class name="hkpExtendedMeshShapeShapesSubpart" version="1" signature="0xfce016a3" size="64" parent="hkpExtendedMeshShapeSubpart" manual="Not seen in any surveyed DeS file: DS1's members, laid out on DeS's 16-byte subpart. Unverified.">
   <members>
-    <member name="childShapes" offset="20" ctype="hkpConvexShape" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="childShapes" offset="16" ctype="hkpConvexShape" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
     <member name="rotation" offset="32" vtype="TYPE_QUATERNION" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
     <member name="translation" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
   </members>

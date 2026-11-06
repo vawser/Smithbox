@@ -1,5 +1,5 @@
-<class name="CustomParamStorageExtendedMeshShape" version="1" signature="0x73a7114d" size="288" parent="hkpStorageExtendedMeshShape" borrowed="DS3 hk_2014">
+<class name="CustomParamStorageExtendedMeshShape" version="1" signature="0x73a7114d" size="240" parent="hkpStorageExtendedMeshShape" manual="Fitted to DeS map collision bytes (h5000b1.hkx, l0042b0.hkx): materialArray at 216, its CustomMeshParameter pointers' local fixup; the subparts' data follows at 240.">
   <members>
-    <member name="materialArray" offset="264" ctype="CustomMeshParameter" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="materialArray" offset="216" ctype="CustomMeshParameter" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

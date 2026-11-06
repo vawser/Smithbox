@@ -19,12 +19,6 @@ internal sealed class hkpStorageExtendedMeshShapeMeshSubpartStorageData : Havok.
                 value = instance.m_vertices;
                 return true;
             }
-            case "m_indices8":
-            case "indices8":
-            {
-                value = instance.m_indices8;
-                return true;
-            }
             case "m_indices16":
             case "indices16":
             {
@@ -49,12 +43,6 @@ internal sealed class hkpStorageExtendedMeshShapeMeshSubpartStorageData : Havok.
                 value = instance.m_materials;
                 return true;
             }
-            case "m_namedMaterials":
-            case "namedMaterials":
-            {
-                value = instance.m_namedMaterials;
-                return true;
-            }
             case "m_materialIndices16":
             case "materialIndices16":
             {
@@ -75,13 +63,6 @@ internal sealed class hkpStorageExtendedMeshShapeMeshSubpartStorageData : Havok.
             {
                 if (value is not List<Vector4> castValue) return false;
                 instance.m_vertices = castValue;
-                return true;
-            }
-            case "m_indices8":
-            case "indices8":
-            {
-                if (value is not List<byte> castValue) return false;
-                instance.m_indices8 = castValue;
                 return true;
             }
             case "m_indices16":
@@ -108,15 +89,8 @@ internal sealed class hkpStorageExtendedMeshShapeMeshSubpartStorageData : Havok.
             case "m_materials":
             case "materials":
             {
-                if (value is not List<Havok.hk55.hkpStorageExtendedMeshShapeMaterial> castValue) return false;
+                if (value is not List<Havok.hk55.hkpMeshMaterial> castValue) return false;
                 instance.m_materials = castValue;
-                return true;
-            }
-            case "m_namedMaterials":
-            case "namedMaterials":
-            {
-                if (value is not List<Havok.hk55.hkpNamedMeshMaterial> castValue) return false;
-                instance.m_namedMaterials = castValue;
                 return true;
             }
             case "m_materialIndices16":

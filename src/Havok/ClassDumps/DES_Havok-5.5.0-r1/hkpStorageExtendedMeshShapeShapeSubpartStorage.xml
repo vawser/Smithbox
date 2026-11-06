@@ -1,7 +1,6 @@
-<class name="hkpStorageExtendedMeshShapeShapeSubpartStorage" version="2" signature="0x502939ed" size="44" parent="hkReferencedObject" borrowed="DS1 hk_2010">
+<class name="hkpStorageExtendedMeshShapeShapeSubpartStorage" version="2" signature="0x502939ed" size="32" parent="hkReferencedObject" manual="Not seen in any surveyed DeS file: shaped like DeS's mesh subpart storage (8-bit material indices, 4-byte hkpMeshMaterials, 16-bit material indices). Unverified.">
   <members>
     <member name="materialIndices" offset="8" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materials" offset="20" ctype="hkpStorageExtendedMeshShapeMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materialIndices16" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materials" offset="20" ctype="hkpMeshMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

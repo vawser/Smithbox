@@ -6,8 +6,6 @@ public class hkpStorageExtendedMeshShapeShapeSubpartStorage : hkReferencedObject
 {
     public List<byte> m_materialIndices = new();
 
-    public List<hkpStorageExtendedMeshShapeMaterial> m_materials = new();
-
-    public List<ushort> m_materialIndices16 = new();
+    public List<hkpMeshMaterial> m_materials = new();
 
 }

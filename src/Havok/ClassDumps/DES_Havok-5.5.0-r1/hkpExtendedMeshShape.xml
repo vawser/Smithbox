@@ -1,11 +1,10 @@
-<class name="hkpExtendedMeshShape" version="3" signature="0x260c3908" size="240" parent="hkpShapeCollection" borrowed="DS1 hk_2010">
+<class name="hkpExtendedMeshShape" version="3" signature="0x260c3908" size="192" parent="hkpShapeCollection" manual="Fitted to DeS map collision bytes (l0000b0.hkx, l0042b0.hkx, h5000b1.hkx); no DeS file describes this class. scaling as in DeS 5.1 hkpMeshShape; trianglesSubparts/shapesSubparts are simple arrays (no capacity word); weldingType 6 = WELDING_TYPE_NONE; the embedded subpart repeats the first element. +28 and 176-191 were zero in every sample.">
   <enums>
     <enum name="IndexStridingType" flags="0">
       <enumitem name="INDICES_INVALID" value="0" />
-      <enumitem name="INDICES_INT8" value="1" />
-      <enumitem name="INDICES_INT16" value="2" />
-      <enumitem name="INDICES_INT32" value="3" />
-      <enumitem name="INDICES_MAX_ID" value="4" />
+      <enumitem name="INDICES_INT16" value="1" />
+      <enumitem name="INDICES_INT32" value="2" />
+      <enumitem name="INDICES_MAX_ID" value="3" />
     </enum>
     <enum name="MaterialIndexStridingType" flags="0">
       <enumitem name="MATERIAL_INDICES_INVALID" value="0" />
@@ -19,18 +18,19 @@
     </enum>
   </enums>
   <members>
-    <member name="embeddedTrianglesSubpart" offset="32" ctype="hkpExtendedMeshShapeTrianglesSubpart" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="aabbHalfExtents" offset="144" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="aabbCenter" offset="160" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="materialClass" offset="176" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
-    <member name="numBitsForSubpartIndex" offset="180" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="trianglesSubparts" offset="184" ctype="hkpExtendedMeshShapeTrianglesSubpart" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
-    <member name="shapesSubparts" offset="196" ctype="hkpExtendedMeshShapeShapesSubpart" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
-    <member name="weldingInfo" offset="208" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
-    <member name="weldingType" offset="220" etype="WeldingType" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
-    <member name="defaultCollisionFilterInfo" offset="224" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="cachedNumChildShapes" offset="228" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="triangleRadius" offset="232" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="padding" offset="236" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="numBitsForSubpartIndex" offset="24" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialClass" offset="28" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="scaling" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="aabbHalfExtents" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="aabbCenter" offset="64" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="trianglesSubparts" offset="80" ctype="hkpExtendedMeshShapeTrianglesSubpart" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shapesSubparts" offset="88" ctype="hkpExtendedMeshShapeShapesSubpart" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="weldingInfo" offset="96" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="weldingType" offset="108" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="embeddedTrianglesSubpart" offset="112" ctype="hkpExtendedMeshShapeTrianglesSubpart" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+    <member name="defaultCollisionFilterInfo" offset="176" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="cachedNumChildShapes" offset="180" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="triangleRadius" offset="184" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="padding" offset="188" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

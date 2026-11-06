@@ -25,10 +25,16 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
                 value = instance.m_disableWelding;
                 return true;
             }
-            case "m_embeddedTrianglesSubpart":
-            case "embeddedTrianglesSubpart":
+            case "m_numBitsForSubpartIndex":
+            case "numBitsForSubpartIndex":
             {
-                value = instance.m_embeddedTrianglesSubpart;
+                value = instance.m_numBitsForSubpartIndex;
+                return true;
+            }
+            case "m_scaling":
+            case "scaling":
+            {
+                value = instance.m_scaling;
                 return true;
             }
             case "m_aabbHalfExtents":
@@ -41,12 +47,6 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
             case "aabbCenter":
             {
                 value = instance.m_aabbCenter;
-                return true;
-            }
-            case "m_numBitsForSubpartIndex":
-            case "numBitsForSubpartIndex":
-            {
-                value = instance.m_numBitsForSubpartIndex;
                 return true;
             }
             case "m_trianglesSubparts":
@@ -73,6 +73,12 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
                 value = instance.m_weldingType;
                 return true;
             }
+            case "m_embeddedTrianglesSubpart":
+            case "embeddedTrianglesSubpart":
+            {
+                value = instance.m_embeddedTrianglesSubpart;
+                return true;
+            }
             case "m_defaultCollisionFilterInfo":
             case "defaultCollisionFilterInfo":
             {
@@ -89,6 +95,12 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
             case "triangleRadius":
             {
                 value = instance.m_triangleRadius;
+                return true;
+            }
+            case "m_padding":
+            case "padding":
+            {
+                value = instance.m_padding;
                 return true;
             }
             case "m_meshstorage":
@@ -132,11 +144,18 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
                 instance.m_disableWelding = castValue;
                 return true;
             }
-            case "m_embeddedTrianglesSubpart":
-            case "embeddedTrianglesSubpart":
+            case "m_numBitsForSubpartIndex":
+            case "numBitsForSubpartIndex":
             {
-                if (value is not Havok.hk55.hkpExtendedMeshShapeTrianglesSubpart castValue) return false;
-                instance.m_embeddedTrianglesSubpart = castValue;
+                if (value is not int castValue) return false;
+                instance.m_numBitsForSubpartIndex = castValue;
+                return true;
+            }
+            case "m_scaling":
+            case "scaling":
+            {
+                if (value is not Vector4 castValue) return false;
+                instance.m_scaling = castValue;
                 return true;
             }
             case "m_aabbHalfExtents":
@@ -151,13 +170,6 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
             {
                 if (value is not Vector4 castValue) return false;
                 instance.m_aabbCenter = castValue;
-                return true;
-            }
-            case "m_numBitsForSubpartIndex":
-            case "numBitsForSubpartIndex":
-            {
-                if (value is not int castValue) return false;
-                instance.m_numBitsForSubpartIndex = castValue;
                 return true;
             }
             case "m_trianglesSubparts":
@@ -188,6 +200,13 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
                 instance.m_weldingType = castValue;
                 return true;
             }
+            case "m_embeddedTrianglesSubpart":
+            case "embeddedTrianglesSubpart":
+            {
+                if (value is not Havok.hk55.hkpExtendedMeshShapeTrianglesSubpart castValue) return false;
+                instance.m_embeddedTrianglesSubpart = castValue;
+                return true;
+            }
             case "m_defaultCollisionFilterInfo":
             case "defaultCollisionFilterInfo":
             {
@@ -207,6 +226,13 @@ internal sealed class CustomParamStorageExtendedMeshShapeData : Havok.Formats.Ha
             {
                 if (value is not float castValue) return false;
                 instance.m_triangleRadius = castValue;
+                return true;
+            }
+            case "m_padding":
+            case "padding":
+            {
+                if (value is not int castValue) return false;
+                instance.m_padding = castValue;
                 return true;
             }
             case "m_meshstorage":

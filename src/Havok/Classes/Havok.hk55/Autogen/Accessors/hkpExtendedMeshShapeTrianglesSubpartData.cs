@@ -37,22 +37,10 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 value = instance.m_numMaterials;
                 return true;
             }
-            case "m_userData":
-            case "userData":
-            {
-                value = instance.m_userData;
-                return true;
-            }
             case "m_numTriangleShapes":
             case "numTriangleShapes":
             {
                 value = instance.m_numTriangleShapes;
-                return true;
-            }
-            case "m_numVertices":
-            case "numVertices":
-            {
-                value = instance.m_numVertices;
                 return true;
             }
             case "m_vertexStriding":
@@ -61,10 +49,16 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 value = instance.m_vertexStriding;
                 return true;
             }
-            case "m_triangleOffset":
-            case "triangleOffset":
+            case "m_numVertices":
+            case "numVertices":
             {
-                value = instance.m_triangleOffset;
+                value = instance.m_numVertices;
+                return true;
+            }
+            case "m_extrusion":
+            case "extrusion":
+            {
+                value = instance.m_extrusion;
                 return true;
             }
             case "m_indexStriding":
@@ -85,16 +79,10 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 value = instance.m_flipAlternateTriangles;
                 return true;
             }
-            case "m_extrusion":
-            case "extrusion":
+            case "m_triangleOffset":
+            case "triangleOffset":
             {
-                value = instance.m_extrusion;
-                return true;
-            }
-            case "m_transform":
-            case "transform":
-            {
-                value = instance.m_transform;
+                value = instance.m_triangleOffset;
                 return true;
             }
             default:
@@ -150,18 +138,18 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 instance.m_numMaterials = castValue;
                 return true;
             }
-            case "m_userData":
-            case "userData":
-            {
-                if (value is not ulong castValue) return false;
-                instance.m_userData = castValue;
-                return true;
-            }
             case "m_numTriangleShapes":
             case "numTriangleShapes":
             {
                 if (value is not int castValue) return false;
                 instance.m_numTriangleShapes = castValue;
+                return true;
+            }
+            case "m_vertexStriding":
+            case "vertexStriding":
+            {
+                if (value is not int castValue) return false;
+                instance.m_vertexStriding = castValue;
                 return true;
             }
             case "m_numVertices":
@@ -171,24 +159,17 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 instance.m_numVertices = castValue;
                 return true;
             }
-            case "m_vertexStriding":
-            case "vertexStriding":
+            case "m_extrusion":
+            case "extrusion":
             {
-                if (value is not ushort castValue) return false;
-                instance.m_vertexStriding = castValue;
-                return true;
-            }
-            case "m_triangleOffset":
-            case "triangleOffset":
-            {
-                if (value is not int castValue) return false;
-                instance.m_triangleOffset = castValue;
+                if (value is not Vector4 castValue) return false;
+                instance.m_extrusion = castValue;
                 return true;
             }
             case "m_indexStriding":
             case "indexStriding":
             {
-                if (value is not ushort castValue) return false;
+                if (value is not int castValue) return false;
                 instance.m_indexStriding = castValue;
                 return true;
             }
@@ -214,18 +195,11 @@ internal sealed class hkpExtendedMeshShapeTrianglesSubpartData : Havok.Formats.H
                 instance.m_flipAlternateTriangles = castValue;
                 return true;
             }
-            case "m_extrusion":
-            case "extrusion":
+            case "m_triangleOffset":
+            case "triangleOffset":
             {
-                if (value is not Vector4 castValue) return false;
-                instance.m_extrusion = castValue;
-                return true;
-            }
-            case "m_transform":
-            case "transform":
-            {
-                if (value is not Havok.hk55.hkQsTransform castValue) return false;
-                instance.m_transform = castValue;
+                if (value is not int castValue) return false;
+                instance.m_triangleOffset = castValue;
                 return true;
             }
             default:
