@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Unified Havok library, Phase 2: registry-driven format engines (tagfile now; packfile in Phase 4).
+         Works on Havok.Core types and any IHavokClassSet; it doesn't know about HKLib.
+         (Documentation/Claude/Unified Havok Library Plan.md) -->
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <RootNamespace>Havok.Formats</RootNamespace>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <!-- The round-trip survey decodes raw sections with the engine's reader -->
+    <ItemGroup>
+        <InternalsVisibleTo Include="HavokLibSurvey" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Havok.Core\Havok.Core.csproj" />
+        <ProjectReference Include="..\..\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
+    </ItemGroup>
+
+</Project>

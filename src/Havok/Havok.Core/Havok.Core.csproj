@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Unified Havok library, Phase 1: SDK-agnostic type model, registry + overlays, game profiles, header sniffing.
+         Standalone: HKLib is not switched over to it until Phase 2 (Documentation/Claude/Unified Havok Library Plan.md). -->
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <RootNamespace>Havok</RootNamespace>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <!-- The registries are shared with HKLib.Reflection rather than copied -->
+    <ItemGroup>
+        <Content Include="..\HKLib.Reflection\Res\*.xml" Link="Res\%(Filename)%(Extension)">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>

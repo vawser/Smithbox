@@ -1,0 +1,321 @@
+using Andre.Core;
+using SoulsFormats;
+using System.Diagnostics;
+
+/// <summary>
+/// The compendium held by the container a file came from, raw and parsed per library (parsed on first use).
+/// </summary>
+public sealed class ContainerContext
+{
+    public Game Game;
+    public byte[] Compendium;
+    public string CompendiumSdk = "";
+
+    private readonly object _lock = new();
+    private readonly Dictionary<string, object> _parsed = new();
+    private readonly Dictionary<string, string> _errors = new();
+
+    /// <summary>
+    /// The compendium parsed by <paramref name="parse"/>, cached under <paramref name="key"/>. Throws the parse error
+    /// again on later calls.
+    /// </summary>
+    public T Get<T>(string key, Func<byte[], T> parse) where T : class
+    {
+        if (Compendium == null)
+            return null;
+        lock (_lock)
+        {
+            if (_parsed.TryGetValue(key, out var v)) return (T)v;
+            if (_errors.TryGetValue(key, out var err)) throw new InvalidDataException("compendium: " + err);
+            try
+            {
+                var p = parse(Compendium);
+                _parsed[key] = p;
+                return p;
+            }
+            catch (Exception e)
+            {
+                _errors[key] = e.Message;
+                throw new InvalidDataException("compendium: " + e.Message);
+            }
+        }
+    }
+}
+
+public sealed class LibResult
+{
+    public string Lib;
+    public bool Read;
+    public string ReadError;
+    public double ReadMs;
+    public bool WriteSupported;
+    public bool Write;
+    public string WriteError;
+    public double WriteMs;
+    public bool ByteIdentical;
+    public long FirstByteDiff = -1;
+    public int SizeDelta;
+    public bool Reread;
+    public string RereadError;
+    public bool GraphCompared;
+    public string GraphDiff;     // null when equal
+    public bool FixedPoint;      // write(reread) == first write
+    [NonSerialized] public object Root;
+    [NonSerialized] public byte[] Written;
+
+    // Unified engine vs the HKLib serializer it replaces (set on unified results only)
+    public string ParityWith;        // the HKLib library compared against
+    public bool ParityCompared;
+    public string ParityGraphDiff;   // unified read vs HKLib read; null when equal
+    public bool? ParityBytesEqual;   // unified write vs HKLib write
+    public string SectionDiff;       // unified write vs original, by section, when not byte-identical
+}
+
+/// <summary>
+/// One of the current libraries, wrapped so every file goes through the same read → write → re-read → compare steps.
+/// </summary>
+public abstract class Library
+{
+    public abstract string Name { get; }
+    public abstract bool Applies(SniffInfo sniff, Game game);
+    public virtual bool CanWrite => true;
+    public virtual bool CanGraphCompare => true;
+    public abstract object Read(byte[] data, ContainerContext ctx, bool comp);
+    public virtual byte[] Write(object root, ContainerContext ctx, bool comp) => throw new NotSupportedException();
+
+    public LibResult Run(byte[] data, ContainerContext ctx, bool comp)
+    {
+        var r = new LibResult { Lib = Name, WriteSupported = CanWrite };
+        var sw = Stopwatch.StartNew();
+        try
+        {
+            r.Root = Read(data, ctx, comp);
+            r.Read = r.Root != null;
+            if (!r.Read) r.ReadError = "returned null";
+        }
+        catch (Exception e)
+        {
+            r.ReadError = Describe(e);
+        }
+        r.ReadMs = sw.Elapsed.TotalMilliseconds;
+        if (!r.Read || !CanWrite)
+            return r;
+
+        byte[] written;
+        sw.Restart();
+        try
+        {
+            written = Write(r.Root, ctx, comp);
+            r.Write = true;
+            r.Written = written;
+        }
+        catch (Exception e)
+        {
+            r.WriteError = Describe(e);
+            return r;
+        }
+        r.WriteMs = sw.Elapsed.TotalMilliseconds;
+
+        r.SizeDelta = written.Length - data.Length;
+        r.FirstByteDiff = FirstDiff(data, written);
+        r.ByteIdentical = r.FirstByteDiff < 0;
+
+        object reread;
+        try
+        {
+            reread = Read(written, ctx, comp);
+            r.Reread = reread != null;
+        }
+        catch (Exception e)
+        {
+            r.RereadError = Describe(e);
+            return r;
+        }
+
+        if (CanGraphCompare)
+        {
+            r.GraphCompared = true;
+            try { r.GraphDiff = GraphCompare.Compare(r.Root, reread); }
+            catch (Exception e) { r.GraphDiff = "compare threw: " + Describe(e); }
+        }
+
+        try { r.FixedPoint = FirstDiff(written, Write(reread, ctx, comp)) < 0; }
+        catch { r.FixedPoint = false; }
+
+        return r;
+    }
+
+    private static long FirstDiff(byte[] a, byte[] b)
+    {
+        var n = Math.Min(a.Length, b.Length);
+        var i = a.AsSpan(0, n).CommonPrefixLength(b.AsSpan(0, n));
+        if (i < n) return i;
+        return a.Length == b.Length ? -1 : n;
+    }
+
+    /// <summary>
+    /// Exception type, message and the innermost frame in a Havok library, so failures group by cause.
+    /// </summary>
+    public static string Describe(Exception e)
+    {
+        while (e is AggregateException or System.Reflection.TargetInvocationException && e.InnerException != null)
+            e = e.InnerException;
+        var frame = new StackTrace(e, false).GetFrames()?
+            .Select(f => f.GetMethod())
+            .FirstOrDefault(m => m?.DeclaringType?.Namespace is { } ns && (ns.StartsWith("HKLib") || ns.StartsWith("HKX2") || ns == "SoulsFormats"));
+        var where = frame == null ? "" : $" @ {frame.DeclaringType.Name}.{frame.Name}";
+        var msg = e.Message.Length > 160 ? e.Message[..160] : e.Message;
+        return $"{e.GetType().Name}: {msg}{where}";
+    }
+}
+
+public sealed class SoulsFormatsHkx : Library
+{
+    public override string Name => "SoulsFormats HKX";
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Packfile";
+    public override bool CanGraphCompare => false;
+
+    private static HKX.HKXVariation Variation(Game game) => game switch
+    {
+        Game.DES => HKX.HKXVariation.HKXDeS,
+        Game.DS1 or Game.DS1R => HKX.HKXVariation.HKXDS1,
+        Game.BB => HKX.HKXVariation.HKXBloodBorne,
+        Game.DS2 or Game.DS2S => HKX.HKXVariation.HKXDS2,
+        _ => HKX.HKXVariation.HKXDS3
+    };
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) => HKX.Read(data, Variation(ctx.Game));
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp)
+    {
+        var hkx = (HKX)root;
+        hkx.Compression = DCX.Type.None;
+        return hkx.Write();
+    }
+}
+
+public sealed class Hkx2Packfile : Library
+{
+    public override string Name => "HKX2 packfile";
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Packfile";
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) =>
+        new HKX2.PackFileDeserializer().Deserialize(new BinaryReaderEx(false, data));
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp)
+    {
+        var bw = new BinaryWriterEx(false);
+        new HKX2.PackFileSerializer().Serialize((HKX2.IHavokObject)root, bw);
+        return bw.FinishBytes();
+    }
+}
+
+public sealed class Hkx2Tagfile : Library
+{
+    public override string Name => "HKX2 tagfile";
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile";
+    public override bool CanWrite => false;
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp)
+    {
+        var compendium = !comp ? null : ctx.Get("hkx2", HKX2.TagFileDeserializer.ReadCompendium);
+        return new HKX2.TagFileDeserializer().Deserialize(data, compendium);
+    }
+}
+
+public sealed class HkLib2018 : Library
+{
+    public override string Name => "HKLib 2018";
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith("2018");
+
+    private static HKLib.Serialization.hk2018.Binary.HavokBinarySerializer Create(ContainerContext ctx, bool useComp)
+    {
+        var s = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(ctx.Game == Game.NR
+            ? HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign
+            : HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
+        var compendium = !useComp ? null : ctx.Get("hklib2018", bytes =>
+            new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(HKLib.Reflection.hk2018.HavokTypeRegistry.Instance)
+                .ReadCompendium(new MemoryStream(bytes)));
+        if (useComp && compendium != null) s.LoadCompendium(compendium);
+        return s;
+    }
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(new MemoryStream(data));
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp)
+    {
+        using var ms = new MemoryStream();
+        Create(ctx, comp).Write((HKLib.hk2018.IHavokObject)root, ms);
+        return ms.ToArray();
+    }
+}
+
+public sealed class HkLib2019 : Library
+{
+    public override string Name => "HKLib 2019";
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith("2019");
+
+    private static HKLib.Serialization.hk2019.Binary.HavokBinarySerializer Create(ContainerContext ctx, bool useComp)
+    {
+        var s = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
+        var compendium = !useComp ? null : ctx.Get("hklib2019", bytes =>
+            new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().ReadCompendium(new MemoryStream(bytes)));
+        if (useComp && compendium != null) s.LoadCompendium(compendium);
+        return s;
+    }
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(new MemoryStream(data));
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp)
+    {
+        using var ms = new MemoryStream();
+        Create(ctx, comp).Write((HKLib.hk2019.IHavokObject)root, ms);
+        return ms.ToArray();
+    }
+}
+
+/// <summary>
+/// The unified tagfile engine (Havok.Formats) reading into HKLib's classes through the bridge, with one dialect.
+/// </summary>
+public sealed class UnifiedTagfile : Library
+{
+    private readonly string _name;
+    private readonly string _sdkPrefix;
+    private readonly Havok.Formats.Tagfile.TagfileDialect _dialect;
+
+    public UnifiedTagfile(string name, string sdkPrefix, Havok.Formats.Tagfile.TagfileDialect dialect, string parityWith)
+    {
+        _name = name;
+        _sdkPrefix = sdkPrefix;
+        _dialect = dialect;
+        ParityWith = parityWith;
+    }
+
+    public override string Name => _name;
+
+    /// <summary>
+    /// The HKLib library this one must match.
+    /// </summary>
+    public string ParityWith { get; }
+
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith(_sdkPrefix);
+
+    private Havok.Formats.Tagfile.HavokTagfileSerializer Create(ContainerContext ctx, bool useComp)
+    {
+        var profile = Havok.HavokProfile.FromGame(ctx.Game.ToString())
+                      ?? throw new InvalidOperationException($"No profile for {ctx.Game}");
+        var s = Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect);
+        if (useComp)
+        {
+            // keyed by SDK: every dialect of an SDK reads a compendium the same way
+            var compendium = ctx.Get("unified" + _sdkPrefix, bytes =>
+                Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect).ReadCompendium(bytes));
+            if (compendium != null) s.LoadCompendium(compendium);
+        }
+        return s;
+    }
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(data);
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp) => Create(ctx, comp).Write(root);
+}
