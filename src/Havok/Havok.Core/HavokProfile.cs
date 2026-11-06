@@ -72,10 +72,10 @@ public sealed class HavokProfile
     public static readonly HavokProfile NR = new("NR", HavokSdk.Hk2018, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20180100.xml", "HavokTypeRegistry20180100_NR.xml");
 
-    // DB_NT needs an overlay of its own (survey: HKLib reads 123/710 files with the ER registry). Until it exists the
-    // ER registry is used, as Smithbox does today.
+    // DB_NT's types differ from ER's in 45 layouts and add 6 types; the overlay is built from every DB_NT file by the
+    // buildoverlay mode of Tools/HavokLibSurvey (Havok Library Survey/DB_NT Types.md)
     public static readonly HavokProfile DB_NT = new("DB_NT", HavokSdk.Hk2018, HavokContainer.Tagfile, 8, false,
-        "HavokTypeRegistry20180100.xml");
+        "HavokTypeRegistry20180100.xml", "HavokTypeRegistry20180100_DB_NT.xml");
 
     // Assumed to match DB_NT; no DB game data was surveyed. (verify)
     public static readonly HavokProfile DB = new("DB", HavokSdk.Hk2018, HavokContainer.Tagfile, 8, false,

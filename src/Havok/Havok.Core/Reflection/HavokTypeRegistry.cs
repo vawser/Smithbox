@@ -139,9 +139,28 @@ public sealed class HavokTypeRegistry
         Dictionary<string, XElement> baseTypes = typeRegistry.Elements().SelectMany(x => x.Elements())
             .ToDictionary(x => x.Attribute("Id")!.Value);
 
+        XElement group = typeRegistry.Elements().First();
         foreach (XElement type in overlay.Elements("HavokType"))
         {
             string id = type.Attribute("Id")!.Value;
+
+            // New="true" adds a type the base registry doesn't have. Ids are indices, so new ones must continue on from
+            // the highest Id.
+            if (type.Attribute("New")?.Value == "true")
+            {
+                if (int.Parse(id) != baseTypes.Count + 1)
+                {
+                    throw new InvalidDataException(
+                        $"New overlay type Id {id} must be {baseTypes.Count + 1}, the next Id after the base registry's.");
+                }
+
+                var added = new XElement(type);
+                added.Attribute("New")!.Remove();
+                group.Add(added);
+                baseTypes[id] = added;
+                continue;
+            }
+
             if (!baseTypes.TryGetValue(id, out XElement? baseType))
             {
                 throw new InvalidDataException($"Overlay type Id {id} is not in the base registry.");

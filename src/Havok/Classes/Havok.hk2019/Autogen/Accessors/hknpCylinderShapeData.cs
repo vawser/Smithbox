@@ -1,0 +1,205 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk2019.Accessors;
+
+internal sealed class hknpCylinderShapeData : Havok.Formats.HavokFieldAccess<Havok.hk2019.hknpCylinderShape>
+{
+    public hknpCylinderShapeData(Havok.hk2019.hknpCylinderShape instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_flags":
+            case "flags":
+            {
+                value = instance.m_flags;
+                return true;
+            }
+            case "m_type":
+            case "type":
+            {
+                value = instance.m_type;
+                return true;
+            }
+            case "m_numShapeKeyBits":
+            case "numShapeKeyBits":
+            {
+                value = instance.m_numShapeKeyBits;
+                return true;
+            }
+            case "m_dispatchType":
+            case "dispatchType":
+            {
+                value = instance.m_dispatchType;
+                return true;
+            }
+            case "m_convexRadius":
+            case "convexRadius":
+            {
+                value = instance.m_convexRadius;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                value = instance.m_userData;
+                return true;
+            }
+            case "m_properties":
+            case "properties":
+            {
+                value = instance.m_properties;
+                return true;
+            }
+            case "m_maxAllowedPenetration":
+            case "maxAllowedPenetration":
+            {
+                value = instance.m_maxAllowedPenetration;
+                return true;
+            }
+            case "m_hull":
+            case "hull":
+            {
+                value = instance.m_hull;
+                return true;
+            }
+            case "m_a":
+            case "a":
+            {
+                value = instance.m_a;
+                return true;
+            }
+            case "m_b":
+            case "b":
+            {
+                value = instance.m_b;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_flags":
+            case "flags":
+            {
+                if (value is Havok.hk2019.hknpShape.FlagsEnum castValue)
+                {
+                    instance.m_flags = castValue;
+                    return true;
+                }
+                if (value is ushort ushortValue)
+                {
+                    instance.m_flags = (Havok.hk2019.hknpShape.FlagsEnum)ushortValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_type":
+            case "type":
+            {
+                if (value is Havok.hk2019.hknpShapeType.Enum castValue)
+                {
+                    instance.m_type = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_type = (Havok.hk2019.hknpShapeType.Enum)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_numShapeKeyBits":
+            case "numShapeKeyBits":
+            {
+                if (value is not byte castValue) return false;
+                instance.m_numShapeKeyBits = castValue;
+                return true;
+            }
+            case "m_dispatchType":
+            case "dispatchType":
+            {
+                if (value is Havok.hk2019.hknpCollisionDispatchType.Enum castValue)
+                {
+                    instance.m_dispatchType = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_dispatchType = (Havok.hk2019.hknpCollisionDispatchType.Enum)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_convexRadius":
+            case "convexRadius":
+            {
+                if (value is not float castValue) return false;
+                instance.m_convexRadius = castValue;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                if (value is not ulong castValue) return false;
+                instance.m_userData = castValue;
+                return true;
+            }
+            case "m_properties":
+            case "properties":
+            {
+                if (value is null)
+                {
+                    instance.m_properties = default;
+                    return true;
+                }
+                if (value is Havok.hk2019.hkRefCountedProperties castValue)
+                {
+                    instance.m_properties = castValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_maxAllowedPenetration":
+            case "maxAllowedPenetration":
+            {
+                if (value is not float castValue) return false;
+                instance.m_maxAllowedPenetration = castValue;
+                return true;
+            }
+            case "m_hull":
+            case "hull":
+            {
+                if (value is not Havok.hk2019.hknpConvexHull castValue) return false;
+                instance.m_hull = castValue;
+                return true;
+            }
+            case "m_a":
+            case "a":
+            {
+                if (value is not Vector4 castValue) return false;
+                instance.m_a = castValue;
+                return true;
+            }
+            case "m_b":
+            case "b":
+            {
+                if (value is not Vector4 castValue) return false;
+                instance.m_b = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

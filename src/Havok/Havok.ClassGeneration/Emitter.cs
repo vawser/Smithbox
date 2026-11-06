@@ -319,6 +319,19 @@ internal static class Emitter
 
               """);
 
+        File.WriteAllText(Path.Join(outputDirectory, "hkPropertyBag.cs"),
+            $$"""
+              {{Header}}
+
+              namespace {{ns}};
+
+              /// <summary>
+              /// Written by hand in every SDK, as in HKLib: the property bag's only field isn't serialized, so it is empty.
+              /// </summary>
+              public class hkPropertyBag : IHavokObject { }
+
+              """);
+
         File.WriteAllText(Path.Join(outputDirectory, "GlobalUsing.cs"),
             $"""
              {Header}

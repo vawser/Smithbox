@@ -91,7 +91,7 @@ public static class Report
         sb.AppendLine();
 
         // Unified engine parity
-        var unifiedRuns = runs.Where(x => x.Lib.Lib.StartsWith("Unified")).ToList();
+        var unifiedRuns = runs.Where(x => x.Lib.Lib.StartsWith("Unified") || x.Lib.Lib.StartsWith("Generated")).ToList();
         if (unifiedRuns.Count > 0)
         {
             sb.AppendLine("## Unified tagfile engine vs HKLib");

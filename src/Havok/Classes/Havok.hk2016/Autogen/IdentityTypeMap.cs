@@ -837,7 +837,7 @@ public static class IdentityTypeMap
         { "hkMatrix4f", typeof(Matrix4x4) },
         { "hkMeshBoneIndexMapping", typeof(hkMeshBoneIndexMapping) },
         { "hkPackedVector3", typeof(hkPackedVector3) },
-        { "hkPropertyBag", typeof(List<hkDefaultPropertyBag>) },
+        { "hkPropertyBag", typeof(hkPropertyBag) },
         { "hkPropertyDesc", typeof(hkPropertyDesc) },
         { "hkPropertyFlags::Enum", typeof(hkPropertyFlags.Enum) },
         { "hkPropertyId", typeof(hkPropertyId) },

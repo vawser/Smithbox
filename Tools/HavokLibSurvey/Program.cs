@@ -23,8 +23,9 @@ var coreCheck = args.Contains("--core");
 var coreRegistryLines = coreCheck ? CoreCheck.CompareRegistries() : null;
 if (coreRegistryLines != null) foreach (var l in coreRegistryLines) Console.WriteLine(l);
 Survey.BuildRegistry = args.Contains("--buildregistry");
-Survey.TypeDiffEnabled = args.Contains("--typediff") || Survey.BuildRegistry;
-args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry")).ToArray();
+Survey.BuildOverlay = args.Contains("--buildoverlay");
+Survey.TypeDiffEnabled = args.Contains("--typediff") || Survey.BuildRegistry || Survey.BuildOverlay;
+args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry" or "--buildoverlay")).ToArray();
 
 var maxContainers = args.Length > 1 ? int.Parse(args[1]) : 30;
 var maxFiles = args.Length > 2 ? int.Parse(args[2]) : 8;
@@ -58,7 +59,7 @@ foreach (var gameName in games)
         Havok.HavokSdk.Hk2016 => "20160200",
         _ => null
     };
-    Survey.BuildSdkPrefix = Survey.BuildRegistry ? buildSdk?[..4] : null;
+    Survey.BuildSdkPrefix = Survey.BuildRegistry ? buildSdk?[..4] : Survey.BuildOverlay ? profile?.Sdk switch { Havok.HavokSdk.Hk2018 => "2018", Havok.HavokSdk.Hk2019 => "2019", _ => null } : null;
     var containers = Survey.FindContainers(fs, maxContainers, out var categoryCounts);
     Console.WriteLine($"{containers.Count} containers sampled from {categoryCounts.Values.Sum()} ({fsNote})");
 
@@ -105,6 +106,15 @@ foreach (var gameName in games)
             foreach (var l in typeLines.TakeLast(3)) Console.WriteLine(l);
         }
     }
+    if (Survey.BuildOverlay && profile?.RegistryFile != null)
+    {
+        // an overlay of the game's own types on its SDK's base registry, written into Havok.Core's Res folder
+        var overlayPath = Path.Combine("..", "Havok", "Havok.Core", "Res",
+            $"{Path.GetFileNameWithoutExtension(profile.RegistryFile)}_{gameName}.xml");
+        var overlayLines = TypeDiff.WriteOverlay(overlayPath, profile);
+        typeLines.AddRange(overlayLines);
+        foreach (var l in overlayLines.Take(12)) Console.WriteLine(l);
+    }
     Report.Write(reportPath, goldenPath, gameName, root, fsNote, args, coreRegistryLines, categoryCounts, containers.Count,
         results.ToList(), containerErrors.ToList(), sw.Elapsed, typeLines);
     Console.WriteLine($"{gameName}: {results.Count} files in {sw.Elapsed.TotalSeconds:F0}s → {Path.GetFullPath(reportPath)}");
@@ -129,6 +139,7 @@ public static class Survey
 {
     public static bool TypeDiffEnabled;
     public static bool BuildRegistry;
+    public static bool BuildOverlay;
     public static string BuildSdkPrefix;
 
     public static readonly Library[] Libraries =
@@ -141,6 +152,8 @@ public static class Survey
         new UnifiedTagfile("Unified 2018 legacy", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018Legacy, "HKLib 2018"),
         new UnifiedTagfile("Unified 2018", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018, "HKLib 2018"),
         new UnifiedTagfile("Unified 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "HKLib 2019"),
+        new UnifiedTagfile("Generated 2018", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018, "Unified 2018", Havok.hk2018.ClassSet.For),
+        new UnifiedTagfile("Generated 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "Unified 2019", Havok.hk2019.ClassSet.For),
         new UnifiedTagfile("Unified 2016", "2016", Havok.Formats.Tagfile.TagfileDialect.Hk2016, null, _ => Havok.hk2016.ClassSet.For(Havok.HavokProfile.SDT)),
         new UnifiedTagfile("Unified 2015", "2015", Havok.Formats.Tagfile.TagfileDialect.Hk2015, null, _ => Havok.hk2015.ClassSet.For(Havok.HavokProfile.DS1R)),
     ];
@@ -337,7 +350,7 @@ public static class Survey
             var hklib = r.Libs.FirstOrDefault(l => l.Lib == lib.ParityWith);
             if (hklib == null || !hklib.Read || !unified.Read) continue;
             unified.ParityCompared = true;
-            try { unified.ParityGraphDiff = GraphCompare.Compare(hklib.Root, unified.Root); }
+            try { unified.ParityGraphDiff = lib.CrossClassSet ? GraphCompare.CompareAcross(hklib.Root, unified.Root) : GraphCompare.Compare(hklib.Root, unified.Root); }
             catch (Exception e) { unified.ParityGraphDiff = "compare threw: " + Library.Describe(e); }
             if (hklib.Written != null && unified.Written != null)
                 unified.ParityBytesEqual = hklib.Written.AsSpan().SequenceEqual(unified.Written);

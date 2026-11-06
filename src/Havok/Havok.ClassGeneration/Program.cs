@@ -4,7 +4,7 @@ using HKLib.Reflection.hk2018;
 // Generates an SDK's class set for the unified Havok library: the classes, a field accessor per class, the identity
 // type map, the SDK's IHavokObject marker and its class set entry point.
 //
-//   Havok.ClassGeneration <src/Havok directory> <registry xml> <namespace> <output project directory> [partial class...]
+//   Havok.ClassGeneration <src/Havok directory> <registry xml> <namespace> <output project directory> [partial class...] [--overlay <xml>]...
 //
 // e.g. Havok.ClassGeneration src/Havok src/Havok/Havok.Core/Res/HavokTypeRegistry20160200.xml Havok.hk2016 src/Havok/Classes/Havok.hk2016
 //
@@ -13,7 +13,7 @@ using HKLib.Reflection.hk2018;
 
 if (args.Length < 4)
 {
-    Console.WriteLine("Usage: Havok.ClassGeneration <src/Havok directory> <registry xml> <namespace> <output project directory> [partial class...]");
+    Console.WriteLine("Usage: Havok.ClassGeneration <src/Havok directory> <registry xml> <namespace> <output project directory> [partial class...] [--overlay <xml>]...");
     return 1;
 }
 
@@ -21,7 +21,14 @@ string havokDirectory = args[0];
 string registryPath = args[1];
 Options.Namespace = args[2];
 string outputDirectory = Path.Join(args[3], "Autogen");
-foreach (string partialClass in args.Skip(4)) Options.PartialClasses.Add(partialClass);
+
+// the rest: partial class names, and "--overlay <xml>" for each game variant whose fields the classes must also hold
+List<string> overlays = new();
+for (int i = 4; i < args.Length; i++)
+{
+    if (args[i] == "--overlay" && i + 1 < args.Length) overlays.Add(args[++i]);
+    else Options.PartialClasses.Add(args[i]);
+}
 
 if (Directory.Exists(outputDirectory) && Directory.EnumerateFileSystemEntries(outputDirectory).Any())
 {
@@ -32,8 +39,9 @@ if (Directory.Exists(outputDirectory) && Directory.EnumerateFileSystemEntries(ou
 string resDirectory = Path.Join(havokDirectory, "HKLib.Reflection", "Res");
 HavokTypeRegistry registry2018 = HavokTypeRegistry.Load(Path.Join(resDirectory, "HavokTypeRegistry20180100.xml"));
 RegistryLoader registry = RegistryLoader.Load(registryPath);
+List<RegistryLoader> variants = overlays.Select(overlay => RegistryLoader.Load(registryPath, overlay)).ToList();
 
-Generator generator = new(registry, registry2018);
+Generator generator = new(registry, registry2018, variants);
 generator.Run();
 
 Emitter.WriteClasses(generator.Decls, Path.Join(outputDirectory, "Classes"));

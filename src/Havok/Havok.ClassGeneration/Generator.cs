@@ -43,9 +43,13 @@ internal class Generator
     // identities of enums used as the bits of an hkFlags
     private readonly HashSet<string> _flagsEnums = new();
 
-    public Generator(RegistryLoader registry, HavokTypeRegistry registry2018)
+    // the registry again with each game's overlay applied (NR, DB_NT): classes get the union of every variant's fields
+    private readonly List<RegistryLoader> _variants;
+
+    public Generator(RegistryLoader registry, HavokTypeRegistry registry2018, IEnumerable<RegistryLoader>? variants = null)
     {
         _registry = registry;
+        _variants = variants?.ToList() ?? new List<RegistryLoader>();
 
         foreach (HavokType type in registry2018.Types.Concat(registry.Types))
         {
@@ -86,14 +90,35 @@ internal class Generator
             else if (IsEnum(type)) GetEnumDecl(type);
         }
 
+        // Game variants: a type the base also has becomes another source of its declaration, whose extra fields are
+        // added; a type only the variant has gets a declaration of its own
+        foreach (HavokType type in _variants.SelectMany(x => x.Types))
+        {
+            if (type.Kind == HavokType.TypeKind.Record)
+            {
+                if (_declsByIdentity.TryGetValue(type.Identity, out Decl? existing))
+                {
+                    // HavokType equality is by identity, so variants of a type must be told apart by reference
+                    if (existing.Kind != DeclKind.Enum && !existing.Sources.Any(x => ReferenceEquals(x, type))) existing.Sources.Add(type);
+                }
+                else
+                {
+                    GetRecordDecl(type);
+                }
+            }
+            else if (IsEnum(type)) GetEnumDecl(type);
+        }
+
         // building a declaration can reference new ones
         while (Decls.FirstOrDefault(x => !x.Built) is { } decl)
         {
             Build(decl);
         }
 
-        foreach (HavokType type in _registry.Types)
+        HashSet<string> mapped = new();
+        foreach (HavokType type in _registry.Types.Concat(_variants.SelectMany(x => x.Types)))
         {
+            if (!mapped.Add(type.Identity)) continue;
             if (GetTypeofText(type) is { } text) IdentityTypeMap.Add((type.Identity, text));
         }
 
@@ -349,6 +374,18 @@ internal class Generator
             if (field.NonSerializable) continue;
             decl.Fields.Add(new FieldDecl("m_" + field.Name, Render(field.Type, substitutions)));
         }
+
+        // fields only some game variants have (e.g. NR's CustomManualSelectorGenerator.isBasePoseAnim) are added, so one
+        // class holds every game's data. Generic declarations are built from their instantiations instead.
+        if (decl.GenericParameters.Count > 0) return;
+        foreach (HavokType other in decl.Sources.Where(x => !ReferenceEquals(x, source) && x.Identity == source.Identity))
+        {
+            foreach (HavokType.Member field in other.Fields.Skip(other.Parent?.Fields.Count ?? 0))
+            {
+                if (field.NonSerializable || decl.Fields.Any(x => x.Name == "m_" + field.Name)) continue;
+                decl.Fields.Add(new FieldDecl("m_" + field.Name, Render(field.Type, Empty)));
+            }
+        }
     }
 
     private static void AddSharedInterfaces(Decl decl)
@@ -385,6 +422,12 @@ internal class Generator
         if (substitutions.TryGetValue(type.Identity, out string? parameter))
         {
             return new TypeInfo(Shape.Generic, parameter);
+        }
+
+        // hkPropertyBag is written by hand, as in HKLib: an empty class (its only field isn't serialized)
+        if (type.Identity == "hkPropertyBag" || type.Type == typeof(HKLib.hk2018.hkPropertyBag))
+        {
+            return new TypeInfo(Shape.Init, "`hkPropertyBag`");
         }
 
         return type.Kind switch
@@ -596,7 +639,8 @@ internal class Generator
         type.Namespace is { } ns && (ns == Namespace2018 || ns.StartsWith(Namespace2018 + "."));
 
     // types written by hand in hk2019/Manual
-    private static bool IsManual(Type type) => type == typeof(HKLib.hk2018.IHavokObject);
+    private static bool IsManual(Type type) =>
+        type == typeof(HKLib.hk2018.IHavokObject) || type == typeof(HKLib.hk2018.hkPropertyBag);
 
     // hkEnum/hkFlags have presets too, but they are represented by the enum they wrap
     private static bool IsEnum(HavokType type) =>

@@ -27,6 +27,24 @@ public static class GraphCompare
         return Compare(a, b, "root", seen);
     }
 
+    [ThreadStatic] private static bool _byName;
+
+    /// <summary>
+    /// Compares graphs of two different class sets (HKLib's and a generated Havok.hkXXXX): types match by name, fields
+    /// by name, enums by value.
+    /// </summary>
+    public static string CompareAcross(object a, object b)
+    {
+        _byName = true;
+        try { return Compare(a, b); }
+        finally { _byName = false; }
+    }
+
+    private static string StripArity(string name) => name.IndexOf('`') is var i and >= 0 ? name[..i] : name;
+
+    private static long EnumValue(object e) =>
+        Enum.GetUnderlyingType(e.GetType()) == typeof(ulong) ? unchecked((long)Convert.ToUInt64(e)) : Convert.ToInt64(e);
+
     private static FieldInfo[] Fields(Type t) => FieldCache.GetOrAdd(t, type =>
     {
         var list = new List<FieldInfo>();
@@ -59,8 +77,16 @@ public static class GraphCompare
             return a == null && b == null ? null : $"{path}: {(a == null ? "null" : a.GetType().Name)} vs {(b == null ? "null" : b.GetType().Name)}";
 
         var ta = a.GetType();
-        if (ta != b.GetType())
-            return $"{path}: type {ta.Name} vs {b.GetType().Name}";
+        var tb = b.GetType();
+        if (_byName && ta != tb)
+        {
+            if (ta.IsEnum && tb.IsEnum)
+                return EnumValue(a) == EnumValue(b) ? null : $"{path}: {a} vs {b}";
+            if (StripArity(ta.Name) != StripArity(tb.Name) || ta.IsGenericType != tb.IsGenericType)
+                return $"{path}: type {ta.Name} vs {tb.Name}";
+        }
+        else if (ta != tb)
+            return $"{path}: type {ta.Name} vs {tb.Name}";
 
         if (IsLeaf(ta))
             return LeafEquals(a, b) ? null : $"{path}: {a} vs {b}";
@@ -96,6 +122,19 @@ public static class GraphCompare
             return null;
         }
 
+        if (_byName && ta != tb)
+        {
+            var fieldsB = Fields(tb).GroupBy(f => f.Name).ToDictionary(g => g.Key, g => g.First());
+            foreach (var f in Fields(ta))
+            {
+                if (!fieldsB.TryGetValue(f.Name, out var fb)) return $"{path}.{f.Name}: missing in {tb.FullName}";
+                var d = Compare(f.GetValue(a), fb.GetValue(b), $"{path}.{f.Name}", seen);
+                if (d != null) return d;
+            }
+            // fields only the second graph's classes have are fine: generated classes hold every game variant's fields
+            return null;
+        }
+
         foreach (var f in Fields(ta))
         {
             var d = Compare(f.GetValue(a), f.GetValue(b), $"{path}.{f.Name}", seen);
@@ -121,7 +160,7 @@ public static class GraphCompare
             if (IsLeaf(t)) continue;
             if (!t.IsValueType && !seen.Add(o)) continue;
 
-            if (t.Namespace != null && (t.Namespace.StartsWith("HKLib.hk20") || t.Namespace == "HKX2"))
+            if (t.Namespace != null && (t.Namespace.StartsWith("HKLib.hk20") || t.Namespace.StartsWith("Havok.hk20") || t.Namespace == "HKX2"))
                 names.Add(t.Name);
 
             if (o is IList l)

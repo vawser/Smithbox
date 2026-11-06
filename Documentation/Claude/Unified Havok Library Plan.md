@@ -195,7 +195,29 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 >   - **DS1R:** 482/482 read, graph and fixed point all, **479/482 byte-identical**. The 3 holdouts lose `hkViewPtr` PTCH entries, probably null view pointers that 2015 patches. *(verify)*
 > - **Regression caught and fixed:** adding `Havok.Matrix3x3` to Core silently changed what the HKLib bridge's unqualified `Matrix3x3` meant. Code inside `namespace Havok.*` resolves names from enclosing namespaces before `using` directives. The bridge now qualifies HKLib's. A full `ALL 30 8 --core` run after the fix matches Phase 2 exactly (ER 667/670, NR 638/642, AC6 773/774, DB_NT 123/123, full HKLib parity). The stray 2016 files in ER/AC6 now also read through hk2016. Code under `Havok.*` must qualify HKLib types.
 > - **Phase 3b (later): hk2014.** Convert `HKX.ClassGeneration/classxmlds3` to a registry and generate `Havok.hk2014`. Port HKX2's `Manual/` and `Builders/`. Best done with Phase 4, whose packfile engine is what can read those classes.
-> - **Phase 3c (later): hk2018/hk2019 in `Havok.*` and DB_NT.** Run the generator on the 2018/2019 registries, generate DB_NT's overlay from its files' types, add DB_NT's fields, and check against HKLib on the survey.
+> - **Phase 3c: hk2018/hk2019 in `Havok.*` and DB_NT. Done 2026-11-06**, see below.
+
+**Phase 3c: hk2018/hk2019 classes and DB_NT.**
+
+> **Status (2026-11-06): done.** Nothing in Smithbox uses these classes yet (Phase 6).
+> - **`src/Havok/Classes/Havok.hk2018`** (2,279 declarations) and **`Havok.hk2019`** (1,629) are generated from HKLib's registries. hk2019 keeps HKLib's hand-written compressed-mesh decode helpers in `Manual/`. `hkPropertyBag` is hand-shaped in every SDK, as in HKLib: an empty class, since its one field isn't serialized. hk2015/hk2016 were regenerated with this too.
+> - **Game variants in one class set.** The generator takes `--overlay` once per game. It loads the base registry with each overlay applied, and gives every class the union of all variants' fields. One `Havok.hk2018` therefore holds ER, NR (`CustomManualSelectorGenerator.isBasePoseAnim`) and DB_NT (`additiveType`, `hkcdSimdTree::Node.parent`, `CustomDockingGenerator`…). Each game's registry still describes its own layout, so reads and writes follow it.
+> - **DB_NT overlay.** Survey `--buildoverlay` builds `Havok.Core/Res/HavokTypeRegistry20180100_DB_NT.xml` from every DB_NT file:
+>   - **45 changed types** replace the base type with the same Id. They keep the base's runtime-only optionals bits, enum names and, where the files have none, hashes.
+>   - **6 new types** are added. Overlays now accept `New="true"` types, on Ids continuing from the base's highest. Both Core and the generator load them.
+>
+>   DB_NT's 1,143 described types all match the DB_NT registry (`--typediff`). DB_NT's new enum `AdditiveType` has no names in any file, so `m_additiveType` is a `byte`.
+> - **Verified** (`HavokLibSurvey <game> 30 8`, "Generated 2018/2019" rows):
+>
+>   | Game | Read: HKLib | Read: generated | Same data as HKLib | Same bytes as HKLib-backed engine | Byte-identical to original |
+>   |---|---|---|---|---|---|
+>   | ER | 670 / 670 | 670 / 670 | all | all | 667 / 670 |
+>   | NR | 642 / 642 | 642 / 642 | all | all | 638 / 642 |
+>   | AC6 | 774 / 774 | 774 / 774 | all | all | 773 / 774 |
+>   | **DB_NT** | **123 / 710** | **710 / 710** | all comparable | all comparable | **604 / 710** |
+>
+>   Every write round-trips: graph equal and fixed point. DB_NT's 106 non-identical files are almost all value-level: same section sizes, with the first difference a single byte inside DATA. That's probably non-0/1 booleans written back as 1, the same pattern as the ER/NR holdouts. *(verify)*
+> - **Two generator bugs found by the survey:** HKLib's `HavokType` equality is by identity, so game variants of a type must be told apart by reference; and generated classes may hold extra variant fields, so the cross-class-set compare accepts them.
 
 **Phase 4: packfile engine (hk2014).** Registry-driven packfile reader/writer. Acceptance: every DS3 golden file reads into `hk2014` and gives the same graph as HKX2. Writes match the original file wherever HKX2's do today (667/859 DS3 files). The new writer must *also* re-read cleanly where HKX2 doesn't: HKX2 drops `hkRelArray` data (`m_planes`) and fails to re-read 31 chr physics files, so HKX2 output is not the reference for those classes. Then the BB overlay, then DS2S (check whether it needs one).
 

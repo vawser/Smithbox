@@ -31,7 +31,7 @@ internal sealed class hclShapeData : Havok.Formats.HavokFieldAccess<Havok.hk2016
             case "m_propertyBag":
             case "propertyBag":
             {
-                if (value is not List<Havok.hk2016.hkDefaultPropertyBag> castValue) return false;
+                if (value is not Havok.hk2016.hkPropertyBag castValue) return false;
                 instance.m_propertyBag = castValue;
                 return true;
             }

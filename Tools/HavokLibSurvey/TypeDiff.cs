@@ -55,6 +55,17 @@ public static class TypeDiff
     }
 
     /// <summary>
+    /// --buildoverlay: writes an overlay of the collected types on the profile's base registry (no overlays).
+    /// </summary>
+    public static List<string> WriteOverlay(string path, HavokProfile profile)
+    {
+        string basePath = Path.Join(HavokProfile.ResourceFolder, profile.RegistryFile!);
+        var baseRegistry = HavokTypeRegistry.Load(basePath);
+        return OverlayBuilder.Write(path, basePath, profile.Game,
+            Types.ToDictionary(x => x.Key, x => x.Value.Type), Hashes, Describe, baseRegistry);
+    }
+
+    /// <summary>
     /// --buildregistry: writes every type collected as a registry XML in the HKLib format, with serialized optionals
     /// (root Optionals="Serialized") and property counts, so Havok.Core and the class generator can load it.
     /// Returns report lines.

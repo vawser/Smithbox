@@ -55,10 +55,15 @@ internal class RegistryLoader
 
     public Dictionary<HavokType, XElement> Elements { get; } = new();
 
-    public static RegistryLoader Load(string path)
+    /// <summary>
+    /// Loads a registry with overlays applied as Havok.Core does: an overlay type replaces the base type with the same
+    /// Id (same Name), or is added when marked New="true".
+    /// </summary>
+    public static RegistryLoader Load(string path, params string[] overlayPaths)
     {
         RegistryLoader loader = new();
         XElement registry = XElement.Load(path);
+        foreach (string overlayPath in overlayPaths) ApplyOverlay(registry, XElement.Load(overlayPath));
         Dictionary<int, int>? bitMap = registry.Attribute("Optionals")?.Value == "Serialized"
             ? null
             : registry.Attribute("Version")?.Value?.StartsWith("2019") == true ? OptionalBitMap2019 : OptionalBitMap2018;
@@ -161,6 +166,34 @@ internal class RegistryLoader
         }
 
         return loader;
+    }
+
+    private static void ApplyOverlay(XElement registry, XElement overlay)
+    {
+        Dictionary<string, XElement> baseTypes = registry.Elements().SelectMany(x => x.Elements())
+            .ToDictionary(x => x.Attribute("Id")!.Value);
+        XElement group = registry.Elements().First();
+
+        foreach (XElement type in overlay.Elements("HavokType"))
+        {
+            string id = type.Attribute("Id")!.Value;
+            XElement copy = new(type);
+            if (type.Attribute("New")?.Value == "true")
+            {
+                if (baseTypes.ContainsKey(id)) throw new InvalidDataException($"New overlay type Id {id} is already in the base registry.");
+                copy.Attribute("New")!.Remove();
+                group.Add(copy);
+                baseTypes[id] = copy;
+                continue;
+            }
+
+            if (!baseTypes.TryGetValue(id, out XElement? baseType))
+                throw new InvalidDataException($"Overlay type Id {id} is not in the base registry.");
+            if (baseType.Attribute("Name")!.Value != type.Attribute("Name")!.Value)
+                throw new InvalidDataException($"Overlay type Id {id} doesn't match the base registry's name.");
+            baseType.ReplaceWith(copy);
+            baseTypes[id] = copy;
+        }
     }
 
     /// <summary>

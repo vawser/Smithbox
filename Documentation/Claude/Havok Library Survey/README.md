@@ -18,6 +18,10 @@ Since Phase 2 the reports also run the unified tagfile engine (`Havok.Formats`, 
 
 `--buildregistry` writes a 2015 or 2016 registry into `src/Havok/Havok.Core/Res` from every type section of the game's tagfiles and compendiums. Run it with a large sample so it sees every file, e.g. `SDT 100000 100000 <out> 8 --buildregistry` (about 9 minutes). The "Tagfile layouts" section of each report gives the section tree of each tagfile format, which is where the dialects come from.
 
+`--buildoverlay` writes a game's overlay on its SDK's base registry (e.g. `DB_NT 100000 100000 <out> 8 --buildoverlay` writes `HavokTypeRegistry20180100_DB_NT.xml`). The "Generated 2018/2019" rows check the generated `Havok.hk2018`/`hk2019` classes against the same engine reading HKLib's classes, comparing the read data across the two class sets and the written bytes.
+
+**Phase 3c result** (2026-11-06): the generated hk2018/hk2019 classes match HKLib's data and the HKLib-backed engine's bytes on every ER, NR and AC6 file. They read all 710 DB_NT files (HKLib: 123), 604 of them byte-identical.
+
 **Phase 3 result** (2026-11-06): the generated `Havok.hk2016` and `Havok.hk2015` classes read SDT 744/752 and DS1R 482/482, and rewrite SDT 744/744 and DS1R 479/482 byte-identical.
 
 **Phase 2 result** (2026-11-06): files written byte-identical to the original, HKLib → unified engine: ER 0 → 667/670, NR 0 → 638/642, DB_NT 0 → 123/123 (of the files HKLib reads), AC6 773 → 773/774. Parity with HKLib holds on every file.

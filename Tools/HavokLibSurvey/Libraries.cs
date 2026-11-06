@@ -303,6 +303,11 @@ public sealed class UnifiedTagfile : Library
     /// </summary>
     public string ParityWith { get; }
 
+    /// <summary>
+    /// Reads into a generated class set, so parity with HKLib's classes compares graphs across class sets.
+    /// </summary>
+    public bool CrossClassSet => _classSet != null;
+
     public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith(_sdkPrefix);
 
     private Havok.Formats.Tagfile.HavokTagfileSerializer New(Havok.HavokProfile profile) => _classSet == null
@@ -316,8 +321,8 @@ public sealed class UnifiedTagfile : Library
         var s = New(profile);
         if (useComp)
         {
-            // keyed by SDK: every dialect of an SDK reads a compendium the same way
-            var compendium = ctx.Get("unified" + _sdkPrefix, bytes =>
+            // keyed by SDK and class set: the compendium's types come from the registry of the class set that parsed it
+            var compendium = ctx.Get("unified" + _sdkPrefix + (_classSet == null ? "hklib" : "generated"), bytes =>
                 New(profile).ReadCompendium(bytes));
             if (compendium != null) s.LoadCompendium(compendium);
         }
