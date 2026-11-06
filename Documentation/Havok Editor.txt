@@ -5,14 +5,8 @@
 - Adjustments:
     - DES displays duplicate entries (due to the odd arrangement the game data has)
     - Should should hide categories with no members
-    - 
-
-- Implement 3D Preview
-    - For Behaviors: use chr, allows animation playback
-    - For collision/navmesh: visualize the meshes
 
 - Improve Collision Generator:
-    - Add support for all HKX types
-    - Add preview of mesh (same method as 3D preview picker)
+    - Add support for DES/DS1/DS2
     - Add support for OBJ to HKX 
  

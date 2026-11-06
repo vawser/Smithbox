@@ -580,9 +580,12 @@ public class ModelExportTool
             return;
         }
 
-        if (CFG.Current.ModelExport_Output_Directory == "")
+        var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
+
+        if (!ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_Output_Directory, $"{flverName}.obj",
+                ModelExportPaths.OutputDirectoryName, out var outputPath, out var pathError))
         {
-            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Empty_Output_Directory"));
+            Smithbox.LogError(this, pathError);
             return;
         }
 
@@ -598,9 +601,6 @@ public class ModelExportTool
             CFG.Current.ModelExport_MirrorX,
             CFG.Current.ModelExport_MirrorY,
             CFG.Current.ModelExport_MirrorZ);
-
-        var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
-        var outputPath = Path.Combine(CFG.Current.ModelExport_Output_Directory, $"{flverName}.obj");
 
         if (CFG.Current.ModelExport_UseCollisionMaterial)
         {
@@ -626,16 +626,30 @@ public class ModelExportTool
         }
     }
 
+    /// <summary>
+    /// Converts the source FLVER's OBJ (from the Input Directory) to HKX with the collision tool's obj2fsnp.bat, which
+    /// only works on files in its own folder: the OBJ is copied there, and the HKX it makes is copied to the Output
+    /// Directory.
+    /// </summary>
     public void GenerateHKX()
     {
         var flverName = Path.GetFileNameWithoutExtension(SelectionMenu.FlverPath);
+        var objName = $"{flverName}.obj";
+        var hkxName = $"{flverName}.hkx";
 
-        var inputDir = CFG.Current.ModelExport_Input_Directory;
-        var outputDir = CFG.Current.ModelExport_Output_Directory;
-        var toolDir = CFG.Current.ModelExport_CollisionTool_Directory;
-
-        var targetFile = Path.Combine(inputDir, $"{flverName}.obj");
-        var tempTargetFile = Path.Combine(toolDir, $"{flverName}.obj");
+        // Every path is checked before anything is copied, so a bad setting leaves nothing behind
+        if (!ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_Input_Directory, objName,
+                ModelExportPaths.InputDirectoryName, out var targetFile, out var pathError)
+            || !ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_CollisionTool_Directory, objName,
+                ModelExportPaths.ToolDirectoryName, out var tempTargetFile, out pathError)
+            || !ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_CollisionTool_Directory, "obj2fsnp.bat",
+                ModelExportPaths.ToolDirectoryName, out var batFile, out pathError)
+            || !ModelExportPaths.TryResolveFilePath(CFG.Current.ModelExport_Output_Directory, hkxName,
+                ModelExportPaths.OutputDirectoryName, out var outputFile, out pathError))
+        {
+            Smithbox.LogError(this, pathError);
+            return;
+        }
 
         if (!File.Exists(targetFile))
         {
@@ -643,61 +657,115 @@ public class ModelExportTool
             return;
         }
 
-        if(File.Exists(tempTargetFile))
-        {
-            File.Delete(tempTargetFile);
-        }
-
-        // Copy file to the Tool dir so the bat file works correctly
-        File.Copy(targetFile, tempTargetFile);
-
-        var batFile = Path.Combine(toolDir, "obj2fsnp.bat");
-
         if (!File.Exists(batFile))
         {
             Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Missing_OBJ2HKX_Bat_File"));
             return;
         }
 
-        var startInfo = new ProcessStartInfo
+        var toolDir = Path.GetDirectoryName(batFile);
+        var tempOutputFile = Path.Combine(toolDir, hkxName);
+
+        // When a directory is the tool's own folder, its file is already where it needs to be. Copying the OBJ onto
+        // itself, or cleaning up an HKX that is the output, would delete the user's file.
+        var copyInput = !ModelExportPaths.IsSameFile(targetFile, tempTargetFile);
+        var copyOutput = !ModelExportPaths.IsSameFile(tempOutputFile, outputFile);
+
+        // Set while the HKX exists only in the tool's folder, so a failed copy to the output doesn't lose it
+        var keepGeneratedFile = false;
+
+        try
         {
-            FileName = "cmd.exe",
-            WorkingDirectory = toolDir,
-            UseShellExecute = false,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-            CreateNoWindow = true
-        };
+            if (copyInput)
+            {
+                File.Copy(targetFile, tempTargetFile, overwrite: true);
+            }
 
-        startInfo.ArgumentList.Add("/c");
-        startInfo.ArgumentList.Add(batFile);
-        startInfo.ArgumentList.Add($"{flverName}.obj");
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                WorkingDirectory = toolDir,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
 
-        using var process = Process.Start(startInfo);
+            startInfo.ArgumentList.Add("/c");
+            startInfo.ArgumentList.Add(batFile);
+            startInfo.ArgumentList.Add(objName);
 
-        var output = process.StandardOutput.ReadToEnd();
-        var error = process.StandardError.ReadToEnd();
-        process.WaitForExit();
+            // An HKX from an earlier run is told apart from this one's by its time
+            var started = DateTime.UtcNow;
 
-        var tempOutputFile = Path.Combine(toolDir, $"{flverName}.hkx");
-        var outputFile = Path.Combine(outputDir, $"{flverName}.hkx");
+            using var process = Process.Start(startInfo);
 
-        if (File.Exists(outputFile))
-        {
-            File.Delete(outputFile);
+            if (process == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_HKX_Tool_Not_Started"));
+                return;
+            }
+
+            // Both streams are read at once: reading one to its end first stalls the tool if it fills the other
+            var errorTask = process.StandardError.ReadToEndAsync();
+            var output = process.StandardOutput.ReadToEnd();
+            var errorOutput = errorTask.Result;
+            process.WaitForExit();
+
+            if (!File.Exists(tempOutputFile) || File.GetLastWriteTimeUtc(tempOutputFile) < started)
+            {
+                var toolOutput = string.IsNullOrWhiteSpace(errorOutput) ? output : errorOutput;
+                Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_HKX_Not_Generated",
+                    process.ExitCode, toolOutput.Trim()));
+                return;
+            }
+
+            if (copyOutput)
+            {
+                keepGeneratedFile = true;
+                File.Copy(tempOutputFile, outputFile, overwrite: true);
+                keepGeneratedFile = false;
+            }
+
+            Smithbox.Log(this, LOC.Get("MODEL_ModelExport_Generated_HKX", outputFile));
         }
-
-        File.Copy(tempOutputFile, outputFile);
-
-        // Cleanup
-        if (File.Exists(tempTargetFile))
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException or System.ComponentModel.Win32Exception)
         {
-            File.Delete(tempTargetFile);
+            Smithbox.LogError(this, keepGeneratedFile
+                ? LOC.Get("MODEL_ModelExport_Error_HKX_Copy_Failed", outputFile, tempOutputFile)
+                : LOC.Get("MODEL_ModelExport_Error_HKX_Failed", hkxName), e);
         }
-
-        if (File.Exists(tempOutputFile))
+        finally
         {
-            File.Delete(tempOutputFile);
+            // Only the copies made here are removed, never the user's OBJ or the output
+            if (copyInput)
+            {
+                TryDeleteTemporary(tempTargetFile);
+            }
+
+            if (copyOutput && !keepGeneratedFile)
+            {
+                TryDeleteTemporary(tempOutputFile);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes a file the HKX generation put in the tool's folder. Failing to is reported, but isn't an error in the
+    /// generation itself.
+    /// </summary>
+    private void TryDeleteTemporary(string path)
+    {
+        try
+        {
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_ModelExport_Error_Temp_Cleanup_Failed", path), e);
         }
     }
 }

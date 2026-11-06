@@ -193,6 +193,10 @@
       "Text": "HavokCollisionResource: Failed to load {0}"
     },
     {
+      "Key": "REND_MeshPreview_Build_Failed",
+      "Text": "MeshPreviewRenderer: Failed to build the mesh preview."
+    },
+    {
       "Key": "REND_HavokNavmeshResource_Load_Failed",
       "Text": "HavokNavmeshResource: Failed to load {0}"
     },

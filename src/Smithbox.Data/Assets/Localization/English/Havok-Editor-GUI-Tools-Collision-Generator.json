@@ -57,12 +57,100 @@
       "Text": "FLVER"
     },
     {
+      "Key": "HAVOK_CollisionGeneratorShape_OBJ",
+      "Text": "OBJ"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_Obj_Action",
+      "Text": "Select OBJ"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Select_Obj_Action_TT",
+      "Text": "Select the .obj file to use to generate the collision mesh."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Current_Source",
+      "Text": "Source OBJ: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Current_Source_None",
+      "Text": "No source OBJ defined yet."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Mirror_Header",
+      "Text": "OBJ Mirroring"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Mirror_Header_TT",
+      "Text": "The mirroring the OBJ was exported with. Use the same settings as the Model Editor's OBJ export to bring an exported model back into place."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_ForwardAxis_Header",
+      "Text": "OBJ Forward Axis"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_ForwardAxis_Header_TT",
+      "Text": "The OBJ axis that is the game's forward (+Z). Use the same setting as the Model Editor's OBJ export to bring an exported model back into place."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_UpAxis_Header",
+      "Text": "OBJ Up Axis"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_UpAxis_Header_TT",
+      "Text": "The OBJ axis that is the game's up (+Y). Use the same setting as the Model Editor's OBJ export to bring an exported model back into place."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Groups_Header",
+      "Text": "OBJ Groups"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Groups_Header_TT",
+      "Text": "The OBJ's objects and groups to include. A group starts at each o, g or usemtl line, and a material named hkm_Name_Property gives its group that collision material."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Group_Entry",
+      "Text": "Group: {0}: {1} [{2} triangles]"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Failed_Obj_Read",
+      "Text": "Failed to read OBJ file: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_No_Faces",
+      "Text": "{0} has no faces to build collision from."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Invalid_Line",
+      "Text": "Line {0} of the OBJ couldn't be read: {1}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Obj_Invalid_Index",
+      "Text": "Line {0} of the OBJ refers to vertex {1}, which doesn't exist."
+    },
+    {
       "Key": "HAVOK_CollisionGen_Parameters_Header",
       "Text": "Parameters"
     },
     {
       "Key": "HAVOK_CollisionGen_Parameters_Header_TT",
       "Text": "Determines the generation parameters to use for the target shape."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Preview_Header",
+      "Text": "Preview"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Preview_Header_TT",
+      "Text": "A 3D preview of the collision shape that Generate will build from the current settings."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Preview_Triangle_Count",
+      "Text": "Triangles: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Preview_Failed",
+      "Text": "Failed to build the collision preview."
     },
     {
       "Key": "HAVOK_CollisionGen_Action_Header",

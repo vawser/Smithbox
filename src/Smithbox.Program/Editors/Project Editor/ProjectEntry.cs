@@ -65,6 +65,7 @@ public class ProjectEntry
                 Handler.GparamEditorStub.Draw(device, cl);
 
             ModelPreviewCache.Draw(this);
+            MeshPreviewRenderer.Draw();
         }
     }
 

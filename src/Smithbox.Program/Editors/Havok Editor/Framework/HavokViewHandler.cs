@@ -83,6 +83,9 @@ public class HavokViewHandler
         // Stop the closed view's script file watchers
         view.Tools.HavokScriptReloader.Dispose();
 
+        // and let go of its collision preview
+        view.Tools.CollisionGeneratorTool.Dispose();
+
         if (view == ActiveView || ActiveView == null)
         {
             ActiveView = Views.FindLast(e => e != null);

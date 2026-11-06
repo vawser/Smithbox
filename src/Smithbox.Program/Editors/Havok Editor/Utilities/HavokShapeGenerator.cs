@@ -151,6 +151,10 @@ public static class HavokShapeGenerator
 
         var weldMap = new Dictionary<Vector3, int>();
 
+        // Allocated once and reused for every triangle: stack memory from stackalloc is only freed when the method
+        // returns, so allocating it per triangle overflowed the stack on large models
+        Span<int> triIndices = stackalloc int[3];
+
         foreach (int meshIndex in targetIndices)
         {
             if (meshIndex < 0 || meshIndex >= model.Meshes.Count)
@@ -161,10 +165,6 @@ public static class HavokShapeGenerator
 
             foreach (var tri in faces)
             {
-#pragma warning disable CA2014 // Do not use stackalloc in loops
-                Span<int> triIndices = stackalloc int[3];
-#pragma warning restore CA2014 // Do not use stackalloc in loops
-
                 for (int i = 0; i < 3; i++)
                 {
                     Vector3 pos = tri[i].Position;
@@ -190,6 +190,82 @@ public static class HavokShapeGenerator
                 indices.Add(triIndices[1]);
                 indices.Add(triIndices[2]);
                 triangleMaterials?.Add(meshMaterial?.Invoke(meshIndex) ?? 0);
+            }
+        }
+
+        return (vertices, indices);
+    }
+
+    /// <summary>
+    /// Collects the triangles of the given OBJ groups, welding vertices at the same position, as
+    /// <see cref="GenerateFlverCollision"/> does for FLVER meshes.
+    /// </summary>
+    /// <param name="objToGame">
+    /// Moves the OBJ's positions into the game's space. A transform that mirrors also reverses the winding, so the
+    /// faces keep pointing the way they did in the OBJ.
+    /// </param>
+    /// <param name="triangleMaterials">Receives the collision material of each triangle, from <paramref name="groupMaterial"/> by group index.</param>
+    public static (List<Vector3> Vertices, List<int> Indices) GenerateObjCollision(
+        ObjCollisionSource source,
+        IReadOnlyList<int> groupIndices,
+        Matrix4x4 objToGame,
+        List<uint> triangleMaterials = null,
+        Func<int, uint> groupMaterial = null)
+    {
+        var vertices = new List<Vector3>();
+        var indices = new List<int>();
+
+        if (source == null || source.Groups.Count == 0)
+            return (vertices, indices);
+
+        var reverseWinding = objToGame.GetDeterminant() < 0;
+
+        // Each OBJ position is transformed and welded once, however many triangles use it
+        var weldMap = new Dictionary<Vector3, int>();
+        var positionMap = new Dictionary<int, int>();
+
+        int VertexFor(int position)
+        {
+            if (positionMap.TryGetValue(position, out var vertIndex))
+                return vertIndex;
+
+            var pos = Vector3.Transform(source.Positions[position], objToGame);
+
+            if (!weldMap.TryGetValue(pos, out vertIndex))
+            {
+                vertIndex = vertices.Count;
+                vertices.Add(pos);
+                weldMap[pos] = vertIndex;
+            }
+
+            positionMap[position] = vertIndex;
+            return vertIndex;
+        }
+
+        foreach (var groupIndex in groupIndices)
+        {
+            if (groupIndex < 0 || groupIndex >= source.Groups.Count)
+                continue;
+
+            var triangles = source.Groups[groupIndex].Triangles;
+
+            for (var t = 0; t + 2 < triangles.Count; t += 3)
+            {
+                var a = VertexFor(triangles[t]);
+                var b = VertexFor(triangles[t + 1]);
+                var c = VertexFor(triangles[t + 2]);
+
+                // Triangles that collapse to a line or point when welded have no surface
+                if (a == b || b == c || c == a)
+                    continue;
+
+                if (reverseWinding)
+                    (b, c) = (c, b);
+
+                indices.Add(a);
+                indices.Add(b);
+                indices.Add(c);
+                triangleMaterials?.Add(groupMaterial?.Invoke(groupIndex) ?? 0);
             }
         }
 

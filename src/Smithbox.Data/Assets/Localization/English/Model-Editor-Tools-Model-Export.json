@@ -197,6 +197,50 @@
       "Text": "Output Directory has not been set."
     },
     {
+      "Key": "MODEL_ModelExport_Output_Directory_Name",
+      "Text": "Output Directory"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Directory_Not_Set",
+      "Text": "{0} has not been set."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Invalid_Directory_Path",
+      "Text": "The {0} path isn't valid: {1}. Check it for characters such as \" < > | * ? or a misplaced colon."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Missing_Directory",
+      "Text": "The {0} doesn't exist: {1}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Write_Failed",
+      "Text": "Failed to write the OBJ file: {0}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Generated_HKX",
+      "Text": "Generated HKX file: {0}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_HKX_Tool_Not_Started",
+      "Text": "Failed to start obj2fsnp.bat."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_HKX_Not_Generated",
+      "Text": "obj2fsnp.bat didn't produce an HKX file (exit code {0}). Tool output: {1}"
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_HKX_Failed",
+      "Text": "Failed to generate {0}."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_HKX_Copy_Failed",
+      "Text": "Failed to copy the generated HKX to {0}. It has been left at {1}."
+    },
+    {
+      "Key": "MODEL_ModelExport_Error_Temp_Cleanup_Failed",
+      "Text": "Failed to remove the temporary file {0}."
+    },
+    {
       "Key": "MODEL_ModelExport_Error_No_Source_FLVER",
       "Text": "Source FLVER has not been set."
     },

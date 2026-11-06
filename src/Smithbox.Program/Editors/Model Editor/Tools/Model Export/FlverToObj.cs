@@ -1,4 +1,4 @@
-﻿using SoulsFormats;
+using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -67,9 +67,18 @@ public static class FlverToObj
     /// <param name="meshSelection">
     /// Optional per-mesh flags: meshes whose flag is false are left out. Meshes beyond the end of the list are written.
     /// </param>
-    public static void Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true, Matrix4x4? transform = null,
+    /// <returns>Whether the files were written. A failure is logged.</returns>
+    public static bool Convert(FLVER2 flver, string outputObjPath, IList<MaterialNaming> materialNaming = null, bool flipUVsForOBJ = true, Matrix4x4? transform = null,
         IReadOnlyList<bool> meshSelection = null)
     {
+        if (!ModelExportPaths.TryValidateFilePath(outputObjPath, ModelExportPaths.OutputDirectoryName, out var fullPath, out var pathError))
+        {
+            Smithbox.LogError(typeof(FlverToObj), pathError);
+            return false;
+        }
+
+        outputObjPath = fullPath;
+
         string mtlPath = Path.ChangeExtension(outputObjPath, ".mtl");
         string mtlFileName = Path.GetFileName(mtlPath);
 
@@ -181,11 +190,22 @@ public static class FlverToObj
                 vtOffset += mesh.Vertices.Count;
         }
 
-        File.WriteAllText(outputObjPath, obj.ToString());
-        File.WriteAllText(mtlPath, BuildMtl(flver, usedMaterials, materialNaming));
+        // The folder can still turn out to be unwritable (permissions, a read-only drive, a file in use)
+        try
+        {
+            File.WriteAllText(outputObjPath, obj.ToString());
+            File.WriteAllText(mtlPath, BuildMtl(flver, usedMaterials, materialNaming));
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+        {
+            Smithbox.LogError(typeof(FlverToObj), LOC.Get("MODEL_ModelExport_Error_Write_Failed", outputObjPath), e);
+            return false;
+        }
 
         Smithbox.Log(typeof(FlverToObj), LOC.Get("MODEL_Exported_OBJ", outputObjPath));
+        return true;
     }
+
 
     /// <summary>
     /// Returns true if the forward and up axes can define an orientation, i.e. they are not
