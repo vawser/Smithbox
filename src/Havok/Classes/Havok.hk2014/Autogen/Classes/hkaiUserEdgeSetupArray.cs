@@ -1,0 +1,9 @@
+// Automatically Generated
+
+namespace Havok.hk2014;
+
+public class hkaiUserEdgeSetupArray : hkReferencedObject
+{
+    public List<hkaiUserEdgeUtils.UserEdgeSetup> m_edgeSetups = new();
+
+}

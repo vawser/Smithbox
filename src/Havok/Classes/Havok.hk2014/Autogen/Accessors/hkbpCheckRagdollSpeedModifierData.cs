@@ -1,0 +1,137 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk2014.Accessors;
+
+internal sealed class hkbpCheckRagdollSpeedModifierData : Havok.Formats.HavokFieldAccess<Havok.hk2014.hkbpCheckRagdollSpeedModifier>
+{
+    public hkbpCheckRagdollSpeedModifierData(Havok.hk2014.hkbpCheckRagdollSpeedModifier instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_variableBindingSet":
+            case "variableBindingSet":
+            {
+                value = instance.m_variableBindingSet;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                value = instance.m_userData;
+                return true;
+            }
+            case "m_name":
+            case "name":
+            {
+                value = instance.m_name;
+                return true;
+            }
+            case "m_enable":
+            case "enable":
+            {
+                value = instance.m_enable;
+                return true;
+            }
+            case "m_eventToSend":
+            case "eventToSend":
+            {
+                value = instance.m_eventToSend;
+                return true;
+            }
+            case "m_minSpeedThreshold":
+            case "minSpeedThreshold":
+            {
+                value = instance.m_minSpeedThreshold;
+                return true;
+            }
+            case "m_maxSpeedThreshold":
+            case "maxSpeedThreshold":
+            {
+                value = instance.m_maxSpeedThreshold;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_variableBindingSet":
+            case "variableBindingSet":
+            {
+                if (value is null)
+                {
+                    instance.m_variableBindingSet = default;
+                    return true;
+                }
+                if (value is Havok.hk2014.hkbVariableBindingSet castValue)
+                {
+                    instance.m_variableBindingSet = castValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                if (value is not ulong castValue) return false;
+                instance.m_userData = castValue;
+                return true;
+            }
+            case "m_name":
+            case "name":
+            {
+                if (value is null)
+                {
+                    instance.m_name = default;
+                    return true;
+                }
+                if (value is string castValue)
+                {
+                    instance.m_name = castValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_enable":
+            case "enable":
+            {
+                if (value is not bool castValue) return false;
+                instance.m_enable = castValue;
+                return true;
+            }
+            case "m_eventToSend":
+            case "eventToSend":
+            {
+                if (value is not Havok.hk2014.hkbEventProperty castValue) return false;
+                instance.m_eventToSend = castValue;
+                return true;
+            }
+            case "m_minSpeedThreshold":
+            case "minSpeedThreshold":
+            {
+                if (value is not float castValue) return false;
+                instance.m_minSpeedThreshold = castValue;
+                return true;
+            }
+            case "m_maxSpeedThreshold":
+            case "maxSpeedThreshold":
+            {
+                if (value is not float castValue) return false;
+                instance.m_maxSpeedThreshold = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

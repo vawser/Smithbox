@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Concurrent;
+using System.Numerics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
@@ -42,6 +43,49 @@ public static class GraphCompare
 
     private static string StripArity(string name) => name.IndexOf('`') is var i and >= 0 ? name[..i] : name;
 
+    /// <summary>
+    /// A class's name without its SDK namespace and with nesting flattened, as packfiles name classes:
+    /// Havok.hk2014.hkRootLevelContainer+NamedVariant and HKX2.hkRootLevelContainerNamedVariant are both
+    /// hkRootLevelContainerNamedVariant.
+    /// </summary>
+    private static string FlatName(Type t)
+    {
+        string full = StripArity(t.FullName ?? t.Name);
+        foreach (var root in new[] { "HKLib.hk2018.", "HKLib.hk2019.", "HKX2." })
+            if (full.StartsWith(root)) { full = full[root.Length..]; break; }
+        if (full.StartsWith("Havok.hk") && full.IndexOf('.', 6) is var dot and > 0) full = full[(dot + 1)..];
+        int generic = full.IndexOf('[');
+        if (generic >= 0) full = full[..generic];
+        return full.Replace("+", "").Replace(".", "");
+    }
+
+    private static decimal Numeric(object v) => v.GetType().IsEnum ? EnumValue(v) : Convert.ToDecimal(v);
+
+    /// <summary>
+    /// The floats of a matrix or of a record of vectors, in order, for comparing different representations of one value.
+    /// </summary>
+    private static List<float> Floats(object v)
+    {
+        var result = new List<float>();
+        switch (v)
+        {
+            case Matrix4x4 m:
+                for (int i = 0; i < 4; i++) for (int j = 0; j < 4; j++) result.Add(m[i, j]);
+                break;
+            case Vector4 vec: result.AddRange(new[] { vec.X, vec.Y, vec.Z, vec.W }); break;
+            case Quaternion q: result.AddRange(new[] { q.X, q.Y, q.Z, q.W }); break;
+            case float f: result.Add(f); break;
+            default:
+                foreach (var f in Fields(v.GetType()))
+                {
+                    var value = f.GetValue(v);
+                    if (value != null) result.AddRange(Floats(value));
+                }
+                break;
+        }
+        return result;
+    }
+
     private static long EnumValue(object e) =>
         Enum.GetUnderlyingType(e.GetType()) == typeof(ulong) ? unchecked((long)Convert.ToUInt64(e)) : Convert.ToInt64(e);
 
@@ -82,8 +126,36 @@ public static class GraphCompare
         {
             if (ta.IsEnum && tb.IsEnum)
                 return EnumValue(a) == EnumValue(b) ? null : $"{path}: {a} vs {b}";
-            if (StripArity(ta.Name) != StripArity(tb.Name) || ta.IsGenericType != tb.IsGenericType)
-                return $"{path}: type {ta.Name} vs {tb.Name}";
+
+            // hkHalf: HKX2 keeps the raw 16 bits, the generated classes the float they stand for
+            if ((a is short or ushort && b is float) || (b is short or ushort && a is float))
+            {
+                float half = BitConverter.Int32BitsToSingle((a is float ? Convert.ToInt32(b is short s ? (ushort)s : b) : Convert.ToInt32(a is short s2 ? (ushort)s2 : a)) << 16);
+                float full = a is float fa0 ? fa0 : (float)b;
+                return BitConverter.SingleToInt32Bits(half) == BitConverter.SingleToInt32Bits(full) ? null : $"{path}: half {half} vs {full}";
+            }
+
+            // an enum on one side and its raw storage on the other (HKX2 types some enum fields as plain ints)
+            if ((ta.IsEnum || ta.IsPrimitive) && (tb.IsEnum || tb.IsPrimitive) && (ta.IsEnum || tb.IsEnum))
+                return Numeric(a) == Numeric(b) ? null : $"{path}: {a} vs {b}";
+
+            // HKX2 stores hkQsTransform, hkMatrix3 and hkRotation as a Matrix4x4 of rows; the generated classes as
+            // a record of vectors or a Matrix3x3. The floats must match.
+            if (ta == typeof(Matrix4x4) || tb == typeof(Matrix4x4))
+            {
+                var fa = Floats(a);
+                var fb = Floats(b);
+                // a Matrix4x4 standing in for a 3-row value has a filler 4th row: only the first 12 floats are data
+                int n = Math.Min(Math.Min(fa.Count, fb.Count), 12);
+                if (n == 0) return $"{path}: type {ta.Name} vs {tb.Name}";
+                for (int i = 0; i < n; i++)
+                    if (BitConverter.SingleToInt32Bits(fa[i]) != BitConverter.SingleToInt32Bits(fb[i]))
+                        return $"{path}: float {i} {fa[i]} vs {fb[i]}";
+                return null;
+            }
+
+            if (FlatName(ta) != FlatName(tb) || ta.IsGenericType != tb.IsGenericType)
+                return $"{path}: type {FlatName(ta)} vs {FlatName(tb)}";
         }
         else if (ta != tb)
             return $"{path}: type {ta.Name} vs {tb.Name}";
@@ -127,7 +199,8 @@ public static class GraphCompare
             var fieldsB = Fields(tb).GroupBy(f => f.Name).ToDictionary(g => g.Key, g => g.First());
             foreach (var f in Fields(ta))
             {
-                if (!fieldsB.TryGetValue(f.Name, out var fb)) return $"{path}.{f.Name}: missing in {tb.FullName}";
+                // only the fields both sides have: generated classes add variant fields, and HKX2 keeps some ignored ones
+                if (!fieldsB.TryGetValue(f.Name, out var fb)) continue;
                 var d = Compare(f.GetValue(a), fb.GetValue(b), $"{path}.{f.Name}", seen);
                 if (d != null) return d;
             }
@@ -141,6 +214,29 @@ public static class GraphCompare
             if (d != null) return d;
         }
         return null;
+    }
+
+    /// <summary>
+    /// Every object of a class (by its simple name) reachable from the root, in a fixed walk order.
+    /// </summary>
+    public static List<object> Instances(object root, string className)
+    {
+        var found = new List<object>();
+        var seen = new HashSet<object>(ReferenceEqualityComparer.Instance);
+        var stack = new Stack<object>();
+        stack.Push(root);
+        while (stack.Count > 0)
+        {
+            var o = stack.Pop();
+            if (o == null) continue;
+            var t = o.GetType();
+            if (IsLeaf(t) || t.IsValueType || !seen.Add(o)) continue;
+            if (t.Name == className) found.Add(o);
+            if (o is IList l) { for (int i = l.Count - 1; i >= 0; i--) stack.Push(l[i]); continue; }
+            var fields = Fields(t);
+            for (int i = fields.Length - 1; i >= 0; i--) stack.Push(fields[i].GetValue(o));
+        }
+        return found;
     }
 
     /// <summary>

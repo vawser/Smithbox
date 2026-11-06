@@ -1,0 +1,9 @@
+// Automatically Generated
+
+namespace Havok.hk2014;
+
+public class hkFloat16Transform : IHavokObject
+{
+    public readonly hkFloat16[] m_elements = new hkFloat16[12];
+
+}

@@ -119,6 +119,15 @@ public static class Report
                 sb.AppendLine($"- **{g.Key}** read differs from HKLib ({g.Count()}×), e.g.:");
                 foreach (var x in g.Take(5)) sb.AppendLine($"  - `{x.File.Inner}`: `{x.Lib.ParityGraphDiff}`");
             }
+            var meshRuns = runs.Where(x => x.Lib.Lib == "Generated 2014 packfile" && (x.Lib.MeshTriangles > 0 || x.Lib.MeshDecodeDiff != null)).ToList();
+            if (meshRuns.Count > 0)
+            {
+                sb.AppendLine($"- **Compressed mesh decoding** (hk2014 port vs HKX2): {meshRuns.Count(x => x.Lib.MeshDecodeDiff == null)}/{meshRuns.Count} files decode the same, " +
+                              $"{meshRuns.Sum(x => x.Lib.MeshTriangles)} triangles compared.");
+                foreach (var x in meshRuns.Where(x => x.Lib.MeshDecodeDiff != null).Take(5))
+                    sb.AppendLine($"  - `{x.File.Inner}`: {x.Lib.MeshDecodeDiff}");
+            }
+
             foreach (var g in runs.Where(x => x.Lib.SectionDiff != null && !x.Lib.Lib.EndsWith("legacy")).GroupBy(x => x.Lib.Lib))
             {
                 sb.AppendLine($"- **{g.Key}** writes that aren't byte-identical ({g.Count()}×), by section (original→written):");

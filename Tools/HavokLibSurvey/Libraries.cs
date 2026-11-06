@@ -69,6 +69,8 @@ public sealed class LibResult
     public string ParityGraphDiff;   // unified read vs HKLib read; null when equal
     public bool? ParityBytesEqual;   // unified write vs HKLib write
     public string SectionDiff;       // unified write vs original, by section, when not byte-identical
+    public string MeshDecodeDiff;    // hk2014 compressed mesh triangles vs HKX2's; null when equal
+    public int MeshTriangles;        // triangles compared
 }
 
 /// <summary>
@@ -332,4 +334,35 @@ public sealed class UnifiedTagfile : Library
     public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(data);
 
     public override byte[] Write(object root, ContainerContext ctx, bool comp) => Create(ctx, comp).Write(root);
+}
+
+/// <summary>
+/// The unified packfile engine (Havok.Formats) reading hk_2014 packfiles into the generated Havok.hk2014 classes.
+/// Parity is with HKX2's packfile reader and writer.
+/// </summary>
+public sealed class GeneratedPackfile : Library
+{
+    private readonly bool _preserveSource;
+
+    /// <param name="preserveSource">Write back the header and __types__ section read (the default), or HKX2's</param>
+    public GeneratedPackfile(bool preserveSource = true)
+    {
+        _preserveSource = preserveSource;
+    }
+
+    public override string Name => _preserveSource ? "Generated 2014 packfile" : "Generated 2014 packfile (HKX2 header)";
+
+    public string ParityWith => "HKX2 packfile";
+
+    public override bool Applies(SniffInfo s, Game game) => s.Container == "Packfile" && s.Sdk.StartsWith("hk_2014");
+
+    private Havok.Formats.Packfile.HavokPackfileSerializer Create(ContainerContext ctx)
+    {
+        var profile = Havok.HavokProfile.FromGame(ctx.Game.ToString()) is { Sdk: Havok.HavokSdk.Hk2014 } p ? p : Havok.HavokProfile.DS3;
+        return new Havok.Formats.Packfile.HavokPackfileSerializer(Havok.hk2014.ClassSet.For(profile)) { PreserveSource = _preserveSource };
+    }
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx).Read(data);
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp) => Create(ctx).Write(root);
 }

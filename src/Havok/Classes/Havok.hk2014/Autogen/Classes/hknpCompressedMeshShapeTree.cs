@@ -1,0 +1,7 @@
+// Automatically Generated
+
+namespace Havok.hk2014;
+
+public class hknpCompressedMeshShapeTree : hkcdStaticMeshTreehkcdStaticMeshTreeCommonConfigunsignedintunsignedlonglong1121hknpCompressedMeshShapeTreeDataRun
+{
+}

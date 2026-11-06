@@ -46,6 +46,9 @@ internal class Generator
     // the registry again with each game's overlay applied (NR, DB_NT): classes get the union of every variant's fields
     private readonly List<RegistryLoader> _variants;
 
+    // declarations removed before emitting (see Run)
+    private readonly HashSet<Decl> _dropped = new();
+
     public Generator(RegistryLoader registry, HavokTypeRegistry registry2018, IEnumerable<RegistryLoader>? variants = null)
     {
         _registry = registry;
@@ -115,10 +118,22 @@ internal class Generator
             Build(decl);
         }
 
+        // An empty class whose name is also a namespace (hk2014's hkaiHierarchyUtils, where 2018 places
+        // hkaiHierarchyUtils::ClusterSettings in a namespace) only exists as a scope: drop it, as C# can't have both
+        HashSet<string> namespaces = Decls.Where(x => x.Namespace.Length > 0).Select(x => x.Namespace.Split('.')[0]).ToHashSet();
+        foreach (Decl clash in Decls.Where(x => x.Outer is null && x.Namespace.Length == 0 && namespaces.Contains(x.Name) &&
+                                                 x.Kind == DeclKind.Class && x.Fields.Count == 0 && x.Nested.Count == 0).ToList())
+        {
+            Decls.Remove(clash);
+            _dropped.Add(clash);
+            Warnings.Add($"Dropped the empty class {clash.Name}: its name is also a namespace");
+        }
+
         HashSet<string> mapped = new();
         foreach (HavokType type in _registry.Types.Concat(_variants.SelectMany(x => x.Types)))
         {
             if (!mapped.Add(type.Identity)) continue;
+            if (type.Kind == HavokType.TypeKind.Record && _declsByIdentity.TryGetValue(type.Identity, out Decl? d) && _dropped.Contains(d)) continue;
             if (GetTypeofText(type) is { } text) IdentityTypeMap.Add((type.Identity, text));
         }
 

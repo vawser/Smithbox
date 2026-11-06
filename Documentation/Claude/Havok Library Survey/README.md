@@ -20,6 +20,10 @@ Since Phase 2 the reports also run the unified tagfile engine (`Havok.Formats`, 
 
 `--buildoverlay` writes a game's overlay on its SDK's base registry (e.g. `DB_NT 100000 100000 <out> 8 --buildoverlay` writes `HavokTypeRegistry20180100_DB_NT.xml`). The "Generated 2018/2019" rows check the generated `Havok.hk2018`/`hk2019` classes against the same engine reading HKLib's classes, comparing the read data across the two class sets and the written bytes.
 
+The "Generated 2014 packfile" rows run the packfile engine (`Havok.Formats`) on hk_2014 files into `Havok.hk2014`, checked against HKX2. The "(HKX2 header)" variant writes HKX2's fixed header, for a byte comparison with HKX2. The report's compressed-mesh line compares every decoded triangle with HKX2's. `Tools/HavokPackfileProbe <GAME> <bhd path> <file regex>` prints one file's local fixups for the original and the rewrite side by side (in Git Bash, prefix it with `MSYS_NO_PATHCONV=1`).
+
+**Phase 4 result** (2026-11-06): DS3 860/860 read and written, 860/860 round trips (HKX2: 810/829), 668 byte-identical (HKX2: 667). The data matches HKX2's on every DS3 file, and 4.8 million compressed-mesh triangles decode identically. BB 648/721 read without an overlay (HKX2: 382). DS2S and SDT packfiles match HKX2.
+
 **Phase 3c result** (2026-11-06): the generated hk2018/hk2019 classes match HKLib's data and the HKLib-backed engine's bytes on every ER, NR and AC6 file. They read all 710 DB_NT files (HKLib: 123), 604 of them byte-identical.
 
 **Phase 3 result** (2026-11-06): the generated `Havok.hk2016` and `Havok.hk2015` classes read SDT 744/752 and DS1R 482/482, and rewrite SDT 744/744 and DS1R 479/482 byte-identical.

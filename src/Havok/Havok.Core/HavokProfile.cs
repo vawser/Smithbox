@@ -60,9 +60,12 @@ public sealed class HavokProfile
     public static readonly HavokProfile DS1R = new("DS1R", HavokSdk.Hk2015, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20150100.xml");
     public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false);
-    public static readonly HavokProfile DS2S = new("DS2S", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
-    public static readonly HavokProfile BB = new("BB", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
-    public static readonly HavokProfile DS3 = new("DS3", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
+    public static readonly HavokProfile DS2S = new("DS2S", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
+        "HavokTypeRegistry20140100.xml");
+    public static readonly HavokProfile BB = new("BB", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
+        "HavokTypeRegistry20140100.xml");
+    public static readonly HavokProfile DS3 = new("DS3", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
+        "HavokTypeRegistry20140100.xml");
     public static readonly HavokProfile SDT = new("SDT", HavokSdk.Hk2016, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20160200.xml");
 

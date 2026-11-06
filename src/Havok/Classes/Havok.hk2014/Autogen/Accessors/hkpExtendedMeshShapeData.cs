@@ -1,0 +1,283 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk2014.Accessors;
+
+internal sealed class hkpExtendedMeshShapeData : Havok.Formats.HavokFieldAccess<Havok.hk2014.hkpExtendedMeshShape>
+{
+    public hkpExtendedMeshShapeData(Havok.hk2014.hkpExtendedMeshShape instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_dispatchType":
+            case "dispatchType":
+            {
+                value = instance.m_dispatchType;
+                return true;
+            }
+            case "m_bitsPerKey":
+            case "bitsPerKey":
+            {
+                value = instance.m_bitsPerKey;
+                return true;
+            }
+            case "m_shapeInfoCodecType":
+            case "shapeInfoCodecType":
+            {
+                value = instance.m_shapeInfoCodecType;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                value = instance.m_userData;
+                return true;
+            }
+            case "m_disableWelding":
+            case "disableWelding":
+            {
+                value = instance.m_disableWelding;
+                return true;
+            }
+            case "m_collectionType":
+            case "collectionType":
+            {
+                value = instance.m_collectionType;
+                return true;
+            }
+            case "m_embeddedTrianglesSubpart":
+            case "embeddedTrianglesSubpart":
+            {
+                value = instance.m_embeddedTrianglesSubpart;
+                return true;
+            }
+            case "m_aabbHalfExtents":
+            case "aabbHalfExtents":
+            {
+                value = instance.m_aabbHalfExtents;
+                return true;
+            }
+            case "m_aabbCenter":
+            case "aabbCenter":
+            {
+                value = instance.m_aabbCenter;
+                return true;
+            }
+            case "m_numBitsForSubpartIndex":
+            case "numBitsForSubpartIndex":
+            {
+                value = instance.m_numBitsForSubpartIndex;
+                return true;
+            }
+            case "m_trianglesSubparts":
+            case "trianglesSubparts":
+            {
+                value = instance.m_trianglesSubparts;
+                return true;
+            }
+            case "m_shapesSubparts":
+            case "shapesSubparts":
+            {
+                value = instance.m_shapesSubparts;
+                return true;
+            }
+            case "m_weldingInfo":
+            case "weldingInfo":
+            {
+                value = instance.m_weldingInfo;
+                return true;
+            }
+            case "m_weldingType":
+            case "weldingType":
+            {
+                value = instance.m_weldingType;
+                return true;
+            }
+            case "m_defaultCollisionFilterInfo":
+            case "defaultCollisionFilterInfo":
+            {
+                value = instance.m_defaultCollisionFilterInfo;
+                return true;
+            }
+            case "m_cachedNumChildShapes":
+            case "cachedNumChildShapes":
+            {
+                value = instance.m_cachedNumChildShapes;
+                return true;
+            }
+            case "m_triangleRadius":
+            case "triangleRadius":
+            {
+                value = instance.m_triangleRadius;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_dispatchType":
+            case "dispatchType":
+            {
+                if (value is Havok.hk2014.hkcdShapeDispatchType.ShapeDispatchTypeEnum castValue)
+                {
+                    instance.m_dispatchType = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_dispatchType = (Havok.hk2014.hkcdShapeDispatchType.ShapeDispatchTypeEnum)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_bitsPerKey":
+            case "bitsPerKey":
+            {
+                if (value is not byte castValue) return false;
+                instance.m_bitsPerKey = castValue;
+                return true;
+            }
+            case "m_shapeInfoCodecType":
+            case "shapeInfoCodecType":
+            {
+                if (value is Havok.hk2014.hkcdShapeInfoCodecType.ShapeInfoCodecTypeEnum castValue)
+                {
+                    instance.m_shapeInfoCodecType = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_shapeInfoCodecType = (Havok.hk2014.hkcdShapeInfoCodecType.ShapeInfoCodecTypeEnum)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                if (value is not ulong castValue) return false;
+                instance.m_userData = castValue;
+                return true;
+            }
+            case "m_disableWelding":
+            case "disableWelding":
+            {
+                if (value is not bool castValue) return false;
+                instance.m_disableWelding = castValue;
+                return true;
+            }
+            case "m_collectionType":
+            case "collectionType":
+            {
+                if (value is Havok.hk2014.hkpShapeCollection.CollectionType castValue)
+                {
+                    instance.m_collectionType = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_collectionType = (Havok.hk2014.hkpShapeCollection.CollectionType)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_embeddedTrianglesSubpart":
+            case "embeddedTrianglesSubpart":
+            {
+                if (value is not Havok.hk2014.hkpExtendedMeshShapeTrianglesSubpart castValue) return false;
+                instance.m_embeddedTrianglesSubpart = castValue;
+                return true;
+            }
+            case "m_aabbHalfExtents":
+            case "aabbHalfExtents":
+            {
+                if (value is not Vector4 castValue) return false;
+                instance.m_aabbHalfExtents = castValue;
+                return true;
+            }
+            case "m_aabbCenter":
+            case "aabbCenter":
+            {
+                if (value is not Vector4 castValue) return false;
+                instance.m_aabbCenter = castValue;
+                return true;
+            }
+            case "m_numBitsForSubpartIndex":
+            case "numBitsForSubpartIndex":
+            {
+                if (value is not int castValue) return false;
+                instance.m_numBitsForSubpartIndex = castValue;
+                return true;
+            }
+            case "m_trianglesSubparts":
+            case "trianglesSubparts":
+            {
+                if (value is not List<Havok.hk2014.hkpExtendedMeshShapeTrianglesSubpart> castValue) return false;
+                instance.m_trianglesSubparts = castValue;
+                return true;
+            }
+            case "m_shapesSubparts":
+            case "shapesSubparts":
+            {
+                if (value is not List<Havok.hk2014.hkpExtendedMeshShapeShapesSubpart> castValue) return false;
+                instance.m_shapesSubparts = castValue;
+                return true;
+            }
+            case "m_weldingInfo":
+            case "weldingInfo":
+            {
+                if (value is not List<ushort> castValue) return false;
+                instance.m_weldingInfo = castValue;
+                return true;
+            }
+            case "m_weldingType":
+            case "weldingType":
+            {
+                if (value is Havok.hk2014.hkpWeldingUtility.WeldingType castValue)
+                {
+                    instance.m_weldingType = castValue;
+                    return true;
+                }
+                if (value is byte byteValue)
+                {
+                    instance.m_weldingType = (Havok.hk2014.hkpWeldingUtility.WeldingType)byteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_defaultCollisionFilterInfo":
+            case "defaultCollisionFilterInfo":
+            {
+                if (value is not uint castValue) return false;
+                instance.m_defaultCollisionFilterInfo = castValue;
+                return true;
+            }
+            case "m_cachedNumChildShapes":
+            case "cachedNumChildShapes":
+            {
+                if (value is not int castValue) return false;
+                instance.m_cachedNumChildShapes = castValue;
+                return true;
+            }
+            case "m_triangleRadius":
+            case "triangleRadius":
+            {
+                if (value is not float castValue) return false;
+                instance.m_triangleRadius = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

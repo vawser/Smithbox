@@ -221,6 +221,32 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 
 **Phase 4: packfile engine (hk2014).** Registry-driven packfile reader/writer. Acceptance: every DS3 golden file reads into `hk2014` and gives the same graph as HKX2. Writes match the original file wherever HKX2's do today (667/859 DS3 files). The new writer must *also* re-read cleanly where HKX2 doesn't: HKX2 drops `hkRelArray` data (`m_planes`) and fails to re-read 31 chr physics files, so HKX2 output is not the reference for those classes. Then the BB overlay, then DS2S (check whether it needs one).
 
+> **Status (2026-11-06): done for DS3, DS2S and SDT, with Phase 3b (hk2014 classes) folded in. The BB overlay is still to do.** Nothing in Smithbox uses this yet (Phase 6).
+> - **hk2014 registry.** `Tools/HavokClassDumpConvert` turns HKX2's 1,362 DS3 class dumps into `Havok.Core/Res/HavokTypeRegistry20140100.xml` (2,516 types). Packfile reflection (`TYPE_ARRAY` of `TYPE_STRUCT`, `TYPE_ENUM` + `etype`…) becomes tagfile-style types with the 2018 registry's formats (`hkArray<T>`, `T*`, `hkEnum<E, S>`, `hkVector4`, `hkQsTransform`…). Class signatures become hashes. Nested classes take HKLib's 2018 identity (470 of them, e.g. `hkRootLevelContainer::NamedVariant`). Enums come with their names from the dumps. 3 enums stay raw ints, because no class declares them uniquely. 2 classes have no dump, so empty records stand in for them. The DS3/BB/DS2S profiles use it.
+> - **`src/Havok/Classes/Havok.hk2014`** (1,573 declarations), generated like the other SDKs, so DS3 code reads like ER code (`hkaSkeleton.m_referencePose` is a `List<hkQsTransform>`, etc.).
+>   - The generator now drops an empty class whose name is also a namespace (`hkaiHierarchyUtils` & co.).
+>   - HKX2's `Manual/` (static tree codecs, compressed mesh decode) and `Builders/` (BVH, collision mesh, navmesh) are ported into it. Their numbered fields (`m_x_0`) are now arrays (`m_x[0]`), and their flat names are now nested.
+> - **`Havok.Formats/Packfile/HavokPackfileSerializer`**, driven by the registry:
+>   - **Reading** follows the fixups: virtual (class), global (pointers), local (arrays, strings). It also reads `hkRelArray` and `hkSimpleArray`, which HKX2 ignores. It handles 4/8-byte pointers and either byte order, ready for Phase 5.
+>   - **Writing** ports HKX2's queue algorithm literally (object order, nested local queues, padding, fixup order), so HKX2's byte output is reproduced. It also writes rel and simple arrays.
+>   - **`PreserveSource`** (default) writes back the header and `__types__` section a root was read with. When off, it writes HKX2's fixed DS3 header and an empty `__types__` section.
+>   - HKX2's stale-queue-index crash on one DS3 behaviour file is fixed: the queue list grows instead.
+> - **Bugs the survey caught along the way:** `hkSimpleArray` is 12 bytes, not 16 (the next member can follow at +12). And a C# switch over `float`/`double` arms silently widened every float to `double`.
+> - **Verified** (`HavokLibSurvey <game> 30 8`):
+>
+>   | Game | Read: HKX2 → engine | Writes | Round trip (graph): HKX2 → engine | Byte-identical: HKX2 → engine |
+>   |---|---|---|---|---|
+>   | DS3 | 860 → 860 | 859 → **860** | 810/829 → **860/860** | 667 → **668** |
+>   | SDT (packfiles) | 9 → 9 | 9 → 9 | 9 → 9 | 6 → 6 |
+>   | DS2S | 227 → 227 | 227 → 227 | 227 → 227 | 0 → 0 |
+>   | BB | 382 → **648** | 382 → 648 | 382 → 648 | 0 → **40** |
+>
+>   - **Parity with HKX2:** the engine reads the same data as HKX2 on all 860 DS3 files. Comparing across the two class sets bridges flat and nested names, HKX2's `Matrix4x4` stand-ins for `hkQsTransform`/`hkMatrix3`, its raw-`Int16` `hkHalf`, and enums typed as ints. In HKX2-header mode the engine writes HKX2's exact bytes wherever HKX2 handles the data (DS3 810/859, BB 382/382, SDT 9/9). The other DS3 files carry rel/simple arrays, which HKX2 writes as zeros.
+>   - **Compressed mesh decode** (the hk2014 port vs HKX2's): 4,827,782 triangles identical across 239 DS3 files. On 4 more, the decode throws inside HKX2 (both copies run the same code, so the port probably throws there too). *(verify)*
+>   - **DS2S** files carry about 51 KB of `hkClass` reflection in `__types__`. It's now preserved, but DS2S rewrites still differ, at an odd offset in DATA (value-level). DS2S reads differ from HKX2 only because HKX2 drops `CustomMeshParameter`'s simple arrays.
+>   - **DS3's remaining 192 non-identical files** mostly differ in the data section's length (objects laid out differently from the dumps). A few differ in a section tag's padding byte.
+> - **Still to do: BB overlay.** 73 of 721 BB files don't read with the DS3 layouts: `hkbBehaviorGraph.rootGenerator` points at `hkbBehaviorGraphData` in BB, and some collision shapes read out of range. Build it from BB's own files as for DB_NT. BB packfiles carry no type sections, so that needs BB class dumps or layout probing.
+
 **Phase 5: 32-bit packfiles (DeS Havok-5.x, DS1 hk_2010).** Hand-built registry for the classes SoulsFormats handles, 32-bit layout, big-endian for DeS. SoulsFormats only reads 61/329 DeS files and can't write skeletons or spline animations, so parity is the floor, not the target. Acceptance: skeletons, animations, collision and navmesh decode the same as SoulsFormats. Writing should at least be as good as SoulsFormats today (round trip re-reads equal).
 
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:

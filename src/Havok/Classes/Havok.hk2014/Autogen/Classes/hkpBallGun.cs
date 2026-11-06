@@ -1,0 +1,19 @@
+// Automatically Generated
+
+namespace Havok.hk2014;
+
+public class hkpBallGun : hkpFirstPersonGun
+{
+    public float m_bulletRadius;
+
+    public float m_bulletVelocity;
+
+    public float m_bulletMass;
+
+    public float m_damageMultiplier;
+
+    public int m_maxBulletsInWorld;
+
+    public Vector4 m_bulletOffsetFromCenter = new();
+
+}

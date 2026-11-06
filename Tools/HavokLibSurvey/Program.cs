@@ -152,6 +152,8 @@ public static class Survey
         new UnifiedTagfile("Unified 2018 legacy", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018Legacy, "HKLib 2018"),
         new UnifiedTagfile("Unified 2018", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018, "HKLib 2018"),
         new UnifiedTagfile("Unified 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "HKLib 2019"),
+        new GeneratedPackfile(),
+        new GeneratedPackfile(preserveSource: false),
         new UnifiedTagfile("Generated 2018", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018, "Unified 2018", Havok.hk2018.ClassSet.For),
         new UnifiedTagfile("Generated 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "Unified 2019", Havok.hk2019.ClassSet.For),
         new UnifiedTagfile("Unified 2016", "2016", Havok.Formats.Tagfile.TagfileDialect.Hk2016, null, _ => Havok.hk2016.ClassSet.For(Havok.HavokProfile.SDT)),
@@ -331,6 +333,46 @@ public static class Survey
         }
     }
 
+    /// <summary>
+    /// Decodes every triangle of every compressed mesh in both graphs (HKX2's hknpCompressedMeshShapeData and the
+    /// hk2014 port of its decoding) and compares them. Null when equal; the triangle count compared goes out.
+    /// </summary>
+    private static string CompareMeshDecode(object hkx2Root, object hk2014Root, out int triangles)
+    {
+        triangles = 0;
+        var a = GraphCompare.Instances(hkx2Root, "hknpCompressedMeshShapeData");
+        var b = GraphCompare.Instances(hk2014Root, "hknpCompressedMeshShapeData");
+        if (a.Count != b.Count) return $"{a.Count} meshes vs {b.Count}";
+
+        for (int m = 0; m < a.Count; m++)
+        {
+            dynamic ma = a[m], mb = b[m];
+            int sections = ma.m_meshTree.m_sections.Count;
+            for (int s = 0; s < sections; s++)
+            {
+                int primitives = (int)(ma.m_meshTree.m_sections[s].m_primitives.m_data & 0xFF);
+                for (int p = 0; p < primitives; p++)
+                {
+                    for (int half = 0; half < 2; half++)
+                    {
+                        uint keyA = ma.GetShapeKey(s, p, half);
+                        uint keyB = mb.GetShapeKey(s, p, half);
+                        if (keyA != keyB) return $"mesh {m} section {s} primitive {p}: key 0x{keyA:X} vs 0x{keyB:X}";
+                        System.Numerics.Vector3 a0, a1, a2, b0, b1, b2;
+                        bool okA = ma.TryGetShapeKeyTriangle(keyA, out a0, out a1, out a2);
+                        bool okB = mb.TryGetShapeKeyTriangle(keyB, out b0, out b1, out b2);
+                        if (okA != okB) return $"mesh {m} key 0x{keyA:X}: triangle {okA} vs {okB}";
+                        if (!okA) continue;
+                        if (a0 != b0 || a1 != b1 || a2 != b2) return $"mesh {m} key 0x{keyA:X}: {a0},{a1},{a2} vs {b0},{b1},{b2}";
+                        triangles++;
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
     private static FileResult SurveyFile(ContainerContext ctx, string category, string container, string inner, byte[] bytes)
     {
         var r = new FileResult { Category = category, Container = container, Inner = inner, Size = bytes.Length, Sniff = Sniffer.Sniff(bytes) };
@@ -354,6 +396,25 @@ public static class Survey
             catch (Exception e) { unified.ParityGraphDiff = "compare threw: " + Library.Describe(e); }
             if (hklib.Written != null && unified.Written != null)
                 unified.ParityBytesEqual = hklib.Written.AsSpan().SequenceEqual(unified.Written);
+        }
+
+        // Unified packfile engine vs HKX2's packfile reader and writer
+        foreach (var packfile in r.Libs.Where(l => l.Lib.StartsWith("Generated 2014 packfile")))
+        {
+            packfile.ParityWith = "HKX2 packfile";
+            if (packfile.Written != null && !packfile.ByteIdentical)
+                packfile.SectionDiff = "packfile: first diff at 0x" + packfile.FirstByteDiff.ToString("X");
+            var hkx2 = r.Libs.FirstOrDefault(l => l.Lib == "HKX2 packfile");
+            if (hkx2 == null || !hkx2.Read || !packfile.Read) continue;
+            packfile.ParityCompared = true;
+            try { packfile.ParityGraphDiff = GraphCompare.CompareAcross(hkx2.Root, packfile.Root); }
+            catch (Exception e) { packfile.ParityGraphDiff = "compare threw: " + Library.Describe(e); }
+            if (hkx2.Written != null && packfile.Written != null)
+                packfile.ParityBytesEqual = hkx2.Written.AsSpan().SequenceEqual(packfile.Written);
+
+            // the compressed mesh decoding ported from HKX2 must give the same triangles
+            try { packfile.MeshDecodeDiff = CompareMeshDecode(hkx2.Root, packfile.Root, out packfile.MeshTriangles); }
+            catch (Exception e) { packfile.MeshDecodeDiff = "decode threw: " + Library.Describe(e); }
         }
 
         // Classes: the packfile's own list, else the classes in the first typed graph that was read
