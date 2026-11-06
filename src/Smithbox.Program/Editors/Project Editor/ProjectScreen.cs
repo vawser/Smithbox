@@ -369,6 +369,8 @@ public class ProjectScreen
     {
         var orchestrator = Smithbox.Orchestrator;
 
+        ImGui.BeginChild("NoProjectSection", ImGuiChildFlags.Borders);
+
         if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             FocusManager.SetFocus(EditorFocusContext.Project_None);
 
@@ -396,6 +398,8 @@ public class ProjectScreen
         {
             ShowCreate();
         }
+
+        ImGui.EndChild();
     }
 
     private void DisplayTabs(ProjectEntry project)

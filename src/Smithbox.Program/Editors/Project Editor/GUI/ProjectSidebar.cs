@@ -24,8 +24,6 @@ public class ProjectSidebar
     {
         var orchestrator = Smithbox.Orchestrator;
 
-        ImGui.BeginChild("SidebarSection");
-
         // Actions
         GUI.MultiButtonInput("projectSidebarActions",
             "sidebarNewProject",
@@ -37,8 +35,6 @@ public class ProjectSidebar
             $"{Icons.Download} {LOC.Get("PROJECT_Sidebar_Import_Project")}",
             LOC.Get("PROJECT_Sidebar_Import_Project_TT"),
             Editor.ConfigureMenu.CreateProjectFromJsonAction);
-
-        GUI.Spacer();
 
         EditorFilters.DisplayFramedListFilter("projectSidebarFilter", ref Filter, ref ExactFilter);
 
@@ -57,7 +53,6 @@ public class ProjectSidebar
             DisplayGameGroups(projects);
         }
 
-        ImGui.EndChild();
         ImGui.EndChild();
     }
 

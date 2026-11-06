@@ -19,15 +19,13 @@ public class ProjectCreateView
 
     public void Display()
     {
-        ImGui.BeginChild("CreateProjectSection");
-
         var form = Editor.ConfigureMenu;
 
         // The form may still hold a project being edited if Create was opened some other way
         if (form.EditorMode is not ProjectEditorMode.Create)
             form.SetupForCreation();
 
-        ImGui.BeginChild("projectCreateForm", Vector2.Zero, ImGuiChildFlags.None);
+        ImGui.BeginChild("projectCreateForm", Vector2.Zero, ImGuiChildFlags.Borders);
 
         if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             FocusManager.SetFocus(EditorFocusContext.Project_None);
@@ -95,7 +93,6 @@ public class ProjectCreateView
             CancelAction();
         }
 
-        ImGui.EndChild();
         ImGui.EndChild();
     }
 
