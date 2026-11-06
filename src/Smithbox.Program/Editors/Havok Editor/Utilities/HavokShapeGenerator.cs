@@ -128,9 +128,16 @@ public static class HavokShapeGenerator
         return (vertices, indices);
     }
 
+    /// <summary>
+    /// Collects the triangles of the given FLVER meshes, welding vertices at the same position. If
+    /// <paramref name="triangleMaterials"/> is given, it receives the collision material of each triangle, from
+    /// <paramref name="meshMaterial"/> by mesh index.
+    /// </summary>
     public static (List<Vector3> Vertices, List<int> Indices) GenerateFlverCollision(
         FLVER2 model,
-        IReadOnlyList<int> meshIndices = null)
+        IReadOnlyList<int> meshIndices = null,
+        List<uint> triangleMaterials = null,
+        Func<int, uint> meshMaterial = null)
     {
         var vertices = new List<Vector3>();
         var indices = new List<int>();
@@ -182,6 +189,7 @@ public static class HavokShapeGenerator
                 indices.Add(triIndices[0]);
                 indices.Add(triIndices[1]);
                 indices.Add(triIndices[2]);
+                triangleMaterials?.Add(meshMaterial?.Invoke(meshIndex) ?? 0);
             }
         }
 

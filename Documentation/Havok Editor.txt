@@ -1,21 +1,11 @@
 #----------------------------------------------------
 # Havok Editor TODO
 #----------------------------------------------------
-- Unify how Havok files are handled:
-    - One single library for all versions
-    - Unify how the HavokTypeRegistry is represented
 
-- Add compatability for the other Havok versions
- - Minor changes to behavior classes for NR (most other hkx work correctly)
- - hk2019 for AC6 (may just need HKLib update
- - hk2016 for SDT
- - HKX2 for DES, DS1, DS2, DS3, BB
+- Implement 3D Preview
+    - For Behaviors: use chr, allows animation playback
+    - For collision/navmesh: visualize the meshes
 
-- Add Update from ANIBND tool (ERClipGen functionality):
- - User points to anibnd that contains TAE files.
- - Read TAE files to determine which clip generators are missing (each TAE entry == one clip gen)
- - Create any missing clip gens, and append them to the associated CMSG for their anim ID
- 
 - Improve Collision Generator:
     - Derive how the compressed mesh type can be generated
     - Include support for more project types (contingent on compatability)

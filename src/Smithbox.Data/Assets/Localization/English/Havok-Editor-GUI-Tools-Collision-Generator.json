@@ -191,6 +191,54 @@
     {
       "Key": "HAVOK_CollisionGen_Generate_No_Replaceable_Shape",
       "Text": "{0} has no mesh collision shape that can be replaced."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_MeshType_Header",
+      "Text": "Mesh Type"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_MeshType_Header_TT",
+      "Text": "The Havok shape the collision is built as. Compressed meshes are what the game's own collision uses, and carry a collision material. Extern meshes store the triangles uncompressed, without materials."
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorMeshType_Compressed",
+      "Text": "Compressed Mesh"
+    },
+    {
+      "Key": "HAVOK_CollisionGeneratorMeshType_Extern",
+      "Text": "Extern Mesh"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Header",
+      "Text": "Collision Material"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Header_TT",
+      "Text": "The collision material sets the footstep sounds and sliding of the surface. FLVER meshes whose material is named hkm_Name or hkm_Name_Property (for example hkm_Cobblestone_Safe1) use that material instead."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Input_TT",
+      "Text": "The collision material ID of the generated triangles, for example 1 for Cobblestone, 4 for Wood or 429 for Without with Slide1."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_From_Current",
+      "Text": "Use Current Material"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_From_Current_TT",
+      "Text": "Sets the material ID to the material of the collision shape being replaced."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_From_Current_None",
+      "Text": "The current collision shape has no collision material."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Mesh_Entry_Material",
+      "Text": "{0} (material {1})"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_Failed",
+      "Text": "Failed to generate the collision shape for {0}."
     }
   ]
 }

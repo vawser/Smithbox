@@ -13,6 +13,12 @@ public class CollisionGeneratorTool
 
     public CollisionGeneratorShape TargetShape = CollisionGeneratorShape.Square;
     public CollisionGeneratorFacing TargetFacing = CollisionGeneratorFacing.Up;
+    public CollisionGeneratorMeshType TargetMeshType = CollisionGeneratorMeshType.CompressedMesh;
+
+    /// <summary>
+    /// The collision material of the generated triangles, unless a FLVER mesh names its own
+    /// </summary>
+    public int MaterialId = 1;
 
     public SquareParameters SquareInputs = new();
     public TriangeParameters TriangleInputs = new();
@@ -132,6 +138,53 @@ public class CollisionGeneratorTool
             ImGui.EndCombo();
         }
 
+        if (SupportsCompressedMesh)
+        {
+            // Mesh Type
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("HAVOK_CollisionGen_MeshType_Header"),
+                LOC.Get("HAVOK_CollisionGen_MeshType_Header_TT"));
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo("##meshTypeMode", LOC.Get(TargetMeshType.GetDisplayName())))
+            {
+                foreach (var entry in Enum.GetValues<CollisionGeneratorMeshType>())
+                {
+                    if (ImGui.Selectable($"{LOC.Get(entry.GetDisplayName())}##meshType{entry}", entry == TargetMeshType))
+                    {
+                        TargetMeshType = entry;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_MeshType_Header_TT"));
+
+            if (TargetMeshType is CollisionGeneratorMeshType.CompressedMesh)
+            {
+                // Collision Material
+                GUI.Spacer();
+                GUI.SimpleHeader(
+                    LOC.Get("HAVOK_CollisionGen_Material_Header"),
+                    LOC.Get("HAVOK_CollisionGen_Material_Header_TT"));
+
+                ImGui.SetNextItemWidth(-1);
+                var materialId = MaterialId;
+                if (ImGui.InputInt("##collisionMaterialId", ref materialId))
+                {
+                    MaterialId = Math.Max(materialId, 0);
+                }
+                GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_Material_Input_TT"));
+
+                GUI.MultiButtonInput("materialActions",
+                    "materialFromCurrent",
+                    LOC.Get("HAVOK_CollisionGen_Material_From_Current"),
+                    LOC.Get("HAVOK_CollisionGen_Material_From_Current_TT"),
+                    UseCurrentMaterial);
+            }
+        }
+
         // Parameters
         GUI.Spacer();
         GUI.SimpleHeader(
@@ -241,6 +294,11 @@ public class CollisionGeneratorTool
                     var mesh = SelectionMenu.SourceFlver.Meshes[i];
                     var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
                     var label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry", i, material.Name, mesh.Vertices.Count);
+
+                    if (IsCompressedMesh && HavokCollisionMaterials.TryParse(material.Name, out var meshMaterial))
+                    {
+                        label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry_Material", label, meshMaterial);
+                    }
 
                     var selected = SelectionMenu.FlverMeshSelection[i];
                     if (ImGui.Checkbox($"{label}##flverMesh{i}", ref selected))
@@ -367,7 +425,16 @@ public class CollisionGeneratorTool
             if (selectedMeshIndices.Count == 0)
                 return;
 
-            var (verts, indices) = HavokShapeGenerator.GenerateFlverCollision(SelectionMenu.SourceFlver, selectedMeshIndices);
+            // A mesh whose material is named hkm_Name_Property gets that collision material
+            var flver = SelectionMenu.SourceFlver;
+            var triangleMaterials = new List<uint>();
+            uint MeshMaterial(int meshIndex)
+            {
+                var materialName = flver.Materials[flver.Meshes[meshIndex].MaterialIndex].Name;
+                return HavokCollisionMaterials.TryParse(materialName, out var id) ? id : (uint)MaterialId;
+            }
+
+            var (verts, indices) = HavokShapeGenerator.GenerateFlverCollision(flver, selectedMeshIndices, triangleMaterials, MeshMaterial);
 
             if (verts.Count == 0 || indices.Count == 0)
                 return;
@@ -375,11 +442,64 @@ public class CollisionGeneratorTool
             if (TargetFacing is CollisionGeneratorFacing.Up)
                 HavokShapeGenerator.FlipTriangleWinding(indices);
 
-            BuildAndReplaceShape(verts, indices);
+            BuildAndReplaceShape(verts, indices, triangleMaterials);
         }
     }
 
-    public void BuildAndReplaceShape(List<Vector3> verts, List<int> indices)
+    /// <summary>
+    /// Compressed meshes are built for the HKX3 games; the HKX2 games only get extern meshes
+    /// </summary>
+    private bool SupportsCompressedMesh => HavokTypeUtils.IsHKX3(Project) || HavokTypeUtils.IsHKX3_2019(Project);
+
+    private bool IsCompressedMesh => SupportsCompressedMesh && TargetMeshType is CollisionGeneratorMeshType.CompressedMesh;
+
+    /// <summary>
+    /// Takes the collision material of the shape being replaced, from the first triangle group of its FromSoftware
+    /// parameters
+    /// </summary>
+    public void UseCurrentMaterial()
+    {
+        var root = View.Selection.SelectedFileWrapper?.Root;
+
+        uint? material = root switch
+        {
+            HKLib.hk2019.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<HKLib.hk2019.hknpPhysicsSceneData>()
+                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
+                .Select(b => b.m_shape).OfType<HKLib.hk2019.fsnpCustomParamCompressedMeshShape>()
+                .Select(s => s.m_pParam?.m_primitiveDataArray.FirstOrDefault()?.m_materialNameData)
+                .FirstOrDefault(),
+            HKLib.hk2018.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<HKLib.hk2018.hknpPhysicsSceneData>()
+                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
+                .Select(b => b.m_shape).OfType<HKLib.hk2018.fsnpCustomParamCompressedMeshShape>()
+                .Select(s => s.m_pParam?.m_primitiveDataArray.FirstOrDefault()?.m_materialNameData)
+                .FirstOrDefault(),
+            _ => null
+        };
+
+        if (material == null)
+        {
+            Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Material_From_Current_None"));
+            return;
+        }
+
+        MaterialId = (int)material.Value;
+    }
+
+    public void BuildAndReplaceShape(List<Vector3> verts, List<int> indices, List<uint> triangleMaterials = null)
+    {
+        try
+        {
+            ReplaceShape(verts, indices, triangleMaterials);
+        }
+        catch (Exception ex)
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_CollisionGen_Generate_Failed", Path.GetFileName(View.Selection.FilePath)), ex);
+        }
+    }
+
+    private void ReplaceShape(List<Vector3> verts, List<int> indices, List<uint> triangleMaterials)
     {
         var collisionName = Path.GetFileName(View.Selection.FilePath);
         var fileWrapper = View.Selection.SelectedFileWrapper;
@@ -398,16 +518,20 @@ public class CollisionGeneratorTool
         {
             if (sourceObject is HKLib.hk2019.hkRootLevelContainer root)
             {
-                var shape = HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX3_2019.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
+                HKLib.hk2019.hknpShape shape = IsCompressedMesh
+                    ? HavokCompressedMeshGenerator_HKX3_2019.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                    : HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX3_2019.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
             }
         }
         else if (HavokTypeUtils.IsHKX3(Project))
         {
             if (sourceObject is HKLib.hk2018.hkRootLevelContainer root)
             {
-                var shape = HavokShapeGenerator_HKX3.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX3.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
+                HKLib.hk2018.hknpShape shape = IsCompressedMesh
+                    ? HavokCompressedMeshGenerator_HKX3.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                    : HavokShapeGenerator_HKX3.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX3.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
             }
         }
         else
@@ -444,6 +568,14 @@ public class CollisionGeneratorTool
         SemiCircle,
         [Display(Name = "HAVOK_CollisionGeneratorShape_FLVER")]
         FLVER
+    }
+
+    public enum CollisionGeneratorMeshType
+    {
+        [Display(Name = "HAVOK_CollisionGeneratorMeshType_Compressed")]
+        CompressedMesh,
+        [Display(Name = "HAVOK_CollisionGeneratorMeshType_Extern")]
+        ExternMesh
     }
 
     public enum CollisionGeneratorFacing

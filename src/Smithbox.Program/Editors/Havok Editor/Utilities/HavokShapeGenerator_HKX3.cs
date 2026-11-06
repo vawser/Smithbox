@@ -255,12 +255,12 @@ public static class HavokShapeGenerator_HKX3
     }
 
     /// <summary>
-    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// An undoable replacement of a body's mesh shape with an extern or compressed mesh. Returns null if the body can't be replaced.
     /// </summary>
-    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+    public static HavokDelegateAction CreateReplaceMeshShapeAction(
         HavokFileWrapper fileWrapper,
         hkRootLevelContainer container,
-        hknpExternMeshShape newShape,
+        hknpShape newShape,
         int bodyIndex = 0,
         bool force = false)
     {
@@ -312,17 +312,13 @@ public static class HavokShapeGenerator_HKX3
 
     private static List<hknpPhysicsSystemData.bodyCinfoWithAttachment> GetBodyCinfos(hkRootLevelContainer container)
     {
-        if (container.m_namedVariants.Count == 0)
-        {
-            return null;
-        }
+        // Asset collision can hold an hkxScene alongside the physics scene
+        var scene = container.m_namedVariants
+            .Select(v => v.m_variant)
+            .OfType<hknpPhysicsSceneData>()
+            .FirstOrDefault();
 
-        if (container.m_namedVariants[0].m_variant is not hknpPhysicsSceneData scene)
-        {
-            return null;
-        }
-
-        if (scene.m_systemDatas.Count == 0 || scene.m_systemDatas[0] is not hknpPhysicsSystemData systemData)
+        if (scene == null || scene.m_systemDatas.Count == 0 || scene.m_systemDatas[0] is not hknpPhysicsSystemData systemData)
         {
             return null;
         }

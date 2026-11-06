@@ -197,12 +197,12 @@ public static class HavokShapeGenerator_HKX3_2019
     }
 
     /// <summary>
-    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// An undoable replacement of a body's mesh shape with an extern or compressed mesh. Returns null if the body can't be replaced.
     /// </summary>
-    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+    public static HavokDelegateAction CreateReplaceMeshShapeAction(
         HavokFileWrapper fileWrapper,
         hkRootLevelContainer container,
-        hknpExternMeshShape newShape,
+        hknpShape newShape,
         int bodyIndex = 0,
         bool force = false)
     {
