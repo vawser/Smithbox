@@ -16,6 +16,7 @@
     <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokCompressedMeshBuilder.cs" Link="Linked\HavokCompressedMeshBuilder.cs" />
     <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokCompressedMeshGenerator_HKX3.cs" Link="Linked\HavokCompressedMeshGenerator_HKX3.cs" />
     <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokShapeGenerator_Shared.cs" Link="Linked\HavokShapeGenerator_Shared.cs" />
+    <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokCompressedMeshGenerator_HKX2.cs" Link="Linked\HavokCompressedMeshGenerator_HKX2.cs" />
   </ItemGroup>
 
   <ItemGroup>

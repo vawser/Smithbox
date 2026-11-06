@@ -27,7 +27,9 @@ var rebuild = args.Length > 5 && args[5] == "rebuild";
 
 using var fs = BuildFS(game, gamePaths[gameName]);
 
-var bhdPath = $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";
+var bhdPath = game == Game.DS3
+    ? $"/map/{mapId}/{type}{mapId.Substring(1)}.hkxbhd"
+    : $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";
 var bdtPath = Path.ChangeExtension(bhdPath, ".hkxbdt");
 var bxf = BXF4.Read(fs.ReadFile(bhdPath).Value.ToArray(), fs.ReadFile(bdtPath).Value.ToArray());
 
@@ -36,6 +38,7 @@ byte[] compendium = null;
 if (compFile != null) { compendium = compFile.Bytes.ToArray(); if (DCX.Is(compendium)) compendium = DCX.Decompress(compendium).ToArray(); }
 
 if (game == Game.AC6) { Ac6.Survey(bxf, compendium); return; }
+if (game == Game.DS3) { Ds3.Survey(bxf, rebuild, detail, maxFiles); return; }
 
 var aggregate = new Dictionary<string, Dictionary<string, int>>();
 void Count(string key, object value)

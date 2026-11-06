@@ -7,6 +7,8 @@
     - For collision/navmesh: visualize the meshes
 
 - Improve Collision Generator:
-    - Derive how the compressed mesh type can be generated
-    - Include support for more project types (contingent on compatability)
+    - Add support for all HKX types
+    - Add preview of mesh (same method as 3D preview picker)
+    - Add material override that sets the hit material
+    - Add support for OBJ to HKX 
  

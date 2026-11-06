@@ -447,9 +447,12 @@ public class CollisionGeneratorTool
     }
 
     /// <summary>
-    /// Compressed meshes are built for the HKX3 games; the HKX2 games only get extern meshes
+    /// Compressed meshes are built for DS3 (HKX2) and the HKX3 games. The other HKX2 games (DS1, DS1R, BB) use the
+    /// older hkp physics, so only get extern meshes.
     /// </summary>
-    private bool SupportsCompressedMesh => HavokTypeUtils.IsHKX3(Project) || HavokTypeUtils.IsHKX3_2019(Project);
+    private bool SupportsCompressedMesh => HavokTypeUtils.IsHKX3(Project)
+        || HavokTypeUtils.IsHKX3_2019(Project)
+        || Project.Descriptor.ProjectType is ProjectType.DS3;
 
     private bool IsCompressedMesh => SupportsCompressedMesh && TargetMeshType is CollisionGeneratorMeshType.CompressedMesh;
 
@@ -463,6 +466,12 @@ public class CollisionGeneratorTool
 
         uint? material = root switch
         {
+            HKX2.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<HKX2.hknpPhysicsSceneData>()
+                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
+                .Select(b => b.m_shape).OfType<HKX2.fsnpCustomParamCompressedMeshShape>()
+                .Select(s => s.m_pParam?.m_primitiveDataArray?.FirstOrDefault()?.m_materialNameData)
+                .FirstOrDefault(),
             HKLib.hk2019.hkRootLevelContainer r => r.m_namedVariants
                 .Select(v => v.m_variant).OfType<HKLib.hk2019.hknpPhysicsSceneData>()
                 .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
@@ -536,11 +545,13 @@ public class CollisionGeneratorTool
         }
         else
         {
-            // TODO: need to check this actually works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
+            // TODO: check the extern mesh works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
             if (sourceObject is HKX2.hkRootLevelContainer root)
             {
-                var shape = HavokShapeGenerator_HKX2.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX2.CreateReplaceExternMeshShapeAction(fileWrapper, root, shape);
+                HKX2.hknpShape shape = IsCompressedMesh
+                    ? HavokCompressedMeshGenerator_HKX2.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                    : HavokShapeGenerator_HKX2.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_HKX2.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
             }
         }
 

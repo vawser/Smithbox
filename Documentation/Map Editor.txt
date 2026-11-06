@@ -31,3 +31,12 @@
 - Add Local / Global Search impl from Time Act Editor
 - Add Mass Edit impl from Time Act Editor
 
+- Collision Maker:
+    - Use the tech from Collision Generator
+    - User picks a shape (Plane, Box, etc)
+    - Each corner of the shape has a filled wireframe point that can be moved
+        - Should be a special primitive (EditablePlane, EditableBox, etc)
+        - The user can then arrange the shape (add validation for invalid shapes)
+    - Then pass this shape data to the generator to create the HKX file (and add it to the current map's collision binder)
+    - Create col entity with this new hkx mesh
+    - Refresh col bank and rendering so it displays

@@ -513,12 +513,12 @@ public static class HavokShapeGenerator_HKX2
     }
 
     /// <summary>
-    /// An undoable version of <see cref="ReplaceExternMeshShape"/>. Returns null if the body can't be replaced.
+    /// An undoable replacement of a body's mesh shape with an extern or compressed mesh. Returns null if the body can't be replaced.
     /// </summary>
-    public static HavokDelegateAction CreateReplaceExternMeshShapeAction(
+    public static HavokDelegateAction CreateReplaceMeshShapeAction(
         HavokFileWrapper fileWrapper,
         hkRootLevelContainer container,
-        hknpExternMeshShape newShape,
+        hknpShape newShape,
         int bodyIndex = 0,
         bool force = false)
     {
@@ -543,9 +543,12 @@ public static class HavokShapeGenerator_HKX2
             {
                 body.m_shape = newShape;
 
-                // Update referenced objects
-                systemData.m_referencedObjects.Clear();
-                systemData.m_referencedObjects.Add(newShape);
+                // The system lists the shapes it references; swap the old shape for the new one, keeping the rest
+                var index = systemData.m_referencedObjects.IndexOf(oldShape);
+                if (index >= 0)
+                    systemData.m_referencedObjects[index] = newShape;
+                else
+                    systemData.m_referencedObjects.Add(newShape);
             },
             () =>
             {

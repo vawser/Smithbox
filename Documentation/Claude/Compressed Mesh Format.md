@@ -69,9 +69,29 @@ All 313 ER meshes in the three maps pass.
 - Material IDs follow the OBJ2HKX naming (`Reference/OBJ2HKX/mats.xml`): name ID + property ID, e.g. 429 =
   Without (29) + Slide1 (400).
 
+## HKX2 (DS3, Havok 2014)
+
+`HavokCompressedMeshGenerator_HKX2` fills the HKX2 classes from the same build. Surveyed on DS3 m30_00_00_00,
+m31_00_00_00 and m40_00_00_00; the `rebuild` mode passes on all 3080 meshes with triangles (a few vanilla meshes
+hold only 0xDEAD primitives and are skipped). The differences from HKX3:
+
+| Field | Value |
+|---|---|
+| `m_flags` | 516 (IS_COMPOSITE_SHAPE \| NO_GET_SHAPE_KEYS_ON_SPU); one vanilla mesh had 4 |
+| `m_convexRadius` | 0.01, domain W 0.99 / 1.01 |
+| `m_edgeWeldingMap` | mask 0xFFFFFFFF, 0 bits, empty lists |
+| `m_quadIsFlat` | `(maxKey >> 1) + 1` bits (per primitive key) |
+| `m_triangleIsInterior` | `maxKey + 1` bits |
+| SIMD tree | two empty nodes; unused |
+| section `m_sharedVertices.m_data` | packed vertex count \| first shared index << 8 |
+| section `m_primitives.m_data` | count \| first primitive << 8 |
+| section `m_dataRuns.m_data` | count \| first run << 8. Vanilla shares identical runs between sections; one per section is also valid |
+| section `m_numSharedIndices` | the section's shared vertex count |
+
+`HKX2.Builders.hknpCollisionMeshBuilder` is an older DS3 builder that needs the native NavGen.dll BVH; the
+Collision Generator does not use it.
+
 ## Not done
 
 - Quads: vanilla merges triangle pairs into quads. The builder only writes triangles, which is valid but larger.
-- Interior triangle bits are left clear.
-- HKX2 (DS3) still only gets extern meshes. `HKX2.Builders.hknpCollisionMeshBuilder` is an older DS3 builder that
-  needs the native NavGen.dll BVH.
+- Interior triangle and flat quad bits are left clear.
