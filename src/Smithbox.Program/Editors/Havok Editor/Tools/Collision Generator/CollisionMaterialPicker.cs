@@ -200,6 +200,12 @@ public class CollisionMaterialPicker
                 .Select(b => b.m_shape).OfType<Havok.hk2014.fsnpCustomParamCompressedMeshShape>()
                 .SelectMany(s => s.m_pParam?.m_primitiveDataArray ?? new())
                 .Select(p => p.m_materialNameData),
+            Havok.hk2016.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<Havok.hk2016.hknpPhysicsSceneData>()
+                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
+                .Select(b => b.m_shape).OfType<Havok.hk2016.fsnpCustomParamCompressedMeshShape>()
+                .SelectMany(s => s.m_pParam?.m_primitiveDataArray ?? new())
+                .Select(p => p.m_materialNameData),
             Havok.hk2019.hkRootLevelContainer r => r.m_namedVariants
                 .Select(v => v.m_variant).OfType<Havok.hk2019.hknpPhysicsSceneData>()
                 .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)

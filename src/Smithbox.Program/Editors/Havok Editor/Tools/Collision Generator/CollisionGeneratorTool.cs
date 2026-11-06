@@ -144,7 +144,7 @@ public class CollisionGeneratorTool
             ImGui.EndCombo();
         }
 
-        if (SupportsCompressedMesh)
+        if (SupportsExternMesh)
         {
             // Mesh Type
             GUI.Spacer();
@@ -166,25 +166,25 @@ public class CollisionGeneratorTool
                 ImGui.EndCombo();
             }
             GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_MeshType_Header_TT"));
+        }
 
-            if (TargetMeshType is CollisionGeneratorMeshType.CompressedMesh)
-            {
-                // Collision Material
-                GUI.Spacer();
-                GUI.SimpleHeader(
-                    LOC.Get("HAVOK_CollisionGen_Material_Header"),
-                    LOC.Get("HAVOK_CollisionGen_Material_Header_TT"));
+        if (IsCompressedMesh)
+        {
+            // Collision Material
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("HAVOK_CollisionGen_Material_Header"),
+                LOC.Get("HAVOK_CollisionGen_Material_Header_TT"));
 
-                MaterialPicker.Display(ref MaterialId,
-                    CollisionMaterialPicker.GetShapeMaterials(View.Selection.SelectedFileWrapper?.Root));
+            MaterialPicker.Display(ref MaterialId,
+                CollisionMaterialPicker.GetShapeMaterials(View.Selection.SelectedFileWrapper?.Root));
 
-                GUI.Spacer();
-                GUI.MultiButtonInput("materialActions",
-                    "materialFromCurrent",
-                    LOC.Get("HAVOK_CollisionGen_Material_From_Current"),
-                    LOC.Get("HAVOK_CollisionGen_Material_From_Current_TT"),
-                    UseCurrentMaterial);
-            }
+            GUI.Spacer();
+            GUI.MultiButtonInput("materialActions",
+                "materialFromCurrent",
+                LOC.Get("HAVOK_CollisionGen_Material_From_Current"),
+                LOC.Get("HAVOK_CollisionGen_Material_From_Current_TT"),
+                UseCurrentMaterial);
         }
 
         // Parameters
@@ -452,20 +452,21 @@ public class CollisionGeneratorTool
     }
 
     /// <summary>
-    /// Compressed meshes are built for DS3 (hk2014) and the 2018/2019 games. Older games (DS1, DS1R, BB) use the
-    /// older hkp physics, so only get extern meshes.
+    /// The games whose collision is hknp: DS3 and BB (hk2014), SDT (hk2016) and the 2018/2019 games. All of them get
+    /// compressed meshes. DeS, DS1, DS1R and DS2S use the older hkp physics (MOPP trees over extended meshes), which
+    /// has no generator yet (Documentation/Claude/Collision Generator All Versions.md).
     /// </summary>
+    private bool SupportsGame => Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB
+        || HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2016 or Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019;
+
     /// <summary>
-    /// The games the generators are built for: DS3 (hk2014 hknp) and the 2018/2019 games. The others (DeS, DS1, DS1R
-    /// with hkp physics; BB, DS2S and SDT, whose shapes it was never checked against) open in the editor without it.
+    /// Whether an extern mesh can be built instead of a compressed mesh. SDT ships extern meshes only in its f
+    /// binders, with an AABB tree the generator doesn't build, so it gets compressed meshes alone.
     /// </summary>
-    private bool SupportsGame => Project.Descriptor.ProjectType is ProjectType.DS3
-        || HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019;
+    private bool SupportsExternMesh => SupportsGame && HavokTypeUtils.GetSdk(Project) is not Havok.HavokSdk.Hk2016;
 
-    private bool SupportsCompressedMesh => HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019
-        || Project.Descriptor.ProjectType is ProjectType.DS3;
-
-    private bool IsCompressedMesh => SupportsCompressedMesh && TargetMeshType is CollisionGeneratorMeshType.CompressedMesh;
+    private bool IsCompressedMesh => SupportsGame
+        && (TargetMeshType is CollisionGeneratorMeshType.CompressedMesh || !SupportsExternMesh);
 
     /// <summary>
     /// Takes the collision material of the shape being replaced, from the first triangle group of its FromSoftware
@@ -530,17 +531,26 @@ public class CollisionGeneratorTool
             if (Havok.hk2018.Builders.CollisionShapeBuilder.ReplaceMeshShape(root2018, shape) is { } swap)
                 action = new HavokDelegateAction(fileWrapper, swap.Apply, swap.Undo);
         }
-        else
+        // SDT (hk2016): DS3's mesh tree under 2018's shape header, compressed meshes only
+        else if (sourceObject is Havok.hk2016.hkRootLevelContainer root2016)
         {
-            // DS3 (hk2014): its own generator, as the 2014 compressed mesh is laid out differently.
-            // TODO: check the extern mesh works in-game; some of the 2014 classes differ from the 2018 ones
-            if (sourceObject is Havok.hk2014.hkRootLevelContainer root)
-            {
-                Havok.hk2014.hknpShape shape = IsCompressedMesh
-                    ? HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
-                    : HavokShapeGenerator_hk2014.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_hk2014.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
-            }
+            var shape = Havok.hk2016.Builders.CollisionShapeBuilder.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId);
+
+            if (Havok.hk2016.Builders.CollisionShapeBuilder.ReplaceMeshShape(root2016, shape) is { } swap)
+                action = new HavokDelegateAction(fileWrapper, swap.Apply, swap.Undo);
+        }
+        // DS3 and BB (hk2014): their own generator, as the 2014 compressed mesh is laid out differently.
+        // TODO: check the extern mesh works in-game; some of the 2014 classes differ from the 2018 ones
+        else if (sourceObject is Havok.hk2014.hkRootLevelContainer root2014)
+        {
+            var variant = Project.Descriptor.ProjectType is ProjectType.BB
+                ? HavokCompressedMeshGenerator_hk2014.Variant.BB
+                : HavokCompressedMeshGenerator_hk2014.Variant.DS3;
+
+            Havok.hk2014.hknpShape shape = IsCompressedMesh
+                ? HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId, variant)
+                : HavokShapeGenerator_hk2014.BuildExternMeshShape(verts, indices);
+            action = HavokShapeGenerator_hk2014.CreateReplaceMeshShapeAction(fileWrapper, root2014, shape);
         }
 
         if (action == null)

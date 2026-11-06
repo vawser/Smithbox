@@ -4,8 +4,9 @@ using SoulsFormats;
 // The DS3 (Havok 2014) compressed meshes: the values the builder fills, and a rebuild check
 static class Ds3
 {
-    public static void Survey(BXF4 bxf, bool rebuild, bool detail, int maxShown)
+    public static void Survey(BXF4 bxf, bool rebuild, bool detail, int maxShown, Havok.HavokProfile profile = null)
     {
+        profile ??= Havok.HavokProfile.DS3;
         var counts = new Dictionary<string, Dictionary<string, int>>();
         void Count(string k, object v) { if (!counts.TryGetValue(k, out var d)) counts[k] = d = new(); var s = v?.ToString() ?? "null"; d[s] = d.GetValueOrDefault(s) + 1; }
         int shown = 0;
@@ -16,7 +17,7 @@ static class Ds3
             if (DCX.Is(bytes)) bytes = DCX.Decompress(bytes).ToArray();
             Havok.HavokDocument document;
             hkRootLevelContainer root;
-            try { document = Havok.Files.HavokFile.Read(bytes, Havok.HavokProfile.DS3); root = (hkRootLevelContainer)document.Root; }
+            try { document = Havok.Files.HavokFile.Read(bytes, profile); root = (hkRootLevelContainer)document.Root; }
             catch (Exception e) { Count("read failed", e.Message.Substring(0, Math.Min(60, e.Message.Length))); continue; }
 
             foreach (var body in root.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos))
@@ -28,7 +29,7 @@ static class Ds3
                 {
                     try
                     {
-                        var errors = Ds3Rebuild.Check(document, body, cms, out var stats);
+                        var errors = Ds3Rebuild.Check(document, body, cms, out var stats, profile);
                         Count("rebuild ok", errors.Count == 0);
                         Console.WriteLine($"{file.Name} {body.m_name}: {(errors.Count == 0 ? "OK" : $"{errors.Count} errors")} | {stats}");
                         foreach (var e in errors.Take(5)) Console.WriteLine("    " + e);

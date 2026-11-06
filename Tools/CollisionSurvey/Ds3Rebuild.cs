@@ -9,18 +9,19 @@ using System.Numerics;
 // materials line up.
 static class Ds3Rebuild
 {
-    public static List<string> Check(Havok.HavokDocument document, hknpBodyCinfo body, fsnpCustomParamCompressedMeshShape vanilla, out string stats)
+    public static List<string> Check(Havok.HavokDocument document, hknpBodyCinfo body, fsnpCustomParamCompressedMeshShape vanilla, out string stats, Havok.HavokProfile profile)
     {
         var errors = new List<string>();
         var root = (hkRootLevelContainer)document.Root;
         var (vertices, indices, materials) = Decode(vanilla);
         int triangleCount = indices.Count / 3;
 
-        var built = HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(vertices, indices, materials);
+        var variant = profile == Havok.HavokProfile.BB ? HavokCompressedMeshGenerator_hk2014.Variant.BB : HavokCompressedMeshGenerator_hk2014.Variant.DS3;
+        var built = HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(vertices, indices, materials, variant: variant);
 
         // Write the file with the rebuilt shape and read it back, as the Havok Editor saves it
         body.m_shape = built;
-        var reread = (hkRootLevelContainer)Havok.Files.HavokFile.Read(Havok.Files.HavokFile.Write(document), Havok.HavokProfile.DS3).Root;
+        var reread = (hkRootLevelContainer)Havok.Files.HavokFile.Read(Havok.Files.HavokFile.Write(document), profile).Root;
         int bodyIndex = root.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().First()
             .m_systemDatas.SelectMany(s => s.m_bodyCinfos).ToList().IndexOf(body);
         var shape = (fsnpCustomParamCompressedMeshShape)reread.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().First()
@@ -31,7 +32,9 @@ static class Ds3Rebuild
         var vTree = vanilla.m_data.m_meshTree;
         stats = $"tris {triangleCount} sections {vTree.m_sections.Count}->{tree.m_sections.Count} packed {vTree.m_packedVertices.Count}->{tree.m_packedVertices.Count} shared {vTree.m_sharedVertices.Count}->{tree.m_sharedVertices.Count} keyBits {vTree.m_bitsPerKey}->{tree.m_bitsPerKey}";
 
-        if (shape.m_flags != vanilla.m_flags) stats += $" (vanilla flags {vanilla.m_flags})";
+        if (shape.m_flags != vanilla.m_flags) errors.Add($"flags {shape.m_flags}, vanilla {vanilla.m_flags}");
+        // A few DS3 meshes ship with radius 0 rather than 0.01; both are vanilla
+        if (shape.m_convexRadius != vanilla.m_convexRadius) stats += $" (vanilla radius {vanilla.m_convexRadius})";
 
         // Every triangle decodes back to its input, through its key
         float maxError = 0;

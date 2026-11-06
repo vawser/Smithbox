@@ -18,7 +18,7 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Unsupported_Game",
-      "Text": "The Collision Generator builds collision for Dark Souls III, Elden Ring, Nightreign, Armored Core VI and The Duskbloods only."
+      "Text": "The Collision Generator builds collision for Bloodborne, Dark Souls III, Sekiro, Elden Ring, Nightreign, Armored Core VI and The Duskbloods only. Demon's Souls, Dark Souls, Dark Souls Remastered and Dark Souls II use an older physics format it can't build yet."
     },
     {
       "Key": "HAVOK_CollisionGen_No_Collision_Selected",

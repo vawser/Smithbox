@@ -13,8 +13,8 @@ namespace StudioCore.Editors.HavokEditor;
 /// <list type="bullet">
 /// <item>A section packs its counts with their start indices: m_sharedVertices holds the packed vertex count and
 /// the first shared vertex index (count | first &lt;&lt; 8), m_primitives and m_dataRuns hold count | first &lt;&lt; 8.</item>
-/// <item>The shape flags are IS_COMPOSITE_SHAPE | NO_GET_SHAPE_KEYS_ON_SPU, the convex radius 0.01, and the edge
-/// welding map is empty.</item>
+/// <item>The shape flags are IS_COMPOSITE_SHAPE | NO_GET_SHAPE_KEYS_ON_SPU, the convex radius 0.01 (BB: no SPU flag,
+/// radius 0; see <see cref="Variant"/>), and the edge welding map is empty.</item>
 /// <item>m_quadIsFlat has a bit per primitive key (key &gt;&gt; 1), m_triangleIsInterior a bit per shape key.</item>
 /// <item>The SIMD tree is an unused stub of two empty nodes.</item>
 /// </list>
@@ -22,22 +22,31 @@ namespace StudioCore.Editors.HavokEditor;
 /// </summary>
 public static class HavokCompressedMeshGenerator_hk2014
 {
-    public const float DefaultConvexRadius = 0.01f;
+    /// <summary>
+    /// What the hk2014 games set differently on a compressed mesh. BB (PS4) has no SPU flag and a convex radius of 0;
+    /// the rest of its layout is DS3's (checked with Tools/CollisionSurvey BB … rebuild).
+    /// </summary>
+    public sealed record Variant(float ConvexRadius, hknpShape.FlagsEnum Flags)
+    {
+        public static readonly Variant DS3 = new(0.01f, hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE | hknpShape.FlagsEnum.NO_GET_SHAPE_KEYS_ON_SPU);
+        public static readonly Variant BB = new(0f, hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE);
+    }
 
-    private const hknpShape.FlagsEnum ShapeFlags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE | hknpShape.FlagsEnum.NO_GET_SHAPE_KEYS_ON_SPU;
+    public const float DefaultConvexRadius = 0.01f;
 
     public static fsnpCustomParamCompressedMeshShape BuildCompressedMeshShape(
         IReadOnlyList<Vector3> vertices,
         IReadOnlyList<int> indices,
         IReadOnlyList<uint> triangleMaterials = null,
         uint defaultMaterial = 0,
-        float convexRadius = DefaultConvexRadius)
+        Variant variant = null)
     {
-        var build = HavokCompressedMeshBuilder.Build(vertices, indices, triangleMaterials, defaultMaterial, convexRadius);
-        return ToShape(build);
+        variant ??= Variant.DS3;
+        var build = HavokCompressedMeshBuilder.Build(vertices, indices, triangleMaterials, defaultMaterial, variant.ConvexRadius);
+        return ToShape(build, variant.Flags);
     }
 
-    public static fsnpCustomParamCompressedMeshShape ToShape(HavokCompressedMeshBuilder.Result build)
+    public static fsnpCustomParamCompressedMeshShape ToShape(HavokCompressedMeshBuilder.Result build, hknpShape.FlagsEnum flags)
     {
         var r = build.ConvexRadius;
 
@@ -136,7 +145,7 @@ public static class HavokCompressedMeshGenerator_hk2014
 
         var shape = new fsnpCustomParamCompressedMeshShape
         {
-            m_flags = ShapeFlags,
+            m_flags = flags,
             m_numShapeKeyBits = (byte)build.BitsPerKey,
             m_dispatchType = (byte)hkcdShapeDispatchType.ShapeDispatchTypeEnum.COMPOSITE,
             m_convexRadius = r,

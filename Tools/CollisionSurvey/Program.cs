@@ -27,7 +27,7 @@ var rebuild = args.Length > 5 && args[5] == "rebuild";
 
 using var fs = BuildFS(game, gamePaths[gameName]);
 
-var bhdPath = game == Game.DS3
+var bhdPath = game is Game.DS3 or Game.SDT or Game.BB
     ? $"/map/{mapId}/{type}{mapId.Substring(1)}.hkxbhd"
     : $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";
 var bdtPath = Path.ChangeExtension(bhdPath, ".hkxbdt");
@@ -39,6 +39,8 @@ if (compFile != null) { compendium = compFile.Bytes.ToArray(); if (DCX.Is(compen
 
 if (game == Game.AC6) { Ac6.Survey(bxf, compendium); return; }
 if (game == Game.DS3) { Ds3.Survey(bxf, rebuild, detail, maxFiles); return; }
+if (game == Game.BB) { Ds3.Survey(bxf, rebuild, detail, maxFiles, Havok.HavokProfile.BB); return; }
+if (game == Game.SDT) { Sdt.Survey(bxf, compendium, rebuild, detail, maxFiles); return; }
 
 // Read and written through the unified Havok library, with the binder's compendium, as Smithbox does
 var profile = Havok.HavokProfile.FromGame(gameName);
@@ -257,6 +259,8 @@ foreach (var (k, d) in aggregate)
 
 static VirtualFileSystem BuildFS(Game game, string root)
 {
+    // BB is kept unpacked, as loose files
+    if (game == Game.BB) return new RealVirtualFileSystem(Path.Combine(root, "Loose", "dvdroot_ps4"), false);
     var real = new RealVirtualFileSystem(root, false);
     var binder = ArchiveBinderVirtualFileSystem.FromGameFolder(root, game);
     return new CompundVirtualFileSystem([binder, real]);
