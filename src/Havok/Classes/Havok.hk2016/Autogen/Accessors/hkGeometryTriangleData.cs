@@ -1,0 +1,82 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk2016.Accessors;
+
+internal sealed class hkGeometryTriangleData : Havok.Formats.HavokFieldAccess<Havok.hk2016.hkGeometry.Triangle>
+{
+    public hkGeometryTriangleData(Havok.hk2016.hkGeometry.Triangle instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_a":
+            case "a":
+            {
+                value = instance.m_a;
+                return true;
+            }
+            case "m_b":
+            case "b":
+            {
+                value = instance.m_b;
+                return true;
+            }
+            case "m_c":
+            case "c":
+            {
+                value = instance.m_c;
+                return true;
+            }
+            case "m_material":
+            case "material":
+            {
+                value = instance.m_material;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_a":
+            case "a":
+            {
+                if (value is not int castValue) return false;
+                instance.m_a = castValue;
+                return true;
+            }
+            case "m_b":
+            case "b":
+            {
+                if (value is not int castValue) return false;
+                instance.m_b = castValue;
+                return true;
+            }
+            case "m_c":
+            case "c":
+            {
+                if (value is not int castValue) return false;
+                instance.m_c = castValue;
+                return true;
+            }
+            case "m_material":
+            case "material":
+            {
+                if (value is not int castValue) return false;
+                instance.m_material = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

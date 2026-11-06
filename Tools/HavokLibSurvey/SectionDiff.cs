@@ -29,6 +29,40 @@ public static class SectionDiff
     }
 
     /// <summary>
+    /// The section tree of a tagfile, e.g. TAG0[SDKV,DATA,TYPE[TPTR,TSTR,…],INDX[ITEM,PTCH]], with the padding byte of
+    /// the string sections, to work out an SDK's dialect.
+    /// </summary>
+    public static string Layout(byte[] d)
+    {
+        try
+        {
+            string Walk(int start)
+            {
+                uint header = BinaryPrimitives.ReadUInt32BigEndian(d.AsSpan(start));
+                int size = (int)(header & 0x3FFFFFFF);
+                string id = Encoding.ASCII.GetString(d, start + 4, 4);
+                if (id is "TSTR" or "TST1" or "FSTR" or "FST1" && size > 8)
+                    id += $"(pad {d[start + size - 1]:X2})";
+                if ((header & 0x40000000) != 0) return id;
+                var children = new List<string>();
+                for (int pos = start + 8; pos + 8 <= start + size;)
+                {
+                    int childSize = (int)(BinaryPrimitives.ReadUInt32BigEndian(d.AsSpan(pos)) & 0x3FFFFFFF);
+                    if (childSize < 8) break;
+                    children.Add(Walk(pos));
+                    pos += childSize;
+                }
+                return children.Count == 0 ? id : $"{id}[{string.Join(",", children)}]";
+            }
+            return Walk(0);
+        }
+        catch
+        {
+            return "<unreadable>";
+        }
+    }
+
+    /// <summary>
     /// The type names by index from the file's TYPE section (TSTR/TST1 + TNA1); empty if it refers to a compendium.
     /// </summary>
     private static List<string> TypeNames(byte[] d)
@@ -53,7 +87,7 @@ public static class SectionDiff
                         while (reader.Position < reader.GetSectionEnd() && reader.GetByte(reader.Position) != 0xFF)
                             strings.Add(reader.ReadASCII());
                     }
-                    else if (child == "TNA1")
+                    else if (child is "TNA1" or "TNAM")
                     {
                         var count = (int)reader.ReadHavokVarUInt();
                         names.Add("NULL");

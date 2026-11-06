@@ -42,6 +42,11 @@ public sealed class HavokTypeRegistry
     private static Dictionary<int, int> OptionalBitMapFor(string sdkVersion) =>
         sdkVersion.StartsWith("2019") ? OptionalBitMap2019 : OptionalBitMap2018;
 
+    // Registries built from game files (2015, 2016) store the serialized optionals as they are (root
+    // Optionals="Serialized"), so the conversion is the identity
+    private static readonly Dictionary<int, int> OptionalBitMapSerialized =
+        Enumerable.Range(0, 8).ToDictionary(i => i, i => i);
+
     private readonly Dictionary<string, HavokType> _typesFromIdentity = new();
     private readonly Dictionary<Type, HavokType> _typesFromType = new();
 
@@ -157,7 +162,9 @@ public sealed class HavokTypeRegistry
 
     private static HavokType[] Load(XElement typeRegistry, Func<string, Type?>? resolveType)
     {
-        Dictionary<int, int> optionalBitMap = OptionalBitMapFor(typeRegistry.Attribute("Version")?.Value ?? "");
+        Dictionary<int, int> optionalBitMap = typeRegistry.Attribute("Optionals")?.Value == "Serialized"
+            ? OptionalBitMapSerialized
+            : OptionalBitMapFor(typeRegistry.Attribute("Version")?.Value ?? "");
         List<XElement> types = typeRegistry.Elements().SelectMany(x => x.Elements()).ToList();
         HavokTypeBuilder[] builders = types.OrderBy(x => int.Parse(x.Attribute("Id")!.Value))
             .Select(_ => resolveType is null ? new HavokTypeBuilder() : new HavokTypeBuilder(resolveType))
@@ -221,6 +228,12 @@ public sealed class HavokTypeRegistry
                                 $"Invalid template parameter kind \"{param.Attribute("Kind")!.Value}\" encountered.");
                     }
                 }
+            }
+
+            // registries built from files only know how many properties a type has
+            if (type.Attribute("PropertyCount")?.Value is { } propertyCount)
+            {
+                builder.WithProperties(new HavokType.Member?[int.Parse(propertyCount)].ToList());
             }
 
             if (type.Element("Members") is { } members)

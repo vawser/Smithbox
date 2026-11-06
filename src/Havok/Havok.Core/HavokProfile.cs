@@ -39,8 +39,8 @@ public sealed class HavokProfile
     public bool BigEndian { get; }
 
     /// <summary>
-    /// The base registry file name in the Res folder, or null while the SDK has no registry yet (hk2014, hk2015,
-    /// hk2016 and the 32-bit packfile SDKs get theirs in Phases 3 to 5).
+    /// The base registry file name in the Res folder, or null while the SDK has no registry yet (hk2014 and the
+    /// 32-bit packfile SDKs get theirs in Phases 3 to 5). The 2015 and 2016 registries are built from the games' files.
     /// </summary>
     public string? RegistryFile { get; }
 
@@ -57,12 +57,14 @@ public sealed class HavokProfile
 
     public static readonly HavokProfile DES = new("DES", HavokSdk.Hk5x, HavokContainer.Packfile, 4, true);
     public static readonly HavokProfile DS1 = new("DS1", HavokSdk.Hk2010, HavokContainer.Packfile, 4, false);
-    public static readonly HavokProfile DS1R = new("DS1R", HavokSdk.Hk2015, HavokContainer.Tagfile, 8, false);
+    public static readonly HavokProfile DS1R = new("DS1R", HavokSdk.Hk2015, HavokContainer.Tagfile, 8, false,
+        "HavokTypeRegistry20150100.xml");
     public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false);
     public static readonly HavokProfile DS2S = new("DS2S", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
     public static readonly HavokProfile BB = new("BB", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
     public static readonly HavokProfile DS3 = new("DS3", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false);
-    public static readonly HavokProfile SDT = new("SDT", HavokSdk.Hk2016, HavokContainer.Tagfile, 8, false);
+    public static readonly HavokProfile SDT = new("SDT", HavokSdk.Hk2016, HavokContainer.Tagfile, 8, false,
+        "HavokTypeRegistry20160200.xml");
 
     public static readonly HavokProfile ER = new("ER", HavokSdk.Hk2018, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20180100.xml");

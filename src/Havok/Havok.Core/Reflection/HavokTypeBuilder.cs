@@ -568,18 +568,23 @@ public class HavokTypeBuilder
             InheritFrom(builder._parentBuilder);
         }
 
-        if (!Optionals.HasFlag(HavokType.Optional.Format) && builder.Optionals.HasFlag(HavokType.Optional.Format))
+        // A parent that is already built holds its inherited values too, so take them whether or not it declares them
+        // itself (HKLib only took declared values, which loses the format of types that only name their parent when
+        // the parent was built first, e.g. 2016's hkaiIndex<hkInt32>)
+        bool parentBuilt = builder._built;
+
+        if (!Optionals.HasFlag(HavokType.Optional.Format) && (parentBuilt || builder.Optionals.HasFlag(HavokType.Optional.Format)))
         {
             Format = builder.Format;
         }
 
-        if (!Optionals.HasFlag(HavokType.Optional.SizeAlign) && builder.Optionals.HasFlag(HavokType.Optional.SizeAlign))
+        if (!Optionals.HasFlag(HavokType.Optional.SizeAlign) && (parentBuilt || builder.Optionals.HasFlag(HavokType.Optional.SizeAlign)))
         {
             Size = builder.Size;
             Alignment = builder.Alignment;
         }
 
-        if (!Optionals.HasFlag(HavokType.Optional.SubType) && builder.Optionals.HasFlag(HavokType.Optional.SubType))
+        if (!Optionals.HasFlag(HavokType.Optional.SubType) && (parentBuilt || builder.Optionals.HasFlag(HavokType.Optional.SubType)))
         {
             _subType = builder._subType;
         }

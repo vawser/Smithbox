@@ -11,9 +11,13 @@
         <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
-    <!-- The registries are shared with HKLib.Reflection rather than copied -->
+    <!-- The 2018/2019 registries are shared with HKLib.Reflection rather than copied. The 2015/2016 registries are
+         built from the games' files by the buildregistry mode of Tools/HavokLibSurvey. -->
     <ItemGroup>
         <Content Include="..\HKLib.Reflection\Res\*.xml" Link="Res\%(Filename)%(Extension)">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Res\*.xml">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

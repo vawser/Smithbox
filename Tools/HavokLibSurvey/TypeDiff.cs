@@ -16,20 +16,133 @@ public static class TypeDiff
 
     private static readonly ConcurrentDictionary<string, Seen> Types = new();
 
-    public static void Reset() => Types.Clear();
+    // for --buildregistry: types seen only without a body, every hash seen, and bodies that disagree
+    private static readonly ConcurrentDictionary<string, HavokType> Bodiless = new();
+    private static readonly ConcurrentDictionary<string, uint> Hashes = new();
+    private static readonly ConcurrentDictionary<string, string> Conflicts = new();
 
-    public static void Collect(byte[] data, SniffInfo sniff, string example)
+    public static void Reset()
+    {
+        Types.Clear();
+        Bodiless.Clear();
+        Hashes.Clear();
+        Conflicts.Clear();
+    }
+
+    /// <param name="sdkPrefix">Only collect files of this SDK (e.g. "2016"); null for any</param>
+    public static void Collect(byte[] data, SniffInfo sniff, string example, string sdkPrefix = null)
     {
         if (sniff.Container is not ("Tagfile" or "Compendium")) return;
+        if (sdkPrefix != null && sniff.Container == "Tagfile" && !sniff.Sdk.StartsWith(sdkPrefix)) return;
         IReadOnlyList<HavokType> types;
         try { types = HavokTagfileSerializer.ReadTypeDescriptions(data); }
         catch { return; }
         foreach (var t in types)
         {
-            if (t == null || t.Optionals == HavokType.Optional.None) continue; // no body in this file
+            if (t == null) continue;
+            if (t.Hash is { } hash) Hashes.TryAdd(t.Identity, hash);
+            if (t.Optionals == HavokType.Optional.None) // no body in this file
+            {
+                Bodiless.TryAdd(t.Identity, t);
+                continue;
+            }
+
             var seen = Types.GetOrAdd(t.Identity, _ => new Seen(t, example));
             Interlocked.Increment(ref seen.Count);
+            if (!ReferenceEquals(seen.Type, t) && Describe(seen.Type) != Describe(t))
+                Conflicts.TryAdd(t.Identity, $"`{seen.Example}` vs `{example}`");
         }
+    }
+
+    /// <summary>
+    /// --buildregistry: writes every type collected as a registry XML in the HKLib format, with serialized optionals
+    /// (root Optionals="Serialized") and property counts, so Havok.Core and the class generator can load it.
+    /// Returns report lines.
+    /// </summary>
+    public static List<string> WriteRegistry(string path, string sdkVersion, string game)
+    {
+        // a body wins over a name-only description; every referenced type must be present
+        var all = new Dictionary<string, HavokType>();
+        foreach (var (identity, seen) in Types) all[identity] = seen.Type;
+        foreach (var (identity, type) in Bodiless) all.TryAdd(identity, type);
+
+        var pending = new Queue<HavokType>(all.Values);
+        void AddReferenced(HavokType t)
+        {
+            if (t != null && all.TryAdd(t.Identity, t)) pending.Enqueue(t);
+        }
+        while (pending.TryDequeue(out var t))
+        {
+            AddReferenced(t.Parent);
+            AddReferenced(t.SubType);
+            foreach (var p in t.TemplateParameters) AddReferenced(p.Type);
+            foreach (var f in t.Fields) AddReferenced(f.Type);
+            foreach (var i in t.Interfaces) AddReferenced(i.Type);
+        }
+
+        var ordered = all.Values.OrderBy(t => t.Identity, StringComparer.Ordinal).ToList();
+        var ids = ordered.Select((t, i) => (t.Identity, Id: i + 1)).ToDictionary(x => x.Identity, x => x.Id);
+        int Id(HavokType t) => t == null ? 0 : ids[t.Identity];
+
+        var types = new System.Xml.Linq.XElement("Types");
+        foreach (var t in ordered)
+        {
+            var e = new System.Xml.Linq.XElement("HavokType",
+                new System.Xml.Linq.XAttribute("Id", Id(t)),
+                new System.Xml.Linq.XAttribute("Name", t.Name),
+                new System.Xml.Linq.XAttribute("Parent", Id(t.Parent)),
+                new System.Xml.Linq.XAttribute("Optionals", (int)t.Optionals),
+                new System.Xml.Linq.XAttribute("Format", t.Format),
+                new System.Xml.Linq.XAttribute("SubType", Id(t.SubType)),
+                new System.Xml.Linq.XAttribute("Size", t.Size),
+                // files set high bits on some alignments (0x3008, 0xF010); registries keep the alignment itself, as HKLib's do
+                new System.Xml.Linq.XAttribute("Alignment", t.Alignment & 0xFFF),
+                new System.Xml.Linq.XAttribute("Flags", (int)t.Flags),
+                new System.Xml.Linq.XAttribute("Version", t.Version));
+            if (Hashes.TryGetValue(t.Identity, out var hash)) e.Add(new System.Xml.Linq.XAttribute("Hash", hash));
+            if (t.Properties.Count > 0) e.Add(new System.Xml.Linq.XAttribute("PropertyCount", t.Properties.Count));
+
+            if (t.TemplateParameters.Count > 0)
+                e.Add(new System.Xml.Linq.XElement("Template", t.TemplateParameters.Select(p =>
+                    new System.Xml.Linq.XElement("Parameter",
+                        new System.Xml.Linq.XAttribute("Name", p.Name),
+                        new System.Xml.Linq.XAttribute("Kind", p.Type is null ? "Value" : "Type"),
+                        new System.Xml.Linq.XAttribute("Value", p.Type is null ? p.Value ?? 0 : Id(p.Type))))));
+
+            var ownFields = t.Fields.Skip(t.Parent?.Fields.Count ?? 0).ToList();
+            if (ownFields.Count > 0)
+                e.Add(new System.Xml.Linq.XElement("Members", ownFields.Select(f =>
+                    new System.Xml.Linq.XElement("Member",
+                        new System.Xml.Linq.XAttribute("Name", f.Name),
+                        new System.Xml.Linq.XAttribute("Offset", f.Offset),
+                        new System.Xml.Linq.XAttribute("Type", Id(f.Type)),
+                        new System.Xml.Linq.XAttribute("Flags", (int)f.Flags)))));
+
+            var ownInterfaces = t.Interfaces.Skip(t.Parent?.Interfaces.Count ?? 0).ToList();
+            if (ownInterfaces.Count > 0)
+                e.Add(new System.Xml.Linq.XElement("Interfaces", ownInterfaces.Select(i =>
+                    new System.Xml.Linq.XElement("Interface",
+                        new System.Xml.Linq.XAttribute("Type", Id(i.Type)),
+                        new System.Xml.Linq.XAttribute("Offset", i.Offset)))));
+
+            types.Add(e);
+        }
+
+        var root = new System.Xml.Linq.XElement("HavokTypeRegistry",
+            new System.Xml.Linq.XAttribute("Version", sdkVersion),
+            new System.Xml.Linq.XAttribute("Optionals", "Serialized"),
+            new System.Xml.Linq.XAttribute("Game", game),
+            new System.Xml.Linq.XComment($" Built by Tools/HavokLibSurvey --buildregistry from the type sections of {game}'s tagfiles and compendiums. No enum value names: files don't store them. "),
+            types);
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        root.Save(path);
+
+        var lines = new List<string>
+        {
+            $"- Wrote `{Path.GetFileName(path)}`: {ordered.Count} types ({Types.Count} with bodies, {ordered.Count - Types.Count} name only), {Hashes.Count} hashes, {Conflicts.Count} conflicting descriptions."
+        };
+        foreach (var (identity, where) in Conflicts.Take(30)) lines.Add($"  - conflict: `{identity}`: {where}");
+        return lines;
     }
 
     private static string Describe(HavokType t) =>

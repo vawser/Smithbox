@@ -57,6 +57,17 @@ public static class Report
             sb.AppendLine($"| {g.Key} | {g.Count()} | {string.Join(", ", g.Select(f => f.Category).Distinct().OrderBy(c => c))} |");
         sb.AppendLine();
 
+        // Tagfile layouts: the section names and padding that make up each SDK's dialect
+        var layouts = files.Where(f => f.Layout != null).GroupBy(f => (f.Sniff.FormatKey, f.Layout)).OrderBy(g => g.Key.FormatKey).ToList();
+        if (layouts.Count > 0)
+        {
+            sb.AppendLine("## Tagfile layouts");
+            sb.AppendLine();
+            foreach (var g in layouts.Take(20))
+                sb.AppendLine($"- {g.Key.FormatKey} ({g.Count()} files): `{g.Key.Layout}`");
+            sb.AppendLine();
+        }
+
         // Library matrix
         sb.AppendLine("## Library results by format");
         sb.AppendLine();
@@ -80,7 +91,7 @@ public static class Report
         sb.AppendLine();
 
         // Unified engine parity
-        var unifiedRuns = runs.Where(x => x.Lib.ParityWith != null).ToList();
+        var unifiedRuns = runs.Where(x => x.Lib.Lib.StartsWith("Unified")).ToList();
         if (unifiedRuns.Count > 0)
         {
             sb.AppendLine("## Unified tagfile engine vs HKLib");
@@ -108,7 +119,7 @@ public static class Report
                 sb.AppendLine($"- **{g.Key}** read differs from HKLib ({g.Count()}×), e.g.:");
                 foreach (var x in g.Take(5)) sb.AppendLine($"  - `{x.File.Inner}`: `{x.Lib.ParityGraphDiff}`");
             }
-            foreach (var g in unifiedRuns.Where(x => x.Lib.SectionDiff != null && !x.Lib.Lib.EndsWith("legacy")).GroupBy(x => x.Lib.Lib))
+            foreach (var g in runs.Where(x => x.Lib.SectionDiff != null && !x.Lib.Lib.EndsWith("legacy")).GroupBy(x => x.Lib.Lib))
             {
                 sb.AppendLine($"- **{g.Key}** writes that aren't byte-identical ({g.Count()}×), by section (original→written):");
                 foreach (var s in g.GroupBy(x => x.File.Category).SelectMany(c => c.Take(3)).Take(12))

@@ -27,6 +27,13 @@ public sealed record TagfileDialect
     public required string FieldStringsSection { get; init; }
 
     /// <summary>
+    /// Type name and type body section ids: TNA1/TBDY, or TNAM/TBOD in 2015 files.
+    /// </summary>
+    public string TypeNamesSection { get; init; } = "TNA1";
+
+    public string TypeBodiesSection { get; init; } = "TBDY";
+
+    /// <summary>
     /// The byte string sections are padded with: 0x00 (2018) or 0xFF (2019).
     /// </summary>
     public required byte StringPadding { get; init; }
@@ -73,6 +80,12 @@ public sealed record TagfileDialect
     public bool MergeEqualStrings { get; init; } = true;
 
     /// <summary>
+    /// With <see cref="MergeEqualStrings" /> false: whether empty strings share one item. .NET has a single empty
+    /// string object, so reading can't tell shared empty strings from separate ones; this picks one for the SDK.
+    /// </summary>
+    public bool ShareEmptyStrings { get; init; } = true;
+
+    /// <summary>
     /// Record hkRelArray pointers in PTCH (2018 does; 2019 only patches hkRelArray32).
     /// </summary>
     public bool PatchRelArrays { get; init; }
@@ -112,6 +125,27 @@ public sealed record TagfileDialect
         CompactPatches = false,
         MergeEqualStrings = true,
         PatchRelArrays = false
+    };
+
+    /// <summary>
+    /// Sekiro's 2016 files: laid out like 2018 files (the survey's tagfile layouts), so the 2018 dialect with its SDKV.
+    /// </summary>
+    public static TagfileDialect Hk2016 { get; } = Hk2018 with
+    {
+        SdkVersion = "20160200",
+        Sdk = HavokSdk.Hk2016,
+        ShareEmptyStrings = false
+    };
+
+    /// <summary>
+    /// DS1R's 2015 files: the 2018 layout with the type name and body sections called TNAM and TBOD.
+    /// </summary>
+    public static TagfileDialect Hk2015 { get; } = Hk2018 with
+    {
+        SdkVersion = "20150100",
+        Sdk = HavokSdk.Hk2015,
+        TypeNamesSection = "TNAM",
+        TypeBodiesSection = "TBOD"
     };
 
     /// <summary>

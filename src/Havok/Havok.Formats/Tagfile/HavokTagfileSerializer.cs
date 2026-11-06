@@ -386,7 +386,8 @@ public sealed class HavokTagfileSerializer
 
     private static IReadOnlyList<HavokTypeBuilder> ReadTNA1(TagfileReader reader, IReadOnlyList<string> typeStrings)
     {
-        reader.EnterSection("TNA1");
+        // TNAM in 2015 files
+        reader.EnterSection(reader.GetSectionId() == "TNAM" ? "TNAM" : "TNA1");
         int numTypes = (int)reader.ReadHavokVarUInt();
 
         // type 0 is the null type, which is not serialized
@@ -429,7 +430,8 @@ public sealed class HavokTagfileSerializer
     private static void ReadTBDY(TagfileReader reader, IReadOnlyList<HavokTypeBuilder> builders, IReadOnlyList<string> fieldStrings,
         ConcurrentDictionary<string, ulong>? memberExtraValues)
     {
-        reader.EnterSection("TBDY");
+        // TBOD in 2015 files
+        reader.EnterSection(reader.GetSectionId() == "TBOD" ? "TBOD" : "TBDY");
 
         // 2019 files don't store a body for every type, so read to the end of the section
         while (reader.Position < reader.GetSectionEnd())
@@ -787,10 +789,10 @@ public sealed class HavokTagfileSerializer
         return typeStringIndices;
     }
 
-    private static IReadOnlyDictionary<HavokType, int> WriteTNA1(TagfileWriter writer, IReadOnlyList<HavokType> types,
+    private IReadOnlyDictionary<HavokType, int> WriteTNA1(TagfileWriter writer, IReadOnlyList<HavokType> types,
         IReadOnlyDictionary<string, int> typeStringIndices)
     {
-        writer.BeginSection("TNA1");
+        writer.BeginSection(Dialect.TypeNamesSection);
 
         Dictionary<HavokType, int> typeIndices = new();
         for (int i = 0; i < types.Count; i++) typeIndices.Add(types[i], i + 1);
@@ -837,7 +839,7 @@ public sealed class HavokTagfileSerializer
     private void WriteTBDY(TagfileWriter writer, IReadOnlyList<HavokType> types,
         IReadOnlyDictionary<HavokType, int> typeIndices, IReadOnlyDictionary<string, int> fieldStringIndices)
     {
-        writer.BeginSection("TBDY");
+        writer.BeginSection(Dialect.TypeBodiesSection);
         foreach (HavokType type in types)
         {
             writer.WriteHavokVarUInt((ulong)typeIndices[type]);

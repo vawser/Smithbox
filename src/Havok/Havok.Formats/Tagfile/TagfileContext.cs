@@ -223,10 +223,14 @@ internal sealed class TagfileWriteContext
     {
         if (!_typeCheck.Contains(type)) GetTypesForWrite(type);
 
+        // every empty string its own item, when the dialect says so (see TagfileDialect.ShareEmptyStrings)
+        bool separate = referenceKey is string { Length: 0 } && !Dialect.MergeEqualStrings && !Dialect.ShareEmptyStrings;
+
         Dictionary<object, ulong> pointers = referenceKey is string && !Dialect.MergeEqualStrings
             ? _stringPointers
             : _objectPointers;
-        if (pointers.TryGetValue(referenceKey, out ulong pointer)) return pointer;
+        ulong pointer;
+        if (!separate && pointers.TryGetValue(referenceKey, out pointer)) return pointer;
 
         // the pointer is filled in when the item being written ends
         if (_currentItem is not null)
@@ -243,7 +247,7 @@ internal sealed class TagfileWriteContext
             AlignmentOverride = alignmentOverride
         };
         _items.Add(item);
-        pointers.Add(referenceKey, pointer);
+        if (!separate) pointers.Add(referenceKey, pointer);
         return pointer;
     }
 

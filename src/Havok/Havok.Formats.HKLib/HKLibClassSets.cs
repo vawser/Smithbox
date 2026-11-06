@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 using System.Numerics;
 using Havok.Formats.Tagfile;
 using Havok.Reflection;
-using HKLib.ValueTypes;
+
 
 namespace Havok.Formats.HKLib;
 
@@ -47,11 +47,11 @@ public sealed class HKLib2018ClassSet : IHavokClassSet
 
     public HavokTypeRegistry Registry { get; }
 
-    public Type? Matrix3x3Type => typeof(Matrix3x3);
+    public Type? Matrix3x3Type => typeof(global::HKLib.ValueTypes.Matrix3x3);
 
-    public object ToMatrix3x3(Matrix4x4 matrix) => (Matrix3x3)matrix;
+    public object ToMatrix3x3(Matrix4x4 matrix) => (global::HKLib.ValueTypes.Matrix3x3)matrix;
 
-    public Matrix4x4 FromMatrix3x3(object matrix) => (Matrix3x3)matrix;
+    public Matrix4x4 FromMatrix3x3(object matrix) => (global::HKLib.ValueTypes.Matrix3x3)matrix;
 
     public bool IsHavokObject(object value) => value is global::HKLib.hk2018.IHavokObject;
 
@@ -115,11 +115,11 @@ public sealed class HKLib2019ClassSet : IHavokClassSet
 
     public HavokTypeRegistry Registry { get; }
 
-    public Type? Matrix3x3Type => typeof(Matrix3x3);
+    public Type? Matrix3x3Type => typeof(global::HKLib.ValueTypes.Matrix3x3);
 
-    public object ToMatrix3x3(Matrix4x4 matrix) => (Matrix3x3)matrix;
+    public object ToMatrix3x3(Matrix4x4 matrix) => (global::HKLib.ValueTypes.Matrix3x3)matrix;
 
-    public Matrix4x4 FromMatrix3x3(object matrix) => (Matrix3x3)matrix;
+    public Matrix4x4 FromMatrix3x3(object matrix) => (global::HKLib.ValueTypes.Matrix3x3)matrix;
 
     public bool IsHavokObject(object value) => value is global::HKLib.hk2019.IHavokObject;
 

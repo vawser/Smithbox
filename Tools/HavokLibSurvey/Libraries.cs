@@ -283,12 +283,17 @@ public sealed class UnifiedTagfile : Library
     private readonly string _sdkPrefix;
     private readonly Havok.Formats.Tagfile.TagfileDialect _dialect;
 
-    public UnifiedTagfile(string name, string sdkPrefix, Havok.Formats.Tagfile.TagfileDialect dialect, string parityWith)
+    private readonly Func<Havok.HavokProfile, Havok.Formats.IHavokClassSet> _classSet;
+
+    /// <param name="classSet">The class set to read into; null for HKLib's classes through the bridge</param>
+    public UnifiedTagfile(string name, string sdkPrefix, Havok.Formats.Tagfile.TagfileDialect dialect, string parityWith,
+        Func<Havok.HavokProfile, Havok.Formats.IHavokClassSet> classSet = null)
     {
         _name = name;
         _sdkPrefix = sdkPrefix;
         _dialect = dialect;
         ParityWith = parityWith;
+        _classSet = classSet;
     }
 
     public override string Name => _name;
@@ -300,16 +305,20 @@ public sealed class UnifiedTagfile : Library
 
     public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith(_sdkPrefix);
 
+    private Havok.Formats.Tagfile.HavokTagfileSerializer New(Havok.HavokProfile profile) => _classSet == null
+        ? Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect)
+        : new Havok.Formats.Tagfile.HavokTagfileSerializer(_classSet(profile), _dialect);
+
     private Havok.Formats.Tagfile.HavokTagfileSerializer Create(ContainerContext ctx, bool useComp)
     {
         var profile = Havok.HavokProfile.FromGame(ctx.Game.ToString())
                       ?? throw new InvalidOperationException($"No profile for {ctx.Game}");
-        var s = Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect);
+        var s = New(profile);
         if (useComp)
         {
             // keyed by SDK: every dialect of an SDK reads a compendium the same way
             var compendium = ctx.Get("unified" + _sdkPrefix, bytes =>
-                Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect).ReadCompendium(bytes));
+                New(profile).ReadCompendium(bytes));
             if (compendium != null) s.LoadCompendium(compendium);
         }
         return s;
