@@ -77,10 +77,23 @@ public class CollisionEditorTool
     /// <summary>The vertices of one body that an edit moves, with how much of the move each takes.</summary>
     private record MoveSet(CollisionEditorFile File, CollisionEditorBody Body, List<(int Vertex, float Weight)> Falloff);
 
+    private readonly CollisionEditorCreate Create;
+
     public CollisionEditorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+        Create = new CollisionEditorCreate(view, project, this);
+    }
+
+    /// <summary>
+    /// After the Create tab adds collision files: the names the viewport loads them under are worked out again, and
+    /// files that were found to have nothing to edit are looked at again.
+    /// </summary>
+    public void OnCollisionCreated()
+    {
+        ResourceNames.Clear();
+        Unsupported.Clear();
     }
 
     /// <summary>
@@ -110,15 +123,39 @@ public class CollisionEditorTool
             return;
         }
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Description"));
-
         if (!CFG.Current.MapEditor_ModelLoad_Collisions || CFG.Current.MapEditor_SkipHavokLoad)
         {
-            GUI.Spacer();
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Collision_Not_Loaded"));
             ImGui.EndChild();
             return;
         }
+
+        if (ImGui.BeginTabBar("collisionEditorTabs"))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Edit")}##collisionEditorTabEdit"))
+            {
+                DisplayEditTab();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Create")}##collisionEditorTabCreate"))
+            {
+                Create.Display();
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+        }
+
+        ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Reshaping existing collision: the cursor, its keys and options, and committing the edits.
+    /// </summary>
+    private void DisplayEditTab()
+    {
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Description"));
 
         // Actions
         GUI.Spacer();
@@ -183,8 +220,6 @@ public class CollisionEditorTool
         GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Drag", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag)));
 
         DisplayStatus();
-
-        ImGui.EndChild();
     }
 
     /// <summary>

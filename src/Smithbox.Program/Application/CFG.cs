@@ -359,6 +359,8 @@ public class CFG
     public HavokCollisionType MapEditor_CollisionEditor_Layer = HavokCollisionType.Low;
     public bool MapEditor_CollisionEditor_Link_Layers = true;
     public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
+    public bool MapEditor_CollisionEditor_Show_Flver_Meshes = true;
+    public bool MapEditor_CollisionEditor_Show_Create_Preview = true;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_NavVolume = false;
     public bool MapEditor_BasicFilter_SpeedTree = true;

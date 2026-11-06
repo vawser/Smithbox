@@ -399,6 +399,7 @@ public class HavokCollisionBank
         {
             MapDocuments.Remove(name);
             CollisionBinders.Remove(name);
+            NewFiles.Remove(name);
 
             lock (TagContainers)
             {
@@ -471,6 +472,162 @@ public class HavokCollisionBank
         }
     }
 
+    /// <summary>
+    /// Collision files made in the Map Editor that a binder may not have yet, keyed by file name: SaveMapCollision
+    /// adds them to their binder.
+    /// </summary>
+    private readonly Dictionary<string, (string MapId, string Type)> NewFiles = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// Reads a file of one binder of an ER, NR or AC6 map afresh, to base a new collision on: the first whose
+    /// document has a single body, which the accept check takes. Read with the binder's compendium, so the new file
+    /// refers to it as the binder's other files do. Null if the binder has no such file.
+    /// </summary>
+    public Havok.HavokDocument ReadTemplateDocument(string mapId, string type, Func<Havok.HavokDocument, bool> accept)
+    {
+        var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
+
+        if (profile == null)
+            return null;
+
+        try
+        {
+            using var binder = OpenCollisionBinder(mapId, type);
+
+            if (binder == null)
+                return null;
+
+            var compendium = HavokCompendiumSource.Find(binder);
+
+            foreach (var file in GetCollisionFiles(binder))
+            {
+                try
+                {
+                    var bytes = binder.ReadFile(file);
+                    bytes = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+
+                    var document = Havok.Files.HavokFile.Read(bytes.ToArray(), profile, compendium?.Unified(profile));
+
+                    if (accept(document))
+                        return document;
+                }
+                catch (Exception)
+                {
+                    // Files that can't be read are skipped: any readable one will do
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", GetBinderKey(mapId, type)), e);
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Whether a map's binders list a collision file of this name, of any type.
+    /// </summary>
+    public bool HasMapCollision(string mapId, string fileName)
+    {
+        return MapCollisions.TryGetValue(mapId, out var names)
+            && names.Any(n => string.Equals(n, fileName, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>
+    /// Whether a map has a collision binder of a type (h, l or f).
+    /// </summary>
+    public bool HasCollisionBinder(string mapId, string type)
+    {
+        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
+        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+
+        return Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath);
+    }
+
+    /// <summary>
+    /// Adds a new collision file to a map, to be written into its binder by SaveMapCollision. It is listed and held as
+    /// the files read from the binder are.
+    /// </summary>
+    public void AddMapCollision(string mapId, string type, string fileName, Havok.HavokDocument document)
+    {
+        if (!MapCollisions.ContainsKey(mapId))
+            MapCollisions.Add(mapId, new List<string>());
+
+        if (!MapCollisions[mapId].Contains(fileName, StringComparer.OrdinalIgnoreCase))
+            MapCollisions[mapId].Add(fileName);
+
+        CollisionBinders[fileName] = (mapId, type);
+        MapDocuments[fileName] = document;
+        NewFiles[fileName] = (mapId, type);
+    }
+
+    /// <summary>
+    /// Adds the new collision files of a binder that it doesn't have yet, as its other collision files are stored:
+    /// in the same folder of the binder, with their flags and compression, and the next free ID.
+    /// </summary>
+    private bool AddNewFiles(BXF4 binder, string mapId, string type, ref bool anyWritten)
+    {
+        var success = true;
+
+        var pending = NewFiles
+            .Where(e => e.Value.MapId == mapId && e.Value.Type == type)
+            .Select(e => e.Key)
+            .ToList();
+
+        if (pending.Count == 0)
+            return true;
+
+        var existing = binder.Files
+            .Where(f => f.Name != null && f.Name.Contains(".hkx.dcx") && f.Name.Split('\\').Length == 2)
+            .ToList();
+
+        var sample = existing.FirstOrDefault();
+
+        if (sample == null)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", GetBinderKey(mapId, type)));
+            return false;
+        }
+
+        var folder = sample.Name.Split('\\')[0];
+        DCX.Decompress(sample.Bytes, out DCX.Type compression);
+
+        foreach (var name in pending)
+        {
+            // Written by the loop over the binder's files once it has it
+            if (existing.Any(f => string.Equals(f.Name.Split('\\')[1], name, StringComparison.OrdinalIgnoreCase)))
+            {
+                NewFiles.Remove(name);
+                continue;
+            }
+
+            if (!MapDocuments.TryGetValue(name, out var document))
+                continue;
+
+            try
+            {
+                var bytes = DCX.Compress(Havok.Files.HavokFile.Write(document), compression);
+                var id = binder.Files.Count == 0 ? 0 : binder.Files.Max(f => f.ID) + 1;
+
+                binder.Files.Add(new BinderFile(sample.Flags, id, $"{folder}\\{name}", bytes)
+                {
+                    CompressionType = sample.CompressionType
+                });
+
+                NewFiles.Remove(name);
+                anyWritten = true;
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                success = false;
+            }
+        }
+
+        return success;
+    }
+
     public bool SaveMapCollisionFiles(string mapId)
     {
         var success = true;
@@ -541,6 +698,8 @@ public class HavokCollisionBank
                     success = false;
                 }
             }
+
+            success &= AddNewFiles(packedBinder, mapId, type, ref anyWritten);
 
             if (!anyWritten)
                 return success;

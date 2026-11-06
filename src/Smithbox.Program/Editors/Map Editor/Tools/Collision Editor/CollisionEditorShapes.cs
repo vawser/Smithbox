@@ -106,6 +106,62 @@ public static class CollisionEditorShapes
         return null;
     }
 
+    /// <summary>
+    /// Whether a document can be the base of a new collision: a single body, whose shape is a supported compressed
+    /// mesh, so it can be replaced by the new mesh.
+    /// </summary>
+    public static bool IsTemplate(Havok.HavokDocument document)
+    {
+        var bodies = CollisionGeometry.Bodies(document.Objects).ToList();
+
+        return bodies.Count == 1 && IsSupportedShape(bodies[0].Shape);
+    }
+
+    /// <summary>
+    /// Turns a freshly read template document into a new collision of the given triangles: its body gets a mesh built
+    /// in its class set, is placed at the origin unrotated, and is named for the new model (the template's name with
+    /// its model number replaced, as the game names a file's body after it).
+    /// </summary>
+    public static bool MakeNewCollision(Havok.HavokDocument document, string modelNumber,
+        List<Vector3> vertices, List<int> indices, List<uint> materials)
+    {
+        if (!IsTemplate(document))
+            return false;
+
+        var body = CollisionGeometry.Bodies(document.Objects).First();
+        var shape = BuildShape(body.Shape, vertices, indices, materials);
+
+        if (shape == null || !SetShape(body, shape))
+            return false;
+
+        switch (body)
+        {
+            case Havok.hk2018.hknpBodyCinfo b:
+                b.m_position = new Vector4(0, 0, 0, b.m_position.W);
+                b.m_orientation = Quaternion.Identity;
+                b.m_name = RenameBody(b.m_name, modelNumber);
+                break;
+            case Havok.hk2019.hknpBodyCinfo b:
+                b.m_position = new Vector4(0, 0, 0, b.m_position.W);
+                b.m_orientation = Quaternion.Identity;
+                b.m_name = RenameBody(b.m_name, modelNumber);
+                break;
+        }
+
+        return true;
+    }
+
+    // h000100 becomes h001234: the model number is the name's last six characters
+    private static string RenameBody(string name, string modelNumber)
+    {
+        if (string.IsNullOrEmpty(name) || name.Length < modelNumber.Length)
+            return name;
+
+        var suffix = name.Substring(name.Length - modelNumber.Length);
+
+        return suffix.All(char.IsDigit) ? name.Substring(0, name.Length - modelNumber.Length) + modelNumber : name;
+    }
+
     /// <summary>Gives a body a shape of its own class set. False if they don't match.</summary>
     public static bool SetShape(IHavokBody body, object shape)
     {

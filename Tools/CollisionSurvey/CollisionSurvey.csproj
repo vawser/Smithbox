@@ -16,6 +16,8 @@
        Havok.Files; DS3's generator still lives in Smithbox. -->
   <ItemGroup>
     <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokCompressedMeshGenerator_hk2014.cs" Link="Linked\HavokCompressedMeshGenerator_hk2014.cs" />
+    <!-- The Collision Editor's shape code, checked by the create mode -->
+    <Compile Include="..\..\src\Smithbox.Program\Editors\Map Editor\Tools\Collision Editor\CollisionEditorShapes.cs" Link="Linked\CollisionEditorShapes.cs" />
   </ItemGroup>
 
   <ItemGroup>

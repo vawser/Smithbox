@@ -28,6 +28,45 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
    binder into the project, and refreshes the displayed mesh.
 6. **Discard Changes** drops the pending edits.
 
+## Create tab
+
+The section has two tabs: **Edit** (everything above) and **Create**, which makes a new collision for the active
+map (the map the content tree shows) in one click.
+
+- **Shape**: Square, Triangle, Circle and Semi-Circle with the Havok Editor generator's parameters
+  (`HavokShapeGenerator`), or **Selected FLVER**: the FLVER of the selected map piece or asset, with a checklist of its
+  meshes. Selected FLVER is greyed out unless exactly one map piece or asset of the active map is selected. Facing and
+  Collision Material as in the generator (`CollisionMaterialPicker`); a FLVER mesh whose material is named
+  `hkm_Name_Property` keeps that material. A preview shows the triangles (`MeshPreviewRenderer`).
+- **Model ID**: the new collision's number (h + 6 digits), suggested as the first unused number after the map's
+  highest below 900000, and checked against the map's collision files and parts.
+- **Files**: each new collision is a **new file in the map's binders**: `h<map>_<id>.hkx.dcx` in the h binder and
+  `l<map>_<id>.hkx.dcx` in the l binder (if the map has one), with the same mesh, so linked editing works on it.
+  Each document is a fresh read of an existing file of the same binder (one whose body is a compressed mesh), so it
+  carries that binder's compendium types and FromSoftware fields, with the body's shape replaced by the new mesh,
+  placed at the origin and named for the new model. The binders are written into the project straight away
+  (`HavokCollisionBank.AddMapCollision` registers the file; `SaveMapCollision` appends files the binder lacks, with the
+  next free ID and the flags, folder and compression of the binder's other collision files).
+- **Part**: a Collision part is added with `EntAddAction` (so it can be undone), cloned from an existing collision part
+  of the map so its fields match the map's, with its own name (`h<id>_0000`), model name, no entity ID or entity
+  groups, and scale 1. A basic shape is placed at the placement orb. Selected FLVER takes the source part's position,
+  rotation and parent, with the source's scale baked into the vertices, as collision isn't scaled.
+- **Viewport**: before the part is added, the new files are loaded from the binder with only their names asked for,
+  so the part's own load joins that load rather than reading every collision of the binder again.
+- **Undo** removes the part; the files stay in the binders. The MSB's model list is filled in from the parts on save.
+
+### Checked against game files (`CollisionSurvey ER m10_00_00_00 0 create`)
+
+The create mode runs `CollisionEditorShapes` (linked into the tool) on Stormveil's binders: the first single-body
+file is made into a two-material square, appended as `AddNewFiles` does, and the binder written and read back.
+
+- h binder: 117 collisions, IDs 0..117, every file Flag1 in folder `m10_00_00_00`, with a compendium. Template
+  `h10_00_00_00_000001`, body `h000001` renamed `h123456`. The new file reads back as ID 118, the others intact,
+  DCX_KRAK as the binder's, 2 triangles with no corner error, materials 1 and 29.
+- l binder: the same, with bodies named `l...` (`l000001` became `l123456`), so renaming by the number covers both.
+- Not checked: the game loading the new files, and whether a map needs anything beyond the binders and the part
+  (for example navmesh or other per-collision files) for a new collision to work in game.
+
 ## Layers
 
 High and low collision are the same ground at two levels of detail; fall protection is a barrier of its own.
