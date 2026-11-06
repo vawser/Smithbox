@@ -20,11 +20,29 @@ VirtualFileSystem fs;
 try { fs = new CompundVirtualFileSystem([ArchiveBinderVirtualFileSystem.FromGameFolder(root, game), new RealVirtualFileSystem(root, false)]); }
 catch { fs = new RealVirtualFileSystem(root, false); }
 
-var bhd = fs.ReadFileOrThrow(args[1]);
-var bdt = fs.ReadFileOrThrow(Path.ChangeExtension(args[1], ".hkxbdt"));
-using IBinder binder = BXF4.IsBHD(bhd) ? BXF4.Read(bhd, bdt) : BXF3.Read(bhd, bdt);
+var layoutMode = args.Contains("--layout");
+args = args.Where(a => a != "--layout").ToArray();
+
+var container = fs.ReadFileOrThrow(args[1]);
+IBinder binder;
+if (args[1].EndsWith("bhd", StringComparison.OrdinalIgnoreCase))
+{
+    var bdt = fs.ReadFileOrThrow(Path.ChangeExtension(args[1], ".hkxbdt"));
+    binder = BXF4.IsBHD(container) ? BXF4.Read(container, bdt) : BXF3.Read(container, bdt);
+}
+else
+{
+    var bnd = DCX.Is(container) ? DCX.Decompress(container).ToArray() : container.ToArray();
+    binder = BND4.Is(bnd) ? BND4.Read(bnd) : BND3.Read(bnd);
+}
 var file = binder.Files.First(f => Regex.IsMatch(f.Name, args[2]));
 var original = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+if (layoutMode)
+{
+    LayoutProbe.Run(original, HavokProfile.FromGame(args[0])!, file.Name);
+    return;
+}
 
 var profile = HavokProfile.FromGame(args[0]) is { Sdk: HavokSdk.Hk2014 } p ? p : HavokProfile.DS3;
 var serializer = new HavokPackfileSerializer(Havok.hk2014.ClassSet.For(profile));

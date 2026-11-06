@@ -62,8 +62,10 @@ public sealed class HavokProfile
     public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false);
     public static readonly HavokProfile DS2S = new("DS2S", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
         "HavokTypeRegistry20140100.xml");
+    // BB is a PS4 (Itanium C++ ABI) build: its layouts are the DS3 ones recomputed by the buildlayoutoverlay mode of
+    // Tools/HavokLibSurvey, since BB's packfiles carry no type sections
     public static readonly HavokProfile BB = new("BB", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
-        "HavokTypeRegistry20140100.xml");
+        "HavokTypeRegistry20140100.xml", "HavokTypeRegistry20140100_BB.xml");
     public static readonly HavokProfile DS3 = new("DS3", HavokSdk.Hk2014, HavokContainer.Packfile, 8, false,
         "HavokTypeRegistry20140100.xml");
     public static readonly HavokProfile SDT = new("SDT", HavokSdk.Hk2016, HavokContainer.Tagfile, 8, false,

@@ -19,13 +19,30 @@ var gamePaths = File.ReadAllLines(Path.Combine("..", "..", "game_data.txt"))
     .Where(p => p.Length == 2)
     .ToDictionary(p => p[0].Trim(), p => p[1].Trim().Trim('"').Trim());
 
+if (args.Contains("--buildlayoutoverlay"))
+{
+    var target = Havok.HavokProfile.FromGame(args.First(a => !a.StartsWith("--")))!;
+    foreach (var l in LayoutOverlay.Write(target, Havok.Reflection.HavokLayoutRules.ItaniumBB, "DS3")) Console.WriteLine(l);
+    return;
+}
+
+if (args.Contains("--layoutcheck"))
+{
+    var layoutLines = LayoutCheck.Run();
+    var layoutPath = Path.Combine("..", "..", "Documentation", "Claude", "Havok Library Survey", "Layout Check.md");
+    File.WriteAllLines(layoutPath, layoutLines);
+    foreach (var l in layoutLines) Console.WriteLine(l);
+    return;
+}
+
 var coreCheck = args.Contains("--core");
 var coreRegistryLines = coreCheck ? CoreCheck.CompareRegistries() : null;
 if (coreRegistryLines != null) foreach (var l in coreRegistryLines) Console.WriteLine(l);
 Survey.BuildRegistry = args.Contains("--buildregistry");
 Survey.BuildOverlay = args.Contains("--buildoverlay");
-Survey.TypeDiffEnabled = args.Contains("--typediff") || Survey.BuildRegistry || Survey.BuildOverlay;
-args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry" or "--buildoverlay")).ToArray();
+var layoutPredict = args.Contains("--layoutpredict");
+Survey.TypeDiffEnabled = args.Contains("--typediff") || layoutPredict || Survey.BuildRegistry || Survey.BuildOverlay;
+args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry" or "--buildoverlay" or "--layoutpredict")).ToArray();
 
 var maxContainers = args.Length > 1 ? int.Parse(args[1]) : 30;
 var maxFiles = args.Length > 2 ? int.Parse(args[2]) : 8;
@@ -114,6 +131,12 @@ foreach (var gameName in games)
         var overlayLines = TypeDiff.WriteOverlay(overlayPath, profile);
         typeLines.AddRange(overlayLines);
         foreach (var l in overlayLines.Take(12)) Console.WriteLine(l);
+    }
+    if (layoutPredict && profile?.RegistryFile != null)
+    {
+        var predictLines = LayoutPredict.Report(profile, TypeDiff.CollectedTypes, Havok.Reflection.HavokLayoutRules.Itanium);
+        typeLines.AddRange(predictLines);
+        foreach (var l in predictLines) Console.WriteLine(l);
     }
     Report.Write(reportPath, goldenPath, gameName, root, fsNote, args, coreRegistryLines, categoryCounts, containers.Count,
         results.ToList(), containerErrors.ToList(), sw.Elapsed, typeLines);

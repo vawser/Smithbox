@@ -1,0 +1,1970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HavokTypeRegistryOverlay Base="hk_2014.1.0-r1" Game="BB">
+  <!-- BB changes to HavokTypeRegistry20140100.xml: the DS3 layouts recomputed with Itanium (BB) C++ ABI rules by the buildlayoutoverlay mode of Tools/HavokLibSurvey (BB's files carry no type sections). The same rules on ER's registry predict every DB_NT layout (Havok Library Survey/Layout Check.md). -->
+  <HavokType Id="27" Name="CustomClipGenerator" Parent="28" Optionals="45" Format="7" SubType="0" Size="288" Alignment="16" Flags="0" Version="1" Hash="488073960">
+    <Members>
+      <Member Name="playbackSpeed" Offset="132" Type="25" Flags="32" />
+      <Member Name="mode" Offset="136" Type="34" Flags="32" />
+      <Member Name="animId" Offset="140" Type="12" Flags="32" />
+      <Member Name="animeEndEventType" Offset="144" Type="36" Flags="32" />
+      <Member Name="endEvent" Offset="152" Type="37" Flags="32" />
+      <Member Name="animationControl" Offset="176" Type="11" Flags="33" />
+      <Member Name="binding" Offset="184" Type="11" Flags="33" />
+      <Member Name="mapperData" Offset="192" Type="11" Flags="33" />
+      <Member Name="cropStartAmountLocalTime" Offset="200" Type="25" Flags="32" />
+      <Member Name="cropEndAmountLocalTime" Offset="204" Type="25" Flags="32" />
+      <Member Name="startTime" Offset="208" Type="25" Flags="32" />
+      <Member Name="enforcedDuration" Offset="212" Type="25" Flags="32" />
+      <Member Name="flags" Offset="216" Type="13" Flags="32" />
+      <Member Name="extractedMotion" Offset="224" Type="41" Flags="33" />
+      <Member Name="animationName" Offset="272" Type="10" Flags="33" />
+      <Member Name="localTime" Offset="280" Type="25" Flags="33" />
+      <Member Name="atEnd" Offset="284" Type="18" Flags="33" />
+      <Member Name="ignoreStartTime" Offset="285" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="43" Name="CustomLookAtTwistModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="184" Alignment="8" Flags="0" Version="1" Hash="4031613631">
+    <Members>
+      <Member Name="ModifierID" Offset="84" Type="12" Flags="32" />
+      <Member Name="rotationAxisType" Offset="88" Type="45" Flags="32" />
+      <Member Name="SensingDummyPoly" Offset="92" Type="12" Flags="32" />
+      <Member Name="twistParam" Offset="96" Type="47" Flags="32" />
+      <Member Name="UpLimitAngle" Offset="112" Type="25" Flags="32" />
+      <Member Name="DownLimitAngle" Offset="116" Type="25" Flags="32" />
+      <Member Name="RightLimitAngle" Offset="120" Type="25" Flags="32" />
+      <Member Name="LeftLimitAngle" Offset="124" Type="25" Flags="32" />
+      <Member Name="UpMinimumAngle" Offset="128" Type="25" Flags="32" />
+      <Member Name="DownMinimumAngle" Offset="132" Type="25" Flags="32" />
+      <Member Name="RightMinimumAngle" Offset="136" Type="25" Flags="32" />
+      <Member Name="LeftMinimumAngle" Offset="140" Type="25" Flags="32" />
+      <Member Name="SensingAngle" Offset="144" Type="26" Flags="32" />
+      <Member Name="setAngleMethod" Offset="146" Type="49" Flags="32" />
+      <Member Name="isAdditive" Offset="147" Type="18" Flags="32" />
+      <Member Name="twistModifierXArray" Offset="152" Type="20" Flags="33" />
+      <Member Name="twistModifierYArray" Offset="168" Type="20" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="59" Name="hkbTransitionEffect" Parent="28" Optionals="45" Format="7" SubType="0" Size="160" Alignment="8" Flags="0" Version="1" Hash="3970553188">
+    <Members>
+      <Member Name="selfTransitionMode" Offset="132" Type="61" Flags="32" />
+      <Member Name="eventMode" Offset="133" Type="63" Flags="32" />
+      <Member Name="defaultEventMode" Offset="134" Type="13" Flags="33" />
+      <Member Name="patchedBindingInfo" Offset="136" Type="11" Flags="33" />
+      <Member Name="fromGenerator" Offset="144" Type="11" Flags="33" />
+      <Member Name="toGenerator" Offset="152" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="67" Name="CustomManualSelectorGeneratorInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="1874353492">
+    <Members>
+      <Member Name="currentGeneratorIndex" Offset="12" Type="13" Flags="32" />
+      <Member Name="generatorIndexAtActivate" Offset="13" Type="13" Flags="32" />
+      <Member Name="activeTransitions" Offset="16" Type="80" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="70" Name="hkbReferencedGeneratorSyncInfo" Parent="5" Optionals="45" Format="7" SubType="0" Size="176" Alignment="4" Flags="0" Version="1" Hash="2845588803">
+    <Members>
+      <Member Name="syncInfo" Offset="12" Type="71" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="81" Name="CustomMeshParameter" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="2176292260">
+    <Members>
+      <Member Name="version" Offset="12" Type="7" Flags="32" />
+      <Member Name="vertexDataBuffer" Offset="16" Type="82" Flags="32" />
+      <Member Name="vertexDataStride" Offset="28" Type="12" Flags="32" />
+      <Member Name="primitiveDataBuffer" Offset="32" Type="82" Flags="32" />
+      <Member Name="materialNameData" Offset="44" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="83" Name="CustomMeshTriangleParameter" Parent="81" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="1677422640">
+    <Members>
+      <Member Name="triangleDataBuffer" Offset="48" Type="82" Flags="32" />
+      <Member Name="triangleDataStride" Offset="60" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="84" Name="CustomParamStorageExtendedMeshShape" Parent="85" Optionals="45" Format="7" SubType="0" Size="368" Alignment="16" Flags="0" Version="1" Hash="375778053">
+    <Members>
+      <Member Name="materialArray" Offset="344" Type="127" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="85" Name="hkpStorageExtendedMeshShape" Parent="86" Optionals="45" Format="7" SubType="0" Size="352" Alignment="16" Flags="0" Version="1" Hash="3246683740">
+    <Members>
+      <Member Name="meshstorage" Offset="312" Type="122" Flags="32" />
+      <Member Name="shapestorage" Offset="328" Type="125" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="88" Name="hkpShape" Parent="89" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="3739856096">
+    <Members>
+      <Member Name="userData" Offset="16" Type="21" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="89" Name="hkpShapeBase" Parent="90" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="381785118" />
+  <HavokType Id="90" Name="hkcdShape" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2030635963">
+    <Members>
+      <Member Name="type" Offset="12" Type="16" Flags="33" />
+      <Member Name="dispatchType" Offset="13" Type="92" Flags="32" />
+      <Member Name="bitsPerKey" Offset="14" Type="16" Flags="32" />
+      <Member Name="shapeInfoCodecType" Offset="15" Type="94" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="103" Name="hkpConvexShape" Parent="104" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="4115545146">
+    <Members>
+      <Member Name="radius" Offset="24" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="104" Name="hkpSphereRepShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="3650974819" />
+  <HavokType Id="148" Name="CustomTransitionEffect" Parent="149" Optionals="45" Format="7" SubType="0" Size="320" Alignment="16" Flags="0" Version="1" Hash="1219847490">
+    <Members>
+      <Member Name="durationBackup" Offset="300" Type="25" Flags="33" />
+      <Member Name="calcDuration" Offset="304" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="149" Name="hkbBlendingTransitionEffect" Parent="59" Optionals="45" Format="7" SubType="0" Size="304" Alignment="16" Flags="0" Version="1" Hash="350571612">
+    <Members>
+      <Member Name="duration" Offset="160" Type="25" Flags="32" />
+      <Member Name="toGeneratorStartTimeFraction" Offset="164" Type="25" Flags="32" />
+      <Member Name="flags" Offset="168" Type="151" Flags="32" />
+      <Member Name="endMode" Offset="170" Type="153" Flags="32" />
+      <Member Name="blendCurve" Offset="171" Type="155" Flags="32" />
+      <Member Name="alignmentBone" Offset="172" Type="26" Flags="32" />
+      <Member Name="fromPos" Offset="176" Type="24" Flags="33" />
+      <Member Name="fromRot" Offset="192" Type="42" Flags="33" />
+      <Member Name="toPos" Offset="208" Type="24" Flags="33" />
+      <Member Name="toRot" Offset="224" Type="42" Flags="33" />
+      <Member Name="lastPos" Offset="240" Type="24" Flags="33" />
+      <Member Name="lastRot" Offset="256" Type="42" Flags="33" />
+      <Member Name="characterPoseAtBeginningOfTransition" Offset="272" Type="20" Flags="33" />
+      <Member Name="timeRemaining" Offset="288" Type="25" Flags="33" />
+      <Member Name="timeInTransition" Offset="292" Type="25" Flags="33" />
+      <Member Name="toGeneratorSelfTranstitionMode" Offset="296" Type="13" Flags="33" />
+      <Member Name="initializeCharacterPose" Offset="297" Type="18" Flags="33" />
+      <Member Name="alignThisFrame" Offset="298" Type="18" Flags="33" />
+      <Member Name="alignmentFinished" Offset="299" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="161" Name="fsnpCustomParamCompressedMeshShape" Parent="162" Optionals="45" Format="7" SubType="0" Size="176" Alignment="8" Flags="0" Version="1" Hash="3676312359">
+    <Members>
+      <Member Name="pParam" Offset="152" Type="213" Flags="32" />
+      <Member Name="triangleIndexToShapeKey" Offset="160" Type="114" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="162" Name="hknpCompressedMeshShape" Parent="163" Optionals="45" Format="7" SubType="0" Size="160" Alignment="8" Flags="0" Version="1" Hash="1600181558">
+    <Members>
+      <Member Name="data" Offset="88" Type="209" Flags="32" />
+      <Member Name="quadIsFlat" Offset="96" Type="210" Flags="32" />
+      <Member Name="triangleIsInterior" Offset="120" Type="210" Flags="32" />
+      <Member Name="numTriangles" Offset="144" Type="12" Flags="33" />
+      <Member Name="numConvexShapes" Offset="148" Type="12" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="163" Name="hknpCompositeShape" Parent="164" Optionals="45" Format="7" SubType="0" Size="96" Alignment="8" Flags="0" Version="1" Hash="314260463">
+    <Members>
+      <Member Name="edgeWeldingMap" Offset="40" Type="172" Flags="32" />
+      <Member Name="shapeTagCodecInfo" Offset="80" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="296" Name="hclBoneSpaceMeshMeshDeformOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="144" Alignment="8" Flags="0" Version="1" Hash="2790841359">
+    <Members>
+      <Member Name="inputBufferIdx" Offset="28" Type="7" Flags="32" />
+      <Member Name="outputBufferIdx" Offset="32" Type="7" Flags="32" />
+      <Member Name="scaleNormalBehaviour" Offset="36" Type="298" Flags="32" />
+      <Member Name="inputTrianglesSubset" Offset="40" Type="108" Flags="32" />
+      <Member Name="boneSpaceDeformer" Offset="56" Type="272" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="299" Name="hclBoneSpaceMeshMeshDeformPNOperator" Parent="296" Optionals="45" Format="7" SubType="0" Size="176" Alignment="8" Flags="0" Version="1" Hash="712295465">
+    <Members>
+      <Member Name="localPNs" Offset="144" Type="300" Flags="32" />
+      <Member Name="localUnpackedPNs" Offset="160" Type="301" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="302" Name="hclBoneSpaceMeshMeshDeformPNTBOperator" Parent="296" Optionals="45" Format="7" SubType="0" Size="176" Alignment="8" Flags="0" Version="1" Hash="3562846972">
+    <Members>
+      <Member Name="localPNTBs" Offset="144" Type="303" Flags="32" />
+      <Member Name="localUnpackedPNTBs" Offset="160" Type="304" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="305" Name="hclBoneSpaceMeshMeshDeformPNTOperator" Parent="296" Optionals="45" Format="7" SubType="0" Size="176" Alignment="8" Flags="0" Version="1" Hash="1028865419">
+    <Members>
+      <Member Name="localPNTs" Offset="144" Type="306" Flags="32" />
+      <Member Name="localUnpackedPNTs" Offset="160" Type="307" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="308" Name="hclBoneSpaceMeshMeshDeformPOperator" Parent="296" Optionals="45" Format="7" SubType="0" Size="176" Alignment="8" Flags="0" Version="1" Hash="3375439037">
+    <Members>
+      <Member Name="localPs" Offset="144" Type="309" Flags="32" />
+      <Member Name="localUnpackedPs" Offset="160" Type="310" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="329" Name="hclCapsuleShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="3708024100">
+    <Members>
+      <Member Name="start" Offset="16" Type="24" Flags="32" />
+      <Member Name="end" Offset="32" Type="24" Flags="32" />
+      <Member Name="dir" Offset="48" Type="24" Flags="32" />
+      <Member Name="radius" Offset="64" Type="25" Flags="32" />
+      <Member Name="capLenSqrdInv" Offset="68" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="330" Name="hclShape" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="3048185014">
+    <Members>
+      <Member Name="type" Offset="12" Type="12" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="413" Name="hclConvexGeometryShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="272" Alignment="16" Flags="0" Version="1" Hash="2383456886">
+    <Members>
+      <Member Name="tetrahedraGrid" Offset="16" Type="108" Flags="32" />
+      <Member Name="gridCells" Offset="32" Type="113" Flags="32" />
+      <Member Name="tetrahedraEquations" Offset="48" Type="343" Flags="32" />
+      <Member Name="localFromWorld" Offset="64" Type="333" Flags="32" />
+      <Member Name="worldFromLocal" Offset="128" Type="333" Flags="32" />
+      <Member Name="objAabb" Offset="192" Type="184" Flags="32" />
+      <Member Name="geomCentroid" Offset="224" Type="24" Flags="32" />
+      <Member Name="invCellSize" Offset="240" Type="24" Flags="32" />
+      <Member Name="gridRes" Offset="256" Type="22" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="414" Name="hclConvexHeightFieldShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="1931996311">
+    <Members>
+      <Member Name="res" Offset="16" Type="22" Flags="32" />
+      <Member Name="resIncBorder" Offset="18" Type="22" Flags="32" />
+      <Member Name="floatCorrectionOffset" Offset="32" Type="24" Flags="32" />
+      <Member Name="heights" Offset="48" Type="113" Flags="32" />
+      <Member Name="faces" Offset="64" Type="415" Flags="32" />
+      <Member Name="localToMapTransform" Offset="96" Type="333" Flags="32" />
+      <Member Name="localToMapScale" Offset="160" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="416" Name="hclConvexPlanesShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="208" Alignment="16" Flags="0" Version="1" Hash="2579907977">
+    <Members>
+      <Member Name="planeEquations" Offset="16" Type="112" Flags="32" />
+      <Member Name="localFromWorld" Offset="32" Type="333" Flags="32" />
+      <Member Name="worldFromLocal" Offset="96" Type="333" Flags="32" />
+      <Member Name="objAabb" Offset="160" Type="184" Flags="32" />
+      <Member Name="geomCentroid" Offset="192" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="417" Name="hclCopyVerticesOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="3873113932">
+    <Members>
+      <Member Name="inputBufferIdx" Offset="28" Type="7" Flags="32" />
+      <Member Name="outputBufferIdx" Offset="32" Type="7" Flags="32" />
+      <Member Name="numberOfVertices" Offset="36" Type="7" Flags="32" />
+      <Member Name="startVertexIn" Offset="40" Type="7" Flags="32" />
+      <Member Name="startVertexOut" Offset="44" Type="7" Flags="32" />
+      <Member Name="copyNormals" Offset="48" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="427" Name="hclInputConvertOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="80" Alignment="8" Flags="0" Version="1" Hash="3981491103">
+    <Members>
+      <Member Name="userBufferIndex" Offset="28" Type="7" Flags="32" />
+      <Member Name="shadowBufferIndex" Offset="32" Type="7" Flags="32" />
+      <Member Name="conversionInfo" Offset="36" Type="428" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="439" Name="hclMeshBoneDeformOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="72" Alignment="8" Flags="0" Version="1" Hash="4040380508">
+    <Members>
+      <Member Name="inputBufferIdx" Offset="28" Type="7" Flags="32" />
+      <Member Name="outputTransformSetIdx" Offset="32" Type="7" Flags="32" />
+      <Member Name="triangleBonePairs" Offset="40" Type="441" Flags="32" />
+      <Member Name="triangleBoneStartForBone" Offset="56" Type="108" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="480" Name="hclObjectSpaceMeshMeshDeformOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="160" Alignment="8" Flags="0" Version="1" Hash="2143572305">
+    <Members>
+      <Member Name="inputBufferIdx" Offset="28" Type="7" Flags="32" />
+      <Member Name="outputBufferIdx" Offset="32" Type="7" Flags="32" />
+      <Member Name="scaleNormalBehaviour" Offset="36" Type="482" Flags="32" />
+      <Member Name="inputTrianglesSubset" Offset="40" Type="108" Flags="32" />
+      <Member Name="triangleFromMeshTransforms" Offset="56" Type="343" Flags="32" />
+      <Member Name="objectSpaceDeformer" Offset="72" Type="457" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="483" Name="hclObjectSpaceMeshMeshDeformPNOperator" Parent="480" Optionals="45" Format="7" SubType="0" Size="192" Alignment="8" Flags="0" Version="1" Hash="381531162">
+    <Members>
+      <Member Name="localPNs" Offset="160" Type="484" Flags="32" />
+      <Member Name="localUnpackedPNs" Offset="176" Type="485" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="486" Name="hclObjectSpaceMeshMeshDeformPNTBOperator" Parent="480" Optionals="45" Format="7" SubType="0" Size="192" Alignment="8" Flags="0" Version="1" Hash="2213112367">
+    <Members>
+      <Member Name="localPNTBs" Offset="160" Type="487" Flags="32" />
+      <Member Name="localUnpackedPNTBs" Offset="176" Type="488" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="489" Name="hclObjectSpaceMeshMeshDeformPNTOperator" Parent="480" Optionals="45" Format="7" SubType="0" Size="192" Alignment="8" Flags="0" Version="1" Hash="3792457022">
+    <Members>
+      <Member Name="localPNTs" Offset="160" Type="490" Flags="32" />
+      <Member Name="localUnpackedPNTs" Offset="176" Type="491" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="492" Name="hclObjectSpaceMeshMeshDeformPOperator" Parent="480" Optionals="45" Format="7" SubType="0" Size="192" Alignment="8" Flags="0" Version="1" Hash="1464345807">
+    <Members>
+      <Member Name="localPs" Offset="160" Type="493" Flags="32" />
+      <Member Name="localUnpackedPs" Offset="176" Type="494" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="500" Name="hclOutputConvertOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="80" Alignment="8" Flags="0" Version="1" Hash="3981491103">
+    <Members>
+      <Member Name="userBufferIndex" Offset="28" Type="7" Flags="32" />
+      <Member Name="shadowBufferIndex" Offset="32" Type="7" Flags="32" />
+      <Member Name="conversionInfo" Offset="36" Type="428" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="501" Name="hclPlaneShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="32" Alignment="16" Flags="0" Version="1" Hash="1298182160">
+    <Members>
+      <Member Name="planeEquation" Offset="16" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="525" Name="hkxIndexBuffer" Parent="5" Optionals="45" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="2178010478">
+    <Members>
+      <Member Name="indexType" Offset="12" Type="527" Flags="32" />
+      <Member Name="indices16" Offset="16" Type="108" Flags="32" />
+      <Member Name="indices32" Offset="32" Type="114" Flags="32" />
+      <Member Name="vertexBaseOffset" Offset="48" Type="7" Flags="32" />
+      <Member Name="length" Offset="52" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="545" Name="hkxVertexAnimation" Parent="5" Optionals="45" Format="7" SubType="0" Size="184" Alignment="8" Flags="0" Version="1" Hash="661097651">
+    <Members>
+      <Member Name="time" Offset="12" Type="25" Flags="32" />
+      <Member Name="vertData" Offset="16" Type="515" Flags="32" />
+      <Member Name="vertexIndexMap" Offset="152" Type="546" Flags="32" />
+      <Member Name="componentMap" Offset="168" Type="548" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="571" Name="hclSimClothBufferSetupObject" Parent="254" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2674559147">
+    <Members>
+      <Member Name="type" Offset="12" Type="573" Flags="32" />
+      <Member Name="name" Offset="16" Type="10" Flags="32" />
+      <Member Name="simClothSetupObject" Offset="24" Type="390" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="574" Name="hclSimpleMeshBoneDeformOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="72" Alignment="8" Flags="0" Version="1" Hash="2161735327">
+    <Members>
+      <Member Name="inputBufferIdx" Offset="28" Type="7" Flags="32" />
+      <Member Name="outputTransformSetIdx" Offset="32" Type="7" Flags="32" />
+      <Member Name="triangleBonePairs" Offset="40" Type="576" Flags="32" />
+      <Member Name="localBoneTransforms" Offset="56" Type="343" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="578" Name="hclSimulateOperator" Parent="257" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="1975987983">
+    <Members>
+      <Member Name="simClothIndex" Offset="28" Type="7" Flags="32" />
+      <Member Name="subSteps" Offset="32" Type="7" Flags="32" />
+      <Member Name="numberOfSolveIterations" Offset="36" Type="12" Flags="32" />
+      <Member Name="constraintExecution" Offset="40" Type="546" Flags="32" />
+      <Member Name="adaptConstraintStiffness" Offset="56" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="596" Name="hclSphereShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="32" Alignment="16" Flags="0" Version="1" Hash="3615093445">
+    <Members>
+      <Member Name="sphere" Offset="16" Type="597" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="651" Name="hclTaperedCapsuleShape" Parent="330" Optionals="45" Format="7" SubType="0" Size="160" Alignment="16" Flags="0" Version="1" Hash="3752169249">
+    <Members>
+      <Member Name="small" Offset="16" Type="24" Flags="32" />
+      <Member Name="big" Offset="32" Type="24" Flags="32" />
+      <Member Name="coneApex" Offset="48" Type="24" Flags="32" />
+      <Member Name="coneAxis" Offset="64" Type="24" Flags="32" />
+      <Member Name="lVec" Offset="80" Type="24" Flags="32" />
+      <Member Name="dVec" Offset="96" Type="24" Flags="32" />
+      <Member Name="tanThetaVecNeg" Offset="112" Type="24" Flags="32" />
+      <Member Name="smallRadius" Offset="128" Type="25" Flags="32" />
+      <Member Name="bigRadius" Offset="132" Type="25" Flags="32" />
+      <Member Name="l" Offset="136" Type="25" Flags="32" />
+      <Member Name="d" Offset="140" Type="25" Flags="32" />
+      <Member Name="cosTheta" Offset="144" Type="25" Flags="32" />
+      <Member Name="sinTheta" Offset="148" Type="25" Flags="32" />
+      <Member Name="tanTheta" Offset="152" Type="25" Flags="32" />
+      <Member Name="tanThetaSqr" Offset="156" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="686" Name="hkAlignSceneToNodeOptions" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2764685286">
+    <Members>
+      <Member Name="invert" Offset="12" Type="18" Flags="32" />
+      <Member Name="transformPositionX" Offset="13" Type="18" Flags="32" />
+      <Member Name="transformPositionY" Offset="14" Type="18" Flags="32" />
+      <Member Name="transformPositionZ" Offset="15" Type="18" Flags="32" />
+      <Member Name="transformRotation" Offset="16" Type="18" Flags="32" />
+      <Member Name="transformScale" Offset="17" Type="18" Flags="32" />
+      <Member Name="transformSkew" Offset="18" Type="18" Flags="32" />
+      <Member Name="keyframe" Offset="20" Type="12" Flags="32" />
+      <Member Name="nodeName" Offset="24" Type="10" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="790" Name="hkMemoryMeshVertexBuffer" Parent="769" Optionals="45" Format="7" SubType="0" Size="432" Alignment="8" Flags="0" Version="1" Hash="1366656759">
+    <Members>
+      <Member Name="format" Offset="12" Type="791" Flags="32" />
+      <Member Name="elementOffsets" Offset="272" Type="800" Flags="32" />
+      <Member Name="memory" Offset="400" Type="113" Flags="32" />
+      <Member Name="vertexStride" Offset="416" Type="12" Flags="32" />
+      <Member Name="locked" Offset="420" Type="18" Flags="32" />
+      <Member Name="numVertices" Offset="424" Type="12" Flags="32" />
+      <Member Name="isBigEndian" Offset="428" Type="18" Flags="32" />
+      <Member Name="isSharable" Offset="429" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="831" Name="hkMoppBvTreeShapeBase" Parent="832" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="1332782369">
+    <Members>
+      <Member Name="code" Offset="32" Type="839" Flags="32" />
+      <Member Name="moppData" Offset="40" Type="11" Flags="33" />
+      <Member Name="moppDataSize" Offset="48" Type="7" Flags="33" />
+      <Member Name="codeInfoCopy" Offset="64" Type="24" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="832" Name="hkpBvTreeShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="334912360">
+    <Members>
+      <Member Name="bvTreeType" Offset="24" Type="834" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="843" Name="hkMultipleVertexBuffer" Parent="769" Optionals="45" Format="7" SubType="0" Size="344" Alignment="8" Flags="0" Version="1" Hash="840352810">
+    <Members>
+      <Member Name="vertexFormat" Offset="12" Type="791" Flags="32" />
+      <Member Name="lockedElements" Offset="272" Type="845" Flags="32" />
+      <Member Name="lockedBuffer" Offset="288" Type="846" Flags="32" />
+      <Member Name="elementInfos" Offset="296" Type="848" Flags="32" />
+      <Member Name="vertexBufferInfos" Offset="312" Type="850" Flags="32" />
+      <Member Name="numVertices" Offset="328" Type="12" Flags="32" />
+      <Member Name="isLocked" Offset="332" Type="18" Flags="32" />
+      <Member Name="updateCount" Offset="336" Type="7" Flags="32" />
+      <Member Name="writeLock" Offset="340" Type="18" Flags="32" />
+      <Member Name="isSharable" Offset="341" Type="18" Flags="32" />
+      <Member Name="constructionComplete" Offset="342" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="912" Name="hkaAngularReferenceFrame" Parent="913" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="3167958132">
+    <Members>
+      <Member Name="topAngle" Offset="72" Type="25" Flags="32" />
+      <Member Name="radius" Offset="76" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="913" Name="hkaParameterizedReferenceFrame" Parent="914" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="1610455379" />
+  <HavokType Id="914" Name="hkaDefaultAnimatedReferenceFrame" Parent="915" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="1626923192">
+    <Members>
+      <Member Name="up" Offset="16" Type="24" Flags="32" />
+      <Member Name="forward" Offset="32" Type="24" Flags="32" />
+      <Member Name="duration" Offset="48" Type="25" Flags="32" />
+      <Member Name="referenceFrameSamples" Offset="56" Type="112" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="915" Name="hkaAnimatedReferenceFrame" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2556314263">
+    <Members>
+      <Member Name="frameType" Offset="12" Type="13" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="916" Name="hkaAnimation" Parent="5" Optionals="45" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="3041263128">
+    <Members>
+      <Member Name="type" Offset="12" Type="918" Flags="32" />
+      <Member Name="duration" Offset="16" Type="25" Flags="32" />
+      <Member Name="numberOfTransformTracks" Offset="20" Type="12" Flags="32" />
+      <Member Name="numberOfFloatTracks" Offset="24" Type="12" Flags="32" />
+      <Member Name="extractedMotion" Offset="32" Type="919" Flags="32" />
+      <Member Name="annotationTracks" Offset="40" Type="923" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="943" Name="hkaDirectionalReferenceFrame" Parent="913" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="1" Hash="3058674048">
+    <Members>
+      <Member Name="movementDir" Offset="80" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="952" Name="hkaParameterizedAnimationReferenceFrame" Parent="914" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="1059887376">
+    <Members>
+      <Member Name="parameterValues" Offset="72" Type="139" Flags="32" />
+      <Member Name="parameterTypes" Offset="88" Type="546" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="997" Name="hkpMotion" Parent="5" Optionals="45" Format="7" SubType="0" Size="320" Alignment="16" Flags="0" Version="1" Hash="2255565999">
+    <Members>
+      <Member Name="type" Offset="12" Type="999" Flags="32" />
+      <Member Name="deactivationIntegrateCounter" Offset="13" Type="16" Flags="32" />
+      <Member Name="deactivationNumInactiveFrames" Offset="14" Type="1000" Flags="32" />
+      <Member Name="motionState" Offset="32" Type="840" Flags="32" />
+      <Member Name="inertiaAndMassInv" Offset="208" Type="24" Flags="32" />
+      <Member Name="linearVelocity" Offset="224" Type="24" Flags="32" />
+      <Member Name="angularVelocity" Offset="240" Type="24" Flags="32" />
+      <Member Name="deactivationRefPosition" Offset="256" Type="1001" Flags="32" />
+      <Member Name="deactivationRefOrientation" Offset="288" Type="983" Flags="32" />
+      <Member Name="savedMotion" Offset="296" Type="1002" Flags="32" />
+      <Member Name="savedQualityTypeIndex" Offset="304" Type="22" Flags="32" />
+      <Member Name="gravityFactor" Offset="306" Type="117" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1043" Name="hkcdStaticAabbTree" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="2582171851">
+    <Members>
+      <Member Name="shouldDeleteTree" Offset="12" Type="18" Flags="33" />
+      <Member Name="treePtr" Offset="16" Type="1050" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1054" Name="hkaiAstarCostModifier" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="901727776">
+    <Members>
+      <Member Name="type" Offset="12" Type="1056" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1057" Name="hkaiAstarEdgeFilter" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2987426339">
+    <Members>
+      <Member Name="type" Offset="12" Type="1059" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1068" Name="hkaiAvoidanceProperties" Parent="5" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="2761548401">
+    <Members>
+      <Member Name="movementProperties" Offset="12" Type="1069" Flags="32" />
+      <Member Name="nearbyBoundariesSearchType" Offset="48" Type="1073" Flags="32" />
+      <Member Name="localSensorAabb" Offset="64" Type="184" Flags="32" />
+      <Member Name="wallFollowingAngle" Offset="96" Type="25" Flags="32" />
+      <Member Name="dodgingPenalty" Offset="100" Type="25" Flags="32" />
+      <Member Name="velocityHysteresis" Offset="104" Type="25" Flags="32" />
+      <Member Name="sidednessChangingPenalty" Offset="108" Type="25" Flags="32" />
+      <Member Name="collisionPenalty" Offset="112" Type="25" Flags="32" />
+      <Member Name="penetrationPenalty" Offset="116" Type="25" Flags="32" />
+      <Member Name="maxNeighbors" Offset="120" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1089" Name="hkaiClimbUpAnalyzer" Parent="1090" Optionals="45" Format="7" SubType="0" Size="56" Alignment="4" Flags="0" Version="1" Hash="3687978068">
+    <Members>
+      <Member Name="maxUnderhang" Offset="28" Type="25" Flags="32" />
+      <Member Name="minUpHeight" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxUpHeight" Offset="36" Type="25" Flags="32" />
+      <Member Name="grabAngle" Offset="40" Type="25" Flags="32" />
+      <Member Name="grabScanDepth" Offset="44" Type="25" Flags="32" />
+      <Member Name="verticalLipHeight" Offset="48" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1090" Name="hkaiTraversalAnalyzer" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="2769283252">
+    <Members>
+      <Member Name="maxPlanarAngle" Offset="12" Type="25" Flags="32" />
+      <Member Name="maxRelativeSlopeAngle" Offset="16" Type="25" Flags="32" />
+      <Member Name="userdata" Offset="20" Type="7" Flags="32" />
+      <Member Name="baseCost" Offset="24" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1091" Name="hkaiConvexHullSilhouetteMerger" Parent="1092" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="2061259038" />
+  <HavokType Id="1092" Name="hkaiSilhouetteMerger" Parent="5" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="459273792">
+    <Members>
+      <Member Name="mergeType" Offset="12" Type="1094" Flags="32" />
+      <Member Name="mergeParams" Offset="16" Type="1095" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1099" Name="hkaiDefaultAstarCostModifier" Parent="1054" Optionals="45" Format="7" SubType="0" Size="88" Alignment="4" Flags="0" Version="1" Hash="1154498593">
+    <Members>
+      <Member Name="maxCostPenalty" Offset="16" Type="25" Flags="32" />
+      <Member Name="costMultiplierLookupTable" Offset="20" Type="1100" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1101" Name="hkaiDefaultAstarEdgeFilter" Parent="1057" Optionals="45" Format="7" SubType="0" Size="160" Alignment="4" Flags="0" Version="1" Hash="1762874940">
+    <Members>
+      <Member Name="edgeMaskLookupTable" Offset="24" Type="1102" Flags="32" />
+      <Member Name="cellMaskLookupTable" Offset="152" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1115" Name="hkaiDropDownAnalyzer" Parent="1090" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="1877069901">
+    <Members>
+      <Member Name="minDropDistance" Offset="28" Type="25" Flags="32" />
+      <Member Name="maxDropDistance" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxUnderhang" Offset="36" Type="25" Flags="32" />
+      <Member Name="verticalLipHeight" Offset="40" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1116" Name="hkaiDuckUnderAnalyzer" Parent="1090" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="2383458190">
+    <Members>
+      <Member Name="maxHorizontalDistance" Offset="28" Type="25" Flags="32" />
+      <Member Name="minClearance" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxClearance" Offset="36" Type="25" Flags="32" />
+      <Member Name="maxHeightDifference" Offset="40" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1119" Name="hkaiStreamingCollection" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="1609844644">
+    <Members>
+      <Member Name="isTemporary" Offset="12" Type="18" Flags="32" />
+      <Member Name="tree" Offset="16" Type="1131" Flags="32" />
+      <Member Name="instances" Offset="24" Type="1152" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1120" Name="hkcdDynamicAabbTree" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="2582171851">
+    <Members>
+      <Member Name="shouldDeleteTree" Offset="12" Type="18" Flags="33" />
+      <Member Name="treePtr" Offset="16" Type="1130" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1121" Name="hkcdDynamicTreeDefaultTree48Storage" Parent="1122" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="3954343417" />
+  <HavokType Id="1122" Name="hkcdDynamicTreeTreehkcdDynamicTreeDynamicStorage32" Parent="1123" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2119524076">
+    <Members>
+      <Member Name="numLeaves" Offset="20" Type="7" Flags="32" />
+      <Member Name="path" Offset="24" Type="7" Flags="32" />
+      <Member Name="root" Offset="28" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1191" Name="hkaiJumpAnalyzer" Parent="1090" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="2753075461">
+    <Members>
+      <Member Name="maxHorizontalDistance" Offset="28" Type="25" Flags="32" />
+      <Member Name="maxUpHeight" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxDownHeight" Offset="36" Type="25" Flags="32" />
+      <Member Name="verticalApex" Offset="40" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1199" Name="hkaiMaterialPainter" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="2472070834">
+    <Members>
+      <Member Name="material" Offset="12" Type="12" Flags="32" />
+      <Member Name="volume" Offset="16" Type="1078" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1200" Name="hkaiNavMeshGeneration::Settings" Parent="5" Optionals="45" Format="7" SubType="0" Size="512" Alignment="16" Flags="0" Version="1" Hash="2373402388">
+    <Members>
+      <Member Name="characterHeight" Offset="12" Type="25" Flags="32" />
+      <Member Name="up" Offset="16" Type="24" Flags="32" />
+      <Member Name="quantizationGridSize" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxWalkableSlope" Offset="36" Type="25" Flags="32" />
+      <Member Name="triangleWinding" Offset="40" Type="1202" Flags="32" />
+      <Member Name="degenerateAreaThreshold" Offset="44" Type="25" Flags="32" />
+      <Member Name="degenerateWidthThreshold" Offset="48" Type="25" Flags="32" />
+      <Member Name="convexThreshold" Offset="52" Type="25" Flags="32" />
+      <Member Name="maxNumEdgesPerFace" Offset="56" Type="12" Flags="32" />
+      <Member Name="edgeMatchingParams" Offset="60" Type="1158" Flags="32" />
+      <Member Name="edgeMatchingMetric" Offset="116" Type="1204" Flags="32" />
+      <Member Name="edgeConnectionIterations" Offset="120" Type="12" Flags="32" />
+      <Member Name="regionPruningSettings" Offset="128" Type="1205" Flags="32" />
+      <Member Name="wallClimbingSettings" Offset="160" Type="1206" Flags="32" />
+      <Member Name="boundsAabb" Offset="176" Type="184" Flags="32" />
+      <Member Name="carvers" Offset="208" Type="1208" Flags="32" />
+      <Member Name="painters" Offset="224" Type="1210" Flags="32" />
+      <Member Name="painterOverlapCallback" Offset="240" Type="11" Flags="33" />
+      <Member Name="defaultConstructionProperties" Offset="248" Type="1212" Flags="32" />
+      <Member Name="materialMap" Offset="256" Type="1214" Flags="32" />
+      <Member Name="fixupOverlappingTriangles" Offset="272" Type="18" Flags="32" />
+      <Member Name="overlappingTrianglesSettings" Offset="276" Type="1215" Flags="32" />
+      <Member Name="weldInputVertices" Offset="288" Type="18" Flags="32" />
+      <Member Name="weldThreshold" Offset="292" Type="25" Flags="32" />
+      <Member Name="minCharacterWidth" Offset="296" Type="25" Flags="32" />
+      <Member Name="characterWidthUsage" Offset="300" Type="1219" Flags="32" />
+      <Member Name="enableSimplification" Offset="301" Type="18" Flags="32" />
+      <Member Name="simplificationSettings" Offset="304" Type="1220" Flags="32" />
+      <Member Name="carvedMaterialDeprecated" Offset="464" Type="12" Flags="32" />
+      <Member Name="carvedCuttingMaterialDeprecated" Offset="468" Type="12" Flags="32" />
+      <Member Name="setBestFaceCenters" Offset="472" Type="18" Flags="32" />
+      <Member Name="checkEdgeGeometryConsistency" Offset="473" Type="18" Flags="32" />
+      <Member Name="saveInputSnapshot" Offset="474" Type="18" Flags="32" />
+      <Member Name="snapshotFilename" Offset="480" Type="10" Flags="32" />
+      <Member Name="overrideSettings" Offset="488" Type="1225" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1226" Name="hkaiNavMeshGenerationSnapshot" Parent="0" Optionals="45" Format="7" SubType="0" Size="560" Alignment="16" Flags="0" Version="1" Hash="1142877440">
+    <Members>
+      <Member Name="geometry" Offset="0" Type="750" Flags="32" />
+      <Member Name="settings" Offset="48" Type="1200" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1237" Name="hkaiNavMeshSimplificationSnapshot" Parent="0" Optionals="45" Format="7" SubType="0" Size="576" Alignment="16" Flags="0" Version="1" Hash="1796332001">
+    <Members>
+      <Member Name="geometry" Offset="0" Type="1238" Flags="32" />
+      <Member Name="carvers" Offset="8" Type="1208" Flags="32" />
+      <Member Name="cuttingTriangles" Offset="24" Type="210" Flags="32" />
+      <Member Name="settings" Offset="48" Type="1200" Flags="32" />
+      <Member Name="unsimplifiedNavMesh" Offset="560" Type="1141" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1257" Name="hkaiObstacleGenerator" Parent="5" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="221806277">
+    <Members>
+      <Member Name="useSpheres" Offset="12" Type="18" Flags="32" />
+      <Member Name="useBoundaries" Offset="13" Type="18" Flags="32" />
+      <Member Name="clipBoundaries" Offset="14" Type="18" Flags="32" />
+      <Member Name="transform" Offset="16" Type="333" Flags="32" />
+      <Member Name="spheres" Offset="80" Type="1258" Flags="32" />
+      <Member Name="boundaries" Offset="96" Type="1259" Flags="32" />
+      <Member Name="userData" Offset="112" Type="21" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1279" Name="hkaiPathFollowingProperties" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="1" Hash="3720691019">
+    <Members>
+      <Member Name="repathDistance" Offset="12" Type="25" Flags="32" />
+      <Member Name="incompleteRepathSegments" Offset="16" Type="12" Flags="32" />
+      <Member Name="searchPathLimit" Offset="20" Type="25" Flags="32" />
+      <Member Name="desiredSpeedAtEnd" Offset="24" Type="25" Flags="32" />
+      <Member Name="goalDistTolerance" Offset="28" Type="25" Flags="32" />
+      <Member Name="userEdgeTolerance" Offset="32" Type="25" Flags="32" />
+      <Member Name="repairPaths" Offset="36" Type="18" Flags="32" />
+      <Member Name="setManualControlOnUserEdges" Offset="37" Type="18" Flags="32" />
+      <Member Name="pullThroughInternalVertices" Offset="38" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1282" Name="hkaiPhysics2012BodyObstacleGenerator" Parent="1257" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="1" Hash="729055412">
+    <Members>
+      <Member Name="velocityThreshold" Offset="120" Type="25" Flags="32" />
+      <Member Name="rigidBody" Offset="128" Type="1005" Flags="32" />
+      <Member Name="physicsWorldListener" Offset="136" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1291" Name="hkaiPhysicsBodyObstacleGenerator" Parent="1257" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="1" Hash="743773890">
+    <Members>
+      <Member Name="velocityThreshold" Offset="120" Type="25" Flags="32" />
+      <Member Name="bodyId" Offset="124" Type="7" Flags="33" />
+      <Member Name="world" Offset="128" Type="11" Flags="33" />
+      <Member Name="physicsWorldListener" Offset="136" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1296" Name="hkaiSilhouetteRecorderGraphLoadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="3069279907">
+    <Members>
+      <Member Name="graph" Offset="16" Type="1149" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1297" Name="hkaiSilhouetteRecorderReplayEvent" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2206032283">
+    <Members>
+      <Member Name="eventType" Offset="12" Type="1299" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1300" Name="hkaiSilhouetteRecorderGraphUnloadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="2391714391">
+    <Members>
+      <Member Name="sectionUid" Offset="16" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1301" Name="hkaiSilhouetteRecorderInstanceLoadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="2696523890">
+    <Members>
+      <Member Name="instance" Offset="16" Type="1144" Flags="32" />
+      <Member Name="mediator" Offset="24" Type="1150" Flags="32" />
+      <Member Name="graph" Offset="32" Type="1149" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1302" Name="hkaiSilhouetteRecorderInstanceUnloadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="2391714391">
+    <Members>
+      <Member Name="sectionUid" Offset="16" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1303" Name="hkaiSilhouetteRecorderSilhouettesSteppedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="96" Alignment="8" Flags="0" Version="1" Hash="3999612546">
+    <Members>
+      <Member Name="stepThreading" Offset="16" Type="1305" Flags="32" />
+      <Member Name="generators" Offset="24" Type="1306" Flags="32" />
+      <Member Name="instanceTransforms" Offset="40" Type="939" Flags="32" />
+      <Member Name="overlapManagerSections" Offset="56" Type="1274" Flags="32" />
+      <Member Name="updatedSections" Offset="72" Type="210" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1307" Name="hkaiSilhouetteRecorderVolumeLoadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="1732499054">
+    <Members>
+      <Member Name="volume" Offset="16" Type="1148" Flags="32" />
+      <Member Name="mediator" Offset="24" Type="1151" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1308" Name="hkaiSilhouetteRecorderVolumeUnloadedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="2391714391">
+    <Members>
+      <Member Name="sectionUid" Offset="16" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1309" Name="hkaiSilhouetteRecorderWorldConnectedEvent" Parent="1297" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="2409019201">
+    <Members>
+      <Member Name="world" Offset="16" Type="1317" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1318" Name="hkaiSimpleObstacleGenerator" Parent="1257" Optionals="45" Format="7" SubType="0" Size="160" Alignment="16" Flags="0" Version="1" Hash="530878806">
+    <Members>
+      <Member Name="localAabb" Offset="128" Type="184" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1319" Name="hkaiSimpleSilhouetteMerger" Parent="1092" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="2061259038" />
+  <HavokType Id="1320" Name="hkaiSplitGenerationSnapshot" Parent="0" Optionals="45" Format="7" SubType="0" Size="624" Alignment="16" Flags="0" Version="1" Hash="2576061005">
+    <Members>
+      <Member Name="generationSnapshot" Offset="0" Type="1226" Flags="32" />
+      <Member Name="splitSettings" Offset="560" Type="1321" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1357" Name="hkaiVaultAnalyzer" Parent="1090" Optionals="45" Format="7" SubType="0" Size="72" Alignment="4" Flags="0" Version="1" Hash="1223626616">
+    <Members>
+      <Member Name="minWallWidth" Offset="28" Type="25" Flags="32" />
+      <Member Name="maxWallWidth" Offset="32" Type="25" Flags="32" />
+      <Member Name="minWallHeight" Offset="36" Type="25" Flags="32" />
+      <Member Name="maxWallHeight" Offset="40" Type="25" Flags="32" />
+      <Member Name="maxUpHeight" Offset="44" Type="25" Flags="32" />
+      <Member Name="maxDownHeight" Offset="48" Type="25" Flags="32" />
+      <Member Name="verticalApex" Offset="52" Type="25" Flags="32" />
+      <Member Name="handPlantAngle" Offset="56" Type="25" Flags="32" />
+      <Member Name="handPlantLeftExtent" Offset="60" Type="25" Flags="32" />
+      <Member Name="handPlantRightExtent" Offset="64" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1370" Name="hkbAlignBoneModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="2587847552">
+    <Members>
+      <Member Name="alignMode" Offset="84" Type="1372" Flags="32" />
+      <Member Name="alignTargetMode" Offset="85" Type="1374" Flags="32" />
+      <Member Name="alignSingleAxis" Offset="86" Type="18" Flags="32" />
+      <Member Name="alignAxis" Offset="96" Type="24" Flags="32" />
+      <Member Name="alignTargetAxis" Offset="112" Type="24" Flags="32" />
+      <Member Name="frameOfReference" Offset="128" Type="42" Flags="32" />
+      <Member Name="duration" Offset="144" Type="25" Flags="32" />
+      <Member Name="alignModeIndex" Offset="148" Type="12" Flags="32" />
+      <Member Name="alignTargetModeIndex" Offset="152" Type="12" Flags="32" />
+      <Member Name="time" Offset="156" Type="25" Flags="33" />
+      <Member Name="timeSinceLastModify" Offset="160" Type="25" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1382" Name="hkbAttachmentSetup" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="3482710003">
+    <Members>
+      <Member Name="blendInTime" Offset="12" Type="25" Flags="32" />
+      <Member Name="moveAttacherFraction" Offset="16" Type="25" Flags="32" />
+      <Member Name="gain" Offset="20" Type="25" Flags="32" />
+      <Member Name="extrapolationTimeStep" Offset="24" Type="25" Flags="32" />
+      <Member Name="fixUpGain" Offset="28" Type="25" Flags="32" />
+      <Member Name="maxLinearDistance" Offset="32" Type="25" Flags="32" />
+      <Member Name="maxAngularDistance" Offset="36" Type="25" Flags="32" />
+      <Member Name="attachmentType" Offset="40" Type="1384" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1431" Name="hkbBehaviorGraph" Parent="28" Optionals="45" Format="7" SubType="0" Size="424" Alignment="8" Flags="0" Version="1" Hash="4260214843">
+    <Members>
+      <Member Name="variableMode" Offset="132" Type="1433" Flags="32" />
+      <Member Name="uniqueIdPool" Offset="136" Type="20" Flags="33" />
+      <Member Name="idToStateMachineTemplateMap" Offset="152" Type="11" Flags="33" />
+      <Member Name="mirroredExternalIdMap" Offset="160" Type="20" Flags="33" />
+      <Member Name="pseudoRandomGenerator" Offset="176" Type="11" Flags="33" />
+      <Member Name="rootGenerator" Offset="184" Type="51" Flags="32" />
+      <Member Name="data" Offset="192" Type="1443" Flags="32" />
+      <Member Name="template" Offset="200" Type="11" Flags="33" />
+      <Member Name="rootGeneratorClone" Offset="208" Type="11" Flags="33" />
+      <Member Name="activeNodes" Offset="216" Type="11" Flags="33" />
+      <Member Name="globalTransitionData" Offset="224" Type="11" Flags="33" />
+      <Member Name="eventIdMap" Offset="232" Type="11" Flags="33" />
+      <Member Name="attributeIdMap" Offset="240" Type="11" Flags="33" />
+      <Member Name="variableIdMap" Offset="248" Type="11" Flags="33" />
+      <Member Name="characterPropertyIdMap" Offset="256" Type="11" Flags="33" />
+      <Member Name="variableValueSet" Offset="264" Type="11" Flags="33" />
+      <Member Name="nodeTemplateToCloneMap" Offset="272" Type="11" Flags="33" />
+      <Member Name="stateListenerTemplateToCloneMap" Offset="280" Type="11" Flags="33" />
+      <Member Name="recentlyCreatedClones" Offset="288" Type="20" Flags="33" />
+      <Member Name="nodePartitionInfo" Offset="304" Type="11" Flags="33" />
+      <Member Name="numIntermediateOutputs" Offset="312" Type="12" Flags="33" />
+      <Member Name="intermediateOutputSizes" Offset="320" Type="20" Flags="33" />
+      <Member Name="jobs" Offset="336" Type="20" Flags="33" />
+      <Member Name="allPartitionMemory" Offset="352" Type="20" Flags="33" />
+      <Member Name="internalToRootVariableIdMap" Offset="368" Type="20" Flags="33" />
+      <Member Name="internalToCharacterCharacterPropertyIdMap" Offset="384" Type="20" Flags="33" />
+      <Member Name="internalToRootAttributeIdMap" Offset="400" Type="20" Flags="33" />
+      <Member Name="nextUniqueId" Offset="416" Type="22" Flags="33" />
+      <Member Name="isActive" Offset="418" Type="18" Flags="33" />
+      <Member Name="isLinked" Offset="419" Type="18" Flags="33" />
+      <Member Name="updateActiveNodes" Offset="420" Type="18" Flags="33" />
+      <Member Name="updateActiveNodesForEnable" Offset="421" Type="18" Flags="33" />
+      <Member Name="checkNodeValidity" Offset="422" Type="18" Flags="33" />
+      <Member Name="stateOrTransitionChanged" Offset="423" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1453" Name="hkbAuxiliaryNodeInfo" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="3372416172">
+    <Members>
+      <Member Name="type" Offset="12" Type="1455" Flags="32" />
+      <Member Name="depth" Offset="14" Type="16" Flags="32" />
+      <Member Name="referenceBehaviorName" Offset="16" Type="10" Flags="32" />
+      <Member Name="selfTransitionNames" Offset="24" Type="446" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1468" Name="hkbBlenderGenerator" Parent="28" Optionals="45" Format="7" SubType="0" Size="224" Alignment="8" Flags="0" Version="1" Hash="3460677768">
+    <Members>
+      <Member Name="referencePoseWeightThreshold" Offset="132" Type="25" Flags="32" />
+      <Member Name="blendParameter" Offset="136" Type="25" Flags="32" />
+      <Member Name="minCyclicBlendParameter" Offset="140" Type="25" Flags="32" />
+      <Member Name="maxCyclicBlendParameter" Offset="144" Type="25" Flags="32" />
+      <Member Name="indexOfSyncMasterChild" Offset="148" Type="26" Flags="32" />
+      <Member Name="flags" Offset="150" Type="26" Flags="32" />
+      <Member Name="subtractLastChild" Offset="152" Type="18" Flags="32" />
+      <Member Name="children" Offset="160" Type="1473" Flags="32" />
+      <Member Name="childrenInternalStates" Offset="176" Type="20" Flags="33" />
+      <Member Name="sortedChildren" Offset="192" Type="20" Flags="33" />
+      <Member Name="endIntervalWeight" Offset="208" Type="25" Flags="33" />
+      <Member Name="numActiveChildren" Offset="212" Type="12" Flags="33" />
+      <Member Name="beginIntervalIndex" Offset="216" Type="26" Flags="33" />
+      <Member Name="endIntervalIndex" Offset="218" Type="26" Flags="33" />
+      <Member Name="initSync" Offset="220" Type="18" Flags="33" />
+      <Member Name="doSubtractiveBlend" Offset="221" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1483" Name="hkbCameraShakeEventPayload" Parent="39" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="3444458626">
+    <Members>
+      <Member Name="amplitude" Offset="12" Type="25" Flags="32" />
+      <Member Name="halfLife" Offset="16" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1489" Name="hkbCharacterControllerModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="1948489251">
+    <Members>
+      <Member Name="controlData" Offset="84" Type="1490" Flags="32" />
+      <Member Name="initialVelocity" Offset="112" Type="24" Flags="32" />
+      <Member Name="initialVelocityCoordinates" Offset="128" Type="1492" Flags="32" />
+      <Member Name="motionMode" Offset="129" Type="1494" Flags="32" />
+      <Member Name="forceDownwardMomentum" Offset="130" Type="18" Flags="32" />
+      <Member Name="applyGravity" Offset="131" Type="18" Flags="32" />
+      <Member Name="setInitialVelocity" Offset="132" Type="18" Flags="32" />
+      <Member Name="isTouchingGround" Offset="133" Type="18" Flags="32" />
+      <Member Name="gravity" Offset="144" Type="24" Flags="33" />
+      <Member Name="isInitialVelocityAdded" Offset="160" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1528" Name="hkbComputeWorldFromModelModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="96" Alignment="8" Flags="0" Version="1" Hash="2167155746">
+    <Members>
+      <Member Name="poseMatchingRootBoneIndex" Offset="84" Type="26" Flags="32" />
+      <Member Name="poseMatchingOtherBoneIndex" Offset="86" Type="26" Flags="32" />
+      <Member Name="poseMatchingAnotherBoneIndex" Offset="88" Type="26" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1537" Name="hkbCustomTestGenerator" Parent="1538" Optionals="45" Format="7" SubType="0" Size="1664" Alignment="16" Flags="0" Version="1" Hash="1252436108">
+    <Members>
+      <Member Name="protectedHiddenMember" Offset="1649" Type="18" Flags="32" />
+      <Member Name="privateHiddenMember" Offset="1650" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1538" Name="hkbCustomTestGeneratorAnnotatedTypes" Parent="1539" Optionals="45" Format="7" SubType="0" Size="1664" Alignment="16" Flags="0" Version="1" Hash="935711895">
+    <Members>
+      <Member Name="annotatedTypeCStringFilename" Offset="1464" Type="693" Flags="32" />
+      <Member Name="annotatedTypeHkStringPtrFilename" Offset="1472" Type="10" Flags="32" />
+      <Member Name="annotatedTypeCStringScript" Offset="1480" Type="693" Flags="32" />
+      <Member Name="annotatedTypeHkStringPtrScript" Offset="1488" Type="10" Flags="32" />
+      <Member Name="annotatedTypeCStringBoneAttachment" Offset="1496" Type="693" Flags="32" />
+      <Member Name="annotatedTypeHkStringPtrBoneAttachment" Offset="1504" Type="10" Flags="32" />
+      <Member Name="annotatedTypeCStringLocalFrame" Offset="1512" Type="693" Flags="32" />
+      <Member Name="annotatedTypeHkStringPtrLocalFrame" Offset="1520" Type="10" Flags="32" />
+      <Member Name="annotatedHiddenTypeCopyStart" Offset="1528" Type="18" Flags="32" />
+      <Member Name="annotatedTypeHkInt32EventID" Offset="1532" Type="12" Flags="32" />
+      <Member Name="annotatedTypeHkInt32VariableIndex" Offset="1536" Type="12" Flags="32" />
+      <Member Name="annotatedTypeHkInt32AttributeIndex" Offset="1540" Type="12" Flags="32" />
+      <Member Name="annotatedTypeHkRealTime" Offset="1544" Type="25" Flags="32" />
+      <Member Name="annotatedTypeBoolNoVar" Offset="1548" Type="18" Flags="32" />
+      <Member Name="annotatedTypeHkBoolNoVar" Offset="1549" Type="18" Flags="32" />
+      <Member Name="annotatedTypeHkInt8NoVar" Offset="1550" Type="13" Flags="32" />
+      <Member Name="annotatedTypeHkInt16NoVar" Offset="1552" Type="26" Flags="32" />
+      <Member Name="annotatedTypeHkInt32NoVar" Offset="1556" Type="12" Flags="32" />
+      <Member Name="annotatedTypeHkUint8NoVar" Offset="1560" Type="16" Flags="32" />
+      <Member Name="annotatedTypeHkUint16NoVar" Offset="1562" Type="22" Flags="32" />
+      <Member Name="annotatedTypeHkUint32NoVar" Offset="1564" Type="7" Flags="32" />
+      <Member Name="annotatedTypeHkRealNoVar" Offset="1568" Type="25" Flags="32" />
+      <Member Name="annotatedTypeBoolOutput" Offset="1572" Type="18" Flags="32" />
+      <Member Name="annotatedTypeHkBoolOutput" Offset="1573" Type="18" Flags="32" />
+      <Member Name="annotatedTypeHkInt8Output" Offset="1574" Type="13" Flags="32" />
+      <Member Name="annotatedTypeHkInt16Output" Offset="1576" Type="26" Flags="32" />
+      <Member Name="annotatedTypeHkInt32Output" Offset="1580" Type="12" Flags="32" />
+      <Member Name="annotatedTypeHkUint8Output" Offset="1584" Type="16" Flags="32" />
+      <Member Name="annotatedTypeHkUint16Output" Offset="1586" Type="22" Flags="32" />
+      <Member Name="annotatedTypeHkUint32Output" Offset="1588" Type="7" Flags="32" />
+      <Member Name="annotatedTypeHkRealOutput" Offset="1592" Type="25" Flags="32" />
+      <Member Name="annotatedHiddenTypeBool" Offset="1596" Type="18" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkBool" Offset="1597" Type="18" Flags="32" />
+      <Member Name="annotatedHiddenTypeCString1" Offset="1600" Type="693" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkStringPtr1" Offset="1608" Type="10" Flags="32" />
+      <Member Name="annotatedHiddenTypeCString2" Offset="1616" Type="693" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkStringPtr2" Offset="1624" Type="10" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkInt8" Offset="1632" Type="13" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkInt16" Offset="1634" Type="26" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkInt32" Offset="1636" Type="12" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkUint8" Offset="1640" Type="16" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkUint16" Offset="1642" Type="22" Flags="32" />
+      <Member Name="annotatedHiddenTypeHkUint32" Offset="1644" Type="7" Flags="32" />
+      <Member Name="annotatedHiddenTypeCopyEnd" Offset="1648" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1541" Name="hkbCustomTestGeneratorNestedTypesBase" Parent="1542" Optionals="45" Format="7" SubType="0" Size="704" Alignment="16" Flags="0" Version="1" Hash="1447418576">
+    <Members>
+      <Member Name="nestedTypeHkbGeneratorPtr" Offset="376" Type="51" Flags="32" />
+      <Member Name="nestedTypeHkbGeneratorRefPtr" Offset="384" Type="51" Flags="32" />
+      <Member Name="nestedTypeHkbModifierPtr" Offset="392" Type="1560" Flags="32" />
+      <Member Name="nestedTypeHkbModifierRefPtr" Offset="400" Type="1560" Flags="32" />
+      <Member Name="nestedTypeHkbCustomIdSelectorPtr" Offset="408" Type="1561" Flags="32" />
+      <Member Name="nestedTypeHkbCustomIdSelectorRefPtr" Offset="416" Type="1561" Flags="32" />
+      <Member Name="nestedTypeArrayBool" Offset="424" Type="351" Flags="32" />
+      <Member Name="nestedTypeArrayHkBool" Offset="440" Type="351" Flags="32" />
+      <Member Name="nestedTypeArrayCString" Offset="456" Type="1562" Flags="32" />
+      <Member Name="nestedTypeArrayHkStringPtr" Offset="472" Type="446" Flags="32" />
+      <Member Name="nestedTypeArrayHkInt8" Offset="488" Type="1563" Flags="32" />
+      <Member Name="nestedTypeArrayHkInt16" Offset="504" Type="423" Flags="32" />
+      <Member Name="nestedTypeArrayHkInt32" Offset="520" Type="546" Flags="32" />
+      <Member Name="nestedTypeArrayHkUint8" Offset="536" Type="113" Flags="32" />
+      <Member Name="nestedTypeArrayHkUint16" Offset="552" Type="108" Flags="32" />
+      <Member Name="nestedTypeArrayHkUint32" Offset="568" Type="114" Flags="32" />
+      <Member Name="nestedTypeArrayHkReal" Offset="584" Type="139" Flags="32" />
+      <Member Name="nestedTypeArrayHkbGeneratorPtr" Offset="600" Type="52" Flags="32" />
+      <Member Name="nestedTypeArrayHkbGeneratorRefPtr" Offset="616" Type="52" Flags="32" />
+      <Member Name="nestedTypeArrayHkbModifierPtr" Offset="632" Type="1564" Flags="32" />
+      <Member Name="nestedTypeArrayHkbModifierRefPtr" Offset="648" Type="1564" Flags="32" />
+      <Member Name="nestedTypeArrayHkbCustomIdSelectorPtr" Offset="664" Type="1565" Flags="32" />
+      <Member Name="nestedTypeArrayHkbCustomIdSelectorRefPtr" Offset="680" Type="1565" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1568" Name="hkbDampingModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="192" Alignment="16" Flags="0" Version="1" Hash="1755651333">
+    <Members>
+      <Member Name="kP" Offset="84" Type="25" Flags="32" />
+      <Member Name="kI" Offset="88" Type="25" Flags="32" />
+      <Member Name="kD" Offset="92" Type="25" Flags="32" />
+      <Member Name="enableScalarDamping" Offset="96" Type="18" Flags="32" />
+      <Member Name="enableVectorDamping" Offset="97" Type="18" Flags="32" />
+      <Member Name="rawValue" Offset="100" Type="25" Flags="32" />
+      <Member Name="dampedValue" Offset="104" Type="25" Flags="32" />
+      <Member Name="rawVector" Offset="112" Type="24" Flags="32" />
+      <Member Name="dampedVector" Offset="128" Type="24" Flags="32" />
+      <Member Name="vecErrorSum" Offset="144" Type="24" Flags="32" />
+      <Member Name="vecPreviousError" Offset="160" Type="24" Flags="32" />
+      <Member Name="errorSum" Offset="176" Type="25" Flags="32" />
+      <Member Name="previousError" Offset="180" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1573" Name="hkbDelayedModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="3917985454">
+    <Members>
+      <Member Name="secondsElapsed" Offset="12" Type="25" Flags="32" />
+      <Member Name="isActive" Offset="16" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1575" Name="hkbDetectCloseToGroundModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="3083838963">
+    <Members>
+      <Member Name="isCloseToGround" Offset="12" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1576" Name="hkbDockingGenerator" Parent="28" Optionals="45" Format="7" SubType="0" Size="224" Alignment="16" Flags="0" Version="1" Hash="2140111424">
+    <Members>
+      <Member Name="dockingBone" Offset="132" Type="26" Flags="32" />
+      <Member Name="translationOffset" Offset="144" Type="24" Flags="32" />
+      <Member Name="rotationOffset" Offset="160" Type="42" Flags="32" />
+      <Member Name="blendType" Offset="176" Type="1578" Flags="32" />
+      <Member Name="flags" Offset="178" Type="1580" Flags="32" />
+      <Member Name="child" Offset="184" Type="51" Flags="32" />
+      <Member Name="intervalStart" Offset="192" Type="12" Flags="32" />
+      <Member Name="intervalEnd" Offset="196" Type="12" Flags="32" />
+      <Member Name="localTime" Offset="200" Type="25" Flags="33" />
+      <Member Name="previousLocalTime" Offset="204" Type="25" Flags="33" />
+      <Member Name="intervalStartLocalTime" Offset="208" Type="25" Flags="33" />
+      <Member Name="intervalEndLocalTime" Offset="212" Type="25" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1581" Name="hkbDockingGeneratorInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="4252706033">
+    <Members>
+      <Member Name="localTime" Offset="12" Type="25" Flags="32" />
+      <Member Name="previousLocalTime" Offset="16" Type="25" Flags="32" />
+      <Member Name="intervalStartLocalTime" Offset="20" Type="25" Flags="32" />
+      <Member Name="intervalEndLocalTime" Offset="24" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1596" Name="hkbEventDrivenModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="1708069034">
+    <Members>
+      <Member Name="isActive" Offset="12" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1608" Name="hkbEventsFromRangeModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="120" Alignment="8" Flags="0" Version="1" Hash="3387746053">
+    <Members>
+      <Member Name="inputValue" Offset="84" Type="25" Flags="32" />
+      <Member Name="lowerBound" Offset="88" Type="25" Flags="32" />
+      <Member Name="eventRanges" Offset="96" Type="1609" Flags="32" />
+      <Member Name="wasActiveInPreviousFrame" Offset="104" Type="20" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1612" Name="hkbExtractRagdollPoseModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="96" Alignment="8" Flags="0" Version="1" Hash="279944537">
+    <Members>
+      <Member Name="poseMatchingBone0" Offset="84" Type="26" Flags="32" />
+      <Member Name="poseMatchingBone1" Offset="86" Type="26" Flags="32" />
+      <Member Name="poseMatchingBone2" Offset="88" Type="26" Flags="32" />
+      <Member Name="enableComputeWorldFromModel" Offset="90" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1613" Name="hkbExtrapolatingTransitionEffect" Parent="149" Optionals="45" Format="7" SubType="0" Size="672" Alignment="16" Flags="0" Version="1" Hash="2737496906">
+    <Members>
+      <Member Name="fromGeneratorSyncInfo" Offset="300" Type="71" Flags="33" />
+      <Member Name="fromGeneratorPartitionInfo" Offset="464" Type="29" Flags="33" />
+      <Member Name="worldFromModel" Offset="512" Type="41" Flags="33" />
+      <Member Name="motion" Offset="560" Type="41" Flags="33" />
+      <Member Name="pose" Offset="608" Type="20" Flags="33" />
+      <Member Name="additivePose" Offset="624" Type="20" Flags="33" />
+      <Member Name="boneWeights" Offset="640" Type="20" Flags="33" />
+      <Member Name="toGeneratorDuration" Offset="656" Type="25" Flags="33" />
+      <Member Name="isFromGeneratorActive" Offset="660" Type="18" Flags="33" />
+      <Member Name="gotPose" Offset="661" Type="18" Flags="33" />
+      <Member Name="gotAdditivePose" Offset="662" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1614" Name="hkbExtrapolatingTransitionEffectInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="384" Alignment="16" Flags="0" Version="1" Hash="3101182128">
+    <Members>
+      <Member Name="fromGeneratorSyncInfo" Offset="12" Type="71" Flags="32" />
+      <Member Name="fromGeneratorPartitionInfo" Offset="176" Type="29" Flags="32" />
+      <Member Name="worldFromModel" Offset="224" Type="41" Flags="32" />
+      <Member Name="motion" Offset="272" Type="41" Flags="32" />
+      <Member Name="pose" Offset="320" Type="584" Flags="32" />
+      <Member Name="additivePose" Offset="336" Type="584" Flags="32" />
+      <Member Name="boneWeights" Offset="352" Type="139" Flags="32" />
+      <Member Name="toGeneratorDuration" Offset="368" Type="25" Flags="32" />
+      <Member Name="isFromGeneratorActive" Offset="372" Type="18" Flags="32" />
+      <Member Name="gotPose" Offset="373" Type="18" Flags="32" />
+      <Member Name="gotAdditivePose" Offset="374" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1621" Name="hkbFootIkModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="216" Alignment="8" Flags="0" Version="1" Hash="3330925452">
+    <Members>
+      <Member Name="gains" Offset="84" Type="1616" Flags="32" />
+      <Member Name="legs" Offset="128" Type="1623" Flags="32" />
+      <Member Name="raycastDistanceUp" Offset="144" Type="25" Flags="32" />
+      <Member Name="raycastDistanceDown" Offset="148" Type="25" Flags="32" />
+      <Member Name="originalGroundHeightMS" Offset="152" Type="25" Flags="32" />
+      <Member Name="errorOut" Offset="156" Type="25" Flags="32" />
+      <Member Name="verticalOffset" Offset="160" Type="25" Flags="32" />
+      <Member Name="collisionFilterInfo" Offset="164" Type="7" Flags="32" />
+      <Member Name="forwardAlignFraction" Offset="168" Type="25" Flags="32" />
+      <Member Name="sidewaysAlignFraction" Offset="172" Type="25" Flags="32" />
+      <Member Name="sidewaysSampleWidth" Offset="176" Type="25" Flags="32" />
+      <Member Name="useTrackData" Offset="180" Type="18" Flags="32" />
+      <Member Name="lockFeetWhenPlanted" Offset="181" Type="18" Flags="32" />
+      <Member Name="useCharacterUpVector" Offset="182" Type="18" Flags="32" />
+      <Member Name="keepSourceFootEndAboveGround" Offset="183" Type="18" Flags="32" />
+      <Member Name="alignMode" Offset="184" Type="1625" Flags="32" />
+      <Member Name="internalLegData" Offset="192" Type="1627" Flags="33" />
+      <Member Name="prevIsFootIkEnabled" Offset="208" Type="25" Flags="33" />
+      <Member Name="isSetUp" Offset="212" Type="18" Flags="33" />
+      <Member Name="isGroundPositionValid" Offset="213" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1628" Name="hkbGeneratorTransitionEffect" Parent="59" Optionals="45" Format="7" SubType="0" Size="208" Alignment="8" Flags="0" Version="1" Hash="1142984455">
+    <Members>
+      <Member Name="transitionGenerator" Offset="160" Type="51" Flags="32" />
+      <Member Name="blendInDuration" Offset="168" Type="25" Flags="32" />
+      <Member Name="blendOutDuration" Offset="172" Type="25" Flags="32" />
+      <Member Name="syncToGeneratorStartTime" Offset="176" Type="18" Flags="32" />
+      <Member Name="childState" Offset="177" Type="13" Flags="33" />
+      <Member Name="timeInTransition" Offset="180" Type="25" Flags="33" />
+      <Member Name="duration" Offset="184" Type="25" Flags="33" />
+      <Member Name="effectiveBlendInDuration" Offset="188" Type="25" Flags="33" />
+      <Member Name="effectiveBlendOutDuration" Offset="192" Type="25" Flags="33" />
+      <Member Name="toGeneratorState" Offset="196" Type="13" Flags="33" />
+      <Member Name="echoTransitionGenerator" Offset="197" Type="18" Flags="33" />
+      <Member Name="toGeneratorSelfTransitionMode" Offset="198" Type="13" Flags="33" />
+      <Member Name="justActivated" Offset="199" Type="18" Flags="33" />
+      <Member Name="updateActiveNodes" Offset="200" Type="18" Flags="33" />
+      <Member Name="stage" Offset="201" Type="13" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1629" Name="hkbGeneratorTransitionEffectInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="1" Hash="3943327924">
+    <Members>
+      <Member Name="timeInTransition" Offset="12" Type="25" Flags="32" />
+      <Member Name="duration" Offset="16" Type="25" Flags="32" />
+      <Member Name="effectiveBlendInDuration" Offset="20" Type="25" Flags="32" />
+      <Member Name="effectiveBlendOutDuration" Offset="24" Type="25" Flags="32" />
+      <Member Name="toGeneratorState" Offset="28" Type="1631" Flags="32" />
+      <Member Name="echoTransitionGenerator" Offset="29" Type="18" Flags="32" />
+      <Member Name="toGeneratorSelfTransitionMode" Offset="30" Type="61" Flags="32" />
+      <Member Name="justActivated" Offset="31" Type="18" Flags="32" />
+      <Member Name="updateActiveNodes" Offset="32" Type="18" Flags="32" />
+      <Member Name="stage" Offset="33" Type="1633" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1636" Name="hkbGetUpModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="2241841700">
+    <Members>
+      <Member Name="timeSinceBegin" Offset="12" Type="25" Flags="32" />
+      <Member Name="timeStep" Offset="16" Type="25" Flags="32" />
+      <Member Name="initNextModify" Offset="20" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1649" Name="hkbHoldFromBlendingTransitionEffect" Parent="149" Optionals="45" Format="7" SubType="0" Size="384" Alignment="16" Flags="0" Version="1" Hash="3221564910">
+    <Members>
+      <Member Name="heldFromPose" Offset="304" Type="11" Flags="33" />
+      <Member Name="heldFromPoseSize" Offset="312" Type="12" Flags="33" />
+      <Member Name="heldWorldFromModel" Offset="320" Type="41" Flags="33" />
+      <Member Name="heldFromSkeleton" Offset="368" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1650" Name="hkbIntEventPayload" Parent="39" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="1693573820">
+    <Members>
+      <Member Name="data" Offset="12" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1672" Name="hkbLayerGeneratorInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="722298938">
+    <Members>
+      <Member Name="numActiveLayers" Offset="12" Type="12" Flags="32" />
+      <Member Name="layerInternalStates" Offset="16" Type="1676" Flags="32" />
+      <Member Name="initSync" Offset="32" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1678" Name="hkbLeanRocketboxCharacterControllerInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="2006244339">
+    <Members>
+      <Member Name="currPose" Offset="12" Type="12" Flags="32" />
+      <Member Name="prevPose" Offset="16" Type="12" Flags="32" />
+      <Member Name="characterAngle" Offset="20" Type="25" Flags="32" />
+      <Member Name="plantedFootIdx" Offset="24" Type="12" Flags="32" />
+      <Member Name="timeStep" Offset="28" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1683" Name="hkbManualSelectorGeneratorInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2729729653">
+    <Members>
+      <Member Name="currentGeneratorIndex" Offset="12" Type="26" Flags="32" />
+      <Member Name="generatorIndexAtActivate" Offset="14" Type="26" Flags="32" />
+      <Member Name="activeTransitions" Offset="16" Type="80" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1684" Name="hkbManualSelectorTransitionEffect" Parent="59" Optionals="45" Format="7" SubType="0" Size="224" Alignment="8" Flags="0" Version="1" Hash="2617422016">
+    <Members>
+      <Member Name="transitionEffects" Offset="160" Type="1685" Flags="32" />
+      <Member Name="selectedIndex" Offset="176" Type="16" Flags="32" />
+      <Member Name="indexSelector" Offset="184" Type="1561" Flags="32" />
+      <Member Name="currentTransitionEffectIndex" Offset="192" Type="16" Flags="33" />
+      <Member Name="currentTransitionEffect" Offset="200" Type="11" Flags="33" />
+      <Member Name="parentStateMachine" Offset="208" Type="11" Flags="33" />
+      <Member Name="referenceBehavior" Offset="216" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1686" Name="hkbManualSelectorTransitionEffectInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="3623186052">
+    <Members>
+      <Member Name="currentTransitionEffectIndex" Offset="12" Type="16" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1688" Name="hkbMirrorModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="88" Alignment="8" Flags="0" Version="1" Hash="3018796773">
+    <Members>
+      <Member Name="isAdditive" Offset="84" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1691" Name="hkbMoveBoneAttachmentModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="104" Alignment="8" Flags="0" Version="1" Hash="1355861884">
+    <Members>
+      <Member Name="activateEventId" Offset="84" Type="12" Flags="32" />
+      <Member Name="attachment" Offset="88" Type="10" Flags="32" />
+      <Member Name="localFrame" Offset="96" Type="10" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1693" Name="hkbMoveCharacterModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2254275996">
+    <Members>
+      <Member Name="timeSinceLastModify" Offset="12" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1702" Name="hkbParticleSystemEventPayload" Parent="39" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="1" Hash="3457352756">
+    <Members>
+      <Member Name="type" Offset="12" Type="1704" Flags="32" />
+      <Member Name="emitBoneIndex" Offset="14" Type="26" Flags="32" />
+      <Member Name="offset" Offset="16" Type="24" Flags="32" />
+      <Member Name="direction" Offset="32" Type="24" Flags="32" />
+      <Member Name="numParticles" Offset="48" Type="12" Flags="32" />
+      <Member Name="speed" Offset="52" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1709" Name="hkbPoseMatchingGeneratorInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="396665285">
+    <Members>
+      <Member Name="currentMatch" Offset="12" Type="12" Flags="32" />
+      <Member Name="bestMatch" Offset="16" Type="12" Flags="32" />
+      <Member Name="timeSinceBetterMatch" Offset="20" Type="25" Flags="32" />
+      <Member Name="error" Offset="24" Type="25" Flags="32" />
+      <Member Name="resetCurrentMatchLocalTime" Offset="28" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1730" Name="hkbRealEventPayload" Parent="39" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="412579982">
+    <Members>
+      <Member Name="data" Offset="12" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1738" Name="hkbRocketboxCharacterControllerInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="1772527852">
+    <Members>
+      <Member Name="rapidTurnRequest" Offset="12" Type="18" Flags="32" />
+      <Member Name="currPose" Offset="16" Type="12" Flags="32" />
+      <Member Name="prevPose" Offset="20" Type="12" Flags="32" />
+      <Member Name="noVelocityTimer" Offset="24" Type="25" Flags="32" />
+      <Member Name="linearSpeedModifier" Offset="28" Type="25" Flags="32" />
+      <Member Name="characterAngle" Offset="32" Type="25" Flags="32" />
+      <Member Name="plantedFootIdx" Offset="36" Type="12" Flags="32" />
+      <Member Name="timeStep" Offset="40" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1739" Name="hkbRotateCharacterModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="2166830607">
+    <Members>
+      <Member Name="degreesPerSecond" Offset="84" Type="25" Flags="32" />
+      <Member Name="speedMultiplier" Offset="88" Type="25" Flags="32" />
+      <Member Name="axisOfRotation" Offset="96" Type="24" Flags="32" />
+      <Member Name="angle" Offset="112" Type="25" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1740" Name="hkbRotateCharacterModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="147123319">
+    <Members>
+      <Member Name="angle" Offset="12" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1768" Name="hkbSimulationControlCommand" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="3375019626">
+    <Members>
+      <Member Name="command" Offset="12" Type="1770" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1771" Name="hkbSimulationStateInfo" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="1047453923">
+    <Members>
+      <Member Name="simulationState" Offset="12" Type="1773" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1777" Name="hkbStateDependentModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="128" Alignment="8" Flags="0" Version="1" Hash="39268832">
+    <Members>
+      <Member Name="applyModifierDuringTransition" Offset="84" Type="18" Flags="32" />
+      <Member Name="stateIds" Offset="88" Type="546" Flags="32" />
+      <Member Name="modifier" Offset="104" Type="1560" Flags="32" />
+      <Member Name="isActive" Offset="112" Type="18" Flags="32" />
+      <Member Name="stateMachine" Offset="120" Type="1800" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1808" Name="hkbTestIdSelector" Parent="1536" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2442304490">
+    <Members>
+      <Member Name="int" Offset="12" Type="12" Flags="32" />
+      <Member Name="real" Offset="16" Type="25" Flags="32" />
+      <Member Name="string" Offset="24" Type="10" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1809" Name="hkbTimerModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="112" Alignment="8" Flags="0" Version="1" Hash="2021705186">
+    <Members>
+      <Member Name="alarmTimeSeconds" Offset="84" Type="25" Flags="32" />
+      <Member Name="alarmEvent" Offset="88" Type="1381" Flags="32" />
+      <Member Name="secondsElapsed" Offset="104" Type="25" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1810" Name="hkbTimerModifierInternalState" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="1731128423">
+    <Members>
+      <Member Name="secondsElapsed" Offset="12" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1823" Name="hkbpBalanceModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="144" Alignment="8" Flags="0" Version="1" Hash="648393776">
+    <Members>
+      <Member Name="giveUp" Offset="84" Type="18" Flags="32" />
+      <Member Name="comDistThreshold" Offset="88" Type="25" Flags="32" />
+      <Member Name="passThrough" Offset="92" Type="18" Flags="32" />
+      <Member Name="ragdollLeftFootBoneIndex" Offset="94" Type="26" Flags="32" />
+      <Member Name="ragdollRightFootBoneIndex" Offset="96" Type="26" Flags="32" />
+      <Member Name="balanceOnAnklesFraction" Offset="100" Type="25" Flags="32" />
+      <Member Name="upAxis" Offset="104" Type="12" Flags="32" />
+      <Member Name="fadeInTime" Offset="108" Type="25" Flags="32" />
+      <Member Name="comBiasX" Offset="112" Type="25" Flags="32" />
+      <Member Name="stepInfo" Offset="120" Type="1825" Flags="32" />
+      <Member Name="timeLapsed" Offset="136" Type="25" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1826" Name="hkbpBalanceRadialSelectorGenerator" Parent="1720" Optionals="45" Format="7" SubType="0" Size="200" Alignment="8" Flags="0" Version="1" Hash="624178690">
+    <Members>
+      <Member Name="xAxisMS" Offset="180" Type="12" Flags="32" />
+      <Member Name="yAxisMS" Offset="184" Type="12" Flags="32" />
+      <Member Name="checkBalanceModifier" Offset="192" Type="1828" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1827" Name="hkbpCheckBalanceModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="208" Alignment="16" Flags="0" Version="1" Hash="2177229089">
+    <Members>
+      <Member Name="ragdollLeftFootBoneIndex" Offset="84" Type="26" Flags="32" />
+      <Member Name="ragdollRightFootBoneIndex" Offset="86" Type="26" Flags="32" />
+      <Member Name="balanceOnAnklesFraction" Offset="88" Type="25" Flags="32" />
+      <Member Name="eventToSendWhenOffBalance" Offset="96" Type="37" Flags="32" />
+      <Member Name="offBalanceEventThreshold" Offset="120" Type="25" Flags="32" />
+      <Member Name="worldUpAxisIndex" Offset="124" Type="12" Flags="32" />
+      <Member Name="comBiasX" Offset="128" Type="25" Flags="32" />
+      <Member Name="extractRagdollPose" Offset="132" Type="18" Flags="32" />
+      <Member Name="mass" Offset="136" Type="25" Flags="33" />
+      <Member Name="comWS" Offset="144" Type="24" Flags="33" />
+      <Member Name="desiredComWS" Offset="160" Type="24" Flags="33" />
+      <Member Name="offBalanceDistance" Offset="176" Type="25" Flags="33" />
+      <Member Name="errorMS" Offset="192" Type="24" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1853" Name="hkbpReachTowardTargetModifier" Parent="2" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="969236214">
+    <Members>
+      <Member Name="leftHand" Offset="84" Type="1854" Flags="32" />
+      <Member Name="rightHand" Offset="88" Type="1854" Flags="32" />
+      <Member Name="targetIn" Offset="96" Type="1835" Flags="32" />
+      <Member Name="distanceBetweenHands" Offset="104" Type="25" Flags="32" />
+      <Member Name="reachDistance" Offset="108" Type="25" Flags="32" />
+      <Member Name="fadeInGainSpeed" Offset="112" Type="25" Flags="32" />
+      <Member Name="fadeOutGainSpeed" Offset="116" Type="25" Flags="32" />
+      <Member Name="fadeOutDuration" Offset="120" Type="25" Flags="32" />
+      <Member Name="targetChangeSpeed" Offset="124" Type="25" Flags="32" />
+      <Member Name="holdTarget" Offset="128" Type="18" Flags="32" />
+      <Member Name="reachPastTarget" Offset="129" Type="18" Flags="32" />
+      <Member Name="giveUpIfNoTarget" Offset="130" Type="18" Flags="32" />
+      <Member Name="targetRB" Offset="136" Type="11" Flags="33" />
+      <Member Name="prevTargetInMS" Offset="144" Type="24" Flags="33" />
+      <Member Name="currentGain" Offset="160" Type="25" Flags="33" />
+      <Member Name="timeSinceLastModify" Offset="164" Type="25" Flags="33" />
+      <Member Name="fadeState" Offset="168" Type="13" Flags="33" />
+      <Member Name="haveGivenUp" Offset="169" Type="18" Flags="33" />
+      <Member Name="isTherePrevTarget" Offset="170" Type="18" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1883" Name="hkcdDynamicTreeDefaultTree32Storage" Parent="1884" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="4198271220" />
+  <HavokType Id="1884" Name="hkcdDynamicTreeTreehkcdDynamicTreeDynamicStorage16" Parent="1885" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="2764343130">
+    <Members>
+      <Member Name="numLeaves" Offset="20" Type="7" Flags="32" />
+      <Member Name="path" Offset="24" Type="7" Flags="32" />
+      <Member Name="root" Offset="28" Type="22" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1886" Name="hkcdDynamicTreeDefaultTreeInt16Storage" Parent="1887" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="1079322488" />
+  <HavokType Id="1887" Name="hkcdDynamicTreeTreehkcdDynamicTreeDynamicStorageInt16" Parent="1888" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="942092207">
+    <Members>
+      <Member Name="numLeaves" Offset="20" Type="7" Flags="32" />
+      <Member Name="path" Offset="24" Type="7" Flags="32" />
+      <Member Name="root" Offset="28" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1936" Name="hknpBallGun" Parent="1937" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="4223416807">
+    <Members>
+      <Member Name="bulletRadius" Offset="52" Type="25" Flags="32" />
+      <Member Name="bulletVelocity" Offset="56" Type="25" Flags="32" />
+      <Member Name="bulletMass" Offset="60" Type="25" Flags="32" />
+      <Member Name="damageMultiplier" Offset="64" Type="25" Flags="32" />
+      <Member Name="maxBulletsInWorld" Offset="68" Type="12" Flags="32" />
+      <Member Name="bulletOffsetFromCenter" Offset="80" Type="24" Flags="32" />
+      <Member Name="addedBodyIds" Offset="96" Type="11" Flags="33" />
+      <Member Name="materialId" Offset="104" Type="22" Flags="33" />
+      <Member Name="motionPropertiesId" Offset="106" Type="22" Flags="33" />
+      <Member Name="bulletShape" Offset="112" Type="11" Flags="33" />
+      <Member Name="raiseContactEvents" Offset="120" Type="7" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1937" Name="hknpFirstPersonGun" Parent="5" Optionals="45" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="3524527718">
+    <Members>
+      <Member Name="type" Offset="12" Type="16" Flags="33" />
+      <Member Name="name" Offset="16" Type="10" Flags="32" />
+      <Member Name="keyboardKey" Offset="24" Type="1939" Flags="32" />
+      <Member Name="listeners" Offset="32" Type="20" Flags="33" />
+      <Member Name="collisionFilterInfo" Offset="48" Type="7" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1950" Name="hknpBodyReference" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="1789218464">
+    <Members>
+      <Member Name="id" Offset="12" Type="7" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1956" Name="hknpCapsuleShape" Parent="1957" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="1" Hash="1621581644">
+    <Members>
+      <Member Name="a" Offset="64" Type="24" Flags="32" />
+      <Member Name="b" Offset="80" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1957" Name="hknpConvexPolytopeShape" Parent="1958" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="1021948899">
+    <Members>
+      <Member Name="planes" Offset="44" Type="1959" Flags="32" />
+      <Member Name="faces" Offset="48" Type="1961" Flags="32" />
+      <Member Name="indices" Offset="52" Type="1962" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1958" Name="hknpConvexShape" Parent="164" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="3371680013">
+    <Members>
+      <Member Name="vertices" Offset="40" Type="1959" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1964" Name="hknpCharacterRigidBodyCinfo" Parent="5" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="1" Hash="1232716325">
+    <Members>
+      <Member Name="collisionFilterInfo" Offset="12" Type="7" Flags="32" />
+      <Member Name="shape" Offset="16" Type="747" Flags="32" />
+      <Member Name="world" Offset="24" Type="11" Flags="33" />
+      <Member Name="position" Offset="32" Type="24" Flags="32" />
+      <Member Name="orientation" Offset="48" Type="42" Flags="32" />
+      <Member Name="mass" Offset="64" Type="25" Flags="32" />
+      <Member Name="dynamicFriction" Offset="68" Type="25" Flags="32" />
+      <Member Name="staticFriction" Offset="72" Type="25" Flags="32" />
+      <Member Name="weldingTolerance" Offset="76" Type="25" Flags="32" />
+      <Member Name="reservedBodyId" Offset="80" Type="7" Flags="32" />
+      <Member Name="additionMode" Offset="84" Type="16" Flags="32" />
+      <Member Name="additionFlags" Offset="85" Type="16" Flags="32" />
+      <Member Name="up" Offset="96" Type="24" Flags="32" />
+      <Member Name="maxSlope" Offset="112" Type="25" Flags="32" />
+      <Member Name="maxForce" Offset="116" Type="25" Flags="32" />
+      <Member Name="maxSpeedForSimplexSolver" Offset="120" Type="25" Flags="32" />
+      <Member Name="supportDistance" Offset="124" Type="25" Flags="32" />
+      <Member Name="hardSupportDistance" Offset="128" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1965" Name="hknpCircularSurfaceVelocity" Parent="737" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="1" Hash="3000298053">
+    <Members>
+      <Member Name="velocityIsLocalSpace" Offset="12" Type="18" Flags="32" />
+      <Member Name="pivot" Offset="16" Type="24" Flags="32" />
+      <Member Name="angularVelocity" Offset="32" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1967" Name="hknpCollisionFilter" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="477198788">
+    <Members>
+      <Member Name="type" Offset="12" Type="1969" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1970" Name="hknpCompoundShape" Parent="163" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="612195993">
+    <Members>
+      <Member Name="instances" Offset="88" Type="745" Flags="32" />
+      <Member Name="aabb" Offset="112" Type="184" Flags="32" />
+      <Member Name="isMutable" Offset="144" Type="18" Flags="32" />
+      <Member Name="mutationSignals" Offset="152" Type="1971" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1978" Name="hknpCompressedHeightFieldShape" Parent="1979" Optionals="45" Format="7" SubType="0" Size="288" Alignment="16" Flags="0" Version="1" Hash="576835662">
+    <Members>
+      <Member Name="storage" Offset="232" Type="108" Flags="32" />
+      <Member Name="shapeTags" Offset="248" Type="108" Flags="32" />
+      <Member Name="triangleFlip" Offset="264" Type="18" Flags="32" />
+      <Member Name="offset" Offset="268" Type="25" Flags="32" />
+      <Member Name="scale" Offset="272" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1990" Name="hknpConstraintCollisionFilter" Parent="1991" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="577538570">
+    <Members>
+      <Member Name="subscribedWorld" Offset="40" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1991" Name="hknpPairCollisionFilter" Parent="1967" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="817452534">
+    <Members>
+      <Member Name="disabledPairs" Offset="16" Type="1992" Flags="33" />
+      <Member Name="childFilter" Offset="32" Type="1993" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1994" Name="hknpDecoratorShape" Parent="164" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="430716898">
+    <Members>
+      <Member Name="coreShape" Offset="40" Type="747" Flags="32" />
+      <Member Name="coreShapeSize" Offset="48" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="1995" Name="hknpDefaultBroadPhaseConfig" Parent="1954" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="1329300569">
+    <Members>
+      <Member Name="layers" Offset="12" Type="1996" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2000" Name="hknpDisableCollisionFilter" Parent="1967" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="108200998" />
+  <HavokType Id="2002" Name="hknpDynamicCompoundShape" Parent="1970" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="1176555804">
+    <Members>
+      <Member Name="boundingVolumeData" Offset="168" Type="2005" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2003" Name="hknpDynamicCompoundShapeData" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="4080911308">
+    <Members>
+      <Member Name="aabbTree" Offset="16" Type="2004" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2004" Name="hknpDynamicCompoundShapeTree" Parent="1883" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="1091063229" />
+  <HavokType Id="2006" Name="hknpExternMeshShape" Parent="163" Optionals="45" Format="7" SubType="0" Size="112" Alignment="8" Flags="0" Version="1" Hash="1146675861">
+    <Members>
+      <Member Name="geometry" Offset="88" Type="2007" Flags="32" />
+      <Member Name="boundingVolumeData" Offset="96" Type="2009" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2010" Name="hknpGroupCollisionFilter" Parent="2011" Optionals="45" Format="7" SubType="0" Size="160" Alignment="4" Flags="0" Version="1" Hash="2961304189" />
+  <HavokType Id="2011" Name="hknpGroupCollisionFilterBasehknpGroupCollisionFilterTypesConfig55516" Parent="1967" Optionals="45" Format="7" SubType="0" Size="160" Alignment="4" Flags="0" Version="1" Hash="804215488">
+    <Members>
+      <Member Name="nextFreeSystemGroup" Offset="24" Type="12" Flags="32" />
+      <Member Name="collisionLookupTable" Offset="28" Type="1102" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2012" Name="hknpLinearSurfaceVelocity" Parent="737" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="1" Hash="277252529">
+    <Members>
+      <Member Name="space" Offset="12" Type="2014" Flags="32" />
+      <Member Name="projectMethod" Offset="13" Type="2016" Flags="32" />
+      <Member Name="maxVelocityScale" Offset="16" Type="25" Flags="32" />
+      <Member Name="velocityMeasurePlane" Offset="32" Type="24" Flags="32" />
+      <Member Name="velocity" Offset="48" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2017" Name="hknpLodShape" Parent="163" Optionals="45" Format="7" SubType="0" Size="304" Alignment="16" Flags="0" Version="1" Hash="3395502608">
+    <Members>
+      <Member Name="numLevelsOfDetail" Offset="84" Type="12" Flags="32" />
+      <Member Name="infos" Offset="88" Type="2019" Flags="32" />
+      <Member Name="shapes" Offset="152" Type="2020" Flags="32" />
+      <Member Name="shapesMemorySizes" Offset="216" Type="30" Flags="32" />
+      <Member Name="indexCurrentShapeOnSpu" Offset="248" Type="12" Flags="32" />
+      <Member Name="currentShapePpuAddress" Offset="256" Type="747" Flags="32" />
+      <Member Name="maximumAabb" Offset="272" Type="184" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2022" Name="hknpMaskedShape" Parent="1994" Optionals="45" Format="7" SubType="0" Size="112" Alignment="8" Flags="0" Version="1" Hash="2422915949">
+    <Members>
+      <Member Name="mask" Offset="56" Type="1976" Flags="32" />
+      <Member Name="maskWrapper" Offset="64" Type="2023" Flags="32" />
+      <Member Name="mutationSignals" Offset="80" Type="1971" Flags="33" />
+      <Member Name="maskSize" Offset="96" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2052" Name="hknpShapeTagCodec" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2243414066">
+    <Members>
+      <Member Name="type" Offset="12" Type="2054" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2057" Name="hknpProjectileGun" Parent="1937" Optionals="45" Format="7" SubType="0" Size="88" Alignment="8" Flags="0" Version="1" Hash="542502200">
+    <Members>
+      <Member Name="maxProjectiles" Offset="52" Type="12" Flags="32" />
+      <Member Name="reloadTime" Offset="56" Type="25" Flags="32" />
+      <Member Name="reload" Offset="60" Type="25" Flags="33" />
+      <Member Name="projectiles" Offset="64" Type="20" Flags="33" />
+      <Member Name="npWorld" Offset="80" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2062" Name="hknpShapeMassProperties" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="1" Hash="3910735656">
+    <Members>
+      <Member Name="compressedMassProperties" Offset="12" Type="716" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2064" Name="hknpSphereShape" Parent="1958" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="1948160018" />
+  <HavokType Id="2065" Name="hknpStaticCompoundShape" Parent="1970" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="1176555804">
+    <Members>
+      <Member Name="boundingVolumeData" Offset="168" Type="2068" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2069" Name="hknpStaticCompoundShapeInternals" Parent="2065" Optionals="45" Format="7" SubType="0" Size="176" Alignment="16" Flags="0" Version="1" Hash="4272882670" />
+  <HavokType Id="2071" Name="hknpTriangleShape" Parent="1957" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="2319358991" />
+  <HavokType Id="2073" Name="hknpTyremarksInfo" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="4102345107">
+    <Members>
+      <Member Name="minTyremarkEnergy" Offset="12" Type="25" Flags="32" />
+      <Member Name="maxTyremarkEnergy" Offset="16" Type="25" Flags="32" />
+      <Member Name="tyremarksWheel" Offset="24" Type="2077" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2074" Name="hknpTyremarksWheel" Parent="5" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="2405991805">
+    <Members>
+      <Member Name="currentPosition" Offset="12" Type="12" Flags="32" />
+      <Member Name="numPoints" Offset="16" Type="12" Flags="32" />
+      <Member Name="tyremarkPoints" Offset="24" Type="2075" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2085" Name="hkpVehicleFrictionDescription" Parent="5" Optionals="45" Format="7" SubType="0" Size="224" Alignment="4" Flags="0" Version="1" Hash="3159292022">
+    <Members>
+      <Member Name="wheelDistance" Offset="12" Type="25" Flags="32" />
+      <Member Name="chassisMassInv" Offset="16" Type="25" Flags="32" />
+      <Member Name="axleDescr" Offset="20" Type="2087" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2088" Name="hknpVehicleDefaultAerodynamics" Parent="2079" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="1" Hash="1150598957">
+    <Members>
+      <Member Name="airDensity" Offset="12" Type="25" Flags="32" />
+      <Member Name="frontalArea" Offset="16" Type="25" Flags="32" />
+      <Member Name="dragCoefficient" Offset="20" Type="25" Flags="32" />
+      <Member Name="liftCoefficient" Offset="24" Type="25" Flags="32" />
+      <Member Name="extraGravityws" Offset="32" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2089" Name="hknpVehicleDefaultAnalogDriverInput" Parent="2090" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="2512154512">
+    <Members>
+      <Member Name="slopeChangePointX" Offset="12" Type="25" Flags="32" />
+      <Member Name="initialSlope" Offset="16" Type="25" Flags="32" />
+      <Member Name="deadZone" Offset="20" Type="25" Flags="32" />
+      <Member Name="autoReverse" Offset="24" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2094" Name="hknpVehicleDefaultEngine" Parent="2095" Optionals="45" Format="7" SubType="0" Size="56" Alignment="4" Flags="0" Version="1" Hash="2784585923">
+    <Members>
+      <Member Name="minRPM" Offset="12" Type="25" Flags="32" />
+      <Member Name="optRPM" Offset="16" Type="25" Flags="32" />
+      <Member Name="maxRPM" Offset="20" Type="25" Flags="32" />
+      <Member Name="maxTorque" Offset="24" Type="25" Flags="32" />
+      <Member Name="torqueFactorAtMinRPM" Offset="28" Type="25" Flags="32" />
+      <Member Name="torqueFactorAtMaxRPM" Offset="32" Type="25" Flags="32" />
+      <Member Name="resistanceFactorAtMinRPM" Offset="36" Type="25" Flags="32" />
+      <Member Name="resistanceFactorAtOptRPM" Offset="40" Type="25" Flags="32" />
+      <Member Name="resistanceFactorAtMaxRPM" Offset="44" Type="25" Flags="32" />
+      <Member Name="clutchSlipRPM" Offset="48" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2096" Name="hknpVehicleDefaultSteering" Parent="2097" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="255712478">
+    <Members>
+      <Member Name="maxSteeringAngle" Offset="12" Type="25" Flags="32" />
+      <Member Name="maxSpeedFullSteeringAngle" Offset="16" Type="25" Flags="32" />
+      <Member Name="doesWheelSteer" Offset="24" Type="351" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2104" Name="hknpVehicleDefaultTransmission" Parent="2105" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="309490345">
+    <Members>
+      <Member Name="downshiftRPM" Offset="12" Type="25" Flags="32" />
+      <Member Name="upshiftRPM" Offset="16" Type="25" Flags="32" />
+      <Member Name="primaryTransmissionRatio" Offset="20" Type="25" Flags="32" />
+      <Member Name="clutchDelayTime" Offset="24" Type="25" Flags="32" />
+      <Member Name="reverseGearRatio" Offset="28" Type="25" Flags="32" />
+      <Member Name="gearsRatio" Offset="32" Type="139" Flags="32" />
+      <Member Name="wheelsTorqueRatio" Offset="48" Type="139" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2106" Name="hknpVehicleDefaultVelocityDamper" Parent="2107" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="3109778670">
+    <Members>
+      <Member Name="normalSpinDamping" Offset="12" Type="25" Flags="32" />
+      <Member Name="collisionSpinDamping" Offset="16" Type="25" Flags="32" />
+      <Member Name="collisionThreshold" Offset="20" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2108" Name="hknpVehicleDriverInputAnalogStatus" Parent="2109" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="3791005235">
+    <Members>
+      <Member Name="positionX" Offset="12" Type="25" Flags="32" />
+      <Member Name="positionY" Offset="16" Type="25" Flags="32" />
+      <Member Name="handbrakeButtonPressed" Offset="20" Type="18" Flags="32" />
+      <Member Name="reverseButtonPressed" Offset="21" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2119" Name="hknpVehicleWheelCollide" Parent="5" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="587024455">
+    <Members>
+      <Member Name="alreadyUsed" Offset="12" Type="18" Flags="32" />
+      <Member Name="type" Offset="13" Type="16" Flags="33" />
+      <Member Name="wheelCollisionFilterInfo" Offset="16" Type="7" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2149" Name="hkpConstraintMotor" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="3294932557">
+    <Members>
+      <Member Name="type" Offset="12" Type="2151" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2165" Name="hkpBallGun" Parent="2166" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="959730641">
+    <Members>
+      <Member Name="bulletRadius" Offset="48" Type="25" Flags="32" />
+      <Member Name="bulletVelocity" Offset="52" Type="25" Flags="32" />
+      <Member Name="bulletMass" Offset="56" Type="25" Flags="32" />
+      <Member Name="damageMultiplier" Offset="60" Type="25" Flags="32" />
+      <Member Name="maxBulletsInWorld" Offset="64" Type="12" Flags="32" />
+      <Member Name="bulletOffsetFromCenter" Offset="80" Type="24" Flags="32" />
+      <Member Name="addedBodies" Offset="96" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2166" Name="hkpFirstPersonGun" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="1499143554">
+    <Members>
+      <Member Name="type" Offset="12" Type="16" Flags="33" />
+      <Member Name="name" Offset="16" Type="10" Flags="32" />
+      <Member Name="keyboardKey" Offset="24" Type="2168" Flags="32" />
+      <Member Name="listeners" Offset="32" Type="20" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2176" Name="hkpBoxShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="1" Hash="3701658023">
+    <Members>
+      <Member Name="halfExtents" Offset="32" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2178" Name="hkpBreakableBodyController" Parent="5" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2210474037">
+    <Members>
+      <Member Name="breakingImpulse" Offset="12" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2182" Name="hkpBreakableMaterial" Parent="5" Optionals="45" Format="7" SubType="0" Size="32" Alignment="8" Flags="0" Version="1" Hash="545189131">
+    <Members>
+      <Member Name="strength" Offset="12" Type="25" Flags="32" />
+      <Member Name="typeAndFlags" Offset="16" Type="12" Flags="32" />
+      <Member Name="properties" Offset="24" Type="171" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2192" Name="hkpBvCompressedMeshShape" Parent="832" Optionals="45" Format="7" SubType="0" Size="256" Alignment="16" Flags="0" Version="1" Hash="2880138163">
+    <Members>
+      <Member Name="convexRadius" Offset="40" Type="25" Flags="32" />
+      <Member Name="weldingType" Offset="44" Type="110" Flags="32" />
+      <Member Name="hasPerPrimitiveCollisionFilterInfo" Offset="45" Type="18" Flags="32" />
+      <Member Name="hasPerPrimitiveUserData" Offset="46" Type="18" Flags="32" />
+      <Member Name="collisionFilterInfoPalette" Offset="48" Type="114" Flags="32" />
+      <Member Name="userDataPalette" Offset="64" Type="114" Flags="32" />
+      <Member Name="userStringPalette" Offset="80" Type="446" Flags="32" />
+      <Member Name="tree" Offset="96" Type="2193" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2194" Name="hkpBvShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="2915716736">
+    <Members>
+      <Member Name="boundingVolumeShape" Offset="24" Type="965" Flags="32" />
+      <Member Name="childShape" Offset="32" Type="2195" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2199" Name="hkpCallbackConstraintMotor" Parent="2200" Optionals="45" Format="7" SubType="0" Size="64" Alignment="8" Flags="0" Version="1" Hash="1508332855">
+    <Members>
+      <Member Name="callbackFunc" Offset="24" Type="11" Flags="33" />
+      <Member Name="callbackType" Offset="32" Type="2202" Flags="32" />
+      <Member Name="userData0" Offset="40" Type="21" Flags="32" />
+      <Member Name="userData1" Offset="48" Type="21" Flags="32" />
+      <Member Name="userData2" Offset="56" Type="21" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2200" Name="hkpLimitedForceConstraintMotor" Parent="2149" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="1" Hash="278399229">
+    <Members>
+      <Member Name="minForce" Offset="16" Type="25" Flags="32" />
+      <Member Name="maxForce" Offset="20" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2203" Name="hkpCapsuleShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="1" Hash="4255218163">
+    <Members>
+      <Member Name="vertexA" Offset="32" Type="24" Flags="32" />
+      <Member Name="vertexB" Offset="48" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2209" Name="hkpCharacterRigidBodyCinfo" Parent="2205" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="215829653">
+    <Members>
+      <Member Name="collisionFilterInfo" Offset="12" Type="7" Flags="32" />
+      <Member Name="shape" Offset="16" Type="965" Flags="32" />
+      <Member Name="position" Offset="32" Type="24" Flags="32" />
+      <Member Name="rotation" Offset="48" Type="42" Flags="32" />
+      <Member Name="mass" Offset="64" Type="25" Flags="32" />
+      <Member Name="friction" Offset="68" Type="25" Flags="32" />
+      <Member Name="maxLinearVelocity" Offset="72" Type="25" Flags="32" />
+      <Member Name="allowedPenetrationDepth" Offset="76" Type="25" Flags="32" />
+      <Member Name="up" Offset="80" Type="24" Flags="32" />
+      <Member Name="maxSlope" Offset="96" Type="25" Flags="32" />
+      <Member Name="maxForce" Offset="100" Type="25" Flags="32" />
+      <Member Name="unweldingHeightOffsetFactor" Offset="104" Type="25" Flags="32" />
+      <Member Name="maxSpeedForSimplexSolver" Offset="108" Type="25" Flags="32" />
+      <Member Name="supportDistance" Offset="112" Type="25" Flags="32" />
+      <Member Name="hardSupportDistance" Offset="116" Type="25" Flags="32" />
+      <Member Name="vdbColor" Offset="120" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2221" Name="hkpCompressedMeshShape" Parent="87" Optionals="45" Format="7" SubType="0" Size="288" Alignment="16" Flags="0" Version="1" Hash="3767719636">
+    <Members>
+      <Member Name="bitsPerIndex" Offset="44" Type="12" Flags="32" />
+      <Member Name="bitsPerWIndex" Offset="48" Type="12" Flags="32" />
+      <Member Name="wIndexMask" Offset="52" Type="12" Flags="32" />
+      <Member Name="indexMask" Offset="56" Type="12" Flags="32" />
+      <Member Name="radius" Offset="60" Type="25" Flags="32" />
+      <Member Name="weldingType" Offset="64" Type="110" Flags="32" />
+      <Member Name="materialType" Offset="65" Type="2223" Flags="32" />
+      <Member Name="materials" Offset="72" Type="114" Flags="32" />
+      <Member Name="materials16" Offset="88" Type="108" Flags="32" />
+      <Member Name="materials8" Offset="104" Type="113" Flags="32" />
+      <Member Name="transforms" Offset="120" Type="584" Flags="32" />
+      <Member Name="bigVertices" Offset="136" Type="112" Flags="32" />
+      <Member Name="bigTriangles" Offset="152" Type="2225" Flags="32" />
+      <Member Name="chunks" Offset="168" Type="2227" Flags="32" />
+      <Member Name="convexPieces" Offset="184" Type="2229" Flags="32" />
+      <Member Name="error" Offset="200" Type="25" Flags="32" />
+      <Member Name="bounds" Offset="208" Type="184" Flags="32" />
+      <Member Name="defaultCollisionFilterInfo" Offset="240" Type="7" Flags="32" />
+      <Member Name="meshMaterials" Offset="248" Type="11" Flags="33" />
+      <Member Name="materialStriding" Offset="256" Type="22" Flags="32" />
+      <Member Name="numMaterials" Offset="258" Type="22" Flags="32" />
+      <Member Name="namedMaterials" Offset="264" Type="120" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2242" Name="hkpConvexListShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="2244954106">
+    <Members>
+      <Member Name="minDistanceToUseConvexHullForGetClosestPoints" Offset="40" Type="25" Flags="32" />
+      <Member Name="aabbHalfExtents" Offset="48" Type="24" Flags="32" />
+      <Member Name="aabbCenter" Offset="64" Type="24" Flags="32" />
+      <Member Name="useCachedAabb" Offset="80" Type="18" Flags="32" />
+      <Member Name="childShapes" Offset="88" Type="106" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2248" Name="hkpConvexTransformShapeBase" Parent="103" Optionals="45" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="1778796008">
+    <Members>
+      <Member Name="childShape" Offset="32" Type="2195" Flags="32" />
+      <Member Name="childShapeSizeForSpu" Offset="48" Type="12" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2251" Name="hkpConvexVerticesShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="3256650586">
+    <Members>
+      <Member Name="aabbHalfExtents" Offset="32" Type="24" Flags="32" />
+      <Member Name="aabbCenter" Offset="48" Type="24" Flags="32" />
+      <Member Name="rotatedVertices" Offset="64" Type="2252" Flags="32" />
+      <Member Name="numVertices" Offset="80" Type="12" Flags="32" />
+      <Member Name="useSpuBuffer" Offset="84" Type="18" Flags="33" />
+      <Member Name="planeEquations" Offset="88" Type="112" Flags="32" />
+      <Member Name="connectivity" Offset="104" Type="2253" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2254" Name="hkpCylinderShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="4205715208">
+    <Members>
+      <Member Name="cylRadius" Offset="28" Type="25" Flags="32" />
+      <Member Name="cylBaseRadiusFactorForHeightFieldCollisions" Offset="32" Type="25" Flags="32" />
+      <Member Name="vertexA" Offset="48" Type="24" Flags="32" />
+      <Member Name="vertexB" Offset="64" Type="24" Flags="32" />
+      <Member Name="perpendicular1" Offset="80" Type="24" Flags="32" />
+      <Member Name="perpendicular2" Offset="96" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2257" Name="hkpDefaultWorldMemoryWatchDog" Parent="911" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="2141626725">
+    <Members>
+      <Member Name="freeHeapMemoryRequested" Offset="12" Type="12" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2285" Name="hkpGravityGun" Parent="2166" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="1479190421">
+    <Members>
+      <Member Name="grabbedBodies" Offset="48" Type="20" Flags="33" />
+      <Member Name="maxNumObjectsPicked" Offset="64" Type="12" Flags="32" />
+      <Member Name="maxMassOfObjectPicked" Offset="68" Type="25" Flags="32" />
+      <Member Name="maxDistOfObjectPicked" Offset="72" Type="25" Flags="32" />
+      <Member Name="impulseAppliedWhenObjectNotPicked" Offset="76" Type="25" Flags="32" />
+      <Member Name="throwVelocity" Offset="80" Type="25" Flags="32" />
+      <Member Name="capturedObjectPosition" Offset="96" Type="24" Flags="32" />
+      <Member Name="capturedObjectsOffset" Offset="112" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2304" Name="hkpLinearParametricCurve" Parent="2305" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="1791413813">
+    <Members>
+      <Member Name="smoothingFactor" Offset="12" Type="25" Flags="32" />
+      <Member Name="closedLoop" Offset="16" Type="18" Flags="32" />
+      <Member Name="dirNotParallelToTangentAlongWholePath" Offset="32" Type="24" Flags="32" />
+      <Member Name="points" Offset="48" Type="112" Flags="32" />
+      <Member Name="distance" Offset="64" Type="139" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2319" Name="hkpMultiRayShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="2612131923">
+    <Members>
+      <Member Name="rays" Offset="24" Type="2321" Flags="32" />
+      <Member Name="rayPenetrationDistance" Offset="40" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2322" Name="hkpMultiSphereShape" Parent="104" Optionals="45" Format="7" SubType="0" Size="160" Alignment="16" Flags="0" Version="1" Hash="1833984964">
+    <Members>
+      <Member Name="numSpheres" Offset="24" Type="12" Flags="32" />
+      <Member Name="spheres" Offset="32" Type="2323" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2326" Name="hkpPhantomCallbackShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="24" Alignment="8" Flags="0" Version="1" Hash="3650974819" />
+  <HavokType Id="2366" Name="hkpPositionConstraintMotor" Parent="2200" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="1" Hash="339596288">
+    <Members>
+      <Member Name="tau" Offset="24" Type="25" Flags="32" />
+      <Member Name="damping" Offset="28" Type="25" Flags="32" />
+      <Member Name="proportionalRecoveryVelocity" Offset="32" Type="25" Flags="32" />
+      <Member Name="constantRecoveryVelocity" Offset="36" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2380" Name="hkpProjectileGun" Parent="2166" Optionals="45" Format="7" SubType="0" Size="96" Alignment="8" Flags="0" Version="1" Hash="2152202701">
+    <Members>
+      <Member Name="maxProjectiles" Offset="48" Type="12" Flags="32" />
+      <Member Name="reloadTime" Offset="52" Type="25" Flags="32" />
+      <Member Name="reload" Offset="56" Type="25" Flags="33" />
+      <Member Name="projectiles" Offset="64" Type="20" Flags="33" />
+      <Member Name="world" Offset="80" Type="11" Flags="33" />
+      <Member Name="destructionWorld" Offset="88" Type="11" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2419" Name="hkpSoftContactModifierConstraintAtom" Parent="978" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="3775335334">
+    <Members>
+      <Member Name="tau" Offset="40" Type="25" Flags="32" />
+      <Member Name="maxAcceleration" Offset="44" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2421" Name="hkpSphereShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="40" Alignment="8" Flags="0" Version="1" Hash="933901001">
+    <Members>
+      <Member Name="pad16" Offset="28" Type="569" Flags="33" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2423" Name="hkpSpringDamperConstraintMotor" Parent="2200" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="111867549">
+    <Members>
+      <Member Name="springConstant" Offset="24" Type="25" Flags="32" />
+      <Member Name="springDamping" Offset="28" Type="25" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2424" Name="hkpStaticCompoundShape" Parent="832" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="1" Hash="3492349726">
+    <Members>
+      <Member Name="numBitsForChildShapeKey" Offset="40" Type="13" Flags="32" />
+      <Member Name="referencePolicy" Offset="41" Type="13" Flags="33" />
+      <Member Name="childShapeKeyMask" Offset="44" Type="7" Flags="33" />
+      <Member Name="instances" Offset="48" Type="2426" Flags="32" />
+      <Member Name="instanceExtraInfos" Offset="64" Type="108" Flags="32" />
+      <Member Name="disabledLargeShapeKeyTable" Offset="80" Type="2408" Flags="32" />
+      <Member Name="tree" Offset="96" Type="1044" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2435" Name="hkpTransformShape" Parent="88" Optionals="45" Format="7" SubType="0" Size="128" Alignment="16" Flags="0" Version="1" Hash="783161109">
+    <Members>
+      <Member Name="childShape" Offset="24" Type="2195" Flags="32" />
+      <Member Name="childShapeSize" Offset="40" Type="12" Flags="33" />
+      <Member Name="rotation" Offset="48" Type="42" Flags="32" />
+      <Member Name="transform" Offset="64" Type="333" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2436" Name="hkpTriangleShape" Parent="103" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="1" Hash="385621810">
+    <Members>
+      <Member Name="weldingInfo" Offset="28" Type="22" Flags="32" />
+      <Member Name="weldingType" Offset="30" Type="110" Flags="32" />
+      <Member Name="isExtruded" Offset="31" Type="16" Flags="32" />
+      <Member Name="vertexA" Offset="32" Type="24" Flags="32" />
+      <Member Name="vertexB" Offset="48" Type="24" Flags="32" />
+      <Member Name="vertexC" Offset="64" Type="24" Flags="32" />
+      <Member Name="extrusion" Offset="80" Type="24" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2442" Name="hkpVelocityConstraintMotor" Parent="2200" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="1" Hash="1772897825">
+    <Members>
+      <Member Name="tau" Offset="24" Type="25" Flags="32" />
+      <Member Name="velocityTarget" Offset="28" Type="25" Flags="32" />
+      <Member Name="useVelocityTargetFromConstraintTargets" Offset="32" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2469" Name="hkxLight" Parent="5" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="2576768448">
+    <Members>
+      <Member Name="type" Offset="12" Type="2471" Flags="32" />
+      <Member Name="position" Offset="16" Type="24" Flags="32" />
+      <Member Name="direction" Offset="32" Type="24" Flags="32" />
+      <Member Name="color" Offset="48" Type="7" Flags="32" />
+      <Member Name="angle" Offset="52" Type="25" Flags="32" />
+      <Member Name="range" Offset="56" Type="25" Flags="32" />
+      <Member Name="fadeStart" Offset="60" Type="25" Flags="32" />
+      <Member Name="fadeEnd" Offset="64" Type="25" Flags="32" />
+      <Member Name="decayRate" Offset="68" Type="26" Flags="32" />
+      <Member Name="intensity" Offset="72" Type="25" Flags="32" />
+      <Member Name="shadowCaster" Offset="76" Type="18" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="2490" Name="hkxTextureInplace" Parent="5" Optionals="45" Format="7" SubType="0" Size="48" Alignment="8" Flags="0" Version="1" Hash="524754443">
+    <Members>
+      <Member Name="fileType" Offset="12" Type="2491" Flags="32" />
+      <Member Name="data" Offset="16" Type="113" Flags="32" />
+      <Member Name="name" Offset="32" Type="10" Flags="32" />
+      <Member Name="originalFilename" Offset="40" Type="10" Flags="32" />
+    </Members>
+  </HavokType>
+</HavokTypeRegistryOverlay>

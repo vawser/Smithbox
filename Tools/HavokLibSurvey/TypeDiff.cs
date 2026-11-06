@@ -21,6 +21,8 @@ public static class TypeDiff
     private static readonly ConcurrentDictionary<string, uint> Hashes = new();
     private static readonly ConcurrentDictionary<string, string> Conflicts = new();
 
+    public static IEnumerable<HavokType> CollectedTypes => Types.Values.Select(s => s.Type);
+
     public static void Reset()
     {
         Types.Clear();
@@ -207,4 +209,47 @@ public static class TypeDiff
     }
 
     private static string Trim(string s) => s.Length > 220 ? s[..220] + "…" : s;
+}
+
+/// <summary>
+/// --layoutpredict: checks the layout engine against a console game's files. Each record type the files describe is
+/// compared with the same type of the PC base registry recomputed under the given rules (DB_NT: ER's registry with
+/// Itanium rules). This is the test that lets the engine stand in for type sections where a game's files have none (BB).
+/// </summary>
+public static class LayoutPredict
+{
+    public static List<string> Report(HavokProfile profile, IEnumerable<HavokType> fileTypes, HavokLayoutRules rules)
+    {
+        var lines = new List<string>();
+        var pc = HavokTypeRegistry.Load(Path.Join(HavokProfile.ResourceFolder, profile.RegistryFile!));
+        var layout = new HavokLayout(8, rules);
+        int same = 0, predicted = 0;
+        var wrong = new List<string>();
+        var content = new List<string>();
+        int missing = 0;
+        foreach (var f in fileTypes.Where(t => t.Kind == HavokType.TypeKind.Record && t.Optionals.HasFlag(HavokType.Optional.SizeAlign))
+                     .OrderBy(t => t.Identity, StringComparer.Ordinal))
+        {
+            var p = pc.GetType(f.Identity);
+            if (p == null) { missing++; continue; }
+            var fOwn = f.Fields.Skip(f.Parent?.Fields.Count ?? 0).ToList();
+            var pOwn = p.Fields.Skip(p.Parent?.Fields.Count ?? 0).ToList();
+            bool pcSame = p.Size == f.Size && pOwn.Count == fOwn.Count && pOwn.Zip(fOwn).All(x => x.First.Offset == x.Second.Offset);
+            if (pOwn.Count != fOwn.Count) { content.Add($"`{f.Identity}`: {pOwn.Count} members on PC, {fOwn.Count} in the files"); continue; }
+            var l = layout.Get(p);
+            var problems = new List<string>();
+            if (l.Size != f.Size) problems.Add($"size {l.Size} vs file {f.Size}");
+            for (int i = 0; i < fOwn.Count; i++)
+                if (l.MemberOffsets[i] != fOwn[i].Offset) problems.Add($"{fOwn[i].Name}@{l.MemberOffsets[i]} vs file {fOwn[i].Offset}");
+            if (problems.Count == 0) { if (pcSame) same++; else predicted++; }
+            else wrong.Add($"`{f.Identity}` (PC layout {(pcSame ? "matches the file" : "differs too")}): {string.Join(", ", problems.Take(4))}");
+        }
+
+        lines.Add($"- **Layout prediction** ({rules.Name} rules on `{profile.RegistryFile}`), for every record type with a layout in the files:");
+        lines.Add($"  - {same + predicted} match: {same} unchanged from PC, {predicted} moved as predicted.");
+        lines.Add($"  - {wrong.Count} mispredicted; {content.Count} have different members (content changes, not layout); {missing} aren't in the PC registry.");
+        foreach (var w in wrong.Take(30)) lines.Add($"    - {w}");
+        foreach (var c in content.Take(10)) lines.Add($"    - {c}");
+        return lines;
+    }
 }
