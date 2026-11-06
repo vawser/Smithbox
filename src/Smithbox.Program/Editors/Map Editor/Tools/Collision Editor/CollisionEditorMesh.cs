@@ -34,8 +34,16 @@ public sealed class CollisionEditorBody
     private readonly bool[] DirtyChunks;
     private readonly MeshRenderableProxy[] ChunkMeshes;
 
-    // Rebuilt chunks whose geometry is still uploading, drawn in place of ChunkMeshes once it is
+    // Rebuilt chunks on their way to replacing ChunkMeshes, and how many frames each has been drawn alongside the
+    // mesh it replaces (0 while its geometry is still uploading)
     private readonly MeshRenderableProxy[] PendingMeshes;
+    private readonly int[] PendingShownFrames;
+
+    /// <summary>Frames a rebuilt chunk is drawn alongside the old one before the old one goes.</summary>
+    public const int OverlapFrames = 2;
+
+    /// <summary>The preview meshes of the body that are drawn, for a caller waiting on something else to be drawn.</summary>
+    public IEnumerable<MeshRenderableProxy> PreviewMeshes => ChunkMeshes.Concat(PendingMeshes).Where(m => m != null);
 
     public BoundingBox Bounds { get; private set; }
 
@@ -72,6 +80,7 @@ public sealed class CollisionEditorBody
         DirtyChunks = new bool[chunkCount];
         ChunkMeshes = new MeshRenderableProxy[chunkCount];
         PendingMeshes = new MeshRenderableProxy[chunkCount];
+        PendingShownFrames = new int[chunkCount];
 
         UpdateBounds();
     }
@@ -320,10 +329,13 @@ public sealed class CollisionEditorBody
 
     /// <summary>
     /// Builds the preview meshes, or rebuilds those with a moved vertex, and places them with the part.
-    /// A rebuilt mesh is only drawn once its geometry has been uploaded, which takes a frame or more, so the mesh it
-    /// replaces stays drawn until then and the preview never has gaps while a vertex is dragged. A chunk moved again
-    /// while its rebuild is uploading waits for it, then rebuilds with the latest vertices.
-    /// Returns true once every chunk is drawn, so the loaded mesh can be hidden without the collision disappearing.
+    /// A rebuilt mesh is only drawn once its geometry has been uploaded, which takes a frame or more. Its renderable
+    /// being built doesn't mean it has been drawn yet, so once built it is shown alongside the mesh it replaces for
+    /// <see cref="OverlapFrames" /> frames, and only then does the old mesh go: the preview never has gaps while a
+    /// vertex is moved. A chunk moved again while its rebuild is on its way waits for it, then rebuilds with the
+    /// latest vertices.
+    /// Returns true once every chunk has been drawn, so the loaded mesh can be hidden without the collision
+    /// disappearing.
     /// </summary>
     public bool UpdatePreview(RenderScene scene, Matrix4x4 world, Color color, bool visible)
     {
@@ -332,23 +344,36 @@ public sealed class CollisionEditorBody
 
         for (var chunk = 0; chunk < ChunkMeshes.Length; chunk++)
         {
-            // The uploaded rebuild takes over from the mesh it replaces
-            if (PendingMeshes[chunk] is { } pending && pending.AreRenderablesConstructed())
+            if (PendingMeshes[chunk] is { } pending)
             {
-                ChunkMeshes[chunk]?.Dispose();
-                ChunkMeshes[chunk] = pending;
-                PendingMeshes[chunk] = null;
+                if (pending.World != placement)
+                    pending.World = placement;
+
+                if (PendingShownFrames[chunk] >= OverlapFrames)
+                {
+                    // Drawn alongside the old mesh for long enough: it takes over
+                    ChunkMeshes[chunk]?.Dispose();
+                    ChunkMeshes[chunk] = pending;
+                    PendingMeshes[chunk] = null;
+                    PendingShownFrames[chunk] = 0;
+                }
+                else if (PendingShownFrames[chunk] > 0 || pending.AreRenderablesConstructed())
+                {
+                    if (pending.Visible != visible)
+                        pending.Visible = visible;
+
+                    PendingShownFrames[chunk]++;
+                }
             }
 
             if (PendingMeshes[chunk] == null && (ChunkMeshes[chunk] == null || DirtyChunks[chunk]))
             {
                 PendingMeshes[chunk] = BuildChunk(scene, chunk, color);
                 PendingMeshes[chunk].Visible = false;
+                PendingMeshes[chunk].World = placement;
+                PendingShownFrames[chunk] = 0;
                 DirtyChunks[chunk] = false;
             }
-
-            if (PendingMeshes[chunk] is { } building && building.World != placement)
-                building.World = placement;
 
             if (ChunkMeshes[chunk] is not { } mesh)
             {
@@ -389,6 +414,7 @@ public sealed class CollisionEditorBody
 
             PendingMeshes[chunk]?.Dispose();
             PendingMeshes[chunk] = null;
+            PendingShownFrames[chunk] = 0;
         }
 
         // Built again from scratch the next time the file is previewed

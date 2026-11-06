@@ -75,10 +75,16 @@ High and low collision are the same ground at two levels of detail; fall protect
 - **Preview**: the GPU collision mesh is built once at load. While a file is edited, its original mesh is hidden and
   the edited triangles are drawn with `RawMeshProvider` meshes in chunks of 4096 triangles; only chunks with a moved
   vertex are rebuilt, at most once a frame.
-- **No gaps while dragging**: a rebuilt chunk's geometry is uploaded a frame or more after it is made, so each chunk
-  keeps its old mesh drawn until the rebuild's renderable is constructed (`AreRenderablesConstructed`), then swaps.
-  A chunk moved again while its rebuild uploads waits for it, then rebuilds with the latest vertices, so a long drag
-  never keeps restarting the upload. The loaded mesh is only hidden once every chunk of the file is drawn.
+- **No gaps while editing**: a rebuilt chunk's geometry is uploaded a frame or more after it is made, and a
+  constructed renderable (`AreRenderablesConstructed`) isn't necessarily drawn yet. So a rebuilt chunk is hidden
+  until it is constructed, then drawn alongside the old chunk for `OverlapFrames` (2) frames, and only then does the
+  old chunk go. Swapping as soon as it was constructed left one-frame gaps (the first version flickered). A chunk moved
+  again while its rebuild is on its way waits for it, then rebuilds with the latest vertices, so a long drag never
+  keeps restarting the upload. The loaded mesh is only hidden once every chunk of the file has been drawn.
+- **No gap on commit**: the rebuilt loaded mesh has to upload too, so a committed file's preview stays drawn (and its
+  loaded mesh hidden) until the loaded mesh's renderables are constructed, or 300 frames pass. Then both are drawn
+  for `OverlapFrames` frames before the preview goes. Undo and redo rebuild the loaded mesh without a preview to
+  cover it, so they can still show a brief gap.
 - **After commit**: the collision resource's submeshes are re-uploaded from the new document and the proxies'
   renderables rebuilt, then the preview is removed and the original mesh shown again.
 

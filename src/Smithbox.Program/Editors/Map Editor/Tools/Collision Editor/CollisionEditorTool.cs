@@ -58,6 +58,20 @@ public class CollisionEditorTool
     private readonly List<(CollisionSubmesh[] Meshes, int Frame)> PendingRelease = new();
     private int Frame;
 
+    // Previews of committed files, drawn until the rebuilt loaded meshes are, so the collision never disappears
+    private sealed class RetiringPreview(CollisionEditorFile file, List<MeshRenderableProxy> proxies, int startFrame)
+    {
+        public CollisionEditorFile File { get; } = file;
+        public List<MeshRenderableProxy> Proxies { get; } = proxies;
+        public int StartFrame { get; } = startFrame;
+        public int ShownFrames { get; set; }
+    }
+
+    private readonly List<RetiringPreview> Retiring = new();
+
+    // How long a committed preview waits for the rebuilt mesh before handing over anyway
+    private const int RetireTimeoutFrames = 300;
+
     private record Hit(CollisionEditorFile File, CollisionEditorBody Body, int Triangle, int Vertex, Vector3 Point, float Distance);
 
     /// <summary>The vertices of one body that an edit moves, with how much of the move each takes.</summary>
@@ -394,6 +408,7 @@ public class CollisionEditorTool
         }
 
         UpdatePreviews(scene);
+        UpdateRetiringPreviews();
 
         return IsDragging;
     }
@@ -814,6 +829,18 @@ public class CollisionEditorTool
     /// </summary>
     private void DropUnloadedFiles()
     {
+        // Committed previews of unloaded maps have nothing left to hand over to
+        for (var i = Retiring.Count - 1; i >= 0; i--)
+        {
+            var file = Retiring[i].File;
+
+            if (!View.HavokCollisionBank.MapDocuments.TryGetValue(file.FileName, out var document) || document != file.Document)
+            {
+                file.DisposePreview();
+                Retiring.RemoveAt(i);
+            }
+        }
+
         List<string> dropped = null;
 
         foreach (var (key, file) in Files)
@@ -1062,9 +1089,13 @@ public class CollisionEditorTool
     {
         foreach (var fileName in swaps.Select(s => s.FileName).Distinct(StringComparer.OrdinalIgnoreCase))
         {
-            if (Files.TryGetValue(fileName, out var file))
+            var map = swaps.First(s => string.Equals(s.FileName, fileName, StringComparison.OrdinalIgnoreCase)).Map;
+
+            Files.TryGetValue(fileName, out var file);
+            var mapId = map?.Name ?? file?.MapId;
+
+            if (file != null)
             {
-                file.DisposePreview();
                 Files.Remove(fileName);
 
                 if (Drag?.File == file)
@@ -1074,20 +1105,68 @@ public class CollisionEditorTool
                     Hover = null;
             }
 
-            var map = swaps.First(s => string.Equals(s.FileName, fileName, StringComparison.OrdinalIgnoreCase)).Map;
-            var mapId = map?.Name ?? file?.MapId;
+            // A previewed file keeps its preview drawn, and its loaded mesh hidden, until the rebuilt loaded mesh
+            // has been uploaded, so the collision doesn't disappear while it is
+            var previewed = file != null && file.Bodies.Any(b => b.PreviewMeshes.Any());
+            var proxies = RefreshLoadedMesh(mapId, fileName, showNow: !previewed);
 
-            RefreshLoadedMesh(mapId, fileName);
+            if (!previewed)
+            {
+                file?.DisposePreview();
+            }
+            else if (proxies == null)
+            {
+                // Not rebuilt, so there is nothing to wait for
+                file.DisposePreview();
+                SetOriginalVisible(file, true);
+            }
+            else
+            {
+                Retiring.Add(new RetiringPreview(file, proxies, Frame));
+            }
         }
     }
 
     /// <summary>
-    /// Rebuilds the drawn mesh of a file from its document, for every part drawn from it, and shows it again.
+    /// Hands the collision back from the previews of committed files to their rebuilt loaded meshes: once those are
+    /// built (or after a timeout), they are shown alongside the preview for a few frames, then the preview goes.
     /// </summary>
-    private void RefreshLoadedMesh(string mapId, string fileName)
+    private void UpdateRetiringPreviews()
+    {
+        for (var i = Retiring.Count - 1; i >= 0; i--)
+        {
+            var retiring = Retiring[i];
+
+            if (retiring.ShownFrames == 0)
+            {
+                var built = retiring.Proxies.All(p => p.AreRenderablesConstructed());
+
+                if (!built && Frame - retiring.StartFrame < RetireTimeoutFrames)
+                    continue;
+
+                SetOriginalVisible(retiring.File, true);
+            }
+
+            retiring.ShownFrames++;
+
+            if (retiring.ShownFrames > CollisionEditorBody.OverlapFrames)
+            {
+                retiring.File.DisposePreview();
+                Retiring.RemoveAt(i);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Rebuilds the drawn mesh of a file from its document, for every part drawn from it. With showNow, they are shown
+    /// again straight away; otherwise the caller shows them once they are built. Returns the meshes rebuilt, or null
+    /// if any couldn't be.
+    /// </summary>
+    private List<MeshRenderableProxy> RefreshLoadedMesh(string mapId, string fileName, bool showNow)
     {
         var document = View.HavokCollisionBank.GetMapDocument(fileName);
         var refreshed = new HashSet<HavokCollisionResource>();
+        var proxies = new List<MeshRenderableProxy>();
         var failed = false;
 
         foreach (var proxy in GetFileProxies(mapId, fileName).ToList())
@@ -1118,23 +1197,33 @@ public class CollisionEditorTool
 
             foreach (var submesh in proxy.Submeshes)
                 submesh.ScheduleRenderableConstruction();
+
+            proxies.Add(proxy);
         }
 
-        // Shown again, following the visibility of their parts
-        foreach (var entity in GetCollisionParts().Where(e => e.MapID == mapId))
+        // Shown again, following the visibility of their parts. A failed rebuild has nothing to wait for.
+        if (showNow || failed)
         {
-            foreach (var proxy in GetCollisionProxies(entity))
+            foreach (var entity in GetCollisionParts().Where(e => e.MapID == mapId))
             {
-                if (string.Equals(ResolveFileName(mapId, proxy.ResourceHandle?.Name), fileName, StringComparison.OrdinalIgnoreCase)
-                    && proxy.Visible != entity.EditorVisible)
+                foreach (var proxy in GetCollisionProxies(entity))
                 {
-                    proxy.Visible = entity.EditorVisible;
+                    if (string.Equals(ResolveFileName(mapId, proxy.ResourceHandle?.Name), fileName, StringComparison.OrdinalIgnoreCase)
+                        && proxy.Visible != entity.EditorVisible)
+                    {
+                        proxy.Visible = entity.EditorVisible;
+                    }
                 }
             }
         }
 
         if (failed)
+        {
             Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Refresh_Failed", fileName));
+            return null;
+        }
+
+        return proxies;
     }
 
     private void ReleaseReplacedMeshes()
