@@ -13,7 +13,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// a new clip copies a clip of the same selector, a new transition copies one from the same list,
 /// and the lists kept alongside the name lists grow with them.
 /// </summary>
-public static class HavokBehaviorOperations
+public static partial class HavokBehaviorOperations
 {
     #region Steps
     private static EditorAction Step(HavokBehaviorContext context, Action apply, Action revert)
@@ -296,7 +296,7 @@ public static class HavokBehaviorOperations
     /// (hk2018: m_animationNames holds the animation's path, one entry per animation).
     /// </summary>
     public static EditorAction AddAnimation(HavokBehaviorContext context, object selector, long category,
-        out object newClip, out string error)
+        out object newClip, out string error, object template = null)
     {
         newClip = null;
         error = null;
@@ -321,8 +321,8 @@ public static class HavokBehaviorOperations
             return null;
         }
 
-        // Copy a clip of this selector, or any clip of the file
-        var template = clips.FirstOrDefault() ?? symbols.Clips.FirstOrDefault();
+        // Copy the clip given (Duplicate, Paste), else a clip of this selector, or any clip of the file
+        template ??= clips.FirstOrDefault() ?? symbols.Clips.FirstOrDefault();
 
         if (template == null)
         {

@@ -100,6 +100,12 @@ public class HavokAnimationSelectorView
                     SelectedAnimSelectors.Add(entry);
                 }
             }
+
+            if (ImGui.BeginPopupContextItem($"animSelectorMenu_{i}"))
+            {
+                Owner.ActionsView.DisplayGeneratorItems(entry, HavokBehaviorActionsView.Source.List, SelectedAnimSelectors.Cast<object>().ToList());
+                ImGui.EndPopup();
+            }
         }
 
         ImGui.EndChild();
@@ -137,7 +143,7 @@ public class HavokAnimationSelectorView
 
         var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
 
-        ImGui.BeginChild("havokBehaviorPropEditSection");
+        ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = 2;
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)

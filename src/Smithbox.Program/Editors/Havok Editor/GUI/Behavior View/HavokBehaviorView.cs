@@ -241,12 +241,33 @@ public class HavokBehaviorView
     #endregion
 
 
+    /// <summary>
+    /// The height the Used By section took last frame, which the property grid above it leaves free
+    /// </summary>
+    private float UsedByHeight = 0f;
+
+    /// <summary>
+    /// The size of each view's property grid: the window's width, and its height less the Used By section below
+    /// </summary>
+    public System.Numerics.Vector2 PropertySectionSize =>
+        new(0, UsedByHeight > 0 ? -UsedByHeight : 0);
+
     public void DisplayProperties()
     {
         SyncCurrentViews();
 
-        DisplayUsedBy();
+        DisplayPropertyGrid();
 
+        // Below the grid; measured, so the grid leaves it room next frame
+        var start = ImGui.GetCursorPosY();
+        DisplayUsedBy();
+        var height = ImGui.GetCursorPosY() - start;
+
+        UsedByHeight = height > 0 ? height + ImGui.GetStyle().ItemSpacing.Y : 0;
+    }
+
+    private void DisplayPropertyGrid()
+    {
         if (OutlineView.CanDisplayProperties())
         {
             OutlineView.DisplayProperties();
@@ -319,6 +340,8 @@ public class HavokBehaviorView
             return;
 
         var parents = Symbols.GetParents(selected);
+
+        ImGui.Separator();
 
         var headerOpen = ImGui.CollapsingHeader($"{LOC.Get("HAVOK_UsedBy_Header", parents.Count)}###havokUsedBy");
         GUI.Tooltip(LOC.Get("HAVOK_UsedBy_Header_TT"));

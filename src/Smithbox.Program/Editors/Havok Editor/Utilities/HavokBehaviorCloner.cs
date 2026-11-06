@@ -20,15 +20,26 @@ public static class HavokBehaviorCloner
     /// With keepShared, objects with a parent outside the subtree are referenced instead of copied.
     /// </summary>
     public static object Clone(object root, HavokBehaviorSymbols symbols, bool keepShared)
+        => Clone(root, symbols, keepShared, null, out _);
+
+    /// <summary>
+    /// As <see cref="Clone(object, HavokBehaviorSymbols, bool)"/>, but the objects in alwaysCopy are copied even if
+    /// they're shared (Duplicate copies the selector or state machine it was asked for, inside a copy of its state).
+    /// copies maps each original object to its copy (an object kept shared isn't in it).
+    /// </summary>
+    public static object Clone(object root, HavokBehaviorSymbols symbols, bool keepShared, IReadOnlySet<object> alwaysCopy,
+        out IReadOnlyDictionary<object, object> copies)
     {
         var subtree = keepShared ? CollectSubtree(root) : null;
-        var copies = new Dictionary<object, object>(ReferenceEqualityComparer.Instance);
+        var copyMap = new Dictionary<object, object>(ReferenceEqualityComparer.Instance);
 
-        return CloneValue(root, root, symbols, subtree, copies);
+        copies = copyMap;
+
+        return CloneValue(root, root, symbols, subtree, copyMap, alwaysCopy);
     }
 
     private static object CloneValue(object value, object root, HavokBehaviorSymbols symbols,
-        HashSet<object> subtree, Dictionary<object, object> copies)
+        HashSet<object> subtree, Dictionary<object, object> copies, IReadOnlySet<object> alwaysCopy)
     {
         if (value == null)
             return null;
@@ -41,7 +52,7 @@ public static class HavokBehaviorCloner
         if (copies.TryGetValue(value, out var existing))
             return existing;
 
-        if (!ReferenceEquals(value, root))
+        if (!ReferenceEquals(value, root) && alwaysCopy?.Contains(value) != true)
         {
             if (IsTransitionEffect(type))
                 return value;
@@ -57,7 +68,7 @@ public static class HavokBehaviorCloner
             copies[value] = arrayCopy;
 
             for (var i = 0; i < array.Length; i++)
-                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies), i);
+                arrayCopy.SetValue(CloneValue(array.GetValue(i), root, symbols, subtree, copies, alwaysCopy), i);
 
             return arrayCopy;
         }
@@ -68,7 +79,7 @@ public static class HavokBehaviorCloner
             copies[value] = listCopy;
 
             foreach (var entry in list)
-                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies));
+                listCopy.Add(CloneValue(entry, root, symbols, subtree, copies, alwaysCopy));
 
             return listCopy;
         }
@@ -84,7 +95,7 @@ public static class HavokBehaviorCloner
             if (field.IsInitOnly)
                 continue;
 
-            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies));
+            field.SetValue(copy, CloneValue(field.GetValue(value), root, symbols, subtree, copies, alwaysCopy));
         }
 
         return copy;

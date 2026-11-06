@@ -98,6 +98,13 @@ public class HavokVariableView
                     SelectedIndex = i;
                 }
 
+                if (ImGui.BeginPopupContextItem($"variableMenu_{i}"))
+                {
+                    SelectedIndex = i;
+                    Owner.ActionsView.DisplayVariableItems(i);
+                    ImGui.EndPopup();
+                }
+
                 if (selected && ScrollToSelection)
                 {
                     ImGui.SetScrollHereY();
@@ -121,6 +128,23 @@ public class HavokVariableView
             Owner.ActionsView.RequestAddVariable();
 
         GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Add_Variable_TT"));
+
+        // Duplicate / Delete act on the selected variable
+        var hasSelection = HavokBehaviorSymbols.GetName(Owner.Symbols?.VariableNames, SelectedIndex) != null;
+
+        ImGui.BeginDisabled(!hasSelection);
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("HAVOK_BehaviorActions_Duplicate_Variable")}##duplicateVariable"))
+            Owner.ActionsView.RequestDuplicateVariable(SelectedIndex);
+        GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Duplicate_Variable_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("HAVOK_BehaviorActions_Delete_Variable")}##deleteVariable"))
+            Owner.ActionsView.RequestDeleteVariable(SelectedIndex);
+        GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Delete_Variable_TT"));
+
+        ImGui.EndDisabled();
     }
 
     public bool CanDisplayProperties()
@@ -147,7 +171,7 @@ public class HavokVariableView
         if (name == null)
             return;
 
-        ImGui.BeginChild("havokBehaviorPropEditSection");
+        ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = 2;
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)

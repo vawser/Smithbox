@@ -343,7 +343,7 @@ public class HavokAnimationTableView
         if (Selected == null)
             return;
 
-        ImGui.BeginChild("havokBehaviorPropEditSection");
+        ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = CFG.Current.HavokEditor_Properties_Display_Type_Column ? 3 : 2;
 

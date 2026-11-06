@@ -120,6 +120,8 @@ public class HavokAnimationClipView
                         }
                     }
 
+                    DisplayRowMenu(entry, $"clipMenu_{i}");
+
                     // Alias
                     ImGui.TableSetColumnIndex(1);
 
@@ -137,12 +139,28 @@ public class HavokAnimationClipView
                         }
                     }
                     ImGui.PopStyleColor(1);
+
+                    DisplayRowMenu(entry, $"clipAliasMenu_{i}");
                 }
             }
 
             clipper.End();
 
             ImGui.EndTable();
+        }
+    }
+
+    /// <summary>
+    /// The right-click menu of a clip row: duplicate, delete, copy, paste, and its variable bindings
+    /// </summary>
+    private void DisplayRowMenu(IClipGenerator entry, string id)
+    {
+        if (ImGui.BeginPopupContextItem(id))
+        {
+            Owner.ActionsView.DisplayGeneratorItems(entry, HavokBehaviorActionsView.Source.List, SelectedAnimationClips.Cast<object>().ToList());
+            ImGui.Separator();
+            Owner.ActionsView.DisplayBindingItems(entry, HavokBehaviorActionsView.Source.List);
+            ImGui.EndPopup();
         }
     }
 
@@ -232,7 +250,7 @@ public class HavokAnimationClipView
 
         var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
 
-        ImGui.BeginChild("havokBehaviorPropEditSection");
+        ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = 2;
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)

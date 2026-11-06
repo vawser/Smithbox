@@ -100,6 +100,12 @@ public class HavokStateMachineView
                     SelectedStateMachines.Add(entry);
                 }
             }
+
+            if (ImGui.BeginPopupContextItem($"stateMachineMenu_{i}"))
+            {
+                Owner.ActionsView.DisplayGeneratorItems(entry, HavokBehaviorActionsView.Source.List, SelectedStateMachines.Cast<object>().ToList());
+                ImGui.EndPopup();
+            }
         }
 
         ImGui.EndChild();
@@ -137,7 +143,7 @@ public class HavokStateMachineView
 
         var havokMeta = HavokMetaHelper.GetMeta(Project, firstSelection.GetType());
 
-        ImGui.BeginChild("havokBehaviorPropEditSection");
+        ImGui.BeginChild("havokBehaviorPropEditSection", Owner.PropertySectionSize);
 
         var columnCount = 2;
         if (CFG.Current.HavokEditor_Properties_Display_Type_Column)

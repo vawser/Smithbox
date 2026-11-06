@@ -124,6 +124,44 @@ if (args.Length > 3 && args[3] == "taedump")
     return;
 }
 
+if (args.Length > 3 && args[3] == "editsurvey")
+{
+    var editBinders = fs.GetFileNamesMatching("/chr", @"(?i)\.behbnd(\.dcx)?$").Select(x => x.Replace('\\', '/'))
+        .Distinct(StringComparer.OrdinalIgnoreCase).Where(x => filter.IsMatch(x)).OrderBy(x => x).Take(maxBinders).ToList();
+    var editTotal = new EditSurvey();
+    var editFiles = 0;
+
+    foreach (var bp in editBinders)
+    {
+        var rawB = fs.ReadFile(bp).Value.ToArray();
+        var bb = BND4.Read(DCX.Is(rawB) ? DCX.Decompress(rawB).ToArray() : rawB);
+        byte[] comp = bb.Files.FirstOrDefault(f => f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase)) is { } cc
+            ? (cc.Name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) ? DCX.Decompress(cc.Bytes).ToArray() : cc.Bytes.ToArray())
+            : null;
+
+        foreach (var f in bb.Files)
+        {
+            var n = f.Name.Replace('\\', '/');
+            if (!n.Contains("/Behaviors/", StringComparison.OrdinalIgnoreCase) || !n.Contains(".hkx", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            var bytes = n.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) ? DCX.Decompress(f.Bytes).ToArray() : f.Bytes.ToArray();
+            object r;
+            try { r = ReadRoot(game, bytes, comp); }
+            catch (Exception e) { Console.WriteLine($"  {n}: read failed: {e.Message}"); continue; }
+
+            var s = new EditSurvey();
+            s.Run(r);
+            editTotal.Merge(s);
+            editFiles++;
+        }
+    }
+
+    Console.WriteLine($"{gameName}: {editBinders.Count} binders, {editFiles} behavior files");
+    editTotal.Print();
+    return;
+}
+
 var binders = fs.GetFileNamesMatching("/chr", @"(?i)\.behbnd(\.dcx)?$")
     .Select(p => p.Replace('\\', '/'))
     .Distinct(StringComparer.OrdinalIgnoreCase)

@@ -64,6 +64,12 @@ public class HavokShortcuts
                 activeView.FileView.Shortcuts();
             }
 
+            // Duplicate / Delete / Copy / Paste on the behavior selection (Outline and the category lists)
+            if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_Contents))
+            {
+                activeView.PropertyView.BehaviorView.ActionsView.Shortcuts();
+            }
+
             if (FocusManager.IsFocus(EditorFocusContext.HavokEditor_Properties))
             {
                 activeView.PropertyView.Shortcuts();
