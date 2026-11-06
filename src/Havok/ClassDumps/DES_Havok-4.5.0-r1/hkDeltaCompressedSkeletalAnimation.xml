@@ -1,0 +1,16 @@
+<class name="hkDeltaCompressedSkeletalAnimation" version="0" signature="0xde5deced" size="100" parent="hkSkeletalAnimation">
+  <members>
+    <member name="numberOfPoses" offset="32" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="36" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="0x800" />
+    <member name="staticMaskSize" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="76" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="NOT_OWNED|0x1804" />
+    <member name="" offset="28515" vtype="TYPE_115" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|NOT_OWNED|0x6064" />
+    <member name="" offset="0" vtype="TYPE_109" vsubtype="TYPE_97" arrsize="29696" flags="FLAGS_NONE" />
+  </members>
+</class>

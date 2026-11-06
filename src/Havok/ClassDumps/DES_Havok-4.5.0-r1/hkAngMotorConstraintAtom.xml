@@ -1,0 +1,11 @@
+<class name="hkAngMotorConstraintAtom" version="0" signature="0x386348a6" size="20" parent="hkConstraintAtom">
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x800" />
+    <member name="motor" offset="16" ctype="hkConstraintMotor" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29807" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|SERIALIZE_IGNORED|0x6867" />
+  </members>
+</class>

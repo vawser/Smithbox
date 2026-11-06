@@ -1,0 +1,9 @@
+<class name="hkxVertexDescriptionElementDecl" version="2" signature="0x00000000" size="16">
+  <members>
+    <member name="byteOffset" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="type" offset="4" etype="DataType" vtype="TYPE_ENUM" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="usage" offset="6" etype="DataUsage" vtype="TYPE_ENUM" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="byteStride" offset="8" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numElements" offset="12" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

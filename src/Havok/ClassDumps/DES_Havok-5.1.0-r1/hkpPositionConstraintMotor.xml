@@ -1,0 +1,8 @@
+<class name="hkpPositionConstraintMotor" version="0" signature="0x748fb303" size="36" parent="hkpLimitedForceConstraintMotor" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="tau" offset="20" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="damping" offset="24" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="proportionalRecoveryVelocity" offset="28" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constantRecoveryVelocity" offset="32" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,19 @@
+<class name="hkpMeshShapeSubpart" version="0" signature="0xd296d43b" size="56">
+  <members>
+    <member name="vertexBase" offset="0" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="vertexStriding" offset="4" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numVertices" offset="8" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="indexBase" offset="12" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="stridingType" offset="16" etype="IndexStridingType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialIndexStridingType" offset="17" etype="IndexStridingType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="indexStriding" offset="20" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="flipAlternateTriangles" offset="24" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numTriangles" offset="28" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialIndexBase" offset="32" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="materialIndexStriding" offset="36" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialBase" offset="40" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="materialStriding" offset="44" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numMaterials" offset="48" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="triangleOffset" offset="52" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

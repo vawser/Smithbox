@@ -1,0 +1,18 @@
+<class name="hkpLimitedHingeConstraintDataAtoms" version="1" signature="0x00000000" size="240">
+  <enums>
+    <enum name="Axis" flags="0">
+      <enumitem name="AXIS_AXLE" value="0" />
+      <enumitem name="AXIS_PERP_TO_AXLE_1" value="1" />
+      <enumitem name="AXIS_PERP_TO_AXLE_2" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="transforms" offset="0" ctype="hkpSetLocalTransformsConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="setupStabilization" offset="144" ctype="hkpSetupStabilizationAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angMotor" offset="160" ctype="hkpAngMotorConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angFriction" offset="180" ctype="hkpAngFrictionConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angLimit" offset="192" ctype="hkpAngLimitConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="2dAng" offset="208" ctype="hkp2dAngConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="ballSocket" offset="212" ctype="hkpBallSocketConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

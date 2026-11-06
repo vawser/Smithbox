@@ -1,0 +1,9 @@
+<class name="hkaBoneAttachment" version="1" signature="0x00000000" size="96" parent="hkReferencedObject">
+  <members>
+    <member name="originalSkeletonName" offset="8" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneFromAttachment" offset="16" vtype="TYPE_MATRIX4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="attachment" offset="80" ctype="hkReferencedObject" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="84" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneIndex" offset="88" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

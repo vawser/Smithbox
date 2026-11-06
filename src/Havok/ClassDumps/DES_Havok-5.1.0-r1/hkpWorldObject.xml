@@ -1,0 +1,19 @@
+<class name="hkpWorldObject" version="0" signature="0x50f6ee9f" size="128" parent="hkReferencedObject">
+  <enums>
+    <enum name="BroadPhaseType" flags="0">
+      <enumitem name="BROAD_PHASE_INVALID" value="0" />
+      <enumitem name="BROAD_PHASE_ENTITY" value="1" />
+      <enumitem name="BROAD_PHASE_PHANTOM" value="2" />
+      <enumitem name="BROAD_PHASE_BORDER" value="3" />
+      <enumitem name="BROAD_PHASE_MAX_ID" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="world" offset="8" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="userData" offset="12" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collidable" offset="16" ctype="hkpLinkedCollidable" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="multiThreadCheck" offset="104" ctype="hkMultiThreadCheck" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="112" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="properties" offset="116" ctype="hkpProperty" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

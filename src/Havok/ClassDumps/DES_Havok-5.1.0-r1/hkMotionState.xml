@@ -1,0 +1,13 @@
+<class name="hkMotionState" version="0" signature="0x064e7ce4" size="176">
+  <members>
+    <member name="transform" offset="0" vtype="TYPE_TRANSFORM" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="sweptTransform" offset="64" ctype="hkSweptTransform" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deltaAngle" offset="144" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="objectRadius" offset="160" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="linearDamping" offset="164" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angularDamping" offset="168" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxLinearVelocity" offset="172" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxAngularVelocity" offset="173" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationClass" offset="174" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

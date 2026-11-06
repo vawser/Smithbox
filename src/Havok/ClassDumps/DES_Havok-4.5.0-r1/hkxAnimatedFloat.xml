@@ -1,0 +1,6 @@
+<class name="hkxAnimatedFloat" version="0" signature="0x9bb15af4" size="12">
+  <members>
+    <member name="floats" offset="0" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28513" ctype="Hint" vtype="TYPE_VOID" vsubtype="TYPE_UINT32" arrsize="8" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x6064" />
+  </members>
+</class>

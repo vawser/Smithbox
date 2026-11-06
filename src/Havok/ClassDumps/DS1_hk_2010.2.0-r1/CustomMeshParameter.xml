@@ -1,0 +1,9 @@
+<class name="CustomMeshParameter" version="1" signature="0x3c8ecce9" size="36" parent="hkReferencedObject" borrowed="DS3 hk_2014">
+  <members>
+    <member name="version" offset="8" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="vertexDataBuffer" offset="12" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="vertexDataStride" offset="20" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="primitiveDataBuffer" offset="24" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="materialNameData" offset="32" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+  </members>
+</class>

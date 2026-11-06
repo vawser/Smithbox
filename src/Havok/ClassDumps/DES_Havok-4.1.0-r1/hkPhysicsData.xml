@@ -1,0 +1,6 @@
+<class name="hkPhysicsData" version="0" signature="0xc2a461e4" size="24" parent="hkReferencedObject">
+  <members>
+    <member name="worldCinfo" offset="8" ctype="hkWorldCinfo" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29292" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="12" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED|0x7067" />
+  </members>
+</class>

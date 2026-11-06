@@ -1,0 +1,29 @@
+<class name="hkEntity" version="0" signature="0x694e0fc1" size="512" parent="hkWorldObject">
+  <enums>
+    <enum name="SpuCollisionCallbackEventFilter" flags="1869376617">
+      <enumitem name="SPU_SEND_NONE" value="0" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_ADDED" value="1" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_PROCESS" value="2" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_REMOVED" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="material" offset="88" ctype="hkMaterial" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="100" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x1016" />
+    <member name="constraintRuntime" offset="128" vtype="TYPE_ZERO" vsubtype="TYPE_ARRAY" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="140" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" etype="hkMaxSizeMotion" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|0x1800" />
+    <member name="collisionListeners" offset="464" ctype="hkEntitySmallArraySerializeOverrideType" vtype="TYPE_ZERO" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="472" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="27766" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x7067" />
+    <member name="" offset="25976" vtype="TYPE_97" vsubtype="TYPE_103" arrsize="25929" flags="NOT_OWNED|SERIALIZE_IGNORED|0x6864" />
+    <member name="" offset="25185" vtype="TYPE_99" vsubtype="TYPE_116" arrsize="17249" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x6864" />
+  </members>
+</class>

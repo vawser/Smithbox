@@ -26,6 +26,22 @@ if (args.Contains("--buildlayoutoverlay"))
     return;
 }
 
+if (args.Contains("--registryoverlay"))
+{
+    // --registryoverlay <base registry> <variant registry> <game> <output>
+    var a = args.Where(x => x != "--registryoverlay").ToArray();
+    foreach (var l in RegistryOverlay.Write(a[0], a[1], a[2], a[3])) Console.WriteLine(l);
+    return;
+}
+
+if (args.Contains("--filldumps"))
+{
+    var fillLines = DumpFill.Run(Path.Combine("..", "Havok", "ClassDumps"), Path.Combine("..", "Havok", "HKX.ClassGeneration", "classxmlds3"));
+    File.WriteAllLines(Path.Combine("..", "..", "Documentation", "Claude", "Havok Library Survey", "Dump Fill.md"), fillLines);
+    foreach (var l in fillLines) Console.WriteLine(l);
+    return;
+}
+
 if (args.Contains("--layoutcheck"))
 {
     var layoutLines = LayoutCheck.Run();
@@ -41,8 +57,9 @@ if (coreRegistryLines != null) foreach (var l in coreRegistryLines) Console.Writ
 Survey.BuildRegistry = args.Contains("--buildregistry");
 Survey.BuildOverlay = args.Contains("--buildoverlay");
 var layoutPredict = args.Contains("--layoutpredict");
+Survey.DumpClasses = args.Contains("--dumpclasses");
 Survey.TypeDiffEnabled = args.Contains("--typediff") || layoutPredict || Survey.BuildRegistry || Survey.BuildOverlay;
-args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry" or "--buildoverlay" or "--layoutpredict")).ToArray();
+args = args.Where(a => a is not ("--core" or "--typediff" or "--buildregistry" or "--buildoverlay" or "--layoutpredict" or "--dumpclasses")).ToArray();
 
 var maxContainers = args.Length > 1 ? int.Parse(args[1]) : 30;
 var maxFiles = args.Length > 2 ? int.Parse(args[2]) : 8;
@@ -69,6 +86,7 @@ foreach (var gameName in games)
 
     using var fs = Survey.BuildFS(game, root, out var fsNote);
     TypeDiff.Reset();
+    ClassDump.Reset();
     var profile = Havok.HavokProfile.FromGame(gameName);
     var buildSdk = profile?.Sdk switch
     {
@@ -132,6 +150,13 @@ foreach (var gameName in games)
         typeLines.AddRange(overlayLines);
         foreach (var l in overlayLines.Take(12)) Console.WriteLine(l);
     }
+    if (Survey.DumpClasses)
+    {
+        // class dumps from the files' own hkClass reflection, for Tools/HavokClassDumpConvert
+        var dumpLines = ClassDump.Write(Path.Combine("..", "Havok", "ClassDumps"), gameName);
+        (typeLines ??= new List<string>()).AddRange(dumpLines);
+        foreach (var l in dumpLines) Console.WriteLine(l);
+    }
     if (layoutPredict && profile?.RegistryFile != null)
     {
         var predictLines = LayoutPredict.Report(profile, TypeDiff.CollectedTypes, Havok.Reflection.HavokLayoutRules.Itanium);
@@ -163,6 +188,7 @@ public static class Survey
     public static bool TypeDiffEnabled;
     public static bool BuildRegistry;
     public static bool BuildOverlay;
+    public static bool DumpClasses;
     public static string BuildSdkPrefix;
 
     public static readonly Library[] Libraries =
@@ -177,6 +203,7 @@ public static class Survey
         new UnifiedTagfile("Unified 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "HKLib 2019"),
         new GeneratedPackfile(),
         new GeneratedPackfile(preserveSource: false),
+        new GeneratedPackfile32(),
         new UnifiedTagfile("Generated 2018", "2018", Havok.Formats.Tagfile.TagfileDialect.Hk2018, "Unified 2018", Havok.hk2018.ClassSet.For),
         new UnifiedTagfile("Generated 2019", "2019", Havok.Formats.Tagfile.TagfileDialect.Hk2019, "Unified 2019", Havok.hk2019.ClassSet.For),
         new UnifiedTagfile("Unified 2016", "2016", Havok.Formats.Tagfile.TagfileDialect.Hk2016, null, _ => Havok.hk2016.ClassSet.For(Havok.HavokProfile.SDT)),
@@ -402,6 +429,7 @@ public static class Survey
         r.CoreSniffDiff = CoreCheck.CompareSniff(bytes, r.Sniff);
         if (r.Sniff.Container == "Tagfile") r.Layout = SectionDiff.Layout(bytes);
         if (TypeDiffEnabled) TypeDiff.Collect(bytes, r.Sniff, inner, BuildSdkPrefix);
+        if (DumpClasses) ClassDump.Collect(bytes, r.Sniff, inner);
 
         foreach (var lib in Libraries.Where(l => l.Applies(r.Sniff, ctx.Game)))
             r.Libs.Add(lib.Run(bytes, ctx, r.Sniff.UsesCompendium));

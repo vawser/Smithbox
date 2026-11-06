@@ -1,0 +1,6 @@
+<class name="hkMoppCode" version="0" signature="0xbd097996" size="48" parent="hkReferencedObject">
+  <members>
+    <member name="info" offset="16" ctype="hkMoppCodeCodeInfo" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="26223" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="32" flags="DEPRECATED_SIZE_8|ALIGN_16|0x6866" />
+  </members>
+</class>

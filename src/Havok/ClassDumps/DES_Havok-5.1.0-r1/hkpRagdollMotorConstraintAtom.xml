@@ -1,0 +1,9 @@
+<class name="hkpRagdollMotorConstraintAtom" version="0" signature="0xfcf8f950" size="80" parent="hkpConstraintAtom" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="initializedOffset" offset="4" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="previousTargetAnglesOffset" offset="6" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="targetFrameAinB" offset="16" vtype="TYPE_MATRIX3" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="motors" offset="64" ctype="hkpConstraintMotor" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="3" flags="FLAGS_NONE" />
+  </members>
+</class>

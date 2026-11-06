@@ -259,6 +259,48 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 
 **Phase 5: 32-bit packfiles (DeS Havok-5.x, DS1 hk_2010).** Hand-built registry for the classes SoulsFormats handles, 32-bit layout, big-endian for DeS. SoulsFormats only reads 61/329 DeS files and can't write skeletons or spline animations, so parity is the floor, not the target. Acceptance: skeletons, animations, collision and navmesh decode the same as SoulsFormats. Writing should at least be as good as SoulsFormats today (round trip re-reads equal).
 
+> **Status (2026-11-06): reading and writing done for DS1, DeS 5.5 and DeS 5.1. Still to do: DeS 5.5 extended mesh shapes (hand-fitted), and the decode comparison with SoulsFormats.** Nothing in Smithbox uses this yet (Phase 6).
+> - **Decision (2026-11-06): the registries come from the games' own files, and the class sets are generated** (revises D2's "no full hk2010 class set"). DeS packfiles, and DS1's chr physics files, carry Havok's `hkClass` reflection in `__types__`. The layout is the same in Havok 5.5 and hk_2010, 32-bit:
+>   - `hkClass` 48 bytes, `hkClassMember` 24, `hkClassEnum` 20, enum items 8.
+>   - Type codes are `hkClassMember::Type`.
+> - **Survey `--dumpclasses`** writes that reflection, from every file of DS1 (11,166) and DeS (12,439), as class dumps in HKX2's `classxmlds3` format: `src/Havok/ClassDumps/<GAME>_<SDK>/`, plus `_used.txt` (the classes the files use, with their signatures).
+>   - Described: DS1 131 classes, DeS 5.5 107, 5.1 82 (and 4.1/4.5, out of scope).
+>   - **Exporters only embedded the classes they didn't consider built in**, so the core ones are never described: DS1's spline animation, reference frame and collision shapes; DeS's MOPP and mesh shapes.
+> - **Survey `--filldumps`** borrows each used-but-undescribed class from the nearest SDK that has it, laid out again for the target (pointer size, the target's parents, Itanium tail reuse for PS3). Results in [Havok Library Survey/Dump Fill.md](Havok%20Library%20Survey/Dump%20Fill.md):
+>   - **How far it can be trusted.** For classes both sets describe with the same members, the donor predicts the target exactly: DS3 → DS1 95, DS1 → DeS 5.5 47, DeS 5.5 → 5.1 67. The only misses are multiple-inheritance classes (`hkpCollisionFilter`, `hkpShapeCollection`), whose secondary-base vtables no member lists. Target classes therefore keep their recorded layouts, and a borrowed class whose donor layout doesn't recompute is flagged and kept verbatim.
+>   - Donors: DS1 ← DS3; DeS 5.5 ← DeS 5.1, DS1, DS3; DeS 5.1 ← DeS 5.5, DS1, DS3. Borrowed dumps carry `borrowed="…"` and the target's signature. Stale ones from an earlier fill go to `.archive`.
+>   - **Found nowhere:** DS1 `hkaWaveletCompressedAnimation`; DeS `hkaDeltaCompressedSkeletalAnimation` (DeS animations, which no library reads), `CustomMeshParameter::DATA_ELEMENT` and some `hkxVertex*` formats.
+> - **Registries:** `Tools/HavokClassDumpConvert` now takes a pointer size, version and game. It writes `HavokTypeRegistry20100200.xml` (DS1, 312 types), `05050000` (DeS 5.5, 342) and `05010000` (DeS 5.1). Survey `--registryoverlay` turns 5.1 into an overlay on 5.5 (`…05050000_DES_51.xml`, 27 changed types). Profiles: `DS1`, `DES`, `DES_51` (`HavokProfile.For(game, sdk)` picks it).
+>   - `hkVariant.object` is untyped on 32-bit, because Havok 5.x roots aren't `hkReferencedObject`s.
+>   - `TYPE_HOMOGENEOUSARRAY` (5.5 `hkxVertexBuffer`) is kept as space only.
+> - **Classes:** `src/Havok/Classes/Havok.hk2010` (167 declarations) and `Havok.hk55` (174, holding 5.5 and 5.1), generated and compiling without hand edits. Both are in the solution.
+> - **Packfile engine** (`HavokPackfileSerializer`). Writing now follows the source file:
+>   - Pointer size, byte order and section order (5.1 puts `__data__` before `__types__`).
+>   - Its class-name section (old SDKs list every class), so names keep their offsets.
+>   - Its fixup-table lengths (Havok 5.5 leaves empty rows).
+>   - Each `hkArray`'s capacity/flags word (5.5 uses `0xC0000000`).
+>   - `hkVariant` class pointers into the kept `__types__` section.
+>   - Unserialized `hkArray`s are written as empty arrays (`0x80000000`), as Havok writes them. This also helps DS3.
+>
+>   Reading: `hkUlong` is pointer-sized, and strings decode as Shift-JIS where that round-trips (DeS and DS3 hold Japanese names), else Latin-1. All the fidelity features apply only with `PreserveSource`, so the HKX2-header mode still checks HKX2 parity.
+> - **Probes** (`Tools/HavokPackfileProbe`): `--types` dumps a file's reflection, `--diff` compares a rewrite part by part (naming the objects of lost fixups), and `--layout` now handles 32-bit big-endian files. Loose files: pass `-` as the inner name.
+> - **Verified** (`HavokLibSurvey <game> 30 8`):
+>
+>   | Game / SDK | Read: SoulsFormats → engine | Write | Graph round trip | Byte-identical: SoulsFormats → engine |
+>   |---|---|---|---|---|
+>   | DS1 hk_2010 | 328 → **331/331** | 331 | 331 | 38 → **298** |
+>   | DeS Havok-5.5 | 59 → **327/327** | 327 | 327 | 0 → **267** |
+>   | DeS Havok-5.1 | 2 → 2/2 | 2 | 2 | 0 → **2** |
+>
+>   The fidelity changes also raised the hk_2014 games: DS3 668 → **693/860**, BB 619 → **636/721**, DS2S 0 → **227/227** byte-identical. DS3 reads now differ from HKX2 in 25 files, all Shift-JIS names that HKX2 reads as `?` (`オブジェクト100093` vs `?I?u?W?F?N?g100093`).
+> - **Still to do:**
+>   - **DeS 5.5 extended mesh shapes.** No DeS file describes `hkpExtendedMeshShape`, and DS1's 2010 version is a different class, so DeS map collision loses its mesh storage on read (the remaining DeS map rewrites are smaller). The bytes (`l0042b0.hkx`) give its layout, to be written as hand-made 5.5 dumps:
+>     - `aabbHalfExtents`@48, `aabbCenter`@64, `trianglesSubparts` as a simple array @80, `weldingInfo`@96, `weldingType`@108.
+>     - A 64-byte embedded `TrianglesSubpart`@112. Within it: triangle count @16, vertex stride @24, vertex count @28, index stride @52, striding type @56.
+>     - Size 192. `hkpStorageExtendedMeshShape.meshstorage`@192 and `shapestorage`@204; `CustomParamStorageExtendedMeshShape.materialArray`@216.
+>   - **Decode comparison with SoulsFormats** (the acceptance test): skeletons, spline animations, collision meshes.
+>   - DS1's remaining 33 and DeS's other differences are same-size, mostly one byte at an odd offset (value-level). *(verify)*
+
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:
 1. Renderer animation (`HavokAnimationData`, `HavokTagfile` → `Untyped`/typed reads).
 2. Renderer collision/navmesh resources and Map Editor banks (`HavokCollisionResource`, `HavokNavmeshResource`, `HavokCollisionBank`, `HavokNavmeshBank`, `WallBank`, the `*_Helper` classes).

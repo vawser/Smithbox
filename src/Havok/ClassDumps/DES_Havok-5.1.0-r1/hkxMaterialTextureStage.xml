@@ -1,0 +1,6 @@
+<class name="hkxMaterialTextureStage" version="0" signature="0xe085ba9f" size="12">
+  <members>
+    <member name="texture" offset="0" vtype="TYPE_VARIANT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="usageHint" offset="8" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

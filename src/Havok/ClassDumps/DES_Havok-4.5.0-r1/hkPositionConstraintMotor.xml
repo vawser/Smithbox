@@ -1,0 +1,8 @@
+<class name="hkPositionConstraintMotor" version="0" signature="0x748fb303" size="36" parent="hkLimitedForceConstraintMotor">
+  <members>
+    <member name="tau" offset="20" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="24" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

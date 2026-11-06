@@ -1,0 +1,14 @@
+<class name="hkaWaveletSkeletalAnimation" version="0" signature="0x21efbf61" size="92" parent="hkaSkeletalAnimation" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="numberOfPoses" offset="32" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockSize" offset="36" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="qFormat" offset="40" ctype="hkaWaveletSkeletalAnimationQuantizationFormat" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticMaskIdx" offset="60" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticDOFsIdx" offset="64" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockIndexIdx" offset="68" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockIndexSize" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataIdx" offset="76" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataSize" offset="80" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="dataBuffer" offset="84" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

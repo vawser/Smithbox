@@ -1,0 +1,10 @@
+<class name="hkpBallSocketChainData" version="0" signature="0xea22d4f9" size="52" parent="hkpConstraintChainData" borrowed="DS1 hk_2010">
+  <members>
+    <member name="atoms" offset="12" ctype="hkpBridgeAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="infos" offset="24" ctype="hkpBallSocketChainDataConstraintInfo" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="tau" offset="36" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="damping" offset="40" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="cfm" offset="44" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxErrorDistance" offset="48" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

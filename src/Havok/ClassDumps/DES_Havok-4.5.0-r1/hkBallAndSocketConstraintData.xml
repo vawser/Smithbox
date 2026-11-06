@@ -1,0 +1,5 @@
+<class name="hkBallAndSocketConstraintData" version="0" signature="0x5c2bf49b" size="80" parent="hkConstraintData">
+  <members>
+    <member name="atoms" offset="16" ctype="hkBallAndSocketConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

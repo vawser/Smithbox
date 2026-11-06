@@ -1,0 +1,97 @@
+<class name="hkpWorldCinfo" version="11" signature="0x00000000" size="240" parent="hkReferencedObject">
+  <enums>
+    <enum name="SolverType" flags="0">
+      <enumitem name="SOLVER_TYPE_INVALID" value="0" />
+      <enumitem name="SOLVER_TYPE_2ITERS_SOFT" value="1" />
+      <enumitem name="SOLVER_TYPE_2ITERS_MEDIUM" value="2" />
+      <enumitem name="SOLVER_TYPE_2ITERS_HARD" value="3" />
+      <enumitem name="SOLVER_TYPE_4ITERS_SOFT" value="4" />
+      <enumitem name="SOLVER_TYPE_4ITERS_MEDIUM" value="5" />
+      <enumitem name="SOLVER_TYPE_4ITERS_HARD" value="6" />
+      <enumitem name="SOLVER_TYPE_8ITERS_SOFT" value="7" />
+      <enumitem name="SOLVER_TYPE_8ITERS_MEDIUM" value="8" />
+      <enumitem name="SOLVER_TYPE_8ITERS_HARD" value="9" />
+      <enumitem name="SOLVER_TYPE_MAX_ID" value="10" />
+    </enum>
+    <enum name="SimulationType" flags="0">
+      <enumitem name="SIMULATION_TYPE_INVALID" value="0" />
+      <enumitem name="SIMULATION_TYPE_DISCRETE" value="1" />
+      <enumitem name="SIMULATION_TYPE_CONTINUOUS" value="2" />
+      <enumitem name="SIMULATION_TYPE_MULTITHREADED" value="3" />
+    </enum>
+    <enum name="ContactPointGeneration" flags="0">
+      <enumitem name="CONTACT_POINT_ACCEPT_ALWAYS" value="0" />
+      <enumitem name="CONTACT_POINT_REJECT_DUBIOUS" value="1" />
+      <enumitem name="CONTACT_POINT_REJECT_MANY" value="2" />
+    </enum>
+    <enum name="BroadPhaseBorderBehaviour" flags="0">
+      <enumitem name="BROADPHASE_BORDER_ASSERT" value="0" />
+      <enumitem name="BROADPHASE_BORDER_FIX_ENTITY" value="1" />
+      <enumitem name="BROADPHASE_BORDER_REMOVE_ENTITY" value="2" />
+      <enumitem name="BROADPHASE_BORDER_DO_NOTHING" value="3" />
+    </enum>
+    <enum name="TreeUpdateType" flags="0">
+      <enumitem name="REBUILD_ACTIVE" value="0" />
+      <enumitem name="REBUILD_ALL" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="gravity" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="broadPhaseQuerySize" offset="32" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="contactRestingVelocity" offset="36" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="broadPhaseBorderBehaviour" offset="40" etype="BroadPhaseBorderBehaviour" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="mtPostponeAndSortBroadPhaseBorderCallbacks" offset="41" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="broadPhaseWorldAabb" offset="48" ctype="hkAabb" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="useKdTree" offset="80" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="useMultipleTree" offset="81" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="treeUpdateType" offset="82" etype="TreeUpdateType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="autoUpdateKdTree" offset="83" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collisionTolerance" offset="84" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="collisionFilter" offset="88" ctype="hkpCollisionFilter" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="convexListFilter" offset="92" ctype="hkpConvexListFilter" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="expectedMaxLinearVelocity" offset="96" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="sizeOfToiEventQueue" offset="100" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="expectedMinPsiDeltaTime" offset="104" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="memoryWatchDog" offset="108" ctype="hkWorldMemoryAvailableWatchDog" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="broadPhaseNumMarkers" offset="112" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="contactPointGeneration" offset="116" etype="ContactPointGeneration" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="allowToSkipConfirmedCallbacks" offset="117" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="useHybridBroadphase" offset="118" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="solverTau" offset="120" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="solverDamp" offset="124" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="solverIterations" offset="128" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="solverMicrosteps" offset="132" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxConstraintViolation" offset="136" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="forceCoherentConstraintOrderingInSolver" offset="140" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="snapCollisionToConvexEdgeThreshold" offset="144" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="snapCollisionToConcaveEdgeThreshold" offset="148" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="enableToiWeldRejection" offset="152" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="enableDeprecatedWelding" offset="153" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="iterativeLinearCastEarlyOutDistance" offset="156" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="iterativeLinearCastMaxIterations" offset="160" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationNumInactiveFramesSelectFlag0" offset="164" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationNumInactiveFramesSelectFlag1" offset="165" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationIntegrateCounter" offset="166" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shouldActivateOnRigidBodyTransformChange" offset="167" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationReferenceDistance" offset="168" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="toiCollisionResponseRotateNormal" offset="172" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxSectorsPerMidphaseCollideTask" offset="176" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxSectorsPerNarrowphaseCollideTask" offset="180" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="processToisMultithreaded" offset="184" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxEntriesPerToiMidphaseCollideTask" offset="188" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxEntriesPerToiNarrowphaseCollideTask" offset="192" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxNumToiCollisionPairsSinglethreaded" offset="196" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numToisTillAllowedPenetrationSimplifiedToi" offset="200" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numToisTillAllowedPenetrationToi" offset="204" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numToisTillAllowedPenetrationToiHigher" offset="208" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numToisTillAllowedPenetrationToiForced" offset="212" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="enableDeactivation" offset="216" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="simulationType" offset="217" etype="SimulationType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="enableSimulationIslands" offset="218" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="minDesiredIslandSize" offset="220" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="processActionsInSingleThread" offset="224" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="allowIntegrationOfIslandsWithoutConstraintsInASeparateJob" offset="225" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="frameMarkerPsiSnap" offset="228" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="fireCollisionCallbacks" offset="232" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

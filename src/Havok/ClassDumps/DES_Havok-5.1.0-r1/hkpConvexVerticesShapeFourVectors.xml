@@ -1,0 +1,7 @@
+<class name="hkpConvexVerticesShapeFourVectors" version="0" signature="0x3d80c5bf" size="48" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="x" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="y" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="z" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

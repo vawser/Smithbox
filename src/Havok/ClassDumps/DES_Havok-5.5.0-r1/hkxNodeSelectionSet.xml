@@ -1,0 +1,6 @@
+<class name="hkxNodeSelectionSet" version="0" signature="0x158bea87" size="20" parent="hkxAttributeHolder">
+  <members>
+    <member name="selectedNodes" offset="8" ctype="hkxNode" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="16" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

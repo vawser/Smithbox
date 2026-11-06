@@ -1,0 +1,6 @@
+<class name="hkxAttributeGroup" version="0" signature="0x1667c01c" size="12">
+  <members>
+    <member name="name" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28005" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="NOT_OWNED|SERIALIZE_IGNORED|0x6861" />
+  </members>
+</class>

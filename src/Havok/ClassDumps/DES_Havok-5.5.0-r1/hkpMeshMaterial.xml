@@ -1,0 +1,5 @@
+<class name="hkpMeshMaterial" version="0" signature="0x00000000" size="4" borrowed="DS1 hk_2010">
+  <members>
+    <member name="filterInfo" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

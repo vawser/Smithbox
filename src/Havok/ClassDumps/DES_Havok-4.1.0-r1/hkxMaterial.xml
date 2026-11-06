@@ -1,0 +1,22 @@
+<class name="hkxMaterial" version="0" signature="0x3d43489c" size="96">
+  <enums>
+    <enum name="TextureType" flags="1970431316">
+      <enumitem name="TEX_UNKNOWN" value="0" />
+      <enumitem name="TEX_DIFFUSE" value="1" />
+      <enumitem name="TEX_REFLECTION" value="2" />
+      <enumitem name="TEX_BUMP" value="3" />
+      <enumitem name="TEX_NORMAL" value="4" />
+      <enumitem name="TEX_DISPLACEMENT" value="5" />
+    </enum>
+  </enums>
+  <members>
+    <member name="name" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED|0x800" />
+    <member name="subMaterials" offset="80" ctype="hkxMaterial" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28005" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="88" flags="NOT_OWNED|SERIALIZE_IGNORED|0x6861" />
+    <member name="" offset="0" vtype="TYPE_101" vsubtype="TYPE_115" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

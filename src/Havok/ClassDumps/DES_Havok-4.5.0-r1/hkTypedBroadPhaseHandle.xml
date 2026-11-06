@@ -1,0 +1,8 @@
+<class name="hkTypedBroadPhaseHandle" version="0" signature="0xa539881b" size="12" parent="hkBroadPhaseHandle">
+  <members>
+    <member name="type" offset="4" vtype="TYPE_INT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="5" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

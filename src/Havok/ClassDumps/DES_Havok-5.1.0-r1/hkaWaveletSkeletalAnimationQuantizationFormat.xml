@@ -1,0 +1,10 @@
+<class name="hkaWaveletSkeletalAnimationQuantizationFormat" version="0" signature="0x724a7561" size="20" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="maxBitWidth" offset="0" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="preserved" offset="1" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numD" offset="4" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="offsetIdx" offset="8" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="scaleIdx" offset="12" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bitWidthIdx" offset="16" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

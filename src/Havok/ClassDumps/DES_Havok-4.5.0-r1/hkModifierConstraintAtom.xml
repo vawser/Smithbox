@@ -1,0 +1,8 @@
+<class name="hkModifierConstraintAtom" version="0" signature="0x83c56f2e" size="32" parent="hkConstraintAtom">
+  <members>
+    <member name="modifierAtomSize" offset="16" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="18" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28525" vtype="TYPE_102" vsubtype="TYPE_105" arrsize="25970" flags="ALIGN_16|0x4074" />
+  </members>
+</class>

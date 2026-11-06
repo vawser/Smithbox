@@ -1,0 +1,11 @@
+<class name="hkxCamera" version="0" signature="0xd5c65fae" size="64">
+  <members>
+    <member name="from" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="16" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x800" />
+    <member name="leftHanded" offset="60" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="25461" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x6067" />
+  </members>
+</class>

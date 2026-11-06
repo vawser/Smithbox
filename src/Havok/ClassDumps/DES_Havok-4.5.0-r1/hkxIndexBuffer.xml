@@ -1,0 +1,18 @@
+<class name="hkxIndexBuffer" version="0" signature="0x1c8a8c37" size="28">
+  <enums>
+    <enum name="IndexType" flags="2018802032">
+      <enumitem name="INDEX_TYPE_INVALID" value="0" />
+      <enumitem name="INDEX_TYPE_TRI_LIST" value="1" />
+      <enumitem name="INDEX_TYPE_TRI_STRIP" value="2" />
+      <enumitem name="INDEX_TYPE_TRI_FAN" value="3" />
+      <enumitem name="INDEX_TYPE_MAX_ID" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="indexType" offset="0" etype="IndexType" vtype="TYPE_ENUM" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="25705" vtype="TYPE_101" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|0x6866" />
+  </members>
+</class>

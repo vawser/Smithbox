@@ -1,0 +1,5 @@
+<class name="hkShapeCollection" version="0" signature="0xd6992513" size="20" parent="hkShape" interfaces="1">
+  <members>
+    <member name="disableWelding" offset="16" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

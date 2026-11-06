@@ -26,6 +26,8 @@ The "Generated 2014 packfile" rows run the packfile engine (`Havok.Formats`) on 
 
 **BB overlay** (2026-11-06): BB's layouts are DS3's recomputed under Itanium C++ ABI rules (PS4 clang reuses base-class tail padding), by `Havok.Reflection.HavokLayout`. BB now reads 721/721, 619 byte-identical (was 40). The engine is checked in [Layout Check.md](Layout%20Check.md), and against every DB_NT record layout (0 mispredicted).
 
+**Phase 5** (2026-11-06): DS1 and DeS registries built from the hkClass reflection in their own packfiles, with missing core classes borrowed and relaid ([Dump Fill.md](Dump%20Fill.md)). DS1 331/331 read, 298 byte-identical (SoulsFormats: 38). DeS 5.5 327/327 read (SoulsFormats: 59), 267 byte-identical. DeS map collision still loses its mesh storage (DeS 5.5 extended mesh shapes are to be hand-fitted).
+
 **Phase 3c result** (2026-11-06): the generated hk2018/hk2019 classes match HKLib's data and the HKLib-backed engine's bytes on every ER, NR and AC6 file. They read all 710 DB_NT files (HKLib: 123), 604 of them byte-identical.
 
 **Phase 3 result** (2026-11-06): the generated `Havok.hk2016` and `Havok.hk2015` classes read SDT 744/752 and DS1R 482/482, and rewrite SDT 744/744 and DS1R 479/482 byte-identical.

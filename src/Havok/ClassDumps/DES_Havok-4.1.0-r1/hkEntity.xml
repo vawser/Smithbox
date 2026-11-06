@@ -1,0 +1,20 @@
+<class name="hkEntity" version="0" signature="0x8b34c701" size="512" parent="hkWorldObject">
+  <members>
+    <member name="simulationIsland" offset="88" vtype="TYPE_ZERO" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="92" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="NOT_OWNED|SERIALIZE_IGNORED|0x1004" />
+    <member name="storageIndex" offset="144" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="146" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" etype="hkMaxSizeMotion" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|0x1800" />
+    <member name="collisionListeners" offset="464" vtype="TYPE_ZERO" vsubtype="TYPE_ARRAY" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="476" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="18803" vtype="TYPE_108" vsubtype="TYPE_97" arrsize="29801" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED|0x6866" />
+    <member name="" offset="29797" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|SERIALIZE_IGNORED|0x6861" />
+    <member name="" offset="29184" vtype="TYPE_116" vsubtype="TYPE_105" arrsize="30305" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x7067" />
+  </members>
+</class>

@@ -1,0 +1,7 @@
+<class name="hkCollidable" version="0" signature="0x3606426d" size="36" parent="hkCdBody">
+  <members>
+    <member name="ownerOffset" offset="16" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="20" flags="FLAGS_NONE" />
+    <member name="" offset="26214" vtype="TYPE_111" vsubtype="TYPE_119" arrsize="28261" flags="DEPRECATED_SIZE_8|NOT_OWNED|0x7047" />
+  </members>
+</class>

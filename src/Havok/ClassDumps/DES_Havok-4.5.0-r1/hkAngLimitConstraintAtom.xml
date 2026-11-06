@@ -1,0 +1,9 @@
+<class name="hkAngLimitConstraintAtom" version="0" signature="0x80303983" size="16" parent="hkConstraintAtom">
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28009" vtype="TYPE_100" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x6861" />
+  </members>
+</class>

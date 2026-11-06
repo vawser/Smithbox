@@ -1,0 +1,11 @@
+<class name="hkpConvexVerticesShape" version="1" signature="0x28726ad8" size="112" parent="hkpConvexShape" borrowed="DS3 hk_2014">
+  <members>
+    <member name="aabbHalfExtents" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="aabbCenter" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="rotatedVertices" offset="64" vtype="TYPE_ARRAY" vsubtype="TYPE_MATRIX3" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="numVertices" offset="76" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="useSpuBuffer" offset="80" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" default="0" />
+    <member name="planeEquations" offset="84" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="connectivity" offset="96" ctype="hkpConvexVerticesConnectivity" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" default="0" />
+  </members>
+</class>

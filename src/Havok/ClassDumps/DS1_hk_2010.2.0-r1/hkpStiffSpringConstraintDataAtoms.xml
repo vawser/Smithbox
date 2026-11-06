@@ -1,0 +1,6 @@
+<class name="hkpStiffSpringConstraintDataAtoms" version="0" signature="0x00000000" size="64">
+  <members>
+    <member name="pivots" offset="0" ctype="hkpSetLocalTranslationsConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="spring" offset="48" ctype="hkpStiffSpringConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,7 @@
+<class name="hkProperty" version="0" signature="0x9ce308e9" size="16">
+  <members>
+    <member name="key" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="26983" vtype="TYPE_107" vsubtype="TYPE_101" arrsize="30976" flags="DEPRECATED_SIZE_8|ALIGN_16|0x6064" />
+  </members>
+</class>

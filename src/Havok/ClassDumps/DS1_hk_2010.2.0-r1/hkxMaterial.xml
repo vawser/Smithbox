@@ -1,0 +1,50 @@
+<class name="hkxMaterial" version="1" signature="0x00000000" size="144" parent="hkxAttributeHolder">
+  <enums>
+    <enum name="TextureType" flags="0">
+      <enumitem name="TEX_UNKNOWN" value="0" />
+      <enumitem name="TEX_DIFFUSE" value="1" />
+      <enumitem name="TEX_REFLECTION" value="2" />
+      <enumitem name="TEX_BUMP" value="3" />
+      <enumitem name="TEX_NORMAL" value="4" />
+      <enumitem name="TEX_DISPLACEMENT" value="5" />
+      <enumitem name="TEX_SPECULAR" value="6" />
+      <enumitem name="TEX_SPECULARANDGLOSS" value="7" />
+      <enumitem name="TEX_OPACITY" value="8" />
+      <enumitem name="TEX_EMISSIVE" value="9" />
+      <enumitem name="TEX_REFRACTION" value="10" />
+      <enumitem name="TEX_GLOSS" value="11" />
+      <enumitem name="TEX_NOTEXPORTED" value="12" />
+    </enum>
+    <enum name="PropertyKey" flags="0">
+      <enumitem name="PROPERTY_MTL_TYPE_BLEND" value="1" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE0" value="256" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE1" value="257" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE2" value="258" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE3" value="259" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE4" value="260" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE5" value="261" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE6" value="262" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE7" value="263" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE8" value="264" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE9" value="265" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE10" value="266" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE11" value="267" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE12" value="268" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE13" value="269" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE14" value="270" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE15" value="271" />
+      <enumitem name="PROPERTY_MTL_UV_ID_STAGE_MAX" value="272" />
+    </enum>
+  </enums>
+  <members>
+    <member name="name" offset="20" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="stages" offset="24" ctype="hkxMaterialTextureStage" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="diffuseColor" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="ambientColor" offset="64" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="specularColor" offset="80" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="emissiveColor" offset="96" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="subMaterials" offset="112" ctype="hkxMaterial" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="extraData" offset="124" ctype="hkReferencedObject" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="properties" offset="128" ctype="hkxMaterialProperty" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

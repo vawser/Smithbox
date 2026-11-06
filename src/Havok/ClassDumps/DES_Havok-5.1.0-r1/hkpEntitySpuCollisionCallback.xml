@@ -1,0 +1,8 @@
+<class name="hkpEntitySpuCollisionCallback" version="0" signature="0x81147f05" size="8">
+  <members>
+    <member name="util" offset="0" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="capacity" offset="4" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="eventFilter" offset="6" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="userFilter" offset="7" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

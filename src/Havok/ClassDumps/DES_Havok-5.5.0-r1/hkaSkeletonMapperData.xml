@@ -1,0 +1,10 @@
+<class name="hkaSkeletonMapperData" version="0" signature="0x12ccaefd" size="48">
+  <members>
+    <member name="skeletonA" offset="0" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skeletonB" offset="4" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="simpleMappings" offset="8" ctype="hkaSkeletonMapperDataSimpleMapping" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="chainMappings" offset="20" ctype="hkaSkeletonMapperDataChainMapping" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="unmappedBones" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="keepUnmappedLocal" offset="44" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

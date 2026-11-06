@@ -1,0 +1,6 @@
+<class name="hkpSetLocalTransformsConstraintAtom" version="0" signature="0x00000000" size="144" parent="hkpConstraintAtom">
+  <members>
+    <member name="transformA" offset="16" vtype="TYPE_TRANSFORM" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="transformB" offset="80" vtype="TYPE_TRANSFORM" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

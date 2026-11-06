@@ -1,0 +1,12 @@
+<class name="hkpExtendedMeshShapeSubpart" version="2" signature="0x00000000" size="20">
+  <members>
+    <member name="type" offset="0" etype="SubpartType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialIndexStridingType" offset="1" etype="MaterialIndexStridingType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialStriding" offset="2" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="materialIndexBase" offset="4" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="materialIndexStriding" offset="8" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numMaterials" offset="10" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materialBase" offset="12" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="userData" offset="16" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,15 @@
+<class name="hkMultiThreadLock" version="0" signature="0x7497262b" size="8">
+  <enums>
+    <enum name="AccessType" flags="0">
+      <enumitem name="HK_ACCESS_IGNORE" value="0" />
+      <enumitem name="HK_ACCESS_RO" value="1" />
+      <enumitem name="HK_ACCESS_RW" value="2" />
+    </enum>
+    <enum name="" flags="0" />
+  </enums>
+  <members>
+    <member name="threadId" offset="0" vtype="TYPE_ZERO" vsubtype="TYPE_UINT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="18788" vtype="TYPE_116" vsubtype="TYPE_104" arrsize="29285" flags="ALIGN_16|0x6064" />
+  </members>
+</class>

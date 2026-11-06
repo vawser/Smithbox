@@ -1,0 +1,6 @@
+<class name="hkxTextureInplace" version="0" signature="0xf64b134c" size="12">
+  <members>
+    <member name="fileType" offset="0" vtype="TYPE_CHAR" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="27749" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x6061" />
+  </members>
+</class>

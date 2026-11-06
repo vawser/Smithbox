@@ -1,0 +1,11 @@
+<class name="hkPhysicsSystem" version="0" signature="0x3ace2c22" size="68" parent="hkReferencedObject">
+  <members>
+    <member name="rigidBodies" offset="8" ctype="hkRigidBody" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="20" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x1014" />
+    <member name="active" offset="64" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28275" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x6067" />
+  </members>
+</class>

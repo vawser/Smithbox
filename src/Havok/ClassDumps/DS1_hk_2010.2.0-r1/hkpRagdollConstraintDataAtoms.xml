@@ -1,0 +1,19 @@
+<class name="hkpRagdollConstraintDataAtoms" version="1" signature="0x00000000" size="336">
+  <enums>
+    <enum name="Axis" flags="0">
+      <enumitem name="AXIS_TWIST" value="0" />
+      <enumitem name="AXIS_PLANES" value="1" />
+      <enumitem name="AXIS_CROSS_PRODUCT" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="transforms" offset="0" ctype="hkpSetLocalTransformsConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="setupStabilization" offset="144" ctype="hkpSetupStabilizationAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="ragdollMotors" offset="160" ctype="hkpRagdollMotorConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angFriction" offset="240" ctype="hkpAngFrictionConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="twistLimit" offset="252" ctype="hkpTwistLimitConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="coneLimit" offset="272" ctype="hkpConeLimitConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="planesLimit" offset="292" ctype="hkpConeLimitConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="ballSocket" offset="312" ctype="hkpBallSocketConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name="hkaMeshBindingMapping" version="0" signature="0x4da6a6f4" size="8">
+  <members>
+    <member name="mapping" offset="0" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,15 @@
+<class name="hkCollisionFilter" version="0" signature="0x3610a32e" size="48" parent="hkReferencedObject" interfaces="4">
+  <enums>
+    <enum name="hkFilterType" flags="1819567474">
+      <enumitem name="HK_FILTER_UNKNOWN" value="0" />
+      <enumitem name="HK_FILTER_NULL" value="1" />
+      <enumitem name="HK_FILTER_GROUP" value="2" />
+      <enumitem name="HK_FILTER_LIST" value="3" />
+      <enumitem name="HK_FILTER_CUSTOM" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="type" offset="32" etype="hkFilterType" vtype="TYPE_ENUM" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|0x20" />
+    <member name="" offset="28773" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="36" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x7071" />
+  </members>
+</class>

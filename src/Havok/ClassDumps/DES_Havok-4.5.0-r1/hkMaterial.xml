@@ -1,0 +1,16 @@
+<class name="hkMaterial" version="0" signature="0x0485a264" size="12">
+  <enums>
+    <enum name="ResponseType" flags="1869509477">
+      <enumitem name="RESPONSE_INVALID" value="0" />
+      <enumitem name="RESPONSE_SIMPLE_CONTACT" value="1" />
+      <enumitem name="RESPONSE_REPORTING" value="2" />
+      <enumitem name="RESPONSE_NONE" value="3" />
+      <enumitem name="RESPONSE_MAX_ID" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="responseType" offset="0" etype="ResponseType" vtype="TYPE_ENUM" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="29541" vtype="TYPE_114" vsubtype="TYPE_101" arrsize="29552" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED|0x6866" />
+  </members>
+</class>

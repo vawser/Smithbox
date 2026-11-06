@@ -1,0 +1,18 @@
+<class name="hkpConeLimitConstraintAtom" version="0" signature="0x2b21d9bc" size="20" parent="hkpConstraintAtom" borrowed="DeS Havok-5.5">
+  <enums>
+    <enum name="MeasurementMode" flags="0">
+      <enumitem name="ZERO_WHEN_VECTORS_ALIGNED" value="0" />
+      <enumitem name="ZERO_WHEN_VECTORS_PERPENDICULAR" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="twistAxisInA" offset="3" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="refAxisInB" offset="4" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angleMeasurementMode" offset="5" etype="MeasurementMode" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="memOffsetToAngleOffset" offset="6" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="minAngle" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxAngle" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angularLimitsTauFactor" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

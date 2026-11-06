@@ -1,0 +1,9 @@
+<class name="hkaAnimationContainer" version="0" signature="0xf456626d" size="40">
+  <members>
+    <member name="skeletons" offset="0" ctype="hkaSkeleton" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="animations" offset="8" ctype="hkaSkeletalAnimation" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bindings" offset="16" ctype="hkaAnimationBinding" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="attachments" offset="24" ctype="hkaBoneAttachment" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skins" offset="32" ctype="hkaMeshBinding" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

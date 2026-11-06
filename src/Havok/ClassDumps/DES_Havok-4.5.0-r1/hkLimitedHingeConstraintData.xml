@@ -1,0 +1,5 @@
+<class name="hkLimitedHingeConstraintData" version="0" signature="0xcf669674" size="224" parent="hkConstraintData">
+  <members>
+    <member name="atoms" offset="16" ctype="hkLimitedHingeConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

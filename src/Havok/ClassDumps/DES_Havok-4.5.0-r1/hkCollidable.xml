@@ -1,0 +1,16 @@
+<class name="hkCollidable" version="0" signature="0xf1805598" size="36" parent="hkCdBody">
+  <enums>
+    <enum name="ForceCollideOntoPpuReasons" flags="1698918252">
+      <enumitem name="FORCE_PPU_USER_REQUEST" value="1" />
+      <enumitem name="FORCE_PPU_SHAPE_REQUEST" value="2" />
+      <enumitem name="FORCE_PPU_MODIFIER_REQUEST" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="ownerOffset" offset="16" vtype="TYPE_ZERO" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="17" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29283" vtype="TYPE_115" vsubtype="TYPE_101" arrsize="29696" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x6067" />
+  </members>
+</class>

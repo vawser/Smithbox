@@ -1,0 +1,18 @@
+<class name="hkaSkeletonMapperData" version="1" signature="0x00000000" size="112">
+  <enums>
+    <enum name="MappingType" flags="0">
+      <enumitem name="HK_RAGDOLL_MAPPING" value="0" />
+      <enumitem name="HK_RETARGETING_MAPPING" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="skeletonA" offset="0" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skeletonB" offset="4" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="simpleMappings" offset="8" ctype="hkaSkeletonMapperDataSimpleMapping" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="chainMappings" offset="20" ctype="hkaSkeletonMapperDataChainMapping" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="unmappedBones" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="extractedMotionMapping" offset="48" vtype="TYPE_QSTRANSFORM" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="keepUnmappedLocal" offset="96" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="mappingType" offset="100" etype="MappingType" vtype="TYPE_ENUM" vsubtype="TYPE_INT32" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,7 @@
+<class name="hkEntitySmallArraySerializeOverrideType" version="0" signature="0xeb2364c1" size="8">
+  <members>
+    <member name="data" offset="0" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_100" vsubtype="TYPE_97" arrsize="29793" flags="FLAGS_NONE" />
+  </members>
+</class>

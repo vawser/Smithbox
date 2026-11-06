@@ -1,0 +1,5 @@
+<class name="hkLinkedCollidable" version="0" signature="0x3e51c7fc" size="48" parent="hkCollidable">
+  <members>
+    <member name="collisionEntries" offset="36" vtype="TYPE_ZERO" vsubtype="TYPE_ARRAY" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

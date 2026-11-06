@@ -1,0 +1,6 @@
+<class name="hkReferencedObject" version="0" signature="0x3b1c1113" size="8" parent="hkBaseObject">
+  <members>
+    <member name="memSizeAndFlags" offset="4" vtype="TYPE_ZERO" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="27987" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="6" flags="ALIGN_16|SERIALIZE_IGNORED|0x6865" />
+  </members>
+</class>

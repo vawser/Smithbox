@@ -1,0 +1,10 @@
+<class name="hkRigidBodyDeactivator" version="0" signature="0xb26213ab" size="8" parent="hkEntityDeactivator">
+  <enums>
+    <enum name="DeactivatorType" flags="1953068641">
+      <enumitem name="DEACTIVATOR_INVALID" value="0" />
+      <enumitem name="DEACTIVATOR_NEVER" value="1" />
+      <enumitem name="DEACTIVATOR_SPATIAL" value="2" />
+      <enumitem name="DEACTIVATOR_MAX_ID" value="3" />
+    </enum>
+  </enums>
+</class>

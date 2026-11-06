@@ -1,0 +1,17 @@
+<class name="hkxScene" version="0" signature="0x1fb22361" size="128">
+  <members>
+    <member name="modeller" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="asset" offset="4" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="sceneLength" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="rootNode" offset="12" ctype="hkxNode" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="selectionSets" offset="16" ctype="hkxNodeSelectionSet" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="cameras" offset="24" ctype="hkxCamera" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="lights" offset="32" ctype="hkxLight" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="meshes" offset="40" ctype="hkxMesh" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="materials" offset="48" ctype="hkxMaterial" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="inplaceTextures" offset="56" ctype="hkxTextureInplace" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="externalTextures" offset="64" ctype="hkxTextureFile" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skinBindings" offset="72" ctype="hkxSkinBinding" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="appliedTransform" offset="80" vtype="TYPE_MATRIX3" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

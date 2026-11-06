@@ -1,0 +1,6 @@
+<class name="hkxMesh" version="0" signature="0x72e8e849" size="16">
+  <members>
+    <member name="sections" offset="0" ctype="hkxMeshSection" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="userChannelInfos" offset="8" ctype="hkxMeshUserChannelInfo" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

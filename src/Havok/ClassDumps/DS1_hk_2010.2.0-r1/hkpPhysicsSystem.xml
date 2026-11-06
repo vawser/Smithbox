@@ -1,0 +1,11 @@
+<class name="hkpPhysicsSystem" version="0" signature="0xff724c17" size="68" parent="hkReferencedObject">
+  <members>
+    <member name="rigidBodies" offset="8" ctype="hkpRigidBody" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constraints" offset="20" ctype="hkpConstraintInstance" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="actions" offset="32" ctype="hkpAction" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="phantoms" offset="44" ctype="hkpPhantom" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="56" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="userData" offset="60" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="active" offset="64" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name="hkpConstraintChainInstanceAction" version="0" signature="0xed421728" size="28" parent="hkpAction" borrowed="DS1 hk_2010">
+  <members>
+    <member name="constraintInstance" offset="24" ctype="hkpConstraintChainInstance" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="NOT_OWNED" />
+  </members>
+</class>

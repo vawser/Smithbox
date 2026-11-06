@@ -1,0 +1,6 @@
+<class name="hkpConstraintChainInstance" version="0" signature="0x7a490753" size="72" parent="hkpConstraintInstance">
+  <members>
+    <member name="chainedEntities" offset="56" ctype="hkpEntity" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="action" offset="68" ctype="hkpConstraintChainInstanceAction" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

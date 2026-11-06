@@ -1,0 +1,12 @@
+<class name="hkRagdollConstraintData" version="0" signature="0x999965e5" size="320" parent="hkConstraintData">
+  <enums>
+    <enum name="MotorIndex" flags="1917415012">
+      <enumitem name="MOTOR_TWIST" value="0" />
+      <enumitem name="MOTOR_PLANE" value="1" />
+      <enumitem name="MOTOR_CONE" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="atoms" offset="16" ctype="hkRagdollConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

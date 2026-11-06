@@ -1,0 +1,7 @@
+<class name="hkSimpleMeshShapeTriangle" version="0" signature="0xe3d19f47" size="12">
+  <members>
+    <member name="a" offset="0" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_97" vsubtype="TYPE_VOID" arrsize="0" flags="NOT_OWNED|0x6000" />
+  </members>
+</class>

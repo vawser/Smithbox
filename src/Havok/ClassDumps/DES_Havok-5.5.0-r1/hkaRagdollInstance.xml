@@ -1,0 +1,8 @@
+<class name="hkaRagdollInstance" version="0" signature="0x154948e8" size="48" parent="hkReferencedObject">
+  <members>
+    <member name="rigidBodies" offset="8" ctype="hkpRigidBody" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constraints" offset="20" ctype="hkpConstraintInstance" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneToRigidBodyMap" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_INT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skeleton" offset="44" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

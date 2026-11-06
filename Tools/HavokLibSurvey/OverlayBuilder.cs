@@ -26,10 +26,12 @@ public static class OverlayBuilder
     }
 
     public static List<string> Write(string path, string basePath, string game, IReadOnlyDictionary<string, HavokType> fileTypes,
-        IReadOnlyDictionary<string, uint> hashes, Func<HavokType, string> describe, HavokTypeRegistry baseRegistry)
+        IReadOnlyDictionary<string, uint> hashes, Func<HavokType, string> describe, HavokTypeRegistry baseRegistry, string? source = null)
     {
         var lines = new List<string>();
         var baseXml = XElement.Load(basePath);
+        // registries built from files keep serialized optionals as they are
+        bool serializedOptionals = baseXml.Attribute("Optionals")?.Value == "Serialized";
         var baseElements = baseXml.Elements().SelectMany(x => x.Elements()).ToDictionary(e => int.Parse(e.Attribute("Id")!.Value));
 
         // identity of each base element, computed as HavokTypeBuilder does: Name<arg, arg>
@@ -98,7 +100,7 @@ public static class OverlayBuilder
                 new XAttribute("Id", IdOf(t)),
                 new XAttribute("Name", t.Name),
                 new XAttribute("Parent", IdOf(t.Parent)),
-                new XAttribute("Optionals", ToRuntime((int)t.Optionals, baseOptionals)),
+                new XAttribute("Optionals", serializedOptionals ? (int)t.Optionals : ToRuntime((int)t.Optionals, baseOptionals)),
                 new XAttribute("Format", t.Format),
                 new XAttribute("SubType", IdOf(t.SubType)),
                 new XAttribute("Size", t.Size),
@@ -144,7 +146,7 @@ public static class OverlayBuilder
         var root = new XElement("HavokTypeRegistryOverlay",
             new XAttribute("Base", baseXml.Attribute("Version")?.Value ?? ""),
             new XAttribute("Game", game),
-            new XComment($" {game} changes to {Path.GetFileName(basePath)}, built by the buildoverlay mode of Tools/HavokLibSurvey from the type sections of {game}'s files. "));
+            new XComment(source ?? $" {game} changes to {Path.GetFileName(basePath)}, built by the buildoverlay mode of Tools/HavokLibSurvey from the type sections of {game}'s files. "));
         foreach (var t in changed) root.Add(Element(t, baseElements[baseIds[t.Identity]], false));
         foreach (var t in added.OrderBy(t => newIds[t.Identity])) root.Add(Element(t, null, true));
 

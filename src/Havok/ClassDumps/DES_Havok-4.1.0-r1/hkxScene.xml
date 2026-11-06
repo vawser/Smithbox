@@ -1,0 +1,16 @@
+<class name="hkxScene" version="0" signature="0x1c6f8636" size="128">
+  <members>
+    <member name="modeller" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" etype="hkxLight" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="NOT_OWNED|0x1814" />
+    <member name="meshes" offset="32" ctype="hkxMesh" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="40" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="NOT_OWNED|SERIALIZE_IGNORED|0x800" />
+    <member name="" offset="29541" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|0x6073" />
+    <member name="" offset="26624" vtype="TYPE_101" vsubtype="TYPE_76" arrsize="25966" flags="ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED|0x6074" />
+  </members>
+</class>

@@ -1,0 +1,14 @@
+<class name="hkWaveletSkeletalAnimation" version="0" signature="0xacee09b8" size="92" parent="hkSkeletalAnimation">
+  <members>
+    <member name="numberOfPoses" offset="32" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="36" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="0x800" />
+    <member name="blockIndexSize" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="76" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29541" vtype="TYPE_101" vsubtype="TYPE_114" arrsize="20326" flags="DEPRECATED_SIZE_8|0x5067" />
+    <member name="" offset="0" vtype="TYPE_107" vsubtype="TYPE_83" arrsize="27002" flags="ALIGN_16|SERIALIZE_IGNORED|0x6000" />
+  </members>
+</class>

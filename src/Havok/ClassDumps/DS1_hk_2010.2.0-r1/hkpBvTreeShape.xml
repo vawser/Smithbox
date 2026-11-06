@@ -1,0 +1,13 @@
+<class name="hkpBvTreeShape" version="0" signature="0x00000000" size="20" parent="hkpShape">
+  <enums>
+    <enum name="BvTreeType" flags="0">
+      <enumitem name="BVTREE_MOPP" value="0" />
+      <enumitem name="BVTREE_TRISAMPLED_HEIGHTFIELD" value="1" />
+      <enumitem name="BVTREE_USER" value="2" />
+      <enumitem name="BVTREE_MAX" value="3" />
+    </enum>
+  </enums>
+  <members>
+    <member name="bvTreeType" offset="16" etype="BvTreeType" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

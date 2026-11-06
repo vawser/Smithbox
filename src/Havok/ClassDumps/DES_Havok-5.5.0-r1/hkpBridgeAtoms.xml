@@ -1,0 +1,5 @@
+<class name="hkpBridgeAtoms" version="0" signature="0x71423c29" size="12" borrowed="DS1 hk_2010">
+  <members>
+    <member name="bridgeAtom" offset="0" ctype="hkpBridgeConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

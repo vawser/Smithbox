@@ -1,0 +1,19 @@
+<class name="hkWorldObject" version="0" signature="0x7107de4e" size="88" parent="hkReferencedObject">
+  <enums>
+    <enum name="BroadPhaseType" flags="1682991201">
+      <enumitem name="BROAD_PHASE_INVALID" value="0" />
+      <enumitem name="BROAD_PHASE_ENTITY" value="1" />
+      <enumitem name="BROAD_PHASE_PHANTOM" value="2" />
+      <enumitem name="BROAD_PHASE_BORDER" value="3" />
+      <enumitem name="BROAD_PHASE_MAX_ID" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="world" offset="8" vtype="TYPE_ZERO" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="12" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" etype="hkProperty" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x1011" />
+    <member name="" offset="0" vtype="TYPE_68" vsubtype="TYPE_97" arrsize="29793" flags="FLAGS_NONE" />
+  </members>
+</class>

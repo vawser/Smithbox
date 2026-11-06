@@ -1,0 +1,5 @@
+<class name="hkBvTreeShape" version="0" signature="0xe449977e" size="20" parent="hkShape">
+  <members>
+    <member name="child" offset="12" ctype="hkSingleShapeContainer" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

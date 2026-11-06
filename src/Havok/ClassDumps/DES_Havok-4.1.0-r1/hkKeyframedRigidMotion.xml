@@ -1,0 +1,6 @@
+<class name="hkKeyframedRigidMotion" version="0" signature="0x0b407675" size="304" parent="hkMotion">
+  <members>
+    <member name="savedMotion" offset="288" ctype="hkMaxSizeMotion" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="30309" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="292" flags="ALIGN_16|NOT_OWNED|0x7061" />
+  </members>
+</class>

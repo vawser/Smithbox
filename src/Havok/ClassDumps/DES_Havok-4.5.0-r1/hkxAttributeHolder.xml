@@ -1,0 +1,5 @@
+<class name="hkxAttributeHolder" version="0" signature="0x445a443a" size="8">
+  <members>
+    <member name="attributeGroups" offset="0" ctype="hkxAttributeGroup" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

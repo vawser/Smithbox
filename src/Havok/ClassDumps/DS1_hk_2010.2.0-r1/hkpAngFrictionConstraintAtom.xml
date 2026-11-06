@@ -1,0 +1,8 @@
+<class name="hkpAngFrictionConstraintAtom" version="0" signature="0x00000000" size="12" parent="hkpConstraintAtom">
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="firstFrictionAxis" offset="3" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numFrictionAxes" offset="4" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxFrictionTorque" offset="8" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

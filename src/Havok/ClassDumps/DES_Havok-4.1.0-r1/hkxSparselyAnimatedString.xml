@@ -1,0 +1,6 @@
+<class name="hkxSparselyAnimatedString" version="0" signature="0xd907cff8" size="16">
+  <members>
+    <member name="strings" offset="0" ctype="hkxSparselyAnimatedStringStringType" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29289" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="8" flags="ALIGN_16|NOT_OWNED|0x7074" />
+  </members>
+</class>

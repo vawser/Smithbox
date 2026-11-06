@@ -1,0 +1,6 @@
+<class name="hkpConvexVerticesConnectivity" version="0" signature="0x63d38e9c" size="32" parent="hkReferencedObject">
+  <members>
+    <member name="vertexIndices" offset="8" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numVerticesPerFace" offset="20" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

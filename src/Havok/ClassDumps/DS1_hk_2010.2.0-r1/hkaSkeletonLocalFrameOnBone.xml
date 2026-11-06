@@ -1,0 +1,6 @@
+<class name="hkaSkeletonLocalFrameOnBone" version="0" signature="0x00000000" size="8">
+  <members>
+    <member name="localFrame" offset="0" ctype="hkLocalFrame" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneIndex" offset="4" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

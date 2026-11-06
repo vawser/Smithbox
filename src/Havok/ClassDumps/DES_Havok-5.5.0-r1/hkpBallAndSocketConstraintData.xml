@@ -1,0 +1,5 @@
+<class name="hkpBallAndSocketConstraintData" version="0" signature="0x77aabbef" size="96" parent="hkpConstraintData" borrowed="DS1 hk_2010">
+  <members>
+    <member name="atoms" offset="16" ctype="hkpBallAndSocketConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

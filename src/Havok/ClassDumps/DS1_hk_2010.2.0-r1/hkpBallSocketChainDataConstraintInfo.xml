@@ -1,0 +1,6 @@
+<class name="hkpBallSocketChainDataConstraintInfo" version="0" signature="0x00000000" size="32">
+  <members>
+    <member name="pivotInA" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pivotInB" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

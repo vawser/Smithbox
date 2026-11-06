@@ -1,0 +1,25 @@
+<class name="hkpMeshShape" version="0" signature="0x2d292fcc" size="96" parent="hkpShapeCollection" borrowed="DeS Havok-5.1">
+  <enums>
+    <enum name="IndexStridingType" flags="0">
+      <enumitem name="INDICES_INVALID" value="0" />
+      <enumitem name="INDICES_INT16" value="1" />
+      <enumitem name="INDICES_INT32" value="2" />
+      <enumitem name="INDICES_MAX_ID" value="3" />
+    </enum>
+    <enum name="MaterialIndexStridingType" flags="0">
+      <enumitem name="MATERIAL_INDICES_INVALID" value="0" />
+      <enumitem name="MATERIAL_INDICES_INT8" value="1" />
+      <enumitem name="MATERIAL_INDICES_INT16" value="2" />
+      <enumitem name="MATERIAL_INDICES_MAX_ID" value="3" />
+    </enum>
+  </enums>
+  <members>
+    <member name="scaling" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numBitsForSubpartIndex" offset="48" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="subparts" offset="52" ctype="hkpMeshShapeSubpart" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="weldingInfo" offset="64" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="weldingType" offset="76" etype="WeldingType" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="radius" offset="80" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="pad" offset="84" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+  </members>
+</class>

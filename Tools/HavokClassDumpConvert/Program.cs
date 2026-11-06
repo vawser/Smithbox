@@ -13,9 +13,17 @@ using System.Xml.Linq;
 
 if (args.Length < 3)
 {
-    Console.WriteLine("Usage: HavokClassDumpConvert <class dump folder> <2018 registry xml> <output registry xml>");
+    Console.WriteLine("Usage: HavokClassDumpConvert <class dump folder> <2018 registry xml> <output registry xml> [pointer size = 8] [version = hk_2014.1.0-r1] [game = DS3] [source note]");
     return 1;
 }
+
+// 32-bit SDKs (DeS Havok-5.x, DS1 hk_2010) come from the hkClass reflection in the games' own files (survey --dumpclasses)
+int ps = args.Length > 3 ? int.Parse(args[3]) : 8;
+string sdkVersion = args.Length > 4 ? args[4] : "hk_2014.1.0-r1";
+string gameName = args.Length > 5 ? args[5] : "DS3";
+string sourceNote = args.Length > 6 ? args[6] : "the DS3 hk_2014 class dumps (src/Havok/HKX.ClassGeneration/classxmlds3)";
+int arraySize = ps + 8; // data pointer, size, capacity and flags
+
 
 var dumps = Directory.GetFiles(args[0], "*.xml")
     .Select(f => XElement.Parse(File.ReadAllText(f)))
@@ -86,7 +94,9 @@ int Primitive(string vtype) => vtype switch
     "TYPE_UINT32" => Add("hkUint32", id => Type(id, "hkUint32", 32772, 4, 4, optionals: OptFormatSize)),
     "TYPE_INT64" => Add("hkInt64", id => Type(id, "hkInt64", 66052, 8, 8, optionals: OptFormatSize)),
     "TYPE_UINT64" => Add("hkUint64", id => Type(id, "hkUint64", 65540, 8, 8, optionals: OptFormatSize)),
-    "TYPE_ULONG" => Add("hkUlong", id => Type(id, "hkUlong", 65540, 8, 8, optionals: OptFormatSize)),
+    "TYPE_ULONG" => ps == 8
+        ? Add("hkUlong", id => Type(id, "hkUlong", 65540, 8, 8, optionals: OptFormatSize))
+        : Add("hkUlong", id => Type(id, "hkUlong", 32772, 4, 4, optionals: OptFormatSize)),
     "TYPE_REAL" => Add("hkReal", id => Type(id, "hkReal", 1525253, 4, 4, optionals: OptFormatSize)),
     "TYPE_HALF" => Add("hkHalf16", id => Type(id, "hkHalf16", 476677, 2, 2, optionals: OptFormatSize)),
     "TYPE_VECTOR4" => Add("hkVector4", id => Type(id, "hkVector4", 1064, 16, 16, subType: Primitive("TYPE_REAL"), optionals: OptFormatSubSize)),
@@ -96,8 +106,8 @@ int Primitive(string vtype) => vtype switch
     "TYPE_MATRIX4" => Add("hkMatrix4", id => Type(id, "hkMatrix4", 4136, 64, 16, subType: Primitive("TYPE_REAL"), optionals: OptFormatSubSize)),
     "TYPE_TRANSFORM" => Add("hkTransform", id => Type(id, "hkTransform", 4136, 64, 16, subType: Primitive("TYPE_REAL"), optionals: OptFormatSubSize)),
     "TYPE_QSTRANSFORM" => QsTransform(),
-    "TYPE_STRINGPTR" => Add("hkStringPtr", id => Type(id, "hkStringPtr", 131, 8, 8, optionals: OptFormatSize)),
-    "TYPE_CSTRING" => Add("char*", id => Type(id, "char*", 3, 8, 8, optionals: OptFormatSize)),
+    "TYPE_STRINGPTR" => Add("hkStringPtr", id => Type(id, "hkStringPtr", 131, ps, ps, optionals: OptFormatSize)),
+    "TYPE_CSTRING" => Add("char*", id => Type(id, "char*", 3, ps, ps, optionals: OptFormatSize)),
     "TYPE_VARIANT" => Variant(),
     _ => throw new InvalidDataException($"No primitive for {vtype}")
 };
@@ -115,10 +125,11 @@ int QsTransform() => Add("hkQsTransform", id =>
 // hkVariant: an object pointer and a class pointer
 int Variant() => Add("hkVariant", id =>
 {
-    var e = Type(id, "hkVariant", 7, 16, 8, optionals: OptFormatSize | 32);
+    var e = Type(id, "hkVariant", 7, 2 * ps, ps, optionals: OptFormatSize | 32);
     e.Add(new XElement("Members",
-        Member("object", 0, Pointer(Record("hkReferencedObject")), false),
-        Member("class", 8, Pointer(Record("hkClass")), false)));
+        // untyped on the 32-bit SDKs: Havok 5.x roots (hkaAnimationContainer...) aren't hkReferencedObjects
+        Member("object", 0, ps == 8 ? Pointer(Record("hkReferencedObject")) : VoidPointer(), false),
+        Member("class", ps, Pointer(Record("hkClass")), false)));
     return e;
 });
 
@@ -131,13 +142,13 @@ int Pointer(int target)
     string targetIdentity = IdentityOf(target);
     return Add($"T*<{targetIdentity}>", id =>
     {
-        var e = Type(id, "T*", 6, 8, 8, subType: target, optionals: OptFormatSubSize);
+        var e = Type(id, "T*", 6, ps, ps, subType: target, optionals: OptFormatSubSize);
         e.Add(Template(("T", "Type", target)));
         return e;
     });
 }
 
-int VoidPointer() => Add("void*", id => Type(id, "void*", 6, 8, 8, optionals: OptFormatSize));
+int VoidPointer() => Add("void*", id => Type(id, "void*", 6, ps, ps, optionals: OptFormatSize));
 
 int Container(string name, int element, int size, int alignment) =>
     Add($"{name}<{IdentityOf(element)}>", id =>
@@ -200,7 +211,7 @@ int Record(string dumpName)
         int memberType = MemberType(cls, identity, m);
         alignment = Math.Max(alignment, Align(memberType));
         members.Add(Member(m.Attribute("name")!.Value, int.Parse(m.Attribute("offset")!.Value), memberType,
-            m.Attribute("flags")!.Value.Contains("SERIALIZE_IGNORED")));
+            m.Attribute("flags")!.Value.Contains("SERIALIZE_IGNORED") || m.Attribute("vtype")!.Value == "TYPE_HOMOGENEOUSARRAY"));
     }
 
     var e = Type(id, identity, 7, size, alignment, parent: parent, optionals: OptFormatSize | 4 | 32,
@@ -231,9 +242,12 @@ int MemberType(XElement cls, string classIdentity, XElement m)
         "TYPE_STRUCT" => Record(ctype!),
         "TYPE_POINTER" when vsubtype == "TYPE_CHAR" => Primitive("TYPE_CSTRING"),
         "TYPE_POINTER" => ctype != null ? Pointer(Record(ctype)) : VoidPointer(),
-        "TYPE_ARRAY" => Container("hkArray", Element(vsubtype), 16, 8),
-        "TYPE_SIMPLEARRAY" => Container("hkSimpleArray", Element(vsubtype), 12, 8), // T* data, int size: the next member may follow at +12
+        "TYPE_ARRAY" => Container("hkArray", Element(vsubtype), arraySize, ps),
+        "TYPE_SIMPLEARRAY" => Container("hkSimpleArray", Element(vsubtype), ps + 4, ps), // T* data, int size: the next member may follow at +12
         "TYPE_RELARRAY" => Container("hkRelArray", Element(vsubtype), 4, 2),
+        // an hkClass pointer, data and count: the data is only readable through the class (Havok 5.x hkxVertexBuffer)
+        "TYPE_HOMOGENEOUSARRAY" => Add("hkHomogeneousArray", id => Type(id, "hkHomogeneousArray", 7, 2 * ps + 4, ps, optionals: OptFormatSize)),
+        "TYPE_FUNCTIONPOINTER" => VoidPointer(),
         "TYPE_ENUM" or "TYPE_FLAGS" => EnumOrStorage(cls, classIdentity, m, vtype == "TYPE_FLAGS" ? "hkFlags" : "hkEnum", vsubtype),
         _ => Primitive(vtype)
     };
@@ -321,10 +335,10 @@ foreach (var e in types.Where(e => e.Attribute("Name")!.Value == "T[N]"))
 }
 
 var root = new XElement("HavokTypeRegistry",
-    new XAttribute("Version", "hk_2014.1.0-r1"),
+    new XAttribute("Version", sdkVersion),
     new XAttribute("Optionals", "Serialized"),
-    new XAttribute("Game", "DS3"),
-    new XComment(" Converted by Tools/HavokClassDumpConvert from the DS3 hk_2014 class dumps (src/Havok/HKX.ClassGeneration/classxmlds3). Class hashes are the packfile class signatures. "),
+    new XAttribute("Game", gameName),
+    new XComment($" Converted by Tools/HavokClassDumpConvert from {sourceNote}. Class hashes are the packfile class signatures. "),
     new XElement("Types", types));
 root.Save(args[2]);
 

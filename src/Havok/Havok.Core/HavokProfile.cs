@@ -55,8 +55,17 @@ public sealed class HavokProfile
 
     // ---- Profiles, by game ------------------------------------------------------------------------------------
 
-    public static readonly HavokProfile DES = new("DES", HavokSdk.Hk5x, HavokContainer.Packfile, 4, true);
-    public static readonly HavokProfile DS1 = new("DS1", HavokSdk.Hk2010, HavokContainer.Packfile, 4, false);
+    // The 32-bit registries are built from the hkClass reflection in the games' own packfiles, with the classes no
+    // file describes borrowed from another SDK (survey --dumpclasses and --filldumps; Havok Library Survey/Dump Fill.md)
+    public static readonly HavokProfile DES = new("DES", HavokSdk.Hk5x, HavokContainer.Packfile, 4, true,
+        "HavokTypeRegistry05050000.xml");
+
+    /// <summary>DeS's few Havok-5.1 files: the 5.5 registry with the 5.1 overlay.</summary>
+    public static readonly HavokProfile DES_51 = new("DES", HavokSdk.Hk5x, HavokContainer.Packfile, 4, true,
+        "HavokTypeRegistry05050000.xml", "HavokTypeRegistry05050000_DES_51.xml");
+
+    public static readonly HavokProfile DS1 = new("DS1", HavokSdk.Hk2010, HavokContainer.Packfile, 4, false,
+        "HavokTypeRegistry20100200.xml");
     public static readonly HavokProfile DS1R = new("DS1R", HavokSdk.Hk2015, HavokContainer.Tagfile, 8, false,
         "HavokTypeRegistry20150100.xml");
     public static readonly HavokProfile DS2 = new("DS2", HavokSdk.Hk2012, HavokContainer.Packfile, 4, false);
@@ -95,6 +104,12 @@ public sealed class HavokProfile
     /// <summary>
     /// The profile for a game's short name ("ER", "DS3"…), or null.
     /// </summary>
+    /// <summary>
+    /// The profile for a file of a game: DeS keeps a few Havok-5.1 files beside its 5.5 ones.
+    /// </summary>
+    public static HavokProfile? For(string game, string sdk) =>
+        game.Equals("DES", StringComparison.OrdinalIgnoreCase) && sdk.StartsWith("Havok-5.1") ? DES_51 : FromGame(game);
+
     public static HavokProfile? FromGame(string game) =>
         All.FirstOrDefault(p => p.Game.Equals(game, StringComparison.OrdinalIgnoreCase));
 

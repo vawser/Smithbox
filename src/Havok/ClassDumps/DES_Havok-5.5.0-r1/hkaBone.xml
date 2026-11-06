@@ -1,0 +1,6 @@
+<class name="hkaBone" version="0" signature="0xa74011f0" size="8">
+  <members>
+    <member name="name" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="lockTranslation" offset="4" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,111 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk2010.Accessors;
+
+internal sealed class hkpExtendedMeshShapeSubpartData : Havok.Formats.HavokFieldAccess<Havok.hk2010.hkpExtendedMeshShapeSubpart>
+{
+    public hkpExtendedMeshShapeSubpartData(Havok.hk2010.hkpExtendedMeshShapeSubpart instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_type":
+            case "type":
+            {
+                value = instance.m_type;
+                return true;
+            }
+            case "m_materialIndexStridingType":
+            case "materialIndexStridingType":
+            {
+                value = instance.m_materialIndexStridingType;
+                return true;
+            }
+            case "m_materialIndexStriding":
+            case "materialIndexStriding":
+            {
+                value = instance.m_materialIndexStriding;
+                return true;
+            }
+            case "m_numMaterials":
+            case "numMaterials":
+            {
+                value = instance.m_numMaterials;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                value = instance.m_userData;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_type":
+            case "type":
+            {
+                if (value is Havok.hk2010.hkpExtendedMeshShape.SubpartType castValue)
+                {
+                    instance.m_type = castValue;
+                    return true;
+                }
+                if (value is sbyte sbyteValue)
+                {
+                    instance.m_type = (Havok.hk2010.hkpExtendedMeshShape.SubpartType)sbyteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_materialIndexStridingType":
+            case "materialIndexStridingType":
+            {
+                if (value is Havok.hk2010.hkpExtendedMeshShape.MaterialIndexStridingType castValue)
+                {
+                    instance.m_materialIndexStridingType = castValue;
+                    return true;
+                }
+                if (value is sbyte sbyteValue)
+                {
+                    instance.m_materialIndexStridingType = (Havok.hk2010.hkpExtendedMeshShape.MaterialIndexStridingType)sbyteValue;
+                    return true;
+                }
+                return false;
+            }
+            case "m_materialIndexStriding":
+            case "materialIndexStriding":
+            {
+                if (value is not ushort castValue) return false;
+                instance.m_materialIndexStriding = castValue;
+                return true;
+            }
+            case "m_numMaterials":
+            case "numMaterials":
+            {
+                if (value is not ushort castValue) return false;
+                instance.m_numMaterials = castValue;
+                return true;
+            }
+            case "m_userData":
+            case "userData":
+            {
+                if (value is not ulong castValue) return false;
+                instance.m_userData = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

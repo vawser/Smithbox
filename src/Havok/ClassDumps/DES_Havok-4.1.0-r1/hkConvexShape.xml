@@ -1,0 +1,5 @@
+<class name="hkConvexShape" version="0" signature="0x05d5744f" size="16" parent="hkSphereRepShape">
+  <members>
+    <member name="radius" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

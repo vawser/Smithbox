@@ -1,0 +1,8 @@
+<class name="hkaBoneAttachment" version="0" signature="0x8bdd3e9a" size="80">
+  <members>
+    <member name="boneFromAttachment" offset="0" vtype="TYPE_MATRIX4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="attachment" offset="64" vtype="TYPE_VARIANT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="72" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneIndex" offset="76" vtype="TYPE_INT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

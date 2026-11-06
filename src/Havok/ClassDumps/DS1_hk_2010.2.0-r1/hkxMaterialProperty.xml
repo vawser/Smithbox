@@ -1,0 +1,6 @@
+<class name="hkxMaterialProperty" version="0" signature="0x00000000" size="8">
+  <members>
+    <member name="key" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="value" offset="4" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

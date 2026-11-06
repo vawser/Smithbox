@@ -1,0 +1,11 @@
+<class name="hkpBreakableConstraintData" version="0" signature="0x7d6310c8" size="40" parent="hkpConstraintData">
+  <members>
+    <member name="atoms" offset="12" ctype="hkpBridgeAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constraintData" offset="24" ctype="hkpConstraintData" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="childRuntimeSize" offset="28" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="childNumSolverResults" offset="30" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="solverResultLimit" offset="32" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="removeWhenBroken" offset="36" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="revertBackVelocityOnBreak" offset="37" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

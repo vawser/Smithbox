@@ -1,0 +1,6 @@
+<class name="hkLimitedForceConstraintMotor" version="0" signature="0x3377b0b0" size="20" parent="hkConstraintMotor">
+  <members>
+    <member name="minForce" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28230" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="16" flags="DEPRECATED_SIZE_8|ALIGN_16|SERIALIZE_IGNORED|0x6861" />
+  </members>
+</class>

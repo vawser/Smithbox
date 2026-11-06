@@ -1,0 +1,17 @@
+<class name="hkpCollidable" version="0" signature="0x5879a2c3" size="76" parent="hkpCdBody">
+  <enums>
+    <enum name="ForceCollideOntoPpuReasons" flags="0">
+      <enumitem name="FORCE_PPU_USER_REQUEST" value="1" />
+      <enumitem name="FORCE_PPU_SHAPE_REQUEST" value="2" />
+      <enumitem name="FORCE_PPU_MODIFIER_REQUEST" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="ownerOffset" offset="16" vtype="TYPE_INT8" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="forceCollideOntoPpu" offset="17" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shapeSizeOnSpu" offset="18" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="broadPhaseHandle" offset="20" ctype="hkpTypedBroadPhaseHandle" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boundingVolumeData" offset="32" ctype="hkpCollidableBoundingVolumeData" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="allowedPenetrationDepth" offset="72" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

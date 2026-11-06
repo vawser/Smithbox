@@ -1,0 +1,8 @@
+<class name="hkxMeshSection" version="1" signature="0x00000000" size="40" parent="hkReferencedObject">
+  <members>
+    <member name="vertexBuffer" offset="8" ctype="hkxVertexBuffer" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="indexBuffers" offset="12" ctype="hkxIndexBuffer" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="material" offset="24" ctype="hkxMaterial" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="userChannels" offset="28" ctype="hkReferencedObject" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

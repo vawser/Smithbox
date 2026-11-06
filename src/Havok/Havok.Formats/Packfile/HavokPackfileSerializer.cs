@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Buffers.Binary;
 using System.Numerics;
 using System.Text;
@@ -50,15 +51,23 @@ public sealed class HavokPackfileSerializer
     /// reproduces them.
     /// </summary>
     private sealed record SourceContainer(byte[] Header, byte[] SectionHeaderExtra, byte[] TypesData, byte[] TypesLocal,
-        byte[] TypesGlobal, byte[] TypesVirtual);
+        byte[] TypesGlobal, byte[] TypesVirtual, int PointerSize, bool BigEndian, byte[] ClassNames,
+        IReadOnlyDictionary<string, uint> TypeClasses, int[] DataPartLengths, string[] SectionOrder);
 
     private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, SourceContainer> SourcesRead = new();
+
+    // each hkArray's capacity and flags word as read (Havok 5.5 sets 0x40000000 on some), kept for its list
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, StrongBox<uint>> ArrayFlagsRead = new();
 
     /// <summary>
     /// Write back the header and __types__ section a root object was read with. When false, or for objects that weren't
     /// read, write HKX2's: the fixed DS3 hk_2014 header and an empty __types__ section.
     /// </summary>
     public bool PreserveSource { get; init; } = true;
+
+    // Unserialized hkArray members are written as empty arrays (DONT_DEALLOCATE), as Havok's own packfiles hold them
+    // (DS1, DeS and DS3 alike: DS3 byte identity 668 -> 693). HKX2 wrote zeros, which its mode keeps.
+    private bool NonSerializedArrayFlags => PreserveSource;
 
     private sealed class Section
     {
@@ -160,6 +169,13 @@ public sealed class HavokPackfileSerializer
             classNames[(uint)s] = Encoding.ASCII.GetString(names.Data, s, p - s);
             p++;
         }
+        int classNamesEnd = 0;
+        for (int p = 0; p + 5 < names.Data.Length && BinaryPrimitives.ReadUInt32LittleEndian(names.Data.AsSpan(p)) != 0xFFFFFFFF;)
+        {
+            p += 5;
+            while (p < names.Data.Length && names.Data[p] != 0) p++;
+            classNamesEnd = ++p;
+        }
 
         var state = new ReadState
         {
@@ -171,12 +187,21 @@ public sealed class HavokPackfileSerializer
 
         int sectionsStart = version >= 0x0B ? 0x40 + br.GetInt16(0x3E) : 0x40;
         Section? types = sections.FirstOrDefault(s => s.Tag == "__types__");
+        // the hkClass objects of __types__ by name: hkVariant class pointers point at them
+        var typeClasses = new Dictionary<string, uint>();
+        if (types != null)
+            foreach (var (src, (_, nameOffset)) in types.Virtual)
+                if (classNames.GetValueOrDefault(nameOffset) == "hkClass" && types.Local.TryGetValue(src, out uint nameAt))
+                    typeClasses.TryAdd(CString(types.Data, nameAt), src);
         byte[] extra = sectionHeaderExtra == 0
             ? Array.Empty<byte>()
             : data.AsSpan(sectionsStart + 0x30, sectionHeaderExtra).ToArray();
         SourcesRead.AddOrUpdate(root, new SourceContainer(data[..sectionsStart], extra,
             types?.Data ?? Array.Empty<byte>(), types?.LocalRaw ?? Array.Empty<byte>(),
-            types?.GlobalRaw ?? Array.Empty<byte>(), types?.VirtualRaw ?? Array.Empty<byte>()));
+            types?.GlobalRaw ?? Array.Empty<byte>(), types?.VirtualRaw ?? Array.Empty<byte>(), pointerSize, bigEndian,
+            names.Data[..classNamesEnd], typeClasses,
+            [sections[contentsSection].LocalRaw.Length, sections[contentsSection].GlobalRaw.Length, sections[contentsSection].VirtualRaw.Length],
+            sections.Select(s => s.Tag).ToArray()));
         return root;
     }
 
@@ -210,6 +235,11 @@ public sealed class HavokPackfileSerializer
             object? value = ReadValue(state, section, field.Type, offset + (uint)field.Offset);
             if (!access.TrySetField(field.Name, value))
                 throw new InvalidOperationException($"Unable to set field \"{field.Name}\" of \"{type.Identity}\" to a {value?.GetType().Name ?? "null"} ({field.Type.Identity}, {field.Type.Kind}).");
+
+            // the class set may store a copy of the list read: the array's flags word follows it
+            if (value != null && ArrayFlagsRead.TryGetValue(value, out var flags) && access.TryGetField(field.Name, out object? stored) &&
+                stored != null && !ReferenceEquals(stored, value))
+                ArrayFlagsRead.AddOrUpdate(stored, flags);
         }
     }
 
@@ -222,7 +252,8 @@ public sealed class HavokPackfileSerializer
             case HavokType.TypeKind.Bool:
                 return d[p] != 0;
             case HavokType.TypeKind.Int:
-                return ReadInt(d, p, type.Format, be);
+                // hkUlong is pointer sized (32-bit on the old SDKs) and a ulong in every class set
+                return type.Name == "hkUlong" ? Convert.ToUInt64(ReadInt(d, p, type.Format, be)) : ReadInt(d, p, type.Format, be);
             case HavokType.TypeKind.Float:
                 // boxed per arm: a switch over float and double arms would widen every value to double
                 return type.Size switch
@@ -267,6 +298,7 @@ public sealed class HavokPackfileSerializer
             case "hkArray":
             {
                 int count = (int)U32(d, p + (uint)state.PointerSize, be);
+                ArrayFlagsRead.AddOrUpdate(list, new StrongBox<uint>(U32(d, p + (uint)state.PointerSize + 4, be)));
                 if (count > 0 && section.Local.TryGetValue(p, out uint dst))
                     for (int i = 0; i < count; i++) list.Add(AsElement(ReadValue(state, section, element, dst + (uint)(i * stride)), element));
                 return list;
@@ -359,7 +391,7 @@ public sealed class HavokPackfileSerializer
     {
         int end = (int)p;
         while (end < d.Length && d[end] != 0) end++;
-        return Encoding.ASCII.GetString(d, (int)p, end - (int)p);
+        return PackfileText.Decode(d.AsSpan((int)p, end - (int)p));
     }
 
     #endregion
@@ -383,18 +415,35 @@ public sealed class HavokPackfileSerializer
     private List<(uint Src, uint NameOffset)> _virtualFixups = new();
     private Dictionary<object, List<uint>> _pendingGlobals = null!;
     private Dictionary<object, uint> _globalLookup = null!;
-    private List<(uint Src, uint Dst)> _globalFixups = new();
+    private List<(uint Src, uint Section, uint Dst)> _globalFixups = new();
+    private SourceContainer? _source;
+    // the sections in the order written: the source's (Havok 5.1 puts __data__ before __types__), else this
+    private static readonly string[] DefaultSectionOrder = ["__classnames__", "__types__", "__data__"];
+    private string[] _sectionOrder = DefaultSectionOrder;
+    private uint TypesSection => (uint)Array.IndexOf(_sectionOrder, "__types__");
+    private uint DataSection => (uint)Array.IndexOf(_sectionOrder, "__data__");
+    private uint ClassNamesSection => (uint)Array.IndexOf(_sectionOrder, "__classnames__");
     private List<Queue<Action>> _localWriteQueues = new();
     private int _currWriteQueue;
     private List<Fixup> _localFixups = new();
     private BinaryWriterEx _data = null!;
     private BinaryWriterEx _classes = null!;
 
+    // pointer size and byte order of the file being written: the source's, else 64-bit little-endian
+    private int _ps = 8;
+    private bool _be;
+
     /// <summary>
-    /// Writes a 64-bit little-endian hk_2014 packfile, as DS3/BB/DS2S/SDT use.
+    /// Writes a packfile. A root that was read is written with its source's header, pointer size, byte order, class-name
+    /// section and __types__ section (<see cref="PreserveSource" />); anything else as a 64-bit little-endian hk_2014
+    /// packfile, as DS3/BB/DS2S/SDT use.
     /// </summary>
     public byte[] Write(object root)
     {
+        SourceContainer? source = PreserveSource && SourcesRead.TryGetValue(root, out SourceContainer? read) ? read : null;
+        _ps = source?.PointerSize ?? 8;
+        _be = source?.BigEndian ?? false;
+
         _serializationQueues = new List<Queue<object>> { new() };
         _serializationQueues[0].Enqueue(root);
         _currSerializationQueue = 0;
@@ -404,18 +453,37 @@ public sealed class HavokPackfileSerializer
         _virtualFixups = new List<(uint, uint)>();
         _pendingGlobals = new Dictionary<object, List<uint>>(_byReference);
         _globalLookup = new Dictionary<object, uint>(_byReference);
-        _globalFixups = new List<(uint, uint)>();
+        _globalFixups = new List<(uint, uint, uint)>();
+        _source = source;
+        _sectionOrder = source?.SectionOrder is { Length: 3 } order && DefaultSectionOrder.All(order.Contains) ? order : DefaultSectionOrder;
         _localWriteQueues = new List<Queue<Action>> { new() };
         _currWriteQueue = 0;
         _localFixups = new List<Fixup>();
-        _data = new BinaryWriterEx(false);
-        _classes = new BinaryWriterEx(false);
+        _data = new BinaryWriterEx(_be);
+        _classes = new BinaryWriterEx(_be);
 
-        // class names Havok always has
-        WriteClassName("hkClass", 0x33D42383);
-        WriteClassName("hkClassMember", 0xB0EFA719);
-        WriteClassName("hkClassEnum", 0x8A3609CF);
-        WriteClassName("hkClassEnumItem", 0xCE6F8A6C);
+        if (source is { ClassNames.Length: > 0 })
+        {
+            // the source's class-name section as it was (old SDKs list every class of the file, used or not), so names
+            // keep their offsets; classes it lacks are appended
+            _classes.WriteBytes(source.ClassNames);
+            for (int p = 0; p + 5 < source.ClassNames.Length;)
+            {
+                p += 5;
+                int s = p;
+                while (source.ClassNames[p] != 0) p++;
+                _classNameOffsets[Encoding.ASCII.GetString(source.ClassNames, s, p - s)] = (uint)s;
+                p++;
+            }
+        }
+        else
+        {
+            // class names Havok always has
+            WriteClassName("hkClass", 0x33D42383);
+            WriteClassName("hkClassMember", 0xB0EFA719);
+            WriteClassName("hkClassEnum", 0x8A3609CF);
+            WriteClassName("hkClassEnumItem", 0xCE6F8A6C);
+        }
 
         while (_serializationQueues.Count > 1 || _serializationQueues[0].Count > 0)
         {
@@ -447,7 +515,7 @@ public sealed class HavokPackfileSerializer
                 _virtualFixups.Add((position, _classNameOffsets[className]));
                 if (_pendingGlobals.Remove(obj, out List<uint>? sources))
                 {
-                    foreach (uint src in sources) _globalFixups.Add((src, position));
+                    foreach (uint src in sources) _globalFixups.Add((src, DataSection, position));
                 }
 
                 _globalLookup.Add(obj, position);
@@ -484,10 +552,9 @@ public sealed class HavokPackfileSerializer
         byte[] classData = _classes.FinishBytes();
         byte[] objectData = _data.FinishBytes();
 
-        SourceContainer? source = PreserveSource && SourcesRead.TryGetValue(root, out SourceContainer? read) ? read : null;
         HavokType rootType = Registry.GetType(root.GetType())!;
 
-        var bw = new BinaryWriterEx(false);
+        var bw = new BinaryWriterEx(_be);
         if (source != null)
         {
             // the header as it was read, with the root's class name offset in the new class-name section
@@ -524,7 +591,7 @@ public sealed class HavokPackfileSerializer
 
         byte[] Table<T>(IEnumerable<T> rows, Action<BinaryWriterEx, T> write)
         {
-            var t = new BinaryWriterEx(false);
+            var t = new BinaryWriterEx(_be);
             foreach (T row in rows) write(t, row);
             return t.FinishBytes();
         }
@@ -537,9 +604,9 @@ public sealed class HavokPackfileSerializer
                 : ("__types__", Array.Empty<byte>(), Array.Empty<byte>(), Array.Empty<byte>(), Array.Empty<byte>()),
             ("__data__", objectData,
                 Table(_localFixups.OrderBy(x => x.Dst), (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(x.Dst); }),
-                Table(_globalFixups.OrderBy(x => x.Src), (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(2); t.WriteUInt32(x.Dst); }),
-                Table(_virtualFixups, (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(0); t.WriteUInt32(x.NameOffset); }))
-        };
+                Table(_globalFixups.OrderBy(x => x.Src), (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(x.Section); t.WriteUInt32(x.Dst); }),
+                Table(_virtualFixups, (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(ClassNamesSection); t.WriteUInt32(x.NameOffset); }))
+        }.OrderBy(s => Array.IndexOf(_sectionOrder, s.Tag)).ToArray();
 
         for (int i = 0; i < sections.Length; i++)
         {
@@ -558,14 +625,16 @@ public sealed class HavokPackfileSerializer
             bw.WriteBytes(s.Data);
             PadFF(bw);
             bw.FillUInt32($"section{i}_1", (uint)bw.Position - start);
+            // the fixup tables: padded to 16, and to the source's length where it was longer (Havok 5.5 leaves empty rows)
+            int[]? sourceLengths = i == DataSection ? source?.DataPartLengths : null;
             bw.WriteBytes(s.Local);
-            PadFF(bw);
+            PadFF(bw, s.Local.Length, sourceLengths?[0]);
             bw.FillUInt32($"section{i}_2", (uint)bw.Position - start);
             bw.WriteBytes(s.Global);
-            PadFF(bw);
+            PadFF(bw, s.Global.Length, sourceLengths?[1]);
             bw.FillUInt32($"section{i}_3", (uint)bw.Position - start);
             bw.WriteBytes(s.Virtual);
-            PadFF(bw);
+            PadFF(bw, s.Virtual.Length, sourceLengths?[2]);
             uint end = (uint)bw.Position - start;
             bw.FillUInt32($"section{i}_4", end);
             bw.FillUInt32($"section{i}_5", end);
@@ -578,6 +647,14 @@ public sealed class HavokPackfileSerializer
     private static void PadFF(BinaryWriterEx bw)
     {
         while (bw.Position % 16 != 0) bw.WriteByte(0xFF);
+    }
+
+    private static void PadFF(BinaryWriterEx bw, int written, int? sourceLength)
+    {
+        long start = bw.Position - written;
+        PadFF(bw);
+        if (sourceLength is { } length && written <= length)
+            while (bw.Position - start < length) bw.WriteByte(0xFF);
     }
 
     private void WriteClassName(string name, uint signature)
@@ -633,12 +710,32 @@ public sealed class HavokPackfileSerializer
             while (_data.Position - start < field.Offset) _data.WriteByte(0);
             if (field.NonSerializable)
             {
-                for (int i = 0; i < field.Type.Size; i++) _data.WriteByte(0);
+                // zeros, but an unserialized hkArray as an empty array: no data, DONT_DEALLOCATE
+                if (field.Type.Name == "hkArray" && NonSerializedArrayFlags)
+                {
+                    WritePointerZero();
+                    _data.WriteUInt32(0);
+                    _data.WriteUInt32(0x80000000);
+                    for (int i = _ps + 8; i < field.Type.Size; i++) _data.WriteByte(0);
+                }
+                else for (int i = 0; i < field.Type.Size; i++) _data.WriteByte(0);
                 continue;
             }
 
             if (!access.TryGetField(field.Name, out object? value))
                 throw new InvalidOperationException($"Unable to get field \"{field.Name}\" of \"{type.Identity}\".");
+
+            // an hkVariant's class points at the object's hkClass in the __types__ section kept from the source
+            if (value is null && field.Name == "class" && type.Name == "hkVariant" && _source is { TypeClasses.Count: > 0 } &&
+                access.TryGetField("object", out object? variantObject) && variantObject != null &&
+                Registry.GetType(variantObject.GetType()) is { } variantType &&
+                _source.TypeClasses.TryGetValue(ClassName(variantType), out uint classAt))
+            {
+                _globalFixups.Add(((uint)_data.Position, TypesSection, classAt));
+                WritePointerZero();
+                continue;
+            }
+
             WriteValue(field.Type, value, start + field.Offset);
         }
 
@@ -698,14 +795,14 @@ public sealed class HavokPackfileSerializer
     {
         if (target is null)
         {
-            _data.WriteUInt64(0);
+            WritePointerZero();
             return;
         }
 
         uint position = (uint)_data.Position;
         if (_globalLookup.TryGetValue(target, out uint written))
         {
-            _globalFixups.Add((position, written));
+            _globalFixups.Add((position, DataSection, written));
         }
         else
         {
@@ -721,20 +818,27 @@ public sealed class HavokPackfileSerializer
             _pendingGlobals[target].Add(position);
         }
 
-        _data.WriteUInt64(0);
+        WritePointerZero();
+    }
+
+    private void WritePointerZero()
+    {
+        if (_ps == 4) _data.WriteUInt32(0);
+        else _data.WriteUInt64(0);
     }
 
     private void WriteStringPointer(string? value)
     {
-        _data.WriteUInt64(0);
+        WritePointerZero();
         if (value is null) return;
 
-        var fixup = new Fixup { Src = (uint)_data.Position - 8 };
+        var fixup = new Fixup { Src = (uint)_data.Position - (uint)_ps };
         _localFixups.Add(fixup);
         CurrentWriteQueue.Enqueue(() =>
         {
             fixup.Dst = (uint)_data.Position;
-            _data.WriteASCII(value, true);
+            _data.WriteBytes(PackfileText.Encode(value));
+            _data.WriteByte(0);
             _data.Pad(16);
         });
     }
@@ -776,11 +880,14 @@ public sealed class HavokPackfileSerializer
                 var list = value as System.Collections.IList;
                 int count = list?.Count ?? 0;
                 uint fieldStart = (uint)_data.Position;
-                _data.WriteUInt64(0);
+                WritePointerZero();
                 _data.WriteUInt32((uint)count);
 
                 // hkArray: capacity and DONT_DEALLOCATE (16 bytes). hkSimpleArray is just the pointer and count (12).
-                if (type.Name == "hkArray") _data.WriteUInt32((uint)count | 0x80000000);
+                if (type.Name == "hkArray")
+                    _data.WriteUInt32(PreserveSource && list != null && ArrayFlagsRead.TryGetValue(list, out var flags) && (flags.Value & 0x3FFFFFFF) == count
+                        ? flags.Value
+                        : (uint)count | 0x80000000);
                 if (count == 0) return;
 
                 var fixup = new Fixup { Src = fieldStart };
@@ -850,4 +957,43 @@ public sealed class HavokPackfileSerializer
     }
 
     #endregion
+}
+
+/// <summary>
+/// Packfile strings are bytes: ASCII mostly, Shift-JIS in some (DeS scene and node names). They decode as Shift-JIS
+/// where that gives the same bytes back, else as Latin-1, so every string writes back as it was read.
+/// </summary>
+internal static class PackfileText
+{
+    private static readonly Encoding ShiftJis;
+
+    static PackfileText()
+    {
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        ShiftJis = Encoding.GetEncoding(932, EncoderFallback.ExceptionFallback, DecoderFallback.ExceptionFallback);
+    }
+
+    public static string Decode(ReadOnlySpan<byte> bytes)
+    {
+        if (!bytes.ContainsAnyInRange((byte)0x80, (byte)0xFF)) return Encoding.ASCII.GetString(bytes);
+        try
+        {
+            string s = ShiftJis.GetString(bytes);
+            if (ShiftJis.GetBytes(s).AsSpan().SequenceEqual(bytes)) return s;
+        }
+        catch (DecoderFallbackException) { }
+        return Encoding.Latin1.GetString(bytes);
+    }
+
+    public static byte[] Encode(string value)
+    {
+        if (Ascii.IsValid(value)) return Encoding.ASCII.GetBytes(value);
+        try
+        {
+            byte[] bytes = ShiftJis.GetBytes(value);
+            if (ShiftJis.GetString(bytes) == value) return bytes;
+        }
+        catch (EncoderFallbackException) { }
+        return Encoding.Latin1.GetBytes(value);
+    }
 }

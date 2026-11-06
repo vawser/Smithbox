@@ -1,0 +1,61 @@
+<class name="hkWorldCinfo" version="0" signature="0x0105bba8" size="208" parent="hkReferencedObject">
+  <enums>
+    <enum name="SolverType" flags="0">
+      <enumitem name="SOLVER_TYPE_INVALID" value="0" />
+      <enumitem name="SOLVER_TYPE_2ITERS_SOFT" value="1" />
+      <enumitem name="SOLVER_TYPE_2ITERS_MEDIUM" value="2" />
+      <enumitem name="SOLVER_TYPE_2ITERS_HARD" value="3" />
+      <enumitem name="SOLVER_TYPE_4ITERS_SOFT" value="4" />
+      <enumitem name="SOLVER_TYPE_4ITERS_MEDIUM" value="5" />
+      <enumitem name="SOLVER_TYPE_4ITERS_HARD" value="6" />
+      <enumitem name="SOLVER_TYPE_8ITERS_SOFT" value="7" />
+      <enumitem name="SOLVER_TYPE_8ITERS_MEDIUM" value="8" />
+      <enumitem name="SOLVER_TYPE_8ITERS_HARD" value="9" />
+      <enumitem name="SOLVER_TYPE_MAX_ID" value="10" />
+    </enum>
+    <enum name="" flags="0" />
+    <enum name="" flags="1885667328" />
+    <enum name="" flags="0" />
+  </enums>
+  <members>
+    <member name="gravity" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="32" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x800" />
+    <member name="collisionFilter" offset="84" ctype="hkCollisionFilter" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="88" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" etype="hkWorldMemoryWatchDog" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x1011" />
+    <member name="broadPhaseNumMarkers" offset="108" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" ctype="ContactPointGeneration" vtype="TYPE_VOID" vsubtype="TYPE_UINT32" arrsize="112" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED" />
+    <member name="forceCoherentConstraintOrderingInSolver" offset="132" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="136" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED" />
+    <member name="highFrequencyDeactivationPeriod" offset="156" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="160" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+    <member name="wantOldStyleDeactivation" offset="168" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="172" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+    <member name="minDesiredIslandSize" offset="184" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="188" flags="FLAGS_NONE" />
+    <member name="" offset="30976" vtype="TYPE_103" vsubtype="TYPE_114" arrsize="24950" flags="ALIGN_16|0x6874" />
+    <member name="" offset="20853" vtype="TYPE_100" vsubtype="TYPE_80" arrsize="26721" flags="ALIGN_16|NOT_OWNED|0x7065" />
+    <member name="" offset="28276" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x6067" />
+    <member name="" offset="0" vtype="TYPE_116" vsubtype="TYPE_121" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="26721" vtype="TYPE_114" vsubtype="TYPE_100" arrsize="25970" flags="NOT_OWNED|0x4065" />
+    <member name="" offset="22383" vtype="TYPE_100" vsubtype="TYPE_80" arrsize="26721" flags="ALIGN_16|NOT_OWNED|0x7065" />
+    <member name="" offset="27756" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x6067" />
+  </members>
+</class>

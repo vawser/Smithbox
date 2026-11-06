@@ -21,9 +21,20 @@ try { fs = new CompundVirtualFileSystem([ArchiveBinderVirtualFileSystem.FromGame
 catch { fs = new RealVirtualFileSystem(root, false); }
 
 var layoutMode = args.Contains("--layout");
-args = args.Where(a => a != "--layout").ToArray();
+var typesMode = args.Contains("--types");
+var diffMode = args.Contains("--diff");
+args = args.Where(a => a is not ("--layout" or "--types" or "--diff")).ToArray();
 
 var container = fs.ReadFileOrThrow(args[1]);
+if (args.Length < 3 || args[2] == "-")
+{
+    // a loose packfile
+    var loose = DCX.Is(container) ? DCX.Decompress(container).ToArray() : container.ToArray();
+    if (typesMode) TypesProbe.Run(loose, args[1]);
+    else if (diffMode) DiffProbe.Run(loose, args[0], args[1]);
+    else LayoutProbe.Run(loose, HavokProfile.FromGame(args[0])!, args[1]);
+    return;
+}
 IBinder binder;
 if (args[1].EndsWith("bhd", StringComparison.OrdinalIgnoreCase))
 {
@@ -37,6 +48,19 @@ else
 }
 var file = binder.Files.First(f => Regex.IsMatch(f.Name, args[2]));
 var original = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+if (typesMode)
+{
+    TypesProbe.Run(original, file.Name);
+    return;
+}
+
+if (diffMode)
+{
+    DiffProbe.Run(original, args[0], file.Name);
+    GlobalDump.Run(original);
+    return;
+}
 
 if (layoutMode)
 {

@@ -1,0 +1,6 @@
+<class name="hkpConvexTransformShapeBase" version="0" signature="0x00000000" size="32" parent="hkpConvexShape" borrowed="DS1 hk_2010">
+  <members>
+    <member name="childShape" offset="20" ctype="hkpSingleShapeContainer" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="childShapeSize" offset="28" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

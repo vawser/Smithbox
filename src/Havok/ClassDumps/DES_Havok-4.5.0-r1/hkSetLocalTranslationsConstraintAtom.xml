@@ -1,0 +1,6 @@
+<class name="hkSetLocalTranslationsConstraintAtom" version="0" signature="0xbcc9e47e" size="48" parent="hkConstraintAtom">
+  <members>
+    <member name="translationA" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="24942" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="32" flags="SERIALIZE_IGNORED|0x7072" />
+  </members>
+</class>

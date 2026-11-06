@@ -1,0 +1,6 @@
+<class name="hkpLimitedForceConstraintMotor" version="0" signature="0x3377b0b0" size="20" parent="hkpConstraintMotor">
+  <members>
+    <member name="minForce" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="maxForce" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name="hkPhantom" version="0" signature="0x09c5bb6e" size="112" parent="hkWorldObject">
+  <members>
+    <member name="overlapListeners" offset="88" vtype="TYPE_ZERO" vsubtype="TYPE_ARRAY" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="25970" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="100" flags="ALIGN_16|NOT_OWNED|SERIALIZE_IGNORED|0x6876" />
+  </members>
+</class>

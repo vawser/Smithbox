@@ -1,0 +1,12 @@
+<class name="hkpConvexShape" version="0" signature="0x00000000" size="20" parent="hkpSphereRepShape">
+  <enums>
+    <enum name="WeldResult" flags="0">
+      <enumitem name="WELD_RESULT_REJECT_CONTACT_POINT" value="0" />
+      <enumitem name="WELD_RESULT_ACCEPT_CONTACT_POINT_MODIFIED" value="1" />
+      <enumitem name="WELD_RESULT_ACCEPT_CONTACT_POINT_UNMODIFIED" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="radius" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -158,6 +158,8 @@ public static class TypeDiff
         return lines;
     }
 
+    public static string DescribeType(HavokType t) => Describe(t);
+
     private static string Describe(HavokType t) =>
         $"size={t.Size} align={t.Alignment & 0xFFF} format={t.Format} version={t.Version} flags={(int)t.Flags} " +
         $"parent={t.Parent?.Identity} fields=[{string.Join(",", t.Fields.Select(f => $"{f.Name}@{f.Offset}:{(int)f.Flags}:{f.Type.Identity}"))}] " +
@@ -251,5 +253,22 @@ public static class LayoutPredict
         foreach (var w in wrong.Take(30)) lines.Add($"    - {w}");
         foreach (var c in content.Take(10)) lines.Add($"    - {c}");
         return lines;
+    }
+}
+
+/// <summary>
+/// --registryoverlay: an overlay that turns one registry into another of a nearby SDK (DeS Havok-5.1 on 5.5), so one
+/// generated class set holds both.
+/// </summary>
+public static class RegistryOverlay
+{
+    public static List<string> Write(string basePath, string variantPath, string game, string outPath)
+    {
+        var baseRegistry = HavokTypeRegistry.Load(basePath);
+        var variant = HavokTypeRegistry.Load(variantPath);
+        var types = variant.Types.ToDictionary(t => t.Identity);
+        var hashes = variant.Types.Where(t => t.Hash != null).ToDictionary(t => t.Identity, t => t.Hash!.Value);
+        return OverlayBuilder.Write(outPath, basePath, game, types, hashes, TypeDiff.DescribeType, baseRegistry,
+            $" {game} changes to {Path.GetFileName(basePath)}: the types of {Path.GetFileName(variantPath)}, by the registryoverlay mode of Tools/HavokLibSurvey. ");
     }
 }

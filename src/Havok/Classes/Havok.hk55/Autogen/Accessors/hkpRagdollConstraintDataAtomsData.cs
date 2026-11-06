@@ -1,0 +1,121 @@
+// Automatically Generated
+
+#nullable enable
+
+namespace Havok.hk55.Accessors;
+
+internal sealed class hkpRagdollConstraintDataAtomsData : Havok.Formats.HavokFieldAccess<Havok.hk55.hkpRagdollConstraintData.Atoms>
+{
+    public hkpRagdollConstraintDataAtomsData(Havok.hk55.hkpRagdollConstraintData.Atoms instance) : base(instance) { }
+
+    public override bool TryGetField(string fieldName, out object? value)
+    {
+        value = default;
+        switch (fieldName)
+        {
+            case "m_transforms":
+            case "transforms":
+            {
+                value = instance.m_transforms;
+                return true;
+            }
+            case "m_ragdollMotors":
+            case "ragdollMotors":
+            {
+                value = instance.m_ragdollMotors;
+                return true;
+            }
+            case "m_angFriction":
+            case "angFriction":
+            {
+                value = instance.m_angFriction;
+                return true;
+            }
+            case "m_twistLimit":
+            case "twistLimit":
+            {
+                value = instance.m_twistLimit;
+                return true;
+            }
+            case "m_coneLimit":
+            case "coneLimit":
+            {
+                value = instance.m_coneLimit;
+                return true;
+            }
+            case "m_planesLimit":
+            case "planesLimit":
+            {
+                value = instance.m_planesLimit;
+                return true;
+            }
+            case "m_ballSocket":
+            case "ballSocket":
+            {
+                value = instance.m_ballSocket;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+    public override bool TrySetField(string fieldName, object? value)
+    {
+        switch (fieldName)
+        {
+            case "m_transforms":
+            case "transforms":
+            {
+                if (value is not Havok.hk55.hkpSetLocalTransformsConstraintAtom castValue) return false;
+                instance.m_transforms = castValue;
+                return true;
+            }
+            case "m_ragdollMotors":
+            case "ragdollMotors":
+            {
+                if (value is not Havok.hk55.hkpRagdollMotorConstraintAtom castValue) return false;
+                instance.m_ragdollMotors = castValue;
+                return true;
+            }
+            case "m_angFriction":
+            case "angFriction":
+            {
+                if (value is not Havok.hk55.hkpAngFrictionConstraintAtom castValue) return false;
+                instance.m_angFriction = castValue;
+                return true;
+            }
+            case "m_twistLimit":
+            case "twistLimit":
+            {
+                if (value is not Havok.hk55.hkpTwistLimitConstraintAtom castValue) return false;
+                instance.m_twistLimit = castValue;
+                return true;
+            }
+            case "m_coneLimit":
+            case "coneLimit":
+            {
+                if (value is not Havok.hk55.hkpConeLimitConstraintAtom castValue) return false;
+                instance.m_coneLimit = castValue;
+                return true;
+            }
+            case "m_planesLimit":
+            case "planesLimit":
+            {
+                if (value is not Havok.hk55.hkpConeLimitConstraintAtom castValue) return false;
+                instance.m_planesLimit = castValue;
+                return true;
+            }
+            case "m_ballSocket":
+            case "ballSocket":
+            {
+                if (value is not Havok.hk55.hkpBallSocketConstraintAtom castValue) return false;
+                instance.m_ballSocket = castValue;
+                return true;
+            }
+            default:
+            return false;
+        }
+    }
+
+}

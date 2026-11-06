@@ -1,0 +1,5 @@
+<class name="hkWorldMemoryAvailableWatchDog" version="0" signature="0x0d13f6b4" size="12" parent="hkReferencedObject">
+  <members>
+    <member name="minMemoryAvailable" offset="8" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

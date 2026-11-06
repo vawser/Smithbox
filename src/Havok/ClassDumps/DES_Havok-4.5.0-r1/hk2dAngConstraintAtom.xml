@@ -1,0 +1,5 @@
+<class name="hk2dAngConstraintAtom" version="0" signature="0x1ed1420e" size="4" parent="hkConstraintAtom">
+  <members>
+    <member name="freeRotationAxis" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

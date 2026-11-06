@@ -1,0 +1,8 @@
+<class name="hkaDefaultAnimatedReferenceFrame" version="1" signature="0x6d85e445" size="64" parent="hkaAnimatedReferenceFrame" borrowed="DS3 hk_2014">
+  <members>
+    <member name="up" offset="16" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="forward" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="duration" offset="48" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="referenceFrameSamples" offset="52" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" default="0" />
+  </members>
+</class>

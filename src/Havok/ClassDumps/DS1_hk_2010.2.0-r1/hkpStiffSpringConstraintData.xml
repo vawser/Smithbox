@@ -1,0 +1,5 @@
+<class name="hkpStiffSpringConstraintData" version="0" signature="0xb98f66f4" size="80" parent="hkpConstraintData">
+  <members>
+    <member name="atoms" offset="16" ctype="hkpStiffSpringConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+  </members>
+</class>

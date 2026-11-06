@@ -1,0 +1,14 @@
+<class name="hkpMoppCode" version="0" signature="0x924c2661" size="48" parent="hkReferencedObject">
+  <enums>
+    <enum name="BuildType" flags="0">
+      <enumitem name="BUILT_WITH_CHUNK_SUBDIVISION" value="0" />
+      <enumitem name="BUILT_WITHOUT_CHUNK_SUBDIVISION" value="1" />
+      <enumitem name="BUILD_NOT_SET" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="info" offset="16" ctype="hkpMoppCodeCodeInfo" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="data" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="buildType" offset="44" etype="BuildType" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

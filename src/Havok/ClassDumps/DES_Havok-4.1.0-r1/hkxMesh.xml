@@ -1,0 +1,5 @@
+<class name="hkxMesh" version="0" signature="0x6dce06bd" size="8">
+  <members>
+    <member name="sections" offset="0" ctype="hkxMeshSection" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

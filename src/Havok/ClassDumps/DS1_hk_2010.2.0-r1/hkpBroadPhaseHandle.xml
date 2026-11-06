@@ -1,0 +1,5 @@
+<class name="hkpBroadPhaseHandle" version="0" signature="0x00000000" size="4">
+  <members>
+    <member name="id" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

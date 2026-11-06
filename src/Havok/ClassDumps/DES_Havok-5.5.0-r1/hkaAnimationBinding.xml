@@ -1,0 +1,14 @@
+<class name="hkaAnimationBinding" version="0" signature="0xfb496074" size="24">
+  <enums>
+    <enum name="BlendHint" flags="0">
+      <enumitem name="NORMAL" value="0" />
+      <enumitem name="ADDITIVE" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="animation" offset="0" ctype="hkaSkeletalAnimation" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="transformTrackToBoneIndices" offset="4" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="floatTrackToFloatSlotIndices" offset="12" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blendHint" offset="20" etype="BlendHint" vtype="TYPE_ENUM" vsubtype="TYPE_INT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

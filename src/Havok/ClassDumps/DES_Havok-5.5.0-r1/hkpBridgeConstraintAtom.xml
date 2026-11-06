@@ -1,0 +1,6 @@
+<class name="hkpBridgeConstraintAtom" version="0" signature="0x318dda84" size="12" parent="hkpConstraintAtom" borrowed="DS1 hk_2010">
+  <members>
+    <member name="buildJacobianFunc" offset="4" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="constraintData" offset="8" ctype="hkpConstraintData" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="NOT_OWNED" />
+  </members>
+</class>

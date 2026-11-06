@@ -1,0 +1,9 @@
+<class name="hkaMeshBinding" version="1" signature="0x00000000" size="44" parent="hkReferencedObject">
+  <members>
+    <member name="mesh" offset="8" ctype="hkxMesh" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="originalSkeletonName" offset="12" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="skeleton" offset="16" ctype="hkaSkeleton" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="mappings" offset="20" ctype="hkaMeshBindingMapping" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="boneFromSkinMeshTransforms" offset="32" vtype="TYPE_ARRAY" vsubtype="TYPE_TRANSFORM" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

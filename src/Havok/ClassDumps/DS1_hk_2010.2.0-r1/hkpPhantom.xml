@@ -1,0 +1,6 @@
+<class name="hkpPhantom" version="0" signature="0x00000000" size="164" parent="hkpWorldObject">
+  <members>
+    <member name="overlapListeners" offset="140" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="phantomListeners" offset="152" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

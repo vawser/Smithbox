@@ -1,0 +1,13 @@
+<class name="hkCapsuleShape" version="0" signature="0xdd0b1fd3" size="64" parent="hkConvexShape">
+  <enums>
+    <enum name="RayHitType" flags="1769231481">
+      <enumitem name="HIT_CAP0" value="0" />
+      <enumitem name="HIT_CAP1" value="1" />
+      <enumitem name="HIT_BODY" value="2" />
+    </enum>
+  </enums>
+  <members>
+    <member name="vertexA" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29300" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="48" flags="NOT_OWNED|SERIALIZE_IGNORED|0x7065" />
+  </members>
+</class>

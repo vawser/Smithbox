@@ -1,0 +1,5 @@
+<class name="hkxTextureFile" version="0" signature="0x0217ef77" size="4">
+  <members>
+    <member name="filename" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

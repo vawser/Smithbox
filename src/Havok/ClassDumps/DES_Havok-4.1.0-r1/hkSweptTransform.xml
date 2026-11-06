@@ -1,0 +1,9 @@
+<class name="hkSweptTransform" version="0" signature="0x0b4e5770" size="80">
+  <members>
+    <member name="centerOfMass0" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="16" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_77" vsubtype="TYPE_97" arrsize="29555" flags="0x3000" />
+  </members>
+</class>

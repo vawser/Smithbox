@@ -1,0 +1,34 @@
+<class name="hkpConstraintInstance" version="0" signature="0x2033b565" size="44" parent="hkReferencedObject">
+  <enums>
+    <enum name="ConstraintPriority" flags="0">
+      <enumitem name="PRIORITY_INVALID" value="0" />
+      <enumitem name="PRIORITY_PSI" value="1" />
+      <enumitem name="PRIORITY_TOI" value="2" />
+      <enumitem name="PRIORITY_TOI_HIGHER" value="3" />
+      <enumitem name="PRIORITY_TOI_FORCED" value="4" />
+    </enum>
+    <enum name="InstanceType" flags="0">
+      <enumitem name="TYPE_NORMAL" value="0" />
+      <enumitem name="TYPE_CHAIN" value="1" />
+    </enum>
+    <enum name="AddReferences" flags="0">
+      <enumitem name="DO_NOT_ADD_REFERENCES" value="0" />
+      <enumitem name="DO_ADD_REFERENCES" value="1" />
+    </enum>
+    <enum name="CloningMode" flags="0">
+      <enumitem name="CLONE_INSTANCES_ONLY" value="0" />
+      <enumitem name="CLONE_DATAS_WITH_MOTORS" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="owner" offset="8" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="data" offset="12" ctype="hkpConstraintData" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constraintModifiers" offset="16" ctype="hkpModifierConstraintAtom" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="entities" offset="20" ctype="hkpEntity" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="2" flags="FLAGS_NONE" />
+    <member name="priority" offset="28" etype="ConstraintPriority" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="wantRuntime" offset="29" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="name" offset="32" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="userData" offset="36" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="internal" offset="40" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

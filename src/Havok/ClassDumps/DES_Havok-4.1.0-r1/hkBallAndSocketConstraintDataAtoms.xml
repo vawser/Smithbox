@@ -1,0 +1,6 @@
+<class name="hkBallAndSocketConstraintDataAtoms" version="0" signature="0x47b582c0" size="64">
+  <members>
+    <member name="pivots" offset="0" ctype="hkSetLocalTranslationsConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="30319" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="48" flags="DEPRECATED_SIZE_8|0x7061" />
+  </members>
+</class>

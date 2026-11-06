@@ -1,0 +1,17 @@
+<class name="hkSkeletalAnimation" version="0" signature="0x24b3d6bc" size="32" parent="hkReferencedObject">
+  <enums>
+    <enum name="Type" flags="0">
+      <enumitem name="HK_UNKNOWN_ANIMATION" value="0" />
+      <enumitem name="HK_INTERLEAVED_ANIMATION" value="1" />
+      <enumitem name="HK_DELTA_COMPRESSED_ANIMATION" value="2" />
+      <enumitem name="HK_WAVELET_COMPRESSED_ANIMATION" value="3" />
+    </enum>
+  </enums>
+  <members>
+    <member name="type" offset="8" etype="Type" vtype="TYPE_ENUM" vsubtype="TYPE_VOID" arrsize="0" flags="0x20" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="12" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29281" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED|0x6075" />
+  </members>
+</class>

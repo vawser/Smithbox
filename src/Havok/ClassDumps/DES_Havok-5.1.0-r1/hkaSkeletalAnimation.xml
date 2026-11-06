@@ -1,0 +1,18 @@
+<class name="hkaSkeletalAnimation" version="0" signature="0x5b9ff2db" size="32" parent="hkReferencedObject">
+  <enums>
+    <enum name="AnimationType" flags="0">
+      <enumitem name="HK_UNKNOWN_ANIMATION" value="0" />
+      <enumitem name="HK_INTERLEAVED_ANIMATION" value="1" />
+      <enumitem name="HK_DELTA_COMPRESSED_ANIMATION" value="2" />
+      <enumitem name="HK_WAVELET_COMPRESSED_ANIMATION" value="3" />
+      <enumitem name="HK_MIRRORED_ANIMATION" value="4" />
+    </enum>
+  </enums>
+  <members>
+    <member name="type" offset="8" etype="AnimationType" vtype="TYPE_ENUM" vsubtype="TYPE_INT32" arrsize="0" flags="FLAGS_NONE" />
+    <member name="duration" offset="12" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numberOfTracks" offset="16" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="extractedMotion" offset="20" ctype="hkaAnimatedReferenceFrame" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="annotationTracks" offset="24" ctype="hkaAnnotationTrack" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

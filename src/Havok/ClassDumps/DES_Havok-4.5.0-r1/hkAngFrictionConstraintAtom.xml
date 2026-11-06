@@ -1,0 +1,8 @@
+<class name="hkAngFrictionConstraintAtom" version="0" signature="0xdeae5a0b" size="12" parent="hkConstraintAtom">
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_97" vsubtype="TYPE_98" arrsize="27749" flags="SERIALIZE_IGNORED|0x6000" />
+  </members>
+</class>

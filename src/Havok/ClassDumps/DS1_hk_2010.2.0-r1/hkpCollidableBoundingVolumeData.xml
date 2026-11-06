@@ -1,0 +1,14 @@
+<class name="hkpCollidableBoundingVolumeData" version="0" signature="0x00000000" size="44">
+  <members>
+    <member name="min" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="expansionMin" offset="12" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="expansionShift" offset="15" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="max" offset="16" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="expansionMax" offset="28" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="padding" offset="31" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numChildShapeAabbs" offset="32" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="capacityChildShapeAabbs" offset="34" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="childShapeAabbs" offset="36" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="childShapeKeys" offset="40" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

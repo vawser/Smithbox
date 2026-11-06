@@ -1,0 +1,7 @@
+<class name="hkConvexVerticesShapeFourVectors" version="0" signature="0x3d80c5bf" size="48">
+  <members>
+    <member name="x" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="16" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_120" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|0x7800" />
+  </members>
+</class>

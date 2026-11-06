@@ -1,0 +1,6 @@
+<class name="hkxAnimatedVector" version="1" signature="0xfe98cabd" size="24" parent="hkReferencedObject" borrowed="DS3 hk_2014">
+  <members>
+    <member name="vectors" offset="8" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="hint" offset="20" etype="Hint" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" default="0" />
+  </members>
+</class>

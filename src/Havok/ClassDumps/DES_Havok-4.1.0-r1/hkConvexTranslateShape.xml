@@ -1,0 +1,6 @@
+<class name="hkConvexTranslateShape" version="0" signature="0x41b85ef9" size="48" parent="hkConvexShape">
+  <members>
+    <member name="childShape" offset="16" ctype="hkSingleShapeContainer" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="26988" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="32" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x6060" />
+  </members>
+</class>

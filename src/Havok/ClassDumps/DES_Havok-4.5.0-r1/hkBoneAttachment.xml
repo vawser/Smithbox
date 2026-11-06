@@ -1,0 +1,8 @@
+<class name="hkBoneAttachment" version="0" signature="0x8bdd3e9a" size="80">
+  <members>
+    <member name="boneFromAttachment" offset="0" vtype="TYPE_MATRIX4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="64" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29793" vtype="TYPE_70" vsubtype="TYPE_114" arrsize="28525" flags="ALIGN_16|0x4074" />
+  </members>
+</class>

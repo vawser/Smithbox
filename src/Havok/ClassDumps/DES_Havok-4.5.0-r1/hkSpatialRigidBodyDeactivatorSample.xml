@@ -1,0 +1,6 @@
+<class name="hkSpatialRigidBodyDeactivatorSample" version="0" signature="0x245866dd" size="32">
+  <members>
+    <member name="refPosition" offset="0" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="26192" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="16" flags="NOT_OWNED|0x7065" />
+  </members>
+</class>

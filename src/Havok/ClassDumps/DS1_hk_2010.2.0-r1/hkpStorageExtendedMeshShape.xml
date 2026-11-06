@@ -1,0 +1,6 @@
+<class name="hkpStorageExtendedMeshShape" version="0" signature="0xb469efbc" size="272" parent="hkpExtendedMeshShape">
+  <members>
+    <member name="meshstorage" offset="240" ctype="hkpStorageExtendedMeshShapeMeshSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shapestorage" offset="252" ctype="hkpStorageExtendedMeshShapeShapeSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name="hkxVertexBuffer" version="0" signature="0x57061454" size="16">
+  <members>
+    <member name="vertexData" offset="0" vtype="TYPE_HOMOGENEOUSARRAY" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="format" offset="12" ctype="hkxVertexFormat" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

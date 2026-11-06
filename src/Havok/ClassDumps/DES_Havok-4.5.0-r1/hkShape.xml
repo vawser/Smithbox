@@ -1,0 +1,6 @@
+<class name="hkShape" version="0" signature="0x666490a1" size="16" parent="hkReferencedObject">
+  <members>
+    <member name="userData" offset="8" vtype="TYPE_ULONG" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="25970" vtype="TYPE_VOID" vsubtype="TYPE_HALF" arrsize="12" flags="ALIGN_16|SERIALIZE_IGNORED|0x7073" />
+  </members>
+</class>

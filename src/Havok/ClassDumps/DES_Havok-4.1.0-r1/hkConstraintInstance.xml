@@ -1,0 +1,24 @@
+<class name="hkConstraintInstance" version="0" signature="0x2d0d9c11" size="44" parent="hkReferencedObject">
+  <enums>
+    <enum name="ConstraintPriority" flags="0">
+      <enumitem name="PRIORITY_INVALID" value="0" />
+      <enumitem name="PRIORITY_PSI" value="1" />
+      <enumitem name="PRIORITY_TOI" value="2" />
+      <enumitem name="PRIORITY_TOI_HIGHER" value="3" />
+      <enumitem name="PRIORITY_TOI_FORCED" value="4" />
+    </enum>
+    <enum name="" flags="1131376243" />
+    <enum name="" flags="0" />
+  </enums>
+  <members>
+    <member name="owner" offset="8" vtype="TYPE_ZERO" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="12" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
+    <member name="name" offset="32" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="36" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_111" vsubtype="TYPE_119" arrsize="28261" flags="NOT_OWNED|0x7000" />
+    <member name="" offset="28275" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8|ALIGN_16|NOT_OWNED|0x6067" />
+  </members>
+</class>

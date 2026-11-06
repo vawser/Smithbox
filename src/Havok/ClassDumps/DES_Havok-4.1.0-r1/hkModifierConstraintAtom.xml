@@ -1,0 +1,7 @@
+<class name="hkModifierConstraintAtom" version="0" signature="0xc85d520f" size="12" parent="hkConstraintAtom">
+  <members>
+    <member name="modifierAtomSize" offset="2" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="25970" vtype="TYPE_109" vsubtype="TYPE_111" arrsize="25705" flags="DEPRECATED_SIZE_8|NOT_OWNED|SERIALIZE_IGNORED|0x6061" />
+  </members>
+</class>

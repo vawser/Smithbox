@@ -1,0 +1,29 @@
+<class name="hkpMotion" version="3" signature="0x00000000" size="288" parent="hkReferencedObject">
+  <enums>
+    <enum name="MotionType" flags="0">
+      <enumitem name="MOTION_INVALID" value="0" />
+      <enumitem name="MOTION_DYNAMIC" value="1" />
+      <enumitem name="MOTION_SPHERE_INERTIA" value="2" />
+      <enumitem name="MOTION_BOX_INERTIA" value="3" />
+      <enumitem name="MOTION_KEYFRAMED" value="4" />
+      <enumitem name="MOTION_FIXED" value="5" />
+      <enumitem name="MOTION_THIN_BOX_INERTIA" value="6" />
+      <enumitem name="MOTION_CHARACTER" value="7" />
+      <enumitem name="MOTION_MAX_ID" value="8" />
+    </enum>
+  </enums>
+  <members>
+    <member name="type" offset="8" etype="MotionType" vtype="TYPE_ENUM" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationIntegrateCounter" offset="9" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationNumInactiveFrames" offset="10" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="2" flags="FLAGS_NONE" />
+    <member name="motionState" offset="16" ctype="hkMotionState" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="inertiaAndMassInv" offset="192" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="linearVelocity" offset="208" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="angularVelocity" offset="224" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="deactivationRefPosition" offset="240" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="2" flags="FLAGS_NONE" />
+    <member name="deactivationRefOrientation" offset="272" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="2" flags="FLAGS_NONE" />
+    <member name="savedMotion" offset="280" ctype="hkpMaxSizeMotion" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="savedQualityTypeIndex" offset="284" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="gravityFactor" offset="286" vtype="TYPE_HALF" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

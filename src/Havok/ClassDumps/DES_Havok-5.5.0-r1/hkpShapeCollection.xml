@@ -1,0 +1,5 @@
+<class name="hkpShapeCollection" version="0" signature="0x9b1a3265" size="24" parent="hkpShape" interfaces="1" borrowed="DeS Havok-5.1">
+  <members>
+    <member name="disableWelding" offset="20" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

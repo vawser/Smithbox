@@ -1,0 +1,5 @@
+<class name="hkpStorageMeshShape" version="0" signature="0x5a32f6dc" size="112" parent="hkpMeshShape" borrowed="DeS Havok-5.1">
+  <members>
+    <member name="storage" offset="96" ctype="hkpStorageMeshShapeSubpartStorage" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

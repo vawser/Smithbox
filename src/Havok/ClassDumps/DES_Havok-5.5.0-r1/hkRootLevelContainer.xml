@@ -1,0 +1,5 @@
+<class name="hkRootLevelContainer" version="0" signature="0xf598a34e" size="8">
+  <members>
+    <member name="namedVariants" offset="0" ctype="hkRootLevelContainerNamedVariant" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

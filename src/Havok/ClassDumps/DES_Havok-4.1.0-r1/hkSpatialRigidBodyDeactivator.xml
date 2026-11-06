@@ -1,0 +1,11 @@
+<class name="hkSpatialRigidBodyDeactivator" version="0" signature="0x7aa84797" size="112" parent="hkRigidBodyDeactivator">
+  <members>
+    <member name="highFrequencySample" offset="16" ctype="hkSpatialRigidBodyDeactivatorSample" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="48" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x800" />
+    <member name="minLowFrequencyRotation" offset="96" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="30534" vtype="TYPE_112" vsubtype="TYPE_108" arrsize="25856" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x6867" />
+  </members>
+</class>

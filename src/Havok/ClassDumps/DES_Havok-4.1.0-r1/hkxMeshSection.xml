@@ -1,0 +1,7 @@
+<class name="hkxMeshSection" version="0" signature="0x03d42467" size="16">
+  <members>
+    <member name="vertexBuffer" offset="0" ctype="hkxVertexBuffer" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="17013" vtype="TYPE_118" vsubtype="TYPE_101" arrsize="29300" flags="DEPRECATED_SIZE_8|ALIGN_16|SERIALIZE_IGNORED|0x6070" />
+  </members>
+</class>

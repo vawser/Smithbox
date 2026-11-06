@@ -1,0 +1,8 @@
+<class name="hkMoppBvTreeShapeBase" version="0" signature="0x4117d60e" size="48" parent="hkpBvTreeShape">
+  <members>
+    <member name="code" offset="16" ctype="hkpMoppCode" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="moppData" offset="20" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="moppDataSize" offset="24" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="codeInfoCopy" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+  </members>
+</class>

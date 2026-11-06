@@ -1,0 +1,6 @@
+<class name="hkaInterleavedSkeletalAnimation" version="0" signature="0x2b2e784a" size="48" parent="hkaSkeletalAnimation" borrowed="DeS Havok-5.5">
+  <members>
+    <member name="transforms" offset="32" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_QSTRANSFORM" arrsize="0" flags="FLAGS_NONE" />
+    <member name="floats" offset="40" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name="hkAnnotationTrackAnnotation" version="0" signature="0x731888ca" size="8">
+  <members>
+    <member name="time" offset="0" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28005" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x7061" />
+  </members>
+</class>

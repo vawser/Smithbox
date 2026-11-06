@@ -1,0 +1,11 @@
+<class name="hkaSkeleton" version="3" signature="0x366e8220" size="84" parent="hkReferencedObject">
+  <members>
+    <member name="name" offset="8" vtype="TYPE_STRINGPTR" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="parentIndices" offset="12" vtype="TYPE_ARRAY" vsubtype="TYPE_INT16" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bones" offset="24" ctype="hkaBone" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="referencePose" offset="36" vtype="TYPE_ARRAY" vsubtype="TYPE_QSTRANSFORM" arrsize="0" flags="FLAGS_NONE" />
+    <member name="referenceFloats" offset="48" vtype="TYPE_ARRAY" vsubtype="TYPE_REAL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="floatSlots" offset="60" vtype="TYPE_ARRAY" vsubtype="TYPE_STRINGPTR" arrsize="0" flags="FLAGS_NONE" />
+    <member name="localFrames" offset="72" ctype="hkaSkeletonLocalFrameOnBone" vtype="TYPE_ARRAY" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

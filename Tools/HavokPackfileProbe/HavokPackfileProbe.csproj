@@ -20,7 +20,9 @@
     <ProjectReference Include="..\..\src\Havok\Havok.Core\Havok.Core.csproj" />
     <ProjectReference Include="..\..\src\Havok\Havok.Formats\Havok.Formats.csproj" />
     <ProjectReference Include="..\..\src\Havok\Havok.Formats.HKLib\Havok.Formats.HKLib.csproj" />
+    <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2010\Havok.hk2010.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2014\Havok.hk2014.csproj" />
+    <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk55\Havok.hk55.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2015\Havok.hk2015.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2016\Havok.hk2016.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2018\Havok.hk2018.csproj" />

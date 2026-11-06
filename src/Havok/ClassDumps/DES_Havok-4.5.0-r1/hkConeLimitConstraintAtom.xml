@@ -1,0 +1,17 @@
+<class name="hkConeLimitConstraintAtom" version="0" signature="0xfc507545" size="20" parent="hkConstraintAtom">
+  <enums>
+    <enum name="MeasurementMode" flags="1970431341">
+      <enumitem name="ZERO_WHEN_VECTORS_ALIGNED" value="0" />
+      <enumitem name="ZERO_WHEN_VECTORS_PERPENDICULAR" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="isEnabled" offset="2" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="3" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16|NOT_OWNED|0x800" />
+    <member name="angularLimitsTauFactor" offset="16" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="26995" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED|0x7077" />
+  </members>
+</class>

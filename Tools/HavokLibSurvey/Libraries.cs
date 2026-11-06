@@ -366,3 +366,33 @@ public sealed class GeneratedPackfile : Library
 
     public override byte[] Write(object root, ContainerContext ctx, bool comp) => Create(ctx).Write(root);
 }
+
+/// <summary>
+/// The unified packfile engine reading the 32-bit packfiles (DS1 hk_2010 into Havok.hk2010; DeS Havok-5.5 and 5.1 into
+/// Havok.hk55) with registries built from the games' own hkClass reflection. Parity is with SoulsFormats' HKX.
+/// </summary>
+public sealed class GeneratedPackfile32 : Library
+{
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, Havok.HavokProfile> Profiles = new();
+
+    public override string Name => "Generated 32-bit packfile";
+
+    public override bool Applies(SniffInfo s, Game game) =>
+        s.Container == "Packfile" && (s.Sdk.StartsWith("hk_2010") || s.Sdk.StartsWith("Havok-5.5") || s.Sdk.StartsWith("Havok-5.1"));
+
+    private static Havok.Formats.Packfile.HavokPackfileSerializer Create(Havok.HavokProfile profile) =>
+        new(profile.Sdk == Havok.HavokSdk.Hk2010 ? Havok.hk2010.ClassSet.For(profile) : Havok.hk55.ClassSet.For(profile));
+
+    public override object Read(byte[] data, ContainerContext ctx, bool comp)
+    {
+        string sdk = System.Text.Encoding.ASCII.GetString(data, 0x28, 16).TrimEnd('\0', '\xFF');
+        var profile = Havok.HavokProfile.For(ctx.Game.ToString(), sdk)
+                      ?? throw new InvalidOperationException($"No profile for {ctx.Game}");
+        object root = Create(profile).Read(data);
+        Profiles.AddOrUpdate(root, profile);
+        return root;
+    }
+
+    public override byte[] Write(object root, ContainerContext ctx, bool comp) =>
+        Create(Profiles.TryGetValue(root, out var p) ? p : Havok.HavokProfile.FromGame(ctx.Game.ToString())!).Write(root);
+}

@@ -1,0 +1,5 @@
+<class name="hkBroadPhaseHandle" version="0" signature="0xfa5860da" size="4">
+  <members>
+    <member name="id" offset="0" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

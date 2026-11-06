@@ -1,0 +1,26 @@
+<class name="hkMotion" version="0" signature="0xb891f43f" size="288" parent="hkReferencedObject">
+  <enums>
+    <enum name="MotionType" flags="1869501561">
+      <enumitem name="MOTION_INVALID" value="0" />
+      <enumitem name="MOTION_DYNAMIC" value="1" />
+      <enumitem name="MOTION_SPHERE_INERTIA" value="2" />
+      <enumitem name="MOTION_STABILIZED_SPHERE_INERTIA" value="3" />
+      <enumitem name="MOTION_BOX_INERTIA" value="4" />
+      <enumitem name="MOTION_STABILIZED_BOX_INERTIA" value="5" />
+      <enumitem name="MOTION_KEYFRAMED" value="6" />
+      <enumitem name="MOTION_FIXED" value="7" />
+      <enumitem name="MOTION_THIN_BOX_INERTIA" value="8" />
+      <enumitem name="MOTION_MAX_ID" value="9" />
+    </enum>
+  </enums>
+  <members>
+    <member name="type" offset="8" etype="MotionType" vtype="TYPE_ENUM" vsubtype="TYPE_VOID" arrsize="0" flags="DEPRECATED_SIZE_8" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="9" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED|0x800" />
+    <member name="angularVelocity" offset="240" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28773" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="256" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x7071" />
+    <member name="" offset="28526" vtype="TYPE_116" vsubtype="TYPE_105" arrsize="30305" flags="DEPRECATED_SIZE_8|SERIALIZE_IGNORED|0x7061" />
+  </members>
+</class>

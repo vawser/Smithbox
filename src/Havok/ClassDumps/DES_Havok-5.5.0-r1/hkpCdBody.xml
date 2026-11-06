@@ -1,0 +1,8 @@
+<class name="hkpCdBody" version="0" signature="0xe94d2688" size="16">
+  <members>
+    <member name="shape" offset="0" ctype="hkpShape" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="shapeKey" offset="4" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="motion" offset="8" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="parent" offset="12" ctype="hkpCdBody" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

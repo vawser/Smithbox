@@ -1,0 +1,35 @@
+<class name="hkpEntity" version="3" signature="0x00000000" size="544" parent="hkpWorldObject">
+  <enums>
+    <enum name="SpuCollisionCallbackEventFilter" flags="0">
+      <enumitem name="SPU_SEND_NONE" value="0" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_ADDED" value="1" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_PROCESS" value="2" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_REMOVED" value="4" />
+      <enumitem name="SPU_SEND_CONTACT_POINT_ADDED_OR_PROCESS" value="3" />
+    </enum>
+  </enums>
+  <members>
+    <member name="material" offset="140" ctype="hkpMaterial" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="limitContactImpulseUtilAndFlag" offset="152" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="damageMultiplier" offset="156" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="breakableBody" offset="160" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="solverData" offset="164" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="storageIndex" offset="168" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="contactPointCallbackDelay" offset="170" vtype="TYPE_UINT16" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="constraintsMaster" offset="172" ctype="hkpEntitySmallArraySerializeOverrideType" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="constraintsSlave" offset="180" ctype="hkpConstraintInstance" vtype="TYPE_ARRAY" vsubtype="TYPE_POINTER" arrsize="0" flags="NOT_OWNED|SERIALIZE_IGNORED" />
+    <member name="constraintRuntime" offset="192" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="simulationIsland" offset="204" vtype="TYPE_POINTER" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="autoRemoveLevel" offset="208" vtype="TYPE_INT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numShapeKeysInContactPointProperties" offset="209" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="responseModifierFlags" offset="210" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="uid" offset="212" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="spuCollisionCallback" offset="216" ctype="hkpEntitySpuCollisionCallback" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="motion" offset="224" ctype="hkpMaxSizeMotion" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="contactListeners" offset="512" ctype="hkpEntitySmallArraySerializeOverrideType" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="actions" offset="520" ctype="hkpEntitySmallArraySerializeOverrideType" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="localFrame" offset="528" ctype="hkLocalFrame" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="extendedListeners" offset="532" ctype="hkpEntityExtendedListeners" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="SERIALIZE_IGNORED" />
+    <member name="npData" offset="536" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

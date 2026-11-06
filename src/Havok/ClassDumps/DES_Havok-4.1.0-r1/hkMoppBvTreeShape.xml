@@ -1,0 +1,5 @@
+<class name="hkMoppBvTreeShape" version="0" signature="0x8084e993" size="24" parent="hkBvTreeShape">
+  <members>
+    <member name="code" offset="20" ctype="hkMoppCode" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

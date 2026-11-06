@@ -1,0 +1,9 @@
+<class name="hkConvexVerticesShape" version="0" signature="0xf65b406a" size="96" parent="hkConvexShape">
+  <members>
+    <member name="aabbHalfExtents" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="48" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="29440" vtype="TYPE_69" vsubtype="TYPE_120" arrsize="29797" flags="NOT_OWNED|SERIALIZE_IGNORED|0x6874" />
+  </members>
+</class>

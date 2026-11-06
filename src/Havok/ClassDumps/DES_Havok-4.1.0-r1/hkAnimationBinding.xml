@@ -1,0 +1,13 @@
+<class name="hkAnimationBinding" version="0" signature="0xe39df839" size="16">
+  <enums>
+    <enum name="BlendHint" flags="1682467182">
+      <enumitem name="NORMAL" value="0" />
+      <enumitem name="ADDITIVE" value="1" />
+    </enum>
+  </enums>
+  <members>
+    <member name="animation" offset="0" ctype="hkSkeletalAnimation" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="0" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="4" flags="FLAGS_NONE" />
+    <member name="" offset="26991" vtype="TYPE_97" vsubtype="TYPE_110" arrsize="26989" flags="ALIGN_16|0x6074" />
+  </members>
+</class>

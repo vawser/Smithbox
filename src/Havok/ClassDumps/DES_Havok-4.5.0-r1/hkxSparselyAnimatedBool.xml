@@ -1,0 +1,6 @@
+<class name="hkxSparselyAnimatedBool" version="0" signature="0x901601e1" size="16">
+  <members>
+    <member name="bools" offset="0" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_BOOL" arrsize="0" flags="FLAGS_NONE" />
+    <member name="" offset="28524" vtype="TYPE_VOID" vsubtype="TYPE_VOID" arrsize="8" flags="DEPRECATED_SIZE_8|NOT_OWNED|0x6067" />
+  </members>
+</class>

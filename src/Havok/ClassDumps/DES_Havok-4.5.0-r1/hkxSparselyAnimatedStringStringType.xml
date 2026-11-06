@@ -1,0 +1,5 @@
+<class name="hkxSparselyAnimatedStringStringType" version="0" signature="0xe9f9578a" size="4">
+  <members>
+    <member name="string" offset="0" vtype="TYPE_CSTRING" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>
