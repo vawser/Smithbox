@@ -1,7 +1,6 @@
-<class name="hkpBallAndSocketConstraintDataAtoms" version="1" signature="0x33f74135" size="80" borrowed="DS1 hk_2010">
+<class name="hkpBallAndSocketConstraintDataAtoms" version="0" signature="0x33f74135" size="64" manual="Fitted to DeS bytes (o2201.hkx): the pivots atom (type 3) is followed by the ball-socket atom (type 5) at 48; there is no setupStabilization atom (DS1 hk_2010 has one), so the atoms are 64 bytes.">
   <members>
     <member name="pivots" offset="0" ctype="hkpSetLocalTranslationsConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="setupStabilization" offset="48" ctype="hkpSetupStabilizationAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="ballSocket" offset="64" ctype="hkpBallSocketConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="ballSocket" offset="48" ctype="hkpBallSocketConstraintAtom" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
   </members>
 </class>

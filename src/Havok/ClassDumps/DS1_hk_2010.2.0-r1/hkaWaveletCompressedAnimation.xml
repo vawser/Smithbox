@@ -1,0 +1,16 @@
+<class name="hkaWaveletCompressedAnimation" version="0" signature="0x77cf0962" size="112" parent="hkaAnimation" manual="Fitted to DS1 bytes (o1010 a00_0000.hkx; no DS1 file describes it). DeS 5.5's hkaWaveletSkeletalAnimation members plus the static and dynamic DOF counts, and dataBuffer as an hkArray. Checks: 91 poses for 3 s; numDynamicTransformDOFs = qFormat.numD; blockIndexIdx + blockIndexSize * 4 = quantizedDataIdx; quantizedDataIdx + quantizedDataSize = the buffer's length.">
+  <members>
+    <member name="numberOfPoses" offset="40" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockSize" offset="44" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="qFormat" offset="48" ctype="hkaWaveletCompressedAnimationQuantizationFormat" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticMaskIdx" offset="68" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticDOFsIdx" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numStaticTransformDOFs" offset="76" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numDynamicTransformDOFs" offset="80" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockIndexIdx" offset="84" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockIndexSize" offset="88" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataIdx" offset="92" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataSize" offset="96" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="dataBuffer" offset="100" vtype="TYPE_ARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

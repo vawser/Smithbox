@@ -87,6 +87,7 @@ foreach (var gameName in games)
     using var fs = Survey.BuildFS(game, root, out var fsNote);
     TypeDiff.Reset();
     ClassDump.Reset();
+    DecodeCompare.Reset();
     var profile = Havok.HavokProfile.FromGame(gameName);
     var buildSdk = profile?.Sdk switch
     {
@@ -149,6 +150,12 @@ foreach (var gameName in games)
         var overlayLines = TypeDiff.WriteOverlay(overlayPath, profile);
         typeLines.AddRange(overlayLines);
         foreach (var l in overlayLines.Take(12)) Console.WriteLine(l);
+    }
+    var decodeLines = DecodeCompare.Report();
+    if (decodeLines.Count > 0)
+    {
+        (typeLines ??= new List<string>()).AddRange(decodeLines);
+        foreach (var l in decodeLines.Skip(5).Take(12)) Console.WriteLine(l);
     }
     if (Survey.DumpClasses)
     {
@@ -430,6 +437,7 @@ public static class Survey
         if (r.Sniff.Container == "Tagfile") r.Layout = SectionDiff.Layout(bytes);
         if (TypeDiffEnabled) TypeDiff.Collect(bytes, r.Sniff, inner, BuildSdkPrefix);
         if (DumpClasses) ClassDump.Collect(bytes, r.Sniff, inner);
+        DecodeCompare.Collect(bytes, r.Sniff, ctx.Game, inner);
 
         foreach (var lib in Libraries.Where(l => l.Applies(r.Sniff, ctx.Game)))
             r.Libs.Add(lib.Run(bytes, ctx, r.Sniff.UsesCompendium));

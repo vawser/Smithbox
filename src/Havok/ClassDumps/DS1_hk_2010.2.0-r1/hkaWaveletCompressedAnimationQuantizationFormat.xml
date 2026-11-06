@@ -1,0 +1,10 @@
+<class name="hkaWaveletCompressedAnimationQuantizationFormat" version="0" signature="0x00000000" size="20" manual="As DeS 5.5's hkaWaveletSkeletalAnimationQuantizationFormat; matches DS1 bytes (o1010 a00_0000.hkx: maxBitWidth 8, numD 8, offset/scale/bitWidth indices 16/48/80).">
+  <members>
+    <member name="maxBitWidth" offset="0" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="preserved" offset="1" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="numD" offset="4" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="offsetIdx" offset="8" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="scaleIdx" offset="12" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="bitWidthIdx" offset="16" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

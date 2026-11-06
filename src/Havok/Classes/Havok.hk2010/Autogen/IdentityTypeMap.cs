@@ -227,6 +227,8 @@ public static class IdentityTypeMap
         { "hkaSkeletonMapperData::MappingType", typeof(hkaSkeletonMapperData.MappingType) },
         { "hkEnum<hkaSkeletonMapperData::MappingType, hkInt32>", typeof(hkaSkeletonMapperData.MappingType) },
         { "hkaSplineCompressedAnimation", typeof(hkaSplineCompressedAnimation) },
+        { "hkaWaveletCompressedAnimation", typeof(hkaWaveletCompressedAnimation) },
+        { "hkaWaveletCompressedAnimationQuantizationFormat", typeof(hkaWaveletCompressedAnimationQuantizationFormat) },
         { "hkp2dAngConstraintAtom", typeof(hkp2dAngConstraintAtom) },
         { "hkpAction", typeof(hkpAction) },
         { "hkpAngFrictionConstraintAtom", typeof(hkpAngFrictionConstraintAtom) },

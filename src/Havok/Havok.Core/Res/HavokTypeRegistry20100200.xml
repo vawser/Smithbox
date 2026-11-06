@@ -1401,12 +1401,38 @@
         <Member Name="endian" Offset="128" Type="9" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="222" Name="hkp2dAngConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="4" Alignment="2" Flags="0" Version="0" Hash="0">
+    <HavokType Id="222" Name="hkaWaveletCompressedAnimation" Parent="80" Optionals="45" Format="7" SubType="0" Size="112" Alignment="4" Flags="0" Version="0" Hash="2010057058">
+      <Members>
+        <Member Name="numberOfPoses" Offset="40" Type="9" Flags="32" />
+        <Member Name="blockSize" Offset="44" Type="9" Flags="32" />
+        <Member Name="qFormat" Offset="48" Type="223" Flags="32" />
+        <Member Name="staticMaskIdx" Offset="68" Type="6" Flags="32" />
+        <Member Name="staticDOFsIdx" Offset="72" Type="6" Flags="32" />
+        <Member Name="numStaticTransformDOFs" Offset="76" Type="6" Flags="32" />
+        <Member Name="numDynamicTransformDOFs" Offset="80" Type="6" Flags="32" />
+        <Member Name="blockIndexIdx" Offset="84" Type="6" Flags="32" />
+        <Member Name="blockIndexSize" Offset="88" Type="6" Flags="32" />
+        <Member Name="quantizedDataIdx" Offset="92" Type="6" Flags="32" />
+        <Member Name="quantizedDataSize" Offset="96" Type="6" Flags="32" />
+        <Member Name="dataBuffer" Offset="100" Type="43" Flags="32" />
+      </Members>
+    </HavokType>
+    <HavokType Id="223" Name="hkaWaveletCompressedAnimationQuantizationFormat" Parent="0" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
+      <Members>
+        <Member Name="maxBitWidth" Offset="0" Type="7" Flags="32" />
+        <Member Name="preserved" Offset="1" Type="7" Flags="32" />
+        <Member Name="numD" Offset="4" Type="6" Flags="32" />
+        <Member Name="offsetIdx" Offset="8" Type="6" Flags="32" />
+        <Member Name="scaleIdx" Offset="12" Type="6" Flags="32" />
+        <Member Name="bitWidthIdx" Offset="16" Type="6" Flags="32" />
+      </Members>
+    </HavokType>
+    <HavokType Id="224" Name="hkp2dAngConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="4" Alignment="2" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="freeRotationAxis" Offset="2" Type="7" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="223" Name="hkpAction" Parent="2" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="225" Name="hkpAction" Parent="2" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="world" Offset="8" Type="26" Flags="33" />
         <Member Name="island" Offset="12" Type="26" Flags="33" />
@@ -1414,7 +1440,7 @@
         <Member Name="name" Offset="20" Type="50" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="224" Name="hkpAngFrictionConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="226" Name="hkpAngFrictionConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
         <Member Name="firstFrictionAxis" Offset="3" Type="7" Flags="32" />
@@ -1422,7 +1448,7 @@
         <Member Name="maxFrictionTorque" Offset="8" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="225" Name="hkpAngLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="227" Name="hkpAngLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
         <Member Name="limitAxis" Offset="3" Type="7" Flags="32" />
@@ -1431,7 +1457,7 @@
         <Member Name="angularLimitsTauFactor" Offset="12" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="226" Name="hkpAngMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="228" Name="hkpAngMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="16" Flags="32" />
         <Member Name="motorAxis" Offset="3" Type="7" Flags="32" />
@@ -1439,15 +1465,15 @@
         <Member Name="previousTargetAngleOffset" Offset="6" Type="5" Flags="32" />
         <Member Name="correspondingAngLimitSolverResultOffset" Offset="8" Type="5" Flags="32" />
         <Member Name="targetAngle" Offset="12" Type="30" Flags="32" />
-        <Member Name="motor" Offset="16" Type="230" Flags="32" />
+        <Member Name="motor" Offset="16" Type="232" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="227" Name="hkpConstraintMotor" Parent="2" Optionals="45" Format="7" SubType="0" Size="12" Alignment="2" Flags="0" Version="0" Hash="0">
+    <HavokType Id="229" Name="hkpConstraintMotor" Parent="2" Optionals="45" Format="7" SubType="0" Size="12" Alignment="2" Flags="0" Version="0" Hash="0">
       <Members>
-        <Member Name="type" Offset="8" Type="229" Flags="32" />
+        <Member Name="type" Offset="8" Type="231" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="228" Name="hkpConstraintMotor::MotorType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="230" Name="hkpConstraintMotor::MotorType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="TYPE_INVALID" Value="0" />
         <Preset Name="TYPE_POSITION" Value="1" />
@@ -1457,110 +1483,110 @@
         <Preset Name="TYPE_MAX" Value="5" />
       </Presets>
     </HavokType>
-    <HavokType Id="229" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
+    <HavokType Id="231" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
       <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="228" />
+        <Parameter Name="ENUM" Kind="Type" Value="230" />
         <Parameter Name="STORAGE" Kind="Type" Value="21" />
       </Template>
     </HavokType>
-    <HavokType Id="230" Name="T*" Parent="0" Optionals="11" Format="6" SubType="227" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="232" Name="T*" Parent="0" Optionals="11" Format="6" SubType="229" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="227" />
+        <Parameter Name="T" Kind="Type" Value="229" />
       </Template>
     </HavokType>
-    <HavokType Id="231" Name="hkpBallAndSocketConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="0" Hash="1516852441">
+    <HavokType Id="233" Name="hkpBallAndSocketConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="0" Hash="1516852441">
       <Members>
-        <Member Name="atoms" Offset="16" Type="232" Flags="32" />
+        <Member Name="atoms" Offset="16" Type="234" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="232" Name="hkpBallAndSocketConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="0">
+    <HavokType Id="234" Name="hkpBallAndSocketConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="1" Hash="0">
       <Members>
-        <Member Name="pivots" Offset="0" Type="233" Flags="32" />
-        <Member Name="setupStabilization" Offset="48" Type="234" Flags="32" />
-        <Member Name="ballSocket" Offset="64" Type="236" Flags="32" />
+        <Member Name="pivots" Offset="0" Type="235" Flags="32" />
+        <Member Name="setupStabilization" Offset="48" Type="236" Flags="32" />
+        <Member Name="ballSocket" Offset="64" Type="238" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="233" Name="hkpSetLocalTranslationsConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="0">
+    <HavokType Id="235" Name="hkpSetLocalTranslationsConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="translationA" Offset="16" Type="29" Flags="32" />
         <Member Name="translationB" Offset="32" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="234" Name="hkpSetupStabilizationAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="0">
+    <HavokType Id="236" Name="hkpSetupStabilizationAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="0">
       <Members>
         <Member Name="enabled" Offset="2" Type="16" Flags="32" />
         <Member Name="maxAngle" Offset="4" Type="30" Flags="32" />
-        <Member Name="padding" Offset="8" Type="235" Flags="32" />
+        <Member Name="padding" Offset="8" Type="237" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="235" Name="T[N]" Parent="0" Optionals="11" Format="2056" SubType="7" Size="8" Alignment="1" Flags="0" Version="0">
+    <HavokType Id="237" Name="T[N]" Parent="0" Optionals="11" Format="2056" SubType="7" Size="8" Alignment="1" Flags="0" Version="0">
       <Template>
         <Parameter Name="T" Kind="Type" Value="7" />
         <Parameter Name="N" Kind="Value" Value="8" />
       </Template>
     </HavokType>
-    <HavokType Id="236" Name="hkpBallSocketConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="3" Hash="0">
+    <HavokType Id="238" Name="hkpBallSocketConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="3" Hash="0">
       <Members>
-        <Member Name="solvingMethod" Offset="2" Type="238" Flags="32" />
+        <Member Name="solvingMethod" Offset="2" Type="240" Flags="32" />
         <Member Name="bodiesToNotify" Offset="3" Type="7" Flags="32" />
         <Member Name="velocityStabilizationFactor" Offset="4" Type="7" Flags="32" />
         <Member Name="maxImpulse" Offset="8" Type="30" Flags="32" />
         <Member Name="inertiaStabilizationFactor" Offset="12" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="237" Name="hkpConstraintAtom::SolvingMethod" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="239" Name="hkpConstraintAtom::SolvingMethod" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="METHOD_STABILIZED" Value="0" />
         <Preset Name="METHOD_OLD" Value="1" />
       </Presets>
     </HavokType>
-    <HavokType Id="238" Name="hkEnum" Parent="0" Optionals="9" Format="8196" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
+    <HavokType Id="240" Name="hkEnum" Parent="0" Optionals="9" Format="8196" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
       <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="237" />
+        <Parameter Name="ENUM" Kind="Type" Value="239" />
         <Parameter Name="STORAGE" Kind="Type" Value="7" />
       </Template>
     </HavokType>
-    <HavokType Id="239" Name="hkpBallSocketChainData" Parent="240" Optionals="45" Format="7" SubType="0" Size="52" Alignment="4" Flags="0" Version="0" Hash="271232668">
+    <HavokType Id="241" Name="hkpBallSocketChainData" Parent="242" Optionals="45" Format="7" SubType="0" Size="52" Alignment="4" Flags="0" Version="0" Hash="271232668">
       <Members>
-        <Member Name="atoms" Offset="12" Type="241" Flags="32" />
-        <Member Name="infos" Offset="24" Type="244" Flags="32" />
+        <Member Name="atoms" Offset="12" Type="243" Flags="32" />
+        <Member Name="infos" Offset="24" Type="246" Flags="32" />
         <Member Name="tau" Offset="36" Type="30" Flags="32" />
         <Member Name="damping" Offset="40" Type="30" Flags="32" />
         <Member Name="cfm" Offset="44" Type="30" Flags="32" />
         <Member Name="maxErrorDistance" Offset="48" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="240" Name="hkpConstraintChainData" Parent="181" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0" />
-    <HavokType Id="241" Name="hkpBridgeAtoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="242" Name="hkpConstraintChainData" Parent="181" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0" />
+    <HavokType Id="243" Name="hkpBridgeAtoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
-        <Member Name="bridgeAtom" Offset="0" Type="242" Flags="32" />
+        <Member Name="bridgeAtom" Offset="0" Type="244" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="242" Name="hkpBridgeConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="244" Name="hkpBridgeConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="buildJacobianFunc" Offset="4" Type="26" Flags="33" />
         <Member Name="constraintData" Offset="8" Type="182" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="243" Name="hkpBallSocketChainDataConstraintInfo" Parent="0" Optionals="45" Format="7" SubType="0" Size="32" Alignment="16" Flags="0" Version="0" Hash="0">
+    <HavokType Id="245" Name="hkpBallSocketChainDataConstraintInfo" Parent="0" Optionals="45" Format="7" SubType="0" Size="32" Alignment="16" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="pivotInA" Offset="0" Type="29" Flags="32" />
         <Member Name="pivotInB" Offset="16" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="244" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="243" Size="12" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="246" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="245" Size="12" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="243" />
+        <Parameter Name="T" Kind="Type" Value="245" />
       </Template>
     </HavokType>
-    <HavokType Id="245" Name="hkpBoxShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="876925653">
+    <HavokType Id="247" Name="hkpBoxShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="876925653">
       <Members>
         <Member Name="halfExtents" Offset="32" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="246" Name="hkpBreakableConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="0" Hash="2103644360">
+    <HavokType Id="248" Name="hkpBreakableConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="40" Alignment="4" Flags="0" Version="0" Hash="2103644360">
       <Members>
-        <Member Name="atoms" Offset="12" Type="241" Flags="32" />
+        <Member Name="atoms" Offset="12" Type="243" Flags="32" />
         <Member Name="constraintData" Offset="24" Type="182" Flags="32" />
         <Member Name="childRuntimeSize" Offset="28" Type="4" Flags="32" />
         <Member Name="childNumSolverResults" Offset="30" Type="4" Flags="32" />
@@ -1569,20 +1595,20 @@
         <Member Name="revertBackVelocityOnBreak" Offset="37" Type="16" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="247" Name="hkpCapsuleShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="3708493779">
+    <HavokType Id="249" Name="hkpCapsuleShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="3708493779">
       <Members>
         <Member Name="vertexA" Offset="32" Type="29" Flags="32" />
         <Member Name="vertexB" Offset="48" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="248" Name="hkpCollisionFilter" Parent="2" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="250" Name="hkpCollisionFilter" Parent="2" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="prepad" Offset="24" Type="188" Flags="32" />
-        <Member Name="type" Offset="32" Type="250" Flags="32" />
+        <Member Name="type" Offset="32" Type="252" Flags="32" />
         <Member Name="postpad" Offset="36" Type="169" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="249" Name="hkpCollisionFilter::hkpFilterType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="251" Name="hkpCollisionFilter::hkpFilterType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="HK_FILTER_UNKNOWN" Value="0" />
         <Preset Name="HK_FILTER_NULL" Value="1" />
@@ -1593,115 +1619,115 @@
         <Preset Name="HK_FILTER_CONSTRAINT" Value="6" />
       </Presets>
     </HavokType>
-    <HavokType Id="250" Name="hkEnum" Parent="0" Optionals="9" Format="32772" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="252" Name="hkEnum" Parent="0" Optionals="9" Format="32772" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="249" />
+        <Parameter Name="ENUM" Kind="Type" Value="251" />
         <Parameter Name="STORAGE" Kind="Type" Value="6" />
       </Template>
     </HavokType>
-    <HavokType Id="251" Name="hkpConeLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="253" Name="hkpConeLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
         <Member Name="twistAxisInA" Offset="3" Type="7" Flags="32" />
         <Member Name="refAxisInB" Offset="4" Type="7" Flags="32" />
-        <Member Name="angleMeasurementMode" Offset="5" Type="253" Flags="32" />
+        <Member Name="angleMeasurementMode" Offset="5" Type="255" Flags="32" />
         <Member Name="memOffsetToAngleOffset" Offset="6" Type="7" Flags="32" />
         <Member Name="minAngle" Offset="8" Type="30" Flags="32" />
         <Member Name="maxAngle" Offset="12" Type="30" Flags="32" />
         <Member Name="angularLimitsTauFactor" Offset="16" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="252" Name="hkpConeLimitConstraintAtom::MeasurementMode" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="254" Name="hkpConeLimitConstraintAtom::MeasurementMode" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="ZERO_WHEN_VECTORS_ALIGNED" Value="0" />
         <Preset Name="ZERO_WHEN_VECTORS_PERPENDICULAR" Value="1" />
       </Presets>
     </HavokType>
-    <HavokType Id="253" Name="hkEnum" Parent="0" Optionals="9" Format="8196" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
+    <HavokType Id="255" Name="hkEnum" Parent="0" Optionals="9" Format="8196" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
       <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="252" />
+        <Parameter Name="ENUM" Kind="Type" Value="254" />
         <Parameter Name="STORAGE" Kind="Type" Value="7" />
       </Template>
     </HavokType>
-    <HavokType Id="254" Name="hkpConstraintChainInstance" Parent="180" Optionals="45" Format="7" SubType="0" Size="72" Alignment="4" Flags="0" Version="0" Hash="2051606355">
+    <HavokType Id="256" Name="hkpConstraintChainInstance" Parent="180" Optionals="45" Format="7" SubType="0" Size="72" Alignment="4" Flags="0" Version="0" Hash="2051606355">
       <Members>
-        <Member Name="chainedEntities" Offset="56" Type="255" Flags="32" />
-        <Member Name="action" Offset="68" Type="258" Flags="32" />
+        <Member Name="chainedEntities" Offset="56" Type="257" Flags="32" />
+        <Member Name="action" Offset="68" Type="260" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="255" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="190" Size="12" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="257" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="190" Size="12" Alignment="4" Flags="0" Version="0">
       <Template>
         <Parameter Name="T" Kind="Type" Value="190" />
       </Template>
     </HavokType>
-    <HavokType Id="256" Name="hkpConstraintChainInstanceAction" Parent="223" Optionals="45" Format="7" SubType="0" Size="28" Alignment="4" Flags="0" Version="0" Hash="3281457545">
+    <HavokType Id="258" Name="hkpConstraintChainInstanceAction" Parent="225" Optionals="45" Format="7" SubType="0" Size="28" Alignment="4" Flags="0" Version="0" Hash="3281457545">
       <Members>
-        <Member Name="constraintInstance" Offset="24" Type="257" Flags="32" />
+        <Member Name="constraintInstance" Offset="24" Type="259" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="257" Name="T*" Parent="0" Optionals="11" Format="6" SubType="254" Size="4" Alignment="4" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="T" Kind="Type" Value="254" />
-      </Template>
-    </HavokType>
-    <HavokType Id="258" Name="T*" Parent="0" Optionals="11" Format="6" SubType="256" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="259" Name="T*" Parent="0" Optionals="11" Format="6" SubType="256" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
         <Parameter Name="T" Kind="Type" Value="256" />
       </Template>
     </HavokType>
-    <HavokType Id="259" Name="hkpConvexListFilter" Parent="2" Optionals="45" Format="7" SubType="0" Size="8" Alignment="2" Flags="0" Version="0" Hash="0" />
-    <HavokType Id="260" Name="hkpConvexTransformShape" Parent="261" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="1" Hash="2923319319">
+    <HavokType Id="260" Name="T*" Parent="0" Optionals="11" Format="6" SubType="258" Size="4" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="258" />
+      </Template>
+    </HavokType>
+    <HavokType Id="261" Name="hkpConvexListFilter" Parent="2" Optionals="45" Format="7" SubType="0" Size="8" Alignment="2" Flags="0" Version="0" Hash="0" />
+    <HavokType Id="262" Name="hkpConvexTransformShape" Parent="263" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="1" Hash="2923319319">
       <Members>
         <Member Name="transform" Offset="32" Type="31" Flags="32" />
         <Member Name="extraScale" Offset="80" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="261" Name="hkpConvexTransformShapeBase" Parent="35" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="263" Name="hkpConvexTransformShapeBase" Parent="35" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
-        <Member Name="childShape" Offset="20" Type="262" Flags="32" />
+        <Member Name="childShape" Offset="20" Type="264" Flags="32" />
         <Member Name="childShapeSize" Offset="28" Type="9" Flags="33" />
       </Members>
     </HavokType>
-    <HavokType Id="262" Name="hkpSingleShapeContainer" Parent="263" Optionals="45" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="264" Name="hkpSingleShapeContainer" Parent="265" Optionals="45" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="childShape" Offset="4" Type="164" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="263" Name="hkpShapeContainer" Parent="0" Optionals="45" Format="7" SubType="0" Size="4" Alignment="1" Flags="0" Version="0" Hash="0" />
-    <HavokType Id="264" Name="hkpConvexTranslateShape" Parent="261" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="1537254903">
+    <HavokType Id="265" Name="hkpShapeContainer" Parent="0" Optionals="45" Format="7" SubType="0" Size="4" Alignment="1" Flags="0" Version="0" Hash="0" />
+    <HavokType Id="266" Name="hkpConvexTranslateShape" Parent="263" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="1537254903">
       <Members>
         <Member Name="translation" Offset="32" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="265" Name="hkpConvexVerticesConnectivity" Parent="2" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="1674808988">
+    <HavokType Id="267" Name="hkpConvexVerticesConnectivity" Parent="2" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="1" Hash="1674808988">
       <Members>
         <Member Name="vertexIndices" Offset="8" Type="40" Flags="32" />
         <Member Name="numVerticesPerFace" Offset="20" Type="43" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="266" Name="hkpConvexVerticesShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="678587096">
+    <HavokType Id="268" Name="hkpConvexVerticesShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="1" Hash="678587096">
       <Members>
         <Member Name="aabbHalfExtents" Offset="32" Type="29" Flags="32" />
         <Member Name="aabbCenter" Offset="48" Type="29" Flags="32" />
-        <Member Name="rotatedVertices" Offset="64" Type="268" Flags="32" />
+        <Member Name="rotatedVertices" Offset="64" Type="270" Flags="32" />
         <Member Name="numVertices" Offset="76" Type="9" Flags="32" />
         <Member Name="useSpuBuffer" Offset="80" Type="16" Flags="33" />
         <Member Name="planeEquations" Offset="84" Type="42" Flags="32" />
-        <Member Name="connectivity" Offset="96" Type="269" Flags="32" />
+        <Member Name="connectivity" Offset="96" Type="271" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="267" Name="hkMatrix3" Parent="0" Optionals="11" Format="3112" SubType="30" Size="48" Alignment="16" Flags="0" Version="0" />
-    <HavokType Id="268" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="267" Size="12" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="269" Name="hkMatrix3" Parent="0" Optionals="11" Format="3112" SubType="30" Size="48" Alignment="16" Flags="0" Version="0" />
+    <HavokType Id="270" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="269" Size="12" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="269" />
+      </Template>
+    </HavokType>
+    <HavokType Id="271" Name="T*" Parent="0" Optionals="11" Format="6" SubType="267" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
         <Parameter Name="T" Kind="Type" Value="267" />
       </Template>
     </HavokType>
-    <HavokType Id="269" Name="T*" Parent="0" Optionals="11" Format="6" SubType="265" Size="4" Alignment="4" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="T" Kind="Type" Value="265" />
-      </Template>
-    </HavokType>
-    <HavokType Id="270" Name="hkpCylinderShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="0" Hash="1044790330">
+    <HavokType Id="272" Name="hkpCylinderShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="96" Alignment="16" Flags="0" Version="0" Hash="1044790330">
       <Members>
         <Member Name="cylRadius" Offset="20" Type="30" Flags="32" />
         <Member Name="cylBaseRadiusFactorForHeightFieldCollisions" Offset="24" Type="30" Flags="32" />
@@ -1711,86 +1737,86 @@
         <Member Name="perpendicular2" Offset="80" Type="29" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="271" Name="hkpHingeConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="208" Alignment="16" Flags="0" Version="0" Hash="2509303878">
+    <HavokType Id="273" Name="hkpHingeConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="208" Alignment="16" Flags="0" Version="0" Hash="2509303878">
       <Members>
-        <Member Name="atoms" Offset="16" Type="272" Flags="32" />
+        <Member Name="atoms" Offset="16" Type="274" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="272" Name="hkpHingeConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="192" Alignment="16" Flags="0" Version="1" Hash="0">
+    <HavokType Id="274" Name="hkpHingeConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="192" Alignment="16" Flags="0" Version="1" Hash="0">
       <Members>
-        <Member Name="transforms" Offset="0" Type="273" Flags="32" />
-        <Member Name="setupStabilization" Offset="144" Type="234" Flags="32" />
-        <Member Name="2dAng" Offset="160" Type="222" Flags="32" />
-        <Member Name="ballSocket" Offset="164" Type="236" Flags="32" />
+        <Member Name="transforms" Offset="0" Type="275" Flags="32" />
+        <Member Name="setupStabilization" Offset="144" Type="236" Flags="32" />
+        <Member Name="2dAng" Offset="160" Type="224" Flags="32" />
+        <Member Name="ballSocket" Offset="164" Type="238" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="273" Name="hkpSetLocalTransformsConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="0" Hash="0">
+    <HavokType Id="275" Name="hkpSetLocalTransformsConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="transformA" Offset="16" Type="71" Flags="32" />
         <Member Name="transformB" Offset="80" Type="71" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="274" Name="hkpLimitedForceConstraintMotor" Parent="227" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="276" Name="hkpLimitedForceConstraintMotor" Parent="229" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="minForce" Offset="12" Type="30" Flags="32" />
         <Member Name="maxForce" Offset="16" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="275" Name="hkpLimitedHingeConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="256" Alignment="16" Flags="0" Version="0" Hash="2081799019">
+    <HavokType Id="277" Name="hkpLimitedHingeConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="256" Alignment="16" Flags="0" Version="0" Hash="2081799019">
       <Members>
-        <Member Name="atoms" Offset="16" Type="276" Flags="32" />
+        <Member Name="atoms" Offset="16" Type="278" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="276" Name="hkpLimitedHingeConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="240" Alignment="16" Flags="0" Version="1" Hash="0">
+    <HavokType Id="278" Name="hkpLimitedHingeConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="240" Alignment="16" Flags="0" Version="1" Hash="0">
       <Members>
-        <Member Name="transforms" Offset="0" Type="273" Flags="32" />
-        <Member Name="setupStabilization" Offset="144" Type="234" Flags="32" />
-        <Member Name="angMotor" Offset="160" Type="226" Flags="32" />
-        <Member Name="angFriction" Offset="180" Type="224" Flags="32" />
-        <Member Name="angLimit" Offset="192" Type="225" Flags="32" />
-        <Member Name="2dAng" Offset="208" Type="222" Flags="32" />
-        <Member Name="ballSocket" Offset="212" Type="236" Flags="32" />
+        <Member Name="transforms" Offset="0" Type="275" Flags="32" />
+        <Member Name="setupStabilization" Offset="144" Type="236" Flags="32" />
+        <Member Name="angMotor" Offset="160" Type="228" Flags="32" />
+        <Member Name="angFriction" Offset="180" Type="226" Flags="32" />
+        <Member Name="angLimit" Offset="192" Type="227" Flags="32" />
+        <Member Name="2dAng" Offset="208" Type="224" Flags="32" />
+        <Member Name="ballSocket" Offset="212" Type="238" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="277" Name="hkpMoppBvTreeShape" Parent="61" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="2427624761">
+    <HavokType Id="279" Name="hkpMoppBvTreeShape" Parent="61" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="2427624761">
       <Members>
-        <Member Name="child" Offset="48" Type="262" Flags="32" />
+        <Member Name="child" Offset="48" Type="264" Flags="32" />
         <Member Name="childSize" Offset="56" Type="9" Flags="33" />
       </Members>
     </HavokType>
-    <HavokType Id="278" Name="hkpPhantom" Parent="160" Optionals="45" Format="7" SubType="0" Size="164" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="280" Name="hkpPhantom" Parent="160" Optionals="45" Format="7" SubType="0" Size="164" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="overlapListeners" Offset="140" Type="171" Flags="33" />
         <Member Name="phantomListeners" Offset="152" Type="171" Flags="33" />
       </Members>
     </HavokType>
-    <HavokType Id="279" Name="hkpPhysicsData" Parent="2" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="0" Hash="3265552868">
+    <HavokType Id="281" Name="hkpPhysicsData" Parent="2" Optionals="45" Format="7" SubType="0" Size="24" Alignment="4" Flags="0" Version="0" Hash="3265552868">
       <Members>
-        <Member Name="worldCinfo" Offset="8" Type="292" Flags="32" />
-        <Member Name="systems" Offset="12" Type="299" Flags="32" />
+        <Member Name="worldCinfo" Offset="8" Type="294" Flags="32" />
+        <Member Name="systems" Offset="12" Type="301" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="280" Name="hkpWorldCinfo" Parent="2" Optionals="45" Format="7" SubType="0" Size="240" Alignment="16" Flags="0" Version="11" Hash="0">
+    <HavokType Id="282" Name="hkpWorldCinfo" Parent="2" Optionals="45" Format="7" SubType="0" Size="240" Alignment="16" Flags="0" Version="11" Hash="0">
       <Members>
         <Member Name="gravity" Offset="16" Type="29" Flags="32" />
         <Member Name="broadPhaseQuerySize" Offset="32" Type="9" Flags="32" />
         <Member Name="contactRestingVelocity" Offset="36" Type="30" Flags="32" />
-        <Member Name="broadPhaseBorderBehaviour" Offset="40" Type="282" Flags="32" />
+        <Member Name="broadPhaseBorderBehaviour" Offset="40" Type="284" Flags="32" />
         <Member Name="mtPostponeAndSortBroadPhaseBorderCallbacks" Offset="41" Type="16" Flags="32" />
         <Member Name="broadPhaseWorldAabb" Offset="48" Type="59" Flags="32" />
         <Member Name="useKdTree" Offset="80" Type="16" Flags="32" />
         <Member Name="useMultipleTree" Offset="81" Type="16" Flags="32" />
-        <Member Name="treeUpdateType" Offset="82" Type="284" Flags="32" />
+        <Member Name="treeUpdateType" Offset="82" Type="286" Flags="32" />
         <Member Name="autoUpdateKdTree" Offset="83" Type="16" Flags="32" />
         <Member Name="collisionTolerance" Offset="84" Type="30" Flags="32" />
-        <Member Name="collisionFilter" Offset="88" Type="285" Flags="32" />
-        <Member Name="convexListFilter" Offset="92" Type="286" Flags="32" />
+        <Member Name="collisionFilter" Offset="88" Type="287" Flags="32" />
+        <Member Name="convexListFilter" Offset="92" Type="288" Flags="32" />
         <Member Name="expectedMaxLinearVelocity" Offset="96" Type="30" Flags="32" />
         <Member Name="sizeOfToiEventQueue" Offset="100" Type="9" Flags="32" />
         <Member Name="expectedMinPsiDeltaTime" Offset="104" Type="30" Flags="32" />
-        <Member Name="memoryWatchDog" Offset="108" Type="287" Flags="32" />
+        <Member Name="memoryWatchDog" Offset="108" Type="289" Flags="32" />
         <Member Name="broadPhaseNumMarkers" Offset="112" Type="9" Flags="32" />
-        <Member Name="contactPointGeneration" Offset="116" Type="289" Flags="32" />
+        <Member Name="contactPointGeneration" Offset="116" Type="291" Flags="32" />
         <Member Name="allowToSkipConfirmedCallbacks" Offset="117" Type="16" Flags="32" />
         <Member Name="useHybridBroadphase" Offset="118" Type="16" Flags="32" />
         <Member Name="solverTau" Offset="120" Type="30" Flags="32" />
@@ -1822,7 +1848,7 @@
         <Member Name="numToisTillAllowedPenetrationToiHigher" Offset="208" Type="30" Flags="32" />
         <Member Name="numToisTillAllowedPenetrationToiForced" Offset="212" Type="30" Flags="32" />
         <Member Name="enableDeactivation" Offset="216" Type="16" Flags="32" />
-        <Member Name="simulationType" Offset="217" Type="291" Flags="32" />
+        <Member Name="simulationType" Offset="217" Type="293" Flags="32" />
         <Member Name="enableSimulationIslands" Offset="218" Type="16" Flags="32" />
         <Member Name="minDesiredIslandSize" Offset="220" Type="6" Flags="32" />
         <Member Name="processActionsInSingleThread" Offset="224" Type="16" Flags="32" />
@@ -1831,24 +1857,12 @@
         <Member Name="fireCollisionCallbacks" Offset="232" Type="16" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="281" Name="hkpWorldCinfo::BroadPhaseBorderBehaviour" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="283" Name="hkpWorldCinfo::BroadPhaseBorderBehaviour" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="BROADPHASE_BORDER_ASSERT" Value="0" />
         <Preset Name="BROADPHASE_BORDER_FIX_ENTITY" Value="1" />
         <Preset Name="BROADPHASE_BORDER_REMOVE_ENTITY" Value="2" />
         <Preset Name="BROADPHASE_BORDER_DO_NOTHING" Value="3" />
-      </Presets>
-    </HavokType>
-    <HavokType Id="282" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="281" />
-        <Parameter Name="STORAGE" Kind="Type" Value="21" />
-      </Template>
-    </HavokType>
-    <HavokType Id="283" Name="hkpWorldCinfo::TreeUpdateType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
-      <Presets>
-        <Preset Name="REBUILD_ACTIVE" Value="0" />
-        <Preset Name="REBUILD_ALL" Value="1" />
       </Presets>
     </HavokType>
     <HavokType Id="284" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
@@ -1857,40 +1871,38 @@
         <Parameter Name="STORAGE" Kind="Type" Value="21" />
       </Template>
     </HavokType>
-    <HavokType Id="285" Name="T*" Parent="0" Optionals="11" Format="6" SubType="248" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="285" Name="hkpWorldCinfo::TreeUpdateType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+      <Presets>
+        <Preset Name="REBUILD_ACTIVE" Value="0" />
+        <Preset Name="REBUILD_ALL" Value="1" />
+      </Presets>
+    </HavokType>
+    <HavokType Id="286" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="248" />
+        <Parameter Name="ENUM" Kind="Type" Value="285" />
+        <Parameter Name="STORAGE" Kind="Type" Value="21" />
       </Template>
     </HavokType>
-    <HavokType Id="286" Name="T*" Parent="0" Optionals="11" Format="6" SubType="259" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="287" Name="T*" Parent="0" Optionals="11" Format="6" SubType="250" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="259" />
+        <Parameter Name="T" Kind="Type" Value="250" />
       </Template>
     </HavokType>
-    <HavokType Id="287" Name="T*" Parent="0" Optionals="11" Format="6" SubType="78" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="288" Name="T*" Parent="0" Optionals="11" Format="6" SubType="261" Size="4" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="261" />
+      </Template>
+    </HavokType>
+    <HavokType Id="289" Name="T*" Parent="0" Optionals="11" Format="6" SubType="78" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
         <Parameter Name="T" Kind="Type" Value="78" />
       </Template>
     </HavokType>
-    <HavokType Id="288" Name="hkpWorldCinfo::ContactPointGeneration" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="290" Name="hkpWorldCinfo::ContactPointGeneration" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
       <Presets>
         <Preset Name="CONTACT_POINT_ACCEPT_ALWAYS" Value="0" />
         <Preset Name="CONTACT_POINT_REJECT_DUBIOUS" Value="1" />
         <Preset Name="CONTACT_POINT_REJECT_MANY" Value="2" />
-      </Presets>
-    </HavokType>
-    <HavokType Id="289" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="ENUM" Kind="Type" Value="288" />
-        <Parameter Name="STORAGE" Kind="Type" Value="21" />
-      </Template>
-    </HavokType>
-    <HavokType Id="290" Name="hkpWorldCinfo::SimulationType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
-      <Presets>
-        <Preset Name="SIMULATION_TYPE_INVALID" Value="0" />
-        <Preset Name="SIMULATION_TYPE_DISCRETE" Value="1" />
-        <Preset Name="SIMULATION_TYPE_CONTINUOUS" Value="2" />
-        <Preset Name="SIMULATION_TYPE_MULTITHREADED" Value="3" />
       </Presets>
     </HavokType>
     <HavokType Id="291" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
@@ -1899,35 +1911,39 @@
         <Parameter Name="STORAGE" Kind="Type" Value="21" />
       </Template>
     </HavokType>
-    <HavokType Id="292" Name="T*" Parent="0" Optionals="11" Format="6" SubType="280" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="292" Name="hkpWorldCinfo::SimulationType" Parent="0" Optionals="9" Format="33284" SubType="0" Size="4" Alignment="4" Flags="0" Version="0">
+      <Presets>
+        <Preset Name="SIMULATION_TYPE_INVALID" Value="0" />
+        <Preset Name="SIMULATION_TYPE_DISCRETE" Value="1" />
+        <Preset Name="SIMULATION_TYPE_CONTINUOUS" Value="2" />
+        <Preset Name="SIMULATION_TYPE_MULTITHREADED" Value="3" />
+      </Presets>
+    </HavokType>
+    <HavokType Id="293" Name="hkEnum" Parent="0" Optionals="9" Format="8708" SubType="0" Size="1" Alignment="1" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="280" />
+        <Parameter Name="ENUM" Kind="Type" Value="292" />
+        <Parameter Name="STORAGE" Kind="Type" Value="21" />
       </Template>
     </HavokType>
-    <HavokType Id="293" Name="hkpPhysicsSystem" Parent="2" Optionals="45" Format="7" SubType="0" Size="68" Alignment="4" Flags="0" Version="0" Hash="4285680663">
+    <HavokType Id="294" Name="T*" Parent="0" Optionals="11" Format="6" SubType="282" Size="4" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="282" />
+      </Template>
+    </HavokType>
+    <HavokType Id="295" Name="hkpPhysicsSystem" Parent="2" Optionals="45" Format="7" SubType="0" Size="68" Alignment="4" Flags="0" Version="0" Hash="4285680663">
       <Members>
         <Member Name="rigidBodies" Offset="8" Type="211" Flags="32" />
         <Member Name="constraints" Offset="20" Type="198" Flags="32" />
-        <Member Name="actions" Offset="32" Type="295" Flags="32" />
-        <Member Name="phantoms" Offset="44" Type="297" Flags="32" />
+        <Member Name="actions" Offset="32" Type="297" Flags="32" />
+        <Member Name="phantoms" Offset="44" Type="299" Flags="32" />
         <Member Name="name" Offset="56" Type="50" Flags="32" />
         <Member Name="userData" Offset="60" Type="15" Flags="32" />
         <Member Name="active" Offset="64" Type="16" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="294" Name="T*" Parent="0" Optionals="11" Format="6" SubType="223" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="296" Name="T*" Parent="0" Optionals="11" Format="6" SubType="225" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="223" />
-      </Template>
-    </HavokType>
-    <HavokType Id="295" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="294" Size="12" Alignment="4" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="T" Kind="Type" Value="294" />
-      </Template>
-    </HavokType>
-    <HavokType Id="296" Name="T*" Parent="0" Optionals="11" Format="6" SubType="278" Size="4" Alignment="4" Flags="0" Version="0">
-      <Template>
-        <Parameter Name="T" Kind="Type" Value="278" />
+        <Parameter Name="T" Kind="Type" Value="225" />
       </Template>
     </HavokType>
     <HavokType Id="297" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="296" Size="12" Alignment="4" Flags="0" Version="0">
@@ -1935,9 +1951,9 @@
         <Parameter Name="T" Kind="Type" Value="296" />
       </Template>
     </HavokType>
-    <HavokType Id="298" Name="T*" Parent="0" Optionals="11" Format="6" SubType="293" Size="4" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="298" Name="T*" Parent="0" Optionals="11" Format="6" SubType="280" Size="4" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="293" />
+        <Parameter Name="T" Kind="Type" Value="280" />
       </Template>
     </HavokType>
     <HavokType Id="299" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="298" Size="12" Alignment="4" Flags="0" Version="0">
@@ -1945,7 +1961,17 @@
         <Parameter Name="T" Kind="Type" Value="298" />
       </Template>
     </HavokType>
-    <HavokType Id="300" Name="hkpPositionConstraintMotor" Parent="274" Optionals="45" Format="7" SubType="0" Size="36" Alignment="4" Flags="0" Version="0" Hash="1955574531">
+    <HavokType Id="300" Name="T*" Parent="0" Optionals="11" Format="6" SubType="295" Size="4" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="295" />
+      </Template>
+    </HavokType>
+    <HavokType Id="301" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="300" Size="12" Alignment="4" Flags="0" Version="0">
+      <Template>
+        <Parameter Name="T" Kind="Type" Value="300" />
+      </Template>
+    </HavokType>
+    <HavokType Id="302" Name="hkpPositionConstraintMotor" Parent="276" Optionals="45" Format="7" SubType="0" Size="36" Alignment="4" Flags="0" Version="0" Hash="1955574531">
       <Members>
         <Member Name="tau" Offset="20" Type="30" Flags="32" />
         <Member Name="damping" Offset="24" Type="30" Flags="32" />
@@ -1953,39 +1979,39 @@
         <Member Name="constantRecoveryVelocity" Offset="32" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="301" Name="hkpRagdollConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="352" Alignment="16" Flags="0" Version="0" Hash="2411060521">
+    <HavokType Id="303" Name="hkpRagdollConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="352" Alignment="16" Flags="0" Version="0" Hash="2411060521">
       <Members>
-        <Member Name="atoms" Offset="16" Type="302" Flags="32" />
+        <Member Name="atoms" Offset="16" Type="304" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="302" Name="hkpRagdollConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="336" Alignment="16" Flags="0" Version="1" Hash="0">
+    <HavokType Id="304" Name="hkpRagdollConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="336" Alignment="16" Flags="0" Version="1" Hash="0">
       <Members>
-        <Member Name="transforms" Offset="0" Type="273" Flags="32" />
-        <Member Name="setupStabilization" Offset="144" Type="234" Flags="32" />
-        <Member Name="ragdollMotors" Offset="160" Type="303" Flags="32" />
-        <Member Name="angFriction" Offset="240" Type="224" Flags="32" />
-        <Member Name="twistLimit" Offset="252" Type="305" Flags="32" />
-        <Member Name="coneLimit" Offset="272" Type="251" Flags="32" />
-        <Member Name="planesLimit" Offset="292" Type="251" Flags="32" />
-        <Member Name="ballSocket" Offset="312" Type="236" Flags="32" />
+        <Member Name="transforms" Offset="0" Type="275" Flags="32" />
+        <Member Name="setupStabilization" Offset="144" Type="236" Flags="32" />
+        <Member Name="ragdollMotors" Offset="160" Type="305" Flags="32" />
+        <Member Name="angFriction" Offset="240" Type="226" Flags="32" />
+        <Member Name="twistLimit" Offset="252" Type="307" Flags="32" />
+        <Member Name="coneLimit" Offset="272" Type="253" Flags="32" />
+        <Member Name="planesLimit" Offset="292" Type="253" Flags="32" />
+        <Member Name="ballSocket" Offset="312" Type="238" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="303" Name="hkpRagdollMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="0">
+    <HavokType Id="305" Name="hkpRagdollMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="16" Flags="32" />
         <Member Name="initializedOffset" Offset="4" Type="5" Flags="32" />
         <Member Name="previousTargetAnglesOffset" Offset="6" Type="5" Flags="32" />
-        <Member Name="target_bRca" Offset="16" Type="267" Flags="32" />
-        <Member Name="motors" Offset="64" Type="304" Flags="32" />
+        <Member Name="target_bRca" Offset="16" Type="269" Flags="32" />
+        <Member Name="motors" Offset="64" Type="306" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="304" Name="T[N]" Parent="0" Optionals="11" Format="776" SubType="230" Size="12" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="306" Name="T[N]" Parent="0" Optionals="11" Format="776" SubType="232" Size="12" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="230" />
+        <Parameter Name="T" Kind="Type" Value="232" />
         <Parameter Name="N" Kind="Value" Value="3" />
       </Template>
     </HavokType>
-    <HavokType Id="305" Name="hkpTwistLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="307" Name="hkpTwistLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
         <Member Name="twistAxis" Offset="3" Type="7" Flags="32" />
@@ -1995,16 +2021,16 @@
         <Member Name="angularLimitsTauFactor" Offset="16" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="306" Name="hkpSimpleMeshShape" Parent="13" Optionals="45" Format="7" SubType="0" Size="68" Alignment="4" Flags="0" Version="1" Hash="380880913">
+    <HavokType Id="308" Name="hkpSimpleMeshShape" Parent="13" Optionals="45" Format="7" SubType="0" Size="68" Alignment="4" Flags="0" Version="1" Hash="380880913">
       <Members>
         <Member Name="vertices" Offset="24" Type="42" Flags="32" />
-        <Member Name="triangles" Offset="36" Type="308" Flags="32" />
+        <Member Name="triangles" Offset="36" Type="310" Flags="32" />
         <Member Name="materialIndices" Offset="48" Type="43" Flags="32" />
         <Member Name="radius" Offset="60" Type="30" Flags="32" />
         <Member Name="weldingType" Offset="64" Type="7" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="307" Name="hkpSimpleMeshShapeTriangle" Parent="0" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="0">
+    <HavokType Id="309" Name="hkpSimpleMeshShapeTriangle" Parent="0" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="1" Hash="0">
       <Members>
         <Member Name="a" Offset="0" Type="9" Flags="32" />
         <Member Name="b" Offset="4" Type="9" Flags="32" />
@@ -2012,30 +2038,30 @@
         <Member Name="weldingInfo" Offset="12" Type="4" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="308" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="307" Size="12" Alignment="4" Flags="0" Version="0">
+    <HavokType Id="310" Name="hkArray" Parent="0" Optionals="11" Format="8" SubType="309" Size="12" Alignment="4" Flags="0" Version="0">
       <Template>
-        <Parameter Name="T" Kind="Type" Value="307" />
+        <Parameter Name="T" Kind="Type" Value="309" />
       </Template>
     </HavokType>
-    <HavokType Id="309" Name="hkpSphereShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="127261178">
+    <HavokType Id="311" Name="hkpSphereShape" Parent="35" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="127261178">
       <Members>
         <Member Name="pad16" Offset="20" Type="169" Flags="33" />
       </Members>
     </HavokType>
-    <HavokType Id="310" Name="hkpStiffSpringConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="0">
+    <HavokType Id="312" Name="hkpStiffSpringConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="8" Alignment="4" Flags="0" Version="0" Hash="0">
       <Members>
         <Member Name="length" Offset="4" Type="30" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="311" Name="hkpStiffSpringConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="3113182964">
+    <HavokType Id="313" Name="hkpStiffSpringConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="3113182964">
       <Members>
-        <Member Name="atoms" Offset="16" Type="312" Flags="32" />
+        <Member Name="atoms" Offset="16" Type="314" Flags="32" />
       </Members>
     </HavokType>
-    <HavokType Id="312" Name="hkpStiffSpringConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="0">
+    <HavokType Id="314" Name="hkpStiffSpringConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="64" Alignment="16" Flags="0" Version="0" Hash="0">
       <Members>
-        <Member Name="pivots" Offset="0" Type="233" Flags="32" />
-        <Member Name="spring" Offset="48" Type="310" Flags="32" />
+        <Member Name="pivots" Offset="0" Type="235" Flags="32" />
+        <Member Name="spring" Offset="48" Type="312" Flags="32" />
       </Members>
     </HavokType>
   </Types>

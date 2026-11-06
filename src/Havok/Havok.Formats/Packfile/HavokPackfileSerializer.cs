@@ -36,6 +36,11 @@ public sealed class HavokPackfileSerializer
 
     public IHavokClassSet ClassSet { get; }
 
+    /// <summary>
+    /// The objects of the last file read, by their offset in its data section (for comparisons with other readers).
+    /// </summary>
+    public IReadOnlyDictionary<uint, object> LastObjects { get; private set; } = new Dictionary<uint, object>();
+
     private HavokTypeRegistry Registry => ClassSet.Registry;
 
     /// <summary>
@@ -187,6 +192,7 @@ public sealed class HavokPackfileSerializer
         };
         object root = ReadObject(state, (uint)contentsSection, (uint)contentsOffset)
                       ?? throw new InvalidDataException("The root object could not be read.");
+        LastObjects = state.Objects;
 
         int sectionsStart = version >= 0x0B ? 0x40 + br.GetInt16(0x3E) : 0x40;
         Section? types = sections.FirstOrDefault(s => s.Tag == "__types__");

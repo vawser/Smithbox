@@ -280,7 +280,9 @@ public static class DumpFill
             }
 
             // lay the borrowed classes out for the target, on the target's (and other borrowed) classes
-            var r = new Relayout(target.PointerSize, target.Itanium, Find, target.Classes.ContainsKey);
+            // the target's own classes, and borrowed ones kept verbatim, are laid out as recorded when others sit on them
+            bool Verbatim(string n) => unreliable.Contains(n) && borrowed[n].Donor.PointerSize == target.PointerSize;
+            var r = new Relayout(target.PointerSize, target.Itanium, Find, n => target.Classes.ContainsKey(n) || Verbatim(n));
             var written = new List<string>();
             foreach (var (name, (cls, donor)) in borrowed.OrderBy(x => x.Key, StringComparer.Ordinal))
             {

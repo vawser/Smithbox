@@ -1,4 +1,4 @@
-<class name="hkpBallAndSocketConstraintData" version="0" signature="0x77aabbef" size="96" parent="hkpConstraintData" borrowed="DS1 hk_2010">
+<class name="hkpBallAndSocketConstraintData" version="0" signature="0x77aabbef" size="80" parent="hkpConstraintData" manual="Fitted to DeS bytes (o2201.hkx): 16-aligned atoms at 16, 64 bytes (no setupStabilization atom), so 80 bytes in all.">
   <members>
     <member name="atoms" offset="16" ctype="hkpBallAndSocketConstraintDataAtoms" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="ALIGN_16" />
   </members>

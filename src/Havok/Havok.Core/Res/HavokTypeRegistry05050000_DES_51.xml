@@ -8,10 +8,10 @@
       <Member Name="blendHint" Offset="12" Type="87" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="143" Name="hkaInterleavedSkeletalAnimation" Parent="75" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="0" Hash="724465738">
+  <HavokType Id="145" Name="hkaInterleavedSkeletalAnimation" Parent="75" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="0" Hash="724465738">
     <Members>
       <Member Name="transforms" Offset="32" Type="94" Flags="32" />
-      <Member Name="floats" Offset="40" Type="144" Flags="32" />
+      <Member Name="floats" Offset="40" Type="146" Flags="32" />
     </Members>
   </HavokType>
   <HavokType Id="75" Name="hkaSkeletalAnimation" Parent="2" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="1537209051">
@@ -31,11 +31,11 @@
       <Member Name="referencePose" Offset="20" Type="94" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="203" Name="hkaWaveletSkeletalAnimation" Parent="75" Optionals="45" Format="7" SubType="0" Size="92" Alignment="4" Flags="0" Version="0" Hash="569360225">
+  <HavokType Id="205" Name="hkaWaveletSkeletalAnimation" Parent="75" Optionals="45" Format="7" SubType="0" Size="92" Alignment="4" Flags="0" Version="0" Hash="569360225">
     <Members>
       <Member Name="numberOfPoses" Offset="32" Type="9" Flags="32" />
       <Member Name="blockSize" Offset="36" Type="9" Flags="32" />
-      <Member Name="qFormat" Offset="40" Type="204" Flags="32" />
+      <Member Name="qFormat" Offset="40" Type="206" Flags="32" />
       <Member Name="staticMaskIdx" Offset="60" Type="6" Flags="32" />
       <Member Name="staticDOFsIdx" Offset="64" Type="6" Flags="32" />
       <Member Name="blockIndexIdx" Offset="68" Type="6" Flags="32" />
@@ -45,12 +45,12 @@
       <Member Name="dataBuffer" Offset="84" Type="8" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="205" Name="hkp2dAngConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="4" Alignment="2" Flags="0" Version="0" Hash="517030414">
+  <HavokType Id="207" Name="hkp2dAngConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="4" Alignment="2" Flags="0" Version="0" Hash="517030414">
     <Members>
       <Member Name="freeRotationAxis" Offset="2" Type="7" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="207" Name="hkpAngFrictionConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="3735968267">
+  <HavokType Id="209" Name="hkpAngFrictionConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="3735968267">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
       <Member Name="firstFrictionAxis" Offset="3" Type="7" Flags="32" />
@@ -58,7 +58,7 @@
       <Member Name="maxFrictionTorque" Offset="8" Type="19" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="208" Name="hkpAngLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="0" Hash="2150644099">
+  <HavokType Id="210" Name="hkpAngLimitConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="16" Alignment="4" Flags="0" Version="0" Hash="2150644099">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
       <Member Name="limitAxis" Offset="3" Type="7" Flags="32" />
@@ -67,7 +67,7 @@
       <Member Name="angularLimitsTauFactor" Offset="12" Type="19" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="209" Name="hkpAngMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="946030758">
+  <HavokType Id="211" Name="hkpAngMotorConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="946030758">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="16" Flags="32" />
       <Member Name="motorAxis" Offset="3" Type="7" Flags="32" />
@@ -75,17 +75,17 @@
       <Member Name="previousTargetAngleOffset" Offset="6" Type="5" Flags="32" />
       <Member Name="correspondingAngLimitSolverResultOffset" Offset="8" Type="5" Flags="32" />
       <Member Name="targetAngle" Offset="12" Type="19" Flags="32" />
-      <Member Name="motor" Offset="16" Type="213" Flags="32" />
+      <Member Name="motor" Offset="16" Type="215" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="219" Name="hkpBallSocketConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="3637041050" />
+  <HavokType Id="219" Name="hkpBallSocketConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="3637041050" />
   <HavokType Id="228" Name="hkpCollisionFilter" Parent="2" Optionals="45" Format="7" SubType="0" Size="48" Alignment="4" Flags="0" Version="0" Hash="621733519">
     <Members>
       <Member Name="type" Offset="32" Type="230" Flags="32" />
       <Member Name="pad" Offset="36" Type="53" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="231" Name="hkpConeLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="723638716">
+  <HavokType Id="231" Name="hkpConeLimitConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="723638716">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
       <Member Name="twistAxisInA" Offset="3" Type="7" Flags="32" />
@@ -97,12 +97,12 @@
       <Member Name="angularLimitsTauFactor" Offset="16" Type="19" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="184" Name="hkpConstraintAtom" Parent="0" Optionals="45" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="897024494">
+  <HavokType Id="186" Name="hkpConstraintAtom" Parent="0" Optionals="45" Format="7" SubType="0" Size="2" Alignment="2" Flags="0" Version="0" Hash="897024494">
     <Members>
-      <Member Name="type" Offset="0" Type="186" Flags="32" />
+      <Member Name="type" Offset="0" Type="188" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="181" Name="hkpConstraintData" Parent="2" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="4182858634">
+  <HavokType Id="183" Name="hkpConstraintData" Parent="2" Optionals="45" Format="7" SubType="0" Size="12" Alignment="4" Flags="0" Version="0" Hash="4182858634">
     <Members>
       <Member Name="userData" Offset="8" Type="15" Flags="32" />
     </Members>
@@ -123,7 +123,7 @@
       <Member Name="connectivity" Offset="92" Type="249" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="252" Name="hkpLimitedHingeConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="224" Alignment="16" Flags="0" Version="0" Hash="3551522426">
+  <HavokType Id="252" Name="hkpLimitedHingeConstraintData" Parent="183" Optionals="45" Format="7" SubType="0" Size="224" Alignment="16" Flags="0" Version="0" Hash="3551522426">
     <Members>
       <Member Name="atoms" Offset="16" Type="253" Flags="32" />
     </Members>
@@ -131,19 +131,19 @@
   <HavokType Id="253" Name="hkpLimitedHingeConstraintData::Atoms" Parent="0" Optionals="45" Format="7" SubType="0" Size="208" Alignment="16" Flags="0" Version="0" Hash="3200143979">
     <Members>
       <Member Name="transforms" Offset="0" Type="254" Flags="32" />
-      <Member Name="angMotor" Offset="144" Type="209" Flags="32" />
-      <Member Name="angFriction" Offset="164" Type="207" Flags="32" />
-      <Member Name="angLimit" Offset="176" Type="208" Flags="32" />
-      <Member Name="2dAng" Offset="192" Type="205" Flags="32" />
+      <Member Name="angMotor" Offset="144" Type="211" Flags="32" />
+      <Member Name="angFriction" Offset="164" Type="209" Flags="32" />
+      <Member Name="angLimit" Offset="176" Type="210" Flags="32" />
+      <Member Name="2dAng" Offset="192" Type="207" Flags="32" />
       <Member Name="ballSocket" Offset="196" Type="219" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="183" Name="hkpModifierConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="2210754350">
+  <HavokType Id="185" Name="hkpModifierConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="32" Alignment="4" Flags="0" Version="0" Hash="2210754350">
     <Members>
       <Member Name="modifierAtomSize" Offset="16" Type="4" Flags="32" />
       <Member Name="childSize" Offset="18" Type="4" Flags="32" />
-      <Member Name="child" Offset="20" Type="187" Flags="32" />
-      <Member Name="pad" Offset="24" Type="176" Flags="32" />
+      <Member Name="child" Offset="20" Type="189" Flags="32" />
+      <Member Name="pad" Offset="24" Type="178" Flags="32" />
     </Members>
   </HavokType>
   <HavokType Id="58" Name="hkpMoppCode" Parent="2" Optionals="45" Format="7" SubType="0" Size="48" Alignment="16" Flags="0" Version="0" Hash="3171514774">
@@ -152,7 +152,7 @@
       <Member Name="data" Offset="32" Type="41" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="283" Name="hkpRagdollConstraintData" Parent="181" Optionals="45" Format="7" SubType="0" Size="320" Alignment="16" Flags="0" Version="0" Hash="2150604285">
+  <HavokType Id="283" Name="hkpRagdollConstraintData" Parent="183" Optionals="45" Format="7" SubType="0" Size="320" Alignment="16" Flags="0" Version="0" Hash="2150604285">
     <Members>
       <Member Name="atoms" Offset="16" Type="284" Flags="32" />
     </Members>
@@ -161,14 +161,14 @@
     <Members>
       <Member Name="transforms" Offset="0" Type="254" Flags="32" />
       <Member Name="ragdollMotors" Offset="144" Type="285" Flags="32" />
-      <Member Name="angFriction" Offset="224" Type="207" Flags="32" />
+      <Member Name="angFriction" Offset="224" Type="209" Flags="32" />
       <Member Name="twistLimit" Offset="236" Type="288" Flags="32" />
       <Member Name="coneLimit" Offset="256" Type="231" Flags="32" />
       <Member Name="planesLimit" Offset="276" Type="231" Flags="32" />
       <Member Name="ballSocket" Offset="296" Type="219" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="285" Name="hkpRagdollMotorConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="4244175184">
+  <HavokType Id="285" Name="hkpRagdollMotorConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="0" Hash="4244175184">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="16" Flags="32" />
       <Member Name="initializedOffset" Offset="4" Type="5" Flags="32" />
@@ -177,22 +177,13 @@
       <Member Name="motors" Offset="64" Type="287" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="254" Name="hkpSetLocalTransformsConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="0" Hash="3753005995">
+  <HavokType Id="254" Name="hkpSetLocalTransformsConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="144" Alignment="16" Flags="0" Version="0" Hash="3753005995">
     <Members>
       <Member Name="transformA" Offset="16" Type="62" Flags="32" />
       <Member Name="transformB" Offset="80" Type="62" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="289" Name="hkpSimpleMeshShape" Parent="13" Optionals="45" Format="7" SubType="0" Size="68" Alignment="4" Flags="0" Version="1" Hash="2420168634">
-    <Members>
-      <Member Name="vertices" Offset="24" Type="39" Flags="32" />
-      <Member Name="triangles" Offset="36" Type="291" Flags="32" />
-      <Member Name="materialIndices" Offset="48" Type="41" Flags="32" />
-      <Member Name="radius" Offset="60" Type="19" Flags="32" />
-      <Member Name="weldingType" Offset="64" Type="7" Flags="32" />
-    </Members>
-  </HavokType>
-  <HavokType Id="288" Name="hkpTwistLimitConstraintAtom" Parent="184" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="1093080282">
+  <HavokType Id="288" Name="hkpTwistLimitConstraintAtom" Parent="186" Optionals="45" Format="7" SubType="0" Size="20" Alignment="4" Flags="0" Version="0" Hash="1093080282">
     <Members>
       <Member Name="isEnabled" Offset="2" Type="7" Flags="32" />
       <Member Name="twistAxis" Offset="3" Type="7" Flags="32" />

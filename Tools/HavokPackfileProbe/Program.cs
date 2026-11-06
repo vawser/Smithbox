@@ -46,7 +46,15 @@ else
     var bnd = DCX.Is(container) ? DCX.Decompress(container).ToArray() : container.ToArray();
     binder = BND4.Is(bnd) ? BND4.Read(bnd) : BND3.Read(bnd);
 }
-var file = binder.Files.First(f => Regex.IsMatch(f.Name, args[2]));
+// "outer>inner": a file inside a binder inside the container (an objbnd's anibnd)
+var patterns = args[2].Split('>');
+BinderFile file = binder.Files.First(f => Regex.IsMatch(f.Name, patterns[0]));
+foreach (var pattern in patterns.Skip(1))
+{
+    var nested = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+    IBinder inner = BND4.Is(nested) ? BND4.Read(nested) : BND3.Read(nested);
+    file = inner.Files.First(f => Regex.IsMatch(f.Name, pattern));
+}
 var original = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
 
 if (typesMode)

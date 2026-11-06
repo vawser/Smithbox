@@ -1,7 +1,0 @@
-<class name="hkpSetupStabilizationAtom" version="1" signature="0x00000000" size="16" parent="hkpConstraintAtom" borrowed="DS1 hk_2010">
-  <members>
-    <member name="enabled" offset="2" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="maxAngle" offset="4" vtype="TYPE_REAL" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
-    <member name="padding" offset="8" vtype="TYPE_UINT8" vsubtype="TYPE_VOID" arrsize="8" flags="FLAGS_NONE" />
-  </members>
-</class>

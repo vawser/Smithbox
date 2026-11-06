@@ -19,12 +19,6 @@ internal sealed class hkpBallAndSocketConstraintDataAtomsData : Havok.Formats.Ha
                 value = instance.m_pivots;
                 return true;
             }
-            case "m_setupStabilization":
-            case "setupStabilization":
-            {
-                value = instance.m_setupStabilization;
-                return true;
-            }
             case "m_ballSocket":
             case "ballSocket":
             {
@@ -45,13 +39,6 @@ internal sealed class hkpBallAndSocketConstraintDataAtomsData : Havok.Formats.Ha
             {
                 if (value is not Havok.hk55.hkpSetLocalTranslationsConstraintAtom castValue) return false;
                 instance.m_pivots = castValue;
-                return true;
-            }
-            case "m_setupStabilization":
-            case "setupStabilization":
-            {
-                if (value is not Havok.hk55.hkpSetupStabilizationAtom castValue) return false;
-                instance.m_setupStabilization = castValue;
                 return true;
             }
             case "m_ballSocket":

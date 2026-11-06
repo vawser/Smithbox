@@ -1,0 +1,16 @@
+<class name="hkaDeltaCompressedSkeletalAnimation" version="0" signature="0x83c6794c" size="104" parent="hkaSkeletalAnimation" manual="Fitted to DeS bytes (o9222 a00_0000.hkx; no DeS file describes it). Checks: 91 poses for 3 s; quantizedDataIdx + quantizedDataSize = dataBuffer's count; 11 * totalBlockSize + lastBlockSize = quantizedDataSize (12 blocks of 8 poses); staticMaskIdx + 2 * tracks = staticDOFsIdx. staticMaskSize and staticDOFsSize hold pointer-like values (0x1E65....) in the files, apparently left uninitialized by the exporter.">
+  <members>
+    <member name="numberOfPoses" offset="36" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="blockSize" offset="40" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="qFormat" offset="44" ctype="hkaDeltaCompressedSkeletalAnimationQuantizationFormat" vtype="TYPE_STRUCT" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataIdx" offset="64" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="quantizedDataSize" offset="68" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticMaskIdx" offset="72" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticMaskSize" offset="76" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticDOFsIdx" offset="80" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="staticDOFsSize" offset="84" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="totalBlockSize" offset="88" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="lastBlockSize" offset="92" vtype="TYPE_UINT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" />
+    <member name="dataBuffer" offset="96" vtype="TYPE_SIMPLEARRAY" vsubtype="TYPE_UINT8" arrsize="0" flags="FLAGS_NONE" />
+  </members>
+</class>

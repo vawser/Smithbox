@@ -11,8 +11,6 @@ public class hkpBallAndSocketConstraintData : hkpConstraintData
     {
         public hkpSetLocalTranslationsConstraintAtom m_pivots = new();
 
-        public hkpSetupStabilizationAtom m_setupStabilization = new();
-
         public hkpBallSocketConstraintAtom m_ballSocket = new();
 
     }
