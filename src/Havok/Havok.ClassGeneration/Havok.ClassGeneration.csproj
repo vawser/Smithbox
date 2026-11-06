@@ -2,8 +2,9 @@
 
     <!--
         Generates an SDK class set for the unified Havok library (classes, accessors, identity type map) from a type registry.
-        The 2018 sources are compiled in directly so the generator can reuse the naming and placement of the 2018 classes,
-        without depending on the code it produces.
+        Registries load through Havok.Core. Types that also exist in Havok.hk2018 keep its naming and placement, so the
+        generator references the current hk2018 build: regenerate into a scratch folder, diff, then swap Autogen, so
+        Havok.hk2018 still builds while it runs. (HKLib's 2018 sources served this until Phase 7.)
     -->
 
     <PropertyGroup>
@@ -17,22 +18,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="..\HKLib\GlobalUsing.cs" Link="HKLib\GlobalUsing.cs" />
-        <Compile Include="..\HKLib\ValueTypes\**\*.cs" Link="HKLib\ValueTypes\%(RecursiveDir)%(Filename)%(Extension)" />
-        <Compile Include="..\HKLib\hk2018\**\*.cs" Exclude="..\HKLib\hk2018\Autogen\UnitTest\**" Link="HKLib\hk2018\%(RecursiveDir)%(Filename)%(Extension)" />
-        <Compile Include="..\HKLib.Reflection\HavokType.cs" Link="HKLib.Reflection\HavokType.cs" />
-        <Compile Include="..\HKLib.Reflection\hk2018\**\*.cs" Link="HKLib.Reflection\hk2018\%(RecursiveDir)%(Filename)%(Extension)" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <!-- loaded by the static 2018 type registry -->
-        <Content Include="..\HKLib.Reflection\Res\HavokTypeRegistry20180100.xml" Link="Res\HavokTypeRegistry20180100.xml">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
-
-    <ItemGroup>
+        <ProjectReference Include="..\Havok.Core\Havok.Core.csproj" />
         <ProjectReference Include="..\Havok.Shared\Havok.Shared.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2018\Havok.hk2018.csproj" />
     </ItemGroup>
 
 </Project>

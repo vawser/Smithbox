@@ -15,9 +15,8 @@
     <ProjectReference Include="..\..\src\Andre\Andre.IO\Andre.IO.csproj" />
     <ProjectReference Include="..\..\src\Andre\Andre.Formats\Andre.Formats.csproj" />
     <ProjectReference Include="..\..\src\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKX2\Havok.HKX2.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKLib\Havok.HKLib.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKLib.Serialization\Havok.HKLib.Serialization.csproj" />
+    <!-- Behaviours are read through the unified Havok library (HKX2 and HKLib until Phase 7) -->
+    <ProjectReference Include="..\..\src\Havok\Havok.Files\Havok.Files.csproj" />
   </ItemGroup>
 
   <!-- Oodle, for the KRAK compressed files of the later games -->

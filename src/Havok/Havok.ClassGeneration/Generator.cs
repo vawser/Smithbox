@@ -1,17 +1,16 @@
 using System.Text.RegularExpressions;
-using HKLib.Reflection.hk2018;
-using HKLib.ValueTypes;
+using Havok.Reflection;
 
 namespace Havok.ClassGeneration;
 
 /// <summary>
-/// Builds the declarations of an SDK from its type registry. Where a type also exists in HKLib's 2018 classes, the naming and
+/// Builds the declarations of an SDK from its type registry. Where a type also exists in the 2018 classes (Havok.hk2018), the naming and
 /// placement of the 2018 C# type is reused so code written against hk2018 reads the same against every SDK. Members, enum
 /// values (when the registry has them) and base types always come from the SDK's registry.
 /// </summary>
 internal class Generator
 {
-    private const string Namespace2018 = "HKLib.hk2018";
+    private const string Namespace2018 = "Havok.hk2018";
 
     // classes with hand written members in the SDK project's Manual folder
     private static HashSet<string> PartialClasses => Options.PartialClasses;
@@ -57,7 +56,7 @@ internal class Generator
         foreach (HavokType type in registry2018.Types.Concat(registry.Types))
         {
             if (type.TemplateParameters.Count == 0 || type.Type is not { IsConstructedGenericType: true } clrType ||
-                !IsHKLib(clrType)) continue;
+                !Is2018(clrType)) continue;
 
             Type definition = clrType.GetGenericTypeDefinition();
             if (!_genericDefinitions.TryGetValue(type.Name, out List<Type>? definitions))
@@ -167,7 +166,7 @@ internal class Generator
         Type? clrType = GetClrType(type);
         if (clrType is not null)
         {
-            if (!IsHKLib(clrType) || IsManual(clrType)) return null;
+            if (!Is2018(clrType) || IsManual(clrType)) return null;
             decl = GetClrDecl(clrType.IsGenericType ? clrType.GetGenericTypeDefinition() : clrType);
         }
         else
@@ -185,7 +184,7 @@ internal class Generator
     {
         if (_declsByIdentity.TryGetValue(type.Identity, out Decl? decl)) return decl;
 
-        if (type.Type is { IsEnum: true } clrType && IsHKLib(clrType))
+        if (type.Type is { IsEnum: true } clrType && Is2018(clrType))
         {
             decl = GetClrDecl(clrType);
         }
@@ -241,11 +240,12 @@ internal class Generator
         }
         else
         {
-            // interfaces shared across Havok versions, added by hand to the 2018 classes
+            // the marker interfaces shared across Havok versions. Only these: the 2018 classes also implement the
+            // Havok.Shared views (IHavokSkeleton...) in their Manual partials, which each SDK adds by hand
             Type[] baseInterfaces = definition.BaseType?.GetInterfaces() ?? Array.Empty<Type>();
             foreach (Type iface in definition.GetInterfaces())
             {
-                if (iface.Namespace != "Havok.Shared" || baseInterfaces.Contains(iface)) continue;
+                if (!SharedMarkers.Contains(iface) || baseInterfaces.Contains(iface)) continue;
                 decl.SharedInterfaces.Add(iface.Name);
             }
         }
@@ -440,7 +440,7 @@ internal class Generator
         }
 
         // hkPropertyBag is written by hand, as in HKLib: an empty class (its only field isn't serialized)
-        if (type.Identity == "hkPropertyBag" || type.Type == typeof(HKLib.hk2018.hkPropertyBag))
+        if (type.Identity == "hkPropertyBag" || type.Type == typeof(Havok.hk2018.hkPropertyBag))
         {
             return new TypeInfo(Shape.Init, "`hkPropertyBag`");
         }
@@ -469,7 +469,7 @@ internal class Generator
             return new TypeInfo(Shape.Enum, Mark(GetEnumDecl(enumType))) { Storage = storage };
         }
 
-        if (type.Type is { } enumClrType && IsHKLib(enumClrType))
+        if (type.Type is { } enumClrType && Is2018(enumClrType))
         {
             return new TypeInfo(Shape.Enum, Mark(GetClrDecl(enumClrType))) { Storage = storage };
         }
@@ -495,7 +495,7 @@ internal class Generator
         }
 
         // void pointers, e.g. hkRefVariant, use the type 2018 mapped them to
-        if (type.Type is { } clrType && (IsHKLib(clrType) || clrType == typeof(object)))
+        if (type.Type is { } clrType && (Is2018(clrType) || clrType == typeof(object)))
         {
             TypeInfo clr = RenderClr(clrType);
             return new TypeInfo(Shape.Nullable, clr.Text.TrimEnd('?') + "?");
@@ -584,7 +584,7 @@ internal class Generator
 
         if (IsManual(clrType)) return new TypeInfo(Shape.Nullable, "`" + clrType.Name + "`?");
 
-        if (IsHKLib(clrType))
+        if (Is2018(clrType))
         {
             Decl decl = GetClrDecl(clrType.IsGenericType ? clrType.GetGenericTypeDefinition() : clrType);
             string text = Mark(decl);
@@ -650,12 +650,19 @@ internal class Generator
 
     #region Helpers
 
-    private static bool IsHKLib(Type type) =>
+    private static readonly HashSet<Type> SharedMarkers = new()
+    {
+        typeof(Havok.Shared.IRootContainer), typeof(Havok.Shared.IClipGenerator),
+        typeof(Havok.Shared.IStateMachine), typeof(Havok.Shared.ICustomManualSelectorGenerator)
+    };
+
+    // a type of the 2018 class set, whose naming and placement the other SDKs follow
+    private static bool Is2018(Type type) =>
         type.Namespace is { } ns && (ns == Namespace2018 || ns.StartsWith(Namespace2018 + "."));
 
     // types written by hand in hk2019/Manual
     private static bool IsManual(Type type) =>
-        type == typeof(HKLib.hk2018.IHavokObject) || type == typeof(HKLib.hk2018.hkPropertyBag);
+        type == typeof(Havok.hk2018.IHavokObject) || type == typeof(Havok.hk2018.hkPropertyBag);
 
     // hkEnum/hkFlags have presets too, but they are represented by the enum they wrap
     private static bool IsEnum(HavokType type) =>

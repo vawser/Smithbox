@@ -59,57 +59,6 @@ else if (mode == "generate")
     foreach (var error in stats.Errors.Take(20))
         Console.WriteLine($"RESULT   ERROR {error}");
 }
-else if (mode == "packprobe")
-{
-    // packprobe <GAME> <binder> : shows the layout of the selectors and clips in a packfile behaviour
-    var raw = fs.ReadFile(args[2]).Value.ToArray();
-    var bnd = BND4.Read(DCX.Is(raw) ? DCX.Decompress(raw).ToArray() : raw);
-
-    foreach (var file in bnd.Files.Where(f => f.Name.Contains("Behaviors", StringComparison.OrdinalIgnoreCase)).Take(1))
-    {
-        var reader = new PackfileReader(file.Bytes.ToArray());
-
-        Console.WriteLine($"{file.Name}: {reader.Objects.Count} objects");
-
-        foreach (var g in reader.Objects.GroupBy(o => o.ClassName).OrderByDescending(g => g.Count()).Take(25))
-            Console.WriteLine($"  {g.Count(),6} {g.Key}");
-
-        foreach (var className in new[] { "CustomManualSelectorGenerator", "hkbClipGenerator", "hkbManualSelectorGenerator" })
-        {
-            var shown = 0;
-
-            for (var i = 0; i < reader.Objects.Count && shown < 3; i++)
-            {
-                if (reader.Objects[i].ClassName != className)
-                    continue;
-
-                shown++;
-
-                var (offset, _) = reader.Objects[i];
-                var size = reader.SizeOf(i);
-
-                Console.WriteLine($"-- {className} @0x{offset:X} size 0x{size:X}");
-
-                foreach (var (fieldOffset, value) in reader.StringFields(offset, size))
-                    Console.WriteLine($"   +0x{fieldOffset:X2} \"{value}\"");
-
-                for (uint o = 0x40; o + 16 <= size; o += 8)
-                {
-                    var arr = reader.ReadPointerArray(offset + o);
-                    if (arr.Count > 0)
-                        Console.WriteLine($"   +0x{o:X2} array of {arr.Count}: {string.Join(", ", arr.Take(3).Select(a => reader.Objects.FirstOrDefault(x => x.Offset == a).ClassName))}");
-                }
-
-                var ints = Enumerable.Range(0, (int)(size - 0x40) / 4)
-                    .Select(k => (Offset: 0x40 + k * 4, Value: reader.ReadInt32(offset + 0x40 + (uint)k * 4)))
-                    .Where(e => e.Value != 0)
-                    .Take(24);
-
-                Console.WriteLine($"   non-zero ints: {string.Join(" ", ints.Select(e => $"+0x{e.Offset:X}={e.Value}"))}");
-            }
-        }
-    }
-}
 else if (mode == "scan")
 {
     // scan <GAME> <character filter regex>

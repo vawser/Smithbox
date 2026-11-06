@@ -113,11 +113,7 @@ public static class BehaviorReader
                 // Sekiro still has a few packfiles among its tagfiles
                 var isPackfile = bytes.Length >= 4 && BitConverter.ToUInt32(bytes, 0) == 0x57E0E057;
 
-                if (game == Game.BB)
-                {
-                    CollectBloodborneSelectors(new PackfileReader(bytes), result.Selectors);
-                }
-                else if (UsesTagfiles(game) && !isPackfile)
+                if (UsesTagfiles(game) && !isPackfile)
                 {
                     CollectSelectors(new TagfileReader(bytes, compendiumTypes), result.Selectors);
                 }
@@ -137,85 +133,24 @@ public static class BehaviorReader
         return result;
     }
 
+    /// <summary>
+    /// A behaviour file read through the unified Havok library: its generated classes, which the walker reads by
+    /// field name (HKX2 and HKLib until Phase 7)
+    /// </summary>
     private static object ReadRoot(Game game, byte[] bytes, byte[] compendium)
     {
-        switch (game)
-        {
-            case Game.DS3:
-            case Game.SDT:
-            case Game.BB:
-            case Game.DS1:
-            case Game.DS1R:
-            {
-                var deserializer = new HKX2.PackFileDeserializer();
-                var br = new BinaryReaderEx(false, bytes);
-                return deserializer.Deserialize(br);
-            }
-            case Game.AC6:
-            {
-                var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-                if (compendium != null)
-                {
-                    using var cs = new MemoryStream(compendium);
-                    serializer.LoadCompendium(cs);
-                }
-                using var ms = new MemoryStream(bytes);
-                return serializer.Read(ms);
-            }
-            default:
-            {
-                var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
-                if (compendium != null)
-                {
-                    using var cs = new MemoryStream(compendium);
-                    serializer.LoadCompendium(cs);
-                }
-                using var ms = new MemoryStream(bytes);
-                return serializer.Read(ms);
-            }
-        }
+        var profile = Havok.HavokProfile.FromGame(game.ToString())
+            ?? throw new NotSupportedException($"{game} has no Havok profile");
+        var unified = compendium != null ? Havok.Files.HavokFile.ReadCompendium(compendium, profile) : null;
+
+        return Havok.Files.HavokFile.Read(bytes, profile, unified).Root;
     }
 
     /// <summary>
-    /// DS3 behaviours are packfiles, read through the HKX2 classes. The later games use tagfiles, which are read
+    /// DS3 and BB behaviours are packfiles, read through the unified library. The later games use tagfiles, which are read
     /// by their own type descriptions, as the class libraries miss Sekiro's version and Nightreign's selector layout.
     /// </summary>
     public static bool UsesTagfiles(Game game) => game is not (Game.DS3 or Game.BB or Game.DS1 or Game.DS1R);
-
-    // Bloodborne's 2014 layouts, worked out from its files: hkbNode::m_name is shared with DS3,
-    // but its selector and clip classes have fields of their own before the ones read here
-    private const uint NodeNameOffset = 0x38;
-    private const uint SelectorGeneratorsOffset = 0x88;
-    private const uint SelectorAnimIdOffset = 0x9C;
-    private const uint ClipAnimationNameOffset = 0x90;
-
-    private static void CollectBloodborneSelectors(PackfileReader reader, List<SelectorInfo> selectors)
-    {
-        var classes = reader.Objects.ToDictionary(e => e.Offset, e => e.ClassName);
-
-        foreach (var (offset, className) in reader.Objects)
-        {
-            if (className != "CustomManualSelectorGenerator")
-                continue;
-
-            var name = reader.ReadString(offset + NodeNameOffset) ?? "";
-            var animId = reader.ReadInt32(offset + SelectorAnimIdOffset);
-            var clips = new List<string>();
-
-            foreach (var generator in reader.ReadPointerArray(offset + SelectorGeneratorsOffset))
-            {
-                if (!classes.TryGetValue(generator, out var generatorClass) || generatorClass != "hkbClipGenerator")
-                    continue;
-
-                var animationName = reader.ReadString(generator + ClipAnimationNameOffset);
-
-                if (!string.IsNullOrEmpty(animationName))
-                    clips.Add(animationName);
-            }
-
-            selectors.Add(new SelectorInfo(name, animId, clips));
-        }
-    }
 
     private static void CollectSelectors(TagfileReader reader, List<SelectorInfo> selectors)
     {
@@ -241,7 +176,7 @@ public static class BehaviorReader
     }
 
     /// <summary>
-    /// Walks the object graph for selectors. The classes of both Havok libraries share their field names,
+    /// Walks the object graph for selectors. Every SDK's generated classes share their field names,
     /// so the walk goes by reflection rather than by type.
     /// </summary>
     private static void CollectSelectors(object rootObject, List<SelectorInfo> selectors)
@@ -310,7 +245,7 @@ public static class BehaviorReader
     private static bool IsWalkable(Type type)
     {
         return type.IsClass && type != typeof(string) &&
-               (type.Namespace?.StartsWith("HKX2") == true || type.Namespace?.StartsWith("HKLib") == true);
+               type.Namespace?.StartsWith("Havok.hk") == true;
     }
 
     private static readonly Dictionary<Type, FieldInfo[]> FieldCache = new();

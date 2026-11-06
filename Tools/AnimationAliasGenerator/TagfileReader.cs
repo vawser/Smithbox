@@ -325,9 +325,9 @@ public sealed class TagfileReader
     private ulong ReadVarUInt()
     {
         var prefix = Reader.GetByte(Reader.Position);
-        var length = HKLib.Serialization.hk2018.Binary.Util.HavokVarUInt.GetLength(prefix);
+        var length = Havok.Formats.Tagfile.HavokVarUInt.GetLength(prefix);
 
-        return HKLib.Serialization.hk2018.Binary.Util.HavokVarUInt.ToUInt64(Reader.ReadBytes(length));
+        return Havok.Formats.Tagfile.HavokVarUInt.ToUInt64(Reader.ReadBytes(length));
     }
     #endregion
 

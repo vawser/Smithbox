@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using HKLib.Reflection.hk2018;
+using Havok.Reflection;
 
 namespace Havok.ClassGeneration;
 
@@ -133,7 +133,7 @@ internal class Decl
     // base class for inheriting fields in the reflection data classes
     public Decl? BaseDecl { get; set; }
 
-    // the HKLib 2018 C# type this declaration mirrors, if any (its enum values fill enums the registry has no presets for)
+    // the 2018 C# type (Havok.hk2018) this declaration mirrors, if any (its enum values fill enums the registry has no presets for)
     public Type? ClrDefinition { get; set; }
     public List<TypeInfo> BaseArguments { get; } = new();
 

@@ -223,32 +223,15 @@ Console.WriteLine();
 Console.WriteLine("==== TOTAL");
 total.Print(detail: false);
 
+// A behaviour file read through the unified Havok library (HKX2 and HKLib until Phase 7). The generated classes keep
+// the field names the survey reads by reflection.
 static object ReadRoot(Game game, byte[] bytes, byte[] compendium)
 {
-    switch (game)
-    {
-        case Game.DS3:
-        {
-            var deserializer = new HKX2.PackFileDeserializer();
-            return deserializer.Deserialize(new BinaryReaderEx(false, bytes));
-        }
-        case Game.AC6:
-        {
-            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-            if (compendium != null)
-                serializer.LoadCompendium(new MemoryStream(compendium));
-            return serializer.Read(new MemoryStream(bytes));
-        }
-        default:
-        {
-            var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(game == Game.NR
-                ? HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign
-                : HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
-            if (compendium != null)
-                serializer.LoadCompendium(new MemoryStream(compendium));
-            return serializer.Read(new MemoryStream(bytes));
-        }
-    }
+    var profile = Havok.HavokProfile.FromGame(game.ToString())
+        ?? throw new NotSupportedException($"{game} has no Havok profile");
+    var unified = compendium != null ? Havok.Files.HavokFile.ReadCompendium(compendium, profile) : null;
+
+    return Havok.Files.HavokFile.Read(bytes, profile, unified).Root;
 }
 
 // The time acts of the chr's anibnd, as the Time Act Editor reads them (TimeActContainerWrapper.AddTimeActs):

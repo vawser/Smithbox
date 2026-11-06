@@ -1,5 +1,5 @@
 using Havok.ClassGeneration;
-using HKLib.Reflection.hk2018;
+using Havok.Reflection;
 
 // Generates an SDK's class set for the unified Havok library: the classes, a field accessor per class, the identity
 // type map, the SDK's IHavokObject marker and its class set entry point.
@@ -9,7 +9,7 @@ using HKLib.Reflection.hk2018;
 // e.g. Havok.ClassGeneration src/Havok src/Havok/Havok.Core/Res/HavokTypeRegistry20160200.xml Havok.hk2016 src/Havok/Classes/Havok.hk2016
 //
 // Writes <output>/Autogen. Existing output is not overwritten: move Autogen to the .archive folder before regenerating.
-// Types that also exist in HKLib's 2018 classes keep their naming and placement, so code reads the same on every SDK.
+// Types that also exist in the 2018 classes (Havok.hk2018) keep their naming and placement, so code reads the same on every SDK.
 
 if (args.Length < 4)
 {
@@ -36,8 +36,10 @@ if (Directory.Exists(outputDirectory) && Directory.EnumerateFileSystemEntries(ou
     return 1;
 }
 
-string resDirectory = Path.Join(havokDirectory, "HKLib.Reflection", "Res");
-HavokTypeRegistry registry2018 = HavokTypeRegistry.Load(Path.Join(resDirectory, "HavokTypeRegistry20180100.xml"));
+// The 2018 registry with its C# types bound to Havok.hk2018, whose naming and placement the other SDKs follow
+string resDirectory = Path.Join(havokDirectory, "Havok.Core", "Res");
+HavokTypeRegistry registry2018 = HavokTypeRegistry.Load(Path.Join(resDirectory, "HavokTypeRegistry20180100.xml"),
+    identity => Havok.hk2018.IdentityTypeMap.Map.GetValueOrDefault(identity));
 RegistryLoader registry = RegistryLoader.Load(registryPath);
 List<RegistryLoader> variants = overlays.Select(overlay => RegistryLoader.Load(registryPath, overlay)).ToList();
 

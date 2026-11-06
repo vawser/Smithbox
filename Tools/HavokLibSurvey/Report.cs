@@ -94,23 +94,17 @@ public static class Report
         var unifiedRuns = runs.Where(x => x.Lib.Lib.StartsWith("Unified") || x.Lib.Lib.StartsWith("Generated")).ToList();
         if (unifiedRuns.Count > 0)
         {
-            sb.AppendLine("## Unified tagfile engine vs HKLib");
+            sb.AppendLine("## Unified engine");
             sb.AppendLine();
-            sb.AppendLine("**Same read** = the unified engine's object graph equals HKLib's, field by field. " +
-                          "**Same write** = the unified engine writes the same bytes as HKLib. **Bytes** = the unified write equals the original file.");
+            sb.AppendLine("**Bytes** = the unified write equals the original file. (Until Phase 7 this section also compared the reads and writes with HKLib's and HKX2's.)");
             sb.AppendLine();
-            sb.AppendLine("| Engine | Format | Tried | Read (HKLib) | Same read | Same write | Bytes |");
-            sb.AppendLine("|---|---|---|---|---|---|---|");
+            sb.AppendLine("| Engine | Format | Tried | Read | Bytes |");
+            sb.AppendLine("|---|---|---|---|---|");
             foreach (var g in unifiedRuns.GroupBy(x => (x.Lib.Lib, x.File.Sniff.FormatKey)).OrderBy(g => g.Key.FormatKey).ThenBy(g => g.Key.Lib))
             {
                 var l = g.Select(x => x.Lib).ToList();
-                var hk = g.Select(x => x.File.Libs.FirstOrDefault(h => h.Lib == x.Lib.ParityWith)).Where(h => h != null).ToList();
-                var compared = l.Where(x => x.ParityCompared).ToList();
-                var bothWrote = l.Where(x => x.ParityBytesEqual != null).ToList();
                 var written = l.Where(x => x.Write).ToList();
-                sb.AppendLine($"| {g.Key.Lib} | {g.Key.FormatKey} | {l.Count} | {l.Count(x => x.Read)} ({hk.Count(x => x.Read)}) | " +
-                              $"{compared.Count(x => x.ParityGraphDiff == null)}/{compared.Count} | " +
-                              $"{bothWrote.Count(x => x.ParityBytesEqual == true)}/{bothWrote.Count} | {written.Count(x => x.ByteIdentical)}/{written.Count} |");
+                sb.AppendLine($"| {g.Key.Lib} | {g.Key.FormatKey} | {l.Count} | {l.Count(x => x.Read)} | {written.Count(x => x.ByteIdentical)}/{written.Count} |");
             }
             sb.AppendLine();
 

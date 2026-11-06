@@ -16,10 +16,8 @@
     <ProjectReference Include="..\..\src\Andre\Andre.IO\Andre.IO.csproj" />
     <ProjectReference Include="..\..\src\Andre\Andre.Formats\Andre.Formats.csproj" />
     <ProjectReference Include="..\..\src\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKX2\Havok.HKX2.csproj" />
     <ProjectReference Include="..\..\src\Havok\Havok.Core\Havok.Core.csproj" />
     <ProjectReference Include="..\..\src\Havok\Havok.Formats\Havok.Formats.csproj" />
-    <ProjectReference Include="..\..\src\Havok\Havok.Formats.HKLib\Havok.Formats.HKLib.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2010\Havok.hk2010.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2014\Havok.hk2014.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk55\Havok.hk55.csproj" />
@@ -27,9 +25,6 @@
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2016\Havok.hk2016.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2018\Havok.hk2018.csproj" />
     <ProjectReference Include="..\..\src\Havok\Classes\Havok.hk2019\Havok.hk2019.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKLib\Havok.HKLib.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKLib.Reflection\Havok.HKLib.Reflection.csproj" />
-    <ProjectReference Include="..\..\src\Havok\HKLib.Serialization\Havok.HKLib.Serialization.csproj" />
   </ItemGroup>
 
   <!-- Oodle, for the KRAK compressed files of the later games -->

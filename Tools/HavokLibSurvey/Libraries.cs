@@ -196,88 +196,11 @@ public sealed class SoulsFormatsHkx : Library
     }
 }
 
-public sealed class Hkx2Packfile : Library
-{
-    public override string Name => "HKX2 packfile";
-    public override bool Applies(SniffInfo s, Game game) => s.Container == "Packfile";
-
-    public override object Read(byte[] data, ContainerContext ctx, bool comp) =>
-        new HKX2.PackFileDeserializer().Deserialize(new BinaryReaderEx(false, data));
-
-    public override byte[] Write(object root, ContainerContext ctx, bool comp)
-    {
-        var bw = new BinaryWriterEx(false);
-        new HKX2.PackFileSerializer().Serialize((HKX2.IHavokObject)root, bw);
-        return bw.FinishBytes();
-    }
-}
-
-public sealed class Hkx2Tagfile : Library
-{
-    public override string Name => "HKX2 tagfile";
-    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile";
-    public override bool CanWrite => false;
-
-    public override object Read(byte[] data, ContainerContext ctx, bool comp)
-    {
-        var compendium = !comp ? null : ctx.Get("hkx2", HKX2.TagFileDeserializer.ReadCompendium);
-        return new HKX2.TagFileDeserializer().Deserialize(data, compendium);
-    }
-}
-
-public sealed class HkLib2018 : Library
-{
-    public override string Name => "HKLib 2018";
-    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith("2018");
-
-    private static HKLib.Serialization.hk2018.Binary.HavokBinarySerializer Create(ContainerContext ctx, bool useComp)
-    {
-        var s = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(ctx.Game == Game.NR
-            ? HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign
-            : HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
-        var compendium = !useComp ? null : ctx.Get("hklib2018", bytes =>
-            new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(HKLib.Reflection.hk2018.HavokTypeRegistry.Instance)
-                .ReadCompendium(new MemoryStream(bytes)));
-        if (useComp && compendium != null) s.LoadCompendium(compendium);
-        return s;
-    }
-
-    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(new MemoryStream(data));
-
-    public override byte[] Write(object root, ContainerContext ctx, bool comp)
-    {
-        using var ms = new MemoryStream();
-        Create(ctx, comp).Write((HKLib.hk2018.IHavokObject)root, ms);
-        return ms.ToArray();
-    }
-}
-
-public sealed class HkLib2019 : Library
-{
-    public override string Name => "HKLib 2019";
-    public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith("2019");
-
-    private static HKLib.Serialization.hk2019.Binary.HavokBinarySerializer Create(ContainerContext ctx, bool useComp)
-    {
-        var s = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-        var compendium = !useComp ? null : ctx.Get("hklib2019", bytes =>
-            new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().ReadCompendium(new MemoryStream(bytes)));
-        if (useComp && compendium != null) s.LoadCompendium(compendium);
-        return s;
-    }
-
-    public override object Read(byte[] data, ContainerContext ctx, bool comp) => Create(ctx, comp).Read(new MemoryStream(data));
-
-    public override byte[] Write(object root, ContainerContext ctx, bool comp)
-    {
-        using var ms = new MemoryStream();
-        Create(ctx, comp).Write((HKLib.hk2019.IHavokObject)root, ms);
-        return ms.ToArray();
-    }
-}
+// HKX2 (packfile and tagfile) and HKLib (2018, 2019) were run here as the libraries to match until Phase 7 retired them;
+// their adapters are in .archive/Havok Phase 7/HavokLibSurvey.
 
 /// <summary>
-/// The unified tagfile engine (Havok.Formats) reading into HKLib's classes through the bridge, with one dialect.
+/// The unified tagfile engine (Havok.Formats) reading into a generated class set, with one dialect.
 /// </summary>
 public sealed class UnifiedTagfile : Library
 {
@@ -287,7 +210,7 @@ public sealed class UnifiedTagfile : Library
 
     private readonly Func<Havok.HavokProfile, Havok.Formats.IHavokClassSet> _classSet;
 
-    /// <param name="classSet">The class set to read into; null for HKLib's classes through the bridge</param>
+    /// <param name="classSet">The generated class set to read into</param>
     public UnifiedTagfile(string name, string sdkPrefix, Havok.Formats.Tagfile.TagfileDialect dialect, string parityWith,
         Func<Havok.HavokProfile, Havok.Formats.IHavokClassSet> classSet = null)
     {
@@ -301,20 +224,19 @@ public sealed class UnifiedTagfile : Library
     public override string Name => _name;
 
     /// <summary>
-    /// The HKLib library this one must match.
+    /// The library this one must match, if any (none since Phase 7).
     /// </summary>
     public string ParityWith { get; }
 
     /// <summary>
-    /// Reads into a generated class set, so parity with HKLib's classes compares graphs across class sets.
+    /// Reads into a generated class set, so a parity check compares graphs across class sets.
     /// </summary>
-    public bool CrossClassSet => _classSet != null;
+    public bool CrossClassSet => true;
 
     public override bool Applies(SniffInfo s, Game game) => s.Container == "Tagfile" && s.Sdk.StartsWith(_sdkPrefix);
 
-    private Havok.Formats.Tagfile.HavokTagfileSerializer New(Havok.HavokProfile profile) => _classSet == null
-        ? Havok.Formats.HKLib.HKLibTagfiles.Create(profile, _dialect)
-        : new Havok.Formats.Tagfile.HavokTagfileSerializer(_classSet(profile), _dialect);
+    private Havok.Formats.Tagfile.HavokTagfileSerializer New(Havok.HavokProfile profile) =>
+        new(_classSet(profile), _dialect);
 
     private Havok.Formats.Tagfile.HavokTagfileSerializer Create(ContainerContext ctx, bool useComp)
     {
@@ -324,7 +246,7 @@ public sealed class UnifiedTagfile : Library
         if (useComp)
         {
             // keyed by SDK and class set: the compendium's types come from the registry of the class set that parsed it
-            var compendium = ctx.Get("unified" + _sdkPrefix + (_classSet == null ? "hklib" : "generated"), bytes =>
+            var compendium = ctx.Get("unified" + _sdkPrefix + "generated", bytes =>
                 New(profile).ReadCompendium(bytes));
             if (compendium != null) s.LoadCompendium(compendium);
         }
@@ -352,7 +274,7 @@ public sealed class GeneratedPackfile : Library
 
     public override string Name => _preserveSource ? "Generated 2014 packfile" : "Generated 2014 packfile (HKX2 header)";
 
-    public string ParityWith => "HKX2 packfile";
+    public string ParityWith => null; // HKX2 packfile until Phase 7
 
     public override bool Applies(SniffInfo s, Game game) => s.Container == "Packfile" && s.Sdk.StartsWith("hk_2014");
 

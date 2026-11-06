@@ -1,5 +1,5 @@
 using System.Xml.Linq;
-using HKLib.Reflection.hk2018;
+using Havok.Reflection;
 
 namespace Havok.ClassGeneration;
 
@@ -29,24 +29,24 @@ internal class RegistryLoader
         { 25, 7 }
     };
 
-    // The 2015/2016 SDKs name some math types differently: fields there are typed hkMatrix3f etc., which HKLib's 2018
-    // map binds to List<float> (2018 fields use hkMatrix3/hkMatrix4). They are the same matrices.
+    // The 2015/2016 SDKs name some math types differently: fields there are typed hkMatrix3f etc., which the 2018
+    // identity map binds to List<float> (2018 fields use hkMatrix3/hkMatrix4). They are the same matrices.
     private static readonly Dictionary<string, Type> MathAliases = new()
     {
-        { "hkMatrix3f", typeof(HKLib.ValueTypes.Matrix3x3) },
-        { "hkMatrix3Impl<float>", typeof(HKLib.ValueTypes.Matrix3x3) },
-        { "hkRotationf", typeof(HKLib.ValueTypes.Matrix3x3) },
-        { "hkRotationImpl<float>", typeof(HKLib.ValueTypes.Matrix3x3) },
+        { "hkMatrix3f", typeof(Havok.Matrix3x3) },
+        { "hkMatrix3Impl<float>", typeof(Havok.Matrix3x3) },
+        { "hkRotationf", typeof(Havok.Matrix3x3) },
+        { "hkRotationImpl<float>", typeof(Havok.Matrix3x3) },
         { "hkMatrix4f", typeof(System.Numerics.Matrix4x4) },
         { "hkMatrix4Impl<float>", typeof(System.Numerics.Matrix4x4) }
     };
 
     /// <summary>
-    /// The HKLib 2018 C# type for an identity (used for naming and placement), with the math aliases above.
+    /// The 2018 C# type (Havok.hk2018) for an identity (used for naming and placement), with the math aliases above.
     /// </summary>
     private static Type? ResolveClrType(string identity) =>
         MathAliases.TryGetValue(identity, out Type? alias) ? alias
-        : HKLib.hk2018.IdentityTypeMap.Map.TryGetValue(identity, out Type? type) ? type
+        : Havok.hk2018.IdentityTypeMap.Map.TryGetValue(identity, out Type? type) ? type
         : null;
 
     public List<HavokType> Types { get; } = new();
@@ -126,9 +126,9 @@ internal class RegistryLoader
                     string name = member.Attribute("Name")!.Value;
                     int offset = int.Parse(member.Attribute("Offset")!.Value);
                     HavokTypeBuilder memberType = builders[int.Parse(member.Attribute("Type")!.Value)];
-                    HKLib.Reflection.HavokType.Member.MemberFlags flags =
-                        (HKLib.Reflection.HavokType.Member.MemberFlags)int.Parse(member.Attribute("Flags")!.Value);
-                    if (flags.HasFlag(HKLib.Reflection.HavokType.Member.MemberFlags.Property))
+                    HavokType.Member.MemberFlags flags =
+                        (HavokType.Member.MemberFlags)int.Parse(member.Attribute("Flags")!.Value);
+                    if (flags.HasFlag(HavokType.Member.MemberFlags.Property))
                         builder.WithProperty(name, flags, offset, memberType);
                     else
                         builder.WithField(name, flags, offset, memberType);

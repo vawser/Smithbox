@@ -111,10 +111,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Andre\Andre.IO\Andre.IO.csproj" />
-    <ProjectReference Include="..\Havok\HKLib.Reflection\Havok.HKLib.Reflection.csproj" />
-    <ProjectReference Include="..\Havok\HKLib.Serialization\Havok.HKLib.Serialization.csproj" />
-    <ProjectReference Include="..\Havok\HKLib\Havok.HKLib.csproj" />
-    <ProjectReference Include="..\Havok\HKX2\Havok.HKX2.csproj" />
     <ProjectReference Include="..\Havok\Havok.Files\Havok.Files.csproj" />
     <ProjectReference Include="..\Andre\SoapstoneLib\SoapstoneLib\Andre.SoapstoneLib.csproj" />
     <ProjectReference Include="..\Andre\Andre.Formats\Andre.Formats.csproj" />
