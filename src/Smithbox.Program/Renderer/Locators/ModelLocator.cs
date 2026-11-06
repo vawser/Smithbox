@@ -101,7 +101,8 @@ public static class ModelLocator
             targetType = HavokCollisionType.Low;
         }
 
-        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        // DES and PTDE keep each map collision as a loose file; DS1R keeps them in hkxbhd binders, as DS3 does
+        if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -120,7 +121,7 @@ public static class ModelLocator
             ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
         }
-        else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+        else if (project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {
             if (targetType is HavokCollisionType.High)
             {
@@ -335,7 +336,8 @@ public static class ModelLocator
             or ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.BB
-            or ProjectType.DS3)
+            or ProjectType.DS3
+            or ProjectType.SDT)
         {
             return GetObjCollision(project, modelName, modelName);
         }

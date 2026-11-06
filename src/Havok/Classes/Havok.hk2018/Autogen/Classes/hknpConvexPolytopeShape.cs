@@ -2,7 +2,7 @@
 
 namespace Havok.hk2018;
 
-public class hknpConvexPolytopeShape : hknpConvexShape
+public partial class hknpConvexPolytopeShape : hknpConvexShape
 {
     public List<Vector4> m_planes = new();
 

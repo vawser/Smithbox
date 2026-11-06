@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hknpCompoundShape : hknpCompositeShape
+public partial class hknpCompoundShape : hknpCompositeShape
 {
     public hkFreeListArrayhknpShapeInstancehkHandleshort32767hknpShapeInstanceIdDiscriminant8hknpShapeInstance m_instances = new();
 

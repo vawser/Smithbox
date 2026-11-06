@@ -2,7 +2,7 @@
 
 namespace Havok.hk2019;
 
-public class hknpConvexShape : hknpShape
+public partial class hknpConvexShape : hknpShape
 {
     public float m_maxAllowedPenetration;
 

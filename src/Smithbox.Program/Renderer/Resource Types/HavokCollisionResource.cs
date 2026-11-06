@@ -1,5 +1,5 @@
-﻿using HKX2;
-using Org.BouncyCastle.Utilities;
+﻿using Havok;
+using Havok.Files;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
@@ -13,10 +13,12 @@ namespace StudioCore.Renderer;
 public class HavokCollisionResource : IResource, IDisposable
 {
     public CollisionSubmesh[] GPUMeshes;
+
+    /// <summary>The collision as the unified Havok library read it (every game but DS2).</summary>
+    public HavokDocument Document;
+
+    /// <summary>DS2's collision, which only SoulsFormats reads.</summary>
     public HKX Hkx;
-    public hkRootLevelContainer Hkx2;
-    public HKLib.hk2018.hkRootLevelContainer ER_HKX;
-    public HKLib.hk2019.hkRootLevelContainer AC6_HKX;
 
     public BoundingBox Bounds { get; set; }
 
@@ -34,68 +36,7 @@ public class HavokCollisionResource : IResource, IDisposable
         if (Smithbox.Orchestrator.SelectedProject == null)
             return false;
 
-        var curProject = Smithbox.Orchestrator.SelectedProject;
-
-        if (ctx.IsConnectCollision)
-        {
-            IsConnectCollision = true;
-        }
-
-        DetermineColor(ctx);
-
-        // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            if (!HandleHKLibLoad(bytes, ctx))
-                return false;
-        }
-        // HKLib 2019 - AC6
-        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
-        {
-            if (!HandleHKLib2019Load(bytes, ctx))
-                return false;
-        }
-        // HKX2 tagfile - SDT
-        else if (curProject.Descriptor.ProjectType is ProjectType.SDT)
-        {
-            if (!HandleTagLoad(curProject, ctx, bytes))
-                return false;
-        }
-        // HKX2 - DS3
-        else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
-        {
-            if(DCX.Is(bytes))
-            {
-                DCX.Type t;
-                Memory<byte> decomp = DCX.Decompress(bytes, out t);
-                var br = new BinaryReaderEx(false, decomp);
-                var des = new PackFileDeserializer();
-                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
-            }
-            else
-            {
-                var br = new BinaryReaderEx(false, bytes);
-                var des = new PackFileDeserializer();
-                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
-            }
-        }
-        // HKX - BB
-        else if (curProject.Descriptor.ProjectType is ProjectType.BB)
-        {
-            Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
-        }
-        // HKX - DS2 / DS1
-        else
-        {
-            Hkx = HKX.Read(bytes);
-        }
-
-        DetermineFrontFace(curProject);
-
-        return HandleMeshLoad(curProject, al);
+        return Load(Smithbox.Orchestrator.SelectedProject, bytes, al, ctx);
     }
 
     public bool _Load(string relativePath, AccessLevel al, ResourceLoadContext ctx)
@@ -105,231 +46,81 @@ public class HavokCollisionResource : IResource, IDisposable
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
+        Memory<byte>? fileData;
+        try
+        {
+            fileData = curProject.VFS.FS.ReadFile(relativePath);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
+            return false;
+        }
+
+        return fileData != null && Load(curProject, fileData.Value, al, ctx);
+    }
+
+    /// <summary>
+    /// Every game but DS2 is read by the unified Havok library, whatever the container: the file says which SDK it
+    /// is (DS1R's own collision is 2015 tagfiles). Map collision of the tagfile games refers to the compendium of
+    /// its binder for its types.
+    /// </summary>
+    private bool Load(ProjectEntry curProject, Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
+    {
         if (ctx.IsConnectCollision)
         {
             IsConnectCollision = true;
         }
 
         DetermineColor(ctx);
-
-        // HKLib - ER
-        if (curProject.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            if (!TryReadFile(curProject, relativePath, out var fileData) || !HandleHKLibLoad(fileData, ctx))
-                return false;
-        }
-        // HKLib 2019 - AC6
-        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
-        {
-            if (!TryReadFile(curProject, relativePath, out var fileData) || !HandleHKLib2019Load(fileData, ctx))
-                return false;
-        }
-        // HKX2 tagfile - SDT
-        else if (curProject.Descriptor.ProjectType is ProjectType.SDT)
-        {
-            try
-            {
-                var fileData = curProject.VFS.FS.ReadFile(relativePath);
-
-                if (!HandleTagLoad(curProject, ctx, fileData.Value))
-                    return false;
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
-                return false;
-            }
-        }
-        // HKX2 - DS3
-        else if (curProject.Descriptor.ProjectType is ProjectType.DS3)
-        {
-            try
-            {
-                var fileData = curProject.VFS.FS.ReadFile(relativePath);
-
-                if (DCX.Is(fileData.Value))
-                {
-                    DCX.Type t;
-                    Memory<byte> decomp = DCX.Decompress(fileData.Value, out t);
-                    var br = new BinaryReaderEx(false, decomp);
-                    var des = new PackFileDeserializer();
-                    Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
-                }
-                else
-                {
-                    var br = new BinaryReaderEx(false, fileData.Value);
-                    var des = new PackFileDeserializer();
-                    Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
-                }
-            }
-            catch(Exception e)
-            {
-                Smithbox.LogError(this, 
-                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
-            }
-        }
-        // HKX - BB
-        else if (curProject.Descriptor.ProjectType is ProjectType.BB)
-        {
-            try
-            {
-                var fileData = curProject.VFS.FS.ReadFile(relativePath);
-
-                Hkx = HKX.Read(fileData.Value, HKX.HKXVariation.HKXBloodBorne);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
-            }
-        }
-        // HKX - DS2 / DS1
-        else
-        {
-            try
-            {
-                var fileData = curProject.VFS.FS.ReadFile(relativePath);
-
-                // Intercept and load the collision from PTDE FS for DS1R projects
-                if(CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects && curProject.Descriptor.ProjectType is ProjectType.DS1R)
-                {
-                    fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
-                }
-
-                Hkx = HKX.Read(fileData.Value);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this,
-                    LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
-            }
-        }
-
         DetermineFrontFace(curProject);
 
-        return HandleMeshLoad(curProject, al);
-    }
+        // DS2 is hk_2012 32-bit, which only SoulsFormats reads
+        if (curProject.Descriptor.ProjectType is ProjectType.DS2)
+        {
+            try
+            {
+                Hkx = HKX.Read(bytes);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
+                return false;
+            }
 
-    public bool HandleMeshLoad(ProjectEntry curProject, AccessLevel al)
-    {
-        if (curProject.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            return HKLib_Helper.LoadCollisionMesh(this, al);
-        }
-        else if (curProject.Descriptor.ProjectType is ProjectType.AC6)
-        {
-            return HKLib2019_Helper.LoadCollisionMesh(this, al);
-        }
-        else if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
-        {
-            return HKX2_Helper.LoadCollisionMesh(this, al);
-        }
-        else
-        {
             return HKX_Helper.LoadCollisionMesh(this, al);
         }
+
+        // Sekiro's map collision is read with its binder's compendium when the map loads
+        if (curProject.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            Document = curProject.Handler.MapEditor?.ViewHandler.ActiveView?.HavokCollisionBank.GetTagDocument(ctx.FileName);
+        }
+
+        if (Document == null)
+        {
+            try
+            {
+                HavokProfile profile = HavokProfile.FromGame(curProject.Descriptor.ProjectType.ToString());
+                if (profile == null)
+                    return false;
+
+                var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+                Document = HavokFile.Read(data.ToArray(), profile, ctx.Compendium?.Unified(profile));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
+                return false;
+            }
+        }
+
+        return HavokCollisionMeshBuilder.LoadCollisionMesh(this, al);
     }
 
     private static bool IsAssetCollision(ResourceLoadContext ctx)
     {
         return ctx.ContainerPath.Contains(".geomhkxbnd", StringComparison.OrdinalIgnoreCase);
-    }
-
-    private bool TryReadFile(ProjectEntry curProject, string relativePath, out Memory<byte> data)
-    {
-        data = default;
-
-        try
-        {
-            var fileData = curProject.VFS.FS.ReadFile(relativePath);
-
-            if (fileData == null)
-                return false;
-
-            data = fileData.Value;
-            return true;
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this,
-                LOC.Get("REND_HavokCollisionResource_Load_Failed", relativePath), e);
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// Reads ER collision. Map collision refers to the compendium of its binder for its types, while asset collision
-    /// holds its own.
-    /// </summary>
-    public bool HandleHKLibLoad(Memory<byte> bytes, ResourceLoadContext ctx)
-    {
-        try
-        {
-            ER_HKX = HKLibTagfileReader.Read2018(bytes, ctx.Compendium);
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
-            return false;
-        }
-
-        return ER_HKX != null;
-    }
-
-    /// <summary>
-    /// Reads AC6 collision, which is Havok 2019. As with ER, map collision refers to the compendium of its binder.
-    /// </summary>
-    public bool HandleHKLib2019Load(Memory<byte> bytes, ResourceLoadContext ctx)
-    {
-        try
-        {
-            AC6_HKX = HKLibTagfileReader.Read2019(bytes, ctx.Compendium);
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
-            return false;
-        }
-
-        return AC6_HKX != null;
-    }
-
-    /// <summary>
-    /// Sekiro collision is a tagfile. Map collision refers to a compendium in its binder, so it is read by the
-    /// HavokCollisionBank when the map is loaded. Anything else (e.g. object collision) holds its own types.
-    /// </summary>
-    public bool HandleTagLoad(ProjectEntry curProject, ResourceLoadContext ctx, Memory<byte> bytes)
-    {
-        var activeView = curProject.Handler.MapEditor?.ViewHandler.ActiveView;
-
-        Hkx2 = activeView?.HavokCollisionBank.GetTagContainer(ctx.FileName);
-
-        if (Hkx2 != null)
-            return true;
-
-        var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
-
-        if (!TagFileDeserializer.IsTagFile(data.Span))
-            return false;
-
-        try
-        {
-            Hkx2 = new TagFileDeserializer().Deserialize(data.ToArray()) as hkRootLevelContainer;
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("REND_HavokCollisionResource_Load_Failed", ctx.FileName), e);
-            return false;
-        }
-
-        return Hkx2 != null;
     }
 
     /// <summary>

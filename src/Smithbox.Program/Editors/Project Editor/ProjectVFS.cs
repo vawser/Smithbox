@@ -22,8 +22,6 @@ public class ProjectVFS : IDisposable
 
     public VirtualFileSystem VanillaFS = EmptyVirtualFileSystem.Instance;
 
-    public VirtualFileSystem PTDE_FS = EmptyVirtualFileSystem.Instance;
-
     public ProjectVFS(ProjectEntry project)
     {
         Project = project;
@@ -88,18 +86,6 @@ public class ProjectVFS : IDisposable
             VanillaFS = EmptyVirtualFileSystem.Instance;
         }
 
-        // PTDE File System: only DS1R reads from it (the PTDE collisions and navmeshes), so other games' lookups
-        // must not fall through to the PTDE files
-        if (Project.Descriptor.ProjectType is ProjectType.DS1R && Directory.Exists(CFG.Current.PTDE_Data_Path))
-        {
-            PTDE_FS = new RealVirtualFileSystem(CFG.Current.PTDE_Data_Path, false);
-            fileSystems.Add(PTDE_FS);
-        }
-        else
-        {
-            PTDE_FS = EmptyVirtualFileSystem.Instance;
-        }
-
         if (fileSystems.Count == 0)
             FS = EmptyVirtualFileSystem.Instance;
         else
@@ -125,7 +111,6 @@ public class ProjectVFS : IDisposable
         VanillaBinderFS?.Dispose();
         VanillaRealFS?.Dispose();
         VanillaFS?.Dispose();
-        PTDE_FS?.Dispose();
         FS?.Dispose();
 
         FS = EmptyVirtualFileSystem.Instance;
@@ -133,7 +118,6 @@ public class ProjectVFS : IDisposable
         VanillaBinderFS = EmptyVirtualFileSystem.Instance;
         VanillaRealFS = EmptyVirtualFileSystem.Instance;
         VanillaFS = EmptyVirtualFileSystem.Instance;
-        PTDE_FS = EmptyVirtualFileSystem.Instance;
         FS = EmptyVirtualFileSystem.Instance;
     }
 }

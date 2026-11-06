@@ -1,19 +1,22 @@
-﻿using HKX2;
-using Microsoft.Extensions.Logging;
+using Havok;
+using Havok.Files;
+using Havok.Shared;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Logger;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Numerics;
-using Veldrid;
 using Veldrid.Utilities;
 
 namespace StudioCore.Renderer;
 
+/// <summary>
+/// A Havok navmesh (DS3, BB, SDT, ER, NR, AC6): its faces, AC6's nav volume, and the cost graph. Files are read by the
+/// unified Havok library, and drawn the same way for every game through the Havok.Shared navmesh views.
+/// </summary>
 public class HavokNavmeshResource : IResource, IDisposable
 {
     public int GraphIndexCount;
@@ -34,29 +37,16 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public HKX Root_HKX1;
-    public hkRootLevelContainer Root_HKX2;
-    public HKLib.hk2018.hkRootLevelContainer Root_HKX3;
-    public HKLib.hk2019.hkRootLevelContainer Root_HKX3_2019;
+    /// <summary>The navmesh file as the unified Havok library read it, until the GPU data is built.</summary>
+    public HavokDocument Document;
+
+    // The navmesh builder's output (HKX2 classes), until the builders move to the unified library
+    private IHavokNavMesh _builtMesh;
+    private IHavokDirectedGraph _builtGraph;
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
-        var curProject = Smithbox.Orchestrator.SelectedProject;
-
-        BinaryReaderEx br = new(false, bytes);
-
-        if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
-        {
-            var des = new PackFileDeserializer();
-            Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
-        }
-
-        if (!HandleHKLibLoad(curProject, bytes, ctx))
-        {
-            return false;
-        }
-
-        return LoadInternal(al);
+        return Read(bytes, ctx.FileName) && LoadInternal(al);
     }
 
     public bool _Load(string relativePath, AccessLevel al, ResourceLoadContext ctx)
@@ -67,18 +57,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             var fileData = curProject.VFS.FS.ReadFile(relativePath);
 
-            // Intercept and load the collision from PTDE FS for DS1R projects
-            if (CFG.Current.MapEditor_Use_PTDE_Collisions_In_DS1R_Projects && curProject.Descriptor.ProjectType is ProjectType.DS1R)
-            {
-                fileData = curProject.VFS.PTDE_FS.ReadFile(relativePath);
-            }
-
-            if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
-            {
-                var des = new PackFileDeserializer();
-                Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, fileData.Value));
-            }
-            else if (!HandleHKLibLoad(curProject, fileData.Value, ctx))
+            if (fileData == null || !Read(fileData.Value, relativePath))
             {
                 return false;
             }
@@ -87,37 +66,33 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             Smithbox.LogError(this,
                 LOC.Get("REND_HavokNavmeshResource_Load_Failed", relativePath), e);
+            return false;
         }
 
         return LoadInternal(al);
     }
 
     /// <summary>
-    /// Reads the navmesh of the projects that use HKLib: Havok 2018 for ER, Havok 2019 for AC6.
-    /// Each file holds its own types. Other projects have nothing to read here.
+    /// Reads a navmesh file. Each holds its own types.
     /// </summary>
-    private bool HandleHKLibLoad(ProjectEntry curProject, Memory<byte> bytes, ResourceLoadContext ctx)
+    private bool Read(Memory<byte> bytes, string name)
     {
+        var curProject = Smithbox.Orchestrator.SelectedProject;
+        HavokProfile profile = HavokProfile.FromGame(curProject.Descriptor.ProjectType.ToString());
+
+        if (profile == null)
+        {
+            return false;
+        }
+
         try
         {
-            if (curProject.Descriptor.ProjectType is ProjectType.AC6)
-            {
-                Root_HKX3_2019 = HKLibTagfileReader.Read2019(bytes);
-                return Root_HKX3_2019 != null;
-            }
-
-            if (curProject.Descriptor.ProjectType is ProjectType.ER
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                Root_HKX3 = HKLibTagfileReader.Read2018(bytes);
-                return Root_HKX3 != null;
-            }
+            var data = DCX.Is(bytes) ? DCX.Decompress(bytes) : bytes;
+            Document = HavokFile.Read(data.ToArray(), profile);
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("REND_HavokNavmeshResource_Load_Failed", ctx.FileName), e);
+            Smithbox.LogError(this, LOC.Get("REND_HavokNavmeshResource_Load_Failed", name), e);
             return false;
         }
 
@@ -126,366 +101,66 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al)
     {
-        var curProject = Smithbox.Orchestrator.SelectedProject;
-
-        if (curProject.Descriptor.ProjectType is ProjectType.AC6)
+        if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
-            if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+            Bounds = new BoundingBox();
+
+            var curProject = Smithbox.Orchestrator.SelectedProject;
+
+            // DS3, BB and the navmesh builder draw in the configured navmesh colour; the later games use a fixed one
+            Vector3 color = Document == null || curProject?.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB
+                ? CFG.Current.Viewport_Navmesh_Color
+                : new Vector3(157, 53, 255);
+
+            IHavokNavMesh mesh = Document?.ObjectsOf<IHavokNavMesh>().FirstOrDefault() ?? _builtMesh;
+            if (mesh != null)
             {
-                Bounds = new BoundingBox();
-
-                if (Root_HKX3_2019 != null)
-                {
-                    var variants = Root_HKX3_2019.m_namedVariants.Select(v => v.m_variant).ToList();
-
-                    if (variants.OfType<HKLib.hk2019.hkaiNavMesh>().FirstOrDefault() is { } mesh)
-                    {
-                        ProcessMesh_HKX3(mesh);
-                    }
-
-                    // The flying navigation of AC6 (.nvva) is a nav volume rather than a navmesh
-                    if (variants.OfType<HKLib.hk2019.hkaiNavVolume>().FirstOrDefault() is { } volume)
-                    {
-                        ProcessVolume_HKX3(volume);
-                    }
-
-                    if (variants.OfType<HKLib.hk2019.hkaiDirectedGraphExplicitCost>().FirstOrDefault() is { } graph)
-                    {
-                        ProcessGraph_HKX3(graph);
-                    }
-                }
+                ProcessMesh(CollisionGeometry.NavMeshTriangles(mesh), color);
             }
-        }
 
-        if (curProject.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
-        {
-            if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+            // The flying navigation of AC6 (.nvva) is a nav volume rather than a navmesh
+            if (Document?.ObjectsOf<Havok.hk2019.hkaiNavVolume>().FirstOrDefault() is { } volume)
             {
-                Bounds = new BoundingBox();
-
-                if (Root_HKX2 != null)
-                {
-                    var mesh = Root_HKX2.FindVariant<hkaiNavMesh>();
-                    if (mesh != null)
-                    {
-                        ProcessMesh_HKX2(mesh);
-                    }
-
-                    var graph = Root_HKX2.FindVariant<hkaiDirectedGraphExplicitCost>();
-                    if (graph != null)
-                    {
-                        ProcessGraph_HKX2(graph);
-                    }
-                }
+                ProcessVolume_HKX3(volume);
             }
-        }
 
-        if (curProject.Descriptor.ProjectType is ProjectType.ER 
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+            IHavokDirectedGraph graph = Document?.ObjectsOf<IHavokDirectedGraph>().FirstOrDefault() ?? _builtGraph;
+            if (graph != null)
             {
-                Bounds = new BoundingBox();
-
-                if (Root_HKX3 != null)
-                {
-                    var mesh = FindMeshVariant(Root_HKX3);
-                    if (mesh != null)
-                    {
-                        ProcessMesh_HKX3(mesh);
-                    }
-
-                    var graph = FindGraphVariant(Root_HKX3);
-                    if (graph != null)
-                    {
-                        ProcessGraph_HKX3(graph);
-                    }
-                }
+                ProcessGraph(CollisionGeometry.GraphSegments(graph));
             }
         }
 
         if (al == AccessLevel.AccessGPUOptimizedOnly)
         {
-            Root_HKX1 = null;
-            Root_HKX2 = null;
-            Root_HKX3 = null;
-            Root_HKX3_2019 = null;
+            Document = null;
+            _builtMesh = null;
+            _builtGraph = null;
         }
 
         return true;
     }
 
-    private HKLib.hk2018.hkaiNavMesh FindMeshVariant(HKLib.hk2018.hkRootLevelContainer container)
+    /// <summary>
+    /// Uploads the navmesh's faces, as a triangle list (three vertices a triangle), with flat normals.
+    /// </summary>
+    private unsafe void ProcessMesh(List<Vector3> triangles, Vector3 color)
     {
-        foreach (var v in container.m_namedVariants)
-        {
-            if (v.m_className == typeof(HKLib.hk2018.hkaiNavMesh).Name)
-            {
-                return (HKLib.hk2018.hkaiNavMesh)v.m_variant;
-            }
-        }
-        return null;
-    }
-
-    private HKLib.hk2018.hkaiDirectedGraphExplicitCost FindGraphVariant(HKLib.hk2018.hkRootLevelContainer container)
-    {
-        foreach (var v in container.m_namedVariants)
-        {
-            if (v.m_className == typeof(HKLib.hk2018.hkaiDirectedGraphExplicitCost).Name)
-            {
-                return (HKLib.hk2018.hkaiDirectedGraphExplicitCost)v.m_variant;
-            }
-        }
-        return null;
-    }
-
-    private unsafe void ProcessMesh_HKX2(hkaiNavMesh mesh)
-    {
-        byte navR = (byte)CFG.Current.Viewport_Navmesh_Color.X;
-        byte navG = (byte)CFG.Current.Viewport_Navmesh_Color.Y;
-        byte navB = (byte)CFG.Current.Viewport_Navmesh_Color.Z;
+        byte navR = (byte)color.X;
+        byte navG = (byte)color.Y;
+        byte navB = (byte)color.Z;
         byte navA = 255;
 
-        List<Vector4> verts = mesh.m_vertices;
-        var indexCount = 0;
-        foreach (hkaiNavMeshFace f in mesh.m_faces)
-        {
-            // Simple formula for indices count for a triangulation of a poly
-            indexCount += (f.m_numEdges - 2) * 3;
-        }
-
-        // indexCount already counts each triangle's 3 indices, and every index gets its own vertex
-        VertexCount = indexCount;
-        IndexCount = indexCount;
+        // Every index gets its own vertex
+        VertexCount = triangles.Count;
+        IndexCount = triangles.Count;
         var buffersize = (uint)IndexCount * 4u;
         var vbuffersize = (uint)VertexCount * NavmeshLayout.SizeInBytes;
         GeomBuffer =
             SceneRenderer.GeometryBufferAllocator.Allocate(
                 vbuffersize, buffersize, (int)NavmeshLayout.SizeInBytes, 4);
-        var MeshIndices = new Span<int>(GeomBuffer.MapIBuffer().ToPointer(), IndexCount);
-        var MeshVertices =
-            new Span<NavmeshLayout>(GeomBuffer.MapVBuffer().ToPointer(), VertexCount);
-        PickingVertices = new Vector3[VertexCount];
-        PickingIndices = new int[IndexCount];
-
-        ResourceFactory factory = SceneRenderer.Factory;
-
-        var idx = 0;
-
-        var maxcluster = 0;
-
-        for (var id = 0; id < mesh.m_faces.Count; id++)
-        {
-            if (mesh.m_faces[id].m_clusterIndex > maxcluster)
-            {
-                maxcluster = mesh.m_faces[id].m_clusterIndex;
-            }
-
-            var sedge = mesh.m_faces[id].m_startEdgeIndex;
-            var ecount = mesh.m_faces[id].m_numEdges;
-
-            // Use simple algorithm for convex polygon trianglization
-            for (var t = 0; t < ecount - 2; t++)
-            {
-                if (ecount > 3)
-                {
-                    //ecount = ecount;
-                }
-
-                var end = t + 2 >= ecount ? sedge : sedge + t + 2;
-                Vector4 vert1 = mesh.m_vertices[mesh.m_edges[sedge].m_a];
-                Vector4 vert2 = mesh.m_vertices[mesh.m_edges[sedge + t + 1].m_a];
-                Vector4 vert3 = mesh.m_vertices[mesh.m_edges[end].m_a];
-
-                MeshVertices[idx] = new NavmeshLayout();
-                MeshVertices[idx + 1] = new NavmeshLayout();
-                MeshVertices[idx + 2] = new NavmeshLayout();
-
-                MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                MeshVertices[idx + 2].Position = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                PickingVertices[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                PickingVertices[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                PickingVertices[idx + 2] = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                Vector3 n = Vector3.Normalize(Vector3.Cross(
-                    MeshVertices[idx + 2].Position - MeshVertices[idx].Position,
-                    MeshVertices[idx + 1].Position - MeshVertices[idx].Position));
-                MeshVertices[idx].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx].Normal[2] = (sbyte)(n.Z * 127.0f);
-                MeshVertices[idx + 1].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx + 1].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx + 1].Normal[2] = (sbyte)(n.Z * 127.0f);
-                MeshVertices[idx + 2].Normal[0] = (sbyte)(n.X * 127.0f);
-                MeshVertices[idx + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
-                MeshVertices[idx + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
-
-                MeshVertices[idx].Color[0] = navR;
-                MeshVertices[idx].Color[1] = navG;
-                MeshVertices[idx].Color[2] = navB;
-                MeshVertices[idx].Color[3] = navA;
-                MeshVertices[idx + 1].Color[0] = navR;
-                MeshVertices[idx + 1].Color[1] = navG;
-                MeshVertices[idx + 1].Color[2] = navB;
-                MeshVertices[idx + 1].Color[3] = navA;
-                MeshVertices[idx + 2].Color[0] = navR;
-                MeshVertices[idx + 2].Color[1] = navG;
-                MeshVertices[idx + 2].Color[2] = navB;
-                MeshVertices[idx + 2].Color[3] = navA;
-
-                MeshVertices[idx].Barycentric[0] = 0;
-                MeshVertices[idx].Barycentric[1] = 0;
-                MeshVertices[idx + 1].Barycentric[0] = 1;
-                MeshVertices[idx + 1].Barycentric[1] = 0;
-                MeshVertices[idx + 2].Barycentric[0] = 0;
-                MeshVertices[idx + 2].Barycentric[1] = 1;
-
-                MeshIndices[idx] = idx;
-                MeshIndices[idx + 1] = idx + 1;
-                MeshIndices[idx + 2] = idx + 2;
-                PickingIndices[idx] = idx;
-                PickingIndices[idx + 1] = idx + 1;
-                PickingIndices[idx + 2] = idx + 2;
-
-                idx += 3;
-            }
-        }
-
-        GeomBuffer.UnmapIBuffer();
-        GeomBuffer.UnmapVBuffer();
-
-        if (VertexCount > 0)
-        {
-            fixed (void* ptr = PickingVertices)
-            {
-                Bounds = BoundingBox.CreateFromPoints((Vector3*)ptr, PickingVertices.Count(), 12,
-                    Quaternion.Identity, Vector3.Zero, Vector3.One);
-            }
-        }
-        else
-        {
-            Bounds = new BoundingBox();
-        }
-    }
-
-
-    private unsafe void ProcessGraph_HKX2(hkaiDirectedGraphExplicitCost graph)
-    {
-        List<Vector4> verts = graph.m_positions;
-        var indexCount = 0;
-        foreach (hkaiDirectedGraphExplicitCostNode g in graph.m_nodes)
-        {
-            // Simple formula for indices count for a triangulation of a poly
-            indexCount += g.m_numEdges;
-        }
-
-        GraphVertexCount = indexCount * 2;
-        GraphIndexCount = indexCount * 2;
-        var buffersize = (uint)GraphIndexCount * 4u;
-        var lsize = MeshLayoutUtils.GetLayoutVertexSize(MeshLayoutType.LayoutPositionColor);
-        var vbuffersize = (uint)GraphVertexCount * lsize;
-
-        CostGraphGeomBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(vbuffersize, buffersize, (int)lsize, 4);
-        var MeshIndices = new Span<int>(CostGraphGeomBuffer.MapIBuffer().ToPointer(), GraphIndexCount);
-        var MeshVertices =
-            new Span<PositionColor>(CostGraphGeomBuffer.MapVBuffer().ToPointer(), GraphVertexCount);
-        var vertPos = new Vector3[indexCount * 2];
-
-        var idx = 0;
-
-        for (var id = 0; id < graph.m_nodes.Count; id++)
-        {
-            var sedge = graph.m_nodes[id].m_startEdgeIndex;
-            var ecount = graph.m_nodes[id].m_numEdges;
-
-            for (var e = 0; e < ecount; e++)
-            {
-                Vector4 vert1 = graph.m_positions[id];
-                Vector4 vert2 =
-                    graph.m_positions[(int)graph.m_edges[graph.m_nodes[id].m_startEdgeIndex + e].m_target];
-
-                MeshVertices[idx] = new PositionColor();
-                MeshVertices[idx + 1] = new PositionColor();
-
-                MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                vertPos[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                vertPos[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
-
-                MeshVertices[idx].Color[0] = 235;
-                MeshVertices[idx].Color[1] = 200;
-                MeshVertices[idx].Color[2] = 255;
-                MeshVertices[idx].Color[3] = 255;
-                MeshVertices[idx + 1].Color[0] = 235;
-                MeshVertices[idx + 1].Color[1] = 200;
-                MeshVertices[idx + 1].Color[2] = 255;
-                MeshVertices[idx + 1].Color[3] = 255;
-
-                MeshIndices[idx] = idx;
-                MeshIndices[idx + 1] = idx + 1;
-
-                idx += 2;
-            }
-        }
-
-        CostGraphGeomBuffer.UnmapIBuffer();
-        CostGraphGeomBuffer.UnmapVBuffer();
-
-        if (GraphVertexCount > 0)
-        {
-            fixed (void* ptr = vertPos)
-            {
-                Bounds = BoundingBox.CreateFromPoints((Vector3*)ptr, vertPos.Count(), 12, Quaternion.Identity,
-                    Vector3.Zero, Vector3.One);
-            }
-        }
-        else
-        {
-            Bounds = new BoundingBox();
-        }
-    }
-
-
-    private void ProcessMesh_HKX3(HKLib.hk2018.hkaiNavMesh mesh)
-    {
-        ProcessMesh_HKX3(mesh.m_vertices,
-            mesh.m_faces.Select(f => new NavmeshFace(f.m_startEdgeIndex, f.m_numEdges, f.m_clusterIndex)).ToList(),
-            mesh.m_edges.Select(e => e.m_a).ToList());
-    }
-
-    private void ProcessMesh_HKX3(HKLib.hk2019.hkaiNavMesh mesh)
-    {
-        ProcessMesh_HKX3(mesh.m_vertices,
-            mesh.m_faces.Select(f => new NavmeshFace(f.m_startEdgeIndex, f.m_numEdges, f.m_clusterIndex)).ToList(),
-            mesh.m_edges.Select(e => e.m_a).ToList());
-    }
-
-    /// <summary>
-    /// The parts of an hkaiNavMesh face used to draw it, so 2018 and 2019 navmeshes are drawn the same way
-    /// </summary>
-    private record struct NavmeshFace(int StartEdgeIndex, int NumEdges, int ClusterIndex);
-
-    /// <param name="edgeVertices">The vertex index each edge starts at</param>
-    private unsafe void ProcessMesh_HKX3(List<Vector4> verts, List<NavmeshFace> faces, List<int> edgeVertices)
-    {
-        var indexCount = 0;
-
-        foreach (NavmeshFace f in faces)
-        {
-            // Simple formula for indices count for a triangulation of a poly
-            indexCount += Math.Max(f.NumEdges - 2, 0) * 3;
-        }
-
-        // indexCount already counts each triangle's 3 indices, and every index gets its own vertex
-        VertexCount = indexCount;
-        IndexCount = indexCount;
-        var buffersize = (uint)IndexCount * 4u;
-        var vbuffersize = (uint)VertexCount * NavmeshLayout.SizeInBytes;
-        GeomBuffer =
-            SceneRenderer.GeometryBufferAllocator.Allocate(
-                vbuffersize, buffersize, (int)NavmeshLayout.SizeInBytes, 4);
+        PickingVertices = triangles.ToArray();
+        PickingIndices = Enumerable.Range(0, IndexCount).ToArray();
 
         // The allocator only uploads a buffer once everything allocated in it is filled, so this is always marked
         // filled, even if reading fails, or nothing else in the buffer would be drawn
@@ -494,90 +169,32 @@ public class HavokNavmeshResource : IResource, IDisposable
             var MeshIndices = new Span<int>(GeomBuffer.MapIBuffer().ToPointer(), IndexCount);
             var MeshVertices =
                 new Span<NavmeshLayout>(GeomBuffer.MapVBuffer().ToPointer(), VertexCount);
-            PickingVertices = new Vector3[VertexCount];
-            PickingIndices = new int[IndexCount];
 
-            ResourceFactory factory = SceneRenderer.Factory;
-
-            var idx = 0;
-
-            var maxcluster = 0;
-
-            for (var id = 0; id < faces.Count; id++)
+            for (var idx = 0; idx < triangles.Count; idx += 3)
             {
-                if (faces[id].ClusterIndex > maxcluster)
+                Vector3 n = Vector3.Normalize(Vector3.Cross(triangles[idx + 2] - triangles[idx], triangles[idx + 1] - triangles[idx]));
+
+                for (var k = 0; k < 3; k++)
                 {
-                    maxcluster = faces[id].ClusterIndex;
+                    var v = new NavmeshLayout();
+                    v.Position = triangles[idx + k];
+                    v.Normal[0] = (sbyte)(n.X * 127.0f);
+                    v.Normal[1] = (sbyte)(n.Y * 127.0f);
+                    v.Normal[2] = (sbyte)(n.Z * 127.0f);
+                    v.Color[0] = navR;
+                    v.Color[1] = navG;
+                    v.Color[2] = navB;
+                    v.Color[3] = navA;
+                    MeshVertices[idx + k] = v;
+                    MeshIndices[idx + k] = idx + k;
                 }
 
-                var sedge = faces[id].StartEdgeIndex;
-                var ecount = faces[id].NumEdges;
-
-                // Use simple algorithm for convex polygon trianglization
-                for (var t = 0; t < ecount - 2; t++)
-                {
-                    if (ecount > 3)
-                    {
-                        //ecount = ecount;
-                    }
-
-                    var end = t + 2 >= ecount ? sedge : sedge + t + 2;
-                    Vector4 vert1 = verts[edgeVertices[sedge]];
-                    Vector4 vert2 = verts[edgeVertices[sedge + t + 1]];
-                    Vector4 vert3 = verts[edgeVertices[end]];
-
-                    MeshVertices[idx] = new NavmeshLayout();
-                    MeshVertices[idx + 1] = new NavmeshLayout();
-                    MeshVertices[idx + 2] = new NavmeshLayout();
-
-                    MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                    MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                    MeshVertices[idx + 2].Position = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                    PickingVertices[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                    PickingVertices[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                    PickingVertices[idx + 2] = new Vector3(vert3.X, vert3.Y, vert3.Z);
-                    Vector3 n = Vector3.Normalize(Vector3.Cross(
-                        MeshVertices[idx + 2].Position - MeshVertices[idx].Position,
-                        MeshVertices[idx + 1].Position - MeshVertices[idx].Position));
-                    MeshVertices[idx].Normal[0] = (sbyte)(n.X * 127.0f);
-                    MeshVertices[idx].Normal[1] = (sbyte)(n.Y * 127.0f);
-                    MeshVertices[idx].Normal[2] = (sbyte)(n.Z * 127.0f);
-                    MeshVertices[idx + 1].Normal[0] = (sbyte)(n.X * 127.0f);
-                    MeshVertices[idx + 1].Normal[1] = (sbyte)(n.Y * 127.0f);
-                    MeshVertices[idx + 1].Normal[2] = (sbyte)(n.Z * 127.0f);
-                    MeshVertices[idx + 2].Normal[0] = (sbyte)(n.X * 127.0f);
-                    MeshVertices[idx + 2].Normal[1] = (sbyte)(n.Y * 127.0f);
-                    MeshVertices[idx + 2].Normal[2] = (sbyte)(n.Z * 127.0f);
-
-                    MeshVertices[idx].Color[0] = 157;
-                    MeshVertices[idx].Color[1] = 53;
-                    MeshVertices[idx].Color[2] = 255;
-                    MeshVertices[idx].Color[3] = 255;
-                    MeshVertices[idx + 1].Color[0] = 157;
-                    MeshVertices[idx + 1].Color[1] = 53;
-                    MeshVertices[idx + 1].Color[2] = 255;
-                    MeshVertices[idx + 1].Color[3] = 255;
-                    MeshVertices[idx + 2].Color[0] = 157;
-                    MeshVertices[idx + 2].Color[1] = 53;
-                    MeshVertices[idx + 2].Color[2] = 255;
-                    MeshVertices[idx + 2].Color[3] = 255;
-
-                    MeshVertices[idx].Barycentric[0] = 0;
-                    MeshVertices[idx].Barycentric[1] = 0;
-                    MeshVertices[idx + 1].Barycentric[0] = 1;
-                    MeshVertices[idx + 1].Barycentric[1] = 0;
-                    MeshVertices[idx + 2].Barycentric[0] = 0;
-                    MeshVertices[idx + 2].Barycentric[1] = 1;
-
-                    MeshIndices[idx] = idx;
-                    MeshIndices[idx + 1] = idx + 1;
-                    MeshIndices[idx + 2] = idx + 2;
-                    PickingIndices[idx] = idx;
-                    PickingIndices[idx + 1] = idx + 1;
-                    PickingIndices[idx + 2] = idx + 2;
-
-                    idx += 3;
-                }
+                MeshVertices[idx].Barycentric[0] = 0;
+                MeshVertices[idx].Barycentric[1] = 0;
+                MeshVertices[idx + 1].Barycentric[0] = 1;
+                MeshVertices[idx + 1].Barycentric[1] = 0;
+                MeshVertices[idx + 2].Barycentric[0] = 0;
+                MeshVertices[idx + 2].Barycentric[1] = 1;
             }
         }
         finally
@@ -613,7 +230,7 @@ public class HavokNavmeshResource : IResource, IDisposable
     /// Draws the cells of a nav volume as boxes. A cell face is only drawn if the cells next to it don't cover all
     /// of it, as the faces inside the volume can't be seen and there are hundreds of thousands of cells in a map.
     /// </summary>
-    private unsafe void ProcessVolume_HKX3(HKLib.hk2019.hkaiNavVolume volume)
+    private unsafe void ProcessVolume_HKX3(Havok.hk2019.hkaiNavVolume volume)
     {
         var cells = volume.m_cells;
 
@@ -746,7 +363,7 @@ public class HavokNavmeshResource : IResource, IDisposable
     /// <summary>
     /// Whether the face of a nav volume cell is fully covered by the cells it connects to on that side.
     /// </summary>
-    private static bool IsVolumeFaceCovered(HKLib.hk2019.hkaiNavVolume volume, int cellIndex, int axis, bool isMaxSide)
+    private static bool IsVolumeFaceCovered(Havok.hk2019.hkaiNavVolume volume, int cellIndex, int axis, bool isMaxSide)
     {
         var cell = volume.m_cells[cellIndex];
 
@@ -763,8 +380,8 @@ public class HavokNavmeshResource : IResource, IDisposable
             var edge = volume.m_edges[cell.m_startEdgeIndex + e];
 
             // These lead out of the volume, or are custom connections, rather than to a cell next to this one
-            if ((edge.m_flags & (HKLib.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_EXTERNAL_OPPOSITE
-                | HKLib.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_USER)) != 0)
+            if ((edge.m_flags & (Havok.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_EXTERNAL_OPPOSITE
+                | Havok.hk2019.hkaiNavVolume.CellEdgeFlagBits.EDGE_USER)) != 0)
             {
                 continue;
             }
@@ -795,44 +412,19 @@ public class HavokNavmeshResource : IResource, IDisposable
         return coveredArea >= faceArea;
     }
 
-    private void ProcessGraph_HKX3(HKLib.hk2018.hkaiDirectedGraphExplicitCost graph)
-    {
-        ProcessGraph_HKX3(graph.m_positions,
-            graph.m_nodes.Select(n => new NavmeshGraphNode(n.m_startEdgeIndex, n.m_numEdges)).ToList(),
-            graph.m_edges.Select(e => (int)e.m_target).ToList());
-    }
-
-    private void ProcessGraph_HKX3(HKLib.hk2019.hkaiDirectedGraphExplicitCost graph)
-    {
-        ProcessGraph_HKX3(graph.m_positions,
-            graph.m_nodes.Select(n => new NavmeshGraphNode(n.m_startEdgeIndex, n.m_numEdges)).ToList(),
-            graph.m_edges.Select(e => (int)e.m_target).ToList());
-    }
-
     /// <summary>
-    /// The parts of a cost graph node used to draw it, so 2018 and 2019 graphs are drawn the same way
+    /// Uploads the cost graph's edges, as line segments (pairs of points).
     /// </summary>
-    private record struct NavmeshGraphNode(int StartEdgeIndex, int NumEdges);
-
-    /// <param name="edgeTargets">The node each edge leads to</param>
-    private unsafe void ProcessGraph_HKX3(List<Vector4> positions, List<NavmeshGraphNode> nodes, List<int> edgeTargets)
+    private unsafe void ProcessGraph(List<Vector3> segments)
     {
-        List<Vector4> verts = positions;
-        var indexCount = 0;
-        foreach (NavmeshGraphNode g in nodes)
-        {
-            // Simple formula for indices count for a triangulation of a poly
-            indexCount += g.NumEdges;
-        }
-
-        GraphVertexCount = indexCount * 2;
-        GraphIndexCount = indexCount * 2;
+        GraphVertexCount = segments.Count;
+        GraphIndexCount = segments.Count;
         var buffersize = (uint)GraphIndexCount * 4u;
         var lsize = MeshLayoutUtils.GetLayoutVertexSize(MeshLayoutType.LayoutPositionColor);
         var vbuffersize = (uint)GraphVertexCount * lsize;
 
         CostGraphGeomBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(vbuffersize, buffersize, (int)lsize, 4);
-        var vertPos = new Vector3[indexCount * 2];
+        var vertPos = segments.ToArray();
 
         // The allocator only uploads a buffer once everything allocated in it is filled, so this is always marked
         // filled, even if reading fails, or nothing else in the buffer would be drawn
@@ -842,41 +434,16 @@ public class HavokNavmeshResource : IResource, IDisposable
             var MeshVertices =
                 new Span<PositionColor>(CostGraphGeomBuffer.MapVBuffer().ToPointer(), GraphVertexCount);
 
-            var idx = 0;
-
-            for (var id = 0; id < nodes.Count; id++)
+            for (var idx = 0; idx < segments.Count; idx++)
             {
-                var sedge = nodes[id].StartEdgeIndex;
-                var ecount = nodes[id].NumEdges;
-
-                for (var e = 0; e < ecount; e++)
-                {
-                    Vector4 vert1 = positions[id];
-                    Vector4 vert2 =
-                        positions[edgeTargets[nodes[id].StartEdgeIndex + e]];
-
-                    MeshVertices[idx] = new PositionColor();
-                    MeshVertices[idx + 1] = new PositionColor();
-
-                    MeshVertices[idx].Position = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                    MeshVertices[idx + 1].Position = new Vector3(vert2.X, vert2.Y, vert2.Z);
-                    vertPos[idx] = new Vector3(vert1.X, vert1.Y, vert1.Z);
-                    vertPos[idx + 1] = new Vector3(vert2.X, vert2.Y, vert2.Z);
-
-                    MeshVertices[idx].Color[0] = 235;
-                    MeshVertices[idx].Color[1] = 200;
-                    MeshVertices[idx].Color[2] = 255;
-                    MeshVertices[idx].Color[3] = 255;
-                    MeshVertices[idx + 1].Color[0] = 235;
-                    MeshVertices[idx + 1].Color[1] = 200;
-                    MeshVertices[idx + 1].Color[2] = 255;
-                    MeshVertices[idx + 1].Color[3] = 255;
-
-                    MeshIndices[idx] = idx;
-                    MeshIndices[idx + 1] = idx + 1;
-
-                    idx += 2;
-                }
+                var v = new PositionColor();
+                v.Position = segments[idx];
+                v.Color[0] = 235;
+                v.Color[1] = 200;
+                v.Color[2] = 255;
+                v.Color[3] = 255;
+                MeshVertices[idx] = v;
+                MeshIndices[idx] = idx;
             }
         }
         finally
@@ -900,16 +467,45 @@ public class HavokNavmeshResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// Navmesh Builder
+    /// Navmesh Builder: the DS3 navmesh it built, in HKX2's classes (the builders move to the unified library in a
+    /// later step).
     /// </summary>
-    /// <param name="root"></param>
-    /// <returns></returns>
-    public static HavokNavmeshResource ResourceFromNavmeshRoot(hkRootLevelContainer root)
+    public static HavokNavmeshResource ResourceFromNavmeshRoot(HKX2.hkRootLevelContainer root)
     {
         var ret = new HavokNavmeshResource();
-        ret.Root_HKX2 = root;
+
+        if (root.FindVariant<HKX2.hkaiNavMesh>() is { } mesh)
+            ret._builtMesh = new Hkx2NavMeshView(mesh);
+
+        if (root.FindVariant<HKX2.hkaiDirectedGraphExplicitCost>() is { } graph)
+            ret._builtGraph = new Hkx2GraphView(graph);
+
         ret.LoadInternal(AccessLevel.AccessFull);
         return ret;
+    }
+
+    private sealed class Hkx2NavMeshView(HKX2.hkaiNavMesh mesh) : IHavokNavMesh
+    {
+        public IReadOnlyList<Vector4> Vertices => mesh.m_vertices;
+
+        public int FaceCount => mesh.m_faces.Count;
+
+        public (int StartEdge, int EdgeCount, int Cluster) GetFace(int index) =>
+            (mesh.m_faces[index].m_startEdgeIndex, mesh.m_faces[index].m_numEdges, mesh.m_faces[index].m_clusterIndex);
+
+        public int GetEdgeStart(int edge) => mesh.m_edges[edge].m_a;
+    }
+
+    private sealed class Hkx2GraphView(HKX2.hkaiDirectedGraphExplicitCost graph) : IHavokDirectedGraph
+    {
+        public IReadOnlyList<Vector4> Positions => graph.m_positions;
+
+        public int NodeCount => graph.m_nodes.Count;
+
+        public (int StartEdge, int EdgeCount) GetNode(int index) =>
+            (graph.m_nodes[index].m_startEdgeIndex, graph.m_nodes[index].m_numEdges);
+
+        public int GetEdgeTarget(int edge) => (int)graph.m_edges[edge].m_target;
     }
 
     #region IDisposable Support

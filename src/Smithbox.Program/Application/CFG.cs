@@ -100,8 +100,6 @@ public class CFG
     public string Project_Default_Data_Directory = "";
     public string Project_ME3_Profile_Directory = "";
 
-    public bool MapEditor_Use_PTDE_Collisions_In_DS1R_Projects = true;
-    public string PTDE_Data_Path = "";
 
     public bool Project_Scan_Directory_For_Additions = true;
     public bool Project_Scan_Directory_Strict_Mode = false;

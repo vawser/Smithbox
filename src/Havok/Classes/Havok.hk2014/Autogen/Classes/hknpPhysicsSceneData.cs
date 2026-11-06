@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hknpPhysicsSceneData : hkReferencedObject
+public partial class hknpPhysicsSceneData : hkReferencedObject
 {
     public List<hknpPhysicsSystemData?> m_systemDatas = new();
 

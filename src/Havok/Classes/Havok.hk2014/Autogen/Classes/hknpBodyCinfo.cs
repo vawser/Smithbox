@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hknpBodyCinfo : IHavokObject
+public partial class hknpBodyCinfo : IHavokObject
 {
     public hknpShape? m_shape;
 

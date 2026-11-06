@@ -356,12 +356,12 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:
 1. Renderer animation (`HavokAnimationData`, `HavokTagfile` → `Untyped`/typed reads). **Done 2026-11-06**, see [Havok Phase 6.1 Renderer Animation.md](Havok%20Phase%206.1%20Renderer%20Animation.md) and below.
-2. Renderer collision/navmesh resources and Map Editor banks (`HavokCollisionResource`, `HavokNavmeshResource`, `HavokCollisionBank`, `HavokNavmeshBank`, `WallBank`, the `*_Helper` classes).
+2. Renderer collision/navmesh resources and Map Editor banks (`HavokCollisionResource`, `HavokNavmeshResource`, `HavokCollisionBank`, `HavokNavmeshBank`, `WallBank`, the `*_Helper` classes). **Rendering done 2026-11-06**, see [Havok Phase 6.2 Collision and Navmesh.md](Havok%20Phase%206.2%20Collision%20and%20Navmesh.md) and below. The ER/AC6 bank containers (edited and saved) move with 6.3.
 3. Havok Editor (`HavokBank.ReadRoot`/`WriteRoot` → `HavokFile`; `HavokTagSerializer` and `HKLibTagfileReader` go away; `HavokFileWrapper` holds a `HavokDocument`). Turn on Havok Editor support for the games that are newly readable *only* after their round trip passes.
 4. Collision Generator and NavmeshBuilder, collapsing the triplicates through the 2.6 interfaces.
 5. Model Editor, Param mass edit, developer tools.
 
-> **6.1 status (2026-11-06): done.** The renderer's animation reads go through the unified library. Smithbox's first use of it.
+> **6.1 status (2026-11-06): done, and checked in the app** (the user confirmed animations play correctly). The renderer's animation reads go through the unified library. Smithbox's first use of it.
 > - **Decision: shared interfaces** (§2.6). `Havok.Shared/Animation.cs` has the views:
 >   - `IHavokSkeleton`, `IHavokAnimationBinding`, `IHavokAnimation`.
 >   - `IHavokSplineAnimation`, `IHavokInterleavedAnimation`.
@@ -377,7 +377,49 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 >   - Every skeleton and clip is equal, floats bit for bit, in DS1, DS1R, DS3, SDT, ER, NR and AC6.
 >   - The one BB difference is the new reader being right: a Shift-JIS bone name (`不要_Weapon_01`), which SoulsFormats decoded as ASCII.
 >   - DeS now reads (32 skeletons, 1,001 clip files; the old reader read none). But only 90 of its clips are interleaved. The rest are wavelet or delta compressed, and the renderer has no decoder for those, so DeS stays off in `AnimationPackage.IsSupportedGame`.
-> - **Bug found on the way:** `GeneratedClassSet` cached class sets by game name, so `DES` and `DES_51` shared one entry, and whichever loaded first served the other's files. It's now keyed by game and overlays. Full DeS run: 5.1 byte identity 219 → **266/266**, and 5.5 is unchanged at 11,083/11,086.
+> - **Bug found on the way (6.1):** `GeneratedClassSet` cached class sets by game name, so `DES` and `DES_51` shared one entry, and whichever loaded first served the other's files. It's now keyed by game and overlays. Full DeS run: 5.1 byte identity 219 → **266/266**, and 5.5 is unchanged at 11,083/11,086.
+>
+> **6.2 status (2026-11-06): rendering done** (decision: rendering only). The ER/AC6 bank containers stay on HKLib until 6.3, because `MapHavokPropertyView` edits them and the banks save them.
+> - **Views.** `Havok.Shared/Physics.cs` describes data, not algorithms:
+>   - physics scene, system, body;
+>   - compressed mesh (sections normalised: hk2014/2016 pack their counts into `m_data`);
+>   - triangle mesh, convex polygons, compound shape, hkp mesh storage;
+>   - navmesh, cost graph.
+>
+>   They're implemented in each class set's `Manual/Physics.cs`. The sets were regenerated again; each diff is `partial` only, and the old Autogen is in `.archive/Havok Phase 6.2 Autogen`.
+> - **One algorithm.** `Havok.Shared/CollisionGeometry.cs` is the union of the four old builders:
+>   - every shape kind;
+>   - a primitive with an unresolved vertex is dropped;
+>   - a zero rotation is identity;
+>   - bodies come from the first physics scene, or from loose physics systems (BB);
+>   - hkp files get one untransformed submesh per mesh storage;
+>   - navmesh fans and graph segments;
+>   - wall shape keys.
+> - **Smithbox.**
+>   - `HavokCollisionResource` and `HavokNavmeshResource` read a `HavokDocument` through `HavokFile`. `HavokCompendiumSource.Unified(profile)` gives them the binder's compendium.
+>   - `HavokCollisionMeshBuilder` replaces `HKX2_Helper`, `HKLib_Helper` and `HKLib2019_Helper` (archived). `HKX_Helper` stays for DS2 only (hk_2012, which nothing else reads).
+>   - The Sekiro bank cache and `WallBank` use documents.
+>   - The navmesh builder's HKX2 output goes through small view adapters until 6.4.
+>   - Each game keeps its navmesh colour (configured for DS3/BB, fixed for the rest).
+> - **Verified** by `Tools/CollisionReadCompare` (the old builders' geometry code against the new, 20 containers × 12 files per category): [Havok Library Survey/Collision Read Compare.md](Havok%20Library%20Survey/Collision%20Read%20Compare.md).
+>   - Equal or within 1e-4 everywhere both paths draw. "Close" comes from a matrix instead of quaternion-then-translate, and the float decode instead of HKLib 2018's `double` one.
+>   - Navmeshes are equal bit for bit (DS3, BB, ER, NR, AC6).
+>   - Every Sekiro wall shape key matches (`--walls`: 144,353 keys in 73 files).
+> - **Differences, all the new path being right:**
+>   - DS3 `h37_00_00_00_009900`: HKX2 cast packed vertex indices to `ushort`, and that mesh has 82,799 packed vertices.
+>   - BB `o291270`: the old path never drew convex polytopes.
+> - **Newly drawn** (the old path failed or drew nothing):
+>   - DS1R's tagfile collision. Before, it only worked with the "use PTDE collision" option.
+>   - 15 of the 21 sampled BB object collisions, and a DeS object.
+>   - Sekiro navmeshes, which the old resource never read.
+> - **Guards widened, PTDE fallback removed (2026-11-06):**
+>   - DS1R's map collision is located in its own `h`/`l` `.hkxbhd` binders, as DS3's is. `ModelLocator` and `PathBuilder` used to point it at PTDE's loose layout.
+>   - Sekiro object collision is shown.
+>   - DB_NT and DB navmeshes pass `HavokNavmeshBank.CanUse`.
+>   - The "Use PTDE collisions in DS1R projects" option is removed (user's decision), along with the PTDE data path preference, its auto-detection in project setup and `ProjectVFS.PTDE_FS`. DS1R projects only read their own files.
+> - **Unchanged failures:**
+>   - One ER file, `f60_51_59_00`: neither library's 2018 registry has one array type it uses.
+>   - AC6 loose copies in an unpacked `-hkxbdt` folder, away from their compendium.
 
 **Phase 7: retire.** Move `HKX2`, `HKX2.Serialization`, `HKX.ClassGeneration`, `HKLib*` and `ColBakeTest` (if unused) to `.archive`, and remove their project references. Leave SoulsFormats `HKX` in place but unreferenced by Smithbox (see decision D3).
 

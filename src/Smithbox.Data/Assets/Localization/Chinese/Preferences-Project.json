@@ -119,22 +119,6 @@
     {
       "Key": "PREF_Project_ME3_Profile_Directory_TT",
       "Text": "选择要放置生成的 ME3 配置文件的目录。"
-    },
-    {
-      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects",
-      "Text": "在 Dark Souls：重制版项目中使用 PTDE 碰撞体"
-    },
-    {
-      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects_TT",
-      "Text": "启用后，如果存在 Dark Souls：准备赴死版安装，将使用其中的碰撞文件进行碰撞体和导航网格。"
-    },
-    {
-      "Key": "PREF_PTDE_Data_Path",
-      "Text": "PTDE 安装路径"
-    },
-    {
-      "Key": "PREF_PTDE_Data_Path_TT",
-      "Text": "Dark Souls：准备赴死版的安装目录。"
     }
   ]
 }

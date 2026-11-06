@@ -135,22 +135,6 @@
     {
       "Key": "PREF_Project_ME3_Profile_Directory_TT",
       "Text": "Select the directory you want the generated ME3 profiles to be placed in."
-    },
-    {
-      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects",
-      "Text": "Utilise PTDE Collisions in Dark Souls: Remastered Projects"
-    },
-    {
-      "Key": "PREF_MapEditor_Use_PTDE_Collisions_In_DS1R_Projects_TT",
-      "Text": "If enabled, and a Dark Souls: Prepare to Die Edition install exists, the collision files from it will be used for collisions and navmeshes."
-    },
-    {
-      "Key": "PREF_PTDE_Data_Path",
-      "Text": "PTDE Install Path"
-    },
-    {
-      "Key": "PREF_PTDE_Data_Path_TT",
-      "Text": "The install directory for Dark Souls: Prepare to Die Edition."
     }
   ]
 }

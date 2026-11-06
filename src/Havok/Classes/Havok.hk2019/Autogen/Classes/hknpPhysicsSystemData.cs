@@ -2,7 +2,7 @@
 
 namespace Havok.hk2019;
 
-public class hknpPhysicsSystemData : hkReferencedObject
+public partial class hknpPhysicsSystemData : hkReferencedObject
 {
     public List<hknpMaterial> m_materials = new();
 

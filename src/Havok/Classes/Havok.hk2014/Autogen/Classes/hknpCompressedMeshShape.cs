@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hknpCompressedMeshShape : hknpCompositeShape
+public partial class hknpCompressedMeshShape : hknpCompositeShape
 {
     public hknpCompressedMeshShapeData? m_data;
 

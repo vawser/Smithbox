@@ -2,7 +2,7 @@
 
 namespace Havok.hk2018;
 
-public class hkaiNavMesh : hkReferencedObject
+public partial class hkaiNavMesh : hkReferencedObject
 {
     public List<hkaiNavMesh.Face> m_faces = new();
 

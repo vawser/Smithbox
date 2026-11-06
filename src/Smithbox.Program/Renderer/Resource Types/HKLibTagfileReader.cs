@@ -54,6 +54,8 @@ public sealed class HavokCompendiumSource
 
     public HavokCompendiumSource(Memory<byte> bytes)
     {
+        _bytes = bytes;
+
         _hk2018 = new(() =>
         {
             using var stream = HKLibTagfileReader.Open(bytes);
@@ -70,6 +72,27 @@ public sealed class HavokCompendiumSource
     public HKLib.Serialization.hk2018.HavokCompendium Hk2018 => _hk2018.Value;
 
     public HKLib.Serialization.hk2019.HavokCompendium Hk2019 => _hk2019.Value;
+
+    private readonly Memory<byte> _bytes;
+    private Havok.HavokCompendium _unified;
+    private readonly object _unifiedLock = new();
+
+    /// <summary>
+    /// The compendium for the unified Havok library (Havok.Files), read once, with the profile of the files that use it.
+    /// </summary>
+    public Havok.HavokCompendium Unified(Havok.HavokProfile profile)
+    {
+        lock (_unifiedLock)
+        {
+            if (_unified == null)
+            {
+                var data = DCX.Is(_bytes) ? DCX.Decompress(_bytes) : _bytes;
+                _unified = Havok.Files.HavokFile.ReadCompendium(data.ToArray(), profile);
+            }
+
+            return _unified;
+        }
+    }
 
     /// <summary>
     /// Gets the compendium held in a binder, or null if it has none.

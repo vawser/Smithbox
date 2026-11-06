@@ -1,4 +1,4 @@
-using HKX2;
+using Havok.Shared;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -25,32 +25,21 @@ public sealed class WallGeometry
     public readonly List<Vector3> Corners = new();
     public BoundingBox Bounds { get; private set; }
 
-    public static WallGeometry Build(fsnpCustomParamCompressedMeshShape shape, hknpBodyCinfo body)
+    /// <summary>
+    /// The triangles of a compressed mesh, in the world, by shape key (the WALL files refer to triangles by them).
+    /// </summary>
+    public static WallGeometry Build(IHavokCompressedMesh shape, IHavokBody body)
     {
         var geometry = new WallGeometry();
-        var data = shape.m_data;
-        var tree = data.m_meshTree;
+        var transform = CollisionGeometry.BodyTransform(body);
 
-        for (var s = 0; s < tree.m_sections.Count; s++)
+        foreach (var (key, a, b, c) in CollisionGeometry.CompressedTriangles(shape))
         {
-            var count = (int)(tree.m_sections[s].m_primitives.m_data & 0xFF);
-
-            for (var p = 0; p < count; p++)
-            {
-                for (var half = 0; half < 2; half++)
-                {
-                    var key = data.GetShapeKey(s, p, half);
-
-                    if (!data.TryGetShapeKeyTriangle(key, out var a, out var b, out var c))
-                        continue;
-
-                    geometry.Lookup[key] = geometry.Keys.Count;
-                    geometry.Keys.Add(key);
-                    geometry.Corners.Add(HKX2_Helper.TransformVert(a, body));
-                    geometry.Corners.Add(HKX2_Helper.TransformVert(b, body));
-                    geometry.Corners.Add(HKX2_Helper.TransformVert(c, body));
-                }
-            }
+            geometry.Lookup[key] = geometry.Keys.Count;
+            geometry.Keys.Add(key);
+            geometry.Corners.Add(Vector3.Transform(a, transform));
+            geometry.Corners.Add(Vector3.Transform(b, transform));
+            geometry.Corners.Add(Vector3.Transform(c, transform));
         }
 
         if (geometry.Corners.Count > 0)
@@ -727,24 +716,18 @@ public class WallBank
         if (Geometry.TryGetValue(fileName, out var existing))
             return existing;
 
-        var container = Project.Handler.MapData.HavokCollisionBank.GetTagContainer(fileName);
+        var document = Project.Handler.MapData.HavokCollisionBank.GetTagDocument(fileName);
 
-        if (container == null)
+        if (document == null)
             return null;
 
-        var scene = container.m_namedVariants
-            .Select(v => v.m_variant)
-            .OfType<hknpPhysicsSceneData>()
-            .FirstOrDefault();
-
-        var body = scene?.m_systemDatas
-            .SelectMany(s => s.m_bodyCinfos)
-            .FirstOrDefault(b => b.m_shape is fsnpCustomParamCompressedMeshShape);
+        var body = CollisionGeometry.Bodies(document.Objects)
+            .FirstOrDefault(b => b.Shape is IHavokCompressedMesh);
 
         if (body == null)
             return null;
 
-        var geometry = WallGeometry.Build((fsnpCustomParamCompressedMeshShape)body.m_shape, body);
+        var geometry = WallGeometry.Build((IHavokCompressedMesh)body.Shape, body);
 
         return Geometry.GetOrAdd(fileName, geometry);
     }

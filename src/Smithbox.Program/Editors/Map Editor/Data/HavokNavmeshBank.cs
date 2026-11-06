@@ -44,15 +44,16 @@ public class HavokNavmeshBank
 
     public bool CanUse()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 
-            or ProjectType.BB 
+        // The games whose navmeshes are Havok (hkaiNavMesh), which the unified Havok library reads
+        if (Project.Descriptor.ProjectType is ProjectType.DS3
+            or ProjectType.BB
             or ProjectType.SDT
             or ProjectType.ER
             or ProjectType.AC6
-            or ProjectType.NR)
+            or ProjectType.NR
+            or ProjectType.DB_NT
+            or ProjectType.DB)
             return true;
-
-        // NOTE: SDT doesn't render the meshes as it doesn't have HKX support yet
 
         return false;
     }

@@ -2,7 +2,7 @@
 
 namespace Havok.hk2016;
 
-public class hknpExternMeshShape : hknpCompositeShape
+public partial class hknpExternMeshShape : hknpCompositeShape
 {
     public hknpExternMeshShapeGeometry? m_geometry;
 

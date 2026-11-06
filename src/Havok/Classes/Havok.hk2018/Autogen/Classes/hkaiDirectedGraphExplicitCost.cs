@@ -2,7 +2,7 @@
 
 namespace Havok.hk2018;
 
-public class hkaiDirectedGraphExplicitCost : hkReferencedObject
+public partial class hkaiDirectedGraphExplicitCost : hkReferencedObject
 {
     public List<Vector4> m_positions = new();
 

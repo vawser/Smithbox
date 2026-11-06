@@ -126,7 +126,7 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
@@ -134,7 +134,7 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("model", "map", $"h{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
                         if (hittype == "lo")
                         {
@@ -145,23 +145,17 @@ public class PathBuilder
                             relPath = Path.Combine("map", mapid, $"h{mapid.Substring(1)}.hkxbhd");
                         }
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER 
-                        or ProjectType.NR 
+                    else if (project.Descriptor.ProjectType is ProjectType.ER
+                        or ProjectType.NR
                         or ProjectType.AC6
                         or ProjectType.DB_NT
                         or ProjectType.DB)
                     {
-                        if (hittype == "lo")
+                        var prefix = hittype switch { "lo" => "l", "hi" => "h", "fa" => "f", _ => null };
+
+                        if (prefix != null)
                         {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd");
-                        }
-                        else if (hittype == "hi")
-                        {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"h{mapid.Substring(1)}.hkxbhd");
-                        }
-                        else if (hittype == "fa")
-                        {
-                            relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"f{mapid.Substring(1)}.hkxbhd");
+                            relPath = Path.Combine(GetMapFolder(project, mapid), $"{prefix}{mapid.Substring(1)}.hkxbhd");
                         }
                     }
                 }
@@ -172,7 +166,7 @@ public class PathBuilder
                     var hittype = p[i];
                     i++;
 
-                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    if (project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1)
                     {
                         relPath = Path.Combine("map", mapid, p[i]);
                     }
@@ -180,17 +174,17 @@ public class PathBuilder
                     {
                         relPath = Path.Combine("model", "map", $"l{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    else if (project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
                         relPath = Path.Combine("map", mapid, $"l{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.Descriptor.ProjectType is ProjectType.ER 
-                        or ProjectType.NR 
+                    else if (project.Descriptor.ProjectType is ProjectType.ER
+                        or ProjectType.NR
                         or ProjectType.AC6
                         or ProjectType.DB_NT
                         or ProjectType.DB)
                     {
-                        relPath = Path.Combine("map", mapid.Substring(0, 3), mapid, $"l{mapid.Substring(1)}.hkxbhd");
+                        relPath = Path.Combine(GetMapFolder(project, mapid), $"l{mapid.Substring(1)}.hkxbhd");
                     }
                 }
                 // Navmesh
@@ -215,17 +209,7 @@ public class PathBuilder
                         or ProjectType.DB_NT
                         or ProjectType.DB)
                     {
-                        relPath = Path.Combine("map", mapid, $"{mapid}.nvmhktbnd.dcx");
-
-                        if (project.Descriptor.ProjectType is ProjectType.ER
-                            or ProjectType.AC6
-                            or ProjectType.NR
-                            or ProjectType.DB_NT
-                            or ProjectType.DB)
-                        {
-                            var id = mapid.Substring(0, 3);
-                            relPath = Path.Combine("map", id, mapid, $"{mapid}.nvmhktbnd.dcx");
-                        }
+                        relPath = Path.Combine(GetMapFolder(project, mapid), $"{mapid}.nvmhktbnd.dcx");
                     }
                 }
                 // Nav volume (AC6 flying navigation)
@@ -709,6 +693,17 @@ public class PathBuilder
 #endif
 
         return relPath;
+    }
+
+    /// <summary>
+    /// The folder of a map's collision and navmesh files. ER, NR and AC6 group their maps by area (map/m10/m10_00_00_00);
+    /// the Duskbloods keep each map directly under map, as DS3 does.
+    /// </summary>
+    private static string GetMapFolder(ProjectEntry project, string mapid)
+    {
+        return project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
+            ? Path.Combine("map", mapid.Substring(0, 3), mapid)
+            : Path.Combine("map", mapid);
     }
 
     /// <summary>

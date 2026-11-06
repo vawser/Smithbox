@@ -2,7 +2,7 @@
 
 namespace Havok.hk2019;
 
-public class hknpCompressedMeshShape : hknpCompositeShape
+public partial class hknpCompressedMeshShape : hknpCompositeShape
 {
     public hkReferencedObject? m_data;
 

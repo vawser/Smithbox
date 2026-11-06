@@ -225,6 +225,8 @@ public static class Survey
         ("behbnd", new Regex(@"\.behbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("chrbnd", new Regex(@"\.chrbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("objbnd", new Regex(@"\.objbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
+        // asset collision (ER, NR, AC6, the Duskbloods)
+        ("geomhkxbnd", new Regex(@"\.geomhkxbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("partsbnd", new Regex(@"\.partsbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("nvmhktbnd", new Regex(@"\.nvmhktbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("mapbnd", new Regex(@"\.mapbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
@@ -232,7 +234,7 @@ public static class Survey
     ];
 
     private static readonly Regex AnyContainer = new(
-        @"\.(hkxbhd|anibnd|behbnd|chrbnd|objbnd|partsbnd|nvmhktbnd|mapbnd|hkx|hkt)(\.dcx)?$", RegexOptions.IgnoreCase);
+        @"\.(hkxbhd|anibnd|behbnd|chrbnd|objbnd|geomhkxbnd|partsbnd|nvmhktbnd|mapbnd|hkx|hkt)(\.dcx)?$", RegexOptions.IgnoreCase);
 
     private static readonly Regex HavokInner = new(@"\.(hkx|hkt|hkc)(\.dcx)?$", RegexOptions.IgnoreCase);
     private static readonly Regex CompendiumInner = new(@"\.compendium(\.dcx)?$", RegexOptions.IgnoreCase);

@@ -2,7 +2,7 @@
 
 namespace Havok.hk2015;
 
-public class hkpStorageExtendedMeshShape : hkpExtendedMeshShape
+public partial class hkpStorageExtendedMeshShape : hkpExtendedMeshShape
 {
     public List<hkpStorageExtendedMeshShape.MeshSubpartStorage?> m_meshstorage = new();
 

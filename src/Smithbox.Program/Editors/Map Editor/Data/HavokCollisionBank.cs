@@ -15,9 +15,10 @@ public class HavokCollisionBank
     public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
     /// <summary>
-    /// Sekiro collision, which is read as tagfiles into the HKX2 classes. Keyed by file name, like HavokContainers.
+    /// Sekiro collision: tagfiles read by the unified Havok library with their binder's compendium. Keyed by file
+    /// name, like HavokContainers.
     /// </summary>
-    public Dictionary<string, HKX2.hkRootLevelContainer> TagContainers = new();
+    public Dictionary<string, Havok.HavokDocument> TagContainers = new();
 
     /// <summary>
     /// AC6 collision, which is Havok 2019. Keyed by file name, like HavokContainers.
@@ -318,7 +319,7 @@ public class HavokCollisionBank
     /// <summary>
     /// Gets the collision of a Sekiro map, e.g. l10_00_00_00_000100.hkx.dcx. Null if it isn't loaded.
     /// </summary>
-    public HKX2.hkRootLevelContainer GetTagContainer(string fileName)
+    public Havok.HavokDocument GetTagDocument(string fileName)
     {
         lock (TagContainers)
         {
@@ -353,12 +354,13 @@ public class HavokCollisionBank
 
             using var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
-            HKX2.TagFileDeserializer.Compendium compendium = null;
+            var profile = Havok.HavokProfile.SDT;
+            Havok.HavokCompendium compendium = null;
 
             var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
             if (compendiumFile != null)
             {
-                compendium = HKX2.TagFileDeserializer.ReadCompendium(DCX.Decompress(compendiumFile.Bytes).ToArray());
+                compendium = Havok.Files.HavokFile.ReadCompendium(DCX.Decompress(compendiumFile.Bytes).ToArray(), profile);
             }
 
             var files = packedBinder.Files
@@ -372,10 +374,7 @@ public class HavokCollisionBank
                 try
                 {
                     var fileBytes = DCX.Decompress(file.Bytes).ToArray();
-                    var container = new HKX2.TagFileDeserializer().Deserialize(fileBytes, compendium) as HKX2.hkRootLevelContainer;
-
-                    if (container == null)
-                        return;
+                    var container = Havok.Files.HavokFile.Read(fileBytes, profile, compendium);
 
                     lock (TagContainers)
                     {
