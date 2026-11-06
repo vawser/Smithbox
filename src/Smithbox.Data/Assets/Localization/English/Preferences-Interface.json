@@ -65,12 +65,12 @@
       "Text": "If enabled, the internal windows can be moved and docked freely."
     },
     {
-      "Key": "PREF_Interface_Tool_Window_Single_Section",
-      "Text": "Show One Tool Section at a Time"
+      "Key": "PREF_Interface_Tool_Window_Dropdown_Navigation",
+      "Text": "Always Use Dropdown Tool Navigation"
     },
     {
-      "Key": "PREF_Interface_Tool_Window_Single_Section_TT",
-      "Text": "If enabled, opening a section in a Tools window hides the other sections until it is collapsed."
+      "Key": "PREF_Interface_Tool_Window_Dropdown_Navigation_TT",
+      "Text": "If enabled, the Tools windows always pick the tool to show from a dropdown at the top. Otherwise they list the tools down the left side, and switch to the dropdown only when the window is narrow."
     },
     {
       "Key": "PREF_English_Font",

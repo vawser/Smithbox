@@ -47,7 +47,7 @@ public class ViewportRenderingTool
     {
         if (FocusRequested)
         {
-            ImGui.SetNextItemOpen(true);
+            ToolSections.Focus();
             FocusRequested = false;
         }
 

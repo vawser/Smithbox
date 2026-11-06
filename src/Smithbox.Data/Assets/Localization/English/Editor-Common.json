@@ -121,6 +121,70 @@
       "Text": "Options"
     },
     {
+      "Key": "EDITOR_ToolSections_Dropdown_TT",
+      "Text": "The tool to show. Tools are grouped by category."
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Search",
+      "Text": "Search & Edit"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Validation",
+      "Text": "Validation"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Browse",
+      "Text": "Browse"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Preview",
+      "Text": "Preview"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Viewport",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Map_Data",
+      "Text": "Map Data"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Rows",
+      "Text": "Rows"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Data",
+      "Text": "Data"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Organization",
+      "Text": "Organization"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Game_Memory",
+      "Text": "Game Memory"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Simulation",
+      "Text": "Simulation"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Animation",
+      "Text": "Animation"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Assets",
+      "Text": "Assets"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Editing",
+      "Text": "Editing"
+    },
+    {
       "Key": "EDITOR_Menubar_Action_Undo",
       "Text": "Undo"
     },

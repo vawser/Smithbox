@@ -127,6 +127,9 @@ public class MapToolWindow
 
         Sections.Begin();
 
+        // Actions
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
+
         if(CFG.Current.Interface_MapEditor_Tool_Common_Action)
         {
             if (ToolSections.Header("Common Actions"))
@@ -158,6 +161,9 @@ public class MapToolWindow
             }
         }
 
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
         if (CFG.Current.Interface_MapEditor_Tool_Search)
         {
             if (ToolSections.Header("Search"))
@@ -186,11 +192,22 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
+        {
+            if (ToolSections.Header("Mass Edit"))
+            {
+                View.MassEditTool.OnToolWindow();
+            }
+        }
+
+        // Validation
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
+
         if (CFG.Current.Interface_MapEditor_Tool_Validation)
         {
             // The Viewport Rendering section's Global Illumination tab asks for the irradiance volume tab
             if (View.IrradianceVolumeIdTool.FocusRequested)
-                ImGui.SetNextItemOpen(true);
+                ToolSections.Focus();
 
             if (ToolSections.Header("Validation"))
             {
@@ -234,14 +251,8 @@ public class MapToolWindow
             }
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
-        {
-            if (ToolSections.Header("Render Groups"))
-            {
-                View.DisplayGroupTool.OnToolWindow();
-            }
-        }
-
+        // Browse
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
 
         if (CFG.Current.Interface_MapEditor_Tool_Animation)
         {
@@ -267,21 +278,8 @@ public class MapToolWindow
             }
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
-        {
-            if (ToolSections.Header("Mass Edit"))
-            {
-                View.MassEditTool.OnToolWindow();
-            }
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
-        {
-            if (ToolSections.Header("Detection Visualization"))
-            {
-                View.EnemyAIVisualizationTool.OnToolWindow();
-            }
-        }
+        // Map Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Map_Data"));
 
         if (CFG.Current.Interface_MapEditor_Tool_WallPaint && View.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
@@ -328,6 +326,25 @@ public class MapToolWindow
             if (ToolSections.Header("Parts Token ID Lists"))
             {
                 View.PartsTokenIdListTool.OnToolWindow();
+            }
+        }
+
+        // Viewport
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
+        if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
+        {
+            if (ToolSections.Header("Render Groups"))
+            {
+                View.DisplayGroupTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
+        {
+            if (ToolSections.Header("Detection Visualization"))
+            {
+                View.EnemyAIVisualizationTool.OnToolWindow();
             }
         }
 

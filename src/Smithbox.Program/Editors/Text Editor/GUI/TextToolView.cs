@@ -47,32 +47,8 @@ public class TextToolView
 
         Sections.Begin();
 
-        // Entry Creator
-        if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
-        {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
-            {
-                View.TextEntryCreator.DisplayTool();
-            }
-        }
-
-        // Data Transfer
-        if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
-        {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
-            {
-                DataTransferTool.Display();
-            }
-        }
-
-        // Language Sync
-        if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
-        {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
-            {
-                LanguageSyncTool.Display();
-            }
-        }
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
         // Global Text Search
         if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
@@ -89,6 +65,39 @@ public class TextToolView
             if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
             {
                 TextReplace.Display();
+            }
+        }
+
+        // Editing
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
+
+        // Entry Creator
+        if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
+        {
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
+            {
+                View.TextEntryCreator.DisplayTool();
+            }
+        }
+
+        // Language Sync
+        if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
+        {
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
+            {
+                LanguageSyncTool.Display();
+            }
+        }
+
+        // Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
+        // Data Transfer
+        if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
+        {
+            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
+            {
+                DataTransferTool.Display();
             }
         }
 

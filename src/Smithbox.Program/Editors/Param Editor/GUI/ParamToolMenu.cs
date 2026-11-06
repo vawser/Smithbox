@@ -237,6 +237,34 @@ public class ParamToolMenu
 
         Sections.Begin();
 
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
+        {
+            DisplayDataFinders();
+        }
+
+        if (CFG.Current.ParamEditor_Show_Tool_Mass_Edit)
+        {
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
+            {
+                ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
+
+                View.MassEdit.ToolMenu.Display();
+
+                ImGui.EndChild();
+            }
+        }
+
+        if (CFG.Current.ParamEditor_Show_Tool_Data_Comparison)
+        {
+            ParamComparisonTool.Display();
+        }
+
+        // Rows
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Rows"));
+
         if (CFG.Current.ParamEditor_Show_Tool_Sort_Rows)
         {
             SortTool.Display();
@@ -245,13 +273,25 @@ public class ParamToolMenu
         {
             RowNameTool.Display();
         }
+
+        if (CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation)
+        {
+            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
+            {
+                ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
+
+                RowNameManipulationTool.Display();
+
+                ImGui.EndChild();
+            }
+        }
+
+        // Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
         if (CFG.Current.ParamEditor_Show_Tool_Data_Converter)
         {
             DataConverterTool.Display();
-        }
-        if (CFG.Current.ParamEditor_Show_Tool_Data_Comparison)
-        {
-            ParamComparisonTool.Display();
         }
 
         if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
@@ -275,15 +315,8 @@ public class ParamToolMenu
         DeltaPatcher.ImportPreviewModal.Draw();
         DeltaPatcher.ExportPreviewModal.Draw();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
-        {
-            ParamReloader.Display();
-        }
-
-        if (CFG.Current.ParamEditor_Show_Tool_Item_Gib)
-        {
-            ItemGib.Display();
-        }
+        // Organization
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Organization"));
 
         if (CFG.Current.ParamEditor_Show_Tool_Param_List_Categories)
         {
@@ -295,87 +328,21 @@ public class ParamToolMenu
             PinGroups.Display();
         }
 
-        if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
         {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Data_Finders")}##dataFindersMenuHeader"))
-            {
-                ImGui.BeginChild("DataFinderToolSection", ImGuiChildFlags.Borders);
-
-                if (ImGui.BeginTabBar("dataFinderTabs"))
-                {
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Names")}##tab_fieldNames"))
-                    {
-                        FieldNameFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Values")}##tab_fieldValues"))
-                    {
-                        FieldValueFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_Names")}##tab_rowNames"))
-                    {
-                        RowNameFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_IDs")}##tab_rowIds"))
-                    {
-                        RowIdFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Value_Sets")}##tab_fieldValueSets"))
-                    {
-                        ValueSetFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_ID_Sets")}##tab_rowIdSets"))
-                    {
-                        IdSetFinder.Display();
-
-                        ImGui.EndTabItem();
-                    }
-
-                    ImGui.EndTabBar();
-                }
-
-                ImGui.EndChild();
-            }
+            ParamReloader.Display();
         }
 
-        if (CFG.Current.ParamEditor_Show_Tool_Mass_Edit)
+        if (CFG.Current.ParamEditor_Show_Tool_Item_Gib)
         {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
-            {
-                ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
-
-                View.MassEdit.ToolMenu.Display();
-
-                ImGui.EndChild();
-            }
+            ItemGib.Display();
         }
 
-        if(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation)
-        {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
-            {
-                ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
-
-                RowNameManipulationTool.Display();
-
-                ImGui.EndChild();
-            }
-        }
+        // Simulation
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Simulation"));
 
         if (CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator)
         {
@@ -390,5 +357,63 @@ public class ParamToolMenu
         }
 
         Sections.End();
+    }
+
+    private void DisplayDataFinders()
+    {
+        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Data_Finders")}##dataFindersMenuHeader"))
+        {
+            ImGui.BeginChild("DataFinderToolSection", ImGuiChildFlags.Borders);
+
+            if (ImGui.BeginTabBar("dataFinderTabs"))
+            {
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Names")}##tab_fieldNames"))
+                {
+                    FieldNameFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Values")}##tab_fieldValues"))
+                {
+                    FieldValueFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_Names")}##tab_rowNames"))
+                {
+                    RowNameFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_IDs")}##tab_rowIds"))
+                {
+                    RowIdFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Field_Value_Sets")}##tab_fieldValueSets"))
+                {
+                    ValueSetFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                if (ImGui.BeginTabItem($"{LOC.Get("PARAM_DataFinder_Tab_Row_ID_Sets")}##tab_rowIdSets"))
+                {
+                    IdSetFinder.Display();
+
+                    ImGui.EndTabItem();
+                }
+
+                ImGui.EndTabBar();
+            }
+
+            ImGui.EndChild();
+        }
     }
 }

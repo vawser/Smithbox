@@ -33,6 +33,11 @@ public class TimeActToolWindow
 
         Sections.Begin();
 
+        // Search & Edit
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+
         if (CFG.Current.Interface_TimeActEditor_Tool_LocalSearch)
         {
             View.LocalSearchTool.OnToolWindow();
@@ -48,10 +53,20 @@ public class TimeActToolWindow
             View.MassEditTool.OnToolWindow();
         }
 
+        // Animation
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Animation"));
+
+
         if (CFG.Current.Interface_TimeActEditor_Tool_ComboBuilder)
         {
             View.ComboBuilderTool.OnToolWindow();
         }
+
+        // Preview
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));
+
 
         if (CFG.Current.Interface_TimeActEditor_Tool_CharacterPreview)
         {
@@ -64,6 +79,11 @@ public class TimeActToolWindow
         {
             View.MaskToggler.OnToolWindow();
         }
+
+        // Viewport
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
 
         if (CFG.Current.Interface_TimeActEditor_Tool_GridConfiguration)
         {

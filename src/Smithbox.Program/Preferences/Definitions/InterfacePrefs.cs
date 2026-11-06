@@ -202,7 +202,7 @@ public class InterfacePrefs
         };
     }
 
-    public static PreferenceItem Interface_Tool_Window_Single_Section()
+    public static PreferenceItem Interface_Tool_Window_Dropdown_Navigation()
     {
         return new PreferenceItem
         {
@@ -212,11 +212,11 @@ public class InterfacePrefs
 
             Section = SectionCategory.General,
 
-            Title = "PREF_Interface_Tool_Window_Single_Section",
-            Description = "PREF_Interface_Tool_Window_Single_Section_TT",
+            Title = "PREF_Interface_Tool_Window_Dropdown_Navigation",
+            Description = "PREF_Interface_Tool_Window_Dropdown_Navigation_TT",
 
             Draw = () => {
-                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Tool_Window_Single_Section);
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Tool_Window_Dropdown_Navigation);
             }
         };
     }

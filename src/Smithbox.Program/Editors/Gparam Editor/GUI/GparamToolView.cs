@@ -41,6 +41,9 @@ public class GparamToolView
 
         Sections.Begin();
 
+        // Viewport
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
         if (CFG.Current.Interface_GparamEditor_Tool_ViewportPreview)
         {
             // Viewport Preview
@@ -59,11 +62,17 @@ public class GparamToolView
             View.GridTool.OnToolWindow();
         }
 
+        // Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
         if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
         {
             // Data Transfer
             DataTransferTool.OnToolWindow();
         }
+
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
         if (CFG.Current.Interface_GparamEditor_Tool_LocalSearch)
         {

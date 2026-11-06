@@ -10,7 +10,10 @@ The reference implementations are `ViewportGridTool` (`Editors/Viewport/Tools/Vi
 2. **View**: create it in the editor view's constructor, next to the other tools (for example `TimeActEditorView`).
 3. **Setting**: add a `bool Interface_<Editor>_Tool_<Name> = true;` to `CFG.cs`, in the editor's block.
 4. **Tool window**: in `<Editor>ToolWindow.Display`, call the tool between `Sections.Begin()` and `Sections.End()`,
-   guarded by the setting.
+   guarded by the setting, under the `ToolSections.Category(LOC.Get("EDITOR_ToolCategory_<Name>"))` call it belongs
+   to. Keep each category's tools together in the code. The shared category keys are in `Editor-Common.json`
+   (Actions, Search & Edit, Validation, Browse, Assets, Preview, Animation, Editing, Rows, Data, Organization,
+   Game Memory, Simulation, Map Data, Viewport); reuse one before adding a new one.
 5. **View menu**: add a toggle to the Tool window's View menu, followed by `GUI.ShowActiveStatus`:
 
 ```csharp
@@ -24,9 +27,14 @@ GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_LocalSearch);
 
 ## Section frame
 
-Each tool is one collapsing section. Use `ToolSections.Header` rather than `ImGui.CollapsingHeader`, because
-it honours the "single section" option, which shows one section at a time. Put the content in a bordered
-child window:
+A Tools window lists its tools down the left side, grouped by category, and shows the selected tool in the pane
+beside it. When the window is narrow, or the "Always Use Dropdown Tool Navigation" option is set, the list becomes
+a combo at the top. A window with a single tool shows it without the list.
+
+Each tool starts with `ToolSections.Header(label)`, which registers the tool in the list and returns true only
+while it is the selected tool. Its visible label (before `##`) is the name in the list. To open a tool from
+elsewhere (as the viewport's Settings menu opens Viewport Rendering), call `ToolSections.Focus()` just before its
+`Header`; don't use `ImGui.SetNextItemOpen`. Put the content in a bordered child window:
 
 ```csharp
 public void OnToolWindow()
