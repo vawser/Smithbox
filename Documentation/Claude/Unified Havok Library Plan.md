@@ -352,14 +352,32 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 > - **Still not byte-identical** (all newly identified; none is a ragdoll):
 >   - DeS 5.5 `m99_99_98_10/l0000b0.hkx` (a test map): its `CustomMeshParameter` (borrowed from DS3) has a different layout there, and 2,768 bytes are lost.
 >   - DeS 5.5 `o2999.hkx` (stored twice, `.objbnd` and `.objbnd.dcx`): an exporter leftover with `hkxMesh`/`hkxVertexBuffer` scene data. 1.25 MB is lost, because `TYPE_HOMOGENEOUSARRAY` is kept only as space.
->   - DeS 5.1: 47 files, mostly c2020 animations (`a00_9xxx`, an anibnd), which shrink by 6–23 KB on write, so part of their data isn't read. `--diff` doesn't handle 5.1's section order yet (it assumes `__data__` is the third section).
+>   - ~~DeS 5.1: 47 files~~ **Fixed in 6.1: all 266/266 are now byte-identical.** The cause wasn't the files. `GeneratedClassSet` cached class sets by game name, so the `DES` and `DES_51` profiles shared one entry, and in a full run the 5.1 files were read with the 5.5 registry. (`--diff` still assumes `__data__` is the third section, which 5.1 breaks.)
 
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:
-1. Renderer animation (`HavokAnimationData`, `HavokTagfile` → `Untyped`/typed reads).
+1. Renderer animation (`HavokAnimationData`, `HavokTagfile` → `Untyped`/typed reads). **Done 2026-11-06**, see [Havok Phase 6.1 Renderer Animation.md](Havok%20Phase%206.1%20Renderer%20Animation.md) and below.
 2. Renderer collision/navmesh resources and Map Editor banks (`HavokCollisionResource`, `HavokNavmeshResource`, `HavokCollisionBank`, `HavokNavmeshBank`, `WallBank`, the `*_Helper` classes).
 3. Havok Editor (`HavokBank.ReadRoot`/`WriteRoot` → `HavokFile`; `HavokTagSerializer` and `HKLibTagfileReader` go away; `HavokFileWrapper` holds a `HavokDocument`). Turn on Havok Editor support for the games that are newly readable *only* after their round trip passes.
 4. Collision Generator and NavmeshBuilder, collapsing the triplicates through the 2.6 interfaces.
 5. Model Editor, Param mass edit, developer tools.
+
+> **6.1 status (2026-11-06): done.** The renderer's animation reads go through the unified library. Smithbox's first use of it.
+> - **Decision: shared interfaces** (§2.6). `Havok.Shared/Animation.cs` has the views:
+>   - `IHavokSkeleton`, `IHavokAnimationBinding`, `IHavokAnimation`.
+>   - `IHavokSplineAnimation`, `IHavokInterleavedAnimation`.
+>   - `HavokQsTransform`.
+>
+>   Each class set implements them in `Manual/Animation.cs`. All seven sets were regenerated with those classes on the generator's partial list. Each regeneration diffs from the old Autogen (now in `.archive/Havok Phase 6.1 Autogen`) by the `partial` keyword only.
+> - **`src/Havok/Havok.Files`: the `HavokFile` facade** (§2.3). It's a project of its own because it references every class set, and they reference Core.
+>   - `Sniff`, `ReadCompendium` and `Read`. `Read` returns a `HavokDocument`, now with `Objects` and `ObjectsOf<T>()`.
+>   - The file's SDK picks the engine, dialect and class set.
+>   - A file of another SDK (ER's stray 2016 files) is read with that SDK's own game profile, and DeS 5.1 files with `DES_51`.
+> - **Renderer.** `HavokAnimationReader` has one path for every game. `AnimationPackage` parses each binder's compendium once, not per clip. `Renderer/Animation/HavokTagfile.cs` (the schema-less reader) is archived. The renderer no longer uses SoulsFormats `HKX` for animation. It still uses SoulsFormats' spline block decoder, which works on the clip's bytes.
+> - **Verified** by `Tools/AnimationReadCompare` (the old reader's code against the new one, 40 anibnds × 40 clips per game): [Havok Library Survey/Animation Read Compare.md](Havok%20Library%20Survey/Animation%20Read%20Compare.md).
+>   - Every skeleton and clip is equal, floats bit for bit, in DS1, DS1R, DS3, SDT, ER, NR and AC6.
+>   - The one BB difference is the new reader being right: a Shift-JIS bone name (`不要_Weapon_01`), which SoulsFormats decoded as ASCII.
+>   - DeS now reads (32 skeletons, 1,001 clip files; the old reader read none). But only 90 of its clips are interleaved. The rest are wavelet or delta compressed, and the renderer has no decoder for those, so DeS stays off in `AnimationPackage.IsSupportedGame`.
+> - **Bug found on the way:** `GeneratedClassSet` cached class sets by game name, so `DES` and `DES_51` shared one entry, and whichever loaded first served the other's files. It's now keyed by game and overlays. Full DeS run: 5.1 byte identity 219 → **266/266**, and 5.5 is unchanged at 11,083/11,086.
 
 **Phase 7: retire.** Move `HKX2`, `HKX2.Serialization`, `HKX.ClassGeneration`, `HKLib*` and `ColBakeTest` (if unused) to `.archive`, and remove their project references. Leave SoulsFormats `HKX` in place but unreferenced by Smithbox (see decision D3).
 

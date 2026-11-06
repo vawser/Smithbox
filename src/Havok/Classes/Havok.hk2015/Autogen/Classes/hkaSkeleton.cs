@@ -2,7 +2,7 @@
 
 namespace Havok.hk2015;
 
-public class hkaSkeleton : hkReferencedObject
+public partial class hkaSkeleton : hkReferencedObject
 {
     public string? m_name;
 

@@ -31,7 +31,8 @@ public abstract class HavokFieldAccess<T> : IHavokFieldAccess where T : class
 /// </summary>
 public sealed class GeneratedClassSet : IHavokClassSet
 {
-    private static readonly ConcurrentDictionary<(string Game, Type Marker), GeneratedClassSet> Instances = new();
+    // keyed by game and overlays: DeS has two profiles (Havok 5.5, and 5.1 with its overlay) under one game name
+    private static readonly ConcurrentDictionary<(string Game, string Overlays, Type Marker), GeneratedClassSet> Instances = new();
 
     private readonly Type _marker;
     private readonly Dictionary<Type, Type> _accessorTypes = new(); // class (or generic definition) → accessor
@@ -60,7 +61,7 @@ public sealed class GeneratedClassSet : IHavokClassSet
     /// The class set of the assembly holding <paramref name="marker" /> (the SDK's IHavokObject) for a game.
     /// </summary>
     public static GeneratedClassSet For(HavokProfile profile, Type marker, IReadOnlyDictionary<string, Type> identityTypeMap) =>
-        Instances.GetOrAdd((profile.Game, marker), _ => new GeneratedClassSet(profile, marker, identityTypeMap));
+        Instances.GetOrAdd((profile.Game, string.Join("|", profile.OverlayFiles), marker), _ => new GeneratedClassSet(profile, marker, identityTypeMap));
 
     public HavokProfile Profile { get; }
 

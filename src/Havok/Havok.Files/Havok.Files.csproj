@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Unified Havok library, Phase 6: the HavokFile facade (plan §2.3). It reads any supported file into a
+         HavokDocument, picking the format engine, tagfile dialect and generated class set from the file itself.
+         It's a project of its own because it references every class set, and they reference Havok.Core.
+         (Documentation/Claude/Unified Havok Library Plan.md) -->
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <RootNamespace>Havok.Files</RootNamespace>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Havok.Core\Havok.Core.csproj" />
+        <ProjectReference Include="..\Havok.Formats\Havok.Formats.csproj" />
+        <ProjectReference Include="..\Havok.Shared\Havok.Shared.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk55\Havok.hk55.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2010\Havok.hk2010.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2014\Havok.hk2014.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2015\Havok.hk2015.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2016\Havok.hk2016.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2018\Havok.hk2018.csproj" />
+        <ProjectReference Include="..\Classes\Havok.hk2019\Havok.hk2019.csproj" />
+    </ItemGroup>
+
+</Project>

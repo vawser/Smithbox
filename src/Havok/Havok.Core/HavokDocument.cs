@@ -70,6 +70,15 @@ public sealed class HavokDocument
     /// </summary>
     public HavokCompendium? Compendium { get; }
 
+    /// <summary>
+    /// Every object the file held, the root first for tagfiles and in data-section order for packfiles. Empty for
+    /// documents built in memory.
+    /// </summary>
+    public IReadOnlyList<object> Objects { get; init; } = Array.Empty<object>();
+
+    /// <summary>The objects of a class (or interface), in <see cref="Objects" /> order.</summary>
+    public IEnumerable<T> ObjectsOf<T>() => Objects.OfType<T>();
+
     public HavokContainer Container => Source.Container;
 
     public HavokSdk Sdk => Source.Sdk;

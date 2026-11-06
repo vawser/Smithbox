@@ -2,7 +2,7 @@
 
 namespace Havok.hk2010;
 
-public class hkaSplineCompressedAnimation : hkaAnimation
+public partial class hkaSplineCompressedAnimation : hkaAnimation
 {
     public int m_numFrames;
 

@@ -1,9 +1,13 @@
 #nullable enable
+using Havok;
+using Havok.Files;
+using Havok.Shared;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Renderer;
@@ -182,158 +186,74 @@ public sealed class HavokInterleavedClip : HavokClip
 }
 
 /// <summary>
-///     Reads skeletons and clips from either hkx container: packfiles (DES, DS1, DS3, BB)
-///     and tagfiles (DS1R, SDT, ER, NR, AC6).
+///     Reads skeletons and clips through the unified Havok library (Havok.Files), whatever the container
+///     (packfile or tagfile) and SDK: the Havok.Shared animation views are the same for every game.
 /// </summary>
 public static class HavokAnimationReader
 {
-    public static HavokSkeletonData ReadSkeleton(ProjectType game, byte[] data, byte[]? compendium)
+    public static HavokProfile ProfileOf(ProjectType game)
     {
-        data = Decompress(data);
+        return HavokProfile.FromGame(game.ToString())
+               ?? throw new NotSupportedException($"{game} has no Havok profile.");
+    }
 
-        if (HavokTagfile.IsTagfile(data))
+    /// <summary>
+    ///     Parses a binder's type compendium once, for the tagfiles in the binder that refer to it.
+    /// </summary>
+    public static HavokCompendium? ReadCompendium(ProjectType game, byte[]? compendium)
+    {
+        return compendium != null ? HavokFile.ReadCompendium(Decompress(compendium), ProfileOf(game)) : null;
+    }
+
+    public static HavokSkeletonData ReadSkeleton(ProjectType game, byte[] data, HavokCompendium? compendium)
+    {
+        HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game), compendium);
+        IHavokSkeleton skeleton = document.ObjectsOf<IHavokSkeleton>().FirstOrDefault()
+                                  ?? throw new InvalidOperationException("The file has no skeleton.");
+
+        var count = skeleton.BoneCount;
+        HavokSkeletonData result = new()
         {
-            HavokTagfile tag = HavokTagfile.Read(data, ReadCompendium(compendium));
-            foreach (HavokTagfile.TagObject skeleton in tag.FindObjects("hkaSkeleton"))
-            {
-                HavokTagfile.TagObject[] bones = skeleton.GetObjectArray("bones");
-                var names = new string[bones.Length];
-                for (var i = 0; i < names.Length; i++)
-                {
-                    names[i] = bones[i].GetString("name");
-                }
+            Names = new string[count],
+            Parents = new short[count],
+            ReferencePose = new HavokTransformData[count]
+        };
 
-                return new HavokSkeletonData
-                {
-                    Names = names,
-                    Parents = skeleton.GetInt16Array("parentIndices"),
-                    ReferencePose = skeleton.GetTransformArray("referencePose")
-                };
-            }
-
-            throw new InvalidOperationException("Tagfile has no skeleton.");
+        for (var i = 0; i < count; i++)
+        {
+            result.Names[i] = skeleton.GetBoneName(i) ?? "";
+            result.Parents[i] = skeleton.GetParent(i);
+            result.ReferencePose[i] = ToTransform(skeleton.GetReferencePose(i));
         }
 
-        HKX hkx = HKX.Read(data, GetVariation(game));
-        foreach (HKX.HKXObject obj in hkx.DataSection.Objects)
-        {
-            if (obj is HKX.HKASkeleton skeleton)
-            {
-                var count = (int)skeleton.Bones.Size;
-                HavokSkeletonData result = new()
-                {
-                    Names = new string[count],
-                    Parents = new short[count],
-                    ReferencePose = new HavokTransformData[count]
-                };
-
-                for (var i = 0; i < count; i++)
-                {
-                    result.Names[i] = skeleton.Bones[i].Name.GetString();
-                    result.Parents[i] = skeleton.ParentIndices[i].data;
-                    result.ReferencePose[i] = ToTransform(skeleton.Transforms[i]);
-                }
-
-                return result;
-            }
-        }
-
-        throw new InvalidOperationException("Packfile has no skeleton.");
+        return result;
     }
 
     /// <summary>
     ///     Returns null when the file has no clip this reader understands.
     /// </summary>
-    public static HavokClip? ReadClip(ProjectType game, byte[] data, byte[]? compendium, HavokSkeletonData skeleton)
+    public static HavokClip? ReadClip(ProjectType game, byte[] data, HavokCompendium? compendium,
+        HavokSkeletonData skeleton)
     {
-        data = Decompress(data);
+        HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game), compendium);
 
-        return HavokTagfile.IsTagfile(data)
-            ? ReadTagfileClip(data, compendium, skeleton)
-            : ReadPackfileClip(game, data, skeleton);
-    }
+        IHavokAnimationBinding? binding = document.ObjectsOf<IHavokAnimationBinding>().FirstOrDefault();
+        short[] trackToBone = binding?.TransformTrackToBoneIndices.ToArray() ?? Array.Empty<short>();
+        HavokBlendMode blendMode = ToBlendMode(binding?.BlendHint ?? 0);
 
-    private static HavokClip? ReadTagfileClip(byte[] data, byte[]? compendium, HavokSkeletonData skeleton)
-    {
-        HavokTagfile tag = HavokTagfile.Read(data, ReadCompendium(compendium));
-
-        short[] trackToBone = Array.Empty<short>();
-        HavokBlendMode blendMode = HavokBlendMode.Normal;
-
-        foreach (HavokTagfile.TagObject binding in tag.FindObjects("hkaAnimationBinding"))
+        if (document.ObjectsOf<IHavokSplineAnimation>().FirstOrDefault() is { } spline)
         {
-            trackToBone = binding.GetInt16Array("transformTrackToBoneIndices");
-            blendMode = ToBlendMode(binding.GetByte("blendHint"));
-            break;
+            return new HavokSplineClip(spline.Data as byte[] ?? spline.Data.ToArray(), document.Source.BigEndian,
+                spline.TransformTrackCount, spline.BlockCount, spline.MaxFramesPerBlock, spline.FrameCount,
+                spline.Duration, spline.FrameDuration, trackToBone, skeleton.BoneCount, blendMode);
         }
 
-        foreach (HavokTagfile.TagObject anim in tag.FindObjects("hkaSplineCompressedAnimation"))
+        if (document.ObjectsOf<IHavokInterleavedAnimation>().FirstOrDefault() is { } interleaved)
         {
-            return new HavokSplineClip(anim.GetByteArray("data"), false,
-                anim.GetInt32("numberOfTransformTracks"), anim.GetInt32("numBlocks"),
-                anim.GetInt32("maxFramesPerBlock"), anim.GetInt32("numFrames"), anim.GetSingle("duration"),
-                anim.GetSingle("frameDuration"), trackToBone, skeleton.BoneCount, blendMode);
-        }
-
-        foreach (HavokTagfile.TagObject anim in tag.FindObjects("hkaInterleavedUncompressedAnimation"))
-        {
-            return new HavokInterleavedClip(anim.GetTransformArray("transforms"),
-                anim.GetInt32("numberOfTransformTracks"), anim.GetSingle("duration"), trackToBone,
-                skeleton.BoneCount, blendMode);
-        }
-
-        return null;
-    }
-
-    private static HavokClip? ReadPackfileClip(ProjectType game, byte[] data, HavokSkeletonData skeleton)
-    {
-        HKX hkx = HKX.Read(data, GetVariation(game));
-
-        HKX.HKASplineCompressedAnimation? spline = null;
-        HKX.HKAInterleavedUncompressedAnimation? interleaved = null;
-        HKX.HKAAnimationBinding? binding = null;
-
-        foreach (HKX.HKXObject obj in hkx.DataSection.Objects)
-        {
-            switch (obj)
-            {
-                case HKX.HKASplineCompressedAnimation s:
-                    spline = s;
-                    break;
-                case HKX.HKAInterleavedUncompressedAnimation i:
-                    interleaved = i;
-                    break;
-                case HKX.HKAAnimationBinding b:
-                    binding = b;
-                    break;
-            }
-        }
-
-        short[] trackToBone = Array.Empty<short>();
-        if (binding != null)
-        {
-            trackToBone = new short[binding.TransformTrackToBoneIndices.Size];
-            for (var i = 0; i < trackToBone.Length; i++)
-            {
-                trackToBone[i] = binding.TransformTrackToBoneIndices[i].data;
-            }
-        }
-
-        HavokBlendMode blendMode = ToBlendMode((byte)(binding?.BlendHint ?? HKX.AnimationBlendHint.NORMAL));
-
-        if (spline != null)
-        {
-            return new HavokSplineClip(spline.GetData(), hkx.Header.Endian == 0, spline.TransformTrackCount,
-                spline.BlockCount, spline.FramesPerBlock, spline.FrameCount, spline.Duration, spline.FrameDuration,
-                trackToBone, skeleton.BoneCount, blendMode);
-        }
-
-        if (interleaved != null)
-        {
-            var transforms = new HavokTransformData[interleaved.Transforms.Size];
+            var transforms = new HavokTransformData[interleaved.TransformCount];
             for (var i = 0; i < transforms.Length; i++)
             {
-                transforms[i] = ToTransform(interleaved.Transforms[i]);
+                transforms[i] = ToTransform(interleaved.GetTransform(i));
             }
 
             return new HavokInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
@@ -343,7 +263,7 @@ public static class HavokAnimationReader
         return null;
     }
 
-    private static HavokBlendMode ToBlendMode(byte blendHint)
+    private static HavokBlendMode ToBlendMode(int blendHint)
     {
         return blendHint switch
         {
@@ -353,35 +273,13 @@ public static class HavokAnimationReader
         };
     }
 
-    private static HavokTransformData ToTransform(HKX.Transform t)
+    private static HavokTransformData ToTransform(HavokQsTransform t)
     {
-        return new HavokTransformData
-        {
-            Translation = new Vector3(t.Position.Vector.X, t.Position.Vector.Y, t.Position.Vector.Z),
-            Rotation = new Quaternion(t.Rotation.Vector.X, t.Rotation.Vector.Y, t.Rotation.Vector.Z,
-                t.Rotation.Vector.W),
-            Scale = new Vector3(t.Scale.Vector.X, t.Scale.Vector.Y, t.Scale.Vector.Z)
-        };
+        return new HavokTransformData { Translation = t.Translation, Rotation = t.Rotation, Scale = t.Scale };
     }
 
     private static byte[] Decompress(byte[] data)
     {
         return DCX.Is(data) ? DCX.Decompress(data).ToArray() : data;
-    }
-
-    private static List<HavokTagfile.TagType>? ReadCompendium(byte[]? compendium)
-    {
-        return compendium != null ? HavokTagfile.ReadCompendium(Decompress(compendium)) : null;
-    }
-
-    private static HKX.HKXVariation GetVariation(ProjectType game)
-    {
-        return game switch
-        {
-            ProjectType.DES => HKX.HKXVariation.HKXDeS,
-            ProjectType.DS1 or ProjectType.DS1R => HKX.HKXVariation.HKXDS1,
-            ProjectType.BB => HKX.HKXVariation.HKXBloodBorne,
-            _ => HKX.HKXVariation.HKXDS3
-        };
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaAnimationBinding : IHavokObject
+public partial class hkaAnimationBinding : IHavokObject
 {
     public hkaSkeletalAnimation? m_animation;
 

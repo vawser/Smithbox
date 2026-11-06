@@ -2,7 +2,7 @@
 
 namespace Havok.hk2010;
 
-public class hkaAnimationBinding : hkReferencedObject
+public partial class hkaAnimationBinding : hkReferencedObject
 {
     public string? m_originalSkeletonName;
 

@@ -27,7 +27,7 @@ public sealed class AnimationEntry
 
     public BinderReader Binder = null!;
     public BinderFileHeader Header = null!;
-    public byte[]? Compendium;
+    public Havok.HavokCompendium? Compendium;
 
     public HavokClip? Clip;
     public bool Failed;
@@ -231,13 +231,11 @@ public sealed class AnimationPackage : IDisposable
     {
         _binders.Add(binder);
 
-        byte[]? compendium = null;
-        foreach (BinderFileHeader file in binder.Files)
+        // parsed once per binder: every tagfile in it refers to the same compendium
+        Havok.HavokCompendium? compendium = null;
+        if (binder.Files.FirstOrDefault(f => f.ID == CompendiumId) is { } compendiumFile)
         {
-            if (file.ID == CompendiumId)
-            {
-                compendium = binder.ReadFile(file).ToArray();
-            }
+            compendium = HavokAnimationReader.ReadCompendium(Game, binder.ReadFile(compendiumFile).ToArray());
         }
 
         if (Skeleton == null)

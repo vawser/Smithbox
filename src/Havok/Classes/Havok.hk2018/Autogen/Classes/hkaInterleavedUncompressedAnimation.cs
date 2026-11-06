@@ -2,7 +2,7 @@
 
 namespace Havok.hk2018;
 
-public class hkaInterleavedUncompressedAnimation : hkaAnimation
+public partial class hkaInterleavedUncompressedAnimation : hkaAnimation
 {
     public List<hkQsTransform> m_transforms = new();
 

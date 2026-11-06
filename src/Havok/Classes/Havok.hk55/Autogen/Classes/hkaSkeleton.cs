@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaSkeleton : IHavokObject
+public partial class hkaSkeleton : IHavokObject
 {
     public string? m_name;
 

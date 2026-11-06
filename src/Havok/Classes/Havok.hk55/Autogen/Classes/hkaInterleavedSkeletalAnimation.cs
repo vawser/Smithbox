@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaInterleavedSkeletalAnimation : hkaSkeletalAnimation
+public partial class hkaInterleavedSkeletalAnimation : hkaSkeletalAnimation
 {
     public List<hkQsTransform> m_transforms = new();
 
