@@ -1,6 +1,4 @@
 ﻿using Havok.Shared;
-using HKLib.hk2018;
-using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -12,18 +10,17 @@ public class HavokCollisionBank
 {
     public ProjectEntry Project;
 
-    public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
+    /// <summary>
+    /// ER, NR and AC6 collision, read by the unified Havok library with their binder's compendium, keyed by file name
+    /// (l30_00_00_00_000100.hkx.dcx). The Map Editor edits these and SaveMapCollisionFiles writes them back.
+    /// </summary>
+    public Dictionary<string, Havok.HavokDocument> MapDocuments = new();
 
     /// <summary>
     /// Sekiro collision: tagfiles read by the unified Havok library with their binder's compendium. Keyed by file
-    /// name, like HavokContainers.
+    /// name, like MapDocuments.
     /// </summary>
     public Dictionary<string, Havok.HavokDocument> TagContainers = new();
-
-    /// <summary>
-    /// AC6 collision, which is Havok 2019. Keyed by file name, like HavokContainers.
-    /// </summary>
-    public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6Containers = new();
 
     public Dictionary<string, List<string>> MapCollisions = new();
 
@@ -33,7 +30,7 @@ public class HavokCollisionBank
     private Dictionary<string, (string MapId, string Type)> CollisionBinders = new();
 
     /// <summary>
-    /// The ER, NR or AC6 collision binders which have been read into HavokContainers or AC6Containers.
+    /// The ER, NR or AC6 collision binders which have been read into MapDocuments.
     /// </summary>
     private HashSet<string> ReadBinders = new();
 
@@ -126,8 +123,7 @@ public class HavokCollisionBank
     /// </summary>
     public void Clear()
     {
-        HavokContainers.Clear();
-        AC6Containers.Clear();
+        MapDocuments.Clear();
         ReadBinders.Clear();
 
         lock (TagContainers)
@@ -177,7 +173,7 @@ public class HavokCollisionBank
     /// Gets the collision of an ER, NR or AC6 map, e.g. l30_00_00_00_000100.hkx.dcx. Its binder is read the first
     /// time one of its files is asked for. Null if the file isn't in a loaded map.
     /// </summary>
-    public IRootContainer GetHKLibContainer(string fileName)
+    public Havok.HavokDocument GetMapDocument(string fileName)
     {
         if (CollisionBinders.TryGetValue(fileName, out var binder) &&
             ReadBinders.Add(GetBinderKey(binder.MapId, binder.Type)))
@@ -185,9 +181,7 @@ public class HavokCollisionBank
             ReadMapCollision(binder.MapId, binder.Type);
         }
 
-        return HavokContainers.TryGetValue(fileName, out var container)
-            ? container
-            : AC6Containers.GetValueOrDefault(fileName);
+        return MapDocuments.GetValueOrDefault(fileName);
     }
 
     private static string GetBinderKey(string mapId, string type) => $"{mapId}:{type}";
@@ -265,7 +259,10 @@ public class HavokCollisionBank
     {
         using var __scope = Profiler.TracyZoneAuto();
 
-        var isAC6 = Project.Descriptor.ProjectType is ProjectType.AC6;
+        var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
+
+        if (profile == null)
+            return;
 
         try
         {
@@ -281,15 +278,15 @@ public class HavokCollisionBank
                 .Select(file => (Name: file.Name.Split('\\')[1], Bytes: binder.ReadFile(file)))
                 .ToList();
 
-            var containers = new IRootContainer[files.Count];
+            var documents = new Havok.HavokDocument[files.Count];
 
             Parallel.For(0, files.Count, i =>
             {
                 try
                 {
-                    containers[i] = isAC6
-                        ? HKLibTagfileReader.Read2019(files[i].Bytes, compendium)
-                        : HKLibTagfileReader.Read2018(files[i].Bytes, compendium);
+                    var bytes = DCX.Is(files[i].Bytes) ? DCX.Decompress(files[i].Bytes) : files[i].Bytes;
+
+                    documents[i] = Havok.Files.HavokFile.Read(bytes.ToArray(), profile, compendium?.Unified(profile));
                 }
                 catch (Exception ex)
                 {
@@ -299,14 +296,9 @@ public class HavokCollisionBank
 
             for (int i = 0; i < files.Count; i++)
             {
-                switch (containers[i])
+                if (documents[i] != null)
                 {
-                    case HKLib.hk2019.hkRootLevelContainer ac6Container:
-                        AC6Containers.TryAdd(files[i].Name, ac6Container);
-                        break;
-                    case hkRootLevelContainer container:
-                        HavokContainers.TryAdd(files[i].Name, container);
-                        break;
+                    MapDocuments.TryAdd(files[i].Name, documents[i]);
                 }
             }
         }
@@ -405,8 +397,7 @@ public class HavokCollisionBank
 
         foreach (var name in collisionNames)
         {
-            HavokContainers.Remove(name);
-            AC6Containers.Remove(name);
+            MapDocuments.Remove(name);
             CollisionBinders.Remove(name);
 
             lock (TagContainers)
@@ -482,27 +473,22 @@ public class HavokCollisionBank
 
     public bool SaveMapCollisionFiles(string mapId)
     {
-        if (Project.Descriptor.ProjectType is ProjectType.AC6)
+        var success = true;
+
+        foreach (var type in GetCollisionBinderTypes())
         {
-            var ac6Success = SaveAC6MapCollision(mapId, "h");
-            ac6Success &= SaveAC6MapCollision(mapId, "l");
-            ac6Success &= SaveAC6MapCollision(mapId, "f");
-
-            return ac6Success;
+            success &= SaveMapCollision(mapId, type);
         }
-
-        var success = SaveMapCollision(mapId, "h");
-        success &= SaveMapCollision(mapId, "l");
-        success &= SaveMapCollision(mapId, "f");
 
         return success;
     }
 
     /// <summary>
-    /// Writes the loaded collision of an AC6 map back into its binder. The binder's compendium is loaded first, so the
-    /// written files refer to it like the original files do.
+    /// Writes the loaded collision of one binder of an ER, NR or AC6 map back into it. Each file is written in the form
+    /// it was read (referring to the binder's compendium if it did) and keeps its compression. Files that weren't read
+    /// keep their bytes.
     /// </summary>
-    public bool SaveAC6MapCollision(string mapId, string type)
+    public bool SaveMapCollision(string mapId, string type)
     {
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
@@ -513,6 +499,7 @@ public class HavokCollisionBank
 
         try
         {
+            // The project's copy first, so entries this bank doesn't hold keep any earlier changes
             var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
                 ? Project.VFS.ProjectFS.ReadFile(bdtPath)
                 : Project.VFS.FS.ReadFile(bdtPath);
@@ -524,15 +511,6 @@ public class HavokCollisionBank
                 return true;
 
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-            var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-
-            var compendiumFile = packedBinder.Files.FirstOrDefault(e => e.Name.Contains(".compendium"));
-            if (compendiumFile != null)
-            {
-                using var compendiumStream = new MemoryStream(DCX.Decompress(compendiumFile.Bytes).ToArray());
-                serializer.LoadCompendium(compendiumStream);
-            }
 
             var success = true;
             var anyWritten = false;
@@ -546,7 +524,7 @@ public class HavokCollisionBank
 
                 var name = parts[1];
 
-                if (!AC6Containers.TryGetValue(name, out var container))
+                if (!MapDocuments.TryGetValue(name, out var document))
                     continue;
 
                 try
@@ -554,10 +532,7 @@ public class HavokCollisionBank
                     // Keep the compression of the original file
                     DCX.Decompress(file.Bytes, out DCX.Type compression);
 
-                    using var memoryStream = new MemoryStream();
-                    serializer.Write(container, memoryStream);
-
-                    file.Bytes = DCX.Compress(memoryStream.ToArray(), compression);
+                    file.Bytes = DCX.Compress(Havok.Files.HavokFile.Write(document), compression);
                     anyWritten = true;
                 }
                 catch (Exception ex)
@@ -583,103 +558,4 @@ public class HavokCollisionBank
             return false;
         }
     }
-
-    public bool SaveMapCollision(string mapId, string type)
-    {
-        var success = true;
-
-        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
-        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
-
-        if (Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath))
-        {
-            try
-            {
-                // Read the existing binder (project override first, then base game) so we
-                // preserve any entries that this bank doesn't hold in-memory.
-                var bdtData = Project.VFS.FS.ReadFile(bdtPath);
-                var bhdData = Project.VFS.FS.ReadFile(bhdPath);
-
-                if (Project.VFS.ProjectFS.FileExists(bdtPath))
-                {
-                    bdtData = Project.VFS.ProjectFS.ReadFile(bdtPath);
-                }
-                if (Project.VFS.ProjectFS.FileExists(bhdPath))
-                {
-                    bhdData = Project.VFS.ProjectFS.ReadFile(bhdPath);
-                }
-
-                if (bdtData == null || bhdData == null)
-                    return success;
-
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-                HavokBinarySerializer serializer = new HavokBinarySerializer();
-
-                bool anyWritten = false;
-
-                foreach (var file in packedBinder.Files)
-                {
-                    var parts = file.Name.Split('\\');
-
-                    if (parts.Length != 2)
-                        continue;
-
-                    var name = parts[1];
-
-                    if (!file.Name.Contains(".hkx.dcx"))
-                        continue;
-
-                    // Only re-serialize entries we actually have loaded (and presumably edited)
-                    if (!HavokContainers.ContainsKey(name))
-                        continue;
-
-                    try
-                    {
-                        using (MemoryStream memoryStream = new MemoryStream())
-                        {
-                            serializer.Write(HavokContainers[name], memoryStream);
-
-                            // NOTE: assumes DCX_KRAK to match ER/NR collision packaging.
-                            // Swap this for whatever DCX.Type the project actually uses if different.
-                            var compressedBytes = DCX.Compress(memoryStream.ToArray(), DCX.Type.DCX_KRAK);
-
-                            file.Bytes = compressedBytes;
-                            anyWritten = true;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
-                        success = false;
-                    }
-                }
-
-                if (!anyWritten)
-                    return success;
-
-                // BXF4.Write returns the BHD bytes and outputs the BDT bytes via out param.
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-                // NOTE: writing back to the project overlay (not the base game files).
-                // Replace WriteFile with whatever the actual VFS write method is named
-                // if it differs from this.
-                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
-                success = false;
-            }
-        }
-        else
-        {
-            // Not every map has every collision type, so a missing binder is not a failure
-            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Find_HKXBND", bdtPath));
-        }
-
-        return success;
-    }
-
 }

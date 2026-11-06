@@ -45,6 +45,7 @@ public static class EditorConditions
             or ProjectType.AC6
             or ProjectType.NR
             or ProjectType.DS3
+            or ProjectType.SDT
             or ProjectType.DB_NT
             or ProjectType.DB)
         {

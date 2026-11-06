@@ -49,57 +49,84 @@ public class HavokField
 
 public static class HavokMetaHelper
 {
+    /// <summary>
+    /// The descriptions of a class, from the meta folder of the SDK its class set belongs to: hk2014 for
+    /// Havok.hk2014 (DS3), hk2018 for the tagfile SDKs (2016, 2018 and 2019 classes are named alike, so they share
+    /// them; fields only one SDK has have none). Null if there are none.
+    /// </summary>
     public static HavokClass GetMeta(ProjectEntry project, Type rootType)
     {
-        if (project.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.AC6
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
+        var folder = GetMetaFolder(rootType);
+
+        if (folder == null || !project.Handler.CommonData.HavokMeta.TryGetValue(folder, out var metaSet))
+            return null;
+
+        var index = MetaIndexes.GetValue(metaSet, BuildIndex);
+
+        return index.GetValueOrDefault(NormalizeName(GetRelativeName(rootType)));
+    }
+
+    private static string GetMetaFolder(Type type)
+    {
+        return type.Namespace?.Split('.') switch
         {
-            if (project.Handler.CommonData.HavokMeta.TryGetValue("hk2018", out var metaSet))
-            {
-                var fullName = rootType.FullName;
+            ["Havok", "hk2014", ..] => "hk2014",
+            ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => "hk2018",
+            _ => null
+        };
+    }
 
-                // Handle hkBitFieldStorage fullname
-                if (fullName.Contains("`"))
-                {
-                    fullName = fullName.Split("`")[0];
-                }
+    /// <summary>
+    /// The class's name within its class set: Havok.hk2018.hkaiNavMesh+Edge is hkaiNavMesh+Edge, and generic
+    /// classes (hkBitFieldStorage`1) lose their arity
+    /// </summary>
+    private static string GetRelativeName(Type type)
+    {
+        var fullName = type.FullName ?? type.Name;
 
-                // The hk2019 classes are named like the hk2018 ones, so they share their descriptions.
-                // Fields only in 2019 have none.
-                if (fullName.StartsWith("HKLib.hk2019."))
-                {
-                    fullName = "HKLib.hk2018." + fullName["HKLib.hk2019.".Length..];
-                }
+        if (fullName.Contains('`'))
+            fullName = fullName.Split('`')[0];
 
-                if (metaSet.TryGetValue(fullName, out var fieldMeta))
-                {
-                    return fieldMeta;
-                }
-            }
-        }
-        else if (project.Descriptor.ProjectType is ProjectType.DS3)
+        foreach (var prefix in new[] { "Havok.hk2014.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
         {
-            if (project.Handler.CommonData.HavokMeta.TryGetValue("hk2014", out var metaSet))
-            {
-                var fullName = rootType.FullName;
-
-                // Handle hkBitFieldStorage fullname
-                if (fullName.Contains("`"))
-                {
-                    fullName = fullName.Split("`")[0];
-                }
-
-                if (metaSet.TryGetValue(fullName, out var fieldMeta))
-                {
-                    return fieldMeta;
-                }
-            }
+            if (fullName.StartsWith(prefix, StringComparison.Ordinal))
+                return fullName[prefix.Length..];
         }
 
-        return null;
+        return fullName;
+    }
+
+    /// <summary>
+    /// A meta key without the library it was written for (HKLib.hk2018., HKX2.) and without separators, so a nested
+    /// class matches however the meta spells it: hkbStateMachine+TimeInterval, hkbStateMachine.TimeInterval and
+    /// HKX2's flat hkbStateMachineTimeInterval are the same key
+    /// </summary>
+    private static string NormalizeName(string name)
+    {
+        foreach (var prefix in new[] { "HKLib.hk2018.", "HKLib.hk2019.", "HKX2." })
+        {
+            if (name.StartsWith(prefix, StringComparison.Ordinal))
+            {
+                name = name[prefix.Length..];
+                break;
+            }
+        }
+
+        return name.Replace("+", "").Replace(".", "");
+    }
+
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<Dictionary<string, HavokClass>, Dictionary<string, HavokClass>> MetaIndexes = new();
+
+    private static Dictionary<string, HavokClass> BuildIndex(Dictionary<string, HavokClass> metaSet)
+    {
+        var index = new Dictionary<string, HavokClass>();
+
+        foreach (var (key, meta) in metaSet)
+        {
+            index.TryAdd(NormalizeName(key), meta);
+        }
+
+        return index;
     }
 
     public static string GetFieldName(HavokClass havokMeta, string internalName)

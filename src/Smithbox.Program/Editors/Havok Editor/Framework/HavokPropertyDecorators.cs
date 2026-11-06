@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Havok.Shared;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
@@ -499,27 +500,9 @@ public static class HavokPropertyDecorators
         int flags = Convert.ToInt32(val);
         bool changed = false;
 
-        if (HavokTypeUtils.IsHKX3(project))
+        // The flags are the same in every SDK (hk2014 and hk2016 registries type the field as a plain byte)
         {
-            foreach (HKLib.hk2018.hkbClipGenerator.ClipFlags flag in Enum.GetValues(typeof(HKLib.hk2018.hkbClipGenerator.ClipFlags)))
-            {
-                int flagVal = (int)flag;
-                bool isSet = (flags & flagVal) != 0;
-
-                if (ImGui.Checkbox(flag.ToString(), ref isSet))
-                {
-                    if (isSet)
-                        flags |= flagVal;
-                    else
-                        flags &= ~flagVal;
-
-                    changed = true;
-                }
-            }
-        }
-        else if (HavokTypeUtils.IsHKX2(project))
-        {
-            foreach (HKX2.hkbClipGenerator.ClipFlags flag in Enum.GetValues(typeof(HKX2.hkbClipGenerator.ClipFlags)))
+            foreach (Havok.hk2018.hkbClipGenerator.ClipFlags flag in Enum.GetValues<Havok.hk2018.hkbClipGenerator.ClipFlags>())
             {
                 int flagVal = (int)flag;
                 bool isSet = (flags & flagVal) != 0;
@@ -585,25 +568,8 @@ public static class HavokPropertyDecorators
             {
                 short freeNum = -1;
 
-                if (HavokTypeUtils.IsHKX3(project))
                 {
-                    var objects = HavokTreeSearch.FindValueList<HKLib.hk2018.hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
-
-                    var shorts = objects.Cast<short>().ToList();
-
-
-                    for (short i = 0; i < short.MaxValue; i++)
-                    {
-                        if (!shorts.Contains(i))
-                        {
-                            freeNum = i;
-                            break;
-                        }
-                    }
-                }
-                else if (HavokTypeUtils.IsHKX2(project))
-                {
-                    var objects = HavokTreeSearch.FindValueList<HKX2.hkbClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
+                    var objects = HavokTreeSearch.FindValueList<IClipGenerator>(sourceObj, havokEditorView.PropertyCache.GetCachedHavokFields, "m_animationInternalId", typeof(short));
 
                     var shorts = objects.Cast<short>().ToList();
 

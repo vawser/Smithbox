@@ -1,4 +1,6 @@
 ﻿using Andre.IO.VFS;
+using Havok;
+using Havok.Files;
 using Havok.Shared;
 using SoulsFormats;
 
@@ -267,7 +269,7 @@ public class HavokBank : IDisposable
     {
         LoadHavokFile(AnimationBank, fileEntry, internalFilePath, false,
             "HAVOK_Data_Failed_to_Read_Animation_HKX",
-            "HAVOK_Data_Failed_to_Read_Animation_Binder_File", true);
+            "HAVOK_Data_Failed_to_Read_Animation_Binder_File");
     }
 
     public void LoadBehaviorFile(FileDictionaryEntry fileEntry, string internalFilePath)
@@ -316,7 +318,7 @@ public class HavokBank : IDisposable
     {
         LoadHavokFile(MapCollisionBank, fileEntry, internalFilePath, true,
             "HAVOK_Data_Failed_to_Read_Collision_HKX",
-            "HAVOK_Data_Failed_to_Read_Collision_Binder_File", true);
+            "HAVOK_Data_Failed_to_Read_Collision_Binder_File");
     }
 
     public void LoadAssetCollisionFile(FileDictionaryEntry fileEntry, string internalFilePath)
@@ -675,11 +677,10 @@ public class HavokBank : IDisposable
     /// <summary>
     /// The bytes of the binder file as the editor currently has it: re-serialized (and re-compressed the way it
     /// is stored) when it has unsaved changes, otherwise the stored bytes. Used by Paste and Export, so they
-    /// produce what the editor shows. The serializer is created on first use, with the binder's compendium if
-    /// the files refer to it, like Save.
+    /// produce what the editor shows. Written like Save: in the form the file was read, referring to the
+    /// compendium it was read against.
     /// </summary>
-    private Memory<byte> GetCurrentFileBytes(IBinder binder, BinderFile file,
-        Dictionary<string, HavokFileWrapper> files, ref HavokTagSerializer serializer)
+    private Memory<byte> GetCurrentFileBytes(BinderFile file, Dictionary<string, HavokFileWrapper> files)
     {
         if (files == null || !files.TryGetValue(file.Name, out var fileWrapper) ||
             !fileWrapper.IsLoaded() || !fileWrapper.IsDirty)
@@ -687,17 +688,7 @@ public class HavokBank : IDisposable
             return file.Bytes;
         }
 
-        if (serializer == null && HavokTypeUtils.IsHKX3(Project))
-        {
-            serializer = HavokTagSerializer.Create(Project);
-
-            if (serializer.UsesBinderCompendium)
-            {
-                LoadCompendium(binder, serializer);
-            }
-        }
-
-        var fileBytes = WriteRoot(fileWrapper.Root, serializer);
+        var fileBytes = HavokFile.Write(fileWrapper.Document);
 
         Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
             Path.GetFileName(file.Name)));
@@ -791,8 +782,7 @@ public class HavokBank : IDisposable
         string internalFilePath,
         bool isCombined,
         string fileReadFailLocKey,
-        string binderReadFailLocKey,
-        bool loadCompendium = false)
+        string binderReadFailLocKey)
     {
         if (!bankDict.TryGetValue(fileEntry, out var files))
             return;
@@ -806,7 +796,9 @@ public class HavokBank : IDisposable
         if (fileWrapper.IsDirty || fileWrapper.IsLoaded())
             return;
 
-        if (!HavokTypeUtils.IsHKX2(Project) && !HavokTypeUtils.IsHKX3(Project))
+        var profile = HavokTypeUtils.GetProfile(Project);
+
+        if (profile == null)
             return;
 
         var name = Path.GetFileNameWithoutExtension(internalFilePath);
@@ -821,18 +813,6 @@ public class HavokBank : IDisposable
 
             using var ownedBinder = owned ? binder : null;
 
-            HavokTagSerializer serializer = null;
-
-            if (HavokTypeUtils.IsHKX3(Project))
-            {
-                serializer = HavokTagSerializer.Create(Project);
-
-                if (loadCompendium || serializer.UsesBinderCompendium)
-                {
-                    LoadCompendium(binder, serializer);
-                }
-            }
-
             var file = binder.Files.FirstOrDefault(e => e.Name == internalFilePath);
 
             if (file == null)
@@ -844,9 +824,15 @@ public class HavokBank : IDisposable
 
             try
             {
-                fileWrapper.Root = ReadRoot(fileBytes, serializer);
+                // Tagfiles that hold no types refer to the binder's compendium (AC6 collision and animations, ER
+                // animations, Sekiro). The document keeps it only if the file refers to it, so Save writes it back alike.
+                var compendium = HavokFile.Sniff(fileBytes).UsesCompendium
+                    ? ReadCompendium(binder, profile)
+                    : null;
+
+                fileWrapper.Document = HavokFile.Read(fileBytes, profile, compendium);
             }
-            catch (InvalidDataException ex)
+            catch (Exception ex) when (ex is InvalidDataException or NotSupportedException or EndOfStreamException)
             {
                 Smithbox.LogError(this, LOC.Get(fileReadFailLocKey, name), ex);
             }
@@ -857,46 +843,19 @@ public class HavokBank : IDisposable
         }
     }
 
-    private void LoadCompendium(IBinder binder, HavokTagSerializer serializer)
-    {
-        byte[] compendiumFileBytes = null;
-
-        foreach (var file in binder.Files)
-        {
-            if (file.Name.Contains(".compendium.dcx"))
-            {
-                compendiumFileBytes = DCX.Decompress(file.Bytes).ToArray();
-            }
-            else if (file.Name.Contains(".compendium"))
-            {
-                compendiumFileBytes = file.Bytes.ToArray();
-            }
-        }
-
-        if (compendiumFileBytes != null)
-        {
-            using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
-            serializer.LoadCompendium(memoryStream);
-        }
-    }
-
     /// <summary>
-    /// Deserialize the Havok file, using the HKX3 serializer if the project uses HKX3
+    /// The binder's type compendium, or null if it has none
     /// </summary>
-    private IRootContainer ReadRoot(byte[] fileBytes, HavokTagSerializer serializer)
+    private static HavokCompendium ReadCompendium(IBinder binder, HavokProfile profile)
     {
-        if (HavokTypeUtils.IsHKX2(Project))
-        {
-            var deserializer = new HKX2.PackFileDeserializer();
-            var br = new BinaryReaderEx(false, fileBytes);
+        var file = binder.Files.FirstOrDefault(e => e.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase));
 
-            return (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-        }
+        if (file == null)
+            return null;
 
-        using (MemoryStream memoryStream = new MemoryStream(fileBytes))
-        {
-            return serializer.Read(memoryStream);
-        }
+        var bytes = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes).ToArray() : file.Bytes.ToArray();
+
+        return HavokFile.ReadCompendium(bytes, profile);
     }
     #endregion
 
@@ -925,9 +884,6 @@ public class HavokBank : IDisposable
             return false;
         }
 
-        if (!HavokTypeUtils.IsHKX2(Project) && !HavokTypeUtils.IsHKX3(Project))
-            return false;
-
         // Container
         IBinder binder;
         bool owned;
@@ -950,22 +906,12 @@ public class HavokBank : IDisposable
 
         using var ownedBinder = owned ? binder : null;
 
-        var serializer = HavokTypeUtils.IsHKX3(Project)
-            ? HavokTagSerializer.Create(Project)
-            : null;
-
-        // Files written with the compendium loaded refer to it, like the files they replace
-        if (serializer is { UsesBinderCompendium: true })
-        {
-            LoadCompendium(binder, serializer);
-        }
-
         // Binder Files
         var writtenFiles = new List<HavokFileWrapper>();
 
         foreach (var target in targets)
         {
-            if (HandleBinderFile(binder, target, serializer))
+            if (HandleBinderFile(binder, target))
             {
                 writtenFiles.Add(target);
             }
@@ -1001,7 +947,7 @@ public class HavokBank : IDisposable
     /// <summary>
     /// Write the Havok file into its binder file. Returns false if the file failed to write.
     /// </summary>
-    private bool HandleBinderFile(IBinder binder, HavokFileWrapper fileWrapper, HavokTagSerializer serializer)
+    private bool HandleBinderFile(IBinder binder, HavokFileWrapper fileWrapper)
     {
         var file = binder.Files.FirstOrDefault(e => e.Name == fileWrapper.Key);
 
@@ -1014,7 +960,8 @@ public class HavokBank : IDisposable
         // Internal File
         try
         {
-            var fileBytes = WriteRoot(fileWrapper.Root, serializer);
+            // In the form the file was read: container, SDK, header and compendium reference
+            var fileBytes = HavokFile.Write(fileWrapper.Document);
 
             // Keep the compression the file already uses
             file.Bytes = IsDcxFile(file.Name)
@@ -1030,28 +977,6 @@ public class HavokBank : IDisposable
         return true;
     }
 
-    /// <summary>
-    /// Serialize the Havok file, using the HKX3 serializer if the project uses HKX3
-    /// </summary>
-    private byte[] WriteRoot(IRootContainer root, HavokTagSerializer serializer)
-    {
-        if (HavokTypeUtils.IsHKX2(Project))
-        {
-            var packSerializer = new HKX2.PackFileSerializer();
-            var bw = new BinaryWriterEx(false);
-
-            packSerializer.Serialize((HKX2.IHavokObject)root, bw);
-
-            return bw.FinishBytes();
-        }
-
-        using (var memoryStream = new MemoryStream())
-        {
-            serializer.Write(root, memoryStream);
-
-            return memoryStream.ToArray();
-        }
-    }
     #endregion
 
     #region File Manipulation
@@ -1132,14 +1057,13 @@ public class HavokBank : IDisposable
             try
             {
                 fileAction.BankDict.TryGetValue(fileAction.ClipboardBinder, out var sourceFiles);
-                HavokTagSerializer serializer = null;
 
                 foreach (var file in sourceBinder.Files)
                 {
                     if (!fileAction.ClipboardFiles.Contains(file.Name))
                         continue;
 
-                    copies.Add((file, GetCurrentFileBytes(sourceBinder, file, sourceFiles, ref serializer)));
+                    copies.Add((file, GetCurrentFileBytes(file, sourceFiles)));
                 }
             }
             finally
@@ -1352,7 +1276,6 @@ public class HavokBank : IDisposable
             try
             {
                 // Files with unsaved changes are exported as the editor has them
-                HavokTagSerializer serializer = null;
 
                 foreach (var entry in fileAction.MultipleFilePaths)
                 {
@@ -1370,7 +1293,7 @@ public class HavokBank : IDisposable
                             Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Replaced_Log", exportPath));
                         }
 
-                        File.WriteAllBytes(exportPath, GetCurrentFileBytes(binder, file, files, ref serializer).ToArray());
+                        File.WriteAllBytes(exportPath, GetCurrentFileBytes(file, files).ToArray());
 
                         Smithbox.Log(this, LOC.Get("HAVOK_FileView_ContextAction_Export_Log", exportPath));
                     }

@@ -134,6 +134,7 @@ public class MapEditorView : IEditorView
     {
         Editor = editor;
         Project = project;
+        MapPropertyCache.HavokProfile = StudioCore.Editors.HavokEditor.HavokTypeUtils.GetProfile(project);
 
         Window = Smithbox.Instance._context.Window;
         Device = Smithbox.Instance._context.Device;

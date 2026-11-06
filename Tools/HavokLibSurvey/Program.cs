@@ -230,11 +230,14 @@ public static class Survey
         ("partsbnd", new Regex(@"\.partsbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("nvmhktbnd", new Regex(@"\.nvmhktbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("mapbnd", new Regex(@"\.mapbnd(\.dcx)?$", RegexOptions.IgnoreCase)),
+        // cutscenes and rumble (camera) animations, which the Havok Editor also opens
+        ("cutscenebnd", new Regex(@"\.(cutscenebnd|remobnd)(\.dcx)?$", RegexOptions.IgnoreCase)),
+        ("rumblebnd", new Regex(@"\.rumblebnd(\.dcx)?$", RegexOptions.IgnoreCase)),
         ("loose hkx", new Regex(@"\.(hkx|hkt)(\.dcx)?$", RegexOptions.IgnoreCase)),
     ];
 
     private static readonly Regex AnyContainer = new(
-        @"\.(hkxbhd|anibnd|behbnd|chrbnd|objbnd|geomhkxbnd|partsbnd|nvmhktbnd|mapbnd|hkx|hkt)(\.dcx)?$", RegexOptions.IgnoreCase);
+        @"\.(hkxbhd|anibnd|behbnd|chrbnd|objbnd|geomhkxbnd|partsbnd|nvmhktbnd|mapbnd|cutscenebnd|remobnd|rumblebnd|hkx|hkt)(\.dcx)?$", RegexOptions.IgnoreCase);
 
     private static readonly Regex HavokInner = new(@"\.(hkx|hkt|hkc)(\.dcx)?$", RegexOptions.IgnoreCase);
     private static readonly Regex CompendiumInner = new(@"\.compendium(\.dcx)?$", RegexOptions.IgnoreCase);

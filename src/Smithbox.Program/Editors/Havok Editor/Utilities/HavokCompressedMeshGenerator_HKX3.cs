@@ -1,10 +1,10 @@
-using HKLib.hk2018;
-using HKLib.hk2018.hkcdCompressedAabbCodecs;
+using Havok.hk2018;
+using Havok.hk2018.hkcdCompressedAabbCodecs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using CompressedMeshSection = HKLib.hk2018.hkcdStaticMeshTree.Section;
-using CompressedMeshPrimitive = HKLib.hk2018.hkcdStaticMeshTree.Primitive;
+using CompressedMeshSection = Havok.hk2018.hkcdStaticMeshTree.Section;
+using CompressedMeshPrimitive = Havok.hk2018.hkcdStaticMeshTree.Primitive;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -100,7 +100,7 @@ public static class HavokCompressedMeshGenerator_HKX3
         {
             m_meshTree = tree,
             m_simdTree = BuildSimdTree(build),
-            m_connectivity = new HKLib.hk2018.hkcdStaticMeshTree.Connectivity(),
+            m_connectivity = new Havok.hk2018.hkcdStaticMeshTree.Connectivity(),
             m_hasSimdTree = true
         };
 

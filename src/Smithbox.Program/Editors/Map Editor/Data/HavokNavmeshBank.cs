@@ -1,6 +1,4 @@
 ﻿using Havok.Shared;
-using HKLib.hk2018;
-using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Editors.Common;
 using StudioCore.Renderer;
@@ -20,12 +18,11 @@ public class HavokNavmeshBank
     /// </summary>
     public Dictionary<string, NVA_ER> NavVolumeFiles = new();
 
-    public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
-
     /// <summary>
-    /// AC6 navmeshes, which are Havok 2019
+    /// ER, NR and AC6 navmeshes, read by the unified Havok library, keyed by name (n30_00_00_00_000100). The Map Editor
+    /// edits these and SaveHavokNavmeshModels writes them back.
     /// </summary>
-    public Dictionary<string, HKLib.hk2019.hkRootLevelContainer> AC6_Containers = new();
+    public Dictionary<string, Havok.HavokDocument> Documents = new();
 
     /// <summary>
     /// The loaded ER, NR or AC6 maps whose navmeshes haven't been read yet
@@ -75,7 +72,7 @@ public class HavokNavmeshBank
     /// Gets an ER, NR or AC6 navmesh, e.g. n30_00_00_00_000100, reading the navmeshes of its map the first time
     /// one of them is asked for. Null if the navmesh isn't in a loaded map.
     /// </summary>
-    public IRootContainer GetContainer(string name)
+    public Havok.HavokDocument GetDocument(string name)
     {
         // Navmeshes are named after their map, e.g. n30_00_00_00_000100 is in m30_00_00_00
         foreach (var mapId in UnreadMaps.Where(m => name.AsSpan(1).StartsWith(m.AsSpan(1))).ToList())
@@ -84,9 +81,7 @@ public class HavokNavmeshBank
             ReadHavokNavmeshModels(mapId);
         }
 
-        return HKX3_Containers.TryGetValue(name, out var container)
-            ? container
-            : AC6_Containers.GetValueOrDefault(name);
+        return Documents.GetValueOrDefault(name);
     }
 
     public void OnUnloadMap(string mapId)
@@ -97,8 +92,7 @@ public class HavokNavmeshBank
         {
             foreach (var name in navmeshNames)
             {
-                HKX3_Containers.Remove(name);
-                AC6_Containers.Remove(name);
+                Documents.Remove(name);
             }
         }
 
@@ -152,16 +146,20 @@ public class HavokNavmeshBank
                     .Select(file => (Name: Path.GetFileNameWithoutExtension(file.Name), Bytes: binder.ReadFile(file)))
                     .ToList();
 
-                var isAC6 = Project.Descriptor.ProjectType is ProjectType.AC6;
-                var containers = new IRootContainer[files.Count];
+                var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
+
+                if (profile == null)
+                    return;
+
+                var documents = new Havok.HavokDocument[files.Count];
 
                 Parallel.For(0, files.Count, i =>
                 {
                     try
                     {
-                        containers[i] = isAC6
-                            ? HKLibTagfileReader.Read2019(files[i].Bytes)
-                            : HKLibTagfileReader.Read2018(files[i].Bytes);
+                        var bytes = DCX.Is(files[i].Bytes) ? DCX.Decompress(files[i].Bytes) : files[i].Bytes;
+
+                        documents[i] = Havok.Files.HavokFile.Read(bytes.ToArray(), profile);
                     }
                     catch (Exception ex)
                     {
@@ -173,12 +171,7 @@ public class HavokNavmeshBank
 
                 for (int i = 0; i < files.Count; i++)
                 {
-                    var added = containers[i] switch
-                    {
-                        HKLib.hk2019.hkRootLevelContainer ac6Container => AC6_Containers.TryAdd(files[i].Name, ac6Container),
-                        hkRootLevelContainer container => HKX3_Containers.TryAdd(files[i].Name, container),
-                        _ => false
-                    };
+                    var added = documents[i] != null && Documents.TryAdd(files[i].Name, documents[i]);
 
                     if (added)
                         navmeshNames.Add(files[i].Name);
@@ -196,28 +189,21 @@ public class HavokNavmeshBank
     }
 
     /// <summary>
-    /// Writes a loaded navmesh file, or returns null if the file isn't loaded.
+    /// Writes a loaded navmesh file in the form it was read, compressed like the stored file. Null if the file isn't loaded.
     /// </summary>
-    private byte[] WriteNavmeshFile(string name)
+    private byte[] WriteNavmeshFile(string name, Memory<byte> stored)
     {
-        using var memoryStream = new MemoryStream();
+        if (!Documents.TryGetValue(name, out var document))
+            return null;
 
-        if (Project.Descriptor.ProjectType is ProjectType.AC6)
-        {
-            if (!AC6_Containers.TryGetValue(name, out var container))
-                return null;
+        var bytes = Havok.Files.HavokFile.Write(document);
 
-            new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer().Write(container, memoryStream);
-        }
-        else
-        {
-            if (!HKX3_Containers.TryGetValue(name, out var container))
-                return null;
+        if (!DCX.Is(stored))
+            return bytes;
 
-            new HavokBinarySerializer().Write(container, memoryStream);
-        }
+        DCX.Decompress(stored, out DCX.Type compression);
 
-        return memoryStream.ToArray();
+        return DCX.Compress(bytes, compression).ToArray();
     }
 
     public bool SaveHavokNavmeshModels(string mapId)
@@ -259,7 +245,7 @@ public class HavokNavmeshBank
                     try
                     {
                         // Only re-serialize entries we actually have loaded (and presumably edited)
-                        var fileBytes = WriteNavmeshFile(name);
+                        var fileBytes = WriteNavmeshFile(name, file.Bytes);
                         if (fileBytes == null)
                             continue;
 

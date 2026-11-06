@@ -30,18 +30,10 @@ public class HavokStateMachineView
 
     public void Setup(object sourceObject)
     {
-        if (HavokTypeUtils.IsHKX3(Project))
-        {
-            StateMachines = HavokTreeSearch.FindAll<HKLib.hk2018.hkbStateMachine>(
+        // The marker interface is implemented by the class in every SDK's class set
+        StateMachines = HavokTreeSearch.FindAll<IStateMachine>(
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<IStateMachine>();
-        }
-        else if (HavokTypeUtils.IsHKX2(Project))
-        {
-            StateMachines = HavokTreeSearch.FindAll<HKX2.hkbStateMachine>(
-                sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<IStateMachine>();
-        }
+                .ToList();
 
         // Drop selections that are no longer in the graph (after a structural edit)
         SelectedStateMachines.RemoveAll(e => !StateMachines.Contains(e));
@@ -68,18 +60,7 @@ public class HavokStateMachineView
         for (int i = 0; i < StateMachines.Count; i++)
         {
             var entry = StateMachines[i];
-            var entryName = "unknown";
-
-            if (HavokTypeUtils.IsHKX3(Project))
-            {
-                var curSM = (HKLib.hk2018.hkbStateMachine)entry;
-                entryName = curSM.m_name ?? "";
-            }
-            else if (HavokTypeUtils.IsHKX2(Project))
-            {
-                var curSM = (HKX2.hkbStateMachine)entry;
-                entryName = curSM.m_name ?? "";
-            }
+            var entryName = HavokTypeUtils.GetName(entry);
 
             var selected = SelectedStateMachines.Contains(entry);
 

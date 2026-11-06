@@ -1,4 +1,5 @@
 using Havok.Formats;
+using Havok.Reflection;
 using Havok.Formats.Packfile;
 using Havok.Formats.Tagfile;
 
@@ -91,7 +92,9 @@ public static class HavokFile
             case HavokContainer.Tagfile:
             {
                 var serializer = new HavokTagfileSerializer(classSet, DialectFor(profile.Sdk));
-                HavokCompendium? used = compendium is { } c && c.Sdk == profile.Sdk ? c : null;
+                // Only a file that refers to a compendium keeps it: writes then refer to it again, and a file holding its own
+                // types keeps its TYPE section
+                HavokCompendium? used = info.UsesCompendium && compendium is { } c && c.Sdk == profile.Sdk ? c : null;
                 if (used != null) serializer.LoadCompendium(used);
                 IReadOnlyList<object> objects = serializer.ReadAllObjects(data);
                 if (objects.Count == 0) throw new InvalidDataException("The tagfile has no objects.");
@@ -100,6 +103,57 @@ public static class HavokFile
             default:
                 throw new NotSupportedException($"{info} can't be read as a document.");
         }
+    }
+
+    /// <summary>
+    /// Writes a document back in the form it was read: its container, SDK, profile and compendium. The engines keep
+    /// what they read of a root (packfile header and <c>__types__</c>, tagfile TYPE section) in weak tables keyed by
+    /// the root object, so an edited root is written as faithfully as an unchanged one.
+    /// </summary>
+    public static byte[] Write(HavokDocument document)
+    {
+        IHavokClassSet classSet = ClassSetFor(document.Profile);
+
+        switch (document.Container)
+        {
+            case HavokContainer.Packfile:
+                return new HavokPackfileSerializer(classSet).Write(document.Root);
+            case HavokContainer.Tagfile:
+            {
+                var serializer = new HavokTagfileSerializer(classSet, DialectFor(document.Profile.Sdk));
+                if (document.Compendium != null) serializer.LoadCompendium(document.Compendium);
+                return serializer.Write(document.Root);
+            }
+            default:
+                throw new NotSupportedException($"{document.Source} can't be written.");
+        }
+    }
+
+    /// <summary>
+    /// Whether the profile's registry gives a class a field, counting its parents. The generated classes of an SDK
+    /// hold every game's fields (ER, NR and DB_NT share hk2018), so a field another game added isn't in this game's
+    /// files. Classes the registry doesn't know keep every field.
+    /// </summary>
+    /// <param name="fieldName">The C# field name (<c>m_additiveType</c>) or the Havok one (<c>additiveType</c>).</param>
+    public static bool HasField(HavokProfile profile, Type type, string fieldName)
+    {
+        HavokTypeRegistry registry = ClassSetFor(profile).Registry;
+        string name = fieldName.StartsWith("m_", StringComparison.Ordinal) ? fieldName[2..] : fieldName;
+
+        HavokType? havokType = registry.GetType(type);
+
+        if (havokType == null)
+            return true;
+
+        for (HavokType? t = havokType; t != null; t = t.Parent)
+        {
+            if (t.Fields.Any(f => f.Name == name))
+                return true;
+        }
+
+        // A field of a C# base class the registry doesn't know (e.g. one the generator added) is kept
+        Type? declaring = type.GetField(fieldName)?.DeclaringType;
+        return declaring != null && declaring != type && registry.GetType(declaring) == null;
     }
 
     private static IHavokObject AsHavokObject(object root) =>

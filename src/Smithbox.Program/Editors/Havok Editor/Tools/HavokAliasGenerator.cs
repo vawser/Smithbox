@@ -14,53 +14,36 @@ namespace StudioCore.Editors.HavokEditor;
 
 public static class HavokAliasGenerator
 {
-    public static void GenerateER(ProjectEntry project, HavokEditorView view)
+    public static void GenerateER(ProjectEntry project, HavokEditorView view) => Generate(project, view);
+
+    public static void GenerateDS3(ProjectEntry project, HavokEditorView view) => Generate(project, view);
+
+    /// <summary>
+    /// Names each clip of a CustomManualSelectorGenerator after the selector. Read by field name, so it is the same
+    /// for every SDK's classes.
+    /// </summary>
+    private static void Generate(ProjectEntry project, HavokEditorView view)
     {
         var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath].Root;
 
-        var cmsgs = HavokTreeSearch.FindAll<HKLib.hk2018.CustomManualSelectorGenerator>(
+        var cmsgs = HavokTreeSearch.FindAll<ICustomManualSelectorGenerator>(
             sourceObject, view.PropertyCache.GetCachedHavokFields);
 
         foreach (var entry in cmsgs)
         {
-            var curGroupName = entry.m_name;
+            var curGroupName = HavokTypeUtils.GetName(entry);
 
-            foreach (var clip in entry.m_generators)
+            if (HavokTypeUtils.GetFieldValue(entry, "m_generators") is not System.Collections.IEnumerable generators)
+                continue;
+
+            foreach (var clip in generators)
             {
-                if (clip is HKLib.hk2018.hkbClipGenerator)
+                if (clip is IClipGenerator)
                 {
-                    var curClipName = clip.m_name;
-
                     GenerateHavokObjectName(
                         project,
                         view.Selection.CategoryMode, view.Selection.BinderFileEntry, view.Selection.FilePath,
-                        curClipName, curGroupName);
-                }
-            }
-        }
-    }
-
-    public static void GenerateDS3(ProjectEntry project, HavokEditorView view)
-    {
-        var sourceObject = view.HavokBank.BehaviorBank[view.Selection.BinderFileEntry][view.Selection.FilePath].Root;
-
-        var cmsgs = HavokTreeSearch.FindAll<HKX2.CustomManualSelectorGenerator>(
-            sourceObject, view.PropertyCache.GetCachedHavokFields);
-
-        foreach(var entry in cmsgs)
-        {
-            var curGroupName = entry.m_name;
-
-            foreach(var clip in entry.m_generators)
-            {
-                if(clip is HKX2.hkbClipGenerator)
-                {
-                    var curClipName = clip.m_name;
-
-                    GenerateHavokObjectName(
-                        project,
-                        view.Selection.CategoryMode, view.Selection.BinderFileEntry, view.Selection.FilePath,
-                        curClipName, curGroupName);
+                        HavokTypeUtils.GetName(clip), curGroupName);
                 }
             }
         }

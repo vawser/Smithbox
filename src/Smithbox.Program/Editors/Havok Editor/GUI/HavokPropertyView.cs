@@ -379,7 +379,7 @@ public class HavokPropertyView
 
             if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags)
             {
-                if (typ == typeof(HKLib.hk2018.hkPropertyBag))
+                if (typ.Name == "hkPropertyBag")
                     continue;
             }
 
@@ -628,7 +628,7 @@ public class HavokPropertyView
     {
         var typ = prop.FieldType;
 
-        if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags && typ == typeof(HKLib.hk2018.hkPropertyBag))
+        if (!CFG.Current.HavokEditor_Properties_Display_Property_Bags && typ.Name == "hkPropertyBag")
             return false;
 
         Type elementType = null;
@@ -1127,13 +1127,13 @@ public class HavokPropertyView
                 isChanged = true;
             }
         }
-        else if (typ == typeof(HKLib.ValueTypes.Matrix3x3))
+        else if (typ == typeof(Havok.Matrix3x3))
         {
-            Matrix4x4 matrix = (HKLib.ValueTypes.Matrix3x3)oldval;
+            Matrix4x4 matrix = (Havok.Matrix3x3)oldval;
 
             if (MatrixRowsEditor(ref matrix, 3))
             {
-                newval = (HKLib.ValueTypes.Matrix3x3)matrix;
+                newval = (Havok.Matrix3x3)matrix;
                 isChanged = true;
             }
         }

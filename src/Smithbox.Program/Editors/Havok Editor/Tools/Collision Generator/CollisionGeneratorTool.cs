@@ -448,11 +448,10 @@ public class CollisionGeneratorTool
     }
 
     /// <summary>
-    /// Compressed meshes are built for DS3 (HKX2) and the HKX3 games. The other HKX2 games (DS1, DS1R, BB) use the
+    /// Compressed meshes are built for DS3 (hk2014) and the 2018/2019 games. Older games (DS1, DS1R, BB) use the
     /// older hkp physics, so only get extern meshes.
     /// </summary>
-    private bool SupportsCompressedMesh => HavokTypeUtils.IsHKX3(Project)
-        || HavokTypeUtils.IsHKX3_2019(Project)
+    private bool SupportsCompressedMesh => HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019
         || Project.Descriptor.ProjectType is ProjectType.DS3;
 
     private bool IsCompressedMesh => SupportsCompressedMesh && TargetMeshType is CollisionGeneratorMeshType.CompressedMesh;
@@ -501,21 +500,21 @@ public class CollisionGeneratorTool
         // The replacement goes through the action manager, so it can be undone and marks the file as modified
         HavokDelegateAction action = null;
 
-        if (HavokTypeUtils.IsHKX3_2019(Project))
+        if (sourceObject is Havok.hk2019.hkRootLevelContainer)
         {
-            if (sourceObject is HKLib.hk2019.hkRootLevelContainer root)
+            if (sourceObject is Havok.hk2019.hkRootLevelContainer root)
             {
-                HKLib.hk2019.hknpShape shape = IsCompressedMesh
+                Havok.hk2019.hknpShape shape = IsCompressedMesh
                     ? HavokCompressedMeshGenerator_HKX3_2019.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
                     : HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
                 action = HavokShapeGenerator_HKX3_2019.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
             }
         }
-        else if (HavokTypeUtils.IsHKX3(Project))
+        else if (sourceObject is Havok.hk2018.hkRootLevelContainer)
         {
-            if (sourceObject is HKLib.hk2018.hkRootLevelContainer root)
+            if (sourceObject is Havok.hk2018.hkRootLevelContainer root)
             {
-                HKLib.hk2018.hknpShape shape = IsCompressedMesh
+                Havok.hk2018.hknpShape shape = IsCompressedMesh
                     ? HavokCompressedMeshGenerator_HKX3.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
                     : HavokShapeGenerator_HKX3.BuildExternMeshShape(verts, indices);
                 action = HavokShapeGenerator_HKX3.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
@@ -524,9 +523,9 @@ public class CollisionGeneratorTool
         else
         {
             // TODO: check the extern mesh works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
-            if (sourceObject is HKX2.hkRootLevelContainer root)
+            if (sourceObject is Havok.hk2014.hkRootLevelContainer root)
             {
-                HKX2.hknpShape shape = IsCompressedMesh
+                Havok.hk2014.hknpShape shape = IsCompressedMesh
                     ? HavokCompressedMeshGenerator_HKX2.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
                     : HavokShapeGenerator_HKX2.BuildExternMeshShape(verts, indices);
                 action = HavokShapeGenerator_HKX2.CreateReplaceMeshShapeAction(fileWrapper, root, shape);

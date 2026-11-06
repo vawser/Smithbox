@@ -37,6 +37,7 @@ public class HavokEditorView : IEditorView
         _imguiId = imguiId;
 
         Selection = new(this, project);
+        PropertyCache.Profile = HavokTypeUtils.GetProfile(project);
         ActionManager = new();
 
         // ActionPerformed is raised before the action is pushed onto the undo/redo stack,

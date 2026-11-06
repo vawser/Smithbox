@@ -40,6 +40,28 @@ public static class HavokTreeSearch
         return results;
     }
 
+    /// <summary>
+    /// Every object of the Havok class of this name (or derived from it), whatever SDK's class set it belongs to
+    /// </summary>
+    public static List<object> FindAllOfClass(
+        object root,
+        string className,
+        Func<Type, FieldInfo[]> fieldProvider = null)
+    {
+        var results = new List<object>();
+        var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
+
+        Walk(root, fieldProvider ?? GetDefaultFields, visited, obj =>
+        {
+            if (HavokTypeUtils.IsHavokClass(obj, className))
+            {
+                results.Add(obj);
+            }
+        });
+
+        return results;
+    }
+
     public static Dictionary<Type, List<object>> BuildTypeIndex(
         object root,
         Func<Type, FieldInfo[]> fieldProvider = null)

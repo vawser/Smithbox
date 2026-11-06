@@ -82,20 +82,9 @@ public class HavokBehaviorView
             ? HavokAnimationIndex.Get(Project, View.Selection.BinderFileEntry?.Filename)
             : null;
 
-        if (HavokTypeUtils.IsHKX3(Project))
-        {
-            var behaviorGraphs = HavokTreeSearch.FindAll<HKLib.hk2018.hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
-
-            if (behaviorGraphs.Count > 0)
-                IsBehaviorGraph = true;
-        }
-        else if (HavokTypeUtils.IsHKX2(Project))
-        {
-            var behaviorGraphs = HavokTreeSearch.FindAll<HKX2.hkbBehaviorGraph>(sourceObject, View.PropertyCache.GetCachedHavokFields);
-
-            if (behaviorGraphs.Count > 0)
-                IsBehaviorGraph = true;
-        }
+        // By class name, so it is the same for every SDK's classes
+        if (HavokTreeSearch.FindAllOfClass(sourceObject, "hkbBehaviorGraph", View.PropertyCache.GetCachedHavokFields).Count > 0)
+            IsBehaviorGraph = true;
 
         AnimationClipView.Setup(sourceObject);
         AnimationSelectorView.Setup(sourceObject);

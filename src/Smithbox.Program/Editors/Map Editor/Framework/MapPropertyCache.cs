@@ -31,6 +31,12 @@ public class MapPropertyCache
         return props;
     }
 
+    /// <summary>
+    /// The game whose Havok files are shown, so fields another game added to a shared class are left out (see
+    /// HavokPropertyCache.Profile). Null keeps every field.
+    /// </summary>
+    public Havok.HavokProfile HavokProfile { get; set; }
+
     public readonly Dictionary<string, FieldInfo[]> FieldCache = new();
 
     public FieldInfo[] GetCachedHavokFields(Type type)
@@ -39,6 +45,12 @@ public class MapPropertyCache
         {
             fields = type.GetFields(BindingFlags.Instance | BindingFlags.Public);
             fields = fields.OrderBy(f => f.MetadataToken).ToArray();
+
+            if (HavokProfile != null && type.Namespace?.StartsWith("Havok.hk", StringComparison.Ordinal) == true)
+            {
+                fields = fields.Where(f => Havok.Files.HavokFile.HasField(HavokProfile, type, f.Name)).ToArray();
+            }
+
             FieldCache.Add(type.FullName, fields);
         }
 

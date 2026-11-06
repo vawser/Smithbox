@@ -37,18 +37,10 @@ public class HavokAnimationClipView
 
     public void Setup(object sourceObject)
     {
-        if (HavokTypeUtils.IsHKX3(Project))
-        {
-            AnimationClips = HavokTreeSearch.FindAll<HKLib.hk2018.hkbClipGenerator>(
+        // The marker interface is implemented by the class in every SDK's class set
+        AnimationClips = HavokTreeSearch.FindAll<IClipGenerator>(
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<IClipGenerator>();
-        }
-        else if (HavokTypeUtils.IsHKX2(Project))
-        {
-            AnimationClips = HavokTreeSearch.FindAll<HKX2.hkbClipGenerator>(
-                sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<IClipGenerator>();
-        }
+                .ToList();
 
         // Drop selections that are no longer in the graph (after a structural edit)
         SelectedAnimationClips.RemoveAll(e => !AnimationClips.Contains(e));
@@ -173,12 +165,7 @@ public class HavokAnimationClipView
 
     private string GetClipName(IClipGenerator entry)
     {
-        return entry switch
-        {
-            HKLib.hk2018.hkbClipGenerator hkx3 => hkx3.m_name ?? "",
-            HKX2.hkbClipGenerator hkx2 => hkx2.m_name ?? "",
-            _ => "unknown"
-        };
+        return HavokTypeUtils.GetName(entry);
     }
 
     private void UpdateFilteredClips()

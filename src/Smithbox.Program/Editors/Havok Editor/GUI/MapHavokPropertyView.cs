@@ -116,7 +116,7 @@ public class MapHavokPropertyView
             fullName = $"f{mapID.Replace("m", "")}_{modelName.Replace("h", "")}.hkx.dcx";
         }
 
-        IRootContainer curCollision = View.HavokCollisionBank.GetHKLibContainer(fullName);
+        IRootContainer curCollision = View.HavokCollisionBank.GetMapDocument(fullName)?.Root as IRootContainer;
 
         if (curCollision != null)
         {
@@ -178,7 +178,7 @@ public class MapHavokPropertyView
             fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
-        IRootContainer curNavmesh = View.HavokNavmeshBank.GetContainer(fullName);
+        IRootContainer curNavmesh = View.HavokNavmeshBank.GetDocument(fullName)?.Root as IRootContainer;
 
         if (curNavmesh != null)
         {

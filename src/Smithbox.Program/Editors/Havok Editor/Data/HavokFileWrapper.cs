@@ -14,9 +14,15 @@ public class HavokFileWrapper
     public string Key { get; set; }
 
     /// <summary>
+    /// The file as read by the unified Havok library: its root, and the profile and compendium it is written back
+    /// with. Null until the file is loaded.
+    /// </summary>
+    public Havok.HavokDocument Document { get; set; }
+
+    /// <summary>
     /// The root container of the Havok file, null until the file is loaded
     /// </summary>
-    public IRootContainer Root { get; set; }
+    public IRootContainer Root => Document?.Root as IRootContainer;
 
     /// <summary>
     /// Whether the file has been modified since it was last loaded or saved

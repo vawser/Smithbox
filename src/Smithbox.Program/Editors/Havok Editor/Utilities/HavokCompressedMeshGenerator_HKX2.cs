@@ -1,4 +1,4 @@
-using HKX2;
+using Havok.hk2014;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -23,7 +23,7 @@ public static class HavokCompressedMeshGenerator_HKX2
 {
     public const float DefaultConvexRadius = 0.01f;
 
-    private const ushort ShapeFlags = (ushort)(hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE | hknpShape.FlagsEnum.NO_GET_SHAPE_KEYS_ON_SPU);
+    private const hknpShape.FlagsEnum ShapeFlags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE | hknpShape.FlagsEnum.NO_GET_SHAPE_KEYS_ON_SPU;
 
     public static fsnpCustomParamCompressedMeshShape BuildCompressedMeshShape(
         IReadOnlyList<Vector3> vertices,
@@ -59,9 +59,7 @@ public static class HavokCompressedMeshGenerator_HKX2
         {
             tree.m_nodes.Add(new hkcdStaticTreeCodec3Axis5
             {
-                m_xyz_0 = n.X,
-                m_xyz_1 = n.Y,
-                m_xyz_2 = n.Z,
+                m_xyz = { [0] = n.X, [1] = n.Y, [2] = n.Z },
                 m_hiData = n.HiData,
                 m_loData = n.LoData
             });
@@ -71,10 +69,7 @@ public static class HavokCompressedMeshGenerator_HKX2
         {
             tree.m_primitives.Add(new hkcdStaticMeshTreeBasePrimitive
             {
-                m_indices_0 = p[0],
-                m_indices_1 = p[1],
-                m_indices_2 = p[2],
-                m_indices_3 = p[3]
+                m_indices = { [0] = p[0], [1] = p[1], [2] = p[2], [3] = p[3] }
             });
         }
 
@@ -88,12 +83,7 @@ public static class HavokCompressedMeshGenerator_HKX2
             var section = new hkcdStaticMeshTreeBaseSection
             {
                 m_domain = Domain(s.DomainMin, s.DomainMax, r),
-                m_codecParms_0 = s.CodecParms[0],
-                m_codecParms_1 = s.CodecParms[1],
-                m_codecParms_2 = s.CodecParms[2],
-                m_codecParms_3 = s.CodecParms[3],
-                m_codecParms_4 = s.CodecParms[4],
-                m_codecParms_5 = s.CodecParms[5],
+                m_codecParms = { [0] = s.CodecParms[0], [1] = s.CodecParms[1], [2] = s.CodecParms[2], [3] = s.CodecParms[3], [4] = s.CodecParms[4], [5] = s.CodecParms[5] },
                 m_firstPackedVertex = s.FirstPackedVertexIndex,
                 m_sharedVertices = new hkcdStaticMeshTreeBaseSectionSharedVertices
                 {
@@ -121,9 +111,7 @@ public static class HavokCompressedMeshGenerator_HKX2
             {
                 section.m_nodes.Add(new hkcdStaticTreeCodec3Axis4
                 {
-                    m_xyz_0 = n.X,
-                    m_xyz_1 = n.Y,
-                    m_xyz_2 = n.Z,
+                    m_xyz = { [0] = n.X, [1] = n.Y, [2] = n.Z },
                     m_data = n.Data
                 });
             }
@@ -149,7 +137,7 @@ public static class HavokCompressedMeshGenerator_HKX2
         {
             m_flags = ShapeFlags,
             m_numShapeKeyBits = (byte)build.BitsPerKey,
-            m_dispatchType = HKX2.Enum.COMPOSITE,
+            m_dispatchType = (byte)hkcdShapeDispatchType.ShapeDispatchTypeEnum.COMPOSITE,
             m_convexRadius = r,
             m_userData = 0,
             m_properties = null,
@@ -201,11 +189,11 @@ public static class HavokCompressedMeshGenerator_HKX2
     /// </summary>
     private static hkcdSimdTree BuildSimdStub()
     {
-        var tree = new hkcdSimdTree { m_nodes = new List<hkcdSimdTreeNode>() };
+        var tree = new hkcdSimdTree { m_nodes = new List<hkcdSimdTree.Node>() };
 
         for (int i = 0; i < 2; i++)
         {
-            tree.m_nodes.Add(new hkcdSimdTreeNode
+            tree.m_nodes.Add(new hkcdSimdTree.Node
             {
                 m_lx = new Vector4(float.MaxValue),
                 m_ly = new Vector4(float.MaxValue),
@@ -226,13 +214,13 @@ public static class HavokCompressedMeshGenerator_HKX2
             m_version = HavokCompressedMeshBuilder.ParamVersion,
             m_vertexDataStride = 1,
             m_triangleDataStride = 0,
-            m_triangleDataArray = new List<fsnpCustomMeshParameterTriangleData>(),
-            m_primitiveDataArray = new List<fsnpCustomMeshParameterPrimitiveData>()
+            m_triangleDataArray = new List<fsnpCustomMeshParameter.TriangleData>(),
+            m_primitiveDataArray = new List<fsnpCustomMeshParameter.PrimitiveData>()
         };
 
         foreach (var t in build.TriangleParams)
         {
-            param.m_triangleDataArray.Add(new fsnpCustomMeshParameterTriangleData
+            param.m_triangleDataArray.Add(new fsnpCustomMeshParameter.TriangleData
             {
                 m_primitiveDataIndex = t.MaterialGroupIndex,
                 m_triangleDataIndex = t.TriangleIndex,
@@ -244,7 +232,7 @@ public static class HavokCompressedMeshGenerator_HKX2
 
         foreach (var g in build.MaterialGroups)
         {
-            param.m_primitiveDataArray.Add(new fsnpCustomMeshParameterPrimitiveData
+            param.m_primitiveDataArray.Add(new fsnpCustomMeshParameter.PrimitiveData
             {
                 m_vertexData = Enumerable.Repeat((byte)0xFF, g.VertexCount).ToList(),
                 m_triangleData = new List<byte>(),

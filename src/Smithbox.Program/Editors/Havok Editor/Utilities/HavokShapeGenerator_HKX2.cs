@@ -1,4 +1,4 @@
-﻿using HKX2;
+﻿using Havok.hk2014;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -26,7 +26,7 @@ public static class HavokShapeGenerator_HKX2
 
         for (int i = 0; i < triangleIndices.Count; i += 3)
         {
-            geometry.m_triangles.Add(new hkGeometryTriangle
+            geometry.m_triangles.Add(new hkGeometry.Triangle
             {
                 m_a = triangleIndices[i],
                 m_b = triangleIndices[i + 1],
@@ -46,8 +46,8 @@ public static class HavokShapeGenerator_HKX2
         {
             m_geometry = geometryWrapper,
             m_boundingVolumeData = boundingVolumeData,
-            m_flags = (ushort)hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
-            m_dispatchType = HKX2.Enum.COMPOSITE,
+            m_flags = hknpShape.FlagsEnum.IS_COMPOSITE_SHAPE,
+            m_dispatchType = (byte)hkcdShapeDispatchType.ShapeDispatchTypeEnum.COMPOSITE,
             m_numShapeKeyBits = HavokShapeGenerator_Shared.ShapeKeyBits(triangleCount),
             m_convexRadius = 0f,
             m_userData = 0,
@@ -111,14 +111,14 @@ public static class HavokShapeGenerator_HKX2
     {
         var tree = new hkcdSimdTree
         {
-            m_nodes = new List<hkcdSimdTreeNode>()
+            m_nodes = new List<hkcdSimdTree.Node>()
         };
 
         if (triangleCount == 0)
         {
             // Degenerate case: still needs a well-formed (but empty) root node,
             // never a node with valid-looking-but-meaningless lanes.
-            var emptyRoot = new hkcdSimdTreeNode { };
+            var emptyRoot = new hkcdSimdTree.Node { };
             InitializeEmptyNode(emptyRoot);
             tree.m_nodes.Add(emptyRoot);
             return tree;
@@ -127,10 +127,10 @@ public static class HavokShapeGenerator_HKX2
         var allIndices = Enumerable.Range(0, triangleCount).ToList();
         var root = HavokShapeGenerator_Shared.BuildNode(allIndices, triAabbs, centroids);
 
-        var nodeList = new List<hkcdSimdTreeNode>();
+        var nodeList = new List<hkcdSimdTree.Node>();
 
         // The sentinel node is critical for a new collision to work
-        var sentinel = new hkcdSimdTreeNode { };
+        var sentinel = new hkcdSimdTree.Node { };
         InitializeEmptyNode(sentinel);
         nodeList.Add(sentinel); // index 0
 
@@ -146,7 +146,7 @@ public static class HavokShapeGenerator_HKX2
             var buildNode = queue.Dequeue();
             int slot = slotOf[buildNode];
 
-            var node = new hkcdSimdTreeNode { };
+            var node = new hkcdSimdTree.Node { };
             InitializeEmptyNode(node);
 
             if (buildNode.IsLeaf)
@@ -158,19 +158,19 @@ public static class HavokShapeGenerator_HKX2
 
                     if (lane == 0)
                     {
-                        node.m_data_0 = (uint)triIndex;
+                        node.m_data[0] = (uint)triIndex;
                     }
                     else if (lane == 1)
                     {
-                        node.m_data_1 = (uint)triIndex;
+                        node.m_data[1] = (uint)triIndex;
                     }
                     else if (lane == 2)
                     {
-                        node.m_data_2 = (uint)triIndex;
+                        node.m_data[2] = (uint)triIndex;
                     }
                     else if (lane == 3)
                     {
-                        node.m_data_3 = (uint)triIndex;
+                        node.m_data[3] = (uint)triIndex;
                     }
                 }
             }
@@ -187,19 +187,19 @@ public static class HavokShapeGenerator_HKX2
 
                     if (lane == 0)
                     {
-                        node.m_data_0 = (uint)childSlot;
+                        node.m_data[0] = (uint)childSlot;
                     }
                     else if (lane == 1)
                     {
-                        node.m_data_1 = (uint)childSlot;
+                        node.m_data[1] = (uint)childSlot;
                     }
                     else if (lane == 2)
                     {
-                        node.m_data_2 = (uint)childSlot;
+                        node.m_data[2] = (uint)childSlot;
                     }
                     else if (lane == 3)
                     {
-                        node.m_data_3 = (uint)childSlot;
+                        node.m_data[3] = (uint)childSlot;
                     }
 
                     queue.Enqueue(child);
@@ -219,7 +219,7 @@ public static class HavokShapeGenerator_HKX2
     // ASSUMPTIONS - not verified against Havok's proprietary source, only
     // inferred from the 3+1+2 byte node layout:
     //
-    //   m_xyz_0 / m_xyz_1 / m_xyz_2  - one byte per axis (X / Y / Z).
+    //   m_xyz[0] / m_xyz[1] / m_xyz[2]  - one byte per axis (X / Y / Z).
     //       low nibble  = quantized "lo" plane (0..15)
     //       high nibble = quantized "hi" plane (0..15)
     //     Both are relative to the *parent* node's box (the root's parent
@@ -320,9 +320,9 @@ public static class HavokShapeGenerator_HKX2
         Vector3 parentMin, Vector3 parentMax,
         Vector3 childMin, Vector3 childMax)
     {
-        node.m_xyz_0 = EncodeAxisPlanes(parentMin.X, parentMax.X, childMin.X, childMax.X);
-        node.m_xyz_1 = EncodeAxisPlanes(parentMin.Y, parentMax.Y, childMin.Y, childMax.Y);
-        node.m_xyz_2 = EncodeAxisPlanes(parentMin.Z, parentMax.Z, childMin.Z, childMax.Z);
+        node.m_xyz[0] = EncodeAxisPlanes(parentMin.X, parentMax.X, childMin.X, childMax.X);
+        node.m_xyz[1] = EncodeAxisPlanes(parentMin.Y, parentMax.Y, childMin.Y, childMax.Y);
+        node.m_xyz[2] = EncodeAxisPlanes(parentMin.Z, parentMax.Z, childMin.Z, childMax.Z);
     }
 
     private static void EncodeNodeData(hkcdStaticTreeCodec3Axis6 node, bool isLeaf, uint payload)
@@ -403,7 +403,7 @@ public static class HavokShapeGenerator_HKX2
         return storage;
     }
 
-    private static void SetLaneBounds(hkcdSimdTreeNode node, int lane, Vector3 min, Vector3 max)
+    private static void SetLaneBounds(hkcdSimdTree.Node node, int lane, Vector3 min, Vector3 max)
     {
         HavokShapeGenerator_Shared.SetComponent(ref node.m_lx, lane, min.X);
         HavokShapeGenerator_Shared.SetComponent(ref node.m_hx, lane, max.X);
@@ -413,7 +413,7 @@ public static class HavokShapeGenerator_HKX2
         HavokShapeGenerator_Shared.SetComponent(ref node.m_hz, lane, max.Z);
     }
 
-    private static void InitializeEmptyNode(hkcdSimdTreeNode node)
+    private static void InitializeEmptyNode(hkcdSimdTree.Node node)
     {
         node.m_lx = new Vector4(
             float.MaxValue,
@@ -451,10 +451,10 @@ public static class HavokShapeGenerator_HKX2
             -float.MaxValue,
             -float.MaxValue);
 
-        node.m_data_0 = 0u;
-        node.m_data_1 = 0u;
-        node.m_data_2 = 0u;
-        node.m_data_3 = 0u;
+        node.m_data[0] = 0u;
+        node.m_data[1] = 0u;
+        node.m_data[2] = 0u;
+        node.m_data[3] = 0u;
     }
 
     public static bool ReplaceExternMeshShape(

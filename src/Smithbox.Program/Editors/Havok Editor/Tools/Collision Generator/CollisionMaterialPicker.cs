@@ -194,22 +194,22 @@ public class CollisionMaterialPicker
     {
         IEnumerable<uint> materials = root switch
         {
-            HKX2.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKX2.hknpPhysicsSceneData>()
+            Havok.hk2014.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<Havok.hk2014.hknpPhysicsSceneData>()
                 .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKX2.fsnpCustomParamCompressedMeshShape>()
+                .Select(b => b.m_shape).OfType<Havok.hk2014.fsnpCustomParamCompressedMeshShape>()
                 .SelectMany(s => s.m_pParam?.m_primitiveDataArray ?? new())
                 .Select(p => p.m_materialNameData),
-            HKLib.hk2019.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKLib.hk2019.hknpPhysicsSceneData>()
+            Havok.hk2019.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<Havok.hk2019.hknpPhysicsSceneData>()
                 .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKLib.hk2019.fsnpCustomParamCompressedMeshShape>()
+                .Select(b => b.m_shape).OfType<Havok.hk2019.fsnpCustomParamCompressedMeshShape>()
                 .SelectMany(s => s.m_pParam?.m_primitiveDataArray ?? new())
                 .Select(p => p.m_materialNameData),
-            HKLib.hk2018.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKLib.hk2018.hknpPhysicsSceneData>()
+            Havok.hk2018.hkRootLevelContainer r => r.m_namedVariants
+                .Select(v => v.m_variant).OfType<Havok.hk2018.hknpPhysicsSceneData>()
                 .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKLib.hk2018.fsnpCustomParamCompressedMeshShape>()
+                .Select(b => b.m_shape).OfType<Havok.hk2018.fsnpCustomParamCompressedMeshShape>()
                 .SelectMany(s => s.m_pParam?.m_primitiveDataArray ?? new())
                 .Select(p => p.m_materialNameData),
             _ => []

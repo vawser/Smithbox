@@ -960,6 +960,7 @@ public static class IdentityTypeMap
         { "hkaInterleavedUncompressedAnimation", typeof(hkaInterleavedUncompressedAnimation) },
         { "hkaMeshBinding", typeof(hkaMeshBinding) },
         { "hkaMeshBinding::Mapping", typeof(hkaMeshBinding.Mapping) },
+        { "hkaQuantizedAnimation", typeof(hkaQuantizedAnimation) },
         { "hkaSkeleton", typeof(hkaSkeleton) },
         { "hkaSkeleton::LocalFrameOnBone", typeof(hkaSkeleton.LocalFrameOnBone) },
         { "hkaSkeleton::Partition", typeof(hkaSkeleton.Partition) },

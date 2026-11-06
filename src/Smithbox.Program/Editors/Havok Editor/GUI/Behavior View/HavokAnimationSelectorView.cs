@@ -30,18 +30,10 @@ public class HavokAnimationSelectorView
 
     public void Setup(object sourceObject)
     {
-        if (HavokTypeUtils.IsHKX3(Project))
-        {
-            AnimSelectors = HavokTreeSearch.FindAll<HKLib.hk2018.CustomManualSelectorGenerator>(
+        // The marker interface is implemented by the class in every SDK's class set
+        AnimSelectors = HavokTreeSearch.FindAll<ICustomManualSelectorGenerator>(
                 sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<ICustomManualSelectorGenerator>();
-        }
-        else if (HavokTypeUtils.IsHKX2(Project))
-        {
-            AnimSelectors = HavokTreeSearch.FindAll<HKX2.CustomManualSelectorGenerator>(
-                sourceObject, View.PropertyCache.GetCachedHavokFields)
-                .ToList<ICustomManualSelectorGenerator>();
-        }
+                .ToList();
 
         // Drop selections that are no longer in the graph (after a structural edit)
         SelectedAnimSelectors.RemoveAll(e => !AnimSelectors.Contains(e));
@@ -68,18 +60,7 @@ public class HavokAnimationSelectorView
         for (int i = 0; i < AnimSelectors.Count; i++)
         {
             var entry = AnimSelectors[i];
-            var entryName = "unknown";
-
-            if (HavokTypeUtils.IsHKX3(Project))
-            {
-                var curCMSG = (HKLib.hk2018.CustomManualSelectorGenerator)entry;
-                entryName = curCMSG.m_name ?? "";
-            }
-            else if (HavokTypeUtils.IsHKX2(Project))
-            {
-                var curCMSG = (HKX2.CustomManualSelectorGenerator)entry;
-                entryName = curCMSG.m_name ?? "";
-            }
+            var entryName = HavokTypeUtils.GetName(entry);
 
             var selected = SelectedAnimSelectors.Contains(entry);
 

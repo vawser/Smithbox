@@ -135,6 +135,11 @@ public static class GraphCompare
                 return BitConverter.SingleToInt32Bits(half) == BitConverter.SingleToInt32Bits(full) ? null : $"{path}: half {half} vs {full}";
             }
 
+            // HKLib's Matrix3x3 and Havok.Core's: the same 3 rows of 4 floats
+            if (ta.Name == "Matrix3x3" && tb.Name == "Matrix3x3")
+                return Floats(a).Select(BitConverter.SingleToInt32Bits).SequenceEqual(Floats(b).Select(BitConverter.SingleToInt32Bits))
+                    ? null : $"{path}: matrix differs";
+
             // an enum on one side and its raw storage on the other (HKX2 types some enum fields as plain ints)
             if ((ta.IsEnum || ta.IsPrimitive) && (tb.IsEnum || tb.IsPrimitive) && (ta.IsEnum || tb.IsEnum))
                 return Numeric(a) == Numeric(b) ? null : $"{path}: {a} vs {b}";
