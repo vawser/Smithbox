@@ -241,6 +241,24 @@ public class SystemPrefs
             }
         };
     }
+    public static PreferenceItem Logger_Hide_File_Dictionary_Warnings()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 7,
+            Category = PreferenceCategory.System,
+            Spacer = true,
+
+            Section = SectionCategory.Loggers,
+
+            Title = "PREF_Logger_Hide_File_Dictionary_Warnings",
+            Description = "PREF_Logger_Hide_File_Dictionary_Warnings_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Logger_Hide_File_Dictionary_Warnings);
+            }
+        };
+    }
 
     #endregion
 

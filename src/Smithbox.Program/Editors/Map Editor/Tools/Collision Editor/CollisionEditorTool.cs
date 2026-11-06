@@ -102,7 +102,8 @@ public class CollisionEditorTool
     /// </summary>
     public bool CanUse()
     {
-        return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6;
+        return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
+            or ProjectType.DS3 or ProjectType.SDT;
     }
 
     /// <summary>True while a vertex is dragged, so the viewport's clicks don't select anything.</summary>
@@ -739,7 +740,7 @@ public class CollisionEditorTool
 
     private CollisionEditorFile DecodeFile(MsbEntity entity, string fileName)
     {
-        var document = View.HavokCollisionBank.GetMapDocument(fileName);
+        var document = View.HavokCollisionBank.GetEditableDocument(fileName);
 
         if (document == null)
         {
@@ -869,7 +870,7 @@ public class CollisionEditorTool
         {
             var file = Retiring[i].File;
 
-            if (!View.HavokCollisionBank.MapDocuments.TryGetValue(file.FileName, out var document) || document != file.Document)
+            if (View.HavokCollisionBank.PeekEditableDocument(file.FileName) != file.Document)
             {
                 file.DisposePreview();
                 Retiring.RemoveAt(i);
@@ -880,7 +881,7 @@ public class CollisionEditorTool
 
         foreach (var (key, file) in Files)
         {
-            if (!View.HavokCollisionBank.MapDocuments.TryGetValue(file.FileName, out var document) || document != file.Document)
+            if (View.HavokCollisionBank.PeekEditableDocument(file.FileName) != file.Document)
             {
                 (dropped ??= new()).Add(key);
             }
@@ -1054,15 +1055,26 @@ public class CollisionEditorTool
         Drag = null;
 
         var swaps = new List<CollisionEditorAction.ShapeSwap>();
+        var remaps = new List<CollisionEditorAction.WallRemap>();
         var edited = Files.Values.Where(f => f.IsEdited).ToList();
 
         foreach (var file in edited)
         {
             var map = file.Entity.Container as MapContainer;
 
+            // A rebuild renumbers the triangles, and Sekiro's WALL files mark the low collision's triangles by number
+            var remapWalls = HasWallMarks(file);
+            var newKeys = new Dictionary<uint, uint>();
+
+            if (remapWalls && !View.WallBank.EnsureMapLoaded(file.MapId))
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Walls_Unread", file.FileName));
+                return;
+            }
+
             foreach (var body in file.Bodies.Where(b => b.IsEdited))
             {
-                var (vertices, indices, materials) = body.GetBuildInput();
+                var (vertices, indices, materials, keys) = body.GetBuildInput();
 
                 if (indices.Count == 0)
                 {
@@ -1070,11 +1082,11 @@ public class CollisionEditorTool
                     return;
                 }
 
-                object shape;
+                CollisionEditorShapes.BuiltShape built;
 
                 try
                 {
-                    shape = CollisionEditorShapes.BuildShape(body.Body.Shape, vertices, indices, materials);
+                    built = CollisionEditorShapes.BuildShape(body.Body.Shape, vertices, indices, materials);
                 }
                 catch (Exception e)
                 {
@@ -1082,23 +1094,42 @@ public class CollisionEditorTool
                     return;
                 }
 
-                if (shape == null)
+                if (built == null)
                 {
                     Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", file.FileName));
                     return;
                 }
 
-                swaps.Add(new CollisionEditorAction.ShapeSwap(map, file.FileName, body.Body, body.Body.Shape, shape));
+                // Each kept triangle's key as decoded, to the key it was built with
+                for (var t = 0; t < keys.Count; t++)
+                    newKeys[keys[t]] = built.StoredKeys[t];
+
+                swaps.Add(new CollisionEditorAction.ShapeSwap(map, file.FileName, body.Body, body.Body.Shape, built.Shape));
 
                 Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Commit_Rebuilt", file.FileName,
                     body.TriangleCount, indices.Count / 3, vertices.Count, materials.Distinct().Count()));
+            }
+
+            if (remapWalls)
+            {
+                var modelName = GetWallModelName(file);
+                var before = View.WallBank.GetMarks(file.MapId, modelName);
+
+                if (before != null && (before.Triangles.Count > 0 || before.NoJumpKeys.Count > 0))
+                {
+                    var after = WallBank.RemapMarks(before, newKeys);
+                    remaps.Add(new CollisionEditorAction.WallRemap(map, file.MapId, modelName, before, after));
+
+                    Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Commit_Walls_Remapped", modelName,
+                        after.Triangles.Count, before.Triangles.Count, after.NoJumpKeys.Count, before.NoJumpKeys.Count));
+                }
             }
         }
 
         if (swaps.Count == 0)
             return;
 
-        View.ViewportActionManager.ExecuteAction(new CollisionEditorAction(swaps, OnShapesChanged));
+        View.ViewportActionManager.ExecuteAction(new CollisionEditorAction(swaps, OnShapesChanged, View.WallBank, remaps));
 
         // The binders are written now, so the committed files are updated in the project straight away
         var success = true;
@@ -1108,12 +1139,37 @@ public class CollisionEditorTool
             success &= View.HavokCollisionBank.SaveMapCollision(mapId, type);
         }
 
+        // With the walls that follow them
+        foreach (var mapId in remaps.Select(r => r.MapId).Distinct())
+        {
+            success &= View.WallBank.SaveWalls(mapId);
+        }
+
         var names = string.Join(", ", edited.Select(f => f.FileName));
 
         if (success)
             Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Committed", names));
         else
             Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Save_Failed", names));
+    }
+
+    /// <summary>
+    /// Whether a file's triangles can be marked by WALL files: Sekiro's low collision.
+    /// </summary>
+    private bool HasWallMarks(CollisionEditorFile file)
+    {
+        return Project.Descriptor.ProjectType is ProjectType.SDT && file.Type is HavokCollisionType.Low;
+    }
+
+    /// <summary>
+    /// The model the WALL files know a low collision by: h and its number, as its collision part names it
+    /// (l10_00_00_00_000100.hkx.dcx is h000100).
+    /// </summary>
+    private static string GetWallModelName(CollisionEditorFile file)
+    {
+        var match = System.Text.RegularExpressions.Regex.Match(file.FileName, @"_(\d{6})\.hkx", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+        return match.Success ? $"h{match.Groups[1].Value}" : file.Entity.GetPartModelName();
     }
 
     /// <summary>
@@ -1128,6 +1184,17 @@ public class CollisionEditorTool
 
             Files.TryGetValue(fileName, out var file);
             var mapId = map?.Name ?? file?.MapId;
+
+            // Sekiro only writes the collision files that were changed
+            View.HavokCollisionBank.MarkModified(fileName);
+
+            // The walls are displayed on the low collision's triangles, which have moved
+            if (Project.Descriptor.ProjectType is ProjectType.SDT && char.ToLowerInvariant(fileName[0]) == 'l' && mapId != null)
+            {
+                var number = System.Text.RegularExpressions.Regex.Match(fileName, @"_(\d{6})\.hkx").Groups[1].Value;
+                View.WallBank.ForgetGeometry(mapId, $"h{number}");
+                View.WallBank.RebuildAll();
+            }
 
             if (file != null)
             {
@@ -1199,7 +1266,7 @@ public class CollisionEditorTool
     /// </summary>
     private List<MeshRenderableProxy> RefreshLoadedMesh(string mapId, string fileName, bool showNow)
     {
-        var document = View.HavokCollisionBank.GetMapDocument(fileName);
+        var document = View.HavokCollisionBank.GetEditableDocument(fileName);
         var refreshed = new HashSet<HavokCollisionResource>();
         var proxies = new List<MeshRenderableProxy>();
         var failed = false;

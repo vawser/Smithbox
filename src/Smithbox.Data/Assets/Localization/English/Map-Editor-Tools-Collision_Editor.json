@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Unsupported_Game",
-      "Text": "This tool is only supported for Elden Ring, Nightreign and Armored Core VI."
+      "Text": "This tool is only supported for Dark Souls III, Sekiro, Elden Ring, Nightreign and Armored Core VI."
     },
     {
       "Key": "MAP_CollisionEditor_Description",
@@ -331,6 +331,8 @@
     { "Key": "MAP_CollisionEditor_Create_No_Template_File", "Text": "The {0} binder has no collision file with a single compressed mesh to base the new file on." },
     { "Key": "MAP_CollisionEditor_Create_Build_Failed", "Text": "Failed to build {0}, so nothing was created." },
     { "Key": "MAP_CollisionEditor_Create_Save_Failed", "Text": "Failed to write the collision binders for collision {0}, so no part was added." },
-    { "Key": "MAP_CollisionEditor_Created", "Text": "Created {0} ({1} triangles)." }
+    { "Key": "MAP_CollisionEditor_Created", "Text": "Created {0} ({1} triangles)." },
+    { "Key": "MAP_CollisionEditor_Commit_Walls_Unread", "Text": "The WALL files of {0}'s map couldn't be read, so its walls can't follow the rebuild. Nothing was committed." },
+    { "Key": "MAP_CollisionEditor_Commit_Walls_Remapped", "Text": "Moved the wall marks of {0} to its rebuilt triangles: {1} of {2} WALL triangles, {3} of {4} NOJUMPWALL triangles." }
   ]
 }

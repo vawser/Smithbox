@@ -248,12 +248,23 @@ public class Smithbox
         );
         WarningLogger = new(
             "LOG_Error_Log",
-            evt => evt.Level is LogLevel.Warning or LogLevel.Error,
+            evt => evt.Level is LogLevel.Warning or LogLevel.Error && !IsHiddenFileDictionaryWarning(evt),
             () => (enabled: CFG.Current.Logger_Enable_Warning_Log, fadeTime: (int)(CFG.Current.Logger_Warning_Fade_Time * 1000 / 60f), fadeColor: CFG.Current.Logger_Enable_Color_Fade)
         );
         HighPriorityLogSubscription = TaskLogs.Subscribe(
             evt => evt.Priority == LogPriority.High
         );
+    }
+
+    /// <summary>
+    /// File dictionary lookup warnings from the archive VFS (unnamed hashes, duplicate names,
+    /// uncached lookups) are frequent and usually just noise, so they can be hidden.
+    /// </summary>
+    private static bool IsHiddenFileDictionaryWarning(LogEvent evt)
+    {
+        return evt.Level is LogLevel.Warning
+            && evt.Category == typeof(Andre.IO.VFS.ArchiveBinderVirtualFileSystem).FullName
+            && CFG.Current is { Logger_Hide_File_Dictionary_Warnings: true };
     }
 
     private void Setup()

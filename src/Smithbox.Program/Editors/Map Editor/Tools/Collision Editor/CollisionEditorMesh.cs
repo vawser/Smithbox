@@ -27,6 +27,9 @@ public sealed class CollisionEditorBody
     public readonly int[] Indices;
     public readonly uint[] Materials;
 
+    // Each triangle's shape key as decoded (stored, top-aligned), which the SDT WALL files mark triangles by
+    public readonly uint[] Keys;
+
     // The triangles of each vertex, as a flat list: VertexTriangles[VertexTriangleStart[v] .. VertexTriangleStart[v + 1]]
     private readonly int[] VertexTriangleStart;
     private readonly int[] VertexTriangles;
@@ -51,7 +54,8 @@ public sealed class CollisionEditorBody
 
     public bool IsEdited { get; private set; }
 
-    private CollisionEditorBody(IHavokBody body, List<Vector3> vertices, List<int> indices, List<uint> materials)
+    private CollisionEditorBody(IHavokBody body, List<Vector3> vertices, List<int> indices, List<uint> materials,
+        List<uint> keys)
     {
         Body = body;
         BodyTransform = CollisionGeometry.BodyTransform(body);
@@ -60,6 +64,7 @@ public sealed class CollisionEditorBody
         OriginalVertices = vertices.ToArray();
         Indices = indices.ToArray();
         Materials = materials.ToArray();
+        Keys = keys.ToArray();
 
         // Count, then fill, the triangles of each vertex
         VertexTriangleStart = new int[Vertices.Length + 1];
@@ -102,6 +107,7 @@ public sealed class CollisionEditorBody
         var weld = new Dictionary<Vector3, int>();
         var indices = new List<int>();
         var materials = new List<uint>();
+        var keys = new List<uint>();
 
         int Add(Vector3 v)
         {
@@ -122,12 +128,13 @@ public sealed class CollisionEditorBody
             indices.Add(Add(c));
 
             materials.Add(materialOfKey.GetValueOrDefault(key >> shift));
+            keys.Add(key);
         }
 
         if (indices.Count == 0)
             return null;
 
-        return new CollisionEditorBody(body, vertices, indices, materials);
+        return new CollisionEditorBody(body, vertices, indices, materials, keys);
     }
 
     /// <summary>
@@ -299,10 +306,11 @@ public sealed class CollisionEditorBody
     /// The triangles to rebuild the shape from: the edited vertices, and the triangles that still have three
     /// distinct corners with their materials.
     /// </summary>
-    public (List<Vector3> Vertices, List<int> Indices, List<uint> Materials) GetBuildInput()
+    public (List<Vector3> Vertices, List<int> Indices, List<uint> Materials, List<uint> Keys) GetBuildInput()
     {
         var indices = new List<int>(Indices.Length);
         var materials = new List<uint>(TriangleCount);
+        var keys = new List<uint>(TriangleCount);
 
         for (var t = 0; t < TriangleCount; t++)
         {
@@ -320,9 +328,10 @@ public sealed class CollisionEditorBody
             indices.Add(b);
             indices.Add(c);
             materials.Add(Materials[t]);
+            keys.Add(Keys[t]);
         }
 
-        return (Vertices.ToList(), indices, materials);
+        return (Vertices.ToList(), indices, materials, keys);
     }
 
     #region Preview

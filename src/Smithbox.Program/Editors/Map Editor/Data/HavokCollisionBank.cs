@@ -139,14 +139,13 @@ public class HavokCollisionBank
             return;
 
         // The viewport reads its own collision, so these are only listed here and read when they are first asked for
-        if (Project.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.NR
-            or ProjectType.AC6)
+        if (IsListedGame)
         {
             if (!MapCollisions.ContainsKey(mapId))
                 MapCollisions.Add(mapId, new List<string>());
 
-            foreach (var type in GetCollisionBinderTypes())
+            // Not every game has every type (DS3 has no fall protection), so a missing binder isn't reported
+            foreach (var type in GetCollisionBinderTypes().Where(t => HasCollisionBinder(mapId, t)))
             {
                 ListMapCollision(mapId, type);
             }
@@ -160,6 +159,72 @@ public class HavokCollisionBank
             LoadTagMapCollision(mapId, "h");
             LoadTagMapCollision(mapId, "l");
         }
+    }
+
+    /// <summary>
+    /// The games whose map collision is listed when a map loads and read when it is first asked for (MapDocuments):
+    /// ER, NR and AC6, and DS3. SDT's is read at load instead (TagContainers).
+    /// </summary>
+    private bool IsListedGame => Project.Descriptor.ProjectType is ProjectType.ER
+        or ProjectType.NR
+        or ProjectType.AC6
+        or ProjectType.DS3;
+
+    /// <summary>
+    /// The paths of a map's collision binder of one type. ER, NR and AC6 keep a map in its area's folder
+    /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3 and SDT keep it in the map's own (map/m30_00_00_00/...).
+    /// </summary>
+    private (string Bhd, string Bdt) GetBinderPaths(string mapId, string type)
+    {
+        var folder = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB
+            ? Path.Join("map", mapId)
+            : Path.Join("map", mapId.Substring(0, 3), mapId);
+
+        return (Path.Join(folder, $"{type}{mapId.Substring(1)}.hkxbhd"), Path.Join(folder, $"{type}{mapId.Substring(1)}.hkxbdt"));
+    }
+
+    /// <summary>
+    /// Collision files of Sekiro that the Map Editor has changed, the only ones of its binders that are written: the
+    /// rest are read at load for the walls and viewport, and keep their bytes.
+    /// </summary>
+    private readonly HashSet<string> ModifiedTagFiles = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// The editable document of a map collision file, read if it hasn't been: MapDocuments for the listed games,
+    /// TagContainers for SDT. Null if the file isn't in a loaded map.
+    /// </summary>
+    public Havok.HavokDocument GetEditableDocument(string fileName)
+    {
+        return Project.Descriptor.ProjectType is ProjectType.SDT ? GetTagDocument(fileName) : GetMapDocument(fileName);
+    }
+
+    /// <summary>
+    /// The editable document of a map collision file if it has been read, without reading it.
+    /// </summary>
+    public Havok.HavokDocument PeekEditableDocument(string fileName)
+    {
+        return Project.Descriptor.ProjectType is ProjectType.SDT
+            ? GetTagDocument(fileName)
+            : MapDocuments.GetValueOrDefault(fileName);
+    }
+
+    /// <summary>
+    /// Marks a collision file as changed, so it is written when its binder is saved. Only Sekiro needs it: the other
+    /// games write every read file of a binder.
+    /// </summary>
+    public void MarkModified(string fileName)
+    {
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+            ModifiedTagFiles.Add(fileName);
+    }
+
+    /// <summary>The document of a file of a binder being saved, or null if it isn't to be written.</summary>
+    private Havok.HavokDocument GetDocumentToSave(string fileName)
+    {
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+            return ModifiedTagFiles.Contains(fileName) ? GetTagDocument(fileName) : null;
+
+        return MapDocuments.GetValueOrDefault(fileName);
     }
 
     private static IEnumerable<string> GetCollisionBinderTypes()
@@ -192,8 +257,7 @@ public class HavokCollisionBank
     /// </summary>
     private BXF4Reader OpenCollisionBinder(string mapId, string type)
     {
-        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
-        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+        var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
         if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
         {
@@ -400,6 +464,7 @@ public class HavokCollisionBank
             MapDocuments.Remove(name);
             CollisionBinders.Remove(name);
             NewFiles.Remove(name);
+            ModifiedTagFiles.Remove(name);
 
             lock (TagContainers)
             {
@@ -539,8 +604,7 @@ public class HavokCollisionBank
     /// </summary>
     public bool HasCollisionBinder(string mapId, string type)
     {
-        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
-        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+        var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
         return Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath);
     }
@@ -558,8 +622,22 @@ public class HavokCollisionBank
             MapCollisions[mapId].Add(fileName);
 
         CollisionBinders[fileName] = (mapId, type);
-        MapDocuments[fileName] = document;
         NewFiles[fileName] = (mapId, type);
+
+        // Sekiro's collision is held as it is read at load, where the walls and viewport find it
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            lock (TagContainers)
+            {
+                TagContainers[fileName] = document;
+            }
+
+            ModifiedTagFiles.Add(fileName);
+        }
+        else
+        {
+            MapDocuments[fileName] = document;
+        }
     }
 
     /// <summary>
@@ -602,7 +680,7 @@ public class HavokCollisionBank
                 continue;
             }
 
-            if (!MapDocuments.TryGetValue(name, out var document))
+            if (GetDocumentToSave(name) is not { } document)
                 continue;
 
             try
@@ -616,6 +694,7 @@ public class HavokCollisionBank
                 });
 
                 NewFiles.Remove(name);
+                ModifiedTagFiles.Remove(name);
                 anyWritten = true;
             }
             catch (Exception ex)
@@ -647,8 +726,7 @@ public class HavokCollisionBank
     /// </summary>
     public bool SaveMapCollision(string mapId, string type)
     {
-        var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
-        var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
+        var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
         // Not every map has every collision type, so a missing binder is not a failure
         if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
@@ -681,7 +759,7 @@ public class HavokCollisionBank
 
                 var name = parts[1];
 
-                if (!MapDocuments.TryGetValue(name, out var document))
+                if (GetDocumentToSave(name) is not { } document)
                     continue;
 
                 try
@@ -690,6 +768,7 @@ public class HavokCollisionBank
                     DCX.Decompress(file.Bytes, out DCX.Type compression);
 
                     file.Bytes = DCX.Compress(Havok.Files.HavokFile.Write(document), compression);
+                    ModifiedTagFiles.Remove(name);
                     anyWritten = true;
                 }
                 catch (Exception ex)

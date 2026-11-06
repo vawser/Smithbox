@@ -731,6 +731,12 @@ public class MapUniverse : IUniverse
             SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
         }
 
+        // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+        {
+            SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
+        }
+
         if (Project.Descriptor.ProjectType is ProjectType.SDT)
         {
             SaveFile(map, MapFileType.Wall, () => View.WallBank.SaveWalls(map.Name));

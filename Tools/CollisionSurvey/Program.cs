@@ -33,6 +33,9 @@ if (type == "link") { Link.Survey(fs, gameName, mapId, maxFiles, filter); return
 // The Collision Editor's Create tab: a new file made from a template, appended to the binder and read back
 if (type == "create") { Create.Survey(fs, gameName, mapId); return; }
 
+// The Collision Editor's commit: new keys find their triangles, and the walls' keys are ones the decode gives
+if (type == "remap") { Remap.Survey(fs, gameName, mapId, maxFiles); return; }
+
 var bhdPath = game is Game.DS3 or Game.SDT or Game.BB
     ? $"/map/{mapId}/{type}{mapId.Substring(1)}.hkxbhd"
     : $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";

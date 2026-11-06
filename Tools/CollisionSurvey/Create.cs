@@ -9,13 +9,17 @@ using System.Numerics;
 //   CollisionSurvey <GAME> <mapId> 0 create
 static class Create
 {
+    public static string BodyName(object body) => body.GetType().GetField("m_name")?.GetValue(body) as string;
+
     public static void Survey(VirtualFileSystem fs, string gameName, string mapId)
     {
         var profile = Havok.HavokProfile.FromGame(gameName);
 
         foreach (var type in new[] { "h", "l" })
         {
-            var bhdPath = $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";
+            var bhdPath = gameName is "DS3" or "SDT" or "BB"
+                ? $"/map/{mapId}/{type}{mapId.Substring(1)}.hkxbhd"
+                : $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";
             var bdtPath = Path.ChangeExtension(bhdPath, ".hkxbdt");
             var binder = BXF4.Read(fs.ReadFile(bhdPath).Value.ToArray(), fs.ReadFile(bdtPath).Value.ToArray());
 
@@ -47,7 +51,7 @@ static class Create
             if (template == null) { Console.WriteLine("  no template"); continue; }
 
             var body = Havok.Shared.CollisionGeometry.Bodies(template.Objects).First();
-            Console.WriteLine($"  template {templateName} body '{(body as Havok.hk2018.hknpBodyCinfo)?.m_name}'");
+            Console.WriteLine($"  template {templateName} body '{BodyName(body)}'");
 
             // A square with two materials, as the Create tab builds one
             var vertices = new List<Vector3> { new(-2, 0, -3), new(2, 0, -3), new(2, 0, 3), new(-2, 0, 3) };
@@ -60,7 +64,7 @@ static class Create
                 continue;
             }
 
-            Console.WriteLine($"  new body '{(Havok.Shared.CollisionGeometry.Bodies(template.Objects).First() as Havok.hk2018.hknpBodyCinfo)?.m_name}'");
+            Console.WriteLine($"  new body '{BodyName(Havok.Shared.CollisionGeometry.Bodies(template.Objects).First())}'");
 
             // Appended as AddNewFiles does
             var sample = collisions[0];
@@ -90,7 +94,7 @@ static class Create
                 ? triangles.Zip(expected, (a, b) => Vector3.Distance(a, b)).Max()
                 : float.NaN;
 
-            var newShape = (Havok.hk2018.fsnpCustomParamCompressedMeshShape)Havok.Shared.CollisionGeometry.Bodies(newDoc.Objects).First().Shape;
+            var newShape = Havok.Shared.CollisionGeometry.Bodies(newDoc.Objects).First().Shape;
             var mats = CollisionEditorShapes.GetMaterialsByKey(newShape).Values.Distinct().OrderBy(m => m);
 
             Console.WriteLine($"  new file: compression {newCompression} (binder's {compression}), {triangles.Count / 3} triangles " +

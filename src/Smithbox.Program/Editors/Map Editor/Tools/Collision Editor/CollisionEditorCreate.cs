@@ -746,11 +746,11 @@ public class CollisionEditorCreate
         SetProperty(wrapped, "ModelName", modelName);
         part.ModelName = modelName;
 
-        // A new part has no entity of its own yet
-        SetProperty(wrapped, "EntityID", 0u);
+        // A new part has no entity of its own yet (the IDs are uint in ER and NR, int in DS3 and SDT)
+        SetProperty(wrapped, "EntityID", 0);
 
-        if (wrapped.GetType().GetProperty("EntityGroupIDs")?.GetValue(wrapped) is uint[] groups)
-            Array.Fill(groups, 0u);
+        if (wrapped.GetType().GetProperty("EntityGroupIDs")?.GetValue(wrapped) is Array groups)
+            Array.Clear(groups);
 
         SetProperty(wrapped, "Scale", Vector3.One);
 
@@ -833,7 +833,14 @@ public class CollisionEditorCreate
             return;
 
         if (property.PropertyType.IsInstanceOfType(value))
+        {
             property.SetValue(target, value);
+        }
+        else if (property.PropertyType.IsPrimitive && value is IConvertible)
+        {
+            // A number given as one type for a property of another (an entity ID is int in some MSBs, uint in others)
+            property.SetValue(target, Convert.ChangeType(value, property.PropertyType));
+        }
     }
 
     #endregion

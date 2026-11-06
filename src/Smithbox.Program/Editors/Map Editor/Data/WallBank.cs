@@ -611,6 +611,135 @@ public class WallBank
     }
 
     /// <summary>
+    /// The WALL and NOJUMPWALL marks of one collision, copied, for moving them to new shape keys and back.
+    /// </summary>
+    public sealed record WallMarks(List<WALL.Triangle> Triangles, List<uint> NoJumpKeys);
+
+    /// <summary>
+    /// Reads the WALL files of a map if they haven't been, waiting for them: they are otherwise only read once walls
+    /// are displayed. False if they can't be read.
+    /// </summary>
+    public bool EnsureMapLoaded(string mapId)
+    {
+        try
+        {
+            GetMapWalls(mapId).Wait();
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+
+        return IsMapLoaded(mapId);
+    }
+
+    /// <summary>A copy of the marks of a collision. Null if the map's WALL files haven't been read.</summary>
+    public WallMarks GetMarks(string mapId, string modelName)
+    {
+        var files = GetLoadedMapWalls(mapId);
+
+        if (files == null)
+            return null;
+
+        lock (files)
+        {
+            var triangles = files.Files.TryGetValue(modelName, out var wall)
+                ? wall.Triangles.Select(t => t.Clone()).ToList()
+                : new List<WALL.Triangle>();
+
+            var noJump = files.NoJumpFiles.TryGetValue(modelName, out var file)
+                ? new List<uint>(file.ShapeKeys)
+                : new List<uint>();
+
+            return new WallMarks(triangles, noJump);
+        }
+    }
+
+    /// <summary>
+    /// The marks moved to new shape keys, for after a collision is rebuilt. Marks whose key has no new key (a triangle
+    /// that was left out) are dropped. The keys are kept in ascending order, as the game expects.
+    /// </summary>
+    public static WallMarks RemapMarks(WallMarks marks, IReadOnlyDictionary<uint, uint> newKeys)
+    {
+        var triangles = new List<WALL.Triangle>();
+
+        foreach (var triangle in marks.Triangles)
+        {
+            if (!newKeys.TryGetValue(triangle.ShapeKey, out var key))
+                continue;
+
+            var copy = triangle.Clone();
+            copy.ShapeKey = key;
+            triangles.Add(copy);
+        }
+
+        var noJump = marks.NoJumpKeys
+            .Where(newKeys.ContainsKey)
+            .Select(k => newKeys[k])
+            .Distinct()
+            .OrderBy(k => k)
+            .ToList();
+
+        return new WallMarks(triangles.OrderBy(t => t.ShapeKey).ToList(), noJump);
+    }
+
+    /// <summary>
+    /// Replaces the marks of a collision with copies of the given ones, creating its files if it had none, and drops
+    /// its cached triangles so the walls are displayed on its current shape.
+    /// </summary>
+    public void SetMarks(string mapId, string modelName, WallMarks marks)
+    {
+        var files = GetLoadedMapWalls(mapId);
+
+        if (files == null)
+            return;
+
+        lock (files)
+        {
+            if (files.Files.TryGetValue(modelName, out var wall) || marks.Triangles.Count > 0)
+            {
+                if (wall == null)
+                {
+                    if (!long.TryParse(modelName.Substring(1), out var id))
+                        return;
+
+                    wall = new WALL { ID = id };
+                    files.Files[modelName] = wall;
+                }
+
+                wall.Triangles = marks.Triangles.Select(t => t.Clone()).ToList();
+                files.Modified.Add(modelName + WallExtension);
+            }
+
+            if (files.NoJumpFiles.TryGetValue(modelName, out var noJump) || marks.NoJumpKeys.Count > 0)
+            {
+                if (noJump == null)
+                {
+                    noJump = new NOJUMPWALL();
+                    files.NoJumpFiles[modelName] = noJump;
+                }
+
+                noJump.ShapeKeys = new List<uint>(marks.NoJumpKeys);
+                files.Modified.Add(modelName + NoJumpExtension);
+            }
+        }
+
+        ForgetGeometry(mapId, modelName);
+    }
+
+    /// <summary>
+    /// Drops the cached triangles of a collision, so they are read again from its document, e.g. after it has been
+    /// rebuilt.
+    /// </summary>
+    public void ForgetGeometry(string mapId, string modelName)
+    {
+        if (string.IsNullOrEmpty(modelName) || modelName.Length < 2)
+            return;
+
+        Geometry.TryRemove($"l{mapId.Substring(1)}_{modelName.Substring(1)}.hkx.dcx", out _);
+    }
+
+    /// <summary>
     /// Creates a triangle marked entirely as one type.
     /// </summary>
     public static WALL.Triangle CreateTriangle(string modelName, uint key, WALL.CellType type)

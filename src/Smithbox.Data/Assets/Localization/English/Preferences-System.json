@@ -97,6 +97,14 @@
       "Text": "If enabled, the scope the log message is sent from is included in the log message."
     },
     {
+      "Key": "PREF_Logger_Hide_File_Dictionary_Warnings",
+      "Text": "Hide File Dictionary Warnings"
+    },
+    {
+      "Key": "PREF_Logger_Hide_File_Dictionary_Warnings_TT",
+      "Text": "If enabled, warnings from the game archive file dictionary (unnamed file hashes, duplicate file names and uncached lookups) are hidden from the warning log."
+    },
+    {
       "Key": "PREF_Developer_Enable_Tools",
       "Text": "Enable Developer Tools"
     },

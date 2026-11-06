@@ -28,6 +28,43 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
    binder into the project, and refreshes the displayed mesh.
 6. **Discard Changes** drops the pending edits.
 
+## DS3 and SDT
+
+Both games' map collision files have the same layout as ER's: one body per file, a `fsnpCustomParamCompressedMeshShape`
+with the same FromSoftware parameters (materials by shape key), and bodies named `h000100` / `l000100`
+(`CollisionSurvey DS3 m30_00_00_00 3 h`, `SDT m10_00_00_00 3 h`). Their binders have no area folder:
+`map/m30_00_00_00/h30_00_00_00.hkxbhd`. What differs is how the Map Editor holds them:
+
+- **DS3 (hk2014 packfiles, no compendium)**: not held at all before. Now listed when the map loads and read when first
+  asked for, as ER is (`MapDocuments`), and saved like ER: every read file of an edited binder is written.
+- **SDT (hk2016 tagfiles with a compendium)**: already read at map load into `TagContainers`, for the WALL painting
+  and the viewport, but never saved. Saving now writes only the files the Collision Editor changed or created, so the
+  rest of the binder keeps its bytes.
+- **Building**: hk2014 meshes are built by `HavokCompressedMeshGenerator_hk2014` with the old shape's convex radius and
+  flags (its `Variant`); hk2016 by its own `CollisionShapeBuilder`. Both go through `HavokCompressedMeshBuilder.Build`,
+  whose result gives each triangle's new shape key.
+- **SDT walls**: WALL and NOJUMPWALL files mark triangles of the low collision by shape key, and a rebuild renumbers the
+  keys. On commit, each edited low collision's marks are moved from each triangle's old key (as decoded) to its new key
+  (from the build); marks of triangles left out as degenerate are dropped. The remap is part of the commit's action, so
+  undo puts the old marks back, and the WALL files are written with the binders. The wall geometry cache of the file is
+  dropped so the displayed walls follow the new shape.
+- **Create**: the same as ER, with the binder paths above. A new SDT low collision has no wall marks.
+- Fall protection doesn't exist in either game.
+
+### Checked against game files
+
+- `CollisionSurvey SDT m10_00_00_00 400 remap`: each l file is decoded as the editor decodes it, a vertex moved,
+  rebuilt with `CollisionEditorShapes`, and each triangle looked up by its new key. 174/174 rebuilt files find every
+  triangle, with distinct keys; all 73,102 WALL marks of the map are on keys the decode gives (the map has no
+  NOJUMPWALL files). One file, `l10_00_00_00_000001` (202,359 triangles, 123,478 vertices), can't be rebuilt:
+  the builder stops with "too many vertices shared between sections", so committing an edit to it logs a build
+  failure and changes nothing. Very large meshes in any game can hit this.
+- `CollisionSurvey DS3 m30_00_00_00 400 remap`: 94/94 rebuilt files find every triangle (DS3 has no walls).
+- `create` for both: DS3 binders have no compendium and DCX_DFLT_10000_44_9 files, SDT's a compendium and DCX_KRAK;
+  in both the new h and l files read back with the next free ID, the binder's compression, renamed bodies
+  (`h123456`, `l123456`), the input triangles exactly and both materials. SDT's l template is `l10_00_00_00_000000`.
+- Not checked: DS3 or SDT loading the new or rebuilt files in game.
+
 ## Create tab
 
 The section has two tabs: **Edit** (everything above) and **Create**, which makes a new collision for the active

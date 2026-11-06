@@ -4,16 +4,6 @@
 
 - Analyze of NVA, NVC and the havok navmesh/collisions themselves to uncover understand of how they work (i.e. gates, jumps, togglable sections, etc)
 
-- Collision editing:
-    - Allow triangle add/subtract:
-        - Define the three points with temporary filled wireframe spheres
-        - Commit shape, with option to auto-weld the edge closest to another existing edge
-        - Include options for large planes of pre-defined triangles to make it easy to expand flat collision (i.e. add a walkway or wall)
-
-    - Allow triangle vertex drag:
-        - Allow existing triangle vertices to be dragged (all directions), limiting cross over with an edge
-        - Add paint tool that uses adjustable sized illed wireframe sphere to paint height (add/reduce)
-
 - Navmesh editing
     - Allow triangle add/subtract:
         - Define the three points with temporary filled wireframe spheres
