@@ -379,7 +379,7 @@
       <Member Name="materialTable" Offset="56" Type="3402" Flags="32" />
     </Members>
   </HavokType>
-  <HavokType Id="676" Name="hknpCompoundShape" Parent="648" Optionals="1317044889" Format="7" SubType="0" Size="288" Alignment="16" Flags="0" Version="6" Hash="1025647957">
+  <HavokType Id="676" Name="hknpCompoundShape" Parent="648" Optionals="1317044889" Format="7" SubType="0" Size="288" Alignment="16" Flags="0" Version="6" Hash="1839350822">
     <Members>
       <Member Name="instances" Offset="64" Type="196" Flags="34" />
       <Member Name="instanceVelocities" Offset="88" Type="329" Flags="34" />
@@ -422,6 +422,12 @@
       <Member Name="vertices" Offset="50" Type="307" Flags="34" />
     </Members>
   </HavokType>
+  <HavokType Id="645" Name="hknpCylinderShape" Parent="644" Optionals="1317044745" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="0" Hash="1907267206">
+    <Members>
+      <Member Name="a" Offset="80" Type="2026" Flags="34" />
+      <Member Name="b" Offset="96" Type="2026" Flags="34" />
+    </Members>
+  </HavokType>
   <HavokType Id="650" Name="hknpExternMeshShape" Parent="648" Optionals="1317045913" Format="7" SubType="0" Size="80" Alignment="16" Flags="0" Version="3" Hash="2905172702">
     <Members>
       <Member Name="geometry" Offset="64" Type="313" Flags="34" />
@@ -450,6 +456,7 @@
       <Member Name="type" Offset="24" Type="304" Flags="32" />
     </Members>
   </HavokType>
+  <HavokType Id="640" Name="hknpSphereShape" Parent="638" Optionals="1317044745" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="0" Hash="2680590914" />
   <HavokType Id="987" Name="hkpConstraintMotor" Parent="2005" Optionals="1166050313" Format="7" SubType="0" Size="24" Alignment="8" Flags="3" Version="0" Hash="1204134665">
     <Members>
       <Member Name="type" Offset="20" Type="964" Flags="32" />
@@ -476,6 +483,30 @@
       <Member Name="indices32" Offset="40" Type="4187" Flags="32" />
       <Member Name="vertexBaseOffset" Offset="56" Type="1682" Flags="32" />
       <Member Name="length" Offset="60" Type="1682" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="928" Name="hkxLight" Parent="2005" Optionals="1149273817" Format="7" SubType="0" Size="112" Alignment="16" Flags="0" Version="4" Hash="1692668467">
+    <Members>
+      <Member Name="type" Offset="20" Type="872" Flags="32" />
+      <Member Name="position" Offset="32" Type="2026" Flags="32" />
+      <Member Name="direction" Offset="48" Type="2026" Flags="32" />
+      <Member Name="color" Offset="64" Type="1724" Flags="32" />
+      <Member Name="innerAngle" Offset="68" Type="2023" Flags="32" />
+      <Member Name="outerAngle" Offset="72" Type="2023" Flags="32" />
+      <Member Name="range" Offset="76" Type="2023" Flags="32" />
+      <Member Name="fadeStart" Offset="80" Type="2023" Flags="32" />
+      <Member Name="fadeEnd" Offset="84" Type="2023" Flags="32" />
+      <Member Name="decayRate" Offset="88" Type="1686" Flags="32" />
+      <Member Name="intensity" Offset="92" Type="2023" Flags="32" />
+      <Member Name="shadowCaster" Offset="96" Type="1675" Flags="32" />
+    </Members>
+  </HavokType>
+  <HavokType Id="914" Name="hkxTextureInplace" Parent="2005" Optionals="1149273817" Format="7" SubType="0" Size="56" Alignment="8" Flags="0" Version="1" Hash="2793313887">
+    <Members>
+      <Member Name="fileType" Offset="20" Type="2639" Flags="32" />
+      <Member Name="data" Offset="24" Type="4181" Flags="32" />
+      <Member Name="name" Offset="40" Type="2079" Flags="32" />
+      <Member Name="originalFilename" Offset="48" Type="2079" Flags="32" />
     </Members>
   </HavokType>
   <HavokType Id="895" Name="hkxVertexAnimation" Parent="2005" Optionals="1149273817" Format="7" SubType="0" Size="200" Alignment="8" Flags="0" Version="0" Hash="3090616989">

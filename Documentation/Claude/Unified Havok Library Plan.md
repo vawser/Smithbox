@@ -417,6 +417,10 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 >   - Sekiro object collision is shown.
 >   - DB_NT and DB navmeshes pass `HavokNavmeshBank.CanUse`.
 >   - The "Use PTDE collisions in DS1R projects" option is removed (user's decision), along with the PTDE data path preference, its auto-detection in project setup and `ProjectVFS.PTDE_FS`. DS1R projects only read their own files.
+> - **Duskbloods collision (2026-11-06; the user confirmed DB_NT collision renders in the app).** DB_NT keeps map collision and navmesh DS3-style under `map/<mapid>/`, not ER's `map/m10/<mapid>/`. `PathBuilder` sent it to ER's folders, so nothing was found; the folder now comes from `GetMapFolder` (nested for ER, NR and AC6 only). Even with the right path, HKLib couldn't read any DB_NT collision ("Incorrect hash"), so DB_NT collision had never drawn.
+>   - **The DB_NT overlay was incomplete.** The survey had no `geomhkxbnd` category, so asset collision types were never seen. The survey now samples `geomhkxbnd`, and the rebuilt overlay has 49 changed types (was 45): `hknpCylinderShape`, `hknpSphereShape`, `hkxLight`, `hkxTextureInplace`, and DB_NT's own `hknpCompoundShape` hash. `Havok.hk2018` regenerates identically (the ER versions already have every field).
+>   - **Verified:** `CollisionReadCompare DB_NT 60 8` draws every sampled map collision (174), asset collision (64) and navmesh. `HavokLibSurvey DB_NT 30 8` reads 294/294 plain tagfiles (now including asset collision) and 447/447 compendium tagfiles, all round-tripping.
+>   - **DB** (the full game) uses the same paths, assuming it matches DB_NT; no DB data was available to check. DB also has no MSB adapter (`MsbGameAdapter` lists DB_NT only), so DB maps don't load in the Map Editor at all.
 > - **Unchanged failures:**
 >   - One ER file, `f60_51_59_00`: neither library's 2018 registry has one array type it uses.
 >   - AC6 loose copies in an unpacked `-hkxbdt` folder, away from their compendium.

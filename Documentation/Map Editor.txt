@@ -27,6 +27,7 @@
 
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
+- AEP rendering needs to carry in the asset collision too
 
 - Add Local / Global Search impl from Time Act Editor
 - Add Mass Edit impl from Time Act Editor

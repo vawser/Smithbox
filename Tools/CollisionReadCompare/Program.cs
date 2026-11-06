@@ -17,6 +17,21 @@ var gamePaths = File.ReadAllLines(Path.Combine("..", "..", "game_data.txt"))
     .Select(l => l.Split(':', 2)).Where(p => p.Length == 2)
     .ToDictionary(p => p[0].Trim(), p => p[1].Trim().Trim('"').Trim());
 
+// --typeof <GAME> <binder> <inner regex> <type>: a file's own description of a type (hash, size, members)
+if (args.Length > 4 && args[0] == "--typeof")
+{
+    string gr = gamePaths[args[1]];
+    VirtualFileSystem tfs;
+    try { tfs = new CompundVirtualFileSystem([ArchiveBinderVirtualFileSystem.FromGameFolder(gr, Enum.Parse<Game>(args[1])), new RealVirtualFileSystem(gr, false)]); }
+    catch { tfs = new RealVirtualFileSystem(gr, false); }
+    byte[] bnd = Unpack(tfs.ReadFileOrThrow(args[2]).ToArray());
+    IBinder tb = BND4.Is(bnd) ? BND4.Read(bnd) : BND3.Read(bnd);
+    byte[] file = Unpack(tb.Files.First(f => Regex.IsMatch(f.Name, args[3])).Bytes.ToArray());
+    foreach (var t in Havok.Formats.Tagfile.HavokTagfileSerializer.ReadTypeDescriptions(file).Where(t => t?.Name == args[4]))
+        Console.WriteLine($"{t.Name}: hash {t.Hash}, version {t.Version}, size {t.Size}, members {string.Join(", ", t.Fields.Select(f => $"{f.Name}@{f.Offset}"))}");
+    return 0;
+}
+
 // --walls [maps = 10]: Sekiro wall shape keys, old (HKX2) against new, over the l (low) collision of a spread of maps
 if (args.Length > 0 && args[0] == "--walls")
 {
