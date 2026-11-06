@@ -602,8 +602,6 @@ public class CFG
     public bool ModelEditor_TextureLoad_Characters = true;
     public bool ModelEditor_TextureLoad_Misc = true;
 
-    public string ModelExport_Input_Directory = "";
-    public string ModelExport_CollisionTool_Directory = "";
     public string ModelExport_Output_Directory = "";
     public bool ModelExport_UseCollisionMaterial = false;
     public bool ModelExport_UseSingleCollisionMaterial = false;

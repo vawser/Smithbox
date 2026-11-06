@@ -6,7 +6,7 @@
     },
     {
       "Key": "MODEL_ModelExport_Hint",
-      "Text": "Use this to export FLVER models as OBJ, and then optionally process the OBJ into HKX."
+      "Text": "Use this to export FLVER models as OBJ."
     },
     {
       "Key": "MODEL_FlverSelection_Tab_Objects",
@@ -101,46 +101,6 @@
       "Text": ""
     },
     {
-      "Key": "MODEL_ModelExport_GenerateHKX_Action",
-      "Text": "Generate HKX"
-    },
-    {
-      "Key": "MODEL_ModelExport_GenerateHKX_Action_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_ModelExport_ColTool_Header",
-      "Text": "Collision Tool Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_ColTool_Header_TT",
-      "Text": "The location of obj2fsnp.bat and the other OBJ2HKX files."
-    },
-    {
-      "Key": "MODEL_ColTool_Dir_Hint",
-      "Text": "Enter the directory of the OBJ2HKX tool..."
-    },
-    {
-      "Key": "MODEL_ModelExport_SetColToolDirectory",
-      "Text": "Set Tool Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_SetColToolDirectory_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_ModelExport_OpenColToolDirectory",
-      "Text": "Open Tool Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_OpenColToolDirectory_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_ModelExport_Select_Destination",
-      "Text": "Select OBJ2HKX Directory"
-    },
-    {
       "Key": "MODEL_ModelExport_SetOutputDirectory",
       "Text": "Set Output Directory"
     },
@@ -167,14 +127,6 @@
     {
       "Key": "MODEL_Exported_OBJ",
       "Text": "Exported OBJ file: {0}"
-    },
-    {
-      "Key": "MODEL_ModelExport_Tab_OBJ",
-      "Text": "OBJ"
-    },
-    {
-      "Key": "MODEL_ModelExport_Tab_HKX",
-      "Text": "HKX"
     },
     {
       "Key": "MODEL_ModelExport_UseColMaterials",
@@ -215,30 +167,6 @@
     {
       "Key": "MODEL_ModelExport_Error_Write_Failed",
       "Text": "Failed to write the OBJ file: {0}"
-    },
-    {
-      "Key": "MODEL_ModelExport_Generated_HKX",
-      "Text": "Generated HKX file: {0}"
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_HKX_Tool_Not_Started",
-      "Text": "Failed to start obj2fsnp.bat."
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_HKX_Not_Generated",
-      "Text": "obj2fsnp.bat didn't produce an HKX file (exit code {0}). Tool output: {1}"
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_HKX_Failed",
-      "Text": "Failed to generate {0}."
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_HKX_Copy_Failed",
-      "Text": "Failed to copy the generated HKX to {0}. It has been left at {1}."
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_Temp_Cleanup_Failed",
-      "Text": "Failed to remove the temporary file {0}."
     },
     {
       "Key": "MODEL_ModelExport_Error_No_Source_FLVER",
@@ -315,46 +243,6 @@
     {
       "Key": "MODEL_ModelExport_UseSingleColMat",
       "Text": "Use Single Collision Material"
-    },
-    {
-      "Key": "MODEL_ModelExport_Input_Directory_Header",
-      "Text": "Input Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_Input_Directory_Header_TT",
-      "Text": "The directory the OBJ file used to generate the HKX is located."
-    },
-    {
-      "Key": "MODEL_ModelExport_SetInputDirectory",
-      "Text": "Set Input Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_SetInputDirectory_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_ModelExport_OpenInputDirectory",
-      "Text": "Open Input Directory"
-    },
-    {
-      "Key": "MODEL_ModelExport_OpenInputDirectory_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_ModelExport_Select_Input_Destination",
-      "Text": "Select Input Directory"
-    },
-    {
-      "Key": "MODEL_Input_Dir_Hint",
-      "Text": "Enter the input directory..."
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_No_OBJ_for_HKX_File",
-      "Text": "Failed to find target OBJ for HKX conversion."
-    },
-    {
-      "Key": "MODEL_ModelExport_Error_Missing_OBJ2HKX_Bat_File",
-      "Text": "Failed to find obj2fsnp.bat"
     }
   ]
 }

@@ -11,8 +11,6 @@ namespace StudioCore.Editors.ModelEditor;
 public static class ModelExportPaths
 {
     public static string OutputDirectoryName => LOC.Get("MODEL_ModelExport_Output_Directory_Name");
-    public static string InputDirectoryName => LOC.Get("MODEL_ModelExport_Input_Directory_Header");
-    public static string ToolDirectoryName => LOC.Get("MODEL_ModelExport_ColTool_Header");
 
     /// <summary>
     /// Builds the path of a file in a directory setting, and checks it as <see cref="TryValidateFilePath"/> does.
@@ -101,13 +99,5 @@ public static class ModelExportPaths
         }
 
         return true;
-    }
-
-    /// <summary>
-    /// Whether two absolute paths are the same file. Windows paths are case-insensitive.
-    /// </summary>
-    public static bool IsSameFile(string a, string b)
-    {
-        return string.Equals(Path.GetFullPath(a), Path.GetFullPath(b), StringComparison.OrdinalIgnoreCase);
     }
 }

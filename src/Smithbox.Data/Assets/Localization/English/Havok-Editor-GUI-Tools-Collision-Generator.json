@@ -306,7 +306,7 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Header_TT",
-      "Text": "The collision material is the surface the generated triangles get: a HitMtrlParam row, which sets the footstep sounds, hit effects and swamp or water behaviour, plus an optional property. FLVER meshes whose material is named in the OBJ2HKX style, hkm_Name or hkm_Name_Property (for example hkm_Cobblestone_Safe1), use that material instead; the mesh list shows which material each mesh will get."
+      "Text": "The collision material is the surface the generated triangles get: a HitMtrlParam row, which sets the footstep sounds, hit effects and swamp or water behaviour, plus an optional property. FLVER meshes and OBJ groups whose material is named in the OBJ2HKX style, hkm_Name or hkm_Name_Property (for example hkm_Cobblestone_Safe1), use that material instead; the mesh and group lists show which material each will get."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Input_TT",

@@ -330,8 +330,6 @@ public class ModelSelectionMenu
             FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
             Array.Fill(FlverMeshSelection, true);
 
-            View.ModelExportTool.RefreshCollisionMateriaList();
-
             ImGui.CloseCurrentPopup();
         }
         catch (Exception e)
@@ -355,8 +353,6 @@ public class ModelSelectionMenu
             FlverPath = currentWrapper.Name;
             FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
             Array.Fill(FlverMeshSelection, true);
-
-            View.ModelExportTool.RefreshCollisionMateriaList();
         }
         catch (Exception e)
         {
@@ -378,7 +374,5 @@ public class ModelSelectionMenu
         FlverMeshSelection = new bool[SourceFlver.Meshes.Count];
         Array.Fill(FlverMeshSelection, true);
         Array.Copy(previous, FlverMeshSelection, Math.Min(previous.Length, FlverMeshSelection.Length));
-
-        View.ModelExportTool.RefreshCollisionMateriaList();
     }
 }
