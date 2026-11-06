@@ -397,7 +397,7 @@ public class VulkanViewport : IViewport
 
         // Dragging a collision vertex takes the clicks too
         if (Owner is MapUniverse collisionUniverse &&
-            collisionUniverse.View.CollisionMakerTool.HandleViewportInput(ray, canPick))
+            collisionUniverse.View.CollisionEditorTool.HandleViewportInput(ray, canPick))
         {
             painting = true;
         }

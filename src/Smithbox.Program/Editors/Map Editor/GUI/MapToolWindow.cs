@@ -291,11 +291,11 @@ public class MapToolWindow
             }
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_CollisionMaker && View.CollisionMakerTool.CanUse())
+        if (CFG.Current.Interface_MapEditor_Tool_CollisionEditor && View.CollisionEditorTool.CanUse())
         {
-            if (ToolSections.Header($"{LOC.Get("MAP_CollisionMaker_Header")}##collisionMakerHeader"))
+            if (ToolSections.Header($"{LOC.Get("MAP_CollisionEditor_Header")}##collisionEditorHeader"))
             {
-                View.CollisionMakerTool.OnToolWindow();
+                View.CollisionEditorTool.OnToolWindow();
             }
         }
 
@@ -446,14 +446,14 @@ public class MapToolWindow
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_WallPaint);
             }
 
-            // Collision Maker
-            if (View.CollisionMakerTool.CanUse())
+            // Collision Editor
+            if (View.CollisionEditorTool.CanUse())
             {
-                if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Collision_Maker")}##collisionMakerToolToggle"))
+                if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Collision_Editor")}##collisionEditorToolToggle"))
                 {
-                    CFG.Current.Interface_MapEditor_Tool_CollisionMaker = !CFG.Current.Interface_MapEditor_Tool_CollisionMaker;
+                    CFG.Current.Interface_MapEditor_Tool_CollisionEditor = !CFG.Current.Interface_MapEditor_Tool_CollisionEditor;
                 }
-                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_CollisionMaker);
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_CollisionEditor);
             }
 
             if (View.DestructionGenerationTool.CanUse())

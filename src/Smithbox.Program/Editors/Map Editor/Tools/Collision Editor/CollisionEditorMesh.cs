@@ -14,7 +14,7 @@ namespace StudioCore.Editors.MapEditor;
 /// One compressed mesh body of a collision file, decoded into welded vertices that can be moved.
 /// Positions are in the space of the body's shape; <see cref="BodyTransform" /> places them in the part.
 /// </summary>
-public sealed class CollisionMakerBody
+public sealed class CollisionEditorBody
 {
     /// <summary>Triangles per preview mesh, so moving a vertex only rebuilds the meshes near it.</summary>
     public const int ChunkTriangles = 4096;
@@ -34,13 +34,16 @@ public sealed class CollisionMakerBody
     private readonly bool[] DirtyChunks;
     private readonly MeshRenderableProxy[] ChunkMeshes;
 
+    // Rebuilt chunks whose geometry is still uploading, drawn in place of ChunkMeshes once it is
+    private readonly MeshRenderableProxy[] PendingMeshes;
+
     public BoundingBox Bounds { get; private set; }
 
     public int TriangleCount => Indices.Length / 3;
 
     public bool IsEdited { get; private set; }
 
-    private CollisionMakerBody(IHavokBody body, List<Vector3> vertices, List<int> indices, List<uint> materials)
+    private CollisionEditorBody(IHavokBody body, List<Vector3> vertices, List<int> indices, List<uint> materials)
     {
         Body = body;
         BodyTransform = CollisionGeometry.BodyTransform(body);
@@ -68,6 +71,7 @@ public sealed class CollisionMakerBody
         var chunkCount = (TriangleCount + ChunkTriangles - 1) / ChunkTriangles;
         DirtyChunks = new bool[chunkCount];
         ChunkMeshes = new MeshRenderableProxy[chunkCount];
+        PendingMeshes = new MeshRenderableProxy[chunkCount];
 
         UpdateBounds();
     }
@@ -77,12 +81,12 @@ public sealed class CollisionMakerBody
     /// the vertices shared between sections are stored once. Each triangle keeps the collision material its shape key
     /// has in the FromSoftware parameters. Null if the body isn't a FromSoftware compressed mesh.
     /// </summary>
-    public static CollisionMakerBody Decode(IHavokBody body)
+    public static CollisionEditorBody Decode(IHavokBody body)
     {
-        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionMakerShapes.IsSupportedShape(body.Shape))
+        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionEditorShapes.IsSupportedShape(body.Shape))
             return null;
 
-        var materialOfKey = CollisionMakerShapes.GetMaterialsByKey(body.Shape);
+        var materialOfKey = CollisionEditorShapes.GetMaterialsByKey(body.Shape);
         var shift = 32 - mesh.BitsPerKey;
 
         var vertices = new List<Vector3>();
@@ -114,7 +118,7 @@ public sealed class CollisionMakerBody
         if (indices.Count == 0)
             return null;
 
-        return new CollisionMakerBody(body, vertices, indices, materials);
+        return new CollisionEditorBody(body, vertices, indices, materials);
     }
 
     /// <summary>
@@ -278,20 +282,41 @@ public sealed class CollisionMakerBody
 
     /// <summary>
     /// Builds the preview meshes, or rebuilds those with a moved vertex, and places them with the part.
+    /// A rebuilt mesh is only drawn once its geometry has been uploaded, which takes a frame or more, so the mesh it
+    /// replaces stays drawn until then and the preview never has gaps while a vertex is dragged. A chunk moved again
+    /// while its rebuild is uploading waits for it, then rebuilds with the latest vertices.
+    /// Returns true once every chunk is drawn, so the loaded mesh can be hidden without the collision disappearing.
     /// </summary>
-    public void UpdatePreview(RenderScene scene, Matrix4x4 world, Color color, bool visible)
+    public bool UpdatePreview(RenderScene scene, Matrix4x4 world, Color color, bool visible)
     {
+        var placement = BodyTransform * world;
+        var ready = true;
+
         for (var chunk = 0; chunk < ChunkMeshes.Length; chunk++)
         {
-            if (ChunkMeshes[chunk] == null || DirtyChunks[chunk])
+            // The uploaded rebuild takes over from the mesh it replaces
+            if (PendingMeshes[chunk] is { } pending && pending.AreRenderablesConstructed())
             {
                 ChunkMeshes[chunk]?.Dispose();
-                ChunkMeshes[chunk] = BuildChunk(scene, chunk, color);
+                ChunkMeshes[chunk] = pending;
+                PendingMeshes[chunk] = null;
+            }
+
+            if (PendingMeshes[chunk] == null && (ChunkMeshes[chunk] == null || DirtyChunks[chunk]))
+            {
+                PendingMeshes[chunk] = BuildChunk(scene, chunk, color);
+                PendingMeshes[chunk].Visible = false;
                 DirtyChunks[chunk] = false;
             }
 
-            var mesh = ChunkMeshes[chunk];
-            var placement = BodyTransform * world;
+            if (PendingMeshes[chunk] is { } building && building.World != placement)
+                building.World = placement;
+
+            if (ChunkMeshes[chunk] is not { } mesh)
+            {
+                ready = false;
+                continue;
+            }
 
             if (mesh.World != placement)
                 mesh.World = placement;
@@ -299,6 +324,8 @@ public sealed class CollisionMakerBody
             if (mesh.Visible != visible)
                 mesh.Visible = visible;
         }
+
+        return ready;
     }
 
     private MeshRenderableProxy BuildChunk(RenderScene scene, int chunk, Color color)
@@ -321,7 +348,13 @@ public sealed class CollisionMakerBody
         {
             ChunkMeshes[chunk]?.Dispose();
             ChunkMeshes[chunk] = null;
+
+            PendingMeshes[chunk]?.Dispose();
+            PendingMeshes[chunk] = null;
         }
+
+        // Built again from scratch the next time the file is previewed
+        Array.Fill(DirtyChunks, false);
     }
 
     #endregion
@@ -360,17 +393,17 @@ public sealed class CollisionMakerBody
 /// <summary>
 /// A collision file being edited: the compressed mesh bodies of one collision type of a collision part.
 /// </summary>
-public sealed class CollisionMakerFile
+public sealed class CollisionEditorFile
 {
     public readonly MsbEntity Entity;
     public readonly string MapId;
     public readonly string FileName;
     public readonly HavokCollisionType Type;
     public readonly Havok.HavokDocument Document;
-    public readonly List<CollisionMakerBody> Bodies;
+    public readonly List<CollisionEditorBody> Bodies;
 
-    public CollisionMakerFile(MsbEntity entity, string mapId, string fileName, HavokCollisionType type,
-        Havok.HavokDocument document, List<CollisionMakerBody> bodies)
+    public CollisionEditorFile(MsbEntity entity, string mapId, string fileName, HavokCollisionType type,
+        Havok.HavokDocument document, List<CollisionEditorBody> bodies)
     {
         Entity = entity;
         MapId = mapId;

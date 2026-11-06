@@ -337,28 +337,28 @@
       "Text": "Opens the 'Duplicate to Map' menu."
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Raise",
-      "Text": "Collision Maker: Raise Vertex"
+      "Key": "KEY_MapEditor_CollisionEditor_Raise",
+      "Text": "Collision Editor: Raise Vertex"
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Raise_TT",
-      "Text": "While editing collision with the Collision Maker, raises the vertex under the cursor."
+      "Key": "KEY_MapEditor_CollisionEditor_Raise_TT",
+      "Text": "While editing collision with the Collision Editor, raises the vertex under the cursor."
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Lower",
-      "Text": "Collision Maker: Lower Vertex"
+      "Key": "KEY_MapEditor_CollisionEditor_Lower",
+      "Text": "Collision Editor: Lower Vertex"
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Lower_TT",
-      "Text": "While editing collision with the Collision Maker, lowers the vertex under the cursor."
+      "Key": "KEY_MapEditor_CollisionEditor_Lower_TT",
+      "Text": "While editing collision with the Collision Editor, lowers the vertex under the cursor."
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Drag",
-      "Text": "Collision Maker: Drag Vertex"
+      "Key": "KEY_MapEditor_CollisionEditor_Drag",
+      "Text": "Collision Editor: Drag Vertex"
     },
     {
-      "Key": "KEY_MapEditor_CollisionMaker_Drag_TT",
-      "Text": "While editing collision with the Collision Maker, held to drag the vertex under the cursor."
+      "Key": "KEY_MapEditor_CollisionEditor_Drag_TT",
+      "Text": "While editing collision with the Collision Editor, held to drag the vertex under the cursor."
     },
     {
       "Key": "KEY_MapEditor_Rotate_X_Axis",

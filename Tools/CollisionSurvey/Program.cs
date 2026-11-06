@@ -27,6 +27,9 @@ var rebuild = args.Length > 5 && args[5] == "rebuild";
 
 using var fs = BuildFS(game, gamePaths[gameName]);
 
+// How the low and high collision of each model follow each other (Collision Editor linked layers)
+if (type == "link") { Link.Survey(fs, gameName, mapId, maxFiles, filter); return; }
+
 var bhdPath = game is Game.DS3 or Game.SDT or Game.BB
     ? $"/map/{mapId}/{type}{mapId.Substring(1)}.hkxbhd"
     : $"/map/{mapId.Substring(0, 3)}/{mapId}/{type}{mapId.Substring(1)}.hkxbhd";

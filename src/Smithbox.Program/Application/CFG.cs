@@ -350,11 +350,11 @@ public class CFG
     public bool MapEditor_BasicFilter_Wall = false;
     public bool MapEditor_Wall_Display_Cells = true;
     public bool MapEditor_Wall_Display_NoJump = true;
-    public float MapEditor_CollisionMaker_Step = 0.25f;
-    public float MapEditor_CollisionMaker_Radius = 0f;
-    public float MapEditor_CollisionMaker_Cursor_Size = 0.15f;
-    public Vector3 MapEditor_CollisionMaker_Cursor_Color = new Vector3(0, 200, 255);
-    public Vector3 MapEditor_CollisionMaker_Vertex_Color = new Vector3(255, 220, 0);
+    public float MapEditor_CollisionEditor_Step = 0.25f;
+    public float MapEditor_CollisionEditor_Radius = 0f;
+    public float MapEditor_CollisionEditor_Cursor_Size = 0.15f;
+    public Vector3 MapEditor_CollisionEditor_Cursor_Color = new Vector3(0, 200, 255);
+    public Vector3 MapEditor_CollisionEditor_Vertex_Color = new Vector3(255, 220, 0);
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_NavVolume = false;
     public bool MapEditor_BasicFilter_SpeedTree = true;
@@ -538,7 +538,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_Validation = true;
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_WallPaint = true;
-    public bool Interface_MapEditor_Tool_CollisionMaker = true;
+    public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_DestructionGeneration = true;
     public bool Interface_MapEditor_Tool_LoadList = true;
     public bool Interface_MapEditor_Tool_EntryFileList = true;

@@ -6,10 +6,10 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The parts of the Collision Maker that depend on the Havok class set: the FromSoftware compressed meshes of
+/// The parts of the Collision Editor that depend on the Havok class set: the FromSoftware compressed meshes of
 /// hk2018 (ER, NR) and hk2019 (AC6), which the shared CollisionShapeBuilder builds.
 /// </summary>
-public static class CollisionMakerShapes
+public static class CollisionEditorShapes
 {
     public static bool IsSupportedShape(object shape)
     {

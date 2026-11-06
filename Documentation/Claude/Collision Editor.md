@@ -1,4 +1,4 @@
-# Collision Maker
+# Collision Editor
 
 A Map Editor tool (Tools window) for reshaping existing map collision by moving its vertices in the viewport.
 
@@ -19,7 +19,7 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
 3. Keys, while the mouse is over the viewport and no mouse button is held (so the camera's Q/E flight still works):
    - **Q** raises the target vertex by the step, **E** lowers it. Held, they repeat.
    - **G** held drags the target vertex across the horizontal plane at its height, following the mouse.
-   The keys are bindings (`MapEditor_CollisionMaker_Raise/Lower/Drag`), so they can be changed in the keybind settings.
+   The keys are bindings (`MapEditor_CollisionEditor_Raise/Lower/Drag`), so they can be changed in the keybind settings.
 4. A **Radius** above zero moves the vertices around the target as well, with a smooth falloff.
 5. **Commit Changes** (valid once something is edited) rebuilds each edited file's meshes from the edited vertices,
    puts them in the document as an undoable action (marking the map's collision as modified), writes the collision
@@ -39,19 +39,23 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
 
 ## Files
 
-- `Editors/Map Editor/Tools/Collision Maker/CollisionMakerTool.cs`: UI, cursor, keys, commit.
-- `Editors/Map Editor/Tools/Collision Maker/CollisionMakerMesh.cs`: decoded bodies (welding, raycast, falloff, preview).
-- `Editors/Map Editor/Tools/Collision Maker/CollisionMakerShapes.cs`: the hk2018/hk2019 class-set code.
-- `Editors/Map Editor/Actions/Map Objects/CollisionMakerAction.cs`: the undoable shape swap.
+- `Editors/Map Editor/Tools/Collision Editor/CollisionEditorTool.cs`: UI, cursor, keys, commit.
+- `Editors/Map Editor/Tools/Collision Editor/CollisionEditorMesh.cs`: decoded bodies (welding, raycast, falloff, preview).
+- `Editors/Map Editor/Tools/Collision Editor/CollisionEditorShapes.cs`: the hk2018/hk2019 class-set code.
+- `Editors/Map Editor/Actions/Map Objects/CollisionEditorAction.cs`: the undoable shape swap.
 - `HavokCollisionMeshBuilder.RefreshCollisionMesh`: re-uploads a loaded collision's GPU meshes from its document.
-- Settings in `CFG.cs` (`MapEditor_CollisionMaker_*`, `Interface_MapEditor_Tool_CollisionMaker`), keybinds in
-  `Keybinds.cs`, strings in `Map-Editor-Tools-Collision_Maker.json` and `Input-Keybinds.json`.
+- Settings in `CFG.cs` (`MapEditor_CollisionEditor_*`, `Interface_MapEditor_Tool_CollisionEditor`), keybinds in
+  `Keybinds.cs`, strings in `Map-Editor-Tools-Collision_Editor.json` and `Input-Keybinds.json`.
 - **Rebuild**: `CollisionShapeBuilder.BuildCompressedMeshShape` with the old convex radius; user data and properties are
   copied from the old shape. Degenerate triangles (two corners welded together) are left out. Rebuilding requantises
   every vertex (packed step up to 0.02), so unedited vertices can move by up to about a centimetre.
 - **Preview**: the GPU collision mesh is built once at load. While a file is edited, its original mesh is hidden and
   the edited triangles are drawn with `RawMeshProvider` meshes in chunks of 4096 triangles; only chunks with a moved
   vertex are rebuilt, at most once a frame.
+- **No gaps while dragging**: a rebuilt chunk's geometry is uploaded a frame or more after it is made, so each chunk
+  keeps its old mesh drawn until the rebuild's renderable is constructed (`AreRenderablesConstructed`), then swaps.
+  A chunk moved again while its rebuild uploads waits for it, then rebuilds with the latest vertices, so a long drag
+  never keeps restarting the upload. The loaded mesh is only hidden once every chunk of the file is drawn.
 - **After commit**: the collision resource's submeshes are re-uploaded from the new document and the proxies'
   renderables rebuilt, then the preview is removed and the original mesh shown again.
 
