@@ -21,7 +21,6 @@ public class MapMsbPropertyView
     private object _changingObject;
     private object _changingProperty;
     private ViewportAction _lastUncommittedAction;
-    public PropertyInfo RequestedSearchProperty = null;
     private readonly string[] _lightTypes = { "Spot", "Directional", "Point" };
 
     private readonly string[] _regionShapes =
@@ -269,11 +268,13 @@ public class MapMsbPropertyView
 
 
             // Actions
+            // Finds the objects of the loaded maps with this field at the same value
             if (ImGui.Selectable(@"Search##PropSearch"))
             {
-                View.LocalSearchView.FocusLocalPropertySearch = true;
-                RequestedSearchProperty = prop;
-                EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
+                var field = arrayIndex >= 0 ? $"{prop.Name}[{arrayIndex}]" : prop.Name;
+
+                View.LocalSearchTool.TargetFieldValue(field, MsbQueryMatcher.FormatValue(
+                    obj is Enum enumValue ? Convert.ChangeType(enumValue, Enum.GetUnderlyingType(enumValue.GetType())) : obj));
             }
             if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
             {
@@ -292,7 +293,7 @@ public class MapMsbPropertyView
 
             if (ImGui.Selectable("Add to Property Filter"))
             {
-                View.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
+                View.GlobalSearchTool.TargetField(arrayIndex >= 0 ? $"{prop.Name}[{arrayIndex}]" : prop.Name);
             }
 
             ImGui.EndPopup();

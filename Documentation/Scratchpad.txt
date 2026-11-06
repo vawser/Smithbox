@@ -1,11 +1,4 @@
 #---------------------
 # TODO 
 #---------------------
-# LOC TO DO:
- Editors
-  Gparam Editor
-  Map Editor
-  
-Havok:
-    - Add support for displaying DES models
-    - Add support for playing back DES anims
+

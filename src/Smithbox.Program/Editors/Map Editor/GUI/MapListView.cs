@@ -566,7 +566,7 @@ public class MapListView : IActionEventHandler
             }
             if (ImGui.Selectable("Add to Map Filter"))
             {
-                View.GlobalSearchTool.AddMapFilterInput(mapWrapper.Name);
+                View.GlobalSearchTool.TargetMap(mapWrapper.Name);
             }
 
             ImGui.EndPopup();

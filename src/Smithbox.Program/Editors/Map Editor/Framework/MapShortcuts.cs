@@ -130,7 +130,6 @@ public class MapShortcuts
         activeView.EntityInfoAction.OnShortcut();
 
         // Tools
-        activeView.MassEditTool.OnShortcut();
         activeView.DisplayGroupTool.OnShortcut();
         activeView.PrefabTool.OnShortcut();
         activeView.PatrolDrawManager.OnShortcut();

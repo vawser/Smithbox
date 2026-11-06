@@ -774,14 +774,14 @@ public class SelectAllAction
 
             if (cmd.Contains("prop:"))
             {
-                partTruth[i] = View.MassEditTool.PropertyValueFilter(map, mEnt, cmd);
+                partTruth[i] = PropertyValueFilter(mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
             // Default to name filter if no explicit command is used
             else
             {
-                partTruth[i] = View.MassEditTool.PropertyNameFilter(map, mEnt, cmd);
+                partTruth[i] = PropertyNameFilter(mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
@@ -802,6 +802,85 @@ public class SelectAllAction
         }
 
         return isValid;
+    }
+
+    /// <summary>
+    /// Whether the object's name or alias contains the command's text (name: is optional)
+    /// </summary>
+    private static bool PropertyNameFilter(Entity ent, string cmd)
+    {
+        if (ent?.Name == null || ent.CachedAliasName == null)
+            return false;
+
+        var input = cmd.Replace("name:", "").Trim().ToLower();
+        var name = ent.Name.Trim().ToLower();
+        var alias = ent.CachedAliasName.Trim().ToLower();
+
+        return (name != "" && name.Contains(input)) || (alias != "" && alias.Contains(input));
+    }
+
+    /// <summary>
+    /// prop: [property][index] [comparator] [value]: whether the object's property compares with the value.
+    /// = and ~ (contains) compare text, ignoring case; &lt; and &gt; compare numbers.
+    /// </summary>
+    private static bool PropertyValueFilter(Entity ent, string cmd)
+    {
+        var segments = cmd.Replace("prop:", "").TrimStart().Split(" ");
+
+        if (segments.Length < 3 || ent?.WrappedObject == null)
+            return false;
+
+        var prop = segments[0];
+        var compare = segments[1].Trim().ToLower();
+        var target = segments[2].Trim().ToLower();
+        var index = -1;
+
+        var indexMatch = System.Text.RegularExpressions.Regex.Match(prop, @"\[(.*?)\]");
+
+        if (indexMatch.Success)
+        {
+            int.TryParse(indexMatch.Groups[1].Value, out index);
+            prop = prop.Replace(indexMatch.Value, "");
+        }
+
+        object value;
+
+        if (index != -1)
+        {
+            var collection = ent.WrappedObject.GetType().GetProperty(prop)?.GetValue(ent.WrappedObject);
+
+            value = collection switch
+            {
+                Array array when index >= 0 && index < array.Length => array.GetValue(index),
+                System.Collections.IList list when index >= 0 && index < list.Count => list[index],
+                _ => null
+            };
+        }
+        else
+        {
+            value = ent.GetPropertyValue(prop);
+        }
+
+        if (value == null)
+            return false;
+
+        if (compare is "<" or ">")
+        {
+            if (!MsbQueryMatcher.TryParseNumber(MsbQueryMatcher.FormatValue(value), out var number) ||
+                !MsbQueryMatcher.TryParseNumber(target, out var targetNumber))
+                return false;
+
+            return compare == "<" ? number < targetNumber : number > targetNumber;
+        }
+
+        var text = $"{value}";
+
+        return compare switch
+        {
+            "=" => target.Equals(text, StringComparison.OrdinalIgnoreCase),
+            "~" => text.Contains(target, StringComparison.OrdinalIgnoreCase),
+            _ => false
+        };
     }
 }
 

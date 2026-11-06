@@ -99,13 +99,13 @@ public class MapEditorView : IEditorView
     public BoxSelectionAction BoxSelectionAction;
 
     // Tools
-    public MassEditTool MassEditTool;
+    public MsbMassEditTool MassEditTool;
     public ModelSelectorTool ModelBrowserTool;
     public AssetBrowserTool AssetBrowserTool;
     public DisplayGroupTool DisplayGroupTool;
     public PrefabTool PrefabTool;
-    public LocalSearchTool LocalSearchView;
-    public GlobalSearchTool GlobalSearchTool;
+    public MsbSearchTool LocalSearchTool;
+    public MsbSearchTool GlobalSearchTool;
     public WorldMapTool WorldMapTool;
     public EntityIdentifierTool EntityIdentifierTool;
     public ViewportGridTool GridTool;
@@ -195,11 +195,11 @@ public class MapEditorView : IEditorView
         BoxSelectionAction = new BoxSelectionAction(this, project);
 
         // Tools
-        MassEditTool = new MassEditTool(this, project);
+        MassEditTool = new MsbMassEditTool(this, project);
         AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
         DisplayGroupTool = new DisplayGroupTool(this, project);
-        GlobalSearchTool = new GlobalSearchTool(this, project);
-        LocalSearchView = new LocalSearchTool(this, project);
+        GlobalSearchTool = new MsbSearchTool(this, project, MsbSearchMode.Global);
+        LocalSearchTool = new MsbSearchTool(this, project, MsbSearchMode.Local);
         ModelBrowserTool = new ModelSelectorTool(this, project);
         AssetBrowserTool = new AssetBrowserTool(project,
             "Double-click an asset to switch the selected map objects to it.",
@@ -248,7 +248,6 @@ public class MapEditorView : IEditorView
         SyncActiveMapToSelection();
 
         MapListFilterTool.Update();
-        LocalSearchView.Update();
         MapAnimationTool.Update();
 
         WorldMapTool.DisplayPopup();

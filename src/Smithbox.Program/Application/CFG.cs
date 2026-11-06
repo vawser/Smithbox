@@ -253,14 +253,6 @@ public class CFG
 
     public bool MapEditor_Selection_Group_Enable_Shortcuts = false;
 
-    public bool GlobalMapSearch_CopyResults_IncludeHeader = true;
-    public bool GlobalMapSearch_CopyResults_IncludeIndex = true;
-    public bool GlobalMapSearch_CopyResults_IncludeEntityName = true;
-    public bool GlobalMapSearch_CopyResults_IncludeEntityAlias = true;
-    public bool GlobalMapSearch_CopyResults_IncludePropertyName = true;
-    public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
-    public string GlobalMapSearch_CopyResults_Delimiter = ",";
-
     public bool MapEditor_Properties_Display_Reference_Name = true;
     public bool MapEditor_Properties_Display_Reference_Entity_ID = true;
     public bool MapEditor_Properties_Display_Reference_Alias = true;
@@ -538,9 +530,9 @@ public class CFG
 
     public bool Interface_MapEditor_Tool_Prefab = true;
     public bool Interface_MapEditor_Tool_SelectionGroups = true;
-    public bool Interface_MapEditor_Tool_Search = true;
-
-    public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
+    public bool Interface_MapEditor_Tool_LocalSearch = true;
+    public bool Interface_MapEditor_Tool_GlobalSearch = true;
+    public bool Interface_MapEditor_Tool_MassEdit = true;
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
     public bool Interface_MapEditor_Tool_GridConfiguration = true;

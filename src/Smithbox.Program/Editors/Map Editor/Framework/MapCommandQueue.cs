@@ -260,15 +260,25 @@ public class MapCommandQueue
         ApplyTargetSelection(view, target);
     }
 
+    /// <summary>
+    /// map/propsearch/{field}/{value}[/selectFirstResult]: finds the objects of the loaded maps whose field equals the
+    /// value in the Local Search, and selects the first one if asked
+    /// </summary>
     public void HandlePropSearchCommand(MapEditorView curView, string[] commands)
     {
         if (commands[0] != "propsearch")
             return;
 
-        curView.LocalSearchView.propSearchCmd = commands.Skip(1).ToArray();
-        curView.LocalSearchView.Property = curView.MapPropertyView.MsbPropertyView.RequestedSearchProperty;
-        curView.MapPropertyView.MsbPropertyView.RequestedSearchProperty = null;
-        curView.LocalSearchView.UpdatePropSearch = true;
+        if (commands.Length < 2 || string.IsNullOrEmpty(commands[1]))
+        {
+            Smithbox.LogError<MapCommandQueue>("The map propsearch command needs a field name.");
+            return;
+        }
+
+        var value = commands.Length > 2 && commands[2] != "selectFirstResult" ? commands[2] : "";
+        var jumpToFirst = commands.Skip(2).Contains("selectFirstResult");
+
+        curView.LocalSearchTool.TargetFieldValue(commands[1], value, jumpToFirst);
     }
 
     public void ApplyTargetSelection(MapEditorView curView, ISelectable target)

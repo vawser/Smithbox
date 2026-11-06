@@ -352,7 +352,7 @@ public class MapContentView
             }
             if (ImGui.Selectable("Add to Map Filter"))
             {
-                View.GlobalSearchTool.AddMapFilterInput(map.Name);
+                View.GlobalSearchTool.TargetMap(map.Name);
             }
 
             ImGui.EndPopup();

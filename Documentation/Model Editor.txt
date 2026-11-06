@@ -9,6 +9,8 @@
 - Animation:
     - Add option to hide non-used bones/dummies during animations
 
+- Add support for displaying DES models
+- Add support for playing back DES anims
 
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces

@@ -149,40 +149,20 @@ public class MapToolWindow
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
-        if (CFG.Current.Interface_MapEditor_Tool_Search)
+        // Each draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_LocalSearch)
         {
-            if (ToolSections.Header("Search"))
-            {
-                ImGui.BeginChild("searchSection", ImGuiChildFlags.Borders);
-
-                ImGui.BeginTabBar("searchTabs");
-
-                if (ImGui.BeginTabItem("Local##localSearch"))
-                {
-                    View.LocalSearchView.OnToolWindow();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem("Global##globalSearch"))
-                {
-                    View.GlobalSearchTool.OnToolWindow();
-
-                    ImGui.EndTabItem();
-                }
-
-                ImGui.EndTabBar();
-
-                ImGui.EndChild();
-            }
+            View.LocalSearchTool.OnToolWindow();
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit)
+        if (CFG.Current.Interface_MapEditor_Tool_GlobalSearch)
         {
-            if (ToolSections.Header("Mass Edit"))
-            {
-                View.MassEditTool.OnToolWindow();
-            }
+            View.GlobalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_MassEdit)
+        {
+            View.MassEditTool.OnToolWindow();
         }
 
         // Validation
@@ -421,17 +401,9 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
 
-            if (ImGui.MenuItem("Search"))
-            {
-                CFG.Current.Interface_MapEditor_Tool_Search = !CFG.Current.Interface_MapEditor_Tool_Search;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Search);
-
-            if (ImGui.MenuItem("Mass Edit"))
-            {
-                CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit = !CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit);
+            ToolToggle("MAP_SearchTool_Local_Header", ref CFG.Current.Interface_MapEditor_Tool_LocalSearch);
+            ToolToggle("MAP_SearchTool_Global_Header", ref CFG.Current.Interface_MapEditor_Tool_GlobalSearch);
+            ToolToggle("MAP_MassEditTool_Header", ref CFG.Current.Interface_MapEditor_Tool_MassEdit);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
             {

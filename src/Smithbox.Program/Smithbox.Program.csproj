@@ -77,7 +77,6 @@
     <Compile Include="Editors\Map Editor\Enums\MapPropertyViewMode.cs" />
     <Compile Include="Editors\Map Editor\Enums\MapValidationType.cs" />
     <Compile Include="Editors\Map Editor\Enums\MsbEntityType.cs" />
-    <Compile Include="Editors\Map Editor\Enums\QueryMapListType.cs" />
     <Compile Include="Editors\Map Editor\Enums\QuerySelectionConditionLogic.cs" />
     <Compile Include="Editors\Map Editor\Enums\ReplicateSquareSideType.cs" />
     <Compile Include="Editors\Map Editor\Enums\ViewportGridRootAxis.cs" />
