@@ -185,6 +185,18 @@
       "Text": "Editing"
     },
     {
+      "Key": "EDITOR_ToolCategory_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Transform",
+      "Text": "Transform"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Rendering",
+      "Text": "Rendering"
+    },
+    {
       "Key": "EDITOR_Menubar_Action_Undo",
       "Text": "Undo"
     },

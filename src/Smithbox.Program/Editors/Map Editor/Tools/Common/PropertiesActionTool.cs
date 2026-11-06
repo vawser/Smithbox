@@ -23,43 +23,53 @@ public class PropertiesActionTool
         Project = project;
     }
 
+    /// <summary>
+    /// Property Actions section: one-click property writes to the current selection.
+    /// </summary>
     public void Display()
     {
-        ImGui.BeginChild("PropertiesActionSection", ImGuiChildFlags.Borders);
-
         ImGui.BeginTabBar("PropertiesActionTabs");
 
-        TransformTab();
         DisplayTab();
         LogicTab();
+        GameVisibilityTab();
 
         ImGui.EndTabBar();
-
-        ImGui.EndChild();
     }
 
-    public void TransformTab()
+    /// <summary>
+    /// Reset Transform section, shown in the Transform category beside the other transform tools.
+    /// </summary>
+    public void DisplayResetTransform()
     {
-        if (ImGui.BeginTabItem("Transform##TransformTab"))
+        GUI.WrappedText("Use this to quickly reset the transform properties of the current selection.");
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader("Actions", "");
+
+        GUI.MultiButtonInput("transformActions",
+            "resetPosition",
+            "Reset Position",
+            "Set the position properties of the current selection to <0,0,0>",
+            ResetPosition,
+
+            "resetRotation",
+            "Reset Rotation",
+            "Reset the rotation properties of the current selection to <0,0,0>",
+            ResetRotation,
+
+            "resetScale",
+            "Reset Scale",
+            "Reset the scale properties of the current selection to <1,1,1>",
+            ResetScale);
+    }
+
+    public void GameVisibilityTab()
+    {
+        if (ImGui.BeginTabItem($"{LOC.Get("MAP_ToolWindow_Property_Actions_Game_Visibility_Tab")}##GameVisibilityTab"))
         {
-            GUI.WrappedText("Use this to quickly set Transform type properties for the current selection.");
-            GUI.Spacer();
-
-            GUI.MultiButtonInput("transformActions",
-                "resetPosition",
-                "Reset Position",
-                "Set the position properties of the current selection to <0,0,0>",
-                ResetPosition,
-
-                "resetRotation",
-                "Reset Rotation",
-                "Reset the rotation properties of the current selection to <0,0,0>",
-                ResetRotation,
-
-                "resetScale",
-                "Reset Scale",
-                "Reset the scale properties of the current selection to <1,1,1>",
-                ResetScale);
+            View.GameVisibilityAction.OnToolWindow();
 
             ImGui.EndTabItem();
         }
@@ -67,7 +77,7 @@ public class PropertiesActionTool
 
     public void DisplayTab()
     {
-        if (ImGui.BeginTabItem("Display##DisplayTab"))
+        if (ImGui.BeginTabItem($"{LOC.Get("MAP_ToolWindow_Property_Actions_Display_Tab")}##DisplayTab"))
         {
             GUI.WrappedText("Use this to quickly set display and draw group properties for the current selection.");
             GUI.Spacer();
@@ -93,7 +103,7 @@ public class PropertiesActionTool
     }
     public void LogicTab()
     {
-        if (ImGui.BeginTabItem("Logic##LogicTab"))
+        if (ImGui.BeginTabItem($"{LOC.Get("MAP_ToolWindow_Property_Actions_Logic_Tab")}##LogicTab"))
         {
             GUI.WrappedText("Use this to quickly set Logic type properties for the current selection.");
             GUI.Spacer();

@@ -43,31 +43,50 @@ public class ViewportRenderingTool
         GetViewport = getViewport;
     }
 
+    /// <summary>
+    /// Draws the Rendering category: one tool per section, those the editor's viewport has. It sets the category, so
+    /// a tool window calls it after the rest of its tools in the category before (or before setting the next one).
+    /// </summary>
     public void OnToolWindow()
     {
-        if (FocusRequested)
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Rendering"));
+
+        // The first section drawn takes the focus
+        var focus = FocusRequested;
+        FocusRequested = false;
+
+        var viewport = GetViewport();
+
+        if (viewport == null)
+        {
+            Section(ref focus, "VIEWPORT_Rendering_Tool_Header", "viewportRenderingTool",
+                () => ImGui.Text(LOC.Get("VIEWPORT_Rendering_Tool_No_Viewport")));
+            return;
+        }
+
+        DisplaySections(viewport, ref focus);
+    }
+
+    /// <summary>
+    /// One section of the category: registers it in the tool list and, while it is the selected tool, draws it in its
+    /// own bordered child. Takes the focus if it is still asked for.
+    /// </summary>
+    private static void Section(ref bool focus, string locKey, string id, Action draw)
+    {
+        if (focus)
         {
             ToolSections.Focus();
-            FocusRequested = false;
+            focus = false;
         }
 
-        if (ToolSections.Header($"{LOC.Get("VIEWPORT_Rendering_Tool_Header")}##viewportRenderingTool"))
-        {
-            ImGui.BeginChild("viewportRenderingSection", ImGuiChildFlags.Borders);
+        if (!ToolSections.Header($"{LOC.Get(locKey)}##{id}"))
+            return;
 
-            var viewport = GetViewport();
+        ImGui.BeginChild($"{id}Section", ImGuiChildFlags.Borders);
 
-            if (viewport == null)
-            {
-                ImGui.Text(LOC.Get("VIEWPORT_Rendering_Tool_No_Viewport"));
-            }
-            else
-            {
-                DisplayTabs(viewport);
-            }
+        draw();
 
-            ImGui.EndChild();
-        }
+        ImGui.EndChild();
     }
 
     /// <summary>
@@ -89,14 +108,11 @@ public class ViewportRenderingTool
     }
 
     /// <summary>
-    /// The tabs, lighting first as it is what is changed most. Tone mapping is drawn in the Post Effects tab, as
-    /// it is the last step of that chain, and the collision opacity in the Materials tab.
+    /// The sections, lighting first as it is what is changed most. Tone mapping is drawn in the Post Effects section,
+    /// as it is the last step of that chain, and the collision opacity in the Materials section.
     /// </summary>
-    private void DisplayTabs(VulkanViewport viewport)
+    private void DisplaySections(VulkanViewport viewport, ref bool focus)
     {
-        // A narrow tool window can't fit every tab, so they scroll and can be picked from a list instead
-        ImGui.BeginTabBar("viewportRenderingTabs", ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.ListPopupButton);
-
         var mapView = (viewport.Owner as MapUniverse)?.View;
         var gparamView = (viewport.Owner as GparamUniverse)?.View;
         var environment = mapView == null && gparamView == null ? GetEnvironment(viewport) : null;
@@ -141,122 +157,75 @@ public class ViewportRenderingTool
             }
         }
 
+        const string mapLightingKey = "VIEWPORT_Menubar_Header_Map_Lighting";
+        const string mapLightingId = "viewportRenderingMapLighting";
+        const string giKey = "VIEWPORT_Menubar_Header_Global_Illumination";
+        const string giId = "viewportRenderingGlobalIllumination";
+        const string btlKey = "VIEWPORT_Rendering_Tab_BTL_Lights";
+        const string btlId = "viewportRenderingBtlLights";
+
         // Map Lighting
         if (mapView != null && mapView.GparamLightingBank.CanUse())
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
-            {
-                MapLightingTab(viewport, mapView);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, mapLightingKey, mapLightingId, () => MapLightingTab(viewport, mapView));
         }
         else if (environment != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
-            {
-                EnvironmentLightingTab(viewport, environment);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, mapLightingKey, mapLightingId, () => EnvironmentLightingTab(viewport, environment));
         }
         else if (gparamBank != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Map_Lighting")}##viewportRenderingMapLighting"))
-            {
-                GparamLightingTab(viewport, gparamView, gparamBank);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, mapLightingKey, mapLightingId, () => GparamLightingTab(viewport, gparamView, gparamBank));
         }
 
         // Scene Lighting
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Scene_Lighting")}##viewportRenderingSceneLighting"))
-        {
-            SceneLightingTab(viewport);
-
-            ImGui.EndTabItem();
-        }
+        Section(ref focus, "VIEWPORT_Menubar_Header_Scene_Lighting", "viewportRenderingSceneLighting",
+            () => SceneLightingTab(viewport));
 
         // Global Illumination
         if (mapView != null && mapView.IrradianceVolumeBank.CanUse())
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
-            {
-                GlobalIlluminationTab(viewport, mapView);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, giKey, giId, () => GlobalIlluminationTab(viewport, mapView));
         }
         else if (environment?.Table != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
-            {
-                EnvironmentGlobalIlluminationTab(viewport, environment);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, giKey, giId, () => EnvironmentGlobalIlluminationTab(viewport, environment));
         }
         else if (gparamView?.Universe.Environment.VolumeTable != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Global_Illumination")}##viewportRenderingGlobalIllumination"))
-            {
-                GparamGlobalIlluminationTab(viewport, gparamView);
-
-                ImGui.EndTabItem();
-            }
+            Section(ref focus, giKey, giId, () => GparamGlobalIlluminationTab(viewport, gparamView));
         }
 
         // BTL Lights
         if (mapView != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
+            Section(ref focus, btlKey, btlId, () =>
             {
                 var collector = mapView.ViewportWindow.LightCollector;
 
                 BtlLightsTab(SceneRenderer.MapLighting, collector.ShadedCount, collector.InRangeCount);
-
-                ImGui.EndTabItem();
-            }
+            });
         }
         else if (gparamView != null)
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_BTL_Lights")}##viewportRenderingBtlLights"))
+            Section(ref focus, btlKey, btlId, () =>
             {
                 var gparamEnvironment = gparamView.Universe.Environment;
 
                 BtlLightsTab(gparamView.ViewportWindow.Lighting, gparamEnvironment.ShadedLightCount,
                     gparamEnvironment.InRangeCount);
-
-                ImGui.EndTabItem();
-            }
+            });
         }
 
         // Shadows
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Shadows")}##viewportRenderingShadows"))
-        {
-            ShadowsTab(viewport);
-
-            ImGui.EndTabItem();
-        }
+        Section(ref focus, "VIEWPORT_Rendering_Tab_Shadows", "viewportRenderingShadows", () => ShadowsTab(viewport));
 
         // Post Effects, with the tone map
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Rendering_Tab_Post_Effects")}##viewportRenderingPostEffects"))
-        {
-            PostEffectsTab(viewport, postBank, postMaps);
-
-            ImGui.EndTabItem();
-        }
+        Section(ref focus, "VIEWPORT_Rendering_Tab_Post_Effects", "viewportRenderingPostEffects",
+            () => PostEffectsTab(viewport, postBank, postMaps));
 
         // Materials, with the collision opacity
-        if (ImGui.BeginTabItem($"{LOC.Get("VIEWPORT_Menubar_Header_Materials")}##viewportRenderingMaterials"))
-        {
-            MaterialsTab();
-
-            ImGui.EndTabItem();
-        }
-
-        ImGui.EndTabBar();
+        Section(ref focus, "VIEWPORT_Menubar_Header_Materials", "viewportRenderingMaterials", MaterialsTab);
     }
 
     /// <summary>
@@ -541,7 +510,7 @@ public class ViewportRenderingTool
         if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_GI_Open_Tool")}##giOpenTool"))
         {
             CFG.Current.Interface_MapEditor_ToolWindow = true;
-            CFG.Current.Interface_MapEditor_Tool_Validation = true;
+            CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds = true;
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));

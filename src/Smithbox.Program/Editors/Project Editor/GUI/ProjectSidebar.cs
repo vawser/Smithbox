@@ -24,6 +24,8 @@ public class ProjectSidebar
     {
         var orchestrator = Smithbox.Orchestrator;
 
+        ImGui.BeginChild("SidebarSection");
+
         // Actions
         GUI.MultiButtonInput("projectSidebarActions",
             "sidebarNewProject",
@@ -55,6 +57,7 @@ public class ProjectSidebar
             DisplayGameGroups(projects);
         }
 
+        ImGui.EndChild();
         ImGui.EndChild();
     }
 

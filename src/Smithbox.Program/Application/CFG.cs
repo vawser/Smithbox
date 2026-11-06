@@ -519,10 +519,20 @@ public class CFG
     public bool Interface_MapEditor_ResourceList = true;
 
     // Tools
-    public bool Interface_MapEditor_Tool_Common_Action = true;
+    public bool Interface_MapEditor_Tool_Create = true;
+    public bool Interface_MapEditor_Tool_Duplicate = true;
+    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
+    public bool Interface_MapEditor_Tool_Replicate = true;
+    public bool Interface_MapEditor_Tool_Translate = true;
+    public bool Interface_MapEditor_Tool_Rotate = true;
+    public bool Interface_MapEditor_Tool_PullToCamera = true;
+    public bool Interface_MapEditor_Tool_Scramble = true;
+    public bool Interface_MapEditor_Tool_ResetTransform = true;
     public bool Interface_MapEditor_Tool_Properties_Action = true;
     public bool Interface_MapEditor_Tool_Select_Action = true;
-    public bool Interface_MapEditor_Tool_Visbility_Action = true;
+    public bool Interface_MapEditor_Tool_ViewportFilters = true;
+    public bool Interface_MapEditor_Tool_EditorVisibility = true;
+    public bool Interface_MapEditor_Tool_LowDetail = true;
     public bool Interface_MapEditor_Tool_Viewport = true;
     public bool Interface_MapEditor_Tool_Data_Transfer = true;
 
@@ -538,7 +548,9 @@ public class CFG
     public bool Interface_MapEditor_Tool_ModelBrowser = true;
     public bool Interface_MapEditor_Tool_Animation = true;
     public bool Interface_MapEditor_Tool_DisplayGroups = true;
-    public bool Interface_MapEditor_Tool_Validation = true;
+    public bool Interface_MapEditor_Tool_MsbValidation = true;
+    public bool Interface_MapEditor_Tool_EntityIds = true;
+    public bool Interface_MapEditor_Tool_IrradianceVolumeIds = true;
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_WallPaint = true;
     public bool Interface_MapEditor_Tool_CollisionEditor = true;

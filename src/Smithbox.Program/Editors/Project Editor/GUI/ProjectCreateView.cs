@@ -19,6 +19,8 @@ public class ProjectCreateView
 
     public void Display()
     {
+        ImGui.BeginChild("CreateProjectSection");
+
         var form = Editor.ConfigureMenu;
 
         // The form may still hold a project being edited if Create was opened some other way
@@ -93,6 +95,7 @@ public class ProjectCreateView
             CancelAction();
         }
 
+        ImGui.EndChild();
         ImGui.EndChild();
     }
 

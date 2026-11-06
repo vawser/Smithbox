@@ -93,14 +93,15 @@ public class ModelToolWindow
             View.GridTool.OnToolWindow();
         }
 
-        if (CFG.Current.Interface_ModelEditor_Tool_ViewportRendering)
-        {
-            View.RenderingTool.OnToolWindow();
-        }
-
         if (CFG.Current.Interface_ModelEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("modelEditor", View.Universe);
+        }
+
+        // Rendering: sets its own category, so it comes last
+        if (CFG.Current.Interface_ModelEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
         }
 
         Sections.End();

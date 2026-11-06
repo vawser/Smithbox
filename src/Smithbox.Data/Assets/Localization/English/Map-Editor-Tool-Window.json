@@ -1,0 +1,80 @@
+{
+  "Entries": [
+    {
+      "Key": "MAP_ToolWindow_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "MAP_ToolWindow_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "MAP_ToolWindow_Duplicate_To_Map",
+      "Text": "Duplicate to Map"
+    },
+    {
+      "Key": "MAP_ToolWindow_Replicate",
+      "Text": "Replicate"
+    },
+    {
+      "Key": "MAP_ToolWindow_Translate",
+      "Text": "Translate"
+    },
+    {
+      "Key": "MAP_ToolWindow_Rotate",
+      "Text": "Rotate"
+    },
+    {
+      "Key": "MAP_ToolWindow_Pull_To_Camera",
+      "Text": "Pull to Camera"
+    },
+    {
+      "Key": "MAP_ToolWindow_Scramble",
+      "Text": "Scramble"
+    },
+    {
+      "Key": "MAP_ToolWindow_Reset_Transform",
+      "Text": "Reset Transform"
+    },
+    {
+      "Key": "MAP_ToolWindow_Property_Actions",
+      "Text": "Property Actions"
+    },
+    {
+      "Key": "MAP_ToolWindow_Selection",
+      "Text": "Selection"
+    },
+    {
+      "Key": "MAP_ToolWindow_Viewport_Filters",
+      "Text": "Viewport Filters"
+    },
+    {
+      "Key": "MAP_ToolWindow_Editor_Visibility",
+      "Text": "Editor Visibility"
+    },
+    {
+      "Key": "MAP_ToolWindow_Low_Detail",
+      "Text": "Low Detail"
+    },
+    {
+      "Key": "MAP_ToolWindow_Msb_Validation",
+      "Text": "MSB Validation"
+    },
+    {
+      "Key": "MAP_ToolWindow_Entity_Ids",
+      "Text": "Entity IDs"
+    },
+    {
+      "Key": "MAP_ToolWindow_Property_Actions_Display_Tab",
+      "Text": "Display"
+    },
+    {
+      "Key": "MAP_ToolWindow_Property_Actions_Logic_Tab",
+      "Text": "Logic"
+    },
+    {
+      "Key": "MAP_ToolWindow_Property_Actions_Game_Visibility_Tab",
+      "Text": "Game Visibility"
+    }
+  ]
+}

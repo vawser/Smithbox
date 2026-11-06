@@ -21,8 +21,6 @@ public class SelectActionTool
 
     public void Display()
     {
-        ImGui.BeginChild("SelectActionSection", ImGuiChildFlags.Borders);
-
         ImGui.BeginTabBar("selectActionTabs");
 
         SelectAllTab();
@@ -30,8 +28,6 @@ public class SelectActionTool
         BoxSelectionTab();
 
         ImGui.EndTabBar();
-
-        ImGui.EndChild();
     }
 
     public void SelectAllTab()

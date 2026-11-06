@@ -22,8 +22,8 @@ public class DestructionGenerationTool
     /// ER and NR break assets; the older games break objects.
     /// </summary>
     public string Title => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR
-        ? "Asset Destruction Generation"
-        : "Object Destruction Generation";
+        ? "Destructable Assets"
+        : "Destructable Objects";
 
     private string PartType => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR ? "asset" : "object";
 

@@ -50,16 +50,16 @@ public class GparamToolView
             View.ViewportPreviewTool.OnToolWindow();
         }
 
-        if (CFG.Current.Interface_GparamEditor_Tool_ViewportRendering)
-        {
-            // Viewport Rendering
-            View.RenderingTool.OnToolWindow();
-        }
-
         if (CFG.Current.Interface_GparamEditor_Tool_GridConfiguration)
         {
             // Grid Configuration
             View.GridTool.OnToolWindow();
+        }
+
+        // Rendering: sets its own category, so it comes after the Viewport tools
+        if (CFG.Current.Interface_GparamEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
         }
 
         // Data

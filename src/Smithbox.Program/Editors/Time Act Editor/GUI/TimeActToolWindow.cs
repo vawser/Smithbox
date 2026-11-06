@@ -90,14 +90,15 @@ public class TimeActToolWindow
             View.GridTool.OnToolWindow();
         }
 
-        if (CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering)
-        {
-            View.RenderingTool.OnToolWindow();
-        }
-
         if (CFG.Current.Interface_TimeActEditor_Tool_ResourceMonitor)
         {
             View.ResourceListTool.Display("timeActEditor", View.Universe);
+        }
+
+        // Rendering: sets its own category, so it comes last
+        if (CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
         }
 
         Sections.End();
