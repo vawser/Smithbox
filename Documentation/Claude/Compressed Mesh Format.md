@@ -66,8 +66,10 @@ All 313 ER meshes in the three maps pass.
 - One `TriangleData` per triangle in authoring order: group index, index within the group, and group-local vertex
   indices, numbered as each triangle's corners are first met from the last corner to the first.
 - `m_triangleIndexToShapeKey`: per triangle, its shape key top-aligned in 32 bits with the unused low bits set.
-- Material IDs follow the OBJ2HKX naming (`Reference/OBJ2HKX/mats.xml`): name ID + property ID, e.g. 429 =
-  Without (29) + Slide1 (400).
+- A material ID is a HitMtrlParam row (the surface; names differ per game, e.g. 2 is Stone in DS3 and Rock in ER)
+  plus a property in the hundreds, as the OBJ2HKX exporter names them (`Reference/OBJ2HKX/mats.xml`): Safe1-3 =
+  100-300, Slide1-2 = 400-500. 429 = surface 29 + Slide1. The OBJ2HKX `hkm_Name_Property` material names use the
+  DS3 surface names. The Collision Generator's picker (`CollisionMaterialPicker`) lists the project's own rows.
 
 ## HKX2 (DS3, Havok 2014)
 

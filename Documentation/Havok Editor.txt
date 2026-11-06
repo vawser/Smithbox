@@ -9,6 +9,5 @@
 - Improve Collision Generator:
     - Add support for all HKX types
     - Add preview of mesh (same method as 3D preview picker)
-    - Add material override that sets the hit material
     - Add support for OBJ to HKX 
  

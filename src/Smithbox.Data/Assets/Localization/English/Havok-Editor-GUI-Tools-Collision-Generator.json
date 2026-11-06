@@ -214,11 +214,11 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Header_TT",
-      "Text": "The collision material sets the footstep sounds and sliding of the surface. FLVER meshes whose material is named hkm_Name or hkm_Name_Property (for example hkm_Cobblestone_Safe1) use that material instead."
+      "Text": "The collision material is the surface the generated triangles get: a HitMtrlParam row, which sets the footstep sounds, hit effects and swamp or water behaviour, plus an optional property. FLVER meshes whose material is named in the OBJ2HKX style, hkm_Name or hkm_Name_Property (for example hkm_Cobblestone_Safe1), use that material instead; the mesh list shows which material each mesh will get."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_Input_TT",
-      "Text": "The collision material ID of the generated triangles, for example 1 for Cobblestone, 4 for Wood or 429 for Without with Slide1."
+      "Text": "The material ID that is written: the surface row plus the property in the hundreds, for example 429 is surface 29 with Slide1. Type an ID here to use a value the lists above don't offer."
     },
     {
       "Key": "HAVOK_CollisionGen_Material_From_Current",
@@ -234,7 +234,115 @@
     },
     {
       "Key": "HAVOK_CollisionGen_Flver_Mesh_Entry_Material",
-      "Text": "{0} (material {1})"
+      "Text": "{0} -> {1} (from its material name)"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Flver_Mesh_Entry_Default_Material",
+      "Text": "{0} -> {1}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Applying",
+      "Text": "Applying: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Description",
+      "Text": "{0}: {1}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Description_Property",
+      "Text": "{0}: {1}, {2}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Unnamed",
+      "Text": "Unnamed"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Surface",
+      "Text": "Surface"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Surface_TT",
+      "Text": "The surface, from the project's HitMtrlParam rows. It sets the footstep sounds, hit effects and swamp or water behaviour. Rename rows in the Param Editor to change the names shown here."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_No_Param",
+      "Text": "HitMtrlParam isn't loaded, so the surfaces can't be listed by name. Set the material ID directly below, or open the Param Editor to load the params."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property",
+      "Text": "Property"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_TT",
+      "Text": "An extra property added to the surface in the hundreds of the material ID, named as in the OBJ2HKX exporter."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_None",
+      "Text": "None"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_None_TT",
+      "Text": "The surface on its own."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe1",
+      "Text": "Safe1"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe1_TT",
+      "Text": "Adds 100 to the material ID."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe2",
+      "Text": "Safe2"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe2_TT",
+      "Text": "Adds 200 to the material ID."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe3",
+      "Text": "Safe3"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Safe3_TT",
+      "Text": "Adds 300 to the material ID."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Slide1",
+      "Text": "Slide1"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Slide1_TT",
+      "Text": "Adds 400 to the material ID. Makes the surface slippery."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Slide2",
+      "Text": "Slide2"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Slide2_TT",
+      "Text": "Adds 500 to the material ID. Makes the surface slippery."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Property_Unknown",
+      "Text": "Unknown ({0})"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Raw_ID",
+      "Text": "Material ID"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Current",
+      "Text": "The collision being replaced uses: {0}"
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Material_Current_None",
+      "Text": "The collision being replaced has no collision materials."
+    },
+    {
+      "Key": "HAVOK_CollisionGen_Generate_Log_Material",
+      "Text": "Generated a new collision shape for {0}, with material {1}."
     },
     {
       "Key": "HAVOK_CollisionGen_Generate_Failed",

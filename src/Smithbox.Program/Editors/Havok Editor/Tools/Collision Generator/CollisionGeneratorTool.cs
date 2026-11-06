@@ -26,12 +26,14 @@ public class CollisionGeneratorTool
     public SemiCircleParameters SemiCircleInputs = new();
 
     public FlverSelectionMenu SelectionMenu;
+    public CollisionMaterialPicker MaterialPicker;
 
     public CollisionGeneratorTool(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
         SelectionMenu = new(view, project);
+        MaterialPicker = new(project);
     }
 
     public void Display()
@@ -169,14 +171,10 @@ public class CollisionGeneratorTool
                     LOC.Get("HAVOK_CollisionGen_Material_Header"),
                     LOC.Get("HAVOK_CollisionGen_Material_Header_TT"));
 
-                ImGui.SetNextItemWidth(-1);
-                var materialId = MaterialId;
-                if (ImGui.InputInt("##collisionMaterialId", ref materialId))
-                {
-                    MaterialId = Math.Max(materialId, 0);
-                }
-                GUI.Tooltip(LOC.Get("HAVOK_CollisionGen_Material_Input_TT"));
+                MaterialPicker.Display(ref MaterialId,
+                    CollisionMaterialPicker.GetShapeMaterials(View.Selection.SelectedFileWrapper?.Root));
 
+                GUI.Spacer();
                 GUI.MultiButtonInput("materialActions",
                     "materialFromCurrent",
                     LOC.Get("HAVOK_CollisionGen_Material_From_Current"),
@@ -295,9 +293,12 @@ public class CollisionGeneratorTool
                     var material = SelectionMenu.SourceFlver.Materials[mesh.MaterialIndex];
                     var label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry", i, material.Name, mesh.Vertices.Count);
 
-                    if (IsCompressedMesh && HavokCollisionMaterials.TryParse(material.Name, out var meshMaterial))
+                    // Each mesh says which material it will get: its own hkm_ name, or the Collision Material setting
+                    if (IsCompressedMesh)
                     {
-                        label = LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry_Material", label, meshMaterial);
+                        label = HavokCollisionMaterials.TryParse(material.Name, out var meshMaterial)
+                            ? LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry_Material", label, MaterialPicker.Describe(meshMaterial))
+                            : LOC.Get("HAVOK_CollisionGen_Flver_Mesh_Entry_Default_Material", label, MaterialPicker.Describe((uint)MaterialId));
                     }
 
                     var selected = SelectionMenu.FlverMeshSelection[i];
@@ -462,38 +463,15 @@ public class CollisionGeneratorTool
     /// </summary>
     public void UseCurrentMaterial()
     {
-        var root = View.Selection.SelectedFileWrapper?.Root;
+        var materials = CollisionMaterialPicker.GetShapeMaterials(View.Selection.SelectedFileWrapper?.Root);
 
-        uint? material = root switch
-        {
-            HKX2.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKX2.hknpPhysicsSceneData>()
-                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKX2.fsnpCustomParamCompressedMeshShape>()
-                .Select(s => s.m_pParam?.m_primitiveDataArray?.FirstOrDefault()?.m_materialNameData)
-                .FirstOrDefault(),
-            HKLib.hk2019.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKLib.hk2019.hknpPhysicsSceneData>()
-                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKLib.hk2019.fsnpCustomParamCompressedMeshShape>()
-                .Select(s => s.m_pParam?.m_primitiveDataArray.FirstOrDefault()?.m_materialNameData)
-                .FirstOrDefault(),
-            HKLib.hk2018.hkRootLevelContainer r => r.m_namedVariants
-                .Select(v => v.m_variant).OfType<HKLib.hk2018.hknpPhysicsSceneData>()
-                .SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos)
-                .Select(b => b.m_shape).OfType<HKLib.hk2018.fsnpCustomParamCompressedMeshShape>()
-                .Select(s => s.m_pParam?.m_primitiveDataArray.FirstOrDefault()?.m_materialNameData)
-                .FirstOrDefault(),
-            _ => null
-        };
-
-        if (material == null)
+        if (materials.Count == 0)
         {
             Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Material_From_Current_None"));
             return;
         }
 
-        MaterialId = (int)material.Value;
+        MaterialId = (int)materials[0];
     }
 
     public void BuildAndReplaceShape(List<Vector3> verts, List<int> indices, List<uint> triangleMaterials = null)
@@ -563,7 +541,18 @@ public class CollisionGeneratorTool
 
         if (View.ActionManager.ExecuteAction(action))
         {
-            Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            if (IsCompressedMesh)
+            {
+                // Say which materials went onto the collision
+                var applied = (triangleMaterials is { Count: > 0 } ? triangleMaterials.Distinct() : [(uint)MaterialId])
+                    .Select(MaterialPicker.Describe);
+
+                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log_Material", collisionName, string.Join(", ", applied)));
+            }
+            else
+            {
+                Smithbox.Log(this, LOC.Get("HAVOK_CollisionGen_Generate_Log", collisionName));
+            }
         }
     }
 
