@@ -57,7 +57,7 @@ public sealed class HavokPackfileSerializer
     /// </summary>
     private sealed record SourceContainer(byte[] Header, byte[] SectionHeaderExtra, byte[] TypesData, byte[] TypesLocal,
         byte[] TypesGlobal, byte[] TypesVirtual, int PointerSize, bool BigEndian, byte[] ClassNames,
-        IReadOnlyDictionary<string, uint> TypeClasses, int[] DataPartLengths, string[] SectionOrder);
+        IReadOnlyDictionary<string, uint> TypeClasses, int[] DataPartLengths, string[] SectionOrder, bool GlobalsInMemberOrder);
 
     private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<object, SourceContainer> SourcesRead = new();
 
@@ -210,8 +210,27 @@ public sealed class HavokPackfileSerializer
             types?.GlobalRaw ?? Array.Empty<byte>(), types?.VirtualRaw ?? Array.Empty<byte>(), pointerSize, bigEndian,
             names.Data[..classNamesEnd], typeClasses,
             [sections[contentsSection].LocalRaw.Length, sections[contentsSection].GlobalRaw.Length, sections[contentsSection].VirtualRaw.Length],
-            sections.Select(s => s.Tag).ToArray()));
+            sections.Select(s => s.Tag).ToArray(), !SortedBySource(sections[contentsSection].GlobalRaw, br)));
         return root;
+    }
+
+    /// <summary>
+    /// Whether a global fixup table's rows are in source-offset order. Havok 5.5 writes them in member order instead, where
+    /// an array's element pointers come at the array member, before any pointer member declared after it
+    /// (hkaRagdollInstance: rigidBodies' elements, then skeleton at +44).
+    /// </summary>
+    private static bool SortedBySource(byte[] table, BinaryReaderEx br)
+    {
+        var rows = new BinaryReaderEx(br.BigEndian, table);
+        uint previous = 0;
+        for (int p = 0; p + 12 <= table.Length; p += 12)
+        {
+            uint src = rows.GetUInt32(p);
+            if (src == 0xFFFFFFFF) continue;
+            if (src < previous) return false;
+            previous = src;
+        }
+        return true;
     }
 
     /// <summary>
@@ -432,6 +451,13 @@ public sealed class HavokPackfileSerializer
     private Dictionary<object, List<uint>> _pendingGlobals = null!;
     private Dictionary<object, uint> _globalLookup = null!;
     private List<(uint Src, uint Section, uint Dst)> _globalFixups = new();
+
+    // the member order pointers were written in: a node per object, with each array's contents as a child node at the
+    // array member (they're written later, from the local queues); items are pointer positions or child nodes
+    private sealed class OrderNode { public readonly List<object> Items = new(); }
+    private OrderNode _orderRoot = new();
+    private OrderNode _orderCurrent = new();
+
     private SourceContainer? _source;
     // the sections in the order written: the source's (Havok 5.1 puts __data__ before __types__), else this
     private static readonly string[] DefaultSectionOrder = ["__classnames__", "__types__", "__data__"];
@@ -470,6 +496,8 @@ public sealed class HavokPackfileSerializer
         _pendingGlobals = new Dictionary<object, List<uint>>(_byReference);
         _globalLookup = new Dictionary<object, uint>(_byReference);
         _globalFixups = new List<(uint, uint, uint)>();
+        _orderRoot = new OrderNode();
+        _orderCurrent = _orderRoot;
         _source = source;
         _sectionOrder = source?.SectionOrder is { Length: 3 } order && DefaultSectionOrder.All(order.Contains) ? order : DefaultSectionOrder;
         _localWriteQueues = new List<Queue<Action>> { new() };
@@ -538,6 +566,9 @@ public sealed class HavokPackfileSerializer
             }
 
             long objectStart = _data.Position;
+            var objectOrder = new OrderNode();
+            _orderRoot.Items.Add(objectOrder);
+            _orderCurrent = objectOrder;
             WriteRecord(type, obj);
             WriteRelArrayData(type, obj, objectStart);
             _serialized.Add(obj);
@@ -620,7 +651,7 @@ public sealed class HavokPackfileSerializer
                 : ("__types__", Array.Empty<byte>(), Array.Empty<byte>(), Array.Empty<byte>(), Array.Empty<byte>()),
             ("__data__", objectData,
                 Table(_localFixups.OrderBy(x => x.Dst), (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(x.Dst); }),
-                Table(_globalFixups.OrderBy(x => x.Src), (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(x.Section); t.WriteUInt32(x.Dst); }),
+                Table(GlobalFixupsInOrder(source),(t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(x.Section); t.WriteUInt32(x.Dst); }),
                 Table(_virtualFixups, (t, x) => { t.WriteUInt32(x.Src); t.WriteUInt32(ClassNamesSection); t.WriteUInt32(x.NameOffset); }))
         }.OrderBy(s => Array.IndexOf(_sectionOrder, s.Tag)).ToArray();
 
@@ -658,6 +689,26 @@ public sealed class HavokPackfileSerializer
         }
 
         return bw.FinishBytes();
+    }
+
+    /// <summary>
+    /// The global fixup rows: by source offset (HKX2, and every source whose table was sorted), or in member order where
+    /// the source's table was (Havok 5.5).
+    /// </summary>
+    private IEnumerable<(uint Src, uint Section, uint Dst)> GlobalFixupsInOrder(SourceContainer? source)
+    {
+        if (source is not { GlobalsInMemberOrder: true }) return _globalFixups.OrderBy(x => x.Src);
+        var rank = new Dictionary<uint, int>();
+        void Walk(OrderNode node)
+        {
+            foreach (object item in node.Items)
+            {
+                if (item is OrderNode child) Walk(child);
+                else rank.TryAdd((uint)item, rank.Count);
+            }
+        }
+        Walk(_orderRoot);
+        return _globalFixups.OrderBy(x => rank.TryGetValue(x.Src, out int r) ? r : int.MaxValue).ThenBy(x => x.Src);
     }
 
     private static void PadFF(BinaryWriterEx bw)
@@ -750,6 +801,7 @@ public sealed class HavokPackfileSerializer
                 _source.TypeClasses.TryGetValue(ClassName(variantType), out uint classAt))
             {
                 _globalFixups.Add(((uint)_data.Position, TypesSection, classAt));
+                _orderCurrent.Items.Add((uint)_data.Position);
                 WritePointerZero();
                 continue;
             }
@@ -818,6 +870,7 @@ public sealed class HavokPackfileSerializer
         }
 
         uint position = (uint)_data.Position;
+        _orderCurrent.Items.Add(position);
         if (_globalLookup.TryGetValue(target, out uint written))
         {
             _globalFixups.Add((position, DataSection, written));
@@ -910,12 +963,17 @@ public sealed class HavokPackfileSerializer
 
                 var fixup = new Fixup { Src = fieldStart };
                 _localFixups.Add(fixup);
+                var contentsOrder = new OrderNode();
+                _orderCurrent.Items.Add(contentsOrder);
                 CurrentWriteQueue.Enqueue(() =>
                 {
                     fixup.Dst = (uint)_data.Position;
+                    OrderNode outer = _orderCurrent;
+                    _orderCurrent = contentsOrder;
                     PushWriteQueue(); // anything the elements queue comes first
                     foreach (object? e in list!) WriteValue(element, e, _data.Position);
                     PopWriteQueue();
+                    _orderCurrent = outer;
                 });
 
                 // HKX2 pads after arrays of records and of matrices/quaternions, not after other arrays

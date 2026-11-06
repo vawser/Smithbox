@@ -29,6 +29,16 @@ public static class DiffProbe
         string In(uint at) => objectsA.Where(o => o.Key <= at).OrderByDescending(o => o.Key).Select(o => $"{o.Value}x{o.Key:X}+{at - o.Key}").FirstOrDefault() ?? "?";
         foreach (var src in ga.Keys.Except(gb.Keys).Take(10)) Console.WriteLine($"  global fixup 0x{src:X} ({In(src)}) -> 0x{ga[src]:X} ({In(ga[src])}) is not written");
         foreach (var src in gb.Keys.Except(ga.Keys).Take(10)) Console.WriteLine($"  global fixup 0x{src:X} -> 0x{gb[src]:X} is new");
+        // same fixups, different order: show the first rows where the two tables part
+        var (ra, rb) = (GlobalRows(original), GlobalRows(written));
+        int firstOrder = Enumerable.Range(0, Math.Min(ra.Count, rb.Count)).FirstOrDefault(i => ra[i] != rb[i], -1);
+        if (firstOrder >= 0)
+        {
+            string Named(string row) { var p = row.Split(':'); uint s = Convert.ToUInt32(p[0], 16), t = Convert.ToUInt32(p[2], 16); return s == 0xFFFFFFFF ? row : $"0x{s:X} ({In(s)}) -> 0x{t:X} ({In(t)})"; }
+            Console.WriteLine($"  global fixup order differs from row {firstOrder}:");
+            for (int i = Math.Max(0, firstOrder - 2); i < Math.Min(Math.Min(ra.Count, rb.Count), firstOrder + int.Parse(Environment.GetEnvironmentVariable("PROBE_ROWS") ?? "8")); i++)
+                Console.WriteLine($"    {i,4}: {Named(ra[i])}  |  {Named(rb[i])}");
+        }
 
         var a = Parse(original);
         var b = Parse(written);

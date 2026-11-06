@@ -1712,8 +1712,8 @@
         <Member Name="rotatedVertices" Offset="64" Type="270" Flags="32" />
         <Member Name="numVertices" Offset="76" Type="9" Flags="32" />
         <Member Name="useSpuBuffer" Offset="80" Type="16" Flags="33" />
-        <Member Name="planeEquations" Offset="84" Type="42" Flags="32" />
-        <Member Name="connectivity" Offset="96" Type="271" Flags="32" />
+        <Member Name="planeEquations" Offset="88" Type="42" Flags="32" />
+        <Member Name="connectivity" Offset="100" Type="271" Flags="32" />
       </Members>
     </HavokType>
     <HavokType Id="269" Name="hkMatrix3" Parent="0" Optionals="11" Format="3112" SubType="30" Size="48" Alignment="16" Flags="0" Version="0" />

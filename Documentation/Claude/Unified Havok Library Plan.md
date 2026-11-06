@@ -259,7 +259,7 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 
 **Phase 5: 32-bit packfiles (DeS Havok-5.x, DS1 hk_2010).** Hand-built registry for the classes SoulsFormats handles, 32-bit layout, big-endian for DeS. SoulsFormats only reads 61/329 DeS files and can't write skeletons or spline animations, so parity is the floor, not the target. Acceptance: skeletons, animations, collision and navmesh decode the same as SoulsFormats. Writing should at least be as good as SoulsFormats today (round trip re-reads equal).
 
-> **Status (2026-11-06): done for DS1, DeS 5.5 and DeS 5.1. The acceptance test passes: every object SoulsFormats decodes, the engine decodes the same (or SoulsFormats is wrong), over every DS1 and DeS file. Every DS1 and DeS file now reads (the last two animation formats were hand-fitted). Left: some fidelity follow-ups (below).** Nothing in Smithbox uses this yet (Phase 6).
+> **Status (2026-11-06): done for DS1, DeS 5.5 and DeS 5.1. The acceptance test passes: every object SoulsFormats decodes, the engine decodes the same (or SoulsFormats is wrong), over every DS1 and DeS file. Every DS1 and DeS file reads, and every DS1 file rewrites byte-identical. The two open fixes are closed. What's left is three DeS 5.5 oddities and the 5.1 animations (see the end of this section).** Nothing in Smithbox uses this yet (Phase 6).
 > - **Decision (2026-11-06): the registries come from the games' own files, and the class sets are generated** (revises D2's "no full hk2010 class set"). DeS packfiles, and DS1's chr physics files, carry Havok's `hkClass` reflection in `__types__`. The layout is the same in Havok 5.5 and hk_2010, 32-bit:
 >   - `hkClass` 48 bytes, `hkClassMember` 24, `hkClassEnum` 20, enum items 8.
 >   - Type codes are `hkClassMember::Type`.
@@ -336,13 +336,23 @@ Each phase ends with Smithbox building and the round-trip tool (Phase 0) passing
 >     5. Move both `Autogen` folders to `.archive`.
 >     6. `Havok.ClassGeneration` for hk2010 and hk55 (5.5 with `--overlay` 5.1).
 >     7. Build the survey and probe.
-> - **Still to do:**
->   - **Two borrowed-class fixes, found by `--diff`:**
->     - DS1 `o2770_1.hkx`: the convex shapes borrowed from DS3 (`hkpConvexVerticesShape`'s connectivity pointer, the `hkpConvexTranslateShape` chain) don't match DS1's 2010 versions, so pointers are dropped (3,184 bytes).
->     - DeS chr ragdolls: same size, but one pointer sits 4 bytes off, probably in a constraint class borrowed from DS1.
+> - **The two open fixes, closed (2026-11-06):**
+>   - **DS1 `hkpConvexVerticesShape`, hand-fitted** (`o2770_1.hkx`). hk_2010.2 has 4 unnamed, always-zero bytes after `useSpuBuffer`, so `planeEquations` is at 88 and `connectivity` at 100 (DS3's relaid layout had 84/96, which dropped both connectivity objects and shifted everything after). Size 112 stays. The translate-shape chain was only a knock-on effect. Checks: `rotatedVertices` count = ⌈numVertices / 4⌉, and the connectivity's face count matches the planes (68/68, or 56 + 6 bevel planes = 66). `--filldumps` now reports the class as not recomputing (the unlisted bytes), so it keeps the fitted layout.
+>   - **DeS ragdolls were global fixup *order*, not a misplaced pointer.** Havok 5.5 writes the global fixup table in member order. An array's element pointers come at the array member, so `hkaRagdollInstance.skeleton` (+44) comes after every `rigidBodies`/`constraints` element. Sorting by offset only agrees when no pointer member follows an array of pointers. The writer now records member order (one node per object, with each array's contents as a child node). It uses that order when the source's table wasn't sorted by offset (`GlobalsInMemberOrder`, detected on read). Sorted sources, and HKX2-header mode, still sort. `HavokPackfileProbe --diff` now shows where two tables' orders part (`PROBE_ROWS=<n>` sets how many rows).
+> - **Full-scale result** (`HavokLibSurvey DS1|DES 3000 40`). Every file reads, writes, round-trips and is at a fixed point, and the decode comparison is still equal on every object:
 >
->     Both need hand-fitted dumps, as for the mesh shapes.
->   - The remaining non-identical files are mostly chr ragdolls: same size, one byte or one pointer off (value-level, or a borrowed constraint class). *(verify)*
+>   | SDK | Byte-identical before → now |
+>   |---|---|
+>   | DS1 hk_2010 | 10,845 → **11,166 / 11,166** |
+>   | DeS Havok-5.5 | 10,815 → **11,083 / 11,086** |
+>   | DeS Havok-5.1 | 219 → 219 / 266 |
+>
+>   The committed 30×8 reports: DS1 298 → **331/331**, DeS 5.5 303 → **327/327**. The writer change leaves the hk_2014 games exactly as they were (DS3 693/860, BB 636/721, DS2S 227/227, SDT 6/9): their sources' tables are sorted.
+>
+> - **Still not byte-identical** (all newly identified; none is a ragdoll):
+>   - DeS 5.5 `m99_99_98_10/l0000b0.hkx` (a test map): its `CustomMeshParameter` (borrowed from DS3) has a different layout there, and 2,768 bytes are lost.
+>   - DeS 5.5 `o2999.hkx` (stored twice, `.objbnd` and `.objbnd.dcx`): an exporter leftover with `hkxMesh`/`hkxVertexBuffer` scene data. 1.25 MB is lost, because `TYPE_HOMOGENEOUSARRAY` is kept only as space.
+>   - DeS 5.1: 47 files, mostly c2020 animations (`a00_9xxx`, an anibnd), which shrink by 6–23 KB on write, so part of their data isn't read. `--diff` doesn't handle 5.1's section order yet (it assumes `__data__` is the third section).
 
 **Phase 6: migrate Smithbox.** In order of risk, smallest first:
 1. Renderer animation (`HavokAnimationData`, `HavokTagfile` → `Untyped`/typed reads).

@@ -1,11 +1,11 @@
-<class name="hkpConvexVerticesShape" version="1" signature="0x28726ad8" size="112" parent="hkpConvexShape" borrowed="DS3 hk_2014">
+<class name="hkpConvexVerticesShape" version="1" signature="0x28726ad8" size="112" parent="hkpConvexShape" manual="Fitted to DS1 bytes (o2770 o2770_1.hkx; no DS1 file describes it). DS3's members, but hk_2010.2 has 4 more bytes after useSpuBuffer (always zero, unnamed), so planeEquations is at 88 and connectivity at 100. Checks: rotatedVertices count = ceil(numVertices / 4) (12 for 45, 10 for 39); the connectivity pointer is the global fixup at +100; its face count equals the plane count (68) or the planes add 6 bevel planes (66 vs 56).">
   <members>
     <member name="aabbHalfExtents" offset="32" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
     <member name="aabbCenter" offset="48" vtype="TYPE_VECTOR4" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
     <member name="rotatedVertices" offset="64" vtype="TYPE_ARRAY" vsubtype="TYPE_MATRIX3" arrsize="0" flags="FLAGS_NONE" default="0" />
     <member name="numVertices" offset="76" vtype="TYPE_INT32" vsubtype="TYPE_VOID" arrsize="0" flags="FLAGS_NONE" default="0" />
     <member name="useSpuBuffer" offset="80" vtype="TYPE_BOOL" vsubtype="TYPE_VOID" arrsize="0" flags="SERIALIZE_IGNORED" default="0" />
-    <member name="planeEquations" offset="84" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" default="0" />
-    <member name="connectivity" offset="96" ctype="hkpConvexVerticesConnectivity" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="planeEquations" offset="88" vtype="TYPE_ARRAY" vsubtype="TYPE_VECTOR4" arrsize="0" flags="FLAGS_NONE" default="0" />
+    <member name="connectivity" offset="100" ctype="hkpConvexVerticesConnectivity" vtype="TYPE_POINTER" vsubtype="TYPE_STRUCT" arrsize="0" flags="FLAGS_NONE" default="0" />
   </members>
 </class>
