@@ -1,4 +1,4 @@
-﻿using HKX2;
+﻿
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;

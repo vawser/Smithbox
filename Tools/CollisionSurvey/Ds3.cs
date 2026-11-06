@@ -1,7 +1,7 @@
-using HKX2;
+using Havok.hk2014;
 using SoulsFormats;
 
-// The HKX2 (DS3, Havok 2014) compressed meshes: the values the builder fills, and a rebuild check
+// The DS3 (Havok 2014) compressed meshes: the values the builder fills, and a rebuild check
 static class Ds3
 {
     public static void Survey(BXF4 bxf, bool rebuild, bool detail, int maxShown)
@@ -14,8 +14,9 @@ static class Ds3
         {
             var bytes = file.Bytes.ToArray();
             if (DCX.Is(bytes)) bytes = DCX.Decompress(bytes).ToArray();
+            Havok.HavokDocument document;
             hkRootLevelContainer root;
-            try { root = (hkRootLevelContainer)new PackFileDeserializer().Deserialize(new BinaryReaderEx(false, bytes)); }
+            try { document = Havok.Files.HavokFile.Read(bytes, Havok.HavokProfile.DS3); root = (hkRootLevelContainer)document.Root; }
             catch (Exception e) { Count("read failed", e.Message.Substring(0, Math.Min(60, e.Message.Length))); continue; }
 
             foreach (var body in root.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().SelectMany(s => s.m_systemDatas).SelectMany(s => s.m_bodyCinfos))
@@ -27,7 +28,7 @@ static class Ds3
                 {
                     try
                     {
-                        var errors = Ds3Rebuild.Check(root, body, cms, out var stats);
+                        var errors = Ds3Rebuild.Check(document, body, cms, out var stats);
                         Count("rebuild ok", errors.Count == 0);
                         Console.WriteLine($"{file.Name} {body.m_name}: {(errors.Count == 0 ? "OK" : $"{errors.Count} errors")} | {stats}");
                         foreach (var e in errors.Take(5)) Console.WriteLine("    " + e);
@@ -74,7 +75,7 @@ static class Ds3
                     Console.WriteLine($"==== {file.Name} {body.m_name}: flags {cms.m_flags} keyBits {cms.m_numShapeKeyBits} radius {cms.m_convexRadius} tag {cms.m_shapeTagCodecInfo:X} sections {tree.m_sections.Count} prims {tree.m_primitives.Count} keys {tree.m_numPrimitiveKeys} maxKey {tree.m_maxKeyValue} bits {tree.m_bitsPerKey}");
                     Console.WriteLine($"  body: mat {body.m_materialId} filter {body.m_collisionFilterInfo:X} flags {body.m_flags} motion {body.m_motionId} quality {body.m_qualityId}");
                     Console.WriteLine($"  quadIsFlat {cms.m_quadIsFlat?.m_storage?.m_numBits} words {string.Join(" ", cms.m_quadIsFlat?.m_storage?.m_words?.Take(4).Select(w => w.ToString("X8")) ?? [])} interior {cms.m_triangleIsInterior?.m_storage?.m_numBits}");
-                    Console.WriteLine($"  simd {data.m_simdTree?.m_nodes?.Count}: {string.Join(" | ", data.m_simdTree?.m_nodes?.Take(3).Select(n => $"{n.m_data_0:X},{n.m_data_1:X},{n.m_data_2:X},{n.m_data_3:X} lx {n.m_lx}") ?? [])}");
+                    Console.WriteLine($"  simd {data.m_simdTree?.m_nodes?.Count}: {string.Join(" | ", data.m_simdTree?.m_nodes?.Take(3).Select(n => $"{n.m_data[0]:X},{n.m_data[1]:X},{n.m_data[2]:X},{n.m_data[3]:X} lx {n.m_lx}") ?? [])}");
                     foreach (var s in tree.m_sections.Take(2))
                         Console.WriteLine($"  section: packed {s.m_firstPackedVertex}+{s.m_numPackedVertices} shared.m_data {s.m_sharedVertices.m_data:X} numShared {s.m_numSharedIndices} prims {s.m_primitives.m_data:X} runs {s.m_dataRuns.m_data:X} leaf {s.m_leafIndex} domain {s.m_domain.m_min}-{s.m_domain.m_max} nodes {s.m_nodes.Count}");
                     Console.WriteLine($"  runs: {string.Join(" ", tree.m_primitiveDataRuns.Take(5).Select(r => $"[{r.m_value.m_data} i{r.m_index} c{r.m_count}]"))}");

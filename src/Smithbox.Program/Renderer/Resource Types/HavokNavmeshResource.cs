@@ -40,10 +40,6 @@ public class HavokNavmeshResource : IResource, IDisposable
     /// <summary>The navmesh file as the unified Havok library read it, until the GPU data is built.</summary>
     public HavokDocument Document;
 
-    // The navmesh builder's output (HKX2 classes), until the builders move to the unified library
-    private IHavokNavMesh _builtMesh;
-    private IHavokDirectedGraph _builtGraph;
-
     public bool _Load(Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
         return Read(bytes, ctx.FileName) && LoadInternal(al);
@@ -107,12 +103,12 @@ public class HavokNavmeshResource : IResource, IDisposable
 
             var curProject = Smithbox.Orchestrator.SelectedProject;
 
-            // DS3, BB and the navmesh builder draw in the configured navmesh colour; the later games use a fixed one
-            Vector3 color = Document == null || curProject?.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB
+            // DS3 and BB draw in the configured navmesh colour; the later games use a fixed one
+            Vector3 color = curProject?.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB
                 ? CFG.Current.Viewport_Navmesh_Color
                 : new Vector3(157, 53, 255);
 
-            IHavokNavMesh mesh = Document?.ObjectsOf<IHavokNavMesh>().FirstOrDefault() ?? _builtMesh;
+            IHavokNavMesh mesh = Document?.ObjectsOf<IHavokNavMesh>().FirstOrDefault();
             if (mesh != null)
             {
                 ProcessMesh(CollisionGeometry.NavMeshTriangles(mesh), color);
@@ -124,7 +120,7 @@ public class HavokNavmeshResource : IResource, IDisposable
                 ProcessVolume_HKX3(volume);
             }
 
-            IHavokDirectedGraph graph = Document?.ObjectsOf<IHavokDirectedGraph>().FirstOrDefault() ?? _builtGraph;
+            IHavokDirectedGraph graph = Document?.ObjectsOf<IHavokDirectedGraph>().FirstOrDefault();
             if (graph != null)
             {
                 ProcessGraph(CollisionGeometry.GraphSegments(graph));
@@ -134,8 +130,6 @@ public class HavokNavmeshResource : IResource, IDisposable
         if (al == AccessLevel.AccessGPUOptimizedOnly)
         {
             Document = null;
-            _builtMesh = null;
-            _builtGraph = null;
         }
 
         return true;
@@ -464,48 +458,6 @@ public class HavokNavmeshResource : IResource, IDisposable
         {
             Bounds = new BoundingBox();
         }
-    }
-
-    /// <summary>
-    /// Navmesh Builder: the DS3 navmesh it built, in HKX2's classes (the builders move to the unified library in a
-    /// later step).
-    /// </summary>
-    public static HavokNavmeshResource ResourceFromNavmeshRoot(HKX2.hkRootLevelContainer root)
-    {
-        var ret = new HavokNavmeshResource();
-
-        if (root.FindVariant<HKX2.hkaiNavMesh>() is { } mesh)
-            ret._builtMesh = new Hkx2NavMeshView(mesh);
-
-        if (root.FindVariant<HKX2.hkaiDirectedGraphExplicitCost>() is { } graph)
-            ret._builtGraph = new Hkx2GraphView(graph);
-
-        ret.LoadInternal(AccessLevel.AccessFull);
-        return ret;
-    }
-
-    private sealed class Hkx2NavMeshView(HKX2.hkaiNavMesh mesh) : IHavokNavMesh
-    {
-        public IReadOnlyList<Vector4> Vertices => mesh.m_vertices;
-
-        public int FaceCount => mesh.m_faces.Count;
-
-        public (int StartEdge, int EdgeCount, int Cluster) GetFace(int index) =>
-            (mesh.m_faces[index].m_startEdgeIndex, mesh.m_faces[index].m_numEdges, mesh.m_faces[index].m_clusterIndex);
-
-        public int GetEdgeStart(int edge) => mesh.m_edges[edge].m_a;
-    }
-
-    private sealed class Hkx2GraphView(HKX2.hkaiDirectedGraphExplicitCost graph) : IHavokDirectedGraph
-    {
-        public IReadOnlyList<Vector4> Positions => graph.m_positions;
-
-        public int NodeCount => graph.m_nodes.Count;
-
-        public (int StartEdge, int EdgeCount) GetNode(int index) =>
-            (graph.m_nodes[index].m_startEdgeIndex, graph.m_nodes[index].m_numEdges);
-
-        public int GetEdgeTarget(int edge) => (int)graph.m_edges[edge].m_target;
     }
 
     #region IDisposable Support

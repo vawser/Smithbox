@@ -34,9 +34,7 @@ public static class DS3_HavokVariable_Util
         // Load
         var fileData = File.ReadAllBytes(filePath);
 
-        HKX2.hkRootLevelContainer workingHkx = null;
-        HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
-        HKX2.PackFileSerializer serializer = new HKX2.PackFileSerializer();
+        Havok.HavokDocument workingDocument = null;
 
         var readBinder = new BND4Reader(fileData);
         foreach (var file in readBinder.Files)
@@ -46,19 +44,16 @@ public static class DS3_HavokVariable_Util
 
             var fileBytes = readBinder.ReadFile(file).ToArray();
 
-            using (MemoryStream memoryStream = new MemoryStream(fileBytes))
+            try
             {
-                try
-                {
-                    var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                    workingHkx = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-                }
-                catch (InvalidDataException) { }
+                workingDocument = Havok.Files.HavokFile.Read(fileBytes, Havok.HavokProfile.DS3);
             }
+            catch (InvalidDataException) { }
         }
         readBinder.Dispose();
 
-        InjectVariable(workingHkx);
+        if (workingDocument?.Root is Havok.hk2014.hkRootLevelContainer workingRoot)
+            InjectVariable(workingRoot);
 
         // Save
         var writeBinder = BND4.Read(fileData);
@@ -67,51 +62,45 @@ public static class DS3_HavokVariable_Util
             if (file.Name != internalPath)
                 continue;
 
-            using (MemoryStream memoryStream = new MemoryStream(file.Bytes.ToArray()))
+            if (workingDocument != null)
             {
-                if (workingHkx != null)
-                {
-                    var bw = new BinaryWriterEx(false);
-                    serializer.Serialize((HKX2.IHavokObject)workingHkx, bw);
-
-                    file.Bytes = bw.FinishBytes();
-                }
+                file.Bytes = Havok.Files.HavokFile.Write(workingDocument);
             }
         }
 
         File.WriteAllBytes(writefilePath, writeBinder.Write());
     }
 
-    public static void InjectVariable(HKX2.hkRootLevelContainer root)
+    public static void InjectVariable(Havok.hk2014.hkRootLevelContainer root)
     {
         var varIndex = -1;
 
         // Add the variable setup
-        var behaviorGraphs = HavokTreeSearch.FindAll<HKX2.hkbBehaviorGraphData>(
+        var behaviorGraphs = HavokTreeSearch.FindAll<Havok.hk2014.hkbBehaviorGraphData>(
                 root, HavokPropertyCache.GetCachedHavokFields);
 
         var top = behaviorGraphs.FirstOrDefault();
         if (top != null)
         {
-            var newVarInfo = new HKX2.hkbVariableInfo()
+            var newVarInfo = new Havok.hk2014.hkbVariableInfo()
             {
-                m_role = new HKX2.hkbRoleAttribute()
+                m_role = new Havok.hk2014.hkbRoleAttribute()
                 {
-                    m_role = HKX2.Role.ROLE_DEFAULT,
-                    m_flags = 0
+                    m_role = Havok.hk2014.hkbRoleAttribute.Role.ROLE_DEFAULT,
+                    m_flags = (Havok.hk2014.hkbRoleAttribute.RoleFlags)0
                 },
-                m_type = HKX2.VariableType.VARIABLE_TYPE_REAL
+                m_type = Havok.hk2014.hkbVariableInfo.VariableType.VARIABLE_TYPE_REAL
             };
 
             top.m_variableInfos.Add(newVarInfo);
 
-            var newVarBounds = new HKX2.hkbVariableBounds()
+            var newVarBounds = new Havok.hk2014.hkbVariableBounds()
             {
-                m_min = new HKX2.hkbVariableValue()
+                m_min = new Havok.hk2014.hkbVariableValue()
                 {
                     m_value = 0
                 },
-                m_max = new HKX2.hkbVariableValue()
+                m_max = new Havok.hk2014.hkbVariableValue()
                 {
                     m_value = 10
                 },
@@ -119,7 +108,7 @@ public static class DS3_HavokVariable_Util
 
             top.m_variableBounds.Add(newVarBounds);
 
-            var newWordVar = new HKX2.hkbVariableValue()
+            var newWordVar = new Havok.hk2014.hkbVariableValue()
             {
                 m_value = 1
             };
@@ -135,18 +124,18 @@ public static class DS3_HavokVariable_Util
         if (varIndex != -1)
         {
             // Add variable binding to clips
-            var clips = HavokTreeSearch.FindAll<HKX2.hkbClipGenerator>(
+            var clips = HavokTreeSearch.FindAll<Havok.hk2014.hkbClipGenerator>(
                     root, HavokPropertyCache.GetCachedHavokFields);
 
-            var newBinding = new HKX2.hkbVariableBindingSetBinding()
+            var newBinding = new Havok.hk2014.hkbVariableBindingSet.Binding()
             {
                 m_variableIndex = varIndex,
                 m_memberPath = "playbackSpeed",
                 m_bitIndex = -1,
-                m_bindingType = HKX2.BindingType.BINDING_TYPE_VARIABLE
+                m_bindingType = Havok.hk2014.hkbVariableBindingSet.Binding.BindingType.BINDING_TYPE_VARIABLE
             };
 
-            var set = new HKX2.hkbVariableBindingSet()
+            var set = new Havok.hk2014.hkbVariableBindingSet()
             {
                 m_bindings = new()
                 {

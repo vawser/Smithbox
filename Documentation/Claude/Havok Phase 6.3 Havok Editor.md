@@ -4,7 +4,7 @@ Part of the [Unified Havok Library Plan](Unified%20Havok%20Library%20Plan.md), P
 
 Status:
 - **6.3a done (2026-11-06):** checked with game files, and in the app (the user confirmed every item in the Acceptance list).
-- **6.3b implemented (2026-11-06):** checked with game files, not yet in the app. The Havok Editor now opens every game the unified library reads: all but original DS2.
+- **6.3b done (2026-11-06):** checked with game files, and in the app (the user confirmed every item in its list). The Havok Editor now opens every game the unified library reads: all but original DS2.
 
 ## 6.3b: what was done
 

@@ -1,5 +1,6 @@
-using HKX2;
+using Havok.hk2014;
 using SoulsFormats;
+using Havok.Builders;
 using StudioCore.Editors.HavokEditor;
 using System.Numerics;
 
@@ -8,19 +9,18 @@ using System.Numerics;
 // materials line up.
 static class Ds3Rebuild
 {
-    public static List<string> Check(hkRootLevelContainer root, hknpBodyCinfo body, fsnpCustomParamCompressedMeshShape vanilla, out string stats)
+    public static List<string> Check(Havok.HavokDocument document, hknpBodyCinfo body, fsnpCustomParamCompressedMeshShape vanilla, out string stats)
     {
         var errors = new List<string>();
+        var root = (hkRootLevelContainer)document.Root;
         var (vertices, indices, materials) = Decode(vanilla);
         int triangleCount = indices.Count / 3;
 
-        var built = HavokCompressedMeshGenerator_HKX2.BuildCompressedMeshShape(vertices, indices, materials);
+        var built = HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(vertices, indices, materials);
 
-        // Write the file with the rebuilt shape and read it back
+        // Write the file with the rebuilt shape and read it back, as the Havok Editor saves it
         body.m_shape = built;
-        var bw = new BinaryWriterEx(false);
-        new PackFileSerializer().Serialize(root, bw);
-        var reread = (hkRootLevelContainer)new PackFileDeserializer().Deserialize(new BinaryReaderEx(false, bw.FinishBytes()));
+        var reread = (hkRootLevelContainer)Havok.Files.HavokFile.Read(Havok.Files.HavokFile.Write(document), Havok.HavokProfile.DS3).Root;
         int bodyIndex = root.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().First()
             .m_systemDatas.SelectMany(s => s.m_bodyCinfos).ToList().IndexOf(body);
         var shape = (fsnpCustomParamCompressedMeshShape)reread.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().First()

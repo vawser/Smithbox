@@ -929,39 +929,28 @@ public class ModelWrapper
         HasCollision = true;
         HKX_Name = filename;
 
-        if (Parent.Project.Descriptor.ProjectType is ProjectType.ER 
+        // The games the Model Editor has shown collision for: read through the unified Havok library
+        if (Parent.Project.Descriptor.ProjectType is not (ProjectType.ER
             or ProjectType.NR
             or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            HKLib.Serialization.hk2018.Binary.HavokBinarySerializer serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer();
+            or ProjectType.DB
+            or ProjectType.DS3))
+            return;
 
-            using (MemoryStream memoryStream = new MemoryStream(data.ToArray()))
-            {
-                try
-                {
-                    HKX = (HKLib.hk2018.hkRootLevelContainer)serializer.Read(memoryStream);
-                }
-                catch (InvalidDataException)
-                {
-                }
-            }
+        var profile = Havok.HavokProfile.FromGame(Parent.Project.Descriptor.ProjectType.ToString());
+
+        if (profile == null)
+            return;
+
+        try
+        {
+            var bytes = DCX.Is(data) ? DCX.Decompress(data).ToArray() : data.ToArray();
+
+            HKX = Havok.Files.HavokFile.Read(bytes, profile).Root as IRootContainer;
         }
-        else if (Parent.Project.Descriptor.ProjectType is ProjectType.DS3)
+        catch (Exception)
         {
-            HKX2.PackFileDeserializer deserializer = new HKX2.PackFileDeserializer();
-
-            using (MemoryStream memoryStream = new MemoryStream(data.ToArray()))
-            {
-                try
-                {
-                    var br = new BinaryReaderEx(false, memoryStream.ToArray());
-                    HKX = (HKX2.hkRootLevelContainer)deserializer.Deserialize(br);
-                }
-                catch (InvalidDataException)
-                {
-                }
-            }
+            // As before: a collision that doesn't read is left out (e.g. one whose types are in a compendium elsewhere)
         }
     }
 }

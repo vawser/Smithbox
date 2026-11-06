@@ -1,4 +1,5 @@
-﻿using Havok.hk2014;
+﻿using Havok.Builders;
+using Havok.hk2014;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public static class HavokShapeGenerator_HKX2
+public static class HavokShapeGenerator_hk2014
 {
     public static hknpExternMeshShape BuildExternMeshShape(
         IReadOnlyList<Vector3> vertices,

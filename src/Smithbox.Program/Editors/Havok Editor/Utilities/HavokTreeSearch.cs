@@ -7,7 +7,7 @@ using System.Text;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Utilities for walking a Havok object graph (as reflected via HKLib) to find
+/// Utilities for walking a Havok object graph (any SDK's generated classes, by reflection) to find
 /// every instance of a given type, independent of the ImGui property tree.
 ///
 /// Mirrors the traversal rules used by HavokPropertyView.HavokPropEditGeneric:

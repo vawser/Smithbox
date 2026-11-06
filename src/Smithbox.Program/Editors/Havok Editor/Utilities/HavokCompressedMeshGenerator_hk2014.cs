@@ -1,3 +1,4 @@
+using Havok.Builders;
 using Havok.hk2014;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Numerics;
 namespace StudioCore.Editors.HavokEditor;
 
 /// <summary>
-/// Fills the HKX2 (DS3, Havok 2014) compressed mesh classes from a <see cref="HavokCompressedMeshBuilder"/> build.
+/// Fills the Havok.hk2014 (DS3) compressed mesh classes from a <see cref="HavokCompressedMeshBuilder"/> build.
 /// The sections, trees, keys and FromSoftware parameters are the same as in the HKX3 games; what differs, as the DS3
 /// map collision holds it (checked with Tools/CollisionSurvey):
 /// <list type="bullet">
@@ -19,7 +20,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// </list>
 /// Kept apart from the rest of the shape generator so Tools/CollisionSurvey can round-trip it against game files.
 /// </summary>
-public static class HavokCompressedMeshGenerator_HKX2
+public static class HavokCompressedMeshGenerator_hk2014
 {
     public const float DefaultConvexRadius = 0.01f;
 

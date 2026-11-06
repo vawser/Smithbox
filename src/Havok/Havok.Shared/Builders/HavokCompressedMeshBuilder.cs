@@ -1,9 +1,10 @@
+#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace Havok.Builders;
 
 /// <summary>
 /// Builds the data of a FromSoftware compressed mesh (fsnpCustomParamCompressedMeshShape) from a triangle list,

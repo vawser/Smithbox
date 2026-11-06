@@ -1,7 +1,7 @@
 using Andre.Core;
 using Andre.IO.VFS;
-using HKLib.hk2018;
-using HKLib.hk2018.hkcdStaticMeshTree;
+using Havok.hk2018;
+using Havok.hk2018.hkcdStaticMeshTree;
 using SoulsFormats;
 using System.Numerics;
 using System.Text.RegularExpressions;
@@ -40,6 +40,10 @@ if (compFile != null) { compendium = compFile.Bytes.ToArray(); if (DCX.Is(compen
 if (game == Game.AC6) { Ac6.Survey(bxf, compendium); return; }
 if (game == Game.DS3) { Ds3.Survey(bxf, rebuild, detail, maxFiles); return; }
 
+// Read and written through the unified Havok library, with the binder's compendium, as Smithbox does
+var profile = Havok.HavokProfile.FromGame(gameName);
+var unifiedCompendium = compendium == null ? null : Havok.Files.HavokFile.ReadCompendium(compendium, profile);
+
 var aggregate = new Dictionary<string, Dictionary<string, int>>();
 void Count(string key, object value)
 {
@@ -54,14 +58,12 @@ foreach (var file in bxf.Files.Where(f => f.Name.Contains(".hkx") && filter.IsMa
     var bytes = file.Bytes.ToArray();
     if (DCX.Is(bytes)) bytes = DCX.Decompress(bytes).ToArray();
 
+    Havok.HavokDocument document;
     hkRootLevelContainer root;
     try
     {
-        var serializer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(game == Game.NR
-            ? HKLib.Reflection.hk2018.HavokTypeRegistry.Nightreign
-            : HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
-        if (compendium != null) serializer.LoadCompendium(new MemoryStream(compendium));
-        root = (hkRootLevelContainer)serializer.Read(new MemoryStream(bytes));
+        document = Havok.Files.HavokFile.Read(bytes, profile, unifiedCompendium);
+        root = (hkRootLevelContainer)document.Root;
     }
     catch (Exception e) { Console.WriteLine($"{file.Name}: read failed {e.Message}"); continue; }
 
@@ -89,13 +91,8 @@ foreach (var file in bxf.Files.Where(f => f.Name.Contains(".hkx") && filter.IsMa
                     body.m_shape = rebuilt;
                     try
                     {
-                        var writer = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
-                        if (compendium != null) writer.LoadCompendium(new MemoryStream(compendium));
-                        using var ms = new MemoryStream();
-                        writer.Write(root, ms);
-                        var reader = new HKLib.Serialization.hk2018.Binary.HavokBinarySerializer(HKLib.Reflection.hk2018.HavokTypeRegistry.Instance);
-                        if (compendium != null) reader.LoadCompendium(new MemoryStream(compendium));
-                        var reread = (hkRootLevelContainer)reader.Read(new MemoryStream(ms.ToArray()));
+                        var written = Havok.Files.HavokFile.Write(document);
+                        var reread = (hkRootLevelContainer)Havok.Files.HavokFile.Read(written, profile, unifiedCompendium).Root;
                         return (fsnpCustomParamCompressedMeshShape)reread.m_namedVariants.Select(v => v.m_variant).OfType<hknpPhysicsSceneData>().First()
                             .m_systemDatas.SelectMany(x => x.m_bodyCinfos).First(b => b.m_name == body.m_name).m_shape;
                     }

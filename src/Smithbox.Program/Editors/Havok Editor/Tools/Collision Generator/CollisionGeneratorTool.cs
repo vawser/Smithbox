@@ -511,35 +511,35 @@ public class CollisionGeneratorTool
         // The replacement goes through the action manager, so it can be undone and marks the file as modified
         HavokDelegateAction action = null;
 
-        if (sourceObject is Havok.hk2019.hkRootLevelContainer)
+        // 2018 and 2019: one shared builder, compiled into each class set
+        if (sourceObject is Havok.hk2019.hkRootLevelContainer root2019)
         {
-            if (sourceObject is Havok.hk2019.hkRootLevelContainer root)
-            {
-                Havok.hk2019.hknpShape shape = IsCompressedMesh
-                    ? HavokCompressedMeshGenerator_HKX3_2019.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
-                    : HavokShapeGenerator_HKX3_2019.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX3_2019.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
-            }
+            Havok.hk2019.hknpShape shape = IsCompressedMesh
+                ? Havok.hk2019.Builders.CollisionShapeBuilder.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                : Havok.hk2019.Builders.CollisionShapeBuilder.BuildExternMeshShape(verts, indices);
+
+            if (Havok.hk2019.Builders.CollisionShapeBuilder.ReplaceMeshShape(root2019, shape) is { } swap)
+                action = new HavokDelegateAction(fileWrapper, swap.Apply, swap.Undo);
         }
-        else if (sourceObject is Havok.hk2018.hkRootLevelContainer)
+        else if (sourceObject is Havok.hk2018.hkRootLevelContainer root2018)
         {
-            if (sourceObject is Havok.hk2018.hkRootLevelContainer root)
-            {
-                Havok.hk2018.hknpShape shape = IsCompressedMesh
-                    ? HavokCompressedMeshGenerator_HKX3.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
-                    : HavokShapeGenerator_HKX3.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX3.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
-            }
+            Havok.hk2018.hknpShape shape = IsCompressedMesh
+                ? Havok.hk2018.Builders.CollisionShapeBuilder.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                : Havok.hk2018.Builders.CollisionShapeBuilder.BuildExternMeshShape(verts, indices);
+
+            if (Havok.hk2018.Builders.CollisionShapeBuilder.ReplaceMeshShape(root2018, shape) is { } swap)
+                action = new HavokDelegateAction(fileWrapper, swap.Apply, swap.Undo);
         }
         else
         {
-            // TODO: check the extern mesh works in-game, changes were made HavokShapeGenerator_HKX2 since the structure of some of the Havok Classes is slightly different to HKX3
+            // DS3 (hk2014): its own generator, as the 2014 compressed mesh is laid out differently.
+            // TODO: check the extern mesh works in-game; some of the 2014 classes differ from the 2018 ones
             if (sourceObject is Havok.hk2014.hkRootLevelContainer root)
             {
                 Havok.hk2014.hknpShape shape = IsCompressedMesh
-                    ? HavokCompressedMeshGenerator_HKX2.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
-                    : HavokShapeGenerator_HKX2.BuildExternMeshShape(verts, indices);
-                action = HavokShapeGenerator_HKX2.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
+                    ? HavokCompressedMeshGenerator_hk2014.BuildCompressedMeshShape(verts, indices, triangleMaterials, (uint)MaterialId)
+                    : HavokShapeGenerator_hk2014.BuildExternMeshShape(verts, indices);
+                action = HavokShapeGenerator_hk2014.CreateReplaceMeshShapeAction(fileWrapper, root, shape);
             }
         }
 

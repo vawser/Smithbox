@@ -1,9 +1,10 @@
-﻿using System;
+#nullable disable
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace Havok.Builders;
 
 public static class HavokShapeGenerator_Shared
 {

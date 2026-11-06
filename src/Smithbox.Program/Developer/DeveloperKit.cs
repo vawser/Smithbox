@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018;
-using HKLib.Serialization.hk2018.Binary;
+using Havok.hk2018;
 using SoulsFormats;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -597,8 +596,6 @@ public class DeveloperKit
 
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
             // Get compendium
             byte[] compendiumFileBytes = null;
 
@@ -614,11 +611,10 @@ public class DeveloperKit
                 }
             }
 
-            if (compendiumFileBytes != null)
-            {
-                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
-                serializer.LoadCompendium(memoryStream);
-            }
+            // HKLib's default 2018 registry was ER's, so the ER profile
+            var compendium = compendiumFileBytes != null
+                ? Havok.Files.HavokFile.ReadCompendium(compendiumFileBytes, Havok.HavokProfile.ER)
+                : null;
 
             foreach (var file in packedBinder.Files)
             {
@@ -635,17 +631,16 @@ public class DeveloperKit
                     fileBytes = file.Bytes.ToArray();
                 }
 
-                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
                 {
                     hkRootLevelContainer fileHkx;
 
                     try
                     {
-                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        fileHkx = (hkRootLevelContainer)Havok.Files.HavokFile.Read(fileBytes, Havok.HavokProfile.ER, compendium).Root;
 
                         MapCollisionBank[entry][file.Name] = fileHkx;
                     }
-                    catch (InvalidDataException ex)
+                    catch (Exception ex)
                     {
                         Smithbox.LogError(this, "", ex);
                     }
@@ -718,8 +713,6 @@ public class DeveloperKit
 
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-
             // Get compendium
             byte[] compendiumFileBytes = null;
 
@@ -735,11 +728,10 @@ public class DeveloperKit
                 }
             }
 
-            if (compendiumFileBytes != null)
-            {
-                using MemoryStream memoryStream = new MemoryStream(compendiumFileBytes);
-                serializer.LoadCompendium(memoryStream);
-            }
+            // HKLib's default 2018 registry was ER's, so the ER profile
+            var compendium = compendiumFileBytes != null
+                ? Havok.Files.HavokFile.ReadCompendium(compendiumFileBytes, Havok.HavokProfile.ER)
+                : null;
 
             foreach (var file in packedBinder.Files)
             {
@@ -757,17 +749,16 @@ public class DeveloperKit
                     fileBytes = file.Bytes.ToArray();
                 }
 
-                using (MemoryStream memoryStream = new MemoryStream(fileBytes))
                 {
                     hkRootLevelContainer fileHkx;
 
                     try
                     {
-                        fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        fileHkx = (hkRootLevelContainer)Havok.Files.HavokFile.Read(fileBytes, Havok.HavokProfile.ER, compendium).Root;
 
                         MapCollisionBank[fileEntry][internalFilePath] = fileHkx;
                     }
-                    catch (InvalidDataException ex)
+                    catch (Exception ex)
                     {
                         Smithbox.LogError(this, "", ex);
                     }

@@ -1,4 +1,4 @@
-using HKLib.hk2019;
+using Havok.hk2019;
 using SoulsFormats;
 
 // The Havok 2019 (AC6) compressed meshes, with the values the builder fills
@@ -9,6 +9,8 @@ static class Ac6
         var counts = new Dictionary<string, Dictionary<string, int>>();
         void Count(string k, object v) { if (!counts.TryGetValue(k, out var d)) counts[k] = d = new(); var s = v?.ToString() ?? "null"; d[s] = d.GetValueOrDefault(s) + 1; }
 
+        var unifiedCompendium = compendium == null ? null : Havok.Files.HavokFile.ReadCompendium(compendium, Havok.HavokProfile.AC6);
+
         foreach (var file in bxf.Files.Where(f => f.Name.Contains(".hkx")))
         {
             var bytes = file.Bytes.ToArray();
@@ -16,9 +18,7 @@ static class Ac6
             hkRootLevelContainer root;
             try
             {
-                var serializer = new HKLib.Serialization.hk2019.Binary.HavokBinarySerializer();
-                if (compendium != null) serializer.LoadCompendium(new MemoryStream(compendium));
-                root = (hkRootLevelContainer)serializer.Read(new MemoryStream(bytes));
+                root = (hkRootLevelContainer)Havok.Files.HavokFile.Read(bytes, Havok.HavokProfile.AC6, unifiedCompendium).Root;
             }
             catch (Exception e) { Count("read failed", e.Message.Substring(0, Math.Min(60, e.Message.Length))); continue; }
 

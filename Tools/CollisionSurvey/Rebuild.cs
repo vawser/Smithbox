@@ -1,4 +1,5 @@
-using HKLib.hk2018;
+using Havok.hk2018;
+using Havok.Builders;
 using StudioCore.Editors.HavokEditor;
 using System.Numerics;
 
@@ -63,7 +64,7 @@ static class Rebuild
         return (vertices, indices, materials);
     }
 
-    public static Vector3 Vertex(hknpCompressedMeshShapeTree tree, HKLib.hk2018.hkcdStaticMeshTree.Section section, byte index)
+    public static Vector3 Vertex(hknpCompressedMeshShapeTree tree, Havok.hk2018.hkcdStaticMeshTree.Section section, byte index)
     {
         if (index < section.m_numPackedVertices)
         {
@@ -85,7 +86,7 @@ static class Rebuild
         int triangleCount = indices.Count / 3;
 
         var build = HavokCompressedMeshBuilder.Build(vertices, indices, materials);
-        var shape = roundTrip(HavokCompressedMeshGenerator_HKX3.ToShape(build));
+        var shape = roundTrip(Havok.hk2018.Builders.CollisionShapeBuilder.ToShape(build));
 
         var data = (hknpCompressedMeshShapeData)shape.m_data;
         var tree = data.m_meshTree;

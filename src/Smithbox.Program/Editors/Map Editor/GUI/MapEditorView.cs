@@ -104,7 +104,6 @@ public class MapEditorView : IEditorView
     public AssetBrowserTool AssetBrowserTool;
     public DisplayGroupTool DisplayGroupTool;
     public PrefabTool PrefabTool;
-    public NavmeshBuilderTool NavmeshBuilderTool;
     public LocalSearchTool LocalSearchView;
     public GlobalSearchTool GlobalSearchTool;
     public WorldMapTool WorldMapTool;
@@ -205,7 +204,6 @@ public class MapEditorView : IEditorView
             "Double-click an asset to switch the selected map objects to it.",
             e => ModelBrowserTool.ApplyMapAssetSelection(e.ID, FileSelectionType.Asset));
         PrefabTool = new PrefabTool(this, project);
-        NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
         EntityIdentifierTool = new EntityIdentifierTool(this, project);
         GridTool = new ViewportGridTool(ViewportGridEditor.Map, GetCurrentViewport);
         RenderingTool = new ViewportRenderingTool(GetCurrentViewport);
