@@ -193,6 +193,10 @@
       "Text": "Can't insert into {0}: the binder has no existing file to copy the folder and flags from."
     },
     {
+      "Key": "HAVOK_FileView_ContextAction_Loose_File",
+      "Text": "{0} is a loose file, not a binder, so it has no files to paste, delete, rename, insert or compress."
+    },
+    {
       "Key": "HAVOK_FileView_ContextAction_Used_Unsaved_Changes_Log",
       "Text": "Used the unsaved changes of {0}"
     },

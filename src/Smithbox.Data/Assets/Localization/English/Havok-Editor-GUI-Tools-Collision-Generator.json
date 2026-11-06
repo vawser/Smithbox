@@ -17,6 +17,10 @@
       "Text": "This tool is only for Map or Asset Collision category files."
     },
     {
+      "Key": "HAVOK_CollisionGen_Unsupported_Game",
+      "Text": "The Collision Generator builds collision for Dark Souls III, Elden Ring, Nightreign, Armored Core VI and The Duskbloods only."
+    },
+    {
       "Key": "HAVOK_CollisionGen_No_Collision_Selected",
       "Text": "No collision has been selected yet."
     },

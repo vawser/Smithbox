@@ -7,26 +7,29 @@ public class HavokPropertyCache
     public HavokPropertyCache() { }
 
     /// <summary>
-    /// The game whose files are shown. An SDK's generated classes hold every game's fields (ER, NR and DB_NT share
-    /// hk2018), so fields the game's registry doesn't give a class are left out. Null keeps every field.
+    /// The profile of the file being shown, as it was read (DeS 5.1 files in a DeS project read as DES_51, ER's 2016
+    /// files as SDT). An SDK's generated classes hold every variant's fields (ER, NR and DB_NT share hk2018; DeS 5.5
+    /// and 5.1 share hk55), so fields that profile's registry doesn't give a class are left out. Null keeps every field.
     /// </summary>
-    public Havok.HavokProfile Profile { get; set; }
+    public Func<Havok.HavokProfile> ProfileSource { get; set; }
 
-    public readonly Dictionary<string, FieldInfo[]> FieldCache = new();
+    private readonly Dictionary<(Havok.HavokProfile Profile, Type Type), FieldInfo[]> FieldCache = new();
 
     public FieldInfo[] GetCachedHavokFields(Type type)
     {
-        if (!FieldCache.TryGetValue(type.FullName, out FieldInfo[] fields))
+        var profile = ProfileSource?.Invoke();
+
+        if (!FieldCache.TryGetValue((profile, type), out FieldInfo[] fields))
         {
             fields = type.GetFields(BindingFlags.Instance | BindingFlags.Public);
             fields = fields.OrderBy(f => f.MetadataToken).ToArray();
 
-            if (Profile != null && type.Namespace?.StartsWith("Havok.hk", StringComparison.Ordinal) == true)
+            if (profile != null && type.Namespace?.StartsWith("Havok.hk", StringComparison.Ordinal) == true)
             {
-                fields = fields.Where(f => Havok.Files.HavokFile.HasField(Profile, type, f.Name)).ToArray();
+                fields = fields.Where(f => Havok.Files.HavokFile.HasField(profile, type, f.Name)).ToArray();
             }
 
-            FieldCache.Add(type.FullName, fields);
+            FieldCache.Add((profile, type), fields);
         }
 
         return fields;

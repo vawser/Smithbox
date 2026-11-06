@@ -50,29 +50,41 @@ public class HavokField
 public static class HavokMetaHelper
 {
     /// <summary>
-    /// The descriptions of a class, from the meta folder of the SDK its class set belongs to: hk2014 for
+    /// The descriptions of a class, from the meta folders of the SDK its class set belongs to (see GetMetaFolders): hk2014 for
     /// Havok.hk2014 (DS3), hk2018 for the tagfile SDKs (2016, 2018 and 2019 classes are named alike, so they share
     /// them; fields only one SDK has have none). Null if there are none.
     /// </summary>
     public static HavokClass GetMeta(ProjectEntry project, Type rootType)
     {
-        var folder = GetMetaFolder(rootType);
+        var key = NormalizeName(GetRelativeName(rootType));
 
-        if (folder == null || !project.Handler.CommonData.HavokMeta.TryGetValue(folder, out var metaSet))
-            return null;
+        // The first folder that describes the class
+        foreach (var folder in GetMetaFolders(rootType))
+        {
+            if (!project.Handler.CommonData.HavokMeta.TryGetValue(folder, out var metaSet))
+                continue;
 
-        var index = MetaIndexes.GetValue(metaSet, BuildIndex);
+            if (MetaIndexes.GetValue(metaSet, BuildIndex).TryGetValue(key, out var meta))
+                return meta;
+        }
 
-        return index.GetValueOrDefault(NormalizeName(GetRelativeName(rootType)));
+        return null;
     }
 
-    private static string GetMetaFolder(Type type)
+    /// <summary>
+    /// The meta folders for a class set, in order. The classes of every SDK are named alike, so SDKs without a folder
+    /// of their own share one: the tagfile SDKs (2015, 2016, 2019) hk2018's, the older packfile SDKs (hk2010, Havok
+    /// 5.5) hk2014's, each falling back to the other.
+    /// </summary>
+    private static string[] GetMetaFolders(Type type)
     {
         return type.Namespace?.Split('.') switch
         {
-            ["Havok", "hk2014", ..] => "hk2014",
-            ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => "hk2018",
-            _ => null
+            ["Havok", "hk2014", ..] => ["hk2014"],
+            ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => ["hk2018"],
+            ["Havok", "hk2015", ..] => ["hk2018", "hk2014"],
+            ["Havok", "hk2010" or "hk55", ..] => ["hk2014", "hk2018"],
+            _ => []
         };
     }
 
@@ -87,7 +99,7 @@ public static class HavokMetaHelper
         if (fullName.Contains('`'))
             fullName = fullName.Split('`')[0];
 
-        foreach (var prefix in new[] { "Havok.hk2014.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
+        foreach (var prefix in new[] { "Havok.hk55.", "Havok.hk2010.", "Havok.hk2014.", "Havok.hk2015.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
         {
             if (fullName.StartsWith(prefix, StringComparison.Ordinal))
                 return fullName[prefix.Length..];

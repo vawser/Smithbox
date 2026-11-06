@@ -45,7 +45,11 @@ public class CollisionGeneratorTool
         {
             ImGui.BeginChild("CollisionGeneratorSection", ImGuiChildFlags.Borders);
 
-            if (View.Selection.BinderFileEntry == null)
+            if (!SupportsGame)
+            {
+                GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_Unsupported_Game"));
+            }
+            else if (View.Selection.BinderFileEntry == null)
             {
                 GUI.WrappedText(LOC.Get("HAVOK_CollisionGen_No_Binder_Entry"));
             }
@@ -451,6 +455,13 @@ public class CollisionGeneratorTool
     /// Compressed meshes are built for DS3 (hk2014) and the 2018/2019 games. Older games (DS1, DS1R, BB) use the
     /// older hkp physics, so only get extern meshes.
     /// </summary>
+    /// <summary>
+    /// The games the generators are built for: DS3 (hk2014 hknp) and the 2018/2019 games. The others (DeS, DS1, DS1R
+    /// with hkp physics; BB, DS2S and SDT, whose shapes it was never checked against) open in the editor without it.
+    /// </summary>
+    private bool SupportsGame => Project.Descriptor.ProjectType is ProjectType.DS3
+        || HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019;
+
     private bool SupportsCompressedMesh => HavokTypeUtils.GetSdk(Project) is Havok.HavokSdk.Hk2018 or Havok.HavokSdk.Hk2019
         || Project.Descriptor.ProjectType is ProjectType.DS3;
 

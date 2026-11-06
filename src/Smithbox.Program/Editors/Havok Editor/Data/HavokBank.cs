@@ -411,6 +411,21 @@ public class HavokBank : IDisposable
     /// </summary>
     private IBinder ReadContainer(FileDictionaryEntry fileEntry, bool isCombined)
     {
+        // DS1 and DeS keep map collision as loose .hkx files: held as a container of one file, which is the file
+        if (IsLooseFile(fileEntry))
+        {
+            var fileData = ReadFileData(fileEntry.Path);
+
+            if (fileData == null)
+                return null;
+
+            var loose = new BND4();
+            loose.Files.Add(new BinderFile(Binder.FileFlags.Flag1, 0, Path.GetFileName(fileEntry.Path), fileData.Value));
+
+            return loose;
+        }
+
+        // The binder versions are told apart by their headers (BND3/BXF3 for DeS, DS1 and DS1R, BND4/BXF4 for the rest)
         if (isCombined)
         {
             var bhdData = ReadFileData(fileEntry.Path);
@@ -419,7 +434,7 @@ public class HavokBank : IDisposable
             if (bhdData == null || bdtData == null)
                 return null;
 
-            if (HavokTypeUtils.IsBXF3(Project))
+            if (BXF3.IsBHD(bhdData.Value))
             {
                 return BXF3.Read(bhdData.Value, bdtData.Value);
             }
@@ -432,12 +447,22 @@ public class HavokBank : IDisposable
         if (binderData == null)
             return null;
 
-        if (HavokTypeUtils.IsBND3(Project))
+        if (BND3.Is(binderData.Value.ToArray()))
         {
             return BND3.Read(binderData.Value);
         }
 
         return BND4.Read(binderData.Value);
+    }
+
+    /// <summary>
+    /// Whether the entry is a loose Havok file rather than a binder (DS1 and DeS map collision)
+    /// </summary>
+    public static bool IsLooseFile(FileDictionaryEntry fileEntry)
+    {
+        return fileEntry != null &&
+            (fileEntry.Path.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase) ||
+             fileEntry.Path.EndsWith(".hkx.dcx", StringComparison.OrdinalIgnoreCase));
     }
 
     /// <summary>
@@ -447,6 +472,13 @@ public class HavokBank : IDisposable
     {
         byte[] bhdBytes;
         byte[] bdtBytes;
+
+        // A loose file is written as itself
+        if (IsLooseFile(fileEntry))
+        {
+            Project.VFS.ProjectFS.WriteFile(fileEntry.Path, binder.Files[0].Bytes.ToArray());
+            return;
+        }
 
         switch (binder)
         {
@@ -526,6 +558,13 @@ public class HavokBank : IDisposable
     /// </summary>
     private HavokBinderAction CreateBinderAction(HavokFileView.FileAction fileAction, bool isCombined, Func<IBinder, bool> modify)
     {
+        // A loose file has no file list to change
+        if (IsLooseFile(fileAction.BinderEntry))
+        {
+            Smithbox.LogError(this, LOC.Get("HAVOK_FileView_ContextAction_Loose_File", fileAction.BinderEntry.Filename));
+            return null;
+        }
+
         IBinder binder;
 
         try
@@ -1369,13 +1408,17 @@ public class HavokBank : IDisposable
         {
             return DCX.Type.DCX_DFLT_10000_24_9;
         }
-        else if (Project.Descriptor.ProjectType is ProjectType.DS3)
+        else if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
         else if (Project.Descriptor.ProjectType is ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_11000_44_9;
+        }
+        else if (Project.Descriptor.ProjectType is ProjectType.DES)
+        {
+            return DCX.Type.DCX_EDGE;
         }
 
         return FallbackDCXType;

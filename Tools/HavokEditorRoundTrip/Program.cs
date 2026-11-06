@@ -19,7 +19,7 @@ var gamePaths = File.ReadAllLines(Path.Combine("..", "..", "game_data.txt"))
     .Select(l => l.Split(':', 2)).Where(p => p.Length == 2)
     .ToDictionary(p => p[0].Trim(), p => p[1].Trim().Trim('"').Trim());
 
-string[] all = ["ER", "NR", "AC6", "DB_NT", "DS3", "SDT"];
+string[] all = ["ER", "NR", "AC6", "DB_NT", "DS3", "SDT", "BB", "DS2S", "DS1", "DS1R", "DES"];
 var games = args.Length > 0 && args[0] != "ALL" ? [args[0]] : all;
 int perCategory = args.Length > 1 ? int.Parse(args[1]) : 12;
 int perContainer = args.Length > 2 ? int.Parse(args[2]) : 8;
@@ -32,11 +32,13 @@ string report = args.Length > 3 ? args[3] : Path.Combine("..", "..", "Documentat
     ("Animation", @"(?i)\.anibnd(\.dcx)?$", true),
     ("Behavior", @"(?i)\.behbnd(\.dcx)?$", false),
     ("Character", @"(?i)\.chrbnd(\.dcx)?$", false),
-    ("Map collision", @"(?i)/map/.*\.hkxbhd$", true),
-    ("Asset collision", @"(?i)(/obj/.*\.objbnd|/asset/.*\.geomhkxbnd)(\.dcx)?$", false),
+    ("Map collision", @"(?i)/(model/)?map/.*\.hkxbhd$", true),
+    // DS1 and DeS: loose files
+    ("Map collision (loose)", @"(?i)/map/.*\.hkx(\.dcx)?$", false),
+    ("Asset collision", @"(?i)(/obj/.*\.objbnd|/asset/.*\.geomhkxbnd|/model/obj/.*\.bnd)(\.dcx)?$", false),
     ("Navmesh", @"(?i)\.nvmhktbnd(\.dcx)?$", false),
     ("Cutscene", @"(?i)\.(cutscenebnd|remobnd)(\.dcx)?$", false),
-    ("Part", @"(?i)/parts/.*\.partsbnd(\.dcx)?$", false),
+    ("Part", @"(?i)(/parts/.*\.partsbnd|/model/parts/.*\.bnd)(\.dcx)?$", false),
     ("Rumble", @"(?i)\.rumblebnd(\.dcx)?$", false),
 ];
 
@@ -49,6 +51,8 @@ foreach (var folder in new[] { "hk2014", "hk2018" })
 }
 var metaHits = new ConcurrentDictionary<(string Folder, string Key), byte>();
 var metaSeenFolders = new ConcurrentDictionary<string, byte>();
+var classesSeen = new ConcurrentDictionary<(string Game, Type Type), byte>();
+var classesDescribed = new ConcurrentDictionary<(string Game, Type Type), byte>();
 
 var lines = new List<string>
 {
@@ -59,7 +63,7 @@ var lines = new List<string>
     "- **Same data:** the new read equals the old one (types and fields by name). Counted where both read.",
     "- **Saved as stored:** a save without edits gives the stored bytes back, before (old writer) → after (`HavokFile.Write`).",
     "- **Round trip:** the saved bytes read back to an equal graph, and saving that again gives the same bytes.",
-    "- **Hidden fields:** fields of the generated classes that the game's registry doesn't give the class, so the property view hides them. *Set* counts those holding a non-default value after a read, which would mean the field is in the file after all.",
+    "- **Hidden fields:** fields of the generated classes that the registry of the file's profile (the game's, or DES_51, or the SDK's own game for a stray file) doesn't give the class, so the property view hides them. *Set* counts those holding a non-default value after a read, which would mean the field is in the file after all.",
     "",
     "| Game | Category | Files | Read: old → new | Same data | Saved as stored: old → new | Round trip | Hidden fields (set) |",
     "|---|---|---|---|---|---|---|---|"
@@ -75,12 +79,16 @@ foreach (string gameName in games)
     catch { fs = new RealVirtualFileSystem(root, false); }
     var profile = HavokProfile.FromGame(gameName)!;
 
-    var containers = fs.GetFileNamesMatchingRecursive("/", @"(?i)\.(anibnd|behbnd|chrbnd|hkxbhd|objbnd|geomhkxbnd|nvmhktbnd|cutscenebnd|remobnd|partsbnd|rumblebnd)(\.dcx)?$")
+    var containers = fs.GetFileNamesMatchingRecursive("/", @"(?i)\.(anibnd|behbnd|chrbnd|hkxbhd|objbnd|geomhkxbnd|nvmhktbnd|cutscenebnd|remobnd|partsbnd|rumblebnd|bnd|hkx)(\.dcx)?$")
         .Select(p => p.Replace('\\', '/')).Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(p => p).ToList();
 
     var picked = new List<(string Category, bool OldCompendium, string Path)>();
     foreach (var (category, pattern, oldCompendium) in categories)
     {
+        // Only DS1 and DeS list loose map collision (ProjectFileLocator); AC6's unpacked copies aren't opened
+        if (category == "Map collision (loose)" && gameName is not ("DS1" or "DES"))
+            continue;
+
         // The editor skips _sd (low detail) copies
         var matching = containers.Where(p => Regex.IsMatch(p, pattern) && !p.Contains("/sd/", StringComparison.OrdinalIgnoreCase)).ToList();
         picked.AddRange(Spread(matching, perCategory).Select(p => (category, oldCompendium, p)));
@@ -96,21 +104,31 @@ foreach (string gameName in games)
         byte[] compendiumBytes;
         try
         {
-            IBinder binder;
-            if (c.Path.EndsWith("bhd", StringComparison.OrdinalIgnoreCase))
+            if (Regex.IsMatch(c.Path, @"(?i)\.hkx(\.dcx)?$"))
             {
-                var bhd = fs.ReadFileOrThrow(c.Path); var bdt = fs.ReadFileOrThrow(c.Path[..^3] + "bdt");
-                binder = BXF4.IsBHD(bhd) ? BXF4.Read(bhd, bdt) : BXF3.Read(bhd, bdt);
+                // A loose file is a container of one file, as HavokBank holds it
+                byte[] loose = TryUnpack(fs.ReadFileOrThrow(c.Path).ToArray());
+                files = loose != null && IsHavok(loose) ? [(Path.GetFileName(c.Path), loose)] : [];
+                compendiumBytes = null;
             }
             else
             {
-                byte[] bnd = Unpack(fs.ReadFileOrThrow(c.Path).ToArray());
-                binder = BND4.Is(bnd) ? BND4.Read(bnd) : BND3.Read(bnd);
+                IBinder binder;
+                if (c.Path.EndsWith("bhd", StringComparison.OrdinalIgnoreCase))
+                {
+                    var bhd = fs.ReadFileOrThrow(c.Path); var bdt = fs.ReadFileOrThrow(c.Path[..^3] + "bdt");
+                    binder = BXF4.IsBHD(bhd) ? BXF4.Read(bhd, bdt) : BXF3.Read(bhd, bdt);
+                }
+                else
+                {
+                    byte[] bnd = Unpack(fs.ReadFileOrThrow(c.Path).ToArray());
+                    binder = BND4.Is(bnd) ? BND4.Read(bnd) : BND3.Read(bnd);
+                }
+                compendiumBytes = binder.Files.FirstOrDefault(f => f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase)) is { } cf ? Unpack(cf.Bytes.ToArray()) : null;
+                files = Spread(binder.Files.Where(f => !f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase))
+                        .Select(f => (Name: Path.GetFileName(f.Name.Replace('\\', '/')), Bytes: TryUnpack(f.Bytes.ToArray())))
+                        .Where(f => f.Bytes != null && IsHavok(f.Bytes)).ToList(), perContainer);
             }
-            compendiumBytes = binder.Files.FirstOrDefault(f => f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase)) is { } cf ? Unpack(cf.Bytes.ToArray()) : null;
-            files = Spread(binder.Files.Where(f => !f.Name.Contains(".compendium", StringComparison.OrdinalIgnoreCase))
-                    .Select(f => (Name: Path.GetFileName(f.Name.Replace('\\', '/')), Bytes: TryUnpack(f.Bytes.ToArray())))
-                    .Where(f => f.Bytes != null && IsHavok(f.Bytes)).ToList(), perContainer);
         }
         catch (Exception e) { diffs.Add((c.Category, $"{c.Path}: unreadable container ({e.Message})")); return; }
 
@@ -166,18 +184,22 @@ foreach (string gameName in games)
             foreach (object obj in Walk(doc.Root))
             {
                 Type type = obj.GetType();
-                string folder = MetaFolder(type);
-                if (folder != null)
+                // The first folder that describes the class, as HavokMetaHelper.GetMeta
+                string key = Normalize(RelativeName(type));
+                classesSeen.TryAdd((gameName, type), 0);
+                foreach (string folder in MetaFolders(type))
                 {
                     metaSeenFolders.TryAdd(folder, 0);
-                    string key = Normalize(RelativeName(type));
-                    foreach (string metaKey in metaKeys[folder])
-                        if (Normalize(metaKey) == key) metaHits.TryAdd((folder, metaKey), 0);
+                    string metaKey = metaKeys[folder].FirstOrDefault(k => Normalize(k) == key);
+                    if (metaKey == null) continue;
+                    metaHits.TryAdd((folder, metaKey), 0);
+                    classesDescribed.TryAdd((gameName, type), 0);
+                    break;
                 }
 
                 foreach (FieldInfo field in Fields(type))
                 {
-                    if (HasField(profile, type, field.Name)) continue;
+                    if (HasField(doc.Profile, type, field.Name)) continue;
                     Count(c.Category, "hidden");
                     if (!IsDefault(field.GetValue(obj)))
                     {
@@ -214,6 +236,11 @@ lines.Add("");
 lines.Add("## Meta lookup");
 lines.Add("");
 lines.Add("Meta files (`Assets/HAVOK/<folder>/*.json`) whose class turned up in the sampled files, found with the editor's lookup (namespace dropped, nesting separators ignored).");
+lines.Add("");
+lines.Add("| Game | Classes in the files | With descriptions |");
+lines.Add("|---|---|---|");
+foreach (string g in games.Where(g => classesSeen.Keys.Any(k => k.Game == g)))
+    lines.Add($"| {g} | {classesSeen.Keys.Count(k => k.Game == g)} | {classesDescribed.Keys.Count(k => k.Game == g)} |");
 lines.Add("");
 lines.Add("| Folder | Meta files | Found | Not seen |");
 lines.Add("|---|---|---|---|");
@@ -264,20 +291,22 @@ static IEnumerable<FieldInfo> Fields(Type type) => type.GetFields(BindingFlags.I
 
 static bool HasField(HavokProfile profile, Type type, string field) =>
     !type.Namespace!.StartsWith("Havok.hk", StringComparison.Ordinal) ||
-    FieldPresence.Cache.GetOrAdd((profile.Game, type, field), k => HavokFile.HasField(profile, k.Type, k.Field));
+    FieldPresence.Cache.GetOrAdd((profile, type, field), k => HavokFile.HasField(profile, k.Type, k.Field));
 
-static string MetaFolder(Type type) => type.Namespace?.Split('.') switch
+static string[] MetaFolders(Type type) => type.Namespace?.Split('.') switch
 {
-    ["Havok", "hk2014", ..] => "hk2014",
-    ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => "hk2018",
-    _ => null
+    ["Havok", "hk2014", ..] => ["hk2014"],
+    ["Havok", "hk2016" or "hk2018" or "hk2019", ..] => ["hk2018"],
+    ["Havok", "hk2015", ..] => ["hk2018", "hk2014"],
+    ["Havok", "hk2010" or "hk55", ..] => ["hk2014", "hk2018"],
+    _ => []
 };
 
 static string RelativeName(Type type)
 {
     string full = type.FullName ?? type.Name;
     if (full.Contains('`')) full = full.Split('`')[0];
-    foreach (var prefix in new[] { "Havok.hk2014.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
+    foreach (var prefix in new[] { "Havok.hk55.", "Havok.hk2010.", "Havok.hk2014.", "Havok.hk2015.", "Havok.hk2016.", "Havok.hk2018.", "Havok.hk2019." })
         if (full.StartsWith(prefix, StringComparison.Ordinal)) return full[prefix.Length..];
     return full;
 }
@@ -331,7 +360,7 @@ static IEnumerable<object> Walk(object root)
 
 static class FieldPresence
 {
-    public static readonly ConcurrentDictionary<(string Game, Type Type, string Field), bool> Cache = new();
+    public static readonly ConcurrentDictionary<(HavokProfile Profile, Type Type, string Field), bool> Cache = new();
 }
 
 /// <summary>The Havok Editor's read and save before 6.3: HavokTagSerializer (HKLib) and HKX2's packfile classes.</summary>

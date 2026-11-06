@@ -2,7 +2,54 @@
 
 Part of the [Unified Havok Library Plan](Unified%20Havok%20Library%20Plan.md), Phase 6 step 3. Follows [6.2](Havok%20Phase%206.2%20Collision%20and%20Navmesh.md).
 
-Status: **6.3a implemented (2026-11-06), checked with game files; not yet checked in the app.** 6.3b (BB, DS2S, DS1, DS1R, DeS) is next.
+Status:
+- **6.3a done (2026-11-06):** checked with game files, and in the app (the user confirmed every item in the Acceptance list).
+- **6.3b implemented (2026-11-06):** checked with game files, not yet in the app. The Havok Editor now opens every game the unified library reads: all but original DS2.
+
+## 6.3b: what was done
+
+- **Turned on:** BB, DS2S, DS1, DS1R and DeS, in `EditorConditions.SupportsHavokEditor`.
+- **Binders by header:**
+  - `HavokBank.ReadContainer` tells BND3 from BND4, and BXF3 from BXF4, by the file. The per-game `IsBND3`/`IsBXF3` lists are gone; they had missed DeS.
+  - **Loose files:** DS1 and DeS map collision are loose `.hkx` files. The bank holds one as a container of one file and saves it back to its own path. File actions (paste, delete, rename, insert, compress) are refused on it with a message (`HAVOK_FileView_ContextAction_Loose_File`). Copying out of it still works.
+- **Locator:** DS1R and DeS `/obj/*.objbnd` are now listed as asset collision (`ShouldAddToHavokAssetFiles`; only DS1's were before). The general asset rule is unchanged.
+- **Compression defaults** for files that can't be read as DCX: BB `DCX_DFLT_10000_44_9` (as DS3), DeS `DCX_EDGE`. Both used to fall through to `DCX_KRAK`.
+- **Meta:** each SDK has an ordered list of meta folders, and a class takes the first that describes it.
+  - hk2015 uses hk2018 then hk2014.
+  - hk2010 and hk55 use hk2014 then hk2018.
+  - No new JSON. Very few of these games' classes have descriptions yet (DS1 2 of 64, BB 28 of 190).
+- **Collision Generator:** limited to DS3 and the 2018/2019 games (`HAVOK_CollisionGen_Unsupported_Game` elsewhere).
+  - DeS, DS1 and DS1R use hkp physics, which it doesn't build.
+  - BB, DS2S and SDT shapes were never checked against what it builds. BB, for example, would have had its compressed mesh swapped for an extern mesh.
+- **Fix to E3 found here:** fields are now hidden by the profile of the *shown file*, not the project's (`HavokPropertyCache.ProfileSource`).
+  - A DeS project holds Havok-5.5 and 5.1 files, read with `DES` and `DES_51`. Both share the hk55 classes, and 5.1 has fields 5.5 doesn't (`hkaSkeletalAnimation.numberOfTracks`, `hkaAnimationBinding.animationTrackToBoneIndices`). Under the project's profile, real 5.1 data was hidden.
+  - The same applies to ER's stray 2016 files, which are now filtered by SDT's registry instead of keeping every field.
+- **DS1R's 2015 registry, rebuilt from all 17,603 files** (now including cutscenes and rumble): all 416 types match and none are missing. The registry is unchanged.
+
+### Verified with game files (6.3b)
+
+`Tools/HavokEditorRoundTrip ALL 12 8` (now 11 games, with DS2S's `/model/*.bnd` binders and DS1/DeS loose map collision):
+
+| Game | Read | Saved as stored | Round trip | Hidden fields holding a value |
+|---|---|---|---|---|
+| BB | 365 / 365 | 337 | 365 / 365 | — |
+| DS2S | 133 / 133 | 133 | 133 / 133 | — |
+| DS1 | 172 / 172 | 172 | 172 / 172 | — |
+| DS1R | 217 / 217 | 216 | 217 / 217 | — |
+| DeS | 162 / 163 | 162 | 162 / 162 | 0 of 251 |
+
+- The one DeS file that doesn't read is `c9900.hkx` (Havok-4.5, out of scope since Phase 0). The editor logs a read failure for it.
+- The 6.3a games are unchanged from the table below.
+- The tool's own field cache had keyed profiles by game name, so `DES` and `DES_51` collided. It now keys by profile.
+
+### To check in the app (6.3b)
+
+1. **BB:** open a character (`chrbnd`) and an animation; edit, save, reopen. Open a map collision `hkxbhd`.
+2. **DS2S:** open a map collision (`/model/map/*.hkxbhd`) and an object `.bnd`; save one.
+3. **DS1:** open a loose map collision `.hkx` under Map Collision; edit, save. It's written to the project at the same path, and the Map Editor still draws it. Paste/delete/rename on it give the "loose file" message.
+4. **DS1R:** open an animation (BND3) and a map collision (BXF3); save one. Object collision `objbnd`s are listed under Asset Collision.
+5. **DeS:** open an animation from a 5.1 file and one from a 5.5 file; both show their fields (5.1 binding's track-to-bone indices included). Open a loose map collision. `c9900.chrbnd`'s `c9900.hkx` logs a read error rather than crashing.
+6. **Collision Generator** in a BB or DS1 project shows the "not supported" message; in ER and DS3 it works as before.
 
 ## 6.3a: what was done
 
