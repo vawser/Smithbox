@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -40,14 +41,17 @@ public class CollisionEditorTool
     private Hit Drag;
     private float DragHeight;
     private Vector3 DragGrabOffset;
-    private List<(int Vertex, float Weight)> DragFalloff;
+    private List<MoveSet> DragMoves;
 
-    private DebugPrimitiveRenderableProxy CursorMesh;
+    // The cursor is drawn with the detection spheres (radius 1) and the vertex marker with the placement orb's sphere
+    // (radius 0.1): these are uploaded at startup, while a sphere made when it is first needed can be drawn before
+    // its geometry is, and its proxy doesn't try again
+    private DebugPrimitiveRenderableProxy CursorWire;
+    private DebugPrimitiveRenderableProxy CursorFill;
     private DebugPrimitiveRenderableProxy VertexMesh;
 
-    // The placement orb's sphere, which is already uploaded: a sphere made when it is first needed can be drawn
-    // before its geometry is, and its proxy doesn't try again
     private const float SphereRadius = 0.1f;
+    private const float MaxVertexMarkerSize = 0.1f;
 
     // Collision meshes replaced by a commit, freed a few frames later so nothing draws from them when they go
     private const int ReleaseDelayFrames = 10;
@@ -55,6 +59,9 @@ public class CollisionEditorTool
     private int Frame;
 
     private record Hit(CollisionEditorFile File, CollisionEditorBody Body, int Triangle, int Vertex, Vector3 Point, float Distance);
+
+    /// <summary>The vertices of one body that an edit moves, with how much of the move each takes.</summary>
+    private record MoveSet(CollisionEditorFile File, CollisionEditorBody Body, List<(int Vertex, float Weight)> Falloff);
 
     public CollisionEditorTool(MapEditorView view, ProjectEntry project)
     {
@@ -116,6 +123,8 @@ public class CollisionEditorTool
             "collisionEditorDiscard", LOC.Get("MAP_CollisionEditor_Discard"), LOC.Get("MAP_CollisionEditor_Discard_TT"),
             DiscardChanges, HasEdits);
 
+        DisplayLayerOptions();
+
         // Step
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Step_Header"), LOC.Get("MAP_CollisionEditor_Step_Header_TT"));
@@ -143,6 +152,14 @@ public class CollisionEditorTool
             CFG.Current.MapEditor_CollisionEditor_Cursor_Size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Cursor_Size);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Size_Input_TT"));
 
+        // Cursor Opacity
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat("##collisionEditorCursorOpacity", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha, 0f, 100f, "%.0f%%");
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Input_TT"));
+
         // Controls
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"));
@@ -154,6 +171,100 @@ public class CollisionEditorTool
         DisplayStatus();
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Which collision layer the cursor edits, and whether the other layer follows.
+    /// </summary>
+    private void DisplayLayerOptions()
+    {
+        var bank = View.HavokCollisionBank;
+        var layer = CFG.Current.MapEditor_CollisionEditor_Layer;
+
+        // Layer
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Layer_Header"), LOC.Get("MAP_CollisionEditor_Layer_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##collisionEditorLayer", LOC.Get(layer.GetDisplayName())))
+        {
+            foreach (var type in bank.GetSupportedCollisionTypes())
+            {
+                if (ImGui.Selectable($"{LOC.Get(type.GetDisplayName())}##collisionEditorLayer{type}", type == layer))
+                {
+                    CFG.Current.MapEditor_CollisionEditor_Layer = type;
+
+                    // The cursor and drag belong to the layer they were on
+                    Drag = null;
+                    Hover = null;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Layer_Input_TT"));
+
+        if (!bank.IsCollisionTypeVisible(layer))
+        {
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Layer_Hidden", LOC.Get(layer.GetDisplayName())));
+
+            if (ImGui.Button($"{LOC.Get("MAP_CollisionEditor_Layer_Display", LOC.Get(layer.GetDisplayName()))}##collisionEditorLayerDisplay"))
+            {
+                bank.ToggleCollisionType(layer);
+            }
+            GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Layer_Display_TT"));
+        }
+
+        // Linked Layers
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Link_Header"), LOC.Get("MAP_CollisionEditor_Link_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Link_Toggle")}##collisionEditorLink", ref CFG.Current.MapEditor_CollisionEditor_Link_Layers);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Link_Toggle_TT"));
+
+        if (GetLinkedLayer(layer) is not { } linked)
+        {
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Link_None", LOC.Get(layer.GetDisplayName())));
+            return;
+        }
+
+        if (!CFG.Current.MapEditor_CollisionEditor_Link_Layers)
+            return;
+
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Link_Follows", LOC.Get(linked.GetDisplayName()), LOC.Get(layer.GetDisplayName())));
+
+        // Link Distance
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Link_Distance_Header"), LOC.Get("MAP_CollisionEditor_Link_Distance_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.InputFloat("##collisionEditorLinkDistance", ref CFG.Current.MapEditor_CollisionEditor_Link_Distance))
+            CFG.Current.MapEditor_CollisionEditor_Link_Distance = Math.Max(0f, CFG.Current.MapEditor_CollisionEditor_Link_Distance);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Link_Distance_Input_TT"));
+    }
+
+    /// <summary>
+    /// The layer that follows edits to a layer: high and low are the same ground at two levels of detail. Fall
+    /// protection is a barrier of its own, so it isn't linked.
+    /// </summary>
+    private static HavokCollisionType? GetLinkedLayer(HavokCollisionType layer)
+    {
+        return layer switch
+        {
+            HavokCollisionType.High => HavokCollisionType.Low,
+            HavokCollisionType.Low => HavokCollisionType.High,
+            _ => null
+        };
+    }
+
+    private static char GetLayerLetter(HavokCollisionType layer)
+    {
+        return layer switch
+        {
+            HavokCollisionType.High => 'h',
+            HavokCollisionType.FallProtection => 'f',
+            _ => 'l'
+        };
     }
 
     /// <summary>
@@ -183,6 +294,16 @@ public class CollisionEditorTool
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_File", hit.File.FileName, hit.File.Entity.Name));
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Vertex", hit.Vertex,
                 $"{position.X:0.###}, {position.Y:0.###}, {position.Z:0.###}"));
+
+            if (CFG.Current.MapEditor_CollisionEditor_Link_Layers && GetLinkedLayer(hit.File.Type) != null)
+            {
+                var linkedName = GetLinkedFileName(hit.File.FileName);
+                var linked = linkedName != null && Files.ContainsKey(linkedName) ? linkedName : null;
+
+                GUI.WrappedText(linked != null
+                    ? LOC.Get("MAP_CollisionEditor_Cursor_Linked", linked)
+                    : LOC.Get("MAP_CollisionEditor_Cursor_Linked_None"));
+            }
         }
         else
         {
@@ -304,6 +425,10 @@ public class CollisionEditorTool
         {
             Hover = canInteract && collisionShown ? RayCast(ray) : null;
 
+            // Decoded ahead of the first edit, so the status can say what follows
+            if (Hover != null)
+                GetLinkedFile(Hover.File);
+
             if (keysFree && Hover != null && InputManager.IsPressed(KeybindID.MapEditor_CollisionEditor_Drag))
             {
                 BeginDrag(Hover, ray);
@@ -331,13 +456,95 @@ public class CollisionEditorTool
     /// </summary>
     private void Raise(Hit target, float amount)
     {
-        var falloff = Drag != null ? DragFalloff : target.Body.GetFalloff(target.Vertex, CFG.Current.MapEditor_CollisionEditor_Radius);
+        var moves = Drag != null ? DragMoves : GetMoves(target);
 
-        MoveWorld(target, falloff, new Vector3(0, amount, 0));
+        foreach (var move in moves)
+            MoveWorld(move, new Vector3(0, amount, 0));
 
         // The drag plane follows the vertex, so dragging after raising doesn't pull it back down
         if (Drag != null)
             DragHeight += amount;
+    }
+
+    /// <summary>
+    /// The vertices an edit of the target moves: the target and those within the radius of it, then, with linked
+    /// layers, the vertices of the other layer of the same part near the target.
+    /// </summary>
+    private List<MoveSet> GetMoves(Hit target)
+    {
+        var radius = CFG.Current.MapEditor_CollisionEditor_Radius;
+        var moves = new List<MoveSet> { new(target.File, target.Body, target.Body.GetFalloff(target.Vertex, radius)) };
+
+        var linked = GetLinkedFile(target.File);
+
+        if (linked == null)
+            return moves;
+
+        var point = Vector3.Transform(target.Body.Vertices[target.Vertex], GetBodyWorld(target.File, target.Body));
+
+        foreach (var body in linked.Bodies)
+        {
+            if (!Matrix4x4.Invert(GetBodyWorld(linked, body), out var inverse))
+                continue;
+
+            var falloff = body.GetLinkedFalloff(Vector3.Transform(point, inverse),
+                CFG.Current.MapEditor_CollisionEditor_Link_Distance, radius);
+
+            if (falloff.Count > 0)
+                moves.Add(new MoveSet(linked, body, falloff));
+        }
+
+        return moves;
+    }
+
+    /// <summary>
+    /// The other layer of the same part's collision (high for low, low for high), decoded if it hasn't been.
+    /// Null with linking off, for fall protection, or if the part has no such file that can be edited.
+    /// </summary>
+    private CollisionEditorFile GetLinkedFile(CollisionEditorFile file)
+    {
+        if (!CFG.Current.MapEditor_CollisionEditor_Link_Layers || GetLinkedLayer(file.Type) == null)
+            return null;
+
+        var linkedName = GetLinkedFileName(file.FileName);
+
+        if (linkedName == null || Unsupported.Contains(linkedName))
+            return null;
+
+        if (!Files.TryGetValue(linkedName, out var linked))
+            linked = DecodeFile(file.Entity, linkedName);
+
+        // A file is edited through the part it was first found on
+        return linked?.Entity == file.Entity ? linked : null;
+    }
+
+    /// <summary>
+    /// The file of the other layer: h10_00_00_00_002400.hkx.dcx for l10_00_00_00_002400.hkx.dcx, and back. Null if
+    /// the map doesn't have it.
+    /// </summary>
+    private string GetLinkedFileName(string fileName)
+    {
+        var letter = char.ToLowerInvariant(fileName[0]) switch
+        {
+            'h' => 'l',
+            'l' => 'h',
+            _ => '\0'
+        };
+
+        if (letter == '\0')
+            return null;
+
+        var candidate = letter + fileName.Substring(1);
+
+        foreach (var names in View.HavokCollisionBank.MapCollisions.Values)
+        {
+            var match = names.FirstOrDefault(n => string.Equals(n, candidate, StringComparison.OrdinalIgnoreCase));
+
+            if (match != null)
+                return match;
+        }
+
+        return null;
     }
 
     private void BeginDrag(Hit hit, Ray ray)
@@ -347,7 +554,7 @@ public class CollisionEditorTool
 
         Drag = hit;
         DragHeight = position.Y;
-        DragFalloff = hit.Body.GetFalloff(hit.Vertex, CFG.Current.MapEditor_CollisionEditor_Radius);
+        DragMoves = GetMoves(hit);
 
         // Keeps the vertex where it is relative to the mouse, so it doesn't jump to it
         DragGrabOffset = IntersectHeight(ray, DragHeight, out var point) ? position - point : Vector3.Zero;
@@ -369,7 +576,9 @@ public class CollisionEditorTool
         if (Vector3.DistanceSquared(current, target) < 1e-10f)
             return;
 
-        MoveWorld(Drag, DragFalloff, target - current);
+        // The linked layer takes the same move as the dragged vertex, so it stays under it
+        foreach (var move in DragMoves)
+            MoveWorld(move, target - current);
     }
 
     private static bool IntersectHeight(Ray ray, float height, out Vector3 point)
@@ -389,12 +598,12 @@ public class CollisionEditorTool
     }
 
     /// <summary>Moves vertices by an offset in the world, which is turned into the space of their shape.</summary>
-    private void MoveWorld(Hit target, List<(int Vertex, float Weight)> falloff, Vector3 offset)
+    private static void MoveWorld(MoveSet move, Vector3 offset)
     {
-        if (!Matrix4x4.Invert(GetBodyWorld(target.File, target.Body), out var inverse))
+        if (!Matrix4x4.Invert(GetBodyWorld(move.File, move.Body), out var inverse))
             return;
 
-        target.Body.Move(falloff, Vector3.TransformNormal(offset, inverse));
+        move.Body.Move(move.Falloff, Vector3.TransformNormal(offset, inverse));
     }
 
     private static Matrix4x4 GetBodyWorld(CollisionEditorFile file, CollisionEditorBody body)
@@ -409,6 +618,7 @@ public class CollisionEditorTool
     private Hit RayCast(Ray ray)
     {
         Hit nearest = null;
+        var layerLetter = GetLayerLetter(CFG.Current.MapEditor_CollisionEditor_Layer);
 
         foreach (var entity in GetCollisionParts())
         {
@@ -422,6 +632,10 @@ public class CollisionEditorTool
                 var fileName = ResolveFileName(entity.MapID, proxy.ResourceHandle?.Name);
 
                 if (fileName == null || Unsupported.Contains(fileName))
+                    continue;
+
+                // Only the edited layer is hit: the layers lie on top of each other, so the nearest would flicker
+                if (char.ToLowerInvariant(fileName[0]) != layerLetter)
                     continue;
 
                 if (!Files.TryGetValue(fileName, out var file))
@@ -645,7 +859,8 @@ public class CollisionEditorTool
 
             var world = file.Entity.GetWorldMatrix();
             var color = GetPreviewColor(file.Type);
-            var visible = file.Entity.EditorVisible;
+            // A linked layer is edited while it isn't displayed, so its preview follows its display too
+            var visible = file.Entity.EditorVisible && View.HavokCollisionBank.IsCollisionTypeVisible(file.Type);
 
             var ready = true;
 
@@ -693,50 +908,74 @@ public class CollisionEditorTool
 
         if (target == null)
         {
-            if (CursorMesh != null)
-                CursorMesh.Visible = false;
-
-            if (VertexMesh != null)
-                VertexMesh.Visible = false;
+            SetVisible(CursorWire, false);
+            SetVisible(CursorFill, false);
+            SetVisible(VertexMesh, false);
 
             return;
         }
 
-        CursorMesh ??= CreateSphereProxy(scene, CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
-        VertexMesh ??= CreateSphereProxy(scene, CFG.Current.MapEditor_CollisionEditor_Vertex_Color);
+        var cursorColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
 
-        var size = CFG.Current.MapEditor_CollisionEditor_Cursor_Size / SphereRadius;
+        // A wireframe over a translucent fill, so the collision under a large cursor can still be seen
+        CursorWire ??= RenderableHelper.GetDetectionSphereProxy(scene, cursorColor);
+        CursorFill ??= RenderableHelper.GetDetectionSphereFillProxy(scene, cursorColor);
+
+        VertexMesh ??= new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, RenderableHelper._placementOrb)
+        {
+            Pickable = false,
+            RenderOverlay = true,
+            BaseColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
+            HighlightedColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
+        };
+
+        // Follows the option as it is changed
+        var fill = ColorHelper.GetTransparencyColor(cursorColor, CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha);
+
+        if (CursorFill.BaseColor != fill)
+        {
+            CursorFill.BaseColor = fill;
+            CursorFill.HighlightedColor = fill;
+        }
+
+        var size = CFG.Current.MapEditor_CollisionEditor_Cursor_Size;
         var vertex = Vector3.Transform(target.Body.Vertices[target.Vertex], GetBodyWorld(target.File, target.Body));
 
         // While dragging, the cursor stays on the vertex it holds
         var cursor = Drag != null ? vertex : target.Point;
+        var cursorWorld = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(cursor);
 
-        CursorMesh.World = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(cursor);
-        VertexMesh.World = Matrix4x4.CreateScale(size * 0.6f) * Matrix4x4.CreateTranslation(vertex);
+        // The marker stays small with a large cursor, so it doesn't hide the vertices around it
+        var markerSize = MathF.Min(size * 0.6f, MaxVertexMarkerSize);
 
-        CursorMesh.Visible = true;
-        VertexMesh.Visible = true;
+        CursorWire.World = cursorWorld;
+        CursorFill.World = cursorWorld;
+        VertexMesh.World = Matrix4x4.CreateScale(markerSize / SphereRadius) * Matrix4x4.CreateTranslation(vertex);
+
+        SetVisible(CursorWire, true);
+        SetVisible(CursorFill, true);
+        SetVisible(VertexMesh, true);
     }
 
-    private static DebugPrimitiveRenderableProxy CreateSphereProxy(RenderScene scene, Vector3 color)
+    private static Color ToColor(Vector3 color)
     {
-        var fill = Color.FromArgb(255, (int)color.X, (int)color.Y, (int)color.Z);
+        return Color.FromArgb(255, (int)color.X, (int)color.Y, (int)color.Z);
+    }
 
-        return new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, RenderableHelper._placementOrb)
-        {
-            Pickable = false,
-            RenderOverlay = true,
-            BaseColor = fill,
-            HighlightedColor = fill
-        };
+    private static void SetVisible(DebugPrimitiveRenderableProxy proxy, bool visible)
+    {
+        if (proxy != null && proxy.Visible != visible)
+            proxy.Visible = visible;
     }
 
     private void DisposeCursor()
     {
-        CursorMesh?.Dispose();
+        CursorWire?.Dispose();
+        CursorFill?.Dispose();
         VertexMesh?.Dispose();
 
-        CursorMesh = null;
+        CursorWire = null;
+        CursorFill = null;
         VertexMesh = null;
     }
 

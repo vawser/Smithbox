@@ -61,6 +61,74 @@
       "Text": "Puts every moved vertex back where it was."
     },
     {
+      "Key": "MAP_CollisionEditor_Layer_Header",
+      "Text": "Layer"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Layer_Header_TT",
+      "Text": "The collision layer the cursor edits. Only this layer is hit, as the layers lie on top of each other."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Layer_Input_TT",
+      "Text": "High and low collision are the same ground at two levels of detail. Fall protection is a barrier of its own."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Layer_Hidden",
+      "Text": "{0} collision isn't displayed, so the cursor can't be placed on it."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Layer_Display",
+      "Text": "Display {0} Collision"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Layer_Display_TT",
+      "Text": "Displays this collision layer for every collision part."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Header",
+      "Text": "Linked Layers"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Header_TT",
+      "Text": "Whether the other layer of a part follows the edits, so high and low collision stay on the same ground."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Toggle",
+      "Text": "Link High and Low"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Toggle_TT",
+      "Text": "Moves the vertices of the other layer near the edited vertex by the same amount, and commits both files. The layers don't share vertices, and don't always cover the same ground, so only vertices within the link distance follow. Works whether or not the other layer is displayed."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_None",
+      "Text": "{0} collision isn't linked to another layer."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Follows",
+      "Text": "{0} collision follows edits to {1} collision."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Distance_Header",
+      "Text": "Link Distance"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Distance_Header_TT",
+      "Text": "How close the other layer's vertices must be to the edited vertex to follow it fully. Past it, the radius fades them out."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Link_Distance_Input_TT",
+      "Text": "The distance in world units. In Stormveil, 94% of low vertices lie within 0.5 of the high collision; larger distances may pull in nearby surfaces that aren't the same ground."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Cursor_Linked",
+      "Text": "Linked: {0}"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Cursor_Linked_None",
+      "Text": "Linked: none (this part has no other layer that can be edited)"
+    },
+    {
       "Key": "MAP_CollisionEditor_Step_Header",
       "Text": "Step"
     },
@@ -95,6 +163,18 @@
     {
       "Key": "MAP_CollisionEditor_Cursor_Size_Input_TT",
       "Text": "The radius in world units."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Cursor_Opacity_Header",
+      "Text": "Cursor Opacity"
+    },
+    {
+      "Key": "MAP_CollisionEditor_Cursor_Opacity_Header_TT",
+      "Text": "How solid the fill inside the cursor's wireframe is. Lower lets the collision under a large cursor show through."
+    },
+    {
+      "Key": "MAP_CollisionEditor_Cursor_Opacity_Input_TT",
+      "Text": "0% leaves the wireframe alone; 100% fills the cursor solid."
     },
     {
       "Key": "MAP_CollisionEditor_Controls_Header",

@@ -202,6 +202,44 @@ public sealed class CollisionEditorBody
         return result;
     }
 
+    /// <summary>
+    /// The vertices of another layer that follow an edit at a point, in the space of this shape. Those within the
+    /// link distance follow fully, as the layers' surfaces only lie that close where they are the same ground; past it,
+    /// the radius fades them out as it does for the edited layer. Empty if nothing is that close, as the layers don't
+    /// cover the same ground everywhere.
+    /// </summary>
+    public List<(int Vertex, float Weight)> GetLinkedFalloff(Vector3 point, float linkDistance, float radius)
+    {
+        var result = new List<(int, float)>();
+        var reach = linkDistance + Math.Max(0f, radius);
+
+        if (reach <= 0)
+            return result;
+
+        var reachSquared = reach * reach;
+
+        for (var v = 0; v < Vertices.Length; v++)
+        {
+            var d = Vector3.DistanceSquared(Vertices[v], point);
+
+            if (d >= reachSquared)
+                continue;
+
+            d = MathF.Sqrt(d);
+
+            if (d <= linkDistance)
+            {
+                result.Add((v, 1f));
+                continue;
+            }
+
+            var x = 1f - (d - linkDistance) / radius;
+            result.Add((v, x * x * (3f - 2f * x)));
+        }
+
+        return result;
+    }
+
     /// <summary>Moves vertices by an offset in the space of the shape, scaled by their weights.</summary>
     public void Move(List<(int Vertex, float Weight)> vertices, Vector3 offset)
     {

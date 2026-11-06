@@ -9,13 +9,15 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
   `fsnpCustomParamCompressedMeshShape` (hk2018 / hk2019), which the shared `CollisionShapeBuilder` rebuilds.
   SDT holds its collision (`TagContainers`) but has no collision save path; DS3/BB map collision isn't held at all.
 - **Shapes**: bodies whose shape is a FromSoftware compressed mesh. Other bodies of the file are kept as they are.
-- **Types**: every displayed collision type (high, low, fall protection) can be edited. Each file is edited on its own.
+- **Types**: high, low and fall protection can be edited, one layer at a time (see Layers).
 
 ## Workflow
 
 1. **Start Collision Edit** turns on the cursor. **Stop Collision Edit** turns it off; pending edits are kept.
-2. The cursor is a sphere that sits where the mouse ray hits the nearest displayed collision. The vertex of the hit
-   triangle nearest the hit point is the target, marked by a second, smaller sphere.
+2. The cursor is a sphere that sits where the mouse ray hits the edited layer: a wireframe over a translucent fill
+   (Cursor Opacity, default 20%), so the collision under a large cursor stays visible. Both are depth tested. The
+   vertex of the hit triangle nearest the hit point is the target, marked by a small solid sphere drawn over
+   everything, at most 0.1 across so it doesn't hide the vertices around it.
 3. Keys, while the mouse is over the viewport and no mouse button is held (so the camera's Q/E flight still works):
    - **Q** raises the target vertex by the step, **E** lowers it. Held, they repeat.
    - **G** held drags the target vertex across the horizontal plane at its height, following the mouse.
@@ -25,6 +27,27 @@ A Map Editor tool (Tools window) for reshaping existing map collision by moving 
    puts them in the document as an undoable action (marking the map's collision as modified), writes the collision
    binder into the project, and refreshes the displayed mesh.
 6. **Discard Changes** drops the pending edits.
+
+## Layers
+
+High and low collision are the same ground at two levels of detail; fall protection is a barrier of its own.
+
+- **Edited layer**: the cursor only hits the chosen layer (`MapEditor_CollisionEditor_Layer`, default Low). The layers
+  lie on top of each other, so hitting the nearest of them would switch between them from frame to frame.
+- **Linked layers** (`MapEditor_CollisionEditor_Link_Layers`, on by default): an edit of high also moves low, and the
+  other way round, then Commit rebuilds and writes both files. Fall protection isn't linked. The linked file is decoded
+  whether or not its layer is displayed; its preview only shows while it is.
+- **Which vertices follow**: those of the other layer within the link distance (default 0.5) of the edited vertex
+  follow fully; past it, the radius fades them out as it does on the edited layer. Each takes the same world move as
+  the edited vertex, including while dragging.
+
+### Survey (`CollisionSurvey ER m10_00_00_00 400 link`, 107 Stormveil models with both layers)
+
+- Low vertices are rarely high vertices: 4.6% are exactly the same position. Linking has to go by distance.
+- Where the layers are the same ground they lie close: of low vertices, 59% are within 0.01 of the high surface,
+  90% within 0.25, 94% within 0.5, 96% within 1.
+- They don't cover the same ground everywhere: in h/l 002400, 68% of low vertices have no high surface within 8;
+  in 009700, most of high has no low within 8. So vertices with nothing close don't follow at all.
 
 ## Design
 

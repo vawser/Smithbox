@@ -88,7 +88,7 @@ static class Link
         foreach (var file in bxf.Files.Where(f => f.Name.Contains(".hkx.dcx") && filter.IsMatch(f.Name)))
         {
             var name = Path.GetFileName(file.Name);
-            var model = name.Substring(name.IndexOf('_', 4) + 1).Replace(".hkx.dcx", "");
+            var model = name.Replace(".hkx.dcx", "").Substring(name.LastIndexOf('_') + 1);
 
             try
             {

@@ -353,8 +353,12 @@ public class CFG
     public float MapEditor_CollisionEditor_Step = 0.25f;
     public float MapEditor_CollisionEditor_Radius = 0f;
     public float MapEditor_CollisionEditor_Cursor_Size = 0.15f;
+    public float MapEditor_CollisionEditor_Cursor_Fill_Alpha = 20f;
     public Vector3 MapEditor_CollisionEditor_Cursor_Color = new Vector3(0, 200, 255);
     public Vector3 MapEditor_CollisionEditor_Vertex_Color = new Vector3(255, 220, 0);
+    public HavokCollisionType MapEditor_CollisionEditor_Layer = HavokCollisionType.Low;
+    public bool MapEditor_CollisionEditor_Link_Layers = true;
+    public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_NavVolume = false;
     public bool MapEditor_BasicFilter_SpeedTree = true;
