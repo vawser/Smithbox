@@ -366,7 +366,7 @@ public partial class NavigationTool
 
         foreach (var (name, file) in VertexFiles)
         {
-            if (!ReferenceEquals(Bank.GetNavmeshDocument(name), file.File.Document))
+            if (!ReferenceEquals(Bank.GetNavmeshDocument(VertexMap, name), file.File.Document))
                 (stale ??= new()).Add(name);
         }
 

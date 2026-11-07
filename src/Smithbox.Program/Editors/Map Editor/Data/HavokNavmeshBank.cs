@@ -19,10 +19,11 @@ public class HavokNavmeshBank
     public Dictionary<string, NVA_ER> NavVolumeFiles = new();
 
     /// <summary>
-    /// ER, NR and AC6 navmeshes, read by the unified Havok library, keyed by name (n30_00_00_00_000100). The Map Editor
-    /// edits these and SaveHavokNavmeshModels writes them back.
+    /// ER, NR and AC6 navmeshes, read by the unified Havok library, keyed by their map and name (m30_00_00_00,
+    /// n30_00_00_00_000100). The Map Editor edits these and SaveHavokNavmeshModels writes them back. The map is part
+    /// of the key because names repeat across maps: an open world _10 tile can name its files after its _00 tile.
     /// </summary>
-    public Dictionary<string, Havok.HavokDocument> Documents = new();
+    private readonly Dictionary<(string Map, string Name), Havok.HavokDocument> Documents = new();
 
     /// <summary>
     /// The loaded ER, NR or AC6 maps whose navmeshes haven't been read yet
@@ -69,20 +70,21 @@ public class HavokNavmeshBank
     }
 
     /// <summary>
-    /// Gets an ER, NR or AC6 navmesh, e.g. n30_00_00_00_000100, reading the navmeshes of its map the first time
-    /// one of them is asked for. Null if the navmesh isn't in a loaded map.
+    /// Gets an ER, NR or AC6 navmesh of a map, e.g. n30_00_00_00_000100 of m30_00_00_00, reading the map's navmeshes
+    /// the first time one of them is asked for. Null if the map isn't loaded or has no such file.
     /// </summary>
-    public Havok.HavokDocument GetDocument(string name)
+    public Havok.HavokDocument GetDocument(string mapId, string name)
     {
-        // Navmeshes are named after their map, e.g. n30_00_00_00_000100 is in m30_00_00_00
-        foreach (var mapId in UnreadMaps.Where(m => name.AsSpan(1).StartsWith(m.AsSpan(1))).ToList())
-        {
-            UnreadMaps.Remove(mapId);
-            ReadHavokNavmeshModels(mapId);
-        }
+        if (mapId == null || name == null)
+            return null;
 
-        return Documents.GetValueOrDefault(name);
+        GetMapNavmeshNames(mapId);
+
+        return Documents.GetValueOrDefault((mapId, name));
     }
+
+    /// <summary>Whether a document is a current navmesh file of a loaded map.</summary>
+    public bool HasDocument(Havok.HavokDocument document) => Documents.ContainsValue(document);
 
     /// <summary>
     /// The names of an ER, NR or AC6 map's navmesh files, reading them the first time they are asked for.
@@ -121,13 +123,13 @@ public class HavokNavmeshBank
 
         if (document == null)
         {
-            Documents.Remove(name);
+            Documents.Remove((mapId, name));
             names.Remove(name);
             removed.Add(name);
             return;
         }
 
-        Documents[name] = document;
+        Documents[(mapId, name)] = document;
         removed.Remove(name);
 
         if (!names.Contains(name))
@@ -143,7 +145,7 @@ public class HavokNavmeshBank
         {
             foreach (var name in navmeshNames)
             {
-                Documents.Remove(name);
+                Documents.Remove((mapId, name));
             }
         }
 
@@ -222,7 +224,7 @@ public class HavokNavmeshBank
 
                 for (int i = 0; i < files.Count; i++)
                 {
-                    var added = documents[i] != null && Documents.TryAdd(files[i].Name, documents[i]);
+                    var added = documents[i] != null && Documents.TryAdd((mapId, files[i].Name), documents[i]);
 
                     if (added)
                         navmeshNames.Add(files[i].Name);
@@ -240,11 +242,12 @@ public class HavokNavmeshBank
     }
 
     /// <summary>
-    /// Writes a loaded navmesh file in the form it was read, compressed like the stored file. Null if the file isn't loaded.
+    /// Writes a loaded navmesh file of a map in the form it was read, compressed like the stored file. Null if the
+    /// file isn't loaded.
     /// </summary>
-    private byte[] WriteNavmeshFile(string name, Memory<byte> stored)
+    private byte[] WriteNavmeshFile(string mapId, string name, Memory<byte> stored)
     {
-        if (!Documents.TryGetValue(name, out var document))
+        if (!Documents.TryGetValue((mapId, name), out var document))
             return null;
 
         var bytes = Havok.Files.HavokFile.Write(document);
@@ -311,7 +314,7 @@ public class HavokNavmeshBank
                     try
                     {
                         // Only re-serialize entries we actually have loaded (and presumably edited)
-                        var fileBytes = WriteNavmeshFile(name, file.Bytes);
+                        var fileBytes = WriteNavmeshFile(mapId, name, file.Bytes);
                         if (fileBytes == null)
                             continue;
 
@@ -340,7 +343,7 @@ public class HavokNavmeshBank
                     {
                         try
                         {
-                            binder.Files.Add(NewBinderFile(binder, name, WriteNavmeshFile(name, Memory<byte>.Empty)));
+                            binder.Files.Add(NewBinderFile(binder, name, WriteNavmeshFile(mapId, name, Memory<byte>.Empty)));
                             anyWritten = true;
                         }
                         catch (Exception ex)

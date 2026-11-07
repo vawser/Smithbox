@@ -270,6 +270,33 @@ public sealed class NavigationMap
         return quarter != null ? QuarterName(nameBase, entry.ModelID, quarter.Value) : MeshName(nameBase, SetOf(entry), entry.ModelID);
     }
 
+    /// <summary>
+    /// The entry of an NVA entry's model in a set: the entry itself when it is in that set (a quarter stays a quarter),
+    /// else its mirror in the other half (NameID 2,000,000,000 apart), or the first whole entry of that set with its
+    /// ModelID when there is no mirror (quarters, or entries off the NameID rule). Null if the model has none.
+    /// </summary>
+    public static NVA_ER.Navmesh EntryInSet(NVA_ER nva, NVA_ER.Navmesh entry, NavmeshSet set)
+    {
+        if (SetOf(entry) == set)
+            return entry;
+
+        var navmeshes = nva?.Navmeshes;
+
+        if (navmeshes == null)
+            return null;
+
+        if (QuarterOf(entry) == null)
+        {
+            uint mirrorId = set == NavmeshSet.O ? (uint)entry.NameID + 2_000_000_000u : (uint)entry.NameID - 2_000_000_000u;
+            var mirror = navmeshes.FirstOrDefault(e => (uint)e.NameID == mirrorId && e.ModelID == entry.ModelID);
+
+            if (mirror != null)
+                return mirror;
+        }
+
+        return navmeshes.FirstOrDefault(e => e.ModelID == entry.ModelID && SetOf(e) == set && QuarterOf(e) == null);
+    }
+
     /// <summary>The map UID of the NVA (its Entries11), which the NVC files repeat.</summary>
     public uint? MapUid => Nva?.Entries11?.Count > 0 ? (uint)Nva.Entries11[0].Unk00 : null;
 

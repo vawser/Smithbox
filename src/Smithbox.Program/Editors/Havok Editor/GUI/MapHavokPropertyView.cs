@@ -143,6 +143,13 @@ public class MapHavokPropertyView
             return;
         }
 
+        // ER: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
+        if (ent.WrappedObject is NVA_ER.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER)
+        {
+            NavmeshPropEditorER(erEntry);
+            return;
+        }
+
         var value = prop.GetValue(ent.WrappedObject);
 
         if (value == null)
@@ -178,7 +185,7 @@ public class MapHavokPropertyView
             fullName = $"o{mapID.Replace("m", "")}_{modelID}";
         }
 
-        IRootContainer curNavmesh = View.HavokNavmeshBank.GetDocument(fullName)?.Root as IRootContainer;
+        IRootContainer curNavmesh = View.HavokNavmeshBank.GetDocument(_editedMap?.Name ?? mapID, fullName)?.Root as IRootContainer;
 
         if (curNavmesh != null)
         {
@@ -190,6 +197,48 @@ public class MapHavokPropertyView
         {
             GUI.WrappedText("No navmesh file for this model name of this type.");
         }
+    }
+
+    /// <summary>
+    /// The n or o file of an ER NVA entry's model, chosen by the N/O toggle. A quarter entry shows its q file in N;
+    /// an o entry shows its model's n file in N, and an n or quarter entry its model's o file in O.
+    /// </summary>
+    private void NavmeshPropEditorER(NVA_ER.Navmesh entry)
+    {
+        if (_editedMap == null)
+            return;
+
+        var mapName = _editedMap.Name;
+        var nva = _editedMap.NavmeshParent?.WrappedObject as NVA_ER;
+        var set = NavmeshEditType is MapNavmeshEditType.O ? NavmeshSet.O : NavmeshSet.N;
+        var target = NavigationMap.EntryInSet(nva, entry, set);
+
+        if (target == null)
+        {
+            GUI.WrappedText($"This navmesh entry's model has no {(set == NavmeshSet.O ? "o" : "n")} entry.");
+            return;
+        }
+
+        // Looked up in this map: a _10 tile named after its _00 tile has files of the same names as that tile
+        var fullName = NavigationMap.FileNameFromEntry(mapName, target);
+        var curNavmesh = View.HavokNavmeshBank.GetDocument(mapName, fullName)?.Root as IRootContainer;
+
+        if (curNavmesh == null)
+        {
+            GUI.WrappedText($"No navmesh file {fullName} for this entry.");
+            return;
+        }
+
+        GUI.SimpleHeader($"{fullName}", "");
+
+        // An n file split into quarters is empty, and its faces are in the q files, which have entries of their own
+        if (set == NavmeshSet.N && NavigationMap.QuarterOf(target) == null && nva != null
+            && nva.Navmeshes.Any(e => e.ModelID == target.ModelID && NavigationMap.QuarterOf(e) != null))
+        {
+            GUI.WrappedText("This model's n mesh is split into quarters (q files). Select a quarter entry to edit one.");
+        }
+
+        HavokPropEdit(curNavmesh);
     }
 
     public void HavokPropEdit(IRootContainer root)

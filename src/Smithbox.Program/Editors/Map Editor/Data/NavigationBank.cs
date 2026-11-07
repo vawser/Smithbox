@@ -54,7 +54,7 @@ public class NavigationBank
 
         foreach (var name in NavmeshBank.GetMapNavmeshNames(map.Name))
         {
-            var document = NavmeshBank.GetDocument(name);
+            var document = NavmeshBank.GetDocument(map.Name, name);
 
             if (document == null)
                 continue;
@@ -191,8 +191,10 @@ public class NavigationBank
         }
     }
 
-    /// <summary>The navmesh bank's current document of a file, or null if it has none (e.g. its map was unloaded).</summary>
-    public Havok.HavokDocument GetNavmeshDocument(string name) => NavmeshBank.GetDocument(name);
+    /// <summary>
+    /// The navmesh bank's current document of a map's file, or null if it has none (e.g. the map was unloaded).
+    /// </summary>
+    public Havok.HavokDocument GetNavmeshDocument(MapContainer map, string name) => NavmeshBank.GetDocument(map?.Name, name);
 
     /// <summary>
     /// Puts a navmesh document in a map's navmesh files under a name, in place of the one it has, or as a new file;
@@ -301,7 +303,7 @@ public class NavigationBank
         }
 
         // Documents of the unloaded map are released by the navmesh bank
-        foreach (var document in FileCache.Keys.Where(d => d.Objects.Count == 0 || !NavmeshBank.Documents.ContainsValue(d)).ToList())
+        foreach (var document in FileCache.Keys.Where(d => d.Objects.Count == 0 || !NavmeshBank.HasDocument(d)).ToList())
             FileCache.Remove(document);
     }
 }

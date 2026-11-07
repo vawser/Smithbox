@@ -305,8 +305,27 @@ NavSurvey `names` checks it on every map:
 - all 4,564 entries with faces find their file, with the same face count.
 
 AC6 keeps the old naming.
-Still to do: the Havok property view's N/O toggle (`MapHavokPropertyView`) builds names from the map and ModelID, so it can't
-reach `q` files or `_10` tiles named after `_00`.
+
+**Fixed 2026-11-07: the Havok property view's N/O toggle** (`MapHavokPropertyView`) built names from the selected map and
+the ModelID, so it couldn't reach `q` files or `_10` tiles named after `_00`. For ER it now uses
+`NavigationMap.EntryInSet`, which finds the model's entry in the toggled set (the entry itself, its mirror 2·10⁹ apart, or
+the first whole entry with its ModelID), then `FileNameFromEntry`. So:
+- N on a quarter entry shows its `q` file; O on it shows the model's `o` file;
+- N on an o entry shows the model's `n` file, and the reverse;
+- an `n` file split into quarters says so and points to the quarter entries;
+- it uses the entity's own map rather than the selected map.
+
+Other games keep the old naming. Not checked in the app.
+
+**Fixed 2026-11-07: navmesh documents are kept per map.** `HavokNavmeshBank` kept its documents by file name alone, but
+a `_10` tile named after its `_00` tile has files of the same names. With both loaded, the second map's files were never
+added, and that map's save wrote the *first* map's documents into its binder. Documents are now keyed by (map, name):
+- `GetDocument(mapId, name)` reads the map's files first, then looks in that map only;
+- `SetDocument`, unloading and saving work on the map's own keys;
+- `NavigationBank.GetMap` / `GetNavmeshDocument(map, name)`, the vertex edit's stale check and the property view pass the map;
+- `Documents` is private; `HasDocument` replaces the outside `ContainsValue` check.
+
+The viewport's own drawing was already per map (`map/{mapid}/nav/{model}.hkx`). Not checked in the app.
 
 **For the user to check in the app** (Havok loading on):
 1. `m10_01_00_00`: Navigation → View → Show overlay.
