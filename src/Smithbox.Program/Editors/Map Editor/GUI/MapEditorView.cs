@@ -40,6 +40,7 @@ public class MapEditorView : IEditorView
     public EdgeBank EdgeBank => Project.Handler.MapData.EdgeBank;
     public WallBank WallBank => Project.Handler.MapData.WallBank;
     public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
+    public NavigationBank NavigationBank => Project.Handler.MapData.NavigationBank;
     public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
     public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;
     public AssetConfigurationBank AssetConfigurationBank => Project.Handler.MapData.AssetConfigurationBank;
@@ -123,6 +124,7 @@ public class MapEditorView : IEditorView
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
     public CollisionEditorTool CollisionEditorTool;
+    public NavigationTool NavigationTool;
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
@@ -221,6 +223,7 @@ public class MapEditorView : IEditorView
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
         CollisionEditorTool = new CollisionEditorTool(this, project);
+        NavigationTool = new NavigationTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);

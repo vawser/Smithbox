@@ -84,6 +84,25 @@ public class HavokNavmeshBank
         return Documents.GetValueOrDefault(name);
     }
 
+    /// <summary>
+    /// The names of an ER, NR or AC6 map's navmesh files, reading them the first time they are asked for.
+    /// Empty if the map isn't loaded or Havok loading is skipped.
+    /// </summary>
+    public IReadOnlyList<string> GetMapNavmeshNames(string mapId)
+    {
+        if (UnreadMaps.Remove(mapId))
+        {
+            ReadHavokNavmeshModels(mapId);
+        }
+
+        return MapNavmeshes.TryGetValue(mapId, out var names) ? names : Array.Empty<string>();
+    }
+
+    /// <summary>
+    /// Whether a map's navmesh files can be read: it is loaded with Havok, or they have been read already.
+    /// </summary>
+    public bool HasMapNavmeshes(string mapId) => UnreadMaps.Contains(mapId) || MapNavmeshes.ContainsKey(mapId);
+
     public void OnUnloadMap(string mapId)
     {
         UnreadMaps.Remove(mapId);

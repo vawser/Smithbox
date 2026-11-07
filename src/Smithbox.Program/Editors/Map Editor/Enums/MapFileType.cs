@@ -46,5 +46,15 @@ public enum MapFileType
     /// <summary>
     /// The FVB files of a map, its fog volumes (AC6, ER, NR)
     /// </summary>
-    FVB = 1 << 13
+    FVB = 1 << 13,
+
+    /// <summary>
+    /// The NVC files that connect a map's navmeshes to its neighbours' (ER)
+    /// </summary>
+    NVC = 1 << 14,
+
+    /// <summary>
+    /// The ONAV file of a map, its occlusion graph (ER)
+    /// </summary>
+    ONAV = 1 << 15
 }

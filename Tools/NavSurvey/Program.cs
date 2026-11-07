@@ -75,3 +75,7 @@ if (mode == "dump")
 if (mode == "roundtrip")
     RoundTrip.Run(paths.Select(p => (p.Replace(".dcx", ""), fs.ReadFile(p))).Where(x => x.Item2 != null).Select(x => (x.Item1, DCX.Decompress(x.Item2.Value.ToArray(), out DCX.Type _))));
 if (mode == "check") RoundTrip.Check(fs, paths);
+if (mode == "mapnav") MapNav.Run(fs, dict, args);
+if (mode == "navrows") MapNavRows.Run(fs, args[1]);
+if (mode == "validate") Validate.Run(fs, dict, args);
+if (mode == "navvalues") MapNavValues.Run(fs, dict, args[1], int.Parse(args[2]));

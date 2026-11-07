@@ -511,6 +511,8 @@ public class MapUniverse : IUniverse
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
                 View.WallBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
+                View.NavigationBank.OnUnloadMap(curMapID, Project.Handler.MapData.PrimaryBank.Maps.Values
+                    .Where(w => w.MapContainer != null).Select(w => w.MapContainer.Name));
                 View.IrradianceVolumeBank.OnUnloadMap(curMapID);
 
                 if (wrapper != null)
@@ -729,6 +731,13 @@ public class MapUniverse : IUniverse
         {
             SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
             SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
+        }
+
+        // The NVC and ONAV files are only read for ER, by the navigation bank
+        if (Project.Descriptor.ProjectType is ProjectType.ER)
+        {
+            SaveFile(map, MapFileType.NVC, () => View.NavigationBank.SaveNVC(map));
+            SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
         }
 
         // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)

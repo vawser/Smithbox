@@ -43,6 +43,7 @@ public class MapData : IDisposable
     public EdgeBank EdgeBank;
     public WallBank WallBank;
     public HavokNavmeshBank HavokNavmeshBank;
+    public NavigationBank NavigationBank;
     public AutoInvadeBank AutoInvadeBank;
     public MultiPlayerWallBank MultiPlayerWallBank;
     public FogVolumeBank FogVolumeBank;
@@ -94,6 +95,7 @@ public class MapData : IDisposable
         EdgeBank = new EdgeBank(Project);
         WallBank = new WallBank(Project);
         HavokNavmeshBank = new HavokNavmeshBank(Project);
+        NavigationBank = new NavigationBank(Project);
         AutoInvadeBank = new AutoInvadeBank(Project);
         MultiPlayerWallBank = new MultiPlayerWallBank(Project);
         FogVolumeBank = new FogVolumeBank(Project);

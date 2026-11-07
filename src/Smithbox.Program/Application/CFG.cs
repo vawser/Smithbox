@@ -546,6 +546,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_WallPaint = true;
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
+    public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_DestructionGeneration = true;
     public bool Interface_MapEditor_Tool_LoadList = true;
     public bool Interface_MapEditor_Tool_EntryFileList = true;
