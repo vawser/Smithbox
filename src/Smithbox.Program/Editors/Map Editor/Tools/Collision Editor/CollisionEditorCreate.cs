@@ -68,6 +68,15 @@ public class CollisionEditorCreate
     // Whether the inputs make any triangles, as of the last time they changed
     private bool GeometryValid;
 
+    // What an overwrite of a used model number does to each of its files, worked out when it is asked for and shown
+    // in the confirm
+    private sealed record OverwriteFile(string Type, string FileName, bool Exists);
+
+    private sealed record OverwritePlan(string MapId, string Number, List<OverwriteFile> Files, int PartCount, string Problem);
+
+    private OverwritePlan PendingOverwrite;
+    private bool OpenOverwriteConfirm;
+
     private const float MinShapeSize = 0.01f;
     private const int MinCircleSegments = 3;
     private const int MinSemiCircleSegments = 2;
@@ -176,14 +185,20 @@ public class CollisionEditorCreate
         }
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputText("##collisionCreateModel", ref ModelNumber, 6);
+        // The size is ImGui's buffer size, which includes the null terminator, so 6 digits need 7
+        ImGui.InputText("##collisionCreateModel", ref ModelNumber, 7, ImGuiInputTextFlags.CharsDecimal);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Model_Input_TT"));
 
-        var modelProblem = GetModelProblem(map, ModelNumber);
+        var modelProblem = GetModelProblem(ModelNumber);
+        var modelUsed = modelProblem == null && GetUsedModelNumbers(map).Contains(int.Parse(ModelNumber));
 
         if (modelProblem != null)
         {
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, modelProblem);
+        }
+        else if (modelUsed)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Model_Used", ModelNumber));
         }
 
         DisplayPreview();
@@ -194,9 +209,21 @@ public class CollisionEditorCreate
 
         var canCreate = modelProblem == null && GeometryValid;
 
-        GUI.ConditionalMultiButtonInput("collisionCreateActions",
-            "collisionCreateButton", LOC.Get("MAP_CollisionEditor_Create_Action"), LOC.Get("MAP_CollisionEditor_Create_Action_TT"),
-            () => Create(map), canCreate);
+        // A used number overwrites that collision's mesh, once confirmed
+        if (modelUsed)
+        {
+            GUI.ConditionalMultiButtonInput("collisionCreateActions",
+                "collisionOverwriteButton", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Action"), LOC.Get("MAP_CollisionEditor_Create_Overwrite_Action_TT"),
+                () => BeginOverwrite(map), canCreate);
+        }
+        else
+        {
+            GUI.ConditionalMultiButtonInput("collisionCreateActions",
+                "collisionCreateButton", LOC.Get("MAP_CollisionEditor_Create_Action"), LOC.Get("MAP_CollisionEditor_Create_Action_TT"),
+                () => Create(map), canCreate);
+        }
+
+        DisplayOverwriteConfirm(map);
     }
 
     private void DisplayParameters()
@@ -639,14 +666,13 @@ public class CollisionEditorCreate
         return used;
     }
 
-    /// <summary>Why the model number can't be used, or null if it can.</summary>
-    private string GetModelProblem(MapContainer map, string number)
+    /// <summary>
+    /// Why the model number can't be used, or null if it can. A number the map already uses is fine: it is overwritten.
+    /// </summary>
+    private static string GetModelProblem(string number)
     {
         if (number.Length != 6 || !number.All(char.IsDigit))
             return LOC.Get("MAP_CollisionEditor_Create_Model_Invalid");
-
-        if (GetUsedModelNumbers(map).Contains(int.Parse(number)))
-            return LOC.Get("MAP_CollisionEditor_Create_Model_Used", number);
 
         return null;
     }
@@ -732,6 +758,284 @@ public class CollisionEditorCreate
 
         ModelNumberMap = null;
     }
+
+    #endregion
+
+    #region Overwrite
+
+    /// <summary>
+    /// Works out what overwriting the typed model number does, then opens the confirm. Reading a file's document can
+    /// read its whole binder, so it is done here rather than every frame.
+    /// </summary>
+    private void BeginOverwrite(MapContainer map)
+    {
+        PendingOverwrite = BuildOverwritePlan(map, ModelNumber);
+        OpenOverwriteConfirm = true;
+    }
+
+    /// <summary>
+    /// The files of a model number in the map's h and l binders, which of them exist (their meshes are replaced) and
+    /// which don't (they are made, as Create makes them), and the collision parts already placing the model.
+    /// </summary>
+    private OverwritePlan BuildOverwritePlan(MapContainer map, string number)
+    {
+        var mapId = map.Name;
+        var bank = View.HavokCollisionBank;
+        var files = new List<OverwriteFile>();
+        string problem = null;
+
+        foreach (var type in new[] { "h", "l" }.Where(t => bank.HasCollisionBinder(mapId, t)))
+        {
+            var fileName = GetFileName(type, mapId, number);
+            var exists = bank.HasMapCollision(mapId, fileName);
+
+            files.Add(new OverwriteFile(type, fileName, exists));
+
+            if (!exists || problem != null)
+                continue;
+
+            if (Tool.HasPendingEdits(fileName))
+            {
+                problem = LOC.Get("MAP_CollisionEditor_Create_Overwrite_Pending_Edits", fileName);
+            }
+            else if (bank.GetEditableDocument(fileName) is not { } document || CollisionEditorShapes.GetTemplateBody(document) == null)
+            {
+                problem = LOC.Get("MAP_CollisionEditor_Create_Overwrite_Unsupported", fileName);
+            }
+        }
+
+        var modelName = $"h{number}";
+        var partCount = map.Objects.OfType<MsbEntity>()
+            .Where(EntityHelper.IsPartCollision)
+            .Count(e => string.Equals(e.GetPropertyValue("ModelName") as string, modelName, StringComparison.OrdinalIgnoreCase));
+
+        return new OverwritePlan(mapId, number, files, partCount, problem);
+    }
+
+    /// <summary>
+    /// The overwrite confirm: what happens to each file and to the parts, and why it can't go ahead if it can't.
+    /// </summary>
+    private void DisplayOverwriteConfirm(MapContainer map)
+    {
+        var title = $"{LOC.Get("MAP_CollisionEditor_Create_Overwrite_Title")}##collisionCreateOverwriteConfirm";
+
+        if (OpenOverwriteConfirm)
+        {
+            ImGui.OpenPopup(title);
+            OpenOverwriteConfirm = false;
+        }
+
+        var plan = PendingOverwrite;
+        var open = true;
+
+        ImGui.SetNextWindowSize(new Vector2(480, 0) * DPI.UIScale(), ImGuiCond.Always);
+
+        if (!ImGui.BeginPopupModal(title, ref open, ImGuiWindowFlags.AlwaysAutoResize))
+            return;
+
+        // The confirm is for the map and number it was opened for
+        var stale = plan == null || plan.MapId != map.Name || plan.Number != ModelNumber;
+
+        if (stale)
+        {
+            ImGui.CloseCurrentPopup();
+            ImGui.EndPopup();
+            return;
+        }
+
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Overwrite_Text", $"h{plan.Number}"));
+
+        foreach (var file in plan.Files)
+        {
+            GUI.WrappedText(LOC.Get(file.Exists
+                ? "MAP_CollisionEditor_Create_Overwrite_File_Replaced"
+                : "MAP_CollisionEditor_Create_Overwrite_File_Created", file.FileName));
+        }
+
+        GUI.WrappedText(plan.PartCount > 0
+            ? LOC.Get("MAP_CollisionEditor_Create_Overwrite_Parts_Kept", plan.PartCount)
+            : LOC.Get("MAP_CollisionEditor_Create_Overwrite_Part_Added"));
+
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Overwrite_Undo"));
+
+        if (plan.Problem != null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, plan.Problem);
+        }
+
+        var confirmed = false;
+        var cancelled = false;
+
+        GUI.ConditionalMultiButtonInput("collisionOverwriteConfirmActions",
+            "collisionOverwriteConfirm", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Confirm"), LOC.Get("MAP_CollisionEditor_Create_Overwrite_Confirm_TT"),
+            () => confirmed = true, plan.Problem == null && GeometryValid,
+
+            "collisionOverwriteCancel", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Cancel"), LOC.Get("MAP_CollisionEditor_Create_Overwrite_Cancel_TT"),
+            () => cancelled = true, true);
+
+        if (confirmed || cancelled || !open)
+        {
+            ImGui.CloseCurrentPopup();
+            PendingOverwrite = null;
+        }
+
+        ImGui.EndPopup();
+
+        if (confirmed)
+            Overwrite(map, plan);
+    }
+
+    /// <summary>
+    /// Overwrites a used model number: each existing file's body gets the new mesh, built in its own class set, as one
+    /// undoable action (the body keeps its name and placement); missing files are made as Create makes them; and a
+    /// part is added only if none places the model yet. The binders are written straight away, as a commit writes
+    /// them.
+    /// </summary>
+    private void Overwrite(MapContainer map, OverwritePlan plan)
+    {
+        if (!TryBuildGeometry(out var vertices, out var indices, out var materials))
+            return;
+
+        var mapId = map.Name;
+        var number = plan.Number;
+        var bank = View.HavokCollisionBank;
+
+        // The part is only needed when nothing places the model yet
+        MsbEntity template = null;
+
+        if (plan.PartCount == 0)
+        {
+            template = map.Objects.OfType<MsbEntity>().FirstOrDefault(EntityHelper.IsPartCollision);
+
+            if (template == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
+                return;
+            }
+        }
+
+        // Everything is built before anything changes, so a failure leaves the map as it was
+        var swaps = new List<CollisionEditorAction.ShapeSwap>();
+        var remaps = new List<CollisionEditorAction.WallRemap>();
+        var newFiles = new List<(OverwriteFile File, Havok.HavokDocument Document)>();
+
+        foreach (var file in plan.Files)
+        {
+            if (file.Exists)
+            {
+                var body = bank.GetEditableDocument(file.FileName) is { } document
+                    ? CollisionEditorShapes.GetTemplateBody(document)
+                    : null;
+
+                if (body == null)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Unsupported", file.FileName));
+                    return;
+                }
+
+                CollisionEditorShapes.BuiltShape built;
+
+                try
+                {
+                    built = CollisionEditorShapes.BuildShape(body.Shape, vertices, indices, materials);
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
+                    return;
+                }
+
+                if (built == null)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
+                    return;
+                }
+
+                swaps.Add(new CollisionEditorAction.ShapeSwap(map, file.FileName, body, body.Shape, built.Shape));
+
+                // Sekiro's WALL files mark the low collision's triangles by key, and none of the old triangles are
+                // left, so their marks go with them
+                if (Project.Descriptor.ProjectType is ProjectType.SDT && file.Type == "l")
+                {
+                    if (!View.WallBank.EnsureMapLoaded(mapId))
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Walls_Unread", file.FileName));
+                        return;
+                    }
+
+                    var modelName = $"h{number}";
+                    var before = View.WallBank.GetMarks(mapId, modelName);
+
+                    if (before != null && (before.Triangles.Count > 0 || before.NoJumpKeys.Count > 0))
+                    {
+                        remaps.Add(new CollisionEditorAction.WallRemap(map, mapId, modelName, before,
+                            WallBank.RemapMarks(before, new Dictionary<uint, uint>())));
+                    }
+                }
+            }
+            else
+            {
+                var document = bank.ReadTemplateDocument(mapId, file.Type, CollisionEditorShapes.IsTemplate);
+
+                if (document == null)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_File", $"{file.Type}{mapId.Substring(1)}"));
+                    return;
+                }
+
+                try
+                {
+                    if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials))
+                    {
+                        Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
+                    return;
+                }
+
+                newFiles.Add((file, document));
+            }
+        }
+
+        foreach (var (file, document) in newFiles)
+            bank.AddMapCollision(mapId, file.Type, file.FileName, document);
+
+        // The new files' names are worked out before the swapped files' meshes are rebuilt, which looks them up
+        Tool.OnCollisionCreated();
+
+        if (swaps.Count > 0)
+            Tool.ApplyShapeSwaps(swaps, remaps);
+
+        var success = true;
+
+        foreach (var type in plan.Files.Select(f => f.Type).Distinct())
+            success &= bank.SaveMapCollision(mapId, type);
+
+        if (remaps.Count > 0)
+            success &= View.WallBank.SaveWalls(mapId);
+
+        if (!success)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Save_Failed", number));
+            return;
+        }
+
+        if (template != null)
+            AddPart(map, template, number);
+
+        Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", plan.Files.Select(f => f.FileName)),
+            indices.Count / 3));
+
+        ModelNumberMap = null;
+    }
+
+    #endregion
+
+    #region Part
 
     /// <summary>
     /// Adds a collision part for the new model, cloned from one of the map's collision parts, at the placement orb

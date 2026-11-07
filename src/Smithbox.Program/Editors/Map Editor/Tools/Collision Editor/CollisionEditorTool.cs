@@ -96,6 +96,21 @@ public class CollisionEditorTool
         Unsupported.Clear();
     }
 
+    /// <summary>Whether the Edit tab has uncommitted edits of a file.</summary>
+    public bool HasPendingEdits(string fileName)
+    {
+        return Files.TryGetValue(fileName, out var file) && file.IsEdited;
+    }
+
+    /// <summary>
+    /// Gives existing bodies new shapes as one undoable action, as a commit does, so the drawn meshes and the decoded
+    /// files of the Edit tab follow (used by the Create tab to overwrite a collision).
+    /// </summary>
+    public void ApplyShapeSwaps(List<CollisionEditorAction.ShapeSwap> swaps, List<CollisionEditorAction.WallRemap> remaps)
+    {
+        View.ViewportActionManager.ExecuteAction(new CollisionEditorAction(swaps, OnShapesChanged, View.WallBank, remaps));
+    }
+
     /// <summary>
     /// The games whose map collision the Map Editor holds as documents it can write back, with FromSoftware compressed
     /// meshes the shared builder makes.

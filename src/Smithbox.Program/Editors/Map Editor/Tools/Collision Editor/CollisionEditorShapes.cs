@@ -151,6 +151,14 @@ public static class CollisionEditorShapes
     }
 
     /// <summary>
+    /// The body of a document that can be the base of a new collision (see IsTemplate), or null if it can't.
+    /// </summary>
+    public static IHavokBody GetTemplateBody(Havok.HavokDocument document)
+    {
+        return IsTemplate(document) ? CollisionGeometry.Bodies(document.Objects).First() : null;
+    }
+
+    /// <summary>
     /// Turns a freshly read template document into a new collision of the given triangles: its body gets a mesh built
     /// in its class set, is placed at the origin unrotated, and is named for the new model (the template's name with
     /// its model number replaced, as the game names a file's body after it).
