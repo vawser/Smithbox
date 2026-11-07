@@ -2,3 +2,7 @@
 # TODO 
 #---------------------
 
+DES:
+    - c0000 characters are not displayed in Map Editor
+    - animations don't work
+    - 

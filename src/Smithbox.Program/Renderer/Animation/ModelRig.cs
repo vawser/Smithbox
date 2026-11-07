@@ -149,6 +149,13 @@ public sealed class ModelRig
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
             FLVER0.Mesh mesh = flver.Meshes[i];
+
+            if (mesh.Dynamic == 0)
+            {
+                rig.Meshes[i] = rig.BuildRigidFlver0Mesh(flver, mesh);
+                continue;
+            }
+
             List<int> boneTable = mesh.BoneIndices.Select(b => (int)b).ToList();
 
             rig.Meshes[i] = rig.BuildMesh(mesh.Dynamic != 0, mesh.NodeIndex, mesh.Vertices, boneTable, true,
@@ -156,6 +163,43 @@ public sealed class ModelRig
         }
 
         return rig;
+    }
+
+    /// <summary>
+    /// A rigid FLVER0 mesh: FlverResource bakes each vertex into the reference pose of the node its first bone index
+    /// names, so the mesh is skinned to that one node at full weight, and follows it from there.
+    /// The weights a rigid DES layout may carry are not used, as the vertex is placed by the first index alone.
+    /// </summary>
+    private MeshRig BuildRigidFlver0Mesh(FLVER0 flver, FLVER0.Mesh mesh)
+    {
+        var layouts = flver.Materials[mesh.MaterialIndex].Layouts;
+        var hasBoneIndices = mesh.LayoutIndex < layouts.Count &&
+            layouts[mesh.LayoutIndex].Any(m => m.Semantic == FLVER.LayoutSemantic.BoneIndices);
+        var usedBones = mesh.UsedBoneCount;
+        var nodeCount = NodeNames.Length;
+
+        var skin = new SkinVertex[mesh.Vertices.Count];
+        Span<int> indices = stackalloc int[4];
+        Span<float> weights = stackalloc float[4];
+
+        for (var v = 0; v < skin.Length; v++)
+        {
+            var node = FlverResource.GetRigidVertexNode(mesh, mesh.Vertices[v], hasBoneIndices, usedBones);
+
+            indices.Clear();
+            weights.Clear();
+
+            // An unresolved index gets no weight, as BuildMesh does for a weighted mesh
+            if (node >= 0 && node < nodeCount)
+            {
+                indices[0] = node;
+                weights[0] = 1;
+            }
+
+            skin[v] = PackVertex(indices, weights);
+        }
+
+        return new MeshRig { Mode = MeshSkinMode.Skinned, NodeIndex = mesh.NodeIndex, Vertices = skin };
     }
 
     private void ReadNodes(List<FLVER.Node> nodes)

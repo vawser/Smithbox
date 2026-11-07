@@ -216,6 +216,14 @@ public class MapResourceHandler
             if (textureAsset.IsValid())
                 LoadList_Other_Texture.Add(textureAsset);
         }
+        else if (View.Project.Descriptor.ProjectType is ProjectType.DES)
+        {
+            foreach (var textureAsset in TextureLocator.GetDesCommonTextureVirtualPaths(View.Project))
+            {
+                if (textureAsset.IsValid())
+                    LoadList_Other_Texture.Add(textureAsset);
+            }
+        }
 
         // SYSTEX
         if (View.Project.Descriptor.ProjectType is ProjectType.AC6 

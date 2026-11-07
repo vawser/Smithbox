@@ -208,6 +208,11 @@ public class ProjectFileLocator : IDisposable
             FileDictionary = baseDictionary;
         }
 
+        if (Project.Descriptor.ProjectType is ProjectType.DES)
+        {
+            FileDictionary = RemoveDesUncompressedTwins(FileDictionary);
+        }
+
         if (!silent)
         {
             reportProgress?.Invoke(new()
@@ -362,6 +367,21 @@ public class ProjectFileLocator : IDisposable
             : path.Trim().Replace('\\', '/'); // normalize separators and trim
     }
     #endregion
+
+    /// <summary>
+    /// Demon's Souls ships most files twice, X and X.dcx, with the same data, which both end up in every list as the
+    /// same name. Only the .dcx is kept; files that only exist uncompressed (MSBs, collisions, loose chr files) stay.
+    /// Saving a .dcx also writes the uncompressed copy (ProjectVFS.MirrorDesDcxWrite), so the two stay the same.
+    /// </summary>
+    private static FileDictionary RemoveDesUncompressedTwins(FileDictionary dictionary)
+    {
+        var paths = new HashSet<string>(dictionary.Entries.Select(e => e.Path), StringComparer.OrdinalIgnoreCase);
+
+        return new FileDictionary
+        {
+            Entries = dictionary.Entries.Where(e => !paths.Contains(e.Path + ".dcx")).ToHashSet()
+        };
+    }
 
     #region Dictionaries
     public void CompileDictionaries()
@@ -712,7 +732,7 @@ public class ProjectFileLocator : IDisposable
     {
         return projectType switch
         {
-            ProjectType.DS1 => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
+            ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/obj"),
             ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "objbnd" && entry.Folder.StartsWith("/obj"),
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "geombnd" && entry.Folder.StartsWith("/asset") && !isSd,
@@ -738,7 +758,7 @@ public class ProjectFileLocator : IDisposable
     {
         return projectType switch
         {
-            ProjectType.DS1 or ProjectType.DS1R => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
+            ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
             ProjectType.DS2S or ProjectType.DS2 => entry.Extension == "bnd" && entry.Folder.StartsWith("/model/parts"),
             ProjectType.DS3 or ProjectType.BB or ProjectType.SDT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts"),
             ProjectType.ER or ProjectType.AC6 or ProjectType.NR or ProjectType.DB or ProjectType.DB_NT => entry.Extension == "partsbnd" && entry.Folder.StartsWith("/parts") && !isSd,

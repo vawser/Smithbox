@@ -318,7 +318,18 @@ public abstract class VirtualFileSystem : IDisposable
     /// <param name="path"></param>
     /// <param name="data"></param>
     public void WriteFile(VFSPath path, byte[] data)
-        => GetOrCreateFile(path).WriteData(data);
+    {
+        GetOrCreateFile(path).WriteData(data);
+        OnFileWritten(path.ToString());
+    }
+
+    /// <summary>
+    /// Raised after a file is written, copied or moved into place, with its path as given (relative to this file system,
+    /// or absolute if the caller wrote outside it). Lets a game keep copies of a file in step.
+    /// </summary>
+    public event Action<string>? FileWritten;
+
+    protected void OnFileWritten(string path) => FileWritten?.Invoke(path);
 
     public VirtualFile GetOrCreateFile(string path)
         => GetOrCreateFile(new VFSPath(path));

@@ -1236,44 +1236,8 @@ public class FlverResource : IResource, IDisposable
 
         dest.SpecializationConstants = new List<SpecializationConstant>();
 
-        //FLVER0 stores layouts directly in the material
-        if (curProject.Descriptor.ProjectType is ProjectType.DES)
-        {
-            var desMat = (FLVER0.Material)mat;
-            var foundBoneIndices = false;
-            var foundBoneWeights = false;
-
-            if (desMat.Layouts?.Count > 0)
-            {
-                foreach (FLVER.LayoutMember? layoutType in desMat.Layouts[0])
-                {
-                    switch (layoutType.Semantic)
-                    {
-                        case FLVER.LayoutSemantic.Normal:
-                            if (layoutType.Type == FLVER.LayoutType.UByte4 ||
-                                layoutType.Type == FLVER.LayoutType.Byte4E ||
-                                layoutType.Type == FLVER.LayoutType.Byte4)
-                            {
-                                dest.SetNormalWBoneTransform();
-                            }
-
-                            break;
-                        case FLVER.LayoutSemantic.BoneIndices:
-                            foundBoneIndices = true;
-                            break;
-                        case FLVER.LayoutSemantic.BoneWeights:
-                            foundBoneWeights = true;
-                            break;
-                    }
-                }
-            }
-
-            //Transformation condition for DeS models
-            if (foundBoneIndices && !foundBoneWeights)
-            {
-                dest.SetHasIndexNoWeightTransform();
-            }
-        }
+        // FLVER0 meshes are placed per mesh in ProcessMesh(FLVER0.Mesh), not per material: DES normals are
+        // LayoutType.Color, whose W isn't a node index, and one material can serve both bind-pose and rigid meshes
 
         if (!CFG.Current.Viewport_Enable_Texturing || ModelsOnly)
         {
@@ -1302,10 +1266,75 @@ public class FlverResource : IResource, IDisposable
             ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, layers);
         }
 
+        if (curProject.Descriptor.ProjectType is ProjectType.DES)
+        {
+            RequestDesTextureContainers(curProject, mat);
+            LookupDesLightmap(dest, mat, layers);
+        }
+
         LoadDeformTextures(dest, mat.MTD);
         ConfigureMaterialShader(dest, layers);
         MarkModelLighting(dest);
     }
+
+    /// <summary>
+    /// DES models often use textures that live in another model's container, which nothing else would load. The path
+    /// of each texture still names that container, so it is loaded into this model's pool, textures only. The pool
+    /// skips containers that are loaded or loading already, so this is cheap when the map has them.
+    /// </summary>
+    private void RequestDesTextureContainers(ProjectEntry project, IFlverMaterial mat)
+    {
+        var pool = Context?.Pool ?? ResourceManager.DefaultPool;
+        var ownContainer = Context?.ContainerPath?.Replace('\\', '/');
+
+        foreach (IFlverTexture? texture in mat.Textures)
+        {
+            foreach (ResourceDescriptor container in TextureLocator.GetDesReferencedTextureContainers(project, texture.Path))
+            {
+                var path = container.GetContainerPath(project);
+
+                if (path == null || string.Equals(path.Replace('\\', '/').TrimStart('/'), ownContainer?.TrimStart('/'),
+                        StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                if (!_requestedTextureContainers.Add(path))
+                    continue;
+
+                pool.LoadContainer(path, new LoadOptions
+                {
+                    Types = ResourceType.Texture,
+                    AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+                    HideFromLoadWindow = true,
+                    JobName = $"DES textures: {path}"
+                });
+            }
+        }
+    }
+
+    /// <summary>
+    /// A DES map piece's g_Lightmap: its static light, a texture of the area TPFs read through the last UV set (the MTDs
+    /// give it UV 3, after the diffuse layers'). Drawn with the blend variant, whose second UV set is that one when the
+    /// mesh has two. Layered materials ([ML], about 6% of the lightmapped meshes) have three UV sets, more than the
+    /// variant carries, so they go without.
+    /// </summary>
+    private void LookupDesLightmap(FlverMaterial dest, IFlverMaterial mat, MaterialLayers layers)
+    {
+        if (!CFG.Current.Viewport_Map_Lightmaps || layers.IsBlended)
+            return;
+
+        foreach (IFlverTexture? texture in mat.Textures)
+        {
+            if (texture.ParamName == "g_Lightmap" && !string.IsNullOrWhiteSpace(texture.Path))
+            {
+                LookupTexture(FlverMaterial.TextureType.LightmapTextureResource, dest, texture.ParamName, texture.Path, mat.MTD);
+                dest.UsesLightmap = true;
+                return;
+            }
+        }
+    }
+
+    // The containers this model has already asked for, so each is requested once per model
+    private readonly HashSet<string> _requestedTextureContainers = new(StringComparer.OrdinalIgnoreCase);
 
     private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
@@ -2712,6 +2741,60 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
+    /// <summary>
+    /// Moves the vertices of a rigid FLVER0 mesh (Dynamic 0) to where their nodes put them. Each vertex names its node
+    /// through the mesh's bone list with BoneIndices[0], and is stored relative to it, so it takes the node's world
+    /// transform. A bind-pose mesh (Dynamic 1) is already in place, whatever its layout has.
+    /// ModelRig skins rigid meshes to the same node at full weight, so an animation moves them from this pose.
+    /// </summary>
+    private void PlaceRigidVertices(FLVER0.Mesh mesh)
+    {
+        if (mesh.Dynamic != 0 || BoneTransforms == null || BoneTransforms.Count == 0 || FlverDeS == null)
+            return;
+
+        var layouts = FlverDeS.Materials[mesh.MaterialIndex].Layouts;
+        var hasBoneIndices = mesh.LayoutIndex < layouts.Count &&
+            layouts[mesh.LayoutIndex].Any(m => m.Semantic == FLVER.LayoutSemantic.BoneIndices);
+        var usedBones = mesh.UsedBoneCount;
+
+        for (var v = 0; v < mesh.Vertices.Count; v++)
+        {
+            FLVER.Vertex vert = mesh.Vertices[v];
+            var node = GetRigidVertexNode(mesh, vert, hasBoneIndices, usedBones);
+
+            if (node < 0 || node >= BoneTransforms.Count)
+                continue;
+
+            Matrix4x4 world = BoneTransforms[node];
+
+            vert.Position = Vector3.Transform(vert.Position, world);
+            vert.Normal = Vector3.TransformNormal(vert.Normal, world);
+
+            // The binormal is rebuilt from the normal and tangent, so only the tangent has to turn; W keeps the handedness
+            for (var t = 0; t < vert.Tangents.Count; t++)
+            {
+                Vector4 tan = vert.Tangents[t];
+                var dir = Vector3.TransformNormal(new Vector3(tan.X, tan.Y, tan.Z), world);
+                vert.Tangents[t] = new Vector4(dir, tan.W);
+            }
+        }
+    }
+
+    /// <summary>
+    /// The node a vertex of a rigid FLVER0 mesh is attached to: its first bone index through the mesh's bone list,
+    /// or the mesh's own node when the layout has no bone indices. -1 if the index is out of range, which leaves it in place.
+    /// Every DES layout surveyed has bone indices, so the mesh node is only a fallback.
+    /// </summary>
+    internal static int GetRigidVertexNode(FLVER0.Mesh mesh, FLVER.Vertex vert, bool hasBoneIndices, int usedBones)
+    {
+        if (!hasBoneIndices)
+            return mesh.NodeIndex;
+
+        var local = vert.BoneIndices[0];
+
+        return local >= 0 && local < usedBones ? mesh.BoneIndices[local] : -1;
+    }
+
     private unsafe void ProcessMesh(FLVER0.Mesh mesh, FlverSubmesh dest)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
@@ -2726,27 +2809,7 @@ public class FlverResource : IResource, IDisposable
 
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
-        if (dest.Material.GetHasIndexNoWeightTransform())
-        {
-            //Transform based on root
-            for (var v = 0; v < mesh.Vertices.Count; v++)
-            {
-                FLVER.Vertex vert = mesh.Vertices[v];
-                var boneTransformationIndex = mesh.BoneIndices[vert.BoneIndices[0]];
-
-                if (BoneTransforms != null)
-                {
-                    if (boneTransformationIndex > -1 && BoneTransforms.Count > boneTransformationIndex)
-                    {
-                        Matrix4x4 boneTfm = BoneTransforms[boneTransformationIndex];
-
-                        vert.Position = Vector3.Transform(vert.Position, boneTfm);
-                        vert.Normal = Vector3.TransformNormal(vert.Normal, boneTfm);
-                        mesh.Vertices[v] = vert;
-                    }
-                }
-            }
-        }
+        PlaceRigidVertices(mesh);
 
         var vSize = dest.Material.VertexSize;
         dest.PickingVertices = Marshal.AllocHGlobal(mesh.Vertices.Count * sizeof(Vector3));
@@ -2795,7 +2858,8 @@ public class FlverResource : IResource, IDisposable
 
             FlverSubmesh.FlverSubmeshFaceSet newFaceSet = new()
             {
-                BackfaceCulling = true,
+                // FLVER0 keeps the flag on the mesh: cloth, hair cards, foliage and banners are drawn from both sides
+                BackfaceCulling = mesh.CullBackfaces,
                 IsTriangleStrip = false,
                 //IndexBuffer = factory.CreateBuffer(new BufferDescription(buffersize, BufferUsage.IndexBuffer)),
                 IndexOffset = 0,
@@ -3434,11 +3498,11 @@ public class FlverResource : IResource, IDisposable
             Bounds = new BoundingBox();
             ResetDetailStats();
             Bones = FlverDeS.Nodes;
+            // World transforms: a rigid vertex under a nested node needs every parent's offset as well
             BoneTransforms = new List<Matrix4x4>();
             for (var i = 0; i < Bones.Count; i++)
             {
-                //BoneTransforms.Add(FlverDeS.ComputeBoneWorldMatrix(i));
-                BoneTransforms.Add(Bones[i].ComputeLocalTransform());
+                BoneTransforms.Add(Utils.GetBoneWorldMatrix(Bones[i], Bones));
             }
 
             for (var i = 0; i < FlverDeS.Materials.Count(); i++)
@@ -3752,6 +3816,7 @@ public class FlverResource : IResource, IDisposable
             MagmaTextureResource,
             VatPositionTextureResource,
             VatNormalTextureResource,
+            LightmapTextureResource,
             TextureResourceCount
         }
 
@@ -3763,8 +3828,6 @@ public class FlverResource : IResource, IDisposable
 
         public readonly ResourceHandle<TextureResource>?[] TextureResources =
             new ResourceHandle<TextureResource>[(int)TextureType.TextureResourceCount];
-
-        private bool _setHasIndexNoWeightTransform;
 
         private bool _setNormalWBoneTransform;
 
@@ -3858,19 +3921,6 @@ public class FlverResource : IResource, IDisposable
             TextureResources[tag]?.Release();
             TextureResources[tag] = null;
             UpdateMaterial();
-        }
-
-        public bool GetHasIndexNoWeightTransform()
-        {
-            return _setHasIndexNoWeightTransform;
-        }
-
-        public void SetHasIndexNoWeightTransform()
-        {
-            if (!_setHasIndexNoWeightTransform)
-            {
-                _setHasIndexNoWeightTransform = true;
-            }
         }
 
         public bool GetNormalWBoneTransform()
@@ -4100,6 +4150,8 @@ public class FlverResource : IResource, IDisposable
             SetMaterialTexture(TextureType.ShininessTextureResource, ref MaterialData.shininessTex, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource2, ref MaterialData.shininessTex2, 2);
             SetMaterialTexture(TextureType.BlendmaskTextureResource, ref MaterialData.blendMaskTex, 0);
+            // 0 until the lightmap is on the GPU, which the shader reads as no lightmap
+            SetMaterialTexture(TextureType.LightmapTextureResource, ref MaterialData.lightmapTex, 0);
 
             SetMaterialTexture(TextureType.AlbedoTextureResource3, ref MaterialData.colorTex3, 0);
             SetMaterialTexture(TextureType.AlbedoTextureResource4, ref MaterialData.colorTex4, 0);

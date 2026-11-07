@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using StudioCore.Logger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,11 @@ public class ProjectVFS : IDisposable
         {
             ProjectFS = new RealVirtualFileSystem(Project.Descriptor.ProjectPath, false);
             fileSystems.Add(ProjectFS);
+
+            if (Project.Descriptor.ProjectType is ProjectType.DES)
+            {
+                ProjectFS.FileWritten += MirrorDesDcxWrite;
+            }
         }
         else
         {
@@ -90,6 +96,39 @@ public class ProjectVFS : IDisposable
             FS = EmptyVirtualFileSystem.Instance;
         else
             FS = new CompundVirtualFileSystem(fileSystems);
+    }
+
+    /// <summary>
+    /// Demon's Souls ships most of its files twice, as X and X.dcx, with the same data (see
+    /// Documentation/Claude/Older Games/DES Model Display.md). Which one the game reads can't be told from its files,
+    /// so a written X.dcx is also written, decompressed, to X wherever the game or project has X. The file lists only
+    /// show the .dcx (ProjectFileLocator), so the plain copy is never edited on its own.
+    /// </summary>
+    private void MirrorDesDcxWrite(string path)
+    {
+        // Writes outside the project (the comprehensive backups) are left alone
+        if (string.IsNullOrWhiteSpace(path) || Path.IsPathRooted(path.TrimStart('/', '\\')) ||
+            !path.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            return;
+
+        var twin = path[..^4];
+
+        try
+        {
+            if (!FS.FileExists(twin))
+                return;
+
+            var file = ProjectFS.GetFile(path);
+            if (file == null)
+                return;
+
+            var data = SoulsFormats.DCX.Decompress(file.GetData());
+            ProjectFS.WriteFile(twin, data.ToArray());
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, $"Failed to mirror {path} to its uncompressed copy {twin}", LogPriority.High, e);
+        }
     }
 
     private bool _disposed;

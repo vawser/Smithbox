@@ -48,7 +48,10 @@ public class PathBuilder
                     var mid = p[i];
                     i++;
 
-                    relPath = Path.Combine("map", mid, $"{mid}_{p[i]}.tpf.dcx");
+                    // map/tex/mAA_BB_CC_DD/own is the map's own TPF beside its pieces; the rest are the area's
+                    relPath = p[i] == "own"
+                        ? Path.Combine("map", mid, $"{mid}.tpf")
+                        : Path.Combine("map", mid, $"{mid}_{p[i]}.tpf.dcx");
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
@@ -88,7 +91,8 @@ public class PathBuilder
 
                     if (project.Descriptor.ProjectType is ProjectType.DES)
                     {
-                        relPath = Path.Combine("map", mapid, $"{p[i]}.flver");
+                        // The .dcx copy, which the file lists show and saves go to (see DesPreferDcx)
+                        relPath = DesPreferDcx(project, Path.Combine("map", mapid, $"{p[i]}.flver"));
                     }
                     else if (project.Descriptor.ProjectType is ProjectType.DS1)
                     {
@@ -250,7 +254,7 @@ public class PathBuilder
             {
                 if (project.Descriptor.ProjectType is ProjectType.DES)
                 {
-                    relPath = Path.Combine("chr", chrid, $"{chrid}.chrbnd");
+                    relPath = DesPreferDcx(project, Path.Combine("chr", chrid, $"{chrid}.chrbnd"));
                 }
                 else if (project.Descriptor.ProjectType is ProjectType.DS1)
                 {
@@ -259,10 +263,6 @@ public class PathBuilder
                 else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     relPath = Path.Combine("model", "chr", $"{chrid}.bnd");
-                }
-                else if (project.Descriptor.ProjectType is ProjectType.DES)
-                {
-                    relPath = Path.Combine("chr", chrid, $"{chrid}.chrbnd.dcx");
                 }
                 else
                 {
@@ -630,7 +630,7 @@ public class PathBuilder
 
             if (p[i].Equals("tex"))
             {
-                relPath = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R
+                relPath = project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES
                     ? Path.Combine("parts", $"{containerName}.tpf")
                     : Path.Combine("parts", $"{containerName}.tpf.dcx");
             }
@@ -744,6 +744,16 @@ public class PathBuilder
         }
 
         return absPath;
+    }
+
+    /// <summary>
+    /// Demon's Souls keeps most files as both X and X.dcx with the same data. The .dcx is the one the file lists keep
+    /// and saves write (mirrored to X), so it is read wherever it exists; a file that is only uncompressed is read as is.
+    /// </summary>
+    private static string DesPreferDcx(ProjectEntry project, string relPath)
+    {
+        var dcx = relPath + ".dcx";
+        return project.VFS.FS.FileExists(SanitiseRelativePath(dcx)) ? dcx : relPath;
     }
 
     public static string SanitiseRelativePath(string relativePath)

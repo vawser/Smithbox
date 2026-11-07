@@ -214,11 +214,7 @@ public class ModelUniverse : IUniverse
         // Part
         if (CFG.Current.ModelEditor_ModelLoad_Parts)
         {
-            if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
-            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
-            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
-            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
-            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
+            if (IsPartModelName(modelName))
             {
                 var modelAsset = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
 
@@ -247,6 +243,30 @@ public class ModelUniverse : IUniverse
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Whether a model is a part: arms, legs, bodies, heads and weapons in every game, plus the hair (hr),
+    /// accessories (as) and faces (fc) of Demon's Souls
+    /// </summary>
+    private bool IsPartModelName(string modelName)
+    {
+        foreach (var prefix in new[] { "am", "lg", "bd", "hd", "wp" })
+        {
+            if (modelName.StartsWith(prefix) || modelName.StartsWith(prefix.ToUpperInvariant()))
+                return true;
+        }
+
+        if (View.Project.Descriptor.ProjectType is ProjectType.DES)
+        {
+            foreach (var prefix in new[] { "hr", "as", "fc" })
+            {
+                if (modelName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+        }
+
+        return false;
     }
 
     public void SetupTextureLoadList(string modelName, ModelContainerWrapper parent)
@@ -323,11 +343,7 @@ public class ModelUniverse : IUniverse
         // Part
         if (CFG.Current.ModelEditor_TextureLoad_Parts)
         {
-            if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
-            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
-            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
-            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
-            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
+            if (IsPartModelName(modelName))
             {
                 var textureAsset = TextureLocator.GetPartTextureVirtualPath(View.Project, modelName);
 
@@ -349,6 +365,14 @@ public class ModelUniverse : IUniverse
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
+            }
+            else if (View.Project.Descriptor.ProjectType is ProjectType.DES)
+            {
+                foreach (var textureAsset in TextureLocator.GetDesCommonTextureVirtualPaths(View.Project))
+                {
+                    if (textureAsset.IsValid())
+                        LoadList_Asset_Texture.Add(textureAsset);
+                }
             }
 
             // SYSTEX

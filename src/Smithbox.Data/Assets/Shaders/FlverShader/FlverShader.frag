@@ -1085,6 +1085,9 @@ vec3 AmbientBase(vec3 N)
 }
 
 #ifdef MATERIAL_BLEND
+// The scale on a DES g_Lightmap's light, see IndirectLight. 1 until matched against the game
+#define DES_LIGHTMAP_SCALE 1.0
+
 // fsin_lightmap of a lightmapped material whose part found no lightmap: InstanceData.MissingLightmap plus 1
 #define LIGHTMAP_MISSING 0x40000000u
 
@@ -1163,6 +1166,20 @@ vec3 IndirectLight(Surface s)
 		{
 			float hemi = dot(Hemisphere(s.N), vec3(0.299, 0.587, 0.114));
 			reflectionScale = clamp(dot(ambientDiffuse, vec3(0.299, 0.587, 0.114)) / max(hemi, 1e-4), 0.0, 2.0);
+		}
+	}
+
+	// A DES map piece's g_Lightmap, a texture of its own material read through the second UV set: its baked light
+	// stands in for the light from around. Squared from its stored gamma, as DS3's DOL 1 is; the game's own scale
+	// isn't traced, so it is DES_LIGHTMAP_SCALE until matched by eye. 0 until the texture is on the GPU
+	if (c_gameID == GAME_DES)
+	{
+		uint desLightmap = MaterialValue(ROW_EXTRA, 2);
+		if (desLightmap != 0u)
+		{
+			vec3 lm = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(desLightmap))], linearSampler), g_uv[1]).rgb;
+			ambientDiffuse = lm * lm * DES_LIGHTMAP_SCALE;
+			g_lightSource = 2u;
 		}
 	}
 #endif

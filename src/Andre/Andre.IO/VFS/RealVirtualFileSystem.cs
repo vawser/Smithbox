@@ -62,6 +62,7 @@ namespace Andre.IO.VFS
             from = from.TrimStart('/').TrimStart('\\');
             to = to.TrimStart('/').TrimStart('\\');
             File.Copy(Path.Combine(rootPath, from), Path.Combine(rootPath, to), true);
+            OnFileWritten(to);
         }
 
         public override void Move(string from, string to)
@@ -70,6 +71,7 @@ namespace Andre.IO.VFS
             from = from.TrimStart('/').TrimStart('\\');
             to = to.TrimStart('/').TrimStart('\\');
             File.Move(Path.Combine(rootPath, from), Path.Combine(rootPath, to), true);
+            OnFileWritten(to);
         }
 
         public class RealVirtualDirectory(string path, bool isReadOnly) : VirtualDirectory

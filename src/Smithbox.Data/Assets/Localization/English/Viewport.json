@@ -457,6 +457,10 @@
       "Text": "Light DS3's map pieces with their lightmaps (the DOL textures of gi_env), as the game does, in place of the light probes. Applies to maps loaded after it is changed."
     },
     {
+      "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmaps_DES_TT",
+      "Text": "Light Demon's Souls map pieces with their baked lightmaps (the g_Lightmap textures), in place of the ambient light. Layered materials have no room for the lightmap's UV set and go without. Applies to maps loaded after it is changed."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Map_Lighting_Lightmap_Intensity",
       "Text": "Intensity"
     },
