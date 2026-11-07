@@ -84,6 +84,38 @@ static class NavGen
                     var mesh = result.Mesh;
                     Value($"{set} snapped vertices %", 100.0 * result.SnappedVertices / Math.Max(1, mesh.m_vertices.Count));
 
+                    // A box blocker on the largest face: nothing generated under or on it
+                    if (set == NavmeshSet.N)
+                    {
+                        int big = Enumerable.Range(0, mesh.m_faces.Count).OrderByDescending(f => FaceArea(mesh, f)).First();
+                        var centre = NavigationOverlayBuilder.FaceCentre(mesh, big);
+                        // An upright box, and one turned 30 degrees and tilted 10, standing on the face (their base a little into it)
+                        var turn = Matrix4x4.CreateRotationY(MathF.PI / 6) * Matrix4x4.CreateRotationX(MathF.PI / 18);
+                        var boxes = new[]
+                        {
+                            ("upright", new NavBlocker(centre - new Vector3(1, 0.05f, 1), new Vector3(2, 0, 0), new Vector3(0, 1.5f, 0), new Vector3(0, 0, 2))),
+                            ("turned", new NavBlocker(centre + Vector3.TransformNormal(new Vector3(-1, -0.05f, -1), turn), Vector3.TransformNormal(new Vector3(2, 0, 0), turn),
+                                Vector3.TransformNormal(new Vector3(0, 1.5f, 0), turn), Vector3.TransformNormal(new Vector3(0, 0, 2), turn))),
+                        };
+
+                        foreach (var (kind, blocker) in boxes)
+                        {
+                            var blocked = NavigationGenerator.Generate(triangles, p, game, new[] { blocker });
+                            if (!blocked.Ok) { Count($"blocker {kind}: generate failed {blocked.Error}", 1, $"{mapId} {model.ModelID}"); continue; }
+
+                            // Nothing strictly inside the cut (the box widened by the agent radius and a climb below): no sample, no vertex
+                            var cut = blocker.Widened(p.AgentRadius, p.MaxClimb);
+                            int inside = SamplePoints(blocked.Mesh).Count(s => cut.Contains(s.Item1, -0.01f))
+                                + blocked.Mesh.m_vertices.Count(v => cut.Contains(new Vector3(v.X, v.Y, v.Z), -0.01f));
+                            Count(inside == 0 ? $"blocker {kind}: nothing inside the cut" : $"blocker {kind}: navmesh inside the cut", 1, inside == 0 ? null : $"{mapId} {model.ModelID}: {inside} points");
+
+                            var problem2 = Validate(blocked.Mesh);
+                            Count(problem2 == null ? $"blocker {kind}: mesh valid" : $"blocker {kind}: mesh invalid", 1, problem2 == null ? null : $"{mapId} {model.ModelID}: {problem2}");
+                            Count($"blocker {kind}: faces clipped", blocked.ClippedFaces);
+                            Value($"blocker {kind}: area lost (m², box is 4)", Area(mesh) - Area(blocked.Mesh));
+                        }
+                    }
+
                     var problem = Validate(mesh);
                     Count(problem == null ? $"{set} mesh: valid" : $"{set} mesh: invalid", 1, problem == null ? null : $"{mapId} {model.ModelID}: {problem}");
 
@@ -166,8 +198,11 @@ static class NavGen
             {
                 var a = corners[k]; var b = corners[(k + 1) % corners.Count]; var cc = corners[(k + 2) % corners.Count];
                 float cross = (b.X - a.X) * (cc.Z - b.Z) - (b.Z - a.Z) * (cc.X - b.X);
+                // As the sine of the turn, so a long edge's float error isn't taken for a bend
+                float lengths = MathF.Sqrt(((b.X - a.X) * (b.X - a.X) + (b.Z - a.Z) * (b.Z - a.Z)) * ((cc.X - b.X) * (cc.X - b.X) + (cc.Z - b.Z) * (cc.Z - b.Z)));
+                cross = lengths > 1e-9f ? cross / lengths : 0;
                 // Counter-clockwise from above (Y up) is a negative XZ cross with X right and Z towards the viewer
-                if (cross > 1e-4f) return $"face {f} is not convex and counter-clockwise at corner {k}";
+                if (cross > 1e-3f) return $"face {f} is not convex and counter-clockwise at corner {k} of {corners.Count}, turn {cross:0.######}, corners {string.Join(" ", corners.Select(q => $"({q.X:0.###},{q.Y:0.###},{q.Z:0.###})"))}";
             }
             for (int e = face.m_startEdgeIndex; e < face.m_startEdgeIndex + face.m_numEdges; e++)
             {
@@ -181,6 +216,47 @@ static class NavGen
             }
         }
         return mesh.m_faceData.Count == mesh.m_faces.Count && mesh.m_edgeData.Count == mesh.m_edges.Count ? null : "data counts";
+    }
+
+    static float Slope(hkaiNavMesh m, int f)
+    {
+        var c = NavigationOverlayBuilder.FaceCorners(m, f); var n = Vector3.Zero;
+        for (int i = 1; i + 1 < c.Count; i++) n += Vector3.Cross(c[i] - c[0], c[i + 1] - c[0]);
+        return n.LengthSquared() < 1e-9f ? 0 : MathF.Acos(MathF.Min(1, MathF.Abs(Vector3.Normalize(n).Y))) * 180 / MathF.PI;
+    }
+
+    static double FaceArea(hkaiNavMesh m, int f)
+    {
+        var c = NavigationOverlayBuilder.FaceCorners(m, f);
+        double a = 0;
+        for (int i = 1; i + 1 < c.Count; i++) a += Vector3.Cross(c[i] - c[0], c[i + 1] - c[0]).Length() / 2;
+        return a;
+    }
+
+    /// <summary>A closed box as triangles (three points each), faces outwards.</summary>
+    static List<Vector3> Box(Vector3 lo, Vector3 hi)
+    {
+        Vector3 C(int i) => new((i & 1) != 0 ? hi.X : lo.X, (i & 2) != 0 ? hi.Y : lo.Y, (i & 4) != 0 ? hi.Z : lo.Z);
+        var quads = new[] { (0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3) };
+        var t = new List<Vector3>();
+        foreach (var (a, b, cc, d) in quads) { t.Add(C(a)); t.Add(C(b)); t.Add(C(cc)); t.Add(C(a)); t.Add(C(cc)); t.Add(C(d)); }
+        return t;
+    }
+
+    /// <summary>Sample points over every face (a 0.25 m grid), with their face.</summary>
+    static IEnumerable<(Vector3, int)> SamplePoints(hkaiNavMesh m)
+    {
+        for (int f = 0; f < m.m_faces.Count; f++)
+        {
+            var corners = NavigationOverlayBuilder.FaceCorners(m, f);
+            float x0 = corners.Min(q => q.X), x1 = corners.Max(q => q.X), z0 = corners.Min(q => q.Z), z1 = corners.Max(q => q.Z);
+            for (float x = MathF.Ceiling(x0 * 4) / 4; x < x1; x += 0.25f)
+                for (float z = MathF.Ceiling(z0 * 4) / 4; z < z1; z += 0.25f)
+                {
+                    var q = new Vector3(x, 0, z);
+                    if (InsideXZ(corners, q) && HeightAt(corners, q) is float h) yield return (q with { Y = h }, f);
+                }
+        }
     }
 
     static double Area(hkaiNavMesh m)

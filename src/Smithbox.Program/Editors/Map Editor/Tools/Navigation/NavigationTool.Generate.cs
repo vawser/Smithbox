@@ -23,6 +23,13 @@ public partial class NavigationTool
     /// </summary>
     private sealed record GenerateSource(MsbEntity Part, string MapId, bool IsAsset, string Model, string Label);
 
+    /// <summary>
+    /// The parts tagged as blockers, by map and part name. Kept for the session; every tagged part of a loaded map is a
+    /// blocker in each generation, selected or not.
+    /// </summary>
+    private readonly HashSet<(string MapId, string Part)> BlockerTags = new();
+    private bool ShowBlockers = true;
+
     /// <summary>Asset collision read so far, by asset model, as triangles in the asset's own space (null: none found).</summary>
     private readonly Dictionary<string, List<Vector3>> AssetCollisionCache = new(StringComparer.OrdinalIgnoreCase);
 
@@ -48,7 +55,8 @@ public partial class NavigationTool
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Generate_Header"), LOC.Get("MAP_Navigation_Generate_Header_TT"));
 
         var sources = SelectedSources();
-        int preferredId = sources.Where(s => !s.IsAsset).Select(s => CollisionModelId(s.Model)).FirstOrDefault(-1);
+        var walkable = sources.Where(s => !IsBlocker(s)).ToList();
+        int preferredId = walkable.Where(s => !s.IsAsset).Select(s => CollisionModelId(s.Model)).FirstOrDefault(-1);
 
         // Collision: the selected parts. The count stays outside the list toggle
         GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Generate_Collision_Header"), LOC.Get("MAP_Navigation_Generate_Collision_Header_TT"), ref ShowGenerateCollisions);
@@ -58,9 +66,22 @@ public partial class NavigationTool
         {
             ImGui.BeginChild("##navigationGenerateSources", new Vector2(0, Math.Min(140, 20 + 18 * sources.Count) * DPI.UIScale()), ImGuiChildFlags.Borders);
             foreach (var source in sources)
+            {
+                bool blocker = IsBlocker(source);
+                if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Blocker")}##navigationGenerateBlocker_{source.MapId}_{source.Part.Name}", ref blocker))
+                {
+                    if (blocker) BlockerTags.Add((source.MapId, source.Part.Name));
+                    else BlockerTags.Remove((source.MapId, source.Part.Name));
+                    BlockerOverlayDirty = true;
+                }
+                GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Blocker_TT"));
+                ImGui.SameLine();
                 ImGui.Text(source.Label);
+            }
             ImGui.EndChild();
         }
+
+        DisplayBlockers();
 
         // Target
         if (!DisplayModelTarget("navigationGenerate", map, navigation, selected, removable, slots, ref GenerateTarget, ref GenerateNewModelId, preferredId))
@@ -82,14 +103,14 @@ public partial class NavigationTool
             return;
         }
 
-        if (sources.Count == 0)
+        if (walkable.Count == 0)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Pick_Collision"));
             return;
         }
 
         if (ImGui.Button($"{LOC.Get("MAP_Navigation_Generate")}##navigationGenerate"))
-            StartGenerate(map, navigation, sources, preferredId, GenerateTarget switch
+            StartGenerate(map, navigation, walkable, TaggedBlockers(), preferredId, GenerateTarget switch
             {
                 ModelTarget.Slot => slots.FirstOrDefault(s => s.ModelID == SlotModelID),
                 ModelTarget.Replace => selected,
@@ -149,19 +170,182 @@ public partial class NavigationTool
         var sources = new List<GenerateSource>();
 
         foreach (var part in View.ViewportSelection.GetFilteredSelection<MsbEntity>())
-        {
-            var model = part.GetProperty("ModelName")?.GetValue(part.WrappedObject) as string;
-            var mapId = part.MapID;
-            if (string.IsNullOrEmpty(model) || string.IsNullOrEmpty(mapId))
-                continue;
-
-            if (EntityHelper.IsPartCollision(part))
-                sources.Add(new GenerateSource(part, mapId, false, model, LOC.Get("MAP_Navigation_Generate_Source_Collision", part.Name, model, mapId)));
-            else if (EntityHelper.IsPartAsset(part))
-                sources.Add(new GenerateSource(part, mapId, true, model, LOC.Get("MAP_Navigation_Generate_Source_Asset", part.Name, model, mapId)));
-        }
+            if (SourceOf(part) is GenerateSource source)
+                sources.Add(source);
 
         return sources;
+    }
+
+    /// <summary>The parts tagged as blockers: their count, each with Untag, and Clear. Shown whatever is selected.</summary>
+    private void DisplayBlockers()
+    {
+        // Blockers: the count and Clear stay outside the list toggle
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Generate_Blockers_Header"), LOC.Get("MAP_Navigation_Generate_Blockers_Header_TT"), ref ShowBlockers);
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Blockers_Count", BlockerTags.Count));
+
+        if (BlockerTags.Count == 0)
+            return;
+
+        if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Blockers_Clear")}##navigationBlockersClear"))
+        {
+            BlockerTags.Clear();
+            BlockerOverlayDirty = true;
+            return;
+        }
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Blockers_Clear_TT"));
+
+        if (!ShowBlockers)
+            return;
+
+        foreach (var tag in BlockerTags.OrderBy(t => t.MapId).ThenBy(t => t.Part).ToList())
+        {
+            if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Blockers_Untag")}##navigationBlockerUntag_{tag.MapId}_{tag.Part}"))
+            {
+                BlockerTags.Remove(tag);
+                BlockerOverlayDirty = true;
+            }
+            ImGui.SameLine();
+            ImGui.Text($"{tag.Part} ({tag.MapId})");
+        }
+    }
+
+    /// <summary>The tagged parts' transforms when the red boxes were last drawn, to see when one moves.</summary>
+    private int BlockerTransformsSignature;
+
+    /// <summary>Called every frame: every 15th, redraws the red boxes if a tagged part has moved.</summary>
+    private void CheckBlockerMoves()
+    {
+        if (!ShowOverlay || BlockerTags.Count == 0 || DrawFrame % 15 != 0)
+            return;
+
+        var hash = new HashCode();
+        foreach (var source in TaggedBlockers())
+            hash.Add(source.Part.GetWorldMatrix());
+
+        int signature = hash.ToHashCode();
+        if (signature != BlockerTransformsSignature)
+        {
+            BlockerTransformsSignature = signature;
+            BlockerOverlayDirty = true;
+        }
+    }
+
+    /// <summary>
+    /// Draws the box of every tagged blocker in the loaded maps as a red fill while the overlay is shown, so it is
+    /// plain what generation will go around. Each triangle is pushed a few centimetres out along its normal, so the
+    /// fill shows over the collision drawn in the same place.
+    /// </summary>
+    private void UpdateBlockerOverlay()
+    {
+        BlockerOverlayDirty = false;
+        BlockerRenderer.Clear();
+
+        var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
+        if (!ShowOverlay || scene == null || BlockerTags.Count == 0)
+            return;
+
+        var overlay = new NavOverlay { MapId = OverlayMap, Set = OverlaySet };
+        var batch = overlay.Batch(NavOverlayLayer.Blockers);
+
+        foreach (var source in TaggedBlockers())
+        {
+            // In world space, a little larger, so the fill shows over the part
+            var corners = BlockerCorners(source, Matrix4x4.Identity, 0.03f);
+            if (corners == null)
+                continue;
+
+            var triangles = BoxTriangles(corners);
+            for (int i = 0; i + 2 < triangles.Count; i += 3)
+                batch.Triangles.Add((triangles[i], triangles[i + 1], triangles[i + 2]));
+        }
+
+        BlockerRenderer.Show(scene, overlay, FaceOpacity);
+    }
+
+    /// <summary>
+    /// The eight corners of a blocker's box: the bounds of its model, as the viewport's selection box shows them,
+    /// placed by the part's world transform and then the given one. Corner i has the high X, Y, Z side for bits 1, 2, 4.
+    /// When the model isn't loaded, the bounds of its collision. Grown by a margin in each direction. Null if neither.
+    /// </summary>
+    private List<Vector3> BlockerCorners(GenerateSource source, Matrix4x4 then, float margin)
+    {
+        Vector3 lo, hi;
+        var bounds = source.Part.RenderSceneMesh?.GetLocalBounds();
+
+        if (bounds is Veldrid.Utilities.BoundingBox box && box.Max.X > box.Min.X && box.Max.Z > box.Min.Z)
+        {
+            lo = box.Min;
+            hi = box.Max;
+        }
+        else if (SourceTriangles(source) is { Count: > 0 } local)
+        {
+            lo = local.Aggregate(new Vector3(float.MaxValue), Vector3.Min);
+            hi = local.Aggregate(new Vector3(float.MinValue), Vector3.Max);
+        }
+        else
+        {
+            return null;
+        }
+
+        var world = source.Part.GetWorldMatrix() * then;
+        var corners = new List<Vector3>(8);
+        for (int i = 0; i < 8; i++)
+            corners.Add(Vector3.Transform(new Vector3((i & 1) != 0 ? hi.X : lo.X, (i & 2) != 0 ? hi.Y : lo.Y, (i & 4) != 0 ? hi.Z : lo.Z), world));
+
+        if (margin > 0)
+        {
+            var centre = corners.Aggregate(Vector3.Zero, (s, c) => s + c) / 8;
+            for (int i = 0; i < 8; i++)
+            {
+                var away = corners[i] - centre;
+                if (away.LengthSquared() > 1e-12f)
+                    corners[i] += Vector3.Normalize(away) * margin;
+            }
+        }
+
+        return corners;
+    }
+
+    /// <summary>The twelve triangles (three points each) of a box from its eight corners, numbered as BlockerCorners does.</summary>
+    private static List<Vector3> BoxTriangles(List<Vector3> c)
+    {
+        var quads = new[] { (0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3) };
+        var triangles = new List<Vector3>(36);
+        foreach (var (a, b, d, e) in quads)
+        {
+            triangles.Add(c[a]); triangles.Add(c[b]); triangles.Add(c[d]);
+            triangles.Add(c[a]); triangles.Add(c[d]); triangles.Add(c[e]);
+        }
+        return triangles;
+    }
+
+    /// <summary>A part as a source of collision: a map collision part or an asset, else null.</summary>
+    private static GenerateSource SourceOf(MsbEntity part)
+    {
+        var model = part.GetProperty("ModelName")?.GetValue(part.WrappedObject) as string;
+        var mapId = part.MapID;
+        if (string.IsNullOrEmpty(model) || string.IsNullOrEmpty(mapId))
+            return null;
+
+        if (EntityHelper.IsPartCollision(part))
+            return new GenerateSource(part, mapId, false, model, LOC.Get("MAP_Navigation_Generate_Source_Collision", part.Name, model, mapId));
+        if (EntityHelper.IsPartAsset(part))
+            return new GenerateSource(part, mapId, true, model, LOC.Get("MAP_Navigation_Generate_Source_Asset", part.Name, model, mapId));
+        return null;
+    }
+
+    private bool IsBlocker(GenerateSource source) => BlockerTags.Contains((source.MapId, source.Part.Name));
+
+    /// <summary>The tagged blockers in the loaded maps, as sources.</summary>
+    private List<GenerateSource> TaggedBlockers()
+    {
+        var result = new List<GenerateSource>();
+        foreach (var loaded in LoadedMaps())
+            foreach (var entity in loaded.Objects)
+                if (entity is MsbEntity part && BlockerTags.Contains((part.MapID, part.Name)) && SourceOf(part) is GenerateSource source)
+                    result.Add(source);
+        return result;
     }
 
     /// <summary>
@@ -225,7 +409,7 @@ public partial class NavigationTool
     /// where each part is, then generates both sets and builds their files in the background, and makes the edit when
     /// that is done.
     /// </summary>
-    private void StartGenerate(MapContainer map, NavigationMap navigation, List<GenerateSource> sources, int preferredId, NavmeshModel target, ModelTarget kind, int newModelId)
+    private void StartGenerate(MapContainer map, NavigationMap navigation, List<GenerateSource> sources, List<GenerateSource> blockerSources, int preferredId, NavmeshModel target, ModelTarget kind, int newModelId)
     {
         ModelMessage = null;
         bool intoSlot = kind == ModelTarget.Slot;
@@ -261,8 +445,19 @@ public partial class NavigationTool
                 triangles.Add(Vector3.Transform(point, placement));
         }
 
-        // TEMPORARY diagnostics: what the generation read
-        Smithbox.Log(typeof(NavigationTool), $"[NavDiag] generate from {sources.Count} parts: {triangles.Count / 3} placed triangles; without collision: {string.Join(", ", missing)}");
+        // Blockers, one list a part, placed the same way
+        var blockers = new List<NavBlocker>();
+        foreach (var source in blockerSources)
+        {
+            var corners = BlockerCorners(source, toNavmeshSpace, 0);
+            if (corners == null)
+            {
+                missing.Add(source.Model);
+                continue;
+            }
+
+            blockers.Add(NavBlocker.FromCorners(corners));
+        }
 
         if (missing.Count > 0)
             Smithbox.Log(this, LOC.Get("MAP_Navigation_Generate_Missing", string.Join(", ", missing)));
@@ -287,8 +482,8 @@ public partial class NavigationTool
 
             try
             {
-                n = NavigationGenerator.Generate(triangles, pn, nTemplate);
-                o = NavigationGenerator.Generate(triangles, po, oTemplate);
+                n = NavigationGenerator.Generate(triangles, pn, nTemplate, blockers);
+                o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers);
                 error = n.Error ?? o.Error;
 
                 if (error == null)

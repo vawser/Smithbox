@@ -82,7 +82,11 @@ public partial class NavigationTool
 
                     ImGui.TableNextColumn();
                     if (ImGui.Selectable($"{model.ModelID:D6}##navigationModel_{i}", model.ModelID == SelectedModelID, ImGuiSelectableFlags.SpanAllColumns))
+                    {
                         SelectedModelID = model.ModelID;
+                        if (OverlayOnlySelectedModel)
+                            OverlayDirty = true;
+                    }
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{model.NEntry?.FaceCount ?? 0}");
@@ -289,7 +293,6 @@ public partial class NavigationTool
         ModelsNavigation = null;
         SetPicked(null);
         OnNavigationEdited();
-        DiagnoseNextRebuild = true;
         RefreshDrawnNavmeshes = true;
     }
 
@@ -298,12 +301,6 @@ public partial class NavigationTool
 
     /// <summary>The map of the last model edit, whose drawing is refreshed (undo and redo edit the same map).</summary>
     private MapContainer ModelEditMap;
-
-    /// <summary>
-    /// TEMPORARY diagnostics (overlay not showing a generated model): the next overlay rebuild after a model edit logs
-    /// what it drew. Remove once the overlay is confirmed in the app.
-    /// </summary>
-    private bool DiagnoseNextRebuild;
 
     /// <summary>The document each drawn navmesh resource was last rebuilt from.</summary>
     private readonly Dictionary<HavokNavmeshResource, Havok.HavokDocument> DrawnFrom = new();
@@ -368,24 +365,5 @@ public partial class NavigationTool
 
             PendingBufferRelease.RemoveAt(i);
         }
-    }
-
-    /// <summary>TEMPORARY diagnostics: what an overlay rebuild drew, by navmesh entry.</summary>
-    private void LogOverlayDiagnostics(NavigationMap navigation)
-    {
-        if (!DiagnoseNextRebuild)
-            return;
-
-        DiagnoseNextRebuild = false;
-        var lines = new List<string> { $"[NavDiag] overlay rebuilt for {navigation.MapId}, set {OverlaySet}, {navigation.Files.Count} files, faces drawn {OverlayData?.Batches.Values.Where(b => b.Layer == NavOverlayLayer.Faces).Sum(b => b.FaceCount) ?? -1}" };
-
-        foreach (var entry in NavigationOverlayBuilder.EntriesOf(navigation, OverlaySet))
-        {
-            var name = navigation.FileNameOf(entry);
-            var file = navigation.FileOf(entry);
-            lines.Add($"[NavDiag]   entry {(uint)entry.NameID} model {entry.ModelID:D6} faces {entry.FaceCount} file {name} {(file == null ? "MISSING" : $"{file.FaceCount} faces, doc {file.Document?.GetHashCode():X8}")}");
-        }
-
-        Smithbox.Log(typeof(NavigationTool), string.Join("\n", lines));
     }
 }

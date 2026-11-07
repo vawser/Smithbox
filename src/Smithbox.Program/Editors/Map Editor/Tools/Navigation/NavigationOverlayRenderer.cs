@@ -42,6 +42,7 @@ public sealed class NavigationOverlayRenderer
         NavOverlayLayer.OnavLinks => new(0.40f, 0.40f, 1.00f),
         NavOverlayLayer.OnavCells => new(0.45f, 0.45f, 0.75f),
         NavOverlayLayer.Highlight => new(1.00f, 1.00f, 1.00f),
+        NavOverlayLayer.Blockers => new(1.00f, 0.15f, 0.15f),
         _ => new(1, 1, 1),
     };
 
@@ -84,6 +85,25 @@ public sealed class NavigationOverlayRenderer
         }
 
         FaceLegend = legend;
+
+        // Blockers: a red fill, a little more opaque than the faces so it reads over the collision
+        foreach (var batch in overlay.Batches.Values.Where(b => b.Layer == NavOverlayLayer.Blockers && b.Triangles.Count > 0))
+        {
+            var fill = ColorHelper.GetTransparencyColor(LayerColor(NavOverlayLayer.Blockers), Math.Max(faceOpacity, 40));
+
+            foreach (var chunk in batch.Triangles.Chunk(DbgPrimWallCells.MaxTriangles))
+            {
+                var primitive = new DbgPrimWallCells(chunk);
+                var proxy = new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, primitive)
+                {
+                    Pickable = false,
+                    RenderTranslucent = true,
+                    BaseColor = fill,
+                    HighlightedColor = fill,
+                };
+                Shown.Add((proxy, primitive.Release));
+            }
+        }
 
         foreach (var batch in overlay.Batches.Values.Where(b => b.Layer != NavOverlayLayer.Faces && b.Lines.Count > 0))
         {

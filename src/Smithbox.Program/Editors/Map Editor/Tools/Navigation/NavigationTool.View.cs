@@ -20,12 +20,19 @@ public partial class NavigationTool
 {
     private readonly NavigationOverlayRenderer OverlayRenderer = new();
     private readonly NavigationOverlayRenderer HighlightRenderer = new();
+    private readonly NavigationOverlayRenderer BlockerRenderer = new();
+
+    /// <summary>Set when the blocker tags or the overlay change: the red blocker fill is drawn again.</summary>
+    private bool BlockerOverlayDirty;
 
     private bool ShowOverlay;
     private NavmeshSet OverlaySet = NavmeshSet.N;
     private float FaceOpacity = 45;
     private bool OverlayDirty;
     private bool ShowLegend = true;
+
+    /// <summary>Draw only the model selected in the Models tab, to tell it from the others.</summary>
+    private bool OverlayOnlySelectedModel;
 
     private readonly HashSet<NavOverlayLayer> Layers = new()
     {
@@ -68,7 +75,7 @@ public partial class NavigationTool
     private readonly Dictionary<int, string> EdgeDataText = new();
 
     /// <summary>The layers the user can toggle, in the order they are listed. Highlight is the tool's own.</summary>
-    private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>().Where(l => l != NavOverlayLayer.Highlight).ToArray();
+    private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>().Where(l => l != NavOverlayLayer.Highlight && l != NavOverlayLayer.Blockers).ToArray();
 
     /// <summary>
     /// Keeps the overlay on the map picked above, and draws it again after a change. Called before the tabs, so it works
@@ -114,6 +121,10 @@ public partial class NavigationTool
         if (ImGui.SliderFloat("##navigationFaceOpacity", ref FaceOpacity, 5, 100, $"{LOC.Get("MAP_Navigation_Overlay_Opacity")} %.0f"))
             OverlayDirty = true;
         GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Opacity_TT"));
+
+        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Overlay_Only_Selected")}##navigationOverlayOnlySelected", ref OverlayOnlySelectedModel))
+            OverlayDirty = true;
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Only_Selected_TT"));
 
         // Layers
         GUI.Spacer();
@@ -395,9 +406,11 @@ public partial class NavigationTool
         OverlayMap = map.Name;
         OverlayContainer = map;
         OverlayNavigation = navigation;
-        OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers);
+        int onlyModel = SelectedModelID;
+        OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers,
+            OverlayOnlySelectedModel && onlyModel >= 0 ? e => e.ModelID == onlyModel : null);
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
-        LogOverlayDiagnostics(navigation);
+        BlockerOverlayDirty = true;
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
             SetPicked(keep);
@@ -406,6 +419,7 @@ public partial class NavigationTool
     private void ClearOverlay()
     {
         OverlayRenderer.Clear();
+        BlockerRenderer.Clear();
         HighlightRenderer.Clear();
         OverlayMap = null;
         OverlayContainer = null;
@@ -465,6 +479,10 @@ public partial class NavigationTool
 
         if (ShowOverlay && OverlayDirty && OverlayContainer != null && StrokeOrder.Count == 0)
             RebuildOverlay(OverlayContainer);
+
+        CheckBlockerMoves();
+        if (BlockerOverlayDirty)
+            UpdateBlockerOverlay();
 
         if (OverlayNavigation == null || (!PickMode && !PaintMode && !LinkMode))
             return false;

@@ -83,6 +83,12 @@ public sealed class NavGenResult
 
     public int SnappedVertices { get; init; }
 
+    /// <summary>How many faces a blocker cut.</summary>
+    public int ClippedFaces { get; init; }
+
+    /// <summary>Vertices and face centres left inside a blocker's cut: a self-check, which should be 0.</summary>
+    public int InsideCut { get; init; }
+
     public bool Ok => Error == null;
 }
 
@@ -96,22 +102,57 @@ public static class NavigationGenerator
     /// the per-face and per-mesh values the game's files carry (cluster index, padding, flags, AABB w); faces get no face
     /// data, edges flags 4 (ORIGINAL) and no edge data, as the game's do.
     /// </summary>
-    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, hkaiNavMesh template = null)
+    /// <param name="blockers">
+    /// Boxes that are solid and never walkable, in the same space. No part of the navmesh is left inside a box widened
+    /// by the agent radius at its sides and reaching a climb below its base: a hard cut, made three ways.
+    /// - The box is voxelised with the walkable collision, unwalkable, so the floor under it is covered and its top isn't
+    ///   walkable;
+    /// - its outline seen from above, widened, is marked unwalkable from a climb below its base to its top, as Recast
+    ///   would otherwise let a character step onto anything less than a climb high;
+    /// - every face is then clipped against the widened box, as Recast's simplified outlines can reach up to the max
+    ///   edge error back into the cut. The pieces outside are kept, joined to their neighbours.
+    /// </param>
+    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, hkaiNavMesh template = null, IReadOnlyList<NavBlocker> blockers = null)
     {
         if (triangles.Count < 3)
             return new NavGenResult { Error = "MAP_Navigation_Generate_Error_No_Collision" };
 
-        var vertices = new float[triangles.Count * 3];
-        var faces = new int[triangles.Count];
-        for (int i = 0; i < triangles.Count; i++)
+        blockers ??= Array.Empty<NavBlocker>();
+        var cuts = blockers.Select(b => b.Widened(p.AgentRadius, p.MaxClimb)).ToList();
+        var blockerTriangles = blockers.SelectMany(b => b.Triangles()).ToList();
+        int walkableCount = triangles.Count / 3, blockerCount = blockerTriangles.Count / 3;
+        var vertices = new float[(walkableCount + blockerCount) * 9];
+        var faces = new int[(walkableCount + blockerCount) * 3];
+        for (int i = 0; i < (walkableCount + blockerCount) * 3; i++)
         {
-            vertices[i * 3] = triangles[i].X;
-            vertices[i * 3 + 1] = triangles[i].Y;
-            vertices[i * 3 + 2] = triangles[i].Z;
+            var point = i < walkableCount * 3 ? triangles[i] : blockerTriangles[i - walkableCount * 3];
+            vertices[i * 3] = point.X;
+            vertices[i * 3 + 1] = point.Y;
+            vertices[i * 3 + 2] = point.Z;
             faces[i] = i;
         }
 
-        var geometry = new RcSampleInputGeomProvider(vertices, faces);
+        // The walkable collision alone, for the bounds and the input geometry Recast's later steps read
+        var walkableVertices = vertices.AsSpan(0, walkableCount * 9).ToArray();
+        var geometry = new RcSampleInputGeomProvider(walkableVertices, faces.AsSpan(0, walkableCount * 3).ToArray());
+
+        foreach (var cut in cuts)
+        {
+            var corners = cut.Corners();
+            var outline = Outline(corners, p.CellSize);
+            if (outline.Count < 3)
+                continue;
+
+            var volume = new float[outline.Count * 3];
+            for (int i = 0; i < outline.Count; i++)
+            {
+                volume[i * 3] = outline[i].X;
+                volume[i * 3 + 2] = outline[i].Y;
+            }
+
+            geometry.AddConvexVolume(volume, corners.Min(v => v.Y) - p.CellHeight, corners.Max(v => v.Y) + p.CellHeight,
+                new RcAreaModification(RcRecast.RC_NULL_AREA));
+        }
 
         // The Recast settings in voxels; the area settings are in squared voxels
         int regionMin = Math.Max(1, (int)MathF.Round(MathF.Sqrt(p.MinRegionArea) / p.CellSize));
@@ -123,7 +164,28 @@ public static class NavigationGenerator
         RcBuilderResult built;
         try
         {
-            built = new RcBuilder().Build(geometry, new RcBuilderConfig(config, geometry.GetMeshBoundsMin(), geometry.GetMeshBoundsMax()), false);
+            // The heightfield over the walkable collision, with room above and below for blockers
+            var bmin = geometry.GetMeshBoundsMin();
+            var bmax = geometry.GetMeshBoundsMax();
+            foreach (var b in blockerTriangles)
+            {
+                if (b.X < bmin.X || b.X > bmax.X || b.Z < bmin.Z || b.Z > bmax.Z)
+                    continue;
+                bmin.Y = MathF.Min(bmin.Y, b.Y);
+                bmax.Y = MathF.Max(bmax.Y, b.Y);
+            }
+
+            var context = new DotRecast.Core.RcContext();
+            var builderConfig = new RcBuilderConfig(config, bmin, bmax);
+            var solid = new RcHeightfield(builderConfig.width, builderConfig.height, builderConfig.bmin, builderConfig.bmax, config.Cs, config.Ch, config.BorderSize);
+
+            // Walkable by slope, as Recast marks them; blockers never
+            var areas = RcRecast.MarkWalkableTriangles(context, config.WalkableSlopeAngle, vertices, faces, walkableCount + blockerCount, config.WalkableAreaMod);
+            for (int t = walkableCount; t < walkableCount + blockerCount; t++)
+                areas[t] = RcRecast.RC_NULL_AREA;
+
+            RcRasterizations.RasterizeTriangles(context, vertices, faces, areas, walkableCount + blockerCount, solid, config.WalkableClimb);
+            built = new RcBuilder().Build(context, 0, 0, geometry, config, solid, false);
         }
         catch (Exception)
         {
@@ -153,15 +215,208 @@ public static class NavigationGenerator
             }
         }
 
-        var mesh = ToNavMesh(poly, points, template);
-        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped };
+        var polygons = Polygons(poly, points);
+
+        // The hard cut: every face clipped against every widened box
+        int clipped = 0;
+        foreach (var cut in cuts)
+        {
+            var next = new List<List<Vector3>>(polygons.Count);
+            foreach (var polygon in polygons)
+            {
+                var pieces = cut.Outside(polygon);
+                if (pieces.Count != 1 || !ReferenceEquals(pieces[0], polygon))
+                    clipped++;
+                foreach (var piece in pieces.Where(q => q.Count >= 3 && AreaXZ(q) > 1e-4f))
+                {
+                    // A cut through a face that isn't flat can leave a piece that bends in, seen from above: it goes in as triangles
+                    if (ReferenceEquals(piece, polygon) || ConvexXZ(piece))
+                        next.Add(piece);
+                    else
+                        next.AddRange(EarClip(piece));
+                }
+            }
+            polygons = next;
+        }
+
+        if (polygons.Count == 0)
+            return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
+
+        var mesh = BuildMesh(polygons, template);
+
+        // Self-check: vertices and face centres still inside a cut (should be none)
+        int insideCut = 0;
+        foreach (var v in mesh.m_vertices)
+            if (cuts.Any(c => c.Contains(new Vector3(v.X, v.Y, v.Z), -0.01f)))
+                insideCut++;
+        for (int f = 0; f < mesh.m_faces.Count; f++)
+        {
+            var centre = NavigationOverlayBuilder.FaceCentre(mesh, f);
+            if (cuts.Any(c => c.Contains(centre, -0.01f)))
+                insideCut++;
+        }
+
+        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut };
     }
 
     /// <summary>
-    /// The polygons as an hkaiNavMesh: each face's corners wound counter-clockwise seen from above, as the game's are;
-    /// each edge from its corner to the next; inner edges named by the edge and face on their other side.
+    /// The convex outline of a set of points seen from above (X, Z), widened by a margin: the hull of the points and of
+    /// eight points around each hull corner at the margin's distance. Counter-clockwise.
     /// </summary>
-    private static hkaiNavMesh ToNavMesh(RcPolyMesh poly, Vector3[] points, hkaiNavMesh template)
+    private static List<Vector2> Outline(IEnumerable<Vector3> points, float margin)
+    {
+        var hull = Hull(points.Select(v => new Vector2(v.X, v.Z)));
+        if (margin <= 0)
+            return hull;
+
+        var widened = new List<Vector2>();
+        foreach (var corner in hull)
+            for (int k = 0; k < 8; k++)
+                widened.Add(corner + new Vector2(MathF.Cos(k * MathF.PI / 4), MathF.Sin(k * MathF.PI / 4)) * margin / MathF.Cos(MathF.PI / 8));
+        return Hull(widened);
+    }
+
+    /// <summary>The convex hull of points (Andrew's monotone chain), counter-clockwise.</summary>
+    private static List<Vector2> Hull(IEnumerable<Vector2> input)
+    {
+        var pts = input.Distinct().OrderBy(q => q.X).ThenBy(q => q.Y).ToList();
+        if (pts.Count < 3)
+            return pts;
+
+        static float Cross(Vector2 o, Vector2 a, Vector2 b) => (a.X - o.X) * (b.Y - o.Y) - (a.Y - o.Y) * (b.X - o.X);
+
+        var hull = new List<Vector2>();
+        for (int pass = 0; pass < 2; pass++)
+        {
+            int start = hull.Count;
+            foreach (var q in pass == 0 ? pts : Enumerable.Reverse(pts))
+            {
+                while (hull.Count >= start + 2 && Cross(hull[^2], hull[^1], q) <= 0)
+                    hull.RemoveAt(hull.Count - 1);
+                hull.Add(q);
+            }
+            hull.RemoveAt(hull.Count - 1);
+        }
+        return hull;
+    }
+
+    /// <summary>Whether a polygon, seen from above, turns the same way (counter-clockwise) at every corner.</summary>
+    private static bool ConvexXZ(List<Vector3> polygon)
+    {
+        for (int k = 0; k < polygon.Count; k++)
+        {
+            var a = polygon[k];
+            var b = polygon[(k + 1) % polygon.Count];
+            var c = polygon[(k + 2) % polygon.Count];
+            // As the sine of the turn, so a long edge's float error isn't taken for a bend
+            float lengths = MathF.Sqrt(((b.X - a.X) * (b.X - a.X) + (b.Z - a.Z) * (b.Z - a.Z)) * ((c.X - b.X) * (c.X - b.X) + (c.Z - b.Z) * (c.Z - b.Z)));
+            if (lengths > 1e-9f && TurnXZ(a, b, c) / lengths > 1e-3f)
+                return false;
+        }
+        return true;
+    }
+
+    /// <summary>The turn at b, seen from above (X right, Z down the page): negative for counter-clockwise, as the faces wind.</summary>
+    private static float TurnXZ(Vector3 a, Vector3 b, Vector3 c) => (b.X - a.X) * (c.Z - b.Z) - (b.Z - a.Z) * (c.X - b.X);
+
+    /// <summary>
+    /// A simple polygon (counter-clockwise from above) as triangles, by ear clipping in XZ: each step cuts off a corner
+    /// that turns the right way and has no other corner inside it. Corners on a straight line are kept until last.
+    /// </summary>
+    private static List<List<Vector3>> EarClip(List<Vector3> polygon)
+    {
+        var result = new List<List<Vector3>>();
+        var rest = new List<Vector3>(polygon);
+        int guard = rest.Count * rest.Count;
+
+        while (rest.Count > 3 && guard-- > 0)
+        {
+            bool cut = false;
+            for (int i = 0; i < rest.Count && !cut; i++)
+            {
+                var a = rest[(i + rest.Count - 1) % rest.Count];
+                var b = rest[i];
+                var c = rest[(i + 1) % rest.Count];
+
+                if (TurnXZ(a, b, c) > -1e-6f)
+                    continue;
+
+                bool empty = true;
+                foreach (var q in rest)
+                {
+                    if (q == a || q == b || q == c)
+                        continue;
+                    if (TurnXZ(a, b, q) <= 0 && TurnXZ(b, c, q) <= 0 && TurnXZ(c, a, q) <= 0)
+                    {
+                        empty = false;
+                        break;
+                    }
+                }
+
+                if (!empty)
+                    continue;
+
+                result.Add(new List<Vector3> { a, b, c });
+                rest.RemoveAt(i);
+                cut = true;
+            }
+
+            if (!cut)
+                break;
+        }
+
+        if (rest.Count >= 3 && AreaXZ(rest) > 1e-6f)
+            result.Add(rest);
+        return result;
+    }
+
+    private static float AreaXZ(List<Vector3> polygon)
+    {
+        float area = 0;
+        for (int i = 0; i < polygon.Count; i++)
+        {
+            var a = polygon[i];
+            var b = polygon[(i + 1) % polygon.Count];
+            area += a.X * b.Z - b.X * a.Z;
+        }
+        return MathF.Abs(area) / 2;
+    }
+
+    /// <summary>The faces of Recast's polygon mesh as corner lists, wound counter-clockwise seen from above.</summary>
+    private static List<List<Vector3>> Polygons(RcPolyMesh poly, Vector3[] points)
+    {
+        var polygons = new List<List<Vector3>>(poly.npolys);
+
+        for (int i = 0; i < poly.npolys; i++)
+        {
+            int start = i * 2 * poly.nvp;
+            var corners = new List<Vector3>();
+            for (int k = 0; k < poly.nvp && poly.polys[start + k] != Null; k++)
+                corners.Add(points[poly.polys[start + k]]);
+
+            if (corners.Count < 3)
+                continue;
+
+            // Counter-clockwise from above: the normal of the corners points up
+            var normal = Vector3.Zero;
+            for (int k = 1; k + 1 < corners.Count; k++)
+                normal += Vector3.Cross(corners[k] - corners[0], corners[k + 1] - corners[0]);
+            if (normal.Y < 0)
+                corners.Reverse();
+
+            polygons.Add(corners);
+        }
+
+        return polygons;
+    }
+
+    /// <summary>
+    /// Faces (corner lists, counter-clockwise from above) as an hkaiNavMesh: corners at the same place (within a
+    /// millimetre) are one vertex; a vertex lying on another face's edge is inserted into that edge, so faces that
+    /// share a border share its edges; each edge runs from its corner to the next, and inner edges are named by the
+    /// edge and face on their other side.
+    /// </summary>
+    private static hkaiNavMesh BuildMesh(List<List<Vector3>> polygons, hkaiNavMesh template)
     {
         var templateFace = template?.m_faces.FirstOrDefault();
         float w = template?.m_vertices.FirstOrDefault().W ?? 1f;
@@ -175,29 +430,95 @@ public static class NavigationGenerator
             m_userData = template?.m_userData ?? 0,
         };
 
+        // Welded vertices
+        var points = new List<Vector3>();
+        var byPosition = new Dictionary<(long, long, long), int>();
+        int Weld(Vector3 q)
+        {
+            var key = ((long)MathF.Round(q.X * 1000), (long)MathF.Round(q.Y * 1000), (long)MathF.Round(q.Z * 1000));
+            if (!byPosition.TryGetValue(key, out int index))
+            {
+                index = points.Count;
+                points.Add(q);
+                byPosition[key] = index;
+            }
+            return index;
+        }
+
+        var faces = new List<List<int>>();
+        foreach (var polygon in polygons)
+        {
+            var corners = new List<int>();
+            foreach (var q in polygon)
+            {
+                int index = Weld(q);
+                if (corners.Count == 0 || corners[^1] != index)
+                    corners.Add(index);
+            }
+            if (corners.Count > 1 && corners[0] == corners[^1])
+                corners.RemoveAt(corners.Count - 1);
+            if (corners.Count >= 3)
+                faces.Add(corners);
+        }
+
+        // T-junctions: a vertex on another face's edge goes into that edge
+        var grid = new Dictionary<(int, int), List<int>>();
+        const float cell = 2f;
+        for (int v = 0; v < points.Count; v++)
+        {
+            var key = ((int)MathF.Floor(points[v].X / cell), (int)MathF.Floor(points[v].Z / cell));
+            if (!grid.TryGetValue(key, out var list))
+                grid[key] = list = new List<int>();
+            list.Add(v);
+        }
+
+        foreach (var face in faces)
+        {
+            for (int k = 0; k < face.Count; k++)
+            {
+                int ia = face[k], ib = face[(k + 1) % face.Count];
+                var a = points[ia];
+                var b = points[ib];
+                var ab = b - a;
+                float length2 = ab.LengthSquared();
+                if (length2 < 1e-8f)
+                    continue;
+
+                var between = new List<(float T, int V)>();
+                for (int x = (int)MathF.Floor(MathF.Min(a.X, b.X) / cell); x <= (int)MathF.Floor(MathF.Max(a.X, b.X) / cell); x++)
+                    for (int z = (int)MathF.Floor(MathF.Min(a.Z, b.Z) / cell); z <= (int)MathF.Floor(MathF.Max(a.Z, b.Z) / cell); z++)
+                    {
+                        if (!grid.TryGetValue((x, z), out var list))
+                            continue;
+                        foreach (var v in list)
+                        {
+                            if (v == ia || v == ib)
+                                continue;
+                            float t = Vector3.Dot(points[v] - a, ab) / length2;
+                            if (t <= 1e-4f || t >= 1 - 1e-4f)
+                                continue;
+                            if (Vector3.DistanceSquared(a + ab * t, points[v]) < 4e-6f)
+                                between.Add((t, v));
+                        }
+                    }
+
+                if (between.Count == 0)
+                    continue;
+
+                var inserted = between.OrderBy(x => x.T).Select(x => x.V).Distinct().ToList();
+                face.InsertRange(k + 1, inserted);
+                k += inserted.Count;
+            }
+        }
+
         foreach (var point in points)
             mesh.m_vertices.Add(new Vector4(point, w));
 
         var byVertices = new Dictionary<(int, int), int>();
         var edgeFace = new List<int>();
 
-        for (int i = 0; i < poly.npolys; i++)
+        foreach (var corners in faces)
         {
-            int start = i * 2 * poly.nvp;
-            var corners = new List<int>();
-            for (int k = 0; k < poly.nvp && poly.polys[start + k] != Null; k++)
-                corners.Add(poly.polys[start + k]);
-
-            if (corners.Count < 3)
-                continue;
-
-            // Counter-clockwise from above: the normal of the corners points up
-            var normal = Vector3.Zero;
-            for (int k = 1; k + 1 < corners.Count; k++)
-                normal += Vector3.Cross(points[corners[k]] - points[corners[0]], points[corners[k + 1]] - points[corners[0]]);
-            if (normal.Y < 0)
-                corners.Reverse();
-
             var face = new hkaiNavMesh.Face
             {
                 m_startEdgeIndex = mesh.m_edges.Count,
@@ -215,7 +536,8 @@ public static class NavigationGenerator
             for (int k = 0; k < corners.Count; k++)
             {
                 int a = corners[k], b = corners[(k + 1) % corners.Count];
-                byVertices[(a, b)] = mesh.m_edges.Count;
+                // An edge two faces share the same way round can't pair: it stays on the boundary (-1)
+                byVertices[(a, b)] = byVertices.ContainsKey((a, b)) ? -1 : mesh.m_edges.Count;
                 mesh.m_edges.Add(new hkaiNavMesh.Edge
                 {
                     m_a = a,
@@ -230,11 +552,12 @@ public static class NavigationGenerator
             }
         }
 
-        // Inner edges: the same two vertices the other way round
+        // Inner edges: the same two vertices the other way round, when both ways are unique
         for (int e = 0; e < mesh.m_edges.Count; e++)
         {
             var edge = mesh.m_edges[e];
-            if (byVertices.TryGetValue((edge.m_b, edge.m_a), out int other) && other != e)
+            if (byVertices.TryGetValue((edge.m_b, edge.m_a), out int other) && other >= 0 && other != e
+                && byVertices.GetValueOrDefault((edge.m_a, edge.m_b), -1) == e)
             {
                 edge.m_oppositeEdge = (uint)other;
                 edge.m_oppositeFace = (uint)edgeFace[other];

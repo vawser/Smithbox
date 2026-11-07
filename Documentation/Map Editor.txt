@@ -8,4 +8,4 @@
 
 - Navmesh editing
     - Allow vertex editing
-    - Add mixed selection for generation: col and/or assets (whose col is used)
+    - Add auto-implement of jumps/fall links based on a height heuristic

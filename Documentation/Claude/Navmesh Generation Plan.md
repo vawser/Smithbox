@@ -168,6 +168,38 @@ Each part's triangles are placed by the part's world transform, taken back out o
 used several times counts only where it is selected, and parts from neighbouring maps land in the right place. Parts
 without collision are logged and left out.
 
+**Blockers** (2026-11-07): parts tagged Blocker (in Generate's Selected parts list; tags last for the session) are
+solid but never walkable. Every tagged part of a loaded map counts in each generation, selected or not.
+- **Each blocker is its part's bounding box:** the model's bounds, as the viewport's selection box shows them
+  (`RenderSceneMesh.GetLocalBounds()`), placed by the part's world transform; the collision's bounds if the model isn't
+  loaded. The box's 12 triangles are what is rasterised and carved. The first version used the part's collision
+  triangles, which in the app still left navmesh under an asset; the box is also what a user expects.
+- `NavigationGenerator.Generate` builds Recast's heightfield itself:
+  - walkable collision is marked by slope as before, and blocker triangles get area 0;
+  - both are rasterised together, then `RcBuilder.Build(ctx, 0, 0, geom, cfg, solid, false)` runs the rest of the pipeline.
+- **A convex volume per blocker:** each blocker's outline from above, widened by the agent radius plus a voxel, is marked
+  unwalkable from a climb below its lowest point to its top. Recast's low-hanging-obstacle filter would otherwise make a
+  blocker face within a climb of a floor walkable again.
+- **Checked with NavSurvey `navgen`:**
+  - without blockers the result is identical to `RcBuilder`'s own voxelisation (the same coverage numbers to 3 decimals);
+  - with a 2 × 2 × 1.5 m box on each mesh's largest face, 16 of 16 meshes have nothing under or on the box and keep
+    the agent radius from it (median area lost 7.3 m²).
+  - Before the convex volumes, 2 of 16 boxes on sloped or stepped floor still had navmesh inside.
+- **Overlay:** while the overlay is shown, each tagged blocker's box is filled in red
+  (`NavOverlayLayer.Blockers`, its own renderer), grown 3 cm so it shows over the part.
+- **Hard cut** (`Tools/Navigation/NavigationBlocker.cs`, `NavBlocker`). In the app the voxel cut still left navmesh
+  inside the box, as Recast's simplified outlines can reach up to the max edge error (1 m) back into a cut. So after Recast:
+  - every face is split against the six planes of the box, widened by the agent radius at its sides and reaching a climb
+    below its base, and the pieces inside are dropped;
+  - pieces that bend in seen from above (a cut through a face that isn't flat) are split into triangles;
+  - the mesh is rebuilt: vertices within 1 mm are welded, and a vertex on another face's edge is inserted into it, so cut
+    faces stay joined to their neighbours;
+  - edges pair only when the match is unique both ways; an edge three faces share stays on the boundary.
+  - **`navgen`, 25 meshes** (`m10_01`, `m12_01`, `m11_05`, `m60_42_36_00`, `m60_44_35_00`): with an upright box and one
+    turned 30° and tilted 10°, no sample (0.25 m grid) and no vertex is inside the cut, 25 of 25; every mesh is valid
+    (corners chain, faces convex to 0.06°, opposite edges pair back). Without blockers the coverage is unchanged.
+- The red boxes are redrawn when a tagged part moves (its transform is checked every 15 frames).
+
 **Next:** asset collision (MSB asset parts placed with their own collision models), which covers what map collision misses.
 Then clearance seeding, gate nodes, and dropping unreachable areas (keep only regions joined to a seed).
 

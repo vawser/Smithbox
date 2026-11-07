@@ -50,6 +50,9 @@ public enum NavOverlayLayer
 
     /// <summary>The outline of the picked face, drawn over everything.</summary>
     Highlight,
+
+    /// <summary>The collision of the parts tagged as blockers, filled in red: generation goes around them.</summary>
+    Blockers,
 }
 
 /// <summary>
@@ -112,7 +115,7 @@ public static class NavigationOverlayBuilder
     /// (gate nodes, ONAV) in the viewport.
     /// </summary>
     public static NavOverlay Build(NavigationMap map, NavmeshSet set, Func<NVA_ER.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
-        ISet<NavOverlayLayer> layers)
+        ISet<NavOverlayLayer> layers, Func<NVA_ER.Navmesh, bool> only = null)
     {
         var overlay = new NavOverlay { MapId = map.MapId, Set = set };
 
@@ -136,7 +139,7 @@ public static class NavigationOverlayBuilder
         {
             var mesh = map.FileOf(entry)?.Mesh;
 
-            if (mesh == null || mesh.m_faces.Count == 0)
+            if (mesh == null || mesh.m_faces.Count == 0 || (only != null && !only(entry)))
                 continue;
 
             AddMesh(overlay, entry, mesh, entryWorld(entry), layers, inMap, crossMap);
