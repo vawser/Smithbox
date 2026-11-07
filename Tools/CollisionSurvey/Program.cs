@@ -34,6 +34,11 @@ if (type == "link") { Link.Survey(fs, gameName, mapId, maxFiles, filter); return
 if (type == "create") { Create.Survey(fs, gameName, mapId); return; }
 
 // The Collision Editor's commit: new keys find their triangles, and the walls' keys are ones the decode gives
+if (type == "fallcompare") { FallCompare.Survey(fs, gameName, mapId, maxFiles, filter); return; }
+if (type == "fallrebuild") { FallRebuild.Survey(fs, gameName, mapId, maxFiles, filter); return; }
+if (type == "falldetail") { FallDetail.Survey(fs, gameName, mapId, maxFiles, filter); return; }
+if (type == "fall") { Fall.Survey(fs, gameName, mapId, maxFiles, filter); return; }
+
 if (type == "remap") { Remap.Survey(fs, gameName, mapId, maxFiles); return; }
 
 var bhdPath = game is Game.DS3 or Game.SDT or Game.BB

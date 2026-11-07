@@ -125,6 +125,59 @@ High and low collision are the same ground at two levels of detail; fall protect
 - They don't cover the same ground everywhere: in h/l 002400, 68% of low vertices have no high surface within 8;
   in 009700, most of high has no low within 8. So vertices with nothing close don't follow at all.
 
+## Fall Protection tab
+
+Generates the fall protection (f) collision of the selected collision part (ER and NR only): flat vertical walls
+along the outer edges of the part's high or low collision, optionally only those facing one world direction.
+
+- **Outer edges**: the source file's triangles (`CollisionGeometry.Submeshes`, in the part's space) are welded at 1 mm;
+  an edge used by a single triangle is outer. It faces away from its triangle (the third corner, flattened into the
+  world); a triangle standing straight up above its edge uses its own facing. North is +Z and east is +X; an edge
+  counts for the direction nearest its facing. Vertical edges are skipped.
+- **Drop Edges Only** (on by default): an outer edge keeps its wall only if its triangle faces up enough to stand on
+  (world normal Y >= 0.5, slopes to about 60 degrees) and, 0.25 past its middle, the highest ground below a point
+  0.5 above the edge is more than the minimum drop (default 1.0) below it, or missing. Ground is the part's own
+  collision plus the same layer of every other visible, loaded collision part whose drawn bounds reach the probe
+  area (`FallGround`: up-facing world triangles on a 2 m grid). This removes open seams, wall and ceiling edges.
+  In Stormveil (`CollisionSurvey ER m10_00_00_00 0 fallcompare`, ground all of the map's h files): every outer edge
+  gives 321,908 walls, drops only 21,121 (game: 9,594). Within 1 m of a game wall: 46% of game wall bottoms near a
+  generated one with every edge, 28.5% with drops only; generated walls near a game one 2.7% -> 6.3%. The game protects
+  only some drops, so this can't score the filter, only show the seams going. Without the upward-facing check the
+  drop filter alone left 88,067. An open-world tile on its own shows its border as drops, which is why the tab takes
+  the neighbouring parts (other tiles' collision) as ground.
+- **Walls**: connected edges form runs (a run carries on through a vertex with two edges); each run of up to 32
+  edges is a body. A body's extern mesh is a strip: a bottom vertex on each point and a top vertex the wall height
+  (default 1.8, as every game wall) above it, along the world's up. The quad triangles are ordered as the game's.
+- **File**: the part's model's f file (`f10_00_00_00_001234.hkx.dcx` for `h001234`). If the model has none, one is
+  made from the first f file of the binder with a single physics system (the game has empty ones), with its bodies
+  cleared. The walls replace the file's bodies, or are added to them (Keep Existing Walls), as one
+  `FallProtectionAction`; undo puts the old bodies back. The f binder is written straight away.
+- **Display**: the walls are previewed in the viewport (fall protection colour) while the tab is open. After
+  generating, the resource's submeshes are rebuilt (`RefreshCollisionMesh` with `allowCountChange`, as the body
+  count changes) and the parts drawing the file get new meshes (`AssignDrawable`). A new file is loaded by name.
+
+### The game's f files (`CollisionSurvey ER|NR <map> 0 fall|falldetail|fallrebuild|fallcompare`)
+
+- ER and NR: one physics system ("Default Physics System Data", one material, one motion properties), a body per
+  wall run (`bodyCinfoWithAttachment`, unnamed, at the origin, material 0, filter 0 or 1, motion 0x7FFFFFFF, mass -1,
+  motion properties 0xFFFF, desired body 0xFFFFFF, attached -1). Each shape is an `hknpExternMeshShape` with
+  `hknpDefaultExternMeshShapeGeometry`: vertices with w 1 in bottom/top pairs exactly 1.8 apart, triangles with
+  material -1, no convex radius, shape tag codec 0xFFFFFFFF, and key bits of the triangle count's bit length plus one
+  (2009/2009). The shared `BuildExternMeshShape` doesn't match (log2 key bits, non-compact tree, leaf sentinel), so the
+  tab builds its own.
+- The simd tree is compact: node 0 an empty inner sentinel, node 1 the root (inner even for one leaf), breadth first,
+  inner lanes holding child indices (0 empty), leaf lanes triangle indices (0xFFFFFFFF empty), empty boxes
+  +/-float.MaxValue. The tab's tree follows this layout but not the game's exact ordering: rebuilt from each game body's
+  triangles, 4349/4349 trees are valid (every triangle once, boxes hold them) and 0 identical; every other shape and
+  body field equals the game's (ER m10_00_00_00, m60_42_36_00, NR m10_00_00_00). A generated file writes and reads
+  back with no field differences.
+- Filter 0 and 1 both appear (ER legacy dungeons: 1 only; open world and NR: both); what they block isn't known.
+- The game's walls are not on the h mesh's outer edges: 1.2% of their bottom vertices lie within 5 cm of a generated
+  wall. Vanilla h meshes have many open seams (h001200 of Stormveil: 20,880 outer edges), so generating from a vanilla
+  mesh gives walls along those seams too. The game's walls likely follow the walkable boundary (the navmesh's).
+- AC6's f files differ: `hknpCompoundShape` bodies of extern mesh instances (with plain extern bodies too), and walls
+  10 high. Not supported.
+
 ## Design
 
 - **Welding**: a compressed mesh stores triangles per section; vertices shared between sections are stored once as
@@ -142,6 +195,10 @@ High and low collision are the same ground at two levels of detail; fall protect
 - `Editors/Map Editor/Tools/Collision Editor/CollisionEditorMesh.cs`: decoded bodies (welding, raycast, falloff, preview).
 - `Editors/Map Editor/Tools/Collision Editor/CollisionEditorShapes.cs`: the hk2018/hk2019 class-set code.
 - `Editors/Map Editor/Actions/Map Objects/CollisionEditorAction.cs`: the undoable shape swap.
+- `Editors/Map Editor/Tools/Collision Editor/CollisionEditorFallProtection.cs`: the Fall Protection tab.
+- `Editors/Map Editor/Tools/Collision Editor/CollisionEditorFallShapes.cs`: outer edges, wall strips, the f bodies,
+  shapes and simd tree (linked into CollisionSurvey for `fallcompare`).
+- `Editors/Map Editor/Actions/Map Objects/FallProtectionAction.cs`: the undoable body swap of an f file.
 - `HavokCollisionMeshBuilder.RefreshCollisionMesh`: re-uploads a loaded collision's GPU meshes from its document.
 - Settings in `CFG.cs` (`MapEditor_CollisionEditor_*`, `Interface_MapEditor_Tool_CollisionEditor`), keybinds in
   `Keybinds.cs`, strings in `Map-Editor-Tools-Collision_Editor.json` and `Input-Keybinds.json`.

@@ -78,12 +78,14 @@ public class CollisionEditorTool
     private record MoveSet(CollisionEditorFile File, CollisionEditorBody Body, List<(int Vertex, float Weight)> Falloff);
 
     private readonly CollisionEditorCreate Create;
+    private readonly CollisionEditorFallProtection FallProtection;
 
     public CollisionEditorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
         Create = new CollisionEditorCreate(view, project, this);
+        FallProtection = new CollisionEditorFallProtection(view, project, this);
     }
 
     /// <summary>
@@ -157,6 +159,12 @@ public class CollisionEditorTool
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Create")}##collisionEditorTabCreate"))
             {
                 Create.Display();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Fall")}##collisionEditorTabFall"))
+            {
+                FallProtection.Display();
                 ImGui.EndTabItem();
             }
 
@@ -460,6 +468,7 @@ public class CollisionEditorTool
 
         UpdatePreviews(scene);
         UpdateRetiringPreviews();
+        FallProtection.UpdatePreview(scene);
 
         return IsDragging;
     }
@@ -1341,6 +1350,64 @@ public class CollisionEditorTool
         }
 
         return proxies;
+    }
+
+    /// <summary>The frame count of the viewport updates, for a tab drawing its own preview.</summary>
+    public int CurrentFrame => Frame;
+
+    /// <summary>
+    /// After a file's bodies were replaced (the Fall Protection tab, or its undo or redo): the decoded file is out of
+    /// date, so it is dropped, the loaded mesh is rebuilt from the document, and the parts drawing it get new meshes,
+    /// as each body is a submesh of its own and their number can change.
+    /// </summary>
+    public void OnBodiesChanged(string mapId, string fileName)
+    {
+        View.HavokCollisionBank.MarkModified(fileName);
+
+        if (Files.Remove(fileName, out var file))
+        {
+            if (Drag?.File == file)
+                Drag = null;
+
+            if (Hover?.File == file)
+                Hover = null;
+
+            file.DisposePreview();
+        }
+
+        Unsupported.Remove(fileName);
+
+        var document = View.HavokCollisionBank.GetEditableDocument(fileName);
+        var refreshed = new HashSet<HavokCollisionResource>();
+        var parts = new HashSet<MsbEntity>();
+
+        foreach (var entity in GetCollisionParts().Where(e => e.MapID == mapId))
+        {
+            foreach (var proxy in GetCollisionProxies(entity))
+            {
+                if (!string.Equals(ResolveFileName(mapId, proxy.ResourceHandle?.Name), fileName, StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                parts.Add(entity);
+
+                var resource = (proxy.ResourceHandle as ResourceHandle<HavokCollisionResource>)?.Get();
+
+                if (resource == null || document == null || !refreshed.Add(resource))
+                    continue;
+
+                var old = HavokCollisionMeshBuilder.RefreshCollisionMesh(resource, document, allowCountChange: true);
+
+                if (old != null)
+                    PendingRelease.Add((old, Frame));
+            }
+        }
+
+        // Made again now, so no mesh indexes past the rebuilt submeshes
+        foreach (var part in parts)
+        {
+            part.AssignDrawable();
+            part.UpdateRenderModel();
+        }
     }
 
     private void ReleaseReplacedMeshes()

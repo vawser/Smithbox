@@ -54,14 +54,17 @@ public static class HavokCollisionMeshBuilder
     /// them, so the drawn mesh follows the edit. The submesh providers index into the resource's meshes, so the
     /// count must stay the same: if it doesn't, nothing is changed and null is returned. Otherwise returns the old
     /// submeshes, whose buffers are to be freed once nothing draws from them.
+    /// With allowCountChange, the count may change (bodies were added or removed): the caller then makes the meshes
+    /// drawn from the resource again, straight away, so none indexes past the new submeshes.
     /// </summary>
-    public static CollisionSubmesh[] RefreshCollisionMesh(HavokCollisionResource resource, Havok.HavokDocument document)
+    public static CollisionSubmesh[] RefreshCollisionMesh(HavokCollisionResource resource, Havok.HavokDocument document,
+        bool allowCountChange = false)
     {
         var triangleLists = CollisionGeometry.Submeshes(document.Objects, (shape, e) =>
             Smithbox.Log(typeof(HavokCollisionMeshBuilder), $"Failed to load collision ({shape?.GetType().Name}).",
                 LogLevel.Error, LogPriority.High, e));
 
-        if (resource.GPUMeshes == null || triangleLists.Count != resource.GPUMeshes.Length)
+        if (resource.GPUMeshes == null || (!allowCountChange && triangleLists.Count != resource.GPUMeshes.Length))
             return null;
 
         var bounds = new BoundingBox();

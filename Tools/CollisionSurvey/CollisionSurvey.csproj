@@ -18,6 +18,8 @@
     <Compile Include="..\..\src\Smithbox.Program\Editors\Havok Editor\Utilities\HavokCompressedMeshGenerator_hk2014.cs" Link="Linked\HavokCompressedMeshGenerator_hk2014.cs" />
     <!-- The Collision Editor's shape code, checked by the create mode -->
     <Compile Include="..\..\src\Smithbox.Program\Editors\Map Editor\Tools\Collision Editor\CollisionEditorShapes.cs" Link="Linked\CollisionEditorShapes.cs" />
+    <!-- The fall protection walls, checked by the fallcompare mode -->
+    <Compile Include="..\..\src\Smithbox.Program\Editors\Map Editor\Tools\Collision Editor\CollisionEditorFallShapes.cs" Link="Linked\CollisionEditorFallShapes.cs" />
   </ItemGroup>
 
   <ItemGroup>
