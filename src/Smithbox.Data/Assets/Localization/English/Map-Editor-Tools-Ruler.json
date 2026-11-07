@@ -1,0 +1,52 @@
+{
+  "Entries": [
+    { "Key": "MAP_Ruler_Header", "Text": "Ruler" },
+    { "Key": "MAP_ToolWindow_View_Toggle_Ruler", "Text": "Ruler" },
+    { "Key": "MAP_Ruler_Description", "Text": "Measures the distance between two points in the viewport. Place the points by clicking on what the viewport shows, then click a point's sphere to move it with the gizmo. The ruler isn't saved with the map." },
+    { "Key": "MAP_Ruler_Label", "Text": "{0} m" },
+
+    { "Key": "MAP_Ruler_Measure_Header", "Text": "Measure" },
+    { "Key": "MAP_Ruler_Measure_Header_TT", "Text": "Place both points of the ruler in the viewport." },
+    { "Key": "MAP_Ruler_Measure", "Text": "Measure" },
+    { "Key": "MAP_Ruler_Measure_TT", "Text": "Click in the viewport to place the start point, then again to place the end point. Points land on the surface under the cursor." },
+    { "Key": "MAP_Ruler_Cancel", "Text": "Cancel Placing" },
+    { "Key": "MAP_Ruler_Cancel_TT", "Text": "Stop placing points, keeping those already placed." },
+    { "Key": "MAP_Ruler_Clear", "Text": "Clear" },
+    { "Key": "MAP_Ruler_Clear_TT", "Text": "Remove both points." },
+    { "Key": "MAP_Ruler_Status_Placing_Start", "Text": "Click in the viewport to place the start point." },
+    { "Key": "MAP_Ruler_Status_Placing_End", "Text": "Click in the viewport to place the end point." },
+    { "Key": "MAP_Ruler_Status_Nothing_Hit", "Text": "Nothing was under the cursor. Click on a surface to place the point." },
+
+    { "Key": "MAP_Ruler_Distance_Header", "Text": "Distance" },
+    { "Key": "MAP_Ruler_Distance_Header_TT", "Text": "The distance from the start point to the end point, in metres." },
+    { "Key": "MAP_Ruler_Distance", "Text": "Distance: {0} m" },
+    { "Key": "MAP_Ruler_Horizontal", "Text": "Horizontal: {0} m" },
+    { "Key": "MAP_Ruler_Vertical", "Text": "Vertical: {0} m" },
+    { "Key": "MAP_Ruler_Delta", "Text": "Offset (X, Y, Z): {0}, {1}, {2}" },
+    { "Key": "MAP_Ruler_Distance_None", "Text": "Place both points to see the distance." },
+
+    { "Key": "MAP_Ruler_Start_Header", "Text": "Start" },
+    { "Key": "MAP_Ruler_Start_Header_TT", "Text": "The start point of the ruler, in world coordinates." },
+    { "Key": "MAP_Ruler_End_Header", "Text": "End" },
+    { "Key": "MAP_Ruler_End_Header_TT", "Text": "The end point of the ruler, in world coordinates." },
+    { "Key": "MAP_Ruler_Point_Not_Set", "Text": "Not placed." },
+    { "Key": "MAP_Ruler_Position_TT", "Text": "The point's world position. Drag or type to move it." },
+    { "Key": "MAP_Ruler_Place", "Text": "Place in Viewport" },
+    { "Key": "MAP_Ruler_Place_TT", "Text": "Click in the viewport to place this point on the surface under the cursor." },
+    { "Key": "MAP_Ruler_Gizmo", "Text": "Move with Gizmo" },
+    { "Key": "MAP_Ruler_Release_Gizmo", "Text": "Release Gizmo" },
+    { "Key": "MAP_Ruler_Gizmo_TT", "Text": "Puts the viewport gizmo on this point, so it can be dragged. Clicking the point's sphere in the viewport does the same; clicking elsewhere lets it go." },
+    { "Key": "MAP_Ruler_From_Selection", "Text": "Use Selection" },
+    { "Key": "MAP_Ruler_From_Selection_TT", "Text": "Move this point to the position of the selected map object, or the average position of the selected objects." },
+
+    { "Key": "MAP_Ruler_Display_Header", "Text": "Display" },
+    { "Key": "MAP_Ruler_Display_Header_TT", "Text": "How the ruler is drawn in the viewport." },
+    { "Key": "MAP_Ruler_Point_Size_TT", "Text": "The radius of the point spheres, in metres." },
+    { "Key": "MAP_Ruler_Color", "Text": "Colour" },
+    { "Key": "MAP_Ruler_Color_TT", "Text": "The colour of the line, the points and the distance label." },
+    { "Key": "MAP_Ruler_Selected_Color", "Text": "Gizmo Point Colour" },
+    { "Key": "MAP_Ruler_Selected_Color_TT", "Text": "The colour of the point the gizmo is on." },
+    { "Key": "MAP_Ruler_Show_Label", "Text": "Show Distance Label" },
+    { "Key": "MAP_Ruler_Show_Label_TT", "Text": "Show the distance in metres beside the middle of the line." }
+  ]
+}

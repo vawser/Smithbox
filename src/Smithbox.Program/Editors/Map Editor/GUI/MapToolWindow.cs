@@ -295,6 +295,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_Ruler)
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_Ruler_Header")}##rulerToolHeader"))
+            {
+                View.RulerTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -412,6 +420,13 @@ public class MapToolWindow
             ToolToggle("MAP_SearchTool_Local_Header", ref CFG.Current.Interface_MapEditor_Tool_LocalSearch);
             ToolToggle("MAP_SearchTool_Global_Header", ref CFG.Current.Interface_MapEditor_Tool_GlobalSearch);
             ToolToggle("MAP_MassEditTool_Header", ref CFG.Current.Interface_MapEditor_Tool_MassEdit);
+
+            // Ruler
+            if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Ruler")}##rulerToolToggle"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_Ruler = !CFG.Current.Interface_MapEditor_Tool_Ruler;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Ruler);
 
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
             {

@@ -8,5 +8,4 @@
 
 - Collision Editor:
     - Add option for multi-flver collision generation (might need heuristic to clean up internal trianges)
-    - Add option to generate f col (default plane straight up from edge, user sets height)
 

@@ -62,6 +62,9 @@ public class ViewportOverlay
 
             // The Navigation tool's gate numbers and costs
             mapUniverse.View.NavigationTool.DrawGateLabels(Parent);
+
+            // The Ruler tool's distance
+            mapUniverse.View.RulerTool.DrawLabels(Parent);
         }
 
         // Model Editor

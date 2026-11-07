@@ -345,6 +345,10 @@ public class CFG
     public float MapEditor_CollisionEditor_Cursor_Fill_Alpha = 20f;
     public Vector3 MapEditor_CollisionEditor_Cursor_Color = new Vector3(0, 200, 255);
     public Vector3 MapEditor_CollisionEditor_Vertex_Color = new Vector3(255, 220, 0);
+    public float MapEditor_Ruler_Point_Size = 0.15f;
+    public Vector3 MapEditor_Ruler_Color = new Vector3(255, 200, 40);
+    public Vector3 MapEditor_Ruler_Selected_Color = new Vector3(255, 255, 255);
+    public bool MapEditor_Ruler_Show_Label = true;
     public HavokCollisionType MapEditor_CollisionEditor_Layer = HavokCollisionType.Low;
     public bool MapEditor_CollisionEditor_Link_Layers = true;
     public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
@@ -555,6 +559,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_WallPaint = true;
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_Navigation = true;
+    public bool Interface_MapEditor_Tool_Ruler = true;
     public bool Interface_MapEditor_Tool_DestructionGeneration = true;
     public bool Interface_MapEditor_Tool_LoadList = true;
     public bool Interface_MapEditor_Tool_EntryFileList = true;

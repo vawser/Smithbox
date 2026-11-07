@@ -89,6 +89,15 @@ public class SceneRenderPipeline
     public ResourceSet PickingResultResourceSet { get; }
     public DeviceBuffer PickingResultReadbackBuffer { get; }
     public bool PickingResultsReady { get; set; }
+
+    /// <summary>
+    /// The depth (gl_FragCoord.z) of the nearest pickable surface under the cursor in the last picking pass, or 0 if
+    /// nothing was hit. The depth is reversed, so nearer surfaces have larger values.
+    /// </summary>
+    public float PickingDepth { get; private set; }
+
+    /// <summary>True while a picking request is waiting for its result.</summary>
+    public bool IsPickingPending => _pickingEnabled;
     private int _pickingEntity { get; set; }
 
     private bool _pickingEnabled;
@@ -735,6 +744,9 @@ public class SceneRenderPipeline
             var results = new Span<PickingResult>(result.MappedResource.Data.ToPointer(), 1);
 
             _pickingEntity = results[0].entityID != ulong.MaxValue ? (int)results[0].entityID : -1;
+
+            // The nearest picked surface's window depth (reverse depth, so 0 is nothing hit)
+            PickingDepth = BitConverter.UInt32BitsToSingle(results[0].depth);
 
             PickingResultsReady = true;
             _pickingEnabled = false;

@@ -409,6 +409,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And placing or picking a ruler point
+        if (Owner is MapUniverse rulerUniverse &&
+            rulerUniverse.View.RulerTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
         if (canPick)
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
@@ -864,6 +871,13 @@ public class VulkanViewport : IViewport
                 Gizmos.Target = GridGizmoTarget;
                 return;
             }
+        }
+
+        // A picked ruler point in the Map Editor
+        if (Owner is MapUniverse mapUniverse && mapUniverse.View.RulerTool.GizmoTarget.HasTarget)
+        {
+            Gizmos.Target = mapUniverse.View.RulerTool.GizmoTarget;
+            return;
         }
 
         Gizmos.Target = null;
