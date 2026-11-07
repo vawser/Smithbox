@@ -59,9 +59,11 @@ public partial class NavigationTool
     /// <summary>The preview of each edited file, with the revision and overlay build it was drawn from.</summary>
     private readonly Dictionary<string, (NavigationOverlayRenderer Renderer, int Revision, int Build)> VertexPreviews = new(StringComparer.OrdinalIgnoreCase);
 
-    /// <summary>Replaced previews, drawn a few frames more alongside the new one, so a drag never leaves a gap.</summary>
-    private readonly List<(NavigationOverlayRenderer Renderer, int Frame)> RetiringVertexPreviews = new();
-    private const int VertexPreviewOverlapFrames = 2;
+    /// <summary>
+    /// The previewed files whose preview has been drawn: only these are left out of the overlay and the Map Editor's
+    /// drawing, so a file is never missing while its preview uploads.
+    /// </summary>
+    private HashSet<string> DrawnVertexPreviews = new(StringComparer.OrdinalIgnoreCase);
 
     /// <summary>Counts overlay builds, so the previews are drawn again with new layers, opacity or legend.</summary>
     private int OverlayBuildCount;
@@ -295,7 +297,10 @@ public partial class NavigationTool
 
             try
             {
-                document = NavVertexEdit.Build(file.File.Document, file.Vertices);
+                document = NavVertexEdit.Build(file.File.Document, file.Vertices, out var clearance);
+
+                if (document != null)
+                    Smithbox.Log(this, LOC.Get("MAP_Navigation_Edit_Clearance", file.File.Name, clearance.Caches, clearance.Vertices, clearance.Edges, clearance.Pairs, clearance.Skipped));
             }
             catch (Exception e)
             {
@@ -622,36 +627,44 @@ public partial class NavigationTool
 
     /// <summary>
     /// Draws each edited file from its edited vertices, in place of its part of the overlay and of the Map Editor's own
-    /// drawing of it. A file moved since its preview was drawn is drawn again, at most once a frame.
+    /// drawing of it. A file moved since its preview was drawn is drawn again, at most once a frame. As in the
+    /// Collision Editor, nothing is ever missing while a drawing uploads: a redrawn preview replaces the old one only
+    /// once it has been drawn (see <see cref="NavigationOverlayRenderer.Update" />), a file moved again meanwhile waits
+    /// for it and is then drawn with the latest vertices, a file is only left out of the overlay once its preview has
+    /// been drawn, and a preview no longer wanted stays until the overlay drawn with its file again has taken over.
     /// </summary>
     private void UpdateVertexPreviews()
     {
-        for (int i = RetiringVertexPreviews.Count - 1; i >= 0; i--)
+        var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
+        var overlayOn = ShowOverlay && OverlayNavigation != null && OverlayContainer == VertexMap;
+        var wanted = overlayOn ? VertexPreviewedFiles(OverlayContainer) : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var (renderer, _, _) in VertexPreviews.Values)
+            renderer.Update();
+
+        // Previews that are no longer wanted go once the overlay drawn with their file again has been drawn, or at once
+        // when the overlay itself went
+        foreach (var name in VertexPreviews.Keys.Where(n => !wanted.Contains(n)).ToList())
         {
-            if (DrawFrame - RetiringVertexPreviews[i].Frame < VertexPreviewOverlapFrames)
+            if (overlayOn && (OverlayWithout.Contains(name) || OverlayDirty || OverlayRenderer.IsUpdating))
                 continue;
 
-            RetiringVertexPreviews[i].Renderer.Clear();
-            RetiringVertexPreviews.RemoveAt(i);
-        }
-
-        var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
-        var shown = OverlayNavigation != null && OverlayContainer == VertexMap ? VertexPreviewedFiles(OverlayContainer) : new HashSet<string>();
-
-        // Previews that are no longer wanted
-        foreach (var name in VertexPreviews.Keys.Where(n => !shown.Contains(n)).ToList())
-        {
             VertexPreviews[name].Renderer.Clear();
             VertexPreviews.Remove(name);
         }
 
         if (scene != null)
         {
-            foreach (var name in shown)
+            foreach (var name in wanted)
             {
                 var file = VertexFiles[name];
+                var exists = VertexPreviews.TryGetValue(name, out var preview);
 
-                if (VertexPreviews.TryGetValue(name, out var preview) && preview.Revision == file.Revision && preview.Build == OverlayBuildCount)
+                if (exists && preview.Revision == file.Revision && preview.Build == OverlayBuildCount)
+                    continue;
+
+                // Still uploading the last drawing: drawn again with the latest vertices once that one is shown
+                if (exists && preview.Renderer.IsUpdating)
                     continue;
 
                 if (!ReferenceEquals(VertexEndsFor, OverlayNavigation))
@@ -661,21 +674,24 @@ public partial class NavigationTool
                 }
 
                 var overlay = NavigationOverlayBuilder.BuildEntry(OverlayNavigation.MapId, OverlaySet, file.Entry, file.PreviewMesh(), file.World, Layers, VertexEnds);
-                var renderer = new NavigationOverlayRenderer();
+                var renderer = preview.Renderer ?? new NavigationOverlayRenderer();
                 renderer.Show(scene, overlay, FaceOpacity, OverlayRenderer.FaceLegend);
-
-                if (preview.Renderer != null)
-                    RetiringVertexPreviews.Add((preview.Renderer, DrawFrame));
 
                 VertexPreviews[name] = (renderer, file.Revision, OverlayBuildCount);
             }
         }
 
-        // The overlay is drawn again without the previewed files, once the set of them changes
-        if (ShowOverlay && OverlayContainer != null && !shown.SetEquals(OverlayWithout))
+        // Left out of the overlay and the Map Editor's drawing: the wanted previews once drawn
+        DrawnVertexPreviews = new HashSet<string>(wanted.Where(n => VertexPreviews.TryGetValue(n, out var p) && p.Renderer.HasDrawn),
+            StringComparer.OrdinalIgnoreCase);
+
+        // The overlay is drawn again without the drawn previews' files, once the set of them changes
+        if (ShowOverlay && OverlayContainer != null && !DrawnVertexPreviews.SetEquals(OverlayWithout))
             OverlayDirty = true;
 
-        UpdateHiddenNavmeshDrawings(shown);
+        // The Map Editor's drawing stays hidden while any preview of the file is drawn
+        UpdateHiddenNavmeshDrawings(new HashSet<string>(VertexPreviews.Where(p => p.Value.Renderer.HasDrawn).Select(p => p.Key),
+            StringComparer.OrdinalIgnoreCase));
     }
 
     /// <summary>Hides the Map Editor's own drawing of the previewed files, and shows again those no longer previewed.</summary>

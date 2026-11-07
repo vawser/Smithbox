@@ -411,8 +411,10 @@ public partial class NavigationTool
         int onlyModel = SelectedModelID;
         bool onlySelected = OverlayOnlySelectedModel && onlyModel >= 0;
 
-        // Navmeshes with vertex edits are drawn by their previews instead (Edit tab)
-        var without = VertexPreviewedFiles(map);
+        // Navmeshes with vertex edits are drawn by their previews instead (Edit tab), once those have been drawn
+        var without = map == VertexMap
+            ? new HashSet<string>(DrawnVertexPreviews, StringComparer.OrdinalIgnoreCase)
+            : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         OverlayWithout = without;
 
         OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers,
@@ -479,6 +481,11 @@ public partial class NavigationTool
 
         DrainGenerateResults();
         UpdateNavmeshDrawing();
+
+        // A redrawn overlay replaces the old one once it has been drawn
+        OverlayRenderer.Update();
+        BlockerRenderer.Update();
+        HighlightRenderer.Update();
 
         bool mouseDown = InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action);
 

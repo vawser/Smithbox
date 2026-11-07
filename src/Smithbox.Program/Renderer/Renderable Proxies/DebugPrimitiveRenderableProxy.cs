@@ -230,6 +230,11 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         }
     }
 
+    /// <summary>
+    ///     True once the primitive's geometry is resident and its renderable has been built, so that it will be drawn.
+    /// </summary>
+    public bool IsRenderableConstructed => _renderable != -1;
+
     public override bool Visible
     {
         get => _visible;

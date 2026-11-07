@@ -10,15 +10,66 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// Shows a <see cref="NavOverlay"/> in a viewport: a translucent mesh per face data value and a line batch per layer,
 /// split to fit the 16 bit indices of the debug primitives. None of it can be picked or selected.
+/// A new overlay replaces the old one without gaps, as the Collision Editor's preview does: its geometry is uploaded a
+/// frame or more after it is made, and a built renderable isn't necessarily drawn yet. So it is hidden until every part
+/// is built, then drawn alongside the old one for <see cref="OverlapFrames" /> frames, and only then does the old one
+/// go. <see cref="Update" /> must be called each frame for this.
 /// </summary>
 public sealed class NavigationOverlayRenderer
 {
-    private readonly List<(DebugPrimitiveRenderableProxy Proxy, Action Release)> Shown = new();
+    private List<(DebugPrimitiveRenderableProxy Proxy, Action Release)> Shown = new();
+
+    // The overlay on its way to replacing Shown, and how many frames it has been drawn alongside it (0 while its
+    // geometry is still uploading)
+    private List<(DebugPrimitiveRenderableProxy Proxy, Action Release)> Pending;
+    private int PendingShownFrames;
+
+    /// <summary>Frames a new overlay is drawn alongside the old one before the old one goes.</summary>
+    public const int OverlapFrames = 2;
 
     /// <summary>The faces' colour for each face data value, in the order of the legend.</summary>
     public IReadOnlyList<(uint Value, Vector3 Color, int Faces)> FaceLegend { get; private set; } = Array.Empty<(uint, Vector3, int)>();
 
-    public bool IsShown => Shown.Count > 0;
+    public bool IsShown => Shown.Count > 0 || Pending?.Count > 0;
+
+    /// <summary>True while a new overlay is on its way to replacing the drawn one.</summary>
+    public bool IsUpdating => Pending != null;
+
+    /// <summary>
+    /// True once an overlay shown since the last <see cref="Clear" /> has been drawn and taken over; it stays true while
+    /// later ones upload, as the drawn one is kept until then.
+    /// </summary>
+    public bool HasDrawn { get; private set; }
+
+    /// <summary>
+    /// Shows the pending overlay once it has been built, and lets it replace the drawn one after it has been drawn
+    /// alongside it for <see cref="OverlapFrames" /> frames.
+    /// </summary>
+    public void Update()
+    {
+        if (Pending == null)
+            return;
+
+        if (PendingShownFrames >= OverlapFrames)
+        {
+            // Drawn alongside the old overlay for long enough: it takes over
+            Release(Shown);
+            Shown = Pending;
+            Pending = null;
+            PendingShownFrames = 0;
+            HasDrawn = true;
+        }
+        else if (PendingShownFrames > 0 || Pending.All(p => p.Proxy.IsRenderableConstructed))
+        {
+            foreach (var (proxy, _) in Pending)
+            {
+                if (!proxy.Visible)
+                    proxy.Visible = true;
+            }
+
+            PendingShownFrames++;
+        }
+    }
 
     /// <summary>Distinct, fairly light colours for the face data values; the first is for 0 (no flags).</summary>
     private static readonly Vector3[] FacePalette =
@@ -52,13 +103,27 @@ public sealed class NavigationOverlayRenderer
     /// <summary>
     /// Replaces what is shown with the overlay. Face fills use the given opacity (0 to 100). With a legend (another
     /// renderer's), face data values it lists take its colours, so a part drawn on its own matches the rest.
+    /// The drawn overlay stays until the new one has been drawn (see <see cref="Update" />). A new overlay shown while
+    /// another is still pending replaces the pending one.
     /// </summary>
     public void Show(RenderScene scene, NavOverlay overlay, float faceOpacity, IReadOnlyList<(uint Value, Vector3 Color, int Faces)> legendColors = null)
     {
-        Clear();
-
         if (scene == null || overlay == null)
+        {
+            Clear();
             return;
+        }
+
+        if (Pending != null)
+            Release(Pending);
+
+        // Hidden until its geometry has been uploaded
+        var built = new List<(DebugPrimitiveRenderableProxy Proxy, Action Release)>();
+        void Add(DebugPrimitiveRenderableProxy proxy, Action release)
+        {
+            proxy.Visible = false;
+            built.Add((proxy, release));
+        }
 
         var faceBatches = overlay.Batches.Values.Where(b => b.Layer == NavOverlayLayer.Faces).OrderBy(b => b.Key).ToList();
         var legend = new List<(uint, Vector3, int)>();
@@ -94,7 +159,7 @@ public sealed class NavigationOverlayRenderer
                     BaseColor = fill,
                     HighlightedColor = fill,
                 };
-                Shown.Add((proxy, primitive.Release));
+                Add(proxy, primitive.Release);
             }
         }
 
@@ -115,7 +180,7 @@ public sealed class NavigationOverlayRenderer
                     BaseColor = fill,
                     HighlightedColor = fill,
                 };
-                Shown.Add((proxy, primitive.Release));
+                Add(proxy, primitive.Release);
             }
         }
 
@@ -134,20 +199,36 @@ public sealed class NavigationOverlayRenderer
                     // The picked face shows through what is in front of it
                     RenderOverlay = batch.Layer == NavOverlayLayer.Highlight,
                 };
-                Shown.Add((proxy, primitive.Release));
+                Add(proxy, primitive.Release);
             }
         }
+
+        Pending = built;
+        PendingShownFrames = 0;
     }
 
+    /// <summary>Removes what is shown at once, including an overlay still on its way.</summary>
     public void Clear()
     {
-        foreach (var (proxy, release) in Shown)
+        Release(Shown);
+
+        if (Pending != null)
+            Release(Pending);
+
+        Pending = null;
+        PendingShownFrames = 0;
+        HasDrawn = false;
+        FaceLegend = Array.Empty<(uint, Vector3, int)>();
+    }
+
+    private static void Release(List<(DebugPrimitiveRenderableProxy Proxy, Action Release)> parts)
+    {
+        foreach (var (proxy, release) in parts)
         {
             proxy.Dispose();
             release();
         }
 
-        Shown.Clear();
-        FaceLegend = Array.Empty<(uint, Vector3, int)>();
+        parts.Clear();
     }
 }

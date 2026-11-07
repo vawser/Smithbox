@@ -9,9 +9,9 @@ namespace StudioCore.Editors.MapEditor;
 
 // Vertex editing of navmeshes (the Navigation tool's Edit tab). A vertex edit keeps the topology: faces, edges, face and
 // edge data, user edges and every index that connections, node banks and the clearance cache use stay as they are.
-// What follows the vertices on commit is the mesh's AABB (keeping its padding) and the query mediator's face tree.
-// The clearance cache is kept as it is: its layout depends only on the topology, and its distances near the moved
-// vertices become approximate. No renderer dependencies, so NavSurvey links it (vertexedit).
+// What follows the vertices on commit is the mesh's AABB (keeping its padding), the query mediator's face tree, and the
+// clearance cache around the moved vertices (NavClearance; its layout depends only on the topology, so only values
+// change). No renderer dependencies, so NavSurvey links it (vertexedit).
 
 /// <summary>
 /// The vertices of one navmesh file being edited: a working copy of its positions, in the navmesh's own space, placed in
@@ -312,16 +312,34 @@ public static class NavVertexEdit
     /// <summary>
     /// A copy of a navmesh file with its vertices moved to new positions (in the navmesh's space, one per vertex): the
     /// mesh's AABB is moved with them, keeping the padding it had around its vertices, and the face tree of each query
-    /// mediator of the mesh is built again. Faces, edges, data and the clearance cache are kept. Null if the file has no
+    /// mediator of the mesh is built again. Faces, edges and data are kept; the clearance cache is worked out again around the moved vertices. Null if the file has no
     /// mesh, or the positions don't match its vertices.
     /// </summary>
     public static Havok.HavokDocument Build(Havok.HavokDocument document, IReadOnlyList<Vector3> vertices)
+        => Build(document, vertices, out _);
+
+    /// <summary>
+    /// As <see cref="Build(Havok.HavokDocument, IReadOnlyList{Vector3})"/>, and the clearance cache is worked out again
+    /// around the moved vertices (NavClearance), with what that changed.
+    /// </summary>
+    public static Havok.HavokDocument Build(Havok.HavokDocument document, IReadOnlyList<Vector3> vertices, out NavClearanceResult clearance)
     {
+        clearance = new NavClearanceResult();
+
         var copy = NavModelEdit.Clone(document);
         var mesh = copy.ObjectsOf<hkaiNavMesh>().FirstOrDefault();
 
         if (mesh == null || mesh.m_vertices.Count != vertices.Count)
             return null;
+
+        var before = mesh.m_vertices.Select(v => new Vector3(v.X, v.Y, v.Z)).ToList();
+        var moved = new HashSet<int>();
+
+        for (int i = 0; i < vertices.Count; i++)
+        {
+            if (vertices[i] != before[i])
+                moved.Add(i);
+        }
 
         if (vertices.Count > 0)
         {
@@ -358,6 +376,8 @@ public static class NavVertexEdit
 
             tree.m_tree = NavigationTree.Build(mesh);
         }
+
+        clearance = NavClearance.Recalculate(mesh, before, moved);
 
         return copy;
     }
