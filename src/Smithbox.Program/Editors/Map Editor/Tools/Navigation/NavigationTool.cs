@@ -137,11 +137,32 @@ public partial class NavigationTool
 
         GUI.Spacer();
 
+        // The overlay is kept up to date whichever tab is open
+        UpdateOverlay(map);
+
         if (ImGui.BeginTabBar("navigationTabs"))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_View")}##navigationTabView"))
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Overlay")}##navigationTabOverlay"))
             {
-                DisplayViewTab(map);
+                DisplayOverlayTab();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Face_Data")}##navigationTabFaceData"))
+            {
+                DisplayFaceDataTab();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Links")}##navigationTabLinks"))
+            {
+                DisplayLinksTab();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Stitch")}##navigationTabStitch"))
+            {
+                DisplayStitchTab();
                 ImGui.EndTabItem();
             }
 

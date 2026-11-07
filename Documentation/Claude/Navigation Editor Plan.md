@@ -17,6 +17,8 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `havokedit [regex] [max]` | face data, edge data and edge flag edits survive HavokFile.Write, with nothing else changed |
 | `useredges [regex] [max]`, `cachedump <map> <n>` | how the game lays out user edges, their vertices, pairs and clearance cache entries |
 | `linkedit [regex] [max]` | adding and removing links (NavUserEdges) on every navmesh file: layout check, write round trip, byte-identical undo |
+| `stitchsurvey`, `stitch [regex] [max]` | how the game's NVA and NVC connections fit their edges; the matcher's recall and extras over a grid of parameters |
+| `stitchedit [regex] [max] [all]` | re-stitching (NavStitchPlanner) on every map: the game data, after damage, and a byte-identical restore |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -189,6 +191,11 @@ These follow from the data and are what the validator checks:
 
 The editor is a Map Editor tool window ("Navigation"), built on the existing Tools-window conventions (`Tool UI Styling.md`).
 It works on the loaded map plus its neighbours. Each phase is usable on its own and ends with a check by the user in the app.
+
+**Tool layout** (2026-11-07): the old View tab is now four tabs: **Overlay** (overlay and layers), **Face Data**
+(picking, the face inspector, painting and the legend), **Links** (adding links, and the picked face's links with Blocked,
+edge data and Remove link) and **Stitch**, followed by **Check**. The check steps below that say "View" or "View tab"
+mean the matching tab.
 
 ### Phase 0: Data layer and validator: DONE 2026-11-07 (not yet checked in the app)
 
@@ -436,6 +443,70 @@ reach `q` files or `_10` tiles named after `_00`.
 5. Save, reload the map, and check the link is still there. Then Check → Validate: no new issues.
 6. In game: whether characters use the new link. This needs an enemy whose path crosses it; a jump down from a ledge
    (Fall bit 0x4, one way) is the easiest to see.
+
+### Phase 3: Connectivity editing: re-stitch DONE 2026-11-07 (not yet checked in the app)
+
+**How the game's connections sit** (NavSurvey `stitchsurvey`, `stitch`):
+- They join **boundary edges** (no opposite face, flags 4), n with n and o with o, never across sets.
+- **NVA:** every connection is stored in both directions (113,972 of 113,972), each in the connector of its
+  MainNameID → TargetNameID. Connectors are sorted by unsigned (MainNameID, TargetNameID). The connections inside a
+  connector are in no order. Unk14 and Unk1C are 0, and there are no graph connections.
+- **NVC:** one direction only, from the file's first map to its second. There is no mirrored file. Every NVC file pairs two
+  small open-world tiles of the same area (2,641 m60, 1,045 m61), including diagonal neighbours. The tile offset formula
+  (256 m per tile, as `MapConnections_ER` places maps) puts the paired edges together.
+- **Geometry:** the edges run exactly opposite ways. 65% meet end to end within 1 mm; the rest overlap in part along a
+  shared line (an edge can have several connections).
+  | | separation p50 / p90 / p99 | step p50 / p90 / p99 | largest gap |
+  |---|---|---|---|
+  | NVA | 0 / 2.3 cm / 0.35 m | 0 / 5 cm / 0.46 m | 1.39 m |
+  | NVC | 0 / 0.7 cm / 0.28 m | 0 / 0.24 m / 1.2 m | 2.8 m (o set) |
+- **Matching** with Havok-style rules (0.1 m apart, 0.5 m step, 0.02 m overlap, 0.98 alignment) finds 87% of the game's
+  in-map connections and 90% of its cross-map ones, plus about 3.5% that the game doesn't have. FromSoftware's generator
+  can't be reproduced exactly from the meshes, so re-stitching is built to change as little as possible.
+
+**What was built**
+- **`Tools/Navigation/NavigationStitch.cs`** (renderer-free, linked into NavSurvey): `NavigationStitch.Find` joins
+  boundary edges of different placed meshes (a 4 m grid, then `Fit`: alignment, separation, overlap and step), and `Gap`
+  is the closest distance between two edges.
+- **`Tools/Navigation/NavigationStitchPlan.cs`:**
+  - `NavStitchPlanner.Plan` looks at one set of a map, optionally one navmesh only, with its loaded NVC neighbours placed by `TileOffset`.
+    - **Broken:** a connection whose face is gone, whose edge isn't its face's own or isn't on the boundary, or whose edges are more than 5 m apart.
+    - **Missing reverse:** an NVA connection stored in one direction only gets the other.
+    - **Added:** pairs of boundary edges that fit and aren't joined yet. By default only edges with no connection at all
+      ("Only join open edges"); otherwise any edge, but never a pair that exists.
+      Across maps, only through an existing NVC file, in the direction it stores.
+  - `NavStitchPlanner.Apply` makes the changes, keeps the connector order, and drops connectors left empty.
+  - `NavConnectionState` copies and restores the NVA's and NVC files' connectors.
+- **`Actions/Map Objects/NavigationStitchAction.cs`:** undo and redo restore the connectors, and the action marks the NVA and the changed NVC files.
+- **Tool, View tab → Stitch:**
+  - options: Only the picked face's navmesh, Include loaded neighbours, Only join open edges, and the three distances;
+  - **Find** shows the counts, the neighbours used and a list of the changes;
+  - **Apply** has Remove broken and Add new, and is one undo.
+- **NavSurvey `stitchedit [regex] [max] [all]`:** plans the game's data, then damages each map, re-stitches it and checks it.
+  The damage: 5% of the in-map pairs and 10% of the NVC connections deleted, and up to 5 connections pointed at edges that don't exist.
+
+**Results on all 997 maps** (default parameters, open edges only):
+- **Game data:**
+  - 304,270 connections checked; no reverse is missing.
+  - A plan would add 2,366 in-map and 266 cross-map pairs that the game leaves apart.
+  - It finds 496 broken connections, all in a few NVC files: the stale `_00`↔`_10` tile pairs the validator already
+    reports as inherited, and some m61 pairs (e.g. `m61_44_52_00_m61_44_53_00`). Their indices don't fit the meshes,
+    or their edges are 180–290 m apart. Untick Remove broken to leave them as the game has them.
+- **Damaged:**
+  - all 112 corrupted connections are found;
+  - 17,973 of 31,631 deleted connections are put back (57%). With `all` (open edges only off) it was 90% on a sample, with about twice the extra pairs;
+  - validator issues go from 884 (854 of them inherited) to 403;
+  - a second plan is empty on every map, and restoring is byte-identical on all 997.
+
+**For the user to check in the app** (Havok loading on, on a project copy):
+1. `m10_01_00_00`: View → Show overlay, n set. In Stitch, click **Find**.
+   - It should report the connections it checked, 0 broken, and some new pairs. Open Changes to see them.
+2. Click **Apply**. A few red (open) edges should turn cyan. Ctrl+Z should turn them red again.
+3. Load `m60_44_36_00` with its neighbours, then click Find with Include loaded neighbours on. The neighbours line should name them,
+   and the counts should include pairs across maps. Apply, then save. The project should get the NVA and the changed NVC files.
+4. Check → Validate after saving: no new issues.
+5. Test with an edit: on a project copy, untick Only join open edges, Find and Apply, and check in game that enemies
+   still path normally across the joins.
 
 ### Phase 3 plan (as written before the work)
 - **Add/remove user edges** (jump links between two faces): insert into the face's user-edge range, then remap every connector and NVC via the Phase 0 service.

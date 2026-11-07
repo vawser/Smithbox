@@ -47,6 +47,7 @@ public partial class NavigationTool
     private NavOverlay OverlayData;
 
     private bool PickMode;
+    private bool ShowFaceEdges = true;
     private NavFaceHit Picked;
 
     /// <summary>How painting changes a face's data.</summary>
@@ -69,7 +70,20 @@ public partial class NavigationTool
     /// <summary>The layers the user can toggle, in the order they are listed. Highlight is the tool's own.</summary>
     private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>().Where(l => l != NavOverlayLayer.Highlight).ToArray();
 
-    private void DisplayViewTab(MapContainer map)
+    /// <summary>
+    /// Keeps the overlay on the map picked above, and draws it again after a change. Called before the tabs, so it works
+    /// whichever tab is open.
+    /// </summary>
+    private void UpdateOverlay(MapContainer map)
+    {
+        if (ShowOverlay && OverlayMap != map.Name)
+            OverlayDirty = true;
+
+        if (ShowOverlay && OverlayDirty)
+            RebuildOverlay(map);
+    }
+
+    private void DisplayOverlayTab()
     {
         GUI.WrappedText(LOC.Get("MAP_Navigation_View_Description"));
 
@@ -85,10 +99,6 @@ public partial class NavigationTool
                 ClearOverlay();
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Show_TT"));
-
-        // The overlay follows the map picked above
-        if (ShowOverlay && OverlayMap != map.Name)
-            OverlayDirty = true;
 
         int set = (int)OverlaySet;
         if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_N")}##navigationSetN", ref set, (int)NavmeshSet.N))
@@ -129,17 +139,47 @@ public partial class NavigationTool
             GUI.Tooltip(LOC.Get($"MAP_Navigation_Layer_{layer}_TT"));
         }
 
-        if (ShowOverlay && OverlayDirty)
-            RebuildOverlay(map);
+        if (ShowOverlay && OverlayData?.UserEdgesWithoutTarget > 0)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Overlay_User_Edges_Without_Target", OverlayData.UserEdgesWithoutTarget));
+    }
+
+    /// <summary>The Face Data tab: picking, the picked face, painting, and the legend of the drawn values.</summary>
+    private void DisplayFaceDataTab()
+    {
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Face_Data_Description"));
+
+        if (!ShowOverlay)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
+
+        DisplayPick();
+        DisplayInspector();
+        DisplayPaint();
 
         if (ShowOverlay && OverlayData != null)
-        {
             DisplayLegend();
+    }
 
-            if (OverlayData.UserEdgesWithoutTarget > 0)
-                GUI.WrappedText(LOC.Get("MAP_Navigation_Overlay_User_Edges_Without_Target", OverlayData.UserEdgesWithoutTarget));
-        }
+    /// <summary>The Links tab: adding links, and the picked face's links.</summary>
+    private void DisplayLinksTab()
+    {
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Links_Description"));
 
+        if (!ShowOverlay)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
+
+        DisplayPick();
+        DisplayLinks();
+        DisplayPickedLinks();
+    }
+
+    /// <summary>The Stitch tab.</summary>
+    private void DisplayStitchTab()
+    {
+        DisplayStitch();
+    }
+
+    private void DisplayPick()
+    {
         // Pick
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Pick_Header"), LOC.Get("MAP_Navigation_Pick_Header_TT"));
@@ -155,13 +195,6 @@ public partial class NavigationTool
                 SetPicked(null);
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Pick_Mode_TT"));
-
-        if ((PickMode || PaintMode) && !ShowOverlay)
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
-
-        DisplayPaint();
-        DisplayLinks();
-        DisplayInspector();
     }
 
     private void DisplayPaint()
@@ -278,6 +311,7 @@ public partial class NavigationTool
     {
         OverlayDirty = true;
         TextFor = null;
+        StitchPlan = null;
     }
 
     private void DisplayLegend()
@@ -457,9 +491,9 @@ public partial class NavigationTool
 
     private void DisplayInspector()
     {
-        // Face
+        // Face: the toggle hides its edge list; the face's details and face data input stay outside it
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Face_Header"), LOC.Get("MAP_Navigation_Face_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Face_Header"), LOC.Get("MAP_Navigation_Face_Header_TT"), ref ShowFaceEdges);
 
         if (Picked == null || OverlayNavigation == null)
         {
@@ -501,14 +535,48 @@ public partial class NavigationTool
             }
         }
 
+        if (!ShowFaceEdges)
+            return;
+
         // Its edges, and what each leads to
         for (int k = face.m_startEdgeIndex; k < face.m_startEdgeIndex + face.m_numEdges; k++)
             GUI.WrappedText(DescribeEdge(mesh, entry, k, false));
 
+        // Its user edges; the Links tab edits them
+        for (int k = face.m_startUserEdgeIndex; k < face.m_startUserEdgeIndex + face.m_numUserEdges; k++)
+            GUI.WrappedText(DescribeEdge(mesh, entry, k, true));
+    }
+
+    /// <summary>The picked face's user edges, each with its blocked flag, its edge data and Remove link.</summary>
+    private void DisplayPickedLinks()
+    {
+        // Picked Face Links
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Picked_Links_Header"), LOC.Get("MAP_Navigation_Picked_Links_Header_TT"));
+
+        if (Picked == null || OverlayNavigation == null)
+        {
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Face_None"));
+            return;
+        }
+
+        var hit = Picked;
+        var mesh = hit.File.Mesh;
+        var face = mesh.m_faces[hit.Face];
+
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Picked_Links_Face", hit.Face, hit.File.Name, face.m_numUserEdges));
+
+        if (!ReferenceEquals(TextFor, hit))
+        {
+            TextFor = hit;
+            EdgeDataText.Clear();
+            FaceDataText = FaceData(mesh, hit.Face) is uint value ? value.ToString("X8") : "";
+        }
+
         // User edges can be blocked and their data changed; that renumbers nothing
         for (int k = face.m_startUserEdgeIndex; k < face.m_startUserEdgeIndex + face.m_numUserEdges; k++)
         {
-            GUI.WrappedText(DescribeEdge(mesh, entry, k, true));
+            GUI.WrappedText(DescribeEdge(mesh, hit.Entry, k, true));
             DisplayUserEdgeEdit(hit, mesh, k);
 
             if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Link_Remove")}##navigationLinkRemove_{k}"))

@@ -25,6 +25,8 @@
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationReader.cs" Link="Linked/NavigationReader.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationOverlay.cs" Link="Linked/NavigationOverlay.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationUserEdges.cs" Link="Linked/NavigationUserEdges.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationStitch.cs" Link="Linked/NavigationStitch.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationStitchPlan.cs" Link="Linked/NavigationStitchPlan.cs" />
   </ItemGroup>
 
   <!-- Surveys and round-trips ER's navmesh connection (.nvc) and ONAV files through SoulsFormats -->
