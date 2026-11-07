@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+  </PropertyGroup>
+
+  <!-- The exe toolkit of MsbExeSurvey, for finding the game's ONAV/NVC readers -->
+  <ItemGroup>
+    <Compile Include="../MsbExeSurvey/Exe.cs" Link="Linked/Exe.cs" />
+    <Compile Include="../MsbExeSurvey/Arxan.cs" Link="Linked/Arxan.cs" />
+    <PackageReference Include="Iced" Version="1.21.0" />
+  </ItemGroup>
+
+  <!-- Surveys and round-trips ER's navmesh connection (.nvc) and ONAV files through SoulsFormats -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Andre\Andre.IO\Andre.IO.csproj" />
+    <ProjectReference Include="..\..\src\Andre\Andre.Formats\Andre.Formats.csproj" />
+    <ProjectReference Include="..\..\src\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Smithbox.Release\Output\oo2core_*_win64.dll" CopyToOutputDirectory="PreserveNewest" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
