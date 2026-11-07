@@ -1,5 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
+using SoulsFormats;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
@@ -89,6 +91,9 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Add_New")}##navigationStitchAdd", ref StitchAddNew);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Add_New_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Update_Gates")}##navigationStitchGates", ref StitchUpdateGates);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Update_Gates_TT"));
+
         if (ImGui.Button($"{LOC.Get("MAP_Navigation_Stitch_Apply")}##navigationStitchApply"))
             ApplyStitch(plan);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Apply_TT"));
@@ -159,12 +164,47 @@ public partial class NavigationTool
 
         var map = OverlayNavigation;
         var before = new NavConnectionState(map.Nva, map.Nvcs);
+        var gatesBefore = StitchUpdateGates ? new NavGateState(map.Nva) : null;
         var changes = NavStitchPlanner.Apply(map, plan, StitchRemoveBroken, StitchAddNew);
         var after = new NavConnectionState(map.Nva, map.Nvcs);
 
-        View.ViewportActionManager.ExecuteAction(new NavigationStitchAction(OverlayContainer, Bank, before, after, changes, OnNavigationEdited));
+        // The pairs of the map's navmeshes whose connections changed get their gates rebuilt (gates never cross maps)
+        NavGateState gatesAfter = null;
+        int gatePairs = 0;
+        if (StitchUpdateGates)
+        {
+            var pairs = new HashSet<(NVA_ER.Navmesh, NVA_ER.Navmesh)>();
+            void Pair(int a, int b)
+            {
+                var ea = map.FindNavmesh(a);
+                var eb = map.FindNavmesh(b);
+                if (ea != null && eb != null && ea != eb)
+                    pairs.Add(map.Nva.Navmeshes.IndexOf(ea) < map.Nva.Navmeshes.IndexOf(eb) ? (ea, eb) : (eb, ea));
+            }
+
+            if (StitchRemoveBroken)
+                foreach (var broken in plan.Broken.Where(b => b.Nvc == null))
+                    Pair(broken.MainNameID, broken.TargetNameID);
+            if (StitchAddNew)
+                foreach (var added in plan.Added.Where(p => p.MapA == p.MapB && p.MapA == map.MapId))
+                    Pair(added.NameA, added.NameB);
+
+            gatePairs = pairs.Count;
+            if (pairs.Count > 0)
+            {
+                NavGates.RebuildPairs(map, pairs, GateToMap(OverlayContainer), GateJoin);
+                gatesAfter = new NavGateState(map.Nva);
+            }
+            else
+                gatesBefore = null;
+        }
+
+        View.ViewportActionManager.ExecuteAction(new NavigationStitchAction(OverlayContainer, Bank, before, after, changes, OnNavigationEdited, gatesBefore, gatesAfter));
+        if (gatesAfter != null)
+            OverlayContainer.MarkDirty(MapFileType.NVA);
 
         StitchPlan = null;
-        StitchMessage = LOC.Get("MAP_Navigation_Stitch_Applied", StitchRemoveBroken ? changes.Dropped : 0, StitchAddNew ? changes.Changed : 0);
+        StitchMessage = LOC.Get("MAP_Navigation_Stitch_Applied", StitchRemoveBroken ? changes.Dropped : 0, StitchAddNew ? changes.Changed : 0)
+            + (gatePairs > 0 ? " " + LOC.Get("MAP_Navigation_Stitch_Gates_Updated", gatePairs) : "");
     }
 }

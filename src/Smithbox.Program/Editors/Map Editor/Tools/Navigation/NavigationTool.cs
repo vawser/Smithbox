@@ -166,6 +166,12 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Gates")}##navigationTabGates"))
+            {
+                DisplayGatesTab();
+                ImGui.EndTabItem();
+            }
+
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Stitch")}##navigationTabStitch"))
             {
                 DisplayStitchTab();

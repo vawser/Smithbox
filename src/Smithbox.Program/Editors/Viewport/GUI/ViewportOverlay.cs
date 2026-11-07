@@ -59,6 +59,9 @@ public class ViewportOverlay
             {
                 mapUniverse.View.TranslateAction.DisplayViewportHint();
             }
+
+            // The Navigation tool's gate numbers and costs
+            mapUniverse.View.NavigationTool.DrawGateLabels(Parent);
         }
 
         // Model Editor

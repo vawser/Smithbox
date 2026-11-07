@@ -36,8 +36,20 @@ public enum NavOverlayLayer
     /// <summary>User edges that are also blocked (EDGE_BLOCKED).</summary>
     BlockedUserEdges,
 
-    /// <summary>The gate nodes of the NVA, as crosses.</summary>
+    /// <summary>The gate nodes of the NVA that pair with a gate of their neighbour, as crosses with a tick into their navmesh.</summary>
     GateNodes,
+
+    /// <summary>Gate nodes without a partner (the game's all point at a navmesh that has 16 gates).</summary>
+    GateNodesUnpaired,
+
+    /// <summary>Gate nodes whose target or partner is wrong (see NavGateStatus.Broken).</summary>
+    GateNodesBroken,
+
+    /// <summary>For the navmesh chosen in the Gates tab, a line between each two of its gates that can reach each other.</summary>
+    GateCosts,
+
+    /// <summary>The gate chosen in the Gates tab, drawn over everything.</summary>
+    GateSelected,
 
     /// <summary>The ONAV's grid bounds and the position of each area.</summary>
     OnavAreas,
@@ -130,18 +142,122 @@ public static class NavigationOverlayBuilder
             AddMesh(overlay, entry, mesh, entryWorld(entry), layers, inMap, crossMap);
         }
 
-        if (layers.Contains(NavOverlayLayer.GateNodes))
-        {
-            var batch = overlay.Batch(NavOverlayLayer.GateNodes);
-            foreach (var entry in EntriesOf(map, set))
-                foreach (var gate in entry.GateNodes)
-                    AddCross(batch, Vector3.Transform(gate.Position, mapWorld), 0.6f);
-        }
+        AddGates(overlay, map, set, entryWorld, mapWorld, layers, only);
 
         if (map.Onav != null && map.Onav.Areas.Count > 0)
             AddOnav(overlay, map.Onav, mapWorld, layers);
 
         return overlay;
+    }
+
+    /// <summary>The size of a gate's cross.</summary>
+    public const float GateSize = 0.6f;
+
+    /// <summary>
+    /// The gates of a set, as crosses coloured by how each stands with its partner. A paired gate shares its point with
+    /// its partner, so each gets a short tick towards the middle of the nearest face of its own navmesh.
+    /// </summary>
+    private static void AddGates(NavOverlay overlay, NavigationMap map, NavmeshSet set, Func<NVA_ER.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
+        ISet<NavOverlayLayer> layers, Func<NVA_ER.Navmesh, bool> only)
+    {
+        if (!layers.Contains(NavOverlayLayer.GateNodes) && !layers.Contains(NavOverlayLayer.GateNodesUnpaired) && !layers.Contains(NavOverlayLayer.GateNodesBroken))
+            return;
+
+        foreach (var entry in EntriesOf(map, set))
+        {
+            if (entry.GateNodes.Count == 0 || (only != null && !only(entry)))
+                continue;
+
+            var mesh = map.FileOf(entry)?.Mesh;
+            var world = entryWorld(entry);
+            List<Vector3> centres = null;
+
+            for (int g = 0; g < entry.GateNodes.Count; g++)
+            {
+                var layer = NavGates.Status(map, entry, g) switch
+                {
+                    NavGateStatus.Paired => NavOverlayLayer.GateNodes,
+                    NavGateStatus.Broken => NavOverlayLayer.GateNodesBroken,
+                    _ => NavOverlayLayer.GateNodesUnpaired,
+                };
+
+                if (!layers.Contains(layer))
+                    continue;
+
+                var batch = overlay.Batch(layer);
+                var point = Vector3.Transform(entry.GateNodes[g].Position, mapWorld);
+                AddGateMarker(batch, point, GateSize);
+
+                if (mesh == null || mesh.m_faces.Count == 0)
+                    continue;
+
+                centres ??= Enumerable.Range(0, mesh.m_faces.Count).Select(f => Vector3.Transform(FaceCentre(mesh, f), world)).ToList();
+                var nearest = centres.OrderBy(c => Vector3.DistanceSquared(c, point)).First();
+                var towards = new Vector3(nearest.X - point.X, 0, nearest.Z - point.Z);
+
+                if (towards.LengthSquared() > 1e-6f)
+                    batch.Lines.Add((point, point + Vector3.Normalize(towards) * GateSize * 1.5f));
+            }
+        }
+    }
+
+    /// <summary>
+    /// The chosen navmesh's gates in the Gates tab: a line between each two that can reach each other, and the chosen
+    /// gate's cross, larger, over everything.
+    /// </summary>
+    public static NavOverlay GateHighlight(NavigationMap map, NVA_ER.Navmesh entry, int selectedGate, Matrix4x4 mapWorld, bool costs)
+    {
+        var overlay = new NavOverlay { MapId = map.MapId, Set = NavigationMap.SetOf(entry) };
+        var gates = entry.GateNodes;
+        var lift = new Vector3(0, Lift * 3, 0);
+
+        if (costs)
+        {
+            var batch = overlay.Batch(NavOverlayLayer.GateCosts);
+            for (int i = 0; i < gates.Count; i++)
+                for (int j = i + 1; j < gates.Count; j++)
+                    if (j < gates[i].NeighbourGateNodeCosts.Count && gates[i].NeighbourGateNodeCosts[j] != NavGates.Unreachable)
+                        batch.Lines.Add((Vector3.Transform(gates[i].Position, mapWorld) + lift, Vector3.Transform(gates[j].Position, mapWorld) + lift));
+        }
+
+        if (selectedGate >= 0 && selectedGate < gates.Count)
+        {
+            var batch = overlay.Batch(NavOverlayLayer.GateSelected);
+            var point = Vector3.Transform(gates[selectedGate].Position, mapWorld) + lift;
+            AddGateMarker(batch, point, GateSize * 1.6f);
+            batch.Lines.Add((point, point + new Vector3(0, GateSize * 3, 0)));
+        }
+
+        return overlay;
+    }
+
+    /// <summary>The gate of a set nearest a ray, within a distance of it that grows with the distance along it, or null.</summary>
+    public static (NVA_ER.Navmesh Entry, int Gate)? PickGate(NavigationMap map, NavmeshSet set, Vector3 origin, Vector3 direction, Matrix4x4 mapWorld)
+    {
+        (NVA_ER.Navmesh, int)? best = null;
+        float bestDistance = float.MaxValue;
+        var dir = Vector3.Normalize(direction);
+
+        foreach (var entry in EntriesOf(map, set))
+        {
+            for (int g = 0; g < entry.GateNodes.Count; g++)
+            {
+                var point = Vector3.Transform(entry.GateNodes[g].Position, mapWorld);
+                float along = Vector3.Dot(point - origin, dir);
+
+                if (along <= 0)
+                    continue;
+
+                float off = Vector3.Distance(point, origin + dir * along);
+                if (off <= Math.Max(GateSize, along * 0.015f) && off < bestDistance)
+                {
+                    bestDistance = off;
+                    best = (entry, g);
+                }
+            }
+        }
+
+        return best;
     }
 
     private static Vector3 Vertex(hkaiNavMesh mesh, int index)
@@ -318,6 +434,34 @@ public static class NavigationOverlayBuilder
         var side = Vector3.Normalize(Vector3.Cross(direction, Vector3.UnitY)) * 0.15f;
         batch.Lines.Add((to, to - direction * 0.3f + side));
         batch.Lines.Add((to, to - direction * 0.3f - side));
+    }
+
+    /// <summary>
+    /// A gate's marker: a diamond (an octahedron) whose faces the renderer fills semi-transparently in the layer's
+    /// colour, with its edges drawn over the fill.
+    /// </summary>
+    private static void AddGateMarker(NavOverlayBatch batch, Vector3 at, float size)
+    {
+        var up = at + Vector3.UnitY * size;
+        var down = at - Vector3.UnitY * size;
+        Vector3[] ring =
+        {
+            at + Vector3.UnitX * size, at + Vector3.UnitZ * size,
+            at - Vector3.UnitX * size, at - Vector3.UnitZ * size,
+        };
+
+        for (int i = 0; i < ring.Length; i++)
+        {
+            var a = ring[i];
+            var b = ring[(i + 1) % ring.Length];
+
+            batch.Triangles.Add((up, b, a));
+            batch.Triangles.Add((down, a, b));
+
+            batch.Lines.Add((a, b));
+            batch.Lines.Add((a, up));
+            batch.Lines.Add((a, down));
+        }
     }
 
     private static void AddCross(NavOverlayBatch batch, Vector3 at, float size)

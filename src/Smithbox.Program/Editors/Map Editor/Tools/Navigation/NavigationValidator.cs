@@ -43,6 +43,13 @@ public enum NavIssueCode
     MeshMissing,
     PlaceholderHasFaces,
     GateNodeNavmeshIndex,
+    GateCount,
+    GateNotConnected,
+    GatePairBroken,
+    GateUnpaired,
+    GateCostCount,
+    GateCostSelf,
+    GateCostAsymmetric,
     NodeBankNavmeshMissing,
     NodeBankFaceRange,
 
@@ -146,10 +153,61 @@ public static class NavigationValidator
             if (n.Unk4C == 1 && n.FaceCount > 0)
                 issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount));
 
-            foreach (var gate in n.GateNodes)
+            ValidateGates(map, file, n, issues);
+        }
+    }
+
+    /// <summary>
+    /// A navmesh's gate nodes (NavGates): at most 16, each pointing at a navmesh of the map it is connected to, paired
+    /// with a gate there that points back unless that navmesh is full, and a symmetric table of 16 costs with 0 for itself.
+    /// </summary>
+    private static void ValidateGates(NavigationMap map, string file, NVA_ER.Navmesh n, List<NavIssue> issues)
+    {
+        var navmeshes = map.Nva.Navmeshes;
+        var gates = n.GateNodes;
+        uint id = (uint)n.NameID;
+
+        if (gates.Count > NavGates.MaxGates)
+            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCount, file, id, gates.Count));
+
+        for (int g = 0; g < gates.Count; g++)
+        {
+            var gate = gates[g];
+
+            if (gate.ConnectedNavmeshIndex < 0 || gate.ConnectedNavmeshIndex >= navmeshes.Count)
             {
-                if (gate.ConnectedNavmeshIndex < -1 || gate.ConnectedNavmeshIndex >= navmeshes.Count)
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateNodeNavmeshIndex, file, (uint)n.NameID, gate.ConnectedNavmeshIndex, navmeshes.Count));
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateNodeNavmeshIndex, file, id, gate.ConnectedNavmeshIndex, navmeshes.Count));
+                continue;
+            }
+
+            var target = navmeshes[gate.ConnectedNavmeshIndex];
+            uint targetId = (uint)target.NameID;
+
+            switch (NavGates.Status(map, n, g))
+            {
+                case NavGateStatus.Unpaired:
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateUnpaired, file, id, g, targetId));
+                    break;
+                case NavGateStatus.Broken:
+                    if (NavGates.Neighbours(map, n).Contains(target))
+                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GatePairBroken, file, id, g, targetId, gate.NodeSubID));
+                    else
+                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateNotConnected, file, id, g, targetId));
+                    break;
+            }
+
+            var costs = gate.NeighbourGateNodeCosts;
+            if (costs.Count != NavGates.MaxGates)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostCount, file, id, g, costs.Count));
+
+            if (g < costs.Count && costs[g] != 0)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostSelf, file, id, g, costs[g]));
+
+            for (int h = g + 1; h < gates.Count; h++)
+            {
+                var other = gates[h].NeighbourGateNodeCosts;
+                if (h < costs.Count && g < other.Count && costs[h] != other[g])
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateCostAsymmetric, file, id, g, h, (ushort)costs[h], (ushort)other[g]));
             }
         }
     }

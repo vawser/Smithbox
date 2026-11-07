@@ -43,6 +43,9 @@ public partial class NavigationTool
         NavOverlayLayer.UserEdges,
         NavOverlayLayer.BlockedUserEdges,
         NavOverlayLayer.GateNodes,
+        NavOverlayLayer.GateNodesUnpaired,
+        NavOverlayLayer.GateNodesBroken,
+        NavOverlayLayer.GateCosts,
         NavOverlayLayer.OnavAreas,
         NavOverlayLayer.OnavLinks,
     };
@@ -75,7 +78,8 @@ public partial class NavigationTool
     private readonly Dictionary<int, string> EdgeDataText = new();
 
     /// <summary>The layers the user can toggle, in the order they are listed. Highlight is the tool's own.</summary>
-    private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>().Where(l => l != NavOverlayLayer.Highlight && l != NavOverlayLayer.Blockers).ToArray();
+    private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>()
+        .Where(l => l is not (NavOverlayLayer.Highlight or NavOverlayLayer.Blockers or NavOverlayLayer.GateSelected)).ToArray();
 
     /// <summary>
     /// Keeps the overlay on the map picked above, and draws it again after a change. Called before the tabs, so it works
@@ -201,6 +205,7 @@ public partial class NavigationTool
             {
                 PaintMode = false;
                 LinkMode = false;
+                StopGateMode();
                 StopVertexEdit();
             }
             else
@@ -219,6 +224,7 @@ public partial class NavigationTool
         {
             PickMode = false;
             LinkMode = false;
+            StopGateMode();
             StopVertexEdit();
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Mode_TT"));
@@ -326,6 +332,8 @@ public partial class NavigationTool
         TextFor = null;
         StitchPlan = null;
         ModelsNavigation = null;
+        GateOverlayDirty = true;
+        GateCostTextFor = null;
     }
 
     private void DisplayLegend()
@@ -422,6 +430,7 @@ public partial class NavigationTool
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
         OverlayBuildCount++;
         BlockerOverlayDirty = true;
+        GateOverlayDirty = true;
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
             SetPicked(keep);
@@ -432,6 +441,9 @@ public partial class NavigationTool
         OverlayRenderer.Clear();
         BlockerRenderer.Clear();
         HighlightRenderer.Clear();
+        GateRenderer.Clear();
+        GateDragging = false;
+        GateDragBefore = null;
         OverlayMap = null;
         OverlayContainer = null;
         OverlayNavigation = null;
@@ -486,6 +498,7 @@ public partial class NavigationTool
         OverlayRenderer.Update();
         BlockerRenderer.Update();
         HighlightRenderer.Update();
+        GateRenderer.Update();
 
         bool mouseDown = InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action);
 
@@ -500,8 +513,16 @@ public partial class NavigationTool
         if (BlockerOverlayDirty)
             UpdateBlockerOverlay();
 
+        // The chosen navmesh's gates, drawn after the overlay they sit on
+        if (GateOverlayDirty && !OverlayDirty)
+            DrawGateOverlay();
+
         // Vertex editing works by keys; it only takes the clicks while a vertex is dragged
         if (UpdateVertexEdit(ray, canInteract))
+            return true;
+
+        // Gate mode picks and drags gates
+        if (UpdateGateMode(ray, canInteract))
             return true;
 
         if (OverlayNavigation == null || (!PickMode && !PaintMode && !LinkMode))

@@ -35,6 +35,7 @@
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationLinkGenerator.cs" Link="Linked/NavigationLinkGenerator.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationVertexEdit.cs" Link="Linked/NavigationVertexEdit.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationClearance.cs" Link="Linked/NavigationClearance.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationGates.cs" Link="Linked/NavigationGates.cs" />
   </ItemGroup>
 
   <!-- Surveys and round-trips ER's navmesh connection (.nvc) and ONAV files through SoulsFormats -->

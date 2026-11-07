@@ -89,6 +89,8 @@ if (mode == "stitchsurvey") StitchSurvey.Run(fs, dict, args);
 if (mode == "stitch") StitchEval.Run(fs, dict, args);
 if (mode == "stitchedit") StitchEdit.Run(fs, dict, args);
 if (mode == "modelsurvey") ModelSurvey.Run(fs, dict, args);
+if (mode == "gatesurvey") GateSurvey.Run(fs, dict, args);
+if (mode == "gateedit") GateEdit.Run(fs, dict, args);
 if (mode == "rootdump") RootDump.Run(fs, args[1]);
 if (mode == "modeledit") ModelEdit.Run(fs, dict, args);
 if (mode == "navcol") NavCol.Run(fs, dict, args);

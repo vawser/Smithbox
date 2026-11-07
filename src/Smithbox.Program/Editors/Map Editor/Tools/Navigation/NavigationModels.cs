@@ -439,7 +439,11 @@ public static class NavModelEdit
                 list[p].GateNodes.Clear();
     }
 
-    private static void RemoveGate(List<NVA_ER.Navmesh> list, int owner, int gate)
+    /// <summary>
+    /// Takes one gate out of a navmesh's list: its column out of the owner's other gates' costs, and the NodeSubID of
+    /// gates elsewhere that point at it (made -1) or at a later gate of the owner (moved down).
+    /// </summary>
+    public static void RemoveGate(List<NVA_ER.Navmesh> list, int owner, int gate)
     {
         var gates = list[owner].GateNodes;
         gates.RemoveAt(gate);

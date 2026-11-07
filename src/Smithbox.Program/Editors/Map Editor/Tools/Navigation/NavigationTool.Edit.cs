@@ -245,6 +245,7 @@ public partial class NavigationTool
         PickMode = false;
         PaintMode = false;
         LinkMode = false;
+        StopGateMode();
         SetPicked(null);
     }
 

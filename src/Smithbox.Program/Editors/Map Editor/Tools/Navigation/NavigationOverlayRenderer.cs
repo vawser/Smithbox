@@ -80,6 +80,9 @@ public sealed class NavigationOverlayRenderer
     };
 
     /// <summary>The colour of each line layer.</summary>
+    /// <summary>The opacity of a gate marker's fill (0 to 100).</summary>
+    public const float GateFillOpacity = 35;
+
     public static Vector3 LayerColor(NavOverlayLayer layer) => layer switch
     {
         NavOverlayLayer.InnerEdges => new(0.20f, 0.20f, 0.20f),
@@ -89,6 +92,10 @@ public sealed class NavigationOverlayRenderer
         NavOverlayLayer.UserEdges => new(1.00f, 0.90f, 0.20f),
         NavOverlayLayer.BlockedUserEdges => new(1.00f, 0.55f, 0.10f),
         NavOverlayLayer.GateNodes => new(1.00f, 1.00f, 1.00f),
+        NavOverlayLayer.GateNodesUnpaired => new(0.55f, 1.00f, 0.55f),
+        NavOverlayLayer.GateNodesBroken => new(1.00f, 0.00f, 0.45f),
+        NavOverlayLayer.GateCosts => new(1.00f, 0.80f, 0.60f),
+        NavOverlayLayer.GateSelected => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.OnavAreas => new(0.60f, 0.60f, 1.00f),
         NavOverlayLayer.OnavLinks => new(0.40f, 0.40f, 1.00f),
         NavOverlayLayer.OnavCells => new(0.45f, 0.45f, 0.75f),
@@ -165,10 +172,12 @@ public sealed class NavigationOverlayRenderer
 
         FaceLegend = legend;
 
-        // Blockers: a red fill, a little more opaque than the faces so it reads over the collision
-        foreach (var batch in overlay.Batches.Values.Where(b => b.Layer == NavOverlayLayer.Blockers && b.Triangles.Count > 0))
+        // Other filled layers in their colour: blockers a little more opaque than the faces, so they read over the
+        // collision; gate markers at a fixed opacity, so their wireframe shows through
+        foreach (var batch in overlay.Batches.Values.Where(b => b.Layer != NavOverlayLayer.Faces && b.Triangles.Count > 0))
         {
-            var fill = ColorHelper.GetTransparencyColor(LayerColor(NavOverlayLayer.Blockers), Math.Max(faceOpacity, 40));
+            float opacity = batch.Layer == NavOverlayLayer.Blockers ? Math.Max(faceOpacity, 40) : GateFillOpacity;
+            var fill = ColorHelper.GetTransparencyColor(LayerColor(batch.Layer), opacity);
 
             foreach (var chunk in batch.Triangles.Chunk(DbgPrimWallCells.MaxTriangles))
             {
@@ -197,7 +206,7 @@ public sealed class NavigationOverlayRenderer
                     BaseColor = color,
                     HighlightedColor = color,
                     // The picked face shows through what is in front of it
-                    RenderOverlay = batch.Layer == NavOverlayLayer.Highlight,
+                    RenderOverlay = batch.Layer is NavOverlayLayer.Highlight or NavOverlayLayer.GateSelected,
                 };
                 Add(proxy, primitive.Release);
             }

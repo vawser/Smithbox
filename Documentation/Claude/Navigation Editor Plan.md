@@ -19,6 +19,8 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `linkedit [regex] [max]` | adding and removing links (NavUserEdges) on every navmesh file: layout check, write round trip, byte-identical undo |
 | `stitchsurvey`, `stitch [regex] [max]` | how the game's NVA and NVC connections fit their edges; the matcher's recall and extras over a grid of parameters |
 | `stitchedit [regex] [max] [all]` | re-stitching (NavStitchPlanner) on every map: the game data, after damage, and a byte-identical restore |
+| `gatesurvey [regex] [max]` | where gate nodes sit against the connections, what their costs measure, how many a neighbour gets, why some are unpaired |
+| `gateedit [regex] [max]` | the gate edits (NavGates) on every map: walked costs against the game's, Rebuild against the game's gates, move/cost/remove/add, byte-identical restores |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -571,7 +573,7 @@ The viewport's own drawing was already per map (`map/{mapid}/nav/{model}.hkx`). 
 - **A copy in place of the original:** a re-stitch with "Only join open edges" off joins 4,009 pairs, against the
   original's 3,803 in-map n connections.
 
-**Open:** the copy has no gate nodes, so the hierarchical graph doesn't route through it. Gate node generation is still open.
+**Open:** the copy has no gate nodes, so the hierarchical graph doesn't route through it. See "Phase 3: Gate nodes" below.
 
 **Adding a new model** (2026-11-07, `NavModelEdit.Add`; Models tab: "As a new model" in Generate and Duplicate):
 - The n entry goes at the end of the n half, with NameID = prefix + map digits + its position. The o entry goes at the end of the o half, with that + 2·10⁹.
@@ -600,6 +602,156 @@ The viewport's own drawing was already per map (`map/{mapid}/nav/{model}.hkx`). 
   It repairs connections after geometry edits, and creates them for new navmeshes.
 - **Add/remove a navmesh model:** this creates both NVA halves with correct NameIDs/indices, the `n`/`o` files and any placeholders.
   It renumbers the later indices and fixes every reference to them.
+
+### Phase 3: Gate nodes: DONE 2026-11-07 (not yet checked in the app)
+
+**What was built**
+- **`Tools/Navigation/NavigationGates.cs`** (renderer-free, linked into NavSurvey):
+  - `NavGates.Sites` joins the owner's connection edges to a neighbour into runs (within the join distance, 5 m by
+    default), and puts each run's gate at the middle of the overlap of its longest connection. The longest overlap
+    beat "the connection nearest the run's middle" (37% against 32% of the game's gates within 1 cm).
+  - `Rebuild` / `RebuildPairs`: the gates between each pair go, on both sides, and each site gets a pair. When a side
+    already has 16, only the other side gets a gate (unpaired), as the game does.
+  - `WalkingDistances` walks from gate to gate over the owner's faces, from edge middle to edge middle. Blocked edges
+    are skipped; unblocked user edges are taken, landing in the middle of their target face. The table is made
+    symmetric (the shorter way). Costs are stored as unsigned cm, with 0xFFFF for unreachable.
+  - `RefreshCosts` keeps the costs between gates that didn't change, so a rebuild or move doesn't touch the rest of a
+    neighbour's table.
+  - `Move` keeps a gate on its connection edges (`Snap`) and moves its partner with it. Also `DragTo` (no costs, for
+    a drag), `SetCost` (both ways), `Add` and `Remove` (both sides, via `NavModelEdit.RemoveGate`, now public),
+    `Status` and `Partner`.
+  - `NavGateState` copies and restores every navmesh's gates.
+- **`Actions/Map Objects/NavigationGateEditAction.cs`**: undo and redo restore the gates; the NVA is marked.
+- **Validator**: new checks `GateCount` (more than 16), `GateNotConnected`, `GatePairBroken`, `GateUnpaired` (target has
+  room), `GateCostCount` (not 16), `GateCostSelf`, `GateCostAsymmetric`. None fires on the game's data.
+- **Overlay** (`NavigationOverlay.cs`, `NavigationOverlayRenderer.cs`), with the Map Editor's own navmesh drawing left
+  as it is:
+  - each gate is a diamond marker, filled at 35% opacity in its layer's colour with its wireframe over it, and a tick into its owner;
+  - new layers: Gate nodes (paired, white), Unpaired gate nodes (green), Broken gate nodes
+    (pink), Gate costs (peach lines between the chosen navmesh's reachable gates);
+  - the chosen gate is drawn larger, over everything, by its own renderer;
+  - the viewport draws each gate's index and each cost in metres as labels (`DrawGateLabels`, called from `ViewportOverlay`).
+- **Tool, Gates tab** (after Links):
+  - "Pick and move gates in the viewport": a click on a gate marker chooses the gate and its navmesh; a click on a face
+    chooses the navmesh; clicking the chosen gate again and dragging moves it along its connection edges, and the
+    costs are walked once on release (one undo);
+  - the navmesh's gates, with what each leads to, its status and Remove;
+  - the cost grid in metres ('-' for unreachable), each cell editable, mirrored;
+  - Add gate to a connected navmesh; Rebuild this navmesh's gates; Recompute its costs; Rebuild every gate of the set,
+    with the join distance;
+  - a warning line when the set has unpaired (with room) or broken gates.
+- **Stitch tab**: "Update gates" (on by default) rebuilds the gates of the in-map pairs whose connections the
+  re-stitch removes or adds, in the same undo. This gives duplicated, added and generated models their gates.
+
+**Results on all 997 maps** (`gateedit`; 68 maps with gates, 29 skipped for a rotated entry, 900 without gates):
+- **Game data:** no gate issue from the validator on any map; `validate` still passes 150 of 150 sampled maps with
+  every self-test caught.
+- **Walked costs against the game's** (the game's own gates):
+  | | n | o |
+  |---|---|---|
+  | same reachability | 4,569 of 4,770 (95.8%) | 8,860 of 8,903 (99.5%) |
+  | game / walked, p10 / p50 / p90 | 0.88 / 0.97 / 1.10 | 0.78 / 0.93 / 0.98 |
+
+  The walk runs a little long, as it goes edge middle to edge middle rather than pulling the string. 201 n pairs
+  the game says are unreachable can be walked (perhaps through user edges the game doesn't count).
+- **Rebuild against the game's gates** (join 5 m): 1,700 of 4,241 game gates (40%) get a rebuilt gate within 1 cm,
+  2,480 (58%) within 1 m; 1,700 of 2,349 navmesh pairs (72%) get the game's gate count. No new validator issue on
+  any map; the NVA writes and reads back; restoring is byte-identical on all 68.
+- **Edits** on a random paired gate of each map: the partner follows a move and stays on a connection edge, a set
+  cost is mirrored, remove takes both sides, add makes a pair; no new validator error; restore byte-identical (68 of 68).
+
+**Not covered:**
+- maps whose navmesh entries are rotated (29, mostly legacy dungeons) are not checked by `gateedit`. In the app the
+  rotation is taken from the entries' viewport transforms (`GateToMap`), which is right by construction but unchecked;
+- whether the game reads moved or rebuilt gates as it reads its own (NVA +D8 is still untraced);
+- recomputing costs after a vertex edit is manual (Recompute), as a vertex edit doesn't touch the NVA.
+
+**For the user to check in the app** (Havok loading on, on a project copy):
+1. `m10_01_00_00`: Overlay → Show overlay, n set. The Gate nodes layer should show white diamond markers (a see-through fill with a wireframe) where navmeshes
+   meet, each with a short tick into its navmesh, and no green or pink ones.
+2. Gates tab: tick "Pick and move gates", click a gate's marker. The list should show its navmesh's gates, each
+   "Paired"; the viewport should show the gate larger, numbers by each gate, and peach lines with costs in metres.
+3. Click the chosen gate again and drag: it should slide along the cyan connection edge, and its costs change on
+   release. Ctrl+Z should put it back.
+4. Edit a cost cell (e.g. `25`): its mirror cell should change too, and the label in the viewport. Undo it.
+5. Remove a gate, then Add gate to the same navmesh: a new pair should appear. Then "Rebuild this navmesh's gates".
+6. Models → Duplicate a model (if there's a free slot), then Stitch → Find and Apply with "Update gates" on: the copy
+   should get white markers where it joins its neighbours.
+7. Save, reload, and Check → Validate: no new issues.
+8. `m11_05_00_00` has navmeshes with 16 gates: their neighbours' gates to them should show green (Unpaired, target full).
+
+### Phase 3: Gate nodes: survey and design (2026-11-07)
+
+**What a gate is** (NavSurvey `gatesurvey`, all 997 maps: 9,243 gates on 2,509 navmeshes; geometry on the 8,963
+whose navmesh isn't rotated and has a connection to the target):
+- **A portal point shared by two navmeshes of the same map.** Every paired gate has *exactly* the position of the
+  gate it pairs with (8,782 of 8,782 at 0 m). Gates only join navmeshes of one map (`ConnectedNavmeshIndex` is a list
+  position); cross-map (NVC) joins have none. The open-world tiles, one navmesh each, have no gates at all.
+- **It sits on a connection edge, at the middle of the overlap** between that edge and the neighbour's edge it
+  is joined to:
+  | | n gates | o gates |
+  |---|---|---|
+  | on a connection edge to its target (p50 / p90) | 0 / 2 mm | 3 mm / 16 cm |
+  | at the overlap's middle within 1 cm | 3,619 of 3,999 (90.5%) | 2,679 of 4,815 (55.6%) |
+  | … within 10 cm | 92.7% | 79.8% |
+  | height off the edge (p10 / p90) | 0 / 0 | −4 / +4 cm |
+
+  Which of the connection edges gets the gate isn't settled: it's the longest overlap to the target 41% (n) / 39% (o)
+  of the time, and the longest overlap of its run (edges within 2 m) 53% / 66%.
+- **How many per neighbour:** 1 for most (2,071 of 3,020 n neighbours; 1,614 of 2,864 o), more for long or broken-up
+  borders. One gate per run of connection edges joined within 5 m matches 76% of n and 66% of o neighbours. 281 n /
+  219 o connected neighbours have no gate: their connections are short (p50 2.5 m against 5.5 m with gates), or
+  a side is full.
+- **At most 16 per navmesh** (the cost list has 16 slots). **Every unpaired gate (`NodeSubID` −1) points at a navmesh
+  that already has 16** (105 of 105 n, 356 of 356 o). So a full navmesh can still be gated *to*, but gets no gate back.
+- **Costs are unsigned 16-bit centimetres of walking distance:**
+  - cost / (100 × straight distance): p10 1.000, p50 1.06 (n) / 1.04 (o), p90 1.43, never below 1. So a cost is
+    a path length in cm, with the straight line as its floor;
+  - against the face-centre walk it is 0.90 / 0.87 at p50, as a face-centre path zig-zags and is longer than the game's;
+  - the table is symmetric (10,695 of 10,695 pairs);
+  - −1 (0xFFFF) means unreachable within the owner: 7,715 of 8,124 n and 28,859 of 29,478 o have no walk over its faces;
+  - m22_00_00_00 has costs read as −378 … −32,608: values over 32,767 (up to ~650 m), so they are **unsigned**;
+  - 0 to itself (9,243 of 9,243), and −1 past the owner's gates (79,607 of 79,607).
+  - User edges are sometimes counted: 1,005 n costs have a value although only a walk over user edges exists, while
+    233 are −1 with such a walk (perhaps one-way links). Not settled.
+
+**Design (agreed 2026-11-07).** All of it is in the Navigation tool and its overlay. **The Map Editor's own
+navmesh drawing is left as it is; no editing goes through it.**
+
+*Overlay* (the GateNodes layer, extended):
+- a marker at each gate (a diamond, filled at 35% opacity, with its wireframe), coloured paired / unpaired (a full side) / broken (index out of range, a target with no
+  connection to the owner, a pairing that doesn't point back);
+- paired gates share a point, so the link to the neighbour is drawn as a short tick into each navmesh;
+- for the selected navmesh, lines between its gates labelled with their cost (in m), unreachable pairs dashed or left out;
+- gates are pickable on the overlay (as faces are), and dragging one moves it on the overlay.
+
+*Gates tab* (after Links):
+- the picked navmesh's gates, each as "Gate 2 → navmesh 7 (n10_01_00_00_001200), pairs with its gate 0", not raw indices;
+- the cost table as a grid in metres, with unreachable shown as "–";
+- issues from the validator: unpaired other than a full side, broken pairing, a cost list that isn't 16, a nonzero
+  cost to itself, an asymmetric table, more than 16 gates, a gate off its connection edges.
+
+*Editing*, each one undo, keeping the NVA consistent:
+1. **Rebuild gates** of one navmesh, or of the map:
+   - for each connected neighbour in the map, the connection edges are joined into runs (within 5 m);
+   - each run gets a gate at the middle of the overlap of its longest connection, shared by both sides;
+   - `NodeSubID` is set both ways; when a side already has 16, the other side's gate stays unpaired, as the game does;
+   - costs are the shortest walking distance between the gates over the owner's faces, in cm, rounded, with 0xFFFF
+     when there is no walk; to be measured against the game's costs before the walk is final (string-pulled path vs
+     face centres, and whether user edges count).
+2. **Recompute costs** only, for a navmesh whose gates or geometry moved (after a vertex edit, say).
+3. **Move gate:** drag it on the overlay. It is kept on the owner's connection edges, and its paired gate moves with it.
+4. **Cost override:** edit a cell (in m). The table stays symmetric, so the mirrored cell changes too.
+5. **Add gate / Remove gate:** add one to a connected neighbour (both sides), or remove one (both sides, with its
+   cost row and column, and the `NodeSubID`s that pointed past it), as `NavModelEdit.Remove` already does.
+6. Model add, remove and duplicate keep `ConnectedNavmeshIndex` right as they do now. Duplicate and generate would run
+   Rebuild on the new model.
+
+`ConnectedNavmeshIndex` and `NodeSubID` stay editable only in the property panel, for experts.
+
+**Not known yet:** how the game uses gates (NVA +D8 is untraced), and so whether moving or re-costing them changes
+anything in game. A rebuild can match the game's layout closely (position and pairing are near exact); the gate count
+per neighbour, and which edge it sits on, are approximations.
 
 ### Phase 4: Geometry
 - **Generation from collision: G1–G4 DONE 2026-11-07 (not yet checked in the app).** See `Navmesh Generation Plan.md`.
@@ -661,7 +813,7 @@ Commit/Discard. The keys are their own bindings (`MapEditor_NavigationEditor_Rai
 | What the `q…_0..3` files are | Trace the same caller. 8 are non-empty; check them and their faceData 0x10 bit |
 | What the faceData bits mean | Find the reads of `m_faceData` in `CSHkAiNaviMesh*` (cost modifiers, NpcThinkParam `enableNaviFlg` checks) |
 | edgeData layout (`0x0X04` …) | The same code paths, plus the user-edge setup (`hkaiUserEdgeSetupArray`) in the 39 files that ship it |
-| How gate nodes are used | Trace reads of NVA +D8 (gate nodes) and +0x48 (gate index/count) |
+| How gate nodes are used | Their layout is surveyed (Phase 3: Gate nodes): shared portal points with walking-distance costs in cm. How the game reads them is untraced: trace reads of NVA +D8 (gate nodes) and +0x48 (gate index/count) |
 | Entries3 / 10 / 13, and section 10's other reader | Disassemble consumers of +A8 / +F0, +B0; find the section-10 reader |
 | Whether the game needs the mediator/clearance cache | Test in game: a map saved without them (needs the user) |
 | How `Event.Navmesh` / `NavmeshCutting` link to faces | MSB consumer tracing (`MSBE Consumer Tracing Plan.md` methods) |

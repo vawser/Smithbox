@@ -38,6 +38,7 @@ public partial class NavigationTool
             {
                 PickMode = false;
                 PaintMode = false;
+                StopGateMode();
                 StopVertexEdit();
             }
         }
