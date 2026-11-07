@@ -81,5 +81,8 @@ if (mode == "validate") Validate.Run(fs, dict, args);
 if (mode == "overlay") Overlay.Run(fs, dict, args);
 if (mode == "names") Names.Run(fs, dict, args);
 if (mode == "havokedit") HavokEdit.Run(fs, dict, args);
+if (mode == "useredges") UserEdges.Run(fs, dict, args);
+if (mode == "linkedit") LinkEdit.Run(fs, dict, args);
+if (mode == "cachedump") CacheDump.Run(fs, args[1], int.Parse(args[2]));
 if (mode == "emevdnav") EmevdNav.Run(fs, dict, args);
 if (mode == "navvalues") MapNavValues.Run(fs, dict, args[1], int.Parse(args[2]));

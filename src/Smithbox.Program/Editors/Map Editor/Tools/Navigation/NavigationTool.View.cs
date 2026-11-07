@@ -147,7 +147,10 @@ public partial class NavigationTool
         if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Pick_Mode")}##navigationPickMode", ref PickMode))
         {
             if (PickMode)
+            {
                 PaintMode = false;
+                LinkMode = false;
+            }
             else
                 SetPicked(null);
         }
@@ -157,6 +160,7 @@ public partial class NavigationTool
             GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
 
         DisplayPaint();
+        DisplayLinks();
         DisplayInspector();
     }
 
@@ -167,7 +171,10 @@ public partial class NavigationTool
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Paint_Header"), LOC.Get("MAP_Navigation_Paint_Header_TT"));
 
         if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Paint_Mode")}##navigationPaintMode", ref PaintMode) && PaintMode)
+        {
             PickMode = false;
+            LinkMode = false;
+        }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Mode_TT"));
 
         int op = (int)Paint;
@@ -191,8 +198,8 @@ public partial class NavigationTool
             PaintValueText = PaintValue.ToString("X8");
         }
 
-        // The bits the map's faces use, to build the value from
-        var bits = OverlayRenderer.FaceLegend.Aggregate(0u, (a, l) => a | l.Value);
+        // Every bit the game's code reads, by name, and any other bit the drawn faces use, to build the value from
+        var bits = OverlayRenderer.FaceLegend.Aggregate(0u, (a, l) => a | l.Value) | NavFaceDataBits.Face.Keys.Aggregate(0u, (a, b) => a | b);
         for (int i = 0; i < 32; i++)
         {
             uint bit = 1u << i;
@@ -329,7 +336,7 @@ public partial class NavigationTool
     {
         if (NavFaceDataBits.Face.TryGetValue(bit, out var name))
             return ($"0x{bit:X} {LOC.Get($"MAP_Navigation_Bit_{name}")}", LOC.Get($"MAP_Navigation_Bit_{name}_TT"));
-        return ($"0x{bit:X}", LOC.Get("MAP_Navigation_Paint_Bit_TT"));
+        return ($"0x{bit:X} {LOC.Get("MAP_Navigation_Bit_Unknown")}", LOC.Get("MAP_Navigation_Paint_Bit_TT"));
     }
 
     private void RebuildOverlay(MapContainer map)
@@ -420,8 +427,16 @@ public partial class NavigationTool
         if (ShowOverlay && OverlayDirty && OverlayContainer != null && StrokeOrder.Count == 0)
             RebuildOverlay(OverlayContainer);
 
-        if (OverlayNavigation == null || (!PickMode && !PaintMode))
+        if (OverlayNavigation == null || (!PickMode && !PaintMode && !LinkMode))
             return false;
+
+        if (LinkMode)
+        {
+            if (canInteract && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+                LinkClick(PickAt(ray));
+
+            return true;
+        }
 
         if (PaintMode)
         {
@@ -495,6 +510,13 @@ public partial class NavigationTool
         {
             GUI.WrappedText(DescribeEdge(mesh, entry, k, true));
             DisplayUserEdgeEdit(hit, mesh, k);
+
+            if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Link_Remove")}##navigationLinkRemove_{k}"))
+            {
+                RemoveLink(hit, k);
+                break;
+            }
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Link_Remove_TT"));
         }
     }
 

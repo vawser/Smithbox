@@ -15,6 +15,8 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `overlay [regex] [max]` | the Navigation tool's overlay geometry and face picking on game maps |
 | `names [regex]` | the navmesh file name the Map Editor's drawing asks for, against the one the binder has |
 | `havokedit [regex] [max]` | face data, edge data and edge flag edits survive HavokFile.Write, with nothing else changed |
+| `useredges [regex] [max]`, `cachedump <map> <n>` | how the game lays out user edges, their vertices, pairs and clearance cache entries |
+| `linkedit [regex] [max]` | adding and removing links (NavUserEdges) on every navmesh file: layout check, write round trip, byte-identical undo |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -367,7 +369,75 @@ reach `q` files or `_10` tiles named after `_00`.
 - Every edit is an undoable action, following the existing Havok property actions.
   No indices change, so connections stay valid by construction.
 
-### Phase 3: Connectivity editing
+### Phase 3: Connectivity editing: add/remove links DONE 2026-11-07 (not yet checked in the app)
+
+**How the game's files hold user edges** (NavSurvey `useredges` on all 997 maps, 3.9M user edges, and `cachedump <map> <n>`):
+- **Edge array:** every user edge comes after all the original edges. The original ranges are packed in face order; the
+  user ranges are not (2,177 of 2,286 files). A face without user edges has `m_startUserEdgeIndex = -1`.
+- **Vertices:** each user edge has two vertices of its own, used by nothing else, appended after the original vertices.
+  They sit inside the face (XZ), not on its boundary: a short segment.
+- **Pairs:** 3,922,362 of 3,924,697 user edges point at a user edge of their target face, which points back. The two have
+  different vertices and the same edgeData. Flags are 20/20 (both ways, 606k) or 20/52 (one way, the edge back blocked,
+  357k pairs). The other 2,335 have no opposite edge and an opposite face with section 0x3FF.
+- **Connections almost never name a user edge** (`linkedit`): only in 2 of 4,510 files (e.g. `n60_52_53_00_525300`).
+  So inserting or removing one moves only user edges, and the NVA and NVC files need no remapping. The tool refuses
+  link edits in the 2 files where a connection does.
+- **Clearance cache:** every non-empty file has a clearance cache seeding with one or two initial caches (mostly the same).
+  - `m_mcpData` has one entry per edge, user edges included.
+  - `m_vertexClearances` has one byte per vertex; it is 0xFF for every user edge vertex.
+  - Per face, `m_faceOffsets[f]` starts a block of **T(k) + 1 bytes**, where k is the number of the face's *linked* edges
+    (those with an opposite face: original edges first, then user edges, in order). This holds for 3,407,969 of 3,408,371 faces.
+    The block is the clearance of each pair of linked edges, as a lower triangle by column ((1,0) (2,0) (2,1) (3,0) …), then 0xFF.
+    A pair's value is the smaller of its two edges' mcp clearances.
+- **n vs o (open question 1):** the cache ceiling is 1.53 m in `n` files and 5.1 m in `o` files. This strongly suggests
+  `n` is for normal-sized characters and `o` for large ones.
+- `hkaiUserEdgeSetupArray` is in 213 files; the edits leave it alone (it looks like authoring data).
+
+**What was built**
+- **`Tools/Navigation/NavigationUserEdges.cs`** (renderer-free, linked into NavSurvey):
+  - `NavUserEdges.Add` adds a link between two faces of one mesh. It creates a user edge on each face, at the end of
+    that face's user range, each with two new vertices: a 0.5 m segment across the link at the picked point. The edges point at each other.
+    The edge back is blocked unless the link goes both ways. Both edges get the chosen edgeData. It also adds the cache
+    entries: an mcp entry per edge (the chosen clearance), 0xFF vertex clearances, and the new column of each face's
+    block, before its 0xFF. Later block offsets are shifted, and so are all references to edges that moved up.
+  - `NavUserEdges.Remove` removes a user edge and its pair, their vertices if unused, their mcp entries and their row and
+    column of the face blocks, and shifts everything back.
+  - Both are refused, with nothing changed, if a face's block isn't T(k) + 1 (402 vanilla faces) or the link stays on one face.
+  - `NavMeshState` copies a mesh's faces, edges, vertices, face/edge data, AABB and caches, and puts them back.
+  - `NavUserEdges.Check` checks the layout above, and `ConnectionsNameEdgesFrom` checks the "no connection names a user edge" rule.
+- **`Actions/Map Objects/NavigationLinkEditAction.cs`**: undo and redo put back the mesh state from before or after.
+  The map is marked `MapFileType.Navmesh`.
+- **Tool, View tab → Links:**
+  - "Add links in the viewport" (turns picking and painting off). The first click picks the start face (outlined),
+    the second click the target face of the same navmesh file.
+  - Options: Both ways, edge data (hex plus the Jump/Fall/Extra cost bits), and Clearance (0–254).
+  - The face inspector has **Remove link** on each user edge. Every add and remove is one undo.
+- **NavSurvey `linkedit [regex] [max]`**, run on every non-empty navmesh file:
+  - the game file passes `Check`, and whether a connection names a user edge;
+  - a link added between a face and its neighbour passes `Check`, keeps every cache block the right size, has the asked
+    shape, and survives `HavokFile.Write` and a re-read;
+  - removing it again gives back the file **byte for byte**;
+  - removing one of the game's links passes `Check`, and restoring the `NavMeshState` gives back the file byte for byte.
+
+**Results on all 997 maps** (4,510 non-empty navmesh files):
+- every game file passes `Check`. 19 files have faces whose cache block isn't T(k) + 1; links on those faces are refused;
+- add: 4,510 of 4,510 pass the check, keep every block's size, have the asked shape, and survive the write;
+- add then remove: 4,510 of 4,510 byte-identical;
+- removing a game link: 2,286 of 2,286 pass the check, and restoring is byte-identical for all of them.
+
+**For the user to check in the app** (Havok loading on, on a project copy):
+1. `m10_01_00_00`: View → Show overlay, n set. Tick "Add links in the viewport".
+   - Click a floor face, then a face on a ledge a few metres away.
+   - A yellow arc should appear from the first face to the second (Both ways off: the edge back is orange, blocked).
+2. Turn on Pick, and click the start face. The new user edge should be listed, "to face …", with data 2.
+   Its pair should be on the target face, Blocked ticked.
+3. Ctrl+Z should remove the arc, and Ctrl+Y should bring it back.
+4. Click **Remove link** on one of the game's user edges. Its arc and the arc back should both go. Undo it.
+5. Save, reload the map, and check the link is still there. Then Check → Validate: no new issues.
+6. In game: whether characters use the new link. This needs an enemy whose path crosses it; a jump down from a ledge
+   (Fall bit 0x4, one way) is the easiest to see.
+
+### Phase 3 plan (as written before the work)
 - **Add/remove user edges** (jump links between two faces): insert into the face's user-edge range, then remap every connector and NVC via the Phase 0 service.
 - **Re-stitch connections:** recompute NVA connectors and NVC entries by matching coincident boundary edges between meshes or maps, within a tolerance.
   This is the same edge-matching idea as Havok's `hkaiNavMeshEdgeMatchingParameters`.
@@ -392,7 +462,7 @@ reach `q` files or `_10` tiles named after `_00`.
 
 | Question | How |
 |---|---|
-| What `n` vs `o` are (agent size?) | Trace the caller of `0x140705E60` in `CSHkAiNvmbndFileCap`/`ResCap`, and what it does with each name. Compare the `o` files' vertex spacing and erosion. |
+| What `n` vs `o` are (agent size?) | The clearance cache ceiling is 1.53 m in n and 5.1 m in o (Phase 3), so very likely agent size. To confirm: Trace the caller of `0x140705E60` in `CSHkAiNvmbndFileCap`/`ResCap`, and what it does with each name. Compare the `o` files' vertex spacing and erosion. |
 | What the `q…_0..3` files are | Trace the same caller. 8 are non-empty; check them and their faceData 0x10 bit |
 | What the faceData bits mean | Find the reads of `m_faceData` in `CSHkAiNaviMesh*` (cost modifiers, NpcThinkParam `enableNaviFlg` checks) |
 | edgeData layout (`0x0X04` …) | The same code paths, plus the user-edge setup (`hkaiUserEdgeSetupArray`) in the 39 files that ship it |

@@ -20,4 +20,4 @@
     
 - Display of navmesh feature: i.e. jump spots
 
-
+- Change Face Data painting to display bit names
