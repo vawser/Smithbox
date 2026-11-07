@@ -7,12 +7,5 @@
 - AEP rendering needs to carry in the asset collision too
 
 - Navmesh editing
-    - Allow triangle add/subtract:
-        - Define the three points with temporary filled wireframe spheres
-        - Commit shape, with option to auto-weld the edge closest to another existing edge
-        - Include options for large planes of pre-defined triangles to make it easy to expand flat collision (i.e. add a walkway or wall)
-    
-    - Baking would require a mode to assign metadata to assets/map-pieces:
-        - Which are walkable, jump start/end, movable meshes, etc
-        - Walkable set/edited with a highlight mode (green for walkable, red for ignored) as part of the Navmesh Editor tool
-    
+    - Allow vertex editing
+    - Add mixed selection for generation: col and/or assets (whose col is used)

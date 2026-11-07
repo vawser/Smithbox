@@ -554,6 +554,18 @@ reach `q` files or `_10` tiles named after `_00`.
 
 **Open:** the copy has no gate nodes, so the hierarchical graph doesn't route through it. Gate node generation is still open.
 
+**Adding a new model** (2026-11-07, `NavModelEdit.Add`; Models tab: "As a new model" in Generate and Duplicate):
+- The n entry goes at the end of the n half, with NameID = prefix + map digits + its position. The o entry goes at the end of the o half, with that + 2·10⁹.
+- No existing NameID changes. The o half moves down one place, so gates whose `ConnectedNavmeshIndex` points into it are moved with it.
+- Other entry values are copied from the first n entry and its o entry (Unk50 0xFF01). There are no gate nodes, and FaceDataIndex is recomputed.
+- **Refused** in maps with quarter entries (their NameIDs follow their position; 2 maps) and in maps whose n half isn't first.
+- **`modeledit`** adds a moved copy on every map with a model to copy (841): no new validator errors, both entries follow the
+  NameID rule and find their files, every gate pair still pairs, the NVA writes and reads back, and restoring is byte-identical.
+- **Not covered:**
+  - NVA Entries10 and Entries13 hold small ints that might be list positions (22 of 463 and 66 of 176 values); they aren't moved.
+  - New entries have no Map Editor entity until the map is saved and loaded again, so the Map Editor's own navmesh drawing
+    and the property panel don't show them meanwhile. The overlay does.
+
 **For the user to check in the app** (Havok loading on, on a project copy):
 1. In `m10_01_00_00`, open the Models tab. Expect 14 models, with counts for placeholders and free slots.
 2. Select a model with faces and click **Remove model**. Its overlay faces should go and the list should show it as a

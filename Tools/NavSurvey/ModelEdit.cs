@@ -104,6 +104,35 @@ static class ModelEdit
                 Count(same ? "remove: restore is byte-identical" : "remove: restore differs", 1, same ? null : $"{mapId}: {string.Join(", ", diffs)} (model {model.ModelID})");
             }
 
+            // Add a new model: a moved copy of one, as new entries at the ends of the two halves
+            if (NavModelEdit.CanAdd(map) is string cannot) Count($"add: refused {cannot}", 1, mapId);
+            else
+            {
+                var state = new NavModelState(map);
+                var source = removable[rng.Next(removable.Count)];
+                int id = NavModelEdit.NextFreeModelId(map, 990000);
+                int before = map.Nva.Navmeshes.Count;
+                var gatePairsBefore = GatePairs(map.Nva.Navmeshes);
+                var result = NavModelEdit.Add(map, id, NavModelEdit.TranslatedCopy(source.NFile.Document, new Vector3(0, 3, 0)), NavModelEdit.TranslatedCopy(source.OFile.Document, new Vector3(0, 3, 0)));
+                if (!result.Ok) Count($"add: refused {result.Error}", 1, mapId);
+                else
+                {
+                    var after = Apply(map, result.Files);
+                    var errors = NavigationValidator.Validate(after, _ => null).Where(i => i.Severity == NavIssueSeverity.Error).ToList();
+                    Count(errors.Count <= baseIssues ? "add: no new validator errors" : "add: new validator errors", 1, errors.Count <= baseIssues ? null : $"{mapId}: {string.Join("; ", errors.Take(3).Select(i => i.Code + " " + string.Join(",", i.Args)))}");
+                    var model = after.Models.FirstOrDefault(m => m.ModelID == id);
+                    bool shape = model != null && model.NFile != null && model.OFile != null && map.Nva.Navmeshes.Count == before + 2
+                        && (uint)model.NEntry.NameID == after.ExpectedNameId(map.Nva.Navmeshes.IndexOf(model.NEntry)) && (uint)model.OEntry.NameID == (uint)model.NEntry.NameID + 2_000_000_000u
+                        && map.Nva.Navmeshes.IndexOf(model.OEntry) == map.Nva.Navmeshes.Count - 1;
+                    Count(shape ? "add: new model has both entries, NameIDs by the rule, files found" : "add: new model wrong", 1, shape ? null : mapId);
+                    Count(GatePairs(map.Nva.Navmeshes) == gatePairsBefore ? "add: every gate that paired still pairs" : "add: gate pairs changed", 1, GatePairs(map.Nva.Navmeshes) == gatePairsBefore ? null : mapId);
+                    var reread = NVA_ER.Read(map.Nva.Write());
+                    Count(reread.Navmeshes.Count == before + 2 ? "add: NVA writes and reads back" : "add: NVA write failed", 1);
+                    state.Restore();
+                    Count(map.Nva.Write().AsSpan().SequenceEqual(nvaBytes) ? "add: restore byte-identical" : "add: restore differs", 1, mapId);
+                }
+            }
+
             // Duplicate, moved; then the same at no offset, re-stitched
             if (slots.Count > 0)
             {
@@ -151,6 +180,21 @@ static class ModelEdit
         }
 
         foreach (var (k, v) in c.OrderBy(x => x.Key)) Console.WriteLine($"{v,9}  {k}{(examples.TryGetValue(k, out var ex) ? "   e.g. " + ex : "")}");
+    }
+
+    /// <summary>How many gates point at a gate that points back.</summary>
+    static int GatePairs(List<NVA_ER.Navmesh> list)
+    {
+        int pairs = 0;
+        for (int i = 0; i < list.Count; i++)
+            for (int g = 0; g < list[i].GateNodes.Count; g++)
+            {
+                var gate = list[i].GateNodes[g];
+                if (gate.NodeSubID < 0 || gate.ConnectedNavmeshIndex < 0 || gate.ConnectedNavmeshIndex >= list.Count || gate.NodeSubID >= list[gate.ConnectedNavmeshIndex].GateNodes.Count) continue;
+                var back = list[gate.ConnectedNavmeshIndex].GateNodes[gate.NodeSubID];
+                if (back.ConnectedNavmeshIndex == i && back.NodeSubID == g) pairs++;
+            }
+        return pairs;
     }
 
     /// <summary>The map with its files replaced as a model edit says.</summary>

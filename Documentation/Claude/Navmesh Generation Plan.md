@@ -159,6 +159,15 @@ The generator is DotRecast 2026.3.1 (`DotRecast.Recast`, MIT, from NuGet), refer
 5. **In game (G5):** whether enemies of `m10_01_00_00` still path across that area. This also answers whether a navmesh
    without clearance seeding and without gate nodes works.
 
+**Input from the viewport selection** (2026-11-07): Generate reads the collision parts and assets selected in the viewport,
+in any loaded map:
+- **collision parts:** their map's high collision file (`h` + map digits + `_` + the model's digits);
+- **assets:** their own collision (`ModelLocator.GetMapObjCollision`, high, else low), read from the asset's binder and cached by model.
+
+Each part's triangles are placed by the part's world transform, taken back out of the target map's placement, so a part
+used several times counts only where it is selected, and parts from neighbouring maps land in the right place. Parts
+without collision are logged and left out.
+
 **Next:** asset collision (MSB asset parts placed with their own collision models), which covers what map collision misses.
 Then clearance seeding, gate nodes, and dropping unreachable areas (keep only regions joined to a seed).
 

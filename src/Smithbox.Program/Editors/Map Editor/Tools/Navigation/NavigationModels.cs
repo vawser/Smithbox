@@ -34,6 +34,9 @@ public sealed class NavModelEditResult
     /// <summary>The NVA and NVC changes, for NavigationBank.MarkEdited.</summary>
     public NavRemapResult Changes { get; } = new() { NvaChanged = true };
 
+    /// <summary>The n and o entries a model add made, or null.</summary>
+    public (NVA_ER.Navmesh N, NVA_ER.Navmesh O)? Added { get; set; }
+
     public bool Ok => Error == null;
 }
 
@@ -45,10 +48,14 @@ public sealed class NavModelState
 {
     private readonly List<(NVA_ER.Navmesh Entry, int ModelID, int FaceCount, int FaceDataIndex, int Unk4C, List<NVA_ER.GateNode> Gates)> Entries;
     private readonly List<(NVA_ER.NodeBank Bank, List<(int Face, int Collision)> Faces)> Banks;
+    private readonly NVA_ER Nva;
+    private readonly List<NVA_ER.Navmesh> Order;
     private readonly NavConnectionState Connections;
 
     public NavModelState(NavigationMap map)
     {
+        Nva = map.Nva;
+        Order = map.Nva.Navmeshes.ToList();
         Entries = map.Nva.Navmeshes.Select(e => (e, e.ModelID, e.FaceCount, e.FaceDataIndex, e.Unk4C, e.GateNodes.Select(Copy).ToList())).ToList();
         Banks = map.Nva.NodeBanks.Select(b => (b, b.Faces.Select(f => (f.FaceIndex, f.CollisionID)).ToList())).ToList();
         Connections = new NavConnectionState(map.Nva, map.Nvcs);
@@ -66,6 +73,10 @@ public sealed class NavModelState
     /// <summary>Puts the values back as they were when copied, as new copies, so the state can be restored again.</summary>
     public void Restore()
     {
+        // The entries themselves, in their order: an added model's entries go, a removed one's come back
+        Nva.Navmeshes.Clear();
+        Nva.Navmeshes.AddRange(Order);
+
         foreach (var (entry, modelId, faceCount, faceDataIndex, unk4C, gates) in Entries)
         {
             entry.ModelID = modelId;
@@ -289,6 +300,120 @@ public static class NavModelEdit
 
         RecomputeFaceDataIndex(map.Nva);
         return result;
+    }
+
+    /// <summary>Why a new model can't be added to a map, or null if it can (maps with quarter entries can't).</summary>
+    public static string CanAdd(NavigationMap map)
+        => map.Nva.Navmeshes.Any(e => NavigationMap.QuarterOf(e) != null) ? "MAP_Navigation_Model_Error_Add_Quarters" : null;
+
+    /// <summary>The lowest ModelID from a value up that no entry of the map has.</summary>
+    public static int NextFreeModelId(NavigationMap map, int from)
+    {
+        var used = map.Nva.Navmeshes.Select(e => e.ModelID).ToHashSet();
+        int id = Math.Max(0, from);
+        while (used.Contains(id))
+            id++;
+        return id;
+    }
+
+    /// <summary>
+    /// Adds a new model with the given n and o files: an n entry at the end of the n half of the NVA's list and an o
+    /// entry at the end of the o half, the order the game's files have. The n entry's NameID is the map's prefix and digits
+    /// with its position as the index, and the o entry's is that plus 2,000,000,000, so no existing NameID changes.
+    /// The o half moves down by one, and gate nodes name navmeshes by position, so those pointing into it are moved too.
+    /// The entries' other values are copied from the first n entry and its o entry. Maps with quarter entries are
+    /// refused: their NameIDs follow their position, which this would move.
+    /// </summary>
+    public static NavModelEditResult Add(NavigationMap map, int modelId, Havok.HavokDocument n, Havok.HavokDocument o)
+    {
+        var result = new NavModelEditResult();
+        var list = map.Nva.Navmeshes;
+
+        if (CanAdd(map) is string refused)
+        {
+            result.Error = refused;
+            return result;
+        }
+
+        if (n == null || o == null)
+        {
+            result.Error = "MAP_Navigation_Generate_Error_File";
+            return result;
+        }
+
+        if (modelId < 0 || modelId > 999999 || list.Any(e => e.ModelID == modelId))
+        {
+            result.Error = "MAP_Navigation_Generate_Error_Model_Id";
+            return result;
+        }
+
+        int nCount = list.Count(e => NavigationMap.SetOf(e) == NavmeshSet.N);
+        if (list.Take(nCount).Any(e => NavigationMap.SetOf(e) != NavmeshSet.N))
+        {
+            result.Error = "MAP_Navigation_Model_Error_Add_Order";
+            return result;
+        }
+
+        var templateN = list.FirstOrDefault(e => NavigationMap.SetOf(e) == NavmeshSet.N);
+        var templateO = templateN == null ? null : list.FirstOrDefault(e => (uint)e.NameID == (uint)templateN.NameID + 2_000_000_000u);
+
+        uint nameId = map.ExpectedNameId(nCount);
+        if (list.Any(e => (uint)e.NameID == nameId || (uint)e.NameID == nameId + 2_000_000_000u))
+        {
+            result.Error = "MAP_Navigation_Model_Error_Add_NameID";
+            return result;
+        }
+
+        // The o half moves down by one: every gate pointing at or past the insertion point follows
+        foreach (var entry in list)
+            foreach (var gate in entry.GateNodes)
+                if (gate.ConnectedNavmeshIndex >= nCount)
+                    gate.ConnectedNavmeshIndex++;
+
+        var nEntry = NewEntry(templateN, (int)nameId, modelId, n);
+        var oEntry = NewEntry(templateO ?? templateN, (int)(nameId + 2_000_000_000u), modelId, o);
+
+        list.Insert(nCount, nEntry);
+        list.Add(oEntry);
+
+        foreach (var (set, document) in new[] { (NavmeshSet.N, n), (NavmeshSet.O, o) })
+        {
+            var name = NavigationMap.MeshName(map.NameBase, set, modelId);
+            result.Files.Add(new NavFileChange(name, map.Files.GetValueOrDefault(name)?.Document, document));
+        }
+
+        RecomputeFaceDataIndex(map.Nva);
+        result.Added = (nEntry, oEntry);
+        return result;
+    }
+
+    private static NVA_ER.Navmesh NewEntry(NVA_ER.Navmesh template, int nameId, int modelId, Havok.HavokDocument document)
+    {
+        var entry = new NVA_ER.Navmesh();
+
+        if (template != null)
+        {
+            entry.Position = template.Position;
+            entry.PositionW = template.PositionW;
+            entry.Rotation = template.Rotation;
+            entry.RotationW = template.RotationW;
+            entry.Scale = template.Scale;
+            entry.ScaleW = template.ScaleW;
+            entry.Unk3C = template.Unk3C;
+            entry.Unk44 = template.Unk44;
+            entry.Unk50 = 0xFF01;
+            entry.Unk54 = template.Unk54;
+            entry.Unk58 = template.Unk58;
+            entry.Unk5C = template.Unk5C;
+        }
+
+        entry.NameID = nameId;
+        entry.ModelID = modelId;
+        entry.FaceCount = document.ObjectsOf<hkaiNavMesh>().First().m_faces.Count;
+        entry.Unk4C = entry.FaceCount == 0 ? 1 : 0;
+        entry.GateNodes = new List<NVA_ER.GateNode>();
+        entry.ConnectedNavmeshes = new List<int>();
+        return entry;
     }
 
     /// <summary>

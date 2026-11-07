@@ -1,4 +1,5 @@
 using Hexa.NET.ImGui;
+using System;
 using StudioCore.Application;
 using StudioCore.Renderer;
 using System.Collections.Generic;
@@ -17,6 +18,11 @@ public partial class NavigationTool
     private int SelectedModelID = -1;
     private int SlotModelID = -1;
     private Vector3 DuplicateOffset = Vector3.Zero;
+    private ModelTarget DuplicateTarget = ModelTarget.New;
+    private int DuplicateNewModelId = -1;
+
+    /// <summary>The preferred ModelID each target picker last set its new ModelID from, so a new choice resets it.</summary>
+    private readonly Dictionary<string, int> NewModelIdPreferred = new();
 
     /// <summary>The map the models are listed for, read again after a navigation edit.</summary>
     private NavigationMap ModelsNavigation;
@@ -138,24 +144,12 @@ public partial class NavigationTool
             return;
         }
 
-        if (slots.Count == 0)
-        {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Models_No_Free_Slot"));
+        // A copy can't replace its own source
+        if (DuplicateTarget == ModelTarget.Replace)
+            DuplicateTarget = ModelTarget.New;
+
+        if (!DisplayModelTarget("navigationModels", map, navigation, null, removable, slots, ref DuplicateTarget, ref DuplicateNewModelId, selected.ModelID + 1))
             return;
-        }
-
-        if (slots.All(s => s.ModelID != SlotModelID))
-            SlotModelID = slots[0].ModelID;
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.BeginCombo("##navigationModelsSlot", LOC.Get("MAP_Navigation_Models_Slot", SlotModelID)))
-        {
-            foreach (var slot in slots)
-                if (ImGui.Selectable($"{LOC.Get("MAP_Navigation_Models_Slot", slot.ModelID)}##navigationModelsSlot_{slot.ModelID}", slot.ModelID == SlotModelID))
-                    SlotModelID = slot.ModelID;
-            ImGui.EndCombo();
-        }
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Slot_TT"));
 
         ImGui.SetNextItemWidth(-1);
         ImGui.InputFloat3("##navigationModelsOffset", ref DuplicateOffset);
@@ -163,11 +157,106 @@ public partial class NavigationTool
 
         if (ImGui.Button($"{LOC.Get("MAP_Navigation_Models_Duplicate")}##navigationModelsDuplicate"))
         {
-            var slot = slots.First(s => s.ModelID == SlotModelID);
-            EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, DuplicateOffset),
-                LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, slot.ModelID));
+            if (DuplicateTarget == ModelTarget.New)
+            {
+                int id = DuplicateNewModelId;
+                var offset = DuplicateOffset;
+                EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset), NavModelEdit.TranslatedCopy(selected.OFile.Document, offset)),
+                    LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, id));
+            }
+            else
+            {
+                var slot = slots.First(s => s.ModelID == SlotModelID);
+                EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, DuplicateOffset),
+                    LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, slot.ModelID));
+            }
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Duplicate_TT"));
+    }
+
+    /// <summary>
+    /// The choice of where a model edit puts its new files: in place of the selected model (when given), into a free
+    /// placeholder, or as a new model with its own ModelID. Only the targets the map allows are offered. Returns false
+    /// when none can be used, or the new ModelID is taken.
+    /// </summary>
+    private bool DisplayModelTarget(string id, MapContainer map, NavigationMap navigation, NavmeshModel replaceable, HashSet<NavmeshModel> removable,
+        List<NavmeshModel> slots, ref ModelTarget target, ref int newModelId, int preferredId)
+    {
+        bool canReplace = replaceable != null && removable.Contains(replaceable);
+        bool canSlot = slots.Count > 0;
+        string cannotAdd = NavModelEdit.CanAdd(navigation);
+        bool canNew = cannotAdd == null;
+
+        if (!canReplace && !canSlot && !canNew)
+        {
+            GUI.WrappedText(LOC.Get(cannotAdd ?? "MAP_Navigation_Generate_No_Target"));
+            return false;
+        }
+
+        // A target the map doesn't allow falls back to one it does
+        if ((target == ModelTarget.Replace && !canReplace) || (target == ModelTarget.Slot && !canSlot) || (target == ModelTarget.New && !canNew))
+            target = canNew ? ModelTarget.New : canReplace ? ModelTarget.Replace : ModelTarget.Slot;
+
+        if (canNew && ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Model_Target_New")}##{id}TargetNew", target == ModelTarget.New))
+            target = ModelTarget.New;
+        if (canNew)
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Model_Target_New_TT"));
+
+        if (canReplace && ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Generate_Replace", replaceable.ModelID)}##{id}TargetReplace", target == ModelTarget.Replace))
+            target = ModelTarget.Replace;
+        if (canReplace)
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Replace_TT"));
+
+        if (canSlot && ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Generate_Into_Slot")}##{id}TargetSlot", target == ModelTarget.Slot))
+            target = ModelTarget.Slot;
+        if (canSlot)
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Into_Slot_TT"));
+
+        if (!canNew)
+            GUI.WrappedText(LOC.Get(cannotAdd));
+
+        if (target == ModelTarget.Slot)
+        {
+            if (slots.All(s => s.ModelID != SlotModelID))
+                SlotModelID = slots[0].ModelID;
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo($"##{id}Slot", LOC.Get("MAP_Navigation_Models_Slot", SlotModelID)))
+            {
+                foreach (var slot in slots)
+                    if (ImGui.Selectable($"{LOC.Get("MAP_Navigation_Models_Slot", slot.ModelID)}##{id}Slot_{slot.ModelID}", slot.ModelID == SlotModelID))
+                        SlotModelID = slot.ModelID;
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Slot_TT"));
+        }
+
+        if (target == ModelTarget.New)
+        {
+            // Starts from the preferred ID (the collision model's, or the source's next), or the next free one after it
+            if (newModelId < 0 || NewModelIdPreferred.GetValueOrDefault(id, int.MinValue) != preferredId)
+            {
+                NewModelIdPreferred[id] = preferredId;
+                newModelId = NavModelEdit.NextFreeModelId(navigation, preferredId >= 0 ? preferredId : 900000);
+            }
+
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputInt($"##{id}NewModelId", ref newModelId);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Model_Target_New_Id_TT"));
+            newModelId = Math.Clamp(newModelId, 0, 999999);
+
+            var taken = newModelId;
+            if (navigation.Nva.Navmeshes.Any(e => e.ModelID == taken))
+            {
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_Navigation_Model_Target_New_Id_Taken", newModelId));
+                return false;
+            }
+
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Model_Target_New_Files",
+                NavigationMap.MeshName(navigation.NameBase, NavmeshSet.N, newModelId), NavigationMap.MeshName(navigation.NameBase, NavmeshSet.O, newModelId)));
+        }
+
+        return true;
     }
 
     /// <summary>

@@ -17,15 +17,26 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public partial class NavigationTool
 {
-    private readonly HashSet<string> GenerateCollisions = new();
-    private bool GenerateIntoSlot;
+    /// <summary>
+    /// A selected part to generate from: a map collision part (its high collision file) or an asset (its own collision
+    /// binder), placed where the part is.
+    /// </summary>
+    private sealed record GenerateSource(MsbEntity Part, string MapId, bool IsAsset, string Model, string Label);
+
+    /// <summary>Asset collision read so far, by asset model, as triangles in the asset's own space (null: none found).</summary>
+    private readonly Dictionary<string, List<Vector3>> AssetCollisionCache = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>Where a model edit puts its new n and o files.</summary>
+    private enum ModelTarget { Replace, Slot, New }
+
+    private ModelTarget GenerateTarget = ModelTarget.New;
+
+    /// <summary>The ModelID a generated new model gets; -1 until it is set from the chosen collision.</summary>
+    private int GenerateNewModelId = -1;
     private bool GenerateNameAfterCollision = true;
     private bool ShowGenerateCollisions = true;
     private NavGenParameters GenerateN = NavGenParameters.DefaultN;
     private NavGenParameters GenerateO = NavGenParameters.DefaultO;
-
-    /// <summary>The model the collision list was last preselected for.</summary>
-    private int GeneratePreselectedFor = -1;
 
     private bool Generating;
     private readonly ConcurrentQueue<Action> GenerateResults = new();
@@ -36,87 +47,29 @@ public partial class NavigationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Generate_Header"), LOC.Get("MAP_Navigation_Generate_Header_TT"));
 
-        var collisionBank = View.HavokCollisionBank;
-        var files = collisionBank.MapCollisions.GetValueOrDefault(map.Name)?
-            .Where(n => n.StartsWith("h", StringComparison.OrdinalIgnoreCase)).OrderBy(n => n).ToList();
+        var sources = SelectedSources();
+        int preferredId = sources.Where(s => !s.IsAsset).Select(s => CollisionModelId(s.Model)).FirstOrDefault(-1);
 
-        if (files == null || files.Count == 0)
-        {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_No_Collision"));
-            return;
-        }
-
-        // The collision model of the selected model's ID, when there is one
-        if (selected != null && GeneratePreselectedFor != selected.ModelID)
-        {
-            GeneratePreselectedFor = selected.ModelID;
-            GenerateCollisions.Clear();
-            var own = files.FirstOrDefault(n => CollisionModelId(n) == selected.ModelID);
-            if (own != null)
-                GenerateCollisions.Add(own);
-        }
-
-        GenerateCollisions.RemoveWhere(n => !files.Contains(n));
-
-        // Collision models: the count stays outside the list toggle
+        // Collision: the selected parts. The count stays outside the list toggle
         GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Generate_Collision_Header"), LOC.Get("MAP_Navigation_Generate_Collision_Header_TT"), ref ShowGenerateCollisions);
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Collision_Count", GenerateCollisions.Count, files.Count));
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Collision_Count", sources.Count(s => !s.IsAsset), sources.Count(s => s.IsAsset)));
 
-        if (ShowGenerateCollisions)
+        if (ShowGenerateCollisions && sources.Count > 0)
         {
-            ImGui.BeginChild("##navigationGenerateCollisions", new Vector2(0, 140 * DPI.UIScale()), ImGuiChildFlags.Borders);
-            foreach (var name in files)
-            {
-                bool on = GenerateCollisions.Contains(name);
-                if (ImGui.Checkbox($"{name}##navigationGenerateCollision_{name}", ref on))
-                {
-                    if (on) GenerateCollisions.Add(name); else GenerateCollisions.Remove(name);
-                }
-            }
+            ImGui.BeginChild("##navigationGenerateSources", new Vector2(0, Math.Min(140, 20 + 18 * sources.Count) * DPI.UIScale()), ImGuiChildFlags.Borders);
+            foreach (var source in sources)
+                ImGui.Text(source.Label);
             ImGui.EndChild();
         }
 
         // Target
-        bool canReplace = selected != null && removable.Contains(selected);
-        if (!canReplace)
-            GenerateIntoSlot = true;
-
-        if (canReplace)
-        {
-            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Generate_Replace", selected.ModelID)}##navigationGenerateReplace", !GenerateIntoSlot))
-                GenerateIntoSlot = false;
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Replace_TT"));
-        }
-
-        if (slots.Count > 0)
-        {
-            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Generate_Into_Slot")}##navigationGenerateSlot", GenerateIntoSlot))
-                GenerateIntoSlot = true;
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Into_Slot_TT"));
-
-            if (GenerateIntoSlot)
-            {
-                if (slots.All(s => s.ModelID != SlotModelID))
-                    SlotModelID = slots[0].ModelID;
-
-                ImGui.SetNextItemWidth(-1);
-                if (ImGui.BeginCombo("##navigationGenerateSlotCombo", LOC.Get("MAP_Navigation_Models_Slot", SlotModelID)))
-                {
-                    foreach (var slot in slots)
-                        if (ImGui.Selectable($"{LOC.Get("MAP_Navigation_Models_Slot", slot.ModelID)}##navigationGenerateSlot_{slot.ModelID}", slot.ModelID == SlotModelID))
-                            SlotModelID = slot.ModelID;
-                    ImGui.EndCombo();
-                }
-                GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Slot_TT"));
-
-                ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Name_After")}##navigationGenerateNameAfter", ref GenerateNameAfterCollision);
-                GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Name_After_TT"));
-            }
-        }
-        else if (!canReplace)
-        {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_No_Target"));
+        if (!DisplayModelTarget("navigationGenerate", map, navigation, selected, removable, slots, ref GenerateTarget, ref GenerateNewModelId, preferredId))
             return;
+
+        if (GenerateTarget == ModelTarget.Slot)
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Name_After")}##navigationGenerateNameAfter", ref GenerateNameAfterCollision);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Name_After_TT"));
         }
 
         // Settings of each set
@@ -129,14 +82,19 @@ public partial class NavigationTool
             return;
         }
 
-        if (GenerateCollisions.Count == 0)
+        if (sources.Count == 0)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Pick_Collision"));
             return;
         }
 
         if (ImGui.Button($"{LOC.Get("MAP_Navigation_Generate")}##navigationGenerate"))
-            StartGenerate(map, navigation, GenerateIntoSlot ? slots.FirstOrDefault(s => s.ModelID == SlotModelID) : selected, GenerateIntoSlot);
+            StartGenerate(map, navigation, sources, preferredId, GenerateTarget switch
+            {
+                ModelTarget.Slot => slots.FirstOrDefault(s => s.ModelID == SlotModelID),
+                ModelTarget.Replace => selected,
+                _ => null,
+            }, GenerateTarget, GenerateNewModelId);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_TT"));
     }
 
@@ -183,58 +141,96 @@ public partial class NavigationTool
     }
 
     /// <summary>
-    /// Where each collision part of a map that draws a collision file puts it, in the space of the map's navmeshes: the
-    /// part's world transform, taken back out of the map's own placement (the navmesh parent's), as navmesh vertices
-    /// are stored relative to it. A model several parts use is placed once for each.
+    /// The parts selected in the viewport to generate from: map collision parts and assets, in any loaded map. Dummy
+    /// assets have no collision in game, so they aren't used.
     /// </summary>
-    private static List<Matrix4x4> CollisionPlacements(MapContainer map, string fileName)
+    private List<GenerateSource> SelectedSources()
     {
-        var result = new List<Matrix4x4>();
-        var normalized = Renderer.ResourceName.Normalize(fileName);
+        var sources = new List<GenerateSource>();
 
-        if (!Matrix4x4.Invert(MapWorld(map), out var toNavmeshSpace))
-            toNavmeshSpace = Matrix4x4.Identity;
-
-        foreach (var entity in map.Objects)
+        foreach (var part in View.ViewportSelection.GetFilteredSelection<MsbEntity>())
         {
-            if (entity is not MsbEntity part || !EntityHelper.IsPartCollision(part))
+            var model = part.GetProperty("ModelName")?.GetValue(part.WrappedObject) as string;
+            var mapId = part.MapID;
+            if (string.IsNullOrEmpty(model) || string.IsNullOrEmpty(mapId))
                 continue;
 
-            bool draws = false;
-            if (part.RenderSceneMesh is Renderer.MeshRenderableProxy mesh && string.Equals(mesh.ResourceHandle?.Name, normalized, StringComparison.OrdinalIgnoreCase))
-                draws = true;
-            foreach (var layer in part.CollisionLayerMeshes ?? Enumerable.Empty<Renderer.RenderableProxy>())
-                if (layer is Renderer.MeshRenderableProxy layerMesh && string.Equals(layerMesh.ResourceHandle?.Name, normalized, StringComparison.OrdinalIgnoreCase))
-                    draws = true;
-
-            // A part whose high collision isn't drawn still names its model: h + the file's six digits
-            if (!draws && part.WrappedObject is SoulsFormats.MSBE.Part.Collision collision)
-                draws = CollisionModelId(fileName) >= 0 && collision.ModelName == $"h{CollisionModelId(fileName):D6}";
-
-            if (draws)
-                result.Add(part.GetWorldMatrix() * toNavmeshSpace);
+            if (EntityHelper.IsPartCollision(part))
+                sources.Add(new GenerateSource(part, mapId, false, model, LOC.Get("MAP_Navigation_Generate_Source_Collision", part.Name, model, mapId)));
+            else if (EntityHelper.IsPartAsset(part))
+                sources.Add(new GenerateSource(part, mapId, true, model, LOC.Get("MAP_Navigation_Generate_Source_Asset", part.Name, model, mapId)));
         }
 
-        return result;
+        return sources;
     }
 
-    /// <summary>The model number of a collision file name, e.g. 1000 for h10_01_00_00_001000.hkx.dcx, or -1.</summary>
-    private static int CollisionModelId(string fileName)
+    /// <summary>
+    /// The triangles of a source in its own space: a collision part's high collision file of its map (h + map digits +
+    /// the model's digits), or an asset's own collision (high, else low), read from its binder. Null if there is none.
+    /// </summary>
+    private List<Vector3> SourceTriangles(GenerateSource source)
     {
-        var stem = fileName.Split('.')[0];
-        var digits = stem.Substring(stem.LastIndexOf('_') + 1);
+        if (!source.IsAsset)
+        {
+            var fileName = $"h{source.MapId.Substring(1)}_{source.Model.Substring(1)}.hkx.dcx";
+            var document = View.HavokCollisionBank.GetMapDocument(fileName);
+            return document == null ? null : Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
+        }
+
+        if (AssetCollisionCache.TryGetValue(source.Model, out var cached))
+            return cached;
+
+        List<Vector3> triangles = null;
+        try
+        {
+            var descriptor = Renderer.ModelLocator.GetMapObjCollision(Project, source.Model, HavokCollisionType.High);
+            var path = descriptor.GetContainerPath(Project);
+
+            if (path != null && Project.VFS.FS.FileExists(path))
+            {
+                var binder = SoulsFormats.BND4.Read(Project.VFS.FS.ReadFile(path).Value);
+                var file = binder.Files.FirstOrDefault(f => string.Equals(
+                    System.IO.Path.GetFileName(f.Name).Split('.')[0], descriptor.AssetName, StringComparison.OrdinalIgnoreCase));
+
+                if (file != null)
+                {
+                    var bytes = file.Bytes;
+                    var data = SoulsFormats.DCX.Is(bytes) ? SoulsFormats.DCX.Decompress(bytes) : bytes;
+                    var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
+                    var document = Havok.Files.HavokFile.Read(data.ToArray(), profile);
+                    triangles = Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Navigation_Generate_Asset_Failed", source.Model), e);
+        }
+
+        AssetCollisionCache[source.Model] = triangles;
+        return triangles;
+    }
+
+    /// <summary>The model number of a collision file or part model name, e.g. 1000 for h10_01_00_00_001000.hkx.dcx or h001000, or -1.</summary>
+    private static int CollisionModelId(string name)
+    {
+        // The digits after the last underscore of a file name, or after the type letter of a part model name
+        var stem = name.Split('.')[0];
+        var digits = stem.Contains('_') ? stem.Substring(stem.LastIndexOf('_') + 1) : stem.TrimStart('h', 'l', 'f', 'H', 'L', 'F');
         return int.TryParse(digits, out var id) ? id : -1;
     }
 
     /// <summary>
-    /// Reads the chosen collision's triangles here (the collision bank isn't safe to read from another thread), then
-    /// generates both sets and builds their files in the background, and makes the edit when that is done.
+    /// Reads the selected parts' collision here (the collision bank isn't safe to read from another thread), placed
+    /// where each part is, then generates both sets and builds their files in the background, and makes the edit when
+    /// that is done.
     /// </summary>
-    private void StartGenerate(MapContainer map, NavigationMap navigation, NavmeshModel target, bool intoSlot)
+    private void StartGenerate(MapContainer map, NavigationMap navigation, List<GenerateSource> sources, int preferredId, NavmeshModel target, ModelTarget kind, int newModelId)
     {
         ModelMessage = null;
+        bool intoSlot = kind == ModelTarget.Slot;
 
-        if (target == null)
+        if (target == null && kind != ModelTarget.New)
             return;
 
         var template = NavGenFile.FindTemplate(navigation);
@@ -245,45 +241,42 @@ public partial class NavigationTool
             return;
         }
 
+        // Each part's world transform, taken back out of this map's placement: navmesh vertices are relative to it
+        if (!Matrix4x4.Invert(MapWorld(map), out var toNavmeshSpace))
+            toNavmeshSpace = Matrix4x4.Identity;
+
         var triangles = new List<Vector3>();
-        int unplaced = 0;
-        foreach (var name in GenerateCollisions)
+        var missing = new List<string>();
+        foreach (var source in sources)
         {
-            var document = View.HavokCollisionBank.GetMapDocument(name);
-            if (document == null)
-                continue;
-
-            var local = Havok.Shared.CollisionGeometry.Submeshes(document.Objects).SelectMany(t => t).ToList();
-
-            // Where the map's collision parts put the model, as the viewport draws it; as stored if no part uses it
-            var placements = CollisionPlacements(map, name);
-            if (placements.Count == 0)
+            var local = SourceTriangles(source);
+            if (local == null || local.Count == 0)
             {
-                placements.Add(Matrix4x4.Identity);
-                unplaced++;
+                missing.Add(source.Model);
+                continue;
             }
 
-            foreach (var placement in placements)
-                foreach (var point in local)
-                    triangles.Add(Vector3.Transform(point, placement));
+            var placement = source.Part.GetWorldMatrix() * toNavmeshSpace;
+            foreach (var point in local)
+                triangles.Add(Vector3.Transform(point, placement));
         }
 
-        // TEMPORARY diagnostics: how the chosen collision was placed
-        Smithbox.Log(typeof(NavigationTool), $"[NavDiag] generate from {string.Join(", ", GenerateCollisions)}: {triangles.Count / 3} placed triangles, " +
-            $"{unplaced} models without a collision part; placements {string.Join("; ", GenerateCollisions.SelectMany(n => CollisionPlacements(map, n)).Select(m => $"({m.M41:0.##}, {m.M42:0.##}, {m.M43:0.##})"))}");
+        // TEMPORARY diagnostics: what the generation read
+        Smithbox.Log(typeof(NavigationTool), $"[NavDiag] generate from {sources.Count} parts: {triangles.Count / 3} placed triangles; without collision: {string.Join(", ", missing)}");
+
+        if (missing.Count > 0)
+            Smithbox.Log(this, LOC.Get("MAP_Navigation_Generate_Missing", string.Join(", ", missing)));
 
         int? modelId = null;
-        if (intoSlot && GenerateNameAfterCollision && GenerateCollisions.Count > 0)
-        {
-            int id = CollisionModelId(GenerateCollisions.OrderBy(n => n).First());
-            if (id >= 0)
-                modelId = id;
-        }
+        if (intoSlot && GenerateNameAfterCollision && preferredId >= 0)
+            modelId = preferredId;
 
         var pn = GenerateN;
         var po = GenerateO;
-        var nTemplate = target.NFile?.Mesh;
-        var oTemplate = target.OFile?.Mesh;
+        // The per-face values of the generated meshes come from the target's meshes, or any model's for a new one
+        var templateModel = target ?? navigation.Models.FirstOrDefault(m => m.NFile?.FaceCount > 0 && m.OFile?.FaceCount > 0);
+        var nTemplate = templateModel?.NFile?.Mesh;
+        var oTemplate = templateModel?.OFile?.Mesh;
         Generating = true;
 
         Task.Run(() =>
@@ -325,6 +318,16 @@ public partial class NavigationTool
 
                 // The map may have changed while the generation ran; the edit is made against it as it is now
                 var current = Bank.GetMap(map);
+                int faces = n.Mesh.m_faces.Count, oFaces = o.Mesh.m_faces.Count;
+
+                if (kind == ModelTarget.New)
+                {
+                    if (current != null)
+                        EditModel(map, current, () => NavModelEdit.Add(current, newModelId, nDoc, oDoc),
+                            LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, newModelId, triangles.Count / 3));
+                    return;
+                }
+
                 var currentTarget = current?.Models.FirstOrDefault(m => ReferenceEquals(m.NEntry, target.NEntry));
                 if (currentTarget == null)
                 {
@@ -333,7 +336,6 @@ public partial class NavigationTool
                     return;
                 }
 
-                int faces = n.Mesh.m_faces.Count, oFaces = o.Mesh.m_faces.Count;
                 EditModel(map, current, () => NavModelEdit.Generate(current, currentTarget, nDoc, oDoc, modelId),
                     LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, modelId ?? currentTarget.ModelID, triangles.Count / 3));
             });
