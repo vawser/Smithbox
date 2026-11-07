@@ -130,7 +130,7 @@ public sealed record NavBlocker(Vector3 Origin, Vector3 AxisX, Vector3 AxisY, Ve
     }
 
     /// <summary>Splits a convex polygon by a plane (Sutherland–Hodgman): the part where the distance is positive, and the rest.</summary>
-    private static (List<Vector3> Positive, List<Vector3> Remainder) Split(List<Vector3> polygon, Func<Vector3, float> distance)
+    internal static (List<Vector3> Positive, List<Vector3> Remainder) Split(List<Vector3> polygon, Func<Vector3, float> distance)
     {
         var positive = new List<Vector3>();
         var rest = new List<Vector3>();

@@ -54,6 +54,15 @@ public sealed record NavGenParameters
     public bool SnapToCollision { get; init; } = true;
 
     /// <summary>
+    /// The size of the world grid every face is split along, in metres, for faces of an even size (links and face data
+    /// are set per face); 0 keeps Recast's faces, which can be large.
+    /// </summary>
+    public float FaceSize { get; init; } = 2f;
+
+    /// <summary>Split every face into triangles, after the grid.</summary>
+    public bool TrianglesOnly { get; init; }
+
+    /// <summary>
     /// Defaults for the n set (normal characters): a fine mesh close to the collision. Tuned with NavSurvey navgen on
     /// m10_01 and m12_01, whose walkable surfaces are all map collision: it covers 87% (median) of the game's n meshes.
     /// </summary>
@@ -88,6 +97,9 @@ public sealed class NavGenResult
 
     /// <summary>Vertices and face centres left inside a blocker's cut: a self-check, which should be 0.</summary>
     public int InsideCut { get; init; }
+
+    /// <summary>Faces dropped as still wound backwards after the clean-up: a last resort, normally 0.</summary>
+    public int DroppedFaces { get; init; }
 
     public bool Ok => Error == null;
 }
@@ -202,9 +214,9 @@ public static class NavigationGenerator
             points[v] = new Vector3(poly.bmin.X + poly.verts[v * 3] * poly.cs, poly.bmin.Y + poly.verts[v * 3 + 1] * poly.ch, poly.bmin.Z + poly.verts[v * 3 + 2] * poly.cs);
 
         int snapped = 0;
-        if (p.SnapToCollision)
+        var surface = p.SnapToCollision ? new SurfaceGrid(triangles, 4f) : null;
+        if (surface != null)
         {
-            var surface = new SurfaceGrid(triangles, 4f);
             for (int v = 0; v < points.Length; v++)
             {
                 if (surface.Nearest(points[v], p.MaxClimb + 2 * p.CellHeight) is float y)
@@ -217,7 +229,22 @@ public static class NavigationGenerator
 
         var polygons = Polygons(poly, points);
 
-        // The hard cut: every face clipped against every widened box
+        // Even faces: split along a world grid; the new corners go onto the collision too
+        if (p.FaceSize > 0)
+        {
+            polygons = SplitByGrid(polygons, MathF.Max(0.25f, p.FaceSize));
+
+            if (surface != null)
+            {
+                foreach (var polygon in polygons)
+                    for (int i = 0; i < polygon.Count; i++)
+                        if (surface.Nearest(polygon[i], p.MaxClimb + 2 * p.CellHeight) is float y)
+                            polygon[i] = polygon[i] with { Y = y };
+            }
+        }
+
+        // The hard cut, last, so nothing after it moves a corner back into a box: every face clipped against every
+        // widened box
         int clipped = 0;
         foreach (var cut in cuts)
         {
@@ -242,7 +269,7 @@ public static class NavigationGenerator
         if (polygons.Count == 0)
             return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
 
-        var mesh = BuildMesh(polygons, template);
+        var mesh = BuildMesh(polygons, template, p.TrianglesOnly, out int dropped);
 
         // Self-check: vertices and face centres still inside a cut (should be none)
         int insideCut = 0;
@@ -256,7 +283,7 @@ public static class NavigationGenerator
                 insideCut++;
         }
 
-        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut };
+        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped };
     }
 
     /// <summary>
@@ -300,6 +327,64 @@ public static class NavigationGenerator
         return hull;
     }
 
+    /// <summary>
+    /// Convex faces split along the lines x = k·size and z = k·size: each piece is convex, and two faces that share an
+    /// edge split it at the same points, so the mesh builder joins them again. Slivers are dropped.
+    /// </summary>
+    private static List<List<Vector3>> SplitByGrid(List<List<Vector3>> polygons, float size)
+    {
+        var result = new List<List<Vector3>>();
+
+        // Corners within 2 cm of a line go onto it: decided by the corner alone, so every face with it agrees, and no
+        // cut leaves a sliver beside a corner
+        Vector3 Snap(Vector3 q)
+        {
+            float x = MathF.Round(q.X / size) * size, z = MathF.Round(q.Z / size) * size;
+            return new Vector3(MathF.Abs(q.X - x) < 0.02f ? x : q.X, q.Y, MathF.Abs(q.Z - z) < 0.02f ? z : q.Z);
+        }
+
+        foreach (var original in polygons)
+        {
+            var snapped = original.Select(Snap).ToList();
+            var convex = ConvexXZ(snapped) ? new List<List<Vector3>> { snapped } : EarClip(snapped);
+
+            foreach (var polygon in convex)
+            foreach (var column in SplitAxis(polygon, size, q => q.X))
+                foreach (var piece in SplitAxis(column, size, q => q.Z))
+                    if (piece.Count >= 3 && AreaXZ(piece) > 1e-4f)
+                        result.Add(piece);
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// A convex polygon cut by every grid line of one axis that crosses it, low side first. A corner on a line is kept in
+    /// both pieces; a crossing point depends only on its edge's two ends, so faces sharing the edge cut it at the same point.
+    /// </summary>
+    private static List<List<Vector3>> SplitAxis(List<Vector3> polygon, float size, Func<Vector3, float> axis)
+    {
+        var pieces = new List<List<Vector3>>();
+        float lo = polygon.Min(axis), hi = polygon.Max(axis);
+        var rest = polygon;
+
+        for (float line = (MathF.Floor(lo / size) + 1) * size; line < hi - 1e-4f && rest.Count >= 3; line += size)
+        {
+            float at = line;
+            if (line <= lo + 1e-4f)
+                continue;
+
+            var (below, above) = NavBlocker.Split(rest, q => at - axis(q));
+            if (below.Count >= 3)
+                pieces.Add(below);
+            rest = above;
+        }
+
+        if (rest.Count >= 3)
+            pieces.Add(rest);
+        return pieces;
+    }
+
     /// <summary>Whether a polygon, seen from above, turns the same way (counter-clockwise) at every corner.</summary>
     private static bool ConvexXZ(List<Vector3> polygon)
     {
@@ -309,15 +394,24 @@ public static class NavigationGenerator
             var b = polygon[(k + 1) % polygon.Count];
             var c = polygon[(k + 2) % polygon.Count];
             // As the sine of the turn, so a long edge's float error isn't taken for a bend
-            float lengths = MathF.Sqrt(((b.X - a.X) * (b.X - a.X) + (b.Z - a.Z) * (b.Z - a.Z)) * ((c.X - b.X) * (c.X - b.X) + (c.Z - b.Z) * (c.Z - b.Z)));
-            if (lengths > 1e-9f && TurnXZ(a, b, c) / lengths > 1e-3f)
+            if (TurnSine(a, b, c) > 1e-3f)
                 return false;
         }
         return true;
     }
 
+    /// <summary>The turn at b as the sine of its angle (negative for counter-clockwise), 0 for a zero-length side.</summary>
+    private static float TurnSine(Vector3 a, Vector3 b, Vector3 c)
+    {
+        // In double: far from the origin a float's step is a tenth of a millimetre, enough to tip a near-straight corner
+        double abx = (double)b.X - a.X, abz = (double)b.Z - a.Z, bcx = (double)c.X - b.X, bcz = (double)c.Z - b.Z;
+        double lengths = Math.Sqrt((abx * abx + abz * abz) * (bcx * bcx + bcz * bcz));
+        return lengths > 1e-12 ? (float)((abx * bcz - abz * bcx) / lengths) : 0;
+    }
+
     /// <summary>The turn at b, seen from above (X right, Z down the page): negative for counter-clockwise, as the faces wind.</summary>
-    private static float TurnXZ(Vector3 a, Vector3 b, Vector3 c) => (b.X - a.X) * (c.Z - b.Z) - (b.Z - a.Z) * (c.X - b.X);
+    private static float TurnXZ(Vector3 a, Vector3 b, Vector3 c)
+        => (float)(((double)b.X - a.X) * ((double)c.Z - b.Z) - ((double)b.Z - a.Z) * ((double)c.X - b.X));
 
     /// <summary>
     /// A simple polygon (counter-clockwise from above) as triangles, by ear clipping in XZ: each step cuts off a corner
@@ -338,7 +432,8 @@ public static class NavigationGenerator
                 var b = rest[i];
                 var c = rest[(i + 1) % rest.Count];
 
-                if (TurnXZ(a, b, c) > -1e-6f)
+                // Only an ear that turns by a real angle: a near-straight corner would make a sliver whose winding is noise
+                if (TurnSine(a, b, c) > -1e-3f)
                     continue;
 
                 bool empty = true;
@@ -416,7 +511,7 @@ public static class NavigationGenerator
     /// share a border share its edges; each edge runs from its corner to the next, and inner edges are named by the
     /// edge and face on their other side.
     /// </summary>
-    private static hkaiNavMesh BuildMesh(List<List<Vector3>> polygons, hkaiNavMesh template)
+    private static hkaiNavMesh BuildMesh(List<List<Vector3>> polygons, hkaiNavMesh template, bool trianglesOnly, out int dropped)
     {
         var templateFace = template?.m_faces.FirstOrDefault();
         float w = template?.m_vertices.FirstOrDefault().W ?? 1f;
@@ -430,19 +525,29 @@ public static class NavigationGenerator
             m_userData = template?.m_userData ?? 0,
         };
 
-        // Welded vertices
+        // Welded vertices: a corner within 1 mm of a vertex is that vertex (the voxels are far coarser, so no real corners
+        // meet), found among the neighbouring cells of a 1 mm hash, so two points either side of a cell border still meet
+        const float weld = 0.001f;
         var points = new List<Vector3>();
-        var byPosition = new Dictionary<(long, long, long), int>();
+        var byCell = new Dictionary<(long, long, long), List<int>>();
+        (long, long, long) CellOf(Vector3 q) => ((long)MathF.Floor(q.X / weld), (long)MathF.Floor(q.Y / weld), (long)MathF.Floor(q.Z / weld));
         int Weld(Vector3 q)
         {
-            var key = ((long)MathF.Round(q.X * 1000), (long)MathF.Round(q.Y * 1000), (long)MathF.Round(q.Z * 1000));
-            if (!byPosition.TryGetValue(key, out int index))
-            {
-                index = points.Count;
-                points.Add(q);
-                byPosition[key] = index;
-            }
-            return index;
+            var (cx, cy, cz) = CellOf(q);
+            for (long x = cx - 1; x <= cx + 1; x++)
+                for (long y = cy - 1; y <= cy + 1; y++)
+                    for (long z = cz - 1; z <= cz + 1; z++)
+                        if (byCell.TryGetValue((x, y, z), out var near))
+                            foreach (var index in near)
+                                if (Vector3.DistanceSquared(points[index], q) <= weld * weld)
+                                    return index;
+
+            int added = points.Count;
+            points.Add(q);
+            if (!byCell.TryGetValue((cx, cy, cz), out var list))
+                byCell[(cx, cy, cz)] = list = new List<int>();
+            list.Add(added);
+            return added;
         }
 
         var faces = new List<List<int>>();
@@ -510,6 +615,155 @@ public static class NavigationGenerator
                 k += inserted.Count;
             }
         }
+
+        // Edges shorter than 9 mm are collapsed: their two vertices become one, everywhere at once, so the faces either
+        // side stay joined and the slivers cuts leave beside corners vanish
+        var parent = Enumerable.Range(0, points.Count).ToArray();
+        int Find(int v)
+        {
+            while (parent[v] != v)
+            {
+                parent[v] = parent[parent[v]];
+                v = parent[v];
+            }
+            return v;
+        }
+
+        foreach (var face in faces)
+            for (int k = 0; k < face.Count; k++)
+            {
+                int a = Find(face[k]), b = Find(face[(k + 1) % face.Count]);
+                if (a != b && Vector3.DistanceSquared(points[a], points[b]) < 8.1e-5f)
+                    parent[Math.Max(a, b)] = Math.Min(a, b);
+            }
+
+        foreach (var face in faces)
+            for (int k = 0; k < face.Count; k++)
+                face[k] = Find(face[k]);
+
+        // Tidied: no corner twice in a row, and no spike (a corner that goes out and straight back)
+        foreach (var face in faces)
+        {
+            bool changed = true;
+            while (changed && face.Count >= 3)
+            {
+                changed = false;
+                for (int k = 0; k < face.Count && face.Count >= 3; k++)
+                {
+                    int next = (k + 1) % face.Count, after = (k + 2) % face.Count;
+                    if (face[k] == face[next])
+                    {
+                        face.RemoveAt(next);
+                        changed = true;
+                    }
+                    else if (face[k] == face[after])
+                    {
+                        face.RemoveAt(Math.Max(next, after));
+                        face.RemoveAt(Math.Min(next, after));
+                        changed = true;
+                    }
+                }
+            }
+        }
+        faces.RemoveAll(face => face.Count < 3);
+
+        // Slivers are dissolved and bent faces triangulated, in rounds, as either step can leave work for the other
+        for (int round = 0; round < 3; round++)
+        {
+        // Slivers: a triangle that is nearly flat (its far corner within 0.2% of its longest edge's length of that edge's
+        // line) or wound backwards is dissolved. Its far corner goes into the face across its longest edge, which then
+        // shares the sliver's other two edges, so the faces around it stay joined. Repeated until none is left.
+        for (int pass = 0; pass < 8; pass++)
+        {
+            var owner = new Dictionary<(int, int), int>();
+            for (int i = 0; i < faces.Count; i++)
+                for (int k = 0; k < faces[i].Count; k++)
+                    owner[(faces[i][k], faces[i][(k + 1) % faces[i].Count])] = i;
+
+            var removed = new HashSet<int>();
+            bool any = false;
+
+            for (int i = 0; i < faces.Count; i++)
+            {
+                var face = faces[i];
+                if (face.Count != 3 || removed.Contains(i))
+                    continue;
+
+                // The longest edge a -> b, and the far corner c
+                int longest = 0;
+                float best = -1;
+                for (int k = 0; k < 3; k++)
+                {
+                    float length = Vector2.DistanceSquared(new Vector2(points[face[k]].X, points[face[k]].Z), new Vector2(points[face[(k + 1) % 3]].X, points[face[(k + 1) % 3]].Z));
+                    if (length > best)
+                    {
+                        best = length;
+                        longest = k;
+                    }
+                }
+
+                int a = face[longest], b = face[(longest + 1) % 3], c = face[(longest + 2) % 3];
+                float turn = TurnXZ(points[a], points[b], points[c]);
+                bool backwards = turn > 0;
+                bool flat = MathF.Abs(turn) < 2e-3f * best;
+                if (!backwards && !flat)
+                    continue;
+
+                if (owner.TryGetValue((b, a), out int across) && across != i && !removed.Contains(across))
+                {
+                    var neighbour = faces[across];
+                    int at = -1;
+                    for (int k = 0; k < neighbour.Count; k++)
+                        if (neighbour[k] == b && neighbour[(k + 1) % neighbour.Count] == a)
+                            at = k;
+                    if (at < 0)
+                        continue;
+                    neighbour.Insert(at + 1, c);
+                }
+
+                removed.Add(i);
+                any = true;
+            }
+
+            if (!any)
+                break;
+
+            faces = faces.Where((_, i) => !removed.Contains(i)).ToList();
+        }
+
+        // A face that still bends in (a few millimetres moved by the steps above), or any face when only triangles are
+        // wanted, is split into triangles of its own corners by ear clipping: its edges stay as they are, so its neighbours
+        // stay joined, and a corner on a straight edge (shared with a neighbour) is kept rather than cut off flat
+        for (int i = faces.Count - 1; i >= 0; i--)
+        {
+            var corners = faces[i].Select(v => points[v]).ToList();
+            if (ConvexXZ(corners) && (!trianglesOnly || corners.Count == 3))
+                continue;
+
+            var byPoint = new Dictionary<Vector3, int>();
+            for (int k = 0; k < faces[i].Count; k++)
+                byPoint.TryAdd(corners[k], faces[i][k]);
+
+            var triangles = EarClip(corners).Select(t => t.Select(q => byPoint[q]).ToList()).Where(t => t.Distinct().Count() == t.Count).ToList();
+            faces.RemoveAt(i);
+            faces.InsertRange(i, triangles);
+        }
+        }
+
+        // Last resort: a face still wound backwards (seen from above) after the rounds is dropped, as an inverted face is
+        // worse than a gap of its width; its neighbours' edges stay on the boundary
+        dropped = faces.RemoveAll(face =>
+        {
+            double area = 0;
+            for (int k = 0; k < face.Count; k++)
+            {
+                var a = points[face[k]];
+                var b = points[face[(k + 1) % face.Count]];
+                area += (double)a.X * b.Z - (double)b.X * a.Z;
+            }
+            // The faces wind counter-clockwise from above, which is a negative shoelace sum here (as TurnXZ is)
+            return area >= 0;
+        });
 
         foreach (var point in points)
             mesh.m_vertices.Add(new Vector4(point, w));

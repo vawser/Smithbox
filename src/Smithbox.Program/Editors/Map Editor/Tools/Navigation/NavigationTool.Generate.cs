@@ -125,6 +125,8 @@ public partial class NavigationTool
         GUI.SimpleHeader(title, LOC.Get("MAP_Navigation_Generate_Set_TT"));
 
         float cell = p.CellSize, radius = p.AgentRadius, height = p.AgentHeight, climb = p.MaxClimb, slope = p.MaxSlope, edge = p.MaxEdgeLength;
+        float faceSize = p.FaceSize;
+        bool trianglesOnly = p.TrianglesOnly;
 
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateCell_{id}", ref cell, 0.1f, 1f, $"{LOC.Get("MAP_Navigation_Generate_Cell")} %.2f m");
@@ -144,8 +146,14 @@ public partial class NavigationTool
         ImGui.SetNextItemWidth(-1);
         ImGui.SliderFloat($"##navigationGenerateEdge_{id}", ref edge, 0f, 30f, $"{LOC.Get("MAP_Navigation_Generate_Edge")} %.1f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Edge_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateFaceSize_{id}", ref faceSize, 0f, 10f, faceSize <= 0 ? LOC.Get("MAP_Navigation_Generate_Face_Size_Off") : $"{LOC.Get("MAP_Navigation_Generate_Face_Size")} %.1f m");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Face_Size_TT"));
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
 
-        p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge };
+        p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
+            FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly };
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))
             p = defaults;

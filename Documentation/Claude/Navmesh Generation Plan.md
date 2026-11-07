@@ -200,6 +200,27 @@ solid but never walkable. Every tagged part of a loaded map counts in each gener
     (corners chain, faces convex to 0.06°, opposite edges pair back). Without blockers the coverage is unchanged.
 - The red boxes are redrawn when a tagged part moves (its transform is checked every 15 frames).
 
+**Even faces** (2026-11-07; `NavGenParameters.FaceSize`, default 2 m for n and 3 m for o, 0 = off; `TrianglesOnly`):
+- After Recast, every face is split along the world grid x = k·size, z = k·size. Corners within 2 cm of a line are
+  first moved onto it (decided per corner, so faces sharing a corner agree). New corners are snapped onto the collision.
+- The blocker cut runs last, so nothing afterwards moves a corner back into a box.
+- The mesh builder then:
+  - welds within 1 mm (a neighbour search, not rounding);
+  - inserts T-junction vertices;
+  - collapses edges shorter than 9 mm everywhere at once;
+  - removes repeated corners and spikes;
+  - dissolves slivers (nearly flat or backwards triangles: the far corner goes into the face across the long edge),
+    and triangulates faces that still bend in, by ear clipping that skips near-straight corners. These two run in up
+    to 3 rounds.
+  - With Triangles only, every face is ear-clipped.
+  - Last resort: a face still wound backwards is dropped (`DroppedFaces`).
+- Turn tests use double precision: more than a kilometre out, float noise was enough to flip a near-straight corner.
+- **`navgen`, 28 meshes** (`m10_01`, `m12_01`, `m11_05`, `m12_02`, `m30_00`, `m60_33_4x`, `m60_44_35_00`):
+  - every n and o mesh is valid, with or without blockers and with or without Triangles only;
+  - no point is inside a blocker cut;
+  - face extent p50 2 m and p90 2 m (Recast's own: 2.6 m and 8.8 m), with coverage unchanged;
+  - dropped faces: 4 of 504,116 in n and 12 in o, nearly all in `m12_02_00_00` 4500 (a 200,000-face mesh more than 1 km out).
+
 **Next:** asset collision (MSB asset parts placed with their own collision models), which covers what map collision misses.
 Then clearance seeding, gate nodes, and dropping unreachable areas (keep only regions joined to a seed).
 

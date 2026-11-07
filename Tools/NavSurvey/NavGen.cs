@@ -83,6 +83,12 @@ static class NavGen
                     Count($"{set} generated");
                     var mesh = result.Mesh;
                     Value($"{set} snapped vertices %", 100.0 * result.SnappedVertices / Math.Max(1, mesh.m_vertices.Count));
+                    Count($"{set} faces dropped as backwards", result.DroppedFaces, result.DroppedFaces > 0 ? $"{mapId} {model.ModelID}: {result.DroppedFaces}" : null);
+                    for (int fe = 0; fe < mesh.m_faces.Count; fe++)
+                    {
+                        var fc = NavigationOverlayBuilder.FaceCorners(mesh, fe);
+                        Value($"{set} face extent across XZ (m)", MathF.Max(fc.Max(q => q.X) - fc.Min(q => q.X), fc.Max(q => q.Z) - fc.Min(q => q.Z)));
+                    }
 
                     // A box blocker on the largest face: nothing generated under or on it
                     if (set == NavmeshSet.N)
@@ -197,10 +203,10 @@ static class NavGen
             for (int k = 0; k < corners.Count; k++)
             {
                 var a = corners[k]; var b = corners[(k + 1) % corners.Count]; var cc = corners[(k + 2) % corners.Count];
-                float cross = (b.X - a.X) * (cc.Z - b.Z) - (b.Z - a.Z) * (cc.X - b.X);
-                // As the sine of the turn, so a long edge's float error isn't taken for a bend
-                float lengths = MathF.Sqrt(((b.X - a.X) * (b.X - a.X) + (b.Z - a.Z) * (b.Z - a.Z)) * ((cc.X - b.X) * (cc.X - b.X) + (cc.Z - b.Z) * (cc.Z - b.Z)));
-                cross = lengths > 1e-9f ? cross / lengths : 0;
+                // As the sine of the turn, in double, so a long edge's float error isn't taken for a bend
+                double abx = (double)b.X - a.X, abz = (double)b.Z - a.Z, bcx = (double)cc.X - b.X, bcz = (double)cc.Z - b.Z;
+                double lengths = Math.Sqrt((abx * abx + abz * abz) * (bcx * bcx + bcz * bcz));
+                float cross = lengths > 1e-12 ? (float)((abx * bcz - abz * bcx) / lengths) : 0;
                 // Counter-clockwise from above (Y up) is a negative XZ cross with X right and Z towards the viewer
                 if (cross > 1e-3f) return $"face {f} is not convex and counter-clockwise at corner {k} of {corners.Count}, turn {cross:0.######}, corners {string.Join(" ", corners.Select(q => $"({q.X:0.###},{q.Y:0.###},{q.Z:0.###})"))}";
             }
