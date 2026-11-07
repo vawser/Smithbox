@@ -66,6 +66,9 @@ public sealed class NavmeshFile
 
     public hkaiNavMesh Mesh { get; init; }
 
+    /// <summary>The Havok document the file was read into, which a model edit replaces as a whole.</summary>
+    public Havok.HavokDocument Document { get; init; }
+
     /// <summary>The file holds a query mediator (the AABB tree the game queries faces through).</summary>
     public bool HasMediator { get; init; }
 

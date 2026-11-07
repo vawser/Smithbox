@@ -312,6 +312,7 @@ public partial class NavigationTool
         OverlayDirty = true;
         TextFor = null;
         StitchPlan = null;
+        ModelsNavigation = null;
     }
 
     private void DisplayLegend()
@@ -396,6 +397,7 @@ public partial class NavigationTool
         OverlayNavigation = navigation;
         OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers);
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
+        LogOverlayDiagnostics(navigation);
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
             SetPicked(keep);
@@ -451,6 +453,9 @@ public partial class NavigationTool
             ClearOverlay();
             ShowOverlay = false;
         }
+
+        DrainGenerateResults();
+        UpdateNavmeshDrawing();
 
         bool mouseDown = InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action);
 

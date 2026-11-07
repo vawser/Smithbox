@@ -6,8 +6,6 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - AEP rendering needs to carry in the asset collision too
 
-- Analyze of NVA, NVC and the havok navmesh/collisions themselves to uncover understand of how they work (i.e. gates, jumps, togglable sections, etc)
-
 - Navmesh editing
     - Allow triangle add/subtract:
         - Define the three points with temporary filled wireframe spheres
@@ -18,6 +16,3 @@
         - Which are walkable, jump start/end, movable meshes, etc
         - Walkable set/edited with a highlight mode (green for walkable, red for ignored) as part of the Navmesh Editor tool
     
-- Display of navmesh feature: i.e. jump spots
-
-- Change Face Data painting to display bit names

@@ -12,6 +12,7 @@ var gamePaths = File.ReadAllLines(Path.Combine("..", "..", "game_data.txt"))
 
 var mode = args[0];
 if (mode == "exe") { ExeScan.Run(args); return; }
+if (mode == "apidump") { ApiDump.Run(args[1]); return; }
 if (mode.StartsWith("raw")) { if (mode == "rawnvc") Raw.Nvc(args[1]); else if (mode == "rawkeys") Keys.Nvc(args[1]); else if (mode == "rawonav") Raw.Onav(args[1]); return; }
 var root = gamePaths["ER"];
 using var fs = new CompundVirtualFileSystem([ArchiveBinderVirtualFileSystem.FromGameFolder(root, Game.ER), new RealVirtualFileSystem(root, false)]);
@@ -86,6 +87,12 @@ if (mode == "linkedit") LinkEdit.Run(fs, dict, args);
 if (mode == "stitchsurvey") StitchSurvey.Run(fs, dict, args);
 if (mode == "stitch") StitchEval.Run(fs, dict, args);
 if (mode == "stitchedit") StitchEdit.Run(fs, dict, args);
+if (mode == "modelsurvey") ModelSurvey.Run(fs, dict, args);
+if (mode == "rootdump") RootDump.Run(fs, args[1]);
+if (mode == "modeledit") ModelEdit.Run(fs, dict, args);
+if (mode == "navcol") NavCol.Run(fs, dict, args);
+if (mode == "treecheck") TreeCheck.Run(fs, dict, args);
+if (mode == "navgen") NavGen.Run(fs, dict, args);
 if (mode == "cachedump") CacheDump.Run(fs, args[1], int.Parse(args[2]));
 if (mode == "emevdnav") EmevdNav.Run(fs, dict, args);
 if (mode == "navvalues") MapNavValues.Run(fs, dict, args[1], int.Parse(args[2]));

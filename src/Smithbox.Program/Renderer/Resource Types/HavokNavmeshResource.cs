@@ -95,8 +95,36 @@ public class HavokNavmeshResource : IResource, IDisposable
         return true;
     }
 
+    /// <summary>The access level the resource was loaded with, which a refresh keeps.</summary>
+    private AccessLevel LoadedAccess;
+
+    /// <summary>
+    /// Rebuilds the drawn mesh from a navmesh document held in memory, e.g. one the Navigation tool edited or generated,
+    /// so the drawing follows edits that aren't saved yet. Returns the geometry buffers it replaced, for the caller to
+    /// dispose once the GPU no longer uses them (a few frames on).
+    /// </summary>
+    public List<VertexIndexBufferAllocator.VertexIndexBufferHandle> Refresh(HavokDocument document)
+    {
+        var replaced = new List<VertexIndexBufferAllocator.VertexIndexBufferHandle>();
+        if (GeomBuffer != null) replaced.Add(GeomBuffer);
+        if (CostGraphGeomBuffer != null) replaced.Add(CostGraphGeomBuffer);
+
+        GeomBuffer = null;
+        CostGraphGeomBuffer = null;
+        VertexCount = 0;
+        IndexCount = 0;
+        GraphVertexCount = 0;
+        GraphIndexCount = 0;
+
+        Document = document;
+        LoadInternal(LoadedAccess == AccessLevel.AccessGPUOptimizedOnly ? AccessLevel.AccessGPUOptimizedOnly : AccessLevel.AccessFull);
+        return replaced;
+    }
+
     private bool LoadInternal(AccessLevel al)
     {
+        LoadedAccess = al;
+
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
             Bounds = new BoundingBox();

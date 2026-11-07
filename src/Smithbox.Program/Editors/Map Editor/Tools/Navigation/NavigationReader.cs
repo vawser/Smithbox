@@ -73,6 +73,7 @@ public static class NavigationReader
         return new NavmeshFile
         {
             Name = name,
+            Document = document,
             Mesh = document.ObjectsOf<hkaiNavMesh>().FirstOrDefault(),
             HasMediator = document.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>().Any(),
             HasClearanceCache = document.ObjectsOf<hkaiNavMeshClearanceCache>().Any(),

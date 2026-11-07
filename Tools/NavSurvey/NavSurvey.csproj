@@ -15,6 +15,7 @@
   <ItemGroup>
     <Compile Include="../MsbExeSurvey/Exe.cs" Link="Linked/Exe.cs" />
     <Compile Include="../MsbExeSurvey/Arxan.cs" Link="Linked/Arxan.cs" />
+    <PackageReference Include="DotRecast.Recast" Version="2026.3.1" />
     <PackageReference Include="Iced" Version="1.21.0" />
   </ItemGroup>
 
@@ -27,6 +28,9 @@
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationUserEdges.cs" Link="Linked/NavigationUserEdges.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationStitch.cs" Link="Linked/NavigationStitch.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationStitchPlan.cs" Link="Linked/NavigationStitchPlan.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationModels.cs" Link="Linked/NavigationModels.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationTree.cs" Link="Linked/NavigationTree.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Map Editor/Tools/Navigation/NavigationGenerator.cs" Link="Linked/NavigationGenerator.cs" />
   </ItemGroup>
 
   <!-- Surveys and round-trips ER's navmesh connection (.nvc) and ONAV files through SoulsFormats -->

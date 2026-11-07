@@ -508,6 +508,60 @@ reach `q` files or `_10` tiles named after `_00`.
 5. Test with an edit: on a project copy, untick Only join open edges, Find and Apply, and check in game that enemies
    still path normally across the joins.
 
+### Phase 3: Connectivity editing: remove and duplicate models DONE 2026-11-07 (not yet checked in the app)
+
+**What refers to a navmesh entry** (NavSurvey `modelsurvey`, `rootdump`):
+- **By NameID:** NVA and NVC connectors, and node bank faces (n set only, 3,841 of 3,841 resolve).
+- **By list position:** gate nodes. `ConnectedNavmeshIndex` always names a navmesh connected to the owner (9,243 of 9,243),
+  and `NodeSubID` names that navmesh's gate that points back (8,782; the rest are -1).
+  Each gate's `NeighbourGateNodeCosts` is 16 shorts: the cost to each of the owner's gates (0 for itself), then -1.
+- **A NameID's index** is the n entry's position, so inserting or deleting entries would renumber NameIDs and gate indices.
+- **Placeholders** (4,916 entries) come in pairs across the sets. They have no faces and no gate nodes; Unk4C is 0 or 1;
+  the file is empty or absent.
+- **Empty files** are either only an `hkaiNavMesh` with no seeding, or that plus an empty mediator and seeding.
+  The binder numbers its files 10000+ for n, 20000+ for o and 40000+ for q, with full `N:\GR\…\bind6\` names, no per-file DCX, and Flag1.
+- **Duplicate ModelIDs:** some maps list a ModelID twice (443590 in `m60_44_35_00`), so a placeholder can share its file with a real model.
+- **User edge setups** keep their translation in M41..M43, in world or local space.
+
+**What was built**
+- **`Tools/Navigation/NavigationModels.cs`:**
+  - **`NavModelEdit.Remove`** turns a model into a placeholder, as the game's are:
+    - both entries get no faces and Unk4C 1;
+    - its gate nodes, and other navmeshes' gates leading to it, are removed (with their cost columns and the NodeSubIDs after them);
+    - every connection naming it is removed, in the NVA and in the NVC files on this map's side, with its node bank faces;
+    - its files become empty (only the `hkaiNavMesh`).
+  - **`NavModelEdit.Duplicate`** copies a model's n and o files into a free placeholder pair, moved by an offset:
+    - it moves the vertices, the bounds, the mediator tree's root box (nodes are stored relative to their parents) and world-space user edge setups;
+    - the placeholder keeps its ModelID and NameIDs, so nothing is renumbered;
+    - the copy has no connections or gate nodes.
+  - `FaceDataIndex` is recomputed as the running total; on the game's data that changes nothing on any map.
+  - Models and slots whose files another entry also names are never offered.
+  - `NavModelState` copies and restores the NVA's face counts, Unk4C, gate nodes, node banks and connectors.
+  - File changes are whole new documents (`HavokFile.Write` walks from the root).
+- **`HavokNavmeshBank.SetDocument`:** replaces, adds or removes a file. The save adds new files to the binder in the game's
+  layout and drops removed ones.
+- **`NavigationModelEditAction`:** one undo. It restores the NVA and NVC values and swaps the documents back.
+- **Tool, Models tab:** a list of the models (n and o face counts, state), Select the picked face's model, Remove model,
+  and Duplicate (a free placeholder plus an offset).
+
+**Results on all 997 maps** (`modeledit`; one random model per map, and all 951 models of a sample with `all`):
+- **Remove:** no new validator errors, nothing names the model, no gate points at it, all 7,998 remaining gates pair, every
+  gate keeps 16 costs, and the files write and read back. Restore is byte-identical.
+- **Duplicate:** 527 maps have a free slot. The copy and the mediator root box move by the offset, and the face counts match.
+  Restore is byte-identical. The two duplicate-ModelID failures in `m60_44_35_00` are fixed by the shared-file check above.
+- **A copy in place of the original:** a re-stitch with "Only join open edges" off joins 4,009 pairs, against the
+  original's 3,803 in-map n connections.
+
+**Open:** the copy has no gate nodes, so the hierarchical graph doesn't route through it. Gate node generation is still open.
+
+**For the user to check in the app** (Havok loading on, on a project copy):
+1. In `m10_01_00_00`, open the Models tab. Expect 14 models, with counts for placeholders and free slots.
+2. Select a model with faces and click **Remove model**. Its overlay faces should go and the list should show it as a
+   placeholder. Ctrl+Z should bring it back.
+3. If the map has a free slot: select a model, enter an offset (e.g. 0, 5, 0), and click **Duplicate**. A copy should
+   draw 5 m above the original. Pick one of its faces, then in Stitch tick "Only the picked face's navmesh" and click Find.
+4. Save and reload. The binder should hold the new n/o files, and Check → Validate should report no new issues.
+
 ### Phase 3 plan (as written before the work)
 - **Add/remove user edges** (jump links between two faces): insert into the face's user-edge range, then remap every connector and NVC via the Phase 0 service.
 - **Re-stitch connections:** recompute NVA connectors and NVC entries by matching coincident boundary edges between meshes or maps, within a tolerance.
@@ -517,6 +571,7 @@ reach `q` files or `_10` tiles named after `_00`.
   It renumbers the later indices and fixes every reference to them.
 
 ### Phase 4: Geometry
+- **Generation from collision: G1–G4 DONE 2026-11-07 (not yet checked in the app).** See `Navmesh Generation Plan.md`.
 - **Vertex editing that keeps topology:** move vertices and update AABBs. The mediator AABB tree and clearance cache are rebuilt
   (or dropped, if the game accepts that).
   The AABB tree builder can reuse the Collision Generator's static-tree experience (`Compressed Mesh Format.md`).

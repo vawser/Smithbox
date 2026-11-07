@@ -166,6 +166,12 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Models")}##navigationTabModels"))
+            {
+                DisplayModelsTab(map);
+                ImGui.EndTabItem();
+            }
+
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Check")}##navigationTabCheck"))
             {
                 DisplayCheckTab(map, maps);

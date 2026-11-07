@@ -192,6 +192,15 @@ public class NavigationBank
     }
 
     /// <summary>
+    /// Puts a navmesh document in a map's navmesh files under a name, in place of the one it has, or as a new file;
+    /// null takes the file out. The next GetMap sees it.
+    /// </summary>
+    public void SetNavmeshDocument(MapContainer map, string name, Havok.HavokDocument document)
+    {
+        NavmeshBank.SetDocument(map.Name, name, document);
+    }
+
+    /// <summary>
     /// Marks a map's ONAV as changed, so the map's save writes it.
     /// </summary>
     public void MarkOnavEdited(MapContainer map)

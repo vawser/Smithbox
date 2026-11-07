@@ -103,9 +103,41 @@ public class HavokNavmeshBank
     /// </summary>
     public bool HasMapNavmeshes(string mapId) => UnreadMaps.Contains(mapId) || MapNavmeshes.ContainsKey(mapId);
 
+    /// <summary>The navmesh files an edit took out of a map, by map, so its save drops them from the binder.</summary>
+    private readonly Dictionary<string, HashSet<string>> RemovedNavmeshes = new();
+
+    /// <summary>
+    /// Puts a navmesh document in a map in place of the one it has under that name, or adds it as a new file of the
+    /// map's binder; null takes the file out. Used by the Navigation tool's model edits, which build new documents
+    /// rather than change the root of a loaded one. The map's save then writes, adds or drops the file.
+    /// </summary>
+    public void SetDocument(string mapId, string name, Havok.HavokDocument document)
+    {
+        // The map's files are read first, so the new document isn't replaced by a later read
+        GetMapNavmeshNames(mapId);
+
+        var names = MapNavmeshes.TryGetValue(mapId, out var list) ? list : MapNavmeshes[mapId] = new();
+        var removed = RemovedNavmeshes.TryGetValue(mapId, out var set) ? set : RemovedNavmeshes[mapId] = new();
+
+        if (document == null)
+        {
+            Documents.Remove(name);
+            names.Remove(name);
+            removed.Add(name);
+            return;
+        }
+
+        Documents[name] = document;
+        removed.Remove(name);
+
+        if (!names.Contains(name))
+            names.Add(name);
+    }
+
     public void OnUnloadMap(string mapId)
     {
         UnreadMaps.Remove(mapId);
+        RemovedNavmeshes.Remove(mapId);
 
         if (MapNavmeshes.Remove(mapId, out var navmeshNames))
         {
@@ -225,6 +257,21 @@ public class HavokNavmeshBank
         return DCX.Compress(bytes, compression).ToArray();
     }
 
+    /// <summary>
+    /// A new file entry for a navmesh binder, laid out like the game's: the path of the binder's other files, their
+    /// flags, and the next ID of the file's block (10000 + for n, 20000 + for o, 40000 + for q).
+    /// </summary>
+    private static BinderFile NewBinderFile(BND4 binder, string name, byte[] bytes)
+    {
+        int block = name[0] switch { 'n' => 10000, 'o' => 20000, 'q' => 40000, _ => 90000 };
+        int id = binder.Files.Where(f => f.ID >= block && f.ID < block + 10000).Select(f => f.ID + 1).DefaultIfEmpty(block).Max();
+
+        var template = binder.Files.FirstOrDefault();
+        var directory = template == null ? "" : template.Name.Substring(0, template.Name.LastIndexOf('\\') + 1);
+
+        return new BinderFile(template?.Flags ?? Binder.FileFlags.Flag1, id, $"{directory}{name}.hkx", bytes);
+    }
+
     public bool SaveHavokNavmeshModels(string mapId)
     {
         var success = true;
@@ -276,6 +323,35 @@ public class HavokNavmeshBank
                         Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
                         success = false;
                     }
+                }
+
+                // Files a model edit took out, and loaded files the binder doesn't have yet
+                if (RemovedNavmeshes.TryGetValue(mapId, out var removed) && removed.Count > 0)
+                {
+                    if (binder.Files.RemoveAll(f => removed.Contains(Path.GetFileNameWithoutExtension(f.Name))) > 0)
+                        anyWritten = true;
+                }
+
+                if (MapNavmeshes.TryGetValue(mapId, out var loadedNames))
+                {
+                    var present = binder.Files.Select(f => Path.GetFileNameWithoutExtension(f.Name)).ToHashSet();
+
+                    foreach (var name in loadedNames.Where(n => !present.Contains(n)).ToList())
+                    {
+                        try
+                        {
+                            binder.Files.Add(NewBinderFile(binder, name, WriteNavmeshFile(name, Memory<byte>.Empty)));
+                            anyWritten = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_NVA_HKX", name), ex);
+                            success = false;
+                        }
+                    }
+
+                    // The game names its files; the IDs follow its blocks (n 10000+, o 20000+, q 40000+)
+                    binder.Files.Sort((a, b) => a.ID.CompareTo(b.ID));
                 }
 
                 if (!anyWritten)
