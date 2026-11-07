@@ -13,6 +13,7 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `navvalues <regex> <max>` | face and edge data values of the `n`/`o` meshes |
 | `validate [regex] [max] [verbose]` | the Map Editor's NavigationMap and NavigationValidator on every map, a remap round trip, and a self test |
 | `overlay [regex] [max]` | the Navigation tool's overlay geometry and face picking on game maps |
+| `names [regex]` | the navmesh file name the Map Editor's drawing asks for, against the one the binder has |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -281,10 +282,21 @@ It works on the loaded map plus its neighbours. Each phase is usable on its own 
 - Heavy layers: ONAV cells (~900k lines on six maps, off by default), and user edges on large open-world tiles
   (~13 lines per edge; m60_42_36_00 has ~27k user edges).
 
-**Known issue found** (not changed): the Map Editor's own navmesh drawing (`MapContainer.AddNavmeshInfo`) loads the `n` file
-for every NVA entry. So o-half entries draw a second copy of the n mesh, and quarter entries draw the empty n file.
-The overlay draws the right file for each entry. Fixing the stock drawing (`o` for the second half, `q…_k` for quarters) is a
-small follow-up.
+**Fixed: the Map Editor's own navmesh drawing loaded the wrong files.** `MapContainer.LoadNVA` (ER) loaded the `n` file
+named after the map for every NVA entry, which was wrong for 4,962 of 9,480 entries:
+- o-half entries drew a second copy of the n mesh;
+- quarter entries drew the empty n file;
+- `_10` tiles named after their `_00` tile drew nothing.
+
+It now asks for `NavigationMap.FileNameFromEntry`. That takes the set from the NameID prefix and the quarter from `Unk50`, and
+the name base from the NameID's own digits, because the drawing doesn't have the binder's file names.
+NavSurvey `names` checks it on every map:
+- it matches the binder-based name for all 9,480 entries;
+- all 4,564 entries with faces find their file, with the same face count.
+
+AC6 keeps the old naming.
+Still to do: the Havok property view's N/O toggle (`MapHavokPropertyView`) builds names from the map and ModelID, so it can't
+reach `q` files or `_10` tiles named after `_00`.
 
 **For the user to check in the app** (Havok loading on):
 1. `m10_01_00_00`: Navigation → View → Show overlay.

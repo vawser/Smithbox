@@ -588,7 +588,12 @@ public class MapContainer : ObjectContainer
 
         foreach (var curNavmesh in nva.Navmeshes)
         {
-            AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
+            // ER lists each navmesh twice: its n file in the first half, its o file in the second, and the quarters of a
+            // split n file as entries of their own (see NavigationMap). AC6 has only n files.
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER)
+                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh));
+            else
+                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
 
         foreach (var curEntry in nva.LevelConnectors)
@@ -645,11 +650,12 @@ public class MapContainer : ObjectContainer
 
     // The render meshes below take the entity's world matrix before it is parented, as the original loaders did
 
-    private void AddNavmeshInfo(Entity nvaParent, string mapName, object curNavmesh, string navid)
+    /// <param name="fileName">The navmesh file's name when it is known as a whole (ER); otherwise built from navid.</param>
+    private void AddNavmeshInfo(Entity nvaParent, string mapName, object curNavmesh, string navid, string fileName = null)
     {
         var newEntity = CreateNavmeshEntity(curNavmesh);
 
-        var navname = "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
+        var navname = fileName ?? "n" + ModelLocator.MapModelNameToAssetName(View.Project, mapName, navid).Substring(1);
 
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
         {

@@ -206,6 +206,31 @@ public sealed class NavigationMap
         return quarter != null ? QuarterName(NameBase, entry.ModelID, quarter.Value) : MeshName(NameBase, SetOf(entry), entry.ModelID);
     }
 
+    /// <summary>
+    /// The name of the file an NVA entry's faces are in, from the entry alone, for when the binder's file names
+    /// aren't at hand (the Map Editor's navmesh drawing). The name base comes from the NameID's digits: an open world
+    /// _10 tile whose NameIDs carry DD = 00 names its files after the _00 tile.
+    /// </summary>
+    public static string FileNameFromEntry(string mapId, NVA_ER.Navmesh entry)
+    {
+        var nameBase = mapId;
+
+        if (IsOpenWorld(mapId))
+        {
+            // BBCCDD of the map the NameID was given for
+            uint digits = (uint)entry.NameID / 1000 % 1_000_000;
+            var own = mapId.Substring(1).Replace("_", "");
+            var other = $"m{own.Substring(0, 2)}_{digits / 10000:D2}_{digits / 100 % 100:D2}_{digits % 100:D2}";
+
+            // Only another version of the same tile, never another tile
+            if (other.AsSpan(0, 9).SequenceEqual(mapId.AsSpan(0, 9)))
+                nameBase = other;
+        }
+
+        var quarter = QuarterOf(entry);
+        return quarter != null ? QuarterName(nameBase, entry.ModelID, quarter.Value) : MeshName(nameBase, SetOf(entry), entry.ModelID);
+    }
+
     /// <summary>The map UID of the NVA (its Entries11), which the NVC files repeat.</summary>
     public uint? MapUid => Nva?.Entries11?.Count > 0 ? (uint)Nva.Entries11[0].Unk00 : null;
 
