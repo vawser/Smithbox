@@ -71,10 +71,19 @@ The section has two tabs: **Edit** (everything above) and **Create**, which make
 map (the map the content tree shows) in one click.
 
 - **Shape**: Square, Triangle, Circle and Semi-Circle with the Havok Editor generator's parameters
-  (`HavokShapeGenerator`), or **Selected FLVER**: the FLVER of the selected map piece or asset, with a checklist of its
-  meshes. Selected FLVER is greyed out unless exactly one map piece or asset of the active map is selected. Facing and
-  Collision Material as in the generator (`CollisionMaterialPicker`); a FLVER mesh whose material is named
-  `hkm_Name_Property` keeps that material. A preview shows the triangles (`MeshPreviewRenderer`).
+  (`HavokShapeGenerator`), or **Selected FLVERs**: the FLVERs of every selected map piece and asset of the active map
+  (other selected objects are ignored), each with a checklist of its meshes (a tree node per part when there are
+  several). Greyed out unless at least one is selected. FLVERs are read once per model (map pieces keyed by map) and a
+  part that stays selected keeps its mesh choices. Facing and Collision Material as in the generator
+  (`CollisionMaterialPicker`); a FLVER mesh whose material is named `hkm_Name_Property` keeps that material. A preview
+  shows the triangles (`MeshPreviewRenderer`).
+- **Combining FLVERs**: the **anchor** is the first readable source in map order (not selection order, so it is stable).
+  Each source's vertices go through `source world * inverse(anchor world without its scale)`; the anchor's own matrix
+  is just its scale, exactly as the single-FLVER build was. A mirroring matrix (negative determinant) reverses that
+  source's winding. Vertices are welded across sources on a 1 mm grid. The preview key holds each source's matrix
+  *relative to the anchor*, so dragging the whole selection doesn't rebuild.
+- An internal triangle cull option (per-source fast winding numbers) was built and then removed at the user's request;
+  the class and its `CullCheck` test tool are in `.archive/Collision Internal Culling`.
 - **Model ID**: the new collision's number (h + 6 digits), suggested as the first unused number after the map's
   highest below 900000, and checked against the map's collision files and parts.
 - **Files**: each new collision is a **new file in the map's binders**: `h<map>_<id>.hkx.dcx` in the h binder and
@@ -86,8 +95,8 @@ map (the map the content tree shows) in one click.
   next free ID and the flags, folder and compression of the binder's other collision files).
 - **Part**: a Collision part is added with `EntAddAction` (so it can be undone), cloned from an existing collision part
   of the map so its fields match the map's, with its own name (`h<id>_0000`), model name, no entity ID or entity
-  groups, and scale 1. A basic shape is placed at the placement orb. Selected FLVER takes the source part's position,
-  rotation and parent, with the source's scale baked into the vertices, as collision isn't scaled.
+  groups, and scale 1. A basic shape is placed at the placement orb. Selected FLVERs takes the anchor part's position,
+  rotation and parent, with each source's scale baked into the vertices, as collision isn't scaled.
 - **Viewport**: before the part is added, the new files are loaded from the binder with only their names asked for,
   so the part's own load joins that load rather than reading every collision of the binder again.
 - **Undo** removes the part; the files stay in the binders. The MSB's model list is filled in from the parts on save.

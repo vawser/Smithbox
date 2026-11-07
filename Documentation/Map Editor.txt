@@ -5,7 +5,3 @@
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - AEP rendering needs to carry in the asset collision too
-
-- Collision Editor:
-    - Add option for multi-flver collision generation (might need heuristic to clean up internal trianges)
-

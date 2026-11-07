@@ -31,8 +31,9 @@ public enum CollisionCreateShape
 
 /// <summary>
 /// The Create tab of the Collision Editor: makes a new collision for the active map in one go. Its mesh is a basic
-/// shape (as the Havok Editor's generator makes) or the FLVER of the selected map piece or asset. It goes into new
-/// files in the map's h and l binders, and a collision part placing it is added to the map.
+/// shape (as the Havok Editor's generator makes) or the FLVERs of the selected map pieces and assets, combined where
+/// they are placed. It goes into new files in the map's h and l
+/// binders, and a collision part placing it is added to the map.
 /// </summary>
 public class CollisionEditorCreate
 {
@@ -55,12 +56,23 @@ public class CollisionEditorCreate
     private string ModelNumber = "";
     private string ModelNumberMap;
 
-    // The FLVER of the selected part, read when it is first needed, and which of its meshes go into the collision
-    private MsbEntity FlverSource;
-    private string FlverSourceModel;
-    private FLVER2 Flver;
-    private bool[] FlverMeshSelection = [];
-    private bool FlverReadFailed;
+    /// <summary>
+    /// A selected map piece or asset whose FLVER goes into the collision: the FLVER, read when the part is selected,
+    /// (null if it couldn't be read) and which of its meshes are used.
+    /// </summary>
+    private sealed class FlverSourceEntry
+    {
+        public MsbEntity Entity;
+        public string Model;
+        public FLVER2 Flver;
+        public bool[] MeshSelection = [];
+    }
+
+    // The selected parts, in map order. The first readable one is the anchor: the new part goes where it is
+    private List<FlverSourceEntry> FlverSources = [];
+
+    // FLVERs read for the selected parts, by model, so a model placed by several parts is read once
+    private Dictionary<string, FLVER2> FlverCache = new();
 
     private MeshPreview Preview;
     private string PreviewKey;
@@ -80,6 +92,9 @@ public class CollisionEditorCreate
     private const float MinShapeSize = 0.01f;
     private const int MinCircleSegments = 3;
     private const int MinSemiCircleSegments = 2;
+
+    // Vertices of different sources closer than this are welded, as they would not be in the source FLVERs
+    private const float WeldGrid = 0.001f;
 
     public CollisionEditorCreate(MapEditorView view, ProjectEntry project, CollisionEditorTool tool)
     {
@@ -127,8 +142,8 @@ public class CollisionEditorCreate
         {
             foreach (var shape in Enum.GetValues<CollisionCreateShape>())
             {
-                // The selected FLVER is only offered while a map piece or asset of the map is selected
-                var usable = shape is not CollisionCreateShape.SelectedFlver || FlverSource != null;
+                // The selected FLVERs are only offered while map pieces or assets of the map are selected
+                var usable = shape is not CollisionCreateShape.SelectedFlver || FlverSources.Count > 0;
 
                 ImGui.BeginDisabled(!usable);
 
@@ -289,18 +304,28 @@ public class CollisionEditorCreate
 
     private void DisplayFlverParameters()
     {
-        if (FlverSource == null)
+        if (FlverSources.Count == 0)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Flver_Unavailable"));
             return;
         }
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Flver_Source", FlverSource.Name, FlverSourceModel));
+        var anchor = GetAnchor();
 
-        if (FlverReadFailed || Flver == null)
+        if (anchor == null)
         {
-            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Flver_Read_Failed"));
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Flver_None_Readable"));
             return;
+        }
+
+        GUI.WrappedText(FlverSources.Count == 1
+            ? LOC.Get("MAP_CollisionEditor_Create_Flver_Source", anchor.Entity.Name, anchor.Model)
+            : LOC.Get("MAP_CollisionEditor_Create_Flver_Sources", FlverSources.Count, anchor.Entity.Name));
+
+        foreach (var source in FlverSources.Where(s => s.Flver == null))
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                LOC.Get("MAP_CollisionEditor_Create_Flver_Read_Failed", source.Entity.Name, source.Model));
         }
 
         // Meshes
@@ -310,29 +335,54 @@ public class CollisionEditorCreate
             ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes);
 
         if (ImGui.Button($"{LOC.Get("MAP_CollisionEditor_Create_Flver_All")}##collisionCreateMeshesAll"))
-            Array.Fill(FlverMeshSelection, true);
+        {
+            foreach (var source in FlverSources)
+                Array.Fill(source.MeshSelection, true);
+        }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_All_TT"));
 
         ImGui.SameLine();
         if (ImGui.Button($"{LOC.Get("MAP_CollisionEditor_Create_Flver_None")}##collisionCreateMeshesNone"))
-            Array.Fill(FlverMeshSelection, false);
+        {
+            foreach (var source in FlverSources)
+                Array.Fill(source.MeshSelection, false);
+        }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_None_TT"));
 
-        if (!CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes)
-            return;
-
-        ImGui.BeginChild("collisionCreateMeshList", new Vector2(0, 150 * DPI.UIScale()), ImGuiChildFlags.Borders);
-
-        for (var i = 0; i < FlverMeshSelection.Length; i++)
+        if (CFG.Current.MapEditor_CollisionEditor_Show_Flver_Meshes)
         {
-            var mesh = Flver.Meshes[i];
-            var material = mesh.MaterialIndex < Flver.Materials.Count ? Flver.Materials[mesh.MaterialIndex].Name : "";
+            ImGui.BeginChild("collisionCreateMeshList", new Vector2(0, 150 * DPI.UIScale()), ImGuiChildFlags.Borders);
 
-            ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Mesh", i, material)}##collisionCreateMesh{i}",
-                ref FlverMeshSelection[i]);
+            for (var s = 0; s < FlverSources.Count; s++)
+            {
+                var source = FlverSources[s];
+
+                if (source.Flver == null)
+                    continue;
+
+                // A single source lists its meshes as before; several are each a node, so long lists can be closed
+                var open = FlverSources.Count == 1 || ImGui.TreeNodeEx(
+                    $"{LOC.Get("MAP_CollisionEditor_Create_Flver_Source", source.Entity.Name, source.Model)}##collisionCreateSource{s}",
+                    ImGuiTreeNodeFlags.DefaultOpen);
+
+                if (!open)
+                    continue;
+
+                for (var i = 0; i < source.MeshSelection.Length; i++)
+                {
+                    var mesh = source.Flver.Meshes[i];
+                    var material = mesh.MaterialIndex < source.Flver.Materials.Count ? source.Flver.Materials[mesh.MaterialIndex].Name : "";
+
+                    ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Mesh", i, material)}##collisionCreateMesh{s}_{i}",
+                        ref source.MeshSelection[i]);
+                }
+
+                if (FlverSources.Count > 1)
+                    ImGui.TreePop();
+            }
+
+            ImGui.EndChild();
         }
-
-        ImGui.EndChild();
     }
 
     /// <summary>
@@ -422,14 +472,37 @@ public class CollisionEditorCreate
             CollisionCreateShape.Triangle => $"{TriangleInputs.Size}",
             CollisionCreateShape.Circle => $"{CircleInputs.Radius}/{CircleInputs.Segments}",
             CollisionCreateShape.SemiCircle => $"{SemiCircleInputs.Radius}/{SemiCircleInputs.Segments}",
-            CollisionCreateShape.SelectedFlver => Flver == null
-                ? ""
-                : $"{FlverSource?.Name}/{FlverSourceModel}/{GetSourceScale()}/" +
-                  string.Concat(FlverMeshSelection.Select(s => s ? '1' : '0')),
+            CollisionCreateShape.SelectedFlver => GetFlverPreviewKey(),
             _ => ""
         };
 
         return $"{Shape}|{Facing}|{inputs}";
+    }
+
+    /// <summary>
+    /// The FLVER inputs: each source's meshes and its placement relative to the anchor, so moving the whole
+    /// selection together doesn't build the triangles again.
+    /// </summary>
+    private string GetFlverPreviewKey()
+    {
+        var anchor = GetAnchor();
+
+        if (anchor == null)
+            return "";
+
+        var toAnchor = GetToAnchorMatrix(anchor);
+        var key = new System.Text.StringBuilder();
+
+        foreach (var source in FlverSources.Where(s => s.Flver != null))
+        {
+            key.Append('|').Append(source.Entity.Name).Append('/').Append(source.Model).Append('/')
+                .Append(GetSourceMatrix(source, anchor, toAnchor)).Append('/');
+
+            foreach (var selected in source.MeshSelection)
+                key.Append(selected ? '1' : '0');
+        }
+
+        return key.ToString();
     }
 
     /// <summary>Lets go of the preview, for when the tool is closed.</summary>
@@ -445,49 +518,94 @@ public class CollisionEditorCreate
     #region Source FLVER
 
     /// <summary>
-    /// The single selected map piece or asset of the map, whose FLVER the Selected FLVER shape uses. Its FLVER is read
-    /// when the selection changes to it.
+    /// The selected map pieces and assets of the map, whose FLVERs the Selected FLVERs shape uses. Other selected
+    /// objects are left out. A part that stays selected keeps its mesh choices; a newly selected one has its FLVER
+    /// read (once per model) with every mesh used.
     /// </summary>
     private void UpdateFlverSource(MapContainer map)
     {
-        var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>();
-        var entity = selection.Count == 1 ? selection.First() : null;
+        var selected = new List<(MsbEntity Entity, string Model)>();
 
-        if (entity != null && (entity.Container != map
-            || !(EntityHelper.IsPartMapPiece(entity) || EntityHelper.IsPartAsset(entity) || EntityHelper.IsPartDummyAsset(entity))))
+        foreach (var entity in View.ViewportSelection.GetFilteredSelection<MsbEntity>())
         {
-            entity = null;
+            if (entity.Container != map
+                || !(EntityHelper.IsPartMapPiece(entity) || EntityHelper.IsPartAsset(entity) || EntityHelper.IsPartDummyAsset(entity)))
+            {
+                continue;
+            }
+
+            if (entity.GetPropertyValue("ModelName") is string model && !string.IsNullOrEmpty(model))
+                selected.Add((entity, model));
         }
 
-        var model = entity?.GetPropertyValue("ModelName") as string;
-
-        if (entity == FlverSource && model == FlverSourceModel)
-            return;
-
-        FlverSource = entity;
-        FlverSourceModel = model;
-        Flver = null;
-        FlverMeshSelection = [];
-        FlverReadFailed = false;
-
-        if (entity == null || string.IsNullOrEmpty(model))
+        // Most frames nothing has changed
+        if (selected.Count == FlverSources.Count
+            && selected.All(s => FlverSources.Any(f => f.Entity == s.Entity && f.Model == s.Model)))
         {
-            FlverSource = null;
-
-            if (Shape is CollisionCreateShape.SelectedFlver)
-                Shape = CollisionCreateShape.Square;
-
             return;
         }
 
-        Flver = ReadFlver(entity, model);
-        FlverReadFailed = Flver == null;
+        var previous = FlverSources;
+        var cache = new Dictionary<string, FLVER2>();
+        var sources = new List<FlverSourceEntry>();
 
-        if (Flver != null)
+        foreach (var (entity, model) in selected)
         {
-            FlverMeshSelection = new bool[Flver.Meshes.Count];
-            Array.Fill(FlverMeshSelection, true);
+            var kept = previous.FirstOrDefault(f => f.Entity == entity && f.Model == model);
+
+            if (kept != null)
+            {
+                sources.Add(kept);
+                cache.TryAdd(GetFlverCacheKey(entity, model), kept.Flver);
+                continue;
+            }
+
+            var key = GetFlverCacheKey(entity, model);
+
+            if (!cache.TryGetValue(key, out var flver) && !FlverCache.TryGetValue(key, out flver))
+                flver = ReadFlver(entity, model);
+
+            cache[key] = flver;
+
+            var source = new FlverSourceEntry { Entity = entity, Model = model, Flver = flver };
+
+            if (flver != null)
+            {
+                source.MeshSelection = new bool[flver.Meshes.Count];
+                Array.Fill(source.MeshSelection, true);
+            }
+
+            sources.Add(source);
         }
+
+        // Map order, so the anchor doesn't depend on the order the parts were selected in
+        if (sources.Count > 1)
+        {
+            var order = new Dictionary<Entity, int>();
+
+            for (var i = 0; i < map.Objects.Count; i++)
+                order.TryAdd(map.Objects[i], i);
+
+            sources = sources.OrderBy(s => order.TryGetValue(s.Entity, out var i) ? i : int.MaxValue).ToList();
+        }
+
+        FlverSources = sources;
+        FlverCache = cache;
+
+        if (FlverSources.Count == 0 && Shape is CollisionCreateShape.SelectedFlver)
+            Shape = CollisionCreateShape.Square;
+    }
+
+    /// <summary>Map pieces are per map; assets are shared by every map.</summary>
+    private static string GetFlverCacheKey(MsbEntity entity, string model)
+    {
+        return EntityHelper.IsPartMapPiece(entity) ? $"{entity.MapID}/{model}" : model;
+    }
+
+    /// <summary>The first source whose FLVER could be read: the new part is placed where it is.</summary>
+    private FlverSourceEntry GetAnchor()
+    {
+        return FlverSources.FirstOrDefault(s => s.Flver != null);
     }
 
     /// <summary>
@@ -544,9 +662,36 @@ public class CollisionEditorCreate
         }
     }
 
-    private Vector3 GetSourceScale()
+    private static Vector3 GetScale(MsbEntity entity)
     {
-        return FlverSource?.GetPropertyValue("Scale") is Vector3 scale ? scale : Vector3.One;
+        return entity?.GetPropertyValue("Scale") is Vector3 scale ? scale : Vector3.One;
+    }
+
+    /// <summary>
+    /// From world space into the new part's space: the anchor's placement without its scale, since a collision part
+    /// isn't scaled.
+    /// </summary>
+    private static Matrix4x4 GetToAnchorMatrix(FlverSourceEntry anchor)
+    {
+        var scale = GetScale(anchor.Entity);
+
+        static float Inverse(float s) => MathF.Abs(s) > 1e-6f ? 1f / s : 1f;
+
+        var unscaled = Matrix4x4.CreateScale(Inverse(scale.X), Inverse(scale.Y), Inverse(scale.Z)) * anchor.Entity.GetWorldMatrix();
+
+        return Matrix4x4.Invert(unscaled, out var inverse) ? inverse : Matrix4x4.Identity;
+    }
+
+    /// <summary>
+    /// From a source FLVER's space into the new part's space. The anchor's is only its scale, exactly, as a single
+    /// FLVER has always been built.
+    /// </summary>
+    private static Matrix4x4 GetSourceMatrix(FlverSourceEntry source, FlverSourceEntry anchor, Matrix4x4 toAnchor)
+    {
+        if (source == anchor)
+            return Matrix4x4.CreateScale(GetScale(source.Entity));
+
+        return source.Entity.GetWorldMatrix() * toAnchor;
     }
 
     #endregion
@@ -578,34 +723,9 @@ public class CollisionEditorCreate
                 (vertices, indices) = HavokShapeGenerator.GenerateSemiCircle(SemiCircleInputs.Radius, SemiCircleInputs.Segments);
                 break;
             case CollisionCreateShape.SelectedFlver:
-            {
-                if (Flver == null || FlverSource == null)
+                if (!TryBuildFlverGeometry(out vertices, out indices, out materials))
                     return false;
-
-                var selected = Enumerable.Range(0, FlverMeshSelection.Length).Where(i => FlverMeshSelection[i]).ToList();
-
-                if (selected.Count == 0)
-                    return false;
-
-                // A mesh whose material is named hkm_Name_Property gets that collision material
-                var flver = Flver;
-                uint MeshMaterial(int meshIndex)
-                {
-                    var name = flver.Materials[flver.Meshes[meshIndex].MaterialIndex].Name;
-                    return HavokCollisionMaterials.TryParse(name, out var id) ? id : (uint)MaterialId;
-                }
-
-                materials = new List<uint>();
-                (vertices, indices) = HavokShapeGenerator.GenerateFlverCollision(flver, selected, materials, MeshMaterial);
-
-                // Collision isn't scaled, so the part's scale goes into the vertices
-                var scale = GetSourceScale();
-
-                for (var v = 0; v < vertices.Count; v++)
-                    vertices[v] *= scale;
-
                 break;
-            }
         }
 
         if (vertices == null || indices == null || vertices.Count == 0 || indices.Count == 0)
@@ -617,6 +737,96 @@ public class CollisionEditorCreate
         materials ??= Enumerable.Repeat((uint)MaterialId, indices.Count / 3).ToList();
 
         return true;
+    }
+
+    /// <summary>
+    /// The triangles of every source's chosen meshes, moved into the anchor's space (collision isn't scaled, so each
+    /// part's scale goes into the vertices) and welded across sources.
+    /// </summary>
+    private bool TryBuildFlverGeometry(out List<Vector3> vertices, out List<int> indices, out List<uint> materials)
+    {
+        var welded = new List<Vector3>();
+        vertices = welded;
+        indices = new List<int>();
+        materials = new List<uint>();
+
+        var anchor = GetAnchor();
+
+        if (anchor == null)
+            return false;
+
+        var toAnchor = GetToAnchorMatrix(anchor);
+        var weld = new Dictionary<(int, int, int), int>();
+
+        int Weld(Vector3 position)
+        {
+            var key = ((int)MathF.Round(position.X / WeldGrid), (int)MathF.Round(position.Y / WeldGrid), (int)MathF.Round(position.Z / WeldGrid));
+
+            if (!weld.TryGetValue(key, out var index))
+            {
+                index = welded.Count;
+                welded.Add(position);
+                weld[key] = index;
+            }
+
+            return index;
+        }
+
+        foreach (var source in FlverSources)
+        {
+            if (source.Flver == null)
+                continue;
+
+            var selected = Enumerable.Range(0, source.MeshSelection.Length).Where(i => source.MeshSelection[i]).ToList();
+
+            if (selected.Count == 0)
+                continue;
+
+            // A mesh whose material is named hkm_Name_Property gets that collision material
+            var flver = source.Flver;
+            uint MeshMaterial(int meshIndex)
+            {
+                var name = flver.Materials[flver.Meshes[meshIndex].MaterialIndex].Name;
+                return HavokCollisionMaterials.TryParse(name, out var id) ? id : (uint)MaterialId;
+            }
+
+            var sourceMaterials = new List<uint>();
+            var (sourceVertices, sourceIndices) = HavokShapeGenerator.GenerateFlverCollision(flver, selected, sourceMaterials, MeshMaterial);
+
+            if (sourceIndices.Count == 0)
+                continue;
+
+            var matrix = GetSourceMatrix(source, anchor, toAnchor);
+
+            // A mirroring placement turns the faces inside out, so their winding is reversed to keep them facing out
+            var mirrored = matrix.GetDeterminant() < 0;
+
+            var remap = new int[sourceVertices.Count];
+
+            for (var v = 0; v < sourceVertices.Count; v++)
+                remap[v] = Weld(Vector3.Transform(sourceVertices[v], matrix));
+
+            for (var t = 0; t + 2 < sourceIndices.Count; t += 3)
+            {
+                var a = remap[sourceIndices[t]];
+                var b = remap[sourceIndices[t + 1]];
+                var c = remap[sourceIndices[t + 2]];
+
+                // Welding can collapse a small triangle to a line or point
+                if (a == b || b == c || c == a)
+                    continue;
+
+                if (mirrored)
+                    (b, c) = (c, b);
+
+                indices.Add(a);
+                indices.Add(b);
+                indices.Add(c);
+                materials.Add(sourceMaterials[t / 3]);
+            }
+        }
+
+        return indices.Count > 0;
     }
 
     #endregion
@@ -1039,7 +1249,7 @@ public class CollisionEditorCreate
 
     /// <summary>
     /// Adds a collision part for the new model, cloned from one of the map's collision parts, at the placement orb
-    /// for a basic shape, or where the source part is for its FLVER.
+    /// for a basic shape, or where the anchor (the first source part, in map order) is for FLVERs.
     /// </summary>
     private void AddPart(MapContainer map, MsbEntity template, string number)
     {
@@ -1060,12 +1270,13 @@ public class CollisionEditorCreate
 
         Entity parent;
 
-        if (Shape is CollisionCreateShape.SelectedFlver && FlverSource != null)
+        // The FLVERs' triangles are built in the anchor's space, so the part goes where the anchor is
+        if (Shape is CollisionCreateShape.SelectedFlver && GetAnchor() is { } anchor)
         {
-            parent = FlverSource.Parent ?? map.RootObject;
+            parent = anchor.Entity.Parent ?? map.RootObject;
 
-            SetProperty(wrapped, "Position", FlverSource.GetPropertyValue("Position"));
-            SetProperty(wrapped, "Rotation", FlverSource.GetPropertyValue("Rotation"));
+            SetProperty(wrapped, "Position", anchor.Entity.GetPropertyValue("Position"));
+            SetProperty(wrapped, "Rotation", anchor.Entity.GetPropertyValue("Rotation"));
         }
         else
         {

@@ -353,8 +353,7 @@ public class CFG
     public bool MapEditor_CollisionEditor_Link_Layers = true;
     public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
     public bool MapEditor_CollisionEditor_Show_Flver_Meshes = true;
-    public bool MapEditor_CollisionEditor_Show_Create_Preview = true;
-    public HavokCollisionType MapEditor_CollisionEditor_Fall_Source = HavokCollisionType.High;
+    public bool MapEditor_CollisionEditor_Show_Create_Preview = true;    public HavokCollisionType MapEditor_CollisionEditor_Fall_Source = HavokCollisionType.High;
     public FallProtectionDirection MapEditor_CollisionEditor_Fall_Direction = FallProtectionDirection.All;
     public float MapEditor_CollisionEditor_Fall_Height = 1.8f;
     public int MapEditor_CollisionEditor_Fall_Filter = 1;
