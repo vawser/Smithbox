@@ -21,6 +21,42 @@ public enum NavmeshSet
 }
 
 /// <summary>
+/// What the game does with the face data and user edge data bits, from its navmesh cost modifier (CS::CSChrCostModifier,
+/// eldenring.exe 0x1402E2550 passability, 0x1402E2A60 its per-bit rules, 0x1402E1C70 cost). See
+/// Documentation/Claude/Navmesh Face Data Bits.md. The Map Editor shows the names with the MAP_Navigation_Bit_ texts.
+/// </summary>
+public static class NavFaceDataBits
+{
+    /// <summary>The face bits the game's code reads, each with the name of its text.</summary>
+    public static readonly IReadOnlyDictionary<uint, string> Face = new Dictionary<uint, string>
+    {
+        [0x1] = "Impassable",
+        [0x8] = "HighCost",
+        [0x400] = "Checked",
+        [0x1000] = "Lava",
+        [0x4000] = "Ladder",
+        [0x8000] = "Unlock10000",
+        [0x10000] = "Gated10000",
+        [0x40000] = "HugeEnemy",
+        [0x80000] = "Unlock100000",
+        [0x100000] = "Gated100000",
+        [0x200000] = "HighCost2",
+        [0x1000000] = "CharacterLimit",
+    };
+
+    /// <summary>The user edge data bits the cost reads.</summary>
+    public static readonly IReadOnlyDictionary<uint, string> Edge = new Dictionary<uint, string>
+    {
+        [0x2] = "Jump",
+        [0x4] = "Fall",
+        [0x10] = "ExtraCost",
+    };
+
+    /// <summary>The faces whose bits make the game check, per character, whether they can be crossed.</summary>
+    public const uint PassabilityMask = 0x1115401;
+}
+
+/// <summary>
 /// A navmesh HKX file of a map's nvmhktbnd, with the Havok data the validator looks for.
 /// </summary>
 public sealed class NavmeshFile

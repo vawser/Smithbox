@@ -200,12 +200,13 @@ public partial class NavigationTool
                 continue;
 
             bool on = (PaintValue & bit) != 0;
-            if (ImGui.Checkbox($"0x{bit:X}##navigationPaintBit_{i}", ref on))
+            var (label, tooltip) = FaceBitText(bit);
+            if (ImGui.Checkbox($"{label}##navigationPaintBit_{i}", ref on))
             {
                 PaintValue = on ? PaintValue | bit : PaintValue & ~bit;
                 PaintValueText = PaintValue.ToString("X8");
             }
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Bit_TT"));
+            GUI.Tooltip(tooltip);
         }
     }
 
@@ -307,11 +308,28 @@ public partial class NavigationTool
         if (value == 0)
             return LOC.Get("MAP_Navigation_Legend_No_Flags");
 
+        return DescribeBits(value, NavFaceDataBits.Face);
+    }
+
+    /// <summary>The set bits of a value with the names of those the game's code reads, e.g. "0x1 Impassable | 0x40".</summary>
+    private static string DescribeBits(uint value, IReadOnlyDictionary<uint, string> names)
+    {
         var bits = new List<string>();
         for (int i = 0; i < 32; i++)
-            if ((value & (1u << i)) != 0)
-                bits.Add($"0x{1u << i:X}");
+        {
+            uint bit = 1u << i;
+            if ((value & bit) != 0)
+                bits.Add(names.TryGetValue(bit, out var name) ? $"0x{bit:X} {LOC.Get($"MAP_Navigation_Bit_{name}")}" : $"0x{bit:X}");
+        }
         return string.Join(" | ", bits);
+    }
+
+    /// <summary>The name and description of a face bit, for its paint checkbox.</summary>
+    private static (string Label, string Tooltip) FaceBitText(uint bit)
+    {
+        if (NavFaceDataBits.Face.TryGetValue(bit, out var name))
+            return ($"0x{bit:X} {LOC.Get($"MAP_Navigation_Bit_{name}")}", LOC.Get($"MAP_Navigation_Bit_{name}_TT"));
+        return ($"0x{bit:X}", LOC.Get("MAP_Navigation_Paint_Bit_TT"));
     }
 
     private void RebuildOverlay(MapContainer map)
@@ -567,6 +585,8 @@ public partial class NavigationTool
             }
         }
 
-        return LOC.Get(user ? "MAP_Navigation_Edge_User" : "MAP_Navigation_Edge", k, (int)edge.m_flags, data.ToString("X"), target);
+        // User edge data says what kind of link it is (jump, fall); the game's cost reads those bits
+        var dataText = user && data != 0 ? $"{data:X} ({DescribeBits(data, NavFaceDataBits.Edge)})" : data.ToString("X");
+        return LOC.Get(user ? "MAP_Navigation_Edge_User" : "MAP_Navigation_Edge", k, (int)edge.m_flags, dataText, target);
     }
 }
