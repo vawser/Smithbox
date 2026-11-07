@@ -43,6 +43,8 @@ public enum NavIssueCode
     MeshMissing,
     PlaceholderHasFaces,
     GateNodeNavmeshIndex,
+    NodeBankNavmeshMissing,
+    NodeBankFaceRange,
 
     // Navmesh files
     MediatorMissing,
@@ -80,6 +82,7 @@ public static class NavigationValidator
         }
 
         ValidateNva(map, nvaName, issues);
+        ValidateNodeBanks(map, nvaName, issues);
         ValidateFiles(map, issues);
         ValidateConnectors(map, nvaName, issues);
         ValidateNvcs(map, neighbour, issues);
@@ -147,6 +150,31 @@ public static class NavigationValidator
             {
                 if (gate.ConnectedNavmeshIndex < -1 || gate.ConnectedNavmeshIndex >= navmeshes.Count)
                     issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateNodeNavmeshIndex, file, (uint)n.NameID, gate.ConnectedNavmeshIndex, navmeshes.Count));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Node bank faces name their navmesh by NameID (the field SoulsFormats calls CollisionID); EMEVD 2003[13] changes
+    /// the flags of these faces by the bank's entity ID.
+    /// </summary>
+    private static void ValidateNodeBanks(NavigationMap map, string file, List<NavIssue> issues)
+    {
+        foreach (var bank in map.Nva.NodeBanks ?? new())
+        {
+            foreach (var face in bank.Faces)
+            {
+                var entry = map.FindNavmesh(face.CollisionID);
+
+                if (entry == null)
+                {
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NodeBankNavmeshMissing, file, bank.BankID, (uint)face.CollisionID));
+                    continue;
+                }
+
+                int faces = map.FileOf(entry)?.FaceCount ?? entry.FaceCount;
+                if (face.FaceIndex < 0 || face.FaceIndex >= faces)
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NodeBankFaceRange, file, bank.BankID, (uint)face.CollisionID, face.FaceIndex, faces));
             }
         }
     }

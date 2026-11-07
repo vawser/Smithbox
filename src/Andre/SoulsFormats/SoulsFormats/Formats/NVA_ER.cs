@@ -687,6 +687,11 @@ namespace SoulsFormats
             /// </summary>
             public List<NodeBankFace> Faces { get; set; }
 
+            /// <summary>
+            /// In Elden Ring, the entity ID EMEVD 2003[13] (Modify Navimesh Connection Bitflag) names to add or remove a
+            /// face flag mask on the bank's faces at runtime; vanilla adds and removes 1 (impassable) around an event flag.
+            /// 0 for banks EMEVD doesn't use (most of them, which hold the gated faces 0x10000 and 0x100000).
+            /// </summary>
             public int EntityID { get; set; }
             public int Unk0C { get; set; }
 
@@ -742,7 +747,15 @@ namespace SoulsFormats
 
         public class NodeBankFace
         {
+            /// <summary>
+            /// The face, in the navmesh <see cref="CollisionID"/> names.
+            /// </summary>
             public int FaceIndex { get; set; }
+
+            /// <summary>
+            /// In Elden Ring, the <see cref="Navmesh.NameID"/> of the navmesh the face is in, always one of the n set
+            /// (every one of the 3,841 vanilla bank faces resolves). The name is kept for compatibility.
+            /// </summary>
             public int CollisionID { get; set; }
 
             public NodeBankFace() { }

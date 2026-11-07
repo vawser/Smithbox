@@ -81,4 +81,5 @@ if (mode == "validate") Validate.Run(fs, dict, args);
 if (mode == "overlay") Overlay.Run(fs, dict, args);
 if (mode == "names") Names.Run(fs, dict, args);
 if (mode == "havokedit") HavokEdit.Run(fs, dict, args);
+if (mode == "emevdnav") EmevdNav.Run(fs, dict, args);
 if (mode == "navvalues") MapNavValues.Run(fs, dict, args[1], int.Parse(args[2]));

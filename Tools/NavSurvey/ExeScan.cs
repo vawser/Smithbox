@@ -119,6 +119,54 @@ static class ExeScan
                 foreach (var h in c.Take(14)) Console.WriteLine($"   {h.Text}");
             }
         }
+        else if (args[2] == "bitop")
+        {
+            // bitop [window] : or, and and xor of a register into [base+index*4] close together, like an add/delete/invert helper
+            ulong window = args.Length > 3 ? Convert.ToUInt64(args[3], 16) : 0x80;
+            var hits = new List<Instruction>();
+            foreach (var ins in Exe.Sweep())
+            {
+                if (ins.Mnemonic is not (Mnemonic.Or or Mnemonic.And or Mnemonic.Xor) || ins.Op0Kind != OpKind.Memory || ins.MemoryIndexScale != 4
+                    || ins.MemoryIndex == Register.None || ins.Op1Kind != OpKind.Register || ins.MemorySize != MemorySize.UInt32)
+                    continue;
+                hits.Add(ins);
+            }
+            var cluster = new List<Instruction>();
+            void Flush()
+            {
+                if (cluster.Select(i => i.Mnemonic).Distinct().Count() == 3)
+                {
+                    Console.WriteLine($"== {cluster[0].IP:X}");
+                    foreach (var i in cluster) Console.WriteLine($"   {Exe.Format(i)}");
+                }
+                cluster.Clear();
+            }
+            foreach (var h in hits)
+            {
+                if (cluster.Count > 0 && h.IP - cluster[^1].IP > window) Flush();
+                cluster.Add(h);
+            }
+            Flush();
+        }
+        else if (args[2] == "pairs")
+        {
+            // pairs <a> <b> : int32 a followed within 16 bytes by int32 b in the data sections, with any code pointers near
+            uint a = Convert.ToUInt32(args[3]), b = Convert.ToUInt32(args[4]);
+            foreach (var s in Exe.Sections.Where(s => s.Name != ".text"))
+            {
+                for (long fo = s.Raw; fo + 32 < s.Raw + s.RawSize; fo += 4)
+                {
+                    if (BitConverter.ToUInt32(Exe.Image, (int)fo) != a) continue;
+                    for (int d = 4; d <= 16; d += 4)
+                    {
+                        if (BitConverter.ToUInt32(Exe.Image, (int)(fo + d)) != b) continue;
+                        var ptrs = Enumerable.Range(-4, 12).Select(k => fo + k * 8 - (fo % 8))
+                            .Select(p => BitConverter.ToUInt64(Exe.Image, (int)p)).Where(Exe.IsCode).Select(p => p.ToString("X"));
+                        Console.WriteLine($"{Exe.VaOfFile(fo):X} ({s.Name}) +{d}: code near: {string.Join(" ", ptrs)}");
+                    }
+                }
+            }
+        }
         else if (args[2] == "fn")
         {
             var va = Convert.ToUInt64(args[3], 16);

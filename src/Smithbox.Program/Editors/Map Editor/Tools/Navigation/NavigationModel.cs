@@ -371,6 +371,31 @@ public static class NavigationRemap
             }
         }
 
+        // Node banks list faces too, which EMEVD 2003[13] changes the flags of by the bank's entity ID
+        foreach (var bank in map.Nva?.NodeBanks ?? new())
+        {
+            for (int i = bank.Faces.Count - 1; i >= 0; i--)
+            {
+                var face = bank.Faces[i];
+                if (face.CollisionID != nameId)
+                    continue;
+
+                int remapped = faceMap(face.FaceIndex);
+                if (remapped < 0)
+                {
+                    bank.Faces.RemoveAt(i);
+                    result.Dropped++;
+                    result.NvaChanged = true;
+                }
+                else if (remapped != face.FaceIndex)
+                {
+                    face.FaceIndex = remapped;
+                    result.Changed++;
+                    result.NvaChanged = true;
+                }
+            }
+        }
+
         foreach (var nvc in map.Nvcs)
         {
             bool isA = nvc.MapA == map.MapId;

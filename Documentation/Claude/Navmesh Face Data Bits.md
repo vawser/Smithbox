@@ -56,6 +56,32 @@ come from data not traced here. If passability fails during costing, the cost is
 The game files' values (`0x0X04`, `0x0X14`, `0x02`, `0x12`) fit this. The high byte (`X` = 3..F) isn't read here; perhaps it is
 the drop height.
 
+## EMEVD 2003[13]: Modify Navimesh Connection Bitflag
+
+The arguments are `(navimesh entity ID, type mask, bit op Add/Delete/Invert)`. NavSurvey `emevdnav` (and `emevdnav events`)
+reads every ER EMEVD.
+
+- **The entity ID is an NVA node bank's `EntityID`.** 16 uses in 6 maps, and all 8 literal IDs are node-bank entity IDs.
+  Only 9 of the 198 vanilla banks have one.
+- **A node bank face is (face index, navmesh NameID).** The second field, which SoulsFormats calls `CollisionID`, is the NameID
+  of an n-set navmesh for every one of the 3,841 vanilla bank faces.
+- **Vanilla only passes type 1**, around an event flag. In m14, m28, m32, m35 and m60_39_54 (event `…2498/2499`): unless the
+  flag is set, Add 1; wait for the flag; then Delete 1. In m12_04: Add 1 on two banks while a character fight runs.
+  So the type is a mask applied at runtime to the faces' flags, and **1 is face bit 0x1, Impassable**. A bank's faces are
+  blocked until something happens.
+- **The EMEDF's "Navimesh Type" names come from older games and don't fit ER.** It names 4096 "Door", but in ER 0x1000 is Lava,
+  and Ladder is 0x4000, not 1024. Since EMEVD passes the mask through, use the face bits above.
+- **The banks EMEVD drives hold ordinary faces** (0x0, 0x20000, 0x1000000). **The 189 banks without an entity ID hold the gated
+  faces**: 0x10000 (918) and 0x100000 (1,802). Those are opened at runtime (0x8000 / 0x80000) by something other than this
+  instruction. Candidates are assets (AssetGeometryParam `navimeshFlag[_after]`) and MSB navmesh events/regions.
+
+The validator now checks node-bank faces (navmesh exists, face in range), and `NavigationRemap` renumbers them with the
+connections.
+
+The handler itself sits in Arxan-protected code next to the node-bank accessor (`0x140C8D8A0`, entries of 0x210 at
+NvaResCap `+0xA0`, count `+0xEC`). Its callers `0x140C3530F` and `0x140C35349` jump into the stub section. Tracing them needs
+the Arxan stub expansion from MsbExeSurvey; that hasn't been done.
+
 ## False leads (not navigation)
 
 The `bits` scan also turned up:

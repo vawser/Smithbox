@@ -56,6 +56,8 @@
     { "Key": "MAP_Navigation_Issue_MeshMissing", "Text": "Navmesh {0} has faces, but its file {1} isn't in the nvmhktbnd." },
     { "Key": "MAP_Navigation_Issue_PlaceholderHasFaces", "Text": "Navmesh {0} is marked as a placeholder (Unk4C = 1) but has {1} faces." },
     { "Key": "MAP_Navigation_Issue_GateNodeNavmeshIndex", "Text": "A gate node of navmesh {0} refers to navmesh index {1}, but there are {2} entries." },
+    { "Key": "MAP_Navigation_Issue_NodeBankNavmeshMissing", "Text": "Node bank {0} lists a face of navmesh {1}, which isn't in the NVA." },
+    { "Key": "MAP_Navigation_Issue_NodeBankFaceRange", "Text": "Node bank {0} lists face {2} of navmesh {1}, which has {3} faces." },
     { "Key": "MAP_Navigation_Issue_MediatorMissing", "Text": "The file has {0} faces but no query mediator, which the game files always have." },
     { "Key": "MAP_Navigation_Issue_ConnectorNavmeshMissing", "Text": "A connector refers to navmesh {0}, which isn't in {1}." },
     { "Key": "MAP_Navigation_Issue_ConnectionFaceRange", "Text": "A connection refers to face {1} of navmesh {0}, which has {2} faces." },
@@ -152,7 +154,7 @@
     { "Key": "MAP_Navigation_Edge_Data_Edit_TT", "Text": "The user edge's data in hexadecimal. What it means in game is unknown; the game files use values like 0x204 and 0x314. Changing it is one undo." },
 
     { "Key": "MAP_Navigation_Bit_Impassable", "Text": "Impassable" },
-    { "Key": "MAP_Navigation_Bit_Impassable_TT", "Text": "No character can cross the face (eldenring.exe 0x1402E2A60)." },
+    { "Key": "MAP_Navigation_Bit_Impassable_TT", "Text": "No character can cross the face (eldenring.exe 0x1402E2A60). EMEVD 2003[13] adds or removes this bit at runtime on the faces of a node bank, by its entity ID, to block a path until an event flag is set." },
     { "Key": "MAP_Navigation_Bit_HighCost", "Text": "High cost" },
     { "Key": "MAP_Navigation_Bit_HighCost_TT", "Text": "Crossing the face costs 100 times as much in path finding (0x1402E1C70; not in sealed worlds)." },
     { "Key": "MAP_Navigation_Bit_Checked", "Text": "Checked" },
