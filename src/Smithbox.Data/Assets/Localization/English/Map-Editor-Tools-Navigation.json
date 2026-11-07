@@ -131,6 +131,26 @@
     { "Key": "MAP_Navigation_Edge_To_Navmesh", "Text": "connected to face {1} of navmesh {0}" },
     { "Key": "MAP_Navigation_Edge_To_Nvc", "Text": "connected to face {1} of navmesh {0} in {2}" },
 
+    { "Key": "MAP_Navigation_Paint_Header", "Text": "Paint" },
+    { "Key": "MAP_Navigation_Paint_Header_TT", "Text": "Change the face data of faces by dragging over them in the viewport. Each stroke is one undo. Face data changes no indices, so connections stay valid; the map's save writes the navmesh files." },
+    { "Key": "MAP_Navigation_Paint_Mode", "Text": "Paint face data in the viewport" },
+    { "Key": "MAP_Navigation_Paint_Mode_TT", "Text": "While on, holding the picking button over the drawn set's faces paints them instead of selecting. Turns picking off." },
+    { "Key": "MAP_Navigation_Paint_Set", "Text": "Set" },
+    { "Key": "MAP_Navigation_Paint_Set_TT", "Text": "Give the faces exactly the value." },
+    { "Key": "MAP_Navigation_Paint_Add", "Text": "Add bits" },
+    { "Key": "MAP_Navigation_Paint_Add_TT", "Text": "Turn on the value's bits, keeping the faces' other bits." },
+    { "Key": "MAP_Navigation_Paint_Remove", "Text": "Remove bits" },
+    { "Key": "MAP_Navigation_Paint_Remove_TT", "Text": "Turn off the value's bits, keeping the faces' other bits." },
+    { "Key": "MAP_Navigation_Paint_Value_TT", "Text": "The value to paint, in hexadecimal. The bits below, and the Use buttons of the legend, set it too." },
+    { "Key": "MAP_Navigation_Paint_Bit_TT", "Text": "A bit the drawn faces use. What it means in game is unknown." },
+    { "Key": "MAP_Navigation_Legend_Use", "Text": "Use" },
+    { "Key": "MAP_Navigation_Legend_Use_TT", "Text": "Paint this value." },
+
+    { "Key": "MAP_Navigation_Face_Data_Edit_TT", "Text": "The face's data in hexadecimal. Changing it is one undo." },
+    { "Key": "MAP_Navigation_Edge_Blocked", "Text": "Blocked" },
+    { "Key": "MAP_Navigation_Edge_Blocked_TT", "Text": "The user edge's blocked flag (EDGE_BLOCKED). Changing it is one undo." },
+    { "Key": "MAP_Navigation_Edge_Data_Edit_TT", "Text": "The user edge's data in hexadecimal. What it means in game is unknown; the game files use values like 0x204 and 0x314. Changing it is one undo." },
+
     { "Key": "MAP_Navigation_Failed_Read", "Text": "Failed to read {0}" },
     { "Key": "MAP_Navigation_Failed_Write", "Text": "Failed to write {0}" }
   ]

@@ -14,6 +14,7 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `validate [regex] [max] [verbose]` | the Map Editor's NavigationMap and NavigationValidator on every map, a remap round trip, and a self test |
 | `overlay [regex] [max]` | the Navigation tool's overlay geometry and face picking on game maps |
 | `names [regex]` | the navmesh file name the Map Editor's drawing asks for, against the one the binder has |
+| `havokedit [regex] [max]` | face data, edge data and edge flag edits survive HavokFile.Write, with nothing else changed |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -320,7 +321,46 @@ reach `q` files or `_10` tiles named after `_00`.
 - Picking a face shows its index, flags, edges, connections, owning navmesh, and NVA entry (both halves).
 - **Verification target:** `m10_01_00_00` (28 entries, 14 models), `m60_42_36_00` (open world with `q` files), and the NVC pair `m60_33_41_00` / `m60_33_42_00`.
 
-### Phase 2: Attribute editing (no topology change)
+### Phase 2: Attribute editing: face and user-edge data DONE 2026-11-07 (not yet checked in the app)
+
+**What was built**
+
+- **`Actions/Map Objects/NavigationEditAction.cs`**: an undoable action holding face-data changes (`NavFaceDataChange`) and
+  edge flag/data changes (`NavEdgeChange`). It edits the navmesh bank's Havok documents directly, through the same
+  `NavmeshFile.Mesh` objects the overlay reads, and marks the map `MapFileType.Navmesh`, so `SaveHavokNavmeshModels` writes it.
+  Each apply redraws the overlay.
+- **View tab → Paint**: "Paint face data in the viewport" (turns picking off). It has three modes:
+  - Set: the face gets exactly the value;
+  - Add bits;
+  - Remove bits.
+
+  The value is a hex input plus a checkbox for each bit the drawn faces use, and the legend's "Use" button copies a value.
+  Dragging paints each face once per stroke. Changes are applied live and recorded as one action on release, as Wall Paint does.
+- **Inspector**: the face's data is a hex input. Each user edge has a Blocked checkbox (EDGE_BLOCKED) and an edge-data hex input.
+  Every change is one undo.
+- The overlay redraws after an edit, undo or redo even while the tool window is closed. The picked face stays picked.
+- **NavSurvey `havokedit [regex] [max]`**: flips a face's data bit, an edge's data and its blocked flag, writes the file with
+  `HavokFile.Write`, reads it back, and compares the whole mesh.
+  - 238 of 238 files keep exactly the edit, with nothing else changed.
+  - All 316 unedited files round-trip to the same mesh.
+
+**Not in Phase 2 yet**
+- NVA navmesh fields and gate nodes: these are edited as before, through the property panel of the navmesh entities.
+- ONAV fields and cell masks: ONAV isn't an entity, so it needs its own editor. `NavigationBank.MarkOnavEdited` and
+  `SaveONAV` are ready for that.
+
+**For the user to check in the app** (Havok loading on, on a project copy):
+1. `m10_01_00_00`: View → Show overlay. Note a legend value, e.g. `01000000` (n set).
+2. Paint: tick "Paint face data", choose Set, and click Use on the `00000000` legend entry. Drag over a few `01000000` faces.
+   On release they should turn the no-flags colour, and the legend counts should change.
+3. Ctrl+Z should restore them in one step, and redo should repaint them.
+4. Untick Paint, tick Pick, and click a face with user edges. Toggle Blocked on one: its arc should turn from yellow to orange,
+   and Ctrl+Z should undo it.
+5. Save the map. The project should now have `m10_01_00_00.nvmhktbnd.dcx`. Reload the map: the painted faces and the
+   blocked edge should still be there, and Check → Validate should report no new issues.
+6. In game, not needed yet: what the bits do is still unknown. Painting is a tool for finding out.
+
+### Phase 2 plan (as written before the work)
 - Face-flag painting (faceData bits) on n or o, with brush and select modes.
 - Editing user-edge `edgeData`, the blocked flag and costs.
 - NVA navmesh fields (Unk44, Unk4C, Unk50, rotation), gate node positions and costs, node banks, ONAV fields and cell masks.

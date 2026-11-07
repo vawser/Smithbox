@@ -49,6 +49,23 @@ public partial class NavigationTool
     private bool PickMode;
     private NavFaceHit Picked;
 
+    /// <summary>How painting changes a face's data.</summary>
+    private enum PaintOp { Set, AddBits, RemoveBits }
+
+    private bool PaintMode;
+    private PaintOp Paint = PaintOp.Set;
+    private uint PaintValue;
+    private string PaintValueText = "00000000";
+
+    /// <summary>The faces changed in the stroke being painted, already applied; recorded as one action on release.</summary>
+    private readonly Dictionary<(NavmeshFile File, int Face), NavFaceDataChange> Stroke = new();
+    private readonly List<NavFaceDataChange> StrokeOrder = new();
+
+    /// <summary>The picked face's data and its user edges' data, as typed.</summary>
+    private NavFaceHit TextFor;
+    private string FaceDataText = "";
+    private readonly Dictionary<int, string> EdgeDataText = new();
+
     /// <summary>The layers the user can toggle, in the order they are listed. Highlight is the tool's own.</summary>
     private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>().Where(l => l != NavOverlayLayer.Highlight).ToArray();
 
@@ -127,14 +144,132 @@ public partial class NavigationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Pick_Header"), LOC.Get("MAP_Navigation_Pick_Header_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Pick_Mode")}##navigationPickMode", ref PickMode) && !PickMode)
-            SetPicked(null);
+        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Pick_Mode")}##navigationPickMode", ref PickMode))
+        {
+            if (PickMode)
+                PaintMode = false;
+            else
+                SetPicked(null);
+        }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Pick_Mode_TT"));
 
-        if (PickMode && !ShowOverlay)
+        if ((PickMode || PaintMode) && !ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Pick_Needs_Overlay"));
 
+        DisplayPaint();
         DisplayInspector();
+    }
+
+    private void DisplayPaint()
+    {
+        // Paint
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Paint_Header"), LOC.Get("MAP_Navigation_Paint_Header_TT"));
+
+        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Paint_Mode")}##navigationPaintMode", ref PaintMode) && PaintMode)
+            PickMode = false;
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Mode_TT"));
+
+        int op = (int)Paint;
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Paint_Set")}##navigationPaintSet", ref op, (int)PaintOp.Set);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Set_TT"));
+        ImGui.SameLine();
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Paint_Add")}##navigationPaintAdd", ref op, (int)PaintOp.AddBits);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Add_TT"));
+        ImGui.SameLine();
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Paint_Remove")}##navigationPaintRemove", ref op, (int)PaintOp.RemoveBits);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Remove_TT"));
+        Paint = (PaintOp)op;
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText("##navigationPaintValue", ref PaintValueText, 16);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Value_TT"));
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            if (TryParseHex(PaintValueText, out var parsed))
+                PaintValue = parsed;
+            PaintValueText = PaintValue.ToString("X8");
+        }
+
+        // The bits the map's faces use, to build the value from
+        var bits = OverlayRenderer.FaceLegend.Aggregate(0u, (a, l) => a | l.Value);
+        for (int i = 0; i < 32; i++)
+        {
+            uint bit = 1u << i;
+            if ((bits & bit) == 0)
+                continue;
+
+            bool on = (PaintValue & bit) != 0;
+            if (ImGui.Checkbox($"0x{bit:X}##navigationPaintBit_{i}", ref on))
+            {
+                PaintValue = on ? PaintValue | bit : PaintValue & ~bit;
+                PaintValueText = PaintValue.ToString("X8");
+            }
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Bit_TT"));
+        }
+    }
+
+    private static bool TryParseHex(string text, out uint value)
+    {
+        text = text.Trim();
+        if (text.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+            text = text.Substring(2);
+        return uint.TryParse(text, System.Globalization.NumberStyles.HexNumber, null, out value);
+    }
+
+    private uint Painted(uint before) => Paint switch
+    {
+        PaintOp.AddBits => before | PaintValue,
+        PaintOp.RemoveBits => before & ~PaintValue,
+        _ => PaintValue,
+    };
+
+    /// <summary>Paints the face under the cursor, once a stroke.</summary>
+    private void PaintAt(NavFaceHit hit)
+    {
+        if (hit == null || Stroke.ContainsKey((hit.File, hit.Face)))
+            return;
+
+        var mesh = hit.File.Mesh;
+        int index = hit.Face * mesh.m_faceDataStriding;
+
+        if (mesh.m_faceDataStriding <= 0 || index >= mesh.m_faceData.Count)
+            return;
+
+        int before = mesh.m_faceData[index];
+        int after = (int)Painted((uint)before);
+
+        // Each face is only recorded once a stroke, so dragging back over it doesn't record it again
+        var change = new NavFaceDataChange(hit.File, hit.Face, before, after);
+        Stroke[(hit.File, hit.Face)] = change;
+
+        if (before == after)
+            return;
+
+        NavigationEditAction.ApplyFace(change, true);
+        StrokeOrder.Add(change);
+        SetPicked(hit);
+    }
+
+    private void EndStroke()
+    {
+        Stroke.Clear();
+
+        if (StrokeOrder.Count == 0 || OverlayContainer == null)
+            return;
+
+        var action = new NavigationEditAction(OverlayContainer, new List<NavFaceDataChange>(StrokeOrder), null, OnNavigationEdited);
+        StrokeOrder.Clear();
+
+        // Already applied, but executing it again marks the map as modified and leaves it on the undo stack
+        View.ViewportActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>After an edit, or its undo: the overlay is drawn again, and the inspector reads the values again.</summary>
+    private void OnNavigationEdited()
+    {
+        OverlayDirty = true;
+        TextFor = null;
     }
 
     private void DisplayLegend()
@@ -154,6 +289,13 @@ public partial class NavigationTool
         foreach (var (value, color, faces) in legend)
         {
             ImGui.ColorButton($"##navigationLegend_{value:X8}", new Vector4(color, 1), ImGuiColorEditFlags.NoTooltip, new Vector2(14, 14) * DPI.UIScale());
+            ImGui.SameLine();
+            if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Legend_Use")}##navigationLegendUse_{value:X8}"))
+            {
+                PaintValue = value;
+                PaintValueText = value.ToString("X8");
+            }
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Legend_Use_TT"));
             ImGui.SameLine();
             ImGui.Text(LOC.Get("MAP_Navigation_Legend_Entry", value.ToString("X8"), DescribeBits(value), faces));
         }
@@ -175,6 +317,10 @@ public partial class NavigationTool
     private void RebuildOverlay(MapContainer map)
     {
         OverlayDirty = false;
+
+        // The picked face stays picked when the same map and set are drawn again, e.g. after an edit
+        var keep = OverlayMap == map.Name && OverlayNavigation != null ? Picked : null;
+        var keepSet = OverlaySet;
         SetPicked(null);
 
         var navigation = Bank.GetMap(map);
@@ -191,6 +337,9 @@ public partial class NavigationTool
         OverlayNavigation = navigation;
         OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers);
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
+
+        if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
+            SetPicked(keep);
     }
 
     private void ClearOverlay()
@@ -238,22 +387,40 @@ public partial class NavigationTool
 
         if (OverlayContainer != null && OverlayContainer.LoadState != MapContentLoadState.Loaded)
         {
+            Stroke.Clear();
+            StrokeOrder.Clear();
             ClearOverlay();
             ShowOverlay = false;
         }
 
-        if (!PickMode || OverlayNavigation == null)
+        bool mouseDown = InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action);
+
+        // A finished stroke is recorded, and an edit or undo redraws the overlay, even while the tool window is closed
+        if (!mouseDown)
+            EndStroke();
+
+        if (ShowOverlay && OverlayDirty && OverlayContainer != null && StrokeOrder.Count == 0)
+            RebuildOverlay(OverlayContainer);
+
+        if (OverlayNavigation == null || (!PickMode && !PaintMode))
             return false;
 
-        if (canInteract && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+        if (PaintMode)
         {
-            var hit = NavigationOverlayBuilder.Pick(OverlayNavigation, OverlaySet, ray.Origin, ray.Direction,
-                e => EntryWorld(OverlayContainer, e));
-            SetPicked(hit);
+            if (canInteract && mouseDown)
+                PaintAt(PickAt(ray));
+
+            return true;
         }
+
+        if (canInteract && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+            SetPicked(PickAt(ray));
 
         return true;
     }
+
+    private NavFaceHit PickAt(Ray ray)
+        => NavigationOverlayBuilder.Pick(OverlayNavigation, OverlaySet, ray.Origin, ray.Direction, e => EntryWorld(OverlayContainer, e));
 
     private void DisplayInspector()
     {
@@ -276,18 +443,94 @@ public partial class NavigationTool
         GUI.WrappedText(LOC.Get("MAP_Navigation_Face_Index", hit.Face, mesh.m_faces.Count, face.m_numEdges, face.m_startEdgeIndex));
         GUI.WrappedText(LOC.Get("MAP_Navigation_Face_Point", $"{hit.Point.X:0.##}, {hit.Point.Y:0.##}, {hit.Point.Z:0.##}"));
 
-        if (mesh.m_faceDataStriding > 0 && mesh.m_faceData.Count > hit.Face * mesh.m_faceDataStriding)
+        // The typed values start from the face's own whenever another face is picked, or after an edit
+        if (!ReferenceEquals(TextFor, hit))
         {
-            uint data = (uint)mesh.m_faceData[hit.Face * mesh.m_faceDataStriding];
+            TextFor = hit;
+            EdgeDataText.Clear();
+            FaceDataText = FaceData(mesh, hit.Face) is uint value ? value.ToString("X8") : "";
+        }
+
+        if (FaceData(mesh, hit.Face) is uint data)
+        {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Face_Data", data.ToString("X8"), DescribeBits(data)));
+
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputText("##navigationFaceData", ref FaceDataText, 16);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Face_Data_Edit_TT"));
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                if (TryParseHex(FaceDataText, out var typed) && typed != data)
+                    Execute(new[] { new NavFaceDataChange(hit.File, hit.Face, (int)data, (int)typed) }, null);
+                else
+                    FaceDataText = data.ToString("X8");
+            }
         }
 
         // Its edges, and what each leads to
         for (int k = face.m_startEdgeIndex; k < face.m_startEdgeIndex + face.m_numEdges; k++)
             GUI.WrappedText(DescribeEdge(mesh, entry, k, false));
 
+        // User edges can be blocked and their data changed; that renumbers nothing
         for (int k = face.m_startUserEdgeIndex; k < face.m_startUserEdgeIndex + face.m_numUserEdges; k++)
+        {
             GUI.WrappedText(DescribeEdge(mesh, entry, k, true));
+            DisplayUserEdgeEdit(hit, mesh, k);
+        }
+    }
+
+    private static uint? FaceData(Havok.hk2018.hkaiNavMesh mesh, int face)
+    {
+        int index = face * mesh.m_faceDataStriding;
+        return mesh.m_faceDataStriding > 0 && index < mesh.m_faceData.Count ? (uint)mesh.m_faceData[index] : null;
+    }
+
+    private void DisplayUserEdgeEdit(NavFaceHit hit, Havok.hk2018.hkaiNavMesh mesh, int k)
+    {
+        var edge = mesh.m_edges[k];
+        int flags = (int)edge.m_flags;
+        int blockedBit = (int)Havok.hk2018.hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED;
+        bool hasData = mesh.m_edgeDataStriding > 0 && k * mesh.m_edgeDataStriding < mesh.m_edgeData.Count;
+        int data = hasData ? mesh.m_edgeData[k * mesh.m_edgeDataStriding] : 0;
+
+        bool blocked = (flags & blockedBit) != 0;
+        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Edge_Blocked")}##navigationEdgeBlocked_{k}", ref blocked))
+        {
+            int after = blocked ? flags | blockedBit : flags & ~blockedBit;
+            Execute(null, new[] { new NavEdgeChange(hit.File, k, flags, after, data, data) });
+        }
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Edge_Blocked_TT"));
+
+        if (!hasData)
+            return;
+
+        ImGui.SameLine();
+
+        if (!EdgeDataText.TryGetValue(k, out var text))
+            EdgeDataText[k] = text = ((uint)data).ToString("X");
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText($"##navigationEdgeData_{k}", ref text, 16);
+        EdgeDataText[k] = text;
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Edge_Data_Edit_TT"));
+
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            if (TryParseHex(text, out var typed) && (int)typed != data)
+                Execute(null, new[] { new NavEdgeChange(hit.File, k, flags, flags, data, (int)typed) });
+            else
+                EdgeDataText[k] = ((uint)data).ToString("X");
+        }
+    }
+
+    /// <summary>Applies an edit of the picked map as an undoable action.</summary>
+    private void Execute(IReadOnlyList<NavFaceDataChange> faces, IReadOnlyList<NavEdgeChange> edges)
+    {
+        if (OverlayContainer == null)
+            return;
+
+        View.ViewportActionManager.ExecuteAction(new NavigationEditAction(OverlayContainer, faces, edges, OnNavigationEdited));
     }
 
     private string DescribeEdge(Havok.hk2018.hkaiNavMesh mesh, NVA_ER.Navmesh entry, int k, bool user)
