@@ -12,6 +12,7 @@ All numbers below come from `Tools/NavSurvey`, run from `src/Smithbox.Data` with
 | `navrows <map>` | each NVA navmesh with its NameID and the files its ModelID names |
 | `navvalues <regex> <max>` | face and edge data values of the `n`/`o` meshes |
 | `validate [regex] [max] [verbose]` | the Map Editor's NavigationMap and NavigationValidator on every map, a remap round trip, and a self test |
+| `overlay [regex] [max]` | the Navigation tool's overlay geometry and face picking on game maps |
 | `roundtrip`, `check` | NVC/ONAV round trip; NVC against the NVAs |
 | `exe <exe> magic/str/strings/calls/fn/win/jt/disp` | exe scans |
 
@@ -243,7 +244,63 @@ It works on the loaded map plus its neighbours. Each phase is usable on its own 
   It reports per map and runs before save.
 - **Tests:** a NavSurvey `roundtrip-all` that loads through the bank and saves unchanged must produce byte-identical files.
 
-### Phase 1: Viewer
+### Phase 1: Viewer: DONE 2026-11-07 (not yet checked in the app)
+
+**What was built**
+
+- **Overlay geometry** (`Tools/Navigation/NavigationOverlay.cs`, renderer-free, linked into NavSurvey):
+  - `NavigationOverlayBuilder.Build` turns a map's n or o set into colour batches:
+    - faces, fanned into triangles, one batch per faceData value;
+    - inner edges and open boundary edges;
+    - edges connected by an NVA connector or an NVC file;
+    - user edges (the edge plus an arc and arrow to the face it leads to), with blocked ones separate;
+    - gate node crosses;
+    - ONAV bounds, area positions, area links, and cells.
+  - The n set includes the quarter (q) entries.
+  - `Pick` does a ray–face test in each navmesh's own space; `Highlight` outlines the picked face.
+- **Line primitive** `Renderer/Debug Primitives/DbgPrimLineBatch.cs`: a single-colour line list (up to 16,000 lines), built like
+  `DbgPrimWallCells`. The debug wire shader colours only by material, so every colour needs its own primitive.
+- **Renderer** `NavigationOverlayRenderer.cs`: unpickable proxies (translucent face fills, line batches) chunked to the 16-bit
+  index limit, with a face-data palette and legend. The default `RenderFilter.All` keeps the overlay visible when the Navmesh
+  render filter hides the Map Editor's own navmesh drawing.
+- **Tool**: the Navigation tool now has **View** and **Check** tabs. View has:
+  - Show overlay;
+  - the n/o set and face opacity;
+  - layer toggles with colour swatches;
+  - the face-data legend (values with their set bits);
+  - "Pick faces in the viewport", where a click picks instead of selecting (`VulkanViewport` calls `NavigationTool.HandleViewportInput`);
+  - the face inspector: navmesh, file, face, faceData, and each edge or user edge with its flags, edgeData and what it leads to
+    (a face, an NVA connection, an NVC connection with the neighbour map, or open).
+- **NavSurvey `overlay [regex] [max]`**: layer counts, user edges without a target, and a pick test, which casts down onto
+  random face centres and must hit that face.
+
+**Results on game maps**
+- All 55,676 user edges in the sample point into their own navmesh (packed section 0), so every arc resolves.
+- Picking hits the exact face in 98.3% of random tests, and a face at the same point in another 0.8%.
+  The misses are near-vertical faces, which a straight-down test ray can't hit.
+- Heavy layers: ONAV cells (~900k lines on six maps, off by default), and user edges on large open-world tiles
+  (~13 lines per edge; m60_42_36_00 has ~27k user edges).
+
+**Known issue found** (not changed): the Map Editor's own navmesh drawing (`MapContainer.AddNavmeshInfo`) loads the `n` file
+for every NVA entry. So o-half entries draw a second copy of the n mesh, and quarter entries draw the empty n file.
+The overlay draws the right file for each entry. Fixing the stock drawing (`o` for the second half, `q…_k` for quarters) is a
+small follow-up.
+
+**For the user to check in the app** (Havok loading on):
+1. `m10_01_00_00`: Navigation → View → Show overlay.
+   - Faces should sit just above the navmesh, coloured by face data, with the legend listing the values.
+   - Cyan edges are where navmeshes join within the map. Red edges are open.
+   - Yellow arcs are jump and ladder links.
+2. Switch to the o set. It should be coarser, with fewer arcs.
+3. Turn on "Pick faces in the viewport" and click a face.
+   - A white outline should appear.
+   - The Face group should list its edges. A cyan edge should read "connected to face … of navmesh …".
+4. `m60_33_41_00` with `m60_33_42_00` loaded: magenta edges are the NVC connections to the neighbour.
+   Picking one should name `m60_33_42_00`.
+5. `m30_02_00_00`: turn on ONAV cells. If the boxes don't sit over the areas, the bit-order guess is wrong; report what you see.
+6. With picking off, clicks must select entities as before.
+
+### Phase 1 plan (as written before the work)
 - Draw the n set and the o set with a toggle. Colour faces by faceData bit, with a legend.
 - Show user edges (jump, ladder and drop links) as arcs coloured by edgeData type, and blocked edges.
 - Show boundary edges, with connected ones highlighted: in-map connectors in one colour, NVC cross-map ones in another (neighbour maps loaded).

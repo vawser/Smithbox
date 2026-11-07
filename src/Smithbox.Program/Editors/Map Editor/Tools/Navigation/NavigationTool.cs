@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor;
 /// (NVA, navmesh files, ONAV, NVC files) and a check of its invariants. Issues the vanilla game files also have are
 /// marked as inherited, so only what the project changed stands out.
 /// </summary>
-public class NavigationTool
+public partial class NavigationTool
 {
     private readonly MapEditorView View;
     private readonly ProjectEntry Project;
@@ -135,8 +135,31 @@ public class NavigationTool
             return;
         }
 
-        // Actions
         GUI.Spacer();
+
+        if (ImGui.BeginTabBar("navigationTabs"))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_View")}##navigationTabView"))
+            {
+                DisplayViewTab(map);
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Check")}##navigationTabCheck"))
+            {
+                DisplayCheckTab(map, maps);
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+        }
+
+        ImGui.EndChild();
+    }
+
+    private void DisplayCheckTab(MapContainer map, List<MapContainer> maps)
+    {
+        // Actions
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Actions_Header"), LOC.Get("MAP_Navigation_Actions_Header_TT"));
 
         GUI.ConditionalMultiButtonInput("navigationActions",
@@ -149,14 +172,11 @@ public class NavigationTool
         if (Current == null || Current.MapId != map.Name)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Not_Checked"));
-            ImGui.EndChild();
             return;
         }
 
         DisplaySummary(Current.Map);
         DisplayIssues(Current);
-
-        ImGui.EndChild();
     }
 
     /// <summary>

@@ -402,6 +402,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // So does picking a navmesh face in the Navigation tool
+        if (Owner is MapUniverse navigationUniverse &&
+            navigationUniverse.View.NavigationTool.HandleViewportInput(ray, canPick))
+        {
+            painting = true;
+        }
+
         if (canPick)
         {
             kbbusy = ViewportCamera.UpdateInput(window, dt);
