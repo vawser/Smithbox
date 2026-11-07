@@ -38,6 +38,7 @@ public partial class NavigationTool
             {
                 PickMode = false;
                 PaintMode = false;
+                StopVertexEdit();
             }
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Link_Mode_TT"));

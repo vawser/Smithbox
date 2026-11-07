@@ -584,9 +584,47 @@ reach `q` files or `_10` tiles named after `_00`.
 
 ### Phase 4: Geometry
 - **Generation from collision: G1–G4 DONE 2026-11-07 (not yet checked in the app).** See `Navmesh Generation Plan.md`.
-- **Vertex editing that keeps topology:** move vertices and update AABBs. The mediator AABB tree and clearance cache are rebuilt
-  (or dropped, if the game accepts that).
-  The AABB tree builder can reuse the Collision Generator's static-tree experience (`Compressed Mesh Format.md`).
+- **Vertex editing that keeps topology: DONE 2026-11-07 (not yet checked in the app).** The Edit tab, below.
+
+### Phase 4: Vertex editing (Edit tab) DONE 2026-11-07 (not yet checked in the app)
+
+Modelled on the Collision Editor's Edit tab (`Collision Editor.md`): Start/Stop, a cursor sphere on the drawn set, Q/E
+raise/lower by the step, G held drags across the plane at the vertex's height, a radius with a smoothstep falloff, and
+Commit/Discard. The keys are their own bindings (`MapEditor_NavigationEditor_Raise/Lower/Drag`, Q/E/G by default).
+
+- **What it edits:** the n or o set the View tab's overlay draws (and only the selected model with that option). The
+  target is the corner of the face under the cursor nearest the hit. Starting it turns off picking, painting and linking.
+- **Working copies** (`NavVertexFile`, `Tools/Navigation/NavigationVertexEdit.cs`): each file's vertices are copied
+  when the cursor first looks at the map's navmeshes; the document isn't touched until commit. A copy whose file gets
+  another document (commit, undo, redo) or whose map is unloaded is dropped.
+- **Welding:** navmesh faces share vertices by index, so moving one corner moves every face on it. Vertices of the same
+  file within 1 mm of the target (e.g. user edge end points) move fully too.
+- **Linked navmeshes:** with *Neighbouring navmeshes* (on by default), vertices of the map's other navmeshes of the same
+  set within the link distance (default 0.1 m) move fully, then the radius fades them out. *Other set* (off by default)
+  does the same for o when editing n, and n when editing o. Distances are in the viewport (each entry's world transform).
+  `vertexedit` measured the end points of in-map connected edges against the nearest vertex of the navmesh they join
+  (205,840 end points, 60 maps): 62.8% within 0.1 mm, 87.3% within 1 cm, 91.8% within 0.1 m, 97.0% within 0.5 m.
+  Joined edges often meet part-way along an edge rather than at a shared corner, so a radius keeps those joined.
+- **Preview:** each edited file is drawn alone from its working vertices (`NavigationOverlayBuilder.BuildEntry` with a
+  shallow mesh that shares the file's faces and edges), with the overlay's legend colours, and the overlay is built
+  without it. The Map Editor's own drawing of it is hidden meanwhile. A file moved since its preview was drawn is drawn
+  again once a frame; the replaced preview stays drawn 2 more frames, so a drag leaves no gap.
+- **Commit** (`NavVertexEdit.Build`, `NavigationVertexEditAction`): each edited file is cloned with the moved positions
+  (W kept); the mesh AABB moves with them, keeping its padding (an axis whose vertex bound didn't move keeps the game's
+  value exactly); each query mediator's face tree is built again (`NavigationTree.Build`). Faces, edges, face and edge
+  data, user edges and the **clearance cache are kept** (its layout depends only on topology; its distances near the
+  moved vertices become approximate; chosen 2026-11-07). The documents are swapped as one undoable action, the map's
+  Navmesh files are marked for saving, and the Map Editor's drawing is refreshed as after a model edit.
+- **Not updated:** NVA/NVC/ONAV (nothing is renumbered), gate node positions, user edge setups. Edges joined to a
+  neighbouring *map* (NVC) are not linked, as only one map is edited at a time: moving a map's outer edges can part them
+  from the neighbour; re-stitch, or leave them.
+
+**Checked against game files** (`NavSurvey vertexedit . 60`, 2,192 files in 60 maps):
+- built unmoved: vertices and AABB exactly kept, and the rebuilt tree holds every face once inside its leaf (2192/2192);
+- one random vertex moved with a 3 m radius (48,279 vertices in all): the file writes and reads back with the moved
+  positions, the same faces/edges/data, its clearance cache, the AABB padding it had, a tree that holds every face, and
+  the mediator naming the mesh (2192/2192 each); the validator finds no new errors with every moved file in place (60/60).
+- Not checked: the tab in the app (cursor, preview, undo), and the game loading a moved navmesh (clearance values stale).
 - **Regeneration from collision:**
   - port the DS3 Recast path (`NavGen.dll`) to an hk2018 `hkaiNavMesh` builder;
   - build n and o with different agent parameters, then faceData from AssetGeometryParam flags and from MSB/collision attributes;

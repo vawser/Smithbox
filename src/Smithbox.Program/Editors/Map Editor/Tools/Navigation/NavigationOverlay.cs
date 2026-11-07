@@ -118,22 +118,7 @@ public static class NavigationOverlayBuilder
         ISet<NavOverlayLayer> layers, Func<NVA_ER.Navmesh, bool> only = null)
     {
         var overlay = new NavOverlay { MapId = map.MapId, Set = set };
-
-        // The ends of every connection, by navmesh and edge, from this map's side
-        var inMap = new HashSet<(int, int)>();
-        var crossMap = new HashSet<(int, int)>();
-
-        foreach (var view in NavigationRemap.Connections(map))
-        {
-            var target = view.IsCrossMap ? crossMap : inMap;
-            bool sideA = !view.IsCrossMap || view.Nvc.MapA == map.MapId;
-            bool sideB = !view.IsCrossMap || view.Nvc.MapB == map.MapId;
-
-            if (sideA)
-                target.Add((view.MainNameID, view.Connection.EdgeIndex));
-            if (sideB)
-                target.Add((view.TargetNameID, view.Connection.OppositeEdgeIndex));
-        }
+        var (inMap, crossMap) = ConnectionEnds(map);
 
         foreach (var entry in EntriesOf(map, set))
         {
@@ -200,6 +185,42 @@ public static class NavigationOverlayBuilder
             return null;
 
         return face;
+    }
+
+    /// <summary>The ends of every connection of a map, by navmesh NameID and edge, from this map's side: in the map, and to its neighbours.</summary>
+    public static (HashSet<(int, int)> InMap, HashSet<(int, int)> CrossMap) ConnectionEnds(NavigationMap map)
+    {
+        var inMap = new HashSet<(int, int)>();
+        var crossMap = new HashSet<(int, int)>();
+
+        foreach (var view in NavigationRemap.Connections(map))
+        {
+            var target = view.IsCrossMap ? crossMap : inMap;
+            bool sideA = !view.IsCrossMap || view.Nvc.MapA == map.MapId;
+            bool sideB = !view.IsCrossMap || view.Nvc.MapB == map.MapId;
+
+            if (sideA)
+                target.Add((view.MainNameID, view.Connection.EdgeIndex));
+            if (sideB)
+                target.Add((view.TargetNameID, view.Connection.OppositeEdgeIndex));
+        }
+
+        return (inMap, crossMap);
+    }
+
+    /// <summary>
+    /// The overlay of a single navmesh, drawn from the given mesh (e.g. one with edited vertices), with the connection
+    /// ends of its map from <see cref="ConnectionEnds"/>. Only its faces, edges and user edges.
+    /// </summary>
+    public static NavOverlay BuildEntry(string mapId, NavmeshSet set, NVA_ER.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
+        (HashSet<(int, int)> InMap, HashSet<(int, int)> CrossMap) ends)
+    {
+        var overlay = new NavOverlay { MapId = mapId, Set = set };
+
+        if (mesh != null && mesh.m_faces.Count > 0)
+            AddMesh(overlay, entry, mesh, world, layers, ends.InMap, ends.CrossMap);
+
+        return overlay;
     }
 
     private static void AddMesh(NavOverlay overlay, NVA_ER.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
@@ -434,7 +455,7 @@ public static class NavigationOverlayBuilder
     }
 
     /// <summary>Möller–Trumbore, both sides.</summary>
-    private static bool RayTriangle(Vector3 origin, Vector3 direction, Vector3 a, Vector3 b, Vector3 c, out float t)
+    internal static bool RayTriangle(Vector3 origin, Vector3 direction, Vector3 a, Vector3 b, Vector3 c, out float t)
     {
         t = 0;
         var e1 = b - a;

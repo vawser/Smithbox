@@ -191,6 +191,9 @@ public class NavigationBank
         }
     }
 
+    /// <summary>The navmesh bank's current document of a file, or null if it has none (e.g. its map was unloaded).</summary>
+    public Havok.HavokDocument GetNavmeshDocument(string name) => NavmeshBank.GetDocument(name);
+
     /// <summary>
     /// Puts a navmesh document in a map's navmesh files under a name, in place of the one it has, or as a new file;
     /// null takes the file out. The next GetMap sees it.

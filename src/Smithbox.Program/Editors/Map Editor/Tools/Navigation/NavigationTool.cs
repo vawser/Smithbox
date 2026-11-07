@@ -148,6 +148,12 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Edit")}##navigationTabEdit"))
+            {
+                DisplayEditTab();
+                ImGui.EndTabItem();
+            }
+
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Face_Data")}##navigationTabFaceData"))
             {
                 DisplayFaceDataTab();

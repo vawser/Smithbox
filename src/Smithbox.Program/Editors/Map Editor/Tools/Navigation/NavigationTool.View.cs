@@ -201,6 +201,7 @@ public partial class NavigationTool
             {
                 PaintMode = false;
                 LinkMode = false;
+                StopVertexEdit();
             }
             else
                 SetPicked(null);
@@ -218,6 +219,7 @@ public partial class NavigationTool
         {
             PickMode = false;
             LinkMode = false;
+            StopVertexEdit();
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Paint_Mode_TT"));
 
@@ -407,9 +409,16 @@ public partial class NavigationTool
         OverlayContainer = map;
         OverlayNavigation = navigation;
         int onlyModel = SelectedModelID;
+        bool onlySelected = OverlayOnlySelectedModel && onlyModel >= 0;
+
+        // Navmeshes with vertex edits are drawn by their previews instead (Edit tab)
+        var without = VertexPreviewedFiles(map);
+        OverlayWithout = without;
+
         OverlayData = NavigationOverlayBuilder.Build(navigation, OverlaySet, e => EntryWorld(map, e), MapWorld(map), Layers,
-            OverlayOnlySelectedModel && onlyModel >= 0 ? e => e.ModelID == onlyModel : null);
+            onlySelected || without.Count > 0 ? e => (!onlySelected || e.ModelID == onlyModel) && !without.Contains(navigation.FileNameOf(e)) : null);
         OverlayRenderer.Show(scene, OverlayData, FaceOpacity);
+        OverlayBuildCount++;
         BlockerOverlayDirty = true;
 
         if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
@@ -483,6 +492,10 @@ public partial class NavigationTool
         CheckBlockerMoves();
         if (BlockerOverlayDirty)
             UpdateBlockerOverlay();
+
+        // Vertex editing works by keys; it only takes the clicks while a vertex is dragged
+        if (UpdateVertexEdit(ray, canInteract))
+            return true;
 
         if (OverlayNavigation == null || (!PickMode && !PaintMode && !LinkMode))
             return false;

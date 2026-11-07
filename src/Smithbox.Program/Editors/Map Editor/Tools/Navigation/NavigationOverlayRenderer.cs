@@ -50,9 +50,10 @@ public sealed class NavigationOverlayRenderer
         => Color.FromArgb(alpha, (int)(c.X * 255), (int)(c.Y * 255), (int)(c.Z * 255));
 
     /// <summary>
-    /// Replaces what is shown with the overlay. Face fills use the given opacity (0 to 100).
+    /// Replaces what is shown with the overlay. Face fills use the given opacity (0 to 100). With a legend (another
+    /// renderer's), face data values it lists take its colours, so a part drawn on its own matches the rest.
     /// </summary>
-    public void Show(RenderScene scene, NavOverlay overlay, float faceOpacity)
+    public void Show(RenderScene scene, NavOverlay overlay, float faceOpacity, IReadOnlyList<(uint Value, Vector3 Color, int Faces)> legendColors = null)
     {
         Clear();
 
@@ -65,7 +66,20 @@ public sealed class NavigationOverlayRenderer
         for (int i = 0; i < faceBatches.Count; i++)
         {
             var batch = faceBatches[i];
-            var color = FacePalette[i % FacePalette.Length];
+            var color = FacePalette[((legendColors?.Count ?? 0) + i) % FacePalette.Length];
+
+            if (legendColors != null)
+            {
+                foreach (var (value, legendColor, _) in legendColors)
+                {
+                    if (value == batch.Key)
+                    {
+                        color = legendColor;
+                        break;
+                    }
+                }
+            }
+
             legend.Add((batch.Key, color, batch.FaceCount));
 
             var fill = ColorHelper.GetTransparencyColor(color, faceOpacity);

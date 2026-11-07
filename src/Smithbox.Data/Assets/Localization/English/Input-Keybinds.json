@@ -361,6 +361,30 @@
       "Text": "While editing collision with the Collision Editor, held to drag the vertex under the cursor."
     },
     {
+      "Key": "KEY_MapEditor_NavigationEditor_Raise",
+      "Text": "Navigation Editor: Raise Vertex"
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Raise_TT",
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, raises the vertex under the cursor."
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Lower",
+      "Text": "Navigation Editor: Lower Vertex"
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Lower_TT",
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, lowers the vertex under the cursor."
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Drag",
+      "Text": "Navigation Editor: Drag Vertex"
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Drag_TT",
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, held to drag the vertex under the cursor."
+    },
+    {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
       "Text": "Rotate Selection (+ x-axis)"
     },

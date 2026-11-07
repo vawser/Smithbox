@@ -93,6 +93,8 @@ if (mode == "rootdump") RootDump.Run(fs, args[1]);
 if (mode == "modeledit") ModelEdit.Run(fs, dict, args);
 if (mode == "navcol") NavCol.Run(fs, dict, args);
 if (mode == "treecheck") TreeCheck.Run(fs, dict, args);
+if (mode == "vertexedit") VertexEdit.Run(fs, dict, args);
+if (mode == "clearance") Clearance.Run(fs, dict, args);
 if (mode == "navgen") NavGen.Run(fs, dict, args);
 if (mode == "cachedump") CacheDump.Run(fs, args[1], int.Parse(args[2]));
 if (mode == "emevdnav") EmevdNav.Run(fs, dict, args);

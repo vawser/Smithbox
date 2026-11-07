@@ -183,6 +183,15 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_CollisionEditor_Drag", Description = "KEY_MapEditor_CollisionEditor_Drag_TT")]
     MapEditor_CollisionEditor_Drag,
 
+    [Display(Name = "KEY_MapEditor_NavigationEditor_Raise", Description = "KEY_MapEditor_NavigationEditor_Raise_TT")]
+    MapEditor_NavigationEditor_Raise,
+
+    [Display(Name = "KEY_MapEditor_NavigationEditor_Lower", Description = "KEY_MapEditor_NavigationEditor_Lower_TT")]
+    MapEditor_NavigationEditor_Lower,
+
+    [Display(Name = "KEY_MapEditor_NavigationEditor_Drag", Description = "KEY_MapEditor_NavigationEditor_Drag_TT")]
+    MapEditor_NavigationEditor_Drag,
+
     [Display(Name = "KEY_MapEditor_Enable_Game_Presence_Object", Description = "KEY_MapEditor_Enable_Game_Presence_TT")]
     MapEditor_Enable_Game_Presence,
 
@@ -504,6 +513,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Raise, new() { Key = Key.Q });
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Lower, new() { Key = Key.E });
         InputManager.Bind(KeybindID.MapEditor_CollisionEditor_Drag, new() { Key = Key.G });
+        InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Raise, new() { Key = Key.Q });
+        InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Lower, new() { Key = Key.E });
+        InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Drag, new() { Key = Key.G });
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
@@ -680,6 +692,9 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_CollisionEditor_Raise, InputCategory.MapEditor },
         { KeybindID.MapEditor_CollisionEditor_Lower, InputCategory.MapEditor },
         { KeybindID.MapEditor_CollisionEditor_Drag, InputCategory.MapEditor },
+        { KeybindID.MapEditor_NavigationEditor_Raise, InputCategory.MapEditor },
+        { KeybindID.MapEditor_NavigationEditor_Lower, InputCategory.MapEditor },
+        { KeybindID.MapEditor_NavigationEditor_Drag, InputCategory.MapEditor },
         { KeybindID.MapEditor_Enable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Disable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Visibility_Flip, InputCategory.MapEditor },

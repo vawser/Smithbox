@@ -8,8 +8,8 @@
 
 - Collision Editor:
     - Add option for multi-flver collision generation (might need heuristic to clean up internal trianges)
+    - Add option to generate f col (default plane straight up from edge, user sets height)
 
 - Navmesh editing
-    - Allow vertex editing
     - Add ability to stitch new maps together (NVC)
-    - Add auto-implement of jumps/fall links based on a height heuristic
+    - Allow vertex editing
