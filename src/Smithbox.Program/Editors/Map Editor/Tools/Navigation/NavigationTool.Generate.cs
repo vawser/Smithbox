@@ -152,8 +152,28 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
 
+        // Jump and fall links
+        bool links = p.Links;
+        float jumpHeight = p.JumpHeight, fallHeight = p.FallHeight, reach = p.LinkReach;
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Links")}##navigationGenerateLinks_{id}", ref links);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Links_TT"));
+
+        if (links)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateJumpHeight_{id}", ref jumpHeight, 0f, 5f, jumpHeight <= 0 ? LOC.Get("MAP_Navigation_Generate_Jump_Height_Off") : $"{LOC.Get("MAP_Navigation_Generate_Jump_Height")} %.1f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Jump_Height_TT"));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateFallHeight_{id}", ref fallHeight, 0f, 25f, $"{LOC.Get("MAP_Navigation_Generate_Fall_Height")} %.1f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Fall_Height_TT"));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat($"##navigationGenerateLinkReach_{id}", ref reach, 0.5f, 12f, $"{LOC.Get("MAP_Navigation_Generate_Link_Reach")} %.1f m");
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Link_Reach_TT"));
+        }
+
         p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
-            FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly };
+            FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly,
+            Links = links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach };
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))
             p = defaults;
@@ -523,11 +543,16 @@ public partial class NavigationTool
                 var current = Bank.GetMap(map);
                 int faces = n.Mesh.m_faces.Count, oFaces = o.Mesh.m_faces.Count;
 
+                // The links each set got, when either had them on
+                string links = pn.Links || po.Links
+                    ? " " + LOC.Get("MAP_Navigation_Generate_Done_Links", n.JumpLinks, n.FallLinks, o.JumpLinks, o.FallLinks)
+                    : "";
+
                 if (kind == ModelTarget.New)
                 {
                     if (current != null)
                         EditModel(map, current, () => NavModelEdit.Add(current, newModelId, nDoc, oDoc),
-                            LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, newModelId, triangles.Count / 3));
+                            LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, newModelId, triangles.Count / 3) + links);
                     return;
                 }
 
@@ -540,7 +565,7 @@ public partial class NavigationTool
                 }
 
                 EditModel(map, current, () => NavModelEdit.Generate(current, currentTarget, nDoc, oDoc, modelId),
-                    LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, modelId ?? currentTarget.ModelID, triangles.Count / 3));
+                    LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, modelId ?? currentTarget.ModelID, triangles.Count / 3) + links);
             });
         });
     }

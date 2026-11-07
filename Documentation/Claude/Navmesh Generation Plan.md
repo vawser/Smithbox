@@ -221,6 +221,41 @@ solid but never walkable. Every tagged part of a loaded map counts in each gener
   - face extent p50 2 m and p90 2 m (Recast's own: 2.6 m and 8.8 m), with coverage unchanged;
   - dropped faces: 4 of 504,116 in n and 12 in o, nearly all in `m12_02_00_00` 4500 (a 200,000-face mesh more than 1 km out).
 
+**Jump and fall links** (2026-11-07; `NavGenParameters.Links`, off by default; `NavigationLinkGenerator.cs`):
+- **The game's links** (NavSurvey `linkgeom`, 47 legacy and open-world maps, ~186k links):
+  - jumps (edge data `0x02`, `0x12`) always go both ways. In n their height change is within ±4.5 m (p95 ±2.6 m); o has none;
+  - falls (`0x04`, `0x14`) are always one-way, down by up to 15.8 m;
+  - **a fall's high byte is the drop in tenths of a metre, rounded down**: `0x60` is 9.60–9.69 m, for every value up to `0x9E`;
+  - reach across: 0.8–5 m in n, 2.6–9.3 m in o. Both ends sit 0.4–1 m inside their faces, and every start is within 1.5 m
+    of a boundary of the game's mesh;
+  - jumps and falls have the same shape (both mostly over a hole, with no floor under the midpoint), so the game's choice
+    between them can't be read from geometry alone.
+- **The heuristic**, run on the finished mesh before the file is built:
+  - every boundary edge is sampled about every metre; from 0.4 m inside the face it searches outward in 0.2 m steps, up to
+    the reach, for the highest other face at that point;
+  - a height change within the jump height either way is a **jump, both ways** (`0x2`);
+  - a drop deeper than the jump height and the climb, down to the fall height, is a **fall, one way**
+    (`0x4 | floor(drop × 10) << 8`);
+  - anything higher stops the search (a wall), and so does ground within the climb when jumps are off;
+  - a link is skipped when:
+    - the path through the air hits the collision or a blocker box, tested at 0.5 and 0.9 of the agent height
+      (out level with the higher end, then up or down);
+    - the two faces are already within 3 × the link's length + 4 m of walking (a Dijkstra search over face centres);
+    - the face pair already has a link, or either face already has 6.
+  - The links go in through `NavUserEdges.AddAll`, a one-pass bulk insert for meshes without user edges or caches. It
+    lays them out as the game does: after the original edges, packed in face order, with their own vertices.
+- Defaults: n jump 2.5 m, fall 15 m, reach 5 m; o jump 0 (falls only), fall 15 m, reach 9 m.
+- **`navgen`, 12 models** (`m10_01`, `m11_00`, `m12_01`, `m16_00`):
+  - every mesh passes `NavUserEdges.Check` and writes and reads back;
+  - links add about 0.2 s per mesh;
+  - **on the game's own n meshes**, the heuristic finds 737 links against the game's 785:
+    - 70% of the game's links have one within 2 m at both ends;
+    - 50% of ours are near a game link;
+    - where they match, the jump-or-fall choice agrees 96% of the time;
+  - **on generated meshes** few match, because the meshes differ: only 41% of the game's link starts are near a boundary
+    of the generated mesh, and much of what the game links, a generated mesh walks;
+  - **o over-generates**: 243 links on the game's o meshes, which have 23. Raise the climb, or keep links off for o.
+
 **Next:** asset collision (MSB asset parts placed with their own collision models), which covers what map collision misses.
 Then clearance seeding, gate nodes, and dropping unreachable areas (keep only regions joined to a seed).
 

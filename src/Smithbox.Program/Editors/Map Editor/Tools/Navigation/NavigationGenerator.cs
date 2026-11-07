@@ -62,6 +62,18 @@ public sealed record NavGenParameters
     /// <summary>Split every face into triangles, after the grid.</summary>
     public bool TrianglesOnly { get; init; }
 
+    /// <summary>Add jump and fall links between faces across gaps and down drops (NavLinkGenerator).</summary>
+    public bool Links { get; init; }
+
+    /// <summary>A link whose ends differ in height by no more than this, either way, is a jump, both ways; 0 for none.</summary>
+    public float JumpHeight { get; init; } = 2.5f;
+
+    /// <summary>The deepest drop a fall link goes down; deeper than the jump height (and the climb), it is a fall, one way.</summary>
+    public float FallHeight { get; init; } = 15f;
+
+    /// <summary>How far out from a boundary edge a link's landing is looked for, across.</summary>
+    public float LinkReach { get; init; } = 5f;
+
     /// <summary>
     /// Defaults for the n set (normal characters): a fine mesh close to the collision. Tuned with NavSurvey navgen on
     /// m10_01 and m12_01, whose walkable surfaces are all map collision: it covers 87% (median) of the game's n meshes.
@@ -77,6 +89,9 @@ public sealed record NavGenParameters
         MaxClimb = 1.2f,
         MinRegionArea = 6f,
         MaxEdgeLength = 12f,
+        // The game's o meshes have falls only, reaching further across (NavSurvey linkgeom)
+        JumpHeight = 0f,
+        LinkReach = 9f,
     };
 }
 
@@ -100,6 +115,11 @@ public sealed class NavGenResult
 
     /// <summary>Faces dropped as still wound backwards after the clean-up: a last resort, normally 0.</summary>
     public int DroppedFaces { get; init; }
+
+    /// <summary>The jump links (both ways) and fall links (one way) added, when links are on.</summary>
+    public int JumpLinks { get; init; }
+
+    public int FallLinks { get; init; }
 
     public bool Ok => Error == null;
 }
@@ -283,7 +303,24 @@ public static class NavigationGenerator
                 insideCut++;
         }
 
-        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped };
+        // Jump and fall links, last, as user edges after all the original edges; their paths go round the collision and
+        // the blockers' boxes
+        int jumps = 0, falls = 0;
+        if (p.Links)
+        {
+            var solids = new List<Vector3>(triangles.Count + blockerTriangles.Count);
+            solids.AddRange(triangles);
+            solids.AddRange(blockerTriangles);
+
+            var found = NavLinkGenerator.Find(mesh, solids, p);
+            if (found.Links.Count > 0 && NavUserEdges.AddAll(mesh, found.Links).Ok)
+            {
+                jumps = found.Jumps;
+                falls = found.Falls;
+            }
+        }
+
+        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped, JumpLinks = jumps, FallLinks = falls };
     }
 
     /// <summary>

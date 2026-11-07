@@ -84,6 +84,7 @@ if (mode == "names") Names.Run(fs, dict, args);
 if (mode == "havokedit") HavokEdit.Run(fs, dict, args);
 if (mode == "useredges") UserEdges.Run(fs, dict, args);
 if (mode == "linkedit") LinkEdit.Run(fs, dict, args);
+if (mode == "linkgeom") LinkGeom.Run(fs, dict, args);
 if (mode == "stitchsurvey") StitchSurvey.Run(fs, dict, args);
 if (mode == "stitch") StitchEval.Run(fs, dict, args);
 if (mode == "stitchedit") StitchEdit.Run(fs, dict, args);

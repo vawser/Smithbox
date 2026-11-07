@@ -122,6 +122,55 @@ static class NavGen
                         }
                     }
 
+                    // Jump and fall links: the layout check, and the count against the game's links on this model
+                    if (p.Links)
+                    {
+                        var linkProblem = NavUserEdges.Check(mesh, NavUserEdges.CachesOf(mesh));
+                        Count(linkProblem == null ? $"{set} links: layout as the game's" : $"{set} links: layout problem", 1, linkProblem == null ? null : $"{mapId} {model.ModelID}: {linkProblem}");
+                        int gameLinks = game.m_faces.Sum(x => x.m_numUserEdges) / 2;
+                        Count($"{set} links: jumps", result.JumpLinks);
+                        Count($"{set} links: falls", result.FallLinks);
+                        Count($"{set} links: game's links", gameLinks);
+                        // Matching: a link whose two ends are each within 2 m of a game link's (either way round for a jump)
+                        static List<(Vector3 A, Vector3 B, bool Fall)> Ends(hkaiNavMesh m)
+                        {
+                            var list = new List<(Vector3, Vector3, bool)>();
+                            int orig = m.m_faces.Sum(x => x.m_numEdges);
+                            Vector3 Mid(int e) => (new Vector3(m.m_vertices[m.m_edges[e].m_a].X, m.m_vertices[m.m_edges[e].m_a].Y, m.m_vertices[m.m_edges[e].m_a].Z)
+                                + new Vector3(m.m_vertices[m.m_edges[e].m_b].X, m.m_vertices[m.m_edges[e].m_b].Y, m.m_vertices[m.m_edges[e].m_b].Z)) / 2;
+                            for (int e = orig; e < m.m_edges.Count; e++)
+                            {
+                                var ed = m.m_edges[e];
+                                if ((ed.m_flags & hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED) != 0 || ed.m_oppositeEdge == 0xFFFFFFFF || (ed.m_oppositeEdge >> 22) != 0) continue;
+                                int o = (int)ed.m_oppositeEdge;
+                                bool oneWay = (m.m_edges[o].m_flags & hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED) != 0;
+                                if (!oneWay && o < e) continue;
+                                list.Add((Mid(e), Mid(o), oneWay));
+                            }
+                            return list;
+                        }
+                        var ours = Ends(mesh);
+                        var theirs = Ends(game);
+                        bool Near((Vector3 A, Vector3 B, bool Fall) x, (Vector3 A, Vector3 B, bool Fall) y)
+                            => (Vector3.Distance(x.A, y.A) < 2 && Vector3.Distance(x.B, y.B) < 2) || (!x.Fall && !y.Fall && Vector3.Distance(x.A, y.B) < 2 && Vector3.Distance(x.B, y.A) < 2);
+                        int ourMatched = ours.Count(x => theirs.Any(y => Near(x, y)));
+                        int theirMatched = theirs.Count(y => ours.Any(x => Near(x, y)));
+                        int kindMatched = ours.Count(x => theirs.Any(y => Near(x, y) && x.Fall == y.Fall));
+                        // The heuristic alone: links found on the game's own mesh (it reads only the original edges), against the game's links
+                        var onGame = NavLinkGenerator.Find(game, triangles, p).Links.Select(l => (l.FromPoint, l.ToPoint, !l.Bidirectional)).ToList();
+                        int onGameMatched = onGame.Count(x => theirs.Any(y => Near(x, y)));
+                        int onGameKind = onGame.Count(x => theirs.Any(y => Near(x, y) && x.Item3 == y.Fall));
+                        int theirOnGame = theirs.Count(y => onGame.Any(x => Near(x, y)));
+                        Count($"{set} on game mesh: links found", onGame.Count);
+                        Count($"{set} on game mesh: near a game link", onGameMatched);
+                        Count($"{set} on game mesh: near a game link of the same kind", onGameKind);
+                        Count($"{set} on game mesh: game links near one found", theirOnGame);
+                        Count($"{set} links: generated near a game link", ourMatched);
+                        Count($"{set} links: generated near a game link of the same kind", kindMatched);
+                        Count($"{set} links: game links near a generated one", theirMatched);
+                        Console.WriteLine($"  {mapId} {model.ModelID:D6} {set}: {result.JumpLinks} jumps, {result.FallLinks} falls ({ourMatched} near a game link, {kindMatched} same kind); game {gameLinks} links ({theirMatched} near ours)");
+                    }
+
                     var problem = Validate(mesh);
                     Count(problem == null ? $"{set} mesh: valid" : $"{set} mesh: invalid", 1, problem == null ? null : $"{mapId} {model.ModelID}: {problem}");
 

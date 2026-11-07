@@ -219,19 +219,13 @@ public static class NavUserEdges
             return result;
         }
 
-        // A short segment across the direction of the link, at each end
-        var direction = link.ToPoint - link.FromPoint;
-        direction.Y = 0;
-        var across = direction.LengthSquared() > 1e-6f ? Vector3.Normalize(new Vector3(-direction.Z, 0, direction.X)) : Vector3.UnitX;
-        across *= HalfWidth;
-
+        var across = Across(link);
         int fromVertexA = AddVertex(mesh, caches, link.FromPoint - across);
         int fromVertexB = AddVertex(mesh, caches, link.FromPoint + across);
         int toVertexA = AddVertex(mesh, caches, link.ToPoint + across);
         int toVertexB = AddVertex(mesh, caches, link.ToPoint - across);
 
-        var userFlags = hkaiNavMesh.EdgeFlagBits.EDGE_ORIGINAL | hkaiNavMesh.EdgeFlagBits.EDGE_USER;
-        var backFlags = link.Bidirectional ? userFlags : userFlags | hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED;
+        var (userFlags, backFlags) = Flags(link);
 
         var forward = new hkaiNavMesh.Edge { m_a = fromVertexA, m_b = fromVertexB, m_oppositeEdge = None, m_oppositeFace = (uint)link.ToFace, m_flags = userFlags };
         var back = new hkaiNavMesh.Edge { m_a = toVertexA, m_b = toVertexB, m_oppositeEdge = None, m_oppositeFace = (uint)link.FromFace, m_flags = backFlags };
@@ -251,6 +245,113 @@ public static class NavUserEdges
         int first = Math.Min(forwardIndex, backIndex);
         int second = Math.Max(forwardIndex, backIndex);
         result.EdgeMap = e => e < first ? e : e + 1 < second ? e + 1 : e + 2;
+        return result;
+    }
+
+    /// <summary>Half a new user edge: a short segment across the direction of the link, the same at each end.</summary>
+    private static Vector3 Across(NavUserEdgeLink link)
+    {
+        var direction = link.ToPoint - link.FromPoint;
+        direction.Y = 0;
+        var across = direction.LengthSquared() > 1e-6f ? Vector3.Normalize(new Vector3(-direction.Z, 0, direction.X)) : Vector3.UnitX;
+        return across * HalfWidth;
+    }
+
+    /// <summary>The flags of a link's forward and back edges: the back one is blocked unless the link goes both ways.</summary>
+    private static (hkaiNavMesh.EdgeFlagBits Forward, hkaiNavMesh.EdgeFlagBits Back) Flags(NavUserEdgeLink link)
+    {
+        var userFlags = hkaiNavMesh.EdgeFlagBits.EDGE_ORIGINAL | hkaiNavMesh.EdgeFlagBits.EDGE_USER;
+        return (userFlags, link.Bidirectional ? userFlags : userFlags | hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED);
+    }
+
+    /// <summary>
+    /// Adds many links at once to a mesh that has no user edges and no clearance caches (a generated one), as Add would
+    /// one by one, in one pass: the user edges after the original ones, packed in face order, each face's in the order
+    /// of the links, with their own vertices after the original ones. Refused if the mesh has user edges or caches.
+    /// </summary>
+    public static NavUserEdgeResult AddAll(hkaiNavMesh mesh, IReadOnlyList<NavUserEdgeLink> links)
+    {
+        var result = new NavUserEdgeResult();
+
+        if (mesh.m_faces.Any(f => f.m_numUserEdges > 0) || CachesOf(mesh).Count > 0 || OriginalEdgeCount(mesh) != mesh.m_edges.Count)
+        {
+            result.Error = "MAP_Navigation_Link_Error_Cache";
+            return result;
+        }
+
+        foreach (var link in links)
+        {
+            if (link.FromFace == link.ToFace)
+            {
+                result.Error = "MAP_Navigation_Link_Error_Same_Face";
+                return result;
+            }
+            if (link.FromFace < 0 || link.ToFace < 0 || link.FromFace >= mesh.m_faces.Count || link.ToFace >= mesh.m_faces.Count)
+            {
+                result.Error = "MAP_Navigation_Link_Error_Face";
+                return result;
+            }
+        }
+
+        // Each face's user edges: (link, forward or back), in link order
+        var byFace = new List<(int Link, bool Forward)>[mesh.m_faces.Count];
+        for (int i = 0; i < links.Count; i++)
+        {
+            (byFace[links[i].FromFace] ??= new()).Add((i, true));
+            (byFace[links[i].ToFace] ??= new()).Add((i, false));
+        }
+
+        var forwardEdge = new int[links.Count];
+        var backEdge = new int[links.Count];
+        bool striding = mesh.m_edgeDataStriding > 0 && mesh.m_edgeData.Count == mesh.m_edges.Count * mesh.m_edgeDataStriding;
+
+        for (int f = 0; f < mesh.m_faces.Count; f++)
+        {
+            if (byFace[f] == null)
+                continue;
+
+            var face = mesh.m_faces[f];
+            face.m_startUserEdgeIndex = mesh.m_edges.Count;
+            face.m_numUserEdges = (short)byFace[f].Count;
+
+            foreach (var (i, forward) in byFace[f])
+            {
+                var link = links[i];
+                var across = Across(link);
+                var (forwardFlags, backFlags) = Flags(link);
+
+                int index = mesh.m_edges.Count;
+                int va = forward ? AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.FromPoint - across) : AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.ToPoint + across);
+                int vb = forward ? AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.FromPoint + across) : AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.ToPoint - across);
+
+                mesh.m_edges.Add(new hkaiNavMesh.Edge
+                {
+                    m_a = va,
+                    m_b = vb,
+                    m_oppositeEdge = None,
+                    m_oppositeFace = (uint)(forward ? link.ToFace : link.FromFace),
+                    m_flags = forward ? forwardFlags : backFlags,
+                });
+
+                if (striding)
+                {
+                    mesh.m_edgeData.Add(link.EdgeData);
+                    for (int k = 1; k < mesh.m_edgeDataStriding; k++)
+                        mesh.m_edgeData.Add(0);
+                }
+
+                if (forward) forwardEdge[i] = index;
+                else backEdge[i] = index;
+                result.Edges.Add(index);
+            }
+        }
+
+        for (int i = 0; i < links.Count; i++)
+        {
+            mesh.m_edges[forwardEdge[i]].m_oppositeEdge = (uint)backEdge[i];
+            mesh.m_edges[backEdge[i]].m_oppositeEdge = (uint)forwardEdge[i];
+        }
+
         return result;
     }
 
