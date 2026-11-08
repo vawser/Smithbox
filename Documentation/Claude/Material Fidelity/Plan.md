@@ -26,8 +26,10 @@ shows the biggest remaining gaps are layered shaders whose extra layers are neve
 Blend-recipe generator built (`ShaderSignature blends`, `{GAME}_GeneratedBlends.json`, Signatures/README.md). It
 reproduces 60/97 ER recipes and adds 38 ER, 49 NR and 52 AC6 recipes. NR Ok is now 76.9%, ER 80.3% (audit not rerun
 after the last 11 TEXCOORD2/3 recipes). Colour-only layers, any-TEXCOORD vertex sources (two at most) and the extended per-layer blend form are built, so AC6
-`[MS]` blends have recipes. AC6 Ok is now 57.3% (was 47.2%). Still left: the `ColorAdjust` weight form, `[MS]` layers
-whose weight reads two vertex values, the `C[DetailBlend]` stacks, then Phase 4.
+`[MS]` blends have recipes. AC6 Ok is now 57.3% (was 47.2%). `C[DetailBlend]` detail stacks are built (`ShaderSignature detailstacks`,
+`{GAME}_DetailStacks.json`, Signatures/README.md), not yet checked in the app. They raised ER Ok to 82.3% and NR to 79.9%.
+Still left: the whole-albedo layers of the other `C[DetailBlend]` permutations (and `[S2]` back faces), the
+`ColorAdjust` weight form, and `[MS]` layers whose weight reads two vertex values. Then Phase 4.
 
 ---
 

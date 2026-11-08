@@ -248,6 +248,44 @@ public struct MaterialDetail
 
     /// <summary>The [Ov_AN] overlay, see <see cref="MaterialDetailRecipe.AlbedoBlend" /></summary>
     public const uint AlbedoOverlay = 1;
+
+    /// <summary>The low byte of Pad0 is the albedo mode, these bits above it the number of stack layers</summary>
+    public const uint AlbedoModeMask = 0xFF;
+    public const int StackCountShift = 8;
+}
+
+/// <summary>
+///     One layer of a detail stack (C[DetailBlend], <see cref="MaterialDetailRecipe.Stack" />), read by the flver
+///     fragment shader as entries 15 to 17, after <see cref="MaterialLayerDetailExtra" />. The layer is lerped over
+///     the details below it by sat(pow(Weight.x * map[Weight.w] + Weight.y, Weight.z)).
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialDetailStackEntry
+{
+    /// <summary>rgb multiplies the layer's albedo, w is unused</summary>
+    public Vector4 Color;
+
+    /// <summary>x the scale, y the bias, z the power, w the channel (0-3) of the weight map</summary>
+    public Vector4 Weight;
+
+    /// <summary>Tiles the layer's albedo and normal, which share a UV group</summary>
+    public Vector2 Tiling;
+
+    /// <summary>The albedo's texture index in the low 16 bits, the normal's in the high, 0 for none</summary>
+    public uint Textures;
+
+    /// <summary>The weight map's texture index (the same in every layer), sampled with the base normal's tiling</summary>
+    public uint WeightTex;
+
+    public static MaterialDetailStackEntry Default => new() { Color = Vector4.One, Weight = new Vector4(0, 0, 1, 0), Tiling = Vector2.One };
+}
+
+/// <summary>Everything of a material with a detail stack, which has every entry before it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithDetailStack
+{
+    public MaterialWithLayerDetail Layered;
+    public MaterialDetailStackEntry Layer1, Layer2, Layer3;
 }
 
 /// <summary>

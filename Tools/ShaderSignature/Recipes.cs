@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 /// where s is the sharpness (the cbuffer params every term shares), v the source (a mask channel, or a vertex value),
 /// possibly inverted, and m the detail mask. A layer's normal is the top of the lerp in RT0.x with the same weight.
 /// </summary>
-static class Recipes
+static partial class Recipes
 {
     public class Result
     {

@@ -232,7 +232,7 @@ class Dxil
         public bool IsConst => Id < 0;
     }
 
-    public enum Op { Leaf, Add, Sub, Mul, Div, Mad, Saturate, Min, Max, Dot, Other }
+    public enum Op { Leaf, Add, Sub, Mul, Div, Mad, Saturate, Min, Max, Dot, Exp2, Log2, Other }
 
     /// <summary>One value: what it does, its operands, and for a leaf its name (tex:..., cb:..., in:...)</summary>
     public record Node(int Id, Op Op, Arg[] Args, string Leaf);
@@ -275,6 +275,8 @@ class Dxil
         if (fm.Success) return new Node(id, Op.Mad, [ArgOf(fm.Groups[1].Value), ArgOf(fm.Groups[2].Value), ArgOf(fm.Groups[3].Value)], "");
         var u = DxUnary.Match(t);
         if (u.Success && u.Groups[1].Value == "7") return new Node(id, Op.Saturate, [ArgOf(u.Groups[2].Value)], "");
+        // Exp and Log are base 2
+        if (u.Success && u.Groups[1].Value is "21" or "23") return new Node(id, u.Groups[1].Value == "21" ? Op.Exp2 : Op.Log2, [ArgOf(u.Groups[2].Value)], "");
         var bi = DxBinary.Match(t);
         if (bi.Success && bi.Groups[1].Value is "35" or "36")
             return new Node(id, bi.Groups[1].Value == "35" ? Op.Max : Op.Min, [ArgOf(bi.Groups[2].Value), ArgOf(bi.Groups[3].Value)], "");

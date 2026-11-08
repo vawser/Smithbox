@@ -115,7 +115,60 @@ Where it doesn't match the checked-in recipes:
   Supporting these means a wider per-layer blend entry: a channel selector, a bias and a soft scale for each of the 3
   upper layers. The material buffer would then carry one more 48-byte entry for blended materials.
 
-**Parser fixes found on the way.** All tables were regenerated after both:
+## Detail stacks (2026-11-08)
+
+`ShaderSignature <GAME> detailstacks <cacheDir> <outJson> [shaderRegex]` (`DetailStacks.cs`) writes
+`Assets/Material Definitions/{GAME}_DetailStacks.json`. Run it with `STACK_DEBUG=1` to print each stack, or `=2` for
+what uses a stack that was rejected. Built 2026-11-08, not yet checked in the app.
+
+**What they are.** `C[DetailBlend]` permutations above 0 lerp up to four detail albedos together. The result then
+multiplies the base albedo by 4.55, as a single detail does:
+
+```
+d      = lerp(lerp(lerp(c1·T2, c0·T1, w1), c5·T10, w2), c2·T4, w3)
+albedo = sat(base · d · 4.55)
+```
+
+The normals follow the same weights: `lerp(lerp(T5, T6, w1), T12, w2) …`, and then `(n·2 - 1)·f10` is added to the base
+normal. Each weight reads one channel of the base normal map (T0):
+
+- `w1 = sat((T0.b·22)^260)`: a step at a blue of 1/22. Blue is gloss elsewhere; here, near-zero gloss marks T2.
+- `w2 = sat((0.5 - f19(T0.a - 0.5))·2.05 - 1.05)`: a ramp up as alpha falls.
+- `w3`: the same ramp with `+f20`, rising as alpha grows.
+
+Each permutation wires in different slots. The UV groups pair them: (1,6), (2,5), (10,12) and (4,9).
+
+**Recipe.** `MaterialDetailRecipe.Stack`: the bottom detail is the recipe's own `Albedo`/`Color`/`Normal`. Each layer has
+`Albedo`, `Color` and `Normal`, plus `Channel`, `Scale`, `Bias` and `Power`, meaning `w = sat(pow(Scale·x + Bias, Power))`.
+`StackWeightMap` is the slot of the map. The generator reads both weight forms as that, with `exp2(log2(X)·P)` as the
+pow. `NormalStrength` is copied from the checked-in `_Details.json` entry (key, `@0`, or plain name). The app and the
+census replace the `_Details` entry of a key that has a stack (`MaterialShaderTable.MergeDetailStacks`).
+
+| | ER | NR | AC6 |
+|---|---|---|---|
+| Stacks written | 38, in 14 shaders | 46, in 12 | 4, in 4 |
+| `C[DetailBlend]` permutations | 1, 3, 6, 9, 13, 16, 18 | | |
+
+**Viewport.**
+- The detail entry's `Pad0` holds the layer count from bit 8.
+- Entries +15 to +17 are `MaterialDetailStackEntry`, one per layer: colour, weight (scale, bias, power, channel), tiling,
+  albedo/normal texture indices and the weight map. They come after the extended-blend entries, so a stacked material
+  allocates all 18 (`MaterialWithDetailStack`).
+- `FlverShader.frag` mixes the layers' albedos (tinted) and normals by `DetailStackWeights` before the existing
+  multiply and normal offset.
+- The weight map is the base normal, loaded a second time and sampled with layer 0's normal tiling.
+- A missing layer texture counts as neutral (`1/4.55`, flat normal).
+
+**Not done:**
+- **Whole-albedo layers.** Permutations 2, 4, 5, 7, 8, 10–12, 14, 17, 19 and 20 lerp their extra layers over the
+  *finished* albedo, `lerp(c1·T2, base·d·4.55, w)`, so those layers replace the colour rather than detail it. 15+
+  also pick `c3·T8` on back faces (`SV_IsFrontFace`). This needs a second layer kind applied after the multiply, plus
+  its normal equivalent. The generator rejects these ("isn't multiplied by 4.55": ER 214 shader permutations).
+- **Weights of other forms** ("weight not understood", ER 72), in other shaders the walk reaches.
+
+## Parser fixes
+
+Found while building the blend generator. All tables were regenerated after both:
 - **Signature order.** Input/output element IDs follow the second (DXIL) signature table, not the first (register
   order). Some `in:` names had been wrong. NR's UV table changed (618 → 610 shaders).
 - **Long field names.** A cbuffer field whose name runs into the comment (`name;; Offset:`) had been skipped, and its

@@ -93,12 +93,17 @@ Dropped. These are the biggest:
     the mode and strength, and `FlverShader.frag` applies the overlay.
   - The result: ER's overlay normal (2.2%) and albedo (1.4%) are now drawn. ER Ok 78.5% → 80.1%, NR 73.7% → 74.5%.
     0.09% remain where the overlay's path is only in the FLVER, since `ResolveDetailRecipe` reads MATBIN paths only.
-- **`C[DetailBlend]` detail stacks: not done.** Permutations above 0 blend up to three detail albedos and normals
-  before laying them over the base, with weights taken from the base normal map's blue and alpha. Perm 3, for example:
-  `w1 = sat((T0.b·22)^260)`, `d = lerp(lerp(c1·T2, c0·T1, w1), c5·T10, w2)`, and
-  `w2 = sat((0.5 - f19(T0.a - 0.5))·2.05 - 1.05)`. Each permutation wires different slots in. The base and the first
-  detail are already drawn, so what's missing is only the variety of detail patterns. It needs a recipe kind of its
-  own, generated per permutation.
+- **`C[DetailBlend]` detail stacks: partly done 2026-11-08, not yet checked in the app.**
+  - What they are: permutations above 0 blend up to three detail albedos and normals before laying them over the
+    base, with weights taken from the base normal map's blue and alpha. Perm 3, for example:
+    `w1 = sat((T0.b·22)^260)`, `d = lerp(lerp(c1·T2, c0·T1, w1), c5·T10, w2)`, and
+    `w2 = sat((0.5 - f19(T0.a - 0.5))·2.05 - 1.05)`.
+  - The generator: `ShaderSignature detailstacks` writes `{GAME}_DetailStacks.json`. The format and the viewport path
+    are in Signatures/README.md, Detail stacks.
+  - The result: ER Ok 80.3% → 82.3% and Dropped 13.3% → 11.3%. NR Ok 76.8% → 79.9% and Dropped 17.5% → 14.5%.
+    `C[DetailBlend]`'s Dropped share fell from 19.5 to 9.7 points (ER) and from 29.6 to 14.5 (NR). AC6 is unchanged.
+  - Still dropped: permutations whose extra layers replace the finished albedo instead of joining the detail
+    (2, 5, 8, 14, …), and the `[S2]` back-face layers. Those need a second layer kind.
 - **AC6 `[MS]` blends: not done.** These fit the existing recipe format. AC6 perm 13's layer weight is
   `sat((v - f23(1 - v)(mask + 0.01))·(f25 + 1))`, which is `MaterialBlendRecipeLayer`'s Soft form, with v = `TEXCOORD8.w`
   and the mask `T19.r` inverted by `f52`. Some layers are a flat colour instead of a texture. They're simply missing

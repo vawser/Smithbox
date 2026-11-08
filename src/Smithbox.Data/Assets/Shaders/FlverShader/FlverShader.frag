@@ -369,6 +369,26 @@ layout(set = 4, binding = 0, std140) buffer materialDetail
     readonly detailData detaildata[];
 };
 
+// Fifteen to seventeen entries after a material, for a detail stack (C[DetailBlend]): the details lerped over the
+// first, by sat(pow(weight.x * map[weight.w] + weight.y, weight.z)). The number of them is in detailData.textures.z
+// from bit 8, see MaterialDetailStackEntry
+struct detailStackData
+{
+	vec4 color;   // rgb: multiplies the albedo
+	vec4 weight;  // x: scale, y: bias, z: power, w: channel of the weight map
+	vec2 tiling;  // the albedo's and normal's
+	uint textures;  // albedo in the low 16 bits, normal in the high, 0 for none
+	uint weightTex; // the weight map, sampled as the base normal is
+};
+
+layout(set = 4, binding = 0, std140) buffer materialDetailStack
+{
+    readonly detailStackData detailstackdata[];
+};
+
+#define DETAIL_ALBEDO_MODE_MASK 0xFFu
+#define DETAIL_STACK_SHIFT 8u
+
 // Nine and ten entries after a material, for materials with a glow
 struct magmaFlowData
 {
@@ -613,6 +633,33 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 	return textureGrad(
 		sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler),
 		(g_uv[uvSet] + (HasFeature(FEATURE_UV_SCROLL) ? scroll * sceneparam.materialTime : vec2(0.0))) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+}
+
+// The number of details stacked over the first, 0 for none
+uint DetailStackCount()
+{
+	return (detaildata[g_mat + 8u].textures.z >> DETAIL_STACK_SHIFT) & 3u;
+}
+
+// The weight of each stack layer, from the map they read (the base normal's blue and alpha), sampled as the base normal is
+vec3 DetailStackWeights(uint count)
+{
+	vec3 weights = vec3(0.0);
+	// Until the map loads only the bottom detail shows
+	if (count == 0u || detailstackdata[g_mat + 15u].weightTex == 0u)
+	{
+		return weights;
+	}
+
+	shadingData shading = shadingdata[g_mat + 1u];
+	vec4 map = SampleAt(detailstackdata[g_mat + 15u].weightTex, 0, shading.tiling.zw, vec2(0.0));
+	for (uint i = 0u; i < count; i++)
+	{
+		vec4 w = detailstackdata[g_mat + 15u + i].weight;
+		float x = map[clamp(int(w.w), 0, 3)];
+		weights[i] = clamp(pow(max(w.x * x + w.y, 0.0), w.z), 0.0, 1.0);
+	}
+	return weights;
 }
 
 // Layers past the first only scroll with a blend recipe. Specular and shininess follow the albedo
@@ -1852,14 +1899,32 @@ void main()
 #endif
 
 	// These textures average about 0.22, so 4.55 leaves the albedo as it was on average
-	if (c_detail && HasFeature(FEATURE_OVERLAYS) && detaildata[g_mat + 8u].textures.x != 0u)
+	if (c_detail && HasFeature(FEATURE_OVERLAYS) && (detaildata[g_mat + 8u].textures.x != 0u || DetailStackCount() > 0u))
 	{
 		detailData overlay = detaildata[g_mat + 8u];
-		vec3 overlayColor = SampleAt(overlay.textures.x, 0, overlay.tiling.xy, vec2(0.0)).rgb;
+		// A detail with no texture is the neutral 1 / 4.55, so a stack layer over it still shows
+		vec3 overlayColor = overlay.textures.x != 0u ? SampleAt(overlay.textures.x, 0, overlay.tiling.xy, vec2(0.0)).rgb : vec3(1.0 / 4.55);
+
+		// A detail stack: each layer lerped over the details below, tinted by its own color. The bottom's tint is
+		// folded in here, so the multiply below takes a color of 1
+		uint stackCount = DetailStackCount();
+		if (stackCount > 0u)
+		{
+			vec3 weights = DetailStackWeights(stackCount);
+			overlayColor *= overlay.colorStrength.rgb;
+			for (uint i = 0u; i < stackCount; i++)
+			{
+				detailStackData layer = detailstackdata[g_mat + 15u + i];
+				uint tex = layer.textures & 0xFFFFu;
+				vec3 layerColor = tex != 0u ? SampleAt(tex, 0, layer.tiling, vec2(0.0)).rgb : vec3(1.0 / 4.55);
+				overlayColor = mix(overlayColor, layerColor * layer.color.rgb, weights[i]);
+			}
+			overlay.colorStrength.rgb = vec3(1.0);
+		}
 
 		// The [Ov_AN] overlay, laid over in gamma space by a strength (MaterialDetail.AlbedoOverlay):
 		// x = A + s(g - 0.5)(O - A), then sat(x + s(0.5 - g)(O - x)), g = O^0.454. Otherwise it multiplies
-		if (overlay.textures.z == 1u)
+		if ((overlay.textures.z & DETAIL_ALBEDO_MODE_MASK) == 1u)
 		{
 			float s = uintBitsToFloat(overlay.textures.w);
 			vec3 g = pow(max(overlayColor, vec3(0.0)), vec3(0.454));
@@ -1963,11 +2028,27 @@ void main()
 	vec3 normalMap;
 	normalMap.xy = normalColor.xy * 2.0 - 1.0;
 
-	if (c_detail && HasFeature(FEATURE_OVERLAYS) && detaildata[g_mat + 8u].textures.y != 0u)
+	if (c_detail && HasFeature(FEATURE_OVERLAYS) && (detaildata[g_mat + 8u].textures.y != 0u || DetailStackCount() > 0u))
 	{
 		detailData overlay = detaildata[g_mat + 8u];
-		vec2 overlayNormal = SampleAt(overlay.textures.y, 0, overlay.tiling.zw, vec2(0.0)).xy * 2.0 - 1.0;
-		normalMap.xy += overlayNormal * overlay.colorStrength.w;
+		// A missing normal is flat, so the layers over it still show
+		vec2 overlayNormal = overlay.textures.y != 0u ? SampleAt(overlay.textures.y, 0, overlay.tiling.zw, vec2(0.0)).xy : vec2(0.5);
+
+		// A detail stack's normals are lerped by the same weights as its albedos, before the offset is taken
+		uint stackCount = DetailStackCount();
+		if (stackCount > 0u)
+		{
+			vec3 weights = DetailStackWeights(stackCount);
+			for (uint i = 0u; i < stackCount; i++)
+			{
+				detailStackData layer = detailstackdata[g_mat + 15u + i];
+				uint tex = layer.textures >> 16u;
+				vec2 layerNormal = tex != 0u ? SampleAt(tex, 0, layer.tiling, vec2(0.0)).xy : vec2(0.5);
+				overlayNormal = mix(overlayNormal, layerNormal, weights[i]);
+			}
+		}
+
+		normalMap.xy += (overlayNormal * 2.0 - 1.0) * overlay.colorStrength.w;
 	}
 
 	normalMap.z = sqrt(1.0 - min(dot(normalMap.xy, normalMap.xy), 1.0));

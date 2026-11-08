@@ -105,6 +105,17 @@ public static class MaterialBinding
             return new(texType == overlay.AlbedoType ? MaterialTextureUse.OverlayAlbedo : MaterialTextureUse.OverlayNormal, LoadedElsewhere: true);
         }
 
+        // The details stacked over the first (C[DetailBlend]), layer 1 up. Their weight map is the base normal, which
+        // is loaded a second time for it and so still routed as itself below
+        if (d?.Detail?.Stack is { Count: > 0 } stack && texType != null)
+        {
+            for (var i = 0; i < stack.Count; i++)
+            {
+                if (texType == stack[i].AlbedoType) return new(MaterialTextureUse.OverlayAlbedo, i + 1, LoadedElsewhere: true);
+                if (texType == stack[i].NormalType) return new(MaterialTextureUse.OverlayNormal, i + 1, LoadedElsewhere: true);
+            }
+        }
+
         // All of the normals of water end the same, and the last would replace the one that was chosen
         if (d?.Water != null && d.SurfaceType != null && role == "NormalMap")
         {

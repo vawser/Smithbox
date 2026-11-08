@@ -122,6 +122,7 @@ public class MaterialData : IDisposable
         var metallicPath = Path.Join(folder, $"{game}_Metallic.json");
         var uvSetsPath = Path.Join(folder, $"{game}_UvSets.json");
         var overlaysPath = Path.Join(folder, $"{game}_Overlays.json");
+        var detailStacksPath = Path.Join(folder, $"{game}_DetailStacks.json");
         var generatedBlendsPath = Path.Join(folder, $"{game}_GeneratedBlends.json");
 
         MaterialShaderTable table = new();
@@ -213,6 +214,14 @@ public class MaterialData : IDisposable
                 string text = await File.ReadAllTextAsync(overlaysPath);
 
                 table.MergeOverlays(JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialDetailRecipe) ?? new());
+            }
+
+            if (File.Exists(detailStacksPath))
+            {
+                string text = await File.ReadAllTextAsync(detailStacksPath);
+
+                table.MergeDetailStacks(JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialDetailRecipe) ?? new());
             }
 

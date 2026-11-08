@@ -57,6 +57,7 @@ class Census
         table.UvSets = Read<Dictionary<string, Dictionary<int, string>>>("_UvSets");
         table.MergeBlends(Read<Dictionary<string, MaterialBlendRecipe>>("_GeneratedBlends"));
         table.MergeOverlays(Read<Dictionary<string, MaterialDetailRecipe>>("_Overlays"));
+        table.MergeDetailStacks(Read<Dictionary<string, MaterialDetailRecipe>>("_DetailStacks"));
         Console.WriteLine($"Shader table: {table.Shaders.Count} entries, {table.TextureGroups.Count} UV group shaders, " +
             $"{table.Blends.Count} blends, {table.Details.Count} details, {table.Magma.Count} magma, {table.Water.Count} water, {table.Fur.Count} fur");
         return table;

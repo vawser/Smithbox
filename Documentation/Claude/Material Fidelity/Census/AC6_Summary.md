@@ -77,13 +77,13 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_0_AlbedoMap | Dropped:7 | 1 | 7 |
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_1_NormalMap | Dropped:7 | 1 | 7 |
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_2_MetallicMap | Dropped:7 | 1 | 7 |
+| FlowMap | Dropped:2 | 1 | 2 |
+| P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:2 | 1 | 2 |
+| P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:2 | 1 | 2 |
 | BlendEdge | BlendDetailMask:2 | 1 | 2 |
 | C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Dropped:2 | 1 | 2 |
 | C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_1_GSBlendMap_NormalMap | Dropped:2 | 1 | 2 |
-| FlowMap | Dropped:2 | 1 | 2 |
 | Generic__Turbulence_Localise_Flow | Dropped:2 | 1 | 2 |
-| P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:2 | 1 | 2 |
-| P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:2 | 1 | 2 |
 | C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:1 | 1 | 1 |
 | C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:1 | 1 | 1 |
 | C_Enemy__ColorMaterial_PF_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:1 | 1 | 1 |
@@ -94,25 +94,25 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 
 | Shader | Known | Features | Placed % | Triangles % | Meshes | Dropped roles | Example |
 |---|---|---|---|---|---|---|---|
-| `M[MS][MB][M1]` |  |  | 55.198 | 48.808 | 41614 | AlbedoMap MetallicMap NormalMap Mask1Map Mask3Map | aeg120_046 |
-| `M[MS][MB][M0]` |  | Overlay | 21.497 | 13.623 | 9069 | NormalMap AlbedoMap Mask3Map Mask1Map MetallicMap | aeg410_010 |
+| `M[MS][MB][M1]` |  |  | 55.198 | 48.808 | 41614 | NormalMap Mask1Map AlbedoMap MetallicMap Mask3Map | aeg120_046 |
+| `M[MS][MB][M0]` |  |  | 21.497 | 13.623 | 9069 | AlbedoMap NormalMap Mask3Map Mask1Map MetallicMap | aeg410_010 |
 | `M[AMSN][M0][M1]_Edge` |  | AlphaTest | 6.301 | 7.410 | 13211 |  | aeg224_400 |
-| `C[Enemy]_ColorMaterial` |  | Overlay | 3.376 | 1.476 | 443 | Mask3Map AlbedoMap NormalMap C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap Mask1Map | c3020 |
-| `M[MS][Mask][M1]` |  | Overlay | 3.125 | 4.408 | 4660 | AlbedoMap NormalMap Mask1Map Mask3Map MetallicMap | c7400 |
+| `C[Enemy]_ColorMaterial` |  | Overlay | 3.376 | 1.476 | 443 | C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap AlbedoMap NormalMap Mask3Map Mask1Map | c3020 |
+| `M[MS][Mask][M1]` |  | Overlay | 3.125 | 4.408 | 4660 | MetallicMap NormalMap AlbedoMap Mask1Map Mask3Map | c7400 |
 | `M[AMSN][M0][M1]` |  |  | 2.131 | 3.737 | 1516 |  | aeg233_800 |
 | `M[AMSN][M0][M1]_Edge_Translucency_Pivot2_Child` |  | AlphaTest | 1.425 | 0.011 | 8 | Mask1Map | aeg501_911 |
 | `C[AMSN][M0][M1]` |  |  | 0.656 | 0.951 | 306 |  | c7400 |
-| `M[AMSN][M1]_Emissive` |  | AlphaTest | 0.620 | 0.690 | 192 |  | aeg203_094 |
+| `M[AMSN][M1]_Emissive` |  |  | 0.620 | 0.690 | 192 |  | aeg203_094 |
 | `M[AMSN][M0][M1][CV]_Edge` |  | AlphaTest | 0.590 | 0.715 | 2642 | Mask1Map NormalMap AlbedoMap | aeg039_441 |
 | `M[AMSN][M0][M1]_ContactFade` |  | BlendMode2 | 0.567 | 0.085 | 114 |  | aeg411_020 |
 | `M[AMSN][M0][M1]_Edge_Translucency_Pivot2` |  | AlphaTest | 0.560 | 0.004 | 10 | Mask1Map | aeg501_911 |
 | `M[Interior]` |  |  | 0.484 | 0.183 | 399 | NormalMap Mask1Map EmissiveMap | aeg223_010 |
 | `M[A][M0]_Emissive_Glow` |  |  | 0.467 | 0.669 | 3189 |  | aeg059_630 |
 | `M[Crystal][M1]` |  | Overlay | 0.327 | 0.910 | 98 | DisplacementMap | aeg039_790 |
-| `M[AMSN][M1][Vatex]_Alpha` |  | BlendMode2 AlphaTest | 0.288 | 0.149 | 335 |  | aeg036_380 |
+| `M[AMSN][M1][Vatex]_Alpha` |  |  | 0.288 | 0.149 | 335 |  | aeg036_380 |
 | `M[AMSN][M0][M1]_Edge_Translucency` |  | AlphaTest | 0.227 | 0.023 | 22 | Mask1Map | aeg501_910 |
 | `M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]` |  | Layers2Unweighted | 0.216 | 0.126 | 24 | AlbedoMap NormalMap Mask1Map | aeg501_203 |
-| `C[3Mask][Detail][M1]` |  |  | 0.126 | 0.475 | 89 | AlbedoMap NormalMap Mask3Map MetallicMap Mask1Map | c6400 |
+| `C[3Mask][Detail][M1]` |  |  | 0.126 | 0.475 | 89 | AlbedoMap NormalMap Mask3Map Mask1Map MetallicMap | c6400 |
 | `C[AMSN][M1][Detail]` |  | BlendRecipe | 0.115 | 0.005 | 1 | Metalness__Base NormalMap | c5100 |
 | `M[AMSN][M0][M1][Vatex]_Alpha_BlendEdge` |  | BlendMode2 AlphaTest | 0.112 | 0.231 | 404 | Mask1Map | aeg030_600 |
 | `C[AMSN][M1][Detail2]` |  | BlendRecipe | 0.108 | 0.828 | 112 | NormalMap Metalness__Base AlbedoMap Mask1Map | aeg840_310 |
@@ -128,8 +128,8 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[MS][Mask][M0]` |  | Overlay Scroll | 0.047 | 0.191 | 361 | MetallicMap NormalMap AlbedoMap Mask3Map Mask1Map | aeg065_600 |
 | `C[c4210]_illusion` |  | Scroll BlendMode2 AlphaTest | 0.047 | 0.073 | 1 | EmissiveMap Mask1Map Mask3Map | c4210 |
 | `M[AMSN][M0][M1]_decal_Alpha` |  | BlendMode2 | 0.045 | 0.121 | 300 | Mask1Map | aeg411_122 |
-| `M[MS][MB][M1]_PF` |  |  | 0.043 | 0.113 | 22 | MetallicMap NormalMap Mask3Map Mask1Map | aeg000_520 |
-| `C[AMSN][M1][Detail][DM1][OvA]` |  | Overlay | 0.042 | 0.069 | 3 | MetallicMap Mask1Map AlbedoMap NormalMap | c6250 |
+| `M[MS][MB][M1]_PF` |  | Overlay | 0.043 | 0.113 | 22 | MetallicMap NormalMap Mask3Map Mask1Map | aeg000_520 |
+| `C[AMSN][M1][Detail][DM1][OvA]` |  | Overlay | 0.042 | 0.069 | 3 | MetallicMap AlbedoMap NormalMap Mask1Map | c6250 |
 | `P[LaserBlade]_001` |  | Scroll BlendMode4 | 0.035 | 0.123 | 43 | Mask3Map AlbedoMap | c5300 |
 | `M[Planet][GroundSurface]_004` |  | Overlay AlphaTest | 0.034 | 0.159 | 6 | Mask1Map AlbedoMap NormalMap Mask3Map | aeg860_010 |
 | `M[E]_Heatingwire` |  | Scroll BlendMode4 | 0.034 | 0.035 | 4 | EmissiveMap | aeg410_860 |
@@ -163,18 +163,18 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 ## Materials not found (top 15)
 
 - `m[m10_00]330_paintedmetal`: 21 meshes, e.g. m10_00_00_00_000019
-- `m[m10_00]026_aet101_033`: 21 meshes, e.g. m10_00_00_00_000011
 - `m[m10_00]025_aet101_034`: 21 meshes, e.g. m10_00_00_00_000027
+- `m[m10_00]026_aet101_033`: 21 meshes, e.g. m10_00_00_00_000011
 - `m[m10_00]107_aet001_042`: 20 meshes, e.g. m10_00_00_00_000017
 - `m[m10_00]081_aet101_124`: 19 meshes, e.g. m10_00_00_00_000030
 - `m[m10_00]023_aet101_019`: 17 meshes, e.g. m10_00_00_00_000011
 - `m[m10_00]051_aet001_051`: 16 meshes, e.g. m10_00_00_00_000010
 - `m[m10_00]001_aet999_852`: 16 meshes, e.g. m10_00_00_00_000025
-- `m[m10_00]302_aet101_306`: 15 meshes, e.g. m10_00_00_00_000017
 - `m[m10_00]086_aet101_127`: 15 meshes, e.g. m10_00_00_00_000025
+- `m[m10_00]302_aet101_306`: 15 meshes, e.g. m10_00_00_00_000017
 - `m[m10_00]701_emissive_red`: 14 meshes, e.g. m10_00_00_00_000030
-- `m[m10_00]327_101_154`: 14 meshes, e.g. m10_00_00_00_000010
 - `m[m10_00]033_aet001_020`: 14 meshes, e.g. m10_00_00_00_000027
+- `m[m10_00]327_101_154`: 14 meshes, e.g. m10_00_00_00_000010
 - `m[m10_00]029_aet001_026`: 13 meshes, e.g. m10_00_00_00_000030
 - `m[m10_00]006_aet999_854`: 13 meshes, e.g. m10_00_00_00_000007
 

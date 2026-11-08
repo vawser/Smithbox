@@ -214,6 +214,63 @@ if (mode == "blends")
     Console.WriteLine($"{generated.Count} new recipes written to {args[3]}");
 }
 
+// detailstacks <cacheDir> <outJson> [shaderRegex] : the detail stacks of C[DetailBlend] and its relatives
+// (DetailStacks.cs), one per G-buffer permutation that has one, keyed shader@permutation as _Details.json is. The
+// normal strength is the checked-in detail's, looked up as MaterialDefinition.ResolveDetailRecipe does
+if (mode == "detailstacks")
+{
+    var filter = new Regex(args.Length > 4 ? args[4] : ".");
+    var detailsPath = Path.Combine("Assets", "Material Definitions", $"{gameName}_Details.json");
+    var checkedIn = File.Exists(detailsPath)
+        ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, StudioCore.Renderer.MaterialDetailRecipe>>(File.ReadAllText(detailsPath))
+        : new();
+    var table = new SortedDictionary<string, StudioCore.Renderer.MaterialDetailRecipe>(StringComparer.Ordinal);
+    var problems = new Dictionary<string, int>();
+    var verbose = Environment.GetEnvironmentVariable("STACK_DEBUG") == "1";
+
+    Parallel.ForEach(bundles.Where(b => filter.IsMatch(b.Name)), b =>
+    {
+        foreach (var (variant, perm, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            if (!variant.Contains("Gbuf")) continue;
+            var d = Dxil.Parse(lines);
+            var sig = Signatures.Build(b.Name, variant, d, new());
+            var albedos = sig.Textures.Where(t => t.Slot >= 0 && Signatures.Meaning(t) == "Albedo").Select(t => t.Slot).ToHashSet();
+            var normals = sig.Textures.Where(t => t.Slot >= 0 && Signatures.Meaning(t) is "Normal" or "NormalGloss").Select(t => t.Slot).ToHashSet();
+            if (albedos.Count < 3) continue;
+
+            var key = perm >= 0 ? $"{b.Name}@{perm}" : b.Name;
+            var r = Recipes.BuildStack(d, albedos, normals);
+            lock (table)
+            {
+                if (!r.Ok)
+                {
+                    // Only the shaders that have a stack lerp at all are worth counting
+                    if (!r.Problems[0].StartsWith("no lerp"))
+                    {
+                        var p = Regex.Replace(r.Problems[0], @"\d+", "N");
+                        problems[p] = problems.GetValueOrDefault(p) + 1;
+                        if (verbose) Console.WriteLine($"  {key}: {r.Problems[0]}");
+                    }
+                    continue;
+                }
+
+                StudioCore.Renderer.MaterialDetailRecipe theirs = null;
+                foreach (var k in new[] { key, $"{b.Name}@0", b.Name })
+                    if (checkedIn.TryGetValue(k, out theirs)) break;
+                r.Recipe.NormalStrength = theirs?.NormalStrength;
+                table[key] = r.Recipe;
+                if (verbose) Console.WriteLine($"  {key}: bottom {r.Recipe.Albedo}/{r.Recipe.Normal}, " + string.Join(", ",
+                    r.Recipe.Stack.Select(l => $"{l.Albedo}/{l.Normal} {l.Color} by {l.Channel}: ({l.Scale}) x + ({l.Bias}) ^{l.Power}")));
+            }
+        }
+    });
+
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
+    Console.WriteLine($"{table.Count} detail stacks in {table.Keys.Select(k => k.Split('@')[0]).Distinct().Count()} shaders, written to {args[3]}");
+    foreach (var (p, n) in problems.OrderByDescending(x => x.Value)) Console.WriteLine($"  {n,5}  {p}");
+}
+
 // overlays <cacheDir> <outJson> : the overlays the checked-in _Details.json can't express, found in the expressions:
 // the albedo overlay of [Ov_AN] shaders, x = A + s(g - 0.5)(O - A), result = sat(x + s(0.5 - g)(O - x)), g = O^0.454,
 // and the normal overlay N + s(O * 2 - 1). Written as _Details.json entries, keyed shader@permutation as that is
