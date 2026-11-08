@@ -31,49 +31,51 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 
 | Route | Textures | Placed triangles of meshes with one |
 |---|---|---|
-| Albedo | 111670 | 7,983,286,701 |
+| Albedo | 111667 | 7,982,953,743 |
 | Normal | 109024 | 7,921,246,892 |
-| Dropped | 90901 | 2,740,730,247 |
-| OverlayNormal | 66358 | 3,905,788,314 |
-| Albedo1 | 26577 | 2,348,172,150 |
-| BlendDetailMask | 25097 | 2,267,760,831 |
-| Normal1 | 24160 | 2,255,043,684 |
-| OverlayAlbedo | 15068 | 905,056,071 |
+| Dropped | 76723 | 2,710,799,320 |
+| OverlayNormal | 66824 | 3,941,060,486 |
+| Albedo1 | 27339 | 2,378,127,512 |
+| BlendDetailMask | 25854 | 2,297,490,641 |
+| Normal1 | 24922 | 2,284,999,046 |
+| OverlayAlbedo | 15042 | 905,045,982 |
 | Metallic+Offset | 13752 | 448,453,778 |
-| Albedo2 | 12629 | 1,339,028,051 |
-| Normal2 | 12550 | 1,334,368,242 |
+| Albedo2 | 13349 | 1,368,556,540 |
+| Normal2 | 13270 | 1,363,896,731 |
+| OverlayNormal1 | 10557 | 484,250,341 |
 | Metallic | 9942 | 543,414,528 |
-| BlendMask | 8248 | 1,602,356,642 |
-| OverlayNormal1 | 8204 | 430,817,713 |
-| OverlayAlbedo1 | 6150 | 271,293,094 |
-| OverlayNormal2 | 4401 | 193,625,664 |
-| OverlayAlbedo2 | 3384 | 162,781,316 |
-| Albedo3 | 2432 | 580,615,151 |
-| Normal3 | 2432 | 580,615,151 |
+| BlendMask | 9006 | 1,632,090,344 |
+| OverlayAlbedo1 | 8468 | 314,067,674 |
+| OverlayNormal2 | 5659 | 220,717,957 |
+| OverlayAlbedo2 | 4689 | 205,298,314 |
+| Albedo3 | 3142 | 609,663,991 |
+| Normal3 | 3142 | 609,663,991 |
 | FurAlbedo | 1990 | 113,238,479 |
 | FurNormal | 1898 | 111,865,217 |
 | Emissive | 1017 | 119,507,101 |
 | Metallic1 | 914 | 45,180,199 |
-| OverlayNormal3 | 593 | 36,494,656 |
+| OverlayAlbedo3 | 766 | 42,050,075 |
+| OverlayNormal3 | 681 | 49,270,520 |
 | MagmaGlow | 486 | 26,076,146 |
-| OverlayAlbedo3 | 485 | 29,175,958 |
 | WaterNormal | 381 | 2,018,367 |
+| OverlayAlbedo5 | 278 | 831,917 |
 | Deformer | 266 | 10,909,563 |
 | Metallic2 | 250 | 11,261,548 |
 | Specular | 150 | 8,068,209 |
-| OverlayNormal4 | 124 | 660,980 |
-| OverlayAlbedo4 | 116 | 327,986 |
+| OverlayNormal5 | 147 | 670,964 |
+| OverlayAlbedo4 | 52 | 1,171,347 |
+| OverlayNormal4 | 2 | 0 |
 | Shininess | 2 | 1,923,012 |
 
 ## Roles
 
 | Role | Routes (mesh textures) | Shaders | Meshes |
 |---|---|---|---|
-| NormalMap | Normal:106947 OverlayNormal:66358 Dropped:40641 Normal1:24160 Normal2:12550 OverlayNormal1:8204 OverlayNormal2:4401 Normal3:2432 FurNormal:1898 OverlayNormal3:593 WaterNormal:381 OverlayNormal4:124 Deformer:25 Albedo:2 Albedo1:2 Albedo2:2 | 473 | 111791 |
-| AlbedoMap | Albedo:109553 Dropped:30453 Albedo1:26575 OverlayAlbedo:15068 Albedo2:12627 OverlayAlbedo1:6150 OverlayAlbedo2:3384 Albedo3:2432 FurAlbedo:1990 OverlayAlbedo3:485 OverlayAlbedo4:116 | 486 | 111639 |
-| Mask1Map | BlendDetailMask:21901 Dropped:8982 BlendMask:922 Deformer:37 | 262 | 30550 |
+| NormalMap | Normal:106947 OverlayNormal:66824 Dropped:34846 Normal1:24922 Normal2:13270 OverlayNormal1:10557 OverlayNormal2:5659 Normal3:2555 FurNormal:1898 OverlayNormal3:681 WaterNormal:381 OverlayNormal5:147 Deformer:25 Albedo:2 Albedo1:2 Albedo2:2 OverlayNormal4:2 | 473 | 111791 |
+| AlbedoMap | Albedo:109550 Albedo1:27337 Dropped:23585 OverlayAlbedo:15042 Albedo2:13347 OverlayAlbedo1:8468 OverlayAlbedo2:4689 Albedo3:3142 FurAlbedo:1990 OverlayAlbedo3:766 Normal3:587 OverlayAlbedo5:278 OverlayAlbedo4:52 | 486 | 111639 |
+| Mask1Map | BlendDetailMask:22658 Dropped:8225 BlendMask:922 Deformer:37 | 262 | 30550 |
 | MetallicMap | Metallic+Offset:13752 Metallic:9942 Metallic1:914 Dropped:642 Metallic2:250 | 100 | 23847 |
-| Mask3Map | BlendMask:7326 Dropped:6960 MagmaGlow:486 BlendDetailMask:88 | 146 | 14382 |
+| Mask3Map | BlendMask:8084 Dropped:6202 MagmaGlow:486 BlendDetailMask:88 | 146 | 14382 |
 | BlendEdge | BlendDetailMask:3102 Dropped:19 | 6 | 3121 |
 | g_DiffuseTexture | Albedo:2100 | 69 | 2100 |
 | g_BumpmapTexture | Normal:2077 | 67 | 2077 |
@@ -94,33 +96,33 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | Emissive_Flicker | Dropped:7 Emissive:2 | 1 | 9 |
 | Fire___Light_Edge | Dropped:8 | 2 | 8 |
 | Fire___Black_Edge | Dropped:8 | 2 | 8 |
+| ReflectanceMap | Dropped:13 | 2 | 7 |
 | Fire___Pattern | Dropped:7 | 1 | 7 |
 | Fire___Mask | Dropped:7 | 1 | 7 |
-| ReflectanceMap | Dropped:13 | 2 | 7 |
-| Alpha_Subtract | Dropped:6 | 1 | 6 |
 | BlendEdgeTexture | BlendDetailMask:6 | 1 | 6 |
+| Alpha_Subtract | Dropped:6 | 1 | 6 |
 | Translucency__Base | Dropped:4 | 1 | 4 |
 | DistortionDepth__Base | Dropped:4 | 1 | 4 |
 | Emissive__Noise | Dropped:3 | 2 | 3 |
 | Generic__Cloud | Dropped:2 | 2 | 2 |
-| AlphaWing | Dropped:2 | 1 | 2 |
 | ShininessMap | Shininess:2 Dropped:2 | 1 | 2 |
-| g_BloodMaskTexture | Dropped:1 | 1 | 1 |
-| g_ScatteringMaskTexture | Dropped:1 | 1 | 1 |
+| AlphaWing | Dropped:2 | 1 | 2 |
+| Generic__Galaxy | Dropped:1 | 1 | 1 |
+| Alpha_Inside_Base | Dropped:1 | 1 | 1 |
+| Fade__Base | Dropped:1 | 1 | 1 |
 | Mud__Base | Albedo:1 | 1 | 1 |
 | Finger___em__Edge | Dropped:1 | 1 | 1 |
 | Crack__Edge | Dropped:1 | 1 | 1 |
-| Alpha_Inside_Base | Dropped:1 | 1 | 1 |
-| Fade__Base | Dropped:1 | 1 | 1 |
-| Generic__Galaxy | Dropped:1 | 1 | 1 |
 | g_EmissiveTexture | Emissive:1 | 1 | 1 |
+| g_BloodMaskTexture | Dropped:1 | 1 | 1 |
+| g_ScatteringMaskTexture | Dropped:1 | 1 | 1 |
 
 ## Top 40 shaders by placed triangles
 
 | Shader | Known | Features | Placed % | Triangles % | Meshes | Dropped roles | Example |
 |---|---|---|---|---|---|---|---|
 | `M[AMSN_V][Ov_N]` |  | Overlay | 12.420 | 22.856 | 22085 |  | aeg040_067 |
-| `C[DetailBlend]` |  | Overlay AlphaTest | 8.886 | 7.554 | 12675 | NormalMap AlbedoMap MetallicMap | c3661 |
+| `C[DetailBlend]` |  | Overlay | 8.886 | 7.554 | 12675 | AlbedoMap NormalMap MetallicMap | c3661 |
 | `M[AMSN_V]` |  |  | 6.289 | 7.185 | 8943 |  | aeg004_045 |
 | `M[AMSN_V][Ov_N][Mb3_ColorAdjust][3Mask_ch18]` |  | BlendRecipe Overlay | 5.769 | 2.994 | 2394 |  | aeg052_013 |
 | `M[AMSN_V]_Vesitation` | yes | WindPivot AlphaTest | 4.791 | 0.309 | 388 |  | aeg001_290 |
@@ -139,25 +141,25 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[AMSN_V][Ov_N][Snow_VtxMask]` |  | Overlay | 1.375 | 1.961 | 1451 | AlbedoMap NormalMap Mask1Map | aeg001_420 |
 | `SpeedTree_50777_w3636187` |  | AlphaTest | 1.284 | 0.012 | 73 | g_TranslucencyTexture | aeg490_000 |
 | `M[AMSN_V][Ov_N][Snow]` |  |  | 1.228 | 1.395 | 759 | AlbedoMap NormalMap | aeg220_102 |
-| `C[AMSN]` |  | AlphaTest | 1.178 | 0.485 | 1012 |  | c5401 |
+| `C[AMSN]` |  |  | 1.178 | 0.485 | 1012 |  | c5401 |
 | `M[AMSN_V]_Grass2` | yes | WindPivot AlphaTest | 1.055 | 0.224 | 583 | Mask1Map | aeg004_114 |
 | `SpeedTree_5010f_w321a7` |  | AlphaTest | 1.046 | 0.073 | 207 | g_TranslucencyTexture | aeg490_057 |
 | `C[DetailBlend]_FurBlur` |  | Overlay | 0.997 | 0.044 | 37 | VectorMap Mask1Map AlbedoMap NormalMap | c5410 |
 | `C[Fur]` |  | Fur AlphaTest | 0.980 | 0.588 | 868 | AlbedoMap NormalMap DisplacementMap | c5450 |
-| `M[AMSN_V][Mb2][Ov_N][Snow_VtxMask]` |  | BlendRecipe Overlay AlphaTest | 0.980 | 0.937 | 2095 | AlbedoMap NormalMap | aeg007_042 |
+| `M[AMSN_V][Mb2][Ov_N][Snow_VtxMask]` |  | BlendRecipe Overlay | 0.980 | 0.937 | 2095 | AlbedoMap NormalMap | aeg007_042 |
 | `C[DetailBlend]_SSS` |  | Overlay | 0.865 | 0.466 | 277 | Mask1Map AlbedoMap NormalMap | c4080 |
 | `C[Shell]_FurBlur` |  | AlphaTest | 0.835 | 0.076 | 82 | Mask1Map VectorMap AlbedoMap | c5410 |
 | `M[AMSN_V]_Edge` |  | AlphaTest | 0.764 | 1.386 | 2162 |  | aeg231_090 |
 | `M[AMSN_V]_Vesitation_Emissive_Glow` | yes | WindPivot AlphaTest | 0.761 | 0.078 | 287 |  | aeg099_720 |
 | `M[AMSN_V][Mb3][3Mask][Ov_AN][Snow_VtxMask]` |  | BlendRecipe Overlay | 0.696 | 0.786 | 515 | AlbedoMap NormalMap | aeg007_000 |
 | `SpeedTree_5010fdmo_w329a7` |  |  | 0.687 | 0.037 | 185 | g_TranslucencyTexture | aeg801_096 |
-| `M[AMSN]_Edge` |  |  | 0.661 | 1.004 | 797 |  | aeg411_096 |
+| `M[AMSN]_Edge` |  | AlphaTest | 0.661 | 1.004 | 797 |  | aeg411_096 |
 | `SpeedTree_5077f_w34636187` |  | AlphaTest | 0.656 | 0.027 | 86 | g_TranslucencyTexture | aeg801_250 |
 | `SpeedTree_5010f_w312187` |  | AlphaTest | 0.592 | 0.059 | 162 | g_TranslucencyTexture | aeg801_210 |
 | `M[AMSN_V][Snow]` |  |  | 0.591 | 0.488 | 249 | AlbedoMap NormalMap | aeg040_010 |
 | `M[AMSN][Ov_N]_Edge` |  | Overlay AlphaTest | 0.563 | 0.786 | 801 |  | aeg110_305 |
 | `M[AMSN_V][Mb3][VC][3Mask][Ov_N][Cover]` |  | Layers3Unweighted | 0.550 | 0.234 | 84 | AlbedoMap NormalMap Mask3Map | aeg040_021 |
-| `C[DetailBlend][S2]` |  | Overlay | 0.520 | 0.245 | 562 | NormalMap AlbedoMap MetallicMap | c4300 |
+| `C[DetailBlend][S2]` |  | Overlay AlphaTest | 0.520 | 0.245 | 562 | NormalMap MetallicMap AlbedoMap | c4300 |
 | `M[AMSN_V][Ov_N]_Edge` |  | Overlay AlphaTest | 0.454 | 1.006 | 696 |  | aeg052_751 |
 
 ## Top 20 dropped textures by placed triangles
@@ -191,9 +193,9 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 - ``: 15 meshes, e.g. m60_46_38_10_463810
 - `p[fc_m_0105]_cloth`: 4 meshes, e.g. fc_m_0105_l
 - `aeg004_010_id00`: 3 meshes, e.g. m16_00_00_99_000123
+- `p[fg_a_0100]_sss`: 2 meshes, e.g. fc_m_0100_l
 - `p[fc_m_0105]`: 2 meshes, e.g. fc_m_0105_l
 - `p[fc_m_0105]_body`: 2 meshes, e.g. fc_m_0105_l
-- `p[fg_a_0100]_sss`: 2 meshes, e.g. fc_m_0100_l
 - `aeg004_010_id02`: 1 meshes, e.g. m16_00_00_99_000123
 - `aeg004_010_id03`: 1 meshes, e.g. m16_00_00_99_000123
 - `aeg004_010_id01`: 1 meshes, e.g. m16_00_00_99_000123
@@ -206,11 +208,11 @@ per texture, so a column can add up to more than the game.
 
 | Status | Textures | Placed triangles |
 |---|---|---|
-| Ok | 464477 | 34,164,983,432 |
-| Dropped | 82389 | 4,282,392,713 |
+| Ok | 478690 | 34,634,090,209 |
+| Dropped | 68211 | 3,817,782,952 |
 | Unverified | 6070 | 2,243,245,061 |
 | Approximate | 4269 | 227,122,063 |
-| Misrouted | 3727 | 139,394,524 |
+| Misrouted | 3692 | 134,897,508 |
 | Extra | 362 | 18,614,057 |
 | UvMismatch | 91 | 3,824,425 |
 

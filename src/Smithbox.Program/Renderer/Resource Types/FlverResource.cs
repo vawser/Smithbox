@@ -433,13 +433,15 @@ public class FlverResource : IResource, IDisposable
     private static readonly FlverMaterial.TextureType[] DetailStackAlbedos =
     {
         FlverMaterial.TextureType.DetailStackAlbedoTextureResource1, FlverMaterial.TextureType.DetailStackAlbedoTextureResource2,
-        FlverMaterial.TextureType.DetailStackAlbedoTextureResource3, FlverMaterial.TextureType.DetailStackBackAlbedoTextureResource
+        FlverMaterial.TextureType.DetailStackAlbedoTextureResource3, FlverMaterial.TextureType.DetailStackAlbedoTextureResource4,
+        FlverMaterial.TextureType.DetailStackBackAlbedoTextureResource
     };
 
     private static readonly FlverMaterial.TextureType[] DetailStackNormals =
     {
         FlverMaterial.TextureType.DetailStackNormalTextureResource1, FlverMaterial.TextureType.DetailStackNormalTextureResource2,
-        FlverMaterial.TextureType.DetailStackNormalTextureResource3, FlverMaterial.TextureType.DetailStackBackNormalTextureResource
+        FlverMaterial.TextureType.DetailStackNormalTextureResource3, FlverMaterial.TextureType.DetailStackNormalTextureResource4,
+        FlverMaterial.TextureType.DetailStackBackNormalTextureResource
     };
 
     /// <summary>See <see cref="MaterialBinding.HasKnownBlend"/></summary>
@@ -930,7 +932,7 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithWater);
         }
 
-        if (dest.Definition?.Blend?.Extended == true)
+        if (dest.Definition?.Blend is { Extended: true } or { Adjusted: true })
         {
             size = sizeof(MaterialWithLayerDetail);
         }
@@ -3883,9 +3885,11 @@ public class FlverResource : IResource, IDisposable
             DetailStackAlbedoTextureResource1,
             DetailStackAlbedoTextureResource2,
             DetailStackAlbedoTextureResource3,
+            DetailStackAlbedoTextureResource4,
             DetailStackNormalTextureResource1,
             DetailStackNormalTextureResource2,
             DetailStackNormalTextureResource3,
+            DetailStackNormalTextureResource4,
             DetailStackWeightTextureResource,
             // What back faces of a stacked detail are drawn with
             DetailStackBackAlbedoTextureResource,
@@ -3960,7 +3964,8 @@ public class FlverResource : IResource, IDisposable
         ///     Their values come from ApplyDetail and their tiling from LoadBlendRecipe, the textures from UpdateMaterial
         /// </summary>
         public MaterialDetailStackEntry[] DetailStack =
-            [MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default];
+            [MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default,
+                MaterialDetailStackEntry.Default];
 
         /// <summary>The material has the stack entries (stack layers or a back face), see MaterialDetail.HasStackEntries</summary>
         public bool HasDetailStack;
@@ -4098,7 +4103,8 @@ public class FlverResource : IResource, IDisposable
                 MaterialResolvedDetailLayer layer = detail.Stack[i];
                 DetailStack[i].Color = new Vector4(layer.Color[0], layer.Color[1], layer.Color[2], 1);
                 DetailStack[i].Weight = new Vector4(layer.Scale, layer.Bias, layer.Power, layer.Channel
-                    + (layer.Invert ? MaterialDetailStackEntry.Inverted : 0) + (layer.Replace ? MaterialDetailStackEntry.Replacing : 0));
+                    + (layer.Invert ? MaterialDetailStackEntry.Inverted : 0) + (layer.Replace ? MaterialDetailStackEntry.Replacing : 0)
+                    + (layer.OwnAlpha ? MaterialDetailStackEntry.OwnAlpha : 0));
             }
 
             DetailStack[MaterialResolvedDetail.MaxStackLayers].Color = new Vector4(detail.BackColor[0], detail.BackColor[1], detail.BackColor[2], 1);
@@ -4134,6 +4140,25 @@ public class FlverResource : IResource, IDisposable
 
                 LayerDetail = new MaterialLayerDetail { Channels2 = Channels(0), Channels3 = Channels(1), Channels4 = Channels(2) };
                 LayerDetailExtra = new MaterialLayerDetailExtra { Layer2 = Extra(0), Layer3 = Extra(1), Layer4 = Extra(2) };
+            }
+            else if (blend.Adjusted)
+            {
+                // The [MbN_ColorAdjust] form in the same two entries (FlverShader.frag, SOURCE_ADJUSTED): x of each layer's
+                // channels its color adjust, the bottom's in the first's y; x of each layer's extra its hard mix, y its weight scale, z its own detail bias
+                var a = blend.ColorAdjust;
+                LayerDetail = new MaterialLayerDetail
+                {
+                    Channels2 = new Vector4(a[1], a[0], 0, 0),
+                    Channels3 = new Vector4(a[2], 0, 0, 0),
+                    Channels4 = new Vector4(a[3], 0, 0, 0)
+                };
+                LayerDetailExtra = new MaterialLayerDetailExtra
+                {
+                    Layer2 = new Vector4(blend.LayerHardMix[0], blend.LayerWeightScale[0], blend.LayerBiasOverride[0], 1),
+                    Layer3 = new Vector4(blend.LayerHardMix[1], blend.LayerWeightScale[1], blend.LayerBiasOverride[1], 1),
+                    Layer4 = new Vector4(blend.LayerHardMix[2], blend.LayerWeightScale[2], blend.LayerBiasOverride[2], 1)
+                };
+                Blend = Blend.Value with { Blend = Blend.Value.Blend with { Source1 = Blend.Value.Blend.Source1 | MaterialResolvedBlend.SourceAdjusted } };
             }
         }
 
@@ -4178,6 +4203,13 @@ public class FlverResource : IResource, IDisposable
                     if (sampler.Color != null)
                     {
                         Effects.EmissiveColor = new Vector4(sampler.Color[0], sampler.Color[1], sampler.Color[2], 0);
+                    }
+
+                    // A mask whose red is the glow (MaterialEmissiveMask): w -1 has the shader take red for all three.
+                    // Fur keeps its dither width in w, which is never below 0
+                    if (samplerType == Definition?.EmissiveMaskType)
+                    {
+                        Effects.EmissiveColor.W = -1;
                     }
                     break;
                 case TextureType.MagmaTextureResource:
@@ -4411,7 +4443,7 @@ public class FlverResource : IResource, IDisposable
                     entries[i].WeightTex = weightTex;
                 }
 
-                stacked = new MaterialWithDetailStack { Layered = layered!.Value, Layer1 = entries[0], Layer2 = entries[1], Layer3 = entries[2], Back = entries[3] };
+                stacked = new MaterialWithDetailStack { Layered = layered!.Value, Layer1 = entries[0], Layer2 = entries[1], Layer3 = entries[2], Layer4 = entries[3], Back = entries[4] };
             }
 
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };

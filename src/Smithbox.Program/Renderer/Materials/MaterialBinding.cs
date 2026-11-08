@@ -100,6 +100,12 @@ public static class MaterialBinding
             return new(MaterialTextureUse.MagmaGlow, LoadedElsewhere: true);
         }
 
+        // A mask whose red is the glow (MaterialEmissiveMask)
+        if (texType != null && d?.EmissiveMaskType == texType)
+        {
+            return new(MaterialTextureUse.Emissive);
+        }
+
         if (d?.Detail is { } overlay && texType != null && (texType == overlay.AlbedoType || texType == overlay.NormalType))
         {
             return new(texType == overlay.AlbedoType ? MaterialTextureUse.OverlayAlbedo : MaterialTextureUse.OverlayNormal, LoadedElsewhere: true);

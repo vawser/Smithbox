@@ -369,10 +369,11 @@ layout(set = 4, binding = 0, std140) buffer materialDetail
     readonly detailData detaildata[];
 };
 
-// Fifteen to seventeen entries after a material, for a detail stack (C[DetailBlend]): the details lerped over the
+// Fifteen to eighteen entries after a material, for a detail stack (C[DetailBlend]): the details lerped over the
 // first, by sat(pow(weight.x * map[weight.w & 3] + weight.y, weight.z)). The number of them is in detailData.textures.z
 // from bit 8, see MaterialDetailStackEntry. weight.w adds 4 for a layer that takes one minus its weight, and 8 for one
-// lerped over the finished albedo. Entry eighteen is what back faces are drawn with, if its textures aren't 0
+// lerped over the finished albedo, and 16 for one weighed by its own albedo's alpha. Entry nineteen is what back faces
+// are drawn with, if its textures aren't 0
 struct detailStackData
 {
 	vec4 color;   // rgb: multiplies the albedo
@@ -389,7 +390,7 @@ layout(set = 4, binding = 0, std140) buffer materialDetailStack
 
 #define DETAIL_ALBEDO_MODE_MASK 0xFFu
 #define DETAIL_STACK_SHIFT 8u
-#define DETAIL_HAS_STACK 1024u
+#define DETAIL_HAS_STACK 2048u
 
 // Nine and ten entries after a material, for materials with a glow
 struct magmaFlowData
@@ -507,6 +508,15 @@ layout(set = 4, binding = 0, std140) buffer materialLayerScroll
 #define SOURCE_SOFT 16u
 #define SOURCE_EXTENDED 32u
 #define SOURCE_DETAIL_SECOND_UV 64u
+// The [MbN_ColorAdjust] form (MaterialResolvedBlend): a vertex value added (its channel from bit 8), the vertex
+// color's alpha over it, the lerp to the hard weight, and on the first source, that the form's entries are there
+#define SOURCE_ADD 128u
+#define SOURCE_ADD_SHIFT 8u
+#define SOURCE_SCALE_ALPHA 2048u
+#define SOURCE_MIXED 4096u
+#define SOURCE_SCALED 8192u
+#define SOURCE_BIAS 32768u
+#define SOURCE_ADJUSTED 16384u
 
 // The extended form (AC6's [MS] blends), the two entries after water for layers 1 to 3: what multiplies each
 // channel of the layer's own detail mask, and x the detail bias, y what multiplies a soft weight, zw the mask's tiling
@@ -640,10 +650,10 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 // The number of details stacked over the first, 0 for none
 uint DetailStackCount()
 {
-	return (detaildata[g_mat + 8u].textures.z >> DETAIL_STACK_SHIFT) & 3u;
+	return (detaildata[g_mat + 8u].textures.z >> DETAIL_STACK_SHIFT) & 7u;
 }
 
-// The material has the stack entries, 15 to 18: stack layers or a back face
+// The material has the stack entries, 15 to 19: stack layers or a back face
 bool HasDetailStack()
 {
 	return (detaildata[g_mat + 8u].textures.z & DETAIL_HAS_STACK) != 0u;
@@ -657,21 +667,36 @@ bool DetailStackReplaces(uint i)
 
 // The weight of each stack layer, from the map they read (the base normal's blue and alpha), sampled as the base normal
 // is. A layer that was the bottom of its lerp takes one minus it
-vec3 DetailStackWeights(uint count)
+vec4 DetailStackWeights(uint count)
 {
-	vec3 weights = vec3(0.0);
-	// Until the map loads only the bottom detail shows
-	if (count == 0u || detailstackdata[g_mat + 15u].weightTex == 0u)
+	vec4 weights = vec4(0.0);
+	if (count == 0u)
 	{
 		return weights;
 	}
 
+	// Until the map loads, layers weighed by it stay out
+	uint mapTex = detailstackdata[g_mat + 15u].weightTex;
 	shadingData shading = shadingdata[g_mat + 1u];
-	vec4 map = SampleAt(detailstackdata[g_mat + 15u].weightTex, 0, shading.tiling.zw, vec2(0.0));
+	vec4 map = mapTex != 0u ? SampleAt(mapTex, 0, shading.tiling.zw, vec2(0.0)) : vec4(0.0);
 	for (uint i = 0u; i < count; i++)
 	{
-		vec4 w = detailstackdata[g_mat + 15u + i].weight;
+		detailStackData layer = detailstackdata[g_mat + 15u + i];
+		vec4 w = layer.weight;
 		int flags = int(w.w);
+
+		// A layer weighed by its own albedo's alpha ([S2]); without its albedo it isn't there
+		uint albedoTex = layer.textures & 0xFFFFu;
+		if ((flags & 16) != 0)
+		{
+			weights[i] = albedoTex != 0u ? SampleAt(albedoTex, 0, layer.tiling, vec2(0.0)).a : 0.0;
+			continue;
+		}
+		if (mapTex == 0u)
+		{
+			continue;
+		}
+
 		float x = map[flags & 3];
 		float weight = clamp(pow(max(w.x * x + w.y, 0.0), w.z), 0.0, 1.0);
 		weights[i] = (flags & 4) != 0 ? 1.0 - weight : weight;
@@ -679,10 +704,10 @@ vec3 DetailStackWeights(uint count)
 	return weights;
 }
 
-// A stacked detail's back faces are drawn with an albedo and normal of their own, in entry 18, if it has them
+// A stacked detail's back faces are drawn with an albedo and normal of their own, in entry 19, if it has them
 bool DetailBackFace()
 {
-	return !gl_FrontFacing && HasDetailStack() && detailstackdata[g_mat + 18u].textures != 0u;
+	return !gl_FrontFacing && HasDetailStack() && detailstackdata[g_mat + 19u].textures != 0u;
 }
 
 // Layers past the first only scroll with a blend recipe. Specular and shininess follow the albedo
@@ -739,6 +764,17 @@ float MetallicLayer(int layer)
 }
 
 #ifdef MATERIAL_BLEND
+// The color adjust of a layer, or -1 where its albedo is multiplied by its tint (MaterialResolvedBlend.ColorAdjust)
+float LayerColorAdjust(int layer)
+{
+	if ((blenddata[g_mat + 5u].sources.x & SOURCE_ADJUSTED) == 0u)
+	{
+		return -1.0;
+	}
+	vec4 channels[3] = layerdetaildata[g_mat + 13u].channels;
+	return layer == 0 ? channels[0].y : channels[layer - 1].x;
+}
+
 vec3 LayerTint(int layer)
 {
 	vec4 tints[3] = layertintdata[g_mat + 6u].tint;
@@ -761,7 +797,9 @@ vec4 SampleLayered(int row, bool blendLayers)
 				vec4 layerColor = SampleLayer(row, i);
 				if (c_blendFromRecipe && row == ROW_ALBEDO)
 				{
-					layerColor.rgb *= LayerTint(i);
+					// The [MbN_ColorAdjust] form lerps toward the tint where its bool is set, rather than multiply
+					float adjust = LayerColorAdjust(i);
+					layerColor.rgb = adjust >= 0.0 ? mix(layerColor.rgb, LayerTint(i), adjust) : layerColor.rgb * LayerTint(i);
 				}
 				result += layerColor * g_weight[i];
 			}
@@ -817,13 +855,30 @@ void ComputeRecipeWeights()
 		}
   #endif
 
+		// The [MbN_ColorAdjust] form: a vertex value added before saturating, and the vertex color's alpha over it
+  #ifdef MATERIAL_DEFORM
+		if ((source & SOURCE_ADD) != 0u)
+		{
+			uint addChannel = (source >> SOURCE_ADD_SHIFT) & SOURCE_CHANNEL_MASK;
+			value = clamp(value + fsin_vertexBlend[clamp(int(addChannel) - 3, 0, 2)], 0.0, 1.0);
+		}
+  #endif
+		if ((source & SOURCE_SCALE_ALPHA) != 0u)
+		{
+			value *= fsin_color.a;
+		}
+		float rawValue = value;
+
 		if ((source & SOURCE_INVERT) != 0u)
 		{
 			value = 1.0 - value;
 		}
 
 		float sharpness = blend.sharpness[i - 1];
-		float detail = blend.detail[i - 1] * detailMask + blend.sharpness.w;
+		// A layer with a detail bias of its own (the ColorAdjust form's entries, z of its extra)
+		float detailBias = (source & SOURCE_BIAS) != 0u && (blend.sources.x & SOURCE_ADJUSTED) != 0u
+			? layerdetailextradata[g_mat + 14u].layer[i - 1].z : blend.sharpness.w;
+		float detail = blend.detail[i - 1] * detailMask + detailBias;
 		float softScale = 1.0;
 		float hardScale = blend.detail.w;
 
@@ -848,6 +903,18 @@ void ComputeRecipeWeights()
 		else
 		{
 			weight = clamp(1.0 - hardScale * sharpness * (2.0 * value - detail), 0.0, 1.0);
+		}
+
+		// The [MbN_ColorAdjust] form lerps from the value itself, not inverted, to that hard weight, by a param
+		if ((source & SOURCE_MIXED) != 0u && (blend.sources.x & SOURCE_ADJUSTED) != 0u)
+		{
+			weight = mix(rawValue, weight, layerdetailextradata[g_mat + 14u].layer[i - 1].x);
+		}
+
+		// A weight scaled by a param as a whole (M[Cave_001])
+		if ((source & SOURCE_SCALED) != 0u && (blend.sources.x & SOURCE_ADJUSTED) != 0u)
+		{
+			weight = clamp(weight * layerdetailextradata[g_mat + 14u].layer[i - 1].y, 0.0, 1.0);
 		}
 
 		for (int j = 0; j < i; j++)
@@ -1925,7 +1992,7 @@ void main()
 	if (c_detail && HasFeature(FEATURE_OVERLAYS) && DetailBackFace())
 	{
 		// A back face of its own: the color is its albedo alone, tinted, with no base or details
-		detailStackData back = detailstackdata[g_mat + 18u];
+		detailStackData back = detailstackdata[g_mat + 19u];
 		uint tex = back.textures & 0xFFFFu;
 		if (tex != 0u)
 		{
@@ -1941,7 +2008,7 @@ void main()
 		// A detail stack: each detail layer lerped over the details below, tinted by its own color. The bottom's tint
 		// is folded in here, so the multiply below takes a color of 1. Whole-albedo layers come after the multiply
 		uint stackCount = DetailStackCount();
-		vec3 weights = DetailStackWeights(stackCount);
+		vec4 weights = DetailStackWeights(stackCount);
 		if (stackCount > 0u)
 		{
 			overlayColor *= overlay.colorStrength.rgb;
@@ -2083,10 +2150,10 @@ void main()
 	if (c_detail && HasFeature(FEATURE_OVERLAYS) && DetailBackFace())
 	{
 		// A back face of its own adds its normal's offset as it is, in place of the details'
-		uint tex = detailstackdata[g_mat + 18u].textures >> 16u;
+		uint tex = detailstackdata[g_mat + 19u].textures >> 16u;
 		if (tex != 0u)
 		{
-			normalMap.xy += SampleAt(tex, 0, detailstackdata[g_mat + 18u].tiling, vec2(0.0)).xy * 2.0 - 1.0;
+			normalMap.xy += SampleAt(tex, 0, detailstackdata[g_mat + 19u].tiling, vec2(0.0)).xy * 2.0 - 1.0;
 		}
 	}
 	else if (c_detail && HasFeature(FEATURE_OVERLAYS) && (detaildata[g_mat + 8u].textures.y != 0u || DetailStackCount() > 0u))
@@ -2099,7 +2166,7 @@ void main()
 		uint stackCount = DetailStackCount();
 		if (stackCount > 0u)
 		{
-			vec3 weights = DetailStackWeights(stackCount);
+			vec4 weights = DetailStackWeights(stackCount);
 			for (uint i = 0u; i < stackCount; i++)
 			{
 				detailStackData layer = detailstackdata[g_mat + 15u + i];
@@ -2299,6 +2366,11 @@ void main()
 	{
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
+		// A mask whose red is the glow (MaterialEmissiveMask, w -1)
+		if (effects.emissiveColor.w < 0.0)
+		{
+			emissive = emissive.rrr;
+		}
 		glow += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
 	}
 

@@ -239,6 +239,74 @@ if (mode == "blends")
     Console.WriteLine($"{generated.Count} new recipes written to {args[3]}");
 }
 
+// emissivemasks <cacheDir> <outJson> [shaderRegex] : shaders whose glow is one texture's red, tinted (EmissiveMasks.cs),
+// per G-buffer permutation. Only slots whose sampler isn't already an emissive map are of use; the app checks that
+if (mode == "emissivemasks")
+{
+    var filter = new Regex(args.Length > 4 ? args[4] : ".");
+    var table = new SortedDictionary<string, StudioCore.Renderer.MaterialEmissiveMask>(StringComparer.Ordinal);
+    Parallel.ForEach(bundles.Where(b => filter.IsMatch(b.Name)), b =>
+    {
+        foreach (var (variant, perm, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            if (!variant.Contains("Gbuf")) continue;
+            if (Recipes.ReadEmissiveMask(Dxil.Parse(lines)) is not { } mask) continue;
+            lock (table) table[perm >= 0 ? $"{b.Name}@{perm}" : b.Name] = mask;
+        }
+    });
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
+    Console.WriteLine($"{table.Count} shader permutations with a one-channel glow, in {table.Keys.Select(k => k.Split('@')[0]).Distinct().Count()} shaders, written to {args[3]}");
+}
+
+// coloradjust <cacheDir> <outJson> [shaderRegex] : the [MbN_ColorAdjust] form of the blend recipes (ColorAdjust.cs),
+// per G-buffer permutation, keyed as _Blends.json is. Only what has a weight extra or a color adjust is written
+if (mode == "coloradjust")
+{
+    var filter = new Regex(args.Length > 4 ? args[4] : ".");
+    var table = new SortedDictionary<string, StudioCore.Renderer.MaterialColorAdjustRecipe>(StringComparer.Ordinal);
+    var vsCache = Path.Combine(args[2], "_vs");
+    var verbose = Environment.GetEnvironmentVariable("STACK_DEBUG") == "1";
+
+    Parallel.ForEach(bundles.Where(b => filter.IsMatch(b.Name)), b =>
+    {
+        Dxil vs = null;
+        var vsFile = b.Files.FirstOrDefault(f => Bundles.Safe(f.Name).Equals(b.Name + "_Gbuf.vpo", StringComparison.OrdinalIgnoreCase))
+            ?? b.Files.FirstOrDefault(f => Bundles.Safe(f.Name).StartsWith(b.Name + "_Gbuf", StringComparison.OrdinalIgnoreCase) && f.Name.EndsWith(".vpo"));
+        if (vsFile != null)
+        {
+            var dis = Signatures.Disassemble(new Bundle(b.Name, b.Binder, [new BundleFile(Bundles.Safe(vsFile.Name).Replace(".vpo", ".ppo"), vsFile.Bytes)]), vsCache);
+            if (dis != null) vs = Dxil.Parse(dis.Value.lines);
+        }
+        string VertexSource(string psInput)
+        {
+            if (vs == null) return null;
+            var e = vs.Expression(psInput[3..], 2);
+            return e.StartsWith("in:") && !e.Contains(' ') ? e[3..] : null;
+        }
+
+        foreach (var (variant, perm, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            if (!variant.Contains("Gbuf")) continue;
+            var d = Dxil.Parse(lines);
+            var sig = Signatures.Build(b.Name, variant, d, new());
+            var albedos = sig.Textures.Where(t => t.Slot >= 0 && Signatures.Meaning(t) == "Albedo").Select(t => t.Slot).ToHashSet();
+            if (albedos.Count < 2) continue;
+            var r = Recipes.ReadColorAdjust(d, albedos, VertexSource);
+            if (r.Layers.Count == 0) continue;
+            var key = perm >= 0 ? $"{b.Name}@{perm}" : b.Name;
+            lock (table)
+            {
+                table[key] = r;
+                if (verbose) Console.WriteLine($"  {key}: " + string.Join("; ", r.Layers.Select(x =>
+                    $"{x.Key}: adjust {x.Value.ColorAdjust} if {x.Value.ColorAdjustIf}, mix {x.Value.HardMix}, {x.Value.Source} + {x.Value.AddSource} x {x.Value.ScaleSource} if {x.Value.ScaleIf}")));
+            }
+        }
+    });
+
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
+    Console.WriteLine($"{table.Count} shaders with the ColorAdjust form, {table.Values.Count(t => t.Layers.Values.Any(l => l.HardMix != null))} with a weight mix, written to {args[3]}");
+}
+
 // detailstacks <cacheDir> <outJson> [shaderRegex] : the detail stacks of C[DetailBlend] and its relatives
 // (DetailStacks.cs), one per G-buffer permutation that has one, keyed shader@permutation as _Details.json is. The
 // normal strength is the checked-in detail's, looked up as MaterialDefinition.ResolveDetailRecipe does
@@ -288,7 +356,7 @@ if (mode == "detailstacks")
                 r.Recipe.Normal ??= theirs?.Normal;
                 table[key] = r.Recipe;
                 if (verbose) Console.WriteLine($"  {key}: bottom {r.Recipe.Albedo}/{r.Recipe.Normal} {r.Recipe.Color}, " + string.Join(", ",
-                    (r.Recipe.Stack ?? []).Select(l => $"{(l.Replace == true ? "REPLACE " : "")}{(l.Invert == true ? "1-" : "")}{l.Albedo}/{l.Normal} {l.Color} by {l.Channel}: ({l.Scale}) x + ({l.Bias}) ^{l.Power}"))
+                    (r.Recipe.Stack ?? []).Select(l => $"{(l.Replace == true ? "REPLACE " : "")}{(l.OwnAlpha == true ? "OWN " : "")}{(l.Invert == true ? "1-" : "")}{l.Albedo}/{l.Normal} {l.Color} by {l.Channel}: ({l.Scale}) x + ({l.Bias}) ^{l.Power}"))
                     + (r.Recipe.BackAlbedo != null ? $" | back {r.Recipe.BackAlbedo}/{r.Recipe.BackNormal} {r.Recipe.BackColor}" : ""));
             }
         }

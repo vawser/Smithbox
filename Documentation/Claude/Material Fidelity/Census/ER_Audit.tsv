@@ -52,9 +52,6 @@ Dropped	M[AMSN_V][Mb3][VC][3Mask][Ov_N][Cover]	3	NormalMap	Other	Dropped (its No
 Dropped	C[DetailBlend][S2]	11	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	41702102	0.511	1204422	542	139	c4300
 Approximate	C[Fur]	0	NormalMap	NormalGloss	FurNormal	41251522	0.506	1103458	385	187	c5450
 Approximate	C[Fur]	6	NormalMap	NormalGloss	FurNormal	38396970	0.471	1799781	429	191	c3661
-Dropped	C[DetailBlend]_SSS	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	35604480	0.436	1268478	126	68	c3450
-Dropped	C[DetailBlend][S2]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	32702689	0.401	1112333	530	131	c4300
-Dropped	C[DetailBlend][S2]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	31658648	0.388	848608	431	103	c4300
 Dropped	C[Fur]	6	NormalMap	NormalGloss	Dropped (its FurNormal layer 0 slot already holds another texture)	31530920	0.386	1074208	381	183	c5450
 Dropped	M[AMSN_V][Mb3][3Mask][Ov_N2]	7	NormalMap	Normal	Dropped (a layer the blend doesn't use)	31226384	0.383	417302	33	7	aeg004_080
 Dropped	M[Crystal]	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	31163557	0.382	923877	166	24	aeg024_410
@@ -78,23 +75,11 @@ Dropped	M[AMSN][Mb2][Ov_AN]	5	NormalMap	Normal	Dropped (a layer the blend doesn'
 Unverified	SpeedTree_5077f_w346369a7	-1	g_DiffuseTexture	(no slot)	Albedo	22506823	0.276	56399	38	1	aeg801_255
 Unverified	SpeedTree_5077f_w346369a7	-1	g_BumpmapTexture	(no slot)	Normal	22506823	0.276	56399	38	1	aeg801_255
 Unverified	SpeedTree_5077f_w346369a7	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	22506823	0.276	56399	38	1	aeg801_255
-Dropped	M[Cave_001]	12	AlbedoMap	NormalGloss	Dropped (its Albedo layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	21673205	0.266	7671270	471	13	aeg440_020
-Dropped	M[Cave_001]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	21673205	0.266	7671270	471	13	aeg440_020
 Dropped	M[AMSN_V][Mb4][3Mask][Ov_AN]	13	AlbedoMap	Albedo	Dropped (a layer the blend doesn't use)	21158110	0.259	1161639	575	57	aeg221_214
 Dropped	M[AMSN_V][Mb4][3Mask][Ov_AN]	7	NormalMap	Normal	Dropped (a layer the blend doesn't use)	21158110	0.259	1161639	575	57	aeg221_214
-Dropped	C[DetailBlend]_SSS	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	21000827	0.257	754954	63	40	c3450
 Dropped	C[DetailBlend][S2]	13	MetallicMap	Metallic	Dropped (a metallic map of a layer above the bottom one)	19195794	0.235	366704	159	28	c4300
-Dropped	C[DetailBlend][S2]	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	15690073	0.192	411808	193	50	c4300
 Dropped	M[AMSN][Snow]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	15379234	0.188	603466	119	18	aeg001_413
 Dropped	M[AMSN][Snow]	3	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	15379234	0.188	603466	119	18	aeg001_413
-Dropped	C[DetailBlend][S2]	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	14827120	0.182	304592	129	38	c4300
-Dropped	C[DetailBlend]_SSS	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	13493504	0.165	593553	54	32	c3450
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	13076068	0.160	13042033	1944	24	aeg299_024
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	13076068	0.160	13042033	1944	24	aeg299_024
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	13076068	0.160	13042033	1944	24	aeg299_024
@@ -105,13 +90,11 @@ Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	15	NormalMap	NormalGloss	Dropped (its Norm
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	13076068	0.160	13042033	1944	24	aeg299_024
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	13076068	0.160	13042033	1944	24	aeg299_024
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN]	0	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	13062608	0.160	13037738	1832	24	aeg299_024
-Dropped	C[DetailBlend]_SSS	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	12721375	0.156	384311	36	20	c3450
 Approximate	C[Fur]_Tr	8	AlbedoMap	Albedo	FurAlbedo	11450048	0.140	270972	68	55	c4160
 Dropped	C[Fur]_Tr	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	11450048	0.140	270972	68	55	c4160
 Dropped	M[AMSN_V][Snow_VtxMask]_Edge	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	10815386	0.133	249466	50	12	aeg001_409
 Dropped	M[AMSN_V][Snow_VtxMask]_Edge	3	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	10815386	0.133	249466	50	12	aeg001_409
 Dropped	M[AMSN_V][Snow_VtxMask]_Edge	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	10814682	0.133	248762	49	11	aeg001_409
-Dropped	C[DetailBlend][S2]	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	10783720	0.132	321196	145	44	c4300
 Unverified	SpeedTree_5010ff4b_w312187	-1	g_DiffuseTexture	(no slot)	Albedo	10783478	0.132	22163	5	1	aeg801_313
 Unverified	SpeedTree_5010ff4b_w312187	-1	g_BumpmapTexture	(no slot)	Normal	10783478	0.132	22163	5	1	aeg801_313
 Unverified	SpeedTree_5010ff4b_w312187	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	10783478	0.132	22163	5	1	aeg801_313
@@ -120,7 +103,6 @@ Dropped	M[AMSN_V][Mb2][Ov_N][Snow]	7	NormalMap	Normal	Dropped (a layer the blend
 Approximate	C[Fur]_Tr	0	NormalMap	NormalGloss	FurNormal	10661096	0.131	252150	55	50	c4160
 Dropped	M[WorldTree_Trunk2]	7	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	10413592	0.128	706668	42	21	aeg094_001
 Dropped	C[Fur]_FurBlur	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	10351686	0.127	586529	172	76	c3450
-Dropped	C[DetailBlend][S2]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	10335752	0.127	270898	124	35	c4300
 Dropped	M[directional_grass][Far_ColorAdjust]]	1	Mask1Map	Other	Dropped (no route for the role Mask1Map)	10040830	0.123	25061	20	1	aeg050_000
 Dropped	C[Fur]_FurBlur	7	Mask1Map	Other	Dropped (no route for the role Mask1Map)	10038096	0.123	674481	99	47	c6060
 Approximate	C[Fur]_FurBlur	8	AlbedoMap	Albedo	FurAlbedo	9928374	0.122	554089	150	70	c3450
@@ -152,6 +134,7 @@ Dropped	M[ShadowErdtree_Trunk]	3	NormalMap	Normal	Dropped (its Normal layer 0 sl
 Dropped	M[ShadowErdtree_Trunk]	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	7064572	0.087	214102	7	4	aeg063_001
 Dropped	M[AMSN_V]_Grass2_LOD1	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	7029143	0.086	8468	25	10	aeg004_114
 Approximate	C[Fur]_FurBlur	0	NormalMap	NormalGloss	FurNormal	6715192	0.082	441975	89	46	c4080
+Dropped	C[DetailBlend][S2]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	6684689	0.082	250498	132	38	c4491
 Dropped	C[Fur]_FurBlur	6	NormalMap	NormalGloss	Dropped (its FurNormal layer 0 slot already holds another texture)	6409924	0.079	405816	78	37	c4080
 Misrouted	C[DetailBlend][Rich]	0	NormalMap	Mask	Normal	6381533	0.078	2802519	1675	224	c4480
 Unverified	SpeedTree_50f1ff4_w321a7	-1	g_DiffuseTexture	(no slot)	Albedo	6044632	0.074	22402	26	1	aeg490_055
@@ -163,7 +146,6 @@ Unverified	SpeedTree_5077ff8b_w34636187	-1	g_TranslucencyTexture	(no slot)	Dropp
 Dropped	M[Flower_m10]	5	Mask1Map	Other	Dropped (no route for the role Mask1Map)	5932988	0.073	52876	29	15	aeg210_016
 Dropped	C[c4180]_Glow	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	5474480	0.067	43804	21	19	c4180
 Dropped	C[c4180]_Glow	3	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	5474480	0.067	43804	21	19	c4180
-Dropped	C[DetailBlend]_SSS	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	5387404	0.066	121710	12	7	c5590
 Dropped	C[c4180]_Glow	8	PseudoTransparency_Anger	Albedo	Dropped (no route for the role PseudoTransparency_Anger)	5065280	0.062	38224	18	17	c4180
 Dropped	M[AMSN_V][Ov_N][Ice]	0	NormalMap	Normal	Dropped (a layer the blend doesn't use)	5044851	0.062	222222	47	5	aeg024_437
 Dropped	M[AMSN_V][Ov_N][Ice]	6	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	5044851	0.062	222222	47	5	aeg024_437
@@ -186,7 +168,6 @@ Dropped	C[c5590]_Oil	7	Mask3Map	Coordinates	Dropped (no route for the role Mask3
 Dropped	C[c5590]_Oil	9	NormalMap	Normal	Dropped (its Normal layer 0 slot already holds another texture)	4092564	0.050	32872	4	4	c5590
 Dropped	C[c5590]_Oil	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	4092564	0.050	32872	4	4	c5590
 Dropped	C[c5590]_Oil	10	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	4092564	0.050	32872	4	4	c5590
-Dropped	C[DetailBlend]_SSS	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	4080573	0.050	20454	2	2	c5590
 Approximate	C[Shell]	6	AlbedoMap	Albedo	FurAlbedo	3983812	0.049	155806	54	23	c4550
 Dropped	C[Shell]	7	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	3983812	0.049	153630	52	22	c4550
 Approximate	C[Shell]	8	NormalMap	NormalGloss	FurNormal	3983812	0.049	150322	48	21	c4550
@@ -202,9 +183,6 @@ Dropped	M[AMSN_V][Mb2][Snow_VtxMask]	5	AlbedoMap	Albedo	Dropped (a layer the ble
 Dropped	M[AMSN_V][Mb2][Snow_VtxMask]	7	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	3602365	0.044	823074	84	12	aeg050_131
 Misrouted	C[c4480]_Flower_1	11	EmissiveMap	Albedo	Emissive	3585886	0.044	61626	10	4	c4480
 Dropped	C[c4480]_Flower_1	8	Mask1Map	Subsurface	Dropped (no route for the role Mask1Map)	3585886	0.044	61626	10	4	c4480
-Dropped	C[c4480]_Flower_1	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	3585886	0.044	61626	10	4	c4480
-Dropped	C[c4480]_Flower_1	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	3585886	0.044	61626	10	4	c4480
-Dropped	C[c4480]_Flower_1	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	3585886	0.044	61626	10	4	c4480
 Dropped	C[Crystal_NoTransparent]_Glow	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	3535656	0.043	66178	13	12	c2275
 Unverified	SpeedTree_5010ff4b_w312987	-1	g_DiffuseTexture	(no slot)	Albedo	3432162	0.042	6492	2	1	aeg801_220
 Unverified	SpeedTree_5010ff4b_w312987	-1	g_BumpmapTexture	(no slot)	Normal	3432162	0.042	6492	2	1	aeg801_220
@@ -224,17 +202,9 @@ Dropped	M[AMSN_V][Mb4_N][Far_AN]	15	NormalMap	NormalGloss	Dropped (its Normal la
 Dropped	M[AMSN_V][Mb4_N][Far_AN]	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2992813	0.037	2262083	379	2	aeg299_062
 Dropped	M[AMSN_V][Mb4_N][Far_AN]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	2992813	0.037	2262083	379	2	aeg299_062
 Dropped	C[DetailBlend]_FurBlur	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2888810	0.035	106726	13	8	c5440
-Dropped	M[Cave_Ice_001]	12	AlbedoMap	NormalGloss	Dropped (its Albedo layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	10	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	2	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	2742636	0.034	1884917	116	3	aeg441_024
-Dropped	M[Cave_Ice_001]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	2742636	0.034	1884917	116	3	aeg441_024
+Dropped	M[Cave_Ice_001]	14	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	2742636	0.034	1884917	116	3	aeg441_024
+Dropped	M[Cave_Ice_001]	7	AlbedoMap	Albedo	Dropped (a layer the blend doesn't use)	2742636	0.034	1884917	116	3	aeg441_024
+Dropped	M[Cave_Ice_001]	10	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	2742636	0.034	1884917	116	3	aeg441_024
 Unverified	SpeedTree_5010fdmo_w32987	-1	g_DiffuseTexture	(no slot)	Albedo	2741375	0.034	2275	3	1	aeg801_220
 Unverified	SpeedTree_5010fdmo_w32987	-1	g_BumpmapTexture	(no slot)	Normal	2741375	0.034	2275	3	1	aeg801_220
 Unverified	SpeedTree_5010fdmo_w32987	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	2741375	0.034	2275	3	1	aeg801_220
@@ -259,17 +229,8 @@ Unverified	SpeedTree_50777_w36369a7	-1	g_BumpmapTexture	(no slot)	Normal	2421460
 Unverified	SpeedTree_50777_w36369a7	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	2421460	0.030	2514	8	1	aeg801_096
 Dropped	M[m11_WorldTree]	11	Mask3Map	Other	Dropped (no route for the role Mask3Map)	2397780	0.029	135154	16	4	aeg094_076
 Dropped	M[m11_WorldTree]	12	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	2397780	0.029	135154	16	4	aeg094_076
-Misrouted	M[m11_WorldTree]	13	NormalMap	Emissive	Normal	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	14	NormalMap	Emissive	Dropped (its Normal layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	2	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	2397780	0.029	135154	16	4	aeg094_076
-Dropped	M[m11_WorldTree]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	2397780	0.029	135154	16	4	aeg094_076
+Dropped	M[m11_WorldTree]	13	NormalMap	Emissive	Dropped (a layer the blend doesn't use)	2397780	0.029	135154	16	4	aeg094_076
+Dropped	M[m11_WorldTree]	14	NormalMap	Emissive	Dropped (a layer the blend doesn't use)	2397780	0.029	135154	16	4	aeg094_076
 Dropped	M[AMSN_V][Mb4][3Mask][Ov_N2]	7	NormalMap	Normal	Dropped (a layer the blend doesn't use)	2334785	0.029	1305075	115	17	aeg002_108
 Dropped	C[Crystal_NoTransparent]	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2271149	0.028	227312	154	77	c3702
 Dropped	M[AMSN_V][1Mask_Edge]	0	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	2260533	0.028	32685	5	3	aeg052_337
@@ -283,7 +244,6 @@ Unverified	SpeedTree_5077f_w34636987	-1	g_BumpmapTexture	(no slot)	Normal	200150
 Unverified	SpeedTree_5077f_w34636987	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	2001505	0.025	1661	3	1	aeg801_220
 Dropped	MultiBlend2_et1	5	ReflectanceMap	Albedo	Dropped (no route for the role ReflectanceMap)	1937124	0.024	8388	6	2	aeg003_306
 Dropped	MultiBlend2_et1	6	ReflectanceMap	Albedo	Dropped (no route for the role ReflectanceMap)	1937124	0.024	8388	6	2	aeg003_306
-Dropped	C[DetailBlend][Rich]	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	1935846	0.024	1931218	1194	143	c3010
 Dropped	M[AMSN_V][Mb2][Ov_AN][Meteorite]	7	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	1934218	0.024	308210	40	14	aeg022_125
 Extra	MultiBlend2_et1	10	ShininessMap	NotSampled	Shininess	1923012	0.024	7044	2	1	aeg003_306
 Dropped	C[c4450]_AreaMatchBlend	1	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	1900332	0.023	269284	26	20	c4450
@@ -292,18 +252,9 @@ Dropped	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]	7	NormalMap	Normal	Dropped (a layer 
 Approximate	C[Fur]_FurBlur	1	AlbedoMap	Albedo	FurAlbedo	1790066	0.022	283669	37	14	c6060
 UvMismatch	C[DetailBlend][S2]	13	MetallicMap	Metallic	Metallic	1773769	0.022	24258	19	7	c4300
 Dropped	M[m11_05_WorldTree][Flame]	12	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	1740038	0.021	302548	17	5	aeg094_092
-Misrouted	M[m11_05_WorldTree][Flame]	13	NormalMap	Emissive	Normal	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	14	NormalMap	Emissive	Dropped (its Normal layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
+Dropped	M[m11_05_WorldTree][Flame]	13	NormalMap	Emissive	Dropped (a layer the blend doesn't use)	1740038	0.021	302548	17	5	aeg094_092
+Dropped	M[m11_05_WorldTree][Flame]	14	NormalMap	Emissive	Dropped (a layer the blend doesn't use)	1740038	0.021	302548	17	5	aeg094_092
 Dropped	M[m11_05_WorldTree][Flame]	15	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	2	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	1740038	0.021	302548	17	5	aeg094_092
-Dropped	M[m11_05_WorldTree][Flame]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	1740038	0.021	302548	17	5	aeg094_092
 Dropped	M[Oil_Solid]	6	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1736696	0.021	38991	6	2	aeg430_070
 Dropped	M[Oil_Solid]	7	NormalMap	Normal	Dropped (its Normal layer 0 slot already holds another texture)	1736696	0.021	38991	6	2	aeg430_070
 Dropped	M[AMSN_V][Oil_Solid][Snow_VtxMask]	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1692832	0.021	29688	6	2	aeg430_120
@@ -318,7 +269,6 @@ Dropped	M[AMSN_V][Oil_Solid][Snow_VtxMask]	0	Mask1Map	Mask	Dropped (no route for
 Unverified	SpeedTree_5010ff9b_w312987	-1	g_DiffuseTexture	(no slot)	Albedo	1678305	0.021	3162	2	1	aeg801_220
 Unverified	SpeedTree_5010ff9b_w312987	-1	g_BumpmapTexture	(no slot)	Normal	1678305	0.021	3162	2	1	aeg801_220
 Unverified	SpeedTree_5010ff9b_w312987	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	1678305	0.021	3162	2	1	aeg801_220
-Dropped	C[DetailBlend][Rich]	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1668780	0.020	1786849	1133	133	c3010
 Dropped	C[c4450]_AreaMatchBlend	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1617000	0.020	228808	20	16	c4450
 Misrouted	C[AMSN]_Burn	0	AlbedoMap	Emissive	Albedo	1612055	0.020	96828	10	8	c5511
 Dropped	C[AMSN]_Burn	6	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1612055	0.020	96828	10	8	c5511
@@ -421,15 +371,12 @@ Unverified	SpeedTree_50f1ff8_w346369a7	-1	g_TranslucencyTexture	(no slot)	Droppe
 Approximate	C[Fur]_cloth	8	AlbedoMap	Albedo	FurAlbedo	960134	0.012	186505	442	112	c3670
 Dropped	C[Fur]_cloth	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	960134	0.012	186505	442	112	c3670
 Approximate	C[Fur]_cloth	6	NormalMap	NormalGloss	FurNormal	931575	0.011	159439	275	72	c3661
-Dropped	C[DetailBlend][Rich]	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	917737	0.011	980804	656	66	c3550
 Dropped	M[AMSN][Mb3][Ov_AN]	5	NormalMap	Normal	Dropped (a layer the blend doesn't use)	914444	0.011	9368	5	3	aeg001_095
 Extra	C[DetailBlend]	10	AlbedoMap	NotSampled	Albedo	887666	0.011	28181	19	9	c4491
 Dropped	M[Ice2]_Emissive	2	AlbedoMap	Emissive	Dropped (its Albedo layer 0 slot already holds another texture)	851918	0.010	33701	9	5	aeg110_317
 Unverified	SpeedTree_5010fb_w312187	-1	g_DiffuseTexture	(no slot)	Albedo	842454	0.010	11214	20	1	aeg490_114
 Unverified	SpeedTree_5010fb_w312187	-1	g_BumpmapTexture	(no slot)	Normal	842454	0.010	11214	20	1	aeg490_114
 Unverified	SpeedTree_5010fb_w312187	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	842454	0.010	11214	20	1	aeg490_114
-Dropped	C[DetailBlend][S2]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	834392	0.010	59457	18	5	c4314
-Dropped	C[DetailBlend][S2]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	834392	0.010	59457	18	5	c4314
 Dropped	C[c4640]_Body	11	VectorMap	Coordinates	Dropped (no route for the role VectorMap)	827244	0.010	68937	1	1	c4640
 Dropped	C[c4640]_Body	12	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	827244	0.010	68937	1	1	c4640
 Dropped	C[c4640]_Body	14	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	827244	0.010	68937	1	1	c4640
@@ -450,16 +397,9 @@ Approximate	C[Fur]_cloth	1	AlbedoMap	Albedo	FurAlbedo	791976	0.010	42982	70	24	c
 Unverified	SpeedTree_50f1ff1_w321a7	-1	g_DiffuseTexture	(no slot)	Albedo	788952	0.010	8112	9	1	aeg490_050
 Unverified	SpeedTree_50f1ff1_w321a7	-1	g_BumpmapTexture	(no slot)	Normal	788952	0.010	8112	9	1	aeg490_050
 Unverified	SpeedTree_50f1ff1_w321a7	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	788952	0.010	8112	9	1	aeg490_050
-Dropped	C[c4950]_Ghost	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
-Dropped	C[c4950]_Ghost	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
-Dropped	C[c4950]_Ghost	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
-Dropped	C[c4950]_Ghost	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
-Dropped	C[c4950]_Ghost	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
-Dropped	C[c4950]_Ghost	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
 Unverified	SpeedTree_50777f4_w3636187	-1	g_DiffuseTexture	(no slot)	Albedo	783872	0.010	688	3	1	aeg801_313
 Unverified	SpeedTree_50777f4_w3636187	-1	g_BumpmapTexture	(no slot)	Normal	783872	0.010	688	3	1	aeg801_313
 Unverified	SpeedTree_50777f4_w3636187	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	783872	0.010	688	3	1	aeg801_313
-Dropped	C[DetailBlend][Rich]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	774054	0.009	866834	593	51	c3550
 Unverified	SpeedTree_50f1f_w3636187	-1	g_DiffuseTexture	(no slot)	Albedo	764244	0.009	3358	3	1	aeg801_061
 Unverified	SpeedTree_50f1f_w3636187	-1	g_BumpmapTexture	(no slot)	Normal	764244	0.009	3358	3	1	aeg801_061
 Unverified	SpeedTree_50f1f_w3636187	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	764244	0.009	3358	3	1	aeg801_061
@@ -483,7 +423,6 @@ Dropped	M[AMSN_V][Mb2][3Mask][Ov_N][magma_ColorAdjust]	4	Mask3Map	Emissive	Dropp
 Dropped	C[c4980]_Lwing	1	VectorMap	Coordinates	Dropped (no route for the role VectorMap)	713174	0.009	129668	10	10	c4980
 Misrouted	C[c4980]_Lwing	2	AlbedoMap	Emissive	Albedo	713174	0.009	129668	10	10	c4980
 Dropped	C[c4980]_Lwing	9	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	713174	0.009	129668	10	10	c4980
-Dropped	C[DetailBlend]_SSS_cloth	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	710124	0.009	39932	25	5	c3560
 Dropped	C[DetailBlend]_SSS_cloth	8	Mask1Map	Subsurface	Dropped (no route for the role Mask1Map)	691671	0.008	47257	33	10	c3560
 Approximate	C[c5220]_Mipuella_Hair	2	AlbedoMap	Other	FurAlbedo	677754	0.008	140518	5	3	c5220
 Dropped	C[c5220]_Mipuella_Hair	6	NormalMap	NormalGloss	Dropped (its FurAlbedo layer 0 slot already holds another texture)	677754	0.008	140518	5	3	c5220
@@ -533,7 +472,6 @@ Dropped	C[c4280]_Honey	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot alrea
 Dropped	C[c4280]_Honey	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	527618	0.006	2366	3	1	c4280
 Dropped	C[c4280]_Honey	7	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	527618	0.006	2366	3	1	c4280
 Approximate	C[Fur]_Arts	6	NormalMap	NormalGloss	FurNormal	519866	0.006	29374	4	4	c5840
-Dropped	C[DetailBlend][S2]_cloth	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	497277	0.006	179589	218	41	c4570
 Dropped	C[DetailBlend][S2]_cloth	11	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	497277	0.006	178371	220	41	c4570
 Dropped	M[AMSN_V][Mb4][3Mask][Ov_N2][beach]	7	NormalMap	Normal	Dropped (a layer the blend doesn't use)	495860	0.006	500196	167	3	m61_49_38_00_493852
 Unverified	SpeedTree_billboard	-1	g_DiffuseTexture	(no slot)	Albedo	492456	0.006	904	226	1	aeg490_000
@@ -544,7 +482,6 @@ Dropped	M[Foreigner]	3	NormalMap	Normal	Dropped (its Normal layer 0 slot already
 Dropped	M[Foreigner]	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	491232	0.006	9632	2	1	aeg099_350
 Dropped	M[Foreigner]	7	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	491232	0.006	9632	2	1	aeg099_350
 Dropped	M[Ice2]_Emissive	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	489642	0.006	20437	6	4	aeg110_319
-Dropped	C[DetailBlend][S2]_cloth	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	486329	0.006	176191	213	39	c4570
 Dropped	C[c4640]_Tentacles	11	VectorMap	Coordinates	Dropped (no route for the role VectorMap)	478080	0.006	39840	2	2	c4640
 Dropped	C[DetailBlend]_FurBlur	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	474390	0.006	84016	7	5	c4270
 Dropped	C[DetailBlend]_FurBlur	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	474390	0.006	84016	7	5	c4270
@@ -560,7 +497,6 @@ Unverified	SpeedTree_5010f_w31228b	-1	g_BumpmapTexture	(no slot)	Normal	463003	0
 Unverified	SpeedTree_5010f_w31228b	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	463003	0.006	61629	12	1	aeg810_040
 Dropped	C[DetailBlend]_FurBlur	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	453310	0.006	73476	6	4	c4270
 Dropped	M[WorldTree_Twig2]_Emissive_Glow	0	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	449316	0.006	4824	4	2	aeg094_201
-Dropped	C[DetailBlend][Rich]_cloth	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	445681	0.005	599725	639	111	c3010
 Dropped	M[AMSN_V][Ov_N][WorldUV_Ov_A]	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	444727	0.005	21447	26	2	aeg071_081
 Dropped	M[AMSN_V][Ov_N][Wet]	0	BlendEdge	Mask	Dropped (no route for the role BlendEdge)	436508	0.005	333748	19	4	aeg221_098
 Dropped	M[Flag][Mb2]	12	NormalMap	Normal	Dropped (a layer the blend doesn't use)	434683	0.005	39564	81	39	aeg070_458
@@ -569,7 +505,6 @@ Dropped	C[c5130]_Fade	4	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already 
 Dropped	C[c5130]_Fade	12	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	433991	0.005	155363	4	4	c5141
 Dropped	C[c5130]_Fade	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	432173	0.005	153545	3	3	c5141
 Approximate	C[Fur]_FurBlur	10	AlbedoMap	Albedo	FurAlbedo	423312	0.005	32440	22	6	c4385
-Dropped	C[DetailBlend][S2]_cloth	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	419597	0.005	126264	134	25	c4570
 Dropped	M[AMSN_V][Ov_AN]_Skin_PaintDecal	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	415909	0.005	345225	17	5	aeg427_008
 Dropped	C[c5130]_Fade	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	415611	0.005	136983	3	3	c5141
 Dropped	C[c5130]_Fade	10	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	413793	0.005	135165	2	2	c5141
@@ -584,17 +519,10 @@ Dropped	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_C]	6	NormalMap	NormalGloss	Dropped (
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_C]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	409650	0.005	409650	131	1	m61_47_43_00_474301
 Dropped	M[AMSN_V][Ov_N][Snow]_Edge	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	408523	0.005	50536	13	7	aeg001_420
 Dropped	M[AMSN_V][Ov_N][Snow]_Edge	3	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	408523	0.005	50536	13	7	aeg001_420
-Dropped	C[DetailBlend][Rich]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	406177	0.005	327803	116	23	c3550
 Dropped	C[AMSN]_Arts_Enchant	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	395694	0.005	27029	4	3	c5250
 UvMismatch	C[c3200]_Costume	3	MetallicMap	Metallic	Metallic	391024	0.005	15564	12	8	c3200
 Extra	M[A]_NoLight	1	AlbedoMap	NotSampled	Albedo	388167	0.005	14410	173	12	aeg030_903
 Dropped	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_C]	0	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	374936	0.005	374936	122	1	m61_47_43_00_474301
-Dropped	M[ShadowErdtree_WoodDetail]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	373919	0.005	61918	4	1	aeg050_474
-Dropped	M[ShadowErdtree_WoodDetail]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	373919	0.005	61918	4	1	aeg050_474
-Dropped	M[ShadowErdtree_WoodDetail]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	373919	0.005	61918	4	1	aeg050_474
-Dropped	M[ShadowErdtree_WoodDetail]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	373919	0.005	61918	4	1	aeg050_474
-Dropped	M[ShadowErdtree_WoodDetail]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	373919	0.005	61918	4	1	aeg050_474
-Dropped	M[ShadowErdtree_WoodDetail]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	373919	0.005	61918	4	1	aeg050_474
 Dropped	M[WorldTree_Leaves]	3	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	373149	0.005	34779	6	4	aeg052_724
 Dropped	M[WorldTree_Leaves]	4	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	373149	0.005	34779	6	4	aeg052_724
 Dropped	M[AMSN_V][Mb2][Ov_N][WorldUV_Ov_A]	6	AlbedoMap	Albedo	Dropped (a layer the blend doesn't use)	366530	0.004	71259	64	8	aeg232_427
@@ -603,6 +531,7 @@ Approximate	C[Fur]_FurBlur_cloth	8	AlbedoMap	Albedo	FurAlbedo	364480	0.004	40307
 Dropped	C[Fur]_FurBlur_cloth	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	364480	0.004	40307	69	25	c3450
 Dropped	C[Face][S2]_SSS	2	Mask3Map	Subsurface	Dropped (no route for the role Mask3Map)	358656	0.004	76470	12	8	c2040
 Approximate	C[Fur]_FurBlur_cloth	6	NormalMap	NormalGloss	FurNormal	351082	0.004	27255	35	17	c3450
+Dropped	C[DetailBlend][Rich]	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	343663	0.004	141032	61	11	c5160
 Dropped	C[c3200]_Costume	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	335720	0.004	13428	10	7	c3210
 Dropped	C[DetailBlend][Rich]	11	MetallicMap	Metallic	Dropped (a metallic map of a layer above the bottom one)	334260	0.004	88203	28	6	c3550
 Dropped	C[AMSN]_Arts	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	330632	0.004	58572	5	5	c5840
@@ -626,7 +555,6 @@ Dropped	M[AMSN_V][Mb4][3Mask][Ov_N2]_ControlVtxCh	4	NormalMap	Normal	Dropped (a 
 Dropped	C[DetailBlend]_ShellBlur	14	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	295176	0.004	49196	5	4	c5280
 Misrouted	C[DetailBlend]_ShellBlur	15	AlbedoMap	Mask	Albedo	295176	0.004	49196	5	4	c5280
 Dropped	C[DetailBlend]_ShellBlur	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	291324	0.004	48554	4	3	c5280
-Dropped	C[DetailBlend][S2]_cloth	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	289499	0.004	96946	102	19	c4570
 Dropped	C[Fur]_FurBlur_cloth	7	Mask1Map	Other	Dropped (no route for the role Mask1Map)	288500	0.004	24030	47	15	c3450
 Dropped	M[Cuckoo]	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	288120	0.004	12348	3	3	aeg250_431
 Dropped	M[Cuckoo]	2	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	288120	0.004	12348	3	3	aeg250_431
@@ -637,7 +565,6 @@ Dropped	M[Water][ocean5]	4	Mask3Map	Albedo	Dropped (no route for the role Mask3M
 Dropped	M[Water][ocean5]	5	Mask3Map	Other	Dropped (no route for the role Mask3Map)	284359	0.003	42529	3	2	aeg097_001
 Dropped	M[Water][ocean5]	1	NormalMap	Normal	Dropped (a water normal the water recipe doesn't use)	284359	0.003	42529	3	2	aeg097_001
 Dropped	C[c4190]_Est	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	280320	0.003	3840	4	2	c4191
-Dropped	C[DetailBlend][Rich]_cloth	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	279131	0.003	314747	334	55	c3950
 Dropped	M[Rock][m12]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	275535	0.003	38715	7	5	aeg232_673
 Dropped	M[Rock][m12]	4	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	275535	0.003	38715	7	5	aeg232_673
 Dropped	C[c5050]_Crystal_Blend	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	273222	0.003	57450	14	11	c5311
@@ -649,10 +576,7 @@ Approximate	C[c2500]_Fade_Fur	8	AlbedoMap	Albedo	FurAlbedo	261986	0.003	9034	1	1
 Dropped	C[c2500]_Fade_Fur	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	261986	0.003	9034	1	1	c2500
 Approximate	C[c2500]_Fade_Fur	6	NormalMap	NormalGloss	FurNormal	261986	0.003	9034	1	1	c2500
 Dropped	C[c2500]_Fade_Fur	7	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	261986	0.003	9034	1	1	c2500
-Dropped	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	260272	0.003	45812	7	5	c3600
-Dropped	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	260272	0.003	43896	5	4	c3600
 Dropped	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	11	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	260272	0.003	43896	5	4	c3600
-Dropped	C[DetailBlend][Rich]_cloth	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	247413	0.003	545148	583	103	c3010
 Dropped	M[AMSN_V][Ov_N][Flame]	1	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	246265	0.003	114265	8	6	aeg220_923
 Approximate	M[Water][ocean4_LOD1]	0	NormalMap	NormalGloss	WaterNormal	246068	0.003	35391	6	4	aeg097_000
 Dropped	M[Water][ocean4_LOD1]	2	NormalMap	NormalGloss	Dropped (its WaterNormal layer 0 slot already holds another texture)	246068	0.003	35391	6	4	aeg097_000
@@ -672,12 +596,11 @@ Dropped	C[c4520]_Dragon	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot
 Dropped	C[DetailBlend][Rich]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	233389	0.003	157625	70	11	c2110
 Approximate	C[Fur]_Arts	0	NormalMap	NormalGloss	FurNormal	229268	0.003	8818	1	1	c5250
 Dropped	C[Fur]_Arts	6	NormalMap	NormalGloss	Dropped (a fur texture the fur recipe doesn't use)	229268	0.003	8818	1	1	c5250
+Dropped	C[DetailBlend][Rich]	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	227817	0.003	117753	47	7	c2110
 Dropped	M[AMSN_V][Mb2][Ov_AN][Ore]	0	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	225689	0.003	110807	14	5	aeg021_055
 Dropped	M[AMSN_V][Mb2][Ov_AN][Ore]	8	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	225689	0.003	110807	14	5	aeg021_055
 Dropped	M[AMSN_V][Mb2][Ov_AN][Ore]	7	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	225689	0.003	110807	14	5	aeg021_055
 Dropped	C[c5050]_Crystal_Blend	9	Mask1Map	Metallic	Dropped (no route for the role Mask1Map)	224530	0.003	56932	13	10	c5311
-Dropped	M[PhantomChair]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	221660	0.003	14962	4	2	aeg227_014
-Dropped	M[PhantomChair]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	221660	0.003	14962	4	2	aeg227_014
 Dropped	C[Hair][ChrCustomize]	3	Mask1Map	Alpha	Dropped (no route for the role Mask1Map)	221396	0.003	95445	11	6	c5220
 Dropped	C[Hair][ChrCustomize]	4	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	221396	0.003	95445	11	6	c5220
 Dropped	M[Cuckoo_Fixed]	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	220346	0.003	47564	12	1	aeg250_640
@@ -697,24 +620,18 @@ Dropped	M[Water][ocean4]	1	NormalMap	Normal	Dropped (a water normal the water re
 Approximate	C[Fur]_Glow	8	AlbedoMap	Albedo	FurAlbedo	206500	0.003	4130	2	2	c5430
 Approximate	C[Fur]_Glow	0	NormalMap	Other	FurNormal	206500	0.003	4130	2	2	c5430
 Dropped	C[Fur]_Glow	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	206500	0.003	4130	2	2	c5430
-Dropped	M[EvilBastion]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	205213	0.003	56545	38	2	aeg420_028
-Dropped	M[EvilBastion]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	205213	0.003	56545	38	2	aeg420_028
-Dropped	M[EvilBastion]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	205213	0.003	56545	38	2	aeg420_028
-Dropped	M[EvilBastion]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	205213	0.003	56545	38	2	aeg420_028
 Approximate	C[Fur]_Tr_cloth	8	AlbedoMap	Albedo	FurAlbedo	200820	0.002	39224	75	11	c4550
 Dropped	C[Fur]_Tr_cloth	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	200820	0.002	39224	75	11	c4550
 Dropped	M[WorldTree_Leaves]	0	Mask1Map	Other	Dropped (no route for the role Mask1Map)	200207	0.002	22426	5	3	aeg007_217
-Dropped	M[PhantomChair]	2	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	199760	0.002	13586	2	1	aeg227_014
+Dropped	M[PhantomChair]	10	NormalMap	Normal	Dropped (a layer the blend doesn't use)	199760	0.002	13586	2	1	aeg227_014
 Dropped	M[DistantClouds_Cloth]_002	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	197103	0.002	133013	23	4	aeg462_035
 Dropped	M[AMSN_V][Mb2][Ov_AN][Ore]	1	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	196162	0.002	81280	10	4	aeg021_055
-Dropped	M[supercell_02]	0	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	191600	0.002	191600	2	1	aeg096_110
+Dropped	M[supercell_02]	0	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	191600	0.002	191600	2	1	aeg240_501
 Dropped	C[c4720]_Beast	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	191342	0.002	215628	12	8	c4720
 Dropped	C[c4720]_Beast	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	191342	0.002	215628	12	8	c4720
 Dropped	C[c4720]_Beast	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	191342	0.002	215628	12	8	c4720
 Dropped	C[Fur]_cloth	2	AlbedoMap	Albedo	Dropped (a fur texture the fur recipe doesn't use)	183312	0.002	2720	5	3	c3970
 Dropped	C[Fur]_cloth	4	NormalMap	NormalGloss	Dropped (a fur texture the fur recipe doesn't use)	183312	0.002	2720	5	3	c3970
-Dropped	C[DetailBlend][S2]_cloth	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	180163	0.002	75475	91	16	c4570
-Dropped	C[DetailBlend][S2]_cloth	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	180163	0.002	75475	91	16	c4570
 Dropped	C[c4720]_Beast	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	179002	0.002	201592	11	7	c4720
 Unverified	SpeedTree_5077f_w346b6187	-1	g_DiffuseTexture	(no slot)	Albedo	173664	0.002	864	2	1	aeg801_230
 Unverified	SpeedTree_5077f_w346b6187	-1	g_BumpmapTexture	(no slot)	Normal	173664	0.002	864	2	1	aeg801_230
@@ -742,7 +659,6 @@ Dropped	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN][Snow]	4	AlbedoMap	Albedo	Dropped (a lay
 Dropped	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN][Snow]	9	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	151343	0.002	151343	5	3	aeg464_055
 Dropped	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN][Snow]	7	NormalMap	Mask	Dropped (a layer the blend doesn't use)	151343	0.002	151343	5	3	aeg464_055
 Dropped	M[Ghost]	2	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	150634	0.002	6020	3	2	aeg007_299
-Dropped	C[DetailBlend]_SSS_cloth	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	147849	0.002	11373	7	1	c4650
 Dropped	C[Fur]_FurBlur	10	AlbedoMap	Albedo	Dropped (a fur texture the fur recipe doesn't use)	144152	0.002	34637	8	5	c4811
 Dropped	M[Lava]	3	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	143325	0.002	142405	26	6	m16_00_00_99_000100
 Dropped	M[Lava]	1	NormalMap	Mask	Dropped (its Normal layer 0 slot already holds another texture)	143325	0.002	142405	26	6	m16_00_00_99_000100
@@ -750,73 +666,38 @@ Dropped	M[Lava]	5	NormalMap	Normal	Dropped (its Normal layer 0 slot already hold
 Dropped	C[c5020]_Oil	6	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	141294	0.002	70647	2	2	c5020
 Extra	M[Oil_Solid]	9	NormalMap	NotSampled	OverlayNormal	138936	0.002	3234	2	1	aeg430_070
 Dropped	C[c2200]_Body	5	AlphaWing	Mask	Dropped (no route for the role AlphaWing)	135910	0.002	27182	2	2	c2200
+Dropped	C[DetailBlend][Rich]	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	135735	0.002	97696	47	7	c2110
 Misrouted	C[c5170]_Burn	0	AlbedoMap	Emissive	Albedo	135474	0.002	59171	9	8	c5170
 Dropped	C[c5170]_Burn	6	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	135474	0.002	59171	9	8	c5170
 Dropped	C[c5170]_Burn	7	AlbedoMap	Emissive	Dropped (its Albedo layer 0 slot already holds another texture)	135474	0.002	59171	9	8	c5170
 Dropped	M[AMSN_V][Mb3][Snow_VtxMask]	5	AlbedoMap	Albedo	Dropped (a layer the blend doesn't use)	134784	0.002	49250	152	2	aeg073_002
 Dropped	M[AMSN_V][Mb3][Snow_VtxMask]	7	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	134784	0.002	49250	152	2	aeg073_002
 Dropped	C[c5220]_Mipuella	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	134658	0.002	22443	3	3	c5220
-Dropped	M[Road_Ground]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	132091	0.002	132091	87	1	m61_48_45_00_484500
-Dropped	M[Road_Ground]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	132091	0.002	132091	87	1	m61_48_45_00_484500
+Dropped	C[DetailBlend][Rich]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	132781	0.002	113621	43	5	c2110
 Dropped	C[Crystal]_cloth	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	129870	0.002	6168	24	10	c2100
 Dropped	C[Crystal]_cloth	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	129870	0.002	6168	24	10	c2100
 Dropped	C[c3200]_Fur	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	125482	0.002	4714	5	4	c3200
 Dropped	M[AMSN_V][Mb3][3Mask_T][Ov_N2_T]	7	NormalMap	Normal	Dropped (a layer the blend doesn't use)	123266	0.002	33853	2	2	aeg220_279
-Misrouted	M[CutScene][Worldtree_InnerWall]	11	AlbedoMap	Emissive	Albedo	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg221_094
+Dropped	M[CutScene][Worldtree_InnerWall]	11	AlbedoMap	Emissive	Dropped (a layer the blend doesn't use)	121030	0.001	121030	1	1	aeg221_094
 Dropped	M[CutScene][Worldtree_InnerWall]	12	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg221_094
-Dropped	M[CutScene][Worldtree_InnerWall]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg221_094
-Misrouted	M[CutScene][Worldtree_InnerWall_003]	11	AlbedoMap	Emissive	Albedo	121030	0.001	121030	1	1	aeg227_111
+Dropped	M[CutScene][Worldtree_InnerWall_003]	11	AlbedoMap	Emissive	Dropped (a layer the blend doesn't use)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_003]	13	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_003]	14	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_003]	15	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_003]	16	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_003]	12	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_111
-Dropped	M[CutScene][Worldtree_InnerWall_003]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg227_111
 Dropped	M[CutScene][Worldtree_InnerWall_002]	11	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg227_110
-Misrouted	M[CutScene][Worldtree_InnerWall_002]	15	AlbedoMap	Emissive	Albedo	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	16	AlbedoMap	Emissive	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_110
+Dropped	M[CutScene][Worldtree_InnerWall_002]	15	AlbedoMap	Emissive	Dropped (a layer the blend doesn't use)	121030	0.001	121030	1	1	aeg227_110
+Dropped	M[CutScene][Worldtree_InnerWall_002]	16	AlbedoMap	Emissive	Dropped (a layer the blend doesn't use)	121030	0.001	121030	1	1	aeg227_110
 Dropped	M[CutScene][Worldtree_InnerWall_002]	12	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	121030	0.001	121030	1	1	aeg227_110
-Dropped	M[CutScene][Worldtree_InnerWall_002]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	121030	0.001	121030	1	1	aeg227_110
 Dropped	C[c4520]_Dragon	15	AlbedoMap	Other	Dropped (its Albedo layer 0 slot already holds another texture)	120644	0.001	120644	4	4	c4520
 Dropped	C[c4450]_Shell	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	119168	0.001	17024	2	1	c4450
 Approximate	C[Fur]_Tr_cloth	0	NormalMap	NormalGloss	FurNormal	119068	0.001	6800	50	8	c4550
 Dropped	C[Fur]_Tr_cloth	6	NormalMap	NormalGloss	Dropped (its FurNormal layer 0 slot already holds another texture)	119068	0.001	6800	50	8	c4550
-Dropped	C[DetailBlend][Rich]_cloth	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	116257	0.001	248127	259	40	c5220
 Unverified	C[c4520]_Dragon	15	AlbedoMap	Other	Albedo	115202	0.001	115202	5	2	c4520
 Dropped	M[WorldTree_Trunk_m19_00]	1	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	114821	0.001	2443	1	1	aeg096_742
 Dropped	M[WorldTree_Trunk_m19_00]	2	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	114821	0.001	2443	1	1	aeg096_742
 Dropped	M[WorldTree_Trunk_m19_00]	7	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	114821	0.001	2443	1	1	aeg096_742
-Dropped	C[DetailBlend][Rich]_cloth	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	114394	0.001	70899	65	22	c3550
 Dropped	M[PoisonSwamp]	3	FlowMap	Coordinates	Dropped (no route for the role FlowMap)	113476	0.001	102073	50	15	aeg441_127
 Dropped	M[PoisonSwamp]	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	113476	0.001	102073	50	15	aeg441_127
 Dropped	C[c4720]_Beast	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	113392	0.001	138934	6	4	c4720
@@ -825,29 +706,24 @@ Dropped	C[c5110]_Glow_cloth	0	Mask1Map	Other	Dropped (no route for the role Mask
 Dropped	M[supercell_06]	2	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	111890	0.001	111890	1	1	aeg240_501
 Dropped	M[supercell_06]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	111890	0.001	111890	1	1	aeg240_501
 Dropped	M[supercell_06]	6	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	111890	0.001	111890	1	1	aeg240_501
-Dropped	C[DetailBlend]_SSS	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	111650	0.001	55240	8	4	c2120
 Dropped	M[Elevator]_Emissive_Glow	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	110500	0.001	12124	6	5	aeg099_295
 Approximate	C[Fur]_Tr_cloth	6	NormalMap	NormalGloss	FurNormal	108236	0.001	40506	29	5	c5840
 Unverified	C[c2200]_Rune	9	AlbedoMap	Coordinates	Albedo	102990	0.001	20598	9	9	c2200
 Dropped	C[c2200]_Rune	2	AlbedoMap	Emissive	Dropped (its Albedo layer 0 slot already holds another texture)	102990	0.001	20598	9	9	c2200
 Dropped	C[Fur]_Tr_cloth	5	DisplacementMap	Other	Dropped (no route for the role DisplacementMap)	102476	0.001	3388	8	2	c4550
 Dropped	M[CutScene][Coffin2]	5	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	101838	0.001	67892	5	2	aeg237_018
-Dropped	M[CutScene][Coffin2]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	101838	0.001	67892	5	2	aeg237_018
 Dropped	C[DetailBlend][Rich]_cloth	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	101129	0.001	23439	25	10	c3950
+Dropped	C[DetailBlend][Rich]_cloth	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	98251	0.001	25655	23	9	c3950
 Dropped	C[c5130]_Fade	9	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	95361	0.001	95361	1	1	c5140
 Dropped	C[Face][S2]_SSS	5	Mask3Map	Normal	Dropped (no route for the role Mask3Map)	94948	0.001	62458	8	6	c2030
+Dropped	C[DetailBlend][Rich]_cloth	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	94759	0.001	19577	14	6	c3950
 Dropped	M[DistantClouds_Cloth]_004	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	90998	0.001	90998	17	1	aeg462_033
 Extra	C[c2200]_Rune	10	EmissiveMap	NotSampled	Emissive	90450	0.001	18090	8	8	c2200
 Unverified	SpeedTree_5010ff4_w3129a7	-1	g_DiffuseTexture	(no slot)	Albedo	90240	0.001	160	1	1	aeg490_121
 Unverified	SpeedTree_5010ff4_w3129a7	-1	g_BumpmapTexture	(no slot)	Normal	90240	0.001	160	1	1	aeg490_121
 Unverified	SpeedTree_5010ff4_w3129a7	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	90240	0.001	160	1	1	aeg490_121
 Dropped	C[Fur]_FurBlur_Tr	6	NormalMap	NormalGloss	Dropped (its FurNormal layer 0 slot already holds another texture)	89336	0.001	14048	5	5	c4505
-Extra	M[Sky9]	1	AlbedoMap	NotSampled	Albedo	89186	0.001	89186	9	8	aeg096_011
+Extra	M[Sky9]	1	AlbedoMap	NotSampled	Albedo	89186	0.001	89186	9	8	aeg462_041
 Approximate	M[PlacidLake]	2	NormalMap	Normal	WaterNormal	87718	0.001	58802	76	14	aeg220_802
 Dropped	M[ShadowErdtree_Twig]	5	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	86018	0.001	14338	2	2	aeg063_005
 Extra	M[ShadowErdtree_Twig]	1	NormalMap	NotSampled	Normal	86018	0.001	14338	2	2	aeg063_005
@@ -912,6 +788,7 @@ Unverified	SpeedTree_5010fdmo_w3129a7	-1	g_BumpmapTexture	(no slot)	Normal	54976
 Unverified	SpeedTree_5010fdmo_w3129a7	-1	g_TranslucencyTexture	(no slot)	Dropped (no route for the role g_TranslucencyTexture)	54976	0.001	334	10	1	aeg811_002
 Dropped	C[c5220]_Mipuella	3	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	54462	0.001	9077	1	1	c5220
 Dropped	M[Ice_LOD1]_Transparent	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	52340	0.001	55883	4	1	m60_54_56_00_545602
+Dropped	C[DetailBlend][Rich]_cloth	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	52031	0.001	19615	19	7	c3950
 Misrouted	C[c2050]_Ghost	3	AlbedoMap	Mask	Albedo	50680	0.001	6335	5	5	c2050
 Misrouted	C[c2050]_Ghost	4	EmissiveMap	Mask	Emissive	50680	0.001	6335	5	5	c2050
 Dropped	C[c2050]_Ghost	6	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	50680	0.001	6335	5	5	c2050
@@ -1064,6 +941,7 @@ Dropped	M[CutScene][AMSN_V][Mb3][3Mask][Ov_AN][magma]	0	Mask3Map	Mask	Dropped (n
 Dropped	M[CutScene][AMSN_V][Mb3][3Mask][Ov_AN][magma]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	23942	0.000	32543	7	2	aeg007_190
 Dropped	M[CutScene][AMSN_V][Mb3][3Mask][Ov_AN][magma]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	23942	0.000	32543	7	2	aeg007_190
 Dropped	M[CutScene][AMSN_V][Mb3][3Mask][Ov_AN][magma]	4	Mask3Map	Emissive	Dropped (no route for the role Mask3Map)	23942	0.000	32543	7	2	aeg007_190
+Dropped	C[DetailBlend][Rich]_cloth	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	23902	0.000	15962	12	5	c3550
 Misrouted	M[Atmosphere][Clouds]_002	12	AlbedoMap	Mask	Albedo	23232	0.000	8448	4	4	aeg096_940
 Dropped	M[Atmosphere][Clouds]_002	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	23232	0.000	8448	4	4	aeg096_940
 Unverified	C[c3400]_Fade	9	NormalMap	Other	Normal	22880	0.000	1760	1	1	c3400
@@ -1084,9 +962,9 @@ Dropped	M[supercell_04]	2	Mask3Map	Coordinates	Dropped (no route for the role Ma
 Dropped	M[supercell_04]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	21900	0.000	21900	1	1	aeg096_661
 Misrouted	M[supercell_04]	4	NormalMap	Mask	Normal	21900	0.000	21900	1	1	aeg096_661
 Dropped	M[supercell_04]	6	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	21900	0.000	21900	1	1	aeg096_661
-Dropped	M[Atmosphere][Clouds]_001	1	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	21120	0.000	21120	10	10	aeg096_403
-Dropped	M[Atmosphere][Clouds]_001	3	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	21120	0.000	21120	10	10	aeg096_403
-Dropped	M[Atmosphere][Clouds]_001	5	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	21120	0.000	21120	10	10	aeg096_403
+Dropped	M[Atmosphere][Clouds]_001	1	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	21120	0.000	21120	10	10	aeg400_151
+Dropped	M[Atmosphere][Clouds]_001	3	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	21120	0.000	21120	10	10	aeg400_151
+Dropped	M[Atmosphere][Clouds]_001	5	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	21120	0.000	21120	10	10	aeg400_151
 Extra	C[c4980]_Lwing	3	EmissiveMap	NotSampled	Emissive	20966	0.000	3812	6	6	c4980
 Dropped	C[c4980]_Lwing_cloth	1	VectorMap	Coordinates	Dropped (no route for the role VectorMap)	20548	0.000	3736	6	6	c4980
 Misrouted	C[c4980]_Lwing_cloth	2	AlbedoMap	Emissive	Albedo	20548	0.000	3736	6	6	c4980
@@ -1094,6 +972,7 @@ Dropped	C[c4980]_Lwing_cloth	9	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot a
 Extra	C[c4980]_Lwing_cloth	3	EmissiveMap	NotSampled	Emissive	20548	0.000	3736	6	6	c4980
 Dropped	C[c4450]_AreaMatchBlend_cloth	1	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	20300	0.000	2900	5	2	c4450
 Dropped	C[c4450]_AreaMatchBlend_cloth	7	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	20300	0.000	2900	5	2	c4450
+Dropped	C[DetailBlend][Rich]_cloth	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	20239	0.000	16337	10	4	c2030
 Approximate	M[PoisonSwampB]	6	NormalMap	Normal	WaterNormal	19801	0.000	19801	2	2	m12_01_00_00_900002
 Dropped	M[PoisonSwampB]	5	NormalMap	Normal	Dropped (its WaterNormal layer 0 slot already holds another texture)	19801	0.000	19801	2	2	m12_01_00_00_900002
 Dropped	M[PoisonSwampB]	3	FlowMap	Coordinates	Dropped (no route for the role FlowMap)	19801	0.000	19801	2	2	m12_01_00_00_900002
@@ -1144,7 +1023,7 @@ Dropped	C[c2050]_Ghost_cloth	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot a
 Extra	CS[c4750][VA_Frame]_Flag	18	NormalMap	NotSampled	Normal	15048	0.000	15048	1	1	aeg099_330
 Dropped	CS[c4750][VA_Frame]_Flag	0	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	15048	0.000	15048	1	1	aeg099_330
 Dropped	M[Flame_001]_MeshDecalBlend	1	Mask3Map	Normal	Dropped (no route for the role Mask3Map)	14861	0.000	14861	2	1	m12_01_00_00_400000
-Dropped	M[Atmosphere][Clouds]_001	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	14784	0.000	14784	7	7	aeg096_923
+Dropped	M[Atmosphere][Clouds]_001	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	14784	0.000	14784	7	7	aeg400_151
 Dropped	C[c5050]_Crystal_Blend	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	14698	0.000	48834	9	7	c5051
 Dropped	C[c5050]_Crystal_Blend	4	EmissiveMap	Emissive	Dropped (its Emissive layer 0 slot already holds another texture)	14698	0.000	48834	9	7	c5051
 Dropped	C[c5050]_Crystal_Blend	8	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	14698	0.000	48834	9	7	c5051
@@ -1158,11 +1037,11 @@ Dropped	C[c2030]_Fabric	13	MetallicMap	Metallic	Dropped (a metallic map of a lay
 Dropped	C[c2030]_Fabric	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	14062	0.000	22844	13	2	c2030
 Dropped	C[c2030]_Fabric	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	14062	0.000	22844	13	2	c2030
 Dropped	C[c2030]_Fabric	11	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	14062	0.000	22844	13	2	c2030
-Approximate	M[Waterfall]	0	NormalMap	Normal	WaterNormal	14016	0.000	14016	2	1	m39_20_00_00_090000
-Dropped	M[Waterfall]	1	NormalMap	Normal	Dropped (its WaterNormal layer 0 slot already holds another texture)	14016	0.000	14016	2	1	m39_20_00_00_090000
-Dropped	M[Waterfall]	3	FlowMap	Coordinates	Dropped (no route for the role FlowMap)	14016	0.000	14016	2	1	m39_20_00_00_090000
-Dropped	M[Waterfall]	6	NormalMap	Normal	Dropped (a water normal the water recipe doesn't use)	14016	0.000	14016	2	1	m39_20_00_00_090000
-Dropped	M[Waterfall]	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	14016	0.000	14016	2	1	m39_20_00_00_090000
+Approximate	M[Waterfall]	0	NormalMap	Normal	WaterNormal	14016	0.000	14016	2	1	aeg097_022
+Dropped	M[Waterfall]	1	NormalMap	Normal	Dropped (its WaterNormal layer 0 slot already holds another texture)	14016	0.000	14016	2	1	aeg097_022
+Dropped	M[Waterfall]	3	FlowMap	Coordinates	Dropped (no route for the role FlowMap)	14016	0.000	14016	2	1	aeg097_022
+Dropped	M[Waterfall]	6	NormalMap	Normal	Dropped (a water normal the water recipe doesn't use)	14016	0.000	14016	2	1	aeg097_022
+Dropped	M[Waterfall]	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	14016	0.000	14016	2	1	aeg097_022
 Misrouted	M[ShadowErdtree_BlackBlood]	1	EmissiveMap	Mask	Emissive	13872	0.000	13872	1	1	aeg462_154
 Dropped	M[ShadowErdtree_BlackBlood]	5	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	13872	0.000	13872	1	1	aeg462_154
 Dropped	M[ShadowErdtree_BlackBlood]	6	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	13872	0.000	13872	1	1	aeg462_154
@@ -1194,10 +1073,10 @@ Dropped	C[c2200]_Body_cloth	1	AlphaNoise	Mask	Dropped (no route for the role Alp
 Extra	C[c2200]_Body_cloth	4	EmissiveMap	NotSampled	Emissive	11200	0.000	2240	2	1	c2200
 Misrouted	C[c2200]_Body_cloth	2	AlbedoMap	Emissive	Albedo	11200	0.000	2240	2	1	c2200
 Dropped	C[DetailBlend][Rich]_cloth	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	11190	0.000	13626	17	6	c3100
+Extra	M[Sky_m60_40]	6	AlbedoMap	NotSampled	Albedo	11136	0.000	11136	1	1	aeg096_820
 Extra	M[Sky_m19_00]	1	AlbedoMap	NotSampled	Albedo	11136	0.000	11136	1	1	aeg096_007
 Extra	M[Sky6]	1	AlbedoMap	NotSampled	Albedo	11136	0.000	11136	1	1	aeg096_006
 Extra	M[Sky8]	1	AlbedoMap	NotSampled	Albedo	11136	0.000	11136	1	1	aeg096_000
-Extra	M[Sky_m60_40]	6	AlbedoMap	NotSampled	Albedo	11136	0.000	11136	1	1	aeg096_820
 Dropped	M[directional_grass]	1	Mask1Map	Other	Dropped (no route for the role Mask1Map)	11130	0.000	2820	14	8	aeg460_002
 Misrouted	M[Atmosphere][Clouds]_007	0	AlbedoMap	Mask	Albedo	11072	0.000	11072	5	5	aeg462_046
 Dropped	M[Atmosphere][Clouds]_007	12	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	11072	0.000	11072	5	5	aeg462_046
@@ -1214,7 +1093,7 @@ Dropped	C[Eye]_Glow	1	Mask1Map	Coordinates	Dropped (no route for the role Mask1M
 Misrouted	M[Clouds_m11_00]	2	AlbedoMap	Mask	Albedo	10560	0.000	10560	5	5	aeg400_052
 Dropped	M[Clouds_m11_00]	3	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	10560	0.000	10560	5	5	aeg400_052
 Dropped	M[Clouds_m11_00]	5	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	10560	0.000	10560	5	5	aeg400_052
-Dropped	M[Atmosphere][Clouds]_001	7	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	10560	0.000	10560	5	5	aeg096_923
+Dropped	M[Atmosphere][Clouds]_001	7	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	10560	0.000	10560	5	5	aeg400_151
 Dropped	M[Oil_Liquid]	5	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	10532	0.000	10532	3	2	aeg430_902
 Approximate	M[Waterfall2]_Transparent	0	NormalMap	Normal	WaterNormal	10456	0.000	10456	8	5	aeg024_683
 Dropped	M[Waterfall2]_Transparent	5	NormalMap	Normal	Dropped (its WaterNormal layer 0 slot already holds another texture)	10456	0.000	10456	8	5	aeg024_683
@@ -1244,14 +1123,14 @@ Dropped	M[WorldTree]	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot al
 Dropped	M[WorldTree]	4	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	8856	0.000	1476	2	1	aeg220_901
 Dropped	M[JarElevator]_Emissive_Glow	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	8688	0.000	2896	1	1	aeg449_024
 Dropped	C[DetailBlend][S2]_cloth	13	MetallicMap	Metallic	Dropped (a metallic map of a layer above the bottom one)	8520	0.000	37414	50	8	c4604
-Dropped	M[Clouds5]	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_404
-Dropped	M[Clouds5]	2	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_404
-Dropped	M[Clouds5]	3	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_404
-Dropped	M[Clouds5]	5	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_404
-Dropped	M[Atmosphere][Clouds]_001	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	8448	0.000	8448	4	4	aeg096_403
 Dropped	M[Clouds_m11_00]	1	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	8448	0.000	8448	4	4	aeg400_052
-Misrouted	M[Atmosphere][Clouds]_001	0	AlbedoMap	Mask	Albedo	8448	0.000	8448	4	4	aeg096_923
-Dropped	M[Atmosphere][Clouds]_001	9	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	8448	0.000	8448	4	4	aeg096_906
+Misrouted	M[Atmosphere][Clouds]_001	0	AlbedoMap	Mask	Albedo	8448	0.000	8448	4	4	aeg400_151
+Dropped	M[Atmosphere][Clouds]_001	9	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	8448	0.000	8448	4	4	aeg400_151
+Dropped	M[Atmosphere][Clouds]_001	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	8448	0.000	8448	4	4	aeg096_923
+Dropped	M[Clouds5]	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_865
+Dropped	M[Clouds5]	2	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_865
+Dropped	M[Clouds5]	3	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_865
+Dropped	M[Clouds5]	5	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	8448	0.000	8448	4	4	aeg096_865
 Misrouted	M[Atmosphere][Clouds]_005	2	AlbedoMap	Mask	Albedo	8448	0.000	4224	2	2	aeg462_006
 Unverified	SpeedTree_5030f_w31a187	-1	g_DiffuseTexture	(no slot)	Albedo	8148	0.000	42	1	1	aeg801_258
 Unverified	SpeedTree_5030f_w31a187	-1	g_BumpmapTexture	(no slot)	Normal	8148	0.000	42	1	1	aeg801_258
@@ -1261,10 +1140,8 @@ Dropped	C[Shell]_FurBlur	7	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot 
 Dropped	C[c4503]_Freeze_Fur	3	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	7885	0.000	7885	4	4	c4503
 Dropped	C[c4503]_Freeze_Fur	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	7885	0.000	7885	4	4	c4503
 Dropped	C[c4503]_Freeze_Fur	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	7885	0.000	7885	4	4	c4503
-Dropped	M[StainedGlass]	3	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	7747	0.000	5292	52	13	aeg030_155
-Dropped	M[StainedGlass]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	7747	0.000	5292	52	13	aeg030_155
-Dropped	C[DetailBlend][S2]	14	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	7686	0.000	24255	10	3	c2120
-Dropped	C[DetailBlend][S2]	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	7686	0.000	24255	10	3	c2120
+Dropped	M[StainedGlass]	3	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	7747	0.000	5292	52	13	aeg030_431
+Dropped	M[StainedGlass]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	7747	0.000	5292	52	13	aeg030_431
 Extra	M[LightningStrike_001]	6	AlbedoMap	NotSampled	Albedo	7590	0.000	7590	22	12	aeg096_663
 Dropped	M[ShadowErdtree_BackLightFog]	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	7304	0.000	1992	3	3	aeg063_006
 Unverified	C[c5130]_Hair	1	AlbedoMap	Other	Albedo	7296	0.000	3648	2	1	c5251
@@ -1288,15 +1165,15 @@ Dropped	M[OceanShadow_001]	2	Generic_	Mask	Dropped (no route for the role Generi
 Dropped	M[OceanShadow_001]	3	Generic_	Mask	Dropped (no route for the role Generic_)	6480	0.000	1296	4	4	aeg462_100
 Misrouted	M[Atmosphere][Clouds]_007	12	AlbedoMap	Mask	Albedo	6464	0.000	6464	3	3	aeg462_028
 Extra	M[AMSN]_MeshDecalBlend	2	AlbedoMap	NotSampled	Albedo	6411	0.000	6411	1	1	aeg430_600
-Dropped	M[Clouds5]	4	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	6336	0.000	6336	3	3	aeg096_404
-Dropped	M[Clouds5]	8	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	6336	0.000	6336	3	3	aeg096_404
-Misrouted	M[Atmosphere][Clouds]_001	2	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_403
-Misrouted	M[Clouds5]	7	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_402
 Misrouted	M[DistantClouds][Tex2]_002	0	AlbedoMap	Mask	Albedo	6336	0.000	6336	2	1	aeg462_048
 Dropped	M[DistantClouds][Tex2]_002	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	6336	0.000	6336	2	1	aeg462_048
 Dropped	M[DistantClouds][Tex2]_002	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	6336	0.000	6336	2	1	aeg462_048
+Misrouted	M[Atmosphere][Clouds]_001	2	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_952
 Misrouted	M[Clouds9]	2	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_885
 Misrouted	M[Atmosphere][Clouds]_001	12	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_884
+Misrouted	M[Clouds5]	7	AlbedoMap	Mask	Albedo	6336	0.000	6336	3	3	aeg096_865
+Dropped	M[Clouds5]	4	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	6336	0.000	6336	3	3	aeg096_404
+Dropped	M[Clouds5]	8	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	6336	0.000	6336	3	3	aeg096_404
 Unverified	C[c2190]_Hair_ColorBlend_cloth	3	AlbedoMap	Other	Albedo	6164	0.000	3082	5	1	c2190
 Dropped	C[c2190]_Hair_ColorBlend_cloth	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	6164	0.000	3082	5	1	c2190
 Misrouted	M[CutScene][AMSN][Ov_N][GlowingIron]_Skin_Edge	5	AlbedoMap	Emissive	Albedo	6022	0.000	12228	3	1	aeg277_019
@@ -1354,14 +1231,14 @@ UvMismatch	C[Face][S2]_SSS	0	NormalMap	NormalGloss	Normal	4760	0.000	9552	2	2	c2
 Dropped	C[Face][S2]_SSS	1	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	4760	0.000	9552	2	2	c2180
 Approximate	M[Water][ocean_Horizon_002]	1	NormalMap	Normal	WaterNormal	4480	0.000	896	1	1	aeg097_000
 Dropped	M[DistortionFilter_Advanced]_NoLight	0	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	4248	0.000	4248	4	3	aeg418_018
-Dropped	M[Clouds5]	6	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	4224	0.000	4224	2	2	aeg096_402
-Dropped	M[Clouds5]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	4224	0.000	4224	2	2	aeg096_402
 Dropped	M[Atmosphere][Clouds]_008	1	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	4224	0.000	4224	2	2	aeg462_050
 Misrouted	M[Atmosphere][Clouds]_008	12	AlbedoMap	Mask	Albedo	4224	0.000	4224	2	2	aeg462_050
 Dropped	M[Atmosphere][Clouds]_008	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	4224	0.000	4224	2	2	aeg462_050
 Dropped	M[Atmosphere][Clouds]_008	3	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	4224	0.000	4224	2	2	aeg462_050
 Dropped	M[Atmosphere][Clouds]_008	5	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	4224	0.000	4224	2	2	aeg462_050
 Misrouted	M[Atmosphere][Clouds]_002	2	AlbedoMap	Mask	Albedo	4224	0.000	4224	2	2	aeg096_864
+Dropped	M[Clouds5]	6	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	4224	0.000	4224	2	2	aeg096_402
+Dropped	M[Clouds5]	9	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	4224	0.000	4224	2	2	aeg096_402
 Misrouted	C[c4520]_Dragon_cloth	11	MetallicMap	Mask	Metallic	4183	0.000	4183	4	2	c4520
 Unverified	C[c4520]_Dragon_cloth	15	AlbedoMap	Other	Albedo	4183	0.000	4183	4	2	c4520
 Dropped	C[c4520]_Dragon_cloth	8	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	4183	0.000	4183	4	2	c4520
@@ -1374,11 +1251,7 @@ Approximate	C[Fur]_Arts	1	AlbedoMap	Albedo	FurAlbedo	4160	0.000	2080	1	1	c5800
 Misrouted	M[Atmosphere][Clouds]_005	0	AlbedoMap	Mask	Albedo	3968	0.000	3968	2	2	aeg462_048
 Dropped	M[Atmosphere][Clouds]_005	2	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	3968	0.000	3968	2	2	aeg462_048
 Dropped	M[Atmosphere][Clouds]_005	7	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	3968	0.000	3968	2	2	aeg462_048
-Dropped	M[Cliff_001]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	3892	0.000	973	1	1	aeg068_000
-Dropped	M[Cliff_001]	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	3892	0.000	973	1	1	aeg068_000
-Dropped	M[Cliff_001]	1	NormalMap	Normal	Dropped (its Normal layer 0 slot already holds another texture)	3892	0.000	973	1	1	aeg068_000
-Dropped	M[Cliff_001]	6	NormalMap	Normal	Dropped (its Normal layer 0 slot already holds another texture)	3892	0.000	973	1	1	aeg068_000
-Dropped	M[Cliff_001]	9	Mask3Map	Normal	Dropped (no route for the role Mask3Map)	3892	0.000	973	1	1	aeg068_000
+Misrouted	M[Cliff_001]	9	Mask3Map	Normal	BlendMask	3892	0.000	973	1	1	aeg068_000
 Dropped	C[c5030]_Wing	4	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	3730	0.000	3730	2	1	c5030
 Dropped	C[c5030]_Wing	6	Mask1Map	Other	Dropped (no route for the role Mask1Map)	3730	0.000	3730	2	1	c5030
 Dropped	C[c5030]_Wing	3	AlbedoMap	Other	Dropped (its Albedo layer 0 slot already holds another texture)	3730	0.000	3730	2	1	c5030
@@ -1392,6 +1265,7 @@ Dropped	M[AMSN_V][Mb2][Ov_AN]_Skin_PaintDecal	6	AlbedoMap	Albedo	Dropped (a laye
 Dropped	M[AMSN_V][Mb2][Ov_AN]_Skin_PaintDecal	5	NormalMap	Normal	Dropped (a layer the blend doesn't use)	3288	0.000	2568	2	1	aeg247_002
 Dropped	C[Hair][ChrCustomize]_cloth	3	Mask1Map	Alpha	Dropped (no route for the role Mask1Map)	2760	0.000	460	1	1	c5220
 Dropped	C[Hair][ChrCustomize]_cloth	4	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	2760	0.000	460	1	1	c5220
+Dropped	C[DetailBlend][Rich]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2722	0.000	112179	45	5	c4720
 Dropped	M[OceanShadow_001]	1	Generic_	Mask	Dropped (no route for the role Generic_)	2560	0.000	512	2	2	aeg462_100
 Unverified	GXFlver_ColDifSpcBumpEmiIblGlow	-1	g_DiffuseTexture	(no signature)	Albedo	2530	0.000	506	1	1	aeg003_300
 Unverified	GXFlver_ColDifSpcBumpEmiIblGlow	-1	g_SpecularTexture	(no signature)	Specular	2530	0.000	506	1	1	aeg003_300
@@ -1401,13 +1275,9 @@ Unverified	C[c2180]_Eye	0	AlbedoMap	Other	Albedo	2344	0.000	2344	1	1	c2180
 Dropped	C[c2180]_Eye	4	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	2344	0.000	2344	1	1	c2180
 Dropped	C[c2180]_Eye	6	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	2344	0.000	2344	1	1	c2180
 Dropped	C[c2180]_Eye	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2344	0.000	2344	1	1	c2180
-Dropped	C[DetailBlend][S2]_cloth	14	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	2298	0.000	12463	13	3	c2120
-Dropped	C[DetailBlend][S2]_cloth	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2298	0.000	12463	13	3	c2120
 Dropped	C[c5070]_Fire	0	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	2268	0.000	622	8	6	c5230
 Misrouted	C[c5070]_Fire	2	AlbedoMap	Mask	Albedo	2268	0.000	622	8	6	c5230
 Misrouted	M[Atmosphere][Clouds]_007	2	AlbedoMap	Mask	Albedo	2240	0.000	2240	1	1	aeg462_036
-Dropped	M[Atmosphere][Clouds]_001	4	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_403
-Dropped	M[Clouds5]	0	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_400
 Dropped	M[Atmosphere][Clouds]_005	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg462_024
 Dropped	M[Atmosphere][Clouds]_002	7	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_864
 Dropped	M[Atmosphere][Clouds]_002	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_864
@@ -1420,7 +1290,10 @@ Dropped	M[Atmosphere][Clouds]_m12_03	3	AlbedoMap	Mask	Dropped (its Albedo layer 
 Dropped	M[Atmosphere][Clouds]_m12_03	5	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_645
 Dropped	M[Atmosphere][Clouds]_m12_03	8	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_645
 Dropped	M[Clouds9]	12	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_603
+Dropped	M[Atmosphere][Clouds]_001	4	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_403
+Dropped	M[Clouds5]	0	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	2112	0.000	2112	1	1	aeg096_400
 Dropped	M[LightShaft]_002	1	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	2088	0.000	2088	2	1	aeg462_047
+Dropped	C[DetailBlend][S2]_cloth	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	2064	0.000	23300	41	8	c3620
 Dropped	C[c2120]_Clone_Blade	3	Alpha_Inside_Base	Mask	Dropped (no route for the role Alpha_Inside_Base)	1776	0.000	296	1	1	c2120
 Misrouted	M[CutScene][AMSN][Ov_N][GlowingIron]_Skin	5	AlbedoMap	Emissive	Albedo	1698	0.000	3396	2	1	aeg277_019
 Dropped	M[CutScene][AMSN][Ov_N][GlowingIron]_Skin	0	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	1698	0.000	3396	2	1	aeg277_019
@@ -1483,7 +1356,7 @@ Misrouted	M[MagicEffect]_Emissive_Glow	2	AlbedoMap	Mask	Albedo	230	0.000	224	3	2
 Dropped	M[DistantClouds]_004	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	230	0.000	166	8	7	aeg462_031
 Misrouted	M[DistantClouds]_004	2	AlbedoMap	Mask	Albedo	230	0.000	166	8	7	aeg462_031
 Misrouted	C[c5070]_Fire	4	EmissiveMap	Mask	Emissive	196	0.000	98	2	1	c5070
-Misrouted	M[DistantClouds]_003	2	AlbedoMap	Mask	Albedo	176	0.000	176	5	3	m12_07_00_00_700001
+Misrouted	M[DistantClouds]_003	2	AlbedoMap	Mask	Albedo	176	0.000	176	5	3	aeg096_641
 Dropped	M[Clouds1]	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	140	0.000	140	3	1	aeg096_303
 Misrouted	M[Clouds1]	2	AlbedoMap	Mask	Albedo	140	0.000	140	3	1	aeg096_303
 Dropped	M[Clouds1]	3	AlbedoMap	Mask	Dropped (its Albedo layer 0 slot already holds another texture)	140	0.000	140	3	1	aeg096_303
@@ -1501,8 +1374,8 @@ Dropped	M[DistantClouds]_006	1	Mask3Map	Coordinates	Dropped (no route for the ro
 Misrouted	M[DistantClouds]_006	2	AlbedoMap	Mask	Albedo	46	0.000	46	1	1	aeg462_039
 Extra	C[c2200]_Rune	1	EmissiveMap	NotSampled	Emissive	30	0.000	6	1	1	c2200
 Approximate	M[Water][river]	1	NormalMap	Normal	WaterNormal	16	0.000	16	1	1	m12_04_00_00_109000
-Misrouted	M[Ice][m12]	10	NormalMap	Mask	Normal	6	0.000	6	3	1	m60_26_27_01_57535502
-Dropped	M[Ice][m12]	9	NormalMap	Mask	Dropped (its Normal layer 0 slot already holds another texture)	6	0.000	6	3	1	m60_26_27_01_57535502
+Misrouted	M[Ice][m12]	10	NormalMap	Mask	Normal	6	0.000	6	3	1	m60_53_55_00_535502
+Dropped	M[Ice][m12]	9	NormalMap	Mask	Dropped (its Normal layer 0 slot already holds another texture)	6	0.000	6	3	1	m60_53_55_00_535502
 Misrouted	M[CutScene][Moon1]	1	AlbedoMap	Mask	Albedo	4	0.000	4	2	2	aeg220_795
 Dropped	M[MagicWreckage_001]	1	Generic_	Mask	Dropped (no route for the role Generic_)	2	0.000	2	1	1	aeg096_685
 Dropped	M[MagicWreckage_001]	4	Mask1Map	Coordinates	Dropped (no route for the role Mask1Map)	2	0.000	2	1	1	aeg096_685
@@ -1526,11 +1399,8 @@ Dropped	M[CutScene][AMSN_V][Wax][Fragment]	0	Mask3Map	Emissive	Dropped (no route
 Dropped	M[Cutscene][ShadowThorn]	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	264914	4	2	aeg468_570
 Dropped	M[Cutscene][ShadowThorn]	9	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	264914	4	2	aeg468_570
 Misrouted	CS[VA_Frame][DetailBlend][S2][Rich]	0	NormalMap	Mask	Normal	0	0.000	215166	63	49	aeg301_010
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	214771	57	43	aeg301_010
 Dropped	P[ChrCustomize][FaceHair]	4	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	0	0.000	193420	151	57	hr_a_0112_l
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	176925	50	40	aeg468_011
-Dropped	P[ChrCustomize][BodyHair]	4	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	0	0.000	170824	334	2	fc_m_0202_l
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	149201	38	28	aeg468_011
+Dropped	P[ChrCustomize][BodyHair]	4	Mask3Map	Mask	Dropped (no route for the role Mask3Map)	0	0.000	170824	334	2	fc_m_0101
 Dropped	P[ChrCustomize][Skin]	13	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	0	0.000	128660	110	18	fg_a_0101_l
 Dropped	P[ChrCustomize][Skin]	15	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	0	0.000	128660	110	18	fg_a_0101_l
 Dropped	P[ChrCustomize][Skin]	5	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	128660	110	18	fg_a_0101_l
@@ -1551,13 +1421,7 @@ Dropped	C[c2070]_GlowMud	11	Mask1Map	Coordinates	Dropped (no route for the role 
 Dropped	C[c2070]_GlowMud	13	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	126118	1	1	c2070
 Approximate	CS[VA_Frame][Fur]_FurBlur	6	NormalMap	NormalGloss	FurNormal	0	0.000	117151	31	12	c8901
 Approximate	CS[VA_Frame][Fur]_FurBlur	1	AlbedoMap	Albedo	FurAlbedo	0	0.000	116156	31	12	aeg090_254
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	111540	36	36	c8904
 Dropped	CS[VA_Frame][Fur]_FurBlur	7	Mask1Map	Other	Dropped (no route for the role Mask1Map)	0	0.000	101167	24	8	aeg090_254
-Dropped	CS[c8901]_Burn	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	97256	14	5	c8901
-Dropped	CS[c8901]_Burn	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	97256	14	5	c8901
-Dropped	CS[c8901]_Burn	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	97256	14	5	c8901
-Dropped	CS[c8901]_Burn	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	97256	14	5	c8901
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	96982	28	28	c8904
 Dropped	M[Cutscene][AMSN_V][Ov_AN]	1	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	0	0.000	93299	2	2	aeg468_545
 Dropped	M[Cutscene][AMSN_V][Ov_AN]	3	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	93299	2	2	aeg468_545
 Misrouted	M[Cutscene][AMSN_V][Ov_AN]	4	AlbedoMap	Emissive	Albedo	0	0.000	93299	2	2	aeg468_545
@@ -1566,7 +1430,6 @@ Dropped	M[Cutscene][AMSN_V][Ov_AN]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 
 Dropped	M[Cutscene][AMSN_V][Ov_AN]	2	NormalMap	Normal	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	93299	2	2	aeg468_545
 Dropped	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	7	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	82301	1	1	aeg468_595
 Dropped	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	5	NormalMap	Normal	Dropped (a layer the blend doesn't use)	0	0.000	82301	1	1	aeg468_595
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	14	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	69587	16	16	c8904
 Approximate	M[Cutscene][PlacidLake][VA_Frame]	2	NormalMap	Normal	WaterNormal	0	0.000	68948	6	1	aeg090_154
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	16	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	68555	17	17	c8904
 Dropped	C[c5131]_Eye_break	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	67048	5	4	aeg468_025
@@ -1574,9 +1437,8 @@ Dropped	C[c5131]_Eye_break	1	Mask1Map	Coordinates	Dropped (no route for the role
 Dropped	C[c5131]_Eye_break	5	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	67048	5	4	aeg468_025
 Extra	C[c5131]_Eye_break	4	NormalMap	NotSampled	Normal	0	0.000	58298	4	3	aeg468_025
 Dropped	C[c5131]_Eye_break	7	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	58298	4	3	aeg468_025
-Dropped	CS[c8901]_Burn	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	55974	9	2	c8901
-Dropped	CS[c8901]_Burn	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	55974	9	2	c8901
 Dropped	C[DetailBlend]_FurBlur	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	52770	7	4	c8004
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	47983	19	15	aeg301_010
 Dropped	M[Cutscene][AMSN][Glow][s19_00_0010]	8	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	45865	2	2	aeg090_256
 Dropped	M[Cutscene][AMSN][Glow][s19_00_0010]	9	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	45865	2	2	aeg090_256
 Approximate	C[CutScene][Fur]_Tr[VA_Frame]	8	AlbedoMap	Albedo	FurAlbedo	0	0.000	44146	7	1	aeg468_040
@@ -1586,16 +1448,9 @@ Dropped	P[ChrCustomize][FaceHair]	3	Mask1Map	Alpha	Dropped (no route for the rol
 Dropped	M[CutScene][Crucifixion]_Emissive_Glow	2	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	38059	4	2	aeg090_166
 Dropped	M[CutScene][Crucifixion]_Emissive_Glow	3	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	38059	4	2	aeg090_166
 Dropped	M[CutScene][Crucifixion]_Emissive_Glow	5	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	38059	4	2	aeg090_166
-Dropped	CS[c8901][VA_Frame]_Burn	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
-Dropped	CS[c8901][VA_Frame]_Burn	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
-Dropped	CS[c8901][VA_Frame]_Burn	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
-Dropped	CS[c8901][VA_Frame]_Burn	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
-Dropped	CS[c8901][VA_Frame]_Burn	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
-Dropped	CS[c8901][VA_Frame]_Burn	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	29540	7	7	c8901
 Unverified	GXFlver_SkinSSSIbl_Bloody	-1	g_DiffuseTexture	(no signature)	Albedo	0	0.000	24704	25	1	fc_m_0090_l
 Unverified	GXFlver_SkinSSSIbl_Bloody	-1	g_SpecularTexture	(no signature)	Specular	0	0.000	24704	25	1	fc_m_0090_l
 Unverified	GXFlver_SkinSSSIbl_Bloody	-1	g_BumpmapTexture	(no signature)	Normal	0	0.000	24704	25	1	fc_m_0090_l
-Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	22324	7	7	c8900
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	11	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	22324	7	7	c8900
 Dropped	CS[VA_Frame]_AEG301_205	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	21509	6	4	aeg301_200
 Dropped	PC[WP_A_0637]_Crystal_Arts	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	0	0.000	20470	2	1	wp_a_0637_l
@@ -1606,6 +1461,9 @@ Dropped	PC[WP_A_0637]_Crystal_Arts	9	Mask1Map	Metallic	Dropped (no route for the
 Dropped	PC[WP_A_0637]_Crystal_Arts	8	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	20470	2	1	wp_a_0637_l
 Dropped	C[c5132]_TexScroll	0	Mask1Map	Emissive	Dropped (no route for the role Mask1Map)	0	0.000	17840	2	2	c5132
 Dropped	C[c5132]_TexScroll	3	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	17840	2	2	c5132
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	16490	8	8	c8903
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	16035	8	8	c8903
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	16035	8	8	c8903
 Extra	M[Aurora]	1	AlbedoMap	NotSampled	Albedo	0	0.000	15360	1	1	aeg096_201
 Dropped	M[Aurora]	4	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	15360	1	1	aeg096_201
 Dropped	M[Aurora]	5	Mask1Map	Mask	Dropped (no route for the role Mask1Map)	0	0.000	15360	1	1	aeg096_201
@@ -1631,17 +1489,11 @@ Dropped	CS[VA_Frame][Fur]_FurBlur	1	AlbedoMap	Albedo	Dropped (its FurAlbedo laye
 Extra	CS[VA_Frame][DetailBlend][S2][Rich]	18	NormalMap	NotSampled	Normal	0	0.000	9764	4	4	aeg090_001
 Approximate	CS[VA_Frame][Fur]_FurBlur	0	NormalMap	NormalGloss	FurNormal	0	0.000	9024	3	3	c8900
 Dropped	CS[VA_Frame][Fur]_FurBlur	6	NormalMap	NormalGloss	Dropped (its FurNormal layer 0 slot already holds another texture)	0	0.000	9024	3	3	c8900
-UvMismatch	C[DetailBlend][S2]_cloth	13	MetallicMap	Metallic	Metallic	0	0.000	8892	10	2	bd_f_1860_l
+UvMismatch	C[DetailBlend][S2]_cloth	13	MetallicMap	Metallic	Metallic	0	0.000	8892	10	2	bd_m_1860_l
 Unverified	CS[c8901]_Burn	5	NormalMap	Other	Normal	0	0.000	8741	1	1	c8901
 Dropped	CS[c8901]_Burn	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	8741	1	1	c8901
 Dropped	CS[c8901]_Burn	0	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	8741	1	1	c8901
 Dropped	P[Cutscene][ChrCustomize][Hair][VA_Frame]	4	Mask3Map	Albedo	Dropped (no route for the role Mask3Map)	0	0.000	8432	3	1	aeg468_080
-Dropped	CS[c8901]_Burn_cloth	1	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
-Dropped	CS[c8901]_Burn_cloth	6	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
-Dropped	CS[c8901]_Burn_cloth	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
-Dropped	CS[c8901]_Burn_cloth	4	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
-Dropped	CS[c8901]_Burn_cloth	12	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
-Dropped	CS[c8901]_Burn_cloth	9	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	7887	5	2	c8901
 Unverified	CS[VA_Frame]_AEG301_205	10	AlbedoMap	Other	Albedo	0	0.000	7765	3	2	aeg301_205
 Dropped	CS[VA_Frame]_AEG301_205	2	Mask1Map	Other	Dropped (no route for the role Mask1Map)	0	0.000	7765	3	2	aeg301_205
 Dropped	CS[VA_Frame]_AEG301_205	9	Mask3Map	Coordinates	Dropped (no route for the role Mask3Map)	0	0.000	7765	3	2	aeg301_205
@@ -1659,6 +1511,7 @@ Dropped	P[ChrCustomize][EyePatch]	6	NormalMap	Normal	Dropped (its Normal layer 0
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	15	MetallicMap	Metallic	Dropped (a metallic map of a layer above the bottom one)	0	0.000	6830	1	1	aeg468_070
 Dropped	C[Cutscene][VA_Frame][c5051]_Robe	0	VectorMap	Coordinates	Dropped (no route for the role VectorMap)	0	0.000	6663	3	2	aeg468_015
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	7	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	5798	2	2	c8903
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	10	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	5713	2	2	aeg301_206
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	5258	2	2	aeg301_209
 Approximate	CS[c8901][VA_Frame][Fur]_Burn	8	AlbedoMap	Albedo	FurAlbedo	0	0.000	5120	6	6	c8901
 Dropped	CS[c8901][VA_Frame][Fur]_Burn	1	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	0	0.000	5120	6	6	c8901
@@ -1679,17 +1532,16 @@ Extra	CS[c8901][VA_Frame]_Burn	15	NormalMap	NotSampled	Normal	0	0.000	3155	1	1	a
 Dropped	CS[c8901][VA_Frame]_Burn	0	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	3155	1	1	aeg090_030
 Misrouted	M[CutScene][AMSN_V]_Emissive_Glow	6	AlbedoMap	Emissive	Albedo	0	0.000	3126	4	4	aeg090_305
 Dropped	M[CutScene][AMSN_V]_Emissive_Glow	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	3126	4	4	aeg090_305
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	14	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	3115	1	1	aeg301_206
 Dropped	PC[Crystal]_Glow_Int	2	DistortionDepth	Coordinates	Dropped (no route for the role DistortionDepth)	0	0.000	3104	2	1	wp_a_1517_l
 Dropped	PC[Crystal]_Glow_Int	5	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	3104	2	1	wp_a_1517_l
 Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	0	NormalMap	Mask	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	2644	2	2	aeg301_210
-Dropped	C[DetailBlend][S2]_cloth	2	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	1942	4	2	bd_m_2350_l
-Dropped	C[DetailBlend][S2]_cloth	5	NormalMap	NormalGloss	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	1942	4	2	bd_m_2350_l
 Unverified	GXFlver_SkinSSSIbl_Bloody	-1	g_BloodMaskTexture	(no signature)	Dropped (no route for the role g_BloodMaskTexture)	0	0.000	1692	1	1	fg_a_0000_m
 Unverified	GXFlver_SkinSSSIbl_Bloody	-1	g_ScatteringMaskTexture	(no signature)	Dropped (no route for the role g_ScatteringMaskTexture)	0	0.000	1692	1	1	fg_a_0000_m
-Approximate	C[Shell]_FurBlur_cloth	2	AlbedoMap	Albedo	FurAlbedo	0	0.000	1536	4	1	bd_f_1530_l
-Dropped	C[Shell]_FurBlur_cloth	6	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	0	0.000	1536	4	1	bd_f_1530_l
-Approximate	C[Shell]_FurBlur_cloth	8	NormalMap	NormalGloss	FurNormal	0	0.000	1536	4	1	bd_f_1530_l
-Dropped	C[Shell]_FurBlur_cloth	7	AlbedoMap	Albedo	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	1536	4	1	bd_f_1530_l
+Approximate	C[Shell]_FurBlur_cloth	2	AlbedoMap	Albedo	FurAlbedo	0	0.000	1536	4	1	bd_m_1530_l
+Dropped	C[Shell]_FurBlur_cloth	6	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	0	0.000	1536	4	1	bd_m_1530_l
+Approximate	C[Shell]_FurBlur_cloth	8	NormalMap	NormalGloss	FurNormal	0	0.000	1536	4	1	bd_m_1530_l
+Dropped	C[Shell]_FurBlur_cloth	7	AlbedoMap	Albedo	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	1536	4	1	bd_m_1530_l
 Dropped	CS[VA_Frame][Fur]_FurBlur	2	AlbedoMap	Albedo	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	1454	2	2	aeg301_212
 Dropped	CS[VA_Frame][Fur]_FurBlur	4	NormalMap	NormalGloss	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	1454	2	2	aeg301_212
 Approximate	CS[c8901][Fur]_Burn	8	AlbedoMap	Albedo	FurAlbedo	0	0.000	1356	6	2	c8901
@@ -1698,6 +1550,7 @@ Approximate	CS[c8901][Fur]_Burn	6	NormalMap	NormalGloss	FurNormal	0	0.000	1356	6
 Approximate	C[Shell]_cloth	6	AlbedoMap	Albedo	FurAlbedo	0	0.000	1320	4	1	bd_m_1652_l
 Dropped	C[Shell]_cloth	7	AlbedoMap	Albedo	Dropped (its FurAlbedo layer 0 slot already holds another texture)	0	0.000	1320	4	1	bd_m_1652_l
 Approximate	C[Shell]_cloth	8	NormalMap	NormalGloss	FurNormal	0	0.000	1320	4	1	bd_m_1652_l
+Dropped	CS[VA_Frame][DetailBlend][S2][Rich]	8	AlbedoMap	Albedo	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	1220	3	3	aeg301_221
 Dropped	M[CutScene][Blood][AMSN_V][Mb2][Ov_N]_Greater	0	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	0	0.000	512	2	2	aeg090_008
 Dropped	M[CutScene][Blood][AMSN_V][Mb2][Ov_N]_Greater	6	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	0	0.000	512	2	2	aeg090_008
 Dropped	M[CutScene][Blood][AMSN_V][Mb2][Ov_N]_Greater	1	NormalMap	NormalGloss	Dropped (a layer the blend doesn't use)	0	0.000	512	2	2	aeg090_008
@@ -1718,7 +1571,7 @@ Dropped	M[CutScene][WaterSurface]	2	NormalMap	Normal	Dropped (its WaterNormal la
 Unverified	GXFlver_GrassSpcBump	-1	g_DiffuseTexture	(no signature)	Albedo	0	0.000	56	1	1	aeg001_282
 Unverified	GXFlver_GrassSpcBump	-1	g_SpecularTexture	(no signature)	Specular	0	0.000	56	1	1	aeg001_282
 Unverified	GXFlver_GrassSpcBump	-1	g_BumpmapTexture	(no signature)	Normal	0	0.000	56	1	1	aeg001_282
-Dropped	M[AMSN][XZ_BillBoard][ColorShift]_Edge	0	Mask1Map	Other	Dropped (no route for the role Mask1Map)	0	0.000	24	3	2	aeg461_001
+Dropped	M[AMSN][XZ_BillBoard][ColorShift]_Edge	0	Mask1Map	Other	Dropped (no route for the role Mask1Map)	0	0.000	24	3	2	aeg461_110
 Ok	M[AMSN_V][Ov_N]	7	NormalMap	NormalGloss	Normal	1013423646	12.420	115564584	22079	1259	aeg040_067
 Ok	M[AMSN_V][Ov_N]	8	AlbedoMap	Albedo	Albedo	1013343980	12.419	115613341	22077	1259	aeg040_067
 Ok	M[AMSN_V][Ov_N]	2	NormalMap	Normal	OverlayNormal	1011256053	12.393	115256697	22016	1245	aeg040_067
@@ -1873,10 +1726,12 @@ Ok	M[AMSN_V][Mb2]	13	NormalMap	NormalGloss	Normal	35845832	0.439	4766568	2875	22
 Ok	M[AMSN_V][Mb2]	2	AlbedoMap	Albedo	Albedo	35844765	0.439	4766333	2872	222	aeg030_903
 Ok	M[AMSN_V][Mb2]	14	NormalMap	NormalGloss	Normal	35844765	0.439	4766333	2872	222	aeg030_903
 Ok	M[AMSN_V][Mb2]	0	BlendEdge	Mask	BlendDetailMask	35791086	0.439	4708043	2867	220	aeg030_903
+Ok	C[DetailBlend]_SSS	12	NormalMap	NormalGloss	OverlayNormal	35604480	0.436	1268478	126	68	c3450
 Ok	C[DetailBlend]	5	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	34436424	0.422	1793857	645	237	c4550
 Ok	C[AMSN]_ContactFade	2	AlbedoMap	Albedo	Albedo	34112616	0.418	445418	81	68	c3661
 Ok	C[AMSN]_ContactFade	7	NormalMap	NormalGloss	Normal	34112616	0.418	445418	81	68	c3661
 Ok	C[DetailBlend]	9	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	33810890	0.414	1790306	671	207	c4191
+Ok	C[DetailBlend][S2]	8	AlbedoMap	Albedo	OverlayAlbedo	32702689	0.401	1112333	530	131	c4300
 Ok	M[AMSN_V][Mb3][3Mask][Ov_N2]	1	AlbedoMap	Albedo	Albedo	31226384	0.383	417302	33	7	aeg004_080
 Ok	M[AMSN_V][Mb3][3Mask][Ov_N2]	2	AlbedoMap	Albedo	Albedo	31226384	0.383	417302	33	7	aeg004_080
 Ok	M[AMSN_V][Mb3][3Mask][Ov_N2]	8	AlbedoMap	Albedo	Albedo	31226384	0.383	417302	33	7	aeg004_080
@@ -1906,6 +1761,8 @@ Ok	C[DetailBlend]	2	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot alread
 Ok	C[DetailBlend][S2]	1	AlbedoMap	Albedo	OverlayAlbedo	27323164	0.335	730542	383	93	c4300
 Ok	M[AMSN_V][Snow_VtxMask]	0	AlbedoMap	Albedo	Albedo	25473132	0.312	878639	207	59	aeg001_409
 Ok	M[AMSN_V][Snow_VtxMask]	1	NormalMap	NormalGloss	Normal	25473132	0.312	878639	207	59	aeg001_409
+Ok	C[DetailBlend][S2]	6	NormalMap	NormalGloss	OverlayNormal	25113639	0.308	688658	336	78	c4300
+Ok	C[DetailBlend]_SSS	6	NormalMap	NormalGloss	OverlayNormal	24702542	0.303	1374489	184	99	c5080
 Ok	M[AMSN][Mb2][Ov_AN]	2	AlbedoMap	Albedo	Albedo	24460028	0.300	2792159	434	32	aeg442_613
 Ok	M[AMSN][Mb2][Ov_AN]	3	AlbedoMap	Albedo	Albedo	24460028	0.300	2792159	434	32	aeg442_613
 Ok	M[AMSN][Mb2][Ov_AN]	0	NormalMap	NormalGloss	Normal	24460028	0.300	2792159	434	32	aeg442_613
@@ -1917,9 +1774,17 @@ Ok	M[AMSN][Mb2][Ov_AN]	8	MetallicMap	Metallic	Metallic	23602850	0.289	2658245	40
 Ok	M[AMSN_V]_Grass	2	AlbedoMap	Albedo	Albedo	23146387	0.284	3466172	411	46	aeg007_372
 Ok	M[AMSN_V]_Grass	1	NormalMap	NormalGloss	Normal	23146387	0.284	3466172	411	46	aeg007_372
 Ok	M[AMSN][Mb2][Ov_AN]	4	Mask1Map	Mask	BlendDetailMask	22605828	0.277	2461094	343	24	aeg442_613
-Ok	M[Cave_001]	10	NormalMap	NormalGloss	OverlayNormal	21673205	0.266	7671270	471	13	aeg440_020
 Ok	M[Cave_001]	11	AlbedoMap	Albedo	Albedo	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	12	AlbedoMap	NormalGloss	Normal	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	8	AlbedoMap	Albedo	Albedo	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	4	AlbedoMap	Albedo	Albedo	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	0	AlbedoMap	Albedo	Albedo	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	10	NormalMap	NormalGloss	OverlayNormal	21673205	0.266	7671270	471	13	aeg440_020
 Ok	M[Cave_001]	2	NormalMap	NormalGloss	Normal	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	1	NormalMap	NormalGloss	Normal	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	6	NormalMap	NormalGloss	Normal	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	9	Mask3Map	Mask	BlendMask	21673205	0.266	7671270	471	13	aeg440_020
+Ok	M[Cave_001]	3	Mask1Map	Mask	BlendDetailMask	21673205	0.266	7671270	471	13	aeg440_020
 Ok	M[AMSN][Mb2][Ov_AN]	7	MetallicMap	Metallic	Metallic	21579095	0.264	2388182	382	20	aeg442_613
 Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	1	AlbedoMap	Albedo	Albedo	21158710	0.259	1161807	577	57	aeg221_214
 Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	2	AlbedoMap	Albedo	Albedo	21158710	0.259	1161807	577	57	aeg221_214
@@ -1931,8 +1796,8 @@ Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	15	NormalMap	NormalGloss	Normal	21158710	0.259	1
 Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	16	NormalMap	NormalGloss	Normal	21158710	0.259	1161807	577	57	aeg221_214
 Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	3	Mask1Map	Mask	BlendDetailMask	21158710	0.259	1161807	577	57	aeg221_214
 Ok	M[AMSN_V][Mb4][3Mask][Ov_AN]	0	Mask3Map	Mask	BlendMask	21158110	0.259	1161639	575	57	aeg221_214
+Ok	C[DetailBlend]_SSS	10	AlbedoMap	Albedo	OverlayAlbedo	21000827	0.257	754954	63	40	c3450
 Ok	C[DetailBlend]	4	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	20759213	0.254	1204696	442	157	c4191
-Ok	C[DetailBlend]_SSS	6	NormalMap	NormalGloss	OverlayNormal	20621969	0.253	1354035	182	97	c5080
 Ok	C[AMSN]_Glow[Int]	1	EmissiveMap	Emissive	Emissive	19498799	0.239	417431	125	64	c3750
 Ok	C[AMSN]_Glow[Int]	7	NormalMap	NormalGloss	Normal	19489151	0.239	412299	115	61	c3750
 Ok	C[AMSN]_Glow[Int]	2	AlbedoMap	Albedo	Albedo	19330893	0.237	415937	122	61	c3750
@@ -1942,9 +1807,11 @@ Ok	M[AMSN_V][Ov_N]_Skin	8	AlbedoMap	Albedo	Albedo	16888463	0.207	4128535	363	23	
 Ok	M[AMSN_V][Ov_N]_Skin	7	NormalMap	NormalGloss	Normal	16888463	0.207	4128535	363	23	aeg427_111
 Ok	M[AMSN_V][Ov_N]_Skin	2	NormalMap	Normal	OverlayNormal	16782707	0.206	4120981	362	22	aeg427_111
 Ok	M[AMSN][Mb2][Ov_AN]	6	AlbedoMap	Albedo	OverlayAlbedo	16355949	0.200	1031501	47	7	aeg442_613
+Ok	C[DetailBlend][S2]	12	NormalMap	NormalGloss	OverlayNormal	15690073	0.192	411808	193	50	c4300
 Ok	M[AMSN][Snow]	0	AlbedoMap	Albedo	Albedo	15379234	0.188	603466	119	18	aeg001_413
 Ok	M[AMSN][Snow]	1	NormalMap	NormalGloss	Normal	15379234	0.188	603466	119	18	aeg001_413
 Ok	M[AMSN][Snow]	4	MetallicMap	Metallic	Metallic	15379234	0.188	603466	119	18	aeg001_413
+Ok	C[DetailBlend][S2]	10	AlbedoMap	Albedo	OverlayAlbedo	14827120	0.182	304592	129	38	c4300
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	2	AlbedoMap	Albedo	Albedo	13905140	0.170	1774547	264	53	aeg050_392
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	3	AlbedoMap	Albedo	Albedo	13905140	0.170	1774547	264	53	aeg050_392
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	0	NormalMap	NormalGloss	Normal	13905140	0.170	1774547	264	53	aeg050_392
@@ -1952,8 +1819,10 @@ Ok	M[AMSN_V][Mb2][Ov_N][magma]	1	NormalMap	NormalGloss	Normal	13905140	0.170	177
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	4	Mask1Map	Mask	BlendDetailMask	13905140	0.170	1774547	264	53	aeg050_392
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	7	Mask3Map	Emissive	MagmaGlow	13905140	0.170	1774547	264	53	aeg050_392
 Ok	M[AMSN_V][Mb2][Ov_N][magma]	5	NormalMap	Normal	OverlayNormal	13845260	0.170	1764567	263	52	aeg050_392
+Ok	C[DetailBlend]_SSS	9	NormalMap	NormalGloss	OverlayNormal	13493504	0.165	593553	54	32	c3450
 Ok	M[AMSN_V][Mb4][3Mask][Far_AN]	13	AlbedoMap	Albedo	Albedo	13076068	0.160	13042033	1944	24	aeg299_024
 Ok	M[AMSN_V][Mb4][3Mask][Far_AN]	7	NormalMap	NormalGloss	Normal	13076068	0.160	13042033	1944	24	aeg299_024
+Ok	C[DetailBlend]_SSS	4	AlbedoMap	Albedo	OverlayAlbedo	12721375	0.156	384311	36	20	c3450
 Ok	C[DetailBlend]_SSS	3	MetallicMap	Metallic	Metallic	12114983	0.148	633634	96	44	c3810
 Ok	C[Fur]_FurBlur	9	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	11408902	0.140	441337	99	54	c6060
 Ok	C[DetailBlend]_cloth	0	NormalMap	NormalGloss	Normal	11109767	0.136	1330611	2134	536	c4321
@@ -1971,12 +1840,14 @@ Ok	M[AMSN][Ov_N][Mb3_ColorAdjust][3Mask_ch18]	9	Mask3Map	Mask	BlendMask	10902256
 Ok	M[AMSN_V][Snow_VtxMask]_Edge	0	AlbedoMap	Albedo	Albedo	10815386	0.133	249466	50	12	aeg001_409
 Ok	M[AMSN_V][Snow_VtxMask]_Edge	1	NormalMap	NormalGloss	Normal	10815386	0.133	249466	50	12	aeg001_409
 Ok	M[AMSN][Ov_N][Mb3_ColorAdjust][3Mask_ch18]	3	Mask1Map	Mask	BlendDetailMask	10814928	0.133	1525401	250	25	aeg022_902
+Ok	C[DetailBlend][S2]	9	NormalMap	NormalGloss	OverlayNormal	10783720	0.132	321196	145	44	c4300
 Ok	M[AMSN_V][Mb2][Ov_N][Snow]	2	AlbedoMap	Albedo	Albedo	10742710	0.132	1103766	244	22	aeg007_252
 Ok	M[AMSN_V][Mb2][Ov_N][Snow]	0	NormalMap	NormalGloss	Normal	10742710	0.132	1103766	244	22	aeg007_252
 Ok	M[AMSN_V][Mb2][Ov_N][Snow]	3	AlbedoMap	Albedo	Albedo	10677099	0.131	1038155	239	19	aeg007_252
 Ok	M[AMSN_V][Mb2][Ov_N][Snow]	1	NormalMap	NormalGloss	Normal	10677099	0.131	1038155	239	19	aeg007_252
 Ok	M[WorldTree_Trunk2]	5	NormalMap	Normal	OverlayNormal	10413592	0.128	706668	42	21	aeg094_001
 Ok	M[WorldTree_Trunk2]	0	NormalMap	NormalGloss	Normal	10413592	0.128	706668	42	21	aeg094_001
+Ok	C[DetailBlend][S2]	4	AlbedoMap	Albedo	OverlayAlbedo	10335752	0.127	270898	124	35	c4300
 Ok	M[AMSN_V][Mb2][Ov_N][Snow]	4	Mask1Map	Mask	BlendDetailMask	10323971	0.127	1005561	238	18	aeg007_252
 Ok	M[AMSN][Mb2]	1	AlbedoMap	Albedo	Albedo	10233401	0.125	1483300	163	23	aeg220_118
 Ok	M[AMSN][Mb2]	2	AlbedoMap	Albedo	Albedo	10233401	0.125	1483300	163	23	aeg220_118
@@ -2035,6 +1906,7 @@ Ok	C[AMSN][PixelKill]	7	NormalMap	NormalGloss	Normal	5519336	0.068	35926	6	6	c40
 Ok	M[AMSN_V][Ov_AN][magma]	2	NormalMap	Normal	OverlayNormal	5480268	0.067	42292	11	2	aeg099_850
 Ok	C[c4180]_Glow	1	AlbedoMap	Albedo	Albedo	5474480	0.067	43804	21	19	c4180
 Ok	C[c4180]_Glow	7	NormalMap	NormalGloss	Normal	5474480	0.067	43804	21	19	c4180
+Ok	C[DetailBlend]_SSS	5	NormalMap	NormalGloss	OverlayNormal	5387404	0.066	121710	12	7	c5590
 Ok	C[DetailBlend]_cloth	12	NormalMap	NormalGloss	OverlayNormal	5228440	0.064	770272	1171	293	c4314
 Ok	M[AMSN_V][Ov_N][Ice]	1	AlbedoMap	Albedo	Albedo	5044851	0.062	222222	47	5	aeg024_437
 Ok	M[AMSN_V][Ov_N][Ice]	4	AlbedoMap	Albedo	Albedo	5044851	0.062	222222	47	5	aeg024_437
@@ -2104,6 +1976,9 @@ Ok	M[AMSN_V][Mb2][Snow_VtxMask]	3	AlbedoMap	Albedo	Albedo	3602365	0.044	823074	8
 Ok	M[AMSN_V][Mb2][Snow_VtxMask]	4	Mask1Map	Mask	BlendDetailMask	3602365	0.044	823074	84	12	aeg050_131
 Ok	M[AMSN_V][Mb2][Snow_VtxMask]	0	NormalMap	NormalGloss	Normal	3600445	0.044	822690	83	11	aeg050_131
 Ok	M[AMSN_V][Mb2][Snow_VtxMask]	1	NormalMap	NormalGloss	Normal	3600445	0.044	822690	83	11	aeg050_131
+Ok	C[c4480]_Flower_1	6	NormalMap	NormalGloss	OverlayNormal	3585886	0.044	61626	10	4	c4480
+Ok	C[c4480]_Flower_1	12	NormalMap	NormalGloss	OverlayNormal	3585886	0.044	61626	10	4	c4480
+Ok	C[c4480]_Flower_1	9	NormalMap	NormalGloss	OverlayNormal	3585886	0.044	61626	10	4	c4480
 Ok	M[AMSN][Mb2][Ov_N][Snow]	4	Mask1Map	Mask	BlendDetailMask	3584742	0.044	339065	37	7	aeg024_637
 Ok	C[Crystal_NoTransparent]_Glow	1	AlbedoMap	Albedo	Albedo	3535656	0.043	66178	13	12	c2275
 Ok	C[Crystal_NoTransparent]_Glow	7	NormalMap	NormalGloss	Normal	3535656	0.043	66178	13	12	c2275
@@ -2158,9 +2033,17 @@ Ok	M[AMSN][Mb2]_Skin	4	MetallicMap	Metallic	Metallic	2914353	0.036	28158	16	1	ae
 Ok	C[DetailBlend]_FurBlur	14	AlbedoMap	Albedo	Albedo	2888810	0.035	106726	13	8	c5440
 Ok	M[AMSN]_Vesitation	0	AlbedoMap	Albedo	Albedo	2764396	0.034	67311	20	3	aeg232_518
 Ok	M[AMSN]_Vesitation	2	NormalMap	NormalGloss	Normal	2764396	0.034	67311	20	3	aeg232_518
-Ok	M[Cave_Ice_001]	13	NormalMap	NormalGloss	OverlayNormal	2742636	0.034	1884917	116	3	aeg441_024
 Ok	M[Cave_Ice_001]	11	AlbedoMap	Albedo	Albedo	2742636	0.034	1884917	116	3	aeg441_024
-Ok	M[Cave_Ice_001]	14	NormalMap	NormalGloss	Normal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	12	AlbedoMap	NormalGloss	Normal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	13	NormalMap	NormalGloss	OverlayNormal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	8	AlbedoMap	Albedo	Albedo	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	4	AlbedoMap	Albedo	Albedo	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	0	AlbedoMap	Albedo	Albedo	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	2	NormalMap	NormalGloss	Normal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	1	NormalMap	NormalGloss	Normal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	6	NormalMap	NormalGloss	Normal	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	9	Mask3Map	Mask	BlendMask	2742636	0.034	1884917	116	3	aeg441_024
+Ok	M[Cave_Ice_001]	3	Mask1Map	Mask	BlendDetailMask	2742636	0.034	1884917	116	3	aeg441_024
 Ok	C[c5110]_Glow	7	NormalMap	NormalGloss	Normal	2733398	0.033	8258	2	2	c5110
 Ok	C[c5110]_Glow	1	AlbedoMap	Albedo	Albedo	2719496	0.033	8216	1	1	c5110
 Ok	C[c5110]_Glow	3	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	2719496	0.033	8216	1	1	c5110
@@ -2177,8 +2060,17 @@ Ok	C[DetailBlend][Rich]	1	AlbedoMap	Albedo	OverlayAlbedo	2531413	0.031	2316800	1
 Ok	M[AMSN][Ov_N][Mb3_ColorAdjust][3Mask_ch18]	5	MetallicMap	Metallic	Metallic	2444189	0.030	610895	139	10	aeg220_322
 Ok	C[DetailBlend]_FurBlur	12	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	2435500	0.030	33250	7	4	c5440
 Ok	M[ShadowThorn]	4	NormalMap	NormalGloss	OverlayNormal	2423670	0.030	154565	7	3	aeg050_490
-Ok	M[m11_WorldTree]	10	NormalMap	Normal	OverlayNormal	2397780	0.029	135154	16	4	aeg094_076
 Ok	M[m11_WorldTree]	8	AlbedoMap	Albedo	Albedo	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	4	AlbedoMap	Albedo	Albedo	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	0	AlbedoMap	Albedo	Albedo	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	7	AlbedoMap	Albedo	Albedo	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	10	NormalMap	Normal	OverlayNormal	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	2	NormalMap	NormalGloss	Normal	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	1	NormalMap	NormalGloss	Normal	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	5	NormalMap	NormalGloss	Normal	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	6	NormalMap	NormalGloss	Normal	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	9	Mask3Map	Mask	BlendMask	2397780	0.029	135154	16	4	aeg094_076
+Ok	M[m11_WorldTree]	3	Mask1Map	Mask	BlendDetailMask	2397780	0.029	135154	16	4	aeg094_076
 Ok	C[AMSN]_ContactFade_Glow[Int]	1	EmissiveMap	Emissive	Emissive	2395029	0.029	11886	2	1	aeg300_006
 Ok	C[AMSN]_ContactFade_Glow[Int]	2	AlbedoMap	Albedo	Albedo	2395029	0.029	11886	2	1	aeg300_006
 Ok	C[AMSN]_ContactFade_Glow[Int]	7	NormalMap	NormalGloss	Normal	2395029	0.029	11886	2	1	aeg300_006
@@ -2234,8 +2126,17 @@ Ok	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]	5	NormalMap	NormalGloss	Normal	1793756	0.
 Ok	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]	6	NormalMap	NormalGloss	Normal	1793756	0.022	91530	4	2	aeg231_091
 Ok	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]	15	NormalMap	NormalGloss	Normal	1793756	0.022	91530	4	2	aeg231_091
 Ok	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]	0	Mask3Map	Mask	BlendMask	1793756	0.022	91530	4	2	aeg231_091
-Ok	M[m11_05_WorldTree][Flame]	10	NormalMap	Normal	OverlayNormal	1740038	0.021	302548	17	5	aeg094_092
 Ok	M[m11_05_WorldTree][Flame]	8	AlbedoMap	Albedo	Albedo	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	4	AlbedoMap	Albedo	Albedo	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	0	AlbedoMap	Albedo	Albedo	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	7	AlbedoMap	Albedo	Albedo	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	10	NormalMap	Normal	OverlayNormal	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	2	NormalMap	NormalGloss	Normal	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	1	NormalMap	NormalGloss	Normal	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	5	NormalMap	NormalGloss	Normal	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	6	NormalMap	NormalGloss	Normal	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	9	Mask3Map	Mask	BlendMask	1740038	0.021	302548	17	5	aeg094_092
+Ok	M[m11_05_WorldTree][Flame]	3	Mask1Map	Mask	BlendDetailMask	1740038	0.021	302548	17	5	aeg094_092
 Ok	M[Oil_Solid]	9	NormalMap	Normal	OverlayNormal	1736696	0.021	38991	6	2	aeg430_070
 Ok	M[AMSN_V][Oil_Solid][Snow_VtxMask]	2	AlbedoMap	Albedo	Albedo	1692832	0.021	29688	6	2	aeg430_120
 Ok	M[AMSN_V][Oil_Solid][Snow_VtxMask]	1	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	1692832	0.021	29688	6	2	aeg430_120
@@ -2246,11 +2147,13 @@ Ok	C[AMSN]_Burn	2	EmissiveMap	Emissive	Emissive	1612055	0.020	96828	10	8	c5511
 Ok	C[AMSN]_Burn	4	NormalMap	NormalGloss	Normal	1612055	0.020	96828	10	8	c5511
 Ok	M[AMSN_V][Ov_N][Translucency]	2	AlbedoMap	Albedo	Albedo	1602241	0.020	285548	217	39	aeg231_107
 Ok	M[AMSN_V][Ov_N][Translucency]	1	NormalMap	NormalGloss	Normal	1602241	0.020	285548	217	39	aeg231_107
+Ok	C[DetailBlend][Rich]	12	NormalMap	NormalGloss	OverlayNormal	1592183	0.020	1790186	1133	132	c3010
 Ok	C[AMSN]_Burn	5	NormalMap	NormalGloss	OverlayNormal	1562957	0.019	92152	8	6	c5511
 Ok	M[AMSN_V][Mb3][VC][3MaskDetailMask][Ov_N][Cover]	1	AlbedoMap	Albedo	Albedo	1551591	0.019	754408	50	7	aeg260_096
 Ok	M[AMSN_V]_Emissive_Glow02	2	AlbedoMap	Albedo	Albedo	1549938	0.019	45572	14	11	aeg052_366
 Ok	M[AMSN_V]_Emissive_Glow02	1	NormalMap	NormalGloss	Normal	1549938	0.019	45572	14	11	aeg052_366
 Ok	M[AMSN_V]_Emissive_Glow02	4	EmissiveMap	Emissive	Emissive	1549938	0.019	45572	14	11	aeg052_366
+Ok	C[DetailBlend][Rich]	10	AlbedoMap	Albedo	OverlayAlbedo	1533045	0.019	1689153	1086	126	c3010
 Ok	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_B]	13	AlbedoMap	Albedo	Albedo	1511386	0.019	1508946	209	2	m60_34_44_00_344402
 Ok	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_B]	7	NormalMap	NormalGloss	Normal	1511386	0.019	1508946	209	2	m60_34_44_00_344402
 Ok	M[AMSN_V][Ov_N][Ice]_Emissive	10	AlbedoMap	Albedo	Albedo	1509932	0.019	124953	11	1	aeg110_160
@@ -2352,6 +2255,8 @@ Ok	M[AMSN][Mb3][Ov_AN]	11	MetallicMap	Metallic	Metallic	943339	0.012	33509	19	5	
 Ok	M[AMSN][Mb3][Ov_AN]	8	MetallicMap	Metallic	Metallic	938939	0.012	29109	16	3	aeg001_095
 Ok	M[AMSN_V][Ov_N][Mb3_ColorAdjust][3Mask_ch18][Snow_VtxMask_ch19]	3	Mask1Map	Mask	BlendDetailMask	925920	0.011	79422	45	1	aeg430_155
 Ok	M[AMSN][Mb3][Ov_AN]	6	AlbedoMap	Albedo	OverlayAlbedo	911564	0.011	6488	4	2	aeg001_095
+Ok	C[DetailBlend][S2]	5	NormalMap	NormalGloss	OverlayNormal	896464	0.011	144103	52	16	c4314
+Ok	C[DetailBlend][S2]	2	AlbedoMap	Albedo	OverlayAlbedo	896464	0.011	129793	48	14	c4314
 Ok	C[DetailBlend]_SSS_cloth	7	AlbedoMap	Albedo	Albedo	863336	0.011	59088	41	12	c3560
 Ok	C[DetailBlend]_SSS_cloth	0	NormalMap	NormalGloss	Normal	863336	0.011	59088	41	12	c3560
 Ok	M[AMSN_V][cheap_C]	1	NormalMap	Normal	Normal	858078	0.011	1482	4	1	aeg004_045
@@ -2368,6 +2273,12 @@ Ok	C[c3320]_VA_Frame	0	VectorMap	NotSampled	Dropped (no route for the role Vecto
 Ok	C[c3320]_VA_Frame	2	AlbedoMap	Albedo	Albedo	821568	0.010	4668	1	1	c3320
 Ok	C[c3320]_VA_Frame	3	MetallicMap	Metallic	Metallic	821568	0.010	4668	1	1	c3320
 Ok	C[c4450]_AreaMatchBlend	3	AlbedoMap	Albedo	Albedo	788697	0.010	112671	8	5	c4450
+Ok	C[c4950]_Ghost	1	AlbedoMap	Albedo	OverlayAlbedo	786380	0.010	56170	1	1	c4960
+Ok	C[c4950]_Ghost	6	NormalMap	NormalGloss	OverlayNormal	786380	0.010	56170	1	1	c4960
+Ok	C[c4950]_Ghost	10	AlbedoMap	Albedo	OverlayAlbedo	786380	0.010	56170	1	1	c4960
+Ok	C[c4950]_Ghost	4	AlbedoMap	Albedo	OverlayAlbedo	786380	0.010	56170	1	1	c4960
+Ok	C[c4950]_Ghost	12	NormalMap	NormalGloss	OverlayNormal	786380	0.010	56170	1	1	c4960
+Ok	C[c4950]_Ghost	9	NormalMap	NormalGloss	OverlayNormal	786380	0.010	56170	1	1	c4960
 Ok	C[c4950]_Ghost	2	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
 Ok	C[c4950]_Ghost	5	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	786380	0.010	56170	1	1	c4960
 Ok	M[AMSN][XZ_BillBoard]_Edge	3	AlbedoMap	Albedo	Albedo	758504	0.009	592172	594	15	m39_20_00_99_600912
@@ -2388,6 +2299,8 @@ Ok	M[AMSN_V][Mb2][3Mask][Ov_N][magma_ColorAdjust]	10	Mask1Map	Mask	BlendDetailMa
 Ok	C[c4980]_Lwing	4	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	713174	0.009	129668	10	10	c4980
 Ok	C[c4980]_Lwing	0	NormalMap	NormalGloss	Normal	712184	0.009	129488	8	8	c4980
 Ok	C[DetailBlend]_SSS_cloth	6	NormalMap	NormalGloss	OverlayNormal	710124	0.009	57052	37	8	c3560
+Ok	C[DetailBlend]_SSS_cloth	12	NormalMap	NormalGloss	OverlayNormal	710124	0.009	39932	25	5	c3560
+Ok	C[DetailBlend][Rich]	9	NormalMap	NormalGloss	OverlayNormal	689920	0.008	863051	609	59	c3550
 Ok	M[Birds_Interact]	0	AlbedoMap	Albedo	Albedo	684658	0.008	74342	7	2	aeg464_902
 Ok	M[Birds_Interact]	1	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	684658	0.008	74342	7	2	aeg464_902
 Ok	M[Birds_Interact]	2	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	684658	0.008	74342	7	2	aeg464_902
@@ -2403,6 +2316,7 @@ Ok	M[AMSN][Foreigner]_Skin	2	AlbedoMap	Albedo	Albedo	642993	0.008	32974	8	8	aeg0
 Ok	M[AMSN][Foreigner]_Skin	0	NormalMap	NormalGloss	Normal	642993	0.008	32974	8	8	aeg099_641
 Ok	M[Hair]	0	AlbedoMap	Albedo	Albedo	642032	0.008	44384	19	2	aeg240_560
 Ok	M[Hair]	1	NormalMap	NormalGloss	Normal	642032	0.008	44384	19	2	aeg240_560
+Ok	C[DetailBlend][Rich]	4	AlbedoMap	Albedo	OverlayAlbedo	641273	0.008	753213	550	46	c3550
 Ok	M[Cave_Ore_001]	10	NormalMap	NormalGloss	OverlayNormal	635862	0.008	513291	29	4	aeg020_630
 Ok	M[Cave_Ore_001]	11	AlbedoMap	Albedo	Albedo	635862	0.008	513291	29	4	aeg020_630
 Ok	M[Cave_Ore_001]	13	NormalMap	NormalGloss	Normal	635862	0.008	513291	29	4	aeg020_630
@@ -2410,7 +2324,7 @@ Ok	M[AMSN_V][Mb2][Ov_AN][Meteorite]	3	AlbedoMap	Albedo	Albedo	628695	0.008	24157
 Ok	M[AMSN_V][Mb2][Ov_AN][Meteorite]	1	NormalMap	NormalGloss	Normal	628695	0.008	241572	29	11	aeg022_900
 Ok	C[c5500]_Magma	3	EmissiveMap	Emissive	Emissive	610736	0.007	4058	4	4	c5500
 Ok	C[c5500]_Magma	7	NormalMap	NormalGloss	Normal	610736	0.007	4058	4	4	c5500
-Ok	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	7	AlbedoMap	Albedo	Albedo	593230	0.007	50890	10	7	c4040
+Ok	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	7	AlbedoMap	Albedo	OverlayAlbedo	593230	0.007	50890	10	7	c4040
 Ok	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	0	NormalMap	NormalGloss	Normal	593230	0.007	50890	10	7	c4040
 Ok	M[Birds_Interact][PostureCorrection]	0	AlbedoMap	Albedo	Albedo	588000	0.007	49000	3	1	aeg464_910
 Ok	M[Birds_Interact][PostureCorrection]	1	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	588000	0.007	49000	3	1	aeg464_910
@@ -2455,6 +2369,7 @@ Ok	C[c5110]_Weapon_cloth	2	AlbedoMap	Albedo	Albedo	501134	0.006	1514	1	1	c5110
 Ok	C[c5110]_Weapon_cloth	7	NormalMap	NormalGloss	Normal	501134	0.006	1514	1	1	c5110
 Ok	C[DetailBlend][S2]_cloth	7	AlbedoMap	Albedo	Albedo	497277	0.006	179717	222	42	c4570
 Ok	C[DetailBlend][S2]_cloth	0	NormalMap	NormalGloss	Normal	497277	0.006	179717	222	42	c4570
+Ok	C[DetailBlend][S2]_cloth	8	AlbedoMap	Albedo	OverlayAlbedo	497277	0.006	179589	218	41	c4570
 Ok	M[AMSN_V][Mb4][3Mask][Ov_N2][beach]	1	AlbedoMap	Albedo	Albedo	495860	0.006	500196	167	3	m61_49_38_00_493852
 Ok	M[AMSN_V][Mb4][3Mask][Ov_N2][beach]	2	AlbedoMap	Albedo	Albedo	495860	0.006	500196	167	3	m61_49_38_00_493852
 Ok	M[AMSN_V][Mb4][3Mask][Ov_N2][beach]	8	AlbedoMap	Albedo	Albedo	495860	0.006	500196	167	3	m61_49_38_00_493852
@@ -2473,6 +2388,7 @@ Ok	C[c2500]_Fade	7	NormalMap	NormalGloss	Normal	492014	0.006	16966	4	4	c2500
 Ok	M[Foreigner]	1	NormalMap	Normal	Normal	491232	0.006	9632	2	1	aeg099_350
 Ok	M[Foreigner]	2	AlbedoMap	Albedo	Albedo	491232	0.006	9632	2	1	aeg099_350
 Ok	C[DetailBlend][S2]_cloth	1	AlbedoMap	Albedo	OverlayAlbedo	486329	0.006	172409	201	37	c4570
+Ok	C[DetailBlend][S2]_cloth	6	NormalMap	NormalGloss	OverlayNormal	484265	0.006	152891	172	31	c4570
 Ok	C[c4640]_Tentacles	4	AlbedoMap	Albedo	OverlayAlbedo	478080	0.006	39840	2	2	c4640
 Ok	C[c4640]_Tentacles	2	AlbedoMap	Albedo	Albedo	478080	0.006	39840	2	2	c4640
 Ok	C[c4640]_Tentacles	7	NormalMap	NormalGloss	Normal	478080	0.006	39840	2	2	c4640
@@ -2501,6 +2417,7 @@ Ok	M[Flag][Mb2]	5	AlbedoMap	Albedo	Albedo	431673	0.005	39134	79	38	aeg070_458
 Ok	M[Flag][Mb2]	6	NormalMap	Normal	Normal	431673	0.005	39134	79	38	aeg070_458
 Ok	C[c3350]_Crystal	9	EmissiveMap	Emissive	Emissive	426440	0.005	48264	16	10	c3350
 Ok	M[AMSN_V][Ov_N][Crystal]	5	Mask1Map	Mask	BlendDetailMask	421258	0.005	153298	10	5	aeg463_950
+Ok	C[DetailBlend][S2]_cloth	12	NormalMap	NormalGloss	OverlayNormal	419597	0.005	126264	134	25	c4570
 Ok	C[Fur]_Glow	2	EmissiveMap	Emissive	Emissive	419000	0.005	8380	4	4	c5430
 Ok	M[AMSN_V][Ov_AN]_Skin_PaintDecal	2	NormalMap	Normal	OverlayNormal	415909	0.005	345225	17	5	aeg427_008
 Ok	M[AMSN_V][Ov_AN]_Skin_PaintDecal	8	AlbedoMap	Albedo	Albedo	415909	0.005	345225	17	5	aeg427_008
@@ -2511,13 +2428,20 @@ Ok	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_C]	7	NormalMap	NormalGloss	Normal	409650	
 Ok	M[AMSN_V][Ov_N][Snow]_Edge	0	AlbedoMap	Albedo	Albedo	408523	0.005	50536	13	7	aeg001_420
 Ok	M[AMSN_V][Ov_N][Snow]_Edge	1	NormalMap	NormalGloss	Normal	408523	0.005	50536	13	7	aeg001_420
 Ok	M[A]_Grass	1	AlbedoMap	Albedo	Albedo	407217	0.005	87521	56	13	aeg210_052
+Ok	C[DetailBlend][Rich]	8	AlbedoMap	Albedo	OverlayAlbedo	403455	0.005	215624	71	18	c3550
 Ok	C[AMSN]_Arts_Enchant	2	AlbedoMap	Albedo	Albedo	395694	0.005	27029	4	3	c5250
 Ok	C[AMSN]_Arts_Enchant	6	EmissiveMap	Emissive	Emissive	395694	0.005	27029	4	3	c5250
 Ok	C[AMSN]_Arts_Enchant	7	NormalMap	NormalGloss	Normal	395694	0.005	27029	4	3	c5250
-Ok	M[ShadowErdtree_WoodDetail]	10	NormalMap	Normal	OverlayNormal	373919	0.005	61918	4	1	aeg050_474
 Ok	M[ShadowErdtree_WoodDetail]	8	AlbedoMap	Albedo	Albedo	373919	0.005	61918	4	1	aeg050_474
-Ok	M[ShadowErdtree_WoodDetail]	12	EmissiveMap	Emissive	Emissive	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	4	AlbedoMap	Albedo	Albedo	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	0	AlbedoMap	Albedo	Albedo	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	10	NormalMap	Normal	OverlayNormal	373919	0.005	61918	4	1	aeg050_474
 Ok	M[ShadowErdtree_WoodDetail]	2	NormalMap	NormalGloss	Normal	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	1	NormalMap	NormalGloss	Normal	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	6	NormalMap	NormalGloss	Normal	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	9	Mask3Map	Mask	BlendMask	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	3	Mask1Map	Mask	BlendDetailMask	373919	0.005	61918	4	1	aeg050_474
+Ok	M[ShadowErdtree_WoodDetail]	12	EmissiveMap	Emissive	Emissive	373919	0.005	61918	4	1	aeg050_474
 Ok	M[WorldTree_Leaves]	1	NormalMap	NormalGloss	Normal	373149	0.005	34779	6	4	aeg052_724
 Ok	M[WorldTree_Leaves]	2	AlbedoMap	Albedo	Albedo	373149	0.005	34779	6	4	aeg052_724
 Ok	C[c3200]_Costume	6	NormalMap	NormalGloss	OverlayNormal	372920	0.005	14980	14	9	c3210
@@ -2542,6 +2466,7 @@ Ok	M[AMSN][Ov_N][Mb2_ColorAdjust][1Mask_ch18]	2	NormalMap	NormalGloss	Normal	351
 Ok	M[AMSN][Ov_N][Mb2_ColorAdjust][1Mask_ch18]	1	NormalMap	NormalGloss	Normal	351376	0.004	76468	4	4	aeg221_578
 Ok	M[AMSN][Ov_N][Mb2_ColorAdjust][1Mask_ch18]	9	Mask1Map	Mask	BlendMask	351376	0.004	76468	4	4	aeg221_578
 Ok	M[AMSN][Ov_N][Mb2_ColorAdjust][1Mask_ch18]	0	MetallicMap	Metallic	Metallic	351376	0.004	76468	4	4	aeg221_578
+Ok	C[DetailBlend][Rich]_cloth	12	NormalMap	NormalGloss	OverlayNormal	347430	0.004	574070	616	102	c3010
 Ok	M[WorldTree_Twig]_Emissive_Glow	2	AlbedoMap	Albedo	Albedo	344820	0.004	11338	9	6	aeg094_001
 Ok	M[WorldTree_Twig]_Emissive_Glow	1	NormalMap	NormalGloss	Normal	344820	0.004	11338	9	6	aeg094_001
 Ok	C[AMSN]_ContactFade	0	MetallicMap	Metallic	Metallic	340383	0.004	4089	3	3	c2100
@@ -2584,6 +2509,7 @@ Ok	M[AMSN_V][Wax]_Alpha	8	AlbedoMap	Albedo	Albedo	291621	0.004	13916	24	1	aeg232
 Ok	M[AMSN_V][Wax]_Alpha	7	NormalMap	NormalGloss	Normal	291621	0.004	13916	24	1	aeg232_664
 Ok	M[Waterfall2]	2	AlbedoMap	Albedo	Albedo	290626	0.004	178176	63	19	m12_01_00_00_900001
 Ok	C[DetailBlend][S2]_cloth	3	MetallicMap	Metallic	Metallic	289652	0.004	80032	101	24	c4570
+Ok	C[DetailBlend][S2]_cloth	10	AlbedoMap	Albedo	OverlayAlbedo	289499	0.004	96946	102	19	c4570
 Ok	M[Cuckoo]	0	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	288120	0.004	12348	3	3	aeg250_431
 Ok	M[Cuckoo]	3	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	288120	0.004	12348	3	3	aeg250_431
 Ok	M[Cuckoo]	4	AlbedoMap	Albedo	Albedo	288120	0.004	12348	3	3	aeg250_431
@@ -2595,6 +2521,8 @@ Ok	C[Crystal_NoTransparent]	5	AlbedoMap	Albedo	Albedo	276804	0.003	7910	8	7	c370
 Ok	M[Rock][m12]	0	AlbedoMap	Albedo	Albedo	275535	0.003	38715	7	5	aeg232_673
 Ok	M[Rock][m12]	1	NormalMap	NormalGloss	Normal	275535	0.003	38715	7	5	aeg232_673
 Ok	C[c2500]_Fade_Fur	10	EmissiveMap	Emissive	Emissive	261986	0.003	9034	1	1	c2500
+Ok	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	1	AlbedoMap	Albedo	Albedo	260272	0.003	45812	7	5	c3600
+Ok	C[DetailBlend][1_0_0_0][S2]_Glow[Int]	8	AlbedoMap	Albedo	OverlayAlbedo	260272	0.003	43896	5	4	c3600
 Ok	C[c5050]_Crystal_Blend	1	AlbedoMap	Albedo	Albedo	258524	0.003	8616	5	4	c5311
 Ok	C[c5050]_Crystal_Blend	4	EmissiveMap	Emissive	Emissive	258524	0.003	8616	5	4	c5311
 Ok	C[c5050]_Crystal_Blend	7	NormalMap	NormalGloss	Normal	258524	0.003	8616	5	4	c5311
@@ -2628,6 +2556,9 @@ Ok	C[c4520]_Dragon	3	MetallicMap	Metallic	Metallic	234694	0.003	234694	7	5	c4520
 Ok	M[AMSN_V][Mb2][Ov_AN][Ore]	2	AlbedoMap	Albedo	Albedo	225689	0.003	110807	14	5	aeg021_055
 Ok	M[AMSN_V][Mb2][Ov_AN][Ore]	5	NormalMap	NormalGloss	OverlayNormal	225689	0.003	110807	14	5	aeg021_055
 Ok	M[PhantomChair]	8	AlbedoMap	Albedo	Albedo	221660	0.003	14962	4	2	aeg227_014
+Ok	M[PhantomChair]	4	AlbedoMap	Albedo	Albedo	221660	0.003	14962	4	2	aeg227_014
+Ok	M[PhantomChair]	2	NormalMap	NormalGloss	Normal	221660	0.003	14962	4	2	aeg227_014
+Ok	M[PhantomChair]	1	NormalMap	NormalGloss	Normal	221660	0.003	14962	4	2	aeg227_014
 Ok	C[Hair][ChrCustomize]	0	NormalMap	Normal	Normal	221396	0.003	95445	11	6	c5220
 Ok	M[Cuckoo_Fixed]	4	AlbedoMap	Albedo	Albedo	220346	0.003	47564	12	1	aeg250_640
 Ok	M[Cuckoo_Fixed]	5	NormalMap	NormalGloss	Normal	220346	0.003	47564	12	1	aeg250_640
@@ -2640,12 +2571,15 @@ Ok	M[Dragon]	0	AlbedoMap	Albedo	Albedo	210240	0.003	84096	4	4	aeg247_048
 Ok	M[Dragon]	1	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	210240	0.003	84096	4	4	aeg247_048
 Ok	M[Dragon]	2	VectorMap	NotSampled	Dropped (no route for the role VectorMap)	210240	0.003	84096	4	4	aeg247_048
 Ok	M[Dragon]	3	NormalMap	NormalGloss	Normal	210240	0.003	84096	4	4	aeg247_048
-Ok	M[EvilBastion]	10	NormalMap	Normal	OverlayNormal	205213	0.003	56545	38	2	aeg420_028
 Ok	M[EvilBastion]	8	AlbedoMap	Albedo	Albedo	205213	0.003	56545	38	2	aeg420_028
-Ok	M[EvilBastion]	0	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	4	AlbedoMap	Albedo	Albedo	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	10	NormalMap	Normal	OverlayNormal	205213	0.003	56545	38	2	aeg420_028
 Ok	M[EvilBastion]	2	NormalMap	NormalGloss	Normal	205213	0.003	56545	38	2	aeg420_028
-Ok	M[EvilBastion]	6	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	205213	0.003	56545	38	2	aeg420_028
-Ok	M[PhantomChair]	10	NormalMap	Normal	Normal	199760	0.002	13586	2	1	aeg227_014
+Ok	M[EvilBastion]	1	NormalMap	NormalGloss	Normal	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	9	Mask3Map	Mask	BlendMask	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	3	Mask1Map	Mask	BlendDetailMask	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	0	AlbedoMap	NotSampled	Dropped (a layer the blend doesn't use)	205213	0.003	56545	38	2	aeg420_028
+Ok	M[EvilBastion]	6	NormalMap	NotSampled	Dropped (a layer the blend doesn't use)	205213	0.003	56545	38	2	aeg420_028
 Ok	C[c4720]_Beast_Light	2	AlbedoMap	Albedo	Albedo	198028	0.002	99014	7	7	c4720
 Ok	C[c4720]_Beast_Light	7	NormalMap	NormalGloss	Normal	198028	0.002	99014	7	7	c4720
 Ok	M[DistantClouds_Cloth]_002	0	NormalMap	NormalGloss	Normal	197103	0.002	133013	23	4	aeg462_035
@@ -2655,18 +2589,22 @@ Ok	M[AMSN_V][Mb4]	7	AlbedoMap	Albedo	Albedo	196300	0.002	151121	61	5	aeg411_920
 Ok	M[AMSN_V][Mb4]	5	NormalMap	NormalGloss	Normal	196300	0.002	151121	61	5	aeg411_920
 Ok	M[AMSN_V][Mb2][Ov_AN][Ore]	3	AlbedoMap	Albedo	Albedo	196162	0.002	81280	10	4	aeg021_055
 Ok	M[AMSN_V][Mb2][Ov_AN][Ore]	6	AlbedoMap	Albedo	OverlayAlbedo	196162	0.002	81280	10	4	aeg021_055
+Ok	C[DetailBlend][Rich]_cloth	10	AlbedoMap	Albedo	OverlayAlbedo	195382	0.002	525533	564	96	c3010
 Ok	C[Shell]	7	AlbedoMap	Albedo	Albedo	194880	0.002	33864	14	3	c4110
 Ok	C[Shell]	8	NormalMap	NormalGloss	Normal	194880	0.002	33864	14	3	c4110
 Ok	M[AMSN_V][Ov_N]_Skin_PaintDecal	2	NormalMap	Normal	OverlayNormal	193851	0.002	95865	34	20	aeg227_003
 Ok	M[AMSN_V][Ov_N]_Skin_PaintDecal	8	AlbedoMap	Albedo	Albedo	193851	0.002	95865	34	20	aeg227_003
 Ok	M[AMSN_V][Ov_N]_Skin_PaintDecal	7	NormalMap	NormalGloss	Normal	193851	0.002	95865	34	20	aeg227_003
-Ok	M[supercell_02]	4	NormalMap	Normal	OverlayNormal	191600	0.002	191600	2	1	aeg096_110
-Ok	M[supercell_02]	2	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	191600	0.002	191600	2	1	aeg096_110
+Ok	M[supercell_02]	4	NormalMap	Normal	OverlayNormal	191600	0.002	191600	2	1	aeg240_501
+Ok	M[supercell_02]	2	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	191600	0.002	191600	2	1	aeg240_501
 Ok	C[c5220]_Mipuella	6	AlbedoMap	Albedo	Albedo	186390	0.002	72993	12	10	c5220
 Ok	C[c5220]_Mipuella	4	NormalMap	NormalGloss	Normal	186390	0.002	72993	12	10	c5220
+Ok	C[DetailBlend][Rich]_cloth	9	NormalMap	NormalGloss	OverlayNormal	184372	0.002	295170	320	49	c5220
 Ok	C[c5110]_Weapon	2	AlbedoMap	Albedo	Albedo	180726	0.002	546	1	1	c5110
 Ok	C[c5110]_Weapon	7	NormalMap	NormalGloss	Normal	180726	0.002	546	1	1	c5110
 Ok	C[DetailBlend][Rich]_cloth	13	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	180496	0.002	34880	38	7	c3350
+Ok	C[DetailBlend][S2]_cloth	4	AlbedoMap	Albedo	OverlayAlbedo	180163	0.002	75475	91	16	c4570
+Ok	C[DetailBlend][S2]_cloth	9	NormalMap	NormalGloss	OverlayNormal	180163	0.002	75475	91	16	c4570
 Ok	C[DetailBlend][Rich]_cloth	8	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	179272	0.002	119696	105	16	c3350
 Ok	M[AMSN][Ov_AN]_Skin	4	NormalMap	Normal	OverlayNormal	178724	0.002	12766	1	1	aeg110_181
 Ok	M[AMSN][Ov_AN]_Skin	0	AlbedoMap	Albedo	Albedo	178724	0.002	12766	1	1	aeg110_181
@@ -2709,13 +2647,13 @@ Ok	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN][Snow]	3	Mask1Map	Mask	BlendDetailMask	151343
 Ok	M[AMSN]_Emissive_Glow03	2	AlbedoMap	Albedo	Albedo	149544	0.002	2814	3	3	aeg463_830
 Ok	M[AMSN]_Emissive_Glow03	1	NormalMap	NormalGloss	Normal	149544	0.002	2814	3	3	aeg463_830
 Ok	M[AMSN]_Emissive_Glow03	4	EmissiveMap	Emissive	Emissive	149544	0.002	2814	3	3	aeg463_830
+Ok	C[DetailBlend]_SSS_cloth	10	AlbedoMap	Albedo	OverlayAlbedo	147849	0.002	11373	7	1	c4650
 Ok	C[DetailBlend]_FurBlur	6	NormalMap	NormalGloss	OverlayNormal	147008	0.002	67240	9	6	c2160
 Ok	C[Crystal]_Glow	4	EmissiveMap	Emissive	Emissive	146548	0.002	62016	32	12	c4000
 Ok	M[Lava]	2	EmissiveMap	Emissive	Emissive	143325	0.002	142405	26	6	m16_00_00_99_000100
 Ok	M[Lava]	0	NormalMap	NormalGloss	Normal	143325	0.002	142405	26	6	m16_00_00_99_000100
 Ok	C[DetailBlend]_ShellBlur	6	NormalMap	NormalGloss	OverlayNormal	142392	0.002	23732	2	2	c5280
 Ok	C[DetailBlend]_ShellBlur	16	EmissiveMap	Emissive	Emissive	139968	0.002	23328	2	1	c5280
-Ok	C[DetailBlend][S2]	6	NormalMap	NormalGloss	OverlayNormal	139680	0.002	90548	37	13	c4570
 Ok	M[Oil_Solid]	6	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	138936	0.002	3234	2	1	aeg430_070
 Ok	M[Oil_Solid]	7	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	138936	0.002	3234	2	1	aeg430_070
 Ok	C[c4620]_ClearCoat	7	NormalMap	NormalGloss	Normal	138712	0.002	9908	1	1	c4620
@@ -2737,9 +2675,17 @@ Ok	C[Fur]_FurBlur_cloth	5	DisplacementMap	NotSampled	Dropped (no route for the r
 Ok	M[AMSN_V]_Emissive	2	AlbedoMap	Albedo	Albedo	132098	0.002	34130	7	7	aeg099_820
 Ok	M[AMSN_V]_Emissive	1	NormalMap	NormalGloss	Normal	132098	0.002	34130	7	7	aeg099_820
 Ok	M[AMSN_V]_Emissive	4	EmissiveMap	Emissive	Emissive	132098	0.002	34130	7	7	aeg099_820
-Ok	M[Road_Ground]	10	NormalMap	Normal	OverlayNormal	132091	0.002	132091	87	1	m61_48_45_00_484500
 Ok	M[Road_Ground]	8	AlbedoMap	Albedo	Albedo	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	4	AlbedoMap	Albedo	Albedo	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	0	AlbedoMap	Albedo	Albedo	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	7	AlbedoMap	Albedo	Albedo	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	10	NormalMap	Normal	OverlayNormal	132091	0.002	132091	87	1	m61_48_45_00_484500
 Ok	M[Road_Ground]	2	NormalMap	NormalGloss	Normal	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	1	NormalMap	NormalGloss	Normal	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	5	NormalMap	NormalGloss	Normal	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	6	NormalMap	NormalGloss	Normal	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	9	Mask3Map	Mask	BlendMask	132091	0.002	132091	87	1	m61_48_45_00_484500
+Ok	M[Road_Ground]	3	Mask1Map	Mask	BlendDetailMask	132091	0.002	132091	87	1	m61_48_45_00_484500
 Ok	M[Road_Ground]	11	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	132091	0.002	132091	87	1	m61_48_45_00_484500
 Ok	M[AMSN_V][Ov_N][HierarchicalPivotAnim_1stLayer]	0	NormalMap	Normal	OverlayNormal	131384	0.002	17372	4	1	aeg210_466
 Ok	M[AMSN_V][Ov_N][HierarchicalPivotAnim_1stLayer]	1	NormalMap	NormalGloss	Normal	131384	0.002	17372	4	1	aeg210_466
@@ -2759,12 +2705,39 @@ Ok	M[AMSN_V][Mb3][3Mask_T][Ov_N2_T]	6	NormalMap	NormalGloss	Normal	123266	0.002	
 Ok	M[AMSN_V][Mb3][3Mask_T][Ov_N2_T]	15	NormalMap	NormalGloss	Normal	123266	0.002	33853	2	2	aeg220_279
 Ok	M[AMSN_V][Mb3][3Mask_T][Ov_N2_T]	0	Mask3Map	Mask	BlendMask	123266	0.002	33853	2	2	aeg220_279
 Ok	M[AMSN_V][Mb3][3Mask_T][Ov_N2_T]	3	Mask1Map	Mask	BlendDetailMask	123266	0.002	33853	2	2	aeg220_279
+Ok	M[CutScene][Worldtree_InnerWall]	8	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	4	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	0	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	7	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg221_094
 Ok	M[CutScene][Worldtree_InnerWall]	10	NormalMap	Normal	OverlayNormal	121030	0.001	121030	1	1	aeg221_094
 Ok	M[CutScene][Worldtree_InnerWall]	2	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	1	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	5	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	6	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	9	Mask3Map	Mask	BlendMask	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall]	3	Mask1Map	Mask	BlendDetailMask	121030	0.001	121030	1	1	aeg221_094
+Ok	M[CutScene][Worldtree_InnerWall_003]	8	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	4	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	0	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	7	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_111
 Ok	M[CutScene][Worldtree_InnerWall_003]	10	NormalMap	Normal	OverlayNormal	121030	0.001	121030	1	1	aeg227_111
 Ok	M[CutScene][Worldtree_InnerWall_003]	2	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	1	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	5	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	6	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	9	Mask3Map	Mask	BlendMask	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_003]	3	Mask1Map	Mask	BlendDetailMask	121030	0.001	121030	1	1	aeg227_111
+Ok	M[CutScene][Worldtree_InnerWall_002]	8	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	4	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	0	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	7	AlbedoMap	Albedo	Albedo	121030	0.001	121030	1	1	aeg227_110
 Ok	M[CutScene][Worldtree_InnerWall_002]	10	NormalMap	Normal	OverlayNormal	121030	0.001	121030	1	1	aeg227_110
 Ok	M[CutScene][Worldtree_InnerWall_002]	2	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	1	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	5	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	6	NormalMap	NormalGloss	Normal	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	9	Mask3Map	Mask	BlendMask	121030	0.001	121030	1	1	aeg227_110
+Ok	M[CutScene][Worldtree_InnerWall_002]	3	Mask1Map	Mask	BlendDetailMask	121030	0.001	121030	1	1	aeg227_110
 Ok	M[AMSN_V][Ov_N][Translucency]	0	NormalMap	NormalGloss	OverlayNormal	120706	0.001	31174	5	1	aeg270_420
 Ok	C[c4520]_Dragon	13	AlbedoMap	Albedo	Albedo	120644	0.001	120644	4	4	c4520
 Ok	M[AMSN_V][Translucency]	2	AlbedoMap	Albedo	Albedo	120346	0.001	4588	4	3	aeg040_022
@@ -2789,26 +2762,35 @@ Ok	M[supercell_06]	1	NormalMap	Normal	OverlayNormal	111890	0.001	111890	1	1	aeg2
 Ok	M[supercell_06]	0	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	111890	0.001	111890	1	1	aeg240_501
 Ok	M[supercell_06]	4	NormalMap	Normal	Normal	111890	0.001	111890	1	1	aeg240_501
 Ok	M[supercell_06]	5	AlbedoMap	Albedo	Albedo	111890	0.001	111890	1	1	aeg240_501
+Ok	C[DetailBlend]_SSS	2	AlbedoMap	Albedo	OverlayAlbedo	111650	0.001	55240	8	4	c2120
 Ok	M[Elevator]_Emissive_Glow	2	AlbedoMap	Albedo	Albedo	110500	0.001	12124	6	5	aeg099_295
 Ok	M[Elevator]_Emissive_Glow	1	NormalMap	NormalGloss	Normal	110500	0.001	12124	6	5	aeg099_295
 Ok	C[AMSN][PixelKill][ID1]	2	AlbedoMap	Albedo	Albedo	109720	0.001	2110	2	2	c4220
 Ok	C[AMSN][PixelKill][ID1]	7	NormalMap	NormalGloss	Normal	109720	0.001	2110	2	2	c4220
 Ok	C[DetailBlend]_SSS	10	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	108276	0.001	8760	4	4	c4480
 Ok	C[c5220]_Mipuella	9	MetallicMap	Metallic	Metallic	106194	0.001	59627	10	8	c5220
-Ok	M[CutScene][Coffin2]	10	NormalMap	Normal	OverlayNormal	101838	0.001	67892	5	2	aeg237_018
 Ok	M[CutScene][Coffin2]	8	AlbedoMap	Albedo	Albedo	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	4	AlbedoMap	Albedo	Albedo	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	0	AlbedoMap	Albedo	Albedo	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	10	NormalMap	Normal	OverlayNormal	101838	0.001	67892	5	2	aeg237_018
 Ok	M[CutScene][Coffin2]	2	NormalMap	NormalGloss	Normal	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	1	NormalMap	NormalGloss	Normal	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	6	NormalMap	NormalGloss	Normal	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	9	Mask3Map	Mask	BlendMask	101838	0.001	67892	5	2	aeg237_018
+Ok	M[CutScene][Coffin2]	3	Mask1Map	Mask	BlendDetailMask	101838	0.001	67892	5	2	aeg237_018
 Ok	M[AMSN][Mb2][Ov_N][Snow]	11	MetallicMap	Metallic	Metallic	100193	0.001	15085	4	2	aeg024_675
 Ok	C[Shell]_FurBlur	10	MetallicMap	Metallic	Metallic	99750	0.001	14250	1	1	c3181
 Ok	C[AMSN]_Alpha	2	AlbedoMap	Albedo	Albedo	96960	0.001	808	1	1	c2100
 Ok	C[AMSN]_Alpha	7	NormalMap	NormalGloss	Normal	96960	0.001	808	1	1	c2100
+Ok	C[DetailBlend][Rich]_cloth	4	AlbedoMap	Albedo	OverlayAlbedo	96018	0.001	231790	249	36	c5220
 Ok	M[AMSN][Ov_N]_Edge_Skin	3	AlbedoMap	Albedo	Albedo	95493	0.001	19060	21	5	aeg427_196
 Ok	M[AMSN][Ov_N]_Edge_Skin	1	NormalMap	NormalGloss	Normal	95493	0.001	19060	21	5	aeg427_196
 Ok	M[DistantClouds_Cloth]_004	0	NormalMap	NormalGloss	Normal	90998	0.001	90998	17	1	aeg462_033
 Ok	M[DistantClouds_Cloth]_004	2	AlbedoMap	Albedo	Albedo	90998	0.001	90998	17	1	aeg462_033
 Ok	M[DistantClouds_Cloth]_004	3	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	90998	0.001	90998	17	1	aeg462_033
-Ok	M[Sky9]	6	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	89186	0.001	89186	9	8	aeg096_011
-Ok	M[Sky9]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	89088	0.001	89088	8	7	aeg096_011
+Ok	C[DetailBlend][Rich]_cloth	8	AlbedoMap	Albedo	OverlayAlbedo	90492	0.001	54937	53	17	c5220
+Ok	M[Sky9]	6	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	89186	0.001	89186	9	8	aeg462_041
+Ok	M[Sky9]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	89088	0.001	89088	8	7	aeg462_041
 Ok	C[c2200]_Rune	8	Emissive_Flicker	NotSampled	Dropped (its Emissive layer 0 slot already holds another texture)	87730	0.001	17546	7	7	c2200
 Ok	M[PlacidLake]	0	NormalMap	Normal	OverlayNormal	87718	0.001	58802	76	14	aeg220_802
 Ok	C[Fur]	2	AlbedoMap	NotSampled	Dropped (a fur texture the fur recipe doesn't use)	86888	0.001	55464	30	12	c5130
@@ -2860,8 +2842,6 @@ Ok	M[Oil_Liquid]	3	AlbedoMap	Albedo	Albedo	63626	0.001	63626	4	3	aeg430_903
 Ok	C[AMSN]_Shadow_cloth	2	AlbedoMap	Albedo	Albedo	63600	0.001	795	5	2	c5241
 Ok	C[AMSN]_Shadow_cloth	7	NormalMap	NormalGloss	Normal	63600	0.001	795	5	2	c5241
 Ok	M[PlacidLake_LOD1_m12_03]	0	NormalMap	Normal	OverlayNormal	62676	0.001	62676	6	3	m12_05_00_00_800001
-Ok	C[DetailBlend][S2]	5	NormalMap	NormalGloss	OverlayNormal	62072	0.001	84646	34	11	c3100
-Ok	C[DetailBlend][S2]	2	AlbedoMap	Albedo	OverlayAlbedo	62072	0.001	70336	30	9	c3100
 Ok	C[c3200]_Costume	7	AlbedoMap	Albedo	Albedo	61442	0.001	1982	2	1	c3200
 Ok	C[c3200]_Costume	0	NormalMap	NormalGloss	Normal	61442	0.001	1982	2	1	c3200
 Ok	C[c3200]_Costume	3	MetallicMap	Metallic	Metallic	61442	0.001	1982	2	1	c3200
@@ -2985,7 +2965,6 @@ Ok	M[Sky_Lake]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	22
 Ok	M[supercell_04]	1	NormalMap	Normal	OverlayNormal	21900	0.000	21900	1	1	aeg096_661
 Ok	M[supercell_04]	0	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	21900	0.000	21900	1	1	aeg096_661
 Ok	M[supercell_04]	5	AlbedoMap	Albedo	Albedo	21900	0.000	21900	1	1	aeg096_661
-Ok	M[PhantomChair]	2	NormalMap	NormalGloss	Normal	21900	0.000	1376	2	1	aeg227_014
 Ok	M[CutScene][AMSN_V][Mb4][3Mask][ClawMarks]	4	AlbedoMap	Albedo	Albedo	21687	0.000	21687	2	2	aeg027_170
 Ok	M[CutScene][AMSN_V][Mb4][3Mask][ClawMarks]	0	AlbedoMap	Albedo	Albedo	21687	0.000	21687	2	2	aeg027_170
 Ok	M[CutScene][AMSN_V][Mb4][3Mask][ClawMarks]	1	NormalMap	NormalGloss	Normal	21687	0.000	21687	2	2	aeg027_170
@@ -3045,7 +3024,7 @@ Ok	C[c5050]_Crystal_Blend	10	NormalMap	NormalGloss	Normal	14698	0.000	48834	9	7	
 Ok	M[Interior]	0	NormalMap	NormalGloss	Normal	14350	0.000	2580	85	7	aeg270_443
 Ok	C[c2030]_Fabric	1	AlbedoMap	Albedo	OverlayAlbedo	14062	0.000	22844	13	2	c2030
 Ok	C[c2030]_Fabric	6	NormalMap	NormalGloss	OverlayNormal	14062	0.000	22844	13	2	c2030
-Ok	M[Waterfall]	4	AlbedoMap	Albedo	Albedo	14016	0.000	14016	2	1	m39_20_00_00_090000
+Ok	M[Waterfall]	4	AlbedoMap	Albedo	Albedo	14016	0.000	14016	2	1	aeg097_022
 Ok	C[c5110]_Glow	5	AlbedoMap	Albedo	Albedo	13902	0.000	42	1	1	c5110
 Ok	M[ShadowErdtree_BlackBlood]	2	AlbedoMap	Albedo	Albedo	13872	0.000	13872	1	1	aeg462_154
 Ok	M[ShadowErdtree_BlackBlood]	3	NormalMap	NormalGloss	Normal	13872	0.000	13872	1	1	aeg462_154
@@ -3078,6 +3057,7 @@ Ok	C[c4640]_Tentacles_cloth	2	AlbedoMap	Albedo	Albedo	11352	0.000	946	4	1	c4640
 Ok	C[c4640]_Tentacles_cloth	7	NormalMap	NormalGloss	Normal	11352	0.000	946	4	1	c4640
 Ok	M[AMSN]_MeshDecalBlend	2	AlbedoMap	Albedo	Albedo	11233	0.000	11233	6	2	aeg430_907
 Ok	C[c2200]_Body_cloth	9	Emissive__Noise	NotSampled	Dropped (its Emissive layer 0 slot already holds another texture)	11200	0.000	2240	2	1	c2200
+Ok	M[Sky_m60_40]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	11136	0.000	11136	1	1	aeg096_820
 Ok	M[Sky_m19_00]	6	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	11136	0.000	11136	1	1	aeg096_007
 Ok	M[Sky6]	2	Generic__Cloud	NotSampled	Dropped (no route for the role Generic__Cloud)	11136	0.000	11136	1	1	aeg096_006
 Ok	M[Sky6]	5	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	11136	0.000	11136	1	1	aeg096_006
@@ -3087,7 +3067,6 @@ Ok	M[Sky8]	2	Generic__Cloud	NotSampled	Dropped (no route for the role Generic__C
 Ok	M[Sky8]	5	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	11136	0.000	11136	1	1	aeg096_000
 Ok	M[Sky8]	6	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	11136	0.000	11136	1	1	aeg096_000
 Ok	M[Sky8]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	11136	0.000	11136	1	1	aeg096_000
-Ok	M[Sky_m60_40]	8	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	11136	0.000	11136	1	1	aeg096_820
 Ok	M[directional_grass]	0	AlbedoMap	Albedo	Albedo	11130	0.000	3464	17	10	aeg460_002
 Ok	M[directional_grass]	3	NormalMap	NormalGloss	Normal	11130	0.000	2820	14	8	aeg460_002
 Ok	M[Clouds9]	10	Mask3Map	NotSampled	Dropped (no route for the role Mask3Map)	11072	0.000	13440	6	6	aeg462_017
@@ -3108,8 +3087,8 @@ Ok	C[c5130]_Hair_cloth	6	NormalMap	NormalGloss	Normal	9380	0.000	17960	27	5	c513
 Ok	M[AMSN]_Alpha_cloth	3	AlbedoMap	Albedo	Albedo	9247	0.000	1113	30	1	aeg420_711
 Ok	M[AMSN]_Alpha_cloth	2	MetallicMap	Metallic	Metallic	9247	0.000	1113	30	1	aeg420_711
 Ok	M[AMSN]_Alpha_cloth	1	NormalMap	NormalGloss	Normal	9247	0.000	1113	30	1	aeg420_711
-Ok	M[StainedGlass]	5	EmissiveMap	Emissive	Emissive	9119	0.000	5964	61	14	aeg030_155
-Ok	M[StainedGlass]	1	NormalMap	NormalGloss	Normal	9119	0.000	5964	61	14	aeg030_155
+Ok	M[StainedGlass]	5	EmissiveMap	Emissive	Emissive	9119	0.000	5964	61	14	aeg030_431
+Ok	M[StainedGlass]	1	NormalMap	NormalGloss	Normal	9119	0.000	5964	61	14	aeg030_431
 Ok	M[WorldTree]	2	AlbedoMap	Albedo	Albedo	8856	0.000	1476	2	1	aeg220_901
 Ok	M[WorldTree]	0	NormalMap	NormalGloss	Normal	8856	0.000	1476	2	1	aeg220_901
 Ok	M[JarElevator]_Emissive_Glow	2	AlbedoMap	Albedo	Albedo	8688	0.000	2896	1	1	aeg449_024
@@ -3117,7 +3096,9 @@ Ok	M[JarElevator]_Emissive_Glow	1	NormalMap	NormalGloss	Normal	8688	0.000	2896	1
 Ok	C[Fur]_FurBlur	4	NormalMap	NotSampled	Dropped (a fur texture the fur recipe doesn't use)	8658	0.000	7960	11	7	c2030
 Ok	C[c4503]_Freeze_Fur	1	Albedo__Inside	Albedo	Albedo	7885	0.000	7885	4	4	c4503
 Ok	C[c4503]_Freeze_Fur	4	NormalMap	NormalGloss	Normal	7885	0.000	7885	4	4	c4503
-Ok	M[StainedGlass]	0	AlbedoMap	Albedo	Albedo	7747	0.000	5292	52	13	aeg030_155
+Ok	M[StainedGlass]	0	AlbedoMap	Albedo	Albedo	7747	0.000	5292	52	13	aeg030_431
+Ok	C[DetailBlend][S2]	14	AlbedoMap	Albedo	OverlayAlbedo	7686	0.000	24255	10	3	c2120
+Ok	C[DetailBlend][S2]	16	NormalMap	NormalGloss	OverlayNormal	7686	0.000	24255	10	3	c2120
 Ok	M[LightningStrike_001]	5	Generic__LUT1	NotSampled	Dropped (no route for the role Generic__LUT1)	7590	0.000	7590	22	12	aeg096_663
 Ok	M[AMSN_V][Mb2][3Mask][Ov_AN][EmissiveScroll]	4	AlbedoMap	Albedo	OverlayAlbedo	7509	0.000	7509	1	1	aeg004_992
 Ok	M[AMSN_V][Mb2][3Mask][Ov_AN][EmissiveScroll]	3	AlbedoMap	Albedo	Albedo	7509	0.000	7509	1	1	aeg004_992
@@ -3142,7 +3123,7 @@ Ok	M[CutScene][AMSN_V][Wax]	2	NormalMap	Normal	OverlayNormal	6676	0.000	6676	2	1
 Ok	M[CutScene][AMSN_V][Wax]	7	NormalMap	NormalGloss	Normal	6676	0.000	6676	2	1	aeg027_165
 Ok	C[AMSN]_GlowDepthFade_[Int]	0	MetallicMap	Metallic	Metallic	6608	0.000	413	1	1	c4460
 Ok	M[Atmosphere][Clouds]_007	6	Generic__AtmosphereHazeColorLUT	NotSampled	Dropped (no route for the role Generic__AtmosphereHazeColorLUT)	6464	0.000	6464	3	3	aeg462_020
-Ok	M[Atmosphere][Clouds]_001	6	Generic__AtmosphereHazeColorLUT	NotSampled	Dropped (no route for the role Generic__AtmosphereHazeColorLUT)	6336	0.000	6336	3	3	aeg096_403
+Ok	M[Atmosphere][Clouds]_001	6	Generic__AtmosphereHazeColorLUT	NotSampled	Dropped (no route for the role Generic__AtmosphereHazeColorLUT)	6336	0.000	6336	3	3	aeg096_952
 Ok	C[c2190]_Hair_ColorBlend_cloth	1	AlbedoMap	Albedo	OverlayAlbedo	6164	0.000	3082	5	1	c2190
 Ok	C[c2190]_Hair_ColorBlend_cloth	7	NormalMap	NormalGloss	Normal	6164	0.000	3082	5	1	c2190
 Ok	M[CutScene][AMSN][Ov_N][GlowingIron]_Skin_Edge	4	NormalMap	Normal	OverlayNormal	6022	0.000	12228	3	1	aeg277_019
@@ -3185,9 +3166,13 @@ Ok	M[AMSN_V]_Grass2_test	2	NormalMap	NormalGloss	Normal	4351	0.000	1602	4	2	aeg1
 Ok	M[Atmosphere][Clouds]_008	6	Generic__AtmosphereHazeColorLUT	NotSampled	Dropped (no route for the role Generic__AtmosphereHazeColorLUT)	4224	0.000	4224	2	2	aeg462_050
 Ok	C[c4520]_Dragon_cloth	0	NormalMap	NormalGloss	Normal	4183	0.000	4183	4	2	c4520
 Ok	C[c4520]_Dragon_cloth	14	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	4183	0.000	4183	4	2	c4520
-Ok	M[Cliff_001]	10	NormalMap	Normal	OverlayNormal	3892	0.000	973	1	1	aeg068_000
 Ok	M[Cliff_001]	8	AlbedoMap	Albedo	Albedo	3892	0.000	973	1	1	aeg068_000
+Ok	M[Cliff_001]	4	AlbedoMap	Albedo	Albedo	3892	0.000	973	1	1	aeg068_000
+Ok	M[Cliff_001]	0	AlbedoMap	Albedo	Albedo	3892	0.000	973	1	1	aeg068_000
+Ok	M[Cliff_001]	10	NormalMap	Normal	OverlayNormal	3892	0.000	973	1	1	aeg068_000
 Ok	M[Cliff_001]	2	NormalMap	Normal	Normal	3892	0.000	973	1	1	aeg068_000
+Ok	M[Cliff_001]	1	NormalMap	Normal	Normal	3892	0.000	973	1	1	aeg068_000
+Ok	M[Cliff_001]	6	NormalMap	Normal	Normal	3892	0.000	973	1	1	aeg068_000
 Ok	C[c5030]_Wing	2	AlbedoMap	Albedo	Albedo	3730	0.000	3730	2	1	c5030
 Ok	C[c5030]_Wing	0	MetallicMap	Metallic	Metallic	3730	0.000	3730	2	1	c5030
 Ok	C[c5030]_Wing	7	NormalMap	NormalGloss	Normal	3730	0.000	3730	2	1	c5030
@@ -3209,6 +3194,8 @@ Ok	C[DetailBlend]_cloth	13	NormalMap	NotSampled	Dropped (its Normal layer 0 slot
 Ok	C[Hair][ChrCustomize]_cloth	0	NormalMap	Normal	Normal	2760	0.000	460	1	1	c5220
 Ok	C[Crystal]_cloth	6	MetallicMap	Metallic	Metallic	2670	0.000	1894	5	4	c4601
 Ok	C[c2180]_Eye	2	NormalMap	Normal	Normal	2344	0.000	2344	1	1	c2180
+Ok	C[DetailBlend][S2]_cloth	14	AlbedoMap	Albedo	OverlayAlbedo	2298	0.000	12463	13	3	c2120
+Ok	C[DetailBlend][S2]_cloth	16	NormalMap	NormalGloss	OverlayNormal	2298	0.000	12463	13	3	c2120
 Ok	M[AMSN]_Emissive_Glow	3	AlbedoMap	Albedo	Albedo	2170	0.000	651	3	1	aeg052_007
 Ok	M[AMSN]_Emissive_Glow	2	MetallicMap	Metallic	Metallic	2170	0.000	651	3	1	aeg052_007
 Ok	M[AMSN]_Emissive_Glow	1	NormalMap	NormalGloss	Normal	2170	0.000	651	3	1	aeg052_007
@@ -3314,8 +3301,11 @@ Ok	M[Cutscene][ShadowThorn]	1	NormalMap	NormalGloss	Normal	0	0.000	264914	4	2	ae
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	7	AlbedoMap	Albedo	Albedo	0	0.000	212012	63	49	aeg301_010
 Ok	P[ChrCustomize][FaceHair]	0	NormalMap	Normal	Normal	0	0.000	193420	151	57	hr_a_0112_l
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	191521	49	36	aeg301_010
-Ok	C[DetailBlend][Rich]	11	MetallicMap	NotSampled	Dropped (a metallic map of a layer above the bottom one)	0	0.000	183908	106	14	bd_m_1595_l
-Ok	P[ChrCustomize][BodyHair]	0	NormalMap	Normal	Normal	0	0.000	170824	334	2	fc_m_0202_l
+Ok	C[DetailBlend][Rich]	11	MetallicMap	NotSampled	Dropped (a metallic map of a layer above the bottom one)	0	0.000	183908	106	14	bd_f_1595_l
+Ok	P[ChrCustomize][BodyHair]	0	NormalMap	Normal	Normal	0	0.000	170824	334	2	fc_m_0101
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	166788	38	28	aeg468_011
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	12	NormalMap	NormalGloss	OverlayNormal	0	0.000	160435	42	32	aeg468_011
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	10	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	143488	36	26	aeg468_011
 Ok	P[ChrCustomize][Skin]	3	AlbedoMap	Albedo	Albedo	0	0.000	128660	110	18	fg_a_0101_l
 Ok	P[ChrCustomize][Skin]	0	NormalMap	NormalGloss	Normal	0	0.000	128660	110	18	fg_a_0101_l
 Ok	P[ChrCustomize][BodyHair_Base]	0	NormalMap	Normal	Normal	0	0.000	127062	384	2	fc_f_0000_l
@@ -3328,6 +3318,11 @@ Ok	CS[c8901]_Burn	7	AlbedoMap	Albedo	Albedo	0	0.000	101552	14	5	c8901
 Ok	CS[c8901]_Burn	0	NormalMap	NormalGloss	Normal	0	0.000	101552	14	5	c8901
 Ok	CS[c8901]_Burn	3	MetallicMap	Metallic	Metallic	0	0.000	101552	14	5	c8901
 Ok	C[DetailBlend][Rich]_cloth	11	MetallicMap	NotSampled	Dropped (a metallic map of a layer above the bottom one)	0	0.000	100190	84	11	bd_f_2760_l
+Ok	CS[c8901]_Burn	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	97256	14	5	c8901
+Ok	CS[c8901]_Burn	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	97256	14	5	c8901
+Ok	CS[c8901]_Burn	10	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	97256	14	5	c8901
+Ok	CS[c8901]_Burn	12	NormalMap	NormalGloss	OverlayNormal	0	0.000	97256	14	5	c8901
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	9	NormalMap	NormalGloss	OverlayNormal	0	0.000	95505	28	28	c8904
 Ok	M[Cutscene][AMSN_V][Ov_AN]	0	EmissiveMap	Emissive	Emissive	0	0.000	93299	2	2	aeg468_545
 Ok	M[Cutscene][AMSN_V][Ov_AN]	7	NormalMap	NormalGloss	Normal	0	0.000	93299	2	2	aeg468_545
 Ok	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	2	AlbedoMap	Albedo	Albedo	0	0.000	82301	1	1	aeg468_595
@@ -3335,6 +3330,7 @@ Ok	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	3	AlbedoMap	Albedo	Albedo	0	0.000	82
 Ok	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	0	NormalMap	NormalGloss	Normal	0	0.000	82301	1	1	aeg468_595
 Ok	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	1	NormalMap	NormalGloss	Normal	0	0.000	82301	1	1	aeg468_595
 Ok	M[Cutscene][AMSN_V][Mb2][Ov_AN]_Dissolve	4	Mask1Map	Mask	BlendDetailMask	0	0.000	82301	1	1	aeg468_595
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	4	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	80947	20	20	c8904
 Ok	M[Cutscene][PlacidLake][VA_Frame]	0	NormalMap	Normal	OverlayNormal	0	0.000	68948	6	1	aeg090_154
 Ok	M[Cutscene][PlacidLake][VA_Frame]	3	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	0	0.000	68948	6	1	aeg090_154
 Ok	M[Cutscene][PlacidLake][VA_Frame]	4	FlowMap	NotSampled	Dropped (no route for the role FlowMap)	0	0.000	68948	6	1	aeg090_154
@@ -3342,7 +3338,10 @@ Ok	C[Hair]	2	AlbedoMap	Albedo	Albedo	0	0.000	67090	1	1	c8902
 Ok	C[Hair]	7	NormalMap	NormalGloss	Normal	0	0.000	67090	1	1	c8902
 Ok	C[c5131]_Eye_break	2	AlbedoMap	Albedo	Albedo	0	0.000	67048	5	4	aeg468_025
 Ok	C[c5131]_Eye_break	3	EmissiveMap	Emissive	Emissive	0	0.000	67048	5	4	aeg468_025
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	14	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	66472	15	15	c8904
 Ok	C[c5131]_Eye_break	6	MetallicMap	Metallic	Metallic	0	0.000	58298	4	3	aeg468_025
+Ok	CS[c8901]_Burn	4	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	55974	9	2	c8901
+Ok	CS[c8901]_Burn	9	NormalMap	NormalGloss	OverlayNormal	0	0.000	55974	9	2	c8901
 Ok	M[Cutscene][AMSN][Glow][s19_00_0010]	4	NormalMap	NormalGloss	OverlayNormal	0	0.000	45865	2	2	aeg090_256
 Ok	M[Cutscene][AMSN][Glow][s19_00_0010]	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	45865	2	2	aeg090_256
 Ok	M[Cutscene][AMSN][Glow][s19_00_0010]	5	EmissiveMap	Emissive	Emissive	0	0.000	45865	2	2	aeg090_256
@@ -3353,6 +3352,12 @@ Ok	C[DetailBlend]	8	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot alread
 Ok	C[DetailBlend]	11	MetallicMap	NotSampled	Dropped (a metallic map of a layer above the bottom one)	0	0.000	32940	12	2	wp_a_1024_l
 Ok	M[Cutscene][AMSN][Glow][s19_00_0010]	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	32416	1	1	aeg090_256
 Ok	C[DetailBlend][S2]_cloth	9	NormalMap	NotSampled	Dropped (its Normal layer 0 slot already holds another texture)	0	0.000	30940	42	4	bd_f_2730_l
+Ok	CS[c8901][VA_Frame]_Burn	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	29540	7	7	c8901
+Ok	CS[c8901][VA_Frame]_Burn	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	29540	7	7	c8901
+Ok	CS[c8901][VA_Frame]_Burn	10	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	29540	7	7	c8901
+Ok	CS[c8901][VA_Frame]_Burn	4	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	29540	7	7	c8901
+Ok	CS[c8901][VA_Frame]_Burn	12	NormalMap	NormalGloss	OverlayNormal	0	0.000	29540	7	7	c8901
+Ok	CS[c8901][VA_Frame]_Burn	9	NormalMap	NormalGloss	OverlayNormal	0	0.000	29540	7	7	c8901
 Ok	CS[c8901][VA_Frame]_Burn	7	AlbedoMap	Albedo	Albedo	0	0.000	29540	7	7	c8901
 Ok	CS[c8901][VA_Frame]_Burn	3	MetallicMap	Metallic	Metallic	0	0.000	29540	7	7	c8901
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	20	Mask1Map	NotSampled	Dropped (no route for the role Mask1Map)	0	0.000	28929	6	6	aeg301_225
@@ -3361,7 +3366,8 @@ Ok	CS[c8901][VA_Frame]_Burn	0	NormalMap	NormalGloss	Normal	0	0.000	26385	6	6	c89
 Ok	M[Cutscene][AMSN_V][Ov_AN]	5	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	25185	1	1	aeg468_545
 Ok	CS[VA_Frame]_AEG301_205	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	21509	6	4	aeg301_200
 Ok	CS[VA_Frame]_AEG301_205	0	NormalMap	NormalGloss	Normal	0	0.000	21509	6	4	aeg301_200
-Ok	C[DetailBlend][S2]_cloth	4	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	20524	34	3	bd_f_1861_l
+Ok	CS[VA_Frame][DetailBlend][S2][Rich]	8	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	21104	4	4	c8900
+Ok	C[DetailBlend][S2]_cloth	4	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	20524	34	3	bd_m_1861_l
 Ok	PC[WP_A_0637]_Crystal_Arts	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	20470	2	1	wp_a_0637_l
 Ok	PC[WP_A_0637]_Crystal_Arts	0	AlbedoMap	Albedo	Albedo	0	0.000	20470	2	1	wp_a_0637_l
 Ok	PC[WP_A_0637]_Crystal_Arts	10	EmissiveMap	Emissive	Emissive	0	0.000	20470	2	1	wp_a_0637_l
@@ -3390,6 +3396,12 @@ Ok	C[Cutscene][VA_frame][c5220]_Miquella	9	MetallicMap	Metallic	Metallic	0	0.000
 Ok	C[Cutscene][VA_frame][c5220]_Miquella	4	NormalMap	NormalGloss	Normal	0	0.000	8818	1	1	aeg468_065
 Ok	CS[c8901]_Burn	15	AlbedoMap	Albedo	Albedo	0	0.000	8741	1	1	c8901
 Ok	P[Cutscene][ChrCustomize][Hair][VA_Frame]	0	NormalMap	Normal	Normal	0	0.000	8432	3	1	aeg468_080
+Ok	CS[c8901]_Burn_cloth	1	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	7887	5	2	c8901
+Ok	CS[c8901]_Burn_cloth	6	NormalMap	NormalGloss	OverlayNormal	0	0.000	7887	5	2	c8901
+Ok	CS[c8901]_Burn_cloth	10	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	7887	5	2	c8901
+Ok	CS[c8901]_Burn_cloth	4	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	7887	5	2	c8901
+Ok	CS[c8901]_Burn_cloth	12	NormalMap	NormalGloss	OverlayNormal	0	0.000	7887	5	2	c8901
+Ok	CS[c8901]_Burn_cloth	9	NormalMap	NormalGloss	OverlayNormal	0	0.000	7887	5	2	c8901
 Ok	CS[c8901]_Burn_cloth	7	AlbedoMap	Albedo	Albedo	0	0.000	7887	5	2	c8901
 Ok	CS[c8901]_Burn_cloth	0	NormalMap	NormalGloss	Normal	0	0.000	7887	5	2	c8901
 Ok	CS[c8901]_Burn_cloth	3	MetallicMap	Metallic	Metallic	0	0.000	7887	5	2	c8901
@@ -3428,6 +3440,8 @@ Ok	PC[Crystal]_Glow_Int	1	AlbedoMap	Albedo	Albedo	0	0.000	3104	2	1	wp_a_1517_l
 Ok	PC[Crystal]_Glow_Int	4	EmissiveMap	Emissive	Emissive	0	0.000	3104	2	1	wp_a_1517_l
 Ok	PC[Crystal]_Glow_Int	7	NormalMap	NormalGloss	Normal	0	0.000	3104	2	1	wp_a_1517_l
 Ok	PC[Crystal]_Glow_Int	6	MetallicMap	Metallic	Metallic	0	0.000	3104	2	1	wp_a_1517_l
+Ok	C[DetailBlend][S2]_cloth	2	AlbedoMap	Albedo	OverlayAlbedo	0	0.000	1942	4	2	bd_m_2350_l
+Ok	C[DetailBlend][S2]_cloth	5	NormalMap	NormalGloss	OverlayNormal	0	0.000	1942	4	2	bd_m_2350_l
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	15	MetallicMap	NotSampled	Dropped (a metallic map of a layer above the bottom one)	0	0.000	1844	1	1	aeg468_070
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	14	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	1844	1	1	aeg468_070
 Ok	CS[VA_Frame][DetailBlend][S2][Rich]	2	AlbedoMap	NotSampled	Dropped (its Albedo layer 0 slot already holds another texture)	0	0.000	1304	1	1	c8905
@@ -3451,5 +3465,5 @@ Ok	M[AMSN_V]_TestGrass	0	AlbedoMap	Albedo	Albedo	0	0.000	213	4	1	aeg001_248
 Ok	M[AMSN_V]_TestGrass	2	NormalMap	NormalGloss	Normal	0	0.000	213	4	1	aeg001_248
 Ok	C[Fur]_Albedo_FallOff_cloth	2	AlbedoMap	NotSampled	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	160	2	1	bd_m_3210_l
 Ok	C[Fur]_Albedo_FallOff_cloth	4	NormalMap	NotSampled	Dropped (a fur texture the fur recipe doesn't use)	0	0.000	160	2	1	bd_m_3210_l
-Ok	M[AMSN][XZ_BillBoard][ColorShift]_Edge	3	AlbedoMap	Albedo	Albedo	0	0.000	24	3	2	aeg461_001
-Ok	M[AMSN][XZ_BillBoard][ColorShift]_Edge	1	NormalMap	NormalGloss	Normal	0	0.000	24	3	2	aeg461_001
+Ok	M[AMSN][XZ_BillBoard][ColorShift]_Edge	3	AlbedoMap	Albedo	Albedo	0	0.000	24	3	2	aeg461_110
+Ok	M[AMSN][XZ_BillBoard][ColorShift]_Edge	1	NormalMap	NormalGloss	Normal	0	0.000	24	3	2	aeg461_110

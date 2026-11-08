@@ -115,6 +115,63 @@ Where it doesn't match the checked-in recipes:
   Supporting these means a wider per-layer blend entry: a channel selector, a bias and a soft scale for each of the 3
   upper layers. The material buffer would then carry one more 48-byte entry for blended materials.
 
+## ColorAdjust blends (2026-11-08)
+
+`ShaderSignature <GAME> coloradjust <cacheDir> <outJson> [shaderRegex]` (`ColorAdjust.cs`) writes
+`Assets/Material Definitions/{GAME}_ColorAdjust.json`. Built 2026-11-08, not yet checked in the app.
+
+**What the checked-in recipes miss.** In `M[AMSN_V][Ov_N][Mb3_ColorAdjust][3Mask_ch18]` and its relatives, the large
+ER/NR terrain blends, each layer is weighted like this:
+
+```
+v      = sat(Mask.c + TEXCOORD1.c)  · COLOR1.w where bool_0 is set
+hard   = sat(1 - 1.4·f6·(2(1 - v) - (1 - T3.r)))      the checked-in recipe's weight
+weight = lerp(v, hard, f3)                              f3, f0, f5 per layer
+```
+
+The checked-in recipes have only `hard`, and use the mask without the vertex value added. Most materials set the mix
+params to 0.1–0.2, so the game's weights are mostly the soft `v`. Each layer's albedo, the bottom's too, is
+`bool_k ? lerp(T, color_k, f_k) : T·color_k`: with its bool set, it moves toward the colour rather than being tinted
+by it.
+
+**Recipe.** `MaterialColorAdjustRecipe`: albedo slot → `MaterialBlendRecipeLayer` extras (`AddSource`, `ScaleSource`,
+`ScaleIf`, `HardMix`, `ColorAdjust`, `ColorAdjustIf`). `MaterialShaderTable.MergeColorAdjust` adds them to the recipe of
+the same key by albedo slot. The bottom's adjust goes to `AlbedoColorAdjust`.
+
+| | ER | NR | AC6 |
+|---|---|---|---|
+| Shaders found | 26 (22 with a weight mix) | 33 (30) | 4 (0) |
+| Merged into a blend recipe | 10 | 17 | 0 |
+
+**Recipes for the rest (2026-11-08, later).** `M[Cave_001]`, `M[Cliff_001]`, `M[Road_Ground]` and others had no blend
+recipe at all, because the blend generator couldn't read `lerp(v, hard, K)`. It now can:
+- **The mixed weight** (`Recipes.MixedWeight`): it reads `hard`, with `v` standing for its mask channel. The mix and
+  the vertex value come from `_ColorAdjust.json`.
+- **A weight scaled as a whole by a param**, `f16·sat(…)`: `MaterialBlendRecipeLayer.WeightScale`.
+- **Layers of different scale or detail bias.** The recipe has one of each, so a hard layer's scale ratio folds into
+  its `Sharpness`, and a differing bias becomes `DetailBiasOverride`.
+- **Viewport:** `SourceScaled` (8192) and `SourceBias` (32768). The weight scale and bias go in `extra.y`/`.z` of
+  entry +14.
+
+Checked-in recipes reproduced are unchanged, and no generated recipe was lost.
+
+| | ER | NR | AC6 |
+|---|---|---|---|
+| Generated blend recipes | 36 → 55 | 46 → 67 | 185 → 186 |
+| Census Ok | 83.7% → 84.3% | 80.9% → 81.3% | unchanged |
+
+ER's cave/cliff/road shaders went from about 2.9 points Dropped to 0.3. Still without a recipe: `M[Cave_Ore_001]`
+and others whose weights have other forms. AC6's `M[Planet][GroundSurface]` shaders got one recipe (`_003`).
+
+**Viewport.**
+- Source bits: `SourceAdd` (128, its channel from bit 8), `SourceScaleAlpha` (2048), `SourceMixed` (4096), and
+  `SourceAdjusted` (16384) on the first source.
+- The mix factors and colour adjusts use entries +13/+14, the extended form's. They're only used when no layer is
+  extended.
+- `ComputeRecipeWeights` adds the vertex value, applies the alpha and lerps from the raw value to the hard weight.
+- `SampleLayered` lerps toward the tint where the adjust is ≥ 0.
+- The binding audit can't see this: it checks textures, not weights.
+
 ## Detail stacks (2026-11-08)
 
 `ShaderSignature <GAME> detailstacks <cacheDir> <outJson> [shaderRegex]` (`DetailStacks.cs`) writes
@@ -164,9 +221,19 @@ in the detail chain, with the same weights. Permutations 15 and up use `front ? 
   - Back faces (`gl_FrontFacing`) skip the base and details.
 - All 21 `C[DetailBlend]` permutations now have a recipe or the plain detail (0).
 
+**`[S2]` and `_SSS` (2026-11-08, later still).**
+- **Bare power weights.** `_SSS` weighs its alpha layers by `(1 - a)^8` and `[S2]` by `(0.5 - f21(a - 0.5))^8`, with
+  no saturate around them. The weight reader now takes a bare `exp2(log2(X)·P)`.
+- **Own-alpha layers.** `[S2]` lays slot 8 over the finished albedo by that texture's own alpha, like a decal:
+  `lerp(X, c7·T8, T8.a)`. This is the layer flag `OwnAlpha` (weight.w +16). Where a whole-albedo lerp follows it, the
+  compiler folds the two together as `((X - b) + (L - X)·a)·w + b`, which `Folded` matches.
+  - Its normal lerps the detail offset toward a param (`color_3`) by the same alpha. That isn't drawn.
+- **Up to four layers.** `[S2]` permutations 9–12 have four. Entries +15 to +18 are layers, +19 the back face; the
+  count is bits 8–10 of `Pad0`, and `HasStackEntries` moved to bit 11.
+
 | | ER | NR | AC6 |
 |---|---|---|---|
-| Stacks written | 84, in 18 shaders | 82, in 13 | 12, in 4 |
+| Stacks written | 232, in 37 shaders | 144, in 21 | 40, in 8 |
 
 **Viewport.**
 - The detail entry's `Pad0` holds the layer count from bit 8.
@@ -179,9 +246,9 @@ in the detail chain, with the same weights. Permutations 15 and up use `front ? 
 - A missing layer texture counts as neutral (`1/4.55`, flat normal).
 
 **Not done:**
-- **Weights of other forms.** "weight not understood": ER 149, NR 74, AC6 28 shader permutations. These are in other
-  shaders the walk reaches, such as `C[DetailBlend][S2]` and `_SSS`, which still drop slots 8, 10, 11 and 12.
-- **The single-detail form of other shaders.** "isn't one albedo and color": ER 46.
+- **Weights of other forms.** "weight not understood": ER 21, NR 12 shader permutations.
+- **The single-detail form of other shaders.** "isn't one albedo and color": ER 44.
+- **`[S2]` slot 11.** A normal added to the detail offset on its own (ER 0.5 points), still dropped.
 - **Layer metallic.** The layers also lerp metallic toward params (`f16`, `f8` and `f5` in `C[DetailBlend]`), which
   isn't drawn.
 - **Mask1Map.** It has no route in `C[DetailBlend]_FurBlur` and `_SSS` (ER ~1.6 points).

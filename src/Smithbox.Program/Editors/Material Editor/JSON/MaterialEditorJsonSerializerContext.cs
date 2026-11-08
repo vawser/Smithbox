@@ -22,6 +22,8 @@ namespace StudioCore.Editors.MaterialEditor;
 [JsonSerializable(typeof(Dictionary<string, Dictionary<int, MaterialTextureInput>>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialBlendRecipe>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialDetailRecipe>))]
+[JsonSerializable(typeof(Dictionary<string, MaterialColorAdjustRecipe>))]
+[JsonSerializable(typeof(Dictionary<string, MaterialEmissiveMask>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialMagmaRecipe>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialWaterRecipe>))]
 [JsonSerializable(typeof(Dictionary<string, MaterialFurRecipe>))]

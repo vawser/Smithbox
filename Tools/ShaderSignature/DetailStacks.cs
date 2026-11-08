@@ -101,12 +101,58 @@ static partial class Recipes
 
         // 3. Whole-albedo layers over the finished albedo: lerps of one albedo term and the rest, gathered top first.
         // A layer on the bottom of its lerp takes one minus the weight
-        var replaced = new List<(Lerp lerp, bool invert)>();
-        while (!f.IsConst && AsLerp(d, f.Id) is { } l && IsStackWeight(l.Weight))
+        // [S2] also lays an albedo over by its own alpha, like a decal: lerp(X, c7 T8, T8.a)
+        bool IsOwnAlpha(Dxil.Arg layer, Dxil.Arg w) =>
+            !w.IsConst && Term(layer).slot is int s && d.NodeOf(w.Id) is { Op: Dxil.Op.Leaf } leaf && Slot(leaf.Leaf) == s && Channel(leaf.Leaf) == "a";
+
+        var replaced = new List<(Lerp lerp, bool invert, bool ownAlpha)>();
+        while (!f.IsConst)
         {
-            if (Term(l.Top).slot != null && AlbedoCount(l.Bottom) >= 2) { replaced.Insert(0, (l, false)); f = l.Bottom; }
-            else if (Term(l.Bottom).slot != null && AlbedoCount(l.Top) >= 2) { replaced.Insert(0, (l, true)); f = l.Top; }
-            else break;
+            if (AsLerp(d, f.Id) is { } l)
+            {
+                if (IsStackWeight(l.Weight) && Term(l.Top).slot != null && AlbedoCount(l.Bottom) >= 2) { replaced.Insert(0, (l, false, false)); f = l.Bottom; continue; }
+                if (IsStackWeight(l.Weight) && Term(l.Bottom).slot != null && AlbedoCount(l.Top) >= 2) { replaced.Insert(0, (l, true, false)); f = l.Top; continue; }
+                if (IsOwnAlpha(l.Top, l.Weight) && AlbedoCount(l.Bottom) >= 2) { replaced.Insert(0, (l, false, true)); f = l.Bottom; continue; }
+            }
+
+            // The two folded into one by the compiler: lerp(b, lerp(X, L, a), w) as ((X - b) + (L - X) a) w + b
+            if (Folded(f) is { } folded)
+            {
+                replaced.Insert(0, (folded.outer, true, false));
+                replaced.Insert(0, (folded.own, false, true));
+                f = folded.own.Bottom;
+                continue;
+            }
+            break;
+        }
+
+        (Lerp outer, Lerp own)? Folded(Dxil.Arg v)
+        {
+            var n = d.NodeOf(v.Id);
+            if (n.Op != Dxil.Op.Add) return null;
+            foreach (var (product, b) in new[] { (n.Args[0], n.Args[1]), (n.Args[1], n.Args[0]) })
+            {
+                if (product.IsConst || b.IsConst || Term(b).slot == null || d.NodeOf(product.Id) is not { Op: Dxil.Op.Mul } m) continue;
+                foreach (var (y, w) in new[] { (m.Args[0], m.Args[1]), (m.Args[1], m.Args[0]) })
+                {
+                    if (y.IsConst || !IsStackWeight(w) || d.NodeOf(y.Id) is not { Op: Dxil.Op.Add } sum) continue;
+                    foreach (var (sub, decal) in new[] { (sum.Args[0], sum.Args[1]), (sum.Args[1], sum.Args[0]) })
+                    {
+                        // X - b, and (L - X) a
+                        if (sub.IsConst || decal.IsConst || d.NodeOf(sub.Id) is not { Op: Dxil.Op.Sub } xb || xb.Args[1].IsConst || xb.Args[1].Id != b.Id) continue;
+                        var x = xb.Args[0];
+                        if (d.NodeOf(decal.Id) is not { Op: Dxil.Op.Mul } dm) continue;
+                        foreach (var (diff, a) in new[] { (dm.Args[0], dm.Args[1]), (dm.Args[1], dm.Args[0]) })
+                        {
+                            if (diff.IsConst || d.NodeOf(diff.Id) is not { Op: Dxil.Op.Sub } lx || lx.Args[1].IsConst || lx.Args[1].Id != x.Id) continue;
+                            if (!IsOwnAlpha(lx.Args[0], a) || AlbedoCount(x) < 2) continue;
+                            // The outer lerp's top isn't a value of its own; only its weight and bottom are read
+                            return (new Lerp(v.Id, x, b, w), new Lerp(y.Id, lx.Args[0], x, a));
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         // 4. What is left is base * detail * 4.55: the detail is what the 4.55 multiplies, a stack of lerps or one albedo
@@ -186,7 +232,13 @@ static partial class Recipes
         }
         else if (replaced.Count > 0)
         {
-            recipe.Normal = normalLerps.TryGetValue(replaced[0].lerp.Weight.Id, out var under) ? NormalOf(replaced[0].invert ? under.Top : under.Bottom) : null;
+            // The lowest whole-albedo layer whose normal lerps (an own-alpha layer's normal is a param, so has none)
+            foreach (var (lerp, invert, _) in replaced)
+            {
+                if (!normalLerps.TryGetValue(lerp.Weight.Id, out var under)) continue;
+                recipe.Normal = NormalOf(invert ? under.Top : under.Bottom);
+                break;
+            }
         }
         else if (frontNormal != null)
         {
@@ -195,15 +247,21 @@ static partial class Recipes
 
         string weightMap = null;
         recipe.Stack = new List<MaterialDetailStackLayer>();
-        var layers = chain.Select(c => (lerp: c, invert: false, replace: false)).Concat(replaced.Select(r => (r.lerp, r.invert, replace: true)));
-        foreach (var (l, invert, replace) in layers)
+        var layers = chain.Select(c => (lerp: c, invert: false, replace: false, ownAlpha: false))
+            .Concat(replaced.Select(r => (r.lerp, r.invert, replace: true, r.ownAlpha)));
+        foreach (var (l, invert, replace, ownAlpha) in layers)
         {
             var (slot, color) = Term(invert ? l.Bottom : l.Top);
             if (slot == null) { result.Problems.Add("a layer isn't one albedo"); return result; }
-            var w = ReadStackWeight(d, l.Weight);
+
+            // Weighed by its own albedo's alpha, as it is
+            var w = ownAlpha ? new StackWeight(null, "a", "1", "0", 1) : ReadStackWeight(d, l.Weight);
             if (w == null) { result.Problems.Add($"layer {slot}: weight not understood"); return result; }
-            if (weightMap != null && weightMap != w.Texture) { result.Problems.Add("layers read different weight maps"); return result; }
-            weightMap = w.Texture;
+            if (!ownAlpha)
+            {
+                if (weightMap != null && weightMap != w.Texture) { result.Problems.Add("layers read different weight maps"); return result; }
+                weightMap = w.Texture;
+            }
 
             recipe.Stack.Add(new MaterialDetailStackLayer
             {
@@ -215,7 +273,8 @@ static partial class Recipes
                 Bias = w.Bias,
                 Power = (float)w.Power,
                 Invert = invert ? true : null,
-                Replace = replace ? true : null
+                Replace = replace ? true : null,
+                OwnAlpha = ownAlpha ? true : null
             });
         }
         if (recipe.Stack.Count == 0) recipe.Stack = null;
@@ -223,10 +282,15 @@ static partial class Recipes
         return result;
     }
 
-    /// <summary>sat(pow(A x + B, P)), with P = 1 where there is no pow: exp2(log2(X) * P), in either operand order</summary>
+    /// <summary>
+    /// sat(pow(A x + B, P)), with P = 1 where there is no pow: exp2(log2(X) * P), in either operand order. The sat can
+    /// be missing where the value can't leave 0 to 1 anyway: _SSS weighs by (1 - a)^8 as it is
+    /// </summary>
     static StackWeight ReadStackWeight(Dxil d, Dxil.Arg w)
     {
-        if (Unsaturated(d, w) is not { } inner || inner.IsConst) return null;
+        var inner = Unsaturated(d, w) ?? w;
+        if (inner.IsConst) return null;
+        if (Unsaturated(d, w) == null && d.NodeOf(inner.Id).Op != Dxil.Op.Exp2) return null;
 
         var power = 1.0;
         var linear = inner;

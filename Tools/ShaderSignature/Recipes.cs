@@ -252,6 +252,24 @@ static partial class Recipes
 
             var weight = ReadWeight(d, l.Weight, vertexSource, result.Problems);
 
+            // The [MbN_ColorAdjust] form, lerp(v, hard, K): the recipe takes the hard weight, with v standing for its
+            // mask channel. The lerp and v's vertex value come from {GAME}_ColorAdjust.json (ColorAdjust.cs)
+            if (weight == null && MixedWeight(d, l.Weight) is { } mixed)
+                weight = ReadWeight(d, mixed.hard, vertexSource, result.Problems, new Dictionary<int, Poly> { [mixed.value] = Poly.Of(mixed.mask, 1) });
+
+            // A weight scaled by a param as a whole, param * sat(...) (M[Cave_001]'s snp_0_float_16)
+            if (weight == null && !l.Weight.IsConst && d.NodeOf(l.Weight.Id) is { Op: Dxil.Op.Mul } scaledWeight)
+            {
+                foreach (var (p, inner) in new[] { (scaledWeight.Args[0], scaledWeight.Args[1]), (scaledWeight.Args[1], scaledWeight.Args[0]) })
+                {
+                    if (p.IsConst || inner.IsConst || d.NodeOf(p.Id) is not { Op: Dxil.Op.Leaf } pl || !pl.Leaf.StartsWith("cb:") || !pl.Leaf.Contains("snp_")) continue;
+                    if (ReadWeight(d, inner, vertexSource, result.Problems) is not { } scaled) continue;
+                    weight = scaled;
+                    layer.WeightScale = Param(pl.Leaf);
+                    break;
+                }
+            }
+
             // Failing the recipe's own form, the extended one: a detail mask of the layer's own
             if (weight == null && ReadExtended(d, l.Weight, vertexSource, result.Problems) is { } ext)
             {
@@ -297,13 +315,16 @@ static partial class Recipes
                 if (detailMask != null && detailMask != w.detailSlot) result.Problems.Add("layers use different detail masks");
                 detailMask = w.detailSlot;
             }
-            // The recipe has one scale and one detail bias: the first hard layer's, the rest must agree
+            // The recipe has one scale and one detail bias: the first hard layer's. A hard layer of another scale takes
+            // the ratio into its sharpness, which the scale only multiplies; a layer of another bias overrides it
+            // (MaterialBlendRecipeLayer.DetailBiasOverride, drawn with the ColorAdjust form's entries)
             if (!w.soft)
             {
-                if (scale != null && Math.Abs(scale.Value - w.scale) > 1e-3) result.Problems.Add($"scales differ ({Number(scale.Value)}, {Number(w.scale)})");
+                if (scale != null && Math.Abs(scale.Value - w.scale) > 1e-3)
+                    layer.Sharpness = $"{Number(w.scale / scale.Value)}*{layer.Sharpness}";
                 scale ??= w.scale;
             }
-            if (bias != null && Math.Abs(bias.Value - w.bias) > 1e-3) result.Problems.Add($"detail biases differ ({Number(bias.Value)}, {Number(w.bias)})");
+            if (bias != null && Math.Abs(bias.Value - w.bias) > 1e-3) layer.DetailBiasOverride = (float)w.bias;
             bias ??= w.bias;
             recipe.Layers.Add(layer);
         }
@@ -321,7 +342,35 @@ static partial class Recipes
     /// Matches a weight against the hard and soft forms. The polynomial's leaves are named as NodeOf names them:
     /// tex:... texture channels, cb:... params, in:... interpolants, op... anything nonlinear (which fails).
     /// </summary>
-    static Weight? ReadWeight(Dxil d, Dxil.Arg w, Func<string, string> vertexSource, List<string> problems)
+    /// <summary>
+    /// lerp(v, hard, K) with K a material param: the hard weight, the value v's SSA id, and the mask channel v reads
+    /// (v is the mask, sat(mask + vertex), or bool ? that * vertex : that)
+    /// </summary>
+    static (Dxil.Arg hard, int value, string mask)? MixedWeight(Dxil d, Dxil.Arg w)
+    {
+        if (w.IsConst || AsLerp(d, w.Id) is not { } l || l.Weight.IsConst || l.Bottom.IsConst) return null;
+        if (d.NodeOf(l.Weight.Id) is not { Op: Dxil.Op.Leaf } k || !k.Leaf.StartsWith("cb:") || !k.Leaf.Contains("snp_")) return null;
+        if (Unsaturated(d, l.Top) == null) return null;
+
+        string MaskOf(Dxil.Arg v)
+        {
+            if (v.IsConst) return null;
+            var n = d.NodeOf(v.Id);
+            if (n.Op == Dxil.Op.Leaf) return n.Leaf.StartsWith("tex:") ? n.Leaf : null;
+            if (n is { Op: Dxil.Op.Other, Args.Length: 3 }) return MaskOf(n.Args[2]);
+            if (Unsaturated(d, v) is { IsConst: false } sum && d.NodeOf(sum.Id) is { Op: Dxil.Op.Add } add)
+            {
+                var masks = add.Args.Where(a => !a.IsConst).Select(a => d.NodeOf(a.Id)).Where(x => x.Op == Dxil.Op.Leaf && x.Leaf.StartsWith("tex:")).ToList();
+                var inputs = add.Args.Where(a => !a.IsConst).Select(a => d.NodeOf(a.Id)).Count(x => x.Op == Dxil.Op.Leaf && x.Leaf.StartsWith("in:"));
+                return masks.Count == 1 && inputs == 1 ? masks[0].Leaf : null;
+            }
+            return null;
+        }
+
+        return MaskOf(l.Bottom) is { } mask ? (l.Top, l.Bottom.Id, mask) : null;
+    }
+
+    static Weight? ReadWeight(Dxil d, Dxil.Arg w, Func<string, string> vertexSource, List<string> problems, Dictionary<int, Poly> preset = null)
     {
         if (w.IsConst) return null;
         // sat(x), or min(max(x, 0), 1)
@@ -332,7 +381,7 @@ static partial class Recipes
             inner = maxNode.Args.First(a => !a.IsConst);
         else return null;
 
-        var memo = new Dictionary<int, Poly>();
+        var memo = preset != null ? new Dictionary<int, Poly>(preset) : new Dictionary<int, Poly>();
         var direct = Match(d, Expand(d, inner, memo), vertexSource, problems);
         if (direct != null) return direct;
 

@@ -250,17 +250,17 @@ public struct MaterialDetail
     public const uint AlbedoOverlay = 1;
 
     /// <summary>
-    ///     The low byte of Pad0 is the albedo mode, bits 8-9 the number of stack layers, and <see cref="HasStackEntries" />
+    ///     The low byte of Pad0 is the albedo mode, bits 8-10 the number of stack layers, and <see cref="HasStackEntries" />
     ///     says the stack entries are there (a material with only a back face has them and no layers)
     /// </summary>
     public const uint AlbedoModeMask = 0xFF;
     public const int StackCountShift = 8;
-    public const uint HasStackEntries = 1u << 10;
+    public const uint HasStackEntries = 1u << 11;
 }
 
 /// <summary>
 ///     One layer of a detail stack (C[DetailBlend], <see cref="MaterialDetailRecipe.Stack" />), read by the flver
-///     fragment shader as entries 15 to 17, after <see cref="MaterialLayerDetailExtra" />. The layer is lerped over
+///     fragment shader as entries 15 to 18, after <see cref="MaterialLayerDetailExtra" />. The layer is lerped over
 ///     the details below it by sat(pow(Weight.x * map[Weight.w] + Weight.y, Weight.z)).
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -281,6 +281,9 @@ public struct MaterialDetailStackEntry
     /// <summary>Added to Weight.w: the layer is lerped over the finished albedo, see MaterialDetailStackLayer.Replace</summary>
     public const float Replacing = 8;
 
+    /// <summary>Added to Weight.w: the layer is weighed by its own albedo's alpha, see MaterialDetailStackLayer.OwnAlpha</summary>
+    public const float OwnAlpha = 16;
+
     /// <summary>Tiles the layer's albedo and normal, which share a UV group</summary>
     public Vector2 Tiling;
 
@@ -294,14 +297,14 @@ public struct MaterialDetailStackEntry
 }
 
 /// <summary>
-///     Everything of a material with a detail stack, which has every entry before it. <see cref="Back" /> (entry 18)
+///     Everything of a material with a detail stack, which has every entry before it. <see cref="Back" /> (entry 19)
 ///     is what back faces are drawn with, its weight unused, 0 textures for none
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct MaterialWithDetailStack
 {
     public MaterialWithLayerDetail Layered;
-    public MaterialDetailStackEntry Layer1, Layer2, Layer3;
+    public MaterialDetailStackEntry Layer1, Layer2, Layer3, Layer4;
     public MaterialDetailStackEntry Back;
 }
 

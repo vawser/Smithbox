@@ -123,6 +123,8 @@ public class MaterialData : IDisposable
         var uvSetsPath = Path.Join(folder, $"{game}_UvSets.json");
         var overlaysPath = Path.Join(folder, $"{game}_Overlays.json");
         var detailStacksPath = Path.Join(folder, $"{game}_DetailStacks.json");
+        var colorAdjustPath = Path.Join(folder, $"{game}_ColorAdjust.json");
+        var emissiveMasksPath = Path.Join(folder, $"{game}_EmissiveMasks.json");
         var generatedBlendsPath = Path.Join(folder, $"{game}_GeneratedBlends.json");
 
         MaterialShaderTable table = new();
@@ -215,6 +217,23 @@ public class MaterialData : IDisposable
 
                 table.MergeOverlays(JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialDetailRecipe) ?? new());
+            }
+
+            // After the generated blends, so the generated recipes get it too
+            if (File.Exists(colorAdjustPath))
+            {
+                string text = await File.ReadAllTextAsync(colorAdjustPath);
+
+                table.MergeColorAdjust(JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialColorAdjustRecipe) ?? new());
+            }
+
+            if (File.Exists(emissiveMasksPath))
+            {
+                string text = await File.ReadAllTextAsync(emissiveMasksPath);
+
+                table.EmissiveMasks = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialEmissiveMask) ?? new();
             }
 
             if (File.Exists(detailStacksPath))

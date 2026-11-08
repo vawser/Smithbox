@@ -104,7 +104,9 @@ Dropped. These are the biggest:
     `C[DetailBlend]`'s Dropped share fell from 19.5 to 9.7 points (ER) and from 29.6 to 14.5 (NR). AC6 is unchanged.
   - Whole-albedo layers and back faces, added later the same day: ER Ok 82.3% → 83.2%, Dropped 11.3% → 10.4%.
     NR Ok 79.9% → 80.2%. `C[DetailBlend]` Dropped fell to 5.2 points (ER) and 12.9 (NR).
-  - Still dropped: `[S2]` and `_SSS` variants whose weights take other forms, and Mask1Map in `_FurBlur`/`_SSS`.
+  - `[S2]` and `_SSS` (bare power weights, own-alpha layers, four layers): ER Ok 83.2% → 83.7%, Dropped 10.4% → 9.9%.
+    NR Ok 80.2% → 80.9%. `C[DetailBlend]` Dropped is now 2.6 points (ER) and 9.6 (NR).
+  - Still dropped: Mask1Map in `_FurBlur`/`_SSS` (no route), and `[S2]`'s slot 11 normal and upper metallic.
 - **AC6 `[MS]` blends: not done.** These fit the existing recipe format. AC6 perm 13's layer weight is
   `sat((v - f23(1 - v)(mask + 0.01))·(f25 + 1))`, which is `MaterialBlendRecipeLayer`'s Soft form, with v = `TEXCOORD8.w`
   and the mask `T19.r` inverted by `f52`. Some layers are a flat colour instead of a texture. They're simply missing

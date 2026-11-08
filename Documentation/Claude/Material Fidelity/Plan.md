@@ -28,8 +28,11 @@ reproduces 60/97 ER recipes and adds 38 ER, 49 NR and 52 AC6 recipes. NR Ok is n
 after the last 11 TEXCOORD2/3 recipes). Colour-only layers, any-TEXCOORD vertex sources (two at most) and the extended per-layer blend form are built, so AC6
 `[MS]` blends have recipes. AC6 Ok is now 57.3% (was 47.2%). `C[DetailBlend]` detail stacks are built (`ShaderSignature detailstacks`,
 `{GAME}_DetailStacks.json`, Signatures/README.md), including whole-albedo layers and back faces. They are not yet
-checked in the app. ER Ok is now 83.2% and NR 80.2%. Still left: the `[S2]`/`_SSS` weight forms, the `ColorAdjust`
-weight form, and `[MS]` layers whose weight reads two vertex values. Then Phase 4.
+checked in the app. `[S2]` and `_SSS` are covered as well. ER Ok is now 83.7% and NR 80.9%. The `ColorAdjust` weight
+form is built (`ShaderSignature coloradjust`, `{GAME}_ColorAdjust.json`), not yet checked in the app; it fixes weight
+maths, which the audit doesn't measure. The blend generator now reads that form too, so `M[Cave_001]`, `M[Cliff_001]`
+and others have recipes. ER Ok is now 84.3% and NR 81.3%. Still left: `[MS]` layers whose weight reads two vertex
+values, and Mask1Map routes. Then Phase 4.
 
 ---
 
