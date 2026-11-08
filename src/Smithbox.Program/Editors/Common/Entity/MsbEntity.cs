@@ -216,6 +216,16 @@ public class MsbEntity : Entity
         var modelName = (string)modelProp.GetValue(WrappedObject);
         var amapid = PathBuilder.GetAssetMapID(curProject, MapID);
 
+        // A newly created part has no model yet, and map models are found from the name, so it gets a box
+        // until one is set
+        if (string.IsNullOrEmpty(modelName) && (EntityHelper.IsPartMapPiece(this)
+            || EntityHelper.IsPartCollision(this) || EntityHelper.IsPartConnectCollision(this)
+            || EntityHelper.IsPartNavmesh(this)))
+        {
+            SetRenderSceneMesh(CreateObjectProxyMesh());
+            return;
+        }
+
         // Map Piece
         if (EntityHelper.IsPartMapPiece(this))
         {
@@ -468,7 +478,7 @@ public class MsbEntity : Entity
         var curProject = ((MapUniverse)Owner).Project;
         var modelName = GetPartModelName();
 
-        if (!EntityHelper.IsPartMapPiece(this))
+        if (!EntityHelper.IsPartMapPiece(this) || string.IsNullOrEmpty(modelName))
             return modelName;
 
         return ModelLocator.MapModelNameToAssetName(curProject, PathBuilder.GetAssetMapID(curProject, MapID), modelName);

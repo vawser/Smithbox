@@ -11,6 +11,7 @@
     - Fix NR create
 
 
+- Wireframe mode
         
 - Near Plane Clipping:
     - Don't render triangles with X distance of the camera
