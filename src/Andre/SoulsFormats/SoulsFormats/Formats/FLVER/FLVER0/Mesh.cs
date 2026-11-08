@@ -131,15 +131,13 @@ namespace SoulsFormats
                 TriangleStrip = mesh.TriangleStrip;
                 NodeIndex = mesh.NodeIndex;
                 BoneIndices = new short[MaxBoneCount];
-                Indices = new List<int>();
-                Vertices = new List<FLVER.Vertex>();
+                Indices = new List<int>(mesh.Indices);
+                Vertices = new List<FLVER.Vertex>(mesh.Vertices.Count);
                 for (int i = 0; i < MaxBoneCount; i++)
                     BoneIndices[i] = mesh.BoneIndices[i];
 
-                for (int i = 0; i < mesh.Indices.Count; i++)
-                    Indices[i] = mesh.Indices[i];
                 for (int i = 0; i < mesh.Vertices.Count; i++)
-                    Vertices[i] = new FLVER.Vertex(mesh.Vertices[i]);
+                    Vertices.Add(new FLVER.Vertex(mesh.Vertices[i]));
 
                 LayoutIndex = mesh.LayoutIndex;
             }
@@ -283,8 +281,9 @@ namespace SoulsFormats
             /// <param name="bw">The stream.</param>
             /// <param name="material">The material this mesh uses.</param>
             /// <param name="version">The version of the model.</param>
+            /// <param name="vertexIndexSize">The size in bits of each vertex index.</param>
             /// <param name="index">The index of this Mesh for reserving offset values to be filled later.</param>
-            internal void Write(BinaryWriterEx bw, Material material, int version, int index)
+            internal void Write(BinaryWriterEx bw, Material material, int version, int vertexIndexSize, int index)
             {
                 bw.WriteByte(Dynamic);
                 bw.WriteByte(MaterialIndex);
@@ -318,7 +317,7 @@ namespace SoulsFormats
                     bw.WriteInt16(0);
                 }
 
-                bw.WriteInt32(Indices.Count * 2);
+                bw.WriteInt32(Indices.Count * (vertexIndexSize / 8));
                 bw.ReserveInt32($"VertexIndicesOffset{index}");
                 bw.WriteInt32(material.Layouts[LayoutIndex].Size * Vertices.Count);
                 bw.ReserveInt32($"VertexBufferOffset{index}");
@@ -361,6 +360,13 @@ namespace SoulsFormats
             /// <param name="index">The index of this Mesh for reserving offset values to be filled later.</param>
             internal void WriteVertexBufferHeader(BinaryWriterEx bw, FLVER0 flv, int index)
             {
+                // Up to 0x10 there is no vertex buffer list; the mesh header's buffer offset and length are all there is
+                if (!HasVertexBufferList(flv.Header.Version))
+                {
+                    bw.FillInt32($"VertexBufferListOffset{index}", 0);
+                    return;
+                }
+
                 bw.FillInt32($"VertexBufferListOffset{index}", (int)bw.Position);
 
                 bw.WriteInt32(1); //bufferCount
@@ -378,6 +384,12 @@ namespace SoulsFormats
             }
 
             /// <summary>
+            /// Whether this mesh is written with a vertex buffer list. Versions up to 0x10 have none, which the read takes as layout 0.
+            /// </summary>
+            private bool HasVertexBufferList(int version)
+                => version > 0x10 || LayoutIndex != 0;
+
+            /// <summary>
             /// Write the vertex buffer data of this Mesh to a stream.
             /// </summary>
             /// <param name="bw">The stream.</param>
@@ -387,7 +399,8 @@ namespace SoulsFormats
             internal void WriteVertexBufferData(BinaryWriterEx bw, FLVER0 flv, int dataOffset, int index)
             {
                 bw.FillInt32($"VertexBufferOffset{index}", (int)bw.Position - dataOffset);
-                bw.FillInt32($"VertexBufferOffset{index}_{0}", (int)bw.Position - dataOffset);
+                if (HasVertexBufferList(flv.Header.Version))
+                    bw.FillInt32($"VertexBufferOffset{index}_{0}", (int)bw.Position - dataOffset);
 
                 foreach (FLVER.Vertex vertex in Vertices)
                     vertex.PrepareWrite();
@@ -435,9 +448,8 @@ namespace SoulsFormats
             {
                 if (version >= 0x15 && TriangleStrip == false)
                 {
-                    // No triangle strip
-                    var alignedValue = Indices.Count + (3 - (Indices.Count % 3));
-                    return alignedValue / 3;
+                    // Triangle list
+                    return Indices.Count / 3;
                 }
 
                 // Triangle strip
@@ -543,7 +555,7 @@ namespace SoulsFormats
             public int GetVertexIndexSize()
             {
                 foreach (int index in Indices)
-                    if (index > ushort.MaxValue + 1)
+                    if (index > ushort.MaxValue)
                         return 32;
                 return 16;
             }

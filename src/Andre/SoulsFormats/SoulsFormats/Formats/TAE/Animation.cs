@@ -59,6 +59,7 @@ namespace SoulsFormats
                         newClone.IsLoopByDefault = IsLoopByDefault;
                         newClone.AllowDelayLoad = AllowDelayLoad;
                         newClone.ImportsHKX = ImportsHKX;
+                        newClone.DesLeftoverBytes = DesLeftoverBytes;
 
                         newClone.ImportHKXSourceAnimID = ImportHKXSourceAnimID;
 
@@ -87,6 +88,13 @@ namespace SoulsFormats
                     /// </summary>
                     public int ImportHKXSourceAnimID { get; set; } = 0;
 
+                    /// <summary>
+                    /// DES only: the bytes where later games keep the delay load flag and a pad byte.
+                    /// The exporter left stale memory there (values near the struct's own offset, 0xEEEF), so the
+                    /// flag is ignored for DES; they are kept only to write the file back as it was read.
+                    /// </summary>
+                    private ushort DesLeftoverBytes;
+
                     internal override void ReadInner(BinaryReaderEx br, TAEFormat format)
                     {
                         if (format == TAEFormat.DESR)
@@ -105,12 +113,17 @@ namespace SoulsFormats
                         {
                             IsLoopByDefault = br.ReadByte() != 0;
                             ImportsHKX = br.ReadByte() != 0;
-                            AllowDelayLoad = br.ReadByte() != 0;
 
                             if (format == TAEFormat.DES)
+                            {
                                 AllowDelayLoad = false;
-
-                            br.ReadByte();
+                                DesLeftoverBytes = br.ReadUInt16();
+                            }
+                            else
+                            {
+                                AllowDelayLoad = br.ReadByte() != 0;
+                                br.ReadByte();
+                            }
 
                             ImportHKXSourceAnimID = br.ReadInt32();
                         }
@@ -131,8 +144,16 @@ namespace SoulsFormats
                         {
                             bw.WriteBoolean(IsLoopByDefault);
                             bw.WriteBoolean(ImportsHKX);
-                            bw.WriteBoolean(format != TAEFormat.DES && AllowDelayLoad);
-                            bw.WriteByte(0);
+
+                            if (format == TAEFormat.DES)
+                            {
+                                bw.WriteUInt16(DesLeftoverBytes);
+                            }
+                            else
+                            {
+                                bw.WriteBoolean(AllowDelayLoad);
+                                bw.WriteByte(0);
+                            }
 
                             bw.WriteInt32(ImportHKXSourceAnimID);
                         }
@@ -329,7 +350,10 @@ namespace SoulsFormats
                                     // Read the space between the previous event's parameter start and the start of this event data.
                                     long gapBetweenEventParamOffsets = eventParameterOffsets[i] - eventParameterOffsets[i - 1];
                                     // Subtract to account for the current event's type and offset 
-                                    Events[i - 1].ReadParameters(br, (int)(gapBetweenEventParamOffsets - (br.VarintLong ? 16 : 8)));
+                                    // Less this event's data header: type and parameters offset, plus the unknown in
+                                    // the 64-bit formats; DES pads its header to 0x10 (type, offset, 0, 0)
+                                    int eventDataHeaderSize = br.VarintLong || format == TAEFormat.DES ? 16 : 8;
+                                    Events[i - 1].ReadParameters(br, (int)(gapBetweenEventParamOffsets - eventDataHeaderSize));
                                 }
                                 br.StepOut();
                             }
@@ -604,6 +628,10 @@ namespace SoulsFormats
                             bw.WriteVarint(0);
                     }
                 }
+
+                // DES aligns the name to 0x10; only ImportOtherAnim structs don't already end aligned
+                if (format == TAEFormat.DES)
+                    bw.Pad(0x10);
 
                 bw.FillVarint("AnimFileNameOffset", bw.Position);
                 if (!string.IsNullOrWhiteSpace(AnimFileName))

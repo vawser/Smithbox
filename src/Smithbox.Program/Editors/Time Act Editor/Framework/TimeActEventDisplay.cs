@@ -306,13 +306,13 @@ public class TimeActEventDisplay
 
             if (_project.VFS.FS.ReadFile(path) is { } data)
             {
-                using IBinder binder = _project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R
+                using IBinder binder = _project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES
                     ? BND3.Read(data)
                     : BND4.Read(data);
 
                 if (binder.Files.FirstOrDefault(f => f.Name.Contains(".flv", StringComparison.OrdinalIgnoreCase)) is { } file)
                 {
-                    FLVER2 flver = FLVER2.Read(file.Bytes);
+                    FLVER2 flver = StudioCore.Editors.ModelEditor.Flver0Converter.ReadEditorFlver(_project, file.Bytes);
                     ModelRig rig = ModelRig.FromFlver(flver);
 
                     foreach (FLVER.Dummy dummy in flver.Dummies)

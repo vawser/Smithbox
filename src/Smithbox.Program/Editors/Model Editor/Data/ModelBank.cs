@@ -461,6 +461,9 @@ public class ModelWrapper
 
                 ReadFile(filepath, filename, file.Bytes);
             }
+
+            // DES binders can name their model differently (am_f_0000_l holds AM_F_0000.flver, hd_f_9000 HD_F_0000.flver)
+            FLVER ??= Flver0Converter.ReadOnlyFlver(Parent.Project, binder);
         }
         catch (Exception e)
         {
@@ -532,7 +535,7 @@ public class ModelWrapper
         var fileData = Parent.TargetFS.ReadFile(Parent.Path);
         if (fileData != null)
         {
-            FLVER = FLVER2.Read(fileData.Value);
+            FLVER = Flver0Converter.ReadEditorFlver(Parent.Project, fileData.Value);
         }
     }
 
@@ -541,11 +544,11 @@ public class ModelWrapper
         // FLVER
         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
         {
-            if (filename == Name)
+            if (string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
-                    FLVER = FLVER2.Read(data);
+                    FLVER = Flver0Converter.ReadEditorFlver(Parent.Project, data);
                 }
                 catch (Exception e)
                 {
@@ -676,7 +679,7 @@ public class ModelWrapper
 
         try
         {
-            var data = FLVER.Write();
+            var data = Flver0Converter.WriteEditorFlver(Parent.Project, FLVER);
             Parent.Project.VFS.ProjectFS.WriteFile(containerPath, data);
 
             Smithbox.Log(this, LOC.Get("MODEL_Data_Write_FLVER_Log", containerPath));
@@ -720,12 +723,18 @@ public class ModelWrapper
 
             var isFilesWritten = true;
 
+            // The model the load fell back to when no file is named after the model (DES binders), as LoadFromStorage does
+            var hasNamedModel = binder.Files.Any(f =>
+                (f.Name.ToLower().Contains(".flver") || f.Name.ToLower().Contains(".flv")) &&
+                string.Equals(FilePathUtils.GetPureFilename(f.Name), Name, StringComparison.OrdinalIgnoreCase));
+            var fallbackModel = hasNamedModel ? null : Flver0Converter.GetOnlyFlverFile(binder);
+
             foreach (var file in binder.Files)
             {
                 var filename = FilePathUtils.GetPureFilename(file.Name);
                 var filepath = file.Name.ToLower();
 
-                if (!WriteFile(filepath, filename, file))
+                if (!WriteFile(filepath, filename, file, file == fallbackModel))
                     isFilesWritten = false;
             }
 
@@ -747,18 +756,18 @@ public class ModelWrapper
     /// Write the matching model data into the binder file. Returns false if the data failed to write.
     /// Files whose data was never loaded are left as they are.
     /// </summary>
-    public bool WriteFile(string filepath, string filename, BinderFile file)
+    public bool WriteFile(string filepath, string filename, BinderFile file, bool isFallbackModel = false)
     {
         var isWritten = true;
 
         // FLVER
         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
         {
-            if (filename == Name)
+            if (isFallbackModel || string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
-                    file.Bytes = FLVER.Write();
+                    file.Bytes = Flver0Converter.WriteEditorFlver(Parent.Project, FLVER);
 
                     Smithbox.Log(this, LOC.Get("MODEL_Data_Write_FLVER_Log", filepath));
                 }

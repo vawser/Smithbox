@@ -338,12 +338,6 @@ public class ModelEditorScreen : EditorScreen
     {
         var activeView = ViewHandler.ActiveView;
 
-        if (Project.Descriptor.ProjectType == ProjectType.DES)
-        {
-            Smithbox.Log(this, LOC.Get("MODEL_Editor_Invalid_Save_Project_Type_DES"), LogLevel.Warning);
-            return;
-        }
-
         if (activeView == null)
             return;
 
@@ -384,12 +378,6 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll(bool autoSave = false)
     {
-        if (Project.Descriptor.ProjectType == ProjectType.DES)
-        {
-            Smithbox.Log(this, LOC.Get("MODEL_Editor_Invalid_Save_Project_Type_DES"), LogLevel.Warning);
-            return;
-        }
-
         if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
             Project.Handler.ModelData.PrimaryBank.SaveAllModels();

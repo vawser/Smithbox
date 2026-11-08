@@ -588,7 +588,12 @@ namespace SoulsFormats
                     }
                     else if (member.Semantic == LayoutSemantic.UV)
                     {
-                        Vector3 uv = uvQueue.Dequeue() * uvFactor;
+                        // Float UVs are read unscaled, so they are written unscaled; only the integer types use the UV factor
+                        Vector3 uv = uvQueue.Dequeue();
+                        bool isFloat = member.Type == LayoutType.Float2 || member.Type == LayoutType.Float3 || member.Type == LayoutType.Float4;
+                        if (!isFloat)
+                            uv *= uvFactor;
+
                         if (member.Type == LayoutType.Float2)
                         {
                             bw.WriteSingle(uv.X);
@@ -603,7 +608,7 @@ namespace SoulsFormats
                             bw.WriteSingle(uv.X);
                             bw.WriteSingle(uv.Y);
 
-                            uv = uvQueue.Dequeue() * uvFactor;
+                            uv = uvQueue.Dequeue();
                             bw.WriteSingle(uv.X);
                             bw.WriteSingle(uv.Y);
                         }

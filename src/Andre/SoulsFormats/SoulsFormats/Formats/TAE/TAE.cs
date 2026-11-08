@@ -596,6 +596,10 @@ namespace SoulsFormats
 
 
 
+                // DES aligns the names to 0x10, as it does its other structs
+                if (Format == TAEFormat.DES && (!string.IsNullOrEmpty(SkeletonName) || !string.IsNullOrEmpty(SibName)))
+                    bw.Pad(0x10);
+
                 if (SkeletonName != null)
                 {
                     bw.FillVarint("SkeletonName", bw.Position);

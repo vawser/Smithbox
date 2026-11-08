@@ -208,6 +208,16 @@ namespace SoulsFormats
                     Textures[i].WriteStrings(bw, index, i, Unicode);
                 }
 
+                // Up to 0x10 a material has one layout and no layout header (every DeS model of those versions)
+                if (!HasLayoutHeader(version, Layouts.Count))
+                {
+                    bw.FillInt32($"LayoutHeaderOffset{index}", 0);
+                    bw.FillInt32($"LayoutsOffset{index}", (int)bw.Position);
+                    WriteLayout(bw, Layouts.Count > 0 ? Layouts[0] : new BufferLayout());
+                    bw.FillInt32($"MatOffsetDataLength{index}", (int)bw.Position - matNameOffset);
+                    return;
+                }
+
                 // Write Layout Header
                 bw.FillInt32($"LayoutHeaderOffset{index}", (int)bw.Position);
                 bw.WriteInt32(Layouts.Count);
@@ -226,20 +236,32 @@ namespace SoulsFormats
                 for (int i = 0; i < Layouts.Count; i++)
                 {
                     bw.FillInt32($"LayoutOffset_{index}_{i}", (int)bw.Position);
-                    bw.WriteUInt16((ushort)Layouts[i].Count);
-                    bw.WriteUInt16((ushort)Layouts[i].Size);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-
-                    int vertOffset = 0;
-                    foreach (var vertData in Layouts[i])
-                    {
-                        vertData.Write(bw, vertOffset, false);
-                        vertOffset += vertData.Size;
-                    }
+                    WriteLayout(bw, Layouts[i]);
                 }
                 bw.FillInt32($"MatOffsetDataLength{index}", (int)bw.Position - matNameOffset);
+            }
+
+            /// <summary>
+            /// Whether the material is written with a layout header listing its layouts.
+            /// Versions up to 0x10 have none; a material there with more than one layout still needs one, as the read supports it.
+            /// </summary>
+            internal static bool HasLayoutHeader(int version, int layoutCount)
+                => version > 0x10 || layoutCount > 1;
+
+            private static void WriteLayout(BinaryWriterEx bw, BufferLayout layout)
+            {
+                bw.WriteUInt16((ushort)layout.Count);
+                bw.WriteUInt16((ushort)layout.Size);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+
+                int vertOffset = 0;
+                foreach (var vertData in layout)
+                {
+                    vertData.Write(bw, vertOffset, false);
+                    vertOffset += vertData.Size;
+                }
             }
         }
     }

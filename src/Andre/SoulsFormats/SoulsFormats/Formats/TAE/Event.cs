@@ -452,7 +452,8 @@ namespace SoulsFormats
                 bw.FillVarint($"EventDataOffset{animIndex}:{eventIndex}", bw.Position);
                 bw.WriteInt32(Type);
 
-                if (format != TAE.TAEFormat.DS1)
+                // As the read: only the 64-bit formats have it (DES and DS1 go straight to the parameters offset)
+                if (bw.VarintLong)
                     bw.WriteInt32(Unk04);
 
                 bool isWeirdEventWithNoParamOffset = format == TAE.TAEFormat.SDT && Type == 943;

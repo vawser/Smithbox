@@ -42,8 +42,8 @@
             /// </summary>
             public Texture(Texture texture)
             {
-                texture.Path = Path;
-                texture.ParamName = ParamName;
+                Path = texture.Path;
+                ParamName = texture.ParamName;
             }
 
             /// <summary>
@@ -84,6 +84,13 @@
                     bw.WriteUTF16(Path, true);
                 else
                     bw.WriteShiftJIS(Path, true);
+                // Older models have no param name; the read keeps that as null and a zero offset
+                if (ParamName == null)
+                {
+                    bw.FillInt32($"Type_Offset{materialIndex}_{textureIndex}", 0);
+                    return;
+                }
+
                 bw.FillInt32($"Type_Offset{materialIndex}_{textureIndex}", (int)bw.Position);
                 if (useUnicode)
                     bw.WriteUTF16(ParamName, true);

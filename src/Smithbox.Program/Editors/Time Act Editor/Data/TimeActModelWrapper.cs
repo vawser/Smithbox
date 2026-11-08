@@ -79,6 +79,9 @@ public class TimeActModelWrapper
 
                 ReadFile(filepath, filename, file.Bytes);
             }
+
+            // DES binders can name their model differently (am_f_0000_l holds AM_F_0000.flver, hd_f_9000 HD_F_0000.flver)
+            FLVER ??= Flver0Converter.ReadOnlyFlver(Parent.Project, binder);
         }
         catch (Exception e)
         {
@@ -91,7 +94,7 @@ public class TimeActModelWrapper
         var fileData = Parent.TargetFS.ReadFile(Parent.Path);
         if (fileData != null)
         {
-            FLVER = FLVER2.Read(fileData.Value);
+            FLVER = Flver0Converter.ReadEditorFlver(Parent.Project, fileData.Value);
         }
     }
 
@@ -100,11 +103,11 @@ public class TimeActModelWrapper
         // FLVER
         if (filepath.Contains(".flver") || filepath.Contains(".flv"))
         {
-            if (filename == Name)
+            if (string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase))
             {
                 try
                 {
-                    FLVER = FLVER2.Read(data);
+                    FLVER = Flver0Converter.ReadEditorFlver(Parent.Project, data);
                 }
                 catch (Exception e)
                 {

@@ -324,7 +324,7 @@ public class ModelSelectionMenu
     {
         try
         {
-            SourceFlver = FLVER2.Read(fileData.Value);
+            SourceFlver = Flver0Converter.ReadEditorFlver(Project, fileData.Value);
 
             FlverPath = fileEntry.Path;
             FlverMeshSelection = new bool[SourceFlver.Meshes.Count];

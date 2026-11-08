@@ -164,18 +164,25 @@ namespace SoulsFormats
             bw.WriteVector3(Header.BoundingBoxMin);
             bw.WriteVector3(Header.BoundingBoxMax);
 
+            // Face counts, as the Demon's Souls files have them (checked against every DeS model):
+            // the first is strip faces without degenerate or restart triangles;
+            // the second is indices - 2 per mesh before 0x15 and strip faces with degenerates from 0x15
             int triCount = 0;
-            int indicesCount = 0;
-            bool includeDegenerateFaces = Header.Version >= 0x12 && Header.Version <= 0x14;
+            int totalFaceCount = 0;
             for (int i = 0; i < Meshes.Count; i++)
             {
-                triCount += Meshes[i].GetFaceCount(Header.Version, includeDegenerateFaces);
-                indicesCount += Meshes[i].Indices.Count;
+                Mesh mesh = Meshes[i];
+                triCount += mesh.GetFaceCount(Header.Version, false);
+                if (Header.Version >= 0x15)
+                    totalFaceCount += mesh.GetFaceCount(Header.Version, true);
+                else
+                    totalFaceCount += Math.Max(0, mesh.Indices.Count - 2);
             }
             bw.WriteInt32(triCount);
-            bw.WriteInt32(indicesCount); // Not technically correct, but should be valid for the buffer size
+            bw.WriteInt32(totalFaceCount);
 
-            byte vertexIndicesSize = 16;
+            // Keep the header's index size unless an index no longer fits in 16 bits
+            byte vertexIndicesSize = Header.VertexIndexSize == 32 ? (byte)32 : (byte)16;
             foreach (Mesh mesh in Meshes)
             {
                 vertexIndicesSize = (byte)Math.Max(vertexIndicesSize, mesh.GetVertexIndexSize());
@@ -183,8 +190,8 @@ namespace SoulsFormats
 
             bw.WriteByte(vertexIndicesSize);
             bw.WriteBoolean(Header.Unicode);
-            bw.WriteBoolean(Header.Unk4A > 0);
-            bw.WriteByte(0);
+            bw.WriteByte(Header.Unk4A);
+            bw.WriteByte(Header.Unk4B);
 
             bw.WriteInt32(Header.Unk4C);
 
@@ -208,7 +215,7 @@ namespace SoulsFormats
                 Nodes[i].Write(bw, i);
 
             for (int i = 0; i < Meshes.Count; i++)
-                Meshes[i].Write(bw, Materials[Meshes[i].MaterialIndex], Header.Version, i);
+                Meshes[i].Write(bw, Materials[Meshes[i].MaterialIndex], Header.Version, vertexIndicesSize, i);
 
             for (int i = 0; i < Materials.Count; i++)
                 Materials[i].WriteSubStructs(bw, Header.Unicode, i, Header.Version);
@@ -225,7 +232,7 @@ namespace SoulsFormats
 
             for (int i = 0; i < Meshes.Count; i++)
             {
-                Meshes[i].WriteVertexIndices(bw, Header.VertexIndexSize, dataOffset, i);
+                Meshes[i].WriteVertexIndices(bw, vertexIndicesSize, dataOffset, i);
                 bw.Pad(0x20);
                 Meshes[i].WriteVertexBufferData(bw, this, dataOffset, i);
                 bw.Pad(0x20);
