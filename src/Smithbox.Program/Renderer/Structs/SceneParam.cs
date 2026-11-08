@@ -207,6 +207,12 @@ public unsafe struct SceneParam
 
     /// <summary>The rain map's depth per meter of height</summary>
     public float RainDepthScale;
+
+    /// <summary>
+    ///     The clip round the camera: x is the radius, and the scene's geometry nearer the eye than it is dropped, so a
+    ///     view can be had through nearby walls. 0 for no clip, as in the shadow and rain views, which share the eye.
+    /// </summary>
+    public Vector4 CameraClip;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

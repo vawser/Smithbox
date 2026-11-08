@@ -25,6 +25,7 @@ layout(location = 0) in vec3 position;
 layout(location = 1) in ivec4 normal;
 layout(location = 0) out vec4 fsin_color;
 layout(location = 1) out uint fsin_entityid;
+layout(location = 8) out vec3 fsin_clipPos; // the world position, for CAMERA_CLIP
 
 // Stale or wrong instance data can ask for any bone, and reading past the end of the buffer loses the device
 mat4 ReadBone(uint index)
@@ -68,6 +69,7 @@ void main()
 {
 	mat4 w = idata[gl_InstanceIndex].world;
 	mat4 bone = GetBoneMatrix();
+	fsin_clipPos = vec3(w * bone * vec4(position, 1));
 	vec3 fsin_normal = normalize(mat3(idata[gl_InstanceIndex].materialID.z != 0u ? w * bone : w) * vec3(normal));
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
 	

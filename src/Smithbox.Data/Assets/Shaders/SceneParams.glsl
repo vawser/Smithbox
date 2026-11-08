@@ -116,6 +116,14 @@ struct sceneParams
 	float rainMapSize;       // texels across
 	float rainTexelSize;     // meters per texel
 	float rainDepthScale;    // depth per meter of height
+
+	// The clip round the camera, see SceneParam.CameraClip: fragments nearer the eye than this are dropped
+	vec4 cameraClip;         // x: the radius, 0 for no clip
 };
+
+
+// Drops a fragment within the camera clip radius of the eye. A macro, so it reads the including shader's own
+// sceneparam block, which is declared after this file is included.
+#define CAMERA_CLIP(worldPos) if (sceneparam.cameraClip.x > 0.0 && distance((worldPos), sceneparam.eye.xyz) < sceneparam.cameraClip.x) discard
 
 #endif

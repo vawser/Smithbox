@@ -117,6 +117,30 @@
       "Text": "Set the maximum distance at which entities will be rendered within the viewport."
     },
     {
+      "Key": "VIEWPORT_Menubar_Camera_Clip",
+      "Text": "Camera Clip"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_TT",
+      "Text": "Hide the geometry within a radius around the camera, to see through nearby walls and ceilings."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_Enabled",
+      "Text": "Clip Around Camera"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_Enabled_TT",
+      "Text": "If enabled, models, collision and navmeshes within the clip radius of the camera are not drawn and cannot be selected by clicking."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_Radius",
+      "Text": "Clip Radius"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_Radius_TT",
+      "Text": "The distance from the camera, in meters, within which geometry is clipped."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Camera_FOV",
       "Text": "Camera Field of View"
     },

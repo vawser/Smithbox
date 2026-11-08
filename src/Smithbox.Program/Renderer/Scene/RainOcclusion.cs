@@ -226,6 +226,7 @@ public class RainOcclusion
         rain.Projection = PendingProjection;
         rain.ShadowTexture = 0;
         rain.RainTexture = 0;
+        rain.CameraClip = Vector4.Zero;
 
         cl.UpdateBuffer(ParamBuffer, 0, ref rain, (uint)sizeof(SceneParam));
     }

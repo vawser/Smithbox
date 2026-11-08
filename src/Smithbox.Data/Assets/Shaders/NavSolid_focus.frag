@@ -6,6 +6,7 @@ layout(location = 0) in vec3 normal;
 layout(location = 1) in vec4 color;
 layout(location = 2) in vec3 view;
 layout(location = 3) flat in uint fsin_entityid;
+layout(location = 8) in vec3 fsin_clipPos;
 layout(location = 4) in vec2 fsin_barycentric;
 layout(location = 5) in float fsin_worldY;
 layout(location = 6) flat in uint fsin_volumeFlags;
@@ -138,6 +139,8 @@ bool NavVolumeClip()
 
 void main()
 {
+	CAMERA_CLIP(fsin_clipPos);
+
 	// Comes first, so the hidden parts of a nav volume can't be picked
 	bool crossSection = NavVolumeClip();
 

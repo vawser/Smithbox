@@ -7,6 +7,7 @@
 
 - Params:
     - Improve how Table params are handled
+    - Make Duplicate select the new row (check if this already occurs)
 
 - Tools:
     - Weapon Generator:

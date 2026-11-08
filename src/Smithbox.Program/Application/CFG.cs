@@ -1313,6 +1313,10 @@ public class CFG
     public float Viewport_Perspective_Near_Clip { get; set; } = 0.1f;
     public float Viewport_Perspective_Far_Clip { get; set; } = 50000.0f;
 
+    // The clip round the camera, see SceneParam.CameraClip
+    public bool Viewport_Camera_Clip_Enabled { get; set; } = false;
+    public float Viewport_Camera_Clip_Radius { get; set; } = 5.0f;
+
     public float Viewport_Orthographic_Near_Clip { get; set; } = -50000.0f;
     public float Viewport_Orthographic_Far_Clip { get; set; } = 50000.0f;
 

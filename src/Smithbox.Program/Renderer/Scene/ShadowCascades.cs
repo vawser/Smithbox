@@ -264,6 +264,7 @@ public class ShadowCascades
             cascade.View = Views[i];
             cascade.Projection = Projections[i];
             cascade.ShadowTexture = 0;
+            cascade.CameraClip = Vector4.Zero;
 
             cl.UpdateBuffer(ParamBuffers[i], 0, ref cascade, (uint)sizeof(SceneParam));
         }

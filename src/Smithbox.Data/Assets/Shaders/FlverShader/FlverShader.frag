@@ -1814,6 +1814,9 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 
 void main()
 {
+	// Before the outline, so a clipped part loses its outline as well
+	CAMERA_CLIP(fsin_worldpos);
+
 #ifdef OUTLINE
 	fsout_color = sceneparam.outlineColor;
 	if (c_linearOutput)

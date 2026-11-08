@@ -677,6 +677,9 @@ public class SceneRenderPipeline
             SceneParams.RainTexelSize = RainOcclusion.TexelSize;
             SceneParams.RainDepthScale = RainOcclusion.DepthScale;
 
+            SceneParams.CameraClip = new Vector4(
+                CFG.Current.Viewport_Camera_Clip_Enabled ? CFG.Current.Viewport_Camera_Clip_Radius : 0.0f, 0.0f, 0.0f, 0.0f);
+
             SceneParams.FogVolumeTexture = fogVolume;
             SceneParams.FogNear = fog.DepthRange.X;
             SceneParams.FogLogRatio = fog.DepthRange.Z;

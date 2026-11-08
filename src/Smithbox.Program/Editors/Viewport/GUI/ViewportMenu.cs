@@ -281,6 +281,28 @@ public class ViewportMenu
                 GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Scaling_TT"));
             }
 
+            // Camera Clip: drops geometry within a radius of the camera, in every view mode
+            GUI.Spacer();
+            GUI.SimpleHeader(
+                LOC.Get("VIEWPORT_Menubar_Camera_Clip"),
+                LOC.Get("VIEWPORT_Menubar_Camera_Clip_TT"));
+
+            var clipEnabled = CFG.Current.Viewport_Camera_Clip_Enabled;
+            if (ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled")}##cameraClipEnabled", ref clipEnabled))
+            {
+                CFG.Current.Viewport_Camera_Clip_Enabled = clipEnabled;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled_TT"));
+
+            var clipRadius = CFG.Current.Viewport_Camera_Clip_Radius;
+            if (ImGui.SliderFloat(
+                $"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius")}##cameraClipRadius",
+                ref clipRadius, 0.1f, 1000.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
+            {
+                CFG.Current.Viewport_Camera_Clip_Radius = clipRadius;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius_TT"));
+
             ImGui.Separator();
 
             if (ImGui.Selectable($"{LOC.Get("VIEWPORT_Menubar_Action_Reset_Camera_Settings")}##resetAction"))
@@ -334,6 +356,9 @@ public class ViewportMenu
 
         CFG.Current.Viewport_Perspective_Near_Clip = CFG.Default.Viewport_Perspective_Near_Clip;
         CFG.Current.Viewport_Perspective_Far_Clip = CFG.Default.Viewport_Perspective_Far_Clip;
+
+        CFG.Current.Viewport_Camera_Clip_Enabled = CFG.Default.Viewport_Camera_Clip_Enabled;
+        CFG.Current.Viewport_Camera_Clip_Radius = CFG.Default.Viewport_Camera_Clip_Radius;
 
         CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
         CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;

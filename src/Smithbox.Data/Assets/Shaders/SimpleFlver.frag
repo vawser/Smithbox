@@ -8,6 +8,7 @@ layout(location = 0) out vec4 fsout_color;
 // True when drawn into the HDR scene target, see SceneTarget.cs
 layout (constant_id = 97) const bool c_linearOutput = false;
 layout(location = 1) flat in uint fsin_entityid;
+layout(location = 8) in vec3 fsin_clipPos;
 
 layout (constant_id = 99) const bool c_picking = false;
 
@@ -69,6 +70,8 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 
 void main()
 {
+	CAMERA_CLIP(fsin_clipPos);
+
     if (c_picking)
 	{
 		ivec2 coord = ivec2(gl_FragCoord.xy - vec2(0.49, 0.49));

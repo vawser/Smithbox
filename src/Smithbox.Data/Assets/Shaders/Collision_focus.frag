@@ -6,6 +6,7 @@ layout(location = 0) in vec3 normal;
 layout(location = 1) in vec4 color;
 layout(location = 2) in vec3 view;
 layout(location = 3) flat in uint fsin_entityid;
+layout(location = 8) in vec3 fsin_clipPos;
 layout(location = 0) out vec4 fsout_color;
 
 // True when drawn into the HDR scene target, see SceneTarget.cs
@@ -94,6 +95,8 @@ vec3 FocusGrey(vec3 color)
 
 void main()
 {
+	CAMERA_CLIP(fsin_clipPos);
+
 	// Picking comes first, so the gaps in the dither can still be clicked
 	if (c_picking)
 	{

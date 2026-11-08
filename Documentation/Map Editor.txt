@@ -6,12 +6,11 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - AEP rendering needs to carry in the asset collision too
 
-- Create:
-    - Check existing correctness
-    - Fix NR create
-
 
 - Wireframe mode
+
+- Move Map Content Groups to the Tools window (rename it to Selection Groups)
+    - Add option for a group to act as one selection when any are selected (i.e. for outline, translate, rotate)
         
 - Near Plane Clipping:
     - Don't render triangles with X distance of the camera

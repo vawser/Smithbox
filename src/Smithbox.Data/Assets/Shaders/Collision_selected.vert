@@ -18,11 +18,13 @@ layout(location = 0) out vec3 fsin_normal;
 layout(location = 1) out vec4 fsin_color;
 layout(location = 2) out vec3 fsin_view;
 layout(location = 3) out uint fsin_entityid;
+layout(location = 8) out vec3 fsin_clipPos; // the world position, for CAMERA_CLIP
 layout(location = 4) out vec2 fsin_barycentric;
 
 void main()
 {
 	mat4 w = idata[gl_InstanceIndex].world;
+	fsin_clipPos = vec3(w * vec4(position, 1));
 	fsin_normal = mat3(w) * vec3((vec3(normal) / 255.0));
 	fsin_color = vec4(color / 255.0);
 	fsin_barycentric = vec2(barycentric.xy);
