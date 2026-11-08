@@ -17,8 +17,12 @@ internal static class StaticResourceCache
 
     private static readonly ConcurrentDictionary<ResourceSetDescription, ResourceSet> s_resourceSets = new();
 
+    // Set 0, the view's own data: binding 0 the scene params (SceneParam), binding 1 its lighting sets
+    // (SceneLightingData, entry 0 the view's own lighting), see SceneParams.glsl and SceneLighting.glsl
     public static readonly ResourceLayoutDescription SceneParamLayoutDescription = new(
         new ResourceLayoutElementDescription("SceneParam", VkDescriptorType.UniformBuffer,
+            VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment),
+        new ResourceLayoutElementDescription("SceneLighting", VkDescriptorType.StorageBuffer,
             VkShaderStageFlags.Vertex | VkShaderStageFlags.Fragment));
 
     public static readonly ResourceLayoutDescription PickingResultDescription = new(

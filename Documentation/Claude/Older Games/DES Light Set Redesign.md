@@ -154,6 +154,43 @@ which contain the struct name.
 - **Rule from now on:** a field added to `SceneParam.cs` goes in `SceneParams.glsl` once, keeping the 16-byte rows.
   Shaders read it without any copying.
 
+### Phase 2 as built (2026-11-08; checked in the app by the user: lighting looks the same)
+
+The plan said `set 4, binding 1`; it went to **set 0, binding 1** instead. The lighting is per view, not global:
+- Model Light1 turns with the camera's yaw.
+- The Model Editor's viewport uses the viewport sun, while the Map Editor uses the GPARAMs.
+
+Set 0 is already each pipeline's own set, and every scene batch binds it (`SceneRenderPipeline.BindResources`), so
+each view gets its own buffer. A single table in the shared material buffer, as the old `LightSetTable` was, can't
+do that.
+
+- **`SceneLightingData`** (`Renderer/Structs/SceneLighting.cs`, 304 bytes): the sun (direction, colour, highlights),
+  the hemisphere, the four model lights and the model hemisphere. These are exactly the fields a per-part set
+  overrides. Its GLSL twin is `sceneLighting` in `Shaders/SceneLighting.glsl` (std430, readonly), read as
+  `LIGHTING.<field>`, where `LIGHTING` is `lightingSets[LIGHTING_SET_INDEX]` and the index is `0u` for now.
+- **`SceneRenderPipeline.SceneLightingBuffer`:** 128 entries (38,912 bytes), zeroed at creation. Only entry 0, the
+  view's own lighting, is uploaded each frame: the map's sun, hemisphere and model lights when the GPARAMs light the
+  scene, otherwise the viewport sun (`ViewportSunDirection`/`ViewportSunColor`, now pipeline fields instead of
+  `SceneParam` fields).
+- **The set-0 layout** (`StaticResourceCache.SceneParamLayoutDescription`) gained the storage buffer. All four places
+  that create set-0 resource sets pass it: the pipeline's main and overlay sets, `ShadowCascades` and `RainOcclusion`.
+  The fog passes bind the pipeline's own set.
+- **Removed from `SceneParam`/`sceneParams`** (now 1968 bytes, down from 2272): `LightDirection`, `SunColor`,
+  `SunSpecColor`, `HemiUp`, `HemiDown`, `ModelLight0-3`, `ModelHemiUp`, `ModelHemiDown`. Kept, as scene-wide:
+  `MapLightingFlags`, `EnvMapScale`, `EnvMapSaturate`.
+- **Shader reads:**
+  - `FlverShader.frag`'s `SunTravel`, `SunColor`, `SunSpecColor` and `Hemisphere` read `LIGHTING`.
+  - `ModelLight(i)`, which returned a struct, is now `ModelLightDirection`/`Color`/`SpecColor(i)`, and its loop reads
+    the fields.
+  - `FogVolume.frag` reads `LIGHTING.sun.direction`.
+  - No shader copies a lighting struct out of the buffer.
+- **The checks** (`SceneParamsAudit --csharp`):
+  - `SceneParam`/`sceneParams` and `SceneLightingData`/`sceneLighting` agree. Every GLSL member starts where a C#
+    field does, and the sizes match.
+  - The compiled `.spv` offsets match the computed layouts in all 62 shaders with `sceneParams` and all 17 with
+    `sceneLighting`.
+- Between phases the user removed `FlverBB.*` and `FlverDS3.*`, the dead shaders.
+
 ### Phased plan
 
 | Phase | Work | Check |

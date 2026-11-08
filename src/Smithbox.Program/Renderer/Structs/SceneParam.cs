@@ -9,7 +9,9 @@ public unsafe struct SceneParam
     public Matrix4x4 Projection;
     public Matrix4x4 View;
     public Vector4 EyePosition;
-    public Vector4 LightDirection;
+
+    // The sun, hemisphere and model lights are in SceneLightingData (set 0, binding 1), not here
+
     public fixed int CursorPosition[4];
     public uint EnvMap;
     public float AmbientLightMult;
@@ -30,9 +32,6 @@ public unsafe struct SceneParam
 
     /// <summary>How many of <see cref="Lights" /> are in use</summary>
     public uint LightCount;
-
-    /// <summary>Color (rgb) and intensity (a) of the sun, whose direction is <see cref="LightDirection" /></summary>
-    public Vector4 SunColor;
 
     /// <summary>
     ///     Up to <see cref="SceneLightList.MaxLights" /> lights, each <see cref="SceneLightData.FloatCount" /> floats
@@ -85,16 +84,6 @@ public unsafe struct SceneParam
     /// </summary>
     public uint MapLightingFlags;
 
-    /// <summary>
-    ///     Color (rgb) and intensity (a) of the sun's highlights. The same as <see cref="SunColor" /> unless the map's
-    ///     GPARAM gives its own.
-    /// </summary>
-    public Vector4 SunSpecColor;
-
-    /// <summary>The GPARAM's hemisphere light from above and from below, rgb already multiplied by intensity and exposure</summary>
-    public Vector4 HemiUp;
-    public Vector4 HemiDown;
-
     /// <summary>The GPARAM's EnvMapColorConvert scale for reflections, rgb already multiplied by w</summary>
     public Vector4 EnvMapScale;
 
@@ -105,19 +94,6 @@ public unsafe struct SceneParam
     public float MapLightingPad0;
     public float MapLightingPad1;
     public float MapLightingPad2;
-
-    /// <summary>
-    ///     The model set of the map's GPARAM LightSet, which lights characters when <see cref="MapLightingFlags" />
-    ///     has 4: its sun, then Light1, LocalLight1 and LocalLight2. Lights that are off have an intensity of 0.
-    /// </summary>
-    public MapDirectionalLightData ModelLight0;
-    public MapDirectionalLightData ModelLight1;
-    public MapDirectionalLightData ModelLight2;
-    public MapDirectionalLightData ModelLight3;
-
-    /// <summary>The model set's hemisphere light, as <see cref="HemiUp" /> and <see cref="HemiDown" /></summary>
-    public Vector4 ModelHemiUp;
-    public Vector4 ModelHemiDown;
 
     /// <summary>The first entry of <see cref="SceneRenderer.MapLights" /> in the material buffer</summary>
     public uint MapLightStart;

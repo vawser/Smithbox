@@ -29,7 +29,7 @@ struct sceneParams
 	mat4 projection;
 	mat4 view;
 	vec4 eye;
-	vec4 lightDirection;
+	// The sun, hemisphere and model lights are in the lighting sets, see SceneLighting.glsl
 	ivec4 curserPosition;
 	uint envmap;
 
@@ -47,7 +47,6 @@ struct sceneParams
 	float ditherOpacity;
 
 	uint lightCount;
-	vec4 sunColor;       // rgb: color, a: intensity
 	sceneLight lights[MAX_SCENE_LIGHTS];
 
 	float materialTime;
@@ -66,20 +65,11 @@ struct sceneParams
 	float irradianceVolumeExposure; // scales the volumes' light to the viewport's
 	uint irradianceVolumeFlags;     // 1: scale reflections by the volumes' light
 
-	uint mapLightingFlags;          // 1: lit by the map's GPARAMs, 2: the hemisphere adds to the volumes' light
-	vec4 sunSpecColor;              // the sun's highlights, rgb: color, a: intensity
+	uint mapLightingFlags;          // 1: lit by the map's GPARAMs, 2: the hemisphere adds to the volumes' light,
+	                                // 4: characters take the model set (SceneLighting.glsl)
 
-	// The map's GPARAM hemisphere light, rgb already multiplied by intensity and exposure
-	vec4 hemiUp;
-	vec4 hemiDown;
 	vec4 envMapScale;               // reflections' color scale, rgb
 	float envMapSaturate;           // reflections' saturation, 0 grey, 1 unchanged
-
-	// The model set of the map's GPARAM LightSet, for characters when mapLightingFlags has 4: its sun, Light1,
-	// LocalLight1 and LocalLight2, and its hemisphere
-	mapDirectionalLight modelLights[4];
-	vec4 modelHemiUp;
-	vec4 modelHemiDown;
 
 	// The map's lights near the camera: entries of maplightdata, see SceneLightTable
 	uint mapLightStart;

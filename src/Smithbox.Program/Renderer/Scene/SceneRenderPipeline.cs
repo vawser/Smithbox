@@ -87,6 +87,23 @@ public class SceneRenderPipeline
 
     public SceneParam SceneParams;
 
+    /// <summary>
+    ///     This view's lighting sets, read at set 0, binding 1 beside the scene params: entry 0 is the view's own
+    ///     lighting (<see cref="SceneLighting" />), the rest are for per-part sets. One per pipeline, as the lighting
+    ///     differs per view: the map's GPARAMs or the viewport's sun, and lights that turn with the camera.
+    /// </summary>
+    public DeviceBuffer SceneLightingBuffer { get; }
+
+    /// <summary>Entry 0 of <see cref="SceneLightingBuffer" /> as last uploaded</summary>
+    public SceneLightingData SceneLighting;
+
+    /// <summary>
+    ///     The viewport's own sun, from the Viewport Rendering tool: its direction (the way the light travels) and
+    ///     colour with intensity in w. The scene is lit by it when the map's GPARAMs don't light it.
+    /// </summary>
+    public Vector4 ViewportSunDirection = new(1.0f, -0.5f, 0.0f, 0.0f);
+    public Vector4 ViewportSunColor = new(1.0f, 1.0f, 1.0f, 1.0f);
+
     // Picking Results
     public DeviceBuffer PickingResultsBuffer { get; }
     public ResourceSet PickingResultResourceSet { get; }
@@ -237,7 +254,6 @@ public class SceneRenderPipeline
         SceneParams.Projection = ViewportUtils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
         SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f), Vector3.UnitY);
         SceneParams.EyePosition = new Vector4(0.0f, 2.0f, 0.0f, 0.0f);
-        SceneParams.LightDirection = new Vector4(1.0f, -0.5f, 0.0f, 0.0f);
         SceneParams.EnvMap = EnvMapTexture;
         SceneParams.CursorPosition[0] = 0;
         SceneParams.CursorPosition[1] = 0;
@@ -255,22 +271,31 @@ public class SceneRenderPipeline
         SceneParams.EnableDithering = 1;
         SceneParams.EnableTinting = 1;
         SceneParams.DitherOpacity = 0.5f;
-        SceneParams.SunColor = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
-        SceneParams.SunSpecColor = SceneParams.SunColor;
         SceneParams.LightCount = 0;
         SceneParams.CollisionOpacity = 1.0f;
 
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
 
+        // The view's lighting sets, all entries zeroed, then entry 0 lit by the viewport's sun until the first frame
+        SceneLightingBuffer = factory.CreateBuffer(new BufferDescription(
+            (uint)(SceneLightingData.Size * SceneLightingData.MaxEntries),
+            VkBufferUsageFlags.StorageBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
+        SceneLighting = ViewportLighting();
+        var initialLighting = new SceneLightingData[SceneLightingData.MaxEntries];
+        initialLighting[0] = SceneLighting;
+        device.UpdateBuffer(SceneLightingBuffer, 0, initialLighting);
+
         ResourceLayout sceneParamLayout = StaticResourceCache.GetResourceLayout(device.ResourceFactory,StaticResourceCache.SceneParamLayoutDescription);
 
-        SceneParamResourceSet = StaticResourceCache.GetResourceSet(device.ResourceFactory, new ResourceSetDescription(sceneParamLayout, SceneParamBuffer));
+        SceneParamResourceSet = StaticResourceCache.GetResourceSet(device.ResourceFactory,
+            new ResourceSetDescription(sceneParamLayout, SceneParamBuffer, SceneLightingBuffer));
 
         // The overlays' copy, which differs in the cursor: they are drawn on the swapchain, and the scene in its target
         OverlayParamBuffer = factory.CreateBuffer(
             new BufferDescription((uint)sizeof(SceneParam), VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0));
         device.UpdateBuffer(OverlayParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
-        OverlayParamResourceSet = factory.CreateResourceSet(new ResourceSetDescription(sceneParamLayout, OverlayParamBuffer));
+        OverlayParamResourceSet = factory.CreateResourceSet(
+            new ResourceSetDescription(sceneParamLayout, OverlayParamBuffer, SceneLightingBuffer));
 
         // Setup picking uniform buffer
         PickingResultsBuffer = factory.CreateBuffer(
@@ -399,8 +424,8 @@ public class SceneRenderPipeline
         // viewport shares them. Set before the sun is read for the shadows below.
         var lightDirection = CFG.Current.Viewport_Scene_Light_Direction;
         var sunColor = CFG.Current.Viewport_Scene_Sun_Color;
-        SceneParams.LightDirection = new Vector4(lightDirection, 0.0f);
-        SceneParams.SunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity);
+        ViewportSunDirection = new Vector4(lightDirection, 0.0f);
+        ViewportSunColor = new Vector4(sunColor, CFG.Current.Viewport_Scene_Sun_Intensity);
         SceneParams.DirectLightMult = CFG.Current.Viewport_Scene_Direct_Light_Mult;
         SceneParams.IndirectLightMult = CFG.Current.Viewport_Scene_Indirect_Light_Mult;
         SceneParams.SceneBrightness = CFG.Current.Viewport_Scene_Brightness;
@@ -528,8 +553,8 @@ public class SceneRenderPipeline
         }
 
         // The cascades follow the sun the shaders light with, and the GPARAM's Shadows group
-        var sunDirection = mapLighting != null ? mapLightDirection : SceneParams.LightDirection;
-        var sunIntensity = mapLighting != null ? mapSunColor.W : SceneParams.SunColor.W;
+        var sunDirection = mapLighting != null ? mapLightDirection : ViewportSunDirection;
+        var sunIntensity = mapLighting != null ? mapSunColor.W : ViewportSunColor.W;
         var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && gameMode;
 
         // Demon's Souls casts its shadows along a light of their own (ShadowBank), not the sun
@@ -623,17 +648,25 @@ public class SceneRenderPipeline
             }
 
             SceneParams.MapLightingFlags = mapLightingFlags;
-            SceneParams.SunSpecColor = SceneParams.SunColor;
-            SceneParams.HemiUp = mapHemiUp;
-            SceneParams.HemiDown = mapHemiDown;
             SceneParams.EnvMapScale = mapEnvMapScale;
             SceneParams.EnvMapSaturate = mapEnvMapSaturate;
-            SceneParams.ModelLight0 = mapModelLights?[0] ?? default;
-            SceneParams.ModelLight1 = mapModelLights?[1] ?? default;
-            SceneParams.ModelLight2 = mapModelLights?[2] ?? default;
-            SceneParams.ModelLight3 = mapModelLights?[3] ?? default;
-            SceneParams.ModelHemiUp = mapModelHemiUp;
-            SceneParams.ModelHemiDown = mapModelHemiDown;
+
+            // The view's own lighting, entry 0 of the lighting sets: the map's sun where its GPARAMs light the
+            // scene, otherwise the viewport's, whose highlights take its own colour
+            SceneLighting = new SceneLightingData
+            {
+                Sun = mapLighting != null
+                    ? new MapDirectionalLightData { Direction = mapLightDirection, Color = mapSunColor, SpecColor = mapSunSpecColor }
+                    : new MapDirectionalLightData { Direction = ViewportSunDirection, Color = ViewportSunColor, SpecColor = ViewportSunColor },
+                HemiUp = mapHemiUp,
+                HemiDown = mapHemiDown,
+                ModelLight0 = mapModelLights?[0] ?? default,
+                ModelLight1 = mapModelLights?[1] ?? default,
+                ModelLight2 = mapModelLights?[2] ?? default,
+                ModelLight3 = mapModelLights?[3] ?? default,
+                ModelHemiUp = mapModelHemiUp,
+                ModelHemiDown = mapModelHemiDown
+            };
 
             SceneParams.ShadowMatrix0 = shadowParams.Matrix0;
             SceneParams.ShadowMatrix1 = shadowParams.Matrix1;
@@ -676,17 +709,13 @@ public class SceneRenderPipeline
             SceneParams.FogOpposite = fog.Opposite;
             SceneParams.FogSun = fog.Sun;
 
-            // A copy, so the viewport's own sun stays in SceneParams for its sliders
             var uploaded = SceneParams;
 
-            if (mapLighting != null)
-            {
-                uploaded.LightDirection = mapLightDirection;
-                uploaded.SunColor = mapSunColor;
-                uploaded.SunSpecColor = mapSunSpecColor;
-            }
-
             cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
+
+            // Entry 0 only; the per-part sets after it are not filled yet
+            var lighting = SceneLighting;
+            cl.UpdateBuffer(SceneLightingBuffer, 0, ref lighting, (uint)SceneLightingData.Size);
             Shadows?.Upload(cl, uploaded);
             Rain?.Upload(cl, uploaded);
 
@@ -712,6 +741,18 @@ public class SceneRenderPipeline
             Direction = new Vector4(GparamLighting.AngleToDirection(angle), 0.0f),
             Color = new Vector4(light.Diffuse.X, light.Diffuse.Y, light.Diffuse.Z, light.Diffuse.W * intensity),
             SpecColor = new Vector4(light.Specular.X, light.Specular.Y, light.Specular.Z, light.Specular.W * intensity)
+        };
+    }
+
+    /// <summary>The view lit by the viewport's own sun alone, without the map's hemisphere or model lights</summary>
+    private SceneLightingData ViewportLighting()
+    {
+        return new SceneLightingData
+        {
+            Sun = new MapDirectionalLightData
+            {
+                Direction = ViewportSunDirection, Color = ViewportSunColor, SpecColor = ViewportSunColor
+            }
         };
     }
 

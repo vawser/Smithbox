@@ -71,7 +71,7 @@ public class ShadowCascades
             {
                 IsOffscreen = true,
                 SceneParamSet = device.ResourceFactory.CreateResourceSet(
-                    new ResourceSetDescription(sceneParamLayout, ParamBuffers[i]))
+                    new ResourceSetDescription(sceneParamLayout, ParamBuffers[i], pipeline.SceneLightingBuffer))
             };
             Queues[i].SetPredrawSetupAction((d, cl) => BeginCascade(cl, cascade));
             SceneRenderer.RegisterRenderQueue(Queues[i]);

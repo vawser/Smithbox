@@ -21,7 +21,7 @@ public enum SceneLightType
 
 /// <summary>
 ///     A light in a <see cref="RenderScene" />, in world space. The scene's sun (see
-///     <see cref="SceneParam.LightDirection" />) is always present; these are in addition to it.
+///     <see cref="SceneLightingData.Sun" />) is always present; these are in addition to it.
 ///     Lights can be changed at any time, they are read once per frame.
 /// </summary>
 public class SceneLight

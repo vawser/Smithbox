@@ -103,7 +103,7 @@ public class RainOcclusion
         {
             IsOffscreen = true,
             SceneParamSet = device.ResourceFactory.CreateResourceSet(
-                new ResourceSetDescription(sceneParamLayout, ParamBuffer))
+                new ResourceSetDescription(sceneParamLayout, ParamBuffer, pipeline.SceneLightingBuffer))
         };
         Queue.SetPredrawSetupAction((d, cl) => Begin(cl));
         SceneRenderer.RegisterRenderQueue(Queue);

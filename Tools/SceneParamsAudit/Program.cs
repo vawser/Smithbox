@@ -16,6 +16,12 @@ if (args.Contains("--spirv"))
     SpirvCheck.Run(shadersDir);
     return;
 }
+
+if (args.Contains("--csharp"))
+{
+    CSharpCheck.Run(shadersDir);
+    return;
+}
 var canonicalPath = Path.Combine(shadersDir, "FlverShader", "FlverShader.frag");
 var includePath = Path.Combine(shadersDir, "SceneParams.glsl");
 
@@ -433,8 +439,8 @@ static class SpirvCheck
         Console.WriteLine(sb.ToString());
     }
 
-    // The members of the struct type named sceneParams, with their Offset decorations
-    static List<(string Name, int Offset)> Members(byte[] bytes)
+    // The members of the struct type named sceneParams (or structName), with their Offset decorations
+    public static List<(string Name, int Offset)> Members(byte[] bytes, string structName = "sceneParams")
     {
         if (BitConverter.ToUInt32(bytes, 0) != 0x07230203)
             return null;
@@ -451,7 +457,7 @@ static class SpirvCheck
             var op = words[i] & 0xFFFF;
             if (count == 0)
                 break;
-            if (op == 5 && Str(words, i + 2, count - 2) == "sceneParams")
+            if (op == 5 && Str(words, i + 2, count - 2) == structName)
                 typeId = words[i + 1];
             else if (op == 6)
                 names[(words[i + 1], words[i + 2])] = Str(words, i + 3, count - 3);
@@ -491,5 +497,139 @@ static class SpirvCheck
         p.StandardOutput.BaseStream.CopyTo(ms);
         p.WaitForExit();
         return p.ExitCode == 0 ? ms.ToArray() : null;
+    }
+}
+
+// --csharp: the C# structs uploaded to the GPU against the GLSL structs they fill. Every GLSL member must start where
+// a C# field starts, and the sizes must agree once rounded to 16 bytes. Pairs: SceneParam.cs / SceneParams.glsl
+// (std140) and SceneLighting.cs / SceneLighting.glsl (std430; its members are whole 16 byte rows, so std140 agrees).
+static class CSharpCheck
+{
+    public static void Run(string shadersDir)
+    {
+        var repo = Path.GetFullPath(Path.Combine(shadersDir, "..", "..", ".."));
+        var structsDir = Path.Combine(repo, "Smithbox.Program", "Renderer", "Structs");
+
+        var glsl = File.ReadAllText(Path.Combine(shadersDir, "SceneParams.glsl")) + "\n" +
+                   File.ReadAllText(Path.Combine(shadersDir, "SceneLighting.glsl"));
+        var structs = new Dictionary<string, (int Size, int Align)>();
+        foreach (var helper in new[] { "sceneLight", "mapDirectionalLight" })
+        {
+            var l = Layout.Compute(Block.Find(glsl, helper).Members, structs);
+            structs[helper] = (Layout.RoundUp(l.Size, 16), 16);
+        }
+
+        var ok = true;
+        ok &= Compare(glsl, "sceneParams", Path.Combine(structsDir, "SceneParam.cs"), "SceneParam", structs);
+        ok &= Compare(glsl, "sceneLighting", Path.Combine(structsDir, "SceneLighting.cs"), "SceneLightingData", structs);
+
+        // And what the compilers emitted: every compiled shader's offsets against the computed layout
+        foreach (var structName in new[] { "sceneParams", "sceneLighting" })
+        {
+            var expected = Layout.Compute(Block.Find(glsl, structName).Members, structs).Fields
+                .ToDictionary(f => f.Name, f => f.Offset);
+            int checkedFiles = 0, bad = 0;
+            foreach (var spv in Directory.EnumerateFiles(shadersDir, "*.spv", SearchOption.AllDirectories))
+            {
+                var members = SpirvCheck.Members(File.ReadAllBytes(spv), structName);
+                if (members == null)
+                    continue;
+                checkedFiles++;
+                foreach (var (name, offset) in members)
+                {
+                    if (!expected.TryGetValue(name, out var e) || e != offset)
+                    {
+                        bad++;
+                        Console.WriteLine($"  {Path.GetFileName(spv)}: {structName}.{name} at {offset}, expected {(expected.ContainsKey(name) ? e : "no such member")}");
+                    }
+                }
+            }
+            Console.WriteLine($"SPIR-V {structName}: {checkedFiles} shaders, {bad} mismatches");
+            ok &= bad == 0;
+        }
+
+        Console.WriteLine(ok ? "C# and GLSL layouts agree." : "LAYOUT MISMATCH");
+        Environment.ExitCode = ok ? 0 : 1;
+    }
+
+    static bool Compare(string glsl, string glslName, string csPath, string csName, Dictionary<string, (int, int)> structs)
+    {
+        var g = Layout.Compute(Block.Find(glsl, glslName).Members, structs);
+        var cs = CSharpFields(File.ReadAllText(csPath), csName);
+        var starts = new Dictionary<int, string>();
+        var offset = 0;
+        foreach (var (name, size) in cs)
+        {
+            starts.TryAdd(offset, name);
+            offset += size;
+        }
+
+        var ok = true;
+        foreach (var f in g.Fields)
+        {
+            if (!starts.ContainsKey(f.Offset))
+            {
+                Console.WriteLine($"  {glslName}.{f.Name} at {f.Offset}: no C# field of {csName} starts there");
+                ok = false;
+            }
+        }
+
+        var glslSize = Layout.RoundUp(g.Size, 16);
+        if (offset != glslSize)
+        {
+            Console.WriteLine($"  {csName} is {offset} bytes; {glslName} is {g.Size} ({glslSize} rounded to 16)");
+            ok = false;
+        }
+
+        Console.WriteLine($"{csName} ({offset} bytes) / {glslName} ({g.Fields.Count} members): {(ok ? "agree" : "DIFFER")}");
+        return ok;
+    }
+
+    // The instance fields of a sequential struct, in order, with their sizes
+    static List<(string Name, int Size)> CSharpFields(string source, string name)
+    {
+        var m = Regex.Match(source, @"struct\s+" + name + @"\b[^{]*\{");
+        var depth = 1;
+        var i = m.Index + m.Length;
+        var start = i;
+        while (depth > 0)
+        {
+            if (source[i] == '{') depth++;
+            else if (source[i] == '}') depth--;
+            i++;
+        }
+        var body = source.Substring(start, i - start - 1);
+        body = Regex.Replace(body, @"//[^\n]*", "");
+
+        var constants = new Dictionary<string, int>
+        {
+            ["SceneLightList.MaxLights"] = 16,
+            ["SceneLightData.FloatCount"] = 16
+        };
+
+        var fields = new List<(string, int)>();
+        foreach (Match f in Regex.Matches(body, @"public\s+(fixed\s+)?(\w+)\s+(\w+)\s*(?:\[([^\]]+)\])?\s*;"))
+        {
+            var type = f.Groups[2].Value;
+            var size = type switch
+            {
+                "Matrix4x4" => 64, "Vector4" => 16, "Vector3" => 12, "Vector2" => 8,
+                "float" or "int" or "uint" => 4,
+                "MapDirectionalLightData" => 48,
+                _ => throw new Exception($"Unknown C# type {type} in {name}")
+            };
+            if (f.Groups[4].Success)
+            {
+                var count = 1;
+                foreach (var factor in f.Groups[4].Value.Split('*'))
+                {
+                    var t = factor.Trim();
+                    count *= int.TryParse(t, out var n) ? n : constants[t];
+                }
+                size *= count;
+            }
+            fields.Add((f.Groups[3].Value, size));
+        }
+        return fields;
     }
 }

@@ -26,6 +26,7 @@ layout(location = 0) out vec4 fsout_color;
 layout (constant_id = 97) const bool c_linearOutput = false;
 
 #include "SceneParams.glsl"
+#include "SceneLighting.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {
@@ -211,8 +212,8 @@ void main()
 	vec3 rayDir = toPixel / max(rayLength, 1e-4);
 
 	// Light from the sun's side of the fog, or from the side away from it
-	vec3 sunTravel = dot(sceneparam.lightDirection.xyz, sceneparam.lightDirection.xyz) > 1e-10
-		? normalize(sceneparam.lightDirection.xyz) : vec3(0.0, -1.0, 0.0);
+	vec3 sunTravel = dot(LIGHTING.sun.direction.xyz, LIGHTING.sun.direction.xyz) > 1e-10
+		? normalize(LIGHTING.sun.direction.xyz) : vec3(0.0, -1.0, 0.0);
 
 	if (m.light.z > 0.5)
 	{

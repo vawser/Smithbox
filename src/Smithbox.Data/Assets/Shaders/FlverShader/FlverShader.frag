@@ -13,7 +13,7 @@
 //   OUTLINE              - only draws the selection outline, for meshes with a deformer to outline
 //   FOCUS                - used for maps that are out of focus: dithers and greys out the object
 //
-// Lighting: one sun (sceneparam.lightDirection / sunColor) plus up to MAX_SCENE_LIGHTS point, spot or
+// Lighting: one sun (LIGHTING.sun, see SceneLighting.glsl) plus up to MAX_SCENE_LIGHTS point, spot or
 // directional lights from the scene's light list.
 //
 // Blending: a material can have up to MAX_LAYERS layers of albedo (and optionally normal, specular and
@@ -120,6 +120,7 @@ layout(location = 3) out vec4 fsout_reflection; // rgb: the environment's reflec
 layout(location = 4) out vec4 fsout_glow;       // rgb: the light the surface gives off itself, emissive and magma
 
 #include "../SceneParams.glsl"
+#include "../SceneLighting.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {
@@ -1154,39 +1155,50 @@ bool MapLighting()
 	return (sceneparam.mapLightingFlags & 1u) != 0u;
 }
 
-// Per-part lighting sets (Demon's Souls' LightIDs) are disabled pending a redesign, see
-// Documentation/Claude/Older Games/DES Light Set Redesign.md. Everything is lit by the scene params.
+// The lighting set the draw is lit by (SceneLighting.glsl, LIGHTING): the sun, hemisphere and model lights. Always
+// the view's own set (entry 0) until per-part sets are drawn, see DES Light Set Redesign.md. Every read is of a
+// single field: no lighting struct is copied out of the buffer.
 
 // The direction the sun's light travels in, normalized
 vec3 SunTravel()
 {
-	vec3 travel = sceneparam.lightDirection.xyz;
+	vec3 travel = LIGHTING.sun.direction.xyz;
 	return dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
 }
 
 // The sun's color and intensity (a), and its highlights'
 vec4 SunColor()
 {
-	return sceneparam.sunColor;
+	return LIGHTING.sun.color;
 }
 
 vec4 SunSpecColor()
 {
-	return sceneparam.sunSpecColor;
+	return LIGHTING.sun.specColor;
 }
 
-// One of the model set's four lights
-mapDirectionalLight ModelLight(uint i)
+// One of the model set's four lights: the direction its light travels in, its color and its highlights'
+vec4 ModelLightDirection(uint i)
 {
-	return sceneparam.modelLights[i];
+	return LIGHTING.modelLights[i].direction;
+}
+
+vec4 ModelLightColor(uint i)
+{
+	return LIGHTING.modelLights[i].color;
+}
+
+vec4 ModelLightSpecColor(uint i)
+{
+	return LIGHTING.modelLights[i].specColor;
 }
 
 // The map's GPARAM hemisphere light arriving from direction D: its up color from above, its down color from below
 // Characters take the model set's hemisphere
 vec3 Hemisphere(vec3 D)
 {
-	vec3 up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
-	vec3 down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
+	vec3 up = g_modelLit ? LIGHTING.modelHemiUp.rgb : LIGHTING.hemiUp.rgb;
+	vec3 down = g_modelLit ? LIGHTING.modelHemiDown.rgb : LIGHTING.hemiDown.rgb;
 	return mix(down, up, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
 }
 
@@ -2111,13 +2123,14 @@ void main()
 		// The model set's sun and fill lights. Its sun is the one that casts the shadows.
 		for (uint i = 0u; i < 4u; i++)
 		{
-			mapDirectionalLight light = ModelLight(i);
-			if (light.color.a <= 0.0 && light.specColor.a <= 0.0)
+			vec4 lightColor = ModelLightColor(i);
+			vec4 lightSpecColor = ModelLightSpecColor(i);
+			if (lightColor.a <= 0.0 && lightSpecColor.a <= 0.0)
 				continue;
 
-			vec3 travel = light.direction.xyz;
+			vec3 travel = ModelLightDirection(i).xyz;
 			travel = dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
-			direct += ShadeLight(surface, -travel, light.color.rgb * light.color.a, light.specColor.rgb * light.specColor.a) *
+			direct += ShadeLight(surface, -travel, lightColor.rgb * lightColor.a, lightSpecColor.rgb * lightSpecColor.a) *
 				(i == 0u ? sunShadow : 1.0);
 		}
 	}
