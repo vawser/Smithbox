@@ -77,28 +77,28 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_0_AlbedoMap | Dropped:7 | 1 | 7 |
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_1_NormalMap | Dropped:7 | 1 | 7 |
 | C_Enemy_DM_RT_PL_2_snp_Texture2DArray_2_MetallicMap | Dropped:7 | 1 | 7 |
-| P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:2 | 1 | 2 |
-| P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:2 | 1 | 2 |
-| Generic__Turbulence_Localise_Flow | Dropped:2 | 1 | 2 |
 | BlendEdge | BlendDetailMask:2 | 1 | 2 |
 | C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Dropped:2 | 1 | 2 |
 | C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_1_GSBlendMap_NormalMap | Dropped:2 | 1 | 2 |
+| Generic__Turbulence_Localise_Flow | Dropped:2 | 1 | 2 |
+| P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:2 | 1 | 2 |
+| P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:2 | 1 | 2 |
 | FlowMap | Dropped:2 | 1 | 2 |
 | C_Enemy__ColorMaterial_PF_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:1 | 1 | 1 |
 | C_Enemy__ColorMaterial_PF_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:1 | 1 | 1 |
+| VectorMap | Dropped:1 | 1 | 1 |
 | C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap | Albedo:1 | 1 | 1 |
 | C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap | Normal:1 | 1 | 1 |
-| VectorMap | Dropped:1 | 1 | 1 |
 
 ## Top 40 shaders by placed triangles
 
 | Shader | Known | Features | Placed % | Triangles % | Meshes | Dropped roles | Example |
 |---|---|---|---|---|---|---|---|
-| `M[MS][MB][M1]` |  |  | 55.198 | 48.808 | 41614 | NormalMap Mask1Map AlbedoMap MetallicMap Mask3Map | aeg120_046 |
-| `M[MS][MB][M0]` |  | BlendRecipe | 21.497 | 13.623 | 9069 | NormalMap AlbedoMap Mask1Map Mask3Map MetallicMap | aeg410_010 |
+| `M[MS][MB][M1]` |  |  | 55.198 | 48.808 | 41614 | AlbedoMap MetallicMap NormalMap Mask1Map Mask3Map | aeg120_046 |
+| `M[MS][MB][M0]` |  | Overlay | 21.497 | 13.623 | 9069 | AlbedoMap NormalMap Mask1Map Mask3Map MetallicMap | aeg410_010 |
 | `M[AMSN][M0][M1]_Edge` |  | AlphaTest | 6.301 | 7.410 | 13211 |  | aeg224_400 |
 | `C[Enemy]_ColorMaterial` |  | Overlay | 3.376 | 1.476 | 443 | Mask3Map AlbedoMap NormalMap C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap Mask1Map | c3020 |
-| `M[MS][Mask][M1]` |  | Overlay | 3.125 | 4.408 | 4660 | NormalMap AlbedoMap MetallicMap Mask3Map Mask1Map | c7400 |
+| `M[MS][Mask][M1]` |  | Overlay | 3.125 | 4.408 | 4660 | NormalMap AlbedoMap MetallicMap Mask1Map Mask3Map | c7400 |
 | `M[AMSN][M0][M1]` |  |  | 2.131 | 3.737 | 1516 |  | aeg233_800 |
 | `M[AMSN][M0][M1]_Edge_Translucency_Pivot2_Child` |  | AlphaTest | 1.425 | 0.011 | 8 | Mask1Map | aeg501_911 |
 | `C[AMSN][M0][M1]` |  |  | 0.656 | 0.951 | 306 |  | c7400 |
@@ -112,28 +112,28 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[AMSN][M1][Vatex]_Alpha` |  | BlendMode2 AlphaTest | 0.288 | 0.149 | 335 |  | aeg036_380 |
 | `M[AMSN][M0][M1]_Edge_Translucency` |  | AlphaTest | 0.227 | 0.023 | 22 | Mask1Map | aeg501_910 |
 | `M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]` |  | Layers2Unweighted | 0.216 | 0.126 | 24 | AlbedoMap NormalMap Mask1Map | aeg501_203 |
-| `C[3Mask][Detail][M1]` |  |  | 0.126 | 0.475 | 89 | AlbedoMap NormalMap Mask3Map MetallicMap Mask1Map | c6400 |
+| `C[3Mask][Detail][M1]` |  |  | 0.126 | 0.475 | 89 | AlbedoMap NormalMap Mask3Map Mask1Map MetallicMap | c6400 |
 | `C[AMSN][M1][Detail]` |  | BlendRecipe | 0.115 | 0.005 | 1 | Metalness__Base NormalMap | c5100 |
 | `M[AMSN][M0][M1][Vatex]_Alpha_BlendEdge` |  | BlendMode2 AlphaTest | 0.112 | 0.231 | 404 | Mask1Map | aeg030_600 |
 | `C[AMSN][M1][Detail2]` |  | BlendRecipe | 0.108 | 0.828 | 112 | NormalMap Metalness__Base AlbedoMap Mask1Map | aeg840_310 |
 | `C[Enemy][Wepon]` |  |  | 0.092 | 0.170 | 105 | NormalMap | c3300 |
 | `C[DetailBlend1][Detail]_Emissive_Glow` |  | Overlay | 0.079 | 0.009 | 1 | AlbedoMap | c5500 |
 | `M[AMSN][M1]_Emissive_Glow` |  |  | 0.072 | 0.078 | 53 |  | aeg059_600 |
-| `M[AMSN][M0][M1][Vatex]_Edge_BlendEdge` |  | BlendMode2 AlphaTest | 0.063 | 0.114 | 180 | Mask1Map | aeg501_110 |
+| `M[AMSN][M0][M1][Vatex]_Edge_BlendEdge` |  | AlphaTest | 0.063 | 0.114 | 180 | Mask1Map | aeg501_110 |
 | `M[AMSN_V][Mb2][Far_AN][Ov_N]` |  | Layers2Unweighted | 0.061 | 0.188 | 8 | AlbedoMap NormalMap | aeg030_161 |
 | `M[AMSN][M1]` |  |  | 0.057 | 0.195 | 16 |  | aeg030_160 |
 | `M[AMSN][POM][M1]_AO_Edge` |  | AlphaTest | 0.057 | 0.122 | 163 | DisplacementMap | aeg204_407 |
 | `M[AMSN]` |  |  | 0.051 | 2.287 | 359 |  | aeg022_200 |
 | `P[BS][M1]_Emissive_Glow` |  |  | 0.048 | 0.049 | 28 |  | aeg840_900 |
-| `M[MS][Mask][M0]` |  | Overlay | 0.047 | 0.191 | 361 | NormalMap AlbedoMap Mask1Map Mask3Map MetallicMap | aeg065_600 |
+| `M[MS][Mask][M0]` |  | Overlay Scroll | 0.047 | 0.191 | 361 | AlbedoMap NormalMap Mask3Map Mask1Map MetallicMap | aeg065_600 |
 | `C[c4210]_illusion` |  | Scroll BlendMode2 AlphaTest | 0.047 | 0.073 | 1 | EmissiveMap Mask1Map Mask3Map | c4210 |
 | `M[AMSN][M0][M1]_decal_Alpha` |  | BlendMode2 | 0.045 | 0.121 | 300 | Mask1Map | aeg411_122 |
-| `M[MS][MB][M1]_PF` |  |  | 0.043 | 0.113 | 22 | MetallicMap NormalMap Mask3Map Mask1Map | aeg000_520 |
+| `M[MS][MB][M1]_PF` |  | Overlay | 0.043 | 0.113 | 22 | MetallicMap NormalMap Mask3Map Mask1Map | aeg000_520 |
 | `C[AMSN][M1][Detail][DM1][OvA]` |  | Overlay | 0.042 | 0.069 | 3 | MetallicMap AlbedoMap NormalMap Mask1Map | c6250 |
 | `P[LaserBlade]_001` |  | Scroll BlendMode4 | 0.035 | 0.123 | 43 | Mask3Map AlbedoMap | c5300 |
 | `M[Planet][GroundSurface]_004` |  | Overlay AlphaTest | 0.034 | 0.159 | 6 | Mask1Map AlbedoMap NormalMap Mask3Map | aeg860_010 |
 | `M[E]_Heatingwire` |  | Scroll BlendMode4 | 0.034 | 0.035 | 4 | EmissiveMap | aeg410_860 |
-| `M[AMSN][M1][2Blend]_Combustion` |  | BlendRecipe Scroll | 0.033 | 0.149 | 49 | Mask1Map EmissiveMap NormalMap | aeg065_600 |
+| `M[AMSN][M1][2Blend]_Combustion` |  | BlendRecipe Scroll | 0.033 | 0.149 | 49 | Mask1Map NormalMap EmissiveMap | aeg065_600 |
 
 ## Top 20 dropped textures by placed triangles
 

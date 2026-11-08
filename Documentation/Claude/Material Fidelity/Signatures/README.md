@@ -172,6 +172,41 @@ and others whose weights have other forms. AC6's `M[Planet][GroundSurface]` shad
 - `SampleLayered` lerps toward the tint where the adjust is ≥ 0.
 - The binding audit can't see this: it checks textures, not weights.
 
+## Snow, fur and SSS masks (2026-11-08)
+
+Built 2026-11-08, not yet checked in the app.
+
+**Snow (`[Snow_VtxMask]`).** The snow layer's value is how much the surface faces a direction:
+`v = sat(f0 + dot(N, float3_0)) · TEXCOORD1.z`, where N is the world normal of the base normal map. Its weight is the
+usual hard form, with the Mask1Map as its detail mask.
+- **Generator** (`Recipes.FacingValue`): it finds the `sat(bias + dot(N, float3 param))` (times a vertex value) inside
+  a weight. That stands in as the source `FACING`, so the hard form reads as before.
+  - Recipe fields: `FacingDirection`, `FacingBias`, `FacingVertex`.
+  - New generated recipes: ER and NR, 5 shaders each, such as `M[AMSN_V][Ov_N][Snow_VtxMask]`.
+- **Viewport:** `SourceFacing` (bit 16, with the vertex channel from bit 17). Those bits are the extended form's
+  otherwise, so `FlverResource` only writes the extended detail masks there for extended recipes.
+  - The direction is entry +13's second layer `.yzw`, and each layer's bias is `.w` of entry +14.
+  - `ComputeRecipeWeights` turns layer 0's normal map into world space and takes the dot.
+- **Not done:** shaders with a checked-in recipe that lacks the snow layer (`M[AMSN_V][Mb2][Ov_N][Snow_VtxMask]`).
+  The checked-in recipe wins, so their snow still isn't drawn.
+
+**Fur (`C[Fur]_FurBlur`, `C[Shell]_FurBlur`).** These multiply the fur colour by `4.55·lerp(0.2196, T.r, Mask1Map.r)`:
+a further layer, shown where the mask is set and neutral elsewhere. It isn't the cut strands.
+- **Generator:** `ShaderSignature furmasks` writes `{GAME}_FurMasks.json` (ER 12 shaders, NR 5).
+- **App:** `MaterialFurRecipe.Masked`/`Mask`. The masked texture goes in the third albedo slot and the mask in the blend
+  mask slot, and `FlverShader.frag`'s fur path multiplies them in.
+- **Limits:** only materials that resolve as fur get it. Most placed `C[Shell]_FurBlur` materials give no strand
+  texture, so they aren't drawn as fur, and their mask stays dropped. ER fur Dropped went from 4.48 to 4.33 points.
+
+**Not drawn:**
+- **`C[DetailBlend]_SSS` Mask1Map:** it feeds only the subsurface amount (RT3.x), and the viewport has no subsurface
+  term.
+- **`M[AMSN_V]_Grass2` Mask1Map:** it's sampled with world-projected UVs (position and the inverse view-projection), a
+  ground colour under the grass.
+- **`C[DetailBlend]_FurBlur`:** no fur recipe, and its masked texture (slot 14) is almost never given.
+
+Census after these: ER Ok 84.4% → 85.1% (Dropped 9.2% → 8.4%), NR 83.0% → 83.1%.
+
 ## Emissive masks (2026-11-08)
 
 `ShaderSignature <GAME> emissivemasks <cacheDir> <outJson> [shaderRegex]` (`EmissiveMasks.cs`) writes

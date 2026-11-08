@@ -257,6 +257,19 @@ static partial class Recipes
             if (weight == null && MixedWeight(d, l.Weight) is { } mixed)
                 weight = ReadWeight(d, mixed.hard, vertexSource, result.Problems, new Dictionary<int, Poly> { [mixed.value] = Poly.Of(mixed.mask, 1) });
 
+            // Snow: the value is how much the surface faces a direction, sat(bias + dot(N, dir)), times a vertex value
+            if (weight == null && FacingValue(d, l.Weight) is { } facing)
+            {
+                string FacingSource(string v) => v == "in:FACING" ? "FACING" : vertexSource(v);
+                weight = ReadWeight(d, l.Weight, FacingSource, result.Problems, new Dictionary<int, Poly> { [facing.value] = Poly.Of("in:FACING", 1) });
+                if (weight != null)
+                {
+                    layer.FacingDirection = facing.direction;
+                    layer.FacingBias = facing.bias;
+                    layer.FacingVertex = facing.vertex == null ? null : vertexSource(facing.vertex);
+                }
+            }
+
             // A weight scaled by a param as a whole, param * sat(...) (M[Cave_001]'s snp_0_float_16)
             if (weight == null && !l.Weight.IsConst && d.NodeOf(l.Weight.Id) is { Op: Dxil.Op.Mul } scaledWeight)
             {
@@ -368,6 +381,51 @@ static partial class Recipes
         }
 
         return MaskOf(l.Bottom) is { } mask ? (l.Top, l.Bottom.Id, mask) : null;
+    }
+
+    /// <summary>
+    /// The facing value of a snow weight: sat(bias + dot(N, dir)) with dir a float3 param, times a vertex value or not.
+    /// Its SSA id (the product if there is one), the direction param ("snp_0_float3_0"), the bias param, the vertex leaf
+    /// </summary>
+    static (int value, string direction, string bias, string vertex)? FacingValue(Dxil d, Dxil.Arg w)
+    {
+        if (w.IsConst) return null;
+        var seen = new HashSet<int>();
+        var stack = new Stack<int>();
+        stack.Push(w.Id);
+        while (stack.Count > 0)
+        {
+            var id = stack.Pop();
+            if (!seen.Add(id)) continue;
+            var n = d.NodeOf(id);
+            foreach (var a in n.Args.Where(a => !a.IsConst)) stack.Push(a.Id);
+
+            // sat(bias + dot(N, dir))
+            if (n.Op != Dxil.Op.Saturate || n.Args[0].IsConst || d.NodeOf(n.Args[0].Id) is not { Op: Dxil.Op.Add } add) continue;
+            var biasArg = add.Args.FirstOrDefault(a => !a.IsConst && d.NodeOf(a.Id) is { Op: Dxil.Op.Leaf } bl && bl.Leaf.StartsWith("cb:") && bl.Leaf.Contains("snp_"));
+            var dotArg = add.Args.FirstOrDefault(a => !a.IsConst && d.NodeOf(a.Id).Op == Dxil.Op.Dot);
+            if (biasArg.IsConst || dotArg.IsConst) continue;
+            var dot = d.NodeOf(dotArg.Id);
+            var dirLeaves = dot.Args.Skip(dot.Args.Length / 2).Where(a => !a.IsConst).Select(a => d.NodeOf(a.Id)).ToList();
+            if (dirLeaves.Count != 3 || dirLeaves.Any(x => x.Op != Dxil.Op.Leaf || !x.Leaf.Contains("_float3_"))) continue;
+            var direction = System.Text.RegularExpressions.Regex.Replace(Param(dirLeaves[0].Leaf), @"_\d+$", "");
+
+            // Times a vertex value, where the weight uses the product
+            int value = id;
+            string vertex = null;
+            foreach (var pid in seen)
+            {
+                if (d.NodeOf(pid) is { Op: Dxil.Op.Mul } m && m.Args.Any(a => !a.IsConst && a.Id == id)
+                    && m.Args.FirstOrDefault(a => !a.IsConst && a.Id != id) is { Id: >= 0 } other && d.NodeOf(other.Id) is { Op: Dxil.Op.Leaf } vl && vl.Leaf.StartsWith("in:"))
+                {
+                    value = pid;
+                    vertex = vl.Leaf;
+                    break;
+                }
+            }
+            return (value, direction, Param(d.NodeOf(biasArg.Id).Leaf), vertex);
+        }
+        return null;
     }
 
     static Weight? ReadWeight(Dxil d, Dxil.Arg w, Func<string, string> vertexSource, List<string> problems, Dictionary<int, Poly> preset = null)

@@ -8,24 +8,24 @@ EmissiveMap	Emissive:5780 Dropped:1232	76	743	5780	20165951	2.108	4702673	c5500
 C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Albedo:258 Dropped:182	1	238	440	31919850	3.337	2259024	c3020
 C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap	Normal:230 Dropped:210	1	238	440	31919850	3.337	2259024	c3020
 DisplacementMap	Dropped:299	5	8	295	3920790	0.410	1628316	aeg039_790
-P_ACParts__Marking_snp_Texture2DArray_0_	Dropped:218	1	1	218	0	0.000	1846	am_m_8020_l
+P_ACParts__Marking_snp_Texture2DArray_0_	Dropped:218	1	1	218	0	0.000	1846	am_m_8020
 Metalness__Base	Dropped:116	3	20	116	2146402	0.224	1291731	c5100
-Generic__AtmosphereHazeColorLUT	Dropped:26	3	26	26	0	0.000	54848	aeg851_225
-Generic__Cloud	Dropped:22	1	19	22	0	0.000	244992	m50_50_00_00_900000
-Generic__Moon	Dropped:22	1	19	22	0	0.000	244992	m50_50_00_00_900000
+Generic__AtmosphereHazeColorLUT	Dropped:26	3	26	26	0	0.000	54848	aeg851_505
+Generic__Cloud	Dropped:22	1	19	22	0	0.000	244992	aeg851_036
+Generic__Moon	Dropped:22	1	19	22	0	0.000	244992	aeg851_036
 Generic__Turbulence_Localise	Dropped:19	7	10	19	130364	0.014	110764	aeg860_015
 C_Enemy_DM_RT_PL_2_snp_Texture2DArray_0_AlbedoMap	Dropped:7	1	3	7	1646	0.000	12606	c8145
 C_Enemy_DM_RT_PL_2_snp_Texture2DArray_1_NormalMap	Dropped:7	1	3	7	1646	0.000	12606	c8145
 C_Enemy_DM_RT_PL_2_snp_Texture2DArray_2_MetallicMap	Dropped:7	1	3	7	1646	0.000	12606	c8145
-P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Albedo:2	1	1	2	0	0.000	13848	wp_e_0270_l
-P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap	Normal:2	1	1	2	0	0.000	13848	wp_e_0270_l
-Generic__Turbulence_Localise_Flow	Dropped:2	1	1	2	20800	0.002	10400	aeg860_010
 BlendEdge	BlendDetailMask:2	1	1	2	24	0.000	4	aeg053_082
 C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Dropped:2	1	1	2	104448	0.011	3834	c5250
 C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_1_GSBlendMap_NormalMap	Dropped:2	1	1	2	104448	0.011	3834	c5250
+Generic__Turbulence_Localise_Flow	Dropped:2	1	1	2	20800	0.002	10400	aeg860_010
+P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Albedo:2	1	1	2	0	0.000	13848	wp_e_0270_l
+P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap	Normal:2	1	1	2	0	0.000	13848	wp_e_0270_l
 FlowMap	Dropped:2	1	2	2	0	0.000	4	aeg870_567
 C_Enemy__ColorMaterial_PF_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Albedo:1	1	1	1	197400	0.021	7050	c4150
 C_Enemy__ColorMaterial_PF_snp_Texture2DArray_1_GSBlendMap_NormalMap	Normal:1	1	1	1	197400	0.021	7050	c4150
+VectorMap	Dropped:1	1	1	1	0	0.000	13034	aeg870_135
 C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap	Albedo:1	1	1	1	0	0.000	3216	aeg870_705
 C_Cutscene_Enemy_Alpha__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap	Normal:1	1	1	1	0	0.000	3216	aeg870_705
-VectorMap	Dropped:1	1	1	1	0	0.000	13034	aeg870_135

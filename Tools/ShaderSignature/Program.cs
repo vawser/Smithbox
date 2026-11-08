@@ -239,6 +239,25 @@ if (mode == "blends")
     Console.WriteLine($"{generated.Count} new recipes written to {args[3]}");
 }
 
+// furmasks <cacheDir> <outJson> [shaderRegex] : fur whose strands show where a mask says (FurMasks.cs), keyed by shader
+// as _Fur.json is: the first permutation that has one
+if (mode == "furmasks")
+{
+    var filter = new Regex(args.Length > 4 ? args[4] : ".");
+    var table = new SortedDictionary<string, StudioCore.Renderer.MaterialFurMask>(StringComparer.Ordinal);
+    Parallel.ForEach(bundles.Where(b => filter.IsMatch(b.Name)), b =>
+    {
+        foreach (var (variant, _, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            if (!variant.Contains("Gbuf") || Recipes.ReadFurMask(Dxil.Parse(lines)) is not { } mask) continue;
+            lock (table) table.TryAdd(b.Name, mask);
+            break;
+        }
+    });
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table));
+    Console.WriteLine($"{table.Count} shaders with masked strands, written to {args[3]}");
+}
+
 // emissivemasks <cacheDir> <outJson> [shaderRegex] : shaders whose glow is one texture's red, tinted (EmissiveMasks.cs),
 // per G-buffer permutation. Only slots whose sampler isn't already an emissive map are of use; the app checks that
 if (mode == "emissivemasks")
@@ -593,7 +612,10 @@ if (mode is "one" or "run")
 
 static bool Drawable(StudioCore.Renderer.MaterialBlendRecipe recipe)
 {
-    if (!recipe.Layers.All(l => l.Source is "Mask.r" or "Mask.g" or "Mask.b" or "COLOR1.x" || Regex.IsMatch(l.Source, @"^TEXCOORD\d+\.[xyz]$")))
+    if (!recipe.Layers.All(l => l.Source is "Mask.r" or "Mask.g" or "Mask.b" or "COLOR1.x" or "FACING" || Regex.IsMatch(l.Source, @"^TEXCOORD\d+\.[xyz]$")))
+        return false;
+    // A facing layer's vertex value has to be one the viewport has: of TEXCOORD1, as the other vertex sources are
+    if (recipe.Layers.Any(l => l.Source == "FACING" && l.FacingVertex != null && !Regex.IsMatch(l.FacingVertex, @"^TEXCOORD1\.[xyz]$")))
         return false;
     var attributes = recipe.Layers.Select(l => Regex.Match(l.Source, @"^TEXCOORD(\d+)").Groups[1].Value).Where(x => x != "")
         .Select(int.Parse).Distinct().OrderBy(x => x == 1 ? 0 : 1).ThenBy(x => x).ToList();

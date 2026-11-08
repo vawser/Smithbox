@@ -482,6 +482,13 @@ public class FlverResource : IResource, IDisposable
                 LookupTexture(FlverMaterial.TextureType.NormalTextureResource2, dest, fur.StrandNormalType, "", mtd);
             }
 
+            // The masked layer and its mask (FlverShader.frag, IsFur), both sampled with the first layer's tiling
+            if (fur.MaskType != null && fur.MaskedType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.AlbedoTextureResource3, dest, fur.MaskedType, flverPaths.GetValueOrDefault(fur.MaskedType, ""), mtd);
+                LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, fur.MaskType, flverPaths.GetValueOrDefault(fur.MaskType, ""), mtd);
+            }
+
             // Only the blended shaders have a second UV set
             layers.LayerCount = 2;
         }
@@ -4143,20 +4150,22 @@ public class FlverResource : IResource, IDisposable
             }
             else if (blend.Adjusted)
             {
-                // The [MbN_ColorAdjust] form in the same two entries (FlverShader.frag, SOURCE_ADJUSTED): x of each layer's
-                // channels its color adjust, the bottom's in the first's y; x of each layer's extra its hard mix, y its weight scale, z its own detail bias
+                // The [MbN_ColorAdjust] form in the same two entries (FlverShader.frag, SOURCE_ADJUSTED). Of each layer's
+                // channels, x is its color adjust; the bottom's is the first's y, and the second's yzw the snow's facing
+                // direction. Of each layer's extra, x is its hard mix, y its weight scale, z its own detail bias, w its
+                // facing bias
                 var a = blend.ColorAdjust;
                 LayerDetail = new MaterialLayerDetail
                 {
                     Channels2 = new Vector4(a[1], a[0], 0, 0),
-                    Channels3 = new Vector4(a[2], 0, 0, 0),
+                    Channels3 = new Vector4(a[2], blend.FacingDirection[0], blend.FacingDirection[1], blend.FacingDirection[2]),
                     Channels4 = new Vector4(a[3], 0, 0, 0)
                 };
                 LayerDetailExtra = new MaterialLayerDetailExtra
                 {
-                    Layer2 = new Vector4(blend.LayerHardMix[0], blend.LayerWeightScale[0], blend.LayerBiasOverride[0], 1),
-                    Layer3 = new Vector4(blend.LayerHardMix[1], blend.LayerWeightScale[1], blend.LayerBiasOverride[1], 1),
-                    Layer4 = new Vector4(blend.LayerHardMix[2], blend.LayerWeightScale[2], blend.LayerBiasOverride[2], 1)
+                    Layer2 = new Vector4(blend.LayerHardMix[0], blend.LayerWeightScale[0], blend.LayerBiasOverride[0], blend.LayerFacingBias[0]),
+                    Layer3 = new Vector4(blend.LayerHardMix[1], blend.LayerWeightScale[1], blend.LayerBiasOverride[1], blend.LayerFacingBias[1]),
+                    Layer4 = new Vector4(blend.LayerHardMix[2], blend.LayerWeightScale[2], blend.LayerBiasOverride[2], blend.LayerFacingBias[2])
                 };
                 Blend = Blend.Value with { Blend = Blend.Value.Blend with { Source1 = Blend.Value.Blend.Source1 | MaterialResolvedBlend.SourceAdjusted } };
             }
@@ -4368,7 +4377,7 @@ public class FlverResource : IResource, IDisposable
                 SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);
 
                 // An extended layer's own detail mask, in the top 16 bits of its source (black until it loads)
-                if (LayerDetail != null)
+                if (Definition?.Blend?.Extended == true)
                 {
                     ushort mask2 = 0, mask3 = 0, mask4 = 0;
                     SetMaterialTexture(TextureType.LayerDetailMaskTextureResource2, ref mask2, BlackTexture);

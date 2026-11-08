@@ -195,6 +195,15 @@ public class MaterialData : IDisposable
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialFurRecipe) ?? new();
             }
 
+            var furMasksPath = Path.Join(folder, $"{game}_FurMasks.json");
+            if (File.Exists(furMasksPath))
+            {
+                string text = await File.ReadAllTextAsync(furMasksPath);
+
+                table.MergeFurMasks(JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialFurMask) ?? new());
+            }
+
             if (File.Exists(metallicPath))
             {
                 string text = await File.ReadAllTextAsync(metallicPath);

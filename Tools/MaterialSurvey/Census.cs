@@ -60,6 +60,7 @@ class Census
         table.MergeDetailStacks(Read<Dictionary<string, MaterialDetailRecipe>>("_DetailStacks"));
         table.MergeColorAdjust(Read<Dictionary<string, MaterialColorAdjustRecipe>>("_ColorAdjust"));
         table.EmissiveMasks = Read<Dictionary<string, MaterialEmissiveMask>>("_EmissiveMasks");
+        table.MergeFurMasks(Read<Dictionary<string, MaterialFurMask>>("_FurMasks"));
         Console.WriteLine($"Shader table: {table.Shaders.Count} entries, {table.TextureGroups.Count} UV group shaders, " +
             $"{table.Blends.Count} blends, {table.Details.Count} details, {table.Magma.Count} magma, {table.Water.Count} water, {table.Fur.Count} fur");
         return table;

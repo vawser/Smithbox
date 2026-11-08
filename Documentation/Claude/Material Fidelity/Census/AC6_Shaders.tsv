@@ -1,6 +1,6 @@
 Shader	Known	Features	PlacedTriangles	PlacedShare%	Triangles	TriangleShare%	Meshes	Models	Materials	Maps	Categories	TextureRoutes	ExampleModel
 M[MS][MB][M1]	False		528022274	55.198	75203086	48.808	41614	3626	820	45	asset:41563 chr:45 map:6	AlbedoMap>Albedo:41614 NormalMap>Normal:41564 MetallicMap>Metallic:40998 NormalMap>Dropped:29406 Mask1Map>Dropped:11518 AlbedoMap>Dropped:7889 Mask3Map>Dropped:6049 MetallicMap>Dropped:5844 AlbedoMap>Albedo1:5281 NormalMap>Normal1:5281 MetallicMap>Metallic1:4966 Mask3Map>BlendDetailMask1:4371 AlbedoMap>OverlayAlbedo:3665 NormalMap>Normal2:918 Mask1Map>BlendDetailMask2:902 Mask1Map>BlendDetailMask1:77 AlbedoMap>Albedo2:43 MetallicMap>Metallic2:16 NormalMap>Normal3:8 Mask1Map>BlendDetailMask3:8	aeg120_046
-M[MS][MB][M0]	False	BlendRecipe	205641383	21.497	20990253	13.623	9069	2083	393	24	asset:9056 map:8 chr:5	NormalMap>Dropped:21245 AlbedoMap>Albedo:9061 NormalMap>Normal:8926 Mask1Map>Dropped:7516 AlbedoMap>Dropped:6997 Mask3Map>Dropped:4787 AlbedoMap>OverlayAlbedo:3873 AlbedoMap>Albedo1:1602 NormalMap>Normal1:1602 Mask3Map>BlendDetailMask1:1488 NormalMap>Normal2:1310 Mask1Map>BlendDetailMask2:1204 MetallicMap>Metallic:912 AlbedoMap>Albedo2:298 MetallicMap>Metallic1:223 Mask1Map>BlendDetailMask1:86 MetallicMap>Dropped:8	aeg410_010
+M[MS][MB][M0]	False	Overlay	205641383	21.497	20990253	13.623	9069	2083	393	24	asset:9056 map:8 chr:5	NormalMap>Dropped:21245 AlbedoMap>Albedo:9061 NormalMap>Normal:8926 Mask1Map>Dropped:7516 AlbedoMap>Dropped:6997 Mask3Map>Dropped:4787 AlbedoMap>OverlayAlbedo:3873 AlbedoMap>Albedo1:1602 NormalMap>Normal1:1602 Mask3Map>BlendDetailMask1:1488 NormalMap>Normal2:1310 Mask1Map>BlendDetailMask2:1204 MetallicMap>Metallic:912 AlbedoMap>Albedo2:298 MetallicMap>Metallic1:223 Mask1Map>BlendDetailMask1:86 MetallicMap>Dropped:8	aeg410_010
 M[AMSN][M0][M1]_Edge	False	AlphaTest	60272621	6.301	11417354	7.410	13211	2572	171	48	asset:13145 chr:60 parts:6	AlbedoMap>Albedo:13211 NormalMap>Normal:13205 MetallicMap>Metallic:11610	aeg224_400
 C[Enemy]_ColorMaterial	False	Overlay	32294322	3.376	2274226	1.476	443	180	240	55	chr:219 parts:134 asset:90	AlbedoMap>Dropped:1882 NormalMap>Dropped:1441 NormalMap>OverlayNormal:443 Mask3Map>Dropped:313 C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap>Albedo:258 C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap>Normal:230 NormalMap>Normal:213 C_Enemy__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap>Dropped:210 AlbedoMap>Albedo:185 C_Enemy__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap>Dropped:182 Mask1Map>Dropped:26	c3020
 M[MS][Mask][M1]	False	Overlay	29894178	3.125	6792415	4.408	4660	997	97	28	asset:4650 chr:9 map:1	NormalMap>Dropped:21747 AlbedoMap>Dropped:17296 MetallicMap>Dropped:9148 Mask3Map>Dropped:7629 Mask1Map>Dropped:5425 AlbedoMap>Albedo:4660 NormalMap>Normal:4658 MetallicMap>Metallic:4570 AlbedoMap>OverlayAlbedo:4200	c7400
@@ -17,28 +17,28 @@ M[Crystal][M1]	False	Overlay	3126650	0.327	1401378	0.910	98	49	1	4	asset:98	Albe
 M[AMSN][M1][Vatex]_Alpha	False	BlendMode2 AlphaTest	2753281	0.288	229643	0.149	335	161	8	9	asset:335	AlbedoMap>Albedo:335 NormalMap>Normal:335 MetallicMap>Metallic:112	aeg036_380
 M[AMSN][M0][M1]_Edge_Translucency	False	AlphaTest	2168186	0.227	34806	0.023	22	5	3	2	asset:22	AlbedoMap>Albedo:22 NormalMap>Normal:22 Mask1Map>Dropped:18	aeg501_910
 M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]	False	Layers2Unweighted	2063318	0.216	193646	0.126	24	12	3	8	asset:24	NormalMap>Dropped:120 NormalMap>Normal:24 AlbedoMap>Albedo:24 AlbedoMap>Dropped:24 Mask1Map>Dropped:24	aeg501_203
-C[3Mask][Detail][M1]	False		1203488	0.126	731407	0.475	89	16	11	3	asset:81 chr:8	NormalMap>Dropped:414 AlbedoMap>Dropped:393 MetallicMap>Dropped:109 MetallicMap>Metallic:89 AlbedoMap>Albedo:89 NormalMap>Normal:89 Mask3Map>Dropped:89 Mask1Map>Dropped:57	c6400
+C[3Mask][Detail][M1]	False		1203488	0.126	731407	0.475	89	16	11	3	asset:81 chr:8	NormalMap>Dropped:414 AlbedoMap>Dropped:393 MetallicMap>Dropped:109 NormalMap>Normal:89 MetallicMap>Metallic:89 AlbedoMap>Albedo:89 Mask3Map>Dropped:89 Mask1Map>Dropped:57	c6400
 C[AMSN][M1][Detail]	False	BlendRecipe	1102302	0.115	8046	0.005	1	1	1	14	chr:1	AlbedoMap>Albedo:1 Metalness__Base>Dropped:1 NormalMap>Dropped:1	c5100
 M[AMSN][M0][M1][Vatex]_Alpha_BlendEdge	False	BlendMode2 AlphaTest	1072762	0.112	356072	0.231	404	190	15	13	asset:404	Mask1Map>Dropped:404 NormalMap>Normal:404 AlbedoMap>Albedo:399 MetallicMap>Metallic:46	aeg030_600
 C[AMSN][M1][Detail2]	False	BlendRecipe	1028456	0.108	1275559	0.828	112	4	17	1	asset:98 chr:14	NormalMap>Dropped:336 AlbedoMap>Albedo1:112 Mask1Map>BlendDetailMask:112 AlbedoMap>Albedo:112 Metalness__Base>Dropped:112 AlbedoMap>Dropped:112 Mask1Map>Dropped:112	aeg840_310
 C[Enemy][Wepon]	False		884558	0.092	261248	0.170	105	89	46	7	parts:100 chr:5	NormalMap>Dropped:315 NormalMap>Normal:105 AlbedoMap>Albedo:105 MetallicMap>Metallic:105	c3300
 C[DetailBlend1][Detail]_Emissive_Glow	False	Overlay	758670	0.079	13794	0.009	1	1	1	1	chr:1	AlbedoMap>Dropped:2 NormalMap>OverlayNormal:1 AlbedoMap>Albedo:1 NormalMap>Normal:1 EmissiveMap>Emissive:1	c5500
 M[AMSN][M1]_Emissive_Glow	False		685136	0.072	120211	0.078	53	27	12	27	asset:53	AlbedoMap>Albedo:53 EmissiveMap>Emissive:53 NormalMap>Normal:51 MetallicMap>Metallic+Offset:43	aeg059_600
-M[AMSN][M0][M1][Vatex]_Edge_BlendEdge	False	BlendMode2 AlphaTest	604168	0.063	176422	0.114	180	81	9	5	asset:180	AlbedoMap>Albedo:180 Mask1Map>Dropped:180 NormalMap>Normal:180 MetallicMap>Metallic:166	aeg501_110
+M[AMSN][M0][M1][Vatex]_Edge_BlendEdge	False	AlphaTest	604168	0.063	176422	0.114	180	81	9	5	asset:180	AlbedoMap>Albedo:180 Mask1Map>Dropped:180 NormalMap>Normal:180 MetallicMap>Metallic:166	aeg501_110
 M[AMSN_V][Mb2][Far_AN][Ov_N]	False	Layers2Unweighted	580192	0.061	290096	0.188	8	3	3	3	asset:8	NormalMap>Dropped:32 AlbedoMap>Dropped:24 AlbedoMap>Albedo:8 NormalMap>Normal:8	aeg030_161
 M[AMSN][M1]	False		545650	0.057	299990	0.195	16	5	6	5	asset:14 chr:2	AlbedoMap>Albedo:16 MetallicMap>Metallic+Offset:14 NormalMap>Normal:14	aeg030_160
 M[AMSN][POM][M1]_AO_Edge	False	AlphaTest	544686	0.057	188500	0.122	163	76	3	7	asset:163	AlbedoMap>Albedo:163 MetallicMap>Metallic:163 NormalMap>Normal:163 DisplacementMap>Dropped:163	aeg204_407
 M[AMSN]	False		485348	0.051	3524356	2.287	359	71	2	26	asset:196 chr:92 parts:68 map:3	AlbedoMap>Albedo:316 NormalMap>Normal:293 MetallicMap>Metallic+Offset:270	aeg022_200
 P[BS][M1]_Emissive_Glow	False		455040	0.048	76100	0.049	28	27	14	12	parts:26 asset:2	AlbedoMap>Albedo:28 MetallicMap>Metallic+Offset:28 NormalMap>Normal:28 EmissiveMap>Emissive:28	aeg840_900
-M[MS][Mask][M0]	False	Overlay	453619	0.047	294311	0.191	361	152	9	11	asset:361	NormalMap>Dropped:1570 AlbedoMap>Dropped:1121 Mask3Map>Dropped:634 MetallicMap>Dropped:484 Mask1Map>Dropped:383 NormalMap>Normal:361 AlbedoMap>Albedo:361 MetallicMap>Metallic:262 AlbedoMap>OverlayAlbedo:172	aeg065_600
+M[MS][Mask][M0]	False	Overlay Scroll	453619	0.047	294311	0.191	361	152	9	11	asset:361	NormalMap>Dropped:1570 AlbedoMap>Dropped:1121 Mask3Map>Dropped:634 MetallicMap>Dropped:484 Mask1Map>Dropped:383 AlbedoMap>Albedo:361 NormalMap>Normal:361 MetallicMap>Metallic:262 AlbedoMap>OverlayAlbedo:172	aeg065_600
 C[c4210]_illusion	False	Scroll BlendMode2 AlphaTest	452168	0.047	113042	0.073	1	1	1	1	chr:1	EmissiveMap>Dropped:3 Mask1Map>Dropped:2 Mask3Map>Dropped:2 EmissiveMap>Emissive:1	c4210
 M[AMSN][M0][M1]_decal_Alpha	False	BlendMode2	427650	0.045	187053	0.121	300	106	18	7	asset:300	Mask1Map>Dropped:300 NormalMap>Normal:300 MetallicMap>Metallic:46	aeg411_122
-M[MS][MB][M1]_PF	False		408356	0.043	173980	0.113	22	4	9	1	asset:22	AlbedoMap>Albedo:22 MetallicMap>Metallic:22 NormalMap>Normal:22 NormalMap>Dropped:16 MetallicMap>Dropped:8 AlbedoMap>OverlayAlbedo:4 Mask3Map>Dropped:4 Mask1Map>Dropped:4	aeg000_520
+M[MS][MB][M1]_PF	False	Overlay	408356	0.043	173980	0.113	22	4	9	1	asset:22	MetallicMap>Metallic:22 NormalMap>Normal:22 AlbedoMap>Albedo:22 NormalMap>Dropped:16 MetallicMap>Dropped:8 AlbedoMap>OverlayAlbedo:4 Mask3Map>Dropped:4 Mask1Map>Dropped:4	aeg000_520
 C[AMSN][M1][Detail][DM1][OvA]	False	Overlay	403448	0.042	106504	0.069	3	2	2	13	asset:2 chr:1	AlbedoMap>Dropped:6 NormalMap>OverlayNormal:3 NormalMap>Normal:3 AlbedoMap>Albedo:3 MetallicMap>Metallic:3 MetallicMap>Dropped:3 NormalMap>Dropped:3 Mask1Map>Dropped:1	c6250
 P[LaserBlade]_001	False	Scroll BlendMode4	330416	0.035	189260	0.123	43	36	24	16	parts:32 chr:10 asset:1	AlbedoMap>Dropped:191 Mask3Map>Dropped:43 AlbedoMap>Albedo:43	c5300
 M[Planet][GroundSurface]_004	False	Overlay AlphaTest	326400	0.034	244800	0.159	6	3	1	2	asset:6	AlbedoMap>Dropped:18 NormalMap>Dropped:18 NormalMap>OverlayNormal:6 AlbedoMap>Albedo:6 NormalMap>Normal:6 Mask1Map>Dropped:6 Mask3Map>Dropped:6	aeg860_010
 M[E]_Heatingwire	False	Scroll BlendMode4	322560	0.034	53760	0.035	4	1	2	1	asset:4	EmissiveMap>Dropped:8 EmissiveMap>Emissive:4	aeg410_860
-M[AMSN][M1][2Blend]_Combustion	False	BlendRecipe Scroll	316805	0.033	229631	0.149	49	19	7	4	asset:49	Mask1Map>BlendDetailMask:49 AlbedoMap>Albedo:49 AlbedoMap>Albedo1:49 NormalMap>Normal:49 NormalMap>Normal1:49 EmissiveMap>Emissive:49 MetallicMap>Metallic1:49 Mask1Map>Dropped:49 EmissiveMap>Dropped:47 MetallicMap>Metallic:45 NormalMap>Dropped:26	aeg065_600
+M[AMSN][M1][2Blend]_Combustion	False	BlendRecipe Scroll	316805	0.033	229631	0.149	49	19	7	4	asset:49	Mask1Map>BlendDetailMask:49 AlbedoMap>Albedo:49 AlbedoMap>Albedo1:49 NormalMap>Normal:49 NormalMap>Normal1:49 MetallicMap>Metallic1:49 Mask1Map>Dropped:49 EmissiveMap>Emissive:49 EmissiveMap>Dropped:47 MetallicMap>Metallic:45 NormalMap>Dropped:26	aeg065_600
 M[Spacedebris][01]	False		311508	0.033	311508	0.202	16	3	8	1	asset:16	NormalMap>Normal:16	aeg300_890
 M[GlassLow]	False	BlendMode2	308326	0.032	46918	0.030	163	69	12	24	asset:160 chr:3	NormalMap>Normal:161	aeg224_400
 M[AMSN][M0][M1]_Alpha	False	BlendMode2	284920	0.030	298986	0.194	64	28	8	4	asset:64	AlbedoMap>Albedo:64 NormalMap>Normal:64 MetallicMap>Metallic:34	aeg890_150
@@ -55,7 +55,7 @@ C[Enemy][AMSN]_Emissive_Glow	False		159626	0.017	127202	0.083	43	31	26	14	parts:
 M[Transiton][Construction]	False	Scroll BlendMode4	148416	0.016	148416	0.096	4	2	2	1	asset:4	EmissiveMap>Dropped:12 EmissiveMap>Emissive:4 AlbedoMap>Albedo:4 MetallicMap>Metallic:4 NormalMap>Normal:4 Mask1Map>Dropped:4 Mask3Map>Dropped:2	aeg000_980
 C[c4200]_custom	False	Overlay Scroll	144094	0.015	355822	0.231	26	11	10	2	asset:12 chr:8 parts:6	AlbedoMap>Dropped:84 NormalMap>Dropped:58 NormalMap>OverlayNormal:26 MetallicMap>Metallic:26 AlbedoMap>Albedo:26 NormalMap>Normal:26 EmissiveMap>Emissive:18 Mask3Map>Dropped:6 Mask1Map>Dropped:6 EmissiveMap>Dropped:6	c4200
 M[Water][ocean_LOD1]	False	Water Scroll	129472	0.014	19588	0.013	3	2	1	1	asset:2 map:1	NormalMap>Dropped:6 NormalMap>WaterNormal:3	aeg501_726
-M[AMSN][Mb4_Ch2][3Mask][Ov_AN]	False	BlendRecipe	116478	0.012	167237	0.109	63	26	5	4	asset:59 map:2 chr:2	AlbedoMap>Albedo:63 NormalMap>Normal:63 AlbedoMap>Dropped:63 NormalMap>Dropped:63 MetallicMap>Metallic:63 MetallicMap>Dropped:61 AlbedoMap>Albedo1:18 NormalMap>Normal1:18 AlbedoMap>Albedo2:18 NormalMap>Normal2:18 Mask3Map>BlendMask:18 MetallicMap>Metallic1:18 MetallicMap>Metallic2:18 AlbedoMap>Albedo3:6 NormalMap>Normal3:6 MetallicMap>Metallic3:6 MetallicMap>BlendDetailMask:3	aeg053_700
+M[AMSN][Mb4_Ch2][3Mask][Ov_AN]	False	BlendRecipe	116478	0.012	167237	0.109	63	26	5	4	asset:59 chr:2 map:2	AlbedoMap>Albedo:63 NormalMap>Normal:63 AlbedoMap>Dropped:63 NormalMap>Dropped:63 MetallicMap>Metallic:63 MetallicMap>Dropped:61 AlbedoMap>Albedo1:18 NormalMap>Normal1:18 AlbedoMap>Albedo2:18 NormalMap>Normal2:18 Mask3Map>BlendMask:18 MetallicMap>Metallic1:18 MetallicMap>Metallic2:18 AlbedoMap>Albedo3:6 NormalMap>Normal3:6 MetallicMap>Metallic3:6 MetallicMap>BlendDetailMask:3	aeg053_700
 M[AMSN][M0][M1]_Edge_DecalBlend	False	BlendMode2 AlphaTest	108191	0.011	13991	0.009	81	39	12	29	asset:64 chr:15 parts:2	AlbedoMap>Albedo:81 NormalMap>Normal:81 MetallicMap>Metallic:1	c5100
 C[Enemy]_ColorMaterial_Emissive_Glow	False		104448	0.011	3834	0.002	2	1	1	2	chr:2	AlbedoMap>Dropped:6 NormalMap>Dropped:6 EmissiveMap>Emissive:2 C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_0_GSBlendMap_AlbedoMap>Dropped:2 C_Enemy__ColorMaterial_Emissive_Glow_snp_Texture2DArray_1_GSBlendMap_NormalMap>Dropped:2 AlbedoMap>Albedo:2 NormalMap>Normal:2	c5250
 M[Water][oceanB]	False	Water Scroll BlendMode2	100916	0.011	120910	0.078	29	17	7	10	asset:24 map:5	NormalMap>Dropped:58 NormalMap>WaterNormal:29	aeg054_900
@@ -64,18 +64,18 @@ C[AMSN][M0][M1]_Edge	False	AlphaTest	83840	0.009	42826	0.028	64	23	11	13	asset:5
 C[Enemy][A][E2]_Emissive_Glow	False		78990	0.008	17472	0.011	43	23	16	31	asset:21 chr:12 parts:10	EmissiveMap>Emissive:43 EmissiveMap>Dropped:43 AlbedoMap>Albedo:43 AlbedoMap>Dropped:43	c3300
 M[AMSN][Mb2][M0][M1][EM]_Glow	False	BlendRecipe	74666	0.008	58618	0.038	8	4	3	4	asset:8	Mask1Map>Dropped:14 AlbedoMap>Albedo:8 NormalMap>Normal:8 AlbedoMap>Albedo1:8 NormalMap>Normal1:8 Mask1Map>BlendDetailMask:8 EmissiveMap>Emissive:8 MetallicMap>Metallic:8 MetallicMap>Metallic1:8 NormalMap>Dropped:6	aeg412_030
 M[Water][Coaltar][solid]	False	Overlay Water Scroll BlendMode2	67226	0.007	1766	0.001	4	2	1	1	asset:4	DisplacementMap>Dropped:8 AlbedoMap>OverlayAlbedo:4 NormalMap>WaterNormal:4 Mask1Map>Dropped:4 NormalMap>Dropped:4	aeg410_051
-C[3Mask][Detail][M0]	False		63733	0.007	44326	0.029	27	14	8	6	chr:15 parts:8 asset:4	NormalMap>Dropped:104 AlbedoMap>Dropped:98 AlbedoMap>Albedo:27 NormalMap>Normal:27 Mask3Map>Dropped:27 Mask1Map>Dropped:17	c3150
+C[3Mask][Detail][M0]	False		63733	0.007	44326	0.029	27	14	8	6	chr:15 parts:8 asset:4	NormalMap>Dropped:104 AlbedoMap>Dropped:98 NormalMap>Normal:27 AlbedoMap>Albedo:27 Mask3Map>Dropped:27 Mask1Map>Dropped:17	c3150
 M[Water][oceanB2]	False	Water Scroll BlendMode2	55972	0.006	2724	0.002	4	2	1	1	asset:4	NormalMap>Dropped:8 NormalMap>WaterNormal:4	aeg060_100
 M[A][M0]_Edge	False	AlphaTest	49308	0.005	26440	0.017	206	101	4	5	asset:204 map:2	AlbedoMap>Albedo:190	aeg064_010
 M[Planet][Fog]_002	False	BlendMode2	46400	0.005	32600	0.021	6	3	2	2	asset:6		aeg860_010
 M[Water][Melange]_Glow_Opacity	False	Water BlendMode2	45592	0.005	45592	0.030	2	1	1	1	asset:2	NormalMap>Dropped:6 EmissiveMap>Dropped:6 NormalMap>WaterNormal:2 EmissiveMap>Emissive:2	aeg411_901
-M[A][M0][HSV]_Emissive_Glow_Scroll	False	Scroll	43228	0.005	12782	0.008	60	10	3	3	asset:60	EmissiveMap>Emissive:60 AlbedoMap>Albedo:60	aeg204_510
+M[A][M0][HSV]_Emissive_Glow_Scroll	False		43228	0.005	12782	0.008	60	10	3	3	asset:60	EmissiveMap>Emissive:60 AlbedoMap>Albedo:60	aeg204_510
 M[E][M0]_NoLight_Addition_Emissive_Glow	False	BlendMode4	43072	0.005	22902	0.015	115	50	13	11	asset:115	EmissiveMap>Emissive:115	aeg013_626
 M[A][M0]_Edge_Addition	False	BlendMode4 AlphaTest	41914	0.004	2854	0.002	34	2	2	1	asset:34	AlbedoMap>Albedo:34	aeg410_300
 M[Planet][GroundSurface]_003	False	BlendRecipe Overlay BlendMode2	40800	0.004	40800	0.026	1	1	1	1	asset:1	AlbedoMap>Dropped:2 Mask1Map>Dropped:2 AlbedoMap>Albedo:1 AlbedoMap>Albedo1:1 AlbedoMap>Albedo2:1 NormalMap>OverlayNormal:1 NormalMap>Normal:1 NormalMap>Normal1:1 NormalMap>Normal2:1 Mask3Map>BlendMask:1 NormalMap>Dropped:1 Generic__Turbulence_Localise>Dropped:1	aeg860_015
 C[AMSN][M1][Detail][OvA]	False	Overlay	38386	0.004	46485	0.030	22	11	2	1	parts:20 chr:2	AlbedoMap>Dropped:44 NormalMap>Normal:22 AlbedoMap>Albedo:22 MetallicMap>Metallic:22 Mask1Map>Dropped:22 NormalMap>Dropped:22 NormalMap>OverlayNormal:11	c3150
 M[Transiton][Hologram][Base]	False	Scroll BlendMode4	37344	0.004	37344	0.024	6	2	3	1	asset:6	EmissiveMap>Dropped:28 EmissiveMap>Emissive:6 Mask3Map>Dropped:6 Mask1Map>Dropped:6	aeg000_930
-M[Water][Coaltar]	False	BlendRecipe Water Scroll BlendMode2	37098	0.004	10098	0.007	16	7	4	2	asset:16	NormalMap>Dropped:64 NormalMap>WaterNormal:16 AlbedoMap>Albedo:16 AlbedoMap>Albedo1:16 Mask1Map>BlendDetailMask:16 Mask1Map>Dropped:16	aeg020_913
+M[Water][Coaltar]	False	BlendRecipe Water Scroll	37098	0.004	10098	0.007	16	7	4	2	asset:16	NormalMap>Dropped:64 NormalMap>WaterNormal:16 AlbedoMap>Albedo:16 AlbedoMap>Albedo1:16 Mask1Map>BlendDetailMask:16 Mask1Map>Dropped:16	aeg020_913
 M[Planet][Clouds]_001	False	BlendMode2	36800	0.004	27600	0.018	6	3	2	2	asset:6	Generic__Turbulence_Localise>Dropped:6 Mask1Map>Dropped:6 AlbedoMap>Albedo:6	aeg860_010
 M[Universe]_001	False		32256	0.003	32256	0.021	2	1	1	1	asset:2	EmissiveMap>Emissive:2	aeg860_000
 C[AMSN]	False		26946	0.003	41474	0.027	12	6	5	1	parts:8 chr:4	AlbedoMap>Albedo:12 MetallicMap>Metallic+Offset:12 NormalMap>Normal:12	c4200
@@ -88,7 +88,7 @@ M[Waterfall][lava]_01	False	Water Scroll AlphaTest	20100	0.002	11868	0.008	9	4	4
 C[Enemy]	False	Overlay	20074	0.002	75846	0.049	24	9	6	1	asset:18 parts:6	AlbedoMap>Dropped:98 NormalMap>Dropped:80 NormalMap>Normal:20 AlbedoMap>Albedo:20 Mask3Map>Dropped:20 MetallicMap>Metallic:20 NormalMap>OverlayNormal:18	aeg008_030
 M[A][M0]_Alpha	False	BlendMode2 AlphaTest	19872	0.002	2116	0.001	46	21	3	5	asset:46	AlbedoMap>Albedo:46	aeg039_540
 M[Planet][Melange]_001	False	Scroll BlendMode2	18400	0.002	18400	0.012	4	2	2	1	asset:4	Mask1Map>Dropped:8 AlbedoMap>Dropped:8 Generic__Turbulence_Localise>Dropped:4 AlbedoMap>Albedo:4	aeg860_013
-C[A][M0]_Edge_Emissive_Glow	False	BlendMode4	17621	0.002	8818	0.006	3	3	2	3	chr:2 asset:1	AlbedoMap>Albedo:3 EmissiveMap>Emissive:3	c6250
+C[A][M0]_Edge_Emissive_Glow	False	BlendMode4 AlphaTest	17621	0.002	8818	0.006	3	3	2	3	chr:2 asset:1	AlbedoMap>Albedo:3 EmissiveMap>Emissive:3	c6250
 M[A][M0]_Edge_Emissive_Glow	False	AlphaTest	16848	0.002	8282	0.005	34	10	4	4	asset:34	AlbedoMap>Albedo:34 EmissiveMap>Emissive:34	aeg240_051
 M[A][M0]_Alpha_Addition_NoLight_Emissive_Glow	False	BlendMode2	16576	0.002	12417	0.008	4	3	3	2	asset:4	EmissiveMap>Emissive:4 AlbedoMap>Albedo:4	aeg860_001
 C[AMSN][M1]_Combustion	False	BlendRecipe Scroll	15644	0.002	8126	0.005	3	2	2	2	asset:2 chr:1	NormalMap>Dropped:6 AlbedoMap>Albedo1:3 Mask1Map>BlendDetailMask:3 AlbedoMap>Albedo:3 EmissiveMap>Emissive:3 Metalness__Base>Dropped:3 EmissiveMap>Dropped:3	c6420
@@ -101,7 +101,7 @@ M[AMSN][Mb2][M0][M1][EM][FLow]_Glow	False	BlendRecipe Scroll	8754	0.001	8754	0.0
 M[Planet][MelangeB]_001	False	Scroll BlendMode2	8528	0.001	6396	0.004	6	3	3	2	asset:6	Mask1Map>Dropped:12 AlbedoMap>Dropped:12 AlbedoMap>Albedo:6 Generic__Turbulence_Localise>Dropped:4	aeg860_010
 M[3Mask]_NoLight_Alpha	False	Scroll BlendMode2 AlphaTest	8048	0.001	3952	0.003	12	5	5	4	asset:12	Mask3Map>Dropped:12	aeg029_910
 C[3Mask][Detail2][M1]	False		7108	0.001	7116	0.005	10	3	2	1	asset:10	NormalMap>Dropped:56 AlbedoMap>Dropped:56 MetallicMap>Dropped:26 Mask1Map>Dropped:20 NormalMap>Normal:10 MetallicMap>Metallic:10 AlbedoMap>Albedo:10 Mask3Map>Dropped:10	aeg840_320
-M[AMSN]_Alpha	False	BlendMode2	6532	0.001	45536	0.030	46	20	2	1	asset:41 chr:5	AlbedoMap>Albedo:46 NormalMap>Normal:46 MetallicMap>Metallic+Offset:17	aeg053_100
+M[AMSN]_Alpha	False	BlendMode2 AlphaTest	6532	0.001	45536	0.030	46	20	2	1	asset:41 chr:5	AlbedoMap>Albedo:46 NormalMap>Normal:46 MetallicMap>Metallic+Offset:17	aeg053_100
 M[Planet][Melange]_Sky4	False	Scroll BlendMode2	6144	0.001	4608	0.003	6	3	1	2	asset:6	EmissiveMap>Dropped:24 Mask3Map>Dropped:12 EmissiveMap>Emissive:6	aeg860_010
 M[A]_Emissive	False		6096	0.001	150	0.000	3	2	1	24	chr:3	AlbedoMap>Albedo:3 EmissiveMap>Emissive:3	c3000
 M[Interior][Transiton]	False	Scroll	6056	0.001	7300	0.005	28	3	4	1	asset:28	EmissiveMap>Dropped:56 Mask1Map>Dropped:56 AlbedoMap>Albedo:28 EmissiveMap>Emissive:28 Mask3Map>Dropped:28 NormalMap>Normal:28 NormalMap>Dropped:28	aeg233_703
@@ -118,7 +118,7 @@ M[AMSN][M1][Scroll][Vatex]_Alpha	False	Scroll BlendMode2 AlphaTest	3780	0.000	37
 M[A]_Edge	False	AlphaTest	3024	0.000	1240	0.001	8	4	1	2	asset:8	AlbedoMap>Albedo:8	aeg500_421
 M[watchman][Laser]_002	False	Scroll BlendMode4	2640	0.000	2640	0.002	6	1	3	1	asset:6	AlbedoMap>Dropped:18 Mask3Map>Dropped:6 AlbedoMap>Albedo:6	aeg300_900
 I[A][M0][HSV0]_Emissive_Glow	False		2552	0.000	724	0.000	32	14	2	10	asset:32	AlbedoMap>Albedo:32 EmissiveMap>Emissive:32	aeg840_920
-M[AMSN]_Edge	False	AlphaTest	2512	0.000	44963	0.029	39	12	1	3	asset:37 map:1 chr:1	AlbedoMap>Albedo:39 NormalMap>Normal:39 MetallicMap>Metallic+Offset:39	aeg008_030
+M[AMSN]_Edge	False	AlphaTest	2512	0.000	44963	0.029	39	12	1	3	asset:37 chr:1 map:1	AlbedoMap>Albedo:39 NormalMap>Normal:39 MetallicMap>Metallic+Offset:39	aeg008_030
 M[MS][Mask][M1]_PF	False	Overlay	2492	0.000	2492	0.002	2	1	1	1	asset:2	NormalMap>Dropped:10 AlbedoMap>Dropped:10 MetallicMap>Dropped:6 Mask1Map>Dropped:4 Mask3Map>Dropped:4 AlbedoMap>OverlayAlbedo:2 NormalMap>Normal:2 AlbedoMap>Albedo:2 MetallicMap>Metallic:2	aeg000_920
 C[3Mask][Detail][M1]_UVrotation	False		2400	0.000	5982	0.004	8	3	2	1	asset:8	MetallicMap>Metallic:8 AlbedoMap>Albedo:8 AlbedoMap>Dropped:8 NormalMap>Normal:8 NormalMap>Dropped:8	aeg300_900
 M[watchman][Laser]_001	False	Scroll BlendMode4	2064	0.000	2064	0.001	18	2	9	1	asset:18	AlbedoMap>Dropped:32 AlbedoMap>Albedo:18	aeg300_700
@@ -148,28 +148,28 @@ M[Coral_halation_Low]	False	Scroll	4	0.000	4	0.000	2	1	1	1	asset:2	Mask3Map>Drop
 P[ACParts]_ColorMaterial_Repair_Damage	False	Scroll	0	0.000	7349982	4.770	714	548	231	0	parts:706 asset:8	NormalMap>Dropped:3557 AlbedoMap>Dropped:2853 AlbedoMap>Albedo:714 NormalMap>Normal:714 Mask3Map>Dropped:714 Mask1Map>Dropped:714	lg_m_1410_l
 P[AMSN]	False		0	0.000	579944	0.376	160	115	34	0	parts:112 chr:45 asset:3	AlbedoMap>Albedo:150 NormalMap>Normal:149 MetallicMap>Metallic+Offset:142	c8000
 M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]	False	BlendRecipe Overlay	0	0.000	320000	0.208	1	1	1	0	map:1	AlbedoMap>Dropped:2 NormalMap>Dropped:2 NormalMap>OverlayNormal:1 MetallicMap>Normal:1 Mask3Map>BlendMask:1	m50_60_00_00_900000
-P[ACParts][AMSN]_Emissive_Glow	False		0	0.000	247798	0.161	81	73	34	0	parts:80 asset:1	EmissiveMap>Emissive:81 AlbedoMap>Albedo:79 NormalMap>Normal:77 MetallicMap>Metallic:69	bd_m_3011_l
-M[Sky]	False	Unlit Scroll	0	0.000	244992	0.159	22	22	19	0	asset:13 map:9	AlbedoMap>Dropped:88 AlbedoMap>Albedo:22 Generic__Cloud>Dropped:22 Generic__Moon>Dropped:22	m50_50_00_00_900000
+P[ACParts][AMSN]_Emissive_Glow	False		0	0.000	247798	0.161	81	73	34	0	parts:80 asset:1	EmissiveMap>Emissive:81 AlbedoMap>Albedo:79 NormalMap>Normal:77 MetallicMap>Metallic:69	bd_m_3010
+M[Sky]	False	Unlit Scroll	0	0.000	244992	0.159	22	22	19	0	asset:13 map:9	AlbedoMap>Dropped:88 AlbedoMap>Albedo:22 Generic__Cloud>Dropped:22 Generic__Moon>Dropped:22	aeg851_036
 I[AMSN]	False	AlphaTest	0	0.000	242688	0.158	24	12	1	0	asset:24	AlbedoMap>Albedo:24 NormalMap>Normal:24	aeg986_111
 P[ACParts]	False		0	0.000	194166	0.126	24	16	8	0	parts:24	AlbedoMap>Dropped:96 NormalMap>Dropped:96 Mask3Map>Dropped:24 AlbedoMap>Albedo:24 NormalMap>Normal:24 Mask1Map>Dropped:16 MetallicMap>Dropped:16 MetallicMap>Metallic:8	bd_m_8350_l
 C[Camouflage]_test_01	False		0	0.000	100860	0.065	6	2	1	0	parts:6	EmissiveMap>Emissive:6 AlbedoMap>Albedo:6 MetallicMap>Metallic+Offset:6 NormalMap>Normal:6 Mask1Map>Dropped:6	lg_m_1110
 P[ACParts]_Emissive_Glow	False		0	0.000	46982	0.030	650	534	221	0	parts:644 asset:6	EmissiveMap>Emissive:650 EmissiveMap>Dropped:650	wp_r_4620_l
-M[Atmosphere][Clouds][Cheap]_003	False	Unlit	0	0.000	44288	0.029	21	21	21	0	asset:21	AlbedoMap>Dropped:54 Mask1Map>Dropped:21 AlbedoMap>Albedo:21 Generic__AtmosphereHazeColorLUT>Dropped:21	aeg851_225
-P[ACParts]_ColorMaterial_Repair	False	Scroll	0	0.000	39732	0.026	2	2	1	0	parts:2	AlbedoMap>Dropped:8 NormalMap>Dropped:8 AlbedoMap>Albedo:2 NormalMap>Normal:2 Mask3Map>Dropped:2 Mask1Map>Dropped:2	bd_m_6110_l
+M[Atmosphere][Clouds][Cheap]_003	False	Unlit BlendMode2	0	0.000	44288	0.029	21	21	21	0	asset:21	AlbedoMap>Dropped:54 Mask1Map>Dropped:21 AlbedoMap>Albedo:21 Generic__AtmosphereHazeColorLUT>Dropped:21	aeg851_505
+P[ACParts]_ColorMaterial_Repair	False	Scroll	0	0.000	39732	0.026	2	2	1	0	parts:2	AlbedoMap>Dropped:8 NormalMap>Dropped:8 AlbedoMap>Albedo:2 NormalMap>Normal:2 Mask3Map>Dropped:2 Mask1Map>Dropped:2	bd_m_6110
 P[ACParts][A]_Emissive_Glow	False	BlendMode4	0	0.000	37998	0.025	60	39	25	0	parts:54 asset:6	EmissiveMap>Emissive:60 EmissiveMap>Dropped:40	wp_r_5110_l
 M[Cutscene][MS][MB][M0]	False	Overlay	0	0.000	37182	0.024	7	1	7	0	asset:7	NormalMap>Dropped:20 AlbedoMap>Dropped:9 Mask1Map>Dropped:9 NormalMap>Normal:7 AlbedoMap>Albedo:7 Mask3Map>Dropped:5 AlbedoMap>OverlayAlbedo:3 MetallicMap>Metallic:2	aeg870_098
 M[Cutscene][Water][Melange]_Glow_Opacity	False	Water BlendMode2	0	0.000	22796	0.015	1	1	1	0	asset:1	NormalMap>Dropped:3 EmissiveMap>Dropped:3 NormalMap>WaterNormal:1 EmissiveMap>Emissive:1	aeg870_325
-M[DistantClouds]_001	False	Unlit Scroll BlendMode2	0	0.000	20544	0.013	9	9	9	0	asset:9	Mask3Map>Dropped:9 AlbedoMap>Albedo:9	aeg851_226
+M[DistantClouds]_001	False	Unlit BlendMode2	0	0.000	20544	0.013	9	9	9	0	asset:9	Mask3Map>Dropped:9 AlbedoMap>Albedo:9	aeg851_226
 M[Cutscene][VA_Frame][Flipbook][Ice_worm_Hole]	False		0	0.000	18944	0.012	4	4	4	0	asset:4	Mask1Map>Dropped:8 AlbedoMap>Albedo:4 NormalMap>Normal:4 AlbedoMap>Dropped:4 NormalMap>Dropped:4	aeg870_130
 P[AMSN]_Edge	False	AlphaTest	0	0.000	18716	0.012	4	4	2	0	parts:4	AlbedoMap>Albedo:4 MetallicMap>Metallic+Offset:4 NormalMap>Normal:4	wp_a_8990_l
 M[SkyCloud]	False	Unlit BlendMode2	0	0.000	17376	0.011	18	8	9	0	asset:18	AlbedoMap>Albedo:18 AlbedoMap>Dropped:16 EmissiveMap>Emissive:15	aeg850_433
 P[ACParts]_ColorMaterial	False		0	0.000	13848	0.009	2	2	1	0	parts:2	AlbedoMap>Dropped:8 NormalMap>Dropped:8 P_ACParts__ColorMaterial_snp_Texture2DArray_0_GSBlendMap_AlbedoMap>Albedo:2 P_ACParts__ColorMaterial_snp_Texture2DArray_1_GSBlendMap_NormalMap>Normal:2 Mask3Map>Dropped:2 Mask1Map>Dropped:2	wp_e_0270_l
 M[Cutscene][VA_Frame][Flipbook][Ice_worm_dent]	False		0	0.000	13034	0.008	1	1	1	0	asset:1	NormalMap>Dropped:3 AlbedoMap>Dropped:2 Mask1Map>Dropped:2 AlbedoMap>Albedo:1 NormalMap>Normal:1 VectorMap>Dropped:1	aeg870_135
 M[Flow][Blend]_Emissive_Glow	False	Scroll BlendMode2	0	0.000	10336	0.007	10	4	9	0	asset:10	EmissiveMap>Dropped:38 NormalMap>Normal:10 NormalMap>Dropped:10 EmissiveMap>Emissive:10 Mask3Map>Dropped:3	aeg850_840
-M[DistantClouds]_002	False	Unlit BlendMode2	0	0.000	9804	0.006	6	6	3	0	asset:6	Mask3Map>Dropped:6 AlbedoMap>Albedo:6	aeg851_228
+M[DistantClouds]_002	False	Unlit Scroll BlendMode2	0	0.000	9804	0.006	6	6	3	0	asset:6	Mask3Map>Dropped:6 AlbedoMap>Albedo:6	aeg851_228
 M[CoralBurst]_01	False	BlendMode4	0	0.000	9728	0.006	3	1	3	0	asset:3	AlbedoMap>Dropped:15 Mask3Map>Dropped:3 AlbedoMap>Albedo:3	aeg870_520
 P[AMSN]_Emissive_Glow	False		0	0.000	9509	0.006	3	3	2	0	parts:2 chr:1	AlbedoMap>Albedo:3 MetallicMap>Metallic+Offset:3 NormalMap>Normal:3 EmissiveMap>Emissive:3	c9201
-M[Atmosphere][Clouds][Cheap]_002	False	Unlit	0	0.000	8448	0.005	4	4	4	0	asset:4	AlbedoMap>Dropped:16 Mask1Map>Dropped:4 AlbedoMap>Albedo:4 Generic__AtmosphereHazeColorLUT>Dropped:4	aeg851_156
+M[Atmosphere][Clouds][Cheap]_002	False	Unlit	0	0.000	8448	0.005	4	4	4	0	asset:4	AlbedoMap>Dropped:16 Mask1Map>Dropped:4 AlbedoMap>Albedo:4 Generic__AtmosphereHazeColorLUT>Dropped:4	aeg851_410
 S[PA]_Emissive_Glow_Addition_Depth	False	Scroll BlendMode2	0	0.000	7936	0.005	2	1	1	0	asset:2	EmissiveMap>Dropped:10 EmissiveMap>Emissive:2	aeg986_300
 M[atmosphericentry]_01	False	Scroll BlendMode4	0	0.000	7680	0.005	2	1	2	0	asset:2	AlbedoMap>Dropped:10 Mask3Map>Dropped:2 AlbedoMap>Albedo:2	aeg860_600
 P[AMSN]_Scroll	False		0	0.000	5056	0.003	8	8	2	0	parts:8	AlbedoMap>Albedo:8 NormalMap>Normal:8	wp_r_5110_l
@@ -182,17 +182,17 @@ M[Flow][Blend][ABlend]_Emissive_Glow	False	Scroll BlendMode2	0	0.000	3024	0.002	
 M[AMSN]_Emissive_Glow	False	AlphaTest	0	0.000	2922	0.002	15	6	1	0	chr:9 asset:6	AlbedoMap>Albedo:15 EmissiveMap>Emissive:15 NormalMap>Normal:14 MetallicMap>Metallic+Offset:7	c8530
 M[Cutscene][Flow][Blend]_Emissive_Glow	False	Scroll BlendMode2	0	0.000	2816	0.002	1	1	1	0	asset:1	EmissiveMap>Dropped:4 Mask1Map>Dropped:3 Mask3Map>Dropped:2 NormalMap>Normal:1 NormalMap>Dropped:1 MetallicMap>Metallic:1 MetallicMap>Dropped:1 EmissiveMap>Emissive:1	aeg870_090
 M[Atmosphere][Clouds][Cheap]_001	False	Unlit	0	0.000	2112	0.001	1	1	1	0	asset:1	AlbedoMap>Dropped:3 Mask1Map>Dropped:1 AlbedoMap>Albedo:1 Generic__AtmosphereHazeColorLUT>Dropped:1	aeg851_030
-P[ACParts]_Marking	False	BlendMode2	0	0.000	1846	0.001	218	178	1	0	parts:214 asset:4	P_ACParts__Marking_snp_Texture2DArray_0_>Dropped:218	am_m_8020_l
+P[ACParts]_Marking	False	BlendMode2	0	0.000	1846	0.001	218	178	1	0	parts:214 asset:4	P_ACParts__Marking_snp_Texture2DArray_0_>Dropped:218	am_m_8020
 P[ACParts][Glass]	False	BlendMode2	0	0.000	1512	0.001	15	13	8	0	parts:14 asset:1	NormalMap>Normal:6 NormalMap>Dropped:6	wp_l_4970_l
 P[Laser]_Emissive_Glow	False	Scroll BlendMode2	0	0.000	880	0.001	2	2	1	0	parts:2	AlbedoMap>Albedo:2 AlbedoMap>Dropped:2	wp_l_0230_l
 M[LightShaft]_001	False	BlendMode4	0	0.000	648	0.000	2	1	1	0	asset:2	Mask1Map>Dropped:2	aeg851_517
 C[Glass]	False	BlendMode2	0	0.000	502	0.000	3	3	1	0	parts:2 asset:1	NormalMap>Normal:3	wp_e_5553_l
 S[PC_WP_4820_PA]	False	Scroll BlendMode4	0	0.000	480	0.000	1	1	1	0	asset:1	Mask3Map>Dropped:1 AlbedoMap>Albedo:1 EmissiveMap>Emissive:1 AlbedoMap>Dropped:1	aeg090_030
-P[ACParts][AMSN][Device]_Emissive_Glow	False		0	0.000	460	0.000	6	6	2	0	parts:6	EmissiveMap>Emissive:6 AlbedoMap>Albedo:6 MetallicMap>Metallic:6 NormalMap>Normal:6	wp_l_2220_l
-P[ACParts][Plasma_spinner]_Emissive_Glow	False	Scroll BlendMode4	0	0.000	352	0.000	2	2	1	0	parts:2	EmissiveMap>Emissive:2	wp_l_1210_l
+P[ACParts][AMSN][Device]_Emissive_Glow	False		0	0.000	460	0.000	6	6	2	0	parts:6	EmissiveMap>Emissive:6 AlbedoMap>Albedo:6 MetallicMap>Metallic:6 NormalMap>Normal:6	wp_r_2220_l
 M[SkyCloud2]	False	Overlay Unlit Scroll BlendMode2	0	0.000	352	0.000	1	1	1	0	asset:1	NormalMap>OverlayNormal:1 AlbedoMap>Albedo:1 AlbedoMap>Dropped:1	aeg850_733
+P[ACParts][Plasma_spinner]_Emissive_Glow	False	Scroll BlendMode4	0	0.000	352	0.000	2	2	1	0	parts:2	EmissiveMap>Emissive:2	wp_l_1210_l
 C[Cutscene][Enemy][A][Flow]_Emissive_Glow	False	Scroll	0	0.000	168	0.000	1	1	1	0	asset:1	Mask3Map>Dropped:1 EmissiveMap>Emissive:1 AlbedoMap>Albedo:1 EmissiveMap>Dropped:1	aeg870_476
-P[ACParts][Glass][Transiton]	False	BlendMode2	0	0.000	160	0.000	2	2	1	0	parts:2	EmissiveMap>Emissive:2 EmissiveMap>Dropped:2 NormalMap>Normal:2 Mask1Map>Dropped:2	hd_m_8010_l
+P[ACParts][Glass][Transiton]	False	BlendMode2	0	0.000	160	0.000	2	2	1	0	parts:2	EmissiveMap>Emissive:2 EmissiveMap>Dropped:2 NormalMap>Normal:2 Mask1Map>Dropped:2	hd_m_8010
 C[Cutscene][c8135]_Emissive_Glow	False		0	0.000	72	0.000	2	1	2	0	asset:2	EmissiveMap>Emissive:2 AlbedoMap>Albedo:2 AlbedoMap>Dropped:2	aeg870_080
 M[A][M0]_Alpha_Addition_NoLight	False	BlendMode2	0	0.000	64	0.000	1	1	1	0	asset:1	AlbedoMap>Albedo:1	aeg851_500
 P[Limiter_parts]_Emissive_Glow	False	Scroll	0	0.000	32	0.000	8	8	4	0	parts:8	AlbedoMap>Albedo:8 EmissiveMap>Emissive:8 EmissiveMap>Dropped:8	wp_a_9010_l

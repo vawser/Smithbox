@@ -134,6 +134,18 @@ public static class MaterialBinding
                 : MaterialTextureRoute.Drop("a water normal the water recipe doesn't use");
         }
 
+        // Fur's masked layer (MaterialFurMask): the mask in the blend mask slot and the texture in the third albedo slot,
+        // which fur has no other use for
+        if (d?.Fur is { MaskType: { } furMask } && texType == furMask)
+        {
+            return new(MaterialTextureUse.BlendMask, LoadedElsewhere: true);
+        }
+
+        if (d?.Fur is { MaskedType: { } furMasked } && texType == furMasked)
+        {
+            return new(MaterialTextureUse.FurAlbedo, 2, LoadedElsewhere: true);
+        }
+
         // The same goes for fur, and its albedos as well
         if (d?.Fur is { } fur && role is "AlbedoMap" or "NormalMap")
         {

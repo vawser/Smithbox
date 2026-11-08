@@ -32,12 +32,12 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | Route | Textures | Placed triangles of meshes with one |
 |---|---|---|
 | Albedo | 28404 | 1,819,694,589 |
-| Normal | 27752 | 1,834,187,016 |
-| Dropped | 21418 | 619,924,227 |
+| Normal | 27645 | 1,830,344,564 |
+| Dropped | 21007 | 619,493,114 |
 | OverlayNormal | 14970 | 920,349,564 |
-| Albedo1 | 7411 | 413,873,104 |
-| BlendDetailMask | 7238 | 405,396,382 |
-| Normal1 | 7058 | 407,376,882 |
+| Albedo1 | 7580 | 418,086,189 |
+| BlendDetailMask | 7386 | 407,712,847 |
+| Normal1 | 7227 | 411,589,967 |
 | Metallic+Offset | 4084 | 223,660,189 |
 | Emissive | 3635 | 214,589,318 |
 | Metallic | 2982 | 197,974,277 |
@@ -46,7 +46,7 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | Normal2 | 1799 | 230,210,469 |
 | Albedo2 | 1761 | 233,277,635 |
 | OverlayNormal1 | 1458 | 150,537,425 |
-| BlendMask | 1302 | 259,142,827 |
+| BlendMask | 1316 | 260,618,810 |
 | OverlayAlbedo1 | 879 | 100,344,867 |
 | Albedo3 | 786 | 165,488,381 |
 | Normal3 | 785 | 165,477,891 |
@@ -61,16 +61,17 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | Deformer | 65 | 317,060 |
 | Specular1 | 47 | 0 |
 | Metallic2 | 27 | 847,235 |
+| FurAlbedo2 | 18 | 1,193,095 |
 | MagmaGlow | 13 | 4,307,046 |
 
 ## Roles
 
 | Role | Routes (mesh textures) | Shaders | Meshes |
 |---|---|---|---|
-| AlbedoMap | Albedo:27784 Albedo1:7358 Dropped:7311 OverlayAlbedo:2284 Albedo2:1755 OverlayAlbedo1:879 Albedo3:786 FurAlbedo:659 OverlayAlbedo2:385 OverlayAlbedo3:81 Normal3:57 | 428 | 28474 |
-| NormalMap | Normal:27162 OverlayNormal:14970 Dropped:8798 Normal1:7011 Normal2:1752 OverlayNormal1:1458 Normal3:728 FurNormal:653 OverlayNormal2:638 WaterNormal:128 OverlayNormal3:109 Albedo:6 Albedo1:6 Albedo2:6 Deformer:1 | 417 | 28316 |
+| AlbedoMap | Albedo:27784 Albedo1:7527 Dropped:7124 OverlayAlbedo:2284 Albedo2:1755 OverlayAlbedo1:879 Albedo3:786 FurAlbedo:659 OverlayAlbedo2:385 OverlayAlbedo3:81 Normal3:57 FurAlbedo2:18 | 428 | 28474 |
+| NormalMap | Normal:27055 OverlayNormal:14970 Dropped:8736 Normal1:7180 Normal2:1752 OverlayNormal1:1458 Normal3:728 FurNormal:653 OverlayNormal2:638 WaterNormal:128 OverlayNormal3:109 Albedo:6 Albedo1:6 Albedo2:6 Deformer:1 | 417 | 28316 |
 | MetallicMap | Metallic+Offset:4084 Metallic:2982 Metallic1:2944 Dropped:146 Metallic2:27 | 113 | 9800 |
-| Mask1Map | BlendDetailMask:6281 Emissive:3024 Dropped:2666 BlendMask:117 | 235 | 8920 |
+| Mask1Map | BlendDetailMask:6429 Emissive:3024 Dropped:2504 BlendMask:131 | 235 | 8920 |
 | Mask3Map | Dropped:1500 BlendMask:1185 BlendDetailMask:35 MagmaGlow:13 | 115 | 2553 |
 | BlendEdge | BlendDetailMask:922 | 2 | 922 |
 | EmissiveMap | Emissive:582 Dropped:31 | 91 | 585 |
@@ -94,13 +95,13 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | PseudoTransparency_Anger | Dropped:18 | 1 | 18 |
 | Mask__BlendEdgeTexture | Dropped:15 | 3 | 15 |
 | Generic__AtmosphereHazeColorLUT | Dropped:14 | 6 | 14 |
-| Fade_and_FallOff_Noise | Dropped:10 | 1 | 10 |
 | DisplacementMap | Dropped:10 | 2 | 10 |
+| Fade_and_FallOff_Noise | Dropped:10 | 1 | 10 |
 | MaskTexture | Dropped:5 | 2 | 5 |
 | Flowmap_ | Dropped:4 | 4 | 4 |
-| FadeOut_Noise | Dropped:3 | 2 | 3 |
 | Generic__Flowmap | Dropped:3 | 1 | 3 |
 | Generic_ | Dropped:7 | 1 | 3 |
+| FadeOut_Noise | Dropped:3 | 2 | 3 |
 | Emissive_Flicker | Emissive:3 | 2 | 3 |
 | Fade__Line | Dropped:2 | 1 | 2 |
 | ReflectanceMap | Dropped:2 | 2 | 2 |
@@ -125,12 +126,12 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[AMSN_V][Mb2][Ov_N]` |  | BlendRecipe Overlay | 1.727 | 1.540 | 694 |  | aeg599_045 |
 | `M[AMSN_V][Ov_N][Mb4_ColorAdjust][3Mask_ch18]` |  | BlendRecipe Overlay | 1.715 | 1.109 | 119 |  | aeg355_001 |
 | `SpeedTree_5010fdmo_w32187` |  |  | 1.651 | 0.052 | 39 | g_TranslucencyTexture | aeg801_250 |
-| `M[AMSN_V][Ov_N][Crystal][CrossFade]` |  | Overlay | 1.543 | 0.307 | 49 | AlbedoMap NormalMap Mask1Map | aeg355_151 |
+| `M[AMSN_V][Ov_N][Crystal][CrossFade]` |  | Overlay AlphaTest | 1.543 | 0.307 | 49 | AlbedoMap NormalMap Mask1Map | aeg355_151 |
 | `C[AMSN]` |  |  | 1.514 | 2.786 | 430 |  | c2271 |
 | `M[Crystal][CrossFade]` |  | Overlay | 1.402 | 0.270 | 41 |  | aeg355_068 |
 | `C[AMSN]_Shadow` |  | AlphaTest | 1.323 | 0.122 | 58 |  | c5240 |
 | `SpeedTree_50777_w3636187` |  | AlphaTest | 1.235 | 0.008 | 13 | g_TranslucencyTexture | aeg801_006 |
-| `C[DetailBlend]_SSS` |  | Overlay | 1.188 | 1.843 | 212 | Mask1Map NormalMap AlbedoMap | c3450 |
+| `C[DetailBlend]_SSS` |  | Overlay | 1.188 | 1.843 | 212 | Mask1Map AlbedoMap NormalMap | c3450 |
 | `C[Fur]` |  | Fur AlphaTest | 1.179 | 1.377 | 277 | AlbedoMap NormalMap | c3661 |
 | `M[AMSN_V]_Vesitation_Emissive_Glow` | yes | WindPivot AlphaTest | 1.175 | 0.773 | 83 |  | aeg599_853 |
 | `M[AMSN_V]_Grass2` | yes | WindPivot AlphaTest | 1.083 | 0.234 | 278 | Mask1Map | aeg355_019 |
@@ -147,7 +148,7 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `GXFlver_ColDifSpcBumpIbl` |  |  | 0.570 | 0.105 | 62 |  | aeg003_054 |
 | `M[AMSN_V]_Grass2_LOD1` | yes | WindPivot AlphaTest | 0.567 | 0.029 | 67 | Mask1Map | aeg004_114 |
 | `M[AMSN]_Edge` |  | AlphaTest | 0.465 | 0.795 | 238 |  | aeg361_187 |
-| `C[AMSN]_ContactFade` |  |  | 0.454 | 0.240 | 65 |  | c3661 |
+| `C[AMSN]_ContactFade` |  | BlendMode2 | 0.454 | 0.240 | 65 |  | c3661 |
 | `M[AMSN_V][CL][Ov_n2][1Mask][Snow_VtxMask]` |  | Overlay | 0.441 | 0.054 | 14 | AlbedoMap NormalMap Mask1Map | aeg552_116 |
 | `SpeedTree_5010fdmo_w329a7` |  |  | 0.431 | 0.017 | 30 | g_TranslucencyTexture | aeg801_016 |
 
@@ -184,10 +185,10 @@ per texture, so a column can add up to more than the game.
 
 | Status | Textures | Placed triangles |
 |---|---|---|
-| Ok | 116189 | 7,930,138,805 |
-| Dropped | 16351 | 1,085,503,753 |
-| Unverified | 7441 | 405,909,291 |
-| Approximate | 967 | 63,027,612 |
+| Ok | 116568 | 7,937,038,988 |
+| Dropped | 15940 | 1,075,934,492 |
+| Unverified | 7455 | 407,385,274 |
+| Approximate | 985 | 64,220,707 |
 | Misrouted | 577 | 56,145,009 |
 | Extra | 215 | 8,097,914 |
 | UvMismatch | 60 | 2,098,664 |

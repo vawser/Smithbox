@@ -516,6 +516,9 @@ layout(set = 4, binding = 0, std140) buffer materialLayerScroll
 #define SOURCE_MIXED 4096u
 #define SOURCE_SCALED 8192u
 #define SOURCE_BIAS 32768u
+// Snow: the value is the facing one, its vertex value's channel from bit 17 (the extended form's bits otherwise)
+#define SOURCE_FACING 65536u
+#define SOURCE_FACING_SHIFT 17u
 #define SOURCE_ADJUSTED 16384u
 
 // The extended form (AC6's [MS] blends), the two entries after water for layers 1 to 3: what multiplies each
@@ -854,6 +857,24 @@ void ComputeRecipeWeights()
 			value = fsin_vertexBlend[channel - 3u];
 		}
   #endif
+
+		// Snow: how much the bottom layer's normal faces a direction, sat(bias + dot(N, dir)), times a vertex value
+		if ((source & SOURCE_FACING) != 0u && (blend.sources.x & SOURCE_ADJUSTED) != 0u)
+		{
+			vec3 n;
+			n.xy = SampleLayer(ROW_NORMAL, 0).xy * 2.0 - 1.0;
+			n.z = sqrt(1.0 - min(dot(n.xy, n.xy), 1.0));
+			n = normalize(fsin_worldToTangent * n);
+			vec3 direction = layerdetaildata[g_mat + 13u].channels[1].yzw;
+			value = clamp(layerdetailextradata[g_mat + 14u].layer[i - 1].w + dot(n, direction), 0.0, 1.0);
+  #ifdef MATERIAL_DEFORM
+			uint facingChannel = (source >> SOURCE_FACING_SHIFT) & SOURCE_CHANNEL_MASK;
+			if (facingChannel >= 3u)
+			{
+				value *= fsin_vertexBlend[clamp(int(facingChannel) - 3, 0, 2)];
+			}
+  #endif
+		}
 
 		// The [MbN_ColorAdjust] form: a vertex value added before saturating, and the vertex color's alpha over it
   #ifdef MATERIAL_DEFORM
@@ -1982,7 +2003,20 @@ void main()
 	if (IsFur())
 	{
 		vec4 strands = SampleLayer(ROW_ALBEDO, 1);
-		diffuseColor.rgb = clamp(diffuseColor.rgb * strands.rgb * 4.55, 0.0, 1.0);
+
+		vec3 furColor = diffuseColor.rgb * strands.rgb * 4.55;
+
+		// A further layer shown where a mask's red says (MaterialFurMask): 4.55 * lerp(0.2196, layer.r, mask.r), which
+		// is 1 where the mask is 0. The layer is in the third albedo slot, the mask in the blend mask's
+		uint furMask = MaterialValue(ROW_EXTRA, 0);
+		uint furMasked = MaterialValue(ROW_ALBEDO, 2);
+		if (furMask > 3u && furMasked > 3u)
+		{
+			vec2 tiling = shadingdata[g_mat + 1u].tiling.xy;
+			float shown = SampleAt(furMask, 0, tiling, vec2(0.0)).r;
+			furColor *= 4.55 * mix(0.2196, SampleAt(furMasked, 0, tiling, vec2(0.0)).r, shown);
+		}
+		diffuseColor.rgb = clamp(furColor, 0.0, 1.0);
 		diffuseColor.w = strands.w * fsin_color.a
 			+ (OrderedDither() - 0.5) * effectsdata[g_mat + 2u].emissiveColor.w;
 	}
