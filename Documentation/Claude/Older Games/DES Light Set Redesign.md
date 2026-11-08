@@ -191,6 +191,55 @@ do that.
     `sceneLighting`.
 - Between phases the user removed `FlverBB.*` and `FlverDS3.*`, the dead shaders.
 
+### Phase 3 as built (2026-11-08; checked in the app by the user: env lighting is back)
+
+- **`SceneLightingData` grows to 368 bytes** with four rows taken from Phase 5a's `LightSetData`: `EnvDiffuseScale`,
+  `EnvSpecularScale`, then the five cube pool indices (`EnvDiffuseTexture`, `EnvSpecular0-3`) and three pads. In
+  GLSL they are `envDiffuseScale`, `envSpecularScale`, `envTextures` and `envTextures2`.
+- **`SceneLightingData.SetEnv(env, exposure)`** carries over `LightSetTable.FromLighting`'s env logic: on only when
+  the lighting has env cubemaps (`GparamEnvLighting.Enabled`, DES only) and `Viewport_Map_DrawParam_Env_Lighting` is
+  on. The textures are looked up each frame (`CubeTexture`), so they appear once they've loaded.
+- **The pipeline** calls it for entry 0 with the map's `Env` and exposure. The viewport-sun lighting sets it off.
+  When it's off, `envDiffuseScale.w` is 0, so no material is env lit.
+- **`FlverShader.frag`:**
+  - `EnvLit()` is back: a map material with `MATERIAL_ENV_LIT` and `LIGHTING.envDiffuseScale.w > 0.5`.
+  - `EnvLight()` reads `LIGHTING.envTextures*` and the scales field by field, where the old version copied
+    `lightSetData set = ...`.
+- **The Rendering tool's** "cubemaps loaded" count uses `SetEnv`, so nothing reads `LightSetTable` any more.
+  It can be archived in Phase 4.
+- **Checks:** `SceneParamsAudit --csharp` agrees at 368 bytes, and the compiled offsets match in all 17
+  `sceneLighting` shaders.
+
+### Phase 4 as built (2026-11-08; not yet checked in the app)
+
+- **`Shaders/InstanceData.glsl`:** the one `instanceData` struct and `WorldBuffer` declaration (set 1, binding 0),
+  in place of 16 identical copies (`SceneParamsAudit --instance-apply`). Its new lane is `uvec4 lighting`, where
+  `x` is the lighting set and `yzw` are reserved.
+- **`InstanceData.cs`** is 96 bytes, up from 80: `LightingSet` plus three pads. Every C# site sizes and aligns by
+  `sizeof(InstanceData)`, including `FirstInstance` and the world/grass allocators. No GPU code writes instances.
+  The 64 MB world budget now holds about 699k instances (the densest maps take about 40k).
+- **`MeshRenderableProxy.LightSet`:** a set of 128 or more falls back to 0, and the set is written to
+  `InstanceData.LightingSet` for flver-shader meshes. The material ID is a plain index plus the no-shadow flag again.
+- **`FlverShader.vert`** passes `idata[i].lighting.x` as `fsin_lightingSet`, flat, at location 17. The
+  `FlverShader.frag` side:
+  - It sets `g_lightingSet = MapLighting() ? fsin_lightingSet : 0u` at the start of `main`, and
+    `#define LIGHTING_SET_INDEX g_lightingSet` makes every `LIGHTING.<field>` read the instance's set.
+  - The sun, hemisphere, model lights and env cubemaps all follow the set without any other change.
+- **`SceneRenderPipeline.FoldLighting(lighting, exposure, cameraYaw, withModels)`:** one fold for entry 0 and for the
+  per-part sets, which `LightSetTable` used to fold separately and without Light1's camera yaw.
+  - The per-part sets (`SceneRenderer.MapLightSets`) are folded at the scene's exposure into
+    `PartLighting[0..n)`.
+  - They are uploaded each frame after entry 0, in the same upload task.
+  - With no map lighting there are no part sets.
+- **Map Editor:** `UpdatePartLighting` is called again, capped at `SceneLightingData.MaxEntries - 1` (127) sets, and
+  the "Light Parts by Their Own LightID" checkbox is back.
+- **Archived:** `Renderer/Scene/LightSetTable.cs` → `.archive/LightSetTable.cs` (with `git mv`, so the rename is
+  staged), along with `SceneRenderer.LightSets`. Nothing referenced either any more.
+- **Checks** (`SceneParamsAudit --csharp`):
+  - `InstanceData`/`instanceData` agree at 96 bytes.
+  - The compiled offsets match in all 31 shaders with `instanceData`, which are all 31 that bind `WorldBuffer`.
+  - `sceneParams` (62 shaders) and `sceneLighting` (17) still match.
+
 ### Phased plan
 
 | Phase | Work | Check |

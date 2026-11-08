@@ -19,19 +19,7 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
     sceneParams sceneparam;
 };
 
-struct instanceData
-{
-	mat4 world;
-	// 0: material id
-	// 1: bone base
-	// 3: entity id
-	uvec4 materialID;
-};
-
-layout(set = 1, binding = 0, std140) buffer WorldBuffer
-{
-    readonly instanceData idata[];
-};
+#include "../InstanceData.glsl"
 
 layout(set = 7, binding = 0, std140) buffer BoneBuffer
 {
@@ -123,6 +111,8 @@ layout(location = 12) flat out uint fsin_flags;
 	layout(location = 13) flat out uint fsin_lightmap;
 	layout(location = 14) flat out mat3 fsin_modelToWorld;
 #endif
+// The lighting set the instance is lit by (instanceData.lighting.x, SceneLighting.glsl), 0 for the view's own
+layout(location = 17) flat out uint fsin_lightingSet;
 
 // materialID.z of a static instance with a lightmap: InstanceData.LightmapFlag and the entry
 #define SKIN_KIND_MASK 0xC0000000u
@@ -495,6 +485,7 @@ void main()
 	// bit 0: no shadows
 	fsin_flags = (idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
+	fsin_lightingSet = idata[gl_InstanceIndex].lighting.x;
 
 #ifdef MATERIAL_BLEND
 	uint skinKind = idata[gl_InstanceIndex].materialID.z;

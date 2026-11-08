@@ -97,6 +97,10 @@ public class SceneRenderPipeline
     /// <summary>Entry 0 of <see cref="SceneLightingBuffer" /> as last uploaded</summary>
     public SceneLightingData SceneLighting;
 
+    /// <summary>Entries 1 onwards of <see cref="SceneLightingBuffer" />: the per-part sets, <see cref="PartLightingCount" /> in use</summary>
+    private readonly SceneLightingData[] PartLighting = new SceneLightingData[SceneLightingData.MaxEntries - 1];
+    private int PartLightingCount;
+
     /// <summary>
     ///     The viewport's own sun, from the Viewport Rendering tool: its direction (the way the light travels) and
     ///     colour with intensity in w. The scene is lit by it when the map's GPARAMs don't light it.
@@ -493,29 +497,24 @@ public class SceneRenderPipeline
 
         var mapLightDirection = Vector4.Zero;
         var mapSunColor = Vector4.Zero;
-        var mapSunSpecColor = Vector4.Zero;
-        var mapHemiUp = Vector4.Zero;
-        var mapHemiDown = Vector4.Zero;
         var mapEnvMapScale = Vector4.One;
         var mapEnvMapSaturate = 1.0f;
         var mapLightingFlags = 0u;
-        MapDirectionalLightData[] mapModelLights = null;
-        var mapModelHemiUp = Vector4.Zero;
-        var mapModelHemiDown = Vector4.Zero;
+        var mapExposure = 0.0f;
+        var cameraYaw = 0.0f;
+        var withModels = false;
 
         if (mapLighting != null)
         {
             var exposure = mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
+            mapExposure = exposure;
             var sun = mapLighting.Sun;
 
+            // For the shadows and fog below; the shaders' sun is in the lighting sets, see FoldLighting
             mapLightDirection = new Vector4(sun.Direction, 0.0f);
             mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);
-            mapSunSpecColor = new Vector4(sun.Specular.X, sun.Specular.Y, sun.Specular.Z, sun.Specular.W * exposure);
             irradianceExposure = CFG.Current.Viewport_GI_Intensity * exposure;
 
-            // The shader takes these as plain rgb, so the intensity and exposure are folded in here
-            mapHemiUp = new Vector4(new Vector3(mapLighting.HemiUp.X, mapLighting.HemiUp.Y, mapLighting.HemiUp.Z) * mapLighting.HemiUp.W * exposure, 1.0f);
-            mapHemiDown = new Vector4(new Vector3(mapLighting.HemiDown.X, mapLighting.HemiDown.Y, mapLighting.HemiDown.Z) * mapLighting.HemiDown.W * exposure, 1.0f);
             mapEnvMapScale = new Vector4(new Vector3(mapLighting.EnvMapScale.X, mapLighting.EnvMapScale.Y, mapLighting.EnvMapScale.Z) * mapLighting.EnvMapScale.W, 1.0f);
             mapEnvMapSaturate = mapLighting.EnvMapSaturate;
 
@@ -524,29 +523,16 @@ public class SceneRenderPipeline
             mapLightingFlags = 1u | (hemiInsideVolumes ? 2u : 0u);
 
             // Characters take the model set: its own sun, the fill lights, and its hemisphere
-            var models = mapLighting.Models;
+            withModels = mapLighting.Models != null && CFG.Current.Viewport_Map_Lighting_Model_Lights;
 
-            if (models != null && CFG.Current.Viewport_Map_Lighting_Model_Lights)
+            if (withModels)
             {
                 // Light1 can turn with the camera, by the camera's yaw on the GPARAM angles' scale
-                var cameraYaw = 0.0f;
-
                 if (Matrix4x4.Invert(view, out var cameraWorld))
                 {
                     var forward = Vector3.TransformNormal(-Vector3.UnitZ, cameraWorld);
                     cameraYaw = MathF.Atan2(forward.X, forward.Z);
                 }
-
-                mapModelLights = new[]
-                {
-                    ToGpu(models.Sun, exposure, cameraYaw),
-                    ToGpu(models.Light1, exposure, cameraYaw),
-                    ToGpu(models.LocalLight1, exposure, cameraYaw),
-                    ToGpu(models.LocalLight2, exposure, cameraYaw)
-                };
-
-                mapModelHemiUp = new Vector4(new Vector3(models.HemiUp.X, models.HemiUp.Y, models.HemiUp.Z) * models.HemiUp.W * exposure, 1.0f);
-                mapModelHemiDown = new Vector4(new Vector3(models.HemiDown.X, models.HemiDown.Y, models.HemiDown.Z) * models.HemiDown.W * exposure, 1.0f);
 
                 mapLightingFlags |= 4u;
             }
@@ -651,22 +637,18 @@ public class SceneRenderPipeline
             SceneParams.EnvMapScale = mapEnvMapScale;
             SceneParams.EnvMapSaturate = mapEnvMapSaturate;
 
-            // The view's own lighting, entry 0 of the lighting sets: the map's sun where its GPARAMs light the
-            // scene, otherwise the viewport's, whose highlights take its own colour
-            SceneLighting = new SceneLightingData
-            {
-                Sun = mapLighting != null
-                    ? new MapDirectionalLightData { Direction = mapLightDirection, Color = mapSunColor, SpecColor = mapSunSpecColor }
-                    : new MapDirectionalLightData { Direction = ViewportSunDirection, Color = ViewportSunColor, SpecColor = ViewportSunColor },
-                HemiUp = mapHemiUp,
-                HemiDown = mapHemiDown,
-                ModelLight0 = mapModelLights?[0] ?? default,
-                ModelLight1 = mapModelLights?[1] ?? default,
-                ModelLight2 = mapModelLights?[2] ?? default,
-                ModelLight3 = mapModelLights?[3] ?? default,
-                ModelHemiUp = mapModelHemiUp,
-                ModelHemiDown = mapModelHemiDown
-            };
+            // The view's own lighting, entry 0 of the lighting sets: the map's GPARAM lighting where it lights the
+            // scene, otherwise the viewport's sun
+            SceneLighting = mapLighting != null
+                ? FoldLighting(mapLighting, mapExposure, cameraYaw, withModels)
+                : ViewportLighting();
+
+            // The per-part sets after it (Demon's Souls' parts lit by their own LightIDs), folded the same way at the
+            // scene's exposure, so a part lit by its row looks as the whole scene would lit by that row
+            var partSets = mapLighting != null ? SceneRenderer.MapLightSets : null;
+            PartLightingCount = Math.Min(partSets?.Count ?? 0, SceneLightingData.MaxEntries - 1);
+            for (var i = 0; i < PartLightingCount; i++)
+                PartLighting[i] = FoldLighting(partSets[i], mapExposure, cameraYaw, withModels);
 
             SceneParams.ShadowMatrix0 = shadowParams.Matrix0;
             SceneParams.ShadowMatrix1 = shadowParams.Matrix1;
@@ -713,9 +695,15 @@ public class SceneRenderPipeline
 
             cl.UpdateBuffer(SceneParamBuffer, 0, ref uploaded, (uint)sizeof(SceneParam));
 
-            // Entry 0 only; the per-part sets after it are not filled yet
+            // Entry 0, then the per-part sets in use. Entries past them keep old values, which no instance names.
             var lighting = SceneLighting;
             cl.UpdateBuffer(SceneLightingBuffer, 0, ref lighting, (uint)SceneLightingData.Size);
+
+            if (PartLightingCount > 0)
+            {
+                cl.UpdateBuffer(SceneLightingBuffer, (uint)SceneLightingData.Size, ref PartLighting[0],
+                    (uint)(SceneLightingData.Size * PartLightingCount));
+            }
             Shadows?.Upload(cl, uploaded);
             Rain?.Upload(cl, uploaded);
 
@@ -744,16 +732,60 @@ public class SceneRenderPipeline
         };
     }
 
+    /// <summary>
+    ///     A lighting set from GPARAM lighting at <paramref name="exposure" />, as the shaders read it: colours with
+    ///     intensity × exposure in a, hemispheres pre-multiplied. With <paramref name="withModels" />, the model set's
+    ///     lights too (the lighting's own when it has none), Light1 turned by <paramref name="cameraYaw" /> where it
+    ///     follows the camera. Also its env cubemaps (Demon's Souls).
+    /// </summary>
+    private static SceneLightingData FoldLighting(GparamLighting lighting, float exposure, float cameraYaw, bool withModels)
+    {
+        var sun = lighting.Sun;
+        var data = new SceneLightingData
+        {
+            Sun = new MapDirectionalLightData
+            {
+                Direction = new Vector4(sun.Direction, 0.0f),
+                Color = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure),
+                SpecColor = new Vector4(sun.Specular.X, sun.Specular.Y, sun.Specular.Z, sun.Specular.W * exposure)
+            },
+            HemiUp = FoldHemi(lighting.HemiUp, exposure),
+            HemiDown = FoldHemi(lighting.HemiDown, exposure)
+        };
+
+        if (withModels)
+        {
+            var models = lighting.Models ?? lighting;
+            data.ModelLight0 = ToGpu(models.Sun, exposure, cameraYaw);
+            data.ModelLight1 = ToGpu(models.Light1, exposure, cameraYaw);
+            data.ModelLight2 = ToGpu(models.LocalLight1, exposure, cameraYaw);
+            data.ModelLight3 = ToGpu(models.LocalLight2, exposure, cameraYaw);
+            data.ModelHemiUp = FoldHemi(models.HemiUp, exposure);
+            data.ModelHemiDown = FoldHemi(models.HemiDown, exposure);
+        }
+
+        data.SetEnv(lighting.Env, exposure);
+        return data;
+    }
+
+    /// <summary>A hemisphere colour as the shader takes it: rgb × intensity × exposure</summary>
+    private static Vector4 FoldHemi(Vector4 color, float exposure)
+    {
+        return new Vector4(new Vector3(color.X, color.Y, color.Z) * color.W * exposure, 1.0f);
+    }
+
     /// <summary>The view lit by the viewport's own sun alone, without the map's hemisphere or model lights</summary>
     private SceneLightingData ViewportLighting()
     {
-        return new SceneLightingData
+        var lighting = new SceneLightingData
         {
             Sun = new MapDirectionalLightData
             {
                 Direction = ViewportSunDirection, Color = ViewportSunColor, SpecColor = ViewportSunColor
             }
         };
+        lighting.SetEnv(null, 0.0f);
+        return lighting;
     }
 
     /// <param name="sceneParams">The scene parameters to draw with, or null for this pipeline's own</param>

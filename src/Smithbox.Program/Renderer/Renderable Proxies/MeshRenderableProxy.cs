@@ -409,26 +409,21 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     /// </summary>
     public const uint NoShadowMaterialFlag = 0x80000000u;
 
-    /// <summary>
-    ///     Where <see cref="LightSet" /> goes in the instance's material ID for FlverShader.vert: bits 24-30, under
-    ///     <see cref="NoShadowMaterialFlag" />. Material IDs stay far below 2^24.
-    /// </summary>
-    public const int LightSetShift = 24;
-    public const uint LightSetMask = 0x7Fu;
-
     private byte _lightSet;
 
     /// <summary>
-    ///     The per-part lighting set this mesh is lit by, an entry of <see cref="SceneRenderer.LightSets" />; 0 for the
-    ///     scene's own lighting. Demon's Souls' parts take the LightBank row of their LightID (DrawParamLightingBank).
-    ///     Only read by the flver shader.
+    ///     The lighting set this mesh is lit by: an entry of its view's
+    ///     <see cref="SceneRenderPipeline.SceneLightingBuffer" />, 0 for the view's own lighting. Written to
+    ///     <see cref="InstanceData.LightingSet" />. Demon's Souls' parts take the LightBank row of their LightID
+    ///     (DrawParamLightingBank). Only read by the flver shader. Sets past the buffer's last entry fall back to 0.
     /// </summary>
     public byte LightSet
     {
         get => _lightSet;
         set
         {
-            value = (byte)(value & LightSetMask);
+            if (value >= SceneLightingData.MaxEntries)
+                value = 0;
 
             if (_lightSet == value)
                 return;
@@ -1055,7 +1050,8 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             dat.MaterialID |= NoShadowMaterialFlag;
         }
 
-        // _lightSet is no longer packed into the material ID: per-part lighting sets are disabled pending a redesign
+        // The lighting set has a lane of its own; only the flver shader reads it
+        dat.LightingSet = UsesFlverShader ? _lightSet : 0u;
 
         if (_meshProvider.BoneBuffer != null)
         {

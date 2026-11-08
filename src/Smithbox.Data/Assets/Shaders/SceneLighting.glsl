@@ -22,6 +22,12 @@ struct sceneLighting
 	mapDirectionalLight modelLights[4];
 	vec4 modelHemiUp;
 	vec4 modelHemiDown;
+
+	// Demon's Souls' env cubemaps, for its HemEnv map materials (FlverShader.frag's EnvLit). 0 for the other games.
+	vec4 envDiffuseScale;    // rgb: the diffuse cubemap's scale with intensity and exposure, w: 1 when env lighting is on
+	vec4 envSpecularScale;   // rgb: the specular cubemaps' scale
+	uvec4 envTextures;       // cube pool indices of the diffuse cubemap and specular 0-2, 0xFFFFFFFF if not loaded
+	uvec4 envTextures2;      // x: specular 3
 };
 
 layout(set = 0, binding = 1, std430) readonly buffer SceneLightingBuffer

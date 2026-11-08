@@ -107,6 +107,8 @@ layout(location = 12) flat in uint fsin_flags;
 	layout(location = 13) flat in uint fsin_lightmap;
 	layout(location = 14) flat in mat3 fsin_modelToWorld;
 #endif
+// The lighting set the instance is lit by, see g_lightingSet
+layout(location = 17) flat in uint fsin_lightingSet;
 
 #define INSTANCE_NO_SHADOW 1u
 
@@ -120,6 +122,8 @@ layout(location = 3) out vec4 fsout_reflection; // rgb: the environment's reflec
 layout(location = 4) out vec4 fsout_glow;       // rgb: the light the surface gives off itself, emissive and magma
 
 #include "../SceneParams.glsl"
+// LIGHTING reads the instance's own lighting set, g_lightingSet, set at the start of main
+#define LIGHTING_SET_INDEX g_lightingSet
 #include "../SceneLighting.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -444,6 +448,7 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 // State shared by the sampling helpers, set once at the start of main
 uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
+uint g_lightingSet = 0u;  // the lighting set LIGHTING reads: the instance's under map lighting, else the view's own (0)
 bool g_envLit = false;    // a Demon's Souls map material lit by env cubemaps in place of the sun, see EnvLit
 float g_sunShadow = 1.0;  // how much of the sun reaches here, for the env light's shadows
 vec2 g_uv[2];
@@ -1214,10 +1219,11 @@ bool ModelLit()
 
 // Whether the material is a Demon's Souls map material (its MTD's g_LightingType 3) and its lighting set has env
 // cubemaps: then it is lit as the game's HemEnv shaders light it, by the hemisphere and the cubemaps, without the sun.
-// Disabled with the lighting sets that held the cubemaps, pending the redesign: nothing is env lit.
+// The cubemaps are in the draw's lighting set (SceneLighting.glsl); envDiffuseScale.w is 0 in every other game.
 bool EnvLit()
 {
-	return false;
+	return MapLighting() && (MaterialValue(ROW_UVSET, 0) & MATERIAL_ENV_LIT) != 0u &&
+		LIGHTING.envDiffuseScale.w > 0.5;
 }
 
 // A cube pool texture by its index, sampled at direction D in the game's space, as the env maps of the other games
@@ -1231,11 +1237,21 @@ vec3 EnvCube(uint index, vec3 D)
 
 // The env light of a HemEnv material: EnvDif towards N, and the specular cubemap its MTD's g_EnvSpcSlotNo names
 // towards R, which already holds the highlight's shape at that slot's power. Its shadows take g_ShadowPowMul of it.
-// Disabled with the lighting sets, which held the cubemaps and their scales; never called while EnvLit is false.
+// Each field is read from the lighting set on its own; the set is never copied into a local.
 void EnvLight(vec3 N, vec3 R, out vec3 diffuse, out vec3 specular)
 {
-	diffuse = vec3(0.0);
-	specular = vec3(0.0);
+	uint flags = MaterialValue(ROW_UVSET, 0);
+	uint slot = (flags >> 10u) & 3u;
+	float shadowPow = float((flags >> 12u) & 15u) / 15.0;
+	float shadow = mix(1.0, g_sunShadow, shadowPow);
+
+	uint spcIndex = slot == 0u ? LIGHTING.envTextures.y
+		: slot == 1u ? LIGHTING.envTextures.z
+		: slot == 2u ? LIGHTING.envTextures.w
+		: LIGHTING.envTextures2.x;
+
+	diffuse = EnvCube(LIGHTING.envTextures.x, N) * LIGHTING.envDiffuseScale.rgb * shadow;
+	specular = EnvCube(spcIndex, R) * LIGHTING.envSpecularScale.rgb * shadow;
 }
 
 // Ambient light from direction N where there are no volumes: the map's hemisphere when its GPARAMs light the
@@ -1806,6 +1822,8 @@ void main()
 #endif
 
 	g_mat = fsin_mat;
+	// The instance's own lighting set only exists under map lighting; it is 0 (the view's own) otherwise
+	g_lightingSet = MapLighting() ? fsin_lightingSet : 0u;
 	g_modelLit = ModelLit();
 	g_envLit = !g_modelLit && EnvLit();
 

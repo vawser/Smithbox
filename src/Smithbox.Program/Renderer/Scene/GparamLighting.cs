@@ -32,7 +32,7 @@ public class GparamDirectionalLight
 /// Demon's Souls' env lighting: the cubemaps of its map area's mAA_9999.tpf that a LightBank row names (envDif,
 /// envSpc_0-3), with the row's scales (envDif_col*, envSpc_col*). The game's HemEnv shaders, those of every map
 /// material, light with these and the hemisphere in place of the sun. Read by FlverShader.frag through
-/// <see cref="LightSetTable" />.
+/// <see cref="SceneLightingData.SetEnv" />.
 /// </summary>
 public class GparamEnvLighting
 {

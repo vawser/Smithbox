@@ -542,9 +542,11 @@ public class MapEditorScreen : EditorScreen
             ? activeView.DrawParamLightingBank.ResolveForViewport(loadedMaps)
             : activeView.GparamLightingBank.ResolveForViewport(loadedMaps);
 
-        // Demon's Souls' parts lit by the LightBank rows of their own LightIDs: disabled pending a redesign, see
-        // Documentation/Claude/Older Games/DES Light Set Redesign.md. Everything takes the scene's lighting.
-        SceneRenderer.MapLightSets = Array.Empty<GparamLighting>();
+        // Demon's Souls' parts lit by the LightBank rows of their own LightIDs, as lighting sets 1 onwards of each view
+        // (SceneRenderPipeline.SceneLightingBuffer), named by each part's instance (InstanceData.LightingSet)
+        SceneRenderer.MapLightSets = activeView.DrawParamLightingBank.CanUse()
+            ? activeView.DrawParamLightingBank.UpdatePartLighting(loadedMaps, SceneRenderer.MapLighting)
+            : Array.Empty<GparamLighting>();
 
         // DS3's lightmaps of the map pieces, with the lighting's Dominant Light Map values
         activeView.Project.Handler.MapData.DolLightmapBank?.Update(loadedMaps, SceneRenderer.MapLighting);

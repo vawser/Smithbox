@@ -3,6 +3,10 @@ using System.Runtime.InteropServices;
 
 namespace StudioCore.Renderer;
 
+/// <summary>
+///     One drawn instance, as the shaders read it from <c>instanceData</c> in Shaders/InstanceData.glsl (set 1,
+///     binding 0, std140): 96 bytes, every member in whole 16 byte rows.
+/// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct InstanceData
 {
@@ -29,4 +33,16 @@ public struct InstanceData
     // lightmap entry with LightmapFlag, or 0
     public uint SkinReference;
     public uint EntityID;
+
+    /// <summary>
+    ///     The lighting set the instance is lit by: an entry of its view's
+    ///     <see cref="SceneRenderPipeline.SceneLightingBuffer" />, 0 for the view's own lighting. Demon's Souls'
+    ///     parts take the LightBank row of their LightID (<see cref="MeshRenderableProxy.LightSet" />).
+    /// </summary>
+    public uint LightingSet;
+
+    // Reserved: fills the 16 byte row
+    public uint LightingPad0;
+    public uint LightingPad1;
+    public uint LightingPad2;
 }

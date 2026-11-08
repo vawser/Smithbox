@@ -924,7 +924,19 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_DrawParam_Point_Lights);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Point_Lights_TT"));
 
-        // The per-part lighting option is hidden while lighting sets are disabled, see DES Light Set Redesign.md
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part")}##drawParamPerPart",
+            ref CFG.Current.Viewport_Map_DrawParam_Per_Part);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_TT"));
+
+        if (CFG.Current.Viewport_Map_DrawParam_Per_Part)
+        {
+            var (litParts, sets) = bank.PartLightingCounts;
+            ImGui.Indent();
+            ImGui.TextDisabled(DrawParamLightingBank.ChosenRow(DrawParamLightingBank.LightBank) >= 0
+                ? LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_Overridden")
+                : LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_Counts", litParts, sets));
+            ImGui.Unindent();
+        }
 
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_DrawParam_Source_TT"));
@@ -1006,9 +1018,10 @@ public class ViewportRenderingTool
             var env = scene.Env;
             if (env.Enabled && CFG.Current.Viewport_Map_DrawParam_Env_Lighting)
             {
-                var gpu = LightSetTable.FromLighting(scene, 1.0f);
+                var gpu = new SceneLightingData();
+                gpu.SetEnv(env, 1.0f);
                 var loaded = new[] { gpu.EnvDiffuseTexture, gpu.EnvSpecular0, gpu.EnvSpecular1, gpu.EnvSpecular2, gpu.EnvSpecular3 }
-                    .Count(t => t != LightSetData.NoTexture);
+                    .Count(t => t != SceneLightingData.NoTexture);
 
                 ImGui.Text(LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Values", env.DiffuseTexture,
                     GparamLightingBank.FormatColor(env.DiffuseColor), string.Join(", ", env.SpecularTextures),

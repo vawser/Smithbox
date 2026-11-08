@@ -244,7 +244,7 @@ public class DrawParamLightingBank
 
     /// <summary>
     /// Lights each loaded part by the LightBank row its own LightID picks (Phase 4): the parts whose row is the one the
-    /// whole scene is lit with keep the scene's lighting, the others name a set of <see cref="SceneRenderer.LightSets" />
+    /// whole scene is lit with keep the scene's lighting, the others name a set of <see cref="SceneRenderPipeline.SceneLightingBuffer" />
     /// in their mesh (<see cref="MeshRenderableProxy.LightSet" />). The sets differ from the scene only in their lights:
     /// the exposure, shadows, fog and tone correction stay the scene's. Off, everything goes back to the scene's
     /// lighting: when per-part lighting is switched off, when map lighting is off, and when the menu chose a LightBank
@@ -303,7 +303,7 @@ public class DrawParamLightingBank
                     {
                         var index = PartSetIndex.TryGetValue(key, out var existing) ? existing.Index : PartSets.Count;
 
-                        if (index < LightSetTable.MaxSets)
+                        if (index < SceneLightingData.MaxEntries - 1)
                         {
                             var lighting = Resolve(map.Name, new DrawParamRows(lightId, 0, 0, 0, 0));
 

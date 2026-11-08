@@ -17,6 +17,12 @@ if (args.Contains("--spirv"))
     return;
 }
 
+if (args.Contains("--instance-apply"))
+{
+    InstanceRewrite.Run(shadersDir);
+    return;
+}
+
 if (args.Contains("--csharp"))
 {
     CSharpCheck.Run(shadersDir);
@@ -511,7 +517,8 @@ static class CSharpCheck
         var structsDir = Path.Combine(repo, "Smithbox.Program", "Renderer", "Structs");
 
         var glsl = File.ReadAllText(Path.Combine(shadersDir, "SceneParams.glsl")) + "\n" +
-                   File.ReadAllText(Path.Combine(shadersDir, "SceneLighting.glsl"));
+                   File.ReadAllText(Path.Combine(shadersDir, "SceneLighting.glsl")) + "\n" +
+                   File.ReadAllText(Path.Combine(shadersDir, "InstanceData.glsl"));
         var structs = new Dictionary<string, (int Size, int Align)>();
         foreach (var helper in new[] { "sceneLight", "mapDirectionalLight" })
         {
@@ -522,9 +529,10 @@ static class CSharpCheck
         var ok = true;
         ok &= Compare(glsl, "sceneParams", Path.Combine(structsDir, "SceneParam.cs"), "SceneParam", structs);
         ok &= Compare(glsl, "sceneLighting", Path.Combine(structsDir, "SceneLighting.cs"), "SceneLightingData", structs);
+        ok &= Compare(glsl, "instanceData", Path.Combine(structsDir, "InstanceData.cs"), "InstanceData", structs);
 
         // And what the compilers emitted: every compiled shader's offsets against the computed layout
-        foreach (var structName in new[] { "sceneParams", "sceneLighting" })
+        foreach (var structName in new[] { "sceneParams", "sceneLighting", "instanceData" })
         {
             var expected = Layout.Compute(Block.Find(glsl, structName).Members, structs).Fields
                 .ToDictionary(f => f.Name, f => f.Offset);
@@ -631,5 +639,87 @@ static class CSharpCheck
             fields.Add((f.Groups[3].Value, size));
         }
         return fields;
+    }
+}
+
+// --instance-apply: replaces each shader's copy of instanceData and its WorldBuffer block with #include
+// "InstanceData.glsl". Only copies that are exactly { mat4 world; uvec4 materialID; } (comments aside) with the
+// standard WorldBuffer declaration are rewritten; anything else is listed and left alone.
+static class InstanceRewrite
+{
+    static readonly Regex WorldBuffer = new(
+        @"(?m)^[ \t]*layout\(set = 1, binding = 0, std140\) buffer WorldBuffer\s*\{\s*readonly instanceData idata\[\];\s*\};[ \t]*\r?\n");
+
+    public static void Run(string shadersDir)
+    {
+        var includePath = Path.Combine(shadersDir, "InstanceData.glsl");
+        int rewritten = 0, skipped = 0;
+
+        foreach (var file in Directory.EnumerateFiles(shadersDir, "*.*", SearchOption.AllDirectories)
+                     .Where(f => f.EndsWith(".vert") || f.EndsWith(".frag") || f.EndsWith(".comp"))
+                     .OrderBy(f => f))
+        {
+            var text = File.ReadAllText(file);
+            var rel = Path.GetRelativePath(shadersDir, file);
+            var block = Block.Find(text, "instanceData");
+            if (block == null)
+                continue;
+
+            var members = string.Join(" ", block.Members.Select(m => $"{m.Type} {m.Name}{(m.Count != null ? $"[{m.Count}]" : "")}"));
+            var buffer = WorldBuffer.Match(text);
+            if (members != "mat4 world uvec4 materialID" || !buffer.Success)
+            {
+                Console.WriteLine($"SKIP {rel}: members '{members}', standard WorldBuffer {buffer.Success}");
+                skipped++;
+                continue;
+            }
+
+            var newline = text.Contains("\r\n") ? "\r\n" : "\n";
+            var structStart = CommentStart(text, block.Start);
+            var structEnd = LineEnd(text, block.End);
+
+            // Remove the later span first so the earlier one's indices hold
+            var spans = new List<(int Start, int End)> { (structStart, structEnd), (buffer.Index, buffer.Index + buffer.Length) };
+            spans.Sort((a, b) => b.Start.CompareTo(a.Start));
+            foreach (var (s, e) in spans)
+                text = text.Remove(s, e - s);
+
+            var relInclude = Path.GetRelativePath(Path.GetDirectoryName(file), includePath).Replace(Path.DirectorySeparatorChar, '/');
+            var at = Math.Min(structStart, buffer.Index);
+            text = text.Insert(at, $"#include \"{relInclude}\"{newline}");
+
+            if (!text.Contains("GL_GOOGLE_include_directive"))
+            {
+                var v = Regex.Match(text, @"(?m)^#version[^\n]*\n");
+                text = text.Insert(v.Index + v.Length, $"#extension GL_GOOGLE_include_directive : require{newline}");
+            }
+
+            text = Regex.Replace(text, @"(\r?\n){3,}", newline + newline);
+            File.WriteAllText(file, text);
+            Console.WriteLine($"rewrote {rel}");
+            rewritten++;
+        }
+
+        Console.WriteLine($"Rewritten: {rewritten}. Skipped: {skipped}.");
+    }
+
+    static int LineEnd(string text, int i)
+    {
+        var n = text.IndexOf('\n', i);
+        return n < 0 ? text.Length : n + 1;
+    }
+
+    static int CommentStart(string text, int start)
+    {
+        var lineStart = text.LastIndexOf('\n', Math.Max(0, start - 1)) + 1;
+        while (lineStart > 0)
+        {
+            var prevStart = text.LastIndexOf('\n', Math.Max(0, lineStart - 2)) + 1;
+            var line = text.Substring(prevStart, lineStart - prevStart).Trim();
+            if (!line.StartsWith("//"))
+                break;
+            lineStart = prevStart;
+        }
+        return lineStart;
     }
 }

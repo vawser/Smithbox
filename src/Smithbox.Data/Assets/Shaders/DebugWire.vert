@@ -8,18 +8,7 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
     sceneParams sceneparam;
 };
 
-struct instanceData
-{
-	mat4 world;
-	// 0: material id
-	// 3: entity id
-	uvec4 materialID;
-};
-
-layout(set = 1, binding = 0, std140) buffer WorldBuffer
-{
-    readonly instanceData idata[];
-};
+#include "InstanceData.glsl"
 
 layout(location = 0) in vec3 position;
 layout(location = 1) in uvec4 color;

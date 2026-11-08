@@ -83,13 +83,10 @@ public static class SceneRenderer
     /// <summary>DS3's lightmaps of the map pieces, see LightmapTable and DolLightmapBank</summary>
     public static LightmapTable Lightmaps { get; private set; }
 
-    /// <summary>The per-part lighting sets the flver instances name, see LightSetTable</summary>
-    public static LightSetTable LightSets { get; private set; }
-
     /// <summary>
-    ///     The lighting of each set in <see cref="LightSets" />, set 1 first, alongside <see cref="MapLighting" />:
-    ///     Demon's Souls' parts lit by their own LightBank rows (DrawParamLightingBank). Empty for none. Set every frame
-    ///     by the Map Editor.
+    ///     The per-part lighting sets, set 1 first, alongside <see cref="MapLighting" />: Demon's Souls' parts lit by
+    ///     their own LightBank rows (DrawParamLightingBank). Each view folds them into entries 1 onwards of its
+    ///     <see cref="SceneRenderPipeline.SceneLightingBuffer" />. Empty for none. Set every frame by the Map Editor.
     /// </summary>
     public static IReadOnlyList<GparamLighting> MapLightSets { get; set; } = Array.Empty<GparamLighting>();
 
@@ -132,7 +129,7 @@ public static class SceneRenderer
 
         GeometryBufferAllocator = new VertexIndexBufferAllocator(Device, 256 * 1024 * 1024, 128 * 1024 * 1024);
         // Renderables keep the resource set of the buffer they were built with, so this has a fixed budget: if
-        // it grew, they would go on reading the old buffer. It has room for about 838,000 instances, where
+        // it grew, they would go on reading the old buffer. It has room for about 699,000 instances (96 bytes each), where
         // the densest maps take around 40,000 each.
         UniformBufferAllocator = new GPUBufferAllocator(64 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
             (uint)sizeof(InstanceData));
@@ -146,7 +143,6 @@ public static class SceneRenderer
         IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         MapLights = new SceneLightTable(MaterialBufferAllocator);
         Lightmaps = new LightmapTable(MaterialBufferAllocator);
-        // Per-part lighting sets are disabled pending a redesign (DES Light Set Redesign.md), so no table is allocated
         // The limit is typed freely in the preferences. A size of 0 is invalid for a Vulkan buffer, and a large
         // count would overflow the size, either of which fails startup and silently falls back to OpenGL.
         var boneLimit = Math.Clamp(CFG.Current.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);
