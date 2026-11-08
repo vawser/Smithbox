@@ -50,7 +50,7 @@
     },
     {
       "Key": "MAP_SelectionGroups_Hint",
-      "Text": "Store selections of map objects as groups, so you can re-select or edit them later. Groups are saved per project and per map. Right-click a group for its actions."
+      "Text": "Store selections of map objects as groups, so you can re-select or edit them later. Groups are saved per project and per map. Pick a group in the list to see its actions."
     },
     {
       "Key": "MAP_SelectionGroups_No_Map",
@@ -99,6 +99,162 @@
     {
       "Key": "MAP_SelectionGroups_Create_Context_TT",
       "Text": "Create a new selection group from the current selection. It is listed in the Selection Groups section of the Tools window."
+    },
+    {
+      "Key": "MAP_SelectionGroups_No_Group_Selected",
+      "Text": "Pick a group in the list to see its actions."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Name_Header",
+      "Text": "Name"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Name_Header_TT",
+      "Text": "The name the group is listed under."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Name_TT",
+      "Text": "Edit the name of this group."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Selection_Header",
+      "Text": "Selection"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Selection_Header_TT",
+      "Text": "Select the map objects in this group."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Select",
+      "Text": "Select and Frame"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Select_TT",
+      "Text": "Replace the current selection with the map objects in this group, and frame them in the viewport."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Add_To_Selection",
+      "Text": "Add to Selection"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Add_To_Selection_TT",
+      "Text": "Add the map objects in this group to the current selection. Shift+Click on the group in the list does the same."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Objects_Header",
+      "Text": "Objects"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Objects_Header_TT",
+      "Text": "Move or copy the map objects in this group. Both select the group's objects first."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Pull_To_Camera",
+      "Text": "Pull to Camera"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Pull_To_Camera_TT",
+      "Text": "Move the map objects in this group to the camera."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Duplicate_TT",
+      "Text": "Duplicate the map objects in this group, and create a new group holding the copies. Uses the settings of the Duplicate tool."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Edit_Contents_Header",
+      "Text": "Group Contents"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Edit_Contents_Header_TT",
+      "Text": "Change which map objects belong to this group, using the current selection."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Add_Selected",
+      "Text": "Add Selected Objects"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Add_Selected_TT",
+      "Text": "Add the selected map objects to this group, if they are not already in it."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Remove_Selected",
+      "Text": "Remove Selected Objects"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Remove_Selected_TT",
+      "Text": "Remove the selected map objects from this group, if they are in it."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Visibility_Header",
+      "Text": "Visibility"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Visibility_Header_TT",
+      "Text": "Show or hide the map objects in this group in the viewport. This only changes the editor view, not the map."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Show",
+      "Text": "Show"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Show_TT",
+      "Text": "Show the map objects in this group in the viewport."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Hide",
+      "Text": "Hide"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Hide_TT",
+      "Text": "Hide the map objects in this group in the viewport."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Header",
+      "Text": "Delete"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Header_TT",
+      "Text": "Delete the group, its map objects, or both. Deleting map objects can be undone; deleting a group cannot."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Group",
+      "Text": "Delete Group"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Group_TT",
+      "Text": "Delete the group, leaving its map objects as they are."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Group_And_Objects",
+      "Text": "Delete Group and Objects"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Group_And_Objects_TT",
+      "Text": "Delete the map objects in this group, and then the group."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Objects",
+      "Text": "Delete Objects"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Delete_Objects_TT",
+      "Text": "Delete the map objects in this group, and keep the group."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Contents_Header",
+      "Text": "Contents ({0})"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Contents_Header_TT",
+      "Text": "The names of the map objects in this group."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Contents_Empty",
+      "Text": "This group holds no map objects."
     },
     {
       "Key": "MAP_SelectionGroups_Groups_Header",

@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
+using System.Numerics;
 using System.Text;
 using System.Text.Json;
 
@@ -19,6 +20,8 @@ public class SelectionGroupsTool
 
     private string MapGroupsFilter = "";
     private bool ExactMapGroupsFilter = false;
+
+    private bool ShowContentsList = true;
 
     public SelectionGroupsTool(MapEditorView view, ProjectEntry project)
     {
@@ -88,8 +91,31 @@ public class SelectionGroupsTool
             LOC.Get("MAP_SelectionGroups_Create_TT", InputManager.GetHint(KeybindID.MapEditor_Create_Map_Group_Entry)),
             () => CreateMapGroupEntry(View.ViewportSelection.GetEntitySelection()), hasSelection);
 
-        // Groups
+        Project.Handler.MapData.MapGroupsList.List.TryGetValue(mapID, out var mapGroups);
+
+        // A group picked in another map isn't shown for this one
+        var curEntry = mapGroups != null && CurrentMapGroupEntry != null && mapGroups.Groups.Contains(CurrentMapGroupEntry)
+            ? CurrentMapGroupEntry
+            : null;
+
+        // Groups list on the left, the selected group's actions on the right
         GUI.Spacer();
+
+        var tableSize = new Vector2(0, ImGui.GetContentRegionAvail().Y);
+
+        if (!ImGui.BeginTable("mapSelectionGroupsSplit", 2, ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV, tableSize))
+            return;
+
+        ImGui.TableSetupColumn("##groupsListColumn", ImGuiTableColumnFlags.WidthStretch, 0.45f);
+        ImGui.TableSetupColumn("##groupActionsColumn", ImGuiTableColumnFlags.WidthStretch, 0.55f);
+
+        ImGui.TableNextRow();
+
+        // Groups
+        ImGui.TableSetColumnIndex(0);
+
+        ImGui.BeginChild("mapSelectionGroupsListColumn", new Vector2(0, ImGui.GetContentRegionAvail().Y));
+
         GUI.SimpleHeader(
             LOC.Get("MAP_SelectionGroups_Groups_Header"),
             LOC.Get("MAP_SelectionGroups_Groups_Header_TT"));
@@ -99,9 +125,22 @@ public class SelectionGroupsTool
 
         ImGui.BeginChild("mapSelectionGroupsList", ImGuiChildFlags.Borders);
 
-        DisplayMapGroupsList(mapID);
+        DisplayMapGroupsList(mapGroups);
 
         ImGui.EndChild();
+
+        ImGui.EndChild();
+
+        // Group actions
+        ImGui.TableSetColumnIndex(1);
+
+        ImGui.BeginChild("mapSelectionGroupActionsColumn", new Vector2(0, ImGui.GetContentRegionAvail().Y));
+
+        DisplayGroupActions(curEntry);
+
+        ImGui.EndChild();
+
+        ImGui.EndTable();
     }
 
     public void Shortcuts()
@@ -143,18 +182,17 @@ public class SelectionGroupsTool
         }
     }
 
-    private void DisplayMapGroupsList(string mapID)
+    private void DisplayMapGroupsList(MapGroups mapGroups)
     {
-        if (!Project.Handler.MapData.MapGroupsList.List.TryGetValue(mapID, out var curGroup)
-            || curGroup.Groups.Count == 0)
+        if (mapGroups == null || mapGroups.Groups.Count == 0)
         {
             GUI.WrappedText(LOC.Get("MAP_SelectionGroups_No_Groups"));
             return;
         }
 
-        for (int i = 0; i < curGroup.Groups.Count; i++)
+        for (int i = 0; i < mapGroups.Groups.Count; i++)
         {
-            DisplayMapGroupEntry(curGroup.Groups[i], i);
+            DisplayMapGroupEntry(mapGroups.Groups[i], i);
         }
     }
 
@@ -185,11 +223,6 @@ public class SelectionGroupsTool
                     FrameMapGroupEntry(curEntry);
                 }
             }
-        }
-
-        if (selected)
-        {
-            DisplayMapGroupEntryContext(curEntry);
         }
     }
 
@@ -256,118 +289,130 @@ public class SelectionGroupsTool
         View.DelayPicking();
     }
 
-    public void DisplayMapGroupEntryContext(MapGroupEntry curEntry)
+    /// <summary>
+    /// The actions for the selected group, shown in the right column.
+    /// </summary>
+    private void DisplayGroupActions(MapGroupEntry curEntry)
     {
-        if (ImGui.BeginPopupContextItem($@"mapGroupContext_{curEntry.GUID}"))
+        if (curEntry == null)
         {
-            // Name
-            var curName = curEntry.Name;
-            ImGui.InputText("##mapGroupEntryName", ref curName, 255);
-            GUI.Tooltip("Edit the name of this group.");
+            GUI.WrappedText(LOC.Get("MAP_SelectionGroups_No_Group_Selected"));
+            return;
+        }
 
-            if (ImGui.IsItemDeactivatedAfterEdit())
+        var hasSelection = View.ViewportSelection.IsSelection();
+
+        // Name
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Name_Header"),
+            LOC.Get("MAP_SelectionGroups_Name_Header_TT"));
+
+        // The GUID in the ID keeps an unfinished edit from carrying over to another group
+        var curName = curEntry.Name;
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText($"##selectionGroupName_{curEntry.GUID}", ref curName, 255);
+        GUI.Tooltip(LOC.Get("MAP_SelectionGroups_Name_TT"));
+
+        if (ImGui.IsItemDeactivatedAfterEdit())
+        {
+            curEntry.Name = curName;
+            SaveMapGroups();
+        }
+
+        // Selection
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Selection_Header"),
+            LOC.Get("MAP_SelectionGroups_Selection_Header_TT"));
+
+        GUI.MultiButtonInput("selectionGroupSelection",
+            "selectionGroupFrame", LOC.Get("MAP_SelectionGroups_Select"), LOC.Get("MAP_SelectionGroups_Select_TT"),
+            () => FrameMapGroupEntry(curEntry),
+
+            "selectionGroupAddToSelection", LOC.Get("MAP_SelectionGroups_Add_To_Selection"), LOC.Get("MAP_SelectionGroups_Add_To_Selection_TT"),
+            () => AddToSelectionMapGroupEntry(curEntry));
+
+        // Objects
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Objects_Header"),
+            LOC.Get("MAP_SelectionGroups_Objects_Header_TT"));
+
+        GUI.MultiButtonInput("selectionGroupObjects",
+            "selectionGroupPull", LOC.Get("MAP_SelectionGroups_Pull_To_Camera"), LOC.Get("MAP_SelectionGroups_Pull_To_Camera_TT"),
+            () => PullMapGroupEntry(curEntry),
+
+            "selectionGroupDuplicate", LOC.Get("MAP_SelectionGroups_Duplicate"), LOC.Get("MAP_SelectionGroups_Duplicate_TT"),
+            () => DuplicateMapGroupEntry(curEntry));
+
+        // Contents
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Edit_Contents_Header"),
+            LOC.Get("MAP_SelectionGroups_Edit_Contents_Header_TT"));
+
+        GUI.ConditionalMultiButtonInput("selectionGroupContents",
+            "selectionGroupAddObjects", LOC.Get("MAP_SelectionGroups_Add_Selected"), LOC.Get("MAP_SelectionGroups_Add_Selected_TT"),
+            () => AddToMapGroupEntry(curEntry), hasSelection,
+
+            "selectionGroupRemoveObjects", LOC.Get("MAP_SelectionGroups_Remove_Selected"), LOC.Get("MAP_SelectionGroups_Remove_Selected_TT"),
+            () => RemoveFromMapGroupEntry(curEntry), hasSelection);
+
+        // Visibility
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Visibility_Header"),
+            LOC.Get("MAP_SelectionGroups_Visibility_Header_TT"));
+
+        GUI.MultiButtonInput("selectionGroupVisibility",
+            "selectionGroupShow", LOC.Get("MAP_SelectionGroups_Show"), LOC.Get("MAP_SelectionGroups_Show_TT"),
+            () => ToggleMapGroupEntryVisibility(curEntry, true),
+
+            "selectionGroupHide", LOC.Get("MAP_SelectionGroups_Hide"), LOC.Get("MAP_SelectionGroups_Hide_TT"),
+            () => ToggleMapGroupEntryVisibility(curEntry, false));
+
+        // Delete
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Delete_Header"),
+            LOC.Get("MAP_SelectionGroups_Delete_Header_TT"));
+
+        GUI.MultiButtonInput("selectionGroupDelete",
+            "selectionGroupDeleteGroup", LOC.Get("MAP_SelectionGroups_Delete_Group"), LOC.Get("MAP_SelectionGroups_Delete_Group_TT"),
+            () => DeleteMapGroupEntry(curEntry.GUID),
+
+            "selectionGroupDeleteBoth", LOC.Get("MAP_SelectionGroups_Delete_Group_And_Objects"), LOC.Get("MAP_SelectionGroups_Delete_Group_And_Objects_TT"),
+            () =>
             {
-                curEntry.Name = curName;
-                SaveMapGroups();
+                DeleteMapGroupEntryObjects(curEntry);
+                DeleteMapGroupEntry(curEntry.GUID);
+            },
+
+            "selectionGroupDeleteObjects", LOC.Get("MAP_SelectionGroups_Delete_Objects"), LOC.Get("MAP_SelectionGroups_Delete_Objects_TT"),
+            () => DeleteMapGroupEntryObjects(curEntry));
+
+        // Contents List
+        GUI.Spacer();
+        GUI.ConditionalHeader(
+            LOC.Get("MAP_SelectionGroups_Contents_Header", curEntry.Objects.Count),
+            LOC.Get("MAP_SelectionGroups_Contents_Header_TT"),
+            ref ShowContentsList);
+
+        if (ShowContentsList)
+        {
+            ImGui.BeginChild("selectionGroupContentsList", ImGuiChildFlags.Borders);
+
+            if (curEntry.Objects.Count == 0)
+            {
+                GUI.WrappedText(LOC.Get("MAP_SelectionGroups_Contents_Empty"));
             }
 
-            // Select
-            if (ImGui.Selectable("Select"))
+            foreach (var name in curEntry.Objects)
             {
-                FrameMapGroupEntry(curEntry);
-            }
-            GUI.Tooltip("Select and frame the map object contents of this group.");
-
-            // Pull
-            if (ImGui.Selectable("Pull to Camera"))
-            {
-                PullMapGroupEntry(curEntry);
-            }
-            GUI.Tooltip("Pull the map object contents of this group to the camera.");
-
-            // Duplicate
-            if (ImGui.Selectable("Duplicate"))
-            {
-                DuplicateMapGroupEntry(curEntry);
-            }
-            GUI.Tooltip("Duplicate this group and its map object contents.");
-
-            // Delete
-            if (ImGui.BeginMenu("Delete"))
-            {
-                if (ImGui.Selectable("Delete Group"))
-                {
-                    DeleteMapGroupEntry(curEntry.GUID);
-                }
-                GUI.Tooltip("Delete the group (leaves the map objects as is).");
-
-                if (ImGui.Selectable("Delete Group and Objects"))
-                {
-                    DeleteMapGroupEntryObjects(curEntry);
-                    DeleteMapGroupEntry(curEntry.GUID);
-                }
-                GUI.Tooltip("Delete the map objects that belong to this group, and the group.");
-
-                if (ImGui.Selectable("Delete Objects"))
-                {
-                    DeleteMapGroupEntryObjects(curEntry);
-                }
-                GUI.Tooltip("Delete the map objects that belong to this group.");
-
-                ImGui.EndMenu();
+                ImGui.TextUnformatted(name);
             }
 
-            // Visibility
-            if (ImGui.BeginMenu("Visibility"))
-            {
-                if (ImGui.Selectable("Show"))
-                {
-                    ToggleMapGroupEntryVisibility(curEntry, true);
-                }
-                GUI.Tooltip("Show (in the viewport) all map objects that belong to this group.");
-
-                if (ImGui.Selectable("Hide"))
-                {
-                    ToggleMapGroupEntryVisibility(curEntry, false);
-                }
-                GUI.Tooltip("Hide (in the viewport) all map objects that belong to this group.");
-
-                ImGui.EndMenu();
-            }
-
-            // Contents
-            if (ImGui.BeginMenu("Group Contents"))
-            {
-                // Add To
-                if (ImGui.Selectable("Add Selection"))
-                {
-                    AddToMapGroupEntry(curEntry);
-                }
-                GUI.Tooltip("Add the currently selected map objects to this group (if they are not already present).");
-
-                // Remove From
-                if (ImGui.Selectable("Remove Selection"))
-                {
-                    RemoveFromMapGroupEntry(curEntry);
-                }
-                GUI.Tooltip("Remove the currently selected map objects from this group (if they are present).");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("List of Contents"))
-            {
-                // Six names per line
-                for (int i = 0; i < curEntry.Objects.Count; i += 6)
-                {
-                    ImGui.Text(string.Join(" | ", curEntry.Objects.Skip(i).Take(6)));
-                }
-
-                ImGui.EndMenu();
-            }
-            GUI.Tooltip("Display the contents of this group.");
-
-            ImGui.EndPopup();
+            ImGui.EndChild();
         }
     }
 
@@ -437,6 +482,12 @@ public class SelectionGroupsTool
                 if (targetGroup != null)
                 {
                     mapGroups.Groups.Remove(targetGroup);
+                }
+
+                if (CurrentMapGroupEntryGUID == guid)
+                {
+                    CurrentMapGroupEntryGUID = "";
+                    CurrentMapGroupEntry = null;
                 }
             }
         }

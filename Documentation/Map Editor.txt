@@ -15,6 +15,3 @@
 
 - Wireframe mode
 
-- Move Map Content Groups to the Tools window (rename it to Selection Groups)
-    - Add option for a group to act as one selection when any are selected (i.e. for outline, translate, rotate)
-        
