@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 /// The rows of a map area's DrawParam banks that its lighting is read from, by row ID
 /// </summary>
-public record struct DrawParamRows(int Light, int ToneMap, int Shadow, int ToneCorrect);
+public record struct DrawParamRows(int Light, int ToneMap, int Shadow, int ToneCorrect, int Fog);
 
 /// <summary>
 /// Lights the Map Editor's viewports of a game without GPARAMs from its DrawParam banks (Demon's Souls), filling the
@@ -35,9 +35,10 @@ public class DrawParamLightingBank
     public const string ToneMapBank = "ToneMapBank";
     public const string ShadowBank = "ShadowBank";
     public const string ToneCorrectBank = "ToneCorrectBank";
+    public const string FogBank = "FogBank";
 
     /// <summary>The banks read, in the order the menu offers them</summary>
-    public static readonly string[] Banks = { LightBank, ToneMapBank, ShadowBank, ToneCorrectBank };
+    public static readonly string[] Banks = { LightBank, ToneMapBank, ShadowBank, ToneCorrectBank, FogBank };
 
     public DrawParamLightingBank(ProjectEntry project)
     {
@@ -77,6 +78,7 @@ public class DrawParamLightingBank
             case ToneMapBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneMap_Row;
             case ShadowBank: return ref CFG.Current.Viewport_Map_DrawParam_Shadow_Row;
             case ToneCorrectBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneCorrect_Row;
+            case FogBank: return ref CFG.Current.Viewport_Map_DrawParam_Fog_Row;
             default: return ref CFG.Current.Viewport_Map_DrawParam_Light_Row;
         }
     }
@@ -87,6 +89,7 @@ public class DrawParamLightingBank
         ToneMapBank => part.ToneMapID,
         ShadowBank => part.ShadowID,
         ToneCorrectBank => part.ToneCorrectID,
+        FogBank => part.FogID,
         _ => part.LightID
     };
 
@@ -95,6 +98,7 @@ public class DrawParamLightingBank
         ToneMapBank => rows.ToneMap,
         ShadowBank => rows.Shadow,
         ToneCorrectBank => rows.ToneCorrect,
+        FogBank => rows.Fog,
         _ => rows.Light
     };
 
@@ -120,7 +124,7 @@ public class DrawParamLightingBank
             : pieces.GroupBy(p => GetPartRow(p, bank)).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key;
 
         var rows = new DrawParamRows(MostUsedId(LightBank), MostUsedId(ToneMapBank), MostUsedId(ShadowBank),
-            MostUsedId(ToneCorrectBank));
+            MostUsedId(ToneCorrectBank), MostUsedId(FogBank));
 
         MostUsed[map.Name] = (rows, now);
 
@@ -138,7 +142,8 @@ public class DrawParamLightingBank
             return chosen >= 0 && GetBank(map.Name, bank)?[chosen] != null ? chosen : Get(mostUsed, bank);
         }
 
-        return new DrawParamRows(Choose(LightBank), Choose(ToneMapBank), Choose(ShadowBank), Choose(ToneCorrectBank));
+        return new DrawParamRows(Choose(LightBank), Choose(ToneMapBank), Choose(ShadowBank), Choose(ToneCorrectBank),
+            Choose(FogBank));
     }
 
     // The last lighting given to the viewports, and what it was resolved from
@@ -234,7 +239,7 @@ public class DrawParamLightingBank
         // DES has a bloom (ToneMapBank) but none of the GPARAM games' glow filter
         lighting.PostEffects.Glow.Enabled = false;
 
-        lighting.File = $"{area} Light {rows.Light}, ToneMap {rows.ToneMap}, Shadow {rows.Shadow}, ToneCorrect {rows.ToneCorrect}";
+        lighting.File = $"{area} Light {rows.Light}, ToneMap {rows.ToneMap}, Shadow {rows.Shadow}, ToneCorrect {rows.ToneCorrect}, Fog {rows.Fog}";
 
         string Source(string bank, Param.Row row) => $"{area}_{bank} #{row.ID} '{row.Name}'";
 
@@ -261,6 +266,10 @@ public class DrawParamLightingBank
         var toneCorrectRow = GetBank(mapId, ToneCorrectBank)?[rows.ToneCorrect];
         if (toneCorrectRow != null)
             ApplyToneCorrect(toneCorrectRow, lighting.ToneCorrection);
+
+        var fogRow = GetBank(mapId, FogBank)?[rows.Fog];
+        if (fogRow != null)
+            ApplyFog(fogRow, lighting.PostEffects.DistanceFog);
 
         // The model set: the same lights, which characters take all of (the scene takes only the sun and hemisphere)
         var models = new GparamLighting
@@ -396,6 +405,26 @@ public class DrawParamLightingBank
         correction.Contrast = new Vector3(Get(row, "contrastR", 1.0f), Get(row, "contrastG", 1.0f), Get(row, "contrastB", 1.0f));
         correction.Saturation = Get(row, "saturation", 1.0f);
         correction.Hue = Get(row, "hue");
+    }
+
+    /// <summary>
+    /// FogBank: fogBeginZ and fogEndZ in meters (begin can be negative, so the fog has started at the camera), degRotW
+    /// taken as the density at the end in percent (0-200 in DES's rows; degRotZ is always 0), and the colour.
+    /// The colour is taken as a display colour, so squared into the target's linear light as the viewport's gamma of
+    /// 2 has it, with colA its intensity in percent. A reading of the names, not the game's shader.
+    /// </summary>
+    private static void ApplyFog(Param.Row row, GparamDistanceFog fog)
+    {
+        fog.Begin = Get(row, "fogBeginZ");
+        fog.End = Get(row, "fogEndZ", 100.0f);
+        fog.MaxDensity = Math.Clamp(Get(row, "degRotW", 100.0f) / 100.0f, 0.0f, 1.0f);
+
+        var r = Get(row, "colR", 255.0f) / 255.0f;
+        var g = Get(row, "colG", 255.0f) / 255.0f;
+        var b = Get(row, "colB", 255.0f) / 255.0f;
+        fog.Color = new Vector4(r * r, g * g, b * b, Get(row, "colA", 100.0f) / 100.0f);
+
+        fog.Enabled = fog.MaxDensity > 0.0f && fog.End > fog.Begin;
     }
 
     /// <summary>The colour colR/G/B/A + suffix as rgb / 255 and w = colA / 100</summary>

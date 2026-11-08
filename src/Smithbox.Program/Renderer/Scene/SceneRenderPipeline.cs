@@ -70,6 +70,9 @@ public class SceneRenderPipeline
     /// <summary>The GPARAM's distance and height fog, laid over the scene when its depth is copied</summary>
     public VolumetricFogPass Fog { get; } = new();
 
+    /// <summary>The older games' distance fog (Demon's Souls' FogBank)</summary>
+    public DistanceFogPass DistanceFog { get; } = new();
+
     /// <summary>The sun's shadow maps, or null for a pipeline drawn without shadows</summary>
     public ShadowCascades Shadows { get; }
 
@@ -338,6 +341,10 @@ public class SceneRenderPipeline
     public void CaptureSceneDepth(CommandList cl)
     {
         SceneDepth.Capture(Device, cl, Target.Depth);
+
+        // Before the volumetric fog's draw: the copy has ended the target's render pass, and the distance fog's
+        // parameters can only be written outside one (the two fogs are never on for the same game)
+        DistanceFog.Apply(Device, cl, this);
         Fog.Apply(Device, cl, this);
     }
 
@@ -533,6 +540,7 @@ public class SceneRenderPipeline
         Shadows?.Update(castShadows, view, proj, shadowTravel, mapLighting?.Shadow ?? DefaultShadow);
 
         Fog.Prepare(view, renderProj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
+        DistanceFog.Prepare(mapLighting);
 
         // For the transparent draws, which come after the fog's own pass this frame
         var fogVolume = CFG.Current.Viewport_Post_Fog_Transparents ? Fog.VolumeTextureIndex : 0;

@@ -1374,6 +1374,7 @@ public class CFG
     public int Viewport_Map_DrawParam_ToneMap_Row = -1;
     public int Viewport_Map_DrawParam_Shadow_Row = -1;
     public int Viewport_Map_DrawParam_ToneCorrect_Row = -1;
+    public int Viewport_Map_DrawParam_Fog_Row = -1;
 
     // Whether the map lighting's colour correction (Demon's Souls' ToneCorrectBank) is drawn
     public bool Viewport_Post_Tone_Correction = true;
@@ -1457,6 +1458,9 @@ public class CFG
     // The GPARAM's VolumetricFog (Elden Ring's distance and height fog), with the sun's shadows through it and the
     // map's lights in it
     public bool Viewport_Post_Volumetric_Fog = true;
+
+    // The older games' distance fog (Demon's Souls' FogBank), DistanceFogPass
+    public bool Viewport_Post_Distance_Fog = true;
     public bool Viewport_Post_Fog_Shadows = true;
     public bool Viewport_Post_Fog_Local_Lights = true;
 

@@ -1794,7 +1794,31 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_From_Part_TT",
-      "Text": "Light with the rows {0} picks: LightBank {1}, ToneMapBank {2}, ShadowBank {3}, ToneCorrectBank {4}."
+      "Text": "Light with the rows {0} picks: LightBank {1}, ToneMapBank {2}, ShadowBank {3}, ToneCorrectBank {4}, FogBank {5}."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_FogBank_Row",
+      "Text": "Fog Bank Row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_FogBank_Row_TT",
+      "Text": "The FogBank row the distance fog is read from: where it begins and ends, how thick it gets and its colour. By default the row most of the map's pieces use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Distance_Fog",
+      "Text": "Distance Fog"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Distance_Fog_TT",
+      "Text": "Draw the FogBank row's distance fog over the opaque draws. Demon's Souls' fog is often close (tens of meters), so it can hide much of a map at a distance."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Fog_Values",
+      "Text": "Fog: from {0} m to {1} m, density {2}, colour {3}"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Fog_Off",
+      "Text": "Fog: off for this row"
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_From_Part_None_TT",

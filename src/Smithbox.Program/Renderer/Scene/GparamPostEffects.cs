@@ -20,6 +20,21 @@ public class GparamPostEffects
     public GparamAntiAlias AntiAlias = new();
     public GparamColorGrading ColorGrading = new();
     public GparamWet Wet = new();
+    public GparamDistanceFog DistanceFog = new();
+}
+
+/// <summary>
+/// The older games' classic distance fog (Demon's Souls' FogBank), drawn by DistanceFogPass: none before
+/// <see cref="Begin" />, rising linearly to <see cref="MaxDensity" /> at <see cref="End" /> (meters along the camera's
+/// axis), towards <see cref="Color" />, rgb with an intensity in w as the GPARAM colours. Off unless a game sets it.
+/// </summary>
+public class GparamDistanceFog
+{
+    public bool Enabled = false;
+    public float Begin = 0.0f;
+    public float End = 100.0f;
+    public float MaxDensity = 1.0f;
+    public Vector4 Color = new(0.5f, 0.5f, 0.5f, 1.0f);
 }
 
 /// <summary>

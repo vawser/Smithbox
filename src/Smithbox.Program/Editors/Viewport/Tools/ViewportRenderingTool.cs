@@ -912,6 +912,10 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Post_Tone_Correction);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Tone_Correction_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Distance_Fog")}##drawParamDistanceFog",
+            ref CFG.Current.Viewport_Post_Distance_Fog);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Distance_Fog_TT"));
+
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_DrawParam_Source_TT"));
 
@@ -946,7 +950,7 @@ public class ViewportRenderingTool
             ImGui.EndDisabled();
             GUI.Tooltip(part != null
                 ? LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_TT", part.Name, part.LightID, part.ToneMapID,
-                    part.ShadowID, part.ToneCorrectID)
+                    part.ShadowID, part.ToneCorrectID, part.FogID)
                 : LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_None_TT"));
 
             if (ImGui.Button($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Most_Used_All")}##drawParamMostUsedAll"))
@@ -979,6 +983,12 @@ public class ViewportRenderingTool
                 $"{correction.Brightness.X:0.##}, {correction.Brightness.Y:0.##}, {correction.Brightness.Z:0.##}",
                 $"{correction.Contrast.X:0.##}, {correction.Contrast.Y:0.##}, {correction.Contrast.Z:0.##}",
                 $"{correction.Saturation:0.##}", $"{correction.Hue:0.#}"));
+
+            var fog = scene.PostEffects.DistanceFog;
+            ImGui.Text(fog.Enabled
+                ? LOC.Get("VIEWPORT_Rendering_DrawParam_Fog_Values", $"{fog.Begin:0.#}", $"{fog.End:0.#}",
+                    $"{fog.MaxDensity:0.##}", GparamLightingBank.FormatColor(fog.Color))
+                : LOC.Get("VIEWPORT_Rendering_DrawParam_Fog_Off"));
         }
     }
 

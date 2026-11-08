@@ -75,7 +75,7 @@ The evidence is in `Tools/DesDrawParamSurvey/survey.md`, made by `Tools/DesDrawP
 - **Choosing rows:** an override picker in the viewport's lighting menu (bank and row, shown by row name), like the GPARAM file chooser.
 - **Covered here:** sun, fills, hemisphere, env scale and exposure (the new Reinhard model), plus bloom.
 - **Check:**
-  - m01_00_00_00 (Boletarian Palace): warm sun from the south-east (`degRotY_0` -160), weak fills.
+  - m01_00_00_00 (the Nexus; its LightBank 0 is `神殿部分`, "temple part"): warm sun from the south-east (`degRotY_0` -160), weak fills.
   - m06_00_00_00: orange cave light, `LightBank` 1 `洞窟内`.
 
   Also check the rotation convention: a shadow should fall where the game's does at the m01 starting area.
@@ -128,7 +128,27 @@ Expected values for m01_00_00_00:
 ### Phase 3: distance fog
 
 - **The pass:** a classic fog pass from `FogBank` (begin and end Z, colour, density %), shared with the DS3/BB/SDT `Fog` group (Analysis.md 3.3).
-- **Check:** m04_00 (Valley of Defilement, fog 0-50 m, green-grey).
+- **Check:** m04_00 (Tower of Latria, fog 0-50 m, dark green-grey at 95 %).
+
+#### Phase 3 as built (2026-11-08; not yet checked in the app)
+
+- **Map names, corrected:** the earlier notes had m01 as Boletarian Palace and m04 as the Valley. Smithbox's DES map aliases give m01 = the Nexus, m02 = Boletarian Palace, m03 = Shrine of Storms, m04 = Tower of Latria, m05 = Valley of Defilement, m06 = Stonefang Tunnel (so the lava reading of its −60° light stands), m07 = Northern Limit and m08 = the tutorial.
+- **The pass:** `Renderer/Scene/DistanceFogPass.cs` with `DistanceFog.vert/.frag`, settings in a new `GparamDistanceFog` (on `GparamPostEffects`, off unless a game sets it), switched by `CFG.Viewport_Post_Distance_Fog`.
+  - It is a fullscreen draw in `SceneRenderPipeline.CaptureSceneDepth`. It reads the copied depth, so it lands under the transparent draws, and blends as the volumetric fog does (scene × (1 − f) + colour × f).
+  - It runs before the volumetric fog draw, because its uniform update has to happen outside a render pass. The two are never on together.
+  - Pixels with nothing drawn (the viewport background) aren't fogged.
+- **The ramp:** f = clamp((distance − `fogBeginZ`) / (`fogEndZ` − `fogBeginZ`)) × `degRotW` / 100, with the distance along the camera's axis.
+- **The colour:** taken as a display colour, so squared into linear light, × `colA` / 100 × the exposure.
+- **Adapter and menu:** the adapter reads a fifth bank (`FogID`, `CFG.Viewport_Map_DrawParam_Fog_Row`). The menu has the Fog Bank row picker, a Distance Fog checkbox and a fog line under Resolved Values.
+
+Expected values:
+- **m01 FogBank 0:** 10 m to 220 m, density 1.0, colour (54, 50, 120) → (0.045, 0.038, 0.22) × 1.0.
+- **m04 FogBank 0:** 0 m to 50 m, density 0.95, colour (50, 70, 62) × 0.05, so very dark.
+
+Open:
+- **`colA` and `degRotW`:** which of them is the fog's density and which the colour's intensity isn't settled. m08's `colA` 0 makes its 30 % fog black, and m02's `colA` 10 makes Boletaria's 50 % fog nearly black. If those look wrong, `colA` is probably an opacity, not an intensity.
+- **Sky domes:** they are distant map pieces, so they get fully fogged. The game probably exempts its sky shaders.
+
 
 ### Phase 4: per-part lighting
 
@@ -145,7 +165,7 @@ Expected values for m01_00_00_00:
 
 | Question | How to settle |
 |---|---|
-| Rotation convention of `degRotX/Y` | Pitch settled from the data as the light's elevation (negated for GPARAM, see Phase 1 as built). The yaw's zero and sign are still open: compare the shadow direction at m01's start with the game |
+| Rotation convention of `degRotX/Y` | Pitch settled from the data as the light's elevation (negated for GPARAM, see Phase 1 as built). The yaw's zero and sign are still open: compare the shadow direction in the Nexus (m01) with the game |
 | `_s` light: separate specular direction, or the sun's specular | Compare in the app on shiny materials (armour, m01 floor) |
 | `_du` / `_dd`: characters' hemisphere? | Light a character with and without; DS1 has no such pair |
 | `colA` as % of intensity, or a scale whose 100 means 1.0 in HDR | Phase 1: m01's `colA_0` 260 against m04's 0 (lightmapped "焼付けあり" rows have low direct light) |
