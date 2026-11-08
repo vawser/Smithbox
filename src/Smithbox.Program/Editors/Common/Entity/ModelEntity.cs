@@ -57,6 +57,12 @@ public class ModelEntity : Entity
 
     public override Transform GetLocalTransform()
     {
+        // The root carries the viewport-only display rotation, which is never written to the model
+        if (Type is ModelEntityType.ModelRoot && Container is ModelContainer root)
+        {
+            return new Transform(Vector3.Zero, root.DisplayRotation, Vector3.One);
+        }
+
         Transform t = base.GetLocalTransform();
 
         // Prevent zero scale since it won't render
@@ -66,6 +72,30 @@ public class ModelEntity : Entity
         }
 
         return t;
+    }
+
+    /// <summary>
+    /// The world matrix, including the root's display rotation. The root has no transform of its own as far as
+    /// the base walk is concerned (so it isn't moved by the gizmo), so it is applied here.
+    /// </summary>
+    public override Matrix4x4 GetWorldMatrix()
+    {
+        Matrix4x4 m = GetModelMatrix();
+
+        if (Container is ModelContainer root && root.RootObject != null && this != root.RootObject)
+        {
+            m *= root.DisplayMatrix;
+        }
+
+        return m;
+    }
+
+    /// <summary>
+    /// The matrix in the model's own space, without the display rotation.
+    /// </summary>
+    public Matrix4x4 GetModelMatrix()
+    {
+        return base.GetWorldMatrix();
     }
 
     internal override Entity DuplicateEntity(object clone)

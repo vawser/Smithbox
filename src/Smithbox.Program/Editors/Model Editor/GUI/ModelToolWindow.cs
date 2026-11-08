@@ -85,6 +85,11 @@ public class ModelToolWindow
             View.ModelMaskToggler.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_DisplayRotation)
+        {
+            View.ModelDisplayRotationTool.OnToolWindow();
+        }
+
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
 
@@ -153,6 +158,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_CharacterPreview = !CFG.Current.Interface_ModelEditor_Tool_CharacterPreview;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_CharacterPreview);
+
+            // Display Rotation
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Display_Rotation")}##modelDisplayRotationToggle"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_DisplayRotation = !CFG.Current.Interface_ModelEditor_Tool_DisplayRotation;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_DisplayRotation);
 
             // Mdoel Export
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Model_Export")}##modelExportToggle"))

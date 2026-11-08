@@ -118,22 +118,27 @@ public class ModelAnimationTool
             return;
         }
 
-        // There can be hundreds of markers, and working out an entity's matrix walks all of its parents
+        // There can be hundreds of markers, and working out an entity's matrix walks all of its parents.
+        // The rest pose is kept in model space: the bone deltas are in model space, and the display
+        // rotation is applied after them, so the markers stay on the rotated model.
         if (_markerRestPose.Count == 0)
         {
             foreach (Entity marker in container.Nodes.Concat(container.Dummies))
             {
-                _markerRestPose[marker] = marker.GetWorldMatrix();
+                _markerRestPose[marker] = marker is ModelEntity modelMarker
+                    ? modelMarker.GetModelMatrix()
+                    : marker.GetWorldMatrix();
             }
         }
 
         RenderFilter filter = View.RenderScene.DrawFilter;
+        Matrix4x4 display = container.DisplayMatrix;
 
         if ((filter & RenderFilter.Nodes) != 0)
         {
             for (var i = 0; i < container.Nodes.Count && i < animator.NodeCount; i++)
             {
-                MoveMarker(container.Nodes[i], animator, i);
+                MoveMarker(container.Nodes[i], animator, i, display);
             }
         }
 
@@ -143,16 +148,16 @@ public class ModelAnimationTool
             {
                 // The parent bone is often a static helper, and only the attach bone really moves
                 var dummy = (FLVER.Dummy)marker.WrappedObject;
-                MoveMarker(marker, animator, dummy.AttachBoneIndex >= 0 ? dummy.AttachBoneIndex : dummy.ParentBoneIndex);
+                MoveMarker(marker, animator, dummy.AttachBoneIndex >= 0 ? dummy.AttachBoneIndex : dummy.ParentBoneIndex, display);
             }
         }
     }
 
-    private void MoveMarker(Entity marker, ModelAnimator animator, int node)
+    private void MoveMarker(Entity marker, ModelAnimator animator, int node, Matrix4x4 display)
     {
         if (marker.RenderSceneMesh != null && node >= 0 && node < animator.NodeCount)
         {
-            marker.RenderSceneMesh.World = _markerRestPose[marker] * animator.GetNodeDelta(node);
+            marker.RenderSceneMesh.World = _markerRestPose[marker] * animator.GetNodeDelta(node) * display;
         }
     }
 

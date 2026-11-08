@@ -1,0 +1,100 @@
+{
+  "Entries": [
+    {
+      "Key": "MODEL_ToolWindow_View_Toggle_Display_Rotation",
+      "Text": "Display Rotation"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Header",
+      "Text": "Display Rotation"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Hint",
+      "Text": "Rotate the model in the viewport to view it from other angles. This only changes how the model is shown: the model data is not changed, and the rotation is never saved."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_No_Model",
+      "Text": "A model must be loaded first for this tool to work."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Rotation_Header",
+      "Text": "Rotation"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Rotation_Header_TT",
+      "Text": "The rotation of the displayed model, in degrees, about the model's origin."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Rotation_Input_TT",
+      "Text": "The rotation about the X, Y and Z axes, in degrees. Drag to change a value, or double-click to type one. It stays set when another model is loaded."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Header",
+      "Text": "Quick Rotate"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Header_TT",
+      "Text": "Turn the model by a quarter turn about an axis."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_X",
+      "Text": "Rotate 90° about X"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_X_TT",
+      "Text": "Tip the model forward by a quarter turn."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Y",
+      "Text": "Rotate 90° about Y"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Y_TT",
+      "Text": "Turn the model by a quarter turn about the vertical axis."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Z",
+      "Text": "Rotate 90° about Z"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Quick_Z_TT",
+      "Text": "Roll the model sideways by a quarter turn."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Turntable_Header",
+      "Text": "Turntable"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Turntable_Header_TT",
+      "Text": "Spin the model continuously about the vertical axis."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Spin",
+      "Text": "Spin"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Spin_TT",
+      "Text": "Spin the model about the vertical axis. It keeps spinning while another tool is shown."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Spin_Speed_TT",
+      "Text": "The spin speed, in degrees per second. A negative speed spins the other way."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Actions_Header_TT",
+      "Text": "Actions for the display rotation."
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "MODEL_DisplayRotation_Reset_TT",
+      "Text": "Return the model to its original orientation and stop the turntable."
+    }
+  ]
+}

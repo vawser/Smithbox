@@ -48,6 +48,7 @@ public class ModelEditorView : IEditorView
     public ModelMaskToggler ModelMaskToggler;
     public ModelAnimationTool ModelAnimationTool;
     public ModelCharacterPreview ModelCharacterPreview;
+    public ModelDisplayRotationTool ModelDisplayRotationTool;
     public ResourceListTool ResourceListTool;
     public ModelExportTool ModelExportTool;
     public AssetBrowserTool AssetBrowserTool;
@@ -97,6 +98,7 @@ public class ModelEditorView : IEditorView
         ModelMaskToggler = new ModelMaskToggler(Project, GetModelMaskTarget);
         ModelAnimationTool = new ModelAnimationTool(this, Project);
         ModelCharacterPreview = new ModelCharacterPreview(Project, GetCharacterPreviewTarget);
+        ModelDisplayRotationTool = new ModelDisplayRotationTool(this, Project);
         ResourceListTool = new ResourceListTool();
         ModelExportTool = new ModelExportTool(this, Project);
         AssetBrowserTool = new AssetBrowserTool(Project, LOC.Get("MODEL_AssetBrowser_Hint"),
@@ -253,6 +255,9 @@ public class ModelEditorView : IEditorView
         }
 
         ViewportSelection.ClearGotoTarget();
+
+        // Before the animation, which places the bone and dummy markers on top of the rotation
+        ModelDisplayRotationTool.Update();
 
         ModelAnimationTool.Update();
 

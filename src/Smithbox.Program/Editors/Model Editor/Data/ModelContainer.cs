@@ -78,6 +78,59 @@ public class ModelContainer : ObjectContainer
     }
 
     /// <summary>
+    /// A rotation applied to the whole model in the viewport only. It is held here rather than in the FLVER,
+    /// so it never reaches the saved file. Set it with <see cref="SetDisplayRotation"/>.
+    /// </summary>
+    public Quaternion DisplayRotation { get; private set; } = Quaternion.Identity;
+
+    public Matrix4x4 DisplayMatrix => Matrix4x4.CreateFromQuaternion(DisplayRotation);
+
+    /// <summary>
+    /// Rotates the displayed model, and moves everything drawn for it to match.
+    /// </summary>
+    public void SetDisplayRotation(Quaternion rotation)
+    {
+        if (DisplayRotation == rotation)
+            return;
+
+        DisplayRotation = rotation;
+        RefreshDisplayTransforms();
+    }
+
+    /// <summary>
+    /// Re-applies the world matrix of every drawn object, after the display rotation changes.
+    /// </summary>
+    private void RefreshDisplayTransforms()
+    {
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan)
+            return;
+
+        foreach (Entity obj in Objects)
+        {
+            if (obj == null)
+                continue;
+
+            // Bones and dummies update their own proxies (and those of their children)
+            if (obj.HasTransform)
+            {
+                if (obj.Parent == null || !obj.Parent.HasTransform)
+                {
+                    obj.UpdateRenderModel();
+                }
+            }
+            else if (obj.RenderSceneMesh != null)
+            {
+                obj.RenderSceneMesh.World = obj.GetWorldMatrix();
+            }
+        }
+
+        if (CharacterMesh != null)
+        {
+            CharacterMesh.World = RootObject.GetWorldMatrix();
+        }
+    }
+
+    /// <summary>
     /// The model the objects were read from, for the data the objects don't hold (such as the vertex layouts)
     /// </summary>
     public FLVER2 Flver { get; private set; }
