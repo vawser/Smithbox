@@ -906,7 +906,11 @@ public class ViewportRenderingTool
             .ToList();
 
         // The map the viewport is lit by, as DrawParamLightingBank.ResolveForViewport picks it
-        var map = maps.FirstOrDefault(m => bank.GetBank(m.Name, DrawParamLightingBank.LightBank) != null);
+        var map = bank.GetLitMap(maps);
+
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Tone_Correction")}##drawParamToneCorrection",
+            ref CFG.Current.Viewport_Post_Tone_Correction);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Tone_Correction_TT"));
 
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_DrawParam_Source_TT"));
@@ -917,15 +921,14 @@ public class ViewportRenderingTool
         }
         else
         {
-            var (mostUsedLight, mostUsedToneMap) = bank.GetMostUsedIds(map);
+            var mostUsed = bank.GetMostUsedRows(map);
 
-            DrawParamRowCombo(bank, map, DrawParamLightingBank.LightBank, mostUsedLight,
-                LOC.Get("VIEWPORT_Rendering_DrawParam_Light_Row"), LOC.Get("VIEWPORT_Rendering_DrawParam_Light_Row_TT"),
-                ref CFG.Current.Viewport_Map_DrawParam_Light_Row);
-
-            DrawParamRowCombo(bank, map, DrawParamLightingBank.ToneMapBank, mostUsedToneMap,
-                LOC.Get("VIEWPORT_Rendering_DrawParam_ToneMap_Row"), LOC.Get("VIEWPORT_Rendering_DrawParam_ToneMap_Row_TT"),
-                ref CFG.Current.Viewport_Map_DrawParam_ToneMap_Row);
+            foreach (var bankName in DrawParamLightingBank.Banks)
+            {
+                DrawParamRowCombo(bank, map, bankName, DrawParamLightingBank.Get(mostUsed, bankName),
+                    LOC.Get($"VIEWPORT_Rendering_DrawParam_{bankName}_Row"), LOC.Get($"VIEWPORT_Rendering_DrawParam_{bankName}_Row_TT"),
+                    ref DrawParamLightingBank.ChosenRow(bankName));
+            }
 
             // The rows of the selected part, as it would be lit in the game
             var part = view.ViewportSelection.GetSelection()
@@ -937,13 +940,21 @@ public class ViewportRenderingTool
             ImGui.BeginDisabled(part == null);
             if (ImGui.Button($"{LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part")}##drawParamFromPart") && part != null)
             {
-                CFG.Current.Viewport_Map_DrawParam_Light_Row = part.LightID;
-                CFG.Current.Viewport_Map_DrawParam_ToneMap_Row = part.ToneMapID;
+                foreach (var bankName in DrawParamLightingBank.Banks)
+                    DrawParamLightingBank.ChosenRow(bankName) = DrawParamLightingBank.GetPartRow(part, bankName);
             }
             ImGui.EndDisabled();
             GUI.Tooltip(part != null
-                ? LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_TT", part.Name, part.LightID, part.ToneMapID)
+                ? LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_TT", part.Name, part.LightID, part.ToneMapID,
+                    part.ShadowID, part.ToneCorrectID)
                 : LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_None_TT"));
+
+            if (ImGui.Button($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Most_Used_All")}##drawParamMostUsedAll"))
+            {
+                foreach (var bankName in DrawParamLightingBank.Banks)
+                    DrawParamLightingBank.ChosenRow(bankName) = -1;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Most_Used_All_TT"));
         }
 
         LightingDebugSection();
@@ -952,10 +963,22 @@ public class ViewportRenderingTool
 
         if (map != null && ResolvedValuesHeader())
         {
-            var scene = bank.Resolve(map.Name, bank.ChooseRow(map, DrawParamLightingBank.LightBank),
-                bank.ChooseRow(map, DrawParamLightingBank.ToneMapBank));
+            var scene = bank.Resolve(map.Name, bank.ChooseRows(map));
 
             LightingTable(map.Name, scene, scene.Models ?? scene, bank.Profile);
+
+            // What the table has no rows for: the shadows' own light and the colour correction
+            var shadow = scene.Shadow;
+            ImGui.Text(shadow.CascadeCount > 0 && shadow.LightAngle is { } angle
+                ? LOC.Get("VIEWPORT_Rendering_DrawParam_Shadow_Values", GparamLightingBank.FormatAngle(angle),
+                    $"{shadow.Density:0.##}", $"{shadow.Near:0.#}", $"{shadow.FarFadeStart:0.#}", $"{shadow.FarDistance:0.#}")
+                : LOC.Get("VIEWPORT_Rendering_DrawParam_Shadow_Off"));
+
+            var correction = scene.ToneCorrection;
+            ImGui.Text(LOC.Get("VIEWPORT_Rendering_DrawParam_ToneCorrect_Values",
+                $"{correction.Brightness.X:0.##}, {correction.Brightness.Y:0.##}, {correction.Brightness.Z:0.##}",
+                $"{correction.Contrast.X:0.##}, {correction.Contrast.Y:0.##}, {correction.Contrast.Z:0.##}",
+                $"{correction.Saturation:0.##}", $"{correction.Hue:0.#}"));
         }
     }
 

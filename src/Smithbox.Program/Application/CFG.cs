@@ -1372,6 +1372,11 @@ public class CFG
     // use, -1 for the one most of the map's pieces use
     public int Viewport_Map_DrawParam_Light_Row = -1;
     public int Viewport_Map_DrawParam_ToneMap_Row = -1;
+    public int Viewport_Map_DrawParam_Shadow_Row = -1;
+    public int Viewport_Map_DrawParam_ToneCorrect_Row = -1;
+
+    // Whether the map lighting's colour correction (Demon's Souls' ToneCorrectBank) is drawn
+    public bool Viewport_Post_Tone_Correction = true;
 
     // Whether the GPARAM's hemisphere light adds to the irradiance volumes' light, as well as lighting what they
     // don't cover; compared with the game, it does

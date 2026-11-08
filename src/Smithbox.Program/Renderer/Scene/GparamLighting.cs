@@ -29,6 +29,19 @@ public class GparamDirectionalLight
 }
 
 /// <summary>
+/// A colour correction of the display colour, ToneMap.frag's, as Demon's Souls' ToneCorrectBank gives it: a
+/// brightness and a contrast per channel, a saturation and a hue rotation in degrees. Off unless a game sets it.
+/// </summary>
+public class GparamToneCorrection
+{
+    public bool Enabled = false;
+    public Vector3 Brightness = Vector3.One;
+    public Vector3 Contrast = Vector3.One;
+    public float Saturation = 1.0f;
+    public float Hue = 0.0f;
+}
+
+/// <summary>
 /// The sun's cascaded shadow maps, from the "ShadowParam ParamEditor" group. The defaults are Elden Ring's mapbase;
 /// its default.gparam has the same, but for a far fade starting at 4000.
 /// </summary>
@@ -59,6 +72,15 @@ public class GparamShadow
 
     /// <summary>Whether the cascades move in whole texels, which stops shadow edges crawling as the camera moves</summary>
     public bool AlignTexel = true;
+
+    /// <summary>
+    /// The direction the shadows are cast in, as a <see cref="GparamDirectionalLight.Angle" />; null to cast them
+    /// along the sun, as the GPARAM games do. Demon's Souls' ShadowBank gives its shadows a light of their own.
+    /// </summary>
+    public Vector2? LightAngle;
+
+    /// <summary>How dark the shadows are, 0 to 1, on top of the viewport's shadow strength (ShadowBank densityRatio)</summary>
+    public float Density = 1.0f;
 
     /// <summary>Where the last cascade ends</summary>
     public float FarDistance => FarFadeStart + Math.Max(FarFadeDistance, 0.0f);
@@ -135,6 +157,9 @@ public class GparamLighting
 
     /// <summary>The screen effects, resolved through the same files; see <see cref="GparamPostEffects" /></summary>
     public GparamPostEffects PostEffects = new();
+
+    /// <summary>The older games' colour correction in place of a LUT (Demon's Souls' ToneCorrectBank)</summary>
+    public GparamToneCorrection ToneCorrection = new();
 
     /// <summary>
     /// Where each value came from, as "file #id", keyed by the GPARAM field key. Fields left at their default

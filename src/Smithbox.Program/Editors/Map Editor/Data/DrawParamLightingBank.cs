@@ -11,14 +11,19 @@ using System.Numerics;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
+/// The rows of a map area's DrawParam banks that its lighting is read from, by row ID
+/// </summary>
+public record struct DrawParamRows(int Light, int ToneMap, int Shadow, int ToneCorrect);
+
+/// <summary>
 /// Lights the Map Editor's viewports of a game without GPARAMs from its DrawParam banks (Demon's Souls), filling the
 /// same <see cref="GparamLighting" /> the renderer reads for the GPARAM games.
 /// <para>
 /// A map mAA_BB_CC_DD uses the banks of its area, the params mAA_LightBank, mAA_ToneMapBank... of
 /// param/drawparam/aAA_drawparam.parambnd, which the Param Editor's bank already holds. Map parts pick a row of each
-/// bank by their LightID, ToneMapID... (MSBD.Part). Phase 1 lights the whole viewport with one row per bank: the one
-/// most of the map's pieces use, or the one the viewport menu chose. Fields are read by name and converted to float,
-/// so the s32 fields of DES and the s16 ones of DS1 read alike.
+/// bank by their LightID, ToneMapID, ShadowID, ToneCorrectID (MSBD.Part). The whole viewport is lit with one row per
+/// bank: the one most of the map's pieces use, or the one the viewport menu chose. Fields are read by name and
+/// converted to float, so the s32 fields of DES and the s16 ones of DS1 read alike.
 /// </para>
 /// See Documentation/Claude/Older Games/DES DrawParam Lighting Plan.md.
 /// </summary>
@@ -28,6 +33,11 @@ public class DrawParamLightingBank
 
     public const string LightBank = "LightBank";
     public const string ToneMapBank = "ToneMapBank";
+    public const string ShadowBank = "ShadowBank";
+    public const string ToneCorrectBank = "ToneCorrectBank";
+
+    /// <summary>The banks read, in the order the menu offers them</summary>
+    public static readonly string[] Banks = { LightBank, ToneMapBank, ShadowBank, ToneCorrectBank };
 
     public DrawParamLightingBank(ProjectEntry project)
     {
@@ -59,54 +69,81 @@ public class DrawParamLightingBank
         return bankParams.TryGetValue($"{area}_{bank}", out var param) ? param : null;
     }
 
+    /// <summary>The viewport menu's chosen row of a bank, -1 for the most-used one</summary>
+    public static ref int ChosenRow(string bank)
+    {
+        switch (bank)
+        {
+            case ToneMapBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneMap_Row;
+            case ShadowBank: return ref CFG.Current.Viewport_Map_DrawParam_Shadow_Row;
+            case ToneCorrectBank: return ref CFG.Current.Viewport_Map_DrawParam_ToneCorrect_Row;
+            default: return ref CFG.Current.Viewport_Map_DrawParam_Light_Row;
+        }
+    }
+
+    /// <summary>The row of a bank a part picks</summary>
+    public static int GetPartRow(MSBD.Part part, string bank) => bank switch
+    {
+        ToneMapBank => part.ToneMapID,
+        ShadowBank => part.ShadowID,
+        ToneCorrectBank => part.ToneCorrectID,
+        _ => part.LightID
+    };
+
+    public static int Get(DrawParamRows rows, string bank) => bank switch
+    {
+        ToneMapBank => rows.ToneMap,
+        ShadowBank => rows.Shadow,
+        ToneCorrectBank => rows.ToneCorrect,
+        _ => rows.Light
+    };
+
     // The most-used IDs of each map, worked out again every second or so, as parts can be edited
-    private readonly Dictionary<string, (int Light, int ToneMap, long Time)> MostUsed = new();
+    private readonly Dictionary<string, (DrawParamRows Rows, long Time)> MostUsed = new();
     private readonly Stopwatch Clock = Stopwatch.StartNew();
 
-    /// <summary>
-    /// The LightBank and ToneMapBank IDs most of a map's pieces use, the rows Phase 1 lights the map with
-    /// </summary>
-    public (int Light, int ToneMap) GetMostUsedIds(MapContainer map)
+    /// <summary>The row of each bank most of a map's pieces pick, the rows the map is lit with by default</summary>
+    public DrawParamRows GetMostUsedRows(MapContainer map)
     {
         var now = Clock.ElapsedMilliseconds;
 
         if (MostUsed.TryGetValue(map.Name, out var cached) && now - cached.Time < 1000)
-            return (cached.Light, cached.ToneMap);
+            return cached.Rows;
 
         var pieces = map.Parts
             .Select(e => e.WrappedObject)
             .OfType<MSBD.Part.MapPiece>()
             .ToList();
 
-        int MostUsedId(Func<MSBD.Part.MapPiece, byte> get) => pieces.Count == 0
+        int MostUsedId(string bank) => pieces.Count == 0
             ? 0
-            : pieces.GroupBy(get).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key;
+            : pieces.GroupBy(p => GetPartRow(p, bank)).OrderByDescending(g => g.Count()).ThenBy(g => g.Key).First().Key;
 
-        var light = MostUsedId(p => p.LightID);
-        var toneMap = MostUsedId(p => p.ToneMapID);
+        var rows = new DrawParamRows(MostUsedId(LightBank), MostUsedId(ToneMapBank), MostUsedId(ShadowBank),
+            MostUsedId(ToneCorrectBank));
 
-        MostUsed[map.Name] = (light, toneMap, now);
+        MostUsed[map.Name] = (rows, now);
 
-        return (light, toneMap);
+        return rows;
     }
 
-    /// <summary>The row a map is lit with from a bank: the menu's choice if that row exists, else the most-used one</summary>
-    public int ChooseRow(MapContainer map, string bank)
+    /// <summary>The rows a map is lit with: per bank, the menu's choice if that row exists, else the most-used one</summary>
+    public DrawParamRows ChooseRows(MapContainer map)
     {
-        var chosen = bank == LightBank ? CFG.Current.Viewport_Map_DrawParam_Light_Row : CFG.Current.Viewport_Map_DrawParam_ToneMap_Row;
-        var param = GetBank(map.Name, bank);
+        var mostUsed = GetMostUsedRows(map);
 
-        if (chosen >= 0 && param?[chosen] != null)
-            return chosen;
+        int Choose(string bank)
+        {
+            var chosen = ChosenRow(bank);
+            return chosen >= 0 && GetBank(map.Name, bank)?[chosen] != null ? chosen : Get(mostUsed, bank);
+        }
 
-        var (light, toneMap) = GetMostUsedIds(map);
-
-        return bank == LightBank ? light : toneMap;
+        return new DrawParamRows(Choose(LightBank), Choose(ToneMapBank), Choose(ShadowBank), Choose(ToneCorrectBank));
     }
 
     // The last lighting given to the viewports, and what it was resolved from
     private GparamLighting ViewportLighting;
-    private (string Map, int Light, int ToneMap, int Hash) ViewportKey;
+    private (string Map, DrawParamRows Rows, int Hash) ViewportKey;
 
     /// <summary>
     /// The scene's lighting for the Map Editor's viewports, with the model set in <see cref="GparamLighting.Models" />:
@@ -119,74 +156,72 @@ public class DrawParamLightingBank
         if (!CanUse() || !CFG.Current.Viewport_Map_Lighting)
             return null;
 
-        var map = maps
-            .OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase)
-            .FirstOrDefault(m => GetBank(m.Name, LightBank) != null);
+        var map = GetLitMap(maps);
 
-        if (map == null)
-            return null;
-
-        return ResolveCached(map);
+        return map == null ? null : ResolveCached(map);
     }
 
-    /// <summary>The lighting of one map with the rows <see cref="ChooseRow" /> picks, cached as <see cref="ResolveForViewport" /> describes</summary>
+    /// <summary>The map of those loaded that the viewport is lit by: the first by name whose area has a LightBank</summary>
+    public MapContainer GetLitMap(IEnumerable<MapContainer> maps)
+    {
+        return maps
+            .OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase)
+            .FirstOrDefault(m => GetBank(m.Name, LightBank) != null);
+    }
+
+    /// <summary>The lighting of one map with the rows <see cref="ChooseRows" /> picks, cached as <see cref="ResolveForViewport" /> describes</summary>
     public GparamLighting ResolveCached(MapContainer map)
     {
-        var lightId = ChooseRow(map, LightBank);
-        var toneMapId = ChooseRow(map, ToneMapBank);
-        var lightRow = GetBank(map.Name, LightBank)?[lightId];
-        var toneMapRow = GetBank(map.Name, ToneMapBank)?[toneMapId];
+        var rows = ChooseRows(map);
+        var hash = new HashCode();
 
-        var key = (map.Name, lightId, toneMapId, HashRows(lightRow, toneMapRow));
+        foreach (var bank in Banks)
+            AddToHash(ref hash, GetBank(map.Name, bank)?[Get(rows, bank)]);
+
+        var key = (map.Name, rows, hash.ToHashCode());
 
         if (ViewportLighting != null && ViewportKey == key)
             return ViewportLighting;
 
-        ViewportLighting = Resolve(map.Name, lightId, toneMapId);
+        ViewportLighting = Resolve(map.Name, rows);
         ViewportKey = key;
 
         return ViewportLighting;
     }
 
-    private static int HashRows(Param.Row a, Param.Row b)
+    private static void AddToHash(ref HashCode hash, Param.Row row)
     {
-        var hash = new HashCode();
+        if (row == null)
+            return;
 
-        foreach (var row in new[] { a, b })
+        hash.Add(row.ID);
+
+        // Through the columns: Row.Cells builds a new list each time, and this runs every frame. Padding fields
+        // come back as a new byte array each time, which would hash differently every frame.
+        foreach (var column in row.Columns)
         {
-            if (row == null)
-                continue;
-
-            hash.Add(row.ID);
-
-            // Through the columns: Row.Cells builds a new list each time, and this runs every frame
-            // Padding fields come back as a new byte array each time, which would hash differently every frame
-            foreach (var column in row.Columns)
-            {
-                if (column.GetValue(row) is var value and not Array)
-                    hash.Add(value);
-            }
+            if (column.GetValue(row) is var value and not Array)
+                hash.Add(value);
         }
-
-        return hash.ToHashCode();
     }
 
     /// <summary>
-    /// The lighting of a map from LightBank row <paramref name="lightId" /> and ToneMapBank row
-    /// <paramref name="toneMapId" /> of its area, with the model set in <see cref="GparamLighting.Models" />.
+    /// The lighting of a map from the given rows of its area's banks, with the model set in
+    /// <see cref="GparamLighting.Models" />.
     /// <para>
     /// Colours are 0-255 with colA an intensity in percent, so a GPARAM-style colour is rgb / 255 with w = colA / 100.
     /// Rotations are degrees, the light's elevation then yaw (see <see cref="Angle" />).
     /// </para>
     /// <list type="bullet">
-    /// <item>Light 0 is the sun, lights 1 and 2 the fills (Light1, LocalLight1); the _s light's colour is the sun's
-    /// specular, its own direction unused for now.</item>
-    /// <item>_u and _d are the hemisphere, for the scene and models alike. DES's _du/_dd pair is unmapped.</item>
-    /// <item>ToneMapBank's Reinhard adaptation, key / clamp(average luminance, min, max), becomes the base exposure
-    /// key / sqrt(min x max) with auto exposure between the two bounds, see <see cref="ApplyToneMap" />.</item>
+    /// <item>LightBank: light 0 is the sun, lights 1 and 2 the fills (Light1, LocalLight1); the _s light's colour is
+    /// the sun's specular, its own direction unused for now. _u and _d are the hemisphere, for the scene and models
+    /// alike. DES's _du/_dd pair is unmapped.</item>
+    /// <item>ToneMapBank: the exposure, its adaptation and the bloom, see <see cref="ApplyToneMap" />.</item>
+    /// <item>ShadowBank: the shadows' own light, their density and range, see <see cref="ApplyShadow" />.</item>
+    /// <item>ToneCorrectBank: the colour correction, see <see cref="ApplyToneCorrect" />.</item>
     /// </list>
     /// </summary>
-    public GparamLighting Resolve(string mapId, int lightId, int toneMapId)
+    public GparamLighting Resolve(string mapId, DrawParamRows rows)
     {
         var profile = Profile;
         var area = GetArea(mapId);
@@ -199,35 +234,41 @@ public class DrawParamLightingBank
         // DES has a bloom (ToneMapBank) but none of the GPARAM games' glow filter
         lighting.PostEffects.Glow.Enabled = false;
 
-        var lightBank = GetBank(mapId, LightBank);
-        var lightRow = lightBank?[lightId];
-        var toneMapRow = GetBank(mapId, ToneMapBank)?[toneMapId];
+        lighting.File = $"{area} Light {rows.Light}, ToneMap {rows.ToneMap}, Shadow {rows.Shadow}, ToneCorrect {rows.ToneCorrect}";
 
-        lighting.File = $"{area}_{LightBank} {lightId}, {area}_{ToneMapBank} {toneMapId}";
+        string Source(string bank, Param.Row row) => $"{area}_{bank} #{row.ID} '{row.Name}'";
 
+        var lightRow = GetBank(mapId, LightBank)?[rows.Light];
         if (lightRow != null)
         {
-            var source = $"{area}_{LightBank} #{lightId} '{lightRow.Name}'";
-
             ApplyLights(lightRow, lighting);
             foreach (var field in LightSourceFields)
-                lighting.Sources[field] = source;
+                lighting.Sources[field] = Source(LightBank, lightRow);
         }
 
+        var toneMapRow = GetBank(mapId, ToneMapBank)?[rows.ToneMap];
         if (toneMapRow != null)
         {
             ApplyToneMap(toneMapRow, lighting);
-
-            var source = $"{area}_{ToneMapBank} #{toneMapId} '{toneMapRow.Name}'";
-            lighting.Sources[profile.ExposureField] = source;
-            lighting.Sources[profile.AutoExposureField] = source;
+            lighting.Sources[profile.ExposureField] = Source(ToneMapBank, toneMapRow);
+            lighting.Sources[profile.AutoExposureField] = Source(ToneMapBank, toneMapRow);
         }
+
+        var shadowRow = GetBank(mapId, ShadowBank)?[rows.Shadow];
+        if (shadowRow != null)
+            ApplyShadow(shadowRow, lighting.Shadow);
+
+        var toneCorrectRow = GetBank(mapId, ToneCorrectBank)?[rows.ToneCorrect];
+        if (toneCorrectRow != null)
+            ApplyToneCorrect(toneCorrectRow, lighting.ToneCorrection);
 
         // The model set: the same lights, which characters take all of (the scene takes only the sun and hemisphere)
         var models = new GparamLighting
         {
             File = lighting.File,
-            PostEffects = lighting.PostEffects
+            PostEffects = lighting.PostEffects,
+            Shadow = lighting.Shadow,
+            ToneCorrection = lighting.ToneCorrection
         };
 
         if (lightRow != null)
@@ -306,6 +347,55 @@ public class DrawParamLightingBank
         bloom.Enabled = bloomMul > 0.0f;
         bloom.Threshold = Get(row, "bloomBegin", 20.0f) / 20.0f;
         bloom.Alpha = bloomMul / 200.0f;
+    }
+
+    /// <summary>
+    /// ShadowBank: the shadows' own light (lightDegRotX/Y, an elevation and yaw as LightBank's), how dark they are
+    /// (densityRatio, percent), and how far they reach: from beginDist to endDist, fading out from fadeBeginDist over
+    /// fadeDist. DES shadows are short: m01's end at 10 m, m02's at 40. The rows' colour (colR/G/B, 0-80) is unmapped.
+    /// </summary>
+    private static void ApplyShadow(Param.Row row, GparamShadow shadow)
+    {
+        shadow.LightAngle = Angle(Get(row, "lightDegRotX"), Get(row, "lightDegRotY"));
+        shadow.Density = Math.Clamp(Get(row, "densityRatio", 100.0f) / 100.0f, 0.0f, 1.0f);
+
+        var near = Math.Max(Get(row, "beginDist"), 0.1f);
+        var endDist = Get(row, "endDist", 300.0f);
+        var fadeBegin = Get(row, "fadeBeginDist", 9999.0f);
+        var fadeDist = Get(row, "fadeDist", -1.0f);
+
+        // Most rows end where the fade does (m02: 30 + 10 = 40); where they don't, the end is the nearer of the two
+        var end = endDist > 0.0f ? endDist : fadeBegin + Math.Max(fadeDist, 0.0f);
+        var fadeStart = Math.Min(fadeBegin, end);
+
+        if (fadeStart >= end && fadeDist > 0.0f)
+            fadeStart = Math.Max(end - fadeDist, near);
+
+        if (end <= near)
+        {
+            shadow.CascadeCount = 0;
+            return;
+        }
+
+        shadow.Near = near;
+        shadow.FarFadeStart = fadeStart;
+        shadow.FarFadeDistance = end - fadeStart;
+
+        // ER's splits are for kilometres; these ranges are tens of metres, so the cascades split the range itself
+        shadow.CascadeSplits = new Vector3(end * 0.1f, end * 0.3f, end * 0.6f);
+    }
+
+    /// <summary>
+    /// ToneCorrectBank: brightness and contrast per channel, saturation and hue (degrees, 0 or 356 in DES's rows).
+    /// Taken as a correction of the display colour, see ToneMap.frag.
+    /// </summary>
+    private static void ApplyToneCorrect(Param.Row row, GparamToneCorrection correction)
+    {
+        correction.Enabled = true;
+        correction.Brightness = new Vector3(Get(row, "brightnessR", 1.0f), Get(row, "brightnessG", 1.0f), Get(row, "brightnessB", 1.0f));
+        correction.Contrast = new Vector3(Get(row, "contrastR", 1.0f), Get(row, "contrastG", 1.0f), Get(row, "contrastB", 1.0f));
+        correction.Saturation = Get(row, "saturation", 1.0f);
+        correction.Hue = Get(row, "hue");
     }
 
     /// <summary>The colour colR/G/B/A + suffix as rgb / 255 and w = colA / 100</summary>

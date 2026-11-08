@@ -1769,19 +1769,19 @@
       "Text": "The project has no {0}."
     },
     {
-      "Key": "VIEWPORT_Rendering_DrawParam_Light_Row",
+      "Key": "VIEWPORT_Rendering_DrawParam_LightBank_Row",
       "Text": "Light Bank Row"
     },
     {
-      "Key": "VIEWPORT_Rendering_DrawParam_Light_Row_TT",
+      "Key": "VIEWPORT_Rendering_DrawParam_LightBank_Row_TT",
       "Text": "The LightBank row the viewport is lit with: the sun (light 0), the fill lights (1 and 2), the specular colour and the hemisphere. By default the row most of the map's pieces use."
     },
     {
-      "Key": "VIEWPORT_Rendering_DrawParam_ToneMap_Row",
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneMapBank_Row",
       "Text": "Tone Map Bank Row"
     },
     {
-      "Key": "VIEWPORT_Rendering_DrawParam_ToneMap_Row_TT",
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneMapBank_Row_TT",
       "Text": "The ToneMapBank row the exposure, its adaptation and the bloom are read from. By default the row most of the map's pieces use."
     },
     {
@@ -1794,11 +1794,55 @@
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_From_Part_TT",
-      "Text": "Light with the rows {0} picks: LightBank {1}, ToneMapBank {2}."
+      "Text": "Light with the rows {0} picks: LightBank {1}, ToneMapBank {2}, ShadowBank {3}, ToneCorrectBank {4}."
     },
     {
       "Key": "VIEWPORT_Rendering_DrawParam_From_Part_None_TT",
       "Text": "Select a map part to light with the rows it picks."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ShadowBank_Row",
+      "Text": "Shadow Bank Row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ShadowBank_Row_TT",
+      "Text": "The ShadowBank row the shadows are read from: their own light direction (not the sun's), how dark they are, and how far from the camera they reach. Demon's Souls' shadows are short, often ending 10 to 60 m away. By default the row most of the map's pieces use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneCorrectBank_Row",
+      "Text": "Tone Correct Bank Row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneCorrectBank_Row_TT",
+      "Text": "The ToneCorrectBank row the colour correction is read from: brightness and contrast per channel, saturation and hue. By default the row most of the map's pieces use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Most_Used_All",
+      "Text": "Use Most Used Rows"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Most_Used_All_TT",
+      "Text": "Go back to the rows most of the map's pieces use, for every bank."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Tone_Correction",
+      "Text": "Tone Correction"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Tone_Correction_TT",
+      "Text": "Apply the ToneCorrectBank row's colour correction to the final image."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Shadow_Values",
+      "Text": "Shadows: light {0}, density {1}, from {2} m, fading from {3} m to {4} m"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Shadow_Off",
+      "Text": "Shadows: off for this row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneCorrect_Values",
+      "Text": "Tone correction: brightness ({0}), contrast ({1}), saturation {2}, hue {3}"
     },
     {
       "Key": "VIEWPORT_Rendering_Section_Volume_Source_TT",

@@ -19,6 +19,8 @@ layout(set = 0, binding = 0) uniform ToneMapParams
 	vec4 settings; // x: exposure, y: operator, z: white point, w: 1 to apply the auto exposure
 	vec4 offset;   // xy: where the target's first pixel is drawn
 	vec4 grading;  // x: 1 to grade, y: the first LUT's slot in the atlas, z: the second's, w: how far towards it
+	vec4 correctionA; // xyz: brightness, w: saturation (all 1: none)
+	vec4 correctionB; // xyz: contrast, w: hue rotation in degrees (1, 1, 1, 0: none)
 } params;
 
 layout(set = 0, binding = 1) uniform texture2D sceneColor;
@@ -87,6 +89,30 @@ vec3 Filmic(vec3 color)
 	return (color * (a * color + b)) / (color * (c * color + d) + e);
 }
 
+// The older games' colour correction of the display colour, Demon's Souls' ToneCorrectBank: brightness and contrast
+// (about mid grey) per channel, then saturation about the luminance, then a hue rotation about the grey axis.
+// A reading of the bank's field names, not the game's shader.
+vec3 ToneCorrect(vec3 color)
+{
+	color *= params.correctionA.xyz;
+	color = (color - 0.5) * params.correctionB.xyz + 0.5;
+
+	float grey = Luminance(color);
+	color = mix(vec3(grey), color, params.correctionA.w);
+
+	float hue = radians(params.correctionB.w);
+	if (abs(hue) > 1e-4)
+	{
+		// Rodrigues' rotation about the (1, 1, 1) axis
+		vec3 k = vec3(0.57735);
+		float c = cos(hue);
+		float s = sin(hue);
+		color = color * c + cross(k, color) * s + k * dot(k, color) * (1.0 - c);
+	}
+
+	return clamp(color, 0.0, 1.0);
+}
+
 // DS3's and Bloodborne's filmic table, as ToneMap_WriteFilmicToneMappingTablePS writes it (DS3 DXBC): Hejl and
 // Burgess-Dawson's curve, which ends in display values (its gamma is built in). The table then raises it to
 // 2.2 / Yebis-Gamma, 2.2 in their files, so to the power 1.
@@ -124,6 +150,8 @@ void main()
 	vec3 display = op == OPERATOR_YEBIS_FILMIC
 		? clamp(YebisFilmic(color), 0.0, 1.0)
 		: sqrt(clamp(color, 0.0, 1.0));
+
+	display = ToneCorrect(display);
 
 	if (params.grading.x > 0.5)
 	{

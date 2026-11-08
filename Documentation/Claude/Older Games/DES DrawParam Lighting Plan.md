@@ -107,6 +107,24 @@ Expected values for m01_00_00_00 (LightBank 0 `神殿部分`, ToneMapBank 0):
 - **Colour correction:** `ToneCorrectBank` as a colour step in `ToneMap.frag`, which DS1R can reuse.
 - **Check:** m01 (`ToneCorrect` 0 darkens to 0.8/0.87/0.83 with contrast 1.1) against m03 (neutral).
 
+#### Phase 2 as built (2026-11-08; not yet checked in the app)
+
+- **Rows:** the adapter reads four banks, LightBank, ToneMapBank, ShadowBank and ToneCorrectBank (`DrawParamRows`). Each bank's row is the most-used by map pieces (`ShadowID`, `ToneCorrectID`) or the menu's override (`CFG.Viewport_Map_DrawParam_Shadow_Row` / `_ToneCorrect_Row`).
+- **Shadow direction:** `GparamShadow` has a new `LightAngle`; `SceneRenderPipeline` casts the cascades along it instead of the sun's direction when it's set. Only DES sets it, as `lightDegRotX/Y` with the same elevation/yaw conversion as LightBank.
+- **Shadow darkness:** `GparamShadow.Density` = `densityRatio` / 100, which multiplies the viewport's shadow strength.
+- **Shadow range:** shadows start at `beginDist` (at least 0.1) and end at `endDist`, fading from `fadeBeginDist`. Where that leaves no fade (m01: end 10, fade begin 10, fade 5), the fade starts `fadeDist` before the end. A row with `endDist` ≤ the start has no shadows. The cascades split the range at 10 %, 30 % and 60 %, since ER's split distances are in kilometres.
+- **Shadow colour:** `colR/G/B` (0-80) is **not used**. How the game uses it isn't known.
+- **Tone correction:** a new `GparamToneCorrection` on `GparamLighting`, drawn by `ToneMap.frag` on the display colour after the curve and before the LUT:
+  - brightness × RGB, then contrast about 0.5 per channel, saturation about the luminance, and a hue rotation about the grey axis;
+  - this is a reading of the field names, not the game's shader;
+  - with the identity values it changes nothing, so the other games are unaffected;
+  - `CFG.Viewport_Post_Tone_Correction` and a menu checkbox switch it.
+- **Menu:** the DES tab offers all four row pickers, "Use Selected Part's Rows" (all four) and "Use Most Used Rows". Resolved Values adds a shadow line (light, density, range) and a tone-correction line.
+
+Expected values for m01_00_00_00:
+- **ShadowBank 0 `神殿`:** light at 50° elevation and yaw 0, density 0.7, shadows from 0.1 m, fading from 5 m to 10 m.
+- **ToneCorrectBank 0:** brightness (0.8, 0.87, 0.83), contrast 1.1, saturation 0.9, hue 0. That is slightly darker, cooler, punchier and less saturated than m03, whose ToneCorrect 0 is neutral.
+
 ### Phase 3: distance fog
 
 - **The pass:** a classic fog pass from `FogBank` (begin and end Z, colour, density %), shared with the DS3/BB/SDT `Fog` group (Analysis.md 3.3).

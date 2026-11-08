@@ -525,8 +525,12 @@ public class SceneRenderPipeline
         var sunIntensity = mapLighting != null ? mapSunColor.W : SceneParams.SunColor.W;
         var castShadows = CFG.Current.Viewport_Shadows && sunIntensity > 0.0f && gameMode;
 
-        Shadows?.Update(castShadows, view, proj, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z),
-            mapLighting?.Shadow ?? DefaultShadow);
+        // Demon's Souls casts its shadows along a light of their own (ShadowBank), not the sun
+        var shadowTravel = mapLighting?.Shadow.LightAngle is { } shadowAngle
+            ? GparamLighting.AngleToDirection(shadowAngle)
+            : new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z);
+
+        Shadows?.Update(castShadows, view, proj, shadowTravel, mapLighting?.Shadow ?? DefaultShadow);
 
         Fog.Prepare(view, renderProj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
 
@@ -637,7 +641,8 @@ public class SceneRenderPipeline
             SceneParams.ShadowDepthBias = shadowParams.DepthBias;
             SceneParams.ShadowSlopeBias = shadowParams.SlopeBias;
             SceneParams.ShadowCascadeFade = shadowParams.CascadeFade;
-            SceneParams.ShadowStrength = shadowStrength;
+            // The viewport's strength, times the map's shadow density where it gives one (ShadowBank densityRatio)
+            SceneParams.ShadowStrength = shadowStrength * Math.Clamp(mapLighting?.Shadow.Density ?? 1.0f, 0.0f, 1.0f);
             SceneParams.ShadowMapSize = shadowMapSize;
 
             SceneParams.WetAlbedo = wetAlbedo;

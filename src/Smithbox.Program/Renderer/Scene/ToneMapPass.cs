@@ -48,6 +48,12 @@ public struct ToneMapParam
 
     /// <summary>x: 1 to grade, y: the first LUT's slot, z: the second's, w: how far towards it</summary>
     public Vector4 Grading;
+
+    /// <summary>The colour correction (<see cref="GparamToneCorrection" />): xyz the brightness, w the saturation</summary>
+    public Vector4 CorrectionA;
+
+    /// <summary>xyz the contrast, w the hue rotation in degrees. All 1 (and hue 0) leaves the colour as it is.</summary>
+    public Vector4 CorrectionB;
 }
 
 /// <summary>
@@ -149,6 +155,13 @@ public class ToneMapPass
         Params.Grading = grade
             ? new Vector4(1.0f, slot, nextSlot, Math.Clamp(grading.Blend, 0.0f, 1.0f))
             : Vector4.Zero;
+
+        // The older games' colour correction (Demon's Souls' ToneCorrectBank); the identity otherwise
+        var correction = lighting?.ToneCorrection;
+        var correct = !passThrough && RenderMode.PostEffects && CFG.Current.Viewport_Post_Tone_Correction &&
+                      correction is { Enabled: true };
+        Params.CorrectionA = correct ? new Vector4(correction.Brightness, correction.Saturation) : Vector4.One;
+        Params.CorrectionB = correct ? new Vector4(correction.Contrast, correction.Hue) : new Vector4(1.0f, 1.0f, 1.0f, 0.0f);
         cl.UpdateBuffer(ParamBuffer, 0, ref Params, (uint)sizeof(ToneMapParam));
 
         cl.SetPipeline(GetPipeline(gd, outputs));
