@@ -362,9 +362,10 @@ public class ParamFieldDecorators
                 result |= AliasEnumHelper.ContextMenu(ParentView, movies, oldval, ref newval);
             }
 
-            if (metaContext.DisplayCharacterEnum && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characters))
+            // Every character in the project's files, named by its alias where it has one
+            if (metaContext.DisplayCharacterEnum)
             {
-                result |= AliasEnumHelper.ContextMenu(ParentView, characters, oldval, ref newval);
+                result |= AliasEnumHelper.ContextMenu(ParentView, ModelFileChoices.CharacterAliasEntries(ParentView.Project), oldval, ref newval);
             }
 
             if (metaContext.DisplayTileReference && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapNames, out List<AliasEntry> mapNames))

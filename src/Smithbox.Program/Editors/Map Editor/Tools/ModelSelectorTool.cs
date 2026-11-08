@@ -26,9 +26,8 @@ public class ModelSelectorTool
 
     private ModelPreviewBrowser PreviewBrowser;
 
-    // The entries for the previews, which only change along with these
+    // The entries for the previews, built along with Choices
     private List<ModelPreviewEntry> PreviewEntries = new();
-    private (ProjectAliasType AliasType, string MapID, string Filter, bool Exact, bool LowDetail) PreviewEntriesKey;
 
     public ModelSelectorTool(MapEditorView view, ProjectEntry project)
     {
@@ -98,42 +97,24 @@ public class ModelSelectorTool
         {
             if (EntityHelper.IsPartEnemy(firstSelection) || EntityHelper.IsPartDummyEnemy(firstSelection))
             {
-                if (usePreviews)
-                {
-                    DisplayPreviews(ProjectAliasType.Characters, ModelPreviewKind.Character, FileSelectionType.Character);
-                }
-                else
-                {
-                    DisplayCharacterList();
-                }
+                DisplayModels(ModelPreviewKind.Character, FileSelectionType.Character, "", usePreviews);
             }
             else if (EntityHelper.IsPartAsset(firstSelection) || EntityHelper.IsPartDummyAsset(firstSelection))
             {
-                if (usePreviews)
-                {
-                    DisplayPreviews(ProjectAliasType.Assets, ModelPreviewKind.Asset, FileSelectionType.Asset);
-                }
-                else
-                {
-                    DisplayAssetList();
-                }
+                DisplayModels(ModelPreviewKind.Asset, FileSelectionType.Asset, "", usePreviews);
             }
             else if (EntityHelper.IsPartMapPiece(firstSelection))
             {
-                if (usePreviews && firstSelection.Parent != null)
+                // Map pieces are specific to a map, so the only ones that can be switched to are in this one
+                if (firstSelection.Parent != null)
                 {
-                    // Map pieces are specific to a map, so the only ones that can be switched to are in this one
-                    DisplayPreviews(ProjectAliasType.MapPieces, ModelPreviewKind.MapPiece, FileSelectionType.MapPiece, firstSelection.Parent.Name);
-                }
-                else
-                {
-                    DisplayMapPieceList();
+                    DisplayModels(ModelPreviewKind.MapPiece, FileSelectionType.MapPiece, firstSelection.Parent.Name, usePreviews);
                 }
             }
             else if (EntityHelper.IsPartCollision(firstSelection))
             {
-                if (Project.Descriptor.ProjectType is ProjectType.ER 
-                    or ProjectType.AC6 
+                if (Project.Descriptor.ProjectType is ProjectType.ER
+                    or ProjectType.AC6
                     or ProjectType.NR
                     or ProjectType.DB_NT
                     or ProjectType.DB)
@@ -154,197 +135,122 @@ public class ModelSelectorTool
         ImGui.EndChild();
     }
 
-    private void DisplayPreviews(ProjectAliasType aliasType, ModelPreviewKind kind, FileSelectionType selectionType, string mapId = "")
+    // The models on offer, read from the project's files (see ModelFileChoices); rebuilt when the list or filter changes
+    private List<ModelChoice> Choices = new();
+    private (ModelPreviewKind Kind, string MapID, int FileCount, string Filter, bool Exact, bool LowDetail) ChoicesKey;
+
+    private List<ModelChoice> GetChoices(ModelPreviewKind kind, string mapId)
     {
-        var key = (aliasType, mapId, ModelFilter, ExactModelFilter, CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries);
-
-        if (key != PreviewEntriesKey)
+        var fileCount = kind switch
         {
-            PreviewEntriesKey = key;
+            ModelPreviewKind.Character => Project.Locator.ChrFiles.Entries.Count,
+            ModelPreviewKind.Asset => Project.Locator.AssetFiles.Entries.Count,
+            _ => Project.Locator.MapPieceFiles.Entries.Count
+        };
 
-            PreviewEntries = new();
+        var key = (kind, mapId, fileCount, ModelFilter, ExactModelFilter, CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries);
 
-            if (View.Project.Handler.ProjectData.Aliases.TryGetValue(aliasType, out List<AliasEntry> aliases))
+        if (key == ChoicesKey)
+            return Choices;
+
+        ChoicesKey = key;
+
+        var all = kind switch
+        {
+            ModelPreviewKind.Character => ModelFileChoices.Characters(Project),
+            ModelPreviewKind.Asset => ModelFileChoices.Assets(Project),
+            _ => ModelFileChoices.MapPieces(Project, mapId)
+        };
+
+        Choices = all.Where(FilterSelectionList).ToList();
+        PreviewEntries = Choices.Select(c => new ModelPreviewEntry(c.ID, c.Alias, kind, mapId)).ToList();
+
+        return Choices;
+    }
+
+    private void DisplayModels(ModelPreviewKind kind, FileSelectionType selectionType, string mapId, bool usePreviews)
+    {
+        var choices = GetChoices(kind, mapId);
+
+        if (choices.Count == 0)
+        {
+            ImGui.Text(kind is ModelPreviewKind.MapPiece && Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S
+                ? "This game keeps each map's pieces in one file, so they can't be listed."
+                : "No models were found in the project's files.");
+            return;
+        }
+
+        if (usePreviews)
+        {
+            PreviewBrowser.SelectedID = _selectedEntry;
+
+            PreviewBrowser.Display("modelSelector", PreviewEntries, e =>
+                ApplyChoice(choices.FirstOrDefault(c => c.ID == e.ID), selectionType, mapId));
+
+            _selectedEntry = PreviewBrowser.SelectedID;
+            return;
+        }
+
+        if (kind is ModelPreviewKind.MapPiece)
+        {
+            var displayedMapName = $"{mapId} - {AliasHelper.GetMapNameAlias(View.Project, mapId)}";
+            GUI.SimpleHeader($"{mapId}_header", displayedMapName, "", UI.Current.ImGui_Default_Text_Color);
+        }
+
+        ImGui.BeginChild("##modelSelectorList", new Vector2(0, 0), ImGuiChildFlags.Borders);
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(choices.Count);
+
+        while (clipper.Step())
+        {
+            for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
-                foreach (var entry in aliases)
+                var choice = choices[i];
+
+                if (ImGui.Selectable($"{choice.ModelName}##{choice.ID}", choice.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if ((mapId == "" || IsMapPieceOfMap(entry, mapId)) && FilterSelectionList(entry))
+                    _selectedEntry = choice.ID;
+
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        PreviewEntries.Add(new ModelPreviewEntry(entry.ID, entry.Name, kind, mapId));
+                        ApplyChoice(choice, selectionType, mapId);
                     }
                 }
+
+                // Arrow Selection
+                if (ImGui.IsItemHovered() && SelectNextEntry)
+                {
+                    SelectNextEntry = false;
+                    _selectedEntry = choice.ID;
+                    ApplyChoice(choice, selectionType, mapId);
+                }
+
+                if (ImGui.IsItemFocused())
+                {
+                    if (InputManager.HasArrowSelection())
+                    {
+                        SelectNextEntry = true;
+                    }
+                }
+
+                DisplaySelectableAlias(choice);
             }
         }
 
-        PreviewBrowser.SelectedID = _selectedEntry;
+        clipper.End();
 
-        PreviewBrowser.Display("modelSelector", PreviewEntries, e => ApplyMapAssetSelection(e.ID, selectionType, mapId));
-
-        _selectedEntry = PreviewBrowser.SelectedID;
+        ImGui.EndChild();
     }
 
-    private bool IsMapPieceOfMap(AliasEntry entry, string mapId)
+    private void ApplyChoice(ModelChoice choice, FileSelectionType selectionType, string mapId)
     {
-        // DS1 names its map pieces m0000B0A10, the rest m10_00_00_00_000000
-        if (View.Project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (choice != null)
         {
-            return entry.ID.EndsWith($"A{mapId.Substring(1, 2)}");
-        }
-
-        return entry.ID.StartsWith(mapId);
-    }
-
-    private void DisplayCharacterList()
-    {
-        // TODO: this needs to draw from a scanned list of characters, not the alias list
-        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Characters, out List<AliasEntry> characterAliases))
-        {
-            ImGui.BeginChild("##characterSelectorList", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-            foreach (var entry in characterAliases)
-            {
-                if (FilterSelectionList(entry))
-                {
-                    if (ImGui.Selectable(entry.ID, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        _selectedEntry = entry.ID;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Character);
-                        }
-                    }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && SelectNextEntry)
-                    {
-                        SelectNextEntry = false;
-                        _selectedEntry = entry.ID;
-                        ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Character);
-                    }
-
-                    if (ImGui.IsItemFocused())
-                    {
-                        if(InputManager.HasArrowSelection())
-                        {
-                            SelectNextEntry = true;
-                        }
-                    }
-
-                    DisplaySelectableAlias(entry);
-                }
-            }
-
-            ImGui.EndChild();
+            ApplyMapAssetSelection(choice.ModelName, selectionType, mapId);
         }
     }
 
-    private void DisplayAssetList()
-    {
-        // TODO: this needs to draw from a scanned list of assets, not the alias list
-        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Assets, out List<AliasEntry> assetAliases))
-        {
-            ImGui.BeginChild("##assetSelectorList", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-            foreach (var entry in assetAliases)
-            {
-                if (FilterSelectionList(entry))
-                {
-                    if (ImGui.Selectable(entry.ID, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        _selectedEntry = entry.ID;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Asset);
-                        }
-                    }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && SelectNextEntry)
-                    {
-                        SelectNextEntry = false;
-                        _selectedEntry = entry.ID;
-                        ApplyMapAssetSelection(_selectedEntry, FileSelectionType.Asset);
-                    }
-
-                    if (ImGui.IsItemFocused())
-                    {
-                        if (InputManager.HasArrowSelection())
-                        {
-                            SelectNextEntry = true;
-                        }
-                    }
-
-                    DisplaySelectableAlias(entry);
-                }
-            }
-
-            ImGui.EndChild();
-        }
-    }
-
-    private void DisplayMapPieceList()
-    {
-        var maps = MsbUtils.GetFullMapList(View.Project);
-
-        // TODO: this needs to draw from a scanned list of map pieces, not the alias list
-        if (View.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
-        {
-            ImGui.BeginChild("##mapPieceSelectorList", new Vector2(0, 0), ImGuiChildFlags.Borders);
-
-            foreach (var map in maps)
-            {
-                var displayedMapName = $"{map} - {AliasHelper.GetMapNameAlias(View.Project, map)}";
-
-                GUI.SimpleHeader($"{map}_header", $"{displayedMapName}", "", UI.Current.ImGui_Default_Text_Color);
-
-                var displayedName = $"{map}";
-                var modelName = map.Replace($"{map}_", "m");
-                displayedName = $"{modelName}";
-
-                if (View.Project.Descriptor.ProjectType == ProjectType.DS1 || View.Project.Descriptor.ProjectType == ProjectType.DS1R)
-                {
-                    displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
-                }
-
-                foreach (var entry in mapPieceAliases)
-                {
-                    var mapPieceName = $"{entry.ID.Replace(map, "m")}";
-
-                    if (ImGui.Selectable(mapPieceName, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        _selectedEntry = entry.ID;
-
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-                        {
-                            ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
-                        }
-                    }
-
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && SelectNextEntry)
-                    {
-                        SelectNextEntry = false;
-                        _selectedEntry = entry.ID;
-                        ApplyMapAssetSelection(_selectedEntry, FileSelectionType.MapPiece, map);
-                    }
-
-                    if (ImGui.IsItemFocused())
-                    {
-                        if (InputManager.HasArrowSelection())
-                        {
-                            SelectNextEntry = true;
-                        }
-                    }
-
-                    DisplaySelectableAlias(entry);
-                }
-            }
-
-            ImGui.EndChild();
-        }
-    }
     private void DisplayCollisionList()
     {
         var mapID = View.Selection.SelectedMapID;
@@ -396,45 +302,31 @@ public class ModelSelectorTool
 
         ImGui.EndChild();
     }
-    private bool FilterSelectionList(AliasEntry entry)
+
+    private bool FilterSelectionList(ModelChoice choice)
     {
-        var lowerName = entry.ID.ToLower();
-
-        var refName = entry.Name;
-        var refTagList = entry.Tags;
-
-        if (!CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries)
+        if (!CFG.Current.MapEditor_Model_Selector_Display_Low_Detail_Entries
+            && choice.ID.EndsWith("_l", StringComparison.OrdinalIgnoreCase))
         {
-            if (entry.ID.Substring(entry.ID.Length - 2) == "_l")
-            {
-                return false;
-            }
+            return false;
         }
 
-        var isMatch = EditorFilters.IsMatch(ModelFilter, entry.Name, ExactModelFilter);
-
-        if (isMatch)
-        {
-            return true;
-        }
-
-        return false;
+        // The model's own name as well as its alias, now that a model need not have one
+        return EditorFilters.IsMatch(ModelFilter, choice.ModelName, ExactModelFilter, choice.Alias,
+            rawSecondaryText: choice.ID);
     }
 
-    private void DisplaySelectableAlias(AliasEntry entry)
+    private void DisplaySelectableAlias(ModelChoice choice)
     {
-        var lowerName = entry.ID.ToLower();
-
-        if (CFG.Current.MapEditor_Model_Selector_Display_Aliases)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Aliases && choice.Alias != "")
         {
-            GUI.DisplayAlias(entry.Name);
+            GUI.DisplayAlias(choice.Alias);
         }
 
         // Tags
-        if (CFG.Current.MapEditor_Model_Selector_Display_Tags)
+        if (CFG.Current.MapEditor_Model_Selector_Display_Tags && choice.Tags.Count > 0)
         {
-            var tagString = string.Join(" ", entry.Tags);
-            AliasHelper.DisplayTagAlias(tagString);
+            AliasHelper.DisplayTagAlias(string.Join(" ", choice.Tags));
         }
     }
 

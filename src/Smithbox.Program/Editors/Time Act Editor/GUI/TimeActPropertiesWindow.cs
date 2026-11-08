@@ -1174,7 +1174,12 @@ public class TimeActPropertiesWindow
         }
         else
         {
-            foreach (var entry in aliases)
+            // Characters come from the project's files, so one without an alias can still be picked
+            var entries = aliasType is ProjectAliasType.Characters
+                ? ModelFileChoices.CharacterAliasEntries(Project)
+                : aliases;
+
+            foreach (var entry in entries)
             {
                 if (entry?.ID != null && TryParseAliasNumber(entry.ID, out var id))
                 {
