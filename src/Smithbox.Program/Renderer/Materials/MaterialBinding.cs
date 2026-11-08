@@ -107,13 +107,17 @@ public static class MaterialBinding
 
         // The details stacked over the first (C[DetailBlend]), layer 1 up. Their weight map is the base normal, which
         // is loaded a second time for it and so still routed as itself below
-        if (d?.Detail?.Stack is { Count: > 0 } stack && texType != null)
+        if (d?.Detail is { HasStackEntries: true } stacked && texType != null)
         {
-            for (var i = 0; i < stack.Count; i++)
+            for (var i = 0; i < stacked.Stack.Count; i++)
             {
-                if (texType == stack[i].AlbedoType) return new(MaterialTextureUse.OverlayAlbedo, i + 1, LoadedElsewhere: true);
-                if (texType == stack[i].NormalType) return new(MaterialTextureUse.OverlayNormal, i + 1, LoadedElsewhere: true);
+                if (texType == stacked.Stack[i].AlbedoType) return new(MaterialTextureUse.OverlayAlbedo, i + 1, LoadedElsewhere: true);
+                if (texType == stacked.Stack[i].NormalType) return new(MaterialTextureUse.OverlayNormal, i + 1, LoadedElsewhere: true);
             }
+
+            // The back face's, after the stack's three
+            if (texType == stacked.BackAlbedoType) return new(MaterialTextureUse.OverlayAlbedo, MaterialResolvedDetail.MaxStackLayers + 1, LoadedElsewhere: true);
+            if (texType == stacked.BackNormalType) return new(MaterialTextureUse.OverlayNormal, MaterialResolvedDetail.MaxStackLayers + 1, LoadedElsewhere: true);
         }
 
         // All of the normals of water end the same, and the last would replace the one that was chosen

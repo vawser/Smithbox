@@ -1,6 +1,6 @@
 Role	Routes(meshes)	Shaders	Materials	Meshes	PlacedTriangles	PlacedShare%	Triangles	ExampleModel
-NormalMap	Normal:106948 OverlayNormal:65648 Dropped:43411 Normal1:24160 Normal2:12550 OverlayNormal1:7084 OverlayNormal2:3689 Normal3:2432 FurNormal:1898 OverlayNormal3:488 WaterNormal:381 Deformer:25 Albedo:2 Albedo1:2 Albedo2:2	473	15060	111791	7387979850	90.543	500562659	aeg001_290
-AlbedoMap	Albedo:109559 Dropped:32321 Albedo1:26575 OverlayAlbedo:15076 Albedo2:12627 OverlayAlbedo1:5156 OverlayAlbedo2:2692 Albedo3:2432 FurAlbedo:1990 OverlayAlbedo3:405	486	15070	111639	7351592145	90.097	494949313	aeg001_290
+NormalMap	Normal:106947 OverlayNormal:66358 Dropped:40641 Normal1:24160 Normal2:12550 OverlayNormal1:8204 OverlayNormal2:4401 Normal3:2432 FurNormal:1898 OverlayNormal3:593 WaterNormal:381 OverlayNormal4:124 Deformer:25 Albedo:2 Albedo1:2 Albedo2:2	473	15060	111791	7387979850	90.543	500562659	aeg001_290
+AlbedoMap	Albedo:109553 Dropped:30453 Albedo1:26575 OverlayAlbedo:15068 Albedo2:12627 OverlayAlbedo1:6150 OverlayAlbedo2:3384 Albedo3:2432 FurAlbedo:1990 OverlayAlbedo3:485 OverlayAlbedo4:116	486	15070	111639	7351592145	90.097	494949313	aeg001_290
 Mask1Map	BlendDetailMask:21901 Dropped:8982 BlendMask:922 Deformer:37	262	3230	30550	2761996310	33.850	158698024	aeg052_013
 MetallicMap	Metallic+Offset:13752 Metallic:9942 Metallic1:914 Dropped:642 Metallic2:250	100	4623	23847	1003573724	12.299	89069718	aeg099_620
 Mask3Map	BlendMask:7326 Dropped:6960 MagmaGlow:486 BlendDetailMask:88	146	1447	14382	1458479769	17.874	100190921	aeg052_013
@@ -27,20 +27,20 @@ Fire___Black_Edge	Dropped:8	2	3	8	0	0.000	26070	c8901
 Fire___Pattern	Dropped:7	1	2	7	0	0.000	13033	aeg468_055
 Fire___Mask	Dropped:7	1	2	7	0	0.000	13033	aeg468_055
 ReflectanceMap	Dropped:13	2	3	7	3340074	0.041	18338	aeg003_306
-BlendEdgeTexture	BlendDetailMask:6	1	2	6	1937124	0.024	8388	aeg003_306
 Alpha_Subtract	Dropped:6	1	6	6	62690	0.001	12538	c2200
-DistortionDepth__Base	Dropped:4	1	2	4	1280	0.000	1260	c5210
+BlendEdgeTexture	BlendDetailMask:6	1	2	6	1937124	0.024	8388	aeg003_306
 Translucency__Base	Dropped:4	1	1	4	0	0.000	213	aeg001_248
+DistortionDepth__Base	Dropped:4	1	2	4	1280	0.000	1260	c5210
 Emissive__Noise	Dropped:3	2	2	3	42610	0.001	8522	c2200
 Generic__Cloud	Dropped:2	2	2	2	22272	0.000	22272	aeg096_006
-ShininessMap	Shininess:2 Dropped:2	1	1	2	1923012	0.024	7044	aeg003_306
 AlphaWing	Dropped:2	1	2	2	135910	0.002	27182	c2200
+ShininessMap	Shininess:2 Dropped:2	1	1	2	1923012	0.024	7044	aeg003_306
 g_BloodMaskTexture	Dropped:1	1	1	1	0	0.000	1692	fg_a_0000_m
 g_ScatteringMaskTexture	Dropped:1	1	1	1	0	0.000	1692	fg_a_0000_m
-Generic__Galaxy	Dropped:1	1	1	1	39600	0.000	19800	aeg096_951
-g_EmissiveTexture	Emissive:1	1	1	1	2530	0.000	506	aeg003_300
-Alpha_Inside_Base	Dropped:1	1	1	1	1776	0.000	296	c2120
-Fade__Base	Dropped:1	1	1	1	5328	0.000	888	c2120
 Mud__Base	Albedo:1	1	1	1	0	0.000	126118	c2070
 Finger___em__Edge	Dropped:1	1	1	1	0	0.000	126118	c2070
 Crack__Edge	Dropped:1	1	1	1	0	0.000	126118	c2070
+Alpha_Inside_Base	Dropped:1	1	1	1	1776	0.000	296	c2120
+Fade__Base	Dropped:1	1	1	1	5328	0.000	888	c2120
+Generic__Galaxy	Dropped:1	1	1	1	39600	0.000	19800	aeg096_951
+g_EmissiveTexture	Emissive:1	1	1	1	2530	0.000	506	aeg003_300

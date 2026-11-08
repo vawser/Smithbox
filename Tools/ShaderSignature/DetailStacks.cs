@@ -10,6 +10,11 @@ using StudioCore.Renderer;
 ///   sat((T0.b * 22)^260)                          a step at a blue of 1/22
 ///   sat((0.5 - f19 (T0.a - 0.5)) * 2.05 - 1.05)   a ramp on the alpha, f20 with the other sign for the next layer
 /// Both are sat(pow(A x + B, P)) with A and B polynomials of the material's params, which is what the recipe stores.
+///
+/// Other permutations lerp some layers over the finished albedo instead, so they replace its color rather than detail
+/// it: sat(lerp(lerp(base * c0 T1 * 4.55, c5 T10, w2), c2 T4, w3)) (permutation 8), or with the layer at the bottom,
+/// lerp(c1 T2, base * d * 4.55, w1), which is the layer by 1 - w1 (permutation 2). Their normals still lerp with the
+/// details'. Permutations 15 and up draw back faces with an albedo and normal of their own: front ? that : c3 T8.
 /// Which slots each permutation wires in differs, so the stack is read from every permutation's own shader.
 /// </summary>
 static partial class Recipes
@@ -30,7 +35,9 @@ static partial class Recipes
         var root = d.StoreId("RT2.x");
         if (root == null) { result.Problems.Add("RT2.x isn't written"); return result; }
 
-        bool HasAlbedo(Dxil.Arg a) => !a.IsConst && d.LeafNames(a.Id).Any(l => Slot(l) is int s && albedoSlots.Contains(s) && Channel(l) == "r");
+        List<string> AlbedoLeaves(Dxil.Arg a) => a.IsConst ? [] : d.LeafNames(a.Id).Where(l => Slot(l) is int s && albedoSlots.Contains(s)).ToList();
+        bool HasAlbedo(Dxil.Arg a) => AlbedoLeaves(a).Any(l => Channel(l) == "r");
+        int AlbedoCount(Dxil.Arg a) => AlbedoLeaves(a).Select(l => Slot(l)!.Value).Distinct().Count();
 
         // A weight of params and the blue or alpha of one normal map, and nothing else
         bool IsStackWeight(Dxil.Arg w)
@@ -42,74 +49,115 @@ static partial class Recipes
 
         bool IsStackLerp(Lerp l) => l != null && HasAlbedo(l.Top) && HasAlbedo(l.Bottom) && IsStackWeight(l.Weight);
 
-        // The topmost such lerp, and what multiplies it
-        Lerp top = null;
-        var seen = new HashSet<int>();
-        var stack = new Stack<int>();
-        stack.Push(root.Value);
-        while (stack.Count > 0 && top == null)
-        {
-            var id = stack.Pop();
-            if (!seen.Add(id)) continue;
-            var l = AsLerp(d, id);
-            if (IsStackLerp(l)) { top = l; break; }
-            foreach (var a in d.NodeOf(id).Args.Where(a => !a.IsConst).Reverse()) stack.Push(a.Id);
-        }
-        if (top == null) { result.Problems.Add("no lerp of details weighed by a normal map"); return result; }
-
-        // The stack has to be the detail that multiplies the albedo, d * 4.55, or it's another kind of layering
-        var multiplied = false;
-        seen.Clear();
-        stack.Push(root.Value);
-        while (stack.Count > 0 && !multiplied)
-        {
-            var id = stack.Pop();
-            if (!seen.Add(id)) continue;
-            var n = d.NodeOf(id);
-            if (n.Op == Dxil.Op.Mul && n.Args.Any(a => !a.IsConst && a.Id == top.Id) && n.Args.Any(a => a.IsConst && Math.Abs(a.Value - 4.55) < 1e-3))
-                multiplied = true;
-            foreach (var a in n.Args.Where(a => !a.IsConst)) stack.Push(a.Id);
-        }
-        if (!multiplied)
-        {
-            result.Problems.Add("the stack isn't multiplied by 4.55");
-            if (Environment.GetEnvironmentVariable("STACK_DEBUG") == "2")
-            {
-                // What uses the top lerp, one level up, short
-                foreach (var id in seen)
-                    if (d.NodeOf(id).Args.Any(a => !a.IsConst && a.Id == top.Id))
-                        Console.WriteLine($"   parent %{id} {d.NodeOf(id).Op}: {d.ExpressionOf(id, 7)}");
-            }
-            return result;
-        }
-
-        var chain = new List<Lerp>();
-        for (var l = top; l != null;)
-        {
-            chain.Insert(0, l);
-            var next = AsLerp(d, l.Bottom.Id);
-            l = IsStackLerp(next) ? next : null;
-        }
-        if (chain.Count > MaterialResolvedDetail.MaxStackLayers) { result.Problems.Add($"{chain.Count} layers, more than the viewport draws"); return result; }
-
+        // One albedo's red and params: a layer. The base albedo's luma (green, blue) means it isn't one
         (int? slot, string color) Term(Dxil.Arg a)
         {
+            if (a.IsConst) return (null, null);
             var leaves = d.LeafNames(a.Id).ToList();
             var albedos = leaves.Where(x => Slot(x) is int s && albedoSlots.Contains(s)).Select(x => Slot(x)!.Value).Distinct().ToList();
-            // Only the red of the one albedo: the base albedo's luma (green, blue) means a layer that isn't a detail
             if (albedos.Count != 1 || leaves.Any(x => x.StartsWith("tex:") && Channel(x) != "r") || leaves.Any(x => x.StartsWith("in:"))) return (null, null);
             var color = leaves.Select(x => ColorParam.Match(x)).FirstOrDefault(m => m.Success)?.Groups[1].Value;
             return (albedos[0], color);
         }
 
-        var recipe = result.Recipe;
-        var (bottomSlot, bottomColor) = Term(chain[0].Bottom);
-        if (bottomSlot == null) { result.Problems.Add("the bottom detail isn't one albedo"); return result; }
-        recipe.Albedo = bottomSlot;
-        recipe.Color = bottomColor;
+        int? NormalOf(Dxil.Arg? a)
+        {
+            if (a == null || a.Value.IsConst) return null;
+            var slots = d.LeafNames(a.Value.Id).Where(x => Slot(x) is int s && normalSlots.Contains(s) && Channel(x) is "r" or "g").Select(x => Slot(x)!.Value).Distinct().ToList();
+            return slots.Count == 1 ? slots[0] : null;
+        }
 
-        // Normals: the lerps in RT0.x with the same weights
+        bool IsFrontFaceSelect(Dxil.Node n) =>
+            n is { Op: Dxil.Op.Other, Args.Length: 3 } && !n.Args[0].IsConst && d.LeafNames(n.Args[0].Id).Any(l => l.Contains("SV_IsFrontFace"));
+
+        // 1. The finished albedo: the clamp under RT2.x of a value with two albedos or more (base and detail)
+        Dxil.Arg? final = null;
+        var seen = new HashSet<int>();
+        var stack = new Stack<int>();
+        stack.Push(root.Value);
+        while (stack.Count > 0 && final == null)
+        {
+            var id = stack.Pop();
+            if (!seen.Add(id)) continue;
+            if (Unsaturated(d, new Dxil.Arg(id, 0)) is { } inner && AlbedoCount(inner) >= 2) { final = inner; break; }
+            foreach (var a in d.NodeOf(id).Args.Where(a => !a.IsConst).Reverse()) stack.Push(a.Id);
+        }
+        if (final == null) { result.Problems.Add("no clamped albedo"); return result; }
+        var f = final.Value;
+        while (Unsaturated(d, f) is { } again) f = again;
+
+        // 2. A back face that picks another albedo: front ? f : back (permutations 15 and up)
+        var recipe = result.Recipe;
+        var backFace = false;
+        if (!f.IsConst && d.NodeOf(f.Id) is var select && IsFrontFaceSelect(select))
+        {
+            var (backSlot, backColor) = Term(select.Args[2]);
+            if (backSlot == null) { result.Problems.Add("the back face isn't one albedo"); return result; }
+            recipe.BackAlbedo = backSlot;
+            recipe.BackColor = backColor;
+            backFace = true;
+            f = select.Args[1];
+        }
+
+        // 3. Whole-albedo layers over the finished albedo: lerps of one albedo term and the rest, gathered top first.
+        // A layer on the bottom of its lerp takes one minus the weight
+        var replaced = new List<(Lerp lerp, bool invert)>();
+        while (!f.IsConst && AsLerp(d, f.Id) is { } l && IsStackWeight(l.Weight))
+        {
+            if (Term(l.Top).slot != null && AlbedoCount(l.Bottom) >= 2) { replaced.Insert(0, (l, false)); f = l.Bottom; }
+            else if (Term(l.Bottom).slot != null && AlbedoCount(l.Top) >= 2) { replaced.Insert(0, (l, true)); f = l.Top; }
+            else break;
+        }
+
+        // 4. What is left is base * detail * 4.55: the detail is what the 4.55 multiplies, a stack of lerps or one albedo
+        Dxil.Arg? detail = null;
+        if (!f.IsConst)
+        {
+            seen.Clear();
+            stack.Push(f.Id);
+            while (stack.Count > 0 && detail == null)
+            {
+                var id = stack.Pop();
+                if (!seen.Add(id)) continue;
+                var n = d.NodeOf(id);
+                if (n.Op == Dxil.Op.Mul && n.Args.Any(a => a.IsConst && Math.Abs(a.Value - 4.55) < 1e-3)
+                    && n.Args.FirstOrDefault(a => !a.IsConst) is { Id: >= 0 } other && HasAlbedo(other))
+                    detail = other;
+                foreach (var a in n.Args.Where(a => !a.IsConst)) stack.Push(a.Id);
+            }
+        }
+        if (detail == null) { result.Problems.Add("no detail multiplied by 4.55"); return result; }
+
+        var chain = new List<Lerp>();
+        for (var l = AsLerp(d, detail.Value.Id); IsStackLerp(l);)
+        {
+            chain.Insert(0, l);
+            var next = AsLerp(d, l.Bottom.Id);
+            l = IsStackLerp(next) ? next : null;
+        }
+        var layerCount = chain.Count + replaced.Count;
+        if (layerCount > MaterialResolvedDetail.MaxStackLayers) { result.Problems.Add($"{layerCount} layers, more than the viewport draws"); return result; }
+        if (layerCount == 0 && !backFace) { result.Problems.Add("no lerp of details weighed by a normal map"); return result; }
+
+        if (chain.Count > 0)
+        {
+            (recipe.Albedo, recipe.Color) = Term(chain[0].Bottom);
+            if (recipe.Albedo == null) { result.Problems.Add("the bottom detail isn't one albedo"); return result; }
+        }
+        else
+        {
+            // One detail: its albedo is what the 4.55 multiplies, its tint the one color param left in the rest
+            var slots = AlbedoLeaves(detail.Value).Select(l => Slot(l)!.Value).Distinct().ToList();
+            var colors = d.LeafNames(f.Id).Select(x => ColorParam.Match(x)).Where(m => m.Success).Select(m => m.Groups[1].Value).Distinct().ToList();
+            if (slots.Count != 1 || colors.Count > 1) { result.Problems.Add("the single detail isn't one albedo and color"); return result; }
+            recipe.Albedo = slots[0];
+            recipe.Color = colors.FirstOrDefault();
+        }
+
+        // Normals: the lerps in RT0.x with the same weights, and the back face's normal
+        var weights = chain.Select(c => c.Weight.Id).Concat(replaced.Select(r => r.lerp.Weight.Id)).ToHashSet();
         var normalLerps = new Dictionary<int, Lerp>();
+        Dxil.Arg? frontNormal = null;
         if (d.StoreId("RT0.x") is int normalRoot)
         {
             var nseen = new HashSet<int>();
@@ -119,24 +167,38 @@ static partial class Recipes
             {
                 var id = nstack.Pop();
                 if (!nseen.Add(id)) continue;
-                if (AsLerp(d, id) is { } l && !l.Weight.IsConst && chain.Exists(c => c.Weight.Id == l.Weight.Id)) normalLerps.TryAdd(l.Weight.Id, l);
-                foreach (var a in d.NodeOf(id).Args.Where(a => !a.IsConst)) nstack.Push(a.Id);
+                var n = d.NodeOf(id);
+                if (AsLerp(d, id) is { } l && !l.Weight.IsConst && weights.Contains(l.Weight.Id)) normalLerps.TryAdd(l.Weight.Id, l);
+                if (backFace && recipe.BackNormal == null && IsFrontFaceSelect(n))
+                {
+                    recipe.BackNormal = NormalOf(n.Args[2]);
+                    frontNormal = n.Args[1];
+                }
+                foreach (var a in n.Args.Where(a => !a.IsConst)) nstack.Push(a.Id);
             }
         }
 
-        int? NormalOf(Dxil.Arg? a)
+        // The bottom detail's normal: the bottom of the first stack lerp's normal; failing a stack, the far side of the
+        // first whole-albedo layer's; failing that, the one detail normal on the front face
+        if (chain.Count > 0)
         {
-            if (a == null || a.Value.IsConst) return null;
-            var slots = d.LeafNames(a.Value.Id).Where(x => Slot(x) is int s && normalSlots.Contains(s) && Channel(x) is "r" or "g").Select(x => Slot(x)!.Value).Distinct().ToList();
-            return slots.Count == 1 ? slots[0] : null;
+            recipe.Normal = normalLerps.TryGetValue(chain[0].Weight.Id, out var firstNormal) ? NormalOf(firstNormal.Bottom) : null;
         }
-        recipe.Normal = normalLerps.TryGetValue(chain[0].Weight.Id, out var firstNormal) ? NormalOf(firstNormal.Bottom) : null;
+        else if (replaced.Count > 0)
+        {
+            recipe.Normal = normalLerps.TryGetValue(replaced[0].lerp.Weight.Id, out var under) ? NormalOf(replaced[0].invert ? under.Top : under.Bottom) : null;
+        }
+        else if (frontNormal != null)
+        {
+            recipe.Normal = NormalOf(frontNormal);
+        }
 
         string weightMap = null;
         recipe.Stack = new List<MaterialDetailStackLayer>();
-        foreach (var l in chain)
+        var layers = chain.Select(c => (lerp: c, invert: false, replace: false)).Concat(replaced.Select(r => (r.lerp, r.invert, replace: true)));
+        foreach (var (l, invert, replace) in layers)
         {
-            var (slot, color) = Term(l.Top);
+            var (slot, color) = Term(invert ? l.Bottom : l.Top);
             if (slot == null) { result.Problems.Add("a layer isn't one albedo"); return result; }
             var w = ReadStackWeight(d, l.Weight);
             if (w == null) { result.Problems.Add($"layer {slot}: weight not understood"); return result; }
@@ -147,14 +209,17 @@ static partial class Recipes
             {
                 Albedo = slot,
                 Color = color,
-                Normal = normalLerps.TryGetValue(l.Weight.Id, out var nl) ? NormalOf(nl.Top) : null,
+                Normal = normalLerps.TryGetValue(l.Weight.Id, out var nl) ? NormalOf(invert ? nl.Bottom : nl.Top) : null,
                 Channel = w.Channel,
                 Scale = w.Scale,
                 Bias = w.Bias,
-                Power = (float)w.Power
+                Power = (float)w.Power,
+                Invert = invert ? true : null,
+                Replace = replace ? true : null
             });
         }
-        recipe.StackWeightMap = Slot(weightMap + ".r");
+        if (recipe.Stack.Count == 0) recipe.Stack = null;
+        recipe.StackWeightMap = weightMap == null ? null : Slot(weightMap + ".r");
         return result;
     }
 

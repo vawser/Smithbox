@@ -433,13 +433,13 @@ public class FlverResource : IResource, IDisposable
     private static readonly FlverMaterial.TextureType[] DetailStackAlbedos =
     {
         FlverMaterial.TextureType.DetailStackAlbedoTextureResource1, FlverMaterial.TextureType.DetailStackAlbedoTextureResource2,
-        FlverMaterial.TextureType.DetailStackAlbedoTextureResource3
+        FlverMaterial.TextureType.DetailStackAlbedoTextureResource3, FlverMaterial.TextureType.DetailStackBackAlbedoTextureResource
     };
 
     private static readonly FlverMaterial.TextureType[] DetailStackNormals =
     {
         FlverMaterial.TextureType.DetailStackNormalTextureResource1, FlverMaterial.TextureType.DetailStackNormalTextureResource2,
-        FlverMaterial.TextureType.DetailStackNormalTextureResource3
+        FlverMaterial.TextureType.DetailStackNormalTextureResource3, FlverMaterial.TextureType.DetailStackBackNormalTextureResource
     };
 
     /// <summary>See <see cref="MaterialBinding.HasKnownBlend"/></summary>
@@ -507,25 +507,33 @@ public class FlverResource : IResource, IDisposable
         }
 
         // A detail stack's layers, each tiled by its albedo's sampler (its normal shares the UV group), and the weight map
-        if (detail is { Stack.Count: > 0, StackWeightType: { } weightType })
+        // and the back face's in the fourth entry
+        if (detail is { HasStackEntries: true })
         {
-            LookupTexture(FlverMaterial.TextureType.DetailStackWeightTextureResource, dest, weightType, flverPaths.GetValueOrDefault(weightType, ""), mtd);
-
-            for (var i = 0; i < detail.Stack.Count; i++)
+            if (detail.StackWeightType is { } weightType)
             {
-                MaterialResolvedDetailLayer layer = detail.Stack[i];
+                LookupTexture(FlverMaterial.TextureType.DetailStackWeightTextureResource, dest, weightType, flverPaths.GetValueOrDefault(weightType, ""), mtd);
+            }
 
-                if (layer.AlbedoType != null)
+            var entries = detail.Stack.Select(x => (x.AlbedoType, x.NormalType)).ToList();
+            while (entries.Count < MaterialResolvedDetail.MaxStackLayers) entries.Add((null, null));
+            entries.Add((detail.BackAlbedoType, detail.BackNormalType));
+
+            for (var i = 0; i < entries.Count; i++)
+            {
+                var (albedoType, normalType) = entries[i];
+
+                if (albedoType != null)
                 {
-                    LookupTexture(DetailStackAlbedos[i], dest, layer.AlbedoType, flverPaths.GetValueOrDefault(layer.AlbedoType, ""), mtd);
+                    LookupTexture(DetailStackAlbedos[i], dest, albedoType, flverPaths.GetValueOrDefault(albedoType, ""), mtd);
                 }
 
-                if (layer.NormalType != null)
+                if (normalType != null)
                 {
-                    LookupTexture(DetailStackNormals[i], dest, layer.NormalType, flverPaths.GetValueOrDefault(layer.NormalType, ""), mtd);
+                    LookupTexture(DetailStackNormals[i], dest, normalType, flverPaths.GetValueOrDefault(normalType, ""), mtd);
                 }
 
-                var tiled = layer.AlbedoType ?? layer.NormalType;
+                var tiled = albedoType ?? normalType;
                 dest.DetailStack[i].Tiling = dest.Definition!.Samplers.Find(x => x.Type == tiled)?.Tiling is { Length: >= 2 } t
                     ? new Vector2(t[0], t[1]) : Vector2.One;
             }
@@ -927,7 +935,7 @@ public class FlverResource : IResource, IDisposable
             size = sizeof(MaterialWithLayerDetail);
         }
 
-        if (dest.Definition?.Detail?.Stack.Count > 0)
+        if (dest.Definition?.Detail?.HasStackEntries == true)
         {
             size = sizeof(MaterialWithDetailStack);
         }
@@ -3879,6 +3887,9 @@ public class FlverResource : IResource, IDisposable
             DetailStackNormalTextureResource2,
             DetailStackNormalTextureResource3,
             DetailStackWeightTextureResource,
+            // What back faces of a stacked detail are drawn with
+            DetailStackBackAlbedoTextureResource,
+            DetailStackBackNormalTextureResource,
             TextureResourceCount
         }
 
@@ -3949,8 +3960,10 @@ public class FlverResource : IResource, IDisposable
         ///     Their values come from ApplyDetail and their tiling from LoadBlendRecipe, the textures from UpdateMaterial
         /// </summary>
         public MaterialDetailStackEntry[] DetailStack =
-            [MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default];
-        public int DetailStackCount;
+            [MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default, MaterialDetailStackEntry.Default];
+
+        /// <summary>The material has the stack entries (stack layers or a back face), see MaterialDetail.HasStackEntries</summary>
+        public bool HasDetailStack;
 
         /// <summary>The blend layers that are the color of their tint, drawn with a white texture</summary>
         public bool[] ColorOnlyLayers = new bool[Material.MaxLayers];
@@ -4074,17 +4087,21 @@ public class FlverResource : IResource, IDisposable
                 ColorStrength = new Vector4(detail.Color[0], detail.Color[1], detail.Color[2], detail.NormalStrength),
                 // See MaterialDetail: how the albedo is laid over, and the strength of an overlay
                 Pad0 = (detail.Overlay ? MaterialDetail.AlbedoOverlay : 0)
-                    | ((uint)detail.Stack.Count << MaterialDetail.StackCountShift),
+                    | ((uint)detail.Stack.Count << MaterialDetail.StackCountShift)
+                    | (detail.HasStackEntries ? MaterialDetail.HasStackEntries : 0),
                 Pad1 = BitConverter.SingleToUInt32Bits(detail.OverlayStrength)
             };
 
-            DetailStackCount = detail.Stack.Count;
+            HasDetailStack = detail.HasStackEntries;
             for (var i = 0; i < detail.Stack.Count; i++)
             {
                 MaterialResolvedDetailLayer layer = detail.Stack[i];
                 DetailStack[i].Color = new Vector4(layer.Color[0], layer.Color[1], layer.Color[2], 1);
-                DetailStack[i].Weight = new Vector4(layer.Scale, layer.Bias, layer.Power, layer.Channel);
+                DetailStack[i].Weight = new Vector4(layer.Scale, layer.Bias, layer.Power, layer.Channel
+                    + (layer.Invert ? MaterialDetailStackEntry.Inverted : 0) + (layer.Replace ? MaterialDetailStackEntry.Replacing : 0));
             }
+
+            DetailStack[MaterialResolvedDetail.MaxStackLayers].Color = new Vector4(detail.BackColor[0], detail.BackColor[1], detail.BackColor[2], 1);
         }
 
         /// <summary>Fills in the recipe's values, leaving the textures to <see cref="UpdateMaterial"/></summary>
@@ -4309,7 +4326,7 @@ public class FlverResource : IResource, IDisposable
 
             // The extended blend form's entries come after water, and a detail stack's after those, so everything before
             // them has to be there
-            var detailStack = DetailStackCount > 0;
+            var detailStack = HasDetailStack;
             var layerDetail = LayerDetail != null || detailStack;
 
             // An overlay comes after the blend entries, which are just unused without a recipe
@@ -4383,7 +4400,7 @@ public class FlverResource : IResource, IDisposable
                 ushort weightTex = 0;
                 SetMaterialTexture(TextureType.DetailStackWeightTextureResource, ref weightTex, 0);
 
-                var entries = new MaterialDetailStackEntry[3];
+                var entries = new MaterialDetailStackEntry[DetailStack.Length];
                 for (var i = 0; i < entries.Length; i++)
                 {
                     ushort albedoTex = 0, normalTex = 0;
@@ -4394,7 +4411,7 @@ public class FlverResource : IResource, IDisposable
                     entries[i].WeightTex = weightTex;
                 }
 
-                stacked = new MaterialWithDetailStack { Layered = layered!.Value, Layer1 = entries[0], Layer2 = entries[1], Layer3 = entries[2] };
+                stacked = new MaterialWithDetailStack { Layered = layered!.Value, Layer1 = entries[0], Layer2 = entries[1], Layer3 = entries[2], Back = entries[3] };
             }
 
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };

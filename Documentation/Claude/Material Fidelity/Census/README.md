@@ -102,8 +102,9 @@ Dropped. These are the biggest:
     are in Signatures/README.md, Detail stacks.
   - The result: ER Ok 80.3% → 82.3% and Dropped 13.3% → 11.3%. NR Ok 76.8% → 79.9% and Dropped 17.5% → 14.5%.
     `C[DetailBlend]`'s Dropped share fell from 19.5 to 9.7 points (ER) and from 29.6 to 14.5 (NR). AC6 is unchanged.
-  - Still dropped: permutations whose extra layers replace the finished albedo instead of joining the detail
-    (2, 5, 8, 14, …), and the `[S2]` back-face layers. Those need a second layer kind.
+  - Whole-albedo layers and back faces, added later the same day: ER Ok 82.3% → 83.2%, Dropped 11.3% → 10.4%.
+    NR Ok 79.9% → 80.2%. `C[DetailBlend]` Dropped fell to 5.2 points (ER) and 12.9 (NR).
+  - Still dropped: `[S2]` and `_SSS` variants whose weights take other forms, and Mask1Map in `_FurBlur`/`_SSS`.
 - **AC6 `[MS]` blends: not done.** These fit the existing recipe format. AC6 perm 13's layer weight is
   `sat((v - f23(1 - v)(mask + 0.01))·(f25 + 1))`, which is `MaterialBlendRecipeLayer`'s Soft form, with v = `TEXCOORD8.w`
   and the mask `T19.r` inverted by `f52`. Some layers are a flat colour instead of a texture. They're simply missing

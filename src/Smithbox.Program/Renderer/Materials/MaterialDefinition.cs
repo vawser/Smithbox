@@ -356,6 +356,14 @@ public class MaterialDetailRecipe
 
     /// <summary>The slot of the texture the stack's weights read (the base normal map's blue and alpha)</summary>
     public int? StackWeightMap { get; set; }
+
+    /// <summary>
+    /// What back faces are drawn with instead (C[DetailBlend] permutations 15 and up): the albedo is Color * BackAlbedo
+    /// alone, and the base normal gets BackNormal's offset at a strength of 1 in place of the details'
+    /// </summary>
+    public int? BackAlbedo { get; set; }
+    public string? BackColor { get; set; }
+    public int? BackNormal { get; set; }
 }
 
 /// <summary>
@@ -376,6 +384,15 @@ public class MaterialDetailStackLayer
     public string Scale { get; set; } = "1";
     public string Bias { get; set; } = "0";
     public float Power { get; set; } = 1;
+
+    /// <summary>The layer takes one minus the weight: it was the bottom of its lerp</summary>
+    public bool? Invert { get; set; }
+
+    /// <summary>
+    /// Lerped over the finished albedo (base * details * 4.55) rather than among the details, so it replaces the color.
+    /// These come after the detail layers. The normal is still lerped among the details'
+    /// </summary>
+    public bool? Replace { get; set; }
 }
 
 /// <summary>A <see cref="MaterialDetailStackLayer"/> with the values of one material filled in</summary>
@@ -390,6 +407,9 @@ public class MaterialResolvedDetailLayer
     public float Scale { get; set; } = 1;
     public float Bias { get; set; }
     public float Power { get; set; } = 1;
+
+    public bool Invert { get; set; }
+    public bool Replace { get; set; }
 }
 
 /// <summary>A <see cref="MaterialDetailRecipe"/> with the values of one material filled in</summary>
@@ -413,6 +433,14 @@ public class MaterialResolvedDetail
     /// <summary>See <see cref="MaterialDetailRecipe.Stack"/>, empty for a single detail</summary>
     public List<MaterialResolvedDetailLayer> Stack { get; set; } = new();
     public string? StackWeightType { get; set; }
+
+    /// <summary>See <see cref="MaterialDetailRecipe.BackAlbedo"/></summary>
+    public string? BackAlbedoType { get; set; }
+    public string? BackNormalType { get; set; }
+    public float[] BackColor { get; set; } = [1, 1, 1];
+
+    /// <summary>Whether the material needs the stack entries: stack layers or a back face</summary>
+    public bool HasStackEntries => Stack.Count > 0 || BackAlbedoType != null || BackNormalType != null;
 }
 
 /// <summary>
@@ -1085,7 +1113,9 @@ public class MaterialDefinition
                     Channel = Math.Max(0, "rgba".IndexOf(layer.Channel, StringComparison.Ordinal)),
                     Scale = EvaluateSum(layer.Scale),
                     Bias = EvaluateSum(layer.Bias),
-                    Power = layer.Power
+                    Power = layer.Power,
+                    Invert = layer.Invert == true,
+                    Replace = layer.Replace == true
                 });
             }
 
@@ -1097,7 +1127,11 @@ public class MaterialDefinition
             }
         }
 
-        if (detail.AlbedoType != null || detail.NormalType != null || detail.Stack.Count > 0)
+        detail.BackAlbedoType = TypeOf(recipe.BackAlbedo);
+        detail.BackNormalType = TypeOf(recipe.BackNormal);
+        detail.BackColor = LayerTint(recipe.BackColor);
+
+        if (detail.AlbedoType != null || detail.NormalType != null || detail.HasStackEntries)
         {
             Detail = detail;
         }

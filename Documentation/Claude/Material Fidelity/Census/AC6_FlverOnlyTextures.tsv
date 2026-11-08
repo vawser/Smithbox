@@ -4,6 +4,7 @@ M[AMSN][M0][M1]_Alpha	M_AMSN_M0_M1__Edge_snp_Texture2D_2_MetallicMap_0	33	259560
 M[AMSN][M0][M1]_Alpha	M_AMSN_M0_M1__Edge_snp_Texture2D_1_NormalMap_0	33	259560	aeg890_150
 M[A][M0]_Emissive_Glow	M_A__Emissive_Glow_snp_Texture2D_2_AlbedoMap_0	26	4752	aeg022_200
 M[A][M0]_Emissive_Glow	M_A__Emissive_Glow_snp_Texture2D_3_EmissiveMap	26	4752	aeg022_200
+M[A][M0]_Edge	M_A__Edge_snp_Texture2D_0_AlbedoMap_0	16	0	aeg995_990
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_0_GSBlendMap_AlbedoMap_0	16	1490008	aeg053_601
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_2_GSBlendMap_MetallicMap_0	16	1490008	aeg053_601
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_16_GSBlendMap_NormalMap_0	16	1490008	aeg053_601
@@ -29,7 +30,6 @@ M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_19_GSBlendMap_Mask1Map_4	16	1490008	ae
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_6_GSBlendMap_Mask3Map_2	16	1490008	aeg053_601
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_26_GSBlendMap_Mask3Map_2	16	1490008	aeg053_601
 M[AMSN][M0][M1]	M_MS_MB_M1__snp_Texture2D_29_GSBlendMap_Mask1Map_4	16	1490008	aeg053_601
-M[A][M0]_Edge	M_A__Edge_snp_Texture2D_0_AlbedoMap_0	16	0	aeg995_990
+M[watchman][Laser]_001	M_watchman_Laser__001_snp_Texture2D_1_AlbedoMap	2	1200	aeg300_700
 C[Enemy][AMSN]_Emissive_Glow	C_Enemy_A__Emissive_Glow_snp_Texture2D_3_EmissiveMap	2	0	wp_e_3401_l
 C[Enemy][AMSN]_Emissive_Glow	C_Enemy_A__Emissive_Glow_snp_Texture2D_0_AlbedoMap_0	2	0	wp_e_3401_l
-M[watchman][Laser]_001	M_watchman_Laser__001_snp_Texture2D_1_AlbedoMap	2	1200	aeg300_700

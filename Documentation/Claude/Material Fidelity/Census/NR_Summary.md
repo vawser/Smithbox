@@ -33,27 +33,27 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 |---|---|---|
 | Albedo | 28404 | 1,819,694,589 |
 | Normal | 27752 | 1,834,187,016 |
-| Dropped | 25855 | 761,701,685 |
-| OverlayNormal | 14918 | 908,679,416 |
+| Dropped | 25774 | 761,701,685 |
+| OverlayNormal | 14917 | 910,006,080 |
 | Albedo1 | 7333 | 408,691,364 |
 | BlendDetailMask | 7160 | 400,214,642 |
 | Normal1 | 6980 | 402,195,142 |
 | Metallic+Offset | 4084 | 223,660,189 |
 | Metallic | 2982 | 197,974,277 |
 | Metallic1 | 2944 | 75,282,796 |
-| OverlayAlbedo | 2289 | 188,434,331 |
+| OverlayAlbedo | 2287 | 189,082,419 |
 | Normal2 | 1721 | 225,028,729 |
 | Albedo2 | 1683 | 228,095,895 |
 | BlendMask | 1224 | 253,961,087 |
-| OverlayNormal1 | 1158 | 111,222,844 |
+| OverlayNormal1 | 1195 | 131,524,290 |
+| OverlayAlbedo1 | 727 | 87,029,051 |
 | Albedo3 | 710 | 160,418,966 |
 | Normal3 | 709 | 160,408,476 |
-| OverlayAlbedo1 | 696 | 79,427,906 |
 | FurAlbedo | 659 | 32,466,392 |
 | FurNormal | 653 | 32,343,560 |
 | Emissive | 611 | 50,529,630 |
-| OverlayNormal2 | 489 | 43,396,774 |
-| OverlayAlbedo2 | 313 | 33,604,399 |
+| OverlayNormal2 | 497 | 44,044,862 |
+| OverlayAlbedo2 | 321 | 34,252,487 |
 | WaterNormal | 128 | 137,354 |
 | Specular | 110 | 10,768,917 |
 | OverlayNormal3 | 82 | 14,436,896 |
@@ -67,8 +67,8 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 
 | Role | Routes (mesh textures) | Shaders | Meshes |
 |---|---|---|---|
-| AlbedoMap | Albedo:27784 Dropped:7865 Albedo1:7280 OverlayAlbedo:2289 Albedo2:1677 Albedo3:710 OverlayAlbedo1:696 FurAlbedo:659 OverlayAlbedo2:313 OverlayAlbedo3:66 | 428 | 28474 |
-| NormalMap | Normal:27162 OverlayNormal:14918 Dropped:9501 Normal1:6933 Normal2:1674 OverlayNormal1:1158 Normal3:709 FurNormal:653 OverlayNormal2:489 WaterNormal:128 OverlayNormal3:82 Albedo:6 Albedo1:6 Albedo2:6 Deformer:1 | 417 | 28316 |
+| AlbedoMap | Albedo:27784 Dropped:7828 Albedo1:7280 OverlayAlbedo:2287 Albedo2:1677 OverlayAlbedo1:727 Albedo3:710 FurAlbedo:659 OverlayAlbedo2:321 OverlayAlbedo3:66 | 428 | 28474 |
+| NormalMap | Normal:27162 OverlayNormal:14917 Dropped:9457 Normal1:6933 Normal2:1674 OverlayNormal1:1195 Normal3:709 FurNormal:653 OverlayNormal2:497 WaterNormal:128 OverlayNormal3:82 Albedo:6 Albedo1:6 Albedo2:6 Deformer:1 | 417 | 28316 |
 | MetallicMap | Metallic+Offset:4084 Metallic:2982 Metallic1:2944 Dropped:146 Metallic2:27 | 113 | 9800 |
 | Mask1Map | BlendDetailMask:6203 Dropped:5768 BlendMask:117 | 235 | 8920 |
 | Mask3Map | Dropped:1578 BlendMask:1107 BlendDetailMask:35 MagmaGlow:13 | 115 | 2553 |
@@ -89,19 +89,19 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | g_BumpmapTexture3 | Normal2:47 | 1 | 47 |
 | Emissive__Base | Emissive:26 Dropped:26 | 5 | 26 |
 | AmbientOcculusionMap | Dropped:22 | 5 | 22 |
-| Emissive__BaseDetail | Dropped:20 | 3 | 20 |
 | Albedo__Inside | Albedo:20 | 5 | 20 |
+| Emissive__BaseDetail | Dropped:20 | 3 | 20 |
 | PseudoTransparency_Anger | Dropped:18 | 1 | 18 |
 | Mask__BlendEdgeTexture | Dropped:15 | 3 | 15 |
 | Generic__AtmosphereHazeColorLUT | Dropped:14 | 6 | 14 |
-| DisplacementMap | Dropped:10 | 2 | 10 |
 | Fade_and_FallOff_Noise | Dropped:10 | 1 | 10 |
+| DisplacementMap | Dropped:10 | 2 | 10 |
 | MaskTexture | Dropped:5 | 2 | 5 |
 | Flowmap_ | Dropped:4 | 4 | 4 |
-| FadeOut_Noise | Dropped:3 | 2 | 3 |
-| Generic__Flowmap | Dropped:3 | 1 | 3 |
 | Generic_ | Dropped:7 | 1 | 3 |
+| FadeOut_Noise | Dropped:3 | 2 | 3 |
 | Emissive_Flicker | Emissive:3 | 2 | 3 |
+| Generic__Flowmap | Dropped:3 | 1 | 3 |
 | ReflectanceMap | Dropped:2 | 2 | 2 |
 | Fade__Line | Dropped:2 | 1 | 2 |
 | DistortionDepth__Base | Dropped:1 | 1 | 1 |
@@ -130,12 +130,12 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[Crystal][CrossFade]` |  | Overlay | 1.402 | 0.270 | 41 | Mask1Map | aeg355_068 |
 | `C[AMSN]_Shadow` |  | AlphaTest | 1.323 | 0.122 | 58 |  | c5240 |
 | `SpeedTree_50777_w3636187` |  | AlphaTest | 1.235 | 0.008 | 13 | g_TranslucencyTexture | aeg801_006 |
-| `C[DetailBlend]_SSS` |  | Overlay | 1.188 | 1.843 | 212 | NormalMap AlbedoMap Mask1Map | c3450 |
-| `C[Fur]` |  | Fur AlphaTest | 1.179 | 1.377 | 277 | AlbedoMap NormalMap | c3661 |
+| `C[DetailBlend]_SSS` |  | Overlay | 1.188 | 1.843 | 212 | NormalMap Mask1Map AlbedoMap | c3450 |
+| `C[Fur]` |  | Fur | 1.179 | 1.377 | 277 | AlbedoMap NormalMap | c3661 |
 | `M[AMSN_V]_Vesitation_Emissive_Glow` | yes | WindPivot AlphaTest | 1.175 | 0.773 | 83 |  | aeg599_853 |
 | `M[AMSN_V]_Grass2` | yes | WindPivot AlphaTest | 1.083 | 0.234 | 278 | Mask1Map | aeg355_019 |
 | `M[AMSN_V][Ov_N][Mb2_ColorAdjust][1Mask_ch18]` |  | BlendRecipe Overlay | 1.081 | 0.543 | 90 |  | aeg355_007 |
-| `C[DetailBlend][S2]` |  | Overlay | 0.968 | 0.784 | 205 | NormalMap AlbedoMap MetallicMap | c4300 |
+| `C[DetailBlend][S2]` |  | Overlay | 0.968 | 0.784 | 205 | MetallicMap NormalMap AlbedoMap | c4300 |
 | `M[SpiritTree_Trunk]` |  | Overlay AlphaTest | 0.932 | 0.096 | 7 | Mask3Map | aeg594_105 |
 | `M[AMSN_V]_Edge` |  | AlphaTest | 0.905 | 1.040 | 505 |  | aeg399_890 |
 | `SpeedTree_5077f_w34636187` |  | AlphaTest | 0.847 | 0.034 | 24 | g_TranslucencyTexture | aeg801_250 |
@@ -158,22 +158,22 @@ Every sampler with a file, routed as `FlverResource.ProcessMaterialTexture` woul
 | `M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]` | AlbedoMap | 13 | 6.212 | 110 | aeg004_114 |
 | `M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]` | NormalMap | 7 | 6.212 | 110 | aeg004_114 |
 | `M[AMSN_V][Ov_N][Crystal]` | Mask1Map | 0 | 3.644 | 2716 | aeg399_890 |
-| `C[DetailBlend]` | NormalMap | 12 | 2.574 | 297 | c3661 |
 | `C[DetailBlend]` | NormalMap | 9 | 2.080 | 268 | c3661 |
 | `M[Crystal]` | Mask1Map | 0 | 1.925 | 164 | aeg355_058 |
 | `C[DetailBlend]` | AlbedoMap | 4 | 1.852 | 167 | c3661 |
 | `M[AMSN_V][Ov_N][Snow]` | AlbedoMap | 2 | 1.828 | 156 | aeg550_319 |
 | `M[AMSN_V][Ov_N][Snow]` | NormalMap | 3 | 1.828 | 156 | aeg550_319 |
-| `C[DetailBlend]` | AlbedoMap | 10 | 1.791 | 186 | c4191 |
 | `SpeedTree_5010fdmo_w32187` | g_TranslucencyTexture | -1 | 1.651 | 39 | aeg801_250 |
 | `M[AMSN_V][Ov_N][Crystal][CrossFade]` | Mask1Map | 0 | 1.543 | 49 | aeg355_151 |
 | `M[AMSN_V][Ov_N][Crystal][CrossFade]` | AlbedoMap | 3 | 1.543 | 49 | aeg355_151 |
 | `M[AMSN_V][Ov_N][Crystal][CrossFade]` | NormalMap | 4 | 1.543 | 49 | aeg355_151 |
 | `M[AMSN_V][Ov_N][Crystal][CrossFade]` | Mask1Map | 5 | 1.543 | 49 | aeg355_151 |
+| `C[DetailBlend]` | NormalMap | 12 | 1.475 | 263 | c4300 |
 | `M[Crystal][CrossFade]` | Mask1Map | 0 | 1.402 | 41 | aeg355_068 |
+| `C[DetailBlend]` | AlbedoMap | 10 | 1.362 | 158 | c4191 |
 | `SpeedTree_50777_w3636187` | g_TranslucencyTexture | -1 | 1.235 | 13 | aeg801_006 |
-| `C[DetailBlend]` | NormalMap | 5 | 0.989 | 186 | c3500 |
 | `C[DetailBlend][S2]` | NormalMap | 11 | 0.953 | 191 | c4300 |
+| `C[DetailBlend]` | NormalMap | 5 | 0.948 | 177 | c3500 |
 | `M[SpiritTree_Trunk]` | Mask3Map | 1 | 0.932 | 7 | aeg594_105 |
 
 ## Binding audit
@@ -184,8 +184,8 @@ per texture, so a column can add up to more than the game.
 
 | Status | Textures | Placed triangles |
 |---|---|---|
-| Ok | 111733 | 7,626,679,428 |
-| Dropped | 20788 | 1,387,290,648 |
+| Ok | 111814 | 7,657,852,947 |
+| Dropped | 20707 | 1,356,117,129 |
 | Unverified | 7441 | 405,909,291 |
 | Approximate | 967 | 63,027,612 |
 | Misrouted | 596 | 57,817,491 |
@@ -202,7 +202,6 @@ per texture, so a column can add up to more than the game.
 | Dropped | `M[Crystal]` | 0 | Mask1Map | Emissive | Dropped (no route for the role Mask1Map) | 1.925 | 164 | aeg355_058 |
 | Dropped | `M[AMSN_V][Ov_N][Snow]` | 2 | AlbedoMap | Albedo | Dropped (its Albedo layer 0 slot already holds another texture) | 1.828 | 156 | aeg550_319 |
 | Dropped | `M[AMSN_V][Ov_N][Snow]` | 3 | NormalMap | NormalGloss | Dropped (its Normal layer 0 slot already holds another texture) | 1.828 | 156 | aeg550_319 |
-| Dropped | `C[DetailBlend]` | 12 | NormalMap | NormalGloss | Dropped (its Normal layer 0 slot already holds another texture) | 1.813 | 118 | c3661 |
 | Unverified | `SpeedTree_5010fdmo_w32187` | -1 | g_DiffuseTexture | (no slot) | Albedo | 1.651 | 39 | aeg801_250 |
 | Unverified | `SpeedTree_5010fdmo_w32187` | -1 | g_BumpmapTexture | (no slot) | Normal | 1.651 | 39 | aeg801_250 |
 | Unverified | `SpeedTree_5010fdmo_w32187` | -1 | g_TranslucencyTexture | (no slot) | Dropped (no route for the role g_TranslucencyTexture) | 1.651 | 39 | aeg801_250 |
@@ -216,7 +215,6 @@ per texture, so a column can add up to more than the game.
 | Unverified | `SpeedTree_50777_w3636187` | -1 | g_DiffuseTexture | (no slot) | Albedo | 1.235 | 13 | aeg801_006 |
 | Unverified | `SpeedTree_50777_w3636187` | -1 | g_BumpmapTexture | (no slot) | Normal | 1.235 | 13 | aeg801_006 |
 | Unverified | `SpeedTree_50777_w3636187` | -1 | g_TranslucencyTexture | (no slot) | Dropped (no route for the role g_TranslucencyTexture) | 1.235 | 13 | aeg801_006 |
-| Dropped | `C[DetailBlend]` | 10 | AlbedoMap | Albedo | Dropped (its Albedo layer 0 slot already holds another texture) | 1.064 | 103 | c4300 |
 | Dropped | `C[DetailBlend][S2]` | 11 | NormalMap | NormalGloss | Dropped (its Normal layer 0 slot already holds another texture) | 0.953 | 191 | c4300 |
 | Dropped | `M[SpiritTree_Trunk]` | 1 | Mask3Map | Other | Dropped (no route for the role Mask3Map) | 0.932 | 7 | aeg594_105 |
 | Dropped | `M[SpiritTree_Trunk]` | 7 | Mask3Map | Emissive | Dropped (no route for the role Mask3Map) | 0.932 | 7 | aeg594_105 |
@@ -226,4 +224,6 @@ per texture, so a column can add up to more than the game.
 | Unverified | `SpeedTree_5077f_w34636187` | -1 | g_BumpmapTexture | (no slot) | Normal | 0.847 | 24 | aeg801_250 |
 | Unverified | `SpeedTree_5077f_w34636187` | -1 | g_TranslucencyTexture | (no slot) | Dropped (no route for the role g_TranslucencyTexture) | 0.847 | 24 | aeg801_250 |
 | Dropped | `C[DetailBlend][S2]` | 8 | AlbedoMap | Albedo | Dropped (its Albedo layer 0 slot already holds another texture) | 0.760 | 187 | c4300 |
+| Dropped | `C[DetailBlend]_SSS` | 8 | Mask1Map | Subsurface | Dropped (no route for the role Mask1Map) | 0.744 | 134 | c3450 |
+| Dropped | `C[DetailBlend]` | 12 | NormalMap | NormalGloss | Dropped (its Normal layer 0 slot already holds another texture) | 0.714 | 84 | c4300 |
 

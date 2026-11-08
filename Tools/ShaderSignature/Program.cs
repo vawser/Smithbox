@@ -110,6 +110,31 @@ if (mode == "expr")
     Console.WriteLine(Dxil.Parse(dis.lines).Expression(args[4], args.Length > 6 ? int.Parse(args[6]) : 14));
 }
 
+// dag <cacheDir> <shader> <output> <permutation> [depth] : the values an output is computed from, each printed once as
+// %id = op(args), so expressions that reuse values (a 4-layer lerp chain) don't blow up as expr's do
+if (mode == "dag")
+{
+    var b = bundles.First(x => x.Name.Equals(args[3], StringComparison.OrdinalIgnoreCase));
+    var dis = Signatures.DisassembleAll(b, args[2]).First(x => x.permutation == int.Parse(args[5]) && x.variant.Contains("Gbuf"));
+    var d = Dxil.Parse(dis.lines);
+    var depth = args.Length > 6 ? int.Parse(args[6]) : 30;
+    var printed = new HashSet<int>();
+    var lines = new List<string>();
+    string Name(Dxil.Arg a) => a.IsConst ? a.Value.ToString("0.####", System.Globalization.CultureInfo.InvariantCulture) : $"%{a.Id}";
+    void Walk(int id, int level)
+    {
+        if (!printed.Add(id)) return;
+        var n = d.NodeOf(id);
+        if (n.Op == Dxil.Op.Leaf) { lines.Add($"%{id} = {Regex.Replace(n.Leaf, @"^.*?snp_\d+_", "")}"); return; }
+        if (level >= depth) { lines.Add($"%{id} = …"); return; }
+        foreach (var a in n.Args.Where(a => !a.IsConst)) Walk(a.Id, level + 1);
+        var text = n.Op == Dxil.Op.Other ? Regex.Replace(d.ExpressionOf(id, 1), @"C_\w+?_snp_\d+_", "") : $"{n.Op}({string.Join(", ", n.Args.Select(Name))})";
+        lines.Add($"%{id} = {text}");
+    }
+    if (d.StoreId(args[4]) is int dagRoot) Walk(dagRoot, 0);
+    foreach (var l in lines) Console.WriteLine(l);
+}
+
 // metallic <cacheDir> <outJson> : shader to texture slot to the param added to its red before the metallic is
 // saturated ("snp_0_float_0:0", the param and its component), "" for a slot saturated on its own. Over every permutation
 if (mode == "metallic")
@@ -246,7 +271,7 @@ if (mode == "detailstacks")
                 if (!r.Ok)
                 {
                     // Only the shaders that have a stack lerp at all are worth counting
-                    if (!r.Problems[0].StartsWith("no lerp"))
+                    if (!r.Problems[0].StartsWith("no ") && !r.Problems[0].StartsWith("RT2"))
                     {
                         var p = Regex.Replace(r.Problems[0], @"\d+", "N");
                         problems[p] = problems.GetValueOrDefault(p) + 1;
@@ -259,9 +284,12 @@ if (mode == "detailstacks")
                 foreach (var k in new[] { key, $"{b.Name}@0", b.Name })
                     if (checkedIn.TryGetValue(k, out theirs)) break;
                 r.Recipe.NormalStrength = theirs?.NormalStrength;
+                // A bottom normal the walk couldn't pair (permutation 19) is the checked-in detail's
+                r.Recipe.Normal ??= theirs?.Normal;
                 table[key] = r.Recipe;
-                if (verbose) Console.WriteLine($"  {key}: bottom {r.Recipe.Albedo}/{r.Recipe.Normal}, " + string.Join(", ",
-                    r.Recipe.Stack.Select(l => $"{l.Albedo}/{l.Normal} {l.Color} by {l.Channel}: ({l.Scale}) x + ({l.Bias}) ^{l.Power}")));
+                if (verbose) Console.WriteLine($"  {key}: bottom {r.Recipe.Albedo}/{r.Recipe.Normal} {r.Recipe.Color}, " + string.Join(", ",
+                    (r.Recipe.Stack ?? []).Select(l => $"{(l.Replace == true ? "REPLACE " : "")}{(l.Invert == true ? "1-" : "")}{l.Albedo}/{l.Normal} {l.Color} by {l.Channel}: ({l.Scale}) x + ({l.Bias}) ^{l.Power}"))
+                    + (r.Recipe.BackAlbedo != null ? $" | back {r.Recipe.BackAlbedo}/{r.Recipe.BackNormal} {r.Recipe.BackColor}" : ""));
             }
         }
     });

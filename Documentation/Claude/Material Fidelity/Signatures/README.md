@@ -144,10 +144,29 @@ Each permutation wires in different slots. The UV groups pair them: (1,6), (2,5)
 pow. `NormalStrength` is copied from the checked-in `_Details.json` entry (key, `@0`, or plain name). The app and the
 census replace the `_Details` entry of a key that has a stack (`MaterialShaderTable.MergeDetailStacks`).
 
+**Whole-albedo layers and back faces (2026-11-08, later).** The other permutations lerp some layers over the
+*finished* albedo, so those layers replace the colour rather than detail it. Permutation 8, for example, is
+`sat(lerp(lerp(base·c0·T1·4.55, c5·T10, w2), c2·T4, w3))`. A layer can also sit on the bottom of its lerp, as in
+permutation 2, `lerp(c1·T2, base·d·4.55, w1)`, which is that layer weighted by `1 - w1`. Their normals still lerp
+in the detail chain, with the same weights. Permutations 15 and up use `front ? that : c3·T8` for the albedo and
+`T13` for the normal offset, at a strength of 1.
+- **The walk** (`BuildStack`):
+  1. The clamp under RT2.x.
+  2. A `SV_IsFrontFace` select.
+  3. Whole-albedo lerps, one albedo term against the rest.
+  4. What the 4.55 multiplies: a detail stack or one detail.
+- **Recipe:** `Replace` and `Invert` on a layer; `BackAlbedo`, `BackColor` and `BackNormal` on the recipe.
+- **Viewport:**
+  - `weight.w` adds 4 (inverted) and 8 (replacing).
+  - Entry +18 is the back face. `MaterialDetail.HasStackEntries`, bit 10 of `Pad0`, says entries 15–18 exist.
+  - Whole-albedo layers are mixed in after the multiply. The game clamps once, at the end, and so does the viewport.
+    One with no texture is left out rather than painting a grey stand-in.
+  - Back faces (`gl_FrontFacing`) skip the base and details.
+- All 21 `C[DetailBlend]` permutations now have a recipe or the plain detail (0).
+
 | | ER | NR | AC6 |
 |---|---|---|---|
-| Stacks written | 38, in 14 shaders | 46, in 12 | 4, in 4 |
-| `C[DetailBlend]` permutations | 1, 3, 6, 9, 13, 16, 18 | | |
+| Stacks written | 84, in 18 shaders | 82, in 13 | 12, in 4 |
 
 **Viewport.**
 - The detail entry's `Pad0` holds the layer count from bit 8.
@@ -160,11 +179,12 @@ census replace the `_Details` entry of a key that has a stack (`MaterialShaderTa
 - A missing layer texture counts as neutral (`1/4.55`, flat normal).
 
 **Not done:**
-- **Whole-albedo layers.** Permutations 2, 4, 5, 7, 8, 10–12, 14, 17, 19 and 20 lerp their extra layers over the
-  *finished* albedo, `lerp(c1·T2, base·d·4.55, w)`, so those layers replace the colour rather than detail it. 15+
-  also pick `c3·T8` on back faces (`SV_IsFrontFace`). This needs a second layer kind applied after the multiply, plus
-  its normal equivalent. The generator rejects these ("isn't multiplied by 4.55": ER 214 shader permutations).
-- **Weights of other forms** ("weight not understood", ER 72), in other shaders the walk reaches.
+- **Weights of other forms.** "weight not understood": ER 149, NR 74, AC6 28 shader permutations. These are in other
+  shaders the walk reaches, such as `C[DetailBlend][S2]` and `_SSS`, which still drop slots 8, 10, 11 and 12.
+- **The single-detail form of other shaders.** "isn't one albedo and color": ER 46.
+- **Layer metallic.** The layers also lerp metallic toward params (`f16`, `f8` and `f5` in `C[DetailBlend]`), which
+  isn't drawn.
+- **Mask1Map.** It has no route in `C[DetailBlend]_FurBlur` and `_SSS` (ER ~1.6 points).
 
 ## Parser fixes
 
