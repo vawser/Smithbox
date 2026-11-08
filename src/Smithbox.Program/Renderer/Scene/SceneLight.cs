@@ -53,6 +53,18 @@ public class SceneLight
     /// </summary>
     public bool FadeAcrossRange { get; set; }
 
+    /// <summary>
+    ///     With <see cref="FadeAcrossRange" />: the distance out to which the light is at full strength, before it
+    ///     fades to nothing at <see cref="Range" /> (Demon's Souls' PointLightBank dwindleBegin). 0 fades from the light.
+    /// </summary>
+    public float FullStrengthRange { get; set; }
+
+    /// <summary>
+    ///     With <see cref="FadeAcrossRange" />: fade in a straight line rather than with the square of the fade
+    ///     (Demon's Souls' point lights, which dwindle from dwindleBegin to dwindleEnd)
+    /// </summary>
+    public bool LinearFade { get; set; }
+
     /// <summary>Spot lights: angle from the center of the cone within which the light is at full strength</summary>
     public float InnerConeAngleDegrees { get; set; } = 20.0f;
 
@@ -92,7 +104,7 @@ public class SceneLight
             DirectionType = new Vector4(direction, (float)Type),
             ColorIntensity = new Vector4(Color, Math.Max(Intensity, 0.0f)),
             Spot = new Vector4(MathF.Cos(inner * toRadians), MathF.Cos(outer * toRadians),
-                FadeAcrossRange ? 1.0f : 0.0f, 0.0f)
+                FadeAcrossRange ? (LinearFade ? 2.0f : 1.0f) : 0.0f, Math.Clamp(FullStrengthRange, 0.0f, Math.Max(Range, 0.0f)))
         };
     }
 }

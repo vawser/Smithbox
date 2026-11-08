@@ -170,3 +170,267 @@ static List<(float V, float Elev, float Yaw)> Peaks(string path, int n)
     }
     return peaks;
 }
+
+// lights <USRDIR> <defs folder>: every MSBD Light event against its part and the area's PointLightBank
+if (args[0] == "lights")
+{
+    var defs = Directory.GetFiles(args[2], "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+    var banks = new Dictionary<string, Andre.Formats.Param>();
+    foreach (var bndPath in Directory.GetFiles(Path.Combine(args[1], "param", "drawparam"), "a??_drawparam.parambnd"))
+    {
+        var area = Path.GetFileName(bndPath).Substring(1, 2);
+        var f = BND3.Read(bndPath).Files.FirstOrDefault(x => x.Name.EndsWith($"m{area}_PointLightBank.param"));
+        if (f == null) continue;
+        var p = Andre.Formats.Param.Read(f.Bytes);
+        p.ApplyParamdef(defs.First(d => d.ParamType == p.ParamType));
+        banks[area] = p;
+        Console.WriteLine($"a{area} PointLightBank rows: " + string.Join(" ", p.Rows.Take(12).Select(r => $"{r.ID}'{r.Name}'")) + (p.Rows.Count > 12 ? " …" : ""));
+    }
+    var kinds = new Dictionary<string, int>();
+    var idStats = new List<(string Map, int Id, int Unk, string Kind, string Model)>();
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var mapId = Path.GetFileNameWithoutExtension(msbPath);
+        var msb = MSBD.Read(msbPath);
+        foreach (var ev in msb.Events.Lights)
+        {
+            var part = msb.Parts.GetEntries().FirstOrDefault(p => p.Name == ev.PartName);
+            var kind = part?.GetType().Name ?? "none";
+            kinds[kind] = kinds.GetValueOrDefault(kind) + 1;
+            idStats.Add((mapId, ev.PointLightID, ev.PointLightBankID, kind, part?.ModelName ?? "-"));
+        }
+    }
+    Console.WriteLine("part kinds: " + string.Join(", ", kinds.Select(k => $"{k.Key} {k.Value}")));
+    foreach (var g in idStats.GroupBy(s => s.Map))
+    {
+        var area = g.Key.Substring(1, 2);
+        banks.TryGetValue(area, out var bank);
+        var ids = g.Select(s => s.Id).ToList();
+        int inBank = ids.Count(i => bank?[i] != null);
+        int mod100 = ids.Count(i => bank?[i % 100] != null);
+        int div10 = ids.Count(i => bank?[i / 10] != null);
+        Console.WriteLine($"{g.Key}: {ids.Count} events, ids {ids.Min()}-{ids.Max()}, distinct {ids.Distinct().Count()}; row exists as id {inBank}, id%100 {mod100}, id/10 {div10}; PointLightBankID {string.Join(",", g.Select(s => s.Unk).Distinct().Take(8))}");
+        Console.WriteLine("   models: " + string.Join(", ", g.GroupBy(s => s.Model).OrderByDescending(x => x.Count()).Take(6).Select(x => $"{x.Key}×{x.Count()} ids[{string.Join(",", x.Select(s => s.Id).Distinct().OrderBy(i => i).Take(6))}]")));
+    }
+}
+
+// flverlights <flver>: a FLVER0's bones and dummies, to look for point light positions
+if (args[0] == "flverlights")
+{
+    var bytes = args[1].EndsWith(".dcx") ? DCX.Decompress(args[1]).ToArray() : File.ReadAllBytes(args[1]);
+    var f = FLVER0.Read(bytes);
+    Console.WriteLine($"{Path.GetFileName(args[1])}: {f.Nodes.Count} bones, {f.Dummies.Count} dummies, {f.Materials.Count} materials, {f.Meshes.Count} meshes");
+    foreach (var b in f.Nodes.Take(40)) Console.WriteLine($"  bone '{b.Name}' t {b.Translation} parent {b.ParentIndex}");
+    foreach (var d in f.Dummies.Take(20)) Console.WriteLine($"  dummy ref {d.ReferenceID} pos {d.Position}");
+    foreach (var m in f.Materials.Take(10)) Console.WriteLine($"  mat '{m.Name}' {m.MTD}");
+}
+
+// lightparts <USRDIR> <map> <model>: the Light events on parts of a model, with the part, and the FLVER's bone names
+if (args[0] == "lightparts")
+{
+    var o = new StringBuilder();
+    var msb = MSBD.Read(Path.Combine(args[1], "map", "MapStudio", args[2] + ".msb"));
+    var parts = msb.Parts.GetEntries().Where(p => p.ModelName.Equals(args[3], StringComparison.OrdinalIgnoreCase)).ToList();
+    foreach (var p in parts)
+    {
+        o.AppendLine($"part {p.Name} ({p.GetType().Name}) pos {p.Position} rot {p.Rotation}");
+        foreach (var ev in msb.Events.Lights.Where(e => e.PartName == p.Name))
+            o.AppendLine($"  light '{ev.Name}' id {ev.PointLightID} unk {ev.PointLightBankID} eventId {ev.EventID} region {ev.RegionName}");
+    }
+    var flv = Directory.GetFiles(Path.Combine(args[1], "map", args[2]), args[3] + "*.flver").FirstOrDefault();
+    if (flv != null)
+    {
+        var f = FLVER0.Read(File.ReadAllBytes(flv));
+        for (int i = 0; i < f.Nodes.Count; i++) o.AppendLine($"  bone {i} '{f.Nodes[i].Name}' t {f.Nodes[i].Translation}");
+    }
+    File.WriteAllText("lightparts.txt", o.ToString(), Encoding.UTF8);
+    Console.WriteLine("Wrote lightparts.txt");
+}
+
+// lightnames <USRDIR>: whether Light event names (or their number) name any other MSB entry, and what other entries
+// share the light's name prefix
+if (args[0] == "lightnames")
+{
+    var o = new StringBuilder();
+    int byName = 0, total = 0;
+    var kinds = new Dictionary<string, int>();
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var msb = MSBD.Read(msbPath);
+        var entries = new List<(string Kind, string Name, object E)>();
+        entries.AddRange(msb.Regions.GetEntries().Select(r => (r.GetType().Name, r.Name, (object)r)));
+        entries.AddRange(msb.Parts.GetEntries().Select(p => ("Part." + p.GetType().Name, p.Name, (object)p)));
+        entries.AddRange(msb.Events.GetEntries().Where(e => e is not MSBD.Event.Light).Select(e => ("Event." + e.GetType().Name, e.Name, (object)e)));
+        foreach (var ev in msb.Events.Lights)
+        {
+            total++;
+            var hit = entries.FirstOrDefault(e => e.Name == ev.Name);
+            if (hit.Name != null) { byName++; kinds[hit.Kind] = kinds.GetValueOrDefault(hit.Kind) + 1; }
+        }
+        if (Path.GetFileNameWithoutExtension(msbPath) == "m01_00_00_00")
+        {
+            o.AppendLine("m01 region kinds: " + string.Join(", ", msb.Regions.GetEntries().GroupBy(r => r.GetType().Name).Select(g => $"{g.Key} {g.Count()}")));
+            o.AppendLine("m01 regions with 燭 or light-ish names: " + string.Join(", ", msb.Regions.GetEntries().Where(r => r.Name.Contains("燭") || r.Name.Contains("光") || r.Name.Contains("ライト") || r.Name.ToLower().Contains("light")).Take(20).Select(r => $"{r.Name}@{r.Position}")));
+            o.AppendLine("m01 parts with 燭: " + string.Join(", ", msb.Parts.GetEntries().Where(p => p.Name.Contains("燭")).Take(20).Select(p => $"{p.Name}({p.ModelName})@{p.Position}")));
+            o.AppendLine("m01 light names: " + string.Join(", ", msb.Events.Lights.Take(30).Select(e => $"{e.Name}->{e.PartName}#{e.PointLightID}")));
+        }
+    }
+    o.AppendLine($"Light events whose name names another entry: {byName} of {total}: " + string.Join(", ", kinds.Select(k => $"{k.Key} {k.Value}")));
+    File.WriteAllText("lightnames.txt", o.ToString(), Encoding.UTF8);
+    Console.WriteLine("Wrote lightnames.txt");
+}
+
+// lightregions <USRDIR>: for Light events with a same-name region, the region's index (in the full region list and
+// among regions only), entity ID and position against the PointLightID; and the unmatched events
+if (args[0] == "lightregions")
+{
+    var o = new StringBuilder();
+    int idxEq = 0, ent = 0, matched = 0, offsetSame = 0;
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var map = Path.GetFileNameWithoutExtension(msbPath);
+        var msb = MSBD.Read(msbPath);
+        var regions = msb.Regions.GetEntries();
+        var offsets = new List<int>();
+        foreach (var ev in msb.Events.Lights)
+        {
+            var ri = regions.FindIndex(r => r.Name == ev.Name);
+            if (ri < 0) continue;
+            matched++;
+            if (ri == ev.PointLightID) idxEq++;
+            if (regions[ri].EntityID == ev.PointLightID) ent++;
+            offsets.Add(ri - ev.PointLightID);
+        }
+        var common = offsets.GroupBy(x => x).OrderByDescending(g => g.Count()).FirstOrDefault();
+        if (common != null) offsetSame += common.Count();
+        var unmatched = msb.Events.Lights.Where(ev => regions.All(r => r.Name != ev.Name)).ToList();
+        o.AppendLine($"{map}: {msb.Events.Lights.Count} lights, {offsets.Count} with a region; region index - id: most common {common?.Key} ×{common?.Count()}, distinct {offsets.Distinct().Count()}; unmatched {unmatched.Count}: " +
+            string.Join(", ", unmatched.Take(6).Select(e => $"{e.Name}->{e.PartName}#{e.PointLightID}")));
+    }
+    o.AppendLine($"matched {matched}: region index == id {idxEq}, EntityID == id {ent}, on the map's most common offset {offsetSame}");
+    File.WriteAllText("lightregions.txt", o.ToString(), Encoding.UTF8);
+    Console.WriteLine("Wrote lightregions.txt");
+}
+
+// lightindex <USRDIR>: every Light event's region by index PointLightID: in range or not, its name and shape, and the
+// events whose region name differs from the event's
+if (args[0] == "lightindex")
+{
+    var o = new StringBuilder();
+    int inRange = 0, total = 0;
+    var shapes = new Dictionary<string, int>();
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var map = Path.GetFileNameWithoutExtension(msbPath);
+        var msb = MSBD.Read(msbPath);
+        var regions = msb.Regions.GetEntries();
+        foreach (var ev in msb.Events.Lights)
+        {
+            total++;
+            if (ev.PointLightID < 0 || ev.PointLightID >= regions.Count) { o.AppendLine($"{map} {ev.Name} #{ev.PointLightID}: OUT OF RANGE ({regions.Count} regions)"); continue; }
+            inRange++;
+            var r = regions[ev.PointLightID];
+            var shape = r.Shape?.GetType().Name ?? "null";
+            shapes[shape] = shapes.GetValueOrDefault(shape) + 1;
+            if (r.Name != ev.Name)
+                o.AppendLine($"{map} '{ev.Name}' #{ev.PointLightID} unk {ev.PointLightBankID} part {ev.PartName} -> region '{r.Name}' {shape} @{r.Position}");
+        }
+    }
+    o.AppendLine($"in range {inRange} of {total}; shapes: " + string.Join(", ", shapes.Select(s => $"{s.Key} {s.Value}")));
+    File.WriteAllText("lightindex.txt", o.ToString(), Encoding.UTF8);
+    Console.WriteLine("Wrote lightindex.txt");
+}
+
+// lightrows <USRDIR> <defs>: PointLightBankID against the area's PointLightBank: does the row exist, and its values
+if (args[0] == "lightrows")
+{
+    var defs = Directory.GetFiles(args[2], "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+    var o = new StringBuilder();
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var map = Path.GetFileNameWithoutExtension(msbPath);
+        var msb = MSBD.Read(msbPath);
+        if (msb.Events.Lights.Count == 0) continue;
+        var area = map.Substring(1, 2);
+        var f = BND3.Read(Path.Combine(args[1], "param", "drawparam", $"a{area}_drawparam.parambnd")).Files.First(x => x.Name.EndsWith($"m{area}_PointLightBank.param"));
+        var p = Andre.Formats.Param.Read(f.Bytes);
+        p.ApplyParamdef(defs.First(d => d.ParamType == p.ParamType));
+        foreach (var g in msb.Events.Lights.GroupBy(e => e.PointLightBankID).OrderBy(g => g.Key))
+        {
+            var row = p[g.Key];
+            string V(string n) => row == null ? "-" : Convert.ToString(row[n].Value.Value);
+            o.AppendLine($"{map} PointLightBankID {g.Key} ×{g.Count()}: " + (row == null ? "NO ROW" : $"'{row.Name}' dwindle {V("dwindleBegin")}-{V("dwindleEnd")} col {V("colR")},{V("colG")},{V("colB")} a{V("colA")}") + $"  e.g. {g.First().Name}");
+        }
+    }
+    File.WriteAllText("lightrows.txt", o.ToString(), Encoding.UTF8);
+    Console.WriteLine("Wrote lightrows.txt");
+}
+
+// enemycol <USRDIR>: enemies' own LightID against their CollisionName's LightID, per map
+if (args[0] == "enemycol")
+{
+    int same = 0, diff = 0, none = 0;
+    var o = new StringBuilder();
+    foreach (var msbPath in Directory.GetFiles(Path.Combine(args[1], "map", "MapStudio"), "m*.msb"))
+    {
+        var map = Path.GetFileNameWithoutExtension(msbPath);
+        var msb = MSBD.Read(msbPath);
+        var cols = msb.Parts.Collisions.ToDictionary(c => c.Name, c => c);
+        int s = 0, d = 0, n = 0;
+        var pairs = new Dictionary<string, int>();
+        foreach (var e in msb.Parts.Enemies.Cast<MSBD.Part.EnemyBase>().Concat(msb.Parts.DummyEnemies))
+        {
+            if (string.IsNullOrEmpty(e.CollisionName) || !cols.TryGetValue(e.CollisionName, out var c)) { n++; continue; }
+            if (c.LightID == e.LightID) s++; else { d++; var k = $"{e.LightID}->{c.LightID}"; pairs[k] = pairs.GetValueOrDefault(k) + 1; }
+        }
+        same += s; diff += d; none += n;
+        if (s + d + n > 0) o.AppendLine($"{map}: same {s}, differ {d}, no collision {n}; own->collision " + string.Join(", ", pairs.OrderByDescending(p => p.Value).Take(6).Select(p => $"{p.Key}×{p.Value}")));
+    }
+    o.AppendLine($"total: same {same}, differ {diff}, no collision {none}");
+    Console.Write(o.ToString());
+}
+
+// rownames <USRDIR> <defs> <area> <bank> <ids...>: row names and a few fields of a bank's rows
+if (args[0] == "rownames")
+{
+    var defs = Directory.GetFiles(args[2], "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+    var f = BND3.Read(Path.Combine(args[1], "param", "drawparam", $"a{args[3]}_drawparam.parambnd")).Files.First(x => x.Name.EndsWith($"m{args[3]}_{args[4]}.param"));
+    var p = Andre.Formats.Param.Read(f.Bytes);
+    p.ApplyParamdef(defs.First(d => d.ParamType == p.ParamType));
+    var sb = new StringBuilder();
+    foreach (var id in args.Skip(5).Select(int.Parse))
+    {
+        var r = p[id];
+        sb.AppendLine(r == null ? $"{id}: no row" : $"{id} '{r.Name}': L0 {r["degRotX_0"].Value.Value}/{r["degRotY_0"].Value.Value} a{r["colA_0"].Value.Value}, du a{r["colA_du"].Value.Value}, u a{r["colA_u"].Value.Value}, envDif a{r["envDif_colA"].Value.Value}");
+    }
+    File.WriteAllText("rownames.txt", sb.ToString(), Encoding.UTF8);
+}
+
+// hemistats <USRDIR> <defs>: the hemisphere pairs (_u/_d, _du/_dd) of character rows (named キャラ) against the rest
+if (args[0] == "hemistats")
+{
+    var defs = Directory.GetFiles(args[2], "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+    var groups = new Dictionary<string, List<(int U, int D, int Du, int Dd, int L0, int Env)>>();
+    foreach (var bndPath in Directory.GetFiles(Path.Combine(args[1], "param", "drawparam"), "a??_drawparam.parambnd"))
+    {
+        var area = Path.GetFileName(bndPath).Substring(1, 2);
+        var f = BND3.Read(bndPath).Files.First(x => x.Name.EndsWith($"m{area}_LightBank.param"));
+        var p = Andre.Formats.Param.Read(f.Bytes);
+        p.ApplyParamdef(defs.First(d => d.ParamType == p.ParamType));
+        int V(Andre.Formats.Param.Row r, string n) => Convert.ToInt32(r[n].Value.Value);
+        foreach (var r in p.Rows)
+        {
+            if (string.IsNullOrEmpty(r.Name)) continue;
+            var key = r.Name.Contains("キャラ") ? "character rows" : "other named rows";
+            if (!groups.TryGetValue(key, out var l)) groups[key] = l = new();
+            l.Add((V(r, "colA_u"), V(r, "colA_d"), V(r, "colA_du"), V(r, "colA_dd"), V(r, "colA_0"), V(r, "envDif_colA")));
+        }
+    }
+    var sb = new StringBuilder();
+    foreach (var (k, l) in groups)
+    {
+        string S(Func<(int U, int D, int Du, int Dd, int L0, int Env), int> f) => $"mean {l.Average(x => f(x)):0.#}, zero {l.Count(x => f(x) == 0)}";
+        sb.AppendLine($"{k} ({l.Count}): u [{S(x => x.U)}] d [{S(x => x.D)}] du [{S(x => x.Du)}] dd [{S(x => x.Dd)}] L0 [{S(x => x.L0)}] envDif [{S(x => x.Env)}]");
+    }
+    File.WriteAllText("hemistats.txt", sb.ToString(), Encoding.UTF8);
+}

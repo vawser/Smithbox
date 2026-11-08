@@ -84,6 +84,8 @@ public class MapLightCollector
                 // Selected lights come first, then the nearest
                 found.Add((isSelected ? -1.0f : distance, CreateLight(btlLight, world, intensityScale).ToMapGpu()));
             }
+
+            AddDrawParamPointLights(map, eye, radius, intensityScale, selected, found);
         }
 
         found.Sort((a, b) => a.Distance.CompareTo(b.Distance));
@@ -98,6 +100,87 @@ public class MapLightCollector
         ShadedCount = count;
 
         table.Upload(Entries, count);
+    }
+
+    /// <summary>
+    /// Demon's Souls' point lights, its MSB's Light events: the light is at the map's region whose index is the
+    /// event's PointLightID (595 of the 598 whose name matches a region's are at that index, and every ID is in range),
+    /// and shines as the row of the area's PointLightBank its PointLightBankID names (the rows' names match the events': candles,
+    /// torches), -1 for none. The row's dwindleBegin is how far it is at full strength, dwindleEnd where it is gone,
+    /// colR/G/B its colour and colA its intensity in percent. Lit near the camera as BTL lights are; a selected event
+    /// or region shines wherever it is. See the DES DrawParam lighting plan, Phase 5b.
+    /// </summary>
+    private void AddDrawParamPointLights(MapContainer map, Vector3? eye, float radius, float intensityScale,
+        HashSet<MsbEntity> selected, List<(float Distance, MapLightData Data)> found)
+    {
+        var bank = View.DrawParamLightingBank;
+
+        if (!CFG.Current.Viewport_Map_DrawParam_Point_Lights || bank == null || !bank.CanUse())
+            return;
+
+        var pointLights = bank.GetBank(map.Name, DrawParamLightingBank.PointLightBank);
+
+        if (pointLights == null)
+            return;
+
+        // The parts by name, as the events hold their part: the MSB stores the part's index, read back as its name
+        Dictionary<string, Entity> partsByName = null;
+
+        foreach (var entity in map.Events)
+        {
+            if (entity is not MsbEntity eventEntity || eventEntity.WrappedObject is not MSBD.Event.Light light)
+                continue;
+
+            if (light.PointLightID < 0 || light.PointLightID >= map.Regions.Count || light.PointLightBankID < 0)
+                continue;
+
+            if (map.Regions[light.PointLightID] is not MsbEntity region || !region.EditorVisible)
+                continue;
+
+            // A light goes with its candlestick or torch: hidden while its part is hidden in the editor
+            if (!string.IsNullOrEmpty(light.PartName))
+            {
+                partsByName ??= map.Parts
+                    .Where(p => p.WrappedObject is MSBD.Part)
+                    .GroupBy(p => ((MSBD.Part)p.WrappedObject).Name)
+                    .ToDictionary(g => g.Key, g => g.First());
+
+                if (partsByName.TryGetValue(light.PartName, out var part) && !part.EditorVisible)
+                    continue;
+            }
+
+            var row = pointLights[light.PointLightBankID];
+
+            if (row == null)
+                continue;
+
+            var position = region.GetWorldMatrix().Translation;
+            var isSelected = selected.Contains(eventEntity) || selected.Contains(region);
+            var distance = eye.HasValue ? Vector3.Distance(position, eye.Value) : float.MaxValue;
+
+            if (!isSelected && (!CFG.Current.Viewport_BTL_Lights_Near_Camera || distance > radius))
+                continue;
+
+            var color = new Vector3(
+                MathF.Pow(DrawParamLightingBank.Get(row, "colR", 255.0f) / 255.0f, ColorGamma),
+                MathF.Pow(DrawParamLightingBank.Get(row, "colG", 255.0f) / 255.0f, ColorGamma),
+                MathF.Pow(DrawParamLightingBank.Get(row, "colB", 255.0f) / 255.0f, ColorGamma));
+
+            var sceneLight = new SceneLight
+            {
+                Type = SceneLightType.Point,
+                Position = position,
+                Color = color,
+                Intensity = DrawParamLightingBank.Get(row, "colA", 100.0f) / 100.0f * intensityScale,
+                Range = DrawParamLightingBank.Get(row, "dwindleEnd", 2.0f),
+                FullStrengthRange = DrawParamLightingBank.Get(row, "dwindleBegin", 0.5f),
+                FadeAcrossRange = true,
+                // A straight fade between the two, the user's choice: the curve isn't in the data
+                LinearFade = true
+            };
+
+            found.Add((isSelected ? -1.0f : distance, sceneLight.ToMapGpu()));
+        }
     }
 
     public static bool IsNearCamera(BTL.Light light, float distance, float radius)

@@ -1849,6 +1849,14 @@
       "Text": "Env: diffuse {0} x {1}; specular {2} x {3}; {4} of 5 cubemaps loaded"
     },
     {
+      "Key": "VIEWPORT_Rendering_DrawParam_Point_Lights",
+      "Text": "Light Events as Point Lights"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Point_Lights_TT",
+      "Text": "Light the viewport with the map's Light events, as the game does: each at the region whose index is its PointLightID, with the colour, strength and reach of the PointLightBank row its Point Light Bank ID names (-1 is no light). They share the BTL lights' camera radius and limit; a selected event or region lights wherever it is."
+    },
+    {
       "Key": "VIEWPORT_Rendering_DrawParam_Env_Off",
       "Text": "Env: off"
     },

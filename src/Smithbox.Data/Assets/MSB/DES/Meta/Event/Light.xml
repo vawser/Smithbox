@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
-  Wiki="This map object represents a light emitter within the map." />
-  
+  <Self
+  Wiki="This map object represents a point light within the map, at a region and with a PointLightBank row's colour, intensity and reach." />
+
   <Field>
     <PointLightID
-    AltName="Point Light ID"
-    Wiki="The point light parameters to use." 
-    ParamRef="PointLightBank" 
+    AltName="Point Light Region Index"
+    Wiki="The index of the region the light is at, counted through the map's regions in order." />
+
+    <PointLightBankID
+    AltName="Point Light Bank ID"
+    Wiki="The row of the area's PointLightBank the light shines as: its colour, intensity and reach. -1 for no light."
+    ParamRef="PointLightBank"
     SpecialHandling="BankParam" />
-    
-    <UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

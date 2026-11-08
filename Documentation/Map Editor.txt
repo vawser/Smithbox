@@ -5,3 +5,7 @@
 - Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - AEP rendering needs to carry in the asset collision too
+
+- Create:
+    - Check existing correctness
+    - Fix NR create

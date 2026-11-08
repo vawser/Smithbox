@@ -260,6 +260,8 @@ foreach (var bndPath in Directory.GetFiles(Path.Combine(root, "param", "drawpara
     foreach (var f in BND3.Read(bndPath).Files)
     {
         var name = Path.GetFileNameWithoutExtension(f.Name); // mAA_LightBank
+        // Only the mAA_ banks, the ones Smithbox lights with: the parambnd also holds sAA_ banks of the same name
+        if (!name.StartsWith("m", StringComparison.OrdinalIgnoreCase)) continue;
         var bank = name.Substring(name.IndexOf('_') + 1);
         var p = Param.Read(f.Bytes);
         var def = defs.FirstOrDefault(d => d.ParamType == p.ParamType);
@@ -342,7 +344,7 @@ foreach (var msbPath in Directory.GetFiles(Path.Combine(root, "map", "MapStudio"
     {
         var region = msb.Regions.GetEntries().FirstOrDefault(r => r.Name == ev.RegionName);
         bool hasRow = banks != null && banks.TryGetValue("PointLightBank", out var pl) && pl.Rows.Any(r => r.ID == ev.PointLightID);
-        lightEvents.Add($"| {mapId} | {ev.Name} | {ev.PointLightID}{(hasRow ? "" : "!")} | {ev.UnkT04} | {(region == null ? "—" : $"{region.Name} ({region.Position.X:F1}, {region.Position.Y:F1}, {region.Position.Z:F1})")} | {ev.PartName ?? "—"} |");
+        lightEvents.Add($"| {mapId} | {ev.Name} | {ev.PointLightID}{(hasRow ? "" : "!")} | {ev.PointLightBankID} | {(region == null ? "—" : $"{region.Name} ({region.Position.X:F1}, {region.Position.Y:F1}, {region.Position.Z:F1})")} | {ev.PartName ?? "—"} |");
     }
 }
 
@@ -353,7 +355,7 @@ sb.AppendLine();
 
 sb.AppendLine($"## Light events ({lightEvents.Count})");
 sb.AppendLine();
-sb.AppendLine("| Map | Event | PointLightID | UnkT04 | Region | Part |");
+sb.AppendLine("| Map | Event | PointLightID | PointLightBankID | Region | Part |");
 sb.AppendLine("|---|---|---|---|---|---|");
 foreach (var l in lightEvents.Take(60)) sb.AppendLine(l);
 if (lightEvents.Count > 60) sb.AppendLine($"| … {lightEvents.Count - 60} more | | | | | |");

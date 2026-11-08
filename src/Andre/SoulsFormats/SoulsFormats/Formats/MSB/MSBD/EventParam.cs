@@ -288,14 +288,16 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Light;
 
                 /// <summary>
-                /// Unknown.
+                /// The index of the region the light is at, in the map's region list. Every vanilla value is in
+                /// range, and those whose region has the event's name are at that index.
                 /// </summary>
                 public int PointLightID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The row of the area's PointLightBank (mAA_PointLightBank) the light shines as: its colour,
+                /// intensity and reach. -1 for no light.
                 /// </summary>
-                public int UnkT04 { get; set; }
+                public int PointLightBankID { get; set; }
 
                 /// <summary>
                 /// Creates a Light with default values.
@@ -307,13 +309,13 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     PointLightID = br.ReadInt32();
-                    UnkT04 = br.ReadInt32();
+                    PointLightBankID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(PointLightID);
-                    bw.WriteInt32(UnkT04);
+                    bw.WriteInt32(PointLightBankID);
                 }
             }
 

@@ -899,9 +899,10 @@ float LightAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
 	float range = light.positionRange.w;
 	if (light.spot.z > 0.5 && range > 0.0)
 	{
-		// full strength at the light, fading away across its range
-		float fade = clamp(1.0 - dist / range, 0.0, 1.0);
-		attenuation = fade * fade;
+		// full strength out to spot.w (0 for most lights: at the light), fading away to the light's range
+		float fade = clamp((range - dist) / max(range - light.spot.w, 1e-4), 0.0, 1.0);
+		// spot.z 2: a straight fade (Demon's Souls' point lights), 1: its square
+		attenuation = light.spot.z > 1.5 ? fade : fade * fade;
 	}
 	else
 	{

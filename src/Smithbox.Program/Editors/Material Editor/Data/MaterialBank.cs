@@ -114,7 +114,21 @@ public class MaterialBank : IDisposable
         if (MATBINLookup.TryGetValue(name, out var matbin))
             return MaterialDefinition.FromMatbin(name, matbin, ShaderTable);
 
-        return MTDLookup.TryGetValue(name, out var mtd) ? MaterialDefinition.FromMtd(name, mtd, ShaderTable) : null;
+        if (!MTDLookup.TryGetValue(name, out var mtd))
+            return null;
+
+        var definition = MaterialDefinition.FromMtd(name, mtd, ShaderTable);
+
+        // Demon's Souls' g_LightingType 0 (sky, clouds, light shafts, additive effects) is the game's unlit shaders:
+        // the texture as it is, lit by nothing. Their shader names are shared with lit materials, so the MTD decides.
+        if (Project?.Descriptor.ProjectType is ProjectType.DES && definition.Surface == MaterialSurface.Standard &&
+            definition.Params.TryGetValue("g_LightingType", out var lightingType) && lightingType.Length > 0 &&
+            (int)lightingType[0] == 0)
+        {
+            definition.Surface = MaterialSurface.Unlit;
+        }
+
+        return definition;
     }
 
     /// <summary>

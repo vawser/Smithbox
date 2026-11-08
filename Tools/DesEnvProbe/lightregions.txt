@@ -1,0 +1,43 @@
+﻿m01_00_00_00: 57 lights, 56 with a region; region index - id: most common 0 ×56, distinct 1; unmatched 1: 生きていている要人燭台->o1102_0009#284
+m02_00_00_00: 39 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 39: 点光源 松明の炎->m3401B0#68, 点光源 松明の炎->m3400B0#72, 点光源 松明の炎->m3401B0#69, 点光源 松明の炎->m3400B0#73, 点光源 松明の炎->m3401B0#70, 点光源 松明の炎->m3400B0#74
+m02_01_00_00: 24 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 24: 点光源 関所Ａ->m2180B1#37, 点光源 関所Ａ->m2180B1#36, 点光源 関所Ｂ->m2190B1#40, 点光源 関所Ｂ->m2190B1#39, 点光源 松明 01->m2000B1#47, 点光源 松明 02->m2000B1#48
+m02_02_00_00: 5 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 5: 点光源　小部屋->m2085B2#67, 点光源　魔女の塔->m2035B2#68, 点光源　魔女の塔->m2035B2#69, 点光源　魔女の塔->m2035B2#72, 点光源　魔女の塔->m2035B2#73
+m02_03_00_00: 9 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 9: エレベータ窓明かり１->m4503B3#2, エレベータ窓明かり２->m4503B3#3, エレベータ窓明かり３->m4503B3#4, エレベータ窓明かり４->m4503B3#5, エレベータ窓明かり５->m4503B3#6, 松明の光　右塔->m2510B3#37
+m03_00_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m03_01_00_00: 9 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 9: 光る水 m2004B1->h0003B1#48, 光る水 m2006B1->h0011B1#49, 光る水 m2008B1->h0025B1#50, 光る水 m2009B1_1->h0042B1#51, 光る水 m2009B1_3->h0041B1#53, 光る水 m2018B1->h0018B1#54
+m03_01_00_99: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m03_02_00_00: 28 lights, 27 with a region; region index - id: most common 0 ×27, distinct 1; unmatched 1: はぐれソウルの点光源->m5301B2#1
+m03_03_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m04_00_00_00: 162 lights, 159 with a region; region index - id: most common 0 ×159, distinct 1; unmatched 3: 塔の入り口松明_1->m4201B0#370, 塔の入り口松明_2->m4201B0#371, 塔の入り口松明_3->m4202B0#372
+m04_01_00_00: 85 lights, 84 with a region; region index - id: most common 0 ×83, distinct 2; unmatched 1: bigfire_03s->m2004B1#1
+m04_02_00_00: 40 lights, 40 with a region; region index - id: most common 0 ×40, distinct 1; unmatched 0: 
+m05_00_00_00: 8 lights, 8 with a region; region index - id: most common 0 ×8, distinct 1; unmatched 0: 
+m05_01_00_00: 102 lights, 92 with a region; region index - id: most common 0 ×92, distinct 1; unmatched 10: ランド大炎_m2010B1_00->m2010B1#56, ランド大炎_m2010B1_01->m2010B1#57, ランド大炎_m2020B1_06->m2025B1#58, ランド大炎_m2045B1_00->m2045B1#59, ランド大炎_m2045B1_01->m2045B1#60, ランド大炎_m2045B1_02->m2045B1#61
+m05_02_00_00: 12 lights, 12 with a region; region index - id: most common 0 ×12, distinct 1; unmatched 0: 
+m06_00_00_00: 106 lights, 6 with a region; region index - id: most common 0 ×6, distinct 1; unmatched 100: 炎_光源_00->h0015B0#44, 炎_光源_01->h0045B0#45, 炎_光源_02->h0045B0#46, 炎_光源_03->h0042B0#47, 炎_光源_04->h0013B0#48, 炎_光源_05->h0013B0#49
+m06_01_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m06_02_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m07_00_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m07_01_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m07_02_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m08_00_00_00: 7 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 7: 燭台　ＩＤ０->m2500B0#41, 燭台　ＩＤ１->m2501B0#40, 燭台　ＩＤ２->m2502B0#37, 燭台　ＩＤ３->m2502B0#38, 燭台　ＩＤ４->m2502B0#39, 燭台　ＩＤ５->m2503B0#28
+m08_01_00_00: 28 lights, 28 with a region; region index - id: most common 0 ×27, distinct 2; unmatched 0: 
+m08_02_00_00: 29 lights, 29 with a region; region index - id: most common 0 ×29, distinct 1; unmatched 0: 
+m99_60_00_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_60_01_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_10_00: 7 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 7: 燭台　ＩＤ０->#22, 燭台　ＩＤ１->#21, 燭台　ＩＤ２->#18, 燭台　ＩＤ３->#19, 燭台　ＩＤ４->#20, 燭台　ＩＤ５->#9
+m99_99_11_00: 28 lights, 28 with a region; region index - id: most common 0 ×27, distinct 2; unmatched 0: 
+m99_99_12_00: 29 lights, 29 with a region; region index - id: most common 0 ×29, distinct 1; unmatched 0: 
+m99_99_97_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_00: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_01: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_02: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_04: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_05: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_06: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_07: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_08: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_09: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_98_10: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+m99_99_99_99: 0 lights, 0 with a region; region index - id: most common  ×, distinct 0; unmatched 0: 
+matched 598: region index == id 595, EntityID == id 0, on the map's most common offset 595

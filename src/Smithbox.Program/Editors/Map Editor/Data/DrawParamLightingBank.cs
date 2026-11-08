@@ -37,6 +37,9 @@ public class DrawParamLightingBank
     public const string ToneCorrectBank = "ToneCorrectBank";
     public const string FogBank = "FogBank";
 
+    /// <summary>The point lights' rows, which Light events pick by their PointLightBankID, see MapLightCollector</summary>
+    public const string PointLightBank = "PointLightBank";
+
     /// <summary>The banks read, in the order the menu offers them</summary>
     public static readonly string[] Banks = { LightBank, ToneMapBank, ShadowBank, ToneCorrectBank, FogBank };
 
@@ -83,15 +86,50 @@ public class DrawParamLightingBank
         }
     }
 
-    /// <summary>The row of a bank a part picks</summary>
-    public static int GetPartRow(MSBD.Part part, string bank) => bank switch
+    /// <summary>
+    /// The row of a bank a part picks; for LightBank, an enemy's is its collision's (see <see cref="GetPartLightId" />)
+    /// when <paramref name="collisions" /> is given
+    /// </summary>
+    public static int GetPartRow(MSBD.Part part, string bank,
+        IReadOnlyDictionary<string, MSBD.Part.Collision> collisions = null) => bank switch
     {
         ToneMapBank => part.ToneMapID,
         ShadowBank => part.ShadowID,
         ToneCorrectBank => part.ToneCorrectID,
         FogBank => part.FogID,
-        _ => part.LightID
+        _ => collisions != null ? GetPartLightId(part, collisions) : part.LightID
     };
+
+    /// <summary>
+    /// The LightBank row a part is lit by. Enemies take the LightID of the collision they stand on (their
+    /// CollisionName, stored as the collision's part index): those rows are the banks' character
+    /// rows, named キャラ (m01's 63 "キャラ　通常", m02's 6 "B0キャラ（屋内）"), while enemies' own LightIDs are
+    /// mostly 0 and differ from their collision's in 1254 of 1427 enemies. Everything else takes its own.
+    /// </summary>
+    public static int GetPartLightId(MSBD.Part part, IReadOnlyDictionary<string, MSBD.Part.Collision> collisions)
+    {
+        if (part is MSBD.Part.EnemyBase enemy && !string.IsNullOrEmpty(enemy.CollisionName) &&
+            collisions.TryGetValue(enemy.CollisionName, out var collision))
+        {
+            return collision.LightID;
+        }
+
+        return part.LightID;
+    }
+
+    /// <summary>A map's collisions by name, the form enemies hold their collision in</summary>
+    public static Dictionary<string, MSBD.Part.Collision> GetCollisionsByName(MapContainer map)
+    {
+        var collisions = new Dictionary<string, MSBD.Part.Collision>();
+
+        foreach (var entity in map.Parts)
+        {
+            if (entity.WrappedObject is MSBD.Part.Collision collision)
+                collisions.TryAdd(collision.Name, collision);
+        }
+
+        return collisions;
+    }
 
     public static int Get(DrawParamRows rows, string bank) => bank switch
     {
@@ -239,13 +277,16 @@ public class DrawParamLightingBank
             if (lightBank == null)
                 continue;
 
+            var collisions = GetCollisionsByName(map);
+
             foreach (var entity in map.Parts)
             {
                 if (entity.WrappedObject is not MSBD.Part part || entity.RenderSceneMesh is not MeshRenderableProxy proxy)
                     continue;
 
-                var key = (area, (int)part.LightID);
-                var row = lightBank[part.LightID];
+                var lightId = GetPartLightId(part, collisions);
+                var key = (area, lightId);
+                var row = lightBank[lightId];
                 byte set = 0;
 
                 if (key != sceneKey && row != null)
@@ -264,7 +305,7 @@ public class DrawParamLightingBank
 
                         if (index < LightSetTable.MaxSets)
                         {
-                            var lighting = Resolve(map.Name, new DrawParamRows(part.LightID, 0, 0, 0, 0));
+                            var lighting = Resolve(map.Name, new DrawParamRows(lightId, 0, 0, 0, 0));
 
                             if (index == PartSets.Count)
                                 PartSets.Add(lighting);
@@ -407,8 +448,9 @@ public class DrawParamLightingBank
             ApplyFog(fogRow, lighting.PostEffects.DistanceFog);
 
         // The model set, the game's HemDir3 shaders (MTD g_LightingType 1: characters and parts): the three lights and
-        // the _du/_dd hemisphere. The scene's set is that of the HemEnv shaders (g_LightingType 3, the map), which take
-        // the _u/_d hemisphere and the env cubemaps and leave the lights out; the shader does that per material.
+        // the _u/_d hemisphere. The scene's set is that of the HemEnv shaders (g_LightingType 3, the map), which take
+        // the same hemisphere and the env cubemaps and leave the lights out; the shader does that per material.
+        // _du/_dd is unmapped: it is 0 in 45 of the 61 character rows (named キャラ), whose _u/_d are 0 in only 4.
         var models = new GparamLighting
         {
             File = lighting.File,
@@ -418,11 +460,7 @@ public class DrawParamLightingBank
         };
 
         if (lightRow != null)
-        {
             ApplyLights(lightRow, models);
-            models.HemiUp = Color(lightRow, "_du");
-            models.HemiDown = Color(lightRow, "_dd");
-        }
 
         models.Exposure = lighting.Exposure;
         models.AutoExposure = lighting.AutoExposure;

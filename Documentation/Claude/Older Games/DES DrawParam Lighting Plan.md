@@ -96,7 +96,7 @@ The evidence is in `Tools/DesDrawParamSurvey/survey.md`, made by `Tools/DesDrawP
 Expected values for m01_00_00_00 (LightBank 0 `神殿部分`, ToneMapBank 0):
 - **Sun:** (1, 0.937, 0.718) × 2.6, elevation 25°, yaw −160°.
 - **Fills:** both off (`colA` 0).
-- **Hemisphere:** white × 0.1, up and down.
+- **Hemisphere:** white × 0.05 up, × 0.07 down. (Corrected in Phase 5d: the survey had shown the `s01_LightBank`'s 0.1; Smithbox reads `m01_LightBank`, whose env scales are also 3.0, not 4.0.)
 - **Specular:** (1, 0.937, 0.914) × 0.89.
 - **Exposure:** 1.42 base, ±0.66 EV adaptation, speed 0.154.
 - **Bloom:** threshold 1.0, alpha 0.4.
@@ -240,15 +240,68 @@ Check in the app:
 - **Toggling the checkbox** should switch between the env look and the old sun look.
 - **If the env light looks upside down or mirrored**, the cube convention is wrong; say which way.
 
+#### Phase 5b: point lights (2026-11-08)
+
+The research used `Tools/DesEnvProbe` modes `lights`, `lightparts`, `lightnames`, `lightregions`, `lightindex` and `lightrows`.
+
+- **Position: `PointLightID` is a region index.** Within a map every Light event's ID is unique. Of the 598 events whose name matches a region's, 595 have that region at index `PointLightID` of the MSB's region list. All 814 IDs are in range, and the regions are Points (785) or Spheres (29). The events whose names don't match are still at regions describing the same light (event `点光源 松明の炎`, "point light, torch flame" → region `松明　左塔の上から４番`, "torch, 4th from the top of the left tower"). The events' own `RegionName` link is empty. This is a link by property, so it follows the no-name-links rule. The part the event names is the candlestick or torch model; its FLVER bones are mesh pivots, not lights.
+- **The light: `UnkT04` is the PointLightBank row.** Every value has a row whose name matches the events (row 0 `蝋燭` candle on m01's candlesticks, `松明` torch on m02's torches, `デモンズソウル` Demon's Soul on its event). `-1` (28 "mini torches" in m08_02 and m99_99_12) has no row and gives no light.
+- **PointLightBank:** `dwindleBegin`/`dwindleEnd` are metres (0-5 / 1-30), `colR/G/B` the colour, `colA` the intensity in percent (20-1000).
+
+As built (not yet checked in the app):
+- **`MapLightCollector.AddDrawParamPointLights`** places each Light event at the entity of `map.Regions[PointLightID]`, so moving the region moves the light, and lights it with row `UnkT04` of the area's PointLightBank:
+  - colour (rgb/255)^2.2, as BTL colours;
+  - intensity `colA`/100 × the map lighting's exposure;
+  - range `dwindleEnd`, full strength out to `dwindleBegin`.
+- **Sharing with BTL lights:** they go through the same camera radius, limit and sort. A selected event or region lights wherever it is.
+- **Falloff:** `SceneLight.FullStrengthRange` travels in the GPU light's unused `spot.w`. FlverShader's fade became (range − d) / (range − w), which is the old 1 − d / range when w is 0, so BTL lights are unchanged. The fade is still squared, as before.
+- **Menu:** the DES tab has a checkbox, "Light Events as Point Lights" (`CFG.Viewport_Map_DrawParam_Point_Lights`). The BTL Lights section's counts include these lights.
+
+Check in the app:
+- **m01_00_00_00 (the Nexus):** the candlesticks glow warm orange (255, 210, 110), each to 5 m. The Demon's Soul event (`デモンズソウル`) gives a blue light out to 15 m.
+- **m04_00_00_00 (Latria):** 162 lights, mostly candles reaching 4 m.
+- **Selection:** selecting a `燭台_…` region and dragging it should move its light.
+#### Phase 5c: follow-ups (2026-11-08; not yet checked in the app)
+
+- **MSB field renamed:** the MSBD Light event's `UnkT04` is now **`PointLightBankID`** (SoulsFormats, `Assets/MSB/DES/Meta/Event/Light.xml`, the collector and the tools).
+  - The metadata used to put the PointLightBank reference on `PointLightID`. That field is the region index, so it is now "Point Light Region Index" with no param link, and `PointLightBankID` carries the PointLightBank `ParamRef`.
+  - `PointLightID` keeps its property name.
+- **Unlit materials:** DES MTDs with `g_LightingType` 0 resolve as `MaterialSurface.Unlit` in `MaterialBank.ResolveDefinition`, so they draw their texture with no lighting, as the sky and flame materials of the other games do. That covers the sky, clouds, light shafts and additive effects. It's decided by the MTD param, because these materials share shader names (`DS_Phn_ColDif`) with lit ones.
+- **Lights follow their part in the editor:** a Light event's light is hidden while the part it names is hidden in the editor. The event stores the part as an index, which SoulsFormats reads back as `PartName`. Whether the game ties a light to its part's draw groups isn't in the data.
+- **Linear fade (the user's choice):** DES point lights fade in a straight line from `dwindleBegin` to `dwindleEnd` (`SceneLight.LinearFade`, sent as `spot.z` = 2). BTL lights keep the squared fade. The game's real curve is unverified; it would take decoding the RSX microcode of a `…PntS` fragment program.
+
+Check in the app:
+- **m01 (the Nexus):** the sky and the light shafts are no longer shaded by the sun or env (the shafts: `A03_light_shaft[Dn]_Add` in m03, `A04_light_shaft` in m04).
+- **Hiding a candlestick part** turns off its light.
+- **Candle light** reaches its full 5 m with a softer edge than before.
+
+#### Phase 5d: characters by their collision (2026-11-08; not yet checked in the app)
+
+Evidence from `Tools/DesEnvProbe` modes `enemycol`, `rownames` and `hemistats`:
+- **Enemies take their collision's row.** Each enemy names the collision it stands on (`CollisionName`, a part index in the file). In 1254 of the 1427 enemies that have one, their own LightID differs from the collision's. The enemies' own are mostly `0`, while the collisions point at the banks' **character rows, named キャラ**: m01's 61 `キャラ　地下世界` and 63 `キャラ　通常`, m02's 6 `B0キャラ（屋内）` (indoors) and 7 `B0キャラ（日陰）` (in shade), m05's 63 `キャラ`.
+- **Survey fix:** `DesDrawParamSurvey` keyed banks by the name after the first underscore, so each parambnd's `sAA_` banks overwrote its `mAA_` ones. It now reads only `mAA_`, and `survey.md` is regenerated. Only LightBank rows differed (m01 row 0's `_u`/`_d` 5/7 and env 300; m04 row 0; m06 row 1's light 0 at 40, not 80). The app always read `mAA_`.
+- **`_du`/`_dd` isn't the characters' hemisphere; Phase 5a's reading was wrong.** In the 61 character rows, `_du`/`_dd` is 0 in 45/43, while `_u`/`_d` is 0 in only 4/1 and light 0 never is. So characters use `_u`/`_d`, the same pair as the map. `_du`/`_dd` is unmapped again; it's also 0 in 147 of the 233 other named rows.
+
+As built:
+- **`GetPartLightId`:** an `EnemyBase` (enemies and dummy enemies) whose `CollisionName` is a collision of its own map takes that collision's LightID; everything else takes its own. It's used by `UpdatePartLighting` and by the menu's "Use Selected Part's Rows". The menu looks the collision up in the lit map, so an enemy of another loaded map keeps its own row there.
+- **Hemisphere:** the model set's hemisphere is `_u`/`_d` again.
+- **Players** have no `CollisionName` and keep their own LightID. Objects keep theirs too: m01's objects already use the character row 58.
+
+Check in the app:
+- **m05_00_00_00 (Valley of Defilement):** its 85 enemies on row-63 collisions (`キャラ`, sun from 80° at 170 %) are lit differently from the map pieces' row 0.
+- **m02_00_00_00:** enemies indoors (collision row 6, `屋内`: sun 15 %, env 20 %) are darker than those outside (row 5, `基本`, basic).
+
 ## Open questions
 
 | Question | How to settle |
 |---|---|
 | Rotation convention of `degRotX/Y` | Pitch settled from the data as the light's elevation (negated for GPARAM, see Phase 1 as built). The yaw's zero and sign are still open: compare the shadow direction in the Nexus (m01) with the game |
 | `_s` light: separate specular direction, or the sun's specular | Compare in the app on shiny materials (armour, m01 floor) |
-| `_du` / `_dd`: characters' hemisphere? | Light a character with and without; DS1 has no such pair |
+| `_du` / `_dd`: characters' hemisphere? | **No** (Phase 5d): it's 0 in most character rows, and characters use `_u`/`_d`. What it is remains open |
 | `colA` as % of intensity, or a scale whose 100 means 1.0 in HDR | Phase 1: m01's `colA_0` 260 against m04's 0 (lightmapped "焼付けあり" rows have low direct light) |
 | Fog `degRotW` = density % | Phase 3 in the app on m04 |
-| `envDif`/`envSpc` IDs → which textures | Survey `other/envlight.tpf` names against the IDs |
-| `PointLightID` and point light positions | Survey every Light event's part kind and model; look for a per-map light file |
-| Which part's IDs the game uses for the camera/scene (map pieces, or the collision the player is in) | Phase 4; the data says collisions differ for LightBank in 24 maps |
+| `envDif`/`envSpc` IDs → which textures | **Settled** (Phase 5): `EnvDif/EnvSpc_mAA_NNN` in `map/mAA/mAA_9999.tpf` |
+| `PointLightID` and point light positions | **Settled** (Phase 5b): the region at index `PointLightID`; the row is `PointLightBankID` (was `UnkT04`) |
+| Which part's IDs the game uses for characters | **Settled** (Phase 5d): enemies take their collision's LightID, whose rows are the character rows. Which row lights the camera/scene (the map's) stays the map pieces' most used |
+| Point light fade curve | Linear by choice (Phase 5c); the real curve needs the RSX microcode of a `…PntS` program |
+| `HemEnvLerp` shaders | Probably a blend between two env sets (moving between collisions); not modelled |

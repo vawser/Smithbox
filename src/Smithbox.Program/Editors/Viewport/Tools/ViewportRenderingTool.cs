@@ -920,6 +920,10 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_DrawParam_Env_Lighting);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Lighting_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Point_Lights")}##drawParamPointLights",
+            ref CFG.Current.Viewport_Map_DrawParam_Point_Lights);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Point_Lights_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part")}##drawParamPerPart",
             ref CFG.Current.Viewport_Map_DrawParam_Per_Part);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_TT"));
@@ -962,8 +966,10 @@ public class ViewportRenderingTool
             ImGui.BeginDisabled(part == null);
             if (ImGui.Button($"{LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part")}##drawParamFromPart") && part != null)
             {
+                var collisions = DrawParamLightingBank.GetCollisionsByName(map);
+
                 foreach (var bankName in DrawParamLightingBank.Banks)
-                    DrawParamLightingBank.ChosenRow(bankName) = DrawParamLightingBank.GetPartRow(part, bankName);
+                    DrawParamLightingBank.ChosenRow(bankName) = DrawParamLightingBank.GetPartRow(part, bankName, collisions);
             }
             ImGui.EndDisabled();
             GUI.Tooltip(part != null

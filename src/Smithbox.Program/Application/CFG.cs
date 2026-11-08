@@ -1383,6 +1383,10 @@ public class CFG
     // LightBank row's env cubemaps instead of the sun; off, they take the sun as characters do
     public bool Viewport_Map_DrawParam_Env_Lighting = true;
 
+    // Whether Demon's Souls' Light events light the viewport, at their region (PointLightID) as their PointLightBank
+    // row (PointLightBankID) gives it
+    public bool Viewport_Map_DrawParam_Point_Lights = true;
+
     // Whether the map lighting's colour correction (Demon's Souls' ToneCorrectBank) is drawn
     public bool Viewport_Post_Tone_Correction = true;
 
