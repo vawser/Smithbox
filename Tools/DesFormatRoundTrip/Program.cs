@@ -6,6 +6,119 @@ using System.Text;
 // exact = byte-identical; reread-equal = bytes differ but the re-read file has the same content (checked per format);
 // differs / write failed / reread failed otherwise.
 
+// paramstats <USRDIR>: the string-section layout of every DES param: where the header's strings offset points
+// against the end of the row data and the first name, zero name offsets, shared name offsets, trailing bytes
+if (args.Length > 0 && args[0] == "paramstats")
+{
+    var tally = new SortedDictionary<string, int>();
+    var samples = new Dictionary<string, string>();
+    void S(string k, string s) { tally[k] = tally.GetValueOrDefault(k) + 1; samples.TryAdd(k, s); }
+    var bnds = Directory.GetFiles(Path.Combine(args[1], "param", "gameparam"), "*.parambnd")
+        .Concat(Directory.GetFiles(Path.Combine(args[1], "param", "drawparam"), "*.parambnd"));
+    foreach (var bndPath in bnds)
+        foreach (var f in BND3.Read(bndPath).Files)
+        {
+            var name = $"{Path.GetFileName(bndPath)}/{Path.GetFileName(f.Name)}";
+            var d = f.Bytes.ToArray();
+            var br = new BinaryReaderEx(d[0x2C] == 0xFF, d);
+            uint strings = br.GetUInt32(0);
+            int dataStart = br.GetUInt16(4), rows = br.GetUInt16(0xA);
+            var dataOffs = Enumerable.Range(0, rows).Select(i => br.GetUInt32(0x30 + i * 12 + 4)).ToList();
+            var nameOffs = Enumerable.Range(0, rows).Select(i => br.GetUInt32(0x30 + i * 12 + 8)).ToList();
+            long rowSize = rows > 1 ? dataOffs[1] - dataOffs[0] : 0;
+            long dataEnd = rows > 0 ? dataOffs[^1] + rowSize : dataStart;
+            var nz = nameOffs.Where(n => n != 0).ToList();
+            long firstName = nz.Count > 0 ? nz.Min() : -1;
+            S($"format {d[0x2C]:X2} {d[0x2D]:X2} {d[0x2E]:X2} {d[0x2F]:X2}", name);
+            S($"first name - data end = {(firstName < 0 ? "no names" : (firstName - dataEnd).ToString())}", name);
+            S($"strings offset - first name = {(firstName < 0 ? "no names" : ((long)strings - firstName).ToString())}", $"{name}: strings 0x{strings:X} first name 0x{firstName:X} data end 0x{dataEnd:X}");
+            S($"strings offset - data end = {(long)strings - dataEnd}", $"{name}: strings 0x{strings:X} data end 0x{dataEnd:X}");
+            S($"zero name offsets: {(nameOffs.Any(n => n == 0) ? "some" : "none")}", name);
+            var dupNames = nz.GroupBy(n => n).Any(g => g.Count() > 1);
+            var sameText = nz.Select(n => br.GetShiftJIS(n)).GroupBy(t => t).Any(g => g.Count() > 1);
+            S($"shared offsets {dupNames}, repeated text {sameText}", name);
+            // Name ends in order; trailing bytes after the last name's terminator
+            if (nz.Count > 0)
+            {
+                long last = nz.Max();
+                long end = last; while (end < d.Length && d[end] != 0) end++; end++;
+                var trail = d.Length - end;
+                bool allZero = d.Skip((int)end).All(b => b == 0);
+                S($"trailing after last name: {trail} ({(allZero ? "zero" : "data")}), end%0x10={end % 0x10}", $"{name}: len 0x{d.Length:X} last name end 0x{end:X}");
+                bool ordered = nz.SequenceEqual(nz.OrderBy(n => n));
+                S($"names in row order: {ordered}", name);
+            }
+        }
+    foreach (var (k, v) in tally) Console.WriteLine($"{v,4}  {k}   e.g. {samples[k]}");
+    return;
+}
+
+// paramdump <parambnd> <param name> <paramdef folder>: header fields, row table and string layout, original next to rewritten
+if (args.Length > 0 && args[0] == "paramdump")
+{
+    var bnd = BND3.Read(args[1]);
+    var file = bnd.Files.First(f => Path.GetFileName(f.Name).Contains(args[2], StringComparison.OrdinalIgnoreCase));
+    var defsP = Directory.GetFiles(args[3], "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+    var orig = file.Bytes.ToArray();
+    var p = PARAM.Read(orig);
+    p.ApplyParamdefCarefully(defsP.First(d => d.ParamType == p.ParamType));
+    var w = p.Write();
+    foreach (var (label, data) in new[] { ("orig", orig), ("new", w) })
+    {
+        var br = new BinaryReaderEx(data[0x2C] == 0xFF, data);
+        int rows = br.GetUInt16(0xA);
+        Console.WriteLine($"[{label}] len {data.Length} strings 0x{br.GetUInt32(0):X} dataStart 0x{br.GetUInt16(4):X} unk06 {br.GetInt16(6)} ver {br.GetInt16(8)} rows {rows} format {data[0x2C]:X2} {data[0x2D]:X2} {data[0x2E]:X2} {data[0x2F]:X2}");
+        Console.WriteLine($"   0x00 {Convert.ToHexString(data, 0, 0x40)}");
+        int hdr = 0x30;
+        var names = new List<string>();
+        for (int i = 0; i < Math.Min(rows, 6); i++)
+        {
+            int o = hdr + i * 12;
+            uint nameOff = br.GetUInt32(o + 8);
+            names.Add($"{br.GetInt32(o)}: data 0x{br.GetUInt32(o + 4):X} name 0x{nameOff:X} '{(nameOff == 0 ? "(none)" : br.GetShiftJIS(nameOff))}'");
+        }
+        foreach (var n in names) Console.WriteLine($"   {n}");
+        int rowEnd = hdr + rows * 12;
+        Console.WriteLine($"   row table ends 0x{rowEnd:X}; bytes to data start: {Convert.ToHexString(data, rowEnd, Math.Max(0, Math.Min(0x40, br.GetUInt16(4) - rowEnd)))}");
+        var nameOffs = Enumerable.Range(0, rows).Select(i => br.GetUInt32(hdr + i * 12 + 8)).ToList();
+        Console.WriteLine($"   name offsets: {nameOffs.Count(n => n == 0)} zero, {nameOffs.Distinct().Count()} distinct of {rows}; min 0x{nameOffs.Where(n => n != 0).DefaultIfEmpty(0u).Min():X}");
+        int tail = Math.Max(0, data.Length - 0x30);
+        Console.WriteLine($"   tail {Convert.ToHexString(data, tail, data.Length - tail)}");
+    }
+    return;
+}
+
+// emptybnd <anibnd>: walks a BND3 whose header says 0 files (format 0x2E entries are 0x18 bytes) up to its
+// first name, and finds the Havok packfiles and time acts in the rest of the file
+if (args.Length > 0 && args[0] == "emptybnd")
+{
+    var bytes = File.ReadAllBytes(args[1]);
+    var br = new BinaryReaderEx(true, bytes);
+    Console.WriteLine($"{Path.GetFileName(args[1])}: {bytes.Length} bytes, version {Encoding.ASCII.GetString(bytes, 4, 8)}, format 0x{bytes[0xC]:X2}, count {br.GetInt32(0x10)}, header fields 0x14 {br.GetInt32(0x14):X}");
+    int firstName = int.MaxValue, entries = 0, nonZero = 0;
+    int stride = (bytes[0xC] & 0x20) != 0 ? 0x18 : 0x14;
+    for (int o = 0x20; o + stride <= bytes.Length && o < firstName; o += stride, entries++)
+    {
+        int csize = br.GetInt32(o + 4), off = br.GetInt32(o + 8), id = br.GetInt32(o + 12), name = br.GetInt32(o + 16), usize = stride == 0x18 ? br.GetInt32(o + 20) : 0;
+        if (name > 0 && name < firstName) firstName = name;
+        if (csize != 0 || off != 0 || id != 0 || usize != 0) nonZero++;
+        if (entries < 3) Console.WriteLine($"  entry {entries}: csize {csize} off 0x{off:X} id {id} name 0x{name:X} '{br.GetShiftJIS(name)}' usize {usize}");
+    }
+    Console.WriteLine($"  {entries} entries before the names at 0x{firstName:X}; {nonZero} with any size, offset or id");
+    var hits = new List<string>();
+    for (int i = 0; i + 8 <= bytes.Length; i += 4)
+    {
+        uint m = br.GetUInt32(i);
+        if (m == 0x57E0E057 && br.GetUInt32(i + 4) == 0x10C0C010) hits.Add($"hkx@0x{i:X}");
+        else if (m == 0x54414520) hits.Add($"TAE@0x{i:X}");
+    }
+    Console.WriteLine($"  {hits.Count} files found: {string.Join(" ", hits.Take(12))}{(hits.Count > 12 ? " ..." : "")}");
+    int lastName = firstName;
+    while (lastName < bytes.Length && (bytes[lastName] != 0 || (lastName + 1 < bytes.Length && bytes[lastName + 1] != 0))) lastName++;
+    Console.WriteLine($"  names end near 0x{lastName:X}; first file data at {(hits.Count > 0 ? hits[0] : "none")}");
+    return;
+}
+
 // taegame <chr folder> <label>: the TAE roundtrip over another game's loose anibnds, for checking that the
 // shared TAE code still writes them as before
 if (args.Length > 0 && args[0] == "taegame")
@@ -151,6 +264,18 @@ foreach (var bndPath in paramBnds)
                 return p;
             },
             p => p.Write(), CompareParam);
+
+        // The class the Param Editor loads and saves with (ParamBank.LoadParameters_DES / SaveParameters_DES)
+        Check("PARAM (editor, Andre.Formats)", name, f.Bytes.ToArray(),
+            b =>
+            {
+                var p = Andre.Formats.Param.Read(b);
+                var def = defs.FirstOrDefault(d => d.ParamType == p.ParamType);
+                if (def == null) throw new InvalidDataException($"no paramdef for {p.ParamType}");
+                p.ApplyParamdef(def);
+                return p;
+            },
+            p => p.Write(), CompareAndreParam);
     }
     // The binder itself
     Check("BND3 (parambnd)", Path.GetFileName(bndPath), File.ReadAllBytes(bndPath), b => BND3.Read(b), x => x.Write(), CompareBnd);
@@ -324,6 +449,24 @@ static string CompareMsb(MSBD a, MSBD b)
     var pa = la.Parts.GetEntries(); var pb = lb.Parts.GetEntries();
     for (int i = 0; i < pa.Count; i++)
         if (pa[i].Name != pb[i].Name || pa[i].Position != pb[i].Position || pa[i].ModelName != pb[i].ModelName) return $"parts: {i} {pa[i].Name}";
+    return null;
+}
+
+static string CompareAndreParam(Andre.Formats.Param a, Andre.Formats.Param b)
+{
+    if (a.Rows.Count != b.Rows.Count) return "rows: count";
+    for (int r = 0; r < a.Rows.Count; r++)
+    {
+        var x = a.Rows[r]; var y = b.Rows[r];
+        if (x.ID != y.ID) return $"rows: id {r}";
+        if (x.Name != y.Name) return $"rows: name {x.ID} '{x.Name}' -> '{y.Name}'";
+        for (int c = 0; c < x.Cells.Count; c++)
+        {
+            var vx = x.Cells[c].Value; var vy = y.Cells[c].Value;
+            if (!Equals(vx, vy) && !(vx is byte[] bx && vy is byte[] by && bx.SequenceEqual(by)))
+                return $"cells: {x.ID} {x.Cells[c].Def.InternalName}";
+        }
+    }
     return null;
 }
 

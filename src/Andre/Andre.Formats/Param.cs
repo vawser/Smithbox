@@ -120,6 +120,16 @@ public class Param : SoulsFile<Param>
 
     private StridedByteArray _paramData = new(0, 1);
 
+    /// <summary>
+    ///     The read file had the Demon's Souls name layout (every DeS param does): names start right after the row
+    ///     data, in row order, one copy per row and none for an unnamed row (name offset 0), with no empty string at the
+    ///     end. The header's strings offset is <see cref="_legacyStringsPadding" /> bytes past the row data, and the
+    ///     file ends with that many zero bytes. Such a param is written back the same way.
+    /// </summary>
+    private bool _legacyNameLayout;
+
+    private int _legacyStringsPadding;
+
     private List<Row> _rows = new();
 
     /// <summary>
@@ -659,6 +669,7 @@ public class Param : SoulsFile<Param>
         }
 
         Rows = new List<Row>(rowCount);
+        var nameOffsets = new List<long>(rowCount);
         for (var i = 0; i < rowCount; i++)
         {
             long nameOffset;
@@ -691,6 +702,7 @@ public class Param : SoulsFile<Param>
             }
 
             _rows.Add(new Row(id, name, this, dataIndex));
+            nameOffsets.Add(nameOffset);
         }
 
         if (Rows.Count > 1)
@@ -725,10 +737,57 @@ public class Param : SoulsFile<Param>
             }
         }
 
+        DetectLegacyNameLayout(br, stringsOffset, dataStart, nameOffsets);
+
         if (ParamType == "SOUND_CUTSCENE_PARAM_ST" && ParamdefDataVersion == 6 && RowSize == 32)
         {
             FixupERSoundCutsceneParam();
         }
+    }
+
+    /// <summary>
+    ///     Checks whether the file has the Demon's Souls name layout (see <see cref="_legacyNameLayout" />). Only
+    ///     big-endian params with 32-bit offsets and Shift-JIS names are considered; anything else, or any departure from
+    ///     the layout, keeps the usual writer.
+    /// </summary>
+    private void DetectLegacyNameLayout(BinaryReaderEx br, long stringsOffset, uint dataStart, List<long> nameOffsets)
+    {
+        _legacyNameLayout = false;
+        _legacyStringsPadding = 0;
+
+        if (!BigEndian || Format2D.HasFlag(FormatFlags1.OffsetParamType) ||
+            Format2D.HasFlag(FormatFlags1.LongDataOffset) || Format2E.HasFlag(FormatFlags2.UnicodeRowNames))
+            return;
+
+        long dataEnd = Rows.Count > 0 ? dataStart + (long)Rows.Count * RowSize : stringsOffset;
+        long padding = stringsOffset - dataEnd;
+        if (padding < 0 || padding >= 0x10)
+            return;
+
+        // Names in row order from the end of the row data, each right after the one before, none shared
+        long position = dataEnd;
+        foreach (var offset in nameOffsets)
+        {
+            if (offset == 0)
+                continue;
+            if (offset != position)
+                return;
+            while (position < br.Length && br.GetByte(position) != 0)
+                position++;
+            position++; // terminator
+        }
+
+        // Then exactly the padding, all zero, to the end of the file
+        if (br.Length - position != padding)
+            return;
+        for (long i = position; i < br.Length; i++)
+        {
+            if (br.GetByte(i) != 0)
+                return;
+        }
+
+        _legacyNameLayout = true;
+        _legacyStringsPadding = (int)padding;
     }
 
     protected override void Write(BinaryWriterEx bw)
@@ -827,6 +886,12 @@ public class Param : SoulsFile<Param>
             bw.WriteBytes(data);
         }
 
+        if (_legacyNameLayout)
+        {
+            WriteLegacyNames(bw);
+            return;
+        }
+
         bw.FillUInt32("StringsOffset", (uint)bw.Position);
 
         if (Format2D.HasFlag(FormatFlags1.OffsetParamType))
@@ -861,6 +926,28 @@ public class Param : SoulsFile<Param>
         }
 
         bw.WriteInt16(0); //FS Seems to end their params with an empty string
+    }
+
+    /// <summary>
+    ///     Writes the names in the Demon's Souls layout, from the end of the row data (see <see cref="_legacyNameLayout" />)
+    /// </summary>
+    private void WriteLegacyNames(BinaryWriterEx bw)
+    {
+        bw.FillUInt32("StringsOffset", (uint)(bw.Position + _legacyStringsPadding));
+
+        for (var i = 0; i < Rows.Count; i++)
+        {
+            long nameOffset = 0;
+            if (Rows[i].Name != null)
+            {
+                nameOffset = bw.Position;
+                bw.WriteShiftJIS(Rows[i].Name, true);
+            }
+
+            bw.FillUInt32($"NameOffset{i}", (uint)nameOffset);
+        }
+
+        bw.WritePattern(_legacyStringsPadding, 0x00);
     }
 
     /// <summary>
