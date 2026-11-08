@@ -1403,6 +1403,7 @@ namespace SoulsFormats
                     Unk88Data = new Unk88Struct();
                     TileData = new TileStruct();
                     UnkA8Data = new UnkA8Struct();
+                    Unk78Data = new EnemyUnk78Struct();
                 }
                 private protected EnemyBase(BinaryReaderEx br) : base(br) { }
                 private protected override void DeepCopyTo(Part part)
@@ -1414,6 +1415,9 @@ namespace SoulsFormats
                     enemy.Unk88Data = Unk88Data.DeepCopy();
                     enemy.TileData = TileData.DeepCopy();
                     enemy.UnkA8Data = UnkA8Data.DeepCopy();
+                    enemy.Unk78Data = Unk78Data.DeepCopy();
+                    enemy.CondemnedSpEffectSetParamIds = (int[])CondemnedSpEffectSetParamIds.Clone();
+                    enemy.SpEffectSetParamIds = (int[])SpEffectSetParamIds.Clone();
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
@@ -1560,11 +1564,24 @@ namespace SoulsFormats
 
                 public class EnemyUnk78Struct
                 {
-                    public EnemyUnk78Struct() { }
+                    public EnemyUnk78Struct()
+                    {
+                        InnerStruct1 = new EnemyInnerStruct();
+                        InnerStruct2 = new EnemyInnerStruct();
+                        InnerStruct3 = new EnemyInnerStruct();
+                        InnerStruct4 = new EnemyInnerStruct();
+                        InnerStruct5 = new EnemyInnerStruct();
+                    }
 
                     public EnemyUnk78Struct DeepCopy()
                     {
-                        return (EnemyUnk78Struct)MemberwiseClone();
+                        var copy = (EnemyUnk78Struct)MemberwiseClone();
+                        copy.InnerStruct1 = InnerStruct1.DeepCopy();
+                        copy.InnerStruct2 = InnerStruct2.DeepCopy();
+                        copy.InnerStruct3 = InnerStruct3.DeepCopy();
+                        copy.InnerStruct4 = InnerStruct4.DeepCopy();
+                        copy.InnerStruct5 = InnerStruct5.DeepCopy();
+                        return copy;
                     }
 
                     internal EnemyUnk78Struct(BinaryReaderEx br)

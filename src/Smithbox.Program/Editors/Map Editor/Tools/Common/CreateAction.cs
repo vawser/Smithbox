@@ -37,7 +37,22 @@ public class CreateAction
         View = view;
         Project = project;
 
+        // The type flags persist in the config, so the combo has to start on the one they select
+        TargetBaseType = CFG.Current.Toolbar_Create_Light ? CreateTargetType.Light
+            : CFG.Current.Toolbar_Create_Region ? CreateTargetType.Region
+            : CFG.Current.Toolbar_Create_Event ? CreateTargetType.Event
+            : CreateTargetType.Part;
+        SetTargetBaseType(TargetBaseType);
+
         PopulateClassNames();
+    }
+
+    private static void SetTargetBaseType(CreateTargetType type)
+    {
+        CFG.Current.Toolbar_Create_Part = type == CreateTargetType.Part;
+        CFG.Current.Toolbar_Create_Region = type == CreateTargetType.Region;
+        CFG.Current.Toolbar_Create_Event = type == CreateTargetType.Event;
+        CFG.Current.Toolbar_Create_Light = type == CreateTargetType.Light;
     }
 
     /// <summary>
@@ -114,34 +129,7 @@ public class CreateAction
                 if (ImGui.Selectable(curType.GetDisplayName(), TargetBaseType == curType))
                 {
                     TargetBaseType = curType;
-
-                    switch(TargetBaseType)
-                    {
-                        case CreateTargetType.Part:
-                            CFG.Current.Toolbar_Create_Part = true;
-                            CFG.Current.Toolbar_Create_Region = false;
-                            CFG.Current.Toolbar_Create_Event = false;
-                            CFG.Current.Toolbar_Create_Light = false;
-                            break;
-                        case CreateTargetType.Region:
-                            CFG.Current.Toolbar_Create_Part = false;
-                            CFG.Current.Toolbar_Create_Region = true;
-                            CFG.Current.Toolbar_Create_Event = false;
-                            CFG.Current.Toolbar_Create_Light = false;
-                            break;
-                        case CreateTargetType.Event:
-                            CFG.Current.Toolbar_Create_Part = false;
-                            CFG.Current.Toolbar_Create_Region = false;
-                            CFG.Current.Toolbar_Create_Event = true;
-                            CFG.Current.Toolbar_Create_Light = false;
-                            break;
-                        case CreateTargetType.Light:
-                            CFG.Current.Toolbar_Create_Part = false;
-                            CFG.Current.Toolbar_Create_Region = false;
-                            CFG.Current.Toolbar_Create_Event = false;
-                            CFG.Current.Toolbar_Create_Light = true;
-                            break;
-                    }
+                    SetTargetBaseType(curType);
                 }
             }
 
@@ -157,15 +145,18 @@ public class CreateAction
             return;
 
 
-        if (CFG.Current.Toolbar_Create_Light)
+        if (TargetBaseType == CreateTargetType.Light)
+        {
+            DisplayBtlSelection(map);
             return;
+        }
 
         GUI.Spacer();
         GUI.SimpleHeader("Sub Type", "The sub type of the map object to create.");
 
         GUI.SetInputWidth();
 
-        if (CFG.Current.Toolbar_Create_Part)
+        if (TargetBaseType == CreateTargetType.Part)
         {
             var previewName = "None";
             if(CreatePartSelectedType != null)
@@ -188,7 +179,7 @@ public class CreateAction
                 ImGui.EndCombo();
             }
         }
-        else if (CFG.Current.Toolbar_Create_Region)
+        else if (TargetBaseType == CreateTargetType.Region)
         {
             var previewName = "None";
             if (CreateRegionSelectedType != null)
@@ -211,7 +202,7 @@ public class CreateAction
                 ImGui.EndCombo();
             }
         }
-        else if (CFG.Current.Toolbar_Create_Event)
+        else if (TargetBaseType == CreateTargetType.Event)
         {
             var previewName = "None";
             if (CreateEventSelectedType != null)
@@ -233,6 +224,47 @@ public class CreateAction
 
                 ImGui.EndCombo();
             }
+        }
+    }
+
+    /// <summary>
+    /// A BTL picked for an earlier target map belongs to that map, so it only counts if this map has it.
+    /// A map with a single BTL needs no pick.
+    /// </summary>
+    private Entity ResolveTargetBtl(MapContainer map)
+    {
+        if (TargetBTL.Item2 != null && map.BTLParents.Contains(TargetBTL.Item2))
+            return TargetBTL.Item2;
+
+        return map.BTLParents.Count == 1 ? map.BTLParents[0] : null;
+    }
+
+    private void DisplayBtlSelection(MapContainer map)
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader("Target Lights", "The BTL file to create the new light in.");
+
+        if (map.BTLParents.Count == 0)
+        {
+            GUI.WrappedText("This map has no BTL files loaded.");
+            return;
+        }
+
+        var current = ResolveTargetBtl(map);
+
+        GUI.SetInputWidth();
+        if (ImGui.BeginCombo("##targetBtl", current != null ? (string)current.WrappedObject : "None"))
+        {
+            foreach (Entity btl in map.BTLParents)
+            {
+                var btlName = (string)btl.WrappedObject;
+                if (ImGui.Selectable(btlName, btl == current))
+                {
+                    TargetBTL = (btlName, btl);
+                }
+            }
+
+            ImGui.EndCombo();
         }
     }
 
@@ -269,42 +301,50 @@ public class CreateAction
             return;
         }
 
-        if (CFG.Current.Toolbar_Create_Light)
+        switch (TargetBaseType)
         {
-            foreach (Entity btl in map.BTLParents)
-            {
+            case CreateTargetType.Light:
+                var btl = ResolveTargetBtl(map);
+                if (btl == null)
+                {
+                    Smithbox.LogError<CreateAction>(map.BTLParents.Count == 0
+                        ? "The target map has no BTL files loaded."
+                        : "No BTL has been targeted. Pick one in the Create tool first.");
+                    return;
+                }
+
                 AddNewEntity(typeof(BTL.Light), MsbEntityType.Light, map, btl);
-            }
-        }
-        if (CFG.Current.Toolbar_Create_Part)
-        {
-            if (CreatePartSelectedType == null)
-            {
-                Smithbox.LogError<CreateAction>("No part type has been selected.");
-                return;
-            }
+                break;
 
-            AddNewEntity(CreatePartSelectedType, MsbEntityType.Part, map);
-        }
-        if (CFG.Current.Toolbar_Create_Region)
-        {
-            if (CreateRegionSelectedType == null)
-            {
-                Smithbox.LogError<CreateAction>("No region type has been selected.");
-                return;
-            }
+            case CreateTargetType.Part:
+                if (CreatePartSelectedType == null)
+                {
+                    Smithbox.LogError<CreateAction>("No part type has been selected.");
+                    return;
+                }
 
-            AddNewEntity(CreateRegionSelectedType, MsbEntityType.Region, map);
-        }
-        if (CFG.Current.Toolbar_Create_Event)
-        {
-            if (CreateEventSelectedType == null)
-            {
-                Smithbox.LogError<CreateAction>("No event type has been selected.");
-                return;
-            }
+                AddNewEntity(CreatePartSelectedType, MsbEntityType.Part, map);
+                break;
 
-            AddNewEntity(CreateEventSelectedType, MsbEntityType.Event, map);
+            case CreateTargetType.Region:
+                if (CreateRegionSelectedType == null)
+                {
+                    Smithbox.LogError<CreateAction>("No region type has been selected.");
+                    return;
+                }
+
+                AddNewEntity(CreateRegionSelectedType, MsbEntityType.Region, map);
+                break;
+
+            case CreateTargetType.Event:
+                if (CreateEventSelectedType == null)
+                {
+                    Smithbox.LogError<CreateAction>("No event type has been selected.");
+                    return;
+                }
+
+                AddNewEntity(CreateEventSelectedType, MsbEntityType.Event, map);
+                break;
         }
 
         View.DelayPicking();
@@ -398,23 +438,64 @@ public class CreateAction
         }
 
         Type partType = msbclass.GetNestedType("Part");
-        List<Type> partSubclasses = msbclass.Assembly.GetTypes()
-            .Where(type => type.IsSubclassOf(partType) && !type.IsAbstract).ToList();
-        PartsClasses = partSubclasses.Select(x => (x.Name, x)).ToList();
+        PartsClasses = SavableSubclasses(msbclass, partType, msb => msb.Parts.GetEntries(),
+            (msb, e) => msb.Parts.Add((IMsbPart)e));
 
         Type regionType = msbclass.GetNestedType("Region");
-        List<Type> regionSubclasses = msbclass.Assembly.GetTypes()
-            .Where(type => type.IsSubclassOf(regionType) && !type.IsAbstract).ToList();
-        RegionClasses = regionSubclasses.Select(x => (x.Name, x)).ToList();
+        RegionClasses = SavableSubclasses(msbclass, regionType, msb => msb.Regions.GetEntries(),
+            (msb, e) => msb.Regions.Add((IMsbRegion)e));
         if (RegionClasses.Count == 0)
         {
             RegionClasses.Add(("Region", regionType));
         }
 
         Type eventType = msbclass.GetNestedType("Event");
-        List<Type> eventSubclasses = msbclass.Assembly.GetTypes()
-            .Where(type => type.IsSubclassOf(eventType) && !type.IsAbstract).ToList();
-        EventClasses = eventSubclasses.Select(x => (x.Name, x)).ToList();
+        EventClasses = SavableSubclasses(msbclass, eventType, msb => msb.Events.GetEntries(),
+            (msb, e) => msb.Events.Add((IMsbEvent)e));
+    }
+
+    /// <summary>
+    /// The subclasses of an MSB entry type that the MSB can save. Some formats declare types their params do not
+    /// handle (NR has regions its Add rejects, and an event its Add takes but never writes), so each type is
+    /// added to an empty MSB and kept only if it can be built and comes back out of GetEntries.
+    /// </summary>
+    private static List<(string, Type)> SavableSubclasses<T>(Type msbclass, Type baseType,
+        Func<IMsb, IEnumerable<T>> getEntries, Action<IMsb, object> add) where T : IMsbEntry
+    {
+        var types = msbclass.Assembly.GetTypes()
+            .Where(type => type.IsSubclassOf(baseType) && !type.IsAbstract).ToList();
+
+        IMsb probe = null;
+        try
+        {
+            probe = Activator.CreateInstance(msbclass) as IMsb;
+        }
+        catch { }
+
+        // Without a probe MSB nothing can be checked, so everything is offered as before
+        if (probe == null)
+            return types.Select(x => (x.Name, x)).ToList();
+
+        var result = new List<(string, Type)>();
+        foreach (var type in types)
+        {
+            try
+            {
+                var entry = type.GetConstructor(Type.EmptyTypes)?.Invoke(null);
+                if (entry == null)
+                    continue;
+
+                add(probe, entry);
+
+                if (getEntries(probe).Any(x => ReferenceEquals(x, entry)))
+                {
+                    result.Add((type.Name, type));
+                }
+            }
+            catch { }
+        }
+
+        return result;
     }
 }
 

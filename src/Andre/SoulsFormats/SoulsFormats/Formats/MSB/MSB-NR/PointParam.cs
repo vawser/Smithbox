@@ -1162,7 +1162,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public sbyte[] ConnectionMapID { get; set; }
+                public sbyte[] ConnectionMapID { get; set; } = new sbyte[4];
                 public int Unk04 { get; set; } = 0;
                 public int Unk08 { get; set; } = 0;
                 public int Unk0C { get; set; } = 0;

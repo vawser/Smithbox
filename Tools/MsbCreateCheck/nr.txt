@@ -1,0 +1,236 @@
+NR: 403 MSBs found, checking 3
+Read failures: 0/403
+Part types offered: 8
+Region types offered: 51
+Event types offered: 16
+
+== /map/mapstudio/m10_00_00_00.msb
+ok      Part.MapPiece
+ok      Part.Enemy
+ok      Part.Player
+ok      Part.Collision
+ok      Part.DummyAsset
+ok      Part.DummyEnemy
+ok      Part.ConnectCollision
+ok      Part.Asset
+ok      Region.EntryPoint
+ok      Region.EnvMapPoint
+ok      Region.RespawnPoint
+ok      Region.Sound
+ok      Region.SFX
+ok      Region.WindSFX
+ok      Region.ReturnPoint
+ok      Region.Message
+ok      Region.EnvMapEffectBox
+ok      Region.WindPlacement
+ok      Region.MapConnection
+ok      Region.SourceWaypoint
+FAIL    Region.StaticWaypoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+StaticWaypoint. (Parameter 'region')
+FAIL    Region.MapGridLayerConnection at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapGridLayerConnection. (Parameter 'region')
+FAIL    Region.EnemySpawnPoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+EnemySpawnPoint. (Parameter 'region')
+ok      Region.BuddySummonPoint
+ok      Region.RollingObjectOverride
+ok      Region.MufflingBox
+ok      Region.MufflingPortal
+ok      Region.SoundOverride
+ok      Region.MufflingPlane
+ok      Region.PatrolPoint
+FAIL    Region.SoundState at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+SoundState. (Parameter 'region')
+ok      Region.MapPoint
+ok      Region.MapInfoOverride
+ok      Region.AutoDrawGroupSample
+ok      Region.MassPlacement
+ok      Region.MapPointDiscoveryOverride
+ok      Region.MapPointParticipationOverride
+ok      Region.HitSetting
+ok      Region.FastTravelOverride
+ok      Region.WeatherAssetGeneration
+ok      Region.PlayArea
+ok      Region.MidRangeEnvMapOutput
+FAIL    Region.MapVisibilityOverride at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapVisibilityOverride. (Parameter 'region')
+ok      Region.BigJump
+FAIL    Region.OpenCharacterActivateLimit at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+OpenCharacterActivateLimit. (Parameter 'region')
+ok      Region.SoundDummy
+ok      Region.FallPreventionOverride
+ok      Region.NavmeshCutting
+ok      Region.MapNameOverride
+ok      Region.BigJumpExit
+ok      Region.MountOverride
+ok      Region.SmallBaseAttach
+ok      Region.BirdRoute
+ok      Region.ClearInfo
+ok      Region.RespawnOverride
+ok      Region.UserEdgeRemovalInner
+ok      Region.UserEdgeRemovalOuter
+ok      Region.BigJumpSealable
+ok      Region.Other
+ok      Event.Treasure
+ok      Event.Generator
+ok      Event.ObjAct
+ok      Event.MapOffset
+ok      Event.PseudoMultiplayer
+ok      Event.PatrolInfo
+ok      Event.PlatoonInfo
+ok      Event.PatrolRoute
+ok      Event.Riding
+LOST    Event.AutoDrawGroup: written, but not in the file read back
+ok      Event.SignPuddle
+ok      Event.RetryPoint
+ok      Event.BirdRoute
+ok      Event.TalkInfo
+ok      Event.TeamFight
+ok      Event.Other
+
+== /map/mapstudio/m10_00_00_00.msb.dcx
+ok      Part.MapPiece
+ok      Part.Enemy
+ok      Part.Player
+ok      Part.Collision
+ok      Part.DummyAsset
+ok      Part.DummyEnemy
+ok      Part.ConnectCollision
+ok      Part.Asset
+ok      Region.EntryPoint
+ok      Region.EnvMapPoint
+ok      Region.RespawnPoint
+ok      Region.Sound
+ok      Region.SFX
+ok      Region.WindSFX
+ok      Region.ReturnPoint
+ok      Region.Message
+ok      Region.EnvMapEffectBox
+ok      Region.WindPlacement
+ok      Region.MapConnection
+ok      Region.SourceWaypoint
+FAIL    Region.StaticWaypoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+StaticWaypoint. (Parameter 'region')
+FAIL    Region.MapGridLayerConnection at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapGridLayerConnection. (Parameter 'region')
+FAIL    Region.EnemySpawnPoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+EnemySpawnPoint. (Parameter 'region')
+ok      Region.BuddySummonPoint
+ok      Region.RollingObjectOverride
+ok      Region.MufflingBox
+ok      Region.MufflingPortal
+ok      Region.SoundOverride
+ok      Region.MufflingPlane
+ok      Region.PatrolPoint
+FAIL    Region.SoundState at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+SoundState. (Parameter 'region')
+ok      Region.MapPoint
+ok      Region.MapInfoOverride
+ok      Region.AutoDrawGroupSample
+ok      Region.MassPlacement
+ok      Region.MapPointDiscoveryOverride
+ok      Region.MapPointParticipationOverride
+ok      Region.HitSetting
+ok      Region.FastTravelOverride
+ok      Region.WeatherAssetGeneration
+ok      Region.PlayArea
+ok      Region.MidRangeEnvMapOutput
+FAIL    Region.MapVisibilityOverride at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapVisibilityOverride. (Parameter 'region')
+ok      Region.BigJump
+FAIL    Region.OpenCharacterActivateLimit at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+OpenCharacterActivateLimit. (Parameter 'region')
+ok      Region.SoundDummy
+ok      Region.FallPreventionOverride
+ok      Region.NavmeshCutting
+ok      Region.MapNameOverride
+ok      Region.BigJumpExit
+ok      Region.MountOverride
+ok      Region.SmallBaseAttach
+ok      Region.BirdRoute
+ok      Region.ClearInfo
+ok      Region.RespawnOverride
+ok      Region.UserEdgeRemovalInner
+ok      Region.UserEdgeRemovalOuter
+ok      Region.BigJumpSealable
+ok      Region.Other
+ok      Event.Treasure
+ok      Event.Generator
+ok      Event.ObjAct
+ok      Event.MapOffset
+ok      Event.PseudoMultiplayer
+ok      Event.PatrolInfo
+ok      Event.PlatoonInfo
+ok      Event.PatrolRoute
+ok      Event.Riding
+LOST    Event.AutoDrawGroup: written, but not in the file read back
+ok      Event.SignPuddle
+ok      Event.RetryPoint
+ok      Event.BirdRoute
+ok      Event.TalkInfo
+ok      Event.TeamFight
+ok      Event.Other
+
+== /map/mapstudio/m10_00_00_99.msb.dcx
+ok      Part.MapPiece
+ok      Part.Enemy
+ok      Part.Player
+ok      Part.Collision
+ok      Part.DummyAsset
+ok      Part.DummyEnemy
+ok      Part.ConnectCollision
+ok      Part.Asset
+ok      Region.EntryPoint
+ok      Region.EnvMapPoint
+ok      Region.RespawnPoint
+ok      Region.Sound
+ok      Region.SFX
+ok      Region.WindSFX
+ok      Region.ReturnPoint
+ok      Region.Message
+ok      Region.EnvMapEffectBox
+ok      Region.WindPlacement
+ok      Region.MapConnection
+ok      Region.SourceWaypoint
+FAIL    Region.StaticWaypoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+StaticWaypoint. (Parameter 'region')
+FAIL    Region.MapGridLayerConnection at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapGridLayerConnection. (Parameter 'region')
+FAIL    Region.EnemySpawnPoint at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+EnemySpawnPoint. (Parameter 'region')
+ok      Region.BuddySummonPoint
+ok      Region.RollingObjectOverride
+ok      Region.MufflingBox
+ok      Region.MufflingPortal
+ok      Region.SoundOverride
+ok      Region.MufflingPlane
+ok      Region.PatrolPoint
+FAIL    Region.SoundState at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+SoundState. (Parameter 'region')
+ok      Region.MapPoint
+ok      Region.MapInfoOverride
+ok      Region.AutoDrawGroupSample
+ok      Region.MassPlacement
+ok      Region.MapPointDiscoveryOverride
+ok      Region.MapPointParticipationOverride
+ok      Region.HitSetting
+ok      Region.FastTravelOverride
+ok      Region.WeatherAssetGeneration
+ok      Region.PlayArea
+ok      Region.MidRangeEnvMapOutput
+FAIL    Region.MapVisibilityOverride at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+MapVisibilityOverride. (Parameter 'region')
+ok      Region.BigJump
+FAIL    Region.OpenCharacterActivateLimit at add: ArgumentException Unrecognized type SoulsFormats.MSB_NR+Region+OpenCharacterActivateLimit. (Parameter 'region')
+ok      Region.SoundDummy
+ok      Region.FallPreventionOverride
+ok      Region.NavmeshCutting
+ok      Region.MapNameOverride
+ok      Region.BigJumpExit
+ok      Region.MountOverride
+ok      Region.SmallBaseAttach
+ok      Region.BirdRoute
+ok      Region.ClearInfo
+ok      Region.RespawnOverride
+ok      Region.UserEdgeRemovalInner
+ok      Region.UserEdgeRemovalOuter
+ok      Region.BigJumpSealable
+ok      Region.Other
+ok      Event.Treasure
+ok      Event.Generator
+ok      Event.ObjAct
+ok      Event.MapOffset
+ok      Event.PseudoMultiplayer
+ok      Event.PatrolInfo
+ok      Event.PlatoonInfo
+ok      Event.PatrolRoute
+ok      Event.Riding
+LOST    Event.AutoDrawGroup: written, but not in the file read back
+ok      Event.SignPuddle
+ok      Event.RetryPoint
+ok      Event.BirdRoute
+ok      Event.TalkInfo
+ok      Event.TeamFight
+ok      Event.Other
