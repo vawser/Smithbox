@@ -3,6 +3,7 @@
 #----------------------------------------------------
 - See what can be applied backwards to SDT/BB/DS3/DS2/DS1R
 - Work on refining the DS3 rendering elements (too dark in Game mode)
+- Refine DES
 
 - DS3: some chrs missing textures: c1280
 - DS3: non-map external resource usage: m903400
@@ -12,6 +13,7 @@
 - ER: Waterfall textures look a bit simple
 - AC6 chrs missing textures
 - NR: various assets missing textures (AEG576_127, AEG576_111)
+- ER: AEG007_183: extremely bright glow
 
 - Small issues:
  - ER: z-fighting on m004500 for decal textures

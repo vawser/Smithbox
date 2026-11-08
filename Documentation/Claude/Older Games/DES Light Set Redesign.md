@@ -1,7 +1,8 @@
 # DES Light Set Redesign
 
-Status (2026-11-08): **light sets disabled; the user confirmed in-app that the crash is gone.** So the crash is in the
-light-set code itself. Which candidate below triggers it is still open. The redesign below is proposed, not built.
+Status (2026-11-08): **redesign complete. All four phases are built and confirmed in the app**, and DES per-part
+lighting and env lighting are back without the crash. Which candidate below was the trigger was never isolated; the
+new design avoids all of them.
 
 Related: `DES DrawParam Lighting Plan.md` (Phases 4 and 5a, which this disables), `DES Model Display.md`.
 
@@ -210,7 +211,7 @@ do that.
 - **Checks:** `SceneParamsAudit --csharp` agrees at 368 bytes, and the compiled offsets match in all 17
   `sceneLighting` shaders.
 
-### Phase 4 as built (2026-11-08; not yet checked in the app)
+### Phase 4 as built (2026-11-08; checked in the app by the user: per-part lighting works)
 
 - **`Shaders/InstanceData.glsl`:** the one `instanceData` struct and `WorldBuffer` declaration (set 1, binding 0),
   in place of 16 identical copies (`SceneParamsAudit --instance-apply`). Its new lane is `uvec4 lighting`, where
