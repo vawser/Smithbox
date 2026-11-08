@@ -44,11 +44,22 @@
     <f32 />
     <f32 />
   </action>
-  <action id="16" name="Blend" />
+  <!-- Every DES time act gives Blend 16 bytes of parameters, all zero; without them a save shortens each event -->
+  <action id="16" name="Blend">
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
+  </action>
+  <!-- Every DES time act gives this event 32 bytes; the last 16 are zero -->
   <action id="24" name="QueueTransitionAnimation">
     <s32 name="Playback Type" enum="Playback_Type" />
     <s32 name="Destination Anim ID" />
     <s32 name="Transition Anim ID" />
+    <s32 />
+    <s32 />
+    <s32 />
+    <s32 />
     <s32 />
   </action>
   <action id="32" name="SetWeaponStyle">

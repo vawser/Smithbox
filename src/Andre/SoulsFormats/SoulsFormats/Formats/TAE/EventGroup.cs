@@ -67,6 +67,12 @@ namespace SoulsFormats
                 indices = new List<int>();
             }
 
+            /// <summary>
+            /// Whether the group has its data struct. Read groups keep what the file had: DES cutscene entity groups
+            /// have none (data offset 0). New groups write it.
+            /// </summary>
+            private bool HasDataStruct = true;
+
             internal EventGroup(BinaryReaderEx br, List<long> eventHeaderOffsets, TAEFormat format)
             {
                 long entryCount = br.ReadVarint();
@@ -74,6 +80,10 @@ namespace SoulsFormats
                 long typeOffset = br.ReadVarint();
                 if (format != TAEFormat.DS1 && format != TAEFormat.DESR)
                     br.AssertVarint(0);
+
+                // DES group headers are 0x20 long: the four fields, then 16 zero bytes
+                if (format == TAEFormat.DES)
+                    br.AssertPattern(0x10, 0);
 
                 br.StepIn(typeOffset);
                 {
@@ -94,6 +104,7 @@ namespace SoulsFormats
                     {
                         GroupData.DataType = (EventGroupDataType)GroupType;
                         long dataOffset = br.ReadVarint();
+                        HasDataStruct = dataOffset != 0;
                         if (dataOffset != 0)
                         {
                             br.StepIn(dataOffset);
@@ -134,6 +145,9 @@ namespace SoulsFormats
                 bw.ReserveVarint($"EventGroupTypeOffset{i}:{j}");
                 if (format != TAEFormat.DS1 && format != TAEFormat.DESR)
                     bw.WriteVarint(0);
+
+                if (format == TAEFormat.DES)
+                    bw.WritePattern(0x10, 0);
             }
 
             internal void WriteData(BinaryWriterEx bw, int i, int j, List<long> eventHeaderOffsets, TAEFormat format)
@@ -156,7 +170,7 @@ namespace SoulsFormats
                     bw.ReserveVarint("EventGroupDataOffset");
                     long dataStartPos = bw.Position;
                     
-                    if (GroupData.DataType == EventGroupDataType.ApplyToSpecificCutsceneEntity)
+                    if (GroupData.DataType == EventGroupDataType.ApplyToSpecificCutsceneEntity && HasDataStruct)
                     {
                         bw.WriteUInt16((ushort)(GroupData.CutsceneEntityType));
                         bw.WriteInt16(GroupData.CutsceneEntityIDPart1);
@@ -182,6 +196,10 @@ namespace SoulsFormats
                         throw new InvalidDataException("TAE event group data is not for the correct type.");
                     }
                 }
+
+                // DES pads the type struct to 0x10 before the values
+                if (format == TAEFormat.DES)
+                    bw.Pad(0x10);
 
                 bw.FillVarint($"EventGroupValuesOffset{i}:{j}", bw.Position);
                 for (int k = 0; k < indices.Count; k++)

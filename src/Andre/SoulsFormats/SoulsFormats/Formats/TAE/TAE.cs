@@ -79,6 +79,23 @@ namespace SoulsFormats
         public byte[] Flags { get; set; }
 
         /// <summary>
+        /// The two unknown flags at 0x48 as read, written back unchanged; null for a TAE that wasn't read,
+        /// which writes the usual values for its format.
+        /// </summary>
+        private (bool A, bool B)? UnkFlags48;
+
+        /// <summary>
+        /// The read file had a zero first anim offset, which is written back as zero
+        /// </summary>
+        private bool NoFirstAnimOffset;
+
+        /// <summary>
+        /// DES only: the skeleton name offset pointed at the anims table, which DES does for a time act without a
+        /// skeleton name. The name is then null, and the offset is written pointing at the anims table again.
+        /// </summary>
+        private bool DesSkeletonNameAtAnims;
+
+        /// <summary>
         /// Unknown .hkt file.
         /// </summary>
         public string SkeletonName { get; set; }
@@ -310,6 +327,7 @@ namespace SoulsFormats
 
             var unkFlagA = br.ReadBoolean();
             var unkFlagB = br.ReadBoolean();
+            UnkFlags48 = (unkFlagA, unkFlagB);
 
             if (version == 0x1000C)
             {
@@ -338,7 +356,7 @@ namespace SoulsFormats
             {
                 AnimCount2Value = animCount2;
             }
-            br.ReadVarint(); // First anim offset
+            NoFirstAnimOffset = br.ReadVarint() == 0; // First anim offset
             if (Format == TAEFormat.DS1 || Format == TAEFormat.DES)
                 br.AssertInt32(0);
             br.AssertVarint(1);
@@ -399,7 +417,8 @@ namespace SoulsFormats
 
                 if (Format != TAEFormat.SOTFS)
                 {
-                    SkeletonName = skeletonNameOffset == 0 ? null : br.GetUTF16(skeletonNameOffset);
+                    DesSkeletonNameAtAnims = Format == TAEFormat.DES && skeletonNameOffset != 0 && skeletonNameOffset == animsOffset;
+                    SkeletonName = skeletonNameOffset == 0 || DesSkeletonNameAtAnims ? null : br.GetUTF16(skeletonNameOffset);
                     SibName = sibNameOffset == 0 ? null : br.GetUTF16(sibNameOffset);
                 }
             }
@@ -522,7 +541,13 @@ namespace SoulsFormats
 
             bw.WriteBytes(Flags);
 
-            if (Format == TAEFormat.SOTFS)
+            // The flags as read; some DES files have both clear, where other games have the first set
+            if (UnkFlags48 is var (flagA, flagB))
+            {
+                bw.WriteBoolean(flagA);
+                bw.WriteBoolean(flagB);
+            }
+            else if (Format == TAEFormat.SOTFS)
             {
                 bw.WriteByte(0);
                 bw.WriteByte(1);
@@ -596,11 +621,16 @@ namespace SoulsFormats
 
 
 
-                // DES aligns the names to 0x10, as it does its other structs
-                if (Format == TAEFormat.DES && (!string.IsNullOrEmpty(SkeletonName) || !string.IsNullOrEmpty(SibName)))
+                // DES aligns the names, and the anims table after them, to 0x10
+                if (Format == TAEFormat.DES)
                     bw.Pad(0x10);
 
-                if (SkeletonName != null)
+                if (Format == TAEFormat.DES && SkeletonName == null && DesSkeletonNameAtAnims)
+                {
+                    // The anims table comes next, at this position
+                    bw.FillVarint("SkeletonName", bw.Position);
+                }
+                else if (SkeletonName != null)
                 {
                     bw.FillVarint("SkeletonName", bw.Position);
                     if (!string.IsNullOrEmpty(SkeletonName))
@@ -677,7 +707,15 @@ namespace SoulsFormats
             else
                 bw.FillVarint("AnimGroupsOffset", groupStart);
 
+            // Some DES files have no block of anim bodies: each body comes right before its own data, and the first
+            // anim offset is 0 (with the second anim count 0 too)
+            bool bodiesInterleaved = NoFirstAnimOffset && Animations.Count > 0;
+
             if (Animations.Count == 0)
+            {
+                bw.FillVarint("FirstAnimOffset", 0);
+            }
+            else if (bodiesInterleaved)
             {
                 bw.FillVarint("FirstAnimOffset", 0);
             }
@@ -691,6 +729,8 @@ namespace SoulsFormats
             for (int i = 0; i < Animations.Count; i++)
             {
                 Animation anim = Animations[i];
+                if (bodiesInterleaved)
+                    anim.WriteBody(bw, i, Format);
                 anim.WriteAnimFile(bw, i, Format);
                 Dictionary<float, long> timeOffsets = anim.WriteTimes(bw, i, Format);
                 List<long> eventHeaderOffsets = anim.WriteEventHeaders(bw, i, timeOffsets, Format);

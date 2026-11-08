@@ -60,6 +60,8 @@ namespace SoulsFormats
                         newClone.AllowDelayLoad = AllowDelayLoad;
                         newClone.ImportsHKX = ImportsHKX;
                         newClone.DesLeftoverBytes = DesLeftoverBytes;
+                        newClone.DesLoopByte = DesLoopByte;
+                        newClone.DesImportsByte = DesImportsByte;
 
                         newClone.ImportHKXSourceAnimID = ImportHKXSourceAnimID;
 
@@ -95,6 +97,12 @@ namespace SoulsFormats
                     /// </summary>
                     private ushort DesLeftoverBytes;
 
+                    /// <summary>
+                    /// DES only: the loop and import bytes as read. Some hold stale values (0x2E, 0x8C) rather than 0 or 1;
+                    /// a byte is written back as read while its flag is unchanged.
+                    /// </summary>
+                    private byte DesLoopByte, DesImportsByte;
+
                     internal override void ReadInner(BinaryReaderEx br, TAEFormat format)
                     {
                         if (format == TAEFormat.DESR)
@@ -111,8 +119,10 @@ namespace SoulsFormats
                         }
                         else
                         {
-                            IsLoopByDefault = br.ReadByte() != 0;
-                            ImportsHKX = br.ReadByte() != 0;
+                            DesLoopByte = br.ReadByte();
+                            DesImportsByte = br.ReadByte();
+                            IsLoopByDefault = DesLoopByte != 0;
+                            ImportsHKX = DesImportsByte != 0;
 
                             if (format == TAEFormat.DES)
                             {
@@ -142,15 +152,16 @@ namespace SoulsFormats
                         }
                         else
                         {
-                            bw.WriteBoolean(IsLoopByDefault);
-                            bw.WriteBoolean(ImportsHKX);
-
                             if (format == TAEFormat.DES)
                             {
+                                bw.WriteByte(IsLoopByDefault == (DesLoopByte != 0) ? DesLoopByte : (byte)(IsLoopByDefault ? 1 : 0));
+                                bw.WriteByte(ImportsHKX == (DesImportsByte != 0) ? DesImportsByte : (byte)(ImportsHKX ? 1 : 0));
                                 bw.WriteUInt16(DesLeftoverBytes);
                             }
                             else
                             {
+                                bw.WriteBoolean(IsLoopByDefault);
+                                bw.WriteBoolean(ImportsHKX);
                                 bw.WriteBoolean(AllowDelayLoad);
                                 bw.WriteByte(0);
                             }

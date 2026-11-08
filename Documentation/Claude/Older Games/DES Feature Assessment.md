@@ -13,7 +13,7 @@ Nothing here was checked in the app.
 
 | Feature | Where | Why | Evidence |
 |---|---|---|---|
-| **Time Act Editor saving** | `TimeActData.CanSaveTimeActs` | The editor is read-only for DES: save, mass edit, properties and graph editing are all disabled. | The roundtrip confirms it: **124 of 132** DES `.tae` lose event parameter bytes when `TAE.Write` writes them back (for example, event type 128 in `c0000/a02.tae`). Only 8 come back with the same content. |
+| ~~**Time Act Editor saving**~~ **Fixed 2026-11-08** | `TimeActData.CanSaveTimeActs` (now `true`) | It was read-only because 124 of 132 DES `.tae` lost event parameters on write. | All 128 readable DES time acts now write back byte-identical, both raw and through the editor's template path. See "TAE writer fixes" below. |
 | **Animation preview** (Model, Time Act and Map viewports) | `AnimationPackage.IsSupportedGame` | DES skeletons now read, but its clips are wavelet or delta compressed, and the renderer has no decoder for those. | `Havok Phase 6.1 Renderer Animation.md` |
 | **Collision Editor**, fall protection, **Collision Generator** | `CollisionEditorTool.CanUse`; Havok Editor generator | Only hknp and DS3's hk2014 hkp are supported. DES is Havok 5.5 hkp, 32-bit and big endian. | `Collision Generator All Versions.md`: "hkp (DeS, DS1, DS1R, DS2S) is a later phase" |
 | **Viewport map lighting from game data** | `GparamProfile.For(DES)` = `Older` (`Supported = false`) | DES lighting lives in DrawParam (`param/drawparam/aXX_drawparam.parambnd`), and nothing reads it for the viewport. Only the DES lightmap toggle applies. | `Older Games/Analysis.md` puts DES out of scope. A DrawParam adapter is planned for DS1R only. |
@@ -56,9 +56,31 @@ These features are off for DES because the game doesn't have the format. They ar
 
 The DES data assets cover the same ground as DS1's: paramdefs, meta, row names, MSB meta, TAE templates and aliases.
 
+## TAE writer fixes (2026-11-08)
+
+What was wrong, all in `SoulsFormats/Formats/TAE`:
+- **Event data header (Event.cs, Animation.cs):** DES event data is `type, paramOffset, 0, 0` (16 bytes).
+  - The writer added an `Unk04` field the read never reads. That shifted every DES event's parameters by 4 bytes.
+  - The read sized each event's parameters assuming DS1's 8-byte header, so they ran 8 bytes into the next event.
+- **Event groups (EventGroup.cs):** DES group headers are 0x20 bytes (four fields, then 16 zero bytes).
+  - The reader stepped 16 bytes, so a second group was read from the zero padding and the real second group was lost.
+  - The type struct is padded to 0x10, and DES cutscene-entity groups have no data struct. The writer added one anyway.
+- **Header (TAE.cs):**
+  - The flags at 0x48 are now written as read (some DES files have both clear).
+  - Names and the anims table are padded to 0x10.
+  - DES points the skeleton name at the anims table when there is no name. The reader took the table as a garbage UTF-16 name, which was then written out.
+- **Interleaved anim bodies (TAE.cs):** files whose first anim offset is 0 put each animation's body right before its own data. They are now written that way.
+- **Mini header (Animation.cs):** the loop, import and delay-load bytes hold stale exporter memory in DES (e.g. `0x2E`, `0xEEEF`). They are written back as read while the flag is unchanged.
+- **Template (`Assets/TAE/DES/Defs/Character.xml`):**
+  - `Blend` (16) had no fields, but every file gives it 16 zero bytes.
+  - `QueueTransitionAnimation` (24) had 16 bytes, but every file gives it 32.
+  - Saving through the editor would have shortened each such event, so both entries are now padded with unnamed `s32` fields.
+
+Other games are unchanged. DS1R, PTDE and Bloodborne TAEs give the same roundtrip counts before (commit `04a3df329`) and after these changes (run with the `taegame` mode of `Tools/DesFormatRoundTrip`).
+
 ## Most worth fixing
 
-1. **TAE writing**: the editor exists but is read-only, and 94% of files lose event data on write.
+1. ~~**TAE writing**~~: fixed (see above). Not yet checked in the app or in the game.
 2. **The four empty anibnds**: find out how the game reads them before any editor saves one.
 3. **Param byte layout**: make the 185 params roundtrip exactly. Content is equal, but it is the most-used DES save path and none of it is byte-identical.
 4. **DrawParam lighting in the viewport** and **hkp collision editing**: larger pieces of work.

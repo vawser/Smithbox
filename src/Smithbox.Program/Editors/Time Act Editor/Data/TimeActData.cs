@@ -187,9 +187,10 @@ public class TimeActData : IDisposable
     }
 
     /// <summary>
-    /// The writer loses event data in the Demon's Souls format, so those time acts can only be viewed
+    /// Whether the project's time acts can be saved. Every game's can: the Demon's Souls writer, once read-only for
+    /// losing event data, writes all 128 DES time acts back byte-identical (Tools/DesFormatRoundTrip, 2026-11-08).
     /// </summary>
-    public bool CanSaveTimeActs => Project.Descriptor.ProjectType is not ProjectType.DES;
+    public bool CanSaveTimeActs => true;
 
     /// <summary>
     /// Gets the event templates for a source. These don't have banks, as each file covers a single set of events.

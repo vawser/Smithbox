@@ -6,6 +6,42 @@ using System.Text;
 // exact = byte-identical; reread-equal = bytes differ but the re-read file has the same content (checked per format);
 // differs / write failed / reread failed otherwise.
 
+// taegame <chr folder> <label>: the TAE roundtrip over another game's loose anibnds, for checking that the
+// shared TAE code still writes them as before
+if (args.Length > 0 && args[0] == "taegame")
+{
+    var tally = new SortedDictionary<string, List<string>>();
+    void T(string k, string s) { if (!tally.TryGetValue(k, out var l)) tally[k] = l = new(); l.Add(s); }
+    foreach (var path in Directory.GetFiles(args[1]).Where(p => p.EndsWith(".anibnd") || p.EndsWith(".anibnd.dcx")))
+    {
+        IBinder bnd;
+        try { bnd = BND3.Is(path) ? BND3.Read(path) : BND4.Read(path); }
+        catch (Exception e) { T("binder read failed", $"{Path.GetFileName(path)}: {e.Message}"); continue; }
+        foreach (var f in bnd.Files.Where(f => f.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase)))
+        {
+            var name = $"{Path.GetFileName(path)}/{Path.GetFileName(f.Name)}";
+            var bytes = f.Bytes.ToArray();
+            TAE a;
+            try { a = TAE.Read(bytes); } catch (Exception e) { T("read failed", $"{name}: {e.Message.Split('\n')[0]}"); continue; }
+            byte[] w;
+            try { w = a.Write(); } catch (Exception e) { T("write failed", $"{name}: {e.Message.Split('\n')[0]}"); continue; }
+            if (w.AsSpan().SequenceEqual(bytes)) { T($"{a.Format} exact", name); continue; }
+            string diff;
+            try { diff = CompareTae(a, TAE.Read(w)); } catch (Exception e) { diff = "reread: " + e.Message.Split('\n')[0]; }
+            T(diff == null ? $"{a.Format} bytes differ, content equal" : $"{a.Format} content differs: {diff.Split(':')[0]}",
+                $"{name}: {diff ?? ""} (orig {bytes.Length}, new {w.Length}, first diff 0x{FirstDiff(bytes, w):X})");
+        }
+    }
+    Console.WriteLine($"## {args[2]}");
+    foreach (var (k, v) in tally)
+    {
+        Console.WriteLine($"{k}: {v.Count}");
+        if (!k.EndsWith("exact"))
+            foreach (var s in v.Take(4)) Console.WriteLine($"   {s}");
+    }
+    return;
+}
+
 var root = args.Length > 0 ? args[0] : @"G:\Game Data Repository\Demon's Souls\PS3_GAME\USRDIR";
 var defFolder = args.Length > 1 ? args[1] : @"..\..\src\Smithbox.Data\Assets\PARAM\DES\Defs";
 var reportPath = args.Length > 2 ? args[2] : "des_format_roundtrip.md";
@@ -42,9 +78,10 @@ if (args.Length > 3 && args[3].StartsWith("taedump:"))
     var tae = TAE.Read(orig);
     var w = tae.Write();
     var re = TAE.Read(w);
-    int d = FirstDiff(orig, w);
+    int d = 0x10; while (d < Math.Min(orig.Length, w.Length) && orig[d] == w[d]) d++; // past the file size field
+    if (Environment.GetEnvironmentVariable("TAE_AT") is string at) d = Convert.ToInt32(at, 16);
     Console.WriteLine($"format {tae.Format} BE={tae.BigEndian} orig {orig.Length} new {w.Length} first diff 0x{d:X}");
-    for (int o = Math.Max(0, (d & ~0xF) - 0x20); o < Math.Min(orig.Length, (d & ~0xF) + 0x40); o += 0x10)
+    for (int o = Math.Max(0, (d & ~0xF) - 0x20); o < Math.Min(orig.Length, (d & ~0xF) + 0xC0); o += 0x10)
         Console.WriteLine($"{o:X6} orig {Convert.ToHexString(orig, o, Math.Min(16, orig.Length - o))}   new {(o < w.Length ? Convert.ToHexString(w, o, Math.Min(16, w.Length - o)) : "")}");
     for (int a = 0; a < Math.Min(3, tae.Animations.Count); a++)
         for (int e = 0; e < tae.Animations[a].Events.Count; e++)
@@ -127,7 +164,38 @@ foreach (var bndPath in Directory.GetFiles(Path.Combine(root, "msg"), "*.msgbnd"
         Check("FMG", $"{Path.GetRelativePath(root, bndPath)}/{Path.GetFileName(f.Name)}", f.Bytes.ToArray(), b => FMG.Read(b), x => x.Write(), CompareFmg);
 }
 
-// --- TAE, chr anibnds
+// --- TAE, chr anibnds. "TAE (editor)" applies the DES template to every event it fits exactly, as the Time Act
+// Editor does (TimeActEntry.ApplyTemplate), then writes
+var taeTemplatePath = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(defFolder))!, "..", "..", "TAE", "DES", "Defs", "Character.xml");
+TAE.Template.BankTemplate taeBank = null;
+try { taeBank = TAE.Template.ReadXMLFile(taeTemplatePath, _ => Enumerable.Empty<KeyValuePair<string, string>>())[0]; }
+catch (Exception e) { Add("TAE (editor)", "template failed to load", e.Message); }
+int templatedEvents = 0, untemplatedEvents = 0;
+
+TAE ApplyEditorTemplate(TAE tae)
+{
+    foreach (var anim in tae.Animations)
+        foreach (var ev in anim.Events)
+        {
+            if (taeBank == null || !taeBank.TryGetValue(ev.Type, out var t)) { untemplatedEvents++; continue; }
+            var original = ev.GetParameterBytes(tae.BigEndian);
+            var copy = ev.GetClone(tae.BigEndian);
+            bool fits;
+            try
+            {
+                copy.ApplyTemplate(tae.BigEndian, t, true);
+                var w = copy.GetParameterBytes(tae.BigEndian);
+                fits = true;
+                for (int i = 0; i < Math.Max(original.Length, w.Length) && fits; i++)
+                    fits = (i < original.Length ? original[i] : 0) == (i < w.Length ? w[i] : 0);
+            }
+            catch { fits = false; }
+            if (fits) { ev.ApplyTemplate(tae.BigEndian, t, true); templatedEvents++; }
+            else untemplatedEvents++;
+        }
+    return tae;
+}
+
 foreach (var dir in Directory.GetDirectories(Path.Combine(root, "chr")))
 {
     var ani = Path.Combine(dir, $"{Path.GetFileName(dir)}.anibnd");
@@ -135,7 +203,10 @@ foreach (var dir in Directory.GetDirectories(Path.Combine(root, "chr")))
     BND3 bnd;
     try { bnd = BND3.Read(ani); } catch { continue; }
     foreach (var f in bnd.Files.Where(f => f.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase)))
+    {
         Check("TAE", $"{Path.GetFileName(dir)}/{Path.GetFileName(f.Name)}", f.Bytes.ToArray(), b => TAE.Read(b), x => x.Write(), CompareTae);
+        Check("TAE (editor)", $"{Path.GetFileName(dir)}/{Path.GetFileName(f.Name)}", f.Bytes.ToArray(), b => ApplyEditorTemplate(TAE.Read(b)), x => x.Write(), CompareTae);
+    }
     Check("BND3 (anibnd)", Path.GetFileName(ani), File.ReadAllBytes(ani), b => BND3.Read(b), x => x.Write(), CompareBnd);
 
     // The compressed twin is the copy the editors list; an empty read means the header's file count is zero
@@ -177,8 +248,47 @@ foreach (var path in Directory.GetFiles(Path.Combine(root, "chr"), "*.chrbnd.dcx
         b => BND3.Read(b), x => x.Write(), CompareBnd);
 }
 
+// Per event type: the parameter sizes the files give it, against the template's size
+var sizes = new SortedDictionary<int, SortedDictionary<int, int>>();
+foreach (var dir in Directory.GetDirectories(Path.Combine(root, "chr")))
+{
+    var ani = Path.Combine(dir, $"{Path.GetFileName(dir)}.anibnd");
+    if (!File.Exists(ani)) continue;
+    BND3 sbnd;
+    try { sbnd = BND3.Read(ani); } catch { continue; }
+    foreach (var f in sbnd.Files.Where(f => f.Name.EndsWith(".tae", StringComparison.OrdinalIgnoreCase)))
+    {
+        TAE t;
+        try { t = TAE.Read(f.Bytes.ToArray()); } catch { continue; }
+        foreach (var anim in t.Animations)
+            for (int e = 0; e < anim.Events.Count; e++)
+            {
+                // The last event of an animation runs to the next struct, so its size says nothing
+                if (e == anim.Events.Count - 1) continue;
+                var ev = anim.Events[e];
+                var n = ev.GetParameterBytes(t.BigEndian).Length;
+                if (!sizes.TryGetValue(ev.Type, out var m)) sizes[ev.Type] = m = new();
+                m[n] = m.GetValueOrDefault(n) + 1;
+            }
+    }
+}
+
 var sb = new StringBuilder();
 sb.AppendLine("# Demon's Souls format roundtrip");
+sb.AppendLine();
+sb.AppendLine("## TAE parameter sizes against the DES template (events other than an animation's last)");
+sb.AppendLine();
+sb.AppendLine("| Type | Template size | Padded | File sizes (count) | Shrinks |");
+sb.AppendLine("|---|---|---|---|---|");
+foreach (var (type, m) in sizes)
+{
+    int? ts = taeBank != null && taeBank.TryGetValue(type, out var tt) ? tt.GetAllParametersByteCount() : null;
+    int? padded = ts == null ? null : (ts.Value + 15) / 16 * 16;
+    var shrinks = padded != null && m.Keys.Any(k => k > padded) ? "**yes**" : "";
+    sb.AppendLine($"| {type} | {ts?.ToString() ?? "—"} | {padded?.ToString() ?? "—"} | {string.Join(", ", m.Select(kv => $"{kv.Key} ({kv.Value})"))} | {shrinks} |");
+}
+sb.AppendLine();
+sb.AppendLine($"TAE (editor): {templatedEvents} event reads took the template, {untemplatedEvents} kept raw bytes (reads and re-reads both counted).");
 sb.AppendLine();
 sb.AppendLine("| Format | Bucket | Files |");
 sb.AppendLine("|---|---|---|");
@@ -246,6 +356,16 @@ static string CompareTae(TAE a, TAE b)
     {
         var x = a.Animations[i]; var y = b.Animations[i];
         if (x.ID != y.ID) return $"animations: id {i}";
+        if (x.EventGroups.Count != y.EventGroups.Count) return $"groups: count anim {x.ID}";
+        for (int g = 0; g < x.EventGroups.Count; g++)
+        {
+            if (x.EventGroups[g].GroupType != y.EventGroups[g].GroupType) return $"groups: type anim {x.ID} group {g}";
+            var mx = x.Events.Select(ev => ev.Group == null ? -1 : x.EventGroups.IndexOf(ev.Group)).ToList();
+            var my = y.Events.Select(ev => ev.Group == null ? -1 : y.EventGroups.IndexOf(ev.Group)).ToList();
+            if (!mx.SequenceEqual(my)) return $"groups: membership anim {x.ID}";
+        }
+        if (x.AnimFileName != y.AnimFileName) return $"animations: file name {x.ID}";
+        if (x.MiniHeader.Type != y.MiniHeader.Type) return $"animations: mini header type {x.ID}";
         if (x.Events.Count != y.Events.Count) return $"events: count anim {x.ID}";
         for (int e = 0; e < x.Events.Count; e++)
         {
