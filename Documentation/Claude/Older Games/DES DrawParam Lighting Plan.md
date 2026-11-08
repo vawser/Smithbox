@@ -156,6 +156,36 @@ Open:
 - **The work:** per-instance lighting, a light-set index per draw into a small table of resolved `GparamLighting`s. That's needed anyway for the DS3/SDT/BB per-part value IDs (Analysis.md step 4), so build it once for all of them.
 - **Characters and objects:** take the LightID of the collision under them, which needs a hit test, or their own LightID as a first step.
 
+#### Phase 4 as built (2026-11-08; not yet checked in the app)
+
+Each part is lit by the LightBank row its own `LightID` picks. Characters standing in a collision still use their own `LightID` rather than the collision's; that comes next if needed.
+
+- **The table:** `Renderer/Scene/LightSetTable.cs` holds up to 127 light sets in the material buffer, entry 0 unused.
+  - Each set is a `LightSetData` of 320 bytes: the sun, the hemisphere, the model set's four lights and its hemisphere.
+  - Each is folded with intensity and exposure exactly as `SceneRenderPipeline` folds the scene's, so a part lit by its own set looks as the whole scene would under that row.
+  - It is filled every frame from `SceneRenderer.MapLightSets` at the scene's exposure, and uploads only when something changed.
+  - `SceneParam.LightSetStart` is **appended at the end**, so the shaders that copy only the start of the struct are unchanged.
+- **The index:** `MeshRenderableProxy.LightSet` (0 = the scene's lighting) is set on a part's proxy and copied to its submeshes, as `Lightmap` is.
+  - It is written into bits 24-30 of the instance's `MaterialID`, only for meshes drawn with the flver shader. Material IDs are entry indices in a 32 MB buffer, far below 2^24.
+  - `FlverShader.vert` now masks the material ID with `0x00FFFFFF` (it was `0x7FFFFFFF`) and passes the set in bits 8-14 of the flat `fsin_flags`, so no new varying.
+  - **No other shader changed:** nothing else reads `materialID.x`, and C# never reads `MaterialID` back.
+- **The shader:** `FlverShader.frag` reads `lightsetdata` (set 4) through new helpers: `SunTravel`, `SunColor`, `SunSpecColor`, `ModelLight` and `Hemisphere`.
+  - They use the set only under map lighting and when it isn't 0, so with no sets the shader does exactly what it did before.
+  - The shadow cascades stay the scene's (ShadowBank's light), so a part's own sun shades it but doesn't change its shadows.
+  - All 32 variants were recompiled with the VariantCompiler.
+- **Assignment:** `DrawParamLightingBank.UpdatePartLighting`, called every frame from `MapEditorScreen` after the scene's lighting.
+  - Each distinct (area, LightID) other than the scene's own row gets a set (rows resolved once and re-resolved when their values change; each row is hashed once per frame).
+  - Each part entity whose `RenderSceneMesh` is a `MeshRenderableProxy` gets its set. Parts that leave go back to 0.
+  - Missing rows (LightID 255) and composite characters (the player, built from part models) keep the scene's lighting.
+- **Off-switches:** everything goes back to the scene's lighting when the "Light Parts by Their Own LightID" checkbox (`CFG.Viewport_Map_DrawParam_Per_Part`) is off, when map lighting is off, and when a specific LightBank row is chosen in the menu, which then lights everything.
+- **Menu:** the checkbox shows how many parts are lit by how many rows of their own.
+
+Expected for m01 (the Nexus):
+- The scene's row is LightBank 0, so 26 of its 61 map pieces keep it.
+- The others get sets for LightBank 3 (22 pieces), 11 (10) and 1 (2).
+- Objects use 58 (71), 11, 0 and 6.
+- Enemies use 0, so they stay on the scene's lighting.
+
 ### Phase 5: env textures, then point lights
 
 - **Env textures:** link `envDif` and `envSpc_0-3` to textures (survey `other/envlight.tpf` and `EnvLightTexBank`).

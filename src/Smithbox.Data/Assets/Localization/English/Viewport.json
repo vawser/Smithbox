@@ -1817,6 +1817,22 @@
       "Text": "Fog: from {0} m to {1} m, density {2}, colour {3}"
     },
     {
+      "Key": "VIEWPORT_Rendering_DrawParam_Per_Part",
+      "Text": "Light Parts by Their Own LightID"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Per_Part_TT",
+      "Text": "Light each map piece, object and character with the LightBank row its own LightID picks, as the game lights each part, rather than all of them with one row. The exposure, shadows, fog and tone correction stay the map's. Choosing a Light Bank row below lights everything with that row instead."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Per_Part_Counts",
+      "Text": "{0} parts lit by {1} rows of their own; the rest by the map's row."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Per_Part_Overridden",
+      "Text": "Off while a Light Bank row is chosen: that row lights everything."
+    },
+    {
       "Key": "VIEWPORT_Rendering_DrawParam_Fog_Off",
       "Text": "Fog: off for this row"
     },

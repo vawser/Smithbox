@@ -83,6 +83,16 @@ public static class SceneRenderer
     /// <summary>DS3's lightmaps of the map pieces, see LightmapTable and DolLightmapBank</summary>
     public static LightmapTable Lightmaps { get; private set; }
 
+    /// <summary>The per-part lighting sets the flver instances name, see LightSetTable</summary>
+    public static LightSetTable LightSets { get; private set; }
+
+    /// <summary>
+    ///     The lighting of each set in <see cref="LightSets" />, set 1 first, alongside <see cref="MapLighting" />:
+    ///     Demon's Souls' parts lit by their own LightBank rows (DrawParamLightingBank). Empty for none. Set every frame
+    ///     by the Map Editor.
+    /// </summary>
+    public static IReadOnlyList<GparamLighting> MapLightSets { get; set; } = Array.Empty<GparamLighting>();
+
     /// <summary>
     ///     The lighting of the Map Editor's loaded maps from their GPARAMs, or null when it isn't used. Set every frame
     ///     by the Map Editor, and read by the pipelines with <see cref="SceneRenderPipeline.UseMapLighting" />.
@@ -136,6 +146,7 @@ public static class SceneRenderer
         IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         MapLights = new SceneLightTable(MaterialBufferAllocator);
         Lightmaps = new LightmapTable(MaterialBufferAllocator);
+        LightSets = new LightSetTable(MaterialBufferAllocator);
         // The limit is typed freely in the preferences. A size of 0 is invalid for a Vulkan buffer, and a large
         // count would overflow the size, either of which fails startup and silently falls back to OpenGL.
         var boneLimit = Math.Clamp(CFG.Current.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);

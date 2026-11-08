@@ -483,6 +483,9 @@ public class SceneRenderPipeline
             var exposure = mapLighting.Exposure * CFG.Current.Viewport_Map_Lighting_Exposure_Scale;
             var sun = mapLighting.Sun;
 
+            // The parts lit by their own sets (Demon's Souls' LightIDs), at the scene's exposure
+            SceneRenderer.LightSets?.Update(SceneRenderer.MapLightSets, exposure);
+
             mapLightDirection = new Vector4(sun.Direction, 0.0f);
             mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);
             mapSunSpecColor = new Vector4(sun.Specular.X, sun.Specular.Y, sun.Specular.Z, sun.Specular.W * exposure);
@@ -608,6 +611,7 @@ public class SceneRenderPipeline
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
             SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
             SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
+            SceneParams.LightSetStart = SceneRenderer.LightSets?.Start ?? 0;
             SceneParams.LightingDebugView = gameMode
                 ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
                 : RenderMode.FullbrightDebugView;

@@ -409,6 +409,39 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     /// </summary>
     public const uint NoShadowMaterialFlag = 0x80000000u;
 
+    /// <summary>
+    ///     Where <see cref="LightSet" /> goes in the instance's material ID for FlverShader.vert: bits 24-30, under
+    ///     <see cref="NoShadowMaterialFlag" />. Material IDs stay far below 2^24.
+    /// </summary>
+    public const int LightSetShift = 24;
+    public const uint LightSetMask = 0x7Fu;
+
+    private byte _lightSet;
+
+    /// <summary>
+    ///     The per-part lighting set this mesh is lit by, an entry of <see cref="SceneRenderer.LightSets" />; 0 for the
+    ///     scene's own lighting. Demon's Souls' parts take the LightBank row of their LightID (DrawParamLightingBank).
+    ///     Only read by the flver shader.
+    /// </summary>
+    public byte LightSet
+    {
+        get => _lightSet;
+        set
+        {
+            value = (byte)(value & LightSetMask);
+
+            if (_lightSet == value)
+                return;
+
+            _lightSet = value;
+            ScheduleRenderableUpdate();
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.LightSet = value;
+            }
+        }
+    }
+
     /// <summary>Whether the mesh's shader is the flver shader, which casts and receives shadows</summary>
     private bool UsesFlverShader => _meshProvider is FlverSubmeshProvider &&
                                     _meshProvider.ShaderName.StartsWith(@"FlverShader\", StringComparison.Ordinal);
@@ -454,6 +487,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.CastsShadow = _castsShadow;
             child.ReceivesShadow = _receivesShadow;
             child.Lightmap = _lightmap;
+            child.LightSet = _lightSet;
 
             // Children are created once the provider has loaded (async), which can be after the
             // outline was requested on this proxy. Without this they never get the selection outline.
@@ -1019,6 +1053,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (!_receivesShadow && UsesFlverShader)
         {
             dat.MaterialID |= NoShadowMaterialFlag;
+        }
+
+        if (_lightSet != 0 && UsesFlverShader)
+        {
+            dat.MaterialID |= (_lightSet & LightSetMask) << LightSetShift;
         }
 
         if (_meshProvider.BoneBuffer != null)

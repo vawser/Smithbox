@@ -231,6 +231,13 @@ public unsafe struct SceneParam
 
     /// <summary>The rain map's depth per meter of height</summary>
     public float RainDepthScale;
+
+    /// <summary>
+    ///     The first entry of <see cref="SceneRenderer.LightSets" /> in the material buffer: the per-part lighting an
+    ///     instance names in its material ID (Demon's Souls' LightIDs), see LightSetTable. Last, so the shaders that
+    ///     copy only the start of this struct are unchanged.
+    /// </summary>
+    public uint LightSetStart;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

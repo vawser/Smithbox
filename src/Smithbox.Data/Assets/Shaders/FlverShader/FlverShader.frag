@@ -234,6 +234,10 @@ struct sceneParams
 	float rainMapSize;       // texels across
 	float rainTexelSize;     // meters per texel
 	float rainDepthScale;    // depth per meter of height
+
+	// The per-part lighting sets: entries of lightsetdata, see LightSetTable. Last, so the other shaders' copies of
+	// this struct, which stop earlier, are unchanged.
+	uint lightSetStart;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -295,6 +299,24 @@ struct lightmapData
 layout(set = 4, binding = 0, std140) buffer lightmaps
 {
     readonly lightmapData lightmapdata[];
+};
+
+// A part's own map lighting, laid out as LightSetData: what the scene params hold for the whole scene, for the
+// instances that name the set in their material ID (Demon's Souls' LightIDs). See LightSetTable.
+struct lightSetData
+{
+	mapDirectionalLight sun;
+	vec4 hemiUp;
+	vec4 hemiDown;
+	mapDirectionalLight modelLights[4];
+	vec4 modelHemiUp;
+	vec4 modelHemiDown;
+	vec4 pad;
+};
+
+layout(set = 4, binding = 0, std140) buffer lightSets
+{
+    readonly lightSetData lightsetdata[];
 };
 
 layout(set = 4, binding = 0, std140) buffer irradianceVolumes
@@ -498,6 +520,7 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 // State shared by the sampling helpers, set once at the start of main
 uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
+uint g_lightSet = 0u;     // the instance's own lighting set, 0 for the scene's, see LightSet
 vec2 g_uv[2];
 vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
 vec3 g_indirectSpecular = vec3(0.0); // and its specular part
@@ -1056,12 +1079,61 @@ bool MapLighting()
 	return (sceneparam.mapLightingFlags & 1u) != 0u;
 }
 
+// The instance's own lighting set under map lighting (bits 8-14 of fsin_flags, see MeshRenderableProxy.LightSet), 0
+// for the scene's. The helpers below read the set where there is one and the scene params otherwise.
+uint LightSet()
+{
+	return MapLighting() ? (fsin_flags >> 8u) & 0x7Fu : 0u;
+}
+
+lightSetData CurrentLightSet()
+{
+	return lightsetdata[sceneparam.lightSetStart + g_lightSet];
+}
+
+// The direction the sun's light travels in, normalized
+vec3 SunTravel()
+{
+	vec3 travel = g_lightSet != 0u ? CurrentLightSet().sun.direction.xyz : sceneparam.lightDirection.xyz;
+	return dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
+}
+
+// The sun's color and intensity (a), and its highlights'
+vec4 SunColor()
+{
+	return g_lightSet != 0u ? CurrentLightSet().sun.color : sceneparam.sunColor;
+}
+
+vec4 SunSpecColor()
+{
+	return g_lightSet != 0u ? CurrentLightSet().sun.specColor : sceneparam.sunSpecColor;
+}
+
+// One of the model set's four lights
+mapDirectionalLight ModelLight(uint i)
+{
+	return g_lightSet != 0u ? CurrentLightSet().modelLights[i] : sceneparam.modelLights[i];
+}
+
 // The map's GPARAM hemisphere light arriving from direction D: its up color from above, its down color from below
-// Characters take the model set's hemisphere
+// Characters take the model set's hemisphere; a part with its own lighting set takes that set's
 vec3 Hemisphere(vec3 D)
 {
-	vec3 up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
-	vec3 down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
+	vec3 up;
+	vec3 down;
+
+	if (g_lightSet != 0u)
+	{
+		lightSetData set = CurrentLightSet();
+		up = g_modelLit ? set.modelHemiUp.rgb : set.hemiUp.rgb;
+		down = g_modelLit ? set.modelHemiDown.rgb : set.hemiDown.rgb;
+	}
+	else
+	{
+		up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
+		down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
+	}
+
 	return mix(down, up, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
 }
 
@@ -1406,9 +1478,9 @@ vec4 WaterVolume(Surface s, vec3 reflection, float thickness)
 
 	vec3 sky = AmbientBase(s.N) * sceneparam.ambientLightMult * sceneparam.indirectLightMult;
 
-	vec3 sunDir = dot(sceneparam.lightDirection.xyz, sceneparam.lightDirection.xyz) > 1e-10
-		? normalize(sceneparam.lightDirection.xyz) : vec3(0.0, -1.0, 0.0);
-	vec3 sun = sceneparam.sunColor.rgb * sceneparam.sunColor.a * sceneparam.directLightMult
+	vec3 sunDir = SunTravel();
+	vec4 sunColor = SunColor();
+	vec3 sun = sunColor.rgb * sunColor.a * sceneparam.directLightMult
 		* clamp(dot(s.N, -sunDir), 0.0, 1.0);
 
 	vec3 light = (sky + sun) * sceneparam.sceneBrightness;
@@ -1625,11 +1697,11 @@ void main()
 
 	g_mat = fsin_mat;
 	g_modelLit = ModelLit();
+	g_lightSet = LightSet();
 
 	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);
 
-	vec3 sunDir = vec3(sceneparam.lightDirection);
-	sunDir = dot(sunDir, sunDir) > 1e-10 ? normalize(sunDir) : vec3(0.0, -1.0, 0.0);
+	vec3 sunDir = SunTravel();
 
 	// Texture coordinates and their derivatives, taken before any branching
 	g_uv[0] = fsin_texcoord;
@@ -1819,7 +1891,7 @@ void main()
 		// The model set's sun and fill lights. Its sun is the one that casts the shadows.
 		for (uint i = 0u; i < 4u; i++)
 		{
-			mapDirectionalLight light = sceneparam.modelLights[i];
+			mapDirectionalLight light = ModelLight(i);
 			if (light.color.a <= 0.0 && light.specColor.a <= 0.0)
 				continue;
 
@@ -1831,8 +1903,9 @@ void main()
 	}
 	else
 	{
-		direct = ShadeLight(surface, -sunDir, sceneparam.sunColor.rgb * sceneparam.sunColor.a,
-			sceneparam.sunSpecColor.rgb * sceneparam.sunSpecColor.a) * sunShadow;
+		vec4 sunColor = SunColor();
+		vec4 sunSpecColor = SunSpecColor();
+		direct = ShadeLight(surface, -sunDir, sunColor.rgb * sunColor.a, sunSpecColor.rgb * sunSpecColor.a) * sunShadow;
 	}
 
 	uint lightCount = min(sceneparam.lightCount, uint(MAX_SCENE_LIGHTS));

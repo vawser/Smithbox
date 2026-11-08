@@ -542,6 +542,11 @@ public class MapEditorScreen : EditorScreen
             ? activeView.DrawParamLightingBank.ResolveForViewport(loadedMaps)
             : activeView.GparamLightingBank.ResolveForViewport(loadedMaps);
 
+        // Demon's Souls' parts lit by the LightBank rows of their own LightIDs
+        SceneRenderer.MapLightSets = activeView.DrawParamLightingBank.CanUse()
+            ? activeView.DrawParamLightingBank.UpdatePartLighting(loadedMaps, SceneRenderer.MapLighting)
+            : Array.Empty<GparamLighting>();
+
         // DS3's lightmaps of the map pieces, with the lighting's Dominant Light Map values
         activeView.Project.Handler.MapData.DolLightmapBank?.Update(loadedMaps, SceneRenderer.MapLighting);
 

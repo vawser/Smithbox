@@ -194,6 +194,140 @@ public class DrawParamLightingBank
         return ViewportLighting;
     }
 
+    // The per-part sets: each distinct (area, LightID) other than the scene's own, with what it was resolved from
+    private readonly List<GparamLighting> PartSets = new();
+    private readonly Dictionary<(string Area, int LightId), (int Index, int Hash)> PartSetIndex = new();
+    private readonly HashSet<MeshRenderableProxy> LitProxies = new();
+
+    /// <summary>
+    /// How many parts are lit by a set of their own, and how many sets there are, as last assigned
+    /// </summary>
+    public (int Parts, int Sets) PartLightingCounts { get; private set; }
+
+    /// <summary>
+    /// Lights each loaded part by the LightBank row its own LightID picks (Phase 4): the parts whose row is the one the
+    /// whole scene is lit with keep the scene's lighting, the others name a set of <see cref="SceneRenderer.LightSets" />
+    /// in their mesh (<see cref="MeshRenderableProxy.LightSet" />). The sets differ from the scene only in their lights:
+    /// the exposure, shadows, fog and tone correction stay the scene's. Off, everything goes back to the scene's
+    /// lighting: when per-part lighting is switched off, when map lighting is off, and when the menu chose a LightBank
+    /// row, which then lights everything. Returns the sets, set 1 first, for <see cref="SceneRenderer.MapLightSets" />.
+    /// Called every frame.
+    /// </summary>
+    public IReadOnlyList<GparamLighting> UpdatePartLighting(IReadOnlyList<MapContainer> maps, GparamLighting scene)
+    {
+        var litMap = scene != null ? GetLitMap(maps) : null;
+
+        if (litMap == null || !CFG.Current.Viewport_Map_DrawParam_Per_Part || ChosenRow(LightBank) >= 0)
+        {
+            ClearPartLighting();
+            return PartSets;
+        }
+
+        var sceneKey = (GetArea(litMap.Name), ChooseRows(litMap).Light);
+        var used = new HashSet<(string, int)>();
+        var stillLit = new HashSet<MeshRenderableProxy>();
+        var parts = 0;
+
+        // Each row's values hashed once this frame, however many parts pick it
+        var rowHashes = new Dictionary<(string, int), int>();
+
+        foreach (var map in maps)
+        {
+            var area = GetArea(map.Name);
+            var lightBank = GetBank(map.Name, LightBank);
+
+            if (lightBank == null)
+                continue;
+
+            foreach (var entity in map.Parts)
+            {
+                if (entity.WrappedObject is not MSBD.Part part || entity.RenderSceneMesh is not MeshRenderableProxy proxy)
+                    continue;
+
+                var key = (area, (int)part.LightID);
+                var row = lightBank[part.LightID];
+                byte set = 0;
+
+                if (key != sceneKey && row != null)
+                {
+                    if (!rowHashes.TryGetValue(key, out var rowHash))
+                    {
+                        var hash = new HashCode();
+                        AddToHash(ref hash, row);
+                        rowHash = hash.ToHashCode();
+                        rowHashes[key] = rowHash;
+                    }
+
+                    if (!PartSetIndex.TryGetValue(key, out var entry) || entry.Hash != rowHash)
+                    {
+                        var index = PartSetIndex.TryGetValue(key, out var existing) ? existing.Index : PartSets.Count;
+
+                        if (index < LightSetTable.MaxSets)
+                        {
+                            var lighting = Resolve(map.Name, new DrawParamRows(part.LightID, 0, 0, 0, 0));
+
+                            if (index == PartSets.Count)
+                                PartSets.Add(lighting);
+                            else
+                                PartSets[index] = lighting;
+
+                            entry = (index, rowHash);
+                            PartSetIndex[key] = entry;
+                        }
+                        else
+                        {
+                            entry = (-1, rowHash);
+                        }
+                    }
+
+                    if (entry.Index >= 0)
+                    {
+                        set = (byte)(entry.Index + 1);
+                        used.Add(key);
+                        parts++;
+                    }
+                }
+
+                proxy.LightSet = set;
+
+                if (set != 0)
+                    stillLit.Add(proxy);
+            }
+        }
+
+        // Parts of maps no longer loaded, or now on the scene's row, go back to the scene's lighting
+        foreach (var proxy in LitProxies)
+        {
+            if (!stillLit.Contains(proxy))
+                proxy.LightSet = 0;
+        }
+
+        LitProxies.Clear();
+        LitProxies.UnionWith(stillLit);
+
+        // Sets no part uses any more are rebuilt from nothing once all of them are unused, so indices stay stable
+        if (used.Count == 0 && PartSets.Count > 0)
+        {
+            PartSets.Clear();
+            PartSetIndex.Clear();
+        }
+
+        PartLightingCounts = (parts, used.Count);
+
+        return PartSets;
+    }
+
+    private void ClearPartLighting()
+    {
+        foreach (var proxy in LitProxies)
+            proxy.LightSet = 0;
+
+        LitProxies.Clear();
+        PartSets.Clear();
+        PartSetIndex.Clear();
+        PartLightingCounts = (0, 0);
+    }
+
     private static void AddToHash(ref HashCode hash, Param.Row row)
     {
         if (row == null)

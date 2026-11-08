@@ -1376,6 +1376,9 @@ public class CFG
     public int Viewport_Map_DrawParam_ToneCorrect_Row = -1;
     public int Viewport_Map_DrawParam_Fog_Row = -1;
 
+    // Whether each part is lit by the LightBank row its own LightID picks, rather than all by one row
+    public bool Viewport_Map_DrawParam_Per_Part = true;
+
     // Whether the map lighting's colour correction (Demon's Souls' ToneCorrectBank) is drawn
     public bool Viewport_Post_Tone_Correction = true;
 
