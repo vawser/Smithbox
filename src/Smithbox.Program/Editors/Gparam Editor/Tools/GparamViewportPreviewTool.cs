@@ -73,14 +73,6 @@ public class GparamViewportPreviewTool
         else if (universe.LoadedMapId != null)
         {
             GUI.WrappedText(LOC.Get("GPARAM_ViewportPreview_Status_Loaded", universe.LoadedMapId, universe.PartCount));
-
-            // What lights it besides the GPARAM; the volumes and lights only in Game render mode
-            var environment = universe.Environment;
-
-            GUI.WrappedText(LOC.Get("GPARAM_ViewportPreview_Status_Environment",
-                environment.ShadedVolumeCount,
-                environment.ShadedLightCount, environment.LightCount,
-                environment.LightmappedPartCount));
         }
         else
         {
