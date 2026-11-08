@@ -267,6 +267,76 @@ static class Signatures
                     $"{string.Join(" ", p.Slots.Select(slot => s.Textures.FirstOrDefault(t => t.Slot == slot)?.Role ?? "?"))}\n");
         File.WriteAllText(Path.Combine(outDir, $"{game}_Permutations.tsv"), sb.ToString());
 
+        // What each slot means to the game, for the binding audit in Tools/MaterialSurvey
+        var meanings = new SortedDictionary<string, SlotMeanings>(StringComparer.Ordinal);
+        foreach (var s in sigs)
+        {
+            var m = new SlotMeanings();
+            foreach (var t in s.Textures.Where(t => t.Slot >= 0))
+                m.Slots[t.Slot] = new SlotMeaning { Meaning = Meaning(t), UvSet = UvSet(t) };
+            foreach (var p in s.Permutations) m.Permutations[p.Number] = p.Slots;
+            meanings[s.Shader] = m;
+        }
+        File.WriteAllText(Path.Combine(outDir, $"{game}_SlotMeanings.json"), JsonSerializer.Serialize(meanings));
+
         File.WriteAllLines(Path.Combine(outDir, $"{game}_SignatureFailures.txt"), failures);
     }
+
+    /// <summary>
+    /// What a texture is to the game, from where its channels go (see GBuffer.md): rgb to RT2 is an albedo, rg to
+    /// RT0 a normal (Gloss if its blue goes to RT1.y), red alone to RT1.x a metallic, rgb to RT4 an emissive.
+    /// A channel that reaches the normal and the albedo at once weighs layers (Mask); one that only moves another
+    /// sample's UVs is Coordinates. A texture can be several of these at once in a blend, in which case the
+    /// first that matches wins.
+    /// </summary>
+    public static string Meaning(TextureUse t)
+    {
+        List<string> Of(string ch) => t.Channels.TryGetValue(ch, out var o) ? o : [];
+        bool Has(string ch, string output) => Of(ch).Contains(output);
+        bool Any(string ch, string prefix) => Of(ch).Exists(o => o.StartsWith(prefix, StringComparison.Ordinal));
+
+        if (t.Channels.Count == 0) return "Unused";
+        // A normal's red and green bend the normal, and its blue doesn't, as z is rebuilt from them. Some shaders
+        // also color by the normal (crystal, trees), so reaching the albedo as well doesn't rule it out
+        // Red and green that go nowhere but the normal are one too, whatever blue and alpha do (C[DetailBlend] also
+        // weighs by them in some permutations)
+        var onlyNormal = Of("r").Count > 0 && Of("g").Count > 0 && Of("r").Concat(Of("g")).All(o => o.StartsWith("RT0.", StringComparison.Ordinal));
+        // A mask of two channels looks the same, except that as a layer's weight it reaches the gloss as well, which a
+        // normal's red and green never do (its gloss is its blue)
+        // A blue that is the gloss and nothing else marks a normal map however its red and green are used (AC6's [MS]
+        // blends weigh their layers by the normals too)
+        var blueIsGloss = Of("b").Count == 1 && Of("b")[0] == "RT1.y";
+        if (Any("r", "RT0.") && Any("g", "RT0.") && blueIsGloss) return "NormalGloss";
+        if (Any("r", "RT0.") && Any("g", "RT0.") && (onlyNormal || (!Any("b", "RT0.") && !Has("r", "RT1.y") && !Has("g", "RT1.y"))))
+            return Has("b", "RT1.y") ? "NormalGloss" : "Normal";
+        if (Has("r", "RT2.x") && Has("g", "RT2.y") && Has("b", "RT2.z") && !Any("r", "RT0.")) return "Albedo";
+        if (Any("r", "RT4.") && !Any("r", "RT2.") && !Any("r", "RT0.")) return "Emissive";
+        if (t.Channels.Values.Any(o => o.Exists(x => x.StartsWith("RT0.")) && o.Exists(x => x.StartsWith("RT2.")))) return "Mask";
+        // Character shaders' wet surfaces darken the albedo by the metallic too, so only the normal rules it out
+        if (Has("r", "RT1.x") && !Any("r", "RT0.") && Of("g").Count == 0 && Of("b").Count == 0) return "Metallic";
+        if (t.Channels.Values.All(o => o.All(x => x.StartsWith("uv(")))) return "Coordinates";
+        if (t.Channels.Values.Any(o => o.Contains("RT3.x"))) return "Subsurface";
+        if (t.Channels.Values.All(o => o.All(x => x.EndsWith(".w") || x == "discard"))) return "Alpha";
+        return "Other";
+    }
+
+    /// <summary>0 if the texture is sampled with the first UV set (TEXCOORD0.xy), 1 the second (TEXCOORD0.zw), -1 if neither or both</summary>
+    public static int UvSet(TextureUse t)
+    {
+        var first = t.Coordinates.Contains("in:TEXCOORD0.x") || t.Coordinates.Contains("in:TEXCOORD0.y");
+        var second = t.Coordinates.Contains("in:TEXCOORD0.z") || t.Coordinates.Contains("in:TEXCOORD0.w");
+        return first == second ? -1 : first ? 0 : 1;
+    }
+}
+
+class SlotMeaning
+{
+    public string Meaning { get; set; } = "";
+    public int UvSet { get; set; } = -1;
+}
+
+class SlotMeanings
+{
+    public SortedDictionary<int, SlotMeaning> Slots { get; set; } = new();
+    public SortedDictionary<int, List<int>> Permutations { get; set; } = new();
 }

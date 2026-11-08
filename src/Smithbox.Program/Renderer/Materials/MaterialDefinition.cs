@@ -146,6 +146,54 @@ public class MaterialShaderTable
     /// </summary>
     [JsonIgnore]
     public Dictionary<string, Dictionary<int, string>> Metallic { get; set; } = new();
+
+    /// <summary>
+    /// Shader name to texture slot to the UV set ("0" or "1") the game's shader samples it with,
+    /// generated from the compiled pixel shaders by Tools/ShaderSignature. Slots sampled with both are left out.
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, Dictionary<int, string>> UvSets { get; set; } = new();
+
+    /// <summary>
+    /// Adds the overlays found by Tools/ShaderSignature's overlays mode ({GAME}_Overlays.json) where the checked-in
+    /// <see cref="Details"/> has none, or has no albedo for one: the [Ov_AN] albedo overlay was beyond what made those.
+    /// </summary>
+    /// <summary>
+    /// Adds the blend recipes made by Tools/ShaderSignature's blends mode ({GAME}_GeneratedBlends.json) for the shaders
+    /// <see cref="Blends"/> has none for. The checked-in ones win: the generator reproduces most of them, not all.
+    /// </summary>
+    public void MergeBlends(Dictionary<string, MaterialBlendRecipe> generated)
+    {
+        foreach (var (key, recipe) in generated)
+        {
+            Blends.TryAdd(key, recipe);
+        }
+    }
+
+    public void MergeOverlays(Dictionary<string, MaterialDetailRecipe> overlays)
+    {
+        foreach (var (key, overlay) in overlays)
+        {
+            if (!Details.TryGetValue(key, out MaterialDetailRecipe? detail))
+            {
+                Details[key] = overlay;
+                continue;
+            }
+
+            if (detail.Albedo == null && overlay.Albedo != null)
+            {
+                detail.Albedo = overlay.Albedo;
+                detail.AlbedoBlend = overlay.AlbedoBlend;
+                detail.AlbedoStrength = overlay.AlbedoStrength;
+            }
+
+            if (detail.Normal == null && overlay.Normal != null)
+            {
+                detail.Normal = overlay.Normal;
+                detail.NormalStrength = overlay.NormalStrength;
+            }
+        }
+    }
 }
 
 /// <summary>
@@ -276,6 +324,15 @@ public class MaterialDetailRecipe
 
     /// <summary>The color parameter that is the albedo of a shader with no albedo texture</summary>
     public string? BaseColor { get; set; }
+
+    /// <summary>
+    /// "Overlay" for the [Ov_AN] form, where the overlay O is laid over the albedo A in gamma space by a strength s:
+    /// x = A + s(g - 0.5)(O - A), then sat(x + s(0.5 - g)(O - x)), with g = O^0.454. Otherwise A is multiplied
+    /// </summary>
+    public string? AlbedoBlend { get; set; }
+
+    /// <summary>The s of an "Overlay" <see cref="AlbedoBlend"/></summary>
+    public string? AlbedoStrength { get; set; }
 }
 
 /// <summary>A <see cref="MaterialDetailRecipe"/> with the values of one material filled in</summary>
@@ -283,6 +340,10 @@ public class MaterialResolvedDetail
 {
     public string? AlbedoType { get; set; }
     public float[] Color { get; set; } = [1, 1, 1];
+
+    /// <summary>Laid over rather than multiplied, see <see cref="MaterialDetailRecipe.AlbedoBlend"/></summary>
+    public bool Overlay { get; set; }
+    public float OverlayStrength { get; set; }
 
     public string? NormalType { get; set; }
     public float NormalStrength { get; set; }
@@ -349,6 +410,25 @@ public class MaterialBlendRecipeLayer
     /// <summary>A product for <see cref="MaterialDefinition"/> to evaluate, or null for 0</summary>
     public string? Sharpness { get; set; }
     public string? Detail { get; set; }
+
+    // The extended form (AC6's [MS] blends), set by Tools/ShaderSignature where the recipe's own form doesn't fit.
+    // The layer has a detail mask of its own, and its detail is sum_c DetailChannels[c] * mask.c + DetailBias, each a
+    // sum of products ("2*snp_0_float_52_0 + -1"). A hard weight is then sat(1 - sharpness (2v - d)), with no Scale,
+    // and a soft one sat((v - sharpness (1 - v)(d + 0.01)) * SoftScale)
+
+    /// <summary>The slot of the layer's own detail mask</summary>
+    public int? DetailMask { get; set; }
+
+    /// <summary>What multiplies the detail mask's r, g, b and a, or null for the recipe's own form</summary>
+    public string[]? DetailChannels { get; set; }
+
+    public string? DetailBias { get; set; }
+
+    /// <summary>What multiplies a soft weight, null for 1</summary>
+    public string? SoftScale { get; set; }
+
+    [JsonIgnore]
+    public bool IsExtended => DetailChannels != null;
 }
 
 /// <summary>A <see cref="MaterialBlendRecipe"/> with the values of one material filled in</summary>
@@ -356,6 +436,12 @@ public class MaterialResolvedBlend
 {
     /// <summary>The first <see cref="MaxWeighted"/> layers above the bottom one</summary>
     public const int MaxWeighted = 3;
+
+    // The bits of a source as FlverShader.frag reads them: the channel, then SOURCE_INVERT (8) and SOURCE_SOFT (16),
+    // then these, and the texture index of an extended layer's detail mask from bit 16 (filled in by FlverResource)
+    public const uint ChannelMask = 7;
+    public const uint SourceExtended = 32;
+    public const uint SourceDetailSecondUv = 64;
 
     public string? MaskType { get; set; }
     public string? DetailType { get; set; }
@@ -371,6 +457,17 @@ public class MaterialResolvedBlend
 
     /// <summary>What multiplies each layer's albedo, the bottom layer first</summary>
     public float[][] Tints { get; set; } = [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]];
+
+    // The extended form, per layer above the bottom (see MaterialBlendRecipeLayer.DetailChannels)
+
+    /// <summary>Whether any layer has the extended form, which needs the material's two further entries</summary>
+    public bool Extended { get; set; }
+
+    /// <summary>What multiplies each channel (r, g, b, a) of the layer's own detail mask</summary>
+    public float[][] LayerChannels { get; set; } = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+    public float[] LayerBias { get; set; } = new float[MaxWeighted];
+    public float[] LayerSoftScale { get; set; } = [1, 1, 1];
+    public string?[] LayerDetailTypes { get; set; } = new string?[MaxWeighted];
 }
 
 /// <summary>
@@ -421,6 +518,9 @@ public class MaterialSampler
     /// <summary>The scale stored with the sampler. 0, 0 means it leaves it to the UV group</summary>
     public float[] Scale { get; set; } = [];
 
+    /// <summary>The UV set the game's shader samples this texture with, or -1 if that isn't known</summary>
+    public int UvSet { get; set; } = -1;
+
     /// <summary>What UVs are multiplied by to sample this texture</summary>
     public float[] Tiling { get; set; } = [1, 1];
 
@@ -441,6 +541,9 @@ public class MaterialBlendLayer
 
     /// <summary>The metallic map of the layer, the one in the UV group of its albedo, see ResolveMetallic</summary>
     public string? Metallic { get; set; }
+
+    /// <summary>The layer is the color of its tint, with no albedo texture</summary>
+    public bool ColorOnly { get; set; }
 }
 
 /// <summary>
@@ -509,6 +612,12 @@ public class MaterialDefinition
     public MaterialBlendWeight BlendWeight { get; set; }
 
     public List<MaterialBlendLayer> BlendLayers { get; set; } = new();
+
+    /// <summary>The TEXCOORD the blend recipe's vertex sources read, 1 unless the recipe says otherwise</summary>
+    public int BlendVertexAttribute { get; set; } = 1;
+
+    /// <summary>A second TEXCOORD they read, of which only x, or 0 for none</summary>
+    public int BlendVertexAttribute2 { get; set; }
 
     /// <summary>Set when <see cref="BlendWeight"/> is <see cref="MaterialBlendWeight.Recipe"/></summary>
     public MaterialResolvedBlend? Blend { get; set; }
@@ -611,6 +720,17 @@ public class MaterialDefinition
         ResolveWater(table);
         ResolveFur(table);
         ResolveMetallic(table);
+
+        if (table != null && table.UvSets.TryGetValue(ShaderName, out var uvSets))
+        {
+            foreach (MaterialSampler sampler in Samplers)
+            {
+                if (sampler.Slot >= 0 && uvSets.TryGetValue(sampler.Slot, out var set) && int.TryParse(set, out var value))
+                {
+                    sampler.UvSet = value;
+                }
+            }
+        }
     }
 
     private const string MetallicRole = "MetallicMap";
@@ -725,6 +845,15 @@ public class MaterialDefinition
     /// The channels a layer's value can come from, and the flags on top of them.
     /// These are the values the fragment shader expects in its blend data.
     /// </summary>
+    private static readonly Regex VertexSource = new(@"^TEXCOORD(\d+)\.([xyz])$", RegexOptions.Compiled);
+
+    /// <summary>The TEXCOORD a vertex source reads (TEXCOORD5.x is 5), or null for a mask or color source</summary>
+    private static int? VertexAttribute(string source) => VertexSource.Match(source) is { Success: true } m ? int.Parse(m.Groups[1].Value) : null;
+
+    /// <summary>
+    /// A vertex source of any TEXCOORD reads the vertex blend values: the viewport puts that attribute where TEXCOORD1
+    /// is (BlendVertexAttribute, FlverResource.GetTexCoordIndex), so TEXCOORD5.x is the same channel as TEXCOORD1.x
+    /// </summary>
     private static uint? BlendSource(MaterialBlendRecipeLayer layer)
     {
         uint? channel = layer.Source switch
@@ -732,10 +861,8 @@ public class MaterialDefinition
             "Mask.r" => 0,
             "Mask.g" => 1,
             "Mask.b" => 2,
-            "TEXCOORD1.x" => 3,
-            "TEXCOORD1.y" => 4,
-            "TEXCOORD1.z" => 5,
             "COLOR1.x" => 6,
+            var s when VertexSource.Match(s) is { Success: true } m => 3u + (uint)(m.Groups[2].Value[0] - 'x'),
             _ => null
         };
 
@@ -770,13 +897,30 @@ public class MaterialDefinition
             return;
         }
 
-        string? TypeOf(int? slot) => slot == null ? null : Samplers.Find(x => x.Slot == slot)?.Type;
-
-        var bottom = TypeOf(recipe.Albedo);
-        if (bottom == null || layers.Any(x => TypeOf(x.Albedo) == null))
+        // The vertex sources can read two attributes: the first goes where TEXCOORD1 is, the second where TEXCOORD2 is,
+        // of which only x is passed on (AC6's [MS] blends read TEXCOORD1.xy and TEXCOORD5.x). TEXCOORD1 is the first if
+        // the recipe reads it
+        var attributes = layers.Select(x => VertexAttribute(x.Source)).Where(x => x != null).Select(x => x!.Value)
+            .Distinct().OrderBy(x => x == 1 ? 0 : 1).ThenBy(x => x).ToList();
+        if (attributes.Count > 2
+            || (attributes.Count == 2 && layers.Any(x => VertexAttribute(x.Source) == attributes[1] && !x.Source.EndsWith(".x"))))
         {
             return;
         }
+
+        string? TypeOf(int? slot) => slot is null or < 0 ? null : Samplers.Find(x => x.Slot == slot)?.Type;
+
+        // A layer with no albedo (-1) is the color of its param, as some of AC6's [MS] layers are
+        bool ColorOnly(MaterialBlendRecipeLayer x) => x.Albedo < 0 && x.Color != null;
+
+        var bottom = TypeOf(recipe.Albedo);
+        if (bottom == null || layers.Any(x => TypeOf(x.Albedo) == null && !ColorOnly(x)))
+        {
+            return;
+        }
+
+        BlendVertexAttribute = attributes.Count >= 1 ? attributes[0] : 1;
+        BlendVertexAttribute2 = attributes.Count == 2 ? attributes[1] : 0;
 
         MaterialResolvedBlend blend = new()
         {
@@ -793,11 +937,33 @@ public class MaterialDefinition
         {
             MaterialBlendRecipeLayer layer = layers[i];
 
-            BlendLayers.Add(new MaterialBlendLayer { Albedo = TypeOf(layer.Albedo), Normal = TypeOf(layer.Normal) });
+            BlendLayers.Add(new MaterialBlendLayer { Albedo = TypeOf(layer.Albedo), Normal = TypeOf(layer.Normal), ColorOnly = ColorOnly(layer) });
             blend.Sharpness[i] = layer.Sharpness == null ? 0 : EvaluateProduct(layer.Sharpness);
             blend.Detail[i] = layer.Detail == null ? 0 : EvaluateProduct(layer.Detail);
             blend.Sources[i] = BlendSource(layer)!.Value;
             blend.Tints[i + 1] = LayerTint(layer.Color);
+
+            // The second attribute's x is channel 7 (FlverShader.frag, fsin_vertexBlend.w)
+            if (BlendVertexAttribute2 != 0 && VertexAttribute(layer.Source) == BlendVertexAttribute2)
+            {
+                blend.Sources[i] = (blend.Sources[i] & ~MaterialResolvedBlend.ChannelMask) | 7u;
+            }
+
+            if (layer.IsExtended)
+            {
+                blend.Extended = true;
+                blend.Sources[i] |= MaterialResolvedBlend.SourceExtended;
+                blend.LayerChannels[i] = layer.DetailChannels!.Take(4).Select(EvaluateSum).Concat(new float[4]).Take(4).ToArray();
+                blend.LayerBias[i] = layer.DetailBias == null ? 0 : EvaluateSum(layer.DetailBias);
+                blend.LayerSoftScale[i] = layer.SoftScale == null ? 1 : EvaluateSum(layer.SoftScale);
+                blend.LayerDetailTypes[i] = TypeOf(layer.DetailMask);
+
+                // Where the game samples the layer's detail mask with the second UV set
+                if (Samplers.Find(x => x.Slot == layer.DetailMask)?.UvSet == 1)
+                {
+                    blend.Sources[i] |= MaterialResolvedBlend.SourceDetailSecondUv;
+                }
+            }
         }
 
         Blend = blend;
@@ -826,12 +992,16 @@ public class MaterialDefinition
             return;
         }
 
-        string? TypeOf(int? slot) => slot == null ? null : Samplers.Find(x => x.Slot == slot && x.Path != "")?.Type;
+        // The file can be the material's or the model's, which isn't known here. The viewport looks for both
+        // (FlverResource.LoadBlendRecipe), and the shader leaves out an overlay whose texture isn't there
+        string? TypeOf(int? slot) => slot == null ? null : Samplers.Find(x => x.Slot == slot)?.Type;
 
         MaterialResolvedDetail detail = new()
         {
             AlbedoType = TypeOf(recipe.Albedo),
             Color = LayerTint(recipe.Color),
+            Overlay = recipe.AlbedoBlend == "Overlay",
+            OverlayStrength = recipe.AlbedoStrength == null ? 0 : EvaluateProduct(recipe.AlbedoStrength),
             NormalType = TypeOf(recipe.Normal),
             NormalStrength = recipe.NormalStrength == null ? 0 : EvaluateProduct(recipe.NormalStrength),
             BaseColor = recipe.BaseColor != null && Params.TryGetValue(recipe.BaseColor, out var baseColor) && baseColor.Length >= 3 ? baseColor[..3] : null
@@ -1163,6 +1333,12 @@ public class MaterialDefinition
     /// Multiplies out a <see cref="MaterialTextureInput"/> expression, where a parameter
     /// the material doesn't set is 0, which is what the shader's constant would hold.
     /// </summary>
+    /// <summary>A sum of products ("2*snp_0_float_52_0 + -1"), as the extended blend form writes its values</summary>
+    private float EvaluateSum(string expression)
+    {
+        return expression.Split(" + ").Sum(term => EvaluateProduct(term.Trim()));
+    }
+
     private float EvaluateProduct(string expression)
     {
         var result = 1.0f;

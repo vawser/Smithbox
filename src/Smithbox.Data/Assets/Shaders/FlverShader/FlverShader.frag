@@ -97,7 +97,7 @@ layout(location = 9) flat in uint fsin_entityid;
 	layout(location = 10) in vec2 fsin_texcoord2;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	layout(location = 11) in vec3 fsin_vertexBlend;
+	layout(location = 11) in vec4 fsin_vertexBlend;
 #endif
 // 1: the instance receives no shadows, an MSB part's IsShadowDest
 layout(location = 12) flat in uint fsin_flags;
@@ -478,10 +478,35 @@ layout(set = 4, binding = 0, std140) buffer materialLayerScroll
     readonly layerScrollData layerscrolldata[];
 };
 
-// A source is a channel: 0-2 the blend mask, 3-5 TEXCOORD1, 6 the vertex color. On top of that are these flags
+// A source is a channel: 0-2 the blend mask, 3-5 TEXCOORD1, 6 the vertex color, 7 the x of the second vertex
+// attribute. On top of that are these flags, and an extended layer's detail mask texture from bit 16
 #define SOURCE_CHANNEL_MASK 7u
 #define SOURCE_INVERT 8u
 #define SOURCE_SOFT 16u
+#define SOURCE_EXTENDED 32u
+#define SOURCE_DETAIL_SECOND_UV 64u
+
+// The extended form (AC6's [MS] blends), the two entries after water for layers 1 to 3: what multiplies each
+// channel of the layer's own detail mask, and x the detail bias, y what multiplies a soft weight, zw the mask's tiling
+struct layerDetailData
+{
+	vec4 channels[3];
+};
+
+struct layerDetailExtraData
+{
+	vec4 layer[3];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayerDetail
+{
+    readonly layerDetailData layerdetaildata[];
+};
+
+layout(set = 4, binding = 0, std140) buffer materialLayerDetailExtra
+{
+    readonly layerDetailExtraData layerdetailextradata[];
+};
 #endif
 
 layout(set = 5, binding = 0) uniform sampler linearSampler;
@@ -712,6 +737,10 @@ void ComputeRecipeWeights()
 			value = fsin_color.r;
 		}
   #ifdef MATERIAL_DEFORM
+		else if (channel == 7u)
+		{
+			value = fsin_vertexBlend.w;
+		}
 		else
 		{
 			value = fsin_vertexBlend[channel - 3u];
@@ -725,15 +754,30 @@ void ComputeRecipeWeights()
 
 		float sharpness = blend.sharpness[i - 1];
 		float detail = blend.detail[i - 1] * detailMask + blend.sharpness.w;
+		float softScale = 1.0;
+		float hardScale = blend.detail.w;
+
+		// The extended form: the layer's own detail mask, the sum of its channels by the layer's weights plus a bias.
+		// Its sharpness already has the scale in it
+		if ((source & SOURCE_EXTENDED) != 0u)
+		{
+			vec4 extra = layerdetailextradata[g_mat + 14u].layer[i - 1];
+			int maskUv = (source & SOURCE_DETAIL_SECOND_UV) != 0u ? 1 : 0;
+			vec4 layerMask = SampleAt(source >> 16u, maskUv, extra.zw, vec2(0.0));
+			detail = dot(layerMask, layerdetaildata[g_mat + 13u].channels[i - 1]) + extra.x;
+			softScale = extra.y;
+			hardScale = 1.0;
+		}
+
 		float weight;
 
 		if ((source & SOURCE_SOFT) != 0u)
 		{
-			weight = clamp(value - sharpness * (1.0 - value) * (detail + 0.01), 0.0, 1.0);
+			weight = clamp((value - sharpness * (1.0 - value) * (detail + 0.01)) * softScale, 0.0, 1.0);
 		}
 		else
 		{
-			weight = clamp(1.0 - blend.detail.w * sharpness * (2.0 * value - detail), 0.0, 1.0);
+			weight = clamp(1.0 - hardScale * sharpness * (2.0 * value - detail), 0.0, 1.0);
 		}
 
 		for (int j = 0; j < i; j++)
@@ -1812,7 +1856,20 @@ void main()
 	{
 		detailData overlay = detaildata[g_mat + 8u];
 		vec3 overlayColor = SampleAt(overlay.textures.x, 0, overlay.tiling.xy, vec2(0.0)).rgb;
-		diffuseColor.rgb = clamp(diffuseColor.rgb * overlayColor * 4.55 * overlay.colorStrength.rgb, 0.0, 1.0);
+
+		// The [Ov_AN] overlay, laid over in gamma space by a strength (MaterialDetail.AlbedoOverlay):
+		// x = A + s(g - 0.5)(O - A), then sat(x + s(0.5 - g)(O - x)), g = O^0.454. Otherwise it multiplies
+		if (overlay.textures.z == 1u)
+		{
+			float s = uintBitsToFloat(overlay.textures.w);
+			vec3 g = pow(max(overlayColor, vec3(0.0)), vec3(0.454));
+			vec3 x = diffuseColor.rgb + s * (g - 0.5) * (overlayColor - diffuseColor.rgb);
+			diffuseColor.rgb = clamp(x + s * (0.5 - g) * (overlayColor - x), 0.0, 1.0);
+		}
+		else
+		{
+			diffuseColor.rgb = clamp(diffuseColor.rgb * overlayColor * 4.55 * overlay.colorStrength.rgb, 0.0, 1.0);
+		}
 	}
 
 	if (diffuseColor.w < diffuseAlpha.w)

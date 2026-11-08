@@ -951,138 +951,77 @@ M[A][M0][HSV0]_Emissive_Glow	0	0 3	AlbedoMap_0 EmissiveMap_0
 M[A][M0][HSV0]_Emissive_Glow	1	0 3	AlbedoMap_0 EmissiveMap_0
 M[E][Sun]_Emissive_Glow	0		
 M[E][Sun]_Emissive_Glow	1		
-P[AMSN]_Edge	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-P[AMSN]_Edge	1	0 1	AlbedoMap_0 NormalMap_0
 S[A1][M0]_Alpha	0	0	AlbedoMap_0
 S[A1][M0]_Alpha	1	0	AlbedoMap_0
 M[A][M0][HSV0]_Emissive_Glow_cloth	0	0 3	 
 M[A][M0][HSV0]_Emissive_Glow_cloth	1	0 3	 
-M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Snow]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 18	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4 NormalMap_0
-M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Snow]	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 18	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4 NormalMap_0
-MN[Material]	0	1	
-MN[Material]	1	1	
-M[atmosphericentry]_01	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
-M[atmosphericentry]_01	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
-M[CoralBurst]_01	0	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
-M[CoralBurst]_01	1	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
-M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
-M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building]	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
+P[AMSN]_Edge	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+P[AMSN]_Edge	1	0 1	AlbedoMap_0 NormalMap_0
 S[A1][M0]_Alpha_Soft	0	0	AlbedoMap_0
 S[A1][M0]_Alpha_Soft	1	0	AlbedoMap_0
+S[A1][M0]_Emissive_Alpha	0	0 1	AlbedoMap_0 EmissiveMap
+S[A1][M0]_Emissive_Alpha	1	0 1	AlbedoMap_0 EmissiveMap
+M[E][Longrange_Int]_Emissive_Glow	0		
+M[E][Longrange_Int]_Emissive_Glow	1		
+M[AMSN][M0][M1]_AO	0	0 2 3	AlbedoMap_0 MetallicMap_0 NormalMap_0
+M[AMSN][M0][M1]_AO	1	0 3	AlbedoMap_0 NormalMap_0
+S[AMSN][M0][M1]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+S[AMSN][M0][M1]	1	0 1	AlbedoMap_0 NormalMap_0
+M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
+M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building]	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
+M[AMSN][M0][M1]_AO_cloth	0	0 2 3	  
+M[AMSN][M0][M1]_AO_cloth	1	0 3	 
+MN[Material]	0	1	
+MN[Material]	1	1	
+S[AMSN][M0][M1]_Alpha	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+S[AMSN][M0][M1]_Alpha	1	0 1	AlbedoMap_0 NormalMap_0
 P[ACParts]	0	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap MetallicMap Mask3Map Mask1Map
 P[ACParts]	1	0 1 2 3 4 5 6 7 8 9 10 11 12 13	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap MetallicMap
 P[ACParts]	2	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap MetallicMap Mask3Map Mask1Map
 P[ACParts]	3	0 1 2 3 4 5 6 7 8 9 10 11 12 13	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap MetallicMap
-S[c4100_1st_circle_booster]	0	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[c4100_1st_circle_booster]	1	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[c4100_1st_circle_booster]	2	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[c4100_1st_circle_booster]	3	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-M[AMSN_V][Ov_N][Building][Border]	0	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Border]	1	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
-M[CoralGeyser]_01	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
-M[CoralGeyser]_01	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
-M[E][Longrange_Int]_Emissive_Glow	0		
-M[E][Longrange_Int]_Emissive_Glow	1		
+P[AMSN]_Scroll	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+P[AMSN]_Scroll	1	0 1	AlbedoMap_0 NormalMap_0
+P[AMSN]_Scroll	2	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+P[AMSN]_Scroll	3	0 1	AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1]_cloth	0	0 1 2	  
+M[AMSN][M0][M1]_cloth	1	0 1	 
+S[AMSN][M0][M1]_di_soft	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+S[AMSN][M0][M1]_di_soft	1	0 1	AlbedoMap_0 NormalMap_0
 M[Cutscene][Flow][Blend]_Emissive_Glow	0	1 2 3 4 5 6 7 9 10 11 12 13 14 15	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap Mask1Map Mask1Map Mask1Map Mask3Map_2 MetallicMap MetallicMap MetallicMap
 M[Cutscene][Flow][Blend]_Emissive_Glow	1	0 1 2 3 4 5 6 7 9 10 11 12 13 14 15	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap Mask1Map Mask1Map Mask1Map Mask3Map_2 MetallicMap MetallicMap MetallicMap
 M[Cutscene][Flow][Blend]_Emissive_Glow	2	1 2 3 4 5 6 7 9 10 11 12 13 14 15	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap Mask1Map Mask1Map Mask1Map Mask3Map_2 MetallicMap MetallicMap MetallicMap
 M[Cutscene][Flow][Blend]_Emissive_Glow	3	0 1 2 3 4 5 6 7 9 10 11 12 13 14 15	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap Mask1Map Mask1Map Mask1Map Mask3Map_2 MetallicMap MetallicMap MetallicMap
+P[ACParts][AMSN][Device]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
+P[ACParts][AMSN][Device]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
+M[CoralBurst]_01	0	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
+M[CoralBurst]_01	1	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
+S[AMSN][M1]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap_0
+S[AMSN][M1]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap_0
+M[CoralGeyser]_01	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
+M[CoralGeyser]_01	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
 M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Emissive][Glow]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
 M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Emissive][Glow]	1	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_0 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4
+P[ENEParts][AMSN]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
+P[ENEParts][AMSN]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
 C[DetailBlend][AlbedoMask]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap Mask3Map Mask1Map
 C[DetailBlend][AlbedoMask]	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap Mask3Map Mask1Map
 C[DetailBlend][AlbedoMask]	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap Mask3Map
 C[DetailBlend][AlbedoMask]	3	0 1 2 3 4 5 6 7 8 9 11 12 13	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap
 C[DetailBlend][AlbedoMask]	4	0 1 2 3 4 5 6 7 8 9 11 12 13	NormalMap AlbedoMap AlbedoMap AlbedoMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap MetallicMap MetallicMap
-M[SkyCloud]	0	0	AlbedoMap_0
-M[SkyCloud]	1	0	AlbedoMap_0
-M[SkyCloud]	2	0	AlbedoMap_0
-M[SkyCloud]	3	0	AlbedoMap_0
-M[SkyCloud]	4	0	AlbedoMap_0
-P[AMSN]_Scroll	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-P[AMSN]_Scroll	1	0 1	AlbedoMap_0 NormalMap_0
-P[AMSN]_Scroll	2	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-P[AMSN]_Scroll	3	0 1	AlbedoMap_0 NormalMap_0
-S[A1][M0]_Emissive_Alpha	0	0 1	AlbedoMap_0 EmissiveMap
-S[A1][M0]_Emissive_Alpha	1	0 1	AlbedoMap_0 EmissiveMap
+M[Water][Coaltar][solid]_Edge	0	0 1 2 4 7	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap
+M[Water][Coaltar][solid]_Edge	1	0 1 2 4 7 8	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap NormalMap
+M[Water][Coaltar][solid]_Edge	2	0 1 2 4 7 8	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap NormalMap
+M[Water][Coaltar][solid]_Edge	3	0 1 2 4 7	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap
+P[ACParts][AMSN]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
+P[ACParts][AMSN]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
 C[C4200]_Body	0	0 1 2 4 6 7 8 9 14 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map EmissiveMap EmissiveMap_0 Mask3Map
 C[C4200]_Body	1	0 1 2 4 6 7 8 9 14 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map EmissiveMap EmissiveMap_0 Mask3Map
 C[C4200]_Body	2	0 1 2 4 6 7 8 9 14 16 17 18 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map EmissiveMap EmissiveMap_0 Mask3Map
 C[C4200]_Body	3	0 1 2 4 6 7 8 9 14 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map EmissiveMap EmissiveMap_0 Mask3Map
 C[C4200]_Body	4	0 1 2 4 6 7 8 9 14 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map EmissiveMap EmissiveMap_0 Mask3Map
 C[C4200]_Body	5	0 1 2 4 6 7 8 9 14 16 17 18 19 20 21	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map EmissiveMap EmissiveMap_0 Mask3Map
-P[ACParts][AMSN][Device]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
-P[ACParts][AMSN][Device]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
 M[Coralstorm]_01	0	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
 M[Coralstorm]_01	1	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
-M[AMSN_V][Ov_N][Building][Emissive][Glow][Border]	0	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Emissive][Glow][Border]	1	0 1 2 3 4 5 7 9 13	AlbedoMap_0 AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
-M[Cutscene][MS][MB][M0]	73	3 12 13 14 15 16 22 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 AlbedoMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
-M[Cutscene][MS][MB][M0]	93	3 12 13 14 15 16 19 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
-M[Cutscene][MS][MB][M0]	135	3 12 13 14 15 16 19 23 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 AlbedoMap_0 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
-M[Cutscene][MS][MB][M0]	136	3 12 13 14 15 16 19 22 23 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 AlbedoMap_0 AlbedoMap_0 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
-M[Cutscene][MS][MB][M0]	137	0 16	AlbedoMap_0 NormalMap_0
-M[Water][Coaltar][solid]_Edge	0	0 1 2 4 7	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap
-M[Water][Coaltar][solid]_Edge	1	0 1 2 4 7 8	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap NormalMap
-M[Water][Coaltar][solid]_Edge	2	0 1 2 4 7 8	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap NormalMap
-M[Water][Coaltar][solid]_Edge	3	0 1 2 4 7	DisplacementMap AlbedoMap DisplacementMap Mask1Map NormalMap
-S[AMSN][M0][M1]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-S[AMSN][M0][M1]	1	0 1	AlbedoMap_0 NormalMap_0
-M[AMSN][M0][M1]_AO	0	0 2 3	AlbedoMap_0 MetallicMap_0 NormalMap_0
-M[AMSN][M0][M1]_AO	1	0 3	AlbedoMap_0 NormalMap_0
-S[AMSN][M1]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap_0
-S[AMSN][M1]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap_0
-M[AMSN_V][Ov_N][Building][Emissive][Glow][Tilling]	0	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Emissive][Glow][Tilling]	1	0 1 2 3 5 7 13	AlbedoMap_0 AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
-s[c4200_Laser]	0	2 3 4 5 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-s[c4200_Laser]	1	2 3 4 5 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-s[c4200_Laser]	2	2 3 4 5 6 12	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap AlbedoMap_0
-s[c4200_Laser]	3	2 3 4 5 6 12	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap AlbedoMap_0
-S[Light_Shaft]_NoLight_Addition_VatexAlpha_Soft	0	0 3	AlbedoMap_0 AlbedoMap
-P[ENEParts][AMSN]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
-P[ENEParts][AMSN]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
-S[c4201][ArtificialCoralBurst]_01	0	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
-S[c4201][ArtificialCoralBurst]_01	1	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
-S[Ground_blend]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-S[Ground_blend]	1	0 1	AlbedoMap_0 NormalMap_0
-S[AMSN][M0][M1]_Alpha	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-S[AMSN][M0][M1]_Alpha	1	0 1	AlbedoMap_0 NormalMap_0
-M[AMSN][M0][M1]_AO_cloth	0	0 2 3	  
-M[AMSN][M0][M1]_AO_cloth	1	0 3	 
-C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
-C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
-C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14 16	              
-C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	3	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
-C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	4	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
-P[ACParts][AMSN]_Emissive_Glow	0	0 1 2 3	AlbedoMap_0 NormalMap_0 MetallicMap_0 EmissiveMap
-P[ACParts][AMSN]_Emissive_Glow	1	0 1 3	AlbedoMap_0 NormalMap_0 EmissiveMap
-S[Move_Light_Shaft]_NoLight_Addition_VatexAlpha_Soft	0	3 7	AlbedoMap AlbedoMap_0
-S[Rotor_Blade]	0	0	AlbedoMap_0
-S[Rotor_Blade]	1	0	AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Snow][Border]	0	1 2 3 4 5 7 8 9 13	        
-M[AMSN_V][Ov_N][Building][Snow][Border]	1	1 2 3 4 5 7 8 9 13	        
-M[Flow][Blend]_Emissive_Glow	0	1 2 3 4 5 6 7	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
-M[Flow][Blend]_Emissive_Glow	1	0 1 2 3 4 5 6 7	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
-M[Flow][Blend]_Emissive_Glow	2	1 2 3 4 5 6 7	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
-M[Flow][Blend]_Emissive_Glow	3	0 1 2 3 4 5 6 7	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
-C[c4200]_transition	0	0 1 2 5 6 7 9 10 11 12	         
-C[c4200]_transition	1	0 1 5 6 7 9 10 11 12	        
-S[c4260]_blade	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[c4260]_blade	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-M[AMSN_V][Ov_N][Building][Snow][Tilling]	0	1 2 3 5 6 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 NormalMap_0 AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Snow][Tilling]	1	1 2 3 5 6 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 NormalMap_0 AlbedoMap_0
-M[HUD][Base]	0	0	AlbedoMap_0
-M[HUD][Base]	1	0	AlbedoMap_0
-M[AMSN][M0][M1]_cloth	0	0 1 2	  
-M[AMSN][M0][M1]_cloth	1	0 1	 
-P[ACParts][Glass][Transiton]	0	4 5 6 13	EmissiveMap Mask1Map_4 EmissiveMap NormalMap
-P[ACParts][Glass][Transiton]	1	4 5 6 13	EmissiveMap Mask1Map_4 EmissiveMap NormalMap
-S[AMSN][M0][M1]_di_soft	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-S[AMSN][M0][M1]_di_soft	1	0 1	AlbedoMap_0 NormalMap_0
-S[E][Billboard]_Emissive_Glow	0		
-S[E][Billboard]_Emissive_Glow	1		
-M[AMSN_V][Ov_N][Building][Tilling]	0	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
-M[AMSN_V][Ov_N][Building][Tilling]	1	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
 M[AMSN][Mb2][M0][M1][Snow]	0	0 1 2 3 4 5 6 7 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 NormalMap_0 AlbedoMap_0 Mask1Map_4 NormalMap_0 NormalMap_1
 M[AMSN][Mb2][M0][M1][Snow]	1	0 1 2 4 5 6 7 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 NormalMap_0 AlbedoMap_0 Mask1Map_4 NormalMap_0 NormalMap_1
 M[AMSN][Mb2][M0][M1][Snow]	2	0 1 2 5 6 7 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 NormalMap_0 AlbedoMap_0 Mask1Map_4 NormalMap_0 NormalMap_1
@@ -1098,72 +1037,132 @@ M[AMSN][Mb2][M0][M1][Snow]	11	1 3 5 6 13	AlbedoMap_0 MetallicMap_0 NormalMap_0 A
 M[AMSN][Mb2][M0][M1][Snow]	12	1 5 6 13	AlbedoMap_0 NormalMap_0 AlbedoMap_0 NormalMap_0
 M[AMSN][Mb2][M0][M1][Snow]	13	1 3 13	AlbedoMap_0 MetallicMap_0 NormalMap_0
 M[AMSN][Mb2][M0][M1][Snow]	14	1 13	AlbedoMap_0 NormalMap_0
-S[PC_LG_M_5510_Booster]	0	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[PC_LG_M_5510_Booster]	1	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[PC_LG_M_5510_Booster]	2	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
-S[PC_LG_M_5510_Booster]	3	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[c4100_1st_circle_booster]	0	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[c4100_1st_circle_booster]	1	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[c4100_1st_circle_booster]	2	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[c4100_1st_circle_booster]	3	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+M[atmosphericentry]_01	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
+M[atmosphericentry]_01	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
+M[AMSN][M0][M1]_Edge_cloth	0	0 1 2	  
+M[AMSN][M0][M1]_Edge_cloth	1	0 1	 
+M[Flow][Blend]_Emissive_Glow	0	1 2 3 4 5 6 7	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
+M[Flow][Blend]_Emissive_Glow	1	0 1 2 3 4 5 6 7	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
+M[Flow][Blend]_Emissive_Glow	2	1 2 3 4 5 6 7	EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
+M[Flow][Blend]_Emissive_Glow	3	0 1 2 3 4 5 6 7	Mask3Map_0 EmissiveMap EmissiveMap EmissiveMap NormalMap NormalMap EmissiveMap EmissiveMap
+P[ACParts][Glass][Transiton]	0	4 5 6 13	EmissiveMap Mask1Map_4 EmissiveMap NormalMap
+P[ACParts][Glass][Transiton]	1	4 5 6 13	EmissiveMap Mask1Map_4 EmissiveMap NormalMap
+M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Snow]	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 18	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4 NormalMap_0
+M[AMSN_V][Mb4_Ch2][3Mask][Ov_N][Building][Snow]	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 18	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 NormalMap_2 AlbedoMap_4 NormalMap_0 AlbedoMap_0 NormalMap_0 NormalMap_3 NormalMap_4 NormalMap_0
+M[AMSN][M1][Scroll]_cloth	0	0 1 2	  
+M[AMSN][M1][Scroll]_cloth	1	0 1	 
+M[HUD][Base]	0	0	AlbedoMap_0
+M[HUD][Base]	1	0	AlbedoMap_0
+s[c4200_Laser]	0	2 3 4 5 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+s[c4200_Laser]	1	2 3 4 5 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+s[c4200_Laser]	2	2 3 4 5 6 12	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap AlbedoMap_0
+s[c4200_Laser]	3	2 3 4 5 6 12	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap AlbedoMap_0
+P[Laser]_Emissive_Glow	0	2 3	AlbedoMap AlbedoMap_0
+P[Laser]_Emissive_Glow	1	2 3	AlbedoMap AlbedoMap_0
+M[AMSN][M1]_cloth	0	0 1 2	  
+M[AMSN][M1]_cloth	1	0 1	 
+S[c4201][ArtificialCoralBurst]_01	0	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
+S[c4201][ArtificialCoralBurst]_01	1	2 3 4 6	AlbedoMap AlbedoMap_0 Mask3Map AlbedoMap
+S[Ground_blend]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+S[Ground_blend]	1	0 1	AlbedoMap_0 NormalMap_0
+M[AMSN][POM][High][M1]_AO	0	0 2 3 4	MetallicMap_0 NormalMap_0 DisplacementMap_0 AlbedoMap_0
+M[AMSN][POM][High][M1]_AO	1	2 3 4	NormalMap_0 DisplacementMap_0 AlbedoMap_0
+M[Cutscene][MS][MB][M0]	73	3 12 13 14 15 16 22 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 AlbedoMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
+M[Cutscene][MS][MB][M0]	93	3 12 13 14 15 16 19 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
+M[Cutscene][MS][MB][M0]	135	3 12 13 14 15 16 19 23 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 AlbedoMap_0 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
+M[Cutscene][MS][MB][M0]	136	3 12 13 14 15 16 19 22 23 24 26 27 29	NormalMap_0 NormalMap_2 AlbedoMap_2 NormalMap_1 AlbedoMap_1 NormalMap_0 Mask1Map_4 AlbedoMap_0 AlbedoMap_0 NormalMap_0 Mask3Map_2 NormalMap_0 Mask1Map_4
+M[Cutscene][MS][MB][M0]	137	0 16	AlbedoMap_0 NormalMap_0
+C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
+C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
+C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14 16	              
+C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	3	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
+C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow	4	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
+M[AMSN_V][Ov_N][Building][Emissive][Glow][Tilling]	0	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Emissive][Glow][Tilling]	1	0 1 2 3 5 7 13	AlbedoMap_0 AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
+M[SkyCloud]	0	0	AlbedoMap_0
+M[SkyCloud]	1	0	AlbedoMap_0
+M[SkyCloud]	2	0	AlbedoMap_0
+M[SkyCloud]	3	0	AlbedoMap_0
+M[SkyCloud]	4	0	AlbedoMap_0
+P[ACParts]_SL	0	0 3 7 14 19	NormalMap AlbedoMap AlbedoMap Mask3Map MetallicMap
+C[c4200]_transition	0	0 1 2 5 6 7 9 10 11 12	         
+C[c4200]_transition	1	0 1 5 6 7 9 10 11 12	        
+M[AMSN_V][Ov_N][Building][Border]	0	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Border]	1	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
+P[AMSN]_cloth	0	0 1 2	  
+P[AMSN]_cloth	1	0 1	 
+S[c4260]_blade	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[c4260]_blade	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+P[ACParts]_cloth	0	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	               
+P[ACParts]_cloth	1	0 1 2 3 4 5 6 7 8 9 10 11 12 13	             
+P[ACParts]_cloth	2	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	               
+P[ACParts]_cloth	3	0 1 2 3 4 5 6 7 8 9 10 11 12 13	             
+P[AMSN]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+P[AMSN]	1	0 1	AlbedoMap_0 NormalMap_0
+S[Rotor_Blade]	0	0	AlbedoMap_0
+S[Rotor_Blade]	1	0	AlbedoMap_0
+S[E][Billboard]_Emissive_Glow	0		
+S[E][Billboard]_Emissive_Glow	1		
+M[AMSN][M1]_Emissive_cloth	0	0 1 2 3	   
+M[AMSN][M1]_Emissive_cloth	1	0 1 3	  
+S[Pulse]_Emissive_Glow	0	3 4 5 6 7	AlbedoMap_0 Mask3Map AlbedoMap DisplacementMap AlbedoMap
+S[Pulse]_Emissive_Glow	1	3 4 5 6 7	AlbedoMap_0 Mask3Map AlbedoMap DisplacementMap AlbedoMap
+S[Light_Shaft]_NoLight_Addition_VatexAlpha_Soft	0	0 3	AlbedoMap_0 AlbedoMap
+M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]	0	0 1 2 4 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 24	AlbedoMap_0 MetallicMap_1 MetallicMap_0 MetallicMap_1 Mask3Map_2 Mask1Map_4 NormalMap_4 AlbedoMap_4 NormalMap_3 AlbedoMap_3 NormalMap_2 AlbedoMap_2 NormalMap_1 MetallicMap_1 NormalMap_0 MetallicMap_1 MetallicMap_1 Mask1Map_4 Mask1Map_4 Mask1Map_4 AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]	1	0 1 2 4 6 7 8 9 10 11 12 13 14 15 16 17 18 20 21	AlbedoMap_0 MetallicMap_1 MetallicMap_0 MetallicMap_1 Mask3Map_2 Mask1Map_4 NormalMap_4 AlbedoMap_4 NormalMap_3 AlbedoMap_3 NormalMap_2 AlbedoMap_2 NormalMap_1 MetallicMap_1 NormalMap_0 MetallicMap_1 MetallicMap_1 Mask1Map_4 Mask1Map_4
+M[AMSN][M0][M1]_Heatingwire	0	0 1 2 3 5	AlbedoMap_0 EmissiveMap EmissiveMap EmissiveMap_0 NormalMap
+M[AMSN][M0][M1]_Heatingwire	1	0 1 2 3 4 5	AlbedoMap_0 EmissiveMap EmissiveMap EmissiveMap_0 MetallicMap NormalMap
+S[Move_Light_Shaft]_NoLight_Addition_VatexAlpha_Soft	0	3 7	AlbedoMap AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Snow][Border]	0	1 2 3 4 5 7 8 9 13	        
+M[AMSN_V][Ov_N][Building][Snow][Border]	1	1 2 3 4 5 7 8 9 13	        
+M[AMSN_V][Ov_N][Building][Emissive][Glow][Border]	0	1 2 3 4 5 7 9 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Emissive][Glow][Border]	1	0 1 2 3 4 5 7 9 13	AlbedoMap_0 AlbedoMap_1 NormalMap_0 Mask1Map_4 Mask3Map_2 NormalMap_1 NormalMap_0 NormalMap_2 AlbedoMap_0
+M[AMSN][M0][M1][Snow]	0	0 1 2 3 4	AlbedoMap_0 NormalMap_0 MetallicMap_0 AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1][Snow]	1	0 1 3 4	AlbedoMap_0 NormalMap_0 AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1][Snow]_2axes	0	0 1 2 3 4	AlbedoMap_0 NormalMap_0 MetallicMap_0 AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1][Snow]_2axes	1	0 1 3 4	AlbedoMap_0 NormalMap_0 AlbedoMap_0 NormalMap_0
+M[AMSN][M1]_Emissive_Glow_cloth	0	0 1 2 3	   
+M[AMSN][M1]_Emissive_Glow_cloth	1	0 1 3	  
+M[AMSN_V][Ov_N][Building][Snow][Tilling]	0	1 2 3 5 6 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 NormalMap_0 AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Snow][Tilling]	1	1 2 3 5 6 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 NormalMap_0 AlbedoMap_0
+M[AMSN][M0][M1]_LOD_CameraFade_Edge	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
+M[AMSN][M0][M1]_LOD_CameraFade_Edge	1	0 1	AlbedoMap_0 NormalMap_0
+M[AMSN][M0][M1][Snow]_2axes_cloth	0	0 1 2 3 4	    
+M[AMSN][M0][M1][Snow]_2axes_cloth	1	0 1 3 4	   
+P[ACParts]_ColorMaterial	0	0 1 2 4 6 7 8 9 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask1Map
+P[ACParts]_ColorMaterial	1	0 1 2 4 6 7 8 9 14	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map
+P[ACParts]_ColorMaterial	2	0 1 2 4 6 7 8 9 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask1Map
+P[ACParts]_ColorMaterial	3	0 1 2 4 6 7 8 9 14	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map
 I[AMSN]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
 I[AMSN]	1	0 1	AlbedoMap_0 NormalMap_0
-C[DetailBlend][AlbedoMask]_cloth	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	              
-C[DetailBlend][AlbedoMask]_cloth	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	              
-C[DetailBlend][AlbedoMask]_cloth	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14	             
-C[DetailBlend][AlbedoMask]_cloth	3	0 1 2 3 4 5 6 7 8 9 11 12 13	            
-C[DetailBlend][AlbedoMask]_cloth	4	0 1 2 3 4 5 6 7 8 9 11 12 13	            
 C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow_cloth	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
 C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow_cloth	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15 16	               
 C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow_cloth	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14 16	              
 C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow_cloth	3	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
 C[DetailBlend][AlbedoMask][emUV4]_Emissive_Glow_cloth	4	0 1 2 3 4 5 6 7 8 9 11 12 13 16	             
-M[AMSN][M0][M1][Snow]_2axes	0	0 1 2 3 4	AlbedoMap_0 NormalMap_0 MetallicMap_0 AlbedoMap_0 NormalMap_0
-M[AMSN][M0][M1][Snow]_2axes	1	0 1 3 4	AlbedoMap_0 NormalMap_0 AlbedoMap_0 NormalMap_0
-P[Laser]_Emissive_Glow	0	2 3	AlbedoMap AlbedoMap_0
-P[Laser]_Emissive_Glow	1	2 3	AlbedoMap AlbedoMap_0
-C[Cutscene][Enemy][Alpha]_ColorMaterial	0	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-C[Cutscene][Enemy][Alpha]_ColorMaterial	1	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-C[Cutscene][Enemy][Alpha]_ColorMaterial	2	0 1 2 4 6 7 8 9 14 16 17 18 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-C[Cutscene][Enemy][Alpha]_ColorMaterial	3	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-C[Cutscene][Enemy][Alpha]_ColorMaterial	4	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-C[Cutscene][Enemy][Alpha]_ColorMaterial	5	0 1 2 4 6 7 8 9 14 16 17 18 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
-M[AMSN][M1][Scroll]_cloth	0	0 1 2	  
-M[AMSN][M1][Scroll]_cloth	1	0 1	 
-M[AMSN][POM][High][M1]_AO	0	0 2 3 4	MetallicMap_0 NormalMap_0 DisplacementMap_0 AlbedoMap_0
-M[AMSN][POM][High][M1]_AO	1	2 3 4	NormalMap_0 DisplacementMap_0 AlbedoMap_0
-S[PC_PAShield_B]_Emissive_Glow	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
-S[PC_PAShield_B]_Emissive_Glow	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
-P[ACParts]_cloth	0	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	               
-P[ACParts]_cloth	1	0 1 2 3 4 5 6 7 8 9 10 11 12 13	             
-P[ACParts]_cloth	2	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15	               
-P[ACParts]_cloth	3	0 1 2 3 4 5 6 7 8 9 10 11 12 13	             
-I[AMSN]_cloth	0	0 1 2	  
-I[AMSN]_cloth	1	0 1	 
-M[AMSN][M0][M1][Snow]_2axes_cloth	0	0 1 2 3 4	    
-M[AMSN][M0][M1][Snow]_2axes_cloth	1	0 1 3 4	   
-C[Cutscene][Enemy][A][Flow]_Emissive_Glow	0	2	AlbedoMap_0
-C[Cutscene][Enemy][A][Flow]_Emissive_Glow	1	2	AlbedoMap_0
-M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]	0	0 1 2 4 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 24	AlbedoMap_0 MetallicMap_1 MetallicMap_0 MetallicMap_1 Mask3Map_2 Mask1Map_4 NormalMap_4 AlbedoMap_4 NormalMap_3 AlbedoMap_3 NormalMap_2 AlbedoMap_2 NormalMap_1 MetallicMap_1 NormalMap_0 MetallicMap_1 MetallicMap_1 Mask1Map_4 Mask1Map_4 Mask1Map_4 AlbedoMap_0 NormalMap_0
-M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]	1	0 1 2 4 6 7 8 9 10 11 12 13 14 15 16 17 18 20 21	AlbedoMap_0 MetallicMap_1 MetallicMap_0 MetallicMap_1 Mask3Map_2 Mask1Map_4 NormalMap_4 AlbedoMap_4 NormalMap_3 AlbedoMap_3 NormalMap_2 AlbedoMap_2 NormalMap_1 MetallicMap_1 NormalMap_0 MetallicMap_1 MetallicMap_1 Mask1Map_4 Mask1Map_4
-M[AMSN][M1]_cloth	0	0 1 2	  
-M[AMSN][M1]_cloth	1	0 1	 
-S[PC_PAShield_C_NoCamfade]_Emissive_Glow	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
-S[PC_PAShield_C_NoCamfade]_Emissive_Glow	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
+M[AMSN_V][Ov_N][Building][Tilling]	0	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
+M[AMSN_V][Ov_N][Building][Tilling]	1	1 2 3 5 7 13	AlbedoMap_1 NormalMap_0 Mask1Map_4 NormalMap_1 NormalMap_0 AlbedoMap_0
 M[AMSN][M0][M1][Snow]_cloth	0	0 1 2 3 4	    
 M[AMSN][M0][M1][Snow]_cloth	1	0 1 3 4	   
 M[AMSN]_ContactFade	0	0 2 7	  
 M[AMSN]_ContactFade	1	2 7	 
-M[AMSN][M0][M1][Snow]	0	0 1 2 3 4	AlbedoMap_0 NormalMap_0 MetallicMap_0 AlbedoMap_0 NormalMap_0
-M[AMSN][M0][M1][Snow]	1	0 1 3 4	AlbedoMap_0 NormalMap_0 AlbedoMap_0 NormalMap_0
-S[PC_PA]	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-S[PC_PA]	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-P[ACParts]_ColorMaterial	0	0 1 2 4 6 7 8 9 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask1Map
-P[ACParts]_ColorMaterial	1	0 1 2 4 6 7 8 9 14	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map
-P[ACParts]_ColorMaterial	2	0 1 2 4 6 7 8 9 14 15	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask1Map
-P[ACParts]_ColorMaterial	3	0 1 2 4 6 7 8 9 14	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map
-M[AMSN][M0][M1]_Edge_cloth	0	0 1 2	  
-M[AMSN][M0][M1]_Edge_cloth	1	0 1	 
-M[AMSN][M1]_Emissive_cloth	0	0 1 2 3	   
-M[AMSN][M1]_Emissive_cloth	1	0 1 3	  
-S[PC_PA]_soft	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-S[PC_PA]_soft	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_LG_M_5510_Booster]	0	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[PC_LG_M_5510_Booster]	1	2 3 4 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[PC_LG_M_5510_Booster]	2	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+S[PC_LG_M_5510_Booster]	3	0 2 3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap AlbedoMap
+C[DetailBlend][AlbedoMask]_cloth	0	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	              
+C[DetailBlend][AlbedoMask]_cloth	1	0 1 2 3 4 5 6 7 8 9 11 12 13 14 15	              
+C[DetailBlend][AlbedoMask]_cloth	2	0 1 2 3 4 5 6 7 8 9 11 12 13 14	             
+C[DetailBlend][AlbedoMask]_cloth	3	0 1 2 3 4 5 6 7 8 9 11 12 13	            
+C[DetailBlend][AlbedoMask]_cloth	4	0 1 2 3 4 5 6 7 8 9 11 12 13	            
+I[AMSN]_cloth	0	0 1 2	  
+I[AMSN]_cloth	1	0 1	 
+S[PC_PAShield_B]_Emissive_Glow	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
+S[PC_PAShield_B]_Emissive_Glow	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
 M[Cutscene][Interior]	0	4 5 12 13	NormalMap EmissiveMap Mask1Map Mask1Map
 M[Cutscene][Interior]	1	3 4	EmissiveMap NormalMap
 M[Cutscene][Interior]	2	0 3 4 6	EmissiveMap EmissiveMap NormalMap Mask1Map
@@ -1184,38 +1183,24 @@ M[Cutscene][Interior]	16	0 1 2 3 4 6 7 8 9	EmissiveMap AlbedoMap NormalMap Emiss
 M[Cutscene][Interior]	17	4 5 12 13	NormalMap EmissiveMap Mask1Map Mask1Map
 M[Cutscene][Interior]	18	4 5 12 13	NormalMap EmissiveMap Mask1Map Mask1Map
 M[Cutscene][Interior]	19	1 2 4 5 9 12 13	AlbedoMap NormalMap NormalMap EmissiveMap Mask1Map Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	0	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	1	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	2	0 1 2 4 6 7 8 9 14 16 17 18 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	3	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	4	0 1 2 4 6 7 8 9 14 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+C[Cutscene][Enemy][Alpha]_ColorMaterial	5	0 1 2 4 6 7 8 9 14 16 17 18 19 20 22 23 24	NormalMap AlbedoMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap Mask3Map NormalMap AlbedoMap Mask1Map AlbedoMap NormalMap NormalMap Mask1Map Mask1Map
+S[PC_PAShield_C_NoCamfade]_Emissive_Glow	0	4 6 7	Mask3Map AlbedoMap AlbedoMap
+S[PC_PAShield_C_NoCamfade]_Emissive_Glow	1	4 6 7	Mask3Map AlbedoMap AlbedoMap
+C[Cutscene][Enemy][A][Flow]_Emissive_Glow	0	2	AlbedoMap_0
+C[Cutscene][Enemy][A][Flow]_Emissive_Glow	1	2	AlbedoMap_0
 P[ACParts]_ColorMaterial_Repair	0	0 1 2 3 4 5 6 7 8 9 11 14 15	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap AlbedoMap Mask3Map Mask1Map
 P[ACParts]_ColorMaterial_Repair	1	0 1 2 3 4 5 6 7 8 9 11 14	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap AlbedoMap Mask3Map
 P[ACParts]_ColorMaterial_Repair	2	0 1 2 3 4 5 6 7 8 9 11 14 15	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap AlbedoMap Mask3Map Mask1Map
 P[ACParts]_ColorMaterial_Repair	3	0 1 2 3 4 5 6 7 8 9 11 14	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap NormalMap AlbedoMap NormalMap NormalMap AlbedoMap Mask3Map
-M[AMSN][M1]_Emissive_Glow_cloth	0	0 1 2 3	   
-M[AMSN][M1]_Emissive_Glow_cloth	1	0 1 3	  
-S[PC_WP_4820_PA]	0	3 4 5 6	EmissiveMap_0 Mask3Map AlbedoMap AlbedoMap
-S[PC_WP_4820_PA]	1	3 4 5 6	EmissiveMap_0 Mask3Map AlbedoMap AlbedoMap
-S[Pulse]_Emissive_Glow	0	3 4 5 6 7	AlbedoMap_0 Mask3Map AlbedoMap DisplacementMap AlbedoMap
-S[Pulse]_Emissive_Glow	1	3 4 5 6 7	AlbedoMap_0 Mask3Map AlbedoMap DisplacementMap AlbedoMap
-P[ACParts]_ColorMaterial_Repair_Damage	0	0 1 2 3 4 6 7 8 9 11 14 15 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map Mask1Map AlbedoMap NormalMap
-P[ACParts]_ColorMaterial_Repair_Damage	1	0 1 2 3 4 6 7 8 9 11 14 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap
-P[ACParts]_ColorMaterial_Repair_Damage	2	0 1 2 3 4 6 7 8 9 11 14 15 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map Mask1Map AlbedoMap NormalMap
-P[ACParts]_ColorMaterial_Repair_Damage	3	0 1 2 3 4 6 7 8 9 11 14 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap
-P[ACParts]_SL	0	0 3 7 14 19	NormalMap AlbedoMap AlbedoMap Mask3Map MetallicMap
-C[DetailBlend]_Emissive_Glow_SSS	0	0 1 3 6 7 8 11	      
-C[DetailBlend]_Emissive_Glow_SSS	1	0 1 2 3 5 6 7 8 11	        
-C[DetailBlend]_Emissive_Glow_SSS	2	0 1 2 3 5 6 7 8 11	        
-C[DetailBlend]_Emissive_Glow_SSS	3	0 1 2 3 5 6 7 8 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	4	0 1 2 3 5 6 7 8 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	5	0 1 2 3 5 6 7 8 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	6	0 1 3 4 6 7 8 9 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	7	0 1 3 4 6 7 8 9 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	8	0 1 3 4 6 7 8 9 10 11 12	          
-C[DetailBlend]_Emissive_Glow_SSS	9	0 1 2 3 4 5 6 7 8 9 10 11 12	            
-C[DetailBlend]_Emissive_Glow_SSS	10	0 1 2 3 4 5 6 7 8 9 10 11 12	            
-C[DetailBlend]_Emissive_Glow_SSS	11	0 1 2 3 4 5 6 7 8 9 10 11 12	            
-C[DetailBlend]_Emissive_Glow_SSS	12	0 1 2 3 4 5 6 7 8 9 10 11 12	            
-C[DetailBlend]_Emissive_Glow_SSS	13	0 1 3 6 7 8 10 11 12	        
-C[DetailBlend]_Emissive_Glow_SSS	14	0 1 3 6 7 8 10 11 12	        
-P[AMSN]	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-P[AMSN]	1	0 1	AlbedoMap_0 NormalMap_0
+S[PC_PA]	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_PA]	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_PA]_soft	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_PA]_soft	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
 M[Ice][M0][CV]	0	0 1 2 5 7	DisplacementMap AlbedoMap DisplacementMap AlbedoMap NormalMap
 M[Ice][M0][CV]	1	0 1 2 5 7	DisplacementMap AlbedoMap DisplacementMap AlbedoMap NormalMap
 M[Ice][M0][CV]	2	0 1 2 5 7	DisplacementMap AlbedoMap DisplacementMap AlbedoMap NormalMap
@@ -1236,10 +1221,32 @@ M[Ice][M0][CV]	16	0 1 2 5 7	DisplacementMap AlbedoMap DisplacementMap AlbedoMap 
 M[Ice][M0][CV]	17	0 1 2 4 5 7 9 10	DisplacementMap AlbedoMap DisplacementMap Mask1Map AlbedoMap NormalMap NormalMap NormalMap
 M[Ice][M0][CV]	18	0 1 2 5 7	DisplacementMap AlbedoMap DisplacementMap AlbedoMap NormalMap
 M[Ice][M0][CV]	19	0 1 2 4 5 7 8 9 10	DisplacementMap AlbedoMap DisplacementMap Mask1Map AlbedoMap NormalMap AlbedoMap NormalMap NormalMap
-M[AMSN][M0][M1]_Heatingwire	0	0 1 2 3 5	AlbedoMap_0 EmissiveMap EmissiveMap EmissiveMap_0 NormalMap
-M[AMSN][M0][M1]_Heatingwire	1	0 1 2 3 4 5	AlbedoMap_0 EmissiveMap EmissiveMap EmissiveMap_0 MetallicMap NormalMap
-P[AMSN]_cloth	0	0 1 2	  
-P[AMSN]_cloth	1	0 1	 
+M[AMSN][Mb2][M0][M1][EM]	0	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	1	1 8 10 13	AlbedoMap_0 EmissiveMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	2	1 8 9 10 13	AlbedoMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	3	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	4	0 1 2 8 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 EmissiveMap Mask1Map NormalMap_0 NormalMap_1
+M[AMSN][Mb2][M0][M1][EM]	5	0 1 2 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
+M[AMSN][Mb2][M0][M1][EM]	6	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	7	1 8 10 13	AlbedoMap_0 EmissiveMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	8	1 8 9 10 13	AlbedoMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	9	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	10	0 1 2 3 4 8 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 EmissiveMap Mask1Map NormalMap_0 NormalMap_1
+M[AMSN][Mb2][M0][M1][EM]	11	0 1 2 3 4 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
+M[AMSN][Mb2][M0][M1][EM]	12	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	13	1 5 8 9 10 13	AlbedoMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	14	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	15	0 1 2 5 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
+M[AMSN][Mb2][M0][M1][EM]	16	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	17	1 5 8 9 10 13	AlbedoMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	18	1 13	AlbedoMap_0 NormalMap_0
+M[AMSN][Mb2][M0][M1][EM]	19	0 1 2 3 4 5 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
+S[PC_WP_4820_PA]	0	3 4 5 6	EmissiveMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_WP_4820_PA]	1	3 4 5 6	EmissiveMap_0 Mask3Map AlbedoMap AlbedoMap
+P[ACParts]_ColorMaterial_Repair_Damage	0	0 1 2 3 4 6 7 8 9 11 14 15 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map Mask1Map AlbedoMap NormalMap
+P[ACParts]_ColorMaterial_Repair_Damage	1	0 1 2 3 4 6 7 8 9 11 14 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap
+P[ACParts]_ColorMaterial_Repair_Damage	2	0 1 2 3 4 6 7 8 9 11 14 15 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map Mask1Map AlbedoMap NormalMap
+P[ACParts]_ColorMaterial_Repair_Damage	3	0 1 2 3 4 6 7 8 9 11 14 19 20	NormalMap AlbedoMap AlbedoMap EmissiveMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map AlbedoMap NormalMap
 M[Interior][M0]	0	5	EmissiveMap
 M[Interior][M0]	1	3	EmissiveMap
 M[Interior][M0]	2	0 3	AlbedoMap EmissiveMap
@@ -1268,28 +1275,21 @@ M[Interior][M0]	24	1 2 3 4	AlbedoMap NormalMap EmissiveMap NormalMap
 M[Interior][M0]	25	0 1 2 3 4	AlbedoMap AlbedoMap NormalMap EmissiveMap NormalMap
 M[Interior][M0]	26	0 1 2 3 4 7	AlbedoMap AlbedoMap NormalMap EmissiveMap NormalMap AlbedoMap
 M[Interior][M0]	27	1 2 4 5	AlbedoMap NormalMap NormalMap EmissiveMap
-M[AMSN][Mb2][M0][M1][EM]	0	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	1	1 8 10 13	AlbedoMap_0 EmissiveMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	2	1 8 9 10 13	AlbedoMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	3	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	4	0 1 2 8 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 EmissiveMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][Mb2][M0][M1][EM]	5	0 1 2 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][Mb2][M0][M1][EM]	6	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	7	1 8 10 13	AlbedoMap_0 EmissiveMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	8	1 8 9 10 13	AlbedoMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	9	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	10	0 1 2 3 4 8 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 EmissiveMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][Mb2][M0][M1][EM]	11	0 1 2 3 4 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][Mb2][M0][M1][EM]	12	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	13	1 5 8 9 10 13	AlbedoMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	14	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	15	0 1 2 5 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][Mb2][M0][M1][EM]	16	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	17	1 5 8 9 10 13	AlbedoMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	18	1 13	AlbedoMap_0 NormalMap_0
-M[AMSN][Mb2][M0][M1][EM]	19	0 1 2 3 4 5 8 9 10 13 14	Mask1Map_0 AlbedoMap_0 AlbedoMap_1 MetallicMap_0 MetallicMap_0 Mask1Map EmissiveMap NormalMap Mask1Map NormalMap_0 NormalMap_1
-M[AMSN][M0][M1]_LOD_CameraFade_Edge	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
-M[AMSN][M0][M1]_LOD_CameraFade_Edge	1	0 1	AlbedoMap_0 NormalMap_0
+C[DetailBlend]_Emissive_Glow_SSS	0	0 1 3 6 7 8 11	      
+C[DetailBlend]_Emissive_Glow_SSS	1	0 1 2 3 5 6 7 8 11	        
+C[DetailBlend]_Emissive_Glow_SSS	2	0 1 2 3 5 6 7 8 11	        
+C[DetailBlend]_Emissive_Glow_SSS	3	0 1 2 3 5 6 7 8 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	4	0 1 2 3 5 6 7 8 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	5	0 1 2 3 5 6 7 8 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	6	0 1 3 4 6 7 8 9 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	7	0 1 3 4 6 7 8 9 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	8	0 1 3 4 6 7 8 9 10 11 12	          
+C[DetailBlend]_Emissive_Glow_SSS	9	0 1 2 3 4 5 6 7 8 9 10 11 12	            
+C[DetailBlend]_Emissive_Glow_SSS	10	0 1 2 3 4 5 6 7 8 9 10 11 12	            
+C[DetailBlend]_Emissive_Glow_SSS	11	0 1 2 3 4 5 6 7 8 9 10 11 12	            
+C[DetailBlend]_Emissive_Glow_SSS	12	0 1 2 3 4 5 6 7 8 9 10 11 12	            
+C[DetailBlend]_Emissive_Glow_SSS	13	0 1 3 6 7 8 10 11 12	        
+C[DetailBlend]_Emissive_Glow_SSS	14	0 1 3 6 7 8 10 11 12	        
 C[3Mask][M0]_Combustion	0	0 1 2 3 4 5 6 7 8 9 10 11 12 13 15 16 20	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 EmissiveMap NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 Mask1Map EmissiveMap AlbedoMap_4 NormalMap AlbedoMap_0 NormalMap_3 NormalMap_4 AlbedoMap
 C[3Mask][M0]_Combustion	1	0 1 2 3 4 5 6 7 8 9 10 11 12 15 16 20	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 EmissiveMap NormalMap_1 NormalMap_2 NormalMap_0 AlbedoMap_3 Mask1Map EmissiveMap AlbedoMap_4 NormalMap NormalMap_3 NormalMap_4 AlbedoMap
 C[3Mask][M0]_Combustion	2	0 1 2 3 4 5 6 8 9 10 11 12 13 15 16 20	Mask3Map_2 AlbedoMap_1 AlbedoMap_2 Mask1Map_4 EmissiveMap NormalMap_1 NormalMap_2 AlbedoMap_3 Mask1Map EmissiveMap AlbedoMap_4 NormalMap AlbedoMap_0 NormalMap_3 NormalMap_4 AlbedoMap

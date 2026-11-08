@@ -225,8 +225,8 @@ Mask1Map	r	RT0.w RT1.w RT1.y RT1.z RT2.w RT3.w RT4.w	1	9696	0.000	M[WaterFall_Fo
 Mask1Map	r	RT3.x uv	1	6016	0.000	C[c4760]_Eye
 Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z uv	1	1280	0.000	C[c5210]_Eye
 Mask1Map	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	1	0	0.000	CS[c2120]_Arts_Petal
-Mask1Map	r	RT4.x RT4.y RT4.z uv	1	0	0.000	C[c5131]_Eye
 Mask1Map	r	RT4.x	1	0	0.000	C[c2070]_GlowMud
+Mask1Map	r	RT4.x RT4.y RT4.z uv	1	0	0.000	C[c5131]_Eye
 Mask3Map	a	RT0.w RT1.w RT2.w RT3.w RT4.w	1	8448	0.000	M[Clouds5]
 Mask3Map	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	21	599985616	7.353	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
 Mask3Map	b	RT4.x RT4.y RT4.z	36	62321177	0.764	M[AMSN_V][Mb2][Ov_N][magma]

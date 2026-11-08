@@ -32,6 +32,110 @@ placements. Parts (equipment) only count in the unplaced triangle columns.
 the renderer's own code. `Known` in the shader tables means only "has an entry in `{GAME}.json`". The recipe tables
 (`_Blends`, `_Details`, …) are what the Features column shows.
 
+## Binding audit (Phase 3, 2026-11-08)
+
+`{GAME}_Audit.tsv` and the "Binding audit" section of each `_Summary.md` check every mesh texture. Each row puts the
+viewport's route next to what the game's shader does with that slot, in the permutation the material picks
+(`GXFT_SATStaticSwitch`).
+
+- **Viewport side:** `MaterialBinding.Route` (`Renderer/Materials/MaterialBinding.cs`). This is now the only place
+  routing is decided. `FlverResource.ProcessMaterialTexture` dispatches on it, and the census compiles the same file
+  in, so the two can't drift.
+- **Game side:** `Signatures/{GAME}_SlotMeanings.json`, made by `ShaderSignature run`. It holds each slot's meaning,
+  worked out from where its channels go, and its UV set.
+
+Statuses:
+
+| Status | Meaning |
+|---|---|
+| Ok | The viewport draws it as what the game uses it for, or leaves out what the game doesn't sample |
+| Dropped | The game samples it, the viewport binds it nowhere (the route's reason is in the Viewport column) |
+| UvMismatch | Right meaning, other UV set |
+| Misrouted | Bound as something else |
+| Extra | Bound, but the material's permutation doesn't sample it |
+| Approximate | Water and fur stand-ins |
+| Unverified | `g_`-named samplers with no slot (SpeedTree), or slots the signature can't name |
+
+Share of placed triangles × textures (after the per-layer UV fix and with slot occupancy, see below):
+
+| | ER | NR | AC6 |
+|---|---|---|---|
+| Ok | 78.5% | 73.7% | 47.2% |
+| Dropped | 15.1% | 20.7% | 50.8% |
+| Unverified | 5.5% | 4.3% | 1.0% |
+| Approximate | 0.6% | 0.7% | 0.0% |
+| Misrouted | 0.3% | 0.6% | 0.2% |
+| Extra | 0.0% | 0.1% | 0.5% |
+| UvMismatch | 0.0% | 0.0% | 0.3% |
+
+**Slot occupancy (2026-11-08).** The audit used to count a texture as bound whenever its route named a slot. But
+`LookupTexture` keeps the first texture put in a slot, so later ones are never drawn. The census now follows the
+viewport's order (the definition's textures first, then the model's in its order), and a texture whose slot is
+already full is `Dropped (its … slot already holds another texture)`. This moved a lot from Ok/UvMismatch to
+Dropped. These are the biggest:
+
+| Shader | What isn't drawn | Placed share |
+|---|---|---|
+| `C[DetailBlend]` (ER) | Its extra albedo/normal layers (slots 4, 9, 10, 12). It has no known blend, so only the first of each is drawn | ~12% |
+| `M[AMSN_V][Ov_AN]` | Its overlay albedo/normal (slots 5/2). The overlay recipe doesn't claim them, so they lose to the base textures | ~4% |
+| AC6 `[MS][MB][M0/M1]` | Every layer above the first. These blends have no recipe, and every layer name-matches layer 0 | the bulk of AC6's 51% Dropped |
+
+### Undrawn layers (2026-11-08)
+
+- **`M[AMSN_V][Ov_AN]` overlay: fixed, not yet checked in the app.**
+  - Why it was missing: its albedo overlay is a gamma-space blend, not the multiply form `_Details.json` describes, so
+    the lost generator left it out:
+    `x = A + s(g - 0.5)(O - A)`, then `sat(x + s(0.5 - g)(O - x))`, with `g = O^0.454` and `s = snp_0_float_5`.
+  - The generator: `ShaderSignature overlays` finds this form, plus the `N + s(O·2 - 1)` normal overlay on top of an
+    unscaled base normal, with material params only. It writes `Assets/Material Definitions/{GAME}_Overlays.json`:
+    ER 40 (7 albedo), NR 32 (7), AC6 34 (1).
+  - The app: `MaterialShaderTable.MergeOverlays` fills in what `_Details` lacks. `MaterialDetail.Pad0`/`Pad1` carry
+    the mode and strength, and `FlverShader.frag` applies the overlay.
+  - The result: ER's overlay normal (2.2%) and albedo (1.4%) are now drawn. ER Ok 78.5% → 80.1%, NR 73.7% → 74.5%.
+    0.09% remain where the overlay's path is only in the FLVER, since `ResolveDetailRecipe` reads MATBIN paths only.
+- **`C[DetailBlend]` detail stacks: not done.** Permutations above 0 blend up to three detail albedos and normals
+  before laying them over the base, with weights taken from the base normal map's blue and alpha. Perm 3, for example:
+  `w1 = sat((T0.b·22)^260)`, `d = lerp(lerp(c1·T2, c0·T1, w1), c5·T10, w2)`, and
+  `w2 = sat((0.5 - f19(T0.a - 0.5))·2.05 - 1.05)`. Each permutation wires different slots in. The base and the first
+  detail are already drawn, so what's missing is only the variety of detail patterns. It needs a recipe kind of its
+  own, generated per permutation.
+- **AC6 `[MS]` blends: not done.** These fit the existing recipe format. AC6 perm 13's layer weight is
+  `sat((v - f23(1 - v)(mask + 0.01))·(f25 + 1))`, which is `MaterialBlendRecipeLayer`'s Soft form, with v = `TEXCOORD8.w`
+  and the mask `T19.r` inverted by `f52`. Some layers are a flat colour instead of a texture. They're simply missing
+  from `AC6_Blends.json`. Rebuilding a blend-recipe generator (the lost tool) would cover these, ER's "layer the blend
+  doesn't use" cases, and possibly the detail stacks.
+
+The largest issues by kind:
+
+1. **Blend layers on the wrong UV set: fixed 2026-11-08.**
+   - The problem: `ConfigureMaterialShader` read every layer of a known blend with UV0. But
+     `M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]` (ER 3.7%, NR 6.2%, e.g. `aeg004_114`) samples all four layers with
+     `TEXCOORD0.zw`, and only its masks with UV0.
+   - The fix: `ShaderSignature uvsets` writes `Assets/Material Definitions/{GAME}_UvSets.json` (slot → UV set),
+     `MaterialDefinition` sets `MaterialSampler.UvSet`, and each layer now uses its albedo's set
+     (`FlverMaterial.LayerAlbedoTypes`).
+   - The result: UV mismatch is now ~0 in ER/NR (ER 6.0% → 0.01%, NR 10.2% → 0.02%). AC6's mismatch turned out to be
+     layers that aren't drawn at all (above). Not yet checked in the app.
+2. **Layers a blend doesn't use (ER 4.7%, NR 3.4%).** `M[AMSN_V][Mb2][Ov_AN]` slots 5/6 (normal/albedo, ER 4%) and the
+   4th layer of `[Mb4_Ch2]` (slots 7, 13) are dropped with "a layer the blend doesn't use". The recipe (or TexCoord1X)
+   covers fewer layers than the shader samples.
+3. **Masks with no route (Mask1Map/Mask3Map).** ER 1.4%, NR 4%, AC6 12%: masks that drive snow, crystal glow
+   (`M[AMSN_V][Ov_N][Crystal]` Mask1Map → emissive) and AC6's `[MS]` layer weights.
+4. **AC6's upper-layer metallic maps** (3.9%) are dropped, as its `[MS]` blends have no recipe.
+5. **Misrouted is now small.**
+   - The largest real-looking cases are overlay/normal slots that a blend uses as masks:
+     `[Snow_VtxMask]` slot 11 and `[Cover]` slot 7.
+   - `M[Cave_001]` slot 12 is an AlbedoMap that the shader reads as a normal.
+
+How the classifier decides a slot's meaning:
+- **Normal:** red and green reach the normal. Either the blue is gloss and nothing else, or red and green go only
+  to the normal, or blue doesn't reach the normal and red and green don't reach gloss.
+- **Mask:** a channel that reaches both the normal and the albedo.
+
+Each rule came from a false positive found in this run: crystal normals that also colour the surface, a two-channel
+mask, and AC6 normals that also weigh layers. The rest of `Misrouted` and `Unverified` may still contain
+classifier errors.
+
 ## Coverage
 
 | | ER | NR | AC6 |

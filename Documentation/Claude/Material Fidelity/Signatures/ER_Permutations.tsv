@@ -379,43 +379,22 @@ M[ShadowThorn_BlurEffect]	0
 M[ShadowThorn_BlurEffect]	1		
 CS[c8901][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
 CS[c8901][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-Test_[AMSN]_Hair	0	0 4 5 8 11	MetallicMap Root__Base UniqueHairValue__Base NormalMap AlbedoMap
-P[ChrCustomize][Skin]	0	0 2 3 6 7 8 9 10 12 15	NormalMap Mask3Map AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map
-P[ChrCustomize][Skin]	1	0 1 2 3 5 6 7 9 12 13 15	NormalMap NormalMap Mask3Map AlbedoMap Mask1Map NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask3Map
 M[StormClouds]	0	1 2 3 4 5 6	NormalMap Mask3Map Mask1Map NormalMap AlbedoMap AlbedoMap
 M[StormClouds]	1	1 2 3 4 5 6	NormalMap Mask3Map Mask1Map NormalMap AlbedoMap AlbedoMap
 M[StormClouds]	2	2 3 4 5 6	Mask3Map Mask1Map NormalMap AlbedoMap AlbedoMap
 M[StormClouds]	3	2 3 4 5 6	Mask3Map Mask1Map NormalMap AlbedoMap AlbedoMap
-M[Cutscene][DistortionFilter]_NoLight	0	0 1	Mask1Map Mask1Map
-M[Cutscene][DistortionFilter]_NoLight	1	0 1	Mask1Map Mask1Map
-C[c4950]_Ghost_cloth	0	0 1 3 4 6 7 9 10 12 14	         
+CS[c8901][Fur]_Burn_cloth	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
+CS[c8901][Fur]_Burn_cloth	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
 CS[c8901][VA_Frame][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
 CS[c8901][VA_Frame][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
 C[c3350]_Crystal_cloth	0	0 1 2 3 5 7 8 9	       
 C[c3350]_Crystal_cloth	1	0 1 2 3 5 6 7 8 9	        
-Test_[AMSN]_Hair_forward	0	0 4 5 8 11	MetallicMap Root__Base UniqueHairValue__Base NormalMap AlbedoMap
-CS[c8901][Fur]_Burn_cloth	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-CS[c8901][Fur]_Burn_cloth	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-C[c2120]_Clone_Butterfly_cloth	0	0 1 3 6 8	    
-C[c2120]_Clone_Butterfly_cloth	1	0 1 3 6 8	    
-C[Fur]_Albedo_FallOff_cloth	0	0 1 3 5 6 8	NormalMap AlbedoMap MetallicMap DisplacementMap NormalMap AlbedoMap
-C[Fur]_Albedo_FallOff_cloth	1	0 1 2 3 4 5 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap DisplacementMap NormalMap AlbedoMap
 CS[c8901][VA_Frame][Fur]_Burn_cloth	0	0 1 3 6 7 8 9 11	       
 CS[c8901][VA_Frame][Fur]_Burn_cloth	1	0 1 3 6 7 8 9 11	       
 M[DistortionFilter]_NoLight_WaterPhase	0	0	Mask1Map
 M[DistortionFilter]_NoLight_WaterPhase	1	0	Mask1Map
-C[c2191]_Fog	0	0	Mask3Map_4
-C[c2191]_Fog	1	0	Mask3Map_4
-C[c5330]_Trina_Hair_cloth	0	0 1 2 3 5 6 8	      
-C[c5330]_Trina_Hair_cloth	1	0 1 2 3 5 6 8	      
-C[c2190]_Hair_glow	0	0 1 2 3 4 5 9	      
-C[c2190]_Hair_glow	1	0 1 2 3 4 5 9	      
-C[c2191]_Fog_cloth	0	0	
-C[c2191]_Fog_cloth	1	0	
-C[Fur]_Arts_cloth	0	0 1 3 5 6 7 8 10	       
-C[Fur]_Arts_cloth	1	0 1 2 3 4 5 6 7 8 10	         
-C[c2190]_Hair_glow_cloth	0	0 1 2 3 4 5 9	      
-C[c2190]_Hair_glow_cloth	1	0 1 2 3 4 5 9	      
+P[ChrCustomize][Skin]	0	0 2 3 6 7 8 9 10 12 15	NormalMap Mask3Map AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap NormalMap NormalMap Mask3Map
+P[ChrCustomize][Skin]	1	0 1 2 3 5 6 7 9 12 13 15	NormalMap NormalMap Mask3Map AlbedoMap Mask1Map NormalMap AlbedoMap NormalMap NormalMap Mask3Map Mask3Map
 C[Cutscene][VA_Frame]_Burn	0	0 1 2 3 6 7 8 11 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap NormalMap AlbedoMap Fire___Black_Edge Fire___Light_Edge Fire___Pattern AlbedoMap NormalMap
 C[Cutscene][VA_Frame]_Burn	1	0 1 2 3 6 7 8 11 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap NormalMap AlbedoMap Fire___Black_Edge Fire___Light_Edge Fire___Pattern AlbedoMap NormalMap
 C[Cutscene][VA_Frame]_Burn	2	0 1 2 3 6 7 8 10 11 12 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap NormalMap AlbedoMap Fire___Black_Edge AlbedoMap Fire___Light_Edge NormalMap Fire___Pattern AlbedoMap NormalMap
@@ -430,8 +409,9 @@ C[Cutscene][VA_Frame]_Burn	10	0 1 2 3 4 6 7 8 9 10 11 12 13 17 18	NormalMap Albe
 C[Cutscene][VA_Frame]_Burn	11	0 1 2 3 4 6 7 8 9 10 11 12 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap AlbedoMap NormalMap AlbedoMap Fire___Black_Edge NormalMap AlbedoMap Fire___Light_Edge NormalMap Fire___Pattern AlbedoMap NormalMap
 C[Cutscene][VA_Frame]_Burn	12	0 1 2 3 4 6 7 8 9 10 11 12 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap AlbedoMap NormalMap AlbedoMap Fire___Black_Edge NormalMap AlbedoMap Fire___Light_Edge NormalMap Fire___Pattern AlbedoMap NormalMap
 C[Cutscene][VA_Frame]_Burn	13	0 1 2 3 4 6 7 8 9 10 11 12 13 17 18	NormalMap AlbedoMap Fire___Mask MetallicMap AlbedoMap NormalMap AlbedoMap Fire___Black_Edge NormalMap AlbedoMap Fire___Light_Edge NormalMap Fire___Pattern AlbedoMap NormalMap
-C[Shell]_cloth	0	6 7 8 10	AlbedoMap AlbedoMap NormalMap MetallicMap
-C[Shell]_cloth	1	6 7 8 10 11 12	AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap NormalMap
+C[c4950]_Ghost_cloth	0	0 1 3 4 6 7 9 10 12 14	         
+C[c5330]_Trina_Hair_cloth	0	0 1 2 3 5 6 8	      
+C[c5330]_Trina_Hair_cloth	1	0 1 2 3 5 6 8	      
 M[GhostStone_LOD1]	0		
 M[GhostStone_LOD1]	1		
 CS[DetailBlend][Rich][VA_Frame]	0	0 1 2 3 6 7	     
@@ -440,24 +420,42 @@ CS[DetailBlend][Rich][VA_Frame]	2	0 1 2 3 6 7 9 10 12
 CS[DetailBlend][Rich][VA_Frame]	3	0 1 2 3 6 7 8 9 10 11 12 13	           
 CS[DetailBlend][Rich][VA_Frame]	4	0 1 2 3 6 7 9 10 12 14 16	          
 CS[DetailBlend][Rich][VA_Frame]	5	0 1 2 3 6 7 8 9 10 11 12 13 14 16	             
-C[Fur]_Glow_cloth	0	0 1 2 3 6 7 8 10	       
-C[Fur]_Glow_cloth	1	0 1 2 3 6 7 8 10	       
-C[Shell]_FurBlur_cloth	0	0 2 6 7 8 10	Mask1Map AlbedoMap AlbedoMap AlbedoMap NormalMap MetallicMap
-C[Shell]_FurBlur_cloth	1	0 2 6 7 8 10 11 12	Mask1Map AlbedoMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap NormalMap
-C[Fur]_FurBlur_Tr_cloth	0	0 1 3 5 6 7 8 10	       
-C[Fur]_FurBlur_Tr_cloth	1	0 1 2 3 4 5 6 7 8 10	         
-C[CutScene][Fur]_Tr[VA_Frame]	0	0 1 3 5 6 8	NormalMap AlbedoMap MetallicMap DisplacementMap NormalMap AlbedoMap
-C[CutScene][Fur]_Tr[VA_Frame]	1	0 1 2 3 4 5 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap DisplacementMap NormalMap AlbedoMap
+Test_[AMSN]_Hair	0	0 4 5 8 11	MetallicMap Root__Base UniqueHairValue__Base NormalMap AlbedoMap
 M[AMSN][XZ_BillBoard][ColorShift]_Edge	0	0 1 3	Mask1Map NormalMap_0 AlbedoMap_0
 M[AMSN][XZ_BillBoard][ColorShift]_Edge	1	0 1 3	Mask1Map NormalMap_0 AlbedoMap_0
-C[CutScene][Fur]_Tr[VA_Frame]_cloth	0	0 1 3 5 6 8	     
-C[CutScene][Fur]_Tr[VA_Frame]_cloth	1	0 1 2 3 4 5 6 8	       
+Test_[AMSN]_Hair_forward	0	0 4 5 8 11	MetallicMap Root__Base UniqueHairValue__Base NormalMap AlbedoMap
 CS[DetailBlend][Rich][VA_Frame]_cloth	0	0 1 2 3 6 7	     
 CS[DetailBlend][Rich][VA_Frame]_cloth	1	0 1 2 3 6 7 10 12	       
 CS[DetailBlend][Rich][VA_Frame]_cloth	2	0 1 2 3 6 7 9 10 12	        
 CS[DetailBlend][Rich][VA_Frame]_cloth	3	0 1 2 3 6 7 8 9 10 11 12 13	           
 CS[DetailBlend][Rich][VA_Frame]_cloth	4	0 1 2 3 6 7 9 10 12 14 16	          
 CS[DetailBlend][Rich][VA_Frame]_cloth	5	0 1 2 3 6 7 8 9 10 11 12 13 14 16	             
+C[Fur]_Albedo_FallOff_cloth	0	0 1 3 5 6 8	NormalMap AlbedoMap MetallicMap DisplacementMap NormalMap AlbedoMap
+C[Fur]_Albedo_FallOff_cloth	1	0 1 2 3 4 5 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap DisplacementMap NormalMap AlbedoMap
+M[Cutscene][DistortionFilter]_NoLight	0	0 1	Mask1Map Mask1Map
+M[Cutscene][DistortionFilter]_NoLight	1	0 1	Mask1Map Mask1Map
+C[c2191]_Fog	0	0	Mask3Map_4
+C[c2191]_Fog	1	0	Mask3Map_4
+C[c2120]_Clone_Butterfly_cloth	0	0 1 3 6 8	    
+C[c2120]_Clone_Butterfly_cloth	1	0 1 3 6 8	    
+C[c2191]_Fog_cloth	0	0	
+C[c2191]_Fog_cloth	1	0	
+C[Fur]_Arts_cloth	0	0 1 3 5 6 7 8 10	       
+C[Fur]_Arts_cloth	1	0 1 2 3 4 5 6 7 8 10	         
+C[c2190]_Hair_glow	0	0 1 2 3 4 5 9	      
+C[c2190]_Hair_glow	1	0 1 2 3 4 5 9	      
+C[Fur]_Glow_cloth	0	0 1 2 3 6 7 8 10	       
+C[Fur]_Glow_cloth	1	0 1 2 3 6 7 8 10	       
+C[c2190]_Hair_glow_cloth	0	0 1 2 3 4 5 9	      
+C[c2190]_Hair_glow_cloth	1	0 1 2 3 4 5 9	      
+C[Shell]_cloth	0	6 7 8 10	AlbedoMap AlbedoMap NormalMap MetallicMap
+C[Shell]_cloth	1	6 7 8 10 11 12	AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap NormalMap
+C[CutScene][Fur]_Tr[VA_Frame]	0	0 1 3 5 6 8	NormalMap AlbedoMap MetallicMap DisplacementMap NormalMap AlbedoMap
+C[CutScene][Fur]_Tr[VA_Frame]	1	0 1 2 3 4 5 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap DisplacementMap NormalMap AlbedoMap
+C[Shell]_FurBlur_cloth	0	0 2 6 7 8 10	Mask1Map AlbedoMap AlbedoMap AlbedoMap NormalMap MetallicMap
+C[Shell]_FurBlur_cloth	1	0 2 6 7 8 10 11 12	Mask1Map AlbedoMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap NormalMap
+C[CutScene][Fur]_Tr[VA_Frame]_cloth	0	0 1 3 5 6 8	     
+C[CutScene][Fur]_Tr[VA_Frame]_cloth	1	0 1 2 3 4 5 6 8	       
 CS[VA_Frame][DetailBlend][S2][Rich]	0	0 1 3 6 7 8 11 13 19	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	1	0 1 2 3 5 6 7 8 11 13 19	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	2	0 1 2 3 5 6 7 8 11 13 19	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
@@ -553,3 +551,5 @@ C[DetailBlend]_FurBlur_cloth	3	0 1 3 4 5 6 7 9 10 12 14
 C[DetailBlend]_FurBlur_cloth	4	0 1 3 5 6 7 10 12 14	        
 C[DetailBlend]_FurBlur_cloth	5	0 1 3 5 6 7 10 12 14	        
 C[DetailBlend]_FurBlur_cloth	6	0 1 3 5 6 7 8 11 13 14	         
+C[Fur]_FurBlur_Tr_cloth	0	0 1 3 5 6 7 8 10	       
+C[Fur]_FurBlur_Tr_cloth	1	0 1 2 3 4 5 6 7 8 10	         

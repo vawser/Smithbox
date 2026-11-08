@@ -120,6 +120,9 @@ public class MaterialData : IDisposable
         var waterPath = Path.Join(folder, $"{game}_Water.json");
         var furPath = Path.Join(folder, $"{game}_Fur.json");
         var metallicPath = Path.Join(folder, $"{game}_Metallic.json");
+        var uvSetsPath = Path.Join(folder, $"{game}_UvSets.json");
+        var overlaysPath = Path.Join(folder, $"{game}_Overlays.json");
+        var generatedBlendsPath = Path.Join(folder, $"{game}_GeneratedBlends.json");
 
         MaterialShaderTable table = new();
 
@@ -194,6 +197,30 @@ public class MaterialData : IDisposable
                 string text = await File.ReadAllTextAsync(metallicPath);
 
                 table.Metallic = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String) ?? new();
+            }
+
+            if (File.Exists(generatedBlendsPath))
+            {
+                string text = await File.ReadAllTextAsync(generatedBlendsPath);
+
+                table.MergeBlends(JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialBlendRecipe) ?? new());
+            }
+
+            if (File.Exists(overlaysPath))
+            {
+                string text = await File.ReadAllTextAsync(overlaysPath);
+
+                table.MergeOverlays(JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialDetailRecipe) ?? new());
+            }
+
+            if (File.Exists(uvSetsPath))
+            {
+                string text = await File.ReadAllTextAsync(uvSetsPath);
+
+                table.UvSets = JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String) ?? new();
             }
         }

@@ -16,8 +16,18 @@ Phase 2 done: `Tools/ShaderSignature` has signatures for every ER/NR/AC6 shader 
 ([Signatures/README.md](Signatures/README.md)), and the G-buffer layout is decoded in [GBuffer.md](GBuffer.md).
 The biggest finding is that F0 is 0 for these games in Smithbox, while the game uses `mix(0.04, albedo, metallic)`.
 Permutations are chosen by `GXFT_SATStaticSwitch`. The checked-in recipes match the shaders' slots in 96–99% of
-entries. Recipe regeneration was replaced by that consistency check (see the README). Next: Phase 3, or the
-metallic fix from Phase 6 first.
+entries. Recipe regeneration was replaced by that consistency check (see the README).
+Phase 6 metallic work built: metallic path, offsets, per-layer pairing (GBuffer.md), not yet checked in the app.
+Phase 3 done: `MaterialBinding.Route` is the shared routing decision, and the census audits every texture against
+`Signatures/{GAME}_SlotMeanings.json` (Census/README.md, Binding audit). Ok is 80% (ER), 74% (NR) and 52% (AC6) of
+placed texture-triangles. Per-layer UV sets fixed (`{GAME}_UvSets.json`). The audit now models slot occupancy, which
+shows the biggest remaining gaps are layered shaders whose extra layers are never drawn: `C[DetailBlend]`,
+`M[AMSN_V][Ov_AN]`'s overlay, and AC6's `[MS]` blends. The `Ov_AN` overlay is now fixed (`{GAME}_Overlays.json`).
+Blend-recipe generator built (`ShaderSignature blends`, `{GAME}_GeneratedBlends.json`, Signatures/README.md). It
+reproduces 60/97 ER recipes and adds 38 ER, 49 NR and 52 AC6 recipes. NR Ok is now 76.9%, ER 80.3% (audit not rerun
+after the last 11 TEXCOORD2/3 recipes). Colour-only layers, any-TEXCOORD vertex sources (two at most) and the extended per-layer blend form are built, so AC6
+`[MS]` blends have recipes. AC6 Ok is now 57.3% (was 47.2%). Still left: the `ColorAdjust` weight form, `[MS]` layers
+whose weight reads two vertex values, the `C[DetailBlend]` stacks, then Phase 4.
 
 ---
 

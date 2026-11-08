@@ -69,6 +69,36 @@ if (mode == "perms")
         Console.WriteLine($"slots [{slots}]  permutations {string.Join(",", perms.OrderBy(x => x))}");
 }
 
+// layouts <vfsBinderPath> : each FLVER mesh's material and vertex layout, and the range of its float UV members
+if (mode == "layouts")
+{
+    foreach (var f in BND4.Read(fs.ReadFile(args[2]).Value).Files.Where(f => f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase)))
+    {
+        var flver = FLVER2.Read(f.Bytes);
+        Console.WriteLine(Bundles.Safe(f.Name));
+        foreach (var mesh in flver.Meshes.Take(6))
+        {
+            var mat = flver.Materials[mesh.MaterialIndex];
+            Console.WriteLine($"  mesh: {Path.GetFileName(mat.MTD)}  {mesh.Vertices.Count} vertices");
+            foreach (var bi in mesh.VertexBuffers)
+                foreach (var m in flver.BufferLayouts[bi.LayoutIndex])
+                    Console.WriteLine($"     {m.Semantic} {m.Index} {m.Type}");
+            // The values of every UV member past the first two
+            for (var uv = 2; uv < (mesh.Vertices.FirstOrDefault()?.UVs.Count ?? 0); uv++)
+            {
+                var xs = mesh.Vertices.Select(v => v.UVs[uv]).ToList();
+                Console.WriteLine($"     UVs[{uv}] x {xs.Min(v => v.X):0.###}..{xs.Max(v => v.X):0.###}  y {xs.Min(v => v.Y):0.###}..{xs.Max(v => v.Y):0.###}  z {xs.Min(v => v.Z):0.###}..{xs.Max(v => v.Z):0.###}");
+            }
+        }
+    }
+}
+
+// exprfile <dumpbin.txt> <output> [depth] : the same for any disassembly, such as a vertex shader's TEXCOORD8.w
+if (mode == "exprfile")
+{
+    Console.WriteLine(Dxil.Parse(File.ReadAllLines(args[2])).Expression(args[3], args.Length > 4 ? int.Parse(args[4]) : 14));
+}
+
 // expr <cacheDir> <shader> <output> [permutation] [depth] : the expression an output is computed by
 if (mode == "expr")
 {
@@ -113,6 +143,138 @@ if (mode == "metallic")
     });
     File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table));
     Console.WriteLine($"{table.Count} shaders with a saturated metallic input, {withOffset} with an offset param, written to {args[3]}");
+}
+
+// blends <cacheDir> <outJson> [shaderRegex] : blend recipes from the shaders (Recipes.cs). Each is checked against the
+// checked-in {GAME}_Blends.json where that has one; the ones it lacks are written to outJson, keyed as it is keyed
+if (mode == "blends")
+{
+    var filter = new Regex(args.Length > 4 ? args[4] : ".");
+    var folder = Path.Combine("Assets", "Material Definitions");
+    var blendsPath = Path.Combine(folder, $"{gameName}_Blends.json");
+    var checkedIn = File.Exists(blendsPath)
+        ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, StudioCore.Renderer.MaterialBlendRecipe>>(File.ReadAllText(blendsPath))
+        : new();
+    var generated = new SortedDictionary<string, StudioCore.Renderer.MaterialBlendRecipe>(StringComparer.Ordinal);
+    var compared = new List<(string key, List<string> diffs)>();
+    var problems = new Dictionary<string, int>();
+    var vsCache = Path.Combine(args[2], "_vs");
+
+    Parallel.ForEach(bundles.Where(b => filter.IsMatch(b.Name)), b =>
+    {
+        // The vertex shader the G-buffer pass draws with, for where the weights' vertex values come from
+        Dxil vs = null;
+        var vsFile = b.Files.FirstOrDefault(f => Bundles.Safe(f.Name).Equals(b.Name + "_Gbuf.vpo", StringComparison.OrdinalIgnoreCase))
+            ?? b.Files.FirstOrDefault(f => Bundles.Safe(f.Name).StartsWith(b.Name + "_Gbuf", StringComparison.OrdinalIgnoreCase) && f.Name.EndsWith(".vpo"))
+            ?? b.Files.FirstOrDefault(f => Bundles.Safe(f.Name).Equals(b.Name + "_Fwd.vpo", StringComparison.OrdinalIgnoreCase));
+        if (vsFile != null)
+        {
+            var dis = Signatures.Disassemble(new Bundle(b.Name, b.Binder, [new BundleFile(Bundles.Safe(vsFile.Name).Replace(".vpo", ".ppo"), vsFile.Bytes)]), vsCache);
+            if (dis != null) vs = Dxil.Parse(dis.Value.lines);
+        }
+        string VertexSource(string psInput)
+        {
+            if (vs == null) return null;
+            var e = vs.Expression(psInput[3..], 2);
+            return e.StartsWith("in:") && !e.Contains(' ') ? e[3..] : null;
+        }
+
+        foreach (var (variant, perm, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            if (!variant.Contains("Gbuf")) continue;
+            var d = Dxil.Parse(lines);
+            var sig = Signatures.Build(b.Name, variant, d, new());
+            var albedos = sig.Textures.Where(t => t.Slot >= 0 && Signatures.Meaning(t) == "Albedo").Select(t => t.Slot).ToHashSet();
+            var normals = sig.Textures.Where(t => t.Slot >= 0 && Signatures.Meaning(t) is "Normal" or "NormalGloss").Select(t => t.Slot).ToHashSet();
+            if (albedos.Count < 2) continue;
+
+            var key = perm >= 0 ? $"{b.Name}@{perm}" : b.Name;
+            var r = Recipes.Build(d, albedos, normals, VertexSource);
+            lock (generated)
+            {
+                foreach (var p in r.Problems) problems[Regex.Replace(p, @"\d+", "N")] = problems.GetValueOrDefault(Regex.Replace(p, @"\d+", "N")) + 1;
+                if (checkedIn.TryGetValue(key, out var theirs)) compared.Add((key, r.Ok ? Recipes.Compare(r.Recipe, theirs) : r.Problems.Select(p => "problem: " + p).ToList()));
+                // Only what the viewport can draw (MaterialDefinition.ResolveBlendRecipe): masks, COLOR1.x, and up to two
+                // TEXCOORDs, the first (TEXCOORD1 if it is one) xyz and the second x only
+                else if (r.Ok && r.Recipe.Layers.Count > 0 && Drawable(r.Recipe))
+                    generated[key] = r.Recipe;
+            }
+        }
+    });
+
+    var matching = compared.Count(c => c.diffs.Count == 0);
+    Console.WriteLine($"Checked-in recipes reproduced: {matching} of {compared.Count}");
+    foreach (var (diff, n) in compared.SelectMany(c => c.diffs.Select(x => Regex.Replace(x, ":.*", ""))).GroupBy(x => x).Select(g => (g.Key, g.Count())).OrderByDescending(x => x.Item2).Take(15))
+        Console.WriteLine($"  {n,5}  {diff}");
+    foreach (var (key, diffs) in compared.Where(c => c.diffs.Count > 0).Take(args.Length > 5 ? int.Parse(args[5]) : 8))
+        Console.WriteLine($"  {key}: {string.Join("; ", diffs.Take(6))}");
+    Console.WriteLine("Problems:");
+    foreach (var (p, n) in problems.OrderByDescending(x => x.Value).Take(12)) Console.WriteLine($"  {n,5}  {p}");
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(generated, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
+    Console.WriteLine($"{generated.Count} new recipes written to {args[3]}");
+}
+
+// overlays <cacheDir> <outJson> : the overlays the checked-in _Details.json can't express, found in the expressions:
+// the albedo overlay of [Ov_AN] shaders, x = A + s(g - 0.5)(O - A), result = sat(x + s(0.5 - g)(O - x)), g = O^0.454,
+// and the normal overlay N + s(O * 2 - 1). Written as _Details.json entries, keyed shader@permutation as that is
+if (mode == "overlays")
+{
+    var albedoOverlay = new Regex(@"cb:(\S+?) \* \(0\.5 - exp2\(\(log2\((\S+?)\.r\) \* 0\.454\)\)\)");
+    var normalOverlay = new Regex(@"\(cb:(\S+?) \* \(\((\S+?)\.g \* 2\) \+ -1\)\)");
+    var bareNormal = new Regex(@"(?<!cb:\S+ \* )\(\((\S+?)\.g \* 2\) \+ -1\)");
+    var slotOf = new Regex(@"snp_\d+_Texture2D_(\d+)$");
+    static string Short(string field) { var i = field.IndexOf("snp_", StringComparison.Ordinal); return i >= 0 ? field[i..] : field; }
+    var table = new SortedDictionary<string, StudioCore.Renderer.MaterialDetailRecipe>(StringComparer.Ordinal);
+    Parallel.ForEach(bundles, b =>
+    {
+        foreach (var (_, perm, lines) in Signatures.DisassembleAll(b, args[2]))
+        {
+            var d = Dxil.Parse(lines);
+            var albedo = albedoOverlay.Match(d.Expression("RT2.x", 30));
+            var normalExpression = d.Expression("RT0.x", 30);
+            var normal = normalOverlay.Match(normalExpression);
+            // Only an overlay on top of a base normal that is used as it is: a main normal scaled by a param would
+            // match too, and taking it for an overlay would leave the material without one
+            var bare = bareNormal.Matches(normalExpression).Select(m => m.Groups[1].Value).ToHashSet();
+            if (normal.Success && (bare.Count == 0 || bare.Contains(normal.Groups[2].Value))) normal = Match.Empty;
+            var recipe = new StudioCore.Renderer.MaterialDetailRecipe();
+            // Only strengths the material sets: engine fields such as FC_RimLightingParam.w have no value to read here
+            if (albedo.Success && Short(albedo.Groups[1].Value).StartsWith("snp_") && slotOf.Match(albedo.Groups[2].Value) is { Success: true } a)
+            {
+                recipe.Albedo = int.Parse(a.Groups[1].Value);
+                recipe.AlbedoBlend = "Overlay";
+                recipe.AlbedoStrength = Short(albedo.Groups[1].Value);
+            }
+            if (normal.Success && Short(normal.Groups[1].Value).StartsWith("snp_") && slotOf.Match(normal.Groups[2].Value) is { Success: true } n)
+            {
+                recipe.Normal = int.Parse(n.Groups[1].Value);
+                recipe.NormalStrength = Short(normal.Groups[1].Value);
+            }
+            if (recipe.Albedo == null && recipe.Normal == null) continue;
+            lock (table) table[perm >= 0 ? $"{b.Name}@{perm}" : b.Name] = recipe;
+        }
+    });
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull }));
+    Console.WriteLine($"{table.Count} overlays ({table.Values.Count(r => r.AlbedoBlend != null)} with an albedo overlay), written to {args[3]}");
+}
+
+// uvsets <slotMeanings.json> <outJson> : shader to texture slot to the UV set it samples with ("0" or "1"), for the
+// slots sampled with one set only, over every permutation
+if (mode == "uvsets")
+{
+    var meanings = System.Text.Json.JsonSerializer.Deserialize<SortedDictionary<string, SlotMeanings>>(File.ReadAllText(args[2]));
+    var table = new SortedDictionary<string, SortedDictionary<int, string>>(StringComparer.Ordinal);
+    int secondSet = 0;
+    foreach (var (shader, m) in meanings)
+    {
+        var slots = new SortedDictionary<int, string>();
+        foreach (var (slot, meaning) in m.Slots.Where(x => x.Value.UvSet >= 0)) slots[slot] = meaning.UvSet.ToString();
+        if (slots.Count == 0) continue;
+        table[shader] = slots;
+        if (slots.Values.Contains("1")) secondSet++;
+    }
+    File.WriteAllText(args[3], System.Text.Json.JsonSerializer.Serialize(table));
+    Console.WriteLine($"{table.Count} shaders, {secondSet} with a slot on the second UV set, written to {args[3]}");
 }
 
 // layermetal <signatures.json> : for each blend recipe, which metallic map goes with which layer, by suffix and by UV group
@@ -274,6 +436,16 @@ if (mode is "one" or "run")
         Signatures.Write(outDir, gameName, sigs, weights, failures);
         Console.WriteLine($"{sigs.Count} signatures, {failures.Count} failures, written to {outDir}");
     }
+}
+
+static bool Drawable(StudioCore.Renderer.MaterialBlendRecipe recipe)
+{
+    if (!recipe.Layers.All(l => l.Source is "Mask.r" or "Mask.g" or "Mask.b" or "COLOR1.x" || Regex.IsMatch(l.Source, @"^TEXCOORD\d+\.[xyz]$")))
+        return false;
+    var attributes = recipe.Layers.Select(l => Regex.Match(l.Source, @"^TEXCOORD(\d+)").Groups[1].Value).Where(x => x != "")
+        .Select(int.Parse).Distinct().OrderBy(x => x == 1 ? 0 : 1).ThenBy(x => x).ToList();
+    return attributes.Count <= 1
+        || (attributes.Count == 2 && recipe.Layers.Where(l => l.Source.StartsWith($"TEXCOORD{attributes[1]}.")).All(l => l.Source.EndsWith(".x")));
 }
 
 record BundleFile(string Name, byte[] Bytes);

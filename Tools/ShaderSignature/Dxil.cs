@@ -38,8 +38,11 @@ class Dxil
     static readonly Regex Operand = new(@"(?<!label )%(\d+)\b", RegexOptions.Compiled);
     static readonly Regex PhiPair = new(@"\[\s*([^,\]]+),\s*%\d+\s*\]", RegexOptions.Compiled);
     static readonly Regex Binding = new(@"^;\s+(\S+)\s+(cbuffer|texture|sampler|UAV)\s+\S+\s+\S+\s+(\S+)\s+(\S+)\s+\d+", RegexOptions.Compiled);
-    static readonly Regex FieldLine = new(@"^;\s+(?:column_major |row_major )?[\w.]+\s+(\w+)(?:\[(\d+)\])?;\s+; Offset:\s+(\d+)", RegexOptions.Compiled);
+    // A long name runs into the comment: "float M_..._snp_0_float_1_0;; Offset:  144"
+    static readonly Regex FieldLine = new(@"^;\s+(?:column_major |row_major )?[\w.]+\s+(\w+)(?:\[(\d+)\])?;\s*; Offset:\s+(\d+)", RegexOptions.Compiled);
     static readonly Regex SigRow = new(@"^;\s+(\w+)\s+(\d+)\s+[xyzw]+\s+", RegexOptions.Compiled);
+    /// <summary>A row of the DXIL table: name, index, then the interpolation mode or nothing</summary>
+    static readonly Regex DxilSigRow = new(@"^;\s+([A-Za-z_]\w*)\s+(\d+)(?:\s+[a-z]+)?\s*$", RegexOptions.Compiled);
     static readonly Regex Store = new(@"@dx\.op\.storeOutput\.\w+\(i32 5, i32 (\d+), i32 (\d+), i8 (\d+), \w+ ([^)]+)\)", RegexOptions.Compiled);
     static readonly Regex Discard = new(@"@dx\.op\.discard\(i32 82, i1 ([^)]+)\)", RegexOptions.Compiled);
     static readonly Regex CreateHandle = new(@"@dx\.op\.createHandle\(i32 57, i8 (\d+), i32 (\d+),", RegexOptions.Compiled);
@@ -119,12 +122,26 @@ class Dxil
         string section = "", cbuffer = null;
         var inputsDone = false;
         var outputsDone = false;
+        // The disassembly prints each signature twice: first in register order (with masks), then as DXIL numbers its
+        // elements, which is the order loadInput and storeOutput go by. The second wins when it is there
+        var inputTables = 0;
+        var outputTables = 0;
         foreach (var raw in lines)
         {
             if (!raw.StartsWith(';')) { if (raw.StartsWith("target") || raw.StartsWith("define")) break; continue; }
             var t = raw.TrimStart(';').Trim();
-            if (t == "Input signature:") { section = inputsDone ? "" : "in"; continue; }
-            if (t == "Output signature:") { section = outputsDone ? "" : "out"; continue; }
+            if (t == "Input signature:")
+            {
+                if (++inputTables == 2) { Inputs.Clear(); inputsDone = false; }
+                section = inputsDone ? "" : "in";
+                continue;
+            }
+            if (t == "Output signature:")
+            {
+                if (++outputTables == 2) { Outputs.Clear(); outputsDone = false; }
+                section = outputsDone ? "" : "out";
+                continue;
+            }
             if (t == "Buffer Definitions:") { section = "cb"; continue; }
             if (t == "Resource Bindings:") { section = "res"; continue; }
             if (t.StartsWith("ViewId state") || t.StartsWith("Pipeline Runtime")) { section = ""; continue; }
@@ -134,6 +151,7 @@ class Dxil
                 case "in":
                 case "out":
                     var row = SigRow.Match(raw);
+                    if (!row.Success) row = DxilSigRow.Match(raw);
                     if (row.Success && row.Groups[1].Value != "Name")
                         (section == "in" ? Inputs : Outputs).Add(row.Groups[1].Value + row.Groups[2].Value);
                     else if (t.Length == 0 && (section == "in" ? Inputs : Outputs).Count > 0)
@@ -206,6 +224,72 @@ class Dxil
 
     readonly Dictionary<string, string> _storeValues = new();
 
+    // ---- Structure, for the recipe generator ------------------------------------------------------------------
+
+    /// <summary>An operand: an SSA value, or a constant</summary>
+    public readonly record struct Arg(int Id, double Value)
+    {
+        public bool IsConst => Id < 0;
+    }
+
+    public enum Op { Leaf, Add, Sub, Mul, Div, Mad, Saturate, Min, Max, Dot, Other }
+
+    /// <summary>One value: what it does, its operands, and for a leaf its name (tex:..., cb:..., in:...)</summary>
+    public record Node(int Id, Op Op, Arg[] Args, string Leaf);
+
+    static readonly Regex BinaryArgs = new(@"^(fadd|fsub|fmul|fdiv) (?:fast )?\w+ ([^,]+), (.+)$", RegexOptions.Compiled);
+
+    public Arg ArgOf(string token)
+    {
+        token = token.Trim();
+        if (token.StartsWith('%')) return new Arg(int.Parse(token[1..]), 0);
+        if (token.StartsWith("0x") && token.Length == 18) return new Arg(-1, BitConverter.Int64BitsToDouble(Convert.ToInt64(token, 16)));
+        return double.TryParse(token, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var d)
+            ? new Arg(-1, d) : new Arg(-1, double.NaN);
+    }
+
+    /// <summary>The expression of any value, as <see cref="Expression"/> prints an output's</summary>
+    public string ExpressionOf(int id, int maxDepth = 14) => Expr(id, maxDepth);
+
+    /// <summary>The SSA value an output component is written from, or null</summary>
+    public int? StoreId(string output) => _storeValues.TryGetValue(output, out var v) && v.StartsWith('%') ? int.Parse(v[1..]) : null;
+
+    public Node NodeOf(int id)
+    {
+        if (!_ssa.TryGetValue(id, out var instr)) return new Node(id, Op.Other, [], "");
+        var t = instr.Text;
+        var leaves = Leaves(id);
+        if (leaves.Count == 1 && (ExtractValue.IsMatch(t) || LoadInput.IsMatch(t)))
+        {
+            var leaf = leaves.First();
+            return new Node(id, Op.Leaf, [], leaf.StartsWith("cb:") || leaf.StartsWith("in:") ? leaf : "tex:" + leaf);
+        }
+
+        var b = BinaryArgs.Match(t);
+        if (b.Success)
+        {
+            var op = b.Groups[1].Value switch { "fadd" => Op.Add, "fsub" => Op.Sub, "fmul" => Op.Mul, _ => Op.Div };
+            return new Node(id, op, [ArgOf(b.Groups[2].Value), ArgOf(b.Groups[3].Value)], "");
+        }
+        var fm = DxTertiary.Match(t);
+        if (fm.Success) return new Node(id, Op.Mad, [ArgOf(fm.Groups[1].Value), ArgOf(fm.Groups[2].Value), ArgOf(fm.Groups[3].Value)], "");
+        var u = DxUnary.Match(t);
+        if (u.Success && u.Groups[1].Value == "7") return new Node(id, Op.Saturate, [ArgOf(u.Groups[2].Value)], "");
+        var bi = DxBinary.Match(t);
+        if (bi.Success && bi.Groups[1].Value is "35" or "36")
+            return new Node(id, bi.Groups[1].Value == "35" ? Op.Max : Op.Min, [ArgOf(bi.Groups[2].Value), ArgOf(bi.Groups[3].Value)], "");
+        // dot2/3/4: the a operands, then the b operands. The comment after the call isn't part of it
+        var dot = DotCall.Match(t);
+        if (dot.Success)
+            return new Node(id, Op.Dot, dot.Groups[1].Value.Split(',').Select(a => ArgOf(a.Trim().Split(' ').Last())).ToArray(), "");
+        return new Node(id, Op.Other, instr.Operands.Select(o => new Arg(o, 0)).ToArray(), "");
+    }
+
+    static readonly Regex DotCall = new(@"@dx\.op\.dot[234]\.\w+\(i32 \d+, ([^)]*)\)", RegexOptions.Compiled);
+
+    /// <summary>The texture, cbuffer and input leaves a value depends on, as NodeOf names them</summary>
+    public IEnumerable<string> LeafNames(int id) => Leaves(id).Select(l => l.StartsWith("cb:") || l.StartsWith("in:") ? l : "tex:" + l);
+
     /// <summary>
     /// The texture channels an output saturates on their own or with a cbuffer field added, as the metallic of
     /// M[AMSN] is sat(MetallicMap.r + snp_0_float_0): (texture, channel, field or null)
@@ -262,6 +346,7 @@ class Dxil
     static readonly Regex DxUnary = new(@"@dx\.op\.unary\.\w+\(i32 (\d+), \w+ ([^)]+)\)", RegexOptions.Compiled);
     static readonly Regex DxBinary = new(@"@dx\.op\.binary\.\w+\(i32 (\d+), \w+ ([^,]+), \w+ ([^)]+)\)", RegexOptions.Compiled);
     static readonly Regex DxTertiary = new(@"@dx\.op\.tertiary\.\w+\(i32 46, \w+ ([^,]+), \w+ ([^,]+), \w+ ([^)]+)\)", RegexOptions.Compiled);
+    static readonly Regex DxDot = new(@"@dx\.op\.dot([234])\.\w+\(i32 \d+, (.+)\)", RegexOptions.Compiled);
     static readonly Regex Select = new(@"^select i1 ([^,]+), \w+ ([^,]+), \w+ (.+)$", RegexOptions.Compiled);
 
     string Operand2(string token, int depth)
@@ -304,6 +389,13 @@ class Dxil
         }
         var fm = DxTertiary.Match(t);
         if (fm.Success) return $"({Operand2(fm.Groups[1].Value, d)} * {Operand2(fm.Groups[2].Value, d)} + {Operand2(fm.Groups[3].Value, d)})";
+        var dot = DxDot.Match(t);
+        if (dot.Success)
+        {
+            var args = dot.Groups[2].Value.Split(',').Select(x => x.Trim().Split(' ').Last()).ToArray();
+            var half = args.Length / 2;
+            return $"dot({string.Join(", ", args.Take(half).Select(a => Operand2(a, d)))} | {string.Join(", ", args.Skip(half).Select(a => Operand2(a, d)))})";
+        }
         var s = Select.Match(t);
         if (s.Success) return $"({Operand2(s.Groups[1].Value, d)} ? {Operand2(s.Groups[2].Value, d)} : {Operand2(s.Groups[3].Value, d)})";
         if (t.StartsWith("phi ")) return $"phi({string.Join(", ", instr.Operands.Select(o => Expr(o, d)))})";

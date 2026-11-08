@@ -240,8 +240,14 @@ public struct MaterialDetail
     /// <summary>rgb multiplies the albedo, w is the strength of the normal</summary>
     public Vector4 ColorStrength;
 
-    /// <summary>The texture indices of the albedo and normal, 0 if there is none</summary>
+    /// <summary>
+    ///     The texture indices of the albedo and normal, 0 if there is none. Pad0 is how the albedo is laid over the
+    ///     material's (0 multiplied, <see cref="AlbedoOverlay" />), Pad1 the strength of an overlay as float bits
+    /// </summary>
     public uint AlbedoTex, NormalTex, Pad0, Pad1;
+
+    /// <summary>The [Ov_AN] overlay, see <see cref="MaterialDetailRecipe.AlbedoBlend" /></summary>
+    public const uint AlbedoOverlay = 1;
 }
 
 /// <summary>
@@ -311,6 +317,40 @@ public struct MaterialWithBlend
     public MaterialBlend Blend;
     public MaterialLayerTint LayerTint;
     public MaterialLayerScroll LayerScroll;
+}
+
+/// <summary>
+///     What multiplies each channel of the detail mask of layers 1 to 3, for the extended blend form (AC6's [MS]
+///     blends, see <see cref="MaterialBlendRecipeLayer.DetailChannels" />). Read by the flver fragment shader as the
+///     entry after <see cref="MaterialWater" />.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayerDetail
+{
+    public Vector4 Channels2, Channels3, Channels4;
+}
+
+/// <summary>For layers 1 to 3 of the extended form: x the detail bias, y what multiplies a soft weight, zw the detail mask's tiling</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialLayerDetailExtra
+{
+    public Vector4 Layer2, Layer3, Layer4;
+
+    public static MaterialLayerDetailExtra Default => new()
+    {
+        Layer2 = new Vector4(0, 1, 1, 1),
+        Layer3 = new Vector4(0, 1, 1, 1),
+        Layer4 = new Vector4(0, 1, 1, 1)
+    };
+}
+
+/// <summary>Everything of a material with the extended blend form, which has the entries of water in front of it</summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithLayerDetail
+{
+    public MaterialWithWater Watery;
+    public MaterialLayerDetail Detail;
+    public MaterialLayerDetailExtra Extra;
 }
 
 /// <summary>Everything of a material of water, which has the entries of a glow in front of it</summary>

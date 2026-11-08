@@ -168,7 +168,8 @@ parse.Wait();
 Console.WriteLine($"{readCount} binders read, {missing} missing, {failures.Count} failures, {meshes.Count} meshes");
 
 // ---- Report -----------------------------------------------------------------------------------------------------
-var report = new Census(gameName, definitions, matbinSource, meshes.ToList(), placedMaps);
+var meanings = Audit.Load(Path.Combine(outDir, "..", "Signatures", $"{gameName}_SlotMeanings.json"));
+var report = new Census(gameName, definitions, matbinSource, meshes.ToList(), placedMaps, meanings);
 report.Write(outDir, failures.ToList());
 Console.WriteLine($"Done in {(DateTime.Now - start).TotalSeconds:F0}s, written to {outDir}");
 

@@ -424,61 +424,23 @@ public class FlverResource : IResource, IDisposable
         FlverMaterial.TextureType.ShininessTextureResource3, FlverMaterial.TextureType.ShininessTextureResource4
     };
 
-    /// <summary>
-    /// Works out which layer (0 based) of a kind of texture a parameter name refers to.
-    /// Layer 1 (index 0) has no number, the layers after it are numbered 2, 3 and 4.
-    /// </summary>
-    private static bool MatchLayer(string name, string exact1, string exact2, string containsPrefix,
-        string containsBase, out int layer)
+    private static readonly FlverMaterial.TextureType[] LayerDetailMasks =
     {
-        for (var n = Material.MaxLayers; n >= 2; n--)
-        {
-            if (name == exact1 + n || name == exact2 + n || name.Contains(containsPrefix + n))
-            {
-                layer = n - 1;
-                return true;
-            }
-        }
+        FlverMaterial.TextureType.LayerDetailMaskTextureResource2, FlverMaterial.TextureType.LayerDetailMaskTextureResource3,
+        FlverMaterial.TextureType.LayerDetailMaskTextureResource4
+    };
 
-        if (name == exact1 || name == exact2 || name.Contains(containsBase))
-        {
-            layer = 0;
-            return true;
-        }
-
-        layer = 0;
-        return false;
-    }
-
-    /// <summary>
-    /// Whether the renderer knows how to weigh the layers of this material. Otherwise only its
-    /// first layer is shown, since blending by the wrong weights looks worse than not blending.
-    /// </summary>
-    private static bool HasKnownBlend(FlverMaterial dest)
-    {
-        return dest.Definition is { BlendWeight: MaterialBlendWeight.Recipe } or { BlendWeight: MaterialBlendWeight.TexCoord1X, BlendLayers.Count: 2 };
-    }
+    /// <summary>See <see cref="MaterialBinding.HasKnownBlend"/></summary>
+    private static bool HasKnownBlend(FlverMaterial dest) => MaterialBinding.HasKnownBlend(dest.Definition);
 
     /// <summary>
     /// Loads the textures of a recipe by what the material calls them, as the names
     /// in the flver don't always match, and a recipe can use textures the flver doesn't list.
     /// A path in the flver wins over the material's: terrain shares a material, and sets its own mask per piece.
     /// </summary>
-    /// <summary>
-    /// The one metallic map of a material that is drawn: the bottom layer's (the lowest numbered that has a file),
-    /// as the blend recipes don't say which layer the others belong to. See ProcessMaterialTexture.
-    /// </summary>
-    private static string? ChooseMetallic(MaterialDefinition? definition, Dictionary<string, string> flverPaths)
-    {
-        return definition?.Samplers
-            .Where(x => x.Role == "MetallicMap" && (x.Path != "" || flverPaths.GetValueOrDefault(x.Type, "") != ""))
-            .OrderBy(x => Math.Max(x.Suffix, 0)).ThenBy(x => x.Slot)
-            .FirstOrDefault()?.Type;
-    }
-
     private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers, Dictionary<string, string> flverPaths)
     {
-        dest.MetallicType = ChooseMetallic(dest.Definition, flverPaths);
+        dest.MetallicType = MaterialBinding.ChooseMetallic(dest.Definition, flverPaths);
 
         if (dest.Definition?.SurfaceType != null)
         {
@@ -524,12 +486,12 @@ public class FlverResource : IResource, IDisposable
 
         if (detail?.AlbedoType != null)
         {
-            LookupTexture(FlverMaterial.TextureType.DetailAlbedoTextureResource, dest, detail.AlbedoType, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.DetailAlbedoTextureResource, dest, detail.AlbedoType, flverPaths.GetValueOrDefault(detail.AlbedoType, ""), mtd);
         }
 
         if (detail?.NormalType != null)
         {
-            LookupTexture(FlverMaterial.TextureType.DetailNormalTextureResource, dest, detail.NormalType, "", mtd);
+            LookupTexture(FlverMaterial.TextureType.DetailNormalTextureResource, dest, detail.NormalType, flverPaths.GetValueOrDefault(detail.NormalType, ""), mtd);
         }
 
         MaterialResolvedBlend? blend = dest.Definition?.Blend;
@@ -546,6 +508,12 @@ public class FlverResource : IResource, IDisposable
             if (blendLayers[i].Albedo != null)
             {
                 LookupTexture(AlbedoLayers[i], dest, blendLayers[i].Albedo, flverPaths.GetValueOrDefault(blendLayers[i].Albedo!, ""), mtd);
+                dest.LayerAlbedoTypes[i] ??= blendLayers[i].Albedo;
+            }
+            else if (blendLayers[i].ColorOnly && i < Material.MaxLayers)
+            {
+                // White, for the layer's tint to color (UpdateMaterial)
+                dest.ColorOnlyLayers[i] = true;
             }
 
             if (blendLayers[i].Normal != null)
@@ -566,179 +534,96 @@ public class FlverResource : IResource, IDisposable
         {
             LookupTexture(FlverMaterial.TextureType.DetailMaskTextureResource, dest, blend.DetailType, flverPaths.GetValueOrDefault(blend.DetailType, ""), mtd);
         }
+
+        // The extended form's detail mask of each layer, and its tiling (MaterialLayerDetailExtra.zw)
+        for (var i = 0; i < MaterialResolvedBlend.MaxWeighted; i++)
+        {
+            var type = blend.LayerDetailTypes[i];
+            if (type == null)
+            {
+                continue;
+            }
+
+            LookupTexture(LayerDetailMasks[i], dest, type, flverPaths.GetValueOrDefault(type, ""), mtd);
+            dest.LayerDetailTiling[i] = dest.Definition.Samplers.Find(x => x.Type == type)?.Tiling is { Length: >= 2 } t
+                ? new Vector2(t[0], t[1]) : Vector2.One;
+        }
     }
 
     /// <summary>
-    /// Handles a texture of a material whose layers the definition has worked out. These can't be told
-    /// apart by name: the layers of M[Flag][Mb2] have identical endings, and its normals are mixed in with
-    /// an overlay normal that isn't a layer. Returns false for textures that aren't its concern.
+    /// Loads one of the material's own textures where <see cref="MaterialBinding.Route"/> says it goes, and notes
+    /// what the shader needs to know about it. Textures loaded from the definition beforehand need nothing more.
     /// </summary>
-    private bool TryProcessKnownBlendTexture(FlverMaterial dest, string? texType, string mpath, string mtd, MaterialLayers layers)
-    {
-        if (texType == null || !HasKnownBlend(dest))
-        {
-            return false;
-        }
-
-        MaterialDefinition definition = dest.Definition!;
-
-        if (definition.Blend != null)
-        {
-            MaterialSampler? known = definition.Samplers.Find(x => x.Type == texType);
-
-            return known != null && (known.Role is "AlbedoMap" or "NormalMap" || known.Type == definition.Blend.MaskType
-                || known.Type == definition.Blend.DetailType);
-        }
-
-        for (var i = 0; i < definition.BlendLayers.Count; i++)
-        {
-            MaterialBlendLayer layer = definition.BlendLayers[i];
-
-            if (layer.Albedo == texType)
-            {
-                LookupTexture(AlbedoLayers[i], dest, texType, mpath, mtd);
-                layers.LayerCount = Math.Max(layers.LayerCount, i + 1);
-                return true;
-            }
-
-            if (layer.Normal == texType)
-            {
-                LookupTexture(NormalLayers[i], dest, texType, mpath, mtd);
-                layers.BlendNormal = true;
-                return true;
-            }
-        }
-
-        // Anything else in the role of a layer would take that layer's slot
-        var role = definition.Samplers.Find(x => x.Type == texType)?.Role;
-
-        return role is "AlbedoMap" or "NormalMap";
-    }
-
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
         MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
+        var glossInSpecular = curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2;
 
-        if (dest.Definition?.Magma?.TextureType == texType)
+        MaterialTextureRoute route = MaterialBinding.Route(dest.Definition, texType, dest.MetallicType, glossInSpecular);
+        var layer = route.Layer;
+
+        if (route.LoadedElsewhere)
         {
-            return;
-        }
-
-        // Already loaded, and they would otherwise be taken for the main textures
-        if (dest.Definition?.Detail is { } overlay && (texType == overlay.AlbedoType || texType == overlay.NormalType))
-        {
-            return;
-        }
-
-        // All of the normals of water end the same, and the last would replace the one that was chosen
-        if (dest.Definition?.Water != null && dest.Definition.SurfaceType != null
-            && dest.Definition.Samplers.Find(x => x.Type == texType)?.Role == "NormalMap")
-        {
-            return;
-        }
-
-        // The same goes for fur, and its albedos as well
-        if (dest.Definition?.Fur != null
-            && dest.Definition.Samplers.Find(x => x.Type == texType)?.Role is "AlbedoMap" or "NormalMap")
-        {
-            return;
-        }
-
-        if (TryProcessKnownBlendTexture(dest, texType, mpath, mtd, layers))
-        {
-            return;
-        }
-
-        // DS3's lightmaps, g_DOLTexture and g_DOLTexture2: their textures are the map's, found per part
-        if (texType != null && texType.Contains("DOLTexture", StringComparison.OrdinalIgnoreCase))
-        {
-            dest.UsesLightmap = true;
-            return;
-        }
-
-        // Only what follows the slot says what this is: the rest is the shader's name, which can be M[...]_Emissive_Glow
-        var samplerName = texType?[(texType.LastIndexOf("Texture2D_", StringComparison.Ordinal) + 1)..];
-
-        if (samplerName != null && samplerName.Contains("Emissive", StringComparison.OrdinalIgnoreCase))
-        {
-            LookupTexture(FlverMaterial.TextureType.EmissiveTextureResource, dest, texType, mpath, mtd);
-            return;
-        }
-
-        // Elden Ring and later are metallic: the red of MetallicMap is how much of a metal the surface is, and the shader
-        // works F0 out from it and the albedo (c_metallic). It goes in the specular slot, which these games don't use
-        if (texType != null && dest.Definition?.Samplers.Find(x => x.Type == texType)?.Role == "MetallicMap")
-        {
-            // Where the layers are known, each has its own (MaterialDefinition.ResolveMetallic). Otherwise the bottom one
-            List<MaterialBlendLayer> blendLayers = dest.Definition.BlendLayers;
-            var perLayer = HasKnownBlend(dest) && blendLayers.Exists(l => l.Metallic != null);
-            var metalLayer = perLayer ? blendLayers.FindIndex(l => l.Metallic == texType) : texType == dest.MetallicType ? 0 : -1;
-
-            if (metalLayer >= 0 && metalLayer < Material.MaxLayers)
+            if (route.Use == MaterialTextureUse.Lightmap)
             {
-                LookupTexture(SpecularLayers[metalLayer], dest, texType, mpath, mtd);
-                dest.UsesMetallic = true;
-                dest.MetallicOffsetBits[metalLayer] = BitConverter.HalfToUInt16Bits((Half)dest.Definition.MetallicOffsets.GetValueOrDefault(texType));
-                layers.BlendSpecular |= metalLayer > 0;
+                dest.UsesLightmap = true;
             }
 
             return;
         }
 
-        // Matched on the sampler's own name too, as shader names such as M[...][Ov_N_AlbedoMask_MetallicMask] or
-        // C[Fur]_Albedo_FallOff would otherwise make every texture of theirs an albedo. Older games' g_ names have no slot,
-        // so for them this is the whole name.
-        string paramNameCheck;
+        switch (route.Use)
+        {
+            case MaterialTextureUse.Albedo:
+                LookupTexture(AlbedoLayers[layer], dest, texType, mpath, mtd);
+                layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+                // The first is the one loaded (LookupTexture keeps a filled slot)
+                dest.LayerAlbedoTypes[layer] ??= texType;
+                break;
 
-        if (samplerName == null)
-        {
-            paramNameCheck = "G_DIFFUSE";
-        }
-        else
-        {
-            paramNameCheck = samplerName.ToUpper();
-        }
+            case MaterialTextureUse.Normal:
+                LookupTexture(NormalLayers[layer], dest, texType, mpath, mtd);
 
-        int layer;
+                // The layers of a known blend are counted by their albedos
+                if (route.FromKnownLayers)
+                {
+                    layers.BlendNormal = true;
+                }
+                else
+                {
+                    layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+                    layers.BlendNormal |= layer > 0;
+                }
+                break;
 
-        if (MatchLayer(paramNameCheck, "G_DIFFUSETEXTURE", "G_DIFFUSE", "ALBEDO_", "ALBEDO", out layer))
-        {
-            LookupTexture(AlbedoLayers[layer], dest, texType, mpath, mtd);
-            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
-        }
-        else if (MatchLayer(paramNameCheck, "G_BUMPMAPTEXTURE", "G_BUMPMAP", "NORMAL_", "NORMAL", out layer))
-        {
-            LookupTexture(NormalLayers[layer], dest, texType, mpath, mtd);
-            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
-            layers.BlendNormal |= layer > 0;
-        }
-        else if (MatchLayer(paramNameCheck, "G_SPECULARTEXTURE", "G_SPECULAR", "SPECULAR_", "SPECULAR", out layer))
-        {
-            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
-
-            // These games keep their gloss in the specular slot, which the shader reads as shininess
-            if (curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
-            {
-                LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
-                layers.BlendShininess |= layer > 0;
-            }
-            else
-            {
+            case MaterialTextureUse.Specular:
                 LookupTexture(SpecularLayers[layer], dest, texType, mpath, mtd);
+                layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
                 layers.BlendSpecular |= layer > 0;
-            }
-        }
-        else if (MatchLayer(paramNameCheck, "G_SHININESSTEXTURE", "G_SHININESS", "SHININESS", "SHININESS", out layer))
-        {
-            LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
-            layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
-            layers.BlendShininess |= layer > 0;
-        }
-        else if (paramNameCheck.Contains("BLENDMASK"))
-        {
-            LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, texType, mpath, mtd);
-            layers.HasBlendMask = true;
+                break;
+
+            case MaterialTextureUse.Shininess:
+                LookupTexture(ShininessLayers[layer], dest, texType, mpath, mtd);
+                layers.LayerCount = Math.Max(layers.LayerCount, layer + 1);
+                layers.BlendShininess |= layer > 0;
+                break;
+
+            case MaterialTextureUse.Metallic:
+                LookupTexture(SpecularLayers[layer], dest, texType, mpath, mtd);
+                dest.UsesMetallic = true;
+                dest.MetallicOffsetBits[layer] = BitConverter.HalfToUInt16Bits((Half)(dest.Definition?.MetallicOffsets.GetValueOrDefault(texType) ?? 0));
+                layers.BlendSpecular |= layer > 0;
+                break;
+
+            case MaterialTextureUse.Emissive:
+                LookupTexture(FlverMaterial.TextureType.EmissiveTextureResource, dest, texType, mpath, mtd);
+                break;
+
+            case MaterialTextureUse.BlendMask:
+                LookupTexture(FlverMaterial.TextureType.BlendmaskTextureResource, dest, texType, mpath, mtd);
+                layers.HasBlendMask = true;
+                break;
         }
     }
 
@@ -905,6 +790,31 @@ public class FlverResource : IResource, IDisposable
         {
             dest.MaterialData.uvSet2 = (ushort)(fur.ThirdUv ? 1 : 0);
         }
+        else if (dest.Definition != null)
+        {
+            // Where the game's shader is known to sample a layer's albedo with one UV set (MaterialShaderTable.UvSets),
+            // the layer uses that set. M[AMSN_V][Mb4_Ch2] has all of its layers on the second set, and AC6's [MS]
+            // blends their second layer on the first. A layer's other textures follow its albedo, as in the game.
+            // Only the blend shaders have a second set; the others read the first for both.
+            for (var i = 0; i < Material.MaxLayers; i++)
+            {
+                var type = dest.LayerAlbedoTypes[i];
+                var set = type == null ? -1 : dest.Definition.Samplers.Find(x => x.Type == type)?.UvSet ?? -1;
+
+                if (set < 0)
+                {
+                    continue;
+                }
+
+                switch (i)
+                {
+                    case 0: dest.MaterialData.uvSet = (ushort)set; break;
+                    case 1: dest.MaterialData.uvSet2 = (ushort)set; break;
+                    case 2: dest.MaterialData.uvSet3 = (ushort)set; break;
+                    default: dest.MaterialData.uvSet4 = (ushort)set; break;
+                }
+            }
+        }
 
         if (deformer != MaterialDeformer.None)
         {
@@ -973,6 +883,11 @@ public class FlverResource : IResource, IDisposable
         if (dest.Definition?.Water != null)
         {
             size = sizeof(MaterialWithWater);
+        }
+
+        if (dest.Definition?.Blend?.Extended == true)
+        {
+            size = sizeof(MaterialWithLayerDetail);
         }
 
         return SceneRenderer.MaterialBufferAllocator.Allocate((uint)size, sizeof(Material));
@@ -2531,8 +2446,27 @@ public class FlverResource : IResource, IDisposable
     /// Which of TEXCOORD1-3 a layout member holds, or -1 if it isn't one of them.
     /// Their position in the layout says nothing, as other members can come before them.
     /// </summary>
-    private static int GetTexCoordIndex(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
+    /// <param name="blendAttributes">
+    ///     The TEXCOORDs the material's blend weights read (FlverMaterial.BlendVertexAttribute): the first in the low
+    ///     8 bits, a second above them (0 for none). The first is put where TEXCOORD1 would be and the second where
+    ///     TEXCOORD2 would be, which the shader's vertex blend values come from, leaving out what they replace.
+    ///     AC6's [MS] blends read TEXCOORD1 and TEXCOORD5
+    /// </param>
+    private static int GetTexCoordIndex(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index, int blendAttributes = 1)
     {
+        var first = blendAttributes & 0xFF;
+        var second = blendAttributes >> 8;
+
+        if (semantic == FLVER.LayoutSemantic.UV && type == FLVER.LayoutType.UByte4Norm && (first != 1 || second != 0))
+        {
+            if (second != 0 && index == second)
+                return 1;
+            if (index == first)
+                return 0;
+            if ((index == 1 && first != 1) || (index == 2 && second != 0))
+                return -1;
+        }
+
         if (semantic != FLVER.LayoutSemantic.UV || index < 1 || index > FlverLayoutDeform.TexCoord3Index + 1)
             return -1;
 
@@ -2562,7 +2496,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets, int blendAttribute = 1)
     {
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -2591,7 +2525,7 @@ public class FlverResource : IResource, IDisposable
                         continue;
                     }
 
-                    var texCoord = GetTexCoordIndex(l.semantic, l.type, l.index);
+                    var texCoord = GetTexCoordIndex(l.semantic, l.type, l.index, blendAttribute);
 
                     if (l.semantic == FLVER.LayoutSemantic.Position)
                     {
@@ -2668,7 +2602,7 @@ public class FlverResource : IResource, IDisposable
     /// Finds where TEXCOORD1-3 ended up in the flat UV list of a vertex: each entry is the index of a
     /// member's first UV, by TEXCOORD, or -1 for one the mesh doesn't have.
     /// </summary>
-    private int[] GetTexCoordUVs(FLVER2.Mesh mesh, out bool halfTexCoord3)
+    private int[] GetTexCoordUVs(FLVER2.Mesh mesh, out bool halfTexCoord3, int blendAttribute = 1)
     {
         var uvs = new int[FlverLayoutDeform.TexCoord3Index + 1];
         Array.Fill(uvs, -1);
@@ -2685,7 +2619,7 @@ public class FlverResource : IResource, IDisposable
                     continue;
                 }
 
-                var texCoord = GetTexCoordIndex(member.Semantic, member.Type, member.Index);
+                var texCoord = GetTexCoordIndex(member.Semantic, member.Type, member.Index, blendAttribute);
                 if (texCoord >= 0)
                 {
                     uvs[texCoord] = uvIndex;
@@ -2701,9 +2635,9 @@ public class FlverResource : IResource, IDisposable
         return uvs;
     }
 
-    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets)
+    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int blendAttribute = 1)
     {
-        var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3);
+        var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3, blendAttribute);
 
         // FLVER.Vertex reads half floats as if they were 16 bit fixed point, so this gets the bits back
         float uvFactor = Flver!.Header.Version >= 0x2000E ? 2048 : 1024;
@@ -3050,7 +2984,7 @@ public class FlverResource : IResource, IDisposable
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
-            FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets);
+            FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute);
         }
         else
         {
@@ -3324,7 +3258,7 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
-                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets);
+                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute);
             }
             else
             {
@@ -3891,6 +3825,10 @@ public class FlverResource : IResource, IDisposable
             VatPositionTextureResource,
             VatNormalTextureResource,
             LightmapTextureResource,
+            // The detail masks of blend layers 1 to 3 in the extended form
+            LayerDetailMaskTextureResource2,
+            LayerDetailMaskTextureResource3,
+            LayerDetailMaskTextureResource4,
             TextureResourceCount
         }
 
@@ -3951,6 +3889,17 @@ public class FlverResource : IResource, IDisposable
         /// </summary>
         public bool UsesLightmap;
 
+        /// <summary>The extended blend form's per-layer values, uploaded after the water entries (see MaterialWithLayerDetail)</summary>
+        public MaterialLayerDetail? LayerDetail;
+        public MaterialLayerDetailExtra LayerDetailExtra = MaterialLayerDetailExtra.Default;
+        public Vector2[] LayerDetailTiling = [Vector2.One, Vector2.One, Vector2.One];
+
+        /// <summary>The blend layers that are the color of their tint, drawn with a white texture</summary>
+        public bool[] ColorOnlyLayers = new bool[Material.MaxLayers];
+
+        /// <summary>The TEXCOORD the blend recipe's vertex weights read, see GetTexCoordIndex</summary>
+        public int BlendVertexAttribute => Definition?.Blend != null ? Definition.BlendVertexAttribute | (Definition.BlendVertexAttribute2 << 8) : 1;
+
         /// <summary>The sampler type of the metallic map drawn in the specular slot, see ChooseMetallic</summary>
         public string? MetallicType;
 
@@ -3965,6 +3914,9 @@ public class FlverResource : IResource, IDisposable
         ///     these in row 3 of the material in place of the shininess textures, which these games don't have
         /// </summary>
         public ushort[] MetallicOffsetBits = new ushort[Material.MaxLayers];
+
+        /// <summary>The sampler type of each layer's albedo, which says the layer's UV set, see ConfigureMaterialShader</summary>
+        public string?[] LayerAlbedoTypes = new string?[Material.MaxLayers];
 
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
@@ -4061,7 +4013,10 @@ public class FlverResource : IResource, IDisposable
             Detail = new MaterialDetail
             {
                 Tiling = Vector4.One,
-                ColorStrength = new Vector4(detail.Color[0], detail.Color[1], detail.Color[2], detail.NormalStrength)
+                ColorStrength = new Vector4(detail.Color[0], detail.Color[1], detail.Color[2], detail.NormalStrength),
+                // See MaterialDetail: how the albedo is laid over, and the strength of an overlay
+                Pad0 = detail.Overlay ? MaterialDetail.AlbedoOverlay : 0,
+                Pad1 = BitConverter.SingleToUInt32Bits(detail.OverlayStrength)
             };
         }
 
@@ -4087,6 +4042,15 @@ public class FlverResource : IResource, IDisposable
                     Tint4 = new Vector4(t[3][0], t[3][1], t[3][2], t[0][2])
                 }
             };
+
+            if (blend.Extended)
+            {
+                Vector4 Channels(int i) => new(blend.LayerChannels[i][0], blend.LayerChannels[i][1], blend.LayerChannels[i][2], blend.LayerChannels[i][3]);
+                Vector4 Extra(int i) => new(blend.LayerBias[i], blend.LayerSoftScale[i], LayerDetailTiling[i].X, LayerDetailTiling[i].Y);
+
+                LayerDetail = new MaterialLayerDetail { Channels2 = Channels(0), Channels3 = Channels(1), Channels4 = Channels(2) };
+                LayerDetailExtra = new MaterialLayerDetailExtra { Layer2 = Extra(0), Layer3 = Extra(1), Layer4 = Extra(2) };
+            }
         }
 
         /// <summary>
@@ -4231,7 +4195,7 @@ public class FlverResource : IResource, IDisposable
         {
             SetMaterialTexture(TextureType.AlbedoTextureResource, ref MaterialData.colorTex, AlbedoFromColor ? WhiteTexture : (ushort)0);
             SetMaterialTexture(TextureType.EmissiveTextureResource, ref MaterialData.emissiveTex, BlackTexture);
-            SetMaterialTexture(TextureType.AlbedoTextureResource2, ref MaterialData.colorTex2, 0);
+            SetMaterialTexture(TextureType.AlbedoTextureResource2, ref MaterialData.colorTex2, ColorOnlyLayers[1] ? WhiteTexture : (ushort)0);
             SetMaterialTexture(TextureType.NormalTextureResource, ref MaterialData.normalTex, 1);
             SetMaterialTexture(TextureType.NormalTextureResource2, ref MaterialData.normalTex2, 1);
             SetMaterialTexture(TextureType.SpecularTextureResource, ref MaterialData.specTex, 2);
@@ -4242,8 +4206,8 @@ public class FlverResource : IResource, IDisposable
             // 0 until the lightmap is on the GPU, which the shader reads as no lightmap
             SetMaterialTexture(TextureType.LightmapTextureResource, ref MaterialData.lightmapTex, 0);
 
-            SetMaterialTexture(TextureType.AlbedoTextureResource3, ref MaterialData.colorTex3, 0);
-            SetMaterialTexture(TextureType.AlbedoTextureResource4, ref MaterialData.colorTex4, 0);
+            SetMaterialTexture(TextureType.AlbedoTextureResource3, ref MaterialData.colorTex3, ColorOnlyLayers[2] ? WhiteTexture : (ushort)0);
+            SetMaterialTexture(TextureType.AlbedoTextureResource4, ref MaterialData.colorTex4, ColorOnlyLayers[3] ? WhiteTexture : (ushort)0);
             SetMaterialTexture(TextureType.NormalTextureResource3, ref MaterialData.normalTex3, 1);
             SetMaterialTexture(TextureType.NormalTextureResource4, ref MaterialData.normalTex4, 1);
             SetMaterialTexture(TextureType.SpecularTextureResource3, ref MaterialData.specTex3, 2);
@@ -4276,11 +4240,26 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithBlend? blended = null;
 
+            // The extended blend form's entries come after water, so everything before them has to be there
+            var layerDetail = LayerDetail != null;
+
             // An overlay comes after the blend entries, which are just unused without a recipe
-            if ((Detail != null || Magma != null || Water != null ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
+            if ((Detail != null || Magma != null || Water != null || layerDetail ? Blend ?? new MaterialWithBlend() : Blend) is MaterialWithBlend blend)
             {
                 ushort detail = 0;
                 SetMaterialTexture(TextureType.DetailMaskTextureResource, ref detail, BlackTexture);
+
+                // An extended layer's own detail mask, in the top 16 bits of its source (black until it loads)
+                if (layerDetail)
+                {
+                    ushort mask2 = 0, mask3 = 0, mask4 = 0;
+                    SetMaterialTexture(TextureType.LayerDetailMaskTextureResource2, ref mask2, BlackTexture);
+                    SetMaterialTexture(TextureType.LayerDetailMaskTextureResource3, ref mask3, BlackTexture);
+                    SetMaterialTexture(TextureType.LayerDetailMaskTextureResource4, ref mask4, BlackTexture);
+                    blend.Blend.Source1 = (blend.Blend.Source1 & 0xFFFF) | ((uint)mask2 << 16);
+                    blend.Blend.Source2 = (blend.Blend.Source2 & 0xFFFF) | ((uint)mask3 << 16);
+                    blend.Blend.Source3 = (blend.Blend.Source3 & 0xFFFF) | ((uint)mask4 << 16);
+                }
 
                 blend.Material = MaterialData;
                 blend.Shading = Shading;
@@ -4294,7 +4273,7 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithDetail? detailed = null;
 
-            if ((Magma != null || Water != null ? Detail ?? new MaterialDetail() : Detail) is MaterialDetail overlay)
+            if ((Magma != null || Water != null || layerDetail ? Detail ?? new MaterialDetail() : Detail) is MaterialDetail overlay)
             {
                 ushort overlayAlbedo = 0;
                 ushort overlayNormal = 0;
@@ -4309,7 +4288,7 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithMagma? glowing = null;
 
-            if ((Water != null ? Magma ?? new MaterialMagma() : Magma) is MaterialMagma magma)
+            if ((Water != null || layerDetail ? Magma ?? new MaterialMagma() : Magma) is MaterialMagma magma)
             {
                 ushort magmaTex = 0;
                 SetMaterialTexture(TextureType.MagmaTextureResource, ref magmaTex, 0);
@@ -4322,6 +4301,10 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithWater? watery = Water is MaterialWater water
                 ? new MaterialWithWater { Glowing = glowing!.Value, Water = water }
+                : layerDetail ? new MaterialWithWater { Glowing = glowing!.Value } : null;
+
+            MaterialWithLayerDetail? layered = LayerDetail is MaterialLayerDetail layerDetailData
+                ? new MaterialWithLayerDetail { Watery = watery!.Value, Detail = layerDetailData, Extra = LayerDetailExtra }
                 : null;
 
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };
@@ -4331,7 +4314,11 @@ public class FlverResource : IResource, IDisposable
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
                 if (MaterialBuffer != null && !disposedValue)
                 {
-                    if (watery is MaterialWithWater waterData)
+                    if (layered is MaterialWithLayerDetail layeredData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref layeredData);
+                    }
+                    else if (watery is MaterialWithWater waterData)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref waterData);
                     }

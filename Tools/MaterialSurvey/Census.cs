@@ -13,10 +13,12 @@ class Census
     readonly Dictionary<string, string> _matbinSource;
     readonly List<MeshUse> _meshes;
     readonly Dictionary<string, HashSet<string>> _placedMaps;
+    readonly Dictionary<string, SlotMeanings> _meanings;
 
     public Census(string game, Dictionary<string, MaterialDefinition> definitions, Dictionary<string, string> matbinSource,
-        List<MeshUse> meshes, Dictionary<string, HashSet<string>> placedMaps)
+        List<MeshUse> meshes, Dictionary<string, HashSet<string>> placedMaps, Dictionary<string, SlotMeanings> meanings)
     {
+        _meanings = meanings;
         _game = game;
         _definitions = definitions;
         _matbinSource = matbinSource;
@@ -52,75 +54,26 @@ class Census
         table.Water = Read<Dictionary<string, MaterialWaterRecipe>>("_Water");
         table.Fur = Read<Dictionary<string, MaterialFurRecipe>>("_Fur");
         table.Metallic = Read<Dictionary<string, Dictionary<int, string>>>("_Metallic");
+        table.UvSets = Read<Dictionary<string, Dictionary<int, string>>>("_UvSets");
+        table.MergeBlends(Read<Dictionary<string, MaterialBlendRecipe>>("_GeneratedBlends"));
+        table.MergeOverlays(Read<Dictionary<string, MaterialDetailRecipe>>("_Overlays"));
         Console.WriteLine($"Shader table: {table.Shaders.Count} entries, {table.TextureGroups.Count} UV group shaders, " +
             $"{table.Blends.Count} blends, {table.Details.Count} details, {table.Magma.Count} magma, {table.Water.Count} water, {table.Fur.Count} fur");
         return table;
     }
 
     /// <summary>
-    /// Where the viewport sends a texture of this material, following the order of
-    /// <c>FlverResource.ProcessMaterialTexture</c>. A copy for the census only: Phase 3 replaces it with
-    /// the renderer's own decision, so the two can't drift. "Dropped" means it is bound nowhere.
+    /// Where the viewport sends a texture of this material: MaterialBinding.Route, the renderer's own decision, with a
+    /// label for the census. "Deformer" textures are the vertex animation's, which the viewport loads by path apart
+    /// from the material's textures; they are routed like any other too but sampled only by the vertex shader.
     /// </summary>
-    public static string Route(MaterialDefinition d, MaterialSampler s)
+    public static (string label, MaterialTextureRoute route) Route(MaterialDefinition d, MaterialSampler s, string metallicType)
     {
-        var type = s.Type;
-        if (d.Deformer != MaterialDeformer.None && d.DeformerTextures.ContainsValue(s.Path) && s.Path != "") return "Deformer";
-        if (d.Magma?.TextureType == type) return "Magma";
-        if (d.Detail is { } overlay && (type == overlay.AlbedoType || type == overlay.NormalType)) return "Overlay";
-        if (d.Water != null && d.SurfaceType != null && s.Role == "NormalMap") return "Water";
-        if (d.Fur != null && s.Role is "AlbedoMap" or "NormalMap") return "Fur";
-
-        var knownBlend = d.BlendWeight == MaterialBlendWeight.Recipe || (d.BlendWeight == MaterialBlendWeight.TexCoord1X && d.BlendLayers.Count == 2);
-        if (knownBlend)
-        {
-            if (d.Blend != null)
-            {
-                if (s.Role is "AlbedoMap" or "NormalMap") return "BlendLayer";
-                if (type == d.Blend.MaskType) return "BlendMask";
-                if (type == d.Blend.DetailType) return "BlendDetailMask";
-            }
-            else
-            {
-                for (var i = 0; i < d.BlendLayers.Count; i++)
-                {
-                    if (d.BlendLayers[i].Albedo == type) return $"BlendLayer";
-                    if (d.BlendLayers[i].Normal == type) return $"BlendLayer";
-                }
-
-                if (s.Role is "AlbedoMap" or "NormalMap") return "BlendLayer";
-            }
-        }
-
-        if (type.Contains("DOLTexture", StringComparison.OrdinalIgnoreCase)) return "Lightmap";
-        var samplerName = type[(type.LastIndexOf("Texture2D_", StringComparison.Ordinal) + 1)..];
-        if (samplerName.Contains("Emissive", StringComparison.OrdinalIgnoreCase)) return "Emissive";
-
-        // FlverResource.ChooseMetallic: the bottom layer's metallic map is drawn, the others are left out.
-        // Chosen here by the material's own paths only, where the viewport also counts the model's
-        if (s.Role == "MetallicMap")
-        {
-            var withOffset = d.MetallicOffsets.ContainsKey(type) ? "+Offset" : "";
-            // Each known blend layer has its own, from MaterialDefinition.ResolveMetallic
-            var knownLayers = d.BlendWeight == MaterialBlendWeight.Recipe || (d.BlendWeight == MaterialBlendWeight.TexCoord1X && d.BlendLayers.Count == 2);
-            if (knownLayers && d.BlendLayers.Exists(l => l.Metallic != null))
-            {
-                var index = d.BlendLayers.FindIndex(l => l.Metallic == type);
-                return index >= 0 ? $"MetallicLayer{index}{withOffset}" : "MetallicNoLayer";
-            }
-
-            var first = d.Samplers.Where(x => x.Role == "MetallicMap" && x.Path != "")
-                .OrderBy(x => Math.Max(x.Suffix, 0)).ThenBy(x => x.Slot).FirstOrDefault() ?? s;
-            return first.Type == type ? $"Metallic{withOffset}" : "MetallicOtherLayer";
-        }
-
-        var upper = samplerName.ToUpperInvariant();
-        if (upper is "G_DIFFUSETEXTURE" or "G_DIFFUSE" || upper.Contains("ALBEDO")) return "Albedo";
-        if (upper is "G_BUMPMAPTEXTURE" or "G_BUMPMAP" || upper.Contains("NORMAL")) return "Normal";
-        if (upper is "G_SPECULARTEXTURE" or "G_SPECULAR" || upper.Contains("SPECULAR")) return "Specular";
-        if (upper is "G_SHININESSTEXTURE" or "G_SHININESS" || upper.Contains("SHININESS")) return "Shininess";
-        if (upper.Contains("BLENDMASK")) return "BlendMask";
-        return "Dropped";
+        var route = MaterialBinding.Route(d, s.Type, metallicType, glossInSpecular: false);
+        if (d.Deformer != MaterialDeformer.None && s.Path != "" && d.DeformerTextures.ContainsValue(s.Path)) return ("Deformer", route);
+        if (route.Use == MaterialTextureUse.Dropped) return ("Dropped", route);
+        var offset = route.Use == MaterialTextureUse.Metallic && d.MetallicOffsets.ContainsKey(s.Type) ? "+Offset" : "";
+        return ($"{route.Use}{(route.Layer > 0 ? route.Layer.ToString() : "")}{offset}", route);
     }
 
     static string Features(MaterialDefinition d)
@@ -172,6 +125,8 @@ class Census
         var unmatched = new Dictionary<string, Tally>();
         var flverOnly = new Dictionary<(string shader, string type), Tally>();
         var routeTotals = new Dictionary<string, (long meshes, long placed)>();
+        var audit = new Dictionary<(string shader, int slot, string role, string expected, string use, string status), Tally>();
+        var statusTotals = new Dictionary<string, (long textures, long placed)>();
         long totalTriangles = _meshes.Sum(m => (long)m.Triangles), totalPlaced = _meshes.Sum(m => m.PlacedTriangles);
 
         foreach (var m in _meshes)
@@ -191,13 +146,46 @@ class Census
             // Each mesh counts once per role, route and dropped slot; the route counts are of textures
             HashSet<string> meshRoles = [], meshRoutes = [];
             HashSet<(string, int)> meshDropped = [];
-            foreach (var s in d.Samplers)
-            {
-                // A texture counts if either the material or the model gives it a file
-                var hasPath = s.Path != "" || (flverTextures.TryGetValue(s.Type, out var p) && p != "");
-                if (!hasPath) continue;
+            var metallicType = MaterialBinding.ChooseMetallic(d, flverTextures);
+            _meanings.TryGetValue(shader, out var meanings);
 
-                var route = Route(d, s);
+            // In the viewport's order: what the definition loads first (LoadBlendRecipe), then the model's textures in
+            // its order. A slot keeps the first texture put in it (LookupTexture), so a later one for the same slot
+            // isn't drawn: AC6's [MS] layers are all matched to layer 0 by name, and only the first shows
+            var flverOrder = m.Textures.Select((t, i) => (t.Type, i)).GroupBy(x => x.Type).ToDictionary(g => g.Key, g => g.First().i);
+            var routed = d.Samplers
+                // A texture counts if either the material or the model gives it a file
+                .Where(s => s.Path != "" || (flverTextures.TryGetValue(s.Type, out var fp) && fp != ""))
+                .Select(s => (s, r: Route(d, s, metallicType)))
+                .OrderBy(x => x.r.route.LoadedElsewhere ? 0 : 1).ThenBy(x => flverOrder.GetValueOrDefault(x.s.Type, int.MaxValue))
+                .ToList();
+            var taken = new HashSet<(string, int)>();
+            var layerAlbedos = new string[MaterialBinding.MaxLayers];
+            for (var i = 0; i < routed.Count; i++)
+            {
+                var (s, (label, b)) = routed[i];
+                if (b.Use is MaterialTextureUse.Dropped or MaterialTextureUse.Lightmap || label == "Deformer") continue;
+                // Metallic maps go in the specular slots
+                var slotKind = b.Use == MaterialTextureUse.Metallic ? nameof(MaterialTextureUse.Specular) : b.Use.ToString();
+                if (!taken.Add((slotKind, b.Layer)))
+                {
+                    routed[i] = (s, ("Dropped", MaterialTextureRoute.Drop($"its {b.Use} layer {b.Layer} slot already holds another texture")));
+                    continue;
+                }
+                if (b.Use == MaterialTextureUse.Albedo && b.Layer < layerAlbedos.Length) layerAlbedos[b.Layer] = s.Type;
+            }
+
+            foreach (var (s, (route, binding)) in routed)
+            {
+
+                if (_meanings.Count > 0 && route != "Deformer")
+                {
+                    var (expected, status) = Audit.Classify(d, s, binding, meanings, layerAlbedos);
+                    var use = binding.Use == MaterialTextureUse.Dropped ? $"Dropped ({binding.Reason})" : binding.Use.ToString();
+                    Get(audit, (shader, s.Slot, s.Role, expected, use, status)).Add(m, d.Name, shader, maps);
+                    var st = statusTotals.GetValueOrDefault(status);
+                    statusTotals[status] = (st.textures + 1, st.placed + m.PlacedTriangles);
+                }
                 var role = Get(roles, s.Role);
                 if (meshRoles.Add(s.Role)) role.Add(m, d.Name, shader, maps);
                 role.Routes[route] = role.Routes.GetValueOrDefault(route) + 1;
@@ -323,6 +311,36 @@ class Census
             md.AppendLine();
             foreach (var (name, t) in unmatched.OrderByDescending(x => x.Value.Meshes).Take(15))
                 md.AppendLine($"- `{name}`: {t.Meshes} meshes, e.g. {t.Example.model}");
+            md.AppendLine();
+        }
+
+        if (audit.Count > 0)
+        {
+            // Every texture's route against the game's use of its slot, worst first by what is placed
+            var auditSb = new StringBuilder("Status\tShader\tSlot\tRole\tGameUse\tViewport\tPlacedTriangles\tPlacedShare%\tTriangles\tMeshes\tMaterials\tExampleModel\n");
+            foreach (var ((shader, slot, role, expected, use, status), t) in audit
+                .OrderBy(x => x.Key.status == "Ok" ? 1 : 0).ThenByDescending(x => x.Value.Placed).ThenByDescending(x => x.Value.Triangles))
+                auditSb.Append($"{status}\t{shader}\t{slot}\t{role}\t{expected}\t{use}\t{t.Placed}\t{Share(t.Placed, totalPlaced)}\t{t.Triangles}\t{t.Meshes}\t{t.Materials.Count}\t{t.Example.model}\n");
+            File.WriteAllText(Path.Combine(outDir, $"{_game}_Audit.tsv"), auditSb.ToString());
+
+            md.AppendLine("## Binding audit");
+            md.AppendLine();
+            md.AppendLine("Each texture's route (`MaterialBinding.Route`, the viewport's own code) against what the game's shader does with");
+            md.AppendLine("that slot in the material's permutation (`Signatures/{GAME}_SlotMeanings.json`). Placed triangles count a mesh once");
+            md.AppendLine("per texture, so a column can add up to more than the game.");
+            md.AppendLine();
+            md.AppendLine("| Status | Textures | Placed triangles |");
+            md.AppendLine("|---|---|---|");
+            foreach (var (status, (n, placed)) in statusTotals.OrderByDescending(x => x.Value.placed))
+                md.AppendLine($"| {status} | {n} | {placed:N0} |");
+            md.AppendLine();
+            md.AppendLine("### Top 30 issues by placed triangles");
+            md.AppendLine();
+            md.AppendLine("| Status | Shader | Slot | Role | Game | Viewport | Placed % | Meshes | Example |");
+            md.AppendLine("|---|---|---|---|---|---|---|---|---|");
+            foreach (var ((shader, slot, role, expected, use, status), t) in audit.Where(x => x.Key.status is not ("Ok" or "Approximate"))
+                .OrderByDescending(x => x.Value.Placed).ThenByDescending(x => x.Value.Triangles).Take(30))
+                md.AppendLine($"| {status} | `{shader}` | {slot} | {role} | {expected} | {use} | {Share(t.Placed, totalPlaced)} | {t.Meshes} | {t.Example.model} |");
             md.AppendLine();
         }
 

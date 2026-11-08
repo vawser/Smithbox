@@ -47,6 +47,81 @@ Other modes:
   `cb:M_AMSN_snp_0_float_0_0`) and interpolants (`in:TEXCOORD0.z`). A texture whose channels feed another sample's
   coordinates is marked `uv` (flow, distortion, parallax).
 
+## Blend recipe generator (2026-11-08)
+
+`ShaderSignature <GAME> blends <cacheDir> <outJson> [shaderRegex]` (`Recipes.cs`) rebuilds the lost tool behind
+`{GAME}_Blends.json`:
+
+1. **Find the layers.** The albedo (RT2.x) is a chain of lerps, `(top - bottom) * w + bottom`, with the same SSA value
+   as the bottom both times. Overlay lerps, whose weight is built from the overlay itself, are skipped.
+2. **Read each weight.** It's expanded into a polynomial over its leaves and solved against the viewport's two forms:
+   hard `1 - S·s·(2v - (D·m + bias))` and soft `v - s(1 - v)(D·m + bias + 0.01)`. A trailing `× (1 + …)` factor is
+   left out, as the checked-in recipes do.
+3. **Pair the normals.** A layer's normal is the top of the lerp in RT0.x that has the same weight.
+4. **Name the sources.** Vertex values are traced through the vertex shader to the FLVER attribute they come from.
+   For example, pixel input `TEXCOORD3.x` is vertex input `TEXCOORD1.x`, the name the recipes and the viewport use.
+
+| | ER | NR | AC6 |
+|---|---|---|---|
+| Checked-in recipes reproduced field for field | 60 / 97 | 51 / 116 | 13 / 34 |
+| New recipes, written to `Assets/Material Definitions/{GAME}_GeneratedBlends.json` | 36 | 46 | 46 |
+
+The app and the census merge the generated recipes in where `_Blends.json` has none (`MaterialShaderTable.MergeBlends`).
+A recipe is only written if the viewport draws all its sources.
+
+Where it doesn't match the checked-in recipes:
+- **It finds more.** Layer normals the checked-in recipes lack (6 ER, 9 NR, 6 AC6). In NR, `[Mb3]`/`[Mb4]` layers read
+  `TEXCOORD1.y`/`.z` where the checked-in recipes say `.x` for every layer. Ours is the likelier reading: one vertex
+  channel per layer.
+- **Weights it can't read:**
+  - `ColorAdjust` shaders lerp, by a param, between a hard weight and `sat(mask + vertex)` behind a bool. The old
+    generator kept the hard part.
+  - Snow weights use the surface's direction.
+  - Some layers take two albedos.
+- **AC6 `[MS][MB]`, the largest gap.** Built 2026-11-08, not yet checked in the app:
+  - **Colour-only layers.** A recipe layer with `Albedo: -1` and a `Color` is drawn with a white texture tinted by
+    the param (`MaterialBlendLayer.ColorOnly`, `FlverMaterial.ColorOnlyLayers`). The generator writes these when a
+    lerp's top is params only.
+  - **Any vertex `TEXCOORDk`.** A recipe whose vertex sources all read one `TEXCOORDk` gets that FLVER UV member packed
+    where `TEXCOORD1` goes (`MaterialDefinition.BlendVertexAttribute`, `FlverResource.GetTexCoordIndex`), and
+    `TEXCOORDk.x/y/z` read it as `TEXCOORD1.x/y/z` do. This already lets 2 ER, 3 NR and 6 AC6 recipes through that
+    read `TEXCOORD2`/`3`. Only UByte4Norm members are moved.
+
+  **Extended blend form, built 2026-11-08, not yet checked in the app.** `[MS][MB][M0/M1]` now produces 122
+  recipes (AC6 185 generated in all, 181 extended layers, 18 colour-only). AC6 Ok rose from 47.2% to 57.3% of placed
+  texture-triangles, and Dropped fell from 50.8% to 39.7%.
+  - **Generator** (`Recipes.ReadExtended`, used when the classic form doesn't fit): it splits the weight as `A + B·v`
+    and divides out the sharpness. The detail comes out as `Σ_c C_c·mask.c + bias`, with each C and the bias a
+    polynomial in material params. A trailing params-only factor becomes the soft scale. The chain walk also passes
+    through a detail overlay multiplied between layers (`color_7·4.55·T22.r × …`).
+  - **Recipe** (`MaterialBlendRecipeLayer`): `DetailMask` (the layer's own slot), `DetailChannels` (4 sums of
+    products), `DetailBias`, `SoftScale`. `MaterialDefinition.EvaluateSum` evaluates them per material.
+  - **Viewport.**
+    - Two more material entries after water: `MaterialLayerDetail` (+13, the channel weights per layer) and
+      `MaterialLayerDetailExtra` (+14, bias, soft scale and tiling per layer), in `MaterialWithLayerDetail`.
+    - Source flags: `SOURCE_EXTENDED` (32) and `SOURCE_DETAIL_SECOND_UV` (64). The layer's detail mask texture index is
+      in the source's top 16 bits.
+    - A second vertex attribute: TEXCOORD5 in `[MS]`, packed in the TEXCOORD2 slot and read as channel 7
+      (`fsin_vertexBlend.w`).
+    - Extended hard weights take their scale in the sharpness.
+
+  What `[MS][MB]` needed, for reference. Its weights use three things the old blend data had no room for:
+  1. **A detail mask per layer picked by a dot product.** Layers 11 and 13 use `dot(T26.rgba, snp_0_float3_N)`, so a
+     param chooses which channel of one mask texture each layer uses.
+  2. **A detail bias set by a param, per layer.** The soft layer's detail is `lerp(1 - T19.r, T19.r, snp_0_float_52)`,
+     so its bias is `1 - f52`. The recipe has one numeric `DetailBias` for every layer.
+  3. **A scale on the soft weight,** `× (snp_0_float_25 + 1)`, which the format leaves out.
+
+  Supporting these means a wider per-layer blend entry: a channel selector, a bias and a soft scale for each of the 3
+  upper layers. The material buffer would then carry one more 48-byte entry for blended materials.
+
+**Parser fixes found on the way.** All tables were regenerated after both:
+- **Signature order.** Input/output element IDs follow the second (DXIL) signature table, not the first (register
+  order). Some `in:` names had been wrong. NR's UV table changed (618 → 610 shaders).
+- **Long field names.** A cbuffer field whose name runs into the comment (`name;; Offset:`) had been skipped, and its
+  values were credited to the field before it (`FC_RimLightingParam`). Recovering them grew the metallic offsets
+  (ER 143 → 230 shaders, NR 87 → 161, AC6 35 → 56) and the overlays (ER 40 → 82).
+
 ## Findings
 
 1. **The G-buffer layout is the same in all three games.**

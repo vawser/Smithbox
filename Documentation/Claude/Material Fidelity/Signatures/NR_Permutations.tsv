@@ -292,132 +292,118 @@ M[AMSN_V][Ov_N2][Crystal][CrossFade]	0	0 1 2 3 4 5 6 7 9 10	Mask1Map AlbedoMap M
 M[AMSN_V][Ov_N2][Crystal][CrossFade]	1	1 2 3 4 5 6 7 9 10	AlbedoMap MetallicMap AlbedoMap_0 NormalMap_0 Mask1Map_4 NormalMap_0 Mask1Map NormalMap_0 NormalMap_0
 M[AMSN][M0][M1][CL]_Edge_DecalBlend	0	0 1 2	AlbedoMap_0 NormalMap_0 MetallicMap_0
 M[AMSN][M0][M1][CL]_Edge_DecalBlend	1	0 1	AlbedoMap_0 NormalMap_0
-M[AMSN_V][Ov_n][PlayAreaSwtich][CL]_Edge_DecalBlend	0	0 1 2	  
-M[AMSN_V][Ov_n][PlayAreaSwtich][CL]_Edge_DecalBlend	1	0 1 2	  
-CS[c8901][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-CS[c8901][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-M[AMSN_V]_MeshDecalBlend	0	1 2	NormalMap_0 AlbedoMap_0
-M[AMSN_V]_MeshDecalBlend	1	1 2	NormalMap_0 AlbedoMap_0
-P[WP_A_5092]_Bone	0	0 1 3 6 8	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap
-P[WP_A_5092]_Bone	1	0 1 2 3 4 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap
 S[Centaur_weapon]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
 S[Centaur_weapon]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-Test_M[BubbleBall]_02_maekou	0	2 3 4 6	   
-Test_M[BubbleBall]_02_maekou	1	2 3 4 6	   
 M[AMSN][Ov_N2][Crystal]	0	0 1 2 3 4 5 6 7 8 9 10	Mask1Map AlbedoMap MetallicMap AlbedoMap_0 NormalMap_0 Mask1Map_4 NormalMap_0 Mask1Map MetallicMap NormalMap_0 NormalMap_0
 M[AMSN][Ov_N2][Crystal]	1	1 2 3 4 5 6 7 8 9 10	AlbedoMap MetallicMap AlbedoMap_0 NormalMap_0 Mask1Map_4 NormalMap_0 Mask1Map MetallicMap NormalMap_0 NormalMap_0
-M[Tree_Pivot]	0	0 1	AlbedoMap_0 NormalMap_0
-M[Tree_Pivot]	1	0 1	AlbedoMap_0 NormalMap_0
-CS[c8901][VA_Frame][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-CS[c8901][VA_Frame][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
-S[Bone_Undertaker]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[Bone_Undertaker]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
 S[DyingAuraRing]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
 S[DyingAuraRing]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+M[Tree_Pivot]	0	0 1	AlbedoMap_0 NormalMap_0
+M[Tree_Pivot]	1	0 1	AlbedoMap_0 NormalMap_0
+Test_M[BubbleBall]_02_maekou	0	2 3 4 6	   
+Test_M[BubbleBall]_02_maekou	1	2 3 4 6	   
+M[AMSN_V]_MeshDecalBlend	0	1 2	NormalMap_0 AlbedoMap_0
+M[AMSN_V]_MeshDecalBlend	1	1 2	NormalMap_0 AlbedoMap_0
 M[Tree_Pivot][AMSN_V][Mb2]	0	1 3 5 6 7	AlbedoMap_1 AlbedoMap_2 Mask1Map_4 NormalMap_1 NormalMap_2
 M[Tree_Pivot][AMSN_V][Mb2]	1	1 3 5 6 7	AlbedoMap_1 AlbedoMap_2 Mask1Map_4 NormalMap_1 NormalMap_2
-C_Ov_ChaosErosion	0	3 5	Mask1Map_4 Mask1Map
-C_Ov_ChaosErosion	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
-M[Tree_Pivot][Buillboard]	0	0 1	AlbedoMap_0 NormalMap_0
-M[Tree_Pivot][Buillboard]	1	0 1	AlbedoMap_0 NormalMap_0
 S[DyingAura]	0	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
 S[DyingAura]	1	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
-S[Boss_Night_CelestialSphere]	0	2 3	AlbedoMap AlbedoMap_0
-S[Boss_Night_CelestialSphere]	1	2 3	AlbedoMap AlbedoMap_0
-S[Ice_MistDragon]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[Ice_MistDragon]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[Magic_BarrierOfAutoParry]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_BarrierOfAutoParry]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Cursed_Crystal]	0	0 3	NormalMap_0 AlbedoMap_0
-S[Cursed_Crystal]	1	0 3	NormalMap_0 AlbedoMap_0
-S[Magic_IceBlock]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_IceBlock]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Supercell_wind]	0	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
-S[Supercell_wind]	1	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
+CS[c8901][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
+CS[c8901][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
 M[Tree_Pivot][AMSN_V][Ov_N]	0	0 1 2	AlbedoMap_0 NormalMap_0 NormalMap_0
 M[Tree_Pivot][AMSN_V][Ov_N]	1	0 1 2	AlbedoMap_0 NormalMap_0 NormalMap_0
+S[Explosion_Night]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Explosion_Night]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+M[Tree_Pivot][AMSN_V][Translucency]	0	0 4	AlbedoMap_0 NormalMap_0
+M[Tree_Pivot][AMSN_V][Translucency]	1	0 4	AlbedoMap_0 NormalMap_0
+CS[c8901][VA_Frame][Fur]_Burn	0	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
+CS[c8901][VA_Frame][Fur]_Burn	1	0 1 3 6 7 8 9 11	NormalMap AlbedoMap MetallicMap NormalMap Fire___Black_Edge AlbedoMap Fire___Mask Fire___Pattern
+M[Tree_Pivot][Buillboard]	0	0 1	AlbedoMap_0 NormalMap_0
+M[Tree_Pivot][Buillboard]	1	0 1	AlbedoMap_0 NormalMap_0
+P[WP_A_5092]_Bone	0	0 1 3 6 8	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap
+P[WP_A_5092]_Bone	1	0 1 2 3 4 6 8	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap
+S[Ice_MistDragon]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[Ice_MistDragon]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[Ice_MistDragon_IceShards]	0	0 1 3 4	NormalMap_0 MetallicMap_0 AlbedoMap_0 Mask3Map
+S[Ice_MistDragon_IceShards]	1	0 1 3 4	NormalMap_0 MetallicMap_0 AlbedoMap_0 Mask3Map
+S[Ice_MistDragon_Supercell]	0	2 3	AlbedoMap AlbedoMap_0
+S[Ice_MistDragon_Supercell]	1	2 3	AlbedoMap AlbedoMap_0
+S[Bone_Undertaker]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[Bone_Undertaker]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[Ice_MistDragon_TopPlate]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[Ice_MistDragon_TopPlate]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+M[AMSN_V][Ov_N2][Crystal][3Mask]	0	0 1 2 3 4 5 6 7 8 9 10	          
+M[AMSN_V][Ov_N2][Crystal][3Mask]	1	1 2 3 4 5 6 7 8 9 10	         
+M[AMSN_V][Ov_n][PlayAreaSwtich][CL]_Edge_DecalBlend	0	0 1 2	  
+M[AMSN_V][Ov_n][PlayAreaSwtich][CL]_Edge_DecalBlend	1	0 1 2	  
+S[Cursed_Crystal]	0	0 3	NormalMap_0 AlbedoMap_0
+S[Cursed_Crystal]	1	0 3	NormalMap_0 AlbedoMap_0
+S[LumpOfMeat]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[LumpOfMeat]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
 CS[DetailBlend][Rich][VA_Frame]	0	0 1 2 3 6 7	     
 CS[DetailBlend][Rich][VA_Frame]	1	0 1 2 3 6 7 10 12	       
 CS[DetailBlend][Rich][VA_Frame]	2	0 1 2 3 6 7 9 10 12	        
 CS[DetailBlend][Rich][VA_Frame]	3	0 1 2 3 6 7 8 9 10 11 12 13	           
 CS[DetailBlend][Rich][VA_Frame]	4	0 1 2 3 6 7 9 10 12 14 16	          
 CS[DetailBlend][Rich][VA_Frame]	5	0 1 2 3 6 7 8 9 10 11 12 13 14 16	             
-C[c5130]_Hair	0	0 1 2 3 6 8 9	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap_0
-C[c5130]_Hair	1	0 1 2 3 6 8 9	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap_0
-S[Explosion_Night]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Explosion_Night]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_Dagger]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_Dagger]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-C_Ov_NightErosion	0	3 5	Mask1Map_4 Mask1Map
-C_Ov_NightErosion	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
-S[LumpOfMeat]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[LumpOfMeat]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-M[Tree_Pivot][AMSN_V][Translucency]	0	0 4	AlbedoMap_0 NormalMap_0
-M[Tree_Pivot][AMSN_V][Translucency]	1	0 4	AlbedoMap_0 NormalMap_0
-S[Ice_MistDragon_IceShards]	0	0 1 3 4	NormalMap_0 MetallicMap_0 AlbedoMap_0 Mask3Map
-S[Ice_MistDragon_IceShards]	1	0 1 3 4	NormalMap_0 MetallicMap_0 AlbedoMap_0 Mask3Map
-S[Water_Wave]	0	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
-S[Water_Wave]	1	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
-S[MistDragon_CelestialSphere]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[MistDragon_CelestialSphere]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-M[AMSN_V][Ov_N2][Crystal][3Mask]	0	0 1 2 3 4 5 6 7 8 9 10	          
-M[AMSN_V][Ov_N2][Crystal][3Mask]	1	1 2 3 4 5 6 7 8 9 10	         
-S[Ice_MistDragon_Supercell]	0	2 3	AlbedoMap AlbedoMap_0
-S[Ice_MistDragon_Supercell]	1	2 3	AlbedoMap AlbedoMap_0
-S[Magic_Dagger_CameraMask]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_Dagger_CameraMask]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-C_Ov_NightErosion_ch3	0	3 5	Mask1Map_4 Mask1Map
-C_Ov_NightErosion_ch3	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
 S[Object_King_Rubble]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
 S[Object_King_Rubble]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[MoonlightSword]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[MoonlightSword]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-M[Crystal_Goal]_001	0	0 2 6 10	Mask1Map AlbedoMap NormalMap_0 NormalMap_0
-M[Crystal_Goal]_001	1	0 2 6 10	Mask1Map AlbedoMap NormalMap_0 NormalMap_0
-TEST_M[AMSN_V][3Mask]_Emissive	0	0 1 5	  
-TEST_M[AMSN_V][3Mask]_Emissive	1	0 1 5	  
-S[Ice_MistDragon_TopPlate]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[Ice_MistDragon_TopPlate]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[Magic_Dagger_Inside]	0	0 1 2 3 4	AlbedoMap AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[Magic_Dagger_Inside]	1	0 1 2 3 4	AlbedoMap AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[Wind_Rubble]	0	2 3	AlbedoMap AlbedoMap_0
-S[Wind_Rubble]	1	2 3	AlbedoMap AlbedoMap_0
-C_Ov_NightErosion_ch3_EnableUV[2]	0	3 5	Mask1Map_4 Mask1Map
-C_Ov_NightErosion_ch3_EnableUV[2]	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
-S[Night_StraightSword]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Night_StraightSword]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-M[Crystal_Goal]_002	0	0 1 2 4 8 10	     
-M[Crystal_Goal]_002	1	0 1 2 4 8 10	     
-M[AMSN_V][Ov_N2][Crystal][CrossFade]_02	0	0 1 2 3 4 5 6 7 9 10	         
-M[AMSN_V][Ov_N2][Crystal][CrossFade]_02	1	1 2 3 4 5 6 7 9 10	        
 S[Lightning_Sphere]	0	2 3 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap
 S[Lightning_Sphere]	1	2 3 5 6	Mask3Map AlbedoMap_0 AlbedoMap AlbedoMap
-S[PC_PA]	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-S[PC_PA]	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
-M[Crystal_Goal]_003	0	0 1 2 4 7 8 10	      
-M[Crystal_Goal]_003	1	0 1 2 4 7 8 10	      
+M[AMSN_V][Ov_N2][Crystal][CrossFade]_02	0	0 1 2 3 4 5 6 7 9 10	         
+M[AMSN_V][Ov_N2][Crystal][CrossFade]_02	1	1 2 3 4 5 6 7 9 10	        
 S[Lightning_Sphere_Ground]	0		
 S[Lightning_Sphere_Ground]	1		
-S[SandStone]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
-S[SandStone]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
 S[LightWave_Night]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
 S[LightWave_Night]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[StormRuler_Flame]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[StormRuler_Flame]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-M[Crystal_Goal]_005	0	0 1 2 4 7 8 10	Mask1Map NormalMap_0 AlbedoMap NormalMap_0 NormalMap_0 NormalMap_0 NormalMap_0
-M[Crystal_Goal]_005	1	0 1 2 4 7 8 10	Mask1Map NormalMap_0 AlbedoMap NormalMap_0 NormalMap_0 NormalMap_0 NormalMap_0
+S[Wind_Rubble]	0	2 3	AlbedoMap AlbedoMap_0
+S[Wind_Rubble]	1	2 3	AlbedoMap AlbedoMap_0
 S[LineFlame_Cerberus]	0	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
 S[LineFlame_Cerberus]	1	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
-S[StormRuler_NightReign]	0	1 2 3 4	EmissiveMap AlbedoMap AlbedoMap_0 Mask3Map
-S[StormRuler_NightReign]	1	1 2 3 4	EmissiveMap AlbedoMap AlbedoMap_0 Mask3Map
 S[Line_Zyamevyu]	0	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
 S[Line_Zyamevyu]	1	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
-S[StormRuler_Wave]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[StormRuler_Wave]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
 S[Magic_BarrierField]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
 S[Magic_BarrierField]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
-S[Supercell]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
-S[Supercell]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_BarrierOfAutoParry]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_BarrierOfAutoParry]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+C[c5130]_Hair	0	0 1 2 3 6 8 9	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap_0
+C[c5130]_Hair	1	0 1 2 3 6 8 9	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap_0
+S[Magic_Dagger]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_Dagger]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_Dagger_CameraMask]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_Dagger_CameraMask]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+C_Ov_ChaosErosion	0	3 5	Mask1Map_4 Mask1Map
+C_Ov_ChaosErosion	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
+S[Magic_Dagger_Inside]	0	0 1 2 3 4	AlbedoMap AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_Dagger_Inside]	1	0 1 2 3 4	AlbedoMap AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+C_Ov_NightErosion	0	3 5	Mask1Map_4 Mask1Map
+C_Ov_NightErosion	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
+S[Magic_IceBlock]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Magic_IceBlock]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+C_Ov_NightErosion_ch3	0	3 5	Mask1Map_4 Mask1Map
+C_Ov_NightErosion_ch3	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
+S[MistDragon_CelestialSphere]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[MistDragon_CelestialSphere]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Boss_Night_CelestialSphere]	0	2 3	AlbedoMap AlbedoMap_0
+S[Boss_Night_CelestialSphere]	1	2 3	AlbedoMap AlbedoMap_0
+C_Ov_NightErosion_ch3_EnableUV[2]	0	3 5	Mask1Map_4 Mask1Map
+C_Ov_NightErosion_ch3_EnableUV[2]	1	3 5 6	Mask1Map_4 Mask1Map Mask1Map
+S[MoonlightSword]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[MoonlightSword]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[PC_PA]	0	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[PC_PA]	1	3 4 5 6	AlbedoMap_0 Mask3Map AlbedoMap AlbedoMap
+S[Night_StraightSword]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[Night_StraightSword]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[SandStone]	0	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[SandStone]	1	0 1 3	NormalMap_0 MetallicMap_0 AlbedoMap_0
+S[StormRuler_Flame]	0	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[StormRuler_Flame]	1	2 3 4	AlbedoMap AlbedoMap_0 Mask3Map
+S[StormRuler_NightReign]	0	1 2 3 4	EmissiveMap AlbedoMap AlbedoMap_0 Mask3Map
+S[StormRuler_NightReign]	1	1 2 3 4	EmissiveMap AlbedoMap AlbedoMap_0 Mask3Map
+TEST_M[AMSN_V][3Mask]_Emissive	0	0 1 5	  
+TEST_M[AMSN_V][3Mask]_Emissive	1	0 1 5	  
+S[StormRuler_Wave]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[StormRuler_Wave]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
 C[Cutscene][DetailBlendAOTest]	0	0 1 3 6 7 14	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap AmbientOcculusionMap
 C[Cutscene][DetailBlendAOTest]	1	0 1 2 3 5 6 7 14	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AmbientOcculusionMap
 C[Cutscene][DetailBlendAOTest]	2	0 1 2 3 5 6 7 14	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AmbientOcculusionMap
@@ -439,8 +425,22 @@ C[Cutscene][DetailBlendAOTest]	17	0 1 3 6 7 8 10 11 12 13 14	NormalMap AlbedoMap
 C[Cutscene][DetailBlendAOTest]	18	0 1 3 4 6 7 8 9 10 11 12 13 14	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AmbientOcculusionMap
 C[Cutscene][DetailBlendAOTest]	19	0 1 3 4 6 7 8 9 10 11 12 13 14	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AmbientOcculusionMap
 C[Cutscene][DetailBlendAOTest]	20	0 1 3 4 6 7 8 9 10 11 12 13 14	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AmbientOcculusionMap
+M[Crystal_Goal]_001	0	0 2 6 10	Mask1Map AlbedoMap NormalMap_0 NormalMap_0
+M[Crystal_Goal]_001	1	0 2 6 10	Mask1Map AlbedoMap NormalMap_0 NormalMap_0
+S[Supercell]	0	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
+S[Supercell]	1	1 2 3 4	AlbedoMap AlbedoMap AlbedoMap_0 Mask3Map
 S[Supercell_Ice]	0	2 3	AlbedoMap AlbedoMap_0
 S[Supercell_Ice]	1	2 3	AlbedoMap AlbedoMap_0
+M[Crystal_Goal]_002	0	0 1 2 4 8 10	     
+M[Crystal_Goal]_002	1	0 1 2 4 8 10	     
+S[Supercell_Lightning002]	0	1 4	 
+S[Supercell_Lightning002]	1	1 4	 
+M[Crystal_Goal]_003	0	0 1 2 4 7 8 10	      
+M[Crystal_Goal]_003	1	0 1 2 4 7 8 10	      
+S[Supercell_Lightning]	0	1 4	 
+S[Supercell_Lightning]	1	1 4	 
+S[Supercell_wind]	0	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
+S[Supercell_wind]	1	1 2 3	AlbedoMap AlbedoMap AlbedoMap_0
 C[DetailBlend][VA_Morph]	0	0 1 3 6 7 16 17 18	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap
 C[DetailBlend][VA_Morph]	1	0 1 2 3 5 6 7 16 17 18	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap
 C[DetailBlend][VA_Morph]	2	0 1 2 3 5 6 7 16 17 18	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap
@@ -462,8 +462,6 @@ C[DetailBlend][VA_Morph]	17	0 1 3 6 7 8 10 11 12 13 16 17 18	NormalMap AlbedoMap
 C[DetailBlend][VA_Morph]	18	0 1 3 4 6 7 8 9 10 11 12 13 16 17 18	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap MetallicMap NormalMap
 C[DetailBlend][VA_Morph]	19	0 1 3 4 6 7 8 9 10 11 12 13 16 17 18	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap MetallicMap NormalMap
 C[DetailBlend][VA_Morph]	20	0 1 3 4 6 7 8 9 10 11 12 13 16 17 18	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap MetallicMap NormalMap
-S[Supercell_Lightning002]	0	1 4	 
-S[Supercell_Lightning002]	1	1 4	 
 CS[VA_Frame][DetailBlend][S2][Rich]	0	0 1 3 6 7 8 11 13 19	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	1	0 1 2 3 5 6 7 8 11 13 19	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	2	0 1 2 3 5 6 7 8 11 13 19	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap AlbedoMap NormalMap MetallicMap AlbedoMap
@@ -485,10 +483,12 @@ CS[VA_Frame][DetailBlend][S2][Rich]	17	0 1 3 6 7 8 10 11 12 13 14 15 16 19	Norma
 CS[VA_Frame][DetailBlend][S2][Rich]	18	0 1 3 4 6 7 8 9 10 11 12 13 14 15 16 19	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap AlbedoMap MetallicMap NormalMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	19	0 1 3 4 6 7 8 9 10 11 12 13 14 15 16 19	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap AlbedoMap MetallicMap NormalMap AlbedoMap
 CS[VA_Frame][DetailBlend][S2][Rich]	20	0 1 3 4 6 7 8 9 10 11 12 13 14 15 16 19	NormalMap AlbedoMap MetallicMap AlbedoMap NormalMap AlbedoMap AlbedoMap NormalMap AlbedoMap NormalMap NormalMap MetallicMap AlbedoMap MetallicMap NormalMap AlbedoMap
-S[Supercell_Lightning]	0	1 4	 
-S[Supercell_Lightning]	1	1 4	 
+M[Crystal_Goal]_005	0	0 1 2 4 7 8 10	Mask1Map NormalMap_0 AlbedoMap NormalMap_0 NormalMap_0 NormalMap_0 NormalMap_0
+M[Crystal_Goal]_005	1	0 1 2 4 7 8 10	Mask1Map NormalMap_0 AlbedoMap NormalMap_0 NormalMap_0 NormalMap_0 NormalMap_0
 CS[VA_Frame][Fur]_FurBlur	0	0 1 3 6 7 8 10	NormalMap AlbedoMap MetallicMap NormalMap Mask1Map AlbedoMap AlbedoMap
 CS[VA_Frame][Fur]_FurBlur	1	0 1 2 3 4 6 7 8 10	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap Mask1Map AlbedoMap AlbedoMap
+S[Water_Wave]	0	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
+S[Water_Wave]	1	1 2 3	Mask3Map AlbedoMap AlbedoMap_0
 C[Cutscene][VA_Frame][DetailBlend]	0	0 1 3 6 7	NormalMap AlbedoMap MetallicMap NormalMap AlbedoMap
 C[Cutscene][VA_Frame][DetailBlend]	1	0 1 2 3 5 6 7	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap
 C[Cutscene][VA_Frame][DetailBlend]	2	0 1 2 3 5 6 7	NormalMap AlbedoMap AlbedoMap MetallicMap NormalMap NormalMap AlbedoMap

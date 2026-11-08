@@ -16,6 +16,7 @@
   <!-- The renderer's own material resolution, so roles, slots and tokens come out as the viewport sees them -->
   <ItemGroup>
     <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialDefinition.cs" Link="Linked/MaterialDefinition.cs" />
+    <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialBinding.cs" Link="Linked/MaterialBinding.cs" />
   </ItemGroup>
 
   <ItemGroup>

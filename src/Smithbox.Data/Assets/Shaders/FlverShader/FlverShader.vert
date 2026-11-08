@@ -156,7 +156,8 @@ layout(location = 9) flat out uint fsin_entityid;
 	layout(location = 10) out vec2 fsin_texcoord2;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	layout(location = 11) out vec3 fsin_vertexBlend;
+	// xyz: TEXCOORD1, w: the x of TEXCOORD2 (or of the second attribute a blend recipe reads, see FlverResource.GetTexCoordIndex)
+	layout(location = 11) out vec4 fsin_vertexBlend;
 #endif
 // 1: the instance receives no shadows
 layout(location = 12) flat out uint fsin_flags;
@@ -531,7 +532,7 @@ void main()
 	fsin_texcoord2 = vec2(uv2) * UV_SCALE;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
-	fsin_vertexBlend = texcoord1.xyz;
+	fsin_vertexBlend = vec4(texcoord1.xyz, texcoord2.x);
 #endif
 
 	// Vertex colors are used as blend weights by blended materials

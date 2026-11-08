@@ -33,8 +33,8 @@ Role	Channel	Outputs	Shaders	PlacedTriangles	PlacedShare%	ExampleShader
 (engine) g_DiffuseTexture	b	RT2.z	33	108381712	5.721	SpeedTree_5010fdmo_w32187
 (engine) g_DiffuseTexture	g	RT2.y	33	108381712	5.721	SpeedTree_5010fdmo_w32187
 (engine) g_DiffuseTexture	r	RT2.x	33	108381712	5.721	SpeedTree_5010fdmo_w32187
-(engine) g_DitherTexture	a	OUT5.x	41	79764593	4.211	M[AMSN_V][Ov_N][Crystal][CrossFade]
-(engine) g_DitherTexture	a	OUT5.x RT0.w RT1.w RT2.w RT3.w RT4.w	3	5684004	0.300	M[Spotimage][CL]_001
+(engine) g_DitherTexture	a	SV_DepthLessEqual0.x	41	79764593	4.211	M[AMSN_V][Ov_N][Crystal][CrossFade]
+(engine) g_DitherTexture	a	RT0.w RT1.w RT2.w RT3.w RT4.w SV_DepthLessEqual0.x	3	5684004	0.300	M[Spotimage][CL]_001
 (engine) g_DitherTexture	a	RT0.w RT1.w RT2.w RT3.w RT4.w	12	1767926	0.093	C[c2500]_Fade
 (engine) g_DitherTexture	a	RT4.x RT4.y RT4.z	1	8472	0.000	C[AMSN]_GlowDepthFade_[Int]
 (engine) g_TranslucencyTexture	r	RT1.z	32	108299048	5.717	SpeedTree_5010fdmo_w32187
@@ -169,7 +169,7 @@ Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT1.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4
 Mask1Map	r	RT2.x RT2.y RT2.z	18	60720806	3.205	M[AMSN_V]_Grass2
 Mask1Map	r	RT3.x	5	26314896	1.389	C[DetailBlend]_SSS
 Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	16088508	0.849	M[Rubble_ExtraBoss][CLDLC]
-Mask1Map	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
 Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	8	6024675	0.318	M[AMSN_V][Ov_N][Snow_VtxMask]
 Mask1Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	4	5595318	0.295	C[c4450]_AreaMatchBlend
 Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w	29	4173352	0.220	M[Abrasion_A]_004
@@ -217,7 +217,7 @@ Mask3Map	b	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z	1	0	0.000	M[Shrinking
 Mask3Map	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	30	230177195	12.151	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
 Mask3Map	g	RT4.x RT4.y RT4.z	21	32405173	1.711	M[SpiritTree_Trunk]
 Mask3Map	g	uv	24	8628931	0.456	M[Spotimage][CL]_001
-Mask3Map	g	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
 Mask3Map	g	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	2	5648317	0.298	M[Spotimage][CL]_001
 Mask3Map	g	RT2.x RT2.y RT2.z	5	1188858	0.063	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_A]
 Mask3Map	g	RT0.w RT1.y RT2.w RT4.x RT4.y RT4.z	1	770868	0.041	M[AMSN_V][3Mask][CL]_Edge_DecalBlend
@@ -240,7 +240,7 @@ Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	29	230250963	12.155	M[AMSN_
 Mask3Map	r	RT4.x RT4.y RT4.z	12	22926723	1.210	M[SpiritTree_Trunk]
 Mask3Map	r	uv	27	8640211	0.456	M[Spotimage][CL]_001
 Mask3Map	r	RT4.x RT4.y RT4.z uv	7	7341988	0.388	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]
-Mask3Map	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
 Mask3Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	1	5616248	0.296	M[Spotimage][CL]_001
 Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	2136462	0.113	M[AMSN_V][Mb2][3Mask][Ov_N][EmissiveScroll]
 Mask3Map	r	RT2.x RT2.y RT2.z	5	1637478	0.086	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_A]
@@ -308,11 +308,11 @@ NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	27	73173398	3.863	M[Crystal]
 NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	14	53547797	2.827	M[AMSN_V][Ov_N][Snow]
 NormalMap	g	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	16	29655363	1.566	M[SpiritTree_Trunk]
 NormalMap	g	RT4.x RT4.y RT4.z	9	7571546	0.400	M[Spotimage][CL]_001
-NormalMap	g	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
 NormalMap	g	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	5	5740510	0.303	M[WorldTree_Leaves]_Emissive_Glow
 NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	4	4213085	0.222	M[AMSN_V][Ov_N][Snow_VtxMask]
 NormalMap	g	RT0.w RT1.w RT2.w RT3.w RT4.w	3	3026296	0.160	M[PhantomCathedral_ExtraBoss][CL]
-NormalMap	g	OUT5.x RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
 NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	3	1244363	0.066	C[Crystal_NoTransparent]_Glow
 NormalMap	g	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w	3	676543	0.036	C[c4180]_Innner
 NormalMap	g	RT2.y	1	173536	0.009	M[directional_grass]
@@ -325,12 +325,12 @@ NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	27	73173398	3.863	M[Crystal]
 NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	14	53547797	2.827	M[AMSN_V][Ov_N][Snow]
 NormalMap	r	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	16	29655363	1.566	M[SpiritTree_Trunk]
 NormalMap	r	RT4.x RT4.y RT4.z	9	7571546	0.400	M[Spotimage][CL]_001
-NormalMap	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
 NormalMap	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	5	5740510	0.303	M[WorldTree_Leaves]_Emissive_Glow
 NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	4	4213085	0.222	M[AMSN_V][Ov_N][Snow_VtxMask]
 NormalMap	r	RT0.x RT0.y RT0.z RT1.y	5	3111340	0.164	M[AMSN_V][Ov_N][CL]_PixelDepthOffset
 NormalMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	4	3064696	0.162	M[PhantomCathedral_ExtraBoss][CL]
-NormalMap	r	OUT5.x RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z SV_DepthLessEqual0.x	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
 NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	3	1244363	0.066	C[Crystal_NoTransparent]_Glow
 NormalMap	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w	3	676543	0.036	C[c4180]_Innner
 NormalMap	r	RT2.x	1	173536	0.009	M[directional_grass]
