@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Material Fidelity Phase 2: what the game's pixel shaders read from each texture and where it goes, from their
+       DXIL disassembly. See Documentation/Claude/Material Fidelity/Plan.md -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+  </PropertyGroup>
+
+  <!-- The renderer's own material resolution, so roles, slots and tokens come out as the viewport sees them -->
+  <ItemGroup>
+    <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialDefinition.cs" Link="Linked/MaterialDefinition.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Andre\Andre.IO\Andre.IO.csproj" />
+    <ProjectReference Include="..\..\src\Andre\Andre.Formats\Andre.Formats.csproj" />
+    <ProjectReference Include="..\..\src\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Smithbox.Release\Output\oo2core_*_win64.dll" CopyToOutputDirectory="PreserveNewest" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

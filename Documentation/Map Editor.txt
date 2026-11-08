@@ -9,3 +9,8 @@
 - Create:
     - Check existing correctness
     - Fix NR create
+    
+- Game Rendering:
+    - Go through each project type to implement:
+        - GPARAM side elements
+        - Proper material rendering

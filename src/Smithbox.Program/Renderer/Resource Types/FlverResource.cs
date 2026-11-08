@@ -464,8 +464,22 @@ public class FlverResource : IResource, IDisposable
     /// in the flver don't always match, and a recipe can use textures the flver doesn't list.
     /// A path in the flver wins over the material's: terrain shares a material, and sets its own mask per piece.
     /// </summary>
+    /// <summary>
+    /// The one metallic map of a material that is drawn: the bottom layer's (the lowest numbered that has a file),
+    /// as the blend recipes don't say which layer the others belong to. See ProcessMaterialTexture.
+    /// </summary>
+    private static string? ChooseMetallic(MaterialDefinition? definition, Dictionary<string, string> flverPaths)
+    {
+        return definition?.Samplers
+            .Where(x => x.Role == "MetallicMap" && (x.Path != "" || flverPaths.GetValueOrDefault(x.Type, "") != ""))
+            .OrderBy(x => Math.Max(x.Suffix, 0)).ThenBy(x => x.Slot)
+            .FirstOrDefault()?.Type;
+    }
+
     private void LoadBlendRecipe(FlverMaterial dest, string mtd, MaterialLayers layers, Dictionary<string, string> flverPaths)
     {
+        dest.MetallicType = ChooseMetallic(dest.Definition, flverPaths);
+
         if (dest.Definition?.SurfaceType != null)
         {
             LookupTexture(dest.Definition.Surface == MaterialSurface.Water
@@ -652,15 +666,38 @@ public class FlverResource : IResource, IDisposable
             return;
         }
 
+        // Elden Ring and later are metallic: the red of MetallicMap is how much of a metal the surface is, and the shader
+        // works F0 out from it and the albedo (c_metallic). It goes in the specular slot, which these games don't use
+        if (texType != null && dest.Definition?.Samplers.Find(x => x.Type == texType)?.Role == "MetallicMap")
+        {
+            // Where the layers are known, each has its own (MaterialDefinition.ResolveMetallic). Otherwise the bottom one
+            List<MaterialBlendLayer> blendLayers = dest.Definition.BlendLayers;
+            var perLayer = HasKnownBlend(dest) && blendLayers.Exists(l => l.Metallic != null);
+            var metalLayer = perLayer ? blendLayers.FindIndex(l => l.Metallic == texType) : texType == dest.MetallicType ? 0 : -1;
+
+            if (metalLayer >= 0 && metalLayer < Material.MaxLayers)
+            {
+                LookupTexture(SpecularLayers[metalLayer], dest, texType, mpath, mtd);
+                dest.UsesMetallic = true;
+                dest.MetallicOffsetBits[metalLayer] = BitConverter.HalfToUInt16Bits((Half)dest.Definition.MetallicOffsets.GetValueOrDefault(texType));
+                layers.BlendSpecular |= metalLayer > 0;
+            }
+
+            return;
+        }
+
+        // Matched on the sampler's own name too, as shader names such as M[...][Ov_N_AlbedoMask_MetallicMask] or
+        // C[Fur]_Albedo_FallOff would otherwise make every texture of theirs an albedo. Older games' g_ names have no slot,
+        // so for them this is the whole name.
         string paramNameCheck;
 
-        if (texType == null)
+        if (samplerName == null)
         {
             paramNameCheck = "G_DIFFUSE";
         }
         else
         {
-            paramNameCheck = texType.ToUpper();
+            paramNameCheck = samplerName.ToUpper();
         }
 
         int layer;
@@ -835,6 +872,13 @@ public class FlverResource : IResource, IDisposable
         specConstants.Add(new SpecializationConstant(8, hasDetail));
         specConstants.Add(new SpecializationConstant(9, hasMagma));
         specConstants.Add(new SpecializationConstant(10, (uint)(dest.Definition?.Surface ?? MaterialSurface.Standard)));
+        // Metallic shading for the games that use it, unless the material has an old specular color map instead.
+        // Without a metallic map the default black one makes it a non-metal, which reflects 4% as in these games
+        var metallicGame = curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR
+            or ProjectType.DB_NT or ProjectType.DB;
+        dest.MetallicShading = metallicGame &&
+            (dest.UsesMetallic || !dest.TextureResourceFilled[(int)FlverMaterial.TextureType.SpecularTextureResource]);
+        specConstants.Add(new SpecializationConstant(12, dest.MetallicShading));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -3907,6 +3951,21 @@ public class FlverResource : IResource, IDisposable
         /// </summary>
         public bool UsesLightmap;
 
+        /// <summary>The sampler type of the metallic map drawn in the specular slot, see ChooseMetallic</summary>
+        public string? MetallicType;
+
+        /// <summary>The specular slot holds a metallic map rather than a specular color</summary>
+        public bool UsesMetallic;
+
+        /// <summary>Drawn with the metallic path (specialization constant 12), which reads row 3 as MetallicOffsetBits</summary>
+        public bool MetallicShading;
+
+        /// <summary>
+        ///     What each layer adds to its metallic before it is saturated, as half floats. The metallic path puts
+        ///     these in row 3 of the material in place of the shininess textures, which these games don't have
+        /// </summary>
+        public ushort[] MetallicOffsetBits = new ushort[Material.MaxLayers];
+
         public MaterialBlending Blending = MaterialBlending.Opaque;
         public bool DepthWrite = true;
 
@@ -4191,6 +4250,15 @@ public class FlverResource : IResource, IDisposable
             SetMaterialTexture(TextureType.SpecularTextureResource4, ref MaterialData.specTex4, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource3, ref MaterialData.shininessTex3, 2);
             SetMaterialTexture(TextureType.ShininessTextureResource4, ref MaterialData.shininessTex4, 2);
+
+            // The metallic path has no shininess textures: row 3 is the metallic offset of each layer
+            if (MetallicShading)
+            {
+                MaterialData.shininessTex = MetallicOffsetBits[0];
+                MaterialData.shininessTex2 = MetallicOffsetBits[1];
+                MaterialData.shininessTex3 = MetallicOffsetBits[2];
+                MaterialData.shininessTex4 = MetallicOffsetBits[3];
+            }
 
             MaterialWithDeform? deformed = null;
 

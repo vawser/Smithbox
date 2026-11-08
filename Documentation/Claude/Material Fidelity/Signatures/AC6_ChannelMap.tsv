@@ -1,0 +1,163 @@
+Role	Channel	Outputs	Shaders	PlacedTriangles	PlacedShare%	ExampleShader
+(engine) g_DecalDiffuseTexture	a	RT2.x RT2.y RT2.z	14	6406306	0.670	C[AMSN][M0][M1]
+(engine) g_DecalDiffuseTexture	a	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	758670	0.079	C[DetailBlend1][Detail]_Emissive_Glow
+(engine) g_DecalDiffuseTexture	b	RT2.z	15	7164976	0.749	C[AMSN][M0][M1]
+(engine) g_DecalDiffuseTexture	g	RT2.y	15	7164976	0.749	C[AMSN][M0][M1]
+(engine) g_DecalDiffuseTexture	r	RT2.x	15	7164976	0.749	C[AMSN][M0][M1]
+(engine) g_DecalEmissiveTexture	b	RT4.z	4	7117956	0.744	C[AMSN][M0][M1]
+(engine) g_DecalEmissiveTexture	g	RT4.y	4	7117956	0.744	C[AMSN][M0][M1]
+(engine) g_DecalEmissiveTexture	r	RT4.x	4	7117956	0.744	C[AMSN][M0][M1]
+(engine) g_DecalSpecularTexture	a	RT1.x RT1.y	14	6406306	0.670	C[AMSN][M0][M1]
+(engine) g_DecalSpecularTexture	a	RT1.y	1	758670	0.079	C[DetailBlend1][Detail]_Emissive_Glow
+(engine) g_DecalSpecularTexture	b	RT1.x RT1.y RT2.x RT2.y RT2.z	3	0	0.000	M[Cutscene][VA_Frame][Flipbook][Ice_worm_dent]
+(engine) g_DecalSpecularTexture	g	RT1.y	15	7164976	0.749	C[AMSN][M0][M1]
+(engine) g_DecalSpecularTexture	r	RT1.x	15	7164976	0.749	C[AMSN][M0][M1]
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w	21	6153924	0.643	M[AMSN][M0][M1]_ContactFade
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	5	286596	0.030	M[Water][ocean_LOD1]
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	2	45592	0.005	M[Water][Melange]_Glow_Opacity
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	1	260	0.000	M[Water][Melange]_Glow
+(engine) g_WaterSimulationNormalTexture	a	RT0.x RT0.y RT0.z	6	202956	0.021	M[Water][oceanB]
+(engine) g_WaterSimulationNormalTexture	a	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	37098	0.004	M[Water][Coaltar]
+(engine) g_WaterSimulationNormalTexture	b	RT0.x RT0.y RT0.z	7	240054	0.025	M[Water][oceanB]
+(engine) g_WaterSimulationNormalTexture	g	RT0.x RT0.y RT0.z	7	240054	0.025	M[Water][oceanB]
+(engine) g_WaterSimulationNormalTexture	r	RT0.x RT0.y RT0.z	7	240054	0.025	M[Water][oceanB]
+AlbedoMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w	38	33038941	3.454	M[AMSN][M0][M1]_Edge_Translucency_Pivot2_Child
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	7	32617890	3.410	C[Enemy]_ColorMaterial
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	144094	0.015	C[c4200]_custom
+AlbedoMap	a	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	41928	0.004	M[Planet][GroundSurface]_003
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z uv	1	1128	0.000	M[Interior][M1]
+AlbedoMap	a	RT0.w RT1.w RT1.x RT1.y RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	1	44	0.000	SLOD[LookCam][Octahedral][PivotAnim]
+AlbedoMap	b	RT2.z	112	948261159	99.128	M[MS][MB][M1]
+AlbedoMap	b	RT1.y	5	32596170	3.408	C[Enemy]_ColorMaterial
+AlbedoMap	b	RT4.z	14	5117549	0.535	M[A][M0]_Emissive_Glow
+AlbedoMap	b	RT2.z RT4.z	5	385596	0.040	M[Planet][GroundSurface]_004
+AlbedoMap	b	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	1	0	0.000	M[SkyCloud2]
+AlbedoMap	b	RT0.w RT1.w RT2.w RT3.w RT4.w	1	0	0.000	M[Flow][Blend][ABlend]_Emissive_Glow
+AlbedoMap	g	RT2.y	112	948261159	99.128	M[MS][MB][M1]
+AlbedoMap	g	RT0.x RT0.y RT0.z	5	32596170	3.408	C[Enemy]_ColorMaterial
+AlbedoMap	g	RT4.y	14	5117549	0.535	M[A][M0]_Emissive_Glow
+AlbedoMap	g	RT2.y RT4.y	5	385596	0.040	M[Planet][GroundSurface]_004
+AlbedoMap	g	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w uv	1	0	0.000	M[SkyCloud2]
+AlbedoMap	g	RT0.w RT1.w RT2.w RT3.w RT4.w	1	0	0.000	M[Flow][Blend][ABlend]_Emissive_Glow
+AlbedoMap	r	RT2.x	112	948261159	99.128	M[MS][MB][M1]
+AlbedoMap	r	RT0.x RT0.y RT0.z	5	32596170	3.408	C[Enemy]_ColorMaterial
+AlbedoMap	r	RT4.x	14	5117549	0.535	M[A][M0]_Emissive_Glow
+AlbedoMap	r	RT2.x RT4.x	5	385596	0.040	M[Planet][GroundSurface]_004
+AlbedoMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	9	337472	0.035	P[LaserBlade]_001
+AlbedoMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	2	172	0.000	M[Transiton][Expansionfield]
+AlbedoMap	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	1	0	0.000	M[SkyCloud2]
+BlendEdge	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	24	0.000	M[AMSN][Mb2][M0]
+DisplacementMap	a	uv	5	3920790	0.410	M[Crystal][M1]
+DisplacementMap	b	uv	5	3920790	0.410	M[Crystal][M1]
+DisplacementMap	g	uv	5	3920790	0.410	M[Crystal][M1]
+DisplacementMap	r	uv	5	3920790	0.410	M[Crystal][M1]
+DisplacementMap	r	RT1.z	2	3193876	0.334	M[Crystal][M1]
+EM___BlendMask	r	RT4.x RT4.y RT4.z	1	74666	0.008	M[AMSN][Mb2][M0][M1][EM]_Glow
+EmissiveMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w	6	157232	0.016	M[Transiton][Construction]
+EmissiveMap	b	RT4.z	42	9673610	1.011	M[AMSN][M1]_Emissive
+EmissiveMap	b	RT2.z RT4.z	4	4634096	0.484	M[Interior]
+EmissiveMap	b	RT4.x RT4.y RT4.z	2	2676	0.000	I[A][M0][HSV0]_Emissive_Glow
+EmissiveMap	b	RT2.z	2	0	0.000	P[ACParts][A]_Emissive_Glow
+EmissiveMap	g	RT4.y	42	9673610	1.011	M[AMSN][M1]_Emissive
+EmissiveMap	g	RT2.y RT4.y	4	4634096	0.484	M[Interior]
+EmissiveMap	g	RT4.x RT4.y RT4.z	2	2676	0.000	I[A][M0][HSV0]_Emissive_Glow
+EmissiveMap	g	RT2.y	2	0	0.000	P[ACParts][A]_Emissive_Glow
+EmissiveMap	r	RT4.x	42	9673610	1.011	M[AMSN][M1]_Emissive
+EmissiveMap	r	RT2.x RT4.x	4	4634096	0.484	M[Interior]
+EmissiveMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	9	462728	0.048	C[c4210]_illusion
+EmissiveMap	r	RT4.x RT4.y RT4.z	5	371038	0.039	C[c6250Body_PA]
+EmissiveMap	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	13472	0.001	M[Waterfall]_01
+EmissiveMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	1	80	0.000	M[Transiton][Hackingfield]
+EmissiveMap	r	RT2.x	2	0	0.000	P[ACParts][A]_Emissive_Glow
+Generic__Turbulence_Localise	g	uv	7	134628	0.014	M[Planet][GroundSurface]_003
+Generic__Turbulence_Localise	r	uv	7	134628	0.014	M[Planet][GroundSurface]_003
+Generic__Turbulence_Localise_Flow	a	uv	2	29328	0.003	M[Planet][Melange]_002
+Generic__Turbulence_Localise_Flow	g	uv	2	29328	0.003	M[Planet][Melange]_002
+Generic__Turbulence_Localise_Flow	r	uv	2	29328	0.003	M[Planet][Melange]_002
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	21	598464040	62.562	M[MS][MB][M1]
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	10	207006773	21.640	M[MS][MB][M0]
+Mask1Map	r	RT2.x RT2.y RT2.z	16	36485137	3.814	C[Enemy]_ColorMaterial
+Mask1Map	r	RT1.z	3	21153604	2.211	M[AMSN][M0][M1]_Edge_Translucency_Pivot2_Child
+Mask1Map	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	5	4874420	0.510	M[Interior]
+Mask1Map	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z uv	2	4632968	0.484	M[Interior]
+Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w	16	2718574	0.284	M[AMSN][M0][M1][Vatex]_Alpha_BlendEdge
+Mask1Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	2063318	0.216	M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	5	668832	0.070	M[Planet][GroundSurface]_004
+Mask1Map	r	RT4.x RT4.y RT4.z	4	406281	0.042	M[AMSN][M1][2Blend]_Combustion
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT2.x RT2.y RT2.z	1	316805	0.033	M[AMSN][M1][2Blend]_Combustion
+Mask1Map	r	RT1.x RT2.x RT2.y RT2.z	1	165508	0.017	M[AMSN][M1][Detail]_Combustion
+Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	3	148588	0.016	M[Transiton][Construction]
+Mask1Map	r	uv	10	134628	0.014	M[Planet][GroundSurface]_003
+Mask1Map	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	1	0	0.000	P[ACParts][Glass][Transiton]
+Mask3Map	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	4	558327300	58.366	M[MS][MB][M1]
+Mask3Map	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	5	206123866	21.548	M[MS][MB][M0]
+Mask3Map	b	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	559878786	58.528	M[MS][MB][M1]
+Mask3Map	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	6	206187599	21.554	M[MS][MB][M0]
+Mask3Map	b	RT0.w RT1.w RT2.w RT3.w RT4.w	4	16886	0.002	M[3Mask][FogColor]_NoLight_Alpha
+Mask3Map	b	RT2.x RT2.y RT2.z	1	0	0.000	P[ACParts]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	11	559878786	58.528	M[MS][MB][M1]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	6	206187599	21.554	M[MS][MB][M0]
+Mask3Map	g	RT2.x RT2.y RT2.z	6	32597816	3.408	C[Enemy]_ColorMaterial
+Mask3Map	g	uv	18	1190468	0.124	C[c4210]_illusion
+Mask3Map	g	RT0.w RT1.w RT2.w RT3.w RT4.w	5	469054	0.049	C[c4210]_illusion
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	367200	0.038	M[Planet][GroundSurface]_004
+Mask3Map	g	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	3796	0.000	M[Waterfall2]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	0	0.000	P[ACParts]_ColorMaterial_Repair
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	559878786	58.528	M[MS][MB][M1]
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	6	206187599	21.554	M[MS][MB][M0]
+Mask3Map	r	RT1.x RT1.y RT2.x RT2.y RT2.z uv	5	32596170	3.408	C[Enemy]_ColorMaterial
+Mask3Map	r	uv	20	1190468	0.124	C[c4210]_illusion
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	367200	0.038	M[Planet][GroundSurface]_004
+Mask3Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w	4	16886	0.002	M[3Mask][FogColor]_NoLight_Alpha
+Mask3Map	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	3796	0.000	M[Waterfall2]
+Mask3Map	r	RT1.x RT1.y RT2.x RT2.y RT2.z	1	1646	0.000	C[Enemy][DM][RT][PL]2
+Mask3Map	r	RT2.x RT2.y RT2.z	1	0	0.000	P[ACParts]
+Mask3Map	r	RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	0	0.000	P[ACParts]_ColorMaterial_Repair
+MetallicMap	-	(unused)	1	1646	0.000	C[Enemy][DM][RT][PL]2
+MetallicMap	b	RT2.z	1	0	0.000	M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]
+MetallicMap	g	RT2.y	1	0	0.000	M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]
+MetallicMap	r	RT1.x	63	697797140	72.946	M[MS][MB][M1]
+MetallicMap	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	3	1145130	0.120	C[Enemy][Wepon]
+MetallicMap	r	RT4.x RT4.y RT4.z	1	165508	0.017	M[AMSN][M1][Detail]_Combustion
+MetallicMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	1	0	0.000	M[Cutscene][Flow][Blend]_Emissive_Glow
+MetallicMap	r	RT1.x RT1.y RT2.x RT2.y RT2.z	3	0	0.000	M[Cutscene][VA_Frame][Flipbook][Ice_worm_dent]
+MetallicMap	r	RT2.x	1	0	0.000	M[AMSN][M0][M1][Mb4_Ch2][3Mask][Ov_AN][Snow]
+Metalness__Base	r	RT1.x	3	2146402	0.224	C[AMSN][M1][Detail]
+NormalMap	a	RT1.w	11	764996724	79.970	M[MS][MB][M1]
+NormalMap	a	RT0.x RT0.y RT0.z	2	733663657	76.695	M[MS][MB][M1]
+NormalMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	32617890	3.410	C[Enemy]_ColorMaterial
+NormalMap	a	RT2.x RT2.y RT2.z	5	286596	0.030	M[Water][ocean_LOD1]
+NormalMap	a	RT4.x RT4.y RT4.z	2	45592	0.005	M[Water][Melange]_Glow_Opacity
+NormalMap	a	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	260	0.000	M[Water][Melange]_Glow
+NormalMap	b	RT1.y	103	948774799	99.182	M[MS][MB][M1]
+NormalMap	b	RT0.x RT0.y RT0.z	2	733663657	76.695	M[MS][MB][M1]
+NormalMap	b	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	33500802	3.502	C[Enemy]_ColorMaterial
+NormalMap	b	RT2.z	5	32596170	3.408	C[Enemy]_ColorMaterial
+NormalMap	b	RT2.x RT2.y RT2.z	7	323954	0.034	M[Water][ocean_LOD1]
+NormalMap	b	RT2.x RT2.y RT2.z uv	6	286856	0.030	M[Water][ocean_LOD1]
+NormalMap	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	144094	0.015	C[c4200]_custom
+NormalMap	b	RT4.x RT4.y RT4.z	2	45592	0.005	M[Water][Melange]_Glow_Opacity
+NormalMap	b	uv	2	45592	0.005	M[Water][Melange]_Glow_Opacity
+NormalMap	b	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	260	0.000	M[Water][Melange]_Glow
+NormalMap	g	RT0.x RT0.y RT0.z	112	949567083	99.265	M[MS][MB][M1]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	4	563556214	58.912	M[MS][MB][M1]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	2	206095002	21.545	M[MS][MB][M0]
+NormalMap	g	RT2.y	5	32596170	3.408	C[Enemy]_ColorMaterial
+NormalMap	g	uv	10	4995841	0.522	M[Interior]
+NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	4	2101114	0.220	M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]
+NormalMap	g	RT2.x RT2.y RT2.z	1	67226	0.007	M[Water][Coaltar][solid]
+NormalMap	g	RT0.x RT0.y RT0.z uv	1	1128	0.000	M[Interior][M1]
+NormalMap	g	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	1	0	0.000	C[Camouflage]_test_01
+NormalMap	r	RT0.x RT0.y RT0.z	112	949567083	99.265	M[MS][MB][M1]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	4	563556214	58.912	M[MS][MB][M1]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	2	206095002	21.545	M[MS][MB][M0]
+NormalMap	r	RT2.x	5	32596170	3.408	C[Enemy]_ColorMaterial
+NormalMap	r	uv	10	4995841	0.522	M[Interior]
+NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	4	2101114	0.220	M[AMSN][M0][Mb2][Far_AN][Ov_N][Snow]
+NormalMap	r	RT2.x RT2.y RT2.z	1	67226	0.007	M[Water][Coaltar][solid]
+NormalMap	r	RT0.x RT0.y RT0.z uv	1	1128	0.000	M[Interior][M1]
+NormalMap	r	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	1	0	0.000	C[Camouflage]_test_01
+slot0	a	RT2.w RT3.w RT4.w	1	0	0.000	P[ACParts]_Marking
+slot0	b	RT2.z	1	0	0.000	P[ACParts]_Marking
+slot0	g	RT2.y	1	0	0.000	P[ACParts]_Marking
+slot0	r	RT2.x	1	0	0.000	P[ACParts]_Marking

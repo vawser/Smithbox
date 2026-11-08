@@ -119,6 +119,7 @@ public class MaterialData : IDisposable
         var magmaPath = Path.Join(folder, $"{game}_Magma.json");
         var waterPath = Path.Join(folder, $"{game}_Water.json");
         var furPath = Path.Join(folder, $"{game}_Fur.json");
+        var metallicPath = Path.Join(folder, $"{game}_Metallic.json");
 
         MaterialShaderTable table = new();
 
@@ -186,6 +187,14 @@ public class MaterialData : IDisposable
 
                 table.Fur = JsonSerializer.Deserialize(text,
                     MaterialEditorJsonSerializerContext.Default.DictionaryStringMaterialFurRecipe) ?? new();
+            }
+
+            if (File.Exists(metallicPath))
+            {
+                string text = await File.ReadAllTextAsync(metallicPath);
+
+                table.Metallic = JsonSerializer.Deserialize(text,
+                    MaterialEditorJsonSerializerContext.Default.DictionaryStringDictionaryInt32String) ?? new();
             }
         }
         catch (Exception e)

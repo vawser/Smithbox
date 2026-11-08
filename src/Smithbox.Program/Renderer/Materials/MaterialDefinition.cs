@@ -139,6 +139,13 @@ public class MaterialShaderTable
     /// </summary>
     [JsonIgnore]
     public Dictionary<string, MaterialFurRecipe> Fur { get; set; } = new();
+
+    /// <summary>
+    /// Shader name to texture slot to the param added to the red of that metallic map before it is saturated,
+    /// as "param:component" ("" for none), generated from the game's compiled pixel shaders by Tools/ShaderSignature.
+    /// </summary>
+    [JsonIgnore]
+    public Dictionary<string, Dictionary<int, string>> Metallic { get; set; } = new();
 }
 
 /// <summary>
@@ -431,6 +438,9 @@ public class MaterialBlendLayer
 {
     public string? Albedo { get; set; }
     public string? Normal { get; set; }
+
+    /// <summary>The metallic map of the layer, the one in the UV group of its albedo, see ResolveMetallic</summary>
+    public string? Metallic { get; set; }
 }
 
 /// <summary>
@@ -518,6 +528,12 @@ public class MaterialDefinition
     /// <summary>Set when <see cref="Surface"/> is <see cref="MaterialSurface.Fur"/></summary>
     public MaterialResolvedFur? Fur { get; set; }
 
+    /// <summary>
+    /// Sampler type of each metallic map to what the shader adds to its red before saturating it,
+    /// e.g. M[AMSN]'s snp_0_float_0. Only maps whose shader adds something are here
+    /// </summary>
+    public Dictionary<string, float> MetallicOffsets { get; set; } = new();
+
     public MaterialDeformer Deformer { get; set; }
 
     /// <summary>Role to value, for the roles of this shader's table entry that the material has a value for</summary>
@@ -594,6 +610,70 @@ public class MaterialDefinition
         ResolveSurface();
         ResolveWater(table);
         ResolveFur(table);
+        ResolveMetallic(table);
+    }
+
+    private const string MetallicRole = "MetallicMap";
+
+    /// <summary>
+    /// The offset of each metallic map, from the shader's table, and which metallic map goes with each blend layer:
+    /// the one in the UV group of the layer's albedo, as the shaders lerp a layer's albedo and metallic by the same
+    /// weight and sample them with the same UVs. Failing that, the one with the albedo's number.
+    /// </summary>
+    private void ResolveMetallic(MaterialShaderTable? table)
+    {
+        List<MaterialSampler> metals = Samplers.Where(x => x.Role == MetallicRole).ToList();
+        if (metals.Count == 0)
+        {
+            return;
+        }
+
+        Dictionary<int, string>? offsets = null;
+        table?.Metallic.TryGetValue(ShaderName, out offsets);
+
+        foreach (MaterialSampler metal in metals)
+        {
+            if (offsets == null || !offsets.TryGetValue(metal.Slot, out var entry) || entry == "")
+            {
+                continue;
+            }
+
+            var parts = entry.Split(':');
+            var component = parts.Length > 1 && int.TryParse(parts[1], out var c) ? c : 0;
+
+            if (Params.TryGetValue(parts[0], out var value) && component < value.Length)
+            {
+                MetallicOffsets[metal.Type] = value[component];
+            }
+        }
+
+        if (BlendLayers.Count < 2)
+        {
+            return;
+        }
+
+        Dictionary<int, string>? groups = null;
+        table?.TextureGroups.TryGetValue(ShaderName, out groups);
+
+        foreach (MaterialBlendLayer layer in BlendLayers)
+        {
+            MaterialSampler? albedo = Samplers.Find(x => x.Type == layer.Albedo);
+            if (albedo == null)
+            {
+                continue;
+            }
+
+            List<MaterialSampler> sameGroup = groups != null && groups.TryGetValue(albedo.Slot, out var group)
+                ? metals.Where(m => groups.TryGetValue(m.Slot, out var g) && g == group).ToList()
+                : [];
+
+            List<MaterialSampler> sameNumber = metals.Where(m => m.Suffix == albedo.Suffix).ToList();
+
+            layer.Metallic = sameGroup.Count == 1 ? sameGroup[0].Type
+                : sameGroup.Count > 1 ? (sameGroup.Find(m => m.Suffix == albedo.Suffix) ?? sameGroup[0]).Type
+                : sameNumber.Count == 1 ? sameNumber[0].Type
+                : null;
+        }
     }
 
     /// <summary>

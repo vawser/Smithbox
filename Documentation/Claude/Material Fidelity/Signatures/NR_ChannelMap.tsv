@@ -1,0 +1,347 @@
+Role	Channel	Outputs	Shaders	PlacedTriangles	PlacedShare%	ExampleShader
+(engine) SceneColor_0_Screen_0	b	RT4.z	1	15120	0.001	M[DistortionFilter_Advanced][CL]_NoLight
+(engine) SceneColor_0_Screen_0	g	RT4.y	1	15120	0.001	M[DistortionFilter_Advanced][CL]_NoLight
+(engine) SceneColor_0_Screen_0	r	RT4.x	1	15120	0.001	M[DistortionFilter_Advanced][CL]_NoLight
+(engine) g_BumpmapTexture	b	RT1.y	32	108299048	5.717	SpeedTree_5010fdmo_w32187
+(engine) g_BumpmapTexture	b	RT0.x RT0.y RT0.z	1	82664	0.004	SpeedTree_billboard
+(engine) g_BumpmapTexture	g	RT0.x RT0.y RT0.z	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_BumpmapTexture	r	RT0.x RT0.y RT0.z	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_DecalDiffuseTexture	a	RT2.x RT2.y RT2.z	117	442558185	23.363	C[DetailBlend]
+(engine) g_DecalDiffuseTexture	b	RT2.z	117	442558185	23.363	C[DetailBlend]
+(engine) g_DecalDiffuseTexture	b	RT4.z	2	116778	0.006	C[c7540]_Core
+(engine) g_DecalDiffuseTexture	g	RT2.y	117	442558185	23.363	C[DetailBlend]
+(engine) g_DecalDiffuseTexture	g	RT4.y	2	116778	0.006	C[c7540]_Core
+(engine) g_DecalDiffuseTexture	r	RT2.x	117	442558185	23.363	C[DetailBlend]
+(engine) g_DecalDiffuseTexture	r	RT4.x	2	116778	0.006	C[c7540]_Core
+(engine) g_DecalEmissiveTexture	b	RT4.z	1	275748	0.015	C[c4640]_Body
+(engine) g_DecalEmissiveTexture	g	RT4.y	1	275748	0.015	C[c4640]_Body
+(engine) g_DecalEmissiveTexture	r	RT4.x	1	275748	0.015	C[c4640]_Body
+(engine) g_DecalSpecularTexture	a	RT1.x RT1.y	112	442538001	23.362	C[DetailBlend]
+(engine) g_DecalSpecularTexture	a	RT1.x	5	20184	0.001	P[ChrCustomize][Hair]
+(engine) g_DecalSpecularTexture	b	RT1.x RT1.y RT2.x RT2.y RT2.z	116	417500305	22.040	C[DetailBlend]
+(engine) g_DecalSpecularTexture	b	RT1.y RT4.x RT4.y RT4.z	2	116778	0.006	C[c7540]_Core
+(engine) g_DecalSpecularTexture	g	RT1.y	115	442656609	23.368	C[DetailBlend]
+(engine) g_DecalSpecularTexture	r	RT1.x	117	442558185	23.363	C[DetailBlend]
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w	49	16556626	0.874	C[AMSN]_ContactFade
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	1	192448	0.010	C[c4950]_Ghost
+(engine) g_DepthTexture	r	RT0.w RT1.w RT1.y RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	4	81610	0.004	M[Water][ocean4]
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w	1	72269	0.004	M[Flame_001]_MeshDecalBlend
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w uv	1	15120	0.001	M[DistortionFilter_Advanced][CL]_NoLight
+(engine) g_DepthTexture	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w	1	430	0.000	M[Ocean_ExtraBoss][CL]
+(engine) g_DepthTexture	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w	1	0	0.000	M[Water][ocean]
+(engine) g_DiffuseTexture	a	RT0.w RT1.w RT2.w RT3.w RT4.w	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_DiffuseTexture	b	RT2.z	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_DiffuseTexture	g	RT2.y	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_DiffuseTexture	r	RT2.x	33	108381712	5.721	SpeedTree_5010fdmo_w32187
+(engine) g_DitherTexture	a	OUT5.x	41	79764593	4.211	M[AMSN_V][Ov_N][Crystal][CrossFade]
+(engine) g_DitherTexture	a	OUT5.x RT0.w RT1.w RT2.w RT3.w RT4.w	3	5684004	0.300	M[Spotimage][CL]_001
+(engine) g_DitherTexture	a	RT0.w RT1.w RT2.w RT3.w RT4.w	12	1767926	0.093	C[c2500]_Fade
+(engine) g_DitherTexture	a	RT4.x RT4.y RT4.z	1	8472	0.000	C[AMSN]_GlowDepthFade_[Int]
+(engine) g_TranslucencyTexture	r	RT1.z	32	108299048	5.717	SpeedTree_5010fdmo_w32187
+(engine) g_WaterSimulationNormalTexture	a	RT0.x RT0.y RT0.z	9	146527	0.008	M[Water][ocean4]
+(engine) g_WaterSimulationNormalTexture	a	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z uv	1	683	0.000	M[Oil_Liquid]
+(engine) g_WaterSimulationNormalTexture	b	RT0.x RT0.y RT0.z	10	147210	0.008	M[Water][ocean4]
+(engine) g_WaterSimulationNormalTexture	g	RT0.x RT0.y RT0.z	10	147210	0.008	M[Water][ocean4]
+(engine) g_WaterSimulationNormalTexture	r	RT0.x RT0.y RT0.z	10	147210	0.008	M[Water][ocean4]
+Albedo	b	RT2.z	5	2120996	0.112	M[AMSN_V][DitherFade]
+Albedo	g	RT2.y	5	2120996	0.112	M[AMSN_V][DitherFade]
+Albedo	r	RT2.x	5	2120996	0.112	M[AMSN_V][DitherFade]
+AlbedoMap	-	(unused)	6	1238492	0.065	C[c7620]_Wing_Glow
+AlbedoMap	a	uv	23	165690228	8.747	M[AMSN_V][Ov_N][Crystal]
+AlbedoMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w	113	126176594	6.661	C[AMSN]_Shadow
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	2	18337067	0.968	C[DetailBlend][S2]
+AlbedoMap	a	RT3.w	3	578386	0.031	M[AMSN][Ov_N][CL]_MeshDecalBlend
+AlbedoMap	a	RT1.z uv	2	240973	0.013	M[TreeSap][Mb2][Fresnel]
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	198654	0.010	C[DetailBlend][1_0_0_0][S2]_Glow[Int]
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z uv	1	62208	0.003	M[Cocoon]_Lite
+AlbedoMap	a	RT3.w RT4.w	2	54886	0.003	M[SandPattern_ExtraBoss][CL]
+AlbedoMap	a	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	19324	0.001	M[Crystal_Goal]_006
+AlbedoMap	a	RT2.x RT2.y RT2.z	1	360	0.000	M[AMSN_V][Ov_AN][WorldUV_A]
+AlbedoMap	a	RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.x RT4.y RT4.z	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z	1	0	0.000	M[ShrinkingPlayArea]
+AlbedoMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	1	0	0.000	P[BD_5050]_Skin
+AlbedoMap	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	2	0	0.000	P[BD_5050]_Skin
+AlbedoMap	b	RT2.z	290	1617077455	85.365	C[DetailBlend]
+AlbedoMap	b	RT2.x RT2.y RT2.z	48	360384271	19.025	C[DetailBlend]
+AlbedoMap	b	RT2.z uv	24	165832554	8.754	M[AMSN_V][Ov_N][Crystal]
+AlbedoMap	b	RT2.z RT4.z	24	5507610	0.291	C[Crystal_NoTransparent]_Glow
+AlbedoMap	b	RT4.z	30	4791922	0.253	C[c7620]_Wing_Glow
+AlbedoMap	b	RT1.y	2	4159779	0.220	M[Cave_001]
+AlbedoMap	b	RT1.x RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+AlbedoMap	b	RT2.x RT2.y RT2.z RT4.z	1	1054734	0.056	C[c7620]_Hair_Glow
+AlbedoMap	b	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	256968	0.014	C[c4620]_Galaxy
+AlbedoMap	b	RT2.z RT4.x RT4.y RT4.z	1	192448	0.010	C[c4950]_Ghost
+AlbedoMap	b	uv	1	155848	0.008	C[c4280]_Honey
+AlbedoMap	b	RT4.x RT4.y RT4.z	2	97877	0.005	M[Crystal_Goal]_007
+AlbedoMap	b	RT2.z RT4.x RT4.y RT4.z uv	1	5007	0.000	M[TreeSap][Mb2][Fresnel][CL]_em_001
+AlbedoMap	g	RT2.y	290	1617077455	85.365	C[DetailBlend]
+AlbedoMap	g	RT2.x RT2.y RT2.z	48	360384271	19.025	C[DetailBlend]
+AlbedoMap	g	RT2.y uv	24	165832554	8.754	M[AMSN_V][Ov_N][Crystal]
+AlbedoMap	g	RT2.y RT4.y	24	5507610	0.291	C[Crystal_NoTransparent]_Glow
+AlbedoMap	g	RT4.y	31	4882029	0.258	C[c7620]_Wing_Glow
+AlbedoMap	g	RT0.x RT0.y RT0.z	2	4159779	0.220	M[Cave_001]
+AlbedoMap	g	RT1.x RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+AlbedoMap	g	RT2.x RT2.y RT2.z RT4.y	1	1054734	0.056	C[c7620]_Hair_Glow
+AlbedoMap	g	uv	3	530023	0.028	C_AEG[594_010]_Giant_Emissive
+AlbedoMap	g	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	256968	0.014	C[c4620]_Galaxy
+AlbedoMap	g	RT2.y RT4.x RT4.y RT4.z	1	192448	0.010	C[c4950]_Ghost
+AlbedoMap	g	RT4.x RT4.y RT4.z	1	7770	0.000	M[Extra_Tower_sky_004]
+AlbedoMap	g	RT2.y RT4.x RT4.y RT4.z uv	1	5007	0.000	M[TreeSap][Mb2][Fresnel][CL]_em_001
+AlbedoMap	r	RT2.x	290	1617077455	85.365	C[DetailBlend]
+AlbedoMap	r	RT2.x RT2.y RT2.z	48	360384271	19.025	C[DetailBlend]
+AlbedoMap	r	RT2.x uv	24	165832554	8.754	M[AMSN_V][Ov_N][Crystal]
+AlbedoMap	r	RT2.x RT4.x	21	5499252	0.290	C[Crystal_NoTransparent]_Glow
+AlbedoMap	r	RT4.x	29	4629266	0.244	C[c7620]_Wing_Glow
+AlbedoMap	r	RT0.x RT0.y RT0.z	2	4159779	0.220	M[Cave_001]
+AlbedoMap	r	RT1.x RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+AlbedoMap	r	RT4.x RT4.y RT4.z	10	1523671	0.080	C[c7620]_Wing_Glow
+AlbedoMap	r	RT1.y RT2.x RT2.y RT2.z	2	1054734	0.056	C[c7620]_Hair_Glow
+AlbedoMap	r	RT2.x RT2.y RT2.z RT4.x	1	1054734	0.056	C[c7620]_Hair_Glow
+AlbedoMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	9	540646	0.029	C[c4980]_Lwing
+AlbedoMap	r	uv	3	530023	0.028	C_AEG[594_010]_Giant_Emissive
+AlbedoMap	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	256968	0.014	C[c4620]_Galaxy
+AlbedoMap	r	RT2.x RT4.x RT4.y RT4.z	1	192448	0.010	C[c4950]_Ghost
+AlbedoMap	r	RT2.x RT3.x	3	7420	0.000	P[ChrCustomize][Skin]
+AlbedoMap	r	RT1.w RT2.x RT4.x	2	6528	0.000	M[Hair]
+AlbedoMap	r	RT2.x RT4.x RT4.y RT4.z uv	1	5007	0.000	M[TreeSap][Mb2][Fresnel][CL]_em_001
+AlbedoMap	r	RT0.w RT1.w RT2.w RT2.x RT3.w RT4.w RT4.x	1	1830	0.000	C[c5070]_Fire
+AlbedoMap	r	RT1.z	1	0	0.000	M[candle][CL]_Translucency_02
+AlbedoMap	r	RT1.w RT4.x	1	0	0.000	M[ShrinkingPlayArea]
+Albedo__Inside	b	RT2.z	4	1033398	0.055	C[c4650]_Freeze_ContactFade
+Albedo__Inside	b	RT2.x RT2.y RT2.z	1	31540	0.002	C[c4503]_Freeze_Fur
+Albedo__Inside	g	RT2.y	4	1033398	0.055	C[c4650]_Freeze_ContactFade
+Albedo__Inside	g	RT2.x RT2.y RT2.z	1	31540	0.002	C[c4503]_Freeze_Fur
+Albedo__Inside	r	RT2.x	4	1033398	0.055	C[c4650]_Freeze_ContactFade
+Albedo__Inside	r	RT2.x RT2.y RT2.z	1	31540	0.002	C[c4503]_Freeze_Fur
+AmbientOcculusionMap	r	RT1.w	5	3071567	0.162	C_AEG[594_010]_Giant_Body
+BlendEdge	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	14768541	0.780	M[AMSN_V][Mb2]
+BlendEdge	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	1159383	0.061	M[AMSN][Mb2]
+DisplacementMap	r	RT1.z	11	6999530	0.370	C[Fur]_Tr
+DistortionDepth	a	uv	24	12685904	0.670	C[c4190]_Crystal
+DistortionDepth	b	uv	24	12685904	0.670	C[c4190]_Crystal
+DistortionDepth	g	uv	24	12685904	0.670	C[c4190]_Crystal
+DistortionDepth	r	uv	24	12685904	0.670	C[c4190]_Crystal
+DistortionDepth__Base	a	uv	1	320	0.000	C[c5210]_Eye
+DistortionDepth__Base	b	uv	1	320	0.000	C[c5210]_Eye
+DistortionDepth__Base	g	uv	1	320	0.000	C[c5210]_Eye
+DistortionDepth__Base	r	uv	1	320	0.000	C[c5210]_Eye
+EmissiveMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w	9	62441	0.003	M[PetalGround_ExtraBoss][CL]
+EmissiveMap	b	RT4.z	52	48112477	2.540	M[AMSN_V]_Vesitation_Emissive_Glow
+EmissiveMap	b	RT2.z RT4.z	3	750727	0.040	C[c4480]_Flower_1
+EmissiveMap	b	RT4.x RT4.y RT4.z	3	313288	0.017	C[c4620]_ClearCoat
+EmissiveMap	b	RT0.w RT1.w RT2.w RT3.w RT4.w	1	512	0.000	M[BloodRiver_ExtraBoss][CLDLC]
+EmissiveMap	g	RT4.y	52	48112477	2.540	M[AMSN_V]_Vesitation_Emissive_Glow
+EmissiveMap	g	RT2.y RT4.y	3	750727	0.040	C[c4480]_Flower_1
+EmissiveMap	g	RT4.x RT4.y RT4.z	3	313288	0.017	C[c4620]_ClearCoat
+EmissiveMap	g	RT0.w RT1.w RT2.w RT3.w RT4.w	2	1274	0.000	M[Tombstoneletters_CL]_01
+EmissiveMap	r	RT4.x	50	46443332	2.452	M[AMSN_V]_Vesitation_Emissive_Glow
+EmissiveMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x	2	1669145	0.088	M[GhostTree_Body][CL]_001
+EmissiveMap	r	RT2.x RT4.x	2	748897	0.040	C[c4480]_Flower_1
+EmissiveMap	r	RT4.x RT4.y RT4.z	4	389578	0.021	C[c4620]_ClearCoat
+EmissiveMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	8	233340	0.012	M[Flag_ExtraBoss][CL]
+EmissiveMap	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	22352	0.001	C[c3400]_Fade
+EmissiveMap	r	RT0.w RT1.w RT2.w RT2.x RT3.w RT4.w RT4.x	1	1830	0.000	C[c5070]_Fire
+Emissive__Base	a	uv	4	1197020	0.063	C[c7540]_Body2_LB
+Emissive__Base	b	RT0.w RT1.w RT2.w RT3.w RT4.w uv	4	1197020	0.063	C[c7540]_Body2_LB
+Emissive__Base	g	RT0.w RT1.w RT2.w RT3.w RT4.w uv	4	1197020	0.063	C[c7540]_Body2_LB
+Emissive__Base	r	RT0.w RT1.w RT2.w RT3.w RT4.w uv	4	1197020	0.063	C[c7540]_Body2_LB
+Fade__Line	b	RT4.z	1	0	0.000	C[DetailBlend][1_0_0_0]_Glow[MaskScroll]_Fade
+Fade__Line	g	RT4.y	1	0	0.000	C[DetailBlend][1_0_0_0]_Glow[MaskScroll]_Fade
+Fade__Line	r	RT4.x	1	0	0.000	C[DetailBlend][1_0_0_0]_Glow[MaskScroll]_Fade
+Fade_and_FallOff_Noise	r	RT0.w RT1.w RT2.w RT3.w RT4.w	1	0	0.000	P[WP_A_5091]_Trance
+FlowMap	g	uv	5	34294	0.002	M[Atmosphere][Clouds][Day2]_001
+FlowMap	r	uv	5	34294	0.002	M[Atmosphere][Clouds][Day2]_001
+Flowmap_	g	uv	1	6144	0.000	M[SynapseLine_ExtraBoss][CL]
+Flowmap_	r	uv	1	6144	0.000	M[SynapseLine_ExtraBoss][CL]
+Generic_	r	RT0.w RT1.w RT2.w RT3.w RT4.w	1	420	0.000	M[WorldTree_LightShaft_003]
+Generic__Flowmap	g	uv	1	14848	0.001	M[CumulonimbusCloudsB]_003
+Generic__Flowmap	r	uv	1	14848	0.001	M[CumulonimbusCloudsB]_003
+Mask1Map	a	uv	8	460473	0.024	M[Crystal_Goal]_004
+Mask1Map	b	uv	8	460473	0.024	M[Crystal_Goal]_004
+Mask1Map	b	RT1.y RT2.z	2	240973	0.013	M[TreeSap][Mb2][Fresnel]
+Mask1Map	b	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	0	0.000	P[WP_A_5091]_Trance
+Mask1Map	g	uv	10	560337	0.030	M[Crystal_Goal]_004
+Mask1Map	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	2	240973	0.013	M[TreeSap][Mb2][Fresnel]
+Mask1Map	g	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	0	0.000	P[WP_A_5091]_Trance
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	55	328111909	17.321	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
+Mask1Map	r	RT4.x RT4.y RT4.z	30	170636945	9.008	M[AMSN_V][Ov_N][Crystal]
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT1.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z uv	8	98291749	5.189	M[AMSN_V][Ov_N][Crystal]
+Mask1Map	r	RT2.x RT2.y RT2.z	18	60720806	3.205	M[AMSN_V]_Grass2
+Mask1Map	r	RT3.x	5	26314896	1.389	C[DetailBlend]_SSS
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	10	16088508	0.849	M[Rubble_ExtraBoss][CLDLC]
+Mask1Map	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	8	6024675	0.318	M[AMSN_V][Ov_N][Snow_VtxMask]
+Mask1Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	4	5595318	0.295	C[c4450]_AreaMatchBlend
+Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w	29	4173352	0.220	M[Abrasion_A]_004
+Mask1Map	r	uv	42	3227425	0.170	M[AMSN_V][3Mask][Crystal]
+Mask1Map	r	RT1.z	6	2987704	0.158	C[c4180]_Glow
+Mask1Map	r	RT1.z RT4.x RT4.y RT4.z	1	2038663	0.108	M[FleshPetal_ExtraBoss][CLDLC]
+Mask1Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	1550752	0.082	M[Foreigner]
+Mask1Map	r	RT1.w	10	1008148	0.053	C[DetailBlend][1_1_1_1]_AO
+Mask1Map	r	RT0.w RT1.y RT2.w RT4.x RT4.y RT4.z	1	770868	0.041	M[AMSN_V][3Mask][CL]_Edge_DecalBlend
+Mask1Map	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	4	578060	0.031	C[c3350]_Crystal
+Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	3	571043	0.030	C[c7500]_LastBoss_FireMask
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	466171	0.025	M[Ethercurrent][CL]
+Mask1Map	r	RT1.w RT4.x RT4.y RT4.z	1	253044	0.013	C[c7580]_Bandage
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.z RT2.x RT2.y RT2.z	2	240973	0.013	M[TreeSap][Mb2][Fresnel]
+Mask1Map	r	RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	213408	0.011	C[c5050]_Crystal_Blend
+Mask1Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z uv	2	213270	0.011	C_AEG[594_010]_Giant_Smoke_Plane
+Mask1Map	r	RT1.z RT2.x RT2.y RT2.z	1	155848	0.008	C[c4280]_Honey
+Mask1Map	r	RT1.y RT1.z RT4.x RT4.y RT4.z	1	140990	0.007	M[AMSN_V][CL][Ov_N][Ice][Emissive][PixelDepth]
+Mask1Map	r	RT0.w RT2.w RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	121642	0.006	M[AMSN_V][3Mask][Ov_N][CL]_Edge_DecalBlend
+Mask1Map	r	RT1.y RT2.x RT2.y RT2.z	4	104152	0.005	M[Flower_m10]
+Mask1Map	r	RT4.x RT4.y RT4.z uv	2	69546	0.004	C_AEG[594_010]_Giant_Smoke
+Mask1Map	r	RT0.w RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	2	65560	0.003	M[StormClouds_ExtraBoss][CL]
+Mask1Map	r	RT1.y	1	26554	0.001	M[Water][ocean4_LOD1]
+Mask1Map	r	RT1.y RT1.z	1	7480	0.000	M[Waterfall]_Underground
+Mask1Map	r	RT0.w RT1.w RT1.y RT1.z RT2.w RT3.w RT4.w	1	680	0.000	M[Waterfall]_Underground_Transparent
+Mask1Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z uv	1	320	0.000	C[c5210]_Eye
+Mask1Map	r	RT2.w RT3.w	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+Mask1Map	r	RT2.x RT2.y RT2.z RT3.x	1	0	0.000	P[BD_5050]_Skin
+Mask3Map	a	RT0.w RT1.w RT2.w RT3.w RT4.w	1	8448	0.000	M[Clouds5]
+Mask3Map	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	19	165017912	8.711	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
+Mask3Map	b	RT4.x RT4.y RT4.z	20	31618475	1.669	M[SpiritTree_Trunk]
+Mask3Map	b	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	2	6182252	0.326	M[Spotimage][CL]_001
+Mask3Map	b	RT2.x RT2.y RT2.z	5	4767922	0.252	M[AMSN_V][Mb3][3Mask][Ov_AN][snow]
+Mask3Map	b	RT0.w RT1.w RT2.w RT3.w RT4.w	8	544312	0.029	M[3Mask]_NoLight_Alpha_CL
+Mask3Map	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	252763	0.013	M[Ethercurrent][CL]
+Mask3Map	b	RT0.w RT2.w RT4.x RT4.y RT4.z	1	121642	0.006	M[AMSN_V][3Mask][Ov_N][CL]_Edge_DecalBlend
+Mask3Map	b	RT0.x RT0.y RT0.z	3	112325	0.006	M[SandDune_ExtraBoss][CL]
+Mask3Map	b	RT1.y RT2.x RT2.y RT2.z	8	108573	0.006	M[Water][ocean4]
+Mask3Map	b	uv	5	77621	0.004	M[Flame_001]_MeshDecalBlend
+Mask3Map	b	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	7420	0.000	P[ChrCustomize][Skin]
+Mask3Map	b	RT1.w RT1.x RT1.y RT2.x RT2.y RT2.z	3	2240	0.000	P[ChrCustomize][Eye]
+Mask3Map	b	RT2.z RT4.z	1	0	0.000	P[WP_A_5091]_Trance
+Mask3Map	b	RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.x RT4.y RT4.z	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+Mask3Map	b	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z	1	0	0.000	M[ShrinkingPlayArea]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	30	230177195	12.151	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
+Mask3Map	g	RT4.x RT4.y RT4.z	21	32405173	1.711	M[SpiritTree_Trunk]
+Mask3Map	g	uv	24	8628931	0.456	M[Spotimage][CL]_001
+Mask3Map	g	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask3Map	g	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	2	5648317	0.298	M[Spotimage][CL]_001
+Mask3Map	g	RT2.x RT2.y RT2.z	5	1188858	0.063	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_A]
+Mask3Map	g	RT0.w RT1.y RT2.w RT4.x RT4.y RT4.z	1	770868	0.041	M[AMSN_V][3Mask][CL]_Edge_DecalBlend
+Mask3Map	g	RT1.y RT2.x RT2.y RT2.z	6	622352	0.033	M[AMSN_V][Mb3][VC][3Mask][Ov_N][Cover]
+Mask3Map	g	RT0.w RT1.w RT2.w RT3.w RT4.w	11	561424	0.030	M[3Mask]_NoLight_Alpha_CL
+Mask3Map	g	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	465486	0.025	M[supercell_CL_04]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	257998	0.014	M[AMSN][Ov_N][Mb3_ColorAdjust][3Mask_ch18]
+Mask3Map	g	RT0.w RT2.w RT2.x RT2.y RT2.z	1	121642	0.006	M[AMSN_V][3Mask][Ov_N][CL]_Edge_DecalBlend
+Mask3Map	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	112325	0.006	M[SandDune_ExtraBoss][CL]
+Mask3Map	g	RT0.w RT1.w RT2.w RT3.w RT4.x RT4.y RT4.z	1	72269	0.004	M[Flame_001]_MeshDecalBlend
+Mask3Map	g	RT2.x RT2.y RT2.z RT3.x	3	7420	0.000	P[ChrCustomize][Skin]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.w RT1.x RT1.y RT2.x RT2.y RT2.z	3	2240	0.000	P[ChrCustomize][Eye]
+Mask3Map	g	RT2.y RT4.y	1	0	0.000	P[WP_A_5091]_Trance
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.w RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	0	0.000	P[WP_A_5091]_[ChrCustomize][Eye]
+Mask3Map	g	RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.x RT4.y RT4.z	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+Mask3Map	g	RT1.w RT4.x RT4.y RT4.z	1	0	0.000	M[ShrinkingPlayArea]
+Mask3Map	g	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z	1	0	0.000	M[ShrinkingPlayArea]
+Mask3Map	g	RT0.x RT0.y RT0.z	2	0	0.000	P[BD_5050]_Skin
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	29	230250963	12.155	M[AMSN_V][Mb4_Ch2][3Mask][Ov_AN]
+Mask3Map	r	RT4.x RT4.y RT4.z	12	22926723	1.210	M[SpiritTree_Trunk]
+Mask3Map	r	uv	27	8640211	0.456	M[Spotimage][CL]_001
+Mask3Map	r	RT4.x RT4.y RT4.z uv	7	7341988	0.388	M[AMSN_V][Mb3][3Mask][Ov_AN][magma]
+Mask3Map	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+Mask3Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	1	5616248	0.296	M[Spotimage][CL]_001
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	2	2136462	0.113	M[AMSN_V][Mb2][3Mask][Ov_N][EmissiveScroll]
+Mask3Map	r	RT2.x RT2.y RT2.z	5	1637478	0.086	M[AMSN_V][Mb4][3Mask][Far_AN][cheap_A]
+Mask3Map	r	RT0.w RT1.y RT2.w	1	770868	0.041	M[AMSN_V][3Mask][CL]_Edge_DecalBlend
+Mask3Map	r	RT0.w RT1.w RT2.w RT3.w RT4.w	13	601941	0.032	M[3Mask]_NoLight_Alpha_CL
+Mask3Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	463240	0.024	M[supercell_CL_04]
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	257998	0.014	M[AMSN][Ov_N][Mb3_ColorAdjust][3Mask_ch18]
+Mask3Map	r	RT0.w RT2.w	1	121642	0.006	M[AMSN_V][3Mask][Ov_N][CL]_Edge_DecalBlend
+Mask3Map	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	112325	0.006	M[SandDune_ExtraBoss][CL]
+Mask3Map	r	RT1.y RT2.x RT2.y RT2.z	4	81610	0.004	M[Water][ocean4]
+Mask3Map	r	RT0.w RT1.w RT2.w RT3.w RT4.x RT4.y RT4.z	1	72269	0.004	M[Flame_001]_MeshDecalBlend
+Mask3Map	r	RT1.w RT2.x RT2.y RT2.z	6	20594	0.001	P[ChrCustomize][Hair]
+Mask3Map	r	RT2.x RT2.y RT2.z RT3.x	1	7420	0.000	P[ChrCustomize][Skin]
+Mask3Map	r	RT3.x	3	7420	0.000	P[ChrCustomize][Skin]
+Mask3Map	r	RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	2246	0.000	M[Waterfall2]
+Mask3Map	r	RT2.x RT4.x	1	0	0.000	P[WP_A_5091]_Trance
+Mask3Map	r	RT2.w RT3.w	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+Mask3Map	r	RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.x RT4.y RT4.z	1	0	0.000	M[Cutscene][ShrinkingPlayArea]_MeshDecalBlend
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z uv	1	0	0.000	M[ShrinkingPlayArea]
+Mask3Map	r	RT0.x RT0.y RT0.z RT1.w RT1.y RT4.x RT4.y RT4.z	1	0	0.000	M[ShrinkingPlayArea]
+Mask3Map	r	RT0.x RT0.y RT0.z	2	0	0.000	P[BD_5050]_Skin
+MaskTexture	a	RT0.w RT1.w RT2.w RT3.w RT4.w	1	1984	0.000	C[c7920]_Veill_NoLight
+Mask__BlendEdgeTexture	r	RT0.w RT1.w RT2.w RT3.w RT4.w	3	122916	0.006	C[c7540]_Core
+MetallicMap	-	(unused)	3	201808	0.011	C[c7600]_Body
+MetallicMap	r	RT1.x RT1.y RT2.x RT2.y RT2.z	99	416864721	22.006	C[DetailBlend]
+MetallicMap	r	RT1.x	48	332652344	17.561	M[AMSN][Ov_N]
+NormalMap	-	(unused)	3	201808	0.011	C[c7600]_Body
+NormalMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	29	347947926	18.368	C[DetailBlend]
+NormalMap	a	RT2.z	1	6756752	0.357	M[AMSN_V][cheap_A]
+NormalMap	a	RT1.x RT1.y RT2.x RT2.y RT2.z	1	2008512	0.106	M[AMSN][Mb2][Ov_N_AlbedoMask_MetallicMask]
+NormalMap	a	RT2.x RT2.y RT2.z	7	1506733	0.080	C[c3200]_Costume
+NormalMap	a	RT0.w RT1.w RT2.w RT3.w RT4.w	6	1073088	0.057	C[c7620]_Hair_Glow
+NormalMap	a	RT4.x RT4.y RT4.z	3	410001	0.022	M[Crystal_Goal]_004
+NormalMap	a	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	1	192448	0.010	C[c4950]_Ghost
+NormalMap	a	RT1.z	1	102142	0.005	M[AMSN_V][Ov_A]_Edge_Vegetation
+NormalMap	a	RT0.x RT0.y RT0.z	4	81610	0.004	M[Water][ocean4]
+NormalMap	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z uv	4	81610	0.004	M[Water][ocean4]
+NormalMap	a	RT1.y RT2.x RT2.y RT2.z	3	55056	0.003	M[Water][ocean4]
+NormalMap	a	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y	3	39852	0.002	M[Lava][CL]PixelDepthOffset
+NormalMap	a	RT4.x RT4.y RT4.z uv	3	39852	0.002	M[Lava][CL]PixelDepthOffset
+NormalMap	a	RT0.x RT0.y RT0.z RT1.w RT2.x RT2.y RT2.z RT3.x	3	7420	0.000	P[ChrCustomize][Skin]
+NormalMap	a	RT1.w RT2.x RT2.y RT2.z RT3.x	3	7420	0.000	P[ChrCustomize][Skin]
+NormalMap	a	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	7420	0.000	P[ChrCustomize][Skin]
+NormalMap	a	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	1	2854	0.000	M[PoisonSwamp]
+NormalMap	b	RT1.y	315	1660257322	87.645	C[DetailBlend]
+NormalMap	b	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	14	307829353	16.250	C[DetailBlend]
+NormalMap	b	RT2.x RT2.y	2	6958948	0.367	M[AMSN_V][cheap_A]
+NormalMap	b	RT1.y RT2.x RT2.y RT2.z	10	2944641	0.155	C[DetailBlend][Rich]
+NormalMap	b	RT2.y RT2.z	1	307515	0.016	M[AMSN_V][cheap_C]
+NormalMap	b	RT2.z	1	173536	0.009	M[directional_grass]
+NormalMap	b	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	2	160571	0.008	M[Crystal][Ov_N2][CrossFade]
+NormalMap	b	RT2.x RT2.y RT2.z	2	90107	0.005	M[Crystal_Goal]_007
+NormalMap	b	RT0.x RT0.y RT0.z	5	81610	0.004	M[Water][ocean4]
+NormalMap	b	RT1.y RT2.x RT2.y RT2.z uv	4	81610	0.004	M[Water][ocean4]
+NormalMap	b	uv	4	53454	0.003	M[PlacidLake]_Emissive
+NormalMap	b	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y	3	39852	0.002	M[Lava][CL]PixelDepthOffset
+NormalMap	b	RT4.x RT4.y	3	39852	0.002	M[Lava][CL]PixelDepthOffset
+NormalMap	b	RT0.w RT1.w RT2.w RT3.w RT4.w	1	38400	0.002	M[StormClouds_ExtraBoss][CL]
+NormalMap	b	RT0.x RT0.y RT0.z RT1.y uv	1	220	0.000	M[AMSN_V][Ov_N2][Crystal][CrossFade]
+NormalMap	b	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	2	0	0.000	M[Cutscene][Blood][AMSN_V][Mb3][Ov_N]
+NormalMap	b	RT2.x RT2.y RT2.z uv	1	0	0.000	M[Water][ocean]
+NormalMap	g	RT0.x RT0.y RT0.z	312	1537415146	81.160	C[DetailBlend]
+NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z uv	10	100402094	5.300	M[AMSN_V][Ov_N][Crystal]
+NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	27	73173398	3.863	M[Crystal]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	14	53547797	2.827	M[AMSN_V][Ov_N][Snow]
+NormalMap	g	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	16	29655363	1.566	M[SpiritTree_Trunk]
+NormalMap	g	RT4.x RT4.y RT4.z	9	7571546	0.400	M[Spotimage][CL]_001
+NormalMap	g	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+NormalMap	g	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	5	5740510	0.303	M[WorldTree_Leaves]_Emissive_Glow
+NormalMap	g	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	4	4213085	0.222	M[AMSN_V][Ov_N][Snow_VtxMask]
+NormalMap	g	RT0.w RT1.w RT2.w RT3.w RT4.w	3	3026296	0.160	M[PhantomCathedral_ExtraBoss][CL]
+NormalMap	g	OUT5.x RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+NormalMap	g	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	3	1244363	0.066	C[Crystal_NoTransparent]_Glow
+NormalMap	g	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w	3	676543	0.036	C[c4180]_Innner
+NormalMap	g	RT2.y	1	173536	0.009	M[directional_grass]
+NormalMap	g	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	57306	0.003	M[AMSN][Snow]
+NormalMap	g	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	1	51255	0.003	M[GhostTree_Reaf][CL]_001
+NormalMap	g	RT0.x RT0.y RT0.z uv	1	220	0.000	M[AMSN_V][Ov_N2][Crystal][CrossFade]
+NormalMap	r	RT0.x RT0.y RT0.z	309	1534882182	81.026	C[DetailBlend]
+NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z uv	10	100402094	5.300	M[AMSN_V][Ov_N][Crystal]
+NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z	27	73173398	3.863	M[Crystal]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	14	53547797	2.827	M[AMSN_V][Ov_N][Snow]
+NormalMap	r	RT0.x RT0.y RT0.z RT4.x RT4.y RT4.z	16	29655363	1.566	M[SpiritTree_Trunk]
+NormalMap	r	RT4.x RT4.y RT4.z	9	7571546	0.400	M[Spotimage][CL]_001
+NormalMap	r	OUT5.x RT0.x RT0.y RT0.z RT1.y RT2.x RT2.y RT2.z	1	6467298	0.341	M[AMSN_V][CL][3Mask][Ov_AN][Snow_VtxMask][PixelDepth]
+NormalMap	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w RT4.x RT4.y RT4.z	5	5740510	0.303	M[WorldTree_Leaves]_Emissive_Glow
+NormalMap	r	RT0.x RT0.y RT0.z RT1.y RT1.z RT2.x RT2.y RT2.z	4	4213085	0.222	M[AMSN_V][Ov_N][Snow_VtxMask]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.y	5	3111340	0.164	M[AMSN_V][Ov_N][CL]_PixelDepthOffset
+NormalMap	r	RT0.w RT1.w RT2.w RT3.w RT4.w	4	3064696	0.162	M[PhantomCathedral_ExtraBoss][CL]
+NormalMap	r	OUT5.x RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	2680632	0.142	M[AMSN_V][CL][Ov_N][Snow][PixelDephth]
+NormalMap	r	RT0.x RT0.y RT0.z RT2.x RT2.y RT2.z RT4.x RT4.y RT4.z	3	1244363	0.066	C[Crystal_NoTransparent]_Glow
+NormalMap	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT3.w RT4.w	3	676543	0.036	C[c4180]_Innner
+NormalMap	r	RT2.x	1	173536	0.009	M[directional_grass]
+NormalMap	r	RT0.x RT0.y RT0.z RT1.x RT1.y RT2.x RT2.y RT2.z	1	57306	0.003	M[AMSN][Snow]
+NormalMap	r	RT0.w RT0.x RT0.y RT0.z RT1.w RT2.w RT2.x RT2.y RT2.z RT3.w RT4.w RT4.x RT4.y RT4.z	1	51255	0.003	M[GhostTree_Reaf][CL]_001
+NormalMap	r	RT0.x RT0.y RT0.z uv	1	220	0.000	M[AMSN_V][Ov_N2][Crystal][CrossFade]
+Normal_Shininess	b	RT1.y	5	2120996	0.112	M[AMSN_V][DitherFade]
+Normal_Shininess	g	RT0.x RT0.y RT0.z	5	2120996	0.112	M[AMSN_V][DitherFade]
+Normal_Shininess	r	RT0.x RT0.y RT0.z	5	2120996	0.112	M[AMSN_V][DitherFade]
+PseudoTransparency_Anger	b	RT2.z RT4.z	1	1940952	0.102	C[c4180]_Glow
+PseudoTransparency_Anger	g	RT2.y RT4.y	1	1940952	0.102	C[c4180]_Glow
+PseudoTransparency_Anger	r	RT2.x RT4.x	1	1940952	0.102	C[c4180]_Glow
+VectorMap	g	uv	8	1138997	0.060	C[c4980]_Lwing
+VectorMap	r	uv	8	1138997	0.060	C[c4980]_Lwing

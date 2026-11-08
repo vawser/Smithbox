@@ -1,0 +1,39 @@
+Role	Routes(meshes)	Shaders	Materials	Meshes	PlacedTriangles	PlacedShare%	Triangles	ExampleModel
+AlbedoMap	Albedo:33840 BlendLayer:12546 Overlay:1677 Fur:1276	428	7023	28474	1730931255	91.376	131429908	aeg001_290
+NormalMap	Normal:35411 Overlay:13847 BlendLayer:12966 Fur:1028 Water:173 Deformer:1	417	6987	28316	1753019769	92.542	132899288	aeg001_290
+MetallicMap	Dropped:10183	113	2605	9800	490953757	25.917	47799160	aeg399_890
+Mask1Map	Dropped:8525 BlendDetailMask:3446 BlendMask:117	235	1563	8920	588333674	31.058	41047267	aeg004_114
+Mask3Map	Dropped:1596 BlendMask:1089 BlendDetailMask:35 Magma:13	115	552	2553	275357431	14.536	19422986	aeg004_114
+BlendEdge	BlendDetailMask:922	2	83	922	15927924	0.841	1683358	aeg030_903
+EmissiveMap	Emissive:613	91	337	585	48136293	2.541	4364078	aeg599_853
+g_DiffuseTexture	Albedo:460	37	39	460	119188249	6.292	559287	aeg801_250
+g_BumpmapTexture	Normal:456	36	38	456	119150629	6.290	534027	aeg801_250
+g_TranslucencyTexture	Dropped:307	32	32	307	108299048	5.717	414538	aeg801_250
+DistortionDepth	Dropped:223	23	149	223	7965538	0.421	933283	c2275
+VectorMap	Dropped:174 Deformer:64	30	107	175	10639792	0.562	779627	c4070
+Albedo	Albedo:134	5	36	134	2120996	0.112	1631405	aeg370_202
+Normal_Shininess	Normal:134	5	36	134	2120996	0.112	1631405	aeg370_202
+g_SpecularTexture	Specular:110	3	5	110	10768917	0.568	119333	aeg003_054
+FlowMap	Dropped:100	5	12	99	58836	0.003	51888	aeg576_900
+g_DiffuseTexture2	Dropped:47	1	1	47	0	0.000	94	m13_00_00_99_901308
+g_SpecularTexture2	Specular:47	1	1	47	0	0.000	94	m13_00_00_99_901308
+g_BumpmapTexture2	Dropped:47	1	1	47	0	0.000	94	m13_00_00_99_901308
+g_BumpmapTexture3	Dropped:47	1	1	47	0	0.000	94	m13_00_00_99_901308
+Emissive__Base	Emissive:52	5	18	26	2393337	0.126	172287	c5110
+AmbientOcculusionMap	Dropped:22	5	12	22	3071567	0.162	410719	aeg594_010
+Emissive__BaseDetail	Emissive:20	3	16	20	2386361	0.126	165311	c5110
+Albedo__Inside	Albedo:20	5	15	20	1064938	0.056	114605	c4382
+PseudoTransparency_Anger	Dropped:18	1	17	18	1795872	0.095	38224	c4180
+Mask__BlendEdgeTexture	Dropped:15	3	7	15	122916	0.006	16956	c4181
+Generic__AtmosphereHazeColorLUT	Dropped:14	6	13	14	59520	0.003	34816	aeg096_101
+Fade_and_FallOff_Noise	Dropped:10	1	5	10	0	0.000	63720	wp_a_5291_l
+DisplacementMap	Dropped:10	2	4	10	158742	0.008	10818	c4550
+MaskTexture	Dropped:5	2	2	5	6768	0.000	6768	c7920
+Flowmap_	Dropped:4	4	4	4	14160	0.001	14160	aeg596_311
+FadeOut_Noise	Dropped:3	2	2	3	91091	0.005	66571	c7620
+Generic__Flowmap	Dropped:3	1	1	3	14848	0.001	14848	aeg596_500
+Emissive_Flicker	Emissive:3	2	3	3	289999	0.015	10503	aeg594_010
+Generic_	Dropped:7	1	2	3	420	0.000	420	aeg394_802
+ReflectanceMap	Dropped:2	2	2	2	504290	0.027	16740	c4440
+Fade__Line	Dropped:2	1	1	2	0	0.000	12236	wp_a_6012_l
+DistortionDepth__Base	Dropped:1	1	1	1	320	0.000	320	c5210

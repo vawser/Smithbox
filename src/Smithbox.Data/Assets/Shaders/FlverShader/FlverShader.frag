@@ -46,6 +46,8 @@ layout (constant_id = 6) const bool c_transparent = false;
 
 // The material's MaterialBlending: 0 opaque, 1 alpha, 2 add, 3 subtract
 layout (constant_id = 11) const int c_blending = 0;
+// Elden Ring and later: the specular slot holds the metallic map, see FlverResource.ProcessMaterialTexture
+layout (constant_id = 12) const bool c_metallic = false;
 #define BLENDING_ALPHA 1
 layout (constant_id = 8) const bool c_detail = false;
 layout (constant_id = 9) const bool c_magma = false;
@@ -631,6 +633,14 @@ vec4 SampleLayer(int row, int layer)
 {
 	int uvSet = clamp(int(MaterialValue(ROW_UVSET, layer) & 0xFFu), 0, 1);
 	return SampleAt(MaterialValue(row, layer), uvSet, LayerTiling(row, layer), LayerScroll(row, layer));
+}
+
+// A layer's metallic as the game's shaders work it out: sat(MetallicMap.r + offset), where the offset is a
+// param of the shader (M[AMSN]'s snp_0_float_0). The metallic path keeps the offsets in row 3 as half floats
+float MetallicLayer(int layer)
+{
+	float offset = unpackHalf2x16(MaterialValue(ROW_SHININESS, layer)).x;
+	return clamp(SampleLayer(ROW_SPECULAR, layer).r + offset, 0.0, 1.0);
 }
 
 #ifdef MATERIAL_BLEND
@@ -1924,6 +1934,29 @@ void main()
 		albedo = mix(albedo, sceneparam.wetAlbedo.rgb, sceneparam.wetAlbedo.a * exposed);
 		roughness = 1.0 - mix(1.0 - roughness, clamp(sceneparam.wetShininess.x, 0.0, 1.0),
 			sceneparam.wetShininess.y * exposed);
+	}
+
+	// As the game's own shaders do (M[AMSN]_Fwd): a metal reflects its albedo and has no diffuse,
+	// anything else reflects 4%. Water keeps its own F0
+	if (c_metallic && !IsWater())
+	{
+		float metallic = MetallicLayer(0);
+#ifdef MATERIAL_BLEND
+		// Each layer's own, by the weights its albedo has
+		if (c_blendSpecular)
+		{
+			metallic = 0.0;
+			for (int i = 0; i < MAX_LAYERS; i++)
+			{
+				if (i < c_layerCount && g_weight[i] > 0.0)
+				{
+					metallic += MetallicLayer(i) * g_weight[i];
+				}
+			}
+		}
+#endif
+		F0 = mix(vec3(0.04), albedo, metallic);
+		albedo *= 1.0 - metallic;
 	}
 
 	Surface surface;
