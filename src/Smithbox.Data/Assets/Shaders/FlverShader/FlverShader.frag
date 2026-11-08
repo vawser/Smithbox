@@ -236,10 +236,6 @@ struct sceneParams
 	float rainMapSize;       // texels across
 	float rainTexelSize;     // meters per texel
 	float rainDepthScale;    // depth per meter of height
-
-	// The per-part lighting sets: entries of lightsetdata, see LightSetTable. Last, so the other shaders' copies of
-	// this struct, which stop earlier, are unchanged.
-	uint lightSetStart;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -303,27 +299,6 @@ layout(set = 4, binding = 0, std140) buffer lightmaps
     readonly lightmapData lightmapdata[];
 };
 
-// A part's own map lighting, laid out as LightSetData: what the scene params hold for the whole scene, for the
-// instances that name the set in their material ID (Demon's Souls' LightIDs). See LightSetTable.
-struct lightSetData
-{
-	mapDirectionalLight sun;
-	vec4 hemiUp;
-	vec4 hemiDown;
-	mapDirectionalLight modelLights[4];
-	vec4 modelHemiUp;
-	vec4 modelHemiDown;
-	vec4 envDiffuseScale;   // rgb: the env diffuse cubemap's scale with intensity and exposure, w: 1 when env lighting is on
-	vec4 envSpecularScale;  // rgb: the env specular cubemaps' scale
-	uvec4 envTextures;      // the cube pool indices of the diffuse cubemap and specular 0-2, 0xFFFFFFFF if not loaded
-	uvec4 envTextures2;     // x: specular 3
-	vec4 pad;
-};
-
-layout(set = 4, binding = 0, std140) buffer lightSets
-{
-    readonly lightSetData lightsetdata[];
-};
 
 layout(set = 4, binding = 0, std140) buffer irradianceVolumes
 {
@@ -586,7 +561,6 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 // State shared by the sampling helpers, set once at the start of main
 uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
-uint g_lightSet = 0u;     // the instance's own lighting set, 0 for the scene's, see LightSet
 bool g_envLit = false;    // a Demon's Souls map material lit by env cubemaps in place of the sun, see EnvLit
 float g_sunShadow = 1.0;  // how much of the sun reaches here, for the env light's shadows
 vec2 g_uv[2];
@@ -1298,61 +1272,39 @@ bool MapLighting()
 	return (sceneparam.mapLightingFlags & 1u) != 0u;
 }
 
-// The instance's own lighting set under map lighting (bits 8-14 of fsin_flags, see MeshRenderableProxy.LightSet), 0
-// for the scene's. The helpers below read the set where there is one and the scene params otherwise.
-uint LightSet()
-{
-	return MapLighting() ? (fsin_flags >> 8u) & 0x7Fu : 0u;
-}
-
-lightSetData CurrentLightSet()
-{
-	return lightsetdata[sceneparam.lightSetStart + g_lightSet];
-}
+// Per-part lighting sets (Demon's Souls' LightIDs) are disabled pending a redesign, see
+// Documentation/Claude/Older Games/DES Light Set Redesign.md. Everything is lit by the scene params.
 
 // The direction the sun's light travels in, normalized
 vec3 SunTravel()
 {
-	vec3 travel = g_lightSet != 0u ? CurrentLightSet().sun.direction.xyz : sceneparam.lightDirection.xyz;
+	vec3 travel = sceneparam.lightDirection.xyz;
 	return dot(travel, travel) > 1e-10 ? normalize(travel) : vec3(0.0, -1.0, 0.0);
 }
 
 // The sun's color and intensity (a), and its highlights'
 vec4 SunColor()
 {
-	return g_lightSet != 0u ? CurrentLightSet().sun.color : sceneparam.sunColor;
+	return sceneparam.sunColor;
 }
 
 vec4 SunSpecColor()
 {
-	return g_lightSet != 0u ? CurrentLightSet().sun.specColor : sceneparam.sunSpecColor;
+	return sceneparam.sunSpecColor;
 }
 
 // One of the model set's four lights
 mapDirectionalLight ModelLight(uint i)
 {
-	return g_lightSet != 0u ? CurrentLightSet().modelLights[i] : sceneparam.modelLights[i];
+	return sceneparam.modelLights[i];
 }
 
 // The map's GPARAM hemisphere light arriving from direction D: its up color from above, its down color from below
-// Characters take the model set's hemisphere; a part with its own lighting set takes that set's
+// Characters take the model set's hemisphere
 vec3 Hemisphere(vec3 D)
 {
-	vec3 up;
-	vec3 down;
-
-	if (g_lightSet != 0u)
-	{
-		lightSetData set = CurrentLightSet();
-		up = g_modelLit ? set.modelHemiUp.rgb : set.hemiUp.rgb;
-		down = g_modelLit ? set.modelHemiDown.rgb : set.hemiDown.rgb;
-	}
-	else
-	{
-		up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
-		down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
-	}
-
+	vec3 up = g_modelLit ? sceneparam.modelHemiUp.rgb : sceneparam.hemiUp.rgb;
+	vec3 down = g_modelLit ? sceneparam.modelHemiDown.rgb : sceneparam.hemiDown.rgb;
 	return mix(down, up, clamp(D.y * 0.5 + 0.5, 0.0, 1.0));
 }
 
@@ -1368,11 +1320,10 @@ bool ModelLit()
 
 // Whether the material is a Demon's Souls map material (its MTD's g_LightingType 3) and its lighting set has env
 // cubemaps: then it is lit as the game's HemEnv shaders light it, by the hemisphere and the cubemaps, without the sun.
-// The scene's own set is entry 0 of the table, so this reads the set even when g_lightSet is 0.
+// Disabled with the lighting sets that held the cubemaps, pending the redesign: nothing is env lit.
 bool EnvLit()
 {
-	return MapLighting() && (MaterialValue(ROW_UVSET, 0) & MATERIAL_ENV_LIT) != 0u &&
-		lightsetdata[sceneparam.lightSetStart + g_lightSet].envDiffuseScale.w > 0.5;
+	return false;
 }
 
 // A cube pool texture by its index, sampled at direction D in the game's space, as the env maps of the other games
@@ -1386,18 +1337,11 @@ vec3 EnvCube(uint index, vec3 D)
 
 // The env light of a HemEnv material: EnvDif towards N, and the specular cubemap its MTD's g_EnvSpcSlotNo names
 // towards R, which already holds the highlight's shape at that slot's power. Its shadows take g_ShadowPowMul of it.
+// Disabled with the lighting sets, which held the cubemaps and their scales; never called while EnvLit is false.
 void EnvLight(vec3 N, vec3 R, out vec3 diffuse, out vec3 specular)
 {
-	lightSetData set = lightsetdata[sceneparam.lightSetStart + g_lightSet];
-	uint flags = MaterialValue(ROW_UVSET, 0);
-	uint slot = (flags >> 10u) & 3u;
-	float shadowPow = float((flags >> 12u) & 15u) / 15.0;
-	float shadow = mix(1.0, g_sunShadow, shadowPow);
-
-	uint spcIndex = slot == 0u ? set.envTextures.y : slot == 1u ? set.envTextures.z : slot == 2u ? set.envTextures.w : set.envTextures2.x;
-
-	diffuse = EnvCube(set.envTextures.x, N) * set.envDiffuseScale.rgb * shadow;
-	specular = EnvCube(spcIndex, R) * set.envSpecularScale.rgb * shadow;
+	diffuse = vec3(0.0);
+	specular = vec3(0.0);
 }
 
 // Ambient light from direction N where there are no volumes: the map's hemisphere when its GPARAMs light the
@@ -1969,7 +1913,6 @@ void main()
 
 	g_mat = fsin_mat;
 	g_modelLit = ModelLit();
-	g_lightSet = LightSet();
 	g_envLit = !g_modelLit && EnvLit();
 
 	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);

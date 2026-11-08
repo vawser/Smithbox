@@ -179,12 +179,9 @@ bool IsAnimated()
 	return z != 0u && (z & SKIN_KIND_MASK) != SKIN_KIND_LIGHTMAP;
 }
 
-// The top bit of the instance's material ID is a flag, MeshRenderableProxy.NoShadowMaterialFlag, and bits 24-30 the
-// instance's lighting set, MeshRenderableProxy.LightSet (0 for the scene's own); the material is in the low 24
-#define MATERIAL_ID_MASK 0x00FFFFFFu
+// The top bit of the instance's material ID is a flag, MeshRenderableProxy.NoShadowMaterialFlag
+#define MATERIAL_ID_MASK 0x7FFFFFFFu
 #define MATERIAL_NO_SHADOW 0x80000000u
-#define MATERIAL_LIGHT_SET_SHIFT 24u
-#define MATERIAL_LIGHT_SET_MASK 0x7Fu
 
 // UVs are stored as signed 16 bit fixed point with 11 fractional bits
 const float UV_SCALE = 1.0 / 2048.0;
@@ -539,9 +536,8 @@ void main()
 	fsin_color = vec4(color) / 255.0;
 
 	fsin_mat = idata[gl_InstanceIndex].materialID.x & MATERIAL_ID_MASK;
-	// bit 0: no shadows; bits 8-14: the lighting set
-	fsin_flags = ((idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u) |
-		(((idata[gl_InstanceIndex].materialID.x >> MATERIAL_LIGHT_SET_SHIFT) & MATERIAL_LIGHT_SET_MASK) << 8u);
+	// bit 0: no shadows
+	fsin_flags = (idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
 
 #ifdef MATERIAL_BLEND

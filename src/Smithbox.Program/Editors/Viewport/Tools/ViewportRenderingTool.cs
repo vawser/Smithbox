@@ -924,19 +924,7 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Map_DrawParam_Point_Lights);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Point_Lights_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part")}##drawParamPerPart",
-            ref CFG.Current.Viewport_Map_DrawParam_Per_Part);
-        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_TT"));
-
-        if (CFG.Current.Viewport_Map_DrawParam_Per_Part)
-        {
-            var (litParts, sets) = bank.PartLightingCounts;
-            ImGui.Indent();
-            ImGui.TextDisabled(DrawParamLightingBank.ChosenRow(DrawParamLightingBank.LightBank) >= 0
-                ? LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_Overridden")
-                : LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_Counts", litParts, sets));
-            ImGui.Unindent();
-        }
+        // The per-part lighting option is hidden while lighting sets are disabled, see DES Light Set Redesign.md
 
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_DrawParam_Source_TT"));

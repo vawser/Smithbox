@@ -146,7 +146,7 @@ public static class SceneRenderer
         IrradianceVolumes = new IrradianceVolumeTable(MaterialBufferAllocator);
         MapLights = new SceneLightTable(MaterialBufferAllocator);
         Lightmaps = new LightmapTable(MaterialBufferAllocator);
-        LightSets = new LightSetTable(MaterialBufferAllocator);
+        // Per-part lighting sets are disabled pending a redesign (DES Light Set Redesign.md), so no table is allocated
         // The limit is typed freely in the preferences. A size of 0 is invalid for a Vulkan buffer, and a large
         // count would overflow the size, either of which fails startup and silently falls back to OpenGL.
         var boneLimit = Math.Clamp(CFG.Current.Viewport_Limit_Buffer_Flver_Bone, MinBoneLimit, MaxBoneLimit);

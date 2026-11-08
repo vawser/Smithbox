@@ -11,6 +11,8 @@
     - Fix NR create
     
 - Game Rendering:
+    - AEG007_183: extremely bright glow
+
     - Go through each project type to implement:
         - GPARAM side elements
         - Proper material rendering

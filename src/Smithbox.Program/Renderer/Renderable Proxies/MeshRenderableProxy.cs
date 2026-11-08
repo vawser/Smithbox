@@ -1055,10 +1055,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             dat.MaterialID |= NoShadowMaterialFlag;
         }
 
-        if (_lightSet != 0 && UsesFlverShader)
-        {
-            dat.MaterialID |= (_lightSet & LightSetMask) << LightSetShift;
-        }
+        // _lightSet is no longer packed into the material ID: per-part lighting sets are disabled pending a redesign
 
         if (_meshProvider.BoneBuffer != null)
         {
