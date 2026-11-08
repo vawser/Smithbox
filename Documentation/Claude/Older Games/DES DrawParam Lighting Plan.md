@@ -191,6 +191,55 @@ Expected for m01 (the Nexus):
 - **Env textures:** link `envDif` and `envSpc_0-3` to textures (survey `other/envlight.tpf` and `EnvLightTexBank`).
 - **Point lights:** find where the `Light` events' positions and `PointLightID`s resolve before feeding `MapLightCollector`. Neither a region nor a dummy is involved; the EBOOT is encrypted, so this is data-only research.
 
+#### Phase 5 research (2026-11-08)
+
+The evidence is from `Tools/DesDrawParamSurvey` modes `envtex` (writes `envtex.md`) and `envexport` (writes `envexport.md` and decodes every env cubemap to `envtex/*.png`, six faces in a strip), and from `Tools/DesEnvProbe` (modes `shaders`, `mtds`, `mtdcorr`, `peaks`, `lightpeaks`).
+
+- **Where the textures are:** `envDif` = N names `EnvDif_mAA_NNN` and `envSpc_k` = N names `EnvSpc_mAA_NNN`, cubemaps in `map/mAA/mAA_9999.tpf`. Names compare case-insensitively (`envdif_m08_100`, `Envspc_m06_014`). **Every ID of every LightBank row in every area resolves** (320 of 320 per bank; both `mAA_` and `sAA_LightBank`). `other/envlight.tpf` holds a default set, `EnvDif_def_000` and `EnvSpc_def_000-003`.
+- **The textures:** 32² to 128² cubemaps, DXT1 (TPF format 0) or A8R8G8B8 (format 10), with or without mips.
+- **`EnvSpc_0-3` are four specular powers of the same light rig.** Peaks rise and averages fall from 0 to 3 (m01: peak 115 → 191 → 255 → 165, average 26 → 30 → 19 → 12); `_003` is a few pinpoints, `_000` broad blobs. `EnvDif` is the same rig convolved for diffuse.
+- **The MTD picks the map:** `g_EnvSpcSlotNo` (0-3) is in every DES MTD (slot 0: 134, 1: 40, 2: 52, 3: 39). It loosely follows `g_SpecularPower`: slot 1 is power 4-8, slot 2 is 5-70 (mostly 7), slot 3 is 60 (35 of 39); slot 0 is the default for everything.
+- **The lighting model is per material, from the MTD's `g_LightingType`:**
+
+  | `g_LightingType` | Materials | Pixel shader family (`ds_flver.shaderbnd`) |
+  |---|---|---|
+  | 3 | all 91 `map` MTDs, the area MTDs (stone, wood, water, lava) | `…_HemEnv`, `…_HemEnvLerp`: hemisphere + env cubemaps |
+  | 1 | characters (40), parts/armour (21), damage, most SFX | `…_HemDir3`: hemisphere + three directional lights |
+  | 0 | sky, clouds, light shafts, additive SFX | unlit |
+
+  Every variant also comes with `Sdw`/`Csd` (shadowed), `Lit` (lightmapped) and `PntS`/`PntSS`/`PntSSSS` (1, 2 or 4 point lights). So in the game **map pieces aren't lit by LightBank's three directional lights at all**; their light comes from the env cubemaps, scaled by LightBank's `envDif_col*` and `envSpc_col*`. Only characters and parts use the three lights.
+- **`_du`/`_dd`, a reading:** with the split above, `_du`/`_dd` ("Dir up/down") is probably the hemisphere of the `HemDir3` shaders (characters) and `_u`/`_d` that of `HemEnv` (map). The magnitudes fit: m01 row 0 has `_u`/`_d` at 0.1 beside an `envDif` scale of 4.0, and `_du`/`_dd` at 1.6/1.44 beside a 2.6 sun.
+- **`EnvLightTexBank` is unused at run time:** every row in every area (loose `mAA_envlighttexbank.param` and in the parambnd) has `isUse` 0 and default values. Its fields (ten directional lights, `resNameId_Dif0/Spc0-3`, `sepcPow` per map) describe the authoring tool that baked these cubemaps.
+- **The rigs don't follow LightBank:** identical cubemaps are reused across areas (m05's `_000-003` are m01's, m08's `_010-013` are m02's, m99's are m08's). Their peaks don't line up with the rows' lights, so they can't settle the yaw convention. m01's brightest pinpoint is at 28° elevation, which agrees with the elevation reading, but that alone proves little.
+- **Loader bug:** PS3 TPF format 10 (`EnvDif/EnvSpc` of m02, m04, m06, m08 and m99) is 4 bytes a pixel in A, R, G, B byte order after deswizzling. The Headerizer's DDS header calls it 24-bit RGB, so `TexturePool.FillWithTPF` takes its "24-bit formats" branch and **drops it**. This affects every DES format-10 texture, not just the env maps.
+
+#### Phase 5a as built: env lighting (2026-11-08; not yet checked in the app)
+
+The user chose the game's split by `g_LightingType`.
+
+- **Loader fix:** `TexturePool.FillWithTPF` reorders PS3 format-10 data from A,R,G,B to R,G,B,A (`Ps3ArgbToRgba`) and uploads it as `R8G8B8A8Srgb`. That covers every DES format-10 texture, env map or not.
+- **Material flags** (`Material.uvSet`, above the UV set; `FlverResource.MarkModelLighting`, DES only, from the MTD):
+  - `g_LightingType` 1 sets `ModelLightingFlag`, whatever the model's name.
+  - 3 sets `EnvLightingFlag` (0x200), with `g_EnvSpcSlotNo` in bits 10-11 and `g_ShadowPowMul` in fifteenths in bits 12-15 (default 0.8).
+  - Any other value, or no MTD, is lit as before.
+- **Adapter:** `ApplyEnv` fills a new `GparamLighting.Env` (`GparamEnvLighting`) from the LightBank row: `EnvDif_mAA_NNN`, `EnvSpc_mAA_NNN` ×4, and the scales `envDif_col*`/`envSpc_col*` (rgb/255, colA/100). The model set's hemisphere is now **`_du`/`_dd`**; the scene keeps `_u`/`_d`.
+- **Light sets:** `LightSetData` grew from 320 to 384 bytes, with the env scales (folded with the exposure) and five cube-pool indices (`NoTexture` = not loaded, looked up again each frame). **Entry 0 is now the scene's own lighting**, so the shader reads env from `lightsetdata[start + set]` for every part.
+- **Shader** (`FlverShader.frag`, all variants recompiled): `EnvLit()` is true for flagged materials whose set has env on. For them:
+  - **No sun:** the sun's direct light is skipped.
+  - **Diffuse:** `EnvDif(N) × scale × shadow` is added to the hemisphere, unless a DES lightmap already supplies the light from around.
+  - **Specular:** `specular map × EnvSpc[slot](R) × scale × shadow`.
+  - **Shadow:** `mix(1, sunShadow, g_ShadowPowMul)`, with the cascades still along ShadowBank's light.
+  - **Cube lookup:** `D × (1, 1, −1)`, the convention the other games' env maps use; unverified for DES.
+- **Menu:** the DES tab has a checkbox, "Light Map Materials by Env Cubemaps" (`CFG.Viewport_Map_DrawParam_Env_Lighting`). Off, map materials take the sun as before. Resolved Values has an Env line naming the cubemaps, their scales, and how many of the five are loaded.
+- **Not done:** `g_LightingType` 0 (unlit: sky, clouds, light shafts) is still lit as before; `HemEnvLerp` (probably a blend between two sets) isn't modelled.
+
+Check in the app:
+- **m01_00_00_00 (the Nexus), map pieces:** they lose the hard sun and show the env light; the Env line reads `EnvDif_m01_000 … 5 of 5 loaded`. Shiny materials (slot 3, power 60) show small sharp highlights; slot 0 shows broad ones.
+- **m02_00_00_00 (Boletaria):** its cubemaps are format 10. Before this fix they never loaded, so 5 of 5 shows the loader fix working.
+- **Characters on m01:** still lit by LightBank's three lights, now with the brighter `_du`/`_dd` hemisphere (1.6 / 1.44).
+- **Toggling the checkbox** should switch between the env look and the old sun look.
+- **If the env light looks upside down or mirrored**, the cube convention is wrong; say which way.
+
 ## Open questions
 
 | Question | How to settle |

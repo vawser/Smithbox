@@ -381,6 +381,7 @@ public class DrawParamLightingBank
         if (lightRow != null)
         {
             ApplyLights(lightRow, lighting);
+            ApplyEnv(lightRow, area, lighting.Env);
             foreach (var field in LightSourceFields)
                 lighting.Sources[field] = Source(LightBank, lightRow);
         }
@@ -405,7 +406,9 @@ public class DrawParamLightingBank
         if (fogRow != null)
             ApplyFog(fogRow, lighting.PostEffects.DistanceFog);
 
-        // The model set: the same lights, which characters take all of (the scene takes only the sun and hemisphere)
+        // The model set, the game's HemDir3 shaders (MTD g_LightingType 1: characters and parts): the three lights and
+        // the _du/_dd hemisphere. The scene's set is that of the HemEnv shaders (g_LightingType 3, the map), which take
+        // the _u/_d hemisphere and the env cubemaps and leave the lights out; the shader does that per material.
         var models = new GparamLighting
         {
             File = lighting.File,
@@ -415,7 +418,11 @@ public class DrawParamLightingBank
         };
 
         if (lightRow != null)
+        {
             ApplyLights(lightRow, models);
+            models.HemiUp = Color(lightRow, "_du");
+            models.HemiDown = Color(lightRow, "_dd");
+        }
 
         models.Exposure = lighting.Exposure;
         models.AutoExposure = lighting.AutoExposure;
@@ -447,6 +454,34 @@ public class DrawParamLightingBank
 
         lighting.HemiUp = Color(row, "_u");
         lighting.HemiDown = Color(row, "_d");
+    }
+
+    /// <summary>
+    /// LightBank's env cubemaps: envDif and envSpc_0-3 are IDs of the cubemaps EnvDif_mAA_NNN and EnvSpc_mAA_NNN in
+    /// the area's map/mAA/mAA_9999.tpf (every ID of every row resolves), envDif_col* and envSpc_col* their scales,
+    /// colA a percentage as elsewhere. The four specular maps are one light rig at four specular powers, and each
+    /// material reads the one its MTD's g_EnvSpcSlotNo names.
+    /// </summary>
+    private static void ApplyEnv(Param.Row row, string area, GparamEnvLighting env)
+    {
+        env.Enabled = true;
+        env.DiffuseTexture = $"EnvDif_{area}_{(int)Get(row, "envDif"):000}";
+
+        for (var i = 0; i < 4; i++)
+            env.SpecularTextures[i] = $"EnvSpc_{area}_{(int)Get(row, $"envSpc_{i}", i):000}";
+
+        env.DiffuseColor = EnvColor(row, "envDif_");
+        env.SpecularColor = EnvColor(row, "envSpc_");
+    }
+
+    /// <summary>An env scale, prefix colR/G/B/A, as rgb / 255 and w = colA / 100</summary>
+    private static Vector4 EnvColor(Param.Row row, string prefix)
+    {
+        return new Vector4(
+            Get(row, $"{prefix}colR", 255.0f) / 255.0f,
+            Get(row, $"{prefix}colG", 255.0f) / 255.0f,
+            Get(row, $"{prefix}colB", 255.0f) / 255.0f,
+            Get(row, $"{prefix}colA", 100.0f) / 100.0f);
     }
 
     private static void ReadLight(Param.Row row, string index, GparamDirectionalLight light)

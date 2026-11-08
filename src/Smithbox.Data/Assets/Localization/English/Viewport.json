@@ -1837,6 +1837,22 @@
       "Text": "Fog: off for this row"
     },
     {
+      "Key": "VIEWPORT_Rendering_DrawParam_Env_Lighting",
+      "Text": "Light Map Materials by Env Cubemaps"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Env_Lighting_TT",
+      "Text": "Light the map's materials as the game's HemEnv shaders do (MTD g_LightingType 3): by the hemisphere and the LightBank row's env cubemaps from the area's mAA_9999.tpf, without the sun. Characters and equipment (g_LightingType 1) keep the row's three lights. Off, every material takes the sun."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Env_Values",
+      "Text": "Env: diffuse {0} x {1}; specular {2} x {3}; {4} of 5 cubemaps loaded"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Env_Off",
+      "Text": "Env: off"
+    },
+    {
       "Key": "VIEWPORT_Rendering_DrawParam_From_Part_None_TT",
       "Text": "Select a map part to light with the rows it picks."
     },

@@ -20,6 +20,22 @@ public unsafe struct Material
     /// </summary>
     public const ushort ModelLightingFlag = 0x100;
 
+    /// <summary>
+    ///     Set in <see cref="uvSet" />: a Demon's Souls material lit as the game's HemEnv shaders light it (its MTD's
+    ///     g_LightingType 3, every map material): the hemisphere and the LightBank row's env cubemaps, and no sun.
+    ///     The env specular map it reads is in <see cref="EnvSpecularSlotMask" />, the share of the light its
+    ///     shadows take in <see cref="EnvShadowMask" />.
+    /// </summary>
+    public const ushort EnvLightingFlag = 0x200;
+
+    /// <summary>The MTD's g_EnvSpcSlotNo (0-3), which of the four env specular maps the material reads</summary>
+    public const ushort EnvSpecularSlotMask = 0x0C00;
+    public const int EnvSpecularSlotShift = 10;
+
+    /// <summary>The MTD's g_ShadowPowMul (0-1) in fifteenths</summary>
+    public const ushort EnvShadowMask = 0xF000;
+    public const int EnvShadowShift = 12;
+
     // Row 0: albedo, layers 0-3
     public ushort colorTex;
     public ushort colorTex2;

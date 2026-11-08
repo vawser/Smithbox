@@ -1379,6 +1379,10 @@ public class CFG
     // Whether each part is lit by the LightBank row its own LightID picks, rather than all by one row
     public bool Viewport_Map_DrawParam_Per_Part = true;
 
+    // Whether Demon's Souls' map materials are lit as the game's HemEnv shaders light them, by the hemisphere and the
+    // LightBank row's env cubemaps instead of the sun; off, they take the sun as characters do
+    public bool Viewport_Map_DrawParam_Env_Lighting = true;
+
     // Whether the map lighting's colour correction (Demon's Souls' ToneCorrectBank) is drawn
     public bool Viewport_Post_Tone_Correction = true;
 

@@ -40,6 +40,211 @@ if (args.Length > 3 && args[3] == "lights")
 }
 
 var defs = Directory.GetFiles(defFolder, "*.xml").Select(f => PARAMDEF.XmlDeserialize(f)).ToList();
+
+if (args.Length > 3 && args[3] == "envexport")
+{
+    // Phase 5: decode the env cubemaps (DXT1 = TPF format 0, A8R8G8B8 = format 10) and write each as a strip of its
+    // six faces (+X -X +Y -Y +Z -Z, DDS order) to a PNG, with each face's average colour, to see what the four
+    // EnvSpc maps of a set are and how bright the textures are against the LightBank scales.
+    var outDir = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(reportPath))!, "envtex");
+    Directory.CreateDirectory(outDir);
+    var o = new StringBuilder();
+    o.AppendLine("# DES env cubemap export");
+    o.AppendLine();
+    o.AppendLine("Average colour per face, stored values 0-255 (+X -X +Y -Y +Z -Z), and the whole cube's average.");
+    o.AppendLine();
+    var tpfs = new List<string> { Path.Combine(root, "other", "envlight.tpf") };
+    tpfs.AddRange(Directory.GetDirectories(Path.Combine(root, "map"), "m??").Select(d => Path.Combine(d, Path.GetFileName(d) + "_9999.tpf")).Where(File.Exists));
+    foreach (var tpfPath in tpfs)
+    {
+        var tpf = TPF.Read(tpfPath);
+        o.AppendLine($"## {Path.GetRelativePath(root, tpfPath)}");
+        o.AppendLine();
+        o.AppendLine("| Texture | Size | Mips | +X | -X | +Y | -Y | +Z | -Z | Cube avg | Max |");
+        o.AppendLine("|---|---|---|---|---|---|---|---|---|---|---|");
+        foreach (var t in tpf.Textures.OrderBy(t => t.Name, StringComparer.OrdinalIgnoreCase))
+        {
+            byte[] dds = t.Headerize();
+            int h = BitConverter.ToInt32(dds, 12), w = BitConverter.ToInt32(dds, 16), mips = Math.Max(1, BitConverter.ToInt32(dds, 28));
+            int pfFlags = BitConverter.ToInt32(dds, 80), fourCC = BitConverter.ToInt32(dds, 84), bits = BitConverter.ToInt32(dds, 88);
+            uint rMask = BitConverter.ToUInt32(dds, 92), gMask = BitConverter.ToUInt32(dds, 96), bMask = BitConverter.ToUInt32(dds, 100);
+            bool dxt1 = fourCC == 0x31545844;
+            // PS3 format 10: the Headerizer's DDS says 24-bit RGB, but the deswizzled data is 4 bytes a pixel, A R G B
+            bool argbBytes = !dxt1 && t.Format == 10 && (dds.Length - 128) >= w * h * 4 * 6;
+            if (argbBytes) bits = 32;
+            int offset = 128;
+            int MipBytes(int mw, int mh) => dxt1 ? Math.Max(1, (mw + 3) / 4) * Math.Max(1, (mh + 3) / 4) * 8 : mw * mh * (bits / 8);
+            int faceBytes = 0;
+            for (int m = 0; m < mips; m++) faceBytes += MipBytes(Math.Max(1, w >> m), Math.Max(1, h >> m));
+
+            using var img = new SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(w * 6, h);
+            var faceAvg = new string[6];
+            double tr = 0, tg = 0, tb = 0; int maxV = 0;
+            for (int face = 0; face < 6; face++)
+            {
+                int start = offset + face * faceBytes;
+                if (start + MipBytes(w, h) > dds.Length) { faceAvg[face] = "—"; continue; }
+                var px = new (byte R, byte G, byte B)[w * h];
+                if (dxt1)
+                {
+                    for (int by = 0; by < (h + 3) / 4; by++)
+                        for (int bx = 0; bx < (w + 3) / 4; bx++)
+                        {
+                            int b = start + (by * ((w + 3) / 4) + bx) * 8;
+                            ushort c0 = BitConverter.ToUInt16(dds, b), c1 = BitConverter.ToUInt16(dds, b + 2);
+                            uint idx = BitConverter.ToUInt32(dds, b + 4);
+                            (int R, int G, int B) U(ushort c) => (((c >> 11) & 31) * 255 / 31, ((c >> 5) & 63) * 255 / 63, (c & 31) * 255 / 31);
+                            var p0 = U(c0); var p1 = U(c1);
+                            (int R, int G, int B)[] pal = c0 > c1
+                                ? new (int R, int G, int B)[] { p0, p1, ((2 * p0.R + p1.R) / 3, (2 * p0.G + p1.G) / 3, (2 * p0.B + p1.B) / 3), ((p0.R + 2 * p1.R) / 3, (p0.G + 2 * p1.G) / 3, (p0.B + 2 * p1.B) / 3) }
+                                : new (int R, int G, int B)[] { p0, p1, ((p0.R + p1.R) / 2, (p0.G + p1.G) / 2, (p0.B + p1.B) / 2), (0, 0, 0) };
+                            for (int i = 0; i < 16; i++)
+                            {
+                                int x = bx * 4 + i % 4, y = by * 4 + i / 4;
+                                if (x >= w || y >= h) continue;
+                                var c = pal[(idx >> (2 * i)) & 3];
+                                px[y * w + x] = ((byte)c.R, (byte)c.G, (byte)c.B);
+                            }
+                        }
+                }
+                else
+                {
+                    int bpp = bits / 8;
+                    int Shift(uint mask) => mask == 0 ? 0 : System.Numerics.BitOperations.TrailingZeroCount(mask);
+                    for (int i = 0; i < w * h; i++)
+                    {
+                        if (argbBytes) { px[i] = (dds[start + i * 4 + 1], dds[start + i * 4 + 2], dds[start + i * 4 + 3]); continue; }
+                        uint v = bpp == 4 ? BitConverter.ToUInt32(dds, start + i * 4) : (uint)(dds[start + i * bpp] | dds[start + i * bpp + 1] << 8 | dds[start + i * bpp + 2] << 16);
+                        px[i] = ((byte)((v & rMask) >> Shift(rMask)), (byte)((v & gMask) >> Shift(gMask)), (byte)((v & bMask) >> Shift(bMask)));
+                    }
+                }
+                double r = 0, g = 0, bl = 0;
+                for (int y = 0; y < h; y++)
+                    for (int x = 0; x < w; x++)
+                    {
+                        var c = px[y * w + x];
+                        img[face * w + x, y] = new SixLabors.ImageSharp.PixelFormats.Rgba32(c.R, c.G, c.B, 255);
+                        r += c.R; g += c.G; bl += c.B; maxV = Math.Max(maxV, Math.Max(c.R, Math.Max(c.G, c.B)));
+                    }
+                r /= w * h; g /= w * h; bl /= w * h;
+                tr += r / 6; tg += g / 6; tb += bl / 6;
+                faceAvg[face] = $"{r:0},{g:0},{bl:0}";
+            }
+            var pngName = $"{Path.GetFileNameWithoutExtension(tpfPath)}_{t.Name}.png";
+            SixLabors.ImageSharp.ImageExtensions.SaveAsPng(img, Path.Combine(outDir, pngName));
+            o.AppendLine($"| {t.Name} | {w}x{h} | {mips} | {string.Join(" | ", faceAvg)} | {tr:0},{tg:0},{tb:0} | {maxV} |");
+        }
+        o.AppendLine();
+    }
+    File.WriteAllText(reportPath, o.ToString());
+    Console.WriteLine($"Wrote {reportPath} and {outDir}");
+    return;
+}
+
+if (args.Length > 3 && args[3] == "envtex")
+{
+    // Phase 5: what are the LightBank envDif/envSpc IDs? List other/envlight.tpf, the loose mAA_envlighttexbank.param
+    // files and every LightBank row's env IDs, and look for env-looking textures in the map TPFs.
+    var o = new StringBuilder();
+    o.AppendLine("# DES env light textures survey");
+    o.AppendLine();
+    void ListTpf(string path)
+    {
+        var tpf = TPF.Read(path);
+        o.AppendLine($"### {Path.GetRelativePath(root, path)} ({tpf.Textures.Count} textures, platform {tpf.Platform})");
+        o.AppendLine();
+        o.AppendLine("| Name | Format | Type | Mips | Size | Bytes | Flags1 |");
+        o.AppendLine("|---|---|---|---|---|---|---|");
+        foreach (var t in tpf.Textures)
+            o.AppendLine($"| {t.Name} | {t.Format} | {t.Type} | {t.Mipmaps} | {(t.Header == null ? "—" : $"{t.Header.Width}x{t.Header.Height}")} | {t.Bytes.Length} | {t.Flags1} |");
+        o.AppendLine();
+    }
+    ListTpf(Path.Combine(root, "other", "envlight.tpf"));
+
+    // Env-looking textures in the map folders' TPFs
+    o.AppendLine("## Env-looking textures in map TPFs");
+    o.AppendLine();
+    foreach (var tpfPath in Directory.GetFiles(Path.Combine(root, "map"), "*.tpf*", SearchOption.AllDirectories))
+    {
+        try
+        {
+            var bytes = tpfPath.EndsWith(".dcx") ? DCX.Decompress(tpfPath).ToArray() : File.ReadAllBytes(tpfPath);
+            var tpf = TPF.Read(bytes);
+            var hits = tpf.Textures.Where(t => t.Name.Contains("env", StringComparison.OrdinalIgnoreCase) || t.Type == TPF.TexType.Cubemap).ToList();
+            if (hits.Count > 0)
+                o.AppendLine($"- {Path.GetRelativePath(root, tpfPath)}: " + string.Join(", ", hits.Take(12).Select(t => $"{t.Name} ({t.Type}, fmt {t.Format}, {(t.Header == null ? "?" : $"{t.Header.Width}x{t.Header.Height}")})")) + (hits.Count > 12 ? $" … {hits.Count - 12} more" : ""));
+        }
+        catch (Exception e) { o.AppendLine($"- {Path.GetRelativePath(root, tpfPath)}: read failed ({e.GetType().Name})"); }
+    }
+    o.AppendLine();
+
+    // The loose EnvLightTexBank params
+    var envDef = defs.First(d => d.ParamType.Contains("ENV_LIGHT", StringComparison.OrdinalIgnoreCase));
+    o.AppendLine($"## Loose EnvLightTexBank params (paramdef {envDef.ParamType})");
+    o.AppendLine();
+    foreach (var pPath in Directory.GetFiles(Path.Combine(root, "param", "drawparam"), "*_envlighttexbank.param"))
+    {
+        var p = Param.Read(File.ReadAllBytes(pPath));
+        o.AppendLine($"### {Path.GetFileName(pPath)} ({p.ParamType}, {p.Rows.Count} rows)");
+        o.AppendLine();
+        if (p.ParamType != envDef.ParamType) { o.AppendLine($"- param type differs from the def; skipped"); o.AppendLine(); continue; }
+        p.ApplyParamdef(envDef);
+        foreach (var r in p.Rows)
+        {
+            var vals = r.Cells.Where(c => c.Def.DisplayType != PARAMDEF.DefType.dummy8 && !(c.Def.InternalName.StartsWith("col") || c.Def.InternalName.StartsWith("degRot")) || (c.Def.InternalName.StartsWith("colA") && Convert.ToInt32(c.Value) != 0))
+                .Select(c => $"{c.Def.InternalName}={c.Value}");
+            o.AppendLine($"- **{r.ID}** '{r.Name}': {string.Join(", ", vals)}");
+        }
+        o.AppendLine();
+    }
+
+    // The bnd EnvLightTexBank (inside aAA_drawparam.parambnd) for comparison, and every LightBank row's env IDs
+    o.AppendLine("## LightBank env IDs per area (envDif / envSpc_0-3 → rows)");
+    o.AppendLine();
+    foreach (var bndPath in Directory.GetFiles(Path.Combine(root, "param", "drawparam"), "a??_drawparam.parambnd"))
+    {
+        var area = Path.GetFileName(bndPath).Substring(1, 2);
+        foreach (var f in BND3.Read(bndPath).Files)
+        {
+            var name = Path.GetFileNameWithoutExtension(f.Name);
+            var p = Param.Read(f.Bytes);
+            var def = defs.FirstOrDefault(d => d.ParamType == p.ParamType);
+            if (def == null) continue;
+            p.ApplyParamdef(def);
+            if (name.EndsWith("EnvLightTexBank"))
+            {
+                o.AppendLine($"- a{area} bnd {name}: rows " + string.Join("; ", p.Rows.Select(r => $"{r.ID} isUse={r["isUse"].Value.Value} dif={r["resNameId_Dif0"].Value.Value} spc={r["resNameId_Spc0"].Value.Value},{r["resNameId_Spc1"].Value.Value},{r["resNameId_Spc2"].Value.Value},{r["resNameId_Spc3"].Value.Value}")));
+            }
+            if (name.EndsWith("_LightBank"))
+            {
+                var groups = p.Rows.GroupBy(r => $"{r["envDif"].Value.Value}/{r["envSpc_0"].Value.Value},{r["envSpc_1"].Value.Value},{r["envSpc_2"].Value.Value},{r["envSpc_3"].Value.Value}")
+                    .Select(g => $"{g.Key} ×{g.Count()}");
+                o.AppendLine($"- a{area} {name} ({f.Name}): " + string.Join("; ", groups));
+
+                // Does each ID resolve to EnvDif_mAA_NNN / EnvSpc_mAA_NNN in map/mAA/mAA_9999.tpf (names compared case-insensitively)?
+                var tpfPath = Path.Combine(root, "map", "m" + area, "m" + area + "_9999.tpf");
+                var names = File.Exists(tpfPath) ? TPF.Read(tpfPath).Textures.Select(t => t.Name.ToLowerInvariant()).ToHashSet() : new HashSet<string>();
+                var missing = new SortedSet<string>();
+                int ok = 0;
+                foreach (var r in p.Rows)
+                {
+                    foreach (var (field, prefix) in new[] { ("envDif", "envdif"), ("envSpc_0", "envspc"), ("envSpc_1", "envspc"), ("envSpc_2", "envspc"), ("envSpc_3", "envspc") })
+                    {
+                        var id = Convert.ToInt32(r[field].Value.Value);
+                        var tex = $"{prefix}_m{area}_{id:000}";
+                        if (names.Contains(tex)) ok++; else missing.Add($"{tex} (row {r.ID})");
+                    }
+                }
+                o.AppendLine($"  - resolve in m{area}_9999.tpf: {ok} found, {missing.Count} missing" + (missing.Count > 0 ? ": " + string.Join(", ", missing.Take(16)) : ""));
+                o.AppendLine($"  - textures in m{area}_9999.tpf: " + string.Join(", ", names.OrderBy(n => n)));
+            }
+        }
+    }
+    o.AppendLine();
+    File.WriteAllText(reportPath, o.ToString());
+    Console.WriteLine($"Wrote {reportPath}");
+    return;
+}
 var sb = new StringBuilder();
 sb.AppendLine("# DES DrawParam survey");
 sb.AppendLine();

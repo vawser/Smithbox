@@ -311,6 +311,10 @@ struct lightSetData
 	mapDirectionalLight modelLights[4];
 	vec4 modelHemiUp;
 	vec4 modelHemiDown;
+	vec4 envDiffuseScale;   // rgb: the env diffuse cubemap's scale with intensity and exposure, w: 1 when env lighting is on
+	vec4 envSpecularScale;  // rgb: the env specular cubemaps' scale
+	uvec4 envTextures;      // the cube pool indices of the diffuse cubemap and specular 0-2, 0xFFFFFFFF if not loaded
+	uvec4 envTextures2;     // x: specular 3
 	vec4 pad;
 };
 
@@ -521,6 +525,8 @@ void UpdatePickingBuffer(ivec2 pos, uint64_t identity, float z)
 uint g_mat;
 bool g_modelLit = false; // lit by the model set of the map's GPARAM, see ModelLit
 uint g_lightSet = 0u;     // the instance's own lighting set, 0 for the scene's, see LightSet
+bool g_envLit = false;    // a Demon's Souls map material lit by env cubemaps in place of the sun, see EnvLit
+float g_sunShadow = 1.0;  // how much of the sun reaches here, for the env light's shadows
 vec2 g_uv[2];
 vec3 g_indirectDiffuse = vec3(0.0); // the diffuse part of IndirectLight, before the scene multipliers
 vec3 g_indirectSpecular = vec3(0.0); // and its specular part
@@ -1144,6 +1150,43 @@ bool ModelLit()
 	return MapLighting() && (sceneparam.mapLightingFlags & 4u) != 0u && (MaterialValue(ROW_UVSET, 0) & 0x100u) != 0u;
 }
 
+// Material.EnvLightingFlag and the bits above it, in the first UV set's value
+#define MATERIAL_ENV_LIT 0x200u
+
+// Whether the material is a Demon's Souls map material (its MTD's g_LightingType 3) and its lighting set has env
+// cubemaps: then it is lit as the game's HemEnv shaders light it, by the hemisphere and the cubemaps, without the sun.
+// The scene's own set is entry 0 of the table, so this reads the set even when g_lightSet is 0.
+bool EnvLit()
+{
+	return MapLighting() && (MaterialValue(ROW_UVSET, 0) & MATERIAL_ENV_LIT) != 0u &&
+		lightsetdata[sceneparam.lightSetStart + g_lightSet].envDiffuseScale.w > 0.5;
+}
+
+// A cube pool texture by its index, sampled at direction D in the game's space, as the env maps of the other games
+vec3 EnvCube(uint index, vec3 D)
+{
+	if (index == 0xFFFFFFFFu)
+		return vec3(0.0);
+
+	return textureLod(samplerCube(globalTexturesCube[nonuniformEXT(int(index))], linearSampler), D * vec3(1, 1, -1), 0.0).rgb;
+}
+
+// The env light of a HemEnv material: EnvDif towards N, and the specular cubemap its MTD's g_EnvSpcSlotNo names
+// towards R, which already holds the highlight's shape at that slot's power. Its shadows take g_ShadowPowMul of it.
+void EnvLight(vec3 N, vec3 R, out vec3 diffuse, out vec3 specular)
+{
+	lightSetData set = lightsetdata[sceneparam.lightSetStart + g_lightSet];
+	uint flags = MaterialValue(ROW_UVSET, 0);
+	uint slot = (flags >> 10u) & 3u;
+	float shadowPow = float((flags >> 12u) & 15u) / 15.0;
+	float shadow = mix(1.0, g_sunShadow, shadowPow);
+
+	uint spcIndex = slot == 0u ? set.envTextures.y : slot == 1u ? set.envTextures.z : slot == 2u ? set.envTextures.w : set.envTextures2.x;
+
+	diffuse = EnvCube(set.envTextures.x, N) * set.envDiffuseScale.rgb * shadow;
+	specular = EnvCube(spcIndex, R) * set.envSpecularScale.rgb * shadow;
+}
+
 // Ambient light from direction N where there are no volumes: the map's hemisphere when its GPARAMs light the
 // scene, otherwise the environment map
 vec3 AmbientBase(vec3 N)
@@ -1262,6 +1305,22 @@ vec3 IndirectLight(Surface s)
 	// traditional phong model
 	if (c_gameID == GAME_DES || c_gameID == GAME_DS1_PTDE)
 	{
+		// A DES map material's HemEnv lighting: the env cubemaps on top of the hemisphere, the specular one through the
+		// specular map. A lightmap, where there is one, already is the light from around, so the diffuse env is left out.
+		if (g_envLit)
+		{
+			vec3 envDiffuse;
+			vec3 envSpecular;
+			EnvLight(s.N, reflect(-s.V, s.N), envDiffuse, envSpecular);
+
+			if (g_lightSource != 2u)
+				ambientDiffuse += envDiffuse * sceneparam.ambientLightMult;
+
+			g_indirectDiffuse = s.diffuse * ambientDiffuse;
+			g_indirectSpecular = s.F0 * envSpecular * sceneparam.ambientLightMult;
+			return g_indirectDiffuse + g_indirectSpecular;
+		}
+
 		g_indirectDiffuse = s.diffuse * ambientDiffuse;
 		return g_indirectDiffuse;
 	}
@@ -1698,6 +1757,7 @@ void main()
 	g_mat = fsin_mat;
 	g_modelLit = ModelLit();
 	g_lightSet = LightSet();
+	g_envLit = !g_modelLit && EnvLit();
 
 	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);
 
@@ -1877,6 +1937,7 @@ void main()
 	vec3 geometryNormal = normalize(fsin_worldToTangent[2]);
 	geometryNormal = gl_FrontFacing ? geometryNormal : -geometryNormal;
 	float sunShadow = SunShadow(fsin_worldpos, geometryNormal, sunDir);
+	g_sunShadow = sunShadow;
 
 	// The indirect light first, as DS3 and Bloodborne's light probes found with it also say how much of the sun
 	// reaches here (their LightMask, as the game's shaders scale the sun by ShLightMask)
@@ -1901,8 +1962,9 @@ void main()
 				(i == 0u ? sunShadow : 1.0);
 		}
 	}
-	else
+	else if (!g_envLit)
 	{
+		// A HemEnv material has no sun: the env cubemaps hold its light
 		vec4 sunColor = SunColor();
 		vec4 sunSpecColor = SunSpecColor();
 		direct = ShadeLight(surface, -sunDir, sunColor.rgb * sunColor.a, sunSpecColor.rgb * sunSpecColor.a) * sunShadow;

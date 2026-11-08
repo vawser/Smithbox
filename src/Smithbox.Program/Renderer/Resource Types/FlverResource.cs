@@ -1401,9 +1401,39 @@ public class FlverResource : IResource, IDisposable
     /// <summary>
     /// Characters are lit by the model set of the map's GPARAM LightSet instead of the scene's, as the game lights
     /// them. Flagged in the material, see <see cref="Material.ModelLightingFlag" />.
+    /// <para>
+    /// Demon's Souls picks its lighting by the MTD's g_LightingType instead (see the DES DrawParam lighting plan):
+    /// 1 is the HemDir3 shaders, three directional lights and a hemisphere, which the model set holds; 3 is the
+    /// HemEnv shaders, the hemisphere and env cubemaps, see <see cref="Material.EnvLightingFlag" />. Other values,
+    /// and MTDs without it, are lit as before.
+    /// </para>
     /// </summary>
     private void MarkModelLighting(FlverMaterial dest)
     {
+        if (Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.DES &&
+            dest.Definition?.Params is { } mtdParams &&
+            mtdParams.TryGetValue("g_LightingType", out var lightingType) && lightingType.Length > 0)
+        {
+            if ((int)lightingType[0] == 1)
+            {
+                dest.MaterialData.uvSet |= Material.ModelLightingFlag;
+                return;
+            }
+
+            if ((int)lightingType[0] == 3)
+            {
+                var slot = mtdParams.TryGetValue("g_EnvSpcSlotNo", out var slotValue) && slotValue.Length > 0
+                    ? Math.Clamp((int)slotValue[0], 0, 3) : 0;
+                var shadowPow = mtdParams.TryGetValue("g_ShadowPowMul", out var shadowValue) && shadowValue.Length > 0
+                    ? Math.Clamp(shadowValue[0], 0.0f, 1.0f) : 0.8f;
+
+                dest.MaterialData.uvSet |= (ushort)(Material.EnvLightingFlag
+                    | (slot << Material.EnvSpecularSlotShift)
+                    | ((int)MathF.Round(shadowPow * 15.0f) << Material.EnvShadowShift));
+                return;
+            }
+        }
+
         if (IsCharacterModel(Context))
         {
             dest.MaterialData.uvSet |= Material.ModelLightingFlag;

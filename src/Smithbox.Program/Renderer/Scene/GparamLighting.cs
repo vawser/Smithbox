@@ -29,6 +29,30 @@ public class GparamDirectionalLight
 }
 
 /// <summary>
+/// Demon's Souls' env lighting: the cubemaps of its map area's mAA_9999.tpf that a LightBank row names (envDif,
+/// envSpc_0-3), with the row's scales (envDif_col*, envSpc_col*). The game's HemEnv shaders, those of every map
+/// material, light with these and the hemisphere in place of the sun. Read by FlverShader.frag through
+/// <see cref="LightSetTable" />.
+/// </summary>
+public class GparamEnvLighting
+{
+    /// <summary>Off for every game but Demon's Souls</summary>
+    public bool Enabled = false;
+
+    /// <summary>The diffuse cubemap's texture name, e.g. EnvDif_m01_000</summary>
+    public string DiffuseTexture;
+
+    /// <summary>The four specular cubemaps' names, from the broadest highlight (0) to the sharpest (3)</summary>
+    public string[] SpecularTextures = new string[4];
+
+    /// <summary>rgb scales the diffuse cubemap, w its intensity</summary>
+    public Vector4 DiffuseColor = Vector4.Zero;
+
+    /// <summary>rgb scales the specular cubemaps, w their intensity</summary>
+    public Vector4 SpecularColor = Vector4.Zero;
+}
+
+/// <summary>
 /// A colour correction of the display colour, ToneMap.frag's, as Demon's Souls' ToneCorrectBank gives it: a
 /// brightness and a contrast per channel, a saturation and a hue rotation in degrees. Off unless a game sets it.
 /// </summary>
@@ -160,6 +184,9 @@ public class GparamLighting
 
     /// <summary>The older games' colour correction in place of a LUT (Demon's Souls' ToneCorrectBank)</summary>
     public GparamToneCorrection ToneCorrection = new();
+
+    /// <summary>The env cubemaps Demon's Souls lights its map materials with (LightBank envDif, envSpc_0-3)</summary>
+    public GparamEnvLighting Env = new();
 
     /// <summary>
     /// Where each value came from, as "file #id", keyed by the GPARAM field key. Fields left at their default

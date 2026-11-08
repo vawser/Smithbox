@@ -916,6 +916,10 @@ public class ViewportRenderingTool
             ref CFG.Current.Viewport_Post_Distance_Fog);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Distance_Fog_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Lighting")}##drawParamEnvLighting",
+            ref CFG.Current.Viewport_Map_DrawParam_Env_Lighting);
+        GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Lighting_TT"));
+
         ImGui.Checkbox($"{LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part")}##drawParamPerPart",
             ref CFG.Current.Viewport_Map_DrawParam_Per_Part);
         GUI.Tooltip(LOC.Get("VIEWPORT_Rendering_DrawParam_Per_Part_TT"));
@@ -1003,6 +1007,23 @@ public class ViewportRenderingTool
                 ? LOC.Get("VIEWPORT_Rendering_DrawParam_Fog_Values", $"{fog.Begin:0.#}", $"{fog.End:0.#}",
                     $"{fog.MaxDensity:0.##}", GparamLightingBank.FormatColor(fog.Color))
                 : LOC.Get("VIEWPORT_Rendering_DrawParam_Fog_Off"));
+
+            // The env cubemaps the map materials are lit by, and how many of the five are on the GPU
+            var env = scene.Env;
+            if (env.Enabled && CFG.Current.Viewport_Map_DrawParam_Env_Lighting)
+            {
+                var gpu = LightSetTable.FromLighting(scene, 1.0f);
+                var loaded = new[] { gpu.EnvDiffuseTexture, gpu.EnvSpecular0, gpu.EnvSpecular1, gpu.EnvSpecular2, gpu.EnvSpecular3 }
+                    .Count(t => t != LightSetData.NoTexture);
+
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Values", env.DiffuseTexture,
+                    GparamLightingBank.FormatColor(env.DiffuseColor), string.Join(", ", env.SpecularTextures),
+                    GparamLightingBank.FormatColor(env.SpecularColor), loaded));
+            }
+            else
+            {
+                ImGui.Text(LOC.Get("VIEWPORT_Rendering_DrawParam_Env_Off"));
+            }
         }
     }
 

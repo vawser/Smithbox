@@ -1,0 +1,74 @@
+# DES MTDs: 306
+
+## Shader paths
+- N:\DemonsSoul\data\Material\spx\DS_Ghost_Param.spx: 14
+- N:\DemonsSoul\data\Material\spx\DS_Ghost_ParamSkin.spx: 2
+- N:\DemonsSoul\data\Material\spx\DS_Ghost_ParamTod.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Ghost_Skin.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Ghost_Tod.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDif_Skin.spx: 9
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDif.spx: 43
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifBmp_Skin.spx: 4
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifBmp.spx: 8
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifBmpLit.spx: 5
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifBmpMul.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifBmpMulLit.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifLit.spx: 13
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifMul.spx: 2
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifMulLit.spx: 2
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpc_Skin.spx: 7
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpc.spx: 5
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmp_Skin.spx: 44
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmp.spx: 52
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpLit_skin.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpLit_Skin.spx: 5
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpLit.spx: 20
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpMul_Skin.spx: 4
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpMul.spx: 11
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpMulLit_Skin.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcBmpMulLit.spx: 12
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcLit.spx: 9
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcMul_Skin.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcMul.spx: 4
+- N:\DemonsSoul\data\Material\spx\DS_Phn_ColDifSpcMulLit.spx: 5
+- N:\DemonsSoul\data\Material\spx\DS_Water_Env_Skin.spx: 1
+- N:\DemonsSoul\data\Material\spx\DS_Water_Env.spx: 17
+
+## Params (value: count)
+- **g_BlendMode**: 0: 143; 2: 60; 1: 52; 3: 18; 4: 15; 5: 3; 7: 1
+- **g_BumpMapSmoose**: 1: 6; -0.5: 4; 0.5: 3; 10: 2; 0: 1; 2: 1; 5: 1
+- **g_DiffuseMapColor**: 1,1,1: 284; 1,0.9607844,0.90196085: 3; 0.08627451,0.08627451,0.078431375: 2; 0.86274517,0.9803922,1: 2; 0.5686275,0.5294118,1: 1
+- **g_DiffuseMapColorPower**: 0.6: 125; 0.5: 93; 1: 42; 0.3: 7; 0.4: 4; 2: 4; 3: 3; 0.7: 2; 0.99: 2; 5: 2; 0: 1; 0.05: 1
+- **g_EnvSpcSlotNo**: 0: 134; 2: 52; 1: 40; 3: 39
+- **g_FaceGenType**: 0: 168; 1: 3
+- **g_FresnelBias**: 0.1: 9; 0: 4; 0.05: 2; 0.25: 2; 0.3: 1
+- **g_FresnelColor**: 1,1,1: 11; 0,0,0: 1; 0.19607845,0.3529412,0.32941177: 1; 0.5019608,0.5019608,0.5019608: 1; 0.50980395,0.47058827,0.27450982: 1; 0.5882353,0.3921569,0.47058827: 1; 0.6666667,0.80392164,0.7058824: 1; 0.7058824,0.7058824,0.7058824: 1
+- **g_FresnelPow**: 4: 5; 5: 4; 0: 3; 3: 3; 2: 2; 7: 1
+- **g_FresnelScale**: 0.9: 6; 0.8: 3; 0: 2; 0.75: 2; 0.95: 2; 0.25: 1; 0.4: 1; 1: 1
+- **g_GhostEdgeColor**: 0,0,0,0: 2; 0.9215687,0.1960784,0,0.785: 2; 0.156,0.333,0.273,0.523: 1; 0.2,0.192157,0.215686,1: 1; 0.223,0.254,0.2745,0.196: 1; 0.31,0.66,0.56,1: 1; 0.4117647,0.6470588,1,0.785: 1; 0.41176474,0.64705884,1,0.785: 1; 0.7,0.3,0.9,3: 1; 0.765,0.804,1,2.75: 1; 0.776,0.922,0.785,0.35: 1; 1,0.529412,0.566406,0.4999998: 1
+- **g_GhostTexColor**: -0.19,-0.49,-0.66,0.73: 2; 0.085937,0.085937,0.078125,0.99: 2; -0.196,-0.15,-0.156,0.26: 1; -0.39,-0.3,-0.31,0.51: 1; -0.59,-0.45,-0.47,0.12: 1; 0.05882353,0.3137255,1,0.31: 1; 0.058823533,0.3137255,1,0.31: 1; 0.45,0.9,0.9,1.1: 1; 0.7,0.3,0.9,3: 1; 0.77,0.77,0.77,2.5: 1; 0.89375,0.976562,1,0.234375: 1; 1,0.371094,0.332031,0.401566: 1
+- **g_GhostTexScroll_0**: 0.01,0.01: 6; 0.05,0.025: 3; 0.1,0.2: 3; -0.05,0.105: 2; 0,0: 2; 0.1,0.1: 1
+- **g_GhostTexScroll_1**: -0.01,-0.01: 6; -0.05,-0.03: 3; -0.1,-0.15: 3; 0,-0.01: 2; 0.04,0.185: 2; -0.1,-0.1: 1
+- **g_IsGhost**: True: 5
+- **g_IsNew**: True: 292
+- **g_IsParamOnly**: True: 14
+- **g_LightingType**: 3: 144; 1: 109; 0: 39
+- **g_ReflectBand**: 0: 9; 0.1: 9
+- **g_RefractBand**: 0.3: 3; 0.5: 3; 0: 2; 0.1: 2; 0.15: 2; 0.2: 2; 0.8: 2; 0.05: 1; 0.7: 1
+- **g_ShadowPowMul**: 0.8: 125; 0.4: 9; 0.5: 3; 0: 2; 1: 1
+- **g_SpecularMapColor**: 1,1,1: 277; 0.9607844,0.9215687,0.9215687: 8; 0,0,0: 3; 0.19607845,0.15686275,0.29411766: 2; 1,1,0.5882353: 2
+- **g_SpecularMapColorPower**: 1: 125; 2: 91; 1.5: 37; 8: 10; 2.5: 8; 30: 5; 0.25: 4; 0.5: 4; 0: 3; 0.35: 2; 5: 2; 7: 1
+- **g_SpecularPower**: 4: 74; 2: 47; 60: 35; 7: 35; 1: 20; 100: 18; 128: 15; 3: 11; 5: 9; 70: 5; 30: 3; 8: 3
+- **g_TexScroll_0**: 0,0: 246; -0.1,0: 4; 0.03,0: 4; 0,-0.02: 3; -0.01,-0.007: 2; -0.02,0: 2; -0.02,0.02: 2; 0,-0.05: 2; 0.003,0: 2; 0.005,0: 2; 0.01,0.01: 2; 0.05,-0.02: 2
+- **g_TexScroll_1**: 0,0: 285; -0.01,-0.01: 2; 0,-0.01: 2; 0,-0.05: 2; -0.01,-0.1: 1
+- **g_TexScroll_2**: 0,0: 288; -0.01,-0.005: 4
+- **g_TexScrollType**: 0: 266; 1: 26
+- **g_TileBlend_0**: 0.5: 9; 1: 8; 0.59: 1
+- **g_TileBlend_1**: 0.5: 10; 0.8: 5; 0.1: 1; 0.3: 1; 1: 1
+- **g_TileBlend_2**: 0.5: 14; 0.07: 1; 0.3: 1; 0.7: 1; 1: 1
+- **g_TileScale_0**: 0.03,0.07: 2; 0.12,0.4: 2; 0.3,0.072: 2; 0.3,0.5: 2; 6,0.33: 2; 0.02,0.07: 1; 0.07,0.04: 1; 0.2,0.02: 1; 0.2,0.05: 1; 0.2,0.5: 1; 0.6,0.1: 1; 1.2,0.2: 1
+- **g_TileScale_1**: 0.2,0.1: 6; 0.5,1: 2; 1,0.9: 2; 0.035,0.07: 1; 0.4,0.1: 1; 0.5,0.27: 1; 0.7,-0.1: 1; 0.7,1: 1; 1,0.05: 1; 1,0.27: 1; 1.3,-0.2: 1
+- **g_TileScale_2**: 0.5,0.2: 2; 0.7,0: 2; 1,0.07: 2; 1.8,1.5: 2; 4,1.5: 2; 0.1,0.07: 1; 0.85,0.08: 1; 1.3,0.1: 1; 1.5,-0.3: 1; 2,0.07: 1; 2.5,0.2: 1; 2.7,-0.2: 1
+- **g_useHairColor**: 0: 131; 1: 9
+- **g_WaterColor**: 0.09019608,0.078431375,0.03137255,1: 3; 0,0,0,1: 2; 0,0,0,0.5019608: 1; 0,0,0,0.7843138: 1; 0.039215688,0.039215688,0.039215688,0.627451: 1; 0.039215688,0.039215688,0.039215688,1: 1; 0.07058824,0.13725491,0.015686275,0.9215687: 1; 0.078431375,0.039215688,0,1: 1; 0.078431375,0.07058824,0.039215688,0.7843138: 1; 0.098039225,0.098039225,0.07058824,0.7058824: 1; 0.1137255,0.098039225,0.058823533,0.9215687: 1; 0.14509805,0.078431375,0.09411766,0.7843138: 1
+- **g_WaterFadeBegin**: 0.5: 7; 1: 5; 0.7: 4; 0.3: 2

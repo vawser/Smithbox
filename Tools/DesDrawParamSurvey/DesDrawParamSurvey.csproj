@@ -13,6 +13,10 @@
 
   <!-- Surveys the Demon's Souls DrawParam banks and the IDs map parts use to pick their rows -->
   <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Andre\Andre.IO\Andre.IO.csproj" />
     <ProjectReference Include="..\..\src\Andre\Andre.Formats\Andre.Formats.csproj" />
     <ProjectReference Include="..\..\src\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />

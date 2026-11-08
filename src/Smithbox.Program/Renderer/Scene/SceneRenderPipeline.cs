@@ -484,7 +484,7 @@ public class SceneRenderPipeline
             var sun = mapLighting.Sun;
 
             // The parts lit by their own sets (Demon's Souls' LightIDs), at the scene's exposure
-            SceneRenderer.LightSets?.Update(SceneRenderer.MapLightSets, exposure);
+            SceneRenderer.LightSets?.Update(mapLighting, SceneRenderer.MapLightSets, exposure);
 
             mapLightDirection = new Vector4(sun.Direction, 0.0f);
             mapSunColor = new Vector4(sun.Diffuse.X, sun.Diffuse.Y, sun.Diffuse.Z, sun.Diffuse.W * exposure);

@@ -767,6 +767,17 @@ public class TexturePool
                 dds = new DDS(tex.Bytes);
             }
 
+            // PS3 TPF format 10 (Demon's Souls' A8R8G8B8, e.g. its env cubemaps): the Headerizer's DDS header calls it
+            // 24-bit RGB, but the deswizzled data is 4 bytes a pixel in A, R, G, B order. Reordered to R, G, B, A
+            // here, as the 24-bit branch below would otherwise drop it.
+            var ps3Argb = platform == TPF.TPFPlatform.PS3 && tex.Format == 10 &&
+                          dds.ddspf.dwFlags.HasFlag(DDS.DDPF.RGB) && dds.ddspf.dwRGBBitCount == 24;
+
+            if (ps3Argb)
+            {
+                bytes = Ps3ArgbToRgba(bytes.Span, dds.DataOffset);
+            }
+
             var width = (uint)dds.dwWidth;
             var height = (uint)dds.dwHeight;
 
@@ -797,6 +808,10 @@ public class TexturePool
                     format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
 
                     //Smithbox.Log(this, $"header10 - {name}: {format}");
+                }
+                else if (ps3Argb)
+                {
+                    format = VkFormat.R8G8B8A8Srgb;
                 }
                 else
                 {
@@ -982,6 +997,26 @@ public class TexturePool
 
             Resident = true;
             PublishTexture(previousTexture);
+        }
+
+        /// <summary>
+        /// A headerized PS3 format 10 texture's data, 4 bytes a pixel in A, R, G, B order, as R, G, B, A. The DDS
+        /// header before <paramref name="dataOffset" /> is copied as it is.
+        /// </summary>
+        private static byte[] Ps3ArgbToRgba(ReadOnlySpan<byte> source, int dataOffset)
+        {
+            var result = source.ToArray();
+
+            for (var i = dataOffset; i + 3 < result.Length; i += 4)
+            {
+                var a = source[i];
+                result[i] = source[i + 1];
+                result[i + 1] = source[i + 2];
+                result[i + 2] = source[i + 3];
+                result[i + 3] = a;
+            }
+
+            return result;
         }
 
         public static void DeswizzleDDSBytesPS4(int width, int height, int offset, int offsetFactor, int Format,
