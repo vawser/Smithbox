@@ -34,6 +34,7 @@ public class MapEditorView : IEditorView
     public FogVolumeBank FogVolumeBank => Project.Handler.MapData.FogVolumeBank;
     public IrradianceVolumeBank IrradianceVolumeBank => Project.Handler.MapData.IrradianceVolumeBank;
     public GparamLightingBank GparamLightingBank => Project.Handler.MapData.GparamLightingBank;
+    public DrawParamLightingBank DrawParamLightingBank => Project.Handler.MapData.DrawParamLightingBank;
     public MapLimitBank MapLimitBank => Project.Handler.MapData.MapLimitBank;
     public HavokCollisionBank HavokCollisionBank => Project.Handler.MapData.HavokCollisionBank;
     public GrassBank GrassBank => Project.Handler.MapData.GrassBank;

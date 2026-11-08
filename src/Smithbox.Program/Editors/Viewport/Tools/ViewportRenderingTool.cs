@@ -169,6 +169,10 @@ public class ViewportRenderingTool
         {
             Section(ref focus, mapLightingKey, mapLightingId, () => MapLightingTab(viewport, mapView));
         }
+        else if (mapView != null && mapView.DrawParamLightingBank.CanUse())
+        {
+            Section(ref focus, mapLightingKey, mapLightingId, () => DrawParamLightingTab(viewport, mapView));
+        }
         else if (environment != null)
         {
             Section(ref focus, mapLightingKey, mapLightingId, () => EnvironmentLightingTab(viewport, environment));
@@ -886,6 +890,116 @@ public class ViewportRenderingTool
     }
 
     /// <summary>
+    /// Demon's Souls' map lighting, from the DrawParam banks of the map's area (DrawParamLightingBank): the shared
+    /// settings, the LightBank and ToneMapBank rows the viewport is lit with, and what they give
+    /// </summary>
+    private void DrawParamLightingTab(VulkanViewport viewport, MapEditorView view)
+    {
+        var bank = view.DrawParamLightingBank;
+
+        MapLightingSettings();
+
+        var maps = view.Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
+            .OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        // The map the viewport is lit by, as DrawParamLightingBank.ResolveForViewport picks it
+        var map = maps.FirstOrDefault(m => bank.GetBank(m.Name, DrawParamLightingBank.LightBank) != null);
+
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("VIEWPORT_Rendering_Section_Source"), LOC.Get("VIEWPORT_Rendering_DrawParam_Source_TT"));
+
+        if (map == null)
+        {
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_DrawParam_No_Map"));
+        }
+        else
+        {
+            var (mostUsedLight, mostUsedToneMap) = bank.GetMostUsedIds(map);
+
+            DrawParamRowCombo(bank, map, DrawParamLightingBank.LightBank, mostUsedLight,
+                LOC.Get("VIEWPORT_Rendering_DrawParam_Light_Row"), LOC.Get("VIEWPORT_Rendering_DrawParam_Light_Row_TT"),
+                ref CFG.Current.Viewport_Map_DrawParam_Light_Row);
+
+            DrawParamRowCombo(bank, map, DrawParamLightingBank.ToneMapBank, mostUsedToneMap,
+                LOC.Get("VIEWPORT_Rendering_DrawParam_ToneMap_Row"), LOC.Get("VIEWPORT_Rendering_DrawParam_ToneMap_Row_TT"),
+                ref CFG.Current.Viewport_Map_DrawParam_ToneMap_Row);
+
+            // The rows of the selected part, as it would be lit in the game
+            var part = view.ViewportSelection.GetSelection()
+                .OfType<Entity>()
+                .Select(e => e.WrappedObject)
+                .OfType<SoulsFormats.MSBD.Part>()
+                .FirstOrDefault();
+
+            ImGui.BeginDisabled(part == null);
+            if (ImGui.Button($"{LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part")}##drawParamFromPart") && part != null)
+            {
+                CFG.Current.Viewport_Map_DrawParam_Light_Row = part.LightID;
+                CFG.Current.Viewport_Map_DrawParam_ToneMap_Row = part.ToneMapID;
+            }
+            ImGui.EndDisabled();
+            GUI.Tooltip(part != null
+                ? LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_TT", part.Name, part.LightID, part.ToneMapID)
+                : LOC.Get("VIEWPORT_Rendering_DrawParam_From_Part_None_TT"));
+        }
+
+        LightingDebugSection();
+
+        MapLightingStatus(viewport);
+
+        if (map != null && ResolvedValuesHeader())
+        {
+            var scene = bank.Resolve(map.Name, bank.ChooseRow(map, DrawParamLightingBank.LightBank),
+                bank.ChooseRow(map, DrawParamLightingBank.ToneMapBank));
+
+            LightingTable(map.Name, scene, scene.Models ?? scene, bank.Profile);
+        }
+    }
+
+    /// <summary>
+    /// The row of a DrawParam bank to light with: the one most of the map's pieces use (the default, -1), or any row
+    /// of the bank, shown by ID and name
+    /// </summary>
+    private static void DrawParamRowCombo(DrawParamLightingBank bank, MapContainer map, string bankName, int mostUsed,
+        string label, string tooltip, ref int chosen)
+    {
+        var param = bank.GetBank(map.Name, bankName);
+
+        if (param == null)
+        {
+            ImGui.TextDisabled(LOC.Get("VIEWPORT_Rendering_DrawParam_No_Bank", $"{DrawParamLightingBank.GetArea(map.Name)}_{bankName}"));
+            return;
+        }
+
+        string RowLabel(Andre.Formats.Param.Row row) => string.IsNullOrEmpty(row.Name) ? $"{row.ID}" : $"{row.ID} {row.Name}";
+
+        var mostUsedRow = param[mostUsed];
+        var mostUsedLabel = LOC.Get("VIEWPORT_Rendering_DrawParam_Most_Used",
+            mostUsedRow != null ? RowLabel(mostUsedRow) : $"{mostUsed}");
+
+        var current = chosen >= 0 && param[chosen] is { } chosenRow ? RowLabel(chosenRow) : mostUsedLabel;
+
+        DPI.ApplyInputWidth();
+        if (ImGui.BeginCombo($"{label}##drawParam{bankName}", current))
+        {
+            if (ImGui.Selectable($"{mostUsedLabel}##drawParam{bankName}MostUsed", chosen < 0))
+                chosen = -1;
+
+            foreach (var row in param.Rows)
+            {
+                if (ImGui.Selectable($"{RowLabel(row)}##drawParam{bankName}{row.ID}", chosen == row.ID))
+                    chosen = row.ID;
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(tooltip);
+    }
+
+    /// <summary>
     /// The Model and Time Act Editors' map lighting: the settings every viewport shares, then the map it is borrowed
     /// from, and the file, weather and time of day it is read at
     /// </summary>
@@ -1156,14 +1270,24 @@ public class ViewportRenderingTool
     private static void LightingTable(GparamLightingBank bank, string mapId, string file)
     {
         var hours = CFG.Current.Viewport_Map_Lighting_Hours;
+
+        var scene = bank.Resolve(mapId, file, GparamLightingBank.SceneLightSetId, hours);
+        var model = bank.Resolve(mapId, file, GparamLightingBank.ModelLightSetId, hours);
+
+        LightingTable(mapId, scene, model, bank.Profile);
+    }
+
+    /// <summary>
+    /// What a map's lighting gives, for the scene and for models, and where each value came from: a GPARAM field, or
+    /// for Demon's Souls a DrawParam row
+    /// </summary>
+    private static void LightingTable(string mapId, GparamLighting scene, GparamLighting model, GparamProfile profile)
+    {
         var off = LOC.Get("VIEWPORT_Menubar_Map_Lighting_Off");
 
         string Light(GparamDirectionalLight light) => light.Enabled && light.Diffuse.W > 0.0f
             ? $"{GparamLightingBank.FormatColor(light.Diffuse)} {GparamLightingBank.FormatAngle(light.Angle)}{(light.FollowCamera ? " cam" : "")}"
             : off;
-
-        var scene = bank.Resolve(mapId, file, GparamLightingBank.SceneLightSetId, hours);
-        var model = bank.Resolve(mapId, file, GparamLightingBank.ModelLightSetId, hours);
 
         ImGui.Text(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Map", mapId, scene.File));
 
@@ -1218,9 +1342,9 @@ public class ViewportRenderingTool
         var envMap = $"{scene.EnvMapSaturate:0.###}, {GparamLightingBank.FormatColor(scene.EnvMapScale)}";
         var background = GparamLightingBank.FormatColor(scene.BackgroundColor);
 
-        Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, bank.Profile.ExposureField);
+        Row("VIEWPORT_Menubar_Map_Lighting_Row_Exposure", exposure, exposure, profile.ExposureField);
         Row("VIEWPORT_Menubar_Map_Lighting_Row_Auto_Exposure", autoExposure, autoExposure,
-            bank.Profile.AutoExposureField);
+            profile.AutoExposureField);
         Row("VIEWPORT_Menubar_Map_Lighting_Row_EnvMap", envMap, envMap, "EnvironmentConfig EnvMapColorConvert Saturate");
         Row("VIEWPORT_Menubar_Map_Lighting_Row_Background", background, background, "GS - BG Color-Data");
 

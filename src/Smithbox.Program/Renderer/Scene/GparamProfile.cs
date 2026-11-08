@@ -36,6 +36,12 @@ public sealed class GparamProfile
     /// <summary>The game's map GPARAMs are read for the viewports' lighting</summary>
     public bool Supported { get; private init; }
 
+    /// <summary>
+    ///     The game has no GPARAM: its maps are lit from the DrawParam banks instead (Demon's Souls), see
+    ///     DrawParamLightingBank and Documentation/Claude/Older Games/DES DrawParam Lighting Plan.md
+    /// </summary>
+    public bool DrawParamLighting { get; private init; }
+
     /// <summary>The shared GPARAMs a field is looked for in when the map's own file doesn't have it</summary>
     public string[] SharedFiles { get; private init; } = { "mapbase", "default" };
 
@@ -213,7 +219,16 @@ public sealed class GparamProfile
             HasGsLightShaft = false,
             HasTaa = false
         },
-        ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S => Older,
+        // Demon's Souls has no GPARAM; its DrawParam banks light its maps, with the older games' effects
+        ProjectType.DES => new GparamProfile
+        {
+            DrawParamLighting = true,
+            HasSsr = false,
+            HasVolumetricFog = false,
+            HasGsLightShaft = false,
+            HasTaa = false
+        },
+        ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S => Older,
         _ => Unknown
     };
 }

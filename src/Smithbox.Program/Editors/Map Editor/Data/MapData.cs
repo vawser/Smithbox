@@ -49,6 +49,7 @@ public class MapData : IDisposable
     public FogVolumeBank FogVolumeBank;
     public IrradianceVolumeBank IrradianceVolumeBank;
     public GparamLightingBank GparamLightingBank;
+    public DrawParamLightingBank DrawParamLightingBank;
     public MapLimitBank MapLimitBank;
     public LightAtlasBank LightAtlasBank;
     public LightProbeBank LightProbeBank;
@@ -101,6 +102,7 @@ public class MapData : IDisposable
         FogVolumeBank = new FogVolumeBank(Project);
         IrradianceVolumeBank = new IrradianceVolumeBank(Project);
         GparamLightingBank = new GparamLightingBank(Project);
+        DrawParamLightingBank = new DrawParamLightingBank(Project);
         MapLimitBank = new MapLimitBank(Project);
         LightAtlasBank = new LightAtlasBank(Project);
         LightProbeBank = new LightProbeBank(Project);

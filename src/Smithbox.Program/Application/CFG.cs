@@ -1368,6 +1368,11 @@ public class CFG
     // Scales the GPARAM's exposure, for maps where the game's auto exposure would set it differently
     public float Viewport_Map_Lighting_Exposure_Scale = 1.0f;
 
+    // Demon's Souls lights its maps from DrawParam (DrawParamLightingBank): the LightBank and ToneMapBank rows to
+    // use, -1 for the one most of the map's pieces use
+    public int Viewport_Map_DrawParam_Light_Row = -1;
+    public int Viewport_Map_DrawParam_ToneMap_Row = -1;
+
     // Whether the GPARAM's hemisphere light adds to the irradiance volumes' light, as well as lighting what they
     // don't cover; compared with the game, it does
     public bool Viewport_Map_Lighting_Hemi_Inside_Volumes = true;

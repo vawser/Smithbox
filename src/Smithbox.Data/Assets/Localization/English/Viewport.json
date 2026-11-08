@@ -1757,6 +1757,50 @@
       "Text": "Which GPARAM file and weather the lighting is read from."
     },
     {
+      "Key": "VIEWPORT_Rendering_DrawParam_Source_TT",
+      "Text": "Which rows of the map area's DrawParam banks (param/drawparam/aAA_drawparam) the lighting is read from. Demon's Souls has no GPARAM: its map parts pick their rows by their LightID and ToneMapID."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_No_Map",
+      "Text": "No loaded map has DrawParam lighting."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_No_Bank",
+      "Text": "The project has no {0}."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Light_Row",
+      "Text": "Light Bank Row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Light_Row_TT",
+      "Text": "The LightBank row the viewport is lit with: the sun (light 0), the fill lights (1 and 2), the specular colour and the hemisphere. By default the row most of the map's pieces use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneMap_Row",
+      "Text": "Tone Map Bank Row"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_ToneMap_Row_TT",
+      "Text": "The ToneMapBank row the exposure, its adaptation and the bloom are read from. By default the row most of the map's pieces use."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_Most_Used",
+      "Text": "Most used by map pieces ({0})"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_From_Part",
+      "Text": "Use Selected Part's Rows"
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_From_Part_TT",
+      "Text": "Light with the rows {0} picks: LightBank {1}, ToneMapBank {2}."
+    },
+    {
+      "Key": "VIEWPORT_Rendering_DrawParam_From_Part_None_TT",
+      "Text": "Select a map part to light with the rows it picks."
+    },
+    {
       "Key": "VIEWPORT_Rendering_Section_Volume_Source_TT",
       "Text": "Which map and irradiance volume the lighting is borrowed from."
     },

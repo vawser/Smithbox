@@ -25,16 +25,18 @@ The **Gparam Editor** is turned off for DES (`SupportsGraphicsParamEditor`). Tha
 
 ## Non-functional on specific files
 
-- **Four anibnds read as empty:** `c0300`, `c1040`, `c9950` and `c9951` (both the `.anibnd` and the `.anibnd.dcx` copies). Their BND3 header has a file count of 0, but they hold 43–530 KB of data.
-  - SoulsFormats reads them as having no files, so the Time Act and Havok editors show nothing for these characters.
-  - Any save of these binders would write a 32-byte empty binder. That would lose data if the game reads the entries some other way. **Unknown.**
+- **Four anibnds read as empty:** `c0300`, `c1040`, `c9950` and `c9951` (both the `.anibnd` and the `.anibnd.dcx` copies). This is by design; nothing to fix (decided 2026-11-08).
+  - These are **unfinished binders**: their file table lists every name (35, 23, 26 and 26 entries), but every entry's size, offset and ID is 0, and so is the header's file count. Two use an older version string (`07G5L0`, format `0x2E`); `c1040` uses `07C15V13`, format `0x0E`.
+  - Havok packfiles follow the names (11–25 found, from `emptybnd` in `Tools/DesFormatRoundTrip`), but no entry points at them. None of the four holds a time act.
+  - The game reads the same empty table, so it sees no files in them either. Smithbox reads them as empty, which matches the game.
+  - Nothing in Smithbox saves them today: the Time Act Editor only writes binders whose time acts changed, and these have none. A save that did write one would drop only bytes that nothing points to.
 
 ## Works, with caveats
 
 | Feature | Roundtrip result | Caveat |
 |---|---|---|
 | **Map Editor save** (MSBD) | 40 of 42 exact; 2 differ in bytes with equal parts, models, regions and events | The content check is shallow: counts, plus part names, positions and models. |
-| **Param Editor save** (gameparam and drawparam) | **0 of 185 exact**; all re-read with equal rows, IDs, names and cells | The header and string table layout differ (sizes change by −692 to +4 bytes). The content is equal. Whether the game accepts this is assumed from long use, not tested. |
+| **Param Editor save** (gameparam and drawparam) | **185 of 185 exact** through `Andre.Formats.Param`, the class the Param Editor saves with (fixed 2026-11-08, see "Param name layout" below) | SoulsFormats' own `PARAM` is still 0 of 185 exact (content equal), but no editor saves DES params with it. |
 | **Text Editor save** (FMG) | 37 exact; 29 differ by 2 bytes (header size field) | Content is equal. |
 | **Material Editor save** (MTD) | 40 exact; 266 differ at 0x4D, size the same | Content is equal (parameter and texture counts). The byte at 0x4D is probably a marker or padding byte. Not investigated. |
 | **Binders** (chrbnd, parambnd, anibnd) | Exact, apart from the 4 empty anibnds above | Re-compressing a `.dcx` writes different bytes (the compressor differs); the content is equal. |
@@ -78,9 +80,20 @@ What was wrong, all in `SoulsFormats/Formats/TAE`:
 
 Other games are unchanged. DS1R, PTDE and Bloodborne TAEs give the same roundtrip counts before (commit `04a3df329`) and after these changes (run with the `taegame` mode of `Tools/DesFormatRoundTrip`).
 
+## Param name layout (2026-11-08)
+
+`paramstats` in `Tools/DesFormatRoundTrip` surveyed all 185 DES params. Every one has the same layout:
+- **Names:** they start right after the row data, in row order, with one copy per row (52 params repeat a name and still store it twice). An unnamed row has name offset 0 (115 params have some).
+- **Padding:** the header's strings offset is K bytes past the row data, and the file ends with exactly K zero bytes after the last name. K is 0, 4, 8 or 12.
+- **No final empty string**, unlike the later games.
+
+`Andre.Formats.Param` used to share repeated names, give unnamed rows an empty string, and end with an empty string. Its read now detects this layout, and it writes such a file back the same way:
+- the detection only considers big-endian params with 32-bit offsets and Shift-JIS names, and any departure from the layout keeps the usual writer;
+- DES is the only big-endian game, so other games' params take the unchanged path.
+
 ## Most worth fixing
 
 1. ~~**TAE writing**~~: fixed (see above). Not yet checked in the app or in the game.
-2. **The four empty anibnds**: find out how the game reads them before any editor saves one.
-3. **Param byte layout**: make the 185 params roundtrip exactly. Content is equal, but it is the most-used DES save path and none of it is byte-identical.
-4. **DrawParam lighting in the viewport** and **hkp collision editing**: larger pieces of work.
+2. ~~**The four empty anibnds**~~: unfinished binders the game can't read either; documented, no change (see above).
+3. ~~**Param byte layout**~~: fixed; all 185 params write back byte-identical through the Param Editor's class. Not yet checked in the app.
+4. **DrawParam lighting in the viewport** and **hkp collision editing**: larger pieces of work, still open.
