@@ -31,8 +31,9 @@ after the last 11 TEXCOORD2/3 recipes). Colour-only layers, any-TEXCOORD vertex 
 checked in the app. `[S2]` and `_SSS` are covered as well. ER Ok is now 83.7% and NR 80.9%. The `ColorAdjust` weight
 form is built (`ShaderSignature coloradjust`, `{GAME}_ColorAdjust.json`), not yet checked in the app; it fixes weight
 maths, which the audit doesn't measure. The blend generator now reads that form too, so `M[Cave_001]`, `M[Cliff_001]`
-and others have recipes. ER Ok is now 84.3% and NR 81.3%. Still left: `[MS]` layers whose weight reads two vertex
-values, and Mask1Map routes. Then Phase 4.
+and others have recipes. Crystal-style glow masks route as emissives (`ShaderSignature emissivemasks`). ER Ok is now
+84.4% and NR 83.0%. Still left: AC6's `[MS]` permutations with no recipe (two-vertex and facing weights), which is
+where its dropped masks come from. Then Phase 4.
 
 ---
 

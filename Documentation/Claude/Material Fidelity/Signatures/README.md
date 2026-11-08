@@ -172,6 +172,31 @@ and others whose weights have other forms. AC6's `M[Planet][GroundSurface]` shad
 - `SampleLayered` lerps toward the tint where the adjust is ≥ 0.
 - The binding audit can't see this: it checks textures, not weights.
 
+## Emissive masks (2026-11-08)
+
+`ShaderSignature <GAME> emissivemasks <cacheDir> <outJson> [shaderRegex]` (`EmissiveMasks.cs`) writes
+`{GAME}_EmissiveMasks.json`. Built 2026-11-08, not yet checked in the app.
+
+- **What it finds:** shaders whose glow is a texture's red times params, where the texture isn't named as an
+  emissive. `M[Crystal]` (NR): `RT4.rgb = Mask1Map.r · (1 - TEXCOORD1.y) · color_0.rgb · f3`.
+- **How it reads them:** every term of RT4.x/y/z must have the same texture red and the same colour param. The float
+  params all terms share become the factor.
+- **Left out:** other factors are dropped, such as the vertex fade and, in `[Ov_N][Crystal]`, a blend-style
+  `sat(1 - 1.4·f5·(…))`. Those glows can come out brighter than the game's.
+- **Viewport:**
+  - `MaterialDefinition.EmissiveMaskType`: `MaterialBinding.Route` sends that texture to the emissive slot. Its colour
+    is the colour param times the factor.
+  - `EmissiveColor.w = -1` has `FlverShader.frag` take the red for all three channels. Fur keeps its dither width
+    in that w, which is never below 0.
+- **Coverage:** ER 6 shaders, NR 19, AC6 0. NR Ok rose from 81.3% to 83.0% (Dropped 13.1% → 11.4%), ER from 84.3% to 84.4%.
+
+**AC6's dropped masks are something else.** `[MS][MB][M0/M1]` slots 19, 26 and 29 (~43 of AC6's ~60 Dropped points)
+already route as layer detail masks, in permutations that have a blend recipe. They drop where a permutation has none.
+The generator rejects those for three reasons:
+- a weight that reads two vertex values (`min(max(f48, -1), 0)·TEXCOORD8.x + TEXCOORD8.w`);
+- facing weights that read the world normal;
+- "a layer isn't one albedo".
+
 ## Detail stacks (2026-11-08)
 
 `ShaderSignature <GAME> detailstacks <cacheDir> <outJson> [shaderRegex]` (`DetailStacks.cs`) writes
