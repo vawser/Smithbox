@@ -1,4 +1,5 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 #extension GL_EXT_shader_16bit_storage : enable
 #extension GL_EXT_shader_explicit_arithmetic_types : enable
 layout(location = 0) in vec4 color;
@@ -10,27 +11,7 @@ layout(location = 1) flat in uint fsin_entityid;
 
 layout (constant_id = 99) const bool c_picking = false;
 
-struct sceneParams
-{
-	mat4 projection;
-    mat4 view;
-    vec4 eye;
-    vec4 lightDirection;
-    ivec4 curserPosition;
-    uint envmap;
-    float ambientLightMult;
-    float directLightMult;
-    float indirectLightMult;
-    float emissiveMapMult;
-    float sceneBrightness;
-    float simpleFlverBrightness; 
-    float simpleFlverSaturation;  
-    vec4 selectionColor;          
-    vec4 outlineColor;            
-    uint EnableDithering;      
-    uint EnableTinting;
-    float ditherOpacity;
-};
+#include "SceneParams.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {

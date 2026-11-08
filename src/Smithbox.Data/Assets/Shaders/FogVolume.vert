@@ -1,14 +1,10 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 
 // Vertex stage of the fog volume shader: places the unit box of a fog volume, and passes the world position of
 // each pixel on so the fragment stage can march from the camera through the box.
 
-struct sceneParams
-{
-	mat4 projection;
-	mat4 view;
-	vec4 eye;
-};
+#include "SceneParams.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {

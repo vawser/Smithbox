@@ -1,4 +1,5 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 #ifdef MATERIAL_DEFORM
 #extension GL_EXT_nonuniform_qualifier : require
 #endif
@@ -11,52 +12,7 @@
 //   SELECTED        - used for selected objects (shares this file; the fragment stage does the tinting)
 //   FOCUS           - used for maps that are out of focus (the fragment stage does the dithering)
 
-#ifdef MATERIAL_DEFORM
-#define MAX_SCENE_LIGHTS 16
-
-struct sceneLight
-{
-	vec4 positionRange;
-	vec4 directionType;
-	vec4 colorIntensity;
-	vec4 spot;
-};
-#endif
-
-struct sceneParams
-{
-	mat4 projection;
-	mat4 view;
-	vec4 eye;
-	vec4 lightDirection;
-#ifdef MATERIAL_DEFORM
-	// Only here to reach materialTime, which comes after them
-	ivec4 curserPosition;
-	uint envmap;
-
-	float ambientLightMult;
-	float directLightMult;
-	float indirectLightMult;
-	float emissiveMapMult;
-	float sceneBrightness;
-	float simpleFlverBrightness;
-	float simpleFlverSaturation;
-	vec4 selectionColor;
-	vec4 outlineColor;
-	uint EnableDithering;
-	uint EnableTinting;
-	float ditherOpacity;
-
-	uint lightCount;
-	vec4 sunColor;
-	sceneLight lights[MAX_SCENE_LIGHTS];
-
-	float materialTime;
-	float windPeriod;
-	uint materialFeatures;
-	vec4 wind; // xy: world XZ direction, z: steady force, w: force of the waves
-#endif
-};
+#include "../SceneParams.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {

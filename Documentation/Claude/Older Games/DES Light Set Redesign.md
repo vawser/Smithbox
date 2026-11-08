@@ -94,21 +94,71 @@ Move `sceneParams` (and the shared light structs) into a `SceneParams.glsl` incl
 the "append so other copies stay valid" rule and makes layout mistakes compile errors in one place. This is the largest
 change and can be done separately, before or after 1 and 2.
 
+## Decisions (2026-11-08)
+
+1. **No Phase 0.** Go straight to the new design. It avoids every candidate trigger: no struct copies from buffers, its
+   own binding, aligned params. If it crashes anyway, bisect then.
+2. **A new instance lane.** `InstanceData` grows to 96 bytes with a second `uvec4`, and the material ID goes back to a
+   plain index plus the no-shadow flag.
+3. **The `SceneParams.glsl` include comes first**, as Phase 1, so the later `SceneParam` changes happen in one place.
+
+### Phase 1 findings
+
+- **No shader uses `#include` today.** Shaders load only as prebuilt `.spv` (`ShaderHelper.CreateFromSpirv`), so
+  includes only matter at build time.
+- **Two compilers:**
+  - `glslangValidator`, used for the shaders outside the FlverShader set, supports `#include` through
+    `#extension GL_GOOGLE_include_directive : require`.
+  - `Veldrid.SPIRV.VariantCompiler` passes source text to libveldrid-spirv, which has no include callback. It needs a
+    textual `#include "..."` expansion step in `CompilationSet.cs` before compiling (the project is in this repo).
+- **The 68 copies are not all alike.** They run from 5 to 103 lines: 17 have the full 103 lines, and most of the others
+  are presumably truncated prefixes. Each one must be checked to be a true prefix of the full struct before it is
+  replaced. The very short ones (5-8 lines) may be different structs that only share the name, bound to other buffers.
+  Any copy that isn't a prefix is either renamed or left alone, and only true prefixes switch to the include.
+- **Bound buffer size:** with the include, every shader declares the full struct. Every buffer bound as scene params
+  must be `sizeof(SceneParam)` (true today for the pipeline, overlay, shadow cascade and rain buffers). The audit must
+  confirm there are no others.
+
+### Phase 1 as built (2026-11-08; checked in the app by the user: all viewports render as before)
+
+Correction to the findings above: there are **36** source copies, not 68. The 68 counted the compiled `.spv` files,
+which contain the struct name.
+
+- **`Shaders/SceneParams.glsl`:** `sceneLight`, `mapDirectionalLight` and `sceneParams`, generated from
+  FlverShader.frag's definitions, with an include guard and a default `MAX_SCENE_LIGHTS 16`.
+- **`Tools/SceneParamsAudit`:**
+  - The default run checks each copy by std140 layout. The rule: every member a shader reads (`sceneparam.x` outside
+    the struct) must be a canonical member at the same offset with the same type. Unread members are padding.
+    Results go to `report.md`.
+  - `--apply` writes the include and rewrites the compatible copies. It removes their struct and helper-struct blocks,
+    adds `#include` and the `GL_GOOGLE_include_directive` extension, and renames reads to the canonical names.
+  - `--spirv` compares each `.spv`'s `sceneParams` member offsets against git HEAD, writing `spirv-report.md`.
+- **Results:**
+  - 33 copies were switched automatically. Four of them had renames: `SimpleFlver_Brightness`/`_Saturation` →
+    `simpleFlverBrightness`/`Saturation` in the three SimpleFlver vertex shaders, and `OutlineColor` → `outlineColor`
+    in SimpleFlver_Outline.frag.
+  - **FlverShader.vert** was switched by hand. Its copy had an `#ifdef MATERIAL_DEFORM` inside the struct, there only
+    to reach `materialTime`.
+  - **FlverBB and FlverDS3 (.vert/.frag) are dead.** Nothing in the C# code or the variant sets references them. Their
+    `.frag` copies leave out `curserPosition`, so they would read `envmap` and the light multipliers 16 bytes early.
+    The `.frag` files were left as they are; their `.vert` files were switched, since those never read the bad members.
+- **The SPIR-V check:** every member of every old copy starts at the same offset in the new code, except the renames
+  above and `envmap` in FlverBB.vert, FlverDS3.vert and SimpleFlver_Outline.vert, which the audit found those shaders
+  never read.
+- **Bindings:** every scene-param binding is a full `sizeof(SceneParam)` buffer: the pipeline, overlay, rain and
+  shadow cascade buffers, and `VolumetricFog.comp`'s compute set (`pipeline.SceneParamBuffer`).
+- **Variant compiler:** `CompilationSet.ExpandIncludes` replaces `#include "file"` lines (relative to the including
+  file) with the file's text, followed by a `#line` so errors keep the shader's own line numbers. It also comments out
+  the include extension line. The rebuilt exe is in `bin/Release/net8.0`; the old `net8.0-windows` build can't expand
+  includes.
+- **Rule from now on:** a field added to `SceneParam.cs` goes in `SceneParams.glsl` once, keeping the 16-byte rows.
+  Shaders read it without any copying.
+
 ### Phased plan
 
 | Phase | Work | Check |
 |---|---|---|
-| 0 | Confirm the crash trigger. Build the old shader (`5733c94`) with only candidate 1 changed: field reads, no struct copies. | Does it still crash on this NVIDIA driver? Decides whether the binding change alone is enough. |
-| 1 | Lighting buffer on its own binding, scene set as entry 0, sun/hemisphere/model lights moved out of `SceneParam`. No per-part sets yet. | ER/DS3/DES map lighting looks the same as now. |
-| 2 | Re-enable DES env (HemEnv) lighting from entry 0. | Phase 5a's checks in `DES DrawParam Lighting Plan.md`. |
-| 3 | Instance lane for the set index; re-enable `UpdatePartLighting` and the checkbox. | DES parts with differing LightIDs lit by their own rows. |
-| 4 (optional) | `SceneParams.glsl` include for all shaders. | All viewports render as before. |
-
-## Open decisions
-
-Asked one at a time before building:
-
-1. Run Phase 0 first, or go straight to the new binding?
-2. Instance lane (`InstanceData` grows to 96 bytes), or keep a packed index in the material ID with a properly reserved
-   bit range?
-3. Do the `SceneParams.glsl` include now, or leave it for later?
+| 1 | `SceneParams.glsl` include: include expansion in the variant compiler; a prefix audit of all 68 copies; switch the true prefixes over; recompile everything. | Every viewport (map, model, TAE, gparam, collision, nav) renders as before, on ER, DS3 and DES. |
+| 2 | Lighting buffer on its own binding (for example `set 4, binding 1`, `std430`), with the scene's set as entry 0. Sun, hemisphere and model lights move out of `SceneParam`; the shader reads fields, never whole structs. | ER/DS3/DES map lighting looks the same as now. |
+| 3 | Re-enable DES env (HemEnv) lighting from entry 0. | Phase 5a's checks in `DES DrawParam Lighting Plan.md`. |
+| 4 | `InstanceData` grows to 96 bytes with the set index in the new lane (every `idata` reader updated); re-enable `UpdatePartLighting` and the checkbox. | DES parts with differing LightIDs lit by their own rows; non-DES unchanged. |

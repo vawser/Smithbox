@@ -237,11 +237,68 @@ namespace Veldrid.SPIRV
                 string fullPath = Path.Combine(searchPath, fileName);
                 if (File.Exists(fullPath))
                 {
-                    return File.ReadAllText(fullPath);
+                    return ExpandIncludes(fullPath, new HashSet<string>(StringComparer.OrdinalIgnoreCase));
                 }
             }
 
             throw new FileNotFoundException($"Unable to find shader file \"{fileName}\".");
+        }
+
+        private static readonly System.Text.RegularExpressions.Regex IncludeLine =
+            new System.Text.RegularExpressions.Regex(@"^\s*#\s*include\s+""([^""]+)""\s*$");
+
+        private static readonly System.Text.RegularExpressions.Regex IncludeExtensionLine =
+            new System.Text.RegularExpressions.Regex(@"^\s*#\s*extension\s+GL_GOOGLE_include_directive\b");
+
+        /// <summary>
+        /// The source of <paramref name="path" /> with its <c>#include "file"</c> lines replaced by the files' text,
+        /// resolved against the including file's folder, as glslangValidator resolves them. libveldrid-spirv compiles
+        /// one string and has no include callback. A <c>#line</c> after each include keeps the including file's line
+        /// numbers in errors. Each file is expanded once per shader; the include files also guard themselves.
+        /// </summary>
+        private static string ExpandIncludes(string path, HashSet<string> included)
+        {
+            string fullPath = Path.GetFullPath(path);
+            included.Add(fullPath);
+
+            string[] lines = File.ReadAllText(fullPath).Replace("\r\n", "\n").Split('\n');
+            var sb = new System.Text.StringBuilder();
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+
+                // Only needed by glslangValidator, which resolves the includes itself
+                if (IncludeExtensionLine.IsMatch(line))
+                {
+                    sb.Append("// ").Append(line).Append('\n');
+                    continue;
+                }
+
+                var m = IncludeLine.Match(line);
+                if (!m.Success)
+                {
+                    sb.Append(line).Append('\n');
+                    continue;
+                }
+
+                string target = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(fullPath), m.Groups[1].Value));
+                if (!File.Exists(target))
+                {
+                    throw new FileNotFoundException(
+                        $"Unable to find \"{m.Groups[1].Value}\", included by \"{fullPath}\" at line {i + 1}.");
+                }
+
+                if (!included.Contains(target))
+                {
+                    sb.Append(ExpandIncludes(target, included));
+                }
+
+                // The next line of this file is line i + 2
+                sb.Append("#line ").Append(i + 2).Append('\n');
+            }
+
+            return sb.ToString();
         }
 
         private string[] CompileCompute(ShaderVariantDescription variant)

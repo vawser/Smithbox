@@ -1,4 +1,5 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 
 // The GPARAM VolumetricFog group, see VolumetricFogPass.cs. Fills a volume of froxels: VolumeWidth cells across the
 // view, as many down as keep them square, and VolumeDepth slices between NearDepth and FarDepth, spaced evenly in
@@ -27,91 +28,7 @@ layout(local_size_x = 8, local_size_y = 8) in;
 // True when clip space Y points down the screen, see ShaderHelper.GetSpecializations
 layout (constant_id = 100) const bool c_clipSpaceYInverted = false;
 
-struct sceneLight
-{
-	vec4 positionRange;  // xyz: position, w: range (0 = no limit)
-	vec4 directionType;  // xyz: direction the light travels, w: type
-	vec4 colorIntensity; // rgb: color, a: intensity
-	vec4 spot;           // x: cos(inner angle), y: cos(outer angle), z: 1 to fade across the range
-};
-
-struct mapDirectionalLight
-{
-	vec4 direction;
-	vec4 color;
-	vec4 specColor;
-};
-
-struct sceneParams
-{
-	mat4 projection;
-	mat4 view;
-	vec4 eye;
-	vec4 lightDirection;
-	ivec4 curserPosition;
-	uint envmap;
-
-	float ambientLightMult;
-	float directLightMult;
-	float indirectLightMult;
-	float emissiveMapMult;
-	float sceneBrightness;
-	float simpleFlverBrightness;
-	float simpleFlverSaturation;
-	vec4 selectionColor;
-	vec4 outlineColor;
-	uint EnableDithering;
-	uint EnableTinting;
-	float ditherOpacity;
-
-	uint lightCount;
-	vec4 sunColor;
-	sceneLight lights[MAX_SCENE_LIGHTS];
-
-	float materialTime;
-	float windPeriod;
-	uint materialFeatures;
-	uint sceneDepthTexture;
-
-	vec4 wind;
-	float collisionOpacity;
-	float navVolumeSliceHeight;
-	uint navVolumeSliceFlags;
-
-	uint irradianceVolumeStart;
-	uint irradianceVolumeCount;
-	float irradianceVolumeExposure;
-	uint irradianceVolumeFlags;
-
-	uint mapLightingFlags;
-	vec4 sunSpecColor;
-
-	vec4 hemiUp;
-	vec4 hemiDown;
-	vec4 envMapScale;
-	float envMapSaturate;
-
-	mapDirectionalLight modelLights[4];
-	vec4 modelHemiUp;
-	vec4 modelHemiDown;
-
-	uint mapLightStart;
-	uint mapLightCount;
-
-	mat4 shadowMatrices[4];
-	vec4 shadowSplits;
-	vec4 shadowTexelSizes;
-	vec4 shadowDepthScales;
-	uint shadowTexture;
-	uint shadowCascadeCount;
-	float shadowFadeStart;
-	float shadowFadeEnd;
-	float shadowDepthBias;
-	float shadowSlopeBias;
-	float shadowCascadeFade;
-	float shadowStrength;
-	float shadowMapSize;
-};
+#include "SceneParams.glsl"
 
 // Laid out as VolumetricFogParam
 struct fogParams

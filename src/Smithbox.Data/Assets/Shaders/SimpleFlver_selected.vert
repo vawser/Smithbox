@@ -1,22 +1,7 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 
-struct sceneParams
-{
-	mat4 projection;
-	mat4 view;
-	vec4 eye;
-	vec4 lightDirection;
-	ivec4 curserPosition;
-	uint envmap;
-	
-	float ambientLightMult;
-	float directLightMult;
-	float indirectLightMult;
-	float emissiveMapMult;
-	float sceneBrightness;
-    float SimpleFlver_Brightness;
-    float SimpleFlver_Saturation;
-};
+#include "SceneParams.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {
@@ -96,7 +81,7 @@ void main()
 	mat4 w = idata[gl_InstanceIndex].world;
 	mat4 bone = GetBoneMatrix();
 	vec3 tnormal = normalize(mat3(idata[gl_InstanceIndex].materialID.z != 0u ? w * bone : w) * vec3(normal));
-    fsin_color = vec4((vec3((vec4(tnormal, 1.0)) + sceneparam.SimpleFlver_Brightness) * sceneparam.SimpleFlver_Saturation), 1.0);
+    fsin_color = vec4((vec3((vec4(tnormal, 1.0)) + sceneparam.simpleFlverBrightness) * sceneparam.simpleFlverSaturation), 1.0);
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
     
 	gl_Position = sceneparam.projection * sceneparam.view * w * bone * vec4(position, 1);

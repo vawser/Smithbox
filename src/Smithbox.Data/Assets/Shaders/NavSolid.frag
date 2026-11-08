@@ -1,4 +1,5 @@
 #version 450
+#extension GL_GOOGLE_include_directive : require
 #extension GL_EXT_shader_16bit_storage : enable
 #extension GL_EXT_shader_explicit_arithmetic_types : enable
 layout(location = 0) in vec3 normal;
@@ -17,53 +18,7 @@ layout (constant_id = 99) const bool c_picking = false;
 
 #define MAX_SCENE_LIGHTS 16
 
-struct sceneLight
-{
-	vec4 positionRange;
-	vec4 directionType;
-	vec4 colorIntensity;
-	vec4 spot;
-};
-
-struct sceneParams
-{
-	mat4 projection;
-	mat4 view;
-	vec4 eye;
-	vec4 lightDirection;
-	ivec4 curserPosition;
-	uint envmap;
-	
-	float ambientLightMult;
-	float directLightMult;
-	float indirectLightMult;
-	float emissiveMapMult;
-	float sceneBrightness;
-	float simpleFlverBrightness;
-	float simpleFlverSaturation;
-	vec4 selectionColor;
-	vec4 outlineColor;
-	uint EnableDithering;
-	uint EnableTinting;
-	float ditherOpacity;
-
-	// Only here to reach collisionOpacity, which comes after them
-	uint lightCount;
-	vec4 sunColor;
-	sceneLight lights[MAX_SCENE_LIGHTS];
-
-	float materialTime;
-	float windPeriod;
-	uint materialFeatures;
-	uint sceneDepthTexture;
-	vec4 wind;
-
-	float collisionOpacity;
-
-	// The nav volume slice, see NavVolumeSlice
-	float navVolumeSliceHeight;
-	uint navVolumeSliceFlags;
-};
+#include "SceneParams.glsl"
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
 {
