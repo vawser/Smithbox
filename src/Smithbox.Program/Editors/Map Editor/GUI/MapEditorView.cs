@@ -57,7 +57,7 @@ public class MapEditorView : IEditorView
     public MapViewportView ViewportWindow;
     public MapListView MapListView;
     public MapContentView MapContentView;
-    public MapGroupsView MapGroupsView;
+    public SelectionGroupsTool SelectionGroupsTool;
     public MapPropertyView MapPropertyView;
     public MapToolWindow ToolView;
     public MapDataView MapDataView;
@@ -158,7 +158,7 @@ public class MapEditorView : IEditorView
         // Core Views
         MapListView = new MapListView(this, project);
         MapContentView = new MapContentView(this, project);
-        MapGroupsView = new MapGroupsView(this, project);
+        SelectionGroupsTool = new SelectionGroupsTool(this, project);
         MapPropertyView = new MapPropertyView(this, project);
         ToolView = new MapToolWindow(this, project);
         MapDataView = new MapDataView(this, project);
@@ -256,6 +256,9 @@ public class MapEditorView : IEditorView
         MapListFilterTool.Update();
         MapAnimationTool.Update();
 
+        // Group shortcuts, so they work while the Tools window section is hidden
+        SelectionGroupsTool.Update();
+
         WorldMapTool.DisplayPopup();
 
         // The popups that context menus, shortcuts and the Tools window open. Drawn here rather than in the
@@ -304,25 +307,6 @@ public class MapEditorView : IEditorView
             }
 
             MapContentView.Display(width, height);
-        }
-
-        ImGui.End();
-
-        // Map Groups
-        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-        if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_Content_Groups")}##mapEditor_MapGroups_{viewIndex}", GUI.GetInnerWindowFlags()))
-        {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-            {
-                FocusManager.SetFocus(EditorFocusContext.MapEditor_MapGroups);
-                Editor.ViewHandler.ActiveView = this;
-            }
-
-            MapGroupsView.Display(width, height);
         }
 
         ImGui.End();
@@ -401,16 +385,6 @@ public class MapEditorView : IEditorView
                 Editor.ViewHandler.ActiveView = this;
 
                 MapContentView.Display(width, height);
-
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Content_Groups")))
-            {
-                FocusManager.SetFocus(EditorFocusContext.MapEditor_MapGroups);
-                Editor.ViewHandler.ActiveView = this;
-
-                MapGroupsView.Display(width, height);
 
                 ImGui.EndTabItem();
             }

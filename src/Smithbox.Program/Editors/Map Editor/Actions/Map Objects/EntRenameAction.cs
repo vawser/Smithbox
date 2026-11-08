@@ -81,7 +81,7 @@ public class EntRenameAction : ViewportAction
 
         if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
         {
-            View.MapGroupsView.UpdateMapGroupEntry(oldName, name);
+            View.SelectionGroupsTool.UpdateMapGroupEntry(oldName, name);
         }
 
         (entity.Container as MapContainer)?.LightAtlasResolver.AutomaticAdjustment(entity, oldName, name);

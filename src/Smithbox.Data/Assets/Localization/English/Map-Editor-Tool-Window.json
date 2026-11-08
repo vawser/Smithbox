@@ -45,6 +45,70 @@
       "Text": "Selection"
     },
     {
+      "Key": "MAP_ToolWindow_Selection_Groups",
+      "Text": "Selection Groups"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Hint",
+      "Text": "Store selections of map objects as groups, so you can re-select or edit them later. Groups are saved per project and per map. Right-click a group for its actions."
+    },
+    {
+      "Key": "MAP_SelectionGroups_No_Map",
+      "Text": "Load a map to see its selection groups."
+    },
+    {
+      "Key": "MAP_SelectionGroups_No_Groups",
+      "Text": "This map has no selection groups yet."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Options_Header_TT",
+      "Text": "Settings that apply to all selection groups."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Auto_Adjust_Name",
+      "Text": "Follow Renames"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Auto_Adjust_Name_TT",
+      "Text": "When a map object is renamed, update its name in the groups that hold it. Groups store map objects by name, so without this a renamed object drops out of its groups."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Actions_Header_TT",
+      "Text": "Create a group from the current selection."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Create",
+      "Text": "Create from Selection"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Create_TT",
+      "Text": "Create a new selection group holding the selected map objects.\nShortcut: {0}"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Create_Context",
+      "Text": "Create Selection Group"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Create_Context_TT",
+      "Text": "Create a new selection group from the current selection. It is listed in the Selection Groups section of the Tools window."
+    },
+    {
+      "Key": "MAP_SelectionGroups_Groups_Header",
+      "Text": "Groups"
+    },
+    {
+      "Key": "MAP_SelectionGroups_Groups_Header_TT",
+      "Text": "The selection groups of the active map.\nClick: select the group. Double-click: select and frame its contents. Shift+Click: add its contents to the current selection."
+    },
+    {
       "Key": "MAP_ToolWindow_Viewport_Filters",
       "Text": "Viewport Filters"
     },

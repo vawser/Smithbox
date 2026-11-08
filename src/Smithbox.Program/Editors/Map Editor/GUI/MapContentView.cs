@@ -402,7 +402,7 @@ public class MapContentView
 
             ImGui.Separator();
 
-            View.MapGroupsView.ContentsContextMenu(ent);
+            View.SelectionGroupsTool.ContentsContextMenu(ent);
 
             ImGui.EndPopup();
         }

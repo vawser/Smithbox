@@ -1,19 +1,18 @@
-﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
-using System.Numerics;
-using System.Reflection;
 using System.Text;
 using System.Text.Json;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapGroupsView
+/// <summary>
+/// Stored selections of map objects, per project and per map, shown as a section of the Tools window.
+/// </summary>
+public class SelectionGroupsTool
 {
     public MapEditorView View;
     public ProjectEntry Project;
-
-    public string ImguiID = "MapGroupsView";
 
     public string CurrentMapGroupEntryGUID = "";
     public MapGroupEntry CurrentMapGroupEntry = null;
@@ -21,45 +20,88 @@ public class MapGroupsView
     private string MapGroupsFilter = "";
     private bool ExactMapGroupsFilter = false;
 
-    public MapGroupsView(MapEditorView view, ProjectEntry project)
+    public SelectionGroupsTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
     }
 
-    public void Display(float width, float height)
+    /// <summary>
+    /// Called every frame by the view, so the shortcuts work while the section is hidden.
+    /// </summary>
+    public void Update()
     {
         Shortcuts();
+    }
 
-        GUI.TitleHeader("Groups", "Store groups of map objects as selections here. You can then easily re-select or manipulate them.\nGroups are specific to each project and to each map.");
+    public void OnToolWindow()
+    {
+        if (!ToolSections.Header($"{LOC.Get("MAP_ToolWindow_Selection_Groups")}##mapSelectionGroupsSectionHeader"))
+            return;
 
-        DisplayHeader();
+        ImGui.BeginChild("mapSelectionGroupsSection", ImGuiChildFlags.Borders);
 
-        ImGui.BeginChild("MapGroups", new Vector2(0, 0), ImGuiChildFlags.Borders);
+        // The group shortcuts (duplicate, delete, deselect) act while the section is hovered
+        if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+        {
+            FocusManager.SetFocus(EditorFocusContext.MapEditor_MapGroups);
+        }
 
-        DisplayMapGroupsList();
+        Display();
 
         ImGui.EndChild();
     }
 
-    public void DisplayHeader()
+    private void Display()
     {
-        var map = View.Selection.SelectedMapContainer;
+        GUI.WrappedText(LOC.Get("MAP_SelectionGroups_Hint"));
 
-        ImGui.BeginChild($"framedListFilter_mapGroupsList", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        var mapID = View.Selection.SelectedMapID;
 
-        EditorFilters.DisplaySearchbar("mapEditor_MapGroupsFilter",
+        if (mapID == null)
+        {
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("MAP_SelectionGroups_No_Map"));
+            return;
+        }
+
+        // Options
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Options_Header"),
+            LOC.Get("MAP_SelectionGroups_Options_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_SelectionGroups_Auto_Adjust_Name")}##selectionGroupsAutoAdjustName",
+            ref CFG.Current.MapEditor_MapContentGroup_AutoAdjustName);
+        GUI.Tooltip(LOC.Get("MAP_SelectionGroups_Auto_Adjust_Name_TT"));
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Actions_Header"),
+            LOC.Get("MAP_SelectionGroups_Actions_Header_TT"));
+
+        var hasSelection = View.ViewportSelection.IsSelection();
+
+        GUI.ConditionalMultiButtonInput("selectionGroupsActions",
+            "selectionGroupsCreate", LOC.Get("MAP_SelectionGroups_Create"),
+            LOC.Get("MAP_SelectionGroups_Create_TT", InputManager.GetHint(KeybindID.MapEditor_Create_Map_Group_Entry)),
+            () => CreateMapGroupEntry(View.ViewportSelection.GetEntitySelection()), hasSelection);
+
+        // Groups
+        GUI.Spacer();
+        GUI.SimpleHeader(
+            LOC.Get("MAP_SelectionGroups_Groups_Header"),
+            LOC.Get("MAP_SelectionGroups_Groups_Header_TT"));
+
+        EditorFilters.DisplayFramedListFilter("mapEditor_SelectionGroupsFilter",
             ref MapGroupsFilter, ref ExactMapGroupsFilter);
 
-        // Toggle: Name Auto-Adjust
-        GUI.DisplayToggleButton("nameAutoAdjustToggle", Icons.FileText,
-            ref CFG.Current.MapEditor_MapContentGroup_AutoAdjustName,
-            "MAP_GroupsView_NameAutoAdjust_Disabled",
-            "MAP_GroupsView_NameAutoAdjust_Enabled",
-            "MAP_GroupsView_NameAutoAdjust_TT");
+        ImGui.BeginChild("mapSelectionGroupsList", ImGuiChildFlags.Borders);
+
+        DisplayMapGroupsList(mapID);
 
         ImGui.EndChild();
-
     }
 
     public void Shortcuts()
@@ -101,35 +143,19 @@ public class MapGroupsView
         }
     }
 
-    public void DisplayMapGroupsList()
+    private void DisplayMapGroupsList(string mapID)
     {
-        var mapID = View.Selection.SelectedMapID;
-
-        ImGui.BeginChild($"mapGroupsList_{ImguiID}");
-
-        MapGroups curGroup = null;
-
-        if(mapID != null && Project.Handler.MapData.MapGroupsList.List.ContainsKey(mapID))
+        if (!Project.Handler.MapData.MapGroupsList.List.TryGetValue(mapID, out var curGroup)
+            || curGroup.Groups.Count == 0)
         {
-            curGroup = Project.Handler.MapData.MapGroupsList.List[mapID];
-
-            for (int i = 0; i < curGroup.Groups.Count; i++)
-            {
-                var curGroupEntry = curGroup.Groups[i];
-
-                DisplayMapGroupEntry(curGroupEntry, i);
-            }
-        }
-        else if(mapID == null)
-        {
-            GUI.WrappedText("No map has been loaded yet.");
-        }
-        else 
-        {
-            GUI.WrappedText("No groups exist yet.");
+            GUI.WrappedText(LOC.Get("MAP_SelectionGroups_No_Groups"));
+            return;
         }
 
-        ImGui.EndChild();
+        for (int i = 0; i < curGroup.Groups.Count; i++)
+        {
+            DisplayMapGroupEntry(curGroup.Groups[i], i);
+        }
     }
 
     public void DisplayMapGroupEntry(MapGroupEntry curEntry, int index)
@@ -161,7 +187,7 @@ public class MapGroupsView
             }
         }
 
-        if(selected)
+        if (selected)
         {
             DisplayMapGroupEntryContext(curEntry);
         }
@@ -175,7 +201,7 @@ public class MapGroupsView
 
         foreach (MsbEntity c in map.Objects)
         {
-            if(curEntry.Objects.Any(e => e == c.Name))
+            if (curEntry.Objects.Any(e => e == c.Name))
             {
                 View.ViewportSelection.AddSelection(c);
             }
@@ -194,7 +220,6 @@ public class MapGroupsView
             }
         }
     }
-
 
     public void DuplicateMapGroupEntry(MapGroupEntry curEntry)
     {
@@ -310,7 +335,6 @@ public class MapGroupsView
                 ImGui.EndMenu();
             }
 
-
             // Contents
             if (ImGui.BeginMenu("Group Contents"))
             {
@@ -333,55 +357,39 @@ public class MapGroupsView
 
             if (ImGui.BeginMenu("List of Contents"))
             {
-                List<string> nameList = new();
-                
-                var line = "";
-                for(int i = 0; i < curEntry.Objects.Count; i++)
+                // Six names per line
+                for (int i = 0; i < curEntry.Objects.Count; i += 6)
                 {
-                    var name = curEntry.Objects[i];
-
-                    if (i % 6 == 0)
-                    {
-                        line = $"{line} |";
-                        nameList.Add(line);
-                        line = "";
-                    }
-                    else
-                    {
-                        line = $"{line} | {name}";
-                    }
-                }
-
-                foreach (var entry in nameList)
-                {
-                    ImGui.Text(entry);
+                    ImGui.Text(string.Join(" | ", curEntry.Objects.Skip(i).Take(6)));
                 }
 
                 ImGui.EndMenu();
             }
             GUI.Tooltip("Display the contents of this group.");
 
-
             ImGui.EndPopup();
         }
     }
 
+    /// <summary>
+    /// Entry for the Map Contents context menu.
+    /// </summary>
     public void ContentsContextMenu(Entity ent)
     {
-        if (ImGui.Selectable("Create New Map Contents Group"))
+        if (ImGui.Selectable(LOC.Get("MAP_SelectionGroups_Create_Context")))
         {
             var curSelection = View.ViewportSelection.GetEntitySelection();
 
             CreateMapGroupEntry(curSelection);
         }
-        GUI.Tooltip("Create a new map contents group from the current selection.");
+        GUI.Tooltip(LOC.Get("MAP_SelectionGroups_Create_Context_TT"));
     }
 
     public string CreateMapGroupEntry(List<MsbEntity> selection)
     {
         var objectNames = new List<string>();
 
-        foreach(var entry in selection)
+        foreach (var entry in selection)
         {
             objectNames.Add(entry.Name);
         }
@@ -423,10 +431,10 @@ public class MapGroupsView
         {
             var mapGroups = Project.Handler.MapData.MapGroupsList.List[mapID];
 
-            if(mapGroups.Groups.Any(e => e.GUID.ToString() == guid))
+            if (mapGroups.Groups.Any(e => e.GUID.ToString() == guid))
             {
-                var targetGroup = mapGroups.Groups.FirstOrDefault(e  => e.GUID.ToString() == guid);
-                if(targetGroup != null)
+                var targetGroup = mapGroups.Groups.FirstOrDefault(e => e.GUID.ToString() == guid);
+                if (targetGroup != null)
                 {
                     mapGroups.Groups.Remove(targetGroup);
                 }
@@ -484,6 +492,7 @@ public class MapGroupsView
 
         SaveMapGroups();
     }
+
     public void RemoveFromMapGroupEntry(MapGroupEntry curEntry)
     {
         var newEntities = View.ViewportSelection.GetEntitySelection();
@@ -501,8 +510,6 @@ public class MapGroupsView
 
     public void UpdateMapGroupEntry(string oldName, string newName)
     {
-        var mapID = View.Selection.SelectedMapID;
-
         var existingEntry = Project.Handler.MapData.MapGroupsList.List
             .FirstOrDefault(e => e.Value.Groups
             .Any(e => e.Objects

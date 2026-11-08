@@ -146,6 +146,12 @@ public class MapToolWindow
         ActionSection(CFG.Current.Interface_MapEditor_Tool_Properties_Action, "MAP_ToolWindow_Property_Actions", "mapPropertyActionsSection", PropertiesActionTool.Display);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_Select_Action, "MAP_ToolWindow_Selection", "mapSelectionSection", SelectActionTool.Display);
 
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_SelectionGroups)
+        {
+            View.SelectionGroupsTool.OnToolWindow();
+        }
+
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
@@ -372,6 +378,7 @@ public class MapToolWindow
             // Actions
             ToolToggle("MAP_ToolWindow_Property_Actions", ref CFG.Current.Interface_MapEditor_Tool_Properties_Action);
             ToolToggle("MAP_ToolWindow_Selection", ref CFG.Current.Interface_MapEditor_Tool_Select_Action);
+            ToolToggle("MAP_ToolWindow_Selection_Groups", ref CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
 
             // Viewport visibility
             ToolToggle("MAP_ToolWindow_Viewport_Filters", ref CFG.Current.Interface_MapEditor_Tool_ViewportFilters);
@@ -410,12 +417,6 @@ public class MapToolWindow
                 CFG.Current.Interface_MapEditor_Tool_Prefab = !CFG.Current.Interface_MapEditor_Tool_Prefab;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Prefab);
-
-            if (ImGui.MenuItem("Selection Groups"))
-            {
-                CFG.Current.Interface_MapEditor_Tool_SelectionGroups = !CFG.Current.Interface_MapEditor_Tool_SelectionGroups;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
 
             ToolToggle("MAP_SearchTool_Local_Header", ref CFG.Current.Interface_MapEditor_Tool_LocalSearch);
             ToolToggle("MAP_SearchTool_Global_Header", ref CFG.Current.Interface_MapEditor_Tool_GlobalSearch);

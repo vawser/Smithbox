@@ -8,7 +8,7 @@
     ],
     "Contents": [
         "[Header]Information",
-        "The Selection Groups window hosts your stored selection groups, as well as the tools to create, edit and delete them.",
+        "The Selection Groups section of the Tools window hosts your stored selection groups, as well as the tools to create, edit and delete them.",
         "Selection Groups are user-defined groupings of map objects which can then be used to quickly re-select the defined group for further use.",
         "Support for up-to 11 keybound selection groups is provided, meaning you can press the key and instantly select all of the map objects assigned to that selection group.",
         ""

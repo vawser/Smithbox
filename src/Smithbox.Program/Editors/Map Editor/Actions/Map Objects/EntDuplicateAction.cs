@@ -250,7 +250,7 @@ public class EntDuplicateAction : ViewportAction
         if(CreateMapGroupEntry)
         {
             var curSelection = View.ViewportSelection.GetEntitySelection();
-            CreatedMapGroupGUID = View.MapGroupsView.CreateMapGroupEntry(curSelection);
+            CreatedMapGroupGUID = View.SelectionGroupsTool.CreateMapGroupEntry(curSelection);
         }
 
         if (PostExecutionAction != null)
@@ -302,7 +302,7 @@ public class EntDuplicateAction : ViewportAction
 
         if (CreateMapGroupEntry)
         {
-            View.MapGroupsView.DeleteMapGroupEntry(CreatedMapGroupGUID);
+            View.SelectionGroupsTool.DeleteMapGroupEntry(CreatedMapGroupGUID);
         }
 
         if (PostExecutionAction != null)
