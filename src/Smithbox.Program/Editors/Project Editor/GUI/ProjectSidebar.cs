@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Application;
 
 /// <summary>
-/// The Project Editor's list of projects: the open ones first, then every project grouped by game and group tag.
+/// The Project Editor's list of projects: an Open tab first, then one tab per game, grouped by group tag.
 /// </summary>
 public class ProjectSidebar
 {
@@ -38,87 +38,109 @@ public class ProjectSidebar
 
         EditorFilters.DisplayFramedListFilter("projectSidebarFilter", ref Filter, ref ExactFilter);
 
-        ImGui.BeginChild("projectSidebarList", Vector2.Zero, ImGuiChildFlags.Borders);
-
         var projects = orchestrator.Projects.ToList();
 
         if (projects.Count == 0)
         {
+            ImGui.BeginChild("projectSidebarList", Vector2.Zero, ImGuiChildFlags.Borders);
+
             if (orchestrator.ExistingProjectsRead)
                 ImGui.TextDisabled(LOC.Get("PROJECT_Sidebar_No_Projects"));
-        }
-        else
-        {
-            DisplayOpenGroup(projects);
-            DisplayGameGroups(projects);
+
+            ImGui.EndChild();
+            return;
         }
 
-        ImGui.EndChild();
+        // Tabs come from the unfiltered list so typing in the filter never removes the tab being viewed
+        if (ImGui.BeginTabBar("projectSidebarTabs", ImGuiTabBarFlags.FittingPolicyScroll))
+        {
+            DisplayOpenTab(projects);
+            DisplayGameTabs(projects);
+
+            ImGui.EndTabBar();
+        }
     }
 
     /// <summary>
     /// The loaded projects. Projects loaded only for another project's comparison data aren't open projects.
     /// </summary>
-    private void DisplayOpenGroup(List<ProjectEntry> projects)
+    private void DisplayOpenTab(List<ProjectEntry> projects)
     {
-        var open = projects.Where(e => e.IsActive && IsMatch(e)).ToList();
-
-        if (open.Count == 0)
+        if (!projects.Any(e => e.IsActive))
             return;
 
-        if (ImGui.CollapsingHeader($"{LOC.Get("PROJECT_Sidebar_Open_Header")}##sidebarOpenGroup", ImGuiTreeNodeFlags.DefaultOpen))
+        if (!ImGui.BeginTabItem($"{LOC.Get("PROJECT_Sidebar_Open_Header")}##sidebarOpenTab"))
+            return;
+
+        ImGui.BeginChild("projectSidebarList_open", Vector2.Zero, ImGuiChildFlags.Borders);
+
+        foreach (var project in projects.Where(e => e.IsActive && IsMatch(e)))
         {
-            foreach (var project in open)
-            {
-                DisplayEntry(project, "open", true);
-            }
+            DisplayEntry(project, "open", true);
         }
+
+        ImGui.EndChild();
+        ImGui.EndTabItem();
     }
 
     /// <summary>
-    /// Every project, one group per game in the project type order, then by group tag.
+    /// One tab per game in the project type order; within a tab, projects are grouped by group tag.
     /// </summary>
-    private void DisplayGameGroups(List<ProjectEntry> projects)
+    private void DisplayGameTabs(List<ProjectEntry> projects)
     {
         foreach (var projectType in ProjectTypeOrder.Order)
         {
-            var gameProjects = projects
-                .Where(e => e.Descriptor.ProjectType == projectType && IsMatch(e))
-                .OrderBy(e => e.Descriptor.ProjectName, StringComparer.OrdinalIgnoreCase)
-                .ToList();
-
-            if (gameProjects.Count == 0)
+            if (!projects.Any(e => e.Descriptor.ProjectType == projectType))
                 continue;
 
-            var gameName = LOC.Get(projectType.GetDisplayName());
+            var shortName = LOC.Get($"EDITOR_Short_Project_Type_{projectType}");
+            var tabOpen = ImGui.BeginTabItem($"{shortName}##sidebarGameTab_{projectType}");
 
-            if (!ImGui.CollapsingHeader($"{gameName}##sidebarGame_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.IsItemHovered())
+                GUI.Tooltip(LOC.Get(projectType.GetDisplayName()));
+
+            if (!tabOpen)
                 continue;
 
-            // Group Tags
-            var tagged = gameProjects
-                .Where(e => e.Descriptor.FolderTag != "")
-                .GroupBy(e => e.Descriptor.FolderTag)
-                .OrderBy(e => e.Key, StringComparer.OrdinalIgnoreCase);
+            ImGui.BeginChild($"projectSidebarList_{projectType}", Vector2.Zero, ImGuiChildFlags.Borders);
 
-            foreach (var group in tagged)
+            DisplayGameProjects(projects, projectType);
+
+            ImGui.EndChild();
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplayGameProjects(List<ProjectEntry> projects, ProjectType projectType)
+    {
+        var gameProjects = projects
+            .Where(e => e.Descriptor.ProjectType == projectType && IsMatch(e))
+            .OrderBy(e => e.Descriptor.ProjectName, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        // Group Tags
+        var tagged = gameProjects
+            .Where(e => e.Descriptor.FolderTag != "")
+            .GroupBy(e => e.Descriptor.FolderTag)
+            .OrderBy(e => e.Key, StringComparer.OrdinalIgnoreCase);
+
+        foreach (var group in tagged)
+        {
+            if (ImGui.TreeNodeEx($"{Icons.Folder} {group.Key}##sidebarTag_{projectType}_{group.Key}", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (ImGui.TreeNodeEx($"{Icons.Folder} {group.Key}##sidebarTag_{projectType}_{group.Key}", ImGuiTreeNodeFlags.DefaultOpen))
+                foreach (var project in group)
                 {
-                    foreach (var project in group)
-                    {
-                        DisplayEntry(project, "game", false);
-                    }
-
-                    ImGui.TreePop();
+                    DisplayEntry(project, "game", false);
                 }
-            }
 
-            // Untagged
-            foreach (var project in gameProjects.Where(e => e.Descriptor.FolderTag == ""))
-            {
-                DisplayEntry(project, "game", false);
+                ImGui.TreePop();
             }
+        }
+
+        // Untagged
+        foreach (var project in gameProjects.Where(e => e.Descriptor.FolderTag == ""))
+        {
+            DisplayEntry(project, "game", false);
         }
     }
 
