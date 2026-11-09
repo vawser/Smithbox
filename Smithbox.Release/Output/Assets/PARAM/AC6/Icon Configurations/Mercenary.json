@@ -1,8 +1,0 @@
-{
-  "Name": "Mercenary",
-  "File": "01_common",
-  "InternalFiles": [
-    "SB_MercenaryRank"
-  ],
-  "SubTexturePrefix": "MercenaryRank_"
-}

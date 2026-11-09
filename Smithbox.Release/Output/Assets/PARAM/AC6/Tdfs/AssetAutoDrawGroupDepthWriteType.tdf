@@ -1,5 +1,0 @@
-"ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE"
-"u8"
-"自動（アニメがある、破壊される場合は遮蔽しない）","0"
-"しない","1"
-"する","2"

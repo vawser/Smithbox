@@ -1,8 +1,0 @@
-{
-  "Name": "Arena",
-  "File": "01_common",
-  "InternalFiles": [
-    "SB_ArenaRank"
-  ],
-  "SubTexturePrefix": "ArenaRank_"
-}

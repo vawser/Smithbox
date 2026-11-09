@@ -1,8 +1,0 @@
-Smithbox - Version 2.2.4
-
-Cannot start process because a file name has not been provided.
-
-   at System.Diagnostics.Process.Start()
-   at StudioCore.Smithbox.Update(Single deltaseconds) in ./src/Smithbox.Program/Smithbox.cs:line 615
-   at StudioCore.Smithbox.Run() in ./src/Smithbox.Program/Smithbox.cs:line 393
-   at SmithboxApp.Program.Main(String[] args) in ./src/Smithbox.Vulkan/Program.cs:line 56
