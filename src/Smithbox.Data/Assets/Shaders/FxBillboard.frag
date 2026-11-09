@@ -75,18 +75,39 @@ vec4 Sample(uint tex, vec2 uv, vec2 spotUv)
 	return texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], linearSampler), uv);
 }
 
-// The uv of a frame of a sprite sheet
-vec2 FrameUv(vec2 uv, float frame, uint columns, uint total)
+// The first layer: a frame of a sprite sheet, with explicit gradients from the unwrapped uv so a wrap doesn't pick
+// the smallest mip along the seam. With clampCell the uv stays half a texel (at the mip being read) inside the
+// frame, so linear filtering takes nothing from the opposite edge (the sampler repeats) or the neighbouring frame:
+// multiplied up by the alpha and rgb multipliers, that bleed showed as the quad's outline. Tiling layers
+// (scrolled, offset or scaled uvs, and trails) keep wrapping.
+vec4 SampleFrame(uint tex, vec2 uv, vec2 dx, vec2 dy, float frame, uint columns, uint total, bool clampCell, vec2 spotUv)
 {
-	if (total <= 1u)
+	if (tex == 0u)
 	{
-		return uv;
+		float r = length(spotUv - 0.5) * 2.0;
+		return vec4(1, 1, 1, clamp(1.0 - r, 0.0, 1.0));
 	}
-	uint rows = (total + columns - 1u) / columns;
-	uint f = uint(mod(max(frame, 0.0), float(total)));
-	vec2 cell = vec2(f % columns, f / columns);
-	return (cell + uv) / vec2(columns, rows);
+
+	uint rows = total <= 1u ? 1u : (total + columns - 1u) / columns;
+	uint cols = total <= 1u ? 1u : columns;
+	vec2 grid = vec2(cols, rows);
+	uint f = total <= 1u ? 0u : uint(mod(max(frame, 0.0), float(total)));
+	vec2 cell = vec2(f % cols, f / cols);
+
+	vec2 local = fract(uv);
+	if (clampCell)
+	{
+		vec2 cellTexels = vec2(textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], linearSampler), 0)) / grid;
+		float rho = max(length(dx * cellTexels), length(dy * cellTexels));
+		float texel = exp2(max(log2(max(rho, 1e-6)), 0.0));
+		vec2 inset = min(vec2(0.5 * texel) / max(cellTexels, vec2(1.0)), vec2(0.5));
+		local = clamp(uv, inset, 1.0 - inset);
+	}
+
+	return textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], linearSampler),
+		(cell + local) / grid, dx / grid, dy / grid);
 }
+
 
 // Distance from the camera along its axis of a value in the depth buffer
 float ViewDepth(float depth)
@@ -109,10 +130,16 @@ void main()
 
 	// The first layer, framed (and blended with the next frame when interpolating)
 	vec2 uv1 = fsin_uv * fsin_layer1.zw + fsin_layer1.xy;
-	vec4 tex = Sample(m.textures.x, FrameUv(fract(uv1), frame, columns, total), fsin_uv);
+	vec2 dx1 = dFdx(uv1);
+	vec2 dy1 = dFdy(uv1);
+	const uint SegmentOrientation = 100u;
+	bool tiling = m.params.w == SegmentOrientation
+		|| any(greaterThan(abs(fsin_layer1.xy), vec2(1e-4)))
+		|| any(greaterThan(abs(fsin_layer1.zw - 1.0), vec2(1e-4)));
+	vec4 tex = SampleFrame(m.textures.x, uv1, dx1, dy1, frame, columns, total, !tiling, fsin_uv);
 	if ((flags & FlagInterpolate) != 0u && total > 1u && fract(frame) > 0.001)
 	{
-		vec4 next = Sample(m.textures.x, FrameUv(fract(uv1), frame + 1.0, columns, total), fsin_uv);
+		vec4 next = SampleFrame(m.textures.x, uv1, dx1, dy1, frame + 1.0, columns, total, !tiling, fsin_uv);
 		tex = mix(tex, next, fract(frame));
 	}
 
@@ -122,16 +149,36 @@ void main()
 		tex = vec4(1.0);
 	}
 
+	// Layers 2 and 3 by the layer opacity mode (extra.y): 0 their colours multiply and only layer 1's alpha is the
+	// opacity; 1 (both) and 2 (layer 2 only) take their colour away and make their brightness the opacity, which is
+	// how a texture without an alpha channel (DXT1) is cut out
 	if ((flags & FlagMultiTexture) != 0u)
 	{
+		uint opacityMode = m.extra.y;
 		tex *= fsin_layer1Color;
 		if (m.textures.y != 0u)
 		{
-			tex *= Sample(m.textures.y, fsin_uv * fsin_layer2.zw + fsin_layer2.xy, fsin_uv) * fsin_layer2Color;
+			vec4 l2 = Sample(m.textures.y, fsin_uv * fsin_layer2.zw + fsin_layer2.xy, fsin_uv) * fsin_layer2Color;
+			if (opacityMode == 1u || opacityMode == 2u)
+			{
+				tex.a *= max(l2.r, max(l2.g, l2.b)) * l2.a;
+			}
+			else
+			{
+				tex.rgb *= l2.rgb;
+			}
 		}
 		if (m.textures.z != 0u)
 		{
-			tex *= Sample(m.textures.z, fsin_uv * fsin_layer3.zw + fsin_layer3.xy, fsin_uv) * fsin_layer3Color;
+			vec4 l3 = Sample(m.textures.z, fsin_uv * fsin_layer3.zw + fsin_layer3.xy, fsin_uv) * fsin_layer3Color;
+			if (opacityMode == 1u)
+			{
+				tex.a *= max(l3.r, max(l3.g, l3.b)) * l3.a;
+			}
+			else
+			{
+				tex.rgb *= l3.rgb;
+			}
 		}
 	}
 

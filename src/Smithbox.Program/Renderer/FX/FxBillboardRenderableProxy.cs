@@ -49,7 +49,8 @@ public struct FxBillboardMaterial
 {
     public uint Texture1, Texture2, Texture3, LayerCount;
     public uint Columns, TotalFrames, Flags, Orientation;
-    public uint BlendMode, Pad0, Pad1, Pad2;
+    /// <summary>extra.x: blend mode; extra.y: MultiTextureBillboardEx's layer opacity mode (FxBillboardDef).</summary>
+    public uint BlendMode, LayerOpacityMode, Pad1, Pad2;
     public Vector4 Tuning; // x: brightness, y: depth fade distance
 
     public const uint FlagInterpolate = 1, FlagDepthBlend = 2, FlagPremultiply = 4, FlagMultiTexture = 8,

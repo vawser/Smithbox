@@ -33,6 +33,13 @@ public sealed class FxBillboardDef
     public bool UniformScale;
     public bool ScaleBeforeRotation = true;
     public bool PremultiplyAlpha;
+
+    /// <summary>
+    /// MultiTextureBillboardEx's layer opacity mode (the schema's unk_ds3_f2_10): 0 every layer's colour is
+    /// multiplied and the opacity is layer 1's alpha; 1 layers 2 and 3 lose their colour and their brightness is
+    /// opacity; 2 the same for layer 2 only. Mode 1 is how a sigil without an alpha channel (DXT1) is cut out.
+    /// </summary>
+    public int LayerOpacityMode;
     public bool Octagonal;
     public float ScaleVariationX = 1, ScaleVariationY = 1;
     public float MinFadeDistance = -1, MinDistance = -1, MaxFadeDistance = -1, MaxDistance = -1;
@@ -94,6 +101,8 @@ public sealed class FxBillboardDef
         d.UniformScale = IntValue(view, "uniformScale", at0, 0) != 0;
         d.ScaleBeforeRotation = IntValue(view, "scaleBeforeRotation", at0, 1) != 0;
         d.PremultiplyAlpha = IntValue(view, "premultiplyAlpha", at0, 0) != 0;
+        if (kind == FxBillboardKind.MultiTexture)
+            d.LayerOpacityMode = Math.Clamp(IntValue(view, "unk_ds3_f2_10", at0, 0), 0, 2);
         d.Octagonal = IntValue(view, "octagonal", at0, 0) != 0;
         d.ScaleVariationX = FloatValue(view, "scaleVariationX", 1);
         d.ScaleVariationY = FloatValue(view, "scaleVariationY", 1);

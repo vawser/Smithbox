@@ -229,6 +229,7 @@ public class FxBillboardRenderer
                 Flags = flags,
                 Orientation = (uint)Math.Max(def.Kind == FxBillboardKind.PointSprite ? 1 : def.Orientation, 0),
                 BlendMode = (uint)Math.Clamp(def.BlendMode, 0, 7),
+                LayerOpacityMode = multi ? (uint)def.LayerOpacityMode : 0,
                 Tuning = brightness,
             };
         }
