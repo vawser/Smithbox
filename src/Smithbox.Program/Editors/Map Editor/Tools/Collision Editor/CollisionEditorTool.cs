@@ -120,7 +120,7 @@ public class CollisionEditorTool
     public bool CanUse()
     {
         return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
-            or ProjectType.DS3 or ProjectType.SDT;
+            or ProjectType.DB_NT or ProjectType.DS3 or ProjectType.SDT;
     }
 
     /// <summary>True while a vertex is dragged, so the viewport's clicks don't select anything.</summary>

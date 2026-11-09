@@ -163,20 +163,21 @@ public class HavokCollisionBank
 
     /// <summary>
     /// The games whose map collision is listed when a map loads and read when it is first asked for (MapDocuments):
-    /// ER, NR and AC6, and DS3. SDT's is read at load instead (TagContainers).
+    /// ER, NR, AC6, DB_NT and DS3. SDT's is read at load instead (TagContainers).
     /// </summary>
     private bool IsListedGame => Project.Descriptor.ProjectType is ProjectType.ER
         or ProjectType.NR
         or ProjectType.AC6
+        or ProjectType.DB_NT
         or ProjectType.DS3;
 
     /// <summary>
     /// The paths of a map's collision binder of one type. ER, NR and AC6 keep a map in its area's folder
-    /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3 and SDT keep it in the map's own (map/m30_00_00_00/...).
+    /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3, SDT and DB_NT keep it in the map's own (map/m30_00_00_00/...).
     /// </summary>
     private (string Bhd, string Bdt) GetBinderPaths(string mapId, string type)
     {
-        var folder = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB
+        var folder = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.DB_NT
             ? Path.Join("map", mapId)
             : Path.Join("map", mapId.Substring(0, 3), mapId);
 

@@ -56,8 +56,15 @@ public class CollisionEditorFallProtection
         Tool = tool;
     }
 
-    /// <summary>The games whose f files the walls are built for: ER and NR (Havok 2018 extern meshes).</summary>
-    private bool CanUse => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+    /// <summary>The games whose f files the walls are built for: ER, NR and DB_NT (Havok 2018 extern meshes).</summary>
+    private bool CanUse => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT;
+
+    /// <summary>
+    /// The motion properties of the game's fall protection bodies: DB_NT's are all 0, ER's and NR's 0xFFFF (none).
+    /// </summary>
+    private ushort MotionPropertiesId => Project.Descriptor.ProjectType is ProjectType.DB_NT
+        ? (ushort)0
+        : CollisionEditorFallShapes.NoMotionProperties;
 
     #region Display
 
@@ -550,7 +557,7 @@ public class CollisionEditorFallProtection
 
         try
         {
-            after.AddRange(Walls.Bodies.Select(b => CollisionEditorFallShapes.MakeBody(b, filter)));
+            after.AddRange(Walls.Bodies.Select(b => CollisionEditorFallShapes.MakeBody(b, filter, MotionPropertiesId)));
         }
         catch (Exception e)
         {

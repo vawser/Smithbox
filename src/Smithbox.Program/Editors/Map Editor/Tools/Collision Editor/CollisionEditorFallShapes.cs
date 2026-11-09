@@ -447,11 +447,16 @@ public static class CollisionEditorFallShapes
 
     #region Havok
 
+    /// <summary>The motion properties ID of a body with none, as ER's and NR's fall protection bodies have.</summary>
+    public const ushort NoMotionProperties = 0xFFFF;
+
     /// <summary>
     /// A fall protection body as the game's: its extern mesh, at the origin, unnamed, with the collision filter given
-    /// (the game's are 0 or 1; ER's legacy dungeons only use 1).
+    /// (the game's are 0 or 1; ER's legacy dungeons only use 1) and motion properties (ER and NR use none, 0xFFFF;
+    /// DB_NT 0).
     /// </summary>
-    public static hknpPhysicsSystemData.bodyCinfoWithAttachment MakeBody(WallBody wall, uint collisionFilter)
+    public static hknpPhysicsSystemData.bodyCinfoWithAttachment MakeBody(WallBody wall, uint collisionFilter,
+        ushort motionPropertiesId = NoMotionProperties)
     {
         return new hknpPhysicsSystemData.bodyCinfoWithAttachment
         {
@@ -471,7 +476,7 @@ public static class CollisionEditorFallShapes
             m_mass = -1f,
             m_massDistribution = null,
             m_dragProperties = null,
-            m_motionPropertiesId = 0xFFFF,
+            m_motionPropertiesId = motionPropertiesId,
             m_desiredBodyId = new hknpBodyId { m_serialAndIndex = 0x00FFFFFF },
             m_motionId = 0x7FFFFFFF,
             m_collisionLookAheadDistance = 0f,
