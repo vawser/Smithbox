@@ -1,4 +1,8 @@
 # Contributions
+By contributing to Smithbox, you agree that your contributions are licensed under the [GNU General Public License v3.0 or later](LICENSE).
+
+Do not add proprietary binaries (for example Oodle `oo2core` DLLs) or code copied from sources whose license is incompatible with GPL-3.0. When adding third-party code or packages, add their license to `src/Smithbox.Data/Licenses/THIRD-PARTY-NOTICES.txt`.
+
 <details>
   <summary>Guide </summary>
 To make contributions to Smithbox, you will first need to setup a local repository so you can create pull requests.

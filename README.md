@@ -39,6 +39,13 @@ If you want to edit EMEVD scripts, you should use [DarkScript3](https://github.c
 
 If you want to edit ESD scripts, you should use [ESDLang](https://github.com/thefifthmatt/ESDLang) or [ESDStudio](https://github.com/GompDS/ESDStudio) if you want a GUI interface.
 
+## License
+Smithbox is licensed under the [GNU General Public License v3.0 or later](LICENSE).
+
+Smithbox is a fork of DSMapStudio, whose code (Copyright (c) 2018 Katalash, Meowmaritus) is used under the MIT License. Third-party components and their licenses are listed in [Licenses](src/Smithbox.Data/Licenses), which is also included in each release.
+
+Smithbox does not include Oodle. Projects for games that use it copy `oo2core` from the game folder automatically.
+
 ## Support
 If you enjoy Smithbox, feel free to support me (Vawser) via [Ko-fi](https://ko-fi.com/vawser)!
 

@@ -24,6 +24,8 @@ GPL-3.0 code linked into the program:
 
 GPL-3.0 is copyleft. Distributing a work that combines GPL code with your own code, whether through static linking or a ProjectReference into one .NET application, means distributing the whole under GPL-3.0. MIT code may be included in a GPL work (it is GPL-compatible), but the reverse doesn't hold. So the release binaries are GPL-3.0 whatever `LICENSE` says. DSMapStudio has the same mismatch, and Smithbox inherited it.
 
+**Status (2026-11-09): done, option A.** `LICENSE` is now the verbatim GPL-3.0 text. `Licenses/Smithbox/LICENSE.txt` holds the GPL-3.0-or-later notice and the licensing history. README has a License section, and CONTRIBUTING says contributions are GPL-3.0-or-later.
+
 **Do you need to update the license? Yes.** Options:
 
 - **A (recommended): relicense Smithbox as GPL-3.0-or-later.** MIT lets you sublicense, so the Katalash/Meowmaritus and contributor MIT code can be distributed under GPL. Keep their MIT copyright notices (e.g. keep `Licenses/DSMS/LICENSE.txt`). Contributors don't need to sign off, because MIT already grants this. It matches what you actually ship.
@@ -48,6 +50,8 @@ Oodle is commercial software. Only Oodle licensees (the game developers) may red
 - Note: the DLLs remain in git history. Removing them from the current tree stops further distribution, which is what matters most.
 
 ## 3. Missing third-party notices
+
+**Status (2026-11-09): done.** Added `src/Smithbox.Data/Licenses/THIRD-PARTY-NOTICES.txt`, built from the nuspec and LICENSE files in the NuGet cache and upstream repos. Native library copyright lines come from upstream and could be checked against the exact versions. Also added `src/Veldrid/LICENSE` and `src/native/NavGen/bvh/LICENSE.txt`. **New finding:** DrSwizzler (Shadowth117) has no published license (the repo license is null and the nuspec has none), so its redistribution rights are unclear. Ask the author to add one (e.g. MIT).
 
 MIT, BSD, Apache-2.0 and zlib-with-binary terms all require keeping the copyright/license notice in copies you distribute. `Licenses/` has only: Smithbox, DSMS, SoulsFormats, HKLib, ESDLang, coremats-templates, Tracy.
 
@@ -87,6 +91,8 @@ Fix: add `Licenses/THIRD-PARTY-NOTICES.txt` (one section per component: name, UR
 Apache-2.0 items (ESDLang, coremats-templates, Grpc, SPIRV tooling) also require passing on any upstream NOTICE file, and modified files must be marked as changed.
 
 ## 4. sixlabors.lic
+
+**Status (2026-11-09): decided to leave it committed.**
 
 ImageSharp 4.x checks for a `sixlabors.lic` key. The file is committed in three places (`src/Smithbox.Program`, `src/Smithbox.Data/Licenses`, `Smithbox.Release/Output/Licenses`) and so is public. Six Labors gives open-source projects keys for free under the Split License. Check the terms of your key grant on whether it may sit in a public repo. If not, move it to a CI secret or an ignored local file. If you aren't sure, ask Six Labors. This doesn't affect what license Smithbox can use: the Split License applies Apache-2.0 terms to OSI-licensed projects, and Apache-2.0 is GPL-3.0-compatible.
 
