@@ -1,11 +1,13 @@
 #----------------------------------------------------
 # FX Editor TODO
 #----------------------------------------------------
-- Implement
+- Other:
+    - Add quicklinks in other editors to jump to effect
 
 - Effect List:
     - Add Duplicate / Delete action
     - Add Export action
+    - Option to toggle auto-framing of effect
 
 - Effect Contents:
     - Add visibility toggles for each node so the node's effect can be hidden in playback
@@ -13,4 +15,4 @@
 
 - Bugs:
     - Texture field in action inspector is read as a number, should be a string input (can be model ID or texture file name)
-    - 
+    - Exit prompt doesn't name editor

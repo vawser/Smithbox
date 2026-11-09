@@ -25,6 +25,7 @@ public class FxEditorScreen : EditorScreen
     public FxEffectList EffectList;
     public FxEffectTree EffectTree;
     public FxInspector Inspector;
+    public FxCurveEditor CurveEditor;
 
     // Viewport
     public RenderScene RenderScene;
@@ -48,6 +49,7 @@ public class FxEditorScreen : EditorScreen
         EffectList = new FxEffectList(this);
         EffectTree = new FxEffectTree(this);
         Inspector = new FxInspector(this);
+        CurveEditor = new FxCurveEditor(this);
 
         RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
         Universe = new FxUniverse(this, project);
@@ -97,6 +99,9 @@ public class FxEditorScreen : EditorScreen
         Window($"{LOC.Get("FX_Window_Effect_List")}###fxEditor_EffectList", dsid, EditorFocusContext.FxEditor_EffectList, EffectList.Display);
         Window($"{LOC.Get("FX_Window_Effect_Tree")}###fxEditor_EffectTree", dsid, EditorFocusContext.FxEditor_EffectTree, EffectTree.Display);
         Window($"{LOC.Get("FX_Window_Inspector")}###fxEditor_Inspector", dsid, EditorFocusContext.FxEditor_Inspector, Inspector.Display);
+
+        if (CFG.Current.Interface_FxEditor_CurveEditor)
+            Window($"{LOC.Get("FX_Window_Curve_Editor")}###fxEditor_CurveEditor", dsid, EditorFocusContext.FxEditor_Inspector, CurveEditor.Display);
 
         // Viewport: the shared viewport window sets the focus itself
         ViewportWindow.Display(dsid);
@@ -239,6 +244,11 @@ public class FxEditorScreen : EditorScreen
 
         ImGui.Separator();
 
+        // Curve Editor
+        if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Curve_Editor")}##fxToggleCurveEditor"))
+            CFG.Current.Interface_FxEditor_CurveEditor = !CFG.Current.Interface_FxEditor_CurveEditor;
+        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_CurveEditor);
+
         // Tools window
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Tools")}##fxToggleTools"))
             CFG.Current.Interface_FxEditor_ToolWindow = !CFG.Current.Interface_FxEditor_ToolWindow;
@@ -273,7 +283,10 @@ public class FxEditorScreen : EditorScreen
             return;
 
         if (!autoSave)
+        {
             Inspector.FlushPending();
+            CurveEditor.FlushPending();
+        }
 
         var dirty = Data.Bank.DirtyEntries.ToList();
 

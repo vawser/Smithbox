@@ -8,7 +8,8 @@ namespace StudioCore.Editors.FxEditor;
 /// <summary>
 /// The selected tree item. For an action: its named fields, properties and section10 lists through the
 /// schema, in fxr-main's display units (seconds, degrees, ...), with a raw view of the stored words.
-/// Fields and constant properties can be edited; keyframed properties are shown (editing is phase E3).
+/// Fields and constant properties can be edited here; a property's name (or a keyframed property's summary) opens
+/// it in the Curve Editor, where its keys, function and modifiers are edited.
 /// </summary>
 public class FxInspector
 {
@@ -145,7 +146,15 @@ public class FxInspector
             var def = view.Describe(name);
             bool stored = view.IsStored(name);
             var label = FxNames.Pretty(name);
-            if (stored)
+            if (view.KindOf(name) == FxrValueKind.Property)
+            {
+                // Properties open in the Curve Editor
+                if (!stored) ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color with { W = 0.5f });
+                if (ImGui.Selectable($"{label}##fxPropSelect_{name}", Editor.Selection.Property == name))
+                    Editor.Selection.SelectProperty(name);
+                if (!stored) ImGui.PopStyleColor();
+            }
+            else if (stored)
                 ImGui.TextUnformatted(label);
             else
                 ImGui.TextDisabled(label);
@@ -339,15 +348,19 @@ public class FxInspector
         }
         else
         {
-            // Keyframed: summary, keys on demand (editing is phase E3)
+            // Keyframed: a summary, which opens the curve in the Curve Editor
             int keys = curve.Function == FxrPropertyFunction.ComponentHermite
                 ? curve.ComponentKeyframes.Sum(k => k.Count)
                 : curve.Keyframes.Count;
             var summary = LOC.Get("FX_Inspector_Curve_Summary", curve.Function, keys, curve.Loop ? LOC.Get("FX_Inspector_Curve_Loop") : "");
-            if (ImGui.TreeNodeEx($"{summary}{id}", ImGuiTreeNodeFlags.SpanAvailWidth))
+            if (ImGui.Selectable($"{summary}{id}", Editor.Selection.Property == name))
+                Editor.Selection.SelectProperty(name);
+            if (ImGui.IsItemHovered())
             {
+                ImGui.BeginTooltip();
+                ImGui.TextUnformatted(LOC.Get("FX_Inspector_Curve_Open_TT"));
                 DisplayKeys(curve);
-                ImGui.TreePop();
+                ImGui.EndTooltip();
             }
         }
 
