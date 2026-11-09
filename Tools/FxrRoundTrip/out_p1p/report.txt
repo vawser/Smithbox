@@ -1,6 +1,0 @@
-== NR: 197 ffxbnds (197 read), 11182 fxr (406 duplicate names), max node depth 0
-   FXR (new) round trip: 11182/11182 byte-perfect, 0 read/write fail
-     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 6776
-     zero empty offsets: All: 3154
-     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 1130
-     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 122

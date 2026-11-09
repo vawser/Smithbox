@@ -1,7 +1,0 @@
-== ER: 220 ffxbnds (0 read), 0 fxr (0 duplicate names), max node depth 0
-   FXR (new) round trip: 0/0 byte-perfect, 0 read/write fail
-   ! /sfx/sfxbnd_c2040.ffxbnd.dcx: BND4 read failed: Could not find a supported version of oo2core. Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory
-   ! /sfx/sfxbnd_c2120.ffxbnd.dcx: BND4 read failed: Could not find a supported version of oo2core. Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory
-   ! /sfx/sfxbnd_c2130.ffxbnd.dcx: BND4 read failed: Could not find a supported version of oo2core. Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory
-   ! /sfx/sfxbnd_c3010.ffxbnd.dcx: BND4 read failed: Could not find a supported version of oo2core. Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory
-   ! /sfx/sfxbnd_c3320.ffxbnd.dcx: BND4 read failed: Could not find a supported version of oo2core. Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory

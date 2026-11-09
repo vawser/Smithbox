@@ -1,9 +1,0 @@
-# NR third pass: event names. NR shifts its structs (ChrCtrl is chr+60h, ActionFlag fields +48h), so names that
-# carry an ER offset get NR's.
-E 344 SetChrCtrlUnk350       # NR ChrCtrl+350 (ER +340)
-E 907 SetPhysicsUnk3A8       # NR PhysicsModule+3A8 (ER +398)
-E 911 SetChrCtrlUnk32C       # NR ChrCtrl+32C/+330 (ER +31C/+320)
-E 603 DebugAnimSpeed
-# 10096: handled (cmp eax,2770h), the same spawner as 96, and NR also reads a StateInfo at +10 as 96 does
-E 10096 SpawnOneShotFFX_10096
-A 10096 s16:StateInfo s16:=0 s32:=0

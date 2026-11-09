@@ -1,2 +1,0 @@
-﻿other named rows (233): u [mean 17.9, zero 43] d [mean 20.2, zero 46] du [mean 20.9, zero 147] dd [mean 16.2, zero 150] L0 [mean 113.6, zero 13] envDif [mean 196.6, zero 0]
-character rows (61): u [mean 12.8, zero 4] d [mean 11.7, zero 1] du [mean 23.1, zero 45] dd [mean 23, zero 43] L0 [mean 78.5, zero 0] envDif [mean 93.7, zero 0]

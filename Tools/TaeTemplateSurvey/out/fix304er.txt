@@ -1,2 +1,0 @@
-# 304 split, see er_names2.txt
-S 304 02 u8:Source u8:Unused03

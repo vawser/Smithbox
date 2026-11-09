@@ -1,3 +1,0 @@
-﻿0 'B0基本': L0 10/46 a0, du a20, u a3, envDif a300
-5 'B0キャラ（基本）': L0 35/-73 a20, du a0, u a3, envDif a30
-15 'B1キャラ（基本）': L0 35/-73 a40, du a0, u a3, envDif a80

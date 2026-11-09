@@ -1,3 +1,0 @@
-# category	format	container	inner file	classes
-hkxbhd	Packfile v11 hk_2014.1.0-r1 64-bit LE	/model/map/l20_21_00_00.hkxbhd	m20_21_00_00\l07_1302.hkx.dcx	CustomMeshParameter,CustomParamStorageExtendedMeshShape,hkClass,hkClassEnum,hkClassEnumItem,hkClassMember,hkpMoppBvTreeShape,hkpMoppCode,hkpPhysicsData,hkpPhysicsSystem,hkpRigidBody,hkpStorageExtendedMeshShapeMeshSubpartStorage,hkRootLevelContainer
-loose hkx	Packfile v11 hk_2014.1.0-r1 64-bit LE	/model/map/h50_38_00_00-hkxbhd/m50_38_00_00/h01_0000.hkx.dcx	h01_0000.hkx.dcx	CustomMeshParameter,CustomParamStorageExtendedMeshShape,hkClass,hkClassEnum,hkClassEnumItem,hkClassMember,hkpMoppBvTreeShape,hkpMoppCode,hkpPhysicsData,hkpPhysicsSystem,hkpRigidBody,hkpStorageExtendedMeshShapeMeshSubpartStorage,hkRootLevelContainer
