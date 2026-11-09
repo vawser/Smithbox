@@ -35,6 +35,7 @@ public class FxEditorScreen : EditorScreen
     public FxUniverse Universe;
     public FxViewportWindow ViewportWindow;
     public FxPlayback Playback = new();
+    public FxLiveEdit Live = new();
 
     // Tools
     public FxToolWindow ToolWindow;
@@ -230,11 +231,18 @@ public class FxEditorScreen : EditorScreen
         if (InputManager.IsPressed(KeybindID.Save))
             Save();
 
+        // A value being edited is committed first, so undo never runs under a live change
         if (ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+        {
+            FlushEdits();
             ActionManager.UndoAction();
+        }
 
         if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+        {
+            FlushEdits();
             ActionManager.RedoAction();
+        }
 
         EffectTree.Shortcuts();
         EffectList.Shortcuts();
@@ -279,13 +287,22 @@ public class FxEditorScreen : EditorScreen
             return;
 
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##fxUndo", InputManager.GetHint(KeybindID.Undo), false, ActionManager.CanUndo()))
+        {
+            FlushEdits();
             ActionManager.UndoAction();
+        }
 
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##fxUndoAll", "", false, ActionManager.CanUndo()))
+        {
+            FlushEdits();
             ActionManager.UndoAllAction();
+        }
 
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##fxRedo", InputManager.GetHint(KeybindID.Redo), false, ActionManager.CanRedo()))
+        {
+            FlushEdits();
             ActionManager.RedoAction();
+        }
 
         ImGui.Separator();
 
@@ -337,6 +354,14 @@ public class FxEditorScreen : EditorScreen
         GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_ToolWindow);
 
         ImGui.EndMenu();
+    }
+
+    /// <summary>Commits values still being edited in the Inspector and Curve Editor (and takes back their live change).</summary>
+    public void FlushEdits()
+    {
+        Inspector.FlushPending();
+        CurveEditor.FlushPending();
+        Live.Revert();
     }
 
     /// <summary>Drops the effect's unsaved changes. Its undo history goes too, as it points at the old objects.</summary>

@@ -33,7 +33,16 @@ public class FxPreviewRuntime
         Editor = editor;
     }
 
-    public void Update(int editVersion, Vector3 cameraPosition)
+    /// <summary>
+    /// Live changes (a value mid-edit, phase V6) rebuild at most this often: each rebuild replays the effect from 0 to
+    /// the current time, so a drag rebuilding every frame would stall a long effect.
+    /// </summary>
+    private const double LiveInterval = 1 / 15.0;
+
+    private int LiveEdits = -1;
+    private DateTime LastBuild;
+
+    public void Update(int editVersion, int liveVersion, Vector3 cameraPosition)
     {
         var entry = Editor.Selection.Entry;
         if (entry?.Fxr == null)
@@ -42,11 +51,17 @@ public class FxPreviewRuntime
             return;
         }
 
-        if (entry != Entry || entry.Fxr != Fxr || editVersion != Edits)
+        // A committed edit, undo or a new effect rebuilds now; a live change once the interval has passed (a later
+        // frame picks it up if nothing else changes)
+        bool committed = entry != Entry || entry.Fxr != Fxr || editVersion != Edits;
+        bool live = liveVersion != LiveEdits && (DateTime.Now - LastBuild).TotalSeconds >= LiveInterval;
+        if (committed || live)
         {
             Entry = entry;
             Fxr = entry.Fxr;
             Edits = editVersion;
+            LiveEdits = liveVersion;
+            LastBuild = DateTime.Now;
             ProxyDefs.Clear();
             Instance = null;
             Build(entry);

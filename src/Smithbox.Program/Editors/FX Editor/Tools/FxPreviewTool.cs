@@ -58,6 +58,11 @@ public class FxPreviewTool
         ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Auto_Frame")}##fxAutoFrame", ref CFG.Current.FxEditor_Viewport_Auto_Frame);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Auto_Frame_TT"));
 
+        if (ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Live_Preview")}##fxLivePreview", ref CFG.Current.FxEditor_Live_Preview)
+            && !CFG.Current.FxEditor_Live_Preview)
+            Editor.Live.Revert();
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Live_Preview_TT"));
+
         // Motion
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Motion_Header"), LOC.Get("FX_PreviewTool_Motion_Header_TT"));

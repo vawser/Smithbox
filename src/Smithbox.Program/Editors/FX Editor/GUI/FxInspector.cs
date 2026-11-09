@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Editors.Common;
 using System.Globalization;
 using System.Numerics;
 
@@ -374,11 +375,14 @@ public class FxInspector
         var values = view.GetValue(name);
         string id = $"##fxField_{name}";
 
-        void Commit(double[] newValues)
+        // The edit setting the field to some values: committed, or shown live while the value is being edited
+        EditorAction Make(double[] newValues)
         {
             var copy = (double[])newValues.Clone();
-            Editor.ActionManager.ExecuteAction(new FxEditFieldAction(Data.Bank, entry, action, a => Data.View(entry, a).SetValue(name, copy)));
+            return new FxEditFieldAction(Data.Bank, entry, action, a => Data.View(entry, a).SetValue(name, copy));
         }
+
+        void Commit(double[] newValues) => Editor.ActionManager.ExecuteAction(Make(newValues));
 
         switch (slot.Type)
         {
@@ -414,20 +418,27 @@ public class FxInspector
             {
                 int v = Pending.TryGetValue(id, out var p) ? (int)p : (int)values[0];
                 if (ImGui.InputInt(id, ref v))
+                {
                     Pending[id] = v;
+                    int live = v;
+                    Editor.Live.Show(id, entry, () => Make(new[] { (double)live }));
+                }
                 CommitOnDeactivate(id, () => Commit(new[] { (double)v }));
                 if (def?.Resource != null && v > 0)
                     ImGui.TextDisabled(ResourceName(def, v));
                 break;
             }
             default:
-                DisplayFloats(id, values, def, Commit);
+                DisplayFloats(id, values, def, entry, Make);
                 break;
         }
     }
 
-    /// <summary>Float and vector inputs (colour picker for colour values) that commit on deactivation.</summary>
-    private void DisplayFloats(string id, double[] values, FxrPropDef def, Action<double[]> commit)
+    /// <summary>
+    /// Float and vector inputs (colour picker for colour values) that commit on deactivation. While being edited, the
+    /// value shows in the preview (live editing).
+    /// </summary>
+    private void DisplayFloats(string id, double[] values, FxrPropDef def, FxEntry entry, Func<double[], EditorAction> make)
     {
         var cur = Pending.TryGetValue(id, out var p) ? (float[])p : values.Select(v => (float)v).ToArray();
         bool changed = false;
@@ -450,10 +461,14 @@ public class FxInspector
         }
 
         if (changed)
+        {
             Pending[id] = cur;
+            var live = cur.Select(f => (double)f).ToArray();
+            Editor.Live.Show(id, entry, () => make(live));
+        }
 
         var final = cur;
-        CommitOnDeactivate(id, () => commit(final.Select(f => (double)f).ToArray()));
+        CommitOnDeactivate(id, () => Editor.ActionManager.ExecuteAction(make(final.Select(f => (double)f).ToArray())));
     }
 
     private void CommitOnDeactivate(string id, Action commit)
@@ -463,6 +478,8 @@ public class FxInspector
 
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
+            // The live change comes off first, so the committed step records the value from before the edit
+            Editor.Live.Revert(id);
             commit();
             Pending.Remove(id);
             PendingCommits.Remove(id);
@@ -470,13 +487,18 @@ public class FxInspector
         else if (!ImGui.IsItemActive() && !ImGui.IsItemDeactivated())
         {
             // Focus went elsewhere without an edit
+            Editor.Live.Revert(id);
             Pending.Remove(id);
             PendingCommits.Remove(id);
         }
         else
         {
             // Still being typed in: Save commits it first (Ctrl+S doesn't take focus off the field)
-            PendingCommits[id] = commit;
+            PendingCommits[id] = () =>
+            {
+                Editor.Live.Revert(id);
+                commit();
+            };
         }
     }
 
@@ -489,6 +511,9 @@ public class FxInspector
             commit();
         PendingCommits.Clear();
         Pending.Clear();
+        // A live change with no commit waiting (its field was left without an edit this frame) is taken back
+        if (Editor.Live.IsShowing && Editor.Live.Owner is string)
+            Editor.Live.Revert();
     }
 
     /// <summary>
@@ -599,17 +624,17 @@ public class FxInspector
         }
         else if (curve.Constant != null)
         {
-            DisplayFloats(id, curve.Constant.Select(v => (double)v).ToArray(), def, values =>
+            DisplayFloats(id, curve.Constant.Select(v => (double)v).ToArray(), def, entry, values =>
             {
                 var copy = values.Select(v => (float)v).ToArray();
-                Editor.ActionManager.ExecuteAction(new FxEditPropertyAction(Data.Bank, entry, action, a =>
+                return new FxEditPropertyAction(Data.Bank, entry, action, a =>
                 {
                     var v = Data.View(entry, a);
                     var c = v.GetCurve(name);
                     c.Function = FxrPropertyFunction.Constant;
                     c.Constant = copy;
                     v.SetCurve(name, c);
-                }));
+                });
             });
             if (def?.Resource != null && curve.Constant.Length == 1 && curve.Constant[0] > 0)
                 ImGui.TextDisabled(ResourceName(def, (int)Math.Round(curve.Constant[0])));

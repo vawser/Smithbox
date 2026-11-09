@@ -415,6 +415,8 @@
     { "Key": "FX_PreviewTool_Swing_Speed_TT", "Text": "How fast the effect goes round the circle." },
     { "Key": "FX_PreviewTool_Auto_Frame", "Text": "Frame Selected Effect" },
     { "Key": "FX_PreviewTool_Auto_Frame_TT", "Text": "Fit a newly selected effect into view. Turn off to keep the camera where it is when switching effects (Frame still frames on request)." },
+    { "Key": "FX_PreviewTool_Live_Preview", "Text": "Live Editing" },
+    { "Key": "FX_PreviewTool_Live_Preview_TT", "Text": "Show a value in the preview while it's being typed, dragged or picked (in the Action Inspector and the Curve Editor), not only once it's committed. The preview keeps its playback time. Each change is still one undo step." },
     { "Key": "FX_PreviewTool_Motion_Follow", "Text": "Camera Follows" },
     { "Key": "FX_PreviewTool_Motion_Follow_TT", "Text": "Move the camera with the effect, so it stays in view. The wireframes stay where the effect started." },
     { "Key": "FX_PreviewTool_Light_Brightness_Header", "Text": "Light Brightness" },

@@ -45,7 +45,7 @@ public class FxViewportWindow
     public int DrawnParticles { get; private set; }
 
     /// <summary>What the drawn shapes were built from, to rebuild them only when it changes.</summary>
-    private (FxEntry Entry, object Fxr, object Item, int State, int Edits, int Playback, bool Shapes, bool Axes) BuiltKey;
+    private (FxEntry Entry, object Fxr, object Item, int State, (int Committed, int Live) Edits, int Playback, bool Shapes, bool Axes) BuiltKey;
 
     /// <summary>The effect last framed, so selecting another item of the same effect keeps the camera.</summary>
     private FxEntry FramedEntry;
@@ -101,7 +101,7 @@ public class FxViewportWindow
         DebugRenderer.Update();
 
         var camera = (Viewport as VulkanViewport)?.ViewportCamera.CameraTransform.Position ?? Vector3.Zero;
-        Runtime.Update(EditVersion, camera);
+        Runtime.Update(EditVersion, Editor.Live.Version, camera);
         FollowEffect();
         Billboards.Update(Runtime.Instance, camera);
         var forward = Viewport is VulkanViewport vk
@@ -304,7 +304,8 @@ public class FxViewportWindow
             return;
 
         var entry = Editor.Selection.Entry;
-        var key = (entry, (object)entry?.Fxr, Editor.Selection.Item, Editor.Playback.PreviewState, EditVersion,
+        // Live changes (a value mid-edit) move the wireframes too
+        var key = (entry, (object)entry?.Fxr, Editor.Selection.Item, Editor.Playback.PreviewState, (EditVersion, Editor.Live.Version),
             Editor.Playback.Version, CFG.Current.FxEditor_Viewport_Display_Emitter_Shapes,
             CFG.Current.FxEditor_Viewport_Display_Node_Axes);
 

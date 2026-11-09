@@ -84,6 +84,13 @@ public class FxCurveEditor
         if (Working != null && Dirty && (entry, action, name) == (WorkingFor.Entry, WorkingFor.Action, WorkingFor.Name))
             return;
 
+        // A curve shown live for another property (or before an undo) comes off before this one is read
+        if (Editor.Live.Owner == this)
+        {
+            Editor.Live.Revert(this);
+            view = Data.View(entry, action);
+        }
+
         Factors = Enumerable.Range(0, 4).Select(i => (float)FxrConversions.CurveFactor(view.ConversionsOf(name), i)).ToArray();
         Working = FxCurveOps.ToEditable(view.GetCurve(name), Factors);
         WorkingFor = key;
@@ -96,17 +103,46 @@ public class FxCurveEditor
     {
         if (Dirty && Working != null && WorkingFor.Entry != null)
             Commit(WorkingFor.Entry, WorkingFor.Action, WorkingFor.Name);
+        else
+            Editor.Live.Revert(this);
     }
 
     private void CommitIfIdle(FxEntry entry, FxrAction action, string name)
     {
-        if (!Dirty || ImGui.IsAnyItemActive() || DragHeld)
+        if (!Dirty)
             return;
+        if (ImGui.IsAnyItemActive() || DragHeld)
+        {
+            ShowLive(entry, action, name);
+            return;
+        }
         Commit(entry, action, name);
+    }
+
+    private DateTime LiveShown;
+
+    /// <summary>
+    /// Live editing (phase V6): the curve as it is mid-drag shows in the preview, at most 15 times a second (each
+    /// showing replays the effect to the current time). The working copy itself isn't sorted, so a key being dragged
+    /// past another keeps its place under the mouse.
+    /// </summary>
+    private void ShowLive(FxEntry entry, FxrAction action, string name)
+    {
+        if (!FxLiveEdit.Enabled || (DateTime.Now - LiveShown).TotalSeconds < 1 / 15.0)
+            return;
+        LiveShown = DateTime.Now;
+
+        var display = FxCurveOps.ToDisplay(Working, Factors);
+        FxCurveOps.SortKeys(display);
+        FxCurveOps.Normalize(display);
+        Editor.Live.Show(this, entry, () => new FxEditPropertyAction(Data.Bank, entry, action, a =>
+            Data.View(entry, a).SetCurve(name, display)));
     }
 
     private void Commit(FxEntry entry, FxrAction action, string name)
     {
+        // The live change comes off first, so the committed step records the curve from before the edit
+        Editor.Live.Revert(this);
         Dirty = false;
         FxCurveOps.SortKeys(Working);
         var display = FxCurveOps.ToDisplay(Working, Factors);

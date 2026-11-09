@@ -31,6 +31,9 @@ public class FxSelection
         if (entry == Entry)
             return;
 
+        // A value mid-edit belongs to the effect it was typed for: committed before the Inspector stops showing it
+        Editor.FlushEdits();
+
         if (entry != null && !Editor.Data.Bank.Load(entry))
             return;
 
@@ -42,7 +45,10 @@ public class FxSelection
     public void SelectItem(object item)
     {
         if (!ReferenceEquals(item, Item))
+        {
+            Editor.FlushEdits();
             Property = null;
+        }
         Item = item;
     }
 
