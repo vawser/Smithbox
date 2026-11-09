@@ -256,11 +256,35 @@ public static class FxNodeOps
         return problems;
     }
 
+    /// <summary>
+    /// The node's configs against the config slot table (plan §23): an action in another slot's place, a required slot
+    /// left empty, more actions than slots.
+    /// </summary>
+    public static List<string> SlotProblems(FxrSchema schema, FxrGame game, FxrNode node)
+    {
+        var problems = new List<string>();
+        for (int c = 0; c < node.Configs.Count; c++)
+        {
+            foreach (var p in FxSlotOps.Problems(schema, node.Configs[c], game))
+            {
+                var name = schema.Actions.TryGetValue(p.ActionType, out var d) ? d.Name : p.ActionType.ToString();
+                problems.Add(p.Code switch
+                {
+                    "wrong-slot" => LOC.Get("FX_Check_Slot_Wrong", c, name, p.Index, p.ExpectedSlot),
+                    "empty-required" => LOC.Get("FX_Check_Slot_Empty", c, p.Index),
+                    _ => LOC.Get("FX_Check_Slot_Extra", c, name, p.Index),
+                });
+            }
+        }
+        return problems;
+    }
+
     /// <summary>What looks wrong with the node on its own, for the tree's warning icon. Empty when nothing does.</summary>
     public static List<string> Check(FxEditorScreen editor, FxEntry entry, FxrNode node)
     {
         var bank = editor.Data.Bank;
         var problems = StructureProblems(entry.Fxr, entry.Id, id => !bank.IsIndexed || bank.Entries.ContainsKey(id), node);
+        problems.AddRange(SlotProblems(editor.Data.Schema, editor.Data.Game, node));
 
         var missing = editor.ViewportWindow?.Textures?.MissingTextures;
         if (missing is { Count: > 0 })

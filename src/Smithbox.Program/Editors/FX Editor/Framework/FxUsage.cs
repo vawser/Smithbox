@@ -59,6 +59,7 @@ public class FxUsage
         {
             var starts = new Dictionary<int, List<int>>();
             var resources = new Dictionary<int, HashSet<string>>();
+            var examples = new Dictionary<int, (FxrAction, int)>();
             foreach (var entry in entries)
             {
                 var fxr = Bank.ReadCopy(entry);
@@ -66,9 +67,15 @@ public class FxUsage
                 {
                     starts[entry.Id] = Targets(fxr);
                     resources[entry.Id] = ResourceNames(fxr, schema, game);
+                    // The first action of each type, as the starting point for a slot set to that type
+                    foreach (var node in FXR.Walk(fxr.Root))
+                        foreach (var a in node.Actions.Concat(node.Configs.SelectMany(c => c.Actions)))
+                            if (a.Type != 0 && !examples.ContainsKey(a.Type))
+                                examples[a.Type] = (FxClone.Action(a), entry.Id);
                 }
                 ScanDone++;
             }
+            FinishedExamples = examples;
             Finished = (starts, resources);
             HasFinished = true;
         });
@@ -81,6 +88,7 @@ public class FxUsage
             return;
         HasFinished = false;
         (ScanStarts, ScanResources) = Finished;
+        Examples = FinishedExamples ?? Examples;
 
         // Who starts each effect, so Used By is a lookup rather than a pass over every effect
         ScanStartedBy = new();
@@ -97,6 +105,26 @@ public class FxUsage
     }
 
     private Dictionary<int, List<int>> ScanStartedBy = new();
+
+    // The first vanilla (or project) action of each type, from the scan
+    private Dictionary<int, (FxrAction Action, int Effect)> Examples = new();
+    private volatile Dictionary<int, (FxrAction, int)> FinishedExamples;
+
+    /// <summary>
+    /// An example action of a type from the project's own effects (its fields and properties laid out as this game
+    /// stores them), and the effect it came from; false before the scan or when no effect has one.
+    /// </summary>
+    public bool TryGetExample(int type, out FxrAction action, out int effect)
+    {
+        if (Examples.TryGetValue(type, out var e))
+        {
+            (action, effect) = e;
+            return true;
+        }
+        action = null;
+        effect = -1;
+        return false;
+    }
 
     /// <summary>The effect ids an effect starts through its Proxy nodes, in tree order, without repeats.</summary>
     public static List<int> Targets(FXR fxr) =>

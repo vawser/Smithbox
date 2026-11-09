@@ -605,7 +605,82 @@ public class FxEffectTree
         }
         GUI.Tooltip(LOC.Get(stateMap != null ? "FX_EffectTree_Config_Use_For_TT" : "FX_EffectTree_Config_No_Map_TT"));
 
+        DisplaySlotsMenu(entry, config);
+
         ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// The config's fixed action slots (plan §23): each with its action, and the action types that can fill it in this
+    /// game. Setting one copies the first example of that type from the project's effects (so its values are laid out
+    /// as the game stores them); clearing one leaves an empty action, where the slot allows it.
+    /// </summary>
+    private void DisplaySlotsMenu(FxEntry entry, FxrConfig config)
+    {
+        var schema = Data.Schema;
+        var slots = FxSlotOps.SlotsFor(schema, config.Type, Data.Game);
+        if (!ImGui.BeginMenu($"{LOC.Get("FX_EffectTree_Slots")}##fxConfigSlots", slots != null))
+        {
+            GUI.Tooltip(LOC.Get(slots != null ? "FX_EffectTree_Slots_TT" : "FX_EffectTree_Slots_None_TT"));
+            return;
+        }
+
+        var usage = Editor.EffectList.Usage;
+        if (!usage.HasScan)
+        {
+            usage.StartScan();
+            ImGui.TextDisabled(LOC.Get("FX_EffectList_Scanning", usage.ScanDone, usage.ScanTotal));
+        }
+
+        for (int i = 0; i < slots.Count; i++)
+        {
+            var current = i < config.Actions.Count ? config.Actions[i] : null;
+            var slotName = FxSlotOps.SlotName(schema, slots[i], i);
+            var currentName = current == null || current.Type == 0
+                ? LOC.Get("FX_EffectTree_Slot_Empty")
+                : schema.Actions.TryGetValue(current.Type, out var cd) ? cd.Name : current.Type.ToString();
+
+            if (!ImGui.BeginMenu($"{FxNames.Pretty(slotName)}: {currentName}##fxSlot{i}"))
+                continue;
+
+            int slot = i;
+            foreach (var type in FxSlotOps.TypesFor(schema, slots[i], Data.Game))
+            {
+                var name = schema.Actions.TryGetValue(type, out var d) ? d.Name : type.ToString();
+                bool isCurrent = current?.Type == type;
+                bool has = usage.TryGetExample(type, out var example, out var from);
+                if (ImGui.MenuItem($"{name} ({type})##fxSlot{i}_{type}", "", isCurrent, has && !isCurrent))
+                {
+                    var contents = example;
+                    Deferred.Add(() => SetSlot(entry, config, slot, contents));
+                }
+                if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+                    ImGui.SetTooltip(has
+                        ? LOC.Get("FX_EffectTree_Slot_Example_TT", $"f{from:D9}", d?.Description ?? "")
+                        : LOC.Get(usage.HasScan ? "FX_EffectTree_Slot_No_Example_TT" : "FX_EffectTree_Slot_Scanning_TT"));
+            }
+
+            if (FxSlotOps.IsNullable(schema, slots[i], i))
+            {
+                ImGui.Separator();
+                bool empty = current == null || current.Type == 0;
+                if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Slot_Clear")}##fxSlotClear{i}", "", false, !empty))
+                    Deferred.Add(() => SetSlot(entry, config, slot, FxSlotOps.Empty()));
+                GUI.Tooltip(LOC.Get("FX_EffectTree_Slot_Clear_TT"));
+            }
+            ImGui.EndMenu();
+        }
+        ImGui.EndMenu();
+    }
+
+    private void SetSlot(FxEntry entry, FxrConfig config, int slot, FxrAction contents)
+    {
+        var action = new FxSetSlotAction(Data.Bank, entry, config, slot, contents);
+        Execute(action);
+        if (action.Target is { Type: not 0 } target)
+            Editor.Selection.SelectItem(target);
+        else
+            Editor.Selection.SelectItem(config);
     }
 
     private void DisplayActionContextMenu(FxEntry entry, FxrAction action, int actionId)

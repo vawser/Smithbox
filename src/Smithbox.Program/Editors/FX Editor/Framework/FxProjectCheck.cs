@@ -47,7 +47,8 @@ public class FxProjectCheck
             }
 
             foreach (var node in FXR.Walk(fxr.Root))
-                foreach (var p in FxNodeOps.StructureProblems(fxr, entry.Id, bank.Entries.ContainsKey, node))
+                foreach (var p in FxNodeOps.StructureProblems(fxr, entry.Id, bank.Entries.ContainsKey, node)
+                    .Concat(FxNodeOps.SlotProblems(Editor.Data.Schema, Editor.Data.Game, node)))
                     results.Add(new FxProblem(entry, FxNodeOps.PathOf(fxr.Root, node), p));
 
             // Textures and models no sfx binder holds (a resource can come from another binder the game has loaded,

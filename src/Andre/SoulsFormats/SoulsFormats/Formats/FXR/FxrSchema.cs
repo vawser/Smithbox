@@ -47,6 +47,10 @@ namespace SoulsFormats
         public IReadOnlyDictionary<int, List<int[]>> ConfigSlots => configSlots;
         private readonly Dictionary<int, List<int[]>> configSlots = new();
 
+        /// <summary>The action slots by name (NodeMovement, Emitter, ...): whether one can be left empty, and its default action's name.</summary>
+        public IReadOnlyDictionary<string, (bool Nullable, string Default)> Slots => slots;
+        private readonly Dictionary<string, (bool Nullable, string Default)> slots = new();
+
         /// <summary>Which slot of a config type an action type fills, -1 when none (or the config has no fixed slots).</summary>
         public int SlotOf(int configType, int actionType)
         {
@@ -107,6 +111,11 @@ namespace SoulsFormats
                 }
                 schema.actions[def.Type] = def;
             }
+
+            if (root.TryGetProperty("slots", out var sl))
+                foreach (var s in sl.EnumerateObject())
+                    schema.slots[s.Name] = (s.Value.TryGetProperty("nullable", out var n) && n.ValueKind == JsonValueKind.True,
+                        s.Value.TryGetProperty("default", out var d) && d.ValueKind == JsonValueKind.String ? d.GetString() : null);
 
             if (root.TryGetProperty("configSlots", out var cs))
             {
