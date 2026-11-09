@@ -86,6 +86,7 @@ public class MsbEntity : Entity
         SelectionWireMesh = null;
         CollisionLayerMeshes = null;
         PrefabMemberMeshes = null;
+        PrefabMemberCollisionMeshes = null;
 
         switch (Type)
         {
@@ -396,13 +397,16 @@ public class MsbEntity : Entity
     /// </summary>
     public void AssignObjectCollisionDrawable()
     {
-        if (!EntityHelper.IsPartAsset(this) && !EntityHelper.IsPartDummyAsset(this))
+        var isPrefab = EntityHelper.IsPartPrefabAsset(this);
+
+        if (!isPrefab && !EntityHelper.IsPartAsset(this) && !EntityHelper.IsPartDummyAsset(this))
             return;
 
         var curUniverse = Owner as MapUniverse;
         var curProject = curUniverse.Project;
 
         CollisionSceneMesh = null;
+        PrefabMemberCollisionMeshes = null;
 
         if (!CFG.Current.MapEditor_ModelLoad_Collisions ||
             !curUniverse.GetCurrentScene().DrawFilter.HasFlag(RenderFilter.ObjectCollision))
@@ -414,13 +418,53 @@ public class MsbEntity : Entity
             return;
 
         var modelName = (string)modelProp.GetValue(WrappedObject);
-        var asset = ModelLocator.GetMapObjCollision(curProject, modelName,
-            curUniverse.View.HavokCollisionBank.PrimaryCollisionType);
+        var collisionType = curUniverse.View.HavokCollisionBank.PrimaryCollisionType;
+
+        if (isPrefab)
+        {
+            AssignPrefabCollisionDrawables(curProject, modelName, collisionType);
+            return;
+        }
+
+        var asset = ModelLocator.GetMapObjCollision(curProject, modelName, collisionType);
 
         if (asset.GetContainerPath(curProject) == null)
             return;
 
         CollisionSceneMesh = CreateObjectCollisionMesh(asset);
+    }
+
+    /// <summary>
+    /// Assigns the collision of each part placed by a prefab asset, placed as its member model is.
+    /// </summary>
+    private void AssignPrefabCollisionDrawables(ProjectEntry curProject, string modelName, HavokCollisionType collisionType)
+    {
+        List<PrefabMemberMesh> meshes = new();
+        Dictionary<string, ResourceDescriptor> memberAssets = new(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var member in curProject.Handler.MapData.PrefabAssetBank.GetMembers(modelName))
+        {
+            if (!memberAssets.TryGetValue(member.ModelName, out var asset))
+            {
+                asset = ModelLocator.GetMapObjCollision(curProject, member.ModelName, collisionType);
+
+                // Many members (e.g. decoration) have no collision of their own
+                if (asset.GetContainerPath(curProject) == null)
+                    asset = null;
+
+                memberAssets[member.ModelName] = asset;
+            }
+
+            if (asset == null)
+                continue;
+
+            meshes.Add(new PrefabMemberMesh(CreateObjectCollisionMesh(asset), member.LocalTransform));
+        }
+
+        if (meshes.Count > 0)
+        {
+            PrefabMemberCollisionMeshes = meshes;
+        }
     }
 
     /// <summary>

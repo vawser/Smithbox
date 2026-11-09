@@ -63,6 +63,7 @@ public class Entity : ISelectable, IDisposable
     private IReadOnlyList<EdgePointMesh> _edgePointMeshes;
     private IReadOnlyList<WallMesh> _wallMeshes;
     private IReadOnlyList<PrefabMemberMesh> _prefabMemberMeshes;
+    private IReadOnlyList<PrefabMemberMesh> _prefabMemberCollisionMeshes;
 
     /// <summary>
     /// Cached name for the entity.
@@ -191,6 +192,7 @@ public class Entity : ISelectable, IDisposable
                 EdgePointMeshes = null;
                 WallMeshes = null;
                 PrefabMemberMeshes = null;
+                PrefabMemberCollisionMeshes = null;
             }
         }
         get => _renderSceneMesh;
@@ -342,6 +344,49 @@ public class Entity : ISelectable, IDisposable
             ApplyMeshState();
         }
         get => _prefabMemberMeshes;
+    }
+
+    /// <summary>
+    /// The collision meshes of the parts placed by a prefab asset, each placed relative to it. Kept apart from
+    /// the member models, as they are only built while object collision is displayed.
+    /// </summary>
+    [XmlIgnore]
+    public IReadOnlyList<PrefabMemberMesh> PrefabMemberCollisionMeshes
+    {
+        set
+        {
+            if (_prefabMemberCollisionMeshes != null)
+            {
+                foreach (PrefabMemberMesh entry in _prefabMemberCollisionMeshes)
+                {
+                    entry.Mesh.Dispose();
+                }
+            }
+
+            _prefabMemberCollisionMeshes = value;
+
+            SetPrefabMemberOutline(IsSelected);
+            ApplyMeshState();
+        }
+        get => _prefabMemberCollisionMeshes;
+    }
+
+    /// <summary>
+    /// Every mesh placed relative to a prefab asset: the member models, then their collision.
+    /// </summary>
+    private IEnumerable<PrefabMemberMesh> AllPrefabMemberMeshes()
+    {
+        if (_prefabMemberMeshes != null)
+        {
+            foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+                yield return entry;
+        }
+
+        if (_prefabMemberCollisionMeshes != null)
+        {
+            foreach (PrefabMemberMesh entry in _prefabMemberCollisionMeshes)
+                yield return entry;
+        }
     }
 
     /// <summary>
@@ -540,12 +585,9 @@ public class Entity : ISelectable, IDisposable
                 }
             }
 
-            if (_prefabMemberMeshes != null)
+            foreach (PrefabMemberMesh entry in AllPrefabMemberMeshes())
             {
-                foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
-                {
-                    entry.Mesh.Visible = _EditorVisible;
-                }
+                entry.Mesh.Visible = _EditorVisible;
             }
 
             foreach (Entity child in Children)
@@ -620,12 +662,9 @@ public class Entity : ISelectable, IDisposable
             }
         }
 
-        if (_prefabMemberMeshes != null)
+        foreach (PrefabMemberMesh entry in AllPrefabMemberMeshes())
         {
-            foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
-            {
-                entry.Mesh.RenderFocusGhost = ghosted;
-            }
+            entry.Mesh.RenderFocusGhost = ghosted;
         }
     }
 
@@ -714,10 +753,7 @@ public class Entity : ISelectable, IDisposable
 
     private void SetPrefabMemberOutline(bool outline)
     {
-        if (_prefabMemberMeshes == null)
-            return;
-
-        foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
+        foreach (PrefabMemberMesh entry in AllPrefabMemberMeshes())
         {
             entry.Mesh.RenderSelectionOutline = outline;
         }
@@ -1856,6 +1892,11 @@ public class Entity : ISelectable, IDisposable
                 {
                     PrefabMemberMeshes = null;
                 }
+
+                if (PrefabMemberCollisionMeshes != null)
+                {
+                    PrefabMemberCollisionMeshes = null;
+                }
             }
 
             disposedValue = true;
@@ -1952,12 +1993,9 @@ public class Entity : ISelectable, IDisposable
             }
         }
 
-        if (_prefabMemberMeshes != null)
+        foreach (PrefabMemberMesh entry in AllPrefabMemberMeshes())
         {
-            foreach (PrefabMemberMesh entry in _prefabMemberMeshes)
-            {
-                ApplyProxyState(entry.Mesh, entry.LocalTransform * t, useRenderGroups);
-            }
+            ApplyProxyState(entry.Mesh, entry.LocalTransform * t, useRenderGroups);
         }
     }
 

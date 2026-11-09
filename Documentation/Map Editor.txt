@@ -5,10 +5,8 @@
 - Add 'camera path' authoring for new camera hkxs for cutscenes
 - Add navigation editor support for the other project types
 - Get gizmos to work in Orthographic/Oblique view mode
-- AEP rendering needs to carry in the asset collision too
 
-- Create:
-    Add tab: option to mass-create all chrs and all assets in a AEG category
-        - Include position offset so they can be spaced out
-        - Useful for previewing lots of assets quickly
+
+- DB_NT texture decoding, so they can be displayed
+- AEP rendering needs to carry in the asset collision too
 
