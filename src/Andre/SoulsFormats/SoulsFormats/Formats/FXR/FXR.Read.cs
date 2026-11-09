@@ -1,6 +1,7 @@
 using System;
 using System.Buffers.Binary;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SoulsFormats
 {
@@ -177,10 +178,35 @@ namespace SoulsFormats
                     if (!GiveReserved(tail)) fxr._fieldTail = tail;
                 }
 
+                fxr.ComponentBoundsFromLast = DetectComponentBounds(fxr);
+
                 var style = FxrEmptyOffsets.None;
                 for (int i = 0; i < zeros.Length; i++)
                     if (zeros[i] >= nonzeros[i]) style |= (FxrEmptyOffsets)(1 << i);
                 fxr.ZeroEmptyOffsets = style;
+            }
+
+            // Which bounds rule this file's ComponentHermite properties follow (majority; true when none)
+            private static bool DetectComponentBounds(FXR fxr)
+            {
+                int last = 0, minMax = 0;
+                foreach (var action in fxr.AllActions())
+                    foreach (var p in action.Properties1.Concat(action.Properties2))
+                    {
+                        if (p.Function != FxrPropertyFunction.ComponentHermite) continue;
+                        var stored = FxrCurve.Decode(p);
+                        var a = FxrCurve.Decode(p);
+                        a.ComponentBoundsFromLast = true;
+                        a.ComputeBounds();
+                        var b = FxrCurve.Decode(p);
+                        b.ComponentBoundsFromLast = false;
+                        b.ComputeBounds();
+                        bool isLast = a.Min.AsSpan().SequenceEqual(stored.Min) && a.Max.AsSpan().SequenceEqual(stored.Max);
+                        bool isMinMax = b.Min.AsSpan().SequenceEqual(stored.Min) && b.Max.AsSpan().SequenceEqual(stored.Max);
+                        if (isLast && !isMinMax) last++;
+                        if (isMinMax && !isLast) minMax++;
+                    }
+                return last >= minMax;
             }
 
             private FxrStateCondition ReadCondition(long c)

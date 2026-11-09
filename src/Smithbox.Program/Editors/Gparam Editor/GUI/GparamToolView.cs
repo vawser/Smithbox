@@ -41,36 +41,6 @@ public class GparamToolView
 
         Sections.Begin();
 
-        // Viewport
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
-
-        if (CFG.Current.Interface_GparamEditor_Tool_ViewportPreview)
-        {
-            // Viewport Preview
-            View.ViewportPreviewTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_GparamEditor_Tool_GridConfiguration)
-        {
-            // Grid Configuration
-            View.GridTool.OnToolWindow();
-        }
-
-        // Rendering: sets its own category, so it comes after the Viewport tools
-        if (CFG.Current.Interface_GparamEditor_Tool_ViewportRendering)
-        {
-            View.RenderingTool.OnToolWindow();
-        }
-
-        // Data
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
-
-        if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
-        {
-            // Data Transfer
-            DataTransferTool.OnToolWindow();
-        }
-
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
@@ -90,6 +60,36 @@ public class GparamToolView
         {
             // Mass Edit
             MassEditTool.OnToolWindow();
+        }
+
+        // Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
+        if (CFG.Current.Interface_GparamEditor_Tool_DataTransfer)
+        {
+            // Data Transfer
+            DataTransferTool.OnToolWindow();
+        }
+
+        // Viewport
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
+        if (CFG.Current.Interface_GparamEditor_Tool_ViewportPreview)
+        {
+            // Viewport Preview
+            View.ViewportPreviewTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_GparamEditor_Tool_GridConfiguration)
+        {
+            // Grid Configuration
+            View.GridTool.OnToolWindow();
+        }
+
+        // Rendering: sets its own category, so it comes after the Viewport tools
+        if (CFG.Current.Interface_GparamEditor_Tool_ViewportRendering)
+        {
+            View.RenderingTool.OnToolWindow();
         }
 
         Sections.End();

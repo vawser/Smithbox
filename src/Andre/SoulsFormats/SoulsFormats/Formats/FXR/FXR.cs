@@ -42,6 +42,13 @@ namespace SoulsFormats
         /// </summary>
         public FxrEmptyOffsets ZeroEmptyOffsets { get; set; } = FxrEmptyOffsets.All;
 
+        /// <summary>
+        /// How this file's ComponentHermite properties store their bounds: true for min = max = last
+        /// keyframe value (all AC6 files and most NR files), false for the true min/max (the other NR
+        /// files). Detected per file on read; used when an edited curve's bounds are recomputed.
+        /// </summary>
+        public bool ComponentBoundsFromLast { get; set; } = true;
+
         /// <summary>NR writes an action's section10 values before its properties' fields; older games after.</summary>
         internal bool S10ValuesBeforeProperties => Minor == 1;
 
