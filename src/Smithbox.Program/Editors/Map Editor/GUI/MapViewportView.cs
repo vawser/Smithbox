@@ -261,6 +261,7 @@ public class MapViewportView
 
                     View.FrameAction.OnContext(targetedEnt);
                     View.PullToCameraAction.OnContext(targetedEnt);
+                    View.SnapToMeshAction.OnContext(targetedEnt);
                 }
 
                 ImGui.Separator();

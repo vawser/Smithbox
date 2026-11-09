@@ -137,6 +137,7 @@ public class MapToolWindow
         ActionSection(CFG.Current.Interface_MapEditor_Tool_Translate, "MAP_ToolWindow_Translate", "mapTranslateSection", View.TranslateAction.OnToolWindow);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_Rotate, "MAP_ToolWindow_Rotate", "mapRotateSection", View.RotateAction.OnToolWindow);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_PullToCamera, "MAP_ToolWindow_Pull_To_Camera", "mapPullToCameraSection", View.PullToCameraAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_SnapToMesh, "MAP_ToolWindow_Snap_To_Mesh", "mapSnapToMeshSection", View.SnapToMeshAction.OnToolWindow);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_Scramble, "MAP_ToolWindow_Scramble", "mapScrambleSection", View.ScrambleAction.OnToolWindow);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_ResetTransform, "MAP_ToolWindow_Reset_Transform", "mapResetTransformSection", PropertiesActionTool.DisplayResetTransform);
 
@@ -372,6 +373,7 @@ public class MapToolWindow
             ToolToggle("MAP_ToolWindow_Translate", ref CFG.Current.Interface_MapEditor_Tool_Translate);
             ToolToggle("MAP_ToolWindow_Rotate", ref CFG.Current.Interface_MapEditor_Tool_Rotate);
             ToolToggle("MAP_ToolWindow_Pull_To_Camera", ref CFG.Current.Interface_MapEditor_Tool_PullToCamera);
+            ToolToggle("MAP_ToolWindow_Snap_To_Mesh", ref CFG.Current.Interface_MapEditor_Tool_SnapToMesh);
             ToolToggle("MAP_ToolWindow_Scramble", ref CFG.Current.Interface_MapEditor_Tool_Scramble);
             ToolToggle("MAP_ToolWindow_Reset_Transform", ref CFG.Current.Interface_MapEditor_Tool_ResetTransform);
 

@@ -83,6 +83,7 @@ public class MapEditorView : IEditorView
     public GotoAction GotoAction;
     public FrameAction FrameAction;
     public PullToCameraAction PullToCameraAction;
+    public SnapToMeshAction SnapToMeshAction;
     public TranslateAction TranslateAction;
     public RotateAction RotateAction;
     public ScrambleAction ScrambleAction;
@@ -181,6 +182,7 @@ public class MapEditorView : IEditorView
         GotoAction = new GotoAction(this, project);
         FrameAction = new FrameAction(this, project);
         PullToCameraAction = new PullToCameraAction(this, project);
+        SnapToMeshAction = new SnapToMeshAction(this, project);
         TranslateAction = new TranslateAction(this, project);
         RotateAction = new RotateAction(this, project);
         ScrambleAction = new ScrambleAction(this, project);
@@ -258,6 +260,9 @@ public class MapEditorView : IEditorView
 
         // Group shortcuts, so they work while the Tools window section is hidden
         SelectionGroupsTool.Update();
+
+        // After the Tools window, which marks the frames the Snap to Mesh section is shown
+        SnapToMeshAction.Update();
 
         WorldMapTool.DisplayPopup();
 

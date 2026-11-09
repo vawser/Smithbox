@@ -175,6 +175,7 @@ public class MapEditorScreen : EditorScreen
                 activeView.GotoAction.OnMenu();
                 activeView.FrameAction.OnMenu();
                 activeView.PullToCameraAction.OnMenu();
+                activeView.SnapToMeshAction.OnMenu();
 
                 ImGui.Separator();
 

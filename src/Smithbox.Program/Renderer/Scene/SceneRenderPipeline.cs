@@ -79,6 +79,10 @@ public class SceneRenderPipeline
     /// <summary>What the rain reaches, for wet surfaces, or null for a pipeline drawn without shadows</summary>
     public RainOcclusion Rain { get; }
 
+    /// <summary>Where the Map Editor's Snap to Mesh lands the selection, found from the scene's depth, or null for a
+    /// pipeline drawn without shadows</summary>
+    public SnapDepthPass SnapDepth { get; }
+
     // Scene Parameters
     public DeviceBuffer SceneParamBuffer { get; }
     public ResourceSet SceneParamResourceSet { get; }
@@ -337,6 +341,9 @@ public class SceneRenderPipeline
         {
             Shadows = new ShadowCascades(device, this);
             Rain = new RainOcclusion(device, this);
+
+            // Drawn only on request, ahead of the pipeline's scene like the maps above
+            SnapDepth = new SnapDepthPass(device, this);
         }
 
         // The scene goes into the pipeline's own HDR target, on the offscreen list, so it is drawn before the
@@ -575,6 +582,8 @@ public class SceneRenderPipeline
         var rainMask = wetting && CFG.Current.Viewport_Post_Wet_Rain_Mask;
         Rain?.Update(rainMask, eye,
             rainMask ? Scene.OpaqueRenderables.ShadowCasterSignature(Scene.DrawFilter, Scene.DisplayGroup) : 0);
+        SnapDepth?.Update();
+
         var rainTexture = Rain?.TextureIndex ?? 0;
         var rainMatrix = Rain?.Lookup ?? Matrix4x4.Identity;
 
@@ -715,6 +724,7 @@ public class SceneRenderPipeline
             }
             Shadows?.Upload(cl, uploaded);
             Rain?.Upload(cl, uploaded);
+            SnapDepth?.Upload(cl, uploaded);
 
             var overlay = uploaded;
             overlay.Projection = proj;
@@ -809,6 +819,7 @@ public class SceneRenderPipeline
         Scene.Render(_renderQueue, _overlayQueue, frustum, this);
         Shadows?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
         Rain?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
+        SnapDepth?.Submit(Scene.OpaqueRenderables, Scene.DrawFilter, Scene.DisplayGroup);
     }
 
     /// <summary>

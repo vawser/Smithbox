@@ -2,8 +2,10 @@
 # TODO 
 #---------------------
 
-- Stop project load switching focus, force it to stay on Project Editor
-
+- Create:
+    Add tab: option to mass-create all chrs and all assets in a AEG category
+        - Include position offset so they can be spaced out
+        - Useful for previewing lots of assets quickly
 
 - Patrol Route:
     - Add animated playback of the chr(s) moving between each point as an option

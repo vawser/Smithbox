@@ -29,6 +29,94 @@
       "Text": "Pull to Camera"
     },
     {
+      "Key": "MAP_ToolWindow_Snap_To_Mesh",
+      "Text": "Snap to Mesh"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Hint",
+      "Text": "Move the selection along an axis until its bounding box meets the nearest drawn model (map piece, asset, character) in that direction. Only what the viewport shows is snapped to; collision and navmeshes aren't."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Unavailable",
+      "Text": "Snap to Mesh needs a map viewport drawn with shadows enabled."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Preview_Waiting",
+      "Text": "Preview: finding the surface..."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Preview_Status",
+      "Text": "Preview: {0} of {1} selected objects will move, shown by the arrows in the viewport."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Preview_NoHit",
+      "Text": "Preview: no mesh within range in the snap direction."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Direction_Header",
+      "Text": "Direction"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Direction_Header_TT",
+      "Text": "The world axis the selection moves along."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Direction_TT",
+      "Text": "The world axis the selection moves along. Down moves it onto the ground below."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Offset_Header",
+      "Text": "Offset"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Offset_Header_TT",
+      "Text": "How far past the surface the selection is placed."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Offset_TT",
+      "Text": "How far past the surface the selection is placed, along the snap direction.\nPositive values sink the selection into the target, negative values leave a gap."
+    },
+    {
+      "Key": "MAP_SnapToMesh_MaxDistance_Header",
+      "Text": "Max Distance"
+    },
+    {
+      "Key": "MAP_SnapToMesh_MaxDistance_Header_TT",
+      "Text": "How far the selection may move to reach a mesh."
+    },
+    {
+      "Key": "MAP_SnapToMesh_MaxDistance_TT",
+      "Text": "How far the face of the bounding box may move to reach a mesh. Meshes further away are ignored."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Options_Header_TT",
+      "Text": "How the selection is snapped."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Individually",
+      "Text": "Snap Each Object Separately"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Individually_TT",
+      "Text": "Snap each selected object by its own bounding box, instead of moving the whole selection together by its combined bounding box.\nThe objects share one depth view, so a widely spread selection is snapped less precisely."
+    },
+    {
+      "Key": "MAP_SnapToMesh_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Apply",
+      "Text": "Snap to Mesh"
+    },
+    {
+      "Key": "MAP_SnapToMesh_Apply_TT",
+      "Text": "Move the current selection along the snap direction until it meets the nearest mesh."
+    },
+    {
       "Key": "MAP_ToolWindow_Scramble",
       "Text": "Scramble"
     },

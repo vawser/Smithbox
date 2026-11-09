@@ -381,6 +381,7 @@ public class MapContentView
 
             View.FrameAction.OnContext(ent);
             View.PullToCameraAction.OnContext(ent);
+            View.SnapToMeshAction.OnContext(ent);
 
             ImGui.Separator();
 

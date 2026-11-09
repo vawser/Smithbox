@@ -209,6 +209,13 @@ public class MeshRenderables : Renderables
     public Pipeline[] cShadowPipelines;
 
     /// <summary>
+    ///     The depth-only pipeline of the renderable (its shadow map pipeline), whether or not it casts the sun's
+    ///     shadow, for depth views of the scene such as <see cref="SnapDepthPass" />. Null if it has none: only opaque
+    ///     meshes drawn with the flver shader do.
+    /// </summary>
+    public Pipeline[] cDepthPipelines;
+
+    /// <summary>
     ///     The pipeline that draws the renderable in the wireframe view (CFG.Viewport_Wireframe_Enable): its _wire shader
     ///     variant, with a geometry stage. Null for one drawn as usual there. Built the first time the view needs it, from
     ///     <see cref="cWireframeDescriptions" />, so meshes cost nothing extra to load while the view is off.
@@ -239,6 +246,7 @@ public class MeshRenderables : Renderables
         cSelectables = new WeakReference<ISelectable>[Capacity];
         cSelectionPipelines = new Pipeline[Capacity];
         cShadowPipelines = new Pipeline[Capacity];
+        cDepthPipelines = new Pipeline[Capacity];
         cWireframePipelines = new Pipeline[Capacity];
         cWireframeDescriptions = new GraphicsPipelineDescription[Capacity];
         cWireframePending = new bool[Capacity];
@@ -258,6 +266,7 @@ public class MeshRenderables : Renderables
         Array.Resize(ref cSelectables, newCapacity);
         Array.Resize(ref cSelectionPipelines, newCapacity);
         Array.Resize(ref cShadowPipelines, newCapacity);
+        Array.Resize(ref cDepthPipelines, newCapacity);
         Array.Resize(ref cWireframePipelines, newCapacity);
         Array.Resize(ref cWireframeDescriptions, newCapacity);
         Array.Resize(ref cWireframePending, newCapacity);
@@ -271,6 +280,7 @@ public class MeshRenderables : Renderables
         cBounds[idx] = bounds;
         cDrawParameters[idx] = drawArgs;
         cShadowPipelines[idx] = null;
+        cDepthPipelines[idx] = null;
         cWireframePipelines[idx] = null;
         cWireframeDescriptions[idx] = default;
         cWireframePending[idx] = false;
@@ -347,6 +357,48 @@ public class MeshRenderables : Renderables
             }
 
             if (CFG.Current.Viewport_Enable_Culling && frustum.Contains(ref cBounds[i]) == ContainmentType.Disjoint)
+            {
+                continue;
+            }
+
+            queue.Add(i, cRenderKeys[i]);
+        }
+    }
+
+    /// <summary>
+    ///     Adds the renderables with a depth pipeline inside <paramref name="frustum" /> to a depth view's queue, keeping
+    ///     to the same filters and draw groups as the view, so only what is shown is drawn. Renderables whose selectable
+    ///     is in <paramref name="excluded" /> are left out.
+    /// </summary>
+    public void SubmitDepthCasters(SceneRenderer.RenderQueue queue, BoundingFrustum frustum, RenderFilter filter,
+        DrawGroup dispGroup, IReadOnlySet<ISelectable> excluded)
+    {
+        var alwaysVis = dispGroup == null || dispGroup.AlwaysVisible;
+
+        for (var i = 0; i < _topIndex; i++)
+        {
+            if (!cVisible[i]._valid || !cVisible[i]._visible || cDepthPipelines[i] == null)
+            {
+                continue;
+            }
+
+            if ((cSceneVis[i]._renderFilter & filter) == 0)
+            {
+                continue;
+            }
+
+            if (!alwaysVis && cSceneVis[i]._drawGroup != null && !cSceneVis[i]._drawGroup.IsInDisplayGroup(dispGroup))
+            {
+                continue;
+            }
+
+            if (frustum.Contains(ref cBounds[i]) == ContainmentType.Disjoint)
+            {
+                continue;
+            }
+
+            if (excluded != null && excluded.Count > 0 && cSelectables[i] != null &&
+                cSelectables[i].TryGetTarget(out ISelectable selectable) && excluded.Contains(selectable))
             {
                 continue;
             }
@@ -483,6 +535,7 @@ public class MeshRenderables : Renderables
                     cSelectables[writeIndex] = cSelectables[readIndex];
                     cSelectionPipelines[writeIndex] = cSelectionPipelines[readIndex];
                     cShadowPipelines[writeIndex] = cShadowPipelines[readIndex];
+                    cDepthPipelines[writeIndex] = cDepthPipelines[readIndex];
                     cWireframePipelines[writeIndex] = cWireframePipelines[readIndex];
                     cWireframeDescriptions[writeIndex] = cWireframeDescriptions[readIndex];
                     cWireframePending[writeIndex] = cWireframePending[readIndex];

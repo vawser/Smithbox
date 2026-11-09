@@ -1,0 +1,54 @@
+#version 450
+
+// Snap to Mesh, see SnapDepthPass.cs. The scene's depth has been drawn looking along the snap direction, reversed
+// (1 at the near plane, 0 where nothing was drawn). Each work group takes one group of the selection: it finds the
+// nearest surface in the group's rectangle of texels that isn't nearer than the group's own centre plane, as the
+// largest depth at or below the group's limit, and writes its bits to the group's result. Positive floats keep their
+// order as unsigned integers, so atomicMax on the bits finds the largest depth.
+
+layout(local_size_x = 16, local_size_y = 16) in;
+
+struct SnapGroup
+{
+	ivec4 rect;  // first texel x, y and the texel past the last, x, y
+	vec4 limit;  // x: the largest depth that counts, the group's centre plane
+};
+
+layout(set = 0, binding = 0) uniform texture2D snapDepth;
+layout(set = 0, binding = 1) uniform sampler snapSampler;
+
+layout(set = 0, binding = 2, std430) readonly buffer SnapGroups
+{
+	SnapGroup groups[];
+};
+
+layout(set = 0, binding = 3, std430) buffer SnapResults
+{
+	uint results[];
+};
+
+void main()
+{
+	uint g = gl_WorkGroupID.x;
+	SnapGroup group = groups[g];
+
+	float best = 0.0;
+
+	for (int y = group.rect.y + int(gl_LocalInvocationID.y); y < group.rect.w; y += 16)
+	{
+		for (int x = group.rect.x + int(gl_LocalInvocationID.x); x < group.rect.z; x += 16)
+		{
+			float depth = texelFetch(sampler2D(snapDepth, snapSampler), ivec2(x, y), 0).r;
+
+			if (depth > 0.0 && depth <= group.limit.x)
+			{
+				best = max(best, depth);
+			}
+		}
+	}
+
+	if (best > 0.0)
+	{
+		atomicMax(results[g], floatBitsToUint(best));
+	}
+}

@@ -933,6 +933,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cPipelines[_renderable] = _pipeline;
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
         _renderablesSet.cShadowPipelines[_renderable] = _castsShadow ? _shadowPipeline : null;
+        _renderablesSet.cDepthPipelines[_renderable] = _shadowPipeline;
 
         if (wireframeDescription is GraphicsPipelineDescription wireDescription)
         {

@@ -395,6 +395,12 @@ public class CFG
     public bool Toolbar_Move_to_Camera_Offset_Specific_Input = false;
     public float Toolbar_Move_to_Camera_Offset = 3.0f;
 
+    // Snap to Mesh
+    public int MapEditor_SnapToMesh_Direction = 0;
+    public float MapEditor_SnapToMesh_Offset = 0.0f;
+    public float MapEditor_SnapToMesh_MaxDistance = 500.0f;
+    public bool MapEditor_SnapToMesh_Individually = false;
+
     public bool Toolbar_Rotate_Specific_Input = false;
 
     public bool Toolbar_Rotate_HandleAsSingleObject = true;
@@ -529,6 +535,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_Translate = true;
     public bool Interface_MapEditor_Tool_Rotate = true;
     public bool Interface_MapEditor_Tool_PullToCamera = true;
+    public bool Interface_MapEditor_Tool_SnapToMesh = true;
     public bool Interface_MapEditor_Tool_Scramble = true;
     public bool Interface_MapEditor_Tool_ResetTransform = true;
     public bool Interface_MapEditor_Tool_Properties_Action = true;
