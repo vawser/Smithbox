@@ -101,6 +101,7 @@ public class ProjectOrchestrator : IDisposable
             else
             {
                 ProjectEditor.RequestFocus = true;
+                _projectEditorFocusHoldFrames = ProjectEditorFocusHoldLength;
             }
         }
 
@@ -112,6 +113,50 @@ public class ProjectOrchestrator : IDisposable
         {
             UnsavedChangesPrompt.Draw();
         }
+
+        HoldProjectEditorFocus();
+    }
+
+    // The Project Editor's window, as the ProjectScreen draws it
+    private const string ProjectEditorWindowName = "###ProjectEditor";
+
+    // How many frames the Project Editor is kept in front after a load
+    private const int ProjectEditorFocusHoldLength = 60;
+
+    private int _projectEditorFocusHoldFrames = 0;
+
+    /// <summary>
+    /// Keeps the Project Editor in front for the first frames after a load.
+    /// </summary>
+    /// <remarks>
+    /// Requesting focus once is not enough. The loaded project's editor stubs join the main dock node as new
+    /// tabs, and the dock node selects the newest tab. On the next frame that editor draws its own dockspace,
+    /// and its docked windows take focus as they appear for the first time, which brings the editor's tab back
+    /// to the front. So focus is given back to the Project Editor at the end of each frame, after the editors have
+    /// drawn, until the editors have stopped appearing. Once the Project Editor's tab is selected again the
+    /// editors are hidden and their windows aren't drawn, so nothing else takes focus. A mouse click ends the
+    /// hold early, so a click on another editor's tab isn't undone.
+    /// </remarks>
+    private void HoldProjectEditorFocus()
+    {
+        if (_projectEditorFocusHoldFrames <= 0)
+            return;
+
+        if (ImGui.IsMouseClicked(ImGuiMouseButton.Left) ||
+            ImGui.IsMouseClicked(ImGuiMouseButton.Right) ||
+            ImGui.IsMouseClicked(ImGuiMouseButton.Middle))
+        {
+            _projectEditorFocusHoldFrames = 0;
+            return;
+        }
+
+        _projectEditorFocusHoldFrames--;
+
+        // Taking focus while a popup is open would move it away from the popup
+        if (ImGui.IsPopupOpen("", ImGuiPopupFlags.AnyPopupId | ImGuiPopupFlags.AnyPopupLevel))
+            return;
+
+        ImGui.SetWindowFocus(ProjectEditorWindowName);
     }
 
     /// <summary>
@@ -362,7 +407,7 @@ public class ProjectOrchestrator : IDisposable
     /// <param name="onLoaded">Run on the main thread once the project is selected.</param>
     /// <param name="focus">What to bring to the front once it has loaded.</param>
     /// <returns>Whether the project loaded.</returns>
-    public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null, LoadFocus focus = LoadFocus.FirstEditor)
+    public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null, LoadFocus focus = LoadFocus.ProjectEditor)
     {
         return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded, focus);
     }
@@ -825,7 +870,7 @@ public class ProjectOrchestrator : IDisposable
 /// </summary>
 public enum LoadFocus
 {
-    /// <summary>The project's first editor, so the user can start working</summary>
+    /// <summary>The project's first editor. Not used by default: loads keep the Project Editor in front</summary>
     FirstEditor,
 
     /// <summary>The Project Editor, for loads started there whose result the user wants to see</summary>
