@@ -118,6 +118,28 @@ public class FxPlayback
         };
     }
 
+    // ---------------------------------------------------------------- visibility
+
+    /// <summary>
+    /// Nodes hidden in playback, by object. Editor-only (nothing is written to the file); weak, so a reloaded
+    /// effect's old nodes don't linger, and an undone delete brings its node back as it was.
+    /// </summary>
+    private readonly System.Runtime.CompilerServices.ConditionalWeakTable<SoulsFormats.FxrNode, object> HiddenNodes = new();
+
+    private static readonly object HiddenMark = new();
+
+    public bool IsNodeHidden(SoulsFormats.FxrNode node) => node != null && HiddenNodes.TryGetValue(node, out _);
+
+    public void SetNodeHidden(SoulsFormats.FxrNode node, bool hidden)
+    {
+        if (node == null)
+            return;
+        if (hidden)
+            HiddenNodes.AddOrUpdate(node, HiddenMark);
+        else
+            HiddenNodes.Remove(node);
+    }
+
     public float GetExternalValue(int id) => ExternalValues.TryGetValue(id, out var v) ? v : 0;
 
     public void SetExternalValue(int id, float value)

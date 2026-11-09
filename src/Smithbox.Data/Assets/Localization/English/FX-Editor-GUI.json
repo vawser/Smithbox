@@ -36,6 +36,13 @@
     { "Key": "FX_EffectTree_State", "Text": "State {0}" },
     { "Key": "FX_EffectTree_Config_States", "Text": "(states {0})" },
     { "Key": "FX_EffectTree_Config_Unused", "Text": "(unused)" },
+    { "Key": "FX_EffectTree_Visibility_TT", "Text": "Show or hide this node, and everything under it, in playback. It still runs while hidden; it isn't saved to the file." },
+    { "Key": "FX_EffectTree_Show", "Text": "Show in Playback" },
+    { "Key": "FX_EffectTree_Hide", "Text": "Hide in Playback" },
+    { "Key": "FX_EffectTree_Duplicate", "Text": "Duplicate Node" },
+    { "Key": "FX_EffectTree_Duplicate_TT", "Text": "Add a copy of the selected node, with its configs, actions and child nodes, just after it." },
+    { "Key": "FX_EffectTree_Delete", "Text": "Delete Node" },
+    { "Key": "FX_EffectTree_Delete_TT", "Text": "Remove the selected node and everything under it. The root node can't be removed." },
 
     { "Key": "FX_Node_Root", "Text": "Root" },
     { "Key": "FX_Node_Proxy", "Text": "Proxy" },

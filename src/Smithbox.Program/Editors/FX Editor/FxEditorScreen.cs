@@ -235,6 +235,8 @@ public class FxEditorScreen : EditorScreen
 
         if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             ActionManager.RedoAction();
+
+        EffectTree.Shortcuts();
     }
 
     private void FileMenu()
@@ -283,6 +285,19 @@ public class FxEditorScreen : EditorScreen
 
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##fxRedo", InputManager.GetHint(KeybindID.Redo), false, ActionManager.CanRedo()))
             ActionManager.RedoAction();
+
+        ImGui.Separator();
+
+        // The selected node in the Effect Tree
+        var node = EffectTree.EditableNode;
+
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Duplicate")}##fxDuplicateNode", InputManager.GetHint(KeybindID.Duplicate), false, node != null))
+            EffectTree.DuplicateNode(node);
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Duplicate_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Delete")}##fxDeleteNode", InputManager.GetHint(KeybindID.Delete), false, node != null))
+            EffectTree.DeleteNode(node);
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Delete_TT"));
 
         ImGui.EndMenu();
     }

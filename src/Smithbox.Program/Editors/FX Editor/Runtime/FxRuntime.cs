@@ -26,6 +26,12 @@ public sealed class FxRuntimeContext
     /// </summary>
     public Func<float, Matrix4x4> Motion;
 
+    /// <summary>
+    /// Nodes the editor has hidden: they and everything under them still simulate (so showing them again needs no
+    /// replay), but their particles aren't output. Null hides nothing.
+    /// </summary>
+    public Func<FxrNode, bool> IsHidden;
+
     public int MaxParticles = 20000;
     public int MaxNodes = 4000;
     public int MaxProxyDepth = 6;
@@ -163,10 +169,10 @@ public sealed class FxEffectInstance
     /// <summary>Every node instance, nested effects included.</summary>
     public IEnumerable<FxNodeInstance> AllNodes() => Root.Descendants();
 
-    /// <summary>Every live particle, with its world position.</summary>
+    /// <summary>Every live particle, with its world position. Hidden nodes and what's under them are left out.</summary>
     public void CollectParticles(List<FxParticleOutput> output)
     {
-        foreach (var node in AllNodes())
+        foreach (var node in Root.VisibleDescendants())
         {
             if (node.Config == null || node.Particles.Count == 0)
                 continue;
@@ -295,6 +301,21 @@ public sealed class FxNodeInstance
                 yield return n;
         if (Proxy != null)
             foreach (var n in Proxy.AllNodes())
+                yield return n;
+    }
+
+    /// <summary>As <see cref="Descendants"/>, stopping at hidden nodes (see <see cref="FxRuntimeContext.IsHidden"/>).</summary>
+    public IEnumerable<FxNodeInstance> VisibleDescendants()
+    {
+        if (Def.Source != null && Effect.Context.IsHidden?.Invoke(Def.Source) == true)
+            yield break;
+
+        yield return this;
+        foreach (var child in Children)
+            foreach (var n in child.VisibleDescendants())
+                yield return n;
+        if (Proxy != null)
+            foreach (var n in Proxy.Root.VisibleDescendants())
                 yield return n;
     }
 

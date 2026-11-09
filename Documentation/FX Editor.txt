@@ -9,7 +9,3 @@
     - Add Export action
     - Option to toggle auto-framing of effect
 
-- Effect Contents:
-    - Add visibility toggles for each node so the node's effect can be hidden in playback
-    - Add Duplicate / Delete action
-

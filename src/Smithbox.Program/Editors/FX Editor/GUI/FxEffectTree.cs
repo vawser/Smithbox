@@ -1,5 +1,8 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
+using System.Numerics;
 
 namespace StudioCore.Editors.FxEditor;
 
@@ -57,12 +60,160 @@ public class FxEffectTree
 
         // Nodes
         int id = 0;
-        DisplayNode(entry, fxr.Root, ref id, 0);
+        DisplayNode(entry, fxr.Root, null, ref id, 0, false);
 
         ImGui.EndChild();
+
+        // Structure changes wait until the tree is drawn, so the lists aren't changed while they're walked
+        if (PendingDuplicate != null)
+            DuplicateNode(PendingDuplicate);
+        if (PendingDelete != null)
+            DeleteNode(PendingDelete);
+        PendingDuplicate = PendingDelete = null;
     }
 
-    private void DisplayNode(FxEntry entry, FxrNode node, ref int id, int depth)
+    // ---------------------------------------------------------------- node actions
+
+    private FxrNode PendingDuplicate, PendingDelete;
+
+    /// <summary>The selected node, when it can be duplicated or deleted (any node but the root).</summary>
+    public FxrNode EditableNode
+    {
+        get
+        {
+            var fxr = Editor.Selection.Entry?.Fxr;
+            return Editor.Selection.Item is FxrNode node && fxr != null && node != fxr.Root && FindParent(fxr.Root, node) != null
+                ? node : null;
+        }
+    }
+
+    /// <summary>The Duplicate and Delete shortcuts, while the Effect Tree has focus.</summary>
+    public void Shortcuts()
+    {
+        if (!FocusManager.IsFocus(EditorFocusContext.FxEditor_EffectTree) || EditableNode is not { } node)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+            PendingDuplicate = node;
+        else if (InputManager.IsPressed(KeybindID.Delete))
+            PendingDelete = node;
+    }
+
+    /// <summary>Puts a copy of the node (its configs, actions and children) just after it, and selects the copy.</summary>
+    public void DuplicateNode(FxrNode node)
+    {
+        var entry = Editor.Selection.Entry;
+        var parent = entry?.Fxr == null ? null : FindParent(entry.Fxr.Root, node);
+        if (parent == null)
+            return;
+
+        FlushPending();
+        var copy = FxClone.Node(node);
+        Editor.ActionManager.ExecuteAction(FxNodeListAction.Add(Editor.Data.Bank, entry, parent, copy, parent.Children.IndexOf(node) + 1));
+        Editor.Selection.SelectItem(copy);
+    }
+
+    /// <summary>Takes the node, and everything under it, out of its parent.</summary>
+    public void DeleteNode(FxrNode node)
+    {
+        var entry = Editor.Selection.Entry;
+        var parent = entry?.Fxr == null ? null : FindParent(entry.Fxr.Root, node);
+        if (parent == null)
+            return;
+
+        FlushPending();
+        Editor.ActionManager.ExecuteAction(FxNodeListAction.Remove(Editor.Data.Bank, entry, parent, node));
+
+        // The selection may have been inside what went
+        if (Editor.Selection.Item != null && !Contains(entry.Fxr.Root, Editor.Selection.Item))
+            Editor.Selection.ClearItem();
+    }
+
+    /// <summary>A value still being typed belongs to the tree as it was, so it's committed first.</summary>
+    private void FlushPending()
+    {
+        Editor.Inspector.FlushPending();
+        Editor.CurveEditor.FlushPending();
+    }
+
+    private static FxrNode FindParent(FxrNode root, FxrNode target)
+    {
+        foreach (var child in root.Children)
+        {
+            if (ReferenceEquals(child, target))
+                return root;
+            if (FindParent(child, target) is { } found)
+                return found;
+        }
+        return null;
+    }
+
+    /// <summary>Whether a tree item (state, node, config or action) is still in the effect under this node.</summary>
+    private static bool Contains(FxrNode node, object item)
+    {
+        if (item is FxrState)
+            return true;
+        if (ReferenceEquals(node, item))
+            return true;
+        if (node.Actions.Any(a => ReferenceEquals(a, item)))
+            return true;
+        foreach (var config in node.Configs)
+            if (ReferenceEquals(config, item) || config.Actions.Any(a => ReferenceEquals(a, item)))
+                return true;
+        return node.Children.Any(c => Contains(c, item));
+    }
+
+    // ---------------------------------------------------------------- display
+
+    /// <summary>The eye before each node: hides the node, and everything under it, in playback.</summary>
+    private void DisplayVisibilityButton(FxrNode node, int nodeId)
+    {
+        var playback = Editor.Playback;
+        bool hidden = playback.IsNodeHidden(node);
+
+        ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+        ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+        ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+
+        if (ImGui.Button($"{(hidden ? Icons.EyeSlash : Icons.Eye)}##fxNodeVisibility_{nodeId}", DPI.InlineIconButtonSize))
+            playback.SetNodeHidden(node, !hidden);
+
+        ImGui.PopStyleColor(4);
+        ImGui.PopItemFlag();
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Visibility_TT"));
+        ImGui.SameLine();
+    }
+
+    private void DisplayNodeContextMenu(FxrNode node, FxrNode parent, int nodeId)
+    {
+        if (!ImGui.BeginPopupContextItem($"##fxNodeContext_{nodeId}"))
+            return;
+
+        // The context menu acts on the node it was opened on
+        Editor.Selection.SelectItem(node);
+
+        bool editable = parent != null;
+
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Duplicate")}##fxNodeDuplicate", InputManager.GetHint(KeybindID.Duplicate), false, editable))
+            PendingDuplicate = node;
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Duplicate_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Delete")}##fxNodeDelete", InputManager.GetHint(KeybindID.Delete), false, editable))
+            PendingDelete = node;
+        GUI.Tooltip(LOC.Get("FX_EffectTree_Delete_TT"));
+
+        ImGui.Separator();
+
+        bool hidden = Editor.Playback.IsNodeHidden(node);
+        if (ImGui.MenuItem($"{LOC.Get(hidden ? "FX_EffectTree_Show" : "FX_EffectTree_Hide")}##fxNodeVisibility"))
+            Editor.Playback.SetNodeHidden(node, !hidden);
+
+        ImGui.EndPopup();
+    }
+
+    private void DisplayNode(FxEntry entry, FxrNode node, FxrNode parent, ref int id, int depth, bool parentHidden)
     {
         int nodeId = id++;
         var label = FxNames.NodeType(node.Type);
@@ -77,9 +228,22 @@ public class FxEffectTree
         if (depth == 0) flags |= ImGuiTreeNodeFlags.DefaultOpen;
         if (Editor.Selection.IsSelected(node)) flags |= ImGuiTreeNodeFlags.Selected;
 
+        DisplayVisibilityButton(node, nodeId);
+
+        // Hidden nodes, and nodes under a hidden one, are dimmed
+        bool hidden = parentHidden || Editor.Playback.IsNodeHidden(node);
+        if (hidden)
+            ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
+
         bool open = ImGui.TreeNodeEx($"{label}##fxNode_{nodeId}", flags);
+
+        if (hidden)
+            ImGui.PopStyleColor();
+
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             Editor.Selection.SelectItem(node);
+
+        DisplayNodeContextMenu(node, parent, nodeId);
 
         if (!open)
             return;
@@ -119,7 +283,7 @@ public class FxEffectTree
 
         // Child nodes
         foreach (var child in node.Children)
-            DisplayNode(entry, child, ref id, depth + 1);
+            DisplayNode(entry, child, node, ref id, depth + 1, hidden);
 
         ImGui.TreePop();
     }

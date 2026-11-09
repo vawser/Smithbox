@@ -112,7 +112,12 @@ public class FxPreviewRuntime
 
     private void Restart()
     {
-        Context = new FxRuntimeContext { ResolveEffect = ResolveProxy, Motion = Editor.Playback.MotionFunction() };
+        Context = new FxRuntimeContext
+        {
+            ResolveEffect = ResolveProxy,
+            Motion = Editor.Playback.MotionFunction(),
+            IsHidden = Editor.Playback.IsNodeHidden,
+        };
         // Seeded by the effect id, so a replay matches what was shown before
         Instance = new FxEffectInstance(Def, Context, (uint)Entry.Id | 1);
     }
