@@ -379,3 +379,7 @@ Documentation/DS2/MapStudio.macbin
 CLAUDE.md
 game_data.txt
 /Reference
+
+# Oodle is proprietary (Epic/RAD); never commit or ship it. Smithbox copies it from the game folder at runtime.
+oo2core_*.dll
+liboo2core*

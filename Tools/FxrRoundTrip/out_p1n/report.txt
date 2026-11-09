@@ -1,0 +1,74 @@
+== DS3: 42 ffxbnds (42 read), 5194 fxr (800 duplicate names), max node depth 0
+   FXR (new) round trip: 5194/5194 byte-perfect, 0 read/write fail
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 4323
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 750
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 108
+     zero empty offsets: ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 9
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 4
+== SDT: 8 ffxbnds (8 read), 2913 fxr (244 duplicate names), max node depth 0
+   FXR (new) round trip: 2913/2913 byte-perfect, 0 read/write fail
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 2669
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 201
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 39
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 2
+     zero empty offsets: ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 2
+== ER: 220 ffxbnds (220 read), 12155 fxr (243 duplicate names), max node depth 0
+   FXR (new) round trip: 11981/12155 byte-perfect, 0 read/write fail
+     first diff at header: 102
+     first diff at Properties +0x18: 72
+     ! sfxbnd_c2120.ffxbnd.dcx|f000621250.fxr: differs (53008 -> 53008, first diff 0x5828 Properties +0x18, orig 60AB000000000000 new 80AB000000000000)
+     ! sfxbnd_c2120.ffxbnd.dcx|f000621290.fxr: differs (24288 -> 24288, first diff 0x22B8 Properties +0x18, orig E04B000000000000 new 004C000000000000)
+     ! sfxbnd_c3320.ffxbnd.dcx|f000633230.fxr: differs (35856 -> 35936, first diff 0x4C header, orig 0D00000060790000 new 0E00000080790000)
+     ! sfxbnd_c3750.ffxbnd.dcx|f000637520.fxr: differs (41760 -> 41760, first diff 0x3448 Properties +0x18, orig 0087000000000000 new 2087000000000000)
+     ! sfxbnd_c3970.ffxbnd.dcx|f000639702.fxr: differs (8720 -> 8720, first diff 0x11F0 Properties +0x18, orig 401D000000000000 new 601D000000000000)
+     ! sfxbnd_c3970.ffxbnd.dcx|f000639732.fxr: differs (13360 -> 13360, first diff 0x1898 Properties +0x18, orig 302C000000000000 new 502C000000000000)
+     ! sfxbnd_c4130.ffxbnd.dcx|f000641320.fxr: differs (29472 -> 29536, first diff 0x4C header, orig 1C00000080600000 new 1D000000A0600000)
+     ! sfxbnd_c4350.ffxbnd.dcx|f000643530.fxr: differs (31472 -> 31472, first diff 0x4208 Properties +0x18, orig 6064000000000000 new 8064000000000000)
+     ! sfxbnd_c4800.ffxbnd.dcx|f000648000.fxr: differs (89904 -> 89904, first diff 0xD358 Properties +0x18, orig 9021010000000000 new B021010000000000)
+     ! sfxbnd_c4800.ffxbnd.dcx|f000648005.fxr: differs (76288 -> 76288, first diff 0xBF08 Properties +0x18, orig 60F4000000000000 new 80F4000000000000)
+     ! sfxbnd_c4800.ffxbnd.dcx|f000648013.fxr: differs (68720 -> 68720, first diff 0xB088 Properties +0x18, orig 10DE000000000000 new 30DE000000000000)
+     ! sfxbnd_c5030.ffxbnd.dcx|f000650313.fxr: differs (151248 -> 154656, first diff 0x4C header, orig 64000000B0E90100 new 7000000030EB0100)
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 11813
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 191
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 150
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 1
+== AC6: 48 ffxbnds (48 read), 5279 fxr (1013 duplicate names), max node depth 0
+   FXR (new) round trip: 5221/5279 byte-perfect, 0 read/write fail
+     first diff at header: 57
+     first diff at Conditions +0x20: 1
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000610300.fxr: differs (95712 -> 96128, first diff 0x4C header, orig 3F000000403E0100 new 45000000003F0100)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000990055.fxr: differs (44912 -> 45200, first diff 0x4C header, orig 0F00000050930000 new 1000000070930000)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f008000010.fxr: differs (47088 -> 47088, first diff 0x1A0 Conditions +0x20, orig 0C9A000000000000 new 089A000000000000)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000990155.fxr: differs (48144 -> 48432, first diff 0x4C header, orig 10000000B09D0000 new 11000000D09D0000)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f007504125.fxr: differs (71888 -> 72096, first diff 0x4C header, orig 1800000020EF0000 new 1B00000080EF0000)
+     ! sfxbnd_m03.ffxbnd.dcx|f000803010.fxr: differs (16992 -> 17152, first diff 0x4C header, orig 0C000000E0370000 new 0D00000000380000)
+     ! sfxbnd_m03.ffxbnd.dcx|f000662550.fxr: differs (28720 -> 28864, first diff 0x4C header, orig 1200000060600000 new 14000000A0600000)
+     ! sfxbnd_m03.ffxbnd.dcx|f000674090.fxr: differs (100192 -> 101904, first diff 0x4C header, orig 63000000304B0100 new 69000000F04B0100)
+     ! sfxbnd_m03.ffxbnd.dcx|f000822055.fxr: differs (34176 -> 34320, first diff 0x4C header, orig 2000000080740000 new 22000000C0740000)
+     ! sfxbnd_m03.ffxbnd.dcx|f000651030.fxr: differs (60464 -> 60544, first diff 0x4C header, orig 2A000000D0CA0000 new 2B000000F0CA0000)
+     ! sfxbnd_m03.ffxbnd.dcx|f000651031.fxr: differs (147184 -> 147248, first diff 0x4C header, orig 82000000D0E60100 new 83000000F0E60100)
+     ! sfxbnd_m03.ffxbnd.dcx|f000822070.fxr: differs (32432 -> 32576, first diff 0x4C header, orig 0D000000506E0000 new 0F000000906E0000)
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 3081
+     zero empty offsets: All: 1571
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 474
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 131
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 22
+== NR: 197 ffxbnds (197 read), 11182 fxr (406 duplicate names), max node depth 0
+   FXR (new) round trip: 11026/11182 byte-perfect, 0 read/write fail
+     first diff at header: 156
+     ! sfxbnd_c3250.ffxbnd.dcx|f000632521.fxr: differs (15824 -> 15904, first diff 0x4C header, orig 0B00000020330000 new 0C00000040330000)
+     ! sfxbnd_c3320.ffxbnd.dcx|f000633230.fxr: differs (35872 -> 35952, first diff 0x4C header, orig 0D00000060790000 new 0E00000080790000)
+     ! sfxbnd_c3500.ffxbnd.dcx|f000635005.fxr: differs (16832 -> 17824, first diff 0x4C header, orig 0B00000030360000 new 10000000D0360000)
+     ! sfxbnd_c3508.ffxbnd.dcx|f000635005.fxr: differs (16832 -> 17824, first diff 0x4C header, orig 0B00000030360000 new 10000000D0360000)
+     ! sfxbnd_c4100.ffxbnd.dcx|f000641020.fxr: differs (29504 -> 29568, first diff 0x4C header, orig 1C00000080600000 new 1D000000A0600000)
+     ! sfxbnd_c4110.ffxbnd.dcx|f000641120.fxr: differs (29504 -> 29584, first diff 0x4C header, orig 1C00000080600000 new 1D000000A0600000)
+     ! sfxbnd_c4130.ffxbnd.dcx|f000641320.fxr: differs (29520 -> 29584, first diff 0x4C header, orig 1C00000080600000 new 1D000000A0600000)
+     ! sfxbnd_c4350.ffxbnd.dcx|f000643597.fxr: differs (15824 -> 15888, first diff 0x4C header, orig 0B00000020330000 new 0C00000040330000)
+     ! sfxbnd_c4900.ffxbnd.dcx|f000649058.fxr: differs (16448 -> 16848, first diff 0x4C header, orig 0600000010370000 new 0700000030370000)
+     ! sfxbnd_c5240.ffxbnd.dcx|f000652492.fxr: differs (124640 -> 125792, first diff 0x4C header, orig 5000000010910100 new 5400000090910100)
+     ! sfxbnd_c5310.ffxbnd.dcx|f000653132.fxr: differs (152000 -> 153152, first diff 0x4C header, orig 67000000D0ED0100 new 6B00000050EE0100)
+     ! sfxbnd_c7510.ffxbnd.dcx|f000675140.fxr: differs (17168 -> 17232, first diff 0x4C header, orig 02000000E03B0000 new 03000000003C0000)
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 6776
+     zero empty offsets: All: 3154
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 1130
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 122

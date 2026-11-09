@@ -1,0 +1,38 @@
+== DS3: 42 ffxbnds (42 read), 5194 fxr (800 duplicate names), max node depth 0
+   FXR (new) round trip: 5194/5194 byte-perfect, 0 read/write fail
+   edit check: 5194/5194 pass
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 4323
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 750
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 108
+     zero empty offsets: ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 9
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 4
+== SDT: 8 ffxbnds (8 read), 2913 fxr (244 duplicate names), max node depth 0
+   FXR (new) round trip: 2913/2913 byte-perfect, 0 read/write fail
+   edit check: 2913/2913 pass
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 2669
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 201
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 39
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 2
+     zero empty offsets: ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 2
+== ER: 220 ffxbnds (220 read), 12155 fxr (243 duplicate names), max node depth 0
+   FXR (new) round trip: 12155/12155 byte-perfect, 0 read/write fail
+   edit check: 12155/12155 pass
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 11813
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 191
+     zero empty offsets: ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 150
+     zero empty offsets: StateConditions, ConditionValues, NodeConfigs, NodeActions, ConfigActions, ActionFields, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 1
+== AC6: 48 ffxbnds (48 read), 5279 fxr (1013 duplicate names), max node depth 0
+   FXR (new) round trip: 5279/5279 byte-perfect, 0 read/write fail
+   edit check: 5279/5279 pass
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 3081
+     zero empty offsets: All: 1571
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 474
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 131
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, PropertyFields, ModifierFields, ModifierProperties, Section10Values: 22
+== NR: 197 ffxbnds (197 read), 11182 fxr (406 duplicate names), max node depth 0
+   FXR (new) round trip: 11182/11182 byte-perfect, 0 read/write fail
+   edit check: 11182/11182 pass
+     zero empty offsets: StateConditions, ConditionValues, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 6776
+     zero empty offsets: All: 3154
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, Section10Values: 1130
+     zero empty offsets: StateConditions, NodeChildren, NodeConfigs, NodeActions, ConfigActions, ActionFields, ActionProperties, ActionSection10s, PropertyFields, PropertyModifiers, ModifierFields, ModifierProperties, Section10Values: 122

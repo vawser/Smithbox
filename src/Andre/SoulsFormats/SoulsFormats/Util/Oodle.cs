@@ -22,11 +22,11 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_6_win64.dll"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "oo2core_6_win64.dll")))
 #elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.6.dylib"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.6.dylib")))
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.6"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.6")))
 #endif
         {
             Oodle6Exists = true;
@@ -42,11 +42,11 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_8_win64.dll"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "oo2core_8_win64.dll")))
 #elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.8.dylib"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.8.dylib")))
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.8"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.8")))
 #endif
         {
             Oodle8Exists = true;
@@ -62,11 +62,11 @@ public class Oodle
             return true;
         }
 #if WINDOWS
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_9_win64.dll"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll")))
 #elif OSX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.9.dylib"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.9.dylib")))
 #elif LINUX
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2corelinux64.so.9"))
+        if (Path.Exists(Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.9")))
 #endif
         {
             Oodle9Exists = true;
@@ -120,13 +120,16 @@ public class Oodle
         }
 #if WINDOWS
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory");
+            + $"Oodle is not distributed with Smithbox. Load a Sekiro, Elden Ring, Armored Core VI or Nightreign project so it is copied from the game folder, "
+            + $"or copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll from one of those game folders into the Smithbox program directory");
 #elif OSX
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy liboo2coremac64.2.6.dylib, liboo2coremac64.2.8.dylib or liboo2coremac64.2.9.dylib into the Smithbox program directory");
+            + $"Oodle is not distributed with Smithbox. Load a Sekiro, Elden Ring, Armored Core VI or Nightreign project so it is copied from the game folder, "
+            + $"or copy liboo2coremac64.2.6.dylib, liboo2coremac64.2.8.dylib or liboo2coremac64.2.9.dylib from one of those game folders into the Smithbox program directory");
 #elif LINUX
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy liboo2corelinux64.so.6, liboo2corelinux64.so.8 or liboo2corelinux64.so.9 into the Smithbox program directory");
+            + $"Oodle is not distributed with Smithbox. Load a Sekiro, Elden Ring, Armored Core VI or Nightreign project so it is copied from the game folder, "
+            + $"or copy liboo2corelinux64.so.6, liboo2corelinux64.so.8 or liboo2corelinux64.so.9 from one of those game folders into the Smithbox program directory");
 #endif
     }
 

@@ -1,0 +1,1407 @@
+== DS3: 42 ffxbnds (42 read), 5194 fxr (800 duplicate names), max node depth 8
+   FXR3 round trip: 0/5194 byte-perfect, 0 read fail, 0 write fail
+     first diff in Actions: 2477
+     first diff in Nodes: 1954
+     first diff in Configs: 750
+     first diff in Conditions: 13
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000001.fxr: differs (9184 -> 9184, first diff 0x300 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000002.fxr: differs (27232 -> 27232, first diff 0x490 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000003.fxr: differs (27232 -> 27232, first diff 0x490 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000004.fxr: differs (27232 -> 27232, first diff 0x490 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000015.fxr: differs (10832 -> 10832, first diff 0x300 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000030.fxr: differs (11184 -> 11184, first diff 0x171 in Nodes)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000031.fxr: differs (30112 -> 30112, first diff 0x490 in Actions)
+     ! frpg_sfxbnd_commoneffects_effect.ffxbnd.dcx|f000000032.fxr: differs (23248 -> 23248, first diff 0x168 in Nodes)
+   header:
+     minor 0 version 4: 5194
+   oddities:
+     action unk02/unk03 = 0/1: 397193
+     action unk02/unk03 = 1/0: 31443
+     action unk04 != 0: 43905
+     DS3 Tracer fields2 starts with -2: 219
+   action unk02/unk03:
+     0/1: 397193
+     1/0: 31443
+   action unk04 (top 12):
+     type 105 unk04 5: 2682
+     type 106 unk04 6: 412
+     type 301 unk04 1: 487
+     type 36 unk04 1: 574
+     type 399 unk04 2: 15895
+     type 401 unk04 1: 1487
+     type 403 unk04 3: 827
+     type 404 unk04 4: 4401
+     type 501 unk04 1: 13254
+     type 60 unk04 1: 1068
+     type 65 unk04 3: 421
+     type 84 unk04 4: 1313
+   empty list offsets:
+     action no fields: offset 0: 29527
+     action no fields: offset nonzero: 143401
+     action no properties: offset 0: 31096
+     action no properties: offset nonzero: 198288
+     action no section10s: offset 0: 1916
+     action no section10s: offset nonzero: 397153
+     property no fields: offset 0: 904405
+     property no modifiers: offset nonzero: 1128125
+   field pool sharing:
+     action block duplicates earlier content but NOT shared: 162677
+     action block unique: 93031
+     modifier block duplicates earlier content but NOT shared: 26
+     modifier block unique: 54129
+     modprop block duplicates earlier content but NOT shared: 19
+     modprop block unique: 7
+     property block duplicates earlier content but NOT shared: 142495
+     property block unique: 135380
+   reference lists: none
+   property typeEnumB:
+     packed is 0 (ambiguous): 594725
+     typeEnumB = packed: 584903
+     typeEnumB other (func 4 vt 0 stored 0x20): 2483
+     typeEnumB other (func 4 vt 2 stored 0x22): 10
+     typeEnumB other (func 4 vt 3 stored 0x23): 116
+     typeEnumB other (func 5 vt 0 stored 0x24): 35
+     typeEnumB other (func 5 vt 2 stored 0x26): 8
+     typeEnumB other (func 5 vt 3 stored 0x27): 2
+     typeEnumB other (func 6 vt 0 stored 0x28): 21
+     typeEnumB other (func 6 vt 2 stored 0x2A): 3
+   property functions:
+     func 0 vt 0: 594725
+     func 0 vt 3: 47
+     func 1 vt 0: 197363
+     func 1 vt 3: 112270
+     func 2 vt 0: 199679
+     func 2 vt 3: 9688
+     func 3 vt 0: 58
+     func 3 vt 0 (modprop): 26
+     func 3 vt 0 loop: 16
+     func 3 vt 3 loop: 1
+     func 4 vt 0: 37609
+     func 4 vt 0 loop: 2483
+     func 4 vt 2: 46
+     func 4 vt 2 loop: 10
+     func 4 vt 3: 20324
+     func 4 vt 3 loop: 116
+     func 5 vt 0: 687
+     func 5 vt 0 loop: 35
+     func 5 vt 2: 8
+     func 5 vt 2 loop: 8
+     func 5 vt 3: 246
+     func 5 vt 3 loop: 2
+     func 6 vt 0: 6417
+     func 6 vt 0 loop: 21
+     func 6 vt 2: 11
+     func 6 vt 2 loop: 3
+     func 6 vt 3: 407
+   modifiers:
+     type 21 enumB 0: 33856
+     type 38 enumB 4: 26
+     type 53 enumB 8: 20273
+   conditions:
+     op 3 unk1 2: 5341
+     operand -3 hasValue 1: 5341
+     operand -4 hasValue 1: 5341
+   nodes:
+     node 2000 configs 0 actions 0: 4
+     node 2000 configs 0 actions 3: 5190
+     node 2001 configs 0 actions 1: 1569
+     node 2002 configs 1 actions 1: 347
+     node 2200 configs 1 actions 1: 28133
+     node 2200 configs 2 actions 1: 15
+     node 2200 configs 3 actions 1: 203
+     node 2202 configs 1 actions 1: 815
+     node 2202 configs 2 actions 1: 14
+   configs:
+     config 1002 actions 1: 347
+     config 1004 actions 13: 28772
+     config 1005 actions 9: 843
+   action types: 61
+          0 x96962   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x96962
+          1 x15160   [config 1004; config 1005]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x15160
+         15 x86      [config 1004]
+            f1 0 f2 0 p1 1 p2 0 s10 0  x86
+         34 x354     [config 1004; config 1005]
+            f1 1 f2 0 p1 6 p2 0 s10 0  x354
+         35 x27648   [config 1004; config 1005]
+            f1 6 f2 0 p1 0 p2 0 s10 0  x27648
+         36 x574     [config 1004; config 1005]
+            f1 12 f2 0 p1 0 p2 0 s10 0  x574
+         46 x48      [config 1004; config 1005]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x48
+         55 x7257    [config 1004; node 2000]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x7257
+         60 x1068    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x1068
+         64 x139     [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x139
+         65 x421     [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x421
+         75 x1740    [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x1740
+         81 x3       [config 1004]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x3
+         83 x39      [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x39
+         84 x1313    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x1313
+        105 x2682    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x2682
+        106 x412     [config 1004]
+            f1 4 f2 0 p1 6 p2 0 s10 0  x412
+        113 x97      [config 1004; config 1005]
+            f1 4 f2 0 p1 10 p2 0 s10 0  x97
+        120 x14      [config 1004]
+            f1 3 f2 0 p1 3 p2 0 s10 0  x14
+        121 x1       [config 1004]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x1
+        123 x10      [config 1004; config 1005]
+            f1 4 f2 0 p1 9 p2 0 s10 0  x10
+        128 x29615   [config 1004; config 1005]
+            f1 4 f2 0 p1 1 p2 0 s10 0  x29615
+        129 x28772   [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x28772
+        130 x28772   [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x28772
+        131 x28772   [config 1004]
+            f1 1 f2 0 p1 5 p2 0 s10 0  x28772
+        132 x1569    [node 2001]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x1569
+        133 x347     [config 1002]
+            f1 5 f2 0 p1 1 p2 0 s10 0  x347
+        199 x29527   [node 2002; node 2200; node 2202]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x29527
+        200 x803     [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x803
+        201 x40      [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x40
+        300 x13233   [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x13233
+        301 x487     [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x487
+        399 x15895   [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x15895
+        400 x22808   [config 1004; config 1005]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x22808
+        401 x1487    [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x1487
+        402 x92      [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x92
+        403 x827     [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x827
+        404 x4401    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x4401
+        500 x16200   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x16200
+        501 x13254   [config 1004; config 1005]
+            f1 0 f2 0 p1 2 p2 0 s10 0  x13254
+        502 x8       [config 1004]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x8
+        503 x153     [config 1004]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x153
+        600 x520     [config 1004]
+            f1 5 f2 30 p1 4 p2 7 s10 0  x393
+            f1 5 f2 29 p1 4 p2 7 s10 0  x124
+            f1 5 f2 28 p1 4 p2 7 s10 0  x3
+        601 x31      [config 1004]
+            f1 2 f2 29 p1 7 p2 7 s10 0  x16
+            f1 2 f2 30 p1 7 p2 7 s10 0  x15
+        602 x201     [config 1004]
+            f1 2 f2 30 p1 9 p2 7 s10 0  x109
+            f1 2 f2 29 p1 9 p2 7 s10 0  x64
+            f1 2 f2 28 p1 9 p2 7 s10 0  x28
+        603 x13015   [config 1004]
+            f1 17 f2 30 p1 23 p2 7 s10 0  x8226
+            f1 17 f2 29 p1 23 p2 7 s10 0  x3944
+            f1 17 f2 28 p1 23 p2 7 s10 0  x845
+        604 x805     [config 1004]
+            f1 15 f2 30 p1 41 p2 7 s10 0  x703
+            f1 15 f2 29 p1 41 p2 7 s10 0  x93
+            f1 15 f2 28 p1 41 p2 7 s10 0  x9
+        605 x1635    [config 1004]
+            f1 19 f2 29 p1 25 p2 8 s10 0  x860
+            f1 19 f2 28 p1 25 p2 8 s10 0  x607
+            f1 19 f2 27 p1 25 p2 8 s10 0  x168
+        606 x509     [config 1004]
+            f1 16 f2 30 p1 14 p2 7 s10 0  x284
+            f1 16 f2 29 p1 14 p2 7 s10 0  x173
+            f1 16 f2 28 p1 14 p2 7 s10 0  x52
+        607 x286     [config 1004]
+            f1 13 f2 30 p1 16 p2 7 s10 0  x171
+            f1 13 f2 29 p1 16 p2 7 s10 0  x84
+            f1 13 f2 28 p1 16 p2 7 s10 0  x31
+        608 x917     [config 1004]
+            f1 5 f2 30 p1 8 p2 7 s10 0  x544
+            f1 5 f2 29 p1 8 p2 7 s10 0  x320
+            f1 5 f2 28 p1 8 p2 7 s10 0  x53
+        609 x1537    [config 1004]
+            f1 2 f2 25 p1 10 p2 2 s10 0  x909
+            f1 2 f2 24 p1 10 p2 2 s10 0  x628
+      10000 x137     [config 1004]
+            f1 161 f2 30 p1 21 p2 7 s10 0  x63
+            f1 161 f2 29 p1 21 p2 7 s10 0  x40
+            f1 161 f2 28 p1 21 p2 7 s10 0  x34
+      10003 x3       [config 1004]
+            f1 30 f2 0 p1 10 p2 0 s10 0  x3
+      10012 x250     [config 1004]
+            f1 16 f2 31 p1 14 p2 7 s10 0  x159
+            f1 16 f2 30 p1 14 p2 7 s10 0  x60
+            f1 16 f2 29 p1 14 p2 7 s10 0  x31
+      10100 x5190    [node 2000]
+            f1 56 f2 0 p1 0 p2 0 s10 0  x5190
+      10300 x124     [config 1004]
+            f1 52 f2 0 p1 1 p2 0 s10 0  x124
+      10301 x5       [config 1004]
+            f1 39 f2 0 p1 1 p2 0 s10 0  x5
+      10400 x5189    [node 2000]
+            f1 65 f2 0 p1 0 p2 0 s10 0  x5189
+      10500 x5188    [node 2000]
+            f1 9 f2 0 p1 0 p2 0 s10 0  x5188
+      11000 x4       [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x3
+            f1 8 f2 0 p1 8 p2 0 s10 0  x1
+== SDT: 8 ffxbnds (8 read), 2913 fxr (244 duplicate names), max node depth 9
+   FXR3 round trip: 0/2913 byte-perfect, 0 read fail, 0 write fail
+     first diff in Actions: 1421
+     first diff in Nodes: 1288
+     first diff in Configs: 201
+     first diff in Conditions: 3
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000001.fxr: differs (9824 -> 9824, first diff 0x320 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000010.fxr: differs (18096 -> 18096, first diff 0x3C0 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000011.fxr: differs (18096 -> 18096, first diff 0x3C0 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000012.fxr: differs (18096 -> 18096, first diff 0x3C0 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000016.fxr: differs (28352 -> 28352, first diff 0x1B8 in Nodes)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000017.fxr: differs (28352 -> 28352, first diff 0x1B8 in Nodes)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000030.fxr: differs (52608 -> 52608, first diff 0x1B9 in Nodes)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000031.fxr: differs (25632 -> 25632, first diff 0x248 in Nodes)
+   header:
+     minor 0 version 5: 2913
+   oddities:
+     action unk02/unk03 = 0/1: 333194
+     action unk02/unk03 = 1/0: 21584
+     action unk04 != 0: 35708
+   action unk02/unk03:
+     0/1: 333194
+     1/0: 21584
+   action unk04 (top 12):
+     type 105 unk04 5: 2616
+     type 106 unk04 6: 1993
+     type 301 unk04 1: 1512
+     type 34 unk04 3: 582
+     type 399 unk04 2: 11573
+     type 401 unk04 1: 554
+     type 403 unk04 3: 451
+     type 404 unk04 4: 2640
+     type 501 unk04 1: 9549
+     type 60 unk04 1: 1014
+     type 65 unk04 3: 431
+     type 84 unk04 4: 988
+   empty list offsets:
+     action no fields: offset 0: 20916
+     action no fields: offset nonzero: 145701
+     action no properties: offset 0: 21459
+     action no properties: offset nonzero: 184166
+     action no section10s: offset 0: 668
+     action no section10s: offset nonzero: 333140
+     property no fields: offset 0: 664878
+     property no modifiers: offset nonzero: 888673
+   field pool sharing:
+     action block duplicates earlier content but NOT shared: 131641
+     action block unique: 56520
+     modifier block unique: 47269
+     property block duplicates earlier content but NOT shared: 161883
+     property block unique: 109181
+   reference lists:
+     ext values 1: exact match: 2913
+     ext values 2: exact match: 2913
+     sfx refs: exact match: 2913
+   property typeEnumB:
+     packed is 0 (ambiguous): 433310
+     typeEnumB = packed: 501239
+     typeEnumB other (func 4 vt 0 stored 0x20): 896
+     typeEnumB other (func 4 vt 2 stored 0x22): 59
+     typeEnumB other (func 4 vt 3 stored 0x23): 128
+     typeEnumB other (func 5 vt 0 stored 0x24): 160
+     typeEnumB other (func 5 vt 2 stored 0x26): 37
+     typeEnumB other (func 5 vt 3 stored 0x27): 12
+     typeEnumB other (func 6 vt 0 stored 0x28): 58
+     typeEnumB other (func 6 vt 2 stored 0x2A): 43
+   property functions:
+     func 0 vt 0: 433310
+     func 0 vt 2: 1
+     func 0 vt 3: 28
+     func 1 vt 0: 145274
+     func 1 vt 3: 86265
+     func 2 vt 0: 203819
+     func 2 vt 3: 8640
+     func 3 vt 0: 1009
+     func 3 vt 0 loop: 6
+     func 3 vt 3: 3
+     func 3 vt 3 loop: 1
+     func 4 vt 0: 29695
+     func 4 vt 0 loop: 896
+     func 4 vt 2: 124
+     func 4 vt 2 loop: 59
+     func 4 vt 3: 14705
+     func 4 vt 3 loop: 128
+     func 5 vt 0: 157
+     func 5 vt 0 loop: 160
+     func 5 vt 2 loop: 37
+     func 5 vt 3: 699
+     func 5 vt 3 loop: 12
+     func 6 vt 0: 9577
+     func 6 vt 0 loop: 58
+     func 6 vt 2: 31
+     func 6 vt 2 loop: 43
+     func 6 vt 3: 1205
+   modifiers:
+     type 21 enumB 0: 26611
+     type 53 enumB 12: 20658
+   conditions:
+     op 3 unk1 2: 3241
+     operand -1 hasValue 0: 2
+     operand -3 hasValue 1: 3239
+     operand -4 hasValue 1: 3241
+   nodes:
+     node 2000 configs 0 actions 0: 3
+     node 2000 configs 0 actions 3: 2910
+     node 2001 configs 0 actions 1: 543
+     node 2002 configs 1 actions 1: 125
+     node 2200 configs 1 actions 1: 19522
+     node 2200 configs 2 actions 1: 374
+     node 2200 configs 3 actions 1: 326
+     node 2202 configs 1 actions 1: 561
+     node 2202 configs 2 actions 1: 8
+   configs:
+     config 1002 actions 1: 125
+     config 1004 actions 13: 13
+     config 1004 actions 15: 21235
+     config 1005 actions 10: 577
+   action types: 64
+          0 x111431  [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x111431
+          1 x10794   [config 1004; config 1005]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x10794
+         15 x295     [config 1004; config 1005]
+            f1 0 f2 0 p1 1 p2 0 s10 0  x295
+         34 x582     [config 1004; config 1005]
+            f1 1 f2 0 p1 6 p2 0 s10 0  x582
+         35 x20878   [config 1004; config 1005]
+            f1 6 f2 0 p1 0 p2 0 s10 0  x20878
+         36 x248     [config 1004; config 1005]
+            f1 12 f2 0 p1 0 p2 0 s10 0  x248
+         46 x136     [config 1004]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x136
+         55 x4196    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x4196
+         60 x1014    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x1014
+         64 x430     [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x430
+         65 x431     [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x431
+         75 x947     [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x947
+         83 x28      [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x28
+         84 x988     [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x988
+        105 x2616    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x2616
+        106 x1993    [config 1004; config 1005]
+            f1 4 f2 0 p1 6 p2 0 s10 0  x1993
+        113 x26      [config 1004]
+            f1 4 f2 0 p1 10 p2 0 s10 0  x26
+        120 x39      [config 1004]
+            f1 3 f2 0 p1 3 p2 0 s10 0  x39
+        121 x41      [config 1004]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x41
+        122 x72      [config 1004]
+            f1 4 f2 0 p1 5 p2 0 s10 0  x72
+        128 x21825   [config 1004; config 1005]
+            f1 4 f2 0 p1 1 p2 0 s10 0  x21825
+        129 x21248   [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x21248
+        130 x21248   [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x21248
+        131 x21248   [config 1004]
+            f1 1 f2 0 p1 5 p2 0 s10 0  x21248
+        132 x543     [node 2001]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x543
+        133 x125     [config 1002]
+            f1 5 f2 0 p1 1 p2 0 s10 0  x125
+        199 x20916   [node 2002; node 2200; node 2202]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x20916
+        200 x523     [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x523
+        201 x54      [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x54
+        300 x8740    [config 1004; config 1005]
+            f1 1 f2 0 p1 4 p2 0 s10 0  x8740
+        301 x1512    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x1512
+        399 x11573   [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x11573
+        400 x17690   [config 1004; config 1005]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x17690
+        401 x554     [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x554
+        402 x65      [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x65
+        403 x451     [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x451
+        404 x2640    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x2640
+        405 x425     [config 1004; config 1005]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x425
+        500 x11905   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x11905
+        501 x9549    [config 1004; config 1005]
+            f1 0 f2 0 p1 2 p2 0 s10 0  x9549
+        502 x23      [config 1004]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x23
+        503 x348     [config 1004; config 1005]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x348
+        600 x587     [config 1004]
+            f1 3 f2 39 p1 6 p2 7 s10 0  x423
+            f1 3 f2 37 p1 6 p2 7 s10 0  x95
+            f1 3 f2 38 p1 6 p2 7 s10 0  x68
+            f1 3 f2 33 p1 6 p2 7 s10 0  x1
+        601 x29      [config 1004]
+            f1 1 f2 39 p1 8 p2 7 s10 0  x24
+            f1 1 f2 37 p1 8 p2 7 s10 0  x5
+        602 x103     [config 1004]
+            f1 1 f2 39 p1 10 p2 7 s10 0  x83
+            f1 1 f2 37 p1 10 p2 7 s10 0  x19
+            f1 1 f2 38 p1 10 p2 7 s10 0  x1
+        603 x7638    [config 1004]
+            f1 15 f2 43 p1 25 p2 7 s10 0  x6050
+            f1 15 f2 37 p1 25 p2 7 s10 0  x756
+            f1 15 f2 40 p1 25 p2 7 s10 0  x471
+            f1 15 f2 42 p1 25 p2 7 s10 0  x357
+            ... 2 more layouts
+        604 x1600    [config 1004]
+            f1 14 f2 42 p1 42 p2 7 s10 0  x1386
+            f1 14 f2 37 p1 42 p2 7 s10 0  x109
+            f1 14 f2 39 p1 42 p2 7 s10 0  x59
+            f1 14 f2 41 p1 42 p2 7 s10 0  x46
+        605 x1010    [config 1004]
+            f1 17 f2 38 p1 27 p2 7 s10 0  x772
+            f1 17 f2 37 p1 27 p2 7 s10 0  x238
+        606 x282     [config 1004]
+            f1 14 f2 39 p1 16 p2 7 s10 0  x233
+            f1 14 f2 37 p1 16 p2 7 s10 0  x30
+            f1 14 f2 38 p1 16 p2 7 s10 0  x19
+        607 x167     [config 1004]
+            f1 12 f2 39 p1 17 p2 7 s10 0  x156
+            f1 12 f2 37 p1 17 p2 7 s10 0  x11
+        608 x485     [config 1004]
+            f1 3 f2 31 p1 10 p2 7 s10 0  x442
+            f1 3 f2 30 p1 10 p2 7 s10 0  x43
+        609 x834     [config 1004]
+            f1 2 f2 29 p1 10 p2 5 s10 0  x707
+            f1 2 f2 26 p1 10 p2 5 s10 0  x82
+            f1 2 f2 28 p1 10 p2 5 s10 0  x40
+            f1 2 f2 25 p1 10 p2 2 s10 0  x5
+        732 x520     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x520
+        733 x1       [config 1004]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x1
+        734 x91      [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x91
+      10000 x47      [config 1004]
+            f1 167 f2 39 p1 21 p2 7 s10 0  x31
+            f1 162 f2 37 p1 21 p2 7 s10 0  x13
+            f1 162 f2 38 p1 21 p2 7 s10 0  x3
+      10012 x2123    [config 1004]
+            f1 18 f2 39 p1 16 p2 7 s10 0  x2034
+            f1 17 f2 38 p1 16 p2 7 s10 0  x34
+            f1 17 f2 37 p1 16 p2 7 s10 0  x33
+            f1 18 f2 38 p1 16 p2 7 s10 0  x22
+      10013 x51      [config 1004]
+            f1 5 f2 0 p1 0 p2 0 s10 0  x51
+      10100 x2910    [node 2000]
+            f1 56 f2 0 p1 0 p2 0 s10 0  x2910
+      10300 x76      [config 1004]
+            f1 61 f2 0 p1 1 p2 0 s10 0  x76
+      10301 x1       [config 1004]
+            f1 39 f2 0 p1 1 p2 0 s10 0  x1
+      10400 x2910    [node 2000]
+            f1 65 f2 0 p1 0 p2 0 s10 0  x2910
+      10500 x2910    [node 2000]
+            f1 11 f2 0 p1 0 p2 0 s10 0  x2168
+            f1 10 f2 0 p1 0 p2 0 s10 0  x735
+            f1 9 f2 0 p1 0 p2 0 s10 0  x7
+      11000 x13      [config 1004]
+            f1 24 f2 0 p1 11 p2 0 s10 0  x8
+            f1 23 f2 0 p1 11 p2 0 s10 0  x4
+            f1 21 f2 0 p1 11 p2 0 s10 0  x1
+== ER: 220 ffxbnds (220 read), 12155 fxr (243 duplicate names), max node depth 13
+   FXR3 round trip: 0/12155 byte-perfect, 0 read fail, 0 write fail
+     first diff in Nodes: 4443
+     first diff in Actions: 3827
+     first diff in header: 2740
+     first diff in Configs: 995
+     first diff in Conditions: 150
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620400.fxr: differs (42544 -> 42528, first diff 0x64 in header)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620401.fxr: differs (6816 -> 6816, first diff 0x230 in Actions)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620402.fxr: differs (6608 -> 6608, first diff 0x230 in Actions)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620403.fxr: differs (38496 -> 38496, first diff 0x189 in Nodes)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620404.fxr: differs (19312 -> 19312, first diff 0x2F0 in Actions)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620410.fxr: differs (23344 -> 23344, first diff 0x1B8 in Nodes)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620411.fxr: differs (50832 -> 50832, first diff 0x1E8 in Nodes)
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620420.fxr: differs (27584 -> 27584, first diff 0x188 in Nodes)
+   header:
+     minor 0 version 5: 12155
+   oddities:
+     action unk02/unk03 = 0/1: 1369426
+     action unk02/unk03 = 1/0: 94551
+     action unk04 != 0: 137106
+   action unk02/unk03:
+     0/1: 1369426
+     1/0: 94551
+   action unk04 (top 12):
+     type 105 unk04 5: 10364
+     type 106 unk04 6: 2438
+     type 301 unk04 1: 2667
+     type 399 unk04 2: 47350
+     type 401 unk04 1: 2363
+     type 403 unk04 3: 2202
+     type 404 unk04 4: 11682
+     type 405 unk04 5: 1727
+     type 501 unk04 1: 38617
+     type 60 unk04 1: 4336
+     type 65 unk04 3: 2498
+     type 84 unk04 4: 3254
+   empty list offsets:
+     action no fields: offset 0: 88403
+     action no fields: offset nonzero: 591532
+     action no properties: offset 0: 93631
+     action no properties: offset nonzero: 770598
+     action no section10s: offset 0: 6148
+     action no section10s: offset nonzero: 1369332
+     property no fields: offset 0: 2554906
+     property no modifiers: offset nonzero: 3458855
+   field pool sharing:
+     action block duplicates earlier content but NOT shared: 557150
+     action block unique: 226892
+     modifier block duplicates earlier content but NOT shared: 3474
+     modifier block reuses offset of earlier modifier: 280
+     modifier block unique: 226094
+     modprop block duplicates earlier content but NOT shared: 1988
+     modprop block unique: 1589
+     property block duplicates earlier content but NOT shared: 637707
+     property block reuses offset of earlier property: 13541
+     property block reuses offset of earlier property (different length): 28897
+     property block unique: 453652
+   reference lists:
+     ext values 1: exact match: 12155
+     ext values 2: exact match: 12155
+     sfx refs: exact match: 12155
+   property typeEnumB:
+     packed is 0 (ambiguous): 1638973
+     typeEnumB = packed: 2048099
+     typeEnumB other (func 4 vt 0 stored 0x20): 2183
+     typeEnumB other (func 4 vt 2 stored 0x22): 14
+     typeEnumB other (func 4 vt 3 stored 0x23): 1351
+     typeEnumB other (func 5 vt 0 stored 0x24): 286
+     typeEnumB other (func 5 vt 2 stored 0x26): 130
+     typeEnumB other (func 5 vt 3 stored 0x27): 30
+     typeEnumB other (func 6 vt 0 stored 0x28): 1154
+     typeEnumB other (func 6 vt 2 stored 0x2A): 1
+     typeEnumB other (func 6 vt 3 stored 0x2B): 59
+   property functions:
+     func 0 vt 0: 1638973
+     func 0 vt 2: 3
+     func 0 vt 3: 2274
+     func 1 vt 0: 600991
+     func 1 vt 3: 312665
+     func 2 vt 0: 843533
+     func 2 vt 2: 8
+     func 2 vt 3: 54134
+     func 3 vt 0: 1836
+     func 3 vt 0 (modprop): 36
+     func 3 vt 0 loop: 16
+     func 3 vt 3: 6
+     func 3 vt 3 loop: 1
+     func 4 vt 0: 101974
+     func 4 vt 0 (modprop): 3422
+     func 4 vt 0 loop: 2183
+     func 4 vt 2: 514
+     func 4 vt 2 loop: 14
+     func 4 vt 3: 71691
+     func 4 vt 3 (modprop): 119
+     func 4 vt 3 loop: 1351
+     func 5 vt 0: 520
+     func 5 vt 0 loop: 286
+     func 5 vt 2: 184
+     func 5 vt 2 loop: 130
+     func 5 vt 3: 291
+     func 5 vt 3 loop: 30
+     func 6 vt 0: 50206
+     func 6 vt 0 loop: 1154
+     func 6 vt 2: 15
+     func 6 vt 2 loop: 1
+     func 6 vt 3: 3660
+     func 6 vt 3 loop: 59
+   modifiers:
+     type 24 enumB 4: 112842
+     type 38 enumB 8: 3283
+     type 39 enumB 12: 294
+     type 53 enumB 16: 113429
+   conditions:
+     op 0 unk1 2: 168
+     op 2 unk1 2: 139
+     op 3 unk1 2: 12287
+     operand -1 hasValue 0: 1251
+     operand -2 hasValue 0: 1
+     operand -3 hasValue 1: 11342
+     operand -4 hasValue 1: 12594
+   nodes:
+     node 2000 configs 0 actions 0: 150
+     node 2000 configs 0 actions 3: 1
+     node 2000 configs 0 actions 4: 11998
+     node 2000 configs 0 actions 6: 6
+     node 2001 configs 0 actions 1: 5228
+     node 2002 configs 1 actions 1: 920
+     node 2200 configs 1 actions 1: 84245
+     node 2200 configs 10 actions 1: 21
+     node 2200 configs 2 actions 1: 1065
+     node 2200 configs 3 actions 1: 28
+     node 2202 configs 1 actions 1: 2112
+     node 2202 configs 2 actions 1: 12
+   configs:
+     config 1002 actions 1: 920
+     config 1004 actions 15: 86669
+     config 1005 actions 10: 2136
+   action types: 71
+          0 x480016  [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x480016
+          1 x35506   [config 1004; config 1005]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x35506
+         11 x33      [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x33
+         15 x869     [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x869
+         34 x1481    [config 1004; config 1005]
+            f1 1 f2 0 p1 6 p2 0 s10 0  x1481
+         35 x81215   [config 1004; config 1005]
+            f1 6 f2 0 p1 0 p2 0 s10 0  x81215
+         36 x1104    [config 1004; config 1005]
+            f1 12 f2 0 p1 0 p2 0 s10 0  x1104
+         46 x124     [config 1004]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x124
+         55 x17436   [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x17436
+         60 x4336    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x4336
+         64 x1431    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x1431
+         65 x2498    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x2498
+         75 x3519    [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x3519
+         83 x141     [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x141
+         84 x3254    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x3254
+        105 x10364   [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x10364
+        106 x2438    [config 1004; config 1005]
+            f1 4 f2 0 p1 6 p2 0 s10 0  x2438
+        113 x117     [config 1004; config 1005]
+            f1 4 f2 0 p1 10 p2 0 s10 0  x117
+        120 x84      [config 1004; config 1005]
+            f1 3 f2 0 p1 3 p2 0 s10 0  x84
+        121 x185     [config 1004]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x185
+        122 x53      [config 1004]
+            f1 4 f2 0 p1 5 p2 0 s10 0  x53
+        123 x24      [config 1004]
+            f1 4 f2 0 p1 9 p2 0 s10 0  x24
+        128 x88805   [config 1004; config 1005]
+            f1 4 f2 0 p1 1 p2 0 s10 0  x88805
+        129 x86669   [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x86669
+        130 x86669   [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x86669
+        131 x86669   [config 1004]
+            f1 1 f2 0 p1 5 p2 0 s10 0  x86669
+        132 x5228    [node 2001]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x5228
+        133 x920     [config 1002]
+            f1 5 f2 0 p1 1 p2 0 s10 0  x920
+        199 x88403   [node 2002; node 2200; node 2202]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x88403
+        200 x2042    [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x2042
+        201 x94      [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x94
+        300 x38788   [config 1004; config 1005]
+            f1 1 f2 0 p1 4 p2 0 s10 0  x38788
+        301 x2667    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x2667
+        399 x47350   [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x47350
+        400 x70747   [config 1004; config 1005]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x70747
+        401 x2363    [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x2363
+        402 x84      [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x84
+        403 x2202    [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x2202
+        404 x11682   [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x11682
+        405 x1727    [config 1004; config 1005]
+            f1 3 f2 0 p1 2 p2 0 s10 0  x1602
+            f1 2 f2 0 p1 2 p2 0 s10 0  x125
+        500 x48404   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x48404
+        501 x38617   [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x38524
+            f1 0 f2 0 p1 2 p2 0 s10 0  x93
+        502 x300     [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x300
+        503 x1484    [config 1004; config 1005]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x1484
+        600 x3375    [config 1004]
+            f1 5 f2 40 p1 6 p2 7 s10 0  x3375
+        601 x6       [config 1004]
+            f1 3 f2 40 p1 8 p2 7 s10 0  x6
+        602 x2424    [config 1004]
+            f1 3 f2 40 p1 10 p2 7 s10 0  x2424
+        603 x17392   [config 1004]
+            f1 18 f2 45 p1 25 p2 7 s10 0  x15606
+            f1 18 f2 44 p1 25 p2 7 s10 0  x1766
+            f1 18 f2 42 p1 25 p2 7 s10 0  x20
+        604 x13852   [config 1004]
+            f1 17 f2 46 p1 42 p2 7 s10 0  x13111
+            f1 17 f2 44 p1 42 p2 7 s10 0  x735
+            f1 17 f2 43 p1 42 p2 7 s10 0  x6
+        605 x1493    [config 1004]
+            f1 20 f2 38 p1 27 p2 7 s10 0  x1493
+        606 x122     [config 1004]
+            f1 17 f2 40 p1 16 p2 7 s10 0  x122
+        607 x1359    [config 1004]
+            f1 14 f2 39 p1 17 p2 9 s10 0  x1357
+            f1 14 f2 39 p1 17 p2 7 s10 0  x2
+        608 x1338    [config 1004]
+            f1 5 f2 31 p1 10 p2 7 s10 0  x1338
+        609 x4999    [config 1004]
+            f1 2 f2 33 p1 10 p2 5 s10 0  x4486
+            f1 2 f2 31 p1 10 p2 5 s10 0  x513
+        700 x10884   [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x10884
+        701 x288     [node 2000]
+            f1 0 f2 0 p1 1 p2 0 s10 0  x288
+        702 x844     [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x844
+        731 x14      [config 1004]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x14
+        732 x923     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x923
+        734 x535     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x535
+      10000 x99      [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x99
+      10001 x5       [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x5
+      10012 x6410    [config 1004]
+            f1 22 f2 41 p1 16 p2 7 s10 0  x6410
+      10013 x186     [config 1004]
+            f1 5 f2 0 p1 0 p2 0 s10 0  x186
+      10014 x97      [config 1004]
+            f1 75 f2 37 p1 12 p2 0 s10 0  x97
+      10015 x3052    [config 1004]
+            f1 26 f2 38 p1 27 p2 7 s10 0  x2733
+            f1 23 f2 38 p1 21 p2 7 s10 0  x300
+            f1 25 f2 38 p1 27 p2 7 s10 0  x19
+      10100 x12005   [node 2000]
+            f1 56 f2 0 p1 0 p2 0 s10 0  x12005
+      10300 x106     [config 1004]
+            f1 61 f2 0 p1 1 p2 0 s10 0  x106
+      10400 x12005   [node 2000]
+            f1 65 f2 0 p1 0 p2 0 s10 0  x12005
+      10500 x12005   [node 2000]
+            f1 10 f2 0 p1 1 p2 0 s10 0  x11979
+            f1 11 f2 0 p1 0 p2 0 s10 0  x26
+      11000 x17      [config 1004]
+            f1 28 f2 0 p1 11 p2 0 s10 0  x12
+            f1 26 f2 0 p1 11 p2 0 s10 0  x5
+== AC6: 48 ffxbnds (48 read), 5279 fxr (1013 duplicate names), max node depth 19
+   FXR3 round trip: 0/5279 byte-perfect, 0 read fail, 0 write fail
+     first diff in Actions: 1800
+     first diff in header: 1263
+     first diff in Nodes: 1261
+     first diff in Configs: 735
+     first diff in Conditions: 207
+     first diff in States: 13
+     ! sfxbnd_c6250.ffxbnd.dcx|f001008500.fxr: differs (1312 -> 1312, first diff 0x198 in Configs)
+     ! sfxbnd_c6250.ffxbnd.dcx|f000662571.fxr: differs (35296 -> 35296, first diff 0x188 in Nodes)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000001.fxr: differs (10016 -> 10016, first diff 0x259 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000070.fxr: differs (14448 -> 14448, first diff 0x2A8 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000100.fxr: differs (9776 -> 9776, first diff 0x258 in Actions)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000123.fxr: differs (1184 -> 1184, first diff 0x168 in Configs)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000000201.fxr: differs (19952 -> 19936, first diff 0x64 in header)
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f005001301.fxr: differs (18656 -> 18656, first diff 0x2A8 in Actions)
+   header:
+     minor 0 version 5: 5279
+   oddities:
+     action unk02/unk03 = 0/1: 656431
+     action unk02/unk03 = 1/0: 44964
+     action unk04 != 0: 378
+   action unk02/unk03:
+     0/0: 28
+     0/1: 656431
+     1/0: 44964
+   action unk04 (top 12):
+     type 105 unk04 5: 77
+     type 106 unk04 6: 1
+     type 15 unk04 2: 10
+     type 301 unk04 1: 2
+     type 34 unk04 3: 3
+     type 36 unk04 1: 35
+     type 399 unk04 2: 113
+     type 401 unk04 1: 2
+     type 403 unk04 3: 4
+     type 404 unk04 4: 4
+     type 501 unk04 1: 125
+     type 84 unk04 4: 2
+   empty list offsets:
+     action no fields: offset 0: 313805
+     action no fields: offset nonzero: 1548
+     action no properties: offset 0: 400581
+     action no properties: offset nonzero: 1918
+     action no section10s: offset 0: 654662
+     action no section10s: offset nonzero: 3633
+     property no fields: offset 0: 1236591
+     property no modifiers: offset 0: 1660802
+     property no modifiers: offset nonzero: 11037
+   field pool sharing:
+     action block duplicates earlier content but NOT shared: 288857
+     action block unique: 97213
+     modifier block duplicates earlier content but NOT shared: 7727
+     modifier block reuses offset of earlier modifier: 166
+     modifier block unique: 100086
+     modprop block duplicates earlier content but NOT shared: 2862
+     modprop block unique: 2085
+     property block duplicates earlier content but NOT shared: 322953
+     property block reuses offset of earlier property: 6008
+     property block reuses offset of earlier property (different length): 12988
+     property block unique: 200393
+   reference lists:
+     ext values 1: exact match: 5279
+     ext values 2: exact match: 5279
+     sfx refs: exact match: 5279
+   property typeEnumB:
+     packed is 0 (ambiguous): 786400
+     typeEnumB = 0: 991747
+     typeEnumB = packed: 5682
+     typeEnumB other (func 4 vt 0 stored 0x20): 23
+     typeEnumB other (func 4 vt 3 stored 0x23): 6
+     typeEnumB other (func 6 vt 0 stored 0x28): 14
+     typeEnumB other (func 6 vt 3 stored 0x2B): 8
+   property functions:
+     func 0 vt 0: 786400
+     func 0 vt 1: 2569
+     func 0 vt 2: 5
+     func 0 vt 3: 257
+     func 1 vt 0: 296007
+     func 1 vt 1: 1456
+     func 1 vt 2: 7
+     func 1 vt 3: 149890
+     func 2 vt 0: 403475
+     func 2 vt 1: 14
+     func 2 vt 2: 3
+     func 2 vt 3: 21187
+     func 3 vt 0: 1490
+     func 3 vt 0 (modprop): 2
+     func 3 vt 0 loop: 123
+     func 3 vt 3: 3
+     func 3 vt 3 loop: 1
+     func 4 vt 0: 38071
+     func 4 vt 0 (modprop): 4890
+     func 4 vt 0 loop: 2969
+     func 4 vt 1: 2
+     func 4 vt 2: 242
+     func 4 vt 2 (modprop): 7
+     func 4 vt 2 loop: 4
+     func 4 vt 3: 35790
+     func 4 vt 3 (modprop): 48
+     func 4 vt 3 loop: 2934
+     func 5 vt 0: 673
+     func 5 vt 0 loop: 125
+     func 5 vt 2 loop: 4
+     func 5 vt 3: 36
+     func 5 vt 3 loop: 53
+     func 6 vt 0: 71
+     func 6 vt 0 loop: 14
+     func 6 vt 3: 1
+     func 6 vt 3 loop: 8
+     func 7 vt 0: 28074
+     func 7 vt 0 loop: 344
+     func 7 vt 2: 22
+     func 7 vt 3: 6303
+     func 7 vt 3 loop: 306
+   modifiers:
+     type 24 enumB 0: 57646
+     type 24 enumB 4: 180
+     type 38 enumB 0: 4799
+     type 38 enumB 8: 31
+     type 39 enumB 0: 117
+     type 53 enumB 0: 45097
+     type 53 enumB 16: 109
+   conditions:
+     op 2 unk1 2: 43
+     op 3 unk1 2: 5915
+     operand -1 hasValue 0: 703
+     operand -2 hasValue 0: 2
+     operand -3 hasValue 1: 5253
+     operand -4 hasValue 1: 5958
+   nodes:
+     node 2000 configs 0 actions 11: 4
+     node 2000 configs 0 actions 4: 5275
+     node 2001 configs 0 actions 1: 1798
+     node 2002 configs 1 actions 1: 407
+     node 2200 configs 1 actions 1: 39533
+     node 2200 configs 2 actions 1: 686
+     node 2202 configs 1 actions 1: 2092
+     node 2202 configs 2 actions 1: 41
+   configs:
+     config 1002 actions 1: 407
+     config 1004 actions 15: 40905
+     config 1005 actions 10: 2174
+   action types: 74
+          0 x220245  [config 1004; config 1005; node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x220245
+          1 x25470   [config 1004; config 1005]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x25470
+         15 x287     [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x277
+            f1 0 f2 0 p1 1 p2 0 s10 0  x10
+         34 x400     [config 1004; config 1005]
+            f1 1 f2 0 p1 6 p2 0 s10 0  x400
+         35 x41161   [config 1004; config 1005]
+            f1 6 f2 0 p1 0 p2 0 s10 0  x41161
+         36 x375     [config 1004; config 1005]
+            f1 12 f2 0 p1 0 p2 0 s10 0  x375
+         46 x95      [config 1004]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x95
+         55 x7600    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x7600
+         60 x3318    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x3318
+         64 x2447    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x2447
+         65 x1570    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x1570
+         75 x530     [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x530
+         83 x18      [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x18
+         84 x375     [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x375
+        105 x3632    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x3632
+        106 x1274    [config 1004; config 1005]
+            f1 4 f2 0 p1 6 p2 0 s10 0  x1274
+        113 x92      [config 1004]
+            f1 4 f2 0 p1 10 p2 0 s10 0  x92
+        120 x33      [config 1004; config 1005]
+            f1 3 f2 0 p1 3 p2 0 s10 0  x33
+        121 x273     [config 1004]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x273
+        122 x16      [config 1004]
+            f1 4 f2 0 p1 5 p2 0 s10 0  x16
+        128 x43079   [config 1004; config 1005]
+            f1 4 f2 0 p1 1 p2 0 s10 0  x43079
+        129 x40905   [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x40905
+        130 x40905   [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x40905
+        131 x40905   [config 1004]
+            f1 1 f2 0 p1 5 p2 0 s10 0  x40905
+        132 x1798    [node 2001]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x1798
+        133 x407     [config 1002]
+            f1 6 f2 0 p1 1 p2 0 s10 0  x383
+            f1 5 f2 0 p1 1 p2 0 s10 0  x24
+        199 x42759   [node 2002; node 2200; node 2202]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x42759
+        200 x1805    [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x1805
+        201 x369     [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x369
+        300 x20145   [config 1004; config 1005]
+            f1 1 f2 0 p1 4 p2 0 s10 0  x20145
+        301 x971     [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x971
+        399 x21963   [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x21963
+        400 x33312   [config 1004; config 1005]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x33312
+        401 x487     [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x487
+        402 x95      [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x95
+        403 x1438    [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x1438
+        404 x6796    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x6796
+        405 x951     [config 1004; config 1005]
+            f1 3 f2 0 p1 2 p2 0 s10 0  x951
+        500 x22237   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x22237
+        501 x20227   [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x20102
+            f1 0 f2 0 p1 2 p2 0 s10 0  x125
+        502 x54      [config 1004]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x54
+        503 x561     [config 1004; config 1005]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x561
+        600 x998     [config 1004]
+            f1 5 f2 40 p1 6 p2 7 s10 0  x998
+        601 x3       [config 1004]
+            f1 3 f2 40 p1 8 p2 7 s10 0  x2
+            f1 3 f2 39 p1 8 p2 7 s10 0  x1
+        602 x2533    [config 1004]
+            f1 3 f2 40 p1 10 p2 7 s10 0  x2533
+        603 x7736    [config 1004]
+            f1 18 f2 45 p1 25 p2 7 s10 0  x6801
+            f1 18 f2 46 p1 25 p2 7 s10 0  x917
+            f1 18 f2 43 p1 25 p2 7 s10 0  x18
+        604 x4968    [config 1004]
+            f1 17 f2 46 p1 42 p2 7 s10 0  x4214
+            f1 17 f2 47 p1 42 p2 7 s10 0  x753
+            f1 17 f2 42 p1 42 p2 7 s10 0  x1
+        605 x2351    [config 1004]
+            f1 20 f2 39 p1 27 p2 7 s10 0  x1690
+            f1 20 f2 38 p1 27 p2 7 s10 0  x661
+        606 x47      [config 1004]
+            f1 17 f2 40 p1 16 p2 7 s10 0  x46
+            f1 17 f2 39 p1 16 p2 7 s10 0  x1
+        607 x771     [config 1004]
+            f1 14 f2 39 p1 17 p2 9 s10 0  x770
+            f1 14 f2 39 p1 17 p2 7 s10 0  x1
+        608 x641     [config 1004]
+            f1 5 f2 31 p1 10 p2 7 s10 0  x641
+        609 x2134    [config 1004]
+            f1 2 f2 33 p1 10 p2 5 s10 0  x2124
+            f1 2 f2 31 p1 10 p2 5 s10 0  x9
+            f1 2 f2 29 p1 10 p2 5 s10 0  x1
+        700 x5089    [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x5089
+        701 x35      [node 2000]
+            f1 0 f2 0 p1 1 p2 0 s10 0  x35
+        702 x155     [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x155
+        731 x1       [config 1004]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x1
+        732 x276     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x276
+        733 x40      [config 1004]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x40
+        734 x70      [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x70
+        800 x1       [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x1
+      10000 x48      [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x48
+      10001 x8       [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x8
+      10008 x2       [config 1004]
+            f1 104 f2 40 p1 14 p2 7 s10 0  x2
+      10009 x5       [config 1004]
+            f1 104 f2 40 p1 14 p2 7 s10 0  x5
+      10012 x2580    [config 1004]
+            f1 22 f2 42 p1 16 p2 7 s10 0  x2245
+            f1 22 f2 41 p1 16 p2 7 s10 0  x330
+            f1 21 f2 41 p1 16 p2 7 s10 0  x5
+      10013 x43      [config 1004]
+            f1 5 f2 0 p1 0 p2 0 s10 0  x43
+      10014 x2161    [config 1004]
+            f1 81 f2 37 p1 12 p2 0 s10 0  x2093
+            f1 75 f2 37 p1 12 p2 0 s10 0  x68
+      10015 x1347    [config 1004]
+            f1 35 f2 38 p1 24 p2 7 s10 0  x925
+            f1 34 f2 38 p1 24 p2 7 s10 0  x422
+      10100 x5279    [node 2000]
+            f1 56 f2 0 p1 0 p2 0 s10 0  x5279
+      10300 x19      [config 1004]
+            f1 61 f2 0 p1 1 p2 0 s10 0  x19
+      10303 x1       [config 1004]
+            f1 52 f2 0 p1 4 p2 0 s10 0  x1
+      10400 x5279    [node 2000]
+            f1 65 f2 0 p1 0 p2 0 s10 0  x5279
+      10500 x5279    [node 2000]
+            f1 10 f2 0 p1 1 p2 0 s10 0  x5275
+            f1 11 f2 0 p1 0 p2 0 s10 0  x4
+      11000 x143     [config 1004]
+            f1 28 f2 0 p1 11 p2 0 s10 0  x141
+            f1 26 f2 0 p1 11 p2 0 s10 0  x2
+== NR: 197 ffxbnds (197 read), 11182 fxr (406 duplicate names), max node depth 15
+   FXR3 round trip: 0/11182 byte-perfect, 11182 read fail, 0 write fail
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620400.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620401.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620404.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620402.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620403.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620410.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620411.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+     ! sfxbnd_c2040.ffxbnd.dcx|f000620420.fxr: read: Read Int16: 0x1 | Expected: 0x0 | Ending position: 0x6
+   header:
+     minor 1 version 5: 11182
+   oddities:
+     action unk02/unk03 = 0/1: 1286408
+     action unk02/unk03 = 1/0: 86761
+   action unk02/unk03:
+     0/1: 1286408
+     1/0: 86761
+   action unk04 (top 12): none
+   empty list offsets:
+     action no fields: offset 0: 633751
+     action no properties: offset 0: 807343
+     action no section10s: offset 0: 1287854
+     property no fields: offset 0: 2470131
+     property no modifiers: offset 0: 3329437
+   field pool sharing:
+     action block duplicates earlier content but NOT shared: 526211
+     action block unique: 213207
+     modifier block duplicates earlier content but NOT shared: 2995
+     modifier block reuses offset of earlier modifier: 180
+     modifier block unique: 222146
+     modprop block duplicates earlier content but NOT shared: 1686
+     modprop block unique: 1417
+     property block duplicates earlier content but NOT shared: 605568
+     property block reuses offset of earlier property: 13199
+     property block reuses offset of earlier property (different length): 26328
+     property block unique: 439528
+   reference lists:
+     ext values 1: DIFFERENT set: 10
+     ext values 1: exact match: 11172
+     ext values 2: exact match: 11182
+     sfx refs: exact match: 11182
+     ! sfxbnd_c7620.ffxbnd.dcx|f000665000.fxr ext values 1: header [0,10000] recomputed [0]
+     ! sfxbnd_c7800.ffxbnd.dcx|f000678060.fxr ext values 1: header [0,10000] recomputed [0]
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000257501.fxr ext values 1: header [0,10000] recomputed [0]
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000440602.fxr ext values 1: header [0,10000] recomputed [0]
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000440605.fxr ext values 1: header [0,10000] recomputed [0]
+     ! sfxbnd_commoneffects.ffxbnd.dcx|f000440603.fxr ext values 1: header [0,10000] recomputed [0]
+   property typeEnumB:
+     packed is 0 (ambiguous): 1598489
+     typeEnumB = 0: 1959368
+   property functions:
+     func 0 vt 0: 1598489
+     func 0 vt 1: 5877
+     func 0 vt 2: 5
+     func 0 vt 3: 2298
+     func 1 vt 0: 563733
+     func 1 vt 1: 3201
+     func 1 vt 3: 296528
+     func 2 vt 0: 805167
+     func 2 vt 1: 65
+     func 2 vt 2: 24
+     func 2 vt 3: 52716
+     func 3 vt 0: 1279
+     func 3 vt 0 (modprop): 159
+     func 3 vt 0 loop: 20
+     func 3 vt 1: 2
+     func 3 vt 3: 42
+     func 3 vt 3 loop: 1
+     func 4 vt 0: 97391
+     func 4 vt 0 (modprop): 2735
+     func 4 vt 0 loop: 1575
+     func 4 vt 1: 29
+     func 4 vt 2: 631
+     func 4 vt 2 loop: 11
+     func 4 vt 3: 69349
+     func 4 vt 3 (modprop): 209
+     func 4 vt 3 loop: 1494
+     func 5 vt 0: 675
+     func 5 vt 0 loop: 449
+     func 5 vt 2: 148
+     func 5 vt 2 loop: 160
+     func 5 vt 3: 194
+     func 5 vt 3 loop: 52
+     func 7 vt 0: 47848
+     func 7 vt 0 loop: 1593
+     func 7 vt 2: 161
+     func 7 vt 2 loop: 1
+     func 7 vt 3: 3498
+     func 7 vt 3 loop: 48
+   modifiers:
+     type 24 enumB 0: 108148
+     type 38 enumB 0: 2711
+     type 39 enumB 0: 392
+     type 53 enumB 0: 114070
+   conditions:
+     op 0 unk1 2: 549
+     op 2 unk1 2: 175
+     op 3 unk1 2: 11869
+     operand -1 hasValue 0: 1353
+     operand -2 hasValue 0: 1
+     operand -3 hasValue 1: 11239
+     operand -4 hasValue 1: 12593
+   nodes:
+     node 2000 configs 0 actions 4: 11182
+     node 2001 configs 0 actions 1: 3909
+     node 2002 configs 1 actions 1: 731
+     node 2200 configs 1 actions 1: 78091
+     node 2200 configs 10 actions 1: 24
+     node 2200 configs 2 actions 1: 1207
+     node 2200 configs 3 actions 1: 46
+     node 2200 configs 4 actions 1: 117
+     node 2200 configs 5 actions 1: 35
+     node 2202 configs 1 actions 1: 1861
+     node 2202 configs 2 actions 1: 9
+   configs:
+     config 1002 actions 1: 731
+     config 1004 actions 15: 81526
+     config 1005 actions 10: 1879
+   action types: 71
+          0 x448682  [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x448682
+          1 x33695   [config 1004; config 1005]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x33695
+         11 x1       [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x1
+         15 x1141    [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x1141
+         34 x1579    [config 1004; config 1005]
+            f1 1 f2 0 p1 6 p2 0 s10 0  x1579
+         35 x77237   [config 1004; config 1005]
+            f1 6 f2 0 p1 0 p2 0 s10 0  x77237
+         36 x1148    [config 1004; config 1005]
+            f1 12 f2 0 p1 0 p2 0 s10 0  x1148
+         46 x161     [config 1004]
+            f1 2 f2 0 p1 0 p2 0 s10 0  x161
+         55 x16093   [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x16093
+         60 x4160    [config 1004]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x4160
+         64 x1671    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x1671
+         65 x2240    [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x2240
+         75 x3504    [config 1004]
+            f1 3 f2 0 p1 0 p2 0 s10 0  x3504
+         83 x95      [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x95
+         84 x3021    [config 1004]
+            f1 2 f2 0 p1 4 p2 0 s10 0  x3021
+        105 x10266   [config 1004]
+            f1 3 f2 0 p1 5 p2 0 s10 0  x10266
+        106 x1943    [config 1004; config 1005]
+            f1 4 f2 0 p1 6 p2 0 s10 0  x1943
+        113 x82      [config 1004; config 1005]
+            f1 4 f2 0 p1 10 p2 0 s10 0  x82
+        120 x168     [config 1004]
+            f1 3 f2 0 p1 3 p2 0 s10 0  x168
+        121 x129     [config 1004]
+            f1 3 f2 0 p1 4 p2 0 s10 0  x129
+        122 x63      [config 1004]
+            f1 4 f2 0 p1 5 p2 0 s10 0  x63
+        123 x32      [config 1004]
+            f1 4 f2 0 p1 9 p2 0 s10 0  x32
+        128 x83405   [config 1004; config 1005]
+            f1 4 f2 0 p1 1 p2 0 s10 0  x83405
+        129 x81526   [config 1004]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x81526
+        130 x81526   [config 1004]
+            f1 9 f2 0 p1 8 p2 0 s10 0  x81526
+        131 x81526   [config 1004]
+            f1 1 f2 0 p1 5 p2 0 s10 0  x81526
+        132 x3909    [node 2001]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x3909
+        133 x731     [config 1002]
+            f1 6 f2 0 p1 1 p2 0 s10 0  x731
+        199 x82121   [node 2002; node 2200; node 2202]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x82121
+        200 x1743    [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x1743
+        201 x136     [config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 1  x136
+        300 x36536   [config 1004; config 1005]
+            f1 1 f2 0 p1 4 p2 0 s10 0  x36536
+        301 x2794    [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x2794
+        399 x44075   [config 1004]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x44075
+        400 x66384   [config 1004; config 1005]
+            f1 1 f2 0 p1 0 p2 0 s10 0  x66384
+        401 x2168    [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x2168
+        402 x101     [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x101
+        403 x2218    [config 1004; config 1005]
+            f1 1 f2 0 p1 1 p2 0 s10 0  x2218
+        404 x10502   [config 1004; config 1005]
+            f1 2 f2 0 p1 3 p2 0 s10 0  x10502
+        405 x2032    [config 1004; config 1005]
+            f1 3 f2 0 p1 2 p2 0 s10 0  x2032
+        500 x44801   [config 1004; config 1005]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x44801
+        501 x37370   [config 1004; config 1005]
+            f1 1 f2 0 p1 2 p2 0 s10 0  x37370
+        502 x224     [config 1004; config 1005]
+            f1 1 f2 0 p1 3 p2 0 s10 0  x224
+        503 x1010    [config 1004; config 1005]
+            f1 0 f2 0 p1 3 p2 0 s10 0  x1010
+        600 x3694    [config 1004]
+            f1 5 f2 40 p1 6 p2 7 s10 0  x3694
+        601 x1       [config 1004]
+            f1 3 f2 40 p1 8 p2 7 s10 0  x1
+        602 x2391    [config 1004]
+            f1 3 f2 40 p1 10 p2 7 s10 0  x2391
+        603 x15279   [config 1004]
+            f1 18 f2 45 p1 25 p2 7 s10 0  x15279
+        604 x14289   [config 1004]
+            f1 17 f2 46 p1 42 p2 7 s10 0  x14289
+        605 x1309    [config 1004]
+            f1 20 f2 39 p1 27 p2 7 s10 0  x1309
+        606 x98      [config 1004]
+            f1 17 f2 40 p1 16 p2 7 s10 0  x98
+        607 x1099    [config 1004]
+            f1 14 f2 39 p1 17 p2 9 s10 0  x1099
+        608 x1442    [config 1004]
+            f1 5 f2 31 p1 10 p2 7 s10 0  x1442
+        609 x4830    [config 1004]
+            f1 2 f2 33 p1 10 p2 5 s10 0  x3259
+            f1 2 f2 34 p1 10 p2 5 s10 0  x1571
+        700 x10608   [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x10608
+        701 x259     [node 2000]
+            f1 0 f2 0 p1 1 p2 0 s10 0  x259
+        702 x315     [node 2000]
+            f1 0 f2 0 p1 0 p2 0 s10 0  x315
+        732 x713     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x713
+        734 x289     [config 1004]
+            f1 2 f2 0 p1 2 p2 0 s10 0  x289
+      10000 x107     [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x107
+      10001 x53      [config 1004]
+            f1 168 f2 40 p1 21 p2 7 s10 0  x53
+      10012 x5527    [config 1004]
+            f1 22 f2 42 p1 16 p2 7 s10 0  x5527
+      10013 x154     [config 1004]
+            f1 5 f2 0 p1 0 p2 0 s10 0  x154
+      10014 x24      [config 1004]
+            f1 81 f2 37 p1 12 p2 0 s10 0  x24
+      10015 x3058    [config 1004]
+            f1 55 f2 38 p1 44 p2 7 s10 4  x3058
+      10100 x11182   [node 2000]
+            f1 56 f2 0 p1 0 p2 0 s10 0  x11182
+      10300 x101     [config 1004]
+            f1 61 f2 0 p1 1 p2 0 s10 0  x101
+      10303 x1       [config 1004]
+            f1 52 f2 0 p1 4 p2 0 s10 0  x1
+      10400 x11182   [node 2000]
+            f1 65 f2 0 p1 0 p2 0 s10 0  x11182
+      10500 x11182   [node 2000]
+            f1 11 f2 0 p1 1 p2 0 s10 0  x11182
+      11000 x33      [config 1004]
+            f1 28 f2 0 p1 11 p2 0 s10 0  x21
+            f1 29 f2 0 p1 11 p2 0 s10 0  x12
