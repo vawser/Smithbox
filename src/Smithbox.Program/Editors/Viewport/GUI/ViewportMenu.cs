@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -341,6 +342,11 @@ public class ViewportMenu
                 CFG.Current.Interface_GparamEditor_ToolWindow = true;
                 CFG.Current.Interface_GparamEditor_Tool_ViewportRendering = true;
                 gparam.View.RenderingTool.FocusRequested = true;
+                break;
+            case FxUniverse fx:
+                CFG.Current.Interface_FxEditor_ToolWindow = true;
+                CFG.Current.Interface_FxEditor_Tool_ViewportRendering = true;
+                fx.Editor.RenderingTool.FocusRequested = true;
                 break;
         }
     }

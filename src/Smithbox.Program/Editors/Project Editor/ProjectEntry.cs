@@ -65,6 +65,9 @@ public class ProjectEntry
             if (Handler.GparamEditorStub != null)
                 Handler.GparamEditorStub.Draw(device, cl);
 
+            if (Handler.FxEditorStub != null)
+                Handler.FxEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
         }
@@ -141,6 +144,9 @@ public class ProjectEntry
 
             if (Handler.GparamEditorStub != null)
                 Handler.GparamEditorStub.EditorResized(window, device);
+
+            if (Handler.FxEditorStub != null)
+                Handler.FxEditorStub.EditorResized(window, device);
         }
     }
 

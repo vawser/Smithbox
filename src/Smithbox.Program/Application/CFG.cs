@@ -1236,6 +1236,19 @@ public class CFG
     public bool FxEditor_Inspector_Show_Raw = false;
     public bool FxEditor_Inspector_Show_Unknown = true;
     public bool FxEditor_Inspector_Show_Descriptions = true;
+
+    // Viewport and playback
+    public bool FxEditor_Viewport_Display_Emitter_Shapes = true;
+    public bool FxEditor_Viewport_Display_Node_Axes = true;
+    public float FxEditor_Playback_Speed = 1.0f;
+    public bool FxEditor_Playback_Loop = true;
+    public float FxEditor_Playback_Length = 5.0f;
+
+    // Tools window
+    public bool Interface_FxEditor_ToolWindow = true;
+    public bool Interface_FxEditor_Tool_Preview = true;
+    public bool Interface_FxEditor_Tool_GridConfiguration = true;
+    public bool Interface_FxEditor_Tool_ViewportRendering = true;
     #endregion
 
     #region Havok Editor
@@ -1683,6 +1696,12 @@ public class CFG
     public ViewportGridSet ModelEditor_Grids = new();
     public ViewportGridSet TimeActEditor_Grids = new();
     public ViewportGridSet GparamEditor_Grids = new();
+
+    // Effects are small, so the FX Editor shows a 1 m grid from the start
+    public ViewportGridSet FxEditor_Grids = new()
+    {
+        Primary = new() { Display = true, Size = 50, SectionSize = 1, FollowCamera = true }
+    };
 
     // Anim Editor: Primary Grid
     public bool AnimEditor_DisplayPrimaryGrid = false;

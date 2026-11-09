@@ -8,7 +8,8 @@ public enum ViewportGridEditor
     Map,
     Model,
     TimeAct,
-    Gparam
+    Gparam,
+    Fx
 }
 
 public enum ViewportGridType
@@ -50,6 +51,7 @@ public static class ViewportGridConfig
             ViewportGridEditor.Model => cfg.ModelEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.TimeAct => cfg.TimeActEditor_Grids ??= new ViewportGridSet(),
             ViewportGridEditor.Gparam => cfg.GparamEditor_Grids ??= new ViewportGridSet(),
+            ViewportGridEditor.Fx => cfg.FxEditor_Grids ??= new ViewportGridSet(),
             _ => throw new ArgumentOutOfRangeException(nameof(editor))
         };
     }

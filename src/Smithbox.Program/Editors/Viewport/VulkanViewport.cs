@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -159,6 +160,13 @@ public class VulkanViewport : IViewport
             ActionManager = gparamUniverse.View.ViewportActionManager;
         }
 
+        if (owner is FxUniverse fxUniverse)
+        {
+            RenderScene = fxUniverse.RenderScene;
+            ViewportSelection = fxUniverse.ViewportSelection;
+            ActionManager = fxUniverse.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -173,11 +181,12 @@ public class VulkanViewport : IViewport
             ViewPipeline.UseMapLighting = Owner is MapUniverse;
             ViewPipeline.UseMapLights = Owner is MapUniverse;
 
-            // The Model and Time Act Editors have no map, so they borrow the lighting and a volume of one
+            // The Model, Time Act and FX Editors have no map, so they borrow the lighting and a volume of one
             var environmentProject = owner switch
             {
                 ModelUniverse model => model.Project,
                 TimeActUniverse timeAct => timeAct.Project,
+                FxUniverse fx => fx.Project,
                 _ => null
             };
 
@@ -271,7 +280,7 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -305,6 +314,7 @@ public class VulkanViewport : IViewport
             HandleModelEditorFocus();
             HandleTimeActEditorFocus();
             HandleGparamEditorFocus();
+            HandleFxEditorFocus();
 
             HandleCompass();
 
@@ -468,6 +478,12 @@ public class VulkanViewport : IViewport
                 && view.ViewportWindow.Viewport == this;
         }
 
+        // The FX Editor has one viewport
+        if (Owner is FxUniverse fxUniverse)
+        {
+            return fxUniverse.Editor.ViewportWindow?.Viewport == this;
+        }
+
         return false;
     }
 
@@ -588,6 +604,22 @@ public class VulkanViewport : IViewport
                         IsActiveViewport = true;
                     }
                 }
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleFxEditorFocus()
+    {
+        if (Owner is FxUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.FxEditor_Viewport);
+                IsActiveViewport = true;
             }
             else
             {
@@ -834,6 +866,11 @@ public class VulkanViewport : IViewport
             case GparamUniverse gparamUniverse:
                 editor = ViewportGridEditor.Gparam;
                 isEditorFocused = gparamUniverse.Project.Handler.FocusedEditor is GparamEditorScreen;
+                return true;
+
+            case FxUniverse fxUniverse:
+                editor = ViewportGridEditor.Fx;
+                isEditorFocused = fxUniverse.Project.Handler.FocusedEditor is FxEditorScreen;
                 return true;
         }
 

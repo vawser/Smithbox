@@ -401,6 +401,9 @@ public class ProjectEditorHandler : IDisposable
         HavokData?.Dispose();
         FxData?.Dispose();
 
+        // The FX Editor's debug shapes hold GPU buffers
+        FxEditor?.ViewportWindow?.Dispose();
+
         _viewportEnvironment?.Dispose();
         _viewportEnvironment = null;
     }

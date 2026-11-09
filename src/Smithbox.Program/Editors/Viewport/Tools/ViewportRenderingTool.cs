@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -99,6 +100,7 @@ public class ViewportRenderingTool
         {
             ModelUniverse model => model.Project,
             TimeActUniverse timeAct => timeAct.Project,
+            FxUniverse fx => fx.Project,
             _ => null
         };
 

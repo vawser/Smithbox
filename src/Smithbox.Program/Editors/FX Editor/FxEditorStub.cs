@@ -1,6 +1,8 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.FxEditor;
 
@@ -63,6 +65,7 @@ public class FxEditorStub : IEditorStub
             if (Project.Handler.FxEditor != null)
             {
                 Project.Handler.FocusedEditor = Project.Handler.FxEditor;
+                Project.Handler.FxEditor.Update(dt);
             }
         }
         else
@@ -71,5 +74,17 @@ public class FxEditorStub : IEditorStub
             ImGui.PopStyleVar(1);
             ImGui.End();
         }
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        if (Project.Handler.FxEditor != null && Project.Handler.FocusedEditor is FxEditorScreen)
+            Project.Handler.FxEditor.EditorResized(window, device);
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (Project.Handler.FxEditor != null && Project.Handler.FocusedEditor is FxEditorScreen)
+            Project.Handler.FxEditor.Draw(device, cl);
     }
 }

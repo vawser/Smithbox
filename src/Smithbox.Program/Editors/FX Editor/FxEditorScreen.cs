@@ -1,13 +1,18 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
+using StudioCore.Renderer;
 using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The FX Editor: browse and edit FXR effects (FX Editor Plan, milestone E1+E2). Three windows in the editor's
-/// dockspace: the Effect List, the Effect Tree and the Action Inspector.
+/// The FX Editor: browse and edit FXR effects (FX Editor Plan, milestone E1+E2), with a viewport (phase V1). The
+/// windows in the editor's dockspace: the Effect List, the Effect Tree, the Action Inspector, the Viewport and the
+/// Tools window.
 /// </summary>
 public class FxEditorScreen : EditorScreen
 {
@@ -21,6 +26,20 @@ public class FxEditorScreen : EditorScreen
     public FxEffectTree EffectTree;
     public FxInspector Inspector;
 
+    // Viewport
+    public RenderScene RenderScene;
+    public ViewportSelection ViewportSelection = new();
+    public ViewportActionManager ViewportActionManager = new();
+    public FxUniverse Universe;
+    public FxViewportWindow ViewportWindow;
+    public FxPlayback Playback = new();
+
+    // Tools
+    public FxToolWindow ToolWindow;
+    public FxPreviewTool PreviewTool;
+    public ViewportGridTool GridTool;
+    public ViewportRenderingTool RenderingTool;
+
     public FxEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -29,6 +48,15 @@ public class FxEditorScreen : EditorScreen
         EffectList = new FxEffectList(this);
         EffectTree = new FxEffectTree(this);
         Inspector = new FxInspector(this);
+
+        RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
+        Universe = new FxUniverse(this, project);
+        ViewportWindow = new FxViewportWindow(this, project);
+
+        PreviewTool = new FxPreviewTool(this);
+        GridTool = new ViewportGridTool(ViewportGridEditor.Fx, () => ViewportWindow?.Viewport as VulkanViewport);
+        RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
+        ToolWindow = new FxToolWindow(this);
     }
 
     public FxData Data => Project.Handler.FxData;
@@ -69,13 +97,58 @@ public class FxEditorScreen : EditorScreen
         Window($"{LOC.Get("FX_Window_Effect_List")}###fxEditor_EffectList", dsid, EditorFocusContext.FxEditor_EffectList, EffectList.Display);
         Window($"{LOC.Get("FX_Window_Effect_Tree")}###fxEditor_EffectTree", dsid, EditorFocusContext.FxEditor_EffectTree, EffectTree.Display);
         Window($"{LOC.Get("FX_Window_Inspector")}###fxEditor_Inspector", dsid, EditorFocusContext.FxEditor_Inspector, Inspector.Display);
+
+        // Viewport: the shared viewport window sets the focus itself
+        ViewportWindow.Display(dsid);
+
+        if (CFG.Current.Interface_FxEditor_ToolWindow)
+            Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools", dsid, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetMainWindowFlags());
     }
 
-    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)
+    // ---------------------------------------------------------------- viewport
+
+    public void Update(float dt)
+    {
+        // A new effect starts playing from the beginning
+        if (Selection.Entry != PlaybackEntry)
+        {
+            PlaybackEntry = Selection.Entry;
+            Playback.Restart();
+        }
+
+        Playback.Update(dt);
+
+        ViewportWindow.Update(dt);
+
+        // The map lighting the viewport borrows, loaded once there is an effect to show: reading the map's volumes
+        // and GPARAM on the editor's first frame would hold it up (as in the Time Act Editor)
+        if (Selection.Entry?.Fxr != null)
+            Project.Handler.ViewportEnvironment.Update();
+    }
+
+    private FxEntry PlaybackEntry;
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        if (ViewportWindow.Viewport is VulkanViewport { Visible: true })
+            ViewportWindow.Draw(device, cl);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        ViewportWindow.EditorResized(window, device);
+    }
+
+    public bool InputCaptured()
+    {
+        return ViewportWindow.InputCaptured();
+    }
+
+    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw, ImGuiWindowFlags? flags = null)
     {
         ImGui.SetNextWindowDockID(dockspace, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_FxEditor);
-        if (ImGui.Begin(title, GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin(title, flags ?? GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 FocusManager.SetFocus(focus);
@@ -163,6 +236,13 @@ public class FxEditorScreen : EditorScreen
         if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Raw")}##fxToggleRaw"))
             CFG.Current.FxEditor_Inspector_Show_Raw = !CFG.Current.FxEditor_Inspector_Show_Raw;
         GUI.ShowActiveStatus(CFG.Current.FxEditor_Inspector_Show_Raw);
+
+        ImGui.Separator();
+
+        // Tools window
+        if (ImGui.MenuItem($"{LOC.Get("FX_View_Toggle_Tools")}##fxToggleTools"))
+            CFG.Current.Interface_FxEditor_ToolWindow = !CFG.Current.Interface_FxEditor_ToolWindow;
+        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_ToolWindow);
 
         ImGui.EndMenu();
     }
