@@ -58,6 +58,53 @@ public static class ShaderHelper
         return shader;
     }
 
+    /// <summary>
+    ///     The geometry stage <paramref name="setName" />.geom.spv, which only some sets have (the _wire variants, see
+    ///     <see cref="MeshRenderables.cWireframePipelines" />), or null if the set has none
+    /// </summary>
+    public static Shader LoadGeometrySPIRV(ResourceFactory factory, string setName)
+    {
+        if (!BytecodeExists(setName, VkShaderStageFlags.Geometry))
+        {
+            return null;
+        }
+
+        var bytes = LoadBytecode(setName, VkShaderStageFlags.Geometry);
+        var debug = false;
+#if DEBUG
+        debug = true;
+#endif
+        Shader shader = factory.CreateFromSpirv(
+            new ShaderDescription(VkShaderStageFlags.Geometry, bytes, "main", debug));
+
+        shader.Name = setName + "-Geometry";
+
+        return shader;
+    }
+
+    /// <summary>Whether the compiled stage of a set is there, so a variant can be asked for only where it was built</summary>
+    public static bool BytecodeExists(string setName, VkShaderStageFlags stage)
+    {
+        return File.Exists(GetBytecodePath(setName, stage));
+    }
+
+    private static string GetStageExtension(VkShaderStageFlags stage)
+    {
+        return stage switch
+        {
+            VkShaderStageFlags.Vertex => "vert",
+            VkShaderStageFlags.Geometry => "geom",
+            VkShaderStageFlags.Compute => "comp",
+            _ => "frag"
+        };
+    }
+
+    private static string GetBytecodePath(string setName, VkShaderStageFlags stage)
+    {
+        var name = setName.Replace('\\', Path.DirectorySeparatorChar) + "." + GetStageExtension(stage);
+        return GetPath(Path.Combine("Shaders", name + GetBytecodeExtension()));
+    }
+
     private static CrossCompileOptions GetOptions(GraphicsDevice gd)
     {
         SpecializationConstant[] specializations = GetSpecializations(gd);
@@ -85,16 +132,9 @@ public static class ShaderHelper
 
     public static byte[] LoadBytecode(string setName, VkShaderStageFlags stage)
     {
-        var stageExt = stage switch
-        {
-            VkShaderStageFlags.Vertex => "vert",
-            VkShaderStageFlags.Compute => "comp",
-            _ => "frag"
-        };
-        var name = setName.Replace('\\', Path.DirectorySeparatorChar) + "." + stageExt;
+        var name = setName.Replace('\\', Path.DirectorySeparatorChar) + "." + GetStageExtension(stage);
 
-        var bytecodeExtension = GetBytecodeExtension();
-        var bytecodePath = GetPath(Path.Combine("Shaders", name + bytecodeExtension));
+        var bytecodePath = GetBytecodePath(setName, stage);
         if (File.Exists(bytecodePath))
         {
             return File.ReadAllBytes(bytecodePath);

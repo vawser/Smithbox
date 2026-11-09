@@ -19,6 +19,11 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
     sceneParams sceneparam;
 };
 
+// The wireframe view, built with WIREFRAME as SimpleFlver_focus_wire, with SimpleFlver.geom before it
+#ifdef WIREFRAME
+#include "Wireframe.glsl"
+#endif
+
 struct updatePickingBuffer
 {
 	uint depth;
@@ -93,6 +98,15 @@ void main()
 {
 	CAMERA_CLIP(fsin_clipPos);
 
+#ifdef WIREFRAME
+	// Before the discards, as it takes derivatives
+	float wireCoverage = WireframeCoverage();
+	if (WireframeOnly() && !WireframeKeeps(wireCoverage))
+	{
+		discard;
+	}
+#endif
+
 	// Picking comes first, so the gaps in the dither can still be clicked
 	if (c_picking)
 	{
@@ -100,12 +114,22 @@ void main()
 		UpdatePickingBuffer(coord, uint64_t(fsin_entityid), gl_FragCoord.z);
 	}
 
-	if (FOCUS_OPACITY < OrderedDither())
+	// The lines alone aren't dithered, so they stay whole; they are greyed all the same
+	bool dither = true;
+#ifdef WIREFRAME
+	dither = !WireframeOnly();
+#endif
+
+	if (dither && FOCUS_OPACITY < OrderedDither())
 	{
 		discard;
 	}
 
 	fsout_color = vec4(FocusGrey(color.rgb), color.a);
+
+#ifdef WIREFRAME
+	fsout_color.rgb = WireframeOver(fsout_color.rgb, FocusGrey(sceneparam.wireframeColor.rgb), wireCoverage);
+#endif
 
 	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
 	if (c_linearOutput)

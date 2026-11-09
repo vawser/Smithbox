@@ -12,6 +12,8 @@
 //   SELECTED             - used for selected objects: adds selection dithering and tinting
 //   OUTLINE              - only draws the selection outline, for meshes with a deformer to outline
 //   FOCUS                - used for maps that are out of focus: dithers and greys out the object
+//   WIREFRAME            - the wireframe view: lines along the triangles' edges, from the barycentrics of the
+//                          geometry stage (FlverShader.geom, Wireframe.glsl), over the surface or alone
 //
 // Lighting: one sun (LIGHTING.sun, see SceneLighting.glsl) plus up to MAX_SCENE_LIGHTS point, spot or
 // directional lights from the scene's light list.
@@ -130,6 +132,20 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
 {
     sceneParams sceneparam;
 };
+
+#ifdef WIREFRAME
+#include "../Wireframe.glsl"
+
+// Selected objects take the selection color for their lines, so the selection shows without its outline
+vec3 WireframeLineColor()
+{
+#ifdef SELECTED
+	return sceneparam.selectionColor.rgb;
+#else
+	return sceneparam.wireframeColor.rgb;
+#endif
+}
+#endif
 
 layout(set = 2, binding = 0) uniform texture2D globalTextures[];
 layout(set = 3, binding = 0) uniform textureCube globalTexturesCube[];
@@ -1824,6 +1840,37 @@ void main()
 	return;
 #endif
 
+#ifdef WIREFRAME
+	// Before anything that discards, as it takes derivatives
+	float wireCoverage = WireframeCoverage();
+
+	// The lines alone, unlit, so what is behind the surfaces shows through between them
+	if (WireframeOnly())
+	{
+		if (!WireframeKeeps(wireCoverage))
+		{
+			discard;
+		}
+
+		vec3 line = WireframeLineColor();
+#ifdef FOCUS
+		line = mix(vec3(dot(line, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
+#endif
+		if (c_linearOutput)
+		{
+			line *= line;
+		}
+
+		// No light to speak of for the screen space effects: rough, not reflective, nothing indirect or glowing
+		fsout_color = vec4(line, 1.0);
+		fsout_surface = vec4(OctahedralEncode(normalize(fsin_worldToTangent[2])), 1.0, 0.0);
+		fsout_indirect = vec4(0.0, 0.0, 0.0, 1.0);
+		fsout_reflection = vec4(0.0, 0.0, 0.0, 1.0);
+		fsout_glow = vec4(0.0, 0.0, 0.0, 1.0);
+		return;
+	}
+#endif
+
 	g_mat = fsin_mat;
 	// The instance's own lighting set only exists under map lighting; it is 0 (the view's own) otherwise
 	g_lightingSet = MapLighting() ? fsin_lightingSet : 0u;
@@ -2296,6 +2343,11 @@ void main()
 
 #ifdef FOCUS
 	finalColor = mix(vec3(dot(finalColor, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
+#endif
+
+#ifdef WIREFRAME
+	// In display color, as the lines' color is given
+	finalColor = WireframeOver(finalColor, WireframeLineColor(), wireCoverage);
 #endif
 
 	// In the HDR target the tone map applies the square root, so it is undone: what is left is linear light, kept

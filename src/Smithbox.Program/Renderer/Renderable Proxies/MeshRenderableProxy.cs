@@ -783,17 +783,19 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         VertexLayoutDescription[] mainVertexLayouts = { _meshProvider.LayoutDescription };
 
-        Tuple<Shader, Shader> res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName)
-            .ToTuple();
+        // The selected and out of focus maps' variants, which the wireframe view's _wire variant is named after
+        string mainShaderName = _meshProvider.ShaderName;
 
         if(_renderOutline)
         {
-            res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName + (_meshProvider.UseSelectedShader ? "_selected" : "")).ToTuple();
+            mainShaderName = _meshProvider.ShaderName + (_meshProvider.UseSelectedShader ? "_selected" : "");
         }
         else if (_renderFocusGhost)
         {
-            res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, _meshProvider.ShaderName + "_focus").ToTuple();
+            mainShaderName = _meshProvider.ShaderName + "_focus";
         }
+
+        Tuple<Shader, Shader> res = StaticResourceCache.GetShaders(gd, gd.ResourceFactory, mainShaderName).ToTuple();
 
         _shaders = new[] { res.Item1, res.Item2 };
 
@@ -852,6 +854,21 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         };
         pipelineDescription.Outputs = SceneTarget.OutputsFor(gd, _renderablesSet);
         _pipeline = StaticResourceCache.GetPipeline(factory, ref pipelineDescription);
+
+        // The wireframe view's pipeline: the same, with the _wire variant of the shaders, whose geometry stage gives
+        // the fragment stage the triangles' edges. Only described here; it is built when the view is first shown.
+        // Meshes whose shader has no _wire variant (collision, navmeshes) are drawn as usual in the view.
+        GraphicsPipelineDescription? wireframeDescription = null;
+        if (_meshProvider.Topology is VkPrimitiveTopology.TriangleList or VkPrimitiveTopology.TriangleStrip)
+        {
+            Shader[] wireShaders = StaticResourceCache.GetShadersWithGeometry(gd, gd.ResourceFactory, mainShaderName + "_wire");
+            if (wireShaders != null)
+            {
+                GraphicsPipelineDescription wire = pipelineDescription;
+                wire.ShaderSet = new ShaderSetDescription(mainVertexLayouts, wireShaders, specializationConstants);
+                wireframeDescription = wire;
+            }
+        }
 
         // Build picking pipeline
         var pickingSpecializationConstants =
@@ -917,6 +934,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
         _renderablesSet.cShadowPipelines[_renderable] = _castsShadow ? _shadowPipeline : null;
 
+        if (wireframeDescription is GraphicsPipelineDescription wireDescription)
+        {
+            _renderablesSet.SetWireframePipeline(_renderable, ref wireDescription);
+        }
+
         // Update instance data
         FillWorldBuffer(gd, cl);
 
@@ -957,6 +979,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             // Pipelines
             _renderablesSet.cPipelines[_selectionOutlineRenderable] = _selectedPipeline;
             _renderablesSet.cSelectionPipelines[_selectionOutlineRenderable] = _selectedPipeline;
+
+            // The wireframe view shows the selection by the color of the lines; the outline would fill in the
+            // silhouette where the surfaces are left out
+            _renderablesSet.cHiddenInWireframe[_selectionOutlineRenderable] = true;
 
             // Selectable
             _renderablesSet.cSelectables[_selectionOutlineRenderable] = _selectable;

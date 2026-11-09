@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using StudioCore.Application;
+using System.Collections.Generic;
 using Tracy;
 using Veldrid.Utilities;
 
@@ -113,8 +114,19 @@ public class RenderScene
         OpaqueRenderables.SubmitRenderables(queue, pipeline.Eye);
         Profiler.TracyCZoneEnd(ctx);
 
-        queue.SetDrawParameters(OpaqueRenderables.cDrawParameters,
-            queue.PickingEnabled ? OpaqueRenderables.cSelectionPipelines : OpaqueRenderables.cPipelines);
+        // The wireframe view swaps in the meshes' _wire pipelines; picking keeps the usual ones, so a surface can
+        // still be clicked between its lines
+        if (!queue.PickingEnabled && CFG.Current.Viewport_Wireframe_Enable)
+        {
+            OpaqueRenderables.BuildWireframePipelines(SceneRenderer.Factory);
+            queue.SetDrawParameters(OpaqueRenderables.cDrawParameters, OpaqueRenderables.cPipelines,
+                OpaqueRenderables.cWireframePipelines, OpaqueRenderables.cHiddenInWireframe);
+        }
+        else
+        {
+            queue.SetDrawParameters(OpaqueRenderables.cDrawParameters,
+                queue.PickingEnabled ? OpaqueRenderables.cSelectionPipelines : OpaqueRenderables.cPipelines);
+        }
 
         ctx = Profiler.TracyCZoneN(1, "Overlays");
         OverlayRenderables.CullRenderables(frustum);

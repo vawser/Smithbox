@@ -945,6 +945,50 @@
       "Text": "Shows the surfaces' normals in place of the image: the Normals surface view."
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe",
+      "Text": "Wireframe"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_TT",
+      "Text": "Draws lines along the triangles of FLVER models, over their surfaces or alone. Selected models take the selection color for their lines, in place of their outline."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Settings",
+      "Text": "Wireframe Settings"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Only",
+      "Text": "Lines Only"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Only_TT",
+      "Text": "Leaves the surfaces out, so only the lines show and what is behind can be seen between them. Faces turned away from the camera are still left out."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Color",
+      "Text": "Line Color"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Color_TT",
+      "Text": "The color of the lines."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Opacity",
+      "Text": "Line Opacity"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Opacity_TT",
+      "Text": "How much the lines cover the surfaces under them. Lines Only draws them fully opaque."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Width",
+      "Text": "Line Width"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Wireframe_Width_TT",
+      "Text": "The width of the lines in pixels, the same at any distance."
+    },
+    {
       "Key": "VIEWPORT_Menubar_Setting_Enable_Culling",
       "Text": "Enable Culling"
     },

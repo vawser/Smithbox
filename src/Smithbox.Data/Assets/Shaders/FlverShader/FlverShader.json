@@ -342,5 +342,434 @@
 				"Name": "FOCUS"
 			}
 		]
+	},
+	{
+		"Name": "FlverShader_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blendmask_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blendmask_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			},
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blendmask_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_BLEND_MASK"
+			},
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_deform_blend_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_DEFORM"
+			},
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
 	}
 ]

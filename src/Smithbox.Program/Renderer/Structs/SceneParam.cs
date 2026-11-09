@@ -213,6 +213,16 @@ public unsafe struct SceneParam
     ///     view can be had through nearby walls. 0 for no clip, as in the shadow and rain views, which share the eye.
     /// </summary>
     public Vector4 CameraClip;
+
+    /// <summary>
+    ///     The wireframe view's lines, CFG.Viewport_Wireframe_*: rgb their display color, a how opaque they are over the
+    ///     surfaces. Only the _wire shader variants read it, which draw while the view is on, see
+    ///     <see cref="MeshRenderables.cWireframePipelines" />.
+    /// </summary>
+    public Vector4 WireframeColor;
+
+    /// <summary>x: the lines' width in pixels, y: 1 to leave the surfaces out, so only the lines show</summary>
+    public Vector4 WireframeParams;
 }
 
 /// <summary>A directional light of the map's GPARAM, as the shaders read it</summary>

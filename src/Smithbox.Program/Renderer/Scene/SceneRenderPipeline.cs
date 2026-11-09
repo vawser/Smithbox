@@ -680,6 +680,12 @@ public class SceneRenderPipeline
             SceneParams.CameraClip = new Vector4(
                 CFG.Current.Viewport_Camera_Clip_Enabled ? CFG.Current.Viewport_Camera_Clip_Radius : 0.0f, 0.0f, 0.0f, 0.0f);
 
+            // Read by the _wire shader variants alone, which only draw while the wireframe view is on
+            SceneParams.WireframeColor = new Vector4(CFG.Current.Viewport_Wireframe_Line_Color,
+                Math.Clamp(CFG.Current.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f));
+            SceneParams.WireframeParams = new Vector4(Math.Clamp(CFG.Current.Viewport_Wireframe_Line_Width, 0.5f, 8.0f),
+                CFG.Current.Viewport_Wireframe_Only ? 1.0f : 0.0f, 0.0f, 0.0f);
+
             SceneParams.FogVolumeTexture = fogVolume;
             SceneParams.FogNear = fog.DepthRange.X;
             SceneParams.FogLogRatio = fog.DepthRange.Z;

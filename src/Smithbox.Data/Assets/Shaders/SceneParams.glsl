@@ -119,6 +119,10 @@ struct sceneParams
 
 	// The clip round the camera, see SceneParam.CameraClip: fragments nearer the eye than this are dropped
 	vec4 cameraClip;         // x: the radius, 0 for no clip
+
+	// The wireframe view, see SceneParam.WireframeColor: read by the _wire variants alone (Wireframe.glsl)
+	vec4 wireframeColor;     // rgb: the lines' display color, a: how opaque they are over the surfaces
+	vec4 wireframeParams;    // x: the lines' width in pixels, y: 1 to leave the surfaces out, so only the lines show
 };
 
 

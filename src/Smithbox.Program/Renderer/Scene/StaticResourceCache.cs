@@ -13,6 +13,9 @@ internal static class StaticResourceCache
 
     private static readonly ConcurrentDictionary<ShaderSetCacheKey, (Shader, Shader)> s_shaderSets = new();
 
+    // Geometry stages by set name; null for a set that has none, so it is only looked for once
+    private static readonly ConcurrentDictionary<string, Shader> s_geometryShaders = new();
+
     private static readonly ConcurrentDictionary<Texture, TextureView> s_textureViews = new();
 
     private static readonly ConcurrentDictionary<ResourceSetDescription, ResourceSet> s_resourceSets = new();
@@ -69,6 +72,29 @@ internal static class StaticResourceCache
         return set;
     }
 
+    /// <summary>
+    ///     The vertex, geometry and fragment stages of a set built with a geometry stage, such as the _wire variants,
+    ///     or null when the set wasn't built with one (or at all)
+    /// </summary>
+    public static Shader[] GetShadersWithGeometry(GraphicsDevice gd, ResourceFactory factory, string name)
+    {
+        if (!gd.Features.GeometryShader)
+        {
+            return null;
+        }
+
+        Shader gs = s_geometryShaders.GetOrAdd(name, n => ShaderHelper.LoadGeometrySPIRV(factory, n));
+        if (gs == null || !ShaderHelper.BytecodeExists(name, VkShaderStageFlags.Vertex) ||
+            !ShaderHelper.BytecodeExists(name, VkShaderStageFlags.Fragment))
+        {
+            return null;
+        }
+
+        (Shader vs, Shader fs) = GetShaders(gd, factory, name);
+
+        return new[] { vs, gs, fs };
+    }
+
     public static void DestroyAllDeviceObjects()
     {
         foreach (KeyValuePair<GraphicsPipelineDescription, Pipeline> kvp in s_pipelines)
@@ -92,6 +118,13 @@ internal static class StaticResourceCache
         }
 
         s_shaderSets.Clear();
+
+        foreach (KeyValuePair<string, Shader> kvp in s_geometryShaders)
+        {
+            kvp.Value?.Dispose();
+        }
+
+        s_geometryShaders.Clear();
 
         foreach (KeyValuePair<Texture, TextureView> kvp in s_textureViews)
         {

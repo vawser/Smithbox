@@ -19,6 +19,11 @@ layout(set = 0, binding = 0) uniform SceneParamBuffer
     sceneParams sceneparam;
 };
 
+// The wireframe view, built with WIREFRAME as SimpleFlver_selected_wire, with SimpleFlver.geom before it
+#ifdef WIREFRAME
+#include "Wireframe.glsl"
+#endif
+
 struct updatePickingBuffer
 {
 	uint depth;
@@ -72,6 +77,15 @@ void main()
 {
 	CAMERA_CLIP(fsin_clipPos);
 
+#ifdef WIREFRAME
+	// Before the discards, as it takes derivatives
+	float wireCoverage = WireframeCoverage();
+	if (WireframeOnly() && !WireframeKeeps(wireCoverage))
+	{
+		discard;
+	}
+#endif
+
     if (c_picking)
 	{
 		ivec2 coord = ivec2(gl_FragCoord.xy - vec2(0.49, 0.49));
@@ -106,6 +120,11 @@ void main()
     {
         fsout_color = color;
     }
+
+#ifdef WIREFRAME
+	// Selected objects take the selection color for their lines, so the selection shows without its outline
+	fsout_color.rgb = WireframeOver(fsout_color.rgb, sceneparam.selectionColor.rgb, wireCoverage);
+#endif
 
 	// In the HDR target the tone map applies the gamma, so this display color is squared to linear light
 	if (c_linearOutput)

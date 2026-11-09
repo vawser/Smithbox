@@ -61,14 +61,17 @@ namespace Veldrid.SPIRV
                 if (variant.Shaders[0].Stage == VkShaderStageFlags.Vertex) { return CompileVertexFragment(variant); }
                 if (variant.Shaders[0].Stage == VkShaderStageFlags.Compute) { return CompileCompute(variant); }
             }
-            if (variant.Shaders.Length == 2)
+            // A vertex and fragment pair, optionally with a geometry stage between them
+            if (variant.Shaders.Length == 2 || variant.Shaders.Length == 3)
             {
                 bool hasVertex = false;
                 bool hasFragment = false;
+                int geometryCount = 0;
                 foreach (var shader in variant.Shaders)
                 {
                     hasVertex |= shader.Stage == VkShaderStageFlags.Vertex;
                     hasFragment |= shader.Stage == VkShaderStageFlags.Fragment;
+                    geometryCount += shader.Stage == VkShaderStageFlags.Geometry ? 1 : 0;
                 }
 
                 if (!hasVertex)
@@ -78,6 +81,11 @@ namespace Veldrid.SPIRV
                 if (!hasFragment)
                 {
                     throw new SpirvCompilationException($"Variant \"{variant.Name}\" is missing a fragment shader.");
+                }
+                if (variant.Shaders.Length == 3 && geometryCount != 1)
+                {
+                    throw new SpirvCompilationException(
+                        $"Variant \"{variant.Name}\" has three stages, which must be vertex, geometry and fragment.");
                 }
 
                 return CompileVertexFragment(variant);
@@ -105,6 +113,23 @@ namespace Veldrid.SPIRV
                     //string spvPath = Path.Combine(_outputPath, $"{variant.Name}_{ShaderStages.Vertex.ToString()}.spv");
                     string spvPath = Path.Combine(_outputPath, $"{variant.Name}.vert.spv");
                     File.WriteAllBytes(spvPath, vsBytes);
+                    generatedFiles.Add(spvPath);
+                }
+                catch (Exception e)
+                {
+                    compilationExceptions.Add(e);
+                }
+            }
+
+            // The geometry stage is written as SPIR-V alone: the cross-compile targets below only take vertex and fragment
+            string geometryFileName = variant.Shaders.FirstOrDefault(vsd => vsd.Stage == VkShaderStageFlags.Geometry)?.FileName;
+            if (geometryFileName != null)
+            {
+                try
+                {
+                    byte[] gsBytes = CompileToSpirv(variant, geometryFileName, VkShaderStageFlags.Geometry);
+                    string spvPath = Path.Combine(_outputPath, $"{variant.Name}.geom.spv");
+                    File.WriteAllBytes(spvPath, gsBytes);
                     generatedFiles.Add(spvPath);
                 }
                 catch (Exception e)

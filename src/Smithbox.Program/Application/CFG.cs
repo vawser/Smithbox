@@ -1262,6 +1262,15 @@ public class CFG
     // 0 Diffuse: the textured image. 1 Normal: the surface's normals in its place, the Normals surface view.
     public int Viewport_Texturing_Mode = 0;
 
+    // The wireframe view: lines along the triangles of FLVER models, drawn by the shaders' _wire variants (see
+    // MeshRenderables.cWireframePipelines). Only: the surfaces are left out, so only the lines show. The color is
+    // a display color, 0 to 1; the opacity is how much the lines cover the surfaces when they are shown.
+    public bool Viewport_Wireframe_Enable = false;
+    public bool Viewport_Wireframe_Only = false;
+    public Vector3 Viewport_Wireframe_Line_Color = new Vector3(0.85f, 0.9f, 1.0f);
+    public float Viewport_Wireframe_Line_Opacity = 0.75f;
+    public float Viewport_Wireframe_Line_Width = 1.0f;
+
     public bool Viewport_Enable_Material_Animation = true;
     public float Viewport_Wind_Strength = 1.0f;
     public float Viewport_Wind_Direction = 45.0f;

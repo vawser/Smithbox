@@ -592,6 +592,46 @@ public class ViewportMenu
             CFG.Current.Viewport_Texturing_Mode = (int)ViewportTexturingMode.Normal;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Texturing_Normal_TT"));
+
+        ImGui.Separator();
+
+        WireframeMenu();
+    }
+
+    /// <summary>
+    ///     The wireframe view: lines along the triangles of FLVER models, over their surfaces or alone. Drawn by the
+    ///     shaders, so the settings apply at once; see MeshRenderables.cWireframePipelines.
+    /// </summary>
+    private void WireframeMenu()
+    {
+        if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe")}##wireframeToggle", "", CFG.Current.Viewport_Wireframe_Enable))
+        {
+            CFG.Current.Viewport_Wireframe_Enable = !CFG.Current.Viewport_Wireframe_Enable;
+        }
+        GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_TT"));
+
+        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Settings")}##wireframeSettings"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Only")}##wireframeOnly", "", CFG.Current.Viewport_Wireframe_Only))
+            {
+                CFG.Current.Viewport_Wireframe_Only = !CFG.Current.Viewport_Wireframe_Only;
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Only_TT"));
+
+            ImGui.ColorEdit3($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Color")}##wireframeColor",
+                ref CFG.Current.Viewport_Wireframe_Line_Color);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Color_TT"));
+
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Opacity")}##wireframeOpacity",
+                ref CFG.Current.Viewport_Wireframe_Line_Opacity, 0.0f, 1.0f);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Opacity_TT"));
+
+            ImGui.SliderFloat($"{LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Width")}##wireframeWidth",
+                ref CFG.Current.Viewport_Wireframe_Line_Width, 0.5f, 8.0f);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Wireframe_Width_TT"));
+
+            ImGui.EndMenu();
+        }
     }
 
     private void ModelSettingsMenu(Action updateDisplayNodes)

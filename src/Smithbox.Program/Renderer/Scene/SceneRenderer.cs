@@ -1074,6 +1074,11 @@ public static class SceneRenderer
 
         private Pipeline[] _pipelines;
 
+        // The wireframe view's pipelines, which take the place of _pipelines where they are set, and the renderables
+        // it leaves out; both null while the view is off, see SetDrawParameters
+        private Pipeline[] _wireframePipelines;
+        private bool[] _hiddenInWireframe;
+
         private Action<GraphicsDevice, CommandList> PreDrawSetup;
 
         public RenderQueue(string name, GraphicsDevice device, SceneRenderPipeline pipeline)
@@ -1124,10 +1129,18 @@ public static class SceneRenderer
             Renderables.Add(item);
         }
 
-        public void SetDrawParameters(MeshDrawParametersComponent[] parameters, Pipeline[] pipelines)
+        /// <summary>
+        ///     What the queued renderables are drawn with. In the wireframe view <paramref name="wireframePipelines" />
+        ///     takes the place of <paramref name="pipelines" /> where it is set, and the renderables marked in
+        ///     <paramref name="hiddenInWireframe" /> aren't drawn; both are null otherwise.
+        /// </summary>
+        public void SetDrawParameters(MeshDrawParametersComponent[] parameters, Pipeline[] pipelines,
+            Pipeline[] wireframePipelines = null, bool[] hiddenInWireframe = null)
         {
             _drawParameters = parameters;
             _pipelines = pipelines;
+            _wireframePipelines = wireframePipelines;
+            _hiddenInWireframe = hiddenInWireframe;
         }
 
         private void Sort()
@@ -1177,7 +1190,19 @@ public static class SceneRenderer
                 }
 
                 var o = Renderables[obj.ItemIndex];
-                _drawEncoders[_nextBuffer].AddDraw(ref _drawParameters[o], _pipelines[o]);
+                Pipeline pipeline = _pipelines[o];
+
+                if (_wireframePipelines != null)
+                {
+                    if (_hiddenInWireframe[o])
+                    {
+                        continue;
+                    }
+
+                    pipeline = _wireframePipelines[o] ?? pipeline;
+                }
+
+                _drawEncoders[_nextBuffer].AddDraw(ref _drawParameters[o], pipeline);
             }
 
             Profiler.TracyCZoneEnd(ctx);

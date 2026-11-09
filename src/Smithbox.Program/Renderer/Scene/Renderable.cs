@@ -208,6 +208,24 @@ public class MeshRenderables : Renderables
     /// <summary>The pipeline that draws the renderable into the sun's shadow map, or null if it casts no shadow</summary>
     public Pipeline[] cShadowPipelines;
 
+    /// <summary>
+    ///     The pipeline that draws the renderable in the wireframe view (CFG.Viewport_Wireframe_Enable): its _wire shader
+    ///     variant, with a geometry stage. Null for one drawn as usual there. Built the first time the view needs it, from
+    ///     <see cref="cWireframeDescriptions" />, so meshes cost nothing extra to load while the view is off.
+    /// </summary>
+    public Pipeline[] cWireframePipelines;
+
+    /// <summary>What <see cref="cWireframePipelines" /> is built from, while <see cref="cWireframePending" /></summary>
+    public GraphicsPipelineDescription[] cWireframeDescriptions;
+
+    public bool[] cWireframePending;
+
+    /// <summary>Left out of the wireframe view, as the selection outline is: its lines show the selection there</summary>
+    public bool[] cHiddenInWireframe;
+
+    // Whether any wireframe pipeline is still to be built, so the view only looks for them after a mesh is added
+    private bool _anyWireframePending;
+
     public MeshRenderables(int id) : base()
     {
         RenderableSystemIndex = id;
@@ -221,6 +239,10 @@ public class MeshRenderables : Renderables
         cSelectables = new WeakReference<ISelectable>[Capacity];
         cSelectionPipelines = new Pipeline[Capacity];
         cShadowPipelines = new Pipeline[Capacity];
+        cWireframePipelines = new Pipeline[Capacity];
+        cWireframeDescriptions = new GraphicsPipelineDescription[Capacity];
+        cWireframePending = new bool[Capacity];
+        cHiddenInWireframe = new bool[Capacity];
     }
 
     protected override void ResizeArrays(int newCapacity)
@@ -236,6 +258,10 @@ public class MeshRenderables : Renderables
         Array.Resize(ref cSelectables, newCapacity);
         Array.Resize(ref cSelectionPipelines, newCapacity);
         Array.Resize(ref cShadowPipelines, newCapacity);
+        Array.Resize(ref cWireframePipelines, newCapacity);
+        Array.Resize(ref cWireframeDescriptions, newCapacity);
+        Array.Resize(ref cWireframePending, newCapacity);
+        Array.Resize(ref cHiddenInWireframe, newCapacity);
     }
 
     public int CreateMesh(ref BoundingBox bounds, ref MeshDrawParametersComponent drawArgs)
@@ -245,7 +271,52 @@ public class MeshRenderables : Renderables
         cBounds[idx] = bounds;
         cDrawParameters[idx] = drawArgs;
         cShadowPipelines[idx] = null;
+        cWireframePipelines[idx] = null;
+        cWireframeDescriptions[idx] = default;
+        cWireframePending[idx] = false;
+        cHiddenInWireframe[idx] = false;
         return idx;
+    }
+
+    /// <summary>Gives a renderable the pipeline it draws with in the wireframe view, built when the view first needs it</summary>
+    public void SetWireframePipeline(int idx, ref GraphicsPipelineDescription description)
+    {
+        cWireframeDescriptions[idx] = description;
+        cWireframePipelines[idx] = null;
+        cWireframePending[idx] = true;
+        _anyWireframePending = true;
+    }
+
+    /// <summary>
+    ///     Builds the wireframe pipelines not built yet, for the wireframe view. Pipelines are shared between renderables
+    ///     with the same description, so a scene builds only as many as it has kinds of material.
+    /// </summary>
+    public void BuildWireframePipelines(ResourceFactory factory)
+    {
+        if (!_anyWireframePending)
+        {
+            return;
+        }
+
+        _anyWireframePending = false;
+
+        for (var i = 0; i < _topIndex; i++)
+        {
+            if (!cWireframePending[i])
+            {
+                continue;
+            }
+
+            cWireframePending[i] = false;
+
+            if (!cVisible[i]._valid)
+            {
+                continue;
+            }
+
+            cWireframePipelines[i] = StaticResourceCache.GetPipeline(factory, ref cWireframeDescriptions[i]);
+            cWireframeDescriptions[i] = default;
+        }
     }
 
     /// <summary>
@@ -412,6 +483,10 @@ public class MeshRenderables : Renderables
                     cSelectables[writeIndex] = cSelectables[readIndex];
                     cSelectionPipelines[writeIndex] = cSelectionPipelines[readIndex];
                     cShadowPipelines[writeIndex] = cShadowPipelines[readIndex];
+                    cWireframePipelines[writeIndex] = cWireframePipelines[readIndex];
+                    cWireframeDescriptions[writeIndex] = cWireframeDescriptions[readIndex];
+                    cWireframePending[writeIndex] = cWireframePending[readIndex];
+                    cHiddenInWireframe[writeIndex] = cHiddenInWireframe[readIndex];
                 }
                 writeIndex++;
             }

@@ -7,11 +7,3 @@
 - AEP rendering needs to carry in the asset collision too
 
 
-- Add Map Extraction tool:
-    - Under Data Transfer category
-    - Allows the user to export their selection (if a mesh) as a obj
-        - For more than one selection, it keeps the position of the meshes as they appear in the viewport (i.e. if the user selects a house, the obj should look like the house)
-        - Add option to include textures (obj should have the textures bound properly, plus the actual textures should be exported)
-
-- Wireframe mode
-
