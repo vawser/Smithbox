@@ -394,7 +394,13 @@ public class ProjectEntry
         {
             var screen = editor;
 
-            AddUnsaved(result, screen.EditorName, () => screen.GetUnsavedFiles(), () => screen.SaveUnsaved());
+            // Some names carry an ImGui id ("Material Editor##MaterialEditor"), which would hide the prompt's file count
+            var name = screen.EditorName ?? "";
+            var idStart = name.IndexOf("##", StringComparison.Ordinal);
+            if (idStart >= 0)
+                name = name[..idStart];
+
+            AddUnsaved(result, name, () => screen.GetUnsavedFiles(), () => screen.SaveUnsaved());
         }
 
         // The alias and enum editors are shared by every project, so their edits are kept on the project

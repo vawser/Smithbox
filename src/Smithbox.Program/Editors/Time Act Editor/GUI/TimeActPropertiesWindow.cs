@@ -1083,8 +1083,19 @@ public class TimeActPropertiesWindow
             ImGui.TextDisabled(LOC.Get("TAE_PropertiesWindow_Alias_Not_Found"));
         }
 
+        // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor (the alias list may not name it)
+        bool isEffect = aliasType is ProjectAliasType.Particles;
+        if (isEffect)
+            FxReferenceHelper.Click(Project, value);
+
         if (ImGui.BeginPopupContextItem("##aliasContextMenu"))
         {
+            if (isEffect && FxReferenceHelper.IsAvailable(Project) && FxReferenceHelper.TryGetId(value, out _))
+            {
+                FxReferenceHelper.ContextMenu(Project, value);
+                ImGui.Separator();
+            }
+
             object newValue = null;
             var choices = GetAliasChoices(aliasType, aliases, source);
             var changed = AliasEnumHelper.ContextMenu(null, choices, value, ref newValue);

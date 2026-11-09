@@ -300,6 +300,11 @@ public class ParamFieldDecorators
             GroupReferenceHelper.Click(ParentView, oldval, row, metaContext.FieldReferenceGroup);
         }
 
+        if (metaContext.DisplayParticleEnum)
+        {
+            FxReferenceHelper.Click(ParentView.Project, oldval);
+        }
+
         if (metaContext.DisplayTextReferences)
         {
             TextReferenceHelper.Click(ParentView, oldval, row, metaContext.TextReferences, metaContext.FmgRefRoleOverride);
@@ -340,6 +345,11 @@ public class ParamFieldDecorators
             if (metaContext.DisplayParticleEnum && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particles))
             {
                 result |= AliasEnumHelper.ContextMenu(ParentView, particles, oldval, ref newval);
+            }
+
+            if (metaContext.DisplayParticleEnum)
+            {
+                FxReferenceHelper.ContextMenu(ParentView.Project, oldval);
             }
 
             if (metaContext.DisplaySoundEnum && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))

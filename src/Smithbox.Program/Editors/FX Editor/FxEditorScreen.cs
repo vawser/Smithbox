@@ -3,6 +3,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using System.Globalization;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -63,7 +64,7 @@ public class FxEditorScreen : EditorScreen
 
     public FxData Data => Project.Handler.FxData;
 
-    public string EditorName => "";
+    public string EditorName => "FX Editor";
     public string CommandEndpoint => "fx";
     public string SaveType => "FX";
     public string WindowName => "";
@@ -73,6 +74,8 @@ public class FxEditorScreen : EditorScreen
     {
         Data.Bank.StartIndexing();
         Data.Bank.Update();
+
+        HandleCommands(commands);
 
         Shortcuts();
 
@@ -108,6 +111,44 @@ public class FxEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_FxEditor_ToolWindow)
             Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools", dsid, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetMainWindowFlags());
+    }
+
+    // ---------------------------------------------------------------- commands
+
+    /// <summary>An effect id a command asked for, kept until the bank is indexed.</summary>
+    private int? PendingJump;
+
+    /// <summary>
+    /// fx/select/&lt;id&gt;: select the effect f&lt;id&gt; and scroll the list to it (FxReferenceHelper sends this from the
+    /// other editors). The bank indexes on first use, so a jump made before then waits for it.
+    /// </summary>
+    private void HandleCommands(string[] commands)
+    {
+        if (commands is { Length: >= 2 } && commands[0] == "select"
+            && int.TryParse(commands[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var id))
+        {
+            PendingJump = id;
+        }
+
+        if (PendingJump is not int jump || !Data.Bank.IsIndexed)
+            return;
+
+        PendingJump = null;
+        JumpTo(jump);
+    }
+
+    /// <summary>Selects an effect by id, as a jump: the list scrolls to it. False if no binder holds it.</summary>
+    public bool JumpTo(int id)
+    {
+        if (!Data.Bank.Entries.TryGetValue(id, out var entry))
+        {
+            Smithbox.LogWarning(this, LOC.Get("FX_Jump_Not_Found", $"f{id:D9}"));
+            return false;
+        }
+
+        Selection.SelectEntry(entry);
+        Selection.FocusEntry = Selection.Entry == entry;
+        return Selection.FocusEntry;
     }
 
     // ---------------------------------------------------------------- viewport

@@ -232,6 +232,9 @@ public class FxInspector
                 }
                 break;
             }
+            case FxrFieldType.Int when def?.Resource != null:
+                DisplayResource(id, def, (int)values[0], v => Commit(new[] { (double)v }));
+                break;
             case FxrFieldType.Int:
             {
                 int v = Pending.TryGetValue(id, out var p) ? (int)p : (int)values[0];
@@ -313,6 +316,82 @@ public class FxInspector
         Pending.Clear();
     }
 
+    /// <summary>
+    /// A texture, model or anibnd reference as text. The file stores an id, so what is typed is read as one: a
+    /// number (88300) or a file name (s88300, s88300_a, s88300_a.tpf, s88300.flver.dcx, with any folder). Below
+    /// it, the file the game loads for that id, and a warning when no sfx binder holds it.
+    /// </summary>
+    private void DisplayResource(string id, FxrPropDef def, int current, Action<int> commit)
+    {
+        string text = Pending.TryGetValue(id, out var p) && p is string s ? s : current.ToString();
+        if (ImGui.InputText(id, ref text, 255))
+            Pending[id] = text;
+        GUI.Tooltip(LOC.Get("FX_Inspector_Resource_TT"));
+
+        int? parsed = ParseResourceId(text);
+        if (parsed is int typed)
+            CommitOnDeactivate(id, () => commit(typed));
+        else
+            CommitOnDeactivate(id, () => { }); // Not an id: dropped when the field is left
+
+        if (parsed == null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_Inspector_Resource_Invalid"));
+            return;
+        }
+
+        int shown = parsed.Value;
+        if (shown <= 0)
+            return;
+
+        // The typed TPF first, then the plain one, as FxTextureLibrary looks them up
+        var file = ResourceName(def, shown);
+        bool known = true;
+        if (def.Resource == "texture")
+        {
+            var plain = $"s{shown:D5}";
+            known = Data.Bank.Textures.ContainsKey(Path.GetFileNameWithoutExtension(file));
+            if (!known && Data.Bank.Textures.ContainsKey(plain))
+            {
+                file = $"{plain}.tpf";
+                known = true;
+            }
+        }
+        else if (def.Resource == "model")
+            known = Data.Bank.Models.ContainsKey($"s{shown:D5}");
+
+        if (known || !Data.Bank.IsIndexed)
+            ImGui.TextDisabled(file);
+        else
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_Inspector_Resource_Missing", file));
+    }
+
+    /// <summary>88300, s88300, s88300_a, s88300_a.tpf, s88300.flver.dcx or a path to one: the id 88300. Null if not one.</summary>
+    private static int? ParseResourceId(string text)
+    {
+        var t = text?.Trim();
+        if (string.IsNullOrEmpty(t))
+            return null;
+
+        t = t.Replace('\\', '/');
+        t = t[(t.LastIndexOf('/') + 1)..];
+
+        // Extensions, any number of them (.flver.dcx)
+        int dot;
+        while ((dot = t.LastIndexOf('.')) > 0 && !char.IsDigit(t[dot + 1]))
+            t = t[..dot];
+
+        if (t.Length > 1 && (t[0] == 's' || t[0] == 'S') && char.IsDigit(t[1]))
+            t = t[1..];
+
+        // The texture type suffix (_a, _n, _3m): the slot decides the type the game loads
+        int underscore = t.IndexOf('_');
+        if (underscore > 0)
+            t = t[..underscore];
+
+        return int.TryParse(t, NumberStyles.Integer, CultureInfo.InvariantCulture, out var id) && id >= 0 ? id : null;
+    }
+
     private string ResourceName(FxrPropDef def, int id) => def.Resource switch
     {
         "texture" => Data.Game is FxrGame.DS3 or FxrGame.SDT ? $"s{id:D5}.tpf" : $"s{id:D5}_{def.TextureType ?? "a"}.tpf",
@@ -329,7 +408,21 @@ public class FxInspector
         var curve = view.GetCurve(name);
         string id = $"##fxProp_{name}";
 
-        if (curve.Constant != null)
+        if (curve.Constant is { Length: 1 } && def?.Resource != null)
+        {
+            DisplayResource(id, def, (int)Math.Round(curve.Constant[0]), v =>
+            {
+                Editor.ActionManager.ExecuteAction(new FxEditPropertyAction(Data.Bank, entry, action, a =>
+                {
+                    var pv = Data.View(entry, a);
+                    var c = pv.GetCurve(name);
+                    c.Function = FxrPropertyFunction.Constant;
+                    c.Constant = new[] { (float)v };
+                    pv.SetCurve(name, c);
+                }));
+            });
+        }
+        else if (curve.Constant != null)
         {
             DisplayFloats(id, curve.Constant.Select(v => (double)v).ToArray(), def, values =>
             {

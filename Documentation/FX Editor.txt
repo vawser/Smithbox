@@ -16,11 +16,3 @@
 - Action Inspector
     - Curve link should focus Curve Editor window
 
-- Bugs:
-    - Texture field in action inspector is read as a number, should be a string input (can be model ID or texture file name)
-    - Exit prompt doesn't name editor
-    - @link left in field descriptions
-    - Alpha not working for some textures: 523081
-    - Models not always textured
-    
-    5230

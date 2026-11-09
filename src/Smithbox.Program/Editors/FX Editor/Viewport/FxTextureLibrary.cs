@@ -1,3 +1,4 @@
+using StudioCore.Editors.MaterialEditor;
 using StudioCore.Renderer;
 using System.Collections.Concurrent;
 
@@ -142,6 +143,7 @@ public class FxTextureLibrary : IResourceEventListener
         var (path, wanted) = Pending.First();
         Pending.Remove(path);
         var fs = Editor.Project.VFS.FS;
+        var materials = Editor.Project.Handler.MaterialData?.PrimaryBank;
 
         Reading = Task.Run(() =>
         {
@@ -157,7 +159,7 @@ public class FxTextureLibrary : IResourceEventListener
                     var bytes = reader.ReadFile(file).ToArray();
                     List<string> textures = null;
                     if (kind == Kind.Model)
-                        textures = MaterialTextures(bytes);
+                        textures = MaterialTextures(bytes, materials);
                     Read.Enqueue((name, kind, bytes, textures));
                 }
             }
@@ -168,18 +170,38 @@ public class FxTextureLibrary : IResourceEventListener
         });
     }
 
-    /// <summary>The texture names a model's materials use (their file names, e.g. s88300_a).</summary>
-    private static List<string> MaterialTextures(byte[] bytes)
+    /// <summary>
+    /// The texture names a model's materials use (their file names, e.g. s88300_a).
+    /// ER, NR and AC6 sfx models leave most texture paths empty (ER: 1,353 of 1,708) and name them in the
+    /// material's MATBIN instead, which is where FlverResource looks them up. Those are asked for here too, from
+    /// all of the MATBIN's samplers, as the renderer also matches samplers loosely
+    /// (FxRuntimeSurvey --modelmaterials: ER 1,011, NR 952, AC6 598 of the empty slots name an sfx TPF).
+    /// </summary>
+    private static List<string> MaterialTextures(byte[] bytes, MaterialBank materials)
     {
         var names = new List<string>();
+        static string Stem(string path) => Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
         try
         {
             var data = SoulsFormats.DCX.Is(bytes) ? SoulsFormats.DCX.Decompress(bytes).ToArray() : bytes;
             var flver = SoulsFormats.FLVER2.Read(data);
             foreach (var material in flver.Materials)
+            {
+                bool fromMatbin = false;
                 foreach (var texture in material.Textures)
+                {
                     if (!string.IsNullOrEmpty(texture.Path))
-                        names.Add(Path.GetFileNameWithoutExtension(texture.Path.Replace('\\', '/')));
+                        names.Add(Stem(texture.Path));
+                    else
+                        fromMatbin = true;
+                }
+
+                var matbin = fromMatbin && !string.IsNullOrEmpty(material.MTD) ? materials?.GetMatbin(Stem(material.MTD)) : null;
+                if (matbin != null)
+                    foreach (var sampler in matbin.Samplers)
+                        if (!string.IsNullOrEmpty(sampler.Path))
+                            names.Add(Stem(sampler.Path));
+            }
         }
         catch
         {

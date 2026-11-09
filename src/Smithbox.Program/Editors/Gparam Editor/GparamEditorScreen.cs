@@ -35,7 +35,7 @@ public class GparamEditorScreen : EditorScreen
         CommandQueue = new GparamCommandQueue(this, Project);
     }
 
-    public string EditorName => "";
+    public string EditorName => "Gparam Editor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
     public string WindowName => "";

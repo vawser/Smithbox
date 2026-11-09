@@ -70,6 +70,13 @@ public class FxEffectList
 
         RebuildCache();
 
+        // A jump from another editor to an effect the filter hides: clear the filter so the list can show it
+        if (Editor.Selection.FocusEntry && Editor.Selection.Entry != null && Filter != "" && !Cache.Contains(Editor.Selection.Entry))
+        {
+            Filter = "";
+            RebuildCache();
+        }
+
         if (CFG.Current.FxEditor_EffectList_Group_By_Binder)
             DisplayGrouped();
         else

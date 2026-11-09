@@ -190,8 +190,33 @@ namespace SoulsFormats
             _ => throw new FormatException($"Unknown FXR field type '{t}'."),
         };
 
-        private static string Str(JsonElement e, string name) =>
-            e.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
+        private static string Str(JsonElement e, string name)
+        {
+            var s = e.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
+            return name == "desc" ? PlainLinks(s) : s;
+        }
+
+        // {@link target} and {@link target shown text}, from fxr-main's JSDoc
+        private static readonly System.Text.RegularExpressions.Regex LinkPattern =
+            new(@"\{@link\s+([^\s}]+)(?:\s+([^}]*?))?\s*\}", System.Text.RegularExpressions.RegexOptions.Compiled);
+
+        /// <summary>
+        /// The descriptions come from fxr-main's JSDoc, whose {@link} tags Smithbox doesn't render: a link becomes
+        /// its shown text, or else the target's last part (ActionType.Line to Line), which is the name the editor shows.
+        /// </summary>
+        public static string PlainLinks(string s)
+        {
+            if (string.IsNullOrEmpty(s) || !s.Contains("{@link"))
+                return s;
+
+            return LinkPattern.Replace(s, m =>
+            {
+                if (m.Groups[2].Success && m.Groups[2].Value.Length > 0)
+                    return m.Groups[2].Value;
+                var target = m.Groups[1].Value;
+                return target.Substring(target.LastIndexOf('.') + 1);
+            });
+        }
     }
 
     public class FxrEnumDef

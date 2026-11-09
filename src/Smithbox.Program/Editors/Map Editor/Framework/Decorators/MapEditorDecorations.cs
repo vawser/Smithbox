@@ -566,30 +566,35 @@ public static class MapEditorDecorations
     {
         bool display = false;
         List<AliasEntry> options = null;
+        bool isEffect = false;
 
         var aliases = view.Project.Handler.ProjectData.Aliases;
 
         if (meta != null && meta.ShowParticleList && aliases.TryGetValue(ProjectAliasType.Particles, out List<AliasEntry> particleAliases))
         {
             options = particleAliases;
+            isEffect = true;
             display = true;
         }
 
         if (meta != null && meta.ShowEventFlagList && aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlagAliases))
         {
             options = eventFlagAliases;
+            isEffect = false;
             display = true;
         }
 
         if (meta != null && meta.ShowSoundList && aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> soundAliases))
         {
             options = soundAliases;
+            isEffect = false;
             display = true;
         }
 
         if (meta != null && meta.ShowTalkList && aliases.TryGetValue(ProjectAliasType.TalkScripts, out List<AliasEntry> talkAliases))
         {
             options = talkAliases;
+            isEffect = false;
             display = true;
         }
 
@@ -632,8 +637,18 @@ public static class MapEditorDecorations
 
             ImGui.EndGroup();
 
+            // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor
+            if (isEffect)
+                FxReferenceHelper.Click(view.Project, val);
+
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
+                if (isEffect && FxReferenceHelper.IsAvailable(view.Project) && FxReferenceHelper.TryGetId(val, out _))
+                {
+                    FxReferenceHelper.ContextMenu(view.Project, val);
+                    ImGui.Separator();
+                }
+
                 var opened = MsbAliasEnumContextMenu(view, meta, propinfo, val, ref newVal, options);
                 ImGui.EndPopup();
                 return opened;
