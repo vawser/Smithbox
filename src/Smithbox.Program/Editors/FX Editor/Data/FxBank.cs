@@ -81,6 +81,7 @@ public class FxBank : IDisposable
         _indexTask = Task.Run(() =>
         {
             var entries = new SortedDictionary<int, FxEntry>();
+            var textures = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
             foreach (var binder in binders)
             {
                 if (token.IsCancellationRequested)
@@ -93,6 +94,15 @@ public class FxBank : IDisposable
                         var reader = new BND4Reader(FS.ReadFile(binder.Path).Value);
                         foreach (var file in reader.Files)
                         {
+                            // Effect textures (s<id>[_type].tpf): which binders hold them, for the viewport
+                            if (TryParseTexture(file.Name, out var texture))
+                            {
+                                if (!textures.TryGetValue(texture, out var list))
+                                    textures[texture] = list = new();
+                                list.Add(new FxBinderRef(binder, file.Name));
+                                continue;
+                            }
+
                             if (!TryParseId(file.Name, out var id))
                                 continue;
                             if (!entries.TryGetValue(id, out var entry))
@@ -125,8 +135,28 @@ public class FxBank : IDisposable
             // buffers now rather than whenever the GC gets round to them
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false, compacting: true);
 
+            _finishedTextures = textures;
             _finished.Enqueue(entries);
         }, token);
+    }
+
+    /// <summary>
+    /// Effect textures by name (s88610_a, as the TPF and the texture in it are named), with the binders holding
+    /// them, in binder order. Filled by indexing.
+    /// </summary>
+    public Dictionary<string, List<FxBinderRef>> Textures { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
+    private volatile Dictionary<string, List<FxBinderRef>> _finishedTextures;
+
+    /// <summary>s88610_a.tpf(.dcx), with any folder, to s88610_a.</summary>
+    public static bool TryParseTexture(string internalName, out string name)
+    {
+        name = Path.GetFileName(internalName.Replace('\\', '/'));
+        if (name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            name = name[..^4];
+        if (!name.EndsWith(".tpf", StringComparison.OrdinalIgnoreCase))
+            return false;
+        name = name[..^4];
+        return name.Length > 1 && name[0] is 's' or 'S';
     }
 
     // FXRs are mostly zeros and repeated words, so they pack small (the index holds one per effect)
@@ -152,6 +182,7 @@ public class FxBank : IDisposable
         if (_finished.TryDequeue(out var entries))
         {
             Entries = entries;
+            Textures = _finishedTextures ?? Textures;
             IsIndexing = false;
             IsIndexed = true;
             Version++;

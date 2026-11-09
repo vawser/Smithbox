@@ -27,6 +27,10 @@ public class FxViewportWindow
     /// <summary>The selected effect, running (phase V2), and its particles drawn as small crosses.</summary>
     public FxPreviewRuntime Runtime;
     public FxDebugRenderer ParticleRenderer = new();
+
+    /// <summary>The particles drawn as their billboards (phase V3), and the textures they use.</summary>
+    public FxTextureLibrary Textures;
+    public FxBillboardRenderer Billboards;
     private DateTime LastParticleBuild;
     private float LastParticleTime = -1;
     private static readonly TimeSpan ParticleInterval = TimeSpan.FromMilliseconds(50);
@@ -67,6 +71,8 @@ public class FxViewportWindow
         editor.ActionManager.ActionPerformed += () => EditVersion++;
 
         Runtime = new FxPreviewRuntime(editor);
+        Textures = new FxTextureLibrary(editor);
+        Billboards = new FxBillboardRenderer(editor, Textures);
     }
 
     public void Display(uint dockspaceId)
@@ -90,6 +96,7 @@ public class FxViewportWindow
 
         var camera = (Viewport as VulkanViewport)?.ViewportCamera.CameraTransform.Position ?? Vector3.Zero;
         Runtime.Update(EditVersion, camera);
+        Billboards.Update(Runtime.Instance, camera);
         UpdateParticles();
         ParticleRenderer.Update();
     }
@@ -104,7 +111,7 @@ public class FxViewportWindow
             return;
 
         var instance = Runtime.Instance;
-        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Particles)
+        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Particle_Markers)
         {
             if (LastParticleTime >= 0)
             {
@@ -214,6 +221,8 @@ public class FxViewportWindow
     {
         DebugRenderer.Clear();
         ParticleRenderer.Clear();
+        Billboards.Clear();
+        Textures.Clear();
         Runtime.Clear();
     }
 }

@@ -118,7 +118,10 @@ public class FxPreviewTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Display_Header"), LOC.Get("FX_PreviewTool_Display_Header_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor_Viewport_Display_Particles);
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Billboards")}##fxShowBillboards", ref CFG.Current.FxEditor_Viewport_Display_Billboards);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Billboards_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor_Viewport_Display_Particle_Markers);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Particles_TT"));
 
         ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Shapes")}##fxShowShapes", ref CFG.Current.FxEditor_Viewport_Display_Emitter_Shapes);
@@ -129,6 +132,26 @@ public class FxPreviewTool
 
         if (fxr != null)
             GUI.WrappedText(LOC.Get("FX_PreviewTool_Display_Count", Editor.ViewportWindow.ShownNodes, Editor.ViewportWindow.ShownShapes));
+
+        // Brightness
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Brightness_Header"), LOC.Get("FX_PreviewTool_Brightness_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat("##fxBillboardBrightness", ref CFG.Current.FxEditor_Viewport_Billboard_Brightness, 0.01f, 10f, "%.2fx", ImGuiSliderFlags.Logarithmic);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Brightness_TT"));
+
+        // Billboards drawn, and textures no binder holds
+        var billboards = Editor.ViewportWindow.Billboards;
+        if (billboards != null && fxr != null)
+            GUI.WrappedText(LOC.Get("FX_PreviewTool_Billboard_Count", billboards.DrawnBillboards, billboards.BatchCount));
+
+        var missing = Editor.ViewportWindow.Textures?.MissingTextures;
+        if (missing is { Count: > 0 })
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color,
+                LOC.Get("FX_PreviewTool_Missing_Textures", string.Join(", ", missing.Take(8)), missing.Count));
+        }
     }
 
     /// <summary>What the runtime is doing: the effect's state, its particles and nodes, and whether it has ended.</summary>

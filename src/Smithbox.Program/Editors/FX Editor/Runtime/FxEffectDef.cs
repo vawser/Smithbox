@@ -123,6 +123,9 @@ public sealed class FxAppearanceDef
     public FxrActionView View;
     public string Name;
     public bool IsParticle;
+
+    /// <summary>For PointSprite, BillboardEx and MultiTextureBillboardEx: what the billboard renderer draws.</summary>
+    public FxBillboardDef Billboard;
 }
 
 public sealed class FxConfigDef
@@ -301,8 +304,12 @@ public sealed class FxConfigDef
                     def.FadeDuration = Prop(view, "duration");
                     break;
                 case "Appearance":
-                    def.Appearances.Add(new FxAppearanceDef { Action = action, View = view, Name = d.Name, IsParticle = d.IsParticle });
+                {
+                    var appearance = new FxAppearanceDef { Action = action, View = view, Name = d.Name, IsParticle = d.IsParticle };
+                    appearance.Billboard = FxBillboardDef.Build(appearance);
+                    def.Appearances.Add(appearance);
                     break;
+                }
             }
         }
 

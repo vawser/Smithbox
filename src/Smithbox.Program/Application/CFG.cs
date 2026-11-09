@@ -1240,7 +1240,9 @@ public class CFG
     // Viewport and playback
     public bool FxEditor_Viewport_Display_Emitter_Shapes = true;
     public bool FxEditor_Viewport_Display_Node_Axes = true;
-    public bool FxEditor_Viewport_Display_Particles = true;
+    public bool FxEditor_Viewport_Display_Particle_Markers = false;
+    public bool FxEditor_Viewport_Display_Billboards = true;
+    public float FxEditor_Viewport_Billboard_Brightness = 1.0f;
     public float FxEditor_Playback_Speed = 1.0f;
     public bool FxEditor_Playback_Loop = true;
     public float FxEditor_Playback_Length = 5.0f;
