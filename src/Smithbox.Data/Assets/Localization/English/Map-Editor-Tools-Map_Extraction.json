@@ -1,0 +1,76 @@
+{
+  "Entries": [
+    { "Key": "MAP_MapExtraction_Header", "Text": "Map Extraction" },
+    { "Key": "MAP_ToolWindow_View_Toggle_Map_Extraction", "Text": "Map Extraction" },
+    { "Key": "MAP_MapExtraction_Description", "Text": "Exports the selected map objects as one OBJ, placed as they appear in the viewport. Selecting a map or folder in the content list exports the objects under it." },
+
+    { "Key": "MAP_MapExtraction_Selection_Header", "Text": "Selection" },
+    { "Key": "MAP_MapExtraction_Selection_Header_TT", "Text": "The objects that will be exported. Objects without a loaded model are skipped and listed in the log." },
+    { "Key": "MAP_MapExtraction_Selection_None", "Text": "Select one or more objects in the viewport or the content list." },
+    { "Key": "MAP_MapExtraction_Selection_Count", "Text": "{0} selected." },
+
+    { "Key": "MAP_MapExtraction_Output_Header", "Text": "Output Directory" },
+    { "Key": "MAP_MapExtraction_Output_Header_TT", "Text": "The folder the OBJ, its MTL and the Textures folder are written to." },
+    { "Key": "MAP_MapExtraction_Output_Input_TT", "Text": "The folder to write to. It must already exist." },
+    { "Key": "MAP_MapExtraction_Set_Output", "Text": "Set Output Directory" },
+    { "Key": "MAP_MapExtraction_Set_Output_TT", "Text": "Choose the folder to write to." },
+    { "Key": "MAP_MapExtraction_Open_Output", "Text": "Open Output Directory" },
+    { "Key": "MAP_MapExtraction_Open_Output_TT", "Text": "Open the output folder in Explorer." },
+
+    { "Key": "MAP_MapExtraction_File_Name_Header", "Text": "File Name" },
+    { "Key": "MAP_MapExtraction_File_Name_Header_TT", "Text": "The name of the OBJ and MTL files, without the extension." },
+    { "Key": "MAP_MapExtraction_File_Name_Input_TT", "Text": "An existing file with this name is overwritten." },
+
+    { "Key": "MAP_MapExtraction_Textures_Header", "Text": "Textures" },
+    { "Key": "MAP_MapExtraction_Textures_Header_TT", "Text": "The textures the viewport draws the objects with are written to a Textures folder next to the OBJ, and bound to the materials in the MTL." },
+    { "Key": "MAP_MapExtraction_Include_Textures", "Text": "Include Textures" },
+    { "Key": "MAP_MapExtraction_Include_Textures_TT", "Text": "Write the textures and bind them in the MTL. Without this, the materials are plain grey." },
+    { "Key": "MAP_MapExtraction_Include_Material_Maps", "Text": "Include Normal, Specular and Emissive Maps" },
+    { "Key": "MAP_MapExtraction_Include_Material_Maps_TT", "Text": "Also write the normal (map_Bump), specular (map_Ks) and emissive (map_Ke) textures. Without this, only the albedo is written." },
+    { "Key": "MAP_MapExtraction_Format_PNG", "Text": "PNG" },
+    { "Key": "MAP_MapExtraction_Format_DDS", "Text": "DDS" },
+    { "Key": "MAP_MapExtraction_Format_TT", "Text": "PNG decodes the textures, which every program can read. DDS writes them as the game stores them, which is faster and lossless, but some programs can't read the BC7 format the later games use." },
+
+    { "Key": "MAP_MapExtraction_Options_Header", "Text": "Options" },
+    { "Key": "MAP_MapExtraction_Options_Header_TT", "Text": "How the geometry is written." },
+    { "Key": "MAP_MapExtraction_Centre", "Text": "Centre at Origin" },
+    { "Key": "MAP_MapExtraction_Centre_TT", "Text": "Move the export so the centre of the selection is at the origin. The objects keep their places relative to each other. Without this, they keep their map coordinates." },
+    { "Key": "MAP_MapExtraction_Flip_UVs", "Text": "Flip UVs" },
+    { "Key": "MAP_MapExtraction_Flip_UVs_TT", "Text": "Flip the V coordinate, as most programs put V = 0 at the bottom of a texture while the games put it at the top. Leave this on unless the textures appear upside down." },
+    { "Key": "MAP_MapExtraction_Mirror_X", "Text": "Mirror X" },
+    { "Key": "MAP_MapExtraction_Mirror_X_TT", "Text": "Negate the X axis, converting the games' left-handed coordinates to right-handed ones. Turn this on if the export appears mirrored." },
+
+    { "Key": "MAP_MapExtraction_Actions_Header", "Text": "Actions" },
+    { "Key": "MAP_MapExtraction_Actions_Header_TT", "Text": "Write the export." },
+    { "Key": "MAP_MapExtraction_Export", "Text": "Export Selection" },
+    { "Key": "MAP_MapExtraction_Export_TT", "Text": "Write the selected objects to an OBJ in the output directory." },
+
+    { "Key": "MAP_MapExtraction_Progress_Header", "Text": "Progress" },
+    { "Key": "MAP_MapExtraction_Progress", "Text": "{0} / {1} objects" },
+    { "Key": "MAP_MapExtraction_Cancel", "Text": "Cancel" },
+    { "Key": "MAP_MapExtraction_Cancel_TT", "Text": "Stop the export. Files already written are left as they are." },
+
+    { "Key": "MAP_MapExtraction_Complete", "Text": "Exported {0} objects and {1} textures to {2}" },
+    { "Key": "MAP_MapExtraction_Cancelled", "Text": "The export was cancelled." },
+    { "Key": "MAP_MapExtraction_Warnings", "Text": "{0} warnings: see the log." },
+    { "Key": "MAP_MapExtraction_Skipped_Count", "Text": "{0} objects were skipped: see the log." },
+    { "Key": "MAP_MapExtraction_Skipped", "Text": "Map Extraction skipped {0}" },
+    { "Key": "MAP_MapExtraction_Error_Output", "Text": "Map Extraction: set an output directory that exists." },
+    { "Key": "MAP_MapExtraction_Error_No_Models", "Text": "Map Extraction: none of the selected objects has a loaded model." },
+    { "Key": "MAP_MapExtraction_Error_None_Written", "Text": "Map Extraction: none of the models could be read, so nothing was exported." },
+    { "Key": "MAP_MapExtraction_Error_Failed", "Text": "Map Extraction failed: {0}" },
+
+    { "Key": "MAP_MapExtraction_Skip_Not_Flver", "Text": "it doesn't draw a FLVER model" },
+    { "Key": "MAP_MapExtraction_Skip_Not_Loaded", "Text": "its model isn't loaded" },
+    { "Key": "MAP_MapExtraction_Skip_No_Source", "Text": "its model wasn't loaded from a file" },
+    { "Key": "MAP_MapExtraction_Skip_Flver0", "Text": "Demon's Souls models aren't supported" },
+
+    { "Key": "MAP_MapExtraction_Warning_Container_Missing", "Text": "Map Extraction: couldn't read {0}" },
+    { "Key": "MAP_MapExtraction_Warning_Model_Missing", "Text": "Map Extraction: {0} wasn't found in {1}" },
+    { "Key": "MAP_MapExtraction_Warning_Model_Read", "Text": "Map Extraction: couldn't read {0}: {1}" },
+    { "Key": "MAP_MapExtraction_Warning_Texture_Missing", "Text": "Map Extraction: texture {0} wasn't found in {1}" },
+    { "Key": "MAP_MapExtraction_Warning_Texture_Container_Read", "Text": "Map Extraction: couldn't read the textures in {0}: {1}" },
+    { "Key": "MAP_MapExtraction_Warning_Texture_Decode", "Text": "Map Extraction: couldn't decode texture {0}: {1}" },
+    { "Key": "MAP_MapExtraction_Warning_Texture_Write", "Text": "Map Extraction: couldn't write texture {0}: {1}" }
+  ]
+}

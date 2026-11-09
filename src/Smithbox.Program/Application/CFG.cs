@@ -309,6 +309,15 @@ public class CFG
     public ResourceExtractionType MapEditor_ModelDataExtraction_Type = ResourceExtractionType.Loose;
     public string MapEditor_ModelDataExtraction_DefaultOutputFolder = "";
 
+    public string MapEditor_MapExtraction_OutputDirectory = "";
+    public string MapEditor_MapExtraction_FileName = "map_extraction";
+    public bool MapEditor_MapExtraction_IncludeTextures = true;
+    public bool MapEditor_MapExtraction_IncludeMaterialMaps = true;
+    public MapExtractionTextureFormat MapEditor_MapExtraction_TextureFormat = MapExtractionTextureFormat.PNG;
+    public bool MapEditor_MapExtraction_FlipUVs = true;
+    public bool MapEditor_MapExtraction_MirrorX = false;
+    public bool MapEditor_MapExtraction_CentreAtOrigin = false;
+
     public bool MapEditor_LightAtlas_AutomaticAdd = true;
     public bool MapEditor_LightAtlas_AutomaticDelete = true;
     public bool MapEditor_LightAtlas_AutomaticAdjust = true;
@@ -566,6 +575,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;
+    public bool Interface_MapEditor_Tool_MapExtraction = true;
     public bool Interface_MapEditor_Tool_DestructionGeneration = true;
     public bool Interface_MapEditor_Tool_LoadList = true;
     public bool Interface_MapEditor_Tool_EntryFileList = true;

@@ -128,6 +128,7 @@ public class MapEditorView : IEditorView
     public CollisionEditorTool CollisionEditorTool;
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
+    public MapExtractionTool MapExtractionTool;
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
@@ -229,6 +230,7 @@ public class MapEditorView : IEditorView
         CollisionEditorTool = new CollisionEditorTool(this, project);
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
+        MapExtractionTool = new MapExtractionTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);

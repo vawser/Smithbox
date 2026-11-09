@@ -2,8 +2,25 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Get gizmos to work in Orthographic/Oblique view mode
 - Add 'camera path' authoring for new camera hkxs for cutscenes
+- Add navigation editor support for the other project types
+- Get gizmos to work in Orthographic/Oblique view mode
 - AEP rendering needs to carry in the asset collision too
+
+- Create:
+    Add tab: option to mass-create all chrs and all assets in a AEG category
+        - Include position offset so they can be spaced out
+        - Useful for previewing lots of assets quickly
+
+- Patrol Route:
+    - Add animated playback of the chr(s) moving between each point as an option
+    - Include support for the patrol logic options (i.e. point to point, random point, etc)
+    - Include support for platoons
+
+- Add Map Extraction tool:
+    - Under Data Transfer category
+    - Allows the user to export their selection (if a mesh) as a obj
+        - For more than one selection, it keeps the position of the meshes as they appear in the viewport (i.e. if the user selects a house, the obj should look like the house)
+        - Add option to include textures (obj should have the textures bound properly, plus the actual textures should be exported)
 
 
