@@ -237,6 +237,7 @@ public class FxEditorScreen : EditorScreen
             ActionManager.RedoAction();
 
         EffectTree.Shortcuts();
+        EffectList.Shortcuts();
     }
 
     private void FileMenu()
@@ -317,6 +318,12 @@ public class FxEditorScreen : EditorScreen
             CFG.Current.FxEditor_Inspector_Show_Raw = !CFG.Current.FxEditor_Inspector_Show_Raw;
         GUI.ShowActiveStatus(CFG.Current.FxEditor_Inspector_Show_Raw);
 
+        // Auto-framing a newly selected effect
+        if (ImGui.MenuItem($"{LOC.Get("FX_PreviewTool_Auto_Frame")}##fxToggleAutoFrame"))
+            CFG.Current.FxEditor_Viewport_Auto_Frame = !CFG.Current.FxEditor_Viewport_Auto_Frame;
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Auto_Frame_TT"));
+        GUI.ShowActiveStatus(CFG.Current.FxEditor_Viewport_Auto_Frame);
+
         ImGui.Separator();
 
         // Curve Editor
@@ -367,7 +374,7 @@ public class FxEditorScreen : EditorScreen
         var dirty = Data.Bank.DirtyEntries.ToList();
 
         // Automatic saves stay quiet when there's nothing to save
-        if (autoSave && dirty.Count == 0)
+        if (autoSave && !Data.Bank.HasChanges)
             return;
 
         await Data.Bank.SaveGuarded(dirty);
@@ -387,6 +394,8 @@ public class FxEditorScreen : EditorScreen
 
         return bank.DirtyEntries
             .SelectMany(e => e.Binders.Select(b => $"{b.Binder.Path} ({e.Stem})"))
+            .Concat(bank.PendingRemovals().Select(x => $"{x.where.Binder.Path} ({LOC.Get("FX_Unsaved_Removal", x.entry.Stem)})"))
+            .Distinct()
             .OrderBy(e => e)
             .ToList();
     }

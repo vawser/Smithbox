@@ -93,6 +93,19 @@ public class FxBank : IDisposable
                     if (FS.FileExists(binder.Path))
                     {
                         var reader = new BND4Reader(FS.ReadFile(binder.Path).Value);
+
+                        // Only a binder the project has saved can differ from the game's: its effects are compared
+                        // with the game's copy of the binder (FX Effect List Actions Plan §1)
+                        Dictionary<string, byte[]> vanilla = null;
+                        if (Project.VFS.ProjectFS.FileExists(binder.Path))
+                            vanilla = ReadVanillaEffects(binder.Path);
+
+                        // Each effect's ffxreslist, for copying into binders it's added to
+                        var lists = new Dictionary<string, BinderFileHeader>(StringComparer.OrdinalIgnoreCase);
+                        foreach (var file in reader.Files)
+                            if (file.Name.EndsWith(".ffxreslist", StringComparison.OrdinalIgnoreCase))
+                                lists[Path.GetFileNameWithoutExtension(file.Name.Replace('\\', '/'))] = file;
+
                         foreach (var file in reader.Files)
                         {
                             // Effect textures (s<id>[_type].tpf): which binders hold them, for the viewport
@@ -120,7 +133,12 @@ public class FxBank : IDisposable
                                 entry = new FxEntry { Id = id, Alias = aliases.GetValueOrDefault(id, "") };
                                 entries[id] = entry;
                             }
-                            entry.Binders.Add(new FxBinderRef(binder, file.Name));
+                            var r = new FxBinderRef(binder, file.Name);
+                            entry.Binders.Add(r);
+                            entry.OnDisk[binder.Path] = r;
+
+                            if (entry.ResourceList == null && lists.TryGetValue(entry.Stem, out var resourceList))
+                                entry.ResourceList = reader.ReadFile(resourceList).ToArray();
 
                             // Keep the effect's bytes, packed, from the first binder that has it (copies in
                             // other binders are identical), so selecting it later never decompresses a binder
@@ -129,6 +147,19 @@ public class FxBank : IDisposable
                                 var bytes = reader.ReadFile(file);
                                 entry.Packed = Pack(bytes.Span);
                                 entry.PackedLength = bytes.Length;
+
+                                // How it compares with the game's copy, judged from the binder it's read from
+                                if (vanilla != null)
+                                {
+                                    if (!vanilla.TryGetValue(file.Name, out var original))
+                                        entry.Vanilla = FxVanillaState.Added;
+                                    else if (!bytes.Span.SequenceEqual(original))
+                                    {
+                                        entry.Vanilla = FxVanillaState.Modified;
+                                        entry.VanillaPacked = Pack(original);
+                                        entry.VanillaLength = original.Length;
+                                    }
+                                }
                             }
                         }
                     }
@@ -161,6 +192,38 @@ public class FxBank : IDisposable
     /// <summary>Effect models by name (s88300), with the binders holding them. Filled by indexing.</summary>
     public Dictionary<string, List<FxBinderRef>> Models { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
     private volatile Dictionary<string, List<FxBinderRef>> _finishedModels;
+
+    /// <summary>The game's own copy of a binder: its FXRs' bytes by internal name. Empty when the game has no such binder.</summary>
+    private Dictionary<string, byte[]> ReadVanillaEffects(string path)
+    {
+        var result = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
+        var vfs = Project.VFS.VanillaFS;
+        if (!vfs.FileExists(path))
+            return result;
+        var reader = new BND4Reader(vfs.ReadFile(path).Value);
+        foreach (var file in reader.Files)
+            if (file.Name.EndsWith(".fxr", StringComparison.OrdinalIgnoreCase))
+                result[file.Name] = reader.ReadFile(file).ToArray();
+        return result;
+    }
+
+    /// <summary>The game's copy of the effect, read fresh; null when it has none (or it's the same as the project's, see <see cref="ReadCopy"/>).</summary>
+    public FXR ReadVanilla(FxEntry entry)
+    {
+        try
+        {
+            return entry.Vanilla switch
+            {
+                FxVanillaState.Modified when entry.VanillaPacked != null => FXR.Read(Unpack(entry.VanillaPacked, entry.VanillaLength)),
+                FxVanillaState.Same => ReadCopy(entry),
+                _ => null,
+            };
+        }
+        catch
+        {
+            return null;
+        }
+    }
 
     /// <summary>s88300.flver(.dcx), with any folder, to s88300.</summary>
     public static bool TryParseModel(string internalName, out string name)
@@ -298,21 +361,72 @@ public class FxBank : IDisposable
     /// <summary>Adds an effect made in the editor. It's written into its binders on the next save.</summary>
     public void AddNew(FxEntry entry)
     {
-        entry.IsNew = true;
-        entry.IsDirty = true;
-        Entries[entry.Id] = entry;
+        entry.IsNew = entry.OnDisk.Count == 0;
+        if (entry.IsNew)
+            entry.Vanilla = FxVanillaState.Added;
+        Restore(entry);
+    }
+
+    /// <summary>Takes a new effect out again (its creation was undone). Once saved, the next save removes its files.</summary>
+    public void RemoveNew(FxEntry entry) => Delete(entry);
+
+    /// <summary>
+    /// Effects deleted in the editor whose files are still in binders: the next save removes them
+    /// (FX Effect List Actions Plan §2). Their ids stay taken until then.
+    /// </summary>
+    public List<FxEntry> Deleted = new();
+
+    /// <summary>Whether an effect id is in use, or was deleted and not saved since.</summary>
+    public bool IsIdTaken(int id) => Entries.ContainsKey(id) || Deleted.Any(e => e.Id == id);
+
+    /// <summary>The first id from <paramref name="from"/> up that isn't taken.</summary>
+    public int FreeId(int from)
+    {
+        int id = Math.Max(0, from);
+        while (IsIdTaken(id))
+            id++;
+        return id;
+    }
+
+    /// <summary>Takes an effect out of the bank; its files go on the next save. Undone by <see cref="Restore"/>.</summary>
+    public void Delete(FxEntry entry)
+    {
+        if (Entries.TryGetValue(entry.Id, out var e) && e == entry)
+            Entries.Remove(entry.Id);
+        if (entry.OnDisk.Count > 0 && !Deleted.Contains(entry))
+            Deleted.Add(entry);
         Version++;
     }
 
-    /// <summary>Takes an unsaved new effect out again (its creation was undone).</summary>
-    public void RemoveNew(FxEntry entry)
+    /// <summary>Puts an effect (back) in the bank; it's written to its binders on the next save.</summary>
+    public void Restore(FxEntry entry)
     {
-        if (entry.IsNew && Entries.TryGetValue(entry.Id, out var e) && e == entry)
-        {
-            Entries.Remove(entry.Id);
-            Version++;
-        }
+        Deleted.Remove(entry);
+        Entries[entry.Id] = entry;
+        entry.IsDirty = true;
+        Version++;
     }
+
+    /// <summary>Whether a save has anything to do: modified effects, or files to add or remove.</summary>
+    public bool HasChanges => Deleted.Count > 0 || Entries.Values.Any(e => e.IsLoaded && e.IsDirty);
+
+    /// <summary>Every file the next save removes: from binders an effect left, and every file of a deleted effect.</summary>
+    public List<(FxEntry entry, FxBinderRef where)> PendingRemovals()
+    {
+        var result = new List<(FxEntry, FxBinderRef)>();
+        foreach (var e in Entries.Values)
+            if (e.OnDisk.Count > 0 && e.MembershipChanged)
+                foreach (var r in e.OnDisk.Values)
+                    if (!e.InBinder(r.Binder.Path))
+                        result.Add((e, r));
+        foreach (var e in Deleted)
+            foreach (var r in e.OnDisk.Values)
+                result.Add((e, r));
+        return result;
+    }
+
+    /// <summary>Notes a version change, so lists rebuild (binder membership, aliases).</summary>
+    public void Touch() => Version++;
 
     /// <summary>The internal name an effect would have in a binder, from another effect's name there.</summary>
     public static string SiblingName(string internalName, string stem, string extension) => FxBinderOps.SiblingName(internalName, stem, extension);
@@ -341,16 +455,22 @@ public class FxBank : IDisposable
     /// <summary>Saves the given effects. Each binder they touch is read and written once.</summary>
     public async Task<bool> Save(IEnumerable<FxEntry> entries)
     {
+        // What to do is settled on the calling (main) thread, before the work moves off it
+        var list = entries.Where(e => e.IsLoaded).ToList();
+        var removals = PendingRemovals();
+        var deleted = Deleted.ToList();
+
         await Task.Yield();
 
-        var list = entries.Where(e => e.IsLoaded).ToList();
-        if (list.Count == 0)
+        if (list.Count == 0 && removals.Count == 0)
         {
             Smithbox.Log(this, LOC.Get("FX_Data_Save_Nothing"));
             return true;
         }
 
         Smithbox.Log(this, LOC.Get("FX_Data_Save_Start", list.Count, list.Sum(e => e.Binders.Count), Project.Descriptor.ProjectPath));
+        if (removals.Count > 0)
+            Smithbox.Log(this, LOC.Get("FX_Data_Save_Removals", removals.Count));
 
         // Serialize on the calling thread order, then write per binder
         var bytes = new Dictionary<FxEntry, byte[]>();
@@ -368,31 +488,41 @@ public class FxBank : IDisposable
             }
         }
 
-        var byBinder = bytes.Keys
-            .SelectMany(e => e.Binders.Select(b => (binder: b.Binder, entry: e, name: b.InternalName)))
-            .GroupBy(x => x.binder.Path, StringComparer.OrdinalIgnoreCase);
+        // Every binder touched: by a write, or by a removal
+        var work = bytes.Keys
+            .SelectMany(e => e.Binders.Select(b => (binder: b.Binder, entry: e, r: b, remove: false)))
+            .Concat(removals.Select(x => (binder: x.where.Binder, x.entry, r: x.where, remove: true)))
+            .GroupBy(x => x.binder.Path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
 
-        var groups = byBinder.ToList();
-        SaveTotal = groups.Count;
+        SaveTotal = work.Count;
         SaveDone = 0;
 
         bool ok = true;
-        foreach (var group in groups)
+        var done = new List<(FxEntry entry, FxBinderRef r, bool remove)>();
+        foreach (var group in work)
         {
             var binderEntry = group.First().binder;
             SaveCurrent = binderEntry.Filename;
             try
             {
                 var bnd = BND4.Read(FS.ReadFile(binderEntry.Path).Value);
-                foreach (var (_, entry, name) in group)
+                bool groupOk = true;
+
+                // Removals first, so an id deleted and made again in one save gets a fresh file
+                foreach (var (_, entry, r, _) in group.Where(x => x.remove))
+                    FxBinderOps.RemoveEffectFile(bnd, r.InternalName, entry.Stem);
+
+                foreach (var (_, entry, r, _) in group.Where(x => !x.remove))
                 {
-                    var file = bnd.Files.FirstOrDefault(f => f.Name == name);
-                    if (file == null && entry.IsNew)
-                        file = AddEffectFile(bnd, entry, name);
+                    var file = bnd.Files.FirstOrDefault(f => f.Name == r.InternalName);
+                    // A binder the effect wasn't in yet (a new effect, or Add to Binder) gets the file
+                    if (file == null && !entry.OnDisk.ContainsKey(binderEntry.Path))
+                        file = AddEffectFile(bnd, entry, r.InternalName);
                     if (file == null)
                     {
                         Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Find_Effect", entry.Stem, binderEntry.Path));
-                        ok = false;
+                        ok = groupOk = false;
                         continue;
                     }
                     file.Bytes = bytes[entry];
@@ -401,6 +531,9 @@ public class FxBank : IDisposable
                 var written = bnd.Write();
                 Project.VFS.ProjectFS.WriteFile(binderEntry.Path, written);
                 Smithbox.Log(this, LOC.Get("FX_Data_Saved_Binder", binderEntry.Path, group.Count(), written.Length / 1024));
+
+                if (groupOk)
+                    done.AddRange(group.Select(x => (x.entry, x.r, x.remove)));
             }
             catch (Exception e)
             {
@@ -410,12 +543,25 @@ public class FxBank : IDisposable
             SaveDone++;
         }
 
+        // The binders now hold what was written to them
+        foreach (var (entry, r, remove) in done)
+        {
+            if (remove)
+                entry.OnDisk.Remove(r.Binder.Path);
+            else
+                entry.OnDisk[r.Binder.Path] = r;
+        }
+        foreach (var e in deleted)
+            if (e.OnDisk.Count == 0)
+                Deleted.Remove(e);
+
         if (ok)
         {
             foreach (var (entry, data) in bytes)
             {
                 entry.IsDirty = false;
                 entry.IsNew = false;
+                UpdateVanillaState(entry, data);
                 // Reloading now shows what was saved
                 entry.Packed = Pack(data);
                 entry.PackedLength = data.Length;
@@ -452,7 +598,26 @@ public class FxBank : IDisposable
     }
 
     private static BinderFile AddEffectFile(BND4 bnd, FxEntry entry, string name) =>
-        FxBinderOps.AddEffectFile(bnd, name, entry.Stem, entry.ResourceListFrom >= 0 ? $"f{entry.ResourceListFrom:D9}" : null);
+        FxBinderOps.AddEffectFile(bnd, name, entry.Stem, entry.ResourceListFrom >= 0 ? $"f{entry.ResourceListFrom:D9}" : null, entry.ResourceList);
+
+    /// <summary>
+    /// After a save, whether the saved bytes still match the game's. An effect that matched until now had the game's
+    /// bytes as its packed copy, so that copy is kept as the vanilla one before it's replaced.
+    /// </summary>
+    private static void UpdateVanillaState(FxEntry entry, byte[] saved)
+    {
+        if (entry.Vanilla == FxVanillaState.Added)
+            return;
+        if (entry.Vanilla == FxVanillaState.Same && entry.VanillaPacked == null)
+        {
+            entry.VanillaPacked = entry.Packed;
+            entry.VanillaLength = entry.PackedLength;
+        }
+        if (entry.VanillaPacked == null)
+            return;
+        var original = Unpack(entry.VanillaPacked, entry.VanillaLength);
+        entry.Vanilla = original.AsSpan().SequenceEqual(saved) ? FxVanillaState.Same : FxVanillaState.Modified;
+    }
 
     /// <summary>
     /// ER, AC6 and NR keep f&lt;id&gt;.ffxreslist next to each FXR: the build tool's list of the effect's source

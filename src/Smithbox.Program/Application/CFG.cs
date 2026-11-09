@@ -1258,6 +1258,7 @@ public class CFG
     public float FxEditor_Preview_Swing_Radius = 1.0f;
     public float FxEditor_Preview_Swing_Speed = 360.0f;
     public bool FxEditor_Preview_Motion_Follow = true;
+    public bool FxEditor_Viewport_Auto_Frame = true;
 
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;

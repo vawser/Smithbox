@@ -216,20 +216,23 @@ public static class FxNodeOps
 
     // ---------------------------------------------------------------- checks
 
-    /// <summary>What looks wrong with the node on its own, for the tree's warning icon. Empty when nothing does.</summary>
-    public static List<string> Check(FxEditorScreen editor, FxEntry entry, FxrNode node)
+    /// <summary>
+    /// What's wrong with the node's structure on its own: a Proxy node without a usable target, a node without
+    /// configs, a state map out of range or of the wrong length. Works on any copy of an effect (the Project Check
+    /// reads unloaded ones).
+    /// </summary>
+    public static List<string> StructureProblems(FXR fxr, int effectId, Func<int, bool> effectExists, FxrNode node)
     {
         var problems = new List<string>();
-        var fxr = entry.Fxr;
 
         if (node.Type == ProxyType)
         {
             if (node.Actions.FirstOrDefault(a => a.Type == ProxyAction) is { Fields1.Count: > 0 } proxy)
             {
                 int id = (int)proxy.Fields1[0];
-                if (id == entry.Id)
+                if (id == effectId)
                     problems.Add(LOC.Get("FX_Check_Proxy_Self"));
-                else if (editor.Data.Bank.IsIndexed && !editor.Data.Bank.Entries.ContainsKey(id))
+                else if (!effectExists(id))
                     problems.Add(LOC.Get("FX_Check_Proxy_Missing", $"f{id:D9}"));
             }
             else
@@ -250,6 +253,14 @@ public static class FxNodeOps
             if (map.Count != fxr.States.Count)
                 problems.Add(LOC.Get("FX_Check_Map_Count", map.Count, fxr.States.Count));
         }
+        return problems;
+    }
+
+    /// <summary>What looks wrong with the node on its own, for the tree's warning icon. Empty when nothing does.</summary>
+    public static List<string> Check(FxEditorScreen editor, FxEntry entry, FxrNode node)
+    {
+        var bank = editor.Data.Bank;
+        var problems = StructureProblems(entry.Fxr, entry.Id, id => !bank.IsIndexed || bank.Entries.ContainsKey(id), node);
 
         var missing = editor.ViewportWindow?.Textures?.MissingTextures;
         if (missing is { Count: > 0 })

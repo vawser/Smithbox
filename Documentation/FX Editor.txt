@@ -1,11 +1,3 @@
 #----------------------------------------------------
 # FX Editor TODO
 #----------------------------------------------------
-- Other:
-    - Add quicklinks in other editors to jump to effect
-
-- Effect List:
-    - Add Duplicate / Delete action
-    - Add Export action
-    - Option to toggle auto-framing of effect
-

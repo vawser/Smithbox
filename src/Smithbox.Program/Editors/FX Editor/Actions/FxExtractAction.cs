@@ -5,8 +5,8 @@ namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
 /// Extract to New Effect: the node is replaced by a Proxy node starting a new effect that holds the node. The new
-/// effect joins the bank (it's written into the host's binders on save). Undo puts the node back and, while the new
-/// effect hasn't been saved, takes it out of the bank again; once saved its file stays.
+/// effect joins the bank (it's written into the host's binders on save). Undo puts the node back and takes the new
+/// effect out of the bank again; if it was saved meanwhile, the next save removes its files.
 /// </summary>
 public class FxExtractAction : EditorAction
 {
@@ -42,8 +42,7 @@ public class FxExtractAction : EditorAction
         int index = Parent.Children.IndexOf(Proxy);
         if (index >= 0)
             Parent.Children[index] = Node;
-        if (Created.IsNew)
-            Bank.RemoveNew(Created);
+        Bank.RemoveNew(Created);
         Bank.MarkDirty(Host);
         return ActionEvent.NoEvent;
     }
