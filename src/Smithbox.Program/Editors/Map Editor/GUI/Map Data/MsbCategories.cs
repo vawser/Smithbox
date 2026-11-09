@@ -73,7 +73,7 @@ public static class MsbCategories
             ["Event"] = typeof(MSBS.EventParam),
             ["Region"] = typeof(MSBS.PointParam),
             ["Part"] = typeof(MSBS.PartsParam),
-            ["Route"] = typeof(MSBS.Route), // Direct category
+            ["Route"] = typeof(MSBS.RouteParam),
         },
         [ProjectType.ER] = new Dictionary<string, Type>()
         {

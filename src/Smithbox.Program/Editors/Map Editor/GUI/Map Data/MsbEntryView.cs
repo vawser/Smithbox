@@ -89,14 +89,10 @@ public class MsbEntryView
 
                 for (int i = 0; i < _cachedEntries.Count; i++)
                 {
-                    var (entry, ent, cachedLabel, alias) = _cachedEntries[i];
+                    var (label, alias) = GetCurrentLabel(i);
+                    var ent = _cachedEntries[i].ent;
 
-                    // Read directly, since renames from the other Map Editor windows do not rebuild this list
-                    var label = entry is IMsbEntry msbEntry && !string.IsNullOrWhiteSpace(msbEntry.Name)
-                        ? msbEntry.Name
-                        : cachedLabel;
-
-                    if (!EditorFilters.IsMatch(EntryListFilter, label, ExactEntryListFilter))
+                    if (!IsShown(label))
                     {
                         continue;
                     }
@@ -127,6 +123,30 @@ public class MsbEntryView
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Returns the entry's current name and alias. The name is read directly, since renames from the
+    /// other Map Editor windows do not rebuild this list; the alias is looked up again only when the name changed.
+    /// </summary>
+    private (string label, string alias) GetCurrentLabel(int index)
+    {
+        var (entry, ent, cachedLabel, alias) = _cachedEntries[index];
+
+        if (entry is IMsbEntry msbEntry && !string.IsNullOrWhiteSpace(msbEntry.Name) && msbEntry.Name != cachedLabel)
+        {
+            cachedLabel = msbEntry.Name;
+            alias = Project.Handler.MapData.GetMapObjectName(Selection.SelectedMap?.Name, cachedLabel);
+
+            _cachedEntries[index] = (entry, ent, cachedLabel, alias);
+        }
+
+        return (cachedLabel, alias);
+    }
+
+    private bool IsShown(string label)
+    {
+        return EditorFilters.IsMatch(EntryListFilter, label, ExactEntryListFilter);
     }
 
     private void UpdateCaches()
@@ -198,9 +218,15 @@ public class MsbEntryView
             var start = Math.Min(_lastClickedIndex, listIndex);
             var end = Math.Max(_lastClickedIndex, listIndex);
 
-            for (int k = start; k <= end; k++)
+            // Only the rows the filter shows, so hidden entries are not selected
+            for (int k = start; k <= end && k < _cachedEntries.Count; k++)
             {
-                selection.AddSelection(_cachedEntries[k].ent);
+                var rangeEnt = _cachedEntries[k].ent;
+
+                if (rangeEnt != null && IsShown(GetCurrentLabel(k).label))
+                {
+                    selection.AddSelection(rangeEnt);
+                }
             }
         }
         // Multi-Select Mode
