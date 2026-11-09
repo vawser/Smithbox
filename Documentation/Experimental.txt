@@ -22,3 +22,5 @@
 
 - First-person Mode for Map Editor (player perspective)
     - Would require collision checks and movement handling
+    
+- Add 'camera path' authoring for new camera hkxs for cutscenes

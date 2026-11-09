@@ -244,6 +244,20 @@ public class FlverResource : IResource, IDisposable
         MTD? material = null;
         MATBIN? matbin = null;
 
+        // Duskbloods FLVERs only give paths for albedo slots, and most that differ from the MATBIN name the
+        // normal map (810 of 882 in DB_NT), so the MATBIN's path wins where it has one.
+        // See Documentation/Claude/DB_NT Textures.md
+        if (mpath != "" && type != null && curProject.Descriptor.ProjectType is ProjectType.DB_NT or ProjectType.DB)
+        {
+            var mtdName = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
+            var sampler = bank.GetMatbin(mtdName)?.Samplers.Find(x => x.Type == type);
+
+            if (sampler != null && sampler.Path != "")
+            {
+                path = sampler.Path;
+            }
+        }
+
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));

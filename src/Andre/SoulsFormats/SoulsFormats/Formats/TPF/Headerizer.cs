@@ -188,6 +188,12 @@ namespace SoulsFormats
                 throw new InvalidOperationException($"Cannot headerize texture with unknown {nameof(DXGI_FORMAT)}.");
             }
 
+            // Formats come from the DXGI field rather than the format byte, and the data is block linear
+            if (texture.Platform == TPFPlatform.NintendoSwitch2)
+            {
+                return Switch2Headerizer.Headerize(texture);
+            }
+
             var dds = new DDS();
             byte format = texture.Format;
             short width = texture.Header.Width;

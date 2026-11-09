@@ -2,11 +2,14 @@
 # Map Editor TODO
 #----------------------------------------------------
 
-- Add 'camera path' authoring for new camera hkxs for cutscenes
+- DB_NT MSB: research/sync with ER
+- NR MSB: research/sync with ER
+- AC MSB: research
+- Display Group: UX assessment
+
 - Add navigation editor support for the other project types
+
 - Get gizmos to work in Orthographic/Oblique view mode
 
-
 - DB_NT texture decoding, so they can be displayed
-- AEP rendering needs to carry in the asset collision too
 

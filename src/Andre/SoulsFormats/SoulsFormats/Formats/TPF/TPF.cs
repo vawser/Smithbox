@@ -270,6 +270,9 @@ namespace SoulsFormats
                     case TPFPlatform.PS5:
                         //Bytes = WritePS5Images(images);
                         throw new NotImplementedException();
+                    case TPFPlatform.NintendoSwitch2:
+                        // Needs a block linear swizzler and an ASTC encoder
+                        throw new NotImplementedException();
                 }
             }
 
@@ -315,6 +318,13 @@ namespace SoulsFormats
                         Header.TextureCount = br.ReadInt32();
                         Header.Unk2 = br.AssertInt32([0, 0x9, 0xD]);
                     }
+                    else if (platform == TPFPlatform.NintendoSwitch2)
+                    {
+                        // Unk2 is the block linear block height (log2 GOBs) of the first mip
+                        Header.TextureCount = br.ReadInt32();
+                        Header.Unk2 = br.ReadInt32();
+                        Header.Unk3 = br.ReadInt32();
+                    }
                 }
 
                 uint nameOffset = br.ReadUInt32();
@@ -322,7 +332,8 @@ namespace SoulsFormats
                 //Formerly 'Flags2', as seen in Yabber
                 bool hasFloatStruct = br.AssertInt32([0, 1]) == 1;
 
-                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone || platform == TPFPlatform.PS5)
+                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone || platform == TPFPlatform.PS5
+                    || platform == TPFPlatform.NintendoSwitch2)
                     Header.DXGIFormat = br.ReadInt32();
 
                 if (hasFloatStruct)
@@ -393,13 +404,19 @@ namespace SoulsFormats
                         bw.WriteInt32(Header.TextureCount);
                         bw.WriteInt32(Header.Unk2);
                     }
+                    else if (platform == TPFPlatform.NintendoSwitch2)
+                    {
+                        bw.WriteInt32(Header.TextureCount);
+                        bw.WriteInt32(Header.Unk2);
+                        bw.WriteInt32(Header.Unk3);
+                    }
                 }
 
                 bw.ReserveUInt32($"FileName{index}");
                 //Formerly 'Flags2', as seen in Yabber
                 bw.WriteInt32(FloatStruct == null ? 0 : 1);
 
-                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone)
+                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone || platform == TPFPlatform.NintendoSwitch2)
                     bw.WriteInt32(Header.DXGIFormat);
 
                 if (FloatStruct != null)
@@ -549,9 +566,14 @@ namespace SoulsFormats
             public int Unk1 { get; set; }
 
             /// <summary>
-            /// Unknown; 0xD in DS3.
+            /// Unknown; 0xD in DS3. On Switch 2, the block linear block height of the first mip, as log2 GOBs.
             /// </summary>
             public int Unk2 { get; set; }
+
+            /// <summary>
+            /// Unknown; Switch 2 only. 0xC9 or 0x100C9.
+            /// </summary>
+            public int Unk3 { get; set; }
 
             /// <summary>
             /// A value for remapping color channel order on PS3.<br/>

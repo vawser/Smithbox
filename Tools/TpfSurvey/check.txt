@@ -1,0 +1,22 @@
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26001_h4k.tpf.dcx:MENU_Knowledge_26001_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26002_h4k.tpf.dcx:MENU_Knowledge_26002_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26003_h4k.tpf.dcx:MENU_Knowledge_26003_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26004_h4k.tpf.dcx:MENU_Knowledge_26004_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26005_h4k.tpf.dcx:MENU_Knowledge_26005_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26010_h4k.tpf.dcx:MENU_Knowledge_26010_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26011_h4k.tpf.dcx:MENU_Knowledge_26011_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26012_h4k.tpf.dcx:MENU_Knowledge_26012_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26013_h4k.tpf.dcx:MENU_Knowledge_26013_h4k 300x300 dxgi 98 header 3 computed 4
+BLOCK HEIGHT menugf\low\00_solo.tpfbhd:MENU_Knowledge_26014_h4k.tpf.dcx:MENU_Knowledge_26014_h4k 300x300 dxgi 98 header 3 computed 4
+
+3177 TPFs, 6020 textures
+  TPF read failures:        0
+  block height mismatches:  110
+  layout size mismatches:   0
+  headerize failures:       0
+  DirectXTex read failures: 0
+  ASTC textures: 2628, error-colour texels 3411/1770336832
+    asset\aet\aet310\aet310_028.tpf.dcx:AET310_028_3m 218/4194304
+    asset\aet\aet311\aet311_035.tpf.dcx:AET311_035_3m 3026/2097152
+    asset\aet\aet311\aet311_035_l.tpf.dcx:AET311_035_3m_l 167/131072
+  headerize time 21.9s

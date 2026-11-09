@@ -33,7 +33,8 @@ public class VulkanTextureHandle : ITextureHandle
             return;
         }
 
-        if (tpf.Platform == TPF.TPFPlatform.PC || tpf.Platform == TPF.TPFPlatform.PS3)
+        if (tpf.Platform == TPF.TPFPlatform.PC || tpf.Platform == TPF.TPFPlatform.PS3
+            || tpf.Platform == TPF.TPFPlatform.NintendoSwitch2)
         {
             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
             {

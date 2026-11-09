@@ -7,7 +7,7 @@ namespace StudioCore.Renderer;
 
 public class TextureResource : IResource, IDisposable
 {
-    private readonly int TPFIndex;
+    private int TPFIndex;
 
     public TextureResource()
     {
@@ -36,6 +36,36 @@ public class TextureResource : IResource, IDisposable
 
     public bool LoadVulkanTexture(AccessLevel al)
     {
+        // Switch 2 textures are deswizzled (and ASTC decoded) here on the resource loader's thread, rather than in
+        // the upload task on the render thread, and then go through the PC path as a plain DDS
+        if (Texture.Platform == TPF.TPFPlatform.NintendoSwitch2)
+        {
+            var source = Texture.Textures[TPFIndex];
+            byte[] dds;
+
+            try
+            {
+                dds = source.Headerize();
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("REND_Texture_Load_Error", source.Name, source.Format), e);
+                return false;
+            }
+
+            var converted = new TPF.Texture(TPF.TPFPlatform.PC)
+            {
+                Name = source.Name,
+                Format = source.Format,
+                Type = source.Type,
+                Mipmaps = source.Mipmaps,
+                Bytes = dds
+            };
+
+            Texture = new TPF { Platform = TPF.TPFPlatform.PC, Textures = { converted } };
+            TPFIndex = 0;
+        }
+
         if (TexturePool.TextureHandle.IsTPFCube(Texture.Textures[TPFIndex], Texture.Platform))
         {
             GPUTexture = SceneRenderer.GlobalCubeTexturePool.AllocateTextureDescriptor();
