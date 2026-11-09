@@ -73,10 +73,11 @@ public class FxPreviewRuntime
         var playback = Editor.Playback;
         float target = playback.Time;
 
-        // A different motion is a different path from the start
-        if (!playback.MotionKey.Equals(MotionKey))
+        // A different motion is a different path from the start, and different forces push particles differently
+        if (!playback.MotionKey.Equals(MotionKey) || !playback.ForceKey.Equals(ForceKey))
         {
             MotionKey = playback.MotionKey;
+            ForceKey = playback.ForceKey;
             Instance = null;
         }
 
@@ -121,6 +122,7 @@ public class FxPreviewRuntime
     }
 
     private (int, float, float, float) MotionKey;
+    private (bool, float, float, bool) ForceKey;
 
     /// <summary>Where the effect is now, as the motion puts it (identity when it stays still).</summary>
     public System.Numerics.Matrix4x4 EffectWorld => Instance?.World ?? System.Numerics.Matrix4x4.Identity;
@@ -132,6 +134,11 @@ public class FxPreviewRuntime
             ResolveEffect = ResolveProxy,
             Motion = Editor.Playback.MotionFunction(),
             IsHidden = Editor.Playback.IsNodeHidden,
+            Forces = new FxForceField
+            {
+                Wind = Editor.Playback.WindVector(),
+                UseVolumes = CFG.Current.FxEditor_Preview_Effect_Forces,
+            },
         };
         // Seeded by the effect id, so a replay matches what was shown before
         Instance = new FxEffectInstance(Def, Context, (uint)Entry.Id | 1);

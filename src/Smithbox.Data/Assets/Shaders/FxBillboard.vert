@@ -107,6 +107,67 @@ void main()
 		return;
 	}
 
+	// Lens flare mode (FX Editor Plan §20.8): a camera-facing quad at the source, world-sized, moved on screen along
+	// the reflection vector (1 Radial: through the screen centre; 2 Horizontal: mirrored left-right) by the flare's
+	// offset, and faded by the attenuation radius (the screen centre must lie within the sphere of that radius
+	// around the source). The source's screen position, depth and radius go to the fragment stage in fsin_layer3,
+	// which tests how much of the source the scene depth shows. A0 source; A1 size; A2 colour; A3 offset,
+	// reflection, -, attenuation radius; B0.x source diameter.
+	if (m.params.w == 101u)
+	{
+		vec3 src = d0.xyz;
+		mat4 viewProj = sceneparam.projection * sceneparam.view;
+		vec4 srcClip = viewProj * vec4(src, 1.0);
+
+		vec3 camRightF = vec3(sceneparam.view[0][0], sceneparam.view[1][0], sceneparam.view[2][0]);
+		vec3 camUpF = vec3(sceneparam.view[0][1], sceneparam.view[1][1], sceneparam.view[2][1]);
+		vec2 cornerF = position.xy;
+		vec4 clip = viewProj * vec4(src + camRightF * (cornerF.x * d1.x) + camUpF * (cornerF.y * d1.y), 1.0);
+
+		fsin_uv = vec2(cornerF.x + 0.5, 0.5 - cornerF.y);
+		fsin_frame = vec4(0, thresholds.x, thresholds.y, 0);
+		fsin_layer1 = d4;
+		fsin_layer2 = vec4(0, 0, 1, 1);
+		fsin_layer1Color = vec4(1);
+		fsin_layer2Color = vec4(1);
+		fsin_layer3Color = vec4(1);
+		fsin_mat = mat;
+
+		// Behind the camera: nothing
+		if (srcClip.w <= 1e-4)
+		{
+			fsin_color = vec4(0);
+			fsin_layer3 = vec4(0, 0, -1, 0);
+			gl_Position = vec4(0, 0, -1, 1);
+			return;
+		}
+
+		vec2 ndc = srcClip.xy / srcClip.w;
+		uint reflection = uint(d3.y + 0.5);
+		vec2 target = reflection == 1u ? -ndc : reflection == 2u ? vec2(-ndc.x, ndc.y) : ndc;
+		vec2 shift = (target - ndc) * d3.x;
+		clip.xy += shift * clip.w;
+
+		// How large a world length at the source is on screen, in NDC (along y; x is scaled by the aspect)
+		float perMeter = abs(sceneparam.projection[1][1]) / srcClip.w;
+		float aspect = abs(sceneparam.projection[1][1]) / max(abs(sceneparam.projection[0][0]), 1e-6);
+
+		float fade = 1.0;
+		if (d3.w > 0.0)
+		{
+			float radiusNdc = d3.w * perMeter;
+			float fromCentre = length(vec2(ndc.x * aspect, ndc.y));
+			fade = clamp(1.0 - fromCentre / max(radiusNdc, 1e-6), 0.0, 1.0);
+		}
+
+		// A source off the screen can't be seen
+		bool onScreen = all(lessThanEqual(abs(ndc), vec2(1.0)));
+		fsin_color = vec4(d2.rgb, d2.a * fade);
+		fsin_layer3 = vec4(ndc * 0.5 + 0.5, onScreen ? srcClip.z / srcClip.w : -1.0, 0.5 * e0.x * perMeter * 0.5);
+		gl_Position = clip;
+		return;
+	}
+
 	vec3 center = d0.xyz;
 	float rotZ = d0.w;
 	vec2 size = d1.xy;

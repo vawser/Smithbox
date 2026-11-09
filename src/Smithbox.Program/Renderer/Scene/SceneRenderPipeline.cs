@@ -67,6 +67,9 @@ public class SceneRenderPipeline
     /// <summary>The copy of <see cref="Target" />'s depth that transparent draws read</summary>
     public SceneDepth SceneDepth { get; } = new();
 
+    /// <summary>The scene colour behind the transparent draws, copied only while <see cref="SceneColor.Wanted" /></summary>
+    public SceneColor SceneColor { get; } = new();
+
     /// <summary>The GPARAM's distance and height fog, laid over the scene when its depth is copied</summary>
     public VolumetricFogPass Fog { get; } = new();
 
@@ -377,6 +380,9 @@ public class SceneRenderPipeline
     public void CaptureSceneDepth(CommandList cl)
     {
         SceneDepth.Capture(Device, cl, Target.Depth);
+
+        // The colour behind the transparent draws, for the FX Editor's screen effects; only while one asks for it
+        SceneColor.Capture(Device, cl, Target.Color);
 
         // Before the volumetric fog's draw: the copy has ended the target's render pass, and the distance fog's
         // parameters can only be written outside one (the two fogs are never on for the same game)

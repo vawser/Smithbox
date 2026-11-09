@@ -11,6 +11,8 @@ public enum FxBillboardKind
     PointSprite,      // 600
     BillboardEx,      // 603
     MultiTexture,     // 604
+    Distortion,       // 607 (phase V5, plan §20.7): bends the scene behind it
+    RadialBlur,       // 608: blurs the scene behind it towards its centre
 }
 
 /// <summary>
@@ -59,6 +61,17 @@ public sealed class FxBillboardDef
     public FxValue[] LayerOffsetU = new FxValue[3], LayerOffsetV = new FxValue[3];
     public FxValue[] LayerScaleU = new FxValue[3], LayerScaleV = new FxValue[3];
 
+    // Distortion and RadialBlur (phase V5). Texture is the mask; Layer2 Distortion's normal map.
+    /// <summary>DistortionMode: 0 Stir, 1 NormalMap, 2 Twist, 3 like NormalMap, 4 unknown (drawn as NormalMap).</summary>
+    public int DistortionMode = 1;
+    /// <summary>DistortionShape: 0 Rectangle, 1 Hemiellipsoid, 2 Ellipsoid (drawn as a camera-facing ellipse, bulging for 1 and 2).</summary>
+    public int DistortionShape;
+    public int Iterations = 1;
+    public FxValue Intensity, Radius, StirSpeed, BlurRadius;
+
+    /// <summary>Whether this draws the scene behind it (Distortion, RadialBlur) rather than a texture.</summary>
+    public bool IsScreenEffect => Kind is FxBillboardKind.Distortion or FxBillboardKind.RadialBlur;
+
     /// <summary>The texture ids this appearance draws with, 0 for none.</summary>
     public IEnumerable<int> TextureIds
     {
@@ -83,11 +96,16 @@ public sealed class FxBillboardDef
             case 600: kind = FxBillboardKind.PointSprite; break;
             case 603: kind = FxBillboardKind.BillboardEx; break;
             case 604: kind = FxBillboardKind.MultiTexture; break;
+            case 607: kind = FxBillboardKind.Distortion; break;
+            case 608: kind = FxBillboardKind.RadialBlur; break;
             default: return null;
         }
 
         var d = new FxBillboardDef { Kind = kind, Action = appearance.Action };
         var at0 = new FxEvalContext();
+
+        if (d.IsScreenEffect)
+            return BuildScreenEffect(d, view, at0);
 
         d.Texture = IntValue(view, kind == FxBillboardKind.MultiTexture ? "layer1" : "texture", at0, 0);
         d.Layer2 = IntValue(view, "layer2", at0, 0);
@@ -150,6 +168,56 @@ public sealed class FxBillboardDef
             d.LayerScaleV[i] = Prop(view, $"layer{n}ScaleV");
         }
 
+        return d;
+    }
+
+    /// <summary>
+    /// Distortion (607) and RadialBlur (608): the same quad as a billboard, sized by sizeX/sizeY (Distortion) or
+    /// width/height (RadialBlur), coloured by color × the multipliers, with a mask texture; Distortion also has a
+    /// normal map with its own uv offset, speed and scale, an intensity, an ellipse radius, a mode and a stir speed;
+    /// RadialBlur a blur radius and iterations.
+    /// </summary>
+    private static FxBillboardDef BuildScreenEffect(FxBillboardDef d, FxrActionView view, FxEvalContext at0)
+    {
+        bool distortion = d.Kind == FxBillboardKind.Distortion;
+        d.Texture = IntValue(view, "mask", at0, 0);
+        d.Layer2 = distortion ? IntValue(view, "normalMap", at0, 0) : 0;
+        d.BlendMode = 2;
+        d.Orientation = distortion ? IntValue(view, "orientation", at0, 1) : 1;
+        d.UniformScale = IntValue(view, "uniformScale", at0, 0) != 0;
+        d.DepthBlend = true;
+        d.InterpolateFrames = false;
+        d.DistortionMode = distortion ? Math.Clamp(IntValue(view, "mode", at0, 1), 0, 4) : 0;
+        d.DistortionShape = distortion ? Math.Clamp(IntValue(view, "shape", at0, 0), 0, 2) : 0;
+        d.Iterations = distortion ? 1 : Math.Clamp(IntValue(view, "iterations", at0, 1), 1, 8);
+        d.ScaleVariationX = FloatValue(view, "scaleVariationX", 1);
+        d.ScaleVariationY = FloatValue(view, "scaleVariationY", 1);
+        d.MinFadeDistance = FloatValue(view, "minFadeDistance", -1);
+        d.MinDistance = FloatValue(view, "minDistance", -1);
+        d.MaxFadeDistance = FloatValue(view, "maxFadeDistance", -1);
+        d.MaxDistance = FloatValue(view, "maxDistance", -1);
+        d.MinDistanceThreshold = FloatValue(view, "minDistanceThreshold", -1);
+        d.MaxDistanceThreshold = FloatValue(view, "maxDistanceThreshold", -1);
+
+        d.Width = Prop(view, distortion ? "sizeX" : "width");
+        d.Height = Prop(view, distortion ? "sizeY" : "height");
+        d.OffsetX = Prop(view, "offsetX");
+        d.OffsetY = Prop(view, "offsetY");
+        d.OffsetZ = Prop(view, "offsetZ");
+        d.Color1 = Prop(view, "color");
+        d.RgbMultiplier = Prop(view, "rgbMultiplier");
+        d.AlphaMultiplier = Prop(view, "alphaMultiplier");
+        d.AlphaThreshold = Prop(view, "alphaThreshold");
+        d.Intensity = Prop(view, "intensity");
+        d.Radius = Prop(view, "radius");
+        d.StirSpeed = Prop(view, "stirSpeed");
+        d.BlurRadius = Prop(view, "blurRadius");
+        d.LayerOffsetU[1] = Prop(view, "normalMapOffsetU");
+        d.LayerOffsetV[1] = Prop(view, "normalMapOffsetV");
+        d.LayerSpeedU[1] = Prop(view, "normalMapSpeedU");
+        d.LayerSpeedV[1] = Prop(view, "normalMapSpeedV");
+        d.LayerScaleU[1] = Prop(view, "normalMapScaleU");
+        d.LayerScaleV[1] = Prop(view, "normalMapScaleV");
         return d;
     }
 
@@ -243,7 +311,21 @@ public sealed class FxBillboardDef
             NodeUp = Vector3.Normalize(Vector3.TransformNormal(Vector3.UnitY, node.World)),
         };
 
-        if (Kind == FxBillboardKind.MultiTexture)
+        if (IsScreenEffect)
+        {
+            // Layer 1: the mask; layer 2: the normal map, scrolling; layer 3's uv slot carries the effect's own values:
+            // intensity, ellipse radius, stir angle (radians: stirSpeed in degrees per second × age), blur radius
+            b.SetLayer(0, new Vector4(0, 0, 1, 1), Vector4.One);
+            float u = (LayerOffsetU[1]?.Scalar(ctx) ?? 0) + (LayerSpeedU[1]?.Scalar(ctx) ?? 0) * p.Age;
+            float v = (LayerOffsetV[1]?.Scalar(ctx) ?? 0) + (LayerSpeedV[1]?.Scalar(ctx) ?? 0) * p.Age;
+            b.SetLayer(1, new Vector4(u, v, LayerScaleU[1]?.Scalar(ctx) ?? 1, LayerScaleV[1]?.Scalar(ctx) ?? 1), Vector4.One);
+            b.SetLayer(2, new Vector4(
+                Intensity?.Scalar(ctx) ?? 1,
+                Radius?.Scalar(ctx) ?? 1,
+                (StirSpeed?.Scalar(ctx) ?? 60) * p.Age * (MathF.PI / 180f),
+                BlurRadius?.Scalar(ctx) ?? 0.5f), Vector4.One);
+        }
+        else if (Kind == FxBillboardKind.MultiTexture)
         {
             for (int i = 0; i < 3; i++)
             {

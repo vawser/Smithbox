@@ -1245,6 +1245,9 @@ public class CFG
     public bool FxEditor_Viewport_Display_Node_Axes = true;
     public bool FxEditor_Viewport_Display_Particle_Markers = false;
     public bool FxEditor_Viewport_Display_Billboards = true;
+    public bool FxEditor_Viewport_Display_Screen_Effects = true;
+    public bool FxEditor_Viewport_Display_Lens_Flares = true;
+    public bool FxEditor_Viewport_Display_Gpu_Particles = true;
     public float FxEditor_Viewport_Billboard_Brightness = 1.0f;
     public bool FxEditor_Viewport_Display_Models = true;
     public bool FxEditor_Viewport_Display_Lights = true;
@@ -1260,6 +1263,10 @@ public class CFG
     public bool FxEditor_Preview_Motion_Follow = true;
     public bool FxEditor_Viewport_Auto_Frame = true;
     public bool FxEditor_Live_Preview = false;
+    public bool FxEditor_Preview_Wind = false;
+    public float FxEditor_Preview_Wind_Yaw = 0;
+    public float FxEditor_Preview_Wind_Strength = 10;
+    public bool FxEditor_Preview_Effect_Forces = true;
 
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;

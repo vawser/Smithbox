@@ -62,6 +62,18 @@ internal static class FxRead
         catch { return fallback; }
     }
 
+    public static Vector3 Vec3(FxrActionView view, string name)
+    {
+        if (!view.Names.Contains(name))
+            return default;
+        try
+        {
+            var v = view.GetValue(name);
+            return v.Length >= 3 ? new Vector3((float)v[0], (float)v[1], (float)v[2]) : default;
+        }
+        catch { return default; }
+    }
+
     public static FxEvalContext Ctx(FxNodeInstance node, FxParticle p) => new()
     {
         ActiveTime = Math.Max(node.ActiveTime, 0),

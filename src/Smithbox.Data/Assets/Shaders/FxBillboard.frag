@@ -58,6 +58,9 @@ const uint FlagDepthBlend = 2u;
 const uint FlagPremultiply = 4u;
 const uint FlagMultiTexture = 8u;
 const uint FlagSolid = 32u;
+const uint FlagDistortion = 64u;
+const uint FlagRadialBlur = 128u;
+const uint FlagLensFlare = 256u;
 
 int TextureIndex(uint tex)
 {
@@ -120,6 +123,164 @@ float ViewDepth(float depth)
 	return abs(projection[3][2] / (depth * projection[2][3] - projection[2][2]));
 }
 
+// ---------------------------------------------------------------- screen effects (FX Editor Plan §20.7)
+
+// The scene colour behind the transparent draws (SceneColor.cs), at a screen uv
+vec3 SceneAt(uint scene, vec2 suv)
+{
+	return textureLod(sampler2D(globalTextures[nonuniformEXT(TextureIndex(scene))], linearSampler),
+		clamp(suv, vec2(0.0), vec2(1.0)), 0.0).rgb;
+}
+
+// An offset in the quad's uv as one in screen uv: through the inverse of the uv's screen derivatives, so it follows
+// the particle's size, rotation and orientation on screen
+vec2 QuadToScreen(vec2 duv, vec2 dx, vec2 dy, vec2 size)
+{
+	float det = dx.x * dy.y - dy.x * dx.y;
+	if (abs(det) < 1e-12)
+	{
+		return vec2(0.0);
+	}
+	vec2 pixels = vec2(dy.y * duv.x - dy.x * duv.y, -dx.y * duv.x + dx.x * duv.y) / det;
+	return pixels / size;
+}
+
+vec2 Rotate(vec2 v, float a)
+{
+	float s = sin(a), c = cos(a);
+	return vec2(c * v.x - s * v.y, s * v.x + c * v.y);
+}
+
+// How far a normal map's xy moves the scene, in the quad's uv, at intensity 1. The game's own scale isn't known.
+const float NormalMapStrength = 0.1;
+
+// Distortion (607) and RadialBlur (608): the scene behind the particle, bent or blurred, inside the ellipse the
+// radius sets (1 inscribes the quad), over the scene with normal blending. The mask times the colour gives the
+// tint and opacity. fsin_layer3 carries intensity, radius, the stir angle and the blur radius; fsin_layer2 the
+// normal map's uv. extra.z is the copy's index, extra.w the mode (bits 0-3), shape (4-7) and iterations (8-15).
+vec4 ScreenEffect(fxMaterial m, uint flags, vec2 dx, vec2 dy)
+{
+	uint scene = m.extra.z;
+	if (scene == 0u)
+	{
+		discard;
+	}
+
+	vec2 size = vec2(textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(scene))], linearSampler), 0));
+	vec2 suv = gl_FragCoord.xy / size;
+
+	float intensity = fsin_layer3.x;
+	float radius = max(fsin_layer3.y, 1e-3);
+	vec2 c = (fsin_uv - 0.5) * 2.0;
+	float d = length(c) / radius;
+	if (d >= 1.0)
+	{
+		discard;
+	}
+
+	// Flat shapes fade at the rim; the (hemi)ellipsoids bulge, strongest at the centre
+	uint shape = (m.extra.w >> 4) & 15u;
+	float weight = shape == 0u ? 1.0 - smoothstep(0.7, 1.0, d) : sqrt(max(1.0 - d * d, 0.0));
+
+	vec4 mask = m.textures.x != 0u ? Sample(m.textures.x, fsin_uv, fsin_uv) : vec4(1.0);
+	vec4 tint = mask * fsin_color;
+	float alpha = clamp(tint.a, 0.0, 1.0);
+	if (alpha < fsin_frame.y || alpha <= 0.0)
+	{
+		discard;
+	}
+
+	vec3 rgb;
+	if ((flags & FlagRadialBlur) != 0u)
+	{
+		// Taps from the pixel towards the quad's centre, blurRadius of the way at most
+		uint iterations = clamp((m.extra.w >> 8) & 255u, 1u, 8u);
+		int taps = int(min(6u * iterations, 32u));
+		float blur = fsin_layer3.w * weight;
+		vec3 sum = vec3(0.0);
+		for (int i = 0; i < taps; i++)
+		{
+			float t = float(i) / float(max(taps - 1, 1));
+			vec2 duv = (vec2(0.5) - fsin_uv) * blur * t;
+			sum += SceneAt(scene, suv + QuadToScreen(duv, dx, dy, size));
+		}
+		rgb = sum / float(taps);
+	}
+	else
+	{
+		uint mode = m.extra.w & 15u;
+		vec2 duv;
+		if (mode == 0u)
+		{
+			// Stir: the middle turns with time, the rim stays
+			float fall = (1.0 - d) * (1.0 - d);
+			duv = (Rotate(c, fsin_layer3.z * fall * intensity) - c) * 0.5;
+		}
+		else if (mode == 2u)
+		{
+			// Twist: held at the rim, the centre turned by the intensity
+			float fall = (1.0 - d) * (1.0 - d);
+			duv = (Rotate(c, intensity * 1.5707963 * fall) - c) * 0.5;
+		}
+		else
+		{
+			// Normal map (and the modes that look like it): its xy push the scene
+			vec2 n = vec2(0.0);
+			if (m.textures.y != 0u)
+			{
+				n = Sample(m.textures.y, fsin_uv * fsin_layer2.zw + fsin_layer2.xy, fsin_uv).rg * 2.0 - 1.0;
+			}
+			duv = n * intensity * NormalMapStrength;
+		}
+		// Vanilla intensities run from about 1 (the median) to 200, in units that aren't known: the offset is held
+		// to half the particle, so the strong ones bend hard without pulling in the scene from far outside
+		duv *= weight;
+		float len = length(duv);
+		if (len > 0.5)
+		{
+			duv *= 0.5 / len;
+		}
+		rgb = SceneAt(scene, suv + QuadToScreen(duv, dx, dy, size));
+	}
+
+	rgb *= tint.rgb;
+	if (!c_linearOutput)
+	{
+		rgb = clamp(rgb, 0.0, 1.0);
+	}
+	return vec4(rgb, alpha);
+}
+
+// Lens flares: the share of the source the scene depth shows, from five samples across its disc (the centre and four
+// points at its radius). fsin_layer3: the source's screen uv, its depth (-1 off screen), its radius in uv height.
+// The depth is reversed (1 nearest), so a stored depth greater than the source's is something in front of it.
+float FlareVisibility()
+{
+	if (fsin_layer3.z < 0.0)
+	{
+		return 0.0;
+	}
+	if (sceneparam.sceneDepthTexture == 0u)
+	{
+		return 1.0;
+	}
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(sceneparam.sceneDepthTexture))], linearSampler), 0);
+	vec2 centre = fsin_layer3.xy * vec2(size);
+	float r = max(fsin_layer3.w * float(size.y), 1.0);
+	vec2 taps[5] = vec2[5](vec2(0, 0), vec2(r, 0), vec2(-r, 0), vec2(0, r), vec2(0, -r));
+	float seen = 0.0;
+	for (int i = 0; i < 5; i++)
+	{
+		ivec2 p = clamp(ivec2(centre + taps[i]), ivec2(0), size - 1);
+		float stored = texelFetch(sampler2D(globalTextures[nonuniformEXT(TextureIndex(sceneparam.sceneDepthTexture))], linearSampler), p, 0).r;
+		if (stored <= fsin_layer3.z + 1e-6)
+		{
+			seen += 1.0;
+		}
+	}
+	return seen / 5.0;
+}
+
 void main()
 {
 	fxMaterial m = matdata[fsin_mat];
@@ -132,6 +293,13 @@ void main()
 	vec2 uv1 = fsin_uv * fsin_layer1.zw + fsin_layer1.xy;
 	vec2 dx1 = dFdx(uv1);
 	vec2 dy1 = dFdy(uv1);
+
+	// Distortion and RadialBlur draw the scene behind them (their layer 1 uv is the quad's own)
+	if ((flags & (FlagDistortion | FlagRadialBlur)) != 0u)
+	{
+		fsout_color = ScreenEffect(m, flags, dx1, dy1);
+		return;
+	}
 	const uint SegmentOrientation = 100u;
 	bool tiling = m.params.w == SegmentOrientation
 		|| any(greaterThan(abs(fsin_layer1.xy), vec2(1e-4)))
@@ -189,6 +357,12 @@ void main()
 
 	vec4 color = tex * fsin_color;
 	float alpha = clamp(color.a, 0.0, 1.0);
+
+	// Lens flares show as much as their source is in view
+	if ((flags & FlagLensFlare) != 0u)
+	{
+		alpha *= FlareVisibility();
+	}
 
 	// Hard cut-off, then the stretched one
 	if (alpha < fsin_frame.y)

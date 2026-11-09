@@ -132,6 +132,18 @@ public sealed class FxAppearanceDef
     public FxLineDef Line;
     public FxModelDef Model;
     public FxLightDef Light;
+
+    /// <summary>WindForce, GravityForce, TurbulenceForce and CancelForce (phase V5, plan §20).</summary>
+    public FxForceDef Force;
+
+    /// <summary>LensFlare (phase V5, plan §20.8).</summary>
+    public FxLensFlareDef LensFlare;
+
+    /// <summary>The GPU particle actions 10000/10001/10008/10009 (phase V5, plan §20.9).</summary>
+    public FxGpuParticleDef GpuParticles;
+
+    /// <summary>LightShaft (DS3; phase V5, plan §20.10), drawn through the lens flare path.</summary>
+    public FxLightShaftDef LightShaft;
 }
 
 public sealed class FxConfigDef
@@ -184,6 +196,19 @@ public sealed class FxConfigDef
     // ParticleMovement
     public FxParticleMoveKind ParticleMove;
     public FxValue ParticleGravity, ParticleMoveSpeed, ParticleMoveSpeedMultiplier, ParticleAcceleration, ParticleAccelerationMultiplier;
+
+    // NodeForceMovement (731 speed / 733 acceleration) and ParticleForceMovement (732 / 734): how strongly the node,
+    // or the particles it emits, follow the forces acting where they are (plan §20)
+    public FxNodeMoveKind NodeForceMove;
+    public FxValue NodeForceValue, NodeForceMultiplier;
+    public FxParticleMoveKind ParticleForceMove;
+    public FxValue ParticleForceValue, ParticleForceMultiplier;
+
+    /// <summary>The config's force appearances, which make each instance it emits a force volume.</summary>
+    public List<FxForceDef> Forces = new();
+
+    /// <summary>The config's GPU particle appearances: each node instance runs one system per entry.</summary>
+    public List<FxAppearanceDef> GpuSystems = new();
 
     // Termination
     public FxTerminationKind Termination;
@@ -303,6 +328,22 @@ public sealed class FxConfigDef
                 case "ParticleMovement":
                     ReadParticleMovement(def, view);
                     break;
+                case "NodeForceMovement":
+                {
+                    bool speed = d.Name == "NodeForceSpeed";
+                    def.NodeForceMove = speed ? FxNodeMoveKind.Speed : FxNodeMoveKind.Acceleration;
+                    def.NodeForceValue = Prop(view, speed ? "speed" : "acceleration");
+                    def.NodeForceMultiplier = Prop(view, speed ? "speedMultiplier" : "accelerationMultiplier");
+                    break;
+                }
+                case "ParticleForceMovement":
+                {
+                    bool speed = d.Name == "ParticleForceSpeed";
+                    def.ParticleForceMove = speed ? FxParticleMoveKind.Speed : FxParticleMoveKind.Acceleration;
+                    def.ParticleForceValue = Prop(view, speed ? "speed" : "acceleration");
+                    def.ParticleForceMultiplier = Prop(view, speed ? "speedMultiplier" : "accelerationMultiplier");
+                    break;
+                }
                 case "Termination":
                     def.Termination = d.Name switch
                     {
@@ -320,6 +361,14 @@ public sealed class FxConfigDef
                     appearance.Line = FxLineDef.Build(appearance);
                     appearance.Model = FxModelDef.Build(appearance);
                     appearance.Light = FxLightDef.Build(appearance);
+                    appearance.Force = FxForceDef.Build(appearance);
+                    appearance.LensFlare = FxLensFlareDef.Build(appearance);
+                    appearance.GpuParticles = FxGpuParticleDef.Build(appearance);
+                    appearance.LightShaft = FxLightShaftDef.Build(appearance);
+                    if (appearance.GpuParticles != null)
+                        def.GpuSystems.Add(appearance);
+                    if (appearance.Force != null)
+                        def.Forces.Add(appearance.Force);
                     def.Tracer ??= appearance.Tracer;
                     def.Appearances.Add(appearance);
                     break;

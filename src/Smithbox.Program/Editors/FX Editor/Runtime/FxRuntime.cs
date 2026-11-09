@@ -32,6 +32,12 @@ public sealed class FxRuntimeContext
     /// </summary>
     public Func<FxrNode, bool> IsHidden;
 
+    /// <summary>
+    /// The forces acting (plan §20): the volumes of every force appearance in the effect tree, gathered by the
+    /// top-level effect each update, and the preview wind. Shared with effects started by Proxy nodes.
+    /// </summary>
+    public FxForceField Forces = new();
+
     public int MaxParticles = 20000;
     public int MaxNodes = 4000;
     public int MaxProxyDepth = 6;
@@ -107,10 +113,55 @@ public sealed class FxEffectInstance
             UpdateState();
         }
 
+        if (Depth == 0)
+            GatherForces();
+
         Root.Update(dt, World);
 
         if (Terminated && Root.Dead)
             Finished = true;
+    }
+
+    /// <summary>
+    /// The force volumes as they are now: one per instance emitted by a config with a force appearance, at the
+    /// instance's position with its node's rotation, its strength the force × multiplier × a random multiplier that
+    /// wanders in its range (× the node's fade while terminating).
+    /// </summary>
+    private void GatherForces()
+    {
+        var field = Context.Forces;
+        field.Volumes.Clear();
+        if (!field.UseVolumes)
+            return;
+
+        foreach (var node in AllNodes())
+        {
+            var config = node.Config;
+            if (config == null || config.Forces.Count == 0 || node.Dead)
+                continue;
+            var rotation = node.World with { M41 = 0, M42 = 0, M43 = 0 };
+            foreach (var p in node.Particles)
+            {
+                var position = p.Local ? Vector3.Transform(p.Position, node.World) : p.Position;
+                var world = rotation * Matrix4x4.CreateTranslation(position);
+                if (!Matrix4x4.Invert(world, out var inverse))
+                    continue;
+                var ctx = FxRead.Ctx(node, p);
+                foreach (var f in config.Forces)
+                {
+                    float strength = (f.Force?.Scalar(ctx) ?? 1) * f.ForceMultiplier
+                        * FxForceField.Wander(f.RandomMin, f.RandomMax, Time, p.Seed) * node.FadeAlpha;
+                    field.Volumes.Add(new FxForceVolume
+                    {
+                        Def = f,
+                        World = world,
+                        Inverse = inverse,
+                        Strength = strength,
+                        NoiseOffset = new Vector3(f.NoiseOffsetX?.Scalar(ctx) ?? 0, f.NoiseOffsetY?.Scalar(ctx) ?? 0, f.NoiseOffsetZ?.Scalar(ctx) ?? 0),
+                    });
+                }
+            }
+        }
     }
 
     /// <summary>Ends the effect, as reaching state -1 does. Each node then follows its Termination action.</summary>
@@ -210,6 +261,8 @@ public sealed class FxParticle
     public Vector3 Direction;
     public Vector3 Velocity;
     public Vector3 GravityVelocity;
+    /// <summary>What ParticleForceAcceleration has added up, in the particle's space.</summary>
+    public Vector3 ForceVelocity;
     public bool Local;
 
     public float Age;
@@ -403,6 +456,7 @@ public sealed class FxNodeInstance
             Expired = true;
 
         UpdateParticles(dt);
+        UpdateGpuSystems(dt, active && !Effect.Terminated);
         UpdateChildren(dt);
 
         CheckDead();
@@ -424,10 +478,50 @@ public sealed class FxNodeInstance
         Duration = config.Duration?.Scalar(Ctx()) ?? -1;
     }
 
+    // ---------------------------------------------------------------- GPU particle systems (plan §20.9)
+
+    /// <summary>The GPU particle systems this instance runs, one per GPU particle appearance of its configs.</summary>
+    public readonly Dictionary<FxAppearanceDef, FxGpuSystem> GpuSystems = new();
+
+    /// <summary>
+    /// Runs the current config's GPU particle systems: they emit while the node is active, and their particles live
+    /// on (and keep the node from going) after it ends. A config change keeps the old systems' particles going.
+    /// </summary>
+    private void UpdateGpuSystems(float dt, bool emit)
+    {
+        var config = Config;
+        if (config != null)
+        {
+            foreach (var appearance in config.GpuSystems)
+            {
+                if (!GpuSystems.ContainsKey(appearance))
+                    GpuSystems[appearance] = new FxGpuSystem(appearance.GpuParticles, Seed ^ (uint)(GpuSystems.Count * 0x9E3779B1u + 0x7F4A7C15u));
+            }
+        }
+        if (GpuSystems.Count == 0)
+            return;
+
+        var ctx = Ctx();
+        foreach (var (appearance, system) in GpuSystems)
+        {
+            bool current = config != null && config.GpuSystems.Contains(appearance);
+            system.Update(dt, this, emit && current && !Expired, ctx);
+        }
+    }
+
+    private bool HasGpuParticles()
+    {
+        foreach (var system in GpuSystems.Values)
+            if (system.Particles.Count > 0)
+                return true;
+        return false;
+    }
+
     private void Kill()
     {
         Effect.Context.ParticleCount -= Particles.Count;
         Particles.Clear();
+        GpuSystems.Clear();
         foreach (var child in Children)
             child.KillTree();
         Children.Clear();
@@ -481,7 +575,28 @@ public sealed class FxNodeInstance
             float S(int i) => spin[i]?.Scalar(ctx) ?? (i % 2 == 1 ? 1 : 0);
             Spin += new Vector3(S(0) * S(1), S(2) * S(3), S(4) * S(5)) * dt;
         }
+
+        // NodeForceSpeed / NodeForceAcceleration: the force where the node is, in its own axes (the node's
+        // rotation as of the last update stands in for the axes its displacement is in)
+        if (c.NodeForceMove != FxNodeMoveKind.None && !Effect.Context.Forces.IsEmpty)
+        {
+            var force = WorldToLocalVector(Effect.Context.Forces.At(World.Translation));
+            float k = (c.NodeForceValue?.Scalar(ctx) ?? 0) * (c.NodeForceMultiplier?.Scalar(ctx) ?? 1);
+            if (c.NodeForceMove == FxNodeMoveKind.Speed)
+                Displacement += force * k * dt;
+            else
+            {
+                NodeForceVelocity += force * k * dt;
+                Displacement += NodeForceVelocity * dt;
+            }
+        }
     }
+
+    private Vector3 NodeForceVelocity;
+
+    /// <summary>A world vector in the node's space, keeping its length (for forces).</summary>
+    private Vector3 WorldToLocalVector(Vector3 v) =>
+        Matrix4x4.Invert(World, out var inv) ? Vector3.TransformNormal(v, inv) : v;
 
     /// <summary>
     /// The node's world transform: spin, then its movement (in its own axes), then its NodeTransform, then the
@@ -945,6 +1060,24 @@ public sealed class FxNodeInstance
                 }
             }
 
+            // ParticleForceSpeed moves the particle with the force (speed × force); ParticleForceAcceleration
+            // accelerates it by it, adding up (plan §20)
+            if (c.ParticleForceMove != FxParticleMoveKind.None && !context.Forces.IsEmpty)
+            {
+                var world = p.Local ? Vector3.Transform(p.Position, World) : p.Position;
+                var force = context.Forces.At(world);
+                if (p.Local)
+                    force = WorldToLocalVector(force);
+                float k = (c.ParticleForceValue?.Scalar(ctx) ?? 0) * (c.ParticleForceMultiplier?.Scalar(ctx) ?? 1);
+                if (c.ParticleForceMove == FxParticleMoveKind.Speed)
+                    p.Position += force * k * dt;
+                else
+                {
+                    p.ForceVelocity += force * k * dt;
+                    p.Position += p.ForceVelocity * dt;
+                }
+            }
+
             if (float.IsNaN(p.Position.X) || float.IsInfinity(p.Position.X))
                 p.Position = Vector3.Zero;
 
@@ -1068,7 +1201,7 @@ public sealed class FxNodeInstance
         if (!ended)
             return;
 
-        if (Particles.Count > 0)
+        if (Particles.Count > 0 || HasGpuParticles())
             return;
         // An ended node terminates its Proxy's effect, and waits for what's left of it
         if (Proxy is { Finished: false })

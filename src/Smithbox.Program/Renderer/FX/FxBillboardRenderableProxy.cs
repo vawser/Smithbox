@@ -49,12 +49,16 @@ public struct FxBillboardMaterial
 {
     public uint Texture1, Texture2, Texture3, LayerCount;
     public uint Columns, TotalFrames, Flags, Orientation;
-    /// <summary>extra.x: blend mode; extra.y: MultiTextureBillboardEx's layer opacity mode (FxBillboardDef).</summary>
-    public uint BlendMode, LayerOpacityMode, Pad1, Pad2;
+    /// <summary>
+    /// extra.x: blend mode; extra.y: MultiTextureBillboardEx's layer opacity mode (FxBillboardDef); extra.z: the
+    /// scene colour copy's texture index (Distortion, RadialBlur; SceneColor); extra.w: the screen effect's
+    /// distortion mode (bits 0–3), shape (4–7) and blur iterations (8–15).
+    /// </summary>
+    public uint BlendMode, LayerOpacityMode, SceneColor, ScreenParams;
     public Vector4 Tuning; // x: brightness, y: depth fade distance
 
     public const uint FlagInterpolate = 1, FlagDepthBlend = 2, FlagPremultiply = 4, FlagMultiTexture = 8,
-        FlagRotateBeforeScale = 16, FlagSolid = 32;
+        FlagRotateBeforeScale = 16, FlagSolid = 32, FlagDistortion = 64, FlagRadialBlur = 128, FlagLensFlare = 256;
 }
 
 /// <summary>
@@ -90,6 +94,10 @@ public class FxBillboardRenderableProxy : RenderableProxy
     private bool _materialDirty = true;
     private int _blendMode = 2;
 
+    // Lens flares draw over the scene: no depth test (a flare moved across the screen must not be hidden by what is
+    // at its new place; how much of its source is in view is tested in the shader)
+    private bool _noDepth;
+
     public unsafe FxBillboardRenderableProxy(MeshRenderables renderables)
     {
         _renderablesSet = renderables;
@@ -112,12 +120,14 @@ public class FxBillboardRenderableProxy : RenderableProxy
     {
         lock (_lock)
         {
-            bool newBlend = material.BlendMode != (uint)_blendMode;
+            bool noDepth = (material.Flags & FxBillboardMaterial.FlagLensFlare) != 0;
+            bool newBlend = material.BlendMode != (uint)_blendMode || noDepth != _noDepth;
             _material = material;
             _materialDirty = true;
             if (newBlend)
             {
                 _blendMode = (int)material.BlendMode;
+                _noDepth = noDepth;
                 if (_renderable != -1)
                     ScheduleRenderableConstruction();
             }
@@ -211,7 +221,7 @@ public class FxBillboardRenderableProxy : RenderableProxy
 
     // ---------------------------------------------------------------- pipelines
 
-    private static readonly System.Collections.Concurrent.ConcurrentDictionary<(int Blend, int System), Pipeline> _pipelines = new();
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<(int Blend, int System, bool NoDepth), Pipeline> _pipelines = new();
 
     /// <summary>
     /// The blend modes: Normal (2, 6) source-over; Add (4, 0, 7) adds colour × alpha; Subtract (5) takes it away;
@@ -232,7 +242,7 @@ public class FxBillboardRenderableProxy : RenderableProxy
 
     private Pipeline GetPipeline(GraphicsDevice gd, ResourceFactory factory)
     {
-        return _pipelines.GetOrAdd((_blendMode, _renderablesSet.RenderableSystemIndex), _ =>
+        return _pipelines.GetOrAdd((_blendMode, _renderablesSet.RenderableSystemIndex, _noDepth), _ =>
         {
             ResourceLayout sceneParamLayout = StaticResourceCache.GetResourceLayout(factory, StaticResourceCache.SceneParamLayoutDescription);
             ResourceLayout pickingResultLayout = StaticResourceCache.GetResourceLayout(factory, StaticResourceCache.PickingResultDescription);
@@ -245,7 +255,7 @@ public class FxBillboardRenderableProxy : RenderableProxy
                 new BlendStateDescription(RgbaFloat.Black, BlendFor(_blendMode)));
 
             // Tested against the scene, never written: particles don't hide each other or what's behind them
-            description.DepthStencilState = DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
+            description.DepthStencilState = _noDepth ? DepthStencilStateDescription.Disabled : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
 
             description.RasterizerState = new RasterizerStateDescription(
                 VkCullModeFlags.None, VkPolygonMode.Fill, VkFrontFace.CounterClockwise, true, false);

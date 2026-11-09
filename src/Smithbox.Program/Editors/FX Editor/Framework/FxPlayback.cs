@@ -118,6 +118,24 @@ public class FxPlayback
         };
     }
 
+    // ---------------------------------------------------------------- forces
+
+    /// <summary>
+    /// The preview wind (plan §20): what weather wind would do to an effect's force responders, as a boundless world
+    /// acceleration in the horizontal direction set by the yaw (0 = +Z). Zero when off.
+    /// </summary>
+    public System.Numerics.Vector3 WindVector()
+    {
+        if (!CFG.Current.FxEditor_Preview_Wind)
+            return System.Numerics.Vector3.Zero;
+        float a = CFG.Current.FxEditor_Preview_Wind_Yaw * (MathF.PI / 180f);
+        return new System.Numerics.Vector3(MathF.Sin(a), 0, MathF.Cos(a)) * CFG.Current.FxEditor_Preview_Wind_Strength;
+    }
+
+    /// <summary>The settings the forces depend on, so the runtime knows to replay when they change.</summary>
+    public (bool, float, float, bool) ForceKey => (CFG.Current.FxEditor_Preview_Wind, CFG.Current.FxEditor_Preview_Wind_Yaw,
+        CFG.Current.FxEditor_Preview_Wind_Strength, CFG.Current.FxEditor_Preview_Effect_Forces);
+
     // ---------------------------------------------------------------- visibility
 
     /// <summary>

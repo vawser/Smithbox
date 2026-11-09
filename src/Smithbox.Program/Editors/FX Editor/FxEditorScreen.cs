@@ -71,9 +71,21 @@ public class FxEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
+    /// <summary>
+    /// Set once the FX Editor window (or a window docked inside it) has had focus. The bank isn't indexed before
+    /// then: the editor's window can draw while the user is elsewhere (startup, before the dock layout settles, or
+    /// docked side by side), and indexing reads every FXR binder in the project.
+    /// </summary>
+    private bool HasBeenFocused;
+
     public void OnGUI(string[] commands)
     {
-        Data.Bank.StartIndexing();
+        // Called inside the FX Editor's host window, so this tests that window and the windows in its dockspace
+        if (!HasBeenFocused && ImGui.IsWindowFocused(ImGuiFocusedFlags.RootAndChildWindows | ImGuiFocusedFlags.DockHierarchy))
+            HasBeenFocused = true;
+
+        if (HasBeenFocused)
+            Data.Bank.StartIndexing();
         Data.Bank.Update();
 
         HandleCommands(commands);
