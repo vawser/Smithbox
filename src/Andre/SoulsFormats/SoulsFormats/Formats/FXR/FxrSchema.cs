@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace SoulsFormats
@@ -38,6 +39,24 @@ namespace SoulsFormats
 
         public IReadOnlyDictionary<string, FxrEnumDef> Enums => enums;
         private readonly Dictionary<string, FxrEnumDef> enums = new();
+
+        /// <summary>
+        /// fxr-main's ConfigActionSlots, by config type (1004 Basic, 1005 NodeEmitter): the config's fixed action
+        /// slots in file order, each with the action types that may fill it. Configs not listed have no fixed slots.
+        /// </summary>
+        public IReadOnlyDictionary<int, List<int[]>> ConfigSlots => configSlots;
+        private readonly Dictionary<int, List<int[]>> configSlots = new();
+
+        /// <summary>Which slot of a config type an action type fills, -1 when none (or the config has no fixed slots).</summary>
+        public int SlotOf(int configType, int actionType)
+        {
+            if (!configSlots.TryGetValue(configType, out var slots))
+                return -1;
+            for (int i = 0; i < slots.Count; i++)
+                if (Array.IndexOf(slots[i], actionType) >= 0)
+                    return i;
+            return -1;
+        }
 
         public static FxrSchema Load(string path) => Parse(File.ReadAllText(path));
 
@@ -87,6 +106,18 @@ namespace SoulsFormats
                     def.Layouts[game] = layout;
                 }
                 schema.actions[def.Type] = def;
+            }
+
+            if (root.TryGetProperty("configSlots", out var cs))
+            {
+                foreach (var c in cs.EnumerateObject())
+                {
+                    if (!int.TryParse(c.Name, out var configType)) continue;
+                    var list = new List<int[]>();
+                    foreach (var slot in c.Value.GetProperty("slots").EnumerateArray())
+                        list.Add(slot.EnumerateArray().Select(t => t.GetInt32()).ToArray());
+                    schema.configSlots[configType] = list;
+                }
             }
             return schema;
         }

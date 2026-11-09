@@ -42,6 +42,7 @@ public partial class FxEffectList
     private int Edits;
 
     public FxUsage Usage;
+    public FxExternalReferences External;
     public FxFavorites Favorites;
     public FxProjectCheck ProjectCheck;
 
@@ -53,6 +54,7 @@ public partial class FxEffectList
     {
         Editor = editor;
         Usage = new FxUsage(editor);
+        External = new FxExternalReferences(editor);
         Favorites = new FxFavorites(editor);
         ProjectCheck = new FxProjectCheck(editor);
         editor.ActionManager.ActionPerformed += () => Edits++;
@@ -61,9 +63,18 @@ public partial class FxEffectList
     private FxBank Bank => Editor.Data.Bank;
     private FxData Data => Editor.Data;
 
+    /// <summary>Shows the effects using a texture or model (the Resources tool's link).</summary>
+    public void ShowUsesResource(string resource)
+    {
+        Mode = FxListFilter.UsesResource;
+        ResourceText = resource;
+        Usage.StartScan();
+    }
+
     public void Display()
     {
         Usage.Update();
+        External.Update();
 
         GUI.TitleHeader(LOC.Get("FX_EffectList_Header"), LOC.Get("FX_EffectList_Header_TT"));
 
@@ -542,22 +553,44 @@ public partial class FxEffectList
         if (!Usage.ParamsAvailable)
         {
             ImGui.TextDisabled(LOC.Get("FX_EffectList_Params_Unavailable"));
+        }
+        else
+        {
+            var uses = Usage.ParamsUsing(entry.Id);
+            if (uses.Count == 0)
+                ImGui.TextDisabled(LOC.Get("FX_EffectList_None"));
+            foreach (var use in uses.Take(50))
+            {
+                var name = string.IsNullOrEmpty(use.RowName) ? "" : $" {use.RowName}";
+                if (ImGui.MenuItem($"{use.Param} {use.RowId}{name} : {use.Field}##fxUsedByParam_{use.Param}_{use.RowId}_{use.Field}"))
+                    FxUsage.JumpToParam(use);
+            }
+            if (uses.Count > 50)
+                ImGui.TextDisabled(LOC.Get("FX_EffectList_More", uses.Count - 50));
+            if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Rescan_Params")}##fxRescanParams"))
+                Usage.ScanParams();
+            GUI.Tooltip(LOC.Get("FX_EffectList_Rescan_Params_TT"));
+        }
+
+        // Time acts and maps, from the References tool's scan
+        ImGui.Separator();
+        ImGui.TextDisabled(LOC.Get("FX_ReferencesTool_External_Header"));
+        if (!External.HasScan)
+        {
+            ImGui.TextDisabled(LOC.Get("FX_ReferencesTool_External_Not_Scanned"));
             return;
         }
-        var uses = Usage.ParamsUsing(entry.Id);
-        if (uses.Count == 0)
+        var external = External.UsesOf(entry.Id);
+        if (external.Count == 0)
             ImGui.TextDisabled(LOC.Get("FX_EffectList_None"));
-        foreach (var use in uses.Take(50))
+        for (int i = 0; i < Math.Min(external.Count, 50); i++)
         {
-            var name = string.IsNullOrEmpty(use.RowName) ? "" : $" {use.RowName}";
-            if (ImGui.MenuItem($"{use.Param} {use.RowId}{name} : {use.Field}##fxUsedByParam_{use.Param}_{use.RowId}_{use.Field}"))
-                FxUsage.JumpToParam(use);
+            var u = external[i];
+            if (ImGui.MenuItem($"[{u.Kind}]  {u.Label}##fxUsedByExternal{i}", "", false, u.Command != null))
+                EditorCommandQueue.AddCommand(u.Command);
         }
-        if (uses.Count > 50)
-            ImGui.TextDisabled(LOC.Get("FX_EffectList_More", uses.Count - 50));
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectList_Rescan_Params")}##fxRescanParams"))
-            Usage.ScanParams();
-        GUI.Tooltip(LOC.Get("FX_EffectList_Rescan_Params_TT"));
+        if (external.Count > 50)
+            ImGui.TextDisabled(LOC.Get("FX_EffectList_More", external.Count - 50));
     }
 
     private void StartsMenu(FxEntry entry)

@@ -40,6 +40,9 @@ public class FxEditorScreen : EditorScreen
     // Tools
     public FxToolWindow ToolWindow;
     public FxPreviewTool PreviewTool;
+    public FxSearchTool SearchTool;
+    public FxReferencesTool ReferencesTool;
+    public FxResourcesTool ResourcesTool;
     public ViewportGridTool GridTool;
     public ViewportRenderingTool RenderingTool;
 
@@ -58,6 +61,9 @@ public class FxEditorScreen : EditorScreen
         ViewportWindow = new FxViewportWindow(this, project);
 
         PreviewTool = new FxPreviewTool(this);
+        SearchTool = new FxSearchTool(this);
+        ReferencesTool = new FxReferencesTool(this);
+        ResourcesTool = new FxResourcesTool(this);
         GridTool = new ViewportGridTool(ViewportGridEditor.Fx, () => ViewportWindow?.Viewport as VulkanViewport);
         RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
         ToolWindow = new FxToolWindow(this);

@@ -340,6 +340,13 @@ public partial class FxEffectList
                     ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_EffectList_Delete_Params",
                         uses.Count, string.Join(", ", uses.Take(3).Select(u => $"{u.Param} {u.RowId}")) + (uses.Count > 3 ? ", ..." : "")));
             }
+            if (External.HasScan)
+            {
+                var external = External.UsesOf(t.Id);
+                if (external.Count > 0)
+                    ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_EffectList_Delete_External",
+                        external.Count, string.Join(", ", external.Take(3).Select(u => u.Source).Distinct()) + (external.Count > 3 ? ", ..." : "")));
+            }
             ImGui.Unindent();
         }
         ImGui.EndChild();

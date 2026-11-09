@@ -34,6 +34,21 @@ public class FxToolWindow
         if (CFG.Current.Interface_FxEditor_Tool_Preview)
             Editor.PreviewTool.OnToolWindow();
 
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        if (CFG.Current.Interface_FxEditor_Tool_Search)
+            Editor.SearchTool.OnToolWindow();
+
+        if (CFG.Current.Interface_FxEditor_Tool_References)
+            Editor.ReferencesTool.OnToolWindow();
+
+        // Assets
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Assets"));
+
+        if (CFG.Current.Interface_FxEditor_Tool_Resources)
+            Editor.ResourcesTool.OnToolWindow();
+
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
 
@@ -56,6 +71,21 @@ public class FxToolWindow
         if (ImGui.MenuItem($"{LOC.Get("FX_ToolWindow_View_Toggle_Preview")}##fxPreviewToolToggle"))
             CFG.Current.Interface_FxEditor_Tool_Preview = !CFG.Current.Interface_FxEditor_Tool_Preview;
         GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_Tool_Preview);
+
+        // Search
+        if (ImGui.MenuItem($"{LOC.Get("FX_ToolWindow_View_Toggle_Search")}##fxSearchToolToggle"))
+            CFG.Current.Interface_FxEditor_Tool_Search = !CFG.Current.Interface_FxEditor_Tool_Search;
+        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_Tool_Search);
+
+        // References
+        if (ImGui.MenuItem($"{LOC.Get("FX_ToolWindow_View_Toggle_References")}##fxReferencesToolToggle"))
+            CFG.Current.Interface_FxEditor_Tool_References = !CFG.Current.Interface_FxEditor_Tool_References;
+        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_Tool_References);
+
+        // Resources
+        if (ImGui.MenuItem($"{LOC.Get("FX_ToolWindow_View_Toggle_Resources")}##fxResourcesToolToggle"))
+            CFG.Current.Interface_FxEditor_Tool_Resources = !CFG.Current.Interface_FxEditor_Tool_Resources;
+        GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_Tool_Resources);
 
         // Grid Configuration
         if (ImGui.MenuItem($"{LOC.Get("FX_ToolWindow_View_Toggle_Grid")}##fxGridToolToggle"))

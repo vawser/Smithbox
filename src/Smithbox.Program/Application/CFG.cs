@@ -1272,6 +1272,9 @@ public class CFG
     public bool Interface_FxEditor_ToolWindow = true;
     public bool Interface_FxEditor_CurveEditor = true;
     public bool Interface_FxEditor_Tool_Preview = true;
+    public bool Interface_FxEditor_Tool_Search = true;
+    public bool Interface_FxEditor_Tool_References = true;
+    public bool Interface_FxEditor_Tool_Resources = true;
     public bool Interface_FxEditor_Tool_GridConfiguration = true;
     public bool Interface_FxEditor_Tool_ViewportRendering = true;
     #endregion
