@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
@@ -104,6 +105,9 @@ public class ProjectEntry
 
             if (Handler.HavokEditorStub != null)
                 Handler.HavokEditorStub.Display(dt, commands);
+
+            if (Handler.FxEditorStub != null)
+                Handler.FxEditorStub.Display(dt, commands);
         }
 
         // Auto-Save
@@ -340,6 +344,7 @@ public class ProjectEntry
             Handler.GparamEditor,
             Handler.MaterialEditor,
             Handler.HavokEditor,
+            Handler.FxEditor,
             Handler.TextureViewer,
             Handler.FileBrowser,
         ];
@@ -503,6 +508,12 @@ public class ProjectEntry
                         {
                             Handler.HavokEditor.SaveAll(true);
                         }
+                    }
+
+                    // Gated by FxEditor_Allow_Automatic_Save within the editor
+                    if (Handler.FocusedEditor is FxEditorScreen)
+                    {
+                        Handler.FxEditor?.SaveAll(true);
                     }
                 }
                 catch (Exception ex)

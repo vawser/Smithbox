@@ -129,6 +129,14 @@
       "Text": "If enabled, the Havok Editor and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Fx_Editor",
+      "Text": "FX Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Fx_Editor_TT",
+      "Text": "If enabled, the FX Editor (particle effects, FXR) and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },

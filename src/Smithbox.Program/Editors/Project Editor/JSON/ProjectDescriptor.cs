@@ -32,6 +32,7 @@ public class ProjectDescriptor
     public bool EnableFileBrowser = false;
     public bool EnableAnimEditor = false;
     public bool EnableHavokEditor = false;
+    public bool EnableFxEditor = false;
     public bool EnableTimeActEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
@@ -61,6 +62,7 @@ public class ProjectDescriptor
         EnableFileBrowser = newDescriptor.EnableFileBrowser;
         EnableAnimEditor = newDescriptor.EnableAnimEditor;
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
+        EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableTimeActEditor = newDescriptor.EnableTimeActEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
@@ -136,6 +138,7 @@ public class ProjectDescriptor
             && EnableFileBrowser == other.EnableFileBrowser
             && EnableAnimEditor == other.EnableAnimEditor
             && EnableHavokEditor == other.EnableHavokEditor
+            && EnableFxEditor == other.EnableFxEditor
             && EnableTimeActEditor == other.EnableTimeActEditor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
     }
@@ -163,6 +166,7 @@ public class ProjectDescriptor
         EnableFileBrowser = edited.EnableFileBrowser;
         EnableAnimEditor = edited.EnableAnimEditor;
         EnableHavokEditor = edited.EnableHavokEditor;
+        EnableFxEditor = edited.EnableFxEditor;
         EnableTimeActEditor = edited.EnableTimeActEditor;
         EnableExternalMaterialData = edited.EnableExternalMaterialData;
     }
@@ -190,6 +194,7 @@ public class ProjectDescriptor
             EnableFileBrowser = this.EnableFileBrowser,
             EnableAnimEditor = this.EnableAnimEditor,
             EnableHavokEditor = this.EnableHavokEditor,
+            EnableFxEditor = this.EnableFxEditor,
             EnableTimeActEditor = this.EnableTimeActEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
 
@@ -226,6 +231,7 @@ public class ProjectDescriptor
         EnableFileBrowser = true;
         EnableAnimEditor = true;
         EnableHavokEditor = true;
+        EnableFxEditor = true;
         EnableTimeActEditor = true;
         EnableExternalMaterialData = true;
     }

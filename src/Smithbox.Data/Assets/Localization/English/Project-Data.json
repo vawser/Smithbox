@@ -113,6 +113,14 @@
       "Text": "[Havok Editor] Failed to setup Havok Bank."
     },
     {
+      "Key": "PROJECT_Data_Setup_Fx_Data_PASS",
+      "Text": "[FX Editor] Loaded the FXR schema."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Fx_Data_FAIL",
+      "Text": "[FX Editor] Failed to load the FXR schema."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
       "Text": "[Project] Setup Common Data."
     },

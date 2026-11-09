@@ -1225,6 +1225,19 @@ public class CFG
 
     #endregion
 
+    #region FX Editor
+    public bool FxEditor_Allow_Automatic_Save = true;
+
+    // Effect List
+    public bool FxEditor_EffectList_Display_Aliases = true;
+    public bool FxEditor_EffectList_Group_By_Binder = false;
+
+    // Action Inspector
+    public bool FxEditor_Inspector_Show_Raw = false;
+    public bool FxEditor_Inspector_Show_Unknown = true;
+    public bool FxEditor_Inspector_Show_Descriptions = true;
+    #endregion
+
     #region Havok Editor
     public bool HavokEditor_Allow_Unmodified_Save = false;
     public bool HavokEditor_Allow_Automatic_Save = true;

@@ -145,6 +145,14 @@ public static class FocusManager
 
         return false;
     }
+    public static bool IsInFxEditor()
+    {
+        return Focus is EditorFocusContext.FxEditor_None
+            or EditorFocusContext.FxEditor_EffectList
+            or EditorFocusContext.FxEditor_EffectTree
+            or EditorFocusContext.FxEditor_Inspector;
+    }
+
     public static bool IsInHavokEditor()
     {
         if (Focus is EditorFocusContext.HavokEditor_None
@@ -245,6 +253,10 @@ public enum EditorFocusContext
     AnimEditor_Viewport,
     AnimEditor_Tools,
 
+    FxEditor_None,
+    FxEditor_EffectList,
+    FxEditor_EffectTree,
+    FxEditor_Inspector,
     HavokEditor_None,
     HavokEditor_CategoryList,
     HavokEditor_BinderList,

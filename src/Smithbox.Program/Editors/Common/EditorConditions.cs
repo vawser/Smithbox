@@ -38,6 +38,12 @@ public static class EditorConditions
         return true;
     }
 
+    /// <summary>The FX Editor: FXR effects of the games the FXR schema covers</summary>
+    public static bool SupportsFxEditor(ProjectType curType)
+    {
+        return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+    }
+
     public static bool SupportsHavokEditor(ProjectType curType)
     {
         if (curType

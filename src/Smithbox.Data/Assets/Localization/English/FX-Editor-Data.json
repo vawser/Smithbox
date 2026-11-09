@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    {
+      "Key": "FX_Data_Failed_Load_Schema",
+      "Text": "Failed to load the FXR schema: {0}"
+    },
+    {
+      "Key": "FX_Data_Failed_Index_Binder",
+      "Text": "Failed to read the effect binder: {0}"
+    },
+    {
+      "Key": "FX_Data_Indexed",
+      "Text": "[FX Editor] Found {0} effects in {1} binders."
+    },
+    {
+      "Key": "FX_Data_Failed_Find_Effect",
+      "Text": "Effect {0} is missing from binder {1}."
+    },
+    {
+      "Key": "FX_Data_Failed_Read_Effect",
+      "Text": "Failed to read effect {0} from {1}."
+    },
+    {
+      "Key": "FX_Data_Failed_Write_Effect",
+      "Text": "Failed to write effect {0}."
+    },
+    {
+      "Key": "FX_Data_Failed_Write_Binder",
+      "Text": "Failed to save the effect binder: {0}"
+    },
+    {
+      "Key": "FX_Data_Saved_Binder",
+      "Text": "[FX Editor] Saved {0} ({1} effects, {2} KB) to the project folder."
+    },
+    {
+      "Key": "FX_Data_Save_Nothing",
+      "Text": "[FX Editor] Nothing to save: no effect has unsaved changes."
+    },
+    {
+      "Key": "FX_Data_Save_Busy",
+      "Text": "[FX Editor] A save is still running; wait for it to finish."
+    },
+    {
+      "Key": "FX_Data_Save_Start",
+      "Text": "[FX Editor] Saving {0} effects to {1} binders in {2}."
+    }
+  ]
+}

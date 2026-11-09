@@ -669,6 +669,9 @@ public class ProjectConfigureMenu
         EditorToggle("PROJECT_Configuration_Checkbox_Gparam_Editor",
             ref Descriptor.EnableGparamEditor, EditorConditions.SupportsGraphicsParamEditor(type));
 
+        EditorToggle("PROJECT_Configuration_Checkbox_Fx_Editor",
+            ref Descriptor.EnableFxEditor, EditorConditions.SupportsFxEditor(type));
+
         EditorToggle("PROJECT_Configuration_Checkbox_Material_Editor",
             ref Descriptor.EnableMaterialEditor, EditorConditions.SupportsMaterialEditor(type));
 
@@ -719,6 +722,7 @@ public class ProjectConfigureMenu
         Descriptor.EnableTextEditor = enabled;
         Descriptor.EnableHavokEditor = enabled;
         Descriptor.EnableGparamEditor = enabled;
+        Descriptor.EnableFxEditor = enabled;
         Descriptor.EnableMaterialEditor = enabled;
         Descriptor.EnableTextureViewer = enabled;
         Descriptor.EnableFileBrowser = enabled;

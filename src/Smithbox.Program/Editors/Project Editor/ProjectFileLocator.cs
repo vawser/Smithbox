@@ -67,6 +67,9 @@ public class ProjectFileLocator : IDisposable
     public FileDictionary PartsTokenIdListFiles = new();
 
     public FileDictionary GparamFiles = new();
+
+    // FX Editor: effect binders (/sfx/*.ffxbnd)
+    public FileDictionary SfxFiles = new();
     public FileDictionary TextFiles = new();
 
     public FileDictionary MTD_Files = new();
@@ -410,6 +413,7 @@ public class ProjectFileLocator : IDisposable
         var lightAtlasFiles = new HashSet<FileDictionaryEntry>();
         var lightProbeFiles = new HashSet<FileDictionaryEntry>();
         var gparamFiles = new HashSet<FileDictionaryEntry>();
+        var sfxFiles = new HashSet<FileDictionaryEntry>();
         var textFiles = new HashSet<FileDictionaryEntry>();
         var mtdFiles = new HashSet<FileDictionaryEntry>();
         var matbinFiles = new HashSet<FileDictionaryEntry>();
@@ -591,6 +595,10 @@ public class ProjectFileLocator : IDisposable
                     gparamFiles.Add(entry);
             }
 
+            // SFX binders (FX Editor). DS3 also has *_resource binders without FXRs; the FX bank skips them
+            if (folder.StartsWith("/sfx") && ext == "ffxbnd" && !isSd)
+                sfxFiles.Add(entry);
+
             // Text files
             if (folder.StartsWith("/msg") && ext == "msgbnd" && !isSd)
                 textFiles.Add(entry);
@@ -673,6 +681,7 @@ public class ProjectFileLocator : IDisposable
         LightAtlasFiles.Entries = lightAtlasFiles;
         LightProbeFiles.Entries = lightProbeFiles;
         GparamFiles.Entries = gparamFiles;
+        SfxFiles.Entries = sfxFiles;
         MTD_Files.Entries = mtdFiles;
         MATBIN_Files.Entries = matbinFiles;
         TextureFiles.Entries = textureFiles;
@@ -862,6 +871,7 @@ public class ProjectFileLocator : IDisposable
         LightAtlasFiles = null;
         LightProbeFiles = null;
         GparamFiles = null;
+        SfxFiles = null;
         LoadListFiles = null;
         PartsTokenIdListFiles = null;
         TextFiles = null;
