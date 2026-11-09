@@ -151,7 +151,10 @@ public class FxInspector
                 // Properties open in the Curve Editor
                 if (!stored) ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color with { W = 0.5f });
                 if (ImGui.Selectable($"{label}##fxPropSelect_{name}", Editor.Selection.Property == name))
-                    Editor.Selection.SelectProperty(name);
+                    {
+                        Editor.Selection.SelectProperty(name);
+                        Editor.FocusCurveEditor();
+                    }
                 if (!stored) ImGui.PopStyleColor();
             }
             else if (stored)
@@ -447,7 +450,10 @@ public class FxInspector
                 : curve.Keyframes.Count;
             var summary = LOC.Get("FX_Inspector_Curve_Summary", curve.Function, keys, curve.Loop ? LOC.Get("FX_Inspector_Curve_Loop") : "");
             if (ImGui.Selectable($"{summary}{id}", Editor.Selection.Property == name))
-                Editor.Selection.SelectProperty(name);
+                {
+                    Editor.Selection.SelectProperty(name);
+                    Editor.FocusCurveEditor();
+                }
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();

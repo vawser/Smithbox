@@ -125,6 +125,83 @@ public class FxTextureLibrary : IResourceEventListener
         list.Add((name, source.InternalName, kind));
     }
 
+    /// <summary>A texture path's file name, the texture's name: N:\GR\data\Sfx\Tex\s88300_a.tif to s88300_a.</summary>
+    private static string Stem(string path) => Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
+
+    /// <summary>
+    /// A texture a model's material names: from the sfx binders when one holds it, otherwise from the part it
+    /// belongs to (ER sfx MATBINs point at weapon and AAT textures, e.g. Model\parts\Weapon\WP_A_0880\tex\ and
+    /// Model\parts\tex\AAT500_Hair_02_a.tif).
+    /// </summary>
+    private void RequestModelTexture(string path)
+    {
+        var name = Stem(path);
+        if (Editor.Data.Bank.Textures.ContainsKey(name))
+            RequestTextureByName(name);
+        else
+            RequestPartTextures(path);
+    }
+
+    // Part containers asked for, each once; and loads still running, to refresh the models when one finishes
+    private readonly HashSet<string> RequestedContainers = new(StringComparer.OrdinalIgnoreCase);
+    private readonly List<Task> ContainerLoads = new();
+
+    /// <summary>
+    /// Loads the textures of the part container a texture path is under, into the pool the FX models use, where
+    /// FlverResource finds them by name. ...\parts\tex\ is the shared AAT textures (common_body); ...\parts\Type\Id\tex\
+    /// is that part's partsbnd. The pool skips a container that is loaded or loading already.
+    /// </summary>
+    private void RequestPartTextures(string path)
+    {
+        var parts = path.Replace('/', '\\').Split('\\', StringSplitOptions.RemoveEmptyEntries);
+        int partsIndex = Array.FindLastIndex(parts, p => p.Equals("parts", StringComparison.OrdinalIgnoreCase));
+        int texIndex = Array.FindLastIndex(parts, p => p.Equals("tex", StringComparison.OrdinalIgnoreCase));
+        var stem = Stem(path);
+        var project = Editor.Project;
+
+        ResourceDescriptor descriptor;
+        if (partsIndex >= 0 && texIndex > partsIndex)
+        {
+            descriptor = texIndex == partsIndex + 1
+                ? TextureLocator.GetCharacterCommonTextureVirtualPath(project, "common_body")
+                : TextureLocator.GetPartTextureVirtualPath(project, parts[texIndex - 1].ToLowerInvariant());
+        }
+        else if (Array.FindLastIndex(parts, p => p.Equals("chr", StringComparison.OrdinalIgnoreCase)) is var chrIndex
+                 && chrIndex >= 0 && texIndex == chrIndex + 2)
+        {
+            // Character textures (DS3 s-models use Model\chr\c5180\tex\c5180_Fruit_a.tif): the character's texbnd
+            descriptor = TextureLocator.GetCharacterTextureVirtualPath(project, parts[chrIndex + 1].ToLowerInvariant());
+        }
+        else if (stem.Length >= 10 && stem.StartsWith("AET", StringComparison.OrdinalIgnoreCase))
+        {
+            // Asset environment textures (Asset\Environment\texture\AET250\AET250_041_a.tif): asset/aet/aet250/aet250_041.tpf
+            descriptor = TextureLocator.GetAssetTextureVirtualPath(project, stem[..10].ToLowerInvariant());
+        }
+        else
+        {
+            return;
+        }
+
+        var container = descriptor.IsValid() ? descriptor.GetContainerPath(project) : null;
+        if (container == null || !RequestedContainers.Add(container))
+            return;
+
+        var vfsPath = "/" + container.Replace('\\', '/').TrimStart('/');
+        if (!project.VFS.FS.FileExists(vfsPath))
+        {
+            Missing.Add(container);
+            return;
+        }
+
+        ContainerLoads.Add(ResourceManager.DefaultPool.LoadContainer(container, new LoadOptions
+        {
+            Types = ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            HideFromLoadWindow = true,
+            JobName = $"FX part textures {container}",
+        }));
+    }
+
     /// <summary>A texture by its name (as a model's material names it), if a binder holds it.</summary>
     private void RequestTextureByName(string name)
     {
@@ -171,7 +248,8 @@ public class FxTextureLibrary : IResourceEventListener
     }
 
     /// <summary>
-    /// The texture names a model's materials use (their file names, e.g. s88300_a).
+    /// The texture paths a model's materials use (e.g. N:\GR\data\Sfx\Tex\s88300_a.tif; their file names are the
+    /// texture names).
     /// ER, NR and AC6 sfx models leave most texture paths empty (ER: 1,353 of 1,708) and name them in the
     /// material's MATBIN instead, which is where FlverResource looks them up. Those are asked for here too, from
     /// all of the MATBIN's samplers, as the renderer also matches samplers loosely
@@ -180,7 +258,6 @@ public class FxTextureLibrary : IResourceEventListener
     private static List<string> MaterialTextures(byte[] bytes, MaterialBank materials)
     {
         var names = new List<string>();
-        static string Stem(string path) => Path.GetFileNameWithoutExtension(path.Replace('\\', '/'));
         try
         {
             var data = SoulsFormats.DCX.Is(bytes) ? SoulsFormats.DCX.Decompress(bytes).ToArray() : bytes;
@@ -191,7 +268,7 @@ public class FxTextureLibrary : IResourceEventListener
                 foreach (var texture in material.Textures)
                 {
                     if (!string.IsNullOrEmpty(texture.Path))
-                        names.Add(Stem(texture.Path));
+                        names.Add(texture.Path);
                     else
                         fromMatbin = true;
                 }
@@ -200,7 +277,7 @@ public class FxTextureLibrary : IResourceEventListener
                 if (matbin != null)
                     foreach (var sampler in matbin.Samplers)
                         if (!string.IsNullOrEmpty(sampler.Path))
-                            names.Add(Stem(sampler.Path));
+                            names.Add(sampler.Path);
             }
         }
         catch
@@ -214,6 +291,10 @@ public class FxTextureLibrary : IResourceEventListener
     public void Update()
     {
         ReadNextBinder();
+
+        // A part container's textures arrived: have the models pick them up
+        if (ContainerLoads.RemoveAll(t => t.IsCompleted) > 0)
+            ResourceManager.SchedulePostTextureRefresh();
 
         while (Read.TryDequeue(out var item))
         {
@@ -229,8 +310,8 @@ public class FxTextureLibrary : IResourceEventListener
                     JobName = $"FX model {item.Name}",
                     HideFromLoadWindow = true,
                 });
-                foreach (var texture in item.ModelTextures ?? new())
-                    RequestTextureByName(texture);
+                foreach (var path in item.ModelTextures ?? new())
+                    RequestModelTexture(path);
             }
             else
             {
@@ -304,5 +385,7 @@ public class FxTextureLibrary : IResourceEventListener
         Names.Clear();
         Pending.Clear();
         ModelTextures.Clear();
+        RequestedContainers.Clear();
+        ContainerLoads.Clear();
     }
 }

@@ -327,10 +327,25 @@ public sealed class FxLineDef
     }
 }
 
+/// <summary>A model particle as drawn (FX Editor Plan §18): its transform, colour, uv offset and sprite frame.</summary>
+public struct FxModelInstance
+{
+    public Matrix4x4 World;
+
+    /// <summary>color1 × color2 × color3 × the node's colour, rgb × rgbMultiplier, alpha × alphaMultiplier × fade.</summary>
+    public Vector4 Color;
+
+    /// <summary>offsetU/V + speedU/V × speedMultiplierU/V × age.</summary>
+    public Vector2 UvOffset;
+
+    public float Frame;
+}
+
 /// <summary>
 /// Model (605) and RichModel (10015): a FLVER (sfx/model/s&lt;id&gt;.flver) per particle, scaled, rotated (rotation
-/// + angular speed × age, Z then X then Y as nodes) and turned by the orientation mode. Colours, UV scrolling,
-/// sprite frames and animations aren't applied yet.
+/// + angular speed × age, Z then X then Y as nodes) and turned by the orientation mode. Model particles are drawn
+/// coloured by the effect (blend mode, colours, uv scrolling, sprite frames); RichModel ones with their materials.
+/// Animations aren't applied.
 /// </summary>
 public sealed class FxModelDef
 {
@@ -340,6 +355,18 @@ public sealed class FxModelDef
     public float VariationX = 1, VariationY = 1, VariationZ = 1;
     public FxValue SizeX, SizeY, SizeZ, RotationX, RotationY, RotationZ, Color1, Color2, Color3, Rgb, Alpha;
     public FxValue[] AngularSpeed;
+
+    /// <summary>
+    /// Model (605) only. A property in the later games (read at the particle's start), a field in DS3
+    /// (<see cref="BlendModeValue"/>); Normal (2) by default.
+    /// </summary>
+    public FxValue BlendMode;
+    public int BlendModeValue = 2;
+    public FxValue OffsetU, OffsetV, SpeedU, SpeedV, SpeedMultiplierU, SpeedMultiplierV, FrameIndex, FrameIndexOffset;
+    public int Columns = 1, TotalFrames = 1;
+
+    /// <summary>Model (605) particles are drawn by the FX model shader, coloured by the effect.</summary>
+    public bool IsEffectColoured => Action.Type == 605;
 
     public static FxModelDef Build(FxAppearanceDef appearance)
     {
@@ -373,13 +400,37 @@ public sealed class FxModelDef
                 FxRead.Prop(view, "angularSpeedY"), FxRead.Prop(view, "angularSpeedMultiplierY"),
                 FxRead.Prop(view, "angularSpeedZ"), FxRead.Prop(view, "angularSpeedMultiplierZ"),
             },
+            BlendMode = appearance.Action.Type == 605 ? FxRead.Prop(view, "blendMode") : null,
+            BlendModeValue = appearance.Action.Type == 605 ? FxRead.Int(view, "blendMode", 2) : 2,
+            OffsetU = FxRead.Prop(view, "offsetU"),
+            OffsetV = FxRead.Prop(view, "offsetV"),
+            SpeedU = FxRead.Prop(view, "speedU"),
+            SpeedV = FxRead.Prop(view, "speedV"),
+            SpeedMultiplierU = FxRead.Prop(view, "speedMultiplierU"),
+            SpeedMultiplierV = FxRead.Prop(view, "speedMultiplierV"),
+            FrameIndex = FxRead.Prop(view, "frameIndex"),
+            FrameIndexOffset = FxRead.Prop(view, "frameIndexOffset"),
+            Columns = Math.Max(1, FxRead.Int(view, "columns", 1)),
+            TotalFrames = Math.Max(1, FxRead.Int(view, "totalFrames", 1)),
         };
     }
+
+    /// <summary>The blend mode at a particle's start, as the billboards' (Normal 2 when the action has none).</summary>
+    public int BlendModeAt(FxNodeInstance node, FxParticle p) =>
+        BlendMode == null ? BlendModeValue : (int)MathF.Round(BlendMode.Scalar(FxRead.Ctx(node, p)));
 
     /// <summary>The model's world transform; false when it is scaled to nothing or fully transparent.</summary>
     public bool Evaluate(FxNodeInstance node, FxParticle p, Vector3 position, Vector3 eye, Vector3 cameraForward, out Matrix4x4 world)
     {
-        world = Matrix4x4.Identity;
+        bool drawn = EvaluateInstance(node, p, position, eye, cameraForward, out var instance);
+        world = instance.World;
+        return drawn;
+    }
+
+    /// <summary>The model particle as drawn; false when it is scaled to nothing or fully transparent.</summary>
+    public bool EvaluateInstance(FxNodeInstance node, FxParticle p, Vector3 position, Vector3 eye, Vector3 cameraForward, out FxModelInstance instance)
+    {
+        instance = new FxModelInstance { World = Matrix4x4.Identity };
         var ctx = FxRead.Ctx(node, p);
 
         float sx = SizeX?.Scalar(ctx) ?? 1;
@@ -420,7 +471,12 @@ public sealed class FxModelDef
             _ => Vector3.UnitZ,
         };
 
-        world = Matrix4x4.CreateScale(sx, sy, sz) * rotation * Look(forward) * Matrix4x4.CreateTranslation(position);
+        instance.World = Matrix4x4.CreateScale(sx, sy, sz) * rotation * Look(forward) * Matrix4x4.CreateTranslation(position);
+        instance.Color = color;
+        instance.UvOffset = new Vector2(
+            (OffsetU?.Scalar(ctx) ?? 0) + (SpeedU?.Scalar(ctx) ?? 0) * (SpeedMultiplierU?.Scalar(ctx) ?? 1) * p.Age,
+            (OffsetV?.Scalar(ctx) ?? 0) + (SpeedV?.Scalar(ctx) ?? 0) * (SpeedMultiplierV?.Scalar(ctx) ?? 1) * p.Age);
+        instance.Frame = (FrameIndex?.Scalar(ctx) ?? 0) + (FrameIndexOffset?.Scalar(ctx) ?? 0);
         return true;
     }
 

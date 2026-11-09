@@ -103,6 +103,13 @@ public class FxEditorScreen : EditorScreen
         Window($"{LOC.Get("FX_Window_Effect_Tree")}###fxEditor_EffectTree", dsid, EditorFocusContext.FxEditor_EffectTree, EffectTree.Display);
         Window($"{LOC.Get("FX_Window_Inspector")}###fxEditor_Inspector", dsid, EditorFocusContext.FxEditor_Inspector, Inspector.Display);
 
+        if (CurveEditorFocusRequested)
+        {
+            CurveEditorFocusRequested = false;
+            if (CFG.Current.Interface_FxEditor_CurveEditor)
+                ImGui.SetNextWindowFocus();
+        }
+
         if (CFG.Current.Interface_FxEditor_CurveEditor)
             Window($"{LOC.Get("FX_Window_Curve_Editor")}###fxEditor_CurveEditor", dsid, EditorFocusContext.FxEditor_Inspector, CurveEditor.Display);
 
@@ -188,6 +195,18 @@ public class FxEditorScreen : EditorScreen
     public bool InputCaptured()
     {
         return ViewportWindow.InputCaptured();
+    }
+
+    private bool CurveEditorFocusRequested;
+
+    /// <summary>
+    /// Brings the Curve Editor to the front on the next frame (selecting its tab when docked), showing it first if
+    /// it is hidden. The inspector calls this when a property is opened in it.
+    /// </summary>
+    public void FocusCurveEditor()
+    {
+        CFG.Current.Interface_FxEditor_CurveEditor = true;
+        CurveEditorFocusRequested = true;
     }
 
     private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw, ImGuiWindowFlags? flags = null)

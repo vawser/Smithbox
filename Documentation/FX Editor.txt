@@ -13,6 +13,3 @@
     - Add visibility toggles for each node so the node's effect can be hidden in playback
     - Add Duplicate / Delete action
 
-- Action Inspector
-    - Curve link should focus Curve Editor window
-
