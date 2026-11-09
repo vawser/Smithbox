@@ -53,7 +53,7 @@ public struct FxBillboardMaterial
     public Vector4 Tuning; // x: brightness, y: depth fade distance
 
     public const uint FlagInterpolate = 1, FlagDepthBlend = 2, FlagPremultiply = 4, FlagMultiTexture = 8,
-        FlagRotateBeforeScale = 16;
+        FlagRotateBeforeScale = 16, FlagSolid = 32;
 }
 
 /// <summary>

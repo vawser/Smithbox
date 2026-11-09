@@ -84,6 +84,29 @@ void main()
 	fxMaterial m = matdata[mat];
 	vec2 thresholds = unpackUnorm2x16(floatBitsToUint(d3.z));
 
+	// Segment mode (trails and lines): corner x picks end A (-0.5) or B (+0.5), corner y the side; each end has its
+	// own half-width vector and colour. A: d0 end, d2 colour, d5 half-width; B: e4 end, e1 colour, e0 half-width.
+	if (m.params.w == 100u)
+	{
+		bool atB = position.x > 0.0;
+		vec3 end = atB ? e4.xyz : d0.xyz;
+		vec3 across = atB ? e0.xyz : d5.xyz;
+		vec3 segPos = end + across * (position.y * 2.0);
+
+		fsin_uv = vec2(position.x + 0.5, 0.5 - position.y);
+		fsin_color = atB ? e1 : d2;
+		fsin_frame = vec4(d1.z, thresholds.x, thresholds.y, 0);
+		fsin_layer1 = d4;
+		fsin_layer2 = vec4(0, 0, 1, 1);
+		fsin_layer3 = vec4(0, 0, 1, 1);
+		fsin_layer1Color = vec4(1);
+		fsin_layer2Color = vec4(1);
+		fsin_layer3Color = vec4(1);
+		fsin_mat = mat;
+		gl_Position = sceneparam.projection * sceneparam.view * vec4(segPos, 1.0);
+		return;
+	}
+
 	vec3 center = d0.xyz;
 	float rotZ = d0.w;
 	vec2 size = d1.xy;

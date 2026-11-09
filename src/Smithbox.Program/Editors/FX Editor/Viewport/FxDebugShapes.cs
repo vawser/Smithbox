@@ -14,6 +14,7 @@ public enum FxDebugLayer
     Directions,
     Proxies,
     Particles,
+    Lights,
 }
 
 /// <summary>

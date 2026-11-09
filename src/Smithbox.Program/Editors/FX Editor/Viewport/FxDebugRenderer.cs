@@ -28,6 +28,7 @@ public sealed class FxDebugRenderer
         FxDebugLayer.Directions => new(1.00f, 0.55f, 0.15f),
         FxDebugLayer.Proxies => new(1.00f, 0.35f, 1.00f),
         FxDebugLayer.Particles => new(1.00f, 1.00f, 1.00f),
+        FxDebugLayer.Lights => new(1.00f, 0.80f, 0.35f),
         _ => new(1, 1, 1),
     };
 

@@ -79,6 +79,45 @@ public class FxPlayback
         Time = Math.Clamp(time, 0, Length);
     }
 
+    // ---------------------------------------------------------------- motion
+
+    /// <summary>How the preview moves the effect: 0 still, 1 forward (a projectile), 2 swing (a weapon).</summary>
+    public int Motion
+    {
+        get => CFG.Current.FxEditor_Preview_Motion;
+        set => CFG.Current.FxEditor_Preview_Motion = Math.Clamp(value, 0, 2);
+    }
+
+    /// <summary>The settings the motion depends on, so the runtime knows to replay when they change.</summary>
+    public (int, float, float, float) MotionKey => (Motion, CFG.Current.FxEditor_Preview_Motion_Speed,
+        CFG.Current.FxEditor_Preview_Swing_Radius, CFG.Current.FxEditor_Preview_Swing_Speed);
+
+    /// <summary>
+    /// The effect's world transform at a time, null when it stays still.
+    /// - Forward: along +Z at the speed (m/s), facing +Z.
+    /// - Swing: round a circle of the radius about the Y axis at the angular speed (degrees/s), facing along the
+    ///   circle, as a weapon's tip moves in a horizontal slash.
+    /// </summary>
+    public Func<float, System.Numerics.Matrix4x4> MotionFunction()
+    {
+        float speed = CFG.Current.FxEditor_Preview_Motion_Speed;
+        float radius = CFG.Current.FxEditor_Preview_Swing_Radius;
+        float degrees = CFG.Current.FxEditor_Preview_Swing_Speed;
+
+        return Motion switch
+        {
+            1 => t => System.Numerics.Matrix4x4.CreateTranslation(0, 0, speed * t),
+            2 => t =>
+            {
+                float a = degrees * (MathF.PI / 180f) * t;
+                var position = new System.Numerics.Vector3(MathF.Sin(a) * radius, 0, MathF.Cos(a) * radius);
+                return System.Numerics.Matrix4x4.CreateRotationY(a + MathF.PI / 2)
+                    * System.Numerics.Matrix4x4.CreateTranslation(position);
+            },
+            _ => null,
+        };
+    }
+
     public float GetExternalValue(int id) => ExternalValues.TryGetValue(id, out var v) ? v : 0;
 
     public void SetExternalValue(int id, float value)

@@ -31,6 +31,10 @@ public class FxViewportWindow
     /// <summary>The particles drawn as their billboards (phase V3), and the textures they use.</summary>
     public FxTextureLibrary Textures;
     public FxBillboardRenderer Billboards;
+
+    /// <summary>Model particles and lights (phase V4).</summary>
+    public FxModelRenderer Models;
+    public FxLightRenderer Lights;
     private DateTime LastParticleBuild;
     private float LastParticleTime = -1;
     private static readonly TimeSpan ParticleInterval = TimeSpan.FromMilliseconds(50);
@@ -73,6 +77,8 @@ public class FxViewportWindow
         Runtime = new FxPreviewRuntime(editor);
         Textures = new FxTextureLibrary(editor);
         Billboards = new FxBillboardRenderer(editor, Textures);
+        Models = new FxModelRenderer(editor, Textures);
+        Lights = new FxLightRenderer(editor);
     }
 
     public void Display(uint dockspaceId)
@@ -96,9 +102,34 @@ public class FxViewportWindow
 
         var camera = (Viewport as VulkanViewport)?.ViewportCamera.CameraTransform.Position ?? Vector3.Zero;
         Runtime.Update(EditVersion, camera);
+        FollowEffect();
         Billboards.Update(Runtime.Instance, camera);
+        var forward = Viewport is VulkanViewport vk
+            ? Vector3.Transform(Vector3.UnitZ, vk.ViewportCamera.CameraTransform.RotationMatrix)
+            : Vector3.UnitZ;
+        Models.Update(Runtime.Instance, camera, forward);
+        Lights.Update(Runtime.Instance);
         UpdateParticles();
         ParticleRenderer.Update();
+    }
+
+    private Vector3? LastEffectPosition;
+
+    /// <summary>
+    /// With a moving preview, the camera moves by as much as the effect did, so it stays in view (and comes back
+    /// with it when playback restarts).
+    /// </summary>
+    private void FollowEffect()
+    {
+        var position = Runtime.EffectWorld.Translation;
+        if (Viewport is VulkanViewport vk && LastEffectPosition is { } last && CFG.Current.FxEditor_Preview_Motion_Follow
+            && Editor.Playback.Motion != 0)
+        {
+            var delta = position - last;
+            if (delta != Vector3.Zero)
+                vk.ViewportCamera.CameraTransform.Position += delta;
+        }
+        LastEffectPosition = position;
     }
 
     /// <summary>
@@ -111,7 +142,9 @@ public class FxViewportWindow
             return;
 
         var instance = Runtime.Instance;
-        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Particle_Markers)
+        bool markers = CFG.Current.FxEditor_Viewport_Display_Particle_Markers;
+        bool lightMarkers = CFG.Current.FxEditor_Viewport_Display_Light_Markers && Lights.DrawnLights > 0;
+        if (instance == null || !markers && !lightMarkers)
         {
             if (LastParticleTime >= 0)
             {
@@ -135,7 +168,7 @@ public class FxViewportWindow
         var result = new FxDebugShapes.Result();
         const float size = 0.04f;
         int drawn = 0;
-        foreach (var p in particles)
+        foreach (var p in markers ? particles : new())
         {
             if (drawn++ >= MaxDrawnParticles)
                 break;
@@ -144,7 +177,32 @@ public class FxViewportWindow
             result.Add(FxDebugLayer.Particles, o - Vector3.UnitY * size, o + Vector3.UnitY * size);
             result.Add(FxDebugLayer.Particles, o - Vector3.UnitZ * size, o + Vector3.UnitZ * size);
         }
-        DrawnParticles = Math.Min(particles.Count, MaxDrawnParticles);
+        DrawnParticles = markers ? Math.Min(particles.Count, MaxDrawnParticles) : 0;
+
+        // Lights: a cross where each is, a horizontal ring at its range, and a spot light's direction
+        if (lightMarkers)
+        {
+            foreach (var light in Lights.Current)
+            {
+                var o = light.Position;
+                const float cross = 0.08f;
+                result.Add(FxDebugLayer.Lights, o - Vector3.UnitX * cross, o + Vector3.UnitX * cross);
+                result.Add(FxDebugLayer.Lights, o - Vector3.UnitY * cross, o + Vector3.UnitY * cross);
+                result.Add(FxDebugLayer.Lights, o - Vector3.UnitZ * cross, o + Vector3.UnitZ * cross);
+
+                float r = Math.Min(light.Range, 50);
+                var prev = o + new Vector3(r, 0, 0);
+                for (int i = 1; i <= 32; i++)
+                {
+                    float a = i * MathF.Tau / 32;
+                    var next = o + new Vector3(MathF.Cos(a) * r, 0, MathF.Sin(a) * r);
+                    result.Add(FxDebugLayer.Lights, prev, next);
+                    prev = next;
+                }
+                if (light.Spot)
+                    result.Add(FxDebugLayer.Lights, o, o + light.Direction * Math.Min(light.Range, 2));
+            }
+        }
 
         ParticleRenderer.Show(Editor.RenderScene, result);
     }
@@ -222,6 +280,8 @@ public class FxViewportWindow
         DebugRenderer.Clear();
         ParticleRenderer.Clear();
         Billboards.Clear();
+        Models.Clear();
+        Lights.Clear();
         Textures.Clear();
         Runtime.Clear();
     }

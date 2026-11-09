@@ -82,6 +82,7 @@ public class FxBank : IDisposable
         {
             var entries = new SortedDictionary<int, FxEntry>();
             var textures = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
+            var models = new Dictionary<string, List<FxBinderRef>>(StringComparer.OrdinalIgnoreCase);
             foreach (var binder in binders)
             {
                 if (token.IsCancellationRequested)
@@ -99,6 +100,15 @@ public class FxBank : IDisposable
                             {
                                 if (!textures.TryGetValue(texture, out var list))
                                     textures[texture] = list = new();
+                                list.Add(new FxBinderRef(binder, file.Name));
+                                continue;
+                            }
+
+                            // Effect models (s<id>.flver), the same way
+                            if (TryParseModel(file.Name, out var model))
+                            {
+                                if (!models.TryGetValue(model, out var list))
+                                    models[model] = list = new();
                                 list.Add(new FxBinderRef(binder, file.Name));
                                 continue;
                             }
@@ -136,6 +146,7 @@ public class FxBank : IDisposable
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced, blocking: false, compacting: true);
 
             _finishedTextures = textures;
+            _finishedModels = models;
             _finished.Enqueue(entries);
         }, token);
     }
@@ -146,6 +157,22 @@ public class FxBank : IDisposable
     /// </summary>
     public Dictionary<string, List<FxBinderRef>> Textures { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
     private volatile Dictionary<string, List<FxBinderRef>> _finishedTextures;
+
+    /// <summary>Effect models by name (s88300), with the binders holding them. Filled by indexing.</summary>
+    public Dictionary<string, List<FxBinderRef>> Models { get; private set; } = new(StringComparer.OrdinalIgnoreCase);
+    private volatile Dictionary<string, List<FxBinderRef>> _finishedModels;
+
+    /// <summary>s88300.flver(.dcx), with any folder, to s88300.</summary>
+    public static bool TryParseModel(string internalName, out string name)
+    {
+        name = Path.GetFileName(internalName.Replace('\\', '/'));
+        if (name.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase))
+            name = name[..^4];
+        if (!name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase))
+            return false;
+        name = name[..^6];
+        return name.Length > 1 && name[0] is 's' or 'S';
+    }
 
     /// <summary>s88610_a.tpf(.dcx), with any folder, to s88610_a.</summary>
     public static bool TryParseTexture(string internalName, out string name)
@@ -183,6 +210,7 @@ public class FxBank : IDisposable
         {
             Entries = entries;
             Textures = _finishedTextures ?? Textures;
+            Models = _finishedModels ?? Models;
             IsIndexing = false;
             IsIndexed = true;
             Version++;

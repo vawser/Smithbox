@@ -57,6 +57,7 @@ const uint FlagInterpolate = 1u;
 const uint FlagDepthBlend = 2u;
 const uint FlagPremultiply = 4u;
 const uint FlagMultiTexture = 8u;
+const uint FlagSolid = 32u;
 
 int TextureIndex(uint tex)
 {
@@ -113,6 +114,12 @@ void main()
 	{
 		vec4 next = Sample(m.textures.x, FrameUv(fract(uv1), frame + 1.0, columns, total), fsin_uv);
 		tex = mix(tex, next, fract(frame));
+	}
+
+	// Lines have no texture: a solid strip
+	if ((flags & FlagSolid) != 0u)
+	{
+		tex = vec4(1.0);
 	}
 
 	if ((flags & FlagMultiTexture) != 0u)

@@ -20,6 +20,12 @@ public sealed class FxRuntimeContext
     /// <summary>Where the camera is, for LevelsOfDetail nodes.</summary>
     public Vector3 CameraPosition;
 
+    /// <summary>
+    /// The top-level effect's world transform at a time, as the game moves an effect (a projectile flying, a weapon
+    /// swinging); null keeps it where it is. A function of time, so a replay moves it the same way.
+    /// </summary>
+    public Func<float, Matrix4x4> Motion;
+
     public int MaxParticles = 20000;
     public int MaxNodes = 4000;
     public int MaxProxyDepth = 6;
@@ -80,6 +86,10 @@ public sealed class FxEffectInstance
             return;
 
         Time += dt;
+
+        // The effect itself moves as the preview says (effects started by Proxy nodes follow their node instead)
+        if (Depth == 0 && Context.Motion != null)
+            World = Context.Motion(Time);
 
         if (Terminated)
         {
@@ -201,6 +211,12 @@ public sealed class FxParticle
     public float Duration;
     public float EmissionTime;
     public uint Seed;
+
+    /// <summary>Tracers: the points left behind, oldest first, in world space; null for particles without one.</summary>
+    public List<FxTrailPoint> Trail;
+    public float TrailClock;
+    public int TrailCount;
+    public Vector3? LastWorld;
 }
 
 /// <summary>One instance of a node: its timing, transform, emitter state, particles and child instances.</summary>
@@ -910,7 +926,50 @@ public sealed class FxNodeInstance
 
             if (float.IsNaN(p.Position.X) || float.IsInfinity(p.Position.X))
                 p.Position = Vector3.Zero;
+
+            if (c.Tracer != null)
+                RecordTrail(p, dt, c.Tracer);
         }
+    }
+
+    /// <summary>
+    /// A tracer particle leaves a point every segmentInterval (every update for 0) where it is, in world space, with
+    /// the node's Z axis and the direction it came from. Points older than segmentDuration go, and at most
+    /// concurrentSegments are kept.
+    /// </summary>
+    private void RecordTrail(FxParticle p, float dt, FxTracerDef tracer)
+    {
+        var world = p.Local ? Vector3.Transform(p.Position, World) : p.Position;
+        float now = Effect.Time;
+
+        p.Trail ??= new List<FxTrailPoint>();
+        p.TrailClock += dt;
+
+        if (tracer.SegmentInterval <= 0 || p.TrailClock >= tracer.SegmentInterval || p.Trail.Count == 0)
+        {
+            p.TrailClock = 0;
+            var travel = p.LastWorld is { } last && Vector3.DistanceSquared(last, world) > 1e-12f
+                ? Vector3.Normalize(world - last)
+                : Vector3.Normalize(Vector3.TransformNormal(Vector3.UnitZ, World));
+            p.Trail.Add(new FxTrailPoint
+            {
+                Position = world,
+                Axis = Vector3.Normalize(Vector3.TransformNormal(Vector3.UnitZ, World)),
+                Travel = travel,
+                Time = now,
+                Index = p.TrailCount++,
+            });
+            p.LastWorld = world;
+        }
+
+        int expired = 0;
+        while (expired < p.Trail.Count && now - p.Trail[expired].Time > tracer.SegmentDuration)
+            expired++;
+        int over = p.Trail.Count - expired - tracer.ConcurrentSegments;
+        if (over > 0)
+            expired += over;
+        if (expired > 0)
+            p.Trail.RemoveRange(0, Math.Min(expired, p.Trail.Count));
     }
 
     // ---------------------------------------------------------------- children

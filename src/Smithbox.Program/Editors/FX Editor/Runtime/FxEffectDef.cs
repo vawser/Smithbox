@@ -126,6 +126,12 @@ public sealed class FxAppearanceDef
 
     /// <summary>For PointSprite, BillboardEx and MultiTextureBillboardEx: what the billboard renderer draws.</summary>
     public FxBillboardDef Billboard;
+
+    /// <summary>Tracer and LegacyTracer; Line and QuadLine; Model and RichModel; PointLight and SpotLight (phase V4).</summary>
+    public FxTracerDef Tracer;
+    public FxLineDef Line;
+    public FxModelDef Model;
+    public FxLightDef Light;
 }
 
 public sealed class FxConfigDef
@@ -184,6 +190,9 @@ public sealed class FxConfigDef
     public FxValue FadeDuration;
 
     public List<FxAppearanceDef> Appearances = new();
+
+    /// <summary>The config's first tracer, which sets how its particles record their trails.</summary>
+    public FxTracerDef Tracer;
 
     /// <summary>
     /// A Basic node's emitter makes particles when the config has an appearance. Lights and other non-particle
@@ -307,6 +316,11 @@ public sealed class FxConfigDef
                 {
                     var appearance = new FxAppearanceDef { Action = action, View = view, Name = d.Name, IsParticle = d.IsParticle };
                     appearance.Billboard = FxBillboardDef.Build(appearance);
+                    appearance.Tracer = FxTracerDef.Build(appearance);
+                    appearance.Line = FxLineDef.Build(appearance);
+                    appearance.Model = FxModelDef.Build(appearance);
+                    appearance.Light = FxLightDef.Build(appearance);
+                    def.Tracer ??= appearance.Tracer;
                     def.Appearances.Add(appearance);
                     break;
                 }

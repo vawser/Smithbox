@@ -55,6 +55,39 @@ public class FxPreviewTool
             "fxFrame", LOC.Get("FX_PreviewTool_Frame"), LOC.Get("FX_PreviewTool_Frame_TT"),
             () => Editor.ViewportWindow.Frame());
 
+        // Motion
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Motion_Header"), LOC.Get("FX_PreviewTool_Motion_Header_TT"));
+
+        string[] motions = { LOC.Get("FX_PreviewTool_Motion_Still"), LOC.Get("FX_PreviewTool_Motion_Forward"), LOC.Get("FX_PreviewTool_Motion_Swing") };
+        int motion = playback.Motion;
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.Combo("##fxMotion", ref motion, motions, motions.Length))
+            playback.Motion = motion;
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Motion_TT"));
+
+        if (playback.Motion == 1)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat("##fxMotionSpeed", ref CFG.Current.FxEditor_Preview_Motion_Speed, 0.1f, 100f, LOC.Get("FX_PreviewTool_Motion_Speed_Format"), ImGuiSliderFlags.Logarithmic);
+            GUI.Tooltip(LOC.Get("FX_PreviewTool_Motion_Speed_TT"));
+        }
+        else if (playback.Motion == 2)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat("##fxSwingRadius", ref CFG.Current.FxEditor_Preview_Swing_Radius, 0.1f, 10f, LOC.Get("FX_PreviewTool_Swing_Radius_Format"), ImGuiSliderFlags.Logarithmic);
+            GUI.Tooltip(LOC.Get("FX_PreviewTool_Swing_Radius_TT"));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat("##fxSwingSpeed", ref CFG.Current.FxEditor_Preview_Swing_Speed, 10f, 2000f, LOC.Get("FX_PreviewTool_Swing_Speed_Format"), ImGuiSliderFlags.Logarithmic);
+            GUI.Tooltip(LOC.Get("FX_PreviewTool_Swing_Speed_TT"));
+        }
+
+        if (playback.Motion != 0)
+        {
+            ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Motion_Follow")}##fxMotionFollow", ref CFG.Current.FxEditor_Preview_Motion_Follow);
+            GUI.Tooltip(LOC.Get("FX_PreviewTool_Motion_Follow_TT"));
+        }
+
         // Time
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Time_Header"), LOC.Get("FX_PreviewTool_Time_Header_TT"));
@@ -121,6 +154,15 @@ public class FxPreviewTool
         ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Billboards")}##fxShowBillboards", ref CFG.Current.FxEditor_Viewport_Display_Billboards);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Billboards_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Models")}##fxShowModels", ref CFG.Current.FxEditor_Viewport_Display_Models);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Models_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Lights")}##fxShowLights", ref CFG.Current.FxEditor_Viewport_Display_Lights);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Lights_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Light_Markers")}##fxShowLightMarkers", ref CFG.Current.FxEditor_Viewport_Display_Light_Markers);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Light_Markers_TT"));
+
         ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor_Viewport_Display_Particle_Markers);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Particles_TT"));
 
@@ -141,10 +183,23 @@ public class FxPreviewTool
         ImGui.SliderFloat("##fxBillboardBrightness", ref CFG.Current.FxEditor_Viewport_Billboard_Brightness, 0.01f, 10f, "%.2fx", ImGuiSliderFlags.Logarithmic);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Brightness_TT"));
 
+        // Light Brightness
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Light_Brightness_Header"), LOC.Get("FX_PreviewTool_Light_Brightness_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat("##fxLightBrightness", ref CFG.Current.FxEditor_Viewport_Light_Brightness, 0.001f, 100f, "%.3fx", ImGuiSliderFlags.Logarithmic);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Light_Brightness_TT"));
+
         // Billboards drawn, and textures no binder holds
         var billboards = Editor.ViewportWindow.Billboards;
         if (billboards != null && fxr != null)
+        {
+            var window = Editor.ViewportWindow;
             GUI.WrappedText(LOC.Get("FX_PreviewTool_Billboard_Count", billboards.DrawnBillboards, billboards.BatchCount));
+            GUI.WrappedText(LOC.Get("FX_PreviewTool_Other_Count", billboards.DrawnSegments, window.Models.DrawnModels,
+                window.Lights.DrawnLights, window.Lights.LightCount));
+        }
 
         var missing = Editor.ViewportWindow.Textures?.MissingTextures;
         if (missing is { Count: > 0 })

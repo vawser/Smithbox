@@ -58,6 +58,13 @@ public class FxPreviewRuntime
         var playback = Editor.Playback;
         float target = playback.Time;
 
+        // A different motion is a different path from the start
+        if (!playback.MotionKey.Equals(MotionKey))
+        {
+            MotionKey = playback.MotionKey;
+            Instance = null;
+        }
+
         if (Instance == null || target < Instance.Time - 1e-4f)
             Restart();
 
@@ -98,9 +105,14 @@ public class FxPreviewRuntime
         }
     }
 
+    private (int, float, float, float) MotionKey;
+
+    /// <summary>Where the effect is now, as the motion puts it (identity when it stays still).</summary>
+    public System.Numerics.Matrix4x4 EffectWorld => Instance?.World ?? System.Numerics.Matrix4x4.Identity;
+
     private void Restart()
     {
-        Context = new FxRuntimeContext { ResolveEffect = ResolveProxy };
+        Context = new FxRuntimeContext { ResolveEffect = ResolveProxy, Motion = Editor.Playback.MotionFunction() };
         // Seeded by the effect id, so a replay matches what was shown before
         Instance = new FxEffectInstance(Def, Context, (uint)Entry.Id | 1);
     }

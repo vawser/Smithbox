@@ -1243,9 +1243,18 @@ public class CFG
     public bool FxEditor_Viewport_Display_Particle_Markers = false;
     public bool FxEditor_Viewport_Display_Billboards = true;
     public float FxEditor_Viewport_Billboard_Brightness = 1.0f;
+    public bool FxEditor_Viewport_Display_Models = true;
+    public bool FxEditor_Viewport_Display_Lights = true;
+    public bool FxEditor_Viewport_Display_Light_Markers = true;
+    public float FxEditor_Viewport_Light_Brightness = 1.0f;
     public float FxEditor_Playback_Speed = 1.0f;
     public bool FxEditor_Playback_Loop = true;
     public float FxEditor_Playback_Length = 5.0f;
+    public int FxEditor_Preview_Motion = 0;
+    public float FxEditor_Preview_Motion_Speed = 5.0f;
+    public float FxEditor_Preview_Swing_Radius = 1.0f;
+    public float FxEditor_Preview_Swing_Speed = 360.0f;
+    public bool FxEditor_Preview_Motion_Follow = true;
 
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;
