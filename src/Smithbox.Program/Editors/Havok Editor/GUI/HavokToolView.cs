@@ -53,7 +53,12 @@ public class HavokToolView
 
         Sections.Begin();
 
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Collision"));
+
         CollisionGeneratorTool.Display();
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Behavior"));
+
         HavokScriptReloader.Display();
 
         Sections.End();

@@ -20,5 +20,4 @@
 - Add Snap to Mesh action: drops current selection (from its center) to the surface of the nearest mesh below it (add option for raycast direction)
     - If no mesh is below it, tell the user and do nothing
 
-- Wireframe mode
 

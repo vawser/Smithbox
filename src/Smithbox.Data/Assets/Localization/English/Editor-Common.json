@@ -197,6 +197,22 @@
       "Text": "Rendering"
     },
     {
+      "Key": "EDITOR_ToolCategory_Data_Transfer",
+      "Text": "Data Transfer"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Collision",
+      "Text": "Collision"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Behavior",
+      "Text": "Behavior"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Files",
+      "Text": "Files"
+    },
+    {
       "Key": "EDITOR_Menubar_Action_Undo",
       "Text": "Undo"
     },

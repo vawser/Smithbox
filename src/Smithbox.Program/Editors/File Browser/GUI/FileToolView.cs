@@ -47,6 +47,8 @@ public class FileToolView
 
         Sections.Begin();
 
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Files"));
+
         if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
         {
             if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))

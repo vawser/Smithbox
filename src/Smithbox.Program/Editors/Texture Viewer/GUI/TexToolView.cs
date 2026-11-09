@@ -35,6 +35,8 @@ public class TexToolView
 
         Sections.Begin();
 
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
+
         // Export Texture
         if (CFG.Current.Interface_TextureViewer_Tool_ExportTexture)
         {
