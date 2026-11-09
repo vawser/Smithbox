@@ -278,9 +278,51 @@ public class FxBank : IDisposable
         }
     }
 
+    /// <summary>
+    /// A separate copy of the effect, read from the packed bytes without loading the entry (for surveys of the whole
+    /// bank, which shouldn't keep thousands of effects in memory). Null if it can't be read. Safe off the main thread.
+    /// </summary>
+    public FXR ReadCopy(FxEntry entry)
+    {
+        try
+        {
+            var packed = entry.Packed;
+            return packed == null ? null : FXR.Read(Unpack(packed, entry.PackedLength));
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>Adds an effect made in the editor. It's written into its binders on the next save.</summary>
+    public void AddNew(FxEntry entry)
+    {
+        entry.IsNew = true;
+        entry.IsDirty = true;
+        Entries[entry.Id] = entry;
+        Version++;
+    }
+
+    /// <summary>Takes an unsaved new effect out again (its creation was undone).</summary>
+    public void RemoveNew(FxEntry entry)
+    {
+        if (entry.IsNew && Entries.TryGetValue(entry.Id, out var e) && e == entry)
+        {
+            Entries.Remove(entry.Id);
+            Version++;
+        }
+    }
+
+    /// <summary>The internal name an effect would have in a binder, from another effect's name there.</summary>
+    public static string SiblingName(string internalName, string stem, string extension) => FxBinderOps.SiblingName(internalName, stem, extension);
+
     /// <summary>Drops unsaved changes: reads the effect again from the project's files.</summary>
     public bool Reload(FxEntry entry)
     {
+        // A new effect has nothing saved to go back to
+        if (entry.IsNew)
+            return true;
         entry.Fxr = null;
         entry.IsDirty = false;
         return Load(entry);
@@ -345,6 +387,8 @@ public class FxBank : IDisposable
                 foreach (var (_, entry, name) in group)
                 {
                     var file = bnd.Files.FirstOrDefault(f => f.Name == name);
+                    if (file == null && entry.IsNew)
+                        file = AddEffectFile(bnd, entry, name);
                     if (file == null)
                     {
                         Smithbox.LogError(this, LOC.Get("FX_Data_Failed_Find_Effect", entry.Stem, binderEntry.Path));
@@ -371,6 +415,7 @@ public class FxBank : IDisposable
             foreach (var (entry, data) in bytes)
             {
                 entry.IsDirty = false;
+                entry.IsNew = false;
                 // Reloading now shows what was saved
                 entry.Packed = Pack(data);
                 entry.PackedLength = data.Length;
@@ -405,6 +450,9 @@ public class FxBank : IDisposable
             IsSaving = false;
         }
     }
+
+    private static BinderFile AddEffectFile(BND4 bnd, FxEntry entry, string name) =>
+        FxBinderOps.AddEffectFile(bnd, name, entry.Stem, entry.ResourceListFrom >= 0 ? $"f{entry.ResourceListFrom:D9}" : null);
 
     /// <summary>
     /// ER, AC6 and NR keep f&lt;id&gt;.ffxreslist next to each FXR: the build tool's list of the effect's source

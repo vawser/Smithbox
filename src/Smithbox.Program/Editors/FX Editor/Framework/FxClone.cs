@@ -16,6 +16,20 @@ public static class FxClone
         Children = n.Children.Select(Node).ToList(),
     };
 
+    public static FxrState State(FxrState s) => new()
+    {
+        Conditions = s.Conditions.Select(c => new FxrStateCondition
+        {
+            Operator = c.Operator,
+            Unk1 = c.Unk1,
+            TargetState = c.TargetState,
+            Left = Operand(c.Left),
+            Right = Operand(c.Right),
+        }).ToList(),
+    };
+
+    public static FxrOperand Operand(FxrOperand o) => new() { Type = o.Type, HasValue = o.HasValue, RawValue = o.RawValue };
+
     public static FxrConfig Config(FxrConfig c) => new()
     {
         Type = c.Type,

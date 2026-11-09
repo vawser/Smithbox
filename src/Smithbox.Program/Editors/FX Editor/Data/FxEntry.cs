@@ -29,6 +29,15 @@ public class FxEntry
 
     public bool IsDirty;
 
+    /// <summary>
+    /// Made in the editor (Extract to New Effect) and not saved yet: its binders don't hold it, so saving adds the
+    /// file (and an ffxreslist, copied from <see cref="ResourceListFrom"/>'s, where the binder keeps them).
+    /// </summary>
+    public bool IsNew;
+
+    /// <summary>For a new effect: the effect whose ffxreslist the new one starts from.</summary>
+    public int ResourceListFrom = -1;
+
     /// <summary>The Particles alias name, or empty.</summary>
     public string Alias = "";
 

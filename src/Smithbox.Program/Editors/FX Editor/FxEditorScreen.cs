@@ -338,6 +338,7 @@ public class FxEditorScreen : EditorScreen
         if (entry == null)
             return;
         Data.Bank.Reload(entry);
+        EffectTree.Notes.OnReloaded(entry);
         ActionManager.Clear();
         if (Selection.Entry == entry)
             Selection.ClearItem();
@@ -370,6 +371,9 @@ public class FxEditorScreen : EditorScreen
             return;
 
         await Data.Bank.SaveGuarded(dirty);
+
+        // Node notes are keyed by position in the saved effect, so they're written once it is saved
+        EffectTree.Notes.OnSaved(dirty);
 
         Smithbox.Instance.SaveConfiguration();
     }

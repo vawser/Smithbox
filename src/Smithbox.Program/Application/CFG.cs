@@ -1233,6 +1233,9 @@ public class CFG
     public bool FxEditor_EffectList_Group_By_Binder = false;
 
     // Action Inspector
+    public bool FxEditor_EffectTree_Highlight_Selected = true;
+    public bool FxEditor_EffectTree_Show_Summaries = true;
+    public bool FxEditor_EffectTree_Show_Checks = true;
     public bool FxEditor_Inspector_Show_Raw = false;
     public bool FxEditor_Inspector_Show_Unknown = true;
     public bool FxEditor_Inspector_Show_Descriptions = true;

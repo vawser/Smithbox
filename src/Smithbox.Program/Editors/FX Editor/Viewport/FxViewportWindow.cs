@@ -144,7 +144,8 @@ public class FxViewportWindow
         var instance = Runtime.Instance;
         bool markers = CFG.Current.FxEditor_Viewport_Display_Particle_Markers;
         bool lightMarkers = CFG.Current.FxEditor_Viewport_Display_Light_Markers && Lights.DrawnLights > 0;
-        if (instance == null || !markers && !lightMarkers)
+        var highlightNode = CFG.Current.FxEditor_EffectTree_Highlight_Selected ? SelectedNode() : null;
+        if (instance == null || !markers && !lightMarkers && highlightNode == null)
         {
             if (LastParticleTime >= 0)
             {
@@ -152,21 +153,55 @@ public class FxViewportWindow
                 LastParticleTime = -1;
                 DrawnParticles = 0;
             }
+            SelectedBounds = null;
             return;
         }
 
         var now = DateTime.UtcNow;
-        if (now - LastParticleBuild < ParticleInterval || instance.Time == LastParticleTime)
+        if (now - LastParticleBuild < ParticleInterval
+            || instance.Time == LastParticleTime && ReferenceEquals(highlightNode, LastHighlightNode) && HiddenVersion == LastHiddenVersion)
             return;
 
         LastParticleBuild = now;
         LastParticleTime = instance.Time;
+        LastHighlightNode = highlightNode;
+        LastHiddenVersion = HiddenVersion;
 
         var particles = new List<FxParticleOutput>();
         instance.CollectParticles(particles);
 
         var result = new FxDebugShapes.Result();
         const float size = 0.04f;
+
+        // The selected node's branch: a box round its particles and a cross on each, in the Selected colour
+        SelectedBounds = null;
+        if (highlightNode != null)
+        {
+            var branch = BranchInstances(instance, highlightNode);
+            Vector3 min = new(float.MaxValue), max = new(float.MinValue);
+            int marked = 0;
+            const float mark = 0.06f;
+            foreach (var p in particles)
+            {
+                if (!branch.Contains(p.Node))
+                    continue;
+                var o = p.Position;
+                min = Vector3.Min(min, o);
+                max = Vector3.Max(max, o);
+                if (marked++ < MaxDrawnParticles / 4)
+                {
+                    result.Add(FxDebugLayer.Selected, o - Vector3.UnitX * mark, o + Vector3.UnitX * mark);
+                    result.Add(FxDebugLayer.Selected, o - Vector3.UnitY * mark, o + Vector3.UnitY * mark);
+                    result.Add(FxDebugLayer.Selected, o - Vector3.UnitZ * mark, o + Vector3.UnitZ * mark);
+                }
+            }
+            if (marked > 0)
+            {
+                SelectedBounds = new BoundingBox(min, max);
+                AddBox(result, FxDebugLayer.Selected, min - new Vector3(0.05f), max + new Vector3(0.05f));
+            }
+        }
+
         int drawn = 0;
         foreach (var p in markers ? particles : new())
         {
@@ -205,6 +240,61 @@ public class FxViewportWindow
         }
 
         ParticleRenderer.Show(Editor.RenderScene, result);
+    }
+
+    private object LastHighlightNode;
+    private int LastHiddenVersion;
+
+    /// <summary>Bumped by the Effect Tree when visibility changes, so a paused preview redraws its highlight.</summary>
+    public int HiddenVersion;
+
+    /// <summary>Where the selected node's branch's particles are now; null when it has none drawn.</summary>
+    public BoundingBox? SelectedBounds { get; private set; }
+
+    /// <summary>The node the selected tree item belongs to (a config or action's node), null for none.</summary>
+    private SoulsFormats.FxrNode SelectedNode()
+    {
+        var root = Editor.Selection.Entry?.Fxr?.Root;
+        return root == null || Editor.Selection.Item == null ? null : FxNodeOps.OwnerNode(root, Editor.Selection.Item);
+    }
+
+    /// <summary>Every running instance of the node, and everything under them (effects they start included).</summary>
+    private static HashSet<FxNodeInstance> BranchInstances(FxEffectInstance instance, SoulsFormats.FxrNode node)
+    {
+        var set = new HashSet<FxNodeInstance>();
+        foreach (var n in instance.AllNodes())
+            if (ReferenceEquals(n.Def.Source, node))
+                foreach (var d in n.Descendants())
+                    set.Add(d);
+        return set;
+    }
+
+    private static void AddBox(FxDebugShapes.Result result, FxDebugLayer layer, Vector3 a, Vector3 b)
+    {
+        Vector3 C(int x, int y, int z) => new(x == 0 ? a.X : b.X, y == 0 ? a.Y : b.Y, z == 0 ? a.Z : b.Z);
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+            {
+                result.Add(layer, C(0, i, j), C(1, i, j));
+                result.Add(layer, C(i, 0, j), C(i, 1, j));
+                result.Add(layer, C(i, j, 0), C(i, j, 1));
+            }
+    }
+
+    /// <summary>Fits the view to the selected node's particles, or to the effect when it has none drawn.</summary>
+    public void FrameSelected()
+    {
+        if (Viewport == null)
+            return;
+        if (SelectedBounds is { } box)
+        {
+            var centre = (box.Min + box.Max) / 2;
+            Viewport.FitBox(new BoundingBox(Vector3.Min(box.Min, centre - new Vector3(0.5f)), Vector3.Max(box.Max, centre + new Vector3(0.5f))));
+        }
+        else
+        {
+            Frame();
+        }
     }
 
     /// <summary>Rebuilds the debug shapes when the effect, the selection, an edit or the preview inputs change.</summary>

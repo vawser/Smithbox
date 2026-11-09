@@ -40,8 +40,8 @@ public class FxInspector
             case FxrAction action when entry != null:
                 DisplayAction(entry, action);
                 break;
-            case FxrState state:
-                DisplayState(state);
+            case FxrState state when entry?.Fxr != null:
+                DisplayState(entry, state);
                 break;
             case FxrNode node:
                 DisplayNode(node);
@@ -57,14 +57,186 @@ public class FxInspector
         ImGui.EndChild();
     }
 
-    private void DisplayState(FxrState state)
+    // ---------------------------------------------------------------- states
+
+    private static readonly (short Type, string Key)[] OperandTypes =
     {
+        (-1, "FX_Operand_Type_StateTime"),
+        (-4, "FX_Operand_Type_Literal"),
+        (-3, "FX_Operand_Type_External"),
+        (-2, "FX_Operand_Type_UnkMinus2"),
+    };
+
+    private static readonly string[] Operators = { "==", "!=", "<", "<=" };
+
+    /// <summary>
+    /// The state's conditions, checked in order each update: the first that holds moves the effect to its target
+    /// state (or ends it). Each condition is "left operator right → target", every part editable.
+    /// </summary>
+    private void DisplayState(FxEntry entry, FxrState state)
+    {
+        var fxr = entry.Fxr;
+        int stateIndex = fxr.States.IndexOf(state);
+        if (stateIndex < 0)
+        {
+            GUI.WrappedText(LOC.Get("FX_Inspector_No_Selection"));
+            return;
+        }
+
+        GUI.SimpleHeader(LOC.Get("FX_Inspector_State_Header", stateIndex), LOC.Get("FX_Inspector_State_Header_TT"));
+        if (stateIndex == 0)
+            GUI.WrappedText(LOC.Get("FX_Inspector_State_Start"));
+
+        var users = FXR.Walk(fxr.Root).Count(n => FxNames.StateConfigMap(n) is { Count: > 0 } m
+            && FxEffectDef.ConfigIndexFor(m, n.Configs.Count, stateIndex) != FxEffectDef.ConfigIndexFor(m, n.Configs.Count, 0));
+        if (stateIndex > 0)
+            GUI.WrappedText(LOC.Get("FX_Inspector_State_Config_Changes", users));
+
         // Conditions
+        GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_Inspector_Conditions_Header"), LOC.Get("FX_Inspector_Conditions_Header_TT"));
         if (state.Conditions.Count == 0)
             GUI.WrappedText(LOC.Get("FX_Inspector_No_Conditions"));
-        foreach (var c in state.Conditions)
-            GUI.WrappedText(FxNames.Condition(c));
+
+        // Edits run against the condition at an index, looked up again when applied (and on redo)
+        void Edit(Action<FxrStateCondition> change, int ci) =>
+            Editor.ActionManager.ExecuteAction(new FxStatesAction(Data.Bank, entry, f =>
+            {
+                var s = f.States[stateIndex];
+                if (ci < s.Conditions.Count)
+                    change(s.Conditions[ci]);
+            }));
+
+        void EditList(Action<List<FxrStateCondition>> change) =>
+            Editor.ActionManager.ExecuteAction(new FxStatesAction(Data.Bank, entry, f => change(f.States[stateIndex].Conditions)));
+
+        for (int ci = 0; ci < state.Conditions.Count; ci++)
+        {
+            var c = state.Conditions[ci];
+            int index = ci;
+            ImGui.PushID($"fxCondition_{ci}");
+
+            ImGui.Separator();
+            ImGui.TextUnformatted(LOC.Get("FX_Inspector_Condition", ci + 1, FxNames.Condition(c)));
+
+            // Order and removal
+            ImGui.SameLine();
+            ImGui.BeginDisabled(ci == 0);
+            if (ImGui.ArrowButton("##up", ImGuiDir.Up))
+                EditList(l => (l[index - 1], l[index]) = (l[index], l[index - 1]));
+            ImGui.EndDisabled();
+            ImGui.SameLine();
+            ImGui.BeginDisabled(ci == state.Conditions.Count - 1);
+            if (ImGui.ArrowButton("##down", ImGuiDir.Down))
+                EditList(l => (l[index + 1], l[index]) = (l[index], l[index + 1]));
+            ImGui.EndDisabled();
+            ImGui.SameLine();
+            if (ImGui.Button($"{Icons.Minus}##remove"))
+                EditList(l => l.RemoveAt(index));
+            GUI.Tooltip(LOC.Get("FX_Inspector_Condition_Remove_TT"));
+
+            if (ImGui.BeginTable("##conditionTable", 2, ImGuiTableFlags.SizingStretchProp | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV))
+            {
+                ImGui.TableSetupColumn("##name", ImGuiTableColumnFlags.WidthStretch, 0.4f);
+                ImGui.TableSetupColumn("##value", ImGuiTableColumnFlags.WidthStretch, 0.6f);
+
+                DisplayOperand(LOC.Get("FX_Inspector_Condition_Left"), "left", c.Left, (o, apply) => Edit(x => apply(x.Left), index));
+
+                // Operator
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+                ImGui.TextUnformatted(LOC.Get("FX_Inspector_Condition_Operator"));
+                ImGui.TableSetColumnIndex(1);
+                ImGui.SetNextItemWidth(-1);
+                if (ImGui.BeginCombo("##operator", c.Operator < Operators.Length ? Operators[c.Operator] : c.Operator.ToString()))
+                {
+                    for (byte op = 0; op < Operators.Length; op++)
+                    {
+                        byte value = op;
+                        if (ImGui.Selectable($"{Operators[op]}##op{op}", c.Operator == op) && c.Operator != op)
+                            Edit(x => x.Operator = value, index);
+                    }
+                    ImGui.EndCombo();
+                }
+
+                DisplayOperand(LOC.Get("FX_Inspector_Condition_Right"), "right", c.Right, (o, apply) => Edit(x => apply(x.Right), index));
+
+                // Target
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+                ImGui.TextUnformatted(LOC.Get("FX_Inspector_Condition_Target"));
+                GUI.Tooltip(LOC.Get("FX_Inspector_Condition_Target_TT"));
+                ImGui.TableSetColumnIndex(1);
+                ImGui.SetNextItemWidth(-1);
+                string TargetName(int t) => t < 0 ? LOC.Get("FX_Condition_End") : LOC.Get("FX_Condition_State", t);
+                if (ImGui.BeginCombo("##target", TargetName(c.TargetState)))
+                {
+                    for (int t = -1; t < fxr.States.Count; t++)
+                    {
+                        int value = t;
+                        if (ImGui.Selectable($"{TargetName(t)}##target{t}", c.TargetState == t) && c.TargetState != t)
+                            Edit(x => x.TargetState = value, index);
+                    }
+                    ImGui.EndCombo();
+                }
+                if (c.TargetState >= fxr.States.Count)
+                    ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_Inspector_Condition_Target_Missing"));
+
+                ImGui.EndTable();
+            }
+
+            ImGui.PopID();
+        }
+
+        GUI.Spacer();
+        if (ImGui.Button($"{Icons.Plus} {LOC.Get("FX_Inspector_Condition_Add")}##fxConditionAdd"))
+            EditList(l => l.Add(FxStateOps.NewCondition()));
+        GUI.Tooltip(LOC.Get("FX_Inspector_Condition_Add_TT"));
+    }
+
+    /// <summary>One side of a condition: its kind, and the number or external value id it reads.</summary>
+    private void DisplayOperand(string label, string id, FxrOperand o, Action<FxrOperand, Action<FxrOperand>> edit)
+    {
+        ImGui.TableNextRow();
+        ImGui.TableSetColumnIndex(0);
+        ImGui.TextUnformatted(label);
+        ImGui.TableSetColumnIndex(1);
+
+        var current = OperandTypes.FirstOrDefault(t => t.Type == o.Type);
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo($"##{id}Type", current.Key != null ? LOC.Get(current.Key) : LOC.Get("FX_Operand_Unknown", o.Type)))
+        {
+            foreach (var (type, key) in OperandTypes)
+            {
+                short value = type;
+                if (ImGui.Selectable($"{LOC.Get(key)}##{id}Type{type}", o.Type == type) && o.Type != type)
+                    edit(o, x => FxStateOps.SetOperandType(x, value));
+                if (ImGui.IsItemHovered())
+                    ImGui.SetTooltip(LOC.Get($"{key}_TT"));
+            }
+            ImGui.EndCombo();
+        }
+
+        string key2 = $"##fxCondition_{id}_{o.GetHashCode()}";
+        if (o.Type == -4)
+        {
+            float v = Pending.TryGetValue(key2, out var p) ? (float)p : o.FloatValue;
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputFloat(key2, ref v, 0, 0, "%.4g"))
+                Pending[key2] = v;
+            float final = v;
+            CommitOnDeactivate(key2, () => edit(o, x => { x.HasValue = true; x.FloatValue = final; }));
+        }
+        else if (o.Type == -3)
+        {
+            int v = Pending.TryGetValue(key2, out var p) ? (int)p : o.IntValue;
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputInt(key2, ref v))
+                Pending[key2] = v;
+            int final = v;
+            CommitOnDeactivate(key2, () => edit(o, x => { x.HasValue = true; x.IntValue = final; }));
+            GUI.Tooltip(LOC.Get("FX_Inspector_Condition_External_TT"));
+        }
     }
 
     private void DisplayNode(FxrNode node)
