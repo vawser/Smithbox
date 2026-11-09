@@ -325,7 +325,7 @@ public partial class NavigationTool
 
         foreach (var entity in map.Objects)
         {
-            if (entity.WrappedObject is not SoulsFormats.NVA_ER.Navmesh entry || entity.RenderSceneMesh is not MeshRenderableProxy proxy)
+            if (entity.WrappedObject is not SoulsFormats.NVA.Navmesh entry || entity.RenderSceneMesh is not MeshRenderableProxy proxy)
                 continue;
 
             var resource = (proxy.ResourceHandle as ResourceHandle<HavokNavmeshResource>)?.Get();

@@ -564,39 +564,30 @@ public class MapContainer : ObjectContainer
     // properties. Some sections have an entry for every navmesh face, hundreds of thousands in a map, so they
     // can't be given entities. Only the entries drawn in the viewport are, which wrap the same objects as the file
 
+    // Every game with an NVA (BB, DS3, SDT, ER, AC6, NR, DB_NT): NVA reads them all
     public void LoadNVA(string mapName, NVA nva)
     {
         var nvaRoot = CreateNavmeshRoot(nva);
 
-        foreach (var curNavmesh in nva.NavmeshInfoEntries)
-        {
-            AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
-        }
-
-        foreach (var curEntry in nva.LevelConnectorEntries)
-        {
-            AddLevelConnector(nvaRoot, curEntry);
-        }
-
-        NavmeshParent = nvaRoot;
-    }
-
-    // ER specific
-    public void LoadNVA(string mapName, NVA_ER nva)
-    {
-        var nvaRoot = CreateNavmeshRoot(nva);
-
-        foreach (var curNavmesh in nva.Navmeshes)
+        foreach (var curNavmesh in nva.Navmeshes ?? new NVA.NavmeshSection(4))
         {
             // ER lists each navmesh twice: its n file in the first half, its o file in the second, and the quarters of a
             // split n file as entries of their own (see NavigationMap). AC6 has only n files.
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER)
+            // NR has the same n/o/q sets, so it takes the ER naming: it names 1,662 of NR's 1,730 entries right, where
+            // the ModelID naming names 831. The rest are on open-world _10/_20… tiles whose files are named after the
+            // _00 tile: NR's NameIDs don't hold the _DD digits ER's do, so only the binder's file names can tell.
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
                 AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh));
+            // DB_NT has ER's n/o halves and NameID rule but no quarter files, and its entries have no Unk50 (the
+            // quarter mark) as that slot holds the connected navmesh list's offset; the set alone names all 192 files
+            else if (View.Project.Descriptor.ProjectType is ProjectType.DB_NT)
+                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.MeshName(mapName, NavigationMap.SetOf(curNavmesh), curNavmesh.ModelID));
+            // AC6, DS3, BB and SDT: the n file of the model
             else
                 AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");
         }
 
-        foreach (var curEntry in nva.LevelConnectors)
+        foreach (var curEntry in nva.LevelConnectors ?? new NVA.LevelConnectorSection())
         {
             AddLevelConnector(nvaRoot, curEntry);
         }
@@ -605,7 +596,7 @@ public class MapContainer : ObjectContainer
     }
 
     // AC6 specific
-    public void LoadNVVA(string mapName, NVA_ER nvva)
+    public void LoadNVVA(string mapName, NVA nvva)
     {
         var nvvaRoot = CreateNavmeshRoot(nvva);
 

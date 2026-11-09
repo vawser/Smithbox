@@ -5,7 +5,7 @@ namespace SoulsFormats
 {
     /// <summary>
     /// The navmesh connections between two neighbouring Elden Ring maps, streamed in when both are loaded.
-    /// Laid out like the connector sections of <see cref="NVA_ER"/>: each connector pairs a navmesh of the first map
+    /// Laid out like the connector sections of <see cref="NVA"/>: each connector pairs a navmesh of the first map
     /// with one of the second, and lists the face edges that join them (Havok's hkaiStreamingSet::NavMeshConnection).
     /// Extension: .nvc, named mAA_BB_CC_DD_mAA_BB_CC_DD after the two maps, in /map/nvc.
     /// </summary>
@@ -17,13 +17,13 @@ namespace SoulsFormats
         public int Version { get; set; }
 
         /// <summary>
-        /// The UID of the first map of the file name: the Unk00 of that map's <see cref="NVA_ER.Entry11"/>.
+        /// The UID of the first map of the file name: the Unk00 of that map's <see cref="NVA.Entry11"/>.
         /// Not the packed map number, which the game takes from the file name.
         /// </summary>
         public uint MapUID { get; set; }
 
         /// <summary>
-        /// The UID of the second map of the file name: the Unk00 of that map's <see cref="NVA_ER.Entry11"/>.
+        /// The UID of the second map of the file name: the Unk00 of that map's <see cref="NVA.Entry11"/>.
         /// </summary>
         public uint OppositeMapUID { get; set; }
 
@@ -68,8 +68,8 @@ namespace SoulsFormats
             int sectionCount = br.ReadInt32();
 
             var connectorData = new List<(Connector Connector, int NavCount, int GraphCount, int NavIndex, int GraphIndex)>();
-            var navMeshConns = new List<NVA_ER.NavMeshConnection>();
-            var graphConns = new List<NVA_ER.GraphConnection>();
+            var navMeshConns = new List<NVA.NavMeshConnection>();
+            var graphConns = new List<NVA.GraphConnection>();
             Connectors = new List<Connector>();
 
             for (int i = 0; i < sectionCount; i++)
@@ -105,11 +105,11 @@ namespace SoulsFormats
                         break;
                     case NavMeshConnectionSection:
                         for (int c = 0; c < count; c++)
-                            navMeshConns.Add(new NVA_ER.NavMeshConnection(br));
+                            navMeshConns.Add(new NVA.NavMeshConnection(br));
                         break;
                     case GraphConnectionSection:
                         for (int c = 0; c < count; c++)
-                            graphConns.Add(new NVA_ER.GraphConnection(br));
+                            graphConns.Add(new NVA.GraphConnection(br));
                         break;
                     case Section4:
                         // Empty in every Elden Ring file, so its records are unknown
@@ -214,42 +214,42 @@ namespace SoulsFormats
         public class Connector
         {
             /// <summary>
-            /// The <see cref="NVA_ER.Navmesh.NameID"/> of the navmesh in the first map.
+            /// The <see cref="NVA.Navmesh.NameID"/> of the navmesh in the first map.
             /// </summary>
             public int MainNameID { get; set; }
 
             /// <summary>
-            /// The <see cref="NVA_ER.Navmesh.NameID"/> of the navmesh in the second map.
+            /// The <see cref="NVA.Navmesh.NameID"/> of the navmesh in the second map.
             /// </summary>
             public int TargetNameID { get; set; }
 
             /// <summary>
-            /// Unknown; always 0. Kept apart like <see cref="NVA_ER.Connector.Unk14"/>.
+            /// Unknown; always 0. Kept apart like <see cref="NVA.Connector.Unk14"/>.
             /// </summary>
             public int Unk14 { get; set; }
 
             /// <summary>
-            /// Unknown; always 0. Kept apart like <see cref="NVA_ER.Connector.Unk1C"/>.
+            /// Unknown; always 0. Kept apart like <see cref="NVA.Connector.Unk1C"/>.
             /// </summary>
             public int Unk1C { get; set; }
 
             /// <summary>
             /// The face edges joining the two navmeshes: Face/EdgeIndex in the first, the Opposite ones in the second.
             /// </summary>
-            public List<NVA_ER.NavMeshConnection> NavMeshConnections { get; set; }
+            public List<NVA.NavMeshConnection> NavMeshConnections { get; set; }
 
             /// <summary>
             /// Graph node connections; empty in every Elden Ring file.
             /// </summary>
-            public List<NVA_ER.GraphConnection> GraphConnections { get; set; }
+            public List<NVA.GraphConnection> GraphConnections { get; set; }
 
             /// <summary>
             /// Creates an empty Connector.
             /// </summary>
             public Connector()
             {
-                NavMeshConnections = new List<NVA_ER.NavMeshConnection>();
-                GraphConnections = new List<NVA_ER.GraphConnection>();
+                NavMeshConnections = new List<NVA.NavMeshConnection>();
+                GraphConnections = new List<NVA.GraphConnection>();
             }
 
             /// <summary>

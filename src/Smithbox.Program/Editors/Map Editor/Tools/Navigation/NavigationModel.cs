@@ -85,9 +85,9 @@ public sealed class NavmeshModel
 {
     public int ModelID { get; init; }
 
-    public NVA_ER.Navmesh NEntry { get; init; }
+    public NVA.Navmesh NEntry { get; init; }
 
-    public NVA_ER.Navmesh OEntry { get; init; }
+    public NVA.Navmesh OEntry { get; init; }
 
     public NavmeshFile NFile { get; init; }
 
@@ -97,9 +97,9 @@ public sealed class NavmeshModel
     /// The n mesh split into quarters (q files, open world only), each with its own NVA entry. When a model has them,
     /// its n file is empty. Indexed by quarter, 0 to 3.
     /// </summary>
-    public IReadOnlyList<(NVA_ER.Navmesh Entry, NavmeshFile File)> Quarters { get; init; } = Array.Empty<(NVA_ER.Navmesh, NavmeshFile)>();
+    public IReadOnlyList<(NVA.Navmesh Entry, NavmeshFile File)> Quarters { get; init; } = Array.Empty<(NVA.Navmesh, NavmeshFile)>();
 
-    public NVA_ER.Navmesh Entry(NavmeshSet set) => set == NavmeshSet.N ? NEntry : OEntry;
+    public NVA.Navmesh Entry(NavmeshSet set) => set == NavmeshSet.N ? NEntry : OEntry;
 
     public NavmeshFile File(NavmeshSet set) => set == NavmeshSet.N ? NFile : OFile;
 
@@ -134,7 +134,7 @@ public sealed class NavigationMap
 {
     public string MapId { get; }
 
-    public NVA_ER Nva { get; }
+    public NVA Nva { get; }
 
     /// <summary>The navmesh files of the nvmhktbnd, by name.</summary>
     public IReadOnlyDictionary<string, NavmeshFile> Files { get; }
@@ -155,7 +155,7 @@ public sealed class NavigationMap
     /// </summary>
     public string NameBase { get; }
 
-    public NavigationMap(string mapId, NVA_ER nva, IReadOnlyDictionary<string, NavmeshFile> files, ONAV onav, IReadOnlyList<NvcFile> nvcs)
+    public NavigationMap(string mapId, NVA nva, IReadOnlyDictionary<string, NavmeshFile> files, ONAV onav, IReadOnlyList<NvcFile> nvcs)
     {
         MapId = mapId;
         Nva = nva;
@@ -220,26 +220,26 @@ public sealed class NavigationMap
     /// <summary>
     /// The set an NVA entry belongs to, from its NameID's prefix: 0 or 1 for n, 2 or 3 for o.
     /// </summary>
-    public static NavmeshSet SetOf(NVA_ER.Navmesh entry) => (uint)entry.NameID / 1_000_000_000u >= 2 ? NavmeshSet.O : NavmeshSet.N;
+    public static NavmeshSet SetOf(NVA.Navmesh entry) => (uint)entry.NameID / 1_000_000_000u >= 2 ? NavmeshSet.O : NavmeshSet.N;
 
     /// <summary>
     /// The quarter of a q file an entry's faces are in, from the high byte of Unk50 (0xFF when it has none), or null.
     /// The game files use 0xFF01 for most entries and 0x0001, 0x0101, 0x0201, 0x0301 for the quarters.
     /// </summary>
-    public static int? QuarterOf(NVA_ER.Navmesh entry)
+    public static int? QuarterOf(NVA.Navmesh entry)
     {
         int quarter = (entry.Unk50 >> 8) & 0xFF;
         return quarter == 0xFF ? null : quarter;
     }
 
     /// <summary>The navmesh entry with the given NameID, or null.</summary>
-    public NVA_ER.Navmesh FindNavmesh(int nameId) => Nva?.Navmeshes.FirstOrDefault(n => n.NameID == nameId);
+    public NVA.Navmesh FindNavmesh(int nameId) => Nva?.Navmeshes.FirstOrDefault(n => n.NameID == nameId);
 
     /// <summary>The file an NVA entry's faces are in: its q file for a quarter, else its n or o file. Null if it has none.</summary>
-    public NavmeshFile FileOf(NVA_ER.Navmesh entry) => Files.GetValueOrDefault(FileNameOf(entry));
+    public NavmeshFile FileOf(NVA.Navmesh entry) => Files.GetValueOrDefault(FileNameOf(entry));
 
     /// <summary>The name of the file an NVA entry's faces are in.</summary>
-    public string FileNameOf(NVA_ER.Navmesh entry)
+    public string FileNameOf(NVA.Navmesh entry)
     {
         var quarter = QuarterOf(entry);
         return quarter != null ? QuarterName(NameBase, entry.ModelID, quarter.Value) : MeshName(NameBase, SetOf(entry), entry.ModelID);
@@ -250,7 +250,7 @@ public sealed class NavigationMap
     /// aren't at hand (the Map Editor's navmesh drawing). The name base comes from the NameID's digits: an open world
     /// _10 tile whose NameIDs carry DD = 00 names its files after the _00 tile.
     /// </summary>
-    public static string FileNameFromEntry(string mapId, NVA_ER.Navmesh entry)
+    public static string FileNameFromEntry(string mapId, NVA.Navmesh entry)
     {
         var nameBase = mapId;
 
@@ -275,7 +275,7 @@ public sealed class NavigationMap
     /// else its mirror in the other half (NameID 2,000,000,000 apart), or the first whole entry of that set with its
     /// ModelID when there is no mirror (quarters, or entries off the NameID rule). Null if the model has none.
     /// </summary>
-    public static NVA_ER.Navmesh EntryInSet(NVA_ER nva, NVA_ER.Navmesh entry, NavmeshSet set)
+    public static NVA.Navmesh EntryInSet(NVA nva, NVA.Navmesh entry, NavmeshSet set)
     {
         if (SetOf(entry) == set)
             return entry;
@@ -338,7 +338,7 @@ public readonly record struct NavConnectionView(
     NvcFile Nvc,
     int MainNameID,
     int TargetNameID,
-    NVA_ER.NavMeshConnection Connection)
+    NVA.NavMeshConnection Connection)
 {
     public bool IsCrossMap => Nvc != null;
 }
@@ -441,7 +441,7 @@ public static class NavigationRemap
         return result;
     }
 
-    private static bool RemapConnector(List<NVA_ER.NavMeshConnection> connections, bool sideA, bool sideB,
+    private static bool RemapConnector(List<NVA.NavMeshConnection> connections, bool sideA, bool sideB,
         Func<int, int> faceMap, Func<int, int> edgeMap, NavRemapResult result)
     {
         if (!sideA && !sideB)

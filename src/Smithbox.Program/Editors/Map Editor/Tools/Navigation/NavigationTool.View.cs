@@ -452,7 +452,7 @@ public partial class NavigationTool
     }
 
     /// <summary>Where a navmesh entry is drawn: its entity's place in the viewport, as the Map Editor draws the navmesh.</summary>
-    private static Matrix4x4 EntryWorld(MapContainer map, NVA_ER.Navmesh entry)
+    private static Matrix4x4 EntryWorld(MapContainer map, NVA.Navmesh entry)
     {
         var entity = map.Objects.FirstOrDefault(o => ReferenceEquals(o.WrappedObject, entry));
         return entity?.GetWorldMatrix() ?? MapWorld(map);
@@ -705,7 +705,7 @@ public partial class NavigationTool
         View.ViewportActionManager.ExecuteAction(new NavigationEditAction(OverlayContainer, faces, edges, OnNavigationEdited));
     }
 
-    private string DescribeEdge(Havok.hk2018.hkaiNavMesh mesh, NVA_ER.Navmesh entry, int k, bool user)
+    private string DescribeEdge(Havok.hk2018.hkaiNavMesh mesh, NVA.Navmesh entry, int k, bool user)
     {
         var edge = mesh.m_edges[k];
         uint data = mesh.m_edgeDataStriding > 0 && mesh.m_edgeData.Count > k * mesh.m_edgeDataStriding

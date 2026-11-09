@@ -27,14 +27,14 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>A copy of every navmesh's gate nodes of an NVA, which can be put back.</summary>
 public sealed class NavGateState
 {
-    private readonly List<(NVA_ER.Navmesh Entry, List<NVA_ER.GateNode> Gates)> Entries;
+    private readonly List<(NVA.Navmesh Entry, List<NVA.GateNode> Gates)> Entries;
 
-    public NavGateState(NVA_ER nva)
+    public NavGateState(NVA nva)
     {
         Entries = nva.Navmeshes.Select(e => (e, e.GateNodes.Select(Copy).ToList())).ToList();
     }
 
-    public static NVA_ER.GateNode Copy(NVA_ER.GateNode g) => new()
+    public static NVA.GateNode Copy(NVA.GateNode g) => new()
     {
         Position = g.Position,
         ConnectedNavmeshIndex = g.ConnectedNavmeshIndex,
@@ -77,7 +77,7 @@ public sealed class NavGateEditResult
     public int Removed { get; set; }
 
     /// <summary>The navmeshes whose gates changed.</summary>
-    public HashSet<NVA_ER.Navmesh> Touched { get; } = new();
+    public HashSet<NVA.Navmesh> Touched { get; } = new();
 
     public bool Ok => Error == null;
 }
@@ -109,7 +109,7 @@ public static class NavGates
     #region Status
 
     /// <summary>How a gate of a navmesh stands with its partner.</summary>
-    public static NavGateStatus Status(NavigationMap map, NVA_ER.Navmesh owner, int gate)
+    public static NavGateStatus Status(NavigationMap map, NVA.Navmesh owner, int gate)
     {
         var list = map.Nva.Navmeshes;
         int ownerIndex = list.IndexOf(owner);
@@ -134,7 +134,7 @@ public static class NavGates
     }
 
     /// <summary>The partner of a paired gate (its navmesh and index), or null.</summary>
-    public static (NVA_ER.Navmesh Entry, int Gate)? Partner(NavigationMap map, NVA_ER.Navmesh owner, int gate)
+    public static (NVA.Navmesh Entry, int Gate)? Partner(NavigationMap map, NVA.Navmesh owner, int gate)
     {
         if (Status(map, owner, gate) != NavGateStatus.Paired)
             return null;
@@ -143,11 +143,11 @@ public static class NavGates
         return (map.Nva.Navmeshes[g.ConnectedNavmeshIndex], g.NodeSubID);
     }
 
-    private static bool Connected(NVA_ER nva, int a, int b)
+    private static bool Connected(NVA nva, int a, int b)
         => nva.Connectors.Any(k => k.MainNameID == a && k.TargetNameID == b && k.NavMeshConnections.Count > 0);
 
     /// <summary>The navmeshes of the map a navmesh is joined to by NVA connectors (in the map; gates never go across maps).</summary>
-    public static List<NVA_ER.Navmesh> Neighbours(NavigationMap map, NVA_ER.Navmesh owner)
+    public static List<NVA.Navmesh> Neighbours(NavigationMap map, NVA.Navmesh owner)
         => map.Nva.Connectors.Where(k => k.MainNameID == owner.NameID && k.NavMeshConnections.Count > 0)
             .Select(k => map.FindNavmesh(k.TargetNameID)).Where(e => e != null && e != owner).Distinct().ToList();
 
@@ -175,7 +175,7 @@ public static class NavGates
     private readonly record struct Joint(int Edge, Vector3 A, Vector3 B, Vector3 OverlapMiddle, float OverlapLength);
 
     /// <summary>The connections from one navmesh to another of the map, in map space.</summary>
-    private static List<Joint> Joints(NavigationMap map, NVA_ER.Navmesh owner, NVA_ER.Navmesh target, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    private static List<Joint> Joints(NavigationMap map, NVA.Navmesh owner, NVA.Navmesh target, Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var joints = new List<Joint>();
         var mesh = map.FileOf(owner)?.Mesh;
@@ -224,7 +224,7 @@ public static class NavGates
     /// into runs whose edges come within the join distance, and each run gets a gate at the middle of the overlap of
     /// its longest connection.
     /// </summary>
-    public static List<Vector3> Sites(NavigationMap map, NVA_ER.Navmesh owner, NVA_ER.Navmesh target, Func<NVA_ER.Navmesh, Matrix4x4> toMap,
+    public static List<Vector3> Sites(NavigationMap map, NVA.Navmesh owner, NVA.Navmesh target, Func<NVA.Navmesh, Matrix4x4> toMap,
         float join = DefaultRunJoin)
     {
         var joints = Joints(map, owner, target, toMap);
@@ -253,7 +253,7 @@ public static class NavGates
     }
 
     /// <summary>The point on the owner's connection edges to the target nearest a point, in map space, or null if none.</summary>
-    public static Vector3? Snap(NavigationMap map, NVA_ER.Navmesh owner, NVA_ER.Navmesh target, Vector3 point, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    public static Vector3? Snap(NavigationMap map, NVA.Navmesh owner, NVA.Navmesh target, Vector3 point, Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var joints = Joints(map, owner, target, toMap);
 
@@ -391,9 +391,9 @@ public static class NavGates
     }
 
     /// <summary>The costs of a navmesh's gates to each other, by gate object, so they can be kept across a change of its list.</summary>
-    public static Dictionary<(NVA_ER.GateNode, NVA_ER.GateNode), short> CostsByGate(NVA_ER.Navmesh owner)
+    public static Dictionary<(NVA.GateNode, NVA.GateNode), short> CostsByGate(NVA.Navmesh owner)
     {
-        var costs = new Dictionary<(NVA_ER.GateNode, NVA_ER.GateNode), short>(ReferencePairComparer.Instance);
+        var costs = new Dictionary<(NVA.GateNode, NVA.GateNode), short>(ReferencePairComparer.Instance);
         var gates = owner.GateNodes;
 
         for (int i = 0; i < gates.Count; i++)
@@ -407,8 +407,8 @@ public static class NavGates
     /// Writes a navmesh's cost table: 16 entries per gate, 0 to itself, -1 past its gates. Pairs whose two gates are in
     /// <paramref name="keep"/> and in neither <paramref name="stale"/> keep that cost; the others are walked.
     /// </summary>
-    public static void RefreshCosts(NavigationMap map, NVA_ER.Navmesh owner, Func<NVA_ER.Navmesh, Matrix4x4> toMap,
-        IReadOnlyDictionary<(NVA_ER.GateNode, NVA_ER.GateNode), short> keep = null, ISet<NVA_ER.GateNode> stale = null)
+    public static void RefreshCosts(NavigationMap map, NVA.Navmesh owner, Func<NVA.Navmesh, Matrix4x4> toMap,
+        IReadOnlyDictionary<(NVA.GateNode, NVA.GateNode), short> keep = null, ISet<NVA.GateNode> stale = null)
     {
         var gates = owner.GateNodes;
         int n = gates.Count;
@@ -445,11 +445,11 @@ public static class NavGates
     }
 
     /// <summary>Walks every cost of a navmesh's gates again, e.g. after its faces moved.</summary>
-    public static void RecomputeCosts(NavigationMap map, NVA_ER.Navmesh owner, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    public static void RecomputeCosts(NavigationMap map, NVA.Navmesh owner, Func<NVA.Navmesh, Matrix4x4> toMap)
         => RefreshCosts(map, owner, toMap);
 
     /// <summary>Sets the cost between two gates of a navmesh, both ways.</summary>
-    public static void SetCost(NVA_ER.Navmesh owner, int a, int b, short cost)
+    public static void SetCost(NVA.Navmesh owner, int a, int b, short cost)
     {
         if (a == b || a < 0 || b < 0 || a >= owner.GateNodes.Count || b >= owner.GateNodes.Count)
             return;
@@ -460,7 +460,7 @@ public static class NavGates
         owner.GateNodes[b].NeighbourGateNodeCosts[a] = cost;
     }
 
-    private static void Pad(NVA_ER.GateNode gate)
+    private static void Pad(NVA.GateNode gate)
     {
         while (gate.NeighbourGateNodeCosts.Count < MaxGates)
             gate.NeighbourGateNodeCosts.Add(Unreachable);
@@ -476,10 +476,10 @@ public static class NavGates
     /// when the other is full. The cost tables of every navmesh that changed are written again; costs between gates
     /// that stayed are kept.
     /// </summary>
-    public static NavGateEditResult Rebuild(NavigationMap map, IEnumerable<NVA_ER.Navmesh> owners, Func<NVA_ER.Navmesh, Matrix4x4> toMap,
+    public static NavGateEditResult Rebuild(NavigationMap map, IEnumerable<NVA.Navmesh> owners, Func<NVA.Navmesh, Matrix4x4> toMap,
         float join = DefaultRunJoin)
     {
-        var pairs = new HashSet<(NVA_ER.Navmesh, NVA_ER.Navmesh)>();
+        var pairs = new HashSet<(NVA.Navmesh, NVA.Navmesh)>();
         var list = map.Nva.Navmeshes;
 
         foreach (var owner in owners.Distinct())
@@ -503,13 +503,13 @@ public static class NavGates
     }
 
     /// <summary>Rebuilds the gates of some pairs of navmeshes (see <see cref="Rebuild"/>).</summary>
-    public static NavGateEditResult RebuildPairs(NavigationMap map, IEnumerable<(NVA_ER.Navmesh A, NVA_ER.Navmesh B)> pairs,
-        Func<NVA_ER.Navmesh, Matrix4x4> toMap, float join = DefaultRunJoin)
+    public static NavGateEditResult RebuildPairs(NavigationMap map, IEnumerable<(NVA.Navmesh A, NVA.Navmesh B)> pairs,
+        Func<NVA.Navmesh, Matrix4x4> toMap, float join = DefaultRunJoin)
     {
         var result = new NavGateEditResult();
         var list = map.Nva.Navmeshes;
         var pairList = pairs.Where(p => p.A != p.B && list.Contains(p.A) && list.Contains(p.B)).Distinct().ToList();
-        var keep = new Dictionary<NVA_ER.Navmesh, Dictionary<(NVA_ER.GateNode, NVA_ER.GateNode), short>>();
+        var keep = new Dictionary<NVA.Navmesh, Dictionary<(NVA.GateNode, NVA.GateNode), short>>();
 
         foreach (var (a, b) in pairList)
         {
@@ -544,7 +544,7 @@ public static class NavGates
     }
 
     /// <summary>Removes the gates of a navmesh that lead to another; returns how many.</summary>
-    private static int RemoveGatesBetween(List<NVA_ER.Navmesh> list, NVA_ER.Navmesh owner, NVA_ER.Navmesh target)
+    private static int RemoveGatesBetween(List<NVA.Navmesh> list, NVA.Navmesh owner, NVA.Navmesh target)
     {
         int ownerIndex = list.IndexOf(owner);
         int targetIndex = list.IndexOf(target);
@@ -563,13 +563,13 @@ public static class NavGates
     }
 
     /// <summary>Adds a gate at a point to each side that has room, paired when both do; returns how many were added.</summary>
-    private static int AddPair(List<NVA_ER.Navmesh> list, NVA_ER.Navmesh a, NVA_ER.Navmesh b, Vector3 point)
+    private static int AddPair(List<NVA.Navmesh> list, NVA.Navmesh a, NVA.Navmesh b, Vector3 point)
     {
         int ia = list.IndexOf(a), ib = list.IndexOf(b);
         bool roomA = a.GateNodes.Count < MaxGates, roomB = b.GateNodes.Count < MaxGates;
         int added = 0;
 
-        NVA_ER.GateNode ga = null, gb = null;
+        NVA.GateNode ga = null, gb = null;
         if (roomA)
         {
             ga = NewGate(point, ib);
@@ -592,9 +592,9 @@ public static class NavGates
         return added;
     }
 
-    private static NVA_ER.GateNode NewGate(Vector3 point, int target)
+    private static NVA.GateNode NewGate(Vector3 point, int target)
     {
-        var gate = new NVA_ER.GateNode { Position = point, ConnectedNavmeshIndex = (short)target, NodeSubID = -1 };
+        var gate = new NVA.GateNode { Position = point, ConnectedNavmeshIndex = (short)target, NodeSubID = -1 };
         Pad(gate);
         return gate;
     }
@@ -603,8 +603,8 @@ public static class NavGates
     /// Adds a gate between a navmesh and one it is connected to, at the point of their connection edges nearest a point
     /// (or a new site when null), paired when both have room.
     /// </summary>
-    public static NavGateEditResult Add(NavigationMap map, NVA_ER.Navmesh owner, NVA_ER.Navmesh target, Vector3? near,
-        Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    public static NavGateEditResult Add(NavigationMap map, NVA.Navmesh owner, NVA.Navmesh target, Vector3? near,
+        Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var result = new NavGateEditResult();
 
@@ -639,7 +639,7 @@ public static class NavGates
     }
 
     /// <summary>Removes a gate and its partner, with their cost rows and columns.</summary>
-    public static NavGateEditResult Remove(NavigationMap map, NVA_ER.Navmesh owner, int gate)
+    public static NavGateEditResult Remove(NavigationMap map, NVA.Navmesh owner, int gate)
     {
         var result = new NavGateEditResult();
         var list = map.Nva.Navmeshes;
@@ -653,7 +653,7 @@ public static class NavGates
         result.Touched.Add(owner);
 
         // The partner's index isn't changed by taking out a gate of another navmesh
-        if (partner is (NVA_ER.Navmesh entry, int index))
+        if (partner is (NVA.Navmesh entry, int index))
         {
             NavModelEdit.RemoveGate(list, list.IndexOf(entry), index);
             result.Removed++;
@@ -667,7 +667,7 @@ public static class NavGates
     /// Moves a gate, kept on the owner's connection edges to its target, and its partner with it, then walks the costs
     /// of the two again.
     /// </summary>
-    public static NavGateEditResult Move(NavigationMap map, NVA_ER.Navmesh owner, int gate, Vector3 point, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    public static NavGateEditResult Move(NavigationMap map, NVA.Navmesh owner, int gate, Vector3 point, Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var result = new NavGateEditResult();
         var list = map.Nva.Navmeshes;
@@ -690,7 +690,7 @@ public static class NavGates
         MoveTo(map, owner, g, snapped, toMap);
         result.Touched.Add(owner);
 
-        if (partner is (NVA_ER.Navmesh entry, int index))
+        if (partner is (NVA.Navmesh entry, int index))
         {
             MoveTo(map, entry, entry.GateNodes[index], snapped, toMap);
             result.Touched.Add(entry);
@@ -700,7 +700,7 @@ public static class NavGates
     }
 
     /// <summary>Moves a gate without its costs, for a drag; <see cref="Move"/> walks them at the end.</summary>
-    public static Vector3? DragTo(NavigationMap map, NVA_ER.Navmesh owner, int gate, Vector3 point, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    public static Vector3? DragTo(NavigationMap map, NVA.Navmesh owner, int gate, Vector3 point, Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var list = map.Nva.Navmeshes;
         var g = owner.GateNodes[gate];
@@ -713,30 +713,30 @@ public static class NavGates
 
         var partner = Partner(map, owner, gate);
         g.Position = snapped;
-        if (partner is (NVA_ER.Navmesh entry, int index))
+        if (partner is (NVA.Navmesh entry, int index))
             entry.GateNodes[index].Position = snapped;
 
         return snapped;
     }
 
-    private static void MoveTo(NavigationMap map, NVA_ER.Navmesh owner, NVA_ER.GateNode gate, Vector3 point, Func<NVA_ER.Navmesh, Matrix4x4> toMap)
+    private static void MoveTo(NavigationMap map, NVA.Navmesh owner, NVA.GateNode gate, Vector3 point, Func<NVA.Navmesh, Matrix4x4> toMap)
     {
         var keep = CostsByGate(owner);
         gate.Position = point;
-        RefreshCosts(map, owner, toMap, keep, new HashSet<NVA_ER.GateNode>(ReferenceEqualityComparer.Instance) { gate });
+        RefreshCosts(map, owner, toMap, keep, new HashSet<NVA.GateNode>(ReferenceEqualityComparer.Instance) { gate });
     }
 
     #endregion
 
     /// <summary>Compares gate pairs by reference, as gate nodes have no identity of their own.</summary>
-    private sealed class ReferencePairComparer : IEqualityComparer<(NVA_ER.GateNode, NVA_ER.GateNode)>
+    private sealed class ReferencePairComparer : IEqualityComparer<(NVA.GateNode, NVA.GateNode)>
     {
         public static readonly ReferencePairComparer Instance = new();
 
-        public bool Equals((NVA_ER.GateNode, NVA_ER.GateNode) x, (NVA_ER.GateNode, NVA_ER.GateNode) y)
+        public bool Equals((NVA.GateNode, NVA.GateNode) x, (NVA.GateNode, NVA.GateNode) y)
             => ReferenceEquals(x.Item1, y.Item1) && ReferenceEquals(x.Item2, y.Item2);
 
-        public int GetHashCode((NVA_ER.GateNode, NVA_ER.GateNode) obj)
+        public int GetHashCode((NVA.GateNode, NVA.GateNode) obj)
             => HashCode.Combine(System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(obj.Item1), System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(obj.Item2));
     }
 }

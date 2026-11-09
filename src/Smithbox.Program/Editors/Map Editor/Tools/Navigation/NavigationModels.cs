@@ -35,7 +35,7 @@ public sealed class NavModelEditResult
     public NavRemapResult Changes { get; } = new() { NvaChanged = true };
 
     /// <summary>The n and o entries a model add made, or null.</summary>
-    public (NVA_ER.Navmesh N, NVA_ER.Navmesh O)? Added { get; set; }
+    public (NVA.Navmesh N, NVA.Navmesh O)? Added { get; set; }
 
     public bool Ok => Error == null;
 }
@@ -46,10 +46,10 @@ public sealed class NavModelEditResult
 /// </summary>
 public sealed class NavModelState
 {
-    private readonly List<(NVA_ER.Navmesh Entry, int ModelID, int FaceCount, int FaceDataIndex, int Unk4C, List<NVA_ER.GateNode> Gates)> Entries;
-    private readonly List<(NVA_ER.NodeBank Bank, List<(int Face, int Collision)> Faces)> Banks;
-    private readonly NVA_ER Nva;
-    private readonly List<NVA_ER.Navmesh> Order;
+    private readonly List<(NVA.Navmesh Entry, int ModelID, int FaceCount, int FaceDataIndex, int Unk4C, List<NVA.GateNode> Gates)> Entries;
+    private readonly List<(NVA.NodeBank Bank, List<(int Face, int Collision)> Faces)> Banks;
+    private readonly NVA Nva;
+    private readonly List<NVA.Navmesh> Order;
     private readonly NavConnectionState Connections;
 
     public NavModelState(NavigationMap map)
@@ -61,7 +61,7 @@ public sealed class NavModelState
         Connections = new NavConnectionState(map.Nva, map.Nvcs);
     }
 
-    private static NVA_ER.GateNode Copy(NVA_ER.GateNode g) => new()
+    private static NVA.GateNode Copy(NVA.GateNode g) => new()
     {
         Position = g.Position,
         ConnectedNavmeshIndex = g.ConnectedNavmeshIndex,
@@ -87,7 +87,7 @@ public sealed class NavModelState
         }
 
         foreach (var (bank, faces) in Banks)
-            bank.Faces = faces.Select(f => new NVA_ER.NodeBankFace { FaceIndex = f.Face, CollisionID = f.Collision }).ToList();
+            bank.Faces = faces.Select(f => new NVA.NodeBankFace { FaceIndex = f.Face, CollisionID = f.Collision }).ToList();
 
         Connections.Restore();
     }
@@ -118,7 +118,7 @@ public static class NavModelEdit
     /// Sets every entry's FaceDataIndex to the running total of the face counts before it, in list order, as the game's
     /// files have it.
     /// </summary>
-    public static void RecomputeFaceDataIndex(NVA_ER nva)
+    public static void RecomputeFaceDataIndex(NVA nva)
     {
         int total = 0;
         foreach (var entry in nva.Navmeshes)
@@ -387,9 +387,9 @@ public static class NavModelEdit
         return result;
     }
 
-    private static NVA_ER.Navmesh NewEntry(NVA_ER.Navmesh template, int nameId, int modelId, Havok.HavokDocument document)
+    private static NVA.Navmesh NewEntry(NVA.Navmesh template, int nameId, int modelId, Havok.HavokDocument document)
     {
-        var entry = new NVA_ER.Navmesh();
+        var entry = new NVA.Navmesh();
 
         if (template != null)
         {
@@ -411,7 +411,7 @@ public static class NavModelEdit
         entry.ModelID = modelId;
         entry.FaceCount = document.ObjectsOf<hkaiNavMesh>().First().m_faces.Count;
         entry.Unk4C = entry.FaceCount == 0 ? 1 : 0;
-        entry.GateNodes = new List<NVA_ER.GateNode>();
+        entry.GateNodes = new List<NVA.GateNode>();
         entry.ConnectedNavmeshes = new List<int>();
         return entry;
     }
@@ -421,7 +421,7 @@ public static class NavModelEdit
     /// of a navmesh's list also takes its column out of that navmesh's gate costs, and moves down the NodeSubID of
     /// gates elsewhere that point at a later gate of the same navmesh.
     /// </summary>
-    public static void RemoveGatesTo(List<NVA_ER.Navmesh> list, ISet<int> positions)
+    public static void RemoveGatesTo(List<NVA.Navmesh> list, ISet<int> positions)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -443,7 +443,7 @@ public static class NavModelEdit
     /// Takes one gate out of a navmesh's list: its column out of the owner's other gates' costs, and the NodeSubID of
     /// gates elsewhere that point at it (made -1) or at a later gate of the owner (moved down).
     /// </summary>
-    public static void RemoveGate(List<NVA_ER.Navmesh> list, int owner, int gate)
+    public static void RemoveGate(List<NVA.Navmesh> list, int owner, int gate)
     {
         var gates = list[owner].GateNodes;
         gates.RemoveAt(gate);

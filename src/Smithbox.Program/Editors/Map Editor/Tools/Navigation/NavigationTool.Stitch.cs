@@ -173,7 +173,7 @@ public partial class NavigationTool
         int gatePairs = 0;
         if (StitchUpdateGates)
         {
-            var pairs = new HashSet<(NVA_ER.Navmesh, NVA_ER.Navmesh)>();
+            var pairs = new HashSet<(NVA.Navmesh, NVA.Navmesh)>();
             void Pair(int a, int b)
             {
                 var ea = map.FindNavmesh(a);

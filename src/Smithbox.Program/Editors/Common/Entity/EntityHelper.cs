@@ -221,8 +221,7 @@ public static class EntityHelper
     }
     public static bool IsNavmesh(Entity ent)
     {
-        return ent.WrappedObject is NVA.NavmeshInfo ||
-            ent.WrappedObject is NVA_ER.Navmesh ? true : false;
+        return ent.WrappedObject is NVA.Navmesh;
     }
 
     /// <summary>

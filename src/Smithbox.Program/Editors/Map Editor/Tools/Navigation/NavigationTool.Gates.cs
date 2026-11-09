@@ -25,7 +25,7 @@ public partial class NavigationTool
     private bool GateMode;
 
     /// <summary>The navmesh whose gates the tab shows, and its chosen gate (-1 for none).</summary>
-    private NVA_ER.Navmesh GatesEntry;
+    private NVA.Navmesh GatesEntry;
     private int GateSelected = -1;
 
     private bool GateOverlayDirty;
@@ -40,7 +40,7 @@ public partial class NavigationTool
 
     /// <summary>The cost cells as typed, in metres, for the navmesh they were read from.</summary>
     private readonly Dictionary<(int, int), string> GateCostText = new();
-    private NVA_ER.Navmesh GateCostTextFor;
+    private NVA.Navmesh GateCostTextFor;
 
     /// <summary>A gate being dragged: its gates before the drag, and the height of the plane it moves across.</summary>
     private NavGateState GateDragBefore;
@@ -58,7 +58,7 @@ public partial class NavigationTool
     }
 
     /// <summary>Places a navmesh's mesh in map space, where its gates are: its place in the viewport, out of the map's.</summary>
-    private static Func<NVA_ER.Navmesh, Matrix4x4> GateToMap(MapContainer map)
+    private static Func<NVA.Navmesh, Matrix4x4> GateToMap(MapContainer map)
     {
         var mapWorld = MapWorld(map);
         Matrix4x4.Invert(mapWorld, out var inverse);
@@ -66,7 +66,7 @@ public partial class NavigationTool
     }
 
     /// <summary>The chosen navmesh, if it is still in the drawn map and set; else nothing is chosen.</summary>
-    private NVA_ER.Navmesh CurrentGatesEntry()
+    private NVA.Navmesh CurrentGatesEntry()
     {
         if (GatesEntry != null && (OverlayNavigation == null || !OverlayNavigation.Nva.Navmeshes.Contains(GatesEntry)
             || NavigationMap.SetOf(GatesEntry) != OverlaySet))
@@ -85,7 +85,7 @@ public partial class NavigationTool
         return GatesEntry;
     }
 
-    private void ChooseGates(NVA_ER.Navmesh entry, int gate)
+    private void ChooseGates(NVA.Navmesh entry, int gate)
     {
         if (GatesEntry != entry || GateSelected != gate)
             GateOverlayDirty = true;
@@ -179,7 +179,7 @@ public partial class NavigationTool
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_Navigation_Gates_Problems", unpaired, broken));
     }
 
-    private void DisplayGateList(NavigationMap map, NVA_ER.Navmesh entry)
+    private void DisplayGateList(NavigationMap map, NVA.Navmesh entry)
     {
         // Gates
         GUI.Spacer();
@@ -258,7 +258,7 @@ public partial class NavigationTool
         }
     }
 
-    private void DisplayGateCosts(NVA_ER.Navmesh entry)
+    private void DisplayGateCosts(NVA.Navmesh entry)
     {
         var gates = entry.GateNodes;
 
@@ -351,7 +351,7 @@ public partial class NavigationTool
         return true;
     }
 
-    private void DisplayGateAdd(NavigationMap map, NVA_ER.Navmesh entry)
+    private void DisplayGateAdd(NavigationMap map, NVA.Navmesh entry)
     {
         var neighbours = NavGates.Neighbours(map, entry);
 
@@ -367,7 +367,7 @@ public partial class NavigationTool
 
         GateAddTarget = Math.Clamp(GateAddTarget, 0, neighbours.Count - 1);
         var list = map.Nva.Navmeshes;
-        string Name(NVA_ER.Navmesh e) => LOC.Get("MAP_Navigation_Gates_Neighbour", list.IndexOf(e), map.FileNameOf(e), e.GateNodes.Count, NavGates.MaxGates);
+        string Name(NVA.Navmesh e) => LOC.Get("MAP_Navigation_Gates_Neighbour", list.IndexOf(e), map.FileNameOf(e), e.GateNodes.Count, NavGates.MaxGates);
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##navigationGateAddTarget", Name(neighbours[GateAddTarget])))
@@ -386,7 +386,7 @@ public partial class NavigationTool
             entry.GateNodes.Count < NavGates.MaxGates);
     }
 
-    private void RebuildGates(IReadOnlyList<NVA_ER.Navmesh> owners)
+    private void RebuildGates(IReadOnlyList<NVA.Navmesh> owners)
     {
         float join = GateJoin;
         EditGates(m => NavGates.Rebuild(m, owners, GateToMap(OverlayContainer), join), "MAP_Navigation_Gates_Rebuilt");
@@ -475,7 +475,7 @@ public partial class NavigationTool
 
         if (canInteract && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
         {
-            if (NavigationOverlayBuilder.PickGate(map, OverlaySet, ray.Origin, ray.Direction, mapWorld) is (NVA_ER.Navmesh owner, int gate))
+            if (NavigationOverlayBuilder.PickGate(map, OverlaySet, ray.Origin, ray.Direction, mapWorld) is (NVA.Navmesh owner, int gate))
             {
                 // A second click on the chosen gate starts a drag
                 if (owner == GatesEntry && gate == GateSelected)

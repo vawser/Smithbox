@@ -10,13 +10,15 @@ public class HavokNavmeshBank
 {
     public ProjectEntry Project;
 
+    /// <summary>
+    /// The NVA files read so far, by map. NVA reads every game's (BB, DS3, SDT, ER, AC6, NR, DB_NT).
+    /// </summary>
     public Dictionary<string, NVA> Files = new();
-    public Dictionary<string, NVA_ER> ER_Files = new();
 
     /// <summary>
     /// AC6 nav volumes for flying movement (.nvva), which are laid out like the AC6 NVA
     /// </summary>
-    public Dictionary<string, NVA_ER> NavVolumeFiles = new();
+    public Dictionary<string, NVA> NavVolumeFiles = new();
 
     /// <summary>
     /// ER, NR and AC6 navmeshes, read by the unified Havok library, keyed by their map and name (m30_00_00_00,
@@ -384,22 +386,11 @@ public class HavokNavmeshBank
         if (!CanUse())
             return;
 
-        if (Files.ContainsKey(map.Name))
+        if (Files.TryGetValue(map.Name, out var cached))
         {
-            var nva = Files[map.Name];
-
-            if (nva != null)
+            if (cached != null)
             {
-                map.LoadNVA(map.Name, nva);
-            }
-        }
-        else if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 && ER_Files.ContainsKey(map.Name))
-        {
-            var nva = ER_Files[map.Name];
-
-            if (nva != null)
-            {
-                map.LoadNVA(map.Name, nva);
+                map.LoadNVA(map.Name, cached);
             }
         }
         else
@@ -415,37 +406,17 @@ public class HavokNavmeshBank
                     {
                         var nvaData = fs.ReadFile(entry.Path);
 
-                        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6)
+                        try
                         {
-                            try
-                            {
-                                var nva = NVA_ER.Read(nvaData.Value);
+                            var nva = NVA.Read(nvaData.Value);
 
-                                ER_Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
+                            Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
 
-                                map.LoadNVA(map.Name, nva);
-
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
-                            }
+                            map.LoadNVA(map.Name, nva);
                         }
-                        else
+                        catch (Exception e)
                         {
-                            try
-                            {
-                                var nva = NVA.Read(nvaData.Value);
-
-                                Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
-
-                                map.LoadNVA(map.Name, nva);
-
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
-                            }
+                            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", entry.Path), e);
                         }
                     }
                     catch (Exception e)
@@ -481,15 +452,8 @@ public class HavokNavmeshBank
 
             try
             {
-                switch (root)
-                {
-                    case NVA_ER nvaER:
-                        WriteNavmeshFile(entry.Path, nvaER.Write);
-                        break;
-                    case NVA nva:
-                        WriteNavmeshFile(entry.Path, nva.Write);
-                        break;
-                }
+                if (root is NVA nva)
+                    WriteNavmeshFile(entry.Path, nva.Write);
             }
             catch (Exception e)
             {
@@ -532,7 +496,7 @@ public class HavokNavmeshBank
 
         try
         {
-            var nvva = NVA_ER.Read(fs.ReadFile(entry.Path).Value);
+            var nvva = NVA.Read(fs.ReadFile(entry.Path).Value);
 
             NavVolumeFiles.Add(entry.Filename, nvva);
 
@@ -546,7 +510,7 @@ public class HavokNavmeshBank
 
     public bool SaveNVVA(MapContainer map)
     {
-        if (Project.Descriptor.ProjectType is not ProjectType.AC6 || map.NavVolumeParent?.WrappedObject is not NVA_ER nvva)
+        if (Project.Descriptor.ProjectType is not ProjectType.AC6 || map.NavVolumeParent?.WrappedObject is not NVA nvva)
             return true;
 
         var entry = Project.Locator.NavVolumeFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);

@@ -144,7 +144,7 @@ public class MapHavokPropertyView
         }
 
         // ER: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
-        if (ent.WrappedObject is NVA_ER.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER)
+        if (ent.WrappedObject is NVA.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER)
         {
             NavmeshPropEditorER(erEntry);
             return;
@@ -203,13 +203,13 @@ public class MapHavokPropertyView
     /// The n or o file of an ER NVA entry's model, chosen by the N/O toggle. A quarter entry shows its q file in N;
     /// an o entry shows its model's n file in N, and an n or quarter entry its model's o file in O.
     /// </summary>
-    private void NavmeshPropEditorER(NVA_ER.Navmesh entry)
+    private void NavmeshPropEditorER(NVA.Navmesh entry)
     {
         if (_editedMap == null)
             return;
 
         var mapName = _editedMap.Name;
-        var nva = _editedMap.NavmeshParent?.WrappedObject as NVA_ER;
+        var nva = _editedMap.NavmeshParent?.WrappedObject as NVA;
         var set = NavmeshEditType is MapNavmeshEditType.O ? NavmeshSet.O : NavmeshSet.N;
         var target = NavigationMap.EntryInSet(nva, entry, set);
 

@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public sealed class NavVertexFile
 {
-    public NVA_ER.Navmesh Entry { get; }
+    public NVA.Navmesh Entry { get; }
 
     public NavmeshFile File { get; }
 
@@ -39,7 +39,7 @@ public sealed class NavVertexFile
     private Vector3 LocalMin, LocalMax;
     private bool BoundsDirty = true;
 
-    public NavVertexFile(NVA_ER.Navmesh entry, NavmeshFile file, Matrix4x4 world)
+    public NavVertexFile(NVA.Navmesh entry, NavmeshFile file, Matrix4x4 world)
     {
         Entry = entry;
         File = file;

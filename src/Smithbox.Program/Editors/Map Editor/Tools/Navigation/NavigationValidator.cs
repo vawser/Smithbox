@@ -161,7 +161,7 @@ public static class NavigationValidator
     /// A navmesh's gate nodes (NavGates): at most 16, each pointing at a navmesh of the map it is connected to, paired
     /// with a gate there that points back unless that navmesh is full, and a symmetric table of 16 costs with 0 for itself.
     /// </summary>
-    private static void ValidateGates(NavigationMap map, string file, NVA_ER.Navmesh n, List<NavIssue> issues)
+    private static void ValidateGates(NavigationMap map, string file, NVA.Navmesh n, List<NavIssue> issues)
     {
         var navmeshes = map.Nva.Navmeshes;
         var gates = n.GateNodes;
@@ -310,7 +310,7 @@ public static class NavigationValidator
     /// <summary>
     /// One end of a connection: the face must be in the navmesh, and the edge one of that face's edges or user edges.
     /// </summary>
-    private static void CheckSide(List<NavIssue> issues, string file, int nameId, NVA_ER.Navmesh entry, NavmeshFile meshFile,
+    private static void CheckSide(List<NavIssue> issues, string file, int nameId, NVA.Navmesh entry, NavmeshFile meshFile,
         int face, int edge)
     {
         if (entry == null)

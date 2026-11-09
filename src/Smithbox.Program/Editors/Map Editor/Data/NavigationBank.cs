@@ -47,7 +47,7 @@ public class NavigationBank
     /// </summary>
     public NavigationMap GetMap(MapContainer map)
     {
-        if (!CanUse() || map?.NavmeshParent?.WrappedObject is not NVA_ER nva)
+        if (!CanUse() || map?.NavmeshParent?.WrappedObject is not NVA nva)
             return null;
 
         var files = new Dictionary<string, NavmeshFile>();

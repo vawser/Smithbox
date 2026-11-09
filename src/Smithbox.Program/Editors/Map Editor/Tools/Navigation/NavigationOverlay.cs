@@ -109,7 +109,7 @@ public sealed class NavOverlay
 /// <summary>
 /// A face under the cursor.
 /// </summary>
-public sealed record NavFaceHit(NVA_ER.Navmesh Entry, NavmeshFile File, int Face, float Distance, Vector3 Point);
+public sealed record NavFaceHit(NVA.Navmesh Entry, NavmeshFile File, int Face, float Distance, Vector3 Point);
 
 public static class NavigationOverlayBuilder
 {
@@ -119,15 +119,15 @@ public static class NavigationOverlayBuilder
     /// <summary>
     /// The entries of a set whose faces are drawn: for the n set, the n entries and the quarters (whose n file is empty).
     /// </summary>
-    public static IEnumerable<NVA_ER.Navmesh> EntriesOf(NavigationMap map, NavmeshSet set)
+    public static IEnumerable<NVA.Navmesh> EntriesOf(NavigationMap map, NavmeshSet set)
         => map.Nva.Navmeshes.Where(e => NavigationMap.SetOf(e) == set);
 
     /// <summary>
     /// Builds the overlay of a map's set. The world transforms place a navmesh entry and the map's own data
     /// (gate nodes, ONAV) in the viewport.
     /// </summary>
-    public static NavOverlay Build(NavigationMap map, NavmeshSet set, Func<NVA_ER.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
-        ISet<NavOverlayLayer> layers, Func<NVA_ER.Navmesh, bool> only = null)
+    public static NavOverlay Build(NavigationMap map, NavmeshSet set, Func<NVA.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
+        ISet<NavOverlayLayer> layers, Func<NVA.Navmesh, bool> only = null)
     {
         var overlay = new NavOverlay { MapId = map.MapId, Set = set };
         var (inMap, crossMap) = ConnectionEnds(map);
@@ -157,8 +157,8 @@ public static class NavigationOverlayBuilder
     /// The gates of a set, as crosses coloured by how each stands with its partner. A paired gate shares its point with
     /// its partner, so each gets a short tick towards the middle of the nearest face of its own navmesh.
     /// </summary>
-    private static void AddGates(NavOverlay overlay, NavigationMap map, NavmeshSet set, Func<NVA_ER.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
-        ISet<NavOverlayLayer> layers, Func<NVA_ER.Navmesh, bool> only)
+    private static void AddGates(NavOverlay overlay, NavigationMap map, NavmeshSet set, Func<NVA.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
+        ISet<NavOverlayLayer> layers, Func<NVA.Navmesh, bool> only)
     {
         if (!layers.Contains(NavOverlayLayer.GateNodes) && !layers.Contains(NavOverlayLayer.GateNodesUnpaired) && !layers.Contains(NavOverlayLayer.GateNodesBroken))
             return;
@@ -205,7 +205,7 @@ public static class NavigationOverlayBuilder
     /// The chosen navmesh's gates in the Gates tab: a line between each two that can reach each other, and the chosen
     /// gate's cross, larger, over everything.
     /// </summary>
-    public static NavOverlay GateHighlight(NavigationMap map, NVA_ER.Navmesh entry, int selectedGate, Matrix4x4 mapWorld, bool costs)
+    public static NavOverlay GateHighlight(NavigationMap map, NVA.Navmesh entry, int selectedGate, Matrix4x4 mapWorld, bool costs)
     {
         var overlay = new NavOverlay { MapId = map.MapId, Set = NavigationMap.SetOf(entry) };
         var gates = entry.GateNodes;
@@ -232,9 +232,9 @@ public static class NavigationOverlayBuilder
     }
 
     /// <summary>The gate of a set nearest a ray, within a distance of it that grows with the distance along it, or null.</summary>
-    public static (NVA_ER.Navmesh Entry, int Gate)? PickGate(NavigationMap map, NavmeshSet set, Vector3 origin, Vector3 direction, Matrix4x4 mapWorld)
+    public static (NVA.Navmesh Entry, int Gate)? PickGate(NavigationMap map, NavmeshSet set, Vector3 origin, Vector3 direction, Matrix4x4 mapWorld)
     {
-        (NVA_ER.Navmesh, int)? best = null;
+        (NVA.Navmesh, int)? best = null;
         float bestDistance = float.MaxValue;
         var dir = Vector3.Normalize(direction);
 
@@ -328,7 +328,7 @@ public static class NavigationOverlayBuilder
     /// The overlay of a single navmesh, drawn from the given mesh (e.g. one with edited vertices), with the connection
     /// ends of its map from <see cref="ConnectionEnds"/>. Only its faces, edges and user edges.
     /// </summary>
-    public static NavOverlay BuildEntry(string mapId, NavmeshSet set, NVA_ER.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
+    public static NavOverlay BuildEntry(string mapId, NavmeshSet set, NVA.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
         (HashSet<(int, int)> InMap, HashSet<(int, int)> CrossMap) ends)
     {
         var overlay = new NavOverlay { MapId = mapId, Set = set };
@@ -339,7 +339,7 @@ public static class NavigationOverlayBuilder
         return overlay;
     }
 
-    private static void AddMesh(NavOverlay overlay, NVA_ER.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
+    private static void AddMesh(NavOverlay overlay, NVA.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
         HashSet<(int, int)> inMap, HashSet<(int, int)> crossMap)
     {
         var lift = new Vector3(0, Lift, 0);
@@ -557,7 +557,7 @@ public static class NavigationOverlayBuilder
     /// <summary>
     /// The nearest face of a set that a ray in viewport space hits, or null.
     /// </summary>
-    public static NavFaceHit Pick(NavigationMap map, NavmeshSet set, Vector3 origin, Vector3 direction, Func<NVA_ER.Navmesh, Matrix4x4> entryWorld)
+    public static NavFaceHit Pick(NavigationMap map, NavmeshSet set, Vector3 origin, Vector3 direction, Func<NVA.Navmesh, Matrix4x4> entryWorld)
     {
         NavFaceHit best = null;
 

@@ -121,7 +121,7 @@ public partial class NavigationTool
 
         var map = maps.First(m => m.Name == SelectedMap);
 
-        if (map.NavmeshParent?.WrappedObject is not SoulsFormats.NVA_ER)
+        if (map.NavmeshParent?.WrappedObject is not SoulsFormats.NVA)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_No_Nva"));
             ImGui.EndChild();

@@ -75,7 +75,7 @@ public partial class NavigationTool
     private readonly HashSet<Entity> HiddenNavmeshDrawings = new();
 
     /// <summary>Each navmesh entry's entity in the edited map, and where it is drawn, gathered once a frame.</summary>
-    private readonly Dictionary<NVA_ER.Navmesh, (Entity Entity, Matrix4x4 World)> VertexEntries = new(ReferenceEqualityComparer.Instance);
+    private readonly Dictionary<NVA.Navmesh, (Entity Entity, Matrix4x4 World)> VertexEntries = new(ReferenceEqualityComparer.Instance);
 
     private (HashSet<(int, int)> InMap, HashSet<(int, int)> CrossMap) VertexEnds;
     private NavigationMap VertexEndsFor;
@@ -399,7 +399,7 @@ public partial class NavigationTool
 
         foreach (var entity in map.Objects)
         {
-            if (entity.WrappedObject is NVA_ER.Navmesh entry)
+            if (entity.WrappedObject is NVA.Navmesh entry)
                 VertexEntries.TryAdd(entry, (entity, entity.GetWorldMatrix()));
         }
 
@@ -410,7 +410,7 @@ public partial class NavigationTool
         }
     }
 
-    private Matrix4x4 VertexEntryWorld(NVA_ER.Navmesh entry)
+    private Matrix4x4 VertexEntryWorld(NVA.Navmesh entry)
         => VertexEntries.TryGetValue(entry, out var placed) ? placed.World : MapWorld(VertexMap ?? OverlayContainer);
 
     private void HandleVertexKeys(Ray ray, bool canInteract)
@@ -457,7 +457,7 @@ public partial class NavigationTool
     /// The working copy of an entry's file on the overlay's map, made the first time it is asked for. Null for an
     /// entry without faces.
     /// </summary>
-    private NavVertexFile GetVertexFile(NVA_ER.Navmesh entry)
+    private NavVertexFile GetVertexFile(NVA.Navmesh entry)
     {
         var navigation = OverlayNavigation;
         var file = navigation?.FileOf(entry);
@@ -485,7 +485,7 @@ public partial class NavigationTool
     }
 
     /// <summary>Whether an entry is drawn by the overlay, which shows only the selected model with that option.</summary>
-    private bool IsEntryDrawn(NVA_ER.Navmesh entry)
+    private bool IsEntryDrawn(NVA.Navmesh entry)
         => !(OverlayOnlySelectedModel && SelectedModelID >= 0) || entry.ModelID == SelectedModelID;
 
     /// <summary>The nearest face of the drawn set under the ray, and the corner of it nearest the hit.</summary>

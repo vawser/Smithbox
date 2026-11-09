@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor;
 // rest of Smithbox; NavSurvey `stitchedit` runs it on every map.
 
 /// <summary>A connection of a map's data: where it is stored (the NVA when Nvc is null), its two navmeshes and the connection.</summary>
-public sealed record NavStoredConnection(NvcFile Nvc, string MapA, int MainNameID, string MapB, int TargetNameID, NVA_ER.NavMeshConnection Connection);
+public sealed record NavStoredConnection(NvcFile Nvc, string MapA, int MainNameID, string MapB, int TargetNameID, NVA.NavMeshConnection Connection);
 
 /// <summary>
 /// What re-stitching one set of a map would change: the connections whose edges no longer fit, and the pairs of open
@@ -31,7 +31,7 @@ public sealed class NavStitchPlan
     public List<NavStoredConnection> Broken { get; } = new();
 
     /// <summary>For each broken connection, how far apart its edges are; float.MaxValue when its indices don't fit the meshes.</summary>
-    public Dictionary<NVA_ER.NavMeshConnection, float> BrokenGaps { get; } = new();
+    public Dictionary<NVA.NavMeshConnection, float> BrokenGaps { get; } = new();
 
     /// <summary>The pairs to join, one per direction stored: two for a pair within the map, one for a pair across maps.</summary>
     public List<NavStitchPair> Added { get; } = new();
@@ -54,18 +54,18 @@ public sealed class NavStitchPlan
 /// </summary>
 public sealed class NavConnectionState
 {
-    private readonly NVA_ER Nva;
-    private readonly List<NVA_ER.Connector> NvaCopy;
+    private readonly NVA Nva;
+    private readonly List<NVA.Connector> NvaCopy;
     private readonly List<(NvcFile File, List<NVC.Connector> Copy)> NvcCopies;
 
-    public NavConnectionState(NVA_ER nva, IEnumerable<NvcFile> nvcs)
+    public NavConnectionState(NVA nva, IEnumerable<NvcFile> nvcs)
     {
         Nva = nva;
         NvaCopy = nva.Connectors.Select(Copy).ToList();
         NvcCopies = nvcs.Select(n => (n, n.Nvc.Connectors.Select(Copy).ToList())).ToList();
     }
 
-    private static NVA_ER.Connector Copy(NVA_ER.Connector c) => new()
+    private static NVA.Connector Copy(NVA.Connector c) => new()
     {
         MainNameID = c.MainNameID,
         TargetNameID = c.TargetNameID,
@@ -85,7 +85,7 @@ public sealed class NavConnectionState
         GraphConnections = c.GraphConnections.Select(Copy).ToList(),
     };
 
-    private static NVA_ER.NavMeshConnection Copy(NVA_ER.NavMeshConnection c) => new()
+    private static NVA.NavMeshConnection Copy(NVA.NavMeshConnection c) => new()
     {
         FaceIndex = c.FaceIndex,
         EdgeIndex = c.EdgeIndex,
@@ -93,7 +93,7 @@ public sealed class NavConnectionState
         OppositeEdgeIndex = c.OppositeEdgeIndex,
     };
 
-    private static NVA_ER.GraphConnection Copy(NVA_ER.GraphConnection g) => new() { NodeIndex = g.NodeIndex, OppositeNodeIndex = g.OppositeNodeIndex };
+    private static NVA.GraphConnection Copy(NVA.GraphConnection g) => new() { NodeIndex = g.NodeIndex, OppositeNodeIndex = g.OppositeNodeIndex };
 
     /// <summary>Puts the connectors back as they were when copied, as new copies, so the state can be restored again.</summary>
     public void Restore()
@@ -329,7 +329,7 @@ public static class NavStitchPlanner
         {
             foreach (var pair in plan.Added)
             {
-                var connection = new NVA_ER.NavMeshConnection
+                var connection = new NVA.NavMeshConnection
                 {
                     FaceIndex = pair.FaceA,
                     EdgeIndex = pair.EdgeA,
@@ -340,7 +340,7 @@ public static class NavStitchPlanner
                 if (pair.MapA == pair.MapB)
                 {
                     ConnectorOf(map.Nva.Connectors, pair.NameA, pair.NameB, c => c.MainNameID, c => c.TargetNameID,
-                        () => new NVA_ER.Connector { MainNameID = pair.NameA, TargetNameID = pair.NameB }).NavMeshConnections.Add(connection);
+                        () => new NVA.Connector { MainNameID = pair.NameA, TargetNameID = pair.NameB }).NavMeshConnections.Add(connection);
                     result.NvaChanged = true;
                 }
                 else

@@ -32,7 +32,7 @@ public static class NavigationReader
         if (nvaFile == null)
             return null;
 
-        var nva = NVA_ER.Read(nvaFile.Value.ToArray());
+        var nva = NVA.Read(nvaFile.Value.ToArray());
         var files = new Dictionary<string, NavmeshFile>();
         var bndFile = fs.ReadFile(NvmPath(mapId));
 
