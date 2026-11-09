@@ -32,10 +32,14 @@ public class CreateAction
 
     public CreateTargetType TargetBaseType = CreateTargetType.Part;
 
+    public MassCreateTool MassCreate;
+
     public CreateAction(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        MassCreate = new MassCreateTool(view, project, this);
 
         // The type flags persist in the config, so the combo has to start on the one they select
         TargetBaseType = CFG.Current.Toolbar_Create_Light ? CreateTargetType.Light
@@ -86,7 +90,40 @@ public class CreateAction
     /// </summary>
     public void OnToolWindow()
     {
-        DisplayMenu();
+        if (ImGui.BeginTabBar("createActionTabs"))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_MassCreate_Tab_Create")}##createActionTabSingle"))
+            {
+                DisplayMenu();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_MassCreate_Tab_Mass_Create")}##createActionTabMass"))
+            {
+                DisplayMassCreate();
+                ImGui.EndTabItem();
+            }
+
+            ImGui.EndTabBar();
+        }
+    }
+
+    private void DisplayMassCreate()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_MassCreate_Target_Map_Header"), LOC.Get("MAP_MassCreate_Target_Map_Header_TT"));
+
+        MapTargetPicker.Display(View, "massCreateTargetMapSelect", ref TargetMap);
+
+        var map = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (map == null)
+        {
+            GUI.WrappedText(LOC.Get("MAP_MassCreate_No_Map"));
+            return;
+        }
+
+        MassCreate.Display(map);
     }
 
     /// <summary>

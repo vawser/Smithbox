@@ -172,26 +172,6 @@ public class MapToolWindow
             View.MassEditTool.OnToolWindow();
         }
 
-        // Validation
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_MsbValidation, "MAP_ToolWindow_Msb_Validation", "mapMsbValidationSection", View.MapValidatorTool.OnToolWindow);
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_EntityIds && !(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S),
-            "MAP_ToolWindow_Entity_Ids", "mapEntityIdsSection", View.EntityIdentifierTool.OnToolWindow);
-
-        if (CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds && View.IrradianceVolumeBank.CanUse())
-        {
-            // The Viewport Rendering section's Global Illumination tab asks for this tool
-            if (View.IrradianceVolumeIdTool.FocusRequested)
-            {
-                ToolSections.Focus();
-                View.IrradianceVolumeIdTool.FocusRequested = false;
-            }
-
-            ActionSection(true, "MAP_GI_Tool_Tab", "mapIrradianceVolumeIdsSection", View.IrradianceVolumeIdTool.OnToolWindow);
-        }
-
         // Browse
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
 
@@ -219,16 +199,17 @@ public class MapToolWindow
             }
         }
 
+        // Data Transfer
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_MapExtraction)
+        {
+            View.MapExtractionTool.OnToolWindow();
+        }
+
         // Map Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Map_Data"));
-
-        if (CFG.Current.Interface_MapEditor_Tool_WallPaint && View.Project.Descriptor.ProjectType is ProjectType.SDT)
-        {
-            if (ToolSections.Header("Wall Painting"))
-            {
-                View.WallPaintTool.OnToolWindow();
-            }
-        }
 
         if (CFG.Current.Interface_MapEditor_Tool_CollisionEditor && View.CollisionEditorTool.CanUse())
         {
@@ -251,6 +232,14 @@ public class MapToolWindow
             if (ToolSections.Header(View.DestructionGenerationTool.Title))
             {
                 View.DestructionGenerationTool.OnToolWindow();
+            }
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_WallPaint && View.Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            if (ToolSections.Header("Wall Painting"))
+            {
+                View.WallPaintTool.OnToolWindow();
             }
         }
 
@@ -278,14 +267,26 @@ public class MapToolWindow
             }
         }
 
-        // Data Transfer
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
+        // Validation
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
-        // Draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_MapExtraction)
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_MsbValidation, "MAP_ToolWindow_Msb_Validation", "mapMsbValidationSection", View.MapValidatorTool.OnToolWindow);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_EntityIds && !(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S),
+            "MAP_ToolWindow_Entity_Ids", "mapEntityIdsSection", View.EntityIdentifierTool.OnToolWindow);
+
+        if (CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds && View.IrradianceVolumeBank.CanUse())
         {
-            View.MapExtractionTool.OnToolWindow();
+            // The Viewport Rendering section's Global Illumination tab asks for this tool
+            if (View.IrradianceVolumeIdTool.FocusRequested)
+            {
+                ToolSections.Focus();
+                View.IrradianceVolumeIdTool.FocusRequested = false;
+            }
+
+            ActionSection(true, "MAP_GI_Tool_Tab", "mapIrradianceVolumeIdsSection", View.IrradianceVolumeIdTool.OnToolWindow);
         }
+
 
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));

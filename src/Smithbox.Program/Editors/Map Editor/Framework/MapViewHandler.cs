@@ -87,6 +87,7 @@ public class MapViewHandler
         }
 
         view.PrefabTool.FinishImport();
+        view.CreateAction.MassCreate.Finish();
 
         // Maps loaded by this view are bound to its render scene and banks,
         // so they cannot outlive it; unload them, confirming first if any have unsaved changes
