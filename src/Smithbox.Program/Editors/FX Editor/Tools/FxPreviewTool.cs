@@ -36,6 +36,11 @@ public class FxPreviewTool
 
         GUI.WrappedText(LOC.Get("FX_PreviewTool_Hint"));
 
+        // Simulation
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Simulation_Header"), LOC.Get("FX_PreviewTool_Simulation_Header_TT"));
+        DisplayStatus();
+
         // Playback
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Playback_Header"), LOC.Get("FX_PreviewTool_Playback_Header_TT"));
@@ -113,6 +118,9 @@ public class FxPreviewTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_PreviewTool_Display_Header"), LOC.Get("FX_PreviewTool_Display_Header_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Particles")}##fxShowParticles", ref CFG.Current.FxEditor_Viewport_Display_Particles);
+        GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Particles_TT"));
+
         ImGui.Checkbox($"{LOC.Get("FX_PreviewTool_Display_Shapes")}##fxShowShapes", ref CFG.Current.FxEditor_Viewport_Display_Emitter_Shapes);
         GUI.Tooltip(LOC.Get("FX_PreviewTool_Display_Shapes_TT"));
 
@@ -121,6 +129,43 @@ public class FxPreviewTool
 
         if (fxr != null)
             GUI.WrappedText(LOC.Get("FX_PreviewTool_Display_Count", Editor.ViewportWindow.ShownNodes, Editor.ViewportWindow.ShownShapes));
+    }
+
+    /// <summary>What the runtime is doing: the effect's state, its particles and nodes, and whether it has ended.</summary>
+    private void DisplayStatus()
+    {
+        var runtime = Editor.ViewportWindow.Runtime;
+
+        if (runtime.Error != null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("FX_PreviewTool_Status_Error", runtime.Error));
+            return;
+        }
+
+        var instance = runtime.Instance;
+        if (instance == null)
+        {
+            GUI.WrappedText(LOC.Get("FX_PreviewTool_Status_None"));
+            return;
+        }
+
+        var state = instance.Finished ? LOC.Get("FX_PreviewTool_Status_Finished")
+            : instance.Terminated ? LOC.Get("FX_PreviewTool_Status_Terminated")
+            : LOC.Get("FX_PreviewTool_Status_State", instance.State);
+        GUI.WrappedText(state);
+
+        var context = runtime.Context;
+        GUI.WrappedText(LOC.Get("FX_PreviewTool_Status_Counts", context.ParticleCount, context.NodeCount));
+
+        if (context.ParticleCapHits > 0 || context.NodeCapHits > 0)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_PreviewTool_Status_Limit", context.MaxParticles, context.MaxNodes));
+        if (context.ProxyMissing > 0)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_PreviewTool_Status_Proxy_Missing"));
+
+        // Ends the effect as reaching state -1 does; Restart starts it again
+        GUI.ConditionalMultiButtonInput("fxRuntimeButtons",
+            "fxTerminate", LOC.Get("FX_PreviewTool_Terminate"), LOC.Get("FX_PreviewTool_Terminate_TT"),
+            () => runtime.Instance?.Terminate(), !instance.Terminated);
     }
 
     private void DisplayExternalValues(FxPlayback playback)

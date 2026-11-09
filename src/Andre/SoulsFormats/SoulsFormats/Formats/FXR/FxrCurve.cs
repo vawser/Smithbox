@@ -22,7 +22,7 @@ namespace SoulsFormats
     /// for Stepped/Linear/Bezier/Hermite, or one scalar keyframe list per component for AC6's
     /// ComponentHermite.
     /// </summary>
-    public class FxrCurve
+    public partial class FxrCurve
     {
         public FxrPropertyFunction Function { get; set; }
         public FxrValueType ValueType { get; set; }

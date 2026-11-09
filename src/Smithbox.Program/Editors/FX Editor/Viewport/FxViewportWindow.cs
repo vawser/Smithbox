@@ -24,6 +24,18 @@ public class FxViewportWindow
 
     public FxDebugRenderer DebugRenderer = new();
 
+    /// <summary>The selected effect, running (phase V2), and its particles drawn as small crosses.</summary>
+    public FxPreviewRuntime Runtime;
+    public FxDebugRenderer ParticleRenderer = new();
+    private DateTime LastParticleBuild;
+    private float LastParticleTime = -1;
+    private static readonly TimeSpan ParticleInterval = TimeSpan.FromMilliseconds(50);
+
+    /// <summary>Most particles drawn; more are left out (the runtime still simulates them).</summary>
+    private const int MaxDrawnParticles = 20000;
+
+    public int DrawnParticles { get; private set; }
+
     /// <summary>What the drawn shapes were built from, to rebuild them only when it changes.</summary>
     private (FxEntry Entry, object Fxr, object Item, int State, int Edits, int Playback, bool Shapes, bool Axes) BuiltKey;
 
@@ -53,6 +65,8 @@ public class FxViewportWindow
         }
 
         editor.ActionManager.ActionPerformed += () => EditVersion++;
+
+        Runtime = new FxPreviewRuntime(editor);
     }
 
     public void Display(uint dockspaceId)
@@ -73,6 +87,59 @@ public class FxViewportWindow
 
         UpdateShapes();
         DebugRenderer.Update();
+
+        var camera = (Viewport as VulkanViewport)?.ViewportCamera.CameraTransform.Position ?? Vector3.Zero;
+        Runtime.Update(EditVersion, camera);
+        UpdateParticles();
+        ParticleRenderer.Update();
+    }
+
+    /// <summary>
+    /// Redraws the particles at most every <see cref="ParticleInterval"/>, and only once the last set is shown, so
+    /// a slow frame rate doesn't keep replacing a set before it's drawn.
+    /// </summary>
+    private void UpdateParticles()
+    {
+        if (Editor.RenderScene == null || ParticleRenderer.IsUpdating)
+            return;
+
+        var instance = Runtime.Instance;
+        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Particles)
+        {
+            if (LastParticleTime >= 0)
+            {
+                ParticleRenderer.Clear();
+                LastParticleTime = -1;
+                DrawnParticles = 0;
+            }
+            return;
+        }
+
+        var now = DateTime.UtcNow;
+        if (now - LastParticleBuild < ParticleInterval || instance.Time == LastParticleTime)
+            return;
+
+        LastParticleBuild = now;
+        LastParticleTime = instance.Time;
+
+        var particles = new List<FxParticleOutput>();
+        instance.CollectParticles(particles);
+
+        var result = new FxDebugShapes.Result();
+        const float size = 0.04f;
+        int drawn = 0;
+        foreach (var p in particles)
+        {
+            if (drawn++ >= MaxDrawnParticles)
+                break;
+            var o = p.Position;
+            result.Add(FxDebugLayer.Particles, o - Vector3.UnitX * size, o + Vector3.UnitX * size);
+            result.Add(FxDebugLayer.Particles, o - Vector3.UnitY * size, o + Vector3.UnitY * size);
+            result.Add(FxDebugLayer.Particles, o - Vector3.UnitZ * size, o + Vector3.UnitZ * size);
+        }
+        DrawnParticles = Math.Min(particles.Count, MaxDrawnParticles);
+
+        ParticleRenderer.Show(Editor.RenderScene, result);
     }
 
     /// <summary>Rebuilds the debug shapes when the effect, the selection, an edit or the preview inputs change.</summary>
@@ -146,5 +213,7 @@ public class FxViewportWindow
     public void Dispose()
     {
         DebugRenderer.Clear();
+        ParticleRenderer.Clear();
+        Runtime.Clear();
     }
 }

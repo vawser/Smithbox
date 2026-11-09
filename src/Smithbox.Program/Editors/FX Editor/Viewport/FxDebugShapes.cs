@@ -13,6 +13,7 @@ public enum FxDebugLayer
     AxisZ,
     Directions,
     Proxies,
+    Particles,
 }
 
 /// <summary>
@@ -107,21 +108,11 @@ public static class FxDebugShapes
             BuildNode(data, entry, child, world, selectedItem, state, shapes, axes, result);
     }
 
-    /// <summary>The config a node uses in a state: the StateConfigMap's entry, else the first config.</summary>
+    /// <summary>The config a node uses in a state, by the runtime's rule (<see cref="FxEffectDef.ConfigIndexFor"/>).</summary>
     public static FxrConfig ConfigFor(FxrNode node, int state)
     {
-        if (node.Configs.Count == 0)
-            return null;
-
-        var map = FxNames.StateConfigMap(node);
-        if (map == null || map.Count == 0)
-            return node.Configs[0];
-
-        if (state >= map.Count)
-            return null;
-
-        int index = map[state];
-        return index >= 0 && index < node.Configs.Count ? node.Configs[index] : null;
+        int index = FxEffectDef.ConfigIndexFor(FxEffectDef.StateConfigMap(node), node.Configs.Count, state);
+        return index >= 0 ? node.Configs[index] : null;
     }
 
     private static bool IsSelected(FxrNode node, FxrConfig config, object item)

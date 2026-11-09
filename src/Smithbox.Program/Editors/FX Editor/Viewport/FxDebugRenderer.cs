@@ -27,8 +27,12 @@ public sealed class FxDebugRenderer
         FxDebugLayer.AxisZ => new(0.30f, 0.45f, 1.00f),
         FxDebugLayer.Directions => new(1.00f, 0.55f, 0.15f),
         FxDebugLayer.Proxies => new(1.00f, 0.35f, 1.00f),
+        FxDebugLayer.Particles => new(1.00f, 1.00f, 1.00f),
         _ => new(1, 1, 1),
     };
+
+    /// <summary>True while a new set is on its way to replacing the drawn one.</summary>
+    public bool IsUpdating => Pending != null;
 
     public void Show(RenderScene scene, FxDebugShapes.Result shapes)
     {
