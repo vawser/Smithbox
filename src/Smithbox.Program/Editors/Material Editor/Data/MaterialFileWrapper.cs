@@ -14,14 +14,45 @@ public abstract class MaterialFileWrapper
     public string Key { get; set; }
 
     /// <summary>
-    /// Whether the material has been modified since it was last loaded or saved
+    /// Edits done minus edits undone since the last load or save, so undoing back to that state is clean.
+    /// Undoing past a save goes negative, which is a change too.
     /// </summary>
-    public bool IsDirty { get; set; }
+    private int ChangeBalance;
+
+    /// <summary>
+    /// Set by a save that writes the file with no edits
+    /// </summary>
+    private bool ForcedDirty;
+
+    /// <summary>
+    /// Whether the material has been modified since it was last loaded or saved.
+    /// Setting it true marks it modified with no edit; setting it false marks the current state as saved.
+    /// </summary>
+    public bool IsDirty
+    {
+        get => ChangeBalance != 0 || ForcedDirty;
+        set
+        {
+            ForcedDirty = value;
+
+            if (!value)
+                ChangeBalance = 0;
+        }
+    }
+
+    /// <summary>
+    /// Called by an action when it is done or redone
+    /// </summary>
+    public void MarkChanged() => ChangeBalance++;
+
+    /// <summary>
+    /// Called by an action when it is undone
+    /// </summary>
+    public void MarkUndone() => ChangeBalance--;
 
     protected MaterialFileWrapper(string key)
     {
         Key = key;
-        IsDirty = false;
     }
 }
 

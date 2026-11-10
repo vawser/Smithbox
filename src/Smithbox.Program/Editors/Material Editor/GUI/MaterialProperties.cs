@@ -19,6 +19,9 @@ public class MaterialProperties
     private string PropertyListFilter = "";
     private bool ExactPropertyListFilter = false;
 
+    // Deepest nesting searched for a match: material > list > param > value
+    private const int MaxSearchDepth = 8;
+
     public MaterialProperties(MaterialEditorView view, ProjectEntry project)
     {
         View = view;
@@ -125,24 +128,28 @@ public class MaterialProperties
             ImGui.NextColumn();
         }
 
-        var classMeta = MaterialMetaHelper.GetMeta(Project, type, implType);
-        PropEditGeneric(implType, sourceObj, classMeta);
+        PropEditGeneric(implType, sourceObj);
 
         ImGui.Columns(1);
     }
 
+    /// <summary>
+    /// Draws the properties of an object. With a search, a property is drawn if it matches or something
+    /// inside it does; <paramref name="forceShow"/> draws everything, for the inside of a match.
+    /// </summary>
     private void PropEditGeneric(
         string implType,
         object obj,
-        MaterialClass classMeta,
-        int classIndex = -1
+        int classIndex = -1,
+        bool forceShow = false
     )
     {
         if (obj == null)
             return;
 
-        var scale = DPI.UIScale();
         Type type = obj.GetType();
+
+        var classMeta = MaterialMetaHelper.GetMeta(Project, type, implType);
 
         PropertyInfo[] properties = View.MaterialPropertyCache.GetCachedProperties(type);
 
@@ -150,7 +157,8 @@ public class MaterialProperties
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
-            classMeta = MaterialMetaHelper.GetMeta(Project, type, implType);
+            if (IsHidden(prop))
+                continue;
 
             var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
 
@@ -168,11 +176,13 @@ public class MaterialProperties
                 fieldDescription = $"{MaterialMetaHelper.GetFieldDescription(classMeta, prop.Name)}";
             }
 
+            var value = prop.GetValue(obj);
+
             // Filter by Search
-            if(!DisplayProperty(classMeta, obj, prop, type))
-            {
+            var selfMatch = forceShow || RowMatches(prop.Name, fieldName, value);
+
+            if (!selfMatch && !ChildrenMatch(value, 0))
                 continue;
-            }
 
             Type typ = prop.PropertyType;
 
@@ -181,30 +191,29 @@ public class MaterialProperties
 
             if (prop.Name == "Value" && typ == typeof(object))
             {
-                if (DisplayProperty(classMeta, obj, prop, type))
-                {
-                    PropGenericFieldRow(prop, typ, classMeta, implType, prop.GetValue(obj), obj, fieldName, fieldDescription, classIndex);
-                }
-                ImGui.PopID();
+                PropGenericFieldRow(prop, typ, classMeta, implType, value, obj, fieldName, fieldDescription,
+                    classIndex: classIndex);
             }
             // Array Line
             else if (typ.IsArray)
             {
-                var a = (Array)prop.GetValue(obj);
+                var a = (Array)value;
                 var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
 
-                ShowFieldHint(obj, prop, fieldDescription);
+                ShowFieldHint(value, typ, fieldDescription);
 
                 ImGui.NextColumn();
                 ImGui.NextColumn();
 
                 if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
                 {
+                    var typeLabel = TypeLabel(typ);
+
                     PropContextRowOpener("arrayTypeCol");
 
-                    ImGui.Text(type.FullName);
+                    ImGui.Text(typeLabel);
 
-                    DisplayContextMenu(fieldName, fieldDescription, prop);
+                    DisplayContextMenu(fieldName, fieldDescription, typeLabel);
 
                     ImGui.NextColumn();
                 }
@@ -212,38 +221,46 @@ public class MaterialProperties
                 // Array Element Lines
                 if (open)
                 {
-                    for (var i = 0; i < a.Length; i++)
+                    Type arrtyp = typ.GetElementType();
+
+                    for (var i = 0; a != null && i < a.Length; i++)
                     {
+                        var o = a.GetValue(i);
+
+                        if (!selfMatch && !ElementMatches(o, 0))
+                            continue;
+
                         ImGui.PushID(i);
-                        Type arrtyp = typ.GetElementType();
+
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
                             var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
 
-                            ShowFieldHint(obj, prop, fieldDescription);
+                            ShowFieldHint(o, arrtyp, fieldDescription);
 
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
-
-                            var o = a.GetValue(i);
 
                             ImGui.Text("");
                             ImGui.NextColumn();
 
                             if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
                             {
+                                var typeLabel = TypeLabel(o?.GetType() ?? arrtyp);
+
                                 PropContextRowOpener("arrayTypeEntryCol");
 
-                                ImGui.Text(type.FullName);
+                                ImGui.Text(typeLabel);
 
-                                DisplayContextMenu(fieldName, fieldDescription, prop);
+                                DisplayContextMenu(fieldName, fieldDescription, typeLabel);
 
                                 ImGui.NextColumn();
                             }
 
                             if (classOpen)
                             {
-                                PropEditGeneric(implType, o, classMeta, i);
+                                // A drawn element is shown whole: it matched, or what holds it did
+                                PropEditGeneric(implType, o, i, true);
 
                                 ImGui.TreePop();
                             }
@@ -251,13 +268,9 @@ public class MaterialProperties
                         else
                         {
                             ImGui.AlignTextToFramePadding();
-                            var array = obj as object[];
 
-                            // Handle property display (and search filtering)
-                            if (DisplayProperty(classMeta, obj, prop, type))
-                            {
-                                PropGenericFieldRow(prop, typ.GetElementType(), classMeta, implType, a.GetValue(i), obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex);
-                            }
+                            PropGenericFieldRow(prop, arrtyp, classMeta, implType, o, obj, $@"{fieldName}[{i}]",
+                                fieldDescription, arrayIndex: i, classIndex: classIndex);
                         }
 
                         ImGui.PopID();
@@ -265,29 +278,26 @@ public class MaterialProperties
 
                     ImGui.TreePop();
                 }
-
-                ImGui.PopID();
             }
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.GetGenericArguments()[0];
-                PropEditorGenericList(classMeta, implType, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, implType, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex, selfMatch);
             }
             else if (typ.BaseType != null && typ.BaseType.IsGenericType
                 && typ.BaseType.GetGenericTypeDefinition() == typeof(List<>))
             {
                 Type arrtyp = typ.BaseType.GetGenericArguments()[0];
-                PropEditorGenericList(classMeta, implType, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex);
+                PropEditorGenericList(classMeta, implType, obj, prop, arrtyp, fieldName, fieldDescription, treeFlags, classIndex, selfMatch);
             }
             // Class Line
             else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
             {
-                var o = prop.GetValue(obj);
-                if (o != null)
+                if (value != null)
                 {
                     var open = ImGui.TreeNodeEx($"{fieldName}", treeFlags);
 
-                    ShowFieldHint(obj, prop, fieldDescription);
+                    ShowFieldHint(value, typ, fieldDescription);
 
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
@@ -297,11 +307,13 @@ public class MaterialProperties
 
                     if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
                     {
+                        var typeLabel = TypeLabel(value.GetType());
+
                         PropContextRowOpener("classTypeCol");
 
-                        ImGui.Text(type.FullName);
+                        ImGui.Text(typeLabel);
 
-                        DisplayContextMenu(fieldName, fieldDescription, prop);
+                        DisplayContextMenu(fieldName, fieldDescription, typeLabel);
 
                         ImGui.NextColumn();
                     }
@@ -309,77 +321,162 @@ public class MaterialProperties
                     // Class properties
                     if (open)
                     {
-                        PropEditGeneric(implType, o, classMeta);
+                        PropEditGeneric(implType, value, -1, selfMatch);
                         ImGui.TreePop();
                     }
                 }
-
-                ImGui.PopID();
             }
             // Property Line
             else
             {
-                // Handle property display (and search filtering)
-                if (DisplayProperty(classMeta, obj, prop, type))
-                {
-                    PropGenericFieldRow(prop, typ, classMeta, implType, prop.GetValue(obj), obj, fieldName, fieldDescription, classIndex);
-                }
-
-                ImGui.PopID();
+                PropGenericFieldRow(prop, typ, classMeta, implType, value, obj, fieldName, fieldDescription,
+                    classIndex: classIndex);
             }
+
+            ImGui.PopID();
 
             id++;
         }
     }
 
-    public bool DisplayProperty(MaterialClass classMeta, object propObj, PropertyInfo prop, Type type)
+    #region Search
+    /// <summary>
+    /// Properties never shown in the editor
+    /// </summary>
+    private static bool IsHidden(PropertyInfo prop)
     {
-        var propName = prop.Name;
+        if (prop.GetCustomAttribute<IgnoreInMaterialEditor>() != null)
+            return true;
 
-        var ignoreProp = prop.GetCustomAttribute<IgnoreInMaterialEditor>();
-        if (ignoreProp != null)
-        {
-            return false;
-        }
+        // SoulsFile.Compression is inherited by MTD and MATBIN: compressing a file inside its binder breaks it
+        if (prop.Name == nameof(MATBIN.Compression) && prop.PropertyType == typeof(DCX.Type))
+            return true;
 
-        // Normal filter
-        var isMatch = EditorFilters.IsMatch(PropertyListFilter, propName, ExactPropertyListFilter);
-        var isValueMatch = false;
+        // Indexers, which can't be read without an index
+        if (prop.GetIndexParameters().Length > 0)
+            return true;
 
-        if (PropertyListFilter.StartsWith("val:"))
-            isValueMatch = true;
-
-        if (!isMatch && !isValueMatch)
-        {
-            return false;
-        }
-        else if (isValueMatch)
-        {
-            // TODO: currently doesn't match correctly with array list values
-            var valStr = PropertyListFilter.Replace("val:", "");
-
-            var propVal = prop.GetValue(propObj);
-
-            if (propVal != null)
-            {
-                var value = $"{propVal}";
-
-                if (ExactPropertyListFilter)
-                {
-                    if (valStr != value)
-                        return false;
-                }
-                else
-                {
-                    if (!value.Contains(valStr))
-                        return false;
-                }
-            }
-        }
-
-        return true;
+        return false;
     }
 
+    private bool IsFiltering => !string.IsNullOrWhiteSpace(PropertyListFilter);
+
+    /// <summary>
+    /// "val:" searches values, anything else searches field names and text values
+    /// </summary>
+    private bool IsValueSearch => PropertyListFilter.StartsWith("val:");
+
+    private string SearchTerm => IsValueSearch ? PropertyListFilter["val:".Length..] : PropertyListFilter;
+
+    private bool TermMatches(string text)
+    {
+        return EditorFilters.IsMatch(SearchTerm, text, ExactPropertyListFilter);
+    }
+
+    /// <summary>
+    /// Whether a property matches the search by itself. A name search also matches text values, so a
+    /// param, sampler or texture is found by its name or path.
+    /// </summary>
+    private bool RowMatches(string propName, string displayName, object value)
+    {
+        if (!IsFiltering)
+            return true;
+
+        if (IsValueSearch)
+            return IsLeafValue(value) && TermMatches(ValueText(value));
+
+        return TermMatches(propName) || TermMatches(displayName) || (value is string s && TermMatches(s));
+    }
+
+    /// <summary>
+    /// Whether anything inside a list, array or class value matches the search
+    /// </summary>
+    private bool ChildrenMatch(object value, int depth)
+    {
+        if (!IsFiltering || value == null || value is string || depth > MaxSearchDepth)
+            return false;
+
+        if (value is IEnumerable enumerable)
+        {
+            foreach (var element in enumerable)
+            {
+                if (ElementMatches(element, depth + 1))
+                    return true;
+            }
+
+            return false;
+        }
+
+        if (!value.GetType().IsClass)
+            return false;
+
+        return ObjectMatches(value, depth + 1);
+    }
+
+    /// <summary>
+    /// Whether a list or array element matches the search, itself or anything inside it
+    /// </summary>
+    private bool ElementMatches(object element, int depth)
+    {
+        if (!IsFiltering)
+            return true;
+
+        if (element == null || depth > MaxSearchDepth)
+            return false;
+
+        if (IsLeafValue(element))
+        {
+            return IsValueSearch
+                ? TermMatches(ValueText(element))
+                : element is string s && TermMatches(s);
+        }
+
+        return ObjectMatches(element, depth);
+    }
+
+    private bool ObjectMatches(object obj, int depth)
+    {
+        foreach (var prop in View.MaterialPropertyCache.GetCachedProperties(obj.GetType()))
+        {
+            if (IsHidden(prop))
+                continue;
+
+            var value = prop.GetValue(obj);
+
+            if (RowMatches(prop.Name, prop.Name, value) || ChildrenMatch(value, depth))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Values shown on one row: text, numbers, enums, vectors and arrays of those
+    /// </summary>
+    private static bool IsLeafValue(object value)
+    {
+        if (value == null)
+            return false;
+
+        if (value is string)
+            return true;
+
+        var type = value.GetType();
+
+        if (type.IsArray)
+            return type.GetElementType().IsValueType;
+
+        return type.IsValueType;
+    }
+
+    private static string ValueText(object value)
+    {
+        if (value is Array array)
+            return string.Join(", ", array.Cast<object>());
+
+        return $"{value}";
+    }
+    #endregion
 
     private void PropGenericFieldRow(
         PropertyInfo prop,
@@ -400,6 +497,8 @@ public class MaterialProperties
 
         ImGui.Text(name);
 
+        ShowFieldHint(value, type, description);
+
         // Remove-from-list button (only passed in by list entries)
         if (onRemove != null)
         {
@@ -412,13 +511,13 @@ public class MaterialProperties
             GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
         }
 
-        GUI.Tooltip(description);
-
         ImGui.NextColumn();
         ImGui.SetNextItemWidth(-1);
 
         var oldval = value;
         object newval;
+
+        var typeLabel = TypeLabel(value?.GetType() ?? type);
 
         // Property Editor UI
         (bool, bool) propEditResults = (false, false);
@@ -426,7 +525,7 @@ public class MaterialProperties
         // Determine param type
         if (View.Selection.SourceType is MaterialSourceType.MATBIN &&
             implType == "MATBIN" &&
-            prop.Name == "Value" && 
+            prop.Name == "Value" &&
             type.IsClass && type != typeof(string) && !type.IsArray)
         {
             var o = prop.GetValue(containerObj);
@@ -439,7 +538,7 @@ public class MaterialProperties
                 var changed = propEditResults.Item1;
                 var committed = propEditResults.Item2;
 
-                DisplayContextMenu(name, description, prop);
+                DisplayContextMenu(name, description, typeLabel);
 
                 if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
                 {
@@ -470,7 +569,7 @@ public class MaterialProperties
                 var changed = propEditResults.Item1;
                 var committed = propEditResults.Item2;
 
-                DisplayContextMenu(name, description, prop);
+                DisplayContextMenu(name, description, typeLabel);
 
                 if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
                 {
@@ -493,7 +592,7 @@ public class MaterialProperties
             var changed = propEditResults.Item1;
             var committed = propEditResults.Item2;
 
-            DisplayContextMenu(name, description, prop);
+            DisplayContextMenu(name, description, typeLabel);
 
             if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
             {
@@ -513,13 +612,9 @@ public class MaterialProperties
         {
             ImGui.NextColumn();
 
-            var reflectedType = prop.ReflectedType;
-            if (reflectedType != null)
-            {
-                PropContextRowOpener("typecol");
+            PropContextRowOpener("typecol");
 
-                ImGui.Text(reflectedType.FullName);
-            }
+            ImGui.Text(typeLabel);
         }
 
         ImGui.NextColumn();
@@ -557,7 +652,12 @@ public class MaterialProperties
             _lastUncommittedAction = null;
         }
 
-        var action = new MatPropertyChange(View, View.Selection.SelectedFileWrapper, (PropertyInfo)prop, obj, newval, arrayindex, classIndex);
+        var propInfo = (PropertyInfo)prop;
+
+        EditorAction action = MatParamTypeChange.Handles(obj, propInfo.Name)
+            ? new MatParamTypeChange(View.Selection.SelectedFileWrapper, obj, newval)
+            : new MatPropertyChange(View, View.Selection.SelectedFileWrapper, propInfo, obj, newval, arrayindex, classIndex);
+
         View.ActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
@@ -573,7 +673,8 @@ public class MaterialProperties
         string fieldName,
         string fieldDescription,
         ImGuiTreeNodeFlags treeFlags,
-        int classIndex
+        int classIndex,
+        bool showAll
     )
     {
         var list = (IList)prop.GetValue(obj);
@@ -591,7 +692,8 @@ public class MaterialProperties
 
                 if(newEntry == null && elementType == typeof(MTD.Param))
                 {
-                    newEntry = new MTD.Param("Untitled", MTD.ParamType.None, 0);
+                    // Not ParamType.None, which MTD.Param.Write can't write
+                    newEntry = new MTD.Param("Untitled", MTD.ParamType.Float, 0f);
                 }
                 else if (newEntry == null && elementType == typeof(MATBIN.Param))
                 {
@@ -608,11 +710,13 @@ public class MaterialProperties
 
         if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
         {
+            var typeLabel = TypeLabel(prop.PropertyType);
+
             PropContextRowOpener("listTypeCol");
 
-            ImGui.Text(prop?.GetType().FullName);
+            ImGui.Text(typeLabel);
 
-            DisplayContextMenu(fieldName, fieldDescription, prop);
+            DisplayContextMenu(fieldName, fieldDescription, typeLabel);
 
             ImGui.NextColumn();
         }
@@ -625,9 +729,14 @@ public class MaterialProperties
 
                 for (var i = 0; i < list.Count; i++)
                 {
-                    ImGui.PushID(i);
                     var idx = i;
                     var elem = list[i];
+
+                    if (!showAll && !ElementMatches(elem, 0))
+                        continue;
+
+                    ImGui.PushID(i);
+
                     void OnRemove() => removeIndex = idx;
 
                     if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
@@ -650,30 +759,30 @@ public class MaterialProperties
 
                         if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
                         {
+                            var typeLabel = TypeLabel(elem?.GetType() ?? elementType);
+
                             PropContextRowOpener("listTypeCol");
 
-                            ImGui.Text(elem?.GetType().FullName);
+                            ImGui.Text(typeLabel);
 
-                            DisplayContextMenu(fieldName, fieldDescription, prop);
+                            DisplayContextMenu(fieldName, fieldDescription, typeLabel);
 
                             ImGui.NextColumn();
                         }
 
                         if (classOpen)
                         {
+                            // A drawn element is shown whole: it matched, or what holds it did
                             if (elem != null)
-                                PropEditGeneric(implType, elem, classMeta, idx);
+                                PropEditGeneric(implType, elem, idx, true);
 
                             ImGui.TreePop();
                         }
                     }
                     else
                     {
-                        // Handle property display (and search filtering)
-                        if (DisplayProperty(classMeta, obj, prop, elementType))
-                        {
-                            PropGenericFieldRow(prop, elementType, classMeta, implType, elem, obj, $@"{fieldName}[{i}]", fieldDescription, i, classIndex, OnRemove);
-                        }
+                        PropGenericFieldRow(prop, elementType, classMeta, implType, elem, obj, $@"{fieldName}[{i}]",
+                            fieldDescription, arrayIndex: i, classIndex: classIndex, onRemove: OnRemove);
                     }
 
                     ImGui.PopID();
@@ -688,8 +797,6 @@ public class MaterialProperties
 
             ImGui.TreePop();
         }
-
-        ImGui.PopID();
     }
 
     private void PropContextRowOpener(string id)
@@ -702,7 +809,7 @@ public class MaterialProperties
         }
     }
 
-    private void DisplayContextMenu(string name, string description, PropertyInfo prop)
+    private void DisplayContextMenu(string name, string description, string typeLabel)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -728,11 +835,7 @@ public class MaterialProperties
             // Copy Field Type
             if (ImGui.Selectable($"{LOC.Get("MAT_PropertyView_Context_Action_Copy_Type")}##CopyPropType"))
             {
-                var reflectedType = prop.ReflectedType;
-                if (reflectedType != null)
-                {
-                    PlatformUtils.Instance.SetClipboardText(reflectedType.FullName);
-                }
+                PlatformUtils.Instance.SetClipboardText(typeLabel);
             }
             GUI.Tooltip(LOC.Get("MAT_PropertyView_Context_Action_Copy_Type_TT"));
 
@@ -740,18 +843,42 @@ public class MaterialProperties
         }
     }
 
-    public void ShowFieldHint(object obj, PropertyInfo prop, string description)
+    /// <summary>
+    /// A readable name for a field's type: MATBIN.Param, List&lt;MATBIN.Param&gt;, Single[]
+    /// </summary>
+    private static string TypeLabel(Type type)
+    {
+        if (type == null)
+            return "";
+
+        if (type.IsArray)
+            return $"{TypeLabel(type.GetElementType())}[]";
+
+        var name = type.Name;
+
+        if (type.IsGenericType)
+        {
+            name = $"{name.Split('`')[0]}<{string.Join(", ", type.GetGenericArguments().Select(TypeLabel))}>";
+        }
+
+        if (type.IsNested && type.DeclaringType != null)
+        {
+            name = $"{type.DeclaringType.Name}.{name}";
+        }
+
+        return name;
+    }
+
+    /// <summary>
+    /// The tooltip for a field: its description, then what its type allows
+    /// </summary>
+    public void ShowFieldHint(object value, Type type, string description)
     {
         var text = description;
 
-        // Property Details
-        var propType = prop.ReflectedType;
-
-        if (propType.IsArray)
+        if (value is Array a)
         {
-            var a = (Array)prop.GetValue(obj);
-
-            var str = LOC.Get("MAT_Properties_FieldHint_Array_Type", prop.ReflectedType.Name);
+            var str = LOC.Get("MAT_Properties_FieldHint_Array_Type", TypeLabel(a.GetType().GetElementType()));
             if (a.Length > 0)
             {
                 str += LOC.Get("MAT_Properties_FieldHint_Array_Length", a.Length);
@@ -759,35 +886,40 @@ public class MaterialProperties
 
             text = $"{text}\n{str}";
         }
-
-        if (propType.IsValueType)
+        else if (value is string s)
         {
-            var str = LOC.Get("MAT_Properties_FieldHint_Value_Type", propType.Name);
-            var min = propType.GetField("MinValue")?.GetValue(propType);
-            var max = propType.GetField("MaxValue")?.GetValue(propType);
-            if (min != null && max != null)
+            var str = LOC.Get("MAT_Properties_FieldHint_String_Type", TypeLabel(typeof(string)));
+            if (s.Length > 0)
             {
-                str += LOC.Get("MAT_Properties_FieldHint_Value_Min_Max", min, max);
+                str += LOC.Get("MAT_Properties_FieldHint_String_Length", s.Length);
             }
 
             text = $"{text}\n{str}";
         }
-        else if (propType == typeof(string))
+        else
         {
-            var a = (Array)prop.GetValue(obj);
+            var valueType = value?.GetType() ?? type;
 
-            var str = LOC.Get("MAT_Properties_FieldHint_String_Type", propType.Name);
-            if (a.Length > 0)
+            if (valueType != null && valueType.IsValueType)
             {
-                str += LOC.Get("MAT_Properties_FieldHint_String_Length", a.Length);
-            }
+                var str = LOC.Get("MAT_Properties_FieldHint_Value_Type", TypeLabel(valueType));
+                var min = valueType.GetField("MinValue")?.GetValue(null);
+                var max = valueType.GetField("MaxValue")?.GetValue(null);
+                if (min != null && max != null)
+                {
+                    str += LOC.Get("MAT_Properties_FieldHint_Value_Min_Max", min, max);
+                }
 
-            text = $"{text}\n{str}";
+                text = $"{text}\n{str}";
+            }
         }
+
+        text = text.Trim();
 
         // Final description
-        GUI.Tooltip(text);
+        if (text != "")
+        {
+            GUI.Tooltip(text);
+        }
     }
-
-
 }

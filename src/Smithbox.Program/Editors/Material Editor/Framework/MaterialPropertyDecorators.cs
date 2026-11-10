@@ -10,15 +10,15 @@ public static class MaterialPropertyDecorators
 {
     public static bool ParamRefRow(IEditorView view, MaterialClass classMeta, PropertyInfo prop, object val, ref object newObj)
     {
-        ParamEditorView activeView = null;
-
-        if (view is MapEditorView mapEditorView)
+        // The Param Editor of the material's project, whatever kind of view asks
+        ProjectEntry project = view switch
         {
-            if (mapEditorView.Project.Handler.ParamEditor == null)
-                return false;
+            MaterialEditorView materialView => materialView.Project,
+            MapEditorView mapEditorView => mapEditorView.Project,
+            _ => null
+        };
 
-            activeView = mapEditorView.Project.Handler.ParamEditor.ViewHandler.ActiveView;
-        }
+        var activeView = project?.Handler.ParamEditor?.ViewHandler.ActiveView;
 
         if (activeView == null)
             return false;

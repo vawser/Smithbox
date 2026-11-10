@@ -44,10 +44,13 @@ public class MaterialContainerList
         var mtdFlags = requestedType is MaterialSourceType.MTD ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
         var matbinFlags = requestedType is MaterialSourceType.MATBIN ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
 
-        // MTD
-        if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MTD")}##mtdTab", mtdFlags))
+        // MTD, hidden in MATBIN games that have no MTD binders so they don't open on an empty tab
+        var showMtdTab = !MaterialUtils.SupportsMATBIN(Project) ||
+            Project.Handler.MaterialData.PrimaryBank.MTDs?.IsEmpty == false;
+
+        if (showMtdTab && ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MTD")}##mtdTab", mtdFlags))
         {
-            Parent.Selection.SourceType = MaterialSourceType.MTD;
+            Parent.Selection.SetSourceType(MaterialSourceType.MTD);
 
             ImGui.BeginChild("MtdListSection", ImGuiChildFlags.Borders);
 
@@ -63,7 +66,7 @@ public class MaterialContainerList
             // MATBIN
             if (ImGui.BeginTabItem($"{LOC.Get("MAT_ContainerList_Tab_MATBIN")}##matbinTab", matbinFlags))
             {
-                Parent.Selection.SourceType = MaterialSourceType.MATBIN;
+                Parent.Selection.SetSourceType(MaterialSourceType.MATBIN);
 
                 ImGui.BeginChild("MatbinListSection", ImGuiChildFlags.Borders);
 
@@ -100,6 +103,9 @@ public class MaterialContainerList
                         filteredEntries.Add(entry.Key);
                     }
                 }
+
+                // Binders are held in a concurrent dictionary, which has no useful order
+                filteredEntries.Sort((a, b) => string.Compare(a.Filename, b.Filename, StringComparison.OrdinalIgnoreCase));
 
                 if (Parent.Selection.ScrollToContainer && wrappers.ContainsKey(Parent.Selection.SelectedBinderEntry))
                 {
@@ -167,6 +173,9 @@ public class MaterialContainerList
                             filteredEntries.Add(entry.Key);
                         }
                     }
+
+                    // Binders are held in a concurrent dictionary, which has no useful order
+                    filteredEntries.Sort((a, b) => string.Compare(a.Filename, b.Filename, StringComparison.OrdinalIgnoreCase));
 
                     if (Parent.Selection.ScrollToContainer && wrappers.ContainsKey(Parent.Selection.SelectedBinderEntry))
                     {

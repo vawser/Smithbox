@@ -19,6 +19,10 @@
     {
       "Key": "MAT_FileList_DisplayFullPath_Toggle_Hint",
       "Text": "Toggle the display of the full path.\nCurrent Mode: {0}"
+    },
+    {
+      "Key": "MAT_FileList_Unreadable_File_TT",
+      "Text": "This file failed to read, so it can't be edited. See the log for the error.\nSaving this binder keeps the file as it is."
     }
   ]
 }

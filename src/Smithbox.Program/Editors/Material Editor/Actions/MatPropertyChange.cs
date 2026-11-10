@@ -89,7 +89,7 @@ public class MatPropertyChange : EditorAction
         }
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkChanged();
 
         return ActionEvent.NoEvent;
     }
@@ -123,7 +123,7 @@ public class MatPropertyChange : EditorAction
         }
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkUndone();
 
         return ActionEvent.NoEvent;
     }

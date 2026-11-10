@@ -331,6 +331,13 @@ public class MaterialPropertyInput
             ImGui.Text($"ImplementMe: {prop.PropertyType}");
         }
 
+        // MTD.Param.Write has no form for None: it writes a value block the reader rejects
+        if (isChanged && newval is MTD.ParamType.None)
+        {
+            newval = null;
+            isChanged = false;
+        }
+
         var isDeactivatedAfterEdit = ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive();
 
         return (isChanged, isDeactivatedAfterEdit);
@@ -376,14 +383,14 @@ public class MaterialPropertyInput
                 break;
 
             case MTD.ParamType.Int2:
-                typ = typeof(Vector2);
-                var arr4 = (int[])oldval;
-                oldval = new Vector2(arr4[0], arr4[1]);
+                // Edited as ints, below
+                typ = typeof(int[]);
                 break;
         }
 
-        // Special handling for these since they can't be handled like a normal enum
-        if (prop.Name == "Value" && sourceObj is MTD.Param mtdParam_blendMode && mtdParam_blendMode.Name == "g_BlendMode")
+        // Special handling for these since they can't be handled like a normal enum.
+        // Only while the param is an int, which the enum is read from and written back as.
+        if (prop.Name == "Value" && sourceObj is MTD.Param { Name: "g_BlendMode", Type: MTD.ParamType.Int })
         {
             Array enumVals = Enum.GetValues(typeof(BlendMode));
             var enumNames = Enum.GetNames(typeof(BlendMode));
@@ -394,15 +401,16 @@ public class MaterialPropertyInput
                 intVals[i] = (int)enumVals.GetValue(i);
             }
 
-            var enumVal = (BlendMode)oldval;
+            var enumVal = (BlendMode)Convert.ToInt32(oldval);
 
             if (Utils.EnumEditor(enumVals, enumNames, enumVal, out var val, intVals))
             {
-                newval = val;
+                // Kept an int, as MTD.Param.Write and the renderer read it
+                newval = Convert.ToInt32(val);
                 isChanged = true;
             }
         }
-        else if (prop.Name == "Value" && sourceObj is MTD.Param mtdParam_lightingType && mtdParam_lightingType.Name == "g_LightingType")
+        else if (prop.Name == "Value" && sourceObj is MTD.Param { Name: "g_LightingType", Type: MTD.ParamType.Int })
         {
             Array enumVals = Enum.GetValues(typeof(LightingType));
             var enumNames = Enum.GetNames(typeof(LightingType));
@@ -413,13 +421,18 @@ public class MaterialPropertyInput
                 intVals[i] = (int)enumVals.GetValue(i);
             }
 
-            var enumVal = (LightingType)oldval;
+            var enumVal = (LightingType)Convert.ToInt32(oldval);
 
-            if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
+            if (Utils.EnumEditor(enumVals, enumNames, enumVal, out var val, intVals))
             {
-                newval = val;
+                // Kept an int, as MTD.Param.Write and the renderer read it
+                newval = Convert.ToInt32(val);
                 isChanged = true;
             }
+        }
+        else if (paramType == MTD.ParamType.Int2)
+        {
+            isChanged = InputInt2((int[])oldval, out newval);
         }
         else if (typ == typeof(long))
         {
@@ -711,14 +724,28 @@ public class MaterialPropertyInput
                 if (newval is Vector4 v4)
                     newval = new float[] { v4.X, v4.Y, v4.Z, v4.W };
                 break;
-
-            case MTD.ParamType.Int2:
-                if (newval is Vector2 vi2)
-                    newval = new int[] { (int)vi2.X, (int)vi2.Y };
-                break;
         }
 
         return (isChanged, isDeactivatedAfterEdit);
+    }
+
+    /// <summary>
+    /// An Int2 param edited as two ints. The new value is a new array, so undo keeps the old one.
+    /// </summary>
+    private static bool InputInt2(int[] oldval, out object newval)
+    {
+        newval = null;
+
+        var val = new int[2];
+        Array.Copy(oldval, val, Math.Min(oldval.Length, 2));
+
+        if (ImGui.InputInt2("##value", ref val[0]))
+        {
+            newval = val;
+            return true;
+        }
+
+        return false;
     }
 
 
@@ -766,50 +793,14 @@ public class MaterialPropertyInput
                 break;
 
             case MATBIN.ParamType.Int2:
-                typ = typeof(Vector2);
-                var arr4 = (int[])oldval;
-                oldval = new Vector2(arr4[0], arr4[1]);
+                // Edited as ints, below
+                typ = typeof(int[]);
                 break;
         }
 
-        // Special handling for these since they can't be handled like a normal enum
-        if (prop.Name == "Value" && sourceObj is MTD.Param mtdParam_blendMode && mtdParam_blendMode.Name == "g_BlendMode")
+        if (paramType == MATBIN.ParamType.Int2)
         {
-            Array enumVals = Enum.GetValues(typeof(BlendMode));
-            var enumNames = Enum.GetNames(typeof(BlendMode));
-            var intVals = new int[enumVals.Length];
-
-            for (var i = 0; i < enumVals.Length; i++)
-            {
-                intVals[i] = (int)enumVals.GetValue(i);
-            }
-
-            var enumVal = (BlendMode)oldval;
-
-            if (Utils.EnumEditor(enumVals, enumNames, enumVal, out var val, intVals))
-            {
-                newval = val;
-                isChanged = true;
-            }
-        }
-        else if (prop.Name == "Value" && sourceObj is MTD.Param mtdParam_lightingType && mtdParam_lightingType.Name == "g_LightingType")
-        {
-            Array enumVals = Enum.GetValues(typeof(LightingType));
-            var enumNames = Enum.GetNames(typeof(LightingType));
-            var intVals = new int[enumVals.Length];
-
-            for (var i = 0; i < enumVals.Length; i++)
-            {
-                intVals[i] = (int)enumVals.GetValue(i);
-            }
-
-            var enumVal = (LightingType)oldval;
-
-            if (Utils.EnumEditor(enumVals, enumNames, oldval, out var val, intVals))
-            {
-                newval = val;
-                isChanged = true;
-            }
+            isChanged = InputInt2((int[])oldval, out newval);
         }
         else if (typ == typeof(long))
         {
@@ -1121,11 +1112,6 @@ public class MaterialPropertyInput
             case MATBIN.ParamType.Float4:
                 if (newval is Vector4 v4)
                     newval = new float[] { v4.X, v4.Y, v4.Z, v4.W };
-                break;
-
-            case MATBIN.ParamType.Int2:
-                if (newval is Vector2 vi2)
-                    newval = new int[] { (int)vi2.X, (int)vi2.Y };
                 break;
         }
 

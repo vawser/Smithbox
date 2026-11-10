@@ -36,7 +36,7 @@ public class MatRemoveListEntry : EditorAction
         list.RemoveAt(Index);
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkChanged();
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
@@ -50,7 +50,7 @@ public class MatRemoveListEntry : EditorAction
         list.Insert(Index, OldValue);
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkUndone();
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);

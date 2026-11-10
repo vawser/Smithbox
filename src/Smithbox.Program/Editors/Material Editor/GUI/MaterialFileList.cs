@@ -138,6 +138,8 @@ public class MaterialFileList
             }
 
             clipper.End();
+
+            DisplayUnreadableFiles(Parent.Selection.MTDWrapper.UnreadableFiles);
         }
 
         // MATBIN
@@ -210,10 +212,27 @@ public class MaterialFileList
                 }
 
                 clipper.End();
+
+                DisplayUnreadableFiles(Parent.Selection.MATBINWrapper.UnreadableFiles);
             }
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Lists the files that failed to read, greyed out, so they don't look missing
+    /// </summary>
+    private void DisplayUnreadableFiles(List<string> files)
+    {
+        foreach (var key in files)
+        {
+            if (!EditorFilters.IsMatch(FileListFilter, key, ExactFileListFilter))
+                continue;
+
+            ImGui.TextDisabled($"{GetPrettyName(key)} {Icons.ExclamationTriangle}");
+            GUI.Tooltip(LOC.Get("MAT_FileList_Unreadable_File_TT"));
+        }
     }
 
     public string GetPrettyName(string path)

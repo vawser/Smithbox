@@ -145,23 +145,6 @@ public class MaterialBank : IDisposable
         return MTDReferences.TryGetValue(shortName, out var mtd) ? mtd : null;
     }
 
-    public async Task<bool> Save(MaterialEditorView view)
-    {
-        await Task.Yield();
-
-        if(view.Selection.SourceType is MaterialSourceType.MTD)
-        {
-            return await view.Selection.MTDWrapper.Save(view);
-        }
-
-        if (view.Selection.SourceType is MaterialSourceType.MATBIN)
-        {
-            return await view.Selection.MATBINWrapper.Save(view);
-        }
-
-        return true;
-    }
-
     /// <summary>
     /// The binder paths and file names of the materials with unsaved changes
     /// </summary>
@@ -307,6 +290,11 @@ public class MTDWrapper
     public string FilePath { get; set; }
     public Dictionary<string, MTDFileWrapper> Entries { get; set; } = new();
 
+    /// <summary>
+    /// The files in this binder that failed to read, shown but not editable
+    /// </summary>
+    public List<string> UnreadableFiles { get; } = new();
+
     public MTDWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
         Project = project;
@@ -333,50 +321,27 @@ public class MTDWrapper
             {
                 var binderData = TargetFS.ReadFile(FilePath);
 
-                if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                IBinder binder = Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R
+                    ? BND3.Read(binderData.Value)
+                    : BND4.Read(binderData.Value);
+
+                foreach (var entry in binder.Files)
                 {
-                    var binder = BND3.Read(binderData.Value);
+                    if (!entry.Name.Contains(".mtd"))
+                        continue;
 
-                    foreach (var entry in binder.Files)
+                    // One unreadable file must not hide the rest of the binder. It is left out of the
+                    // editor, and saving the binder keeps its bytes as they are.
+                    try
                     {
-                        if (entry.Name.Contains(".mtd"))
-                        {
-                            try
-                            {
-                                var mtd = MTD.Read(entry.Bytes);
+                        var mtd = MTD.Read(entry.Bytes);
 
-                                Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
-
-                                return false;
-                            }
-                        }
+                        Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
                     }
-                }
-                else
-                {
-                    var binder = BND4.Read(binderData.Value);
-
-                    foreach (var entry in binder.Files)
+                    catch (Exception e)
                     {
-                        if (entry.Name.Contains(".mtd"))
-                        {
-                            try
-                            {
-                                var mtd = MTD.Read(entry.Bytes);
-
-                                Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
-                            }
-                            catch (Exception e)
-                            {
-                                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
-
-                                return false;
-                            }
-                        }
+                        UnreadableFiles.Add(entry.Name);
+                        Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
                     }
                 }
 
@@ -395,37 +360,6 @@ public class MTDWrapper
         }
     }
 
-    public async Task<bool> Save(MaterialEditorView view)
-    {
-        await Task.Yield();
-
-        var filename = Path.GetFileNameWithoutExtension(FilePath);
-
-        if (!CFG.Current.MaterialEditor_Allow_Unmodified_Save)
-        {
-            if (!view.Selection.SelectedFileWrapper.IsDirty)
-            {
-                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", filename));
-                return false;
-            }
-        }
-
-        if (!TargetFS.FileExists(FilePath))
-        {
-            Smithbox.Log(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", FilePath));
-            return false;
-        }
-
-        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
-        {
-            return HandleContainer_BND3(view);
-        }
-        else
-        {
-            return HandleContainer_BND4(view);
-        }
-    }
-
     /// <summary>
     /// Saves every modified MTD in this binder, without needing a view
     /// </summary>
@@ -436,123 +370,6 @@ public class MTDWrapper
         return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, isBnd3,
             Entries.Values, e => ((MTDFileWrapper)e).MTD.Write());
     }
-
-    private bool HandleContainer_BND3(MaterialEditorView view)
-    {
-        // Container
-        var containerFileData = TargetFS.ReadFile(FilePath);
-
-        if (containerFileData == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder
-        var binder = BND3.Read(containerFileData.Value);
-
-        if (binder == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder Files
-        foreach (var curFile in binder.Files)
-        {
-            HandleBinderFile(view, curFile);
-        }
-
-        // Save Binder
-        try
-        {
-            var writeFile = binder.Write();
-
-            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
-
-            ClearDirtyState(view.Selection.SelectedFileKey);
-
-            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool HandleContainer_BND4(MaterialEditorView view)
-    {
-        // Container
-        var containerFileData = TargetFS.ReadFile(FilePath);
-
-        if (containerFileData == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder
-        var binder = BND4.Read(containerFileData.Value);
-
-        if (binder == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder Files
-        foreach (var curFile in binder.Files)
-        {
-            HandleBinderFile(view, curFile);
-        }
-
-        // Save Binder
-        try
-        {
-            var writeFile = binder.Write();
-
-            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
-
-            ClearDirtyState(view.Selection.SelectedFileKey);
-
-            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
-            return false;
-        }
-
-        return true;
-    }
-
-    private void HandleBinderFile(MaterialEditorView view, BinderFile file)
-    {
-        if (view.Selection.SelectedFileKey != file.Name)
-            return;
-
-        // Internal File
-        try
-        {
-            file.Bytes = view.Selection.SelectedMTD.Write();
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
-            return;
-        }
-    }
-
-    private void ClearDirtyState(string key)
-    {
-        if (Entries.TryGetValue(key, out var fileWrapper))
-        {
-            fileWrapper.IsDirty = false;
-        }
-    }
 }
 
 public class MATBINWrapper
@@ -562,6 +379,11 @@ public class MATBINWrapper
     public string Name { get; set; }
     public string FilePath { get; set; }
     public Dictionary<string, MATBINFileWrapper> Entries { get; set; } = new();
+
+    /// <summary>
+    /// The files in this binder that failed to read, shown but not editable
+    /// </summary>
+    public List<string> UnreadableFiles { get; } = new();
 
     public MATBINWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
@@ -594,6 +416,8 @@ public class MATBINWrapper
                 {
                     if (entry.Name.Contains(".matbin"))
                     {
+                        // One unreadable file must not hide the rest of the binder. It is left out of the
+                        // editor, and saving the binder keeps its bytes as they are.
                         try
                         {
                             var matbin = MATBIN.Read(entry.Bytes);
@@ -601,8 +425,8 @@ public class MATBINWrapper
                         }
                         catch (Exception e)
                         {
+                            UnreadableFiles.Add(entry.Name);
                             Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MATBIN", entry.Name), e);
-                            return false;
                         }
                     }
                 }
@@ -622,30 +446,6 @@ public class MATBINWrapper
         }
     }
 
-    public async Task<bool> Save(MaterialEditorView view)
-    {
-        await Task.Yield();
-
-        var filename = Path.GetFileNameWithoutExtension(FilePath);
-
-        if (!CFG.Current.MaterialEditor_Allow_Unmodified_Save)
-        {
-            if (!view.Selection.SelectedFileWrapper.IsDirty)
-            {
-                Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", filename));
-                return false;
-            }
-        }
-
-        if (!TargetFS.FileExists(FilePath))
-        {
-            Smithbox.Log(this, LOC.Get("EDITOR_Data_Failed_Locate_Container", FilePath));
-            return false;
-        }
-
-        return HandleContainer_BND4(view);
-    }
-
     /// <summary>
     /// Saves every modified MATBIN in this binder, without needing a view
     /// </summary>
@@ -653,76 +453,5 @@ public class MATBINWrapper
     {
         return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, false,
             Entries.Values, e => ((MATBINFileWrapper)e).MATBIN.Write());
-    }
-
-    private bool HandleContainer_BND4(MaterialEditorView view)
-    {
-        // Container
-        var containerFileData = TargetFS.ReadFile(FilePath);
-
-        if (containerFileData == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder
-        var binder = BND4.Read(containerFileData.Value);
-
-        if (binder == null)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Read_Container", FilePath));
-            return false;
-        }
-
-        // Binder Files
-        foreach (var curFile in binder.Files)
-        {
-            HandleBinderFile(view, curFile);
-        }
-
-        // Save Binder
-        try
-        {
-            var writeFile = binder.Write();
-
-            Project.VFS.ProjectFS.WriteFile(view.Selection.SelectedBinderEntry.Path, writeFile);
-
-            ClearDirtyState(view.Selection.SelectedFileKey);
-
-            Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", FilePath));
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_Container", FilePath), ex);
-            return false;
-        }
-
-        return true;
-    }
-
-    private void HandleBinderFile(MaterialEditorView view, BinderFile file)
-    {
-        if (view.Selection.SelectedFileKey != file.Name)
-            return;
-
-        // Internal File
-        try
-        {
-            file.Bytes = view.Selection.SelectedMATBIN.Write();
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(this, LOC.Get("EDITOR_Data_Failed_Write_File", file.Name), ex);
-            return;
-        }
-    }
-
-    private void ClearDirtyState(string key)
-    {
-        if (Entries.TryGetValue(key, out var fileWrapper))
-        {
-            fileWrapper.IsDirty = false;
-        }
     }
 }

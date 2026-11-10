@@ -40,7 +40,7 @@ public class MatAddListEntry : EditorAction
             list.Insert(Index, NewValue);
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkChanged();
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(false);
@@ -54,7 +54,7 @@ public class MatAddListEntry : EditorAction
         list.RemoveAt(Index);
 
         if (FileWrapper != null)
-            FileWrapper.IsDirty = true;
+            FileWrapper.MarkUndone();
 
         if (PostExecutionAction != null)
             PostExecutionAction.Invoke(true);

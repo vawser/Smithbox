@@ -170,47 +170,32 @@ public class MaterialEditorScreen : EditorScreen
         Smithbox.Instance.SaveConfiguration();
     }
 
-    public async void Save(bool autoSave = false)
+    /// <summary>
+    /// Saves every material with unsaved changes, whichever is selected. With Allow Unmodified Save,
+    /// the selected material is written even if it has none.
+    /// </summary>
+    public void Save(bool autoSave = false)
     {
-        var activeView = ViewHandler.ActiveView;
+        var bank = Project.Handler.MaterialData?.PrimaryBank;
 
-        if (activeView == null)
-            return;
-
-        if (activeView.Selection.SelectedBinderEntry == null)
-            return;
-
-        if (activeView.Selection.SelectedFileKey == "")
-            return;
-
-        if(activeView.Selection.SourceType is MaterialSourceType.MTD)
+        if (bank != null && (!autoSave || CFG.Current.MaterialEditor_Allow_Automatic_Save))
         {
-            if (activeView.Selection.MTDWrapper == null)
-                return;
+            var selected = ViewHandler.ActiveView?.Selection.SelectedFileWrapper;
 
-            if (activeView.Selection.SelectedMTD == null)
-                return;
-        }
+            if (!autoSave && selected != null && !selected.IsDirty && CFG.Current.MaterialEditor_Allow_Unmodified_Save)
+            {
+                selected.IsDirty = true;
+            }
 
-        if (activeView.Selection.SourceType is MaterialSourceType.MATBIN)
-        {
-            if (activeView.Selection.MATBINWrapper == null)
-                return;
-
-            if (activeView.Selection.SelectedMATBIN == null)
-                return;
-        }
-
-        // Only save if the selected file has been modified
-        if (activeView.Selection.SelectedFileWrapper == null)
-            return;
-
-        if (autoSave && CFG.Current.MaterialEditor_Allow_Automatic_Save || !autoSave)
-        {
-            Task<bool> saveTask = Project.Handler.MaterialData.PrimaryBank.Save(activeView);
-            bool saveTaskResult = await saveTask;
-
-            var displayName = Path.GetFileName(activeView.Selection.SelectedFileKey);
+            if (bank.GetDirtyFiles().Count == 0)
+            {
+                if (!autoSave)
+                    Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", selected?.Key ?? LOC.Get("MAT_Editor_Stub")));
+            }
+            else
+            {
+                bank.SaveAllDirty();
+            }
         }
 
         // Save the configuration JSONs

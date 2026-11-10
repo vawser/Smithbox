@@ -1,5 +1,0 @@
-#---------------------------
-# Elements that need refinement
-#---------------------------
-- NVVA rendering isn't ideal, very messy to visually parse
-    - Representing the true voxels is awkward

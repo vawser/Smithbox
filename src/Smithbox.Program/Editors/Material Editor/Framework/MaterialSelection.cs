@@ -16,6 +16,44 @@ public class MaterialSelection
 
     public MaterialSourceType SourceType { get; set; }
 
+    /// <summary>
+    /// What was selected under each source tab, so switching tabs swaps the selection rather than leaving
+    /// the other tab's selection behind
+    /// </summary>
+    private readonly Dictionary<MaterialSourceType, SelectionState> SavedSelections = new();
+
+    private record SelectionState(
+        FileDictionaryEntry BinderEntry, MTDWrapper MTDWrapper, MATBINWrapper MATBINWrapper, string FileKey,
+        MTD MTD, MATBIN MATBIN, MaterialFileWrapper FileWrapper, bool ScrollToContainer, bool ScrollToFile);
+
+    /// <summary>
+    /// Called by the source tab being drawn. Changing type keeps the old type's selection for its tab and
+    /// brings back the new type's. A jump to a material briefly draws the old tab for a frame; the swap
+    /// there and back leaves the jump's selection in place.
+    /// </summary>
+    public void SetSourceType(MaterialSourceType type)
+    {
+        if (SourceType == type)
+            return;
+
+        SavedSelections[SourceType] = new SelectionState(SelectedBinderEntry, MTDWrapper, MATBINWrapper,
+            SelectedFileKey, SelectedMTD, SelectedMATBIN, SelectedFileWrapper, ScrollToContainer, ScrollToFile);
+
+        SourceType = type;
+
+        SavedSelections.TryGetValue(type, out var state);
+
+        SelectedBinderEntry = state?.BinderEntry;
+        MTDWrapper = state?.MTDWrapper;
+        MATBINWrapper = state?.MATBINWrapper;
+        SelectedFileKey = state?.FileKey ?? "";
+        SelectedMTD = state?.MTD;
+        SelectedMATBIN = state?.MATBIN;
+        SelectedFileWrapper = state?.FileWrapper;
+        ScrollToContainer = state?.ScrollToContainer ?? false;
+        ScrollToFile = state?.ScrollToFile ?? false;
+    }
+
     public FileDictionaryEntry SelectedBinderEntry { get; set; }
 
     public MTDWrapper MTDWrapper { get; set; }
@@ -46,7 +84,8 @@ public class MaterialSelection
     /// </summary>
     public void JumpTo(MaterialBank bank, MaterialReference reference)
     {
-        SourceType = reference.SourceType;
+        // Keeps the current tab's selection for when the user goes back to it
+        SetSourceType(reference.SourceType);
         RequestedSourceType = reference.SourceType;
 
         SelectedBinderEntry = reference.BinderEntry;

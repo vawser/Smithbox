@@ -150,7 +150,7 @@ public class MaterialViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    ImGui.EndPopup();
                 }
             }
 
