@@ -67,7 +67,7 @@ public static unsafe class TextureEncoder
     public const int BC7_UNORM = 98;
     public const int BC7_UNORM_SRGB = 99;
 
-    private static readonly object GpuLock = new();
+    internal static readonly object GpuLock = new();
     private static Vortice.Direct3D11.ID3D11Device GpuDevice;
     private static bool GpuTried;
 
@@ -326,7 +326,7 @@ public static unsafe class TextureEncoder
         return null;
     }
 
-    private static Vortice.Direct3D11.ID3D11Device GetGpuDevice()
+    internal static Vortice.Direct3D11.ID3D11Device GetGpuDevice()
     {
         if (GpuTried)
             return GpuDevice;

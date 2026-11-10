@@ -126,7 +126,7 @@
     },
     {
       "Key": "TEXVIEW_TexImport_Replace_Selected_TT",
-      "Text": "Replace the selected texture's image with an image file. Its name, format byte and flags are kept."
+      "Text": "Replace the selected texture's whole image with an image file. Its name, format byte and flags are kept. To change one icon of a sprite sheet, use Replace Selected Cells below."
     },
     {
       "Key": "TEXVIEW_TexImport_Add",
@@ -307,6 +307,58 @@
     {
       "Key": "TEXVIEW_Properties_Texture_FloatStruct_Value",
       "Text": "Float Data [{0}]"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cells_Header",
+      "Text": "Layout Cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cells_Header_TT",
+      "Text": "This texture is a sprite sheet with a layout. These actions replace only the pixels of layout cells; the rest of the sheet keeps its exact bytes."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cells_Selected",
+      "Text": "{0} cells selected: {1}"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cells_None",
+      "Text": "Select cells in the viewport or the Layout window to replace them."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Cell",
+      "Text": "Replace Selected Cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Cell_TT",
+      "Text": "Put an image file into the selected layout cells, scaled to each cell's size. Only the sheet's blocks under the cells are re-encoded; every other icon keeps its bytes. One undoable step."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Cells_Folder",
+      "Text": "Replace Cells from Folder"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Cells_Folder_TT",
+      "Text": "Put every image of a folder into the layout cell with its name (MENU_ItemIcon_00123.png goes into that cell, or a cell sharing its rectangle), all as one undoable step. Cells without a file are left as they are."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Replace_Cell",
+      "Text": "Select the image for the selected cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Cells_Folder",
+      "Text": "Select the folder with images named after the cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Status_No_Cell_Matches",
+      "Text": "None of the {0} cells has an image with its name in {1}."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cells_Changed",
+      "Text": "{0} changed while the cells were being encoded; nothing was applied. Try again."
+    },
+    {
+      "Key": "TEXVIEW_Layout_Replace_Cell_Image",
+      "Text": "Replace Cell Image"
     },
     {
       "Key": "TEXVIEW_NamePrompt_Accept",

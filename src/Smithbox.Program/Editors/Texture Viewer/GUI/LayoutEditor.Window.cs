@@ -193,6 +193,14 @@ public partial class LayoutEditor
             "export", LOC.Get("TEXVIEW_Layout_Export"), LOC.Get("TEXVIEW_Layout_Export_TT", CFG.Current.TextureViewerToolbar_ExportTextureLocation),
             () => Status = ExportSelected(), Selected.Count > 0);
 
+        // The sheet's pixels under the cells (PC TPFs; the layout itself can be read-only)
+        GUI.ConditionalMultiButtonInput("layoutPixelActions",
+            "replaceCellImage", LOC.Get("TEXVIEW_Layout_Replace_Cell_Image"), LOC.Get("TEXVIEW_TexImport_Replace_Cell_TT"),
+            View.TextureImport.ReplaceSelectedCellsFromDialog, Selected.Count > 0 && View.GetEditTarget() != null && !View.TextureImport.IsRunning,
+
+            "replaceCellImages", LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder"), LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder_TT"),
+            View.TextureImport.ReplaceCellsFromFolderDialog, View.GetEditTarget() != null && !View.TextureImport.IsRunning);
+
         if (Status != "")
             GUI.WrappedText(Status);
     }

@@ -94,7 +94,8 @@ public static class LayoutGeometry
     /// <summary>
     /// The next free slot for a cell the size of the template, on the grid the same-size cells sit on: origin =
     /// their smallest x/y, stride = the most common gap between their columns/rows (else the size). Slots are tried
-    /// row by row from the origin; the first that is inside the sheet and overlaps no cell wins. Null when full.
+    /// column by column from the origin (down, then across); the first that is inside the sheet and overlaps no cell
+    /// wins. Null when full.
     /// </summary>
     public static CellRect? NextSlot(TextureAtlas atlas, SubTexture template, int sheetWidth, int sheetHeight)
     {
@@ -110,9 +111,10 @@ public static class LayoutGeometry
 
         var cells = atlas.SubTextures.Select(CellRect.Of).ToList();
 
-        for (int y = originY; y + h <= sheetHeight; y += strideY)
+        // Down each column, then across to the next one
+        for (int x = originX; x + w <= sheetWidth; x += strideX)
         {
-            for (int x = originX; x + w <= sheetWidth; x += strideX)
+            for (int y = originY; y + h <= sheetHeight; y += strideY)
             {
                 var slot = new CellRect(x, y, w, h);
                 if (!cells.Any(c => c.Overlaps(slot)))

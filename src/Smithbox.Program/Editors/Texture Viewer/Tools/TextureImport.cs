@@ -24,11 +24,17 @@ public class TextureImport
     public TexEditorView View;
     public ProjectEntry Project;
 
-    private enum JobKind { Replace, Add }
+    private enum JobKind { Replace, Add, ReplaceCells }
 
-    /// <summary>One file to encode, with everything read from the editor up front (the task never touches it).</summary>
+    /// <summary>An image file for one layout cell rectangle.</summary>
+    private sealed record CellSource(CellRect Rect, string Name, string Path);
+
+    /// <summary>
+    /// One file to encode (or, for ReplaceCells, one sheet with images for some of its cells), with everything read
+    /// from the editor up front (the task never touches it).
+    /// </summary>
     private sealed record Job(JobKind Kind, string Path, TextureTarget Target, TPF.Texture Texture, int InsertIndex,
-        TextureEncodeRequest Request, byte FormatByte);
+        TextureEncodeRequest Request, byte FormatByte, byte[] SheetBytes = null, List<CellSource> Cells = null);
 
     private sealed record JobResult(Job Job, TextureEncodeResult Result);
 
@@ -171,6 +177,25 @@ public class TextureImport
             "replaceFolder", LOC.Get("TEXVIEW_TexImport_Replace_Folder"), LOC.Get("TEXVIEW_TexImport_Replace_Folder_TT"),
             ReplaceMatchingFromFolderDialog, idle);
 
+        // Layout Cells: on a sheet with a layout, replace cells instead of the whole image
+        var layout = View.LayoutEditor;
+        if (layout.Atlas != null && sel.SelectedTexture != null)
+        {
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("TEXVIEW_TexImport_Cells_Header"), LOC.Get("TEXVIEW_TexImport_Cells_Header_TT"));
+
+            GUI.WrappedText(layout.Selected.Count > 0
+                ? LOC.Get("TEXVIEW_TexImport_Cells_Selected", layout.Selected.Count, string.Join(", ", layout.Selected.Take(3).Select(c => c.Name)))
+                : LOC.Get("TEXVIEW_TexImport_Cells_None"));
+
+            GUI.ConditionalMultiButtonInput("textureImportCellActions",
+                "replaceCell", LOC.Get("TEXVIEW_TexImport_Replace_Cell"), LOC.Get("TEXVIEW_TexImport_Replace_Cell_TT"),
+                ReplaceSelectedCellsFromDialog, idle && layout.Selected.Count > 0,
+
+                "replaceCellsFolder", LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder"), LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder_TT"),
+                ReplaceCellsFromFolderDialog, idle);
+        }
+
         // Progress
         if (IsRunning || Status != "")
         {
@@ -271,6 +296,77 @@ public class TextureImport
         Start(jobs);
     }
 
+    /// <summary>
+    /// Asks for an image and puts it into each selected layout cell of the selected sheet (one rectangle per alias
+    /// group), leaving the rest of the sheet as it is.
+    /// </summary>
+    public void ReplaceSelectedCellsFromDialog()
+    {
+        var target = View.GetEditTarget();
+        var layout = View.LayoutEditor;
+        var tex = View.Selection.SelectedTexture;
+
+        if (target == null || tex == null || layout.Atlas == null || layout.Selected.Count == 0 || IsRunning)
+            return;
+
+        if (!PickFile(LOC.Get("TEXVIEW_TexImport_Dialog_Replace_Cell"), out var path))
+            return;
+
+        var cells = layout.Selected
+            .GroupBy(CellRect.Of)
+            .Select(g => new CellSource(g.Key, g.First().Name, path))
+            .ToList();
+
+        Start([new Job(JobKind.ReplaceCells, path, target, tex, -1, null, tex.Format, tex.Bytes, cells)]);
+    }
+
+    /// <summary>
+    /// Asks for a folder and puts each image into the layout cell with its name (MENU_ItemIcon_00123.png → that cell,
+    /// or any of its aliases), all in one change of the selected sheet.
+    /// </summary>
+    public void ReplaceCellsFromFolderDialog()
+    {
+        var target = View.GetEditTarget();
+        var layout = View.LayoutEditor;
+        var tex = View.Selection.SelectedTexture;
+
+        if (target == null || tex == null || layout.Atlas == null || IsRunning)
+            return;
+
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Cells_Folder"), out var folder, CFG.Current.TextureViewerImport_LastFolder) || string.IsNullOrEmpty(folder))
+            return;
+
+        CFG.Current.TextureViewerImport_LastFolder = folder;
+
+        var files = Directory.EnumerateFiles(folder)
+            .Where(TextureEncoder.IsImageFile)
+            .GroupBy(f => Path.GetFileNameWithoutExtension(f), StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
+
+        // One image per rectangle: the first cell name (of the alias group) that has a file
+        var cells = new List<CellSource>();
+        foreach (var group in layout.Atlas.SubTextures.GroupBy(CellRect.Of))
+        {
+            foreach (var cell in group)
+            {
+                var stem = Path.GetFileNameWithoutExtension(cell.Name);
+                if (files.TryGetValue(stem, out var file))
+                {
+                    cells.Add(new CellSource(group.Key, cell.Name, file));
+                    break;
+                }
+            }
+        }
+
+        if (cells.Count == 0)
+        {
+            Status = LOC.Get("TEXVIEW_TexImport_Status_No_Cell_Matches", layout.Atlas.SubTextures.Count, folder);
+            return;
+        }
+
+        Start([new Job(JobKind.ReplaceCells, folder, target, tex, -1, null, tex.Format, tex.Bytes, cells)]);
+    }
+
     private bool PickFile(string title, out string path)
     {
         var ok = PlatformUtils.Instance.OpenFileDialog(title, TextureEncoder.FileDialogFilters, CFG.Current.TextureViewerImport_LastFolder, out path);
@@ -369,8 +465,18 @@ public class TextureImport
                 TextureEncodeResult result;
                 try
                 {
-                    var bytes = File.ReadAllBytes(job.Path);
-                    result = TextureEncoder.Encode(bytes, Path.GetExtension(job.Path), job.Request);
+                    if (job.Kind == JobKind.ReplaceCells)
+                    {
+                        var patches = job.Cells
+                            .Select(c => new CellPatch(c.Name, c.Rect.X, c.Rect.Y, c.Rect.W, c.Rect.H, File.ReadAllBytes(c.Path), Path.GetExtension(c.Path)))
+                            .ToList();
+                        result = TextureCellPatcher.Patch(job.SheetBytes, patches);
+                    }
+                    else
+                    {
+                        var bytes = File.ReadAllBytes(job.Path);
+                        result = TextureEncoder.Encode(bytes, Path.GetExtension(job.Path), job.Request);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -419,7 +525,23 @@ public class TextureImport
             if (result.UsedGpu) gpu++;
             if (result.PassedThrough) kept++;
 
-            if (job.Kind == JobKind.Replace)
+            if (job.Kind == JobKind.ReplaceCells)
+            {
+                // The texture could have been removed or edited while the task ran
+                if (!job.Target.Tpf.Textures.Contains(job.Texture) || job.Texture.Bytes != job.SheetBytes)
+                {
+                    failed.Add(LOC.Get("TEXVIEW_TexImport_Cells_Changed", job.Texture.Name));
+                    continue;
+                }
+
+                // Same format, size and mips: only the cells' blocks changed
+                var before = TextureState.Capture(job.Texture);
+                var after = before.Clone();
+                after.Bytes = result.Dds;
+
+                actions.Add(new TextureChangeAction(View, job.Target, job.Texture, before, after));
+            }
+            else if (job.Kind == JobKind.Replace)
             {
                 // The texture could have been removed while the task ran
                 if (!job.Target.Tpf.Textures.Contains(job.Texture))
