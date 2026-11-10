@@ -17,7 +17,6 @@
     <PackageReference Include="DotRecast.Recast" Version="2026.3.1" />
     <Compile Include="../../Claude/Tools/NavSurvey/Overlay.cs" Link="Survey/Overlay.cs" />
 
-    <Compile Include="../../Claude/Tools/NavSurvey/SurveyGame.cs" Link="Survey/SurveyGame.cs" />
     <Compile Include="BaseNavigation/NavigationModel.cs" />
     <Compile Include="BaseNavigation/NavigationValidator.cs" />
     <Compile Include="BaseNavigation/NavigationReader.cs" />

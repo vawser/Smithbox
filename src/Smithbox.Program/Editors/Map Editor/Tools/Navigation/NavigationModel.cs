@@ -201,14 +201,14 @@ public sealed class NavigationMap
         if (navmeshes == null)
             return models;
 
-        foreach (var n in navmeshes.Where(e => SetOf(e) == NavmeshSet.N && QuarterOf(e) == null))
+        foreach (var n in navmeshes.Where(e => SetOf(e) == NavmeshSet.N && QuarterOf(e, Profile) == null))
         {
             // The o entry repeats the n entry's NameID with the profile's offset added (2,000,000,000 in ER)
             var o = navmeshes.FirstOrDefault(e => (uint)e.NameID == Profile.MirrorOf((uint)n.NameID))
-                ?? navmeshes.FirstOrDefault(e => SetOf(e) == NavmeshSet.O && QuarterOf(e) == null && e.ModelID == n.ModelID);
+                ?? navmeshes.FirstOrDefault(e => SetOf(e) == NavmeshSet.O && QuarterOf(e, Profile) == null && e.ModelID == n.ModelID);
 
-            var quarters = navmeshes.Where(e => e.ModelID == n.ModelID && SetOf(e) == NavmeshSet.N && QuarterOf(e) != null)
-                .OrderBy(e => QuarterOf(e))
+            var quarters = navmeshes.Where(e => e.ModelID == n.ModelID && SetOf(e) == NavmeshSet.N && QuarterOf(e, Profile) != null)
+                .OrderBy(e => QuarterOf(e, Profile))
                 .Select(e => (e, FileOf(e)))
                 .ToList();
 
@@ -233,10 +233,14 @@ public sealed class NavigationMap
 
     /// <summary>
     /// The quarter of a q file an entry's faces are in, from the high byte of Unk50 (0xFF when it has none), or null.
-    /// The game files use 0xFF01 for most entries and 0x0001, 0x0101, 0x0201, 0x0301 for the quarters.
+    /// The game files use 0xFF01 for most entries and 0x0001, 0x0101, 0x0201, 0x0301 for the quarters. Always null in a
+    /// game without quarters (<see cref="NavGameProfile.HasQuarters"/>: DB_NT, whose entries have no Unk50).
     /// </summary>
-    public static int? QuarterOf(NVA.Navmesh entry)
+    public static int? QuarterOf(NVA.Navmesh entry, NavGameProfile profile = null)
     {
+        if (profile is { HasQuarters: false })
+            return null;
+
         int quarter = (entry.Unk50 >> 8) & 0xFF;
         return quarter == 0xFF ? null : quarter;
     }
@@ -250,7 +254,7 @@ public sealed class NavigationMap
     /// <summary>The name of the file an NVA entry's faces are in.</summary>
     public string FileNameOf(NVA.Navmesh entry)
     {
-        var quarter = QuarterOf(entry);
+        var quarter = QuarterOf(entry, Profile);
         return quarter != null ? QuarterName(NameBase, entry.ModelID, quarter.Value) : MeshName(NameBase, SetOf(entry), entry.ModelID);
     }
 
@@ -282,7 +286,7 @@ public sealed class NavigationMap
                 nameBase = other;
         }
 
-        var quarter = QuarterOf(entry);
+        var quarter = QuarterOf(entry, profile);
         return quarter != null ? QuarterName(nameBase, entry.ModelID, quarter.Value) : MeshName(nameBase, SetOf(entry), entry.ModelID);
     }
 
@@ -304,7 +308,7 @@ public sealed class NavigationMap
         if (navmeshes == null)
             return null;
 
-        if (QuarterOf(entry) == null)
+        if (QuarterOf(entry, profile) == null)
         {
             uint mirrorId = set == NavmeshSet.O ? profile.MirrorOf((uint)entry.NameID) : profile.UnmirrorOf((uint)entry.NameID);
             var mirror = navmeshes.FirstOrDefault(e => (uint)e.NameID == mirrorId && e.ModelID == entry.ModelID);
@@ -313,7 +317,7 @@ public sealed class NavigationMap
                 return mirror;
         }
 
-        return navmeshes.FirstOrDefault(e => e.ModelID == entry.ModelID && SetOf(e) == set && QuarterOf(e) == null);
+        return navmeshes.FirstOrDefault(e => e.ModelID == entry.ModelID && SetOf(e) == set && QuarterOf(e, profile) == null);
     }
 
     /// <summary>The map UID of the NVA (its Entries11), which the NVC files repeat.</summary>

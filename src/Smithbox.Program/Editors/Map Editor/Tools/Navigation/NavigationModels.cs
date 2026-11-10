@@ -68,6 +68,7 @@ public sealed class NavModelState
         NodeSubID = g.NodeSubID,
         NeighbourGateNodeCosts = g.NeighbourGateNodeCosts.ToList(),
         Unk14 = g.Unk14,
+        Unk18 = g.Unk18,
     };
 
     /// <summary>Puts the values back as they were when copied, as new copies, so the state can be restored again.</summary>
@@ -116,10 +117,13 @@ public static class NavModelEdit
 
     /// <summary>
     /// Sets every entry's FaceDataIndex to the running total of the face counts before it, in list order, as the game's
-    /// files have it.
+    /// files have it. Left as it is in a game where FaceDataIndex is something else (DB_NT: a value per model).
     /// </summary>
-    public static void RecomputeFaceDataIndex(NVA nva)
+    public static void RecomputeFaceDataIndex(NVA nva, NavGameProfile profile = null)
     {
+        if (profile is { FaceDataIndexIsRunningTotal: false })
+            return;
+
         int total = 0;
         foreach (var entry in nva.Navmeshes)
         {
@@ -154,7 +158,7 @@ public static class NavModelEdit
         var positions = new HashSet<int> { list.IndexOf(model.NEntry), list.IndexOf(model.OEntry) };
         var names = new HashSet<int> { model.NEntry.NameID, model.OEntry.NameID };
 
-        RemoveGatesTo(list, positions);
+        RemoveGatesTo(list, positions, map.Profile);
 
         map.Nva.Connectors.RemoveAll(c => names.Contains(c.MainNameID) || names.Contains(c.TargetNameID));
 
@@ -174,7 +178,7 @@ public static class NavModelEdit
             entry.Unk4C = 1;
         }
 
-        RecomputeFaceDataIndex(map.Nva);
+        RecomputeFaceDataIndex(map.Nva, map.Profile);
 
         foreach (var file in new[] { model.NFile, model.OFile })
             if (file?.Document != null)
@@ -217,7 +221,7 @@ public static class NavModelEdit
             entry.Unk4C = 0;
         }
 
-        RecomputeFaceDataIndex(map.Nva);
+        RecomputeFaceDataIndex(map.Nva, map.Profile);
         return result;
     }
 
@@ -298,13 +302,13 @@ public static class NavModelEdit
             entry.Unk4C = entry.FaceCount == 0 ? 1 : 0;
         }
 
-        RecomputeFaceDataIndex(map.Nva);
+        RecomputeFaceDataIndex(map.Nva, map.Profile);
         return result;
     }
 
     /// <summary>Why a new model can't be added to a map, or null if it can (maps with quarter entries can't).</summary>
     public static string CanAdd(NavigationMap map)
-        => map.Nva.Navmeshes.Any(e => NavigationMap.QuarterOf(e) != null) ? "MAP_Navigation_Model_Error_Add_Quarters" : null;
+        => map.Nva.Navmeshes.Any(e => NavigationMap.QuarterOf(e, map.Profile) != null) ? "MAP_Navigation_Model_Error_Add_Quarters" : null;
 
     /// <summary>The lowest ModelID from a value up that no entry of the map has.</summary>
     public static int NextFreeModelId(NavigationMap map, int from)
@@ -382,7 +386,7 @@ public static class NavModelEdit
             result.Files.Add(new NavFileChange(name, map.Files.GetValueOrDefault(name)?.Document, document));
         }
 
-        RecomputeFaceDataIndex(map.Nva);
+        RecomputeFaceDataIndex(map.Nva, map.Profile);
         result.Added = (nEntry, oEntry);
         return result;
     }
@@ -421,7 +425,7 @@ public static class NavModelEdit
     /// of a navmesh's list also takes its column out of that navmesh's gate costs, and moves down the NodeSubID of
     /// gates elsewhere that point at a later gate of the same navmesh.
     /// </summary>
-    public static void RemoveGatesTo(List<NVA.Navmesh> list, ISet<int> positions)
+    public static void RemoveGatesTo(List<NVA.Navmesh> list, ISet<int> positions, NavGameProfile profile = null)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -431,7 +435,7 @@ public static class NavModelEdit
             var gates = list[i].GateNodes;
             for (int g = gates.Count - 1; g >= 0; g--)
                 if (positions.Contains(gates[g].ConnectedNavmeshIndex))
-                    RemoveGate(list, i, g);
+                    RemoveGate(list, i, g, profile);
         }
 
         foreach (var p in positions)
@@ -443,19 +447,21 @@ public static class NavModelEdit
     /// Takes one gate out of a navmesh's list: its column out of the owner's other gates' costs, and the NodeSubID of
     /// gates elsewhere that point at it (made -1) or at a later gate of the owner (moved down).
     /// </summary>
-    public static void RemoveGate(List<NVA.Navmesh> list, int owner, int gate)
+    public static void RemoveGate(List<NVA.Navmesh> list, int owner, int gate, NavGameProfile profile = null)
     {
         var gates = list[owner].GateNodes;
         gates.RemoveAt(gate);
+        bool perGate = (profile ?? NavGameProfile.ER).GateCostsPerGate;
 
-        // The costs are by the owner's gate index, padded with -1 to their length
+        // The costs are by the owner's gate index: padded with -1 to 16 slots (ER, NR), or one per gate (DB_NT)
         foreach (var g in gates)
         {
             var costs = g.NeighbourGateNodeCosts;
             if (gate < costs.Count)
             {
                 costs.RemoveAt(gate);
-                costs.Add(-1);
+                if (!perGate)
+                    costs.Add(-1);
             }
         }
 

@@ -103,7 +103,7 @@ public static class NavigationValidator
         var nva = map.Nva;
         var navmeshes = nva.Navmeshes;
 
-        if (map.MapUid == null)
+        if (map.Profile.HasMapUid && map.MapUid == null)
             issues.Add(new(NavIssueSeverity.Error, NavIssueCode.MapUidMissing, file));
 
         int faceTotal = 0;
@@ -127,14 +127,22 @@ public static class NavigationValidator
             }
             else
             {
-                // An o entry repeats an n entry of the same model, 2 billions on
+                // An o entry repeats an n entry of the same model, the profile's offset on (2 billions in ER)
                 bool paired = byNameId.TryGetValue((int)map.Profile.UnmirrorOf((uint)n.NameID), out var partner) && partner.ModelID == n.ModelID;
                 if (!paired)
                     issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.OEntryUnpaired, file, (uint)n.NameID, n.ModelID));
             }
 
-            if (n.FaceDataIndex != faceTotal)
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, faceTotal));
+            // The running total of FaceCount (ER, NR); in DB_NT a value per model, the same in its o entry as in its n entry
+            if (map.Profile.FaceDataIndexIsRunningTotal)
+            {
+                if (n.FaceDataIndex != faceTotal)
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, faceTotal));
+            }
+            else if (set == NavmeshSet.O && byNameId.TryGetValue((int)map.Profile.UnmirrorOf((uint)n.NameID), out var nEntry) && n.FaceDataIndex != nEntry.FaceDataIndex)
+            {
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, nEntry.FaceDataIndex));
+            }
             faceTotal += n.FaceCount;
 
             var meshFile = map.FileOf(n);
@@ -197,7 +205,7 @@ public static class NavigationValidator
             }
 
             var costs = gate.NeighbourGateNodeCosts;
-            if (costs.Count != NavGates.MaxGates)
+            if (costs.Count != map.Profile.GateCostSlots(gates.Count))
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostCount, file, id, g, costs.Count));
 
             if (g < costs.Count && costs[g] != 0)

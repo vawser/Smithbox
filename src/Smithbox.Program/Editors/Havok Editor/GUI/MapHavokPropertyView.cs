@@ -143,8 +143,8 @@ public class MapHavokPropertyView
             return;
         }
 
-        // ER and NR: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
-        if (ent.WrappedObject is NVA.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        // ER, NR and DB_NT: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
+        if (ent.WrappedObject is NVA.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT)
         {
             NavmeshPropEditorER(erEntry);
             return;
@@ -234,8 +234,8 @@ public class MapHavokPropertyView
         GUI.SimpleHeader($"{fullName}", "");
 
         // An n file split into quarters is empty, and its faces are in the q files, which have entries of their own
-        if (set == NavmeshSet.N && NavigationMap.QuarterOf(target) == null && nva != null
-            && nva.Navmeshes.Any(e => e.ModelID == target.ModelID && NavigationMap.QuarterOf(e) != null))
+        if (set == NavmeshSet.N && NavigationMap.QuarterOf(target, profile) == null && nva != null
+            && nva.Navmeshes.Any(e => e.ModelID == target.ModelID && NavigationMap.QuarterOf(e, profile) != null))
         {
             GUI.WrappedText("This model's n mesh is split into quarters (q files). Select a quarter entry to edit one.");
         }

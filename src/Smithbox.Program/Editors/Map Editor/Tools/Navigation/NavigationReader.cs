@@ -14,9 +14,9 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public static class NavigationReader
 {
-    public static string NvaPath(string mapId) => $"/map/{mapId.Substring(0, 3)}/{mapId}/{mapId}.nva.dcx";
+    public static string NvaPath(string mapId, NavGameProfile game = null) => $"{(game ?? NavGameProfile.ER).MapFolder(mapId)}/{mapId}.nva.dcx";
 
-    public static string NvmPath(string mapId) => $"/map/{mapId.Substring(0, 3)}/{mapId}/{mapId}.nvmhktbnd.dcx";
+    public static string NvmPath(string mapId, NavGameProfile game = null) => $"{(game ?? NavGameProfile.ER).MapFolder(mapId)}/{mapId}.nvmhktbnd.dcx";
 
     public static string OnavPath(string mapId) => $"/map/onav/{mapId}.onav.dcx";
 
@@ -27,14 +27,15 @@ public static class NavigationReader
     /// </summary>
     public static NavigationMap Read(VirtualFileSystem fs, string mapId, Havok.HavokProfile profile, IEnumerable<string> nvcNames)
     {
-        var nvaFile = fs.ReadFile(NvaPath(mapId));
+        var game = NavGameProfile.For(profile);
+        var nvaFile = fs.ReadFile(NvaPath(mapId, game));
 
         if (nvaFile == null)
             return null;
 
         var nva = NVA.Read(nvaFile.Value.ToArray());
         var files = new Dictionary<string, NavmeshFile>();
-        var bndFile = fs.ReadFile(NvmPath(mapId));
+        var bndFile = fs.ReadFile(NvmPath(mapId, game));
 
         if (bndFile != null)
         {
@@ -62,7 +63,7 @@ public static class NavigationReader
                 nvcs.Add(new NvcFile { Name = name, Nvc = NVC.Read(f.Value.ToArray()) });
         }
 
-        return new NavigationMap(mapId, nva, files, onav, nvcs, NavGameProfile.For(profile));
+        return new NavigationMap(mapId, nva, files, onav, nvcs, game);
     }
 
     /// <summary>

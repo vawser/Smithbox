@@ -41,6 +41,7 @@ public sealed class NavGateState
         NodeSubID = g.NodeSubID,
         NeighbourGateNodeCosts = g.NeighbourGateNodeCosts.ToList(),
         Unk14 = g.Unk14,
+        Unk18 = g.Unk18,
     };
 
     /// <summary>Puts the gates back as new copies, so the state can be restored again.</summary>
@@ -437,8 +438,10 @@ public static class NavGates
 
         for (int i = 0; i < n; i++)
         {
-            var costs = new List<short>(MaxGates);
-            for (int j = 0; j < MaxGates; j++)
+            // 16 slots, -1 past the gates (ER, NR), or one per gate (DB_NT)
+            int slots = map.Profile.GateCostSlots(n);
+            var costs = new List<short>(slots);
+            for (int j = 0; j < slots; j++)
                 costs.Add(j < n ? table[i, j] : Unreachable);
             gates[i].NeighbourGateNodeCosts = costs;
         }
@@ -449,20 +452,21 @@ public static class NavGates
         => RefreshCosts(map, owner, toMap);
 
     /// <summary>Sets the cost between two gates of a navmesh, both ways.</summary>
-    public static void SetCost(NVA.Navmesh owner, int a, int b, short cost)
+    public static void SetCost(NVA.Navmesh owner, int a, int b, short cost, NavGameProfile profile = null)
     {
         if (a == b || a < 0 || b < 0 || a >= owner.GateNodes.Count || b >= owner.GateNodes.Count)
             return;
 
-        Pad(owner.GateNodes[a]);
-        Pad(owner.GateNodes[b]);
+        int slots = (profile ?? NavGameProfile.ER).GateCostSlots(owner.GateNodes.Count);
+        Pad(owner.GateNodes[a], slots);
+        Pad(owner.GateNodes[b], slots);
         owner.GateNodes[a].NeighbourGateNodeCosts[b] = cost;
         owner.GateNodes[b].NeighbourGateNodeCosts[a] = cost;
     }
 
-    private static void Pad(NVA.GateNode gate)
+    private static void Pad(NVA.GateNode gate, int slots)
     {
-        while (gate.NeighbourGateNodeCosts.Count < MaxGates)
+        while (gate.NeighbourGateNodeCosts.Count < slots)
             gate.NeighbourGateNodeCosts.Add(Unreachable);
     }
 
@@ -520,8 +524,8 @@ public static class NavGates
         // The old gates between each pair, both ways
         foreach (var (a, b) in pairList)
         {
-            result.Removed += RemoveGatesBetween(list, a, b);
-            result.Removed += RemoveGatesBetween(list, b, a);
+            result.Removed += RemoveGatesBetween(list, a, b, map.Profile);
+            result.Removed += RemoveGatesBetween(list, b, a, map.Profile);
         }
 
         // The new ones
@@ -544,7 +548,7 @@ public static class NavGates
     }
 
     /// <summary>Removes the gates of a navmesh that lead to another; returns how many.</summary>
-    private static int RemoveGatesBetween(List<NVA.Navmesh> list, NVA.Navmesh owner, NVA.Navmesh target)
+    private static int RemoveGatesBetween(List<NVA.Navmesh> list, NVA.Navmesh owner, NVA.Navmesh target, NavGameProfile profile)
     {
         int ownerIndex = list.IndexOf(owner);
         int targetIndex = list.IndexOf(target);
@@ -554,7 +558,7 @@ public static class NavGates
         {
             if (owner.GateNodes[g].ConnectedNavmeshIndex == targetIndex)
             {
-                NavModelEdit.RemoveGate(list, ownerIndex, g);
+                NavModelEdit.RemoveGate(list, ownerIndex, g, profile);
                 removed++;
             }
         }
@@ -595,7 +599,8 @@ public static class NavGates
     private static NVA.GateNode NewGate(Vector3 point, int target)
     {
         var gate = new NVA.GateNode { Position = point, ConnectedNavmeshIndex = (short)target, NodeSubID = -1 };
-        Pad(gate);
+        // ER's 16 slots; the RefreshCosts that follows every add sizes the lists as the game does (one per gate in DB_NT)
+        Pad(gate, MaxGates);
         return gate;
     }
 
@@ -648,14 +653,14 @@ public static class NavGates
             return result;
 
         var partner = Partner(map, owner, gate);
-        NavModelEdit.RemoveGate(list, list.IndexOf(owner), gate);
+        NavModelEdit.RemoveGate(list, list.IndexOf(owner), gate, map.Profile);
         result.Removed++;
         result.Touched.Add(owner);
 
         // The partner's index isn't changed by taking out a gate of another navmesh
         if (partner is (NVA.Navmesh entry, int index))
         {
-            NavModelEdit.RemoveGate(list, list.IndexOf(entry), index);
+            NavModelEdit.RemoveGate(list, list.IndexOf(entry), index, map.Profile);
             result.Removed++;
             result.Touched.Add(entry);
         }

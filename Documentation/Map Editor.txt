@@ -7,10 +7,18 @@
 - AC MSB: research
 - Display Group: UX assessment
 
-- Add user-defined collision shape (via spheres, can add more for each point)
-
-- Add navigation editor support for the other project types (for those that use the same type as ER)
-
 - Get gizmos to work in Orthographic/Oblique view mode
+
+- Col Edito:
+    - Add a simplify mesh option that simplifies complex meshes (keeping the general shape)
+    - Add user-defined collision shape (via spheres, can add more for each point)
+        - Line (with Height) (useful for fall protection)
+        - Plane 
+        - Box
+
+- Nav Edito:
+    - Add navigation editor support for the other project types (for those that use the same type as ER)
+    - Add more generation options to allow for a more generous mesh (i.e. let it spill edges so jump/fall links work consistently)
+
 
 

@@ -35,7 +35,7 @@ public class NavigationBank
         Project = project;
     }
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT;
 
     /// <summary>The navigation rules of the project's game.</summary>
     public NavGameProfile Profile => NavGameProfile.For(Project.Descriptor.ProjectType.ToString());
@@ -96,7 +96,7 @@ public class NavigationBank
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Read", NavigationReader.NvaPath(id)), e);
+                Smithbox.LogError(this, LOC.Get("MAP_Navigation_Failed_Read", NavigationReader.NvaPath(id, Profile)), e);
                 return null;
             }
         });

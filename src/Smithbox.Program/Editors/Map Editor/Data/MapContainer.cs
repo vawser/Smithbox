@@ -581,9 +581,9 @@ public class MapContainer : ObjectContainer
                 AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh, NavGameProfile.NR,
                     NavigationMap.IsOpenWorld(mapName) && !mapName.EndsWith("_00") ? View.Project.Handler.MapData.HavokNavmeshBank.GetBinderFileNames(mapName) : null));
             // DB_NT has ER's n/o halves and NameID rule but no quarter files, and its entries have no Unk50 (the
-            // quarter mark) as that slot holds the connected navmesh list's offset; the set alone names all 192 files
+            // quarter mark) as that slot holds the connected navmesh list's offset; its profile names by set alone
             else if (View.Project.Descriptor.ProjectType is ProjectType.DB_NT)
-                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.MeshName(mapName, NavigationMap.SetOf(curNavmesh), curNavmesh.ModelID));
+                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh, NavGameProfile.DB_NT));
             // AC6, DS3, BB and SDT: the n file of the model
             else
                 AddNavmeshInfo(nvaRoot, mapName, curNavmesh, $@"n{curNavmesh.ModelID:D6}");

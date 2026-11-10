@@ -330,7 +330,7 @@ public partial class NavigationTool
         ImGui.EndTable();
 
         if (commit is (int a, int b, short value))
-            EditGates(_ => { NavGates.SetCost(entry, a, b, value); return new NavGateEditResult(); }, "MAP_Navigation_Gates_Cost_Set");
+            EditGates(m => { NavGates.SetCost(entry, a, b, value, m.Profile); return new NavGateEditResult(); }, "MAP_Navigation_Gates_Cost_Set");
     }
 
     /// <summary>A cost as metres, or "-" for unreachable.</summary>
