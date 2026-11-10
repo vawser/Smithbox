@@ -62,6 +62,12 @@ public sealed record NavGenParameters
     /// <summary>Split every face into triangles, after the grid.</summary>
     public bool TrianglesOnly { get; init; }
 
+    /// <summary>
+    /// How far the navmesh reaches out past a ledge of its collision, in metres; 0 for none. Only boundary vertices at a
+    /// drop move (not those against a wall), level, so the ends of a jump or fall are close, as the game's AI needs.
+    /// </summary>
+    public float Spill { get; init; }
+
     /// <summary>Add jump and fall links between faces across gaps and down drops (NavLinkGenerator).</summary>
     public bool Links { get; init; }
 
@@ -106,6 +112,9 @@ public sealed class NavGenResult
     public int InputTriangles { get; init; }
 
     public int SnappedVertices { get; init; }
+
+    /// <summary>Boundary vertices moved out past a ledge by the spill.</summary>
+    public int SpilledVertices { get; init; }
 
     /// <summary>How many faces a blocker cut.</summary>
     public int ClippedFaces { get; init; }
@@ -268,6 +277,11 @@ public static class NavigationGenerator
             }
         }
 
+        // Spill: boundary vertices at a ledge moved out past it, before the cut, so a blocker still trims them
+        int spilled = 0;
+        if (p.Spill > 0)
+            polygons = SpillOverLedges(polygons, surface ?? new SurfaceGrid(triangles, 4f), triangles, blockerTriangles, p, out spilled);
+
         // The hard cut, last, so nothing after it moves a corner back into a box: every face clipped against every
         // widened box
         int clipped = 0;
@@ -325,7 +339,144 @@ public static class NavigationGenerator
             }
         }
 
-        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped, JumpLinks = jumps, FallLinks = falls };
+        return new NavGenResult { Mesh = mesh, InputTriangles = triangles.Count / 3, SnappedVertices = snapped, SpilledVertices = spilled, ClippedFaces = clipped, InsideCut = insideCut, DroppedFaces = dropped, JumpLinks = jumps, FallLinks = falls };
+    }
+
+    /// <summary>
+    /// The faces with their boundary vertices at a ledge moved out past it by the spill, level, so the navmesh either side
+    /// of a jump or fall reaches close to the other. A boundary vertex moves along the mean of its boundary edges' outward
+    /// directions (as a mitre, so the edges move out by the spill, at most twice it at a sharp corner):
+    /// - to the ledge first, the first point out with no walkable collision within a climb of it, looked for up to the
+    ///   agent radius, the max edge error and a voxel out (Recast keeps the mesh that far in); none, and there is no ledge
+    ///   there (a wall, an unwalkable slope), so the vertex stays;
+    /// - then the spill past it, unless the way there at climb or half body height meets the collision or a blocker.
+    /// Every face with the vertex takes the move, so the faces stay joined; one that bends in after it goes in as triangles.
+    /// </summary>
+    private static List<List<Vector3>> SpillOverLedges(List<List<Vector3>> polygons, SurfaceGrid surface, IReadOnlyList<Vector3> triangles,
+        IReadOnlyList<Vector3> blockerTriangles, NavGenParameters p, out int spilled)
+    {
+        spilled = 0;
+
+        // Every edge one way round; a boundary edge has no twin the other way (shared corners are the same points, as
+        // Recast's faces and the grid's cuts make them)
+        var edges = new HashSet<(Vector3, Vector3)>();
+        foreach (var polygon in polygons)
+            for (int k = 0; k < polygon.Count; k++)
+                edges.Add((polygon[k], polygon[(k + 1) % polygon.Count]));
+
+        // Each boundary vertex's boundary edges' outward directions, seen from above
+        var outwards = new Dictionary<Vector3, List<Vector2>>();
+        foreach (var polygon in polygons)
+        {
+            var centre = Vector3.Zero;
+            foreach (var q in polygon)
+                centre += q;
+            centre /= polygon.Count;
+
+            for (int k = 0; k < polygon.Count; k++)
+            {
+                var a = polygon[k];
+                var b = polygon[(k + 1) % polygon.Count];
+                if (edges.Contains((b, a)))
+                    continue;
+
+                var along = new Vector2(b.X - a.X, b.Z - a.Z);
+                if (along.LengthSquared() < 1e-8f)
+                    continue;
+
+                var outward = Vector2.Normalize(new Vector2(along.Y, -along.X));
+                var mid = (a + b) / 2;
+                if (Vector2.Dot(outward, new Vector2(mid.X - centre.X, mid.Z - centre.Z)) < 0)
+                    outward = -outward;
+
+                foreach (var end in new[] { a, b })
+                {
+                    if (!outwards.TryGetValue(end, out var list))
+                        outwards[end] = list = new List<Vector2>();
+                    list.Add(outward);
+                }
+            }
+        }
+
+        var solids = new List<Vector3>(triangles.Count + blockerTriangles.Count);
+        solids.AddRange(triangles);
+        solids.AddRange(blockerTriangles);
+        var collision = new NavLinkGenerator.TriangleGrid(solids, 4f);
+
+        float step = MathF.Max(0.02f, p.CellSize * 0.5f);
+        float search = p.AgentRadius + p.MaxEdgeError + p.CellSize;
+        float lowPath = MathF.Min(p.MaxClimb + p.CellHeight, p.AgentHeight * 0.5f);
+        var heights = new[] { new Vector3(0, lowPath, 0), new Vector3(0, p.AgentHeight * 0.5f, 0) };
+
+        var moves = new Dictionary<Vector3, Vector3>();
+        foreach (var (vertex, list) in outwards)
+        {
+            // A vertex where the boundary touches itself (two edges facing apart) has no one way out
+            var sum = Vector2.Zero;
+            foreach (var n in list)
+                sum += n;
+            if (sum.Length() < 0.3f)
+                continue;
+
+            var mitre = Vector2.Normalize(sum);
+            float cos = 1;
+            foreach (var n in list)
+                cos = MathF.Min(cos, Vector2.Dot(mitre, n));
+            cos = MathF.Max(cos, 0.5f);
+
+            var out3 = new Vector3(mitre.X, 0, mitre.Y);
+
+            float? ledge = null;
+            for (float d = step; d <= search + 1e-4f; d += step)
+            {
+                if (surface.Nearest(vertex + out3 * d, p.MaxClimb) == null)
+                {
+                    ledge = d - step * 0.5f;
+                    break;
+                }
+            }
+            if (ledge == null)
+                continue;
+
+            var target = vertex + out3 * (ledge.Value + p.Spill / cos);
+            if (heights.Any(h => collision.Hits(vertex + h, target + h)))
+                continue;
+
+            moves[vertex] = target;
+        }
+
+        if (moves.Count == 0)
+            return polygons;
+
+        spilled = moves.Count;
+        var result = new List<List<Vector3>>(polygons.Count);
+        foreach (var polygon in polygons)
+        {
+            bool changed = false;
+            var moved = new List<Vector3>(polygon.Count);
+            foreach (var q in polygon)
+            {
+                if (moves.TryGetValue(q, out var to))
+                {
+                    moved.Add(to);
+                    changed = true;
+                }
+                else
+                    moved.Add(q);
+            }
+
+            if (!changed)
+                result.Add(polygon);
+            else if (AreaXZ(moved) > 1e-4f)
+            {
+                if (ConvexXZ(moved))
+                    result.Add(moved);
+                else
+                    result.AddRange(EarClip(moved));
+            }
+        }
+
+        return result;
     }
 
     /// <summary>

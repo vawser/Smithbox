@@ -1641,6 +1641,18 @@
       "Text": "Splits every face along a world grid of this size, so the faces are even (links and face data are set per face): none is wider than the size across X or Z. The grid lines sit at whole multiples of the size, so neighbouring models split their shared borders alike. 0 keeps Recast's faces, which can be several metres across. Coverage doesn't change."
     },
     {
+      "Key": "MAP_Navigation_Generate_Spill",
+      "Text": "Spill"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Spill_Off",
+      "Text": "Spill: off"
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Spill_TT",
+      "Text": "Lets the navmesh reach this far out past a ledge of its collision, level with the ledge. Recast keeps the mesh an agent radius in from every edge; the spill moves the boundary vertices at a drop out to the ledge and then past it, so the faces either side of a jump or fall come close, as the game's AI needs to use the link (ER, NR). Vertices against a wall, or where the way out meets the collision or a blocker, stay where they are, and blockers still cut the spilled faces. 0 for none."
+    },
+    {
       "Key": "MAP_Navigation_Generate_Triangles_Only",
       "Text": "Triangles only"
     },
@@ -1687,6 +1699,10 @@
     {
       "Key": "MAP_Navigation_Generate_Done_Links",
       "Text": "Links: {0} jumps and {1} falls in n, {2} jumps and {3} falls in o."
+    },
+    {
+      "Key": "MAP_Navigation_Generate_Done_Spill",
+      "Text": "Spill: {0} vertices moved past a ledge in n, {1} in o."
     },
     {
       "Key": "MAP_Navigation_Generate_Reset",

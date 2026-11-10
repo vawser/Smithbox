@@ -313,7 +313,7 @@ public static class NavLinkGenerator
     }
 
     /// <summary>Triangles (three points each) bucketed on an XZ grid, for whether a segment passes through any.</summary>
-    private sealed class TriangleGrid
+    internal sealed class TriangleGrid
     {
         private readonly IReadOnlyList<Vector3> T;
         private readonly float Cell;

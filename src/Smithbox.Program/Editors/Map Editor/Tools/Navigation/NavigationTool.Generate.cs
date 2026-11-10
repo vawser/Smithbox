@@ -192,7 +192,7 @@ public partial class NavigationTool
             return p;
 
         float cell = p.CellSize, radius = p.AgentRadius, height = p.AgentHeight, climb = p.MaxClimb, slope = p.MaxSlope, edge = p.MaxEdgeLength;
-        float faceSize = p.FaceSize;
+        float faceSize = p.FaceSize, spill = p.Spill;
         bool trianglesOnly = p.TrianglesOnly;
 
         ImGui.SetNextItemWidth(-1);
@@ -218,6 +218,9 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Face_Size_TT"));
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Triangles_Only")}##navigationGenerateTriangles_{id}", ref trianglesOnly);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
+        ImGui.SetNextItemWidth(-1);
+        ImGui.SliderFloat($"##navigationGenerateSpill_{id}", ref spill, 0f, 1f, spill <= 0 ? LOC.Get("MAP_Navigation_Generate_Spill_Off") : $"{LOC.Get("MAP_Navigation_Generate_Spill")} %.2f m");
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Spill_TT"));
 
         // Jump and fall links
         // Only where links are user edges in the mesh; DS3, BB and SDT build theirs from setups
@@ -243,7 +246,7 @@ public partial class NavigationTool
         }
 
         p = p with { CellSize = cell, AgentRadius = radius, AgentHeight = height, MaxClimb = climb, MaxSlope = slope, MaxEdgeLength = edge,
-            FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly,
+            FaceSize = faceSize < 0.25f ? 0 : faceSize, TrianglesOnly = trianglesOnly, Spill = spill < 0.01f ? 0 : spill,
             Links = links, JumpHeight = jumpHeight < 0.05f ? 0 : jumpHeight, FallHeight = fallHeight, LinkReach = reach };
 
         if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Generate_Reset")}##navigationGenerateReset_{id}"))
@@ -678,6 +681,10 @@ public partial class NavigationTool
                 string links = pn.Links || (hasO && po.Links)
                     ? " " + LOC.Get("MAP_Navigation_Generate_Done_Links", n.JumpLinks, n.FallLinks, o?.JumpLinks ?? 0, o?.FallLinks ?? 0)
                     : "";
+
+                // The vertices each set spilled past a ledge, when either had a spill
+                if (pn.Spill > 0 || (hasO && po.Spill > 0))
+                    links += " " + LOC.Get("MAP_Navigation_Generate_Done_Spill", n.SpilledVertices, o?.SpilledVertices ?? 0);
 
                 if (kind == ModelTarget.New)
                 {
