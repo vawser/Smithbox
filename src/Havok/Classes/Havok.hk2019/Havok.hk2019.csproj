@@ -19,6 +19,8 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="..\Shared\CollisionShapeBuilder.cs" Link="Builders\CollisionShapeBuilder.cs" />
+        <!-- The Navigation tool's editable navmesh views: one source shared by every class set with navmeshes -->
+        <Compile Include="..\Shared\NavMeshEdit.cs" Link="Manual\NavMeshEdit.cs" />
     </ItemGroup>
 
     <ItemGroup>

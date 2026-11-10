@@ -1,5 +1,5 @@
 using Andre.IO.VFS;
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -62,7 +62,7 @@ public static class NavigationReader
                 nvcs.Add(new NvcFile { Name = name, Nvc = NVC.Read(f.Value.ToArray()) });
         }
 
-        return new NavigationMap(mapId, nva, files, onav, nvcs);
+        return new NavigationMap(mapId, nva, files, onav, nvcs, NavGameProfile.For(profile));
     }
 
     /// <summary>
@@ -74,9 +74,10 @@ public static class NavigationReader
         {
             Name = name,
             Document = document,
-            Mesh = document.ObjectsOf<hkaiNavMesh>().FirstOrDefault(),
-            HasMediator = document.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>().Any(),
-            HasClearanceCache = document.ObjectsOf<hkaiNavMeshClearanceCache>().Any(),
+            Mesh = document.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault(),
+            HasMediator = document.ObjectsOf<IHavokNavMeshQueryMediator>().Any()
+                || document.ObjectsOf<IHavokNavMeshEdit>().Any(m => m.CachedFaceTree != null),
+            HasClearanceCache = document.ObjectsOf<IHavokNavClearanceCache>().Any(),
         };
     }
 

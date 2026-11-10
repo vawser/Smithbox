@@ -2,7 +2,7 @@
 
 namespace Havok.hk2018;
 
-public class hkcdStaticAabbTree : hkReferencedObject
+public partial class hkcdStaticAabbTree : hkReferencedObject
 {
     public hkcdStaticAabbTree.Impl? m_treePtr;
 

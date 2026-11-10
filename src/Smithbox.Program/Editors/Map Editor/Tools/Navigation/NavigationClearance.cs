@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +42,12 @@ public static class NavClearance
     /// Works the clearances around moved vertices out again, in every initial cache of the mesh's clearance seeding.
     /// <paramref name="before"/> holds every vertex's position before the move (the mesh holds them after).
     /// </summary>
-    public static NavClearanceResult Recalculate(hkaiNavMesh mesh, IReadOnlyList<Vector3> before, IReadOnlyCollection<int> moved)
+    public static NavClearanceResult Recalculate(IHavokNavMeshEdit mesh, IReadOnlyList<Vector3> before, IReadOnlyCollection<int> moved)
     {
         var result = new NavClearanceResult();
-        var caches = mesh.m_clearanceCacheSeedingDataSet?.m_cacheDatas.Select(d => d.m_initialCache).Where(c => c != null).Distinct().ToList();
+        var caches = mesh.ClearanceCaches;
 
-        if (caches == null || caches.Count == 0 || moved.Count == 0 || mesh.m_faces.Count == 0)
+        if (caches.Count == 0 || moved.Count == 0 || mesh.m_faces.Count == 0)
             return result;
 
         var geometry = new Geometry(mesh);
@@ -80,7 +80,7 @@ public static class NavClearance
         return result;
     }
 
-    private static void Recalculate(hkaiNavMesh mesh, Geometry geometry, hkaiNavMeshClearanceCache cache, List<(Vector3, Vector3)> changed,
+    private static void Recalculate(IHavokNavMeshEdit mesh, Geometry geometry, IHavokNavClearanceCache cache, List<(Vector3, Vector3)> changed,
         ISet<int> moved, NavClearanceResult result)
     {
         float ceiling = cache.m_clearanceCeiling;
@@ -206,7 +206,7 @@ public static class NavClearance
     /// game's layout (a lower triangle by column over the linked edges, original then user, then 0xFF). Faces whose block
     /// doesn't have that layout are left as they are. Returns the number of values changed.
     /// </summary>
-    private static int RewritePairs(hkaiNavMesh mesh, hkaiNavMeshClearanceCache cache, int f, HashSet<int> changedEdges)
+    private static int RewritePairs(IHavokNavMeshEdit mesh, IHavokNavClearanceCache cache, int f, HashSet<int> changedEdges)
     {
         var face = mesh.m_faces[f];
         var linked = new List<int>();
@@ -255,7 +255,7 @@ public static class NavClearance
     /// <summary>The faces, edges and vertices of a mesh, with what the clearance search needs to walk it.</summary>
     private sealed class Geometry
     {
-        private readonly hkaiNavMesh Mesh;
+        private readonly IHavokNavMeshEdit Mesh;
 
         /// <summary>The face of each original edge.</summary>
         public readonly int[] FaceOf;
@@ -264,7 +264,7 @@ public static class NavClearance
         public readonly HashSet<int> UserVertices = new();
         private readonly Dictionary<int, List<int>> FacesOfVertex = new();
 
-        public Geometry(hkaiNavMesh mesh)
+        public Geometry(IHavokNavMeshEdit mesh)
         {
             Mesh = mesh;
             FaceOf = new int[mesh.m_edges.Count];

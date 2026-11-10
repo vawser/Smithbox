@@ -29,7 +29,7 @@ public partial class hkaiNavMesh : hkReferencedObject
     public ulong m_userData;
 
 
-    public class Face : IHavokObject
+    public partial class Face : IHavokObject
     {
         public int m_startEdgeIndex;
 
@@ -45,7 +45,7 @@ public partial class hkaiNavMesh : hkReferencedObject
 
     }
 
-    public class Edge : IHavokObject
+    public partial class Edge : IHavokObject
     {
         public int m_a;
 

@@ -573,11 +573,13 @@ public class MapContainer : ObjectContainer
         {
             // ER lists each navmesh twice: its n file in the first half, its o file in the second, and the quarters of a
             // split n file as entries of their own (see NavigationMap). AC6 has only n files.
-            // NR has the same n/o/q sets, so it takes the ER naming: it names 1,662 of NR's 1,730 entries right, where
-            // the ModelID naming names 831. The rest are on open-world _10/_20… tiles whose files are named after the
-            // _00 tile: NR's NameIDs don't hold the _DD digits ER's do, so only the binder's file names can tell.
-            if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            if (View.Project.Descriptor.ProjectType is ProjectType.ER)
                 AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh));
+            // NR has the same n/o/q sets. Its NameIDs don't hold the _DD digits ER's do, so an open world tile version
+            // (_10, _20…) whose files carry the _00 tile's name is told by the binder's file names, read from its headers
+            else if (View.Project.Descriptor.ProjectType is ProjectType.NR)
+                AddNavmeshInfo(nvaRoot, mapName, curNavmesh, null, NavigationMap.FileNameFromEntry(mapName, curNavmesh, NavGameProfile.NR,
+                    NavigationMap.IsOpenWorld(mapName) && !mapName.EndsWith("_00") ? View.Project.Handler.MapData.HavokNavmeshBank.GetBinderFileNames(mapName) : null));
             // DB_NT has ER's n/o halves and NameID rule but no quarter files, and its entries have no Unk50 (the
             // quarter mark) as that slot holds the connected navmesh list's offset; the set alone names all 192 files
             else if (View.Project.Descriptor.ProjectType is ProjectType.DB_NT)

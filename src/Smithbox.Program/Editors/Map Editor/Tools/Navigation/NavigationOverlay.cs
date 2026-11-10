@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -260,14 +260,14 @@ public static class NavigationOverlayBuilder
         return best;
     }
 
-    private static Vector3 Vertex(hkaiNavMesh mesh, int index)
+    private static Vector3 Vertex(IHavokNavMeshEdit mesh, int index)
     {
         var v = mesh.m_vertices[index];
         return new Vector3(v.X, v.Y, v.Z);
     }
 
     /// <summary>The corners of a face, in order.</summary>
-    public static List<Vector3> FaceCorners(hkaiNavMesh mesh, int face)
+    public static List<Vector3> FaceCorners(IHavokNavMeshEdit mesh, int face)
     {
         var f = mesh.m_faces[face];
         var corners = new List<Vector3>(f.m_numEdges);
@@ -276,7 +276,7 @@ public static class NavigationOverlayBuilder
         return corners;
     }
 
-    public static Vector3 FaceCentre(hkaiNavMesh mesh, int face)
+    public static Vector3 FaceCentre(IHavokNavMeshEdit mesh, int face)
     {
         var corners = FaceCorners(mesh, face);
         var sum = Vector3.Zero;
@@ -289,7 +289,7 @@ public static class NavigationOverlayBuilder
     /// The face a packed hkaiPackedKey points at in its own navmesh: the low 22 bits are the face, the high 10 the
     /// section. Null if it points nowhere, or at another section.
     /// </summary>
-    public static int? OppositeFace(hkaiNavMesh mesh, uint packed)
+    public static int? OppositeFace(IHavokNavMeshEdit mesh, uint packed)
     {
         if (packed == 0xFFFFFFFF)
             return null;
@@ -328,7 +328,7 @@ public static class NavigationOverlayBuilder
     /// The overlay of a single navmesh, drawn from the given mesh (e.g. one with edited vertices), with the connection
     /// ends of its map from <see cref="ConnectionEnds"/>. Only its faces, edges and user edges.
     /// </summary>
-    public static NavOverlay BuildEntry(string mapId, NavmeshSet set, NVA.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
+    public static NavOverlay BuildEntry(string mapId, NavmeshSet set, NVA.Navmesh entry, IHavokNavMeshEdit mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
         (HashSet<(int, int)> InMap, HashSet<(int, int)> CrossMap) ends)
     {
         var overlay = new NavOverlay { MapId = mapId, Set = set };
@@ -339,7 +339,7 @@ public static class NavigationOverlayBuilder
         return overlay;
     }
 
-    private static void AddMesh(NavOverlay overlay, NVA.Navmesh entry, hkaiNavMesh mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
+    private static void AddMesh(NavOverlay overlay, NVA.Navmesh entry, IHavokNavMeshEdit mesh, Matrix4x4 world, ISet<NavOverlayLayer> layers,
         HashSet<(int, int)> inMap, HashSet<(int, int)> crossMap)
     {
         var lift = new Vector3(0, Lift, 0);
@@ -394,7 +394,7 @@ public static class NavigationOverlayBuilder
                 for (int k = face.m_startUserEdgeIndex; k < face.m_startUserEdgeIndex + face.m_numUserEdges; k++)
                 {
                     var edge = mesh.m_edges[k];
-                    bool blocked = ((int)edge.m_flags & (int)hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED) != 0;
+                    bool blocked = ((int)edge.m_flags & (int)HavokNavEdgeFlags.EDGE_BLOCKED) != 0;
                     var layer = blocked ? NavOverlayLayer.BlockedUserEdges : NavOverlayLayer.UserEdges;
 
                     if (!layers.Contains(layer))

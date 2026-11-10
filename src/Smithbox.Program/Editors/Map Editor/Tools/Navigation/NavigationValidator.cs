@@ -128,7 +128,7 @@ public static class NavigationValidator
             else
             {
                 // An o entry repeats an n entry of the same model, 2 billions on
-                bool paired = byNameId.TryGetValue((int)((uint)n.NameID - 2_000_000_000u), out var partner) && partner.ModelID == n.ModelID;
+                bool paired = byNameId.TryGetValue((int)map.Profile.UnmirrorOf((uint)n.NameID), out var partner) && partner.ModelID == n.ModelID;
                 if (!paired)
                     issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.OEntryUnpaired, file, (uint)n.NameID, n.ModelID));
             }

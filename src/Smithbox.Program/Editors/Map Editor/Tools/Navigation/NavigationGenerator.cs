@@ -1,7 +1,7 @@
 using DotRecast.Core.Numerics;
 using DotRecast.Recast;
 using DotRecast.Recast.Geom;
-using Havok.hk2018;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,7 +98,7 @@ public sealed record NavGenParameters
 /// <summary>A generated navmesh, or why there is none.</summary>
 public sealed class NavGenResult
 {
-    public hkaiNavMesh Mesh { get; init; }
+    public IHavokNavMeshEdit Mesh { get; init; }
 
     /// <summary>Null when it worked; else the name of the text that says why not.</summary>
     public string Error { get; init; }
@@ -144,7 +144,12 @@ public static class NavigationGenerator
     /// - every face is then clipped against the widened box, as Recast's simplified outlines can reach up to the max
     ///   edge error back into the cut. The pieces outside are kept, joined to their neighbours.
     /// </param>
-    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, hkaiNavMesh template = null, IReadOnlyList<NavBlocker> blockers = null)
+    /// <param name="createMesh">
+    /// Makes the empty mesh to build into when there is no template mesh, in the class set of the files it will go into
+    /// (the template file's). With a template, the mesh is made in the template's class set.
+    /// </param>
+    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, IHavokNavMeshEdit template = null, IReadOnlyList<NavBlocker> blockers = null,
+        Func<IHavokNavMeshEdit> createMesh = null)
     {
         if (triangles.Count < 3)
             return new NavGenResult { Error = "MAP_Navigation_Generate_Error_No_Collision" };
@@ -289,7 +294,7 @@ public static class NavigationGenerator
         if (polygons.Count == 0)
             return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
 
-        var mesh = BuildMesh(polygons, template, p.TrianglesOnly, out int dropped);
+        var mesh = BuildMesh(polygons, template, createMesh, p.TrianglesOnly, out int dropped);
 
         // Self-check: vertices and face centres still inside a cut (should be none)
         int insideCut = 0;
@@ -548,19 +553,20 @@ public static class NavigationGenerator
     /// share a border share its edges; each edge runs from its corner to the next, and inner edges are named by the
     /// edge and face on their other side.
     /// </summary>
-    private static hkaiNavMesh BuildMesh(List<List<Vector3>> polygons, hkaiNavMesh template, bool trianglesOnly, out int dropped)
+    private static IHavokNavMeshEdit BuildMesh(List<List<Vector3>> polygons, IHavokNavMeshEdit template, Func<IHavokNavMeshEdit> createMesh,
+        bool trianglesOnly, out int dropped)
     {
         var templateFace = template?.m_faces.FirstOrDefault();
         float w = template?.m_vertices.FirstOrDefault().W ?? 1f;
 
-        var mesh = new hkaiNavMesh
-        {
-            m_faceDataStriding = 1,
-            m_edgeDataStriding = 1,
-            m_flags = template?.m_flags ?? 0,
-            m_erosionRadius = 0,
-            m_userData = template?.m_userData ?? 0,
-        };
+        // A mesh of the template's class set, so its files can take the mesh's faces and edges as they are
+        var mesh = template?.CreateEmpty() ?? createMesh?.Invoke()
+            ?? throw new InvalidOperationException("A generated navmesh needs a template mesh, or a way to make one, for its class set.");
+        mesh.m_faceDataStriding = 1;
+        mesh.m_edgeDataStriding = 1;
+        mesh.m_flags = template?.m_flags ?? 0;
+        mesh.m_erosionRadius = 0;
+        mesh.m_userData = template?.m_userData ?? 0;
 
         // Welded vertices: a corner within 1 mm of a vertex is that vertex (the voxels are far coarser, so no real corners
         // meet), found among the neighbouring cells of a 1 mm hash, so two points either side of a cell border still meet
@@ -810,15 +816,8 @@ public static class NavigationGenerator
 
         foreach (var corners in faces)
         {
-            var face = new hkaiNavMesh.Face
-            {
-                m_startEdgeIndex = mesh.m_edges.Count,
-                m_numEdges = (short)corners.Count,
-                m_startUserEdgeIndex = -1,
-                m_numUserEdges = 0,
-                m_clusterIndex = templateFace?.m_clusterIndex ?? -1,
-                m_padding = templateFace?.m_padding ?? 0,
-            };
+            var face = mesh.NewFace(mesh.m_edges.Count, (short)corners.Count, -1, 0,
+                templateFace?.m_clusterIndex ?? -1, templateFace?.m_padding ?? 0);
 
             int faceIndex = mesh.m_faces.Count;
             mesh.m_faces.Add(face);
@@ -829,15 +828,7 @@ public static class NavigationGenerator
                 int a = corners[k], b = corners[(k + 1) % corners.Count];
                 // An edge two faces share the same way round can't pair: it stays on the boundary (-1)
                 byVertices[(a, b)] = byVertices.ContainsKey((a, b)) ? -1 : mesh.m_edges.Count;
-                mesh.m_edges.Add(new hkaiNavMesh.Edge
-                {
-                    m_a = a,
-                    m_b = b,
-                    m_oppositeEdge = 0xFFFFFFFF,
-                    m_oppositeFace = 0xFFFFFFFF,
-                    m_flags = hkaiNavMesh.EdgeFlagBits.EDGE_ORIGINAL,
-                    m_userEdgeCost = 0,
-                });
+                mesh.m_edges.Add(mesh.NewEdge(a, b, 0xFFFFFFFF, 0xFFFFFFFF, HavokNavEdgeFlags.EDGE_ORIGINAL, 0));
                 mesh.m_edgeData.Add(0);
                 edgeFace.Add(faceIndex);
             }
@@ -863,11 +854,7 @@ public static class NavigationGenerator
             max = Vector3.Max(max, point);
         }
 
-        mesh.m_aabb = new hkAabb
-        {
-            m_min = new Vector4(min, template?.m_aabb.m_min.W ?? 1f),
-            m_max = new Vector4(max, template?.m_aabb.m_max.W ?? 1f),
-        };
+        mesh.m_aabb.Set(new Vector4(min, template?.m_aabb.m_min.W ?? 1f), new Vector4(max, template?.m_aabb.m_max.W ?? 1f));
 
         return mesh;
     }
@@ -950,14 +937,15 @@ public static class NavGenFile
     /// mediator) with its mesh replaced, a new face tree for the mediator, and no clearance seeding or user edge setups.
     /// Null when the template has no mediator.
     /// </summary>
-    public static Havok.HavokDocument Build(Havok.HavokDocument template, hkaiNavMesh generated)
+    public static Havok.HavokDocument Build(Havok.HavokDocument template, IHavokNavMeshEdit generated)
     {
         var copy = NavModelEdit.Clone(template);
-        var mesh = copy.ObjectsOf<hkaiNavMesh>().FirstOrDefault();
-        var mediator = copy.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>().FirstOrDefault();
-        var tree = mediator?.m_tree?.m_treePtr;
+        var mesh = copy.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault();
+        // hk2018 holds the face tree in a query mediator, hk2019 in the mesh's own cached face iterator
+        var mediator = copy.ObjectsOf<IHavokNavMeshQueryMediator>().FirstOrDefault();
+        var tree = mediator != null ? mediator.FaceTree : mesh?.CachedFaceTree;
 
-        if (mesh == null || tree == null)
+        if (mesh == null || tree is not { HasNodes: true })
             return null;
 
         mesh.m_faces.Clear();
@@ -970,25 +958,30 @@ public static class NavGenFile
         mesh.m_faceData.AddRange(generated.m_faceData);
         mesh.m_edgeData.Clear();
         mesh.m_edgeData.AddRange(generated.m_edgeData);
-        mesh.m_streamingSets.Clear();
+        mesh.ClearStreamingSets();
         mesh.m_faceDataStriding = generated.m_faceDataStriding;
         mesh.m_edgeDataStriding = generated.m_edgeDataStriding;
-        mesh.m_aabb = generated.m_aabb;
+        mesh.m_aabb.Set(generated.m_aabb.m_min, generated.m_aabb.m_max);
         mesh.m_erosionRadius = generated.m_erosionRadius;
-        mesh.m_clearanceCacheSeedingDataSet = null;
+        mesh.DropClearanceSeeding();
 
-        mediator.m_navMesh = mesh;
-        tree.m_tree = NavigationTree.Build(mesh);
+        if (mediator != null)
+            mediator.NavMesh = mesh;
+        NavigationTree.Build(mesh).WriteTo(tree);
 
-        if (copy.Root is hkRootLevelContainer root)
-            root.m_namedVariants.RemoveAll(v => !ReferenceEquals(v.m_variant, mesh) && !ReferenceEquals(v.m_variant, mediator));
+        if (copy.Root is IHavokRootContainerEdit root)
+            root.KeepOnly(v => ReferenceEquals(v, mesh) || ReferenceEquals(v, mediator));
 
         return NavModelEdit.Clone(copy);
     }
 
-    /// <summary>A file of the map to build generated files from: one with faces and a query mediator.</summary>
+    /// <summary>
+    /// A file of the map to build generated files from: one with faces and a face tree (a query mediator in hk2018,
+    /// a cached face iterator in hk2019).
+    /// </summary>
     public static Havok.HavokDocument FindTemplate(NavigationMap map)
         => map.Files.Values.Where(f => f.FaceCount > 0 && f.Document != null)
             .Select(f => f.Document)
-            .FirstOrDefault(d => d.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>().Any());
+            .FirstOrDefault(d => d.ObjectsOf<IHavokNavMeshQueryMediator>().Any()
+                || d.ObjectsOf<IHavokNavMeshEdit>().Any(m => m.CachedFaceTree != null));
 }

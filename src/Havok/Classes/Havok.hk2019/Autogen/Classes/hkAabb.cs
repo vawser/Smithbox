@@ -2,7 +2,7 @@
 
 namespace Havok.hk2019;
 
-public class hkAabb : IHavokObject
+public partial class hkAabb : IHavokObject
 {
     public Vector4 m_min = new();
 

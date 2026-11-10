@@ -1,3 +1,4 @@
+using Havok.Shared;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -510,8 +511,10 @@ public partial class NavigationTool
 
             try
             {
-                n = NavigationGenerator.Generate(triangles, pn, nTemplate, blockers);
-                o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers);
+                // Without a template mesh, the meshes are made in the class set of the file they go into
+                Func<IHavokNavMeshEdit> createMesh = () => template?.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault()?.CreateEmpty();
+                n = NavigationGenerator.Generate(triangles, pn, nTemplate, blockers, createMesh);
+                o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers, createMesh);
                 error = n.Error ?? o.Error;
 
                 if (error == null)

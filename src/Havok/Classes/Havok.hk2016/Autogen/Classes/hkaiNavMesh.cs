@@ -31,7 +31,7 @@ public partial class hkaiNavMesh : hkReferencedObject
     public hkaiNavMeshClearanceCacheSeeding.CacheDataSet? m_clearanceCacheSeedingDataSet;
 
 
-    public class Edge : IHavokObject
+    public partial class Edge : IHavokObject
     {
         public int m_a;
 
@@ -47,7 +47,7 @@ public partial class hkaiNavMesh : hkReferencedObject
 
     }
 
-    public class Face : IHavokObject
+    public partial class Face : IHavokObject
     {
         public int m_startEdgeIndex;
 

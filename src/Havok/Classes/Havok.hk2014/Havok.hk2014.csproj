@@ -15,6 +15,14 @@
         <NoWarn>$(NoWarn);CS8618;CS8600;CS8601;CS8602;CS8603;CS8604;CS8625;CS8933;CS0108;CS0109</NoWarn>
     </PropertyGroup>
 
+    <!-- The Navigation tool's editable navmesh views: one source shared by every class set with navmeshes, HK2014 selects this one -->
+    <PropertyGroup>
+        <DefineConstants>$(DefineConstants);HK2014</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="..\Shared\NavMeshEdit.cs" Link="Manual\NavMeshEdit.cs" />
+    </ItemGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\..\Havok.Core\Havok.Core.csproj" />
         <ProjectReference Include="..\..\Havok.Formats\Havok.Formats.csproj" />

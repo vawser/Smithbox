@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -213,7 +213,7 @@ public static class NavModelEdit
             result.Files.Add(new NavFileChange(name, before, copy));
 
             var entry = slot.Entry(set);
-            entry.FaceCount = copy.ObjectsOf<hkaiNavMesh>().First().m_faces.Count;
+            entry.FaceCount = copy.ObjectsOf<IHavokNavMeshEdit>().First().m_faces.Count;
             entry.Unk4C = 0;
         }
 
@@ -294,7 +294,7 @@ public static class NavModelEdit
             var name = NavigationMap.MeshName(map.NameBase, set, entry.ModelID);
             result.Files.Add(new NavFileChange(name, map.Files.GetValueOrDefault(name)?.Document, document));
 
-            entry.FaceCount = document.ObjectsOf<hkaiNavMesh>().First().m_faces.Count;
+            entry.FaceCount = document.ObjectsOf<IHavokNavMeshEdit>().First().m_faces.Count;
             entry.Unk4C = entry.FaceCount == 0 ? 1 : 0;
         }
 
@@ -355,10 +355,10 @@ public static class NavModelEdit
         }
 
         var templateN = list.FirstOrDefault(e => NavigationMap.SetOf(e) == NavmeshSet.N);
-        var templateO = templateN == null ? null : list.FirstOrDefault(e => (uint)e.NameID == (uint)templateN.NameID + 2_000_000_000u);
+        var templateO = templateN == null ? null : list.FirstOrDefault(e => (uint)e.NameID == map.Profile.MirrorOf((uint)templateN.NameID));
 
         uint nameId = map.ExpectedNameId(nCount);
-        if (list.Any(e => (uint)e.NameID == nameId || (uint)e.NameID == nameId + 2_000_000_000u))
+        if (list.Any(e => (uint)e.NameID == nameId || (uint)e.NameID == map.Profile.MirrorOf(nameId)))
         {
             result.Error = "MAP_Navigation_Model_Error_Add_NameID";
             return result;
@@ -371,7 +371,7 @@ public static class NavModelEdit
                     gate.ConnectedNavmeshIndex++;
 
         var nEntry = NewEntry(templateN, (int)nameId, modelId, n);
-        var oEntry = NewEntry(templateO ?? templateN, (int)(nameId + 2_000_000_000u), modelId, o);
+        var oEntry = NewEntry(templateO ?? templateN, (int)map.Profile.MirrorOf(nameId), modelId, o);
 
         list.Insert(nCount, nEntry);
         list.Add(oEntry);
@@ -409,7 +409,7 @@ public static class NavModelEdit
 
         entry.NameID = nameId;
         entry.ModelID = modelId;
-        entry.FaceCount = document.ObjectsOf<hkaiNavMesh>().First().m_faces.Count;
+        entry.FaceCount = document.ObjectsOf<IHavokNavMeshEdit>().First().m_faces.Count;
         entry.Unk4C = entry.FaceCount == 0 ? 1 : 0;
         entry.GateNodes = new List<NVA.GateNode>();
         entry.ConnectedNavmeshes = new List<int>();
@@ -481,18 +481,18 @@ public static class NavModelEdit
     public static Havok.HavokDocument EmptyCopy(Havok.HavokDocument document)
     {
         var copy = Clone(document);
-        var mesh = copy.ObjectsOf<hkaiNavMesh>().First();
+        var mesh = copy.ObjectsOf<IHavokNavMeshEdit>().First();
 
         mesh.m_faces.Clear();
         mesh.m_edges.Clear();
         mesh.m_vertices.Clear();
         mesh.m_faceData.Clear();
         mesh.m_edgeData.Clear();
-        mesh.m_streamingSets.Clear();
-        mesh.m_clearanceCacheSeedingDataSet = null;
+        mesh.ClearStreamingSets();
+        mesh.DropClearanceSeeding();
 
-        if (copy.Root is hkRootLevelContainer root)
-            root.m_namedVariants.RemoveAll(v => !ReferenceEquals(v.m_variant, mesh));
+        if (copy.Root is IHavokRootContainerEdit root)
+            root.KeepOnly(v => ReferenceEquals(v, mesh));
 
         return Clone(copy);
     }
@@ -511,7 +511,7 @@ public static class NavModelEdit
 
         var shift = new Vector4(offset, 0);
 
-        foreach (var mesh in copy.ObjectsOf<hkaiNavMesh>())
+        foreach (var mesh in copy.ObjectsOf<IHavokNavMeshEdit>())
         {
             for (int i = 0; i < mesh.m_vertices.Count; i++)
                 mesh.m_vertices[i] += shift;
@@ -520,35 +520,20 @@ public static class NavModelEdit
             mesh.m_aabb.m_max += shift;
         }
 
-        foreach (var mediator in copy.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>())
+        // Each face tree's root box (hk2018's mediators, hk2019's cached face iterators): the nodes follow it
+        var trees = copy.ObjectsOf<IHavokNavMeshQueryMediator>().Select(m => m.FaceTree)
+            .Concat(copy.ObjectsOf<IHavokNavMeshEdit>().Select(m => m.CachedFaceTree))
+            .Where(t => t is { HasNodes: true }).Distinct();
+
+        foreach (var tree in trees)
         {
-            var domain = mediator.m_tree?.m_treePtr?.m_tree?.m_domain;
-            if (domain == null)
-                continue;
-            domain.m_min += shift;
-            domain.m_max += shift;
+            tree.DomainMin += shift;
+            tree.DomainMax += shift;
         }
 
-        foreach (var setups in copy.ObjectsOf<hkaiUserEdgeSetupArray>())
-        {
-            foreach (var setup in setups.m_edgeSetups)
-            {
-                if (setup.m_space != hkaiUserEdgeUtils.UserEdgeSetupSpace.USER_EDGE_SPACE_WORLD)
-                    continue;
-
-                setup.m_obbA.m_transform = Translate(setup.m_obbA.m_transform, offset);
-                setup.m_obbB.m_transform = Translate(setup.m_obbB.m_transform, offset);
-            }
-        }
+        foreach (var setups in copy.ObjectsOf<IHavokNavUserEdgeSetups>())
+            setups.TranslateWorldSpace(offset);
 
         return copy;
-    }
-
-    private static Matrix4x4 Translate(Matrix4x4 m, Vector3 offset)
-    {
-        m.M41 += offset.X;
-        m.M42 += offset.Y;
-        m.M43 += offset.Z;
-        return m;
     }
 }

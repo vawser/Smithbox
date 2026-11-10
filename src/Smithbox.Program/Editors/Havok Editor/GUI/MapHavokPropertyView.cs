@@ -143,8 +143,8 @@ public class MapHavokPropertyView
             return;
         }
 
-        // ER: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
-        if (ent.WrappedObject is NVA.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER)
+        // ER and NR: the file is named by the NVA entry, as the Map Editor's drawing names it (set, quarter, _00 name base)
+        if (ent.WrappedObject is NVA.Navmesh erEntry && Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             NavmeshPropEditorER(erEntry);
             return;
@@ -211,7 +211,8 @@ public class MapHavokPropertyView
         var mapName = _editedMap.Name;
         var nva = _editedMap.NavmeshParent?.WrappedObject as NVA;
         var set = NavmeshEditType is MapNavmeshEditType.O ? NavmeshSet.O : NavmeshSet.N;
-        var target = NavigationMap.EntryInSet(nva, entry, set);
+        var profile = NavGameProfile.For(Project.Descriptor.ProjectType.ToString());
+        var target = NavigationMap.EntryInSet(nva, entry, set, profile);
 
         if (target == null)
         {
@@ -220,7 +221,8 @@ public class MapHavokPropertyView
         }
 
         // Looked up in this map: a _10 tile named after its _00 tile has files of the same names as that tile
-        var fullName = NavigationMap.FileNameFromEntry(mapName, target);
+        // NR names an open world tile version's files from the binder's names (its NameIDs have no _DD); ER from the NameID
+        var fullName = NavigationMap.FileNameFromEntry(mapName, target, profile, profile.NameIdNamesTileVersion ? null : View.HavokNavmeshBank.GetBinderFileNames(mapName));
         var curNavmesh = View.HavokNavmeshBank.GetDocument(mapName, fullName)?.Root as IRootContainer;
 
         if (curNavmesh == null)

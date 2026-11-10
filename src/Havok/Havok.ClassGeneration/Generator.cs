@@ -296,9 +296,11 @@ internal class Generator
             uniqueName = name + "_" + i;
         }
 
+        // Named on the partial list by its relative name: the bare name of a top-level class, and Outer.Name for a nested
+        // one (hkaiNavMesh.Face), whose outer class must be on the list too, as a nested partial needs a partial outer
         Decl decl = new(uniqueName, ns, outer, kind)
         {
-            Partial = outer is null && ns.Length == 0 && PartialClasses.Contains(uniqueName)
+            Partial = PartialClasses.Contains(GetRelativeName(uniqueName, ns, outer))
         };
 
         string dataName = decl.FlatName;

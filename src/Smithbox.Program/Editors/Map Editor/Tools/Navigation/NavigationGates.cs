@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -155,7 +155,7 @@ public static class NavGates
 
     #region Sites
 
-    private static Vector3 V(hkaiNavMesh mesh, int i)
+    private static Vector3 V(IHavokNavMeshEdit mesh, int i)
     {
         var v = mesh.m_vertices[i];
         return new Vector3(v.X, v.Y, v.Z);
@@ -272,7 +272,7 @@ public static class NavGates
     /// where there is no walk. The walk goes from edge middle to edge middle across faces (blocked edges are skipped,
     /// unblocked user edges are taken), so it is a little longer than the game's.
     /// </summary>
-    public static float[,] WalkingDistances(hkaiNavMesh mesh, Matrix4x4 toMap, IReadOnlyList<Vector3> points)
+    public static float[,] WalkingDistances(IHavokNavMeshEdit mesh, Matrix4x4 toMap, IReadOnlyList<Vector3> points)
     {
         int n = points.Count;
         var result = new float[n, n];
@@ -293,7 +293,7 @@ public static class NavGates
         for (int f = 0; f < centres.Length; f++)
             centres[f] = NavigationOverlayBuilder.FaceCentre(mesh, f);
 
-        int blocked = (int)hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED;
+        int blocked = (int)HavokNavEdgeFlags.EDGE_BLOCKED;
 
         for (int i = 0; i < n; i++)
         {
@@ -368,7 +368,7 @@ public static class NavGates
     }
 
     /// <summary>The face whose edges come nearest a point (a gate sits on a boundary edge of it), or -1.</summary>
-    private static int FaceOfPoint(hkaiNavMesh mesh, Vector3 p)
+    private static int FaceOfPoint(IHavokNavMeshEdit mesh, Vector3 p)
     {
         int bestFace = -1;
         float bestDistance = float.MaxValue;

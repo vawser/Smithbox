@@ -22,7 +22,8 @@ string registryPath = args[1];
 Options.Namespace = args[2];
 string outputDirectory = Path.Join(args[3], "Autogen");
 
-// the rest: partial class names, and "--overlay <xml>" for each game variant whose fields the classes must also hold
+// the rest: partial class names (a nested class as Outer.Name), and "--overlay <xml>" for each game variant whose fields
+// the classes must also hold
 List<string> overlays = new();
 for (int i = 4; i < args.Length; i++)
 {

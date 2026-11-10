@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -280,7 +280,7 @@ public static class NavStitchPlanner
     }
 
     /// <summary>The face exists, and the edge is one of its own and on the boundary.</summary>
-    private static bool Fits(hkaiNavMesh mesh, int face, int edge)
+    private static bool Fits(IHavokNavMeshEdit mesh, int face, int edge)
     {
         if (face < 0 || face >= mesh.m_faces.Count || edge < 0 || edge >= mesh.m_edges.Count)
             return false;

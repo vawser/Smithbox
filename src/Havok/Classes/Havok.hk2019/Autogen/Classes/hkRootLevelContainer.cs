@@ -4,7 +4,7 @@ using Havok.Shared;
 
 namespace Havok.hk2019;
 
-public class hkRootLevelContainer : IHavokObject, IRootContainer
+public partial class hkRootLevelContainer : IHavokObject, IRootContainer
 {
     public List<hkRootLevelContainer.NamedVariant> m_namedVariants = new();
 

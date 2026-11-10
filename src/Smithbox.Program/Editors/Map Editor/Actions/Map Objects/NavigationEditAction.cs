@@ -1,3 +1,4 @@
+using Havok.Shared;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,7 @@ public class NavigationEditAction : ViewportAction
         if (change.Edge >= mesh.m_edges.Count)
             return;
 
-        mesh.m_edges[change.Edge].m_flags = (Havok.hk2018.hkaiNavMesh.EdgeFlagBits)(after ? change.FlagsAfter : change.FlagsBefore);
+        mesh.m_edges[change.Edge].m_flags = (HavokNavEdgeFlags)(after ? change.FlagsAfter : change.FlagsBefore);
 
         int index = change.Edge * Math.Max(1, mesh.m_edgeDataStriding);
         if (mesh.m_edgeDataStriding > 0 && index < mesh.m_edgeData.Count)

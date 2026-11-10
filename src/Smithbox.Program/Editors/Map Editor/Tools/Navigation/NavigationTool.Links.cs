@@ -1,3 +1,4 @@
+using Havok.Shared;
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using System;
@@ -132,7 +133,7 @@ public partial class NavigationTool
     }
 
     /// <summary>Makes a link edit to a face's navmesh file and records it as one undoable action.</summary>
-    private void EditLinks(NavFaceHit hit, Func<Havok.hk2018.hkaiNavMesh, NavUserEdgeResult> edit)
+    private void EditLinks(NavFaceHit hit, Func<IHavokNavMeshEdit, NavUserEdgeResult> edit)
     {
         if (OverlayContainer == null || OverlayNavigation == null)
             return;

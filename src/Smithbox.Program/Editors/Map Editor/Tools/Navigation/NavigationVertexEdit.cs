@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ public sealed class NavVertexFile
         SetWorld(world);
     }
 
-    public hkaiNavMesh Mesh => File.Mesh;
+    public IHavokNavMeshEdit Mesh => File.Mesh;
 
     /// <summary>Places the file in the viewport; false if the transform can't be inverted (it is then left as it was).</summary>
     public bool SetWorld(Matrix4x4 world)
@@ -286,7 +286,7 @@ public sealed class NavVertexFile
     /// A mesh to draw the edit with: the file's faces, edges and data, with the edited vertices. It shares the file's
     /// lists, so it must only be read.
     /// </summary>
-    public hkaiNavMesh PreviewMesh()
+    public IHavokNavMeshEdit PreviewMesh()
     {
         var mesh = Mesh;
         var vertices = new List<Vector4>(Vertices.Length);
@@ -294,16 +294,7 @@ public sealed class NavVertexFile
         for (int i = 0; i < Vertices.Length; i++)
             vertices.Add(new Vector4(Vertices[i], mesh.m_vertices[i].W));
 
-        return new hkaiNavMesh
-        {
-            m_faces = mesh.m_faces,
-            m_edges = mesh.m_edges,
-            m_vertices = vertices,
-            m_faceData = mesh.m_faceData,
-            m_edgeData = mesh.m_edgeData,
-            m_faceDataStriding = mesh.m_faceDataStriding,
-            m_edgeDataStriding = mesh.m_edgeDataStriding,
-        };
+        return mesh.ShallowWithVertices(vertices);
     }
 }
 
@@ -327,7 +318,7 @@ public static class NavVertexEdit
         clearance = new NavClearanceResult();
 
         var copy = NavModelEdit.Clone(document);
-        var mesh = copy.ObjectsOf<hkaiNavMesh>().FirstOrDefault();
+        var mesh = copy.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault();
 
         if (mesh == null || mesh.m_vertices.Count != vertices.Count)
             return null;
@@ -367,14 +358,11 @@ public static class NavVertexEdit
             mesh.m_aabb.m_max = new Vector4(aabbMax, mesh.m_aabb.m_max.W);
         }
 
-        foreach (var mediator in copy.ObjectsOf<hkaiStaticTreeNavMeshQueryMediator>())
+        // Each face tree over the mesh (hk2018's query mediators, hk2019's cached face iterator) is built again
+        if (mesh.m_faces.Count > 0)
         {
-            var tree = mediator.m_tree?.m_treePtr;
-
-            if (tree == null || !ReferenceEquals(mediator.m_navMesh, mesh) || mesh.m_faces.Count == 0)
-                continue;
-
-            tree.m_tree = NavigationTree.Build(mesh);
+            foreach (var tree in NavigationTree.TreesOf(copy, mesh))
+                NavigationTree.Build(mesh).WriteTo(tree);
         }
 
         clearance = NavClearance.Recalculate(mesh, before, moved);

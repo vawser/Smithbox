@@ -50,7 +50,7 @@ public partial class NavigationTool
 
     private NavigationBank Bank => View.NavigationBank;
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
 
     private List<MapContainer> LoadedMaps()
     {

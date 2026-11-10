@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ public sealed record NavStitchParameters
 }
 
 /// <summary>A navmesh placed for stitching: its NameID, its mesh, and where it sits relative to the other meshes.</summary>
-public sealed record NavStitchMesh(int NameID, hkaiNavMesh Mesh, Vector3 Offset, string MapId);
+public sealed record NavStitchMesh(int NameID, IHavokNavMeshEdit Mesh, Vector3 Offset, string MapId);
 
 /// <summary>A connection found between an edge of one mesh and an edge of another.</summary>
 public readonly record struct NavStitchPair(string MapA, int NameA, int FaceA, int EdgeA, string MapB, int NameB, int FaceB, int EdgeB);
@@ -80,7 +80,7 @@ public static class NavigationStitch
         }
     }
 
-    private static Vector3 Vertex(hkaiNavMesh mesh, int index)
+    private static Vector3 Vertex(IHavokNavMeshEdit mesh, int index)
     {
         var v = mesh.m_vertices[index];
         return new Vector3(v.X, v.Y, v.Z);

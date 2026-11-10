@@ -1,6 +1,4 @@
-using Havok.hk2018;
-using Havok.hk2018.hkcdCompressedAabbCodecs;
-using Havok.hk2018.hkcdStaticTree;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +14,21 @@ namespace StudioCore.Editors.MapEditor;
 // - an inner node has bit 0x80 of m_hiData set; its left child is the next node, its right child is
 //   ((m_hiData & 0x7F) << 16 | m_loData) × 2 nodes further on;
 // - a leaf holds its face index in the same 23 bits.
+// The tree is held as NavFaceTreeData, read from and written to a file's tree through Havok.Shared's IHavokNavFaceTree,
+// so it works for every class set that has one (hk2018's query mediator, hk2019's cached face iterator).
 
 /// <summary>A decoded node of a navmesh face tree.</summary>
 public readonly record struct NavTreeNode(int Index, Vector3 Min, Vector3 Max, bool IsLeaf, int Face, int Left, int Right);
+
+/// <summary>A face tree as stored: its domain (the root's box) and its encoded nodes.</summary>
+public sealed record NavFaceTreeData(Vector4 DomainMin, Vector4 DomainMax, IReadOnlyList<HavokNavTreeNode> Nodes)
+{
+    /// <summary>The tree a file holds.</summary>
+    public static NavFaceTreeData Of(IHavokNavFaceTree tree) => new(tree.DomainMin, tree.DomainMax, tree.GetNodes());
+
+    /// <summary>Puts this tree into a file's tree, in place of the nodes and domain it has.</summary>
+    public void WriteTo(IHavokNavFaceTree tree) => tree.SetNodes(DomainMin, DomainMax, Nodes);
+}
 
 public static class NavigationTree
 {
@@ -31,8 +41,30 @@ public static class NavigationTree
         public int Face = -1;
     }
 
+    /// <summary>
+    /// The face trees of a file that index one of its meshes, each with nodes to hold: hk2018's query mediators that name
+    /// the mesh, and hk2019's cached face iterator of the mesh itself.
+    /// </summary>
+    public static List<IHavokNavFaceTree> TreesOf(Havok.HavokDocument document, IHavokNavMeshEdit mesh)
+    {
+        var trees = new List<IHavokNavFaceTree>();
+
+        foreach (var mediator in document.ObjectsOf<IHavokNavMeshQueryMediator>())
+            if (ReferenceEquals(mediator.NavMesh, mesh) && mediator.FaceTree is { HasNodes: true } tree)
+                trees.Add(tree);
+
+        if (mesh.CachedFaceTree is { HasNodes: true } own && !trees.Contains(own))
+            trees.Add(own);
+
+        return trees;
+    }
+
+    /// <summary>Whether a file has a face tree over any of its meshes (a query mediator in hk2018).</summary>
+    public static bool HasTree(Havok.HavokDocument document)
+        => document.ObjectsOf<IHavokNavMeshEdit>().Any(m => TreesOf(document, m).Count > 0);
+
     /// <summary>The bounds of each face of a mesh, from its corners.</summary>
-    public static (Vector3 Min, Vector3 Max)[] FaceBounds(hkaiNavMesh mesh)
+    public static (Vector3 Min, Vector3 Max)[] FaceBounds(IHavokNavMeshEdit mesh)
     {
         var bounds = new (Vector3, Vector3)[mesh.m_faces.Count];
 
@@ -56,20 +88,29 @@ public static class NavigationTree
     /// Builds the face tree of a mesh: a binary tree with one face per leaf, split at the median of the longest axis of
     /// the face centres, encoded with each box rounded outwards so it always holds its faces.
     /// </summary>
-    public static Aabb6BytesTree Build(hkaiNavMesh mesh)
+    public static NavFaceTreeData Build(IHavokNavMeshEdit mesh)
     {
-        var tree = new Aabb6BytesTree();
         var bounds = FaceBounds(mesh);
 
+        // An empty tree keeps the zero domain a new tree has
         if (bounds.Length == 0)
-            return tree;
+            return new NavFaceTreeData(default, default, Array.Empty<HavokNavTreeNode>());
 
         var faces = Enumerable.Range(0, bounds.Length).ToArray();
         var root = Split(bounds, faces, 0, faces.Length);
 
-        tree.m_domain = new hkAabb { m_min = new Vector4(root.Min, 1), m_max = new Vector4(root.Max, 1) };
-        Encode(tree.m_nodes, root, root.Min, root.Max, true);
-        return tree;
+        var codecs = new List<Codec>();
+        Encode(codecs, root, root.Min, root.Max, true);
+        return new NavFaceTreeData(new Vector4(root.Min, 1), new Vector4(root.Max, 1),
+            codecs.Select(c => new HavokNavTreeNode(c.Xyz[0], c.Xyz[1], c.Xyz[2], c.HiData, c.LoData)).ToList());
+    }
+
+    /// <summary>A node being encoded: its fields are filled in after its children are placed.</summary>
+    private sealed class Codec
+    {
+        public readonly byte[] Xyz = new byte[3];
+        public byte HiData;
+        public ushort LoData;
     }
 
     private static Node Split((Vector3 Min, Vector3 Max)[] bounds, int[] faces, int start, int count)
@@ -139,34 +180,34 @@ public static class NavigationTree
         return (min, max);
     }
 
-    private static void Encode(List<Aabb6BytesCodec> nodes, Node node, Vector3 parentMin, Vector3 parentMax, bool root)
+    private static void Encode(List<Codec> nodes, Node node, Vector3 parentMin, Vector3 parentMax, bool root)
     {
         int index = nodes.Count;
-        var codec = new Aabb6BytesCodec();
+        var codec = new Codec();
         nodes.Add(codec);
 
         if (!root)
         {
-            codec.m_xyz[0] = CompressAxis(node.Min.X, node.Max.X, parentMin.X, parentMax.X);
-            codec.m_xyz[1] = CompressAxis(node.Min.Y, node.Max.Y, parentMin.Y, parentMax.Y);
-            codec.m_xyz[2] = CompressAxis(node.Min.Z, node.Max.Z, parentMin.Z, parentMax.Z);
+            codec.Xyz[0] = CompressAxis(node.Min.X, node.Max.X, parentMin.X, parentMax.X);
+            codec.Xyz[1] = CompressAxis(node.Min.Y, node.Max.Y, parentMin.Y, parentMax.Y);
+            codec.Xyz[2] = CompressAxis(node.Min.Z, node.Max.Z, parentMin.Z, parentMax.Z);
         }
 
         // The children are encoded within the box as stored, not as built
-        var (min, max) = Decompress(codec.m_xyz, parentMin, parentMax);
+        var (min, max) = Decompress(codec.Xyz, parentMin, parentMax);
 
         if (node.Face >= 0)
         {
-            codec.m_loData = (ushort)(node.Face & 0xFFFF);
-            codec.m_hiData = (byte)((node.Face >> 16) & 0x7F);
+            codec.LoData = (ushort)(node.Face & 0xFFFF);
+            codec.HiData = (byte)((node.Face >> 16) & 0x7F);
             return;
         }
 
         Encode(nodes, node.Left, min, max, false);
 
         int offset = (nodes.Count - index) / 2;
-        codec.m_loData = (ushort)(offset & 0xFFFF);
-        codec.m_hiData = (byte)(((offset >> 16) & 0x7F) | 0x80);
+        codec.LoData = (ushort)(offset & 0xFFFF);
+        codec.HiData = (byte)(((offset >> 16) & 0x7F) | 0x80);
 
         // The offset is stored halved, so the right child must sit an even number of nodes on: it does, as the left
         // subtree, a binary tree with one face per leaf, has an odd number of nodes (2n − 1)
@@ -174,28 +215,28 @@ public static class NavigationTree
     }
 
     /// <summary>The nodes of a tree, decoded from the root (its domain).</summary>
-    public static List<NavTreeNode> Decode(Aabb6BytesTree tree)
+    public static List<NavTreeNode> Decode(NavFaceTreeData tree)
     {
         var result = new List<NavTreeNode>();
-        if (tree.m_nodes.Count == 0)
+        if (tree.Nodes.Count == 0)
             return result;
 
-        var min = new Vector3(tree.m_domain.m_min.X, tree.m_domain.m_min.Y, tree.m_domain.m_min.Z);
-        var max = new Vector3(tree.m_domain.m_max.X, tree.m_domain.m_max.Y, tree.m_domain.m_max.Z);
+        var min = new Vector3(tree.DomainMin.X, tree.DomainMin.Y, tree.DomainMin.Z);
+        var max = new Vector3(tree.DomainMax.X, tree.DomainMax.Y, tree.DomainMax.Z);
         var stack = new Stack<(int Index, Vector3 Min, Vector3 Max)>();
         stack.Push((0, min, max));
 
         while (stack.Count > 0)
         {
             var (i, pmin, pmax) = stack.Pop();
-            if (i < 0 || i >= tree.m_nodes.Count)
+            if (i < 0 || i >= tree.Nodes.Count)
                 continue;
 
-            var codec = tree.m_nodes[i];
-            var (nmin, nmax) = Decompress(codec.m_xyz, pmin, pmax);
-            int data = ((codec.m_hiData & 0x7F) << 16) | codec.m_loData;
+            var codec = tree.Nodes[i];
+            var (nmin, nmax) = Decompress(new[] { codec.X, codec.Y, codec.Z }, pmin, pmax);
+            int data = ((codec.HiData & 0x7F) << 16) | codec.LoData;
 
-            if ((codec.m_hiData & 0x80) != 0)
+            if ((codec.HiData & 0x80) != 0)
             {
                 int right = i + data * 2;
                 result.Add(new NavTreeNode(i, nmin, nmax, false, -1, i + 1, right));
@@ -215,14 +256,14 @@ public static class NavigationTree
     /// Whether a tree holds every face of a mesh once, each inside its leaf's box (within a tolerance). Returns a
     /// description of the first problem, or null.
     /// </summary>
-    public static string Check(Aabb6BytesTree tree, hkaiNavMesh mesh, float tolerance = 1e-3f)
+    public static string Check(NavFaceTreeData tree, IHavokNavMeshEdit mesh, float tolerance = 1e-3f)
     {
         var bounds = FaceBounds(mesh);
         var seen = new int[bounds.Length];
         var nodes = Decode(tree);
 
-        if (nodes.Count != tree.m_nodes.Count)
-            return $"{nodes.Count} of {tree.m_nodes.Count} nodes reached";
+        if (nodes.Count != tree.Nodes.Count)
+            return $"{nodes.Count} of {tree.Nodes.Count} nodes reached";
 
         foreach (var node in nodes.Where(n => n.IsLeaf))
         {

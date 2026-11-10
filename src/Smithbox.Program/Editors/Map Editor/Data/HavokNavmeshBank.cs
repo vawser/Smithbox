@@ -102,6 +102,49 @@ public class HavokNavmeshBank
         return MapNavmeshes.TryGetValue(mapId, out var names) ? names : Array.Empty<string>();
     }
 
+    /// <summary>The binder file names read by <see cref="GetBinderFileNames"/>, by map.</summary>
+    private readonly Dictionary<string, IReadOnlyList<string>> BinderFileNames = new();
+
+    /// <summary>
+    /// The names of a map's navmesh files (without extension), from its binder's headers only, so nothing is read as
+    /// Havok: for naming the files of NR open world tile versions (_10, _20…), whose NameIDs don't say whether the
+    /// files carry the _00 tile's name. The names already read when the map's navmeshes have been. Cached per map.
+    /// </summary>
+    public IReadOnlyList<string> GetBinderFileNames(string mapId)
+    {
+        if (MapNavmeshes.TryGetValue(mapId, out var read))
+            return read;
+
+        if (BinderFileNames.TryGetValue(mapId, out var cached))
+            return cached;
+
+        var names = new List<string>();
+        var binderEntry = Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Filename == mapId && e.Extension == "nvmhktbnd");
+
+        try
+        {
+            if (binderEntry != null && Project.VFS.FS.FileExists(binderEntry.Path))
+            {
+                var binderData = Project.VFS.ProjectFS.FileExists(binderEntry.Path)
+                    ? Project.VFS.ProjectFS.ReadFile(binderEntry.Path)
+                    : Project.VFS.FS.ReadFile(binderEntry.Path);
+
+                if (binderData != null)
+                {
+                    using var binder = new BND4Reader(binderData.Value);
+                    names.AddRange(binder.Files.Select(f => Path.GetFileNameWithoutExtension(f.Name)));
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_NVA", binderEntry?.Path), e);
+        }
+
+        BinderFileNames[mapId] = names;
+        return names;
+    }
+
     /// <summary>
     /// Whether a map's navmesh files can be read: it is loaded with Havok, or they have been read already.
     /// </summary>
@@ -142,6 +185,7 @@ public class HavokNavmeshBank
     {
         UnreadMaps.Remove(mapId);
         RemovedNavmeshes.Remove(mapId);
+        BinderFileNames.Remove(mapId);
 
         if (MapNavmeshes.Remove(mapId, out var navmeshNames))
         {

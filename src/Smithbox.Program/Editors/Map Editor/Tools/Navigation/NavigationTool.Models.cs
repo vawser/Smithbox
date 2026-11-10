@@ -329,7 +329,7 @@ public partial class NavigationTool
                 continue;
 
             var resource = (proxy.ResourceHandle as ResourceHandle<HavokNavmeshResource>)?.Get();
-            var document = navigation.Files.GetValueOrDefault(NavigationMap.FileNameFromEntry(map.Name, entry))?.Document;
+            var document = navigation.Files.GetValueOrDefault(NavigationMap.FileNameFromEntry(map.Name, entry, navigation.Profile, navigation.Files.Keys))?.Document;
 
             if (resource == null || document == null || (DrawnFrom.TryGetValue(resource, out var drawn) && ReferenceEquals(drawn, document)))
                 continue;

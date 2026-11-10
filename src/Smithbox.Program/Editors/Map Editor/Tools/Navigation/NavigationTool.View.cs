@@ -1,3 +1,4 @@
+using Havok.Shared;
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Application;
@@ -652,17 +653,17 @@ public partial class NavigationTool
         }
     }
 
-    private static uint? FaceData(Havok.hk2018.hkaiNavMesh mesh, int face)
+    private static uint? FaceData(IHavokNavMeshEdit mesh, int face)
     {
         int index = face * mesh.m_faceDataStriding;
         return mesh.m_faceDataStriding > 0 && index < mesh.m_faceData.Count ? (uint)mesh.m_faceData[index] : null;
     }
 
-    private void DisplayUserEdgeEdit(NavFaceHit hit, Havok.hk2018.hkaiNavMesh mesh, int k)
+    private void DisplayUserEdgeEdit(NavFaceHit hit, IHavokNavMeshEdit mesh, int k)
     {
         var edge = mesh.m_edges[k];
         int flags = (int)edge.m_flags;
-        int blockedBit = (int)Havok.hk2018.hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED;
+        int blockedBit = (int)HavokNavEdgeFlags.EDGE_BLOCKED;
         bool hasData = mesh.m_edgeDataStriding > 0 && k * mesh.m_edgeDataStriding < mesh.m_edgeData.Count;
         int data = hasData ? mesh.m_edgeData[k * mesh.m_edgeDataStriding] : 0;
 
@@ -705,7 +706,7 @@ public partial class NavigationTool
         View.ViewportActionManager.ExecuteAction(new NavigationEditAction(OverlayContainer, faces, edges, OnNavigationEdited));
     }
 
-    private string DescribeEdge(Havok.hk2018.hkaiNavMesh mesh, NVA.Navmesh entry, int k, bool user)
+    private string DescribeEdge(IHavokNavMeshEdit mesh, NVA.Navmesh entry, int k, bool user)
     {
         var edge = mesh.m_edges[k];
         uint data = mesh.m_edgeDataStriding > 0 && mesh.m_edgeData.Count > k * mesh.m_edgeDataStriding

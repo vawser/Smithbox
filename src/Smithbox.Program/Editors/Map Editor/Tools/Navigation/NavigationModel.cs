@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -64,7 +64,7 @@ public sealed class NavmeshFile
     /// <summary>The file name without extension, e.g. n10_01_00_00_001000.</summary>
     public string Name { get; init; }
 
-    public hkaiNavMesh Mesh { get; init; }
+    public IHavokNavMeshEdit Mesh { get; init; }
 
     /// <summary>The Havok document the file was read into, which a model edit replaces as a whole.</summary>
     public Havok.HavokDocument Document { get; init; }
@@ -155,8 +155,13 @@ public sealed class NavigationMap
     /// </summary>
     public string NameBase { get; }
 
-    public NavigationMap(string mapId, NVA nva, IReadOnlyDictionary<string, NavmeshFile> files, ONAV onav, IReadOnlyList<NvcFile> nvcs)
+    /// <summary>The game's navigation rules (NameIDs, the o set's offset); Elden Ring's unless given.</summary>
+    public NavGameProfile Profile { get; }
+
+    public NavigationMap(string mapId, NVA nva, IReadOnlyDictionary<string, NavmeshFile> files, ONAV onav, IReadOnlyList<NvcFile> nvcs,
+        NavGameProfile profile = null)
     {
+        Profile = profile ?? NavGameProfile.ER;
         MapId = mapId;
         Nva = nva;
         Files = files;
@@ -166,7 +171,11 @@ public sealed class NavigationMap
         Models = BuildModels();
     }
 
-    private static string DetectNameBase(string mapId, IEnumerable<string> fileNames)
+    /// <summary>
+    /// The map name a map's navmesh files carry, from the binder's file names: the map itself, or for an open world
+    /// version tile (_10, and in NR also _20 and on) the _00 tile when the files are named after it.
+    /// </summary>
+    public static string DetectNameBase(string mapId, IEnumerable<string> fileNames)
     {
         var own = mapId.Substring(1);
         var names = fileNames.ToList();
@@ -174,7 +183,7 @@ public sealed class NavigationMap
         if (names.Count == 0 || names.Any(n => n.AsSpan(1).StartsWith(own)))
             return mapId;
 
-        if (IsOpenWorld(mapId) && mapId.EndsWith("_10"))
+        if (IsOpenWorld(mapId) && !mapId.EndsWith("_00"))
         {
             var baseMap = mapId[..^3] + "_00";
             if (names.Any(n => n.AsSpan(1).StartsWith(baseMap.AsSpan(1))))
@@ -194,8 +203,8 @@ public sealed class NavigationMap
 
         foreach (var n in navmeshes.Where(e => SetOf(e) == NavmeshSet.N && QuarterOf(e) == null))
         {
-            // The o entry repeats the n entry's NameID with 2 more billions
-            var o = navmeshes.FirstOrDefault(e => (uint)e.NameID == (uint)n.NameID + 2_000_000_000u)
+            // The o entry repeats the n entry's NameID with the profile's offset added (2,000,000,000 in ER)
+            var o = navmeshes.FirstOrDefault(e => (uint)e.NameID == Profile.MirrorOf((uint)n.NameID))
                 ?? navmeshes.FirstOrDefault(e => SetOf(e) == NavmeshSet.O && QuarterOf(e) == null && e.ModelID == n.ModelID);
 
             var quarters = navmeshes.Where(e => e.ModelID == n.ModelID && SetOf(e) == NavmeshSet.N && QuarterOf(e) != null)
@@ -247,14 +256,21 @@ public sealed class NavigationMap
 
     /// <summary>
     /// The name of the file an NVA entry's faces are in, from the entry alone, for when the binder's file names
-    /// aren't at hand (the Map Editor's navmesh drawing). The name base comes from the NameID's digits: an open world
-    /// _10 tile whose NameIDs carry DD = 00 names its files after the _00 tile.
+    /// aren't at hand (the Map Editor's navmesh drawing). In ER the name base comes from the NameID's digits: an open
+    /// world _10 tile whose NameIDs carry DD = 00 names its files after the _00 tile. NR's NameIDs have no DD, so there
+    /// the binder's file names tell, when given (<paramref name="fileNames"/>), and the map itself is the base when not.
     /// </summary>
-    public static string FileNameFromEntry(string mapId, NVA.Navmesh entry)
+    public static string FileNameFromEntry(string mapId, NVA.Navmesh entry, NavGameProfile profile = null, IEnumerable<string> fileNames = null)
     {
+        profile ??= NavGameProfile.ER;
         var nameBase = mapId;
 
-        if (IsOpenWorld(mapId))
+        if (!profile.NameIdNamesTileVersion)
+        {
+            if (fileNames != null)
+                nameBase = DetectNameBase(mapId, fileNames);
+        }
+        else if (IsOpenWorld(mapId))
         {
             // BBCCDD of the map the NameID was given for
             uint digits = (uint)entry.NameID / 1000 % 1_000_000;
@@ -272,11 +288,14 @@ public sealed class NavigationMap
 
     /// <summary>
     /// The entry of an NVA entry's model in a set: the entry itself when it is in that set (a quarter stays a quarter),
-    /// else its mirror in the other half (NameID 2,000,000,000 apart), or the first whole entry of that set with its
-    /// ModelID when there is no mirror (quarters, or entries off the NameID rule). Null if the model has none.
+    /// else its mirror in the other half (NameID the profile's offset apart: 2,000,000,000 in ER), or the first whole
+    /// entry of that set with its ModelID when there is no mirror (quarters, or entries off the NameID rule). Null if the
+    /// model has none.
     /// </summary>
-    public static NVA.Navmesh EntryInSet(NVA nva, NVA.Navmesh entry, NavmeshSet set)
+    public static NVA.Navmesh EntryInSet(NVA nva, NVA.Navmesh entry, NavmeshSet set, NavGameProfile profile = null)
     {
+        profile ??= NavGameProfile.ER;
+
         if (SetOf(entry) == set)
             return entry;
 
@@ -287,7 +306,7 @@ public sealed class NavigationMap
 
         if (QuarterOf(entry) == null)
         {
-            uint mirrorId = set == NavmeshSet.O ? (uint)entry.NameID + 2_000_000_000u : (uint)entry.NameID - 2_000_000_000u;
+            uint mirrorId = set == NavmeshSet.O ? profile.MirrorOf((uint)entry.NameID) : profile.UnmirrorOf((uint)entry.NameID);
             var mirror = navmeshes.FirstOrDefault(e => (uint)e.NameID == mirrorId && e.ModelID == entry.ModelID);
 
             if (mirror != null)
@@ -307,27 +326,19 @@ public sealed class NavigationMap
     /// <summary>The name of a quarter of a model's n mesh, e.g. q60_49_37_00_493700_2.</summary>
     public static string QuarterName(string nameBase, int modelId, int quarter) => $"q{nameBase.Substring(1)}_{modelId:D6}_{quarter}";
 
-    /// <summary>The NameID the game files give the n entry at a position in this map's navmesh list.</summary>
-    public uint ExpectedNameId(int position) => ExpectedNameId(NameBase, position);
+    /// <summary>
+    /// The NameID the game files give the n entry at a position in this map's navmesh list, by the game's rule
+    /// (<see cref="NavGameProfile.ExpectedNameId"/>). The map is the one whose names the files carry.
+    /// </summary>
+    public uint ExpectedNameId(int position) => Profile.ExpectedNameId(NameBase, position);
 
     /// <summary>
-    /// The open world maps, whose NameIDs use odd prefixes and the BBCCDD digits of the map name.
+    /// The open world maps, whose NameIDs set the open world prefix (ER: odd prefixes with BBCCDD; NR: bit 30).
     /// </summary>
     public static bool IsOpenWorld(string mapId) => mapId.StartsWith("m60") || mapId.StartsWith("m61");
 
-    /// <summary>
-    /// The NameID the game files give an n entry at a position in the NVA's navmesh list:
-    /// prefix * 1,000,000,000 + map digits * 1,000 + position. The prefix is 0 in legacy maps, with the digits AABBCC,
-    /// and 1 in the open world, with BBCCDD; the game tests the odd prefix (0x140BDA2A0).
-    /// An o entry has its n entry's NameID plus 2,000,000,000. The map is the one whose names the files carry.
-    /// </summary>
-    public static uint ExpectedNameId(string nameBase, int position)
-    {
-        var digits = nameBase.Substring(1).Replace("_", "");
-        bool openWorld = IsOpenWorld(nameBase);
-        uint middle = uint.Parse(openWorld ? digits.Substring(2, 6) : digits.Substring(0, 6));
-        return (openWorld ? 1_000_000_000u : 0u) + middle * 1_000u + (uint)position;
-    }
+    /// <summary>The NameID Elden Ring gives an n entry at a position (<see cref="NavGameProfile.ER"/>).</summary>
+    public static uint ExpectedNameId(string nameBase, int position) => NavGameProfile.ER.ExpectedNameId(nameBase, position);
 }
 
 /// <summary>

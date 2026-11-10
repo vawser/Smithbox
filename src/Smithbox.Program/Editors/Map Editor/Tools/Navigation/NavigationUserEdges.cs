@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,14 +30,14 @@ public sealed record NavUserEdgeLink(int FromFace, Vector3 FromPoint, int ToFace
 public sealed class NavMeshState
 {
     private readonly (int Start, int StartUser, short Num, short NumUser, short Cluster, ushort Padding)[] Faces;
-    private readonly (int A, int B, uint OppositeEdge, uint OppositeFace, hkaiNavMesh.EdgeFlagBits Flags, float Cost)[] Edges;
+    private readonly (int A, int B, uint OppositeEdge, uint OppositeFace, HavokNavEdgeFlags Flags, float Cost)[] Edges;
     private readonly Vector4[] Vertices;
     private readonly int[] FaceData;
     private readonly int[] EdgeData;
     private readonly Vector4 AabbMin, AabbMax;
-    private readonly List<(hkaiNavMeshClearanceCache Cache, uint[] FaceOffsets, byte[] Pairs, (byte, byte)[] Mcp, byte[] VertexClearances)> Caches = new();
+    private readonly List<(IHavokNavClearanceCache Cache, uint[] FaceOffsets, byte[] Pairs, (byte, byte)[] Mcp, byte[] VertexClearances)> Caches = new();
 
-    public NavMeshState(hkaiNavMesh mesh, IEnumerable<hkaiNavMeshClearanceCache> caches)
+    public NavMeshState(IHavokNavMeshEdit mesh, IEnumerable<IHavokNavClearanceCache> caches)
     {
         Faces = mesh.m_faces.Select(f => (f.m_startEdgeIndex, f.m_startUserEdgeIndex, f.m_numEdges, f.m_numUserEdges, f.m_clusterIndex, f.m_padding)).ToArray();
         Edges = mesh.m_edges.Select(e => (e.m_a, e.m_b, e.m_oppositeEdge, e.m_oppositeFace, e.m_flags, e.m_userEdgeCost)).ToArray();
@@ -52,15 +52,15 @@ public sealed class NavMeshState
     }
 
     /// <summary>Puts the mesh back as it was when copied.</summary>
-    public void Restore(hkaiNavMesh mesh)
+    public void Restore(IHavokNavMeshEdit mesh)
     {
         mesh.m_faces.Clear();
         foreach (var f in Faces)
-            mesh.m_faces.Add(new hkaiNavMesh.Face { m_startEdgeIndex = f.Start, m_startUserEdgeIndex = f.StartUser, m_numEdges = f.Num, m_numUserEdges = f.NumUser, m_clusterIndex = f.Cluster, m_padding = f.Padding });
+            mesh.m_faces.Add(mesh.NewFace(f.Start, f.Num, f.StartUser, f.NumUser, f.Cluster, f.Padding));
 
         mesh.m_edges.Clear();
         foreach (var e in Edges)
-            mesh.m_edges.Add(new hkaiNavMesh.Edge { m_a = e.A, m_b = e.B, m_oppositeEdge = e.OppositeEdge, m_oppositeFace = e.OppositeFace, m_flags = e.Flags, m_userEdgeCost = e.Cost });
+            mesh.m_edges.Add(mesh.NewEdge(e.A, e.B, e.OppositeEdge, e.OppositeFace, e.Flags, e.Cost));
 
         mesh.m_vertices.Clear();
         mesh.m_vertices.AddRange(Vertices);
@@ -78,7 +78,7 @@ public sealed class NavMeshState
             cache.m_edgePairClearances.Clear();
             cache.m_edgePairClearances.AddRange(pairs);
             cache.m_mcpData.Clear();
-            cache.m_mcpData.AddRange(mcp.Select(m => new hkaiNavMeshClearanceCache.McpDataInteger { m_interpolant = m.Item1, m_clearance = m.Item2 }));
+            cache.m_mcpData.AddRange(mcp.Select(m => cache.NewMcp(m.Item1, m.Item2)));
             cache.m_vertexClearances.Clear();
             cache.m_vertexClearances.AddRange(vertexClearances);
         }
@@ -119,9 +119,7 @@ public static class NavUserEdges
     /// The clearance caches of a mesh: the initial caches of its clearance cache seeding (two in most files, one per
     /// seeding entry, mostly identical). Files without user edges have them too.
     /// </summary>
-    public static List<hkaiNavMeshClearanceCache> CachesOf(hkaiNavMesh mesh)
-        => mesh.m_clearanceCacheSeedingDataSet?.m_cacheDatas.Select(d => d.m_initialCache).Where(c => c != null).Distinct().ToList()
-           ?? new List<hkaiNavMeshClearanceCache>();
+    public static List<IHavokNavClearanceCache> CachesOf(IHavokNavMeshEdit mesh) => mesh.ClearanceCaches.ToList();
 
     /// <summary>
     /// Whether any connection of the map names an edge of a navmesh at or after an index. Adding or removing a user edge
@@ -144,10 +142,10 @@ public static class NavUserEdges
     }
 
     /// <summary>The number of original edges: the user edges come after them.</summary>
-    public static int OriginalEdgeCount(hkaiNavMesh mesh) => mesh.m_faces.Sum(f => f.m_numEdges);
+    public static int OriginalEdgeCount(IHavokNavMeshEdit mesh) => mesh.m_faces.Sum(f => f.m_numEdges);
 
     /// <summary>The edges of a face that the clearance cache gives pairs to: those with an opposite face, original edges first.</summary>
-    public static List<int> LinkedEdges(hkaiNavMesh mesh, int face)
+    public static List<int> LinkedEdges(IHavokNavMeshEdit mesh, int face)
     {
         var f = mesh.m_faces[face];
         var linked = new List<int>();
@@ -164,7 +162,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The size of a face's block of pair clearances, or -1 if its offsets don't give one.</summary>
-    private static int BlockSize(hkaiNavMeshClearanceCache cache, int face)
+    private static int BlockSize(IHavokNavClearanceCache cache, int face)
     {
         if (face >= cache.m_faceOffsets.Count)
             return -1;
@@ -176,7 +174,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The last face's block ends at its 0xFF marker: the arrays are sometimes longer than the blocks.</summary>
-    private static long FindBlockEnd(hkaiNavMeshClearanceCache cache, int face)
+    private static long FindBlockEnd(IHavokNavClearanceCache cache, int face)
     {
         int start = (int)cache.m_faceOffsets[face];
         int marker = cache.m_edgePairClearances.IndexOf(0xFF, start);
@@ -184,20 +182,20 @@ public static class NavUserEdges
     }
 
     /// <summary>A face's block is the size its linked edges give, in every cache.</summary>
-    private static bool BlocksMatch(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, int face)
+    private static bool BlocksMatch(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int face)
     {
         int expected = Triangle(LinkedEdges(mesh, face).Count) + 1;
         return caches.All(c => BlockSize(c, face) == expected);
     }
 
-    private static byte Mcp(hkaiNavMeshClearanceCache cache, int edge) => edge < cache.m_mcpData.Count ? cache.m_mcpData[edge].m_clearance : (byte)0;
+    private static byte Mcp(IHavokNavClearanceCache cache, int edge) => edge < cache.m_mcpData.Count ? cache.m_mcpData[edge].m_clearance : (byte)0;
 
     /// <summary>
     /// Adds a link from one face to another of the same mesh: a user edge on each, pointing at each other. The back edge
     /// is blocked unless the link goes both ways. Edges after the insertion points move up, so the result's map must be
     /// passed on to the map's connections.
     /// </summary>
-    public static NavUserEdgeResult Add(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, NavUserEdgeLink link)
+    public static NavUserEdgeResult Add(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, NavUserEdgeLink link)
     {
         var result = new NavUserEdgeResult();
 
@@ -227,8 +225,8 @@ public static class NavUserEdges
 
         var (userFlags, backFlags) = Flags(link);
 
-        var forward = new hkaiNavMesh.Edge { m_a = fromVertexA, m_b = fromVertexB, m_oppositeEdge = None, m_oppositeFace = (uint)link.ToFace, m_flags = userFlags };
-        var back = new hkaiNavMesh.Edge { m_a = toVertexA, m_b = toVertexB, m_oppositeEdge = None, m_oppositeFace = (uint)link.FromFace, m_flags = backFlags };
+        var forward = mesh.NewEdge(fromVertexA, fromVertexB, None, (uint)link.ToFace, userFlags);
+        var back = mesh.NewEdge(toVertexA, toVertexB, None, (uint)link.FromFace, backFlags);
 
         int forwardIndex = Insert(mesh, caches, link.FromFace, forward, link.EdgeData, link.Clearance);
         int backIndex = Insert(mesh, caches, link.ToFace, back, link.EdgeData, link.Clearance);
@@ -258,10 +256,10 @@ public static class NavUserEdges
     }
 
     /// <summary>The flags of a link's forward and back edges: the back one is blocked unless the link goes both ways.</summary>
-    private static (hkaiNavMesh.EdgeFlagBits Forward, hkaiNavMesh.EdgeFlagBits Back) Flags(NavUserEdgeLink link)
+    private static (HavokNavEdgeFlags Forward, HavokNavEdgeFlags Back) Flags(NavUserEdgeLink link)
     {
-        var userFlags = hkaiNavMesh.EdgeFlagBits.EDGE_ORIGINAL | hkaiNavMesh.EdgeFlagBits.EDGE_USER;
-        return (userFlags, link.Bidirectional ? userFlags : userFlags | hkaiNavMesh.EdgeFlagBits.EDGE_BLOCKED);
+        var userFlags = HavokNavEdgeFlags.EDGE_ORIGINAL | HavokNavEdgeFlags.EDGE_USER;
+        return (userFlags, link.Bidirectional ? userFlags : userFlags | HavokNavEdgeFlags.EDGE_BLOCKED);
     }
 
     /// <summary>
@@ -269,7 +267,7 @@ public static class NavUserEdges
     /// one by one, in one pass: the user edges after the original ones, packed in face order, each face's in the order
     /// of the links, with their own vertices after the original ones. Refused if the mesh has user edges or caches.
     /// </summary>
-    public static NavUserEdgeResult AddAll(hkaiNavMesh mesh, IReadOnlyList<NavUserEdgeLink> links)
+    public static NavUserEdgeResult AddAll(IHavokNavMeshEdit mesh, IReadOnlyList<NavUserEdgeLink> links)
     {
         var result = new NavUserEdgeResult();
 
@@ -321,17 +319,10 @@ public static class NavUserEdges
                 var (forwardFlags, backFlags) = Flags(link);
 
                 int index = mesh.m_edges.Count;
-                int va = forward ? AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.FromPoint - across) : AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.ToPoint + across);
-                int vb = forward ? AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.FromPoint + across) : AddVertex(mesh, Array.Empty<hkaiNavMeshClearanceCache>(), link.ToPoint - across);
+                int va = forward ? AddVertex(mesh, Array.Empty<IHavokNavClearanceCache>(), link.FromPoint - across) : AddVertex(mesh, Array.Empty<IHavokNavClearanceCache>(), link.ToPoint + across);
+                int vb = forward ? AddVertex(mesh, Array.Empty<IHavokNavClearanceCache>(), link.FromPoint + across) : AddVertex(mesh, Array.Empty<IHavokNavClearanceCache>(), link.ToPoint - across);
 
-                mesh.m_edges.Add(new hkaiNavMesh.Edge
-                {
-                    m_a = va,
-                    m_b = vb,
-                    m_oppositeEdge = None,
-                    m_oppositeFace = (uint)(forward ? link.ToFace : link.FromFace),
-                    m_flags = forward ? forwardFlags : backFlags,
-                });
+                mesh.m_edges.Add(mesh.NewEdge(va, vb, None, (uint)(forward ? link.ToFace : link.FromFace), forward ? forwardFlags : backFlags));
 
                 if (striding)
                 {
@@ -359,7 +350,7 @@ public static class NavUserEdges
     /// Removes a user edge and the edge it is paired with, their vertices if nothing else uses them, and their clearance
     /// cache entries. Edges after them move down, so the result's map must be passed on to the map's connections.
     /// </summary>
-    public static NavUserEdgeResult Remove(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, int edge)
+    public static NavUserEdgeResult Remove(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int edge)
     {
         var result = new NavUserEdgeResult();
         int owner = OwnerOfUserEdge(mesh, edge);
@@ -426,7 +417,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The face whose user edge range holds an edge, or -1.</summary>
-    public static int OwnerOfUserEdge(hkaiNavMesh mesh, int edge)
+    public static int OwnerOfUserEdge(IHavokNavMeshEdit mesh, int edge)
     {
         for (int f = 0; f < mesh.m_faces.Count; f++)
         {
@@ -437,7 +428,7 @@ public static class NavUserEdges
         return -1;
     }
 
-    private static int AddVertex(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, Vector3 at)
+    private static int AddVertex(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, Vector3 at)
     {
         mesh.m_vertices.Add(new Vector4(at, 1));
 
@@ -453,7 +444,7 @@ public static class NavUserEdges
         return mesh.m_vertices.Count - 1;
     }
 
-    private static void RemoveVertex(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, int vertex)
+    private static void RemoveVertex(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int vertex)
     {
         mesh.m_vertices.RemoveAt(vertex);
 
@@ -469,7 +460,7 @@ public static class NavUserEdges
     }
 
     /// <summary>Moves every reference to an edge at or after a point by a step, keeping its section bits.</summary>
-    private static void ShiftEdgeReferences(hkaiNavMesh mesh, int from, int step)
+    private static void ShiftEdgeReferences(IHavokNavMeshEdit mesh, int from, int step)
     {
         foreach (var f in mesh.m_faces)
         {
@@ -489,7 +480,7 @@ public static class NavUserEdges
     }
 
     /// <summary>Inserts a user edge at the end of a face's user edge range, and its cache entries. Returns its index.</summary>
-    private static int Insert(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, int face, hkaiNavMesh.Edge edge, int edgeData, byte clearance)
+    private static int Insert(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int face, IHavokNavEdge edge, int edgeData, byte clearance)
     {
         var f = mesh.m_faces[face];
 
@@ -518,7 +509,7 @@ public static class NavUserEdges
             var cache = caches[c];
 
             if (cache.m_mcpData.Count >= index)
-                cache.m_mcpData.Insert(index, new hkaiNavMeshClearanceCache.McpDataInteger { m_interpolant = 0, m_clearance = clearance });
+                cache.m_mcpData.Insert(index, cache.NewMcp(0, clearance));
 
             // The new edge is the face's last linked edge, so its pairs are the block's last column, before the marker
             int start = (int)cache.m_faceOffsets[face];
@@ -534,7 +525,7 @@ public static class NavUserEdges
     }
 
     /// <summary>Removes a user edge of a face, and its cache entries.</summary>
-    private static void RemoveEdge(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches, int face, int edge)
+    private static void RemoveEdge(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int face, int edge)
     {
         var f = mesh.m_faces[face];
         var linked = LinkedEdges(mesh, face);
@@ -589,7 +580,7 @@ public static class NavUserEdges
     /// The mesh holds its user edges as the game's files do. Returns a description of the first thing that doesn't hold,
     /// or null. Used by NavSurvey after its edits.
     /// </summary>
-    public static string Check(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches)
+    public static string Check(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches)
     {
         int original = mesh.m_faces.Sum(f => f.m_numEdges);
         int user = mesh.m_faces.Sum(f => f.m_numUserEdges);
@@ -656,7 +647,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The faces whose cache block isn't the size their linked edges give; vanilla files have a few.</summary>
-    public static int MismatchedBlocks(hkaiNavMesh mesh, IReadOnlyList<hkaiNavMeshClearanceCache> caches)
+    public static int MismatchedBlocks(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches)
     {
         int count = 0;
         for (int f = 0; f < mesh.m_faces.Count; f++)

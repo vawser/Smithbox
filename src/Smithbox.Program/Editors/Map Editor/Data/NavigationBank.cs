@@ -35,7 +35,10 @@ public class NavigationBank
         Project = project;
     }
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+
+    /// <summary>The navigation rules of the project's game.</summary>
+    public NavGameProfile Profile => NavGameProfile.For(Project.Descriptor.ProjectType.ToString());
 
     private HavokNavmeshBank NavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
 
@@ -68,7 +71,7 @@ public class NavigationBank
             files[name] = file;
         }
 
-        return new NavigationMap(map.Name, nva, files, GetOnav(map.Name), GetNvcs(map.Name));
+        return new NavigationMap(map.Name, nva, files, GetOnav(map.Name), GetNvcs(map.Name), Profile);
     }
 
     /// <summary>

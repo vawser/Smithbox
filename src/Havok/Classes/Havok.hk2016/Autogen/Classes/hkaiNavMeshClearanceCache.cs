@@ -2,7 +2,7 @@
 
 namespace Havok.hk2016;
 
-public class hkaiNavMeshClearanceCache : hkReferencedObject
+public partial class hkaiNavMeshClearanceCache : hkReferencedObject
 {
     public float m_clearanceCeiling;
 
@@ -23,7 +23,7 @@ public class hkaiNavMeshClearanceCache : hkReferencedObject
     public int m_uncalculatedFacesLowerBound;
 
 
-    public class McpDataInteger : IHavokObject
+    public partial class McpDataInteger : IHavokObject
     {
         public byte m_interpolant;
 

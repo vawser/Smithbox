@@ -1,4 +1,4 @@
-using Havok.hk2018;
+using Havok.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +57,7 @@ public static class NavLinkGenerator
     /// down) meets the collision or a blocker, nor where the two faces are a short walk apart.
     /// </summary>
     /// <param name="solids">Triangles (three points each) that block a link's path: the collision, and the blockers' boxes.</param>
-    public static NavLinkSet Find(hkaiNavMesh mesh, IReadOnlyList<Vector3> solids, NavGenParameters p)
+    public static NavLinkSet Find(IHavokNavMeshEdit mesh, IReadOnlyList<Vector3> solids, NavGenParameters p)
     {
         var links = new List<NavUserEdgeLink>();
         int jumps = 0, falls = 0;
@@ -159,7 +159,7 @@ public static class NavLinkGenerator
     /// <summary>A both-ways link is one link whichever face it is found from.</summary>
     private static (int, int) Key(int from, int to, bool bothWays) => bothWays && to < from ? (to, from) : (from, to);
 
-    private static Vector3 V(hkaiNavMesh mesh, int i) => new(mesh.m_vertices[i].X, mesh.m_vertices[i].Y, mesh.m_vertices[i].Z);
+    private static Vector3 V(IHavokNavMeshEdit mesh, int i) => new(mesh.m_vertices[i].X, mesh.m_vertices[i].Y, mesh.m_vertices[i].Z);
 
     /// <summary>A point on a face's edge moved the inset towards the face's centre (no further than it), on the face.</summary>
     private static Vector3 Inside(FaceGrid faces, int face, Vector3 onEdge, Vector3 centre)
@@ -174,7 +174,7 @@ public static class NavLinkGenerator
     /// Whether the target face is a walk from the start face of no more than a few times the link's length: a search over
     /// the faces' adjacency, by the distance between their centres, cut off at that length. Remembered per pair.
     /// </summary>
-    private static bool ShortWalk(hkaiNavMesh mesh, FaceGrid faces, int from, int to, float straight, Dictionary<(int, int), bool> known)
+    private static bool ShortWalk(IHavokNavMeshEdit mesh, FaceGrid faces, int from, int to, float straight, Dictionary<(int, int), bool> known)
     {
         if (known.TryGetValue((from, to), out bool cached))
             return cached;
@@ -234,12 +234,12 @@ public static class NavLinkGenerator
     /// <summary>The faces of a mesh bucketed on an XZ grid, for the surface height under a point.</summary>
     private sealed class FaceGrid
     {
-        private readonly hkaiNavMesh Mesh;
+        private readonly IHavokNavMeshEdit Mesh;
         private readonly float Cell;
         private readonly Dictionary<(int, int), List<int>> Cells = new();
         private readonly Vector3[] Centres;
 
-        public FaceGrid(hkaiNavMesh mesh, float cell)
+        public FaceGrid(IHavokNavMeshEdit mesh, float cell)
         {
             Mesh = mesh;
             Cell = cell;
