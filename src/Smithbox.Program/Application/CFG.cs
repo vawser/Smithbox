@@ -370,6 +370,15 @@ public class CFG
     public bool MapEditor_CollisionEditor_Fall_Show_Preview = true;
     public bool MapEditor_CollisionEditor_Fall_Drop_Only = true;
     public float MapEditor_CollisionEditor_Fall_Min_Drop = 1.0f;
+    public CollisionUserDefinedMode MapEditor_CollisionEditor_User_Mode = CollisionUserDefinedMode.Line;
+    public CollisionUserDefinedPlacement MapEditor_CollisionEditor_User_Placement = CollisionUserDefinedPlacement.Raycast;
+    public float MapEditor_CollisionEditor_User_Spawn_Spacing = 2.0f;
+    public float MapEditor_CollisionEditor_User_Height = 2.0f;
+    public bool MapEditor_CollisionEditor_User_Closed = false;
+    public bool MapEditor_CollisionEditor_User_Flip = false;
+    public float MapEditor_CollisionEditor_User_Point_Size = 0.15f;
+    public bool MapEditor_CollisionEditor_User_Show_Points = true;
+    public bool MapEditor_CollisionEditor_User_Show_Preview = true;
     public bool MapEditor_BasicFilter_Navmesh = true;
     public bool MapEditor_BasicFilter_NavVolume = false;
     public bool MapEditor_BasicFilter_SpeedTree = true;

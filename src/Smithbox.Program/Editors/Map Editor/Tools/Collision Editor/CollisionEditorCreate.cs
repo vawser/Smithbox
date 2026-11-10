@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.HavokEditor;
+using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
@@ -12,6 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -26,7 +28,9 @@ public enum CollisionCreateShape
     [Display(Name = "MAP_CollisionEditor_Create_Shape_SemiCircle")]
     SemiCircle,
     [Display(Name = "MAP_CollisionEditor_Create_Shape_Selected_Flver")]
-    SelectedFlver
+    SelectedFlver,
+    [Display(Name = "MAP_CollisionEditor_Create_Shape_User_Defined")]
+    UserDefined
 }
 
 /// <summary>
@@ -80,6 +84,12 @@ public class CollisionEditorCreate
     // Whether the inputs make any triangles, as of the last time they changed
     private bool GeometryValid;
 
+    // Why the User-Defined points make no triangles, as of the last time they changed
+    private string UserDefinedProblem;
+
+    /// <summary>The points placed in the viewport for the User-Defined shape.</summary>
+    public readonly CollisionEditorUserDefined UserDefined;
+
     // What an overwrite of a used model number does to each of its files, worked out when it is asked for and shown
     // in the confirm
     private sealed record OverwriteFile(string Type, string FileName, bool Exists);
@@ -102,6 +112,20 @@ public class CollisionEditorCreate
         Project = project;
         Tool = tool;
         MaterialPicker = new CollisionMaterialPicker(project);
+        UserDefined = new CollisionEditorUserDefined(view, tool);
+    }
+
+    /// <summary>
+    /// Places the User-Defined points while that shape is shown. Called each frame by the tool. Returns true while the
+    /// viewport's clicks are taken, so they don't select.
+    /// </summary>
+    public bool HandleViewportInput(VulkanViewport viewport, Ray ray, bool canPick)
+    {
+        var facingUp = Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up;
+
+        return UserDefined.HandleViewportInput(viewport, ray, canPick,
+            () => UserDefined.GetKey(facingUp),
+            () => UserDefined.BuildGeometry(facingUp, out var vertices, out var indices) == null ? (vertices, indices) : null);
     }
 
     #region Display
@@ -162,24 +186,37 @@ public class CollisionEditorCreate
         }
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Shape_Input_TT"));
 
-        // Facing
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Facing_Header"), LOC.Get("MAP_CollisionEditor_Create_Facing_Header_TT"));
+        // The points are drawn and placed in the viewport while the shape is shown
+        if (Shape is CollisionCreateShape.UserDefined)
+            UserDefined.MarkShown();
 
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.BeginCombo("##collisionCreateFacing", LOC.Get(Facing.GetDisplayName())))
+        // A User-Defined line is a wall, which faces sideways and has its own flip
+        var usesFacing = Shape is not CollisionCreateShape.UserDefined
+            || CFG.Current.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line;
+
+        if (usesFacing)
         {
-            foreach (var facing in Enum.GetValues<CollisionGeneratorTool.CollisionGeneratorFacing>())
-            {
-                if (ImGui.Selectable($"{LOC.Get(facing.GetDisplayName())}##collisionCreateFacing{facing}", facing == Facing))
-                {
-                    Facing = facing;
-                }
-            }
+            // Facing
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Facing_Header"), LOC.Get("MAP_CollisionEditor_Create_Facing_Header_TT"));
 
-            ImGui.EndCombo();
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo("##collisionCreateFacing", LOC.Get(Facing.GetDisplayName())))
+            {
+                foreach (var facing in Enum.GetValues<CollisionGeneratorTool.CollisionGeneratorFacing>())
+                {
+                    if (ImGui.Selectable($"{LOC.Get(facing.GetDisplayName())}##collisionCreateFacing{facing}", facing == Facing))
+                    {
+                        Facing = facing;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get(Shape is CollisionCreateShape.UserDefined && CFG.Current.MapEditor_CollisionEditor_User_Mode is CollisionUserDefinedMode.Box
+                ? "MAP_CollisionEditor_User_Facing_Box_TT"
+                : "MAP_CollisionEditor_Create_Facing_Input_TT"));
         }
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Facing_Input_TT"));
 
         // Collision Material
         GUI.Spacer();
@@ -187,7 +224,7 @@ public class CollisionEditorCreate
 
         MaterialPicker.Display(ref MaterialId, []);
 
-        DisplayParameters();
+        DisplayParameters(map);
 
         // Model ID
         GUI.Spacer();
@@ -216,7 +253,7 @@ public class CollisionEditorCreate
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Model_Used", ModelNumber));
         }
 
-        DisplayPreview();
+        DisplayPreview(map);
 
         // Actions
         GUI.Spacer();
@@ -241,7 +278,7 @@ public class CollisionEditorCreate
         DisplayOverwriteConfirm(map);
     }
 
-    private void DisplayParameters()
+    private void DisplayParameters(MapContainer map)
     {
         // Parameters
         GUI.Spacer();
@@ -298,6 +335,11 @@ public class CollisionEditorCreate
             }
             case CollisionCreateShape.SelectedFlver:
                 DisplayFlverParameters();
+                break;
+            case CollisionCreateShape.UserDefined:
+                // Built here, so the problem shown follows the points as they are placed
+                UpdateGeometry(map);
+                UserDefined.DisplayParameters(UserDefinedProblem);
                 break;
         }
     }
@@ -388,7 +430,7 @@ public class CollisionEditorCreate
     /// <summary>
     /// A 3D preview of the triangles Create will make, as the Havok Editor's generator shows.
     /// </summary>
-    private void DisplayPreview()
+    private void DisplayPreview(MapContainer map)
     {
         // Preview
         GUI.Spacer();
@@ -396,7 +438,7 @@ public class CollisionEditorCreate
             LOC.Get("MAP_CollisionEditor_Create_Preview_Header_TT"),
             ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Preview);
 
-        UpdateGeometry();
+        UpdateGeometry(map);
 
         if (!MeshPreviewRenderer.IsSupported)
         {
@@ -442,7 +484,7 @@ public class CollisionEditorCreate
     /// Builds the triangles again when an input they depend on has changed: for whether Create can be used, and for
     /// the preview. Building a large FLVER's triangles takes time, so this isn't done every frame.
     /// </summary>
-    private void UpdateGeometry()
+    private void UpdateGeometry(MapContainer map)
     {
         var key = GetPreviewKey();
 
@@ -454,7 +496,7 @@ public class CollisionEditorCreate
         Preview?.Dispose();
         Preview = null;
 
-        GeometryValid = TryBuildGeometry(out var vertices, out var indices, out _);
+        GeometryValid = TryBuildGeometry(map, null, out var vertices, out var indices, out _);
 
         if (!GeometryValid || !MeshPreviewRenderer.IsSupported)
             return;
@@ -473,6 +515,7 @@ public class CollisionEditorCreate
             CollisionCreateShape.Circle => $"{CircleInputs.Radius}/{CircleInputs.Segments}",
             CollisionCreateShape.SemiCircle => $"{SemiCircleInputs.Radius}/{SemiCircleInputs.Segments}",
             CollisionCreateShape.SelectedFlver => GetFlverPreviewKey(),
+            CollisionCreateShape.UserDefined => UserDefined.GetKey(Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up),
             _ => ""
         };
 
@@ -700,13 +743,17 @@ public class CollisionEditorCreate
 
     /// <summary>
     /// The triangles of the shape the inputs describe, in the space of the new part, with the material of each.
-    /// False when there is nothing to build.
+    /// False when there is nothing to build. The User-Defined points are in the world: they are taken into the space of
+    /// the part given (an existing part being overwritten), or of a new part on the first point.
     /// </summary>
-    private bool TryBuildGeometry(out List<Vector3> vertices, out List<int> indices, out List<uint> materials)
+    private bool TryBuildGeometry(MapContainer map, MsbEntity part, out List<Vector3> vertices, out List<int> indices, out List<uint> materials)
     {
         vertices = null;
         indices = null;
         materials = null;
+
+        if (Shape is CollisionCreateShape.UserDefined)
+            return TryBuildUserDefinedGeometry(map, part, out vertices, out indices, out materials);
 
         switch (Shape)
         {
@@ -737,6 +784,45 @@ public class CollisionEditorCreate
         materials ??= Enumerable.Repeat((uint)MaterialId, indices.Count / 3).ToList();
 
         return true;
+    }
+
+    /// <summary>
+    /// The User-Defined triangles, built in the world (already wound for the facing), then moved into the part's space.
+    /// </summary>
+    private bool TryBuildUserDefinedGeometry(MapContainer map, MsbEntity part, out List<Vector3> vertices, out List<int> indices, out List<uint> materials)
+    {
+        materials = null;
+
+        var facingUp = Facing is CollisionGeneratorTool.CollisionGeneratorFacing.Up;
+
+        UserDefinedProblem = UserDefined.BuildGeometry(facingUp, out vertices, out indices);
+
+        if (UserDefinedProblem != null || indices.Count == 0)
+            return false;
+
+        var toLocal = GetUserDefinedToLocal(map, part);
+
+        for (var i = 0; i < vertices.Count; i++)
+            vertices[i] = Vector3.Transform(vertices[i], toLocal);
+
+        materials = Enumerable.Repeat((uint)MaterialId, indices.Count / 3).ToList();
+
+        return true;
+    }
+
+    /// <summary>
+    /// From the world into the space of the part the User-Defined collision is placed with: the given part, or a new
+    /// part at the first point, unrotated under the map's root (whose parent chain holds a tiled map's offset).
+    /// </summary>
+    private Matrix4x4 GetUserDefinedToLocal(MapContainer map, MsbEntity part)
+    {
+        if (part != null && Matrix4x4.Invert(part.GetWorldMatrix(), out var inverse))
+            return inverse;
+
+        var origin = UserDefined.Points.Count > 0 ? UserDefined.Points[0] : Vector3.Zero;
+        var root = GetRootTransform(map.RootObject);
+
+        return Matrix4x4.CreateTranslation(-origin) * Matrix4x4.CreateFromQuaternion(Quaternion.Inverse(root.Rotation));
     }
 
     /// <summary>
@@ -899,7 +985,7 @@ public class CollisionEditorCreate
     /// </summary>
     private void Create(MapContainer map)
     {
-        if (!TryBuildGeometry(out var vertices, out var indices, out var materials))
+        if (!TryBuildGeometry(map, null, out var vertices, out var indices, out var materials))
             return;
 
         var mapId = map.Name;
@@ -1103,11 +1189,18 @@ public class CollisionEditorCreate
     /// </summary>
     private void Overwrite(MapContainer map, OverwritePlan plan)
     {
-        if (!TryBuildGeometry(out var vertices, out var indices, out var materials))
+        var number = plan.Number;
+
+        // The kept parts show the new mesh, so User-Defined points are taken into the first one's space, so the mesh
+        // lands where the points are for it
+        var keptPart = map.Objects.OfType<MsbEntity>()
+            .Where(EntityHelper.IsPartCollision)
+            .FirstOrDefault(e => string.Equals(e.GetPropertyValue("ModelName") as string, $"h{number}", StringComparison.OrdinalIgnoreCase));
+
+        if (!TryBuildGeometry(map, keptPart, out var vertices, out var indices, out var materials))
             return;
 
         var mapId = map.Name;
-        var number = plan.Number;
         var bank = View.HavokCollisionBank;
 
         // The part is only needed when nothing places the model yet
@@ -1278,6 +1371,14 @@ public class CollisionEditorCreate
             SetProperty(wrapped, "Position", anchor.Entity.GetPropertyValue("Position"));
             SetProperty(wrapped, "Rotation", anchor.Entity.GetPropertyValue("Rotation"));
         }
+        else if (Shape is CollisionCreateShape.UserDefined && UserDefined.Points.Count > 0)
+        {
+            // The triangles are relative to the first point (see GetUserDefinedToLocal)
+            parent = map.RootObject;
+
+            SetProperty(wrapped, "Position", ToParentLocal(parent, UserDefined.Points[0]));
+            SetProperty(wrapped, "Rotation", Vector3.Zero);
+        }
         else
         {
             parent = map.RootObject;
@@ -1329,15 +1430,27 @@ public class CollisionEditorCreate
         if (View.ViewportHandler.ActiveViewport?.Viewport == null)
             return Vector3.Zero;
 
-        var world = View.ViewportWindow.GetPlacementPosition();
+        return ToParentLocal(parent, View.ViewportWindow.GetPlacementPosition());
+    }
 
+    /// <summary>A world position made local to the parent chain, as the Create tool places new objects.</summary>
+    private static Vector3 ToParentLocal(Entity parent, Vector3 world)
+    {
+        var root = GetRootTransform(parent);
+
+        return Vector3.Transform(world - root.Position, Quaternion.Inverse(root.Rotation));
+    }
+
+    /// <summary>The placement of a parent chain (for tiled maps, the map's offset).</summary>
+    private static Transform GetRootTransform(Entity parent)
+    {
         var root = Transform.Default;
         for (var p = parent; p != null; p = p.Parent)
         {
             root += p.GetLocalTransform();
         }
 
-        return Vector3.Transform(world - root.Position, Quaternion.Inverse(root.Rotation));
+        return root;
     }
 
     private static void SetProperty(object target, string name, object value)

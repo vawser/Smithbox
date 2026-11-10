@@ -407,7 +407,7 @@ public class VulkanViewport : IViewport
 
         // Dragging a collision vertex takes the clicks too
         if (Owner is MapUniverse collisionUniverse &&
-            collisionUniverse.View.CollisionEditorTool.HandleViewportInput(ray, canPick))
+            collisionUniverse.View.CollisionEditorTool.HandleViewportInput(this, ray, canPick))
         {
             painting = true;
         }
@@ -914,6 +914,13 @@ public class VulkanViewport : IViewport
         if (Owner is MapUniverse mapUniverse && mapUniverse.View.RulerTool.GizmoTarget.HasTarget)
         {
             Gizmos.Target = mapUniverse.View.RulerTool.GizmoTarget;
+            return;
+        }
+
+        // A picked User-Defined point of the Collision Editor's Create tab
+        if (Owner is MapUniverse collisionUniverse && collisionUniverse.View.CollisionEditorTool.PointGizmoTarget.HasTarget)
+        {
+            Gizmos.Target = collisionUniverse.View.CollisionEditorTool.PointGizmoTarget;
             return;
         }
 

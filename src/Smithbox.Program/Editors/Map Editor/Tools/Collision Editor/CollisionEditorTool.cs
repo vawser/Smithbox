@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -447,7 +448,7 @@ public class CollisionEditorTool
     /// Handles the cursor and keys while editing, and keeps the previews of the edited files up to date. Called each
     /// frame by the active viewport. Returns true while the viewport's clicks are taken, so they don't select.
     /// </summary>
-    public bool HandleViewportInput(Ray ray, bool canInteract)
+    public bool HandleViewportInput(VulkanViewport viewport, Ray ray, bool canInteract)
     {
         Frame++;
         ReleaseReplacedMeshes();
@@ -462,17 +463,23 @@ public class CollisionEditorTool
 
         DropUnloadedFiles();
 
+        // Placing User-Defined points takes the clicks, so the cursor doesn't edit under them
+        var placing = Create.HandleViewportInput(viewport, ray, canInteract);
+
         if (Active)
         {
-            HandleEditing(scene, ray, canInteract);
+            HandleEditing(scene, ray, canInteract && !placing);
         }
 
         UpdatePreviews(scene);
         UpdateRetiringPreviews();
         FallProtection.UpdatePreview(scene);
 
-        return IsDragging;
+        return IsDragging || placing;
     }
+
+    /// <summary>The gizmo target of the Create tab's picked User-Defined point.</summary>
+    public CollisionPointGizmoTarget PointGizmoTarget => Create.UserDefined.GizmoTarget;
 
     private void HandleEditing(RenderScene scene, Ray ray, bool canInteract)
     {
