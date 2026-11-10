@@ -17,6 +17,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexShortcuts Shortcuts;
     public TexCommandQueue CommandQueue;
 
+    /// <summary>Textures copied with Copy, for Paste into any PC TPF in any view.</summary>
+    public List<TextureState> TextureClipboard = new();
+
     public TextureViewerScreen(ProjectEntry project)
     {
         Project = project;

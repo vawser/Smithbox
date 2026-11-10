@@ -8,6 +8,10 @@
 - Params:
     - Improve how Table params are handled
     - Make Duplicate select the new row (check if this already occurs)
+    
+- Modified Filter:
+    - Allow what is tagged as 'modified' to be filtered by X conditions
+        - Display in orange
 
 - Tools:
     - Weapon Generator:

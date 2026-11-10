@@ -1193,6 +1193,15 @@ public class CFG
 
     // Tools
     public bool Interface_TextureViewer_Tool_ExportTexture = true;
+    public bool Interface_TextureViewer_Tool_ImportTexture = true;
+
+    // Texture Import: 0 = keep the replaced texture's format, otherwise the DXGI format to write
+    public int TextureViewerImport_Format = 0;
+    // 0 = match the replaced texture, 1 = full chain, 2 = top level only
+    public int TextureViewerImport_MipMode = 0;
+    // Resize imported images to the replaced texture's size
+    public bool TextureViewerImport_MatchSize = false;
+    public string TextureViewerImport_LastFolder = "";
 
     #endregion
 

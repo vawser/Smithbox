@@ -102,6 +102,8 @@
     <PackageReference Include="System.Drawing.Common" Version="10.0.9" />
     <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
     <PackageReference Include="Vortice.Vulkan" Version="1.8.12" />
+    <!-- Standalone D3D11 device for the Texture Editor's GPU BC6H/BC7 encoder (DirectXTex Compress4) -->
+    <PackageReference Include="Vortice.Direct3D11" Version="2.3.0" />
     <PackageReference Include="Vortice.VulkanMemoryAllocator" Version="1.4.6" />
     <PackageReference Include="Hexa.NET.ImGuizmo" Version="2.2.7" />
     <PackageReference Include="Hexa.NET.ImGui" Version="2.2.7" />

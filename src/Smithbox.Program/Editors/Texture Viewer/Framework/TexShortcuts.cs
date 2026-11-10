@@ -46,6 +46,12 @@ public class TexShortcuts
             {
                 activeView.ActionManager.RedoAction();
             }
+
+            // List commands act on the list under the mouse, never while a text field has the keyboard
+            if (!Hexa.NET.ImGui.ImGui.GetIO().WantTextInput)
+            {
+                ListShortcuts(activeView);
+            }
         }
 
         if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
@@ -61,6 +67,43 @@ public class TexShortcuts
         if (InputManager.IsPressed(KeybindID.TextureViewer_Reset_Zoom_Level))
         {
             activeView.ZoomState.ZoomReset();
+        }
+    }
+
+    /// <summary>Copy / Paste / Duplicate / Delete for the texture list and the TPF list (T3).</summary>
+    private void ListShortcuts(TexEditorView view)
+    {
+        var sel = view.Selection;
+
+        if (view.FocusedList == TexEditorView.ListFocus.Textures)
+        {
+            var target = view.GetEditTarget();
+
+            if (InputManager.IsPressed(KeybindID.Copy))
+                view.Commands.CopyTexture(sel.SelectedTpf, sel.SelectedTexture);
+
+            if (InputManager.IsPressed(KeybindID.Paste))
+                view.Commands.PasteTextures();
+
+            if (target != null && sel.SelectedTexture != null)
+            {
+                if (InputManager.IsPressed(KeybindID.Duplicate))
+                    view.TextureList.Duplicate(target, sel.SelectedTexture);
+
+                if (InputManager.IsPressed(KeybindID.Delete))
+                    view.TextureList.Delete(target, sel.SelectedTexture);
+            }
+        }
+        else if (view.FocusedList == TexEditorView.ListFocus.Tpfs && sel.SelectedTpfBinderFile != null)
+        {
+            if (InputManager.IsPressed(KeybindID.Paste))
+                view.Commands.PasteTextures();
+
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+                view.Commands.DuplicateTpf(sel.SelectedTpfBinderFile);
+
+            if (InputManager.IsPressed(KeybindID.Delete))
+                view.Commands.DeleteTpf(sel.SelectedTpfBinderFile);
         }
     }
 }

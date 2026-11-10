@@ -177,7 +177,7 @@ public class TextureExport
                         exportFilePath = Path.Join(exportPath, folder, filename);
                     }
 
-                    ExportTextureFileFromTextureResource(currentTexture, exportFilePath);
+                    ExportTextureFile(exportFilePath, TexUtils.GetDdsBytes(View.Selection.SelectedTpf, View.Selection.SelectedTexture ?? currentTexture.GPUTexture.TpfTexture));
 
                     if (CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm)
                     {
@@ -379,18 +379,18 @@ public class TextureExport
                 });
             }
 
-            ExportTexture(tex);
+            ExportTexture(tpf, tex);
         }
     }
 
-    public async Task ExportTextureAsync(TPF.Texture tex)
+    public async Task ExportTextureAsync(TPF tpf, TPF.Texture tex)
     {
         ExportModal.DisplayModal = true;
         ExportModal.InitialLayout = false;
 
         try
         {
-            await Task.Run(() => ExportTexture(tex));
+            await Task.Run(() => ExportTexture(tpf, tex));
         }
         catch (Exception ex)
         {
@@ -402,12 +402,13 @@ public class TextureExport
         }
     }
 
-    public void ExportTexture(TPF.Texture tex)
+    public void ExportTexture(TPF tpf, TPF.Texture tex)
     {
         var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
 
         var texFilename = tex.Name;
-        var data = tex.Bytes;
+        // Console payloads are headerized, so every export is a readable DDS
+        var data = TexUtils.GetDdsBytes(tpf, tex);
         var filepath = Path.Join(exportPath, $"{texFilename}");
 
         // For DDS, we can write to file directly (makes it quick).

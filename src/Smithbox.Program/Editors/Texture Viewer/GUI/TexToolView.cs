@@ -35,6 +35,14 @@ public class TexToolView
 
         Sections.Begin();
 
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
+
+        // Import Texture
+        if (CFG.Current.Interface_TextureViewer_Tool_ImportTexture)
+        {
+            View.TextureImport.OnToolWindow();
+        }
+
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
 
         // Export Texture
@@ -55,6 +63,12 @@ public class TexToolView
                 CFG.Current.Interface_TextureViewer_Tool_ExportTexture = !CFG.Current.Interface_TextureViewer_Tool_ExportTexture;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Tool_ExportTexture);
+
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ToolWindow_View_Toggle_Import_Texture")}##importTextureToggle"))
+            {
+                CFG.Current.Interface_TextureViewer_Tool_ImportTexture = !CFG.Current.Interface_TextureViewer_Tool_ImportTexture;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Tool_ImportTexture);
 
             ImGui.EndMenu();
         }

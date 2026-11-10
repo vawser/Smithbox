@@ -235,12 +235,33 @@ public class TexContainerList
     {
         if (ImGui.BeginPopupContextItem($"context_{entry.Key.Path}{index}"))
         {
-            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project")}##copyToProjectAction"))
+            var bank = Project.Handler.TextureData.PrimaryBank;
+
+            // Game data only: a project file is already where the game reads it
+            if (!bank.IsProjectFile(entry.Key))
             {
-                var outputPath = Path.Join(Project.Descriptor.ProjectPath, entry.Key.Path);
-                entry.Value.WriteBinder(outputPath);
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project")}##copyToProjectAction"))
+                {
+                    bank.CopyToProject(entry.Key);
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project_TT"));
             }
-            GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_to_Project_TT"));
+
+            // Packed map textures (tpfbhd) are named by their map and can't be copied
+            if (entry.Key.Extension != "tpfbhd")
+            {
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_ContainerList_Context_Copy_As")}##copyAsAction"))
+                {
+                    var source = entry.Key;
+                    View.NamePrompt.Open(LOC.Get("TEXVIEW_ContainerList_Copy_As_Title"),
+                        LOC.Get("TEXVIEW_ContainerList_Copy_As_Hint", source.Path), source.Filename,
+                        s => bank.ValidateCopyAs(source, s),
+                        s => bank.CopyAs(source, s));
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_ContainerList_Context_Copy_As_TT"));
+            }
+
+            ImGui.Separator();
 
             if (ImGui.BeginMenu($"{LOC.Get("TEXVIEW_ContainerList_Context_Header_Export")}##exportMenuHeader"))
             {

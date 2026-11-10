@@ -1,0 +1,444 @@
+{
+  "Entries": [
+    {
+      "Key": "TEXVIEW_Encoder_Log_No_GPU",
+      "Text": "No D3D11 device for the GPU texture encoder ({0}); BC6H/BC7 imports use the slower, lower quality CPU encoder."
+    },
+    {
+      "Key": "TEXVIEW_ToolWindow_View_Toggle_Import_Texture",
+      "Text": "Texture Import"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Header",
+      "Text": "Texture Import"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Hint",
+      "Text": "Replace a texture's image, add textures, or replace every texture of the selected TPF that has an image with its name in a folder. DDS, PNG, TGA, TIFF, BMP, JPEG and WEBP files can be imported. Every import can be undone."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_No_TPF",
+      "Text": "Select a TPF in the File List to import textures into it."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Read_Only_Platform",
+      "Text": "This TPF is for {0}. Only PC TPFs can be edited for now."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Selected_Header",
+      "Text": "Selected Texture"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Selected_Header_TT",
+      "Text": "The texture that Replace Selected Texture replaces, and which new textures are added after."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Selected_Info",
+      "Text": "{0}: {1} x {2}, {3}, {4} mips, format byte {5}"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Selected_None",
+      "Text": "No texture selected. New textures are added at the end of the TPF."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Format_Header",
+      "Text": "Format"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Format_Header_TT",
+      "Text": "The compression format the imported image is written in."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Format_Keep",
+      "Text": "Keep the replaced texture's format"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Format_TT",
+      "Text": "Keep the format of the texture being replaced (recommended: the game expects it), or choose one. When the format changes, the TPF format byte is set to the one the game uses for it."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_Header",
+      "Text": "Mip Maps"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_Header_TT",
+      "Text": "The smaller copies of the image used at a distance."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_Match",
+      "Text": "Match the replaced texture"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_Full",
+      "Text": "Full chain"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_None",
+      "Text": "Top level only"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Mips_TT",
+      "Text": "Match: a texture with a full chain gets a full chain at the new size, one with fewer levels keeps its count. New textures get a full chain unless Top level only is chosen. A DDS file with the right format, size and mips is used as it is."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Size_Header",
+      "Text": "Size"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Size_Header_TT",
+      "Text": "The size of the imported image."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Match_Size",
+      "Text": "Resize to the replaced texture's size"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Match_Size_TT",
+      "Text": "Scale the imported image to the size of the texture it replaces. Off: the image keeps its own size. Block compressed formats need sizes divisible by 4."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Encoder_Header",
+      "Text": "Encoder"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Encoder_Header_TT",
+      "Text": "BC6H and BC7 are compressed on the GPU (DirectXTex with a D3D11 device). Other formats are compressed on the CPU."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Encoder_GPU",
+      "Text": "BC6H/BC7 on the GPU: {0}"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Encoder_Pending",
+      "Text": "The GPU encoder starts with the first BC6H/BC7 import. Without a GPU, the quick CPU encoder is used."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Actions_Header_TT",
+      "Text": "Each action asks for the file or folder, encodes in the background, and applies as one undoable step."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Selected",
+      "Text": "Replace Selected Texture"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Selected_TT",
+      "Text": "Replace the selected texture's image with an image file. Its name, format byte and flags are kept."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Add",
+      "Text": "Add Textures"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Add_TT",
+      "Text": "Add one or more image files as new textures after the selected texture, named after the files."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Folder",
+      "Text": "Replace Matching Textures from Folder"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Replace_Folder_TT",
+      "Text": "Replace every texture of the selected TPF that has an image file with the same name in a folder (a .dds wins over other formats). Textures without a file are left as they are."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Progress_Header",
+      "Text": "Progress"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Progress_Header_TT",
+      "Text": "The import in progress, or the result of the last one."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cancel_TT",
+      "Text": "Stop the import. Nothing is applied."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Replace",
+      "Text": "Select the image to replace the texture with"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Add",
+      "Text": "Select the images to add"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Folder",
+      "Text": "Select the folder with the replacement images"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Status_No_Matches",
+      "Text": "None of the {0} textures has an image with its name in {1}."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Status_Done",
+      "Text": "Applied {0} of {1} files ({2} on the GPU, {3} DDS files used as they are) in {4} ms."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Log_Failed",
+      "Text": "Failed to import {0}: {1}"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Log_Done",
+      "Text": "Imported {0} of {1} texture files in {2} ms."
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Replace",
+      "Text": "Replace from File"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Replace_TT",
+      "Text": "Replace this texture's image with an image file, using the Texture Import options."
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Duplicate_TT",
+      "Text": "Add a copy of this texture after it, named with a _copy suffix."
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Delete_TT",
+      "Text": "Remove this texture from the TPF. Materials that use its name will show a missing texture."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Add_Texture",
+      "Text": "Add Textures from Files"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Add_Texture_TT",
+      "Text": "Add one or more image files to this TPF as new textures, named after the files."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Replace_Folder",
+      "Text": "Replace Matching Textures from Folder"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Data_Header",
+      "Text": "Texture Data"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Data_Header_TT",
+      "Text": "The selected texture's entry in the TPF. Each change is committed when the field loses focus, and can be undone."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Name_TT",
+      "Text": "The texture's name. Materials find their textures by name, so renaming one breaks the materials that use it."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Format_Byte",
+      "Text": "Format Byte"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Format_Byte_TT",
+      "Text": "The TPF's format value for this texture. It should match the DDS format (for example 102 for BC7, 0 for BC1 in Elden Ring)."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Flags1",
+      "Text": "Flags"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Flags1_TT",
+      "Text": "Unknown TPF flags: 0, 1, 2, 3 or 128 (0x80). 2 and 3 store the image compressed with DCP_EDGE."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Type",
+      "Text": "Type"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Type_TT",
+      "Text": "Texture, cubemap, volume or array; it comes from the image."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Mipmaps",
+      "Text": "Mip Count"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Mipmaps_TT",
+      "Text": "The TPF's mip count; it comes from the image."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_DDS_Size",
+      "Text": "Image Size"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_DDS_Size_TT",
+      "Text": "The size and mip levels in the image's DDS header."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_DDS_Format",
+      "Text": "Image Format"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_DDS_Format_TT",
+      "Text": "The DXGI format in the image's DDS header, and whether it uses a DX10 or a legacy (DXT1/DXT5/ATI) header."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Data_Size",
+      "Text": "Data Size"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_Data_Size_TT",
+      "Text": "The size of the stored image."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_FloatStruct_Unk00",
+      "Text": "Float Data (Unk00)"
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_FloatStruct_TT",
+      "Text": "Extra values some textures carry (Dark Souls III and Bloodborne GI textures, Dark Souls II skies). Their meaning is unknown."
+    },
+    {
+      "Key": "TEXVIEW_Properties_Texture_FloatStruct_Value",
+      "Text": "Float Data [{0}]"
+    },
+    {
+      "Key": "TEXVIEW_NamePrompt_Accept",
+      "Text": "OK"
+    },
+    {
+      "Key": "TEXVIEW_NamePrompt_Accept_TT",
+      "Text": "Use this name (Enter)."
+    },
+    {
+      "Key": "TEXVIEW_NamePrompt_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TEXVIEW_NamePrompt_Cancel_TT",
+      "Text": "Close without changing anything."
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Name_Empty",
+      "Text": "Enter a name."
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Name_Invalid",
+      "Text": "The name can't contain dots, slashes or \\ : * ? \" < > |."
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Name_Taken",
+      "Text": "This container already has a TPF named {0}."
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Rename_Title",
+      "Text": "Rename TPF"
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Rename_Hint",
+      "Text": "The new name of {0}. Its folder and extension are kept. The game looks TPFs up by name, so a renamed TPF is only found by what refers to the new name."
+    },
+    {
+      "Key": "TEXVIEW_TpfCommands_Log_Copied",
+      "Text": "Copied texture {0}."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Paste_Textures",
+      "Text": "Paste Textures"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Paste_Textures_TT",
+      "Text": "Paste the copied textures into this TPF, after the selected texture. Names in use get a number added."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Add_TPF",
+      "Text": "Add Empty TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Add_TPF_TT",
+      "Text": "Add a new, empty TPF to this container after this one, made like it (platform, compression, layout)."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Duplicate_TPF",
+      "Text": "Duplicate TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Duplicate_TPF_TT",
+      "Text": "Add a copy of this TPF and all its textures after it, named with a _copy suffix."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Rename_TPF",
+      "Text": "Rename TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Rename_TPF_TT",
+      "Text": "Change this TPF's name inside the container."
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Delete_TPF",
+      "Text": "Delete TPF"
+    },
+    {
+      "Key": "TEXVIEW_InternalFileList_Context_Delete_TPF_TT",
+      "Text": "Remove this TPF and its textures from the container."
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Copy_TT",
+      "Text": "Copy this texture, to paste it into another PC TPF (in any container or view)."
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "TEXVIEW_TextureList_Context_Action_Paste_TT",
+      "Text": "Paste the copied textures after this one."
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_As",
+      "Text": "Copy As"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Context_Copy_As_TT",
+      "Text": "Write a copy of this container, with any unsaved edits, into the project under a new name, e.g. c2010_h to c2011_h for a new character. Files inside that carry the old name are renamed too."
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Copy_As_Title",
+      "Text": "Copy Container As"
+    },
+    {
+      "Key": "TEXVIEW_ContainerList_Copy_As_Hint",
+      "Text": "The name of the copy of {0}. It is written to the same folder in the project, with the same extensions."
+    },
+    {
+      "Key": "TEXVIEW_Copy_Exists",
+      "Text": "{0} already exists."
+    },
+    {
+      "Key": "TEXVIEW_Copy_Name_Taken",
+      "Text": "A texture container named {0} already exists; the editor finds containers by name."
+    },
+    {
+      "Key": "TEXVIEW_Copy_Log_Copied_To_Project",
+      "Text": "Copied {0} into the project."
+    },
+    {
+      "Key": "TEXVIEW_Copy_Log_Copied_As",
+      "Text": "Copied {0} to {1} in the project."
+    },
+    {
+      "Key": "TEXVIEW_Copy_Log_Failed",
+      "Text": "Failed to copy {0}."
+    }
+  ]
+}

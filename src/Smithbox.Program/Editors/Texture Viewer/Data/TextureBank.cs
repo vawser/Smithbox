@@ -634,6 +634,154 @@ public class TextureBank : IDisposable
     }
     #endregion
 
+    #region Copy
+    /// <summary>
+    /// Writes a game data container into the project as it is (a container with unsaved edits is saved instead).
+    /// Afterwards it is a project file, which the game loads instead of its own (T3, §6 Q5).
+    /// </summary>
+    public bool CopyToProject(FileDictionaryEntry entry)
+    {
+        var contents = Entries.TryGetValue(entry, out var c) ? c : PackedEntries.TryGetValue(entry, out var p) ? p : null;
+
+        if (contents != null && contents.IsModified)
+        {
+            var saved = contents.Save(Project, entry);
+            if (saved)
+                foreach (var path in contents.GetSavePaths(entry))
+                    ProjectFiles[path] = true;
+            return saved;
+        }
+
+        try
+        {
+            var paths = entry.Extension == "tpfbhd" ? new List<string> { entry.Path, BinderContents.GetBdtPath(entry.Path) } : [entry.Path];
+
+            foreach (var path in paths)
+            {
+                var data = Project.VFS.FS.ReadFile(path);
+                if (data == null)
+                {
+                    Smithbox.LogError(this, LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", path, Name));
+                    return false;
+                }
+
+                Project.VFS.ProjectFS.WriteFile(path, data.Value.ToArray());
+                ProjectFiles[path] = true;
+            }
+
+            Smithbox.Log(this, LOC.Get("TEXVIEW_Copy_Log_Copied_To_Project", entry.Path));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_Copy_Log_Failed", entry.Path), e);
+            return false;
+        }
+    }
+
+    /// <summary>The path a Copy As with this stem writes: the source's folder and extensions, the new name.</summary>
+    public static string GetCopyAsPath(FileDictionaryEntry source, string newStem)
+    {
+        var slash = source.Path.LastIndexOf('/');
+        var folder = slash >= 0 ? source.Path[..(slash + 1)] : "";
+        var fileName = slash >= 0 ? source.Path[(slash + 1)..] : source.Path;
+        var dot = fileName.IndexOf('.');
+        return folder + newStem + (dot >= 0 ? fileName[dot..] : "");
+    }
+
+    /// <summary>Why a Copy As name can't be used, or null.</summary>
+    public string ValidateCopyAs(FileDictionaryEntry source, string newStem)
+    {
+        if (string.IsNullOrWhiteSpace(newStem))
+            return LOC.Get("TEXVIEW_TpfCommands_Name_Empty");
+
+        if (newStem.IndexOfAny(['\\', '/', ':', '*', '?', '"', '<', '>', '|', '.']) >= 0)
+            return LOC.Get("TEXVIEW_TpfCommands_Name_Invalid");
+
+        var path = GetCopyAsPath(source, newStem);
+
+        if (Entries.Keys.Concat(PackedEntries.Keys).Any(e => string.Equals(e.Path, path, StringComparison.OrdinalIgnoreCase))
+            || Project.VFS.FS.FileExists(path))
+            return LOC.Get("TEXVIEW_Copy_Exists", path);
+
+        // The bank finds texture binders by file name
+        if (Entries.Keys.Any(e => string.Equals(e.Filename, newStem, StringComparison.OrdinalIgnoreCase)))
+            return LOC.Get("TEXVIEW_Copy_Name_Taken", newStem);
+
+        return null;
+    }
+
+    /// <summary>
+    /// Writes a copy of a container (with its unsaved edits) into the project under a new name, renaming the files
+    /// inside it that carry the old name (c2010_h.texbnd → c2011_h.texbnd holds c2011_h.tpf), and adds it to the
+    /// file lists so it can be edited at once. Packed tpfbhd containers (map textures) can't be copied.
+    /// </summary>
+    public FileDictionaryEntry CopyAs(FileDictionaryEntry source, string newStem)
+    {
+        if (source.Extension == "tpfbhd" || ValidateCopyAs(source, newStem) != null)
+            return null;
+
+        var newPath = GetCopyAsPath(source, newStem);
+
+        try
+        {
+            if (!Entries.TryGetValue(source, out var contents) || contents == null)
+            {
+                LoadTextureBinder(source).Wait();
+                contents = Entries.FirstOrDefault(e => e.Key.Filename == source.Filename).Value;
+            }
+
+            if (contents == null)
+            {
+                Smithbox.LogError(this, LOC.Get("TEXVIEW_DataSetup_Log_Failed_VFS_Find", source.Path, Name));
+                return null;
+            }
+
+            var output = contents.BuildOutput(source);
+            if (output == null || output.Count != 1)
+                return null;
+
+            byte[] bytes = output[0].Bytes;
+
+            if (!contents.Loose)
+            {
+                var oldStem = source.Filename;
+                IBinder copy = contents.Binder is BND3 ? BND3.Read(bytes) : BND4.Read(bytes);
+
+                // The stem can be anywhere in the name: c2010_h.tpf (ER), AM_c1270_d.tpf (DS2)
+                foreach (var file in copy.Files)
+                {
+                    var (folder, stem, extensions) = TpfCommands.SplitName(file.Name);
+                    var at = stem.IndexOf(oldStem, StringComparison.OrdinalIgnoreCase);
+                    if (at >= 0)
+                        file.Name = folder + stem[..at] + newStem + stem[(at + oldStem.Length)..] + extensions;
+                }
+
+                bytes = copy is BND3 b3 ? b3.Write() : ((BND4)copy).Write();
+            }
+
+            Project.VFS.ProjectFS.WriteFile(newPath, bytes);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_Copy_Log_Failed", newPath), e);
+            return null;
+        }
+
+        // Only now the file exists: add it so it is editable at once
+        var newEntry = source.Clone();
+        newEntry.Path = newPath;
+        newEntry.Filename = newStem;
+
+        Project.Locator.TextureFiles.Entries.Add(newEntry);
+        Entries[newEntry] = null;
+        ProjectFiles[newPath] = true;
+
+        Smithbox.Log(this, LOC.Get("TEXVIEW_Copy_Log_Copied_As", source.Path, newPath));
+        return newEntry;
+    }
+    #endregion
+
     #region Project Files
     /// <summary>
     /// Whether a file comes from the project rather than the game data, by path. Filled on a background thread at
@@ -696,7 +844,20 @@ public class BinderContents
     /// </summary>
     public HashSet<BinderFile> ModifiedFiles { get; } = new();
 
-    public bool IsModified => ModifiedFiles.Count > 0;
+    /// <summary>
+    /// TPFs were added to, removed from or renamed in the binder (T3), so the binder is rewritten even if no TPF is.
+    /// </summary>
+    public bool StructureModified { get; set; }
+
+    public bool IsModified => ModifiedFiles.Count > 0 || StructureModified;
+
+    /// <summary>
+    /// The TPF binder files in binder order (the dictionary's order isn't kept across removes and re-adds).
+    /// </summary>
+    public IEnumerable<BinderFile> OrderedFiles()
+    {
+        return Binder?.Files.Where(f => Files.ContainsKey(f)) ?? Files.Keys;
+    }
 
     /// <summary>
     /// Marks the TPF held by this binder file as edited, so the next save writes it.
@@ -736,48 +897,21 @@ public class BinderContents
 
         try
         {
-            if (Loose)
-            {
-                // The fake binder holds the loose TPF as its only file; the TPF itself is the file on disk
-                var tpf = Files.Values.First();
-                project.VFS.ProjectFS.WriteFile(entry.Path, tpf.Write());
-            }
-            else
-            {
-                foreach (var file in ModifiedFiles)
-                {
-                    file.Bytes = Files[file].Write();
-                }
+            var output = BuildOutput(entry);
 
-                switch (Binder)
-                {
-                    case BND3 bnd3:
-                        project.VFS.ProjectFS.WriteFile(entry.Path, bnd3.Write());
-                        break;
-                    case BND4 bnd4:
-                        project.VFS.ProjectFS.WriteFile(entry.Path, bnd4.Write());
-                        break;
-                    case BXF3 bxf3:
-                        {
-                            bxf3.Write(out var bhd, out var bdt);
-                            project.VFS.ProjectFS.WriteFile(entry.Path, bhd);
-                            project.VFS.ProjectFS.WriteFile(GetBdtPath(entry.Path), bdt);
-                            break;
-                        }
-                    case BXF4 bxf4:
-                        {
-                            bxf4.Write(out var bhd, out var bdt);
-                            project.VFS.ProjectFS.WriteFile(entry.Path, bhd);
-                            project.VFS.ProjectFS.WriteFile(GetBdtPath(entry.Path), bdt);
-                            break;
-                        }
-                    default:
-                        Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Unsupported_Container", entry.Path));
-                        return false;
-                }
+            if (output == null)
+            {
+                Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Unsupported_Container", entry.Path));
+                return false;
+            }
+
+            foreach (var (path, bytes) in output)
+            {
+                project.VFS.ProjectFS.WriteFile(path, bytes);
             }
 
             ModifiedFiles.Clear();
+            StructureModified = false;
             Smithbox.Log(this, LOC.Get("TEXVIEW_Save_Log_Saved_Container", entry.Path));
             return true;
         }
@@ -785,6 +919,45 @@ public class BinderContents
         {
             Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Failed_Container", entry.Path), e);
             return false;
+        }
+    }
+
+    /// <summary>
+    /// The files this container is written as, with its current (possibly unsaved) TPFs: the edited TPFs are written
+    /// into their binder files first. One file, or a bhd and a bdt. Null for an unknown container type.
+    /// </summary>
+    public List<(string Path, byte[] Bytes)> BuildOutput(FileDictionaryEntry entry)
+    {
+        if (Loose)
+        {
+            // The fake binder holds the loose TPF as its only file; the TPF itself is the file on disk
+            return [(entry.Path, Files.Values.First().Write())];
+        }
+
+        // A TPF removed after it was edited is no longer in the binder
+        foreach (var file in ModifiedFiles.Where(f => Files.ContainsKey(f)))
+        {
+            file.Bytes = Files[file].Write();
+        }
+
+        switch (Binder)
+        {
+            case BND3 bnd3:
+                return [(entry.Path, bnd3.Write())];
+            case BND4 bnd4:
+                return [(entry.Path, bnd4.Write())];
+            case BXF3 bxf3:
+                {
+                    bxf3.Write(out var bhd, out var bdt);
+                    return [(entry.Path, bhd), (GetBdtPath(entry.Path), bdt)];
+                }
+            case BXF4 bxf4:
+                {
+                    bxf4.Write(out var bhd, out var bdt);
+                    return [(entry.Path, bhd), (GetBdtPath(entry.Path), bdt)];
+                }
+            default:
+                return null;
         }
     }
 

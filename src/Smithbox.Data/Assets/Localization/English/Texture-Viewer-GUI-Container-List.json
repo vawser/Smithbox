@@ -14,7 +14,7 @@
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Copy_to_Project_TT",
-      "Text": "Copy this file into your project."
+      "Text": "Copy this file into your project unchanged (with unsaved edits, it is saved instead). You don't need this to edit it: Save always writes edited files into the project."
     },
     {
       "Key": "TEXVIEW_ContainerList_Context_Header_Export",

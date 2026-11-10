@@ -5,6 +5,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -40,7 +41,13 @@ public class TexInternalFileList
         {
             int index = 0;
 
-            foreach (var entry in View.Selection.SelectedBinder.Files)
+            // Binder order; a snapshot, as a context menu command can add or remove TPFs during the loop
+            var container = View.Selection.SelectedBinder;
+            var entries = container.OrderedFiles()
+                .Select(f => new KeyValuePair<BinderFile, TPF>(f, container.Files[f]))
+                .ToList();
+
+            foreach (var entry in entries)
             {
                 var file = entry.Key;
                 var tpfEntry = entry.Value;
@@ -151,6 +158,63 @@ public class TexInternalFileList
                 ImGui.SetClipboardText(filename);
             }
             GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Copy_Filename_TT"));
+
+            // Textures of the selected TPF, PC only
+            var target = View.GetEditTarget();
+            if (target != null && target.Tpf == tpf)
+            {
+                ImGui.Separator();
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Add_Texture")}##addTexture", "", false, !View.TextureImport.IsRunning))
+                {
+                    View.TextureImport.AddFromDialog();
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Add_Texture_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Replace_Folder")}##replaceFolder", "", false, !View.TextureImport.IsRunning))
+                {
+                    View.TextureImport.ReplaceMatchingFromFolderDialog();
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Replace_Folder_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Paste_Textures")}##pasteTextures", InputManager.GetHint(KeybindID.Paste), false, View.Commands.CanPaste))
+                {
+                    View.Commands.PasteTextures();
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Paste_Textures_TT"));
+            }
+
+            // TPFs of the container: real binders of PC TPFs only
+            if (View.GetEditableContainer() == View.Selection.SelectedBinder && View.Selection.SelectedBinder != null && View.Selection.SelectedBinder.Files.ContainsKey(entry))
+            {
+                ImGui.Separator();
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Add_TPF")}##addTpf"))
+                {
+                    View.Selection.SelectTpfFile(entry, tpf);
+                    View.Commands.AddEmptyTpf();
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Add_TPF_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Duplicate_TPF")}##duplicateTpf", InputManager.GetHint(KeybindID.Duplicate)))
+                {
+                    View.Commands.DuplicateTpf(entry);
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Duplicate_TPF_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Rename_TPF")}##renameTpf"))
+                {
+                    View.Commands.RenameTpf(entry);
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Rename_TPF_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_InternalFileList_Context_Delete_TPF")}##deleteTpf", InputManager.GetHint(KeybindID.Delete)))
+                {
+                    View.Commands.DeleteTpf(entry);
+                }
+                GUI.Tooltip(LOC.Get("TEXVIEW_InternalFileList_Context_Delete_TPF_TT"));
+            }
+
             ImGui.EndPopup();
         }
     }
