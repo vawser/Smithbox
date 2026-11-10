@@ -10,9 +10,6 @@
 
 - Get gizmos to work in Orthographic/Oblique view mode
 
-- Col Editor:
-    - Add a simplify mesh option that simplifies complex meshes (keeping the general shape)
-
 - Nav Editor:
     - Add navigation editor support for the other project types: DS1/DS1R/DES
 

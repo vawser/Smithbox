@@ -18,6 +18,9 @@ public class CachedTexture
 
     public ITextureHandle Handle { get; set; }
 
+    /// <summary>For icon previews: where the icon came from, shown in its tooltip. Null for other textures.</summary>
+    public IconSource Source { get; set; }
+
     public CachedTexture(SubTexture subTexture)
     {
         SubTexture = subTexture;

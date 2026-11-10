@@ -1400,10 +1400,28 @@ public static class TextureReferenceHelper
                 if (cachedTexture != null)
                 {
                     DummySize = Smithbox.TextureManager.IconManager.DisplayIcon(cachedTexture);
+
+                    // Where the icon came from: built only while hovered
+                    if (ImGui.IsItemHovered() && cachedTexture.Source != null)
+                    {
+                        GUI.Tooltip(Smithbox.TextureManager.IconManager.DescribeIcon(cachedTexture));
+                    }
                 }
                 else
                 {
                     ImGui.Dummy(DummySize);
+                }
+
+                // On the icon, or on the empty space where a missing one would be
+                if (ImGui.BeginPopupContextItem($"iconPreviewContext_{fieldName}_{columnIndex}"))
+                {
+                    if (ImGui.MenuItem($"{LOC.Get("PARAM_FieldDecorator_TexRef_Reload")}##reloadIconSheets"))
+                    {
+                        Smithbox.TextureManager.IconManager.ReloadIconSheets(Smithbox.Orchestrator.SelectedProject);
+                    }
+                    GUI.Tooltip(LOC.Get("PARAM_FieldDecorator_TexRef_Reload_TT"));
+
+                    ImGui.EndPopup();
                 }
             }
 

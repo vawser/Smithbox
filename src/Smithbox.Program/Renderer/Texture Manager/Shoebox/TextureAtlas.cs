@@ -12,6 +12,14 @@ public class TextureAtlas
     // Custom
     public string Type { get; set; } = "";
 
+    /// <summary>An atlas made in code (generated icon layouts).</summary>
+    public TextureAtlas(string imagePath, string type, List<SubTexture> subTextures)
+    {
+        ImagePath = imagePath;
+        Type = type ?? "";
+        SubTextures = subTextures;
+    }
+
     public TextureAtlas(XmlNode node)
     {
         ImagePath = node.Attributes["imagePath"].Value;

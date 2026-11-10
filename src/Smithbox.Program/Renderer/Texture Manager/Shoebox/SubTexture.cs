@@ -11,6 +11,17 @@ public class SubTexture
     public string Height { get; set; } = "";
     public string Half { get; set; } = "";
 
+    /// <summary>A sub-texture made in code (generated icon layouts).</summary>
+    public SubTexture(string name, int x, int y, int width, int height)
+    {
+        Name = name;
+        X = $"{x}";
+        Y = $"{y}";
+        Width = $"{width}";
+        Height = $"{height}";
+        Half = "0";
+    }
+
     public SubTexture(XmlNode node)
     {
         if (node.Attributes != null)

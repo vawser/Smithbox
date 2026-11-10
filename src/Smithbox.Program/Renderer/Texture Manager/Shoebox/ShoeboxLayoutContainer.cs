@@ -6,6 +6,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -73,11 +74,51 @@ public class ShoeboxLayoutContainer
         }
     }
 
+    /// <summary>
+    /// The project-local Icon Layouts folder, beside the project-local Icon Configurations:
+    /// &lt;project&gt;/.smithbox/Assets/PARAM/&lt;game&gt;/Icon Layouts
+    /// </summary>
+    public static string GetProjectLayoutFolder(ProjectEntry project)
+    {
+        return Path.Combine(project.Descriptor.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(project), "Icon Layouts");
+    }
+
+    /// <summary>
+    /// Smithbox's bundled layouts (DS3, BB), with the project's own layouts over them: a project layout replaces the
+    /// bundled one for the same sheet (atlas imagePath), and a layout for a new sheet is added. A new sheet joins an
+    /// Icon Configuration group through its atlas' type attribute (e.g. type="Item"), as the groups of these games
+    /// only search their listed sheets.
+    /// </summary>
     public async Task<bool> SetupLayoutsDirectly()
     {
         await Task.Yield();
 
         var srcFolder = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Icon Layouts");
+        var projectFolder = GetProjectLayoutFolder(Project);
+
+        // Project-local first, so their sheets can be skipped in the bundled set
+        var projectSheets = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        if (Directory.Exists(projectFolder))
+        {
+            foreach (var path in Directory.EnumerateFiles(projectFolder, "*.layout"))
+            {
+                try
+                {
+                    var newLayout = new ShoeboxLayout(path);
+                    Layouts.TryAdd($"project:{Path.GetFileName(path)}", newLayout);
+
+                    foreach (var atlas in newLayout.TextureAtlases)
+                    {
+                        projectSheets.Add(Path.GetFileNameWithoutExtension(atlas.ImagePath));
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(this, LOC.Get("REND_Shoebox_Layout_Load_Failed", path), e);
+                }
+            }
+        }
 
         foreach (var path in Directory.EnumerateFiles(srcFolder))
         {
@@ -86,6 +127,10 @@ public class ShoeboxLayoutContainer
             if (filename.Contains(".layout"))
             {
                 ShoeboxLayout newLayout = new ShoeboxLayout(path);
+
+                // Replaced by the project's layout for the same sheet
+                if (newLayout.TextureAtlases.Any(a => projectSheets.Contains(Path.GetFileNameWithoutExtension(a.ImagePath))))
+                    continue;
 
                 if (!Layouts.ContainsKey(filename))
                 {

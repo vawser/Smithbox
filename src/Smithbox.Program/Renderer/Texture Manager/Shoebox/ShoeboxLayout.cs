@@ -12,6 +12,13 @@ public class ShoeboxLayout
 
     public List<TextureAtlas> TextureAtlases = new List<TextureAtlas>();
 
+    /// <summary>A layout made in code (generated icon layouts).</summary>
+    public ShoeboxLayout(string fileName, TextureAtlas atlas)
+    {
+        FileName = fileName;
+        TextureAtlases.Add(atlas);
+    }
+
     public ShoeboxLayout(BinderFile file)
     {
         FileName = file.Name;

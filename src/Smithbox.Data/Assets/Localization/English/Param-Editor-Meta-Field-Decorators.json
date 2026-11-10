@@ -117,6 +117,22 @@
       "Text": "   [Icon]"
     },
     {
+      "Key": "PARAM_FieldDecorator_TexRef_Source_TT",
+      "Text": "Sheet: {0}\nTPF: {1}\nLayout: {2}\nCell: {3} at {4}, {5} ({6} x {7})"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_TexRef_Shadowed_TT",
+      "Text": "Other cells with this ID (not used, the first one wins):\n{0}"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_TexRef_Reload",
+      "Text": "Reload Icon Sheets"
+    },
+    {
+      "Key": "PARAM_FieldDecorator_TexRef_Reload_TT",
+      "Text": "Reads the menu textures and icon layouts again: the game's layout binders and the project's Icon Layouts folder. Use this after changing those files outside Smithbox. A newly added file still needs a project reload."
+    },
+    {
       "Key": "PARAM_FieldDecorator_AC6_FieldOffset_Label_1",
       "Text": "   <PARAM>"
     },
