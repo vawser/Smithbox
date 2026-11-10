@@ -57,6 +57,9 @@ public class TexEditorView : IEditorView
 
         DisplayViewport = new TexDisplayViewport(this, Project);
         Properties = new TexProperties(this, Project);
+
+        // Every edit, undo and redo: the Param Editor's icon previews are looked up again (T7)
+        ActionManager.ActionPerformed += () => Smithbox.TextureManager?.IconManager?.NotifyEdited();
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)

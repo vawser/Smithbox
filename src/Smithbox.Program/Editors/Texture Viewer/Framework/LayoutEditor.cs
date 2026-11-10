@@ -43,10 +43,14 @@ public partial class LayoutEditor
     private TPF.Texture ResolvedFor;
     private Dictionary<ShoeboxLayoutContainer, string> PairedTpfPaths = new();
 
+    /// <summary>The param rows that show the selected cell as their icon (T7).</summary>
+    public IconUsage Usage { get; }
+
     public LayoutEditor(TexEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+        Usage = new IconUsage(project);
     }
 
     /// <summary>The layout can be edited: an atlas from a file the lossless reader could read.</summary>

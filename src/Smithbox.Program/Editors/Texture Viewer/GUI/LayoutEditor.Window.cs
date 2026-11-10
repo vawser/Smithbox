@@ -3,6 +3,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -67,6 +68,7 @@ public partial class LayoutEditor
         {
             DisplayOptions();
             DisplaySelection();
+            DisplayUsedBy();
 
             if (IsEditable)
                 DisplayGrid();
@@ -400,6 +402,87 @@ public partial class LayoutEditor
             if (nm.Success && long.TryParse(nm.Groups[2].Value, out var id))
                 Grid.StartId = id;
         }
+    }
+    #endregion
+
+    #region Used By
+    private bool ShowUsedBy = true;
+
+    /// <summary>The param rows whose icon field shows the selected cell (T7), with a jump to the Param Editor.</summary>
+    private void DisplayUsedBy()
+    {
+        var cell = Primary;
+        if (cell == null)
+            return;
+
+        // Used By
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("TEXVIEW_Layout_Used_By_Header"), LOC.Get("TEXVIEW_Layout_Used_By_Header_TT"), ref ShowUsedBy);
+
+        if (!ShowUsedBy)
+            return;
+
+        // Low sheets are not looked up for icons: the hi sheet's cell is the one rows show
+        if (!Container.IsBundled && IconIndex.IsLow(Container.FileEntry))
+        {
+            GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Used_By_Low"));
+            return;
+        }
+
+        if (!Usage.ParamsAvailable)
+        {
+            GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Used_By_No_Params"));
+            return;
+        }
+
+        var uses = Usage.For(cell);
+
+        if (uses == null)
+        {
+            GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Used_By_Waiting"));
+            return;
+        }
+
+        if (uses.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Used_By_None", cell.Name));
+        }
+        else
+        {
+            var hidden = uses.Count(u => u.ShownInstead != null);
+            GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Used_By_Count", uses.Count - hidden, hidden));
+
+            if (ImGui.BeginChild("layoutUsedBy", new Vector2(0, Math.Min(uses.Count, 8) * ImGui.GetTextLineHeightWithSpacing() + 8), ImGuiChildFlags.Borders))
+            {
+                for (int i = 0; i < uses.Count; i++)
+                {
+                    var use = uses[i];
+                    var label = string.IsNullOrEmpty(use.RowName)
+                        ? $"{use.Param} {use.RowId}"
+                        : $"{use.Param} {use.RowId} {use.RowName}";
+
+                    if (use.ShownInstead != null)
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
+
+                    if (ImGui.Selectable($"{label}##usedBy{i}"))
+                        IconUsage.JumpToParam(use);
+
+                    if (use.ShownInstead != null)
+                        ImGui.PopStyleColor();
+
+                    GUI.Tooltip(use.ShownInstead == null
+                        ? LOC.Get("TEXVIEW_Layout_Used_By_Row_TT", use.Field, use.Group, use.IconId)
+                        : LOC.Get("TEXVIEW_Layout_Used_By_Row_Hidden_TT", use.Field, use.Group, use.IconId,
+                            use.ShownInstead.SubTexture?.Name ?? "", use.ShownInstead.Sheet ?? "", use.ShownInstead.Binder ?? ""));
+                }
+            }
+
+            ImGui.EndChild();
+        }
+
+        GUI.MultiButtonInput("layoutUsedByActions",
+            "refresh", LOC.Get("TEXVIEW_Layout_Used_By_Refresh"), LOC.Get("TEXVIEW_Layout_Used_By_Refresh_TT"),
+            Usage.Refresh);
     }
     #endregion
 

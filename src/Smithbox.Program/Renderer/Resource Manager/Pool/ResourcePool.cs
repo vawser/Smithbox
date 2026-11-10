@@ -250,6 +250,26 @@ public sealed class ResourcePool : IDisposable
         }
     }
 
+    /// <summary>
+    ///     Lets the next load of these resources replace them whatever their place in their container. A resource's
+    ///     priority includes its index in the container, so after the container was edited (a texture inserted
+    ///     before it in its TPF) a reload would otherwise rank lower than the copy it is meant to replace and be
+    ///     dropped. Call right before a <see cref="LoadOptions.Reload" /> load of the same container.
+    /// </summary>
+    public void ReleasePriority(IEnumerable<IResourceHandle> handles)
+    {
+        lock (_lock)
+        {
+            foreach (IResourceHandle h in handles)
+            {
+                if (_entries.TryGetValue((h.Name, h.ResourceType), out Entry? e) && ReferenceEquals(e.Handle, h))
+                {
+                    e.Order = long.MaxValue;
+                }
+            }
+        }
+    }
+
     private bool IsCoveredByCompletedLoad(string key, LoadOptions options)
     {
         if (!_completed.TryGetValue(key, out var done))

@@ -217,7 +217,7 @@ public class IconIndex
         }
     }
 
-    private static bool IsLow(FileDictionaryEntry e)
+    public static bool IsLow(FileDictionaryEntry e)
     {
         return e.Folder.EndsWith("/low", StringComparison.OrdinalIgnoreCase)
             || e.Filename.EndsWith("_l", StringComparison.OrdinalIgnoreCase);
@@ -289,7 +289,7 @@ public class IconIndex
         return new List<string> { group.SubTexturePrefix ?? "" };
     }
 
-    private static IEnumerable<string> AllPrefixes(IconConfigurationEntry group)
+    public static IEnumerable<string> AllPrefixes(IconConfigurationEntry group)
     {
         return group.SubTexturePrefix switch
         {
@@ -324,6 +324,42 @@ public class IconIndex
             return false;
 
         return atlas.Type.Split(',').Any(t => t.Trim().Equals(group.Name, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>The cell a group finds for exactly this prefix and id (the first one, which hides the rest), or null.</summary>
+    public IconSource Lookup(IconConfigurationEntry group, string prefix, int id)
+    {
+        return GetGroupMap(group).TryGetValue((prefix, id), out var source) ? source : null;
+    }
+
+    private static readonly Dictionary<string, Regex> CellNameRegexes = new();
+
+    /// <summary>
+    /// The (prefix, id) pairs a group reads a cell name as, with the same rule as the group maps
+    /// (MENU_ItemIcon_01234.png → ("MENU_ItemIcon_", 1234)). Empty when the name isn't one of the group's icons.
+    /// </summary>
+    public static List<(string Prefix, int Id)> ReadCellName(IconConfigurationEntry group, string cellName)
+    {
+        var result = new List<(string, int)>();
+        if (string.IsNullOrEmpty(cellName))
+            return result;
+
+        var name = cellName.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ? cellName[..^4] : cellName;
+
+        foreach (var prefix in AllPrefixes(group).Distinct())
+        {
+            if (!CellNameRegexes.TryGetValue(prefix, out var regex))
+            {
+                regex = new Regex($"^{Regex.Escape(prefix)}([0-9]+)(?:_[0-9]+)?$", RegexOptions.CultureInvariant);
+                CellNameRegexes[prefix] = regex;
+            }
+
+            var match = regex.Match(name);
+            if (match.Success && int.TryParse(match.Groups[1].Value, out var id))
+                result.Add((prefix, id));
+        }
+
+        return result;
     }
 
     public IconSource Find(IconConfigurationEntry group, List<string> prefixes, int id)

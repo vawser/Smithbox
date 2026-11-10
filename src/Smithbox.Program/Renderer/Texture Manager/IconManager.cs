@@ -65,9 +65,103 @@ public class IconManager
         Index = null;
     }
 
+    #region Texture Editor refresh (T7)
+    /// <summary>Set by the Texture Editor; applied at the next icon lookup, before any icon of that frame is drawn.</summary>
+    private bool RefreshPending;
+
+    /// <summary>Project paths the Texture Editor wrote since the last refresh: their copies read from disk are stale.</summary>
+    private readonly HashSet<string> SavedPaths = new(StringComparer.OrdinalIgnoreCase);
+
+    private bool LayoutsSaved;
+
+    /// <summary>
+    /// A texture or layout was edited in the Texture Editor (or an edit undone). The icons are looked up again on
+    /// the next frame they are shown: the edited TPFs and layouts are the editor's own objects, which the index and
+    /// the sheets are built from, so unsaved edits show in the icon previews.
+    /// </summary>
+    public void NotifyEdited()
+    {
+        RefreshPending = true;
+        IndexRebuiltForPending = false;
+    }
+
+    /// <summary>The Texture Editor wrote these project files (containers and layout binders).</summary>
+    public void NotifySaved(IEnumerable<string> paths, bool layoutsSaved)
+    {
+        foreach (var path in paths)
+            SavedPaths.Add(path);
+
+        LayoutsSaved |= layoutsSaved;
+        RefreshPending = true;
+        IndexRebuiltForPending = false;
+    }
+
+    private void ApplyPendingRefresh()
+    {
+        if (!RefreshPending)
+            return;
+
+        RefreshPending = false;
+        IndexRebuiltForPending = false;
+
+        // Sheet handles, icon lookups, DS2 icons and the index (rebuilt from the bank's layouts as they are now)
+        PurgeCache();
+
+        // A TPF read from disk is dropped where the bank now has the file loaded (it may have edits) or it was
+        // saved; the next lookup takes the bank's copy or reads the file again
+        var bank = TpfProject?.Handler?.TextureData?.PrimaryBank;
+        foreach (var path in Tpfs.Keys.ToList())
+        {
+            var loaded = bank?.Entries?.FirstOrDefault(e => string.Equals(e.Key.Path, path, StringComparison.OrdinalIgnoreCase)).Value;
+            var bankCopy = loaded?.Files?.Values.FirstOrDefault();
+
+            if (SavedPaths.Contains(path) || (bankCopy != null && !ReferenceEquals(bankCopy, Tpfs[path])))
+            {
+                Tpfs.Remove(path);
+                TpfLoads.Remove(path);
+            }
+        }
+
+        // Saved files are on disk now, so the bank's copies match them again
+        if (SavedPaths.Count > 0)
+            BankCopiesStale = false;
+
+        // DS2 reads its per-icon layouts from the Icon Layouts folders
+        if (LayoutsSaved)
+            DirectLayouts = null;
+
+        SavedPaths.Clear();
+        LayoutsSaved = false;
+    }
+
+    /// <summary>The index was already rebuilt for the pending refresh (by GetCurrentIndex).</summary>
+    private bool IndexRebuiltForPending;
+
+    /// <summary>
+    /// The icon index of the project, for the Texture Editor's Used By (null while the bank is still setting up its
+    /// layouts), rebuilt first if an edit is pending so it describes the layouts as they are now. Only the index:
+    /// the sheet handles are left to the next icon lookup, as icons drawn earlier this frame may still use them.
+    /// </summary>
+    public IconIndex GetCurrentIndex(ProjectEntry project)
+    {
+        if (project == null)
+            return null;
+
+        if (RefreshPending && !IndexRebuiltForPending)
+        {
+            Index = null;
+            IndexRebuiltForPending = true;
+        }
+
+        return GetIndex(project);
+    }
+    #endregion
+
     public CachedTexture HandleIcon(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
     {
         CachedTexture texture = null;
+
+        ApplyPendingRefresh();
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
@@ -112,13 +206,16 @@ public class IconManager
 
         var fs = curProject.VFS.FS;
 
-        if (fs.FileExists(relativePath))
+        // The Texture Editor's copy when it has the file loaded, so its unsaved edits show (T7)
+        var bankCopy = curProject.Handler?.TextureData?.PrimaryBank?.Entries?
+            .FirstOrDefault(e => string.Equals(e.Key.Path, relativePath, StringComparison.OrdinalIgnoreCase)).Value?
+            .Files?.Values.FirstOrDefault();
+
+        if (bankCopy != null || fs.FileExists(relativePath))
         {
             try
             {
-                var tpfData = curProject.VFS.FS.ReadFile(relativePath);
-
-                TPF curTPF = TPF.Read(tpfData.Value);
+                TPF curTPF = bankCopy ?? TPF.Read(curProject.VFS.FS.ReadFile(relativePath).Value);
 
                 // DS2 TPFs only contain 1 texture, so we can skip proper matching
                 var curTex = curTPF.Textures.FirstOrDefault();

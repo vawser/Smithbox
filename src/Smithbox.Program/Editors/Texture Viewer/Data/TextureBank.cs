@@ -631,6 +631,8 @@ public class TextureBank : IDisposable
     public bool SaveAll()
     {
         var success = true;
+        var saved = new List<string>();
+        var layoutsSaved = false;
 
         // Copied: a save clears the container's modified set
         foreach (var pair in ModifiedContainers().ToList())
@@ -638,7 +640,10 @@ public class TextureBank : IDisposable
             if (pair.Value.Save(Project, pair.Key))
             {
                 foreach (var path in pair.Value.GetSavePaths(pair.Key))
+                {
                     ProjectFiles[path] = true;
+                    saved.Add(path);
+                }
             }
             else
             {
@@ -650,8 +655,13 @@ public class TextureBank : IDisposable
         {
             if (layouts.Save())
             {
+                layoutsSaved = true;
+
                 if (!layouts.IsBundled)
+                {
                     ProjectFiles[layouts.FileEntry.Path] = true;
+                    saved.Add(layouts.FileEntry.Path);
+                }
             }
             else
             {
@@ -659,7 +669,32 @@ public class TextureBank : IDisposable
             }
         }
 
+        OnFilesSaved(saved, layoutsSaved);
+
         return success;
+    }
+
+    /// <summary>
+    /// Shows what was written in the other editors (T7): the scenes reload the textures they took from the saved
+    /// containers, and the icon previews read the saved TPFs and layouts again.
+    /// </summary>
+    private void OnFilesSaved(List<string> saved, bool layoutsSaved)
+    {
+        if (saved.Count == 0 && !layoutsSaved)
+            return;
+
+        try
+        {
+            var reloaded = StudioCore.Renderer.TextureRefresh.ReloadSceneTextures(saved);
+            Smithbox.TextureManager?.IconManager?.NotifySaved(saved, layoutsSaved);
+
+            if (reloaded > 0)
+                Smithbox.Log(this, LOC.Get("TEXVIEW_Save_Log_Refreshed_Scenes", reloaded));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Refresh_Failed"), e);
+        }
     }
     #endregion
 
@@ -676,8 +711,12 @@ public class TextureBank : IDisposable
         {
             var saved = contents.Save(Project, entry);
             if (saved)
+            {
                 foreach (var path in contents.GetSavePaths(entry))
                     ProjectFiles[path] = true;
+
+                OnFilesSaved(contents.GetSavePaths(entry), false);
+            }
             return saved;
         }
 

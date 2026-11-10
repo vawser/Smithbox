@@ -41,6 +41,14 @@
       "Text": "Failed to save {0}."
     },
     {
+      "Key": "TEXVIEW_Save_Log_Refreshed_Scenes",
+      "Text": "Reloading {0} textures in the other editors' viewports."
+    },
+    {
+      "Key": "TEXVIEW_Save_Log_Refresh_Failed",
+      "Text": "Saved, but the other editors could not be refreshed; reload the map or model to see the changes."
+    },
+    {
       "Key": "TEXVIEW_Save_Log_Unsupported_Container",
       "Text": "Failed to save {0}: unsupported container type."
     }
