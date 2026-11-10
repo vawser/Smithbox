@@ -1240,7 +1240,12 @@ namespace SoulsFormats
         /// </summary>
         public class LevelConnector
         {
-            public Vector4 Position { get; set; }
+            /// <summary>
+            /// Stored as a Vector4 in the file; split like the navmesh entries' transform so the editor's
+            /// Vector3 position handling (placement, gizmo moves) applies to it.
+            /// </summary>
+            public Vector3 Position { get; set; }
+            public float PositionW { get; set; }
             public int NavmeshID { get; set; }
             public int Unk14 { get; set; }
             public int Unk18 { get; set; }
@@ -1253,7 +1258,8 @@ namespace SoulsFormats
 
             internal LevelConnector(BinaryReaderEx br)
             {
-                Position = br.ReadVector4();
+                Position = br.ReadVector3();
+                PositionW = br.ReadSingle();
                 NavmeshID = br.ReadInt32();
                 Unk14 = br.ReadInt32();
                 Unk18 = br.ReadInt32();
@@ -1262,7 +1268,8 @@ namespace SoulsFormats
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteVector4(Position);
+                bw.WriteVector3(Position);
+                bw.WriteSingle(PositionW);
                 bw.WriteInt32(NavmeshID);
                 bw.WriteInt32(Unk14);
                 bw.WriteInt32(Unk18);

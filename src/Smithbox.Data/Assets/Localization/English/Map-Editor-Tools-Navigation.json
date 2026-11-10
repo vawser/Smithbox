@@ -275,7 +275,7 @@
     { "Key": "MAP_Navigation_Stitch_List_Added", "Text": "Add: {0} {1} face {2} edge {3} to {4} {5} face {6} edge {7}" },
     { "Key": "MAP_Navigation_Stitch_List_More", "Text": "Only the first {0} of each are listed." },
 
-    { "Key": "MAP_Navigation_Tab_Models", "Text": "Models" },
+    { "Key": "MAP_Navigation_Tab_Models", "Text": "Create" },
     { "Key": "MAP_Navigation_Models_Description", "Text": "The map's navmesh models, each an entry in both sets (n and o). Remove one, which makes it a placeholder as in the game's files, or copy one into a free placeholder, moved. Nothing is renumbered." },
     { "Key": "MAP_Navigation_Models_Header", "Text": "Models" },
     { "Key": "MAP_Navigation_Models_Header_TT", "Text": "Every navmesh model of the map, with its face count in each set. Click one to select it." },

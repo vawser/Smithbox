@@ -150,15 +150,16 @@ public class CollisionEditorTool
 
         if (ImGui.BeginTabBar("collisionEditorTabs"))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Edit")}##collisionEditorTabEdit"))
-            {
-                DisplayEditTab();
-                ImGui.EndTabItem();
-            }
 
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Create")}##collisionEditorTabCreate"))
             {
                 Create.Display();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Edit")}##collisionEditorTabEdit"))
+            {
+                DisplayEditTab();
                 ImGui.EndTabItem();
             }
 

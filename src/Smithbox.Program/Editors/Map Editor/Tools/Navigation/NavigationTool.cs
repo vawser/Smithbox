@@ -149,6 +149,12 @@ public partial class NavigationTool
                 ImGui.EndTabItem();
             }
 
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Models")}##navigationTabModels"))
+            {
+                DisplayModelsTab(map);
+                ImGui.EndTabItem();
+            }
+
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Edit")}##navigationTabEdit"))
             {
                 DisplayEditTab();
@@ -176,12 +182,6 @@ public partial class NavigationTool
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Stitch")}##navigationTabStitch"))
             {
                 DisplayStitchTab();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Models")}##navigationTabModels"))
-            {
-                DisplayModelsTab(map);
                 ImGui.EndTabItem();
             }
 
