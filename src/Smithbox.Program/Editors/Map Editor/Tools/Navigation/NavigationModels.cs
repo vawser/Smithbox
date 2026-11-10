@@ -96,23 +96,34 @@ public sealed class NavModelState
 
 public static class NavModelEdit
 {
+    /// <summary>
+    /// Whether a model has an entry in every set the game has: n and o (ER, NR, DB_NT), or n alone (AC6).
+    /// </summary>
+    public static bool HasEveryEntry(NavigationMap map, NavmeshModel model)
+        => model.NEntry != null && (model.OEntry != null || !map.Profile.HasOSet);
+
+    /// <summary>A model's entries in the sets the game has.</summary>
+    public static IEnumerable<NVA.Navmesh> EntriesOf(NavigationMap map, NavmeshModel model)
+        => map.Profile.Sets.Select(model.Entry).Where(e => e != null);
+
     /// <summary>Models that can be removed: with faces, not split into quarters, and with files no other entry uses.</summary>
     public static IEnumerable<NavmeshModel> Removable(NavigationMap map)
-        => map.Models.Where(m => !m.IsPlaceholder && m.Quarters.Count == 0 && m.NEntry != null && m.OEntry != null && !SharesFiles(map, m));
+        => map.Models.Where(m => !m.IsPlaceholder && m.Quarters.Count == 0 && HasEveryEntry(map, m) && !SharesFiles(map, m));
 
     /// <summary>
-    /// Placeholder pairs a duplicate can fill: no faces in either set, an entry in each, no quarters or gate nodes, and
-    /// file names no other entry uses (some maps list a ModelID twice, e.g. 443590 in m60_44_35_00).
+    /// Placeholders a duplicate can fill: no faces in any set, an entry in each, no quarters or gate nodes, and file
+    /// names no other entry uses (some maps list a ModelID twice, e.g. 443590 in m60_44_35_00).
     /// </summary>
     public static IEnumerable<NavmeshModel> FreeSlots(NavigationMap map)
-        => map.Models.Where(m => m.IsPlaceholder && m.Quarters.Count == 0 && m.NEntry != null && m.OEntry != null
-            && m.NEntry.GateNodes.Count == 0 && m.OEntry.GateNodes.Count == 0 && !SharesFiles(map, m));
+        => map.Models.Where(m => m.IsPlaceholder && m.Quarters.Count == 0 && HasEveryEntry(map, m)
+            && EntriesOf(map, m).All(e => e.GateNodes.Count == 0) && !SharesFiles(map, m));
 
     /// <summary>Whether another entry of the map names one of a model's files.</summary>
     private static bool SharesFiles(NavigationMap map, NavmeshModel model)
     {
-        var names = new HashSet<string> { map.FileNameOf(model.NEntry), map.FileNameOf(model.OEntry) };
-        return map.Nva.Navmeshes.Any(e => !ReferenceEquals(e, model.NEntry) && !ReferenceEquals(e, model.OEntry) && names.Contains(map.FileNameOf(e)));
+        var own = EntriesOf(map, model).ToList();
+        var names = own.Select(map.FileNameOf).ToHashSet();
+        return map.Nva.Navmeshes.Any(e => !own.Any(o => ReferenceEquals(o, e)) && names.Contains(map.FileNameOf(e)));
     }
 
     /// <summary>
@@ -142,7 +153,7 @@ public static class NavModelEdit
     {
         var result = new NavModelEditResult();
 
-        if (model.Quarters.Count > 0 || model.NEntry == null || model.OEntry == null)
+        if (model.Quarters.Count > 0 || !HasEveryEntry(map, model))
         {
             result.Error = "MAP_Navigation_Model_Error_Quarters";
             return result;
@@ -155,8 +166,9 @@ public static class NavModelEdit
         }
 
         var list = map.Nva.Navmeshes;
-        var positions = new HashSet<int> { list.IndexOf(model.NEntry), list.IndexOf(model.OEntry) };
-        var names = new HashSet<int> { model.NEntry.NameID, model.OEntry.NameID };
+        var entries = EntriesOf(map, model).ToList();
+        var positions = entries.Select(e => list.IndexOf(e)).ToHashSet();
+        var names = entries.Select(e => e.NameID).ToHashSet();
 
         RemoveGatesTo(list, positions, map.Profile);
 
@@ -172,7 +184,7 @@ public static class NavModelEdit
         foreach (var bank in map.Nva.NodeBanks)
             bank.Faces.RemoveAll(f => names.Contains(f.CollisionID));
 
-        foreach (var entry in new[] { model.NEntry, model.OEntry })
+        foreach (var entry in entries)
         {
             entry.FaceCount = 0;
             entry.Unk4C = 1;
@@ -180,7 +192,7 @@ public static class NavModelEdit
 
         RecomputeFaceDataIndex(map.Nva, map.Profile);
 
-        foreach (var file in new[] { model.NFile, model.OFile })
+        foreach (var file in map.Profile.Sets.Select(model.File))
             if (file?.Document != null)
                 result.Files.Add(new NavFileChange(file.Name, file.Document, EmptyCopy(file.Document)));
 
@@ -196,7 +208,7 @@ public static class NavModelEdit
     {
         var result = new NavModelEditResult();
 
-        if (source.Quarters.Count > 0 || source.NFile?.Document == null || source.OFile?.Document == null)
+        if (source.Quarters.Count > 0 || map.Profile.Sets.Any(s => source.File(s)?.Document == null))
         {
             result.Error = "MAP_Navigation_Model_Error_Source";
             return result;
@@ -208,7 +220,7 @@ public static class NavModelEdit
             return result;
         }
 
-        foreach (var set in new[] { NavmeshSet.N, NavmeshSet.O })
+        foreach (var set in map.Profile.Sets)
         {
             var name = NavigationMap.MeshName(map.NameBase, set, slot.ModelID);
             var before = map.Files.GetValueOrDefault(name)?.Document;
@@ -244,7 +256,7 @@ public static class NavModelEdit
         bool slot = FreeSlots(map).Contains(target);
         bool replace = Removable(map).Contains(target);
 
-        if (n == null || o == null)
+        if (n == null || (o == null && map.Profile.HasOSet))
         {
             result.Error = "MAP_Navigation_Generate_Error_File";
             return result;
@@ -265,20 +277,20 @@ public static class NavModelEdit
             }
 
             // The old files of the placeholder, if it had any, go: the pair is named after its new ModelID
-            foreach (var set in new[] { NavmeshSet.N, NavmeshSet.O })
+            foreach (var set in map.Profile.Sets)
             {
                 var oldName = NavigationMap.MeshName(map.NameBase, set, target.ModelID);
                 if (map.Files.GetValueOrDefault(oldName)?.Document is Havok.HavokDocument old)
                     result.Files.Add(new NavFileChange(oldName, old, null));
             }
 
-            target.NEntry.ModelID = id;
-            target.OEntry.ModelID = id;
+            foreach (var entry in EntriesOf(map, target))
+                entry.ModelID = id;
         }
 
         if (replace)
         {
-            var names = new HashSet<int> { target.NEntry.NameID, target.OEntry.NameID };
+            var names = EntriesOf(map, target).Select(e => e.NameID).ToHashSet();
             map.Nva.Connectors.RemoveAll(c => names.Contains(c.MainNameID) || names.Contains(c.TargetNameID));
 
             foreach (var nvc in map.Nvcs)
@@ -292,7 +304,7 @@ public static class NavModelEdit
                 bank.Faces.RemoveAll(f => names.Contains(f.CollisionID));
         }
 
-        foreach (var (set, document) in new[] { (NavmeshSet.N, n), (NavmeshSet.O, o) })
+        foreach (var (set, document) in SetDocuments(map, n, o))
         {
             var entry = target.Entry(set);
             var name = NavigationMap.MeshName(map.NameBase, set, entry.ModelID);
@@ -305,6 +317,10 @@ public static class NavModelEdit
         RecomputeFaceDataIndex(map.Nva, map.Profile);
         return result;
     }
+
+    /// <summary>The n and o documents of an edit, paired with their sets; the o one only in a game with an o set.</summary>
+    private static IEnumerable<(NavmeshSet Set, Havok.HavokDocument Document)> SetDocuments(NavigationMap map, Havok.HavokDocument n, Havok.HavokDocument o)
+        => map.Profile.Sets.Select(s => (s, s == NavmeshSet.N ? n : o));
 
     /// <summary>Why a new model can't be added to a map, or null if it can (maps with quarter entries can't).</summary>
     public static string CanAdd(NavigationMap map)
@@ -339,7 +355,7 @@ public static class NavModelEdit
             return result;
         }
 
-        if (n == null || o == null)
+        if (n == null || (o == null && map.Profile.HasOSet))
         {
             result.Error = "MAP_Navigation_Generate_Error_File";
             return result;
@@ -362,25 +378,27 @@ public static class NavModelEdit
         var templateO = templateN == null ? null : list.FirstOrDefault(e => (uint)e.NameID == map.Profile.MirrorOf((uint)templateN.NameID));
 
         uint nameId = map.ExpectedNameId(nCount);
-        if (list.Any(e => (uint)e.NameID == nameId || (uint)e.NameID == map.Profile.MirrorOf(nameId)))
+        if (list.Any(e => (uint)e.NameID == nameId || (map.Profile.HasOSet && (uint)e.NameID == map.Profile.MirrorOf(nameId))))
         {
             result.Error = "MAP_Navigation_Model_Error_Add_NameID";
             return result;
         }
 
-        // The o half moves down by one: every gate pointing at or past the insertion point follows
+        // The o half moves down by one: every gate pointing at or past the insertion point follows. With no o set the
+        // n entry goes at the end, past every gate's navmesh
         foreach (var entry in list)
             foreach (var gate in entry.GateNodes)
                 if (gate.ConnectedNavmeshIndex >= nCount)
                     gate.ConnectedNavmeshIndex++;
 
-        var nEntry = NewEntry(templateN, (int)nameId, modelId, n);
-        var oEntry = NewEntry(templateO ?? templateN, (int)map.Profile.MirrorOf(nameId), modelId, o);
+        var nEntry = NewEntry(templateN, (int)nameId, modelId, n, map.Profile);
+        var oEntry = map.Profile.HasOSet ? NewEntry(templateO ?? templateN, (int)map.Profile.MirrorOf(nameId), modelId, o, map.Profile) : null;
 
         list.Insert(nCount, nEntry);
-        list.Add(oEntry);
+        if (oEntry != null)
+            list.Add(oEntry);
 
-        foreach (var (set, document) in new[] { (NavmeshSet.N, n), (NavmeshSet.O, o) })
+        foreach (var (set, document) in SetDocuments(map, n, o))
         {
             var name = NavigationMap.MeshName(map.NameBase, set, modelId);
             result.Files.Add(new NavFileChange(name, map.Files.GetValueOrDefault(name)?.Document, document));
@@ -391,7 +409,7 @@ public static class NavModelEdit
         return result;
     }
 
-    private static NVA.Navmesh NewEntry(NVA.Navmesh template, int nameId, int modelId, Havok.HavokDocument document)
+    private static NVA.Navmesh NewEntry(NVA.Navmesh template, int nameId, int modelId, Havok.HavokDocument document, NavGameProfile profile)
     {
         var entry = new NVA.Navmesh();
 
@@ -405,7 +423,9 @@ public static class NavModelEdit
             entry.ScaleW = template.ScaleW;
             entry.Unk3C = template.Unk3C;
             entry.Unk44 = template.Unk44;
-            entry.Unk50 = 0xFF01;
+            // ER and NR: 0xFF01, no quarter. AC6: 1 on every entry with a ModelID of 0 or more (0 on the negative ones).
+            // DB_NT's compact entries keep the connected list's offset there, which the writer sets
+            entry.Unk50 = profile.HasQuarters ? 0xFF01 : 0x0001;
             entry.Unk54 = template.Unk54;
             entry.Unk58 = template.Unk58;
             entry.Unk5C = template.Unk5C;

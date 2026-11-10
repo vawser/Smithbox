@@ -147,9 +147,15 @@ public static class NavStitchPlanner
         return Origin(tb.Value) - Origin(ta.Value);
     }
 
-    /// <summary>A map's meshes of a set that have faces, placed at an offset.</summary>
+    /// <summary>
+    /// A map's meshes of a set that have faces and that the game joins, placed at an offset. Entries with Unk4C = 1 are
+    /// left out: no game connection names one (AC6: 0 of 115,572, NavSurvey stitch), and AC6's 42 such entries with faces
+    /// (ModelID 900000 and up) lie over the other meshes, so joining them made 17,028 of the 21,048 pairs the game leaves
+    /// apart. In ER, NR and DB_NT every Unk4C = 1 entry has no faces, so nothing changes there.
+    /// </summary>
     public static List<NavStitchMesh> Meshes(NavigationMap map, NavmeshSet set, Vector3 offset)
         => NavigationOverlayBuilder.EntriesOf(map, set)
+            .Where(e => e.Unk4C != 1)
             .Select(e => (Entry: e, File: map.FileOf(e)))
             .Where(x => x.File?.Mesh != null && x.File.Mesh.m_faces.Count > 0)
             .Select(x => new NavStitchMesh(x.Entry.NameID, x.File.Mesh, x.Entry.Position + offset, map.MapId))

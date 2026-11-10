@@ -158,7 +158,7 @@ public static class NavigationValidator
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceCountMismatch, file, (uint)n.NameID, n.FaceCount, meshName, meshFile.FaceCount));
             }
 
-            if (n.Unk4C == 1 && n.FaceCount > 0)
+            if (map.Profile.Unk4CMeansNoFaces && n.Unk4C == 1 && n.FaceCount > 0)
                 issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount));
 
             ValidateGates(map, file, n, issues);

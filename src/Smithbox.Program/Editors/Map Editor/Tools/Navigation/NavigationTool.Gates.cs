@@ -269,6 +269,10 @@ public partial class NavigationTool
         if (!ShowGateCosts || gates.Count < 2)
             return;
 
+        // AC6 ships no costs between gates, and edits keep it so; a cost typed here is the only kind its files get
+        if (!Bank.Profile.StoresGateCosts)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Gates_Costs_Not_Stored"));
+
         if (GateCostTextFor != entry)
         {
             GateCostTextFor = entry;

@@ -35,7 +35,7 @@ public class NavigationBank
         Project = project;
     }
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT or ProjectType.AC6;
 
     /// <summary>The navigation rules of the project's game.</summary>
     public NavGameProfile Profile => NavGameProfile.For(Project.Descriptor.ProjectType.ToString());
@@ -128,7 +128,10 @@ public class NavigationBank
             return cached;
 
         ONAV onav = null;
-        var entry = Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "onav" && e.Filename == mapId);
+        // AC6's ONAV files are v2, which SoulsFormats doesn't read yet (Phase N0.4)
+        var entry = Profile.HasReadableOnav
+            ? Project.Locator.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "onav" && e.Filename == mapId)
+            : null;
 
         if (entry != null && FS.FileExists(entry.Path))
         {

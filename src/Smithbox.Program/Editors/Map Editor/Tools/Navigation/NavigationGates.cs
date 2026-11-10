@@ -421,9 +421,11 @@ public static class NavGates
                 && keep.TryGetValue((gates[i], gates[j]), out cost);
         }
 
+        // A game that stores no costs between gates (AC6: -1 in all 65,896, 0 in each gate's own slot) gets none
+        bool stores = map.Profile.StoresGateCosts;
         float[,] walk = null;
         bool needWalk = false;
-        for (int i = 0; i < n && !needWalk; i++)
+        for (int i = 0; i < n && !needWalk && stores; i++)
             for (int j = 0; j < n && !needWalk; j++)
                 if (i != j && !Kept(i, j, out _))
                     needWalk = true;
@@ -434,7 +436,7 @@ public static class NavGates
         var table = new short[n, n];
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
-                table[i, j] = i == j ? (short)0 : Kept(i, j, out var cost) ? cost : EncodeCost(walk[i, j]);
+                table[i, j] = i == j ? (short)0 : !stores ? Unreachable : Kept(i, j, out var cost) ? cost : EncodeCost(walk[i, j]);
 
         for (int i = 0; i < n; i++)
         {

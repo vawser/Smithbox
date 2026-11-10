@@ -132,8 +132,16 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Edit_Link_Neighbours")}##navigationEditLinkNeighbours", ref VertexLinkNeighbours);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Link_Neighbours_TT"));
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Edit_Link_Other_Set")}##navigationEditLinkOtherSet", ref VertexLinkOtherSet);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Link_Other_Set_TT"));
+        // No other set to follow in a game with the n set only (AC6)
+        if (Bank.Profile.HasOSet)
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Edit_Link_Other_Set")}##navigationEditLinkOtherSet", ref VertexLinkOtherSet);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Link_Other_Set_TT"));
+        }
+        else
+        {
+            VertexLinkOtherSet = false;
+        }
 
         // Link Distance
         GUI.Spacer();

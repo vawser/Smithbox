@@ -112,15 +112,24 @@ public partial class NavigationTool
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Show_TT"));
 
-        int set = (int)OverlaySet;
-        if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_N")}##navigationSetN", ref set, (int)NavmeshSet.N))
+        // The set toggle only where the game has an o set (not AC6)
+        if (Bank.Profile.HasOSet)
+        {
+            int set = (int)OverlaySet;
+            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_N")}##navigationSetN", ref set, (int)NavmeshSet.N))
+                OverlayDirty = true;
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_N_TT"));
+            ImGui.SameLine();
+            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_O")}##navigationSetO", ref set, (int)NavmeshSet.O))
+                OverlayDirty = true;
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_O_TT"));
+            OverlaySet = (NavmeshSet)set;
+        }
+        else if (OverlaySet != NavmeshSet.N)
+        {
+            OverlaySet = NavmeshSet.N;
             OverlayDirty = true;
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_N_TT"));
-        ImGui.SameLine();
-        if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_O")}##navigationSetO", ref set, (int)NavmeshSet.O))
-            OverlayDirty = true;
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_O_TT"));
-        OverlaySet = (NavmeshSet)set;
+        }
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.SliderFloat("##navigationFaceOpacity", ref FaceOpacity, 5, 100, $"{LOC.Get("MAP_Navigation_Overlay_Opacity")} %.0f"))

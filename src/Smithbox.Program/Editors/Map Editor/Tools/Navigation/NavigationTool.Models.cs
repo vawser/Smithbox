@@ -60,13 +60,17 @@ public partial class NavigationTool
         if (Picked != null)
             GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Select_Picked_TT"));
 
-        if (ShowModelList && ImGui.BeginTable("##navigationModels", 4,
+        // A game with the n set only (AC6) has no o column
+        bool hasO = navigation.Profile.HasOSet;
+
+        if (ShowModelList && ImGui.BeginTable("##navigationModels", hasO ? 4 : 3,
             ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.ScrollY, new Vector2(0, 220 * DPI.UIScale())))
         {
             ImGui.TableSetupScrollFreeze(0, 1);
             ImGui.TableSetupColumn(LOC.Get("MAP_Navigation_Models_Column_Model"), ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn(LOC.Get("MAP_Navigation_Models_Column_N"), ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn(LOC.Get("MAP_Navigation_Models_Column_O"), ImGuiTableColumnFlags.WidthFixed);
+            if (hasO)
+                ImGui.TableSetupColumn(LOC.Get("MAP_Navigation_Models_Column_O"), ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn(LOC.Get("MAP_Navigation_Models_Column_State"), ImGuiTableColumnFlags.WidthStretch);
             ImGui.TableHeadersRow();
 
@@ -91,8 +95,11 @@ public partial class NavigationTool
                     ImGui.TableNextColumn();
                     ImGui.Text($"{model.NEntry?.FaceCount ?? 0}");
 
-                    ImGui.TableNextColumn();
-                    ImGui.Text($"{model.OEntry?.FaceCount ?? 0}");
+                    if (hasO)
+                    {
+                        ImGui.TableNextColumn();
+                        ImGui.Text($"{model.OEntry?.FaceCount ?? 0}");
+                    }
 
                     ImGui.TableNextColumn();
                     ImGui.Text(model.Quarters.Count > 0 ? LOC.Get("MAP_Navigation_Models_State_Quarters")
@@ -129,7 +136,9 @@ public partial class NavigationTool
         }
         else
         {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Models_Selected", selected.ModelID, (uint)selected.NEntry.NameID, (uint)selected.OEntry.NameID));
+            GUI.WrappedText(hasO
+                ? LOC.Get("MAP_Navigation_Models_Selected", selected.ModelID, (uint)selected.NEntry.NameID, (uint)selected.OEntry.NameID)
+                : LOC.Get("MAP_Navigation_Models_Selected_N", selected.ModelID, (uint)selected.NEntry.NameID));
 
             if (ImGui.Button($"{LOC.Get("MAP_Navigation_Models_Remove")}##navigationModelsRemove"))
                 EditModel(map, navigation, () => NavModelEdit.Remove(navigation, selected), LOC.Get("MAP_Navigation_Models_Removed", selected.ModelID));
@@ -165,7 +174,8 @@ public partial class NavigationTool
             {
                 int id = DuplicateNewModelId;
                 var offset = DuplicateOffset;
-                EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset), NavModelEdit.TranslatedCopy(selected.OFile.Document, offset)),
+                EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset),
+                    hasO ? NavModelEdit.TranslatedCopy(selected.OFile.Document, offset) : null),
                     LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, id));
             }
             else
@@ -256,8 +266,10 @@ public partial class NavigationTool
                 return false;
             }
 
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Model_Target_New_Files",
-                NavigationMap.MeshName(navigation.NameBase, NavmeshSet.N, newModelId), NavigationMap.MeshName(navigation.NameBase, NavmeshSet.O, newModelId)));
+            GUI.WrappedText(navigation.Profile.HasOSet
+                ? LOC.Get("MAP_Navigation_Model_Target_New_Files",
+                    NavigationMap.MeshName(navigation.NameBase, NavmeshSet.N, newModelId), NavigationMap.MeshName(navigation.NameBase, NavmeshSet.O, newModelId))
+                : LOC.Get("MAP_Navigation_Model_Target_New_File", NavigationMap.MeshName(navigation.NameBase, NavmeshSet.N, newModelId)));
         }
 
         return true;

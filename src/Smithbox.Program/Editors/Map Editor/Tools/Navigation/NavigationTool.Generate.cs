@@ -96,7 +96,8 @@ public partial class NavigationTool
 
         // Settings of each set
         GenerateN = DisplayGenerateParameters("n", LOC.Get("MAP_Navigation_Generate_Set_N"), GenerateN, NavGenParameters.DefaultN);
-        GenerateO = DisplayGenerateParameters("o", LOC.Get("MAP_Navigation_Generate_Set_O"), GenerateO, NavGenParameters.DefaultO);
+        if (navigation.Profile.HasOSet)
+            GenerateO = DisplayGenerateParameters("o", LOC.Get("MAP_Navigation_Generate_Set_O"), GenerateO, NavGenParameters.DefaultO);
 
         if (Generating)
         {
@@ -497,8 +498,10 @@ public partial class NavigationTool
 
         var pn = GenerateN;
         var po = GenerateO;
+        // A game with the n set only (AC6) generates no o mesh
+        bool hasO = navigation.Profile.HasOSet;
         // The per-face values of the generated meshes come from the target's meshes, or any model's for a new one
-        var templateModel = target ?? navigation.Models.FirstOrDefault(m => m.NFile?.FaceCount > 0 && m.OFile?.FaceCount > 0);
+        var templateModel = target ?? navigation.Models.FirstOrDefault(m => m.NFile?.FaceCount > 0 && (!hasO || m.OFile?.FaceCount > 0));
         var nTemplate = templateModel?.NFile?.Mesh;
         var oTemplate = templateModel?.OFile?.Mesh;
         Generating = true;
@@ -514,14 +517,15 @@ public partial class NavigationTool
                 // Without a template mesh, the meshes are made in the class set of the file they go into
                 Func<IHavokNavMeshEdit> createMesh = () => template?.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault()?.CreateEmpty();
                 n = NavigationGenerator.Generate(triangles, pn, nTemplate, blockers, createMesh);
-                o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers, createMesh);
-                error = n.Error ?? o.Error;
+                if (hasO)
+                    o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers, createMesh);
+                error = n.Error ?? o?.Error;
 
                 if (error == null)
                 {
                     nDoc = NavGenFile.Build(template, n.Mesh);
-                    oDoc = NavGenFile.Build(template, o.Mesh);
-                    if (nDoc == null || oDoc == null)
+                    oDoc = hasO ? NavGenFile.Build(template, o.Mesh) : null;
+                    if (nDoc == null || (hasO && oDoc == null))
                         error = "MAP_Navigation_Generate_Error_Template";
                 }
             }
@@ -544,11 +548,11 @@ public partial class NavigationTool
 
                 // The map may have changed while the generation ran; the edit is made against it as it is now
                 var current = Bank.GetMap(map);
-                int faces = n.Mesh.m_faces.Count, oFaces = o.Mesh.m_faces.Count;
+                int faces = n.Mesh.m_faces.Count, oFaces = o?.Mesh.m_faces.Count ?? 0;
 
                 // The links each set got, when either had them on
-                string links = pn.Links || po.Links
-                    ? " " + LOC.Get("MAP_Navigation_Generate_Done_Links", n.JumpLinks, n.FallLinks, o.JumpLinks, o.FallLinks)
+                string links = pn.Links || (hasO && po.Links)
+                    ? " " + LOC.Get("MAP_Navigation_Generate_Done_Links", n.JumpLinks, n.FallLinks, o?.JumpLinks ?? 0, o?.FallLinks ?? 0)
                     : "";
 
                 if (kind == ModelTarget.New)

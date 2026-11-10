@@ -48,6 +48,30 @@ public sealed class NavGameProfile
     /// <summary>Whether the NVA has a map UID (ER's Entries11), which NVC files repeat. DB_NT's Section 11 is point lists.</summary>
     public bool HasMapUid { get; private init; } = true;
 
+    /// <summary>
+    /// Whether every model has an o mesh as well as its n mesh, listed in the second half of the NVA (ER, NR, DB_NT).
+    /// AC6 has the n set only.
+    /// </summary>
+    public bool HasOSet { get; private init; } = true;
+
+    /// <summary>Whether the game's ONAV files are the version SoulsFormats reads (v3: ER, NR). AC6's are v2 (Phase N0.4).</summary>
+    public bool HasReadableOnav { get; private init; } = true;
+
+    /// <summary>
+    /// Whether Unk4C = 1 marks an entry without faces, as it does in every ER, NR and DB_NT entry (NavSurvey nameids).
+    /// In AC6, 42 of 664 entries with Unk4C = 1 have faces, all of them ModelID 900000 and up.
+    /// </summary>
+    public bool Unk4CMeansNoFaces { get; private init; } = true;
+
+    /// <summary>
+    /// Whether gates store the walking cost to the other gates of their navmesh (ER: 21,436 of 59,038 such slots are
+    /// costs, the rest -1). AC6 stores none: all 65,896 are -1, and only each gate's own slot is 0 (NavSurvey nameids).
+    /// </summary>
+    public bool StoresGateCosts { get; private init; } = true;
+
+    /// <summary>The navmesh sets the game's maps have: n and o, or n alone.</summary>
+    public NavmeshSet[] Sets => HasOSet ? new[] { NavmeshSet.N, NavmeshSet.O } : new[] { NavmeshSet.N };
+
     /// <summary>The number of costs each gate of a navmesh with this many gates holds.</summary>
     public int GateCostSlots(int gateCount) => GateCostsPerGate ? gateCount : NavGates.MaxGates;
 
@@ -109,11 +133,32 @@ public sealed class NavGameProfile
         _nameId = DecimalNameId,
     };
 
+    /// <summary>
+    /// Armored Core VI: ER's decimal NameIDs (NavSurvey nameids, 664 of 664 entries, 20 maps), the running FaceDataIndex,
+    /// 16 gate cost slots and a map UID, but the n set only, no NVC files, and ONAV v2. Its meshes are hk2019, whose
+    /// face tree hangs off the mesh's cached face iterator rather than a query mediator. Placeholders (no faces) have
+    /// Unk4C = 1, often with a negative ModelID.
+    /// </summary>
+    public static readonly NavGameProfile AC6 = new()
+    {
+        Game = "AC6",
+        MirrorOffset = 2_000_000_000u,
+        HasOSet = false,
+        HasNvc = false,
+        HasReadableOnav = false,
+        // Unk50 is 0 or 1 (170 and 494 of 664 entries), never ER's 0xFF01 or quarter marks, and the binders hold no q files
+        HasQuarters = false,
+        Unk4CMeansNoFaces = false,
+        StoresGateCosts = false,
+        _nameId = DecimalNameId,
+    };
+
     /// <summary>The profile of a game by its short name; Elden Ring's for a game without one of its own.</summary>
     public static NavGameProfile For(string game) => game switch
     {
         "NR" => NR,
         "DB_NT" => DB_NT,
+        "AC6" => AC6,
         _ => ER,
     };
 

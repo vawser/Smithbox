@@ -52,7 +52,7 @@ public static class NavigationReader
             }
         }
 
-        var onavFile = fs.ReadFile(OnavPath(mapId));
+        var onavFile = game.HasReadableOnav ? fs.ReadFile(OnavPath(mapId)) : null;
         var onav = onavFile == null ? null : ONAV.Read(onavFile.Value.ToArray());
 
         var nvcs = new List<NvcFile>();
