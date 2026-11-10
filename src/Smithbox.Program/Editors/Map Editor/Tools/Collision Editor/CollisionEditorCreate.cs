@@ -99,12 +99,23 @@ public class CollisionEditorCreate
     private OverwritePlan PendingOverwrite;
     private bool OpenOverwriteConfirm;
 
+    // The map and model the last Create or Overwrite made, for the hand-off buttons under its result
+    private (string MapId, string Model)? HandOffModel;
+
     private const float MinShapeSize = 0.01f;
     private const int MinCircleSegments = 3;
     private const int MinSemiCircleSegments = 2;
 
     // Vertices of different sources closer than this are welded, as they would not be in the source FLVERs
     private const float WeldGrid = 0.001f;
+
+    // The FLVER triangle counts before and after the last simplify, or 0 when the last build wasn't simplified
+    private int SimplifiedFrom;
+    private int SimplifiedTo;
+
+    private const float MinSimplifyTarget = 1f;
+    private const float MaxSimplifyTarget = 100f;
+    private const float MinSimplifyError = 0.001f;
 
     public CollisionEditorCreate(MapEditorView view, ProjectEntry project, CollisionEditorTool tool)
     {
@@ -190,6 +201,20 @@ public class CollisionEditorCreate
         if (Shape is CollisionCreateShape.UserDefined)
             UserDefined.MarkShown();
 
+        // A basic shape is made at the placement orb, which follows the camera, so where that is now
+        if (Shape is CollisionCreateShape.Square or CollisionCreateShape.Triangle or CollisionCreateShape.Circle or CollisionCreateShape.SemiCircle)
+        {
+            var orb = View.ViewportHandler.ActiveViewport?.Viewport != null
+                ? View.ViewportWindow.GetPlacementPosition()
+                : Vector3.Zero;
+
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Orb_Position",
+                $"{CFG.Current.PlacementOrb_Distance:0.#}", $"{orb.X:0.##}, {orb.Y:0.##}, {orb.Z:0.##}"));
+        }
+
+        // The shape's own inputs straight after it, as they change with it
+        DisplayParameters(map);
+
         // A User-Defined line is a wall, which faces sideways and has its own flip
         var usesFacing = Shape is not CollisionCreateShape.UserDefined
             || CFG.Current.MapEditor_CollisionEditor_User_Mode is not CollisionUserDefinedMode.Line;
@@ -220,11 +245,19 @@ public class CollisionEditorCreate
 
         // Collision Material
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Material_Header"), LOC.Get("MAP_CollisionEditor_Create_Material_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Material_Header"), LOC.Get("MAP_CollisionEditor_Create_Material_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Material);
 
-        MaterialPicker.Display(ref MaterialId, []);
-
-        DisplayParameters(map);
+        if (CFG.Current.MapEditor_CollisionEditor_Show_Create_Material)
+        {
+            MaterialPicker.Display(ref MaterialId, []);
+        }
+        else
+        {
+            // Hidden, the material used is still said, as the picker's own first line says it
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color,
+                LOC.Get("HAVOK_CollisionGen_Material_Applying", MaterialPicker.Describe((uint)Math.Max(MaterialId, 0))));
+        }
 
         // Model ID
         GUI.Spacer();
@@ -253,11 +286,21 @@ public class CollisionEditorCreate
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Model_Used", ModelNumber));
         }
 
-        DisplayPreview(map);
+        // Whether the inputs make any triangles; only built again when they change
+        UpdateGeometry(map);
 
-        // Actions
+        // Actions: titled for what the button does, as a used Model ID turns Create into Overwrite
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Actions_Header"), LOC.Get("MAP_CollisionEditor_Create_Actions_Header_TT"));
+
+        if (modelUsed)
+        {
+            GUI.SimpleHeader("collisionCreateActionsHeader", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Header", $"h{ModelNumber}"),
+                LOC.Get("MAP_CollisionEditor_Create_Overwrite_Action_TT"), UI.Current.ImGui_Warning_Text_Color);
+        }
+        else
+        {
+            GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Actions_Header"), LOC.Get("MAP_CollisionEditor_Create_Actions_Header_TT"));
+        }
 
         var canCreate = modelProblem == null && GeometryValid;
 
@@ -275,14 +318,84 @@ public class CollisionEditorCreate
                 () => Create(map), canCreate);
         }
 
+        Tool.DisplayLastResult(CollisionEditorSource.Create);
+        DisplayHandOff(map);
+
+        // Last, so the image never pushes the action out of view
+        DisplayPreview(map);
+
         DisplayOverwriteConfirm(map);
+    }
+
+    /// <summary>
+    /// After a Create or Overwrite: buttons to select the collision part placing it, and to go on to its fall
+    /// protection. Gone once its part is (undone or deleted), or another action's result is shown.
+    /// </summary>
+    private void DisplayHandOff(MapContainer map)
+    {
+        if (HandOffModel is not { } handOff || !Tool.IsLastResult(CollisionEditorSource.Create, failed: false))
+            return;
+
+        if (handOff.MapId != map.Name)
+            return;
+
+        // The part is found again each frame: undoing the Create removes it
+        var part = map.Objects.OfType<MsbEntity>()
+            .Where(EntityHelper.IsPartCollision)
+            .FirstOrDefault(e => string.Equals(e.GetPropertyValue("ModelName") as string, handOff.Model, StringComparison.OrdinalIgnoreCase));
+
+        if (part == null)
+            return;
+
+        var select = LOC.Get("MAP_CollisionEditor_HandOff_Select", part.Name);
+
+        if (Tool.FallSupported)
+        {
+            GUI.MultiButtonInput("collisionCreateHandOff",
+                "collisionCreateHandOffSelect", select, LOC.Get("MAP_CollisionEditor_HandOff_Select_TT"),
+                () => Tool.SelectAndFrame(part),
+
+                "collisionCreateHandOffFall", LOC.Get("MAP_CollisionEditor_HandOff_Fall"), LOC.Get("MAP_CollisionEditor_HandOff_Fall_TT"),
+                () => Tool.HandOffToFall(part, HavokCollisionType.High));
+        }
+        else
+        {
+            GUI.MultiButtonInput("collisionCreateHandOff",
+                "collisionCreateHandOffSelect", select, LOC.Get("MAP_CollisionEditor_HandOff_Select_TT"),
+                () => Tool.SelectAndFrame(part));
+        }
     }
 
     private void DisplayParameters(MapContainer map)
     {
-        // Parameters
+        // Parameters: the inputs hide with the header; the FLVER sources and User-Defined points don't, as they hold
+        // warnings and actions (and the FLVER meshes have a header of their own)
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Create_Parameters_Header"), LOC.Get("MAP_CollisionEditor_Create_Parameters_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Parameters_Header"), LOC.Get("MAP_CollisionEditor_Create_Parameters_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Create_Parameters);
+
+        var open = CFG.Current.MapEditor_CollisionEditor_Show_Create_Parameters;
+
+        if (Shape is CollisionCreateShape.SelectedFlver)
+        {
+            DisplayFlverParameters();
+            return;
+        }
+
+        if (Shape is CollisionCreateShape.UserDefined)
+        {
+            // Built here, so the problem shown follows the points as they are placed
+            UpdateGeometry(map);
+
+            if (open)
+                UserDefined.DisplayShapeOptions();
+
+            UserDefined.DisplayPoints(UserDefinedProblem);
+            return;
+        }
+
+        if (!open)
+            return;
 
         switch (Shape)
         {
@@ -333,14 +446,6 @@ public class CollisionEditorCreate
                 GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Segments_TT"));
                 break;
             }
-            case CollisionCreateShape.SelectedFlver:
-                DisplayFlverParameters();
-                break;
-            case CollisionCreateShape.UserDefined:
-                // Built here, so the problem shown follows the points as they are placed
-                UpdateGeometry(map);
-                UserDefined.DisplayParameters(UserDefinedProblem);
-                break;
         }
     }
 
@@ -424,6 +529,58 @@ public class CollisionEditorCreate
             }
 
             ImGui.EndChild();
+        }
+
+        DisplaySimplifyParameters();
+    }
+
+    /// <summary>
+    /// The simplify pass over the combined FLVER mesh: whether it runs, how far it reduces, and how far the surface
+    /// may move.
+    /// </summary>
+    private void DisplaySimplifyParameters()
+    {
+        // Simplify
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header"),
+            LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify);
+
+        if (!CFG.Current.MapEditor_CollisionEditor_Show_Flver_Simplify)
+        {
+            // Hidden, whether it runs is still said, as it changes what Create makes
+            if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+                GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Applying"));
+            return;
+        }
+
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify")}##collisionCreateSimplify",
+            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_TT"));
+
+        ImGui.BeginDisabled(!CFG.Current.MapEditor_CollisionEditor_Flver_Simplify);
+
+        var target = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target;
+        if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target")}##collisionCreateSimplifyTarget", ref target, 5f, 10f, "%.0f%%"))
+            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target = Math.Clamp(target, MinSimplifyTarget, MaxSimplifyTarget);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Target_TT"));
+
+        var error = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error;
+        if (ImGui.InputFloat($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error")}##collisionCreateSimplifyError", ref error, 0.05f, 0.25f, "%.3f m"))
+            CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error = MathF.Max(error, MinSimplifyError);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Max_Error_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders")}##collisionCreateSimplifyLock",
+            ref CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders_TT"));
+
+        ImGui.EndDisabled();
+
+        // The last build's result, as of the last time the inputs changed
+        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify && SimplifiedFrom > 0)
+        {
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Flver_Simplify_Result", SimplifiedFrom, SimplifiedTo,
+                $"{100.0 * SimplifiedTo / SimplifiedFrom:0.#}"));
         }
     }
 
@@ -543,6 +700,13 @@ public class CollisionEditorCreate
 
             foreach (var selected in source.MeshSelection)
                 key.Append(selected ? '1' : '0');
+        }
+
+        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+        {
+            key.Append("|simplify/").Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target)
+                .Append('/').Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error)
+                .Append('/').Append(CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders);
         }
 
         return key.ToString();
@@ -836,6 +1000,9 @@ public class CollisionEditorCreate
         indices = new List<int>();
         materials = new List<uint>();
 
+        SimplifiedFrom = 0;
+        SimplifiedTo = 0;
+
         var anchor = GetAnchor();
 
         if (anchor == null)
@@ -912,6 +1079,25 @@ public class CollisionEditorCreate
             }
         }
 
+        if (indices.Count == 0)
+            return false;
+
+        // Simplified after the weld, as the collapses follow the edges the sources now share
+        if (CFG.Current.MapEditor_CollisionEditor_Flver_Simplify)
+        {
+            var before = indices.Count / 3;
+
+            (vertices, indices, materials) = CollisionMeshSimplifier.Simplify(welded, indices, materials, new CollisionMeshSimplifier.Settings
+            {
+                TargetRatio = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Target / 100f,
+                MaxError = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Max_Error,
+                LockBorders = CFG.Current.MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders
+            });
+
+            SimplifiedFrom = before;
+            SimplifiedTo = indices.Count / 3;
+        }
+
         return indices.Count > 0;
     }
 
@@ -985,6 +1171,8 @@ public class CollisionEditorCreate
     /// </summary>
     private void Create(MapContainer map)
     {
+        HandOffModel = null;
+
         if (!TryBuildGeometry(map, null, out var vertices, out var indices, out var materials))
             return;
 
@@ -997,7 +1185,7 @@ public class CollisionEditorCreate
 
         if (template == null)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
             return;
         }
 
@@ -1011,7 +1199,7 @@ public class CollisionEditorCreate
 
             if (document == null)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_File", $"{type}{mapId.Substring(1)}"));
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_No_Template_File", $"{type}{mapId.Substring(1)}"));
                 return;
             }
 
@@ -1019,13 +1207,13 @@ public class CollisionEditorCreate
             {
                 if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials))
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", GetFileName(type, mapId, number)));
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", GetFileName(type, mapId, number)));
                     return;
                 }
             }
             catch (Exception e)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", GetFileName(type, mapId, number)), e);
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", GetFileName(type, mapId, number)), e);
                 return;
             }
 
@@ -1040,7 +1228,7 @@ public class CollisionEditorCreate
 
         if (!success)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Save_Failed", number));
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Save_Failed", number));
             return;
         }
 
@@ -1049,8 +1237,10 @@ public class CollisionEditorCreate
         // The Edit tab finds the new files by their names, which were listed after it last looked
         Tool.OnCollisionCreated();
 
-        Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Created", string.Join(", ", created.Select(c => c.FileName)),
+        Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Created", string.Join(", ", created.Select(c => c.FileName)),
             indices.Count / 3));
+
+        HandOffModel = (mapId, $"h{number}");
 
         ModelNumberMap = null;
     }
@@ -1189,6 +1379,8 @@ public class CollisionEditorCreate
     /// </summary>
     private void Overwrite(MapContainer map, OverwritePlan plan)
     {
+        HandOffModel = null;
+
         var number = plan.Number;
 
         // The kept parts show the new mesh, so User-Defined points are taken into the first one's space, so the mesh
@@ -1212,7 +1404,7 @@ public class CollisionEditorCreate
 
             if (template == null)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_No_Template_Part", mapId));
                 return;
             }
         }
@@ -1232,7 +1424,7 @@ public class CollisionEditorCreate
 
                 if (body == null)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Unsupported", file.FileName));
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Unsupported", file.FileName));
                     return;
                 }
 
@@ -1244,13 +1436,13 @@ public class CollisionEditorCreate
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
                     return;
                 }
 
                 if (built == null)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
                     return;
                 }
 
@@ -1262,7 +1454,7 @@ public class CollisionEditorCreate
                 {
                     if (!View.WallBank.EnsureMapLoaded(mapId))
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Walls_Unread", file.FileName));
+                        Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Overwrite_Walls_Unread", file.FileName));
                         return;
                     }
 
@@ -1282,7 +1474,7 @@ public class CollisionEditorCreate
 
                 if (document == null)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_No_Template_File", $"{file.Type}{mapId.Substring(1)}"));
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_No_Template_File", $"{file.Type}{mapId.Substring(1)}"));
                     return;
                 }
 
@@ -1290,13 +1482,13 @@ public class CollisionEditorCreate
                 {
                     if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials))
                     {
-                        Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
+                        Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
                         return;
                     }
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
+                    Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName), e);
                     return;
                 }
 
@@ -1323,15 +1515,17 @@ public class CollisionEditorCreate
 
         if (!success)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Create_Save_Failed", number));
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Save_Failed", number));
             return;
         }
 
         if (template != null)
             AddPart(map, template, number);
 
-        Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", plan.Files.Select(f => f.FileName)),
+        Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", plan.Files.Select(f => f.FileName)),
             indices.Count / 3));
+
+        HandOffModel = (mapId, $"h{number}");
 
         ModelNumberMap = null;
     }

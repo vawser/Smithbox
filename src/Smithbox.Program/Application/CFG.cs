@@ -351,6 +351,9 @@ public class CFG
     public float MapEditor_CollisionEditor_Step = 0.25f;
     public float MapEditor_CollisionEditor_Radius = 0f;
     public float MapEditor_CollisionEditor_Cursor_Size = 0.15f;
+    public bool MapEditor_CollisionEditor_Show_Cursor_Display = false;
+    public bool MapEditor_CollisionEditor_Show_Create_Material = true;
+    public bool MapEditor_CollisionEditor_Show_Create_Parameters = true;
     public float MapEditor_CollisionEditor_Cursor_Fill_Alpha = 20f;
     public Vector3 MapEditor_CollisionEditor_Cursor_Color = new Vector3(0, 200, 255);
     public Vector3 MapEditor_CollisionEditor_Vertex_Color = new Vector3(255, 220, 0);
@@ -362,6 +365,11 @@ public class CFG
     public bool MapEditor_CollisionEditor_Link_Layers = true;
     public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
     public bool MapEditor_CollisionEditor_Show_Flver_Meshes = true;
+    public bool MapEditor_CollisionEditor_Show_Flver_Simplify = true;
+    public bool MapEditor_CollisionEditor_Flver_Simplify = false;
+    public float MapEditor_CollisionEditor_Flver_Simplify_Target = 25f;
+    public float MapEditor_CollisionEditor_Flver_Simplify_Max_Error = 0.25f;
+    public bool MapEditor_CollisionEditor_Flver_Simplify_Lock_Borders = true;
     public bool MapEditor_CollisionEditor_Show_Create_Preview = true;    public HavokCollisionType MapEditor_CollisionEditor_Fall_Source = HavokCollisionType.High;
     public FallProtectionDirection MapEditor_CollisionEditor_Fall_Direction = FallProtectionDirection.All;
     public float MapEditor_CollisionEditor_Fall_Height = 1.8f;
@@ -600,6 +608,7 @@ public class CFG
 
     // Navigation tool: the tabs whose "How this works" section has been shown once, so it starts closed on them
     public List<string> MapEditor_Navigation_Help_Seen = new List<string>();
+    public List<string> MapEditor_CollisionEditor_Help_Seen = new List<string>();
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;

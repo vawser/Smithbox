@@ -250,6 +250,10 @@ public partial class NavigationTool
         }
 
         VertexEditActive = true;
+
+        // The Collision Editor's cursor takes the same keys, so one press would move both meshes
+        View.CollisionEditorTool?.StopEditing();
+
         PickMode = false;
         PaintMode = false;
         LinkMode = false;
@@ -257,8 +261,11 @@ public partial class NavigationTool
         SetPicked(null);
     }
 
-    /// <summary>Hides the cursor. Pending edits are kept; the files without edits are read again when next needed.</summary>
-    private void StopVertexEdit()
+    /// <summary>
+    /// Hides the cursor. Pending edits are kept; the files without edits are read again when next needed. Also called
+    /// by the Collision Editor when its cursor starts, as both take the same keys.
+    /// </summary>
+    public void StopVertexEdit()
     {
         if (!VertexEditActive)
             return;

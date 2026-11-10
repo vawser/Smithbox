@@ -57,7 +57,9 @@ public class CollisionEditorFallProtection
     }
 
     /// <summary>The games whose f files the walls are built for: ER, NR and DB_NT (Havok 2018 extern meshes).</summary>
-    private bool CanUse => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT;
+    public bool IsSupported => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT;
+
+    private bool CanUse => IsSupported;
 
     /// <summary>
     /// The motion properties of the game's fall protection bodies: DB_NT's are all 0, ER's and NR's 0xFFFF (none).
@@ -90,7 +92,11 @@ public class CollisionEditorFallProtection
         if (Part == null)
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Fall_No_Part"));
+            DisplayPartPicker();
             Clear();
+
+            // The last Generate's result, so it is still seen once the part is no longer selected
+            Tool.DisplayLastResult(CollisionEditorSource.Fall);
             return;
         }
 
@@ -227,6 +233,40 @@ public class CollisionEditorFallProtection
         GUI.ConditionalMultiButtonInput("collisionFallActions",
             "collisionFallGenerate", LOC.Get("MAP_CollisionEditor_Fall_Generate"), LOC.Get("MAP_CollisionEditor_Fall_Generate_TT"),
             Generate, canGenerate);
+
+        Tool.DisplayLastResult(CollisionEditorSource.Fall);
+    }
+
+    /// <summary>
+    /// The collision parts of the active map, to select one without finding it in the viewport or the content tree
+    /// (collision is often hidden there, and h and l draw the same part twice).
+    /// </summary>
+    private void DisplayPartPicker()
+    {
+        var map = View.Selection.ResolveTargetMap(MapTargetPicker.ActiveMap);
+
+        if (map == null)
+            return;
+
+        var parts = map.Objects.OfType<MsbEntity>().Where(EntityHelper.IsPartCollision).ToList();
+
+        if (parts.Count == 0)
+            return;
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##collisionFallPartPicker", LOC.Get("MAP_CollisionEditor_Fall_Pick_Part", map.Name)))
+        {
+            foreach (var part in parts)
+            {
+                var model = part.GetPropertyValue("ModelName") as string;
+
+                if (ImGui.Selectable($"{part.Name} ({model})##collisionFallPick{part.Name}"))
+                    Tool.SelectAndFrame(part);
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Fall_Pick_Part_TT"));
     }
 
     /// <summary>
@@ -530,7 +570,7 @@ public class CollisionEditorFallProtection
 
             if (template == null)
             {
-                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Fall_No_Template", $"f{mapId.Substring(1)}"));
+                Tool.ReportFailure(GetType(), CollisionEditorSource.Fall, LOC.Get("MAP_CollisionEditor_Fall_No_Template", $"f{mapId.Substring(1)}"));
                 return;
             }
 
@@ -546,7 +586,7 @@ public class CollisionEditorFallProtection
 
         if (system == null)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Fall_Unsupported_File", fileName));
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Fall, LOC.Get("MAP_CollisionEditor_Fall_Unsupported_File", fileName));
             return;
         }
 
@@ -561,7 +601,7 @@ public class CollisionEditorFallProtection
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Fall_Build_Failed", fileName), e);
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Fall, LOC.Get("MAP_CollisionEditor_Fall_Build_Failed", fileName), e);
             return;
         }
 
@@ -570,7 +610,7 @@ public class CollisionEditorFallProtection
 
         if (!bank.SaveMapCollision(mapId, "f"))
         {
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Fall_Save_Failed", fileName));
+            Tool.ReportFailure(GetType(), CollisionEditorSource.Fall, LOC.Get("MAP_CollisionEditor_Fall_Save_Failed", fileName));
             return;
         }
 
@@ -578,7 +618,7 @@ public class CollisionEditorFallProtection
         if (created)
             LoadCollision(map, $"h{ModelNumber}", fileName);
 
-        Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Fall_Generated", fileName, Walls.TriangleCount / 2,
+        Tool.ReportSuccess(GetType(), CollisionEditorSource.Fall, true, LOC.Get("MAP_CollisionEditor_Fall_Generated", fileName, Walls.TriangleCount / 2,
             Walls.Bodies.Count, after.Count));
     }
 

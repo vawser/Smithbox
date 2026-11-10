@@ -516,8 +516,11 @@ public class CollisionEditorUserDefined
 
     #region Tool Window
 
-    /// <summary>The User-Defined parameters: the mode and its options, and the points.</summary>
-    public void DisplayParameters(string problem)
+    /// <summary>
+    /// The User-Defined shape options: the mode and its height, loop and flip. Under the Create tab's Parameters
+    /// header, so they hide with it.
+    /// </summary>
+    public void DisplayShapeOptions()
     {
         var mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
 
@@ -560,6 +563,15 @@ public class CollisionEditorUserDefined
             ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Flip")}##collisionUserFlip", ref CFG.Current.MapEditor_CollisionEditor_User_Flip);
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Flip_TT"));
         }
+    }
+
+    /// <summary>
+    /// The User-Defined points: how they are placed, the placing buttons, the count and why the points make no shape,
+    /// the point list and display. Always shown, as it holds the actions and warnings.
+    /// </summary>
+    public void DisplayPoints(string problem)
+    {
+        var mode = CFG.Current.MapEditor_CollisionEditor_User_Mode;
 
         // Points
         GUI.Spacer();
@@ -690,6 +702,17 @@ public class CollisionEditorUserDefined
 
         ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_User_Show_Preview")}##collisionUserShowPreview", ref CFG.Current.MapEditor_CollisionEditor_User_Show_Preview);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_User_Show_Preview_TT"));
+    }
+
+    /// <summary>
+    /// Stops placing points and lets go of the picked point, so clicks select and the gizmo moves the selection again.
+    /// The points are kept.
+    /// </summary>
+    public void StopModes()
+    {
+        Placing = false;
+        Status = "";
+        SetSelected(-1);
     }
 
     private void TogglePlacing()

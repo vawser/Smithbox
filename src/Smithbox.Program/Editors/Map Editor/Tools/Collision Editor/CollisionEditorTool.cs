@@ -20,12 +20,23 @@ namespace StudioCore.Editors.MapEditor;
 /// are previewed until they are committed, which rebuilds the compressed meshes of the edited files, puts them in
 /// the collision documents and writes the collision binders into the project.
 /// </summary>
-public class CollisionEditorTool
+/// <summary>The tab an action result came from.</summary>
+public enum CollisionEditorSource
+{
+    Edit,
+    Create,
+    Fall
+}
+
+public partial class CollisionEditorTool
 {
     private readonly MapEditorView View;
     private readonly ProjectEntry Project;
 
     private bool Active = false;
+
+    // The frame the Edit tab was last drawn: the cursor is only on while it is, so it can't edit from another tab
+    private int LastEditTabFrame = -10;
 
     // The decoded collision files, keyed by file name (which holds the map ID)
     private readonly Dictionary<string, CollisionEditorFile> Files = new(StringComparer.OrdinalIgnoreCase);
@@ -80,6 +91,45 @@ public class CollisionEditorTool
 
     private readonly CollisionEditorCreate Create;
     private readonly CollisionEditorFallProtection FallProtection;
+
+    /// <summary>
+    /// The last Commit, Discard, Create, Overwrite or Generate, as logged: shown in the header and under the action of
+    /// the tab it came from, so the outcome is seen without the log. Wrote is whether files were written into the project.
+    /// </summary>
+    private sealed record ToolResult(CollisionEditorSource Source, string Text, bool Failed, bool Wrote, DateTime Time);
+
+    private ToolResult LastResult;
+
+    // The tab drawn last, which the header (drawn before the tabs) reads to not repeat that tab's own result
+    private CollisionEditorSource OpenTab = CollisionEditorSource.Edit;
+
+    /// <summary>Logs an action that worked, and shows it as the last result.</summary>
+    public void ReportSuccess(Type owner, CollisionEditorSource source, bool wrote, string text)
+    {
+        Smithbox.Log(owner, text);
+        LastResult = new ToolResult(source, text, false, wrote, DateTime.Now);
+        StaleFallWalls = null;
+    }
+
+    /// <summary>Logs an action that failed (with its exception, if any), and shows it as the last result.</summary>
+    public void ReportFailure(Type owner, CollisionEditorSource source, string text, Exception exception = null)
+    {
+        Smithbox.LogError(owner, text, exception);
+        LastResult = new ToolResult(source, text, true, false, DateTime.Now);
+        StaleFallWalls = null;
+    }
+
+    /// <summary>Whether the result shown is from this tab, and whether it failed.</summary>
+    public bool IsLastResult(CollisionEditorSource source, bool failed)
+    {
+        return LastResult is { } result && result.Source == source && result.Failed == failed;
+    }
+
+    /// <summary>
+    /// After a commit: the parts whose h or l edges moved and whose model has fall protection walls, which still
+    /// follow the old edges, with the layer that was edited. Offered for regenerating under the commit's result.
+    /// </summary>
+    private List<(MsbEntity Part, string Model, HavokCollisionType Layer)> StaleFallWalls;
 
     public CollisionEditorTool(MapEditorView view, ProjectEntry project)
     {
@@ -149,23 +199,34 @@ public class CollisionEditorTool
             return;
         }
 
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Tool_Description"));
+
+        DisplayHeader();
+
+        GUI.Spacer();
+
         if (ImGui.BeginTabBar("collisionEditorTabs"))
         {
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Create")}##collisionEditorTabCreate"))
+            if (BeginTab(CollisionEditorSource.Edit, "MAP_CollisionEditor_Tab_Edit", "collisionEditorTabEdit"))
             {
-                Create.Display();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Edit")}##collisionEditorTabEdit"))
-            {
+                OpenTab = CollisionEditorSource.Edit;
+                DisplayTabHelp(CollisionEditorSource.Edit);
                 DisplayEditTab();
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CollisionEditor_Tab_Fall")}##collisionEditorTabFall"))
+            if (BeginTab(CollisionEditorSource.Create, "MAP_CollisionEditor_Tab_Create", "collisionEditorTabCreate"))
             {
+                OpenTab = CollisionEditorSource.Create;
+                DisplayTabHelp(CollisionEditorSource.Create);
+                Create.Display();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(CollisionEditorSource.Fall, "MAP_CollisionEditor_Tab_Fall", "collisionEditorTabFall"))
+            {
+                OpenTab = CollisionEditorSource.Fall;
+                DisplayTabHelp(CollisionEditorSource.Fall);
                 FallProtection.Display();
                 ImGui.EndTabItem();
             }
@@ -176,11 +237,53 @@ public class CollisionEditorTool
         ImGui.EndChild();
     }
 
+    // A tab to switch to, e.g. Fall Protection after a hand-off; selected the next time its tab item is drawn
+    private CollisionEditorSource? PendingTab;
+
+    private bool BeginTab(CollisionEditorSource tab, string key, string id)
+    {
+        var flags = ImGuiTabItemFlags.None;
+
+        if (PendingTab == tab)
+        {
+            flags = ImGuiTabItemFlags.SetSelected;
+            PendingTab = null;
+        }
+
+        return ImGui.BeginTabItem($"{LOC.Get(key)}##{id}", flags);
+    }
+
+    /// <summary>Whether the Fall Protection tab can generate walls for this game.</summary>
+    public bool FallSupported => FallProtection.IsSupported;
+
+    /// <summary>Makes a part the only selection and frames it in the viewport.</summary>
+    public void SelectAndFrame(MsbEntity part)
+    {
+        View.ViewportSelection.ClearSelection();
+        View.ViewportSelection.AddSelection(part);
+        View.FrameAction.ApplyViewportFrame();
+    }
+
+    /// <summary>
+    /// Selects a collision part, frames it and switches to Fall Protection with the given source layer, so its walls
+    /// can be generated (Generate stays the user's click).
+    /// </summary>
+    public void HandOffToFall(MsbEntity part, HavokCollisionType source)
+    {
+        if (source is HavokCollisionType.High or HavokCollisionType.Low)
+            CFG.Current.MapEditor_CollisionEditor_Fall_Source = source;
+
+        SelectAndFrame(part);
+        PendingTab = CollisionEditorSource.Fall;
+    }
+
     /// <summary>
     /// Reshaping existing collision: the cursor, its keys and options, and committing the edits.
     /// </summary>
     private void DisplayEditTab()
     {
+        LastEditTabFrame = Frame;
+
         GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Description"));
 
         // Actions
@@ -193,14 +296,19 @@ public class CollisionEditorTool
             Active ? LOC.Get("MAP_CollisionEditor_Stop_TT") : LOC.Get("MAP_CollisionEditor_Start_TT"),
             ToggleEditing);
 
-        GUI.ConditionalMultiButtonInput("collisionEditorActions",
-            "collisionEditorCommit", LOC.Get("MAP_CollisionEditor_Commit"), LOC.Get("MAP_CollisionEditor_Commit_TT"),
-            CommitChanges, HasEdits,
+        // Commit and Discard are in the header, shown on every tab while there are edits
 
-            "collisionEditorDiscard", LOC.Get("MAP_CollisionEditor_Discard"), LOC.Get("MAP_CollisionEditor_Discard_TT"),
-            DiscardChanges, HasEdits);
+        // What the cursor hits and does, first, as it is read while editing; the options below are set once
+        DisplayLayer();
+        DisplayCursorStatus();
 
-        DisplayLayerOptions();
+        // Controls
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"));
+
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Raise", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Raise)));
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Lower", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Lower)));
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Drag", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag)));
 
         // Step
         GUI.Spacer();
@@ -220,38 +328,39 @@ public class CollisionEditorTool
             CFG.Current.MapEditor_CollisionEditor_Radius = Math.Max(0f, CFG.Current.MapEditor_CollisionEditor_Radius);
         GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Radius_Input_TT"));
 
-        // Cursor Size
+        DisplayLinkOptions();
+
+        // Cursor Display: rarely changed, so closed by default
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Size_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Size_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Cursor_Display_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Display_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Cursor_Display);
 
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##collisionEditorCursorSize", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Size))
-            CFG.Current.MapEditor_CollisionEditor_Cursor_Size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Cursor_Size);
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Size_Input_TT"));
+        if (CFG.Current.MapEditor_CollisionEditor_Show_Cursor_Display)
+        {
+            // Cursor Size
+            GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Size_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Size_Header_TT"));
 
-        // Cursor Opacity
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header_TT"));
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputFloat("##collisionEditorCursorSize", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Size))
+                CFG.Current.MapEditor_CollisionEditor_Cursor_Size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Cursor_Size);
+            GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Size_Input_TT"));
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.SliderFloat("##collisionEditorCursorOpacity", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha, 0f, 100f, "%.0f%%");
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Input_TT"));
+            // Cursor Opacity
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header_TT"));
 
-        // Controls
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"));
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat("##collisionEditorCursorOpacity", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha, 0f, 100f, "%.0f%%");
+            GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Input_TT"));
+        }
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Raise", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Raise)));
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Lower", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Lower)));
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Drag", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag)));
-
-        DisplayStatus();
+        DisplayPendingList();
     }
 
     /// <summary>
-    /// Which collision layer the cursor edits, and whether the other layer follows.
+    /// Which collision layer the cursor edits, with a button to display it if it isn't.
     /// </summary>
-    private void DisplayLayerOptions()
+    private void DisplayLayer()
     {
         var bank = View.HavokCollisionBank;
         var layer = CFG.Current.MapEditor_CollisionEditor_Layer;
@@ -289,6 +398,14 @@ public class CollisionEditorTool
             }
             GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Layer_Display_TT"));
         }
+    }
+
+    /// <summary>
+    /// Whether the other layer of a part follows the edits, and how close its vertices must be to.
+    /// </summary>
+    private void DisplayLinkOptions()
+    {
+        var layer = CFG.Current.MapEditor_CollisionEditor_Layer;
 
         // Linked Layers
         GUI.Spacer();
@@ -343,9 +460,9 @@ public class CollisionEditorTool
     }
 
     /// <summary>
-    /// What is under the cursor, and which files have edits waiting to be committed.
+    /// What is under the cursor, and what an edit there moves.
     /// </summary>
-    private void DisplayStatus()
+    private void DisplayCursorStatus()
     {
         var scene = View.ViewportHandler.ActiveViewport?.RenderScene;
 
@@ -370,21 +487,54 @@ public class CollisionEditorTool
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Vertex", hit.Vertex,
                 $"{position.X:0.###}, {position.Y:0.###}, {position.Z:0.###}"));
 
+            var moves = GetCursorMoves(hit);
+
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Moves",
+                moves.Where(m => m.File == hit.File).Sum(m => m.Falloff.Count),
+                $"{CFG.Current.MapEditor_CollisionEditor_Radius:0.###}"));
+
             if (CFG.Current.MapEditor_CollisionEditor_Link_Layers && GetLinkedLayer(hit.File.Type) != null)
             {
                 var linkedName = GetLinkedFileName(hit.File.FileName);
                 var linked = linkedName != null && Files.ContainsKey(linkedName) ? linkedName : null;
+                var following = moves.Where(m => m.File != hit.File).Sum(m => m.Falloff.Count);
 
-                GUI.WrappedText(linked != null
-                    ? LOC.Get("MAP_CollisionEditor_Cursor_Linked", linked)
-                    : LOC.Get("MAP_CollisionEditor_Cursor_Linked_None"));
+                GUI.WrappedText(linked == null ? LOC.Get("MAP_CollisionEditor_Cursor_Linked_None")
+                    : following > 0 ? LOC.Get("MAP_CollisionEditor_Cursor_Linked", linked, following)
+                    : LOC.Get("MAP_CollisionEditor_Cursor_Linked_Far", linked));
             }
         }
         else
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_None"));
         }
+    }
 
+    // What an edit at the cursor moves, worked out again only when the target or an option it depends on changes
+    // (the radius search goes over the whole body), and after each raise or lower
+    private (CollisionEditorFile File, CollisionEditorBody Body, int Vertex, float Radius, float LinkDistance, bool Link) CursorMovesKey;
+    private List<MoveSet> CursorMoves;
+
+    private List<MoveSet> GetCursorMoves(Hit hit)
+    {
+        if (Drag != null && DragMoves != null)
+            return DragMoves;
+
+        var key = (hit.File, hit.Body, hit.Vertex, CFG.Current.MapEditor_CollisionEditor_Radius,
+            CFG.Current.MapEditor_CollisionEditor_Link_Distance, CFG.Current.MapEditor_CollisionEditor_Link_Layers);
+
+        if (CursorMoves == null || !key.Equals(CursorMovesKey))
+        {
+            CursorMovesKey = key;
+            CursorMoves = GetMoves(hit);
+        }
+
+        return CursorMoves;
+    }
+
+    /// <summary>The files with moved vertices that haven't been committed (Commit and Discard are in the header).</summary>
+    private void DisplayPendingList()
+    {
         // Pending Edits
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Pending_Header"), LOC.Get("MAP_CollisionEditor_Pending_Header_TT"));
@@ -399,15 +549,27 @@ public class CollisionEditorTool
 
         foreach (var file in edited)
         {
-            var moved = file.Bodies.Sum(b => b.Vertices.Where((v, i) => v != b.OriginalVertices[i]).Count());
-
-            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Pending_File", file.FileName, moved));
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Pending_File", file.FileName, CountMovedVertices(file)));
         }
+    }
+
+    /// <summary>
+    /// Stops editing if it is on: the cursor is hidden and pending edits are kept. Called by the Navigation tool when
+    /// its vertex edit starts, as both take the same keys.
+    /// </summary>
+    public void StopEditing()
+    {
+        if (Active)
+            ToggleEditing();
     }
 
     private void ToggleEditing()
     {
         Active = !Active;
+
+        // The Navigation tool's vertex edit takes the same keys, so one press would move both meshes
+        if (Active)
+            View.NavigationTool?.StopVertexEdit();
 
         if (!Active)
         {
@@ -427,6 +589,7 @@ public class CollisionEditorTool
     private void DiscardChanges()
     {
         Drag = null;
+        CursorMoves = null;
 
         foreach (var file in Files.Values)
         {
@@ -437,7 +600,7 @@ public class CollisionEditorTool
             SetOriginalVisible(file, true);
         }
 
-        Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Discarded"));
+        ReportSuccess(GetType(), CollisionEditorSource.Edit, false, LOC.Get("MAP_CollisionEditor_Discarded"));
     }
 
     #endregion
@@ -462,6 +625,13 @@ public class CollisionEditorTool
             return false;
 
         DropUnloadedFiles();
+
+        // The tab is drawn after the viewport, so it is open if it was drawn last frame. Leaving it (another tab,
+        // the section closed, another tool) stops editing; pending edits are kept.
+        if (Active && Frame - LastEditTabFrame > 1)
+        {
+            ToggleEditing();
+        }
 
         // Placing User-Defined points takes the clicks, so the cursor doesn't edit under them
         var placing = Create.HandleViewportInput(viewport, ray, canInteract);
@@ -543,6 +713,9 @@ public class CollisionEditorTool
 
         foreach (var move in moves)
             MoveWorld(move, new Vector3(0, amount, 0));
+
+        // The vertices around the target have moved, so what the radius reaches may have changed
+        CursorMoves = null;
 
         // The drag plane follows the vertex, so dragging after raising doesn't pull it back down
         if (Drag != null)
@@ -1100,7 +1273,7 @@ public class CollisionEditorTool
 
             if (remapWalls && !View.WallBank.EnsureMapLoaded(file.MapId))
             {
-                Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Walls_Unread", file.FileName));
+                ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_Walls_Unread", file.FileName));
                 return;
             }
 
@@ -1110,7 +1283,7 @@ public class CollisionEditorTool
 
                 if (indices.Count == 0)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_No_Triangles", file.FileName));
+                    ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_No_Triangles", file.FileName));
                     return;
                 }
 
@@ -1122,13 +1295,13 @@ public class CollisionEditorTool
                 }
                 catch (Exception e)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", file.FileName), e);
+                    ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", file.FileName), e);
                     return;
                 }
 
                 if (built == null)
                 {
-                    Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", file.FileName));
+                    ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_Build_Failed", file.FileName));
                     return;
                 }
 
@@ -1180,9 +1353,48 @@ public class CollisionEditorTool
         var names = string.Join(", ", edited.Select(f => f.FileName));
 
         if (success)
-            Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Committed", names));
+            ReportSuccess(GetType(), CollisionEditorSource.Edit, true, LOC.Get("MAP_CollisionEditor_Committed", names));
         else
-            Smithbox.LogError(this, LOC.Get("MAP_CollisionEditor_Commit_Save_Failed", names));
+            ReportFailure(GetType(), CollisionEditorSource.Edit, LOC.Get("MAP_CollisionEditor_Commit_Save_Failed", names));
+
+        // Set after the report, which clears it
+        StaleFallWalls = GetStaleFallWalls(edited);
+    }
+
+    /// <summary>
+    /// The parts of committed h and l files whose model has an f file, as its walls were built along the old edges.
+    /// One per model (h and l of a model are the same part). Empty where fall protection isn't generated.
+    /// </summary>
+    private List<(MsbEntity Part, string Model, HavokCollisionType Layer)> GetStaleFallWalls(List<CollisionEditorFile> committed)
+    {
+        var stale = new List<(MsbEntity Part, string Model, HavokCollisionType Layer)>();
+
+        if (!FallProtection.IsSupported)
+            return stale;
+
+        foreach (var file in committed)
+        {
+            if (file.Type is not (HavokCollisionType.High or HavokCollisionType.Low))
+                continue;
+
+            var match = System.Text.RegularExpressions.Regex.Match(file.FileName, @"_(\d{6})\.hkx", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+            if (!match.Success)
+                continue;
+
+            var number = match.Groups[1].Value;
+            var model = $"h{number}";
+
+            if (stale.Any(s => s.Model == model && s.Part.MapID == file.MapId))
+                continue;
+
+            var fallFile = $"f{file.MapId.Substring(1)}_{number}.hkx.dcx";
+
+            if (View.HavokCollisionBank.HasMapCollision(file.MapId, fallFile))
+                stale.Add((file.Entity, model, file.Type));
+        }
+
+        return stale;
     }
 
     /// <summary>

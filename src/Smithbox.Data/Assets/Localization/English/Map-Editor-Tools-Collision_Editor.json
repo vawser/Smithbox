@@ -10,15 +10,74 @@
     },
     {
       "Key": "MAP_CollisionEditor_Unsupported_Game",
-      "Text": "This tool is only supported for Dark Souls III, Sekiro, Elden Ring, Nightreign and Armored Core VI."
+      "Text": "This tool is only supported for Dark Souls III, Sekiro, Elden Ring, Nightreign, Armored Core VI and The Duskbloods (Network Test)."
     },
+    { "Key": "MAP_CollisionEditor_Tool_Description", "Text": "Reshape, create and wall map collision. Edit moves the vertices of the displayed collision; Create adds a new collision to the active map; Fall Protection builds the walls that stop falls off a collision's edges." },
+    { "Key": "MAP_CollisionEditor_Help_Header", "Text": "How this works" },
+    { "Key": "MAP_CollisionEditor_Help_Header_TT", "Text": "The steps of this tab. Open the first time the tab is shown; the eye shows or hides them." },
+    { "Key": "MAP_CollisionEditor_Help_Edit", "Text": "1. Choose the Layer to edit (show it if it is hidden), then Start Collision Edit.\n2. Move the mouse over the collision: the cursor marks the vertex that moves, and the Cursor section says how many move with it. Raise and lower it with the keys, or hold the drag key to slide it at its height.\n3. A Radius moves the vertices around it too; with Link High and Low on, the other layer follows.\n4. Commit (above the tabs) rebuilds the edited files and writes them into the project; Discard puts the vertices back." },
+    { "Key": "MAP_CollisionEditor_Help_Create", "Text": "1. Check the Map: the collision is made for the active map.\n2. Choose a Shape: a basic shape (made at the placement orb), the FLVERs of the selected map pieces and assets, or User-Defined points placed in the viewport. Set its Facing, Material and size.\n3. Keep the suggested Model ID, or type one. An ID the map already uses overwrites that collision, once confirmed.\n4. Create writes the new h and l files into the project and adds a part placing them (saved with the map). The buttons under the result select it or go on to its fall protection." },
+    { "Key": "MAP_CollisionEditor_Help_Fall", "Text": "1. Select one collision part, or pick it from the list. Fall Protection for It (Create) and Regenerate Walls (after a commit) bring you here with it selected.\n2. Choose the Source Layer whose outer edges the walls follow, and the Direction. Drop Edges Only leaves out seams and the edges of walls and ceilings.\n3. Check the walls in the viewport and the counts, then Generate. They go in the model's f file, written into the project, as one undo.\nOnly Elden Ring, Nightreign and The Duskbloods (Network Test) have walls this tab can build." },
+    { "Key": "MAP_CollisionEditor_Glossary_Header", "Text": "Glossary" },
+    { "Key": "MAP_CollisionEditor_Glossary_TT", "Text": "The collision terms the tool uses." },
+    { "Key": "MAP_CollisionEditor_Glossary_Layers", "Text": "Layers (high, low, fall protection)" },
+    { "Key": "MAP_CollisionEditor_Glossary_Layers_Text", "Text": "A collision model has up to three layers, each a file of its own: high (h) and low (l) are the same ground at two levels of detail, h the more detailed; fall protection (f) is a set of thin walls along edges. Each layer is drawn and edited separately." },
+    { "Key": "MAP_CollisionEditor_Glossary_Files", "Text": "Collision files" },
+    { "Key": "MAP_CollisionEditor_Glossary_Files_Text", "Text": "Named for the layer, map and model: h10_00_00_00_002400.hkx.dcx is the high collision of model h002400 in m10_00_00_00, and l... and f... are its other layers." },
+    { "Key": "MAP_CollisionEditor_Glossary_Binder", "Text": "Binder" },
+    { "Key": "MAP_CollisionEditor_Glossary_Binder_Text", "Text": "The archive holding every file of one layer of a map (its h, l or f files). Committing, creating or generating writes the whole binder into the project." },
+    { "Key": "MAP_CollisionEditor_Glossary_Body", "Text": "Body" },
+    { "Key": "MAP_CollisionEditor_Glossary_Body_Text", "Text": "A shape inside a collision file. An h or l file holds one body, a compressed mesh of triangles; an f file holds one body per run of wall." },
+    { "Key": "MAP_CollisionEditor_Glossary_Model", "Text": "Model and collision part" },
+    { "Key": "MAP_CollisionEditor_Glossary_Model_Text", "Text": "A model is a collision's mesh, known by h and six digits (h002400). A collision part is the map entry that places a model; several parts can place one model, and all of them show its mesh, so an edit changes every one." },
+    { "Key": "MAP_CollisionEditor_Glossary_Linked", "Text": "Linked layers" },
+    { "Key": "MAP_CollisionEditor_Glossary_Linked_Text", "Text": "High and low don't share vertices, so with Link High and Low on, an edit of one moves the other's vertices near the edited one: fully within the link distance, fading out past it with the radius." },
+    { "Key": "MAP_CollisionEditor_Glossary_Radius", "Text": "Radius" },
+    { "Key": "MAP_CollisionEditor_Glossary_Radius_Text", "Text": "How far around the cursor's vertex an edit reaches. Vertices nearer it move more; those past the radius don't move. 0 moves the vertex alone." },
+    { "Key": "MAP_CollisionEditor_Glossary_Facing", "Text": "Facing" },
+    { "Key": "MAP_CollisionEditor_Glossary_Facing_Text", "Text": "Which side of a triangle is solid. Ground faces up. If a new collision can be fallen or walked through in game, try the other facing." },
+    { "Key": "MAP_CollisionEditor_Glossary_Material", "Text": "Collision material" },
+    { "Key": "MAP_CollisionEditor_Glossary_Material_Text", "Text": "The material each triangle carries, picked by name. A FLVER mesh whose material is named hkm_Name_Property keeps that material." },
+    { "Key": "MAP_CollisionEditor_Glossary_PlacementOrb", "Text": "Placement orb" },
+    { "Key": "MAP_CollisionEditor_Glossary_PlacementOrb_Text", "Text": "The marker in front of the camera where new objects are placed (viewport Settings > Placement Orb). Basic shapes are created there, and the first Gizmo point is spawned there." },
+    { "Key": "MAP_CollisionEditor_Glossary_FallProtection", "Text": "Fall protection" },
+    { "Key": "MAP_CollisionEditor_Glossary_FallProtection_Text", "Text": "Thin vertical walls that stop falls off the edges of collision. The game doesn't protect every drop, and its walls follow the walkable edge rather than the collision's, so generated walls are a starting point." },
+    { "Key": "MAP_CollisionEditor_Glossary_DropEdges", "Text": "Drop edges" },
+    { "Key": "MAP_CollisionEditor_Glossary_DropEdges_Text", "Text": "Outer edges of ground that can be stood on, with nothing, or ground well below, just past them. Drop Edges Only gives walls to these alone, leaving out open seams between pieces of floor." },
+    { "Key": "MAP_CollisionEditor_Glossary_Filter", "Text": "Collision filter" },
+    { "Key": "MAP_CollisionEditor_Glossary_Filter_Text", "Text": "A value on each fall protection body. The game's walls use 0 or 1; copy the value of the map's other walls." },
+    { "Key": "MAP_CollisionEditor_Glossary_Commit", "Text": "Commit and saving" },
+    { "Key": "MAP_CollisionEditor_Glossary_Commit_Text", "Text": "Moved vertices are a preview until committed. Commit, Create and Generate write their files into the project at once. Their undo and redo show in the viewport straight away and reach the files when the map is saved; a created part is saved with the map." },
+    { "Key": "MAP_CollisionEditor_Viewport_Header", "Text": "Viewport" },
+    { "Key": "MAP_CollisionEditor_Viewport_Header_TT", "Text": "Whether collision is drawn, what the viewport's clicks, keys and gizmo do, and edits that haven't been committed. Shown on every tab." },
+    { "Key": "MAP_CollisionEditor_Show_Collision", "Text": "Show Collision" },
+    { "Key": "MAP_CollisionEditor_Show_Collision_TT", "Text": "The viewport's collision filter, as in the Filters menu. Collision must be shown to be edited, and for the previews to be seen. Which layers (high, low, fall protection) are drawn is set separately; the Edit tab offers to show the layer it edits." },
+    { "Key": "MAP_CollisionEditor_Mode_None", "Text": "Clicks in the viewport select map objects as usual." },
+    { "Key": "MAP_CollisionEditor_Mode_Edit", "Text": "Editing {0} collision: {1} raise, {2} lower, hold {3} drag." },
+    { "Key": "MAP_CollisionEditor_Mode_Placing", "Text": "Placing User-Defined points: clicks in the viewport add points." },
+    { "Key": "MAP_CollisionEditor_Mode_Point_Gizmo", "Text": "The gizmo moves User-Defined point {0}, not the selection." },
+    { "Key": "MAP_CollisionEditor_Mode_Stop_TT", "Text": "Hide the edit cursor, stop placing points and let go of the picked point, so clicks and the gizmo act on map objects again. Edits that haven't been committed, and placed points, are kept." },
+    { "Key": "MAP_CollisionEditor_Mode_Collision_Hidden", "Text": "Collision is hidden, so the cursor can't be placed. Tick Show Collision above." },
+    { "Key": "MAP_CollisionEditor_Result", "Text": "{0} {1}" },
+    { "Key": "MAP_CollisionEditor_Result_Clear_TT", "Text": "Hide this result. It is also in the log." },
+    { "Key": "MAP_CollisionEditor_Save_Note", "Text": "These files are in the project now. Undo and redo change the viewport straight away, and reach the files when the map is saved." },
+    { "Key": "MAP_CollisionEditor_HandOff_Select", "Text": "Select {0}" },
+    { "Key": "MAP_CollisionEditor_HandOff_Select_TT", "Text": "Select the collision part placing the new collision, and frame it in the viewport." },
+    { "Key": "MAP_CollisionEditor_HandOff_Fall", "Text": "Fall Protection for It" },
+    { "Key": "MAP_CollisionEditor_HandOff_Fall_TT", "Text": "Select the part and open the Fall Protection tab, to generate walls along its edges. Generate is still your click." },
+    { "Key": "MAP_CollisionEditor_HandOff_Stale_Walls", "Text": "{0} has fall protection walls, built along its edges before this edit. They don't follow the moved vertices." },
+    { "Key": "MAP_CollisionEditor_HandOff_Regenerate", "Text": "Regenerate Walls of {0}" },
+    { "Key": "MAP_CollisionEditor_HandOff_Regenerate_TT", "Text": "Select the part and open the Fall Protection tab, with the edited layer as the source. Check the options there (Keep Existing Walls is off to replace them), then Generate." },
+    { "Key": "MAP_CollisionEditor_Fall_Pick_Part", "Text": "Pick a collision part of {0}..." },
+    { "Key": "MAP_CollisionEditor_Fall_Pick_Part_TT", "Text": "Select one of the active map's collision parts and frame it, without finding it in the viewport or the content tree." },
+    { "Key": "MAP_CollisionEditor_Pending_Status", "Text": "{0} collision files have {1} moved vertices that aren't committed." },
     {
       "Key": "MAP_CollisionEditor_Description",
       "Text": "Reshape map collision by moving its vertices in the viewport. Edits are previewed until they are committed, which rebuilds the edited collision and writes it into the project."
     },
     {
       "Key": "MAP_CollisionEditor_Collision_Not_Loaded",
-      "Text": "Collision isn't loaded, so there is nothing to edit. Enable collision loading and load the map again."
+      "Text": "Collision isn't loaded, so there is nothing to edit. Turn on Collisions in the viewport's Settings > Model Load menu, and turn off Skip Havok Collision / Navmesh Loading in the Map Editor preferences, then load the map again."
     },
     {
       "Key": "MAP_CollisionEditor_Actions_Header",
@@ -26,7 +85,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Actions_Header_TT",
-      "Text": "Start or stop editing, and commit or discard the edits."
+      "Text": "Start or stop editing. Commit and Discard are above the tabs, shown while there are edits."
     },
     {
       "Key": "MAP_CollisionEditor_Start",
@@ -34,7 +93,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Start_TT",
-      "Text": "Shows the cursor on the collision under the mouse, so its vertices can be moved with the keys below."
+      "Text": "Shows the cursor on the collision under the mouse, so its vertices can be moved with the keys below. Turns off the Navigation tool's vertex editing, which uses the same keys. Editing stops when this tab is left or the Collision Editor is closed; edits that haven't been committed are kept, and Commit and Discard appear above the tabs."
     },
     {
       "Key": "MAP_CollisionEditor_Stop",
@@ -50,7 +109,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Commit_TT",
-      "Text": "Rebuilds the edited collision from the moved vertices and writes the collision binders it is in into the project. Can be undone."
+      "Text": "Rebuilds the edited collision from the moved vertices and writes the collision binders it is in into the project straight away. Can be undone: the undo shows in the viewport at once, and reaches the project's files when the map is saved."
     },
     {
       "Key": "MAP_CollisionEditor_Discard",
@@ -118,12 +177,16 @@
     },
     {
       "Key": "MAP_CollisionEditor_Link_Distance_Input_TT",
-      "Text": "The distance in world units. In Stormveil, 94% of low vertices lie within 0.5 of the high collision; larger distances may pull in nearby surfaces that aren't the same ground."
+      "Text": "The distance in world units. Most low vertices lie within 0.5 of the high collision; larger distances may pull in nearby surfaces that aren't the same ground."
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_Linked",
-      "Text": "Linked: {0}"
+      "Text": "Linked: {0}, {1} of its vertices follow."
     },
+    { "Key": "MAP_CollisionEditor_Cursor_Linked_Far", "Text": "Linked: {0}, but none of its vertices are within the link distance, so it doesn't follow here." },
+    { "Key": "MAP_CollisionEditor_Cursor_Moves", "Text": "An edit here moves {0} vertices (radius {1})." },
+    { "Key": "MAP_CollisionEditor_Cursor_Display_Header", "Text": "Cursor Display" },
+    { "Key": "MAP_CollisionEditor_Cursor_Display_Header_TT", "Text": "The size and opacity of the cursor sphere. Rarely changed, so hidden by default." },
     {
       "Key": "MAP_CollisionEditor_Cursor_Linked_None",
       "Text": "Linked: none (this part has no other layer that can be edited)"
@@ -206,7 +269,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Collision_Hidden",
-      "Text": "Collision is hidden. It must be displayed to be edited."
+      "Text": "Collision is hidden. Tick Show Collision above the tabs to edit it."
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_Inactive",
@@ -250,11 +313,11 @@
     },
     {
       "Key": "MAP_CollisionEditor_Commit_No_Triangles",
-      "Text": "{0} would have no triangles left, so nothing was committed."
+      "Text": "{0} would have no triangles left, so nothing was committed. The edits are still pending."
     },
     {
       "Key": "MAP_CollisionEditor_Commit_Build_Failed",
-      "Text": "Failed to rebuild the collision mesh of {0}, so nothing was committed."
+      "Text": "Failed to rebuild the collision mesh of {0}, so nothing was committed. The edits are still pending."
     },
     {
       "Key": "MAP_CollisionEditor_Commit_Rebuilt",
@@ -276,7 +339,7 @@
     { "Key": "MAP_CollisionEditor_Tab_Create", "Text": "Create" },
     { "Key": "MAP_CollisionEditor_Tab_Fall", "Text": "Fall Protection" },
     { "Key": "MAP_CollisionEditor_Fall_Description", "Text": "Generate the fall protection collision of the selected collision part: flat vertical walls along the outer edges of its high or low collision, written into its fall protection (f) file." },
-    { "Key": "MAP_CollisionEditor_Fall_Unsupported_Game", "Text": "Fall protection can only be generated for Elden Ring and Nightreign." },
+    { "Key": "MAP_CollisionEditor_Fall_Unsupported_Game", "Text": "Fall protection can only be generated for Elden Ring, Nightreign and The Duskbloods (Network Test)." },
     { "Key": "MAP_CollisionEditor_Fall_Part_Header", "Text": "Collision Part" },
     { "Key": "MAP_CollisionEditor_Fall_Part_Header_TT", "Text": "The collision part the walls are made for. They go in the f file of its model, which every part placing the model uses." },
     { "Key": "MAP_CollisionEditor_Fall_No_Part", "Text": "Select a single collision part to generate its fall protection." },
@@ -307,7 +370,7 @@
     { "Key": "MAP_CollisionEditor_Fall_Height_Input_TT", "Text": "In world units. Every wall in the game's fall protection is 1.8 high." },
     { "Key": "MAP_CollisionEditor_Fall_Filter_Header", "Text": "Collision Filter" },
     { "Key": "MAP_CollisionEditor_Fall_Filter_Header_TT", "Text": "The collision filter info of the wall bodies." },
-    { "Key": "MAP_CollisionEditor_Fall_Filter_Input_TT", "Text": "The game's walls use 0 or 1; Elden Ring's legacy dungeons only use 1. What the two values block isn't known." },
+    { "Key": "MAP_CollisionEditor_Fall_Filter_Input_TT", "Text": "The game's walls use 0 or 1; Elden Ring's legacy dungeons only use 1. Copy the value of the map's other walls." },
     { "Key": "MAP_CollisionEditor_Fall_Existing_Header", "Text": "Existing Walls" },
     { "Key": "MAP_CollisionEditor_Fall_Existing_Header_TT", "Text": "What happens to the walls the f file already has." },
     { "Key": "MAP_CollisionEditor_Fall_Existing", "Text": "{0} has {1} wall bodies." },
@@ -316,13 +379,13 @@
     { "Key": "MAP_CollisionEditor_Fall_Preview_Header", "Text": "Preview" },
     { "Key": "MAP_CollisionEditor_Fall_Preview_Header_TT", "Text": "The walls that will be generated, drawn in the viewport in the fall protection colour while this tab is open." },
     { "Key": "MAP_CollisionEditor_Fall_Show_Preview", "Text": "Show in Viewport" },
-    { "Key": "MAP_CollisionEditor_Fall_Show_Preview_TT", "Text": "Draws the walls in the viewport, placed with the part. Collision must be shown in the viewport's filters." },
+    { "Key": "MAP_CollisionEditor_Fall_Show_Preview_TT", "Text": "Draws the walls in the viewport, placed with the part. Collision must be shown (Show Collision above the tabs)." },
     { "Key": "MAP_CollisionEditor_Fall_Summary", "Text": "{0} outer edges, {1} facing the direction: {2} walls in {3} bodies." },
     { "Key": "MAP_CollisionEditor_Fall_No_Walls", "Text": "No outer edge faces that way, so there is nothing to generate." },
     { "Key": "MAP_CollisionEditor_Fall_Actions_Header", "Text": "Actions" },
     { "Key": "MAP_CollisionEditor_Fall_Actions_Header_TT", "Text": "Generate the walls." },
     { "Key": "MAP_CollisionEditor_Fall_Generate", "Text": "Generate Fall Protection" },
-    { "Key": "MAP_CollisionEditor_Fall_Generate_TT", "Text": "Puts the walls in the part's f file (made if the model has none), as one action that can be undone, then writes the fall protection binder into the project." },
+    { "Key": "MAP_CollisionEditor_Fall_Generate_TT", "Text": "Puts the walls in the part's f file (made if the model has none), as one action, then writes the fall protection binder into the project straight away. Can be undone: the undo shows in the viewport at once, and reaches the project's files when the map is saved." },
     { "Key": "MAP_CollisionEditor_Fall_No_Template", "Text": "{0} has no file to base a new fall protection file on. Nothing was generated." },
     { "Key": "MAP_CollisionEditor_Fall_Unsupported_File", "Text": "{0} isn't a fall protection file that walls can be added to. Nothing was generated." },
     { "Key": "MAP_CollisionEditor_Fall_Build_Failed", "Text": "The walls of {0} couldn't be built. Nothing was generated." },
@@ -336,6 +399,8 @@
     { "Key": "MAP_CollisionEditor_Create_Shape_Header", "Text": "Shape" },
     { "Key": "MAP_CollisionEditor_Create_Shape_Header_TT", "Text": "What the collision's mesh is." },
     { "Key": "MAP_CollisionEditor_Create_Shape_Input_TT", "Text": "A basic shape, placed at the placement orb; the FLVERs of the selected map pieces and assets, combined where they are placed (the new part goes where the first of them, in map order, is); or User-Defined: a line, plane or box made from points placed in the viewport (the new part goes on the first point)." },
+    { "Key": "MAP_CollisionEditor_Create_Orb_Position", "Text": "Made at the placement orb, {0} in front of the camera: now at {1}. Move the camera to move it; the distance is set in the viewport's Settings > Placement Orb." },
+    { "Key": "MAP_CollisionEditor_Create_Overwrite_Header", "Text": "Overwrite {0}" },
     { "Key": "MAP_CollisionEditor_Create_Shape_Square", "Text": "Square" },
     { "Key": "MAP_CollisionEditor_Create_Shape_Triangle", "Text": "Triangle" },
     { "Key": "MAP_CollisionEditor_Create_Shape_Circle", "Text": "Circle" },
@@ -387,7 +452,7 @@
     { "Key": "MAP_CollisionEditor_User_Display_Header_TT", "Text": "How the points and the shape are drawn in the viewport." },
     { "Key": "MAP_CollisionEditor_User_Point_Size_TT", "Text": "The radius of each point's sphere." },
     { "Key": "MAP_CollisionEditor_User_Show_Preview", "Text": "Show Shape in Viewport" },
-    { "Key": "MAP_CollisionEditor_User_Show_Preview_TT", "Text": "Draw the triangles the points make in the viewport, with the collision. Hidden while placing, so clicks land on the map rather than on the shape." },
+    { "Key": "MAP_CollisionEditor_User_Show_Preview_TT", "Text": "Draw the triangles the points make in the viewport, with the collision (Show Collision above the tabs). Hidden while placing, so clicks land on the map rather than on the shape." },
     { "Key": "MAP_CollisionEditor_User_Nothing_Hit", "Text": "Nothing was under the click, so no point was placed." },
     { "Key": "MAP_CollisionEditor_User_Too_Few_Points", "Text": "Place at least {0} points." },
     { "Key": "MAP_CollisionEditor_User_No_Wall", "Text": "The points make no wall: they are all above one another." },
@@ -422,6 +487,18 @@
     { "Key": "MAP_CollisionEditor_Create_Flver_All_TT", "Text": "Use every mesh of every FLVER." },
     { "Key": "MAP_CollisionEditor_Create_Flver_None", "Text": "None" },
     { "Key": "MAP_CollisionEditor_Create_Flver_None_TT", "Text": "Use no meshes, to pick a few." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Header", "Text": "Simplify" },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Header_TT", "Text": "A pass over the combined FLVER mesh that reduces its detail while keeping its general shape, so the collision has far fewer triangles than the render mesh." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Applying", "Text": "The mesh is simplified." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify", "Text": "Simplify Mesh" },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_TT", "Text": "Collapse the mesh's edges, cheapest first, until the target is reached or every further collapse would move the surface by more than the max error. Flat areas reduce the most; slopes, steps and creases keep their shape." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Target", "Text": "Target" },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Target_TT", "Text": "The share of the triangles to keep. Fewer may be kept when the max error stops the pass first." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Max_Error", "Text": "Max Error" },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Max_Error_TT", "Text": "How far, in metres, the simplified surface may stray from the original. Lower keeps more detail; higher reduces further." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders", "Text": "Keep Borders" },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Lock_Borders_TT", "Text": "Never move the vertices on the mesh's open edges or on the borders between collision materials, so it still meets neighbouring collision exactly and each material keeps its area. Off, they may move, but at a heavy cost." },
+    { "Key": "MAP_CollisionEditor_Create_Flver_Simplify_Result", "Text": "Simplified from {0} to {1} triangles ({2}%)." },
     { "Key": "MAP_CollisionEditor_Create_Flver_Mesh", "Text": "Mesh {0}: {1}" },    { "Key": "MAP_CollisionEditor_Create_Model_Header", "Text": "Model ID" },
     { "Key": "MAP_CollisionEditor_Create_Model_Header_TT", "Text": "The number of the new collision model: the part's model is h followed by it, and its files are named for it." },
     { "Key": "MAP_CollisionEditor_Create_Model_Input_TT", "Text": "Six digits. Suggested as the first unused number after the map's highest below 900000." },
@@ -432,7 +509,7 @@
     { "Key": "MAP_CollisionEditor_Create_Preview_Triangles", "Text": "Triangles: {0}" },    { "Key": "MAP_CollisionEditor_Create_Actions_Header", "Text": "Actions" },
     { "Key": "MAP_CollisionEditor_Create_Actions_Header_TT", "Text": "Create the collision." },
     { "Key": "MAP_CollisionEditor_Create_Action", "Text": "Create Collision" },
-    { "Key": "MAP_CollisionEditor_Create_Action_TT", "Text": "Adds the collision's files to the map's high and low collision binders, writes the binders into the project, and adds a collision part placing it. Undoing removes the part; the files stay in the binders." },
+    { "Key": "MAP_CollisionEditor_Create_Action_TT", "Text": "Adds the collision's files to the map's high and low collision binders, writes the binders into the project straight away, and adds a collision part placing it (saved with the map). Undoing removes the part; the files stay in the binders." },
     { "Key": "MAP_CollisionEditor_Create_No_Template_Part", "Text": "{0} has no collision part to base the new part on." },
     { "Key": "MAP_CollisionEditor_Create_No_Template_File", "Text": "The {0} binder has no collision file with a single compressed mesh to base the new file on." },
     { "Key": "MAP_CollisionEditor_Create_Build_Failed", "Text": "Failed to build {0}, so nothing was created." },
@@ -446,16 +523,16 @@
     { "Key": "MAP_CollisionEditor_Create_Overwrite_File_Created", "Text": "{0}: not in the binder, so it is created." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Parts_Kept", "Text": "The {0} collision parts placing it are kept, and show the new mesh." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Part_Added", "Text": "No collision part places it, so one is added." },
-    { "Key": "MAP_CollisionEditor_Create_Overwrite_Undo", "Text": "Undoing restores the old meshes. Files that were created stay in the binders." },
+    { "Key": "MAP_CollisionEditor_Create_Overwrite_Undo", "Text": "Undoing restores the old meshes in the viewport at once, and in the project's files when the map is saved. Files that were created stay in the binders." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Confirm", "Text": "Overwrite" },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Confirm_TT", "Text": "Replace the collision's mesh and write the binders into the project." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Cancel", "Text": "Cancel" },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Cancel_TT", "Text": "Leave the collision as it is." },
-    { "Key": "MAP_CollisionEditor_Create_Overwrite_Pending_Edits", "Text": "{0} has uncommitted edits in the Edit tab. Commit or discard them first." },
+    { "Key": "MAP_CollisionEditor_Create_Overwrite_Pending_Edits", "Text": "{0} has uncommitted edits from the Edit tab. Commit or discard them above the tabs first." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Unsupported", "Text": "{0} can't be overwritten: it doesn't have a single body with a compressed mesh." },
     { "Key": "MAP_CollisionEditor_Create_Overwrite_Walls_Unread", "Text": "The WALL files of {0}'s map couldn't be read, so its wall marks can't be cleared. Nothing was overwritten." },
     { "Key": "MAP_CollisionEditor_Overwritten", "Text": "Overwrote {0} ({1} triangles)." },
-    { "Key": "MAP_CollisionEditor_Commit_Walls_Unread", "Text": "The WALL files of {0}'s map couldn't be read, so its walls can't follow the rebuild. Nothing was committed." },
+    { "Key": "MAP_CollisionEditor_Commit_Walls_Unread", "Text": "The WALL files of {0}'s map couldn't be read, so its walls can't follow the rebuild. Nothing was committed; the edits are still pending." },
     { "Key": "MAP_CollisionEditor_Commit_Walls_Remapped", "Text": "Moved the wall marks of {0} to its rebuilt triangles: {1} of {2} WALL triangles, {3} of {4} NOJUMPWALL triangles." }
   ]
 }

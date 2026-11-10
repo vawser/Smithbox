@@ -1890,7 +1890,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Start_TT",
-      "Text": "Shows the cursor on the navmesh under the mouse, so its vertices can be moved with the keys below. Turns off picking, painting and linking. Stops when you leave this tab; edits that aren't committed are kept."
+      "Text": "Shows the cursor on the navmesh under the mouse, so its vertices can be moved with the keys below. Turns off picking, painting and linking, and the Collision Editor's cursor, which uses the same keys. Stops when you leave this tab; edits that aren't committed are kept."
     },
     {
       "Key": "MAP_Navigation_Edit_Stop",
