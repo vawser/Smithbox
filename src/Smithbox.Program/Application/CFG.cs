@@ -589,6 +589,9 @@ public class CFG
     public bool MapEditor_Allow_Unmodified_Save = false;
     public bool MapEditor_Allow_Automatic_Save = true;
 
+    // Navigation tool: the tabs whose "How this works" section has been shown once, so it starts closed on them
+    public List<string> MapEditor_Navigation_Help_Seen = new List<string>();
+
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
     public RenderFilterPreset Viewport_Filter_Preset_1 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.DummyEnemy | RenderFilter.DummyAsset | RenderFilter.Region);

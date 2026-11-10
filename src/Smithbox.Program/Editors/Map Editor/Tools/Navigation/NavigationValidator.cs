@@ -27,6 +27,20 @@ public sealed record NavIssue(NavIssueSeverity Severity, NavIssueCode Code, stri
     /// </summary>
     public bool Inherited { get; init; }
 
+    // Where the issue is, for the Check tab to go to it. Not part of the Key, so the vanilla comparison is unchanged
+
+    /// <summary>The map of the navmesh below; the checked map unless the issue is on a neighbour's side of an NVC file.</summary>
+    public string MapId { get; init; }
+
+    /// <summary>The navmesh the issue is on, by NameID, if it is on one.</summary>
+    public uint? NameID { get; init; }
+
+    /// <summary>The face of that navmesh the issue is on, if it names one that exists.</summary>
+    public int? Face { get; init; }
+
+    /// <summary>The gate node of that navmesh the issue is on, if it is on one.</summary>
+    public int? Gate { get; init; }
+
     /// <summary>The code, file and arguments, which say whether two issues are the same.</summary>
     public string Key => $"{Code}|{File}|{string.Join("|", Args)}";
 }
@@ -118,7 +132,7 @@ public static class NavigationValidator
             var set = NavigationMap.SetOf(n, map.Profile);
 
             if ((uint)n.NameID != NavGameProfile.NoNameId && !seenIds.Add(n.NameID))
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NameIdDuplicate, file, (uint)n.NameID));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NameIdDuplicate, file, (uint)n.NameID) { MapId = map.MapId, NameID = (uint)n.NameID });
 
             if (set == NavmeshSet.N)
             {
@@ -126,25 +140,25 @@ public static class NavigationValidator
                 // -1 of a placeholder without a NameID, and a game without one rule (BB), aren't checked
                 bool unnamed = (uint)n.NameID == NavGameProfile.NoNameId && n.FaceCount == 0;
                 if (!unnamed && map.Profile.ExpectedNameId(map.NameBase, i, n.ModelID) is uint expected && (uint)n.NameID != expected)
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.NameIdRule, file, i, (uint)n.NameID, expected));
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.NameIdRule, file, i, (uint)n.NameID, expected) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
             else
             {
                 // An o entry repeats an n entry of the same model, the profile's offset on (2 billions in ER)
                 bool paired = byNameId.TryGetValue((int)map.Profile.UnmirrorOf((uint)n.NameID), out var partner) && partner.ModelID == n.ModelID;
                 if (!paired)
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.OEntryUnpaired, file, (uint)n.NameID, n.ModelID));
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.OEntryUnpaired, file, (uint)n.NameID, n.ModelID) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
 
             // The running total of FaceCount (ER, NR); in DB_NT a value per model, the same in its o entry as in its n entry
             if (map.Profile.FaceDataIndexIsRunningTotal)
             {
                 if (n.FaceDataIndex != faceTotal)
-                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, faceTotal));
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, faceTotal) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
             else if (set == NavmeshSet.O && byNameId.TryGetValue((int)map.Profile.UnmirrorOf((uint)n.NameID), out var nEntry) && n.FaceDataIndex != nEntry.FaceDataIndex)
             {
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, nEntry.FaceDataIndex));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceDataIndex, file, (uint)n.NameID, n.FaceDataIndex, nEntry.FaceDataIndex) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
             faceTotal += n.FaceCount;
 
@@ -154,15 +168,15 @@ public static class NavigationValidator
             if (meshFile == null)
             {
                 if (n.FaceCount > 0)
-                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.MeshMissing, file, (uint)n.NameID, meshName));
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.MeshMissing, file, (uint)n.NameID, meshName) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
             else if (meshFile.FaceCount != n.FaceCount)
             {
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceCountMismatch, file, (uint)n.NameID, n.FaceCount, meshName, meshFile.FaceCount));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.FaceCountMismatch, file, (uint)n.NameID, n.FaceCount, meshName, meshFile.FaceCount) { MapId = map.MapId, NameID = (uint)n.NameID });
             }
 
             if (map.Profile.Unk4CMeansNoFaces && n.Unk4C == 1 && n.FaceCount > 0)
-                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount));
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.PlaceholderHasFaces, file, (uint)n.NameID, n.FaceCount) { MapId = map.MapId, NameID = (uint)n.NameID });
 
             ValidateGates(map, file, n, issues);
         }
@@ -179,7 +193,7 @@ public static class NavigationValidator
         uint id = (uint)n.NameID;
 
         if (gates.Count > map.Profile.MaxGates)
-            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCount, file, id, gates.Count));
+            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCount, file, id, gates.Count) { MapId = map.MapId, NameID = id });
 
         for (int g = 0; g < gates.Count; g++)
         {
@@ -187,7 +201,7 @@ public static class NavigationValidator
 
             if (gate.ConnectedNavmeshIndex < 0 || gate.ConnectedNavmeshIndex >= navmeshes.Count)
             {
-                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateNodeNavmeshIndex, file, id, gate.ConnectedNavmeshIndex, navmeshes.Count));
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateNodeNavmeshIndex, file, id, gate.ConnectedNavmeshIndex, navmeshes.Count) { MapId = map.MapId, NameID = id, Gate = g });
                 continue;
             }
 
@@ -197,28 +211,28 @@ public static class NavigationValidator
             switch (NavGates.Status(map, n, g))
             {
                 case NavGateStatus.Unpaired:
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateUnpaired, file, id, g, targetId));
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateUnpaired, file, id, g, targetId) { MapId = map.MapId, NameID = id, Gate = g });
                     break;
                 case NavGateStatus.Broken:
                     if (NavGates.Neighbours(map, n).Contains(target))
-                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GatePairBroken, file, id, g, targetId, gate.NodeSubID));
+                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GatePairBroken, file, id, g, targetId, gate.NodeSubID) { MapId = map.MapId, NameID = id, Gate = g });
                     else
-                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateNotConnected, file, id, g, targetId));
+                        issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateNotConnected, file, id, g, targetId) { MapId = map.MapId, NameID = id, Gate = g });
                     break;
             }
 
             var costs = gate.NeighbourGateNodeCosts;
             if (costs.Count != map.Profile.GateCostSlots(gates.Count))
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostCount, file, id, g, costs.Count));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostCount, file, id, g, costs.Count) { MapId = map.MapId, NameID = id, Gate = g });
 
             if (g < costs.Count && costs[g] != 0)
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostSelf, file, id, g, costs[g]));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCostSelf, file, id, g, costs[g]) { MapId = map.MapId, NameID = id, Gate = g });
 
             for (int h = g + 1; h < gates.Count; h++)
             {
                 var other = gates[h].NeighbourGateNodeCosts;
                 if (h < costs.Count && g < other.Count && costs[h] != other[g])
-                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateCostAsymmetric, file, id, g, h, (ushort)costs[h], (ushort)other[g]));
+                    issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.GateCostAsymmetric, file, id, g, h, (ushort)costs[h], (ushort)other[g]) { MapId = map.MapId, NameID = id, Gate = g });
             }
         }
     }
@@ -243,7 +257,7 @@ public static class NavigationValidator
 
                 int faces = map.FileOf(entry)?.FaceCount ?? entry.FaceCount;
                 if (face.FaceIndex < 0 || face.FaceIndex >= faces)
-                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NodeBankFaceRange, file, bank.BankID, (uint)face.CollisionID, face.FaceIndex, faces));
+                    issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NodeBankFaceRange, file, bank.BankID, (uint)face.CollisionID, face.FaceIndex, faces) { MapId = map.MapId, NameID = (uint)entry.NameID });
             }
         }
     }
@@ -252,14 +266,18 @@ public static class NavigationValidator
     {
         foreach (var f in map.Files.Values)
         {
+            // The navmesh the file is drawn for, to go to it; none for a file no entry uses
+            var owner = map.Nva.Navmeshes.FirstOrDefault(e => ReferenceEquals(map.FileOf(e), f));
+            uint? ownerId = owner == null ? null : (uint)owner.NameID;
+
             // SDT keeps no face tree in its navmesh files
             if (map.Profile.HasFaceTree && f.FaceCount > 0 && !f.HasMediator)
-                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.MediatorMissing, $"{f.Name}.hkx", f.FaceCount));
+                issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.MediatorMissing, $"{f.Name}.hkx", f.FaceCount) { MapId = map.MapId, NameID = ownerId });
 
             // DS3, BB and SDT: the file's cost graph must match its mesh's clusters, or the game's hierarchical paths
             // go through faces that aren't there
             if (f.Mesh != null && NavCostGraph.Of(f.Document) is IHavokDirectedGraphEdit graph && NavCostGraph.Check(graph, f.Mesh) is string problem)
-                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.CostGraphMismatch, $"{f.Name}.hkx", problem));
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.CostGraphMismatch, $"{f.Name}.hkx", problem) { MapId = map.MapId, NameID = ownerId });
         }
     }
 
@@ -280,8 +298,8 @@ public static class NavigationValidator
 
             foreach (var c in connector.NavMeshConnections)
             {
-                CheckSide(issues, file, connector.MainNameID, a, fileA, c.FaceIndex, c.EdgeIndex);
-                CheckSide(issues, file, connector.TargetNameID, b, fileB, c.OppositeFaceIndex, c.OppositeEdgeIndex);
+                CheckSide(issues, file, map.MapId, connector.MainNameID, a, fileA, c.FaceIndex, c.EdgeIndex);
+                CheckSide(issues, file, map.MapId, connector.TargetNameID, b, fileB, c.OppositeFaceIndex, c.OppositeEdgeIndex);
             }
         }
     }
@@ -317,8 +335,8 @@ public static class NavigationValidator
 
                 foreach (var c in connector.NavMeshConnections)
                 {
-                    CheckSide(issues, file, connector.MainNameID, a, fileA, c.FaceIndex, c.EdgeIndex);
-                    CheckSide(issues, file, connector.TargetNameID, b, fileB, c.OppositeFaceIndex, c.OppositeEdgeIndex);
+                    CheckSide(issues, file, mapA?.MapId, connector.MainNameID, a, fileA, c.FaceIndex, c.EdgeIndex);
+                    CheckSide(issues, file, mapB?.MapId, connector.TargetNameID, b, fileB, c.OppositeFaceIndex, c.OppositeEdgeIndex);
                 }
             }
         }
@@ -327,7 +345,7 @@ public static class NavigationValidator
     /// <summary>
     /// One end of a connection: the face must be in the navmesh, and the edge one of that face's edges or user edges.
     /// </summary>
-    private static void CheckSide(List<NavIssue> issues, string file, int nameId, NVA.Navmesh entry, NavmeshFile meshFile,
+    private static void CheckSide(List<NavIssue> issues, string file, string mapId, int nameId, NVA.Navmesh entry, NavmeshFile meshFile,
         int face, int edge)
     {
         if (entry == null)
@@ -337,7 +355,7 @@ public static class NavigationValidator
 
         if (face < 0 || face >= faceCount)
         {
-            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ConnectionFaceRange, file, (uint)nameId, face, faceCount));
+            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ConnectionFaceRange, file, (uint)nameId, face, faceCount) { MapId = mapId, NameID = (uint)nameId });
             return;
         }
 
@@ -349,7 +367,7 @@ public static class NavigationValidator
             || (f.m_numUserEdges > 0 && edge >= f.m_startUserEdgeIndex && edge < f.m_startUserEdgeIndex + f.m_numUserEdges);
 
         if (!onFace)
-            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ConnectionEdgeNotOnFace, file, (uint)nameId, face, edge));
+            issues.Add(new(NavIssueSeverity.Error, NavIssueCode.ConnectionEdgeNotOnFace, file, (uint)nameId, face, edge) { MapId = mapId, NameID = (uint)nameId, Face = face });
     }
 
     private static void ValidateOnav(NavigationMap map, List<NavIssue> issues)

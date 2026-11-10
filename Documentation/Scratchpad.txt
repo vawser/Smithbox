@@ -2,4 +2,3 @@
 # TODO 
 #---------------------
 
-Do localization sweep before release to clean-up some of the tooling hints

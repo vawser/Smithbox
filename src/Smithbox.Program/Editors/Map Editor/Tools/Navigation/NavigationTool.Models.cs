@@ -118,35 +118,27 @@ public partial class NavigationTool
                 GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, ModelMessage);
             else
                 GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, ModelMessage);
+
+            // The next step after a model is made: join it to its neighbours
+            if (!ModelMessageIsError && HandOffModelID >= 0 && models.Any(m => m.ModelID == HandOffModelID))
+            {
+                GUI.MultiButtonInput("navigationModelsHandOff",
+                    "navigationModelsStitch", LOC.Get("MAP_Navigation_Models_Stitch", HandOffModelID), LOC.Get("MAP_Navigation_Models_Stitch_TT"),
+                    StitchHandOff);
+            }
         }
 
         var selected = models.FirstOrDefault(m => m.ModelID == SelectedModelID);
 
-        // Remove
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Models_Remove_Header"), LOC.Get("MAP_Navigation_Models_Remove_Header_TT"));
-
-        if (selected == null)
-        {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Models_None_Selected"));
-        }
-        else if (!removable.Contains(selected))
-        {
-            GUI.WrappedText(LOC.Get(selected.Quarters.Count > 0 ? "MAP_Navigation_Model_Error_Quarters" : "MAP_Navigation_Model_Error_Placeholder"));
-        }
-        else
-        {
-            GUI.WrappedText(hasO
-                ? LOC.Get("MAP_Navigation_Models_Selected", selected.ModelID, (uint)selected.NEntry.NameID, (uint)selected.OEntry.NameID)
-                : LOC.Get("MAP_Navigation_Models_Selected_N", selected.ModelID, (uint)selected.NEntry.NameID));
-
-            if (ImGui.Button($"{LOC.Get("MAP_Navigation_Models_Remove")}##navigationModelsRemove"))
-                EditModel(map, navigation, () => NavModelEdit.Remove(navigation, selected), LOC.Get("MAP_Navigation_Models_Removed", selected.ModelID));
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Remove_TT"));
-        }
-
+        // Most used first: Generate, then Duplicate, then Remove
         DisplayGenerate(map, navigation, selected, removable, slots);
+        DisplayDuplicate(map, navigation, selected, removable, slots, hasO);
+        DisplayRemove(map, navigation, selected, removable, hasO);
+    }
 
+    private void DisplayDuplicate(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable,
+        List<NavmeshModel> slots, bool hasO)
+    {
         // Duplicate
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Models_Duplicate_Header"), LOC.Get("MAP_Navigation_Models_Duplicate_Header_TT"));
@@ -168,25 +160,53 @@ public partial class NavigationTool
         ImGui.InputFloat3("##navigationModelsOffset", ref DuplicateOffset);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Offset_TT"));
 
-        if (ImGui.Button($"{LOC.Get("MAP_Navigation_Models_Duplicate")}##navigationModelsDuplicate"))
+        GUI.MultiButtonInput("navigationModelsDuplicateActions",
+            "navigationModelsDuplicate", LOC.Get("MAP_Navigation_Models_Duplicate"), LOC.Get("MAP_Navigation_Models_Duplicate_TT"),
+            () =>
+            {
+                var offset = MeshSpaceOffset(map, selected.NEntry, DuplicateOffset);
+
+                if (DuplicateTarget == ModelTarget.New)
+                {
+                    int id = DuplicateNewModelId;
+                    EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset),
+                        hasO ? NavModelEdit.TranslatedCopy(selected.OFile.Document, offset) : null, selected.NEntry),
+                        LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, id), id);
+                }
+                else
+                {
+                    var slot = slots.First(s => s.ModelID == SlotModelID);
+                    EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, offset),
+                        LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, slot.ModelID), slot.ModelID);
+                }
+            });
+    }
+
+    private void DisplayRemove(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable, bool hasO)
+    {
+        // Remove
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Models_Remove_Header"), LOC.Get("MAP_Navigation_Models_Remove_Header_TT"));
+
+        if (selected == null)
         {
-            if (DuplicateTarget == ModelTarget.New)
-            {
-                int id = DuplicateNewModelId;
-                var offset = MeshSpaceOffset(map, selected.NEntry, DuplicateOffset);
-                EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset),
-                    hasO ? NavModelEdit.TranslatedCopy(selected.OFile.Document, offset) : null, selected.NEntry),
-                    LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, id));
-            }
-            else
-            {
-                var slot = slots.First(s => s.ModelID == SlotModelID);
-                var offset = MeshSpaceOffset(map, selected.NEntry, DuplicateOffset);
-                EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, offset),
-                    LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, slot.ModelID));
-            }
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Models_None_Selected"));
+            return;
         }
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Duplicate_TT"));
+
+        if (!removable.Contains(selected))
+        {
+            GUI.WrappedText(LOC.Get(selected.Quarters.Count > 0 ? "MAP_Navigation_Model_Error_Quarters" : "MAP_Navigation_Model_Error_Placeholder"));
+            return;
+        }
+
+        GUI.WrappedText(hasO
+            ? LOC.Get("MAP_Navigation_Models_Selected", selected.ModelID, (uint)selected.NEntry.NameID, (uint)selected.OEntry.NameID)
+            : LOC.Get("MAP_Navigation_Models_Selected_N", selected.ModelID, (uint)selected.NEntry.NameID));
+
+        GUI.MultiButtonInput("navigationModelsRemoveActions",
+            "navigationModelsRemove", LOC.Get("MAP_Navigation_Models_Remove"), LOC.Get("MAP_Navigation_Models_Remove_TT"),
+            () => EditModel(map, navigation, () => NavModelEdit.Remove(navigation, selected), LOC.Get("MAP_Navigation_Models_Removed", selected.ModelID)));
     }
 
     /// <summary>
@@ -287,8 +307,12 @@ public partial class NavigationTool
     /// Makes a model edit and records it as one undoable action: the NVA and NVC values are copied before and after it,
     /// and the action puts the new file documents in the bank. A refused edit changes nothing.
     /// </summary>
-    private void EditModel(MapContainer map, NavigationMap navigation, System.Func<NavModelEditResult> edit, string done)
+    /// <param name="stitchModel">The model the edit made or replaced, which then needs stitching: it is selected, and the
+    /// message offers to stitch it. -1 for an edit that leaves nothing to stitch.</param>
+    private void EditModel(MapContainer map, NavigationMap navigation, System.Func<NavModelEditResult> edit, string done, int stitchModel = -1)
     {
+        HandOffModelID = -1;
+
         var before = new NavModelState(navigation);
         var result = edit();
 
@@ -306,6 +330,39 @@ public partial class NavigationTool
 
         ModelMessage = done;
         ModelMessageIsError = false;
+
+        if (stitchModel >= 0)
+        {
+            HandOffModelID = stitchModel;
+            SelectedModelID = stitchModel;
+            if (OverlayOnlySelectedModel)
+                OverlayDirty = true;
+        }
+    }
+
+    /// <summary>The model the last Generate or Duplicate made, offered to the Stitch tab; -1 for none.</summary>
+    private int HandOffModelID = -1;
+
+    /// <summary>
+    /// Opens the Stitch tab on the model just made: scoped to it, with gates updated, and Find run once the overlay of
+    /// its map is drawn.
+    /// </summary>
+    private void StitchHandOff()
+    {
+        SelectedModelID = HandOffModelID;
+        StitchOnly = StitchScope.Model;
+        StitchUpdateGates = true;
+        StitchMessage = null;
+        StitchPlan = null;
+        StitchFindPending = true;
+
+        if (!ShowOverlay)
+        {
+            ShowOverlay = true;
+            OverlayDirty = true;
+        }
+
+        PendingTab = NavTab.Stitch;
     }
 
     private void OnModelEdited()

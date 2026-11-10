@@ -13,7 +13,14 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public partial class NavigationTool
 {
-    private bool StitchPickedOnly;
+    /// <summary>Which navmeshes a re-stitch looks at: the whole drawn set, the picked face's, or the selected model's.</summary>
+    private enum StitchScope { All, Picked, Model }
+
+    private StitchScope StitchOnly = StitchScope.All;
+
+    /// <summary>Set by a hand-off from the Models tab: Find runs once the overlay is drawn.</summary>
+    private bool StitchFindPending;
+
     private bool StitchNeighbours = true;
     private bool StitchOpenOnly = true;
     private bool StitchRemoveBroken = true;
@@ -41,8 +48,17 @@ public partial class NavigationTool
             return;
         }
 
-        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Picked_Only")}##navigationStitchPicked", ref StitchPickedOnly);
+        // Scope
+        int scope = (int)StitchOnly;
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Stitch_Scope_All")}##navigationStitchScopeAll", ref scope, (int)StitchScope.All);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Scope_All_TT"));
+        ImGui.SameLine();
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Stitch_Scope_Picked")}##navigationStitchScopePicked", ref scope, (int)StitchScope.Picked);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Picked_Only_TT"));
+        ImGui.SameLine();
+        ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Stitch_Scope_Model")}##navigationStitchScopeModel", ref scope, (int)StitchScope.Model);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Scope_Model_TT"));
+        StitchOnly = (StitchScope)scope;
 
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Neighbours")}##navigationStitchNeighbours", ref StitchNeighbours);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Neighbours_TT"));
@@ -62,9 +78,16 @@ public partial class NavigationTool
         ImGui.SliderFloat("##navigationStitchOverlap", ref StitchOverlap, 0f, 0.5f, $"{LOC.Get("MAP_Navigation_Stitch_Overlap")} %.2f m");
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Overlap_TT"));
 
-        if (ImGui.Button($"{LOC.Get("MAP_Navigation_Stitch_Find")}##navigationStitchFind"))
+        GUI.MultiButtonInput("navigationStitchFindActions",
+            "navigationStitchFind", LOC.Get("MAP_Navigation_Stitch_Find"), LOC.Get("MAP_Navigation_Stitch_Find_TT"),
+            FindStitch);
+
+        // A hand-off from the Models tab finds at once, as the overlay of the edited map is now drawn
+        if (StitchFindPending && !OverlayDirty)
+        {
+            StitchFindPending = false;
             FindStitch();
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Find_TT"));
+        }
 
         if (StitchMessage != null)
             GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, StitchMessage);
@@ -94,9 +117,9 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Stitch_Update_Gates")}##navigationStitchGates", ref StitchUpdateGates);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Update_Gates_TT"));
 
-        if (ImGui.Button($"{LOC.Get("MAP_Navigation_Stitch_Apply")}##navigationStitchApply"))
-            ApplyStitch(plan);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Stitch_Apply_TT"));
+        GUI.MultiButtonInput("navigationStitchApplyActions",
+            "navigationStitchApply", LOC.Get("MAP_Navigation_Stitch_Apply"), LOC.Get("MAP_Navigation_Stitch_Apply_TT"),
+            () => ApplyStitch(plan));
 
         // The changes, one per line; the counts above stay outside the toggle
         GUI.Spacer();
@@ -132,7 +155,7 @@ public partial class NavigationTool
             return;
 
         int? only = null;
-        if (StitchPickedOnly)
+        if (StitchOnly == StitchScope.Picked)
         {
             if (Picked == null)
             {
@@ -140,6 +163,29 @@ public partial class NavigationTool
                 return;
             }
             only = Picked.Entry.NameID;
+        }
+        else if (StitchOnly == StitchScope.Model)
+        {
+            // The planner takes one navmesh: the model's entry in the drawn set
+            var model = OverlayNavigation.Models.FirstOrDefault(m => m.ModelID == SelectedModelID);
+            if (model == null)
+            {
+                StitchMessage = LOC.Get("MAP_Navigation_Stitch_No_Model");
+                return;
+            }
+            if (model.Quarters.Count > 0)
+            {
+                StitchMessage = LOC.Get("MAP_Navigation_Stitch_Model_Quarters");
+                return;
+            }
+
+            var entry = model.Entry(OverlaySet);
+            if (entry == null)
+            {
+                StitchMessage = LOC.Get("MAP_Navigation_Stitch_Model_Not_In_Set", SelectedModelID);
+                return;
+            }
+            only = entry.NameID;
         }
 
         var parameters = new NavStitchParameters { MaxSeparation = StitchSeparation, MaxStepHeight = StitchStep, MinOverlap = StitchOverlap };

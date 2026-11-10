@@ -103,33 +103,9 @@ public partial class NavigationTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Overlay_Header"), LOC.Get("MAP_Navigation_Overlay_Header_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Overlay_Show")}##navigationOverlayShow", ref ShowOverlay))
-        {
-            if (ShowOverlay)
-                OverlayDirty = true;
-            else
-                ClearOverlay();
-        }
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Show_TT"));
-
-        // The set toggle only where the game has an o set (not AC6)
-        if (Bank.Profile.HasOSet)
-        {
-            int set = (int)OverlaySet;
-            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_N")}##navigationSetN", ref set, (int)NavmeshSet.N))
-                OverlayDirty = true;
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_N_TT"));
-            ImGui.SameLine();
-            if (ImGui.RadioButton($"{LOC.Get("MAP_Navigation_Overlay_Set_O")}##navigationSetO", ref set, (int)NavmeshSet.O))
-                OverlayDirty = true;
-            GUI.Tooltip(LOC.Get("MAP_Navigation_Overlay_Set_O_TT"));
-            OverlaySet = (NavmeshSet)set;
-        }
-        else if (OverlaySet != NavmeshSet.N)
-        {
-            OverlaySet = NavmeshSet.N;
-            OverlayDirty = true;
-        }
+        // Show overlay and the set are in the header above the tabs (DisplayHeader)
+        if (!ShowOverlay)
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Overlay_Off"));
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.SliderFloat("##navigationFaceOpacity", ref FaceOpacity, 5, 100, $"{LOC.Get("MAP_Navigation_Overlay_Opacity")} %.0f"))
@@ -344,6 +320,10 @@ public partial class NavigationTool
         ModelsNavigation = null;
         GateOverlayDirty = true;
         GateCostTextFor = null;
+
+        // The last check no longer matches the data (any map: undo can edit another one)
+        if (Current != null)
+            Current.Stale = true;
     }
 
     private void DisplayLegend()

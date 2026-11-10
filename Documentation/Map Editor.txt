@@ -18,8 +18,8 @@
         - Box
 
 - Nav Editor:
-    - Add navigation editor support for the other project types (for those that use the same type as ER)
+    - Add navigation editor support for the other project types: DS1/DS1R/DES
     - Add more generation options to allow for a more generous mesh (i.e. let it spill edges so jump/fall links work consistently)
-
+    - Refine UX so it guides the user a bit more
 
 

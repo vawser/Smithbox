@@ -49,6 +49,16 @@ public partial class NavigationTool
     private bool Generating;
     private readonly ConcurrentQueue<Action> GenerateResults = new();
 
+    /// <summary>
+    /// Counts generations: a result is only used if no generation was started or cancelled after its own. The
+    /// generator can't be stopped part way, so Cancel lets the run finish in the background and drops what it makes.
+    /// </summary>
+    private volatile int GenerateRun;
+
+    /// <summary>What the running generation is doing: 0 the n set, 1 the o set, 2 the files.</summary>
+    private volatile int GenerateStage;
+    private bool GenerateHasO;
+
     private void DisplayGenerate(MapContainer map, NavigationMap navigation, NavmeshModel selected, HashSet<NavmeshModel> removable, List<NavmeshModel> slots)
     {
         // Generate
@@ -62,6 +72,15 @@ public partial class NavigationTool
         // Collision: the selected parts. The count stays outside the list toggle
         GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Generate_Collision_Header"), LOC.Get("MAP_Navigation_Generate_Collision_Header_TT"), ref ShowGenerateCollisions);
         GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Collision_Count", sources.Count(s => !s.IsAsset), sources.Count(s => s.IsAsset)));
+
+        // A shortcut to the input of a regenerate: the collision the selected model lies on
+        if (selected?.NFile?.Mesh is { } selectedMesh && selectedMesh.m_vertices.Count > 0)
+        {
+            GUI.MultiButtonInput("navigationGenerateSelectActions",
+                "navigationGenerateSelectUnder", LOC.Get("MAP_Navigation_Generate_Select_Under", selected.ModelID),
+                LOC.Get("MAP_Navigation_Generate_Select_Under_TT"),
+                () => SelectCollisionUnder(map, selected));
+        }
 
         if (ShowGenerateCollisions && sources.Count > 0)
         {
@@ -101,7 +120,7 @@ public partial class NavigationTool
 
         if (Generating)
         {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Generate_Running"));
+            DisplayGenerateProgress();
             return;
         }
 
@@ -111,20 +130,66 @@ public partial class NavigationTool
             return;
         }
 
-        if (ImGui.Button($"{LOC.Get("MAP_Navigation_Generate")}##navigationGenerate"))
-            StartGenerate(map, navigation, walkable, TaggedBlockers(), preferredId, GenerateTarget switch
+        GUI.Spacer();
+        GUI.MultiButtonInput("navigationGenerateActions",
+            "navigationGenerate", LOC.Get("MAP_Navigation_Generate"), LOC.Get("MAP_Navigation_Generate_TT"),
+            () => StartGenerate(map, navigation, walkable, TaggedBlockers(), preferredId, GenerateTarget switch
             {
                 ModelTarget.Slot => slots.FirstOrDefault(s => s.ModelID == SlotModelID),
                 ModelTarget.Replace => selected,
                 _ => null,
-            }, GenerateTarget, GenerateNewModelId);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_TT"));
+            }, GenerateTarget, GenerateNewModelId));
     }
+
+    /// <summary>The stage of the running generation, as a bar, with Cancel.</summary>
+    private void DisplayGenerateProgress()
+    {
+        // Progress
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Generate_Progress_Header"), LOC.Get("MAP_Navigation_Generate_Progress_Header_TT"));
+
+        // The stages aren't of equal length, so the bar only says which one is running
+        int stage = GenerateStage;
+        float fraction = stage switch { 0 => GenerateHasO ? 0.05f : 0.1f, 1 => 0.5f, _ => 0.9f };
+        string text = LOC.Get(stage switch
+        {
+            0 => "MAP_Navigation_Generate_Stage_N",
+            1 => "MAP_Navigation_Generate_Stage_O",
+            _ => "MAP_Navigation_Generate_Stage_Files",
+        });
+
+        ImGui.ProgressBar(fraction, new Vector2(-1, 0), text);
+
+        GUI.MultiButtonInput("navigationGenerateCancelActions",
+            "navigationGenerateCancel", LOC.Get("MAP_Navigation_Generate_Cancel"), LOC.Get("MAP_Navigation_Generate_Cancel_TT"),
+            CancelGenerate);
+    }
+
+    private void CancelGenerate()
+    {
+        GenerateRun++;
+        Generating = false;
+        ModelMessage = LOC.Get("MAP_Navigation_Generate_Cancelled");
+        ModelMessageIsError = false;
+        HandOffModelID = -1;
+    }
+
+    /// <summary>Whether each set's settings are shown; closed by default, as the defaults suit most uses.</summary>
+    private readonly Dictionary<string, bool> ShowGenerateSettings = new();
 
     private NavGenParameters DisplayGenerateParameters(string id, string title, NavGenParameters p, NavGenParameters defaults)
     {
+        // Settings: the title says when they differ from the defaults, so a folded change is still seen
         GUI.Spacer();
-        GUI.SimpleHeader(title, LOC.Get("MAP_Navigation_Generate_Set_TT"));
+        bool show = ShowGenerateSettings.GetValueOrDefault(id);
+        var heading = p == defaults
+            ? LOC.Get("MAP_Navigation_Generate_Settings_Default", title)
+            : LOC.Get("MAP_Navigation_Generate_Settings_Changed", title);
+        GUI.ConditionalHeader(heading, LOC.Get("MAP_Navigation_Generate_Set_TT"), ref show);
+        ShowGenerateSettings[id] = show;
+
+        if (!show)
+            return p;
 
         float cell = p.CellSize, radius = p.AgentRadius, height = p.AgentHeight, climb = p.MaxClimb, slope = p.MaxSlope, edge = p.MaxEdgeLength;
         float faceSize = p.FaceSize;
@@ -371,6 +436,41 @@ public partial class NavigationTool
 
     private bool IsBlocker(GenerateSource source) => BlockerTags.Contains((source.MapId, source.Part.Name));
 
+    /// <summary>How far past the model's bounds a collision part may start and still be selected, in metres.</summary>
+    private const float SelectUnderMargin = 1f;
+
+    /// <summary>
+    /// Selects the map's collision parts whose drawn bounds overlap the model's n navmesh (with a margin), replacing the
+    /// viewport selection: the usual input to generate that model again. Parts without drawn collision (collision
+    /// not loaded) can't be measured and are left out.
+    /// </summary>
+    private void SelectCollisionUnder(MapContainer map, NavmeshModel model)
+    {
+        var box = MeshBounds(model.NFile.Mesh, EntryWorld(map, model.NEntry));
+        var min = box.Min - new Vector3(SelectUnderMargin);
+        var max = box.Max + new Vector3(SelectUnderMargin);
+
+        var parts = new List<MsbEntity>();
+        foreach (var entity in map.Objects)
+        {
+            if (entity is not MsbEntity part || !EntityHelper.IsPartCollision(part) || part.RenderSceneMesh == null)
+                continue;
+
+            var b = part.RenderSceneMesh.GetBounds();
+            if (b.Max.X >= min.X && b.Min.X <= max.X && b.Max.Y >= min.Y && b.Min.Y <= max.Y && b.Max.Z >= min.Z && b.Min.Z <= max.Z)
+                parts.Add(part);
+        }
+
+        View.ViewportSelection.ClearSelection();
+        foreach (var part in parts)
+            View.ViewportSelection.AddSelection(part);
+
+        ModelMessage = LOC.Get(parts.Count > 0 ? "MAP_Navigation_Generate_Selected_Under" : "MAP_Navigation_Generate_Selected_Under_None",
+            parts.Count, model.ModelID);
+        ModelMessageIsError = parts.Count == 0;
+        HandOffModelID = -1;
+    }
+
     /// <summary>The tagged blockers in the loaded maps, as sources.</summary>
     private List<GenerateSource> TaggedBlockers()
     {
@@ -446,6 +546,7 @@ public partial class NavigationTool
     private void StartGenerate(MapContainer map, NavigationMap navigation, List<GenerateSource> sources, List<GenerateSource> blockerSources, int preferredId, NavmeshModel target, ModelTarget kind, int newModelId)
     {
         ModelMessage = null;
+        HandOffModelID = -1;
         bool intoSlot = kind == ModelTarget.Slot;
 
         if (target == null && kind != ModelTarget.New)
@@ -510,6 +611,16 @@ public partial class NavigationTool
         var nTemplate = templateModel?.NFile?.Mesh;
         var oTemplate = templateModel?.OFile?.Mesh;
         Generating = true;
+        GenerateHasO = hasO;
+        GenerateStage = 0;
+        int run = ++GenerateRun;
+
+        // Stages are only reported while this run is still the current one
+        void Stage(int stage)
+        {
+            if (run == GenerateRun)
+                GenerateStage = stage;
+        }
 
         Task.Run(() =>
         {
@@ -523,11 +634,15 @@ public partial class NavigationTool
                 Func<IHavokNavMeshEdit> createMesh = () => template?.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault()?.CreateEmpty();
                 n = NavigationGenerator.Generate(triangles, pn, nTemplate, blockers, createMesh);
                 if (hasO)
+                {
+                    Stage(1);
                     o = NavigationGenerator.Generate(triangles, po, oTemplate, blockers, createMesh);
+                }
                 error = n.Error ?? o?.Error;
 
                 if (error == null)
                 {
+                    Stage(2);
                     nDoc = NavGenFile.Build(template, n.Mesh);
                     oDoc = hasO ? NavGenFile.Build(template, o.Mesh) : null;
                     if (nDoc == null || (hasO && oDoc == null))
@@ -542,6 +657,10 @@ public partial class NavigationTool
 
             GenerateResults.Enqueue(() =>
             {
+                // Cancelled, or another generation started since: what this run made is dropped
+                if (run != GenerateRun)
+                    return;
+
                 Generating = false;
 
                 if (error != null)
@@ -564,7 +683,7 @@ public partial class NavigationTool
                 {
                     if (current != null)
                         EditModel(map, current, () => NavModelEdit.Add(current, newModelId, nDoc, oDoc),
-                            LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, newModelId, triangles.Count / 3) + links);
+                            LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, newModelId, triangles.Count / 3) + links, newModelId);
                     return;
                 }
 
@@ -577,7 +696,8 @@ public partial class NavigationTool
                 }
 
                 EditModel(map, current, () => NavModelEdit.Generate(current, currentTarget, nDoc, oDoc, modelId),
-                    LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, modelId ?? currentTarget.ModelID, triangles.Count / 3) + links);
+                    LOC.Get("MAP_Navigation_Generate_Done", faces, oFaces, modelId ?? currentTarget.ModelID, triangles.Count / 3) + links,
+                    modelId ?? currentTarget.ModelID);
             });
         });
     }

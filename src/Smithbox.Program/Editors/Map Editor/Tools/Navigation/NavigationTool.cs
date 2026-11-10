@@ -35,6 +35,9 @@ public partial class NavigationTool
         /// <summary>Set once the vanilla data has been checked and the issues compared with it.</summary>
         public bool BaselineDone;
         public string BaselineError;
+
+        /// <summary>Set by any navigation edit after the check: the issues may no longer be what the data holds.</summary>
+        public bool Stale;
     }
 
     private Result Current;
@@ -136,56 +139,60 @@ public partial class NavigationTool
             return;
         }
 
+        // Overlay, mode and selection: what a click in the viewport does, whichever tab is open
+        DisplayHeader();
+
         GUI.Spacer();
 
         // The overlay is kept up to date whichever tab is open
         UpdateOverlay(map);
 
+        // The tabs in the order a new navmesh is made: models, then stitched, gated, linked, painted, touched up, checked
         if (ImGui.BeginTabBar("navigationTabs"))
         {
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Overlay")}##navigationTabOverlay"))
+            if (BeginTab(NavTab.Overlay, "MAP_Navigation_Tab_Overlay", "navigationTabOverlay"))
             {
                 DisplayOverlayTab();
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Models")}##navigationTabModels"))
+            if (BeginTab(NavTab.Models, "MAP_Navigation_Tab_Models", "navigationTabModels"))
             {
                 DisplayModelsTab(map);
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Edit")}##navigationTabEdit"))
-            {
-                DisplayEditTab();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Face_Data")}##navigationTabFaceData"))
-            {
-                DisplayFaceDataTab();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Links")}##navigationTabLinks"))
-            {
-                DisplayLinksTab();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Gates")}##navigationTabGates"))
-            {
-                DisplayGatesTab();
-                ImGui.EndTabItem();
-            }
-
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Stitch")}##navigationTabStitch"))
+            if (BeginTab(NavTab.Stitch, "MAP_Navigation_Tab_Stitch", "navigationTabStitch"))
             {
                 DisplayStitchTab();
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem($"{LOC.Get("MAP_Navigation_Tab_Check")}##navigationTabCheck"))
+            if (BeginTab(NavTab.Gates, "MAP_Navigation_Tab_Gates", "navigationTabGates"))
+            {
+                DisplayGatesTab();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(NavTab.Links, "MAP_Navigation_Tab_Links", "navigationTabLinks"))
+            {
+                DisplayLinksTab();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(NavTab.FaceData, "MAP_Navigation_Tab_Face_Data", "navigationTabFaceData"))
+            {
+                DisplayFaceDataTab();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(NavTab.Edit, "MAP_Navigation_Tab_Edit", "navigationTabEdit"))
+            {
+                DisplayEditTab();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(NavTab.Check, "MAP_Navigation_Tab_Check", "navigationTabCheck"))
             {
                 DisplayCheckTab(map, maps);
                 ImGui.EndTabItem();
@@ -195,6 +202,59 @@ public partial class NavigationTool
         }
 
         ImGui.EndChild();
+    }
+
+    private enum NavTab { Overlay, Models, Stitch, Gates, Links, FaceData, Edit, Check }
+
+    /// <summary>A tab to switch to, e.g. Stitch after a model is generated; selected the next time its tab item is drawn.</summary>
+    private NavTab? PendingTab;
+
+    private bool BeginTab(NavTab tab, string key, string id)
+    {
+        var flags = ImGuiTabItemFlags.None;
+        if (PendingTab == tab)
+        {
+            flags = ImGuiTabItemFlags.SetSelected;
+            PendingTab = null;
+        }
+
+        if (!ImGui.BeginTabItem($"{LOC.Get(key)}##{id}", flags))
+            return false;
+
+        if (OpenTab != tab)
+        {
+            OpenTab = tab;
+            StopModesOutside(tab);
+        }
+
+        DisplayTabHelp(tab);
+        return true;
+    }
+
+    /// <summary>The tab drawn last; null before the tabs are first drawn.</summary>
+    private NavTab? OpenTab;
+
+    /// <summary>
+    /// On a tab change, stops the viewport modes that belong to other tabs, so a mode never takes the viewport's clicks
+    /// out of sight. Picking stays on: the Face Data, Links, Stitch and Models tabs all use the picked face.
+    /// </summary>
+    private void StopModesOutside(NavTab tab)
+    {
+        if (tab != NavTab.FaceData)
+            PaintMode = false;
+
+        if (tab != NavTab.Links)
+        {
+            LinkMode = false;
+            LinkStart = null;
+        }
+
+        if (tab != NavTab.Gates)
+            StopGateMode();
+
+        // Pending vertex edits are kept; only the cursor goes
+        if (tab != NavTab.Edit)
+            StopVertexEdit();
     }
 
     private void DisplayCheckTab(MapContainer map, List<MapContainer> maps)
@@ -214,6 +274,11 @@ public partial class NavigationTool
             GUI.WrappedText(LOC.Get("MAP_Navigation_Not_Checked"));
             return;
         }
+
+        UpdateGoTo();
+
+        if (Current.Stale)
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("MAP_Navigation_Check_Stale"));
 
         DisplaySummary(Current.Map);
         DisplayIssues(Current);
@@ -275,6 +340,9 @@ public partial class NavigationTool
         Cancel?.Cancel();
         Cancel = null;
         Current = null;
+        GoToIssue = null;
+        GoToPending = false;
+        GoToMessage = null;
     }
 
     private void DisplaySummary(NavigationMap navigation)
@@ -339,6 +407,9 @@ public partial class NavigationTool
         ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Show_Inherited")}##navigationShowInherited", ref ShowInherited);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Show_Inherited_TT"));
 
+        if (GoToMessage != null)
+            GUI.WrappedTextColored(GoToMessageIsError ? UI.Current.ImGui_Warning_Text_Color : UI.Current.ImGui_Benefit_Text_Color, GoToMessage);
+
         if (!ShowIssues)
             return;
 
@@ -369,6 +440,18 @@ public partial class NavigationTool
                     ImGui.TableNextRow();
 
                     ImGui.TableNextColumn();
+
+                    // A row on a navmesh of this map goes to it: an invisible selectable under the whole row
+                    if (CanGoTo(issue))
+                    {
+                        ImGui.PushID(i);
+                        if (ImGui.Selectable("##navigationIssueGoTo", ReferenceEquals(issue, GoToIssue), ImGuiSelectableFlags.SpanAllColumns | ImGuiSelectableFlags.AllowOverlap))
+                            StartGoTo(issue);
+                        ImGui.PopID();
+                        GUI.Tooltip(LOC.Get("MAP_Navigation_Issue_Go_To_TT"));
+                        ImGui.SameLine();
+                    }
+
                     var severity = LOC.Get(issue.Severity == NavIssueSeverity.Error ? "MAP_Navigation_Severity_Error" : "MAP_Navigation_Severity_Warning");
                     if (issue.Inherited)
                         GUI.WrappedText($"{severity} ({LOC.Get("MAP_Navigation_Severity_Inherited")})");
