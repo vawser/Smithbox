@@ -251,9 +251,9 @@ public sealed class NavigationMap
     /// <summary>
     /// How an entry's Rotation and Scale turn its mesh into the frame its gate nodes are in (scale, then the rotation in
     /// radians as Y * Z * X, then the position); null for an entry with neither, which only moves its mesh by its Position.
-    /// DS3 and BB gate nodes sit on the mesh only when it is turned so (NavSurvey placement), but the Map Editor draws the
-    /// mesh by its Position alone, as only that lines it up with the map (DS3 m31_00_00_00, checked in app; see
-    /// MsbEntity.GetLocalTransform). ER's few nonzero rotations are below 1e-6 rad and count as none.
+    /// DS3 and BB gate nodes sit on the mesh only when it is turned so (NavSurvey placement), and the turned mesh sits on
+    /// the map's collision (NavSurvey mapalign: DS3 entries repeat the map's MapOffset event, so MapContainer keeps DS3's
+    /// navmeshes off the map offset node). ER's few nonzero rotations are below 1e-6 rad and count as none.
     /// </summary>
     public static System.Numerics.Matrix4x4? EntryPlacement(NVA.Navmesh entry)
     {

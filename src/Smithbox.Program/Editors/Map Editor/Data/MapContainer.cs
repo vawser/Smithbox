@@ -249,7 +249,7 @@ public class MapContainer : ObjectContainer
 
 
     /// <summary>
-    ///     The map offset used to transform BTL lights, DS2 Generators, and Navmesh.
+    ///     The map offset used to transform BTL lights, DS2 Generators, and Navmesh (not DS3's, whose entries carry it).
     ///     Only DS2, Bloodborne, DS3, Sekiro, and AC6 define map offsets.
     /// </summary>
     public Transform MapOffset
@@ -595,6 +595,16 @@ public class MapContainer : ObjectContainer
         }
 
         NavmeshParent = nvaRoot;
+
+        // TEMP DIAGNOSTIC (DS3 navmesh placement): remove once checked
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS3 && nvaRoot.Children.FirstOrDefault() is Entity first
+            && first.WrappedObject is NVA.Navmesh firstEntry)
+        {
+            var offset = MapOffset;
+            Smithbox.Log(this, $"[NavPlacementDiag] {mapName}: map offset pos {offset.Position} rot {offset.EulerRotation}; " +
+                $"first navmesh entry pos {firstEntry.Position} rot {firstEntry.Rotation}; entity world translation " +
+                $"{first.GetWorldMatrix().Translation}; parented to {(nvaRoot.Parent == RootObject ? "map root" : "map offset node")}");
+        }
     }
 
     // AC6 specific
@@ -621,7 +631,15 @@ public class MapContainer : ObjectContainer
         var nvaRoot = CreateNavmeshEntity(file);
 
         Objects.Add(nvaRoot);
-        MapOffsetNode.AddChild(nvaRoot);
+
+        // DS3's NVA entries already carry the map offset: on every map with a MapOffset event, each entry's Position and
+        // Rotation (radians) equal the event's, and so do the map's collision parts (NavSurvey mapalign). Under the map
+        // offset node the offset would apply twice, so they hang from the map root like the parts.
+        // SDT, AC6 and most BB maps leave their entries at the origin under a nonzero offset, so they keep the node
+        if (View.Project.Descriptor.ProjectType is ProjectType.DS3)
+            RootObject.AddChild(nvaRoot);
+        else
+            MapOffsetNode.AddChild(nvaRoot);
 
         return nvaRoot;
     }

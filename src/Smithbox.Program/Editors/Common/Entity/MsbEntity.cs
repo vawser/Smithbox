@@ -1562,14 +1562,6 @@ public class MsbEntity : Entity
 
         Transform t = base.GetLocalTransform();
 
-        // An NVA navmesh entry's mesh lines up with the map by its Position alone: the entry's Rotation (DS3 m31_00_00_00:
-        // 0, -2.72, 0 on every entry) turns it away from the map when applied, so it isn't. The overlay of the Navigation
-        // tool places its meshes by this entity, so it follows
-        if (WrappedObject is NVA.Navmesh)
-        {
-            t.Rotation = Quaternion.Identity;
-        }
-
         // If this is a region scale the region primitive by its respective parameters
         if (Type == MsbEntityType.Region)
         {
