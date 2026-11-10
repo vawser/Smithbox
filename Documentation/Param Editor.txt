@@ -10,8 +10,8 @@
     - Make Duplicate select the new row (check if this already occurs)
     
 - Modified Filter:
-    - Allow what is tagged as 'modified' to be filtered by X conditions
-        - Display in orange
+    - Allow what is tagged as 'modified' to be filtered by X condition rules
+    - Display in orange
 
 - Tools:
     - Weapon Generator:

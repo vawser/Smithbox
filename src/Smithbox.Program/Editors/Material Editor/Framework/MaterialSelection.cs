@@ -52,6 +52,46 @@ public class MaterialSelection
         SelectedFileWrapper = state?.FileWrapper;
         ScrollToContainer = state?.ScrollToContainer ?? false;
         ScrollToFile = state?.ScrollToFile ?? false;
+
+        // The restored file may have been deleted or renamed while the other tab was shown
+        Revalidate();
+    }
+
+    /// <summary>
+    /// The binder of the current source type
+    /// </summary>
+    public IMaterialBinder SelectedBinder => SourceType is MaterialSourceType.MTD ? MTDWrapper : MATBINWrapper;
+
+    /// <summary>
+    /// After files are added, removed or renamed: follows a renamed selected file, and drops a removed one
+    /// </summary>
+    public void Revalidate()
+    {
+        if (SelectedFileWrapper == null)
+            return;
+
+        if (SelectedBinder?.GetFile(SelectedFileWrapper.Key) == SelectedFileWrapper)
+        {
+            SelectedFileKey = SelectedFileWrapper.Key;
+            return;
+        }
+
+        SelectedFileKey = "";
+        SelectedFileWrapper = null;
+        SelectedMTD = null;
+        SelectedMATBIN = null;
+    }
+
+    /// <summary>
+    /// Selects a file of the current binder
+    /// </summary>
+    public void SelectFile(MaterialFileWrapper file)
+    {
+        SelectedFileKey = file.Key;
+        SelectedFileWrapper = file;
+        SelectedMTD = (file as MTDFileWrapper)?.MTD;
+        SelectedMATBIN = (file as MATBINFileWrapper)?.MATBIN;
+        ScrollToFile = true;
     }
 
     public FileDictionaryEntry SelectedBinderEntry { get; set; }

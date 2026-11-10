@@ -331,8 +331,9 @@ public class MaterialPropertyInput
             ImGui.Text($"ImplementMe: {prop.PropertyType}");
         }
 
-        // MTD.Param.Write has no form for None: it writes a value block the reader rejects
-        if (isChanged && newval is MTD.ParamType.None)
+        // Neither writer has a form for None: MTD.Param.Write writes a value block the reader rejects,
+        // MATBIN.Param.WriteData throws and fails the binder's save
+        if (isChanged && newval is MTD.ParamType.None or MATBIN.ParamType.None)
         {
             newval = null;
             isChanged = false;

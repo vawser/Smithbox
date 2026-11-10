@@ -101,8 +101,39 @@ public class MaterialProperties
         ImGui.EndChild();
     }
 
+    /// <summary>
+    /// Searches the properties for a field, as clicking a check finding does
+    /// </summary>
+    public void SetFilter(string text)
+    {
+        PropertyListFilter = text ?? "";
+        ExactPropertyListFilter = false;
+    }
+
+    /// <summary>
+    /// The selected material's check findings, above its properties
+    /// </summary>
+    private void DisplayFindings()
+    {
+        var findings = MaterialEditorChecks.CheckFile(Project.Handler.MaterialData.PrimaryBank,
+            View.Selection.SelectedBinder, View.Selection.SelectedFileWrapper);
+
+        for (var i = 0; i < findings.Count; i++)
+        {
+            if (MaterialEditorChecks.DisplayFinding(findings[i], $"propertyFinding{i}") && findings[i].Target != "")
+            {
+                SetFilter(findings[i].Target);
+            }
+        }
+
+        if (findings.Count > 0)
+            ImGui.Separator();
+    }
+
     public void DisplayPropertyList(string implType, object sourceObj)
     {
+        DisplayFindings();
+
         var type = sourceObj.GetType();
 
         var columnCount = 2;
@@ -585,6 +616,10 @@ public class MaterialProperties
                 UpdateProperty(prop, containerObj, oldval, newval, changed, committed, arrayIndex, classIndex);
             }
         }
+        else if (MaterialUtils.IsDerivedKey(containerObj, prop.Name) && value is uint key)
+        {
+            DisplayDerivedKey(prop, containerObj, key, name, description, typeLabel);
+        }
         else
         {
             propEditResults = View.PropertyInput.PropertyRow(type, oldval, out newval, prop);
@@ -618,6 +653,36 @@ public class MaterialProperties
         }
 
         ImGui.NextColumn();
+    }
+
+    /// <summary>
+    /// A MATBIN key, which follows its text (SourcePath, Name or Type) and so isn't typed in. A key that doesn't
+    /// match its text, from an older edit or another tool, is flagged with a button to correct it.
+    /// </summary>
+    private void DisplayDerivedKey(PropertyInfo prop, object containerObj, uint key, string name, string description, string typeLabel)
+    {
+        var source = MaterialUtils.KeySourceProperty(containerObj);
+        var sourceText = containerObj.GetType().GetProperty(source)?.GetValue(containerObj) as string;
+        var expected = MaterialUtils.MatbinKey(sourceText);
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextDisabled($"{key:X8}");
+        GUI.Tooltip(LOC.Get("MAT_Properties_Derived_Key_TT", source));
+        DisplayContextMenu(name, description, typeLabel);
+
+        if (key != expected)
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, $"{Icons.ExclamationTriangle}");
+            GUI.Tooltip(LOC.Get("MAT_Properties_Stale_Key_TT", source, $"{expected:X8}"));
+
+            ImGui.SameLine();
+            if (ImGui.SmallButton($"{LOC.Get("MAT_Properties_Fix_Key")}##fixKey"))
+            {
+                var action = new MatPropertyChange(View, View.Selection.SelectedFileWrapper, prop, containerObj, expected);
+                View.ActionManager.ExecuteAction(action);
+            }
+        }
     }
 
     private void UpdateProperty(object prop, object obj, object oldval, object newval,
@@ -654,9 +719,14 @@ public class MaterialProperties
 
         var propInfo = (PropertyInfo)prop;
 
-        EditorAction action = MatParamTypeChange.Handles(obj, propInfo.Name)
-            ? new MatParamTypeChange(View.Selection.SelectedFileWrapper, obj, newval)
-            : new MatPropertyChange(View, View.Selection.SelectedFileWrapper, propInfo, obj, newval, arrayindex, classIndex);
+        EditorAction action;
+
+        if (MatParamTypeChange.Handles(obj, propInfo.Name))
+            action = new MatParamTypeChange(View.Selection.SelectedFileWrapper, obj, newval);
+        else if (MatKeyedTextChange.Handles(obj, propInfo.Name) && newval is string text)
+            action = new MatKeyedTextChange(View.Selection.SelectedFileWrapper, obj, propInfo, text);
+        else
+            action = new MatPropertyChange(View, View.Selection.SelectedFileWrapper, propInfo, obj, newval, arrayindex, classIndex);
 
         View.ActionManager.ExecuteAction(action);
 
@@ -699,6 +769,9 @@ public class MaterialProperties
                 {
                     newEntry = new MATBIN.Param();
                 }
+
+                // New MATBIN params and samplers otherwise have key 0, which matches no text
+                MaterialUtils.ApplyMatbinKey(newEntry);
 
                 var action = new MatAddListEntry(View.Selection.SelectedFileWrapper, prop, obj, newEntry, list.Count);
                 View.ActionManager.ExecuteAction(action);

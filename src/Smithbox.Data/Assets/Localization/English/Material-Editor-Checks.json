@@ -1,0 +1,132 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Check_Empty_Shader_Path",
+      "Text": "Shader Path is empty."
+    },
+    {
+      "Key": "MAT_Check_Empty_Source_Path",
+      "Text": "Source Path is empty."
+    },
+    {
+      "Key": "MAT_Check_Stale_Key",
+      "Text": "{0}: key {1} doesn't match its text, which gives {2}."
+    },
+    {
+      "Key": "MAT_Check_Param_Type_None",
+      "Text": "Param {0} has type None, which can't be saved."
+    },
+    {
+      "Key": "MAT_Check_Param_Value_Mismatch",
+      "Text": "Param {0} is {1} but its value is {2}, which won't save correctly."
+    },
+    {
+      "Key": "MAT_Check_Param_Empty_Name",
+      "Text": "A param has no name."
+    },
+    {
+      "Key": "MAT_Check_Param_Duplicate",
+      "Text": "More than one param is named {0}."
+    },
+    {
+      "Key": "MAT_Check_Texture_Empty_Type",
+      "Text": "A texture has no type."
+    },
+    {
+      "Key": "MAT_Check_Texture_Duplicate",
+      "Text": "More than one texture has type {0}."
+    },
+    {
+      "Key": "MAT_Check_Sampler_Empty_Type",
+      "Text": "A sampler has no type."
+    },
+    {
+      "Key": "MAT_Check_Sampler_Duplicate",
+      "Text": "More than one sampler has type {0}."
+    },
+    {
+      "Key": "MAT_Check_Shared_Name",
+      "Text": "Another binder has a material with this name, and the editor uses {0}. Models find materials by name, so only one is used."
+    },
+    {
+      "Key": "MAT_Check_Finding_TT",
+      "Text": "Click to search the properties for it."
+    },
+    {
+      "Key": "MAT_Check_Save_Blocked",
+      "Text": "Not saved: {0} has materials with errors ({1}). Fix them, or see the Material Check tool."
+    },
+    {
+      "Key": "MAT_Check_Save_Warnings",
+      "Text": "Saved with {0} warnings in modified materials. See the Material Check tool."
+    },
+    {
+      "Key": "MAT_CheckTool_Header",
+      "Text": "Material Check"
+    },
+    {
+      "Key": "MAT_CheckTool_Hint",
+      "Text": "Finds materials that can't be saved, or that differ from how every vanilla material is made: empty or repeated names, stale MATBIN keys, values of the wrong size."
+    },
+    {
+      "Key": "MAT_CheckTool_Scope_Header",
+      "Text": "Scope"
+    },
+    {
+      "Key": "MAT_CheckTool_Scope_Header_TT",
+      "Text": "Which materials to check."
+    },
+    {
+      "Key": "MAT_CheckTool_Scope_Modified",
+      "Text": "Modified materials"
+    },
+    {
+      "Key": "MAT_CheckTool_Scope_Binder",
+      "Text": "Selected binder"
+    },
+    {
+      "Key": "MAT_CheckTool_Scope_All",
+      "Text": "All materials"
+    },
+    {
+      "Key": "MAT_CheckTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MAT_CheckTool_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MAT_CheckTool_Run",
+      "Text": "Check"
+    },
+    {
+      "Key": "MAT_CheckTool_Run_TT",
+      "Text": "Check the materials in scope."
+    },
+    {
+      "Key": "MAT_CheckTool_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "MAT_CheckTool_Results_Header_TT",
+      "Text": "Click a result to open the material and search its properties for the field."
+    },
+    {
+      "Key": "MAT_CheckTool_Results_Summary",
+      "Text": "{0} materials checked: {1} errors, {2} warnings."
+    },
+    {
+      "Key": "MAT_CheckTool_Not_Run",
+      "Text": "Not run yet."
+    },
+    {
+      "Key": "MAT_CheckTool_No_Binder",
+      "Text": "Select a binder first."
+    },
+    {
+      "Key": "MAT_ToolWindow_View_Toggle_Material_Check",
+      "Text": "Material Check"
+    }
+  ]
+}

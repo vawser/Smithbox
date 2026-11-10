@@ -57,6 +57,18 @@
       "Text": " (Length: {0})"
     },
     {
+      "Key": "MAT_Properties_Derived_Key_TT",
+      "Text": "The Adler-32 hash of {0} (UTF-16), as every vanilla MATBIN has it.\nIt is updated when {0} is edited."
+    },
+    {
+      "Key": "MAT_Properties_Stale_Key_TT",
+      "Text": "This key doesn't match {0}, which gives {1}."
+    },
+    {
+      "Key": "MAT_Properties_Fix_Key",
+      "Text": "Fix"
+    },
+    {
       "Key": "MAT_Properties_Action_Copy_Property_Name",
       "Text": "Copy Property Name"
     },

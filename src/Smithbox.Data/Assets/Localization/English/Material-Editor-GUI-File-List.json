@@ -21,6 +21,86 @@
       "Text": "Toggle the display of the full path.\nCurrent Mode: {0}"
     },
     {
+      "Key": "MAT_FileList_Action_Duplicate",
+      "Text": "Duplicate"
+    },
+    {
+      "Key": "MAT_FileList_Action_Duplicate_TT",
+      "Text": "Add a copy of this material to its binder under a new name, for a model of your own to use."
+    },
+    {
+      "Key": "MAT_FileList_Action_Rename",
+      "Text": "Rename"
+    },
+    {
+      "Key": "MAT_FileList_Action_Rename_TT",
+      "Text": "Give this material a new name. Models name their materials, so any model using the old name will no longer find it."
+    },
+    {
+      "Key": "MAT_FileList_Action_Delete",
+      "Text": "Delete"
+    },
+    {
+      "Key": "MAT_FileList_Action_Delete_TT",
+      "Text": "Remove this material from its binder. Undo brings it back."
+    },
+    {
+      "Key": "MAT_FileList_Duplicate_Title",
+      "Text": "Duplicate Material"
+    },
+    {
+      "Key": "MAT_FileList_Duplicate_Hint",
+      "Text": "A copy of {0} is added to {1}, after it. A MATBIN's Source Path and key follow the new name."
+    },
+    {
+      "Key": "MAT_FileList_Rename_Title",
+      "Text": "Rename Material"
+    },
+    {
+      "Key": "MAT_FileList_Rename_Hint",
+      "Text": "{0} in {1} gets a new name, in the same folder. A MATBIN's Source Path and key follow the new name."
+    },
+    {
+      "Key": "MAT_FileList_Name_Header",
+      "Text": "Name"
+    },
+    {
+      "Key": "MAT_FileList_Name_Header_TT",
+      "Text": "The material's name, without folder or extension. This is the name a model's material uses."
+    },
+    {
+      "Key": "MAT_FileList_Name_Empty",
+      "Text": "Enter a name."
+    },
+    {
+      "Key": "MAT_FileList_Name_Invalid",
+      "Text": "The name can't contain folder separators or characters a file name can't have."
+    },
+    {
+      "Key": "MAT_FileList_Name_Taken",
+      "Text": "A material named {0} already exists. Models find materials by name, so only one of them could be used."
+    },
+    {
+      "Key": "MAT_FileList_Name_Result",
+      "Text": "File: {0}"
+    },
+    {
+      "Key": "MAT_FileList_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "MAT_FileList_Delete_Title",
+      "Text": "Delete Material"
+    },
+    {
+      "Key": "MAT_FileList_Delete_Confirm",
+      "Text": "Remove {0} from {1}?"
+    },
+    {
+      "Key": "MAT_FileList_Delete_Warning",
+      "Text": "Models that use this material will no longer find it. Undo brings it back until the editor is closed."
+    },
+    {
       "Key": "MAT_FileList_Unreadable_File_TT",
       "Text": "This file failed to read, so it can't be edited. See the log for the error.\nSaving this binder keeps the file as it is."
     }

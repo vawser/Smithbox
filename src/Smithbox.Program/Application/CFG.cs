@@ -1232,6 +1232,7 @@ public class CFG
 
     // Tools
     public bool MaterialEditor_Tool_Data_Transfer = true;
+    public bool Interface_MaterialEditor_Tool_MaterialCheck = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Material_Editor = false;

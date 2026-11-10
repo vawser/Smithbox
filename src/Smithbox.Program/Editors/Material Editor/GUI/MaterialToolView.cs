@@ -17,6 +17,9 @@ public class MaterialToolWindow
     public ProjectEntry Project;
 
     public MatDataTransferTool DataTransferTool;
+    public MatCheckTool CheckTool;
+
+    private ToolSections Sections = new();
 
     public MaterialToolWindow(MaterialEditorView view, ProjectEntry project)
     {
@@ -24,6 +27,7 @@ public class MaterialToolWindow
         Project = project;
 
         DataTransferTool = new(view, project);
+        CheckTool = new(view, project);
     }
 
     public void Draw()
@@ -36,6 +40,19 @@ public class MaterialToolWindow
 
             ImGui.EndMenuBar();
         }
+
+        Sections.Begin();
+
+        // Validation
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
+
+        if (CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck)
+        {
+            // Material Check
+            CheckTool.OnToolWindow();
+        }
+
+        Sections.End();
 
         // Data Transfer
         //if(CFG.Current.MaterialEditor_Tool_Data_Transfer)
@@ -58,6 +75,13 @@ public class MaterialToolWindow
                 CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
             }
             GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
+
+            // Material Check
+            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Check")}##materialCheckToolToggle"))
+            {
+                CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck = !CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck);
 
             ImGui.EndMenu();
         }

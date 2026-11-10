@@ -46,18 +46,14 @@ public class MaterialBank : IDisposable
 
     public async Task<bool> Setup()
     {
+        // Binders load in parallel; the name lookups are filled afterwards, in load order, so a name held by
+        // more than one binder always resolves the same way (see LoadOrder)
         var mtdTasks = Project.Locator.MTD_Files.Entries.Select(async entry =>
         {
             var wrapper = new MTDWrapper(Project, entry, TargetFS);
             if (await wrapper.Load())
             {
                 MTDs[entry] = wrapper;
-                foreach (var kv in wrapper.Entries)
-                {
-                    var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
-                    MTDLookup[shortName] = kv.Value.MTD;
-                    MTDReferences[shortName] = new MaterialReference(MaterialSourceType.MTD, entry, kv.Key, kv.Value);
-                }
             }
         });
 
@@ -67,19 +63,137 @@ public class MaterialBank : IDisposable
             if (await wrapper.Load())
             {
                 MATBINs[entry] = wrapper;
-                foreach (var kv in wrapper.Entries)
-                {
-                    var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
-                    MATBINLookup[shortName] = kv.Value.MATBIN;
-                    MATBINReferences[shortName] = new MaterialReference(MaterialSourceType.MATBIN, entry, kv.Key, kv.Value);
-                }
             }
         });
 
         await Task.WhenAll(mtdTasks.Concat(matbinTasks));
 
+        RebuildLookups();
+
         return true;
     }
+
+    /// <summary>
+    /// Refills the name lookups from the binders, in load order, and forgets resolved definitions.
+    /// Called after loading and whenever a material file is added, removed or renamed.
+    /// </summary>
+    public void RebuildLookups()
+    {
+        lock (LookupLock)
+        {
+            MTDLookup.Clear();
+            MTDReferences.Clear();
+            MATBINLookup.Clear();
+            MATBINReferences.Clear();
+            Definitions.Clear();
+
+            foreach (var (entry, wrapper) in LoadOrder(MTDs))
+            {
+                foreach (var key in wrapper.FileOrder)
+                {
+                    if (!wrapper.Entries.TryGetValue(key, out var file))
+                        continue;
+
+                    var shortName = ShortName(key);
+                    MTDLookup[shortName] = file.MTD;
+                    MTDReferences[shortName] = new MaterialReference(MaterialSourceType.MTD, entry, key, file);
+                }
+            }
+
+            foreach (var (entry, wrapper) in LoadOrder(MATBINs))
+            {
+                foreach (var key in wrapper.FileOrder)
+                {
+                    if (!wrapper.Entries.TryGetValue(key, out var file))
+                        continue;
+
+                    var shortName = ShortName(key);
+                    MATBINLookup[shortName] = file.MATBIN;
+                    MATBINReferences[shortName] = new MaterialReference(MaterialSourceType.MATBIN, entry, key, file);
+                }
+            }
+        }
+    }
+
+    private readonly object LookupLock = new();
+
+    /// <summary>
+    /// Whether a material of this kind already has this short name, in any binder. FLVERs name their material
+    /// by short name, so two files sharing one can't both be reached.
+    /// </summary>
+    public bool IsShortNameTaken(MaterialSourceType type, string shortName)
+    {
+        IEnumerable<IMaterialBinder> binders = type is MaterialSourceType.MTD ? MTDs.Values : MATBINs.Values;
+
+        return binders.Any(b => b.FileOrder.Any(k => string.Equals(ShortName(k), shortName, StringComparison.OrdinalIgnoreCase)));
+    }
+
+    /// <summary>
+    /// The file a short name resolves to among materials of one kind
+    /// </summary>
+    public MaterialReference FindReference(MaterialSourceType type, string shortName)
+    {
+        var references = type is MaterialSourceType.MTD ? MTDReferences : MATBINReferences;
+
+        return references.TryGetValue(shortName, out var reference) ? reference : null;
+    }
+
+    /// <summary>
+    /// How many binders of this kind hold a material with this short name
+    /// </summary>
+    public int CountBindersWithShortName(MaterialSourceType type, string shortName)
+    {
+        IEnumerable<IMaterialBinder> binders = type is MaterialSourceType.MTD ? MTDs.Values : MATBINs.Values;
+
+        return binders.Count(b => b.FileOrder.Any(k => string.Equals(ShortName(k), shortName, StringComparison.OrdinalIgnoreCase)));
+    }
+
+    /// <summary>
+    /// The binder entry and wrapper holding a binder, for jumping to a file in it
+    /// </summary>
+    public FileDictionaryEntry FindBinderEntry(IMaterialBinder binder)
+    {
+        foreach (var kv in MTDs)
+            if (kv.Value == binder) return kv.Key;
+
+        foreach (var kv in MATBINs)
+            if (kv.Value == binder) return kv.Key;
+
+        return null;
+    }
+
+    /// <summary>
+    /// A file name in the same folder as <paramref name="key"/> with another short name, keeping the binder's
+    /// naming style (full source paths in ER/NR/AC6, bare names elsewhere) and the extension
+    /// </summary>
+    public static string WithShortName(string key, string shortName)
+    {
+        var cut = Math.Max(key.LastIndexOf('\\'), key.LastIndexOf('/'));
+        var folder = cut >= 0 ? key[..(cut + 1)] : "";
+
+        return $"{folder}{shortName}{Path.GetExtension(key)}";
+    }
+
+    public static string ShortNameOf(string key) => ShortName(key);
+
+    /// <summary>
+    /// The binders in the order their names override each other, later winning: by path, so a base binder
+    /// comes before its DLC ones (allmaterial, allmaterial_dlc01, allmaterial_dlc02), with devpatch binders last.
+    /// ER and NR hold a few names in both a base and a DLC binder with different content, and DES has the same
+    /// MTDs in mtd.mtdbnd and mtd.mtdbnd.dcx; see Documentation/Claude/Material Editor Plan.md, R2.
+    /// Within a binder, the later file of a repeated name wins.
+    /// </summary>
+    private static IEnumerable<(FileDictionaryEntry entry, TWrapper wrapper)> LoadOrder<TWrapper>(
+        ConcurrentDictionary<FileDictionaryEntry, TWrapper> binders)
+    {
+        return binders.ToArray()
+            .OrderBy(kv => kv.Key.Path.Contains("devpatch", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
+            .ThenBy(kv => kv.Key.Path, StringComparer.OrdinalIgnoreCase)
+            .Select(kv => (kv.Key, kv.Value));
+    }
+
+    private static string ShortName(string fileName) =>
+        Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
 
     public MTD GetMaterial(string name) =>
         MTDLookup.TryGetValue(name, out var mtd) ? mtd : null;
@@ -152,20 +266,18 @@ public class MaterialBank : IDisposable
     {
         var files = new List<string>();
 
-        if (MTDs != null)
-        {
-            foreach (var wrapper in MTDs.Values)
-            {
-                files.AddRange(wrapper.Entries.Values.Where(e => e.IsDirty).Select(e => $"{wrapper.FilePath} : {e.Key}"));
-            }
-        }
+        IEnumerable<IMaterialBinder> binders = (MTDs?.Values ?? Enumerable.Empty<MTDWrapper>()).Cast<IMaterialBinder>()
+            .Concat(MATBINs?.Values ?? Enumerable.Empty<MATBINWrapper>());
 
-        if (MATBINs != null)
+        foreach (var wrapper in binders)
         {
-            foreach (var wrapper in MATBINs.Values)
-            {
-                files.AddRange(wrapper.Entries.Values.Where(e => e.IsDirty).Select(e => $"{wrapper.FilePath} : {e.Key}"));
-            }
+            var dirtyFiles = wrapper.GetFiles().Where(e => e.IsDirty).Select(e => $"{wrapper.FilePath} : {e.Key}").ToList();
+
+            files.AddRange(dirtyFiles);
+
+            // Only files added, removed or renamed, with no file dirty to name
+            if (dirtyFiles.Count == 0 && wrapper.IsDirty())
+                files.Add($"{wrapper.FilePath} : {LOC.Get("MAT_Data_Binder_Structure_Changed")}");
         }
 
         return files.OrderBy(e => e).ToList();
@@ -178,24 +290,42 @@ public class MaterialBank : IDisposable
     public bool SaveAllDirty()
     {
         var success = true;
+        var warnings = 0;
 
-        if (MTDs != null)
+        IEnumerable<IMaterialBinder> binders = (MTDs?.Values ?? Enumerable.Empty<MTDWrapper>()).Cast<IMaterialBinder>()
+            .Concat(MATBINs?.Values ?? Enumerable.Empty<MATBINWrapper>());
+
+        foreach (var wrapper in binders.Where(e => e.IsDirty()).ToList())
         {
-            foreach (var wrapper in MTDs.Values.Where(e => e.IsDirty()))
+            // A binder with a modified material that can't be written correctly isn't saved at all, so the
+            // project's copy stays readable
+            var findings = wrapper.GetFiles().Where(f => f.IsDirty)
+                .Select(f => (file: f, findings: MaterialChecks.Check(f switch
+                {
+                    MTDFileWrapper m => (object)m.MTD,
+                    MATBINFileWrapper m => m.MATBIN,
+                    _ => null
+                })))
+                .ToList();
+
+            var blocked = findings.Where(x => x.findings.Any(f => f.Severity is MaterialCheckSeverity.Error))
+                .Select(x => ShortName(x.file.Key)).ToList();
+
+            warnings += findings.Sum(x => x.findings.Count(f => f.Severity is MaterialCheckSeverity.Warning));
+
+            if (blocked.Count > 0)
             {
-                if (!wrapper.SaveDirtyFiles())
-                    success = false;
+                Smithbox.LogError(this, LOC.Get("MAT_Check_Save_Blocked", wrapper.Name, string.Join(", ", blocked)));
+                success = false;
+                continue;
             }
+
+            if (!wrapper.SaveDirtyFiles())
+                success = false;
         }
 
-        if (MATBINs != null)
-        {
-            foreach (var wrapper in MATBINs.Values.Where(e => e.IsDirty()))
-            {
-                if (!wrapper.SaveDirtyFiles())
-                    success = false;
-            }
-        }
+        if (warnings > 0)
+            Smithbox.Log(this, LOC.Get("MAT_Check_Save_Warnings", warnings));
 
         return success;
     }
@@ -222,236 +352,7 @@ public class MaterialBank : IDisposable
     #endregion
 }
 
-internal static class MaterialBinderSave
-{
-    /// <summary>
-    /// Writes the dirty files into their binder and saves it to the project, then clears their dirty marks.
-    /// Unlike the editor's save, this doesn't need a view, so the unsaved changes prompt can save every binder.
-    /// </summary>
-    public static bool SaveDirtyFiles(object owner, ProjectEntry project, VirtualFileSystem targetFS, string filePath,
-        bool isBnd3, IEnumerable<MaterialFileWrapper> files, Func<MaterialFileWrapper, byte[]> write)
-    {
-        var dirty = files.Where(e => e.IsDirty).ToDictionary(e => e.Key);
-
-        if (dirty.Count == 0)
-            return true;
-
-        var containerFileData = targetFS.ReadFile(filePath);
-
-        if (containerFileData == null)
-        {
-            Smithbox.LogError(owner, LOC.Get("EDITOR_Data_Failed_Read_Container", filePath));
-            return false;
-        }
-
-        try
-        {
-            IBinder binder = isBnd3 ? BND3.Read(containerFileData.Value) : BND4.Read(containerFileData.Value);
-
-            foreach (var binderFile in binder.Files)
-            {
-                if (dirty.TryGetValue(binderFile.Name, out var wrapper))
-                {
-                    binderFile.Bytes = write(wrapper);
-                }
-            }
-
-            var writeFile = binder is BND3 bnd3 ? bnd3.Write() : ((BND4)binder).Write();
-
-            project.VFS.ProjectFS.WriteFile(filePath, writeFile);
-        }
-        catch (Exception ex)
-        {
-            Smithbox.LogError(owner, LOC.Get("EDITOR_Data_Failed_Write_Container", filePath), ex);
-            return false;
-        }
-
-        foreach (var wrapper in dirty.Values)
-        {
-            wrapper.IsDirty = false;
-        }
-
-        Smithbox.Log(owner, LOC.Get("EDITOR_Data_Save_File", filePath));
-
-        return true;
-    }
-}
-
 /// <summary>
 /// The location of a material file within the bank
 /// </summary>
 public record MaterialReference(MaterialSourceType SourceType, FileDictionaryEntry BinderEntry, string FileKey, MaterialFileWrapper File);
-
-public class MTDWrapper
-{
-    public ProjectEntry Project;
-    public VirtualFileSystem TargetFS;
-    public string Name { get; set; }
-    public string FilePath { get; set; }
-    public Dictionary<string, MTDFileWrapper> Entries { get; set; } = new();
-
-    /// <summary>
-    /// The files in this binder that failed to read, shown but not editable
-    /// </summary>
-    public List<string> UnreadableFiles { get; } = new();
-
-    public MTDWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
-    {
-        Project = project;
-        TargetFS = targetFS;
-        Name = dictEntry.Filename;
-        FilePath = dictEntry.Path;
-    }
-
-    /// <summary>
-    /// Whether any of the files within this binder have been modified
-    /// </summary>
-    public bool IsDirty()
-    {
-        return Entries.Values.Any(e => e.IsDirty);
-    }
-
-    public async Task<bool> Load()
-    {
-        await Task.Yield();
-
-        try
-        {
-            if (TargetFS.FileExists(FilePath))
-            {
-                var binderData = TargetFS.ReadFile(FilePath);
-
-                IBinder binder = Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R
-                    ? BND3.Read(binderData.Value)
-                    : BND4.Read(binderData.Value);
-
-                foreach (var entry in binder.Files)
-                {
-                    if (!entry.Name.Contains(".mtd"))
-                        continue;
-
-                    // One unreadable file must not hide the rest of the binder. It is left out of the
-                    // editor, and saving the binder keeps its bytes as they are.
-                    try
-                    {
-                        var mtd = MTD.Read(entry.Bytes);
-
-                        Entries[entry.Name] = new MTDFileWrapper(entry.Name, mtd);
-                    }
-                    catch (Exception e)
-                    {
-                        UnreadableFiles.Add(entry.Name);
-                        Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MTD", entry.Name), e);
-                    }
-                }
-
-                return true;
-            }
-            else
-            {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", FilePath));
-                return false;
-            }
-        }
-        catch (Exception e)
-        {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", FilePath), e);
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// Saves every modified MTD in this binder, without needing a view
-    /// </summary>
-    public bool SaveDirtyFiles()
-    {
-        var isBnd3 = Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R;
-
-        return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, isBnd3,
-            Entries.Values, e => ((MTDFileWrapper)e).MTD.Write());
-    }
-}
-
-public class MATBINWrapper
-{
-    public ProjectEntry Project;
-    public VirtualFileSystem TargetFS;
-    public string Name { get; set; }
-    public string FilePath { get; set; }
-    public Dictionary<string, MATBINFileWrapper> Entries { get; set; } = new();
-
-    /// <summary>
-    /// The files in this binder that failed to read, shown but not editable
-    /// </summary>
-    public List<string> UnreadableFiles { get; } = new();
-
-    public MATBINWrapper(ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
-    {
-        Project = project;
-        TargetFS = targetFS;
-        Name = dictEntry.Filename;
-        FilePath = dictEntry.Path;
-    }
-
-    /// <summary>
-    /// Whether any of the files within this binder have been modified
-    /// </summary>
-    public bool IsDirty()
-    {
-        return Entries.Values.Any(e => e.IsDirty);
-    }
-
-    public async Task<bool> Load()
-    {
-        await Task.Yield();
-
-        if (TargetFS.FileExists(FilePath))
-        {
-            try
-            {
-                var binderData = TargetFS.ReadFile(FilePath);
-                var binder = BND4.Read(binderData.Value);
-
-                foreach (var entry in binder.Files)
-                {
-                    if (entry.Name.Contains(".matbin"))
-                    {
-                        // One unreadable file must not hide the rest of the binder. It is left out of the
-                        // editor, and saving the binder keeps its bytes as they are.
-                        try
-                        {
-                            var matbin = MATBIN.Read(entry.Bytes);
-                            Entries[entry.Name] = new MATBINFileWrapper(entry.Name, matbin);
-                        }
-                        catch (Exception e)
-                        {
-                            UnreadableFiles.Add(entry.Name);
-                            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_MATBIN", entry.Name), e);
-                        }
-                    }
-                }
-
-                return true;
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Read_File", FilePath), e);
-                return false;
-            }
-        }
-        else
-        {
-            Smithbox.LogError(this, LOC.Get("MAT_Data_Log_Failed_to_Find_File", FilePath));
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// Saves every modified MATBIN in this binder, without needing a view
-    /// </summary>
-    public bool SaveDirtyFiles()
-    {
-        return MaterialBinderSave.SaveDirtyFiles(this, Project, TargetFS, FilePath, false,
-            Entries.Values, e => ((MATBINFileWrapper)e).MATBIN.Write());
-    }
-}

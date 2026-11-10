@@ -59,6 +59,10 @@
     {
       "Key": "MAT_Data_Deserialize_Material_Meta_FAIL",
       "Text": "Failed to deserialize Material meta file: {0}"
+    },
+    {
+      "Key": "MAT_Data_Binder_Structure_Changed",
+      "Text": "materials added, removed or renamed"
     }
   ]
 }
