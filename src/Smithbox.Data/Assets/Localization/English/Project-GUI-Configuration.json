@@ -154,11 +154,11 @@
     },
     {
       "Key": "PROJECT_Configuration_Checkbox_Texture_Viewer",
-      "Text": "Texture Viewer"
+      "Text": "Texture Editor"
     },
     {
       "Key": "PROJECT_Configuration_Checkbox_Texture_Viewer_TT",
-      "Text": "If enabled, the Texture Viewer and associated data will be initialized for this project."
+      "Text": "If enabled, the Texture Editor and associated data will be initialized for this project."
     },
     {
       "Key": "PROJECT_Configuration_Checkbox_File_Browser",

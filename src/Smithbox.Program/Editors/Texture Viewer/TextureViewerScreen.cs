@@ -3,6 +3,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using System.Collections.Generic;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -26,7 +27,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         Shortcuts = new TexShortcuts(this, Project);
     }
 
-    public string EditorName => "";
+    // Shown by the unsaved changes prompt
+    public string EditorName => LOC.Get("TEXVIEW_Texture_Viewer_Stub");
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
     public string WindowName => "";
@@ -160,12 +162,36 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
     }
 
+    /// <summary>
+    /// Writes every container with unsaved texture edits to the project (TextureBank.SaveAll), then the configuration.
+    /// </summary>
     public void Save()
     {
-        // Nothing
+        var bank = Project.Handler?.TextureData?.PrimaryBank;
+
+        if (bank != null && bank.HasUnsavedChanges)
+        {
+            bank.SaveAll();
+        }
 
         // Save the configuration JSONs
         Smithbox.Instance.SaveConfiguration();
+    }
+
+    public void SaveAll()
+    {
+        Save();
+    }
+
+    // Matches what Save writes: every container with an edited TPF
+    public List<string> GetUnsavedFiles()
+    {
+        return Project.Handler?.TextureData?.PrimaryBank?.GetUnsavedFiles() ?? new();
+    }
+
+    public void SaveUnsaved()
+    {
+        Save();
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)

@@ -145,6 +145,16 @@ public class UI
     public Vector4 ImGui_TextEditor_ModifiedTextEntry_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 
     /// <summary>
+    /// Coloring for a Texture Editor container or TPF that the project holds (game data files keep the default color).
+    /// </summary>
+    public Vector4 ImGui_TextureEditor_ProjectFile_Text = new Vector4(0.55f, 0.8f, 1.0f, 1.0f);
+
+    /// <summary>
+    /// Coloring for a Texture Editor container or TPF with unsaved changes.
+    /// </summary>
+    public Vector4 ImGui_TextureEditor_ModifiedFile_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+
+    /// <summary>
     /// Coloring for an unique text entry in the Text Editor.
     /// </summary>
     public Vector4 ImGui_TextEditor_UniqueTextEntry_Text = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);

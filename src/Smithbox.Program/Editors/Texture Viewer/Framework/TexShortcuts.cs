@@ -1,4 +1,5 @@
 ﻿using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using Veldrid;
 
@@ -26,6 +27,26 @@ public class TexShortcuts
 
         if (activeView == null)
             return;
+
+        if (FocusManager.IsInTextureViewer())
+        {
+            // Save
+            if (InputManager.IsPressed(KeybindID.Save))
+            {
+                Editor.Save();
+            }
+
+            // Undo / Redo
+            if (activeView.ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+            {
+                activeView.ActionManager.UndoAction();
+            }
+
+            if (activeView.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+            {
+                activeView.ActionManager.RedoAction();
+            }
+        }
 
         if (InputManager.IsPressed(KeybindID.TextureViewer_Export_Texture))
         {

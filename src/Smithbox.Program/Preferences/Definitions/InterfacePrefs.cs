@@ -852,6 +852,14 @@ public class InterfacePrefs
                     $"{LOC.Get("PREF_CE_ImGui_TextEditor_UniqueTextEntry_Text")}##ImGui_TextEditor_UniqueTextEntry_Text",
                     ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text, flags);
 
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_ProjectFile_Text")}##ImGui_TextureEditor_ProjectFile_Text",
+                    ref UI.Current.ImGui_TextureEditor_ProjectFile_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_ModifiedFile_Text")}##ImGui_TextureEditor_ModifiedFile_Text",
+                    ref UI.Current.ImGui_TextureEditor_ModifiedFile_Text, flags);
+
                 // Logger
                 GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Logger"),

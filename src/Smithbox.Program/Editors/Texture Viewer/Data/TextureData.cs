@@ -12,7 +12,6 @@ public class TextureData : IDisposable
     public ProjectEntry Project;
 
     public TextureBank PrimaryBank;
-    public TextureBank PreviewBank;
 
     public TextureData(ProjectEntry project)
     {
@@ -37,19 +36,8 @@ public class TextureData : IDisposable
             Smithbox.Log(this, LOC.Get("TEXVIEW_DataSetup_Load_Primary_Bank_PASS"));
         }
 
-        PreviewBank = new("Preview", Project, Project.VFS.FS);
-
-        Task<bool> previewBankTask = PreviewBank.Setup();
-        bool previewBankTaskResult = await previewBankTask;
-
-        if (!previewBankTaskResult)
-        {
-            Smithbox.LogError(this, LOC.Get("TEXVIEW_DataSetup_Load_Preview_Bank_FAIL"));
-        }
-        else
-        {
-            Smithbox.Log(this, LOC.Get("TEXVIEW_DataSetup_Load_Preview_Bank_PASS"));
-        }
+        // The Preview bank (a second copy of the same files) was never read by anything and parsed every layout binder
+        // a second time, so it was removed: one bank owns the loaded containers and their edits (Texture Editor plan, T1)
 
         return true;
     }
@@ -58,7 +46,6 @@ public class TextureData : IDisposable
     public void Dispose()
     {
         PrimaryBank?.Dispose();
-        PreviewBank?.Dispose();
     }
     #endregion
 }

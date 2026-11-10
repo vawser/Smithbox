@@ -158,8 +158,35 @@ public class TexContainerList
                         }
                     }
 
+                    // Unsaved changes, then project files, are coloured; game data files keep the default colour
+                    var isModified = entry.Value != null && entry.Value.IsModified;
+                    var isProject = Project.Handler.TextureData.PrimaryBank.IsProjectFile(entry.Key);
+
+                    if (isModified)
+                    {
+                        displayName = $"{displayName} *";
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ModifiedFile_Text);
+                    }
+                    else if (isProject)
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ProjectFile_Text);
+                    }
+
                     // File row
-                    if (ImGui.Selectable($@"{displayName}##{entry.Key.Path}{i}", isSelected))
+                    // ### so the id doesn't change when the marker is added
+                    var clicked = ImGui.Selectable($@"{displayName}###{entry.Key.Path}{i}", isSelected);
+
+                    if (isModified || isProject)
+                    {
+                        ImGui.PopStyleColor();
+                    }
+
+                    if (isModified || isProject)
+                    {
+                        GUI.Tooltip(LOC.Get(isModified ? "TEXVIEW_FileList_Modified_TT" : "TEXVIEW_FileList_Project_File_TT"));
+                    }
+
+                    if (clicked)
                     {
                         LoadTextureBinder = true;
                         TargetDict = dict;

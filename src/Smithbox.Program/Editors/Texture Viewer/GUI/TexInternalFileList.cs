@@ -58,8 +58,23 @@ public class TexInternalFileList
                         isSelected = true;
                     }
 
-                    // Texture row
-                    if (ImGui.Selectable($@"{displayName}", isSelected))
+                    var isModified = View.Selection.SelectedBinder.ModifiedFiles.Contains(file);
+                    if (isModified)
+                    {
+                        displayName = $"{displayName} *";
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextureEditor_ModifiedFile_Text);
+                    }
+
+                    // Texture row (the id stays the file name, so the row keeps its state when the marker appears)
+                    var clicked = ImGui.Selectable($@"{displayName}###{file.Name}{index}", isSelected);
+
+                    if (isModified)
+                    {
+                        ImGui.PopStyleColor();
+                        GUI.Tooltip(LOC.Get("TEXVIEW_FileList_Modified_TT"));
+                    }
+
+                    if (clicked)
                     {
                         View.Selection.SelectTpfFile(entry.Key, entry.Value);
                         View.Editor.ViewHandler.ActiveView = View;

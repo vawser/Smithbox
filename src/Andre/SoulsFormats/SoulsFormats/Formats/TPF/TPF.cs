@@ -65,7 +65,7 @@ namespace SoulsFormats
             Platform = br.GetEnum8<TPFPlatform>(0xC);
             br.BigEndian = Platform == TPFPlatform.Xbox360 || Platform == TPFPlatform.PS3;
 
-            br.ReadInt32(); // Data length
+            int dataLength = br.ReadInt32();
             int fileCount = br.ReadInt32();
             br.Skip(1); // Platform
             Flag2 = br.AssertByte([0, 1, 2, 3]);
@@ -75,6 +75,185 @@ namespace SoulsFormats
             Textures = new List<Texture>(fileCount);
             for (int i = 0; i < fileCount; i++)
                 Textures.Add(new Texture(br, Platform, Flag2, Encoding));
+
+            Layout = TpfLayout.Learn(br, Textures, dataLength, br.Position);
+        }
+
+        /// <summary>
+        /// The byte layout this TPF was read with (data alignment, gaps, trailing bytes, what the data size field counts),
+        /// replayed by Write so an unedited TPF writes back byte-identical. The games pack their textures differently
+        /// from SoulsFormats' default (ER/NR/AC6/SDT/DS3 pack them with no padding at all). Null for a new TPF, or when
+        /// the read layout doesn't fit the model (then Write uses the default layout).
+        /// </summary>
+        public TpfLayout Layout { get; set; }
+
+        /// <summary>See <see cref="Layout"/>.</summary>
+        public class TpfLayout
+        {
+            /// <summary>What the header's data size field counts.</summary>
+            public enum DataSizeRule
+            {
+                /// <summary>End of the last texture minus the start of the first.</summary>
+                LastEndMinusFirstStart,
+                /// <summary>End of the file minus the start of the first texture.</summary>
+                FileEndMinusFirstStart,
+                /// <summary>End of the file minus the end of the names.</summary>
+                FileEndMinusNamesEnd,
+                /// <summary>Sum of the stored texture sizes.</summary>
+                SumOfSizes,
+            }
+
+            /// <summary>Alignment of the first texture's data (1 = right after the names); used when FirstGap is null.</summary>
+            public int FirstAlign { get; set; } = 1;
+
+            /// <summary>Exact bytes between the names and the first texture, when their length isn't an alignment pad.</summary>
+            public byte[] FirstGap { get; set; }
+
+            /// <summary>The original (non-zero) bytes of the first texture's alignment pad, replayed while the pad length is unchanged.</summary>
+            public byte[] FirstPadBytes { get; set; }
+
+            /// <summary>Alignment of every later texture's data (1 = packed back to back).</summary>
+            public int DataAlign { get; set; } = 1;
+
+            /// <summary>Alignment of the end of the file after the last texture; used when Trailing is null.</summary>
+            public int TrailAlign { get; set; } = 1;
+
+            /// <summary>Exact bytes after the last texture, when their length isn't an alignment pad.</summary>
+            public byte[] Trailing { get; set; }
+
+            /// <summary>The original (non-zero) bytes of the trailing alignment pad, replayed while the pad length is unchanged.</summary>
+            public byte[] TrailPadBytes { get; set; }
+
+            /// <summary>What the header's data size field counts.</summary>
+            public DataSizeRule SizeRule { get; set; }
+
+            private static readonly int[] Alignments = [1, 2, 4, 8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800, 0x1000];
+
+            internal static int Pad(long position, int align) => (int)((align - position % align) % align);
+
+            /// <summary>The bytes at offset, or null when they're all zero (the pad writes zeros anyway).</summary>
+            private static byte[] NonZero(BinaryReaderEx br, long offset, int count)
+            {
+                if (count == 0)
+                    return null;
+                var bytes = br.GetBytes(offset, count);
+                foreach (var b in bytes)
+                    if (b != 0)
+                        return bytes;
+                return null;
+            }
+
+            /// <summary>Pads to align, with the original pad bytes when they still fit (PS3 pads aren't zero-filled).</summary>
+            internal static void WritePad(BinaryWriterEx bw, int align, byte[] original)
+            {
+                int n = Pad(bw.Position, align);
+                if (original != null && original.Length == n)
+                    bw.WriteBytes(original);
+                else
+                    for (int i = 0; i < n; i++)
+                        bw.WriteByte(0);
+            }
+
+            internal static TpfLayout Learn(BinaryReaderEx br, List<Texture> textures, int dataLength, long entriesEnd)
+            {
+                try
+                {
+                    if (textures.Count == 0)
+                        return null;
+
+                    // Names must sit right after the entries, in texture order, as Write puts them
+                    long namesEnd = entriesEnd;
+                    foreach (var t in textures)
+                    {
+                        if (t.ReadNameOffset != namesEnd)
+                            return null;
+                        namesEnd = t.ReadNameEnd;
+                    }
+
+                    // Texture data in texture order, not overlapping
+                    var data = textures.Where(t => t.ReadStoredSize > 0).ToList();
+                    if (data.Count == 0)
+                        return null;
+                    for (int i = 1; i < data.Count; i++)
+                        if (data[i].ReadDataOffset < data[i - 1].ReadDataOffset + data[i - 1].ReadStoredSize)
+                            return null;
+
+                    var layout = new TpfLayout();
+                    long first = data[0].ReadDataOffset;
+                    long lastEnd = data[^1].ReadDataOffset + data[^1].ReadStoredSize;
+
+                    // Alignments are learned from the gap lengths; pad contents are kept separately
+                    if (first < namesEnd)
+                        return null;
+                    int firstGap = (int)(first - namesEnd);
+                    var firstAlign = Alignments.Where(a => Pad(namesEnd, a) == firstGap).Cast<int?>().FirstOrDefault();
+                    if (firstAlign != null)
+                    {
+                        layout.FirstAlign = firstAlign.Value;
+                        layout.FirstPadBytes = NonZero(br, namesEnd, firstGap);
+                    }
+                    else
+                    {
+                        layout.FirstGap = br.GetBytes(namesEnd, firstGap);
+                    }
+
+                    int? dataAlign = 1;
+                    if (data.Count > 1)
+                    {
+                        dataAlign = null;
+                        foreach (var a in Alignments)
+                        {
+                            bool fits = true;
+                            for (int i = 1; i < data.Count && fits; i++)
+                            {
+                                long prevEnd = data[i - 1].ReadDataOffset + data[i - 1].ReadStoredSize;
+                                fits = data[i].ReadDataOffset - prevEnd == Pad(prevEnd, a);
+                            }
+                            if (fits) { dataAlign = a; break; }
+                        }
+                    }
+                    if (dataAlign == null)
+                        return null;
+                    layout.DataAlign = dataAlign.Value;
+
+                    for (int i = 1; i < data.Count; i++)
+                    {
+                        long prevEnd = data[i - 1].ReadDataOffset + data[i - 1].ReadStoredSize;
+                        data[i].ReadPadBefore = NonZero(br, prevEnd, (int)(data[i].ReadDataOffset - prevEnd));
+                    }
+
+                    if (br.Length < lastEnd)
+                        return null;
+                    int trailing = (int)(br.Length - lastEnd);
+                    var trailAlign = Alignments.Where(a => Pad(lastEnd, a) == trailing).Cast<int?>().FirstOrDefault();
+                    if (trailAlign != null)
+                    {
+                        layout.TrailAlign = trailAlign.Value;
+                        layout.TrailPadBytes = NonZero(br, lastEnd, trailing);
+                    }
+                    else
+                    {
+                        layout.Trailing = br.GetBytes(lastEnd, trailing);
+                    }
+
+                    if (dataLength == lastEnd - first)
+                        layout.SizeRule = DataSizeRule.LastEndMinusFirstStart;
+                    else if (dataLength == br.Length - first)
+                        layout.SizeRule = DataSizeRule.FileEndMinusFirstStart;
+                    else if (dataLength == br.Length - namesEnd)
+                        layout.SizeRule = DataSizeRule.FileEndMinusNamesEnd;
+                    else if (dataLength == data.Sum(t => (long)t.ReadStoredSize))
+                        layout.SizeRule = DataSizeRule.SumOfSizes;
+                    else
+                        return null;
+
+                    return layout;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
         }
 
         /// <summary>
@@ -103,6 +282,12 @@ namespace SoulsFormats
 
             for (int i = 0; i < Textures.Count; i++)
                 Textures[i].WriteName(bw, i, Encoding);
+
+            if (Layout != null)
+            {
+                WriteDataWithLayout(bw, Layout);
+                return;
+            }
 
             int texturePaddingSize = 0x4;
             if (Platform == TPFPlatform.PS3)
@@ -136,6 +321,53 @@ namespace SoulsFormats
                 bw.FillInt32("DataSize", (int)(bw.Position - dataStart));
             }
 
+        }
+
+        /// <summary>The texture data, padded the way the TPF was read (see <see cref="Layout"/>).</summary>
+        private void WriteDataWithLayout(BinaryWriterEx bw, TpfLayout layout)
+        {
+            long namesEnd = bw.Position;
+            long first = -1;
+            long sizes = 0;
+
+            for (int i = 0; i < Textures.Count; i++)
+            {
+                if (Textures[i].Bytes.Length > 0)
+                {
+                    if (first < 0)
+                    {
+                        if (layout.FirstGap != null)
+                            bw.WriteBytes(layout.FirstGap);
+                        else
+                            TpfLayout.WritePad(bw, layout.FirstAlign, layout.FirstPadBytes);
+                        first = bw.Position;
+                    }
+                    else
+                    {
+                        TpfLayout.WritePad(bw, layout.DataAlign, Textures[i].ReadPadBefore);
+                    }
+                }
+
+                sizes += Textures[i].WriteData(bw, i);
+            }
+
+            if (first < 0)
+                first = bw.Position;
+            long lastEnd = bw.Position;
+
+            if (layout.Trailing != null)
+                bw.WriteBytes(layout.Trailing);
+            else
+                TpfLayout.WritePad(bw, layout.TrailAlign, layout.TrailPadBytes);
+
+            long dataSize = layout.SizeRule switch
+            {
+                TpfLayout.DataSizeRule.FileEndMinusFirstStart => bw.Position - first,
+                TpfLayout.DataSizeRule.FileEndMinusNamesEnd => bw.Position - namesEnd,
+                TpfLayout.DataSizeRule.SumOfSizes => sizes,
+                _ => lastEnd - first,
+            };
+            bw.FillInt32("DataSize", (int)dataSize);
         }
 
         /// <summary>
@@ -355,16 +587,45 @@ namespace SoulsFormats
                     && Bytes[0x88] == (int)DDS.RESOURCE_MISC.TEXTURECUBE && Bytes[0x8C] == 0x6)
                 {
                     Bytes[0x8C] = 0x1;
+                    CubemapFixedBytes = Bytes;
                 }
                 if (encoding == 1)
                     Name = br.GetUTF16(nameOffset);
                 else if (encoding == 0 || encoding == 2)
                     Name = br.GetShiftJIS(nameOffset);
+
+                ReadDataOffset = fileOffset;
+                ReadStoredSize = fileSize;
+                ReadNameOffset = nameOffset;
+                ReadNameEnd = nameOffset + (encoding == 1 ? (Name.Length + 1) * 2 : SFEncoding.ShiftJIS.GetByteCount(Name) + 1);
+                ReadBytes = Bytes;
             }
+
+            // Where the texture was read from, for TpfLayout.Learn
+            internal long ReadDataOffset;
+            internal int ReadStoredSize;
+            internal long ReadNameOffset;
+            internal long ReadNameEnd;
+
+            /// <summary>The original (non-zero) alignment pad before this texture's data, replayed while its length is unchanged.</summary>
+            internal byte[] ReadPadBefore;
+
+            /// <summary>
+            /// The payload as read. While Bytes is still this array the texture is unedited, so Write keeps the header
+            /// fields as read instead of recomputing Type and Mipmaps from the DDS header (DS1/DS1R/DS2 store Mipmaps 1
+            /// for DDS files with no mip count).
+            /// </summary>
+            private byte[] ReadBytes;
+
+            /// <summary>
+            /// The payload the read-time cubemap fix (DX10 arraySize 6 → 1) was applied to. While Bytes is still that
+            /// array, Write puts the original 6 back, so an unedited cubemap writes back as it was read.
+            /// </summary>
+            private byte[] CubemapFixedBytes;
 
             internal void WriteHeader(BinaryWriterEx bw, int index, TPFPlatform platform, byte flag2)
             {
-                if (platform == TPFPlatform.PC)
+                if (platform == TPFPlatform.PC && !ReferenceEquals(Bytes, ReadBytes))
                 {
                     DDS dds = new DDS(Bytes);
                     if (dds.dwCaps2.HasFlag(DDS.DDSCAPS2.CUBEMAP))
@@ -373,7 +634,8 @@ namespace SoulsFormats
                         Type = TexType.Volume;
                     else
                         Type = TexType.Texture;
-                    Mipmaps = (byte)dds.dwMipMapCount;
+                    // A DDS without a mip count has one level; the games store 1 for it (TextureSurvey T0)
+                    Mipmaps = (byte)Math.Max(1, dds.dwMipMapCount);
                 }
 
                 bw.ReserveUInt32($"FileData{index}");
@@ -416,7 +678,8 @@ namespace SoulsFormats
                 //Formerly 'Flags2', as seen in Yabber
                 bw.WriteInt32(FloatStruct == null ? 0 : 1);
 
-                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone || platform == TPFPlatform.NintendoSwitch2)
+                // PS5 too: Read reads the DXGI format for PS4, Xbone, PS5 and Switch 2
+                if (platform == TPFPlatform.PS4 || platform == TPFPlatform.Xbone || platform == TPFPlatform.PS5 || platform == TPFPlatform.NintendoSwitch2)
                     bw.WriteInt32(Header.DXGIFormat);
 
                 if (FloatStruct != null)
@@ -438,6 +701,11 @@ namespace SoulsFormats
                 bw.FillUInt32($"FileData{index}", (uint)bw.Position);
 
                 byte[] bytes = Bytes;
+                if (CubemapFixedBytes != null && ReferenceEquals(Bytes, CubemapFixedBytes) && bytes.Length > 0x8C && bytes[0x8C] == 0x1)
+                {
+                    bytes = (byte[])bytes.Clone();
+                    bytes[0x8C] = 0x6;
+                }
                 if (Flags1 == 2 || Flags1 == 3)
                     bytes = DCX.Compress(bytes, DCX.Type.DCP_EDGE);
 

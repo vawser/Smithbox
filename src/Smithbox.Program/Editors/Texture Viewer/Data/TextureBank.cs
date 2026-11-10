@@ -40,6 +40,8 @@ public class TextureBank : IDisposable
         Task<bool> packedTextureTask = SetupPackedTextures();
         bool packedTextureTaskResult = await packedTextureTask;
 
+        SetupProjectFiles();
+
         Task<bool> shoeboxTask = SetupShoeboxLayouts();
         bool shoeboxTaskResult = await shoeboxTask;
 
@@ -574,6 +576,100 @@ public class TextureBank : IDisposable
         return true;
     }
 
+    #region Save
+    /// <summary>
+    /// Every loaded container with unsaved edits, loose/binder and packed alike.
+    /// </summary>
+    public IEnumerable<KeyValuePair<FileDictionaryEntry, BinderContents>> ModifiedContainers()
+    {
+        foreach (var dict in new[] { Entries, PackedEntries })
+        {
+            if (dict == null)
+                continue;
+
+            foreach (var pair in dict)
+            {
+                if (pair.Value != null && pair.Value.IsModified)
+                    yield return pair;
+            }
+        }
+    }
+
+    public bool HasUnsavedChanges => ModifiedContainers().Any();
+
+    /// <summary>
+    /// The project files the next save writes, for the unsaved changes prompt.
+    /// </summary>
+    public List<string> GetUnsavedFiles()
+    {
+        return ModifiedContainers()
+            .SelectMany(e => e.Value.GetSavePaths(e.Key))
+            .Distinct()
+            .OrderBy(e => e)
+            .ToList();
+    }
+
+    /// <summary>
+    /// Saves every container with unsaved edits. True if all of them were written.
+    /// </summary>
+    public bool SaveAll()
+    {
+        var success = true;
+
+        // Copied: a save clears the container's modified set
+        foreach (var pair in ModifiedContainers().ToList())
+        {
+            if (pair.Value.Save(Project, pair.Key))
+            {
+                foreach (var path in pair.Value.GetSavePaths(pair.Key))
+                    ProjectFiles[path] = true;
+            }
+            else
+            {
+                success = false;
+            }
+        }
+
+        return success;
+    }
+    #endregion
+
+    #region Project Files
+    /// <summary>
+    /// Whether a file comes from the project rather than the game data, by path. Filled on a background thread at
+    /// setup (a stat per file), and updated when the editor saves a file.
+    /// </summary>
+    public Dictionary<string, bool> ProjectFiles = new(StringComparer.OrdinalIgnoreCase);
+
+    public bool IsProjectFile(FileDictionaryEntry entry)
+    {
+        return entry != null && ProjectFiles.TryGetValue(entry.Path, out var isProject) && isProject;
+    }
+
+    private void SetupProjectFiles()
+    {
+        var result = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+        var projectFs = Project.VFS.ProjectFS;
+
+        foreach (var dict in new[] { Entries, PackedEntries })
+        {
+            foreach (var entry in dict.Keys)
+            {
+                try
+                {
+                    result[entry.Path] = projectFs.FileExists(entry.Path);
+                }
+                catch
+                {
+                    result[entry.Path] = false;
+                }
+            }
+        }
+
+        ProjectFiles = result;
+    }
+    #endregion
+
     #region Dispose
     public void Dispose()
     {
@@ -594,6 +690,103 @@ public class BinderContents
     /// This is to mark a 'fake' binder used for the loose TPF files
     /// </summary>
     public bool Loose { get; set; } = false;
+
+    /// <summary>
+    /// The binder files whose TPF has unsaved edits. An unedited TPF is never rewritten, so its bytes stay as read.
+    /// </summary>
+    public HashSet<BinderFile> ModifiedFiles { get; } = new();
+
+    public bool IsModified => ModifiedFiles.Count > 0;
+
+    /// <summary>
+    /// Marks the TPF held by this binder file as edited, so the next save writes it.
+    /// </summary>
+    public void MarkModified(BinderFile file)
+    {
+        if (file != null && Files.ContainsKey(file))
+        {
+            ModifiedFiles.Add(file);
+        }
+    }
+
+    /// <summary>
+    /// The project paths a save of this container writes (the bdt beside a tpfbhd too).
+    /// </summary>
+    public List<string> GetSavePaths(FileDictionaryEntry entry)
+    {
+        if (Binder is BXF3 or BXF4)
+        {
+            return [entry.Path, GetBdtPath(entry.Path)];
+        }
+
+        return [entry.Path];
+    }
+
+    public static string GetBdtPath(string bhdPath) => bhdPath.Replace(".tpfbhd", ".tpfbdt");
+
+    /// <summary>
+    /// Writes the edited TPFs back into their binder files, then the container to the project, each with the
+    /// compression it was read with. TPF and binder writers keep the layout they were read with, so the untouched
+    /// parts stay byte-identical (Texture Editor plan, T0/T1).
+    /// </summary>
+    public bool Save(ProjectEntry project, FileDictionaryEntry entry)
+    {
+        if (!IsModified)
+            return true;
+
+        try
+        {
+            if (Loose)
+            {
+                // The fake binder holds the loose TPF as its only file; the TPF itself is the file on disk
+                var tpf = Files.Values.First();
+                project.VFS.ProjectFS.WriteFile(entry.Path, tpf.Write());
+            }
+            else
+            {
+                foreach (var file in ModifiedFiles)
+                {
+                    file.Bytes = Files[file].Write();
+                }
+
+                switch (Binder)
+                {
+                    case BND3 bnd3:
+                        project.VFS.ProjectFS.WriteFile(entry.Path, bnd3.Write());
+                        break;
+                    case BND4 bnd4:
+                        project.VFS.ProjectFS.WriteFile(entry.Path, bnd4.Write());
+                        break;
+                    case BXF3 bxf3:
+                        {
+                            bxf3.Write(out var bhd, out var bdt);
+                            project.VFS.ProjectFS.WriteFile(entry.Path, bhd);
+                            project.VFS.ProjectFS.WriteFile(GetBdtPath(entry.Path), bdt);
+                            break;
+                        }
+                    case BXF4 bxf4:
+                        {
+                            bxf4.Write(out var bhd, out var bdt);
+                            project.VFS.ProjectFS.WriteFile(entry.Path, bhd);
+                            project.VFS.ProjectFS.WriteFile(GetBdtPath(entry.Path), bdt);
+                            break;
+                        }
+                    default:
+                        Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Unsupported_Container", entry.Path));
+                        return false;
+                }
+            }
+
+            ModifiedFiles.Clear();
+            Smithbox.Log(this, LOC.Get("TEXVIEW_Save_Log_Saved_Container", entry.Path));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXVIEW_Save_Log_Failed_Container", entry.Path), e);
+            return false;
+        }
+    }
 
     public void WriteBinder(string outputPath)
     {

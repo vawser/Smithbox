@@ -213,6 +213,12 @@ namespace SoulsFormats
         public byte Extended { get; set; }
 
         /// <summary>
+        /// Whether the BHF ends padded to 0x10 after the hash table. DS3, SDT, AC6 and NR pad it, BB doesn't; Read sets
+        /// it from the file so a binder writes back as it was read.
+        /// </summary>
+        public bool PadHeaderEnd { get; set; } = true;
+
+        /// <summary>
         /// Creates an empty BXF4 formatted for DS3.
         /// </summary>
 
@@ -251,6 +257,8 @@ namespace SoulsFormats
         {
             ReadBDFHeader(bdtReader);
             List<BinderFileHeader> fileHeaders = ReadBHFHeader(this, bhdReader);
+            // A BHF that ends off a 0x10 boundary wasn't padded (BB); one that ends on it was, or didn't need it
+            PadHeaderEnd = bhdReader.Length % 0x10 == 0;
             Files = new List<BinderFile>(fileHeaders.Count);
             foreach (BinderFileHeader fileHeader in fileHeaders)
                 Files.Add(fileHeader.ReadFileData(bdtReader));
@@ -399,6 +407,10 @@ namespace SoulsFormats
                 bw.Pad(0x8);
                 bw.FillInt64("HashTableOffset", bw.Position);
                 BinderHashTable.Write(bw, fileHeaders);
+
+                // DS3/SDT/AC6/NR BHF4 headers end on a 0x10 boundary (their tpfbhd were 8 bytes short without this), BB's don't
+                if (bxf is not BXF4 b || b.PadHeaderEnd)
+                    bw.Pad(0x10);
             }
             else
             {

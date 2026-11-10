@@ -138,7 +138,7 @@
     },
     {
       "Key": "SYS_OpenGL_Texture_Viewer_Blocked",
-      "Text": "The texture viewer for this editor is disabled as the Smithbox.OpenGL executable was used."
+      "Text": "The texture editor for this editor is disabled as the Smithbox.OpenGL executable was used."
     },
     {
       "Key": "SYS_OpenGL_Icon_Preview_Blocked",

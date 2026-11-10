@@ -10,6 +10,9 @@
 
 - Get gizmos to work in Orthographic/Oblique view mode
 
+- Col Editor:
+    - Add support for DES/DS1/DS1R/DS2/DS2S/BB
+
 - Nav Editor:
     - Add navigation editor support for the other project types: DS1/DS1R/DES
 

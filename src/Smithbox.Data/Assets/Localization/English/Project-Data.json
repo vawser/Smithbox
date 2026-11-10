@@ -90,11 +90,11 @@
     },
     {
       "Key": "PROJECT_Data_Setup_Texture_Data_PASS",
-      "Text": "[Texture Viewer] Setup the Texture Bank."
+      "Text": "[Texture Editor] Setup the Texture Bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Texture_Data_FAIL",
-      "Text": "[Texture Viewer] Failed to setup Texture Bank."
+      "Text": "[Texture Editor] Failed to setup Texture Bank."
     },
     {
       "Key": "PROJECT_Data_Setup_Anim_Data_PASS",
