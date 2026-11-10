@@ -28,6 +28,7 @@ public class TexEditorView : IEditorView
     public TextureImport TextureImport;
     public TpfCommands Commands;
     public TexNamePrompt NamePrompt = new();
+    public LayoutEditor LayoutEditor;
 
     /// <summary>Which list the mouse was last over, so Copy/Paste/Duplicate/Delete act on its items.</summary>
     public enum ListFocus { None, Containers, Tpfs, Textures }
@@ -51,6 +52,7 @@ public class TexEditorView : IEditorView
         TextureList = new TexTextureFileList(this, Project);
         TextureImport = new TextureImport(this, Project);
         Commands = new TpfCommands(this, Project);
+        LayoutEditor = new LayoutEditor(this, Project);
         ToolView = new TexToolView(this, Project);
 
         DisplayViewport = new TexDisplayViewport(this, Project);
@@ -157,6 +159,26 @@ public class TexEditorView : IEditorView
                 }
 
                 Properties.Display();
+            }
+
+            ImGui.End();
+        }
+
+        // Layout (T5)
+        if (CFG.Current.Interface_TextureViewer_Layout)
+        {
+            ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowClass(ref GUI.DockGroup_TextureViewerView);
+            if (ImGui.Begin($@"{LOC.Get("TEXVIEW_Window_Layout")}###textureEditor_Layout_{viewIndex}", GUI.GetInnerWindowFlags()))
+            {
+                if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                {
+                    FocusManager.SetFocus(EditorFocusContext.TextureViewer_Properties);
+                    FocusedList = ListFocus.None;
+                    Editor.ViewHandler.ActiveView = this;
+                }
+
+                LayoutEditor.DisplayWindow();
             }
 
             ImGui.End();

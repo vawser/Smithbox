@@ -141,6 +141,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
+            if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Layout")}##layoutViewToggle"))
+            {
+                CFG.Current.Interface_TextureViewer_Layout = !CFG.Current.Interface_TextureViewer_Layout;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Layout);
+
             if (ImGui.MenuItem($"{LOC.Get("TEXVIEW_Menubar_Toggle_View_Tools")}##toolsViewToggle"))
             {
                 CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;

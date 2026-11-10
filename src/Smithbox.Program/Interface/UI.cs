@@ -154,6 +154,12 @@ public class UI
     /// </summary>
     public Vector4 ImGui_TextureEditor_ModifiedFile_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 
+    /// <summary>Texture Editor layout overlay: cell outlines, the hovered cell, selected cells, half-resolution cells.</summary>
+    public Vector4 ImGui_TextureEditor_Cell = new Vector4(0.35f, 0.8f, 1.0f, 0.7f);
+    public Vector4 ImGui_TextureEditor_Cell_Hovered = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+    public Vector4 ImGui_TextureEditor_Cell_Selected = new Vector4(1.0f, 0.75f, 0.1f, 1.0f);
+    public Vector4 ImGui_TextureEditor_Cell_Half = new Vector4(0.8f, 0.45f, 1.0f, 0.8f);
+
     /// <summary>
     /// Coloring for an unique text entry in the Text Editor.
     /// </summary>

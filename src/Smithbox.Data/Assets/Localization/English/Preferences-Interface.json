@@ -505,6 +505,22 @@
       "Text": "Texture Editor File (Unsaved Changes)"
     },
     {
+      "Key": "PREF_CE_ImGui_TextureEditor_Cell",
+      "Text": "Texture Editor Layout Cell"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TextureEditor_Cell_Hovered",
+      "Text": "Texture Editor Layout Cell (Hovered)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TextureEditor_Cell_Selected",
+      "Text": "Texture Editor Layout Cell (Selected)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_TextureEditor_Cell_Half",
+      "Text": "Texture Editor Layout Cell (Half Resolution)"
+    },
+    {
       "Key": "PREF_CE_ImGui_Logger_Information_Color",
       "Text": "Information Text"
     },

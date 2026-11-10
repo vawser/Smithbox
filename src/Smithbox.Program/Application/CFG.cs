@@ -1190,6 +1190,12 @@ public class CFG
     // Windows
     public bool Interface_TextureViewer_ToolWindow = true;
     public bool Interface_TextureViewer_Properties = true;
+    public bool Interface_TextureViewer_Layout = true;
+
+    // Layout editor (T5)
+    public bool TextureViewerLayout_ShowCells = true;
+    public bool TextureViewerLayout_ShowNames = false;
+    public int TextureViewerLayout_Snap = 1;
 
     // Tools
     public bool Interface_TextureViewer_Tool_ExportTexture = true;

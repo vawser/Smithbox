@@ -860,6 +860,22 @@ public class InterfacePrefs
                     $"{LOC.Get("PREF_CE_ImGui_TextureEditor_ModifiedFile_Text")}##ImGui_TextureEditor_ModifiedFile_Text",
                     ref UI.Current.ImGui_TextureEditor_ModifiedFile_Text, flags);
 
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_Cell")}##ImGui_TextureEditor_Cell",
+                    ref UI.Current.ImGui_TextureEditor_Cell, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_Cell_Hovered")}##ImGui_TextureEditor_Cell_Hovered",
+                    ref UI.Current.ImGui_TextureEditor_Cell_Hovered, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_Cell_Selected")}##ImGui_TextureEditor_Cell_Selected",
+                    ref UI.Current.ImGui_TextureEditor_Cell_Selected, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_TextureEditor_Cell_Half")}##ImGui_TextureEditor_Cell_Half",
+                    ref UI.Current.ImGui_TextureEditor_Cell_Half, flags);
+
                 // Logger
                 GUI.SimpleHeader(
                     LOC.Get("PREF_Theme_Editor_Logger"),

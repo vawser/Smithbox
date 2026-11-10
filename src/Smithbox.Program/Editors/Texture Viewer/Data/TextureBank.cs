@@ -595,7 +595,13 @@ public class TextureBank : IDisposable
         }
     }
 
-    public bool HasUnsavedChanges => ModifiedContainers().Any();
+    /// <summary>The shoebox layout containers with unsaved layout edits (T4).</summary>
+    public IEnumerable<ShoeboxLayoutContainer> ModifiedLayoutContainers()
+    {
+        return ShoeboxEntries?.Values.Where(c => c != null && c.IsModified) ?? Enumerable.Empty<ShoeboxLayoutContainer>();
+    }
+
+    public bool HasUnsavedChanges => ModifiedContainers().Any() || ModifiedLayoutContainers().Any();
 
     /// <summary>
     /// The project files the next save writes, for the unsaved changes prompt.
@@ -604,6 +610,7 @@ public class TextureBank : IDisposable
     {
         return ModifiedContainers()
             .SelectMany(e => e.Value.GetSavePaths(e.Key))
+            .Concat(ModifiedLayoutContainers().SelectMany(c => c.GetUnsavedFiles()))
             .Distinct()
             .OrderBy(e => e)
             .ToList();
@@ -623,6 +630,19 @@ public class TextureBank : IDisposable
             {
                 foreach (var path in pair.Value.GetSavePaths(pair.Key))
                     ProjectFiles[path] = true;
+            }
+            else
+            {
+                success = false;
+            }
+        }
+
+        foreach (var layouts in ModifiedLayoutContainers().ToList())
+        {
+            if (layouts.Save())
+            {
+                if (!layouts.IsBundled)
+                    ProjectFiles[layouts.FileEntry.Path] = true;
             }
             else
             {

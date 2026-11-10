@@ -35,6 +35,10 @@ public class TexDisplayViewport
 
                 var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
                 ImGui.Image(textureId, size);
+
+                // Shoebox layout cells over the image (T5); the image's rect replaces the old fixed-offset mapping
+                var imageMin = ImGui.GetItemRectMin();
+                Parent.LayoutEditor.DrawOverlay(imageMin, size, GetImageSize(texRes, false));
             }
         }
     }

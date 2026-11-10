@@ -55,38 +55,19 @@ public class TexProperties
                 sizeX = size.X;
                 sizeY = size.Y;
 
-                relativePos = Parent.DisplayViewport.GetRelativePosition(
-                    size,
-                    Parent.Selection.TextureViewWindowPosition,
-                    Parent.Selection.TextureViewScrollPosition);
+                // From the layout overlay: the image's own rect, and the layout paired with this TPF (T5), instead of
+                // fixed window offsets and the first layout binder
+                relativePos = Parent.LayoutEditor.MouseSheetPosition ?? new Vector2(-1, -1);
 
                 if (Parent.Selection.ViewerTextureResource.GPUTexture != null)
                 {
                     format = $"{Parent.Selection.ViewerTextureResource.GPUTexture.Format}".ToUpper();
                 }
 
-                if (Project.Handler.TextureData.PrimaryBank.ShoeboxEntries != null)
+                var hovered = Parent.LayoutEditor.Hovered;
+                if (hovered != null)
                 {
-                    var shoeboxEntry = Project.Handler.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
-
-                    if (shoeboxEntry.Value != null)
-                    {
-                        if (shoeboxEntry.Value.Textures.ContainsKey(Parent.Selection.SelectedTextureKey))
-                        {
-                            var subTexs = shoeboxEntry.Value.Textures[Parent.Selection.SelectedTextureKey];
-                            foreach (var entry in subTexs)
-                            {
-                                string IconName;
-                                bool IsMatch;
-                                (IconName, IsMatch) = Parent.DisplayViewport.MatchMousePosToIcon(entry, relativePos);
-
-                                if (IsMatch)
-                                {
-                                    iconName = IconName;
-                                }
-                            }
-                        }
-                    }
+                    iconName = hovered.Name.EndsWith(".png", System.StringComparison.OrdinalIgnoreCase) ? hovered.Name[..^4] : hovered.Name;
                 }
             }
         }
