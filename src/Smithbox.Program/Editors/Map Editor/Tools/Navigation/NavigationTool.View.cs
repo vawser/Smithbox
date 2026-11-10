@@ -442,7 +442,7 @@ public partial class NavigationTool
         BlockerOverlayDirty = true;
         GateOverlayDirty = true;
 
-        if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry) == OverlaySet)
+        if (keep != null && keepSet == OverlaySet && navigation.Files.Values.Contains(keep.File) && NavigationMap.SetOf(keep.Entry, Bank.Profile) == OverlaySet)
             SetPicked(keep);
     }
 

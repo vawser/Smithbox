@@ -158,7 +158,10 @@ public static class NavStitchPlanner
             .Where(e => e.Unk4C != 1)
             .Select(e => (Entry: e, File: map.FileOf(e)))
             .Where(x => x.File?.Mesh != null && x.File.Mesh.m_faces.Count > 0)
-            .Select(x => new NavStitchMesh(x.Entry.NameID, x.File.Mesh, x.Entry.Position + offset, map.MapId))
+            // A rotated or scaled entry (DS3, BB) turns and moves its mesh by its matrix; the rest move by Position only
+            .Select(x => NavigationMap.EntryPlacement(x.Entry) is Matrix4x4 turn
+                ? new NavStitchMesh(x.Entry.NameID, x.File.Mesh, offset, map.MapId, turn)
+                : new NavStitchMesh(x.Entry.NameID, x.File.Mesh, x.Entry.Position + offset, map.MapId))
             .ToList();
 
     /// <summary>Every connection stored in the map's NVA and in its NVC files.</summary>

@@ -173,20 +173,28 @@ public partial class NavigationTool
             if (DuplicateTarget == ModelTarget.New)
             {
                 int id = DuplicateNewModelId;
-                var offset = DuplicateOffset;
+                var offset = MeshSpaceOffset(map, selected.NEntry, DuplicateOffset);
                 EditModel(map, navigation, () => NavModelEdit.Add(navigation, id, NavModelEdit.TranslatedCopy(selected.NFile.Document, offset),
-                    hasO ? NavModelEdit.TranslatedCopy(selected.OFile.Document, offset) : null),
+                    hasO ? NavModelEdit.TranslatedCopy(selected.OFile.Document, offset) : null, selected.NEntry),
                     LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, id));
             }
             else
             {
                 var slot = slots.First(s => s.ModelID == SlotModelID);
-                EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, DuplicateOffset),
+                var offset = MeshSpaceOffset(map, selected.NEntry, DuplicateOffset);
+                EditModel(map, navigation, () => NavModelEdit.Duplicate(navigation, selected, slot, offset),
                     LOC.Get("MAP_Navigation_Models_Duplicated", selected.ModelID, slot.ModelID));
             }
         }
         GUI.Tooltip(LOC.Get("MAP_Navigation_Models_Duplicate_TT"));
     }
+
+    /// <summary>
+    /// A map-space offset in an entry's mesh space, where a copy's vertices move: the same in ER, where entries are at the
+    /// identity, but turned for DS3 and BB entries placed with a rotation (or scaled).
+    /// </summary>
+    private static Vector3 MeshSpaceOffset(MapContainer map, SoulsFormats.NVA.Navmesh entry, Vector3 offset)
+        => Matrix4x4.Invert(GateToMap(map)(entry), out var toMesh) ? Vector3.TransformNormal(offset, toMesh) : offset;
 
     /// <summary>
     /// The choice of where a model edit puts its new files: in place of the selected model (when given), into a free

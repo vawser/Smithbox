@@ -155,10 +155,14 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Triangles_Only_TT"));
 
         // Jump and fall links
-        bool links = p.Links;
+        // Only where links are user edges in the mesh; DS3, BB and SDT build theirs from setups
+        bool links = p.Links && Bank.Profile.HasMeshUserEdges;
         float jumpHeight = p.JumpHeight, fallHeight = p.FallHeight, reach = p.LinkReach;
-        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Links")}##navigationGenerateLinks_{id}", ref links);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Links_TT"));
+        if (Bank.Profile.HasMeshUserEdges)
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Generate_Links")}##navigationGenerateLinks_{id}", ref links);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Generate_Links_TT"));
+        }
 
         if (links)
         {
@@ -496,7 +500,8 @@ public partial class NavigationTool
         if (intoSlot && GenerateNameAfterCollision && preferredId >= 0)
             modelId = preferredId;
 
-        var pn = GenerateN;
+        // Generated links are mesh user edges, which DS3, BB and SDT don't have
+        var pn = navigation.Profile.HasMeshUserEdges ? GenerateN : GenerateN with { Links = false };
         var po = GenerateO;
         // A game with the n set only (AC6) generates no o mesh
         bool hasO = navigation.Profile.HasOSet;

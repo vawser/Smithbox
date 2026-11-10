@@ -35,7 +35,8 @@ public class NavigationBank
         Project = project;
     }
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT or ProjectType.AC6;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT or ProjectType.AC6
+        or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT;
 
     /// <summary>The navigation rules of the project's game.</summary>
     public NavGameProfile Profile => NavGameProfile.For(Project.Descriptor.ProjectType.ToString());

@@ -516,8 +516,10 @@ namespace SoulsFormats
             public float PositionW { get; set; }
 
             /// <summary>
-            /// Rotation of the mesh, in radians.
+            /// Rotation of the mesh, in radians. The game's gate nodes (map space) sit on their mesh's edges when it is
+            /// read so: 99.0 % within 1 m in DS3, 99.4 % in BB, against 30 % and 6 % read as degrees (NavSurvey placement).
             /// </summary>
+            [RotationRadians]
             public Vector3 Rotation { get; set; }
             public float RotationW { get; set; }
 

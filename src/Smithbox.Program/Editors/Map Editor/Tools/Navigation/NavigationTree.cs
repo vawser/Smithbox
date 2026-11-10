@@ -56,6 +56,12 @@ public static class NavigationTree
         if (mesh.CachedFaceTree is { HasNodes: true } own && !trees.Contains(own))
             trees.Add(own);
 
+        // hk2014 (DS3, BB): a bare AABB tree next to the file's one mesh
+        if (document.Root is IHavokRootContainerEdit root && document.ObjectsOf<IHavokNavMeshEdit>().Take(2).Count() == 1)
+            foreach (var loose in root.LooseFaceTrees)
+                if (loose.HasNodes && !trees.Contains(loose))
+                    trees.Add(loose);
+
         return trees;
     }
 

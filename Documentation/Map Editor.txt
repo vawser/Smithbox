@@ -6,6 +6,7 @@
 - NR MSB: research/sync with ER
 - AC MSB: research
 - Display Group: UX assessment
+- ONAV v2 for AC6
 
 - Get gizmos to work in Orthographic/Oblique view mode
 
@@ -16,7 +17,7 @@
         - Plane 
         - Box
 
-- Nav Edito:
+- Nav Editor:
     - Add navigation editor support for the other project types (for those that use the same type as ER)
     - Add more generation options to allow for a more generous mesh (i.e. let it spill edges so jump/fall links work consistently)
 

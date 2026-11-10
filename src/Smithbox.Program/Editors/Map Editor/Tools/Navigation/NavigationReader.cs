@@ -76,7 +76,7 @@ public static class NavigationReader
             Name = name,
             Document = document,
             Mesh = document.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault(),
-            HasMediator = document.ObjectsOf<IHavokNavMeshQueryMediator>().Any()
+            HasMediator = NavigationTree.HasTree(document) || document.ObjectsOf<IHavokNavMeshQueryMediator>().Any()
                 || document.ObjectsOf<IHavokNavMeshEdit>().Any(m => m.CachedFaceTree != null),
             HasClearanceCache = document.ObjectsOf<IHavokNavClearanceCache>().Any(),
         };

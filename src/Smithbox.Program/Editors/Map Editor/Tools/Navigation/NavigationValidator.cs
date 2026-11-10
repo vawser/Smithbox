@@ -1,3 +1,4 @@
+using Havok.Shared;
 using SoulsFormats;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,7 @@ public enum NavIssueCode
 
     // Navmesh files
     MediatorMissing,
+    CostGraphMismatch,
 
     // Connections, in NVA connectors and NVC files
     ConnectorNavmeshMissing,
@@ -113,16 +115,17 @@ public static class NavigationValidator
         for (int i = 0; i < navmeshes.Count; i++)
         {
             var n = navmeshes[i];
-            var set = NavigationMap.SetOf(n);
+            var set = NavigationMap.SetOf(n, map.Profile);
 
-            if (!seenIds.Add(n.NameID))
+            if ((uint)n.NameID != NavGameProfile.NoNameId && !seenIds.Add(n.NameID))
                 issues.Add(new(NavIssueSeverity.Error, NavIssueCode.NameIdDuplicate, file, (uint)n.NameID));
 
             if (set == NavmeshSet.N)
             {
-                // An n entry's NameID ends in its position in the list
-                uint expected = map.ExpectedNameId(i);
-                if ((uint)n.NameID != expected)
+                // An n entry's NameID by the game's rule: its position in the list (ER), or its ModelID (DS3, SDT). The
+                // -1 of a placeholder without a NameID, and a game without one rule (BB), aren't checked
+                bool unnamed = (uint)n.NameID == NavGameProfile.NoNameId && n.FaceCount == 0;
+                if (!unnamed && map.Profile.ExpectedNameId(map.NameBase, i, n.ModelID) is uint expected && (uint)n.NameID != expected)
                     issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.NameIdRule, file, i, (uint)n.NameID, expected));
             }
             else
@@ -175,7 +178,7 @@ public static class NavigationValidator
         var gates = n.GateNodes;
         uint id = (uint)n.NameID;
 
-        if (gates.Count > NavGates.MaxGates)
+        if (gates.Count > map.Profile.MaxGates)
             issues.Add(new(NavIssueSeverity.Error, NavIssueCode.GateCount, file, id, gates.Count));
 
         for (int g = 0; g < gates.Count; g++)
@@ -249,8 +252,14 @@ public static class NavigationValidator
     {
         foreach (var f in map.Files.Values)
         {
-            if (f.FaceCount > 0 && !f.HasMediator)
+            // SDT keeps no face tree in its navmesh files
+            if (map.Profile.HasFaceTree && f.FaceCount > 0 && !f.HasMediator)
                 issues.Add(new(NavIssueSeverity.Warning, NavIssueCode.MediatorMissing, $"{f.Name}.hkx", f.FaceCount));
+
+            // DS3, BB and SDT: the file's cost graph must match its mesh's clusters, or the game's hierarchical paths
+            // go through faces that aren't there
+            if (f.Mesh != null && NavCostGraph.Of(f.Document) is IHavokDirectedGraphEdit graph && NavCostGraph.Check(graph, f.Mesh) is string problem)
+                issues.Add(new(NavIssueSeverity.Error, NavIssueCode.CostGraphMismatch, $"{f.Name}.hkx", problem));
         }
     }
 

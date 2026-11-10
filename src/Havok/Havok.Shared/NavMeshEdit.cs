@@ -222,6 +222,20 @@ public interface IHavokRootContainerEdit
 
     /// <summary>Takes out the named variants whose object doesn't pass, and returns how many went.</summary>
     int KeepOnly(Func<object?, bool> keep);
+
+    /// <summary>
+    /// Face trees held by the root itself rather than by a query mediator or the mesh: hk2014's bare hkcdStaticAabbTree
+    /// next to the mesh (DS3, BB). Empty in the other SDKs, whose trees the mesh or its mediator reach.
+    /// </summary>
+    IReadOnlyList<IHavokNavFaceTree> LooseFaceTrees { get; }
+
+    /// <summary>The named variants: the name and class name the file gives each object.</summary>
+    IReadOnlyList<(string? Name, string? ClassName, object? Variant)> NamedVariants { get; }
+
+    /// <summary>
+    /// Adds an empty hkaiUserEdgeSetupArray of the root's own class set, named as given, and returns it.
+    /// </summary>
+    IHavokNavUserEdgeSetups AddUserEdgeSetups(string name, string className);
 }
 
 /// <summary>hkaiUserEdgeSetupArray: the user edges a navmesh was set up with.</summary>
@@ -229,6 +243,55 @@ public interface IHavokNavUserEdgeSetups
 {
     /// <summary>Moves the boxes of the setups placed in world space by an offset (local ones follow their mesh).</summary>
     void TranslateWorldSpace(Vector3 offset);
+
+    IReadOnlyList<HavokUserEdgeSetup> Setups { get; }
+
+    void Add(HavokUserEdgeSetup setup);
+
+    void RemoveAt(int index);
+}
+
+/// <summary>
+/// hkaiUserEdgeUtils::UserEdgeSetup, the same in every SDK: two oriented boxes the game joins with user edges when the
+/// navmesh loads (DS3, BB, SDT build their jump and drop links so). Box A is where the link starts, B where it lands;
+/// each box's transform has its translation in M41..M43 and its x axis along the edge.
+/// </summary>
+public sealed record HavokUserEdgeSetup(
+    Matrix4x4 TransformA, Vector4 HalfExtentsA,
+    Matrix4x4 TransformB, Vector4 HalfExtentsB,
+    uint UserDataA, uint UserDataB,
+    float CostAtoB, float CostBtoA,
+    Vector4 WorldUpA, Vector4 WorldUpB,
+    HavokUserEdgeDirection Direction,
+    bool WorldSpace,
+    bool ForceAlign);
+
+/// <summary>hkaiUserEdgeUtils::UserEdgeDirection.</summary>
+public enum HavokUserEdgeDirection
+{
+    Blocked = 0,
+    AToB = 1,
+    BToA = 2,
+    Bidirectional = 3,
+}
+
+/// <summary>
+/// hkaiDirectedGraphExplicitCost, editable (hk2014 and hk2016: DS3, BB, SDT). Each file has one, a cluster graph over its
+/// mesh: one node per cluster (Face.m_clusterIndex), at a face centre, and an edge each way between clusters that touch
+/// (NavSurvey costgraph). Its edges have no flags and the graph no node or edge data in those games.
+/// </summary>
+public interface IHavokDirectedGraphEdit : IHavokDirectedGraph
+{
+    List<Vector4> m_positions { get; }
+
+    int EdgeCount { get; }
+
+    float GetEdgeCost(int edge);
+
+    void SetEdgeCost(int edge, float cost);
+
+    /// <summary>Replaces the nodes, their positions and their edges (each node's edges in order, flags 0).</summary>
+    void Replace(IReadOnlyList<Vector4> positions, IReadOnlyList<IReadOnlyList<(int Target, float Cost)>> edgesOfNode);
 }
 
 /// <summary>hkaiNavMesh, editable.</summary>

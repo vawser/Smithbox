@@ -533,7 +533,7 @@ public partial class NavigationTool
 
         foreach (var entry in OverlayNavigation.Nva.Navmeshes)
         {
-            bool sameSet = NavigationMap.SetOf(entry) == NavigationMap.SetOf(target.File.Entry);
+            bool sameSet = NavigationMap.SetOf(entry, Bank.Profile) == NavigationMap.SetOf(target.File.Entry, Bank.Profile);
 
             if (sameSet ? !VertexLinkNeighbours : !VertexLinkOtherSet)
                 continue;
@@ -627,7 +627,7 @@ public partial class NavigationTool
 
         foreach (var (name, file) in VertexFiles)
         {
-            if (file.IsEdited && NavigationMap.SetOf(file.Entry) == OverlaySet && IsEntryDrawn(file.Entry))
+            if (file.IsEdited && NavigationMap.SetOf(file.Entry, Bank.Profile) == OverlaySet && IsEntryDrawn(file.Entry))
                 names.Add(name);
         }
 

@@ -941,11 +941,13 @@ public static class NavGenFile
     {
         var copy = NavModelEdit.Clone(template);
         var mesh = copy.ObjectsOf<IHavokNavMeshEdit>().FirstOrDefault();
-        // hk2018 holds the face tree in a query mediator, hk2019 in the mesh's own cached face iterator
+        // hk2018 holds the face tree in a query mediator, hk2019 in the mesh's own cached face iterator, hk2014 (DS3,
+        // BB) next to the mesh; SDT has none, but a cost graph, as DS3 and BB do
         var mediator = copy.ObjectsOf<IHavokNavMeshQueryMediator>().FirstOrDefault();
-        var tree = mediator != null ? mediator.FaceTree : mesh?.CachedFaceTree;
+        var trees = mesh == null ? new List<IHavokNavFaceTree>() : NavigationTree.TreesOf(copy, mesh);
+        var graph = NavCostGraph.Of(copy);
 
-        if (mesh == null || tree is not { HasNodes: true })
+        if (mesh == null || (trees.Count == 0 && graph == null))
             return null;
 
         mesh.m_faces.Clear();
@@ -967,21 +969,29 @@ public static class NavGenFile
 
         if (mediator != null)
             mediator.NavMesh = mesh;
-        NavigationTree.Build(mesh).WriteTo(tree);
+        foreach (var tree in trees)
+            NavigationTree.Build(mesh).WriteTo(tree);
 
+        // The cost graph's clusters and nodes, over the new faces
+        if (graph != null)
+            NavCostGraph.Rebuild(graph, mesh);
+
+        // The mesh, its tree (the mediator, or hk2014's loose tree) and its cost graph stay; user edge setups go
         if (copy.Root is IHavokRootContainerEdit root)
-            root.KeepOnly(v => ReferenceEquals(v, mesh) || ReferenceEquals(v, mediator));
+            root.KeepOnly(v => ReferenceEquals(v, mesh) || ReferenceEquals(v, mediator) || ReferenceEquals(v, graph)
+                || (trees.Count > 0 && v?.GetType().Name == "hkcdStaticAabbTree"));
 
         return NavModelEdit.Clone(copy);
     }
 
     /// <summary>
     /// A file of the map to build generated files from: one with faces and a face tree (a query mediator in hk2018,
-    /// a cached face iterator in hk2019).
+    /// a cached face iterator in hk2019, the tree next to the mesh in hk2014) or a cost graph (SDT).
     /// </summary>
     public static Havok.HavokDocument FindTemplate(NavigationMap map)
         => map.Files.Values.Where(f => f.FaceCount > 0 && f.Document != null)
             .Select(f => f.Document)
             .FirstOrDefault(d => d.ObjectsOf<IHavokNavMeshQueryMediator>().Any()
-                || d.ObjectsOf<IHavokNavMeshEdit>().Any(m => m.CachedFaceTree != null));
+                || d.ObjectsOf<IHavokNavMeshEdit>().Any(m => m.CachedFaceTree != null)
+                || NavigationTree.HasTree(d) || NavCostGraph.Of(d) != null);
 }

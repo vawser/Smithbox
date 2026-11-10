@@ -128,7 +128,75 @@ public partial class hkRootLevelContainer : IHavokRootContainerEdit
     IEnumerable<object> IHavokRootContainerEdit.Variants => m_namedVariants.Select(v => (object?)v.m_variant).Where(v => v != null)!;
 
     int IHavokRootContainerEdit.KeepOnly(Func<object?, bool> keep) => m_namedVariants.RemoveAll(v => !keep(v.m_variant));
+
+    IReadOnlyList<(string? Name, string? ClassName, object? Variant)> IHavokRootContainerEdit.NamedVariants
+        => m_namedVariants.Select(v => (v.m_name, v.m_className, (object?)v.m_variant)).ToList();
+
+    IHavokNavUserEdgeSetups IHavokRootContainerEdit.AddUserEdgeSetups(string name, string className)
+    {
+        var setups = new hkaiUserEdgeSetupArray();
+        m_namedVariants.Add(new NamedVariant { m_name = name, m_className = className, m_variant = setups });
+        return setups;
+    }
+
+#if HK2014
+    IReadOnlyList<IHavokNavFaceTree> IHavokRootContainerEdit.LooseFaceTrees
+        => m_namedVariants.Select(v => v.m_variant).OfType<hkcdStaticAabbTree>().Select(t => (IHavokNavFaceTree)new LooseAabbTree(t)).ToList();
+#else
+    IReadOnlyList<IHavokNavFaceTree> IHavokRootContainerEdit.LooseFaceTrees => Array.Empty<IHavokNavFaceTree>();
+#endif
 }
+
+#if HK2014
+/// <summary>
+/// hk2014's hkcdStaticAabbTree as a face tree. Its storage (DefaultTreeStorage6) holds the domain and the nodes itself,
+/// in the 6-byte codec hk2018's Aabb6BytesTree uses. Not partial in this SDK, so it is wrapped rather than implemented.
+/// </summary>
+internal sealed class LooseAabbTree : IHavokNavFaceTree
+{
+    private readonly hkcdStaticAabbTree _tree;
+
+    public LooseAabbTree(hkcdStaticAabbTree tree) => _tree = tree;
+
+    public bool HasNodes => _tree.m_treePtr != null;
+
+    public Vector4 DomainMin
+    {
+        get => _tree.m_treePtr?.m_domain.m_min ?? default;
+        set { if (_tree.m_treePtr != null) _tree.m_treePtr.m_domain.m_min = value; }
+    }
+
+    public Vector4 DomainMax
+    {
+        get => _tree.m_treePtr?.m_domain.m_max ?? default;
+        set { if (_tree.m_treePtr != null) _tree.m_treePtr.m_domain.m_max = value; }
+    }
+
+    public IReadOnlyList<HavokNavTreeNode> GetNodes() =>
+        _tree.m_treePtr?.m_nodes.Select(n => new HavokNavTreeNode(n.m_xyz[0], n.m_xyz[1], n.m_xyz[2], n.m_hiData, n.m_loData)).ToList()
+        ?? new List<HavokNavTreeNode>();
+
+    public void SetNodes(Vector4 domainMin, Vector4 domainMax, IReadOnlyList<HavokNavTreeNode> nodes)
+    {
+        if (_tree.m_treePtr == null)
+            throw new InvalidOperationException("The tree has no storage (m_treePtr) to hold nodes.");
+
+        _tree.m_treePtr.m_domain = new hkAabb { m_min = domainMin, m_max = domainMax };
+        _tree.m_treePtr.m_nodes = nodes.Select(node =>
+        {
+            var codec = new hkcdStaticTreeCodec3Axis6 { m_hiData = node.HiData, m_loData = node.LoData };
+            codec.m_xyz[0] = node.X;
+            codec.m_xyz[1] = node.Y;
+            codec.m_xyz[2] = node.Z;
+            return codec;
+        }).ToList();
+    }
+
+    public override bool Equals(object? obj) => obj is LooseAabbTree other && ReferenceEquals(other._tree, _tree);
+
+    public override int GetHashCode() => System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(_tree);
+}
+#endif
 
 public partial class hkaiUserEdgeSetupArray : IHavokNavUserEdgeSetups
 {
@@ -144,6 +212,28 @@ public partial class hkaiUserEdgeSetupArray : IHavokNavUserEdgeSetups
         }
     }
 
+    IReadOnlyList<HavokUserEdgeSetup> IHavokNavUserEdgeSetups.Setups => m_edgeSetups.Select(s => new HavokUserEdgeSetup(
+        s.m_obbA.m_transform, s.m_obbA.m_halfExtents, s.m_obbB.m_transform, s.m_obbB.m_halfExtents,
+        s.m_userDataA, s.m_userDataB, s.m_costAtoB, s.m_costBtoA, s.m_worldUpA, s.m_worldUpB,
+        (HavokUserEdgeDirection)(int)s.m_direction, s.m_space == hkaiUserEdgeUtils.UserEdgeSetupSpace.USER_EDGE_SPACE_WORLD, s.m_forceAlign)).ToList();
+
+    void IHavokNavUserEdgeSetups.Add(HavokUserEdgeSetup setup) => m_edgeSetups.Add(new hkaiUserEdgeUtils.UserEdgeSetup
+    {
+        m_obbA = new hkaiUserEdgeUtils.Obb { m_transform = setup.TransformA, m_halfExtents = setup.HalfExtentsA },
+        m_obbB = new hkaiUserEdgeUtils.Obb { m_transform = setup.TransformB, m_halfExtents = setup.HalfExtentsB },
+        m_userDataA = setup.UserDataA,
+        m_userDataB = setup.UserDataB,
+        m_costAtoB = setup.CostAtoB,
+        m_costBtoA = setup.CostBtoA,
+        m_worldUpA = setup.WorldUpA,
+        m_worldUpB = setup.WorldUpB,
+        m_direction = (hkaiUserEdgeUtils.UserEdgeDirection)(int)setup.Direction,
+        m_space = setup.WorldSpace ? hkaiUserEdgeUtils.UserEdgeSetupSpace.USER_EDGE_SPACE_WORLD : hkaiUserEdgeUtils.UserEdgeSetupSpace.USER_EDGE_SPACE_LOCAL,
+        m_forceAlign = setup.ForceAlign,
+    });
+
+    void IHavokNavUserEdgeSetups.RemoveAt(int index) => m_edgeSetups.RemoveAt(index);
+
     private static Matrix4x4 Translate(Matrix4x4 m, Vector3 offset)
     {
         m.M41 += offset.X;
@@ -152,6 +242,33 @@ public partial class hkaiUserEdgeSetupArray : IHavokNavUserEdgeSetups
         return m;
     }
 }
+
+#if HK2014 || HK2016
+public partial class hkaiDirectedGraphExplicitCost : IHavokDirectedGraphEdit
+{
+    List<Vector4> IHavokDirectedGraphEdit.m_positions => m_positions;
+
+    int IHavokDirectedGraphEdit.EdgeCount => m_edges.Count;
+
+    float IHavokDirectedGraphEdit.GetEdgeCost(int edge) => m_edges[edge].m_cost;
+
+    void IHavokDirectedGraphEdit.SetEdgeCost(int edge, float cost) => m_edges[edge].m_cost = cost;
+
+    void IHavokDirectedGraphEdit.Replace(IReadOnlyList<Vector4> positions, IReadOnlyList<IReadOnlyList<(int Target, float Cost)>> edgesOfNode)
+    {
+        m_positions = positions.ToList();
+        m_nodes = new List<Node>(edgesOfNode.Count);
+        m_edges = new List<Edge>();
+
+        foreach (var list in edgesOfNode)
+        {
+            m_nodes.Add(new Node { m_startEdgeIndex = m_edges.Count, m_numEdges = list.Count });
+            foreach (var (target, cost) in list)
+                m_edges.Add(new Edge { m_target = (uint)target, m_cost = cost, m_flags = 0 });
+        }
+    }
+}
+#endif
 
 #if !HK2014
 public partial class hkaiNavMeshClearanceCache : IHavokNavClearanceCache

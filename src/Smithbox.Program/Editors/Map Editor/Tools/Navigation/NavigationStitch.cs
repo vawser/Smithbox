@@ -33,8 +33,20 @@ public sealed record NavStitchParameters
     public float MinAlignment { get; init; } = 0.98f;
 }
 
-/// <summary>A navmesh placed for stitching: its NameID, its mesh, and where it sits relative to the other meshes.</summary>
-public sealed record NavStitchMesh(int NameID, IHavokNavMeshEdit Mesh, Vector3 Offset, string MapId);
+/// <summary>
+/// A navmesh placed for stitching: its NameID, its mesh, and where it sits relative to the other meshes: turned by
+/// <paramref name="Turn"/> when its entry has a rotation or scale (DS3, BB), then moved by <paramref name="Offset"/>.
+/// </summary>
+public sealed record NavStitchMesh(int NameID, IHavokNavMeshEdit Mesh, Vector3 Offset, string MapId, Matrix4x4? Turn = null)
+{
+    /// <summary>A vertex of the mesh where the stitch places it.</summary>
+    public Vector3 Placed(int index)
+    {
+        var v = Mesh.m_vertices[index];
+        var p = new Vector3(v.X, v.Y, v.Z);
+        return (Turn is Matrix4x4 turn ? Vector3.Transform(p, turn) : p) + Offset;
+    }
+}
 
 /// <summary>A connection found between an edge of one mesh and an edge of another.</summary>
 public readonly record struct NavStitchPair(string MapA, int NameA, int FaceA, int EdgeA, string MapB, int NameB, int FaceB, int EdgeB);
@@ -73,8 +85,8 @@ public static class NavigationStitch
                     Owner = mesh,
                     Face = f,
                     Edge = e,
-                    A = Vertex(m, edge.m_a) + mesh.Offset,
-                    B = Vertex(m, edge.m_b) + mesh.Offset,
+                    A = mesh.Placed(edge.m_a),
+                    B = mesh.Placed(edge.m_b),
                 };
             }
         }
@@ -136,8 +148,7 @@ public static class NavigationStitch
 
         var ea = a.Mesh.m_edges[edgeA];
         var eb = b.Mesh.m_edges[edgeB];
-        return SegmentDistance(Vertex(a.Mesh, ea.m_a) + a.Offset, Vertex(a.Mesh, ea.m_b) + a.Offset,
-            Vertex(b.Mesh, eb.m_a) + b.Offset, Vertex(b.Mesh, eb.m_b) + b.Offset);
+        return SegmentDistance(a.Placed(ea.m_a), a.Placed(ea.m_b), b.Placed(eb.m_a), b.Placed(eb.m_b));
     }
 
     /// <summary>The shortest distance between two segments (closest points, clamped to both).</summary>

@@ -69,7 +69,7 @@ public partial class NavigationTool
     private NVA.Navmesh CurrentGatesEntry()
     {
         if (GatesEntry != null && (OverlayNavigation == null || !OverlayNavigation.Nva.Navmeshes.Contains(GatesEntry)
-            || NavigationMap.SetOf(GatesEntry) != OverlaySet))
+            || NavigationMap.SetOf(GatesEntry, Bank.Profile) != OverlaySet))
         {
             GatesEntry = null;
             GateSelected = -1;
@@ -135,7 +135,7 @@ public partial class NavigationTool
         }
         else
         {
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Gates_Navmesh", (uint)entry.NameID, entry.ModelID, map.FileNameOf(entry), entry.GateNodes.Count, NavGates.MaxGates));
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Gates_Navmesh", (uint)entry.NameID, entry.ModelID, map.FileNameOf(entry), entry.GateNodes.Count, GateLimit()));
 
             GUI.MultiButtonInput("navigationGateNavmeshActions",
                 "navigationGateRebuildOne", LOC.Get("MAP_Navigation_Gates_Rebuild_One"), LOC.Get("MAP_Navigation_Gates_Rebuild_One_TT"),
@@ -337,6 +337,9 @@ public partial class NavigationTool
             EditGates(m => { NavGates.SetCost(entry, a, b, value, m.Profile); return new NavGateEditResult(); }, "MAP_Navigation_Gates_Cost_Set");
     }
 
+    /// <summary>The most gates a navmesh can hold, for the texts: 16, or "-" where there is no limit (SDT).</summary>
+    private string GateLimit() => Bank.Profile.MaxGates == int.MaxValue ? "-" : Bank.Profile.MaxGates.ToString();
+
     /// <summary>A cost as metres, or "-" for unreachable.</summary>
     private static string CostText(short cost) => NavGates.CostMetres(cost) is float m ? m.ToString("0.##", CultureInfo.InvariantCulture) : "-";
 
@@ -371,7 +374,7 @@ public partial class NavigationTool
 
         GateAddTarget = Math.Clamp(GateAddTarget, 0, neighbours.Count - 1);
         var list = map.Nva.Navmeshes;
-        string Name(NVA.Navmesh e) => LOC.Get("MAP_Navigation_Gates_Neighbour", list.IndexOf(e), map.FileNameOf(e), e.GateNodes.Count, NavGates.MaxGates);
+        string Name(NVA.Navmesh e) => LOC.Get("MAP_Navigation_Gates_Neighbour", list.IndexOf(e), map.FileNameOf(e), e.GateNodes.Count, GateLimit());
 
         ImGui.SetNextItemWidth(-1);
         if (ImGui.BeginCombo("##navigationGateAddTarget", Name(neighbours[GateAddTarget])))
@@ -387,7 +390,7 @@ public partial class NavigationTool
         GUI.ConditionalMultiButtonInput("navigationGateAddActions",
             "navigationGateAdd", LOC.Get("MAP_Navigation_Gates_Add"), LOC.Get("MAP_Navigation_Gates_Add_TT"),
             () => EditGates(m => NavGates.Add(m, entry, target, null, GateToMap(OverlayContainer)), "MAP_Navigation_Gates_Added"),
-            entry.GateNodes.Count < NavGates.MaxGates);
+            entry.GateNodes.Count < Bank.Profile.MaxGates);
     }
 
     private void RebuildGates(IReadOnlyList<NVA.Navmesh> owners)

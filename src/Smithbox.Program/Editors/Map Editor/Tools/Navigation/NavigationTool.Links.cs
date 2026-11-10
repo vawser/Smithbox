@@ -26,6 +26,13 @@ public partial class NavigationTool
 
     private void DisplayLinks()
     {
+        // DS3, BB and SDT have no user edges in their meshes: their links are setups
+        if (!Bank.Profile.HasMeshUserEdges)
+        {
+            DisplaySetupLinks();
+            return;
+        }
+
         // Links
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Link_Header"), LOC.Get("MAP_Navigation_Link_Header_TT"));
@@ -107,6 +114,12 @@ public partial class NavigationTool
         var start = LinkStart;
         LinkStart = null;
 
+        if (!Bank.Profile.HasMeshUserEdges)
+        {
+            AddSetup(start, hit);
+            return;
+        }
+
         if (!ReferenceEquals(start.File, hit.File))
         {
             LinkError = "MAP_Navigation_Link_Error_Other_Navmesh";
@@ -130,6 +143,108 @@ public partial class NavigationTool
     {
         LinkError = null;
         EditLinks(hit, mesh => NavUserEdges.Remove(mesh, NavUserEdges.CachesOf(mesh), edge));
+    }
+
+    /// <summary>
+    /// The Links group for games whose links are user edge setups (DS3, BB, SDT): add one with two clicks (a face at a
+    /// ledge, then where it lands, on any navmesh), and the picked navmesh's setups, each with Remove.
+    /// </summary>
+    private void DisplaySetupLinks()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Setup_Header"), LOC.Get("MAP_Navigation_Setup_Header_TT"));
+
+        if (ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Link_Mode")}##navigationSetupMode", ref LinkMode))
+        {
+            LinkStart = null;
+            LinkError = null;
+
+            if (LinkMode)
+            {
+                PickMode = false;
+                PaintMode = false;
+                StopGateMode();
+                StopVertexEdit();
+            }
+        }
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Setup_Mode_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_Navigation_Link_Both_Ways")}##navigationSetupBothWays", ref LinkBothWays);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Setup_Both_Ways_TT"));
+
+        if (LinkMode && ShowOverlay)
+            GUI.WrappedText(LinkStart == null
+                ? LOC.Get("MAP_Navigation_Setup_Pick_Start")
+                : LOC.Get("MAP_Navigation_Setup_Pick_Target", LinkStart.Face, LinkStart.File.Name));
+
+        if (LinkMode && LinkStart != null && ImGui.Button($"{LOC.Get("MAP_Navigation_Link_Cancel")}##navigationSetupCancel"))
+        {
+            LinkStart = null;
+            SetPicked(null);
+        }
+
+        if (LinkError != null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get(LinkError));
+
+        // The picked navmesh's setups
+        var file = (LinkStart ?? Picked)?.File;
+        if (file == null)
+        {
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Setup_None_Picked"));
+            return;
+        }
+
+        var setups = NavSetups.Of(file.Document)?.Setups ?? Array.Empty<HavokUserEdgeSetup>();
+        GUI.WrappedText(LOC.Get("MAP_Navigation_Setup_Count", file.Name, setups.Count));
+
+        int remove = -1;
+        for (int i = 0; i < setups.Count; i++)
+        {
+            var s = setups[i];
+            var (a, b) = NavSetups.Centres(s);
+            if (ImGui.SmallButton($"{LOC.Get("MAP_Navigation_Setup_Remove")}##navigationSetupRemove_{i}"))
+                remove = i;
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Setup_Remove_TT"));
+            ImGui.SameLine();
+            ImGui.Text(LOC.Get(s.Direction == HavokUserEdgeDirection.Bidirectional ? "MAP_Navigation_Setup_Entry_Both" : "MAP_Navigation_Setup_Entry_One",
+                i, $"{Vector3.Distance(a, b):0.##}", $"{a.Y - b.Y:0.##}", LOC.Get(s.WorldSpace ? "MAP_Navigation_Setup_World" : "MAP_Navigation_Setup_Local")));
+        }
+
+        if (remove >= 0)
+            EditSetups(file, NavSetups.Remove(file, remove), "MAP_Navigation_Setup_Removed");
+    }
+
+    /// <summary>Adds a setup from the start face's nearest ledge to the target point, in the start navmesh's own space.</summary>
+    private void AddSetup(NavFaceHit start, NavFaceHit target)
+    {
+        if (!Matrix4x4.Invert(EntryWorld(OverlayContainer, start.Entry), out var toMesh))
+            return;
+
+        var setup = NavSetups.Make(start.File.Mesh, start.Face, Vector3.Transform(start.Point, toMesh), Vector3.Transform(target.Point, toMesh),
+            LinkBothWays, Bank.Profile);
+        EditSetups(start.File, NavSetups.Add(start.File, setup), "MAP_Navigation_Setup_Added");
+        SetPicked(start);
+    }
+
+    /// <summary>Records a setup edit as one undoable action: the file's document is replaced; the NVA isn't touched.</summary>
+    private void EditSetups(NavmeshFile file, NavSetupResult result, string done)
+    {
+        if (OverlayContainer == null || OverlayNavigation == null)
+            return;
+
+        if (!result.Ok)
+        {
+            LinkError = result.Error;
+            return;
+        }
+
+        LinkError = null;
+        var state = new NavModelState(OverlayNavigation);
+        var changes = new NavRemapResult { NvaChanged = false };
+        ModelEditMap = OverlayContainer;
+        View.ViewportActionManager.ExecuteAction(new NavigationModelEditAction(OverlayContainer, Bank, state, state,
+            new[] { result.File }, changes, OnModelEdited));
+        Smithbox.Log(this, LOC.Get(done, file.Name));
     }
 
     /// <summary>Makes a link edit to a face's navmesh file and records it as one undoable action.</summary>

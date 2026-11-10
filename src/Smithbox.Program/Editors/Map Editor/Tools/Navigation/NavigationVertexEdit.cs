@@ -365,6 +365,10 @@ public static class NavVertexEdit
                 NavigationTree.Build(mesh).WriteTo(tree);
         }
 
+        // The cost graph's nodes follow their faces (DS3, BB, SDT); nothing moves when no vertex did
+        if (moved.Count > 0)
+            NavCostGraph.FollowMovedVertices(NavCostGraph.Of(copy), mesh, before);
+
         clearance = NavClearance.Recalculate(mesh, before, moved);
 
         return copy;

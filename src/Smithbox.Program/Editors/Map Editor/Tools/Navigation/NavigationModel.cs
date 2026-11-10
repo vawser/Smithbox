@@ -201,13 +201,13 @@ public sealed class NavigationMap
         if (navmeshes == null)
             return models;
 
-        foreach (var n in navmeshes.Where(e => SetOf(e) == NavmeshSet.N && QuarterOf(e, Profile) == null))
+        foreach (var n in navmeshes.Where(e => SetOf(e, Profile) == NavmeshSet.N && QuarterOf(e, Profile) == null))
         {
             // The o entry repeats the n entry's NameID with the profile's offset added (2,000,000,000 in ER)
             var o = navmeshes.FirstOrDefault(e => (uint)e.NameID == Profile.MirrorOf((uint)n.NameID))
-                ?? navmeshes.FirstOrDefault(e => SetOf(e) == NavmeshSet.O && QuarterOf(e, Profile) == null && e.ModelID == n.ModelID);
+                ?? navmeshes.FirstOrDefault(e => SetOf(e, Profile) == NavmeshSet.O && QuarterOf(e, Profile) == null && e.ModelID == n.ModelID);
 
-            var quarters = navmeshes.Where(e => e.ModelID == n.ModelID && SetOf(e) == NavmeshSet.N && QuarterOf(e, Profile) != null)
+            var quarters = navmeshes.Where(e => e.ModelID == n.ModelID && SetOf(e, Profile) == NavmeshSet.N && QuarterOf(e, Profile) != null)
                 .OrderBy(e => QuarterOf(e, Profile))
                 .Select(e => (e, FileOf(e)))
                 .ToList();
@@ -227,9 +227,12 @@ public sealed class NavigationMap
     }
 
     /// <summary>
-    /// The set an NVA entry belongs to, from its NameID's prefix: 0 or 1 for n, 2 or 3 for o.
+    /// The set an NVA entry belongs to, from its NameID's prefix: 0 or 1 for n, 2 or 3 for o. Always n in a game without
+    /// an o set (<see cref="NavGameProfile.HasOSet"/>), where the placeholders with NameID -1 (DS3, BB, SDT) would
+    /// otherwise read as o.
     /// </summary>
-    public static NavmeshSet SetOf(NVA.Navmesh entry) => (uint)entry.NameID / 1_000_000_000u >= 2 ? NavmeshSet.O : NavmeshSet.N;
+    public static NavmeshSet SetOf(NVA.Navmesh entry, NavGameProfile profile = null)
+        => profile is { HasOSet: false } ? NavmeshSet.N : (uint)entry.NameID / 1_000_000_000u >= 2 ? NavmeshSet.O : NavmeshSet.N;
 
     /// <summary>
     /// The quarter of a q file an entry's faces are in, from the high byte of Unk50 (0xFF when it has none), or null.
@@ -245,6 +248,30 @@ public sealed class NavigationMap
         return quarter == 0xFF ? null : quarter;
     }
 
+    /// <summary>
+    /// How an entry's Rotation and Scale turn its mesh, as the Map Editor draws it (Transform.WorldMatrix: scale, then the
+    /// rotation in radians as Y * Z * X, then the position); null for an entry with neither, which only moves its mesh by
+    /// its Position. DS3 and BB place most entries so (NavSurvey placement: their gate nodes sit on the mesh only when the
+    /// rotation is read as radians); ER's few nonzero rotations are below 1e-6 rad and count as none.
+    /// </summary>
+    public static System.Numerics.Matrix4x4? EntryPlacement(NVA.Navmesh entry)
+    {
+        if (entry.Rotation.Length() < 1e-4f && System.Numerics.Vector3.Distance(entry.Scale, System.Numerics.Vector3.One) < 1e-4f)
+            return null;
+
+        var r = entry.Rotation;
+        var rotation = System.Numerics.Quaternion.CreateFromAxisAngle(System.Numerics.Vector3.UnitY, r.Y)
+            * System.Numerics.Quaternion.CreateFromAxisAngle(System.Numerics.Vector3.UnitZ, r.Z)
+            * System.Numerics.Quaternion.CreateFromAxisAngle(System.Numerics.Vector3.UnitX, r.X);
+
+        return System.Numerics.Matrix4x4.CreateScale(entry.Scale) * System.Numerics.Matrix4x4.CreateFromQuaternion(rotation)
+            * System.Numerics.Matrix4x4.CreateTranslation(entry.Position);
+    }
+
+    /// <summary>Where an entry places its mesh in map space: <see cref="EntryPlacement"/>, or its Position alone.</summary>
+    public static System.Numerics.Matrix4x4 EntryToMap(NVA.Navmesh entry)
+        => EntryPlacement(entry) ?? System.Numerics.Matrix4x4.CreateTranslation(entry.Position);
+
     /// <summary>The navmesh entry with the given NameID, or null.</summary>
     public NVA.Navmesh FindNavmesh(int nameId) => Nva?.Navmeshes.FirstOrDefault(n => n.NameID == nameId);
 
@@ -255,7 +282,7 @@ public sealed class NavigationMap
     public string FileNameOf(NVA.Navmesh entry)
     {
         var quarter = QuarterOf(entry, Profile);
-        return quarter != null ? QuarterName(NameBase, entry.ModelID, quarter.Value) : MeshName(NameBase, SetOf(entry), entry.ModelID);
+        return quarter != null ? QuarterName(NameBase, entry.ModelID, quarter.Value) : MeshName(NameBase, SetOf(entry, Profile), entry.ModelID);
     }
 
     /// <summary>
@@ -287,7 +314,7 @@ public sealed class NavigationMap
         }
 
         var quarter = QuarterOf(entry, profile);
-        return quarter != null ? QuarterName(nameBase, entry.ModelID, quarter.Value) : MeshName(nameBase, SetOf(entry), entry.ModelID);
+        return quarter != null ? QuarterName(nameBase, entry.ModelID, quarter.Value) : MeshName(nameBase, SetOf(entry, profile), entry.ModelID);
     }
 
     /// <summary>
@@ -300,7 +327,7 @@ public sealed class NavigationMap
     {
         profile ??= NavGameProfile.ER;
 
-        if (SetOf(entry) == set)
+        if (SetOf(entry, profile) == set)
             return entry;
 
         var navmeshes = nva?.Navmeshes;
@@ -317,7 +344,7 @@ public sealed class NavigationMap
                 return mirror;
         }
 
-        return navmeshes.FirstOrDefault(e => e.ModelID == entry.ModelID && SetOf(e) == set && QuarterOf(e, profile) == null);
+        return navmeshes.FirstOrDefault(e => e.ModelID == entry.ModelID && SetOf(e, profile) == set && QuarterOf(e, profile) == null);
     }
 
     /// <summary>The map UID of the NVA (its Entries11), which the NVC files repeat.</summary>

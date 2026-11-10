@@ -66,7 +66,10 @@ public class HavokNavmeshBank
         if (Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.AC6
             or ProjectType.NR
-            or ProjectType.DB_NT)
+            or ProjectType.DB_NT
+            or ProjectType.DS3
+            or ProjectType.BB
+            or ProjectType.SDT)
         {
             UnreadMaps.Add(mapId);
         }
@@ -199,7 +202,10 @@ public class HavokNavmeshBank
         if (Project.Descriptor.ProjectType is ProjectType.ER
             or ProjectType.AC6
             or ProjectType.NR
-            or ProjectType.DB_NT)
+            or ProjectType.DB_NT
+            or ProjectType.DS3
+            or ProjectType.BB
+            or ProjectType.SDT)
         {
             foreach (ResourcePool pool in ResourceManager.Pools)
             {

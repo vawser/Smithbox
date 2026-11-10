@@ -20,6 +20,25 @@ namespace StudioCore.Editors.MapEditor;
 // in pairs across the two sets. So a removed model becomes a placeholder, and a duplicate fills a free placeholder pair:
 // no NameID or position changes.
 
+/// <summary>
+/// Where an NVA entry places its mesh: position, rotation and scale with their W values. Most DS3 and BB entries have a
+/// real one (DS3: 689 of 1,529 rotated); ER's are almost all at the identity.
+/// </summary>
+public readonly record struct NavPlacement(Vector3 Position, float PositionW, Vector3 Rotation, float RotationW, Vector3 Scale, float ScaleW)
+{
+    public static NavPlacement Of(NVA.Navmesh e) => new(e.Position, e.PositionW, e.Rotation, e.RotationW, e.Scale, e.ScaleW);
+
+    public void ApplyTo(NVA.Navmesh e)
+    {
+        e.Position = Position;
+        e.PositionW = PositionW;
+        e.Rotation = Rotation;
+        e.RotationW = RotationW;
+        e.Scale = Scale;
+        e.ScaleW = ScaleW;
+    }
+}
+
 /// <summary>A navmesh file's document before and after a model edit; null when the binder doesn't have the file.</summary>
 public sealed record NavFileChange(string Name, Havok.HavokDocument Before, Havok.HavokDocument After);
 
@@ -42,11 +61,11 @@ public sealed class NavModelEditResult
 
 /// <summary>
 /// The parts of a map's NVA and NVC files a model edit changes, copied: each navmesh's ModelID, face count, face data
-/// index, Unk4C and gate nodes, the node bank faces, and the connectors.
+/// index, Unk4C, placement and gate nodes, the node bank faces, and the connectors.
 /// </summary>
 public sealed class NavModelState
 {
-    private readonly List<(NVA.Navmesh Entry, int ModelID, int FaceCount, int FaceDataIndex, int Unk4C, List<NVA.GateNode> Gates)> Entries;
+    private readonly List<(NVA.Navmesh Entry, int ModelID, int FaceCount, int FaceDataIndex, int Unk4C, NavPlacement Placement, List<NVA.GateNode> Gates)> Entries;
     private readonly List<(NVA.NodeBank Bank, List<(int Face, int Collision)> Faces)> Banks;
     private readonly NVA Nva;
     private readonly List<NVA.Navmesh> Order;
@@ -56,7 +75,7 @@ public sealed class NavModelState
     {
         Nva = map.Nva;
         Order = map.Nva.Navmeshes.ToList();
-        Entries = map.Nva.Navmeshes.Select(e => (e, e.ModelID, e.FaceCount, e.FaceDataIndex, e.Unk4C, e.GateNodes.Select(Copy).ToList())).ToList();
+        Entries = map.Nva.Navmeshes.Select(e => (e, e.ModelID, e.FaceCount, e.FaceDataIndex, e.Unk4C, NavPlacement.Of(e), e.GateNodes.Select(Copy).ToList())).ToList();
         Banks = map.Nva.NodeBanks.Select(b => (b, b.Faces.Select(f => (f.FaceIndex, f.CollisionID)).ToList())).ToList();
         Connections = new NavConnectionState(map.Nva, map.Nvcs);
     }
@@ -78,8 +97,9 @@ public sealed class NavModelState
         Nva.Navmeshes.Clear();
         Nva.Navmeshes.AddRange(Order);
 
-        foreach (var (entry, modelId, faceCount, faceDataIndex, unk4C, gates) in Entries)
+        foreach (var (entry, modelId, faceCount, faceDataIndex, unk4C, placement, gates) in Entries)
         {
+            placement.ApplyTo(entry);
             entry.ModelID = modelId;
             entry.FaceCount = faceCount;
             entry.FaceDataIndex = faceDataIndex;
@@ -231,6 +251,10 @@ public static class NavModelEdit
             var entry = slot.Entry(set);
             entry.FaceCount = copy.ObjectsOf<IHavokNavMeshEdit>().First().m_faces.Count;
             entry.Unk4C = 0;
+
+            // The copy's vertices are in the source's mesh space, so the slot takes the source's placement (the same in
+            // nearly every ER pair; DS3 and BB place entries with real transforms)
+            NavPlacement.Of(source.Entry(set)).ApplyTo(entry);
         }
 
         RecomputeFaceDataIndex(map.Nva, map.Profile);
@@ -324,7 +348,8 @@ public static class NavModelEdit
 
     /// <summary>Why a new model can't be added to a map, or null if it can (maps with quarter entries can't).</summary>
     public static string CanAdd(NavigationMap map)
-        => map.Nva.Navmeshes.Any(e => NavigationMap.QuarterOf(e, map.Profile) != null) ? "MAP_Navigation_Model_Error_Add_Quarters" : null;
+        => map.Profile.NameIdKind == NavNameIdKind.None ? "MAP_Navigation_Model_Error_Add_No_Rule"
+            : map.Nva.Navmeshes.Any(e => NavigationMap.QuarterOf(e, map.Profile) != null) ? "MAP_Navigation_Model_Error_Add_Quarters" : null;
 
     /// <summary>The lowest ModelID from a value up that no entry of the map has.</summary>
     public static int NextFreeModelId(NavigationMap map, int from)
@@ -342,9 +367,12 @@ public static class NavModelEdit
     /// with its position as the index, and the o entry's is that plus 2,000,000,000, so no existing NameID changes.
     /// The o half moves down by one, and gate nodes name navmeshes by position, so those pointing into it are moved too.
     /// The entries' other values are copied from the first n entry and its o entry. Maps with quarter entries are
-    /// refused: their NameIDs follow their position, which this would move.
+    /// refused: their NameIDs follow their position, which this would move. In DS3 and SDT the NameID follows the
+    /// ModelID instead; BB, with no one rule, is refused.
+    /// A mesh copied from another model keeps that model's placement (<paramref name="placedAs"/>): DS3 and BB place
+    /// most entries with a real transform, so the first entry's would put the copy elsewhere.
     /// </summary>
-    public static NavModelEditResult Add(NavigationMap map, int modelId, Havok.HavokDocument n, Havok.HavokDocument o)
+    public static NavModelEditResult Add(NavigationMap map, int modelId, Havok.HavokDocument n, Havok.HavokDocument o, NVA.Navmesh placedAs = null)
     {
         var result = new NavModelEditResult();
         var list = map.Nva.Navmeshes;
@@ -367,17 +395,22 @@ public static class NavModelEdit
             return result;
         }
 
-        int nCount = list.Count(e => NavigationMap.SetOf(e) == NavmeshSet.N);
-        if (list.Take(nCount).Any(e => NavigationMap.SetOf(e) != NavmeshSet.N))
+        int nCount = list.Count(e => NavigationMap.SetOf(e, map.Profile) == NavmeshSet.N);
+        if (list.Take(nCount).Any(e => NavigationMap.SetOf(e, map.Profile) != NavmeshSet.N))
         {
             result.Error = "MAP_Navigation_Model_Error_Add_Order";
             return result;
         }
 
-        var templateN = list.FirstOrDefault(e => NavigationMap.SetOf(e) == NavmeshSet.N);
+        var templateN = list.FirstOrDefault(e => NavigationMap.SetOf(e, map.Profile) == NavmeshSet.N);
         var templateO = templateN == null ? null : list.FirstOrDefault(e => (uint)e.NameID == map.Profile.MirrorOf((uint)templateN.NameID));
 
-        uint nameId = map.ExpectedNameId(nCount);
+        if (map.Profile.ExpectedNameId(map.NameBase, nCount, modelId) is not uint nameId)
+        {
+            result.Error = "MAP_Navigation_Generate_Error_Model_Id";
+            return result;
+        }
+
         if (list.Any(e => (uint)e.NameID == nameId || (map.Profile.HasOSet && (uint)e.NameID == map.Profile.MirrorOf(nameId))))
         {
             result.Error = "MAP_Navigation_Model_Error_Add_NameID";
@@ -393,6 +426,11 @@ public static class NavModelEdit
 
         var nEntry = NewEntry(templateN, (int)nameId, modelId, n, map.Profile);
         var oEntry = map.Profile.HasOSet ? NewEntry(templateO ?? templateN, (int)map.Profile.MirrorOf(nameId), modelId, o, map.Profile) : null;
+
+        // A copy is placed as its source is
+        if (placedAs != null)
+            foreach (var entry in new[] { nEntry, oEntry }.Where(e => e != null))
+                NavPlacement.Of(placedAs).ApplyTo(entry);
 
         list.Insert(nCount, nEntry);
         if (oEntry != null)
@@ -423,9 +461,7 @@ public static class NavModelEdit
             entry.ScaleW = template.ScaleW;
             entry.Unk3C = template.Unk3C;
             entry.Unk44 = template.Unk44;
-            // ER and NR: 0xFF01, no quarter. AC6: 1 on every entry with a ModelID of 0 or more (0 on the negative ones).
-            // DB_NT's compact entries keep the connected list's offset there, which the writer sets
-            entry.Unk50 = profile.HasQuarters ? 0xFF01 : 0x0001;
+            entry.Unk50 = profile.NewEntryUnk50;
             entry.Unk54 = template.Unk54;
             entry.Unk58 = template.Unk58;
             entry.Unk5C = template.Unk5C;
@@ -502,7 +538,9 @@ public static class NavModelEdit
 
     /// <summary>
     /// An empty navmesh file in the form the game's most common empty files have: the root holds only the hkaiNavMesh,
-    /// with no faces, edges, vertices or clearance seeding. Built from a copy, then read back so its objects are listed.
+    /// with no faces, edges, vertices or clearance seeding, and in DS3, BB and SDT also the file's cost graph, with no
+    /// nodes (every empty file of theirs has both: NavSurvey costgraph). Built from a copy, then read back so its
+    /// objects are listed.
     /// </summary>
     public static Havok.HavokDocument EmptyCopy(Havok.HavokDocument document)
     {
@@ -517,8 +555,11 @@ public static class NavModelEdit
         mesh.ClearStreamingSets();
         mesh.DropClearanceSeeding();
 
+        var graph = copy.ObjectsOf<IHavokDirectedGraphEdit>().FirstOrDefault();
+        graph?.Replace(Array.Empty<Vector4>(), Array.Empty<IReadOnlyList<(int, float)>>());
+
         if (copy.Root is IHavokRootContainerEdit root)
-            root.KeepOnly(v => ReferenceEquals(v, mesh));
+            root.KeepOnly(v => ReferenceEquals(v, mesh) || (graph != null && ReferenceEquals(v, graph)));
 
         return Clone(copy);
     }
@@ -546,9 +587,12 @@ public static class NavModelEdit
             mesh.m_aabb.m_max += shift;
         }
 
-        // Each face tree's root box (hk2018's mediators, hk2019's cached face iterators): the nodes follow it
+        // Each face tree's root box (hk2018's mediators, hk2019's cached face iterators, hk2014's tree next to the mesh):
+        // the nodes follow it
+        var loose = copy.Root is IHavokRootContainerEdit root ? root.LooseFaceTrees : Array.Empty<IHavokNavFaceTree>();
         var trees = copy.ObjectsOf<IHavokNavMeshQueryMediator>().Select(m => m.FaceTree)
             .Concat(copy.ObjectsOf<IHavokNavMeshEdit>().Select(m => m.CachedFaceTree))
+            .Concat(loose)
             .Where(t => t is { HasNodes: true }).Distinct();
 
         foreach (var tree in trees)
@@ -556,6 +600,11 @@ public static class NavModelEdit
             tree.DomainMin += shift;
             tree.DomainMax += shift;
         }
+
+        // The cost graph's nodes (DS3, BB, SDT) sit on face centres; the costs are distances, which a move keeps
+        foreach (var graph in copy.ObjectsOf<IHavokDirectedGraphEdit>())
+            for (int i = 0; i < graph.m_positions.Count; i++)
+                graph.m_positions[i] += shift;
 
         foreach (var setups in copy.ObjectsOf<IHavokNavUserEdgeSetups>())
             setups.TranslateWorldSpace(offset);

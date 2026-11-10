@@ -120,7 +120,7 @@ public static class NavigationOverlayBuilder
     /// The entries of a set whose faces are drawn: for the n set, the n entries and the quarters (whose n file is empty).
     /// </summary>
     public static IEnumerable<NVA.Navmesh> EntriesOf(NavigationMap map, NavmeshSet set)
-        => map.Nva.Navmeshes.Where(e => NavigationMap.SetOf(e) == set);
+        => map.Nva.Navmeshes.Where(e => NavigationMap.SetOf(e, map.Profile) == set);
 
     /// <summary>
     /// Builds the overlay of a map's set. The world transforms place a navmesh entry and the map's own data
@@ -143,6 +143,11 @@ public static class NavigationOverlayBuilder
         }
 
         AddGates(overlay, map, set, entryWorld, mapWorld, layers, only);
+
+        // Only where the links are setups (DS3, BB, SDT). ER files keep setup arrays too (96 in 40 legacy maps), beside
+        // the user edges baked from them, which are what it draws
+        if (layers.Contains(NavOverlayLayer.UserEdges) && !map.Profile.HasMeshUserEdges)
+            AddSetups(overlay, map, set, entryWorld, mapWorld, only);
 
         if (map.Onav != null && map.Onav.Areas.Count > 0)
             AddOnav(overlay, map.Onav, mapWorld, layers);
@@ -207,7 +212,7 @@ public static class NavigationOverlayBuilder
     /// </summary>
     public static NavOverlay GateHighlight(NavigationMap map, NVA.Navmesh entry, int selectedGate, Matrix4x4 mapWorld, bool costs)
     {
-        var overlay = new NavOverlay { MapId = map.MapId, Set = NavigationMap.SetOf(entry) };
+        var overlay = new NavOverlay { MapId = map.MapId, Set = NavigationMap.SetOf(entry, map.Profile) };
         var gates = entry.GateNodes;
         var lift = new Vector3(0, Lift * 3, 0);
 
@@ -412,6 +417,47 @@ public static class NavigationOverlayBuilder
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// The user edge setups of DS3, BB and SDT, drawn with the user edges: each box's footprint and an arc from A to B.
+    /// Local boxes are in their mesh's space, world ones in the map's.
+    /// </summary>
+    private static void AddSetups(NavOverlay overlay, NavigationMap map, NavmeshSet set, Func<NVA.Navmesh, Matrix4x4> entryWorld, Matrix4x4 mapWorld,
+        Func<NVA.Navmesh, bool> only)
+    {
+        foreach (var entry in EntriesOf(map, set))
+        {
+            if (only != null && !only(entry))
+                continue;
+
+            var setups = NavSetups.Of(map.FileOf(entry)?.Document)?.Setups;
+            if (setups == null || setups.Count == 0)
+                continue;
+
+            var batch = overlay.Batch(NavOverlayLayer.UserEdges);
+            foreach (var s in setups)
+            {
+                var place = s.WorldSpace ? mapWorld : entryWorld(entry);
+                AddBox(batch, s.TransformA * place, s.HalfExtentsA);
+                AddBox(batch, s.TransformB * place, s.HalfExtentsB);
+                AddArc(batch, Vector3.Transform(Vector3.Zero, s.TransformA * place), Vector3.Transform(Vector3.Zero, s.TransformB * place));
+            }
+        }
+    }
+
+    /// <summary>The footprint of a box: the rectangle of its x and z half extents through its centre.</summary>
+    private static void AddBox(NavOverlayBatch batch, Matrix4x4 box, Vector4 half)
+    {
+        var c = new[]
+        {
+            Vector3.Transform(new Vector3(-half.X, 0, -half.Z), box),
+            Vector3.Transform(new Vector3(half.X, 0, -half.Z), box),
+            Vector3.Transform(new Vector3(half.X, 0, half.Z), box),
+            Vector3.Transform(new Vector3(-half.X, 0, half.Z), box),
+        };
+        for (int i = 0; i < 4; i++)
+            batch.Lines.Add((c[i], c[(i + 1) % 4]));
     }
 
     private static void AddArc(NavOverlayBatch batch, Vector3 from, Vector3 to)

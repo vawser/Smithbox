@@ -125,7 +125,7 @@ public static class NavGates
             return NavGateStatus.Broken;
 
         if (g.NodeSubID < 0)
-            return target.GateNodes.Count >= MaxGates ? NavGateStatus.UnpairedFull : NavGateStatus.Unpaired;
+            return target.GateNodes.Count >= map.Profile.MaxGates ? NavGateStatus.UnpairedFull : NavGateStatus.Unpaired;
 
         if (g.NodeSubID >= target.GateNodes.Count)
             return NavGateStatus.Broken;
@@ -537,7 +537,7 @@ public static class NavGates
                 continue;
 
             foreach (var site in Sites(map, a, b, toMap, join))
-                result.Added += AddPair(list, a, b, site);
+                result.Added += AddPair(list, a, b, site, map.Profile);
         }
 
         foreach (var entry in keep.Keys)
@@ -569,10 +569,10 @@ public static class NavGates
     }
 
     /// <summary>Adds a gate at a point to each side that has room, paired when both do; returns how many were added.</summary>
-    private static int AddPair(List<NVA.Navmesh> list, NVA.Navmesh a, NVA.Navmesh b, Vector3 point)
+    private static int AddPair(List<NVA.Navmesh> list, NVA.Navmesh a, NVA.Navmesh b, Vector3 point, NavGameProfile profile)
     {
         int ia = list.IndexOf(a), ib = list.IndexOf(b);
-        bool roomA = a.GateNodes.Count < MaxGates, roomB = b.GateNodes.Count < MaxGates;
+        bool roomA = a.GateNodes.Count < profile.MaxGates, roomB = b.GateNodes.Count < profile.MaxGates;
         int added = 0;
 
         NVA.GateNode ga = null, gb = null;
@@ -621,7 +621,7 @@ public static class NavGates
             return result;
         }
 
-        if (owner.GateNodes.Count >= MaxGates)
+        if (owner.GateNodes.Count >= map.Profile.MaxGates)
         {
             result.Error = "MAP_Navigation_Gates_Error_Full";
             return result;
@@ -636,7 +636,7 @@ public static class NavGates
 
         var keepOwner = CostsByGate(owner);
         var keepTarget = CostsByGate(target);
-        result.Added = AddPair(map.Nva.Navmeshes, owner, target, point.Value);
+        result.Added = AddPair(map.Nva.Navmeshes, owner, target, point.Value, map.Profile);
 
         RefreshCosts(map, owner, toMap, keepOwner);
         RefreshCosts(map, target, toMap, keepTarget);

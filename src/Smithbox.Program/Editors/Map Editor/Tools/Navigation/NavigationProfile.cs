@@ -6,6 +6,19 @@ namespace StudioCore.Editors.MapEditor;
 // than test for a game. Kept free of the rest of Smithbox, so Tools/NavSurvey can link it.
 // See Documentation/Claude/Navigation Editor Other Games Plan.md, sections 4.1 and Phases N2 and N3.
 
+/// <summary>What a game's n NameIDs are built from.</summary>
+public enum NavNameIdKind
+{
+    /// <summary>The map's digits and the entry's position in the list (ER, NR, DB_NT, AC6).</summary>
+    Position,
+
+    /// <summary>The map's AA and BB digits and the entry's ModelID (DS3, SDT).</summary>
+    ModelId,
+
+    /// <summary>No one rule the tool can follow (BB).</summary>
+    None,
+}
+
 /// <summary>A game's navigation rules.</summary>
 public sealed class NavGameProfile
 {
@@ -69,8 +82,26 @@ public sealed class NavGameProfile
     /// </summary>
     public bool StoresGateCosts { get; private init; } = true;
 
+    /// <summary>
+    /// Whether the game's jump and drop links are user edges in the mesh (ER, NR, DB_NT, AC6), rather than user edge
+    /// setups the game turns into edges when it loads the mesh (DS3, BB, SDT: no file of theirs has a user edge).
+    /// </summary>
+    public bool HasMeshUserEdges { get; private init; } = true;
+
     /// <summary>The navmesh sets the game's maps have: n and o, or n alone.</summary>
     public NavmeshSet[] Sets => HasOSet ? new[] { NavmeshSet.N, NavmeshSet.O } : new[] { NavmeshSet.N };
+
+    /// <summary>
+    /// The most gates a navmesh can hold: 16 where each gate has 16 cost slots (ER, NR, AC6, DS3, BB: never more in the
+    /// game files), no limit where it has one per gate (SDT has navmeshes with 19).
+    /// </summary>
+    public int MaxGates => GateCostsPerGate ? int.MaxValue : NavGates.MaxGates;
+
+    /// <summary>
+    /// Whether the game's navmesh files with faces have a face tree the tool keeps (hk2018's query mediator, hk2019's
+    /// cached face iterator). DS3 and BB keep a bare hkcdStaticAabbTree next to the mesh (NavSurvey treecheck: 1,254 and 678 decode, every face in its leaf); SDT has none.
+    /// </summary>
+    public bool HasFaceTree { get; private init; } = true;
 
     /// <summary>The number of costs each gate of a navmesh with this many gates holds.</summary>
     public int GateCostSlots(int gateCount) => GateCostsPerGate ? gateCount : NavGates.MaxGates;
@@ -150,8 +181,46 @@ public sealed class NavGameProfile
         HasQuarters = false,
         Unk4CMeansNoFaces = false,
         StoresGateCosts = false,
+        NewEntryUnk50 = 1,
         _nameId = DecimalNameId,
     };
+
+    /// <summary>
+    /// The older Havok games (family B: DS3 and BB on hk2014, SDT on hk2016), from NavSurvey nameids and names (Phase N5):
+    /// flat map folders, the n set only, no quarters, NVC, map UID or readable ONAV; files named n{map}_{ModelID:D6} as
+    /// the binders have them; the running FaceDataIndex. NameIDs follow the ModelID, not the position. Unk4C = 1 entries
+    /// can have faces (DS3 137, SDT 72, BB 7,354).
+    /// </summary>
+    private static NavGameProfile FamilyB(string game, NavNameIdKind nameIds, bool gateCostsPerGate, bool faceTree) => new()
+    {
+        Game = game,
+        MirrorOffset = 2_000_000_000u,
+        HasOSet = false,
+        HasNvc = false,
+        HasReadableOnav = false,
+        HasQuarters = false,
+        AreaFolders = false,
+        HasMapUid = false,
+        Unk4CMeansNoFaces = false,
+        GateCostsPerGate = gateCostsPerGate,
+        NameIdKind = nameIds,
+        HasFaceTree = faceTree,
+        HasMeshUserEdges = false,
+        NewEntryUnk50 = 0,
+        _nameId = DecimalNameId,
+    };
+
+    /// <summary>Dark Souls III: NameID (AA * 10 + BB) * 1,000,000 + ModelID (1,527 of 1,529), 16 gate cost slots.</summary>
+    public static readonly NavGameProfile DS3 = FamilyB("DS3", NavNameIdKind.ModelId, false, true);
+
+    /// <summary>
+    /// Bloodborne: no one NameID rule. m21 has ModelID * 10 (+ a digit), the chalice maps (m29_..) ModelID * 1000 and
+    /// NameIDs repeated across maps. 16 gate cost slots.
+    /// </summary>
+    public static readonly NavGameProfile BB = FamilyB("BB", NavNameIdKind.None, false, true);
+
+    /// <summary>Sekiro: DS3's NameID rule (1,301 of 1,304), and gate costs one per gate (2,955 of 2,955), as in DB_NT.</summary>
+    public static readonly NavGameProfile SDT = FamilyB("SDT", NavNameIdKind.ModelId, true, false);
 
     /// <summary>The profile of a game by its short name; Elden Ring's for a game without one of its own.</summary>
     public static NavGameProfile For(string game) => game switch
@@ -159,6 +228,9 @@ public sealed class NavGameProfile
         "NR" => NR,
         "DB_NT" => DB_NT,
         "AC6" => AC6,
+        "DS3" => DS3,
+        "BB" => BB,
+        "SDT" => SDT,
         _ => ER,
     };
 
@@ -175,6 +247,42 @@ public sealed class NavGameProfile
         int aa = int.Parse(digits.Substring(0, 2)), bb = int.Parse(digits.Substring(2, 2)), cc = int.Parse(digits.Substring(4, 2)), dd = int.Parse(digits.Substring(6, 2));
         return _nameId(aa, bb, cc, dd, NavigationMap.IsOpenWorld(nameBase), position);
     }
+
+    /// <summary>What a game's n NameIDs are built from.</summary>
+    public NavNameIdKind NameIdKind { get; private init; } = NavNameIdKind.Position;
+
+    /// <summary>
+    /// The Unk50 a new entry gets: ER and NR 0xFF01 (no quarter), AC6 1 (every entry with a ModelID of 0 or more), DS3,
+    /// BB and SDT 0 (all of them). DB_NT's compact entries keep the connected list's offset there, which the writer sets.
+    /// </summary>
+    public int NewEntryUnk50 { get; private init; } = 0xFF01;
+
+    /// <summary>
+    /// The NameID the game files give an n entry, from its position or its ModelID by the game's rule; null in a game
+    /// without one rule (BB) or for a ModelID the rule can't hold.
+    /// </summary>
+    public uint? ExpectedNameId(string nameBase, int position, int modelId)
+    {
+        switch (NameIdKind)
+        {
+            case NavNameIdKind.Position:
+                return ExpectedNameId(nameBase, position);
+            case NavNameIdKind.ModelId:
+                if (modelId < 0 || modelId > 999_999)
+                    return null;
+                var digits = nameBase.Substring(1).Replace("_", "");
+                int aa = int.Parse(digits.Substring(0, 2)), bb = int.Parse(digits.Substring(2, 2));
+                return (uint)((aa * 10 + bb) * 1_000_000 + modelId);
+            default:
+                return null;
+        }
+    }
+
+    /// <summary>
+    /// The NameID the game gives placeholders that have no NameID of their own: -1 (DS3 2, SDT 3, BB 21 entries, none
+    /// with faces). The NameID rule doesn't apply to them.
+    /// </summary>
+    public const uint NoNameId = 0xFFFF_FFFFu;
 
     /// <summary>The NameID of an n entry's o entry.</summary>
     public uint MirrorOf(uint nNameId) => nNameId + MirrorOffset;
