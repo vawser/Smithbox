@@ -157,7 +157,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(float))
         {
             var val = (float)oldval;
-            if (ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue,
+            if (ImGui.DragFloat("##value", ref val, MaterialValueInputs.Speed(val), float.MinValue, float.MaxValue,
                     Utils.ImGui_InputFloatFormat(val)))
             {
                 newval = val;
@@ -183,7 +183,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(Vector2))
         {
             var val = (Vector2)oldval;
-            if (ImGui.DragFloat2("##value", ref val, 0.1f))
+            if (ImGui.DragFloat2("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -193,7 +193,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector3)oldval;
 
-            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+            if (ImGui.DragFloat3("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -203,7 +203,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector4)oldval;
 
-            if (ImGui.DragFloat4("##value", ref val, 0.1f))
+            if (ImGui.DragFloat4("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -350,6 +350,10 @@ public class MaterialPropertyInput
 
         newval = null;
         var isChanged = false;
+
+        // Colour params get a colour picker
+        if (prop.Name == "Value" && MaterialValueInputs.TryColor(sourceObj, oldval, out newval, out var colorResult))
+            return colorResult;
 
         switch (paramType)
         {
@@ -545,7 +549,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(float))
         {
             var val = (float)oldval;
-            if (ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue,
+            if (ImGui.DragFloat("##value", ref val, MaterialValueInputs.Speed(val), float.MinValue, float.MaxValue,
                     Utils.ImGui_InputFloatFormat(val)))
             {
                 newval = val;
@@ -571,7 +575,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(Vector2))
         {
             var val = (Vector2)oldval;
-            if (ImGui.DragFloat2("##value", ref val, 0.1f))
+            if (ImGui.DragFloat2("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -581,7 +585,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector3)oldval;
 
-            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+            if (ImGui.DragFloat3("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -591,7 +595,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector4)oldval;
 
-            if (ImGui.DragFloat4("##value", ref val, 0.1f))
+            if (ImGui.DragFloat4("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -757,6 +761,13 @@ public class MaterialPropertyInput
         newval = null;
         var isChanged = false;
 
+        // Colour params get a colour picker, and g_BlendMode the blend mode combo the MTD one has
+        if (prop.Name == "Value" && MaterialValueInputs.TryColor(sourceObj, oldval, out newval, out var colorResult))
+            return colorResult;
+
+        if (prop.Name == "Value" && MaterialValueInputs.TryBlendMode(sourceObj, oldval, out newval, out var blendResult))
+            return blendResult;
+
         switch (paramType)
         {
             case MATBIN.ParamType.Bool:
@@ -913,7 +924,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(float))
         {
             var val = (float)oldval;
-            if (ImGui.DragFloat("##value", ref val, 0.1f, float.MinValue, float.MaxValue,
+            if (ImGui.DragFloat("##value", ref val, MaterialValueInputs.Speed(val), float.MinValue, float.MaxValue,
                     Utils.ImGui_InputFloatFormat(val)))
             {
                 newval = val;
@@ -939,7 +950,7 @@ public class MaterialPropertyInput
         else if (typ == typeof(Vector2))
         {
             var val = (Vector2)oldval;
-            if (ImGui.DragFloat2("##value", ref val, 0.1f))
+            if (ImGui.DragFloat2("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -949,7 +960,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector3)oldval;
 
-            if (ImGui.DragFloat3("##value", ref val, 0.1f))
+            if (ImGui.DragFloat3("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -959,7 +970,7 @@ public class MaterialPropertyInput
         {
             var val = (Vector4)oldval;
 
-            if (ImGui.DragFloat4("##value", ref val, 0.1f))
+            if (ImGui.DragFloat4("##value", ref val, MaterialValueInputs.Speed(val)))
             {
                 newval = val;
                 isChanged = true;
@@ -972,13 +983,13 @@ public class MaterialPropertyInput
             var v4 = arr[3];
             var v5 = arr[4];
 
-            bool changed3 = ImGui.DragFloat3("##value_f5_xyz", ref v3, 0.1f);
+            bool changed3 = ImGui.DragFloat3("##value_f5_xyz", ref v3, MaterialValueInputs.Speed(v3));
 
             ImGui.SetNextItemWidth(-1);
-            bool changed4 = ImGui.DragFloat("##value_f5_w", ref v4, 0.1f, float.MinValue, float.MaxValue, Utils.ImGui_InputFloatFormat(v4));
+            bool changed4 = ImGui.DragFloat("##value_f5_w", ref v4, MaterialValueInputs.Speed(v4), float.MinValue, float.MaxValue, Utils.ImGui_InputFloatFormat(v4));
 
             ImGui.SetNextItemWidth(-1);
-            bool changed5 = ImGui.DragFloat("##value_f5_v", ref v5, 0.1f, float.MinValue, float.MaxValue,
+            bool changed5 = ImGui.DragFloat("##value_f5_v", ref v5, MaterialValueInputs.Speed(v5), float.MinValue, float.MaxValue,
                 Utils.ImGui_InputFloatFormat(v5));
 
             if (changed3 || changed4 || changed5)

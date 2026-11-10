@@ -5,6 +5,24 @@ using System.IO;
 namespace SoulsFormats
 {
     /// <summary>
+    /// Which state machine a <see cref="BHV"/> holds.
+    /// </summary>
+    public enum BHVKind
+    {
+        /// <summary>No preamble and no data; weapon.bhv.</summary>
+        Empty,
+
+        /// <summary>Weapon state machine; wNNN.bhv.</summary>
+        Weapon,
+
+        /// <summary>Body state machine; basenormal.bhv.</summary>
+        Base,
+
+        /// <summary>A preamble size not seen in the game files.</summary>
+        Unknown,
+    }
+
+    /// <summary>
     /// A behavior state machine introduced in AC6, found in chr behbnds: basenormal.bhv, weapon.bhv and wNNN.bhv.
     /// Extension: .bhv
     /// </summary>
@@ -77,6 +95,18 @@ namespace SoulsFormats
             StructCs = new List<byte[]>();
             StructDs = new List<StructD>();
         }
+
+        /// <summary>
+        /// Which state machine the file holds, from the preamble size. Base and weapon states have different
+        /// <see cref="State.Body"/> layouts.
+        /// </summary>
+        public BHVKind Kind => Preamble.Length switch
+        {
+            0 => BHVKind.Empty,
+            0x40 => BHVKind.Weapon,
+            0xE0 => BHVKind.Base,
+            _ => BHVKind.Unknown,
+        };
 
         /// <summary>Size of a state for this version.</summary>
         public int StateSize => Version >= 10 ? 0xA0 : 0x80;
@@ -342,6 +372,38 @@ namespace SoulsFormats
             }
 
             bw.FillInt32("FileSize", (int)bw.Position);
+        }
+
+        /// <summary>
+        /// Version 12 fields identified by matching value sets against the game's u8 enums (param TDFs) across
+        /// all AC6 files. Offsets index into <see cref="State.Body"/> or <see cref="Condition.Data"/>.
+        /// Earlier versions use other layouts and older enum tables.
+        /// </summary>
+        public static class V12
+        {
+            /// <summary>Weapon states: LOCAL_ACTION_TYPE_ENUM, u8.</summary>
+            public const int WeaponBodyLocalActionType = 0x5F;
+
+            /// <summary>Weapon states: four ATK_ACTION_TYPE_ENUM slots, u8 each.</summary>
+            public const int WeaponBodyAtkActionTypes = 0x60;
+
+            /// <summary>Base states: ACTION_AI_TYPE_ENUM, u8.</summary>
+            public const int BaseBodyActionAiType = 0x5E;
+
+            /// <summary>Base states: ACTION_SOUND_TYPE_ENUM, u8.</summary>
+            public const int BaseBodyActionSoundType = 0x5F;
+
+            /// <summary>Base states: four ACTION_TYPE_ENUM slots, u8 each.</summary>
+            public const int BaseBodyActionTypes = 0x61;
+
+            /// <summary>Condition type 30 data: ACTION_TYPE_ENUM, u8.</summary>
+            public const int Condition30ActionType = 0x0;
+
+            /// <summary>Condition type 57 data: ATK_ACTION_TYPE_ENUM, u8.</summary>
+            public const int Condition57AtkActionType = 0x2;
+
+            /// <summary>Condition type 48 data: LOCAL_ACTION_TYPE_ENUM, u8.</summary>
+            public const int Condition48LocalActionType = 0x18;
         }
 
         private static void WriteFixed(BinaryWriterEx bw, byte[] bytes, int size, string what)

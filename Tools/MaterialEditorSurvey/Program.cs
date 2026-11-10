@@ -49,6 +49,7 @@ foreach (var gameName in games)
         if (modes is "keydump") Inspect.KeyDump(game);
         if (modes is "check") CheckSurvey.Run(game);
         if (modes is "rebuild") RebuildSurvey.Run(game);
+        if (modes is "shaders") ShaderSurvey.Run(game);
     }
 }
 

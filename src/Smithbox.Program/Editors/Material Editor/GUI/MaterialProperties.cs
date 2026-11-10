@@ -22,10 +22,17 @@ public class MaterialProperties
     // Deepest nesting searched for a match: material > list > param > value
     private const int MaxSearchDepth = 8;
 
+    private readonly MaterialShaderPanel ShaderPanel;
+
+    // The shader info of the material being drawn, for the param and sampler labels
+    private MaterialShaderInfo CurrentShaderInfo;
+
     public MaterialProperties(MaterialEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        ShaderPanel = new MaterialShaderPanel(view, project);
     }
 
     public void Draw()
@@ -133,6 +140,9 @@ public class MaterialProperties
     public void DisplayPropertyList(string implType, object sourceObj)
     {
         DisplayFindings();
+
+        CurrentShaderInfo = ShaderPanel.InfoFor(sourceObj);
+        ShaderPanel.Draw(View.Selection.SourceType, sourceObj);
 
         var type = sourceObj.GetType();
 
@@ -814,8 +824,22 @@ public class MaterialProperties
 
                     if (elementType.IsClass && elementType != typeof(string) && !elementType.IsArray)
                     {
-                        var classOpen = ImGui.TreeNodeEx($@"{fieldName}: {i}", treeFlags);
+                        // Params, samplers and textures show their name, and what the shader uses them for
+                        var (entryName, uses) = elem switch
+                        {
+                            MATBIN.Param p => (p.Name, CurrentShaderInfo?.UsesOfParam(p.Name)),
+                            MTD.Param p => (p.Name, CurrentShaderInfo?.UsesOfParam(p.Name)),
+                            MATBIN.Sampler s => (s.Type, CurrentShaderInfo?.UsesOfSlot(MaterialShaderInfo.SlotOf(s.Type))),
+                            MTD.Texture t => (t.Type, CurrentShaderInfo?.UsesOfSlot(MaterialShaderInfo.SlotOf(t.Type))),
+                            _ => (null, null)
+                        };
+
+                        var label = entryName != null ? $"{fieldName}: {i} · {entryName}" : $"{fieldName}: {i}";
+                        var classOpen = ImGui.TreeNodeEx($@"{label}###{fieldName}{i}", treeFlags);
                         GUI.Tooltip(fieldDescription);
+
+                        if (uses != null)
+                            MaterialShaderPanel.DisplayUses(CurrentShaderInfo, uses);
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);
                         ImGui.Text(elem?.GetType().Name ?? "null");

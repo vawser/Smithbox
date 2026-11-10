@@ -1,0 +1,152 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Shader_Header",
+      "Text": "Shader: {0}"
+    },
+    {
+      "Key": "MAT_Shader_Known",
+      "Text": "From the shader table, made from the game's compiled shaders: what this shader does with its texture slots and params. It covers what the viewport uses, so a param without a use may still be read by the game."
+    },
+    {
+      "Key": "MAT_Shader_Known_Deformer",
+      "Text": "From the shader table, made from the game's compiled shaders: what this shader does with its texture slots and params. It moves its vertices ({0}). It covers what the viewport uses, so a param without a use may still be read by the game."
+    },
+    {
+      "Key": "MAT_Shader_Unknown",
+      "Text": "This game's shader table has nothing for this shader, so its params and slots can't be explained. Only params every shader shares are labelled."
+    },
+    {
+      "Key": "MAT_Shader_Slot",
+      "Text": "Slot"
+    },
+    {
+      "Key": "MAT_Shader_Sampler",
+      "Text": "Sampler"
+    },
+    {
+      "Key": "MAT_Shader_Group",
+      "Text": "UV Group (Tiling)"
+    },
+    {
+      "Key": "MAT_Shader_UvSet",
+      "Text": "UV Set"
+    },
+    {
+      "Key": "MAT_Shader_Uses",
+      "Text": "Used For"
+    },
+    {
+      "Key": "MAT_Shader_No_Sampler",
+      "Text": "none"
+    },
+    {
+      "Key": "MAT_Shader_No_Sampler_TT",
+      "Text": "The shader samples this slot, but the material has no sampler for it. Some vanilla materials are like this (the FLVER can name the texture), so it isn't a problem by itself."
+    },
+    {
+      "Key": "MAT_Shader_Group_TT",
+      "Text": "Textures in a UV group share their tiling, which is the {0} param."
+    },
+    {
+      "Key": "MAT_Shader_Templates_Building",
+      "Text": "Gathering what the materials of each shader have..."
+    },
+    {
+      "Key": "MAT_Shader_Missing",
+      "Text": "Every other material with this shader has {0} params and {1} samplers this one doesn't."
+    },
+    {
+      "Key": "MAT_Shader_Add_Missing",
+      "Text": "Add Missing"
+    },
+    {
+      "Key": "MAT_Shader_Add_Missing_TT",
+      "Text": "Add them, with the type and value most of those materials use (samplers without a texture path). One undo removes them all."
+    },
+    {
+      "Key": "MAT_Shader_Section_Deformer",
+      "Text": "Deformer ({0})"
+    },
+    {
+      "Key": "MAT_Shader_Section_TextureInput",
+      "Text": "Texture"
+    },
+    {
+      "Key": "MAT_Shader_Section_TextureInput_Slot",
+      "Text": "Texture slot {0}"
+    },
+    {
+      "Key": "MAT_Shader_Section_Tiling",
+      "Text": "Tiling of slots {0}"
+    },
+    {
+      "Key": "MAT_Shader_Section_Blend",
+      "Text": "Layer blend"
+    },
+    {
+      "Key": "MAT_Shader_Section_Detail",
+      "Text": "Detail"
+    },
+    {
+      "Key": "MAT_Shader_Section_Magma",
+      "Text": "Magma"
+    },
+    {
+      "Key": "MAT_Shader_Section_Water",
+      "Text": "Water"
+    },
+    {
+      "Key": "MAT_Shader_Section_Fur",
+      "Text": "Fur"
+    },
+    {
+      "Key": "MAT_Shader_Section_Metallic",
+      "Text": "Metallic"
+    },
+    {
+      "Key": "MAT_Shader_Section_EmissiveMask",
+      "Text": "Emissive mask"
+    },
+    {
+      "Key": "MAT_Shader_Engine_BlendMode",
+      "Text": "Blend mode"
+    },
+    {
+      "Key": "MAT_Shader_Engine_AlphaRef",
+      "Text": "Alpha cutoff"
+    },
+    {
+      "Key": "MAT_Shader_Engine_CullNone",
+      "Text": "Two-sided"
+    },
+    {
+      "Key": "MAT_Shader_Engine_DisableDepthWrite",
+      "Text": "No depth write"
+    },
+    {
+      "Key": "MAT_Shader_Engine_MeshDecal",
+      "Text": "Mesh decal"
+    },
+    {
+      "Key": "MAT_Shader_Engine_DiffuseColor",
+      "Text": "Albedo colour"
+    },
+    {
+      "Key": "MAT_Shader_Engine_StaticSwitch",
+      "Text": "Shader permutation"
+    },
+    {
+      "Key": "MAT_Shader_Engine_TexScroll",
+      "Text": "UV scroll"
+    },
+    {
+      "Key": "MAT_Shader_Engine_LightingType",
+      "Text": "Lighting type"
+    },
+    {
+      "Key": "MAT_Properties_Color_Intensity_TT",
+      "Text": "Intensity: the colour is multiplied by this where the shader gives off light."
+    }
+  ]
+}

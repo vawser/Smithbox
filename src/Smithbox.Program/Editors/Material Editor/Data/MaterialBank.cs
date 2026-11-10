@@ -37,11 +37,27 @@ public class MaterialBank : IDisposable
 
     public MaterialShaderTable ShaderTable { get; set; } = new();
 
+    /// <summary>
+    /// What the materials of each shader have, built in the background on first use
+    /// </summary>
+    public MaterialTemplates Templates { get; private set; }
+
+    // Shader info is the same for every material of a shader and permutation
+    private readonly ConcurrentDictionary<(string, int), MaterialShaderInfo> ShaderInfos = new();
+
+    /// <summary>
+    /// What the shader table says about a material's shader
+    /// </summary>
+    public MaterialShaderInfo GetShaderInfo(string shaderPath, int staticSwitch) =>
+        ShaderInfos.GetOrAdd(((shaderPath ?? "").ToLowerInvariant(), staticSwitch),
+            _ => MaterialShaderInfo.Build(ShaderTable, shaderPath, staticSwitch));
+
     public MaterialBank(string name, ProjectEntry project, VirtualFileSystem targetFs)
     {
         Project = project;
         Name = name;
         TargetFS = targetFs;
+        Templates = new MaterialTemplates(this);
     }
 
     public async Task<bool> Setup()
