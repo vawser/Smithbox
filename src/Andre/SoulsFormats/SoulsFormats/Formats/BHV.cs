@@ -1,164 +1,240 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace SoulsFormats
 {
-    public enum BHV_TYPE
-    {
-        BHV_TYPE_BASENORMAL,
-        BHV_TYPE_WEAPON,
-        BHV_TYPE_W
-    }
-
     /// <summary>
-    /// A behavior configuration file introduced in AC6. Extension: .bhv
+    /// A behavior state machine introduced in AC6, found in chr behbnds: basenormal.bhv, weapon.bhv and wNNN.bhv.
+    /// Extension: .bhv
     /// </summary>
+    /// <remarks>
+    /// All offsets in the file are relative to 0x20. The data is written in a fixed sequential order:
+    /// header, preamble, states, state data, transitions, transition params, conditions, condition data,
+    /// struct B, struct C, struct D, struct DA, strings. Variable-length payloads are sized from that order.
+    /// See Documentation/Claude/BHV Format.md.
+    /// </remarks>
     public class BHV : SoulsFile<BHV>
     {
+        private const int DataStart = 0x20;
+
         /// <summary>
-        /// The version of this BHV file.
+        /// Format version; 5 and 6 (launch-era), 10 and 12. Decides the size of states, struct B and struct DA.
         /// </summary>
         public short Version { get; set; }
 
-        private BHV_TYPE FileType { get; set; }
+        /// <summary>
+        /// Unknown; always 3.
+        /// </summary>
+        public short Unk02 { get; set; }
 
-        private short[] mystery { get; set; }
+        /// <summary>
+        /// Unknown block between the header and the states: 0xE0 bytes in basenormal.bhv, 0x40 bytes in wNNN.bhv
+        /// (starting with the weapon number as a short), absent in weapon.bhv.
+        /// </summary>
+        public byte[] Preamble { get; set; }
 
-        private int MysterySize { get; set; }
+        /// <summary>
+        /// States of the machine.
+        /// </summary>
+        public List<State> States { get; set; }
+
+        /// <summary>
+        /// Unknown fixed-size records; size depends on version (0x40, 0x50, 0x60).
+        /// </summary>
+        public List<byte[]> StructBs { get; set; }
+
+        /// <summary>
+        /// Size of each struct C; stored even when there are none, and differs between behbnds.
+        /// </summary>
+        public short StructCSize { get; set; }
+
+        /// <summary>
+        /// Unknown fixed-size records of <see cref="StructCSize"/> bytes.
+        /// </summary>
+        public List<byte[]> StructCs { get; set; }
+
+        /// <summary>
+        /// Unknown records, each owning a list of struct DA.
+        /// </summary>
+        public List<StructD> StructDs { get; set; }
+
+        /// <summary>
+        /// Name table at the end of the file; present in basenormal.bhv only, null otherwise.
+        /// </summary>
+        public List<string> Strings { get; set; }
+
+        /// <summary>
+        /// Creates an empty version 12 BHV.
+        /// </summary>
+        public BHV()
+        {
+            Version = 12;
+            Unk02 = 3;
+            Preamble = new byte[0x40];
+            States = new List<State>();
+            StructBs = new List<byte[]>();
+            StructCs = new List<byte[]>();
+            StructDs = new List<StructD>();
+        }
+
+        /// <summary>Size of a state for this version.</summary>
+        public int StateSize => Version >= 10 ? 0xA0 : 0x80;
+
+        /// <summary>Size of a struct B for this version.</summary>
+        public int StructBSize => Version switch { 5 => 0x40, 6 => 0x50, _ => 0x60 };
+
+        /// <summary>Size of a struct DA for this version.</summary>
+        public int StructDASize => Version >= 10 ? 0x30 : 0x20;
+
+        /// <summary>
+        /// Checks whether the data appears to be a file of this format.
+        /// </summary>
+        protected override bool Is(BinaryReaderEx br)
+        {
+            if (br.Length < 0x40)
+                return false;
+            short version = br.GetInt16(0);
+            return (version == 5 || version == 6 || version == 10 || version == 12)
+                && br.GetInt16(2) == 3 && br.GetInt32(4) == br.Length;
+        }
 
         /// <summary>
         /// Deserializes file data from a stream.
         /// </summary>
-        protected override void Read(BinaryReaderEx br, string filename)
+        protected override void Read(BinaryReaderEx br)
         {
-            // Get file type based on filename
-            switch (filename)
-            {
-                case "basenormal.bhv":
-                    FileType = BHV_TYPE.BHV_TYPE_BASENORMAL;
-                    break;
-                case "weapon.bhv":
-                    FileType = BHV_TYPE.BHV_TYPE_WEAPON;
-                    break;
-                default:
-                    FileType = BHV_TYPE.BHV_TYPE_W;
-                    break;
-            }
+            br.BigEndian = false;
 
-            // Get the mystery size based on file type
-            switch (FileType)
-            {
-                case BHV_TYPE.BHV_TYPE_BASENORMAL:
-                    MysterySize = 0xE0;
-                    break;
-                case BHV_TYPE.BHV_TYPE_WEAPON:
-                    MysterySize = 0x0;
-                    break;
-                case BHV_TYPE.BHV_TYPE_W:
-                    MysterySize = 0x40;
-                    break;
-                default:
-                    MysterySize = -1;
-                    break;
-            }
+            Version = br.AssertInt16([5, 6, 10, 12]);
+            Unk02 = br.ReadInt16();
+            br.AssertInt32((int)br.Length);
+            br.AssertPattern(0x18, 0x00);
 
-            // Header
-            Version = br.ReadInt16(); // version (5, 6, 10, 12)
-            br.AssertInt16(3); // unk02
-            int filesize = br.ReadInt32(); // fileSize
-            br.AssertInt32(0); // unk08
-            br.AssertInt32(0); // unk0c
-            br.AssertInt32(0); // unk10
-            br.AssertInt32(0); // unk14
-            br.AssertInt32(0); // unk18
-            br.AssertInt32(0); // unk1c
+            int statesOffset = br.ReadInt32();
+            int stateCount = br.ReadInt32();
+            int offsetB = br.ReadInt32();
+            int countB = br.ReadInt32();
+            int offsetC = br.ReadInt32();
+            short countC = br.ReadInt16();
+            StructCSize = br.ReadInt16();
+            int offsetD = br.ReadInt32();
+            int countD = br.ReadInt32();
 
-            int statesOffset = br.ReadInt32(); // statesOffset
-            int stateCount = br.ReadInt32(); // stateCount
-            int offsetB = br.ReadInt32(); // offsetB
-            int countB = br.ReadInt32(); // countB
-            int offsetC = br.ReadInt32(); // offsetC
-            short countC = br.ReadInt16(); // countC
-            short sizeC = br.ReadInt16(); // sizeC
-            int offsetD = br.ReadInt32(); // offsetD
-            int countD = br.ReadInt32(); // countD
+            Preamble = br.GetBytes(0x40, DataStart + statesOffset - 0x40);
 
-            int sizeB = -1;
+            // Fixed-size structures first, collecting the variable-length payload offsets in write order
+            var stateDataOffsets = new List<int>(stateCount);
+            var transitionOwners = new List<Transition>();
+            var paramOffsets = new List<int>();
+            var conditionOwners = new List<Condition>();
+            var conditionDataOffsets = new List<int>();
+            // Each payload list may only be bounded by what is written after it: a state or transition with nothing to
+            // point at still stores the current write position, which can equal the start of the following payload list
+            var transitionBounds = new List<int>();
+            var conditionBounds = new List<int>();
+            var laterBounds = new List<int> { offsetB, offsetC, (int)br.Length - DataStart };
 
-            switch (Version)
+            States = new List<State>(stateCount);
+            for (int i = 0; i < stateCount; i++)
             {
-                case 5:
-                    sizeB = 0x40;
-                    break;
-                case 6:
-                    sizeB = 0x50;
-                    break;
-                case 10:
-                    sizeB = 0x60;
-                    break;
-                case 12:
-                    sizeB = 0x60;
-                    break;
-                default:
-                    throw new Exception("BHV: Invalid version during read.");
-            }
+                br.Position = DataStart + statesOffset + i * StateSize;
+                var state = new State(br, StateSize, out int dataOffset, out int transitionsOffset, out int transitionCount);
+                States.Add(state);
+                stateDataOffsets.Add(dataOffset);
+                transitionBounds.Add(transitionsOffset);
 
-            if (offsetC != offsetB + countB * sizeB)
-            {
-                throw new Exception("BHV: offsetC != offsetB + countB * sizeB");
-            }
-            if (offsetD != 0)
-            {
-                throw new Exception("BHV: offsetD != 0");
-            }
-            if (offsetD != offsetC + countC * sizeC)
-            {
-                throw new Exception("BHV: offsetD != offsetC + countC * sizeC");
-            }
-
-            // Mystery Size
-            if (MysterySize != -1)
-            {
-                for(int i = 0; i < MysterySize / 2; i++)
+                for (int t = 0; t < transitionCount; t++)
                 {
-                    mystery[i] = br.ReadInt16();
+                    br.Position = DataStart + transitionsOffset + t * Transition.Size;
+                    var transition = new Transition(br, out int conditionsOffset, out int conditionCount, out int paramOffset);
+                    state.Transitions.Add(transition);
+                    transitionOwners.Add(transition);
+                    paramOffsets.Add(paramOffset);
+                    conditionBounds.Add(conditionsOffset);
+
+                    for (int c = 0; c < conditionCount; c++)
+                    {
+                        br.Position = DataStart + conditionsOffset + c * Condition.Size;
+                        var condition = new Condition(br, out int dataOffset2);
+                        transition.Conditions.Add(condition);
+                        conditionOwners.Add(condition);
+                        conditionDataOffsets.Add(dataOffset2);
+                    }
                 }
             }
 
-            int DATA_START = 0x20;
+            StructBs = new List<byte[]>(countB);
+            for (int i = 0; i < countB; i++)
+                StructBs.Add(br.GetBytes(DataStart + offsetB + i * StructBSize, StructBSize));
 
-            // States
-            if(stateCount > 0)
+            StructCs = new List<byte[]>(countC);
+            for (int i = 0; i < countC; i++)
+                StructCs.Add(br.GetBytes(DataStart + offsetC + i * StructCSize, StructCSize));
+
+            int stringsOffset = offsetC + countC * StructCSize;
+            StructDs = new List<StructD>(countD);
+            for (int i = 0; i < countD; i++)
             {
-
+                br.Position = DataStart + offsetD + i * StructD.Size;
+                var d = new StructD(br, out int daOffset, out int daCount);
+                for (int a = 0; a < daCount; a++)
+                    d.StructDAs.Add(br.GetBytes(DataStart + daOffset + a * StructDASize, StructDASize));
+                StructDs.Add(d);
+                stringsOffset = Math.Max(stringsOffset, Math.Max(offsetD + (i + 1) * StructD.Size, daOffset + daCount * StructDASize));
             }
+            laterBounds.Add(stringsOffset);
 
-            // TODO: finish
+            // Variable-length payloads: each one runs to the next payload in the list, the last to the next structure
+            var stateData = SliceSequential(br, stateDataOffsets, [.. transitionBounds, .. paramOffsets, .. conditionBounds, .. laterBounds], "state data");
+            for (int i = 0; i < stateCount; i++)
+                States[i].Data = stateData[i];
 
-            //-----
-            /*
-            br.BigEndian = br.GetBoolean(0x10);
+            var paramData = SliceSequential(br, paramOffsets, [.. conditionBounds, .. laterBounds], "transition params");
+            for (int i = 0; i < transitionOwners.Count; i++)
+                transitionOwners[i].Params = paramData[i];
 
-            br.AssertInt32(1);
-            br.AssertInt32(0);
-            int entryCount = br.ReadInt32();
-            int stringsLength = br.ReadInt32();
-            BigEndian = br.ReadBoolean();
-            br.AssertByte(0);
-            br.AssertByte(0);
-            br.AssertByte(0);
-            br.VarintLong = LongFormat = br.AssertInt32([0x1C, 0x28]) == 0x28; // Entry size
-            br.AssertPattern(0x24, 0x00);
+            var conditionData = SliceSequential(br, conditionDataOffsets, laterBounds, "condition data");
+            for (int i = 0; i < conditionOwners.Count; i++)
+                conditionOwners[i].Data = conditionData[i];
 
-            long stringsStart = br.Position;
-            br.Skip(stringsLength);
-            Entries = new List<Entry>(entryCount);
-            for (int i = 0; i < entryCount; i++)
-                Entries.Add(new Entry(br, stringsStart));
-            */
+            Strings = null;
+            if (DataStart + stringsOffset < br.Length)
+            {
+                br.Position = DataStart + stringsOffset;
+                short stringCount = br.ReadInt16();
+                long stringsStart = br.Position + stringCount * 2;
+                short[] stringOffsets = br.ReadInt16s(stringCount);
+                Strings = new List<string>(stringCount);
+                foreach (short offset in stringOffsets)
+                    Strings.Add(br.GetShiftJIS(stringsStart + offset));
+            }
+        }
+
+        private static List<byte[]> SliceSequential(BinaryReaderEx br, List<int> offsets, List<int> boundaries, string what)
+        {
+            var result = new List<byte[]>(offsets.Count);
+            for (int i = 0; i < offsets.Count; i++)
+            {
+                int start = offsets[i];
+                int end;
+                if (i + 1 < offsets.Count)
+                {
+                    end = offsets[i + 1];
+                    if (end < start)
+                        throw new InvalidDataException($"BHV: {what} offsets are not sequential ({start:X} then {end:X}).");
+                }
+                else
+                {
+                    // The last payload ends at the nearest following structure, which may start exactly where it does
+                    end = int.MaxValue;
+                    foreach (int b in boundaries)
+                        if (b >= start && b < end)
+                            end = b;
+                }
+                result.Add(br.GetBytes(DataStart + start, end - start));
+            }
+            return result;
         }
 
         /// <summary>
@@ -166,86 +242,364 @@ namespace SoulsFormats
         /// </summary>
         protected override void Write(BinaryWriterEx bw)
         {
-            //-----
-            /*
-            bw.BigEndian = BigEndian;
-            bw.VarintLong = LongFormat;
+            bw.BigEndian = false;
 
-            bw.WriteInt32(1);
-            bw.WriteInt32(0);
-            bw.WriteInt32(Entries.Count);
-            bw.ReserveInt32("StringsLength");
-            bw.WriteBoolean(BigEndian);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteByte(0);
-            bw.WriteInt32(LongFormat ? 0x28 : 0x1C);
-            bw.WritePattern(0x24, 0x00);
+            bw.WriteInt16(Version);
+            bw.WriteInt16(Unk02);
+            bw.ReserveInt32("FileSize");
+            bw.WritePattern(0x18, 0x00);
 
-            long stringsStart = bw.Position;
-            var stringOffsets = new List<long>(Entries.Count * 2);
-            foreach (Entry entry in Entries)
+            bw.ReserveInt32("StatesOffset");
+            bw.WriteInt32(States.Count);
+            bw.ReserveInt32("OffsetB");
+            bw.WriteInt32(StructBs.Count);
+            bw.ReserveInt32("OffsetC");
+            bw.WriteInt16((short)StructCs.Count);
+            bw.WriteInt16(StructCSize);
+            bw.ReserveInt32("OffsetD");
+            bw.WriteInt32(StructDs.Count);
+
+            bw.WriteBytes(Preamble);
+
+            int Rel() => (int)bw.Position - DataStart;
+
+            bw.FillInt32("StatesOffset", Rel());
+            for (int i = 0; i < States.Count; i++)
+                States[i].Write(bw, i, StateSize);
+
+            for (int i = 0; i < States.Count; i++)
             {
-                long partNameOffset = bw.Position - stringsStart;
-                stringOffsets.Add(partNameOffset);
-                bw.WriteUTF16(entry.PartName, true);
-                bw.PadRelative(stringsStart, 8); // This padding is not consistent, but it's the best I can do
-
-                long materialNameOffset = bw.Position - stringsStart;
-                stringOffsets.Add(materialNameOffset);
-                bw.WriteUTF16(entry.MaterialName, true);
-                bw.PadRelative(stringsStart, 8);
+                bw.FillInt32($"StateData{i}", Rel());
+                bw.WriteBytes(States[i].Data);
             }
 
-            bw.FillInt32("StringsLength", (int)(bw.Position - stringsStart));
-            for (int i = 0; i < Entries.Count; i++)
-                Entries[i].Write(bw, stringOffsets[i * 2], stringOffsets[i * 2 + 1]);
-            */
+            // Transitions, then their params, then conditions, then condition data, each in state order
+            var transitions = new List<Transition>();
+            for (int i = 0; i < States.Count; i++)
+            {
+                bw.FillInt32($"StateTransitions{i}", Rel());
+                foreach (Transition transition in States[i].Transitions)
+                {
+                    transition.Write(bw, transitions.Count);
+                    transitions.Add(transition);
+                }
+            }
+
+            for (int i = 0; i < transitions.Count; i++)
+            {
+                bw.FillInt32($"TransitionParams{i}", Rel());
+                bw.WriteBytes(transitions[i].Params);
+            }
+
+            var conditions = new List<Condition>();
+            for (int i = 0; i < transitions.Count; i++)
+            {
+                bw.FillInt32($"TransitionConditions{i}", Rel());
+                foreach (Condition condition in transitions[i].Conditions)
+                {
+                    condition.Write(bw, conditions.Count);
+                    conditions.Add(condition);
+                }
+            }
+
+            for (int i = 0; i < conditions.Count; i++)
+            {
+                bw.FillInt32($"ConditionData{i}", Rel());
+                bw.WriteBytes(conditions[i].Data);
+            }
+
+            bw.FillInt32("OffsetB", Rel());
+            foreach (byte[] b in StructBs)
+                WriteFixed(bw, b, StructBSize, "struct B");
+
+            bw.FillInt32("OffsetC", Rel());
+            foreach (byte[] c in StructCs)
+                WriteFixed(bw, c, StructCSize, "struct C");
+
+            // weapon.bhv, which has nothing in it, leaves the D offset at 0
+            bool noD = StructDs.Count == 0 && Preamble.Length == 0;
+            bw.FillInt32("OffsetD", noD ? 0 : Rel());
+            for (int i = 0; i < StructDs.Count; i++)
+                StructDs[i].Write(bw, i);
+            for (int i = 0; i < StructDs.Count; i++)
+            {
+                bw.FillInt32($"StructDAs{i}", Rel());
+                foreach (byte[] da in StructDs[i].StructDAs)
+                    WriteFixed(bw, da, StructDASize, "struct DA");
+            }
+
+            if (Strings != null)
+            {
+                bw.WriteInt16((short)Strings.Count);
+                short offset = 0;
+                foreach (string str in Strings)
+                {
+                    bw.WriteInt16(offset);
+                    offset += (short)(SFEncoding.ShiftJIS.GetByteCount(str) + 1);
+                }
+                foreach (string str in Strings)
+                    bw.WriteShiftJIS(str, true);
+            }
+
+            bw.FillInt32("FileSize", (int)bw.Position);
         }
 
+        private static void WriteFixed(BinaryWriterEx bw, byte[] bytes, int size, string what)
+        {
+            if (bytes.Length != size)
+                throw new InvalidDataException($"BHV: {what} must be 0x{size:X} bytes, got 0x{bytes.Length:X}.");
+            bw.WriteBytes(bytes);
+        }
+
+        /// <summary>
+        /// A state of the machine.
+        /// </summary>
         public class State
         {
+            /// <summary>
+            /// Identifier of the state; matches the state index in weapon files, but not in basenormal.bhv.
+            /// </summary>
+            public short ID { get; set; }
 
+            /// <summary>
+            /// Unknown; looks like a state kind. Decides the layout of <see cref="Data"/> together with fields in <see cref="Body"/>.
+            /// </summary>
+            public short Kind { get; set; }
+
+            /// <summary>
+            /// Unknown fixed body after the offsets: 0x70 bytes before version 10, 0x90 after.
+            /// </summary>
+            public byte[] Body { get; set; }
+
+            /// <summary>
+            /// Unknown variable-length data owned by the state; often empty.
+            /// </summary>
+            public byte[] Data { get; set; }
+
+            /// <summary>
+            /// Transitions out of this state, checked in order.
+            /// </summary>
+            public List<Transition> Transitions { get; set; }
+
+            /// <summary>
+            /// Creates a state with an empty body for the given state size (see <see cref="StateSize"/>).
+            /// </summary>
+            public State(int stateSize = 0xA0)
+            {
+                Body = new byte[stateSize - 0x10];
+                Data = Array.Empty<byte>();
+                Transitions = new List<Transition>();
+            }
+
+            internal State(BinaryReaderEx br, int stateSize, out int dataOffset, out int transitionsOffset, out int transitionCount)
+            {
+                ID = br.ReadInt16();
+                Kind = br.ReadInt16();
+                dataOffset = br.ReadInt32();
+                transitionsOffset = br.ReadInt32();
+                transitionCount = br.ReadInt32();
+                Body = br.ReadBytes(stateSize - 0x10);
+                Transitions = new List<Transition>(transitionCount);
+            }
+
+            internal void Write(BinaryWriterEx bw, int index, int stateSize)
+            {
+                bw.WriteInt16(ID);
+                bw.WriteInt16(Kind);
+                bw.ReserveInt32($"StateData{index}");
+                bw.ReserveInt32($"StateTransitions{index}");
+                bw.WriteInt32(Transitions.Count);
+                WriteFixed(bw, Body, stateSize - 0x10, "state body");
+            }
+
+            /// <summary>
+            /// Returns a readable summary of the state.
+            /// </summary>
+            public override string ToString() => $"State {ID} (kind {Kind}, {Transitions.Count} transitions)";
         }
 
+        /// <summary>
+        /// A transition to another state, taken when its conditions are met.
+        /// </summary>
         public class Transition
         {
+            internal const int Size = 0x20;
 
+            /// <summary>
+            /// Index of the target state in <see cref="States"/>.
+            /// </summary>
+            public int TargetStateIndex { get; set; }
+
+            /// <summary>
+            /// Conditions for the transition.
+            /// </summary>
+            public List<Condition> Conditions { get; set; }
+
+            /// <summary>
+            /// Unknown params for the transition; byte 1 is a type: 1 (0x1C bytes) in versions 5 and 6,
+            /// 3 (0x20 bytes) or 4 (0x34 bytes) in versions 10 and 12.
+            /// </summary>
+            public byte[] Params { get; set; }
+
+            /// <summary>
+            /// Creates a transition to state 0 with version 12 type 3 params.
+            /// </summary>
+            public Transition()
+            {
+                Conditions = new List<Condition>();
+                Params = new byte[0x20];
+                Params[1] = 3;
+            }
+
+            internal Transition(BinaryReaderEx br, out int conditionsOffset, out int conditionCount, out int paramOffset)
+            {
+                TargetStateIndex = br.ReadInt32();
+                conditionsOffset = br.ReadInt32();
+                conditionCount = br.ReadInt32();
+                paramOffset = br.ReadInt32();
+                br.AssertPattern(0x10, 0x00);
+                Conditions = new List<Condition>(conditionCount);
+            }
+
+            internal void Write(BinaryWriterEx bw, int index)
+            {
+                bw.WriteInt32(TargetStateIndex);
+                bw.ReserveInt32($"TransitionConditions{index}");
+                bw.WriteInt32(Conditions.Count);
+                bw.ReserveInt32($"TransitionParams{index}");
+                bw.WritePattern(0x10, 0x00);
+            }
+
+            /// <summary>
+            /// Returns a readable summary of the transition.
+            /// </summary>
+            public override string ToString() => $"-> {TargetStateIndex} ({Conditions.Count} conditions)";
         }
 
+        /// <summary>
+        /// A condition of a transition.
+        /// </summary>
         public class Condition
         {
+            internal const int Size = 0x10;
 
+            /// <summary>
+            /// Condition type; decides the layout of <see cref="Data"/>. IDs are not stable across versions.
+            /// </summary>
+            public byte Type { get; set; }
+
+            /// <summary>
+            /// Unknown; 0 or 1.
+            /// </summary>
+            public byte Unk02 { get; set; }
+
+            /// <summary>
+            /// Unknown; 0 or 1, usually 1.
+            /// </summary>
+            public byte Unk03 { get; set; }
+
+            /// <summary>
+            /// Unknown; 0 or 1.
+            /// </summary>
+            public byte Unk08 { get; set; }
+
+            /// <summary>
+            /// Unknown; 0 or 1, rarely 1.
+            /// </summary>
+            public byte Unk0B { get; set; }
+
+            /// <summary>
+            /// Arguments of the condition; may be empty.
+            /// </summary>
+            public byte[] Data { get; set; }
+
+            /// <summary>
+            /// Creates a type 0 condition with no data.
+            /// </summary>
+            public Condition()
+            {
+                Data = Array.Empty<byte>();
+            }
+
+            internal Condition(BinaryReaderEx br, out int dataOffset)
+            {
+                Type = br.ReadByte();
+                br.AssertByte(0);
+                Unk02 = br.ReadByte();
+                Unk03 = br.ReadByte();
+                dataOffset = br.ReadInt32();
+                Unk08 = br.ReadByte();
+                br.AssertByte(0);
+                br.AssertByte(0);
+                Unk0B = br.ReadByte();
+                br.AssertInt32(0);
+            }
+
+            internal void Write(BinaryWriterEx bw, int index)
+            {
+                bw.WriteByte(Type);
+                bw.WriteByte(0);
+                bw.WriteByte(Unk02);
+                bw.WriteByte(Unk03);
+                bw.ReserveInt32($"ConditionData{index}");
+                bw.WriteByte(Unk08);
+                bw.WriteByte(0);
+                bw.WriteByte(0);
+                bw.WriteByte(Unk0B);
+                bw.WriteInt32(0);
+            }
+
+            /// <summary>
+            /// Returns a readable summary of the condition.
+            /// </summary>
+            public override string ToString() => $"Condition {Type} ({Data.Length} bytes)";
         }
 
-        public class StructABB
-        {
-
-        }
-
-        public class StructB
-        {
-
-        }
-
-        public class StructC
-        {
-
-        }
-
+        /// <summary>
+        /// Unknown record owning a list of struct DA.
+        /// </summary>
         public class StructD
         {
+            internal const int Size = 0x20;
 
-        }
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public int Unk10 { get; set; }
 
-        public class StructDA
-        {
+            /// <summary>
+            /// Unknown fixed-size records (see <see cref="StructDASize"/>).
+            /// </summary>
+            public List<byte[]> StructDAs { get; set; }
 
-        }
+            /// <summary>
+            /// Creates an empty struct D.
+            /// </summary>
+            public StructD()
+            {
+                StructDAs = new List<byte[]>();
+            }
 
-        public class Strings
-        {
+            internal StructD(BinaryReaderEx br, out int daOffset, out int daCount)
+            {
+                daOffset = br.ReadInt32();
+                daCount = br.ReadInt32();
+                br.AssertInt32(0);
+                br.AssertInt32(0);
+                Unk10 = br.ReadInt32();
+                br.AssertPattern(0xC, 0x00);
+                StructDAs = new List<byte[]>(daCount);
+            }
 
+            internal void Write(BinaryWriterEx bw, int index)
+            {
+                bw.ReserveInt32($"StructDAs{index}");
+                bw.WriteInt32(StructDAs.Count);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+                bw.WriteInt32(Unk10);
+                bw.WritePattern(0xC, 0x00);
+            }
         }
     }
 }
