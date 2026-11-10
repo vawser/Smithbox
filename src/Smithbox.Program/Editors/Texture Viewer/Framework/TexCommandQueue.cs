@@ -52,7 +52,7 @@ public class TexCommandQueue
 
         Task.WaitAll(loadTask);
 
-        var targetBinder = Project.Handler.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+        var targetBinder = Project.Handler.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Path == targetFile.Path);
 
         if (targetBinder.Key != null)
         {

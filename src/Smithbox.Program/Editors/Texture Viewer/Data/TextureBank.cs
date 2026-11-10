@@ -115,6 +115,15 @@ public class TextureBank : IDisposable
         return true;
     }
 
+    /// <summary>
+    /// Containers are matched by path: names repeat across folders (ER /menu/hi/01_common.tpf and
+    /// /menu/low/01_common.tpf), so a match by name could load or return the other one.
+    /// </summary>
+    private static bool SamePath(FileDictionaryEntry a, FileDictionaryEntry b)
+    {
+        return string.Equals(a.Path, b.Path, StringComparison.OrdinalIgnoreCase);
+    }
+
     // For TPF and the others
     public async Task<bool> LoadTextureBinder(FileDictionaryEntry fileEntry)
     {
@@ -124,14 +133,14 @@ public class TextureBank : IDisposable
         if (fileEntry.Extension != "tpf")
         {
             // If already loaded, just ignore
-            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+            if (Entries.Any(e => SamePath(e.Key, fileEntry) && e.Value != null))
             {
                 return true;
             }
 
-            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename))
+            if (Entries.Any(e => SamePath(e.Key, fileEntry)))
             {
-                var binderEntry = Entries.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+                var binderEntry = Entries.FirstOrDefault(e => SamePath(e.Key, fileEntry));
 
                 if (binderEntry.Key != null)
                 {
@@ -266,15 +275,15 @@ public class TextureBank : IDisposable
         else if (fileEntry.Extension == "tpf")
         {
             // If already loaded, just ignore
-            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+            if (Entries.Any(e => SamePath(e.Key, fileEntry) && e.Value != null))
             {
                 return true;
             }
 
             // Basically creates a fake binder to store the loose TPF in so it fits the standard system.
-            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename))
+            if (Entries.Any(e => SamePath(e.Key, fileEntry)))
             {
-                var tpfEntry = Entries.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+                var tpfEntry = Entries.FirstOrDefault(e => SamePath(e.Key, fileEntry));
 
                 if (tpfEntry.Key != null)
                 {
@@ -748,7 +757,7 @@ public class TextureBank : IDisposable
             if (!Entries.TryGetValue(source, out var contents) || contents == null)
             {
                 LoadTextureBinder(source).Wait();
-                contents = Entries.FirstOrDefault(e => e.Key.Filename == source.Filename).Value;
+                contents = Entries.FirstOrDefault(e => SamePath(e.Key, source)).Value;
             }
 
             if (contents == null)

@@ -357,6 +357,66 @@
       "Text": "{0} changed while the cells were being encoded; nothing was applied. Try again."
     },
     {
+      "Key": "TEXVIEW_TexImport_New_Cells_Header",
+      "Text": "New Cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_New_Cells_Header_TT",
+      "Text": "Add images to the sheet as new layout cells (e.g. new item icons). Each is placed in free space on whole blocks, so no other icon is re-encoded."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_Size_Image",
+      "Text": "New cells: the image's size"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_Size_Selected",
+      "Text": "New cells: the selected cell's size"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_Size_TT",
+      "Text": "The size of each new cell: the image's own size, or the size of the selected (or last) cell, the image scaled to it."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Grow_Sheet",
+      "Text": "Grow the sheet when it is full"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Grow_Sheet_TT",
+      "Text": "When a new cell doesn't fit, double the sheet (height first, up to 8192). The existing pixels are copied as they are; the atlas size in the layout follows."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Insert_Cells",
+      "Text": "Insert Images as New Cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Insert_Cells_TT",
+      "Text": "Add each image as a new cell named after its file (MENU_ItemIcon_12345.png), formatted like the selected (or last) cell, its pixels pasted into the sheet. One undoable step."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Dialog_Insert_Cells",
+      "Text": "Select the images to add as new cells"
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Status_Nothing_Inserted",
+      "Text": "No cells were added."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Status_Nothing_Synced",
+      "Text": "Nothing was copied to the low sheet."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_No_Size",
+      "Text": "{0}: the image's size couldn't be read."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_Exists",
+      "Text": "{0}: a cell with this name already exists; use Replace Selected Cells to change it."
+    },
+    {
+      "Key": "TEXVIEW_TexImport_Cell_No_Space",
+      "Text": "{0}: no free {1} x {2} space on the sheet (turn on Grow the sheet when it is full)."
+    },
+    {
       "Key": "TEXVIEW_Layout_Replace_Cell_Image",
       "Text": "Replace Cell Image"
     },

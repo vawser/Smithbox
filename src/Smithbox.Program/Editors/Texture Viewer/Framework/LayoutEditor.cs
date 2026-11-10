@@ -308,6 +308,117 @@ public partial class LayoutEditor
     #endregion
 }
 
+/// <summary>
+/// A hi sheet's low twin (T6): the low layout binder (ER/AC6/SDT/DB_NT /menu/low/…, NR …_l), its atlas for the same
+/// sheet, and the low TPF's texture, ready to be edited.
+/// </summary>
+public sealed class LowTwin
+{
+    public ShoeboxLayoutContainer Container;
+    public TextureAtlas Atlas;
+    public TextureTarget Target;
+    public SoulsFormats.TPF.Texture Texture;
+    public int SheetWidth, SheetHeight;
+
+    /// <summary>The low/hi cell size ratio from the cells both have (1 or 0.5).</summary>
+    public double Scale;
+
+    /// <summary>Why there is no usable twin (shown in the Layout window), or null.</summary>
+    public string Problem;
+}
+
+public partial class LayoutEditor
+{
+    private TextureAtlas TwinFor;
+    private LowTwin Twin;
+
+    /// <summary>
+    /// The low twin of the selected hi sheet, found once per atlas: the binder at the low path, its atlas for this
+    /// sheet, and the TPF beside it (loaded on demand). Null when the sheet isn't a hi sheet.
+    /// </summary>
+    public LowTwin GetLowTwin()
+    {
+        if (Atlas == null || Container == null || Container.IsBundled)
+            return null;
+
+        if (TwinFor == Atlas)
+            return Twin;
+
+        TwinFor = Atlas;
+        Twin = null;
+
+        var path = Container.FileEntry.Path;
+        string lowPath = null;
+
+        if (path.Contains("/hi/", StringComparison.OrdinalIgnoreCase))
+            lowPath = System.Text.RegularExpressions.Regex.Replace(path, "/hi/", "/low/", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        else if (System.Text.RegularExpressions.Regex.IsMatch(Container.FileEntry.Filename, "_h$", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
+            lowPath = path.Replace($"{Container.FileEntry.Filename}.", $"{Container.FileEntry.Filename[..^2]}_l.");
+
+        if (lowPath == null)
+            return null;
+
+        var bank = Project.Handler.TextureData.PrimaryBank;
+        var twin = new LowTwin();
+        Twin = twin;
+
+        twin.Container = bank.ShoeboxEntries.Values.FirstOrDefault(c => c != null && string.Equals(c.FileEntry.Path, lowPath, StringComparison.OrdinalIgnoreCase));
+        if (twin.Container == null)
+        {
+            twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_No_Binder", lowPath);
+            return twin;
+        }
+
+        var sheet = ResolvedFor?.Name ?? "";
+        (_, twin.Atlas) = twin.Container.FindAtlas(sheet);
+        if (twin.Atlas == null)
+        {
+            twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_No_Atlas", sheet, lowPath);
+            return twin;
+        }
+
+        var tpfEntry = twin.Container.FindPairedTpf();
+        if (tpfEntry == null)
+        {
+            twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_No_TPF", lowPath);
+            return twin;
+        }
+
+        bank.LoadTextureBinder(tpfEntry).Wait();
+        var contents = bank.Entries.FirstOrDefault(e => string.Equals(e.Key.Path, tpfEntry.Path, StringComparison.OrdinalIgnoreCase)).Value;
+        var file = contents?.OrderedFiles().FirstOrDefault();
+        var tpf = file != null ? contents.Files[file] : null;
+        twin.Texture = tpf?.Textures.FirstOrDefault(t => t.Name.Equals(sheet, StringComparison.OrdinalIgnoreCase));
+
+        if (twin.Texture == null || !TextureFormats.IsEditable(tpf))
+        {
+            twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_No_Texture", sheet, tpfEntry.Path);
+            return twin;
+        }
+
+        twin.Target = new TextureTarget(contents, file, tpf);
+        var info = TextureFormats.GetInfo(tpf, twin.Texture);
+        twin.SheetWidth = info.Width;
+        twin.SheetHeight = info.Height;
+        twin.Scale = LayoutGeometry.TwinScale(Atlas, twin.Atlas);
+
+        if (twin.Atlas.Layout == null || twin.Atlas.Layout.IsReadOnly)
+            twin.Problem = LOC.Get("TEXVIEW_Layout_Twin_Read_Only");
+
+        return twin;
+    }
+
+    /// <summary>The selected (or given) hi cells that the low twin doesn't have, by name.</summary>
+    public List<SubTexture> CellsMissingInTwin(LowTwin twin)
+    {
+        if (twin?.Atlas == null)
+            return new();
+
+        var names = new HashSet<string>(twin.Atlas.SubTextures.Select(c => c.Name), StringComparer.OrdinalIgnoreCase);
+        return Atlas.SubTextures.Where(c => !names.Contains(c.Name)).ToList();
+    }
+}
+
 /// <summary>The grid generator's inputs.</summary>
 public class GridOptions
 {

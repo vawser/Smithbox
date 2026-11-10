@@ -11,6 +11,8 @@ using System.Linq;
 using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -27,14 +29,24 @@ public class TextureImport
     private enum JobKind { Replace, Add, ReplaceCells }
 
     /// <summary>An image file for one layout cell rectangle.</summary>
-    private sealed record CellSource(CellRect Rect, string Name, string Path);
+    /// <summary>
+    /// The image for one cell rectangle: a file, or a rectangle of another sheet (hi → low sync).
+    /// </summary>
+    private sealed record CellSource(CellRect Rect, string Name, string Path, byte[] FromSheet = null, CellRect FromRect = default);
+
+    /// <summary>
+    /// A cell to add to an atlas once the sheet is patched: formatted like the template, plus attribute overrides
+    /// (half / originalWidth / originalHeight for low twins).
+    /// </summary>
+    private sealed record NewCell(TextureAtlas Atlas, SubTexture Template, string Name, CellRect Rect, Dictionary<string, string> Attributes = null);
 
     /// <summary>
     /// One file to encode (or, for ReplaceCells, one sheet with images for some of its cells), with everything read
     /// from the editor up front (the task never touches it).
     /// </summary>
     private sealed record Job(JobKind Kind, string Path, TextureTarget Target, TPF.Texture Texture, int InsertIndex,
-        TextureEncodeRequest Request, byte FormatByte, byte[] SheetBytes = null, List<CellSource> Cells = null);
+        TextureEncodeRequest Request, byte FormatByte, byte[] SheetBytes = null, List<CellSource> Cells = null,
+        List<NewCell> NewCells = null, int GrowWidth = 0, int GrowHeight = 0, TextureAtlas GrowAtlas = null);
 
     private sealed record JobResult(Job Job, TextureEncodeResult Result);
 
@@ -194,6 +206,30 @@ public class TextureImport
 
                 "replaceCellsFolder", LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder"), LOC.Get("TEXVIEW_TexImport_Replace_Cells_Folder_TT"),
                 ReplaceCellsFromFolderDialog, idle);
+
+            // New Cells
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("TEXVIEW_TexImport_New_Cells_Header"), LOC.Get("TEXVIEW_TexImport_New_Cells_Header_TT"));
+
+            string[] sizeLabels = [LOC.Get("TEXVIEW_TexImport_Cell_Size_Image"), LOC.Get("TEXVIEW_TexImport_Cell_Size_Selected")];
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.BeginCombo("##textureImportCellSize", sizeLabels[Math.Clamp(CFG.Current.TextureViewerImport_CellSizeMode, 0, 1)]))
+            {
+                for (int i = 0; i < sizeLabels.Length; i++)
+                {
+                    if (ImGui.Selectable($"{sizeLabels[i]}##cellSize{i}", CFG.Current.TextureViewerImport_CellSizeMode == i))
+                        CFG.Current.TextureViewerImport_CellSizeMode = i;
+                }
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Cell_Size_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("TEXVIEW_TexImport_Grow_Sheet")}##textureImportGrow", ref CFG.Current.TextureViewerImport_GrowSheet);
+            GUI.Tooltip(LOC.Get("TEXVIEW_TexImport_Grow_Sheet_TT"));
+
+            GUI.ConditionalMultiButtonInput("textureImportNewCellActions",
+                "insertCells", LOC.Get("TEXVIEW_TexImport_Insert_Cells"), LOC.Get("TEXVIEW_TexImport_Insert_Cells_TT"),
+                InsertImagesAsCellsFromDialog, idle && layout.IsEditable);
         }
 
         // Progress
@@ -367,6 +403,210 @@ public class TextureImport
         Start([new Job(JobKind.ReplaceCells, folder, target, tex, -1, null, tex.Format, tex.Bytes, cells)]);
     }
 
+    /// <summary>
+    /// Asks for images and adds each as a new cell of the selected sheet: placed in free space (down, then across,
+    /// on whole blocks), named after the file, formatted like the selected (or last) cell, its pixels pasted in.
+    /// When the sheet is full and growing is on, the sheet doubles (height first) without re-encoding what's there.
+    /// </summary>
+    public void InsertImagesAsCellsFromDialog()
+    {
+        var target = View.GetEditTarget();
+        var layout = View.LayoutEditor;
+        var tex = View.Selection.SelectedTexture;
+
+        if (target == null || tex == null || !layout.IsEditable || IsRunning)
+            return;
+
+        if (!PlatformUtils.Instance.OpenMultiFileDialog(LOC.Get("TEXVIEW_TexImport_Dialog_Insert_Cells"), TextureEncoder.FileDialogFilters, out var paths) || paths == null || paths.Count == 0)
+            return;
+
+        CFG.Current.TextureViewerImport_LastFolder = Path.GetDirectoryName(paths[0]);
+
+        var atlas = layout.Atlas;
+        var template = layout.Primary ?? atlas.SubTextures.LastOrDefault();
+        var templateRect = template != null ? CellRect.Of(template) : new CellRect(0, 0, 0, 0);
+        var extension = template != null ? Path.GetExtension(template.Name) : ".png";
+
+        var items = new List<(string Name, int W, int H, string Path)>();
+        var failures = new List<string>();
+
+        foreach (var path in paths)
+        {
+            int w, h;
+            if (CFG.Current.TextureViewerImport_CellSizeMode == 1 && templateRect.W > 0)
+            {
+                (w, h) = (templateRect.W, templateRect.H);
+            }
+            else
+            {
+                var info = Path.GetExtension(path).Equals(".dds", StringComparison.OrdinalIgnoreCase)
+                    ? DdsSize(path)
+                    : SixLabors.ImageSharp.Image.Identify(path) is { } id ? (id.Width, id.Height) : (0, 0);
+                (w, h) = info;
+            }
+
+            var stem = Path.GetFileNameWithoutExtension(path);
+            items.Add(($"{stem}{extension}", w, h, path));
+        }
+
+        var plan = PlanNewCells(atlas, template, items, layout.SheetWidth, layout.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+
+        if (plan.Cells.Count == 0)
+        {
+            Status = string.Join("\n", failures.Prepend(LOC.Get("TEXVIEW_TexImport_Status_Nothing_Inserted")));
+            return;
+        }
+
+        Status = string.Join("\n", failures);
+
+        Start([new Job(JobKind.ReplaceCells, paths[0], target, tex, -1, null, tex.Format, tex.Bytes, plan.Cells,
+            plan.NewCells, plan.GrowWidth, plan.GrowHeight, atlas)]);
+    }
+
+    /// <summary>
+    /// Copies hi cells into the sheet's low twin (T6 hi/low sync): a cell the low layout has (by name) gets the hi
+    /// pixels scaled to its own size; a cell it lacks is added, at the twin's scale (half cells get half="1" and their
+    /// original size), in the low sheet's free space. One undoable change of the low TPF and layout.
+    /// </summary>
+    public void SyncCellsToLowTwin(IEnumerable<SubTexture> hiCells)
+    {
+        var layout = View.LayoutEditor;
+        var tex = View.Selection.SelectedTexture;
+        var twin = layout.GetLowTwin();
+
+        if (twin == null || twin.Problem != null || tex == null || IsRunning)
+            return;
+
+        var lowByName = twin.Atlas.SubTextures.GroupBy(c => c.Name, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
+
+        var replace = new List<CellSource>();
+        var add = new List<(string Name, int W, int H, string Path)>();
+        var sources = new Dictionary<string, CellRect>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var hi in hiCells.Distinct())
+        {
+            var hiRect = CellRect.Of(hi);
+            if (hiRect.W <= 0 || hiRect.H <= 0)
+                continue;
+
+            if (lowByName.TryGetValue(hi.Name, out var low))
+            {
+                replace.Add(new CellSource(CellRect.Of(low), low.Name, null, tex.Bytes, hiRect));
+            }
+            else
+            {
+                // The low size: the name family's choice (or the sheet's), unless the user picked one
+                var scale = CFG.Current.TextureViewerTwin_ScaleMode switch
+                {
+                    1 => 1.0,
+                    2 => 0.5,
+                    _ => LayoutGeometry.TwinScaleFor(layout.Atlas, twin.Atlas, hi.Name),
+                };
+                int w = Math.Max(1, (int)Math.Round(hiRect.W * scale));
+                int h = Math.Max(1, (int)Math.Round(hiRect.H * scale));
+                add.Add((hi.Name, w, h, null));
+                sources[hi.Name] = hiRect;
+            }
+        }
+
+        var failures = new List<string>();
+        var template = twin.Atlas.SubTextures.LastOrDefault();
+        var plan = PlanNewCells(twin.Atlas, template, add, twin.SheetWidth, twin.SheetHeight, CFG.Current.TextureViewerImport_GrowSheet, failures);
+
+        // New low cells cut their pixels from the hi sheet; half cells say so
+        var cells = replace.Concat(plan.Cells.Select(c => c with { FromSheet = tex.Bytes, FromRect = sources[c.Name] })).ToList();
+        var newCells = plan.NewCells.Select(n =>
+        {
+            var hiRect = sources[n.Name];
+            var half = n.Rect.W < hiRect.W;
+            return n with
+            {
+                Attributes = new Dictionary<string, string>
+                {
+                    ["half"] = half ? "1" : "0",
+                    ["originalWidth"] = $"{(half ? hiRect.W : n.Rect.W)}",
+                    ["originalHeight"] = $"{(half ? hiRect.H : n.Rect.H)}",
+                },
+            };
+        }).ToList();
+
+        if (cells.Count == 0)
+        {
+            Status = string.Join("\n", failures.Prepend(LOC.Get("TEXVIEW_TexImport_Status_Nothing_Synced")));
+            return;
+        }
+
+        Status = string.Join("\n", failures);
+
+        Start([new Job(JobKind.ReplaceCells, twin.Container.FileEntry.Path, twin.Target, twin.Texture, -1, null, twin.Texture.Format,
+            twin.Texture.Bytes, cells, newCells, plan.GrowWidth, plan.GrowHeight, twin.Atlas)]);
+    }
+
+    /// <summary>
+    /// Places new cells in an atlas' free space (taken names are refused), growing the sheet (height, then width,
+    /// doubling, up to 8192) when allowed and needed.
+    /// </summary>
+    private static (List<CellSource> Cells, List<NewCell> NewCells, int GrowWidth, int GrowHeight) PlanNewCells(
+        TextureAtlas atlas, SubTexture template, List<(string Name, int W, int H, string Path)> items,
+        int sheetWidth, int sheetHeight, bool allowGrow, List<string> failures)
+    {
+        var cells = new List<CellSource>();
+        var newCells = new List<NewCell>();
+        var occupied = atlas.SubTextures.Select(CellRect.Of).ToList();
+        var taken = new HashSet<string>(atlas.SubTextures.Select(c => c.Name), StringComparer.OrdinalIgnoreCase);
+        int w = sheetWidth, h = sheetHeight;
+
+        foreach (var item in items)
+        {
+            if (item.W <= 0 || item.H <= 0)
+            {
+                failures.Add(LOC.Get("TEXVIEW_TexImport_Cell_No_Size", item.Name));
+                continue;
+            }
+
+            if (!taken.Add(item.Name))
+            {
+                failures.Add(LOC.Get("TEXVIEW_TexImport_Cell_Exists", item.Name));
+                continue;
+            }
+
+            var spot = LayoutGeometry.FindFreeSpot(occupied, item.W, item.H, w, h);
+
+            while (spot == null && allowGrow && (w < 8192 || h < 8192))
+            {
+                if (h <= w && h < 8192) h *= 2; else w *= 2;
+                spot = LayoutGeometry.FindFreeSpot(occupied, item.W, item.H, w, h);
+            }
+
+            if (spot == null)
+            {
+                failures.Add(LOC.Get("TEXVIEW_TexImport_Cell_No_Space", item.Name, item.W, item.H));
+                continue;
+            }
+
+            occupied.Add(spot.Value);
+            cells.Add(new CellSource(spot.Value, item.Name, item.Path));
+            newCells.Add(new NewCell(atlas, template, item.Name, spot.Value));
+        }
+
+        bool grown = w != sheetWidth || h != sheetHeight;
+        return (cells, newCells, grown ? w : 0, grown ? h : 0);
+    }
+
+    private static (int, int) DdsSize(string path)
+    {
+        try
+        {
+            var dds = new SoulsFormats.DDS(File.ReadAllBytes(path));
+            return (dds.dwWidth, dds.dwHeight);
+        }
+        catch
+        {
+            return (0, 0);
+        }
+    }
+
     private bool PickFile(string title, out string path)
     {
         var ok = PlatformUtils.Instance.OpenFileDialog(title, TextureEncoder.FileDialogFilters, CFG.Current.TextureViewerImport_LastFolder, out path);
@@ -467,10 +707,7 @@ public class TextureImport
                 {
                     if (job.Kind == JobKind.ReplaceCells)
                     {
-                        var patches = job.Cells
-                            .Select(c => new CellPatch(c.Name, c.Rect.X, c.Rect.Y, c.Rect.W, c.Rect.H, File.ReadAllBytes(c.Path), Path.GetExtension(c.Path)))
-                            .ToList();
-                        result = TextureCellPatcher.Patch(job.SheetBytes, patches);
+                        result = RunCellJob(job);
                     }
                     else
                     {
@@ -491,6 +728,70 @@ public class TextureImport
             if (!token.IsCancellationRequested)
                 Results.Enqueue(results);
         }, token);
+    }
+
+    /// <summary>
+    /// A cell job on the task: grow the sheet if asked, then paste each image (a file, or a rectangle cut from
+    /// another sheet) into its cell. New cells are added to the layout when the result is applied.
+    /// </summary>
+    private static TextureEncodeResult RunCellJob(Job job)
+    {
+        var sheet = job.SheetBytes;
+        long ms = 0;
+
+        if (job.GrowWidth > 0)
+        {
+            var grown = TextureCellPatcher.Grow(sheet, job.GrowWidth, job.GrowHeight);
+            if (grown.Dds == null)
+                return grown;
+            sheet = grown.Dds;
+            ms += grown.Milliseconds;
+        }
+
+        // Sheets to cut from, decoded once each
+        var decoded = new Dictionary<byte[], SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>>(ReferenceEqualityComparer.Instance);
+
+        try
+        {
+            var patches = new List<CellPatch>();
+
+            foreach (var c in job.Cells)
+            {
+                if (c.FromSheet == null)
+                {
+                    patches.Add(new CellPatch(c.Name, c.Rect.X, c.Rect.Y, c.Rect.W, c.Rect.H, File.ReadAllBytes(c.Path), Path.GetExtension(c.Path)));
+                    continue;
+                }
+
+                if (!decoded.TryGetValue(c.FromSheet, out var source))
+                {
+                    source = DdsDecoder.DecodeToImage(c.FromSheet, out var error);
+                    if (source == null)
+                        return new TextureEncodeResult { Error = error };
+                    decoded[c.FromSheet] = source;
+                }
+
+                var from = c.FromRect;
+                var rect = new SixLabors.ImageSharp.Rectangle(from.X, from.Y, from.W, from.H);
+                rect.Intersect(new SixLabors.ImageSharp.Rectangle(0, 0, source.Width, source.Height));
+                if (rect.Width <= 0 || rect.Height <= 0)
+                    continue;
+
+                using var crop = source.Clone(ctx => ctx.Crop(rect));
+                using var png = new MemoryStream();
+                crop.SaveAsPng(png);
+                patches.Add(new CellPatch(c.Name, c.Rect.X, c.Rect.Y, c.Rect.W, c.Rect.H, png.ToArray(), ".png"));
+            }
+
+            var result = TextureCellPatcher.Patch(sheet, patches);
+            result.Milliseconds += ms;
+            return result;
+        }
+        finally
+        {
+            foreach (var img in decoded.Values)
+                img.Dispose();
+        }
     }
 
     /// <summary>
@@ -540,6 +841,29 @@ public class TextureImport
                 after.Bytes = result.Dds;
 
                 actions.Add(new TextureChangeAction(View, job.Target, job.Texture, before, after));
+
+                // A grown sheet: the atlas' own size attributes follow
+                if (job.GrowWidth > 0 && job.GrowAtlas != null)
+                {
+                    if (job.GrowAtlas.Element.Get("width") != null)
+                        actions.Add(new AtlasAttributeAction(job.GrowAtlas, "width", $"{job.GrowWidth}"));
+                    if (job.GrowAtlas.Element.Get("height") != null)
+                        actions.Add(new AtlasAttributeAction(job.GrowAtlas, "height", $"{job.GrowHeight}"));
+                }
+
+                // New cells, formatted like their template, after the existing ones
+                foreach (var n in job.NewCells ?? new())
+                {
+                    var cell = n.Atlas.CreateLike(n.Template, n.Name, n.Rect.X, n.Rect.Y, n.Rect.W, n.Rect.H);
+                    foreach (var (attr, value) in n.Attributes ?? new())
+                    {
+                        if (cell.Element.Get(attr) != null)
+                            cell.Element.Set(attr, value);
+                    }
+
+                    var index = n.Atlas.SubTextures.Count + actions.OfType<LayoutCellInsertRemoveAction>().Count(a => a.Atlas == n.Atlas);
+                    actions.Add(new LayoutCellInsertRemoveAction(View.LayoutEditor, n.Atlas, cell, index, true));
+                }
             }
             else if (job.Kind == JobKind.Replace)
             {

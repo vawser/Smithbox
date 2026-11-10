@@ -1208,6 +1208,12 @@ public class CFG
     // Resize imported images to the replaced texture's size
     public bool TextureViewerImport_MatchSize = false;
     public string TextureViewerImport_LastFolder = "";
+    // New cells: 0 = the image's size, 1 = the selected cell's size
+    public int TextureViewerImport_CellSizeMode = 0;
+    // Double a full sheet to fit new cells
+    public bool TextureViewerImport_GrowSheet = false;
+    // Low twin size of new cells: 0 = guess from the name family, 1 = full size, 2 = half size
+    public int TextureViewerTwin_ScaleMode = 0;
 
     #endregion
 

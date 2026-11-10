@@ -67,7 +67,7 @@ public class LayoutCellChangeAction : EditorAction
 public class LayoutCellInsertRemoveAction : EditorAction
 {
     private readonly LayoutEditor Editor;
-    private readonly TextureAtlas Atlas;
+    public TextureAtlas Atlas { get; }
     private readonly SubTexture Cell;
     private readonly int Index;
     private readonly bool Insert;
@@ -105,6 +105,35 @@ public class LayoutCellInsertRemoveAction : EditorAction
             Atlas.Remove(Cell);
             Editor.Deselect(Cell);
         }
+    }
+}
+
+/// <summary>Changes one attribute of an atlas (its width/height when the sheet grows).</summary>
+public class AtlasAttributeAction : EditorAction
+{
+    private readonly TextureAtlas Atlas;
+    private readonly string Attribute;
+    private readonly string Before;
+    private readonly string After;
+
+    public AtlasAttributeAction(TextureAtlas atlas, string attribute, string after)
+    {
+        Atlas = atlas;
+        Attribute = attribute;
+        Before = atlas.Element.Get(attribute);
+        After = after;
+    }
+
+    public override ActionEvent Execute()
+    {
+        Atlas.Set(Attribute, After);
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Atlas.Set(Attribute, Before);
+        return ActionEvent.NoEvent;
     }
 }
 

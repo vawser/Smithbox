@@ -125,6 +125,110 @@ public static class LayoutGeometry
         return null;
     }
 
+    /// <summary>
+    /// A free place for a w×h cell anywhere on the sheet (for new icons of any size): candidates are the sheet's
+    /// corner and the right/bottom edges of the cells, rounded up to 'align' (4 keeps a cell on whole BC blocks, so
+    /// its neighbours' blocks are never re-encoded). Tried down each column, then across, as Add Next Slot.
+    /// Null when nothing fits.
+    /// </summary>
+    public static CellRect? FindFreeSpot(IEnumerable<CellRect> occupied, int w, int h, int sheetWidth, int sheetHeight, int align = 4)
+    {
+        if (w <= 0 || h <= 0 || w > sheetWidth || h > sheetHeight)
+            return null;
+
+        var cells = occupied.Where(r => r.W > 0 && r.H > 0).ToList();
+        int Up(int v) => (v + align - 1) / align * align;
+
+        var xs = new SortedSet<int> { 0 };
+        var ys = new SortedSet<int> { 0 };
+        foreach (var c in cells)
+        {
+            xs.Add(Up(c.Right));
+            ys.Add(Up(c.Bottom));
+        }
+
+        foreach (var x in xs)
+        {
+            if (x + w > sheetWidth)
+                break;
+
+            foreach (var y in ys)
+            {
+                if (y + h > sheetHeight)
+                    break;
+
+                var spot = new CellRect(x, y, w, h);
+                if (!cells.Any(c => c.Overlaps(spot)))
+                    return spot;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// How a sheet's low twin stores its cells, from the cells both have: the most common low/hi width ratio
+    /// (1 or 0.5 in the games, T0). 1 when they share no cells.
+    /// </summary>
+    public static double TwinScale(TextureAtlas hi, TextureAtlas low)
+    {
+        var lowByName = low.SubTextures.GroupBy(c => c.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
+        var ratios = new Dictionary<double, int>();
+
+        foreach (var c in hi.SubTextures)
+        {
+            if (c.WidthValue <= 0 || !lowByName.TryGetValue(c.Name, out var l))
+                continue;
+
+            var ratio = Math.Round((double)l.WidthValue / c.WidthValue * 2) / 2;
+            ratios[ratio] = ratios.GetValueOrDefault(ratio) + 1;
+        }
+
+        return ratios.Count == 0 ? 1 : ratios.OrderByDescending(kv => kv.Value).First().Key;
+    }
+
+    /// <summary>
+    /// The low scale (1 or 0.5) for a cell the low twin doesn't have yet: the majority of the shared cells in its
+    /// name family (the name without its trailing number: MENU_ItemIcon_), else of the whole sheet. The games halve
+    /// cells by choice, not by size (TextureSurvey: every size has both); the family guess is right for 94–98% of
+    /// cells (ER 97.7%, NR 98.2%, AC6 98.5%, SDT 93.7%, leave-one-out), the sheet majority for 91–98%.
+    /// </summary>
+    public static double TwinScaleFor(TextureAtlas hi, TextureAtlas low, string cellName)
+    {
+        var lowByName = low.SubTextures.GroupBy(c => c.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.First(), StringComparer.OrdinalIgnoreCase);
+        var family = NamePrefix(cellName);
+        int familyHalved = 0, familyTotal = 0, sheetHalved = 0, sheetTotal = 0;
+
+        foreach (var c in hi.SubTextures)
+        {
+            if (c.WidthValue < 4 || !lowByName.TryGetValue(c.Name, out var l) || c.Name.Equals(cellName, StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            bool halved = l.WidthValue != c.WidthValue && l.WidthValue * 2 <= c.WidthValue + 2;
+            sheetTotal++;
+            if (halved) sheetHalved++;
+
+            if (NamePrefix(c.Name) == family)
+            {
+                familyTotal++;
+                if (halved) familyHalved++;
+            }
+        }
+
+        if (familyTotal > 0)
+            return familyHalved * 2 > familyTotal ? 0.5 : 1;
+
+        return sheetTotal > 0 && sheetHalved * 2 > sheetTotal ? 0.5 : 1;
+    }
+
+    /// <summary>A cell name without its extension and trailing number: MENU_ItemIcon_00123.png → MENU_ItemIcon_.</summary>
+    public static string NamePrefix(string name)
+    {
+        var dot = name.LastIndexOf('.');
+        var stem = dot > 0 ? name[..dot] : name;
+        return Regex.Replace(stem, @"\d+\D*$", "");
+    }
+
     /// <summary>The most common positive difference between consecutive distinct positions, at least the size.</summary>
     private static int Stride(IEnumerable<int> positions, int size)
     {

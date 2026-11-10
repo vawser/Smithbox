@@ -71,6 +71,8 @@ public partial class LayoutEditor
             if (IsEditable)
                 DisplayGrid();
 
+            DisplayLowTwin();
+
             DisplayChecks();
             DisplayCellList();
         }
@@ -398,6 +400,62 @@ public partial class LayoutEditor
             if (nm.Success && long.TryParse(nm.Groups[2].Value, out var id))
                 Grid.StartId = id;
         }
+    }
+    #endregion
+
+    #region Low Twin
+    private bool ShowTwin = true;
+
+    /// <summary>The low sheet of a hi sheet (T6): where it is, how it scales, which cells it lacks, and the sync.</summary>
+    private void DisplayLowTwin()
+    {
+        var twin = GetLowTwin();
+        if (twin == null)
+            return;
+
+        // Low Sheet
+        GUI.Spacer();
+        GUI.ConditionalHeader(LOC.Get("TEXVIEW_Layout_Twin_Header"), LOC.Get("TEXVIEW_Layout_Twin_Header_TT"), ref ShowTwin);
+
+        if (!ShowTwin)
+            return;
+
+        if (twin.Problem != null)
+        {
+            GUI.WrappedText(twin.Problem);
+            return;
+        }
+
+        var missing = CellsMissingInTwin(twin);
+
+        GUI.WrappedText(LOC.Get("TEXVIEW_Layout_Twin_Info", twin.Container.FileEntry.Path, twin.SheetWidth, twin.SheetHeight,
+            twin.Atlas.SubTextures.Count, twin.Scale == 1 ? "1" : "1/2"));
+        GUI.WrappedText(missing.Count == 0 ? LOC.Get("TEXVIEW_Layout_Twin_None_Missing") : LOC.Get("TEXVIEW_Layout_Twin_Missing", missing.Count, string.Join(", ", missing.Take(5).Select(c => c.Name))));
+
+        var idle = !View.TextureImport.IsRunning;
+
+        string[] scaleLabels = [LOC.Get("TEXVIEW_Layout_Twin_Scale_Guess"), LOC.Get("TEXVIEW_Layout_Twin_Scale_Full"), LOC.Get("TEXVIEW_Layout_Twin_Scale_Half")];
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##layoutTwinScale", scaleLabels[Math.Clamp(CFG.Current.TextureViewerTwin_ScaleMode, 0, 2)]))
+        {
+            for (int i = 0; i < scaleLabels.Length; i++)
+            {
+                if (ImGui.Selectable($"{scaleLabels[i]}##twinScale{i}", CFG.Current.TextureViewerTwin_ScaleMode == i))
+                    CFG.Current.TextureViewerTwin_ScaleMode = i;
+            }
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("TEXVIEW_Layout_Twin_Scale_TT"));
+
+        GUI.ConditionalMultiButtonInput("layoutTwinActions",
+            "syncSelected", LOC.Get("TEXVIEW_Layout_Twin_Sync_Selected"), LOC.Get("TEXVIEW_Layout_Twin_Sync_Selected_TT"),
+            () => View.TextureImport.SyncCellsToLowTwin(Selected), idle && Selected.Count > 0,
+
+            "syncMissing", LOC.Get("TEXVIEW_Layout_Twin_Sync_Missing"), LOC.Get("TEXVIEW_Layout_Twin_Sync_Missing_TT"),
+            () => View.TextureImport.SyncCellsToLowTwin(missing), idle && missing.Count > 0,
+
+            "selectMissing", LOC.Get("TEXVIEW_Layout_Twin_Select_Missing"), LOC.Get("TEXVIEW_Layout_Twin_Select_Missing_TT"),
+            () => Select(missing), missing.Count > 0);
     }
     #endregion
 

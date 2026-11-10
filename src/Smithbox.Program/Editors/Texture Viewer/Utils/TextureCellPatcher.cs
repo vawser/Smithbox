@@ -278,6 +278,134 @@ public static unsafe class TextureCellPatcher
         }
     }
 
+    /// <summary>
+    /// A bigger sheet (T6 grow): the same format, header style and mip count, with the original's blocks copied into
+    /// the top-left corner of every level byte for byte, and transparent blocks elsewhere. Layout coordinates stay
+    /// valid, and no existing icon is re-encoded.
+    /// </summary>
+    public static TextureEncodeResult Grow(byte[] dds, int newWidth, int newHeight)
+    {
+        var timer = Stopwatch.StartNew();
+        var result = new TextureEncodeResult();
+        var original = DirectXTex.CreateScratchImage();
+        var clear = DirectXTex.CreateScratchImage();
+        var clearBlock = DirectXTex.CreateScratchImage();
+
+        try
+        {
+            TexMetadata meta;
+            HexaGen.Runtime.HResult hr;
+            fixed (byte* p = dds)
+                hr = DirectXTex.GetMetadataFromDDSMemory(p, (nuint)dds.Length, DDSFlags.None, &meta);
+
+            if (hr.IsFailure)
+                return Fail(result, $"Failed to read the sheet (0x{hr.Value:X8})");
+
+            if (meta.ArraySize != 1 || meta.Depth != 1 || meta.Dimension != TexDimension.Texture2D)
+                return Fail(result, "Only 2D sheets can grow");
+
+            int oldW = (int)meta.Width, oldH = (int)meta.Height;
+            if (newWidth < oldW || newHeight < oldH)
+                return Fail(result, "A sheet can only grow");
+
+            int format = meta.Format;
+            bool compressed = DirectXTex.IsCompressed(format);
+            int bpp = (int)DirectXTex.BitsPerPixel(format);
+            if (bpp == 0 || (!compressed && bpp % 8 != 0))
+                return Fail(result, $"DXGI format {format} can't grow");
+
+            int block = compressed ? 4 : 1;
+            int unit = compressed ? bpp * 16 / 8 : bpp / 8;
+            int levels = (int)meta.MipLevels;
+
+            if (levels > TextureEncoder.FullChain(newWidth, newHeight))
+                return Fail(result, "Too many mip levels for the new size");
+
+            // One transparent block (or pixel) of the format
+            var clearUnit = new byte[unit];
+            if (compressed)
+            {
+                int work = DirectXTex.IsSRGB(format) ? TextureEncoder.R8G8B8A8_UNORM_SRGB : TextureEncoder.R8G8B8A8_UNORM;
+                hr = clear.Initialize2D(work, 4, 4, 1, 1, CPFlags.None);
+                if (hr.IsFailure)
+                    return Fail(result, "Failed to allocate a block");
+                var ci = clear.GetImage(0, 0, 0);
+                new Span<byte>(ci->Pixels, (int)ci->SlicePitch).Clear();
+
+                hr = DirectXTex.Compress(ci, format, TexCompressFlags.Default, 0.5f, &clearBlock);
+                if (hr.IsFailure)
+                    return Fail(result, $"Failed to encode a transparent block (0x{hr.Value:X8})");
+
+                new ReadOnlySpan<byte>(clearBlock.GetImage(0, 0, 0)->Pixels, unit).CopyTo(clearUnit);
+            }
+
+            bool dx10 = dds.Length > 0x58 && dds[0x54] == 'D' && dds[0x55] == 'X' && dds[0x56] == '1' && dds[0x57] == '0';
+            int dataOffset = dx10 ? 0x94 : 0x80;
+
+            // Level sizes, old and new
+            long oldTotal = 0, newTotal = 0;
+            var oldPitch = new (long Row, long Slice)[levels];
+            var newPitch = new (long Row, long Slice)[levels];
+            for (int l = 0; l < levels; l++)
+            {
+                nuint row, slice;
+                DirectXTex.ComputePitch(format, (nuint)Math.Max(1, oldW >> l), (nuint)Math.Max(1, oldH >> l), &row, &slice, CPFlags.None);
+                oldPitch[l] = ((long)row, (long)slice);
+                oldTotal += (long)slice;
+                DirectXTex.ComputePitch(format, (nuint)Math.Max(1, newWidth >> l), (nuint)Math.Max(1, newHeight >> l), &row, &slice, CPFlags.None);
+                newPitch[l] = ((long)row, (long)slice);
+                newTotal += (long)slice;
+            }
+
+            if (dataOffset + oldTotal > dds.Length)
+                return Fail(result, "The sheet's data is shorter than its header says");
+
+            var output = new byte[dataOffset + newTotal];
+            dds.AsSpan(0, dataOffset).CopyTo(output);
+
+            // Header: height, width, pitch/linear size (DX10 extension has no size)
+            BitConverter.TryWriteBytes(output.AsSpan(0x0C), newHeight);
+            BitConverter.TryWriteBytes(output.AsSpan(0x10), newWidth);
+            BitConverter.TryWriteBytes(output.AsSpan(0x14), (int)(compressed ? newPitch[0].Slice : newPitch[0].Row));
+
+            long oldOffset = dataOffset, newOffset = dataOffset;
+            for (int l = 0; l < levels; l++)
+            {
+                // Transparent everywhere, then the old block rows at the top left
+                for (long i = 0; i < newPitch[l].Slice; i += unit)
+                    clearUnit.CopyTo(output.AsSpan((int)(newOffset + i), unit));
+
+                int oldRows = CeilDiv(Math.Max(1, oldH >> l), block);
+                for (int row = 0; row < oldRows; row++)
+                {
+                    dds.AsSpan((int)(oldOffset + row * oldPitch[l].Row), (int)oldPitch[l].Row)
+                        .CopyTo(output.AsSpan((int)(newOffset + row * newPitch[l].Row)));
+                }
+
+                oldOffset += oldPitch[l].Slice;
+                newOffset += newPitch[l].Slice;
+            }
+
+            result.Dds = output;
+            result.Width = newWidth;
+            result.Height = newHeight;
+            result.MipLevels = levels;
+            result.Format = format;
+            return result;
+        }
+        catch (Exception e)
+        {
+            return Fail(result, e.Message);
+        }
+        finally
+        {
+            original.Release();
+            clear.Release();
+            clearBlock.Release();
+            result.Milliseconds = timer.ElapsedMilliseconds;
+        }
+    }
+
     private static int CeilDiv(int a, int b) => (a + b - 1) / b;
 
     private static int CeilShift(int v, int level) => (v + (1 << level) - 1) >> level;
