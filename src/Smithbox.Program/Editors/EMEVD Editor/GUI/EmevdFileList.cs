@@ -55,7 +55,9 @@ public class EmevdFileList
     {
         var selected = View.Selection.SelectedFile == file;
 
-        if (ImGui.Selectable($"{file.Name}##emevdFile_{file.Name}", selected))
+        var label = file.IsDirty ? $"{file.Name}*" : file.Name;
+
+        if (ImGui.Selectable($"{label}##emevdFile_{file.Name}", selected))
         {
             View.Selection.SelectFile(file);
         }

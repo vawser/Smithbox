@@ -68,6 +68,25 @@ public class EmevdBank
         return 3;
     }
 
+    public List<string> GetDirtyFiles()
+    {
+        return Files.Where(f => f.IsDirty).Select(f => f.Path).ToList();
+    }
+
+    /// <summary>Saves every file with unsaved changes. Returns false if any failed.</summary>
+    public bool SaveAllDirty()
+    {
+        var ok = true;
+
+        foreach (var file in Files.Where(f => f.IsDirty))
+        {
+            if (!file.Save())
+                ok = false;
+        }
+
+        return ok;
+    }
+
     public EmevdFileWrapper FindFile(string name)
     {
         return name != null && ByName.TryGetValue(name, out var f) ? f : null;

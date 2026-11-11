@@ -17,7 +17,60 @@ public class EmevdFileWrapper
     public string Name { get; }
 
     /// <summary>The project folder has its own copy (it overrides the game's)</summary>
-    public bool InProject { get; }
+    public bool InProject { get; private set; }
+
+    // Edits done minus edits undone since the last load or save
+    private int ChangeBalance;
+    private bool ForcedDirty;
+
+    /// <summary>
+    /// Whether the file has changed since it was loaded or saved. Setting it true marks it changed with no edit
+    /// (Allow Unmodified Save); setting it false marks the current state as saved.
+    /// </summary>
+    public bool IsDirty
+    {
+        get => ChangeBalance != 0 || ForcedDirty;
+        set
+        {
+            ForcedDirty = value;
+            if (!value)
+                ChangeBalance = 0;
+        }
+    }
+
+    /// <summary>Counts every edit and undo, so views rebuild what they work out from the file</summary>
+    public int Revision { get; private set; }
+
+    public void MarkChanged() { ChangeBalance++; Revision++; }
+
+    public void MarkUndone() { ChangeBalance--; Revision++; }
+
+    /// <summary>
+    /// Writes the file into the project folder with the compression it was read with. EMEVD.Read → Write is
+    /// byte-identical on every readable vanilla file (Claude/Tools/EmevdEditorCheck roundtrip), so only the edited
+    /// bytes change. The .emeld isn't written: names aren't edited yet.
+    /// </summary>
+    public bool Save()
+    {
+        if (Emevd == null)
+            return false;
+
+        try
+        {
+            Bank.Project.VFS.ProjectFS.WriteFile(Path, Emevd.Write());
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("EMEVD_Data_Log_Failed_to_Write_File", Path), e);
+            return false;
+        }
+
+        IsDirty = false;
+        InProject = true;
+        Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
+
+        return true;
+    }
 
     /// <summary>The .emeld beside it, which holds event names (DS1, DS1R, BB, DB_NT); null if none</summary>
     public string EmeldPath { get; }

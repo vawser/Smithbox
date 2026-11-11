@@ -67,6 +67,48 @@ public class EmevdDecoded
         return (offsets, (pos + 3) / 4 * 4);
     }
 
+    /// <summary>The range an integer arg type holds</summary>
+    public static (long min, long max) Range(EmevdArgType t) => t switch
+    {
+        EmevdArgType.U8 => (byte.MinValue, byte.MaxValue),
+        EmevdArgType.S8 => (sbyte.MinValue, sbyte.MaxValue),
+        EmevdArgType.U16 => (ushort.MinValue, ushort.MaxValue),
+        EmevdArgType.S16 => (short.MinValue, short.MaxValue),
+        EmevdArgType.U32 => (uint.MinValue, uint.MaxValue),
+        EmevdArgType.S32 => (int.MinValue, int.MaxValue),
+        _ => (int.MinValue, int.MaxValue)
+    };
+
+    /// <summary>
+    /// The arg's bytes for a new integer value, little-endian at the arg's size. False if the value is out of the
+    /// type's range. For an f32 arg use <see cref="EncodeFloat"/>.
+    /// </summary>
+    public static bool EncodeInt(EmevdArgType type, long value, out byte[] bytes)
+    {
+        bytes = null;
+        var (min, max) = Range(type);
+
+        if (type == EmevdArgType.F32 || value < min || value > max)
+            return false;
+
+        bytes = new byte[SizeOf(type)];
+        switch (bytes.Length)
+        {
+            case 1: bytes[0] = unchecked((byte)value); break;
+            case 2: BinaryPrimitives.WriteUInt16LittleEndian(bytes, unchecked((ushort)value)); break;
+            default: BinaryPrimitives.WriteUInt32LittleEndian(bytes, unchecked((uint)value)); break;
+        }
+
+        return true;
+    }
+
+    public static byte[] EncodeFloat(float value)
+    {
+        var bytes = new byte[4];
+        BinaryPrimitives.WriteSingleLittleEndian(bytes, value);
+        return bytes;
+    }
+
     public static EmevdDecoded Decode(EmevdInstrDef def, EMEVD.Instruction instr)
     {
         var result = new EmevdDecoded { Def = def };

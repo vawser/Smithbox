@@ -18,6 +18,10 @@ public class EmevdEditorView
     public EmevdBlockView BlockView;
     public EmevdProperties Properties;
 
+    public ActionManager ActionManager = new();
+    public EmevdInput Input = new();
+    public EmevdArgEditor ArgEditor;
+
     public EmevdEditorView(EmevdEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -29,6 +33,16 @@ public class EmevdEditorView
         EventList = new(this);
         BlockView = new(this);
         Properties = new(this);
+        ArgEditor = new(this);
+    }
+
+    /// <summary>Runs an edit through the undo stack, unless it would change nothing</summary>
+    public void Edit(EditorAction action)
+    {
+        if (action is IEmevdEdit { HasEffect: false })
+            return;
+
+        ActionManager.ExecuteAction(action);
     }
 
     public void Display(uint dockspaceId)

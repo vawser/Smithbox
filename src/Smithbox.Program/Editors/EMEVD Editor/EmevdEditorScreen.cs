@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.EmevdEditor;
@@ -36,6 +37,8 @@ public class EmevdEditorScreen : EditorScreen
 
         if (ImGui.BeginMenuBar())
         {
+            FileMenu();
+            EditMenu();
             ViewMenu();
 
             ImGui.EndMenuBar();
@@ -74,7 +77,65 @@ public class EmevdEditorScreen : EditorScreen
 
     private void MonitorShortcuts()
     {
-        // Nothing to save or undo until P2 (argument editing)
+        if (!FocusManager.IsInEmevdEditor())
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Save))
+            Save();
+
+        if (View.ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+            View.ActionManager.UndoAction();
+
+        if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+            View.ActionManager.RedoAction();
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}"))
+            {
+                Save();
+            }
+            GUI.Tooltip(LOC.Get("EMEVD_Menubar_Save_TT"));
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save")}##allowUnmodifiedSave"))
+            {
+                CFG.Current.EmevdEditor_Allow_Unmodified_Save = !CFG.Current.EmevdEditor_Allow_Unmodified_Save;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Unmodified_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Allow_Unmodified_Save);
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Allow_Automatic_Save")}##allowAutomaticSave"))
+            {
+                CFG.Current.EmevdEditor_Allow_Automatic_Save = !CFG.Current.EmevdEditor_Allow_Automatic_Save;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Allow_Automatic_Save);
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)}", false, View.ActionManager.CanUndo()))
+            {
+                View.ActionManager.UndoAction();
+            }
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)}", false, View.ActionManager.CanRedo()))
+            {
+                View.ActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
     }
 
     public void ViewMenu()
@@ -94,15 +155,46 @@ public class EmevdEditorScreen : EditorScreen
 
     public List<string> GetUnsavedFiles()
     {
-        return new();
+        return Bank?.GetDirtyFiles() ?? new();
     }
 
     public void SaveUnsaved()
     {
+        Bank?.SaveAllDirty();
+        Smithbox.Instance.SaveConfiguration();
     }
 
     public void Save()
     {
+        Save(false);
+    }
+
+    /// <summary>
+    /// Saves every .emevd with unsaved changes. With Allow Unmodified Save, the selected file is written even if it
+    /// has none (useful to check a save reproduces the game's file).
+    /// </summary>
+    public void Save(bool autoSave)
+    {
+        var bank = Bank;
+
+        if (bank != null && (!autoSave || CFG.Current.EmevdEditor_Allow_Automatic_Save))
+        {
+            var selected = View.Selection.SelectedFile;
+
+            if (!autoSave && selected is { IsLoaded: true, IsDirty: false } && CFG.Current.EmevdEditor_Allow_Unmodified_Save)
+                selected.IsDirty = true;
+
+            if (bank.GetDirtyFiles().Count == 0)
+            {
+                if (!autoSave)
+                    Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", selected?.Name ?? LOC.Get("EMEVD_Editor_Stub")));
+            }
+            else
+            {
+                bank.SaveAllDirty();
+            }
+        }
+
         Smithbox.Instance.SaveConfiguration();
     }
 

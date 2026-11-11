@@ -1,6 +1,7 @@
 ﻿using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.BehaviorEditor;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -541,6 +542,12 @@ public class ProjectEntry
                     if (Handler.FocusedEditor is BehaviorEditorScreen)
                     {
                         Handler.BehaviorEditor?.Save(true);
+                    }
+
+                    // Gated by EmevdEditor_Allow_Automatic_Save within the editor
+                    if (Handler.FocusedEditor is EmevdEditorScreen)
+                    {
+                        Handler.EmevdEditor?.Save(true);
                     }
                 }
                 catch (Exception ex)

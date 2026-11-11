@@ -35,6 +35,12 @@ namespace SoulsFormats
             public string Name { get; set; }
 
             /// <summary>
+            /// The parameters offset written when the event has no parameters. Usually -1, but some vanilla SDT and
+            /// AC6 events store 0; it is kept so those files rewrite byte-identical.
+            /// </summary>
+            public long EmptyParametersOffset { get; set; } = -1;
+
+            /// <summary>
             /// Creates an empty Event with the given values.
             /// </summary>
             public Event(long id = 0, RestBehaviorType restBehavior = RestBehaviorType.Default)
@@ -67,6 +73,8 @@ namespace SoulsFormats
                 }
 
                 Parameters = new List<Parameter>((int)parameterCount);
+                if (parameterCount == 0)
+                    EmptyParametersOffset = parametersOffset;
                 if (parameterCount > 0)
                 {
                     br.StepIn(offsets.Parameters + parametersOffset);
@@ -112,7 +120,7 @@ namespace SoulsFormats
 
             internal void WriteParameters(BinaryWriterEx bw, Game format, Offsets offsets, int eventIndex)
             {
-                long paramsOffset = Parameters.Count > 0 ? bw.Position - offsets.Parameters : -1;
+                long paramsOffset = Parameters.Count > 0 ? bw.Position - offsets.Parameters : EmptyParametersOffset;
                 if (format < Game.DarkSouls3)
                     bw.FillInt32($"Event{eventIndex}ParamsOffset", (int)paramsOffset);
                 else

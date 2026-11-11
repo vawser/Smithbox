@@ -17,9 +17,15 @@ public class EmevdBlockView
 {
     private readonly EmevdEditorView View;
 
-    // The script of the selected event, rebuilt when the event changes
+    // The script of the selected event, rebuilt when the event or its file's revision changes
     private EMEVD.Event CachedEvent;
+    private int CachedRevision = -1;
     private EmevdScript Script;
+
+    // The arg chip popup: which line and arg it edits
+    private int PopupLine = -1;
+    private int PopupArg = -1;
+    private bool OpenPopup;
 
     // Initialize Event targets, resolved when first drawn
     private readonly Dictionary<int, (EmevdFileWrapper file, EMEVD.Event ev)> CallTargets = new();
@@ -34,20 +40,36 @@ public class EmevdBlockView
 
     private EmevdCatalog Catalog => View.Project.Handler.EmevdData?.Catalog;
 
-    /// <summary>The script for the selected event, for the Properties window</summary>
-    public EmevdScript CurrentScript => Script;
+    /// <summary>
+    /// The script for the selected event, rebuilt when the event or its file's revision changed. The Properties
+    /// window calls this too, so it's current even while the Script window is hidden behind a tab.
+    /// </summary>
+    public EmevdScript CurrentScript
+    {
+        get
+        {
+            var selection = View.Selection;
+            var ev = selection.SelectedEvent;
+            var revision = selection.SelectedFile?.Revision ?? -1;
+
+            if (ev != CachedEvent || revision != CachedRevision)
+            {
+                if (ev != CachedEvent)
+                    PopupLine = -1;
+
+                CachedEvent = ev;
+                CachedRevision = revision;
+                Script = ev != null ? EmevdScript.Build(Catalog, ev) : null;
+                CallTargets.Clear();
+            }
+
+            return Script;
+        }
+    }
 
     public void Draw()
     {
-        var selection = View.Selection;
-        var ev = selection.SelectedEvent;
-
-        if (ev != CachedEvent)
-        {
-            CachedEvent = ev;
-            Script = ev != null ? EmevdScript.Build(Catalog, ev) : null;
-            CallTargets.Clear();
-        }
+        _ = CurrentScript;
 
         DrawHeader();
 
@@ -216,6 +238,54 @@ public class EmevdBlockView
         // Reserve the whole column, so the scrollbar covers every row
         ImGui.SetCursorScreenPos(origin);
         ImGui.Dummy(new Vector2(Math.Max(width, marginW + 200f), totalH));
+
+        DrawArgPopup();
+    }
+
+    /// <summary>Edits the arg whose chip was clicked: its value and the parameter slot that writes it</summary>
+    private void DrawArgPopup()
+    {
+        if (OpenPopup)
+        {
+            ImGui.OpenPopup("##emevdArgPopup");
+            OpenPopup = false;
+        }
+
+        if (!ImGui.BeginPopup("##emevdArgPopup"))
+            return;
+
+        if (PopupLine < 0 || PopupLine >= Script.Lines.Count || PopupArg < 0 || PopupArg >= Script.Lines[PopupLine].Decoded.Args.Count)
+        {
+            ImGui.CloseCurrentPopup();
+            ImGui.EndPopup();
+            return;
+        }
+
+        var line = Script.Lines[PopupLine];
+        var arg = line.Decoded.Args[PopupArg];
+        var width = 220f * DPI.UIScale();
+
+        ImGui.Text(EmevdFormat.ArgName(arg));
+        ImGui.SameLine();
+        ImGui.TextDisabled($"{EmevdDecoded.TypeName(arg.Type)} +{arg.Offset:X2}");
+
+        if (line.FlowArgOffset == arg.Offset && line.Kind is EmevdBlockKind.Skip or EmevdBlockKind.Goto)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("EMEVD_Edit_Flow_Arg_Warning"));
+
+        View.ArgEditor.Value("##popupValue", line, arg, width);
+
+        var e = Catalog?.FindEnum(arg.Def.EnumKey);
+        if (e != null && e.Values.Count > 0)
+        {
+            ImGui.SameLine();
+            View.ArgEditor.RawInt("##popupRaw", line, arg, 90f * DPI.UIScale());
+        }
+
+        ImGui.TextDisabled(LOC.Get("EMEVD_Edit_Slot"));
+        ImGui.SameLine();
+        View.ArgEditor.Slot("##popupSlot", Script, line, arg, width);
+
+        ImGui.EndPopup();
     }
 
     private void DrawHat(ImDrawListPtr drawList, Vector2 min, Vector2 max, float lineH, float padY)
@@ -289,12 +359,16 @@ public class EmevdBlockView
         ImGui.InvisibleButton($"##emevdLine{line.Index}", max - min);
 
         var hovered = ImGui.IsItemHovered();
+        var clicked = ImGui.IsItemClicked();
 
-        if (ImGui.IsItemClicked())
+        if (clicked)
             selection.SelectInstruction(line.Index);
 
         if (hovered && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             FollowCall(line.Index);
+
+        var mouse = ImGui.GetMousePos();
+        var hoveredArg = -1;
 
         var color = EmevdFormat.BlockColor(line);
         if (hovered)
@@ -343,8 +417,10 @@ public class EmevdBlockView
 
         if (line.Decoded.Fits)
         {
-            foreach (var arg in line.Decoded.Args)
+            for (var a = 0; a < line.Decoded.Args.Count; a++)
             {
+                var arg = line.Decoded.Args[a];
+
                 if (x > max.X)
                     break;
 
@@ -355,10 +431,19 @@ public class EmevdBlockView
                     x += ImGui.CalcTextSize(argName).X + 4f;
                 }
 
+                var chipX = x;
+                var chipHovered = hovered && mouse.X >= chipX && mouse.Y >= min.Y && mouse.Y <= max.Y;
+                var chipColor = EmevdFormat.Darken(color, chipHovered ? 0.45f : 0.6f);
+
                 if (line.Params.TryGetValue(arg.Offset, out var p))
-                    x = Chip(drawList, new Vector2(x, y), EmevdScript.SlotName(p.SourceStartByte, p.ByteCount), EmevdFormat.ParamChipColor, true, lineH) + 8f;
+                    x = Chip(drawList, new Vector2(x, y), EmevdScript.SlotName(p.SourceStartByte, p.ByteCount), EmevdFormat.ParamChipColor, true, lineH);
                 else
-                    x = Chip(drawList, new Vector2(x, y), EmevdFormat.Value(Catalog, arg), EmevdFormat.Darken(color, 0.6f), false, lineH) + 8f;
+                    x = Chip(drawList, new Vector2(x, y), EmevdFormat.Value(Catalog, arg), chipColor, false, lineH);
+
+                if (chipHovered && mouse.X <= x)
+                    hoveredArg = a;
+
+                x += 8f;
             }
 
             if (line.Kind == EmevdBlockKind.Call)
@@ -379,7 +464,16 @@ public class EmevdBlockView
 
         drawList.PopClipRect();
 
-        if (hovered)
+        if (clicked && hoveredArg >= 0)
+        {
+            PopupLine = line.Index;
+            PopupArg = hoveredArg;
+            OpenPopup = true;
+        }
+
+        if (hovered && hoveredArg >= 0)
+            GUI.Tooltip(LOC.Get("EMEVD_Script_Chip_TT", EmevdFormat.ArgName(line.Decoded.Args[hoveredArg])));
+        else if (hovered)
             BlockTooltip(line);
     }
 
