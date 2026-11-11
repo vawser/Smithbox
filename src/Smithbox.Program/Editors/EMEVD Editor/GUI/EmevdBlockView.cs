@@ -50,6 +50,13 @@ public class EmevdBlockView
     // Initialize Event targets, resolved when first drawn
     private readonly Dictionary<int, (EmevdFileWrapper file, EMEVD.Event ev)> CallTargets = new();
 
+    // MustSub calls shown as the event they run (DS2 / SotFS), by line; null where a call can't be shown so
+    private readonly Dictionary<int, EmevdInlined> InlinedCalls = new();
+    private bool CachedInline;
+
+    // The popup edits a call arg from its in-place form: the name of the arg it sets there
+    private string PopupSetsName;
+
     private const float LaneWidth = 7f;
     private const float RowGap = 2f;
 
@@ -83,6 +90,7 @@ public class EmevdBlockView
                 CachedStructured = structured;
                 Script = ev != null ? EmevdScript.Build(Catalog, ev) : null;
                 CallTargets.Clear();
+                InlinedCalls.Clear();
                 BuildLayout(structured);
             }
             else if (LayoutDirty)
@@ -537,6 +545,10 @@ public class EmevdBlockView
         ImGui.SameLine();
         ImGui.TextDisabled($"{EmevdDecoded.TypeName(arg.Type)} +{arg.Offset:X2}");
 
+        // Opened from a MustSub call in place: this call arg is what the event's arg receives
+        if (PopupSetsName != null)
+            ImGui.TextDisabled(LOC.Get("EMEVD_Script_Inline_Sets", PopupSetsName));
+
         if (line.FlowArgOffset == arg.Offset && line.Kind is EmevdBlockKind.Skip or EmevdBlockKind.Goto)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("EMEVD_Edit_Flow_Arg_Warning"));
 
@@ -689,7 +701,11 @@ public class EmevdBlockView
         var mouse = ImGui.GetMousePos();
         var hoveredArg = -1;
 
-        var color = EmevdFormat.BlockColor(line);
+        // A MustSub call in place: drawn as the event's instruction, its values the call's
+        var inlined = isElse ? null : Inlined(line);
+        var shown = inlined?.Line ?? line;
+
+        var color = EmevdFormat.BlockColor(shown);
         if (hovered)
             color = EmevdFormat.Darken(color, 1.2f);
 
@@ -737,8 +753,15 @@ public class EmevdBlockView
             x = Math.Max(x, min.X + toggleW + 2f);
         }
 
-        var name = !isElse ? line.Name : row.IsCase ? LOC.Get("EMEVD_Script_Case") : LOC.Get("EMEVD_Script_Else");
-        drawList.AddText(new Vector2(x, y), line.Decoded.Def?.HasName == false && !isElse ? dim : white, name);
+        // In place, a call-coloured strip on the left says it's still a call underneath
+        if (inlined != null)
+        {
+            drawList.AddRectFilled(min, new Vector2(min.X + 4f, max.Y), ImGui.GetColorU32(EmevdFormat.CallColor), 4f, ImDrawFlags.RoundCornersLeft);
+            x += 2f;
+        }
+
+        var name = !isElse ? shown.Name : row.IsCase ? LOC.Get("EMEVD_Script_Case") : LOC.Get("EMEVD_Script_Else");
+        drawList.AddText(new Vector2(x, y), shown.Decoded.Def?.HasName == false && !isElse ? dim : white, name);
         x += ImGui.CalcTextSize(name).X + 10f;
 
         if (row.IsSwitch)
@@ -756,11 +779,11 @@ public class EmevdBlockView
         {
             drawList.AddText(new Vector2(x, y), dim, row.IsCase ? line.Name : line.Key);
         }
-        else if (line.Decoded.Fits)
+        else if (shown.Decoded.Fits)
         {
-            for (var a = 0; a < line.Decoded.Args.Count; a++)
+            for (var a = 0; a < shown.Decoded.Args.Count; a++)
             {
-                var arg = line.Decoded.Args[a];
+                var arg = shown.Decoded.Args[a];
 
                 if (x > max.X)
                     break;
@@ -772,11 +795,14 @@ public class EmevdBlockView
                     x += ImGui.CalcTextSize(argName).X + 4f;
                 }
 
+                // In place, an arg the MustSub event fixes isn't the call's to change: drawn fainter
+                var fixedArg = inlined != null && inlined.CallArg[a] < 0;
+
                 var chipX = x;
                 var chipHovered = hovered && mouse.X >= chipX && mouse.Y >= min.Y && mouse.Y <= max.Y;
-                var chipColor = EmevdFormat.Darken(color, chipHovered ? 0.45f : 0.6f);
+                var chipColor = EmevdFormat.Darken(color, fixedArg ? 0.8f : chipHovered ? 0.45f : 0.6f);
 
-                if (line.Params.TryGetValue(arg.Offset, out var p))
+                if (shown.Params.TryGetValue(arg.Offset, out var p))
                     x = Chip(drawList, new Vector2(x, y), EmevdScript.SlotName(p.SourceStartByte, p.ByteCount), EmevdFormat.ParamChipColor, true, lineH);
                 else
                     x = Chip(drawList, new Vector2(x, y), EmevdFormat.Value(Catalog, arg), chipColor, false, lineH);
@@ -787,7 +813,9 @@ public class EmevdBlockView
                 x += 8f;
             }
 
-            if (line.Kind == EmevdBlockKind.Call)
+            if (inlined != null)
+                drawList.AddText(new Vector2(x, y), dim, LOC.Get("EMEVD_Script_Inline_Via", EmevdFormat.EventLabel(inlined.Target)));
+            else if (line.Kind == EmevdBlockKind.Call)
                 DrawCallTarget(drawList, line, new Vector2(x, y), dim);
         }
         else
@@ -805,23 +833,29 @@ public class EmevdBlockView
 
         drawList.PopClipRect();
 
-        if (clicked && plain && hoveredArg >= 0 && selection.Count <= 1)
+        // In place, a chip edits the call arg it comes from; one the MustSub event fixes isn't editable here
+        var popupArg = inlined == null ? hoveredArg : hoveredArg >= 0 ? inlined.CallArg[hoveredArg] : -1;
+
+        if (clicked && plain && popupArg >= 0 && selection.Count <= 1)
         {
             PopupLine = line.Index;
-            PopupArg = hoveredArg;
+            PopupArg = popupArg;
+            PopupSetsName = inlined != null ? EmevdFormat.ArgName(shown.Decoded.Args[hoveredArg]) : null;
             OpenPopup = true;
         }
 
         if (hovered && hoveredArg >= 0)
         {
             // The chip's arg, and what its value refers to (a param row name, a text entry, a map entity…)
-            var chipArg = line.Decoded.Args[hoveredArg];
-            var refers = View.RoleLinks.Describe(line, chipArg);
-            var text = LOC.Get("EMEVD_Script_Chip_TT", EmevdFormat.ArgName(chipArg));
+            var chipArg = shown.Decoded.Args[hoveredArg];
+            var refers = View.RoleLinks.Describe(shown, chipArg);
+            var text = popupArg >= 0
+                ? LOC.Get("EMEVD_Script_Chip_TT", EmevdFormat.ArgName(chipArg))
+                : LOC.Get("EMEVD_Script_Inline_Fixed_TT", EmevdFormat.ArgName(chipArg), EmevdFormat.EventLabel(inlined.Target));
             GUI.Tooltip(refers != null ? $"{refers}\n{text}" : text);
         }
         else if (hovered)
-            BlockTooltip(line);
+            BlockTooltip(line, inlined);
     }
 
     // ---------------------------------------------------------------- structural edits
@@ -981,6 +1015,34 @@ public class EmevdBlockView
         drawList.AddText(pos, ev == null ? ImGui.GetColorU32(UI.Current.ImGui_Warning_Text_Color) : dim, text);
     }
 
+    /// <summary>
+    /// A MustSub call as the SpEffectMustSub event it runs, when the View toggle is on and the target is one
+    /// instruction; null otherwise (the call is drawn as itself)
+    /// </summary>
+    private EmevdInlined Inlined(EmevdLine line)
+    {
+        var on = CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+        if (on != CachedInline)
+        {
+            InlinedCalls.Clear();
+            CachedInline = on;
+        }
+
+        if (!on || line.Kind != EmevdBlockKind.Call || line.CallTargetIsParam || line.CallTarget < 0)
+            return null;
+
+        if (InlinedCalls.TryGetValue(line.Index, out var cached))
+            return cached;
+
+        var (file, ev) = ResolveCall(line);
+        var inlined = file != null && file.Name.Equals(EmevdBank.MustSubFile, StringComparison.OrdinalIgnoreCase)
+            ? EmevdInline.Build(Catalog, line, ev)
+            : null;
+
+        InlinedCalls[line.Index] = inlined;
+        return inlined;
+    }
+
     public (EmevdFileWrapper file, EMEVD.Event ev) ResolveCall(EmevdLine line)
     {
         if (CallTargets.TryGetValue(line.Index, out var target))
@@ -1007,8 +1069,16 @@ public class EmevdBlockView
         View.Selection.JumpTo(file, ev);
     }
 
-    private void BlockTooltip(EmevdLine line)
+    private void BlockTooltip(EmevdLine line, EmevdInlined inlined = null)
     {
+        // In place: which MustSub event this is, and the call it stands for
+        if (inlined != null)
+        {
+            var target = inlined.Line;
+            GUI.Tooltip(LOC.Get("EMEVD_Script_Inline_TT", target.Key, target.Name, EmevdFormat.EventLabel(inlined.Target), line.Key, line.Name));
+            return;
+        }
+
         var def = line.Decoded.Def;
         var text = def == null
             ? LOC.Get("EMEVD_Script_Block_No_Layout_TT", line.Key)

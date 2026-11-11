@@ -185,6 +185,17 @@ public class EmevdEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Arg_Names_TT"));
             GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Arg_Names);
 
+            // DS2 / SotFS: MustSub calls shown as the SpEffectMustSub event they run
+            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Inline_MustSub")}##inlineMustSubToggle"))
+                {
+                    CFG.Current.EmevdEditor_Inline_MustSub_Calls = !CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+                }
+                GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Inline_MustSub_TT"));
+                GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Inline_MustSub_Calls);
+            }
+
             ImGui.Separator();
 
             var structured = CFG.Current.EmevdEditor_Structured_View && View.BlockView.CurrentScript != null;

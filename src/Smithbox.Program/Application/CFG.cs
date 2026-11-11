@@ -1296,6 +1296,7 @@ public class CFG
     ///------------------------------------------------------------
     public bool EmevdEditor_Show_Arg_Names = true;
     public bool EmevdEditor_Structured_View = true;
+    public bool EmevdEditor_Inline_MustSub_Calls = true;
     public bool EmevdEditor_Allow_Unmodified_Save = false;
     public bool EmevdEditor_Allow_Automatic_Save = true;
     public bool Interface_EmevdEditor_ToolWindow = true;

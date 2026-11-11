@@ -65,7 +65,7 @@ public static class EmevdFormat
     private static readonly Vector4 FlowColor = new(0.70f, 0.40f, 0.10f, 1f);
     private static readonly Vector4 EndColor = new(0.62f, 0.22f, 0.22f, 1f);
     private static readonly Vector4 LabelColor = new(0.45f, 0.45f, 0.45f, 1f);
-    private static readonly Vector4 CallColor = new(0.62f, 0.26f, 0.55f, 1f);
+    public static readonly Vector4 CallColor = new(0.62f, 0.26f, 0.55f, 1f);
     private static readonly Vector4 UnknownColor = new(0.30f, 0.30f, 0.30f, 1f);
 
     // Command banks (2000+) cycle through these

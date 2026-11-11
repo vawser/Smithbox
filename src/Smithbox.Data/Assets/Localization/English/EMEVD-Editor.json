@@ -268,6 +268,8 @@
     { "Key": "EMEVD_View_Toggle_Structured_TT", "Text": "Show skips and gotos as C-blocks holding the lines they jump over, with Else parts, and conditions just above the flow that evaluates them. Turn off to see every line flat, with every jump as a bracket in the margin. The file is the same either way." },
     { "Key": "EMEVD_View_Toggle_Arg_Names", "Text": "Argument Names" },
     { "Key": "EMEVD_View_Toggle_Arg_Names_TT", "Text": "Show each argument's name before its value in the blocks. Turn off to fit more values on a line." },
+    { "Key": "EMEVD_View_Toggle_Inline_MustSub", "Text": "MustSub Events In Place" },
+    { "Key": "EMEVD_View_Toggle_Inline_MustSub_TT", "Text": "Show each Call MustSubEvent as the SpEffectMustSub event it runs, with the call's values written into it. Click a value to edit the call. Turn off to see the calls themselves." },
     { "Key": "EMEVD_View_Collapse_All", "Text": "Collapse All Blocks" },
     { "Key": "EMEVD_View_Collapse_All_TT", "Text": "Collapse every C-block and switch of the selected event to its header." },
     { "Key": "EMEVD_View_Expand_All", "Text": "Expand All Blocks" },
@@ -339,6 +341,10 @@
     { "Key": "EMEVD_Script_Hat_TT", "Text": "The event header. Click to see its parameters in the Properties window." },
     { "Key": "EMEVD_Script_Layer", "Text": "Layer {0}" },
     { "Key": "EMEVD_Script_Call_Missing", "Text": "(event not found)" },
+    { "Key": "EMEVD_Script_Inline_Via", "Text": "via {0}" },
+    { "Key": "EMEVD_Script_Inline_Sets", "Text": "Sets {0} in the MustSub event" },
+    { "Key": "EMEVD_Script_Inline_Fixed_TT", "Text": "{0}: fixed by {1} in SpEffectMustSub, shared by every call to it" },
+    { "Key": "EMEVD_Script_Inline_TT", "Text": "{0} {1}, run by MustSub event {2}\nShown in place of {3} {4} (View > MustSub Events In Place)\nDouble-click to open the MustSub event" },
     { "Key": "EMEVD_Script_Block_TT", "Text": "{0} {1}\nClass: {2}\nLayout: {3}" },
     { "Key": "EMEVD_Script_Block_No_Layout_TT", "Text": "{0}\nNo layout for this instruction: shown as raw bytes." },
     { "Key": "EMEVD_Script_Block_Call_TT", "Text": "Double-click or press Enter to go to the event it starts." },
@@ -416,6 +422,7 @@
     { "Key": "EMEVD_Confidence_Shared_TT", "Text": "Another game's definition fits every vanilla use, and Bloodborne and The Duskbloods agree on it. Very likely right." },
     { "Key": "EMEVD_Confidence_Borrowed_TT", "Text": "One other game's definition fits every vanilla use. The layout is proven by the data; the name is a suggestion, since the same ID can be a different instruction in another game." },
     { "Key": "EMEVD_Confidence_Exe_TT", "Text": "The layout was built from how the game exe reads the arguments. It has no shipped name." },
-    { "Key": "EMEVD_Confidence_Inferred_TT", "Text": "No definition fits: the layout was inferred from the vanilla data alone. It has no names." }
+    { "Key": "EMEVD_Confidence_Inferred_TT", "Text": "No definition fits: the layout was inferred from the vanilla data alone. It has no names." },
+    { "Key": "EMEVD_Confidence_Reference_TT", "Text": "The layout and names come from the reference definitions. They fit every vanilla use byte for byte, and the game exe doesn't contradict them." }
   ]
 }

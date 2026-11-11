@@ -269,6 +269,14 @@ public class EmevdBank
     }
 
     /// <summary>
+    /// The files holding the events other files call: common_func and common, or for DS2 / SotFS SpEffectMustSub
+    /// (the MustSub calls' target events)
+    /// </summary>
+    public string[] SharedEventFiles => InRegulation ? new[] { MustSubFile } : new[] { "common_func", "common" };
+
+    public const string MustSubFile = "SpEffectMustSub";
+
+    /// <summary>
     /// The event an Initialize Event call starts: the calling file's own event first, then common_func's and
     /// common's (the games' shared events), reading those files if needed.
     /// </summary>
@@ -278,7 +286,7 @@ public class EmevdBank
         if (own != null)
             return (from, own);
 
-        foreach (var name in new[] { "common_func", "common" })
+        foreach (var name in SharedEventFiles)
         {
             var file = FindFile(name);
             if (file == null || file == from || !file.EnsureLoaded())

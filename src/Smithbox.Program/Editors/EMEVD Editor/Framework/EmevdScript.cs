@@ -174,9 +174,12 @@ public class EmevdScript
         if (line.Decoded.Def == null || !line.Decoded.Fits)
             return EmevdBlockKind.Unknown;
 
-        // DS2 / SotFS: no conditions, labels or flow, whatever the bank
+        // DS2 / SotFS: no conditions, labels or flow, whatever the bank; only the MustSub calls
         if (!hasFlow)
-            return EmevdBlockKind.Command;
+        {
+            var callArg = flow.Kind == EmevdFlowKind.Call && line.Decoded.Args.Any(a => a.Offset == flow.ArgOffset);
+            return callArg ? EmevdBlockKind.Call : EmevdBlockKind.Command;
+        }
 
         if (bank < 1000)
             return EmevdBlockKind.Condition;
