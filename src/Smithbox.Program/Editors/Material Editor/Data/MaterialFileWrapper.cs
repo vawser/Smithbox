@@ -43,12 +43,20 @@ public abstract class MaterialFileWrapper
     /// <summary>
     /// Called by an action when it is done or redone
     /// </summary>
-    public void MarkChanged() => ChangeBalance++;
+    public void MarkChanged()
+    {
+        ChangeBalance++;
+        MaterialPreview.Queue(Key);
+    }
 
     /// <summary>
     /// Called by an action when it is undone
     /// </summary>
-    public void MarkUndone() => ChangeBalance--;
+    public void MarkUndone()
+    {
+        ChangeBalance--;
+        MaterialPreview.Queue(Key);
+    }
 
     protected MaterialFileWrapper(string key)
     {

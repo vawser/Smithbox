@@ -9,6 +9,34 @@
       "Text": "Tools"
     },
     {
+      "Key": "MAT_View_Toggle_Live_Preview",
+      "Text": "Live Preview"
+    },
+    {
+      "Key": "MAT_View_Toggle_Live_Preview_TT",
+      "Text": "Reload the models that use a material shortly after it is edited, so the Model and Map Editor viewports show the change. When off, they are reloaded when you save. Models with unsaved Model Editor changes are left as they are."
+    },
+    {
+      "Key": "MAT_Preview_Refreshed",
+      "Text": "Reloaded {0} models using {1} edited materials."
+    },
+    {
+      "Key": "MAT_Texture_Loaded_TT",
+      "Text": "{0}\nLoaded from {1}. Right-click to open it in the Texture Viewer."
+    },
+    {
+      "Key": "MAT_Texture_Not_Loaded_TT",
+      "Text": "{0} isn't loaded in any viewport, so it can't be previewed here. Open a model or map that uses it to see it."
+    },
+    {
+      "Key": "MAT_Texture_Open_In_Viewer",
+      "Text": "Open in Texture Viewer"
+    },
+    {
+      "Key": "MAT_Texture_Copy_Name",
+      "Text": "Copy Texture Name"
+    },
+    {
       "Key": "MAT_Save_Entry",
       "Text": "Saved {0} in {1}."
     },

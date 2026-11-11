@@ -108,6 +108,7 @@ public class MatDeleteFile : MatFileAction
     public override ActionEvent Execute()
     {
         Index = Binder.RemoveFile(File.Key);
+        MaterialPreview.Queue(File.Key);
         Finish(false);
         return ActionEvent.NoEvent;
     }
@@ -115,6 +116,7 @@ public class MatDeleteFile : MatFileAction
     public override ActionEvent Undo()
     {
         Binder.InsertFile(Index, File);
+        MaterialPreview.Queue(File.Key);
         Finish(true);
         return ActionEvent.NoEvent;
     }
@@ -152,6 +154,7 @@ public class MatRenameFile : MatFileAction
     public override ActionEvent Execute()
     {
         Binder.RenameFile(OldKey, NewKey);
+        MaterialPreview.Queue(OldKey);
         FollowName(File, MaterialBank.ShortNameOf(OldKey), NewShortName);
         File.MarkChanged();
         Finish(false);
@@ -161,6 +164,7 @@ public class MatRenameFile : MatFileAction
     public override ActionEvent Undo()
     {
         Binder.RenameFile(NewKey, OldKey);
+        MaterialPreview.Queue(NewKey);
 
         if (File is MATBINFileWrapper { MATBIN: var matbin })
         {

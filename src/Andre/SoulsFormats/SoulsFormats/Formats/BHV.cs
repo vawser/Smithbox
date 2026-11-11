@@ -29,7 +29,7 @@ namespace SoulsFormats
     /// <remarks>
     /// All offsets in the file are relative to 0x20. The data is written in a fixed sequential order:
     /// header, preamble, states, state data, transitions, transition params, conditions, condition data,
-    /// struct B, struct C, struct D, struct DA, strings. Variable-length payloads are sized from that order.
+    /// animations, struct C, struct D, struct DA, strings. Variable-length payloads are sized from that order.
     /// See Documentation/Claude/BHV Format.md.
     /// </remarks>
     public class BHV : SoulsFile<BHV>
@@ -37,7 +37,7 @@ namespace SoulsFormats
         private const int DataStart = 0x20;
 
         /// <summary>
-        /// Format version; 5 and 6 (launch-era), 10 and 12. Decides the size of states, struct B and struct DA.
+        /// Format version; 5 and 6 (launch-era), 10 and 12. Decides the size of states, animations and struct DA.
         /// </summary>
         public short Version { get; set; }
 
@@ -58,9 +58,10 @@ namespace SoulsFormats
         public List<State> States { get; set; }
 
         /// <summary>
-        /// Unknown fixed-size records; size depends on version (0x40, 0x50, 0x60).
+        /// Animation records, referenced by index from each state (s16 at <see cref="State.Body"/> + 0); size
+        /// depends on version (0x40, 0x50, 0x60). Starts with a TAE animation ID; see <see cref="V12"/>.
         /// </summary>
-        public List<byte[]> StructBs { get; set; }
+        public List<byte[]> Animations { get; set; }
 
         /// <summary>
         /// Size of each struct C; stored even when there are none, and differs between behbnds.
@@ -91,7 +92,7 @@ namespace SoulsFormats
             Unk02 = 3;
             Preamble = new byte[0x40];
             States = new List<State>();
-            StructBs = new List<byte[]>();
+            Animations = new List<byte[]>();
             StructCs = new List<byte[]>();
             StructDs = new List<StructD>();
         }
@@ -111,8 +112,8 @@ namespace SoulsFormats
         /// <summary>Size of a state for this version.</summary>
         public int StateSize => Version >= 10 ? 0xA0 : 0x80;
 
-        /// <summary>Size of a struct B for this version.</summary>
-        public int StructBSize => Version switch { 5 => 0x40, 6 => 0x50, _ => 0x60 };
+        /// <summary>Size of an animation record for this version.</summary>
+        public int AnimationSize => Version switch { 5 => 0x40, 6 => 0x50, _ => 0x60 };
 
         /// <summary>Size of a struct DA for this version.</summary>
         public int StructDASize => Version >= 10 ? 0x30 : 0x20;
@@ -194,9 +195,9 @@ namespace SoulsFormats
                 }
             }
 
-            StructBs = new List<byte[]>(countB);
+            Animations = new List<byte[]>(countB);
             for (int i = 0; i < countB; i++)
-                StructBs.Add(br.GetBytes(DataStart + offsetB + i * StructBSize, StructBSize));
+                Animations.Add(br.GetBytes(DataStart + offsetB + i * AnimationSize, AnimationSize));
 
             StructCs = new List<byte[]>(countC);
             for (int i = 0; i < countC; i++)
@@ -282,7 +283,7 @@ namespace SoulsFormats
             bw.ReserveInt32("StatesOffset");
             bw.WriteInt32(States.Count);
             bw.ReserveInt32("OffsetB");
-            bw.WriteInt32(StructBs.Count);
+            bw.WriteInt32(Animations.Count);
             bw.ReserveInt32("OffsetC");
             bw.WriteInt16((short)StructCs.Count);
             bw.WriteInt16(StructCSize);
@@ -339,8 +340,8 @@ namespace SoulsFormats
             }
 
             bw.FillInt32("OffsetB", Rel());
-            foreach (byte[] b in StructBs)
-                WriteFixed(bw, b, StructBSize, "struct B");
+            foreach (byte[] b in Animations)
+                WriteFixed(bw, b, AnimationSize, "animation");
 
             bw.FillInt32("OffsetC", Rel());
             foreach (byte[] c in StructCs)
@@ -404,6 +405,32 @@ namespace SoulsFormats
 
             /// <summary>Condition type 48 data: LOCAL_ACTION_TYPE_ENUM, u8.</summary>
             public const int Condition48LocalActionType = 0x18;
+
+            /// <summary>Both state layouts: index into <see cref="Animations"/>, s16 (-1 for none). All versions.</summary>
+            public const int BodyAnimationIndex = 0x0;
+
+            /// <summary>Weapon states: two more indices into <see cref="Animations"/>, s16 each (0x52 and 0x54).</summary>
+            public const int WeaponBodyAnimationIndex2 = 0x52;
+
+            /// <summary>Animation record: TAE animation ID, s32 (-1 for none). Also holds in versions 5 and 10.</summary>
+            public const int AnimationId = 0x0;
+
+            /// <summary>Animation record: three more TAE animation IDs, s32 each (-1 for none).</summary>
+            public const int AnimationExtraIds = 0xC;
+
+            /// <summary>Animation record: f32, 0.2 in almost every record; probably the blend time.</summary>
+            public const int AnimationBlendTime = 0x20;
+
+            /// <summary>Weapon preamble: s16 state indices at 0x2, 0x6, 0x8, 0xA and 0x16.</summary>
+            public const int WeaponPreambleStateIndex = 0x8;
+
+            /// <summary>Condition type 43 data: SpEffectParam row ID, s32. Also holds in versions 5 and 6.</summary>
+            public const int Condition43SpEffectId = 0x4;
+
+            /// <summary>
+            /// Transition params (types 3 and 4): BehaviorChangeStateMatrixParam row ID, s32. Also holds in version 10.
+            /// </summary>
+            public const int ParamsChangeStateMatrixId = 0x4;
         }
 
         private static void WriteFixed(BinaryWriterEx bw, byte[] bytes, int size, string what)

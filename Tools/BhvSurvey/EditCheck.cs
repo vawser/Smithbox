@@ -23,7 +23,7 @@ public static class EditCheck
             withT?.Transitions.RemoveAt(withT.Transitions.Count - 1);
             var tr = bhv.States.SelectMany(s => s.Transitions).FirstOrDefault();
             tr?.Conditions.Add(new BHV.Condition { Type = 99, Data = [9, 9, 9, 9, 9, 9, 9, 9] });
-            bhv.StructBs.Add(new byte[bhv.StructBSize]);
+            bhv.Animations.Add(new byte[bhv.AnimationSize]);
             if (bhv.Preamble.Length > 0) bhv.StructDs.Add(new BHV.StructD { Unk10 = 7, StructDAs = [new byte[bhv.StructDASize]] });
 
             var again = BHV.Read(bhv.Write());
@@ -47,7 +47,7 @@ public static class EditCheck
                 foreach (var c in t.Conditions) sb.Append($"C{c.Type},{c.Unk02}{c.Unk03}{c.Unk08}{c.Unk0B},{Convert.ToHexString(c.Data)}");
             }
         }
-        foreach (var x in b.StructBs) sb.Append("B" + Convert.ToHexString(x));
+        foreach (var x in b.Animations) sb.Append("B" + Convert.ToHexString(x));
         foreach (var x in b.StructCs) sb.Append("C" + Convert.ToHexString(x));
         foreach (var d in b.StructDs) { sb.Append($"D{d.Unk10}"); foreach (var a in d.StructDAs) sb.Append("A" + Convert.ToHexString(a)); }
         if (b.Strings != null) sb.Append("Str" + string.Join("\0", b.Strings));

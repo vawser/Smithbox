@@ -232,6 +232,18 @@ public class MaterialBank : IDisposable
     }
 
     /// <summary>
+    /// Forgets the resolved definitions of these materials, so the renderer resolves them again from their
+    /// edited MTD/MATBIN
+    /// </summary>
+    public void InvalidateDefinitions(IEnumerable<string> names)
+    {
+        foreach (var name in names)
+        {
+            Definitions.TryRemove(name, out _);
+        }
+    }
+
+    /// <summary>
     /// Resolves every material as it is now, whatever has been resolved before.
     /// </summary>
     public List<MaterialDefinition> ResolveAllDefinitions()

@@ -59,6 +59,9 @@ public class MaterialEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_MaterialEditor);
 
         ViewHandler.HandleViews(dsid);
+
+        // Live preview: reload the models of edited materials once editing settles
+        MaterialPreview.Update(Project);
     }
 
     public void FileMenu()
@@ -149,6 +152,14 @@ public class MaterialEditorScreen : EditorScreen
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_ToolWindow);
 
+            // Live Preview
+            if (ImGui.MenuItem($"{LOC.Get("MAT_View_Toggle_Live_Preview")}##livePreviewToggle"))
+            {
+                CFG.Current.MaterialEditor_Live_Preview = !CFG.Current.MaterialEditor_Live_Preview;
+            }
+            GUI.Tooltip(LOC.Get("MAT_View_Toggle_Live_Preview_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Live_Preview);
+
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
@@ -196,6 +207,9 @@ public class MaterialEditorScreen : EditorScreen
             {
                 bank.SaveAllDirty();
             }
+
+            // With live preview off, saving is when the viewports catch up
+            MaterialPreview.Flush(Project);
         }
 
         // Save the configuration JSONs

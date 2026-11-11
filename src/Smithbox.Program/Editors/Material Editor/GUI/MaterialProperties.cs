@@ -540,6 +540,12 @@ public class MaterialProperties
 
         ShowFieldHint(value, type, description);
 
+        // A sampler's or texture's path: its texture, when a viewport has it loaded
+        if (prop.Name == "Path" && containerObj is MATBIN.Sampler or MTD.Texture)
+        {
+            MaterialTextureLink.Display(Project, value as string, $"{classIndex}_{arrayIndex}");
+        }
+
         // Remove-from-list button (only passed in by list entries)
         if (onRemove != null)
         {

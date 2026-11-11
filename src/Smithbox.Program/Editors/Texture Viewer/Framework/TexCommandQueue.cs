@@ -1,4 +1,6 @@
 ﻿using StudioCore.Application;
+using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -43,7 +45,9 @@ public class TexCommandQueue
         if (activeView == null)
             return;
 
-        var targetFile = Project.Locator.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
+        // Packed (.tpfbhd) containers are listed apart from the others
+        var targetFile = Project.Locator.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename)
+            ?? Project.Locator.TexturePackedFiles.Entries?.FirstOrDefault(e => e.Filename == filename);
 
         if (targetFile == null)
             return;
@@ -54,23 +58,34 @@ public class TexCommandQueue
 
         var targetBinder = Project.Handler.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Path == targetFile.Path);
 
-        if (targetBinder.Key != null)
-        {
-            activeView.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
-        }
+        if (targetBinder.Key == null || targetBinder.Value == null)
+            return;
 
-        // TPF
+        activeView.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
+
+        // TPF: the one named like the file, or the only one (a loose .tpf)
+        var tpfSelected = false;
         foreach (var entry in targetBinder.Value.Files)
         {
             var binderFile = entry.Key;
-            var tpfEntry = entry.Value;
 
-            if (binderFile.Name == filename)
+            if (binderFile.Name == filename ||
+                string.Equals(Path.GetFileNameWithoutExtension(binderFile.Name ?? ""), filename, StringComparison.OrdinalIgnoreCase))
             {
                 activeView.Selection.SelectTpfFile(entry.Key, entry.Value);
+                tpfSelected = true;
                 break;
             }
         }
+
+        if (!tpfSelected && targetBinder.Value.Files.Count == 1)
+        {
+            var only = targetBinder.Value.Files.First();
+            activeView.Selection.SelectTpfFile(only.Key, only.Value);
+        }
+
+        if (activeView.Selection.SelectedTpf == null)
+            return;
 
         // Texture
         int index = 0;
