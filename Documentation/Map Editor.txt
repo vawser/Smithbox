@@ -5,10 +5,13 @@
 - DB_NT MSB: research/sync with ER
 - NR MSB: research/sync with ER
 - AC MSB: research
-- Display Group: UX assessment
 - ONAV v2 for AC6
 
 - Get gizmos to work in Orthographic/Oblique view mode
+
+
+- Display Group: UX assessment
+ - Auto-resolver for assignment? Needs investigation
 
 - Col Editor:
     - Add support for DES/DS1/DS1R/DS2/DS2S/BB

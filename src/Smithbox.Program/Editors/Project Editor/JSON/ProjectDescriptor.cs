@@ -35,6 +35,7 @@ public class ProjectDescriptor
     public bool EnableFxEditor = false;
     public bool EnableBehaviorEditor = false;
     public bool EnableEmevdEditor = false;
+    public bool EnableEsdEditor = false;
     public bool EnableTimeActEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
@@ -67,6 +68,7 @@ public class ProjectDescriptor
         EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
         EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
+        EnableEsdEditor = newDescriptor.EnableEsdEditor;
         EnableTimeActEditor = newDescriptor.EnableTimeActEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
@@ -145,6 +147,7 @@ public class ProjectDescriptor
             && EnableFxEditor == other.EnableFxEditor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
             && EnableEmevdEditor == other.EnableEmevdEditor
+            && EnableEsdEditor == other.EnableEsdEditor
             && EnableTimeActEditor == other.EnableTimeActEditor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
     }
@@ -175,6 +178,7 @@ public class ProjectDescriptor
         EnableFxEditor = edited.EnableFxEditor;
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
         EnableEmevdEditor = edited.EnableEmevdEditor;
+        EnableEsdEditor = edited.EnableEsdEditor;
         EnableTimeActEditor = edited.EnableTimeActEditor;
         EnableExternalMaterialData = edited.EnableExternalMaterialData;
     }
@@ -205,6 +209,7 @@ public class ProjectDescriptor
             EnableFxEditor = this.EnableFxEditor,
             EnableBehaviorEditor = this.EnableBehaviorEditor,
             EnableEmevdEditor = this.EnableEmevdEditor,
+            EnableEsdEditor = this.EnableEsdEditor,
             EnableTimeActEditor = this.EnableTimeActEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
 
@@ -244,6 +249,7 @@ public class ProjectDescriptor
         EnableFxEditor = true;
         EnableBehaviorEditor = true;
         EnableEmevdEditor = true;
+        EnableEsdEditor = true;
         EnableTimeActEditor = true;
         EnableExternalMaterialData = true;
     }

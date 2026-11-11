@@ -1,0 +1,60 @@
+using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
+
+namespace StudioCore.Editors.EsdEditor;
+
+/// <summary>
+/// The editor's windows: Files, Machines, States (the block view) and Properties
+/// </summary>
+public class EsdEditorView
+{
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public EsdSelection Selection;
+
+    public EsdFileList FileList;
+    public EsdMachineList MachineList;
+    public EsdStateView StateView;
+    public EsdProperties Properties;
+
+    public EsdEditorView(EsdEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+
+        Selection = new(this);
+
+        FileList = new(this);
+        MachineList = new(this);
+        StateView = new(this);
+        Properties = new(this);
+    }
+
+    public void Display(uint dockspaceId)
+    {
+        if (Project.Handler.EsdData?.PrimaryBank == null)
+            return;
+
+        Window("ESD_Window_Files", "esdEditor_Files", EditorFocusContext.EsdEditor_FileList, dockspaceId, FileList.Draw);
+        Window("ESD_Window_Machines", "esdEditor_Machines", EditorFocusContext.EsdEditor_MachineList, dockspaceId, MachineList.Draw);
+        Window("ESD_Window_States", "esdEditor_States", EditorFocusContext.EsdEditor_States, dockspaceId, StateView.Draw);
+        Window("ESD_Window_Properties", "esdEditor_Properties", EditorFocusContext.EsdEditor_Properties, dockspaceId, Properties.Draw);
+    }
+
+    private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw)
+    {
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EsdEditor);
+
+        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                FocusManager.SetFocus(focus);
+
+            draw();
+        }
+
+        ImGui.End();
+    }
+}

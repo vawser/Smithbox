@@ -174,6 +174,15 @@ public static class FocusManager
             or EditorFocusContext.EmevdEditor_Tools;
     }
 
+    public static bool IsInEsdEditor()
+    {
+        return Focus is EditorFocusContext.EsdEditor_None
+            or EditorFocusContext.EsdEditor_FileList
+            or EditorFocusContext.EsdEditor_MachineList
+            or EditorFocusContext.EsdEditor_States
+            or EditorFocusContext.EsdEditor_Properties;
+    }
+
     public static bool IsInHavokEditor()
     {
         if (Focus is EditorFocusContext.HavokEditor_None
@@ -293,6 +302,12 @@ public enum EditorFocusContext
     EmevdEditor_Script,
     EmevdEditor_Properties,
     EmevdEditor_Tools,
+
+    EsdEditor_None,
+    EsdEditor_FileList,
+    EsdEditor_MachineList,
+    EsdEditor_States,
+    EsdEditor_Properties,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

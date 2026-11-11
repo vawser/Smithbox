@@ -137,6 +137,14 @@
       "Text": "[EMEVD Editor] Failed to load the instruction layouts or event file list."
     },
     {
+      "Key": "PROJECT_Data_Setup_Esd_Data_PASS",
+      "Text": "[ESD Editor] Loaded the catalogue and ESD file list."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Esd_Data_FAIL",
+      "Text": "[ESD Editor] Failed to load the ESD file list."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
       "Text": "[Project] Setup Common Data."
     },

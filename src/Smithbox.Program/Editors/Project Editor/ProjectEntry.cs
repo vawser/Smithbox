@@ -2,6 +2,7 @@
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.EsdEditor;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -119,6 +120,9 @@ public class ProjectEntry
 
             if (Handler.EmevdEditorStub != null)
                 Handler.EmevdEditorStub.Display(dt, commands);
+
+            if (Handler.EsdEditorStub != null)
+                Handler.EsdEditorStub.Display(dt, commands);
         }
 
         // Auto-Save
@@ -361,6 +365,7 @@ public class ProjectEntry
             Handler.FxEditor,
             Handler.BehaviorEditor,
             Handler.EmevdEditor,
+            Handler.EsdEditor,
             Handler.TextureViewer,
             Handler.FileBrowser,
         ];

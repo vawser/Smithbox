@@ -153,6 +153,14 @@
       "Text": "If enabled, the EMEVD Editor (event scripts, shown as blocks) and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Esd_Editor",
+      "Text": "ESD Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Esd_Editor_TT",
+      "Text": "If enabled, the ESD Editor (EzState machines: NPC talk, character, menu and DS2 AI/event scripts, shown as blocks) and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },
