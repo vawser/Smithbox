@@ -217,6 +217,15 @@ public class EmevdRoleLinks
         if (ImGui.Button($"{Icons.ExternalLink}##{id}"))
             go();
         GUI.Tooltip(tooltip);
+
+        // A flag's uses in talk / character scripts: the ESD Editor's Search (esd/search)
+        if (def.Role == EmevdArgRole.EventFlag && v > 0 && Project.Descriptor.EnableEsdEditor)
+        {
+            ImGui.SameLine();
+            if (ImGui.Button($"{Icons.CommentO}##{id}_esd"))
+                EditorCommandQueue.AddCommand($"esd/search/{v}");
+            GUI.Tooltip(LOC.Get("EMEVD_Role_Link_Flag_Esd_TT", v));
+        }
     }
 
     public static string RoleName(EmevdArgRole role) => LOC.Get($"EMEVD_Role_{role}");

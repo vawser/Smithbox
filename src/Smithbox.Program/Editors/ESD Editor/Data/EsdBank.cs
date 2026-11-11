@@ -87,19 +87,104 @@ public class EsdBank
         return EsdScriptKind.Other;
     }
 
+    /// <summary>Project files of deleted containers, moved into the project's backup folder on the next save</summary>
+    public List<string> PendingDeletes { get; } = new();
+
     public List<string> GetDirtyFiles()
     {
-        return Containers.Where(c => c.IsDirty).Select(c => c.Path).ToList();
+        return Containers.Where(c => c.IsDirty || c.PendingRevert).Select(c => c.Path).Concat(PendingDeletes).Distinct().ToList();
     }
 
-    /// <summary>Saves every file with unsaved changes. Returns false if any failed.</summary>
+    /// <summary>Whether the next save moves project files away (deleted or reverted containers)</summary>
+    public bool HasFileRemovals => PendingDeletes.Count > 0 || Containers.Any(c => c.PendingRevert);
+
+    /// <summary>
+    /// Saves every file with unsaved changes. Deleted containers' project files, and reverted ones', are moved into
+    /// the project's backup folder first (a reverted container then reads the game's file again). Returns false if
+    /// any failed.
+    /// </summary>
     public bool SaveAllDirty()
     {
         var ok = true;
+
+        foreach (var path in PendingDeletes.ToList())
+        {
+            if (MoveToBackup(path))
+                PendingDeletes.Remove(path);
+            else
+                ok = false;
+        }
+
+        foreach (var c in Containers.Where(c => c.PendingRevert).ToList())
+        {
+            if (MoveToBackup(c.Path))
+                c.ResetToVanilla();
+            else
+                ok = false;
+        }
+
         foreach (var c in Containers.Where(c => c.IsDirty))
             if (!c.Save())
                 ok = false;
         return ok;
+    }
+
+    /// <summary>
+    /// Moves a project file into &lt;project&gt;/.backup/&lt;time&gt;_deleted/&lt;its path&gt; (the project scan skips dot
+    /// folders). Nothing to do when the project has no such file.
+    /// </summary>
+    private bool MoveToBackup(string path)
+    {
+        var projectFs = Project.VFS.ProjectFS;
+        try
+        {
+            if (!projectFs.FileExists(path))
+                return true;
+
+            var stamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "_deleted";
+            var relative = $".backup/{stamp}{path}";
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(System.IO.Path.Join(Project.Descriptor.ProjectPath, relative)));
+            projectFs.Move(path, relative);
+            Smithbox.Log(this, LOC.Get("ESD_Data_Log_Moved_To_Backup", path, relative));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Move_To_Backup_Failed", path), e);
+            return false;
+        }
+    }
+
+    /// <summary>Adds a container at its sorted place (kind, then name); returns the index</summary>
+    public int Insert(EsdContainer container, int index = -1)
+    {
+        if (index < 0)
+        {
+            index = Containers.FindIndex(c => c.Kind > container.Kind || c.Kind == container.Kind && string.Compare(c.Name, container.Name, StringComparison.OrdinalIgnoreCase) > 0);
+            if (index < 0)
+                index = Containers.Count;
+        }
+        Containers.Insert(Math.Clamp(index, 0, Containers.Count), container);
+        ByName[container.Name] = container;
+        return index;
+    }
+
+    /// <summary>Takes a container out of the list; returns where it was</summary>
+    public int Remove(EsdContainer container)
+    {
+        var index = Containers.IndexOf(container);
+        if (index >= 0)
+            Containers.RemoveAt(index);
+        if (ByName.TryGetValue(container.Name, out var c) && c == container)
+            ByName.Remove(container.Name);
+        return index;
+    }
+
+    /// <summary>Whether a path is free for a new file: no container has it, and neither the project nor the game has the file</summary>
+    public bool IsFreePath(string path)
+    {
+        return !Containers.Any(c => c.Path.Equals(path, StringComparison.OrdinalIgnoreCase)) && !PendingDeletes.Contains(path, StringComparer.OrdinalIgnoreCase)
+            && !(Project.VFS.FS?.FileExists(path) ?? false);
     }
 
     public EsdContainer FindContainer(string name)
@@ -127,6 +212,46 @@ public class EsdContainer
 
     /// <summary>The project folder has its own copy (it overrides the game's)</summary>
     public bool InProject { get; private set; }
+
+    /// <summary>Made in the editor and not saved yet: no file has its path</summary>
+    public bool IsNew { get; private set; }
+
+    /// <summary>For a new binder: the binder its header and entry layout are copied from, and its folder rename</summary>
+    public string TemplatePath { get; private set; }
+    public (string From, string To)? Retarget { get; private set; }
+
+    /// <summary>Deleted, but the game ships it too: the next save moves the project copy away and reads the game's</summary>
+    public bool PendingRevert { get; set; }
+
+    /// <summary>Whether the game itself has this file (it can't be removed, only reverted to)</summary>
+    public bool InGame => Bank.Project.VFS.VanillaFS?.FileExists(Path) ?? false;
+
+    /// <summary>A container made in the editor (a duplicated binder or loose ESD, a new binder): loaded, unsaved</summary>
+    public static EsdContainer CreateNew(EsdBank bank, string path, string name, bool isBinder, EsdScriptKind kind,
+        string templatePath, (string, string)? retarget, Func<EsdContainer, List<EsdFileWrapper>> files)
+    {
+        var c = new EsdContainer(bank, path, name, isBinder, kind, false, null)
+        {
+            IsNew = true,
+            TemplatePath = templatePath,
+            Retarget = retarget,
+        };
+        c.Files = files(c);
+        c.IsLoaded = true;
+        return c;
+    }
+
+    /// <summary>After its project copy is moved away: unloaded, to read the game's file on next use</summary>
+    public void ResetToVanilla()
+    {
+        Files = new();
+        IsLoaded = false;
+        LoadError = null;
+        InProject = false;
+        PendingRevert = false;
+        IsDirty = false;
+        Revision++;
+    }
 
     // Edits done minus edits undone since the last load or save
     private int ChangeBalance;
@@ -177,26 +302,28 @@ public class EsdContainer
             IBinder bnd;
             try
             {
-                var data = fs.ReadFile(Path);
+                // A new binder starts as a copy of its template's (header, entry layout), its folder renamed
+                var source = IsNew ? TemplatePath : Path;
+                var data = source != null ? fs.ReadFile(source) : null;
                 if (data == null)
                 {
-                    Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Find_File", Path));
+                    Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Find_File", source ?? Path));
                     return false;
                 }
 
                 var raw = DCX.Is(data.Value) ? DCX.Decompress(data.Value, out _) : data.Value;
                 bnd = IsBnd4(raw) ? BND4.Read(data.Value) : BND3.Read(data.Value);
 
-                foreach (var file in Files.Where(f => f.Esd != null && f.EntryName != null))
+                // The binder's .esd entries become this container's list: kept, replaced, added (duplicated ESDs) and
+                // removed (deleted ones), in FromSoftware's layout (EsdBinderEntries; EsdSurvey binderedit). A file
+                // that failed to read keeps its entry's bytes.
+                var wanted = Files.Where(f => f.EntryName != null).Select(f => (f.EntryName, f.Esd?.Write())).ToList();
+                var error = EsdBinderEntries.Apply(bnd, wanted, IsNew ? Retarget : null);
+                if (error != null)
                 {
-                    var entry = bnd.Files.Find(f => System.IO.Path.GetFileName(f.Name).Equals(file.EntryName, StringComparison.OrdinalIgnoreCase));
-                    if (entry == null)
-                    {
-                        Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Entry_Missing", file.EntryName, Path));
-                        bnd.Dispose();
-                        return false;
-                    }
-                    entry.Bytes = file.Esd.Write();
+                    Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Binder_Rebuild_Failed", error, Path));
+                    bnd.Dispose();
+                    return false;
                 }
             }
             catch (Exception e)
@@ -224,6 +351,7 @@ public class EsdContainer
 
         IsDirty = false;
         InProject = true;
+        IsNew = false;
         Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
         return true;
     }
@@ -347,11 +475,11 @@ public class EsdFileWrapper
 {
     public EsdContainer Container { get; }
 
-    /// <summary>The ESD's name without extension, e.g. t100000</summary>
-    public string Name { get; }
+    /// <summary>The ESD's name without extension, e.g. t100000 (set by a rename)</summary>
+    public string Name { get; internal set; }
 
     /// <summary>The binder entry's file name, e.g. t100000.esd; null for a loose file</summary>
-    public string EntryName { get; }
+    public string EntryName { get; internal set; }
 
     public ESD Esd { get; private set; }
 
@@ -385,6 +513,18 @@ public class EsdFileWrapper
         }
 
         return file;
+    }
+
+    /// <summary>A new loose ESD (the only file of its container)</summary>
+    public static EsdFileWrapper CreateLoose(EsdContainer container, string name, ESD esd)
+    {
+        return new EsdFileWrapper(container, name, null) { Esd = esd };
+    }
+
+    /// <summary>A new binder entry (a duplicated ESD): saved into the binder as name.esd</summary>
+    public static EsdFileWrapper Create(EsdContainer container, string name, ESD esd)
+    {
+        return new EsdFileWrapper(container, name, name + ".esd") { Esd = esd };
     }
 
     public void ImportEdd(EDD edd)

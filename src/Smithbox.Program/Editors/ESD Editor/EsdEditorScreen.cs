@@ -56,6 +56,13 @@ public class EsdEditorScreen : EditorScreen
     /// </summary>
     private void ParseCommands(string[] commands)
     {
+        // esd/search/<value>: every ESD use of an event flag (from the EMEVD Editor's flag links)
+        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && long.TryParse(commands[1], out var flag))
+        {
+            View.ToolWindow.SearchTool.SearchValue(flag, true);
+            return;
+        }
+
         if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null)
             return;
 
@@ -167,8 +174,22 @@ public class EsdEditorScreen : EditorScreen
 
     public void SaveUnsaved()
     {
-        Bank?.SaveAllDirty();
+        SaveBank(Bank);
         Smithbox.Instance.SaveConfiguration();
+    }
+
+    /// <summary>
+    /// Saves the bank. A save that moves files into the backup folder (deleted binders or loose ESDs) also clears the
+    /// undo history: undoing those deletes afterwards would bring back containers whose files are gone.
+    /// </summary>
+    private void SaveBank(EsdBank bank)
+    {
+        if (bank == null)
+            return;
+        var removals = bank.HasFileRemovals;
+        bank.SaveAllDirty();
+        if (removals)
+            View.ActionManager.Clear();
     }
 
     public void SaveAll()
@@ -186,7 +207,7 @@ public class EsdEditorScreen : EditorScreen
         if (bank.GetDirtyFiles().Count == 0)
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", View.Selection.SelectedContainer?.Name ?? LOC.Get("ESD_Editor_Stub")));
         else
-            bank.SaveAllDirty();
+            SaveBank(bank);
 
         Smithbox.Instance.SaveConfiguration();
     }

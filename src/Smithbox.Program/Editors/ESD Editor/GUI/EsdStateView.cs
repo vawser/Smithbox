@@ -695,6 +695,17 @@ public class EsdStateView
             ImGui.TextDisabled(EditArgDef.Role != null ? $"{EditArgDef.Type} · {EditArgDef.Role}" : EditArgDef.Type);
         }
 
+        // What the value refers to, with its links (P5)
+        if (EditNode.Kind == EsdExprKind.Int)
+        {
+            var (role, def, sel) = View.Links.RoleAt(EditBytes, EditPath, EditCommand, EditArg, cat);
+            if (role.Kind != EsdRoleKind.None && View.Links.Describe(role, EditNode.IntValue, def, sel, cat) is { } about)
+            {
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"{Icons.Link} {about}");
+                View.Links.Buttons("esdLiteralLink", role, EditNode.IntValue, def, sel, cat);
+            }
+        }
+
         // An enum arg: its values to pick from
         var e = EditArgDef?.Enum != null ? cat?.FindEnum(EditArgDef.Enum) : null;
         if (e != null && EditNode.Kind == EsdExprKind.Int)

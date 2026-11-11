@@ -55,6 +55,13 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     private void ParseCommands(string[] commands)
     {
+        // emevd/search/<value>: every event use of a value (from the ESD Editor's flag links)
+        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && long.TryParse(commands[1], out var value))
+        {
+            View.ToolWindow.SearchTool.SearchValue(value);
+            return;
+        }
+
         if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null)
             return;
 

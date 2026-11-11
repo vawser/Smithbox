@@ -1315,6 +1315,8 @@ public class CFG
     public bool EsdEditor_Code_View = true;
     public bool Interface_EsdEditor_ToolWindow = true;
     public bool Interface_EsdEditor_Tool_Palette = true;
+    public bool Interface_EsdEditor_Tool_Search = true;
+    public bool Interface_EsdEditor_Tool_CalledBy = true;
     #endregion
 
     #region FX Editor

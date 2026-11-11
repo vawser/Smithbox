@@ -18,6 +18,7 @@ public class EsdEditorView
     public EsdStateView StateView;
     public EsdProperties Properties;
     public EsdToolWindow ToolWindow;
+    public EsdRoleLinks Links;
 
     public ActionManager ActionManager = new();
     public EsdEditCommands Commands;
@@ -34,6 +35,7 @@ public class EsdEditorView
         StateView = new(this);
         Properties = new(this);
         Commands = new(this);
+        Links = new(this);
         ToolWindow = new(this);
     }
 
@@ -41,6 +43,13 @@ public class EsdEditorView
     {
         if (Project.Handler.EsdData?.PrimaryBank == null)
             return;
+
+        // An undo or redo can take the selected ESD out of its binder, or the binder / loose file out of the list (a
+        // duplicate undone, a delete redone)
+        if (Selection.SelectedContainer is { } container && !Project.Handler.EsdData.PrimaryBank.Containers.Contains(container))
+            Selection.SelectContainer(null);
+        if (Selection.SelectedFile is { } selected && !selected.Container.Files.Contains(selected))
+            Selection.SelectFile(null);
 
         Window("ESD_Window_Files", "esdEditor_Files", EditorFocusContext.EsdEditor_FileList, dockspaceId, FileList.Draw);
         Window("ESD_Window_Machines", "esdEditor_Machines", EditorFocusContext.EsdEditor_MachineList, dockspaceId, MachineList.Draw);

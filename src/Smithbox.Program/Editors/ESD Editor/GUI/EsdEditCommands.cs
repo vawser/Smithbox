@@ -45,6 +45,20 @@ public class EsdEditCommands
         Pending.Clear();
         foreach (var e in edits)
             View.ActionManager.ExecuteAction(e);
+
+        if (PendingSelectContainer != null)
+        {
+            Selection.SelectContainer(PendingSelectContainer);
+            View.FileList.ScrollToSelection = true;
+            PendingSelectContainer = null;
+        }
+
+        if (PendingSelect != null)
+        {
+            Selection.SelectFile(PendingSelect);
+            View.FileList.ScrollToSelection = true;
+            PendingSelect = null;
+        }
     }
 
     // --- values ---
@@ -68,6 +82,96 @@ public class EsdEditCommands
         if (c.TargetState == target)
             return;
         Run(new EsdSetOp<long?>(() => c.TargetState, v => c.TargetState = v, target), "target");
+    }
+
+    // --- a command's identity and args (Properties) ---
+
+    /// <summary>The kind of value an arg type holds: float, string, or a whole number (int, bool, enum, unknown)</summary>
+    private static string ValueGroup(string type) => type is "float" or "string" ? type : "int";
+
+    /// <summary>The kind of value an arg's bytes hold when they are one literal, else null (any expression)</summary>
+    private static string ValueGroup(byte[] arg)
+    {
+        var n = EsdExpr.Decode(arg) is { } root ? EsdExpr.Strip(root) : null;
+        return n?.Kind switch
+        {
+            EsdExprKind.Float or EsdExprKind.Double => "float",
+            EsdExprKind.String => "string",
+            EsdExprKind.Int => "int",
+            _ => null
+        };
+    }
+
+    /// <summary>
+    /// Makes a command another game command, in place (the selection stays on it). Each arg of the new command keeps
+    /// the old arg at its place when it holds the same kind of value; the others get the new arg's default, and
+    /// optional args are kept only while the old command had them.
+    /// </summary>
+    public void ChangeCommand(ESD.CommandCall cmd, EsdCallDef oldDef, EsdCallDef def)
+    {
+        if (def == null || cmd.CommandBank == def.Bank && cmd.CommandID == def.Id)
+            return;
+
+        var args = new List<byte[]>();
+        for (var i = 0; i < def.Args.Count; i++)
+        {
+            var a = def.Args[i];
+            if (i < cmd.Arguments.Count)
+            {
+                var had = oldDef != null && i < oldDef.Args.Count ? ValueGroup(oldDef.Args[i].Type) : ValueGroup(cmd.Arguments[i]);
+                args.Add(had == null || had == ValueGroup(a.Type) ? EsdEdits.Copy(cmd.Arguments[i]) : EsdEdits.DefaultArg(a.Type));
+            }
+            else if (!a.Optional)
+                args.Add(EsdEdits.DefaultArg(a.Type));
+            else
+                break;
+        }
+
+        Run(new EsdCompoundOp(new List<IEsdOp>
+        {
+            new EsdSetOp<int>(() => cmd.CommandBank, v => cmd.CommandBank = v, def.Bank),
+            new EsdSetOp<int>(() => cmd.CommandID, v => cmd.CommandID = v, def.Id),
+            new EsdSetOp<List<byte[]>>(() => cmd.Arguments, v => cmd.Arguments = v, args),
+        }), "change command");
+    }
+
+    /// <summary>Points a call block at another machine of the file</summary>
+    public void SetCallMachine(ESD.CommandCall cmd, long machine)
+    {
+        if (EsdLayout.KindOf(cmd) != EsdCommandKind.CallMachine || cmd.CommandID == machine)
+            return;
+        Run(new EsdSetOp<int>(() => cmd.CommandID, v => cmd.CommandID = v, (int)machine), "call machine");
+    }
+
+    public void AddArgument(ESD.CommandCall cmd, byte[] bytes)
+    {
+        Run(new EsdInsertOp<byte[]>(cmd.Arguments, cmd.Arguments.Count, bytes), "add arg");
+    }
+
+    public void RemoveArgument(ESD.CommandCall cmd, int index)
+    {
+        if (index < 0 || index >= cmd.Arguments.Count)
+            return;
+        Run(new EsdRemoveOp<byte[]>(cmd.Arguments, index), "remove arg");
+    }
+
+    /// <summary>
+    /// Brings a command's arg count into its documented range: the missing required args with their defaults, or the
+    /// args past the documented ones removed
+    /// </summary>
+    public void FixArgumentCount(ESD.CommandCall cmd, EsdCallDef def)
+    {
+        if (def == null)
+            return;
+
+        // One swap of the whole list: EsdInsertOp clamps its index when it is made, so a chain of inserts can't be
+        // built ahead of running them
+        var args = cmd.Arguments.Take(def.Args.Count).ToList();
+        for (var i = args.Count; i < def.RequiredArgs; i++)
+            args.Add(EsdEdits.DefaultArg(def.Args[i].Type));
+
+        if (args.Count != cmd.Arguments.Count)
+            Run(new EsdSetOp<List<byte[]>>(() => cmd.Arguments, v => cmd.Arguments = v, args), "fix args");
     }
 
     // --- commands ---
@@ -354,6 +458,251 @@ public class EsdEditCommands
             SetArgument(cmd, arg, updated);
         else
             SetEvaluator(cond, updated);
+    }
+
+    // --- ESD files of a binder ---
+
+    /// <summary>The names of a binder's ESDs</summary>
+    public static List<string> FileNames(EsdContainer container) => container.Files.Select(f => f.Name).ToList();
+
+    /// <summary>Why a file can't be duplicated under a name, or null (LOC key)</summary>
+    public static string DuplicateRefusal(EsdFileWrapper file, string name)
+    {
+        if (file?.Esd == null || !file.Container.IsBinder)
+            return "ESD_File_Not_Binder_Entry";
+        return EsdBinderEntries.NameRefusal(name, FileNames(file.Container), file.Kind == EsdScriptKind.Talk);
+    }
+
+    /// <summary>Other loaded binders that already have an ESD of this name (talk IDs are global)</summary>
+    public List<string> NameUsedElsewhere(EsdContainer container, string name)
+    {
+        var bank = View.Project.Handler.EsdData?.PrimaryBank;
+        return bank?.Containers.Where(c => c != container && c.IsLoaded && c.Files.Any(f => f.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
+            .Select(c => c.Name).ToList() ?? new();
+    }
+
+    /// <summary>A copy of an ESD in the same binder, after it, under a new name; selected once made</summary>
+    public void DuplicateFile(EsdFileWrapper file, string name)
+    {
+        var refusal = DuplicateRefusal(file, name);
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal, name), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var container = file.Container;
+        var copy = EsdFileWrapper.Create(container, name, EsdBinderEntries.Copy(file.Esd, file.Name, name));
+        var index = container.Files.IndexOf(file) + 1;
+        Pending.Add(new EsdEditAction(container, new EsdInsertOp<EsdFileWrapper>(container.Files, index, copy), "duplicate ESD"));
+        PendingSelect = copy;
+    }
+
+    /// <summary>Why a file can't be deleted, or null (LOC key): only binder entries, and never a binder's last ESD</summary>
+    public static string DeleteFileRefusal(EsdFileWrapper file)
+    {
+        if (file == null || !file.Container.IsBinder)
+            return "ESD_File_Not_Binder_Entry";
+        if (file.Container.Files.Count < 2)
+            return "ESD_File_Delete_Last_Refused";
+        return null;
+    }
+
+    public void DeleteFile(EsdFileWrapper file)
+    {
+        var refusal = DeleteFileRefusal(file);
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var container = file.Container;
+        var index = container.Files.IndexOf(file);
+        if (index < 0)
+            return;
+        Pending.Add(new EsdEditAction(container, new EsdRemoveOp<EsdFileWrapper>(container.Files, index), "delete ESD"));
+        if (Selection.SelectedFile == file)
+            PendingSelect = container.Files[index > 0 ? index - 1 : 1];
+    }
+
+    // The file (or container) to select once the queued file edit has run
+    private EsdFileWrapper PendingSelect;
+    private EsdContainer PendingSelectContainer;
+
+    private EsdBank Bank => View.Project.Handler.EsdData?.PrimaryBank;
+
+    /// <summary>Why an ESD can't be renamed to a name, or null (LOC key)</summary>
+    public static string RenameRefusal(EsdFileWrapper file, string name)
+    {
+        if (file?.Esd == null || !file.Container.IsBinder)
+            return "ESD_File_Not_Binder_Entry";
+        if (string.Equals(file.Name, name, StringComparison.Ordinal))
+            return "ESD_Edit_No_Change";
+        return EsdBinderEntries.NameRefusal(name, FileNames(file.Container).Where(n => !n.Equals(file.Name, StringComparison.OrdinalIgnoreCase)), file.Kind == EsdScriptKind.Talk);
+    }
+
+    /// <summary>Renames a binder's ESD (its entry on save); its internal name follows when it followed the old one</summary>
+    public void RenameFile(EsdFileWrapper file, string name)
+    {
+        var refusal = RenameRefusal(file, name);
+        if (refusal != null)
+        {
+            if (refusal != "ESD_Edit_No_Change")
+                Smithbox.Log(this, LOC.Get(refusal, name), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var ops = new List<IEsdOp>
+        {
+            new EsdSetOp<string>(() => file.Name, v => file.Name = v, name),
+            new EsdSetOp<string>(() => file.EntryName, v => file.EntryName = v, name + ".esd"),
+        };
+        if (EsdBinderEntries.RenamedInternalName(file.Esd, file.Name, name) is { } inner)
+            ops.Add(new EsdSetOp<string>(() => file.Esd.Name, v => file.Esd.Name = v, inner));
+
+        Pending.Add(new EsdEditAction(file.Container, new EsdCompoundOp(ops), "rename ESD"));
+    }
+
+    /// <summary>A new empty ESD in a binder, in the format of the binder's other ESDs</summary>
+    public void AddBlankFile(EsdContainer container, string name)
+    {
+        var refusal = container?.IsBinder == true && container.IsLoaded
+            ? EsdBinderEntries.NameRefusal(name, FileNames(container), container.Kind == EsdScriptKind.Talk)
+            : "ESD_File_Not_Binder_Entry";
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal, name), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var sibling = container.Files.FirstOrDefault(f => f.Esd != null)?.Esd;
+        var file = EsdFileWrapper.Create(container, name, EsdBinderEntries.Blank(sibling, name));
+        Pending.Add(new EsdEditAction(container, new EsdInsertOp<EsdFileWrapper>(container.Files, container.Files.Count, file), "new ESD"));
+        PendingSelect = file;
+    }
+
+    // --- whole files: binders and loose ESDs ---
+
+    /// <summary>A container's name split for a new one: the stem (m10_00_00_00, c0000) and what follows (.talkesdbnd)</summary>
+    public static string StemOf(EsdContainer c) => c.Name.Split('.')[0];
+
+    /// <summary>The VFS path and list name a container would have under another stem, in the same folder</summary>
+    private static (string Path, string Name) Renamed(EsdContainer c, string stem)
+    {
+        var slash = c.Path.LastIndexOf('/');
+        var fileName = c.Path[(slash + 1)..];
+        var oldStem = fileName.Split('.')[0];
+        return (c.Path[..(slash + 1)] + stem + fileName[oldStem.Length..], stem + c.Name[StemOf(c).Length..]);
+    }
+
+    /// <summary>Why a new file can't be made from this one under a stem, or null (LOC key)</summary>
+    public string NewContainerRefusal(EsdContainer source, string stem)
+    {
+        var bank = Bank;
+        if (bank == null || source == null)
+            return "ESD_File_Not_Binder_Entry";
+        var refusal = EsdBinderEntries.ContainerNameRefusal(stem, source.Kind, source.IsBinder, bank.Containers.Where(c => c.IsBinder == source.IsBinder && c.Kind == source.Kind).Select(StemOf));
+        if (refusal != null)
+            return refusal;
+        return bank.IsFreePath(Renamed(source, stem).Path) ? null : "ESD_File_Name_Taken";
+    }
+
+    /// <summary>A free stem for a copy of a container: the next map ID for a talk binder, else stem_copy</summary>
+    public string SuggestContainerStem(EsdContainer source)
+    {
+        var taken = Bank?.Containers.Select(StemOf).ToList() ?? new();
+        var stem = StemOf(source);
+        var m = System.Text.RegularExpressions.Regex.Match(stem, @"^m(\d\d)_(\d\d)_(\d\d)_(\d\d)$");
+        if (m.Success)
+        {
+            // The last part counting up: m10_00_00_00 → m10_00_00_01
+            for (var i = int.Parse(m.Groups[4].Value) + 1; i < 100; i++)
+            {
+                var candidate = $"m{m.Groups[1].Value}_{m.Groups[2].Value}_{m.Groups[3].Value}_{i:D2}";
+                if (NewContainerRefusal(source, candidate) == null)
+                    return candidate;
+            }
+        }
+        return EsdBinderEntries.SuggestName(stem, taken);
+    }
+
+    /// <summary>
+    /// A copy of a whole binder or loose ESD under a new name, in the same folder: every ESD copied, a binder's entry
+    /// folders renamed for it. Written when saved.
+    /// </summary>
+    public void DuplicateContainer(EsdContainer source, string stem)
+    {
+        var refusal = NewContainerRefusal(source, stem) ?? (source.EnsureLoaded() ? null : "ESD_File_Not_Loaded");
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal, stem), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var (path, name) = Renamed(source, stem);
+        var oldStem = StemOf(source);
+        var copy = EsdContainer.CreateNew(Bank, path, name, source.IsBinder, source.Kind, source.IsBinder ? source.Path : null,
+            source.IsBinder ? (oldStem, stem) : null,
+            c => source.Files.Where(f => f.Esd != null).Select(f => source.IsBinder
+                ? EsdFileWrapper.Create(c, f.Name, EsdBinderEntries.Copy(f.Esd, f.Name, f.Name))
+                : EsdFileWrapper.CreateLoose(c, stem, EsdBinderEntries.Copy(f.Esd, f.Name, stem))).ToList());
+
+        Pending.Add(new EsdEditAction(copy, new EsdContainerAddOp(Bank, copy), "duplicate file"));
+        PendingSelectContainer = copy;
+    }
+
+    /// <summary>A new binder like another (its header and layout), holding one blank ESD</summary>
+    public void NewBinder(EsdContainer template, string stem, string firstName)
+    {
+        var refusal = template?.IsBinder != true ? "ESD_File_Not_Binder_Entry"
+            : NewContainerRefusal(template, stem) ?? EsdBinderEntries.NameRefusal(firstName, Array.Empty<string>(), template.Kind == EsdScriptKind.Talk)
+            ?? (template.EnsureLoaded() ? null : "ESD_File_Not_Loaded");
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal, stem), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        var (path, name) = Renamed(template, stem);
+        var sibling = template.Files.FirstOrDefault(f => f.Esd != null)?.Esd;
+        var binder = EsdContainer.CreateNew(Bank, path, name, true, template.Kind, template.Path, (StemOf(template), stem),
+            c => new List<EsdFileWrapper> { EsdFileWrapper.Create(c, firstName, EsdBinderEntries.Blank(sibling, firstName)) });
+
+        Pending.Add(new EsdEditAction(binder, new EsdContainerAddOp(Bank, binder), "new binder"));
+        PendingSelectContainer = binder;
+    }
+
+    /// <summary>
+    /// Why a whole file can't be deleted, or null (LOC key). Only what the project adds or overrides: a file only the
+    /// game has can't be removed (the game would still load it).
+    /// </summary>
+    public static string DeleteContainerRefusal(EsdContainer c)
+    {
+        if (c == null)
+            return "ESD_File_Not_Binder_Entry";
+        if (c.PendingRevert)
+            return "ESD_File_Already_Reverting";
+        if (!c.IsNew && !c.InProject)
+            return "ESD_File_Delete_Vanilla_Refused";
+        return null;
+    }
+
+    /// <summary>
+    /// Deletes a whole binder or loose ESD: an unsaved new one goes at once; a project-only file is moved into the
+    /// project's backup folder on save; a project copy of a game file is moved there too, and the game's comes back
+    /// </summary>
+    public void DeleteContainer(EsdContainer c)
+    {
+        var refusal = DeleteContainerRefusal(c);
+        if (refusal != null)
+        {
+            Smithbox.Log(this, LOC.Get(refusal), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+
+        IEsdOp op = !c.IsNew && c.InGame ? new EsdContainerRevertOp(c) : new EsdContainerRemoveOp(Bank, c);
+        Pending.Add(new EsdEditAction(c, op, "delete file"));
     }
 
     // --- machines ---

@@ -414,6 +414,7 @@
     { "Key": "EMEVD_Role_Link_Entity_TT", "Text": "Show entity {0} in the Map Editor (loads {1})." },
     { "Key": "EMEVD_Role_Link_Entity_Search_TT", "Text": "This file isn't a map's, so the entity's map isn't known: search every event file for {0} instead." },
     { "Key": "EMEVD_Role_Link_Flag_TT", "Text": "Search every event file for event flag {0}." },
+    { "Key": "EMEVD_Role_Link_Flag_Esd_TT", "Text": "Search every ESD (talk and character scripts) for event flag {0}, in the ESD Editor." },
     { "Key": "EMEVD_Role_Link_Param_TT", "Text": "Open {0} row {1} in the Param Editor." },
     { "Key": "EMEVD_Role_Link_Text_TT", "Text": "Open {0} entry {1} in the Text Editor." },
     { "Key": "EMEVD_Role_Link_Map_TT", "Text": "Load {0} in the Map Editor." },
