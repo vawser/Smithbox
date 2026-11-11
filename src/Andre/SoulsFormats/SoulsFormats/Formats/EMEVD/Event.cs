@@ -141,6 +141,11 @@ namespace SoulsFormats
                 /// Event is terminated upon resting.
                 /// </summary>
                 End = 2,
+
+                /// <summary>
+                /// Unknown; used by Duskbloods (DB_NT) events.
+                /// </summary>
+                Unknown3 = 3,
             }
         }
     }

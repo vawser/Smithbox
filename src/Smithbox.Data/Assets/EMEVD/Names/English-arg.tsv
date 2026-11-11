@@ -1,0 +1,463 @@
+AI状態	AI State
+AI音パラメーターID	AI Sound Param ID
+Aボタンを押した時に立てるイベントフラグ	Event Flag Set On A Button
+BGMID	BGM ID
+BGM用戦闘状態	BGM Combat State
+Bボタンを押した時に立てるイベントフラグ	Event Flag Set On B Button
+HPが－1でも判定するか	Check Even If HP Is -1
+HP判定比率	HP Ratio
+HP比較タイプ	HP Comparison Type
+HP比較値	HP Comparison Value
+HP閾値	HP Threshold
+NPCエンティティID	NPC Entity ID
+OBJのエンティティID	Object Entity ID
+ON/OFF	On/Off
+ObjエンティティID	Object Entity ID
+Pad有効か	Pad Enabled
+PlayGo状態	PlayGo State
+SAN値	Sanity Value
+SFX ID	SFX ID
+SFX_ID	SFX ID
+SP判定比率	SP Ratio
+SP比較タイプ	SP Comparison Type
+SP比較値	SP Comparison Value
+SfxID	SFX ID
+Yボタンを押した時に立てるイベントフラグ	Event Flag Set On Y Button
+Y座標閾値	Y Position Threshold
+Y軸移動量[m]	Y Offset [m]
+あるか	Has
+あるか？(成立条件)	Has (Pass Condition)
+アイテムID	Item ID
+アイテムタイプ	Item Type
+アイテム抽選ID	Item Lot ID
+アクションボタンパラメータID	Action Button Param ID
+アニメID	Animation ID
+アーキタイプ別初期設定ID	Archetype Initial Setup ID
+イベントID	Event ID
+イベントスロットID	Event Slot ID
+イベントスロット番号	Event Slot
+イベントフラグID	Event Flag ID
+イベントフラグID2	Event Flag ID 2
+イベントフラグIDMax	Event Flag ID Max
+イベントフラグIDMin	Event Flag ID Min
+イベントフラグIDNo	Event Flag ID (No)
+イベントフラグIDYes	Event Flag ID (Yes)
+イベントフラグID_1	Event Flag ID 1
+イベントフラグID_2	Event Flag ID 2
+イベントフラグID_3	Event Flag ID 3
+イベントフラグID_4	Event Flag ID 4
+イベントフラグID_5	Event Flag ID 5
+イベントフラグID_6	Event Flag ID 6
+イベントフラグID_7	Event Flag ID 7
+イベントフラグID_8	Event Flag ID 8
+イベントフラグID_終了	Event Flag ID End
+イベントフラグID_開始	Event Flag ID Start
+イベントフラグIDその他	Event Flag ID (Other)
+イベントフラグ先頭	First Event Flag
+イベントフラグ先頭(操作値)	First Event Flag (Operand)
+イベントフラグ先頭右辺値	First Event Flag (Right-Hand Side)
+イベントフラグ先頭左辺値	First Event Flag (Left-Hand Side)
+イベント名テキストID	Event Name Text ID
+イベント干渉ID	Event Interference ID
+イベント状態	Event State
+イベント説明テキストID	Event Description Text ID
+イベント部位ID	Event Part ID
+エリアID	Area ID
+エリアNo	Area Number
+エリア番号	Area Number
+エンティティID	Entity ID
+エンティティID(アタッチパーツ側)	Entity ID (Attaching Part)
+エンティティID(アタッチ受付側)	Entity ID (Receiving Part)
+エンティティID(グループ対応済み)	Entity ID (Group Supported)
+エンティティID2	Entity ID 2
+エンティティ判定値	Entity Comparison Value
+エンティティ数比率値	Entity Count Ratio
+エンティティ数比較タイプ	Entity Count Comparison Type
+エンティティ数比較値	Entity Count Comparison Value
+エンティティ比率	Entity Ratio
+エンティティ比較タイプ	Entity Comparison Type
+オフセットしたいGparamのID	Gparam ID To Offset
+オフセット向きからの角度	Angle From Offset Direction
+オブジェのエンティティID	Object Entity ID
+オブジェアクトパラメータID	ObjAct Param ID
+オブジェエンティティID	Object Entity ID
+オンラインモードか	Is Online Mode
+カウント閾値	Count Threshold
+カットシーンID	Cutscene ID
+カットシーン後のUI表示	UI After Cutscene
+カットシーン後のネットワーク機能	Network Features After Cutscene
+カメラセットID	Camera Set ID
+カメラリセットするか	Reset Camera
+キック対象EntityId	Entity ID To Kick
+キャラのエンティティID	Character Entity ID
+キャラアニメId	Character Animation ID
+キャライニットパラムID	Character Init Param ID
+キャラエンティティID	Character Entity ID
+キャラタイプ	Character Type
+キャンセルアニメ	Cancel Animation
+クライアントタイプ	Client Type
+グリッド座標X	Grid X
+グリッド座標Z	Grid Z
+グループID	Group ID
+グループID1	Group ID 1
+グループID2	Group ID 2
+コマンド	Command
+コマンドID	Command ID
+コンテンツ画像パーツID	Content Image Part ID
+サウンドID	Sound ID
+サウンドタイプ	Sound Type
+シングルプレイミッションID	Single-Player Mission ID
+ジェネレータエンティティID	Generator Entity ID
+ジャンプ先ラベル	Target Label
+スキップアクション数	Skip Count
+スキルID	Skill ID
+スキンパラメータID	Skin Param ID
+ステートID	State ID
+スロット	Slot
+スロットNo	Slot
+スロット番号	Slot
+ソウル取得するか	Award Souls
+タイトルテキストID	Title Text ID
+タイプ	Type
+タイムアウト時間(秒)	Timeout (Seconds)
+ターゲット名	Target Name
+ターゲット対象エンティティID	Targeted Entity ID
+ダミポリID	Dummy Poly ID
+ダミポリID(アタッチパーツ側)	Dummy Poly ID (Attaching Part)
+ダミポリID(アタッチ受付側)	Dummy Poly ID (Receiving Part)
+ダミー	Dummy
+ダメージアニメ	Damage Animation
+ダメージ属性	Damage Type
+チュートリアルパラメータID	Tutorial Param ID
+チームタイプ	Team Type
+テキストID	Text ID
+テキストタイプ	Text Type
+テキスト演出タイプ	Text Banner Type
+トロフィーId	Achievement ID
+ナビメッシュの種類	Navmesh Type
+ネームID	Name ID
+ハンドルID	Handle ID
+バックリードOK?	Backread OK
+バックリードＯＫ？か	Backread OK
+バリエーション番号1	Variation 1
+バリエーション番号2	Variation 2
+パターン	Pattern
+パッド認識番号	Pad ID
+ヒットエンティティId	Collision Entity ID
+ヒットパーツのエンティティID	Collision Part Entity ID
+ヒットパーツのエンティティID1	Collision Part Entity ID 1
+ヒットパーツのエンティティID2	Collision Part Entity ID 2
+ヒント血文字エンティティID	Hint Message Entity ID
+ビット何番目	Bit Index
+フェードタイプ(0:フェードイン,1:フェードアウト(黒))	Fade Type (0: In, 1: Out To Black)
+フェード時間	Fade Time
+フェード時間（秒）	Fade Time (Seconds)
+ブロックID	Block ID
+ブロックNo	Block Number
+ブロック番号	Block Number
+プレイヤーエンティティID	Player Entity ID
+ヘルプID	Help ID
+ボタン数	Button Count
+ボタン種類	Button Type
+ポイントエンティティID	Point Entity ID
+ポリ劇ID	Cutscene ID
+マップBGM状態指定	Map BGM State
+マップパーツのエンティティID	Map Part Entity ID
+マップレイヤーID	Map Layer ID
+マップ名テキストID	Map Name Text ID
+マップ番号	Map Number
+メッセージID	Message ID
+ライトグループID	Light Group ID
+ライン番号1	Line 1
+ライン番号2	Line 2
+ランタンモードか？	Lantern Mode
+ルート削除か？	Delete Root
+ループ指定	Loop
+レベル1の人数	Level 1 Character Count
+レベル2の人数	Level 2 Character Count
+ロジックID	AI ID
+ロックカメラID	Lock-On Camera ID
+ロックカメラスロット番号	Lock-On Camera Slot
+ロック中か？	Locked On
+ワイヤーセットID	Wire Set ID
+ワープオブジェEntityId	Warp Object Entity ID
+ワープタイプ	Warp Type
+ワープ中か	Warping
+ワープ先HitエンティティID	Destination Collision Entity ID
+ワープ先タイプ	Destination Type
+ワープ先ターゲットID	Destination Entity ID
+ワープ先候補のエンティティID_1	Destination Candidate Entity ID 1
+ワープ先候補のエンティティID_2	Destination Candidate Entity ID 2
+ワープ先候補のエンティティID_3	Destination Candidate Entity ID 3
+ワープ先候補のエンティティID_4	Destination Candidate Entity ID 4
+ワープ先候補のエンティティID_5	Destination Candidate Entity ID 5
+一致するか？	Matches
+世界状態	World State
+交換アイテム種類判定フラグ	Exchange Item Kind Flag
+交換元装備ID	Source Equipment ID
+交換元装備品タイプ	Source Equipment Type
+交換後アイテム抽選ID	Result Item Lot ID
+交換済み判定イベントフラグID	Exchanged Event Flag ID
+人間性保持する先頭イベントフラグID	First Humanity Event Flag ID
+何体以上満たしたら	Required Count
+作成ポイントエンティティID	Spawn Point Entity ID
+使用フラグ数(Bit数)	Flag Count (Bits)
+使用フラグ数(Bit数)(操作値)	Flag Count (Bits) (Operand)
+使用フラグ数右辺値(Bit数)	Flag Count (Bits) (Right-Hand Side)
+使用フラグ数左辺値(Bit数)	Flag Count (Bits) (Left-Hand Side)
+値閾値	Value Threshold
+停止状態で開始	Start Stopped
+傾向タイプ	Tendency Type
+傾向閾値	Tendency Threshold
+優先して当選するか	Prioritize Selection
+共闘パラメータID	Joint Battle Param ID
+再生アニメID	Animation ID
+再生方法	Playback Type
+再生設定	Playback Setting
+処理	Operation
+出現用イベントフラグID	Appearance Event Flag ID
+切り替えマーカーの参照	Use Switch Markers
+切替タイプ	Switch Type
+初期位置イベントID	Initial Position Event ID
+初期剣本数	Initial Sword Count
+初期基本スポットポイント	Initial Base Spot Point
+判定カテゴリ	Category
+判定カメラ領域（横方向）[%]	Camera Area Horizontal [%]
+判定カメラ領域（縦方向）[%]	Camera Area Vertical [%]
+判定タイプ	Check Type
+判定人数	Player Count
+判定位置エンティティID	Position Entity ID
+判定値	Comparison Value
+判定内容	Check
+判定対象エンティティID	Checked Entity ID
+判定方法	Check Method
+判定比率	Ratio
+判定表示モデルエンティティID	Display Model Entity ID
+判定領域エンティティID	Area Entity ID
+剣のスポットポイント	Sword Spot Point
+加算値	Amount
+半径	Radius
+参加中か	Participating
+反復時間（秒）	Repeat Interval (Seconds)
+反応属性	Reaction Attribute
+反応範囲	Reaction Range
+反応角度	Reaction Angle
+反応角度(Degree)	Reaction Angle (Degrees)
+反応距離	Reaction Distance
+取得表示するアイテムID	Displayed Item ID
+取得表示するアイテムの種類	Displayed Item Type
+召還NPCのエンティティID	Summoned NPC Entity ID
+召還イベントフラグ	Summon Event Flag
+召還タイプ	Summon Type
+右辺値	Right-Hand Side
+同じか	Equal
+同じか？	Equal
+吸着元アセットのエンティティID	Child Asset Entity ID
+吸着先アセットのエンティティID	Parent Asset Entity ID
+吸着先アセットのダミポリID	Parent Asset Dummy Poly ID
+周回数閾値	Cycle Threshold
+呼び出し元MsgEditor	Message Source
+命令	Command
+回転Y軸X座標[m]	Rotation Axis X [m]
+回転Y軸Z座標[m]	Rotation Axis Z [m]
+回転角度[deg]	Rotation Angle [deg]
+基準からの向きオフセット	Direction Offset
+基準となるダミポリ（-1なら原点）	Reference Dummy Poly (-1 For Origin)
+基準イベントフラグIDタイプ	Event Flag ID Type
+基準エンティティID	Reference Entity ID
+報酬を取得/抽選するか	Award Rewards
+増減値	Change
+変更先のGParamID	Target Gparam ID
+変更時間(秒)	Transition Time (Seconds)
+外すか	Exclude
+大家系図_素材パラメータの「プロフィール素材」シートのID	Family Tree Profile Material ID
+大家系図_素材パラメータの「人物」シートのID	Family Tree Character Material ID
+実行イベントID	Executed Event ID
+実行イベント終了タイプ	Event End Type
+対象	Target
+対象AエンティティID	Entity A
+対象BエンティティID	Entity B
+対象の相対Idx	Relative Index
+対象イベントフラグID	Event Flag ID
+対象エンティティID	Entity ID
+対象オブジェクトのエンティティID	Object Entity ID
+対象キャラエンティティID	Character Entity ID
+対象スロット	Slot
+対象ヒットのエンティティID	Collision Entity ID
+対象プレイヤー	Player
+対象モデルID	Model ID
+対象リジッドIndex(アタッチパーツ側)	Rigid Body Index (Attaching Part)
+対象リジッドIndex(アタッチ受付側)	Rigid Body Index (Receiving Part)
+対象条件グループ	Target Condition Group
+寿命	Lifetime
+巡回情報エンティティID	Patrol Entity ID
+左辺値	Left-Hand Side
+床設定コピー元キャラエンティティID	Floor Source Character Entity ID
+引数	Args
+弾丸ダメージ倍率	Bullet Damage Multiplier
+待機アニメ	Standby Animation
+待機復帰アニメ	Standby Exit Animation
+待機遷移しないか	Skip Idle Transition
+復活ポイントのエンティティID	Respawn Point Entity ID
+復活ポイントエンティティID	Respawn Point Entity ID
+復活ポイントパラメータID	Respawn Point Param ID
+性別	Gender
+成功orキャンセル	Success Or Cancel
+成立条件	Pass Condition
+扉の開閉イベント	Door Event
+抽選パラID	Item Lot ID
+指定角度の内外どちらにいるか	Inside Or Outside Angle
+指定距離	Distance
+振動ID	Shake ID
+描画グループ内か	In Draw Group
+描画パラムバンクスロットインデックス	DrawParam Bank Slot Index
+操作値	Operand
+攻撃者エンティティID	Attacker Entity ID
+数	Count
+敵エンティティID	Enemy Entity ID
+敵拠点オブジェクトのエンティティID	Enemy Base Object Entity ID
+旋回アニメ	Turn Animation
+時間帯	Time Of Day
+時間帯ID	Time Of Day ID
+時間帯フェイズ	Time Of Day Phase
+時間帯フェイズ変更タイミング	Time Of Day Change Timing
+時間経過を止めるか？	Stop Timer
+更新キャラ数	Character Count
+更新権限値	Update Authority
+更新距離	Update Distance
+更新頻度	Update Frequency
+更新頻度固定	Lock Update Frequency
+最大HP上書き可能か	Can Override Max HP
+最大値制限	Maximum
+有効か	Enabled
+有効・無効	Enabled
+有効化設定	Enabled
+本体ダメージ補正	Body Damage Multiplier
+本文テキストID	Body Text ID
+条件成立フラグ状態	Desired Flag State
+条件成立マルチプレイ状態	Desired Multiplayer State
+条件成立内外状態	Desired Inside/Outside State
+条件成立所有状態	Desired Owned State
+条件成立条件状態	Desired Condition State
+条件成立死亡状態	Desired Dead State
+条件成立状態	Desired State
+条件成立破壊状態	Desired Destroyed State
+根元のみ消すか	Delete Root Only
+死亡アニメ	Death Animation
+残り時間	Time Remaining
+残り時間[s]	Time Remaining [s]
+比率	Ratio
+比較タイプ	Comparison Type
+比較値	Comparison Value
+氏族アクションパラメータID	Clan Action Param ID
+氏族パラメータID	Clan Param ID
+水泳状態	Swimming State
+汎用ダイアログ結果	Dialog Result
+減衰完了距離	Falloff End Distance
+減衰開始距離	Falloff Start Distance
+測定用ID	Measurement ID
+無効にするか	Disable
+無効・有効	Enabled
+無敵か	Invincible
+燃焼率	Burn Ratio
+物理属性	Physical Damage Type
+特殊効果ID	SpEffect ID
+状態	State
+環境イベントID	Environment Event ID
+環境音ID	Ambient Sound ID
+発射角度X	Launch Angle X
+発射角度Y	Launch Angle Y
+発射角度Z	Launch Angle Z
+登録条件グループ	Result Condition Group
+監視対象のイベントメッセージID	Watched Event Message ID
+監視職業	Class
+監視誓約値	Covenant
+目標フレーム	Frames
+目標フレーム数	Frames
+目標フレーム数最大値	Max Frames
+目標フレーム数最小値	Min Frames
+目標フレーム最大値	Max Frames
+目標フレーム最小値	Min Frames
+目標秒	Seconds
+目標秒数	Seconds
+目標秒数最大値	Max Seconds
+目標秒数最小値	Min Seconds
+目標秒最大値	Max Seconds
+目標秒最小値	Min Seconds
+石像タイプ	Statue Type
+移動元領域エンティティID	Source Area Entity ID
+移動先エンティティID	Destination Entity ID
+移動先ポイントエンティティID	Destination Point Entity ID
+移動先領域エンティティID	Destination Area Entity ID
+種類操作設定	Bit Operation
+管理イベント部位にも特殊効果HP補正適用	Apply SpEffect HP Change To Event Parts
+篝火エンティティID	Bonfire Entity ID
+終了をまつか	Wait For Completion
+終了を待つか	Wait For Completion
+終了対象イベントフラグID	Last Event Flag ID
+終了待つか	Wait For Completion
+線分対象OBJエンティティID	Line Object Entity ID
+自動接続設定	Auto Connect
+行動ID	Behavior ID
+表示or非表示	Show Or Hide
+表示中か	Showing
+表示場所インデックス	Display Position Index
+表示対象エンティティID	Display Entity ID
+表示設定	Display
+表示距離	Display Distance
+装備ID	Equipment ID
+装備ID指定終了ID	Equipment ID Range End
+装備ID指定開始ID	Equipment ID Range Start
+装備しているか？	Equipped
+装備タイプ	Equipment Type
+装備品タイプ	Equipment Type
+装備部位	Equipment Slot
+補完時間	Transition Time
+補間方法	Interpolation
+要求ID	Request ID
+解散イベントフラグ	Dismissal Event Flag
+解禁されているか？	Unlocked
+解禁するジェスチャーのID	Gesture ID
+解禁アクションのタイプ	Action Type
+計算タイプ	Operation Type
+設定HP	HP
+設定する残り回数	Remaining Count
+設定フラグ	Desired State
+誓約パラメータID	Covenant Param ID
+起動イベントID	Event ID
+起動済みか	Active
+近景パーツのエンティティID	Near Part Entity ID
+追加数	Count
+通常カメラID	Normal Camera ID
+遅延設定	Delay Setting
+道具ID	Goods ID
+遠景パーツのエンティティID	Far Part Entity ID
+部位HP	Part HP
+部位グループIdx	Part Group Index
+部位ダメージ補正	Part Damage Multiplier
+配置領域エンティティID	Placement Area Entity ID
+重み_1	Weight 1
+重み_2	Weight 2
+重み_3	Weight 3
+重み_4	Weight 4
+重み_5	Weight 5
+重み_6	Weight 6
+重み_7	Weight 7
+重み_8	Weight 8
+開始フレーム	Start Frame
+開始対象イベントフラグID	First Event Flag ID
+防具アイテムID	Armor Item ID
+防具カテゴリ	Armor Category
+防御材質SEID	Defense Material Sound ID
+防御材質SEID1	Defense Material Sound ID 1
+防御材質SEID2	Defense Material Sound ID 2
+防御材質SfxID	Defense Material SFX ID
+防御材質SfxID1	Defense Material SFX ID 1
+防御材質SfxID2	Defense Material SFX ID 2
+防御材質バリエーション値	Defense Material Variation
+階層	Floor
+霊体種別	Phantom Type
+領域エンティティID	Area Entity ID
+領域形成起点エンティティID	Area Origin Entity ID
+風パラメータID	Wind Param ID
+ＤＬＣ購入済みか	DLC Owned

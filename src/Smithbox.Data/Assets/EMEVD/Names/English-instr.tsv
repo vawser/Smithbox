@@ -1,0 +1,519 @@
+条件グループ条件状態で判定	If Condition Group State
+経過秒数で判定	If Elapsed Seconds
+経過フレーム数で判定	If Elapsed Frames
+イベントフラグ状態で判定	If Event Flag State
+複数イベントフラグ状態で判定	If Event Flag Range State
+対象の領域内外状態で判定	If Inside Or Outside Area
+複数イベントフラグTRUE数で判定	If Event Flag Range ON Count
+アクションボタン領域判定	If Action Button In Area
+タイプ別クライアント数で判定	If Client Count By Type
+イベント部位＿HP	If Event Part HP
+イベントメッセージIDが一致判定	If Event Message ID Matches
+キャラの死亡状態で判定_キャラ比率版	If Character Dead State (Character Ratio)
+キャラのHP比率で判定_キャラ比率版	If Character HP Ratio (Character Ratio)
+対象のターゲット状態で判定_キャラ比率版	If Targeting State (Character Ratio)
+特殊効果IDがあるか_キャラ比率版	If Has SpEffect (Character Ratio)
+キャラがバックリード状態判定_キャラ比率版	If Character Backread State (Character Ratio)
+対象のAI状態で判定_キャラ比率版	If AI State (Character Ratio)
+キャラのHP値で判定_キャラ比率版	If Character HP Value (Character Ratio)
+オブジェクト破壊状態で判定	If Object Destroyed State
+オブジェクト破壊状態で判定（オブジェ比率版_	If Object Destroyed State (Object Ratio)
+ヒット上にローカルプレイヤが居るかで判定	If Local Player On Collision
+条件グループ条件状態で待機	Wait For Condition Group State
+条件グループ条件状態でアクションスキップ	Skip If Condition Group State
+条件グループ条件状態でイベント終了	End If Condition Group State
+無条件でイベント終了	End Unconditionally
+条件グループ条件状態でラベルジャンプ	Goto If Condition Group State
+無条件でラベルジャンプ	Goto Unconditionally
+終了済み条件グループ条件状態でラベルジャンプ	Goto If Evaluated Condition Group State
+経過秒数で待機	Wait For Elapsed Seconds
+経過フレーム数で待機	Wait For Elapsed Frames
+経過ランダム秒数で待機	Wait For Random Elapsed Seconds
+経過ランダムフレーム数で待機	Wait For Random Elapsed Frames
+イベントフラグ状態でイベント終了	End If Event Flag State
+イベントフラグ状態でラベルジャンプ	Goto If Event Flag State
+ラベル０	Label 0
+ラベル１	Label 1
+ラベル２	Label 2
+ラベル３	Label 3
+ラベル４	Label 4
+ラベル５	Label 5
+ラベル６	Label 6
+ラベル７	Label 7
+ラベル８	Label 8
+ラベル９	Label 9
+ラベル１０	Label 10
+ラベル１１	Label 11
+ラベル１２	Label 12
+ラベル１３	Label 13
+ラベル１４	Label 14
+ラベル１５	Label 15
+ラベル１６	Label 16
+ラベル１７	Label 17
+ラベル１８	Label 18
+ラベル１９	Label 19
+ラベル２０	Label 20
+イベント起動	Initialize Event
+共通イベント起動	Initialize Common Event
+カットシーン再生_プレイヤー指定	Play Cutscene (Specific Player)
+ダミーポリ劇再生＆PCワープ	Play Dummy Cutscene And Warp Player
+アニメ再生要求	Request Animation
+アイテム取得	Award Item Lot
+Map当たり有効化	Enable Map Collision
+イベント状態設定	Set Event State
+強制アニメ再生要求	Force Animation
+イベントフラグまとめ設定	Set Event Flag Range
+所持アイテムを削除	Remove Item From Inventory
+トロフィー開放	Unlock Achievement
+敵ジェネレータ生成実行	Run Enemy Generator Spawn
+イベントフラグ設定_同期あり	Set Event Flag (Synced)
+イベントフラグまとめ設定_同期あり	Set Event Flag Range (Synced)
+クロス更新する最大キャラ数変更	Set Max Cloth Update Character Count
+クロス更新する最大キャラ数リセット	Reset Max Cloth Update Character Count
+特殊効果設定	Apply SpEffect
+キャラの表示マスク変更	Change Character Display Mask
+篝火相当回復	Restore As If Rested At Bonfire
+全キャラ復活	Revive All Characters
+会話ステート処理限界距離設定	Set Talk State Distance Limit
+オブジェ破壊要求	Request Object Destruction
+オブジェ復帰要求	Request Object Restoration
+オブジェ有効化	Enable Object
+宝有効化	Enable Treasure
+オブジェアニメ再現	Reproduce Object Animation
+オブジェダメージ作成	Create Object Damage
+Objワープ要求	Request Object Warp
+オブジェイベント削除	Delete Object Event
+オブジェ破壊禁止	Prevent Object Destruction
+マップSFX削除	Delete Map SFX
+マップSFX作成	Create Map SFX
+ワンショットSFX作成	Create One-Shot SFX
+OBJ追従SFX作成	Create Object-Following SFX
+OBJ追従SFX削除	Delete Object-Following SFX
+カメラ変更	Change Camera
+カメラセットIDを設定	Set Camera Set ID
+BGM再生	Play BGM
+常駐サウンド制御	Control Resident Sound
+サウンドスイッチ制御	Control Sound Switch
+ヒットパーツ有効化	Enable Collision Part
+闇霊乱入	Dark Spirit Invasion
+シャッフル	Shuffle
+パラメータ比較状態で判定	If Parameter Comparison
+経過ランダム秒数で判定	If Random Elapsed Seconds
+経過ランダムフレーム数で判定	If Random Elapsed Frames
+対象同士の一定距離内外状態で判定	If Entities Within Or Beyond Distance
+アイテムの所有状態で判定	If Item Owned State
+アクションボタン状態で判定	If Action Button State
+ゲームのマルチプレイ状態で判定	If Multiplayer State
+全プレイヤーの領域内外状態で判定	If All Players Inside Or Outside Area
+現在マップIDで判定	If Current Map ID
+イベント干渉で判定	If Event Interference
+傾向値で判定	If Tendency Value
+イベント値で判定	If Event Value
+ボス部屋アクションボタン状態で判定	If Boss Room Action Button State
+領域内でアイテム捨てたかで判定	If Item Dropped In Area
+どのアイテムを捨てたかで判定	If Specific Item Dropped
+倉庫含むアイテムの所有状態で判定	If Item Owned State Including Storage
+ゲームクリア周回数で判定	If New Game Cycle
+線分方向判定アクションボタン状態で判定	If Action Button State With Line Direction
+線分方向判定ボス部屋アクションボタン状態で判定	If Boss Room Action Button State With Line Direction
+イベント値とイベント値の比較で判定	If Event Value Comparison
+ＤＬＣが購入済みかで判定	If DLC Owned
+オンラインモードかで判定	If Online Mode
+属性ダメージ判定	If Elemental Damage
+装備IDで判定	If Equipment ID
+SAN値で判定	If Sanity Value
+汎用ダイアログ分岐	If Generic Dialog Choice
+PlayGo状態で判定	If PlayGo State
+キャラの死亡状態で判定	If Character Dead State
+キャラのダメージ状態で判定	If Character Damaged State
+キャラのHP比率で判定	If Character HP Ratio
+キャラのキャラタイプで判定	If Character Type
+対象のターゲット状態で判定	If Targeting State
+特殊効果IDがあるか	If Has SpEffect
+キャラがバックリード状態判定	If Character Backread State
+対象のAI状態で判定	If AI State
+プレイヤーランタン武器装備判定	If Player Lantern Weapon Equipped
+プレイヤーの職業で判定	If Player Class
+プレイヤーの誓約で判定	If Player Covenant
+プレイヤーのソウルレベルで判定	If Player Soul Level
+キャラのHP値で判定	If Character HP Value
+キャラの描画グループ状態で判定	If Character Draw Group State
+オブジェクトのダメージ状態で判定	If Object Damaged State
+ObjAct実行判定	If ObjAct Executed
+オブジェクトのHP状態で判定	If Object HP State
+ヒット上に動いているキャラが居るかで判定	If Moving Character On Collision
+ヒット上に暴れているキャラが居るかで判定	If Rampaging Character On Collision
+無条件でアクションスキップ	Skip Unconditionally
+パラメータ比較状態でアクションスキップ	Skip If Parameter Comparison
+パラメータ比較状態でイベント終了	End If Parameter Comparison
+終了済み条件グループ条件状態でアクションスキップ	Skip If Evaluated Condition Group State
+終了済み条件グループ条件状態でイベント終了	End If Evaluated Condition Group State
+イベント結果ネットワーク承認	Approve Event Result Over Network
+パラメータ比較状態でラベルジャンプ	Goto If Parameter Comparison
+イベントフラグ状態で待機	Wait For Event Flag State
+イベントフラグ状態でアクションスキップ	Skip If Event Flag State
+複数イベントフラグ状態でアクションスキップ	Skip If Event Flag Range State
+複数イベントフラグ状態でイベント終了	End If Event Flag Range State
+マルチプレイ状態でアクションスキップ	Skip If Multiplayer State
+マルチプレイ状態でイベント終了	End If Multiplayer State
+マップIDでイベントをアクションをスキップする	Skip If Map ID
+マップIDでイベント終了	End If Map ID
+協力クライアント数でアクションスキップ	Skip If Co-op Client Count
+協力クライアント数でイベント終了	End If Co-op Client Count
+性別でアクションスキップ	Skip If Player Gender
+性別でラベルジャンプ	Goto If Player Gender
+性別でイベント終了	End If Player Gender
+タイプ別クライアント数でアクションスキップ	Skip If Client Count By Type
+タイプ別クライアント数でラベルジャンプ	Goto If Client Count By Type
+タイプ別クライアント数でイベント終了	End If Client Count By Type
+複数イベントフラグ状態でラベルジャンプ	Goto If Event Flag Range State
+マルチプレイ状態でラベルジャンプ	Goto If Multiplayer State
+マップIDでイベントをラベルジャンプする	Goto If Map ID
+協力クライアント数でラベルジャンプ	Goto If Co-op Client Count
+オブジェクト破壊状態で待機	Wait For Object Destroyed State
+オブジェクト破壊状態でアクションスキップ	Skip If Object Destroyed State
+オブジェクト破壊状態でイベント終了	End If Object Destroyed State
+オブジェクト破壊状態でラベルジャンプ	Goto If Object Destroyed State
+イベント強制終了	Terminate Event
+ネットワーク同期	Synchronize Network
+終了済み条件グループ条件状態クリア	Clear Evaluated Condition Groups
+プリフェッチ要求	Request Prefetch
+セーブ要求	Request Save
+ポリ劇再生	Play Cutscene
+ポリ劇再生＆PCワープ	Play Cutscene And Warp Player
+ポリ劇再生_プレイヤー指定	Play Cutscene (Specific Player)
+ポリ劇再生＆PCワープ_プレイヤー指定	Play Cutscene And Warp Player (Specific Player)
+ポリ劇再生 & PCY軸回転ワープ_プレイヤー指定	Play Cutscene And Warp Player With Y Rotation (Specific Player)
+ポリ劇再生 & 時間帯変化 & PCワープ_プレイヤー指定	Play Cutscene, Change Time Of Day And Warp Player (Specific Player)
+ポリ劇再生 & 時間帯変化_プレイヤー指定	Play Cutscene And Change Time Of Day (Specific Player)
+イベントフラグ設定	Set Event Flag
+ジェネレータ有効化	Enable Generator
+弾丸発射	Shoot Bullet
+Map表示有効化	Enable Map Display
+イベントフラグ反転	Toggle Event Flag
+イベントナビメッシュ設定	Set Event Navmesh
+ボスゲージ表示	Show Boss Health Bar
+ボス撃破処理	Handle Boss Defeat
+ナビメッシュ接続	Modify Navmesh Connection
+マップ移動要求	Request Map Warp
+中ボス撃破処理	Handle Mini-Boss Defeat
+イベント干渉配信	Broadcast Event Interference
+ランダムイベントフラグ設定	Set Random Event Flag
+描画パラムバンクスロットインデックス設定	Set DrawParam Bank Slot Index
+一時復活ポイント設定	Set Temporary Respawn Point
+ゲームクリア周回加算	Increment New Game Cycle
+復活ポイント設定	Set Respawn Point
+AIプレイヤー召還SOS作成	Create AI Player Summon Sign
+Mapヒント血文字設定	Set Map Hint Message
+タイトル抜け	Return To Title
+傾向値の加算	Add Tendency Value
+ベイグラント無効	Disable Vagrants
+イベント値+1	Increment Event Value
+イベント値＋1	Increment Event Value
+イベント値クリア	Clear Event Value
+鷹娘アイテム情報設定	Set Hawk Girl Item Info
+鷹娘アイテムドロップ	Hawk Girl Item Drop
+血痕＆ドロップアイテム移動	Move Bloodstain And Dropped Items
+クライアントでもアイテム取得	Award Item Lot To Clients Too
+闘技場１対１ランキング登録要求	Request Arena 1v1 Ranking Registration
+闘技場２対２ランキング登録要求	Request Arena 2v2 Ranking Registration
+闘技場バトルロイヤルランキング登録要求	Request Arena Battle Royale Ranking Registration
+闘技場マルチ退場要求	Request Arena Multiplayer Exit
+イベント値の操作	Modify Event Value
+アイテム所持数をイベント値に格納	Store Item Count In Event Value
+アイテム直接入手	Directly Give Item
+方位計表示切り替え	Toggle Compass Display
+地図表示ヒットグリッド関連付け設定	Set Map Display Collision Grid Link
+地図コンテンツ画像表示設定	Set Map Content Image Display
+地図表示区域設定	Set Map Display Region
+領域に風を設定	Set Wind In Area
+復活ポイントワープ	Warp To Respawn Point
+NPC召喚	Summon NPC
+ワープOBJ起動	Activate Warp Object
+ボス撃破処理（テキスト演出指定）	Handle Boss Defeat (With Text Banner)
+ロジック状態切り替え	Set Character AI State
+チームタイプ切り替え	Change Team Type
+ワープ要求	Request Warp
+強制死亡要求	Force Character Death
+キャラ無効化	Set Character Enabled
+EzState命令要求	Request EzState Command
+弾丸オーナー作成	Create Bullet Owner
+特殊待機設定	Set Special Standby
+重力無効化	Disable Gravity
+イベントターゲット指定	Set Event Target
+キャラ不死設定	Set Character Immortality
+キャラの巣を設定	Set Character Nest
+キャラの旋回	Rotate Character
+キャラの無敵	Set Character Invincibility
+ターゲットクリア	Clear Target
+AI命令要求	Request AI Command
+イベントポイント設定	Set Event Point
+ロジックID設定	Set AI ID
+ロジックリプランニング	Replan AI
+特殊効果解除	Clear SpEffect
+イベント部位＿作成	Create Event Part
+イベント部位＿HP設定	Set Event Part HP
+イベント部位＿SEとSFX設定	Set Event Part Sound And SFX
+イベント部位＿弾丸倍率設定	Set Event Part Bullet Multiplier
+キャラの当たりマスク変更	Change Character Collision Mask
+ネットワーク更新権限を設定	Set Network Update Authority
+バックリードから外すか設定	Set Backread Exclusion
+HPゲージ表示設定	Set HP Bar Display
+キャラのマップヒット無効化設定	Set Character Map Collision Disabled
+AI命令要求＋フラグ数	Request AI Command With Flag Count
+道連れダメージ	Set Shared Damage Link
+更新頻度指定	Set Update Frequency
+常時バックリード設定	Set Always Backread
+ヘルカイトブレス制御	Control Hellkite Breath
+強制宝化	Force Into Treasure
+裏切り	Betray
+キャラアタリ無効化	Disable Character Collision
+床設定有りワープ要求	Request Warp With Floor
+ショートワープ要求	Request Short Warp
+床設定コピーしてワープ要求	Request Warp Copying Floor
+キャラのアニメリセット要求	Request Character Animation Reset
+チームタイプ切り替え＆強制特殊待機解除	Change Team Type And Release Special Standby
+NPC人間性登録	Register NPC Humanity
+賞金首ポイント加算	Add Bounty Points
+キャラのクロス変更	Change Character Cloth
+巡回行動の切り替え	Change Patrol Behavior
+テスト＿ラグドール拘束要求	Test: Request Ragdoll Restraint
+キャラ変更	Change Character
+HP変動特殊効果を対象の持つ部位に適応	Apply HP-Change SpEffect To Target Parts
+自分の世界以外でキャラのマップヒット&重力無効化設定	Disable Character Map Collision And Gravity Outside Own World
+自分の世界以外でキャラのマップヒット＆重力無効化設定	Disable Character Map Collision And Gravity Outside Own World
+ObjAct起動	Activate ObjAct
+ObjAct有効化	Enable ObjAct
+オブジェ破壊再現	Reproduce Object Destruction
+石像オブジェ登録	Register Statue Object
+ObjAct有効化(IDX指定)	Enable ObjAct (By Index)
+宝再抽選	Reroll Treasure
+ObjAct起動要請	Request ObjAct Activation
+ダメージ遮蔽	Set Damage Shield
+汎用ダイアログ表示	Show Generic Dialog
+テキスト演出	Show Text Banner
+状況説明表示	Show Status Message
+闘技場メッセージ表示	Show Arena Message
+闘技場死亡Aメッセージタグ設定	Set Arena Death Message Tag A
+闘技場死亡Bメッセージタグ設定	Set Arena Death Message Tag B
+闘技場死亡Cメッセージタグ設定	Set Arena Death Message Tag C
+闘技場死亡Dメッセージタグ設定	Set Arena Death Message Tag D
+闘技場解散情報メッセージ	Show Arena Disband Message
+カメラ振動	Shake Camera
+ロックカメラスロット番号を設定	Set Lock-On Camera Slot
+ハシゴ登録	Register Ladder
+徘徊デーモン初期化	Initialize Wandering Demon
+徘徊デーモン登録	Register Wandering Demon
+篝火登録	Register Bonfire
+マルチドーピング	Multiplayer Buff
+回復の泉登録	Register Healing Fountain
+ボス部屋侵入通知	Notify Boss Room Entry
+SE再生	Play Sound Effect
+マップサウンド有効化	Enable Map Sound
+ボス用マップサウンド有効化	Enable Boss Map Sound
+扉の開閉をサウンド遮蔽に通知	Notify Sound Occlusion Of Door State
+ヒットパーツバックリードマスク有効化	Enable Collision Part Backread Mask
+マップパーツ有効化	Enable Map Part
+時間計測終了	End Time Measurement
+敵ジェネレータ回数で判定	If Enemy Generator Count
+マルチプレイ世界状態で判定	If Multiplayer World State
+NT版起動中かで判定	If Network Test Build
+マルチプレイペナルティ解除アイテムの生成可能	If Multiplayer Penalty Release Item Can Be Created
+プレイヤーの性別で判定	If Player Gender
+カットシーンが終了したかで判定	If Cutscene Finished
+右手武器の装備状態で判定	If Right-Hand Weapon Equipped State
+左手武器の装備状態で判定	If Left-Hand Weapon Equipped State
+アイテムの装備状態で判定	If Item Equipped State
+投げ技の装備状態で判定	If Throw Equipped State
+プレイ中のクライアント数で判定	If Playing Client Count
+領域内のプレイヤー数で判定	If Player Count In Area
+メニュー・ダイアログの開閉状態で判定	If Menu Or Dialog Open State
+アイテムの所持数で判定	If Item Count
+フェーズの進行タイミングで判定	If Phase Progress Timing
+アクションボタン領域判定（イベントフラグ指定つき）	If Action Button In Area (With Event Flag)
+スキルの所有状態で判定	If Skill Owned State
+現在のシングルプレイミッションIDで判定	If Current Single-Player Mission ID
+シングルプレイ汎用判定	If Single-Player Generic Check
+誓約の装備状態で判定	If Covenant Equipped State
+氏族アクションの装備状態で判定	If Clan Action Equipped State
+人物素材の装備状態で判定	If Character Material Equipped State
+プロフィール素材の装備状態で判定	If Profile Material Equipped State
+対象プレイヤーの脱落状態で判定	If Player Eliminated State
+共闘敵が起動済みか	If Joint Battle Enemy Active
+ローカルプレイヤーが共闘通知表示中か	If Local Player Showing Joint Battle Notice
+ローカルプレイヤーが共闘ワープ中か	If Local Player In Joint Battle Warp
+ローカルプレイヤーが共闘参加中か	If Local Player In Joint Battle
+ロビーメニューの開閉状態で判定	If Lobby Menu Open State
+キャラのキャラタイプで判定_キャラ比率版	If Character Type (Character Ratio)
+イベントメッセージIDが一致判定_キャラ比率版	If Event Message ID Matches (Character Ratio)
+亡者度比較	If Hollowing Comparison
+負債亡者度比較	If Hollowing Debt Comparison
+亡者レベルアップ残回数比較	If Remaining Hollow Level-Ups Comparison
+キャラの霊体種別で判定	If Character Phantom Type
+プレイヤーのソウル所持量で判定	If Player Souls Held
+対象のターゲット保持状態で判定	If Target Held State
+対象のターゲット保持状態で判定（キャラ比率版）	If Target Held State (Character Ratio)
+キャラのマップBGM状態で判定	If Character Map BGM State
+キャラのマップBGM状態で判定（キャラ比率版）	If Character Map BGM State (Character Ratio)
+前フレームの描画状態で判定	If Previous Frame Draw State
+プレイヤーの水泳状態で判定	If Player Swimming State
+アクション解禁状況で判定	If Action Unlocked State
+プレイヤーのロック状態で判定	If Player Lock-On State
+キャラの必要忍殺回数で判定	If Character Deathblows Required
+キャラの必要忍殺回数で判定_キャラ比率版	If Character Deathblows Required (Character Ratio)
+キャラのSP比率で判定	If Character SP Ratio
+キャラのSP比率で判定_キャラ比率版	If Character SP Ratio (Character Ratio)
+キャラのSP値で判定	If Character SP Value
+キャラのSP値で判定_キャラ比率版	If Character SP Value (Character Ratio)
+対象同士の相対角度内外状態で判定	If Entities Within Or Beyond Relative Angle
+プレイヤーの残機で判定	If Player Remaining Lives
+プレイヤーの戦闘状態で判定	If Player Combat State
+キャラの氏族で判定	If Character Clan
+キャラのキャラバリエで判定	If Character Variation
+マルチSFXの再生状況	If Multi-SFX Playing State
+オブジェクトの燃焼率で比較	If Object Burn Ratio
+オブジェクトのHP状態で判定（オブジェ比率版_	If Object HP State (Object Ratio)
+マルチSFXの再生状況（オブジェ比率版_	If Multi-SFX Playing State (Object Ratio)
+オブジェクトの燃焼率で比較（オブジェ比率版_	If Object Burn Ratio (Object Ratio)
+オブジェクトのバックリード状態判定	If Object Backread State
+オブジェクトのバックリード状態判定（オブジェ比率版_	If Object Backread State (Object Ratio)
+オブジェクトのアニメ終了フレーム判定	If Object Animation End Frame
+アセットのアニメ終了フレーム判定	If Asset Animation End Frame
+ロウヒット読み込み完了しているかで判定	If Low Collision Loaded
+ライトグループ切り替えが安定したか	If Light Group Switch Settled
+マップBGM状態で判定	If Map BGM State
+マップ間のBGM変更タイミングで判定	If Map BGM Change Timing
+マップIDが変わったか	If Map ID Changed
+テクスチャ／ハイヒット以外のロード状態で判定	If Loaded Excluding Textures And High Collision
+カメラ内外で判定	If Inside Or Outside Camera View
+特殊効果IDの有無でラベルジャンプ	Goto If Has SpEffect
+マルチプレイ世界状態でラベルジャンプ	Goto If Multiplayer World State
+マルチプレイ世界状態でイベント終了	End If Multiplayer World State
+マルチプレイ世界状態でアクションスキップ	Skip If Multiplayer World State
+特殊効果IDの有無でイベント終了	End If Has SpEffect
+特殊効果IDの有無でアクションスキップ	Skip If Has SpEffect
+対象の領域内外状態でラベルジャンプ	Goto If Inside Or Outside Area
+対象の領域内外状態でイベント終了	End If Inside Or Outside Area
+対象の領域内外状態でアクションスキップ	Skip If Inside Or Outside Area
+オブジェクト破壊状態で待機_オブジェ比率版	Wait For Object Destroyed State (Object Ratio)
+オブジェクト破壊状態でアクションスキップ_オブジェ比率版	Skip If Object Destroyed State (Object Ratio)
+オブジェクト破壊状態でイベント終了_オブジェ比率版	End If Object Destroyed State (Object Ratio)
+オブジェクト破壊状態でラベルジャンプ_オブジェ比率版	Goto If Object Destroyed State (Object Ratio)
+カットシーン再生	Play Cutscene
+カットシーン再生＆PCワープ	Play Cutscene And Warp Player
+カットシーン再生＆PCワープ_プレイヤー指定	Play Cutscene And Warp Player (Specific Player)
+カットシーン再生_＆_PCY軸回転ワープ_プレイヤー指定	Play Cutscene And Warp Player With Y Rotation (Specific Player)
+ダミーカットシーンでPCワープ	Warp Player With Dummy Cutscene
+ダミーカットシーンでPCワープ_領域版	Warp Player With Dummy Cutscene (Area)
+カットシーン再生＆PCワープ_シームレス移行可能	Play Cutscene And Warp Player (Seamless Transition)
+カットシーン再生＆時間帯指定＆PCワープ_プレイヤー指定	Play Cutscene, Set Time Of Day And Warp Player (Specific Player)
+カットシーン再生＆PCワープ_プレイヤー指定_LOADING画面	Play Cutscene And Warp Player (Specific Player, Loading Screen)
+カメラ方向に弾丸発射	Shoot Bullet In Camera Direction
+アニメ再生要求_比率版	Request Animation (Ratio)
+強制アニメ再生要求_比率版	Force Animation (Ratio)
+AI音発生	Emit AI Sound
+擬似ロード画面表示	Show Fake Loading Screen
+アバター戦終了	End Avatar Battle
+アバター敵初期化	Initialize Avatar Enemy
+E3専用ゲーム終了	End Game (E3 Demo Only)
+墓メッセージ表示	Show Grave Message
+キャラ更新レベル変更	Change Character Update Level
+キャラ更新レベルリセット	Reset Character Update Level
+鷹娘交換アイテム登録_（FDP）	Register Hawk Girl Exchange Item (FDP)
+鷹娘交換領域登録__（FDP）	Register Hawk Girl Exchange Area (FDP)
+ネットワーク機能切り替え	Toggle Network Features
+UI表示切り替え	Toggle UI Display
+篝火起動	Activate Bonfire
+イベントフラグ設定（イベントID指定）	Set Event Flag (By Event ID)
+イベントフラグ設定（イベントID指定_同期あり）	Set Event Flag (By Event ID, Synced)
+エンディングフラグ操作	Modify Ending Flag
+ジェスチャー解禁	Unlock Gesture
+召喚NPC帰還	Return Summoned NPC
+ワイヤーセットIDを設定	Set Wire Set ID
+時間帯変化	Change Time Of Day
+イラディアンスボリューム設定	Set Irradiance Volume
+フェード実行	Run Fade
+インベントリの防具を装備	Equip Armor From Inventory
+ハードモード解禁	Unlock Hard Mode
+Gparamオフセット	Gparam Offset
+インベントリの投げ技を装備	Equip Throw From Inventory
+篝火を再起動待ち状態にする	Set Bonfire Waiting For Reactivation
+全SFXの縮小バッファを有効にする	Enable Reduced Buffer For All SFX
+マップ移動要求（ロード画面Tipsなし）	Request Map Warp (No Loading Screen Tips)
+装備していない指輪を削除	Remove Unequipped Rings
+配置アイテムを再配置	Respawn Placed Items
+開始位置選択用地図メニューを開く	Open Start Position Map Menu
+インターミッションメニューを開く	Open Intermission Menu
+重複不可ワープ実行	Run Exclusive Warp
+帰還ワープ座標設定	Set Return Warp Position
+帰還ワープ実行	Run Return Warp
+ランダムイベントフラグ設定（重み付き）	Set Random Event Flag (Weighted)
+死亡ペナルティ解除	Clear Death Penalty
+ランダム環境イベント説明を開く	Open Random Environment Event Description
+ランダム環境イベント情報設定	Set Random Environment Event Info
+スキル削除	Remove Skill
+強制ピン打ち	Force Map Pin
+操作チュートリアルの死亡リスポン位置を設定	Set Controls Tutorial Death Respawn Position
+操作チュートリアル終了	End Controls Tutorial
+リザルト演出遅延設定	Set Results Presentation Delay
+ローカルプレイヤーに共闘通知	Notify Local Player Of Joint Battle
+その場ワープ実行（デバッグ用）	Warp In Place (Debug)
+その場ワープ実行（デバッグ用）（数値指定）	Warp In Place (Debug, By Value)
+ロックダミポリの有効化	Enable Lock-On Dummy Poly
+ローカルプレイヤアーキタイプ変更	Change Local Player Archetype
+全キャラ更新停止	Stop All Character Updates
+キャラを常に描画	Always Draw Character
+全てのキャラ更新レベルをLv5からLv30に上書きする	Override All Character Update Levels From Lv5 To Lv30
+即時アクティベート有効化	Enable Immediate Activation
+亡者レベルアップ残回数変更	Change Remaining Hollow Level-Ups
+初期座標にワープ要求	Request Warp To Initial Position
+イベント部位＿ダメージを受ける物理属性設定	Set Event Part Physical Damage Types Taken
+ショートワープ要求（カメラリセット付き）	Request Short Warp (With Camera Reset)
+ObjAct実行	Run ObjAct
+ターゲット追加	Add Target
+スタミナ量の同期	Synchronize Stamina
+残機の増減	Change Remaining Lives
+ObjAct有効化_IDX指定	Enable ObjAct (By Index)
+全ての炎上オブジェクトを鎮火	Extinguish All Burning Objects
+指定フレームからアニメを再生	Play Animation From Frame
+アクションエッジの有効状態切替	Toggle Action Edge
+アセットアタッチ	Attach Asset
+グループIDでマップSFX削除	Delete Map SFX By Group ID
+グループIDでマップSFX作成	Create Map SFX By Group ID
+汎用ダイアログ表示_イベントフラグ指定つき	Show Generic Dialog (With Event Flag)
+マップテキストIDを指定してマップ名を表示する	Show Map Name By Text ID
+【1stプレイアブル版】汎用ダイアログ表示（ボタン入力取得用）	Show Generic Dialog For Button Input (First Playable Build)
+全画面メッセージ表示	Show Full-Screen Message
+ログメッセージ表示	Show Log Message
+重要ログメッセージ表示	Show Important Log Message
+環境イベント名の表示設定	Set Environment Event Name Display
+チュートリアルUI要求	Request Tutorial UI
+メッセージパネル表示	Show Message Panel
+ネットワーク拠点登録	Register Network Hub
+闇霊への強制送還通知	Notify Dark Spirit Of Forced Return
+クリア後ボス部屋侵入通知	Notify Boss Room Entry After Clear
+環境音変更	Change Ambient Sound
+マップサウンド有効化（フェード版）	Enable Map Sound (With Fade)
+BGM有効化	Enable BGM
+サウンドステート制御	Control Sound State
+BGM_IDの上書き	Override BGM ID
+BGM_IDの上書きの無効化	Clear BGM ID Override
+BGM用戦闘状態の上書き	Override BGM Combat State
+BGM用戦闘状態の上書きの無効化	Clear BGM Combat State Override
+ヒットおよび結合アセット有効化	Enable Collision And Joined Assets
+コネクトヒット有効無効設定	Enable Connect Collision
+ナビメッシュ有効化	Enable Navmesh
+ヒット上壁張り付きエッジの自動接続切替	Toggle Wall-Cling Edge Auto Connection On Collision
+描画パラメーター変更	Change DrawParam
+全デカールを破棄	Discard All Decals
+全デカールのエミッシブアニメーションを終了させる	End Emissive Animation Of All Decals
+ライトグループ切り替え開始	Begin Light Group Switch
+ライトグループ切り替え終了	End Light Group Switch
+マップレイヤー設定	Set Map Layer
+マップに入った時名前を表示する	Show Name On Map Entry
+アセット有効化	Enable Asset
+アセットアニメ再現	Reproduce Asset Animation
+環境イベントの抽選対象追加	Add Environment Event Lottery Candidate
+フェーズ残り時間設定	Set Phase Time Remaining
+インターミッション時間経過設定	Set Intermission Elapsed Time
+指定Y座標以下強制キャラ死亡	Kill Characters Below Y Position

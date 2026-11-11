@@ -1,0 +1,73 @@
+ai状態タイプ	AI State Type
+BOOL	Bool
+ON・OFF	On/Off
+ON・OFF・CHANGE	On/Off/Toggle
+イベント終了タイプ	Event End Type
+カットシーン再生タイプ	Cutscene Playback Type
+クライアントタイプ	Client Type
+サウンドイベントタイプ	Sound Command
+サウンドタイプ	Sound Type
+ダメージ対象	Damage Target
+ラベル	Label
+内外状態	Inside/Outside State
+判定カテゴリ	Category
+基準イベントフラグIDタイプ	Event Flag ID Type
+条件グループ	Condition Group
+条件状態	Condition State
+死亡状態	Death State
+比較タイプ	Comparison Type
+無効・有効	Disabled/Enabled
+破壊状態	Destruction State
+装備タイプ	Equipment Type
+論理演算タイプ	Flag Range Logic
+PlayGo状態	PlayGo State
+SOSサインタイプ	Summon Sign Type
+SOSサインタイプ_SP	Summon Sign Type (Special)
+アーキタイプ	Class
+キャラタイプ	Character Type
+キャラ更新レベル	Character Update Level
+ダメージ属性	Damage Type
+チームタイプ	Team Type
+テキスト演出タイプ	Text Banner Type
+ナビメッシュタイプ	Navmesh Type
+ビット操作タイプ	Bit Operation
+ボタンタイプ	Button Type
+ボタン数	Button Count
+ポリ劇再生タイプ	Cutscene Playback Type
+マルチプレイ状態	Multiplayer State
+傾向タイプ	Tendency Type
+反応属性	Reaction Attribute
+性別	Gender
+所有状態	Ownership State
+扉の開閉イベント	Door Event
+更新権限値	Update Authority
+汎用ダイアログ結果	Dialog Result
+石像タイプ	Statue Type
+表示状態	Display State
+装備部位	Equipment Slot
+補間	Interpolation
+計算タイプ	Operation Type
+追加・削除	Add/Remove
+部位タイプ	Part Type
+BGM用戦闘状態	BGM Combat State
+カットシーン裏処理タイミング	Cutscene Background Processing Timing
+シングルプレイプレイヤーリスト	Single-Player Player List
+シングルプレイ汎用判定条件	Single-Player Check
+する・しない	Yes/No
+スロットタイプ	Slot Type
+ターゲット名	Target Name
+プレイヤー戦闘状態	Player Combat State
+マップBGM状態	Map BGM State
+マップレイヤータイプ	Map Layer Type
+マルチSFX再生状態	Multi-SFX Playing State
+メッセージエディタ	Message Source
+メニュー表示状態	Menu State
+ワープタイプ	Warp Type
+世界タイプ	World Type
+成功・キャンセル	Success/Cancel
+攻撃物理属性	Physical Damage Type
+時間帯フェイズ	Time Of Day Phase
+水泳状態	Swimming State
+遅延設定	Delay Setting
+防具タイプ	Armor Type
+霊体種別	Phantom Type

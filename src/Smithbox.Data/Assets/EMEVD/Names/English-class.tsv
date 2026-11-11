@@ -1,0 +1,31 @@
+《条件登録》システム	Condition: System
+《条件登録》タイマー	Condition: Timer
+《条件登録》イベント	Condition: Event
+《条件登録》キャラ	Condition: Character
+《条件登録》オブジェクト	Condition: Object
+《条件登録》近景マップ参照アセット	Condition: Asset
+《条件登録》ヒット	Condition: Collision
+《条件登録》マップ	Condition: Map
+《条件登録》カメラ	Condition: Camera
+【実行制御】システム	Control Flow: System
+【実行制御】タイマー	Control Flow: Timer
+【実行制御】イベント	Control Flow: Event
+【実行制御】オブジェクト	Control Flow: Object
+【実行制御】ラベル	Control Flow: Label
+システム	System
+カットシーン	Cutscene
+イベント	Event
+キャラ	Character
+オブジェクト	Object
+SFX	SFX
+カメラ	Camera
+サウンド	Sound
+ヒット	Collision
+環境イベント	Environment Event
+ポリ劇	Cutscene
+メッセージ	Message
+スクリプト	Script
+マップ	Map
+プレイログ	Play Log
+近景マップ参照アセット	Asset
+タイマー	Timer

@@ -1,0 +1,442 @@
+通常	Normal
+認識	Aware
+警戒	Alert
+戦闘	Combat
+いいえ	False
+はい	True
+OFF	Off
+ON	On
+CHANGE	Toggle
+終了	End
+リスタート	Restart
+スキップ有り	Skippable
+スキップ無し	Unskippable
+スキップ有り_フェードアウトスキップ	Skippable, Skip Fade-Out
+スキップ無し_フェードアウトスキップ	Unskippable, Skip Fade-Out
+スキップ有り フェードアウトスキップ	Skippable, Skip Fade-Out
+スキップ無し フェードアウトスキップ	Unskippable, Skip Fade-Out
+協力	Co-op
+侵入	Invader
+裏切り侵入	Betrayal Invader
+再生	Play
+停止	Stop
+a:環境音	a: Ambient
+c:キャラモーション	c: Character Motion
+f:メニューSE	f: Menu Sound
+o:オブジェクト	o: Object
+p:ポリ劇専用SE	p: Cutscene Sound
+s:SFX	s: SFX
+m:BGM	m: BGM
+v:音声	v: Voice
+x:床材質依存	x: Floor Material
+b:鎧材質依存	b: Armor Material
+g:ゴースト	g: Ghost
+キャラ	Character
+マップ	Map
+キャラ＋マップ	Character And Map
+ラベル０	Label 0
+ラベル１	Label 1
+ラベル２	Label 2
+ラベル３	Label 3
+ラベル４	Label 4
+ラベル５	Label 5
+ラベル６	Label 6
+ラベル７	Label 7
+ラベル８	Label 8
+ラベル９	Label 9
+ラベル１０	Label 10
+ラベル１１	Label 11
+ラベル１２	Label 12
+ラベル１３	Label 13
+ラベル１４	Label 14
+ラベル１５	Label 15
+ラベル１６	Label 16
+ラベル１７	Label 17
+ラベル１８	Label 18
+ラベル１９	Label 19
+ラベル２０	Label 20
+外側	Outside
+内側	Inside
+オブジェクト	Object
+領域	Area
+キャラクター	Character
+なし	None
+イベントID	Event ID
+イベントID＋スロット番号	Event ID And Slot
+OR(15)	OR 15
+OR(14)	OR 14
+OR(13)	OR 13
+OR(12)	OR 12
+OR(11)	OR 11
+OR(10)	OR 10
+OR(09)	OR 9
+OR(08)	OR 8
+OR(07)	OR 7
+OR(06)	OR 6
+OR(05)	OR 5
+OR(04)	OR 4
+OR(03)	OR 3
+OR(02)	OR 2
+OR(01)	OR 1
+実行条件	Main
+AND(01)	AND 1
+AND(02)	AND 2
+AND(03)	AND 3
+AND(04)	AND 4
+AND(05)	AND 5
+AND(06)	AND 6
+AND(07)	AND 7
+AND(08)	AND 8
+AND(09)	AND 9
+AND(10)	AND 10
+AND(11)	AND 11
+AND(12)	AND 12
+AND(13)	AND 13
+AND(14)	AND 14
+AND(15)	AND 15
+不成立	Fail
+成立	Pass
+生存	Alive
+死亡	Dead
+＝	==
+！＝	!=
+＞	>
+＜	<
+＞＝	>=
+＜＝	<=
+無効	Disabled
+有効	Enabled
+未破壊	Intact
+破壊済	Destroyed
+武器	Weapon
+防具	Armor
+装飾	Accessory
+道具	Goods
+全てON	All On
+全てOFF	All Off
+どれかがON	Any On
+どれかがOFF	Any Off
+ダウンロード_1stChunk状態	Downloading First Chunk
+BD_インストール途中状態	Disc Install In Progress
+インストール済状態	Installed
+青瞳サイン	Blue Eye Sign
+黒瞳サイン	Black Eye Sign
+赤瞳サイン	Red Eye Sign
+探知サイン	Detection Sign
+白救援サイン	White Rescue Sign
+黒救援サイン	Black Rescue Sign
+通常協力	Normal Co-op
+統合侵入	Unified Invasion
+統合侵入(広域)	Unified Invasion (Wide Area)
+戦士	Warrior
+騎士	Knight
+放浪者	Wanderer
+盗賊	Thief
+狩人	Hunter
+魔術師	Sorcerer
+呪術師	Pyromancer
+僧侶	Cleric
+野武士	Samurai
+持たざるもの	Deprived
+仮：戦士	Provisional: Warrior
+仮：騎士	Provisional: Knight
+仮：魔術師	Provisional: Sorcerer
+仮：呪術師	Provisional: Pyromancer
+チ：戦士	Tutorial: Warrior
+チ：騎士	Tutorial: Knight
+チ：魔術師	Tutorial: Sorcerer
+チ：呪術師	Tutorial: Pyromancer
+白ゴースト	White Phantom
+黒ゴースト	Black Phantom
+グレイゴースト	Grey Phantom
+侵入者	Invader
+更新なし	No Updates
+常に更新	Always Update
+2フレームに1回	Every 2 Frames
+5フレームに1回	Every 5 Frames
+指定なし	Unspecified
+炎	Fire
+魔法	Magic
+雷	Lightning
+打撃	Strike
+斬撃	Slash
+刺突	Thrust
+無属性	Neutral
+物理すべて	All Physical
+デフォルト	Default
+生存プレイヤー	Living Player
+ホワイトゴースト	White Phantom
+ブラックゴースト	Black Phantom
+徘徊ゴースト	Wandering Phantom
+敵	Enemy
+強敵	Strong Enemy
+味方	Ally
+味方（怒）	Ally (Hostile)
+おとり敵	Decoy Enemy
+赤子	Infant
+戦う味方	Fighting Ally
+ホスト	Host
+敵対	Hostile
+徘徊幻影	Wandering Illusion
+敵1	Enemy 1
+敵2	Enemy 2
+強敵1	Strong Enemy 1
+味方NPC	Friendly NPC
+敵対NPC	Hostile NPC
+共闘NPC	Joint Battle NPC
+無差別	Indiscriminate
+オブジェ	Object
+天敵	Natural Enemy
+デーモン撃破	Demon Defeated
+復活	Revived
+ソウル取得	Souls Acquired
+目標撃破	Target Defeated
+ゴースト死亡	Phantom Dead
+黒ゴースト死亡	Black Phantom Dead
+マップ名	Map Name
+おめでとう	Congratulations
+闘技場勝利	Arena Victory
+闘技場敗北	Arena Defeat
+闘技場引き分け	Arena Draw
+通行不可	Impassable
+出口	Exit
+障害物	Obstacle
+壁	Wall
+着地点	Landing Point
+イベント	Event
+崖	Cliff
+広い	Wide
+梯子	Ladder
+穴	Hole
+扉	Door
+閉扉	Closed Door
+壁に接する床	Floor Next To Wall
+追加	Add
+削除	Remove
+反転	Invert
+YES/NO	Yes/No
+OK/CANCEL	OK/Cancel
+１ボタン	1 Button
+２ボタン	2 Buttons
+ボタン無し	No Buttons
+クライアント	Client
+マルチプレイ中	In Multiplayer
+マルチプレイ予約中	Multiplayer Pending
+シングルプレイ中	In Single-Player
+白傾向	White Tendency
+黒傾向	Black Tendency
+生存&グレイ	Living And Grey
+全て	All
+男性	Male
+女性	Female
+非所有	Not Owned
+所有	Owned
+扉を閉める	Close Door
+扉を開く	Open Door
+扉が閉まっている状態にする	Set Door Closed
+扉が開いている状態にする	Set Door Open
+強制	Forced
+キャンセル	Cancel
+左	Left
+右	Right
+離れた	Left Range
+石化像	Petrified Statue
+結晶化像	Crystallized Statue
+非表示	Hidden
+表示	Shown
+頭	Head
+身体	Body
+腕	Arms
+脚	Legs
+補間有り	Interpolated
+補間無し	Not Interpolated
+＋	Add
+－	Subtract
+×	Multiply
+÷	Divide
+余り	Modulo
+代入	Assign
+部位１	Part 1
+部位２	Part 2
+部位３	Part 3
+部位４	Part 4
+部位５	Part 5
+部位６	Part 6
+部位７	Part 7
+部位８	Part 8
+部位９	Part 9
+部位１０	Part 10
+部位１１	Part 11
+部位１２	Part 12
+部位１３	Part 13
+部位１４	Part 14
+部位１５	Part 15
+部位１６	Part 16
+部位１７	Part 17
+部位１８	Part 18
+部位１９	Part 19
+部位２０	Part 20
+部位２１	Part 21
+部位２２	Part 22
+部位２３	Part 23
+部位２４	Part 24
+部位２５	Part 25
+部位２６	Part 26
+部位２７	Part 27
+部位２８	Part 28
+部位２９	Part 29
+部位３０	Part 30
+弱点	Weak Point
+非戦闘状態	Not In Combat
+戦闘状態	In Combat
+開始時フェードアウト終了直後	Right After Start Fade-Out
+終了時フェードイン開始直前	Right Before End Fade-In
+プレイヤー	Player
+bot0	Bot 0
+bot1	Bot 1
+bot2	Bot 2
+bot3	Bot 3
+bot4	Bot 4
+bot5	Bot 5
+bot6	Bot 6
+プレイヤー名簿所持	Player Has Roster
+プレイヤー祈り所持	Player Has Prayer
+拠点到達済みか	Reached Base
+プレイヤー小寵愛所持	Player Has Minor Favor
+しない	No
+する	Yes
+全スロット	All Slots
+カレントスロット	Current Slot
+カレント以外のスロット	Other Slots
+敵ターゲット	Enemy Target
+音ターゲット	Sound Target
+記憶ターゲット	Memory Target
+ソウルコイン	Soul Coin
+幻聴ターゲット	Phantom Sound Target
+状態変更時	On State Change
+発見前	Before Detection
+蝕１	Eclipse 1
+蝕２	Eclipse 2
+蝕３	Eclipse 3
+蝕４	Eclipse 4
+蝕５	Eclipse 5
+再生中	Playing
+再生していない	Not Playing
+EventText_ForMap	EventText_ForMap
+EventText_ForTalk	EventText_ForTalk
+開いていない	Closed
+開いている	Open
+共闘参加ワープ	Joint Battle Join Warp
+共闘帰還ワープ	Joint Battle Return Warp
+ワープポータル	Warp Portal
+闇霊ワープ	Dark Spirit Warp
+異界ワープ	Otherworld Warp
+復讐ワープ（意趣返し）	Revenge Warp
+協力侵入ワープ	Co-op Invasion Warp
+救援者ワープ	Rescuer Warp
+暗黒太陽神眷属ワープ	Dark Sun Kin Warp
+Bot移動エラハンワープ	Bot Movement Error Warp
+地図ワープ	Map Warp
+環境イベントシャッフル	Environment Event Shuffle
+味方救援ワープ	Ally Rescue Warp
+自世界	Own World
+他世界	Other World
+成功	Success
+軽打	Light Strike
+忍殺	Deathblow
+重打	Heavy Strike
+対地	Anti-Ground
+対空	Anti-Air
+軽射	Light Shot
+属性A	Attribute A
+属性B	Attribute B
+属性C	Attribute C
+時間帯０	Time Of Day 0
+時間帯１	Time Of Day 1
+時間帯２	Time Of Day 2
+時間帯３	Time Of Day 3
+時間帯４	Time Of Day 4
+時間帯５	Time Of Day 5
+時間帯変化なし	No Time Change
+水中	Underwater
+水上	Surface
+遅延する	Delay
+遅延しない	No Delay
+兜	Helm
+鎧	Chest
+籠手	Gauntlets
+脚絆	Leggings
+髪	Hair
+召喚されたキャラでは無い	Not Summoned
+通常白	Normal White
+通常黒	Normal Black
+乱入黒	Invading Black
+バーサーカー白	Berserker White
+罪人英雄白	Sinner Hero White
+罪人狩り	Sinner Hunter
+赤狩り	Red Hunter
+ロザリア守護	Rosaria Guardian
+森マップ守護	Forest Guardian
+アノールマップ守護	Anor Londo Guardian
+アバター戦サイン	Avatar Battle Sign
+バトルロイヤル戦サイン	Battle Royale Sign
+儀式召喚サイン_特殊白霊枠	Ritual Summon Sign (Special White Slot)
+太陽霊（白サイン）	Sun Spirit (White Sign)
+太陽霊（赤サイン）	Sun Spirit (Red Sign)
+バーサーカー霊（赤サイン）	Berserker Spirit (Red Sign)
+太陽霊（乱入）	Sun Spirit (Invading)
+バーサーカー霊（乱入）	Berserker Spirit (Invading)
+NPC擬似マルチ用白霊	NPC Pseudo-Multiplayer White Phantom
+NPC擬似マルチ用闇霊	NPC Pseudo-Multiplayer Dark Spirit
+赤狩り2	Red Hunter 2
+OK／CANCEL	OK/Cancel
+YES／NO	Yes/No
+a：環境音	a: Ambient
+b：鎧材質依存	b: Armor Material
+c：キャラモーション	c: Character Motion
+f：メニューSE	f: Menu Sound
+g：ゴースト	g: Ghost
+m：BGM	m: BGM
+o：オブジェクト	o: Object
+p：カットシーン専用SE	p: Cutscene Sound
+s：SFX	s: SFX
+v：音声	v: Voice
+x：床材質依存	x: Floor Material
+イベントID+スロット番号	Event ID And Slot
+デーモン撃破（薪の王）	Demon Defeated (Lord Of Cinder)
+バリスタ	Ballista
+バリスタターゲット	Ballista Target
+バーサーカー成功終了	Berserker Success End
+マップ守護霊（アノール）	Map Guardian Spirit (Anor Londo)
+マップ守護霊（アノール）・敵対化後	Map Guardian Spirit (Anor Londo), Turned Hostile
+マップ守護霊（森）	Map Guardian Spirit (Forest)
+マップ守護霊（森）・敵対化後	Map Guardian Spirit (Forest), Turned Hostile
+マルチプレイ予約中（ゲスト）	Multiplayer Pending (Guest)
+予約1	Reserved 1
+予約2	Reserved 2
+予約3	Reserved 3
+予約4	Reserved 4
+予約5	Reserved 5
+予約6	Reserved 6
+予約7	Reserved 7
+亡者から復活	Revived From Hollow
+女	Female
+強敵チーム	Strong Enemy Team
+敵対NPC2	Hostile NPC 2
+生存＆グレイ	Living And Grey
+男	Male
+白バーサーカー	White Berserker
+神官戦士	Priest Warrior
+聖職者	Cleric
+薪の王化（アイテム使用時）	Became Lord Of Cinder (Item Use)
+薪の王化（マルチプレイ成功時）	Became Lord Of Cinder (Multiplayer Success)
+記名失敗	Signing Failed
+記名成功	Signing Succeeded
+赤バーサーカー	Red Berserker
+赤バーサーカー・敵対化後	Red Berserker, Turned Hostile
+赤狩り成功終了	Red Hunter Success End
+魅了	Charmed
+黒赤ゴースト	Black-Red Phantom
+黒赤ゴースト・敵対化後	Black-Red Phantom, Turned Hostile
+２フレームに1回	Every 2 Frames
+５フレームに1回	Every 5 Frames
