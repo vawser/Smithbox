@@ -14,6 +14,7 @@ public class EmevdToolWindow
     public EmevdProblemsTool ProblemsTool;
     public EmevdCalledByTool CalledByTool;
     public EmevdSearchTool SearchTool;
+    public EmevdMassEditTool MassEditTool;
 
     private readonly ToolSections Sections = new();
 
@@ -25,6 +26,7 @@ public class EmevdToolWindow
         ProblemsTool = new(view);
         CalledByTool = new(view);
         SearchTool = new(view);
+        MassEditTool = new(view);
     }
 
     public void Draw()
@@ -47,6 +49,12 @@ public class EmevdToolWindow
         {
             // Search
             SearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_EmevdEditor_Tool_MassEdit)
+        {
+            // Mass Edit
+            MassEditTool.OnToolWindow();
         }
 
         // Browse
@@ -87,6 +95,11 @@ public class EmevdToolWindow
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Search")}##emevdSearchToolToggle"))
                 CFG.Current.Interface_EmevdEditor_Tool_Search = !CFG.Current.Interface_EmevdEditor_Tool_Search;
             GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Search);
+
+            // Mass Edit
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Mass_Edit")}##emevdMassEditToolToggle"))
+                CFG.Current.Interface_EmevdEditor_Tool_MassEdit = !CFG.Current.Interface_EmevdEditor_Tool_MassEdit;
+            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_MassEdit);
 
             // Called By
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Called_By")}##emevdCalledByToolToggle"))

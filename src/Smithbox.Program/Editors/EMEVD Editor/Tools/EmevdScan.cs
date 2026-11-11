@@ -29,6 +29,8 @@ public class EmevdScan
 
     public bool HasRun { get; private set; }
 
+    public bool IsRunning => Running;
+
     public EmevdScan(EmevdEditorView view, string id)
     {
         View = view;

@@ -3,7 +3,11 @@ using SoulsFormats;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>A place an event, call or value was found: file name, event, line (-1 for the event itself), what</summary>
-public record EmevdHit(string File, long EventId, int Line, string What);
+public record EmevdHit(string File, long EventId, int Line, string What)
+{
+    /// <summary>Extra data a tool carries with the hit (the Mass Edit tool's planned change)</summary>
+    public object Tag { get; init; }
+}
 
 /// <summary>What the Search tool looks for</summary>
 public record EmevdQuery(long? Value, string Instruction, bool MatchFloats);
