@@ -99,6 +99,20 @@ public class EsdSelection
         SelectedState = row.StateId;
     }
 
+    /// <summary>Selects a state, condition or command of the machine (after an edit made it) and scrolls to it</summary>
+    public void SelectItem(object item, long stateId)
+    {
+        SelectedItem = item;
+        SelectedState = stateId;
+        ScrollToItem = true;
+    }
+
+    public void ClearItem()
+    {
+        SelectedItem = null;
+        SelectedState = -1;
+    }
+
     public bool IsSelected(EsdRow row)
     {
         if (SelectedItem == null || row.StateId != SelectedState)

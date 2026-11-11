@@ -78,7 +78,7 @@ public class EsdFileList
             var file = container.IsLoaded && container.Files.Count == 1 ? container.Files[0] : null;
             var selected = selection.SelectedContainer == container;
 
-            if (ImGui.Selectable($"{container.Name}##esdContainer_{container.Path}", selected))
+            if (ImGui.Selectable($"{container.Name}{(container.IsDirty ? "*" : "")}##esdContainer_{container.Path}", selected))
                 selection.SelectContainer(container);
 
             Scroll(selected);
@@ -94,7 +94,7 @@ public class EsdFileList
         if (selection.SelectedContainer == container && ScrollToSelection)
             ImGui.SetNextItemOpen(true);
 
-        var open = ImGui.TreeNodeEx($"{container.Name}##esdContainer_{container.Path}", flags);
+        var open = ImGui.TreeNodeEx($"{container.Name}{(container.IsDirty ? "*" : "")}##esdContainer_{container.Path}", flags);
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             selection.SelectContainer(container);

@@ -18,6 +18,9 @@ public class EsdEditorView
     public EsdStateView StateView;
     public EsdProperties Properties;
 
+    public ActionManager ActionManager = new();
+    public EsdEditCommands Commands;
+
     public EsdEditorView(EsdEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -29,6 +32,7 @@ public class EsdEditorView
         MachineList = new(this);
         StateView = new(this);
         Properties = new(this);
+        Commands = new(this);
     }
 
     public void Display(uint dockspaceId)
@@ -40,6 +44,9 @@ public class EsdEditorView
         Window("ESD_Window_Machines", "esdEditor_Machines", EditorFocusContext.EsdEditor_MachineList, dockspaceId, MachineList.Draw);
         Window("ESD_Window_States", "esdEditor_States", EditorFocusContext.EsdEditor_States, dockspaceId, StateView.Draw);
         Window("ESD_Window_Properties", "esdEditor_Properties", EditorFocusContext.EsdEditor_Properties, dockspaceId, Properties.Draw);
+
+        // Edits change the lists the windows draw from, so they run once every window is drawn
+        Commands.Flush();
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw)

@@ -87,6 +87,21 @@ public class EsdBank
         return EsdScriptKind.Other;
     }
 
+    public List<string> GetDirtyFiles()
+    {
+        return Containers.Where(c => c.IsDirty).Select(c => c.Path).ToList();
+    }
+
+    /// <summary>Saves every file with unsaved changes. Returns false if any failed.</summary>
+    public bool SaveAllDirty()
+    {
+        var ok = true;
+        foreach (var c in Containers.Where(c => c.IsDirty))
+            if (!c.Save())
+                ok = false;
+        return ok;
+    }
+
     public EsdContainer FindContainer(string name)
     {
         return name != null && ByName.TryGetValue(name, out var c) ? c : null;
@@ -111,7 +126,113 @@ public class EsdContainer
     public EsdScriptKind Kind { get; }
 
     /// <summary>The project folder has its own copy (it overrides the game's)</summary>
-    public bool InProject { get; }
+    public bool InProject { get; private set; }
+
+    // Edits done minus edits undone since the last load or save
+    private int ChangeBalance;
+    private bool ForcedDirty;
+
+    /// <summary>
+    /// Whether the file has changed since it was loaded or saved. Setting it true marks it changed with no edit;
+    /// setting it false marks the current state as saved.
+    /// </summary>
+    public bool IsDirty
+    {
+        get => ChangeBalance != 0 || ForcedDirty;
+        set
+        {
+            ForcedDirty = value;
+            if (!value)
+                ChangeBalance = 0;
+        }
+    }
+
+    /// <summary>Counts every edit and undo, so views rebuild what they work out from the ESDs</summary>
+    public int Revision { get; private set; }
+
+    public void MarkChanged() { ChangeBalance++; Revision++; }
+
+    public void MarkUndone() { ChangeBalance--; Revision++; }
+
+    /// <summary>
+    /// Writes the file into the project folder. A binder is read again (the project's copy if it has one, else the
+    /// game's), its edited ESD entries replaced, and written with its own compression; untouched entries keep their
+    /// bytes (EsdSurvey bndcheck: every vanilla binder rewrites byte-identical, and ESD.Write is byte-exact). A loose
+    /// file is written with the compression it was read with.
+    /// </summary>
+    public bool Save()
+    {
+        if (!IsLoaded)
+            return false;
+
+        var project = Bank.Project;
+        var fs = project.VFS.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(project);
+
+        // No game type: with one, WriteWithBackup treats a BND4 as an encrypted regulation (DS3, ER, NR, AC6)
+        bool ok;
+
+        if (IsBinder)
+        {
+            IBinder bnd;
+            try
+            {
+                var data = fs.ReadFile(Path);
+                if (data == null)
+                {
+                    Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Find_File", Path));
+                    return false;
+                }
+
+                var raw = DCX.Is(data.Value) ? DCX.Decompress(data.Value, out _) : data.Value;
+                bnd = IsBnd4(raw) ? BND4.Read(data.Value) : BND3.Read(data.Value);
+
+                foreach (var file in Files.Where(f => f.Esd != null && f.EntryName != null))
+                {
+                    var entry = bnd.Files.Find(f => System.IO.Path.GetFileName(f.Name).Equals(file.EntryName, StringComparison.OrdinalIgnoreCase));
+                    if (entry == null)
+                    {
+                        Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Entry_Missing", file.EntryName, Path));
+                        bnd.Dispose();
+                        return false;
+                    }
+                    entry.Bytes = file.Esd.Write();
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("ESD_Data_Log_Failed_to_Write_File", Path), e);
+                return false;
+            }
+
+            ok = bnd is BND4 b4
+                ? ProjectUtils.WriteWithBackup(project, fs, toFs, Path, b4)
+                : ProjectUtils.WriteWithBackup(project, fs, toFs, Path, (BND3)bnd);
+        }
+        else
+        {
+            var esd = Files.FirstOrDefault()?.Esd;
+            if (esd == null)
+                return false;
+
+            // WriteWithBackup disposes binders only; the ESD stays usable
+            ok = ProjectUtils.WriteWithBackup(project, fs, toFs, Path, esd);
+        }
+
+        if (!ok)
+            return false;
+
+        IsDirty = false;
+        InProject = true;
+        Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
+        return true;
+    }
+
+    public static bool IsBnd4(Memory<byte> raw)
+    {
+        var span = raw.Span;
+        return span.Length >= 4 && span[0] == 'B' && span[1] == 'N' && span[2] == 'D' && span[3] == '4';
+    }
 
     /// <summary>DS2's .edd beside a loose ESD (machine and state names); null if none</summary>
     public string EddPath { get; }
@@ -173,9 +294,7 @@ public class EsdContainer
                 // Not BND4.IsRead: the binders implement a different Read overload, so the generic IsRead throws.
                 // Decompress once and pick the binder by its magic.
                 var raw = DCX.Is(data.Value) ? DCX.Decompress(data.Value) : data.Value;
-                var span = raw.Span;
-                var isBnd4 = span.Length >= 4 && span[0] == 'B' && span[1] == 'N' && span[2] == 'D' && span[3] == '4';
-                using IBinder bnd = isBnd4 ? BND4.Read(raw) : BND3.Read(raw);
+                using IBinder bnd = IsBnd4(raw) ? BND4.Read(raw) : BND3.Read(raw);
 
                 foreach (var f in bnd.Files.Where(f => f.Name.EndsWith(".esd", StringComparison.OrdinalIgnoreCase)))
                 {

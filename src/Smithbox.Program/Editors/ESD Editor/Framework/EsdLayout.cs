@@ -58,6 +58,9 @@ public class EsdRow
     /// How many places in the machine list this condition (it can be shared between states and parents)
     public int SharedCount;
 
+    /// For a condition row: the list holding it (its state's conditions, or its parent condition's subconditions)
+    public List<ESD.Condition> ParentList;
+
     /// For a condition row: the row of its foot (-1 when it has none)
     public int EndRow = -1;
 }
@@ -126,14 +129,15 @@ public static class EsdLayout
             Commands(state.ExitCommands, EsdCommandList.Exit);
 
             for (int i = 0; i < state.Conditions.Count; i++)
-                Condition(rows, refs, id, state, state.Conditions[i], i, 1, new HashSet<ESD.Condition>(ReferenceEqualityComparer.Instance));
+                Condition(rows, refs, id, state, state.Conditions, i, 1, new HashSet<ESD.Condition>(ReferenceEqualityComparer.Instance));
         }
 
         return rows;
     }
 
-    private static void Condition(List<EsdRow> rows, Dictionary<ESD.Condition, int> refs, long id, ESD.State state, ESD.Condition c, int index, int depth, HashSet<ESD.Condition> path)
+    private static void Condition(List<EsdRow> rows, Dictionary<ESD.Condition, int> refs, long id, ESD.State state, List<ESD.Condition> parent, int index, int depth, HashSet<ESD.Condition> path)
     {
+        var c = parent[index];
         var row = new EsdRow
         {
             Kind = EsdRowKind.Condition,
@@ -142,6 +146,7 @@ public static class EsdLayout
             State = state,
             Condition = c,
             Index = index,
+            ParentList = parent,
             SharedCount = refs.TryGetValue(c, out var n) ? n : 1,
         };
         rows.Add(row);
@@ -154,7 +159,7 @@ public static class EsdLayout
             rows.Add(new EsdRow { Kind = EsdRowKind.Command, Depth = depth + 1, StateId = id, State = state, Condition = c, Command = c.PassCommands[i], List = EsdCommandList.Pass, Index = i });
 
         for (int i = 0; i < c.Subconditions.Count; i++)
-            Condition(rows, refs, id, state, c.Subconditions[i], i, depth + 1, path);
+            Condition(rows, refs, id, state, c.Subconditions, i, depth + 1, path);
 
         path.Remove(c);
 

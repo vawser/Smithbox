@@ -14,12 +14,40 @@ public class EsdStateView
 {
     private readonly EsdEditorView View;
 
-    // Rows of the machine on show, rebuilt when the machine changes
+    // Rows of the machine on show, rebuilt when the machine changes or is edited
     private EsdFileWrapper CachedFile;
     private long? CachedMachine;
+    private int CachedRevision = -1;
     private List<EsdRow> Rows = new();
     private HashSet<long> Unreached = new();
     private int CalledBy;
+
+    // The machine's problems (EsdChecks), by the condition or command they're on
+    private List<EsdProblem> Problems = new();
+    private HashSet<object> ProblemItems = new(ReferenceEqualityComparer.Instance);
+
+    /// <summary>A chip a click can edit: a literal of an expression, or a transition's target</summary>
+    private class ChipHit
+    {
+        public Vector2 Min, Max;
+        public List<int> Path;
+        public EsdExprNode Node;
+        public EsdArgDef ArgDef;
+        /// The command arg the chip is in (-1: a condition's test)
+        public int Arg = -1;
+    }
+
+    // What the literal / target popups edit, set when a chip is clicked
+    private ESD.Condition EditCondition;
+    private ESD.CommandCall EditCommand;
+    private int EditArg = -1;
+    private List<int> EditPath;
+    private EsdExprNode EditNode;
+    private EsdArgDef EditArgDef;
+    private string EditText = "";
+    private bool OpenLiteralPopup;
+    private ESD.Condition TargetCondition;
+    private bool OpenTargetPopup;
 
     private const float RowGap = 2f;
 
@@ -33,11 +61,13 @@ public class EsdStateView
     private void Refresh()
     {
         var selection = View.Selection;
-        if (selection.SelectedFile == CachedFile && selection.SelectedMachine == CachedMachine)
+        var revision = selection.SelectedFile?.Container.Revision ?? -1;
+        if (selection.SelectedFile == CachedFile && selection.SelectedMachine == CachedMachine && revision == CachedRevision)
             return;
 
         CachedFile = selection.SelectedFile;
         CachedMachine = selection.SelectedMachine;
+        CachedRevision = revision;
 
         var machine = selection.Machine;
         Rows = EsdLayout.Build(machine);
@@ -45,6 +75,9 @@ public class EsdStateView
         CalledBy = CachedFile?.Esd != null && CachedMachine is long id
             ? EsdLayout.Callers(CachedFile.Esd, id).Sum(c => c.Calls)
             : 0;
+
+        Problems = CachedFile?.Esd != null && CachedMachine is long mid ? EsdChecks.Machine(CachedFile.Esd, mid, Catalog) : new();
+        ProblemItems = new HashSet<object>(Problems.Select(p => p.Item), ReferenceEqualityComparer.Instance);
     }
 
     public void Draw()
@@ -106,10 +139,25 @@ public class EsdStateView
                 ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ESD_States_No_Catalogue"));
                 GUI.Tooltip(LOC.Get("ESD_States_No_Catalogue_TT"));
             }
+
+            if (Problems.Count > 0)
+            {
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("ESD_States_Problems", Problems.Count));
+                GUI.Tooltip(string.Join("\n", Problems.Take(12).Select(ProblemText)) + (Problems.Count > 12 ? "\n…" : ""));
+            }
         }
 
         ImGui.EndChild();
     }
+
+    public static string ProblemText(EsdProblem p) => p.Kind switch
+    {
+        EsdProblemKind.MissingTarget => LOC.Get("ESD_Problem_Missing_Target", p.State, p.Value),
+        EsdProblemKind.MissingMachine => LOC.Get("ESD_Problem_Missing_Machine", p.State, EsdLayout.MachineLabel(p.Value)),
+        EsdProblemKind.ArgCount => LOC.Get("ESD_Problem_Arg_Count", p.State, p.Name, p.Value, p.Min, p.Max),
+        _ => LOC.Get("ESD_Problem_Undecoded", p.State)
+    };
 
     private bool Selectable(EsdRow row) => row.Kind is EsdRowKind.State or EsdRowKind.Command or EsdRowKind.Condition;
 
@@ -119,6 +167,14 @@ public class EsdStateView
             if (View.Selection.IsSelected(Rows[r]))
                 return r;
         return -1;
+    }
+
+    /// <summary>The row of the selection in the current rows, or null</summary>
+    public EsdRow FindSelectedRow()
+    {
+        Refresh();
+        var at = SelectedRow();
+        return at >= 0 ? Rows[at] : null;
     }
 
     private void HandleKeys()
@@ -265,37 +321,260 @@ public class EsdStateView
         // Reserve the whole column, so the scrollbar covers every row
         ImGui.SetCursorScreenPos(origin);
         ImGui.Dummy(new Vector2(x1 - origin.X + 4f, totalH));
+
+        DrawPopups();
     }
 
     private static Vector4 ConditionColor(EsdRow row) =>
         EsdExpr.IsAlways(row.Condition.Evaluator) ? EsdFormat.AlwaysColor : EsdFormat.ConditionColor;
 
-    /// <summary>The block's button: selects on click, follows on double-click, and shows a tooltip</summary>
-    private bool BlockButton(EsdRow row, Vector2 min, Vector2 max, string id)
+    /// <summary>
+    /// The block's button: selects on click, follows on double-click, offers the edit menu on right-click. Returns
+    /// whether it's hovered, and whether it was clicked this frame (the chip under the click is found after drawing).
+    /// </summary>
+    private (bool Hovered, bool Clicked) BlockButton(EsdRow row, Vector2 min, Vector2 max, string id)
     {
         ImGui.SetCursorScreenPos(min);
         ImGui.InvisibleButton(id, max - min);
 
         var hovered = ImGui.IsItemHovered();
+        var clicked = ImGui.IsItemClicked();
 
-        if (ImGui.IsItemClicked())
+        if (clicked)
             View.Selection.SelectRow(row);
 
         if (hovered && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             Follow(row);
 
-        return hovered;
+        if (ImGui.BeginPopupContextItem($"{id}_menu"))
+        {
+            if (!View.Selection.IsSelected(row))
+                View.Selection.SelectRow(row);
+            View.Commands.ContextMenu(row);
+            ImGui.EndPopup();
+        }
+
+        return (hovered, clicked);
     }
 
     private void Outline(ImDrawListPtr drawList, EsdRow row, Vector2 min, Vector2 max, float rounding, ImDrawFlags flags)
     {
+        var item = row.Kind == EsdRowKind.Command ? (object)row.Command : row.Condition;
+
         if (View.Selection.IsSelected(row))
             drawList.AddRect(min, max, ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), rounding, flags, 2f);
+        else if (item != null && ProblemItems.Contains(item))
+            drawList.AddRect(min, max, ImGui.GetColorU32(UI.Current.ImGui_Invalid_Text_Color), rounding, flags, 2f);
+    }
+
+    /// <summary>After a block is drawn: a click on one of its chips opens that chip's editor</summary>
+    private void ClickChip(List<ChipHit> hits, bool clicked, ESD.Condition cond, ESD.CommandCall cmd)
+    {
+        if (!clicked)
+            return;
+
+        var m = ImGui.GetMousePos();
+        var hit = hits.LastOrDefault(h => m.X >= h.Min.X && m.X <= h.Max.X && m.Y >= h.Min.Y && m.Y <= h.Max.Y);
+        if (hit == null)
+            return;
+
+        if (hit.Node == null)
+        {
+            // A transition's target chip
+            TargetCondition = cond;
+            OpenTargetPopup = true;
+            return;
+        }
+
+        EditCondition = cond;
+        EditCommand = cmd;
+        EditArg = hit.Arg;
+        EditPath = hit.Path;
+        EditNode = hit.Node;
+        EditArgDef = hit.ArgDef;
+        EditText = hit.Node.Kind switch
+        {
+            EsdExprKind.Int => hit.Node.IntValue.ToString(),
+            EsdExprKind.String => hit.Node.StringValue ?? "",
+            _ => EsdFormat.Number(hit.Node.FloatValue)
+        };
+        OpenLiteralPopup = true;
+    }
+
+    private void DrawPopups()
+    {
+        if (OpenLiteralPopup)
+        {
+            ImGui.OpenPopup("##esdLiteralPopup");
+            OpenLiteralPopup = false;
+        }
+
+        if (ImGui.BeginPopup("##esdLiteralPopup"))
+        {
+            DrawLiteralPopup();
+            ImGui.EndPopup();
+        }
+
+        if (OpenTargetPopup)
+        {
+            ImGui.OpenPopup("##esdTargetPopup");
+            OpenTargetPopup = false;
+        }
+
+        if (ImGui.BeginPopup("##esdTargetPopup"))
+        {
+            DrawTargetPopup();
+            ImGui.EndPopup();
+        }
+
+        // Right-click on empty space: add a state at the end
+        if (View.Selection.Machine != null && ImGui.BeginPopupContextWindow("##esdStatesMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+        {
+            if (ImGui.MenuItem(LOC.Get("ESD_Edit_Add_State")))
+                View.Commands.AddState(View.Selection.Machine.Keys.Max());
+            GUI.Tooltip(LOC.Get("ESD_Edit_Add_State_TT"));
+            ImGui.EndPopup();
+        }
+    }
+
+    private byte[] EditBytes => EditCommand != null
+        ? (EditArg >= 0 && EditArg < EditCommand.Arguments.Count ? EditCommand.Arguments[EditArg] : null)
+        : EditCondition?.Evaluator;
+
+    private void CommitLiteral(long? i = null, double? f = null, string s = null)
+    {
+        var bytes = EditBytes;
+        if (bytes == null || EditPath == null)
+            return;
+
+        var updated = EsdEdits.SetLiteral(bytes, EditPath, i, f, s);
+        if (updated == null)
+            return;
+
+        if (EditCommand != null)
+            View.Commands.SetArgument(EditCommand, EditArg, updated);
+        else
+            View.Commands.SetEvaluator(EditCondition, updated);
+    }
+
+    private void DrawLiteralPopup()
+    {
+        if (EditNode == null || EditBytes == null)
+        {
+            ImGui.CloseCurrentPopup();
+            return;
+        }
+
+        var cat = Catalog;
+        ImGui.Text(EditArgDef != null ? $"{EditArgDef.Name}" : LOC.Get("ESD_Edit_Value"));
+        if (EditArgDef != null)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(EditArgDef.Role != null ? $"{EditArgDef.Type} · {EditArgDef.Role}" : EditArgDef.Type);
+        }
+
+        // An enum arg: its values to pick from
+        var e = EditArgDef?.Enum != null ? cat?.FindEnum(EditArgDef.Enum) : null;
+        if (e != null && EditNode.Kind == EsdExprKind.Int)
+        {
+            ImGui.SetNextItemWidth(220f * DPI.UIScale());
+            var current = e.ValueName(EditNode.IntValue) ?? EditNode.IntValue.ToString();
+            if (ImGui.BeginCombo("##esdEnumValue", current))
+            {
+                foreach (var (value, name) in e.Values.OrderBy(v => v.Key))
+                {
+                    if (ImGui.Selectable($"{name} ({value})", value == EditNode.IntValue))
+                    {
+                        CommitLiteral(i: value);
+                        ImGui.CloseCurrentPopup();
+                    }
+                }
+                ImGui.EndCombo();
+            }
+        }
+
+        ImGui.SetNextItemWidth(220f * DPI.UIScale());
+        if (ImGui.IsWindowAppearing())
+            ImGui.SetKeyboardFocusHere();
+
+        if (ImGui.InputText("##esdLiteralText", ref EditText, 256, ImGuiInputTextFlags.EnterReturnsTrue))
+        {
+            var ok = EditNode.Kind switch
+            {
+                EsdExprKind.Int => ParseInt(EditText, out var v) && Commit(() => CommitLiteral(i: v)),
+                EsdExprKind.Float or EsdExprKind.Double => double.TryParse(EditText, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var d) && Commit(() => CommitLiteral(f: d)),
+                EsdExprKind.String => Commit(() => CommitLiteral(s: EditText)),
+                _ => false
+            };
+
+            if (ok)
+                ImGui.CloseCurrentPopup();
+        }
+
+        var hint = EditNode.Kind switch
+        {
+            EsdExprKind.Int => LOC.Get("ESD_Edit_Int_Hint"),
+            EsdExprKind.Float or EsdExprKind.Double => LOC.Get("ESD_Edit_Float_Hint"),
+            _ => LOC.Get("ESD_Edit_String_Hint")
+        };
+        ImGui.TextDisabled(hint);
+
+        if (EditCondition != null && EditCommand == null && EsdLayout_IsShared(EditCondition))
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ESD_Edit_Shared_Warning"));
+    }
+
+    private static bool Commit(Action a) { a(); return true; }
+
+    private bool EsdLayout_IsShared(ESD.Condition c) => Rows.Any(r => r.Kind == EsdRowKind.Condition && ReferenceEquals(r.Condition, c) && r.SharedCount > 1);
+
+    /// <summary>A whole number in decimal or 0x hex, within the s32 range bytecode holds</summary>
+    private static bool ParseInt(string text, out long value)
+    {
+        text = text.Trim();
+        var ok = text.StartsWith("0x", StringComparison.OrdinalIgnoreCase)
+            ? long.TryParse(text[2..], System.Globalization.NumberStyles.HexNumber, null, out value)
+            : long.TryParse(text, out value);
+        return ok && value >= int.MinValue && value <= int.MaxValue;
+    }
+
+    private void DrawTargetPopup()
+    {
+        var machine = View.Selection.Machine;
+        if (TargetCondition == null || machine == null)
+        {
+            ImGui.CloseCurrentPopup();
+            return;
+        }
+
+        ImGui.TextDisabled(LOC.Get("ESD_Edit_Target_Header"));
+        ImGui.BeginChild("##esdTargetList", new Vector2(220f * DPI.UIScale(), Math.Min(300f, (machine.Count + 1) * ImGui.GetTextLineHeightWithSpacing() + 8f) * DPI.UIScale()));
+
+        foreach (var id in machine.Keys.OrderBy(k => k))
+        {
+            var file = View.Selection.SelectedFile;
+            var label = LOC.Get("ESD_States_State_Title", id);
+            if (file != null && View.Selection.SelectedMachine is long m && file.StateNames.TryGetValue((m, id), out var name))
+                label += $"  {name}";
+
+            if (ImGui.Selectable($"{label}##esdTarget{id}", TargetCondition.TargetState == id))
+            {
+                View.Commands.SetTarget(TargetCondition, id);
+                ImGui.CloseCurrentPopup();
+            }
+        }
+
+        if (TargetCondition.Subconditions.Count > 0 && ImGui.Selectable(LOC.Get("ESD_Edit_Target_None"), TargetCondition.TargetState == null))
+        {
+            View.Commands.SetTarget(TargetCondition, null);
+            ImGui.CloseCurrentPopup();
+        }
+
+        ImGui.EndChild();
     }
 
     private void DrawState(ImDrawListPtr drawList, EsdRow row, Vector2 min, Vector2 max, float lineH, float padY)
     {
-        var hovered = BlockButton(row, min, max, $"##esdState{row.StateId}");
+        var (hovered, _) = BlockButton(row, min, max, $"##esdState{row.StateId}");
 
         var isStart = Rows.Count > 0 && Rows[0].StateId == row.StateId;
         var color = isStart ? EsdFormat.StartStateColor : EsdFormat.StateColor;
@@ -350,7 +629,8 @@ public class EsdStateView
         var kind = EsdLayout.KindOf(c);
         var def = kind == EsdCommandKind.Game ? cat?.Command(c.CommandBank, c.CommandID) : null;
 
-        var hovered = BlockButton(row, min, max, $"##esdCmd{row.StateId}_{row.GetHashCode()}");
+        var (hovered, clicked) = BlockButton(row, min, max, $"##esdCmd{row.StateId}_{row.GetHashCode()}");
+        var hits = new List<ChipHit>();
 
         var color = kind switch
         {
@@ -376,16 +656,22 @@ public class EsdStateView
         drawList.AddText(new Vector2(x, y), ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), name);
         x += ImGui.CalcTextSize(name).X + 8f;
 
+        // A call to a machine the file doesn't have
+        if (kind == EsdCommandKind.CallMachine && View.Selection.SelectedFile?.Esd?.StateGroups.ContainsKey(c.CommandID) == false)
+            x = TextChip(drawList, new Vector2(x, chipY), LOC.Get("ESD_States_Missing_Chip"), UI.Current.ImGui_Invalid_Text_Color, true, chipH) + 6f;
+
         for (var i = 0; i < c.Arguments.Count; i++)
         {
             var argDef = def != null && i < def.Args.Count ? def.Args[i] : null;
             var node = EsdExpr.Decode(c.Arguments[i]);
             x = node != null
-                ? Chip(drawList, new Vector2(x, chipY), node, cat, argDef, 0, chipH, true) + 5f
+                ? Chip(drawList, new Vector2(x, chipY), node, cat, argDef, 0, chipH, true, new List<int>(), hits, i) + 5f
                 : TextChip(drawList, new Vector2(x, chipY), $"<{EsdFormat.Hex(c.Arguments[i])}>", EsdFormat.StatusChipColor, false, chipH) + 5f;
         }
 
         drawList.PopClipRect();
+
+        ClickChip(hits, clicked, null, c);
 
         if (hovered)
             CommandTooltip(cat, c, def, kind);
@@ -396,7 +682,8 @@ public class EsdStateView
         var cat = Catalog;
         var c = row.Condition;
 
-        var hovered = BlockButton(row, min, max, $"##esdCond{row.StateId}_{row.GetHashCode()}");
+        var (hovered, clicked) = BlockButton(row, min, max, $"##esdCond{row.StateId}_{row.GetHashCode()}");
+        var hits = new List<ChipHit>();
 
         var color = ConditionColor(row);
         if (hovered)
@@ -423,7 +710,7 @@ public class EsdStateView
         {
             var node = EsdExpr.Decode(c.Evaluator);
             x = node != null
-                ? Chip(drawList, new Vector2(x, chipY), node, cat, null, 0, chipH, true) + 8f
+                ? Chip(drawList, new Vector2(x, chipY), node, cat, null, 0, chipH, true, new List<int>(), hits, -1) + 8f
                 : TextChip(drawList, new Vector2(x, chipY), $"<{EsdFormat.Hex(c.Evaluator)}>", EsdFormat.StatusChipColor, false, chipH) + 8f;
         }
 
@@ -432,7 +719,13 @@ public class EsdStateView
             var arrow = LOC.Get("ESD_States_Goes_To");
             drawList.AddText(new Vector2(x, y), white, arrow);
             x += ImGui.CalcTextSize(arrow).X + 6f;
-            x = TextChip(drawList, new Vector2(x, chipY), LOC.Get("ESD_States_State_Title", target), EsdFormat.TargetChipColor, true, chipH) + 8f;
+
+            // Red when the machine has no such state; a click picks another
+            var missing = View.Selection.Machine?.ContainsKey(target) == false;
+            var chipX = x;
+            x = TextChip(drawList, new Vector2(x, chipY), LOC.Get("ESD_States_State_Title", target),
+                missing ? UI.Current.ImGui_Invalid_Text_Color : EsdFormat.TargetChipColor, true, chipH) + 8f;
+            hits.Add(new ChipHit { Min = new Vector2(chipX, chipY), Max = new Vector2(x - 8f, chipY + chipH) });
         }
         else if (c.Subconditions.Count > 0)
         {
@@ -445,6 +738,8 @@ public class EsdStateView
             TextChip(drawList, new Vector2(x, chipY), LOC.Get("ESD_States_Shared_Chip", row.SharedCount), EsdFormat.SharedChipColor, true, chipH);
 
         drawList.PopClipRect();
+
+        ClickChip(hits, clicked, c, null);
 
         if (hovered)
         {
@@ -511,15 +806,20 @@ public class EsdStateView
     /// An expression as nested reporter chips: a call holds its args, an operator its two sides. With draw false it
     /// only measures. Returns the right edge.
     /// </summary>
-    private static float Chip(ImDrawListPtr drawList, Vector2 pos, EsdExprNode n, EsdKindCatalog cat, EsdArgDef argDef, int depth, float h, bool draw)
+    private static float Chip(ImDrawListPtr drawList, Vector2 pos, EsdExprNode n, EsdKindCatalog cat, EsdArgDef argDef, int depth, float h, bool draw,
+        List<int> path, List<ChipHit> hits, int arg)
     {
-        // Markers that don't change the value draw as what they mark
+        // Markers that don't change the value draw as what they mark (the path still steps through them)
         while (n.Kind == EsdExprKind.Unary && n.Op is 0xA6 or 0xB7)
+        {
             n = n.Children[0];
+            path = new List<int>(path) { 0 };
+        }
 
         var inner = Math.Max(h - 4f, ImGui.GetTextLineHeight());
         var textY = pos.Y + (h - ImGui.GetTextLineHeight()) * 0.5f;
         var innerY = pos.Y + (h - inner) * 0.5f;
+        List<int> Child(int i) => new(path) { i };
 
         switch (n.Kind)
         {
@@ -535,7 +835,7 @@ public class EsdStateView
                         for (var k = 1; k < n.Children.Count; k++)
                         {
                             var ad = def != null && k - 1 < def.Args.Count ? def.Args[k - 1] : null;
-                            x = Chip(drawList, new Vector2(x, innerY), n.Children[k], cat, ad, depth + 1, inner, d) + 3f;
+                            x = Chip(drawList, new Vector2(x, innerY), n.Children[k], cat, ad, depth + 1, inner, d, Child(k), hits, arg) + 3f;
                         }
                         return x;
                     });
@@ -543,15 +843,15 @@ public class EsdStateView
             case EsdExprKind.Binary:
                 return Composite(drawList, pos, h, EsdFormat.OperatorChipColor, draw, (x, d) =>
                 {
-                    x = Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d) + 4f;
+                    x = Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d, Child(0), hits, arg) + 4f;
                     x = Label(drawList, x, textY, EsdExpr.BinaryName(n.Op), d) + 4f;
-                    return Chip(drawList, new Vector2(x, innerY), n.Children[1], cat, null, depth + 1, inner, d);
+                    return Chip(drawList, new Vector2(x, innerY), n.Children[1], cat, null, depth + 1, inner, d, Child(1), hits, arg);
                 });
             case EsdExprKind.Unary when n.Op is >= 0xA7 and <= 0xAE:
                 return Composite(drawList, pos, h, EsdFormat.RegisterChipColor, draw, (x, d) =>
                 {
                     x = Label(drawList, x, textY, $"r{n.Op - 0xA7} =", d) + 4f;
-                    return Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d);
+                    return Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d, Child(0), hits, arg);
                 });
             case EsdExprKind.Unary when n.Op == 0xB8 && EsdExpr.Constant(n.Children[0]) is long argIndex:
                 return Leaf(drawList, pos, h, $"arg{argIndex}", EsdFormat.ArgChipColor, true, draw);
@@ -559,15 +859,25 @@ public class EsdStateView
                 return Composite(drawList, pos, h, EsdFormat.StatusChipColor, draw, (x, d) =>
                 {
                     x = Label(drawList, x, textY, n.Op == 0xB8 ? "arg" : $"op{n.Op:X2}", d) + 4f;
-                    return Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d);
+                    return Chip(drawList, new Vector2(x, innerY), n.Children[0], cat, null, depth + 1, inner, d, Child(0), hits, arg);
                 });
             case EsdExprKind.Leaf:
                 return Leaf(drawList, pos, h, EsdExpr.Text(n), EsdFormat.StatusChipColor, false, draw);
             case EsdExprKind.Int when argDef?.Enum != null && cat?.FindEnum(argDef.Enum)?.ValueName(n.IntValue) is { } enumName:
-                return Leaf(drawList, pos, h, enumName, EsdFormat.EnumChipColor, true, draw);
+                return LiteralLeaf(drawList, pos, h, enumName, EsdFormat.EnumChipColor, draw, n, path, hits, argDef, arg);
             default:
-                return Leaf(drawList, pos, h, EsdExpr.Text(n), EsdFormat.LiteralChipColor, true, draw);
+                return LiteralLeaf(drawList, pos, h, EsdExpr.Text(n), EsdFormat.LiteralChipColor, draw, n, path, hits, argDef, arg);
         }
+    }
+
+    /// <summary>A literal's chip, recorded so a click on it can edit the value</summary>
+    private static float LiteralLeaf(ImDrawListPtr drawList, Vector2 pos, float h, string text, Vector4 color, bool draw,
+        EsdExprNode n, List<int> path, List<ChipHit> hits, EsdArgDef argDef, int arg)
+    {
+        var right = Leaf(drawList, pos, h, text, color, true, draw);
+        if (draw && hits != null && n.IsLiteral)
+            hits.Add(new ChipHit { Min = pos, Max = new Vector2(right, pos.Y + h), Path = path, Node = n, ArgDef = argDef, Arg = arg });
+        return right;
     }
 
     private static float Composite(ImDrawListPtr drawList, Vector2 pos, float h, Vector4 color, bool draw, Func<float, bool, float> content)

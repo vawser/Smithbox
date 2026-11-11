@@ -1,13 +1,15 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
 /// The ESD Editor: EzState machines (NPC talk, character, menu, DS2 AI/event scripts) as blocks, with names from
-/// Smithbox's catalogue (Assets/ESD/Catalogues, from ESDLang's documentation, used with permission). P1: a
-/// read-only state view; see Claude/Documentation/ESD Block Editor Analysis.md for the phases.
+/// Smithbox's catalogue (Assets/ESD/Catalogues, from ESDLang's documentation, used with permission). P2: the state
+/// view edits values, targets, commands, transitions and states, with undo and save; see
+/// Claude/Documentation/ESD Block Editor Analysis.md for the phases.
 /// </summary>
 public class EsdEditorScreen : EditorScreen
 {
@@ -31,11 +33,13 @@ public class EsdEditorScreen : EditorScreen
 
     public void OnGUI(string[] commands)
     {
+        MonitorShortcuts();
         ParseCommands(commands);
 
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
+            EditMenu();
             ImGui.EndMenuBar();
         }
 
@@ -72,21 +76,99 @@ public class EsdEditorScreen : EditorScreen
             View.Selection.SelectMachine(machine);
     }
 
+    private void MonitorShortcuts()
+    {
+        if (!FocusManager.IsInEsdEditor())
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Save))
+            Save();
+
+        if (View.ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+            View.ActionManager.UndoAction();
+
+        if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+            View.ActionManager.RedoAction();
+
+        // Block edits: from the States window, and not while typing in a box (Delete edits the text)
+        if (FocusManager.Focus != EditorFocusContext.EsdEditor_States || ImGui.GetIO().WantTextInput)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Delete))
+            View.Commands.Delete();
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+            View.Commands.Duplicate();
+        if (InputManager.IsPressed(KeybindID.Reorder_Up))
+            View.Commands.Move(-1);
+        if (InputManager.IsPressed(KeybindID.Reorder_Down))
+            View.Commands.Move(1);
+    }
+
     public void FileMenu()
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
         {
-            // P1 is read-only: nothing to save yet
-            ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", "", false, false);
-            GUI.Tooltip(LOC.Get("ESD_Menubar_Save_TT"));
+            var dirty = Bank?.GetDirtyFiles().Count ?? 0;
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}", false, dirty > 0))
+                Save();
+            GUI.Tooltip(LOC.Get("ESD_Menubar_Save_TT", dirty));
 
             ImGui.EndMenu();
         }
     }
 
+    public void EditMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)}", false, View.ActionManager.CanUndo()))
+                View.ActionManager.UndoAction();
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)}", false, View.ActionManager.CanRedo()))
+                View.ActionManager.RedoAction();
+
+            ImGui.Separator();
+
+            // The selected block's own menu (the same as right-clicking it)
+            var row = View.Commands.SelectedRow;
+            if (row != null)
+                View.Commands.ContextMenu(row);
+            else
+                ImGui.TextDisabled(LOC.Get("ESD_Edit_Select_Block"));
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public List<string> GetUnsavedFiles()
+    {
+        return Bank?.GetDirtyFiles() ?? new();
+    }
+
+    public void SaveUnsaved()
+    {
+        Bank?.SaveAllDirty();
+        Smithbox.Instance.SaveConfiguration();
+    }
+
+    public void SaveAll()
+    {
+        Save();
+    }
+
+    /// <summary>Saves every ESD file with unsaved changes into the project</summary>
     public void Save()
     {
-        Smithbox.Log(this, LOC.Get("ESD_Save_Read_Only"));
+        var bank = Bank;
+        if (bank == null)
+            return;
+
+        if (bank.GetDirtyFiles().Count == 0)
+            Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", View.Selection.SelectedContainer?.Name ?? LOC.Get("ESD_Editor_Stub")));
+        else
+            bank.SaveAllDirty();
+
+        Smithbox.Instance.SaveConfiguration();
     }
 
     public void OnDefocus()
