@@ -54,6 +54,28 @@ public class BhvDisplay
     public static int StateAnimationIndex(BHV.State s) =>
         s.Body.Length >= 2 ? BitConverter.ToInt16(s.Body, BHV.V12.BodyAnimationIndex) : -1;
 
+    /// <summary>Where a record sits, for tool results: "State 11 (ID 11, kind 0) · transition #2 · condition 0"</summary>
+    public static string LocationLabel(BHV b, BhvRecordKind kind, int state, int transition, int condition, int index, int subIndex = -1)
+    {
+        var label = kind switch
+        {
+            BhvRecordKind.Preamble => LOC.Get("BHV_Location_Preamble"),
+            BhvRecordKind.Animation => AnimationLabel(b, index),
+            BhvRecordKind.StructC => LOC.Get("BHV_Location_Struct_C", index),
+            BhvRecordKind.StructDA => LOC.Get("BHV_Location_Struct_DA", index, subIndex),
+            _ => StateLabel(b, state),
+        };
+
+        if (kind is BhvRecordKind.StateData)
+            label += "  ·  " + LOC.Get("BHV_Location_Data");
+        if (kind is BhvRecordKind.TransitionParams or BhvRecordKind.ConditionData && transition >= 0)
+            label += "  ·  " + LOC.Get("BHV_Location_Transition", transition);
+        if (kind is BhvRecordKind.ConditionData && condition >= 0)
+            label += "  ·  " + LOC.Get("BHV_Location_Condition", condition);
+
+        return label;
+    }
+
     public static string KindLabel(BHV b) => b.Kind switch
     {
         BHVKind.Weapon => LOC.Get("BHV_Kind_Weapon"),

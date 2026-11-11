@@ -123,6 +123,49 @@ public class BhvSelection
     }
 
     /// <summary>
+    /// Selects a record found by a tool (Problems, Used By, Search): its file, then the record, with the lists
+    /// scrolled to it. Indices past the lists (the file changed since the tool ran) select as far as they're valid.
+    /// </summary>
+    public void JumpTo(BhvFileWrapper file, BhvRecordKind kind, int state, int transition, int condition, int index)
+    {
+        SelectFile(file);
+        View.FileList.ScrollToSelection = true;
+
+        switch (kind)
+        {
+            case BhvRecordKind.Preamble:
+                ShowFile();
+                break;
+
+            case BhvRecordKind.StateBody or BhvRecordKind.StateData:
+                SelectState(state, true);
+                break;
+
+            case BhvRecordKind.TransitionParams:
+                SelectState(state, true);
+                SelectTransition(transition);
+                break;
+
+            case BhvRecordKind.ConditionData:
+                SelectState(state, true);
+                SelectCondition(transition, condition);
+                break;
+
+            case BhvRecordKind.Animation:
+                SelectAnimation(index, true);
+                break;
+
+            case BhvRecordKind.StructC:
+                SelectStructC(index);
+                break;
+
+            case BhvRecordKind.StructDA:
+                SelectStructD(index);
+                break;
+        }
+    }
+
+    /// <summary>
     /// Drops selected indices that a structure edit (or its undo) left out of range, falling back to the parent
     /// record, so the windows never index past a list
     /// </summary>

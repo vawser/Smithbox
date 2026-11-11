@@ -84,8 +84,8 @@ public class BehaviorEditorScreen : EditorScreen
         if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             View.ActionManager.RedoAction();
 
-        // Not while typing in a box, where Delete edits the text
-        if (!ImGui.IsAnyItemActive())
+        // Not while typing in a box (Delete edits the text), nor from the Tools window
+        if (!ImGui.IsAnyItemActive() && FocusManager.Focus != EditorFocusContext.BehaviorEditor_Tools)
         {
             if (InputManager.IsPressed(KeybindID.Duplicate))
                 View.Structure.DuplicateSelected();
@@ -166,6 +166,15 @@ public class BehaviorEditorScreen : EditorScreen
             }
             GUI.Tooltip(LOC.Get("BHV_View_Toggle_Game_Order_TT"));
             GUI.ShowActiveStatus(CFG.Current.BehaviorEditor_Transitions_Game_Order);
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem($"{LOC.Get("BHV_View_Toggle_Tools")}##toolWindowToggle"))
+            {
+                CFG.Current.Interface_BehaviorEditor_ToolWindow = !CFG.Current.Interface_BehaviorEditor_ToolWindow;
+            }
+            GUI.Tooltip(LOC.Get("BHV_View_Toggle_Tools_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_BehaviorEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

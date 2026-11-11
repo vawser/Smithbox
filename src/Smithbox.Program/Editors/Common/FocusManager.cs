@@ -160,7 +160,8 @@ public static class FocusManager
         return Focus is EditorFocusContext.BehaviorEditor_None
             or EditorFocusContext.BehaviorEditor_FileList
             or EditorFocusContext.BehaviorEditor_States
-            or EditorFocusContext.BehaviorEditor_Properties;
+            or EditorFocusContext.BehaviorEditor_Properties
+            or EditorFocusContext.BehaviorEditor_Tools;
     }
 
     public static bool IsInHavokEditor()
@@ -274,6 +275,7 @@ public enum EditorFocusContext
     BehaviorEditor_FileList,
     BehaviorEditor_States,
     BehaviorEditor_Properties,
+    BehaviorEditor_Tools,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

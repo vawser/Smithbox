@@ -1283,6 +1283,10 @@ public class CFG
     public bool BehaviorEditor_Allow_Automatic_Save = true;
     public bool BehaviorEditor_Properties_Show_Hex = true;
     public bool BehaviorEditor_Transitions_Game_Order = true;
+    public bool Interface_BehaviorEditor_ToolWindow = true;
+    public bool Interface_BehaviorEditor_Tool_Search = true;
+    public bool Interface_BehaviorEditor_Tool_UsedBy = true;
+    public bool Interface_BehaviorEditor_Tool_Problems = true;
     #endregion
 
     #region FX Editor
