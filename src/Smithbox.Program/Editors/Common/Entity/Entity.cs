@@ -1742,11 +1742,60 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    /// Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
+    /// The draw groups the viewport tests: DrawGroups itself, or the groups as the game's loader would leave them when
+    /// the Display Groups tool previews a loader mode.
+    /// </summary>
+    [XmlIgnore] public uint[] RenderDrawGroups { get; private set; }
+
+    /// <summary>
+    /// The map object whose group arrays DrawGroups and DisplayGroups are: this one, or the collision they're
+    /// inherited from through CollisionName.
+    /// </summary>
+    [XmlIgnore] public Entity RenderGroupOwner { get; private set; }
+
+    /// <summary>
+    /// The display groups matching RenderDrawGroups.
+    /// </summary>
+    [XmlIgnore] public uint[] RenderDisplayGroups { get; private set; }
+
+    /// <summary>
+    /// Re-resolves the render groups and hands them to the meshes, without the rest of UpdateRenderModel.
+    /// </summary>
+    public void RefreshRenderGroups()
+    {
+        if (Owner is MapUniverse && HasRenderGroups)
+        {
+            // Resolve first: ApplyMeshState skips entities it doesn't draw, but the tool still reads their groups
+            UpdateDispDrawGroups();
+            ApplyMeshState();
+        }
+    }
+
+    /// <summary>
+    /// Updates entity's render groups (DrawGroups/DispGroups), then the groups the viewport tests.
     /// </summary>
     private void UpdateDispDrawGroups()
     {
+        ResolveStoredGroups();
+
+        RenderDrawGroups = DrawGroups;
+        RenderDisplayGroups = DisplayGroups;
+
+        if (DrawGroups != null && Owner is MapUniverse universe && universe.View?.DisplayGroupTool != null)
+        {
+            var (draw, display) = universe.View.DisplayGroupTool.ResolveRenderGroups(this);
+            RenderDrawGroups = draw ?? DrawGroups;
+            RenderDisplayGroups = display ?? DisplayGroups;
+        }
+    }
+
+    /// <summary>
+    /// Finds the entity's stored render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
+    /// </summary>
+    private void ResolveStoredGroups()
+    {
         RenderGroupRefName = "";
+        RenderGroupOwner = this;
 
         var myDrawProp = PropFinderUtil.FindProperty("DrawGroups", WrappedObject);
         if (myDrawProp == null)
@@ -1755,8 +1804,10 @@ public class Entity : ISelectable, IDisposable
             return;
         }
 
-        var myDispProp = PropFinderUtil.FindProperty("DispGroups", WrappedObject);
-        myDispProp ??= PropFinderUtil.FindProperty("DisplayGroups", WrappedObject);
+        // DisplayGroups first: in SDT/ER/NR/DB_NT, "DispGroups" also names the unrelated DisplayGroupStruct array,
+        // which FindProperty would reach through the nested structs before the real display groups.
+        var myDispProp = PropFinderUtil.FindProperty("DisplayGroups", WrappedObject);
+        myDispProp ??= PropFinderUtil.FindProperty("DispGroups", WrappedObject);
 
         var myColMaskProp = PropFinderUtil.FindProperty("CollisionMask", WrappedObject);
 
@@ -1779,6 +1830,8 @@ public class Entity : ISelectable, IDisposable
                     Entity colNameEnt = Container.GetObjectByName(collisionNameValue); // Get entity referenced by CollisionName
                     if (colNameEnt != null)
                     {
+                        RenderGroupOwner = colNameEnt;
+
                         // Get DrawGroups from CollisionName reference
                         var colNamePropDraw = PropFinderUtil.FindProperty("DrawGroups", colNameEnt.WrappedObject);
                         
@@ -2016,7 +2069,7 @@ public class Entity : ISelectable, IDisposable
         if (useRenderGroups)
         {
             proxy.DrawGroups.AlwaysVisible = false;
-            proxy.DrawGroups.RenderGroups = DrawGroups;
+            proxy.DrawGroups.RenderGroups = RenderDrawGroups ?? DrawGroups;
         }
     }
 

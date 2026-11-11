@@ -203,6 +203,8 @@ public class CFG
     public bool MapEditor_Map_Contents_Display_Map_Piece_Aliases = true;
     public bool MapEditor_Map_Contents_Display_Treasure_Aliases = true;
 
+    public bool MapEditor_DisplayGroups_Show_Unused = false;
+
     public bool MapEditor_Properties_Enable_Commmunity_Names = true;
     public bool MapEditor_Properties_Display_Unknown_Properties = true;
     public bool MapEditor_Properties_Display_Property_Attributes = false;

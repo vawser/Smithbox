@@ -600,39 +600,54 @@ namespace SoulsFormats
                 return $"{Type} {Name}";
             }
 
+            /// <summary>
+            /// The part's display and draw groups, with an alternate set of each the loader can swap or merge in.
+            /// Same six-array layout as MSBE.Part.DisplayDataStruct (from eldenring.exe's loader). Not checked against
+            /// the NR exe: the layout rests on the data (Claude/Tools/DisplayGroupSurvey): the second array is only set
+            /// when UseAltGroups is, as in ER, and collisions' fourth array always contains their display groups.
+            /// </summary>
             public class DisplayStruct
             {
                 public DisplayStruct() { }
 
                 public DisplayStruct DeepCopy()
                 {
-                    var unk1 = (DisplayStruct)MemberwiseClone();
-                    unk1.DisplayGroups = (uint[])DisplayGroups.Clone();
-                    unk1.DrawGroups = (uint[])DrawGroups.Clone();
-                    unk1.CollisionMask = (uint[])CollisionMask.Clone();
-                    return unk1;
+                    var copy = (DisplayStruct)MemberwiseClone();
+                    copy.DisplayGroups = (uint[])DisplayGroups.Clone();
+                    copy.AltDisplayGroups = (uint[])AltDisplayGroups.Clone();
+                    copy.AltDisplayGroupsMask = (uint[])AltDisplayGroupsMask.Clone();
+                    copy.DrawGroups = (uint[])DrawGroups.Clone();
+                    copy.AltDrawGroups = (uint[])AltDrawGroups.Clone();
+                    copy.AltDrawGroupsMask = (uint[])AltDrawGroupsMask.Clone();
+                    return copy;
                 }
 
                 internal DisplayStruct(BinaryReaderEx br)
                 {
                     DisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroups = br.ReadUInt32s(8);
+                    AltDisplayGroupsMask = br.ReadUInt32s(8);
                     DrawGroups = br.ReadUInt32s(8);
-                    CollisionMask = br.ReadUInt32s(32);
-                    Condition1 = br.ReadByte();
-                    Condition2 = br.ReadByte();
+                    AltDrawGroups = br.ReadUInt32s(8);
+                    AltDrawGroupsMask = br.ReadUInt32s(8);
+                    NoAltGroupMerge = br.ReadByte();
+                    UseAltGroups = br.ReadByte();
                     UnkC2 = br.ReadInt16();
                     UnkC4 = br.ReadInt16();
-                    UnkC6 = br.ReadInt16(); 
+                    UnkC6 = br.ReadInt16();
                     br.AssertPattern(0xC0, 0x00);
                 }
 
                 internal void Write(BinaryWriterEx bw)
                 {
                     bw.WriteUInt32s(DisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroups);
+                    bw.WriteUInt32s(AltDisplayGroupsMask);
                     bw.WriteUInt32s(DrawGroups);
-                    bw.WriteUInt32s(CollisionMask);
-                    bw.WriteByte(Condition1);
-                    bw.WriteByte(Condition2);
+                    bw.WriteUInt32s(AltDrawGroups);
+                    bw.WriteUInt32s(AltDrawGroupsMask);
+                    bw.WriteByte(NoAltGroupMerge);
+                    bw.WriteByte(UseAltGroups);
                     bw.WriteInt16(UnkC2);
                     bw.WriteInt16(UnkC4);
                     bw.WriteInt16(UnkC6);
@@ -641,11 +656,47 @@ namespace SoulsFormats
                 }
 
                 // Layout
+
+                /// <summary>
+                /// The groups shown while the player stands on this part (collisions), or the groups it belongs to for display.
+                /// </summary>
                 public uint[] DisplayGroups { get; set; } = new uint[8];
+
+                /// <summary>
+                /// Display groups that replace or are merged into DisplayGroups when UseAltGroups is set.
+                /// </summary>
+                public uint[] AltDisplayGroups { get; set; } = new uint[8];
+
+                /// <summary>
+                /// When merging, the DisplayGroups bits set here are kept; the rest come from AltDisplayGroups.
+                /// </summary>
+                public uint[] AltDisplayGroupsMask { get; set; } = new uint[8];
+
+                /// <summary>
+                /// Draw groups the part belongs to: it is drawn while any of them is shown.
+                /// </summary>
                 public uint[] DrawGroups { get; set; } = new uint[8];
-                public uint[] CollisionMask { get; set; } = new uint[32];
-                public byte Condition1 { get; set; } = 0; // Bool
-                public byte Condition2 { get; set; } = 0; // Bool
+
+                /// <summary>
+                /// Draw groups merged into DrawGroups when UseAltGroups is set.
+                /// </summary>
+                public uint[] AltDrawGroups { get; set; } = new uint[8];
+
+                /// <summary>
+                /// When merging, the DrawGroups bits set here are kept; the rest come from AltDrawGroups.
+                /// </summary>
+                public uint[] AltDrawGroupsMask { get; set; } = new uint[8];
+
+                /// <summary>
+                /// If set, the alternate groups are never merged in, only swapped in whole.
+                /// </summary>
+                public byte NoAltGroupMerge { get; set; } = 0; // Bool
+
+                /// <summary>
+                /// Enables the alternate groups.
+                /// </summary>
+                public byte UseAltGroups { get; set; } = 0; // Bool
+
                 private short UnkC2 { get; set; } = 0; // Hidden
                 private short UnkC4 { get; set; } = -1; // Hidden
                 private short UnkC6 { get; set; } = 0; // Hidden

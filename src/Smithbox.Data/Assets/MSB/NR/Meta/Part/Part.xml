@@ -52,29 +52,48 @@
     AltName="Model Placeholder Path"
     Wiki="A path to a .sib file, presumed to be some kind of editor placeholder." />
     
+    <DisplayData
+    AltName="Display Data"
+    Wiki="Display and draw groups, with an alternate set of each that the game can swap or merge in on load. Same layout as Elden Ring." />
+
     <DisplayGroups
     AltName="Display Group"
-    Wiki="Controls when the map object is visible." 
+    Wiki="The groups this map object shows; for a collision, the groups shown while the player stands on it."
     ArrayProperty="" />
-    
+
+    <AltDisplayGroups
+    AltName="Alternate Display Group"
+    Wiki="Display groups that replace, or are merged into, the display groups when Use Alternate Groups is ON."
+    ArrayProperty="" />
+
+    <AltDisplayGroupsMask
+    AltName="Alternate Display Group Mask"
+    Wiki="When merging, the display group bits set here are kept; the rest come from the alternate display groups."
+    ArrayProperty="" />
+
     <DrawGroups
     AltName="Draw Group"
-    Wiki="Controls when the map object is visible." 
+    Wiki="Controls when the map object is visible: it is drawn while any of these groups is shown."
     ArrayProperty="" />
-    
-    <CollisionMask
-    AltName="Collision Mask"
-    Wiki="Controls when the map object is visible." 
+
+    <AltDrawGroups
+    AltName="Alternate Draw Group"
+    Wiki="Draw groups merged into the draw groups when Use Alternate Groups is ON."
     ArrayProperty="" />
-    
-    <Condition1
-    AltName="Condition 1"
-    Wiki="" 
+
+    <AltDrawGroupsMask
+    AltName="Alternate Draw Group Mask"
+    Wiki="When merging, the draw group bits set here are kept; the rest come from the alternate draw groups."
+    ArrayProperty="" />
+
+    <NoAltGroupMerge
+    AltName="No Alternate Group Merge"
+    Wiki="If ON, the alternate groups are never merged in, only swapped in whole."
     IsBool="" />
-    
-    <Condition2
-    AltName="Condition 2"
-    Wiki="" 
+
+    <UseAltGroups
+    AltName="Use Alternate Groups"
+    Wiki="Enables the alternate groups. Depending on a game state, the display groups are replaced by the alternate display groups, or both sets are merged in through their masks."
     IsBool="" />
     
     <DispGroups

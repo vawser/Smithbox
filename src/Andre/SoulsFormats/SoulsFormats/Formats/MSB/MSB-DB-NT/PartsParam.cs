@@ -266,6 +266,8 @@ public partial class MSB_DB_NT
                 ReadUnkA8Data(br);
             }
         }
+        /// <summary>Whether the part writes a type block; DB_NT leaves the Type offset 0 for several part types.</summary>
+        private protected virtual bool HasTypeData => true;
         private protected abstract bool HasDisplayData { get; }
         private protected abstract bool HasDisplayGroupData { get; }
         private protected abstract bool HasGparamData { get; }
@@ -417,8 +419,15 @@ public partial class MSB_DB_NT
             bw.FillInt64("EntityOffset", bw.Position - start);
             WriteEntityData(bw);
 
-            bw.FillInt64("TypeOffset", bw.Position - start);
-            WriteTypeData(bw);
+            if (HasTypeData)
+            {
+                bw.FillInt64("TypeOffset", bw.Position - start);
+                WriteTypeData(bw);
+            }
+            else
+            {
+                bw.FillInt64("TypeOffset", 0);
+            }
 
             if (HasGparamData)
             {
@@ -549,26 +558,37 @@ public partial class MSB_DB_NT
             return $"{Type} {Name}";
         }
 
+        /// <summary>
+        /// The part's display and draw groups, with an alternate set of each the loader can swap or merge in.
+        /// Same six-array layout as MSBE.Part.DisplayDataStruct. Not checked against the exe: the layout rests on the
+        /// data (Claude/Tools/DisplayGroupSurvey), where collisions' fourth array always contains their display groups.
+        /// </summary>
         public class DisplayStruct
         {
             public DisplayStruct() { }
 
             public DisplayStruct DeepCopy()
             {
-                var unk1 = (DisplayStruct)MemberwiseClone();
-                unk1.DisplayGroups = (uint[])DisplayGroups.Clone();
-                unk1.DrawGroups = (uint[])DrawGroups.Clone();
-                unk1.CollisionMask = (uint[])CollisionMask.Clone();
-                return unk1;
+                var copy = (DisplayStruct)MemberwiseClone();
+                copy.DisplayGroups = (uint[])DisplayGroups.Clone();
+                copy.AltDisplayGroups = (uint[])AltDisplayGroups.Clone();
+                copy.AltDisplayGroupsMask = (uint[])AltDisplayGroupsMask.Clone();
+                copy.DrawGroups = (uint[])DrawGroups.Clone();
+                copy.AltDrawGroups = (uint[])AltDrawGroups.Clone();
+                copy.AltDrawGroupsMask = (uint[])AltDrawGroupsMask.Clone();
+                return copy;
             }
 
             internal DisplayStruct(BinaryReaderEx br)
             {
                 DisplayGroups = br.ReadUInt32s(8);
+                AltDisplayGroups = br.ReadUInt32s(8);
+                AltDisplayGroupsMask = br.ReadUInt32s(8);
                 DrawGroups = br.ReadUInt32s(8);
-                CollisionMask = br.ReadUInt32s(32);
-                Condition1 = br.ReadByte();
-                Condition2 = br.ReadByte();
+                AltDrawGroups = br.ReadUInt32s(8);
+                AltDrawGroupsMask = br.ReadUInt32s(8);
+                NoAltGroupMerge = br.ReadByte();
+                UseAltGroups = br.ReadByte();
                 UnkC2 = br.ReadInt16();
                 UnkC4 = br.ReadInt16();
                 UnkC6 = br.ReadInt16();
@@ -580,10 +600,13 @@ public partial class MSB_DB_NT
             internal void Write(BinaryWriterEx bw)
             {
                 bw.WriteUInt32s(DisplayGroups);
+                bw.WriteUInt32s(AltDisplayGroups);
+                bw.WriteUInt32s(AltDisplayGroupsMask);
                 bw.WriteUInt32s(DrawGroups);
-                bw.WriteUInt32s(CollisionMask);
-                bw.WriteByte(Condition1);
-                bw.WriteByte(Condition2);
+                bw.WriteUInt32s(AltDrawGroups);
+                bw.WriteUInt32s(AltDrawGroupsMask);
+                bw.WriteByte(NoAltGroupMerge);
+                bw.WriteByte(UseAltGroups);
                 bw.WriteInt16(UnkC2);
                 bw.WriteInt16(UnkC4);
                 bw.WriteInt16(UnkC6);
@@ -594,10 +617,13 @@ public partial class MSB_DB_NT
 
             // Layout
             public uint[] DisplayGroups { get; set; } = new uint[8];
+            public uint[] AltDisplayGroups { get; set; } = new uint[8];
+            public uint[] AltDisplayGroupsMask { get; set; } = new uint[8];
             public uint[] DrawGroups { get; set; } = new uint[8];
-            public uint[] CollisionMask { get; set; } = new uint[32];
-            public byte Condition1 { get; set; } = 0; // Bool
-            public byte Condition2 { get; set; } = 0; // Bool
+            public uint[] AltDrawGroups { get; set; } = new uint[8];
+            public uint[] AltDrawGroupsMask { get; set; } = new uint[8];
+            public byte NoAltGroupMerge { get; set; } = 0; // Bool
+            public byte UseAltGroups { get; set; } = 0; // Bool
             private short UnkC2 { get; set; } = 0;
             private short UnkC4 { get; set; } = -1;
             private short UnkC6 { get; set; } = 0;
@@ -1260,6 +1286,7 @@ public partial class MSB_DB_NT
         public class MapPiece : Part
         {
             private protected override PartType Type => PartType.MapPiece;
+            private protected override bool HasTypeData => false; // DB_NT game data: Type offset is 0
 
             // --- Entity
             public EntityStruct EntityData { get; set; }
@@ -1279,7 +1306,7 @@ public partial class MSB_DB_NT
             //private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
 
             // --- Gparam
-            private protected override bool HasGparamData => true;
+            private protected override bool HasGparamData => false; // DB_NT game data
             public GparamStruct GparamData { get; set; }
             private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
             private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
@@ -1297,7 +1324,7 @@ public partial class MSB_DB_NT
             private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
 
             // --- Unk88
-            private protected override bool HasUnk88Data => true;
+            private protected override bool HasUnk88Data => false; // DB_NT game data
             public Unk88Struct Unk88Data { get; set; }
             private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
             private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
@@ -1321,7 +1348,7 @@ public partial class MSB_DB_NT
             private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
             // --- UnkA8
-            private protected override bool HasUnkA8Data => false;
+            private protected override bool HasUnkA8Data => true; // DB_NT game data
             public UnkA8Struct UnkA8Data { get; set; }
             private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
             private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
@@ -1697,6 +1724,7 @@ public partial class MSB_DB_NT
         public class Player : Part
         {
             private protected override PartType Type => PartType.Player;
+            private protected override bool HasTypeData => false; // DB_NT game data: Type offset is 0
 
             // --- Entity
             public EntityStruct EntityData { get; set; }
@@ -1799,6 +1827,7 @@ public partial class MSB_DB_NT
         public class Collision : Part
         {
             private protected override PartType Type => PartType.Collision;
+            private protected override bool HasTypeData => false; // DB_NT game data: Type offset is 0
 
             // --- Entity
             public EntityStruct EntityData { get; set; }
@@ -1854,7 +1883,7 @@ public partial class MSB_DB_NT
             private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
 
             // --- UnkA0
-            private protected override bool HasUnkA0Data => true;
+            private protected override bool HasUnkA0Data => false; // DB_NT game data
             public UnkA0Struct UnkA0Data { get; set; }
             private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
             private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
@@ -2007,6 +2036,7 @@ public partial class MSB_DB_NT
         public class DummyAsset : Part
         {
             private protected override PartType Type => PartType.DummyAsset;
+            private protected override bool HasTypeData => false; // DB_NT game data: Type offset is 0
 
             // --- Entity
             public EntityStruct EntityData { get; set; }
@@ -2014,7 +2044,7 @@ public partial class MSB_DB_NT
             private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
 
             // --- Display
-            private protected override bool HasDisplayData => true;
+            private protected override bool HasDisplayData => false; // DB_NT game data
             public DisplayStruct DisplayData { get; set; }
             private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
             private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
@@ -2026,7 +2056,7 @@ public partial class MSB_DB_NT
             //private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
 
             // --- Gparam
-            private protected override bool HasGparamData => true;
+            private protected override bool HasGparamData => false; // DB_NT game data
             public GparamStruct GparamData { get; set; }
             private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
             private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
@@ -2044,7 +2074,7 @@ public partial class MSB_DB_NT
             private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
 
             // --- Unk88
-            private protected override bool HasUnk88Data => true;
+            private protected override bool HasUnk88Data => false; // DB_NT game data
             public Unk88Struct Unk88Data { get; set; }
             private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
             private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
@@ -2141,7 +2171,10 @@ public partial class MSB_DB_NT
         public class DummyEnemy : EnemyBase
         {
             private protected override PartType Type => PartType.DummyEnemy;
-            private protected override bool HasUnkA8Data => false;
+            // DB_NT game data: no Display, Gparam or Type block (UnkA8 present, as EnemyBase)
+            private protected override bool HasDisplayData => false;
+            private protected override bool HasGparamData => false;
+            private protected override bool HasTypeData => false;
 
             public DummyEnemy() : base() { }
 
@@ -2311,7 +2344,7 @@ public partial class MSB_DB_NT
             private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
 
             // --- Scene Gparam
-            private protected override bool HasSceneGparamData => false;
+            private protected override bool HasSceneGparamData => true; // DB_NT game data
             public SceneGparamStruct SceneGparamData { get; set; }
             private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
             private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
@@ -2323,7 +2356,7 @@ public partial class MSB_DB_NT
             private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
 
             // --- Unk88
-            private protected override bool HasUnk88Data => true;
+            private protected override bool HasUnk88Data => false; // DB_NT game data
             public Unk88Struct Unk88Data { get; set; }
             private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
             private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
@@ -3014,7 +3047,7 @@ public partial class MSB_DB_NT
             private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
 
             // --- Display Group
-            private protected override bool HasDisplayGroupData => false;
+            private protected override bool HasDisplayGroupData => true; // DB_NT game data
             public DisplayGroupStruct DisplayGroupData { get; set; }
             private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
             private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
@@ -3026,13 +3059,13 @@ public partial class MSB_DB_NT
             //private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
 
             // --- Scene Gparam
-            private protected override bool HasSceneGparamData => false;
+            private protected override bool HasSceneGparamData => true; // DB_NT game data
             public SceneGparamStruct SceneGparamData { get; set; }
             private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
             private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
 
             // --- Grass
-            private protected override bool HasGrassData => false;
+            private protected override bool HasGrassData => true; // DB_NT game data
             public GrassStruct GrassData { get; set; }
             private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
             private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
@@ -3044,7 +3077,7 @@ public partial class MSB_DB_NT
             //private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
 
             // --- Unk90
-            private protected override bool HasUnk90Data => false;
+            private protected override bool HasUnk90Data => true; // DB_NT game data
             public Unk90Struct Unk90Data { get; set; }
             private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
             private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
@@ -3056,13 +3089,13 @@ public partial class MSB_DB_NT
             private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
 
             // --- UnkA0
-            private protected override bool HasUnkA0Data => false;
+            private protected override bool HasUnkA0Data => true; // DB_NT game data
             public UnkA0Struct UnkA0Data { get; set; }
             private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
             private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
             // --- UnkA8
-            private protected override bool HasUnkA8Data => false;
+            private protected override bool HasUnkA8Data => true; // DB_NT game data
             public UnkA8Struct UnkA8Data { get; set; }
             private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
             private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);

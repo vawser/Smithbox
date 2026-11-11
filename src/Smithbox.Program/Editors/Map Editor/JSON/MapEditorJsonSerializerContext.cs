@@ -38,6 +38,10 @@ namespace StudioCore.Editors.MapEditor;
 [JsonSerializable(typeof(MapGroups))]
 [JsonSerializable(typeof(MapGroupEntry))]
 
+// Display Group Presets
+[JsonSerializable(typeof(DisplayGroupPresetList))]
+[JsonSerializable(typeof(DisplayGroupPreset))]
+
 internal partial class MapEditorJsonSerializerContext : JsonSerializerContext
 {
 }

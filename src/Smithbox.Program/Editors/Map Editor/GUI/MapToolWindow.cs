@@ -308,13 +308,7 @@ public class MapToolWindow
         ActionSection(CFG.Current.Interface_MapEditor_Tool_EditorVisibility, "MAP_ToolWindow_Editor_Visibility", "mapEditorVisibilitySection", View.EditorVisibilityAction.OnToolWindow);
         ActionSection(CFG.Current.Interface_MapEditor_Tool_LowDetail, "MAP_ToolWindow_Low_Detail", "mapLowDetailSection", View.LowDetailVisibilityAction.OnToolWindow);
 
-        if (CFG.Current.Interface_MapEditor_Tool_DisplayGroups)
-        {
-            if (ToolSections.Header("Render Groups"))
-            {
-                View.DisplayGroupTool.OnToolWindow();
-            }
-        }
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_DisplayGroups, "MAP_DisplayGroups_Header", "mapDisplayGroupsSection", View.DisplayGroupTool.OnToolWindow);
 
         if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
         {
@@ -489,7 +483,7 @@ public class MapToolWindow
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Animation);
 
-            if (ImGui.MenuItem("Display Groups"))
+            if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Display_Groups")}##displayGroupsToolToggle"))
             {
                 CFG.Current.Interface_MapEditor_Tool_DisplayGroups = !CFG.Current.Interface_MapEditor_Tool_DisplayGroups;
             }

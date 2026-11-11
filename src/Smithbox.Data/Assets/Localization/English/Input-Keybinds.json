@@ -858,11 +858,11 @@
     },
     {
       "Key": "KEY_MapEditor_Select_Display_Group_Highlights",
-      "Text": "Select Display Group Highlights"
+      "Text": "Apply Last Display Group Preset"
     },
     {
       "Key": "KEY_MapEditor_Select_Display_Group_Highlights_TT",
-      "Text": "Select the display groups that are highlighted."
+      "Text": "Show the groups of the Display Groups preset applied or saved most recently."
     },
     {
       "Key": "KEY_MapEditor_Select_Collision_References",

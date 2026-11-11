@@ -727,7 +727,7 @@ public partial class MSB_DB_NT
             bw.ReserveInt64("ShapeDataOffset");
             bw.ReserveInt64("EntityDataOffset");
             bw.ReserveInt64("TypeDataOffset");
-            bw.ReserveInt64("Struct98Offset");
+            bw.WriteInt64(0); // Struct98Offset: 0 in every DB_NT region (no Struct98 block, unlike NR)
 
             bw.FillInt64("NameOffset", bw.Position - start);
             bw.WriteUTF16(MSB.ReambiguateName(Name), true);
