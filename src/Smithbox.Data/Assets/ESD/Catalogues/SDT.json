@@ -1,0 +1,2108 @@
+{
+  "Game": "SDT",
+  "Source": "",
+  "Kinds": [
+    {
+      "Kind": "Talk",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "TalkToPlayer",
+          "Args": [
+            {
+              "Name": "talkParamRow",
+              "Type": "int",
+              "Role": "Talk"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            },
+            {
+              "Name": "unk",
+              "Type": "bool"
+            },
+            {
+              "Name": "unk",
+              "Type": "bool",
+              "Optional": true
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5,
+          "Name": "RemoveMyAggro",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9,
+          "Name": "ClearTalkProgressData",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 10,
+          "Name": "ShowShopMessage",
+          "Args": [
+            {
+              "Name": "optionsType",
+              "Type": "enum",
+              "Enum": "TalkOptionsType"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 11,
+          "Name": "SetEventFlag",
+          "OldNames": [
+            "SetEventState"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            },
+            {
+              "Name": "newFlagState",
+              "Type": "enum",
+              "Enum": "FlagState"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 17,
+          "Name": "OpenGenericDialog",
+          "Args": [
+            {
+              "Name": "boxType",
+              "Type": "enum",
+              "Enum": "DialogBoxType"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "defaultResult",
+              "Type": "enum",
+              "Enum": "DialogResult",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "boxStyle",
+              "Type": "enum",
+              "Enum": "DialogBoxStyle",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "(usually 2)"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 18,
+          "Name": "ForceCloseGenericDialog",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 19,
+          "Name": "AddTalkListData",
+          "Args": [
+            {
+              "Name": "slot",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 20,
+          "Name": "ClearTalkListData",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 22,
+          "Name": "OpenRegularShop",
+          "Args": [
+            {
+              "Name": "StartShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            },
+            {
+              "Name": "EndShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 28,
+          "Name": "OpenMagicEquip",
+          "Args": [
+            {
+              "Name": "startId",
+              "Type": "int"
+            },
+            {
+              "Name": "endId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 30,
+          "Name": "OpenRepository",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 39,
+          "Name": "ClearPlayerDamageInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 40,
+          "Name": "OfferHumanity",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 41,
+          "Name": "StartWarpMenuInit",
+          "Args": [
+            {
+              "Name": "bonfireWarpId",
+              "Type": "int",
+              "Comment": "usually uses -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 42,
+          "Name": "StartBonfireAnimLoop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 43,
+          "Name": "EndBonfireKindleAnimLoop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 46,
+          "Name": "OpenSellShop",
+          "Args": [
+            {
+              "Name": "StartShopLineupParamRow",
+              "Type": "int",
+              "Comment": "always -1"
+            },
+            {
+              "Name": "EndShopLineupParamRow",
+              "Type": "int",
+              "Comment": "always -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 47,
+          "Name": "ChangePlayerStat",
+          "OldNames": [
+            "ChangePlayerStats"
+          ],
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            },
+            {
+              "Name": "operation",
+              "Type": "enum",
+              "Enum": "ChangeType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 50,
+          "Name": "RequestSave",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 52,
+          "Name": "PlayerEquipmentQuantityChange",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "quantityChange",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 53,
+          "Name": "RequestUnlockTrophy",
+          "Args": [
+            {
+              "Name": "achievement",
+              "Type": "enum",
+              "Enum": "Trophy"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 57,
+          "Name": "ShuffleRNGSeed",
+          "Args": [
+            {
+              "Name": "maxValue",
+              "Type": "int",
+              "Comment": "valid values from 0-100"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 58,
+          "Name": "SetRNGSeed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 62,
+          "Name": "GiveSpEffectToPlayer",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 64,
+          "Name": "AddIzalithRankingPoints",
+          "Args": []
+        },
+        {
+          "Bank": 1,
+          "Id": 65,
+          "Name": "OpenItemAcquisitionMenu",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "numberAcquired",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 66,
+          "Name": "AcquireGesture",
+          "Args": [
+            {
+              "Name": "gestureId",
+              "Type": "int",
+              "Role": "Gesture"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 67,
+          "Name": "ForceCloseMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 68,
+          "Name": "SetTalkTime",
+          "Args": [
+            {
+              "Name": "time",
+              "Type": "float"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 71,
+          "Name": "ReportConversationEndToHavokBehavior",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 72,
+          "Name": "SetDungeonIndexNumber",
+          "OldNames": [
+            "SetDungeonIndexNumber"
+          ],
+          "Args": []
+        },
+        {
+          "Bank": 1,
+          "Id": 76,
+          "Name": "OpenConversationChoicesMenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 80,
+          "Name": "StopEventAnimWithoutForcingConversationEnd",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 81,
+          "Name": "OpenCharaMakeMenu",
+          "Args": []
+        },
+        {
+          "Bank": 1,
+          "Id": 82,
+          "Name": "OpenChooseQuantityDialog",
+          "Args": [
+            {
+              "Name": "goodsId",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 100,
+          "Name": "SetWorkValue",
+          "Args": [
+            {
+              "Name": "workValueIndex",
+              "Type": "int",
+              "Comment": "must be 0-3"
+            },
+            {
+              "Name": "valueToStore",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 101,
+          "Name": "UpdatePlayerRespawnPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 102,
+          "Name": "SetMessageTagValue",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            },
+            {
+              "Name": "cost",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 103,
+          "Name": "TurnCharacterToFaceEntity",
+          "Args": [
+            {
+              "Name": "animationId",
+              "Type": "int",
+              "Comment": "-1 for no animation"
+            },
+            {
+              "Name": "CharacterEntityId",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 104,
+          "Name": "AwardItemLot",
+          "OldNames": [
+            "GetItemFromItemLot"
+          ],
+          "Args": [
+            {
+              "Name": "itemLotParamRow",
+              "Type": "int",
+              "Role": "Lot"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 108,
+          "Name": "EstusAllocationUpdate",
+          "Args": [
+            {
+              "Name": "newFlaskCount",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 110,
+          "Name": "MainBonfireMenuFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 111,
+          "Name": "OpenTranspositionShop",
+          "Args": [
+            {
+              "Name": "StartShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            },
+            {
+              "Name": "EndShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 115,
+          "Name": "OpenBonfireMenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 116,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 117,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 118,
+          "Name": "RunMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 119,
+          "Name": "EndMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 120,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 121,
+          "Name": "EnableCharmHardships",
+          "Args": [
+            {
+              "Name": "isEnabled",
+              "Type": "bool"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 122,
+          "Name": "OpenScalesShop",
+          "Args": [
+            {
+              "Name": "unk"
+            },
+            {
+              "Name": "unk"
+            },
+            {
+              "Name": "unk"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 123,
+          "Name": "UpgradeProstheticsMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 124,
+          "Name": "OpenSkillMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 125,
+          "Name": "EquipNinjutsu",
+          "Args": [
+            {
+              "Name": "unk"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 126,
+          "Name": "ShowShopMessageAlt",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 127,
+          "Name": "OpenBonfireSubmenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 128,
+          "Name": "SetMenuDisableTime",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "float"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 129,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132,
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "GetWhetherEnemiesAreNearby",
+          "Args": [
+            {
+              "Name": "unk"
+            }
+          ],
+          "Returns": {
+            "Name": "enemiesAreNearby",
+            "Type": "bool"
+          },
+          "BinaryReturn": true
+        },
+        {
+          "Id": 1,
+          "Name": "GetDistanceToPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "horizontalDistance",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 3,
+          "Name": "CheckSelfDeath",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 5,
+          "Name": "IsAttackedBySomeone",
+          "Args": [],
+          "Returns": {
+            "Name": "attacked",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 6,
+          "Name": "GetSelfHP",
+          "Args": [],
+          "Returns": {
+            "Name": "selfHPValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 9,
+          "Name": "IsPlayerAttacking",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsAttacking",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 11,
+          "Name": "IsTalkInProgress",
+          "Args": [],
+          "Returns": {
+            "Name": "talkIsInProgress",
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 12,
+          "Name": "GetTalkInterruptReason",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 14,
+          "Name": "GetOneLineHelpStatus",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 15,
+          "Name": "GetEventFlag",
+          "OldNames": [
+            "GetEventStatus"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 19,
+          "Name": "IsClientPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsNotInOwnWorld",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 22,
+          "Name": "GetGenericDialogButtonResult",
+          "Args": [],
+          "Returns": {
+            "Name": "dialogResult",
+            "Type": "enum",
+            "Enum": "DialogResult"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 23,
+          "Name": "GetTalkListEntryResult",
+          "Args": [],
+          "Returns": {
+            "Name": "chosenTalkListSlot",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 25,
+          "Name": "IsMenuOpen",
+          "Args": [
+            {
+              "Name": "menu",
+              "Type": "enum",
+              "Enum": "MenuType"
+            }
+          ],
+          "Returns": {
+            "Name": "menuIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 26,
+          "Name": "IsCharacterDisabled",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsHidden",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 27,
+          "Name": "IsPlayerDead",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 29,
+          "Name": "GetStatus",
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            }
+          ],
+          "Returns": {
+            "Name": "statValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 30,
+          "Name": "IsPlayerMovingACertainDistance",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "float"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 31,
+          "Name": "IsTalkingToSomeoneElse",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsTalkingToSomeoneElse",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 33,
+          "Name": "HasPlayerBeenAttacked",
+          "Args": [],
+          "Returns": {
+            "Name": "playerAttacked",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 34,
+          "Name": "GetPlayerYDistance",
+          "Args": [],
+          "Returns": {
+            "Name": "verticalDistance",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 37,
+          "Name": "CompareBonfireState",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 38,
+          "Name": "CompareBonfireLevel",
+          "Args": [
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "level",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 45,
+          "Name": "ComparePlayerStat",
+          "OldNames": [
+            "ComparePlayerStatus"
+          ],
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 47,
+          "Name": "ComparePlayerInventoryNumber",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            },
+            {
+              "Name": "checkStorage",
+              "Type": "bool"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 50,
+          "Name": "CompareRNGValue",
+          "Args": [
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 51,
+          "Name": "WasWarpMenuDestinationSelected",
+          "Args": [],
+          "Returns": {
+            "Name": "warpDestinationSelected",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 52,
+          "Name": "IsMultiplayerInProgress",
+          "Args": [],
+          "Returns": {
+            "Name": "multiplayerIsInProgress",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 56,
+          "Name": "CheckActionButtonArea",
+          "Args": [
+            {
+              "Name": "actionButtonParamRow",
+              "Type": "int",
+              "Role": "ActionButton"
+            }
+          ],
+          "Returns": {
+            "Name": "actionButtonPressed",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 57,
+          "Name": "CheckSpecificPersonTalkHasEnded",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Returns": {
+            "Name": "conversationHasEnded",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 58,
+          "Name": "CheckSpecificPersonGenericDialogIsOpen",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "dialogIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 59,
+          "Name": "CheckSpecificPersonMenuIsOpen",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "-1 means no menu is open"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            }
+          ],
+          "Returns": {
+            "Name": "menuIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 60,
+          "Name": "DoesSelfHaveSpEffect",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "selfHasSpEffect",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 61,
+          "Name": "DoesPlayerHaveSpEffect",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "playerHasSpEffect",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 100,
+          "Name": "GetWorkValue",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            }
+          ],
+          "Returns": {
+            "Name": "storedValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 102,
+          "Name": "GetCurrentStateElapsedFrames",
+          "Args": [],
+          "Returns": {
+            "Name": "elapsedFrames",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 103,
+          "Name": "GetCurrentStateElapsedTime",
+          "Args": [],
+          "Returns": {
+            "Name": "elapsedTime",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 104,
+          "Name": "GetPlayerStat",
+          "OldNames": [
+            "GetPlayerStatus"
+          ],
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            }
+          ],
+          "Returns": {
+            "Name": "statValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 107,
+          "Name": "GetWhetherChrEventAnimHasEnded",
+          "Args": [
+            {
+              "Name": "CharacterEntityId",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "faceEntityAnimationHasEnded",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 108,
+          "Name": "GetItemHeldNumLimit",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            }
+          ],
+          "Returns": {
+            "Name": "itemCarryLimit",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 109,
+          "Name": "GetEstusAllocation",
+          "Args": [
+            {
+              "Name": "flaskToCheck",
+              "Type": "enum",
+              "Enum": "EstusType"
+            }
+          ],
+          "Returns": {
+            "Name": "numberAllocated",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 113,
+          "Args": [],
+          "Returns": {
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 114,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 116,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 117,
+          "Name": "GetMachineResult",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 118,
+          "Name": "MachineExists",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 119,
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 120,
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 121,
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 122,
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 123,
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 124,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 125,
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 126,
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 127,
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 128,
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        }
+      ],
+      "Enums": [
+        {
+          "Name": "ChangeType",
+          "Values": [
+            {
+              "Name": "Add"
+            },
+            {
+              "Value": 1,
+              "Name": "Subtract"
+            },
+            {
+              "Value": 2,
+              "Name": "Multiply"
+            },
+            {
+              "Value": 3,
+              "Name": "Divide"
+            },
+            {
+              "Value": 4,
+              "Name": "Modulus"
+            },
+            {
+              "Value": 5,
+              "Name": "Set"
+            }
+          ]
+        },
+        {
+          "Name": "CompareType",
+          "Values": [
+            {
+              "Name": "Equal"
+            },
+            {
+              "Value": 1,
+              "Name": "NotEqual"
+            },
+            {
+              "Value": 2,
+              "Name": "Greater"
+            },
+            {
+              "Value": 3,
+              "Name": "Less"
+            },
+            {
+              "Value": 4,
+              "Name": "GreaterOrEqual"
+            },
+            {
+              "Value": 5,
+              "Name": "LessOrEqual"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxStyle",
+          "Values": [
+            {
+              "Name": "OrnateNoOptions"
+            },
+            {
+              "Value": 1,
+              "Name": "DialogOptions"
+            },
+            {
+              "Value": 2,
+              "Name": "OrnateOptions"
+            },
+            {
+              "Value": 3,
+              "Name": "OrnateYesOption"
+            },
+            {
+              "Value": 4,
+              "Name": "Unk"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxType",
+          "Values": [
+            {
+              "Value": 1,
+              "Name": "CenterMiddleDimScreen1"
+            },
+            {
+              "Value": 2,
+              "Name": "CenterMiddleDimScreen2"
+            },
+            {
+              "Value": 7,
+              "Name": "CenterBottom1"
+            },
+            {
+              "Value": 8,
+              "Name": "CenterBottom2"
+            }
+          ]
+        },
+        {
+          "Name": "DialogResult",
+          "Values": [
+            {
+              "Name": "Cancel"
+            },
+            {
+              "Value": 1,
+              "Name": "Left"
+            },
+            {
+              "Value": 2,
+              "Name": "Right"
+            },
+            {
+              "Value": 3,
+              "Name": "Leave"
+            }
+          ]
+        },
+        {
+          "Name": "EstusType",
+          "Values": [
+            {
+              "Name": "HP"
+            },
+            {
+              "Value": 1,
+              "Name": "FP"
+            }
+          ]
+        },
+        {
+          "Name": "FlagState",
+          "Values": [
+            {
+              "Name": "Off"
+            },
+            {
+              "Value": 1,
+              "Name": "On"
+            }
+          ]
+        },
+        {
+          "Name": "ItemType",
+          "Values": [
+            {
+              "Name": "Weapon"
+            },
+            {
+              "Value": 1,
+              "Name": "Protector"
+            },
+            {
+              "Value": 2,
+              "Name": "Accessory"
+            },
+            {
+              "Value": 3,
+              "Name": "Goods"
+            }
+          ]
+        },
+        {
+          "Name": "MenuType",
+          "Values": [
+            {
+              "Value": 11,
+              "Name": "Talk"
+            },
+            {
+              "Value": 12,
+              "Name": "Repair"
+            },
+            {
+              "Value": 13,
+              "Name": "Reinforcement"
+            },
+            {
+              "Value": 23,
+              "Name": "LevelUp"
+            },
+            {
+              "Value": 25,
+              "Name": "Attunement"
+            },
+            {
+              "Value": 26,
+              "Name": "Storage"
+            },
+            {
+              "Value": 30,
+              "Name": "CharacterEdit"
+            },
+            {
+              "Value": 31,
+              "Name": "CovenantOffering"
+            },
+            {
+              "Value": 36,
+              "Name": "Warp"
+            },
+            {
+              "Value": 53,
+              "Name": "Unk"
+            },
+            {
+              "Value": 63,
+              "Name": "Bonfire"
+            }
+          ]
+        },
+        {
+          "Name": "PlayerStat",
+          "Values": [
+            {
+              "Name": "Vigor"
+            },
+            {
+              "Value": 1,
+              "Name": "Attunement"
+            },
+            {
+              "Value": 2,
+              "Name": "Endurance"
+            },
+            {
+              "Value": 3,
+              "Name": "Strength"
+            },
+            {
+              "Value": 4,
+              "Name": "Dexterity"
+            },
+            {
+              "Value": 5,
+              "Name": "Intelligence"
+            },
+            {
+              "Value": 6,
+              "Name": "Faith"
+            },
+            {
+              "Value": 7,
+              "Name": "Luck"
+            },
+            {
+              "Value": 8,
+              "Name": "SoulsCollected"
+            },
+            {
+              "Value": 9,
+              "Name": "TotalGetSouls"
+            },
+            {
+              "Value": 10,
+              "Name": "Humanity"
+            },
+            {
+              "Value": 11,
+              "Name": "CovenantType"
+            },
+            {
+              "Value": 12,
+              "Name": "Gender"
+            },
+            {
+              "Value": 15,
+              "Name": "EquippedCovenantPoints"
+            },
+            {
+              "Value": 16,
+              "Name": "EquippedCovenantLevel"
+            },
+            {
+              "Value": 17,
+              "Name": "BladeOfDarkmoonPoints"
+            },
+            {
+              "Value": 18,
+              "Name": "WarriorOfSunlightPoints"
+            },
+            {
+              "Value": 19,
+              "Name": "MoundMakersPoints"
+            },
+            {
+              "Value": 20,
+              "Name": "SpearsOfTheChurchPoints"
+            },
+            {
+              "Value": 21,
+              "Name": "RosariasFingersPoints"
+            },
+            {
+              "Value": 22,
+              "Name": "WatchdogsOfFarronPoints"
+            },
+            {
+              "Value": 23,
+              "Name": "AldrichFaithfulPoints"
+            },
+            {
+              "Value": 24,
+              "Name": "BladeOfDarkmoonLevel"
+            },
+            {
+              "Value": 25,
+              "Name": "WarriorOfSunlightLevel"
+            },
+            {
+              "Value": 26,
+              "Name": "MoundMakersLevel"
+            },
+            {
+              "Value": 27,
+              "Name": "SpearsOfTheChurchLevel"
+            },
+            {
+              "Value": 28,
+              "Name": "RosariasFingersLevel"
+            },
+            {
+              "Value": 29,
+              "Name": "WatchdogsOfFarronLevel"
+            },
+            {
+              "Value": 30,
+              "Name": "AldrichFaithfulLevel"
+            },
+            {
+              "Value": 31,
+              "Name": "Hollowing"
+            },
+            {
+              "Value": 32,
+              "Name": "HollowingCovenantLevel"
+            },
+            {
+              "Value": 33,
+              "Name": "SoulLevel"
+            },
+            {
+              "Value": 34,
+              "Name": "RemainingYoelLevels"
+            },
+            {
+              "Value": 35,
+              "Name": "WayOfBluePoints"
+            },
+            {
+              "Value": 36,
+              "Name": "WayOfBlueLevel"
+            },
+            {
+              "Value": 37,
+              "Name": "BlueSentinelsPoints"
+            },
+            {
+              "Value": 38,
+              "Name": "BlueSentinelsLevel"
+            }
+          ]
+        },
+        {
+          "Name": "TalkOptionsType",
+          "Values": [
+            {
+              "Name": "Old"
+            },
+            {
+              "Value": 1,
+              "Name": "Regular"
+            }
+          ]
+        },
+        {
+          "Name": "Trophy",
+          "Values": [
+            {
+              "Name": "AllAchievements"
+            },
+            {
+              "Value": 1,
+              "Name": "ManWithoutEqual"
+            },
+            {
+              "Value": 2,
+              "Name": "AshinaTraveler"
+            },
+            {
+              "Value": 3,
+              "Name": "MasterOfTheProsthetic"
+            },
+            {
+              "Value": 4,
+              "Name": "HeightOfTechnique"
+            },
+            {
+              "Value": 5,
+              "Name": "AllProstheticTools"
+            },
+            {
+              "Value": 6,
+              "Name": "AllNinjitsuTechniques"
+            },
+            {
+              "Value": 7,
+              "Name": "PeakPhysicalStrength"
+            },
+            {
+              "Value": 8,
+              "Name": "UltimateHealingGourd"
+            },
+            {
+              "Value": 9,
+              "Name": "ImmortalSeverance"
+            },
+            {
+              "Value": 10,
+              "Name": "Purification"
+            },
+            {
+              "Value": 11,
+              "Name": "DragonsHomecoming"
+            },
+            {
+              "Value": 12,
+              "Name": "Shura"
+            },
+            {
+              "Value": 13,
+              "Name": "SwordSaintIsshinAshina"
+            },
+            {
+              "Value": 14,
+              "Name": "MasterOfTheArts"
+            },
+            {
+              "Value": 15,
+              "Name": "LazulineUpgrade"
+            },
+            {
+              "Value": 16,
+              "Name": "ReveredBlade"
+            },
+            {
+              "Value": 17,
+              "Name": "ShinobiProsthetic"
+            },
+            {
+              "Value": 18,
+              "Name": "MemorialMob"
+            },
+            {
+              "Value": 19,
+              "Name": "Resurrection"
+            },
+            {
+              "Value": 20,
+              "Name": "GyoubuMasatakaOniwa"
+            },
+            {
+              "Value": 21,
+              "Name": "ThePhantomLadyButterfly"
+            },
+            {
+              "Value": 22,
+              "Name": "GenichiroAshina"
+            },
+            {
+              "Value": 23,
+              "Name": "GuardianApe"
+            },
+            {
+              "Value": 24,
+              "Name": "GuardianApeImmortalitySevered"
+            },
+            {
+              "Value": 25,
+              "Name": "FoldingScreenMonkeys"
+            },
+            {
+              "Value": 26,
+              "Name": "GreatShinobiOwl"
+            },
+            {
+              "Value": 27,
+              "Name": "FatherSurpassed"
+            },
+            {
+              "Value": 28,
+              "Name": "CorruptedMonk"
+            },
+            {
+              "Value": 29,
+              "Name": "GraciousGiftOfTears"
+            },
+            {
+              "Value": 30,
+              "Name": "IsshinAshina"
+            },
+            {
+              "Value": 31,
+              "Name": "DemonOfHatred"
+            },
+            {
+              "Value": 32,
+              "Name": "GreatSerpent"
+            },
+            {
+              "Value": 33,
+              "Name": "GreatColoredCarp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

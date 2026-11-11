@@ -1,0 +1,4377 @@
+{
+  "Game": "DS2",
+  "Source": "",
+  "Kinds": [
+    {
+      "Kind": "Event",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "GenerateRandomNumber",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130001,
+          "Name": "EndMachine",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130002,
+          "Name": "RestartMachine",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130003,
+          "Name": "ExecuteEvent",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130101,
+          "Name": "SetEventFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130121,
+          "Name": "SetAreaVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130122,
+          "Name": "SetGlobalVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130123,
+          "Name": "AddAreaVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130124,
+          "Name": "AddGlobalVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130131,
+          "Name": "SetEventFlagsInRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130301,
+          "Name": "BecomeInvincibleInCurrentState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130303,
+          "Name": "SetPlayerInvincible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130304,
+          "Name": "BecomeHostile",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130305,
+          "Name": "AttachCharacterToObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130306,
+          "Name": "DetachCharacterFromObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130307,
+          "Name": "DisablePlayerFallDamageOnce",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130308,
+          "Name": "DisableEnemyFallDamageOnce",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130309,
+          "Name": "SetHidePlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130310,
+          "Name": "ResetSinCounter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130317,
+          "Name": "SetHpRatioFromGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130331,
+          "Name": "ChangeLockOnParameter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130332,
+          "Name": "ResetLockOnParameter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130333,
+          "Name": "SetEnemySpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130334,
+          "Name": "SetPlayerSpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130335,
+          "Name": "ClearEnemySpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130341,
+          "Name": "RemovePlayerTorches",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130351,
+          "Name": "ResetDamageTakenCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130381,
+          "Name": "ChangePlayerCovenant",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130382,
+          "Name": "AddPlayerCovenantContribution",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130407,
+          "Name": "DeleteKeyGuideArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130408,
+          "Name": "CreateKeyGuideArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130431,
+          "Name": "KeyGuideTemporarilyInvalid",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130432,
+          "Name": "ProhibitInGameMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130441,
+          "Name": "DisplayOwnYesNoMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130443,
+          "Name": "DisplayOwnOkMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130445,
+          "Name": "DisplayYesNoMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130446,
+          "Name": "DisplayOkMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130447,
+          "Name": "DisplayEventMessage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130451,
+          "Name": "OpenCharacterCreationMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130452,
+          "Name": "OpenNameSettingMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130453,
+          "Name": "DisplayObeliskMessage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130454,
+          "Name": "DisplayObeliskDeathNumber",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130455,
+          "Name": "OpenRespecMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130461,
+          "Name": "OpenNpcMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130462,
+          "Name": "CloseNpcMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130463,
+          "Name": "ClearNpcMenuResults",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130464,
+          "Name": "ClearNpcMenuSelection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130465,
+          "Name": "ClearNpcMenuAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130471,
+          "Name": "OpenPresentationWindow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130481,
+          "Name": "DisplayMultiOptionMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130491,
+          "Name": "ShowGestureMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130493,
+          "Name": "OpenNetworkMessageMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130494,
+          "Name": "DisplayItemAwardFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130613,
+          "Name": "ProhibitMultiplayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130631,
+          "Name": "NotifyServerOfBellKeeperRinging",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130632,
+          "Name": "ClearBellKeeperRingingHistory",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130633,
+          "Name": "AddAwestoneRankingCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130641,
+          "Name": "WarpAndSyncRemoteCharacters",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130651,
+          "Name": "StartDuelMatch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130652,
+          "Name": "CancelDuelMatch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130702,
+          "Name": "ChangeDrawHit",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130721,
+          "Name": "SetSpecialDrawingMode",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130801,
+          "Name": "PlayCutscene",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130902,
+          "Name": "ChangeCameraParameters",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130903,
+          "Name": "ResetCameraParameters",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130912,
+          "Name": "ShakeCameraAroundPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130913,
+          "Name": "ShakeCameraGlobal",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130914,
+          "Name": "StopCameraVibration",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131111,
+          "Name": "EnableDamageArea",
+          "Args": [],
+          "Comment": "Meow",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131201,
+          "Name": "PlaySoundAtPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131202,
+          "Name": "StopSoundAtPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131220,
+          "Name": "PlayOneShotSoundFollowingListener",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131221,
+          "Name": "PlaySoundFollowingSelf",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131222,
+          "Name": "StopSoundFollowingSelf",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131223,
+          "Name": "PlaySoundFollowingGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131224,
+          "Name": "StopSoundFollowingGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131301,
+          "Name": "StartAreaTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131302,
+          "Name": "PauseAreaTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131303,
+          "Name": "RestartAreaTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131304,
+          "Name": "EndAreaTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131311,
+          "Name": "StartGlobalTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131312,
+          "Name": "SuspendGlobalTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131313,
+          "Name": "RestartGlobalTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131314,
+          "Name": "EndGlobalTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131401,
+          "Name": "ConsumeItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131402,
+          "Name": "AwardItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131411,
+          "Name": "ActivateObjItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131412,
+          "Name": "ResetObjItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131421,
+          "Name": "StrengthenEstus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131501,
+          "Name": "PlaySfxAtPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131502,
+          "Name": "StopSfxAtPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131503,
+          "Name": "PlayOneShotSfxAtPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131511,
+          "Name": "PlaySfxSelfGenerated",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131602,
+          "Name": "SetUnlockInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131613,
+          "Name": "DestroyObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131622,
+          "Name": "DisableWhiteDoorKeyGuide",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131635,
+          "Name": "ChangeOwnObjState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131636,
+          "Name": "ChangeObjState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131637,
+          "Name": "WarpObjToCharacter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131638,
+          "Name": "DisableObjKeyGuide",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131639,
+          "Name": "WarpObjToGeneratorPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131640,
+          "Name": "WarpObjToObjPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131641,
+          "Name": "AttachObjToObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131642,
+          "Name": "WarpObjToPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131643,
+          "Name": "DisableObjSfx",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131651,
+          "Name": "SetObjSync",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131652,
+          "Name": "InitializeObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131661,
+          "Name": "SetObjPhantomParameters",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131702,
+          "Name": "OverrideGeneratorStartupState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131703,
+          "Name": "OverrideGeneratorStartPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131704,
+          "Name": "OverrideGeneratorStartPositionAndWarpGenerated",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131711,
+          "Name": "ForceGenerationFromPointBasedOnPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131712,
+          "Name": "ForceGenerationFromPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131713,
+          "Name": "ForceRandomGeneration",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131714,
+          "Name": "ForceGenerationFromPointBasedOnPositionAndCameraOfAllUsers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131721,
+          "Name": "DeleteEnemyByGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131722,
+          "Name": "DeleteEnemyByGeneratorGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131731,
+          "Name": "PauseEnemy",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131732,
+          "Name": "PauseEnemyGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131741,
+          "Name": "GenerateNpcPhantom",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131742,
+          "Name": "DeleteNpcPhantom",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131821,
+          "Name": "AttachBulletToTheEnemy",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131831,
+          "Name": "SetDamageImmunityByCharacterId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 131832,
+          "Name": "SetDamageImmunityByGeneratorId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132001,
+          "Name": "StartConversation",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132002,
+          "Name": "CancelConversation",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132004,
+          "Name": "ShowYesNoSelection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132101,
+          "Name": "SetPointLightEnabled",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132113,
+          "Name": "SetWindSpeedMultiplier",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132121,
+          "Name": "WarpPlayersWithinMap",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132125,
+          "Name": "PlayCutsceneAndWarpToMap",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132131,
+          "Name": "AddNavimeshAttribute",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132132,
+          "Name": "DeleteNavimeshAttribute",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132141,
+          "Name": "SetRespawnPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132151,
+          "Name": "ChangeHitBrightnessSetting",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132152,
+          "Name": "ChangeMapAreaBrightnessSetting",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132153,
+          "Name": "SetHitEnabled",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132154,
+          "Name": "SetMapPartDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132155,
+          "Name": "PushFogFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132156,
+          "Name": "PopFogFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132157,
+          "Name": "PushParallelLightFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132158,
+          "Name": "PopParallelLightFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132159,
+          "Name": "PushVolumeFogFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132160,
+          "Name": "PopVolumeFogFilter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132161,
+          "Name": "SetGroundMaterial",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132166,
+          "Name": "FilterConditionRegistration",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132201,
+          "Name": "StartBossFight",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132202,
+          "Name": "EndBossFight",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132203,
+          "Name": "DisplayBossHpBar",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132204,
+          "Name": "CancelBossFight",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132211,
+          "Name": "AddSouls",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132212,
+          "Name": "ObtainSoulsFromPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132213,
+          "Name": "AddSoulAcquisitionTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132231,
+          "Name": "GenerateObjFromCharacter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132241,
+          "Name": "SaveExecution",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132242,
+          "Name": "DisableAutoSave",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132243,
+          "Name": "ProhibitPlayerOperation",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132251,
+          "Name": "RollCredits",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132261,
+          "Name": "AwardTrophy",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132301,
+          "Name": "PlayerActionRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132303,
+          "Name": "EndPlayerActionRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132305,
+          "Name": "ObjAnimationPlayerControlRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132311,
+          "Name": "EnemyActionRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132321,
+          "Name": "ForceDisablePlayerAnimationCancelling",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132331,
+          "Name": "PlayerDeathRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140001,
+          "Name": "SetConditionGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140021,
+          "Name": "SetConditionGroupTrue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140031,
+          "Name": "IsPlayerAnActor",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140032,
+          "Name": "DoesActorExist",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140101,
+          "Name": "CompareChrPlayerDistance",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140111,
+          "Name": "IsChrDead",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140112,
+          "Name": "IsChrMaxRespawnCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140113,
+          "Name": "IsChrDeadOrRespawnOver",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140121,
+          "Name": "CompareChrHpRatio",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140122,
+          "Name": "CompareChrHpValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140123,
+          "Name": "IsChrPartDead",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140126,
+          "Name": "ComparePlayerHpDecrease",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140131,
+          "Name": "IsChrInsidePoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140132,
+          "Name": "IsPlayerInsidePoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140141,
+          "Name": "IsChrSearched",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140151,
+          "Name": "IsPlayerPlayingMotion",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140152,
+          "Name": "CompareChrStartUpState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140153,
+          "Name": "IsPlayerUsingTorch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140154,
+          "Name": "IsPlayerHollow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140155,
+          "Name": "DoesPlayerEventAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140156,
+          "Name": "IsPlayerDamaged",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140157,
+          "Name": "ComparePlayerFallTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140161,
+          "Name": "IsPlayerInCovenant",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140163,
+          "Name": "ComparePlayerSinLevel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140171,
+          "Name": "CompareChrEzStateValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140181,
+          "Name": "ChrHasSpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140191,
+          "Name": "IsChrActive",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140192,
+          "Name": "CompareActiveChrNum",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140201,
+          "Name": "CompareObjState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140202,
+          "Name": "IsObjBroken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140203,
+          "Name": "IsObjDamaged",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140205,
+          "Name": "IsObjSearched",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140206,
+          "Name": "CompareObjBreakNum",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140207,
+          "Name": "CheckObjHeardSound",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140208,
+          "Name": "CompareObjPlayerDistance",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140209,
+          "Name": "IsObjActive",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140301,
+          "Name": "CompareEventFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140311,
+          "Name": "CompareEventFlagValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140321,
+          "Name": "CompareEventFlagValueId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140401,
+          "Name": "IsPlayerOnHitGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140402,
+          "Name": "IsPlayerInTheMap",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140403,
+          "Name": "IsMapReadAndBackreadStable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140405,
+          "Name": "CompareHowManyCharactersOnHitGroupAreHostileOrFriendly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140406,
+          "Name": "IsPlayerInMultiplayerSection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140501,
+          "Name": "CompareEventStatus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140511,
+          "Name": "CompareStateTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140512,
+          "Name": "CompareGlobalTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140513,
+          "Name": "CompareAreaTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140521,
+          "Name": "IsEventBossBattle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140522,
+          "Name": "IsEventBossKill",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140523,
+          "Name": "CompareEventBossHpRatio",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140531,
+          "Name": "CompareEventRandValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140601,
+          "Name": "IsMultiplayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140602,
+          "Name": "IsHost",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140611,
+          "Name": "IsBellKeeperRingingHistoryCleared",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140621,
+          "Name": "IsDuelStartPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140622,
+          "Name": "HasDuelMatched",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140623,
+          "Name": "IsDuelMatching",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140631,
+          "Name": "CompareMultiplayerPlayerCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140641,
+          "Name": "HasNpcPhantomSpawned",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140651,
+          "Name": "IsHostDead",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140661,
+          "Name": "IsBoneOfOrderAvailable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140671,
+          "Name": "IsOffline",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140702,
+          "Name": "CompareCumulativeSouls",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140711,
+          "Name": "CompareGameCycleForBonfire",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140721,
+          "Name": "IsGraveGeneratable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140731,
+          "Name": "IsGameSaving",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140801,
+          "Name": "DoesPlayerHaveItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140802,
+          "Name": "IsItemEquipped",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140803,
+          "Name": "IsItemLeft",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140811,
+          "Name": "WasObjItemAcquired",
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Id": 1,
+          "Name": "GetRandomValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 3,
+          "Name": "GetStateTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 4,
+          "Name": "GetRandomValueForStateTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6,
+          "Name": "GetEventFlag",
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Id": 130001,
+          "Name": "ClampInt",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130031,
+          "Name": "EventEnded",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130121,
+          "Name": "GetAreaVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130122,
+          "Name": "GetGlobalVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130201,
+          "Name": "DistanceFromPlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130301,
+          "Name": "HpValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130302,
+          "Name": "HpRatio",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130304,
+          "Name": "GetPlayerStat",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130307,
+          "Name": "GetPlayerHollowState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130308,
+          "Name": "GetPlayerDeathCountByPhantomType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130310,
+          "Name": "IsBodyPartDestroyed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130311,
+          "Name": "NumberOfTimesDamaged",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130321,
+          "Name": "KilledPlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130341,
+          "Name": "PlayerIsInEventAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130351,
+          "Name": "GetCurrentActivationState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130361,
+          "Name": "GetPlayerCovenant",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130362,
+          "Name": "GetPlayerCovenantLevel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130364,
+          "Name": "GetPlayerSinnerCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130371,
+          "Name": "CompareOwnEzStateFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130412,
+          "Name": "ItemAwardDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130413,
+          "Name": "ItemAwardFailureDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130421,
+          "Name": "YesNoMenuResult",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130422,
+          "Name": "YesNoMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130423,
+          "Name": "MultiOptionMenuResult",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130431,
+          "Name": "OkMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130432,
+          "Name": "EventMessageDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130434,
+          "Name": "RespecMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130441,
+          "Name": "CharacterCreationMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130442,
+          "Name": "NameSettingMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130451,
+          "Name": "NpcMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130452,
+          "Name": "NpcMenuResult",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130453,
+          "Name": "NpcMenuUsageResult",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130471,
+          "Name": "GestureMenuDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130481,
+          "Name": "PresentationWindowDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130491,
+          "Name": "CrowExhangePossibleDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130602,
+          "Name": "IsGuest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130621,
+          "Name": "ComparePlayerPhantom",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130641,
+          "Name": "TotalInvasionCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130642,
+          "Name": "PhantomMultiplayerCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130661,
+          "Name": "MultiplayerComparison",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130681,
+          "Name": "IsOffline",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 130801,
+          "Name": "CutscenePlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131001,
+          "Name": "GetCommonEventParamInt",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131002,
+          "Name": "GetCommonEventParamDecimal",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131101,
+          "Name": "PlayerInPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131105,
+          "Name": "GetPointCloseToCharacter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131201,
+          "Name": "LastOneShotBgmIsPlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131311,
+          "Name": "GetGlobalTimerTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131401,
+          "Name": "ItemCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131402,
+          "Name": "CanGetItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131403,
+          "Name": "EquippedItemCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131411,
+          "Name": "ObjItemAcquired",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131421,
+          "Name": "EstusAtMaxStrength",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131431,
+          "Name": "CanGetItemLot",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131611,
+          "Name": "DoorOpen",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131652,
+          "Name": "CompareOwnObjStateId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131653,
+          "Name": "CompareObjStateId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 131711,
+          "Name": "GeneratorOperationOngoing",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132002,
+          "Name": "ConversationEnded",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132003,
+          "Name": "ConversationRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132005,
+          "Name": "CompareConversationResult",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132101,
+          "Name": "CutsceneWarpEnded",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 132111,
+          "Name": "GetFogFilterOverride",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132112,
+          "Name": "GetParallelLightFilterOverride",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132113,
+          "Name": "GetVolumeFogFilterOverride",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132121,
+          "Name": "CompareHowManyCharactersOnHitGroupAreHostileOrFriendly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132201,
+          "Name": "BossBattleOngoing",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132202,
+          "Name": "InGame",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132211,
+          "Name": "CurrentSouls",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132213,
+          "Name": "PardonSoulsRequired",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132241,
+          "Name": "GetGameCycle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132243,
+          "Name": "GetBonfireAsceticCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132244,
+          "Name": "GetGameCycleForBonfire",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132251,
+          "Name": "NpcInfoValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132252,
+          "Name": "NpcParamTextId",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132262,
+          "Name": "GraveSoulsRequired",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 132271,
+          "Name": "JumpButtonL3Enabled",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 140001,
+          "Name": "ConditionGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 140002,
+          "Name": "HostConditionGroup",
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Enums": []
+    },
+    {
+      "Kind": "AI",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "GenerateRandomNumber",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 2,
+          "Name": "StartTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 3,
+          "Name": "ResetTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 4,
+          "Name": "StopTimer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 90,
+          "Name": "LogDebug",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 91,
+          "Name": "LogDebugTicker",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 93,
+          "Name": "CreateDebugPopcorn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 95,
+          "Name": "LogDebugWith3Floats",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5204,
+          "Name": "MeleeAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5205,
+          "Name": "EndNonCombatAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5206,
+          "Name": "Defend",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5207,
+          "Name": "CancelAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5208,
+          "Name": "CancelComboAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5210,
+          "Name": "SwitchWeapons",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5220,
+          "Name": "RandomEvasion",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5221,
+          "Name": "RandomEvasionAtAngle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5230,
+          "Name": "SetDamageLowRankLogicReset",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5231,
+          "Name": "ResetDamageInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5232,
+          "Name": "ResetAttackFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5233,
+          "Name": "ResetDamageTypeCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5234,
+          "Name": "SetPermanentDamageType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5235,
+          "Name": "CancelBladeDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5236,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5250,
+          "Name": "UseObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5251,
+          "Name": "LeaveObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5253,
+          "Name": "UseObjFromNavmesh",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5254,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5260,
+          "Name": "EnableInvincibility",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5261,
+          "Name": "DisableDamage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5262,
+          "Name": "DisableInvincibilityEnableDamage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5265,
+          "Name": "CreateSfx",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5270,
+          "Name": "StandJump",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5271,
+          "Name": "CancelStartupState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5272,
+          "Name": "ClearStartupStateResetFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5280,
+          "Name": "EndBossSpecialAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5281,
+          "Name": "SetSpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5282,
+          "Name": "ClearSpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5283,
+          "Name": "SetMirrorKnightSummon",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5290,
+          "Name": "ClimbLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5291,
+          "Name": "ClimbLadderQuickly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5298,
+          "Name": "BeginWhiteGatePassageCheck",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5300,
+          "Name": "SetSharedFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5301,
+          "Name": "ChangeSubStateID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5302,
+          "Name": "RequestCrystalLizardFleeing",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5303,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5304,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5400,
+          "Name": "SetMovementPredictionAccuracy",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5405,
+          "Name": "RandomMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5406,
+          "Name": "NavmeshMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5408,
+          "Name": "MovementToAssistedWorldPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5420,
+          "Name": "ResetMovementFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5421,
+          "Name": "DisableMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5435,
+          "Name": "RandomDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5436,
+          "Name": "NavmeshDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5438,
+          "Name": "DashToAssistedWorldPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5465,
+          "Name": "RandomHorizontalMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5466,
+          "Name": "NavmeshHorizontalMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5468,
+          "Name": "HorizontalMovementToAssistedWorldPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5469,
+          "Name": "HorizontalMovementToNavmeshCenter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5470,
+          "Name": "HorizontalMovementToNextNavmeshCenterInRoute",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5471,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5490,
+          "Name": "Rise",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5491,
+          "Name": "Descend",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5505,
+          "Name": "RandomLockMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5506,
+          "Name": "NavmeshLockMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5508,
+          "Name": "LockMovementToAssistedPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5535,
+          "Name": "RandomLockDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5536,
+          "Name": "NavmeshLockDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5538,
+          "Name": "LockDashToAssistedPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5565,
+          "Name": "RandomHorizontalLockMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5566,
+          "Name": "NavmeshHorizontalLockMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5568,
+          "Name": "HorizontalLockMovementToAssistedPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5569,
+          "Name": "HorizontalLockMovementToAssistedWorldPositionOfTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5570,
+          "Name": "RandomHorizontalLockMovementInDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5600,
+          "Name": "Warp",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5601,
+          "Name": "WarpGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5602,
+          "Name": "WarpTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5604,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5631,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5700,
+          "Name": "SetGroupFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5701,
+          "Name": "FollowOffsetPositionFromGroupLeader",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5702,
+          "Name": "SetGroupMemberOffsetPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5703,
+          "Name": "BecomeGroupLeader",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5750,
+          "Name": "SetPlatoonFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5751,
+          "Name": "SetPlatoonWeightMultiplier",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5800,
+          "Name": "SearchNavmesh",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5801,
+          "Name": "SearchNavmeshToGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5803,
+          "Name": "SearchNavmeshToNavPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5804,
+          "Name": "SearchNavmeshToGenNavPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5805,
+          "Name": "OverwriteGeneratorPositionToCurrentPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5806,
+          "Name": "SearchNavmeshToObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5807,
+          "Name": "SearchNavmeshToHeardSound",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5808,
+          "Name": "DebugSearchNavmeshToClickedPoint",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5809,
+          "Name": "DebugSearchNavGraphTestRoute",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5810,
+          "Name": "SearchNavmeshAtOffsetFromGroupLeader",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5811,
+          "Name": "DebugSearchNavGraphTestRouteToEnd",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5812,
+          "Name": "SearchNavmeshToNearbyGate",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5820,
+          "Name": "SetNavmeshRouteSearch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5821,
+          "Name": "SetEffectiveShortNavmeshSearchSize",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5900,
+          "Name": "QuickTurnInDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5901,
+          "Name": "TurnInPlaceLock",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5902,
+          "Name": "TurnInPlaceNavmeshDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5903,
+          "Name": "QuickTurnLock",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5904,
+          "Name": "QuickTurnNavmeshDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5905,
+          "Name": "QuickTurnSoundDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5906,
+          "Name": "QuickTurnGeneratorDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5999,
+          "Name": "RequestDeath",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6000,
+          "Name": "NpcAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6001,
+          "Name": "NpcSwitchEquipment",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6002,
+          "Name": "NpcUseSpell",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6003,
+          "Name": "NpcChangeWeaponHolding",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6004,
+          "Name": "NpcUseItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6005,
+          "Name": "NpcUseGesture",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7000,
+          "Name": "SetCharacterTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7001,
+          "Name": "SetObjectTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7002,
+          "Name": "SetGeneratorTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7003,
+          "Name": "SetMovementAreaTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7004,
+          "Name": "SetAttackerTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7005,
+          "Name": "SetNavPointTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7006,
+          "Name": "SetGenMovementAreaTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7007,
+          "Name": "SetGenNavPointTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7008,
+          "Name": "SetGroupAttackerTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7009,
+          "Name": "ClearTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7010,
+          "Name": "SaveTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7011,
+          "Name": "LoadTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7012,
+          "Name": "SetTargetToPlayerUpdatingYou",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7013,
+          "Name": "SetNpcTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7014,
+          "Name": "SetWhiteDoorTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7015,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7050,
+          "Name": "OverwriteLastSightInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7051,
+          "Name": "EraseLastSightInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7060,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7301,
+          "Name": "LockOn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7302,
+          "Name": "LockOff",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7303,
+          "Name": "LockList",
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Id": 1,
+          "Name": "GetRandomValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 2,
+          "Name": "GetTimerValue",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 3,
+          "Name": "GetStateTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 4,
+          "Name": "GetRandomValueForStateTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6,
+          "Name": "GetEventFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5000,
+          "Name": "ReadyToAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5001,
+          "Name": "IsUnderAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5002,
+          "Name": "InNonCombatAction",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5003,
+          "Name": "IsAvoiding",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5004,
+          "Name": "IsDefending",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5005,
+          "Name": "IsDamaged",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5006,
+          "Name": "IsAttacking",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5007,
+          "Name": "IsBeingThrown",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5008,
+          "Name": "GetCurrentComboCount",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5009,
+          "Name": "GetNumberOfDamageTypes",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5010,
+          "Name": "GetAttackFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5011,
+          "Name": "IsWaiting",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5012,
+          "Name": "IsFasterThanWalkingSpeed",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5013,
+          "Name": "DuringBladeDash",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5014,
+          "Name": "AreSpellsProhibited",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5015,
+          "Name": "ShouldChase",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5017,
+          "Name": "GetPursuitActionDistance",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5018,
+          "Name": "ShouldAttackBehind",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5021,
+          "Name": "CanUseRecoveryItems",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5022,
+          "Name": "GetAvoidanceType",
+          "Args": [],
+          "Comment": "1/2 is step, 3 is roll",
+          "Seen": true
+        },
+        {
+          "Id": 5023,
+          "Name": "IsStunned",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5024,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5050,
+          "Name": "CheckTargetStatus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5051,
+          "Name": "DistanceFromAssistedPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5052,
+          "Name": "CheckBulletTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5053,
+          "Name": "ConfirmReservedAssistedMovement",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5054,
+          "Name": "CompareOwnStatus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5060,
+          "Name": "UsingObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5061,
+          "Name": "ObjInUse",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5062,
+          "Name": "SomeoneUsingObj",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5063,
+          "Name": "ObjUseFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5064,
+          "Name": "IsJumping",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5065,
+          "Name": "InStartupState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5066,
+          "Name": "IsBossSpecialAction",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5067,
+          "Name": "IsBossSpecialActionOver",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5068,
+          "Name": "GetObjType",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5069,
+          "Name": "IsObjDestroyed",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5070,
+          "Name": "IsOnlooker",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5071,
+          "Name": "IsStartupStateReset",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5072,
+          "Name": "HasSpEffect",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5073,
+          "Name": "GetOnlookerLevel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5074,
+          "Name": "GetPlatoonFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5075,
+          "Name": "GetMemberCountOfPlatoonFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5077,
+          "Name": "GetStartStateID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5078,
+          "Name": "IsMirrorKnightPhantomReady",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5079,
+          "Name": "CanSummonMirrorKnightNpc",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5080,
+          "Name": "IsInCamera",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5081,
+          "Name": "IsVisibleComposite",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5082,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5090,
+          "Name": "GetActionPriority",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5091,
+          "Name": "IsActionPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5092,
+          "Name": "IsInContactWithTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5093,
+          "Name": "CanThrowTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5094,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5100,
+          "Name": "GetEquippedWeapon",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5101,
+          "Name": "GetActionLapTimeMultiplier",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5102,
+          "Name": "GetWeaponDestruction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5103,
+          "Name": "IsTragetWeaponLongRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5104,
+          "Name": "CanUseEquippedWeapon",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5105,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5200,
+          "Name": "GetHP",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5201,
+          "Name": "GetDamageTaken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5202,
+          "Name": "PerformedResetFromDamageTaken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5203,
+          "Name": "IsAttackingOpponentAPlayerCamp",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5204,
+          "Name": "GuardSuccess",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5205,
+          "Name": "WasCaught",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5206,
+          "Name": "InABrightPlace",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5207,
+          "Name": "IsPartDestroyed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5208,
+          "Name": "GetLogicLevel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5209,
+          "Name": "GetAbsoluteHpValue",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5210,
+          "Name": "GetPartHp",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5211,
+          "Name": "PartDamageTaken",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5212,
+          "Name": "ObjDamageTaken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5213,
+          "Name": "MapDamageTaken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5214,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5310,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5600,
+          "Name": "GetRouteSearchStatus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5602,
+          "Name": "IsRouteSearchSuccessful",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5603,
+          "Name": "DistanceFromRouteEndpoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5604,
+          "Name": "AngleToNextPathPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5605,
+          "Name": "IsTargetAtRouteEndpoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5606,
+          "Name": "GetClickPointUpdate",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5607,
+          "Name": "DistanceToNextRoutePoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5608,
+          "Name": "VerticalDistanceToNextRoutePoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5620,
+          "Name": "GetMovementFailure",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5621,
+          "Name": "IsGrounded",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5622,
+          "Name": "IsDoingQuickTurn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5630,
+          "Name": "WithinForcedReturnArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5640,
+          "Name": "ObjectNeededToMove",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5641,
+          "Name": "LadderClimbNeededToMove",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5642,
+          "Name": "LadderDismountNeededToMove",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5643,
+          "Name": "OnNavmesh",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5644,
+          "Name": "DistanceFromNavmeshCenter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5645,
+          "Name": "DistanceToNextNavmeshCenter",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5646,
+          "Name": "NeedToGetOffWallToMove",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5647,
+          "Name": "IsSomeoneAboveOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5648,
+          "Name": "IsSomeoneBelowOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5650,
+          "Name": "ShouldWarp",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5660,
+          "Name": "GetReturnExtensionRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5661,
+          "Name": "GetReturnMethod",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5662,
+          "Name": "RetreatDistanceWhenReturning",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5663,
+          "Name": "RetreatTimeWhenReturning",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5664,
+          "Name": "CheckSoundOnReturn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5700,
+          "Name": "GetGroupFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5701,
+          "Name": "DistanceFromGroupOffsetPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5702,
+          "Name": "GroupMemberNumber",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5703,
+          "Name": "GroupSize",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5704,
+          "Name": "VerticalDistanceFromGroupOffsetPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5705,
+          "Name": "IsAnyChrAttackingTheGroup",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5706,
+          "Name": "GetNumberOfPeopleWithSharedFlagSet",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5707,
+          "Name": "DistanceToGroupMember",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5708,
+          "Name": "AngleToGroupMember",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5709,
+          "Name": "DistanceToAllGroupMembers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5710,
+          "Name": "AngleToAllGroupMembers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5711,
+          "Name": "AngleRangeToGroupMember",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5712,
+          "Name": "AngleRangeToAllGroupMembers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5713,
+          "Name": "HaveGroupMembersBeenAttackedByPlayers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5900,
+          "Name": "GetSharedFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5901,
+          "Name": "GetSubStateID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5902,
+          "Name": "GetNpcActionID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5903,
+          "Name": "GetGenEventFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5904,
+          "Name": "GetItemCount",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5905,
+          "Name": "IsPlayerUsingBonfire",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5908,
+          "Name": "GetGenWaitTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5909,
+          "Name": "CheckGenEventFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5910,
+          "Name": "DuringBossBattle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5911,
+          "Name": "IsNpcConversationOver",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5912,
+          "Name": "DuringNpcConversation",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 5913,
+          "Name": "GetEventVariable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6000,
+          "Name": "NpcReadyToAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6001,
+          "Name": "GetNpcEquipmentSlot",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6002,
+          "Name": "NpcEquipmentCanCastSpells",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 6003,
+          "Name": "NpcCanCastSpells",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6004,
+          "Name": "HowIsNpcHoldingWeapon",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6005,
+          "Name": "IsUsingItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6006,
+          "Name": "IsUsingGesture",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6007,
+          "Name": "IsItemEquipped",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 6008,
+          "Name": "GetNpcWeaponCategory",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7001,
+          "Name": "DistanceToTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7002,
+          "Name": "AngleToTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7003,
+          "Name": "TargetInAngleRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7004,
+          "Name": "TargetInUpDownLeftRightAngleRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7005,
+          "Name": "AngleFromTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7006,
+          "Name": "HorizontalDistanceFromTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7007,
+          "Name": "VerticalDistanceFromTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7008,
+          "Name": "GetTargetHP",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7009,
+          "Name": "DistanceBetweenTargetAndDummyPoly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7010,
+          "Name": "DistanceToGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7011,
+          "Name": "GenDistanceToGenerator",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7012,
+          "Name": "AngleBetweenTargetAndDummyPoly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7013,
+          "Name": "InAngleRangeFromTarget",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7014,
+          "Name": "IsTargetInBrightArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7015,
+          "Name": "GenDistanceToGeneratorPercent",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7016,
+          "Name": "HorizontalDistanceBetweenTargetAndOffset",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7017,
+          "Name": "HorizontalAngleOfTargetAndOffset",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7018,
+          "Name": "CheckDistanceFromFutureTargetPosition",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7020,
+          "Name": "CheckDistanceToPlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7021,
+          "Name": "DistanceBetweenPlayerAndDummyPoly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7022,
+          "Name": "AngleBetweenPlayerAndDummyPoly",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7023,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7061,
+          "Name": "IsTargetInNoGoZone",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7062,
+          "Name": "IsTargetInGenExclusionZone",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7070,
+          "Name": "DistanceToMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7071,
+          "Name": "DistanceBetweenPlayerAndMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7072,
+          "Name": "DistanceToNavPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7073,
+          "Name": "DistanceToGenNavPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7074,
+          "Name": "InLockInhibitedArea",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 7075,
+          "Name": "DistanceBetweenTargetAndMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7080,
+          "Name": "AnyObstaclesToGoal",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7081,
+          "Name": "AnyObstaclesToMovement",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7082,
+          "Name": "WallInFront",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7083,
+          "Name": "ObjectInFront",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7084,
+          "Name": "WallInFront2",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7085,
+          "Name": "ObjectInFront2",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7086,
+          "Name": "SearchFailed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7087,
+          "Name": "IsPressed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7090,
+          "Name": "DistanceToGenMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7091,
+          "Name": "DistanceBetweenPlayerAndGenMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7092,
+          "Name": "GenMovementAreaExists",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7093,
+          "Name": "DistanceBetweenTargetAndGenMovementArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7094,
+          "Name": "DistanceToGenReturnArea",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7095,
+          "Name": "IsFrontTouchingWall",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7100,
+          "Name": "InTorchOrNot",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7101,
+          "Name": "IsWithinTorchRange",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7110,
+          "Name": "GetNumberOfPlayers",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7120,
+          "Name": "LineOfSightBlockedForPeriod",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7200,
+          "Name": "CheckIfSameLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7201,
+          "Name": "CheckIfAboveOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7202,
+          "Name": "CheckIfBelowOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7300,
+          "Name": "AreGoalsSet",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7301,
+          "Name": "GoalType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7302,
+          "Name": "LockedOnOrNot",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7303,
+          "Name": "HasSearchCompleted",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7304,
+          "Name": "WasLockedOn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7305,
+          "Name": "ExistsLastSightingInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7306,
+          "Name": "IsOnLockList",
+          "Args": [],
+          "Comment": "Unused",
+          "Seen": true
+        },
+        {
+          "Id": 7310,
+          "Name": "IsGoalWithinSight",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7320,
+          "Name": "HeardSound",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7321,
+          "Name": "GetHeardSoundHorizontalAngle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7331,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7800,
+          "Name": "ShouldGoToWhiteDoor",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 7801,
+          "Name": "ParticipatedInBossBattle",
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Enums": []
+    }
+  ]
+}

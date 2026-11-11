@@ -35,7 +35,20 @@ namespace SoulsFormats
         public Dictionary<long, Dictionary<long, State>> StateGroups;
 
         /// <summary>
-        /// Creates a new ESD formatted for DS1 with no state groups. 
+        /// Alignment the file's end is padded to, or 0 for none. Vanilla files of every game end right after the data,
+        /// except DS2/SotFS, which pad to 16. Set on read: 16 when the file had padding, else 0.
+        /// Note: the write order of groups and states is the order of <see cref="StateGroups"/> (as read), not sorted.
+        /// </summary>
+        public int EndAlignment;
+
+        /// <summary>
+        /// The padding bytes as read. DS2 fills them with leftover memory, so they're kept and written back when the
+        /// data still needs the same amount of padding; otherwise zeros are written.
+        /// </summary>
+        public byte[] Padding;
+
+        /// <summary>
+        /// Creates a new ESD formatted for DS1 with no state groups.
         /// </summary>
         public ESD() : this(false, 1) { }
 
@@ -162,6 +175,10 @@ namespace SoulsFormats
 
             if (states.Count > 0)
                 throw new FormatException("Orphaned states found.");
+
+            long dataEnd = dataStart + dataSize;
+            Padding = dataEnd < br.Length ? br.GetBytes(dataEnd, (int)(br.Length - dataEnd)) : Array.Empty<byte>();
+            EndAlignment = Padding.Length > 0 ? 0x10 : 0;
         }
 
         /// <summary>
@@ -219,12 +236,10 @@ namespace SoulsFormats
 
             // Collect and sort all the IDs so everything is definitely in the same order everywhere
             List<long> stateGroupIDs = StateGroups.Keys.ToList();
-            stateGroupIDs.Sort();
             var stateIDs = new Dictionary<long, List<long>>();
             foreach (long groupID in stateGroupIDs)
             {
                 stateIDs[groupID] = StateGroups[groupID].Keys.ToList();
-                stateIDs[groupID].Sort();
             }
 
             if (StateGroups.Count == 0)
@@ -263,43 +278,36 @@ namespace SoulsFormats
                 }
             }
 
-            // Make a list of every unique condition
-            var conditions = new Dictionary<long, List<Condition>>();
+            // Make a list of every unique condition, in FromSoftware's order: breadth first over the whole file. First
+            // every state's own conditions (group by group, state by state), then the subconditions of each listed
+            // condition in turn. A condition reached twice is listed once, under the group and state (Root: the state's
+            // position in write order) that reached it first.
+            var conditions = new List<(long Group, Condition Cond, int Root, int Level)>();
+            var listed = new HashSet<Condition>(ReferenceEqualityComparer.Instance);
+            int stateOrdinal = 0;
             foreach (long groupID in stateGroupIDs)
-            {
-                conditions[groupID] = new List<Condition>();
-                void addCondition(Condition cond)
+                foreach (long stateID in stateIDs[groupID])
                 {
-                    if (!conditions[groupID].Any(c => ReferenceEquals(cond, c)))
-                    {
-                        conditions[groupID].Add(cond);
-                        foreach (Condition subCond in cond.Subconditions)
-                            addCondition(subCond);
-                    }
+                    foreach (Condition cond in StateGroups[groupID][stateID].Conditions)
+                        if (listed.Add(cond))
+                            conditions.Add((groupID, cond, stateOrdinal, 0));
+                    stateOrdinal++;
                 }
-
-                foreach (State state in StateGroups[groupID].Values)
-                {
-                    foreach (Condition cond in state.Conditions)
-                    {
-                        addCondition(cond);
-                    }
-                }
-            }
-            bw.FillInt32("ConditionCount", conditions.Values.Sum(group => group.Count));
+            for (int i = 0; i < conditions.Count; i++)
+                foreach (Condition subCond in conditions[i].Cond.Subconditions)
+                    if (listed.Add(subCond))
+                        conditions.Add((conditions[i].Group, subCond, conditions[i].Root, conditions[i].Level + 1));
+            bw.FillInt32("ConditionCount", conditions.Count);
 
             // Yes, I do in fact want this to be keyed by reference
-            var conditionOffsets = new Dictionary<Condition, long>();
-            foreach (long groupID in stateGroupIDs)
+            var conditionOffsets = new Dictionary<Condition, long>(ReferenceEqualityComparer.Instance);
+            for (int i = 0; i < conditions.Count; i++)
             {
-                for (int i = 0; i < conditions[groupID].Count; i++)
-                {
-                    Condition cond = conditions[groupID][i];
-                    conditionOffsets[cond] = bw.Position - dataStart;
-                    cond.WriteHeader(bw, LongFormat, groupID, i, stateOffsets[groupID]);
-                }
+                conditionOffsets[conditions[i].Cond] = bw.Position - dataStart;
+                conditions[i].Cond.WriteHeader(bw, LongFormat, conditions[i].Group, i, stateOffsets[conditions[i].Group]);
             }
 
+            // FromSoftware's layout: every group's state commands, then every condition's pass commands
             var commands = new List<CommandCall>();
             foreach (long groupID in stateGroupIDs)
             {
@@ -307,10 +315,10 @@ namespace SoulsFormats
                 {
                     StateGroups[groupID][stateID].WriteCommandCalls(bw, LongFormat, groupID, stateID, dataStart, commands);
                 }
-                for (int i = 0; i < conditions[groupID].Count; i++)
-                {
-                    conditions[groupID][i].WriteCommandCalls(bw, LongFormat, groupID, i, dataStart, commands);
-                }
+            }
+            for (int i = 0; i < conditions.Count; i++)
+            {
+                conditions[i].Cond.WriteCommandCalls(bw, LongFormat, conditions[i].Group, i, dataStart, commands);
             }
             bw.FillInt32("CommandCallCount", commands.Count);
             bw.FillInt32("CommandArgCount", commands.Sum(command => command.Arguments.Count));
@@ -320,6 +328,8 @@ namespace SoulsFormats
                 commands[i].WriteArgs(bw, LongFormat, i, dataStart);
             }
 
+            // FromSoftware's layout: every group's state condition lists, each group's followed by its dummy state's
+            // list (a copy of the first state's, which no header points at); then every condition's subcondition list
             bw.FillInt32("ConditionOffsetsOffset", (int)(bw.Position - dataStart));
             int conditionOffsetsCount = 0;
             foreach (long groupID in stateGroupIDs)
@@ -328,23 +338,65 @@ namespace SoulsFormats
                 {
                     conditionOffsetsCount += StateGroups[groupID][stateID].WriteConditionOffsets(bw, LongFormat, groupID, stateID, dataStart, conditionOffsets);
                 }
-                for (int i = 0; i < conditions[groupID].Count; i++)
+                if (StateGroups[groupID].Count > 1)
                 {
-                    conditionOffsetsCount += conditions[groupID][i].WriteConditionOffsets(bw, LongFormat, groupID, i, dataStart, conditionOffsets);
+                    foreach (Condition cond in StateGroups[groupID][stateIDs[groupID][0]].Conditions)
+                        WriteVarint(bw, LongFormat, conditionOffsets[cond]);
+                    conditionOffsetsCount += StateGroups[groupID][stateIDs[groupID][0]].Conditions.Count;
                 }
+            }
+            for (int i = 0; i < conditions.Count; i++)
+            {
+                conditionOffsetsCount += conditions[i].Cond.WriteConditionOffsets(bw, LongFormat, conditions[i].Group, i, dataStart, conditionOffsets);
             }
             bw.FillInt32("ConditionOffsetsCount", conditionOffsetsCount);
 
+            // FromSoftware's bytecode order. Visit the file's root, then every state (group by group), then every
+            // condition (in list order). For each node, write the evaluators of its children's children (a node's
+            // children: the root's are the states, a state's are its conditions, a condition's are its
+            // subconditions), skipping any already written, then the args of the node's own commands (a state's
+            // entry, exit and while commands; a condition's pass commands). So: every state's own conditions first,
+            // then per state its conditions' subconditions and its commands, then per condition the next level down
+            // and its pass commands.
+            var conditionIndex = new Dictionary<Condition, int>(ReferenceEqualityComparer.Instance);
+            for (int i = 0; i < conditions.Count; i++)
+                conditionIndex[conditions[i].Cond] = i;
+            var evaluatorWritten = new bool[conditions.Count];
+            void writeEvaluator(Condition cond)
+            {
+                int i = conditionIndex[cond];
+                if (evaluatorWritten[i]) return;
+                evaluatorWritten[i] = true;
+                conditions[i].Cond.WriteEvaluator(bw, LongFormat, conditions[i].Group, i, dataStart);
+            }
+            int nextCommand = 0;
+            void writeBytecode(int count)
+            {
+                for (int k = 0; k < count; k++, nextCommand++)
+                    commands[nextCommand].WriteBytecode(bw, LongFormat, nextCommand, dataStart);
+            }
+
+            foreach (long groupID in stateGroupIDs)
+                foreach (long stateID in stateIDs[groupID])
+                    foreach (Condition cond in StateGroups[groupID][stateID].Conditions)
+                        writeEvaluator(cond);
             foreach (long groupID in stateGroupIDs)
             {
-                for (int i = 0; i < conditions[groupID].Count; i++)
+                foreach (long stateID in stateIDs[groupID])
                 {
-                    conditions[groupID][i].WriteEvaluator(bw, LongFormat, groupID, i, dataStart);
+                    State state = StateGroups[groupID][stateID];
+                    foreach (Condition cond in state.Conditions)
+                        foreach (Condition subCond in cond.Subconditions)
+                            writeEvaluator(subCond);
+                    writeBytecode(state.EntryCommands.Count + state.ExitCommands.Count + state.WhileCommands.Count);
                 }
             }
-            for (int i = 0; i < commands.Count; i++)
+            for (int i = 0; i < conditions.Count; i++)
             {
-                commands[i].WriteBytecode(bw, LongFormat, i, dataStart);
+                foreach (Condition subCond in conditions[i].Cond.Subconditions)
+                    foreach (Condition subSubCond in subCond.Subconditions)
+                        writeEvaluator(subSubCond);
+                writeBytecode(conditions[i].Cond.PassCommands.Count);
             }
 
             bw.FillInt32("NameBlockOffset", (int)(bw.Position - dataStart));
@@ -362,10 +414,14 @@ namespace SoulsFormats
             bw.FillInt32("UnkOffset2", (int)(bw.Position - dataStart));
             bw.FillInt32("DataSize", (int)(bw.Position - dataStart));
 
-            if (DarkSoulsCount == 1)
-                bw.Pad(4);
-            else if (DarkSoulsCount == 2)
-                bw.Pad(0x10);
+            if (EndAlignment > 0)
+            {
+                int padLength = (int)((EndAlignment - bw.Position % EndAlignment) % EndAlignment);
+                if (Padding != null && Padding.Length == padLength)
+                    bw.WriteBytes(Padding);
+                else
+                    bw.WritePattern(padLength, 0);
+            }
 
             foreach (long[] offsets in weirdStateOffsets)
             {
@@ -571,7 +627,8 @@ namespace SoulsFormats
 
             internal int WriteConditionOffsets(BinaryWriterEx bw, bool longFormat, long groupID, long stateID, long dataStart, Dictionary<Condition, long> conditionOffsets)
             {
-                FillVarint(bw, longFormat, $"State{groupID}-{stateID}:ConditionsOffset", bw.Position - dataStart);
+                // FromSoftware writes -1 for a state without conditions
+                FillVarint(bw, longFormat, $"State{groupID}-{stateID}:ConditionsOffset", Conditions.Count == 0 ? -1 : bw.Position - dataStart);
                 foreach (Condition cond in Conditions)
                     WriteVarint(bw, longFormat, conditionOffsets[cond]);
                 return Conditions.Count;
@@ -806,7 +863,8 @@ namespace SoulsFormats
 
             internal void WriteArgs(BinaryWriterEx bw, bool longFormat, int index, long dataStart)
             {
-                FillVarint(bw, longFormat, $"Command{index}:ArgsOffset", bw.Position - dataStart);
+                // FromSoftware writes -1 for a command without arguments
+                FillVarint(bw, longFormat, $"Command{index}:ArgsOffset", Arguments.Count == 0 ? -1 : bw.Position - dataStart);
                 for (int i = 0; i < Arguments.Count; i++)
                 {
                     ReserveVarint(bw, longFormat, $"Command{index}-{i}:BytecodeOffset");

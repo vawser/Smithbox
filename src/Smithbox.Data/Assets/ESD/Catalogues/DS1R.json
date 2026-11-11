@@ -1,0 +1,3292 @@
+{
+  "Game": "DS1R",
+  "Source": "",
+  "Kinds": [
+    {
+      "Kind": "Talk",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Name": "DebugEvent",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "string"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "TalkToPlayer",
+          "Args": [
+            {
+              "Name": "talkParamRow",
+              "Type": "int",
+              "Role": "Talk"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5,
+          "Name": "RemoveMyAggro",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 6,
+          "Name": "DisplayOneLineHelp",
+          "Args": [
+            {
+              "Name": "actionTextId",
+              "Type": "int",
+              "Role": "Action"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 8,
+          "Name": "ForceEndTalk",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9,
+          "Name": "ClearTalkProgressData",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 10,
+          "Name": "ShowShopMessage",
+          "Args": [
+            {
+              "Name": "optionsType",
+              "Type": "enum",
+              "Enum": "TalkOptionsType"
+            },
+            {
+              "Name": "unk",
+              "Type": "bool"
+            },
+            {
+              "Name": "unk",
+              "Type": "bool"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 11,
+          "Name": "SetEventFlag",
+          "OldNames": [
+            "SetEventState"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            },
+            {
+              "Name": "newFlagState",
+              "Type": "enum",
+              "Enum": "FlagState"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 12,
+          "Name": "CloseShopMessage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 17,
+          "Name": "OpenGenericDialog",
+          "Args": [
+            {
+              "Name": "boxType",
+              "Type": "enum",
+              "Enum": "DialogBoxType"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "defaultResult",
+              "Type": "enum",
+              "Enum": "DialogResult",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "boxStyle",
+              "Type": "enum",
+              "Enum": "DialogBoxStyle",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "(usually 2)"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 18,
+          "Name": "ForceCloseGenericDialog",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 19,
+          "Name": "AddTalkListData",
+          "Args": [
+            {
+              "Name": "slot",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 20,
+          "Name": "ClearTalkListData",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 22,
+          "Name": "OpenRegularShop",
+          "Args": [
+            {
+              "Name": "StartShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            },
+            {
+              "Name": "EndShopLineupParamRow",
+              "Type": "int",
+              "Role": "Shop"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 23,
+          "Name": "OpenRepairShop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 24,
+          "Name": "OpenEnhanceShop",
+          "Args": [
+            {
+              "Name": "type",
+              "Type": "enum",
+              "Enum": "EnhanceType"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 28,
+          "Name": "OpenMagicEquip",
+          "Args": [
+            {
+              "Name": "startId",
+              "Type": "int"
+            },
+            {
+              "Name": "endId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 30,
+          "Name": "OpenRepository",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 31,
+          "Name": "OpenSoul",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 32,
+          "Name": "CloseMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 35,
+          "Name": "ClearTalkActionState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 36,
+          "Name": "ClearTalkDisabledState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 38,
+          "Name": "SetUpdateDistance",
+          "Args": [
+            {
+              "Name": "distance",
+              "Type": "float"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 39,
+          "Name": "ClearPlayerDamageInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 40,
+          "Name": "OfferHumanity",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 41,
+          "Name": "StartWarpMenuInit",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 42,
+          "Name": "StartBonfireAnimLoop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 43,
+          "Name": "EndBonfireKindleAnimLoop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 46,
+          "Name": "OpenSellShop",
+          "Args": [
+            {
+              "Name": "StartShopLineupParamRow",
+              "Type": "int",
+              "Comment": "always -1"
+            },
+            {
+              "Name": "EndShopLineupParamRow",
+              "Type": "int",
+              "Comment": "always -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 47,
+          "Name": "ChangePlayerStat",
+          "OldNames": [
+            "ChangePlayerStats"
+          ],
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            },
+            {
+              "Name": "operation",
+              "Type": "enum",
+              "Enum": "ChangeType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 48,
+          "Name": "OpenEquipmentChangeOfPurposeShop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 49,
+          "Name": "CombineMenuFlagAndEventFlag",
+          "Args": [
+            {
+              "Name": "menuFlagId",
+              "Type": "int"
+            },
+            {
+              "Name": "eventFlagId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 50,
+          "Name": "RequestSave",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 51,
+          "Name": "ChangeMotionOffsetID",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 52,
+          "Name": "PlayerEquipmentQuantityChange",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "quantityChange",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 53,
+          "Name": "RequestUnlockTrophy",
+          "Args": [
+            {
+              "Name": "achievement",
+              "Type": "enum",
+              "Enum": "Trophy"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 55,
+          "Name": "SetAquittalCostMessageTag",
+          "Args": [
+            {
+              "Name": "baseAcquittalCost",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 56,
+          "Name": "SubtractAcquittalCostFromPlayerSouls",
+          "Args": [
+            {
+              "Name": "baseAcquittalCost",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 57,
+          "Name": "ShuffleRNGSeed",
+          "Args": [
+            {
+              "Name": "maxValue",
+              "Type": "int",
+              "Comment": "valid values from 0-100"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 58,
+          "Name": "SetRNGSeed",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 59,
+          "Name": "ReplaceTool",
+          "Args": [
+            {
+              "Name": "itemIdToReplace",
+              "Type": "int",
+              "Role": "Goods"
+            },
+            {
+              "Name": "newItemId",
+              "Type": "int",
+              "Role": "Goods"
+            },
+            {
+              "Name": "newItemQuantity",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 60,
+          "Name": "BreakCovenantPledge",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 61,
+          "Name": "PlayerRespawn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 62,
+          "Name": "GiveSpEffectToPlayer",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 63,
+          "Name": "ShowTextEffect",
+          "OldNames": [
+            "ShowGrandioseTextPresentation"
+          ],
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "TextEffect"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 64,
+          "Name": "AddIzalithRankingPoints",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 65,
+          "Name": "OpenItemAcquisitionMenu",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "numberAcquired",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 66,
+          "Name": "AcquireGesture",
+          "Args": [
+            {
+              "Name": "gestureId",
+              "Type": "int",
+              "Role": "Gesture"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 67,
+          "Name": "ForceCloseMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 68,
+          "Name": "SetTalkTime",
+          "Args": [
+            {
+              "Name": "time",
+              "Type": "float"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 69,
+          "Name": "CollectJustPyromancyFlame",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 70,
+          "Name": "OpenArenaRanking",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 71,
+          "Name": "ReportConversationEndToHavokBehavior",
+          "OldNames": [
+            "ReportConversationEndToHavokBehavior"
+          ],
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 72,
+          "Name": "SetDungeonIndexNumber",
+          "OldNames": [
+            "SetDungeonIndexNumber"
+          ],
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 75,
+          "Name": "OpenCovenantMenu",
+          "OldNames": [
+            "OpenCaryllRuneEquipMenu"
+          ],
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 76,
+          "Name": "OpenConversationChoicesMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 77,
+          "Name": "UnusedChaliceAltarPrompt",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 81,
+          "Name": "OpenCharaMakeMenu",
+          "Args": []
+        },
+        {
+          "Bank": 1,
+          "Id": 82,
+          "Name": "OpenChooseQuantityDialog",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "textId",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 103,
+          "Name": "TurnCharacterToFaceEntity",
+          "Args": [
+            {
+              "Name": "animationId",
+              "Type": "int",
+              "Comment": "-1 for no animation"
+            },
+            {
+              "Name": "CharacterEntityId",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually -1"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 110,
+          "Name": "MainBonfireMenuFlag",
+          "Args": []
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "GetWhetherEnemiesAreNearby",
+          "OldNames": [
+            "GetWhetherEnemiesAreNearby"
+          ],
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 1,
+          "Name": "GetDistanceToPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "horizontalDistance",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 2,
+          "Name": "HasTalkEnded",
+          "Args": [],
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 3,
+          "Name": "CheckSelfDeath",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 4,
+          "Name": "IsPlayerTalkingToMe",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 5,
+          "Name": "IsAttackedBySomeone",
+          "Args": [],
+          "Returns": {
+            "Name": "attacked",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 6,
+          "Name": "GetSelfHP",
+          "Args": [],
+          "Returns": {
+            "Name": "selfHPValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 8,
+          "Name": "GetRelativeAngleBetweenPlayerAndSelf",
+          "Args": [],
+          "Returns": {
+            "Name": "angleInDegrees",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 9,
+          "Name": "IsPlayerAttacking",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsAttacking",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 14,
+          "Name": "GetOneLineHelpStatus",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 15,
+          "Name": "GetEventFlag",
+          "OldNames": [
+            "GetEventStatus"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 16,
+          "Name": "DoesPlayerHaveItem",
+          "OldNames": [
+            "IsEquipmentIDObtained"
+          ],
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            }
+          ],
+          "Returns": {
+            "Name": "isObtained",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 17,
+          "Name": "DoesPlayerHaveItemEquipped",
+          "OldNames": [
+            "IsEquipmentIDEquipped"
+          ],
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            }
+          ],
+          "Returns": {
+            "Name": "isEquipped",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 19,
+          "Name": "IsClientPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsNotInOwnWorld",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 21,
+          "Name": "IsGenericDialogOpen",
+          "Args": [],
+          "Returns": {
+            "Name": "genericDialogIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 22,
+          "Name": "GetGenericDialogButtonResult",
+          "Args": [],
+          "Returns": {
+            "Name": "dialogResult",
+            "Type": "enum",
+            "Enum": "DialogResult"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 23,
+          "Name": "GetTalkListEntryResult",
+          "Args": [],
+          "Returns": {
+            "Name": "chosenTalkListSlot",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 25,
+          "Name": "IsMenuOpen",
+          "Args": [
+            {
+              "Name": "menu",
+              "Type": "enum",
+              "Enum": "MenuType"
+            }
+          ],
+          "Returns": {
+            "Name": "menuIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 26,
+          "Name": "IsCharacterDisabled",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsHidden",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 27,
+          "Name": "IsPlayerDead",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 28,
+          "Name": "DidYouDoSomethingInTheMenu",
+          "Args": [
+            {
+              "Name": "menu",
+              "Type": "enum",
+              "Enum": "MenuType"
+            }
+          ],
+          "Returns": {
+            "Name": "didSomething",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 29,
+          "Name": "GetStatus",
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            }
+          ],
+          "Returns": {
+            "Name": "statValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 30,
+          "Name": "IsPlayerMovingACertainDistance",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "float"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 31,
+          "Name": "IsTalkingToSomeoneElse",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsTalkingToSomeoneElse",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 32,
+          "Name": "HasDisableTalkPeriodElapsed",
+          "Args": [],
+          "Returns": {
+            "Name": "periodHasElapsed",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 33,
+          "Name": "HasPlayerBeenAttacked",
+          "Args": [],
+          "Returns": {
+            "Name": "playerAttacked",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 34,
+          "Name": "GetPlayerYDistance",
+          "Args": [],
+          "Returns": {
+            "Name": "verticalDistance",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 35,
+          "Name": "GetPlayerChrType",
+          "Args": [],
+          "Returns": {
+            "Name": "playerChrType",
+            "Type": "enum",
+            "Enum": "ChrType"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 37,
+          "Name": "CompareBonfireState",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 38,
+          "Name": "CompareBonfireLevel",
+          "Args": [
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "level",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 45,
+          "Name": "ComparePlayerStat",
+          "OldNames": [
+            "ComparePlayerStatus"
+          ],
+          "Args": [
+            {
+              "Name": "stat",
+              "Type": "enum",
+              "Enum": "PlayerStat"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 46,
+          "Name": "RelativeAngleBetweenTwoPlayersWithAxis",
+          "OldNames": [
+            "RelativeAngleBetweenTwoPlayers_SpecifyAxis"
+          ],
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Id": 47,
+          "Name": "ComparePlayerInventoryNumber",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            },
+            {
+              "Name": "checkStorage",
+              "Type": "bool"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 48,
+          "Name": "IsPlayerCurrentWeaponDamaged",
+          "Args": [],
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 49,
+          "Name": "ComparePlayerAcquittalPrice",
+          "Args": [
+            {
+              "Name": "baseAcquittalCost",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 1"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 51,
+          "Name": "WasWarpMenuDestinationSelected",
+          "Args": [],
+          "Returns": {
+            "Name": "warpDestinationSelected",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 52,
+          "Name": "IsMultiplayerInProgress",
+          "Args": [],
+          "Returns": {
+            "Name": "multiplayerIsInProgress",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 54,
+          "Name": "IsRankingMenuOpen",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Id": 55,
+          "Name": "GetPlayerRemainingHP",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 56,
+          "Name": "CheckActionButtonArea",
+          "OldNames": [
+            "CheckActionButtonArea"
+          ],
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 58,
+          "Name": "CheckSpecificPersonGenericDialogIsOpen",
+          "OldNames": [
+            "CheckSpecificPersonGenericDialogIsOpen"
+          ],
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 59,
+          "Name": "CheckCovenantMenuIsOpen",
+          "OldNames": [
+            "CheckSpecificPersonMenuIsOpen"
+          ],
+          "Args": [],
+          "Returns": {
+            "Name": "menuIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 60,
+          "Name": "DoesSelfHaveSpEffect",
+          "OldNames": [
+            "DoesSelfHaveSpEffect"
+          ],
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 61,
+          "Name": "DoesPlayerHaveSpEffect",
+          "OldNames": [
+            "DoesPlayerHaveSpEffect"
+          ],
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Enums": [
+        {
+          "Name": "ChangeType",
+          "Values": [
+            {
+              "Name": "Add"
+            },
+            {
+              "Value": 1,
+              "Name": "Subtract"
+            },
+            {
+              "Value": 2,
+              "Name": "Multiply"
+            },
+            {
+              "Value": 3,
+              "Name": "Divide"
+            },
+            {
+              "Value": 4,
+              "Name": "Modulus"
+            },
+            {
+              "Value": 5,
+              "Name": "Set"
+            }
+          ]
+        },
+        {
+          "Name": "ChrType",
+          "Values": [
+            {
+              "Value": 8,
+              "Name": "Hollow"
+            }
+          ]
+        },
+        {
+          "Name": "CompareType",
+          "Values": [
+            {
+              "Name": "Equal"
+            },
+            {
+              "Value": 1,
+              "Name": "NotEqual"
+            },
+            {
+              "Value": 2,
+              "Name": "Greater"
+            },
+            {
+              "Value": 3,
+              "Name": "Less"
+            },
+            {
+              "Value": 4,
+              "Name": "GreaterOrEqual"
+            },
+            {
+              "Value": 5,
+              "Name": "LessOrEqual"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxStyle",
+          "Values": [
+            {
+              "Name": "OrnateNoOptions"
+            },
+            {
+              "Value": 1,
+              "Name": "DialogOptions"
+            },
+            {
+              "Value": 2,
+              "Name": "OrnateOptions"
+            },
+            {
+              "Value": 3,
+              "Name": "OrnateYesOption"
+            },
+            {
+              "Value": 4,
+              "Name": "Unk"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxType",
+          "Values": [
+            {
+              "Value": 1,
+              "Name": "CenterMiddleDimScreen1"
+            },
+            {
+              "Value": 2,
+              "Name": "CenterMiddleDimScreen2"
+            },
+            {
+              "Value": 7,
+              "Name": "CenterBottom1"
+            },
+            {
+              "Value": 8,
+              "Name": "CenterBottom2"
+            }
+          ]
+        },
+        {
+          "Name": "DialogResult",
+          "Values": [
+            {
+              "Name": "Cancel"
+            },
+            {
+              "Value": 1,
+              "Name": "Left"
+            },
+            {
+              "Value": 2,
+              "Name": "Right"
+            },
+            {
+              "Value": 3,
+              "Name": "Leave"
+            }
+          ]
+        },
+        {
+          "Name": "EnhanceType",
+          "Values": [
+            {
+              "Name": "Normal"
+            },
+            {
+              "Value": 10,
+              "Name": "Unk"
+            }
+          ]
+        },
+        {
+          "Name": "FlagState",
+          "Values": [
+            {
+              "Name": "Off"
+            },
+            {
+              "Value": 1,
+              "Name": "On"
+            }
+          ]
+        },
+        {
+          "Name": "ItemType",
+          "Values": [
+            {
+              "Name": "Weapon"
+            },
+            {
+              "Value": 1,
+              "Name": "Protector"
+            },
+            {
+              "Value": 2,
+              "Name": "Accessory"
+            },
+            {
+              "Value": 3,
+              "Name": "Goods"
+            }
+          ]
+        },
+        {
+          "Name": "MenuType",
+          "Values": [
+            {
+              "Value": 11,
+              "Name": "Talk"
+            },
+            {
+              "Value": 12,
+              "Name": "Repair"
+            },
+            {
+              "Value": 13,
+              "Name": "Reinforcement"
+            },
+            {
+              "Value": 23,
+              "Name": "LevelUp"
+            },
+            {
+              "Value": 25,
+              "Name": "Attunement"
+            },
+            {
+              "Value": 26,
+              "Name": "Storage"
+            },
+            {
+              "Value": 30,
+              "Name": "CharacterEdit"
+            },
+            {
+              "Value": 31,
+              "Name": "CovenantOffering"
+            },
+            {
+              "Value": 36,
+              "Name": "Warp"
+            },
+            {
+              "Value": 53,
+              "Name": "Unk"
+            },
+            {
+              "Value": 63,
+              "Name": "Bonfire"
+            }
+          ]
+        },
+        {
+          "Name": "PlayerStat",
+          "Values": [
+            {
+              "Name": "Vitality"
+            },
+            {
+              "Value": 1,
+              "Name": "Attunement"
+            },
+            {
+              "Value": 2,
+              "Name": "Endurance"
+            },
+            {
+              "Value": 3,
+              "Name": "Strength"
+            },
+            {
+              "Value": 4,
+              "Name": "Dexterity"
+            },
+            {
+              "Value": 5,
+              "Name": "Intelligence"
+            },
+            {
+              "Value": 6,
+              "Name": "Faith"
+            },
+            {
+              "Value": 8,
+              "Name": "SoulsCollected"
+            },
+            {
+              "Value": 9,
+              "Name": "TotalGetSouls"
+            },
+            {
+              "Value": 10,
+              "Name": "Humanity"
+            },
+            {
+              "Value": 11,
+              "Name": "CovenantType"
+            },
+            {
+              "Value": 12,
+              "Name": "Gender"
+            },
+            {
+              "Value": 13,
+              "Name": "SunlightAltarPlayersAssisted"
+            },
+            {
+              "Value": 14,
+              "Name": "ForestHuntersPlayersKilled"
+            },
+            {
+              "Value": 15,
+              "Name": "EquippedCovenantPoints"
+            },
+            {
+              "Value": 16,
+              "Name": "EquippedCovenantLevel"
+            },
+            {
+              "Value": 17,
+              "Name": "WarriorOfSunlightPoints"
+            },
+            {
+              "Value": 18,
+              "Name": "DarkwraithPoints"
+            },
+            {
+              "Value": 19,
+              "Name": "PathOfDragonPoints"
+            },
+            {
+              "Value": 20,
+              "Name": "GravelordServantPoints"
+            },
+            {
+              "Value": 21,
+              "Name": "ForestHunterPoints"
+            },
+            {
+              "Value": 22,
+              "Name": "BladeOfTheDarkmoonPoints"
+            },
+            {
+              "Value": 23,
+              "Name": "ChaosServantPoints"
+            },
+            {
+              "Value": 24,
+              "Name": "WarriorOfSunlightLevel"
+            },
+            {
+              "Value": 25,
+              "Name": "DarkwraithLevel"
+            },
+            {
+              "Value": 26,
+              "Name": "PathOfDragonLevel"
+            },
+            {
+              "Value": 27,
+              "Name": "GravelordServantLevel"
+            },
+            {
+              "Value": 28,
+              "Name": "ForestHunterLevel"
+            },
+            {
+              "Value": 29,
+              "Name": "BladeOfTheDarkmoonLevel"
+            },
+            {
+              "Value": 30,
+              "Name": "ChaosServantLevel"
+            },
+            {
+              "Value": 31,
+              "Name": "ReturnResultOfHardcodedEventFlag"
+            }
+          ]
+        },
+        {
+          "Name": "TalkOptionsType",
+          "Values": [
+            {
+              "Name": "Old"
+            },
+            {
+              "Value": 1,
+              "Name": "Regular"
+            }
+          ]
+        },
+        {
+          "Name": "Trophy",
+          "Values": [
+            {
+              "Name": "AllAchievements"
+            },
+            {
+              "Value": 1,
+              "Name": "ToLinkTheFire"
+            },
+            {
+              "Value": 2,
+              "Name": "DarkLord"
+            },
+            {
+              "Value": 3,
+              "Name": "KnightsHonor"
+            },
+            {
+              "Value": 4,
+              "Name": "WisdomOfASage"
+            },
+            {
+              "Value": 5,
+              "Name": "BondOfAPyromancer"
+            },
+            {
+              "Value": 6,
+              "Name": "PrayerOfAMaiden"
+            },
+            {
+              "Value": 7,
+              "Name": "WayOfWhite"
+            },
+            {
+              "Value": 8,
+              "Name": "PrincessGuard"
+            },
+            {
+              "Value": 9,
+              "Name": "BladeOfTheDarkmoon"
+            },
+            {
+              "Value": 10,
+              "Name": "WarriorOfSunlight"
+            },
+            {
+              "Value": 11,
+              "Name": "ForestHunter"
+            },
+            {
+              "Value": 12,
+              "Name": "Darkwraith"
+            },
+            {
+              "Value": 13,
+              "Name": "PathOfTheDragon"
+            },
+            {
+              "Value": 14,
+              "Name": "GravelordServant"
+            },
+            {
+              "Value": 15,
+              "Name": "ChaosServant"
+            },
+            {
+              "Value": 16,
+              "Name": "StrongestWeapon"
+            },
+            {
+              "Value": 17,
+              "Name": "CrystalWeapon"
+            },
+            {
+              "Value": 18,
+              "Name": "LightningWeapon"
+            },
+            {
+              "Value": 19,
+              "Name": "RawWeapon"
+            },
+            {
+              "Value": 20,
+              "Name": "MagicWeapon"
+            },
+            {
+              "Value": 21,
+              "Name": "EnchantedWeapon"
+            },
+            {
+              "Value": 22,
+              "Name": "DivineWeapon"
+            },
+            {
+              "Value": 23,
+              "Name": "OccultWeapon"
+            },
+            {
+              "Value": 24,
+              "Name": "FireWeapon"
+            },
+            {
+              "Value": 25,
+              "Name": "ChaosWeapon"
+            },
+            {
+              "Value": 26,
+              "Name": "Enkindle"
+            },
+            {
+              "Value": 27,
+              "Name": "EstusFlask"
+            },
+            {
+              "Value": 28,
+              "Name": "ReachLordran"
+            },
+            {
+              "Value": 29,
+              "Name": "RingTheBellUndeadChurch"
+            },
+            {
+              "Value": 30,
+              "Name": "RingTheBellQuelaagsDomain"
+            },
+            {
+              "Value": 31,
+              "Name": "RiteOfKindling"
+            },
+            {
+              "Value": 32,
+              "Name": "ArtOfAbysswalking"
+            },
+            {
+              "Value": 33,
+              "Name": "ReachAnorLondo"
+            },
+            {
+              "Value": 34,
+              "Name": "Lordvessel"
+            },
+            {
+              "Value": 35,
+              "Name": "GravelordNito"
+            },
+            {
+              "Value": 36,
+              "Name": "BedOfChaos"
+            },
+            {
+              "Value": 37,
+              "Name": "TheFourKings"
+            },
+            {
+              "Value": 38,
+              "Name": "SeathTheScaleless"
+            },
+            {
+              "Value": 39,
+              "Name": "DarksunGwyndolin"
+            },
+            {
+              "Value": 40,
+              "Name": "CrossbreedPriscilla"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Kind": "Chr",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Name": "ChangeGeneralAnim",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "ChangeUpperBodyAnim",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 3,
+          "Name": "ChangeGeneralAnimCategorized",
+          "Args": [
+            {
+              "Name": "AnimCategory",
+              "Type": "enum",
+              "Enum": "AnimCategory",
+              "Comment": "Category of animation ID to choose from."
+            },
+            {
+              "Name": "AnimID",
+              "Type": "int",
+              "Comment": "Animation ID. Uses the Category to determine which exact animation ID to play."
+            },
+            {
+              "Name": "AnimLayerIndex",
+              "Type": "enum",
+              "Enum": "AnimLayerIndex",
+              "Comment": "Animation Mediator Layer in which to play the animation."
+            },
+            {
+              "Name": "Blend",
+              "Type": "float",
+              "Comment": "Not much is known about this value. Usually something like 0.2 for attacks."
+            },
+            {
+              "Name": "IsLoop",
+              "Type": "int",
+              "Comment": "Whether the animation will continue to loop or stop on the last frame."
+            }
+          ],
+          "Comment": "I'm a monkey.",
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 4,
+          "Name": "ChangeUpperBodyAnimCategorized",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 7,
+          "Name": "ChangeGeneralAnimCategorizedMatchPlaybackTime",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9,
+          "Name": "SetAnimIDOffset",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 10,
+          "Name": "SetAdditiveBlendAnimation",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 11,
+          "Name": "SetAdditiveBlendAnimationSlotted",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 12,
+          "Name": "ChangeBlendAnimationCategorized",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 13,
+          "Name": "ChangeUpperAndLowerBodySyncedAnimCategorized",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 100,
+          "Name": "SwitchActiveActionState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 101,
+          "Name": "SwitchMotion",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 102,
+          "Name": "SetThrowAttackTypePossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 103,
+          "Name": "SetThrowDefenseTypePossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 104,
+          "Name": "SwitchEquippedWeapon",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 107,
+          "Name": "SetUnableToDrop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 108,
+          "Name": "IssueMessageIDToEvents",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 109,
+          "Name": "SetAttackType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 110,
+          "Name": "SetNoStaminaRecover",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 111,
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 112,
+          "Name": "SetAIBusyDoingAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 113,
+          "Name": "BowTurn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 114,
+          "Name": "SetIsHoldingBow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 115,
+          "Name": "SwitchSpecificRangeMode",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 116,
+          "Name": "SwitchSpecialMotion",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 117,
+          "Name": "SetIsWeaponChanging",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 118,
+          "Name": "SetIsItemInUse",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 119,
+          "Name": "SetIsItemAnimPlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 120,
+          "Name": "RemoveBinoculars",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 121,
+          "Name": "SetIsMagicInUse",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 122,
+          "Name": "IsHeadTurnPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 123,
+          "Name": "ChangeHoveringState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 124,
+          "Name": "ChangeToSpecialStay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 125,
+          "Name": "OpenMenuWhenUsingItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 126,
+          "Name": "OpenMenuWhenUsingMagic",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 129,
+          "Name": "CloseMenuWhenUsingItem",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 130,
+          "Name": "CloseMenuWhenUsingMagic",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 132,
+          "Name": "WhiffPossibility",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 133,
+          "Name": "ChangeFlightStatus",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 134,
+          "Name": "SetStatsNotMetAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 135,
+          "Name": "ShowFixedYAxisDirectionDisplay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 136,
+          "Name": "SetLadderActionState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 138,
+          "Name": "SetThrowState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 139,
+          "Name": "LadderSlideStart",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 140,
+          "Name": "SetIsEventActionPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 141,
+          "Name": "RequestThrowAnimInterrupt",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 142,
+          "Name": "SetHandStateOfLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 143,
+          "Name": "SetDamageAnimType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 144,
+          "Name": "SlideTurn",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 145,
+          "Name": "InterruptAttack",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 146,
+          "Name": "MidairDeathWarp",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 147,
+          "Name": "ClearSlopeInfo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1001,
+          "Name": "AddStamina",
+          "Args": [
+            {
+              "Name": "StaminaToAdd",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1100,
+          "Name": "SyncAtInit_Active",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 1101,
+          "Name": "SyncAtInit_Passive",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9000,
+          "Name": "DebugLogOutput",
+          "Args": [
+            {
+              "Name": "PrintText",
+              "Type": "string"
+            }
+          ],
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "IsGeneralAnimEnd",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1,
+          "Name": "IsAttackAnimEnd",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 100,
+          "Name": "IsAtkRequest",
+          "Args": [
+            {
+              "Name": "RequestType",
+              "Type": "enum",
+              "Enum": "AttackRequestType",
+              "Comment": "The type of request to check for."
+            }
+          ],
+          "Comment": "Gets whether a specific type of attack request has been received.",
+          "Seen": true
+        },
+        {
+          "Id": 101,
+          "Name": "IsAtkReleaseRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 102,
+          "Name": "IsChainAtkRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 103,
+          "Name": "GetAtkDuration",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 104,
+          "Name": "GetWeaponSwitchRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 105,
+          "Name": "GetCommandIDFromEvent",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 106,
+          "Name": "GetAIActionType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 107,
+          "Name": "GetAIChainActionType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 108,
+          "Name": "GetChainEvadeRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 109,
+          "Name": "GetWeaponChangeRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 110,
+          "Name": "GetAnimIDFromMoveParam",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 111,
+          "Name": "IsThereAnyAtkRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 112,
+          "Name": "IsThereAnyChainAtkRequest",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 113,
+          "Name": "IsItemUseMenuOpening",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 114,
+          "Name": "IsMagicUseMenuOpening",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 115,
+          "Name": "IsItemUseMenuOpened",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 116,
+          "Name": "IsMagicUseMenuOpened",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 118,
+          "Name": "GetAIChainStepType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 119,
+          "Name": "GetTransitionToSpecialStayAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 120,
+          "Name": "GetAIAtkCancelType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 200,
+          "Name": "IsFalling",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 201,
+          "Name": "IsLanding",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 202,
+          "Name": "GetReceivedDamageType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 205,
+          "Name": "IsNormalDmgPassThroughDuringThrow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 206,
+          "Name": "IsThrowing",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 207,
+          "Name": "GetWeaponSwitchState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 210,
+          "Name": "IsAnimCancelPossibleInAtkRelease",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 211,
+          "Name": "IsEmergencyStopAnimPlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 212,
+          "Name": "GetLockRangeState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 213,
+          "Name": "GetLockAngleState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 216,
+          "Name": "IsChangeToDeflectAtk",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 217,
+          "Name": "IsChangeToAfterParrySuccess",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 219,
+          "Name": "GetMovementType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 220,
+          "Name": "IsLargeAtkComboPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 222,
+          "Name": "GetReceivedDamageDirection",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 224,
+          "Name": "GetFallHeight",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 225,
+          "Name": "GetEquipWeaponCategory",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 226,
+          "Name": "IsHoldingBow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 227,
+          "Name": "GetMagicAnimType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 228,
+          "Name": "WasNotLargeAtk",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 231,
+          "Name": "GetItemAnimType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 232,
+          "Name": "IsMagicUseable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 233,
+          "Name": "IsItemUseable",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 236,
+          "Name": "GetDamageLevel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 237,
+          "Name": "GetGuardLevelAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 238,
+          "Name": "IsNewLeftHandAtkFromStay",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 239,
+          "Name": "IsParryFromIdle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 240,
+          "Name": "IsGuardFromIdle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 241,
+          "Name": "IsNewLeftHandAtkFromAtkCancel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 242,
+          "Name": "IsParryFromAtkCancel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 243,
+          "Name": "IsGuardFromAtkCancel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 245,
+          "Name": "IsOutOfAmmo",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 246,
+          "Name": "IsUseCatLanding",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 247,
+          "Name": "GetHoverMoveState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 248,
+          "Name": "IsTruelyLanding",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 249,
+          "Name": "IsRightHandMagic",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 250,
+          "Name": "IsChangeToSpecialStayAnim",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 251,
+          "Name": "GetSpecialStayAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 252,
+          "Name": "AcquireSpecialDamageAnimationID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 253,
+          "Name": "IsRunTurnAnimPlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 254,
+          "Name": "IsGenerateAction",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 255,
+          "Name": "GetSpecialStayCancelAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 256,
+          "Name": "HasReceivedAnyDamage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 257,
+          "Name": "GetMoveAnimParamID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 259,
+          "Name": "IsRequestTurnAnimStart",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 260,
+          "Name": "IsTurningWithAnim",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 261,
+          "Name": "IsFlying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 263,
+          "Name": "GetEquipWeightRatioForFalling",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 264,
+          "Name": "GetFlightMotionState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 265,
+          "Name": "GetIsWeakPoint",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 267,
+          "Name": "GetLadderActionState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 268,
+          "Name": "IsInDisguise",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 271,
+          "Name": "IsSpecialTransitionPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 272,
+          "Name": "GetLandingAnimBlendRatio",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 273,
+          "Name": "GetThrowAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 274,
+          "Name": "DidOpponentDieFromThrow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 275,
+          "Name": "HasThrowEnded",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 276,
+          "Name": "IsThrowSelfDeath",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 278,
+          "Name": "GetGuardMotionCategory",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 279,
+          "Name": "IsBeingThrown",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 280,
+          "Name": "IsSelfThrow",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 281,
+          "Name": "IsThrowDeathState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 283,
+          "Name": "IsOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 284,
+          "Name": "GetPhysicalAttribute",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 285,
+          "Name": "GetSpecialAttribute",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 286,
+          "Name": "GetSpecialStayDeathAnimID",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 287,
+          "Name": "HasReceivedAnyDamage_AnimEnd",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 288,
+          "Name": "EggGrowth_IsHeadScratch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 289,
+          "Name": "EggGrowth_IsBecomeEggHead",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 290,
+          "Name": "IsStop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 291,
+          "Name": "IsSomeoneOnLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 292,
+          "Name": "IsSomeoneUnderLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 293,
+          "Name": "GetLadderHandState",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 294,
+          "Name": "DoesLadderHaveCharacters",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 296,
+          "Name": "DescendingToFloor",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 297,
+          "Name": "IsInputDirectionMatch",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 298,
+          "Name": "IsSpecialTransition2Possible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 299,
+          "Name": "IsVersusDivineDamage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 300,
+          "Name": "IsGeneralAnimCancelPossible",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 301,
+          "Name": "GetEventEzStateFlag",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 302,
+          "Name": "IsLadderEventEnd",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 303,
+          "Name": "IsReachBottomOfLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 304,
+          "Name": "IsReachTopOfLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 305,
+          "Name": "GetStateChangeType",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 306,
+          "Name": "IsOnLastRungOfLadder",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 311,
+          "Name": "GetWeaponDurability",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 312,
+          "Name": "IsWeaponBroken",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 313,
+          "Name": "IsAnimEndBySkillCancel",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 314,
+          "Name": "EggGrowth_IsBecomeEgghead_SecondStage",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 315,
+          "Name": "IsHamariFallDeath",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 316,
+          "Name": "IsClient",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 317,
+          "Name": "IsSlope",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1000,
+          "Name": "GetHP",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1001,
+          "Name": "GetStamina",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1003,
+          "Name": "GetRandomInt",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1007,
+          "Name": "IsCOMPlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 1101,
+          "Name": "IsInvincibleDebugMode",
+          "Args": [],
+          "Seen": true
+        }
+      ],
+      "Enums": [
+        {
+          "Name": "AnimCategory",
+          "Values": [
+            {
+              "Name": "BasedOnLeftHandMotionCategory"
+            },
+            {
+              "Value": 1,
+              "Name": "BasedOnRightHandMotionCategory"
+            },
+            {
+              "Value": 2,
+              "Name": "BasedOnCurrentMoveParam"
+            },
+            {
+              "Value": 3,
+              "Name": "AbsoluteAnimationID"
+            }
+          ]
+        },
+        {
+          "Name": "AnimLayerIndex",
+          "Values": [
+            {
+              "Name": "Wait"
+            },
+            {
+              "Value": 1,
+              "Name": "SpWait"
+            },
+            {
+              "Value": 2,
+              "Name": "WalkLR"
+            },
+            {
+              "Value": 3,
+              "Name": "WalkFB"
+            },
+            {
+              "Value": 4,
+              "Name": "Guard"
+            },
+            {
+              "Value": 5,
+              "Name": "Attack"
+            },
+            {
+              "Value": 6,
+              "Name": "SpecialAttack"
+            },
+            {
+              "Value": 7,
+              "Name": "Action"
+            },
+            {
+              "Value": 8,
+              "Name": "DamageS"
+            },
+            {
+              "Value": 9,
+              "Name": "DamageL"
+            },
+            {
+              "Value": 10,
+              "Name": "Event"
+            },
+            {
+              "Value": 11,
+              "Name": "ExtraAnim"
+            },
+            {
+              "Value": 12,
+              "Name": "TaeExtraAnim"
+            }
+          ]
+        },
+        {
+          "Name": "AttackRequestType",
+          "Values": [
+            {
+              "Name": "R1"
+            },
+            {
+              "Value": 1,
+              "Name": "L1"
+            },
+            {
+              "Value": 2,
+              "Name": "CatalystTalismanPyromancyFlameR1"
+            },
+            {
+              "Value": 3,
+              "Name": "CatalystTalismanPyromancyFlameL1"
+            },
+            {
+              "Value": 10,
+              "Name": "Backstep"
+            },
+            {
+              "Value": 14,
+              "Name": "UseGoods"
+            },
+            {
+              "Value": 15,
+              "Name": "RollForward"
+            },
+            {
+              "Value": 16,
+              "Name": "RollBackward"
+            },
+            {
+              "Value": 17,
+              "Name": "RollLeft"
+            },
+            {
+              "Value": 18,
+              "Name": "RollRight"
+            },
+            {
+              "Value": 22,
+              "Name": "AttackArm_Gesture0_Beckon"
+            },
+            {
+              "Value": 23,
+              "Name": "AttackArm_Gesture1_PointForward"
+            },
+            {
+              "Value": 24,
+              "Name": "AttackArm_Gesture2_Hurrah"
+            },
+            {
+              "Value": 25,
+              "Name": "AttackArm_Gesture3_Bow"
+            },
+            {
+              "Value": 26,
+              "Name": "AttackArm_Gesture4_Joy"
+            },
+            {
+              "Value": 27,
+              "Name": "AttackArm_Gesture5_Shrug"
+            },
+            {
+              "Value": 28,
+              "Name": "AttackArm_Gesture6_Wave"
+            },
+            {
+              "Value": 29,
+              "Name": "AttackArm_Gesture7_PraiseTheSun"
+            },
+            {
+              "Value": 30,
+              "Name": "AttackArm_Gesture8_PointUp"
+            },
+            {
+              "Value": 31,
+              "Name": "AttackArm_Gesture9_PointDown"
+            },
+            {
+              "Value": 32,
+              "Name": "AttackArm_Gesture10_LookSkyward"
+            },
+            {
+              "Value": 33,
+              "Name": "AttackArm_Gesture11_WellWhatIsIt"
+            },
+            {
+              "Value": 34,
+              "Name": "AttackArm_Gesture12_Prostration"
+            },
+            {
+              "Value": 35,
+              "Name": "AttackArm_Gesture13_ProperBow"
+            },
+            {
+              "Value": 36,
+              "Name": "AttackArm_Gesture14_Prayer"
+            },
+            {
+              "Value": 37,
+              "Name": "AttackArm_Gesture15_Unused"
+            },
+            {
+              "Value": 38,
+              "Name": "AttackArm_Gesture16_Unused"
+            },
+            {
+              "Value": 39,
+              "Name": "AttackArm_Gesture17_Unused"
+            },
+            {
+              "Value": 40,
+              "Name": "AttackArm_Gesture18_Unused"
+            },
+            {
+              "Value": 41,
+              "Name": "AttackArm_Gesture19_Unused"
+            },
+            {
+              "Value": 42,
+              "Name": "Jump"
+            },
+            {
+              "Value": 52,
+              "Name": "LeftHandCrossbowAmmoSwap"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

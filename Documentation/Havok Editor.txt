@@ -9,3 +9,4 @@
 - Improve Collision Generator:
     - Add support for DES/DS1/DS2
  
+- Add Behavior Merge tool

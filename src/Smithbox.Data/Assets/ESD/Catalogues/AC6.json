@@ -1,0 +1,1927 @@
+{
+  "Game": "AC6",
+  "Source": "",
+  "Kinds": [
+    {
+      "Kind": "Talk",
+      "Commands": [
+        {
+          "Bank": 1,
+          "Id": 1,
+          "Name": "TalkToPlayer",
+          "Args": [
+            {
+              "Name": "talkParamRow",
+              "Type": "int",
+              "Role": "Talk"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            },
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag",
+              "Comment": "usually 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 5,
+          "Name": "RemoveMyAggro",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 8,
+          "Name": "ForceEndTalk",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 9,
+          "Name": "ClearTalkProgressData",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 10,
+          "Name": "ShowShopMessage",
+          "Args": [
+            {
+              "Name": "optionsType",
+              "Type": "enum",
+              "Enum": "TalkOptionsType"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 11,
+          "Name": "SetEventFlag",
+          "OldNames": [
+            "SetEventState"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            },
+            {
+              "Name": "newFlagState",
+              "Type": "enum",
+              "Enum": "FlagState"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 17,
+          "Name": "OpenGenericDialog",
+          "Args": [
+            {
+              "Name": "boxType",
+              "Type": "enum",
+              "Enum": "DialogBoxType"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "defaultResult",
+              "Type": "enum",
+              "Enum": "DialogResult",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "boxStyle",
+              "Type": "enum",
+              "Enum": "DialogBoxStyle",
+              "Comment": "May be text id in Nightreign"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "(usually 2)"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 18,
+          "Name": "ForceCloseGenericDialog",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 19,
+          "Name": "AddTalkListData",
+          "Args": [
+            {
+              "Name": "slot",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use -1"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 21,
+          "Name": "RequestMoviePlayback",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 28,
+          "Name": "OpenMagicEquip",
+          "Args": [
+            {
+              "Name": "startId",
+              "Type": "int"
+            },
+            {
+              "Name": "endId",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 38,
+          "Name": "SetUpdateDistance",
+          "Args": [
+            {
+              "Name": "distance",
+              "Type": "float"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 41,
+          "Name": "StartWarpMenuInit",
+          "Args": [
+            {
+              "Name": "bonfireWarpId",
+              "Type": "int",
+              "Comment": "usually uses -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 43,
+          "Name": "EndBonfireKindleAnimLoop",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 53,
+          "Name": "RequestUnlockTrophy",
+          "Args": [
+            {
+              "Name": "achievementId",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 62,
+          "Name": "GiveSpEffectToPlayer",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 63,
+          "Name": "ShowTextEffect",
+          "OldNames": [
+            "ShowGrandioseTextPresentation"
+          ],
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "TextEffect"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 64,
+          "Name": "AddIzalithRankingPoints",
+          "Args": []
+        },
+        {
+          "Bank": 1,
+          "Id": 66,
+          "Name": "AcquireGestureOld",
+          "Args": [],
+          "Comment": "Unused"
+        },
+        {
+          "Bank": 1,
+          "Id": 67,
+          "Name": "ForceCloseMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 71,
+          "Name": "ReportConversationEndToHavokBehavior",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 76,
+          "Name": "OpenConversationChoicesMenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 80,
+          "Name": "StopEventAnimWithoutForcingConversationEnd",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 81,
+          "Name": "OpenCharaMakeMenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 82,
+          "Name": "OpenChooseQuantityDialog",
+          "Args": [
+            {
+              "Name": "goodsId",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 103,
+          "Name": "TurnCharacterToFaceEntity",
+          "Args": [
+            {
+              "Name": "animationId",
+              "Type": "int",
+              "Comment": "-1 for no animation"
+            },
+            {
+              "Name": "CharacterEntityId",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually -1"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 117,
+          "Name": "FadeOutAndPassTime",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "float"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 118,
+          "Name": "RunMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 119,
+          "Name": "EndMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 120,
+          "Name": "GiveSpEffectToSelf",
+          "Args": [
+            {
+              "Name": "speffectId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 123,
+          "Name": "RequestAnimation",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ]
+        },
+        {
+          "Bank": 1,
+          "Id": 205,
+          "Name": "LoadMission",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 206,
+          "Name": "UnloadMission",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 207,
+          "Name": "OpenFreeDialog",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 208,
+          "Name": "CloseFreeDialog",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 209,
+          "Name": "ShowMapHighlight",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 210,
+          "Name": "HideMapHighlight",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 212,
+          "Name": "LoadMissionByID",
+          "Args": [
+            {
+              "Name": "missionId",
+              "Type": "int",
+              "Role": "Mission"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 213,
+          "Name": "UnloadMissionByID",
+          "Args": [
+            {
+              "Name": "missionId",
+              "Type": "int",
+              "Role": "Mission"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 214,
+          "Name": "StartEvent",
+          "Args": [
+            {
+              "Name": "eventSlot",
+              "Type": "int"
+            },
+            {
+              "Name": "eventId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 215,
+          "Name": "StartCommonEvent",
+          "Args": [
+            {
+              "Name": "eventSlot",
+              "Type": "int"
+            },
+            {
+              "Name": "eventId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 216,
+          "Name": "RunParallelMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 217,
+          "Name": "EndParallelMachine",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 218,
+          "Name": "StartMission",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 219,
+          "Name": "EndMission",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 220,
+          "Name": "ReturnFromMission",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 221,
+          "Name": "SetMissionFlag",
+          "Args": [
+            {
+              "Name": "missionId",
+              "Type": "int",
+              "Role": "Mission"
+            },
+            {
+              "Name": "flag",
+              "Type": "enum",
+              "Enum": "MissionFlag"
+            },
+            {
+              "Name": "flagStatus",
+              "Type": "enum",
+              "Enum": "FlagState"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 222,
+          "Name": "SendMail",
+          "Args": [
+            {
+              "Name": "mailId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 224,
+          "Name": "PlayBGM",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 225,
+          "Name": "EndMissionWithResult",
+          "Args": [
+            {
+              "Name": "result",
+              "Type": "int"
+            },
+            {
+              "Name": "debriefingId",
+              "Type": "int"
+            },
+            {
+              "Name": "textId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 226,
+          "Name": "ShowTutorialMessage",
+          "Args": [
+            {
+              "Name": "tutorialId",
+              "Type": "int",
+              "Role": "Tutorial"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 227,
+          "Name": "StartTalkForTopMenu",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 228,
+          "Name": "EndTalkForTopMenu",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 229,
+          "Name": "HideTextEffect",
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "TextEffect"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 230,
+          "Name": "PreventPlayerMovement",
+          "Args": [
+            {
+              "Name": "prevent",
+              "Type": "bool"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 234,
+          "Name": "ShowGenericLogNotification",
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "Action"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 235,
+          "Name": "OpenMail",
+          "Args": [
+            {
+              "Name": "mailId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 236,
+          "Name": "SetMessageVariationID",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 237,
+          "Name": "AddArchive",
+          "Args": [
+            {
+              "Name": "archiveId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 238,
+          "Name": "PlaySE",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 239,
+          "Name": "ResupplyPlayer",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 240,
+          "Name": "EnableAmmoAndRepairCosts",
+          "Args": [
+            {
+              "Name": "costsEnabled",
+              "Type": "bool"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 241,
+          "Name": "ShowTextEffectWithCounter",
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "TextEffect"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 242,
+          "Name": "ShowCharacterInfoOverlay",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 243,
+          "Name": "HideCharacterInfoOverlay",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 244,
+          "Name": "SetSoundState",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 245,
+          "Name": "HideTutorialMessage",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 246,
+          "Name": "PlayCutsceneAndWarpPlayer",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 247,
+          "Name": "HideAllTutorialMessages",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 248,
+          "Name": "PlayEndCredits",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 249,
+          "Name": "RunHacking",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 250,
+          "Name": "GiveItemDirectly",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "quantity",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 251,
+          "Name": "ResetHackingDurability",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 252,
+          "Name": "UnlockOSTuning",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 253,
+          "Name": "DisplayResultsAndForceSortie",
+          "Args": [
+            {
+              "Name": "missionId",
+              "Type": "int",
+              "Role": "Mission"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 254,
+          "Name": "DisplayResultsAndIncrementGameCycle",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 255,
+          "Name": "StopMovieLoop",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 256,
+          "Name": "MuteGenericCOM",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        },
+        {
+          "Bank": 1,
+          "Id": 259,
+          "Name": "UnlockDecal",
+          "Args": [
+            {
+              "Name": "decalId",
+              "Type": "int"
+            }
+          ],
+          "Seen": true
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "GetWhetherEnemiesAreNearby",
+          "Args": [
+            {
+              "Name": "unk"
+            }
+          ],
+          "Returns": {
+            "Name": "enemiesAreNearby",
+            "Type": "bool"
+          },
+          "BinaryReturn": true
+        },
+        {
+          "Id": 1,
+          "Name": "GetDistanceToPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "horizontalDistance",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 3,
+          "Name": "CheckSelfDeath",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 6,
+          "Name": "GetSelfHP",
+          "Args": [],
+          "Returns": {
+            "Name": "selfHPValue",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 9,
+          "Name": "IsPlayerAttacking",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsAttacking",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 14,
+          "Name": "GetOneLineHelpStatus",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 15,
+          "Name": "GetEventFlag",
+          "OldNames": [
+            "GetEventStatus"
+          ],
+          "Args": [
+            {
+              "Name": "eventFlagId",
+              "Type": "int",
+              "Role": "EventFlag"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 18,
+          "Name": "IsFightingAlone",
+          "Args": [],
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 19,
+          "Name": "IsClientPlayer",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsNotInOwnWorld",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 22,
+          "Name": "GetGenericDialogButtonResult",
+          "Args": [],
+          "Returns": {
+            "Name": "dialogResult",
+            "Type": "enum",
+            "Enum": "DialogResult"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 24,
+          "Name": "IsMoviePlaying",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 26,
+          "Name": "IsCharacterDisabled",
+          "Args": [],
+          "Returns": {
+            "Name": "selfIsHidden",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 27,
+          "Name": "IsPlayerDead",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsDead",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 31,
+          "Name": "IsTalkingToSomeoneElse",
+          "Args": [],
+          "Returns": {
+            "Name": "playerIsTalkingToSomeoneElse",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 47,
+          "Name": "ComparePlayerInventoryNumber",
+          "Args": [
+            {
+              "Name": "itemCategory",
+              "Type": "enum",
+              "Role": "ItemType",
+              "Enum": "ItemType"
+            },
+            {
+              "Name": "itemId",
+              "Type": "int",
+              "Role": "Item"
+            },
+            {
+              "Name": "comparison",
+              "Type": "enum",
+              "Enum": "CompareType"
+            },
+            {
+              "Name": "value",
+              "Type": "int"
+            },
+            {
+              "Name": "checkStorage",
+              "Type": "bool"
+            }
+          ],
+          "Returns": {
+            "Name": "comparisonResult",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 55,
+          "Name": "GetPlayerRemainingHP",
+          "Args": [],
+          "Seen": true
+        },
+        {
+          "Id": 56,
+          "Name": "CheckActionButtonArea",
+          "Args": [
+            {
+              "Name": "actionButtonParamRow",
+              "Type": "int",
+              "Role": "ActionButton"
+            }
+          ],
+          "Returns": {
+            "Name": "actionButtonPressed",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 57,
+          "Name": "CheckSpecificPersonTalkHasEnded",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "use 0"
+            }
+          ],
+          "Returns": {
+            "Name": "conversationHasEnded",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 58,
+          "Name": "CheckSpecificPersonGenericDialogIsOpen",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "dialogIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 59,
+          "Name": "CheckSpecificPersonMenuIsOpen",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "-1 means no menu is open"
+            },
+            {
+              "Name": "unk",
+              "Type": "int",
+              "Comment": "usually 0"
+            }
+          ],
+          "Returns": {
+            "Name": "menuIsOpen",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 60,
+          "Name": "DoesSelfHaveSpEffect",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "selfHasSpEffect",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 61,
+          "Name": "DoesPlayerHaveSpEffect",
+          "Args": [
+            {
+              "Name": "SpEffectParamRow",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "playerHasSpEffect",
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 102,
+          "Name": "GetCurrentStateElapsedFrames",
+          "Args": [],
+          "Returns": {
+            "Name": "elapsedFrames",
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 103,
+          "Name": "GetCurrentStateElapsedTime",
+          "Args": [],
+          "Returns": {
+            "Name": "elapsedTime",
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 202,
+          "Name": "GetMachineResult",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 203,
+          "Name": "MachineExists",
+          "Args": [
+            {
+              "Name": "machineId",
+              "Type": "int",
+              "Role": "Machine"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 310,
+          "Name": "GetHackingDurability",
+          "Args": [],
+          "Returns": {
+            "Type": "float"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 312,
+          "Name": "GetMapEventFlag",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 313,
+          "Name": "GetGimmickEventFlag",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 314,
+          "Name": "GetMissionFlag",
+          "Args": [
+            {
+              "Name": "missionId",
+              "Type": "int",
+              "Role": "Mission"
+            },
+            {
+              "Name": "flag",
+              "Type": "enum",
+              "Enum": "MissionFlag"
+            }
+          ],
+          "Returns": {
+            "Name": "flagStatus",
+            "Type": "enum",
+            "Enum": "FlagState"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 315,
+          "Name": "GetMailStatus",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 316,
+          "Name": "GetMailIDForMission",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            },
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 318,
+          "Name": "GetCompanyContributionAmount",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 319,
+          "Name": "DoesPlayerHaveStateInfo",
+          "Args": [
+            {
+              "Name": "unk",
+              "Type": "int"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 320,
+          "Name": "IsTextEffectDone",
+          "Args": [
+            {
+              "Name": "textId",
+              "Type": "int",
+              "Role": "TextEffect"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 321,
+          "Name": "IsCutscenePlaying",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 322,
+          "Name": "GetGameCycle",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 324,
+          "Name": "IsEndCreditsPlaying",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 325,
+          "Name": "IsInHackingStartArea",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 326,
+          "Name": "IsInHackingArea",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 327,
+          "Name": "GetCurrentChapter",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 328,
+          "Name": "IsFreeMission",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 329,
+          "Name": "IsHardcoreMission",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 331,
+          "Name": "IsArenaComplete",
+          "Args": [
+            {
+              "Name": "arenaId",
+              "Type": "int",
+              "Role": "Arena"
+            }
+          ],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 332,
+          "Name": "IsHackingComplete",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 333,
+          "Name": "GetMissionAltType",
+          "Args": [],
+          "Returns": {
+            "Type": "enum",
+            "Enum": "MissionAltType"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 334,
+          "Name": "GetACTestEnemySetting",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 335,
+          "Name": "GetACTestAISetting",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 336,
+          "Name": "IsTimePassComplete",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        },
+        {
+          "Id": 337,
+          "Name": "GetMercenaryRank",
+          "Args": [],
+          "Returns": {
+            "Type": "int"
+          },
+          "Seen": true
+        },
+        {
+          "Id": 338,
+          "Name": "IsPopupDialogClosed",
+          "Args": [],
+          "Returns": {
+            "Type": "bool"
+          },
+          "BinaryReturn": true,
+          "Seen": true
+        }
+      ],
+      "Enums": [
+        {
+          "Name": "CompareType",
+          "Values": [
+            {
+              "Name": "Equal"
+            },
+            {
+              "Value": 1,
+              "Name": "NotEqual"
+            },
+            {
+              "Value": 2,
+              "Name": "Greater"
+            },
+            {
+              "Value": 3,
+              "Name": "Less"
+            },
+            {
+              "Value": 4,
+              "Name": "GreaterOrEqual"
+            },
+            {
+              "Value": 5,
+              "Name": "LessOrEqual"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxStyle",
+          "Values": [
+            {
+              "Name": "OrnateNoOptions"
+            },
+            {
+              "Value": 1,
+              "Name": "DialogOptions"
+            },
+            {
+              "Value": 2,
+              "Name": "OrnateOptions"
+            },
+            {
+              "Value": 3,
+              "Name": "OrnateYesOption"
+            },
+            {
+              "Value": 4,
+              "Name": "Unk"
+            }
+          ]
+        },
+        {
+          "Name": "DialogBoxType",
+          "Values": [
+            {
+              "Value": 1,
+              "Name": "CenterMiddleDimScreen1"
+            },
+            {
+              "Value": 2,
+              "Name": "CenterMiddleDimScreen2"
+            },
+            {
+              "Value": 7,
+              "Name": "CenterBottom1"
+            },
+            {
+              "Value": 8,
+              "Name": "CenterBottom2"
+            }
+          ]
+        },
+        {
+          "Name": "DialogResult",
+          "Values": [
+            {
+              "Name": "Cancel"
+            },
+            {
+              "Value": 1,
+              "Name": "Left"
+            },
+            {
+              "Value": 2,
+              "Name": "Right"
+            },
+            {
+              "Value": 3,
+              "Name": "Leave"
+            }
+          ]
+        },
+        {
+          "Name": "FlagState",
+          "Values": [
+            {
+              "Name": "Off"
+            },
+            {
+              "Value": 1,
+              "Name": "On"
+            }
+          ]
+        },
+        {
+          "Name": "ItemType",
+          "Values": [
+            {
+              "Name": "Weapon"
+            },
+            {
+              "Value": 1,
+              "Name": "Protector"
+            },
+            {
+              "Value": 2,
+              "Name": "Accessory"
+            },
+            {
+              "Value": 3,
+              "Name": "Goods"
+            },
+            {
+              "Value": 5,
+              "Name": "Generator"
+            },
+            {
+              "Value": 6,
+              "Name": "Booster"
+            },
+            {
+              "Value": 7,
+              "Name": "Fcs"
+            }
+          ]
+        },
+        {
+          "Name": "MissionAltType",
+          "Values": [
+            {
+              "Name": "Original"
+            },
+            {
+              "Value": 1,
+              "Name": "Alt"
+            }
+          ]
+        },
+        {
+          "Name": "MissionFlag",
+          "Values": [
+            {
+              "Name": "Unlocked"
+            },
+            {
+              "Value": 1,
+              "Name": "Complete"
+            }
+          ]
+        },
+        {
+          "Name": "TalkOptionsType",
+          "Values": [
+            {
+              "Name": "Old"
+            },
+            {
+              "Value": 1,
+              "Name": "Regular"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
