@@ -25,7 +25,8 @@ public enum CollisionEditorSource
 {
     Edit,
     Create,
-    Fall
+    Fall,
+    Cleanup
 }
 
 public partial class CollisionEditorTool
@@ -91,6 +92,7 @@ public partial class CollisionEditorTool
 
     private readonly CollisionEditorCreate Create;
     private readonly CollisionEditorFallProtection FallProtection;
+    private readonly CollisionEditorCleanup Cleanup;
 
     /// <summary>
     /// The last Commit, Discard, Create, Overwrite or Generate, as logged: shown in the header and under the action of
@@ -137,6 +139,7 @@ public partial class CollisionEditorTool
         Project = project;
         Create = new CollisionEditorCreate(view, project, this);
         FallProtection = new CollisionEditorFallProtection(view, project, this);
+        Cleanup = new CollisionEditorCleanup(view, project, this);
     }
 
     /// <summary>
@@ -228,6 +231,14 @@ public partial class CollisionEditorTool
                 OpenTab = CollisionEditorSource.Fall;
                 DisplayTabHelp(CollisionEditorSource.Fall);
                 FallProtection.Display();
+                ImGui.EndTabItem();
+            }
+
+            if (BeginTab(CollisionEditorSource.Cleanup, "MAP_CollisionEditor_Tab_Cleanup", "collisionEditorTabCleanup"))
+            {
+                OpenTab = CollisionEditorSource.Cleanup;
+                DisplayTabHelp(CollisionEditorSource.Cleanup);
+                Cleanup.Display();
                 ImGui.EndTabItem();
             }
 

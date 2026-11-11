@@ -708,6 +708,117 @@ public class HavokCollisionBank
         return success;
     }
 
+    /// <summary>
+    /// The collision file names listed for a map, of every type (h, l and f). Empty if the map isn't loaded.
+    /// </summary>
+    public IReadOnlyList<string> GetMapCollisionNames(string mapId)
+    {
+        return MapCollisions.TryGetValue(mapId, out var names) ? names.ToList() : new List<string>();
+    }
+
+    /// <summary>
+    /// Removes collision files from a map's binders and writes the binders that changed into the project, then drops
+    /// them from what this bank holds. Files that were only made in the Map Editor and not written yet are just
+    /// dropped. Returns whether every binder that needed writing was written; removed is how many files went.
+    /// </summary>
+    public bool RemoveMapCollision(string mapId, IReadOnlyCollection<string> fileNames, out int removed)
+    {
+        removed = 0;
+
+        var targets = new HashSet<string>(fileNames, StringComparer.OrdinalIgnoreCase);
+
+        if (targets.Count == 0)
+            return true;
+
+        var success = true;
+        var gone = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var type in GetCollisionBinderTypes())
+        {
+            var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
+
+            if (!Project.VFS.FS.FileExists(bdtPath) || !Project.VFS.FS.FileExists(bhdPath))
+                continue;
+
+            try
+            {
+                // The project's copy first, so the files kept keep any earlier changes
+                var bdtData = Project.VFS.ProjectFS.FileExists(bdtPath)
+                    ? Project.VFS.ProjectFS.ReadFile(bdtPath)
+                    : Project.VFS.FS.ReadFile(bdtPath);
+                var bhdData = Project.VFS.ProjectFS.FileExists(bhdPath)
+                    ? Project.VFS.ProjectFS.ReadFile(bhdPath)
+                    : Project.VFS.FS.ReadFile(bhdPath);
+
+                if (bdtData == null || bhdData == null)
+                    continue;
+
+                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+                // Only collision files: the compendium and anything else in the binder stay
+                var toRemove = packedBinder.Files
+                    .Where(f => f.Name != null && f.Name.Contains(".hkx.dcx"))
+                    .Where(f => f.Name.Split('\\') is { Length: 2 } parts && targets.Contains(parts[1]))
+                    .ToList();
+
+                if (toRemove.Count == 0)
+                    continue;
+
+                // A binder left with no collision file can't take new ones (AddNewFiles copies an existing one's
+                // folder and flags), so its last file is kept
+                if (toRemove.Count == packedBinder.Files.Count(f => f.Name != null && f.Name.Contains(".hkx.dcx") && f.Name.Split('\\').Length == 2))
+                {
+                    var kept = toRemove[0];
+                    toRemove.RemoveAt(0);
+                    Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Cleanup_Kept_Last", kept.Name.Split('\\')[1], GetBinderKey(mapId, type)));
+
+                    if (toRemove.Count == 0)
+                        continue;
+                }
+
+                foreach (var file in toRemove)
+                {
+                    packedBinder.Files.Remove(file);
+                    gone.Add(file.Name.Split('\\')[1]);
+                    Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Cleanup_Removed_File", file.Name.Split('\\')[1], GetBinderKey(mapId, type)));
+                }
+
+                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+                Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+                Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Write_HKXBND", bdtPath), e);
+                success = false;
+            }
+        }
+
+        // Made in the Map Editor and not in a binder yet: nothing to write, only to forget
+        foreach (var name in targets.Where(n => NewFiles.TryGetValue(n, out var entry) && entry.MapId == mapId))
+            gone.Add(name);
+
+        foreach (var name in gone)
+        {
+            MapDocuments.Remove(name);
+            CollisionBinders.Remove(name);
+            NewFiles.Remove(name);
+            ModifiedTagFiles.Remove(name);
+
+            lock (TagContainers)
+            {
+                TagContainers.Remove(name);
+            }
+
+            if (MapCollisions.TryGetValue(mapId, out var names))
+                names.RemoveAll(n => string.Equals(n, name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        removed = gone.Count;
+        return success;
+    }
+
     public bool SaveMapCollisionFiles(string mapId)
     {
         var success = true;
