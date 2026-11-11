@@ -4,42 +4,74 @@ using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Editors.MapEditor;
 
+/// <summary>
+/// The Map Information window: the world map with the map tiles over it (World Map mode), and the editor for the
+/// ER mapinfotexbnd layers (Map Information Editor mode). See Claude/Documentation/World Map Assessment.md.
+/// </summary>
 public class WorldMapTool : IResourceEventListener
 {
+    public enum WorldMapMode
+    {
+        WorldMap,
+        MapInformation
+    }
+
     private MapEditorView View;
     private ProjectEntry Project;
-
-    private Task _loadingTask;
 
     private WorldMapLayout VanillaLayout = null;
     private WorldMapLayout SoteLayout = null;
     private WorldMapLayout LimveldLayout = null;
 
-    private bool IsMapWindowOpen { get; set; }
+    private bool LayoutsBuilt = false;
+
 
     public WorldMapImageSource CurrentMapSource = WorldMapImageSource.LandsBetween;
 
-    private Vector2 MapZoomFactor;
-    private float MapZoomFactorStep = 0.1f;
+    public WorldMapMode Mode = WorldMapMode.WorldMap;
 
-    private Vector2 TextureViewWindowPosition = new Vector2(0, 0);
-    private Vector2 TextureViewScrollPosition = new Vector2(0, 0);
+    public MapInfoEditor MapInfo { get; }
+
+    /// <summary>The game's map tiles (ER); null for games still using the bundled image</summary>
+    private readonly WorldMapTileSet GameTiles;
+
+    /// <summary>The game's map of a map source: M00 Lands Between, M10 Shadow of the Erdtree</summary>
+    private static string GameMapOf(WorldMapImageSource source) => source switch
+    {
+        WorldMapImageSource.LandsBetween => "M00",
+        WorldMapImageSource.ShadowOfTheErdtree => "M10",
+        _ => null
+    };
+
+    private Vector2 MapZoomFactor;
 
     private Vector2 MapTextureSize = new Vector2();
-    private Vector2 MapCurseRelativePosition = new Vector2();
-    private Vector2 MapCurseRelativePositionInWindow = new Vector2();
+
+    /// <summary>The screen position of the map image's top left this frame</summary>
+    private Vector2 ImageMin = new Vector2();
+
+    /// <summary>The cursor on the map image, before zoom</summary>
+    private Vector2 MouseImage = new Vector2();
+
+    private bool CanvasHovered = false;
 
     private List<string> HoveredMapTiles = new List<string>();
     private List<string> SelectedMapTiles = new List<string>();
 
     private bool _isDraggingMap = false;
     private Vector2 _lastMousePos = Vector2.Zero;
+
+    /// <summary>The screen offset of the map image's top left from the canvas's top left</summary>
+    private Vector2 MapPan;
+
+    /// <summary>Centre the map on the next draw (first show, reset, map source change)</summary>
+    private bool _centerPending = true;
 
     public static List<string> TextureExlusions = new List<string>()
     {
@@ -58,19 +90,22 @@ public class WorldMapTool : IResourceEventListener
         View = view;
         Project = project;
 
-        IsMapWindowOpen = false;
+
+        MapInfo = new MapInfoEditor(view, project);
+
+        if (WorldMapTileSet.IsSupported(project))
+            GameTiles = new WorldMapTileSet(project);
 
         MapZoomFactor = GetDefaultZoomLevel();
         DPI.UIScaleChanged += (_, _) =>
         {
-            MapZoomFactor = GetDefaultZoomLevel();
+            ResetView();
         };
 
+        // ER draws the game's own map tiles (GameTiles), so it needs no bundled image
         if (View.Project.Descriptor.ProjectType is ProjectType.ER)
         {
             CurrentMapSource = WorldMapImageSource.LandsBetween;
-
-            RegisterWorldMapListeners();
         }
 
         if (View.Project.Descriptor.ProjectType is ProjectType.NR)
@@ -81,12 +116,22 @@ public class WorldMapTool : IResourceEventListener
         }
     }
 
+    public static bool IsAvailable(ProjectEntry project) => project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+
     /// <summary>
-    /// The Lands Between menu option
+    /// Shows or hides the window. Its visibility is a Map Editor window setting, like the Tools window's.
     /// </summary>
-    public void DisplayMenuOption()
+    public void ToggleWindow()
     {
-        RegisterWorldMapListeners();
+        CFG.Current.Interface_MapEditor_MapInformation = !CFG.Current.Interface_MapEditor_MapInformation;
+    }
+
+    private void BuildLayouts()
+    {
+        if (LayoutsBuilt)
+            return;
+
+        LayoutsBuilt = true;
 
         GenerateWorldMapLayout_Vanilla();
         GenerateWorldMapLayout_SOTE();
@@ -101,42 +146,71 @@ public class WorldMapTool : IResourceEventListener
             yMediumOffset: 256,
             xSmallOffset: 256,
             ySmallOffset: 256);
-
-        IsMapWindowOpen = !IsMapWindowOpen;
     }
 
-    public void DisplayPopup()
+    /// <summary>
+    /// The toggle shortcut, checked every frame whether or not the window is shown
+    /// </summary>
+    public void Update()
     {
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport))
-        {
-            if (InputManager.IsPressed(KeybindID.MapEditor_Toggle_World_Map_Menu))
-            {
-                DisplayMenuOption();
-            }
-        }
-
-        if (!IsMapWindowOpen)
+        if (!IsAvailable(Project))
             return;
 
-        if (View.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_Viewport)
+            || FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap))
         {
-            DisplayMap();
+            if (!ImGui.IsAnyItemActive() && InputManager.IsPressed(KeybindID.MapEditor_Toggle_World_Map_Menu))
+            {
+                ToggleWindow();
+            }
+        }
+    }
+
+    #region Menus
+
+    public void ModeMenu()
+    {
+        if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Mode_World_Map")}##worldMapModeWorldMap", "", Mode == WorldMapMode.WorldMap))
+        {
+            Mode = WorldMapMode.WorldMap;
+        }
+        GUI.Tooltip(LOC.Get("MAP_MapInfo_Mode_World_Map_TT"));
+
+        if (MapInfoEditor.IsSupported(Project))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Mode_Editor")}##worldMapModeEditor", "", Mode == WorldMapMode.MapInformation))
+            {
+                Mode = WorldMapMode.MapInformation;
+            }
+            GUI.Tooltip(LOC.Get("MAP_MapInfo_Mode_Editor_TT"));
         }
     }
 
     public void ControlsMenu()
     {
-        if (ImGui.MenuItem("Controls"))
+        if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Controls")}##worldMapControls"))
         {
             ImGui.OpenPopup("controlHint");
         }
 
         if (ImGui.BeginPopup("controlHint"))
         {
-            ImGui.Text($"Left click to navigate the map.");
-            ImGui.Text($"Right click on the map to filter the map list to the map tiles underneath your click.");
-            ImGui.Text($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-            ImGui.Text($"Press {InputManager.GetHint(KeybindID.TextureViewer_Reset_Zoom_Level)} to reset zoom level to 100%.");
+            if (Mode == WorldMapMode.WorldMap)
+            {
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Drag", InputManager.GetMouseHint(MousebindID.MapEditor_World_Map_Drag_Start)));
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Select", InputManager.GetMouseHint(MousebindID.MapEditor_Select_Map_In_World_Map)));
+            }
+            else
+            {
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Paint", InputManager.GetMouseHint(MousebindID.MapEditor_Map_Information_Paint)));
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Pick", InputManager.GetMouseHint(MousebindID.MapEditor_Map_Information_Pick)));
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Drag", InputManager.GetMouseHint(MousebindID.MapEditor_Map_Information_Pan)));
+                ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Undo",
+                    InputManager.GetHint(KeybindID.Undo), InputManager.GetHint(KeybindID.Redo), InputManager.GetHint(KeybindID.Save)));
+            }
+
+            ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Zoom"));
+            ImGui.Text(LOC.Get("MAP_MapInfo_Controls_Reset_Zoom", InputManager.GetHint(KeybindID.MapEditor_Reset_World_Map_Zoom_Level)));
 
             ImGui.EndPopup();
         }
@@ -144,328 +218,288 @@ public class WorldMapTool : IResourceEventListener
 
     public void MapSourceMenu()
     {
-        if (ImGui.BeginMenu("Map Source"))
+        if (ImGui.BeginMenu($"{LOC.Get("MAP_MapInfo_Map_Source")}##worldMapSource"))
         {
             if (Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (ImGui.MenuItem("Lands Between"))
-                {
-                    CurrentMapSource = WorldMapImageSource.LandsBetween;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Shadow of the Erdtree"))
-                {
-                    CurrentMapSource = WorldMapImageSource.ShadowOfTheErdtree;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
+                SourceItem(WorldMapImageSource.LandsBetween, "MAP_MapInfo_Source_Lands_Between");
+                SourceItem(WorldMapImageSource.ShadowOfTheErdtree, "MAP_MapInfo_Source_SotE");
             }
 
             if (Project.Descriptor.ProjectType is ProjectType.NR)
             {
-                if (ImGui.MenuItem("Limveld"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Limveld;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Limveld: Mountaintops"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Limveld_Mountaintops;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Limveld: Crater"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Limveld_Crater;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Limveld: Rotted Woods"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Limveld_Rotted_Woods;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Limveld: Noklateo"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Limveld_Noklateo;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
-
-                if (ImGui.MenuItem("Forsaken Hollows"))
-                {
-                    CurrentMapSource = WorldMapImageSource.Forsaken_Hollows;
-                }
-                GUI.Tooltip($"Switch the map image to this.");
+                SourceItem(WorldMapImageSource.Limveld, "MAP_MapInfo_Source_Limveld");
+                SourceItem(WorldMapImageSource.Limveld_Mountaintops, "MAP_MapInfo_Source_Limveld_Mountaintops");
+                SourceItem(WorldMapImageSource.Limveld_Crater, "MAP_MapInfo_Source_Limveld_Crater");
+                SourceItem(WorldMapImageSource.Limveld_Rotted_Woods, "MAP_MapInfo_Source_Limveld_Rotted_Woods");
+                SourceItem(WorldMapImageSource.Limveld_Noklateo, "MAP_MapInfo_Source_Limveld_Noklateo");
+                SourceItem(WorldMapImageSource.Forsaken_Hollows, "MAP_MapInfo_Source_Forsaken_Hollows");
             }
 
             ImGui.EndMenu();
         }
     }
 
-
-    public void MapFilterMenu()
+    private void SourceItem(WorldMapImageSource source, string key)
     {
-        if (ImGui.BeginMenu("Map Filter"))
+        if (ImGui.MenuItem($"{LOC.Get(key)}##worldMapSource_{source}", "", CurrentMapSource == source))
         {
-            ImGui.Text("Determine how the map list filter functions.");
+            CurrentMapSource = source;
+            _centerPending = true;
+        }
+        GUI.Tooltip(LOC.Get("MAP_MapInfo_Source_TT"));
+    }
 
-            ImGui.Checkbox("Include Small Tiles", ref CFG.Current.WorldMapFilter_IncludeSmallTiles);
-            GUI.Tooltip("Small tiles will be included in the map list filter.");
+    /// <summary>
+    /// The World Map mode's side panel: the maps picked on the map, with buttons to load them, and which tile
+    /// shapes are drawn
+    /// </summary>
+    private void DisplayWorldMapPanel()
+    {
+        var pickHint = InputManager.GetMouseHint(MousebindID.MapEditor_Select_Map_In_World_Map);
 
-            ImGui.Checkbox("Include Medium Tiles", ref CFG.Current.WorldMapFilter_IncludeMediumTiles);
-            GUI.Tooltip("Medium tiles will be included in the map list filter.");
+        GUI.WrappedText(LOC.Get("MAP_MapInfo_WorldMap_Description", pickHint));
 
-            ImGui.Checkbox("Include Large Tiles", ref CFG.Current.WorldMapFilter_IncludeLargeTiles);
-            GUI.Tooltip("Large tiles will be included in the map list filter.");
+        // Selected Tiles
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Selected_Tiles_Header"), LOC.Get("MAP_MapInfo_Selected_Tiles_Header_TT", pickHint));
 
-            if (Project.Descriptor.ProjectType is ProjectType.NR)
-            {
-                ImGui.Checkbox("Restrict by Map Source", ref CFG.Current.WorldMapFilter_RestrictBySource);
-                GUI.Tooltip("Restrict the tiles to the current map source.");
-            }
+        if (SelectedMapTiles.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("MAP_MapInfo_Selected_Tiles_None", pickHint));
+        }
 
-            ImGui.EndMenu();
+        foreach (var tile in SelectedMapTiles)
+        {
+            GUI.WrappedText($"{tile} ({AliasHelper.GetMapNameAlias(View.Project, tile)})");
+
+            var loaded = IsMapLoaded(tile);
+            var mapId = tile;
+
+            GUI.ConditionalMultiButtonInput($"worldMapLoadTable_{tile}",
+                $"worldMapLoad_{tile}",
+                LOC.Get(loaded ? "MAP_MapInfo_Selected_Tiles_Loaded" : "MAP_MapInfo_Selected_Tiles_Load"),
+                LOC.Get("MAP_MapInfo_Selected_Tiles_Load_TT", tile),
+                () => View.Universe.LoadMap(mapId, true), !loaded);
+        }
+
+        // Tile Display
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Tile_Display_Header"), LOC.Get("MAP_MapInfo_Tile_Display_Header_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Tiles")}##worldMapTiles", ref CFG.Current.WorldMapDisplayTiles);
+        GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Tiles_TT"));
+
+        if (CFG.Current.WorldMapDisplayTiles)
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Small")}##worldMapTilesSmall", ref CFG.Current.WorldMapDisplaySmallTiles);
+            GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Small_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Medium")}##worldMapTilesMedium", ref CFG.Current.WorldMapDisplayMediumTiles);
+            GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Medium_TT"));
+
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Large")}##worldMapTilesLarge", ref CFG.Current.WorldMapDisplayLargeTiles);
+            GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Large_TT"));
+        }
+
+        if (Project.Descriptor.ProjectType is ProjectType.NR)
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Filter_Restrict")}##worldMapFilterRestrict", ref CFG.Current.WorldMapFilter_RestrictBySource);
+            GUI.Tooltip(LOC.Get("MAP_MapInfo_Filter_Restrict_TT"));
         }
     }
 
-    public void SettingsMenu()
+    #endregion
+
+    /// <summary>
+    /// The window, as one of the view's Map Editor windows: in the view's dockspace, so it can be docked beside
+    /// the viewport. It first docks into the viewport's node, as a tab next to it.
+    /// </summary>
+    public void Display(uint dockspaceId, int viewIndex, uint viewportDockId)
     {
-        if (ImGui.BeginMenu("Settings"))
+        if (!IsAvailable(Project) || !CFG.Current.Interface_MapEditor_MapInformation)
+            return;
+
+        BuildLayouts();
+
+        ImGui.SetNextWindowDockID(viewportDockId != 0 ? viewportDockId : dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+
+        if (ImGui.Begin($"{LOC.Get("MAP_MapInfo_Window_Title")}##mapEditor_MapInformation_{viewIndex}", GUI.GetMainWindowFlags()))
         {
-            ImGui.Checkbox("Lock Movement", ref CFG.Current.WorldMapLockMovement);
-            GUI.Tooltip($"If enabled, the window cannot be moved. Makes it easier to use the drag move to view the map.");
-
-            ImGui.Checkbox("Display Tiles", ref CFG.Current.WorldMapDisplayTiles);
-            GUI.Tooltip($"If enabled, the tile shapes will overlay the map.");
-
-            ImGui.Checkbox("Display Small Tiles", ref CFG.Current.WorldMapDisplaySmallTiles);
-            GUI.Tooltip($"If enabled, the small tile shapes will overlay the map.");
-
-            ImGui.Checkbox("Display Medium Tiles", ref CFG.Current.WorldMapDisplayMediumTiles);
-            GUI.Tooltip($"If enabled, the medium tile shapes will overlay the map.");
-
-            ImGui.Checkbox("Display Large Tiles", ref CFG.Current.WorldMapDisplayLargeTiles);
-            GUI.Tooltip($"If enabled, the large tile shapes will overlay the map.");
-
-            ImGui.EndMenu();
+            DisplayContents();
         }
+        else
+        {
+            MapInfo.CancelPainting();
+        }
+
+        ImGui.End();
     }
 
-    public void DisplayMap()
+    private void DisplayContents()
     {
-        var flags = ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoScrollWithMouse;
-
-        if(CFG.Current.WorldMapLockMovement)
-        {
-            flags = flags | ImGuiWindowFlags.NoMove;
-        }
-
-        var viewport = ImGui.GetMainViewport();
-        Vector2 center = viewport.Pos + viewport.Size / 2;
-
-        ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
-        ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
-
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditor);
-        ImGui.Begin("World Map##WorldMapImage", flags);
+        var editorMode = Mode == WorldMapMode.MapInformation && MapInfoEditor.IsSupported(Project);
+        var area = MapInfoEditor.AreaOf(CurrentMapSource);
 
         if (ImGui.BeginMenuBar())
         {
+            ModeMenu();
+            ImGui.Separator();
             ControlsMenu();
             MapSourceMenu();
-            MapFilterMenu();
-            SettingsMenu();
-
-            if(ImGui.MenuItem("Close"))
-            {
-                IsMapWindowOpen = false;
-            }
 
             ImGui.EndMenuBar();
         }
 
-        var windowHeight = ImGui.GetWindowHeight();
-        var windowWidth = ImGui.GetWindowWidth();
-        var mousePos = ImGui.GetMousePos();
-
-        // Store scroll position for potential modification
-        float currentScrollX = ImGui.GetScrollX();
-        float currentScrollY = ImGui.GetScrollY();
-
-        Vector2 currentMousePos = ImGui.GetMousePos();
-        Vector2 windowPos = ImGui.GetWindowPos();
-        Vector2 windowSize = ImGui.GetWindowSize();
-        bool isMouseInMapWindow = currentMousePos.X >= windowPos.X &&
-                                  currentMousePos.Y >= windowPos.Y &&
-                                  currentMousePos.X < windowPos.X + windowSize.X &&
-                                  currentMousePos.Y < windowPos.Y + windowSize.Y;
-
-        if (ImGui.IsWindowHovered())
+        if (ImGui.IsWindowHovered(ImGuiHoveredFlags.RootAndChildWindows))
         {
             FocusManager.SetFocus(EditorFocusContext.MapEditor_WorldMap);
+            View.Editor.ViewHandler.ActiveView = View;
         }
 
-        // Start drag on left click in window
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap) && InputManager.IsMousePressed(MousebindID.MapEditor_World_Map_Drag_Start))
+        // Side panel: the mode's options
+        if (editorMode)
         {
-            FocusManager.SetFocus(EditorFocusContext.MapEditor_WorldMap);
-
-            _isDraggingMap = true;
-            _lastMousePos = currentMousePos;
+            ImGui.BeginChild("##mapInfoPanel", new Vector2(320 * DPI.UIScale(), 0), ImGuiChildFlags.Borders | ImGuiChildFlags.ResizeX);
+            MapInfo.DisplayPanel(area);
+            ImGui.EndChild();
         }
-
-        // Stop drag on release
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap) && InputManager.IsMouseReleased(MousebindID.MapEditor_World_Map_Drag_End))
+        else
         {
-            _isDraggingMap = false;
+            ImGui.BeginChild("##worldMapPanel", new Vector2(260 * DPI.UIScale(), 0), ImGuiChildFlags.Borders | ImGuiChildFlags.ResizeX);
+            DisplayWorldMapPanel();
+            ImGui.EndChild();
         }
 
-        if (_isDraggingMap && FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap))
+        ImGui.SameLine();
+
+        DisplayCanvas(editorMode, area);
+
+        var focused = FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap)
+            && ImGui.IsWindowFocused(ImGuiFocusedFlags.RootAndChildWindows);
+
+        if (focused)
         {
-            Vector2 mouseDelta = currentMousePos - _lastMousePos;
+            if (editorMode)
+                MapInfo.HandleShortcuts();
 
-            // Reverse scroll direction: drag down → texture up
-            ImGui.SetScrollX(currentScrollX - mouseDelta.X);
-            ImGui.SetScrollY(currentScrollY - mouseDelta.Y);
-
-            _lastMousePos = currentMousePos;
+            if (!ImGui.IsAnyItemActive() && InputManager.IsPressed(KeybindID.MapEditor_Reset_World_Map_Zoom_Level))
+            {
+                ResetView();
+            }
         }
+    }
+
+    private void DisplayCanvas(bool editorMode, string area)
+    {
+        // The canvas has no scrolling of its own: the map is placed at MapPan, and panning and zooming change
+        // MapPan and the zoom before anything is drawn, so a change shows in the same frame. (With ImGui scrolling
+        // a zoom drew one frame at the new zoom with the old scroll, and the scroll was clamped to the old size.)
+        ImGui.BeginChild("##worldMapCanvas", Vector2.Zero, ImGuiChildFlags.None, ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
+
+        var canvasMin = ImGui.GetCursorScreenPos();
+        var canvasSize = Vector2.Max(ImGui.GetContentRegionAvail(), new Vector2(1));
+        var canvasMax = canvasMin + canvasSize;
+
+        // Takes the mouse over the whole canvas, so dragging pans the map instead of moving the window
+        ImGui.InvisibleButton("##worldMapCanvasInput", canvasSize,
+            ImGuiButtonFlags.MouseButtonLeft | ImGuiButtonFlags.MouseButtonRight | ImGuiButtonFlags.MouseButtonMiddle);
+        var canvasHovered = ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem);
+
+        var drawList = ImGui.GetWindowDrawList();
+        drawList.PushClipRect(canvasMin, canvasMax, true);
+
+        var gameMap = GameMapOf(CurrentMapSource);
+        var useGameTiles = GameTiles != null && gameMap != null;
+        TextureResource texRes = null;
+
+        // Map size in image units: L0 map pixels for the game's tiles, texels for a bundled image
+        Vector2 imageSize;
+
+        if (useGameTiles)
+        {
+            GameTiles.EnsureLoading();
+            imageSize = new Vector2(WorldMapTileSet.ImageSize);
+        }
+        else
+        {
+            texRes = GetImageTextureHandle(GetImagePath())?.Get();
+            imageSize = texRes != null ? GetImageSize(texRes, false) : Vector2.Zero;
+        }
+
+        // Pan and zoom first
+        if (_centerPending && imageSize.X > 0)
+        {
+            MapPan = (canvasSize - imageSize * MapZoomFactor) / 2;
+            _centerPending = false;
+        }
+
+        HandleDrag(editorMode, canvasHovered);
+
+        if (canvasHovered)
+        {
+            HandleZoom(canvasMin);
+        }
+
+        ClampPan(canvasSize, imageSize);
+
+        ImageMin = canvasMin + MapPan;
+        MapTextureSize = imageSize * MapZoomFactor;
+        MouseImage = (ImGui.GetMousePos() - ImageMin) / MapZoomFactor;
+
+        var mouse = ImGui.GetMousePos();
+        CanvasHovered = canvasHovered
+            && mouse.X >= ImageMin.X && mouse.Y >= ImageMin.Y
+            && mouse.X < ImageMin.X + MapTextureSize.X && mouse.Y < ImageMin.Y + MapTextureSize.Y;
 
         // Map
-        TextureViewWindowPosition = ImGui.GetWindowPos();
-        TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
-
-        ResourceHandle<TextureResource> resHandle = null;
-            
-        switch(CurrentMapSource)
+        if (useGameTiles)
         {
-            case WorldMapImageSource.LandsBetween:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_vanilla");
-                break;
+            var visibleMin = Vector2.Max(Vector2.Zero, (canvasMin - ImageMin) / MapZoomFactor);
+            var visibleMax = (canvasMax - ImageMin) / MapZoomFactor;
 
-            case WorldMapImageSource.ShadowOfTheErdtree:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_sote");
-                break;
+            GameTiles.Draw(drawList, gameMap, ImageMin, MapZoomFactor.X, visibleMin, visibleMax);
 
-            case WorldMapImageSource.Limveld:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld");
-                break;
-
-            case WorldMapImageSource.Limveld_Mountaintops:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_mountaintops");
-                break;
-
-            case WorldMapImageSource.Limveld_Crater:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_crater");
-                break;
-
-            case WorldMapImageSource.Limveld_Rotted_Woods:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_rotted_woods");
-                break;
-
-            case WorldMapImageSource.Limveld_Noklateo:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_noklateo");
-                break;
-
-            case WorldMapImageSource.Forsaken_Hollows:
-                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_forsaken_hollows");
-                break;
-        }
-
-        if (resHandle != null)
-        {
-            TextureResource texRes = resHandle.Get();
-
-            if (texRes != null)
+            if (!GameTiles.Loaded)
             {
-                MapTextureSize = GetImageSize(texRes, true);
-                MapCurseRelativePosition = GetRelativePosition(TextureViewWindowPosition, TextureViewScrollPosition);
-                MapCurseRelativePositionInWindow = GetRelativePositionWindowOnly(TextureViewWindowPosition);
-
-                var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
-                ImGui.Image(textureId, MapTextureSize);
+                var status = GameTiles.LoadError != null
+                    ? LOC.Get("MAP_WorldMapTiles_Load_Error", GameTiles.LoadError)
+                    : LOC.Get("MAP_WorldMapTiles_Loading");
+                drawList.AddText(canvasMin + new Vector2(12, 12) * DPI.UIScale(), ImGui.GetColorU32(ImGuiCol.Text), status);
             }
         }
-
-        // Tile Overlay
-        if (CFG.Current.WorldMapDisplayTiles)
+        else if (texRes != null)
         {
-            var drawList = ImGui.GetWindowDrawList();
-
-            List<WorldMapTile> tileList = new List<WorldMapTile>();
-
-            switch (CurrentMapSource)
-            {
-                case WorldMapImageSource.LandsBetween:
-                    tileList = VanillaLayout.Tiles;
-                    break;
-
-                case WorldMapImageSource.ShadowOfTheErdtree:
-                    tileList = SoteLayout.Tiles;
-                    break;
-
-                case WorldMapImageSource.Limveld:
-                case WorldMapImageSource.Limveld_Mountaintops:
-                case WorldMapImageSource.Limveld_Crater:
-                case WorldMapImageSource.Limveld_Rotted_Woods:
-                case WorldMapImageSource.Limveld_Noklateo:
-                case WorldMapImageSource.Forsaken_Hollows:
-                    tileList = LimveldLayout.Tiles;
-                    break;
-            }
-
-            foreach (var tile in tileList)
-            {
-                if (tile.TileType is WorldMapTileType.Small && !CFG.Current.WorldMapDisplaySmallTiles)
-                    continue;
-
-                if (tile.TileType is WorldMapTileType.Medium && !CFG.Current.WorldMapDisplayMediumTiles)
-                    continue;
-
-                if (tile.TileType is WorldMapTileType.Large && !CFG.Current.WorldMapDisplayLargeTiles)
-                    continue;
-
-                var tileSize = new Vector2(tile.Width, tile.Height);
-
-                // Image-space coordinates of tile (unscaled, unscrolled)
-                Vector2 tileTopLeft = new Vector2(tile.X, tile.Y);
-                Vector2 tileBottomRight = tileTopLeft + new Vector2(tile.Width, tile.Height);
-
-                // Apply zoom
-                tileTopLeft *= MapZoomFactor;
-                tileBottomRight *= MapZoomFactor;
-
-                // Apply scroll and window offsets (convert to screen space)
-                Vector2 imageTopLeftScreen = TextureViewWindowPosition - TextureViewScrollPosition + new Vector2(3 * DPI.UIScale(), 24 * DPI.UIScale());
-
-                Vector2 drawStart = imageTopLeftScreen + tileTopLeft;
-                Vector2 drawEnd = imageTopLeftScreen + tileBottomRight;
-
-                // Highlight hovered or selected
-                uint color = ImGui.GetColorU32(new Vector4(1, 1, 0, 0.5f)); // Yellow default
-                if (HoveredMapTiles.Contains(tile.Name))
-                    color = ImGui.GetColorU32(new Vector4(0, 1, 0, 0.5f)); // Green for hover
-                else if (SelectedMapTiles.Contains(tile.Name))
-                    color = ImGui.GetColorU32(new Vector4(1, 0, 0, 0.5f)); // Red for selected
-
-                // Draw filled semi-transparent rect (optional)
-                drawList.AddRectFilled(drawStart, drawEnd, ImGui.GetColorU32(new Vector4(1, 1, 0, 0.05f)));
-
-                // Draw outline
-                drawList.AddRect(drawStart, drawEnd, color, 0, ImDrawFlags.None, 2.0f);
-            }
+            drawList.AddImage(new ImTextureID(texRes.GPUTexture.TexHandle), ImageMin, ImageMin + MapTextureSize);
         }
 
-        ImGui.End();
-
-        HoveredMapTiles = GetMatchingMaps(MapCurseRelativePosition);
-
-        if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
+        if (editorMode)
         {
-            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < MapTextureSize.X &&
-                MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < MapTextureSize.Y)
+            MapInfo.DisplayCanvas(drawList, ImageMin, MapZoomFactor, GetLayout(area), area, CanvasHovered && !_isDraggingMap, MouseImage);
+        }
+        else
+        {
+            DrawTileOverlay(drawList);
+        }
+
+        drawList.PopClipRect();
+
+        ImGui.EndChild();
+
+        // Hover and tooltips, only while the image itself is under the cursor
+        if (editorMode)
+        {
+            HoveredMapTiles = new List<string>();
+
+            if (CanvasHovered && !MapInfo.IsPainting)
+                MapInfo.DisplayTooltip(area);
+        }
+        else
+        {
+            HoveredMapTiles = CanvasHovered ? GetMatchingMaps(MouseImage) : new List<string>();
+
+            if (HoveredMapTiles.Count > 0)
             {
                 ImGui.BeginTooltip();
 
@@ -476,131 +510,175 @@ public class WorldMapTool : IResourceEventListener
 
                 ImGui.EndTooltip();
             }
-        }
-
-        if (FocusManager.IsFocus(EditorFocusContext.MapEditor_WorldMap))
-        {
-            HandleZoom();
 
             // Select Maps under Point
-            if (InputManager.IsMousePressed(MousebindID.MapEditor_Select_Map_In_World_Map))
+            if (CanvasHovered && HoveredMapTiles.Count > 0 && InputManager.IsMousePressed(MousebindID.MapEditor_Select_Map_In_World_Map))
             {
-                if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
-                {
-                    if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
-                    {
-                        SelectedMapTiles = HoveredMapTiles;
-
-                        HandleMapFilterClick();
-                    }
-                }
+                SelectTilesUnderCursor();
             }
-
-            if (InputManager.IsPressed(KeybindID.MapEditor_Reset_World_Map_Zoom_Level))
-            {
-                MapZoomFactor = GetDefaultZoomLevel();
-            }
-        }
-
-        if (InputManager.IsKeyPressed(Key.Escape))
-        {
-            IsMapWindowOpen = false;
         }
     }
 
-    private void HandleMapFilterClick()
+    private void DrawTileOverlay(ImDrawListPtr drawList)
     {
-        List<string> mapFilterList = new();
-        List<WorldMapTile> tileList = new List<WorldMapTile>();
+        if (!CFG.Current.WorldMapDisplayTiles)
+            return;
 
-        var hoveredTiles = GetMatchingMaps(MapCurseRelativePosition);
-
-        switch (CurrentMapSource)
+        foreach (var tile in GetTileList())
         {
-            case WorldMapImageSource.LandsBetween:
-                tileList = VanillaLayout.Tiles;
-                break;
-
-            case WorldMapImageSource.ShadowOfTheErdtree:
-                tileList = SoteLayout.Tiles;
-                break;
-
-            case WorldMapImageSource.Limveld:
-            case WorldMapImageSource.Limveld_Mountaintops:
-            case WorldMapImageSource.Limveld_Crater:
-            case WorldMapImageSource.Limveld_Rotted_Woods:
-            case WorldMapImageSource.Limveld_Noklateo:
-            case WorldMapImageSource.Forsaken_Hollows:
-                tileList = LimveldLayout.Tiles;
-                break;
-        }
-
-        foreach (var tile in tileList)
-        {
-            if (!hoveredTiles.Contains(tile.Name))
+            if (tile.TileType is WorldMapTileType.Small && !CFG.Current.WorldMapDisplaySmallTiles)
                 continue;
 
-            if(CFG.Current.WorldMapFilter_RestrictBySource)
-            {
-                if(CurrentMapSource == WorldMapImageSource.Limveld)
-                {
-                    if (!tile.Name.EndsWith("00") && !tile.Name.EndsWith("01"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Mountaintops)
-                {
-                    if (!tile.Name.EndsWith("10") && !tile.Name.EndsWith("11"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Crater)
-                {
-                    if (!tile.Name.EndsWith("20") && !tile.Name.EndsWith("21"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Rotted_Woods)
-                {
-                    if (!tile.Name.EndsWith("30") && !tile.Name.EndsWith("31"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Noklateo)
-                {
-                    if (!tile.Name.EndsWith("50") && !tile.Name.EndsWith("51"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Forsaken_Hollows)
-                {
-                    if (!tile.Name.EndsWith("40") && !tile.Name.EndsWith("41"))
-                        continue;
-                }
-            }
+            if (tile.TileType is WorldMapTileType.Medium && !CFG.Current.WorldMapDisplayMediumTiles)
+                continue;
 
-            if (CFG.Current.WorldMapFilter_IncludeSmallTiles)
-            {
-                if (tile.TileType is WorldMapTileType.Small)
-                {
-                    mapFilterList.Add(tile.Name);
-                }
-            }
+            if (tile.TileType is WorldMapTileType.Large && !CFG.Current.WorldMapDisplayLargeTiles)
+                continue;
 
-            if (CFG.Current.WorldMapFilter_IncludeMediumTiles)
-            {
-                if (tile.TileType is WorldMapTileType.Medium)
-                {
-                    mapFilterList.Add(tile.Name);
-                }
-            }
+            Vector2 drawStart = ImageMin + new Vector2(tile.X, tile.Y) * MapZoomFactor;
+            Vector2 drawEnd = ImageMin + new Vector2(tile.X + tile.Width, tile.Y + tile.Height) * MapZoomFactor;
 
-            if (CFG.Current.WorldMapFilter_IncludeLargeTiles)
-            {
-                if (tile.TileType is WorldMapTileType.Large)
-                {
-                    mapFilterList.Add(tile.Name);
-                }
-            }
+            // Highlight hovered or selected
+            uint color = ImGui.GetColorU32(new Vector4(1, 1, 0, 0.5f)); // Yellow default
+            if (HoveredMapTiles.Contains(tile.Name))
+                color = ImGui.GetColorU32(new Vector4(0, 1, 0, 0.5f)); // Green for hover
+            else if (SelectedMapTiles.Contains(tile.Name))
+                color = ImGui.GetColorU32(new Vector4(1, 0, 0, 0.5f)); // Red for selected
 
+            drawList.AddRectFilled(drawStart, drawEnd, ImGui.GetColorU32(new Vector4(1, 1, 0, 0.05f)));
+            drawList.AddRect(drawStart, drawEnd, color, 0, ImDrawFlags.None, 2.0f);
+        }
+    }
+
+    /// <summary>
+    /// Drags the view. It starts only on the image, and ends as soon as the button is no longer held,
+    /// wherever the cursor is.
+    /// </summary>
+    private void HandleDrag(bool editorMode, bool canvasHovered)
+    {
+        var startBind = editorMode ? MousebindID.MapEditor_Map_Information_Pan : MousebindID.MapEditor_World_Map_Drag_Start;
+        var currentMousePos = ImGui.GetMousePos();
+
+        if (!_isDraggingMap && canvasHovered && !MapInfo.IsPainting && InputManager.IsMousePressed(startBind))
+        {
+            _isDraggingMap = true;
+            _lastMousePos = currentMousePos;
         }
 
-        View.MapListView.UpdateMapList(mapFilterList);
+        if (!_isDraggingMap)
+            return;
+
+        var released = !InputManager.IsMouseDown(startBind)
+            || (!editorMode && InputManager.IsMouseReleased(MousebindID.MapEditor_World_Map_Drag_End));
+
+        if (released)
+        {
+            _isDraggingMap = false;
+            return;
+        }
+
+        // The map follows the cursor
+        MapPan += currentMousePos - _lastMousePos;
+
+        _lastMousePos = currentMousePos;
+    }
+
+    /// <summary>
+    /// Keeps at least a margin of the map inside the canvas, so it can't be panned out of sight
+    /// </summary>
+    private void ClampPan(Vector2 canvasSize, Vector2 imageSize)
+    {
+        if (imageSize.X <= 0)
+            return;
+
+        var margin = 64 * DPI.UIScale();
+        var size = imageSize * MapZoomFactor;
+
+        MapPan = Vector2.Clamp(MapPan,
+            new Vector2(margin, margin) - size,
+            canvasSize - new Vector2(margin, margin));
+    }
+
+    private string GetImagePath()
+    {
+        return CurrentMapSource switch
+        {
+            WorldMapImageSource.LandsBetween => "smithbox/world_map/world_map_vanilla",
+            WorldMapImageSource.ShadowOfTheErdtree => "smithbox/world_map/world_map_sote",
+            WorldMapImageSource.Limveld => "smithbox/world_map/world_map_limveld",
+            WorldMapImageSource.Limveld_Mountaintops => "smithbox/world_map/world_map_limveld_mountaintops",
+            WorldMapImageSource.Limveld_Crater => "smithbox/world_map/world_map_limveld_crater",
+            WorldMapImageSource.Limveld_Rotted_Woods => "smithbox/world_map/world_map_limveld_rotted_woods",
+            WorldMapImageSource.Limveld_Noklateo => "smithbox/world_map/world_map_limveld_noklateo",
+            WorldMapImageSource.Forsaken_Hollows => "smithbox/world_map/world_map_forsaken_hollows",
+            _ => ""
+        };
+    }
+
+    /// <summary>The layout of the map information area (m60 or m61)</summary>
+    private WorldMapLayout GetLayout(string area)
+    {
+        return area switch
+        {
+            "m60" => VanillaLayout,
+            "m61" => SoteLayout,
+            _ => null
+        };
+    }
+
+    private List<WorldMapTile> GetTileList()
+    {
+        var layout = CurrentMapSource switch
+        {
+            WorldMapImageSource.LandsBetween => VanillaLayout,
+            WorldMapImageSource.ShadowOfTheErdtree => SoteLayout,
+            _ => LimveldLayout
+        };
+
+        return layout?.Tiles ?? new List<WorldMapTile>();
+    }
+
+    /// <summary>
+    /// With "Restrict by Map Source" on (NR), whether a tile belongs to the shown map: its last two digits
+    /// </summary>
+    private bool IsInCurrentSource(WorldMapTile tile)
+    {
+        if (!CFG.Current.WorldMapFilter_RestrictBySource)
+            return true;
+
+        var variant = CurrentMapSource switch
+        {
+            WorldMapImageSource.Limveld => 0,
+            WorldMapImageSource.Limveld_Mountaintops => 1,
+            WorldMapImageSource.Limveld_Crater => 2,
+            WorldMapImageSource.Limveld_Rotted_Woods => 3,
+            WorldMapImageSource.Forsaken_Hollows => 4,
+            WorldMapImageSource.Limveld_Noklateo => 5,
+            _ => -1
+        };
+
+        if (variant < 0)
+            return true;
+
+        return tile.Name.EndsWith($"{variant}0") || tile.Name.EndsWith($"{variant}1");
+    }
+
+    /// <summary>
+    /// Selects the maps under the cursor (small, medium and large tile), for the Selected Tiles section to load
+    /// </summary>
+    private void SelectTilesUnderCursor()
+    {
+        SelectedMapTiles = GetTileList()
+            .Where(tile => HoveredMapTiles.Contains(tile.Name) && IsInCurrentSource(tile))
+            .OrderBy(tile => tile.TileType)
+            .Select(tile => tile.Name)
+            .Distinct()
+            .ToList();
+    }
+
+    private bool IsMapLoaded(string mapId)
+    {
+        return View.Selection.GetMapContainerFromMapID(mapId) is { LoadState: MapContentLoadState.Loaded };
     }
 
     private void RegisterWorldMapListeners()
@@ -642,6 +720,16 @@ public class WorldMapTool : IResourceEventListener
         var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
 
         VanillaLayout = new WorldMapLayout(View, "60", 480, 55);
+
+        // On the game's tiles, the tiles sit exactly where the game's map puts them
+        if (GameTiles != null)
+        {
+            VanillaLayout.GenerateExactTiles(smallRows, smallCols, WorldMapTileType.Small);
+            VanillaLayout.GenerateExactTiles(mediumRows, mediumCols, WorldMapTileType.Medium);
+            VanillaLayout.GenerateExactTiles(largeRows, largeCols, WorldMapTileType.Large);
+            return;
+        }
+
         VanillaLayout.GenerateTiles(smallRows, smallCols, 0, 124, WorldMapTileType.Small);
         VanillaLayout.GenerateTiles(mediumRows, mediumCols, 1, 248, WorldMapTileType.Medium);
         VanillaLayout.GenerateTiles(largeRows, largeCols, 2, 496, WorldMapTileType.Large);
@@ -660,6 +748,15 @@ public class WorldMapTool : IResourceEventListener
         var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
 
         SoteLayout = new WorldMapLayout(View, "61", SOTE_xOffset, SOTE_yOffset);
+
+        if (GameTiles != null)
+        {
+            SoteLayout.GenerateExactTiles(smallRows, smallCols, WorldMapTileType.Small);
+            SoteLayout.GenerateExactTiles(mediumRows, mediumCols, WorldMapTileType.Medium);
+            SoteLayout.GenerateExactTiles(largeRows, largeCols, WorldMapTileType.Large);
+            return;
+        }
+
         SoteLayout.GenerateTiles(smallRows, smallCols, 0, 256, WorldMapTileType.Small);
         SoteLayout.GenerateTiles(mediumRows, mediumCols, 1, 528, WorldMapTileType.Medium);
         SoteLayout.GenerateTiles(largeRows, largeCols, 2, 1056, WorldMapTileType.Large);
@@ -704,72 +801,15 @@ public class WorldMapTool : IResourceEventListener
     {
         List<string> matches = new List<string>();
 
-        List<WorldMapTile> tileList = new List<WorldMapTile>();
-
-        switch (CurrentMapSource)
+        foreach (var tile in GetTileList())
         {
-            case WorldMapImageSource.LandsBetween:
-                tileList = VanillaLayout.Tiles;
-                break;
+            if (!IsInCurrentSource(tile))
+                continue;
 
-            case WorldMapImageSource.ShadowOfTheErdtree:
-                tileList = SoteLayout.Tiles;
-                break;
-
-            case WorldMapImageSource.Limveld:
-            case WorldMapImageSource.Limveld_Mountaintops:
-            case WorldMapImageSource.Limveld_Crater:
-            case WorldMapImageSource.Limveld_Rotted_Woods:
-            case WorldMapImageSource.Limveld_Noklateo:
-            case WorldMapImageSource.Forsaken_Hollows:
-                tileList = LimveldLayout.Tiles;
-                break;
-        }
-
-        foreach (var tile in tileList)
-        {
-            var tileName = "";
-            var match = false;
-
-            (tileName, match) = MatchMousePosToIcon(tile, pos);
-
-            if (CFG.Current.WorldMapFilter_RestrictBySource)
+            if (pos.X > tile.X && pos.X < tile.X + tile.Width && pos.Y > tile.Y && pos.Y < tile.Y + tile.Height
+                && !matches.Contains(tile.Name))
             {
-                if (CurrentMapSource == WorldMapImageSource.Limveld)
-                {
-                    if (!tile.Name.EndsWith("00") && !tile.Name.EndsWith("01"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Mountaintops)
-                {
-                    if (!tile.Name.EndsWith("10") && !tile.Name.EndsWith("11"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Crater)
-                {
-                    if (!tile.Name.EndsWith("20") && !tile.Name.EndsWith("21"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Rotted_Woods)
-                {
-                    if (!tile.Name.EndsWith("30") && !tile.Name.EndsWith("31"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Limveld_Noklateo)
-                {
-                    if (!tile.Name.EndsWith("50") && !tile.Name.EndsWith("51"))
-                        continue;
-                }
-                if (CurrentMapSource == WorldMapImageSource.Forsaken_Hollows)
-                {
-                    if (!tile.Name.EndsWith("40") && !tile.Name.EndsWith("41"))
-                        continue;
-                }
-            }
-
-            if (match && !matches.Contains(tileName))
-            {
-                matches.Add(tileName);
+                matches.Add(tile.Name);
             }
         }
 
@@ -782,44 +822,6 @@ public class WorldMapTool : IResourceEventListener
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
     {
-    }
-
-    private Vector2 GetRelativePositionWindowOnly(Vector2 windowPos)
-    {
-        var scale = DPI.UIScale();
-
-        Vector2 relativePos = new Vector2(0, 0);
-
-        var fixedX = 3 * scale;
-        var fixedY = 24 * scale;
-        var cursorPos = ImGui.GetMousePos();
-
-        // Account for window position
-        relativePos.X = cursorPos.X - (windowPos.X + fixedX);
-        relativePos.Y = cursorPos.Y - (windowPos.Y + fixedY);
-
-        return relativePos;
-    }
-
-    private (string, bool) MatchMousePosToIcon(WorldMapTile tile, Vector2 relativePos)
-    {
-        var cursorPos = relativePos;
-
-        var Name = tile.Name;
-
-        var success = false;
-
-        float Xmin = tile.X;
-        float Xmax = Xmin + tile.Width;
-        float Ymin = tile.Y;
-        float Ymax = Ymin + tile.Height;
-
-        if (cursorPos.X > Xmin && cursorPos.X < Xmax && cursorPos.Y > Ymin && cursorPos.Y < Ymax)
-        {
-            success = true;
-        }
-
-        return (Name, success);
     }
 
     private Vector2 GetImageSize(TextureResource texRes, bool includeZoomFactor)
@@ -855,73 +857,65 @@ public class WorldMapTool : IResourceEventListener
         return ResourceManager.DefaultPool.TryFind<TextureResource>(path, out var handle) ? handle : null;
     }
 
-    private void HandleZoom()
+    /// <summary>
+    /// Zooms with the mouse wheel, keeping the point under the cursor in place
+    /// </summary>
+    private void HandleZoom(Vector2 canvasMin)
     {
         var delta = InputManager.MouseWheelDelta;
+
+        if (delta == 0)
+            return;
+
+        var oldZoom = MapZoomFactor;
 
         if (delta > 0)
         {
             ZoomIn();
         }
-        if (delta < 0)
+        else
         {
             ZoomOut();
         }
+
+        if (MapZoomFactor == oldZoom)
+            return;
+
+        // The image point under the cursor stays under it: cursor = canvasMin + pan + point * zoom, before and after
+        var cursor = ImGui.GetMousePos() - canvasMin;
+        MapPan = cursor - (cursor - MapPan) * (MapZoomFactor / oldZoom);
     }
+
+    /// <summary>Back to the default zoom, with the map centred in the canvas</summary>
+    private void ResetView()
+    {
+        MapZoomFactor = GetDefaultZoomLevel();
+        _centerPending = true;
+    }
+
+    // Zoom steps by a factor, so each wheel step feels the same from the whole map down to single metres
+    private const float ZoomStepFactor = 1.15f;
+    private const float MinZoom = 0.02f;
+    private const float MaxZoom = 10.0f;
 
     private void ZoomIn()
     {
-        MapZoomFactor.X = MapZoomFactor.X + MapZoomFactorStep;
-        MapZoomFactor.Y = MapZoomFactor.Y + MapZoomFactorStep;
-
-        if (MapZoomFactor.X > 10.0f)
-        {
-            MapZoomFactor.X = 10.0f;
-        }
-        if (MapZoomFactor.Y > 10.0f)
-        {
-            MapZoomFactor.Y = 10.0f;
-        }
+        MapZoomFactor = Vector2.Min(MapZoomFactor * ZoomStepFactor, new Vector2(MaxZoom));
     }
+
     private void ZoomOut()
     {
-        MapZoomFactor.X = MapZoomFactor.X - MapZoomFactorStep;
-        MapZoomFactor.Y = MapZoomFactor.Y - MapZoomFactorStep;
-
-        if (MapZoomFactor.X < 0.1f)
-        {
-            MapZoomFactor.X = 0.1f;
-        }
-        if (MapZoomFactor.Y < 0.1f)
-        {
-            MapZoomFactor.Y = 0.1f;
-        }
+        MapZoomFactor = Vector2.Max(MapZoomFactor / ZoomStepFactor, new Vector2(MinZoom));
     }
+
+    /// <summary>
+    /// The whole map at about 800 px wide: the game's tiles are 1 px per metre (10496 px), the bundled images
+    /// are about 4500 px
+    /// </summary>
     private Vector2 GetDefaultZoomLevel()
     {
         var scale = DPI.UIScale();
-        return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
-    }
-
-    private Vector2 GetRelativePosition(Vector2 windowPos, Vector2 scrollPos)
-    {
-        var scale = DPI.UIScale();
-
-        Vector2 relativePos = new Vector2(0, 0);
-
-        // Offsets to account for imgui spacing between window and image texture
-        var fixedX = 8 * scale;
-        var fixedY = 29 * scale;
-        var cursorPos = ImGui.GetMousePos();
-
-        // Account for window position and scroll
-        relativePos.X = cursorPos.X - (windowPos.X + fixedX - scrollPos.X);
-        relativePos.Y = cursorPos.Y - (windowPos.Y + fixedY - scrollPos.Y);
-
-        // Account for zoom
-        relativePos.X = relativePos.X / MapZoomFactor.X;
-        relativePos.Y = relativePos.Y / MapZoomFactor.Y;
-
-        return relativePos;
+        var zoom = GameTiles != null ? 0.08f : 0.2f;
+        return new Vector2(zoom * scale);
     }
 }

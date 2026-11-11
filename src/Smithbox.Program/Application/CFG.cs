@@ -287,6 +287,11 @@ public class CFG
     public bool WorldMapFilter_IncludeLargeTiles = true;
     public bool WorldMapFilter_RestrictBySource = false;
 
+    public int MapInfo_BrushSize = 4;
+    public float MapInfo_Opacity = 0.6f;
+    public bool MapInfo_HighlightSelected = false;
+    public bool MapInfo_ShowTileOutlines = true;
+
     public bool QuickView_DisplayTooltip = false;
     public List<string> QuickView_TargetProperties = new List<string>() { "Name" };
 
@@ -565,6 +570,7 @@ public class CFG
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_ToolWindow = true;
+    public bool Interface_MapEditor_MapInformation = false;
     public bool Interface_MapEditor_ResourceList = true;
 
     // Tools

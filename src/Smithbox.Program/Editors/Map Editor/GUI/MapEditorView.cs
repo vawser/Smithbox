@@ -270,7 +270,7 @@ public class MapEditorView : IEditorView
         // After the Tools window, which marks the frames the Snap to Mesh section is shown
         SnapToMeshAction.Update();
 
-        WorldMapTool.DisplayPopup();
+        WorldMapTool.Update();
 
         // The popups that context menus, shortcuts and the Tools window open. Drawn here rather than in the
         // Tools window so they don't depend on it being shown.
@@ -365,6 +365,9 @@ public class MapEditorView : IEditorView
 
             ImGui.End();
         }
+
+        // Map Information
+        WorldMapTool.Display(dockspaceId, viewIndex, GetCurrentViewport()?.LastDockId ?? 0);
     }
 
 
@@ -445,6 +448,9 @@ public class MapEditorView : IEditorView
         }
 
         ImGui.End();
+
+        // Map Information: its own window here too, as it needs the room of a viewport
+        WorldMapTool.Display(dockspaceId, viewIndex, GetCurrentViewport()?.LastDockId ?? 0);
     }
 
     private Entity _lastSyncedSelection;

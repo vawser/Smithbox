@@ -1,15 +1,6 @@
 #-------------
 # Blue Sky
 #-------------
-- Code blocks style editor for EMEVD:
-    - Split the file into Functions (group of Statements) and Statements (the individual commands/conditions)
-    - Functions would use the Alias Editor style presentation (drag button + ID + EDD name) 
-    - Statements would use the Alias Editor style presentation (drag button + command title -> right-click enum style selection to switch command), selection would populate property view.
-  
-- Code blocks style editor for ESD:
-
-- SFX Renderer/Editor
-
 - HKS intepreter (to link with behaviors and animation playback)
     - Work allow for powerful visualization of movesets
 
@@ -17,9 +8,6 @@
     - Cutscenes are staged in maps + a set of parts associated with the cutscene
     - Typically animations play on the camera + parts
    
-- World Map Tile editor
-- MapInfoTex editor
-
 - First-person Mode for Map Editor (player perspective)
     - Would require collision checks and movement handling
     

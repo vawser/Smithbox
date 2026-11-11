@@ -9,14 +9,23 @@
 
 - Get gizmos to work in Orthographic/Oblique view mode
 
-
-- Display Group: UX assessment
- - Auto-resolver for assignment? Needs investigation
+- Raycast Place:
+    - Let user place a raycast sphere
+    - Then press a button in tool to place Part entity at position (with set properties configured in tool)
+    - Include randomise X/Y/Z rotation button
 
 - Col Editor:
     - Add support for DES/DS1/DS1R/DS2/DS2S/BB
-
+    - Switch Raise/Lower/Grab to a Brush model:
+        - Make the brush affect more than one vertex at a time in Edit mode
+        - Brush can:
+            - Raise (raises vertices up, at a fixed interval whilst left-click is held)
+            - Lower (lowers vertices down, at a fixed interval whilst left-click is held)
+            - Drag (vertices move with cursor whilst left-click is held)
+            - Smooth (vertices are smoothed towards a flat plane whilst left-click is held)
+            
 - Nav Editor:
     - Add navigation editor support for the other project types: DS1/DS1R/DES
+    - Apply Brush model from Collision Editor to this
 
 

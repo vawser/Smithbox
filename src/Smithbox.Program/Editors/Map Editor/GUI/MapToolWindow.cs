@@ -34,11 +34,12 @@ public class MapToolWindow
             if (Project.Descriptor.ProjectType is ProjectType.ER 
                 or ProjectType.NR)
             {
-                if (ImGui.MenuItem("World Map"))
+                if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Window_Title")}##mapInformationWindow"))
                 {
-                    View.WorldMapTool.DisplayMenuOption();
+                    View.WorldMapTool.ToggleWindow();
                 }
-                GUI.Tooltip($"Open a world map with a visual representation of the map tiles.\nShortcut: {InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)}");
+                GUI.Tooltip(LOC.Get("MAP_MapInfo_Open_TT", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)));
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapInformation);
             }
 
             if (ImGui.BeginMenu("Miscellaneous"))

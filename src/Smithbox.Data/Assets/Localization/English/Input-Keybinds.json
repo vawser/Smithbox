@@ -306,11 +306,11 @@
     },
     {
       "Key": "KEY_MapEditor_Toggle_World_Map_Menu",
-      "Text": "Toggle World Map"
+      "Text": "Toggle Map Information"
     },
     {
       "Key": "KEY_MapEditor_Toggle_World_Map_Menu_TT",
-      "Text": "Toggle the visibility of the World Map tool."
+      "Text": "Toggle the visibility of the Map Information window (world map and Map Information Editor)."
     },
     {
       "Key": "KEY_MapEditor_Reset_World_Map_Zoom_Level",

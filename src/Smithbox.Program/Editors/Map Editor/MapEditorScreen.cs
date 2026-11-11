@@ -221,6 +221,17 @@ public class MapEditorScreen : EditorScreen
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
+            // Map Information
+            if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MAP_MapInfo_Window_Title")}##mapInformationToggle"))
+                {
+                    CFG.Current.Interface_MapEditor_MapInformation = !CFG.Current.Interface_MapEditor_MapInformation;
+                }
+                GUI.Tooltip(LOC.Get("MAP_MapInfo_Open_TT", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)));
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapInformation);
+            }
+
             ImGui.Separator();
 
             ViewHandler.DisplayMenu();
@@ -631,6 +642,7 @@ public class MapEditorScreen : EditorScreen
                     view.LoadListTool.SaveModified();
                     view.EntryFileListTool.SaveModified();
                     view.PartsTokenIdListTool.SaveModified();
+                    view.WorldMapTool.MapInfo.Bank.SaveModified();
                 }
             }
         }

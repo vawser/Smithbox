@@ -32,7 +32,16 @@ public enum MousebindID
     MapEditor_World_Map_Drag_Start,
 
     [Display(Name = "MOUSE_MapEditor_World_Map_Drag_End", Description = "MOUSE_MapEditor_World_Map_Drag_End_TT")]
-    MapEditor_World_Map_Drag_End
+    MapEditor_World_Map_Drag_End,
+
+    [Display(Name = "MOUSE_MapEditor_Map_Information_Paint", Description = "MOUSE_MapEditor_Map_Information_Paint_TT")]
+    MapEditor_Map_Information_Paint,
+
+    [Display(Name = "MOUSE_MapEditor_Map_Information_Pick", Description = "MOUSE_MapEditor_Map_Information_Pick_TT")]
+    MapEditor_Map_Information_Pick,
+
+    [Display(Name = "MOUSE_MapEditor_Map_Information_Pan", Description = "MOUSE_MapEditor_Map_Information_Pan_TT")]
+    MapEditor_Map_Information_Pan
 }
 
 public static class DefaultMouseBindings
@@ -67,6 +76,15 @@ public static class DefaultMouseBindings
 
         InputManager.BindMouseKey(
             MousebindID.MapEditor_World_Map_Drag_End, new() { Key = MouseButton.Left });
+
+        InputManager.BindMouseKey(
+            MousebindID.MapEditor_Map_Information_Paint, new() { Key = MouseButton.Left });
+
+        InputManager.BindMouseKey(
+            MousebindID.MapEditor_Map_Information_Pick, new() { Key = MouseButton.Right });
+
+        InputManager.BindMouseKey(
+            MousebindID.MapEditor_Map_Information_Pan, new() { Key = MouseButton.Middle });
     }
 }
 
@@ -84,5 +102,8 @@ public static class MousebindMetadata
         { MousebindID.MapEditor_Select_Map_In_World_Map, InputCategory.MapEditor },
         { MousebindID.MapEditor_World_Map_Drag_Start, InputCategory.MapEditor },
         { MousebindID.MapEditor_World_Map_Drag_End, InputCategory.MapEditor },
+        { MousebindID.MapEditor_Map_Information_Paint, InputCategory.MapEditor },
+        { MousebindID.MapEditor_Map_Information_Pick, InputCategory.MapEditor },
+        { MousebindID.MapEditor_Map_Information_Pan, InputCategory.MapEditor },
     };
 }

@@ -54,7 +54,7 @@
     },
     {
       "Key": "MOUSE_MapEditor_Select_Map_In_World_Map_TT",
-      "Text": "The button that is pressed down to select the maps to filter by when in the World Map menu."
+      "Text": "The button that picks the maps under the cursor in the Map Information window's World Map mode, to load from Selected Tiles."
     },
     {
       "Key": "MOUSE_MapEditor_World_Map_Drag_Start",
@@ -71,6 +71,30 @@
     {
       "Key": "MOUSE_MapEditor_World_Map_Drag_End_TT",
       "Text": "The button that is released to signal the end of the world map drag."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Paint",
+      "Text": "Paint Map Information"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Paint_TT",
+      "Text": "The button held down to paint, fill or pick with the current tool in the Map Information Editor."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Pick",
+      "Text": "Pick Map Information Value"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Pick_TT",
+      "Text": "The button that picks the value under the cursor as the paint value in the Map Information Editor, whatever the tool."
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Pan",
+      "Text": "Pan Map Information"
+    },
+    {
+      "Key": "MOUSE_MapEditor_Map_Information_Pan_TT",
+      "Text": "The button held down to drag the map in the Map Information Editor."
     }
   ]
 }

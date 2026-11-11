@@ -96,8 +96,8 @@ internal static class ResourceFallbacks
     public static void LoadWorldMapTextures(ResourcePool pool)
     {
         ProjectEntry? project = Smithbox.Orchestrator.SelectedProject;
-        if (project == null || project.Descriptor.ProjectType is not (ProjectType.ER 
-                or ProjectType.NR 
+        // ER's world map is built from the game's own map tiles (WorldMapTileSet), so only the others use the bundled image
+        if (project == null || project.Descriptor.ProjectType is not (ProjectType.NR
                 or ProjectType.DB_NT
                 or ProjectType.DB))
         {
