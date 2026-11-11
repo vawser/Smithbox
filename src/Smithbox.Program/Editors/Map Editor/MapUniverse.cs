@@ -725,8 +725,9 @@ public class MapUniverse : IUniverse
         SaveFile(map, MapFileType.BTAB, () => View.LightAtlasBank.SaveBTAB(map));
         SaveFile(map, MapFileType.BTPB, () => View.LightProbeBank.SaveBTPB(map));
         SaveFile(map, MapFileType.ACB, () => View.AssetConfigurationBank.SaveACB(map));
-        // Navigation files saved with edits, reported together once the map's save is done
+        // Navigation and collision files saved with edits, each reported once the map's save is done
         var navSaved = false;
+        var collisionSaved = false;
 
         navSaved |= SaveFile(map, MapFileType.NVA, () => View.HavokNavmeshBank.SaveNVA(map));
         navSaved |= SaveFile(map, MapFileType.NVVA, () => View.HavokNavmeshBank.SaveNVVA(map));
@@ -738,7 +739,7 @@ public class MapUniverse : IUniverse
             or ProjectType.DB_NT
             or ProjectType.DB)
         {
-            SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
+            collisionSaved |= SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
             navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
         }
 
@@ -749,20 +750,26 @@ public class MapUniverse : IUniverse
             navSaved |= SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
         }
 
+        // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+        {
+            collisionSaved |= SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
+        }
+
+        // The WALL files belong to the collisions
+        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        {
+            collisionSaved |= SaveFile(map, MapFileType.Wall, () => View.WallBank.SaveWalls(map.Name));
+        }
+
         if (navSaved)
         {
             Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Navmesh_PASS", map.Name));
         }
 
-        // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+        if (collisionSaved)
         {
-            SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
-        }
-
-        if (Project.Descriptor.ProjectType is ProjectType.SDT)
-        {
-            SaveFile(map, MapFileType.Wall, () => View.WallBank.SaveWalls(map.Name));
+            Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Collision_PASS", map.Name));
         }
 
         if (ShouldSaveFile(map, MapFileType.MSB))
