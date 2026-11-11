@@ -53,7 +53,7 @@ public static class EditorConditions
     /// <summary>The EMEVD Editor: the games with instruction layouts in Assets/EMEVD/Layouts</summary>
     public static bool SupportsEmevdEditor(ProjectType curType)
     {
-        return curType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+        return curType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
             or ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB_NT;
     }
 

@@ -15,6 +15,7 @@ public class EmevdToolWindow
     public EmevdCalledByTool CalledByTool;
     public EmevdSearchTool SearchTool;
     public EmevdMassEditTool MassEditTool;
+    public EmevdTemplatesTool TemplatesTool;
 
     private readonly ToolSections Sections = new();
 
@@ -27,6 +28,7 @@ public class EmevdToolWindow
         CalledByTool = new(view);
         SearchTool = new(view);
         MassEditTool = new(view);
+        TemplatesTool = new(view);
     }
 
     public void Draw()
@@ -75,6 +77,12 @@ public class EmevdToolWindow
             PaletteTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_EmevdEditor_Tool_Templates)
+        {
+            // Templates
+            TemplatesTool.OnToolWindow();
+        }
+
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
@@ -110,6 +118,11 @@ public class EmevdToolWindow
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Palette")}##emevdPaletteToolToggle"))
                 CFG.Current.Interface_EmevdEditor_Tool_Palette = !CFG.Current.Interface_EmevdEditor_Tool_Palette;
             GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Palette);
+
+            // Templates
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Templates")}##emevdTemplatesToolToggle"))
+                CFG.Current.Interface_EmevdEditor_Tool_Templates = !CFG.Current.Interface_EmevdEditor_Tool_Templates;
+            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Templates);
 
             // Problems
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Problems")}##emevdProblemsToolToggle"))

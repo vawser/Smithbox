@@ -1300,6 +1300,7 @@ public class CFG
     public bool EmevdEditor_Allow_Automatic_Save = true;
     public bool Interface_EmevdEditor_ToolWindow = true;
     public bool Interface_EmevdEditor_Tool_Palette = true;
+    public bool Interface_EmevdEditor_Tool_Templates = true;
     public bool Interface_EmevdEditor_Tool_Problems = true;
     public bool Interface_EmevdEditor_Tool_Search = true;
     public bool Interface_EmevdEditor_Tool_MassEdit = true;

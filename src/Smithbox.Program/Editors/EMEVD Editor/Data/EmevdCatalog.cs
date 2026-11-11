@@ -132,6 +132,8 @@ public class EmevdCatalog
     {
         ProjectType.DS1 => "DS1",
         ProjectType.DS1R => "DS1R",
+        ProjectType.DS2 => "DS2",
+        ProjectType.DS2S => "DS2S",
         ProjectType.BB => "BB",
         ProjectType.DS3 => "DS3",
         ProjectType.SDT => "SDT",

@@ -55,6 +55,10 @@ public class EmevdFileWrapper
         if (Emevd == null)
             return false;
 
+        // DS2 / SotFS: an entry of the regulation binder
+        if (EntryName != null)
+            return Bank.SaveRegulation(new[] { this });
+
         try
         {
             Bank.Project.VFS.ProjectFS.WriteFile(Path, Emevd.Write());
@@ -65,12 +69,21 @@ public class EmevdFileWrapper
             return false;
         }
 
-        IsDirty = false;
-        InProject = true;
+        MarkSaved();
         Smithbox.Log(this, LOC.Get("EDITOR_Data_Save_File", Path));
 
         return true;
     }
+
+    /// <summary>The current state is what the project now holds</summary>
+    public void MarkSaved()
+    {
+        IsDirty = false;
+        InProject = true;
+    }
+
+    /// <summary>The entry's name inside the regulation binder (DS2, SotFS), e.g. SpEffectRing.emevd; null for a loose file</summary>
+    public string EntryName { get; }
 
     /// <summary>The .emeld beside it, which holds event names (DS1, DS1R, BB, DB_NT); null if none</summary>
     public string EmeldPath { get; }
@@ -84,13 +97,14 @@ public class EmevdFileWrapper
 
     private Dictionary<long, EMEVD.Event> EventsById;
 
-    public EmevdFileWrapper(EmevdBank bank, string path, string name, bool inProject, string emeldPath)
+    public EmevdFileWrapper(EmevdBank bank, string path, string name, bool inProject, string emeldPath, string entryName = null)
     {
         Bank = bank;
         Path = path;
         Name = name;
         InProject = inProject;
         EmeldPath = emeldPath;
+        EntryName = entryName;
     }
 
     /// <summary>The kind of file, for grouping: common, common_func or a map</summary>
@@ -123,7 +137,9 @@ public class EmevdFileWrapper
 
         try
         {
-            var data = Bank.TargetFS.ReadFile(Path);
+            var data = EntryName != null
+                ? (Bank.ReadRegulationEntry(EntryName) is { } entry ? (Memory<byte>?)new Memory<byte>(entry) : null)
+                : Bank.TargetFS.ReadFile(Path);
 
             if (data == null)
             {

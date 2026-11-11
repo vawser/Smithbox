@@ -116,6 +116,19 @@ public class EmevdStructureEditor
         Deferred.Add(() => Commit(LOC.Get("EMEVD_Edit_Op_Paste"), (script, tree) => InsertAfter(script, tree, line, lines)));
     }
 
+    /// <summary>
+    /// Lines from elsewhere (a template) after the bottom selected block, or at the top of the event when only the
+    /// header is selected, as a paste: their parameters come with them, and the new lines end up selected
+    /// </summary>
+    public void InsertLines(List<EmevdClipLine> lines, string what)
+    {
+        if (Script == null || lines == null || lines.Count == 0)
+            return;
+
+        var line = LastSelected;
+        Deferred.Add(() => Commit(what, (script, tree) => InsertAfter(script, tree, line, lines)));
+    }
+
     /// <summary>A new instruction from the palette, after the bottom selected block</summary>
     public void Insert(EmevdInstrDef def, EmevdDropTarget target = null)
     {

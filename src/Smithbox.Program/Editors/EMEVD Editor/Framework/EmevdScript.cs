@@ -95,6 +95,7 @@ public class EmevdScript
     {
         var script = new EmevdScript { Event = ev };
         var game = catalog?.Game;
+        var hasFlow = EmevdControlFlow.HasFlow(game);
 
         for (var i = 0; i < ev.Instructions.Count; i++)
         {
@@ -104,7 +105,7 @@ public class EmevdScript
             var line = new EmevdLine { Index = i, Instr = instr, Decoded = decoded };
             var flow = EmevdControlFlow.Find(game, instr.Bank, instr.ID);
 
-            line.Kind = KindOf(line, flow);
+            line.Kind = KindOf(line, flow, hasFlow);
             line.FlowArgOffset = flow.ArgOffset;
 
             if (decoded.Fits)
@@ -166,12 +167,16 @@ public class EmevdScript
     /// The block kind from the instruction's bank and ID (EmevdControlFlow), never from its names: the same name can be
     /// a different instruction in another game, and reference-derived layouts carry no shipped Japanese names.
     /// </summary>
-    private static EmevdBlockKind KindOf(EmevdLine line, EmevdFlow flow)
+    private static EmevdBlockKind KindOf(EmevdLine line, EmevdFlow flow, bool hasFlow)
     {
         var bank = line.Instr.Bank;
 
         if (line.Decoded.Def == null || !line.Decoded.Fits)
             return EmevdBlockKind.Unknown;
+
+        // DS2 / SotFS: no conditions, labels or flow, whatever the bank
+        if (!hasFlow)
+            return EmevdBlockKind.Command;
 
         if (bank < 1000)
             return EmevdBlockKind.Condition;

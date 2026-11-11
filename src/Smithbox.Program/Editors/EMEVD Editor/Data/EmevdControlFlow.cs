@@ -198,8 +198,20 @@ public static class EmevdControlFlow
         },
     };
 
+    /// <summary>Games without control flow (no instruction is a skip, goto, end, wait or call): the shared table never applies</summary>
+    private static readonly HashSet<string> OwnOnly = new() { "DS2", "DS2S" };
+
+    /// <summary>
+    /// Whether the game's banks follow the usual plan (below 1000 conditions, 1014 labels, below 2000 flow). DS2's
+    /// don't: its 1000 is Character and 1010 Estus, so every instruction there is a command.
+    /// </summary>
+    public static bool HasFlow(string game) => game == null || !OwnOnly.Contains(game);
+
     public static EmevdFlow Find(string game, int bank, int id)
     {
+        if (game != null && OwnOnly.Contains(game))
+            return new(EmevdFlowKind.None, -1);
+
         if (game != null && PerGame.TryGetValue(game, out var own) && own.TryGetValue((bank, id), out var o))
             return o;
 
