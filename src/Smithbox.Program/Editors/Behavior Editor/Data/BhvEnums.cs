@@ -29,6 +29,14 @@ public class BhvEnums
         return values.TryGetValue(value, out var name) ? name : null;
     }
 
+    /// <summary>
+    /// Every named value of an enum, or null if the enum wasn't loaded
+    /// </summary>
+    public IReadOnlyDictionary<int, string> GetValues(string enumName)
+    {
+        return enumName != null && Enums.TryGetValue(enumName, out var values) ? values : null;
+    }
+
     public static BhvEnums Load(ProjectEntry project)
     {
         var result = new BhvEnums();

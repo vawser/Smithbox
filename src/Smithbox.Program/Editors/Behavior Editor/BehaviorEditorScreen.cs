@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
-/// The Behavior Editor: AC6 .bhv state machines (chr behbnds). P1 is read-only; see
+/// The Behavior Editor: AC6 .bhv state machines (chr behbnds). P2: field and hex editing with undo; see
 /// Claude/Documentation/BHV Editor Analysis.md for the phases.
 /// </summary>
 public class BehaviorEditorScreen : EditorScreen

@@ -39,7 +39,24 @@ public class BhvEditorView
         Properties = new(this);
     }
 
+    public BhvInput Input = new();
+
     public BhvEnums Enums => Project.Handler.BehaviorData?.Enums;
+
+    /// <summary>Runs an edit through the undo stack</summary>
+    public void Edit(EditorAction action)
+    {
+        if (action is BhvBytesChange { HasEffect: false })
+            return;
+
+        ActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>Sets a typed record field with undo</summary>
+    public void SetValue<T>(BhvFileWrapper file, Func<T> get, Action<T> set, T value)
+    {
+        Edit(new BhvValueChange<T>(file, get, set, value));
+    }
 
     public void Display(uint dockspaceId)
     {

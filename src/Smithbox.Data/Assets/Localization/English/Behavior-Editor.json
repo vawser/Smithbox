@@ -77,7 +77,7 @@
     { "Key": "BHV_Properties_Counts", "Text": "Contents" },
     { "Key": "BHV_Properties_Counts_Value", "Text": "{0} states, {1} transitions, {2} conditions, {3} animations" },
     { "Key": "BHV_Properties_Struct_C_Size", "Text": "Struct C size" },
-    { "Key": "BHV_Properties_Old_Version", "Text": "Version {0}: fields are only named for version 12 files." },
+    { "Key": "BHV_Properties_Old_Version", "Text": "Version {0}: fields inside the raw data are only named for version 12 files. Structure fields and raw bytes can still be edited, but what an edit does in game is unverified." },
     { "Key": "BHV_Properties_Preamble", "Text": "Preamble ({0} bytes)" },
     { "Key": "BHV_Properties_Index", "Text": "Index" },
     { "Key": "BHV_Properties_ID", "Text": "ID" },
@@ -180,6 +180,21 @@
     { "Key": "BHV_Field_Preamble_State", "Text": "State" },
     { "Key": "BHV_Field_Preamble_Flag_A4", "Text": "Flag 0xA4" },
     { "Key": "BHV_Field_Preamble_Value_A5", "Text": "Value 0xA5 (used when 0xA4 is set)" },
+
+    { "Key": "BHV_Properties_File_Unk02", "Text": "Unk02" },
+    { "Key": "BHV_Properties_ID_TT", "Text": "Must stay unique within the file. Changing an ID does not update anything that finds the state by ID (unknown which fields do)." },
+    { "Key": "BHV_Properties_State_Kind_TT", "Text": "Unknown meaning; together with body fields it decides the layout of the state data." },
+    { "Key": "BHV_Properties_Condition_Type_TT", "Text": "The condition data is read by type. Changing the type keeps the data bytes, which the new type may read differently." },
+
+    { "Key": "BHV_Edit_Out_Of_Range", "Text": "Behavior Editor: {0} is outside {1} to {2}; edit not applied." },
+    { "Key": "BHV_Edit_Duplicate_State_ID", "Text": "Behavior Editor: another state already has ID {0}; edit not applied." },
+    { "Key": "BHV_Edit_Hex_Invalid", "Text": "Behavior Editor: \"{0}\" is not a whole number of hex bytes; edit not applied." },
+    { "Key": "BHV_Edit_Enum_Unnamed", "Text": "{0}: (not in enum)" },
+
+    { "Key": "BHV_Hex_Click_To_Edit", "Text": "Click a byte to edit at it." },
+    { "Key": "BHV_Hex_Offset", "Text": "Offset" },
+    { "Key": "BHV_Hex_Bytes", "Text": "Bytes" },
+    { "Key": "BHV_Hex_Bytes_TT", "Text": "Up to 16 bytes from the cursor. Typed bytes overwrite from the cursor on; the record never changes length, so bytes past its end are dropped." },
 
     { "Key": "BHV_HavokNote_AC6", "Text": "AC6 behbnds hold .bhv state machines, not Havok behaviors. Open them in the Behavior Editor (enable it in the project configuration)." }
   ]

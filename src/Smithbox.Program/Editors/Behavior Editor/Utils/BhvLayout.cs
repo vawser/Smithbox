@@ -42,6 +42,23 @@ public record BhvField(int Offset, BhvFieldType Type, string LabelKey, string En
             _ => BitConverter.ToSingle(blob, Offset),
         };
     }
+
+    /// <summary>The field's little-endian bytes for a value</summary>
+    public byte[] Encode(double value) => Type switch
+    {
+        BhvFieldType.U8 => [(byte)value],
+        BhvFieldType.S16 => BitConverter.GetBytes((short)value),
+        BhvFieldType.S32 => BitConverter.GetBytes((int)value),
+        _ => BitConverter.GetBytes((float)value),
+    };
+
+    /// <summary>The range an integer value of this field's type can hold</summary>
+    public (long Min, long Max) Range => Type switch
+    {
+        BhvFieldType.U8 => (byte.MinValue, byte.MaxValue),
+        BhvFieldType.S16 => (short.MinValue, short.MaxValue),
+        _ => (int.MinValue, int.MaxValue),
+    };
 }
 
 /// <summary>
