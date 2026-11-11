@@ -1308,6 +1308,13 @@ public class CFG
     public bool Interface_EmevdEditor_Tool_CalledBy = true;
     #endregion
 
+    #region ESD Editor
+    ///------------------------------------------------------------
+    /// ESD Editor (EzState scripts)
+    ///------------------------------------------------------------
+    public bool EsdEditor_Code_View = true;
+    #endregion
+
     #region FX Editor
     public bool FxEditor_Allow_Automatic_Save = true;
 

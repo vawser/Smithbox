@@ -21,6 +21,13 @@ public class EsdStateView
     private List<EsdRow> Rows = new();
     private HashSet<long> Unreached = new();
     private int CalledBy;
+    private long StartId;
+
+    // The code view (P3): the machine's structure, when the view is on
+    private bool CachedCodeView;
+    private EsdCode Code;
+
+    public bool IsCodeView => CFG.Current.EsdEditor_Code_View;
 
     // The machine's problems (EsdChecks), by the condition or command they're on
     private List<EsdProblem> Problems = new();
@@ -62,15 +69,19 @@ public class EsdStateView
     {
         var selection = View.Selection;
         var revision = selection.SelectedFile?.Container.Revision ?? -1;
-        if (selection.SelectedFile == CachedFile && selection.SelectedMachine == CachedMachine && revision == CachedRevision)
+        var codeView = IsCodeView;
+        if (selection.SelectedFile == CachedFile && selection.SelectedMachine == CachedMachine && revision == CachedRevision && codeView == CachedCodeView)
             return;
 
         CachedFile = selection.SelectedFile;
         CachedMachine = selection.SelectedMachine;
         CachedRevision = revision;
+        CachedCodeView = codeView;
 
         var machine = selection.Machine;
-        Rows = EsdLayout.Build(machine);
+        StartId = machine != null && machine.Count > 0 ? machine.Keys.Min() : 0;
+        Code = codeView && machine != null ? EsdStructure.Decompile(machine) : null;
+        Rows = Code != null ? EsdStructure.Rows(Code, machine) : EsdLayout.Build(machine);
         Unreached = machine != null ? EsdLayout.Unreached(machine) : new();
         CalledBy = CachedFile?.Esd != null && CachedMachine is long id
             ? EsdLayout.Callers(CachedFile.Esd, id).Sum(c => c.Calls)
@@ -114,6 +125,15 @@ public class EsdStateView
         ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("ESD_States_Back_TT"));
 
+        ImGui.SameLine();
+        var code = CFG.Current.EsdEditor_Code_View;
+        if (ImGui.Checkbox($"{LOC.Get("ESD_Code_Toggle")}##esdCodeView", ref code))
+        {
+            CFG.Current.EsdEditor_Code_View = code;
+            selection.ScrollToItem = true;
+        }
+        GUI.Tooltip(LOC.Get("ESD_Code_Toggle_TT"));
+
         if (selection.Machine is { } machine && selection.SelectedMachine is long id)
         {
             ImGui.SameLine();
@@ -131,6 +151,13 @@ public class EsdStateView
                 ImGui.SameLine();
                 ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ESD_States_Unreached", Unreached.Count));
                 GUI.Tooltip(LOC.Get("ESD_States_Unreached_TT"));
+            }
+
+            if (Code != null && Code.Stats.GotoEdges > 0)
+            {
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ESD_Code_Raw", Code.Stats.GotoEdges));
+                GUI.Tooltip(LOC.Get("ESD_Code_Raw_TT"));
             }
 
             if (Catalog == null)
@@ -221,6 +248,8 @@ public class EsdStateView
     {
         return row.Kind switch
         {
+            EsdRowKind.Function => blockH + 8f,
+            EsdRowKind.State when row.Step?.Inline == true => lineH + 6f,
             EsdRowKind.State => blockH + 6f,
             EsdRowKind.Section => lineH + 2f,
             EsdRowKind.ConditionEnd => 7f * DPI.UIScale(),
@@ -249,7 +278,8 @@ public class EsdStateView
         var tops = new float[Rows.Count + 1];
         for (var r = 0; r < Rows.Count; r++)
         {
-            var gap = Rows[r].Kind == EsdRowKind.State && r > 0 ? stateGap : 0f;
+            // In the code view only states drawn at their own place (not inside a transition) get the gap
+            var gap = Rows[r].Kind == EsdRowKind.State && r > 0 && Rows[r].Step?.Inline != true ? stateGap : 0f;
             tops[r] += gap;
             tops[r + 1] = tops[r] + RowHeight(Rows[r], lineH, blockH) + RowGap;
         }
@@ -299,6 +329,12 @@ public class EsdStateView
 
             switch (row.Kind)
             {
+                case EsdRowKind.Function:
+                    DrawFunction(drawList, row, min, max, lineH);
+                    break;
+                case EsdRowKind.State when row.Step?.Inline == true:
+                    DrawInlineState(drawList, row, min, max, lineH, x1);
+                    break;
                 case EsdRowKind.State:
                     DrawState(drawList, row, min, max, lineH, padY);
                     break;
@@ -326,7 +362,8 @@ public class EsdStateView
     }
 
     private static Vector4 ConditionColor(EsdRow row) =>
-        EsdExpr.IsAlways(row.Condition.Evaluator) ? EsdFormat.AlwaysColor : EsdFormat.ConditionColor;
+        row.Branch?.Label == EsdBranchLabel.CallDone ? EsdFormat.Darken(EsdFormat.CallColor, 0.85f)
+        : EsdExpr.IsAlways(row.Condition.Evaluator) ? EsdFormat.AlwaysColor : EsdFormat.ConditionColor;
 
     /// <summary>
     /// The block's button: selects on click, follows on double-click, offers the edit menu on right-click. Returns
@@ -576,7 +613,7 @@ public class EsdStateView
     {
         var (hovered, _) = BlockButton(row, min, max, $"##esdState{row.StateId}");
 
-        var isStart = Rows.Count > 0 && Rows[0].StateId == row.StateId;
+        var isStart = row.StateId == StartId;
         var color = isStart ? EsdFormat.StartStateColor : EsdFormat.StateColor;
         if (hovered)
             color = EsdFormat.Darken(color, 1.15f);
@@ -605,13 +642,116 @@ public class EsdStateView
             pos.X = TextChip(drawList, new Vector2(pos.X, chipY), LOC.Get("ESD_States_Start_Chip"), EsdFormat.TargetChipColor, true, chipH) + 6f;
 
         if (Unreached.Contains(row.StateId))
-            TextChip(drawList, new Vector2(pos.X, chipY), LOC.Get("ESD_States_Unreached_Chip"), new Vector4(0.95f, 0.65f, 0.35f, 1f), true, chipH);
+            pos.X = TextChip(drawList, new Vector2(pos.X, chipY), LOC.Get("ESD_States_Unreached_Chip"), new Vector4(0.95f, 0.65f, 0.35f, 1f), true, chipH) + 6f;
+
+        var chipTip = CodeChips(drawList, row, pos.X, chipY, chipH);
 
         drawList.PopClipRect();
 
         if (hovered)
-            GUI.Tooltip(LOC.Get(isStart ? "ESD_States_State_Start_TT" : "ESD_States_State_TT",
-                row.State.EntryCommands.Count, row.State.WhileCommands.Count, row.State.ExitCommands.Count, row.State.Conditions.Count));
+        {
+            var s = row.State;
+            var tip = row.Step != null && !isStart
+                ? LOC.Get("ESD_Code_Placed_TT", row.StateId, s.EntryCommands.Count, s.WhileCommands.Count, s.ExitCommands.Count, s.Conditions.Count)
+                : LOC.Get(isStart ? "ESD_States_State_Start_TT" : "ESD_States_State_TT", s.EntryCommands.Count, s.WhileCommands.Count, s.ExitCommands.Count, s.Conditions.Count);
+            GUI.Tooltip(chipTip != null ? tip + "\n" + chipTip : tip);
+        }
+    }
+
+    /// <summary>The code view's chips for a state (loop / waits / stops); returns their tooltip lines, or null</summary>
+    private string CodeChips(ImDrawListPtr drawList, EsdRow row, float x, float chipY, float chipH)
+    {
+        var step = row.Step;
+        if (step == null)
+            return null;
+
+        var lines = new List<string>();
+        var chipColor = new Vector4(0.85f, 0.85f, 0.90f, 1f);
+
+        void Add(string chip, string tip)
+        {
+            x = TextChip(drawList, new Vector2(x, chipY), LOC.Get(chip), chipColor, true, chipH) + 6f;
+            lines.Add(LOC.Get(tip));
+        }
+
+        if (step.LoopHead)
+            Add("ESD_Code_Loop_Chip", "ESD_Code_Loop_TT");
+        if (step.Waits)
+            Add("ESD_Code_Waits_Chip", "ESD_Code_Waits_TT");
+        if (step.Stops)
+            Add("ESD_Code_Stops_Chip", "ESD_Code_Stops_TT");
+
+        return lines.Count > 0 ? string.Join("\n", lines) : null;
+    }
+
+    /// <summary>The code view's hat block: the machine as a function, with the args it reads</summary>
+    private void DrawFunction(ImDrawListPtr drawList, EsdRow row, Vector2 min, Vector2 max, float lineH)
+    {
+        var id = View.Selection.SelectedMachine ?? 0;
+        drawList.AddRectFilled(min, max, ImGui.GetColorU32(EsdFormat.Darken(EsdFormat.CallColor, 0.8f)), 10f, ImDrawFlags.RoundCornersTop);
+        drawList.PushClipRect(min, max, true);
+
+        var chipH = lineH + 2f;
+        var chipY = min.Y + (max.Y - min.Y - chipH) * 0.5f;
+        var pos = new Vector2(min.X + 10f, min.Y + (max.Y - min.Y - lineH) * 0.5f);
+
+        var title = LOC.Get("ESD_Code_Function", EsdFormat.MachineLabel(View.Selection.SelectedFile, id));
+        drawList.AddText(pos, ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), title);
+        var x = pos.X + ImGui.CalcTextSize(title).X + 10f;
+
+        if (row.Args == 0)
+            drawList.AddText(new Vector2(x, pos.Y), ImGui.GetColorU32(new Vector4(1, 1, 1, 0.6f)), LOC.Get("ESD_Code_No_Args"));
+        for (var i = 0; i < row.Args; i++)
+            x = TextChip(drawList, new Vector2(x, chipY), $"arg{i}", EsdFormat.ArgChipColor, true, chipH) + 5f;
+
+        drawList.PopClipRect();
+
+        if (ImGui.IsMouseHoveringRect(min, max) && ImGui.IsWindowHovered())
+            GUI.Tooltip(LOC.Get("ESD_Code_Function_TT", EsdLayout.MachineLabel(id), row.Args));
+    }
+
+    /// <summary>A state drawn inside the one transition reaching it: a small pill, so its commands read as that branch's code</summary>
+    private void DrawInlineState(ImDrawListPtr drawList, EsdRow row, Vector2 min, Vector2 max, float lineH, float x1)
+    {
+        var title = LOC.Get("ESD_States_State_Title", row.StateId);
+        var file = View.Selection.SelectedFile;
+        string name = null;
+        if (file != null && View.Selection.SelectedMachine is long m && file.StateNames.TryGetValue((m, row.StateId), out var n))
+            name = n;
+
+        // Measure the pill: title, name, then the chips
+        var chipH = lineH;
+        var width = ImGui.CalcTextSize(title).X + 16f + (name != null ? ImGui.CalcTextSize(name).X + 8f : 0f);
+        var step = row.Step;
+        foreach (var (on, key) in new[] { (step.LoopHead, "ESD_Code_Loop_Chip"), (step.Waits, "ESD_Code_Waits_Chip"), (step.Stops, "ESD_Code_Stops_Chip") })
+            if (on)
+                width += ImGui.CalcTextSize(LOC.Get(key)).X + 16f;
+
+        var pillMax = new Vector2(Math.Min(min.X + width, x1), max.Y - 2f);
+        var (hovered, _) = BlockButton(row, min, pillMax, $"##esdState{row.StateId}");
+
+        var color = EsdFormat.Darken(EsdFormat.StateColor, hovered ? 0.95f : 0.8f);
+        drawList.AddRectFilled(min, pillMax, ImGui.GetColorU32(color), 6f);
+        Outline(drawList, row, min, pillMax, 6f, ImDrawFlags.RoundCornersAll);
+
+        drawList.PushClipRect(min, pillMax, true);
+        var pos = new Vector2(min.X + 8f, min.Y + (pillMax.Y - min.Y - lineH) * 0.5f);
+        drawList.AddText(pos, ImGui.GetColorU32(new Vector4(1, 1, 1, 0.85f)), title);
+        pos.X += ImGui.CalcTextSize(title).X + 8f;
+        if (name != null)
+        {
+            drawList.AddText(pos, ImGui.GetColorU32(UI.Current.ImGui_AliasName_Text), name);
+            pos.X += ImGui.CalcTextSize(name).X + 8f;
+        }
+        var chipTip = CodeChips(drawList, row, pos.X, min.Y + (pillMax.Y - min.Y - chipH) * 0.5f, chipH);
+        drawList.PopClipRect();
+
+        if (hovered)
+        {
+            var s = row.State;
+            var tip = LOC.Get("ESD_Code_Inline_TT", row.StateId, s.EntryCommands.Count, s.WhileCommands.Count, s.ExitCommands.Count, s.Conditions.Count);
+            GUI.Tooltip(chipTip != null ? tip + "\n" + chipTip : tip);
+        }
     }
 
     private void DrawSection(ImDrawListPtr drawList, EsdRow row, Vector2 min, float lineH)
@@ -702,11 +842,16 @@ public class EsdStateView
         var white = ImGui.GetColorU32(new Vector4(1, 1, 1, 1));
 
         var always = EsdExpr.IsAlways(c.Evaluator);
-        var label = LOC.Get(always ? "ESD_States_Always" : "ESD_States_If");
+        var branch = row.Branch;
+        var label = branch != null ? CodeLabel(branch.Label) : LOC.Get(always ? "ESD_States_Always" : "ESD_States_If");
         drawList.AddText(new Vector2(x, y), white, label);
         x += ImGui.CalcTextSize(label).X + 8f;
 
-        if (!always)
+        // The code view leaves out the test of "always" and of a call's done test: the label says it
+        if (branch != null && (always || branch.Label == EsdBranchLabel.CallDone))
+        {
+        }
+        else if (!always)
         {
             var node = EsdExpr.Decode(c.Evaluator);
             x = node != null
@@ -714,7 +859,29 @@ public class EsdStateView
                 : TextChip(drawList, new Vector2(x, chipY), $"<{EsdFormat.Hex(c.Evaluator)}>", EsdFormat.StatusChipColor, false, chipH) + 8f;
         }
 
-        if (c.TargetState is long target)
+        if (branch != null && c.TargetState is long codeTarget)
+        {
+            // Code view: an inlined target is the block's content; anything else is a jump chip (a click picks another)
+            var (chip, chipColor) = branch.Flow switch
+            {
+                // Just an arrow: the target's pill is right below, but the chip still takes a click to retarget
+                EsdFlow.Inline => (Icons.ArrowDown, new Vector4(0.70f, 0.70f, 0.74f, 1f)),
+                EsdFlow.Next => (LOC.Get("ESD_Code_Next_Chip", codeTarget, Icons.ArrowDown), new Vector4(0.80f, 0.80f, 0.82f, 1f)),
+                EsdFlow.Forward => (LOC.Get("ESD_Code_Forward_Chip", codeTarget, Icons.ArrowRight), EsdFormat.TargetChipColor),
+                EsdFlow.Repeat => (LOC.Get("ESD_Code_Repeat_Chip", codeTarget, Icons.Repeat), new Vector4(0.80f, 0.90f, 0.75f, 1f)),
+                EsdFlow.Goto => (LOC.Get("ESD_Code_Goto_Chip", codeTarget), new Vector4(0.95f, 0.65f, 0.35f, 1f)),
+                EsdFlow.Missing => (LOC.Get("ESD_States_State_Title", codeTarget), UI.Current.ImGui_Invalid_Text_Color),
+                _ => (null, default)
+            };
+
+            if (chip != null)
+            {
+                var chipX = x;
+                x = TextChip(drawList, new Vector2(x, chipY), chip, chipColor, true, chipH) + 8f;
+                hits.Add(new ChipHit { Min = new Vector2(chipX, chipY), Max = new Vector2(x - 8f, chipY + chipH) });
+            }
+        }
+        else if (c.TargetState is long target)
         {
             var arrow = LOC.Get("ESD_States_Goes_To");
             drawList.AddText(new Vector2(x, y), white, arrow);
@@ -727,7 +894,7 @@ public class EsdStateView
                 missing ? UI.Current.ImGui_Invalid_Text_Color : EsdFormat.TargetChipColor, true, chipH) + 8f;
             hits.Add(new ChipHit { Min = new Vector2(chipX, chipY), Max = new Vector2(x - 8f, chipY + chipH) });
         }
-        else if (c.Subconditions.Count > 0)
+        else if (c.Subconditions.Count > 0 && branch == null)
         {
             var then = LOC.Get("ESD_States_Then");
             drawList.AddText(new Vector2(x, y), ImGui.GetColorU32(new Vector4(1, 1, 1, 0.75f)), then);
@@ -743,9 +910,19 @@ public class EsdStateView
 
         if (hovered)
         {
-            var text = always ? LOC.Get("ESD_States_Always_TT") : EsdFormat.ExprText(cat, c.Evaluator);
+            var text = branch?.Label == EsdBranchLabel.CallDone ? LOC.Get("ESD_Code_Call_Done_TT")
+                : always ? LOC.Get("ESD_States_Always_TT") : EsdFormat.ExprText(cat, c.Evaluator);
             var lines = new List<string> { text };
-            if (c.TargetState is long t)
+            if (branch != null && c.TargetState is long ct)
+                lines.Add(branch.Flow switch
+                {
+                    EsdFlow.Inline => LOC.Get("ESD_Code_Inline_Target_TT", ct),
+                    EsdFlow.Next => LOC.Get("ESD_Code_Next_TT", ct),
+                    EsdFlow.Repeat => LOC.Get("ESD_Code_Repeat_TT", ct),
+                    EsdFlow.Goto => LOC.Get("ESD_Code_Goto_TT", ct),
+                    _ => LOC.Get("ESD_Code_Forward_TT", ct)
+                });
+            else if (c.TargetState is long t)
                 lines.Add(LOC.Get("ESD_States_Goes_To_TT", t));
             else if (c.Subconditions.Count > 0)
                 lines.Add(LOC.Get("ESD_States_Then_TT"));
@@ -754,6 +931,17 @@ public class EsdStateView
             GUI.Tooltip(string.Join("\n", lines));
         }
     }
+
+    private static string CodeLabel(EsdBranchLabel label) => label switch
+    {
+        EsdBranchLabel.If => LOC.Get("ESD_Code_If"),
+        EsdBranchLabel.ElseIf => LOC.Get("ESD_Code_Else_If"),
+        EsdBranchLabel.Else => LOC.Get("ESD_Code_Else"),
+        EsdBranchLabel.When => LOC.Get("ESD_Code_When"),
+        EsdBranchLabel.Then => LOC.Get("ESD_Code_Then"),
+        EsdBranchLabel.GoTo => LOC.Get("ESD_Code_Go_To"),
+        _ => LOC.Get("ESD_Code_Call_Done")
+    };
 
     private void CommandTooltip(EsdKindCatalog cat, ESD.CommandCall c, EsdCallDef def, EsdCommandKind kind)
     {

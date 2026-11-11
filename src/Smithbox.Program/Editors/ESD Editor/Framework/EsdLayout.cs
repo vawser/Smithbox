@@ -28,6 +28,8 @@ public enum EsdRowKind
     Condition,
     /// The foot of a condition that holds pass commands or subconditions
     ConditionEnd,
+    /// The code view's hat block: the machine as a function, with its args
+    Function,
 }
 
 /// <summary>Which list of a state or condition a command row is in</summary>
@@ -63,6 +65,17 @@ public class EsdRow
 
     /// For a condition row: the row of its foot (-1 when it has none)
     public int EndRow = -1;
+
+    // Code view only (EsdStructure.Rows)
+
+    /// For a state row: how the state is placed
+    public EsdCodeStep Step;
+
+    /// For a condition row (and its foot): how the transition is drawn
+    public EsdCodeBranch Branch;
+
+    /// For the function row: how many args the machine reads
+    public int Args;
 }
 
 /// <summary>What a command is, by bank and id (banks 5/6/7 are the language's own, not the game's)</summary>
