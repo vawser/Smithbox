@@ -6,6 +6,12 @@ namespace StudioCore.Editors.EmevdEditor;
 /// <summary>An arg's value type, numbered as SoulsFormats' EMEVD.Instruction.ArgType</summary>
 public enum EmevdArgType { U8 = 0, U16 = 1, U32 = 2, S8 = 3, S16 = 4, S32 = 5, F32 = 6 }
 
+/// <summary>
+/// What an arg's value refers to (the layouts' Role field, from EmedfSurvey argroles): a map entity, an event flag, a
+/// param row, a text entry, a whole map ID (AABBCCDD), or one part of a map ID split over several args
+/// </summary>
+public enum EmevdArgRole { None, Entity, EventFlag, Param, Text, MapId, MapPart }
+
 public class EmevdArgDef
 {
     public int Offset;
@@ -19,6 +25,36 @@ public class EmevdArgDef
     public bool Optional;
     /// <summary>Not in a shipped definition: inferred from the data</summary>
     public bool Inferred;
+
+    public EmevdArgRole Role;
+    /// <summary>
+    /// Entity kinds (comma list), the param or FMG name, the map part (Area/Block/Region/Index), or for a param picked
+    /// by another arg, value:param pairs ("0:EquipParamWeapon,1:EquipParamProtector")
+    /// </summary>
+    public string RoleType;
+    /// <summary>The offset of the arg whose value picks the param (Item Type for Item ID), or -1</summary>
+    public int RoleSelector = -1;
+    /// <summary>Reference (DarkScript3 meta types) or Shipped (the game's Japanese arg name)</summary>
+    public string RoleSource;
+
+    /// <summary>The param for this arg, given the selector arg's value when there is one</summary>
+    public string ParamFor(long selectorValue)
+    {
+        if (Role != EmevdArgRole.Param || RoleType == null)
+            return null;
+
+        if (RoleSelector < 0)
+            return RoleType;
+
+        foreach (var pair in RoleType.Split(','))
+        {
+            var parts = pair.Split(':');
+            if (parts.Length == 2 && long.TryParse(parts[0], out var v) && v == selectorValue)
+                return parts[1];
+        }
+
+        return null;
+    }
 
     /// <summary>The English name, else the shipped name, else the offset</summary>
     public string DisplayName => !string.IsNullOrEmpty(Name) ? Name
@@ -168,6 +204,10 @@ public class EmevdCatalog
                         Format = Str(a, "Format"),
                         Optional = Bool(a, "Optional"),
                         Inferred = Bool(a, "Inferred"),
+                        Role = Enum.TryParse<EmevdArgRole>(Str(a, "Role"), out var role) ? role : EmevdArgRole.None,
+                        RoleType = Str(a, "RoleType"),
+                        RoleSelector = a.TryGetProperty("RoleSelector", out var sel) && sel.ValueKind == JsonValueKind.Number ? sel.GetInt32() : -1,
+                        RoleSource = Str(a, "RoleSource"),
                     });
                 }
 

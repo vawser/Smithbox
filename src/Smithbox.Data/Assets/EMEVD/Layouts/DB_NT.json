@@ -356,7 +356,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -417,7 +419,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -428,7 +432,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -477,7 +483,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -488,7 +496,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -548,7 +558,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -559,7 +571,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -690,7 +704,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -842,7 +858,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -986,7 +1004,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -997,7 +1017,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -1205,7 +1227,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -1308,7 +1332,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -1513,7 +1539,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -1592,7 +1620,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -1640,7 +1670,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -1719,7 +1751,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -1913,7 +1947,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -1924,7 +1960,9 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -1985,7 +2023,9 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -2021,7 +2061,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -2554,7 +2596,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -2763,7 +2807,9 @@
               "Min": -1,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -3414,7 +3460,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3487,7 +3535,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3498,7 +3548,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -3535,7 +3587,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3619,7 +3673,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3692,7 +3748,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3703,7 +3761,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -3776,7 +3836,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3858,7 +3920,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -3929,7 +3993,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4000,7 +4066,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4084,7 +4152,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4313,7 +4383,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4398,7 +4470,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4469,7 +4543,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4551,7 +4627,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4622,7 +4700,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4633,7 +4713,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -4704,7 +4786,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4786,7 +4870,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4857,7 +4943,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -4939,7 +5027,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5010,7 +5100,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5242,7 +5334,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5362,7 +5456,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5445,7 +5541,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5528,7 +5626,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5587,7 +5687,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5670,7 +5772,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -5788,7 +5892,9 @@
               "Min": -1,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5835,7 +5941,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -5920,7 +6028,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6007,7 +6117,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6089,7 +6201,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6171,7 +6285,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6256,7 +6372,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6343,7 +6461,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6354,7 +6474,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -6526,7 +6648,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6572,7 +6696,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6639,7 +6765,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6698,7 +6826,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6709,7 +6839,9 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -6793,7 +6925,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6875,7 +7009,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -6957,7 +7093,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7051,7 +7189,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7110,7 +7250,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7192,7 +7334,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7274,7 +7418,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7356,7 +7502,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7427,7 +7575,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7498,7 +7648,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7576,7 +7728,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7587,7 +7741,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -7665,7 +7821,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -7700,7 +7858,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -7735,7 +7895,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -7770,7 +7932,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         }
@@ -7979,7 +8143,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -7990,7 +8156,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -8821,7 +8989,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -8881,7 +9051,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -8942,7 +9114,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -9002,7 +9176,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -9013,7 +9189,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -9072,7 +9250,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -9083,7 +9263,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -9408,7 +9590,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -9632,7 +9816,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -9693,7 +9879,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -9704,7 +9892,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -9883,7 +10073,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -9967,7 +10159,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10063,7 +10257,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10074,7 +10270,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -10134,7 +10332,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10145,7 +10345,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -10202,7 +10404,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10213,7 +10417,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -10266,7 +10472,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10336,7 +10544,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10409,7 +10619,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10468,7 +10680,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10538,7 +10752,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10609,7 +10825,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10680,7 +10898,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -10751,7 +10971,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -11392,7 +11614,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -11466,7 +11690,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -11517,7 +11743,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -11552,7 +11780,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -11648,7 +11878,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -11672,7 +11904,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -11720,7 +11954,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -11795,7 +12031,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -11830,7 +12068,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 20,
@@ -11907,7 +12147,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -11942,7 +12184,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 20,
@@ -12017,7 +12261,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -12052,7 +12298,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         }
@@ -12085,7 +12333,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12173,7 +12423,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12210,7 +12462,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12273,7 +12527,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12285,7 +12541,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -12369,7 +12627,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12406,7 +12666,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12492,7 +12754,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -12556,7 +12820,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -12606,7 +12872,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -12630,7 +12898,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12728,7 +12998,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -12776,7 +13048,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12788,7 +13062,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -12827,7 +13103,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -12962,7 +13240,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -13012,7 +13292,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -13024,7 +13306,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -13061,7 +13345,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -13149,7 +13435,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -13161,7 +13449,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -13209,7 +13499,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -13440,7 +13732,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -13476,7 +13770,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -13488,7 +13784,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -13524,7 +13822,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -13536,7 +13836,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -13798,7 +14100,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -13969,7 +14273,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14029,7 +14335,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14041,7 +14349,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -14089,7 +14399,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14175,7 +14487,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14286,7 +14600,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -14350,7 +14666,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -14385,7 +14703,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14397,7 +14717,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -14409,7 +14731,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -14421,7 +14745,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -14433,7 +14759,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 20,
@@ -14445,7 +14773,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 24,
@@ -14457,7 +14787,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -14518,7 +14850,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14557,7 +14891,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14569,7 +14905,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -14688,7 +15026,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -14724,7 +15064,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -14833,7 +15175,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -14919,7 +15263,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -15342,7 +15688,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -15575,7 +15923,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -15599,7 +15949,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -15623,7 +15975,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 20,
@@ -15647,7 +16001,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 28,
@@ -15671,7 +16027,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 36,
@@ -15695,7 +16053,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 44,
@@ -15719,7 +16079,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 52,
@@ -15743,7 +16105,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 60,
@@ -15896,7 +16260,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -15922,7 +16288,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16068,7 +16436,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16107,7 +16477,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16146,7 +16518,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16209,7 +16583,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16248,7 +16624,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16287,7 +16665,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16335,7 +16715,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16361,7 +16743,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16399,7 +16783,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16438,7 +16824,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16450,7 +16838,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16476,7 +16866,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16513,7 +16905,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16525,7 +16919,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16551,7 +16947,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16563,7 +16961,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -16614,7 +17014,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16653,7 +17055,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16679,7 +17083,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16727,7 +17133,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16739,7 +17147,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -16774,7 +17184,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16812,7 +17224,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -16838,7 +17252,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16874,7 +17290,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -16985,7 +17403,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17046,7 +17466,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17142,7 +17564,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17192,7 +17616,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17241,7 +17667,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17290,7 +17718,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17329,7 +17759,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17368,7 +17800,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17407,7 +17841,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17444,7 +17880,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17479,7 +17917,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -17490,7 +17930,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -17514,7 +17956,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17526,7 +17970,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -17552,7 +17998,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17604,7 +18052,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17641,7 +18091,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17653,7 +18105,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -17691,7 +18145,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -17741,7 +18197,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17778,7 +18236,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17827,7 +18287,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -17853,7 +18315,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17916,7 +18380,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -17965,7 +18431,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -17989,7 +18457,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18026,7 +18496,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18038,7 +18510,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18097,7 +18571,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18147,7 +18623,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18159,7 +18637,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18185,7 +18665,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18294,7 +18776,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18333,7 +18817,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18394,7 +18880,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18418,7 +18906,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18455,7 +18945,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18516,7 +19008,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18540,7 +19034,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18591,7 +19087,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18665,7 +19163,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18677,7 +19177,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -18727,7 +19229,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18739,7 +19243,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18763,7 +19269,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18775,7 +19283,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18799,7 +19309,9 @@
               "Max": 20000,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18855,7 +19367,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18893,7 +19407,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -18919,7 +19435,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18958,7 +19476,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -18995,7 +19515,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19045,7 +19567,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19096,7 +19620,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19132,7 +19658,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19170,7 +19698,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19182,7 +19712,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -19279,7 +19811,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19340,7 +19874,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19352,7 +19888,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -19390,7 +19928,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -19414,7 +19954,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19453,7 +19995,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19514,7 +20058,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -19549,7 +20095,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19597,7 +20145,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19633,7 +20183,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -19659,7 +20211,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19710,7 +20264,9 @@
               "Max": 3999999999,
               "Increment": 1,
               "Format": "%u",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19722,7 +20278,9 @@
               "Max": 3999999999,
               "Increment": 1,
               "Format": "%u",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -19767,7 +20325,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19806,7 +20366,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -19845,7 +20407,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -19895,7 +20459,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -19945,7 +20511,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -20103,7 +20671,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -20236,7 +20806,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20259,7 +20831,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20282,7 +20856,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20305,7 +20881,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20406,7 +20984,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -20430,7 +21010,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 24,
@@ -20442,7 +21024,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 28,
@@ -20454,7 +21038,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20553,7 +21139,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -20565,7 +21153,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 16,
@@ -20577,7 +21167,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -20933,7 +21525,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 12,
@@ -21074,7 +21668,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21086,7 +21682,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -21098,7 +21696,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -21122,7 +21722,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21134,7 +21736,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -21146,7 +21750,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -21170,7 +21776,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21182,7 +21790,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -21194,7 +21804,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -21220,7 +21832,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21232,7 +21846,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -21290,7 +21906,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -21314,7 +21932,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21326,7 +21946,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -21420,7 +22042,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             }
           ]
         },
@@ -21499,7 +22123,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21550,7 +22176,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21611,7 +22239,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21712,7 +22342,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21926,7 +22558,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -21965,7 +22599,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22002,7 +22638,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22039,7 +22677,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22078,7 +22718,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22115,7 +22757,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22163,7 +22807,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 20,
@@ -22245,7 +22891,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22432,7 +23080,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22444,7 +23094,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -22481,7 +23133,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22493,7 +23147,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,
@@ -22529,7 +23185,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 4,
@@ -22541,7 +23199,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Shipped"
             },
             {
               "Offset": 8,

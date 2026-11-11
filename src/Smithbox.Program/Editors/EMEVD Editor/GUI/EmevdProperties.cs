@@ -282,6 +282,14 @@ public class EmevdProperties
 
             GUI.Tooltip(e.DisplayName);
         }
+        else if (arg.Def.Role != EmevdArgRole.None)
+        {
+            // What the value refers to, with a link to the editor that owns it
+            View.RoleLinks.Button($"argRoleLink{index}", line, arg);
+            ImGui.SameLine();
+            ImGui.TextWrapped(View.RoleLinks.Describe(line, arg) ?? EmevdRoleLinks.RoleName(arg.Def.Role));
+            GUI.Tooltip(LOC.Get("EMEVD_Role_Source_TT", EmevdRoleLinks.RoleName(arg.Def.Role), arg.Def.RoleSource ?? "-"));
+        }
 
         ImGui.TableNextColumn();
         View.ArgEditor.Slot($"##argSlot{index}", script, line, arg, -1);

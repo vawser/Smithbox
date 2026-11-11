@@ -28,8 +28,34 @@ public class EmevdSearchTool
         Scan = new(view, "emevdSearch");
     }
 
+    // Set by SearchValue, so the tool is shown the next time the Tools window draws
+    private bool FocusNext;
+
+    /// <summary>
+    /// Searches every file for a value, from a link elsewhere (an event flag or entity arg): shows the Tools window and
+    /// this tool, and runs at once
+    /// </summary>
+    public void SearchValue(long value)
+    {
+        ValueText = value.ToString(CultureInfo.InvariantCulture);
+        InstructionText = "";
+        Scope = EmevdSearchScope.AllFiles;
+
+        CFG.Current.Interface_EmevdEditor_ToolWindow = true;
+        CFG.Current.Interface_EmevdEditor_Tool_Search = true;
+        FocusNext = true;
+
+        Run(new EmevdQuery(value, null, MatchFloats));
+    }
+
     public void OnToolWindow()
     {
+        if (FocusNext)
+        {
+            ToolSections.Focus();
+            FocusNext = false;
+        }
+
         if (!ToolSections.Header($"{LOC.Get("EMEVD_SearchTool_Header")}##emevdSearchToolHeader"))
             return;
 

@@ -707,7 +707,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -771,7 +773,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -782,7 +786,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -834,7 +840,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -845,7 +853,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -908,7 +919,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -919,7 +932,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -991,7 +1006,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 1,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1096,7 +1115,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1146,7 +1168,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -1156,7 +1181,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -1166,7 +1194,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -1176,7 +1207,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1226,7 +1260,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1236,7 +1272,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -1298,7 +1336,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%08d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1370,7 +1410,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1416,7 +1459,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 1,
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1462,7 +1509,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 1,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1560,7 +1611,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%08d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1597,7 +1650,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%08d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -1686,7 +1741,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1697,7 +1754,10 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -1750,7 +1810,10 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "ActionButtonParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -1761,7 +1824,9 @@
               "Min": -1,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1839,7 +1904,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -1849,7 +1917,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -1859,7 +1930,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -1869,7 +1943,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -1990,7 +2067,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -2000,7 +2080,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -2010,7 +2093,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 6,
@@ -2020,7 +2106,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -2120,7 +2209,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "EquipParamProtector",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2176,7 +2268,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CeremonyParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -2211,7 +2306,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "WeatherLotParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2375,7 +2473,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2425,7 +2525,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -2504,7 +2607,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2564,7 +2669,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -2624,7 +2732,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -2674,7 +2785,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2764,7 +2877,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "SmallBaseAttach",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -2774,7 +2890,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -2813,7 +2931,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -2873,7 +2994,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -3160,7 +3284,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3333,7 +3460,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -3343,7 +3473,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -3353,7 +3486,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -3363,7 +3499,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -3422,7 +3561,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3498,7 +3640,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3585,7 +3730,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3661,7 +3809,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3672,7 +3823,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -3748,7 +3902,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3759,7 +3916,10 @@
               "Min": -1,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -3835,7 +3995,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3909,7 +4072,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -3980,7 +4146,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4061,7 +4230,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4258,7 +4430,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4348,7 +4523,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4424,7 +4602,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4511,7 +4692,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4522,7 +4706,10 @@
               "Min": -1,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -4598,7 +4785,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4674,7 +4864,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4750,7 +4943,10 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4895,7 +5091,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -4915,7 +5114,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -4961,7 +5163,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5031,7 +5236,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5081,7 +5289,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5162,7 +5373,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5212,7 +5426,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5352,7 +5569,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5489,7 +5709,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5553,7 +5776,10 @@
               "Min": 0,
               "Max": 100000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5564,7 +5790,10 @@
               "Min": -1,
               "Max": 100000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -5644,7 +5873,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5737,7 +5969,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5793,7 +6028,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5875,7 +6113,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -5946,7 +6187,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -6093,7 +6337,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "WwiseValueToStrParam_BgmBossChrIdConv",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -6154,7 +6401,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "WwiseValueToStrParam_BgmBossChrIdConv",
+              "RoleSource": "Reference"
             }
           ]
         }
@@ -6197,7 +6447,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -6232,7 +6485,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -6267,7 +6523,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -6302,7 +6561,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             }
           ]
         }
@@ -7634,7 +7896,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -7697,7 +7961,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -7761,7 +8027,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -7824,7 +8092,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -7835,7 +8105,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -7899,7 +8171,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -7910,7 +8184,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8042,7 +8318,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -8052,7 +8331,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -8062,7 +8344,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -8072,7 +8357,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8122,7 +8410,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -8132,7 +8423,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -8142,7 +8436,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -8152,7 +8449,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8419,7 +8719,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8483,7 +8785,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -8494,7 +8798,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8582,7 +8888,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -8592,7 +8901,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -8602,7 +8914,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -8612,7 +8927,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -8710,7 +9028,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -8721,7 +9041,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -8784,7 +9107,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -8795,7 +9120,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -8857,7 +9185,9 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -8868,7 +9198,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -8939,7 +9272,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -8949,7 +9285,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -8959,7 +9298,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 6,
@@ -8969,7 +9311,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9026,7 +9371,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9036,7 +9384,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -9046,7 +9397,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 6,
@@ -9056,7 +9410,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9117,7 +9474,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9127,7 +9487,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -9137,7 +9500,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 6,
@@ -9147,7 +9513,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9192,7 +9561,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CeremonyParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9238,7 +9610,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CeremonyParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9284,7 +9659,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CeremonyParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -9411,7 +9789,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9471,7 +9852,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9531,7 +9915,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9590,7 +9977,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9640,7 +10030,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9690,7 +10083,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -9739,7 +10135,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -9795,7 +10193,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -9851,7 +10251,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -9906,7 +10308,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -9992,7 +10396,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -10082,7 +10488,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -10167,7 +10575,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "SmallBaseAttach",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -10177,7 +10588,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -10216,7 +10629,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "SmallBaseAttach",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -10226,7 +10642,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -10261,7 +10679,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "SmallBaseAttach",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -10271,7 +10692,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -10309,7 +10732,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -10369,7 +10795,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -10425,7 +10854,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -11033,7 +11465,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11043,7 +11478,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -11114,7 +11552,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11124,7 +11565,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -11195,7 +11639,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11205,7 +11652,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -11271,7 +11721,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11321,7 +11774,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11371,7 +11827,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11521,7 +11980,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11567,7 +12029,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11617,7 +12082,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11872,7 +12340,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -11938,7 +12409,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -12011,7 +12485,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -12081,7 +12558,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -12137,7 +12617,10 @@
             {
               "Offset": 4,
               "Type": "s32",
-              "Name": "BGM Boss Conv Param ID"
+              "Name": "BGM Boss Conv Param ID",
+              "Role": "Param",
+              "RoleType": "WwiseValueToStrParam_BgmBossChrIdConv",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -12171,7 +12654,10 @@
             {
               "Offset": 4,
               "Type": "s32",
-              "Name": "BGM Boss Conv Param ID"
+              "Name": "BGM Boss Conv Param ID",
+              "Role": "Param",
+              "RoleType": "WwiseValueToStrParam_BgmBossChrIdConv",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -12968,7 +13454,10 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -13013,7 +13502,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -13134,7 +13626,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -13144,7 +13638,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 0,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -13154,7 +13650,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -13231,7 +13730,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -13241,7 +13743,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -13251,7 +13755,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -13390,7 +13897,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -13400,7 +13910,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapId",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -13410,7 +13922,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -13479,7 +13994,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Generator",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13521,7 +14039,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "ItemLotParam_map",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -13550,7 +14071,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13562,7 +14086,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -13586,7 +14112,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "BehaviorParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -13646,7 +14175,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13681,7 +14212,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13761,7 +14294,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -13803,7 +14338,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -13827,7 +14365,10 @@
               "Max": 99999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Text",
+              "RoleType": "NpcName",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -13851,7 +14392,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13886,7 +14430,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Navmesh",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13936,7 +14483,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 1,
@@ -13946,7 +14496,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -13956,7 +14509,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -13966,7 +14522,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -13976,7 +14535,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Region,Player",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -13986,7 +14548,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "PlaceName",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14015,7 +14580,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14044,7 +14612,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14056,7 +14626,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14098,7 +14670,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset,Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14226,7 +14801,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14238,7 +14815,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14275,7 +14854,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "RespawnPoint",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14318,7 +14900,11 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 0,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14354,7 +14940,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Message",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14424,7 +15013,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14477,7 +15068,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14518,7 +15111,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14530,7 +15126,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14559,7 +15158,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "ItemLotParam_map",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14583,7 +15185,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14613,7 +15217,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -14675,7 +15281,11 @@
               "Min": 0,
               "Max": 99999999,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 0,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14687,7 +15297,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -14734,7 +15346,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "0:EquipParamWeapon,1:EquipParamProtector,2:EquipParamAccessory,3:EquipParamGoods",
+              "RoleSelector": 0,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14744,7 +15360,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -14808,7 +15426,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14907,7 +15527,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "AiSoundParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14917,7 +15540,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -14957,7 +15582,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Generator",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -14986,7 +15614,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -14998,7 +15628,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15097,7 +15729,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15174,7 +15808,9 @@
               "Offset": 4,
               "Type": "s32",
               "Name": "Target Event Flag ID",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15229,7 +15865,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Gesture Param ID"
+              "Name": "Gesture Param ID",
+              "Role": "Param",
+              "RoleType": "GestureParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15288,7 +15927,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15344,7 +15986,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -15354,7 +15999,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -15364,7 +16012,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -15374,7 +16025,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15428,7 +16082,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15458,7 +16115,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "WorldMapPointParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -15488,7 +16148,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Human",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15536,7 +16199,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Gesture Param ID"
+              "Name": "Gesture Param ID",
+              "Role": "Param",
+              "RoleType": "GestureParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15602,7 +16268,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -15640,7 +16308,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 1,
@@ -15650,7 +16321,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -15660,7 +16334,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -15670,7 +16347,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -15704,13 +16384,17 @@
               "Offset": 0,
               "Type": "s32",
               "Name": "Event Flag ID Min",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
               "Type": "s32",
               "Name": "Event Flag ID Max",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15757,13 +16441,18 @@
               "Offset": 0,
               "Type": "s32",
               "Name": "User Disp Log Param ID",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "Param",
+              "RoleType": "UserDispLogParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
               "Type": "s32",
               "Name": "Entity ID",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15839,7 +16528,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "NpcName",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -15849,7 +16541,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15904,7 +16598,9 @@
               "Min": 0,
               "Max": 999999999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15933,7 +16629,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "ItemLotParam_map",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -15956,7 +16655,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Permanent Buff Param ID"
+              "Name": "Permanent Buff Param ID",
+              "Role": "Param",
+              "RoleType": "PermanentBuffParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16030,7 +16732,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "OperationGuideParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16040,7 +16745,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16070,13 +16777,18 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "OperationGuideParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
               "Type": "s32",
               "Name": "Entity ID",
-              "Inferred": true
+              "Inferred": true,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16104,7 +16816,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 1,
@@ -16114,7 +16829,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -16124,7 +16842,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 3,
@@ -16134,7 +16855,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16144,7 +16868,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -16211,7 +16937,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16249,7 +16977,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16277,7 +17008,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -16315,7 +17049,10 @@
               "Min": 0,
               "Max": 999,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "MissionManagementParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -16353,7 +17090,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "UserDispLogParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16363,7 +17103,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "UserDispLogParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -16373,7 +17116,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -16383,7 +17128,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16448,7 +17195,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16485,7 +17235,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Permanent Buff Param ID"
+              "Name": "Permanent Buff Param ID",
+              "Role": "Param",
+              "RoleType": "PermanentBuffParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16513,7 +17266,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16543,7 +17299,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "BehaviorParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 16,
@@ -16606,7 +17365,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Permanent Buff Param ID"
+              "Name": "Permanent Buff Param ID",
+              "Role": "Param",
+              "RoleType": "PermanentBuffParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16634,7 +17396,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16720,7 +17484,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -16750,7 +17516,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "NpcParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -16760,7 +17529,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "NpcThinkParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 24,
@@ -16770,7 +17542,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CharaInitParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -16808,7 +17583,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 5,
@@ -16818,7 +17596,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 6,
@@ -16828,7 +17609,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 7,
@@ -16838,7 +17622,10 @@
               "Min": 0,
               "Max": 99,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Index",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -16848,7 +17635,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Region,Player",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -16858,7 +17648,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "PlaceName",
+              "RoleSource": "Reference"
             }
           ]
         }
@@ -16895,7 +17688,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16936,7 +17732,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -16976,7 +17775,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17018,7 +17820,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17060,7 +17865,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17113,7 +17921,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17142,7 +17953,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17154,7 +17968,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17183,7 +18000,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17225,7 +18045,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17237,7 +18060,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17266,7 +18092,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17308,7 +18137,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17320,7 +18152,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Region",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17349,7 +18184,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17361,7 +18199,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -17415,7 +18255,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17457,7 +18300,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17486,7 +18332,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17539,7 +18388,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17551,7 +18403,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -17586,7 +18440,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17596,7 +18453,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "NpcThinkParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17625,7 +18485,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17654,7 +18517,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17666,7 +18532,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "SpEffectParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -17694,7 +18563,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17796,7 +18668,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17862,7 +18737,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -17958,7 +18836,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18007,7 +18888,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18061,7 +18945,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18114,7 +19001,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18154,7 +19044,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18196,7 +19089,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18238,7 +19134,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18280,7 +19179,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18292,7 +19194,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -18320,7 +19225,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18371,7 +19279,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18413,7 +19324,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -18466,7 +19380,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18509,7 +19426,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18534,7 +19454,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -18558,7 +19481,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -18594,7 +19520,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18619,7 +19548,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -18660,7 +19592,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18685,7 +19620,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -18709,7 +19647,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -18733,7 +19674,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18783,7 +19727,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18827,7 +19774,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18837,7 +19787,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "PatrolRoute",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -18866,7 +19819,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18915,7 +19871,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CharaInitParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -18945,7 +19904,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -18987,7 +19949,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19023,7 +19988,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19033,7 +20001,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19085,7 +20056,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19119,7 +20093,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19129,7 +20106,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19157,7 +20137,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19177,7 +20160,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19205,7 +20191,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19244,7 +20233,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19289,7 +20281,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -19299,7 +20294,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19327,7 +20325,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19366,7 +20367,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19387,7 +20391,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -19407,7 +20414,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -19457,7 +20467,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19477,7 +20490,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "Param",
+              "RoleType": "FaceParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19505,7 +20521,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%08d"
+              "Format": "%08d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19515,7 +20533,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "ItemLotParam_map",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19602,7 +20623,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19630,7 +20654,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19665,7 +20692,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19781,7 +20811,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19791,7 +20824,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "CharaInitParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19819,7 +20855,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19840,7 +20879,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -19860,7 +20902,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -19923,7 +20968,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -19933,7 +20981,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "NpcName",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19961,7 +21012,10 @@
             {
               "Offset": 4,
               "Type": "s32",
-              "Name": "Character Param ID"
+              "Name": "Character Param ID",
+              "Role": "Param",
+              "RoleType": "CharaInitParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -19989,7 +21043,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20106,7 +21163,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20147,7 +21207,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -20176,7 +21239,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20213,7 +21279,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20248,7 +21317,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20258,7 +21330,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "ObjActParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20297,7 +21372,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20309,7 +21387,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "ObjActParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20351,7 +21432,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20392,7 +21476,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20432,7 +21519,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20482,7 +21572,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20494,7 +21587,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20535,7 +21631,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20572,7 +21671,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20582,7 +21684,10 @@
               "Min": -1,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Param",
+              "RoleType": "ObjActParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20627,7 +21732,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -20651,7 +21759,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20661,7 +21772,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -20689,7 +21803,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20699,7 +21816,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20746,7 +21866,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "SFX",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20788,7 +21911,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "SFX",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -20827,7 +21953,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "0:Asset,1:Region,2:Enemy|Self",
+              "RoleSelector": 0,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -20876,7 +22006,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -20929,7 +22062,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21001,7 +22137,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21033,7 +22172,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -21092,7 +22233,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21126,7 +22270,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Message ID"
+              "Name": "Message ID",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21150,7 +22297,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21178,7 +22328,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21210,7 +22363,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -21230,7 +22385,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 20,
@@ -21240,7 +22397,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 24,
@@ -21250,7 +22409,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21274,7 +22435,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "EventTextForMap",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21319,7 +22483,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "PlaceName",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21343,7 +22510,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "PlaceName",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21365,7 +22535,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Tutorial Param ID"
+              "Name": "Tutorial Param ID",
+              "Role": "Param",
+              "RoleType": "TutorialParam",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21401,7 +22574,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Text",
+              "RoleType": "NetworkMessage",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21434,7 +22610,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Text Effect Param ID"
+              "Name": "Text Effect Param ID",
+              "Role": "Param",
+              "RoleType": "FeTextEffectParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21457,7 +22636,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Text Effect Param ID"
+              "Name": "Text Effect Param ID",
+              "Role": "Param",
+              "RoleType": "FeTextEffectParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21511,7 +22693,10 @@
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Camera ID"
+              "Name": "Camera ID",
+              "Role": "Param",
+              "RoleType": "LockCamParam",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21560,7 +22745,11 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "0:Asset,1:Region,2:Enemy|Self",
+              "RoleSelector": 4,
+              "RoleSource": "Reference"
             },
             {
               "Offset": 12,
@@ -21614,7 +22803,10 @@
               "Min": 0,
               "Max": 255,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Area",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 1,
@@ -21624,7 +22816,10 @@
               "Min": 0,
               "Max": 255,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "MapPart",
+              "RoleType": "Block",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 2,
@@ -21721,7 +22916,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21731,7 +22928,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -21741,7 +22940,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21770,7 +22972,9 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "EventFlag",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -21782,7 +22986,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Asset",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -21851,7 +23058,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Enemy,Self",
+              "RoleSource": "Reference"
             }
           ]
         },
@@ -21958,7 +23168,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22040,7 +23252,9 @@
               "Max": 1000000000,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 8,
@@ -22093,7 +23307,9 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22223,7 +23439,10 @@
               "Max": 99999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Param",
+              "RoleType": "WwiseValueToStrParam_BgmBossChrIdConv",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22363,7 +23582,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22400,7 +23622,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22435,7 +23660,10 @@
               "Min": 0,
               "Max": 2000000000,
               "Increment": 1,
-              "Format": "%d"
+              "Format": "%d",
+              "Role": "Entity",
+              "RoleType": "Collision",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,
@@ -22483,7 +23711,10 @@
               "Max": 999999999,
               "Increment": 1,
               "Format": "%d",
-              "Flags": 1
+              "Flags": 1,
+              "Role": "Entity",
+              "RoleType": "MapPiece",
+              "RoleSource": "Reference"
             },
             {
               "Offset": 4,

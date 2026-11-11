@@ -24,6 +24,7 @@ public class EmevdEditorView
     public EmevdStructureEditor Structure;
     public EmevdToolWindow ToolWindow;
     public EmevdEventCommands EventCommands;
+    public EmevdRoleLinks RoleLinks;
 
     public EmevdEditorView(EmevdEditorScreen editor, ProjectEntry project)
     {
@@ -40,6 +41,7 @@ public class EmevdEditorView
         Structure = new(this);
         ToolWindow = new(this);
         EventCommands = new(this);
+        RoleLinks = new(this);
 
         // Undo/redo of a structural edit can shorten the event under the selection
         ActionManager.ActionPerformed += Selection.Validate;

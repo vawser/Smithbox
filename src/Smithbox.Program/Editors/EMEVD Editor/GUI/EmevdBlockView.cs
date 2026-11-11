@@ -424,6 +424,14 @@ public class EmevdBlockView
         ImGui.SameLine();
         View.ArgEditor.Slot("##popupSlot", Script, line, arg, width);
 
+        // What the value refers to, with its link
+        if (View.RoleLinks.Describe(line, arg) is { } refers)
+        {
+            View.RoleLinks.Button("popupRoleLink", line, arg);
+            ImGui.SameLine();
+            ImGui.TextDisabled(refers);
+        }
+
         ImGui.EndPopup();
     }
 
@@ -656,7 +664,13 @@ public class EmevdBlockView
         }
 
         if (hovered && hoveredArg >= 0)
-            GUI.Tooltip(LOC.Get("EMEVD_Script_Chip_TT", EmevdFormat.ArgName(line.Decoded.Args[hoveredArg])));
+        {
+            // The chip's arg, and what its value refers to (a param row name, a text entry, a map entity…)
+            var chipArg = line.Decoded.Args[hoveredArg];
+            var refers = View.RoleLinks.Describe(line, chipArg);
+            var text = LOC.Get("EMEVD_Script_Chip_TT", EmevdFormat.ArgName(chipArg));
+            GUI.Tooltip(refers != null ? $"{refers}\n{text}" : text);
+        }
         else if (hovered)
             BlockTooltip(line);
     }
