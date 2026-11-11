@@ -1,0 +1,156 @@
+{
+  "Entries": [
+    {
+      "Key": "PARAM_ModifiedFilter_Header",
+      "Text": "Modified Filter"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Hint",
+      "Text": "Define rules with the Mass Edit param and row selectors. Modified rows that match the rules, and the params that hold them, are drawn with the Modified Filter colours instead of the normal modified colours. Only modified rows are checked. The rules are saved with the project."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Options",
+      "Text": "Options"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Options_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Enabled",
+      "Text": "Enable Filter"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Enabled_TT",
+      "Text": "When on, modified params and rows that match the rules use the Modified Filter colours. When off, all modified entries use the normal modified colours."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Match_Mode",
+      "Text": "Match Mode"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Match_Mode_TT",
+      "Text": "How the enabled rules are combined."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Match_Mode_TT",
+      "Text": "Any: a modified row matches if at least one enabled rule matches it.\nAll: a modified row matches only if every enabled rule matches it."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Match_Mode_Any",
+      "Text": "Any Rule"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Match_Mode_All",
+      "Text": "All Rules"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Rules",
+      "Text": "Rules"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Rules_TT",
+      "Text": "Each rule has a param selector and a row selector, written as in Mass Edit. The count beside a rule is how many modified rows it matches on its own."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_No_Rules",
+      "Text": "No rules yet. Add a rule below."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Title",
+      "Text": "Rule {0}"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Count",
+      "Text": "{0} matched rows"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Enabled_TT",
+      "Text": "Toggle whether this rule is used."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Move_Up_TT",
+      "Text": "Move this rule up."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Move_Down_TT",
+      "Text": "Move this rule down."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Rule_Remove_TT",
+      "Text": "Remove this rule."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Param_Selector",
+      "Text": "Param Selector"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Param_Selector_Hint",
+      "Text": "All params"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Param_Selector_TT",
+      "Text": "A Mass Edit param selector, for example: EquipParamWeapon, or: param Equip.*\nLeave empty to apply the rule to every param. Use the dropdown button to build one."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Row_Selector",
+      "Text": "Row Selector"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Row_Selector_Hint",
+      "Text": "All modified rows"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Row_Selector_TT",
+      "Text": "A Mass Edit row selector, for example: prop sortId 0, or: name Dagger && idrange 1000000 2000000\nConditions are joined with &&, and a leading ! negates one. Leave empty to match every modified row in the selected params. A selector that fails to parse, or a field the param doesn't have, matches nothing."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Actions",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Actions_TT",
+      "Text": ""
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Add_Rule",
+      "Text": "Add Rule"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Add_Rule_TT",
+      "Text": "Add a new rule. An empty rule matches every modified row."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Clear_Rules",
+      "Text": "Clear Rules"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Clear_Rules_TT",
+      "Text": "Remove every rule."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Results",
+      "Text": "Results"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Header_Results_TT",
+      "Text": "The modified rows that match the rules, grouped by param. Click a param to view it, or a row to select it."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Inactive",
+      "Text": "The filter is off, or has no enabled rules."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Result_Count",
+      "Text": "{0} matched rows in {1} params"
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Result_Param_TT",
+      "Text": "Click to view this param. Expand to list its matched rows."
+    },
+    {
+      "Key": "PARAM_ModifiedFilter_Result_Truncated",
+      "Text": "... and {0} more rows"
+    }
+  ]
+}

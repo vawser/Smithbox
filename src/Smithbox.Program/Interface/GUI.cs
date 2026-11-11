@@ -681,15 +681,19 @@ public static class GUI
 
     public static void ApplyDiffHeaderBackground()
     {
+        ApplyDiffHeaderBackground(UI.Current.ParamRowDiffBackgroundColor);
+    }
+
+    /// <summary>
+    /// Fills the next line's width with a background colour, behind the item drawn next
+    /// </summary>
+    public static void ApplyDiffHeaderBackground(Vector4 color)
+    {
         Vector2 pMin = ImGui.GetCursorScreenPos();
         Vector2 pMax = new Vector2(
             pMin.X + ImGui.GetContentRegionAvail().X,
             pMin.Y + ImGui.GetTextLineHeightWithSpacing()
         );
-
-        var color = new Vector4(0.255f, 0.412f, 0.125f, 1.0f);
-
-        color = UI.Current.ParamRowDiffBackgroundColor;
 
         // Draw background
         ImGui.GetWindowDrawList().AddRectFilled(

@@ -95,6 +95,7 @@ public class UI
     public Vector4 ImGui_AuxConflict_Text = new Vector4(1, 0.7f, 0.7f, 1);
     public Vector4 ImGui_AuxAdded_Text = new Vector4(0.7f, 0.7f, 1, 1);
     public Vector4 ImGui_PrimaryChanged_Text = new Vector4(0.7f, 1, 0.7f, 1);
+    public Vector4 ImGui_ModifiedFilter_Text = new Vector4(1.0f, 0.8f, 0.35f, 1.0f); // AMBER
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
     public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_GparamPreviewable_Text = new Vector4(0.45f, 0.85f, 1.0f, 1.0f);
@@ -175,6 +176,7 @@ public class UI
     public Vector4 ParamCompareDiffBackgroundColor = new Vector4(0.2f, 0.2f, 0.35f, 1.0f); // DARK BLUE
 
     public Vector4 ParamRowDiffBackgroundColor = new Vector4(0.255f, 0.412f, 0.125f, 1.0f); // DARK GREEN
+    public Vector4 ParamRowModifiedFilterBackgroundColor = new Vector4(0.45f, 0.33f, 0.08f, 1.0f); // DARK AMBER
 
     //****************************
     // UI

@@ -60,6 +60,19 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             }
             )));
 
+        filterList.Add("modifiedfilter", newCmd(new string[0],
+            LOC.Get("PARAM_RSE_ModifiedFilter_TT"), noArgs(context =>
+            {
+                var paramName = context.Item1.GetKeyForParam(context.Item2);
+                // The filter only knows primary bank rows, so other banks match nothing.
+                // Inside the filter's own rules this returns null and matches nothing too.
+                HashSet<Param.Row> matched = context.Item1 == CurrentView.GetPrimaryBank()
+                    ? CurrentView.ToolMenu?.ModifiedFilter?.GetMatchedRows(paramName)
+                    : null;
+                return row => matched != null && matched.Contains(row);
+            }
+            )));
+
         filterList.Add("named", newCmd(new string[0],
             LOC.Get("PARAM_RSE_Named_TT"), (args, lenient) =>
             {

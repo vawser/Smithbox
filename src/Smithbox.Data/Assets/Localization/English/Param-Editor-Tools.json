@@ -77,6 +77,10 @@
       "Text": "Pin Groups"
     },
     {
+      "Key": "PARAM_Tools_View_Modified_Filter",
+      "Text": "Modified Filter"
+    },
+    {
       "Key": "PARAM_Tools_Header_Data_Finders",
       "Text": "Data Finders"
     },

@@ -952,6 +952,7 @@ public class CFG
     public bool ParamEditor_Show_Tool_Param_Delta_Patcher = true;
     public bool ParamEditor_Show_Tool_Row_Name_Manipulation = true;
     public bool ParamEditor_Show_Tool_Projectile_Simulator = true;
+    public bool ParamEditor_Show_Tool_Modified_Filter = true;
     public bool ParamEditor_Show_Projectile_Simulator_Window = false;
 
     // Projectile Simulator

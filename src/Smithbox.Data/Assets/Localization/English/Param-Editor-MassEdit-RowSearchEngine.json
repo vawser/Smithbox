@@ -13,6 +13,10 @@
       "Text": "Selects rows which do not match the aux version, or are added. Ignores row name."
     },
     {
+      "Key": "PARAM_RSE_ModifiedFilter_TT",
+      "Text": "Selects modified rows which match the rules of the Modified Filter tool. Matches nothing when the filter is off or has no enabled rules."
+    },
+    {
       "Key": "PARAM_RSE_Named_TT",
       "Text": "Selects rows whose name isn't blank or null."
     },

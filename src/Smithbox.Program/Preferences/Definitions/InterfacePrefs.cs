@@ -752,6 +752,10 @@ public class InterfacePrefs
                     ref UI.Current.ParamRowDiffBackgroundColor, flags);
 
                 ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ParamRowModifiedFilterBackgroundColor")}##ParamRowModifiedFilterBackgroundColor",
+                    ref UI.Current.ParamRowModifiedFilterBackgroundColor, flags);
+
+                ImGui.ColorEdit4(
                     $"{LOC.Get("PREF_CE_ParamDiffBackgroundColor")}##ParamDiffBackgroundColor",
                     ref UI.Current.ParamDiffBackgroundColor, flags);
 
@@ -831,6 +835,10 @@ public class InterfacePrefs
                 ImGui.ColorEdit4(
                     $"{LOC.Get("PREF_CE_ImGui_PrimaryChanged_Text")}##ImGui_PrimaryChanged_Text",
                     ref UI.Current.ImGui_PrimaryChanged_Text, flags);
+
+                ImGui.ColorEdit4(
+                    $"{LOC.Get("PREF_CE_ImGui_ModifiedFilter_Text")}##ImGui_ModifiedFilter_Text",
+                    ref UI.Current.ImGui_ModifiedFilter_Text, flags);
 
                 ImGui.ColorEdit4(
                     $"{LOC.Get("PREF_CE_ImGui_ParamRow_Text")}##ImGui_ParamRow_Text",

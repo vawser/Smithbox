@@ -401,6 +401,10 @@
       "Text": "Row Background (Modified)"
     },
     {
+      "Key": "PREF_CE_ParamRowModifiedFilterBackgroundColor",
+      "Text": "Row Background (Modified Filter Match)"
+    },
+    {
       "Key": "PREF_CE_ParamDiffBackgroundColor",
       "Text": "Field Background (Modified)"
     },
@@ -475,6 +479,10 @@
     {
       "Key": "PREF_CE_ImGui_PrimaryChanged_Text",
       "Text": "Primary Param Row Text (Changed)"
+    },
+    {
+      "Key": "PREF_CE_ImGui_ModifiedFilter_Text",
+      "Text": "Primary Param Row Text (Modified Filter Match)"
     },
     {
       "Key": "PREF_CE_ImGui_ParamRow_Text",

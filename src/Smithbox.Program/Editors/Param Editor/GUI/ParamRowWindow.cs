@@ -915,6 +915,10 @@ public class ParamRowWindow
         // a plain ID lookup) won't conflate two different rows that happen to share an ID.
         var diffVanilla = Context.VanillaDiffCache.Contains(r);
 
+        // Modified rows that also match the Modified Filter rules get their own colours
+        var filterMatch = diffVanilla && ParentView.ToolMenu?.ModifiedFilter != null &&
+            ParentView.ToolMenu.ModifiedFilter.RowMatches(Context.ActiveParam, r);
+
         // The aux caches hold row instances that belong to the aux ParamBank, not the
         // primary bank, so r will never be reference-equal to any entry in them - these
         // have to keep comparing by ID.
@@ -934,7 +938,7 @@ public class ParamRowWindow
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+                ImGui.PushStyleColor(ImGuiCol.Text, filterMatch ? UI.Current.ImGui_ModifiedFilter_Text : UI.Current.ImGui_PrimaryChanged_Text);
             }
         }
         else
@@ -991,11 +995,15 @@ public class ParamRowWindow
             {
                 if (selected)
                 {
-                    ImGui.PushStyleColor(ImGuiCol.Header, UI.Current.ParamRowDiffBackgroundColor);
+                    ImGui.PushStyleColor(ImGuiCol.Header, filterMatch
+                        ? UI.Current.ParamRowModifiedFilterBackgroundColor
+                        : UI.Current.ParamRowDiffBackgroundColor);
                 }
                 else
                 {
-                    GUI.ApplyDiffHeaderBackground();
+                    GUI.ApplyDiffHeaderBackground(filterMatch
+                        ? UI.Current.ParamRowModifiedFilterBackgroundColor
+                        : UI.Current.ParamRowDiffBackgroundColor);
                 }
             }
         }

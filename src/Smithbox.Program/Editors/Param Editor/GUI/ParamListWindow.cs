@@ -420,7 +420,13 @@ public class ParamListWindow
 
         if (primary != null && primary.Count > 0)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+            // Params holding modified rows that match the Modified Filter rules get their own colour
+            var filterMatch = ParentView.ToolMenu?.ModifiedFilter != null &&
+                ParentView.ToolMenu.ModifiedFilter.ParamMatches(paramKey);
+
+            ImGui.PushStyleColor(ImGuiCol.Text, filterMatch
+                ? UI.Current.ImGui_ModifiedFilter_Text
+                : UI.Current.ImGui_PrimaryChanged_Text);
             popColor = true;
         }
 

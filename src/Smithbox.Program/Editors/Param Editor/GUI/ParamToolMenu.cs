@@ -34,6 +34,7 @@ public class ParamToolMenu
     public ParamDeltaPatcher DeltaPatcher;
     public ParamRowNameManipulationTool RowNameManipulationTool;
     public ProjectileSimulatorTool ProjectileSimulator;
+    public ParamModifiedFilter ModifiedFilter;
 
     private ToolSections Sections = new();
 
@@ -63,6 +64,7 @@ public class ParamToolMenu
         DeltaPatcher = new(view, project);
         RowNameManipulationTool = new(view, project);
         ProjectileSimulator = new(view, project);
+        ModifiedFilter = new(view, project);
     }
 
     public void DisplayMenu()
@@ -199,6 +201,13 @@ public class ParamToolMenu
                 }
                 GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Mass_Edit);
 
+                // Modified Filter
+                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Modified_Filter")}##viewToggle_ModifiedFilter"))
+                {
+                    CFG.Current.ParamEditor_Show_Tool_Modified_Filter = !CFG.Current.ParamEditor_Show_Tool_Modified_Filter;
+                }
+                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Modified_Filter);
+
                 // Param List Categories
                 if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_List_Categories")}##viewToggle_ParamListCategories"))
                 {
@@ -255,6 +264,11 @@ public class ParamToolMenu
 
                 ImGui.EndChild();
             }
+        }
+
+        if (CFG.Current.ParamEditor_Show_Tool_Modified_Filter)
+        {
+            ModifiedFilter.Display();
         }
 
         if (CFG.Current.ParamEditor_Show_Tool_Data_Comparison)
