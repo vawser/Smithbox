@@ -138,7 +138,47 @@
     },
     {
       "Key": "MAT_FileList_Used_By_Unknown",
-      "Text": "Run Used By (in the Properties pane) to see which models use this material."
+      "Text": "Run the Used By tool (in the Tools window) to see which models use this material."
+    },
+    {
+      "Key": "MAT_ToolWindow_View_Toggle_Used_By",
+      "Text": "Used By"
+    },
+    {
+      "Key": "MAT_UsedByTool_Header",
+      "Text": "Used By"
+    },
+    {
+      "Key": "MAT_UsedByTool_Scan_Header",
+      "Text": "Model Scan"
+    },
+    {
+      "Key": "MAT_UsedByTool_Scan_Header_TT",
+      "Text": "The scan of every model's material table, which the list below comes from."
+    },
+    {
+      "Key": "MAT_UsedByTool_Cancel_TT",
+      "Text": "Stop the scan. Nothing is kept from it."
+    },
+    {
+      "Key": "MAT_UsedByTool_Models_Header",
+      "Text": "Models"
+    },
+    {
+      "Key": "MAT_UsedByTool_Models_Header_TT",
+      "Text": "The models whose material table names the selected material. Click one to open it in the Model Editor."
+    },
+    {
+      "Key": "MAT_UsedByTool_Needs_Scan",
+      "Text": "Scan the models (above) to see which use this material."
+    },
+    {
+      "Key": "MAT_UsedByTool_Count",
+      "Text": "{0}: {1} models."
+    },
+    {
+      "Key": "MAT_Tool_No_Material",
+      "Text": "Select a material in the File List."
     }
   ]
 }

@@ -17,7 +17,7 @@ public class MaterialTextureLink
 {
     private readonly MaterialEditorView View;
 
-    private const float ThumbnailSize = 192;
+    private const float ThumbnailSize = 160;
 
     // The picker: the entry and path field it sets
     private bool OpenPicker;
@@ -37,6 +37,7 @@ public class MaterialTextureLink
 
     private ProjectEntry Project => View.Project;
     private MaterialTextureIndex Index => View.Editor.Textures;
+    private MaterialTexturePreviews Previews => View.Editor.TexturePreviews;
 
     /// <summary>
     /// The texture name a path refers to: N:\…\tex\AEG007_001_a.tif is AEG007_001_a
@@ -58,10 +59,13 @@ public class MaterialTextureLink
     }
 
     /// <summary>
-    /// A small icon after the field name: what is known of the texture, its thumbnail on hover, and a context menu
-    /// with Pick Texture, Open in Texture Viewer and Scan Textures
+    /// What is known of a path's texture: the texture when a viewport has it loaded, and the containers the
+    /// texture index has it in
     /// </summary>
-    public void Display(object owner, PropertyInfo prop, string path, string id)
+    private readonly record struct TextureState(string Path, string Name, bool Empty,
+        ResourceHandle<TextureResource> Handle, List<string> Containers);
+
+    private TextureState StateOf(string path)
     {
         path ??= "";
         var name = TextureName(path);
@@ -69,34 +73,111 @@ public class MaterialTextureLink
         var handle = empty ? null : FindLoaded(name);
         var containers = empty ? new List<string>() : Index.ContainersOf(name);
 
+        return new TextureState(path, name, empty, handle, containers);
+    }
+
+    /// <summary>
+    /// The tooltip for a texture's state, as the icon and the preview row both show it
+    /// </summary>
+    private string StateTooltip(TextureState state)
+    {
+        if (state.Empty)
+            return LOC.Get("MAT_Texture_Empty_TT");
+
+        if (state.Handle != null)
+            return LOC.Get("MAT_Texture_Loaded_TT", state.Name, state.Handle.Source?.ContainerPath ?? "?");
+
+        if (state.Containers.Count > 0)
+            return LOC.Get("MAT_Texture_Indexed_TT", state.Name, string.Join("\n", state.Containers.Take(5)));
+
+        if (Index.HasScan)
+            return LOC.Get("MAT_Texture_Not_Found_TT", state.Name);
+
+        return LOC.Get("MAT_Texture_Not_Loaded_TT", state.Name);
+    }
+
+    /// <summary>
+    /// A small icon after the field name: what is known of the texture, and a context menu with Pick Texture,
+    /// Open in Texture Viewer and Scan Textures. The texture itself is the preview row (<see cref="DisplayPreview"/>).
+    /// </summary>
+    public void Display(object owner, PropertyInfo prop, string path, string id)
+    {
+        var state = StateOf(path);
+
         ImGui.SameLine();
 
-        if (empty)
-        {
+        if (state.Empty)
             ImGui.TextDisabled($"{Icons.FileImageO}");
-            GUI.Tooltip(LOC.Get("MAT_Texture_Empty_TT"));
-        }
-        else if (handle != null)
-        {
+        else if (state.Handle != null || state.Containers.Count > 0)
             ImGui.Text($"{Icons.FileImageO}");
-            if (ImGui.IsItemHovered())
-                DisplayThumbnail(handle, name);
-        }
-        else if (containers.Count > 0)
-        {
-            ImGui.Text($"{Icons.FileImageO}");
-            GUI.Tooltip(LOC.Get("MAT_Texture_Indexed_TT", name, string.Join("\n", containers.Take(5))));
-        }
         else if (Index.HasScan)
-        {
             ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, $"{Icons.FileImageO}");
-            GUI.Tooltip(LOC.Get("MAT_Texture_Not_Found_TT", name));
-        }
         else
-        {
             ImGui.TextDisabled($"{Icons.FileImageO}");
-            GUI.Tooltip(LOC.Get("MAT_Texture_Not_Loaded_TT", name));
+
+        GUI.Tooltip(StateTooltip(state));
+
+        DisplayContextMenu(owner, prop, state, id);
+    }
+
+    /// <summary>
+    /// The texture of a path, drawn in place: the thumbnail when a viewport has it loaded, fitted to the column,
+    /// or a short line on why there is none. Right-click gives the same menu as the icon.
+    /// </summary>
+    public void DisplayPreview(object owner, PropertyInfo prop, string path, string id)
+    {
+        var state = StateOf(path);
+        var texture = state.Handle?.Get()?.GPUTexture;
+        var tooltip = StateTooltip(state);
+
+        // Not in a viewport: load it just for the preview, from where the texture index has it
+        var previewState = MaterialTexturePreviews.PreviewState.Failed;
+        if (texture == null && !state.Empty && state.Containers.Count > 0)
+        {
+            texture = Previews.Get(state.Name, out previewState);
+            tooltip = LOC.Get("MAT_Texture_Preview_Loaded_TT", state.Name, string.Join("\n", state.Containers.Take(5)));
         }
+
+        if (texture == null)
+        {
+            ImGui.AlignTextToFramePadding();
+
+            var line = state.Empty ? LOC.Get("MAT_Texture_Preview_Empty")
+                : state.Containers.Count > 0 ? previewState == MaterialTexturePreviews.PreviewState.Loading
+                    ? LOC.Get("MAT_Texture_Preview_Loading")
+                    : LOC.Get("MAT_Texture_Preview_Failed_Line")
+                : Index.HasScan ? LOC.Get("MAT_Texture_Preview_Not_Found")
+                : LOC.Get("MAT_Texture_Preview_Needs_Scan");
+
+            ImGui.TextDisabled(line);
+            GUI.Tooltip(state.Empty || state.Containers.Count == 0 ? StateTooltip(state) : tooltip);
+
+            DisplayContextMenu(owner, prop, state, id);
+            return;
+        }
+
+        // Fit the longer side to the thumbnail size, or the column if it's narrower, keeping the aspect
+        var width = Math.Max(1, (int)texture.Width);
+        var height = Math.Max(1, (int)texture.Height);
+        var size = Math.Min(ThumbnailSize * DPI.UIScale(), Math.Max(ImGui.GetContentRegionAvail().X, 16));
+        var scale = size / Math.Max(width, height);
+
+        ImGui.Image(new ImTextureID(texture.TexHandle), new Vector2(width * scale, height * scale));
+        GUI.Tooltip($"{tooltip}\n{width} x {height}");
+
+        DisplayContextMenu(owner, prop, state, id);
+    }
+
+    /// <summary>
+    /// Pick Texture, Open in Texture Viewer, Copy Name and Scan Textures, on the item just drawn
+    /// </summary>
+    private void DisplayContextMenu(object owner, PropertyInfo prop, TextureState state, string id)
+    {
+        var path = state.Path;
+        var name = state.Name;
+        var empty = state.Empty;
+        var handle = state.Handle;
+        var containers = state.Containers;
 
         if (!ImGui.BeginPopupContextItem($"materialTextureContext_{id}"))
             return;
@@ -129,6 +210,14 @@ public class MaterialTextureLink
             PlatformUtils.Instance.SetClipboardText(name);
         }
 
+        // Reload Preview: the preview read for this window, not a viewport's texture
+        if (ImGui.MenuItem($"{LOC.Get("MAT_Texture_Reload_Preview")}##reloadPreview_{id}", "", false,
+                !empty && handle == null && containers.Count > 0))
+        {
+            Previews.Reload(name);
+        }
+        GUI.Tooltip(LOC.Get("MAT_Texture_Reload_Preview_TT"));
+
         ImGui.Separator();
 
         // Scan Textures
@@ -143,26 +232,6 @@ public class MaterialTextureLink
         GUI.Tooltip(LOC.Get("MAT_Texture_Scan_TT"));
 
         ImGui.EndPopup();
-    }
-
-    private static void DisplayThumbnail(ResourceHandle<TextureResource> handle, string name)
-    {
-        var texture = handle.Get()?.GPUTexture;
-        if (texture == null)
-            return;
-
-        ImGui.BeginTooltip();
-
-        GUI.WrappedText(LOC.Get("MAT_Texture_Loaded_TT", name, handle.Source?.ContainerPath ?? "?"));
-
-        // Fit the longer side to the thumbnail size, keeping the aspect
-        var width = Math.Max(1, (int)texture.Width);
-        var height = Math.Max(1, (int)texture.Height);
-        var scale = ThumbnailSize * DPI.UIScale() / Math.Max(width, height);
-
-        ImGui.Image(new ImTextureID(texture.TexHandle), new Vector2(width * scale, height * scale));
-
-        ImGui.EndTooltip();
     }
 
     #region Picker

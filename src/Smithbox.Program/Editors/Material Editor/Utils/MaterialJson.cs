@@ -151,6 +151,95 @@ public class MaterialJson
     }
     #endregion
 
+    #region Entries
+    /// <summary>
+    /// One param, sampler or texture on the clipboard. <see cref="List"/> is the list it came from (Params,
+    /// Samplers, Textures), which is the only list it can be pasted into.
+    /// </summary>
+    public class EntryJson
+    {
+        public const string EntryFormatName = "Smithbox Material Entry";
+
+        public string Format { get; set; } = EntryFormatName;
+        public int Version { get; set; } = 1;
+        public string Kind { get; set; } = "";
+        public string List { get; set; } = "";
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] public ParamJson Param { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] public SamplerJson Sampler { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] public TextureJson Texture { get; set; }
+
+        public string ToText() => JsonSerializer.Serialize(this, Options);
+
+        public static EntryJson FromText(string text)
+        {
+            try
+            {
+                var json = JsonSerializer.Deserialize<EntryJson>(text ?? "", Options);
+                return json?.Format == EntryFormatName ? json : null;
+            }
+            catch (JsonException)
+            {
+                return null;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A param, sampler or MTD texture as JSON, or null for anything else
+    /// </summary>
+    public static EntryJson FromEntry(object entry) => entry switch
+    {
+        MTD.Param p => new EntryJson { Kind = "MTD", List = nameof(MTD.Params), Param = Param(p.Name, p.Type.ToString(), p.Value) },
+        MATBIN.Param p => new EntryJson { Kind = "MATBIN", List = nameof(MATBIN.Params), Param = Param(p.Name, p.Type.ToString(), p.Value) },
+        MATBIN.Sampler s => new EntryJson
+        {
+            Kind = "MATBIN",
+            List = nameof(MATBIN.Samplers),
+            Sampler = new SamplerJson { Type = s.Type, Path = s.Path ?? "", Unk14 = [s.Unk14.X, s.Unk14.Y] }
+        },
+        MTD.Texture t => new EntryJson
+        {
+            Kind = "MTD",
+            List = nameof(MTD.Textures),
+            Texture = new TextureJson
+            {
+                Type = t.Type,
+                Extended = t.Extended,
+                UVNumber = t.UVNumber,
+                ShaderDataIndex = t.ShaderDataIndex,
+                Path = t.Path ?? "",
+                UnkFloats = new List<float>(t.UnkFloats)
+            }
+        },
+        _ => null
+    };
+
+    /// <summary>
+    /// The entry the JSON describes, new, with MATBIN keys worked out. Null if its type or value doesn't fit.
+    /// </summary>
+    public static object ToEntry(EntryJson json)
+    {
+        // Through a one-entry material, so entries are built and checked exactly as whole materials are
+        var material = new MaterialJson
+        {
+            Kind = json.Kind,
+            Params = json.Param != null ? [json.Param] : new(),
+            Samplers = json.Sampler != null ? [json.Sampler] : new(),
+            Textures = json.Texture != null ? [json.Texture] : new()
+        };
+
+        return material.ToMaterial(out _) switch
+        {
+            MTD m when json.Param != null => m.Params.FirstOrDefault(),
+            MTD m when json.Texture != null => m.Textures.FirstOrDefault(),
+            MATBIN m when json.Param != null => m.Params.FirstOrDefault(),
+            MATBIN m when json.Sampler != null => m.Samplers.FirstOrDefault(),
+            _ => null
+        };
+    }
+    #endregion
+
     #region To a material
     /// <summary>
     /// A new material of the JSON's kind. Null with an error when a param's type or value doesn't fit.

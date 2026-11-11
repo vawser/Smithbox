@@ -19,6 +19,8 @@ public class MaterialToolWindow
     public MatDataTransferTool DataTransferTool;
     public MatCheckTool CheckTool;
     public MatSearchTool SearchTool;
+    public MatUsedByTool UsedByTool;
+    public MatShaderTool ShaderTool;
 
     private ToolSections Sections = new();
 
@@ -30,6 +32,8 @@ public class MaterialToolWindow
         DataTransferTool = new(view, project);
         CheckTool = new(view, project);
         SearchTool = new(view, project);
+        UsedByTool = new(view, project);
+        ShaderTool = new(view, project);
     }
 
     public void Draw()
@@ -52,6 +56,24 @@ public class MaterialToolWindow
         {
             // Material Search and Mass Edit
             SearchTool.OnToolWindow();
+        }
+
+        // Browse
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
+
+        if (CFG.Current.Interface_MaterialEditor_Tool_UsedBy)
+        {
+            // Used By
+            UsedByTool.OnToolWindow();
+        }
+
+        // Data
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
+        if (CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo)
+        {
+            // Shader Information
+            ShaderTool.OnToolWindow();
         }
 
         // Validation
@@ -93,6 +115,20 @@ public class MaterialToolWindow
                 CFG.Current.Interface_MaterialEditor_Tool_Search = !CFG.Current.Interface_MaterialEditor_Tool_Search;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_Search);
+
+            // Used By
+            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Used_By")}##usedByToolToggle"))
+            {
+                CFG.Current.Interface_MaterialEditor_Tool_UsedBy = !CFG.Current.Interface_MaterialEditor_Tool_UsedBy;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_UsedBy);
+
+            // Shader Information
+            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Shader_Info")}##shaderInfoToolToggle"))
+            {
+                CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo = !CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo);
 
             // Material Check
             if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Check")}##materialCheckToolToggle"))

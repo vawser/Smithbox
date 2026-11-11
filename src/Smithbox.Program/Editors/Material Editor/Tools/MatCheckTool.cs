@@ -163,6 +163,6 @@ public class MatCheckTool
         View.Selection.JumpTo(Bank, new MaterialReference(result.Binder.SourceType, entry, result.File.Key, result.File));
 
         if (result.Finding.Target != "")
-            View.Properties.SetFilter(result.Finding.Target);
+            View.SetPropertyFilter(result.Finding.Target);
     }
 }

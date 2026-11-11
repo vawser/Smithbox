@@ -7,8 +7,9 @@ using System.Numerics;
 namespace StudioCore.Editors.MaterialEditor;
 
 /// <summary>
-/// The Shader section above a material's properties: what the shader table says the shader does with each
-/// texture slot, and the params and samplers the material's shader's other materials all have and it lacks
+/// The Shader Information tool's content (<see cref="MatShaderTool"/>): what the shader table says the shader does
+/// with each texture slot, and the params and samplers the material's shader's other materials all have and it
+/// lacks. Also the shader labels the Parameters and Textures windows put on each entry.
 /// </summary>
 public class MaterialShaderPanel
 {
@@ -34,18 +35,22 @@ public class MaterialShaderPanel
         _ => null
     };
 
+    /// <summary>
+    /// The Shader Information tool's groups: the shader, its texture slots, and the entries the material lacks
+    /// </summary>
     public void Draw(MaterialSourceType type, object material)
     {
         var info = InfoFor(material);
         if (info == null)
+        {
+            GUI.WrappedText(LOC.Get("MAT_ShaderTool_No_Shader"));
             return;
+        }
 
-        if (!ImGui.CollapsingHeader($"{LOC.Get("MAT_Shader_Header", info.ShaderName)}###materialShaderHeader"))
-            return;
+        // Shader
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAT_Shader_Header", info.ShaderName), LOC.Get("MAT_ShaderTool_Shader_Header_TT"));
 
-        ImGui.Indent();
-
-        // What the table knows
         if (info.Known)
         {
             GUI.WrappedText(info.Deformer != MaterialDeformer.None
@@ -57,15 +62,25 @@ public class MaterialShaderPanel
             GUI.WrappedText(LOC.Get("MAT_Shader_Unknown"));
         }
 
-        DisplaySlots(material, info);
-        DisplayMissing(type, material);
+        // Texture Slots
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAT_ShaderTool_Slots_Header"), LOC.Get("MAT_ShaderTool_Slots_Header_TT"));
 
-        ImGui.Unindent();
-        ImGui.Separator();
+        if (!DisplaySlots(material, info))
+            GUI.WrappedText(LOC.Get("MAT_ShaderTool_No_Slots"));
+
+        // Missing Entries
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAT_ShaderTool_Missing_Header"), LOC.Get("MAT_ShaderTool_Missing_Header_TT"));
+
+        DisplayMissing(type, material);
     }
 
     #region Slots
-    private void DisplaySlots(object material, MaterialShaderInfo info)
+    /// <summary>
+    /// The slot table; false when there are no slots to show
+    /// </summary>
+    private bool DisplaySlots(object material, MaterialShaderInfo info)
     {
         var samplers = material switch
         {
@@ -80,12 +95,12 @@ public class MaterialShaderPanel
         var slots = info.SlotGroups.Keys.Concat(info.SlotUses.Keys).Concat(bySlot.Keys).Distinct().OrderBy(x => x).ToList();
 
         if (slots.Count == 0)
-            return;
+            return false;
 
         var flags = ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchProp;
 
         if (!ImGui.BeginTable("materialShaderSlots", 5, flags))
-            return;
+            return true;
 
         ImGui.TableSetupColumn(LOC.Get("MAT_Shader_Slot"), ImGuiTableColumnFlags.WidthFixed);
         ImGui.TableSetupColumn(LOC.Get("MAT_Shader_Sampler"));
@@ -141,6 +156,8 @@ public class MaterialShaderPanel
         }
 
         ImGui.EndTable();
+
+        return true;
     }
 
     private static string ParamValue(object material, string name)
@@ -175,19 +192,19 @@ public class MaterialShaderPanel
         }
 
         if (parms.Count + samplers.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("MAT_ShaderTool_None_Missing"));
             return;
+        }
 
-        GUI.Spacer();
         GUI.WrappedText(LOC.Get("MAT_Shader_Missing", parms.Count, samplers.Count));
 
         var names = parms.Select(p => p.Name).Concat(samplers.Select(s => s.Type)).ToList();
         GUI.Tooltip(string.Join("\n", names));
 
-        if (ImGui.Button($"{LOC.Get("MAT_Shader_Add_Missing")}##materialAddMissing"))
-        {
-            AddMissing(material, parms, samplers);
-        }
-        GUI.Tooltip(LOC.Get("MAT_Shader_Add_Missing_TT"));
+        GUI.MultiButtonInput("materialAddMissingActions",
+            "materialAddMissing", LOC.Get("MAT_Shader_Add_Missing"), LOC.Get("MAT_Shader_Add_Missing_TT"),
+            () => AddMissing(material, parms, samplers));
     }
 
     /// <summary>

@@ -18,6 +18,7 @@ public class MaterialEditorView : IEditorView
     public MaterialContainerList ContainerList;
     public MaterialFileList FileList;
     public MaterialProperties Properties;
+    public MaterialProperties TextureProperties;
     public MaterialToolWindow ToolView;
 
     public int ViewIndex;
@@ -34,9 +35,19 @@ public class MaterialEditorView : IEditorView
 
         ContainerList = new(this, project);
         FileList = new(this, project);
-        Properties = new(this, project);
+        Properties = new(this, project, MaterialPropertySection.Parameters);
+        TextureProperties = new(this, project, MaterialPropertySection.Textures);
 
         ToolView = new(this, project);
+    }
+
+    /// <summary>
+    /// Searches the Parameters and Textures windows for a field, as clicking a check finding or search result does
+    /// </summary>
+    public void SetPropertyFilter(string text)
+    {
+        Properties.SetFilter(text);
+        TextureProperties.SetFilter(text);
     }
 
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
@@ -82,14 +93,11 @@ public class MaterialEditorView : IEditorView
 
         ImGui.End();
 
-        // Properties
+        // Parameters: keeps the old Properties window's ID, so saved layouts put it where Properties was
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
-        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Properties")}###materialEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Parameters")}###materialEditor_Properties_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Properties);
@@ -97,6 +105,22 @@ public class MaterialEditorView : IEditorView
             }
 
             Properties.Draw();
+        }
+
+        ImGui.End();
+
+        // Textures / Samplers
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_MaterialEditorView);
+        if (ImGui.Begin($@"{LOC.Get("MAT_Window_Textures")}###materialEditor_Textures_{viewIndex}", GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.MaterialEditor_Properties);
+                Editor.ViewHandler.ActiveView = this;
+            }
+
+            TextureProperties.Draw();
         }
 
         ImGui.End();

@@ -8,10 +8,25 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MaterialEditor;
 
+/// <summary>
+/// Which part of a material a properties window shows: Parameters is everything but the texture list
+/// (MATBIN Samplers, MTD Textures), which Textures shows on its own, with previews
+/// </summary>
+public enum MaterialPropertySection
+{
+    Parameters,
+    Textures
+}
+
 public class MaterialProperties
 {
     public MaterialEditorView View;
     public ProjectEntry Project;
+
+    public readonly MaterialPropertySection Section;
+
+    // The material being drawn, to tell its own fields from those of the entries inside it
+    private object CurrentMaterial;
 
     private object _changingProperty;
     private EditorAction _lastUncommittedAction;
@@ -32,24 +47,25 @@ public class MaterialProperties
     // The vanilla entries of the material being drawn, by list and name, for the modified markers (null: no vanilla)
     private Dictionary<(string list, string name), object> CurrentVanillaEntries;
 
-    public MaterialProperties(MaterialEditorView view, ProjectEntry project)
+    public MaterialProperties(MaterialEditorView view, ProjectEntry project, MaterialPropertySection section)
     {
         View = view;
         Project = project;
+        Section = section;
 
         ShaderPanel = new MaterialShaderPanel(view, project);
         ComparePanel = new MaterialComparePanel(view, project);
         TextureLink = new MaterialTextureLink(view);
     }
 
+    private string SectionId => Section == MaterialPropertySection.Textures ? "Textures" : "Parameters";
+
     public void Draw()
     {
-        var scale = DPI.UIScale();
-
         DisplayTitle();
         DisplayHeader();
 
-        ImGui.BeginChild("MaterialProperties", ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"MaterialProperties_{SectionId}", ImGuiChildFlags.Borders);
 
         if (View.Selection.SourceType is MaterialSourceType.MTD)
         {
@@ -76,15 +92,15 @@ public class MaterialProperties
     public void DisplayTitle()
     {
         GUI.TitleHeader(
-            LOC.Get("MAT_Properties_Header_Properties"),
-            LOC.Get("MAT_Properties_Header_Properties_TT"));
+            LOC.Get($"MAT_Properties_Header_{SectionId}"),
+            LOC.Get($"MAT_Properties_Header_{SectionId}_TT"));
     }
 
     public void DisplayHeader()
     {
-        ImGui.BeginChild("MaterialPropertySectionHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        ImGui.BeginChild($"MaterialPropertySectionHeader_{SectionId}", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
-        EditorFilters.DisplaySearchbar("materialEditor_PropertyList",
+        EditorFilters.DisplaySearchbar($"materialEditor_PropertyList_{SectionId}",
             ref PropertyListFilter, ref ExactPropertyListFilter);
 
         // Toggle Community Field Names
@@ -115,6 +131,23 @@ public class MaterialProperties
 
         GUI.Tooltip(LOC.Get("MAT_PropertyView_Type_Column_Toggle_TT", typeColumnVis));
 
+        // Texture Previews
+        if (Section == MaterialPropertySection.Textures)
+        {
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.FileImageO}##toggleTexturePreview", DPI.IconButtonSize))
+            {
+                CFG.Current.MaterialEditor_Textures_Display_Preview = !CFG.Current.MaterialEditor_Textures_Display_Preview;
+            }
+
+            var previewVis = CFG.Current.MaterialEditor_Textures_Display_Preview
+                ? LOC.Get("MAT_Texture_Preview_Shown")
+                : LOC.Get("MAT_Texture_Preview_Hidden");
+
+            GUI.Tooltip(LOC.Get("MAT_Texture_Preview_Toggle_TT", previewVis));
+        }
+
         ImGui.EndChild();
     }
 
@@ -137,9 +170,10 @@ public class MaterialProperties
 
         for (var i = 0; i < findings.Count; i++)
         {
+            // The target may be a sampler or texture, so both windows search for it
             if (MaterialEditorChecks.DisplayFinding(findings[i], $"propertyFinding{i}") && findings[i].Target != "")
             {
-                SetFilter(findings[i].Target);
+                View.SetPropertyFilter(findings[i].Target);
             }
         }
 
@@ -149,21 +183,22 @@ public class MaterialProperties
 
     public void DisplayPropertyList(string implType, object sourceObj)
     {
-        DisplayFindings();
-
-        // Vanilla compare (F7), Used By (F5), then the shader (F2)
         var binder = View.Selection.SelectedBinder;
         var file = View.Selection.SelectedFileWrapper;
 
-        ComparePanel.DrawVanilla(binder, file, sourceObj);
+        // Findings and the vanilla compare (F7) cover the whole material, so they sit above the parameters
+        if (Section == MaterialPropertySection.Parameters)
+        {
+            DisplayFindings();
+            ComparePanel.DrawVanilla(binder, file, sourceObj);
+        }
+
         CurrentVanillaEntries = View.Editor.Vanilla.StateOf(binder, file) == VanillaState.Modified
             ? ComparePanel.VanillaEntries(binder, file)
             : null;
 
-        ComparePanel.DrawUsedBy(file);
-
         CurrentShaderInfo = ShaderPanel.InfoFor(sourceObj);
-        ShaderPanel.Draw(View.Selection.SourceType, sourceObj);
+        CurrentMaterial = sourceObj;
 
         var type = sourceObj.GetType();
 
@@ -175,25 +210,49 @@ public class MaterialProperties
 
         ImGui.Columns(columnCount);
 
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text(LOC.Get("MAT_Properties_Object_Type"));
-
-        ImGui.NextColumn();
-
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text(type.Name);
-
-        ImGui.NextColumn();
-
-        if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+        if (Section == MaterialPropertySection.Parameters)
         {
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("MAT_Properties_Object_Type"));
+
             ImGui.NextColumn();
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(type.Name);
+
+            ImGui.NextColumn();
+
+            if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+            {
+                ImGui.NextColumn();
+            }
         }
 
         PropEditGeneric(implType, sourceObj);
 
         ImGui.Columns(1);
     }
+
+    /// <summary>
+    /// Whether a field of the material itself belongs in another section: the texture list is shown only by
+    /// Textures, everything else only by Parameters
+    /// </summary>
+    private bool InOtherSection(object owner, PropertyInfo prop)
+    {
+        if (owner != CurrentMaterial)
+            return false;
+
+        var isTextureList = IsTextureList(owner, prop.Name);
+
+        return Section == MaterialPropertySection.Textures ? !isTextureList : isTextureList;
+    }
+
+    private static bool IsTextureList(object owner, string listName) => (owner, listName) switch
+    {
+        (MTD, nameof(MTD.Textures)) => true,
+        (MATBIN, nameof(MATBIN.Samplers)) => true,
+        _ => false
+    };
 
     /// <summary>
     /// Draws the properties of an object. With a search, a property is drawn if it matches or something
@@ -219,7 +278,7 @@ public class MaterialProperties
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
-            if (IsHidden(prop))
+            if (IsHidden(prop) || InOtherSection(obj, prop))
                 continue;
 
             var treeFlags = ImGuiTreeNodeFlags.DefaultOpen;
@@ -690,6 +749,23 @@ public class MaterialProperties
         }
 
         ImGui.NextColumn();
+
+        // The texture itself, on a row of its own under its path
+        if (prop.Name == "Path" && containerObj is MATBIN.Sampler or MTD.Texture &&
+            CFG.Current.MaterialEditor_Textures_Display_Preview)
+        {
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextDisabled(LOC.Get("MAT_Texture_Preview"));
+
+            ImGui.NextColumn();
+
+            TextureLink.DisplayPreview(containerObj, prop, value as string, $"preview_{classIndex}_{arrayIndex}");
+
+            ImGui.NextColumn();
+
+            if (CFG.Current.MaterialEditor_Properties_Display_Type_Column)
+                ImGui.NextColumn();
+        }
     }
 
     /// <summary>
@@ -788,6 +864,17 @@ public class MaterialProperties
 
         var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
         GUI.Tooltip(fieldDescription);
+
+        // Paste an entry copied from a material at the end of this list
+        if (list != null && IsEntryList(obj, prop.Name) && ImGui.BeginPopupContextItem($"entryListContext_{prop.Name}"))
+        {
+            if (ImGui.Selectable($"{LOC.Get("MAT_Entry_Paste_End")}##pasteEntryEnd"))
+                PasteEntry(obj, prop, list, list.Count, false);
+            GUI.Tooltip(LOC.Get("MAT_Entry_Paste_TT"));
+
+            ImGui.EndPopup();
+        }
+
         ImGui.NextColumn();
 
         if (list != null)
@@ -838,6 +925,8 @@ public class MaterialProperties
                 var removeIndex = -1;
                 var revertIndex = -1;
                 object revertTo = null;
+                var pasteIndex = -1;
+                var pasteOver = false;
 
                 for (var i = 0; i < list.Count; i++)
                 {
@@ -866,6 +955,32 @@ public class MaterialProperties
                         var label = entryName != null ? $"{fieldName}: {i} · {entryName}" : $"{fieldName}: {i}";
                         var classOpen = ImGui.TreeNodeEx($@"{label}###{fieldName}{i}", treeFlags);
                         GUI.Tooltip(fieldDescription);
+
+                        // Copy / paste of this entry, as JSON. Pastes wait until the list is drawn
+                        if (entryName != null && ImGui.BeginPopupContextItem($"entryContext_{fieldName}{i}"))
+                        {
+                            if (ImGui.Selectable($"{LOC.Get("MAT_Entry_Copy")}##copyEntry"))
+                            {
+                                PlatformUtils.Instance.SetClipboardText(MaterialJson.FromEntry(elem).ToText());
+                            }
+                            GUI.Tooltip(LOC.Get("MAT_Entry_Copy_TT"));
+
+                            if (ImGui.Selectable($"{LOC.Get("MAT_Entry_Paste_After")}##pasteEntryAfter"))
+                            {
+                                pasteIndex = idx + 1;
+                                pasteOver = false;
+                            }
+                            GUI.Tooltip(LOC.Get("MAT_Entry_Paste_TT"));
+
+                            if (ImGui.Selectable($"{LOC.Get("MAT_Entry_Paste_Over")}##pasteEntryOver"))
+                            {
+                                pasteIndex = idx;
+                                pasteOver = true;
+                            }
+                            GUI.Tooltip(LOC.Get("MAT_Entry_Paste_Over_TT"));
+
+                            ImGui.EndPopup();
+                        }
 
                         if (uses != null)
                             MaterialShaderPanel.DisplayUses(CurrentShaderInfo, uses);
@@ -953,10 +1068,62 @@ public class MaterialProperties
                     View.ActionManager.ExecuteAction(new MatReplaceListEntry(View.Selection.SelectedFileWrapper, list,
                         revertIndex, MaterialVanilla.CopyEntry(revertTo)));
                 }
+                else if (pasteIndex != -1)
+                {
+                    PasteEntry(obj, prop, list, pasteIndex, pasteOver);
+                }
             }
 
             ImGui.TreePop();
         }
+    }
+
+    /// <summary>
+    /// Whether a list holds params, samplers or textures, which can be copied and pasted
+    /// </summary>
+    private static bool IsEntryList(object owner, string listName) => (owner, listName) switch
+    {
+        (MTD, nameof(MTD.Params) or nameof(MTD.Textures)) => true,
+        (MATBIN, nameof(MATBIN.Params) or nameof(MATBIN.Samplers)) => true,
+        _ => false
+    };
+
+    /// <summary>
+    /// Adds the entry on the clipboard to a list at an index, or puts it in place of the entry there, as one undo
+    /// step. It must have been copied from the same kind of list (an MTD's or a MATBIN's params, samplers or
+    /// textures); otherwise the log says why and nothing changes.
+    /// </summary>
+    private void PasteEntry(object owner, PropertyInfo prop, IList list, int index, bool over)
+    {
+        var json = MaterialJson.EntryJson.FromText(PlatformUtils.Instance.GetClipboardText());
+        var kind = owner is MTD ? "MTD" : "MATBIN";
+
+        if (json == null)
+        {
+            Smithbox.LogError(this, LOC.Get("MAT_Entry_Paste_Not_Entry"));
+            return;
+        }
+
+        if (json.Kind != kind || json.List != prop.Name)
+        {
+            Smithbox.LogError(this, LOC.Get("MAT_Entry_Paste_Wrong_List", json.Kind, json.List, kind, prop.Name));
+            return;
+        }
+
+        var entry = MaterialJson.ToEntry(json);
+        if (entry == null)
+        {
+            Smithbox.LogError(this, LOC.Get("MAT_Entry_Paste_Bad"));
+            return;
+        }
+
+        var file = View.Selection.SelectedFileWrapper;
+
+        EditorAction action = over && index < list.Count
+            ? new MatReplaceListEntry(file, list, index, entry)
+            : new MatAddListEntry(file, prop, owner, entry, Math.Min(index, list.Count));
+
+        View.ActionManager.ExecuteAction(action);
     }
 
     /// <summary>

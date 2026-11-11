@@ -54,6 +54,7 @@ foreach (var gameName in games)
         if (modes is "query") QuerySurvey.Run(game);
         if (modes is "json") JsonSurvey.Run(game);
         if (modes is "textures") TextureSurvey.Run(game);
+        if (modes is "pairs") PairSurvey.Run(game);
     }
 }
 

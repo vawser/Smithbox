@@ -267,7 +267,7 @@ public class MaterialTextureIndex
     }
 
     /// <summary>The TPFs in a container: itself if it is one, else those in the binder and in binders in it</summary>
-    private static IEnumerable<Memory<byte>> Tpfs(Memory<byte> data, int depth)
+    internal static IEnumerable<Memory<byte>> Tpfs(Memory<byte> data, int depth)
     {
         if (DCX.Is(data))
             data = DCX.Decompress(data);

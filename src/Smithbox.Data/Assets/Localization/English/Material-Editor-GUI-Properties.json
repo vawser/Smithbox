@@ -120,6 +120,22 @@
     {
       "Key": "MAT_PropertyView_Type_Column_Toggle_TT",
       "Text": "Toggle the visibilty of the field type column.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MAT_Properties_Header_Parameters",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "MAT_Properties_Header_Parameters_TT",
+      "Text": "The material's fields and params. Its samplers (MATBIN) or textures (MTD) are in the Textures window."
+    },
+    {
+      "Key": "MAT_Properties_Header_Textures",
+      "Text": "Textures"
+    },
+    {
+      "Key": "MAT_Properties_Header_Textures_TT",
+      "Text": "The material's samplers (MATBIN) or textures (MTD), with a preview of each texture: the one a viewport has loaded, or else read from the project once the textures are scanned."
     }
   ]
 }

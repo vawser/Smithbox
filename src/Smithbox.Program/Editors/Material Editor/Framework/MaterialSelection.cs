@@ -17,6 +17,16 @@ public class MaterialSelection
     public MaterialSourceType SourceType { get; set; }
 
     /// <summary>
+    /// The selected MTD or MATBIN, for the current source type; null when none is selected
+    /// </summary>
+    public object CurrentMaterial => SourceType switch
+    {
+        MaterialSourceType.MTD => SelectedMTD,
+        MaterialSourceType.MATBIN => SelectedMATBIN,
+        _ => null
+    };
+
+    /// <summary>
     /// What was selected under each source tab, so switching tabs swaps the selection rather than leaving
     /// the other tab's selection behind
     /// </summary>

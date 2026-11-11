@@ -1236,6 +1236,10 @@ public class CFG
     public bool MaterialEditor_Live_Preview = true;
     public bool MaterialEditor_FileList_Modified_Only = false;
     public bool Interface_MaterialEditor_Tool_Search = true;
+    public bool Interface_MaterialEditor_Tool_UsedBy = true;
+    public bool Interface_MaterialEditor_Tool_ShaderInfo = true;
+
+    public bool MaterialEditor_Textures_Display_Preview = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Material_Editor = false;

@@ -15,6 +15,14 @@
     {
       "Key": "MAT_Window_Tools",
       "Text": "Tools"
+    },
+    {
+      "Key": "MAT_Window_Parameters",
+      "Text": "Parameters"
+    },
+    {
+      "Key": "MAT_Window_Textures",
+      "Text": "Textures"
     }
   ]
 }

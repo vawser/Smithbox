@@ -7,7 +7,8 @@ using System.Numerics;
 namespace StudioCore.Editors.MaterialEditor;
 
 /// <summary>
-/// Above a material's properties: how it compares with the game's file (F7), and which models use it (F5)
+/// Above a material's parameters: how it compares with the game's file (F7). Which models use it (F5) is the
+/// Used By tool.
 /// </summary>
 public class MaterialComparePanel
 {
@@ -21,7 +22,6 @@ public class MaterialComparePanel
     }
 
     private MaterialVanilla Vanilla => View.Editor.Vanilla;
-    private MaterialUsage Usage => View.Editor.Usage;
 
     #region Vanilla
     /// <summary>
@@ -152,94 +152,6 @@ public class MaterialComparePanel
             View.ActionManager.ExecuteAction(new CompoundAction(actions));
         }
         GUI.Tooltip(LOC.Get("MAT_Vanilla_Restore_TT"));
-    }
-    #endregion
-
-    #region Used By
-    public void DrawUsedBy(MaterialFileWrapper file)
-    {
-        if (file == null)
-            return;
-
-        var shortName = MaterialBank.ShortNameOf(file.Key);
-        var uses = Usage.HasScan ? Usage.UsesOf(shortName) : new List<MaterialUse>();
-
-        var title = Usage.HasScan
-            ? LOC.Get("MAT_UsedBy_Header_Count", uses.Count)
-            : LOC.Get("MAT_UsedBy_Header");
-
-        if (!ImGui.CollapsingHeader($"{title}###materialUsedByHeader"))
-            return;
-
-        ImGui.Indent();
-
-        if (Usage.IsScanning)
-        {
-            var fraction = Usage.Total == 0 ? 0 : (float)Usage.Done / Usage.Total;
-            ImGui.ProgressBar(fraction, new Vector2(-1, 0), $"{Usage.Done} / {Usage.Total}");
-            GUI.WrappedText(Usage.Status);
-
-            if (ImGui.Button($"{LOC.Get("MAT_UsedBy_Cancel")}##usedByCancel"))
-                Usage.Cancel();
-        }
-        else if (!Usage.HasScan)
-        {
-            GUI.WrappedText(LOC.Get("MAT_UsedBy_Not_Scanned"));
-
-            if (ImGui.Button($"{LOC.Get("MAT_UsedBy_Scan")}##usedByScan"))
-                Usage.StartScan();
-            GUI.Tooltip(LOC.Get("MAT_UsedBy_Scan_TT"));
-        }
-        else
-        {
-            GUI.WrappedText(LOC.Get("MAT_UsedBy_Scanned_At", Usage.ScannedAt?.ToLocalTime().ToString("g"), Usage.FlverCount));
-
-            if (Usage.IsStale)
-                GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get("MAT_UsedBy_Stale"));
-
-            if (ImGui.SmallButton($"{LOC.Get("MAT_UsedBy_Rescan")}##usedByRescan"))
-                Usage.StartScan();
-            GUI.Tooltip(LOC.Get("MAT_UsedBy_Scan_TT"));
-
-            if (uses.Count == 0)
-            {
-                GUI.WrappedText(LOC.Get("MAT_UsedBy_None"));
-            }
-            else
-            {
-                var height = Math.Min(uses.Count, 10) * ImGui.GetTextLineHeightWithSpacing() + 8;
-
-                if (ImGui.BeginChild("materialUsedByList", new Vector2(0, height), ImGuiChildFlags.Borders))
-                {
-                    var clipper = new ImGuiListClipper();
-                    clipper.Begin(uses.Count);
-
-                    while (clipper.Step())
-                    {
-                        for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
-                        {
-                            var use = uses[i];
-                            var label = use.Flver == use.ContainerName
-                                ? $"{use.Kind}: {use.ContainerName}"
-                                : $"{use.Kind}: {use.ContainerName} · {use.Flver}";
-
-                            if (ImGui.Selectable($"{label}##usedBy{i}"))
-                            {
-                                EditorCommandQueue.AddCommand($"model/load/{use.ContainerName}/{use.Kind}");
-                            }
-                            GUI.Tooltip(LOC.Get("MAT_UsedBy_Open_TT", use.Container));
-                        }
-                    }
-
-                    clipper.End();
-                }
-
-                ImGui.EndChild();
-            }
-        }
-
-        ImGui.Unindent();
-        ImGui.Separator();
     }
     #endregion
 }

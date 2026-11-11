@@ -15,6 +15,8 @@ public static class JsonSurvey
         var same = 0;
         var failures = new List<string>();
         var bytes = 0L;
+        var entries = 0;
+        var entriesSame = 0;
 
         foreach (var b in g.Binders.Where(b => b.Selected))
         {
@@ -46,6 +48,26 @@ public static class JsonSurvey
                         same++;
                     else if (failures.Count < 5)
                         failures.Add($"{name}: fields differ");
+
+                    // Each entry through the clipboard form: copied, pasted back, the same entry (keys too)
+                    foreach (var (entry, _) in MaterialQueryMatcher.Entries(material))
+                    {
+                        entries++;
+                        var copied = MaterialJson.FromEntry(entry).ToText();
+                        var pasted = MaterialJson.ToEntry(MaterialJson.EntryJson.FromText(copied));
+
+                        var keySame = (entry, pasted) switch
+                        {
+                            (MATBIN.Param p1, MATBIN.Param p2) => p1.Key == p2.Key,
+                            (MATBIN.Sampler s1, MATBIN.Sampler s2) => s1.Key == s2.Key,
+                            _ => true
+                        };
+
+                        if (pasted != null && keySame && MaterialJson.FromEntry(pasted).ToText() == copied)
+                            entriesSame++;
+                        else if (failures.Count < 5)
+                            failures.Add($"{name}: entry {MaterialJson.FromEntry(entry).List} differs");
+                    }
                 }
                 catch (Exception e)
                 {
@@ -55,6 +77,7 @@ public static class JsonSurvey
         }
 
         Console.WriteLine($"  {total} materials: {same} come back with every field the same ({bytes / Math.Max(total, 1)} chars of JSON each on average)");
+        Console.WriteLine($"  {entries} entries: {entriesSame} come back the same through copy and paste");
         foreach (var f in failures) Console.WriteLine($"      e.g. {f}");
     }
 

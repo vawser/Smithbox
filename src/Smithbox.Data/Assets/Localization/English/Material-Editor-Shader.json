@@ -147,6 +147,46 @@
     {
       "Key": "MAT_Properties_Color_Intensity_TT",
       "Text": "Intensity: the colour is multiplied by this where the shader gives off light."
+    },
+    {
+      "Key": "MAT_ToolWindow_View_Toggle_Shader_Info",
+      "Text": "Shader Information"
+    },
+    {
+      "Key": "MAT_ShaderTool_Header",
+      "Text": "Shader Information"
+    },
+    {
+      "Key": "MAT_ShaderTool_No_Shader",
+      "Text": "The selected material has no shader the shader table can look up."
+    },
+    {
+      "Key": "MAT_ShaderTool_Shader_Header_TT",
+      "Text": "The selected material's shader, and what the shader table knows of it."
+    },
+    {
+      "Key": "MAT_ShaderTool_Slots_Header",
+      "Text": "Texture Slots"
+    },
+    {
+      "Key": "MAT_ShaderTool_Slots_Header_TT",
+      "Text": "Each texture slot the shader samples or the material fills: its sampler, UV group, UV set and what the shader uses it for."
+    },
+    {
+      "Key": "MAT_ShaderTool_No_Slots",
+      "Text": "The shader table lists no texture slots for this shader, and the material has no samplers with a slot."
+    },
+    {
+      "Key": "MAT_ShaderTool_Missing_Header",
+      "Text": "Missing Entries"
+    },
+    {
+      "Key": "MAT_ShaderTool_Missing_Header_TT",
+      "Text": "The params and samplers every other material with this shader has, and this one doesn't."
+    },
+    {
+      "Key": "MAT_ShaderTool_None_Missing",
+      "Text": "The material has every param and sampler the shader's other materials all have."
     }
   ]
 }

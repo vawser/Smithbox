@@ -266,7 +266,7 @@ public class MatSearchTool
 
         var name = MaterialVanilla.EntryName(hit.Entry);
         if (!string.IsNullOrEmpty(name))
-            View.Properties.SetFilter(name);
+            View.SetPropertyFilter(name);
     }
     #endregion
 

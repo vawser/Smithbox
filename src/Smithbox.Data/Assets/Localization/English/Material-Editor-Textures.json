@@ -6,7 +6,7 @@
     },
     {
       "Key": "MAT_Texture_Indexed_TT",
-      "Text": "{0} is in:\n{1}\nIt isn't loaded in a viewport, so there's no preview. Right-click to open it in the Texture Viewer or pick another."
+      "Text": "{0} is in:\n{1}\nIt isn't loaded in a viewport, so the preview reads it from there. Right-click to open it in the Texture Viewer or pick another."
     },
     {
       "Key": "MAT_Texture_Not_Found_TT",
@@ -79,6 +79,62 @@
     {
       "Key": "MAT_Check_Texture_Not_Found",
       "Text": "{0}: no texture named {1} is in the project's texture files."
+    },
+    {
+      "Key": "MAT_Texture_Preview",
+      "Text": "Preview"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Toggle_TT",
+      "Text": "Toggle the texture preview under each texture path.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Shown",
+      "Text": "Shown"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Empty",
+      "Text": "No texture path"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Not_Loaded",
+      "Text": "Not loaded in a viewport"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Not_Found",
+      "Text": "Not in the project's textures"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Loading",
+      "Text": "Loading..."
+    },
+    {
+      "Key": "MAT_Texture_Preview_Failed_Line",
+      "Text": "Couldn't load the texture"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Needs_Scan",
+      "Text": "Scan the textures to preview (right-click)"
+    },
+    {
+      "Key": "MAT_Texture_Preview_Loaded_TT",
+      "Text": "{0}, read for this preview from:\n{1}\nRight-click to open it in the Texture Viewer, pick another, or reload the preview after editing the texture."
+    },
+    {
+      "Key": "MAT_Texture_Preview_Failed",
+      "Text": "Couldn't load {0} for the texture preview."
+    },
+    {
+      "Key": "MAT_Texture_Reload_Preview",
+      "Text": "Reload Preview"
+    },
+    {
+      "Key": "MAT_Texture_Reload_Preview_TT",
+      "Text": "Read the texture again for the preview, after it was edited or saved."
     }
   ]
 }

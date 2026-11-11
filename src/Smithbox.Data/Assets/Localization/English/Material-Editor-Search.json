@@ -271,6 +271,46 @@
     {
       "Key": "MAT_Transfer_Bad_Param",
       "Text": "Param {0} has a type or value that doesn't fit, so nothing was changed."
+    },
+    {
+      "Key": "MAT_Entry_Copy",
+      "Text": "Copy Entry"
+    },
+    {
+      "Key": "MAT_Entry_Copy_TT",
+      "Text": "Put this param, sampler or texture on the clipboard as JSON, to paste into another material's list of the same kind."
+    },
+    {
+      "Key": "MAT_Entry_Paste_After",
+      "Text": "Paste Entry After"
+    },
+    {
+      "Key": "MAT_Entry_Paste_Over",
+      "Text": "Paste Entry Over"
+    },
+    {
+      "Key": "MAT_Entry_Paste_Over_TT",
+      "Text": "Replace this entry with the one on the clipboard. Undo brings it back."
+    },
+    {
+      "Key": "MAT_Entry_Paste_End",
+      "Text": "Paste Entry"
+    },
+    {
+      "Key": "MAT_Entry_Paste_TT",
+      "Text": "Add the entry on the clipboard (copied with Copy Entry) to this list. A MATBIN's keys are worked out from its text."
+    },
+    {
+      "Key": "MAT_Entry_Paste_Not_Entry",
+      "Text": "The clipboard doesn't hold an entry copied with Copy Entry."
+    },
+    {
+      "Key": "MAT_Entry_Paste_Wrong_List",
+      "Text": "That entry is from a {0}'s {1}, and this is a {2}'s {3}."
+    },
+    {
+      "Key": "MAT_Entry_Paste_Bad",
+      "Text": "The entry on the clipboard has a type or value that doesn't fit, so nothing was changed."
     }
   ]
 }

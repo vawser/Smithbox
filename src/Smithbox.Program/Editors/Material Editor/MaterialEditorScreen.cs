@@ -23,6 +23,9 @@ public class MaterialEditorScreen : EditorScreen
     /// <summary>Every texture name in the project (F4), scanned when asked</summary>
     public MaterialTextureIndex Textures;
 
+    /// <summary>Textures loaded only for the Textures window's previews, when no viewport has them</summary>
+    public MaterialTexturePreviews TexturePreviews;
+
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -30,6 +33,7 @@ public class MaterialEditorScreen : EditorScreen
         Usage = new MaterialUsage(project);
         Vanilla = new MaterialVanilla(project);
         Textures = new MaterialTextureIndex(project);
+        TexturePreviews = new MaterialTexturePreviews(project, Textures);
 
         ViewHandler = new MaterialViewHandler(this, project);
 
@@ -79,6 +83,7 @@ public class MaterialEditorScreen : EditorScreen
         // A finished Used By or texture scan
         Usage.Update();
         Textures.Update();
+        TexturePreviews.Update();
     }
 
     public void FileMenu()
