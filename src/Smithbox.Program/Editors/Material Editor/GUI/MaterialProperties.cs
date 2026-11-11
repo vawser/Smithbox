@@ -24,6 +24,7 @@ public class MaterialProperties
 
     private readonly MaterialShaderPanel ShaderPanel;
     private readonly MaterialComparePanel ComparePanel;
+    private readonly MaterialTextureLink TextureLink;
 
     // The shader info of the material being drawn, for the param and sampler labels
     private MaterialShaderInfo CurrentShaderInfo;
@@ -38,6 +39,7 @@ public class MaterialProperties
 
         ShaderPanel = new MaterialShaderPanel(view, project);
         ComparePanel = new MaterialComparePanel(view, project);
+        TextureLink = new MaterialTextureLink(view);
     }
 
     public void Draw()
@@ -64,6 +66,9 @@ public class MaterialProperties
                 DisplayPropertyList("MATBIN", View.Selection.SelectedMATBIN);
             }
         }
+
+        // Opened from a texture path's context menu, drawn every frame so it stays open
+        TextureLink.DrawPicker();
 
         ImGui.EndChild();
     }
@@ -128,7 +133,7 @@ public class MaterialProperties
     private void DisplayFindings()
     {
         var findings = MaterialEditorChecks.CheckFile(Project.Handler.MaterialData.PrimaryBank,
-            View.Selection.SelectedBinder, View.Selection.SelectedFileWrapper);
+            View.Selection.SelectedBinder, View.Selection.SelectedFileWrapper, View.Editor);
 
         for (var i = 0; i < findings.Count; i++)
         {
@@ -559,7 +564,7 @@ public class MaterialProperties
         // A sampler's or texture's path: its texture, when a viewport has it loaded
         if (prop.Name == "Path" && containerObj is MATBIN.Sampler or MTD.Texture)
         {
-            MaterialTextureLink.Display(Project, value as string, $"{classIndex}_{arrayIndex}");
+            TextureLink.Display(containerObj, prop, value as string, $"{classIndex}_{arrayIndex}");
         }
 
         // Remove-from-list button (only passed in by list entries)

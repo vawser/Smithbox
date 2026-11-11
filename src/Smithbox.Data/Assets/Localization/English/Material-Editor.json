@@ -26,7 +26,7 @@
     },
     {
       "Key": "MAT_Texture_Not_Loaded_TT",
-      "Text": "{0} isn't loaded in any viewport, so it can't be previewed here. Open a model or map that uses it to see it."
+      "Text": "{0} isn't loaded in any viewport, so it can't be previewed here. Right-click → Scan Textures to see which file it's in, or open a model that uses it."
     },
     {
       "Key": "MAT_Texture_Open_In_Viewer",

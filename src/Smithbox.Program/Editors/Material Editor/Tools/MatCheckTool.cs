@@ -142,7 +142,7 @@ public class MatCheckTool
 
         // Errors first, then by binder and binder order
         Results = files
-            .SelectMany(x => MaterialEditorChecks.CheckFile(Bank, x.binder, x.file).Select(f => new Result(x.binder, x.file, f)))
+            .SelectMany(x => MaterialEditorChecks.CheckFile(Bank, x.binder, x.file, View.Editor).Select(f => new Result(x.binder, x.file, f)))
             .OrderBy(r => r.Finding.Severity)
             .ThenBy(r => r.Binder.Name, StringComparer.OrdinalIgnoreCase)
             .ToList();

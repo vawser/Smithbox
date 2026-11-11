@@ -1,0 +1,84 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Texture_Empty_TT",
+      "Text": "No texture path: the model's own texture is used, if it gives one. Right-click to pick a texture."
+    },
+    {
+      "Key": "MAT_Texture_Indexed_TT",
+      "Text": "{0} is in:\n{1}\nIt isn't loaded in a viewport, so there's no preview. Right-click to open it in the Texture Viewer or pick another."
+    },
+    {
+      "Key": "MAT_Texture_Not_Found_TT",
+      "Text": "No texture named {0} is in the project's texture files (as of the last texture scan). Many of the game's own materials name textures it doesn't ship, so this matters most for paths you set."
+    },
+    {
+      "Key": "MAT_Texture_Pick",
+      "Text": "Pick Texture..."
+    },
+    {
+      "Key": "MAT_Texture_Pick_Needs_Scan_TT",
+      "Text": "Scan the textures first (below) to pick from them."
+    },
+    {
+      "Key": "MAT_Texture_Scan",
+      "Text": "Scan Textures"
+    },
+    {
+      "Key": "MAT_Texture_Rescan",
+      "Text": "Scan Textures Again"
+    },
+    {
+      "Key": "MAT_Texture_Scanning",
+      "Text": "Scanning textures ({0} / {1})..."
+    },
+    {
+      "Key": "MAT_Texture_Scan_TT",
+      "Text": "List every texture name in the project's texture files, to check paths and pick from. Runs in the background (about 10 seconds to a minute or more, depending on the game) and is kept for later sessions."
+    },
+    {
+      "Key": "MAT_Texture_Picker_Title",
+      "Text": "Pick Texture"
+    },
+    {
+      "Key": "MAT_Texture_Picker_Hint",
+      "Text": "The {0} texture names in the project's texture files. The path keeps its folder and extension and takes the name you pick: the game finds the texture by name."
+    },
+    {
+      "Key": "MAT_Texture_Picker_Filter_TT",
+      "Text": "Part of the texture's name."
+    },
+    {
+      "Key": "MAT_Texture_Picker_Count",
+      "Text": "{0} textures"
+    },
+    {
+      "Key": "MAT_Texture_Picker_Double_Click",
+      "Text": "Double-click a texture to use it. Hover for the files it's in."
+    },
+    {
+      "Key": "MAT_TextureIndex_Scanned",
+      "Text": "Texture scan: {0} texture names in {1} files."
+    },
+    {
+      "Key": "MAT_TextureIndex_Failed",
+      "Text": "The texture scan failed."
+    },
+    {
+      "Key": "MAT_TextureIndex_Failed_Source",
+      "Text": "Texture scan: couldn't read {0}"
+    },
+    {
+      "Key": "MAT_TextureIndex_Failed_Load",
+      "Text": "Couldn't read the texture scan cache: {0}"
+    },
+    {
+      "Key": "MAT_TextureIndex_Failed_Save",
+      "Text": "Couldn't save the texture scan cache: {0}"
+    },
+    {
+      "Key": "MAT_Check_Texture_Not_Found",
+      "Text": "{0}: no texture named {1} is in the project's texture files."
+    }
+  ]
+}

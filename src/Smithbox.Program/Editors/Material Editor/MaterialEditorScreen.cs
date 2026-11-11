@@ -20,12 +20,16 @@ public class MaterialEditorScreen : EditorScreen
     /// <summary>The game's own materials, for the vanilla compare (F7), loaded on first use</summary>
     public MaterialVanilla Vanilla;
 
+    /// <summary>Every texture name in the project (F4), scanned when asked</summary>
+    public MaterialTextureIndex Textures;
+
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
 
         Usage = new MaterialUsage(project);
         Vanilla = new MaterialVanilla(project);
+        Textures = new MaterialTextureIndex(project);
 
         ViewHandler = new MaterialViewHandler(this, project);
 
@@ -72,8 +76,9 @@ public class MaterialEditorScreen : EditorScreen
         // Live preview: reload the models of edited materials once editing settles
         MaterialPreview.Update(Project);
 
-        // A finished Used By scan
+        // A finished Used By or texture scan
         Usage.Update();
+        Textures.Update();
     }
 
     public void FileMenu()

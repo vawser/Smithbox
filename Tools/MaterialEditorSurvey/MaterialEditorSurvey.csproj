@@ -21,6 +21,7 @@
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/FlverMaterialNames.cs" Link="Linked/FlverMaterialNames.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/MaterialQuery.cs" Link="Linked/MaterialQuery.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/MaterialJson.cs" Link="Linked/MaterialJson.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/TpfTextureNames.cs" Link="Linked/TpfTextureNames.cs" />
     <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialDefinition.cs" Link="Linked/MaterialDefinition.cs" />
     <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialBinding.cs" Link="Linked/MaterialBinding.cs" />
   </ItemGroup>

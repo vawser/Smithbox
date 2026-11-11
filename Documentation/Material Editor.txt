@@ -2,39 +2,6 @@
 # Material Editor TODO
 #----------------------------------------------------
 
-- File List:
-    - Add proper search filtering:
-        - Support filtering by parameter value
-        - Support filtering by sampler texture name/path
-        
-    - Duplicate/Delete action
-    - Rename action
-    
-- Split Properties window into:
-    - Common Properties (ShaderPath/SourcePath/Compression) window
-    - Parameter window
-    - Sampler/Texture window
-    
-- Sampler window    
-    - Include image preview of the textures
-        - As third column (scaled down to approx 100px height)
-        
-- Tools window
-    - Search
-        - Supports:
-            - Parameter value
-            - Sampler/Texture value
-            
-    - Mass Edit:
-        - The user experience of this interface is important. Internals can be similar to param Mass Edit.
-        - Conditions - filter by:
-        - Commands - apply edits
-            - Value Change: set/add/subtract/multiply/divide
-            - Add Parameter
-            - Delete Parameter
-            - Add Sampler
-            - Delete Sampler
-            
-    - Usage Inspector
-        - Search for usage in FLVER files
-        - List all FLVER files that use said MTD/MATBIN
+- Split Properties into Parameters and Textures/Samplers
+- Display texture preview outside of the tooltip
+- Move Used By and Shader Information into the Tools window
