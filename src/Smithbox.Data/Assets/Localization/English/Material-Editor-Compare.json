@@ -1,0 +1,144 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_Vanilla_Loading",
+      "Text": "Comparing with the game's materials..."
+    },
+    {
+      "Key": "MAT_Vanilla_Same",
+      "Text": "Same as the game's file."
+    },
+    {
+      "Key": "MAT_Vanilla_Added",
+      "Text": "Not in the game: added by the project."
+    },
+    {
+      "Key": "MAT_Vanilla_Added_TT",
+      "Text": "The game's binder has no material by this name."
+    },
+    {
+      "Key": "MAT_Vanilla_Modified",
+      "Text": "Changed from the game's file."
+    },
+    {
+      "Key": "MAT_Vanilla_Revert_Material",
+      "Text": "Revert to Vanilla"
+    },
+    {
+      "Key": "MAT_Vanilla_Revert_Material_TT",
+      "Text": "Make every field, param and sampler the same as the game's file. Undo brings your version back."
+    },
+    {
+      "Key": "MAT_Vanilla_Removed",
+      "Text": "The game's file has {0} entries this one doesn't."
+    },
+    {
+      "Key": "MAT_Vanilla_Restore",
+      "Text": "Restore"
+    },
+    {
+      "Key": "MAT_Vanilla_Restore_TT",
+      "Text": "Add them back as the game has them, at the end of their lists. One undo removes them all."
+    },
+    {
+      "Key": "MAT_Vanilla_Entry_Added_TT",
+      "Text": "The game's file has no entry of this name."
+    },
+    {
+      "Key": "MAT_Vanilla_Entry_Modified_TT",
+      "Text": "Different from the game's file."
+    },
+    {
+      "Key": "MAT_Vanilla_Revert_Entry",
+      "Text": "Revert"
+    },
+    {
+      "Key": "MAT_Vanilla_Revert_Entry_TT",
+      "Text": "Make this entry the same as the game's."
+    },
+    {
+      "Key": "MAT_FileList_Modified_Only_On_TT",
+      "Text": "Showing only materials that differ from the game's, or that the project added. Click to show all."
+    },
+    {
+      "Key": "MAT_FileList_Modified_Only_Off_TT",
+      "Text": "Show only materials that differ from the game's, or that the project added."
+    },
+    {
+      "Key": "MAT_UsedBy_Header",
+      "Text": "Used By"
+    },
+    {
+      "Key": "MAT_UsedBy_Header_Count",
+      "Text": "Used By ({0})"
+    },
+    {
+      "Key": "MAT_UsedBy_Not_Scanned",
+      "Text": "Which models use this material is found by reading the material table of every model in the project. It runs in the background and is kept for later sessions."
+    },
+    {
+      "Key": "MAT_UsedBy_Scan",
+      "Text": "Scan Models"
+    },
+    {
+      "Key": "MAT_UsedBy_Rescan",
+      "Text": "Scan Again"
+    },
+    {
+      "Key": "MAT_UsedBy_Scan_TT",
+      "Text": "Read every character, asset, part and map piece model, as saved. Takes from about 20 seconds to a few minutes, depending on the game and disk."
+    },
+    {
+      "Key": "MAT_UsedBy_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "MAT_UsedBy_Scanned_At",
+      "Text": "Scanned {0}: {1} models."
+    },
+    {
+      "Key": "MAT_UsedBy_Stale",
+      "Text": "A model in the project has been saved since the scan, so this may be out of date."
+    },
+    {
+      "Key": "MAT_UsedBy_None",
+      "Text": "No model uses this material."
+    },
+    {
+      "Key": "MAT_UsedBy_Open_TT",
+      "Text": "Open in the Model Editor.\n{0}"
+    },
+    {
+      "Key": "MAT_Usage_Scanned",
+      "Text": "Used By scan: {0} models in {1} files use {2} material names."
+    },
+    {
+      "Key": "MAT_Usage_Failed",
+      "Text": "The Used By scan failed."
+    },
+    {
+      "Key": "MAT_Usage_Failed_Source",
+      "Text": "Used By scan: couldn't read {0}"
+    },
+    {
+      "Key": "MAT_Usage_Failed_Load",
+      "Text": "Couldn't read the Used By cache: {0}"
+    },
+    {
+      "Key": "MAT_Usage_Failed_Save",
+      "Text": "Couldn't save the Used By cache: {0}"
+    },
+    {
+      "Key": "MAT_FileList_Used_By_Warning",
+      "Text": "The last Used By scan found {0} models using this material. They will no longer find it."
+    },
+    {
+      "Key": "MAT_FileList_Used_By_None",
+      "Text": "The last Used By scan found no model using this material."
+    },
+    {
+      "Key": "MAT_FileList_Used_By_Unknown",
+      "Text": "Run Used By (in the Properties pane) to see which models use this material."
+    }
+  ]
+}

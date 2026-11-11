@@ -1234,6 +1234,7 @@ public class CFG
     public bool MaterialEditor_Tool_Data_Transfer = true;
     public bool Interface_MaterialEditor_Tool_MaterialCheck = true;
     public bool MaterialEditor_Live_Preview = true;
+    public bool MaterialEditor_FileList_Modified_Only = false;
 
     // Saving
     public bool Project_Automatic_Save_Include_Material_Editor = false;

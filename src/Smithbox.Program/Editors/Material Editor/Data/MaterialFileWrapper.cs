@@ -46,6 +46,7 @@ public abstract class MaterialFileWrapper
     public void MarkChanged()
     {
         ChangeBalance++;
+        Revision++;
         MaterialPreview.Queue(Key);
     }
 
@@ -55,8 +56,14 @@ public abstract class MaterialFileWrapper
     public void MarkUndone()
     {
         ChangeBalance--;
+        Revision++;
         MaterialPreview.Queue(Key);
     }
+
+    /// <summary>
+    /// Counts every edit and undo, for caches of what's worked out from the file (the vanilla compare)
+    /// </summary>
+    public int Revision { get; private set; }
 
     protected MaterialFileWrapper(string key)
     {

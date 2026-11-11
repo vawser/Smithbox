@@ -176,6 +176,73 @@ switch (mode)
         foreach (var r in res.OrderByDescending(r => r.Item1).Take(40)) Console.WriteLine($"{r.Item1,3} {r.Item2:X} {r.Item3}");
         break;
     }
+    case "hdrscan":
+    {
+        // functions in [lo,hi) reading data-start-relative BHV header fields: 16-bit at +14h/+16h plus dwords at 0..1Ch off one base
+        ulong lo = Hex(args[2]), hi = Hex(args[3]);
+        foreach (var (begin, end) in Pdata.All.Where(f => f.Begin >= lo && f.Begin < hi))
+        {
+            var fo = Exe.FileOffset(begin); if (fo <= 0) continue;
+            var dec = Iced.Intel.Decoder.Create(64, new ByteArrayCodeReader(Exe.Image, (int)fo, (int)(end - begin)));
+            dec.IP = begin; var byBase = new Dictionary<Register, HashSet<long>>(); var w16 = new HashSet<long>(); int strides = 0;
+            Register pend = Register.None; int since = 99;
+            while (dec.IP < end)
+            {
+                dec.Decode(out var ins); since++;
+                for (int i = 0; i < ins.OpCount; i++)
+                    if (ins.GetOpKind(i) == OpKind.Memory && ins.MemoryIndex == Register.None && ins.MemoryBase is not (Register.RSP or Register.RBP or Register.RIP))
+                    {
+                        long d = (long)ins.MemoryDisplacement64;
+                        if (d is >= 0 and <= 0x1C && d % 2 == 0) { if (!byBase.TryGetValue(ins.MemoryBase, out var s)) byBase[ins.MemoryBase] = s = new(); s.Add(d); }
+                        if ((d == 0x14 || d == 0x16) && ins.MemorySize is MemorySize.UInt16 or MemorySize.Int16) w16.Add(d);
+                    }
+                if (ins.Mnemonic == Mnemonic.Lea && ins.MemoryIndex != Register.None && ins.MemoryIndex == ins.MemoryBase && ins.MemoryIndexScale is 2 or 4) { pend = ins.Op0Register.GetFullRegister(); since = 0; }
+                if (ins.Mnemonic == Mnemonic.Shl && since < 4 && ins.Op0Kind == OpKind.Register && ins.Op0Register.GetFullRegister() == pend) strides++;
+                if (ins.Mnemonic == Mnemonic.Imul && ins.OpCount == 3 && ins.GetImmediate(2) is 0xA0 or 0x60 or 0x80 or 0x30) strides++;
+            }
+            var best = byBase.OrderByDescending(kv => kv.Value.Count).FirstOrDefault();
+            int score = (best.Value?.Count ?? 0) + 3 * w16.Count + strides;
+            if (w16.Count > 0 || score >= 9) Console.WriteLine($"{score,3} {begin:X}-{end:X} base={best.Key} offs={string.Join(",", (best.Value ?? new()).OrderBy(x => x).Select(x => x.ToString("X")))} w16={string.Join(",", w16.Select(x => x.ToString("X")))} strides={strides}");
+        }
+        break;
+    }
+    case "a0scan":
+    {
+        foreach (var (begin, end) in Pdata.All)
+        {
+            var fo = Exe.FileOffset(begin); if (fo <= 0 || end - begin > 0x20000) continue;
+            var dec = Iced.Intel.Decoder.Create(64, new ByteArrayCodeReader(Exe.Image, (int)fo, (int)(end - begin)));
+            dec.IP = begin; int a0 = 0, s60 = 0; Register pend = Register.None; int since = 99, scale = 0; var sites = new List<ulong>();
+            while (dec.IP < end)
+            {
+                dec.Decode(out var ins); since++;
+                if (ins.Mnemonic == Mnemonic.Lea && ins.MemoryIndex != Register.None && ins.MemoryIndex == ins.MemoryBase && ins.MemoryIndexScale is 2 or 4 && ins.MemoryDisplacement64 == 0) { pend = ins.Op0Register.GetFullRegister(); since = 0; scale = ins.MemoryIndexScale; }
+                if (ins.Mnemonic == Mnemonic.Shl && since < 4 && ins.Op0Kind == OpKind.Register && ins.Op0Register.GetFullRegister() == pend && ins.Immediate64OrZero() == 5) { if (scale == 4) { a0++; sites.Add(ins.IP); } else s60++; }
+                if (ins.Mnemonic == Mnemonic.Imul && ins.OpCount == 3 && ins.GetImmediate(2) == 0xA0) { a0++; sites.Add(ins.IP); }
+            }
+            if (a0 > 0 && s60 > 0) Console.WriteLine($"{begin:X}-{end:X} A0x{a0} 60x{s60} at {string.Join(" ", sites.Take(4).Select(s => s.ToString("X")))}");
+        }
+        break;
+    }
+    case "addscan":
+    {
+        // add reg, imm for the given immediates within [lo,hi)
+        ulong lo = Hex(args[2]), hi = Hex(args[3]); var imms = args.Skip(4).Select(Hex).ToHashSet();
+        foreach (var (begin, end) in Pdata.All.Where(f => f.Begin >= lo && f.Begin < hi))
+        {
+            var fo = Exe.FileOffset(begin); if (fo <= 0) continue;
+            var dec = Iced.Intel.Decoder.Create(64, new ByteArrayCodeReader(Exe.Image, (int)fo, (int)(end - begin)));
+            dec.IP = begin; var hitsF = new List<string>();
+            while (dec.IP < end)
+            {
+                dec.Decode(out var ins);
+                if ((ins.Mnemonic == Mnemonic.Add && ins.Op0Kind == OpKind.Register && ins.Op0Register != Register.RSP && imms.Contains(ins.Immediate64OrZero())) || (ins.Mnemonic == Mnemonic.Lea && ins.MemoryIndex == Register.None && ins.MemoryBase != Register.RSP && ins.MemoryBase != Register.RBP && ins.Op0Register.GetFullRegister() == ins.MemoryBase && imms.Contains(ins.MemoryDisplacement64)))
+                    hitsF.Add($"{ins.IP:X}:{ins.Immediate64OrZero() + ins.MemoryDisplacement64:X}");
+            }
+            if (hitsF.Count > 0) Console.WriteLine($"{begin:X}-{end:X} {string.Join(" ", hitsF.Take(8))}");
+        }
+        break;
+    }
     case "fnat":
     {
         Exe.LoadRtti();

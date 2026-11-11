@@ -18,6 +18,7 @@
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/MaterialKeys.cs" Link="Linked/MaterialKeys.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/MaterialChecks.cs" Link="Linked/MaterialChecks.cs" />
     <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/MaterialShaderInfo.cs" Link="Linked/MaterialShaderInfo.cs" />
+    <Compile Include="../../src/Smithbox.Program/Editors/Material Editor/Utils/FlverMaterialNames.cs" Link="Linked/FlverMaterialNames.cs" />
     <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialDefinition.cs" Link="Linked/MaterialDefinition.cs" />
     <Compile Include="../../src/Smithbox.Program/Renderer/Materials/MaterialBinding.cs" Link="Linked/MaterialBinding.cs" />
   </ItemGroup>

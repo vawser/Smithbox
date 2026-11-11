@@ -87,6 +87,18 @@ public class MaterialFileList
 
         GUI.Tooltip(LOC.Get("MAT_FileList_DisplayFullPath_Toggle_Hint", displayPathMode));
 
+        // Modified Only: hide the materials that are the same as the game's
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Filter}##modifiedOnlyToggle"))
+        {
+            CFG.Current.MaterialEditor_FileList_Modified_Only = !CFG.Current.MaterialEditor_FileList_Modified_Only;
+        }
+
+        GUI.Tooltip(LOC.Get(CFG.Current.MaterialEditor_FileList_Modified_Only
+            ? "MAT_FileList_Modified_Only_On_TT"
+            : "MAT_FileList_Modified_Only_Off_TT"));
+
         ImGui.EndChild();
     }
 
@@ -99,13 +111,24 @@ public class MaterialFileList
         if (binder != null && (Parent.Selection.SourceType is MaterialSourceType.MTD || MaterialUtils.SupportsMATBIN(Project)))
         {
             // Binder order, unreadable files included where they are
+            var modifiedOnly = CFG.Current.MaterialEditor_FileList_Modified_Only;
+            var vanilla = Parent.Editor.Vanilla;
+
             var filteredEntries = new List<string>();
             foreach (var key in binder.FileOrder)
             {
-                if (EditorFilters.IsMatch(FileListFilter, key, ExactFileListFilter))
+                if (!EditorFilters.IsMatch(FileListFilter, key, ExactFileListFilter))
+                    continue;
+
+                // Modified Only keeps added and changed materials, and everything while vanilla is loading
+                if (modifiedOnly)
                 {
-                    filteredEntries.Add(key);
+                    var file = binder.GetFile(key);
+                    if (file == null || vanilla.StateOf(binder, file) == VanillaState.Same)
+                        continue;
                 }
+
+                filteredEntries.Add(key);
             }
 
             if (Parent.Selection.ScrollToFile && Parent.Selection.SelectedFileWrapper != null)
@@ -151,13 +174,13 @@ public class MaterialFileList
             displayName = $"{displayName}*";
         }
 
-        if (ImGui.Selectable($"{displayName}##materialFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
+        if (ImGui.Selectable($"{displayName}##materialFileEntry_{key}", key == Parent.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap))
         {
             Parent.Selection.SelectFile(curFile);
             Parent.Selection.ScrollToFile = false;
         }
 
-        // Arrow Selection
+        // Arrow Selection, on the row's selectable
         if (ImGui.IsItemHovered() && Parent.Selection.SelectFileListEntry)
         {
             Parent.Selection.SelectFileListEntry = false;
@@ -174,6 +197,22 @@ public class MaterialFileList
         }
 
         DisplayContextMenu(binder, curFile, index);
+
+        // Against the game's file (F7): added by the project, or changed
+        switch (Parent.Editor.Vanilla.StateOf(binder, curFile))
+        {
+            case VanillaState.Added:
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, $"{Icons.Plus}");
+                GUI.Tooltip(LOC.Get("MAT_Vanilla_Added_TT"));
+                break;
+
+            case VanillaState.Modified:
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, $"{Icons.Pencil}");
+                GUI.Tooltip(LOC.Get("MAT_Vanilla_Modified"));
+                break;
+        }
     }
 
     private void DisplayContextMenu(IMaterialBinder binder, MaterialFileWrapper file, int index)
@@ -294,6 +333,9 @@ public class MaterialFileList
         GUI.WrappedText(LOC.Get(OpenOperation == FileOperation.Rename ? "MAT_FileList_Rename_Hint" : "MAT_FileList_Duplicate_Hint",
             MaterialBank.ShortNameOf(OperationFile.Key), OperationBinder.Name));
 
+        if (OpenOperation == FileOperation.Rename)
+            DisplayUsedByWarning(OperationFile);
+
         // Name
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAT_FileList_Name_Header"), LOC.Get("MAT_FileList_Name_Header_TT"));
@@ -361,6 +403,7 @@ public class MaterialFileList
 
         GUI.WrappedText(LOC.Get("MAT_FileList_Delete_Confirm", MaterialBank.ShortNameOf(OperationFile.Key), OperationBinder.Name));
         GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAT_FileList_Delete_Warning"));
+        DisplayUsedByWarning(OperationFile);
 
         GUI.Spacer();
 
@@ -380,6 +423,27 @@ public class MaterialFileList
         }
 
         ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// How many models the last Used By scan found using this material, for rename and delete
+    /// </summary>
+    private void DisplayUsedByWarning(MaterialFileWrapper file)
+    {
+        var usage = Parent.Editor.Usage;
+
+        if (!usage.HasScan)
+        {
+            GUI.WrappedText(LOC.Get("MAT_FileList_Used_By_Unknown"));
+            return;
+        }
+
+        var count = usage.UsesOf(MaterialBank.ShortNameOf(file.Key)).Count;
+
+        if (count > 0)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAT_FileList_Used_By_Warning", count));
+        else
+            GUI.WrappedText(LOC.Get("MAT_FileList_Used_By_None"));
     }
 
     private void Apply(FileOperation operation, IMaterialBinder binder, MaterialFileWrapper file, string name)

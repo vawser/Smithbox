@@ -14,9 +14,18 @@ public class MaterialEditorScreen : EditorScreen
     public MaterialCommandQueue CommandQueue;
     public MaterialShortcuts Shortcuts;
 
+    /// <summary>Which models use each material (F5), scanned when asked</summary>
+    public MaterialUsage Usage;
+
+    /// <summary>The game's own materials, for the vanilla compare (F7), loaded on first use</summary>
+    public MaterialVanilla Vanilla;
+
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
+
+        Usage = new MaterialUsage(project);
+        Vanilla = new MaterialVanilla(project);
 
         ViewHandler = new MaterialViewHandler(this, project);
 
@@ -62,6 +71,9 @@ public class MaterialEditorScreen : EditorScreen
 
         // Live preview: reload the models of edited materials once editing settles
         MaterialPreview.Update(Project);
+
+        // A finished Used By scan
+        Usage.Update();
     }
 
     public void FileMenu()

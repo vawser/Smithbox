@@ -50,6 +50,7 @@ foreach (var gameName in games)
         if (modes is "check") CheckSurvey.Run(game);
         if (modes is "rebuild") RebuildSurvey.Run(game);
         if (modes is "shaders") ShaderSurvey.Run(game);
+        if (modes is "usage") UsageSurvey.Run(game, gamePaths[gameName]);
     }
 }
 

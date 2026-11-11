@@ -23,9 +23,13 @@ public class MaterialProperties
     private const int MaxSearchDepth = 8;
 
     private readonly MaterialShaderPanel ShaderPanel;
+    private readonly MaterialComparePanel ComparePanel;
 
     // The shader info of the material being drawn, for the param and sampler labels
     private MaterialShaderInfo CurrentShaderInfo;
+
+    // The vanilla entries of the material being drawn, by list and name, for the modified markers (null: no vanilla)
+    private Dictionary<(string list, string name), object> CurrentVanillaEntries;
 
     public MaterialProperties(MaterialEditorView view, ProjectEntry project)
     {
@@ -33,6 +37,7 @@ public class MaterialProperties
         Project = project;
 
         ShaderPanel = new MaterialShaderPanel(view, project);
+        ComparePanel = new MaterialComparePanel(view, project);
     }
 
     public void Draw()
@@ -140,6 +145,17 @@ public class MaterialProperties
     public void DisplayPropertyList(string implType, object sourceObj)
     {
         DisplayFindings();
+
+        // Vanilla compare (F7), Used By (F5), then the shader (F2)
+        var binder = View.Selection.SelectedBinder;
+        var file = View.Selection.SelectedFileWrapper;
+
+        ComparePanel.DrawVanilla(binder, file, sourceObj);
+        CurrentVanillaEntries = View.Editor.Vanilla.StateOf(binder, file) == VanillaState.Modified
+            ? ComparePanel.VanillaEntries(binder, file)
+            : null;
+
+        ComparePanel.DrawUsedBy(file);
 
         CurrentShaderInfo = ShaderPanel.InfoFor(sourceObj);
         ShaderPanel.Draw(View.Selection.SourceType, sourceObj);
@@ -815,6 +831,8 @@ public class MaterialProperties
             if (list != null)
             {
                 var removeIndex = -1;
+                var revertIndex = -1;
+                object revertTo = null;
 
                 for (var i = 0; i < list.Count; i++)
                 {
@@ -846,6 +864,24 @@ public class MaterialProperties
 
                         if (uses != null)
                             MaterialShaderPanel.DisplayUses(CurrentShaderInfo, uses);
+
+                        // Against vanilla (F7): added, or changed with a Revert
+                        object vanillaEntry = null;
+                        var vanillaChange = VanillaChange(prop.Name, elem, out vanillaEntry);
+
+                        if (vanillaChange == VanillaState.Added)
+                        {
+                            ImGui.SameLine();
+                            ImGui.TextColored(UI.Current.ImGui_AuxAdded_Text, $"{Icons.Plus}");
+                            GUI.Tooltip(LOC.Get("MAT_Vanilla_Entry_Added_TT"));
+                        }
+                        else if (vanillaChange == VanillaState.Modified)
+                        {
+                            ImGui.SameLine();
+                            ImGui.TextColored(UI.Current.ImGui_PrimaryChanged_Text, $"{Icons.Pencil}");
+                            GUI.Tooltip(LOC.Get("MAT_Vanilla_Entry_Modified_TT"));
+                        }
+
                         ImGui.NextColumn();
                         ImGui.SetNextItemWidth(-1);
                         ImGui.Text(elem?.GetType().Name ?? "null");
@@ -857,6 +893,17 @@ public class MaterialProperties
                             OnRemove();
                         }
                         GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Remove_List_Entry_TT"));
+
+                        if (vanillaChange == VanillaState.Modified)
+                        {
+                            ImGui.SameLine();
+                            if (ImGui.Button($"{LOC.Get("MAT_Vanilla_Revert_Entry")}##revertListEntry"))
+                            {
+                                revertIndex = idx;
+                                revertTo = vanillaEntry;
+                            }
+                            GUI.Tooltip(LOC.Get("MAT_Vanilla_Revert_Entry_TT"));
+                        }
 
                         ImGui.NextColumn();
 
@@ -896,10 +943,35 @@ public class MaterialProperties
                     var action = new MatRemoveListEntry(View.Selection.SelectedFileWrapper, prop, obj, removeIndex);
                     View.ActionManager.ExecuteAction(action);
                 }
+                else if (revertIndex != -1 && revertTo != null)
+                {
+                    View.ActionManager.ExecuteAction(new MatReplaceListEntry(View.Selection.SelectedFileWrapper, list,
+                        revertIndex, MaterialVanilla.CopyEntry(revertTo)));
+                }
             }
 
             ImGui.TreePop();
         }
+    }
+
+    /// <summary>
+    /// How a param, sampler or texture compares with the vanilla material's entry of the same name: Added (vanilla
+    /// has none), Modified, or Same. Unknown when there is nothing to compare (no vanilla, or not an entry).
+    /// </summary>
+    private VanillaState VanillaChange(string listName, object entry, out object vanillaEntry)
+    {
+        vanillaEntry = null;
+
+        var name = MaterialVanilla.EntryName(entry);
+        if (CurrentVanillaEntries == null || name == null)
+            return VanillaState.Unknown;
+
+        if (!CurrentVanillaEntries.TryGetValue((listName, name), out vanillaEntry))
+            return VanillaState.Added;
+
+        return MaterialVanilla.EntrySignature(entry) == MaterialVanilla.EntrySignature(vanillaEntry)
+            ? VanillaState.Same
+            : VanillaState.Modified;
     }
 
     private void PropContextRowOpener(string id)
