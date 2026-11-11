@@ -129,6 +129,14 @@
       "Text": "[Behavior Editor] Failed to load the behbnds."
     },
     {
+      "Key": "PROJECT_Data_Setup_Emevd_Data_PASS",
+      "Text": "[EMEVD Editor] Loaded the instruction layouts and event file list."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Emevd_Data_FAIL",
+      "Text": "[EMEVD Editor] Failed to load the instruction layouts or event file list."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
       "Text": "[Project] Setup Common Data."
     },

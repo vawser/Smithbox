@@ -145,6 +145,14 @@
       "Text": "If enabled, the Behavior Editor (AC6 .bhv state machines in chr behbnds) and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Emevd_Editor",
+      "Text": "EMEVD Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Emevd_Editor_TT",
+      "Text": "If enabled, the EMEVD Editor (event scripts, shown as blocks) and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },

@@ -2,6 +2,7 @@
 using StudioCore.Editors.FileBrowser;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.BehaviorEditor;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
@@ -89,6 +90,11 @@ public class ProjectEditorHandler : IDisposable
     public BehaviorEditorScreen BehaviorEditor;
     public BehaviorEditorStub BehaviorEditorStub;
 
+    // EMEVD Editor (event scripts)
+    public EmevdData EmevdData;
+    public EmevdEditorScreen EmevdEditor;
+    public EmevdEditorStub EmevdEditorStub;
+
 
     // The lighting the Model and Time Act Editors' viewports borrow from a map, made when a viewport first asks
     private ViewportEnvironment _viewportEnvironment;
@@ -111,6 +117,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _havokDataTask;
     private Task<bool> _fxDataTask;
     private Task<bool> _behaviorDataTask;
+    private Task<bool> _emevdDataTask;
     private Task<bool> _timeActDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
@@ -132,6 +139,7 @@ public class ProjectEditorHandler : IDisposable
         HavokEditorStub = new(Project);
         FxEditorStub = new(Project);
         BehaviorEditorStub = new(Project);
+        EmevdEditorStub = new(Project);
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
@@ -254,6 +262,16 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_behaviorDataTask);
         }
 
+        // EMEVD (event scripts)
+        if (Project.Descriptor.EnableEmevdEditor &&
+            EditorConditions.SupportsEmevdEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            EmevdData = new(Project);
+            _emevdDataTask = EmevdData.Setup();
+            tasks.Add(_emevdDataTask);
+        }
+
         bool[] results = await Task.WhenAll(tasks);
 
         if (!silent)
@@ -277,6 +295,7 @@ public class ProjectEditorHandler : IDisposable
         LogDataResult(_havokDataTask, "PROJECT_Data_Setup_Havok_Data_PASS", "PROJECT_Data_Setup_Havok_Data_FAIL");
         LogDataResult(_fxDataTask, "PROJECT_Data_Setup_Fx_Data_PASS", "PROJECT_Data_Setup_Fx_Data_FAIL");
         LogDataResult(_behaviorDataTask, "PROJECT_Data_Setup_Behavior_Data_PASS", "PROJECT_Data_Setup_Behavior_Data_FAIL");
+        LogDataResult(_emevdDataTask, "PROJECT_Data_Setup_Emevd_Data_PASS", "PROJECT_Data_Setup_Emevd_Data_FAIL");
     }
 
     /// <summary>
@@ -372,6 +391,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= BehaviorEditor;
         }
 
+        if (EmevdData != null)
+        {
+            EmevdEditor = new EmevdEditorScreen(Project);
+            firstEditor ??= EmevdEditor;
+        }
+
         FocusedEditor = firstEditor;
     }
 
@@ -396,6 +421,7 @@ public class ProjectEditorHandler : IDisposable
             HavokEditorScreen => "###havokEditor",
             FxEditorScreen => "###fxEditor",
             BehaviorEditorScreen => "###behaviorEditor",
+            EmevdEditorScreen => "###emevdEditor",
             _ => null
         };
 
@@ -427,6 +453,7 @@ public class ProjectEditorHandler : IDisposable
         HavokData?.Dispose();
         FxData?.Dispose();
         BehaviorData?.Dispose();
+        EmevdData?.Dispose();
 
         // The FX Editor's debug shapes hold GPU buffers
         FxEditor?.ViewportWindow?.Dispose();

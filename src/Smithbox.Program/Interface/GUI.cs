@@ -22,6 +22,7 @@ public static class GUI
     public static uint TIME_ACT_EDITOR_DOCK_GROUP = 1014;
     public static uint FX_EDITOR_DOCK_GROUP = 1015;
     public static uint BEHAVIOR_EDITOR_DOCK_GROUP = 1016;
+    public static uint EMEVD_EDITOR_DOCK_GROUP = 1017;
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
@@ -143,6 +144,10 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_BehaviorEditor = new(
         classId: BEHAVIOR_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_EmevdEditor = new(
+        classId: EMEVD_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_BehaviorEditorView = new(

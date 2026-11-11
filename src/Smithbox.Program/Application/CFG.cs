@@ -1290,6 +1290,13 @@ public class CFG
     public bool Interface_BehaviorEditor_Tool_Problems = true;
     #endregion
 
+    #region EMEVD Editor
+    ///------------------------------------------------------------
+    /// EMEVD Editor (event scripts)
+    ///------------------------------------------------------------
+    public bool EmevdEditor_Show_Arg_Names = true;
+    #endregion
+
     #region FX Editor
     public bool FxEditor_Allow_Automatic_Save = true;
 

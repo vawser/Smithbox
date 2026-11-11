@@ -675,6 +675,9 @@ public class ProjectConfigureMenu
         EditorToggle("PROJECT_Configuration_Checkbox_Behavior_Editor",
             ref Descriptor.EnableBehaviorEditor, EditorConditions.SupportsBehaviorEditor(type));
 
+        EditorToggle("PROJECT_Configuration_Checkbox_Emevd_Editor",
+            ref Descriptor.EnableEmevdEditor, EditorConditions.SupportsEmevdEditor(type));
+
         EditorToggle("PROJECT_Configuration_Checkbox_Material_Editor",
             ref Descriptor.EnableMaterialEditor, EditorConditions.SupportsMaterialEditor(type));
 
@@ -727,6 +730,7 @@ public class ProjectConfigureMenu
         Descriptor.EnableGparamEditor = enabled;
         Descriptor.EnableFxEditor = enabled;
         Descriptor.EnableBehaviorEditor = enabled;
+        Descriptor.EnableEmevdEditor = enabled;
         Descriptor.EnableMaterialEditor = enabled;
         Descriptor.EnableTextureViewer = enabled;
         Descriptor.EnableFileBrowser = enabled;

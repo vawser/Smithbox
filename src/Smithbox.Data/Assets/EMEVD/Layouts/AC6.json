@@ -1084,8 +1084,8 @@
         {
           "ID": 2,
           "Key": "4[02]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If Character HP Ratio",
+          "JapaneseName": "キャラのHP比率で判定",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 1258,
@@ -1093,6 +1093,7 @@
             24
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[16] (If Character HP Ratio (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 929, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 929",
           "Args": [
             {
@@ -1130,8 +1131,8 @@
         {
           "ID": 4,
           "Key": "4[04]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If Targeting State",
+          "JapaneseName": "対象のターゲット状態で判定",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 66,
@@ -1139,6 +1140,7 @@
             20
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[18] (If Targeting State (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 41, BB no: length 20 vs 16",
           "Args": [
             {
@@ -1176,8 +1178,8 @@
         {
           "ID": 5,
           "Key": "4[05]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If Has SpEffect",
+          "JapaneseName": "特殊効果IDがあるか",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 999,
@@ -1185,6 +1187,7 @@
             20
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[19] (If Has SpEffect (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 669, BB no: length 20 vs 16",
           "Args": [
             {
@@ -1294,8 +1297,8 @@
         {
           "ID": 7,
           "Key": "4[07]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If Character Backread State",
+          "JapaneseName": "キャラがバックリード状態判定",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 174,
@@ -1303,6 +1306,7 @@
             16
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[20] (If Character Backread State (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 117, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 117",
           "Args": [
             {
@@ -1420,8 +1424,8 @@
         {
           "ID": 9,
           "Key": "4[09]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If AI State",
+          "JapaneseName": "対象のAI状態で判定",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 151,
@@ -1429,6 +1433,7 @@
             16
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[22] (If AI State (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 79, BB no: length 16 vs 12",
           "Args": [
             {
@@ -1461,8 +1466,8 @@
         {
           "ID": 14,
           "Key": "4[14]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "If Character HP Value",
+          "JapaneseName": "キャラのHP値で判定",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 120,
@@ -1470,6 +1475,7 @@
             24
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 4[23] (If Character HP Value (Character Ratio)) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 35, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 35",
           "Args": [
             {
@@ -3105,8 +3111,8 @@
         {
           "ID": 1,
           "Key": "1003[01]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "Skip If Event Flag State",
+          "JapaneseName": "イベントフラグ状態でアクションスキップ",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
@@ -3114,6 +3120,7 @@
             8
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 1003[02] (End If Event Flag State) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1",
           "Args": [
             {

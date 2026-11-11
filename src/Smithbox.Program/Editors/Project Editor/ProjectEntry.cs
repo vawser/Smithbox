@@ -115,6 +115,9 @@ public class ProjectEntry
 
             if (Handler.BehaviorEditorStub != null)
                 Handler.BehaviorEditorStub.Display(dt, commands);
+
+            if (Handler.EmevdEditorStub != null)
+                Handler.EmevdEditorStub.Display(dt, commands);
         }
 
         // Auto-Save
@@ -356,6 +359,7 @@ public class ProjectEntry
             Handler.HavokEditor,
             Handler.FxEditor,
             Handler.BehaviorEditor,
+            Handler.EmevdEditor,
             Handler.TextureViewer,
             Handler.FileBrowser,
         ];

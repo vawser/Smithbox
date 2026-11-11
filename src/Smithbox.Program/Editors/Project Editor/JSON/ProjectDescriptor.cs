@@ -34,6 +34,7 @@ public class ProjectDescriptor
     public bool EnableHavokEditor = false;
     public bool EnableFxEditor = false;
     public bool EnableBehaviorEditor = false;
+    public bool EnableEmevdEditor = false;
     public bool EnableTimeActEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
@@ -65,6 +66,7 @@ public class ProjectDescriptor
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
         EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
+        EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
         EnableTimeActEditor = newDescriptor.EnableTimeActEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
@@ -142,6 +144,7 @@ public class ProjectDescriptor
             && EnableHavokEditor == other.EnableHavokEditor
             && EnableFxEditor == other.EnableFxEditor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
+            && EnableEmevdEditor == other.EnableEmevdEditor
             && EnableTimeActEditor == other.EnableTimeActEditor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
     }
@@ -171,6 +174,7 @@ public class ProjectDescriptor
         EnableHavokEditor = edited.EnableHavokEditor;
         EnableFxEditor = edited.EnableFxEditor;
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
+        EnableEmevdEditor = edited.EnableEmevdEditor;
         EnableTimeActEditor = edited.EnableTimeActEditor;
         EnableExternalMaterialData = edited.EnableExternalMaterialData;
     }
@@ -200,6 +204,7 @@ public class ProjectDescriptor
             EnableHavokEditor = this.EnableHavokEditor,
             EnableFxEditor = this.EnableFxEditor,
             EnableBehaviorEditor = this.EnableBehaviorEditor,
+            EnableEmevdEditor = this.EnableEmevdEditor,
             EnableTimeActEditor = this.EnableTimeActEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
 
@@ -238,6 +243,7 @@ public class ProjectDescriptor
         EnableHavokEditor = true;
         EnableFxEditor = true;
         EnableBehaviorEditor = true;
+        EnableEmevdEditor = true;
         EnableTimeActEditor = true;
         EnableExternalMaterialData = true;
     }

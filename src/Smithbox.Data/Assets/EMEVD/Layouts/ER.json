@@ -4401,8 +4401,8 @@
         {
           "ID": 1,
           "Key": "1003[01]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "Skip If Event Flag State",
+          "JapaneseName": "イベントフラグ状態でアクションスキップ",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 2497,
@@ -4410,6 +4410,7 @@
             8
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 1003[02] (End If Event Flag State) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1196, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1196",
           "Args": [
             {
@@ -4860,8 +4861,8 @@
         {
           "ID": 13,
           "Key": "1003[13]",
-          "Name": "",
-          "JapaneseName": null,
+          "Name": "End If Multiplayer World State",
+          "JapaneseName": "マルチプレイ世界状態でイベント終了",
           "Confidence": "Exe",
           "Source": null,
           "Uses": 341,
@@ -4869,6 +4870,7 @@
             4
           ],
           "Exe": "Built",
+          "NameSource": "DB_NT name for this ID; the exe handler does what 1003[12] (Goto If Multiplayer World State) does (same game functions, score 1.00)",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 296, float odd 0, id odd 0, BB fits, param misaligned 0, enum outside 296, float odd 0, id odd 0",
           "Args": [
             {
