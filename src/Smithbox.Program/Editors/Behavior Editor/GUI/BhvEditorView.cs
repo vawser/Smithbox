@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.BehaviorEditor;
 
 /// <summary>
-/// The editor's windows: Files, States, Transitions, Animations, Structures and Properties
+/// The editor's windows: Files, States, Transitions, Animations, Structures, Properties and Graph
 /// </summary>
 public class BhvEditorView
 {
@@ -22,6 +22,7 @@ public class BhvEditorView
     public BhvAnimationList AnimationList;
     public BhvStructureList StructureList;
     public BhvProperties Properties;
+    public BhvGraphWindow Graph;
 
     public BhvEditorView(BehaviorEditorScreen editor, ProjectEntry project)
     {
@@ -37,7 +38,14 @@ public class BhvEditorView
         AnimationList = new(this);
         StructureList = new(this);
         Properties = new(this);
+        Graph = new(this);
+        Structure = new(this);
+
+        // Undo/redo of any edit can shrink a list under the selection
+        ActionManager.ActionPerformed += Selection.Validate;
     }
+
+    public BhvStructureEdits Structure;
 
     public BhvInput Input = new();
 
@@ -69,6 +77,10 @@ public class BhvEditorView
         Window("BHV_Window_Animations", "behaviorEditor_Animations", EditorFocusContext.BehaviorEditor_States, dockspaceId, AnimationList.Draw);
         Window("BHV_Window_Structures", "behaviorEditor_Structures", EditorFocusContext.BehaviorEditor_States, dockspaceId, StructureList.Draw);
         Window("BHV_Window_Properties", "behaviorEditor_Properties", EditorFocusContext.BehaviorEditor_Properties, dockspaceId, Properties.Draw);
+        Window("BHV_Window_Graph", "behaviorEditor_Graph", EditorFocusContext.BehaviorEditor_States, dockspaceId, Graph.Draw);
+
+        Structure.DrawPopups();
+        Structure.Flush();
     }
 
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw)

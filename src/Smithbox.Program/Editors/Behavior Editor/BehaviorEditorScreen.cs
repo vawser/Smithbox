@@ -83,6 +83,16 @@ public class BehaviorEditorScreen : EditorScreen
 
         if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             View.ActionManager.RedoAction();
+
+        // Not while typing in a box, where Delete edits the text
+        if (!ImGui.IsAnyItemActive())
+        {
+            if (InputManager.IsPressed(KeybindID.Duplicate))
+                View.Structure.DuplicateSelected();
+
+            if (InputManager.IsPressed(KeybindID.Delete))
+                View.Structure.DeleteSelected();
+        }
     }
 
     public void FileMenu()
@@ -127,6 +137,12 @@ public class BehaviorEditorScreen : EditorScreen
             if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)}", false, View.ActionManager.CanRedo()))
             {
                 View.ActionManager.RedoAction();
+            }
+
+            if (View.Selection.SelectedFile != null)
+            {
+                ImGui.Separator();
+                View.Structure.SelectionItems();
             }
 
             ImGui.EndMenu();

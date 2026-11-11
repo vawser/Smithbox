@@ -92,6 +92,13 @@ public class BhvStateList
                 if (ImGui.Selectable($"{i}##bhvState_{i}", View.Selection.StateIndex == i, ImGuiSelectableFlags.SpanAllColumns))
                     View.Selection.SelectState(i);
 
+                if (ImGui.BeginPopupContextItem($"bhvStateContext_{i}"))
+                {
+                    View.Selection.SelectState(i);
+                    View.Structure.StateItems(file, i);
+                    ImGui.EndPopup();
+                }
+
                 ImGui.TableNextColumn();
                 ImGui.Text(s.ID.ToString());
 
@@ -123,6 +130,13 @@ public class BhvStateList
         }
 
         clipper.End();
+
+        // Right-click below the rows: add a state
+        if (ImGui.BeginPopupContextWindow("bhvStateListContext", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+        {
+            View.Structure.StateItems(file, -1);
+            ImGui.EndPopup();
+        }
 
         ImGui.EndTable();
     }

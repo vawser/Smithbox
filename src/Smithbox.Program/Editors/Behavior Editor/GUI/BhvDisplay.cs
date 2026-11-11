@@ -1,3 +1,4 @@
+using StudioCore.Editors.Common;
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using System.Globalization;
@@ -82,10 +83,66 @@ public class BhvDisplay
             BhvRefKind.State => v < 0 ? LOC.Get("BHV_Label_None") : StateLabel(b, v),
             BhvRefKind.Animation => v < 0 ? LOC.Get("BHV_Label_None") : AnimationLabel(b, v),
             BhvRefKind.TaeAnimation => v < 0 ? LOC.Get("BHV_Label_None") : LOC.Get("BHV_Label_Tae_Animation"),
-            BhvRefKind.ChangeStateMatrixParam => v == 0 ? LOC.Get("BHV_Label_None") : LOC.Get("BHV_Label_Param_Row", "BehaviorChangeStateMatrixParam"),
-            BhvRefKind.SpEffectParam => LOC.Get("BHV_Label_Param_Row", "SpEffectParam"),
+            BhvRefKind.ChangeStateMatrixParam => v == 0 ? LOC.Get("BHV_Label_None") : ParamRowLabel(ChangeStateMatrixParam, v),
+            BhvRefKind.SpEffectParam => v <= 0 ? LOC.Get("BHV_Label_None") : ParamRowLabel(SpEffectParam, v),
             _ => "",
         };
+    }
+
+    public const string ChangeStateMatrixParam = "BehaviorChangeStateMatrixParam";
+    public const string SpEffectParam = "SpEffectParam";
+
+    /// <summary>
+    /// Whether a param row exists in the project's params; null if the params aren't loaded (Param Editor off)
+    /// </summary>
+    public bool? ParamRowExists(string param, int id)
+    {
+        var bank = View.Project.Handler.ParamData?.PrimaryBank;
+        if (bank?.Params == null || !bank.Params.TryGetValue(param, out var p))
+            return null;
+
+        return p.Rows.Any(r => r.ID == id);
+    }
+
+    private string ParamRowLabel(string param, int id) => ParamRowExists(param, id) switch
+    {
+        false => LOC.Get("BHV_Label_Param_Row_Missing", param, id),
+        _ => LOC.Get("BHV_Label_Param_Row", param),
+    };
+
+    /// <summary>
+    /// A small button after a field's meaning that opens what it refers to: a state or animation record here,
+    /// a TAE animation in the Time Act Editor, a param row in the Param Editor
+    /// </summary>
+    public void ReferenceLink(string id, BhvFileWrapper file, BhvField field, int v)
+    {
+        var b = file.BHV;
+
+        (string Label, string Tooltip, Action Open) link = field.Ref switch
+        {
+            BhvRefKind.State when v >= 0 && v < b.States.Count =>
+                (LOC.Get("BHV_Link_Go"), LOC.Get("BHV_Link_State_TT"), () => View.Selection.SelectState(v, true)),
+            BhvRefKind.Animation when v >= 0 && v < b.Animations.Count =>
+                (LOC.Get("BHV_Link_Go"), LOC.Get("BHV_Link_Animation_TT"), () => View.Selection.SelectAnimation(v, true)),
+            BhvRefKind.TaeAnimation when v >= 0 =>
+                (LOC.Get("BHV_Link_Time_Act"), LOC.Get("BHV_Link_Time_Act_TT", file.Binder.Name, v),
+                    () => EditorCommandQueue.AddCommand($"tae/select/{file.Binder.Name}/{v}")),
+            BhvRefKind.ChangeStateMatrixParam when v != 0 =>
+                (LOC.Get("BHV_Link_Param"), LOC.Get("BHV_Link_Param_TT", ChangeStateMatrixParam, v),
+                    () => EditorCommandQueue.AddCommand($"param/select/-1/{ChangeStateMatrixParam}/{v}")),
+            BhvRefKind.SpEffectParam when v > 0 =>
+                (LOC.Get("BHV_Link_Param"), LOC.Get("BHV_Link_Param_TT", SpEffectParam, v),
+                    () => EditorCommandQueue.AddCommand($"param/select/-1/{SpEffectParam}/{v}")),
+            _ => (null, null, null),
+        };
+
+        if (link.Open == null)
+            return;
+
+        ImGui.SameLine();
+        if (ImGui.SmallButton($"{link.Label}##{id}"))
+            link.Open();
+        GUI.Tooltip(link.Tooltip);
     }
 
     /// <summary>
@@ -133,6 +190,8 @@ public class BhvDisplay
             var meaning = Meaning(b, field, value.Value);
             if (meaning.Length > 0)
                 ImGui.TextColored(field.Enum != null ? UI.Current.ImGui_EnumName_Text : UI.Current.ImGui_Ref_Text, meaning);
+
+            ReferenceLink($"{id}_link{f}", file, field, (int)value.Value);
         }
 
         ImGui.EndTable();

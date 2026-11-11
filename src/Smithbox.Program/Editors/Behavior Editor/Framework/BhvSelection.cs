@@ -122,6 +122,46 @@ public class BhvSelection
         Target = BhvTarget.StructD;
     }
 
+    /// <summary>
+    /// Drops selected indices that a structure edit (or its undo) left out of range, falling back to the parent
+    /// record, so the windows never index past a list
+    /// </summary>
+    public void Validate()
+    {
+        if (SelectedFile == null)
+            return;
+
+        var b = SelectedFile.BHV;
+
+        if (StateIndex >= b.States.Count)
+            StateIndex = -1;
+
+        var state = SelectedState;
+        if (state == null || TransitionIndex >= state.Transitions.Count)
+            TransitionIndex = -1;
+
+        var transition = SelectedTransition;
+        if (transition == null || ConditionIndex >= transition.Conditions.Count)
+            ConditionIndex = -1;
+
+        if (AnimationIndex >= b.Animations.Count)
+            AnimationIndex = -1;
+
+        var structCount = Target is BhvTarget.StructD ? b.StructDs.Count : b.StructCs.Count;
+        if (StructIndex >= structCount)
+            StructIndex = -1;
+
+        Target = Target switch
+        {
+            BhvTarget.Condition when ConditionIndex < 0 => TransitionIndex >= 0 ? BhvTarget.Transition : StateIndex >= 0 ? BhvTarget.State : BhvTarget.File,
+            BhvTarget.Transition when TransitionIndex < 0 => StateIndex >= 0 ? BhvTarget.State : BhvTarget.File,
+            BhvTarget.State when StateIndex < 0 => BhvTarget.File,
+            BhvTarget.Animation when AnimationIndex < 0 => BhvTarget.File,
+            BhvTarget.StructC or BhvTarget.StructD when StructIndex < 0 => BhvTarget.File,
+            _ => Target,
+        };
+    }
+
     public SoulsFormats.BHV.State SelectedState =>
         SelectedFile != null && StateIndex >= 0 && StateIndex < SelectedFile.BHV.States.Count
             ? SelectedFile.BHV.States[StateIndex] : null;

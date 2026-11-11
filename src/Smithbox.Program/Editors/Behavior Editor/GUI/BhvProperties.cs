@@ -107,7 +107,7 @@ public class BhvProperties
         }
 
         Blob("bhvStateBody", LOC.Get("BHV_Properties_Body", state.Body.Length), file, () => state.Body, BhvLayout.StateBodyFields(b));
-        Blob("bhvStateData", LOC.Get("BHV_Properties_State_Data", state.Data.Length), file, () => state.Data, new());
+        Blob("bhvStateData", LOC.Get("BHV_Properties_State_Data", state.Data.Length), file, () => state.Data, new(), v => state.Data = v);
     }
 
     private void DrawTransition(BhvFileWrapper file, BHV b)
@@ -164,7 +164,7 @@ public class BhvProperties
             ImGui.EndTable();
         }
 
-        Blob("bhvConditionData", LOC.Get("BHV_Properties_Condition_Data", condition.Data.Length), file, () => condition.Data,
+        Blob("bhvConditionData", LOC.Get("BHV_Properties_Condition_Data", condition.Data.Length), file, () => condition.Data, setLength: v => condition.Data = v, fields:
             BhvLayout.ConditionDataFields(b, condition));
     }
 
@@ -264,10 +264,23 @@ public class BhvProperties
             View.SetValue(file, get, set, convert(value));
     }
 
-    private void Blob(string id, string title, BhvFileWrapper file, Func<byte[]> blob, List<BhvField> fields)
+    /// <summary>
+    /// A blob's known fields and hex. With <paramref name="setLength"/> (variable-length blobs: state data,
+    /// condition data) a length box resizes it: the start is kept and new bytes are zero.
+    /// </summary>
+    private void Blob(string id, string title, BhvFileWrapper file, Func<byte[]> blob, List<BhvField> fields, Action<byte[]> setLength = null)
     {
         GUI.Spacer();
         GUI.SimpleHeader(title, LOC.Get("BHV_Properties_Blob_TT"));
+
+        if (setLength != null)
+        {
+            ImGui.Text(LOC.Get("BHV_Properties_Length"));
+            ImGui.SameLine();
+            if (View.Input.Int($"##{id}_length", blob().Length, 0, BhvStructureEdits.MaxBlobLength, out var length, null, 120))
+                View.Structure.Resize(file, blob, setLength, (int)length);
+            GUI.Tooltip(LOC.Get("BHV_Properties_Length_TT"));
+        }
 
         View.Format.FieldTable(id, file, blob, fields);
 

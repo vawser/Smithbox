@@ -69,6 +69,13 @@ public class BhvAnimationList
                 if (ImGui.Selectable($"{i}##bhvAnimation_{i}", View.Selection.Target is BhvTarget.Animation && View.Selection.AnimationIndex == i, ImGuiSelectableFlags.SpanAllColumns))
                     View.Selection.SelectAnimation(i);
 
+                if (ImGui.BeginPopupContextItem($"bhvAnimationContext_{i}"))
+                {
+                    View.Selection.SelectAnimation(i);
+                    View.Structure.AnimationItems(file, i);
+                    ImGui.EndPopup();
+                }
+
                 ImGui.TableNextColumn();
                 var id = BhvDisplay.AnimationId(b, i);
                 if (id >= 0) ImGui.Text(id.ToString()); else ImGui.TextDisabled("-1");
@@ -92,6 +99,12 @@ public class BhvAnimationList
         }
 
         clipper.End();
+
+        if (ImGui.BeginPopupContextWindow("bhvAnimationListContext", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+        {
+            View.Structure.AnimationItems(file, -1);
+            ImGui.EndPopup();
+        }
 
         ImGui.EndTable();
     }

@@ -41,6 +41,10 @@ public class BhvTransitionView
         // Outgoing
         GUI.SimpleHeader(LOC.Get("BHV_TransitionView_Outgoing", state.Transitions.Count), LOC.Get("BHV_TransitionView_Outgoing_TT"));
 
+        if (ImGui.SmallButton($"{LOC.Get("BHV_Edit_Add_Transition")}##bhvAddTransitionButton"))
+            View.Structure.AddTransition(file, stateIndex);
+        GUI.Tooltip(LOC.Get("BHV_Edit_Add_Transition_TT"));
+
         if (state.Transitions.Count == 0)
             ImGui.TextDisabled(LOC.Get("BHV_TransitionView_No_Outgoing"));
 
@@ -49,7 +53,7 @@ public class BhvTransitionView
             order = order.Reverse();
 
         foreach (var t in order)
-            DrawTransition(b, state, stateIndex, t);
+            DrawTransition(file, state, stateIndex, t);
 
         GUI.Spacer();
 
@@ -70,8 +74,9 @@ public class BhvTransitionView
         ImGui.EndChild();
     }
 
-    private void DrawTransition(BHV b, BHV.State state, int stateIndex, int t)
+    private void DrawTransition(BhvFileWrapper file, BHV.State state, int stateIndex, int t)
     {
+        var b = file.BHV;
         var transition = state.Transitions[t];
         var selected = View.Selection.TransitionIndex == t && View.Selection.Target is BhvTarget.Transition;
 
@@ -99,17 +104,25 @@ public class BhvTransitionView
             ? LOC.Get("BHV_TransitionView_Self_TT")
             : LOC.Get("BHV_TransitionView_Transition_TT"));
 
+        if (ImGui.BeginPopupContextItem($"bhvTransitionContext_{t}"))
+        {
+            View.Selection.SelectTransition(t);
+            View.Structure.TransitionItems(file, stateIndex, t);
+            ImGui.EndPopup();
+        }
+
         if (!open)
             return;
 
         for (int c = 0; c < transition.Conditions.Count; c++)
-            DrawCondition(b, transition.Conditions[c], t, c);
+            DrawCondition(file, stateIndex, transition.Conditions[c], t, c);
 
         ImGui.TreePop();
     }
 
-    private void DrawCondition(BHV b, BHV.Condition condition, int t, int c)
+    private void DrawCondition(BhvFileWrapper file, int stateIndex, BHV.Condition condition, int t, int c)
     {
+        var b = file.BHV;
         var selected = View.Selection.Target is BhvTarget.Condition
             && View.Selection.TransitionIndex == t && View.Selection.ConditionIndex == c;
 
@@ -132,5 +145,12 @@ public class BhvTransitionView
 
         if (ImGui.Selectable($"{label}##bhvCondition_{t}_{c}", selected))
             View.Selection.SelectCondition(t, c);
+
+        if (ImGui.BeginPopupContextItem($"bhvConditionContext_{t}_{c}"))
+        {
+            View.Selection.SelectCondition(t, c);
+            View.Structure.ConditionItems(file, stateIndex, t, c);
+            ImGui.EndPopup();
+        }
     }
 }
