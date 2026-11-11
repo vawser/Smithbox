@@ -180,7 +180,8 @@ public static class FocusManager
             or EditorFocusContext.EsdEditor_FileList
             or EditorFocusContext.EsdEditor_MachineList
             or EditorFocusContext.EsdEditor_States
-            or EditorFocusContext.EsdEditor_Properties;
+            or EditorFocusContext.EsdEditor_Properties
+            or EditorFocusContext.EsdEditor_Tools;
     }
 
     public static bool IsInHavokEditor()
@@ -308,6 +309,7 @@ public enum EditorFocusContext
     EsdEditor_MachineList,
     EsdEditor_States,
     EsdEditor_Properties,
+    EsdEditor_Tools,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

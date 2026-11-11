@@ -56,6 +56,13 @@ public class EsdStateView
     private ESD.Condition TargetCondition;
     private bool OpenTargetPopup;
 
+    // The text editor popup (P4): a test or a command arg as text, compiled back on Enter
+    private ESD.Condition TextCondition;
+    private ESD.CommandCall TextCommand;
+    private int TextArg = -1;
+    private string TextValue = "";
+    private bool OpenTextPopup;
+
     private const float RowGap = 2f;
 
     // The command row being dragged (P4 drag and drop)
@@ -235,6 +242,16 @@ public class EsdStateView
             Follow(Rows[at]);
         if (ImGui.IsKeyPressed(ImGuiKey.Backspace))
             selection.GoBack();
+
+        // F2: the selected test (or a command's first arg) as text
+        if (ImGui.IsKeyPressed(ImGuiKey.F2) && at >= 0)
+        {
+            var row = Rows[at];
+            if (row.Kind == EsdRowKind.Condition)
+                OpenTextEditor(row.Condition, null, -1);
+            else if (row.Kind == EsdRowKind.Command && row.Command.Arguments.Count > 0)
+                OpenTextEditor(null, row.Command, 0);
+        }
     }
 
     /// <summary>Double-click / Enter: a transition goes to its target state, a call to its machine</summary>
@@ -402,6 +419,13 @@ public class EsdStateView
                     View.Commands.MoveCommandTo(DragRow, list, index, row.StateId);
                 DragRow = null;
             }
+
+            var fromPalette = ImGui.AcceptDragDropPayload(EsdPaletteTool.CommandPayload);
+            if (!fromPalette.IsNull && View.ToolWindow.PaletteTool.DragCommand is { } make)
+            {
+                View.Commands.DropCommand(row, make());
+                View.ToolWindow.PaletteTool.DragCommand = null;
+            }
             ImGui.EndDragDropTarget();
         }
 
@@ -430,6 +454,41 @@ public class EsdStateView
             drawList.AddRect(min, max, ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), rounding, flags, 2f);
         else if (item != null && ProblemItems.Contains(item))
             drawList.AddRect(min, max, ImGui.GetColorU32(UI.Current.ImGui_Invalid_Text_Color), rounding, flags, 2f);
+    }
+
+    /// <summary>
+    /// After a block is drawn, while a palette expression is dragged over it: highlights the value chip (or, for a
+    /// transition, the block) it would go into, and drops it there on release
+    /// </summary>
+    private void ExprDrop(ImDrawListPtr drawList, List<ChipHit> hits, Vector2 min, Vector2 max, ESD.Condition cond, ESD.CommandCall cmd)
+    {
+        var palette = View.ToolWindow.PaletteTool;
+        if (!palette.DraggingExpr)
+            return;
+
+        var m = ImGui.GetMousePos();
+        bool Inside(Vector2 a, Vector2 b) => m.X >= a.X && m.X <= b.X && m.Y >= a.Y && m.Y <= b.Y;
+        // The drag source is the active item, so hover has to look past it
+        if (!Inside(min, max) || !ImGui.IsWindowHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem))
+            return;
+
+        var hit = hits.LastOrDefault(h => h.Node != null && Inside(h.Min, h.Max));
+        var highlight = ImGui.GetColorU32(new Vector4(1f, 0.85f, 0.2f, 1f));
+        if (hit != null)
+            drawList.AddRect(hit.Min, hit.Max, highlight, (hit.Max.Y - hit.Min.Y) * 0.5f, ImDrawFlags.None, 2f);
+        else if (cmd == null && cond != null)
+            drawList.AddRect(min, max, highlight, 4f, ImDrawFlags.None, 2f);
+        else
+            return;
+
+        if (!ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+            return;
+
+        if (hit != null)
+            View.Commands.DropExpression(hit.Arg >= 0 ? null : cond, cmd, hit.Arg, hit.Path, palette.DragExpr, palette.DragWrapOp);
+        else
+            View.Commands.DropExpression(cond, null, -1, null, palette.DragExpr, palette.DragWrapOp);
+        palette.EndExprDrag();
     }
 
     /// <summary>After a block is drawn: a click on one of its chips opens that chip's editor</summary>
@@ -492,6 +551,18 @@ public class EsdStateView
             ImGui.EndPopup();
         }
 
+        if (OpenTextPopup)
+        {
+            ImGui.OpenPopup("##esdTextPopup");
+            OpenTextPopup = false;
+        }
+
+        if (ImGui.BeginPopup("##esdTextPopup"))
+        {
+            DrawTextPopup();
+            ImGui.EndPopup();
+        }
+
         // Right-click on empty space: add a state at the end
         if (View.Selection.Machine != null && ImGui.BeginPopupContextWindow("##esdStatesMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
         {
@@ -499,6 +570,92 @@ public class EsdStateView
                 View.Commands.AddState(View.Selection.Machine.Keys.Max());
             GUI.Tooltip(LOC.Get("ESD_Edit_Add_State_TT"));
             ImGui.EndPopup();
+        }
+    }
+
+    /// <summary>Opens the text editor on a condition's test, or on one arg of a command</summary>
+    public void OpenTextEditor(ESD.Condition cond, ESD.CommandCall cmd, int arg)
+    {
+        TextCondition = cmd == null ? cond : null;
+        TextCommand = cmd;
+        TextArg = arg;
+        var bytes = TextBytes;
+        var node = bytes != null ? EsdExpr.Decode(bytes) : null;
+        TextValue = node != null ? EsdExprText.Format(node, Catalog) : "";
+        OpenTextPopup = true;
+    }
+
+    private byte[] TextBytes => TextCommand != null
+        ? (TextArg >= 0 && TextArg < TextCommand.Arguments.Count ? TextCommand.Arguments[TextArg] : null)
+        : TextCondition?.Evaluator;
+
+    private void DrawTextPopup()
+    {
+        var old = TextBytes;
+        if (old == null)
+        {
+            ImGui.CloseCurrentPopup();
+            return;
+        }
+
+        var cat = Catalog;
+        ImGui.TextDisabled(LOC.Get(TextCommand != null ? "ESD_Text_Header_Arg" : "ESD_Text_Header_Test"));
+
+        ImGui.SetNextItemWidth(520f * DPI.UIScale());
+        if (ImGui.IsWindowAppearing())
+            ImGui.SetKeyboardFocusHere();
+        var enter = ImGui.InputText("##esdExprText", ref TextValue, 4096, ImGuiInputTextFlags.EnterReturnsTrue);
+
+        // Live check: the error and where, or what it compiles to
+        var bytes = EsdExprText.Recompile(old, TextValue, cat, out var error);
+        if (bytes == null)
+        {
+            var at = Math.Clamp(error.Position, 0, TextValue.Length);
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, LOC.Get(error.Message) + "  " + LOC.Get("ESD_Text_At", at + 1));
+            if (at < TextValue.Length)
+                ImGui.TextDisabled($"…{TextValue[at..Math.Min(TextValue.Length, at + 24)]}");
+        }
+        else
+        {
+            var same = bytes.AsSpan().SequenceEqual(old);
+            ImGui.TextDisabled(same ? LOC.Get("ESD_Text_Unchanged") : LOC.Get("ESD_Text_Compiles", bytes.Length));
+            if (!same && TextCondition != null && EsdLayout_IsShared(TextCondition))
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("ESD_Edit_Shared_Warning"));
+        }
+
+        // Functions whose name contains the word being typed: a click puts the call in its place
+        if (cat != null)
+        {
+            var end = TextValue.Length;
+            var start = end;
+            while (start > 0 && (char.IsLetterOrDigit(TextValue[start - 1]) || TextValue[start - 1] == '_'))
+                start--;
+            var word = TextValue[start..end];
+            if (word.Length >= 2 && !char.IsDigit(word[0]))
+            {
+                var matches = cat.Functions.Values
+                    .Where(f => f.Name != null && f.Name.Contains(word, StringComparison.OrdinalIgnoreCase) && EsdExprText.FunctionName(cat, f.Id) == f.Name)
+                    .OrderBy(f => f.Name.StartsWith(word, StringComparison.OrdinalIgnoreCase) ? 0 : 1).ThenBy(f => f.Name)
+                    .Take(8).ToList();
+                foreach (var f in matches)
+                {
+                    if (ImGui.Selectable($"{f.Name}({string.Join(", ", f.Args.Select(a => a.Name))})##esdTextFn{f.Id}", false, ImGuiSelectableFlags.NoAutoClosePopups))
+                        TextValue = TextValue[..start] + f.Name + "(";
+                    if (ImGui.IsItemHovered() && !string.IsNullOrEmpty(f.Comment))
+                        GUI.Tooltip(f.Comment);
+                }
+            }
+        }
+
+        ImGui.TextDisabled(LOC.Get("ESD_Text_Hint"));
+
+        if (enter && bytes != null)
+        {
+            if (TextCommand != null)
+                View.Commands.SetArgument(TextCommand, TextArg, bytes);
+            else
+                View.Commands.SetEvaluator(TextCondition, bytes);
+            ImGui.CloseCurrentPopup();
         }
     }
 
@@ -839,6 +996,7 @@ public class EsdStateView
 
         drawList.PopClipRect();
 
+        ExprDrop(drawList, hits, min, max, null, c);
         ClickChip(hits, clicked, null, c);
 
         if (hovered)
@@ -934,6 +1092,7 @@ public class EsdStateView
 
         drawList.PopClipRect();
 
+        ExprDrop(drawList, hits, min, max, c, null);
         ClickChip(hits, clicked, c, null);
 
         if (hovered)

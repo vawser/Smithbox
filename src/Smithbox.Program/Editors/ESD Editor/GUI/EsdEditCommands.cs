@@ -287,6 +287,75 @@ public class EsdEditCommands
         _ => (null, -1)
     };
 
+    // --- palette (P4) ---
+
+    /// <summary>A palette command double-clicked: after the selected command, else at the end of the selected state's entry or transition's pass list</summary>
+    public void InsertAtSelection(ESD.CommandCall cmd)
+    {
+        var row = SelectedRow;
+        var (list, index) = row != null ? DropTarget(row) : (null, -1);
+        if (list == null)
+        {
+            Smithbox.Log(this, LOC.Get("ESD_PaletteTool_Select_Block"), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
+        if (row.Kind == EsdRowKind.Command)
+            index++;
+        Run(new EsdInsertOp<ESD.CommandCall>(list, index, cmd), "insert command");
+        Selection.SelectItem(cmd, row.StateId);
+    }
+
+    /// <summary>A palette command dropped on a block</summary>
+    public void DropCommand(EsdRow row, ESD.CommandCall cmd)
+    {
+        var (list, index) = DropTarget(row);
+        if (list == null || cmd == null)
+            return;
+        Run(new EsdInsertOp<ESD.CommandCall>(list, index, cmd), "insert command");
+        Selection.SelectItem(cmd, row.StateId);
+    }
+
+    /// <summary>
+    /// A palette expression dropped on a value chip (path set) or on a transition's block (path null). On a chip: the
+    /// node replaces the value, or an operator wraps it. On a block: an operator wraps the whole test; a function or
+    /// value replaces a constant test, or joins any other test with &amp;&amp;.
+    /// </summary>
+    public void DropExpression(ESD.Condition cond, ESD.CommandCall cmd, int arg, List<int> path, Func<EsdExprNode> make, byte? wrapOp)
+    {
+        var bytes = cmd != null ? (arg >= 0 && arg < cmd.Arguments.Count ? cmd.Arguments[arg] : null) : cond?.Evaluator;
+        var root = bytes != null ? EsdExpr.Decode(bytes) : null;
+        if (root == null)
+            return;
+
+        byte[] updated;
+        if (path != null)
+        {
+            var at = EsdEdits.At(root, path);
+            if (at == null)
+                return;
+            var node = wrapOp is byte op ? EsdExprText.Wrap(at, op) : make?.Invoke();
+            updated = node != null ? EsdExprText.ReplaceAt(bytes, path, node) : null;
+        }
+        else if (wrapOp is byte op)
+            updated = EsdExpr.Encode(EsdExprText.Wrap(root, op));
+        else
+        {
+            var node = make?.Invoke();
+            if (node == null)
+                return;
+            updated = EsdExpr.Constant(root) != null
+                ? EsdExpr.Encode(node)
+                : EsdExpr.Encode(new EsdExprNode { Kind = EsdExprKind.Binary, Op = 0x98, Children = { root, node } });
+        }
+
+        if (updated == null)
+            return;
+        if (cmd != null)
+            SetArgument(cmd, arg, updated);
+        else
+            SetEvaluator(cond, updated);
+    }
+
     // --- machines ---
 
     public void NewMachine()
@@ -446,6 +515,23 @@ public class EsdEditCommands
                     MoveCommand(row, -1);
                 if (ImGui.MenuItem(LOC.Get("ESD_Edit_Move_Down"), InputManager.GetHint(KeybindID.Reorder_Down), false, row.Index < ListOf(row).Count - 1))
                     MoveCommand(row, 1);
+                if (row.Command.Arguments.Count > 0 && ImGui.BeginMenu(LOC.Get("ESD_Text_Edit_Arg")))
+                {
+                    var file = Selection.SelectedFile;
+                    var cat = file != null ? View.Project.Handler.EsdData?.Catalog?.For(file.Kind) : null;
+                    var def = EsdLayout.KindOf(row.Command) == EsdCommandKind.Game ? cat?.Command(row.Command.CommandBank, row.Command.CommandID) : null;
+                    for (var i = 0; i < row.Command.Arguments.Count; i++)
+                    {
+                        var argName = def != null && i < def.Args.Count ? def.Args[i].Name : $"arg{i}";
+                        var node = EsdExpr.Decode(row.Command.Arguments[i]);
+                        var preview = node != null ? EsdExprText.Format(node, cat) : "?";
+                        if (preview.Length > 40) preview = preview[..40] + "…";
+                        if (ImGui.MenuItem($"{argName}: {preview}##esdArgText{i}", i == 0 ? "F2" : ""))
+                            View.StateView.OpenTextEditor(null, row.Command, i);
+                    }
+                    ImGui.EndMenu();
+                }
+                GUI.Tooltip(LOC.Get("ESD_Text_Edit_Arg_TT"));
                 ImGui.Separator();
                 CommandMenu(LOC.Get("ESD_Edit_Insert_After"), row.State, row.StateId, row.Condition, row.List, row.Index + 1);
                 break;
@@ -466,6 +552,9 @@ public class EsdEditCommands
                     GUI.Tooltip(LOC.Get("ESD_Edit_Make_Unique_TT", row.SharedCount));
                 }
                 ImGui.Separator();
+                if (ImGui.MenuItem(LOC.Get("ESD_Text_Edit_Test"), "F2"))
+                    View.StateView.OpenTextEditor(row.Condition, null, -1);
+                GUI.Tooltip(LOC.Get("ESD_Text_Edit_Test_TT"));
                 if (ImGui.MenuItem(LOC.Get("ESD_Edit_Set_Always")))
                     SetEvaluator(row.Condition, EsdEdits.Always);
                 if (ImGui.MenuItem(LOC.Get("ESD_Edit_Set_Never")))

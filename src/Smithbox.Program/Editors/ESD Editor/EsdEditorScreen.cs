@@ -40,6 +40,7 @@ public class EsdEditorScreen : EditorScreen
         {
             FileMenu();
             EditMenu();
+            ViewMenu();
             ImGui.EndMenuBar();
         }
 
@@ -135,6 +136,25 @@ public class EsdEditorScreen : EditorScreen
                 View.Commands.ContextMenu(row);
             else
                 ImGui.TextDisabled(LOC.Get("ESD_Edit_Select_Block"));
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
+        {
+            // Code view
+            if (ImGui.MenuItem($"{LOC.Get("ESD_Code_Toggle")}##esdCodeViewToggle"))
+                CFG.Current.EsdEditor_Code_View = !CFG.Current.EsdEditor_Code_View;
+            GUI.Tooltip(LOC.Get("ESD_Code_Toggle_TT"));
+            GUI.ShowActiveStatus(CFG.Current.EsdEditor_Code_View);
+
+            // Tools window
+            if (ImGui.MenuItem($"{LOC.Get("ESD_View_Toggle_Tools")}##esdToolWindowToggle"))
+                CFG.Current.Interface_EsdEditor_ToolWindow = !CFG.Current.Interface_EsdEditor_ToolWindow;
+            GUI.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ToolWindow);
 
             ImGui.EndMenu();
         }
