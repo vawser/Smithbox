@@ -170,7 +170,8 @@ public static class FocusManager
             or EditorFocusContext.EmevdEditor_FileList
             or EditorFocusContext.EmevdEditor_EventList
             or EditorFocusContext.EmevdEditor_Script
-            or EditorFocusContext.EmevdEditor_Properties;
+            or EditorFocusContext.EmevdEditor_Properties
+            or EditorFocusContext.EmevdEditor_Tools;
     }
 
     public static bool IsInHavokEditor()
@@ -291,6 +292,7 @@ public enum EditorFocusContext
     EmevdEditor_EventList,
     EmevdEditor_Script,
     EmevdEditor_Properties,
+    EmevdEditor_Tools,
 
     HavokEditor_None,
     HavokEditor_CategoryList,

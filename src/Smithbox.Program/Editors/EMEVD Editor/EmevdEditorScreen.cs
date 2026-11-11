@@ -88,6 +88,25 @@ public class EmevdEditorScreen : EditorScreen
 
         if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             View.ActionManager.RedoAction();
+
+        // Block edits: from the Script window, and not while typing in a box (Delete edits the text)
+        if (FocusManager.Focus != EditorFocusContext.EmevdEditor_Script || ImGui.GetIO().WantTextInput)
+            return;
+
+        var s = View.Structure;
+
+        if (InputManager.IsPressed(KeybindID.Delete))
+            s.Delete();
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+            s.Duplicate();
+        if (InputManager.IsPressed(KeybindID.Copy))
+            s.Copy();
+        if (InputManager.IsPressed(KeybindID.Paste))
+            s.Paste();
+        if (InputManager.IsPressed(KeybindID.Reorder_Up))
+            s.Step(false);
+        if (InputManager.IsPressed(KeybindID.Reorder_Down))
+            s.Step(true);
     }
 
     public void FileMenu()
@@ -134,6 +153,9 @@ public class EmevdEditorScreen : EditorScreen
                 View.ActionManager.RedoAction();
             }
 
+            ImGui.Separator();
+            EmevdBlockView.EditItems(View.Structure);
+
             ImGui.EndMenu();
         }
     }
@@ -142,12 +164,28 @@ public class EmevdEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
         {
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Structured")}##structuredToggle"))
+            {
+                CFG.Current.EmevdEditor_Structured_View = !CFG.Current.EmevdEditor_Structured_View;
+            }
+            GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Structured_TT"));
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Structured_View);
+
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Arg_Names")}##argNamesToggle"))
             {
                 CFG.Current.EmevdEditor_Show_Arg_Names = !CFG.Current.EmevdEditor_Show_Arg_Names;
             }
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Arg_Names_TT"));
             GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Arg_Names);
+
+            ImGui.Separator();
+
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Tools")}##toolWindowToggle"))
+            {
+                CFG.Current.Interface_EmevdEditor_ToolWindow = !CFG.Current.Interface_EmevdEditor_ToolWindow;
+            }
+            GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Tools_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

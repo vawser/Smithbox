@@ -38,6 +38,14 @@ public class EmevdProperties
         }
         else
         {
+            // Several lines: block edits act on all of them; the fields below are the primary line's
+            if (selection.Count > 1)
+            {
+                ImGui.TextColored(UI.Current.ImGui_AliasName_Text, LOC.Get("EMEVD_Properties_Many", selection.Count));
+                GUI.Tooltip(LOC.Get("EMEVD_Properties_Many_TT"));
+                ImGui.Separator();
+            }
+
             DrawInstruction(script, script.Lines[selection.InstructionIndex]);
         }
 

@@ -69,7 +69,7 @@ public class EmevdLine
 
 /// <summary>
 /// An event worked out for the block view: every instruction decoded with the layouts, the skip/goto spans with
-/// their bracket lanes, and the event's parameter slots. Flat (P1): structure comes with P3's decompiler.
+/// their bracket lanes, and the event's parameter slots. <see cref="EmevdStructure"/> builds the nested view on top.
 /// </summary>
 public class EmevdScript
 {
@@ -77,6 +77,9 @@ public class EmevdScript
     public List<EmevdLine> Lines = new();
     public List<EmevdSpan> Spans = new();
     public int LaneCount;
+
+    /// <summary>The structured tree (P3), built by the block view when it shows the structured layout</summary>
+    public List<EmevdNode> Nodes;
 
     /// <summary>The event's parameter slots (source byte, size), e.g. X0_4, X4_4</summary>
     public List<(long Source, int Size)> Slots = new();
@@ -224,10 +227,16 @@ public class EmevdScript
             }
         }
 
+        LaneCount = AssignLanes(Spans);
+    }
+
+    /// <summary>Gives each span the lowest lane free over its lines; returns the number of lanes</summary>
+    public static int AssignLanes(IEnumerable<EmevdSpan> spans)
+    {
         // Longest first, so the outer brackets get the outer lanes
         var lanes = new List<List<EmevdSpan>>();
 
-        foreach (var span in Spans.OrderByDescending(s => s.To - s.From).ThenBy(s => s.From))
+        foreach (var span in spans.OrderByDescending(s => s.To - s.From).ThenBy(s => s.From))
         {
             var lane = 0;
             while (lane < lanes.Count && lanes[lane].Any(o => o.From <= span.To && span.From <= o.To))
@@ -240,7 +249,6 @@ public class EmevdScript
             span.Lane = lane;
         }
 
-        LaneCount = lanes.Count;
+        return lanes.Count;
     }
-
 }

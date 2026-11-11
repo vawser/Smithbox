@@ -1295,8 +1295,12 @@ public class CFG
     /// EMEVD Editor (event scripts)
     ///------------------------------------------------------------
     public bool EmevdEditor_Show_Arg_Names = true;
+    public bool EmevdEditor_Structured_View = true;
     public bool EmevdEditor_Allow_Unmodified_Save = false;
     public bool EmevdEditor_Allow_Automatic_Save = true;
+    public bool Interface_EmevdEditor_ToolWindow = true;
+    public bool Interface_EmevdEditor_Tool_Palette = true;
+    public bool Interface_EmevdEditor_Tool_Problems = true;
     #endregion
 
     #region FX Editor
