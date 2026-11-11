@@ -121,6 +121,14 @@
       "Text": "[FX Editor] Failed to load the FXR schema."
     },
     {
+      "Key": "PROJECT_Data_Setup_Behavior_Data_PASS",
+      "Text": "[Behavior Editor] Loaded the behbnds."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Behavior_Data_FAIL",
+      "Text": "[Behavior Editor] Failed to load the behbnds."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
       "Text": "[Project] Setup Common Data."
     },

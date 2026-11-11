@@ -241,6 +241,13 @@ public class HavokFileView
             {
                 ImGui.TextDisabled(LOC.Get("HAVOK_FileView_Hidden_Files", hiddenFileCount));
                 GUI.Tooltip(LOC.Get("HAVOK_FileView_Hidden_Files_TT"));
+
+                // AC6 behbnds hold .bhv state machines, which the Behavior Editor edits
+                if (View.Selection.CategoryMode is HavokCategoryMode.Behavior
+                    && Project.Descriptor.ProjectType is ProjectType.AC6)
+                {
+                    ImGui.TextWrapped(LOC.Get("BHV_HavokNote_AC6"));
+                }
             }
 
             // Right-clicking empty space offers Paste, so files can be pasted without selecting one first

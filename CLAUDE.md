@@ -11,12 +11,12 @@ The game data locations are found in the game_data.txt file.
 For ER, use the VFS functionality from Smithbox to access the files.
 
 # Tools
-Create projects in the Smithbox/Tools folder for temporary tools, rather than using the scratchpad.
+Create projects in the Smithbox/Claude/Tools folder for temporary tools, rather than using the scratchpad.
 Use C# when writing temporary tools, except when intructed to use other languages.
 Do not use Python.
 
 # Plans
-Create planning and analysis markdown (.MD) files in the Smithbox/Documentation/Claude folder.
+Create planning and analysis markdown (.MD) files in the Smithbox/Claude/Documentation folder.
 
 # Verification
 Do not try to verify changes by launching the program. Pass to the user and tell them what to check for. If additional information is needed during this step, include temporary changes to print additional diagnostics to a log that the user can pass back.

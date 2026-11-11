@@ -1275,6 +1275,16 @@ public class CFG
 
     #endregion
 
+    #region Behavior Editor
+    ///------------------------------------------------------------
+    /// Behavior Editor (AC6 .bhv)
+    ///------------------------------------------------------------
+    public bool BehaviorEditor_Allow_Unmodified_Save = false;
+    public bool BehaviorEditor_Allow_Automatic_Save = true;
+    public bool BehaviorEditor_Properties_Show_Hex = true;
+    public bool BehaviorEditor_Transitions_Game_Order = true;
+    #endregion
+
     #region FX Editor
     public bool FxEditor_Allow_Automatic_Save = true;
 

@@ -44,6 +44,12 @@ public static class EditorConditions
         return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
     }
 
+    /// <summary>The Behavior Editor: AC6 .bhv state machines in chr behbnds</summary>
+    public static bool SupportsBehaviorEditor(ProjectType curType)
+    {
+        return curType is ProjectType.AC6;
+    }
+
     public static bool SupportsHavokEditor(ProjectType curType)
     {
         if (curType

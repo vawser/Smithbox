@@ -155,6 +155,14 @@ public static class FocusManager
             or EditorFocusContext.FxEditor_Tools;
     }
 
+    public static bool IsInBehaviorEditor()
+    {
+        return Focus is EditorFocusContext.BehaviorEditor_None
+            or EditorFocusContext.BehaviorEditor_FileList
+            or EditorFocusContext.BehaviorEditor_States
+            or EditorFocusContext.BehaviorEditor_Properties;
+    }
+
     public static bool IsInHavokEditor()
     {
         if (Focus is EditorFocusContext.HavokEditor_None
@@ -261,6 +269,12 @@ public enum EditorFocusContext
     FxEditor_Inspector,
     FxEditor_Viewport,
     FxEditor_Tools,
+
+    BehaviorEditor_None,
+    BehaviorEditor_FileList,
+    BehaviorEditor_States,
+    BehaviorEditor_Properties,
+
     HavokEditor_None,
     HavokEditor_CategoryList,
     HavokEditor_BinderList,

@@ -30,7 +30,7 @@ namespace SoulsFormats
     /// All offsets in the file are relative to 0x20. The data is written in a fixed sequential order:
     /// header, preamble, states, state data, transitions, transition params, conditions, condition data,
     /// animations, struct C, struct D, struct DA, strings. Variable-length payloads are sized from that order.
-    /// See Documentation/Claude/BHV Format.md.
+    /// See Claude/Documentation/BHV Format.md.
     /// </remarks>
     public class BHV : SoulsFile<BHV>
     {
@@ -463,7 +463,7 @@ namespace SoulsFormats
         public class State
         {
             /// <summary>
-            /// Identifier of the state; matches the state index in weapon files, but not in basenormal.bhv.
+            /// Identifier of the state; unique within a file, often but not always equal to the state index.
             /// </summary>
             public short ID { get; set; }
 
