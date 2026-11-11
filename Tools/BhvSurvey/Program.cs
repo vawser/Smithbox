@@ -22,6 +22,8 @@ if (mode == "enummatch") { EnumMatch.Run(outRootEnv, args[1], int.Parse(args[2])
 if (mode == "parammatch") { ParamMatch.Run(outRootEnv, args[1], int.Parse(args[2])); return; }
 if (mode == "refmatch") { RefMatch.Run(outRootEnv, int.Parse(args[1])); return; }
 if (mode == "statedataids") { StateDataIds.Run(outRootEnv, int.Parse(args[1])); return; }
+if (mode == "findref") { FindRef.Run(args[1], args.Skip(2)); return; }
+if (mode == "animrefs") { AnimRefs.Run(args[1], args.Skip(2)); return; }
 if (mode == "dump") { Dump.Run(args[1]); return; }
 var gamePaths = File.ReadAllLines(Path.Combine("..", "..", "Claude", "game_data.txt"))
     .Select(l => l.Split(':', 2)).Where(p => p.Length == 2)

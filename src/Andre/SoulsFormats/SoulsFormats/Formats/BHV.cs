@@ -69,7 +69,9 @@ namespace SoulsFormats
         public short StructCSize { get; set; }
 
         /// <summary>
-        /// Unknown fixed-size records of <see cref="StructCSize"/> bytes.
+        /// Templates for per-instance working buffers, <see cref="StructCSize"/> bytes each. At load the game
+        /// allocates one buffer per record of a size it chooses (at least the record size), zeroes it and copies
+        /// the record in (exe 0x140819560); version 1 files used a fixed 0x100 stride.
         /// </summary>
         public List<byte[]> StructCs { get; set; }
 
@@ -110,13 +112,13 @@ namespace SoulsFormats
         };
 
         /// <summary>Size of a state for this version.</summary>
-        public int StateSize => Version >= 10 ? 0xA0 : 0x80;
+        public int StateSize => Version >= 10 ? 0xA0 : 0x80; // exe accessor 0x14081A400: 0x80 below v10
 
         /// <summary>Size of an animation record for this version.</summary>
-        public int AnimationSize => Version switch { 5 => 0x40, 6 => 0x50, _ => 0x60 };
+        public int AnimationSize => Version >= 7 ? 0x60 : Version == 6 ? 0x50 : Version >= 4 ? 0x40 : 0x30; // exe 0x14081A0C0
 
         /// <summary>Size of a struct DA for this version.</summary>
-        public int StructDASize => Version >= 10 ? 0x30 : 0x20;
+        public int StructDASize => Version >= 8 ? 0x30 : 0x20; // exe 0x14081A260
 
         /// <summary>
         /// Checks whether the data appears to be a file of this format.
@@ -421,8 +423,23 @@ namespace SoulsFormats
             /// <summary>Animation record: f32, 0.2 in almost every record; probably the blend time.</summary>
             public const int AnimationBlendTime = 0x20;
 
+            /// <summary>
+            /// Weapon animation records: four (s16 part, s16 value) pairs, parts 15–18 with values 25–100;
+            /// probably per-body-part blend weights in percent (0xFFFF pairs when unused).
+            /// </summary>
+            public const int AnimationPartWeights = 0x44;
+
             /// <summary>Weapon preamble: s16 state indices at 0x2, 0x6, 0x8, 0xA and 0x16.</summary>
             public const int WeaponPreambleStateIndex = 0x8;
+
+            /// <summary>
+            /// Base preamble: s16 state indices read by dedicated exe getters (0x140818E40, 0x140819140, 0x140818EC0)
+            /// at 0xCC, 0xCE and 0xD0, plus 0xD4 from version 11 (0x140819160).
+            /// </summary>
+            public const int BasePreambleStateIndices = 0xCC;
+
+            /// <summary>Base preamble: u8 flag at 0xA4 gating a u8 value at 0xA5 (exe 0x140819E00).</summary>
+            public const int BasePreambleFlag = 0xA4;
 
             /// <summary>Condition type 43 data: SpEffectParam row ID, s32. Also holds in versions 5 and 6.</summary>
             public const int Condition43SpEffectId = 0x4;

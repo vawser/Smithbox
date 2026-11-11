@@ -54,7 +54,8 @@ public class MatDataTransferTool
         {
             GUI.WrappedText(LOC.Get("MAT_Tools_DataTransfer_Import_Hint"));
 
-            // TODO
+            // Export and import are on each material, in the File List (MatDataTransfer)
+            ImGui.TextDisabled(LOC.Get("MAT_Transfer_Menu_Hint"));
 
             ImGui.EndTabItem();
         }
@@ -65,7 +66,8 @@ public class MatDataTransferTool
         // Import
         if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header_Import")}##importHeader"))
         {
-            // TODO
+            // Export and import are on each material, in the File List (MatDataTransfer)
+            ImGui.TextDisabled(LOC.Get("MAT_Transfer_Menu_Hint"));
 
             ImGui.EndMenu();
         }
@@ -80,7 +82,8 @@ public class MatDataTransferTool
         {
             GUI.WrappedText(LOC.Get("MAT_Tools_DataTransfer_Export_Hint"));
 
-            // TODO
+            // Export and import are on each material, in the File List (MatDataTransfer)
+            ImGui.TextDisabled(LOC.Get("MAT_Transfer_Menu_Hint"));
 
             ImGui.EndTabItem();
         }
@@ -91,7 +94,8 @@ public class MatDataTransferTool
         // Export
         if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_DataTransfer_Header_Export")}##exportHeader"))
         {
-            // TODO
+            // Export and import are on each material, in the File List (MatDataTransfer)
+            ImGui.TextDisabled(LOC.Get("MAT_Transfer_Menu_Hint"));
 
             ImGui.EndMenu();
         }

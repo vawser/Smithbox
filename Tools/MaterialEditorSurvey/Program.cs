@@ -51,6 +51,8 @@ foreach (var gameName in games)
         if (modes is "rebuild") RebuildSurvey.Run(game);
         if (modes is "shaders") ShaderSurvey.Run(game);
         if (modes is "usage") UsageSurvey.Run(game, gamePaths[gameName]);
+        if (modes is "query") QuerySurvey.Run(game);
+        if (modes is "json") JsonSurvey.Run(game);
     }
 }
 

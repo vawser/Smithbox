@@ -6,7 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 
-// BhvMemProbe [sampleSeconds]   (run from src/Smithbox.Data while armoredcore6.exe is running OFFLINE)
+// BhvMemProbe [states] [sampleSeconds]   (run from src/Smithbox.Data while armoredcore6.exe is running OFFLINE)
+//   states: instead of steps 2-4, watch every pointer to a state record and log state changes (see StateTrack.cs)
+//   instances: find state machine instances via their reader view and log state-index changes (InstanceTrack.cs)
 //
 // Read-only: opens the game process with PROCESS_VM_READ | PROCESS_QUERY_INFORMATION and never writes to it.
 //   1. finds every loaded .bhv buffer by matching headers against the game's own files, and compares the bytes
@@ -17,7 +19,10 @@ using System.Text.Json;
 //      to drop a numbered marker into the log
 // Output: BhvMemProbe.log in the working directory. Addresses in the exe are given as static VAs (base 0x140000000).
 
-int sampleSeconds = args.Length > 0 ? int.Parse(args[0]) : 90;
+bool stateMode = args.Length > 0 && args[0] == "states";
+bool instanceMode = args.Length > 0 && args[0] == "instances";
+var numArgs = stateMode || instanceMode ? args.Skip(1).ToArray() : args;
+int sampleSeconds = numArgs.Length > 0 ? int.Parse(numArgs[0]) : 90;
 using var log = new StreamWriter("BhvMemProbe.log", false, Encoding.UTF8) { AutoFlush = true };
 void Log(string s) { Console.WriteLine(s); log.WriteLine(s); }
 
@@ -87,6 +92,7 @@ Log($"{regions.Count} readable regions, {regions.Sum(r => (double)r.Size) / (1 <
 
 // ---- 2. Loaded .bhv buffers
 var found = new List<(ulong Addr, int Len, string Name, byte[] Orig)>();
+var foundCands = new Dictionary<ulong, List<(string Name, byte[] Bytes)>>();
 var seen = new HashSet<ulong>();
 mem.Scan(regions, 0x40, (addr, buf, n) =>
 {
@@ -97,23 +103,31 @@ mem.Scan(regions, 0x40, (addr, buf, n) =>
         if (!sizes.Contains(BitConverter.ToInt32(buf, o + 4))) continue;
         var key = Convert.ToHexString(buf, o, 0x40);
         if (!files.TryGetValue(key, out var cands) || !seen.Add(addr + (ulong)o)) continue;
+        foundCands[addr + (ulong)o] = cands;
         found.Add((addr + (ulong)o, cands[0].Bytes.Length, string.Join(" | ", cands.Select(c => c.Name).Take(3)) + (cands.Count > 3 ? $" (+{cands.Count - 3})" : ""), cands[0].Bytes));
     }
 });
 Log($"\n== {found.Count} loaded .bhv buffers");
-foreach (var f in found.OrderBy(f => f.Addr))
+found = found.OrderBy(f => f.Addr).ToList();
+for (int fi = 0; fi < found.Count; fi++)
 {
+    var f = found[fi];
     var live = mem.Read(f.Addr, f.Len);
     string cmp;
     if (live == null) cmp = "unreadable";
     else
     {
+        // several files can share a header; compare against the closest one
+        var best = foundCands[f.Addr].OrderBy(c => Enumerable.Range(0, f.Len).Count(i => live[i] != c.Bytes[i])).First();
+        f = found[fi] = (f.Addr, f.Len, best.Name + (foundCands[f.Addr].Count > 1 ? $" (of {foundCands[f.Addr].Count} same-header files)" : ""), best.Bytes);
         var diffs = Enumerable.Range(0, f.Len).Where(i => live[i] != f.Orig[i]).ToList();
         cmp = diffs.Count == 0 ? "identical to file" : $"{diffs.Count} bytes differ, first at: {string.Join(", ", diffs.Take(10).Select(d => $"{d:X}({Label(f.Orig, d)})"))}";
     }
     Log($"  {f.Addr:X} len {f.Len:X} {f.Name}: {cmp}");
 }
 if (found.Count == 0) { Log("No .bhv data found. Load into a mission or the test area with your AC, then run again."); return; }
+if (stateMode) { StateTrack.Run(mem, regions, found, Log, sampleSeconds, Static, IsVtable); return; }
+if (instanceMode) { InstanceTrack.Run(mem, regions, found, Log, sampleSeconds, modBase, Static, IsVtable); return; }
 
 // ---- 3. Pointers into the buffers
 var ranges = found.Select((f, i) => (Start: f.Addr, End: f.Addr + (ulong)f.Len, I: i)).OrderBy(r => r.Start).ToArray();

@@ -236,6 +236,33 @@ public class MaterialFileList
 
         ImGui.Separator();
 
+        // Data transfer (F9): the material as JSON. Done after the list is drawn, as they change it or open dialogs
+        if (ImGui.Selectable($"{LOC.Get("MAT_Transfer_Copy")}##copyMaterialJson"))
+        {
+            MatDataTransfer.CopyToClipboard(file);
+        }
+        GUI.Tooltip(LOC.Get("MAT_Transfer_Copy_TT"));
+
+        if (ImGui.Selectable($"{LOC.Get("MAT_Transfer_Paste")}##pasteMaterialJson"))
+        {
+            DeferredAction = () => MatDataTransfer.PasteOver(Parent, binder, file);
+        }
+        GUI.Tooltip(LOC.Get("MAT_Transfer_Paste_TT"));
+
+        if (ImGui.Selectable($"{LOC.Get("MAT_Transfer_Export")}##exportMaterialJson"))
+        {
+            DeferredAction = () => MatDataTransfer.Export(Project, file);
+        }
+        GUI.Tooltip(LOC.Get("MAT_Transfer_Export_TT"));
+
+        if (ImGui.Selectable($"{LOC.Get("MAT_Transfer_Import")}##importMaterialJson"))
+        {
+            DeferredAction = () => MatDataTransfer.ImportNew(Parent, binder, file);
+        }
+        GUI.Tooltip(LOC.Get("MAT_Transfer_Import_TT"));
+
+        ImGui.Separator();
+
         // Delete
         if (ImGui.Selectable($"{LOC.Get("MAT_FileList_Action_Delete")}##deleteFile"))
         {

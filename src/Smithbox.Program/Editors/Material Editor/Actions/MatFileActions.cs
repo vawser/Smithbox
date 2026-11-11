@@ -92,6 +92,39 @@ public class MatDuplicateFile : MatFileAction
 }
 
 /// <summary>
+/// Adds a new material file, made elsewhere (an import), to a binder at a place in its order
+/// </summary>
+public class MatInsertFile : MatFileAction
+{
+    private readonly MaterialFileWrapper File;
+    private readonly int Index;
+
+    public MatInsertFile(MaterialEditorScreen editor, MaterialBank bank, IMaterialBinder binder, MaterialFileWrapper file, int index)
+        : base(editor, bank, binder)
+    {
+        File = file;
+        Index = index;
+        File.MarkChanged();
+    }
+
+    public override ActionEvent Execute()
+    {
+        Binder.InsertFile(Index, File);
+        MaterialPreview.Queue(File.Key);
+        Finish(false);
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        Binder.RemoveFile(File.Key);
+        MaterialPreview.Queue(File.Key);
+        Finish(true);
+        return ActionEvent.NoEvent;
+    }
+}
+
+/// <summary>
 /// Removes a material file from its binder. Undo puts the same file back where it was.
 /// </summary>
 public class MatDeleteFile : MatFileAction

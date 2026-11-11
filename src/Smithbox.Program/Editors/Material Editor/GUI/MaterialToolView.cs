@@ -18,6 +18,7 @@ public class MaterialToolWindow
 
     public MatDataTransferTool DataTransferTool;
     public MatCheckTool CheckTool;
+    public MatSearchTool SearchTool;
 
     private ToolSections Sections = new();
 
@@ -28,6 +29,7 @@ public class MaterialToolWindow
 
         DataTransferTool = new(view, project);
         CheckTool = new(view, project);
+        SearchTool = new(view, project);
     }
 
     public void Draw()
@@ -42,6 +44,15 @@ public class MaterialToolWindow
         }
 
         Sections.Begin();
+
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        if (CFG.Current.Interface_MaterialEditor_Tool_Search)
+        {
+            // Material Search and Mass Edit
+            SearchTool.OnToolWindow();
+        }
 
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
@@ -75,6 +86,13 @@ public class MaterialToolWindow
                 CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
             }
             GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
+
+            // Material Search
+            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Search")}##materialSearchToolToggle"))
+            {
+                CFG.Current.Interface_MaterialEditor_Tool_Search = !CFG.Current.Interface_MaterialEditor_Tool_Search;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_Search);
 
             // Material Check
             if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Check")}##materialCheckToolToggle"))

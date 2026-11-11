@@ -1,0 +1,276 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_SearchTool_Header",
+      "Text": "Material Search"
+    },
+    {
+      "Key": "MAT_ToolWindow_View_Toggle_Material_Search",
+      "Text": "Material Search"
+    },
+    {
+      "Key": "MAT_SearchTool_Hint",
+      "Text": "Finds materials, and the params, samplers and textures in them, across the binders of the current tab. Every box filled in must match. The results can then be edited together."
+    },
+    {
+      "Key": "MAT_SearchTool_Scope_Header",
+      "Text": "Scope"
+    },
+    {
+      "Key": "MAT_SearchTool_Scope_Header_TT",
+      "Text": "Which binders to search."
+    },
+    {
+      "Key": "MAT_SearchTool_Scope_All",
+      "Text": "Every binder of this tab"
+    },
+    {
+      "Key": "MAT_SearchTool_Scope_Binder",
+      "Text": "Selected binder"
+    },
+    {
+      "Key": "MAT_SearchTool_No_Binder",
+      "Text": "Select a binder first."
+    },
+    {
+      "Key": "MAT_SearchTool_Material_Header",
+      "Text": "Material Name"
+    },
+    {
+      "Key": "MAT_SearchTool_Material_Header_TT",
+      "Text": "Part of the material's name (e.g. c4800_ or AEG007)."
+    },
+    {
+      "Key": "MAT_SearchTool_Shader_Header",
+      "Text": "Shader"
+    },
+    {
+      "Key": "MAT_SearchTool_Shader_Header_TT",
+      "Text": "Part of the material's shader path (e.g. [Sway] or DetailBlend)."
+    },
+    {
+      "Key": "MAT_SearchTool_Entry_Header",
+      "Text": "Param / Sampler Name"
+    },
+    {
+      "Key": "MAT_SearchTool_Entry_Header_TT",
+      "Text": "Part of a param's name or a sampler's or texture's type (e.g. snp_0_color or AlbedoMap). With this, value or path filled in, the results are entries, not materials."
+    },
+    {
+      "Key": "MAT_SearchTool_Value_Header",
+      "Text": "Param Value"
+    },
+    {
+      "Key": "MAT_SearchTool_Value_Header_TT",
+      "Text": "A param's value. Lists of numbers are written comma separated (1, 0.5, 0). The comparisons other than Contains read it as a number, and a list matches when any of its numbers does."
+    },
+    {
+      "Key": "MAT_SearchTool_Comparison_TT",
+      "Text": "How the value is compared."
+    },
+    {
+      "Key": "MAT_SearchTool_Comparison_Contains",
+      "Text": "Contains"
+    },
+    {
+      "Key": "MAT_SearchTool_Comparison_Equals",
+      "Text": "Equals (number)"
+    },
+    {
+      "Key": "MAT_SearchTool_Comparison_LessThan",
+      "Text": "Less than"
+    },
+    {
+      "Key": "MAT_SearchTool_Comparison_GreaterThan",
+      "Text": "Greater than"
+    },
+    {
+      "Key": "MAT_SearchTool_Path_Header",
+      "Text": "Texture Path"
+    },
+    {
+      "Key": "MAT_SearchTool_Path_Header_TT",
+      "Text": "Part of a sampler's or texture's path (e.g. _a.tif or AEG007)."
+    },
+    {
+      "Key": "MAT_SearchTool_Exact",
+      "Text": "Exact"
+    },
+    {
+      "Key": "MAT_SearchTool_Exact_TT",
+      "Text": "Texts must equal the input rather than contain it (ignoring case). Exact numbers compare as numbers, so 1 finds 1.0."
+    },
+    {
+      "Key": "MAT_SearchTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "MAT_SearchTool_Actions_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "MAT_SearchTool_Search",
+      "Text": "Search"
+    },
+    {
+      "Key": "MAT_SearchTool_Search_TT",
+      "Text": "Find what matches every box filled in."
+    },
+    {
+      "Key": "MAT_SearchTool_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "MAT_SearchTool_Clear_TT",
+      "Text": "Empty the inputs and the results."
+    },
+    {
+      "Key": "MAT_SearchTool_Results_Header",
+      "Text": "Results"
+    },
+    {
+      "Key": "MAT_SearchTool_Results_Header_TT",
+      "Text": "Click a result to open the material and search its properties for the entry."
+    },
+    {
+      "Key": "MAT_SearchTool_Not_Run",
+      "Text": "Not run yet."
+    },
+    {
+      "Key": "MAT_SearchTool_Results_Summary",
+      "Text": "{0} results in {1} materials."
+    },
+    {
+      "Key": "MAT_SearchTool_Results_Capped",
+      "Text": "The list shows the first {0}; editing applies to all of them."
+    },
+    {
+      "Key": "MAT_SearchTool_Edit_Values_Header",
+      "Text": "Edit Param Values ({0})"
+    },
+    {
+      "Key": "MAT_SearchTool_Edit_Values_Header_TT",
+      "Text": "Change the value of every param in the results. Each keeps its type and length."
+    },
+    {
+      "Key": "MAT_SearchTool_Operation_TT",
+      "Text": "Set: the value to give (one number for every component, or one per component; true/false for bools). Add / Multiply: numbers added to or multiplying each component."
+    },
+    {
+      "Key": "MAT_SearchTool_Operation_Set",
+      "Text": "Set"
+    },
+    {
+      "Key": "MAT_SearchTool_Operation_Add",
+      "Text": "Add"
+    },
+    {
+      "Key": "MAT_SearchTool_Operation_Multiply",
+      "Text": "Multiply"
+    },
+    {
+      "Key": "MAT_SearchTool_Apply",
+      "Text": "Apply"
+    },
+    {
+      "Key": "MAT_SearchTool_Apply_Values_TT",
+      "Text": "Change every param result as one undo step. Values the input doesn't fit are left as they are."
+    },
+    {
+      "Key": "MAT_SearchTool_Edit_Paths_Header",
+      "Text": "Edit Texture Paths ({0})"
+    },
+    {
+      "Key": "MAT_SearchTool_Edit_Paths_Header_TT",
+      "Text": "Replace text in the path of every sampler or texture in the results (ignoring case), e.g. to point them at your own textures."
+    },
+    {
+      "Key": "MAT_SearchTool_Find",
+      "Text": "Find"
+    },
+    {
+      "Key": "MAT_SearchTool_Replace",
+      "Text": "Replace with"
+    },
+    {
+      "Key": "MAT_SearchTool_Apply_Paths_TT",
+      "Text": "Change every path result that contains the text, as one undo step."
+    },
+    {
+      "Key": "MAT_SearchTool_Applied",
+      "Text": "Changed {0}, left {1} the input didn't fit."
+    },
+    {
+      "Key": "MAT_Transfer_Menu_Hint",
+      "Text": "Right-click a material in the File List to copy, paste, export or import it as JSON."
+    },
+    {
+      "Key": "MAT_Transfer_Copy",
+      "Text": "Copy as JSON"
+    },
+    {
+      "Key": "MAT_Transfer_Copy_TT",
+      "Text": "Put the whole material on the clipboard as JSON, to paste over another material or keep elsewhere."
+    },
+    {
+      "Key": "MAT_Transfer_Paste",
+      "Text": "Paste Over"
+    },
+    {
+      "Key": "MAT_Transfer_Paste_TT",
+      "Text": "Replace this material's contents with the material on the clipboard (copied as JSON). Its name stays. One undo brings it back."
+    },
+    {
+      "Key": "MAT_Transfer_Export",
+      "Text": "Export as JSON..."
+    },
+    {
+      "Key": "MAT_Transfer_Export_TT",
+      "Text": "Save the material to a JSON file, to share or edit by hand."
+    },
+    {
+      "Key": "MAT_Transfer_Import",
+      "Text": "Import JSON as New Material..."
+    },
+    {
+      "Key": "MAT_Transfer_Import_TT",
+      "Text": "Add the material of a JSON file to this binder, after this one and in its folder, under the name the file gives (numbered if taken)."
+    },
+    {
+      "Key": "MAT_Transfer_Copied",
+      "Text": "Copied {0} to the clipboard as JSON."
+    },
+    {
+      "Key": "MAT_Transfer_Pasted",
+      "Text": "Pasted over {0}."
+    },
+    {
+      "Key": "MAT_Transfer_Exported",
+      "Text": "Exported to {0}"
+    },
+    {
+      "Key": "MAT_Transfer_Imported",
+      "Text": "Imported {0} into {1}."
+    },
+    {
+      "Key": "MAT_Transfer_Export_Failed",
+      "Text": "Couldn't export to {0}"
+    },
+    {
+      "Key": "MAT_Transfer_Import_Failed",
+      "Text": "Couldn't read {0}"
+    },
+    {
+      "Key": "MAT_Transfer_Not_Material",
+      "Text": "That isn't a material copied or exported from the Material Editor."
+    },
+    {
+      "Key": "MAT_Transfer_Wrong_Kind",
+      "Text": "That is a {0}, and this is a {1} binder."
+    },
+    {
+      "Key": "MAT_Transfer_Bad_Param",
+      "Text": "Param {0} has a type or value that doesn't fit, so nothing was changed."
+    }
+  ]
+}
