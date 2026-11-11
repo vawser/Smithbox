@@ -96,8 +96,24 @@ public class EmevdFileWrapper
     /// <summary>The kind of file, for grouping: common, common_func or a map</summary>
     public bool IsCommon => Name.StartsWith("common", StringComparison.OrdinalIgnoreCase);
 
-    /// <summary>Reads the file if it isn't yet. Returns false if it can't be read (see <see cref="LoadError"/>).</summary>
+    private readonly object LoadLock = new();
+
+    /// <summary>
+    /// Reads the file if it isn't yet. Returns false if it can't be read (see <see cref="LoadError"/>). Safe to call
+    /// from the Tools window's background scans while the UI reads other files.
+    /// </summary>
     public bool EnsureLoaded()
+    {
+        if (Emevd != null)
+            return true;
+
+        lock (LoadLock)
+        {
+            return Load();
+        }
+    }
+
+    private bool Load()
     {
         if (Emevd != null)
             return true;
@@ -133,11 +149,8 @@ public class EmevdFileWrapper
                 }
             }
 
+            Reindex(emevd);
             Emevd = emevd;
-            EventsById = new();
-
-            foreach (var ev in emevd.Events)
-                EventsById.TryAdd(ev.ID, ev);
 
             return true;
         }
@@ -149,8 +162,29 @@ public class EmevdFileWrapper
         }
     }
 
+    // The revision the ID index was built at: adding, removing or renumbering an event is an edit, so it's rebuilt
+    private int IndexRevision;
+
+    private void Reindex(EMEVD emevd)
+    {
+        var index = new Dictionary<long, EMEVD.Event>();
+        foreach (var ev in emevd.Events)
+            index.TryAdd(ev.ID, ev);
+
+        IndexRevision = Revision;
+        EventsById = index;
+    }
+
     public EMEVD.Event FindEvent(long id)
     {
-        return EventsById != null && EventsById.TryGetValue(id, out var ev) ? ev : null;
+        if (Emevd == null)
+            return null;
+
+        if (IndexRevision != Revision)
+            Reindex(Emevd);
+
+        return EventsById.TryGetValue(id, out var ev) ? ev : null;
     }
+
+    public bool HasEvent(long id) => FindEvent(id) != null;
 }

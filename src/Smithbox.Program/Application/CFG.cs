@@ -1301,6 +1301,8 @@ public class CFG
     public bool Interface_EmevdEditor_ToolWindow = true;
     public bool Interface_EmevdEditor_Tool_Palette = true;
     public bool Interface_EmevdEditor_Tool_Problems = true;
+    public bool Interface_EmevdEditor_Tool_Search = true;
+    public bool Interface_EmevdEditor_Tool_CalledBy = true;
     #endregion
 
     #region FX Editor

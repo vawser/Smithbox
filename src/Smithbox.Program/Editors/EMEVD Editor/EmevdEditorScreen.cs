@@ -156,6 +156,13 @@ public class EmevdEditorScreen : EditorScreen
             ImGui.Separator();
             EmevdBlockView.EditItems(View.Structure);
 
+            ImGui.Separator();
+            if (ImGui.BeginMenu($"{LOC.Get("EMEVD_Event_Menu")}##emevdEventSubmenu"))
+            {
+                View.EventCommands.MenuItems();
+                ImGui.EndMenu();
+            }
+
             ImGui.EndMenu();
         }
     }

@@ -17,6 +17,7 @@ public class EmevdEventList
 
     // The filtered list, rebuilt when the file or filter changes
     private EmevdFileWrapper CachedFile;
+    private int CachedRevision = -1;
     private string CachedFilter;
     private bool CachedExact;
     private List<EMEVD.Event> Visible = new();
@@ -50,6 +51,13 @@ public class EmevdEventList
         {
             Refresh(file);
             DrawEvents(file);
+
+            // Right-click on the empty space below the events: New Event
+            if (ImGui.BeginPopupContextWindow("##emevdEventListMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+            {
+                View.EventCommands.MenuItems();
+                ImGui.EndPopup();
+            }
         }
 
         ImGui.EndChild();
@@ -57,10 +65,12 @@ public class EmevdEventList
 
     private void Refresh(EmevdFileWrapper file)
     {
-        if (file == CachedFile && Filter == CachedFilter && ExactFilter == CachedExact)
+        // Adding, removing or renumbering an event is an edit, so the revision catches it
+        if (file == CachedFile && file.Revision == CachedRevision && Filter == CachedFilter && ExactFilter == CachedExact)
             return;
 
         CachedFile = file;
+        CachedRevision = file.Revision;
         CachedFilter = Filter;
         CachedExact = ExactFilter;
 
@@ -94,6 +104,14 @@ public class EmevdEventList
 
                 if (ImGui.Selectable($"{ev.ID}##emevdEvent_{i}", selected))
                     selection.SelectEvent(ev);
+
+                // Right-click selects the event and offers the event commands
+                if (ImGui.BeginPopupContextItem($"##emevdEventMenu_{i}"))
+                {
+                    selection.SelectEvent(ev);
+                    View.EventCommands.MenuItems();
+                    ImGui.EndPopup();
+                }
 
                 ImGui.SameLine();
 

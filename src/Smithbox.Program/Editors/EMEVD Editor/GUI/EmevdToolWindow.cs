@@ -4,7 +4,7 @@ using StudioCore.Editors.Common;
 namespace StudioCore.Editors.EmevdEditor;
 
 /// <summary>
-/// The EMEVD Editor's Tools window: Palette and Problems (see Claude/Documentation/Tool UI Styling.md)
+/// The EMEVD Editor's Tools window: Search, Called By, Palette and Problems (see Claude/Documentation/Tool UI Styling.md)
 /// </summary>
 public class EmevdToolWindow
 {
@@ -12,6 +12,8 @@ public class EmevdToolWindow
 
     public EmevdPaletteTool PaletteTool;
     public EmevdProblemsTool ProblemsTool;
+    public EmevdCalledByTool CalledByTool;
+    public EmevdSearchTool SearchTool;
 
     private readonly ToolSections Sections = new();
 
@@ -21,6 +23,8 @@ public class EmevdToolWindow
 
         PaletteTool = new(view);
         ProblemsTool = new(view);
+        CalledByTool = new(view);
+        SearchTool = new(view);
     }
 
     public void Draw()
@@ -35,6 +39,24 @@ public class EmevdToolWindow
         }
 
         Sections.Begin();
+
+        // Search & Edit
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        if (CFG.Current.Interface_EmevdEditor_Tool_Search)
+        {
+            // Search
+            SearchTool.OnToolWindow();
+        }
+
+        // Browse
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
+
+        if (CFG.Current.Interface_EmevdEditor_Tool_CalledBy)
+        {
+            // Called By
+            CalledByTool.OnToolWindow();
+        }
 
         // Editing
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
@@ -61,6 +83,16 @@ public class EmevdToolWindow
     {
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##emevdToolViewMenu"))
         {
+            // Search
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Search")}##emevdSearchToolToggle"))
+                CFG.Current.Interface_EmevdEditor_Tool_Search = !CFG.Current.Interface_EmevdEditor_Tool_Search;
+            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Search);
+
+            // Called By
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Called_By")}##emevdCalledByToolToggle"))
+                CFG.Current.Interface_EmevdEditor_Tool_CalledBy = !CFG.Current.Interface_EmevdEditor_Tool_CalledBy;
+            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_CalledBy);
+
             // Palette
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Palette")}##emevdPaletteToolToggle"))
                 CFG.Current.Interface_EmevdEditor_Tool_Palette = !CFG.Current.Interface_EmevdEditor_Tool_Palette;

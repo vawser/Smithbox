@@ -23,6 +23,7 @@ public class EmevdEditorView
     public EmevdArgEditor ArgEditor;
     public EmevdStructureEditor Structure;
     public EmevdToolWindow ToolWindow;
+    public EmevdEventCommands EventCommands;
 
     public EmevdEditorView(EmevdEditorScreen editor, ProjectEntry project)
     {
@@ -38,6 +39,7 @@ public class EmevdEditorView
         ArgEditor = new(this);
         Structure = new(this);
         ToolWindow = new(this);
+        EventCommands = new(this);
 
         // Undo/redo of a structural edit can shorten the event under the selection
         ActionManager.ActionPerformed += Selection.Validate;
@@ -63,6 +65,8 @@ public class EmevdEditorView
         Window("EMEVD_Window_Properties", "emevdEditor_Properties", EditorFocusContext.EmevdEditor_Properties, dockspaceId, Properties.Draw);
         if (CFG.Current.Interface_EmevdEditor_ToolWindow)
             Window("EMEVD_Window_Tools", "emevdEditor_Tools", EditorFocusContext.EmevdEditor_Tools, dockspaceId, ToolWindow.Draw, GUI.GetMainWindowFlags());
+
+        EventCommands.DisplayPopups();
 
         // Structural edits change the tree the windows draw from, so they run once every window is drawn
         Structure.Flush();
