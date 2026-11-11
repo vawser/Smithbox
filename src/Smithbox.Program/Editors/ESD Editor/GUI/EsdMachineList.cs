@@ -19,6 +19,7 @@ public class EsdMachineList
     private EsdFileWrapper CachedFile;
     private string CachedFilter;
     private bool CachedExact;
+    private int CachedRevision = -1;
     private List<long> Visible = new();
     private Dictionary<long, int> Calls = new();
 
@@ -54,12 +55,15 @@ public class EsdMachineList
 
     private void Refresh(EsdFileWrapper file)
     {
-        if (file == CachedFile && Filter == CachedFilter && ExactFilter == CachedExact)
+        // Edits (new / deleted machines, calls) change the list: rebuild on the container's revision too
+        var revision = file.Container.Revision;
+        if (file == CachedFile && Filter == CachedFilter && ExactFilter == CachedExact && revision == CachedRevision)
             return;
 
-        if (file != CachedFile)
+        if (file != CachedFile || revision != CachedRevision)
             Calls = EsdLayout.CallCounts(file.Esd);
 
+        CachedRevision = revision;
         CachedFile = file;
         CachedFilter = Filter;
         CachedExact = ExactFilter;
@@ -100,6 +104,12 @@ public class EsdMachineList
                 if (ImGui.IsItemHovered())
                     GUI.Tooltip(LOC.Get(EsdLayout.IsSubMachine(id) ? "ESD_MachineList_Sub_TT" : "ESD_MachineList_Entry_TT", id, $"0x{id:X}"));
 
+                if (ImGui.BeginPopupContextItem($"##esdMachineMenu_{id}"))
+                {
+                    View.Commands.MachineMenu(id);
+                    ImGui.EndPopup();
+                }
+
                 ImGui.SameLine();
 
                 if (file.MachineNames.TryGetValue(id, out var name))
@@ -116,5 +126,12 @@ public class EsdMachineList
         }
 
         clipper.End();
+
+        // Right-click on empty space: a new machine
+        if (ImGui.BeginPopupContextWindow("##esdMachinesMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
+        {
+            View.Commands.MachineMenu(null);
+            ImGui.EndPopup();
+        }
     }
 }

@@ -220,6 +220,162 @@ public class EsdEditCommands
         Selection.ClearItem();
     }
 
+    // --- structural edits (P4, Framework/EsdStructureEdit: gated by EsdSurvey structedit) ---
+
+    /// <summary>Runs a plan, or logs why it was refused. Returns whether it ran.</summary>
+    private bool RunPlan(EsdEditPlan plan, string what)
+    {
+        if (plan.Op == null)
+        {
+            if (!string.IsNullOrEmpty(plan.Refusal) && plan.Refusal != "ESD_Edit_No_Change")
+                Smithbox.Log(this, LOC.Get(plan.Refusal), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return false;
+        }
+        Run(plan.Op, what);
+        return true;
+    }
+
+    /// <summary>Runs a plan that adds a state, and selects the new state (it's in the machine once the edit has run)</summary>
+    private void RunAndSelect(EsdEditPlan plan, string what)
+    {
+        if (RunPlan(plan, what) && plan.NewState != null)
+            Selection.SelectItem(plan.NewState, plan.NewId);
+    }
+
+    public void InsertStateAfter(long id)
+    {
+        if (Machine != null)
+            RunAndSelect(EsdStructureEdit.InsertAfter(Machine, id), "insert state");
+    }
+
+    public void AddBranch(long id)
+    {
+        if (Machine != null)
+            RunAndSelect(EsdStructureEdit.AddBranch(Machine, id), "add branch");
+    }
+
+    public void InsertCall(long id, long callee)
+    {
+        if (Machine != null && Selection.SelectedFile?.Esd is { } esd)
+            RunAndSelect(EsdStructureEdit.InsertCall(esd, Machine, id, callee), "insert call");
+    }
+
+    public void RemoveStep(long id)
+    {
+        if (Machine != null && RunPlan(EsdStructureEdit.RemoveStep(Machine, id), "remove step"))
+            Selection.ClearItem();
+    }
+
+    /// <summary>A command dropped on another block: moved into that list, before the index</summary>
+    public void MoveCommandTo(EsdRow dragged, List<ESD.CommandCall> to, int index, long toState)
+    {
+        if (dragged?.Kind != EsdRowKind.Command)
+            return;
+        var from = ListOf(dragged);
+        if (dragged.Index < 0 || dragged.Index >= from.Count || !ReferenceEquals(from[dragged.Index], dragged.Command))
+            return;
+        if (RunPlan(EsdStructureEdit.MoveCommand(from, dragged.Index, to, index), "move command"))
+            Selection.SelectItem(dragged.Command, toState);
+    }
+
+    /// <summary>The list a drop on a row puts a command into: before a command, at the end of a state's entry or a transition's pass list</summary>
+    public static (List<ESD.CommandCall> List, int Index) DropTarget(EsdRow row) => row.Kind switch
+    {
+        EsdRowKind.Command => (ListOf(row), row.Index),
+        EsdRowKind.State => (row.State.EntryCommands, row.State.EntryCommands.Count),
+        EsdRowKind.Condition => (row.Condition.PassCommands, row.Condition.PassCommands.Count),
+        _ => (null, -1)
+    };
+
+    // --- machines ---
+
+    public void NewMachine()
+    {
+        if (Selection.SelectedFile?.Esd is not { } esd)
+            return;
+        var plan = EsdStructureEdit.NewMachine(esd);
+        if (RunPlan(plan, "new machine"))
+            Selection.SelectMachine(plan.NewId);
+    }
+
+    public void DuplicateMachine(long mid)
+    {
+        if (Selection.SelectedFile?.Esd is not { } esd)
+            return;
+        var plan = EsdStructureEdit.DuplicateMachine(esd, mid);
+        if (RunPlan(plan, "duplicate machine"))
+            Selection.SelectMachine(plan.NewId);
+    }
+
+    public string DeleteMachineRefusal(long mid) =>
+        Selection.SelectedFile?.Esd is { } esd ? EsdStructureEdit.DeleteMachine(esd, mid).Refusal : "";
+
+    public void DeleteMachine(long mid)
+    {
+        if (Selection.SelectedFile?.Esd is not { } esd)
+            return;
+        if (RunPlan(EsdStructureEdit.DeleteMachine(esd, mid), "delete machine") && Selection.SelectedMachine == mid)
+        {
+            var other = esd.StateGroups.Keys.Where(k => k != mid).OrderBy(k => EsdLayout.IsSubMachine(k) ? 1 : 0).ThenBy(k => k).FirstOrDefault();
+            Selection.SelectMachine(other);
+        }
+    }
+
+    /// <summary>The machine list's right-click menu (a machine, or null for empty space)</summary>
+    public void MachineMenu(long? mid)
+    {
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_New_Machine")))
+            NewMachine();
+        GUI.Tooltip(LOC.Get("ESD_Edit_New_Machine_TT"));
+
+        if (mid is not long id)
+            return;
+
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_Duplicate_Machine")))
+            DuplicateMachine(id);
+        GUI.Tooltip(LOC.Get("ESD_Edit_Duplicate_Machine_TT"));
+
+        var refusal = DeleteMachineRefusal(id);
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_Delete_Machine"), "", false, refusal == null))
+            DeleteMachine(id);
+        if (!string.IsNullOrEmpty(refusal))
+            GUI.Tooltip(LOC.Get(refusal));
+        else if (!EsdLayout.IsSubMachine(id))
+            GUI.Tooltip(LOC.Get("ESD_Edit_Delete_Entry_Machine_TT"));
+    }
+
+    /// <summary>The flow part of a state's menu: insert after, add branch, call and wait, remove step</summary>
+    private void FlowMenu(EsdRow row)
+    {
+        var machine = Machine;
+        if (machine == null)
+            return;
+
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_Insert_State_After")))
+            InsertStateAfter(row.StateId);
+        GUI.Tooltip(LOC.Get("ESD_Edit_Insert_State_After_TT"));
+
+        var branch = EsdStructureEdit.AddBranch(machine, row.StateId).Refusal;
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_Add_Branch"), "", false, branch == null))
+            AddBranch(row.StateId);
+        GUI.Tooltip(LOC.Get(branch ?? "ESD_Edit_Add_Branch_TT"));
+
+        if (ImGui.BeginMenu(LOC.Get("ESD_Edit_Insert_Call")))
+        {
+            var file = Selection.SelectedFile;
+            foreach (var mid in file?.Esd?.StateGroups.Keys.OrderBy(k => k) ?? Enumerable.Empty<long>())
+                if (ImGui.MenuItem($"{EsdFormat.MachineLabel(file, mid)}##esdCallWait{mid}"))
+                    InsertCall(row.StateId, mid);
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("ESD_Edit_Insert_Call_TT"));
+
+        var remove = EsdStructureEdit.RemoveStep(machine, row.StateId).Refusal;
+        if (ImGui.MenuItem(LOC.Get("ESD_Edit_Remove_Step"), "", false, remove == null))
+            RemoveStep(row.StateId);
+        GUI.Tooltip(LOC.Get(remove ?? "ESD_Edit_Remove_Step_TT"));
+    }
+
     // --- keys and menus ---
 
     public void Delete()
@@ -270,6 +426,8 @@ public class EsdEditCommands
                     DeleteState(row.StateId);
                 if (!string.IsNullOrEmpty(refusal))
                     GUI.Tooltip(refusal);
+                ImGui.Separator();
+                FlowMenu(row);
                 ImGui.Separator();
                 if (ImGui.MenuItem(LOC.Get("ESD_Edit_Add_Transition")))
                     AddTransition(row.State.Conditions, row.StateId);

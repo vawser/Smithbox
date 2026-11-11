@@ -127,7 +127,7 @@ public class EsdCode
 /// </summary>
 public static class EsdStructure
 {
-    private static readonly byte[] CallDoneCode = { 0xB9, 0xBA, 0x96, EsdExpr.End };
+    public static readonly byte[] CallDoneCode = { 0xB9, 0xBA, 0x96, EsdExpr.End };
 
     public static bool IsCallDone(byte[] code) => code != null && code.AsSpan().SequenceEqual(CallDoneCode);
 

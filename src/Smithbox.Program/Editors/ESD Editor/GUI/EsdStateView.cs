@@ -58,6 +58,10 @@ public class EsdStateView
 
     private const float RowGap = 2f;
 
+    // The command row being dragged (P4 drag and drop)
+    private const string CommandPayload = "ESD_COMMAND";
+    private EsdRow DragRow;
+
     public EsdStateView(EsdEditorView view)
     {
         View = view;
@@ -369,13 +373,37 @@ public class EsdStateView
     /// The block's button: selects on click, follows on double-click, offers the edit menu on right-click. Returns
     /// whether it's hovered, and whether it was clicked this frame (the chip under the click is found after drawing).
     /// </summary>
-    private (bool Hovered, bool Clicked) BlockButton(EsdRow row, Vector2 min, Vector2 max, string id)
+    private unsafe (bool Hovered, bool Clicked) BlockButton(EsdRow row, Vector2 min, Vector2 max, string id)
     {
         ImGui.SetCursorScreenPos(min);
         ImGui.InvisibleButton(id, max - min);
 
         var hovered = ImGui.IsItemHovered();
         var clicked = ImGui.IsItemClicked();
+
+        // Drag a command onto another command (before it), a state (end of its entry list) or a transition (end of
+        // its pass list)
+        if (row.Kind == EsdRowKind.Command && ImGui.BeginDragDropSource())
+        {
+            DragRow = row;
+            byte dummy = 0;
+            ImGui.SetDragDropPayload(CommandPayload, &dummy, 1);
+            ImGui.Text(LOC.Get("ESD_Edit_Drag_Command", EsdFormat.CommandName(Catalog, row.Command)));
+            ImGui.EndDragDropSource();
+        }
+
+        if (row.Kind is EsdRowKind.Command or EsdRowKind.State or EsdRowKind.Condition && ImGui.BeginDragDropTarget())
+        {
+            var payload = ImGui.AcceptDragDropPayload(CommandPayload);
+            if (!payload.IsNull && DragRow != null)
+            {
+                var (list, index) = EsdEditCommands.DropTarget(row);
+                if (list != null)
+                    View.Commands.MoveCommandTo(DragRow, list, index, row.StateId);
+                DragRow = null;
+            }
+            ImGui.EndDragDropTarget();
+        }
 
         if (clicked)
             View.Selection.SelectRow(row);
