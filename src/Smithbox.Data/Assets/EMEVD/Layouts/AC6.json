@@ -75,6 +75,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -112,6 +113,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -182,6 +184,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -243,6 +246,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -315,6 +319,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -380,17 +385,23 @@
           "Key": "3[03]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 284,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 168, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 168",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -426,6 +437,7 @@
           "Lengths": [
             20
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -503,17 +515,18 @@
           "Key": "3[23]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 118,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 112, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 112",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -528,7 +541,7 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "s8",
               "Name": ""
             }
           ]
@@ -544,6 +557,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -592,6 +606,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -649,16 +664,27 @@
           "Key": "3[1000]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 256,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 2,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -746,16 +772,27 @@
           "Key": "3[1008]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 2,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -770,16 +807,17 @@
           "Key": "3[1009]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -799,12 +837,13 @@
           "Key": "3[1010]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 52,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -813,16 +852,6 @@
             },
             {
               "Offset": 1,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 2,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 3,
               "Type": "u8",
               "Name": ""
             },
@@ -838,16 +867,22 @@
           "Key": "3[1011]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -857,16 +892,17 @@
           "Key": "3[1012]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 5,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -876,16 +912,17 @@
           "Key": "3[1013]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 18,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -900,16 +937,22 @@
           "Key": "3[1014]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 5,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -924,16 +967,22 @@
           "Key": "3[1015]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -950,17 +999,18 @@
           "Key": "4[00]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 217,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 99, BB no: length 16 vs 12",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -971,27 +1021,32 @@
             {
               "Offset": 8,
               "Type": "u8",
-              "Name": ""
+              "Name": "",
+              "Inferred": true
             },
             {
               "Offset": 9,
               "Type": "u8",
-              "Name": ""
+              "Name": "",
+              "Inferred": true
             },
             {
               "Offset": 10,
               "Type": "u8",
-              "Name": ""
+              "Name": "",
+              "Inferred": true
             },
             {
               "Offset": 11,
               "Type": "u8",
-              "Name": ""
+              "Name": "",
+              "Inferred": true
             },
             {
               "Offset": 12,
               "Type": "f32",
-              "Name": ""
+              "Name": "",
+              "Inferred": true
             }
           ]
         },
@@ -1000,17 +1055,18 @@
           "Key": "4[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 179,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 149, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 149",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1030,17 +1086,18 @@
           "Key": "4[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1258,
           "Lengths": [
             24
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 929, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 929",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1050,7 +1107,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1060,7 +1117,7 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1075,17 +1132,64 @@
           "Key": "4[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 66,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 41, BB no: length 20 vs 16",
           "Args": [
             {
               "Offset": 0,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 4,
               "Type": "s32",
+              "Name": ""
+            },
+            {
+              "Offset": 8,
+              "Type": "s32",
+              "Name": ""
+            },
+            {
+              "Offset": 12,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 13,
+              "Type": "s8",
+              "Name": ""
+            },
+            {
+              "Offset": 16,
+              "Type": "f32",
+              "Name": ""
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Key": "4[05]",
+          "Name": "",
+          "JapaneseName": null,
+          "Confidence": "Exe",
+          "Source": null,
+          "Uses": 999,
+          "Lengths": [
+            20
+          ],
+          "Exe": "Built",
+          "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 669, BB no: length 20 vs 16",
+          "Args": [
+            {
+              "Offset": 0,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1109,56 +1213,6 @@
               "Name": ""
             },
             {
-              "Offset": 14,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 15,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 16,
-              "Type": "f32",
-              "Name": ""
-            }
-          ]
-        },
-        {
-          "ID": 5,
-          "Key": "4[05]",
-          "Name": "",
-          "JapaneseName": null,
-          "Confidence": "Inferred",
-          "Source": null,
-          "Uses": 999,
-          "Lengths": [
-            20
-          ],
-          "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 669, BB no: length 20 vs 16",
-          "Args": [
-            {
-              "Offset": 0,
-              "Type": "s32",
-              "Name": ""
-            },
-            {
-              "Offset": 4,
-              "Type": "s32",
-              "Name": ""
-            },
-            {
-              "Offset": 8,
-              "Type": "s32",
-              "Name": ""
-            },
-            {
-              "Offset": 12,
-              "Type": "s32",
-              "Name": ""
-            },
-            {
               "Offset": 16,
               "Type": "f32",
               "Name": ""
@@ -1176,6 +1230,7 @@
           "Lengths": [
             20
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1241,17 +1296,18 @@
           "Key": "4[07]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 174,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 117, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 117",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1261,7 +1317,12 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 9,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1282,6 +1343,7 @@
           "Lengths": [
             20
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1360,17 +1422,18 @@
           "Key": "4[09]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 151,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 79, BB no: length 16 vs 12",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1389,16 +1452,6 @@
               "Name": ""
             },
             {
-              "Offset": 10,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 11,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
               "Offset": 12,
               "Type": "f32",
               "Name": ""
@@ -1410,17 +1463,18 @@
           "Key": "4[14]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 120,
           "Lengths": [
             24
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 35, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 35",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1430,7 +1484,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1440,7 +1494,7 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -1461,6 +1515,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1534,6 +1589,7 @@
           "Lengths": [
             24
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1618,6 +1674,7 @@
           "Lengths": [
             20
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1702,6 +1759,7 @@
           "Lengths": [
             20
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1786,6 +1844,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1859,6 +1918,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -1932,6 +1992,7 @@
           "Lengths": [
             24
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2013,12 +2074,13 @@
           "Key": "4[29]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 8 vs 16",
           "Args": [
             {
@@ -2028,16 +2090,6 @@
             },
             {
               "Offset": 1,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 2,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 3,
               "Type": "u8",
               "Name": ""
             },
@@ -2053,17 +2105,18 @@
           "Key": "4[30]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 3,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 1, enum outside 2, float odd 1, id odd 1",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2083,7 +2136,7 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -2093,16 +2146,17 @@
           "Key": "4[1000]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 86,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2112,7 +2166,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2127,16 +2181,17 @@
           "Key": "4[1001]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 88,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2146,7 +2201,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2161,16 +2216,17 @@
           "Key": "4[1002]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             24
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2180,7 +2236,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "s16",
               "Name": ""
             },
             {
@@ -2190,12 +2246,12 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "f32",
               "Name": ""
             },
             {
               "Offset": 20,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -2205,16 +2261,17 @@
           "Key": "4[1003]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2234,16 +2291,17 @@
           "Key": "4[1004]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 87,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2258,7 +2316,7 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -2268,16 +2326,17 @@
           "Key": "4[1005]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 3,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -2287,16 +2346,17 @@
           "Key": "4[1006]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 11,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2316,16 +2376,17 @@
           "Key": "4[1007]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2340,16 +2401,17 @@
           "Key": "4[1008]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 31,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2364,16 +2426,17 @@
           "Key": "4[1009]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             24
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2383,7 +2446,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "s8",
               "Name": ""
             },
             {
@@ -2393,7 +2456,7 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -2421,6 +2484,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2494,6 +2558,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2574,6 +2639,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2914,6 +2980,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2939,6 +3006,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -2964,6 +3032,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -3000,6 +3069,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -3037,17 +3107,28 @@
           "Key": "1003[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 2,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -3068,6 +3149,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -3129,6 +3211,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -3184,12 +3267,13 @@
           "Key": "1003[1002]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 19,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -3207,11 +3291,6 @@
               "Name": ""
             },
             {
-              "Offset": 3,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
               "Offset": 4,
               "Type": "s32",
               "Name": ""
@@ -3223,16 +3302,17 @@
           "Key": "1003[1014]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -3249,16 +3329,17 @@
           "Key": "1004[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -3273,7 +3354,12 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 13,
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -3793,12 +3879,13 @@
           "Key": "2001[03]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 20,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -3834,16 +3921,6 @@
               "Offset": 9,
               "Type": "u8",
               "Name": ""
-            },
-            {
-              "Offset": 10,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 11,
-              "Type": "u8",
-              "Name": ""
             }
           ]
         },
@@ -3852,36 +3929,13 @@
           "Key": "2001[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
-          "Args": [
-            {
-              "Offset": 0,
-              "Type": "s32",
-              "Name": ""
-            },
-            {
-              "Offset": 4,
-              "Type": "s32",
-              "Name": ""
-            }
-          ]
-        },
-        {
-          "ID": 5,
-          "Key": "2001[05]",
-          "Name": "",
-          "JapaneseName": null,
-          "Confidence": "Inferred",
-          "Source": null,
-          "Uses": 7,
-          "Lengths": [
-            4
-          ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -3902,6 +3956,41 @@
               "Offset": 3,
               "Type": "u8",
               "Name": ""
+            },
+            {
+              "Offset": 4,
+              "Type": "u8",
+              "Name": ""
+            }
+          ]
+        },
+        {
+          "ID": 5,
+          "Key": "2001[05]",
+          "Name": "",
+          "JapaneseName": null,
+          "Confidence": "Exe",
+          "Source": null,
+          "Uses": 7,
+          "Lengths": [
+            4
+          ],
+          "Exe": "Built",
+          "Args": [
+            {
+              "Offset": 0,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 1,
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 2,
+              "Type": "u8",
+              "Name": ""
             }
           ]
         }
@@ -3917,12 +4006,13 @@
           "Key": "2002[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 28,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 17, float odd 0, id odd 0, BB fits, param misaligned 0, enum outside 17, float odd 0, id odd 0",
           "Args": [
             {
@@ -3948,6 +4038,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Warnings": "other names BB: ポリ劇再生_プレイヤー指定",
           "Args": [
             {
@@ -3993,12 +4084,13 @@
           "Key": "2002[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 23,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: nonzero bytes in padding, BB no: nonzero bytes in padding",
           "Args": [
             {
@@ -4031,75 +4123,46 @@
         {
           "ID": 8,
           "Key": "2002[08]",
-          "Name": "Play Dummy Cutscene And Warp Player",
-          "JapaneseName": "ダミーポリ劇再生＆PCワープ",
-          "Confidence": "Borrowed",
-          "Source": "BB",
+          "Name": "",
+          "JapaneseName": null,
+          "Confidence": "Exe",
+          "Source": null,
           "Uses": 14,
           "Lengths": [
             24
           ],
-          "Warnings": "args after the BB definition's 3 are inferred from longer uses",
+          "Exe": "Built",
+          "Warnings": "BB definition ダミーポリ劇再生＆PCワープ rejected by the exe (read 4@4 wider than u8)",
           "Args": [
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Point Entity ID",
-              "JapaneseName": "ポイントエンティティID",
-              "Default": 0,
-              "Min": 0,
-              "Max": 1000000000,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
+              "Name": ""
             },
             {
               "Offset": 4,
-              "Type": "u8",
-              "Name": "Area Number",
-              "JapaneseName": "エリアNo",
-              "Default": 0,
-              "Min": 0,
-              "Max": 255,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
-            },
-            {
-              "Offset": 5,
-              "Type": "u8",
-              "Name": "Block Number",
-              "JapaneseName": "ブロックNo",
-              "Default": 0,
-              "Min": 0,
-              "Max": 255,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
+              "Type": "s32",
+              "Name": ""
             },
             {
               "Offset": 8,
               "Type": "s32",
-              "Name": "",
-              "Inferred": true
+              "Name": ""
             },
             {
               "Offset": 12,
               "Type": "s32",
-              "Name": "",
-              "Inferred": true
+              "Name": ""
             },
             {
               "Offset": 16,
               "Type": "s32",
-              "Name": "",
-              "Inferred": true
+              "Name": ""
             },
             {
               "Offset": 20,
               "Type": "s32",
-              "Name": "",
-              "Inferred": true
+              "Name": ""
             }
           ]
         },
@@ -4121,12 +4184,13 @@
           "Key": "2002[11]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 15,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 20 vs 24",
           "Args": [
             {
@@ -4161,12 +4225,13 @@
           "Key": "2002[12]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             24
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -4205,12 +4270,13 @@
           "Key": "2002[13]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 5,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 8 vs 24",
           "Args": [
             {
@@ -4243,6 +4309,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4325,12 +4392,13 @@
           "Key": "2003[03]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1",
           "Args": [
             {
@@ -4340,7 +4408,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -4356,6 +4424,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4376,12 +4445,13 @@
           "Key": "2003[05]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 212,
           "Lengths": [
             28
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 370, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 370",
           "Args": [
             {
@@ -4406,22 +4476,7 @@
             },
             {
               "Offset": 16,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 17,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 18,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 19,
-              "Type": "u8",
+              "Type": "s32",
               "Name": ""
             },
             {
@@ -4447,6 +4502,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4478,51 +4534,43 @@
         {
           "ID": 8,
           "Key": "2003[08]",
-          "Name": "Set Event State",
-          "JapaneseName": "イベント状態設定",
-          "Confidence": "Shared",
-          "Source": "DB_NT",
+          "Name": "",
+          "JapaneseName": null,
+          "Confidence": "Exe",
+          "Source": null,
           "Uses": 13,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
+          "Warnings": "DB_NT definition イベント状態設定 rejected by the exe (narrowing would move args)",
           "Args": [
             {
               "Offset": 0,
               "Type": "s32",
-              "Name": "Event ID",
-              "JapaneseName": "イベントID",
-              "Default": 0,
-              "Min": 0,
-              "Max": 999999999,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
+              "Name": ""
             },
             {
               "Offset": 4,
-              "Type": "s32",
-              "Name": "Event Slot ID",
-              "JapaneseName": "イベントスロットID",
-              "Default": 0,
-              "Min": 0,
-              "Max": 999999999,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
+              "Type": "u16",
+              "Name": ""
+            },
+            {
+              "Offset": 6,
+              "Type": "u8",
+              "Name": "",
+              "Inferred": true
+            },
+            {
+              "Offset": 7,
+              "Type": "u8",
+              "Name": "",
+              "Inferred": true
             },
             {
               "Offset": 8,
               "Type": "u8",
-              "Name": "Event State",
-              "JapaneseName": "イベント状態",
-              "Enum": "イベント終了タイプ",
-              "Default": 1,
-              "Min": 0,
-              "Max": 0,
-              "Increment": 0,
-              "Format": "%d",
-              "Flags": 1
+              "Name": ""
             }
           ]
         },
@@ -4531,17 +4579,18 @@
           "Key": "2003[11]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 294,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 290, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 290",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -4551,12 +4600,7 @@
             },
             {
               "Offset": 8,
-              "Type": "u16",
-              "Name": ""
-            },
-            {
-              "Offset": 10,
-              "Type": "u16",
+              "Type": "s16",
               "Name": ""
             },
             {
@@ -4571,12 +4615,13 @@
           "Key": "2003[17]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1",
           "Args": [
             {
@@ -4591,7 +4636,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -4607,6 +4652,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4708,6 +4754,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4753,12 +4800,13 @@
           "Key": "2003[23]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 1, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 1",
           "Args": [
             {
@@ -4779,6 +4827,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4830,6 +4879,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4856,6 +4906,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4882,6 +4933,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4921,6 +4973,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -4966,17 +5019,18 @@
           "Key": "2003[66]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 252,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 12 vs 20",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -4986,7 +5040,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5002,11 +5056,12 @@
           "Lengths": [
             12
           ],
-          "Warnings": "args after the DB_NT definition's 1 are inferred from longer uses",
+          "Exe": "Narrowed",
+          "Warnings": "types narrowed to the exe's reads: @0 u32→s8; args after the DB_NT definition's 1 are inferred from longer uses",
           "Args": [
             {
               "Offset": 0,
-              "Type": "u32",
+              "Type": "s8",
               "Name": "Character Count",
               "JapaneseName": "更新キャラ数",
               "Default": 0,
@@ -5024,7 +5079,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": "",
               "Inferred": true
             }
@@ -5041,6 +5096,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Warnings": "args after the DB_NT definition's 0 are inferred from longer uses",
           "Args": [
             {
@@ -5068,12 +5124,13 @@
           "Key": "2003[1000]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 815,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5082,7 +5139,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5092,16 +5149,17 @@
           "Key": "2003[1001]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "f32",
+              "Type": "s32",
               "Name": ""
             },
             {
@@ -5111,7 +5169,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5121,12 +5179,13 @@
           "Key": "2003[1002]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5145,12 +5204,13 @@
           "Key": "2003[1003]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5164,7 +5224,12 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "s16",
+              "Name": ""
+            },
+            {
+              "Offset": 10,
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5174,12 +5239,13 @@
           "Key": "2003[1004]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5198,12 +5264,13 @@
           "Key": "2003[1005]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 5,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5222,12 +5289,13 @@
           "Key": "2003[1006]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 28,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5246,12 +5314,13 @@
           "Key": "2003[1007]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5265,12 +5334,13 @@
           "Key": "2003[1008]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 200,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5279,7 +5349,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5289,12 +5359,13 @@
           "Key": "2003[1009]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5342,12 +5413,13 @@
           "Key": "2003[1011]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 105,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5356,7 +5428,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5366,12 +5438,13 @@
           "Key": "2003[1012]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5385,7 +5458,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5395,12 +5468,13 @@
           "Key": "2003[1013]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5414,7 +5488,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5453,12 +5527,13 @@
           "Key": "2003[1019]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 14,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5467,7 +5542,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5477,12 +5552,13 @@
           "Key": "2003[1021]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5496,7 +5572,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5506,12 +5582,13 @@
           "Key": "2003[1026]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5530,12 +5607,13 @@
           "Key": "2003[1028]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5554,12 +5632,13 @@
           "Key": "2003[1029]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 68,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5573,12 +5652,13 @@
           "Key": "2003[1030]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 12,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5592,16 +5672,17 @@
           "Key": "2003[1031]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 20,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5611,16 +5692,17 @@
           "Key": "2003[1032]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5630,12 +5712,13 @@
           "Key": "2003[1033]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 7,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5654,12 +5737,13 @@
           "Key": "2003[1034]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 9,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5673,12 +5757,13 @@
           "Key": "2003[1035]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 44,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5689,16 +5774,6 @@
               "Offset": 1,
               "Type": "u8",
               "Name": ""
-            },
-            {
-              "Offset": 2,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 3,
-              "Type": "u8",
-              "Name": ""
             }
           ]
         },
@@ -5707,12 +5782,13 @@
           "Key": "2003[1036]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 50,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5731,12 +5807,13 @@
           "Key": "2003[1037]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5745,7 +5822,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5755,12 +5832,13 @@
           "Key": "2003[1038]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 102,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5769,7 +5847,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5779,12 +5857,13 @@
           "Key": "2003[1039]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 15,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5798,16 +5877,17 @@
           "Key": "2003[1040]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 22,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5817,12 +5897,13 @@
           "Key": "2003[1041]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5841,30 +5922,16 @@
           "Key": "2003[1043]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 13,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 1,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 2,
-              "Type": "u8",
-              "Name": ""
-            },
-            {
-              "Offset": 3,
               "Type": "u8",
               "Name": ""
             }
@@ -5875,12 +5942,13 @@
           "Key": "2003[1044]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5899,12 +5967,13 @@
           "Key": "2003[1046]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 12,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5931,16 +6000,17 @@
           "Key": "2003[1048]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -5950,12 +6020,13 @@
           "Key": "2003[1049]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 19,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5969,12 +6040,13 @@
           "Key": "2003[1050]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -5988,16 +6060,17 @@
           "Key": "2003[1051]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6014,12 +6087,13 @@
           "Key": "2004[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 894,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 540, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 540",
           "Args": [
             {
@@ -6029,7 +6103,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6039,12 +6113,13 @@
           "Key": "2004[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 127,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 55, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 55",
           "Args": [
             {
@@ -6054,7 +6129,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6064,12 +6139,13 @@
           "Key": "2004[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 246,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 131, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 131",
           "Args": [
             {
@@ -6079,7 +6155,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6089,12 +6165,13 @@
           "Key": "2004[05]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1600,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 750, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 750",
           "Args": [
             {
@@ -6104,7 +6181,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6114,12 +6191,13 @@
           "Key": "2004[07]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 2, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 2",
           "Args": [
             {
@@ -6140,6 +6218,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -6172,12 +6251,13 @@
           "Key": "2004[10]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 90,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 49, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 49",
           "Args": [
             {
@@ -6187,7 +6267,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6197,12 +6277,13 @@
           "Key": "2004[11]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 373,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 548, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 548",
           "Args": [
             {
@@ -6222,12 +6303,13 @@
           "Key": "2004[12]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 72,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 39, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 39",
           "Args": [
             {
@@ -6237,7 +6319,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6247,12 +6329,13 @@
           "Key": "2004[13]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 102,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 76, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 76",
           "Args": [
             {
@@ -6272,12 +6355,13 @@
           "Key": "2004[15]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 229,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 132, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 132",
           "Args": [
             {
@@ -6287,7 +6371,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6297,12 +6381,13 @@
           "Key": "2004[16]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 89,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 64, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 64",
           "Args": [
             {
@@ -6317,12 +6402,13 @@
           "Key": "2004[18]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 50,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 55, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 55",
           "Args": [
             {
@@ -6347,12 +6433,13 @@
           "Key": "2004[20]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 15,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 15, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 15",
           "Args": [
             {
@@ -6367,12 +6454,13 @@
           "Key": "2004[21]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1003,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 479, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 479",
           "Args": [
             {
@@ -6392,12 +6480,13 @@
           "Key": "2004[22]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 56,
           "Lengths": [
             28
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 28 vs 24, BB no: length 28 vs 24",
           "Args": [
             {
@@ -6412,7 +6501,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u16",
               "Name": ""
             },
             {
@@ -6432,7 +6521,12 @@
             },
             {
               "Offset": 24,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 25,
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6448,6 +6542,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -6493,12 +6588,13 @@
           "Key": "2004[29]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 52,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 12, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 12",
           "Args": [
             {
@@ -6508,7 +6604,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6518,12 +6614,13 @@
           "Key": "2004[30]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 40,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 27, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 27",
           "Args": [
             {
@@ -6533,7 +6630,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6543,12 +6640,13 @@
           "Key": "2004[31]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 59,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 44, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 44",
           "Args": [
             {
@@ -6558,7 +6656,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6568,12 +6666,13 @@
           "Key": "2004[33]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 7, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 7",
           "Args": [
             {
@@ -6593,12 +6692,13 @@
           "Key": "2004[34]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 707,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 159, float odd 0, id odd 385, BB fits, param misaligned 0, enum outside 159, float odd 0, id odd 385",
           "Args": [
             {
@@ -6608,7 +6708,12 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
+              "Name": ""
+            },
+            {
+              "Offset": 5,
+              "Type": "s8",
               "Name": ""
             }
           ]
@@ -6618,12 +6723,13 @@
           "Key": "2004[35]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 305,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 203, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 203",
           "Args": [
             {
@@ -6633,7 +6739,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6643,12 +6749,13 @@
           "Key": "2004[39]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 100,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 64, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 64",
           "Args": [
             {
@@ -6658,7 +6765,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6668,12 +6775,13 @@
           "Key": "2004[40]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 54,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 20, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 20",
           "Args": [
             {
@@ -6683,7 +6791,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -6708,12 +6816,13 @@
           "Key": "2004[41]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 290,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 243, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 243",
           "Args": [
             {
@@ -6723,7 +6832,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -6743,12 +6852,13 @@
           "Key": "2004[42]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             20
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 5, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 5",
           "Args": [
             {
@@ -6758,7 +6868,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -6796,12 +6906,13 @@
           "Key": "2004[49]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 43,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 24, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 24",
           "Args": [
             {
@@ -6821,12 +6932,13 @@
           "Key": "2004[50]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 172,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 140, BB fits, param misaligned 0, enum outside 0, float odd 172, id odd 140",
           "Args": [
             {
@@ -6841,7 +6953,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6864,12 +6976,13 @@
           "Key": "2004[54]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 756,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 492, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 492",
           "Args": [
             {
@@ -6879,7 +6992,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6895,6 +7008,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -6927,12 +7041,13 @@
           "Key": "2004[60]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 29,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 12 vs 4",
           "Args": [
             {
@@ -6947,7 +7062,7 @@
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -6957,12 +7072,13 @@
           "Key": "2004[64]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 4",
           "Args": [
             {
@@ -6992,12 +7108,13 @@
           "Key": "2004[1000]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 29,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7006,7 +7123,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "s16",
               "Name": ""
             }
           ]
@@ -7016,13 +7133,14 @@
           "Key": "2004[1010]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 173,
           "Lengths": [
             12,
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7052,12 +7170,13 @@
           "Key": "2004[1011]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 80,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7071,12 +7190,13 @@
           "Key": "2004[1012]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             32
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7085,7 +7205,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7100,7 +7220,7 @@
             },
             {
               "Offset": 16,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7115,7 +7235,7 @@
             },
             {
               "Offset": 28,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7125,12 +7245,13 @@
           "Key": "2004[1013]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7139,17 +7260,17 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "f32",
               "Name": ""
             },
             {
               "Offset": 8,
-              "Type": "s32",
+              "Type": "f32",
               "Name": ""
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "f32",
               "Name": ""
             }
           ]
@@ -7159,12 +7280,13 @@
           "Key": "2004[1016]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             60
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7183,7 +7305,7 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7238,7 +7360,7 @@
             },
             {
               "Offset": 56,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7248,12 +7370,13 @@
           "Key": "2004[1017]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 39,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7272,7 +7395,7 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7282,12 +7405,13 @@
           "Key": "2004[1018]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 166,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7296,7 +7420,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7311,16 +7435,17 @@
           "Key": "2004[1019]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7340,16 +7465,17 @@
           "Key": "2004[1020]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 10,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7359,12 +7485,13 @@
           "Key": "2004[1021]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 764,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7383,7 +7510,7 @@
             },
             {
               "Offset": 12,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7393,12 +7520,13 @@
           "Key": "2004[1022]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7407,7 +7535,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7417,12 +7545,13 @@
           "Key": "2004[1030]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 21,
           "Lengths": [
             32
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7471,12 +7600,13 @@
           "Key": "2004[1031]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 198,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7485,7 +7615,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7495,12 +7625,13 @@
           "Key": "2004[1032]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7519,12 +7650,13 @@
           "Key": "2004[1033]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 133,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7533,7 +7665,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -7548,12 +7680,13 @@
           "Key": "2004[1034]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 7,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7572,12 +7705,13 @@
           "Key": "2004[1035]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 31,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -7609,6 +7743,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7647,6 +7782,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7673,6 +7809,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7712,6 +7849,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7751,6 +7889,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7783,12 +7922,13 @@
           "Key": "2005[08]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 15,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 2, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 2",
           "Args": [
             {
@@ -7798,7 +7938,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -7814,6 +7954,7 @@
           "Lengths": [
             32
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7925,6 +8066,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -7975,6 +8117,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8001,6 +8144,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8034,12 +8178,13 @@
           "Key": "2005[18]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 124,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 12 vs 16",
           "Args": [
             {
@@ -8064,12 +8209,13 @@
           "Key": "2005[19]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 74,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 8 vs 12",
           "Args": [
             {
@@ -8089,12 +8235,13 @@
           "Key": "2005[20]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 176,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 168",
           "Args": [
             {
@@ -8119,12 +8266,13 @@
           "Key": "2005[21]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8138,12 +8286,13 @@
           "Key": "2005[22]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8167,12 +8316,13 @@
           "Key": "2005[23]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8201,16 +8351,17 @@
           "Key": "2005[25]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "f32",
+              "Type": "s32",
               "Name": ""
             },
             {
@@ -8456,17 +8607,18 @@
           "Key": "2007[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 13,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 9, float odd 0, id odd 0, BB fits, param misaligned 0, enum outside 9, float odd 0, id odd 0",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -8476,12 +8628,13 @@
           "Key": "2007[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 176,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 4 vs 8, BB no: length 4 vs 8",
           "Args": [
             {
@@ -8496,17 +8649,18 @@
           "Key": "2007[05]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 69,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 0, float odd 0, id odd 52, BB fits, param misaligned 0, enum outside 0, float odd 0, id odd 52",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -8529,6 +8683,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8561,13 +8716,14 @@
           "Key": "2008[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 24,
           "Lengths": [
             24,
             28
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 7, float odd 23, id odd 23, BB fits, param misaligned 0, enum outside 7, float odd 23, id odd 23",
           "Args": [
             {
@@ -8619,6 +8775,7 @@
           "Lengths": [
             4
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8639,12 +8796,13 @@
           "Key": "2008[05]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 5,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8658,12 +8816,13 @@
           "Key": "2008[06]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8682,12 +8841,13 @@
           "Key": "2008[07]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 108,
           "Lengths": [
             28
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8696,7 +8856,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             },
             {
@@ -8731,12 +8891,13 @@
           "Key": "2008[08]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 17,
           "Lengths": [
             16
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -8778,6 +8939,7 @@
           "Lengths": [
             16
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8848,12 +9010,13 @@
           "Key": "2010[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 174,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT fits, param misaligned 0, enum outside 10, float odd 0, id odd 0, BB fits, param misaligned 0, enum outside 10, float odd 0, id odd 0",
           "Args": [
             {
@@ -8878,12 +9041,13 @@
           "Key": "2010[06]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 4 vs 12",
           "Args": [
             {
@@ -8904,6 +9068,7 @@
           "Lengths": [
             12
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -8950,12 +9115,13 @@
           "Key": "2010[08]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 312,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 4 vs 8",
           "Args": [
             {
@@ -8976,10 +9142,12 @@
           "Lengths": [
             4
           ],
+          "Exe": "Narrowed",
+          "Warnings": "types narrowed to the exe's reads: @0 u32→u8",
           "Args": [
             {
               "Offset": 0,
-              "Type": "u32",
+              "Type": "u8",
               "Name": "Event ID",
               "JapaneseName": "イベントID",
               "Default": 0,
@@ -9009,6 +9177,7 @@
           "Lengths": [
             8
           ],
+          "Exe": "Confirmed",
           "Args": [
             {
               "Offset": 0,
@@ -9049,12 +9218,13 @@
           "Key": "2012[13]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 78,
           "Lengths": [
             12
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9078,12 +9248,13 @@
           "Key": "2012[14]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 26,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9107,33 +9278,26 @@
         {
           "ID": 1,
           "Key": "2015[01]",
-          "Name": "Dark Spirit Invasion",
-          "JapaneseName": "闇霊乱入",
-          "Confidence": "Borrowed",
-          "Source": "DB_NT",
+          "Name": "",
+          "JapaneseName": null,
+          "Confidence": "Exe",
+          "Source": null,
           "Uses": 12,
           "Lengths": [
             8
           ],
-          "Warnings": "args after the DB_NT definition's 1 are inferred from longer uses",
+          "Exe": "Built",
+          "Warnings": "DB_NT definition 闇霊乱入 rejected by the exe (read 4@0 wider than u8)",
           "Args": [
             {
               "Offset": 0,
-              "Type": "u8",
-              "Name": "Dummy",
-              "JapaneseName": "ダミー",
-              "Default": 0,
-              "Min": 0,
-              "Max": 1,
-              "Increment": 1,
-              "Format": "%d",
-              "Flags": 1
+              "Type": "s32",
+              "Name": ""
             },
             {
               "Offset": 4,
               "Type": "s32",
-              "Name": "",
-              "Inferred": true
+              "Name": ""
             }
           ]
         },
@@ -9175,12 +9339,13 @@
           "Key": "2016[00]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 1,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9194,12 +9359,13 @@
           "Key": "2016[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 101,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Warnings": "no definition fits: DB_NT no: length 4 vs 8",
           "Args": [
             {
@@ -9228,16 +9394,17 @@
           "Key": "2016[03]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
-              "Type": "s32",
+              "Type": "u8",
               "Name": ""
             }
           ]
@@ -9247,12 +9414,13 @@
           "Key": "2016[04]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 2,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9286,12 +9454,13 @@
           "Key": "2017[00]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 4,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9305,12 +9474,13 @@
           "Key": "2017[01]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 3,
           "Lengths": [
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9329,13 +9499,14 @@
           "Key": "2017[02]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 6,
           "Lengths": [
             4,
             8
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
@@ -9344,7 +9515,7 @@
             },
             {
               "Offset": 4,
-              "Type": "s32",
+              "Type": "u8",
               "Name": "",
               "Optional": true
             }
@@ -9355,12 +9526,13 @@
           "Key": "2017[03]",
           "Name": "",
           "JapaneseName": null,
-          "Confidence": "Inferred",
+          "Confidence": "Exe",
           "Source": null,
           "Uses": 13,
           "Lengths": [
             4
           ],
+          "Exe": "Built",
           "Args": [
             {
               "Offset": 0,
