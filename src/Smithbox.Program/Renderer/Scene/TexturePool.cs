@@ -815,11 +815,22 @@ public class TexturePool
                 }
                 else
                 {
-                    if (dds.ddspf.dwFlags == (DDS.DDPF.RGB | DDS.DDPF.ALPHAPIXELS) &&
-                        dds.ddspf.dwRGBBitCount == 32)
+                    if (dds.ddspf.dwFlags.HasFlag(DDS.DDPF.RGB) && dds.ddspf.dwRGBBitCount == 32)
                     {
+                        // The red mask gives the byte order: 0xFF is R, G, B, A, 0x00FF0000 is B, G, R, A (DS3's
+                        // systex CGrading0010 is the latter, X8R8G8B8 with no alpha)
+                        var bgra = dds.ddspf.dwRBitMask == 0x00FF0000;
+
+                        // Without ALPHAPIXELS the fourth byte is padding, so it is made opaque
+                        if (!dds.ddspf.dwFlags.HasFlag(DDS.DDPF.ALPHAPIXELS) || dds.ddspf.dwABitMask == 0)
+                        {
+                            bytes = WithOpaqueAlpha(bytes.Span, dds.DataOffset);
+                        }
+
                         // Vertex animation textures hold data rather than color
-                        format = isVertexAnimation ? VkFormat.R8G8B8A8Unorm : VkFormat.R8G8B8A8Srgb;
+                        format = bgra
+                            ? (isVertexAnimation ? VkFormat.B8G8R8A8Unorm : VkFormat.B8G8R8A8Srgb)
+                            : (isVertexAnimation ? VkFormat.R8G8B8A8Unorm : VkFormat.R8G8B8A8Srgb);
                     }
                     else if (dds.ddspf.dwFlags == DDS.DDPF.RGB && dds.ddspf.dwRGBBitCount == 24)
                     {
@@ -1014,6 +1025,22 @@ public class TexturePool
                 result[i + 1] = source[i + 2];
                 result[i + 2] = source[i + 3];
                 result[i + 3] = a;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// A 32-bit DDS's data with the fourth byte of every pixel set to 255, for formats whose fourth byte is
+        /// padding (X8R8G8B8 and the like). The DDS header before <paramref name="dataOffset" /> is copied as it is.
+        /// </summary>
+        private static byte[] WithOpaqueAlpha(ReadOnlySpan<byte> source, int dataOffset)
+        {
+            var result = source.ToArray();
+
+            for (var i = dataOffset + 3; i < result.Length; i += 4)
+            {
+                result[i] = 0xFF;
             }
 
             return result;
