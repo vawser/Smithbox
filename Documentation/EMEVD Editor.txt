@@ -1,0 +1,5 @@
+#----------------------------------------------------
+# EMEVD Editor TODO
+#----------------------------------------------------
+
+- Split Event view so user can view calling section + called section

@@ -52,6 +52,9 @@ public class EmevdLine
     /// <summary>Event parameters written over this instruction's args, by target byte</summary>
     public Dictionary<int, EMEVD.Parameter> Params = new();
 
+    /// <summary>The offset of the skip count, label or called event ID (EmevdControlFlow), or -1</summary>
+    public int FlowArgOffset = -1;
+
     public int SkipCount = -1;
     public int GotoLabel = -1;
     public int LabelId = -1;
@@ -82,16 +85,13 @@ public class EmevdScript
     public int BadParams;
     public int UndecodedLines;
 
-    /// <summary>The arg names (shipped Japanese) that identify special args in every game's layout</summary>
-    private const string SkipCountArg = "スキップアクション数";
-    private const string LabelEnum = "ラベル";
-    private const string CallEventArg = "起動イベントID";
 
     public static string SlotName(long source, int size) => $"X{source}_{size}";
 
     public static EmevdScript Build(EmevdCatalog catalog, EMEVD.Event ev)
     {
         var script = new EmevdScript { Event = ev };
+        var game = catalog?.Game;
 
         for (var i = 0; i < ev.Instructions.Count; i++)
         {
@@ -99,18 +99,23 @@ public class EmevdScript
             var def = catalog?.Find(instr.Bank, instr.ID);
             var decoded = EmevdDecoded.Decode(def, instr);
             var line = new EmevdLine { Index = i, Instr = instr, Decoded = decoded };
+            var flow = EmevdControlFlow.Find(game, instr.Bank, instr.ID);
 
-            line.Kind = KindOf(line);
+            line.Kind = KindOf(line, flow);
+            line.FlowArgOffset = flow.ArgOffset;
 
             if (decoded.Fits)
             {
                 foreach (var arg in decoded.Args)
                 {
-                    if (arg.Def.JapaneseName == SkipCountArg)
+                    if (arg.Offset != flow.ArgOffset)
+                        continue;
+
+                    if (line.Kind == EmevdBlockKind.Skip)
                         line.SkipCount = (int)arg.Int;
-                    else if (arg.Def.EnumKey == LabelEnum && line.Kind == EmevdBlockKind.Goto)
+                    else if (line.Kind == EmevdBlockKind.Goto)
                         line.GotoLabel = (int)arg.Int;
-                    else if (arg.Def.JapaneseName == CallEventArg)
+                    else if (line.Kind == EmevdBlockKind.Call)
                         line.CallTarget = arg.Int;
                 }
             }
@@ -138,12 +143,9 @@ public class EmevdScript
             if (line.Decoded.Fits && !line.Decoded.Args.Any(a => a.Offset == p.TargetStartByte))
                 script.BadParams++;
 
-            if (line.Kind == EmevdBlockKind.Call && line.Decoded.Fits)
-            {
-                var target = line.Decoded.Args.FirstOrDefault(a => a.Def.JapaneseName == CallEventArg);
-                if (target.Def != null && target.Offset == p.TargetStartByte)
-                    line.CallTargetIsParam = true;
-            }
+            if (line.Kind == EmevdBlockKind.Call && line.Decoded.Fits
+                && EmevdControlFlow.Find(game, line.Instr.Bank, line.Instr.ID).ArgOffset == p.TargetStartByte)
+                line.CallTargetIsParam = true;
         }
 
         script.Slots = ev.Parameters
@@ -157,12 +159,15 @@ public class EmevdScript
         return script;
     }
 
-    private static EmevdBlockKind KindOf(EmevdLine line)
+    /// <summary>
+    /// The block kind from the instruction's bank and ID (EmevdControlFlow), never from its names: the same name can be
+    /// a different instruction in another game, and reference-derived layouts carry no shipped Japanese names.
+    /// </summary>
+    private static EmevdBlockKind KindOf(EmevdLine line, EmevdFlow flow)
     {
-        var def = line.Decoded.Def;
         var bank = line.Instr.Bank;
 
-        if (def == null || !line.Decoded.Fits)
+        if (line.Decoded.Def == null || !line.Decoded.Fits)
             return EmevdBlockKind.Unknown;
 
         if (bank < 1000)
@@ -171,29 +176,26 @@ public class EmevdScript
         if (bank == 1014)
             return EmevdBlockKind.Label;
 
-        if (bank < 2000)
+        // A flow whose special arg isn't in the decoded layout falls back to the plain kind
+        var hasArg = flow.ArgOffset >= 0 && line.Decoded.Args.Any(a => a.Offset == flow.ArgOffset);
+
+        switch (flow.Kind)
         {
-            var jp = def.JapaneseName ?? "";
-
-            if (def.Args.Any(a => a.JapaneseName == SkipCountArg))
+            case EmevdFlowKind.Skip when hasArg:
                 return EmevdBlockKind.Skip;
-            if (def.Args.Any(a => a.EnumKey == LabelEnum) && jp.Contains("ラベルジャンプ"))
+            case EmevdFlowKind.Goto when hasArg:
                 return EmevdBlockKind.Goto;
-            if (jp.EndsWith("イベント終了"))
-            {
-                line.IsCap = jp.StartsWith("無条件");
+            case EmevdFlowKind.End:
+            case EmevdFlowKind.EndAlways:
+                line.IsCap = flow.Kind == EmevdFlowKind.EndAlways;
                 return EmevdBlockKind.End;
-            }
-            if (jp.EndsWith("待機"))
+            case EmevdFlowKind.Wait:
                 return EmevdBlockKind.Wait;
-
-            return EmevdBlockKind.ControlFlow;
+            case EmevdFlowKind.Call when hasArg:
+                return EmevdBlockKind.Call;
         }
 
-        if (def.Args.Any(a => a.JapaneseName == CallEventArg))
-            return EmevdBlockKind.Call;
-
-        return EmevdBlockKind.Command;
+        return bank < 2000 ? EmevdBlockKind.ControlFlow : EmevdBlockKind.Command;
     }
 
     /// <summary>
@@ -204,7 +206,7 @@ public class EmevdScript
     {
         foreach (var line in Lines)
         {
-            if (line.Kind == EmevdBlockKind.Skip && line.SkipCount > 0 && !line.Params.ContainsKey(SkipOffset(line)))
+            if (line.Kind == EmevdBlockKind.Skip && line.SkipCount > 0 && !line.Params.ContainsKey(line.FlowArgOffset))
             {
                 var to = line.Index + line.SkipCount;
                 Spans.Add(new EmevdSpan { From = line.Index, To = Math.Min(to, Lines.Count - 1), Broken = to >= Lines.Count });
@@ -241,14 +243,4 @@ public class EmevdScript
         LaneCount = lanes.Count;
     }
 
-    private static int SkipOffset(EmevdLine line)
-    {
-        foreach (var a in line.Decoded.Args)
-        {
-            if (a.Def.JapaneseName == SkipCountArg)
-                return a.Offset;
-        }
-
-        return -1;
-    }
 }
