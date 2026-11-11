@@ -129,6 +129,8 @@ public class MapEditorView : IEditorView
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
     public MapExtractionTool MapExtractionTool;
+    public MapTextureTransferTool TextureTransferTool;
+    public MapPartTransferTool PartTransferTool;
     public DestructionGenerationTool DestructionGenerationTool;
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
@@ -231,6 +233,8 @@ public class MapEditorView : IEditorView
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
         MapExtractionTool = new MapExtractionTool(this, project);
+        TextureTransferTool = new MapTextureTransferTool(this, project);
+        PartTransferTool = new MapPartTransferTool(this, project);
         DestructionGenerationTool = new DestructionGenerationTool(this, project);
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);

@@ -29,12 +29,19 @@ public class ModelSelectorTool
     // The entries for the previews, built along with Choices
     private List<ModelPreviewEntry> PreviewEntries = new();
 
+    // Map pieces of other maps: the map listed (empty for the selection's own) and the port into the selection's map
+    private string MapPieceSourceMap = "";
+    private string MapPieceSourceFilter = "";
+    private MapPiecePortTool PortTool;
+
     public ModelSelectorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
 
         PreviewBrowser = new ModelPreviewBrowser(project);
+        PortTool = new MapPiecePortTool(view, project,
+            (modelName, targetMap) => SetObjectModelForSelection(modelName, FileSelectionType.MapPiece, targetMap));
     }
 
     /// <summary>
@@ -74,6 +81,27 @@ public class ModelSelectorTool
             GUI.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
         }
 
+        if (MapPiecePort.IsSupported(Project.Descriptor.ProjectType))
+        {
+            ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Show_Other_Maps")}##modelSelectorShowOtherMaps", ref CFG.Current.MapEditor_Model_Selector_Show_Other_Maps);
+            GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Show_Other_Maps_TT"));
+
+            if (CFG.Current.MapEditor_Model_Selector_Show_Other_Maps)
+            {
+                ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Prompt")}##modelSelectorPromptPort", ref CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port);
+                GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Prompt_TT"));
+
+                if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port
+                    && MapPiecePort.CanCopyTextures(Project.Descriptor.ProjectType))
+                {
+                    ImGui.Checkbox($"{LOC.Get("MAP_MapPiecePort_Option_Textures")}##modelSelectorPortTextures", ref CFG.Current.MapEditor_Model_Selector_Port_Textures);
+                    GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Option_Textures_TT"));
+                }
+            }
+        }
+
+        PortTool.Display();
+
         // TOOD
         //ImGui.Checkbox("Update Params on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_NpcParams);
         //UIHelper.Tooltip("When a map object is switched to a new form, update the NpcParam and NpcThinkParam to the closest suitable rows (based on the character ID).");
@@ -105,10 +133,14 @@ public class ModelSelectorTool
             }
             else if (EntityHelper.IsPartMapPiece(firstSelection))
             {
-                // Map pieces are specific to a map, so the only ones that can be switched to are in this one
+                // Map pieces are specific to a map: those of other maps are ported into this one when picked
                 if (firstSelection.Parent != null)
                 {
-                    DisplayModels(ModelPreviewKind.MapPiece, FileSelectionType.MapPiece, firstSelection.Parent.Name, usePreviews);
+                    var targetMap = firstSelection.Parent.Name;
+                    var sourceMap = DisplayMapPieceSourcePicker(targetMap);
+
+                    DisplayModels(ModelPreviewKind.MapPiece, FileSelectionType.MapPiece, sourceMap ?? targetMap, usePreviews,
+                        sourceMap != null ? targetMap : null);
                 }
             }
             else if (EntityHelper.IsPartCollision(firstSelection))
@@ -168,7 +200,103 @@ public class ModelSelectorTool
         return Choices;
     }
 
-    private void DisplayModels(ModelPreviewKind kind, FileSelectionType selectionType, string mapId, bool usePreviews)
+    // The asset maps that hold map pieces, rebuilt when the file list changes
+    private List<string> MapPieceMaps = new();
+    private int MapPieceMapsKey = -1;
+
+    /// <summary>
+    /// The picker of the map whose pieces are listed. Returns the other map's asset map ID, or null for the
+    /// selection's own map (or when other maps aren't shown).
+    /// </summary>
+    private string DisplayMapPieceSourcePicker(string targetMap)
+    {
+        if (!CFG.Current.MapEditor_Model_Selector_Show_Other_Maps || !MapPiecePort.IsSupported(Project.Descriptor.ProjectType))
+            return null;
+
+        var targetAssetMap = PathBuilder.GetAssetMapID(Project, targetMap);
+
+        if (MapPieceMapsKey != Project.Locator.MapPieceFiles.Entries.Count)
+        {
+            MapPieceMapsKey = Project.Locator.MapPieceFiles.Entries.Count;
+            MapPieceMaps = Project.Locator.MapPieceFiles.Entries
+                .Select(e => e.Folder.TrimEnd('/'))
+                .Select(f => f[(f.LastIndexOf('/') + 1)..])
+                .Where(GeneratedRegexMethods.IsMapId)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(m => m, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+        }
+
+        var isOwn = string.IsNullOrEmpty(MapPieceSourceMap)
+            || string.Equals(MapPieceSourceMap, targetAssetMap, StringComparison.OrdinalIgnoreCase);
+
+        string Label(string map)
+        {
+            var alias = AliasHelper.GetMapNameAlias(Project, map);
+            return string.IsNullOrEmpty(alias) ? map : $"{map} - {alias}";
+        }
+
+        // Source Map
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_MapPiecePort_Source_Header"), LOC.Get("MAP_MapPiecePort_Source_Header_TT"));
+
+        var preview = isOwn ? LOC.Get("MAP_MapPiecePort_Source_Own", Label(targetAssetMap)) : Label(MapPieceSourceMap);
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.BeginCombo("##modelSelectorSourceMap", preview, ImGuiComboFlags.HeightLarge))
+        {
+            if (ImGui.IsWindowAppearing())
+                ImGui.SetKeyboardFocusHere();
+
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputTextWithHint("##modelSelectorSourceMapFilter", LOC.Get("MAP_MapPiecePort_Source_Filter"), ref MapPieceSourceFilter, 64);
+
+            if (ImGui.Selectable(LOC.Get("MAP_MapPiecePort_Source_Own", Label(targetAssetMap)) + "##modelSelectorSourceMapOwn", isOwn))
+                MapPieceSourceMap = "";
+
+            var maps = MapPieceMaps
+                .Where(m => !string.Equals(m, targetAssetMap, StringComparison.OrdinalIgnoreCase))
+                .Where(m => string.IsNullOrEmpty(MapPieceSourceFilter)
+                    || Label(m).Contains(MapPieceSourceFilter, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(maps.Count);
+
+            while (clipper.Step())
+            {
+                for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+                {
+                    var map = maps[i];
+
+                    if (ImGui.Selectable($"{Label(map)}##modelSelectorSourceMap_{map}", string.Equals(map, MapPieceSourceMap, StringComparison.OrdinalIgnoreCase)))
+                        MapPieceSourceMap = map;
+                }
+            }
+
+            clipper.End();
+            ImGui.EndCombo();
+        }
+
+        GUI.Tooltip(LOC.Get("MAP_MapPiecePort_Source_TT"));
+
+        isOwn = string.IsNullOrEmpty(MapPieceSourceMap)
+            || string.Equals(MapPieceSourceMap, targetAssetMap, StringComparison.OrdinalIgnoreCase);
+
+        if (isOwn)
+            return null;
+
+        if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+            GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("MAP_MapPiecePort_Source_Other", targetMap));
+        else
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_MapPiecePort_Source_Other_Swap", targetMap));
+
+        return MapPieceSourceMap;
+    }
+
+    private void DisplayModels(ModelPreviewKind kind, FileSelectionType selectionType, string mapId, bool usePreviews,
+        string portTargetMap = null)
     {
         var choices = GetChoices(kind, mapId);
 
@@ -185,7 +313,7 @@ public class ModelSelectorTool
             PreviewBrowser.SelectedID = _selectedEntry;
 
             PreviewBrowser.Display("modelSelector", PreviewEntries, e =>
-                ApplyChoice(choices.FirstOrDefault(c => c.ID == e.ID), selectionType, mapId));
+                ApplyChoice(choices.FirstOrDefault(c => c.ID == e.ID), selectionType, mapId, portTargetMap));
 
             _selectedEntry = PreviewBrowser.SelectedID;
             return;
@@ -214,16 +342,18 @@ public class ModelSelectorTool
 
                     if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        ApplyChoice(choice, selectionType, mapId);
+                        ApplyChoice(choice, selectionType, mapId, portTargetMap);
                     }
                 }
 
-                // Arrow Selection
+                // Arrow Selection: not for another map's pieces while they are ported, where each pick would prompt
                 if (ImGui.IsItemHovered() && SelectNextEntry)
                 {
                     SelectNextEntry = false;
                     _selectedEntry = choice.ID;
-                    ApplyChoice(choice, selectionType, mapId);
+
+                    if (portTargetMap == null || !CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+                        ApplyChoice(choice, selectionType, mapId, portTargetMap);
                 }
 
                 if (ImGui.IsItemFocused())
@@ -243,12 +373,43 @@ public class ModelSelectorTool
         ImGui.EndChild();
     }
 
-    private void ApplyChoice(ModelChoice choice, FileSelectionType selectionType, string mapId)
+    /// <param name="portTargetMap">Set when the choice is another map's piece: the map it is ported into</param>
+    private void ApplyChoice(ModelChoice choice, FileSelectionType selectionType, string mapId, string portTargetMap = null)
     {
-        if (choice != null)
+        if (choice == null)
+            return;
+
+        if (portTargetMap != null)
         {
-            ApplyMapAssetSelection(choice.ModelName, selectionType, mapId);
+            // Prompt Port: ported into the selected map through the prompt. Off: a plain swap to the model name,
+            // which the selected map then resolves in its own folder, as a swap within the map does
+            if (CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+                BeginPort(choice, mapId, portTargetMap);
+            else
+                ApplyMapAssetSelection(choice.ModelName, selectionType, portTargetMap);
+
+            return;
         }
+
+        ApplyMapAssetSelection(choice.ModelName, selectionType, mapId);
+    }
+
+    /// <summary>Another map's piece picked: ported into the map of the selected map pieces, which must all be in it</summary>
+    private void BeginPort(ModelChoice choice, string sourceAssetMap, string targetMap)
+    {
+        var pieces = View.ViewportSelection.GetFilteredSelection<Entity>().Where(EntityHelper.IsPartMapPiece).ToList();
+
+        if (pieces.Count == 0)
+            return;
+
+        if (pieces.Any(p => p.Parent?.Name != targetMap))
+        {
+            PlatformUtils.Instance.MessageBox(LOC.Get("MAP_MapPiecePort_Multiple_Maps", targetMap),
+                LOC.Get("MAP_MapPiecePort_Prompt_Title"), MessageBoxButtons.OK);
+            return;
+        }
+
+        PortTool.Begin(sourceAssetMap, choice.ID, targetMap);
     }
 
     private void DisplayCollisionList()

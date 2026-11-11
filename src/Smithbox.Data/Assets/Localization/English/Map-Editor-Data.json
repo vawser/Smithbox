@@ -5,6 +5,10 @@
       "Text": "Saved map: {0}"
     },
     {
+      "Key": "MAP_Universe_Save_Navmesh_PASS",
+      "Text": "Saved navmesh: {0}"
+    },
+    {
       "Key": "MAP_Universe_Save_Map_FAIL",
       "Text": "Failed to save map: {0}"
     },

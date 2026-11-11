@@ -675,6 +675,26 @@ public class TextureBank : IDisposable
     }
 
     /// <summary>
+    /// For containers another editor saved through <see cref="BinderContents.Save"/> (the Map Editor's Texture
+    /// Transfer): marks them as project files and refreshes the scenes and icons, as a save here does. Main thread.
+    /// </summary>
+    public void NotifyContainersSaved(IEnumerable<KeyValuePair<FileDictionaryEntry, BinderContents>> containers)
+    {
+        var saved = new List<string>();
+
+        foreach (var (entry, contents) in containers)
+        {
+            foreach (var path in contents.GetSavePaths(entry))
+            {
+                ProjectFiles[path] = true;
+                saved.Add(path);
+            }
+        }
+
+        OnFilesSaved(saved, false);
+    }
+
+    /// <summary>
     /// Shows what was written in the other editors (T7): the scenes reload the textures they took from the saved
     /// containers, and the icon previews read the saved TPFs and layouts again.
     /// </summary>

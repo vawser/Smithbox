@@ -687,17 +687,23 @@ public class MapUniverse : IUniverse
     }
 
     /// <summary>
-    /// Save the map file if it should be saved, clearing its modified state if the save succeeded
+    /// Save the map file if it should be saved, clearing its modified state if the save succeeded.
+    /// True if the file had edits and they were saved.
     /// </summary>
-    private void SaveFile(MapContainer map, MapFileType fileType, Func<bool> save)
+    private bool SaveFile(MapContainer map, MapFileType fileType, Func<bool> save)
     {
         if (!ShouldSaveFile(map, fileType))
-            return;
+            return false;
+
+        var wasDirty = map.IsDirty(fileType);
 
         if (save())
         {
             map.ClearDirty(fileType);
+            return wasDirty;
         }
+
+        return false;
     }
 
     /// <summary>
@@ -719,8 +725,11 @@ public class MapUniverse : IUniverse
         SaveFile(map, MapFileType.BTAB, () => View.LightAtlasBank.SaveBTAB(map));
         SaveFile(map, MapFileType.BTPB, () => View.LightProbeBank.SaveBTPB(map));
         SaveFile(map, MapFileType.ACB, () => View.AssetConfigurationBank.SaveACB(map));
-        SaveFile(map, MapFileType.NVA, () => View.HavokNavmeshBank.SaveNVA(map));
-        SaveFile(map, MapFileType.NVVA, () => View.HavokNavmeshBank.SaveNVVA(map));
+        // Navigation files saved with edits, reported together once the map's save is done
+        var navSaved = false;
+
+        navSaved |= SaveFile(map, MapFileType.NVA, () => View.HavokNavmeshBank.SaveNVA(map));
+        navSaved |= SaveFile(map, MapFileType.NVVA, () => View.HavokNavmeshBank.SaveNVVA(map));
 
         // Only these projects are supported for collision editing within the Map Editor
         if (Project.Descriptor.ProjectType is ProjectType.ER
@@ -730,14 +739,19 @@ public class MapUniverse : IUniverse
             or ProjectType.DB)
         {
             SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
-            SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
+            navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
         }
 
         // The NVC and ONAV files are only read for ER, by the navigation bank
         if (Project.Descriptor.ProjectType is ProjectType.ER)
         {
-            SaveFile(map, MapFileType.NVC, () => View.NavigationBank.SaveNVC(map));
-            SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
+            navSaved |= SaveFile(map, MapFileType.NVC, () => View.NavigationBank.SaveNVC(map));
+            navSaved |= SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
+        }
+
+        if (navSaved)
+        {
+            Smithbox.Log(this, LOC.Get("MAP_Universe_Save_Navmesh_PASS", map.Name));
         }
 
         // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)

@@ -208,6 +208,18 @@ public class MapToolWindow
             View.MapExtractionTool.OnToolWindow();
         }
 
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_TextureTransfer && View.TextureTransferTool.CanUse())
+        {
+            View.TextureTransferTool.OnToolWindow();
+        }
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_PartTransfer && View.PartTransferTool.CanUse())
+        {
+            View.PartTransferTool.OnToolWindow();
+        }
+
         // Map Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Map_Data"));
 
@@ -425,6 +437,16 @@ public class MapToolWindow
             GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_Data_Transfer);
 
             ToolToggle("MAP_ToolWindow_View_Toggle_Map_Extraction", ref CFG.Current.Interface_MapEditor_Tool_MapExtraction);
+
+            if (View.TextureTransferTool.CanUse())
+            {
+                ToolToggle("MAP_ToolWindow_View_Toggle_Texture_Transfer", ref CFG.Current.Interface_MapEditor_Tool_TextureTransfer);
+            }
+
+            if (View.PartTransferTool.CanUse())
+            {
+                ToolToggle("MAP_ToolWindow_View_Toggle_Part_Transfer", ref CFG.Current.Interface_MapEditor_Tool_PartTransfer);
+            }
 
             if (ImGui.MenuItem("Prefabs"))
             {

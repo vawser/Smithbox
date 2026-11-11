@@ -240,6 +240,11 @@ public class CFG
     public bool MapEditor_Model_Selector_Update_Instance_ID = true;
     public bool MapEditor_Model_Selector_Update_NpcParams = true;
 
+    // Model Browser: other maps' map pieces, ported into the selected map when picked
+    public bool MapEditor_Model_Selector_Show_Other_Maps = true;
+    public bool MapEditor_Model_Selector_Prompt_Map_Piece_Port = true;
+    public bool MapEditor_Model_Selector_Port_Textures = true;
+
     public MapObjectNameDisplayType MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
 
     public int MapEditor_Selection_Position_IncrementType = 0;
@@ -314,6 +319,13 @@ public class CFG
     public bool MapEditor_MapExtraction_IncludeTextures = true;
     public bool MapEditor_MapExtraction_IncludeMaterialMaps = true;
     public MapExtractionTextureFormat MapEditor_MapExtraction_TextureFormat = MapExtractionTextureFormat.PNG;
+
+    public bool MapEditor_TextureTransfer_SelectionOnly = false;
+
+    // Part Transfer
+    public bool MapEditor_PartTransfer_Move_To_Orb = false;
+    public bool MapEditor_PartTransfer_Rename_Parts = true;
+    public bool MapEditor_PartTransfer_Copy_Textures = true;
     public bool MapEditor_MapExtraction_FlipUVs = true;
     public bool MapEditor_MapExtraction_MirrorX = false;
     public bool MapEditor_MapExtraction_CentreAtOrigin = false;
@@ -593,6 +605,8 @@ public class CFG
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;
     public bool Interface_MapEditor_Tool_MapExtraction = true;
+    public bool Interface_MapEditor_Tool_TextureTransfer = true;
+    public bool Interface_MapEditor_Tool_PartTransfer = true;
     public bool Interface_MapEditor_Tool_DestructionGeneration = true;
     public bool Interface_MapEditor_Tool_LoadList = true;
     public bool Interface_MapEditor_Tool_EntryFileList = true;
