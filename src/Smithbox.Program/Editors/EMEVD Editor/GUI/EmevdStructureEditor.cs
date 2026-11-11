@@ -139,6 +139,73 @@ public class EmevdStructureEditor
         }));
     }
 
+    /// <summary>The selected units can be wrapped: they sit next to each other in one block</summary>
+    public bool CanWrap
+    {
+        get
+        {
+            if (!HasLine)
+                return false;
+
+            var tree = Tree(Script);
+            var units = EmevdStructureEdit.UnitLeads(Script, tree, SelectedLines).Select(l => EmevdStructureEdit.UnitOf(Script, tree, l)).OrderBy(u => u.Index).ToList();
+            if (units.Count == 0 || units.Any(u => u.List == null || !ReferenceEquals(u.List, units[0].List)))
+                return false;
+
+            for (var k = 0; k + 1 < units.Count; k++)
+            {
+                if (units[k].Index + units[k].Count != units[k + 1].Index)
+                    return false;
+            }
+
+            return true;
+        }
+    }
+
+    /// <summary>Wraps the selected units in a new skip or goto C-block (a goto gets a new label after them)</summary>
+    public void Wrap(EmevdInstrDef def)
+    {
+        if (!HasLine || def == null)
+            return;
+
+        var lines = SelectedLines;
+        Deferred.Add(() => Commit(LOC.Get("EMEVD_Edit_Op_Wrap", def.DisplayName), (script, tree) =>
+        {
+            var added = EmevdStructureEdit.Wrap(Catalog, script, tree, EmevdStructureEdit.UnitLeads(script, tree, lines), def);
+            if (added == null)
+                Smithbox.Log(this, LOC.Get("EMEVD_Edit_Wrap_Failed"), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return added;
+        }));
+    }
+
+    /// <summary>The instructions that can head a wrap, by flow kind: every Skip or Goto of the layouts, by bank and ID</summary>
+    public List<EmevdInstrDef> WrapDefs(EmevdFlowKind kind)
+    {
+        var catalog = Catalog;
+        if (catalog == null)
+            return new();
+
+        if (WrapCache.TryGetValue(kind, out var cached) && ReferenceEquals(WrapCacheCatalog, catalog))
+            return cached;
+
+        if (!ReferenceEquals(WrapCacheCatalog, catalog))
+            WrapCache.Clear();
+
+        WrapCacheCatalog = catalog;
+
+        var defs = catalog.Classes.Values.OrderBy(c => c.Bank)
+            .SelectMany(c => c.Instructions.Values.OrderBy(i => i.ID))
+            .Where(d => EmevdControlFlow.Find(catalog.Game, d.Bank, d.ID) is var f && f.Kind == kind
+                && d.Args.Any(a => !a.Optional && a.Offset == f.ArgOffset))
+            .ToList();
+
+        WrapCache[kind] = defs;
+        return defs;
+    }
+
+    private readonly Dictionary<EmevdFlowKind, List<EmevdInstrDef>> WrapCache = new();
+    private EmevdCatalog WrapCacheCatalog;
+
     /// <summary>Steps every selected unit once; adjacent ones move together. Nothing moves if one can't.</summary>
     public void Step(bool down)
     {
@@ -182,13 +249,30 @@ public class EmevdStructureEditor
     public EmevdDropTarget TargetOf(EmevdRow row)
     {
         var script = Script;
-        if (script?.Nodes == null || !EmevdStructureEdit.Find(script.Nodes, row.Line, out var list, out var index))
+        var path = new List<(List<EmevdNode> list, int index)>();
+        if (script?.Nodes == null || !EmevdStructureEdit.Find(script.Nodes, row.Line, out var list, out var index, path))
             return null;
 
         var node = list[index];
 
+        // A case label: the end of the part before it (dropping before the label itself would leave the case)
+        if (row.IsCase && path.Count > 0 && path[^1].list[path[^1].index] is { Kind: EmevdNodeKind.Switch } sw)
+        {
+            var c = sw.Cases.IndexOf(list);
+            return new EmevdDropTarget(c <= 0 ? sw.Default : sw.Cases[c - 1], null);
+        }
+
+        // "Default": its start
+        if (row.Kind == EmevdRowKind.Section)
+            return new EmevdDropTarget(node.Default, node.Default.FirstOrDefault());
+
         if (row.Kind == EmevdRowKind.BlockEnd)
+        {
+            if (node.Kind == EmevdNodeKind.Switch)
+                return new EmevdDropTarget(node.Cases.Count > 0 ? node.Cases[^1] : node.Default, null);
+
             return new EmevdDropTarget(node.ElseLine >= 0 ? node.Else : node.Body, null);
+        }
 
         if (row.IsElse)
             return new EmevdDropTarget(node.Body, null);
@@ -223,9 +307,14 @@ public class EmevdStructureEditor
 
         for (var i = 0; i < shown.Count && i < copy.Count; i++)
         {
-            var found = Map(shown[i].Body, copy[i].Body, wanted) ?? Map(shown[i].Else, copy[i].Else, wanted);
-            if (found != null)
-                return found;
+            var shownChildren = shown[i].Children;
+            var copyChildren = copy[i].Children;
+
+            for (var c = 0; c < shownChildren.Count && c < copyChildren.Count; c++)
+            {
+                if (Map(shownChildren[c], copyChildren[c], wanted) is { } found)
+                    return found;
+            }
         }
 
         return null;
@@ -281,6 +370,14 @@ public class EmevdStructureEditor
             return;
 
         var result = EmevdStructureEdit.Apply(Catalog, script, tree, added);
+
+        // A skip that would have to jump further than its count arg can hold
+        if (result.Overflows.Count > 0)
+        {
+            var (line, count) = result.Overflows[0];
+            Smithbox.Log(this, LOC.Get("EMEVD_Edit_Refused", what, LOC.Get("EMEVD_Edit_Skip_Overflow", line, count)), Microsoft.Extensions.Logging.LogLevel.Warning);
+            return;
+        }
 
         // The guard: try the result on a copy and compare its problems with the event's own
         var bank = View.Project.Handler.EmevdData?.PrimaryBank;

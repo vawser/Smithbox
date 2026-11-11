@@ -187,6 +187,17 @@ public class EmevdEditorScreen : EditorScreen
 
             ImGui.Separator();
 
+            var structured = CFG.Current.EmevdEditor_Structured_View && View.BlockView.CurrentScript != null;
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Collapse_All")}##collapseAll", "", false, structured))
+                View.BlockView.SetAllCollapsed(true);
+            GUI.Tooltip(LOC.Get("EMEVD_View_Collapse_All_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Expand_All")}##expandAll", "", false, structured))
+                View.BlockView.SetAllCollapsed(false);
+            GUI.Tooltip(LOC.Get("EMEVD_View_Expand_All_TT"));
+
+            ImGui.Separator();
+
             if (ImGui.MenuItem($"{LOC.Get("EMEVD_View_Toggle_Tools")}##toolWindowToggle"))
             {
                 CFG.Current.Interface_EmevdEditor_ToolWindow = !CFG.Current.Interface_EmevdEditor_ToolWindow;

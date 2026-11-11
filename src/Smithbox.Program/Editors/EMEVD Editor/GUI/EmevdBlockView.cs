@@ -32,6 +32,12 @@ public class EmevdBlockView
 
     private List<EmevdRow> Rows = new();
     private int[] LineRow = Array.Empty<int>();
+
+    // Collapsed C-blocks, by their header instruction (instructions keep their identity through edits and undo); a
+    // hidden line maps to the row of the header hiding it
+    private readonly HashSet<EMEVD.Instruction> Collapsed = new(ReferenceEqualityComparer.Instance);
+    private readonly Dictionary<int, int> HiddenRow = new();
+    private bool LayoutDirty;
     private readonly Dictionary<int, int> ExitLevels = new();
     private List<EmevdSpan> DrawnSpans = new();
     private int DrawnLanes;
@@ -79,7 +85,12 @@ public class EmevdBlockView
                 CallTargets.Clear();
                 BuildLayout(structured);
             }
+            else if (LayoutDirty)
+            {
+                BuildLayout(structured);
+            }
 
+            LayoutDirty = false;
             return Script;
         }
     }
@@ -88,6 +99,7 @@ public class EmevdBlockView
     private void BuildLayout(bool structured)
     {
         ExitLevels.Clear();
+        HiddenRow.Clear();
 
         if (Script == null)
         {
@@ -103,7 +115,8 @@ public class EmevdBlockView
         if (structured)
         {
             Script.Nodes = EmevdStructure.Decompile(Script);
-            Rows = EmevdStructure.Rows(Script.Nodes);
+            var lines = Script.Lines;
+            Rows = EmevdStructure.Rows(Script.Nodes, l => Collapsed.Contains(lines[l].Instr), HiddenRow);
             structuredLines = EmevdStructure.StructuredLines(Script.Nodes);
             CollectExits(Script.Nodes);
         }
@@ -120,6 +133,9 @@ public class EmevdBlockView
                 LineRow[Rows[r].Line] = r;
         }
 
+        foreach (var (line, row) in HiddenRow)
+            LineRow[line] = row;
+
         // Brackets for the jumps the C-blocks don't show, laid out among themselves
         DrawnSpans = Script.Spans
             .Where(s => structuredLines == null || !structuredLines.Contains(s.From))
@@ -135,9 +151,79 @@ public class EmevdBlockView
             if (n.ExitLevel >= 0)
                 ExitLevels[n.Line] = n.ExitLevel;
 
-            CollectExits(n.Body);
-            CollectExits(n.Else);
+            foreach (var child in n.Children)
+                CollectExits(child);
         }
+    }
+
+    // ---------------------------------------------------------------- collapsing
+
+    public bool IsCollapsed(int line) => Script != null && line >= 0 && line < Script.Lines.Count && Collapsed.Contains(Script.Lines[line].Instr);
+
+    /// <summary>Collapses or expands the C-block headed by a line (takes effect next frame)</summary>
+    public void SetCollapsed(int line, bool collapse)
+    {
+        if (Script == null || line < 0 || line >= Script.Lines.Count)
+            return;
+
+        var instr = Script.Lines[line].Instr;
+        if (collapse ? Collapsed.Add(instr) : Collapsed.Remove(instr))
+            LayoutDirty = true;
+    }
+
+    /// <summary>Collapses (or expands) every C-block of the selected event</summary>
+    public void SetAllCollapsed(bool collapse)
+    {
+        if (Script?.Nodes == null)
+            return;
+
+        void Walk(List<EmevdNode> nodes)
+        {
+            foreach (var n in nodes)
+            {
+                if (n.IsBlock)
+                    SetCollapsed(n.Line, collapse);
+
+                foreach (var child in n.Children)
+                    Walk(child);
+            }
+        }
+
+        Walk(Script.Nodes);
+    }
+
+    /// <summary>Expands the blocks hiding a line, so it can be shown and selected; true if any was collapsed</summary>
+    private bool Reveal(int line)
+    {
+        if (Script?.Nodes == null || !HiddenRow.ContainsKey(line))
+            return false;
+
+        var path = new List<(List<EmevdNode> list, int index)>();
+        if (!EmevdStructureEdit.Find(Script.Nodes, line, out var list, out var index, path))
+            return false;
+
+        foreach (var (l, i) in path)
+            SetCollapsed(l[i].Line, false);
+
+        // An else line is in its own node
+        if (list[index].Line != line)
+            SetCollapsed(list[index].Line, false);
+
+        return true;
+    }
+
+    /// <summary>The line the row after (or before) a line's row shows, skipping feet, dividers and hidden lines</summary>
+    private int StepLine(int line, int dir)
+    {
+        var r = line >= 0 && line < LineRow.Length ? LineRow[line] : -1;
+
+        for (r += dir; r >= 0 && r < Rows.Count; r += dir)
+        {
+            if (Rows[r].Kind == EmevdRowKind.Line)
+                return Rows[r].Line;
+        }
+
+        return dir > 0 ? line : -1;
     }
 
     public void Draw()
@@ -234,11 +320,36 @@ public class EmevdBlockView
             selection.ScrollToInstruction = true;
         }
 
+        // By rows, so collapsed blocks are stepped over
         if (ImGui.IsKeyPressed(ImGuiKey.DownArrow) && count > 0)
-            Go(Math.Min(selection.InstructionIndex + 1, count - 1));
+            Go(StepLine(selection.InstructionIndex, 1));
 
         if (ImGui.IsKeyPressed(ImGuiKey.UpArrow) && selection.InstructionIndex >= 0)
-            Go(selection.InstructionIndex - 1);
+            Go(StepLine(selection.InstructionIndex, -1));
+
+        // Left collapses the selected C-block (or goes to the block holding the line), Right expands it
+        var at = selection.InstructionIndex;
+        if (Script.Nodes != null && at >= 0 && at < LineRow.Length)
+        {
+            var header = Rows[LineRow[at]] is { EndRow: >= 0 } r && r.Line == at;
+
+            if (ImGui.IsKeyPressed(ImGuiKey.LeftArrow))
+            {
+                if (header && !IsCollapsed(at))
+                {
+                    SetCollapsed(at, true);
+                }
+                else
+                {
+                    var path = new List<(List<EmevdNode> list, int index)>();
+                    if (EmevdStructureEdit.Find(Script.Nodes, at, out _, out _, path) && path.Count > 0)
+                        Go(path[^1].list[path[^1].index].Line);
+                }
+            }
+
+            if (ImGui.IsKeyPressed(ImGuiKey.RightArrow) && header)
+                SetCollapsed(at, false);
+        }
 
         if (ImGui.IsKeyPressed(ImGuiKey.Enter))
             FollowCall(selection.InstructionIndex);
@@ -273,7 +384,7 @@ public class EmevdBlockView
         // Row tops (relative to the first row) as a prefix sum, since C-block feet are shorter than lines
         var tops = new float[Rows.Count + 1];
         for (var r = 0; r < Rows.Count; r++)
-            tops[r + 1] = tops[r] + (Rows[r].Kind == EmevdRowKind.BlockEnd ? footH : blockH) + RowGap;
+            tops[r + 1] = tops[r] + (Rows[r].Kind == EmevdRowKind.BlockEnd ? footH : Rows[r].Kind == EmevdRowKind.Section ? lineH + 2f : blockH) + RowGap;
 
         var linesTop = origin.Y + hatH + 6f;
         var totalH = hatH + 6f + tops[^1] + 8f;
@@ -281,7 +392,8 @@ public class EmevdBlockView
         var scrollY = ImGui.GetScrollY();
         var viewH = ImGui.GetWindowHeight();
 
-        if (selection.ScrollToInstruction)
+        // A line hidden in a collapsed block is shown first (search hits, Called By, Problems); scrolled to next frame
+        if (selection.ScrollToInstruction && !Reveal(selection.InstructionIndex))
         {
             selection.ScrollToInstruction = false;
 
@@ -323,6 +435,23 @@ public class EmevdBlockView
             var top = linesTop + tops[r];
             var x = RowX(r);
 
+            // A switch's "Default" divider, over the arm like an else row
+            if (row.Kind == EmevdRowKind.Section)
+            {
+                var color = ImGui.GetColorU32(EmevdFormat.BlockColor(Script.Lines[row.Line]));
+                var h = lineH + 2f;
+                var text = LOC.Get("EMEVD_Script_Default");
+                var max = new Vector2(Math.Min(x + ImGui.CalcTextSize(text).X + 16f, blockX1), top + h);
+                drawList.AddRectFilled(new Vector2(x, top), max, color, 3f, ImDrawFlags.RoundCornersRight);
+                drawList.AddText(new Vector2(x + 8f, top + 1f), ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), text);
+
+                ImGui.SetCursorScreenPos(new Vector2(x, top));
+                ImGui.InvisibleButton($"##emevdSection{r}", new Vector2(blockX1 - x, h));
+                GUI.Tooltip(LOC.Get("EMEVD_Script_Default_TT"));
+                DropTarget(View.Structure.TargetOf(row));
+                continue;
+            }
+
             if (row.Kind == EmevdRowKind.BlockEnd)
             {
                 var color = ImGui.GetColorU32(EmevdFormat.BlockColor(Script.Lines[row.Line]));
@@ -347,7 +476,7 @@ public class EmevdBlockView
             }
 
             DrawIndex(drawList, line, new Vector2(origin.X, top + padY));
-            DrawBlock(drawList, line, new Vector2(x, top), new Vector2(blockX1, top + blockH), padY, row.IsElse, row);
+            DrawBlock(drawList, line, new Vector2(x, top), new Vector2(blockX1, top + blockH), padY, row.IsElse || row.IsCase, row);
         }
 
         // Brackets for the jumps the C-blocks don't show, crossing the rows on screen
@@ -512,6 +641,14 @@ public class EmevdBlockView
         var io = ImGui.GetIO();
         var plain = !io.KeyCtrl && !io.KeyShift;
 
+        // A C-block header's caret collapses or expands it, instead of selecting
+        var toggleW = row.EndRow >= 0 ? lineH + 2f : 0f;
+        if (clicked && toggleW > 0 && ImGui.GetMousePos().X < min.X + toggleW)
+        {
+            SetCollapsed(line.Index, !row.Collapsed);
+            clicked = false;
+        }
+
         // Right-click keeps a selection that holds the line, so its menu acts on all of it
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right) && !selection.IsSelected(line.Index))
             selection.SelectInstruction(line.Index);
@@ -594,18 +731,30 @@ public class EmevdBlockView
         var x = min.X + (line.Kind == EmevdBlockKind.Condition ? h * 0.5f + 2f : 8f);
         var y = min.Y + padY;
 
-        var name = isElse ? LOC.Get("EMEVD_Script_Else") : line.Name;
+        if (toggleW > 0)
+        {
+            drawList.AddText(new Vector2(min.X + 5f, y), white, row.Collapsed ? Icons.CaretRight : Icons.CaretDown);
+            x = Math.Max(x, min.X + toggleW + 2f);
+        }
+
+        var name = !isElse ? line.Name : row.IsCase ? LOC.Get("EMEVD_Script_Case") : LOC.Get("EMEVD_Script_Else");
         drawList.AddText(new Vector2(x, y), line.Decoded.Def?.HasName == false && !isElse ? dim : white, name);
         x += ImGui.CalcTextSize(name).X + 10f;
+
+        if (row.IsSwitch)
+            x = Chip(drawList, new Vector2(x, y), LOC.Get("EMEVD_Script_Switch"), EmevdFormat.Darken(color, 0.5f), false, lineH) + 8f;
 
         if (ExitLevels.TryGetValue(line.Index, out var exitLevel))
         {
             x = Chip(drawList, new Vector2(x, y), LOC.Get("EMEVD_Script_Exit", exitLevel + 1), EmevdFormat.Darken(color, 0.5f), false, lineH) + 8f;
         }
 
+        if (row.Collapsed)
+            x = Chip(drawList, new Vector2(x, y), LOC.Get("EMEVD_Script_Collapsed", row.Hidden), EmevdFormat.Darken(color, 0.5f), false, lineH) + 8f;
+
         if (isElse)
         {
-            drawList.AddText(new Vector2(x, y), dim, line.Key);
+            drawList.AddText(new Vector2(x, y), dim, row.IsCase ? line.Name : line.Key);
         }
         else if (line.Decoded.Fits)
         {
@@ -759,9 +908,48 @@ public class EmevdBlockView
 
         ImGui.Separator();
 
+        if (ImGui.BeginMenu(LOC.Get("EMEVD_Edit_Op_Wrap_Menu"), s.HasLine))
+        {
+            var canWrap = s.CanWrap;
+            if (!canWrap)
+                ImGui.TextDisabled(LOC.Get("EMEVD_Edit_Wrap_Not_Adjacent"));
+
+            WrapMenu(s, EmevdFlowKind.Skip, "EMEVD_Edit_Op_Wrap_Skip", canWrap);
+            WrapMenu(s, EmevdFlowKind.Goto, "EMEVD_Edit_Op_Wrap_Goto", canWrap);
+            ImGui.EndMenu();
+        }
+        GUI.Tooltip(LOC.Get("EMEVD_Edit_Op_Wrap_TT"));
+
+        ImGui.Separator();
+
         if (ImGui.MenuItem(LOC.Get("EMEVD_Edit_Op_Delete"), InputManager.GetHint(KeybindID.Delete), false, s.HasLine))
             s.Delete();
         GUI.Tooltip(LOC.Get("EMEVD_Edit_Op_Delete_TT"));
+    }
+
+    private static void WrapMenu(EmevdStructureEditor s, EmevdFlowKind kind, string label, bool enabled)
+    {
+        if (!ImGui.BeginMenu(LOC.Get(label), enabled))
+            return;
+
+        var defs = s.WrapDefs(kind);
+        EmevdClassDef cls = null;
+
+        foreach (var def in defs)
+        {
+            if (def.Class != cls)
+            {
+                if (cls != null)
+                    ImGui.Separator();
+                cls = def.Class;
+                ImGui.TextDisabled(cls.DisplayName);
+            }
+
+            if (ImGui.MenuItem($"{def.DisplayName}##emevdWrap{def.Key}", def.Key))
+                s.Wrap(def);
+        }
+
+        ImGui.EndMenu();
     }
 
     /// <summary>A rounded value box; returns the x after it</summary>

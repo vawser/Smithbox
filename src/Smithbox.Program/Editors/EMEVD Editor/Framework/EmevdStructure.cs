@@ -8,6 +8,11 @@ public enum EmevdNodeKind
     Skip,
     /// <summary>A goto whose label follows at the same level: a C-block holding the lines it jumps over</summary>
     Goto,
+    /// <summary>
+    /// A dispatch table: a run of gotos (the first is the node's line, the rest are <see cref="EmevdNode.Body"/>) to
+    /// labels after the run that don't nest, then a default part and one case per label
+    /// </summary>
+    Switch,
 }
 
 /// <summary>A node of an event's structured tree. Every instruction is in the tree exactly once, in order.</summary>
@@ -35,11 +40,28 @@ public class EmevdNode
     /// </summary>
     public int ExitLevel = -1;
 
+    /// <summary>A switch's default part: the lines after its gotos, before the first case label</summary>
+    public List<EmevdNode> Default = new();
+
+    /// <summary>A switch's cases, in file order; each starts with its label line</summary>
+    public List<List<EmevdNode>> Cases = new();
+
     public bool IsBlock => Kind != EmevdNodeKind.Line;
+
+    /// <summary>Every list of nodes inside this one, in file order (unused ones are empty)</summary>
+    public List<List<EmevdNode>> Children
+    {
+        get
+        {
+            var list = new List<List<EmevdNode>>(3 + Cases.Count) { Body, Else, Default };
+            list.AddRange(Cases);
+            return list;
+        }
+    }
 }
 
-/// <summary>What a display row is</summary>
-public enum EmevdRowKind { Line, BlockEnd }
+/// <summary>What a display row is: a line, the foot of a C-block, or a switch's "Default" divider</summary>
+public enum EmevdRowKind { Line, BlockEnd, Section }
 
 /// <summary>One row of the structured view: a line at a depth, or the foot of a C-block</summary>
 public struct EmevdRow
@@ -53,6 +75,14 @@ public struct EmevdRow
     public bool IsElse;
     /// <summary>A condition evaluated by the flow at this row index, or -1</summary>
     public int ConditionOf;
+    /// <summary>The line is the label starting a switch case</summary>
+    public bool IsCase;
+    /// <summary>The header of a switch</summary>
+    public bool IsSwitch;
+    /// <summary>A collapsed C-block's header: its inner lines have no rows</summary>
+    public bool Collapsed;
+    /// <summary>A collapsed header: how many lines it hides</summary>
+    public int Hidden;
 }
 
 /// <summary>
@@ -65,6 +95,10 @@ public struct EmevdRow
 /// - A goto becomes a C-block running to the first matching label after it at the same level. If the body ends with
 ///   1000[103] Goto Unconditionally to a later label at that level, the lines between the two labels are the else
 ///   part (starting with the first label).
+/// - A run of two or more gotos whose labels all follow the run and cross (a later goto's label after an earlier
+///   one's, so goto C-blocks can't nest them) is a switch: the lines up to the first label are the default part, and
+///   each label starts a case running to the next label. The switch ends where every part but the last ends with
+///   1000[103] to one label after the last case ("break"), else at the end of its parent.
 /// - Condition lines right before 1000[00]/[01]/[02]/[101] (wait, skip, end, goto on a condition group, uncompiled:
 ///   they evaluate the conditions registered before them) are drawn as that flow's conditions.
 /// - Anything else stays a plain line: skips running past their parent, skips set by a parameter, unmatched gotos.
@@ -137,6 +171,13 @@ public static class EmevdStructure
                 continue;
             }
 
+            if (UsableGoto(line) && TrySwitch(lines, i, end, ends, out var sw, out var swEnd))
+            {
+                nodes.Add(sw);
+                i = swEnd;
+                continue;
+            }
+
             if (UsableGoto(line))
             {
                 var label = FindLabel(lines, i + 1, end, line.GotoLabel);
@@ -182,6 +223,131 @@ public static class EmevdStructure
 
         AttachConditions(lines, nodes);
         return nodes;
+    }
+
+    /// <summary>
+    /// A switch starting at goto <paramref name="start"/>: the run of gotos (each with the conditions just before it),
+    /// their labels after the run, crossing; the default part and the cases. Ranges: the switch, and inside it each
+    /// part, so exits count both (leaving a case and its switch is 2 levels).
+    /// </summary>
+    private static bool TrySwitch(List<EmevdLine> lines, int start, int end, List<int> ends, out EmevdNode node, out int switchEnd)
+    {
+        node = null;
+        switchEnd = end;
+
+        // The run: goto, then (conditions*, goto)*. Conditions only before a goto that evaluates them.
+        var selectors = new List<(int Line, List<int> Conditions)> { (start, new()) };
+        var j = start + 1;
+        while (true)
+        {
+            var conds = new List<int>();
+            var k = j;
+            while (k < end && lines[k].Kind == EmevdBlockKind.Condition)
+                conds.Add(k++);
+
+            if (k >= end || !UsableGoto(lines[k]) || (conds.Count > 0 && !Evaluates(lines[k])))
+                break;
+
+            selectors.Add((k, conds));
+            j = k + 1;
+        }
+
+        if (selectors.Count < 2)
+            return false;
+
+        var targets = selectors.Select(s => FindLabel(lines, s.Line + 1, end, lines[s.Line].GotoLabel)).ToList();
+
+        // A run ending with Goto Unconditionally past every other label is the default jumping to the end ("break"),
+        // not a case: it starts the default part. With one goto left, it's a goto C-block's else instead.
+        if (IsGotoAlways(lines[selectors[^1].Line]) && targets[^1] > targets.Take(targets.Count - 1).Max())
+        {
+            selectors.RemoveAt(selectors.Count - 1);
+            targets.RemoveAt(targets.Count - 1);
+
+            if (selectors.Count < 2)
+                return false;
+        }
+
+        var lastSelector = selectors[^1].Line;
+        if (targets.Any(t => t <= lastSelector))
+            return false;
+
+        // Two gotos whose labels nest (the later goto's inside the earlier one's) already make nested goto C-blocks;
+        // three or more to different labels are a dispatch table even then (nested, they'd be a staircase)
+        var crossing = targets.Distinct().Count() >= 3;
+        for (var a = 0; a < targets.Count && !crossing; a++)
+        {
+            for (var b = a + 1; b < targets.Count; b++)
+            {
+                if (targets[b] > targets[a])
+                {
+                    crossing = true;
+                    break;
+                }
+            }
+        }
+
+        if (!crossing)
+            return false;
+
+        var labels = targets.Distinct().OrderBy(t => t).ToList();
+
+        // "break": the default (if not empty) and every case but the last end with Goto Unconditionally to one label
+        // after the last case
+        var breakLabel = -1;
+        var breaks = 0;
+        var allBreak = true;
+        var sections = new List<(int From, int To)> { (lastSelector + 1, labels[0]) };
+        for (var c = 0; c + 1 < labels.Count; c++)
+            sections.Add((labels[c], labels[c + 1]));
+
+        foreach (var (from, to) in sections)
+        {
+            // An empty default falls into the first case; a case always holds at least its label
+            if (to == from)
+                continue;
+
+            // A part ending the event never falls through, so needs no break
+            var last = lines[to - 1];
+            if (last.IsCap)
+                continue;
+
+            if (!IsGotoAlways(last) || !UsableGoto(last) || (breakLabel >= 0 && last.GotoLabel != breakLabel))
+            {
+                allBreak = false;
+                break;
+            }
+
+            breakLabel = last.GotoLabel;
+            breaks++;
+        }
+
+        if (allBreak && breaks > 0)
+        {
+            var at = FindLabel(lines, labels[^1] + 1, end, breakLabel);
+
+            // Every break must land there, not on an earlier label of the same ID
+            if (at > labels[^1] && sections.Where(s => s.To > s.From).All(s => FindLabel(lines, s.To, end, breakLabel) == at))
+                switchEnd = at;
+        }
+
+        var inner = With(ends, switchEnd);
+        node = new EmevdNode { Kind = EmevdNodeKind.Switch, Line = start };
+
+        foreach (var (s, conds) in selectors.Skip(1))
+            node.Body.Add(new EmevdNode { Kind = EmevdNodeKind.Line, Line = s, Conditions = conds });
+
+        node.Default = Parse(lines, lastSelector + 1, labels[0], With(inner, labels[0]));
+
+        for (var c = 0; c < labels.Count; c++)
+        {
+            var to = c + 1 < labels.Count ? labels[c + 1] : switchEnd;
+            var caseNodes = new List<EmevdNode> { new() { Kind = EmevdNodeKind.Line, Line = labels[c] } };
+            caseNodes.AddRange(Parse(lines, labels[c] + 1, to, With(inner, to)));
+            node.Cases.Add(caseNodes);
+        }
+
+        return true;
     }
 
     /// <summary>The enclosing range ends plus a new innermost one</summary>
@@ -254,6 +420,23 @@ public static class EmevdStructure
             order.AddRange(node.Conditions);
             order.Add(node.Line);
 
+            // A switch is one range, holding one range per part (as Parse made them)
+            if (node.Kind == EmevdNodeKind.Switch)
+            {
+                exits.Add(new());
+                Flatten(script, node.Body, order, counts, exits);
+
+                foreach (var part in node.Children.Skip(2))
+                {
+                    exits.Add(new());
+                    Flatten(script, part, order, counts, exits);
+                    Resolve(exits, order, counts);
+                }
+
+                Resolve(exits, order, counts);
+                continue;
+            }
+
             if (!node.IsBlock)
             {
                 // An exit moved to fewer enclosing blocks than it leaves exits the outermost one (to the event end)
@@ -300,14 +483,16 @@ public static class EmevdStructure
     }
 
     /// <summary>The display rows: each line once, in file order, plus a foot row closing each C-block</summary>
-    public static List<EmevdRow> Rows(List<EmevdNode> nodes)
+    /// <param name="collapsed">Whether the C-block headed by a line is collapsed: only its header and foot get rows</param>
+    /// <param name="hidden">Filled with each line a collapsed block hides, and the row of the header hiding it</param>
+    public static List<EmevdRow> Rows(List<EmevdNode> nodes, Func<int, bool> collapsed = null, Dictionary<int, int> hidden = null)
     {
         var rows = new List<EmevdRow>();
-        AddRows(nodes, 0, rows);
+        AddRows(nodes, 0, rows, collapsed, hidden);
         return rows;
     }
 
-    private static void AddRows(List<EmevdNode> nodes, int depth, List<EmevdRow> rows)
+    private static void AddRows(List<EmevdNode> nodes, int depth, List<EmevdRow> rows, Func<int, bool> collapsed, Dictionary<int, int> hidden)
     {
         foreach (var node in nodes)
         {
@@ -316,17 +501,51 @@ public static class EmevdStructure
             foreach (var c in node.Conditions)
                 rows.Add(new EmevdRow { Kind = EmevdRowKind.Line, Line = c, Depth = depth, EndRow = -1, ConditionOf = headerRow });
 
-            rows.Add(new EmevdRow { Kind = EmevdRowKind.Line, Line = node.Line, Depth = depth, EndRow = -1, ConditionOf = -1 });
+            rows.Add(new EmevdRow
+            {
+                Kind = EmevdRowKind.Line, Line = node.Line, Depth = depth, EndRow = -1, ConditionOf = -1,
+                IsSwitch = node.Kind == EmevdNodeKind.Switch,
+            });
 
             if (!node.IsBlock)
                 continue;
 
-            AddRows(node.Body, depth + 1, rows);
-
-            if (node.ElseLine >= 0)
+            if (collapsed != null && collapsed(node.Line))
             {
-                rows.Add(new EmevdRow { Kind = EmevdRowKind.Line, Line = node.ElseLine, Depth = depth, EndRow = -1, IsElse = true, ConditionOf = -1 });
-                AddRows(node.Else, depth + 1, rows);
+                var inner = EmevdStructureEdit.LinesOf(new[] { node }).Skip(node.Conditions.Count + 1).ToList();
+                if (hidden != null)
+                {
+                    foreach (var l in inner)
+                        hidden[l] = headerRow;
+                }
+
+                var h = rows[headerRow];
+                h.Collapsed = true;
+                h.Hidden = inner.Count;
+                rows[headerRow] = h;
+            }
+            else if (node.Kind == EmevdNodeKind.Switch)
+            {
+                AddRows(node.Body, depth + 1, rows, collapsed, hidden);
+
+                rows.Add(new EmevdRow { Kind = EmevdRowKind.Section, Line = node.Line, Depth = depth, EndRow = -1, ConditionOf = -1 });
+                AddRows(node.Default, depth + 1, rows, collapsed, hidden);
+
+                foreach (var part in node.Cases)
+                {
+                    rows.Add(new EmevdRow { Kind = EmevdRowKind.Line, Line = part[0].Line, Depth = depth, EndRow = -1, IsCase = true, ConditionOf = -1 });
+                    AddRows(part.GetRange(1, part.Count - 1), depth + 1, rows, collapsed, hidden);
+                }
+            }
+            else
+            {
+                AddRows(node.Body, depth + 1, rows, collapsed, hidden);
+
+                if (node.ElseLine >= 0)
+                {
+                    rows.Add(new EmevdRow { Kind = EmevdRowKind.Line, Line = node.ElseLine, Depth = depth, EndRow = -1, IsElse = true, ConditionOf = -1 });
+                    AddRows(node.Else, depth + 1, rows, collapsed, hidden);
+                }
             }
 
             rows.Add(new EmevdRow { Kind = EmevdRowKind.BlockEnd, Line = node.Line, Depth = depth, EndRow = -1, ConditionOf = -1 });
@@ -364,8 +583,15 @@ public static class EmevdStructure
                 if (n.ElseLine >= 0)
                     set.Add(n.ElseLine);
 
-                Collect(n.Body, set);
-                Collect(n.Else, set);
+                // A switch shows its gotos' jumps as its cases
+                if (n.Kind == EmevdNodeKind.Switch)
+                {
+                    foreach (var s in n.Body)
+                        set.Add(s.Line);
+                }
+
+                foreach (var child in n.Children)
+                    Collect(child, set);
             }
         }
     }

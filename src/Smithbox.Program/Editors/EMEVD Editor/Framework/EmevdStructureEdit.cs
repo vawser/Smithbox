@@ -27,6 +27,9 @@ public class EmevdEditResult
     public List<EMEVD.Instruction> Instructions;
     public List<EMEVD.Parameter> Parameters;
     public List<(EMEVD.Instruction Instr, int Offset, byte[] Bytes)> Patches = new();
+
+    /// <summary>Lines (in the new order) whose skip count doesn't fit the count arg's type: the edit can't be made</summary>
+    public List<(int Line, int Count)> Overflows = new();
 }
 
 /// <summary>
@@ -52,6 +55,8 @@ public static class EmevdStructureEdit
             ElseLine = n.ElseLine,
             Else = CopyTree(n.Else),
             ExitLevel = n.ExitLevel,
+            Default = CopyTree(n.Default),
+            Cases = n.Cases.Select(CopyTree).ToList(),
         }).ToList();
     }
 
@@ -70,8 +75,11 @@ public static class EmevdStructureEdit
 
             path?.Add((nodes, i));
 
-            if (Find(n.Body, line, out list, out index, path) || Find(n.Else, line, out list, out index, path))
-                return true;
+            foreach (var child in n.Children)
+            {
+                if (Find(child, line, out list, out index, path))
+                    return true;
+            }
 
             path?.RemoveAt(path.Count - 1);
         }
@@ -93,6 +101,9 @@ public static class EmevdStructureEdit
             if (n.ElseLine >= 0)
                 lines.Add(n.ElseLine);
             lines.AddRange(LinesOf(n.Else));
+            lines.AddRange(LinesOf(n.Default));
+            foreach (var part in n.Cases)
+                lines.AddRange(LinesOf(part));
         }
         return lines;
     }
@@ -329,8 +340,85 @@ public static class EmevdStructureEdit
     /// <summary>Whether a list is one of the node's bodies or else parts, at any depth</summary>
     public static bool Within(EmevdNode node, List<EmevdNode> list)
     {
-        return ReferenceEquals(node.Body, list) || ReferenceEquals(node.Else, list)
-            || node.Body.Any(n => Within(n, list)) || node.Else.Any(n => Within(n, list));
+        return node.Children.Any(c => ReferenceEquals(c, list) || c.Any(n => Within(n, list)));
+    }
+
+    // ---------------------------------------------------------------- wrap
+
+    /// <summary>
+    /// Wraps units that sit next to each other in one list in a new C-block headed by <paramref name="def"/>, a Skip
+    /// or Goto instruction: a skip's count comes from the compile, a goto gets a new label (the lowest 1014 label ID
+    /// the event doesn't use) right after the wrapped lines. Returns the new lines (header, then the label), or null
+    /// when the units aren't next to each other, or the instruction can't head a block.
+    /// </summary>
+    public static List<EmevdClipLine> Wrap(EmevdCatalog catalog, EmevdScript script, List<EmevdNode> tree, List<int> leads, EmevdInstrDef def)
+    {
+        var flow = EmevdControlFlow.Find(catalog?.Game, def.Bank, def.ID);
+        if (flow.Kind is not (EmevdFlowKind.Skip or EmevdFlowKind.Goto) || leads.Count == 0)
+            return null;
+
+        var units = leads.Select(l => UnitOf(script, tree, l)).ToList();
+        if (units.Any(u => u.List == null) || units.Any(u => !ReferenceEquals(u.List, units[0].List)))
+            return null;
+
+        units = units.OrderBy(u => u.Index).ToList();
+        for (var k = 0; k + 1 < units.Count; k++)
+        {
+            if (units[k].Index + units[k].Count != units[k + 1].Index)
+                return null;
+        }
+
+        var header = NewInstruction(def);
+        var arg = def.Args.Where(a => !a.Optional).ToList();
+        var (offsets, _) = EmevdDecoded.Offsets(arg.Select(a => a.Type).ToList());
+        var flowArg = offsets.IndexOf(flow.ArgOffset);
+        if (flowArg < 0)
+            return null;
+
+        var list = units[0].List;
+        var first = units[0].Index;
+        var count = units[^1].Index + units[^1].Count - first;
+        var body = list.GetRange(first, count);
+
+        // No jumps into the wrapped lines from outside: they'd land past the new header. Gotos land on a label; raw
+        // skips keep their target line (structured ones are recomputed, so they don't count).
+        var inside = LinesOf(body).ToHashSet();
+        var structured = EmevdStructure.StructuredLines(tree);
+        foreach (var l in script.Lines)
+        {
+            if (inside.Contains(l.Index))
+                continue;
+
+            var target = l.Kind == EmevdBlockKind.Goto && l.GotoLabel >= 0 ? TargetOf(script, l)
+                : l.Kind == EmevdBlockKind.Skip && l.SkipCount >= 0 && !structured.Contains(l.Index) && !l.Params.ContainsKey(l.FlowArgOffset) ? l.Index + 1 + l.SkipCount
+                : -1;
+
+            if (target >= 0 && inside.Contains(target))
+                return null;
+        }
+        list.RemoveRange(first, count);
+
+        var n = script.Lines.Count;
+        var added = new List<EmevdClipLine> { header };
+
+        if (flow.Kind == EmevdFlowKind.Skip)
+        {
+            list.Insert(first, new EmevdNode { Kind = EmevdNodeKind.Skip, Line = n, Body = body });
+            return added;
+        }
+
+        // A goto: a free label, the header pointing at it, the label after the body
+        var used = script.Lines.Select(l => l.LabelId).Concat(script.Lines.Select(l => l.GotoLabel)).ToHashSet();
+        var labelDef = catalog?.Classes.GetValueOrDefault(1014)?.Instructions.Values.OrderBy(i => i.ID).FirstOrDefault(i => !used.Contains(i.ID));
+        if (labelDef == null || !EmevdDecoded.EncodeInt(arg[flowArg].Type, labelDef.ID, out var bytes))
+            return null;
+
+        bytes.CopyTo(header.Args, flow.ArgOffset);
+        added.Add(NewInstruction(labelDef));
+
+        list.Insert(first, new EmevdNode { Kind = EmevdNodeKind.Goto, Line = n, Body = body });
+        list.Insert(first + 1, new EmevdNode { Kind = EmevdNodeKind.Line, Line = n + 1 });
+        return added;
     }
 
     /// <summary>
@@ -395,8 +483,13 @@ public static class EmevdStructureEdit
                 continue;
 
             var arg = line.Decoded.Args.FirstOrDefault(a => a.Offset == line.FlowArgOffset);
-            if (arg.Def != null && EmevdDecoded.EncodeInt(arg.Type, count, out var bytes))
+            if (arg.Def == null)
+                continue;
+
+            if (EmevdDecoded.EncodeInt(arg.Type, count, out var bytes))
                 result.Patches.Add((line.Instr, arg.Offset, bytes));
+            else
+                result.Overflows.Add((pos[l], count)); // e.g. a u8 count past 255
         }
 
         // Parameters follow their instruction
