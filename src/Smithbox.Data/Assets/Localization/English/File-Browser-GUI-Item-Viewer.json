@@ -9,6 +9,46 @@
       "Text": ""
     },
     {
+      "Key": "FILE_ItemViewer_Loading",
+      "Text": "Loading contents..."
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Header",
+      "Text": "Preview"
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Header_TT",
+      "Text": "The selected texture as an image, a text file as text, or the start of anything else as hex."
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Texture_Info",
+      "Text": "{0}  (format {1}, {2})"
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Texture_Failed",
+      "Text": "This texture could not be shown."
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Too_Large",
+      "Text": "Too large to preview."
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Unavailable",
+      "Text": "Nothing to preview."
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Failed",
+      "Text": "Preview failed: {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Truncated",
+      "Text": "(Only the first {0} KB are shown.)"
+    },
+    {
+      "Key": "FILE_ItemViewer_Preview_Hex_Truncated",
+      "Text": "(First {0} of {1} bytes.)"
+    },
+    {
       "Key": "FILE_ItemViewer_Main_File_Header",
       "Text": "Container File"
     },
@@ -23,6 +63,50 @@
     {
       "Key": "FILE_ItemViewer_MainFile_Path",
       "Text": "Path: {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Source_Vanilla",
+      "Text": "Source: Game"
+    },
+    {
+      "Key": "FILE_ItemViewer_Source_Override",
+      "Text": "Source: Project (replaces the game's file)"
+    },
+    {
+      "Key": "FILE_ItemViewer_Source_Project_Only",
+      "Text": "Source: Project only (not in the game)"
+    },
+    {
+      "Key": "FILE_ItemViewer_Stored_In",
+      "Text": "Read from: {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Stored_Project",
+      "Text": "project folder"
+    },
+    {
+      "Key": "FILE_ItemViewer_Stored_Archive",
+      "Text": "game archive {0}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Stored_Loose",
+      "Text": "game folder (loose file)"
+    },
+    {
+      "Key": "FILE_ItemViewer_Size",
+      "Text": "Size: {0} ({1} bytes)"
+    },
+    {
+      "Key": "FILE_ItemViewer_Format",
+      "Text": "Format: {0}, {1}"
+    },
+    {
+      "Key": "FILE_ItemViewer_Uncompressed",
+      "Text": "uncompressed"
+    },
+    {
+      "Key": "FILE_ItemViewer_Entry_Count",
+      "Text": "Entries: {0}"
     },
     {
       "Key": "FILE_ItemViewer_Binder_File_Header",

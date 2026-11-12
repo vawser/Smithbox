@@ -21,6 +21,18 @@
       "Text": "Open the current project's specified project directory in a file explorer."
     },
     {
+      "Key": "FILE_FileBrowser_Folder_Missing",
+      "Text": "Folder does not exist: {0}"
+    },
+    {
+      "Key": "FILE_FileBrowser_Refresh_File_List",
+      "Text": "Refresh File List"
+    },
+    {
+      "Key": "FILE_FileBrowser_Refresh_File_List_TT",
+      "Text": "Rebuild the file list, including files saved into the project folder since it was loaded (when Project Directory Scan is enabled)."
+    },
+    {
       "Key": "FILE_FileBrowser_ViewToggle_Tools",
       "Text": "Tools"
     },

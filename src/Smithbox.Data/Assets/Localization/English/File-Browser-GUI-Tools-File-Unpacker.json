@@ -46,7 +46,7 @@
     },
     {
       "Key": "FILE_FileUnpacker_Delete_TT",
-      "Text": "Delete unpacked files in the current unpack directory."
+      "Text": "Delete the files the unpacker created in the current unpack directory. Files that were already there are never touched."
     },
     {
       "Key": "FILE_FileUnpacker_Selective_Unpack_Header",
@@ -55,6 +55,22 @@
     {
       "Key": "FILE_FileUnpacker_Selective_Unpack_Header_TT",
       "Text": ""
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Select_All",
+      "Text": "Select All"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Select_All_TT",
+      "Text": "Tick every folder for Selective Unpack."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Select_None",
+      "Text": "Select None"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Selective_Select_None_TT",
+      "Text": "Untick every folder for Selective Unpack."
     },
     {
       "Key": "FILE_FileUnpacker_Selective_Toggle_All",
@@ -139,6 +155,70 @@
     {
       "Key": "FILE_FileUnpacker_Failed_Read_File_Dict",
       "Text": "Failed to read file dictionary: {0}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Root_Files",
+      "Text": "/ (files in the data root)"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete_Confirm",
+      "Text": "Delete {0} files that the unpacker created in:\n{1}\n\nOnly files listed in the unpack manifest are deleted. Folders are removed only once empty.\n\nThis cannot be undone. Continue?"
+    },
+    {
+      "Key": "FILE_FileUnpacker_No_Manifest",
+      "Text": "No unpack manifest found in {0}. Nothing was deleted: only files created by the unpacker (recorded in its manifest) can be deleted."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Manifest_Read_Failed",
+      "Text": "Failed to read unpack manifest: {0}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Manifest_Write_Failed",
+      "Text": "Failed to write unpack manifest: {0}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Invalid_Path",
+      "Text": "Path resolves outside the unpack directory."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Invalid_Path_Delete",
+      "Text": "Skipped manifest entry outside the unpack directory: {0}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Failed_File_Delete",
+      "Text": "Failed to delete file: {0}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Failed",
+      "Text": "Unpacking to {0} stopped because of an error."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete_Failed",
+      "Text": "Deleting from {0} stopped because of an error."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Summary",
+      "Text": "Unpack finished in {4}: {0} written, {1} already present (skipped), {2} failed. Directory: {3}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Unpack_Summary_Cancelled",
+      "Text": "Unpack cancelled after {4}: {0} written, {1} already present (skipped), {2} failed. Directory: {3}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Threads",
+      "Text": "Parallel Files"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Threads_TT",
+      "Text": "How many files are unpacked at the same time. Higher is faster on an SSD; on a hard drive, 2 to 4 is usually best."
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete_Summary",
+      "Text": "Delete finished: {0} files deleted, {1} empty folders removed, {2} failed. Directory: {3}"
+    },
+    {
+      "Key": "FILE_FileUnpacker_Delete_Summary_Cancelled",
+      "Text": "Delete cancelled: {0} files deleted, {1} empty folders removed, {2} failed. Directory: {3}"
     }
   ]
 }

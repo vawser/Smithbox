@@ -1314,9 +1314,26 @@ public class CFG
 
     public bool Interface_FileBrowser_Tool_GameUnpacker = true;
     public bool Interface_FileBrowser_Tool_FileExtract = true;
+    public bool Interface_FileBrowser_Tool_BinderSearch = true;
 
     public string UnpackDirectory = "";
     public string ExtractDirectory = "";
+
+    // File Browser unpacker: how many files are unpacked at the same time
+    public int FileBrowser_Unpack_Threads = 8;
+
+    // File Browser exporter: replace files that already exist in the export directory (off = skip them)
+    public bool FileBrowser_Export_Overwrite = false;
+
+    // File Browser exporter: put inner files and textures in a folder named after their container, at the
+    // container's path (e.g. chr/c0000-chrbnd-dcx/c0000.flver), instead of directly in the export directory
+    public bool FileBrowser_Export_Keep_Container_Path = false;
+
+    // File Browser exporter: write DCX-compressed files decompressed, without their ".dcx"
+    public bool FileBrowser_Export_Decompress = false;
+
+    // File Browser exporter: the format textures are written in
+    public StudioCore.Editors.TextureViewer.TextureExportType FileBrowser_Export_Texture_Type = StudioCore.Editors.TextureViewer.TextureExportType.DDS;
 
     #endregion
 

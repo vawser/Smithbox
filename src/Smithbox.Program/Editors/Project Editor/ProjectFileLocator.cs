@@ -246,6 +246,25 @@ public class ProjectFileLocator : IDisposable
         return ScanExcludedExtensions.Any(e => e.Equals(ext, StringComparison.OrdinalIgnoreCase));
     }
 
+    /// <summary>
+    /// Files in the project folder that FileDictionary doesn't list yet, found with the same rules as the scan at
+    /// load (Project_Scan_Directory_For_Additions / Strict Mode). Changes nothing; empty when the scan is turned off.
+    /// Used by the File Browser's Refresh to show files saved into the project after it loaded.
+    /// </summary>
+    public List<FileDictionaryEntry> FindNewProjectFiles()
+    {
+        if (!CFG.Current.Project_Scan_Directory_For_Additions)
+            return new();
+
+        var current = FileDictionary;
+
+        var scanned = BuildProjectFileDictionary(Project.Descriptor.ProjectPath, current, Project.Descriptor.ProjectType);
+
+        var known = new HashSet<string>(current.Entries.Select(e => e.Path), StringComparer.OrdinalIgnoreCase);
+
+        return scanned.Entries.Where(e => !known.Contains(e.Path)).ToList();
+    }
+
     private FileDictionary BuildProjectFileDictionary(string projectPath, FileDictionary existingDict, ProjectType type)
     {
         var projectFileDictionary = new FileDictionary { Entries = new() };

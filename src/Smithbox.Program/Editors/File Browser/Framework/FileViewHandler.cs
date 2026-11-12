@@ -152,7 +152,7 @@ public class FileViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    ImGui.EndPopup();
                 }
             }
 

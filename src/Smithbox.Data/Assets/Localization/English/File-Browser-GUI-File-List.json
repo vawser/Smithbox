@@ -6,7 +6,155 @@
     },
     {
       "Key": "FILE_FileList_Header_TT",
-      "Text": ""
+      "Text": "Every file the project can see. Search by name, or use ext:flver,tpf to search by extension and path:/chr/c2 to search by path. Ctrl-click and Shift-click select several files."
+    },
+    {
+      "Key": "FILE_FileList_Reveal_TT",
+      "Text": "Scroll the file list to the selected file. Click a folder in the path to select it."
+    },
+    {
+      "Key": "FILE_Bookmarks_Header",
+      "Text": "Bookmarks ({0})"
+    },
+    {
+      "Key": "FILE_Bookmarks_Add",
+      "Text": "Add Bookmark"
+    },
+    {
+      "Key": "FILE_Bookmarks_Remove",
+      "Text": "Remove Bookmark"
+    },
+    {
+      "Key": "FILE_Bookmarks_Missing",
+      "Text": "Bookmarked path not in the file list: {0}"
+    },
+    {
+      "Key": "FILE_Bookmarks_Load_Failed",
+      "Text": "Failed to read File Browser bookmarks: {0}"
+    },
+    {
+      "Key": "FILE_Bookmarks_Save_Failed",
+      "Text": "Failed to save File Browser bookmarks: {0}"
+    },
+    {
+      "Key": "FILE_Command_Select_Not_Found",
+      "Text": "File Browser: no file or folder at {0}"
+    },
+    {
+      "Key": "FILE_FileList_Project_Files_Only",
+      "Text": "Project files only"
+    },
+    {
+      "Key": "FILE_FileList_Project_Files_Only_TT",
+      "Text": "Only show files the project has: files that replace a game file, and files only the project has."
+    },
+    {
+      "Key": "FILE_FileList_Legend_Override",
+      "Text": "Override"
+    },
+    {
+      "Key": "FILE_FileList_Legend_Override_TT",
+      "Text": "Files in this colour are in the project and replace the game's file at the same path."
+    },
+    {
+      "Key": "FILE_FileList_Legend_Project_Only",
+      "Text": "Project only"
+    },
+    {
+      "Key": "FILE_FileList_Legend_Project_Only_TT",
+      "Text": "Files in this colour exist only in the project. Uncoloured files come from the game."
+    },
+    {
+      "Key": "FILE_Actions_Open_In_Editor",
+      "Text": "Open in {0}"
+    },
+    {
+      "Key": "FILE_Actions_Open_In_Editor_TT",
+      "Text": "Switch to the editor for this file and open it there."
+    },
+    {
+      "Key": "FILE_Actions_Editor_Map",
+      "Text": "Map Editor"
+    },
+    {
+      "Key": "FILE_Actions_Editor_Model",
+      "Text": "Model Editor"
+    },
+    {
+      "Key": "FILE_Actions_Editor_Texture",
+      "Text": "Texture Viewer"
+    },
+    {
+      "Key": "FILE_Actions_Editor_Gparam",
+      "Text": "Gparam Editor"
+    },
+    {
+      "Key": "FILE_Actions_Copy_Path",
+      "Text": "Copy Path"
+    },
+    {
+      "Key": "FILE_Actions_Copy_Name",
+      "Text": "Copy Name"
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project",
+      "Text": "Copy to Project"
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project_TT",
+      "Text": "Copy the game's version of this file into the project at the same path, ready to edit. Only available for files the project doesn't have yet."
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project_Done",
+      "Text": "Copied to project: {0}"
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project_Exists",
+      "Text": "The project already has {0}; nothing was copied."
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project_Not_Found",
+      "Text": "The game has no file at {0}."
+    },
+    {
+      "Key": "FILE_Actions_Copy_To_Project_Failed",
+      "Text": "Failed to copy {0} to the project."
+    },
+    {
+      "Key": "FILE_Actions_Export",
+      "Text": "Export"
+    },
+    {
+      "Key": "FILE_Actions_Export_TT",
+      "Text": "Export this file to the export directory, as Export Container File in the Tools window."
+    },
+    {
+      "Key": "FILE_Actions_Export_Folder",
+      "Text": "Export Folder"
+    },
+    {
+      "Key": "FILE_Actions_Show_In_Explorer",
+      "Text": "Show in Explorer"
+    },
+    {
+      "Key": "FILE_Actions_Show_In_Explorer_TT",
+      "Text": "Open the project's copy in Explorer, or the game's loose copy when the project has none. Unavailable for files that only exist inside the game archives."
+    },
+    {
+      "Key": "FILE_Actions_Show_In_Explorer_Missing",
+      "Text": "No copy of {0} exists on disk (it is only inside the game archives)."
+    },
+    {
+      "Key": "FILE_FileList_Building",
+      "Text": "Building file list..."
+    },
+    {
+      "Key": "FILE_FileList_Build_Failed",
+      "Text": "Failed to build the File Browser file list."
+    },
+    {
+      "Key": "FILE_FileList_Refresh_Scan_Failed",
+      "Text": "Failed to scan the project folder for new files; the list was refreshed without them."
     }
   ]
 }

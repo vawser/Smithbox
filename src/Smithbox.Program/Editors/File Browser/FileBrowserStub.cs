@@ -26,7 +26,7 @@ public class FileBrowserStub : IEditorStub
         if (!EditorConditions.SupportsFileBrowser(Project.Descriptor.ProjectType))
             return;
 
-        if (commands != null && commands[0] == CommandEndpoint)
+        if (commands is { Length: > 0 } && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];
             ImGui.SetNextWindowFocus();

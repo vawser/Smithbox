@@ -2,7 +2,4 @@
 # TODO 
 #---------------------
 
-Assess each editor:
-    - Presentation
-    - Ordering
-    - Cruft
+Analyze the X for bugs and recommendations for functionality improvements

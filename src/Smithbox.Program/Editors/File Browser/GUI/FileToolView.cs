@@ -20,8 +20,11 @@ public class FileToolView
     public FileEditorView View;
     public ProjectEntry Project;
 
-    public FileUnpackerTool UnpackTool;
+    // Shared by all views (owned by FileBrowserScreen)
+    public FileUnpackerTool UnpackTool => View.Editor.UnpackTool;
+
     public FileExporterTool ExtractTool;
+    public FileBinderSearchTool BinderSearchTool;
 
     private ToolSections Sections = new();
 
@@ -30,8 +33,8 @@ public class FileToolView
         View = view;
         Project = project;
 
-        UnpackTool = new(view, project);
         ExtractTool = new(view, project);
+        BinderSearchTool = new(view, project);
     }
 
     public void Display()
@@ -65,6 +68,14 @@ public class FileToolView
             }
         }
 
+        if (CFG.Current.Interface_FileBrowser_Tool_BinderSearch)
+        {
+            if (ToolSections.Header($"{LOC.Get("FILE_Tools_Binder_Search_Header")}##binderSearch"))
+            {
+                BinderSearchTool.Display();
+            }
+        }
+
         Sections.End();
     }
 
@@ -84,6 +95,12 @@ public class FileToolView
                 CFG.Current.Interface_FileBrowser_Tool_FileExtract = !CFG.Current.Interface_FileBrowser_Tool_FileExtract;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_FileExtract);
+
+            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_Binder_Search")}##toggleBinderSearch"))
+            {
+                CFG.Current.Interface_FileBrowser_Tool_BinderSearch = !CFG.Current.Interface_FileBrowser_Tool_BinderSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_BinderSearch);
 
             ImGui.EndMenu();
         }

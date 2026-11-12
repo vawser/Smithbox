@@ -19,6 +19,13 @@ public class FileBrowserScreen : EditorScreen
     public FileCommandQueue CommandQueue;
     public FileShortcuts Shortcuts;
 
+    // Shared by every view: one folder tree, one unpacker (and its running job), one folder-export flag
+    public FileTree Tree;
+    public FileActions Actions;
+    public FileBookmarks Bookmarks;
+    public FileUnpackerTool UnpackTool;
+    public volatile bool IsFolderExporting = false;
+
     public string EditorName => "";
     public string CommandEndpoint => "file";
     public string SaveType => "File";
@@ -32,6 +39,11 @@ public class FileBrowserScreen : EditorScreen
         Shortcuts = new(this, project);
         CommandQueue = new(this, project);
 
+        Tree = new(project);
+        Actions = new(this, project);
+        Bookmarks = new(project);
+        UnpackTool = new(this, project);
+
         ViewHandler = new(this, project);
     }
 
@@ -43,10 +55,12 @@ public class FileBrowserScreen : EditorScreen
 
         CommandQueue.Parse(commands);
 
+        Tree.Update();
+
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
-            EditMenu();
+            // No Edit menu: nothing in the File Browser records undoable actions (EditMenu kept for when it does)
             ViewMenu();
 
             ImGui.EndMenuBar();
@@ -67,19 +81,43 @@ public class FileBrowserScreen : EditorScreen
             // View Game Directory
             if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_View_Game_Directory")}##viewGameDir"))
             {
-                Process.Start("explorer.exe", Project.Descriptor.DataPath);
+                OpenInExplorer(Project.Descriptor.DataPath);
             }
             GUI.Tooltip(LOC.Get("FILE_FileBrowser_View_Game_Directory_TT"));
 
             // View Project Directory
             if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_View_Project_Directory")}##viewProjectDir"))
             {
-                Process.Start("explorer.exe", Project.Descriptor.ProjectPath);
+                OpenInExplorer(Project.Descriptor.ProjectPath);
             }
             GUI.Tooltip(LOC.Get("FILE_FileBrowser_View_Project_Directory_TT"));
 
+            ImGui.Separator();
+
+            // Refresh File List
+            if (ImGui.MenuItem($"{LOC.Get("FILE_FileBrowser_Refresh_File_List")}##refreshFileList", "", false, !Tree.IsBuilding))
+            {
+                Tree.Refresh();
+            }
+            GUI.Tooltip(LOC.Get("FILE_FileBrowser_Refresh_File_List_TT"));
+
             ImGui.EndMenu();
         }
+    }
+
+    /// <summary>
+    /// Opens a folder in Explorer. The path is quoted (a comma or space would otherwise split it) and must exist;
+    /// otherwise Explorer silently opens Documents instead.
+    /// </summary>
+    public static void OpenInExplorer(string folder)
+    {
+        if (string.IsNullOrWhiteSpace(folder) || !System.IO.Directory.Exists(folder))
+        {
+            Smithbox.Log<FileBrowserScreen>(LOC.Get("FILE_FileBrowser_Folder_Missing", folder ?? ""));
+            return;
+        }
+
+        Process.Start("explorer.exe", $"\"{System.IO.Path.GetFullPath(folder)}\"");
     }
 
     public void EditMenu()

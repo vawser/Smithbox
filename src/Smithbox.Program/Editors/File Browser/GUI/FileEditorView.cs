@@ -47,9 +47,6 @@ public class FileEditorView : IEditorView
         ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
         if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_File_List")}###fileBrowser_FileList_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.FileBrowser_FileList);
@@ -66,9 +63,6 @@ public class FileEditorView : IEditorView
         ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
         if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Item_Viewer")}###fileBrowser_ItemViwwer_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
-            var width = ImGui.GetContentRegionAvail().X;
-            var height = ImGui.GetContentRegionAvail().Y;
-
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.FileBrowser_Item);
@@ -88,9 +82,6 @@ public class FileEditorView : IEditorView
             ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
             if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Tools")}###fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
             {
-                var width = ImGui.GetContentRegionAvail().X;
-                var height = ImGui.GetContentRegionAvail().Y;
-
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {
                     FocusManager.SetFocus(EditorFocusContext.FileBrowser_Tools);

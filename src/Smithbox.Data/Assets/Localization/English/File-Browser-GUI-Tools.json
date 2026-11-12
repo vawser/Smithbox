@@ -15,6 +15,78 @@
     {
       "Key": "FILE_Tools_ViewToggle_File_Exporter",
       "Text": "File Exporter"
+    },
+    {
+      "Key": "FILE_Tools_ViewToggle_Binder_Search",
+      "Text": "Find in Binders"
+    },
+    {
+      "Key": "FILE_Tools_Binder_Search_Header",
+      "Text": "Find in Binders"
+    },
+    {
+      "Key": "FILE_BinderSearch_Hint",
+      "Text": "Find which binders under the selected folder contain an entry (or texture) with a matching name, e.g. which chrbnd holds c2010.flver. Every binder in the folder is opened, so large folders take a while."
+    },
+    {
+      "Key": "FILE_BinderSearch_Include_Textures",
+      "Text": "Include texture names"
+    },
+    {
+      "Key": "FILE_BinderSearch_Include_Textures_TT",
+      "Text": "Also match the names of textures inside TPFs. Slower, since every TPF has to be read."
+    },
+    {
+      "Key": "FILE_BinderSearch_Scope",
+      "Text": "Searching in: {0}"
+    },
+    {
+      "Key": "FILE_BinderSearch_No_Folder",
+      "Text": "(select a folder in the File List)"
+    },
+    {
+      "Key": "FILE_BinderSearch_Progress",
+      "Text": "Searching... {0} / {1} files"
+    },
+    {
+      "Key": "FILE_BinderSearch_Run",
+      "Text": "Search Selected Folder"
+    },
+    {
+      "Key": "FILE_BinderSearch_Run_TT",
+      "Text": "Open every binder and TPF under the folder selected in the File List and list the entries whose names match."
+    },
+    {
+      "Key": "FILE_BinderSearch_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "FILE_BinderSearch_Cancel_TT",
+      "Text": "Stop the search; the results found so far stay."
+    },
+    {
+      "Key": "FILE_BinderSearch_No_Results",
+      "Text": "No matches."
+    },
+    {
+      "Key": "FILE_BinderSearch_Result_Count",
+      "Text": "{0} matches in {1}. Click one to select it."
+    },
+    {
+      "Key": "FILE_BinderSearch_Result_Limit",
+      "Text": "Stopped at {0} matches; narrow the search for more."
+    },
+    {
+      "Key": "FILE_BinderSearch_Failed",
+      "Text": "Find in Binders failed."
+    },
+    {
+      "Key": "FILE_BinderSearch_No_Query",
+      "Text": "Enter a name to search for."
+    },
+    {
+      "Key": "FILE_BinderSearch_No_Folder_Selected",
+      "Text": "Select a folder in the File List to search in."
     }
   ]
 }

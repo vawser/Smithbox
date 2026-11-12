@@ -54,7 +54,7 @@
     },
     {
       "Key": "FILE_FileExporter_Export_Container_File_TT",
-      "Text": "Export the currently selected container file."
+      "Text": "Export the currently selected container file. A split binder (.bhd) is exported together with its .bdt."
     },
     {
       "Key": "FILE_FileExporter_Export_Internal_File",
@@ -97,8 +97,104 @@
       "Text": "No internal file has been selected."
     },
     {
+      "Key": "FILE_FileExporter_No_Texture_Selected",
+      "Text": "No texture has been selected."
+    },
+    {
+      "Key": "FILE_FileExporter_Not_A_Container",
+      "Text": "The selected file is not a binder or TPF: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Internal_File_Not_Found",
+      "Text": "Internal file not found in the selected container: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Texture_Not_Found",
+      "Text": "Texture not found in the selected TPF: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Empty_File",
+      "Text": "Nothing was exported: {0} is empty."
+    },
+    {
       "Key": "FILE_FileExporter_Exported_File",
       "Text": "Exported file: {0}"
+    },
+    {
+      "Key": "FILE_FileExporter_Skipped_Existing",
+      "Text": "Skipped, already exists in the export directory: {0} (turn on Overwrite Existing Files to replace it)"
+    },
+    {
+      "Key": "FILE_FileExporter_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "FILE_FileExporter_Options_Header_TT",
+      "Text": ""
+    },
+    {
+      "Key": "FILE_FileExporter_Decompress",
+      "Text": "Decompress DCX"
+    },
+    {
+      "Key": "FILE_FileExporter_Decompress_TT",
+      "Text": "Write DCX-compressed files decompressed, without their .dcx extension, so other tools can read them directly."
+    },
+    {
+      "Key": "FILE_FileExporter_Texture_Format",
+      "Text": "Texture Format"
+    },
+    {
+      "Key": "FILE_FileExporter_Texture_Format_TT",
+      "Text": "The format exported textures are written in. Console textures are given a DDS header first; other formats are decoded from it."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Selected_Files",
+      "Text": "Export Selected Files ({0})"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Selected_Files_TT",
+      "Text": "Export every file selected in the File List (Ctrl-click to add, Shift-click for a range) to its path in the export directory."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Selected_Internal",
+      "Text": "Export Selected Internal Files ({0})"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Selected_Internal_TT",
+      "Text": "Export every entry selected in the binder list (Ctrl-click to add)."
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Unpacked",
+      "Text": "Export Container Unpacked"
+    },
+    {
+      "Key": "FILE_FileExporter_Export_Unpacked_TT",
+      "Text": "Write every entry of the selected binder (or every texture of a TPF) into a folder named after it at its path, e.g. chr/c0000-chrbnd-dcx/."
+    },
+    {
+      "Key": "FILE_FileExporter_Unpacked_Done",
+      "Text": "Unpacked {0} into {1}"
+    },
+    {
+      "Key": "FILE_FileExporter_Selected_Export_Complete",
+      "Text": "Export of selected files complete: {0} exported, {1} skipped (already existed), {2} failed."
+    },
+    {
+      "Key": "FILE_FileExporter_Overwrite",
+      "Text": "Overwrite Existing Files"
+    },
+    {
+      "Key": "FILE_FileExporter_Overwrite_TT",
+      "Text": "Replace files that already exist in the export directory. When off, existing files are skipped and the skip is logged."
+    },
+    {
+      "Key": "FILE_FileExporter_Keep_Container_Path",
+      "Text": "Keep Container Path"
+    },
+    {
+      "Key": "FILE_FileExporter_Keep_Container_Path_TT",
+      "Text": "Export internal files and textures into a folder named after their container, at the container's path (e.g. chr/c0000-chrbnd-dcx/), instead of directly into the export directory."
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_No_Files",
@@ -106,7 +202,7 @@
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_Complete",
-      "Text": "Folder export '{0}' complete: {1} exported, {2} skipped (already exist), {3} failed."
+      "Text": "Folder export '{0}' complete: {1} exported, {2} skipped (already existed), {3} failed."
     },
     {
       "Key": "FILE_FileExporter_Folder_Export_VFS_File_Read_FAIL",

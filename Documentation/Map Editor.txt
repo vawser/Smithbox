@@ -7,4 +7,3 @@
 - AC MSB: research
 - ONAV v2 for AC6
 
-- World Map for NR
