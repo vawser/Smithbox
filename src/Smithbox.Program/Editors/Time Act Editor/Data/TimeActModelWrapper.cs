@@ -30,7 +30,10 @@ public class TimeActModelWrapper
     /// </summary>
     public bool IsDirty { get; set; } = false;
 
-    public void Load()
+    /// <summary>
+    /// Loads the model into the view that opened its source, which isn't always the active one
+    /// </summary>
+    public void Load(TimeActEditorView view)
     {
         // Keep the unsaved changes instead of replacing them with the stored version
         if (!IsDirty || FLVER == null)
@@ -38,17 +41,9 @@ public class TimeActModelWrapper
             LoadFromStorage();
         }
 
-        // FLVER
         if (FLVER != null)
         {
-            var timeActEditor = Parent.Project.Handler.TimeActEditor;
-
-            var activeView = timeActEditor.ViewHandler.ActiveView;
-
-            if (activeView != null)
-            {
-                activeView.Universe.LoadModel(this);
-            }
+            view?.Universe.LoadModel(this);
         }
     }
 
@@ -117,7 +112,11 @@ public class TimeActModelWrapper
         }
     }
 
-    public void Unload()
+    /// <summary>
+    /// Unloads the model from the view it was loaded into. The universe drops that view's actions on the model,
+    /// and keeps its time act edits.
+    /// </summary>
+    public void Unload(TimeActEditorView view)
     {
         // Store the unsaved changes in the FLVER, as the container holding them is discarded on unload
         if (IsDirty && Container != null)
@@ -125,17 +124,7 @@ public class TimeActModelWrapper
             UpdateFLVER();
         }
 
-        var timeActEditor = Parent.Project.Handler.TimeActEditor;
-
-        var activeView = timeActEditor.ViewHandler.ActiveView;
-
-        if (activeView != null)
-        {
-            activeView.ViewportActionManager.Clear();
-            activeView.ActionManager.Clear();
-
-            activeView.Universe.UnloadModel(this);
-        }
+        view?.Universe.UnloadModel(this);
     }
 
     public void UpdateFLVER()

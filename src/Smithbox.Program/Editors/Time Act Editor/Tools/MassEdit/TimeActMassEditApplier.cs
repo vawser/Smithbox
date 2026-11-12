@@ -93,7 +93,8 @@ public static class TimeActMassEditApplier
                     }
                     : null;
 
-                actions.Add(new TimeActSetPropertyAction<object>(entry, value => field.Set(target, value), oldValue, newValue, onChanged));
+                actions.Add(new TimeActSetPropertyAction<object>(entry, value => field.Set(target, value), oldValue, newValue, onChanged,
+                    LOC.Get(field.LabelKey), target));
             }
 
             applied++;
@@ -106,7 +107,7 @@ public static class TimeActMassEditApplier
         }
         else if (actions.Count > 1)
         {
-            view.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actions));
+            view.ViewportActionManager.ExecuteAction(new TimeActCompoundAction(actions, LOC.Get("TAE_History_Mass_Edit", actions.Count)));
         }
 
         return new Result(applied, stale);

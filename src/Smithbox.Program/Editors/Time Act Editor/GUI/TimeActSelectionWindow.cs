@@ -100,9 +100,20 @@ public class TimeActSelectionWindow
 
                 var labelName = entry.IsDirty ? $"{entry.Name}*" : entry.Name;
 
+                var vanillaStatus = TimeActVanillaDisplay.Enabled
+                    ? source.Vanilla.GetEntryDiff(entry).Status
+                    : TimeActVanillaStatus.Unknown;
+
+                var colored = TimeActVanillaDisplay.PushColor(vanillaStatus);
+
                 if (ImGui.Selectable($"{labelName}##timeActEntry{entry.BinderID}", selected))
                 {
                     SelectTimeAct(entry);
+                }
+
+                if (colored)
+                {
+                    ImGui.PopStyleColor();
                 }
 
                 if (entry == ScrollTarget)
@@ -114,7 +125,14 @@ public class TimeActSelectionWindow
                 // The animation count isn't known until the time act has been read
                 if (entry.TimeAct != null)
                 {
-                    GUI.Tooltip(LOC.Get("TAE_SelectionWindow_Entry_Details", entry.Name, entry.TimeAct.Animations.Count));
+                    GUI.Tooltip(TimeActVanillaDisplay.Enabled
+                        ? LOC.Get("TAE_SelectionWindow_Entry_Details_Vanilla", entry.Name, entry.TimeAct.Animations.Count,
+                            TimeActVanillaDisplay.GetStatusText(vanillaStatus, source.Vanilla.IsReading))
+                        : LOC.Get("TAE_SelectionWindow_Entry_Details", entry.Name, entry.TimeAct.Animations.Count));
+                }
+                else if (TimeActVanillaDisplay.Enabled)
+                {
+                    GUI.Tooltip(TimeActVanillaDisplay.GetStatusText(vanillaStatus, source.Vanilla.IsReading));
                 }
 
                 if (_arrowKeyPressed && ImGui.IsItemFocused() && !selected)
@@ -200,6 +218,26 @@ public class TimeActSelectionWindow
         {
             RenameTarget = null;
         }
+
+        ImGui.Separator();
+
+        // Revert to Vanilla
+        if (ImGui.MenuItem($"{LOC.Get("TAE_Vanilla_Revert_TimeAct")}##revertTimeAct", "", false,
+            canEdit && TimeActRevert.CanRevertTimeAct(source, entry)))
+        {
+            TimeActRevert.RevertTimeAct(View, source, entry);
+        }
+        GUI.Tooltip(LOC.Get("TAE_Vanilla_Revert_TimeAct_TT"));
+
+        // Restore Removed Animations: needs the time act read, to know which are missing
+        var removed = TimeActRevert.GetRemovedAnimations(source, entry).Count;
+
+        if (ImGui.MenuItem($"{LOC.Get("TAE_Vanilla_Restore_Animations", removed)}##restoreAnimations", "", false,
+            canEdit && removed > 0))
+        {
+            TimeActRevert.RestoreRemovedAnimations(View, source, entry);
+        }
+        GUI.Tooltip(LOC.Get("TAE_Vanilla_Restore_Animations_TT"));
 
         ImGui.Separator();
 

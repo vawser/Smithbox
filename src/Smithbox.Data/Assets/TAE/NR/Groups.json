@@ -1,0 +1,1111 @@
+{
+  "Game": "NR",
+  "Groups": [
+    {
+      "EventType": 0,
+      "GroupType": 0,
+      "DataType": 0,
+      "Count": 277528,
+      "Share": 0.9998
+    },
+    {
+      "EventType": 1,
+      "GroupType": 1,
+      "DataType": 0,
+      "Count": 19579,
+      "Share": 0.9999
+    },
+    {
+      "EventType": 2,
+      "GroupType": 2,
+      "DataType": 0,
+      "Count": 16560,
+      "Share": 1
+    },
+    {
+      "EventType": 5,
+      "GroupType": 5,
+      "DataType": 0,
+      "Count": 6868,
+      "Share": 1
+    },
+    {
+      "EventType": 14,
+      "GroupType": 14,
+      "DataType": 0,
+      "Count": 682,
+      "Share": 1
+    },
+    {
+      "EventType": 16,
+      "GroupType": 16,
+      "DataType": 0,
+      "Count": 37554,
+      "Share": 1
+    },
+    {
+      "EventType": 17,
+      "GroupType": 16,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 24,
+      "GroupType": 24,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 32,
+      "GroupType": 32,
+      "DataType": 0,
+      "Count": 130,
+      "Share": 1
+    },
+    {
+      "EventType": 33,
+      "GroupType": 33,
+      "DataType": 0,
+      "Count": 42,
+      "Share": 1
+    },
+    {
+      "EventType": 34,
+      "GroupType": 32,
+      "DataType": 0,
+      "Count": 88,
+      "Share": 1
+    },
+    {
+      "EventType": 35,
+      "GroupType": 32,
+      "DataType": 0,
+      "Count": 30,
+      "Share": 1
+    },
+    {
+      "EventType": 64,
+      "GroupType": 64,
+      "DataType": 0,
+      "Count": 1068,
+      "Share": 1
+    },
+    {
+      "EventType": 65,
+      "GroupType": 65,
+      "DataType": 0,
+      "Count": 72,
+      "Share": 1
+    },
+    {
+      "EventType": 66,
+      "GroupType": 66,
+      "DataType": 0,
+      "Count": 32086,
+      "Share": 0.9999
+    },
+    {
+      "EventType": 67,
+      "GroupType": 67,
+      "DataType": 0,
+      "Count": 43727,
+      "Share": 1
+    },
+    {
+      "EventType": 96,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 23138,
+      "Share": 1
+    },
+    {
+      "EventType": 110,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 76,
+      "Share": 1
+    },
+    {
+      "EventType": 112,
+      "GroupType": 112,
+      "DataType": 0,
+      "Count": 88990,
+      "Share": 1
+    },
+    {
+      "EventType": 113,
+      "GroupType": 112,
+      "DataType": 0,
+      "Count": 1697,
+      "Share": 1
+    },
+    {
+      "EventType": 114,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 286,
+      "Share": 1
+    },
+    {
+      "EventType": 115,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 466,
+      "Share": 1
+    },
+    {
+      "EventType": 116,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 6,
+      "Share": 1
+    },
+    {
+      "EventType": 117,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 221,
+      "Share": 1
+    },
+    {
+      "EventType": 118,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 2139,
+      "Share": 0.9995
+    },
+    {
+      "EventType": 119,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 202,
+      "Share": 1
+    },
+    {
+      "EventType": 120,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 1369,
+      "Share": 1
+    },
+    {
+      "EventType": 128,
+      "GroupType": 128,
+      "DataType": 0,
+      "Count": 626,
+      "Share": 1
+    },
+    {
+      "EventType": 129,
+      "GroupType": 128,
+      "DataType": 0,
+      "Count": 419125,
+      "Share": 1
+    },
+    {
+      "EventType": 131,
+      "GroupType": 128,
+      "DataType": 0,
+      "Count": 34,
+      "Share": 1
+    },
+    {
+      "EventType": 133,
+      "GroupType": 128,
+      "DataType": 0,
+      "Count": 926,
+      "Share": 1
+    },
+    {
+      "EventType": 134,
+      "GroupType": 128,
+      "DataType": 0,
+      "Count": 381,
+      "Share": 1
+    },
+    {
+      "EventType": 138,
+      "GroupType": 136,
+      "DataType": 0,
+      "Count": 942,
+      "Share": 0.9979
+    },
+    {
+      "EventType": 139,
+      "GroupType": 136,
+      "DataType": 0,
+      "Count": 6186,
+      "Share": 0.9998
+    },
+    {
+      "EventType": 144,
+      "GroupType": 144,
+      "DataType": 0,
+      "Count": 10827,
+      "Share": 0.9998
+    },
+    {
+      "EventType": 145,
+      "GroupType": 144,
+      "DataType": 0,
+      "Count": 2505,
+      "Share": 1
+    },
+    {
+      "EventType": 150,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 313,
+      "Share": 1
+    },
+    {
+      "EventType": 151,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 197,
+      "Share": 1
+    },
+    {
+      "EventType": 152,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 479,
+      "Share": 1
+    },
+    {
+      "EventType": 153,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 218,
+      "Share": 1
+    },
+    {
+      "EventType": 154,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 93,
+      "Share": 1
+    },
+    {
+      "EventType": 155,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 439,
+      "Share": 1
+    },
+    {
+      "EventType": 193,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 5698,
+      "Share": 1
+    },
+    {
+      "EventType": 197,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 64,
+      "Share": 1
+    },
+    {
+      "EventType": 198,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 346,
+      "Share": 1
+    },
+    {
+      "EventType": 224,
+      "GroupType": 224,
+      "DataType": 0,
+      "Count": 52425,
+      "Share": 0.9999
+    },
+    {
+      "EventType": 225,
+      "GroupType": 225,
+      "DataType": 0,
+      "Count": 8854,
+      "Share": 1
+    },
+    {
+      "EventType": 226,
+      "GroupType": 226,
+      "DataType": 0,
+      "Count": 9549,
+      "Share": 1
+    },
+    {
+      "EventType": 227,
+      "GroupType": 227,
+      "DataType": 0,
+      "Count": 1390,
+      "Share": 1
+    },
+    {
+      "EventType": 228,
+      "GroupType": 228,
+      "DataType": 0,
+      "Count": 1843,
+      "Share": 1
+    },
+    {
+      "EventType": 231,
+      "GroupType": 231,
+      "DataType": 0,
+      "Count": 22,
+      "Share": 1
+    },
+    {
+      "EventType": 233,
+      "GroupType": 233,
+      "DataType": 0,
+      "Count": 1896,
+      "Share": 1
+    },
+    {
+      "EventType": 235,
+      "GroupType": 235,
+      "DataType": 0,
+      "Count": 9,
+      "Share": 1
+    },
+    {
+      "EventType": 236,
+      "GroupType": 236,
+      "DataType": 0,
+      "Count": 42,
+      "Share": 1
+    },
+    {
+      "EventType": 237,
+      "GroupType": 229,
+      "DataType": 0,
+      "Count": 2501,
+      "Share": 1
+    },
+    {
+      "EventType": 238,
+      "GroupType": 232,
+      "DataType": 0,
+      "Count": 662,
+      "Share": 1
+    },
+    {
+      "EventType": 300,
+      "GroupType": 0,
+      "DataType": 0,
+      "Count": 50517,
+      "Share": 1
+    },
+    {
+      "EventType": 302,
+      "GroupType": 302,
+      "DataType": 0,
+      "Count": 126,
+      "Share": 1
+    },
+    {
+      "EventType": 304,
+      "GroupType": 1,
+      "DataType": 0,
+      "Count": 589,
+      "Share": 1
+    },
+    {
+      "EventType": 307,
+      "GroupType": 1,
+      "DataType": 0,
+      "Count": 2385,
+      "Share": 1
+    },
+    {
+      "EventType": 310,
+      "GroupType": 306,
+      "DataType": 0,
+      "Count": 585,
+      "Share": 1
+    },
+    {
+      "EventType": 311,
+      "GroupType": 306,
+      "DataType": 0,
+      "Count": 71,
+      "Share": 1
+    },
+    {
+      "EventType": 312,
+      "GroupType": 317,
+      "DataType": 0,
+      "Count": 1876,
+      "Share": 1
+    },
+    {
+      "EventType": 313,
+      "GroupType": 306,
+      "DataType": 0,
+      "Count": 6,
+      "Share": 1
+    },
+    {
+      "EventType": 320,
+      "GroupType": 0,
+      "DataType": 0,
+      "Count": 421,
+      "Share": 1
+    },
+    {
+      "EventType": 330,
+      "GroupType": 330,
+      "DataType": 0,
+      "Count": 432,
+      "Share": 0.9977
+    },
+    {
+      "EventType": 331,
+      "GroupType": 330,
+      "DataType": 0,
+      "Count": 86,
+      "Share": 1
+    },
+    {
+      "EventType": 332,
+      "GroupType": 332,
+      "DataType": 0,
+      "Count": 5,
+      "Share": 1
+    },
+    {
+      "EventType": 339,
+      "GroupType": 340,
+      "DataType": 0,
+      "Count": 72,
+      "Share": 1
+    },
+    {
+      "EventType": 340,
+      "GroupType": 340,
+      "DataType": 0,
+      "Count": 2,
+      "Share": 1
+    },
+    {
+      "EventType": 341,
+      "GroupType": 1,
+      "DataType": 0,
+      "Count": 3053,
+      "Share": 1
+    },
+    {
+      "EventType": 342,
+      "GroupType": 342,
+      "DataType": 0,
+      "Count": 190,
+      "Share": 1
+    },
+    {
+      "EventType": 343,
+      "GroupType": 340,
+      "DataType": 0,
+      "Count": 38,
+      "Share": 1
+    },
+    {
+      "EventType": 344,
+      "GroupType": 605,
+      "DataType": 0,
+      "Count": 12,
+      "Share": 1
+    },
+    {
+      "EventType": 401,
+      "GroupType": 401,
+      "DataType": 0,
+      "Count": 333,
+      "Share": 1
+    },
+    {
+      "EventType": 500,
+      "GroupType": 500,
+      "DataType": 0,
+      "Count": 7972,
+      "Share": 1
+    },
+    {
+      "EventType": 511,
+      "GroupType": 510,
+      "DataType": 0,
+      "Count": 106,
+      "Share": 1
+    },
+    {
+      "EventType": 530,
+      "GroupType": 530,
+      "DataType": 0,
+      "Count": 431,
+      "Share": 1
+    },
+    {
+      "EventType": 600,
+      "GroupType": 600,
+      "DataType": 0,
+      "Count": 524,
+      "Share": 1
+    },
+    {
+      "EventType": 601,
+      "GroupType": 303,
+      "DataType": 0,
+      "Count": 4016,
+      "Share": 1
+    },
+    {
+      "EventType": 603,
+      "GroupType": 600,
+      "DataType": 0,
+      "Count": 240,
+      "Share": 1
+    },
+    {
+      "EventType": 604,
+      "GroupType": 600,
+      "DataType": 0,
+      "Count": 101,
+      "Share": 1
+    },
+    {
+      "EventType": 605,
+      "GroupType": 605,
+      "DataType": 0,
+      "Count": 10000,
+      "Share": 1
+    },
+    {
+      "EventType": 606,
+      "GroupType": 605,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 608,
+      "GroupType": 608,
+      "DataType": 0,
+      "Count": 1019,
+      "Share": 1
+    },
+    {
+      "EventType": 700,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 36265,
+      "Share": 1
+    },
+    {
+      "EventType": 702,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 6,
+      "Share": 1
+    },
+    {
+      "EventType": 703,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 2362,
+      "Share": 1
+    },
+    {
+      "EventType": 704,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 1,
+      "Share": 1
+    },
+    {
+      "EventType": 705,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 950,
+      "Share": 0.9979
+    },
+    {
+      "EventType": 706,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 212,
+      "Share": 1
+    },
+    {
+      "EventType": 707,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 31,
+      "Share": 1
+    },
+    {
+      "EventType": 708,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 2,
+      "Share": 1
+    },
+    {
+      "EventType": 710,
+      "GroupType": 710,
+      "DataType": 0,
+      "Count": 806,
+      "Share": 1
+    },
+    {
+      "EventType": 711,
+      "GroupType": 710,
+      "DataType": 0,
+      "Count": 3900,
+      "Share": 0.9995
+    },
+    {
+      "EventType": 712,
+      "GroupType": 710,
+      "DataType": 0,
+      "Count": 2380,
+      "Share": 1
+    },
+    {
+      "EventType": 713,
+      "GroupType": 710,
+      "DataType": 0,
+      "Count": 366,
+      "Share": 1
+    },
+    {
+      "EventType": 714,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 38,
+      "Share": 1
+    },
+    {
+      "EventType": 717,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 420,
+      "Share": 1
+    },
+    {
+      "EventType": 718,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 1277,
+      "Share": 1
+    },
+    {
+      "EventType": 719,
+      "GroupType": 710,
+      "DataType": 0,
+      "Count": 101,
+      "Share": 1
+    },
+    {
+      "EventType": 730,
+      "GroupType": 730,
+      "DataType": 0,
+      "Count": 116,
+      "Share": 1
+    },
+    {
+      "EventType": 731,
+      "GroupType": 730,
+      "DataType": 0,
+      "Count": 65,
+      "Share": 1
+    },
+    {
+      "EventType": 740,
+      "GroupType": 740,
+      "DataType": 0,
+      "Count": 711,
+      "Share": 1
+    },
+    {
+      "EventType": 760,
+      "GroupType": 760,
+      "DataType": 0,
+      "Count": 2144,
+      "Share": 1
+    },
+    {
+      "EventType": 761,
+      "GroupType": 760,
+      "DataType": 0,
+      "Count": 284,
+      "Share": 1
+    },
+    {
+      "EventType": 781,
+      "GroupType": 798,
+      "DataType": 0,
+      "Count": 282,
+      "Share": 1
+    },
+    {
+      "EventType": 782,
+      "GroupType": 799,
+      "DataType": 0,
+      "Count": 53,
+      "Share": 1
+    },
+    {
+      "EventType": 784,
+      "GroupType": 784,
+      "DataType": 0,
+      "Count": 5,
+      "Share": 1
+    },
+    {
+      "EventType": 787,
+      "GroupType": 786,
+      "DataType": 0,
+      "Count": 6141,
+      "Share": 1
+    },
+    {
+      "EventType": 788,
+      "GroupType": 786,
+      "DataType": 0,
+      "Count": 162,
+      "Share": 1
+    },
+    {
+      "EventType": 789,
+      "GroupType": 786,
+      "DataType": 0,
+      "Count": 60,
+      "Share": 1
+    },
+    {
+      "EventType": 790,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 1368,
+      "Share": 1
+    },
+    {
+      "EventType": 791,
+      "GroupType": 791,
+      "DataType": 0,
+      "Count": 100,
+      "Share": 1
+    },
+    {
+      "EventType": 792,
+      "GroupType": 96,
+      "DataType": 0,
+      "Count": 31834,
+      "Share": 0.9998
+    },
+    {
+      "EventType": 795,
+      "GroupType": 795,
+      "DataType": 0,
+      "Count": 1197,
+      "Share": 1
+    },
+    {
+      "EventType": 800,
+      "GroupType": 600,
+      "DataType": 0,
+      "Count": 283,
+      "Share": 1
+    },
+    {
+      "EventType": 900,
+      "GroupType": 900,
+      "DataType": 0,
+      "Count": 127,
+      "Share": 1
+    },
+    {
+      "EventType": 902,
+      "GroupType": 900,
+      "DataType": 0,
+      "Count": 639,
+      "Share": 1
+    },
+    {
+      "EventType": 903,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 583,
+      "Share": 1
+    },
+    {
+      "EventType": 904,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 180,
+      "Share": 1
+    },
+    {
+      "EventType": 905,
+      "GroupType": 192,
+      "DataType": 0,
+      "Count": 13,
+      "Share": 1
+    },
+    {
+      "EventType": 907,
+      "GroupType": 765,
+      "DataType": 0,
+      "Count": 4257,
+      "Share": 1
+    },
+    {
+      "EventType": 908,
+      "GroupType": 700,
+      "DataType": 0,
+      "Count": 61,
+      "Share": 1
+    },
+    {
+      "EventType": 910,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 2290,
+      "Share": 1
+    },
+    {
+      "EventType": 911,
+      "GroupType": 317,
+      "DataType": 0,
+      "Count": 135,
+      "Share": 1
+    },
+    {
+      "EventType": 950,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 38,
+      "Share": 1
+    },
+    {
+      "EventType": 951,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 8,
+      "Share": 1
+    },
+    {
+      "EventType": 952,
+      "GroupType": 150,
+      "DataType": 0,
+      "Count": 5,
+      "Share": 1
+    },
+    {
+      "EventType": 1000,
+      "GroupType": 1000,
+      "DataType": 0,
+      "Count": 28,
+      "Share": 1
+    },
+    {
+      "EventType": 1001,
+      "GroupType": 1000,
+      "DataType": 0,
+      "Count": 19,
+      "Share": 1
+    },
+    {
+      "EventType": 1002,
+      "GroupType": 1000,
+      "DataType": 0,
+      "Count": 36,
+      "Share": 1
+    },
+    {
+      "EventType": 1003,
+      "GroupType": 1000,
+      "DataType": 0,
+      "Count": 24,
+      "Share": 1
+    },
+    {
+      "EventType": 1004,
+      "GroupType": 1001,
+      "DataType": 0,
+      "Count": 256,
+      "Share": 1
+    },
+    {
+      "EventType": 1005,
+      "GroupType": 1002,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 1006,
+      "GroupType": 1002,
+      "DataType": 0,
+      "Count": 324,
+      "Share": 1
+    },
+    {
+      "EventType": 1007,
+      "GroupType": 1003,
+      "DataType": 0,
+      "Count": 120,
+      "Share": 1
+    },
+    {
+      "EventType": 1008,
+      "GroupType": 1004,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 1009,
+      "GroupType": 1004,
+      "DataType": 0,
+      "Count": 14,
+      "Share": 1
+    },
+    {
+      "EventType": 1010,
+      "GroupType": 1006,
+      "DataType": 0,
+      "Count": 1,
+      "Share": 1
+    },
+    {
+      "EventType": 1011,
+      "GroupType": 1006,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 1012,
+      "GroupType": 1006,
+      "DataType": 0,
+      "Count": 2,
+      "Share": 1
+    },
+    {
+      "EventType": 1013,
+      "GroupType": 1006,
+      "DataType": 0,
+      "Count": 1,
+      "Share": 1
+    },
+    {
+      "EventType": 1014,
+      "GroupType": 1007,
+      "DataType": 0,
+      "Count": 15,
+      "Share": 1
+    },
+    {
+      "EventType": 1015,
+      "GroupType": 1007,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 1016,
+      "GroupType": 1007,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 1017,
+      "GroupType": 306,
+      "DataType": 0,
+      "Count": 11,
+      "Share": 1
+    },
+    {
+      "EventType": 1018,
+      "GroupType": 1007,
+      "DataType": 0,
+      "Count": 15,
+      "Share": 1
+    },
+    {
+      "EventType": 1019,
+      "GroupType": 1007,
+      "DataType": 0,
+      "Count": 9,
+      "Share": 1
+    },
+    {
+      "EventType": 1020,
+      "GroupType": 1000,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 1022,
+      "GroupType": 1008,
+      "DataType": 0,
+      "Count": 1,
+      "Share": 1
+    },
+    {
+      "EventType": 1023,
+      "GroupType": 1009,
+      "DataType": 0,
+      "Count": 5,
+      "Share": 1
+    },
+    {
+      "EventType": 1024,
+      "GroupType": 1009,
+      "DataType": 0,
+      "Count": 2,
+      "Share": 1
+    },
+    {
+      "EventType": 1025,
+      "GroupType": 1010,
+      "DataType": 0,
+      "Count": 3,
+      "Share": 1
+    },
+    {
+      "EventType": 1026,
+      "GroupType": 1011,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 1027,
+      "GroupType": 1011,
+      "DataType": 0,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 1029,
+      "GroupType": 1009,
+      "DataType": 0,
+      "Count": 2,
+      "Share": 1
+    },
+    {
+      "EventType": 10150,
+      "GroupType": 1005,
+      "DataType": 0,
+      "Count": 52145,
+      "Share": 1
+    }
+  ]
+}

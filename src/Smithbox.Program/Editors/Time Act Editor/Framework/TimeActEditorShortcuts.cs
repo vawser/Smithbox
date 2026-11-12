@@ -44,17 +44,17 @@ public class TimeActEditorShortcuts
             Editor.Save();
         }
 
-        // Undo
+        // Undo: through the history, which first goes to what the step changes
         if (activeView.ViewportActionManager.CanUndo())
         {
             if (InputManager.IsPressed(KeybindID.Undo))
             {
-                activeView.ViewportActionManager.UndoAction();
+                activeView.History.Undo();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
-                activeView.ViewportActionManager.UndoAction();
+                activeView.History.Undo();
             }
         }
 
@@ -63,12 +63,12 @@ public class TimeActEditorShortcuts
         {
             if (InputManager.IsPressed(KeybindID.Redo))
             {
-                activeView.ViewportActionManager.RedoAction();
+                activeView.History.Redo();
             }
 
             if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
-                activeView.ViewportActionManager.RedoAction();
+                activeView.History.Redo();
             }
         }
     }

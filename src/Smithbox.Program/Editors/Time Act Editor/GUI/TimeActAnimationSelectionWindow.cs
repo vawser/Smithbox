@@ -32,9 +32,6 @@ public class TimeActAnimationSelectionWindow
     private string CachedAnimationFilter = "";
     private bool CachedExactAnimationFilter = false;
 
-    // The animation being dragged to another position
-    private TAE.Animation DragSourceAnimation;
-
     // The animation to bring into view the next time the list is drawn, such as one jumped to from a search
     private TAE.Animation ScrollTarget;
 
@@ -181,10 +178,6 @@ public class TimeActAnimationSelectionWindow
             _arrowKeyPressed = true;
         }
 
-        // Taken before the actions run, as they change the list being drawn
-        TAE.Animation dropSource = null;
-        TAE.Animation dropTarget = null;
-
         var clipper = new ImGuiListClipper();
         clipper.Begin(filteredAnimations.Count);
 
@@ -217,9 +210,25 @@ public class TimeActAnimationSelectionWindow
 
                 var labelName = hasPendingFile ? $"{name}*" : name;
 
+                var vanillaStatus = TimeActVanillaDisplay.Enabled
+                    ? source.Vanilla.GetAnimationDiff(entry, animation).Status
+                    : TimeActVanillaStatus.Unknown;
+
+                var colored = TimeActVanillaDisplay.PushColor(vanillaStatus);
+
                 if (ImGui.Selectable($"{labelName}##timeActAnimation{animation.ID}", selected))
                 {
                     SelectAnimation(animation);
+                }
+
+                if (colored)
+                {
+                    ImGui.PopStyleColor();
+                }
+
+                if (TimeActVanillaDisplay.Enabled)
+                {
+                    GUI.Tooltip(TimeActVanillaDisplay.GetStatusText(vanillaStatus, source.Vanilla.IsReading));
                 }
 
                 if (animation == ScrollTarget)
@@ -235,13 +244,8 @@ public class TimeActAnimationSelectionWindow
                     _arrowKeyPressed = false;
                 }
 
+                // The list is always in ID order, as the game stores it, so animations can't be dragged around
                 ContextMenu(source, entry, animation, name);
-
-                if (DragAndDrop(animation, name))
-                {
-                    dropSource = DragSourceAnimation;
-                    dropTarget = animation;
-                }
 
                 DisplayAlias(alias);
             }
@@ -258,9 +262,51 @@ public class TimeActAnimationSelectionWindow
             ImGui.EndPopup();
         }
 
-        if (dropSource != null && dropTarget != null)
+        HandleShortcuts(source, entry);
+
+        DisplayChangeIDPopup(source, entry);
+    }
+
+    /// <summary>
+    /// The list's own keys, while the pointer is over it, as the graph's keys are while it is over the graph.
+    /// Copy and Paste work here on whole animations, and on events in the graph.
+    /// </summary>
+    private void HandleShortcuts(TimeActContainerWrapper source, TimeActEntry entry)
+    {
+        if (!ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows) || ImGui.IsAnyItemActive())
+            return;
+
+        var animation = View.Selection.SelectedAnimation;
+        var canEdit = Project.Handler.TimeActData.CanSaveTimeActs;
+
+        if (InputManager.IsPressed(KeybindID.Paste) && canEdit)
         {
-            MoveAnimation(entry, dropSource, dropTarget);
+            PasteAnimation(source, entry);
+        }
+
+        // The rest act on the selected animation, which has to be one of this time act
+        if (animation == null || !entry.TimeAct.Animations.Contains(animation))
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Copy))
+        {
+            CopyAnimation(source, entry, animation);
+        }
+
+        if (!canEdit)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Duplicate))
+        {
+            DuplicateAnimation(source, entry, animation);
+        }
+        else if (InputManager.IsPressed(KeybindID.Delete))
+        {
+            DeleteAnimation(entry, animation, source.GetAnimationName(entry, animation));
+        }
+        else if (ImGui.IsKeyPressed(ImGuiKey.F2, false))
+        {
+            BeginChangeID(animation);
         }
     }
 
@@ -297,21 +343,44 @@ public class TimeActAnimationSelectionWindow
 
         var canEdit = Project.Handler.TimeActData.CanSaveTimeActs;
 
+        // Copy
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Copy")}##copyAnimation",
+            InputManager.GetHint(KeybindID.Copy)))
+        {
+            CopyAnimation(source, entry, animation);
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Copy_TT"));
+
         // Duplicate
-        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Duplicate")}##duplicateAnimation", "", false, canEdit))
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Duplicate")}##duplicateAnimation",
+            InputManager.GetHint(KeybindID.Duplicate), false, canEdit))
         {
             DuplicateAnimation(source, entry, animation);
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Duplicate_TT"));
 
-        // Delete
-        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Delete")}##deleteAnimation", "", false, canEdit))
+        // Change ID
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Change_ID")}##changeAnimationID", "F2", false, canEdit))
         {
-            View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, animation, -1, true));
+            BeginChangeID(animation);
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Change_ID_TT"));
 
-            Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Deleted", name));
+        // Delete
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Delete")}##deleteAnimation",
+            InputManager.GetHint(KeybindID.Delete), false, canEdit))
+        {
+            DeleteAnimation(entry, animation, name);
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Delete_TT"));
+
+        // Revert to Vanilla
+        if (ImGui.MenuItem($"{LOC.Get("TAE_Vanilla_Revert_Animation")}##revertAnimation", "", false,
+            canEdit && TimeActRevert.CanRevertAnimation(source, entry, animation)))
+        {
+            TimeActRevert.RevertAnimation(View, source, entry, animation);
+        }
+        GUI.Tooltip(LOC.Get("TAE_Vanilla_Revert_Animation_TT"));
 
         ImGui.Separator();
 
@@ -359,6 +428,18 @@ public class TimeActAnimationSelectionWindow
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Create_TT"));
 
+        // Paste
+        var copied = View.Editor.CopiedAnimation;
+
+        if (ImGui.MenuItem(copied != null
+                ? $"{LOC.Get("TAE_AnimationWindow_Context_Paste_Named", copied.Name)}##pasteAnimation"
+                : $"{LOC.Get("TAE_AnimationWindow_Context_Paste")}##pasteAnimation",
+            InputManager.GetHint(KeybindID.Paste), false, canEdit && copied != null))
+        {
+            PasteAnimation(source, entry);
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Paste_TT"));
+
         // Sort
         if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Sort")}##sortAnimations", "", false, canEdit))
         {
@@ -391,7 +472,7 @@ public class TimeActAnimationSelectionWindow
     }
     #endregion
 
-    #region Create / Duplicate / Sort / Move
+    #region Create / Duplicate / Delete
     /// <summary>
     /// Adds an empty animation after the given one, under the next free ID
     /// </summary>
@@ -410,9 +491,8 @@ public class TimeActAnimationSelectionWindow
         var animation = new TAE.Animation(id, new TAE.Animation.AnimMiniHeader.Standard(),
             GetAnimFileName(source, entry, after, id, ""));
 
-        var index = after != null ? animations.IndexOf(after) + 1 : animations.Count;
-
-        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, animation, index));
+        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, animation,
+            GetSortedIndex(animations, id)));
 
         Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Created", source.GetAnimationName(entry, animation)));
     }
@@ -427,12 +507,240 @@ public class TimeActAnimationSelectionWindow
         var copy = entry.CloneAnimation(animation, id,
             GetAnimFileName(source, entry, animation, id, animation.AnimFileName));
 
-        var index = entry.TimeAct.Animations.IndexOf(animation) + 1;
-
-        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, copy, index));
+        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, copy,
+            GetSortedIndex(entry.TimeAct.Animations, id)));
 
         Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Duplicated",
             source.GetAnimationName(entry, animation), source.GetAnimationName(entry, copy)));
+    }
+
+    private void DeleteAnimation(TimeActEntry entry, TAE.Animation animation, string name)
+    {
+        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, animation, -1, true));
+
+        Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Deleted", name));
+    }
+    #endregion
+
+    #region Copy / Paste
+    /// <summary>
+    /// Puts a copy of the animation and its events on the editor's clipboard, so it can be pasted into any
+    /// time act of the project, in any view
+    /// </summary>
+    private void CopyAnimation(TimeActContainerWrapper source, TimeActEntry entry, TAE.Animation animation)
+    {
+        View.Editor.CopiedAnimation = new TimeActCopiedAnimation(source, entry, animation);
+
+        Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Copied", View.Editor.CopiedAnimation.Name));
+    }
+
+    /// <summary>
+    /// Adds the copied animation to the time act under its own ID, or the next free one after it if that is taken.
+    /// Like Duplicate, the HKX file isn't copied: the copy plays what its ID or mini header points to here.
+    /// </summary>
+    private void PasteAnimation(TimeActContainerWrapper source, TimeActEntry entry)
+    {
+        var copied = View.Editor.CopiedAnimation;
+
+        if (copied == null)
+            return;
+
+        if (copied.BigEndian != entry.TimeAct.BigEndian)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_AnimationWindow_Paste_Byte_Order", copied.Name, entry.Name));
+            return;
+        }
+
+        var id = entry.GetFreeAnimationID(copied.Animation.ID);
+
+        var newName = source.FormatAnimationName(entry.GetFullAnimationID(id, source.AnimationCategorySize));
+
+        var animation = TimeActEntry.CloneAnimation(copied.Animation, id, copied.GetFileName(newName),
+            copied.BigEndian, false);
+
+        View.ViewportActionManager.ExecuteAction(new TimeActAddAnimationAction(View, entry, animation,
+            GetSortedIndex(entry.TimeAct.Animations, id)));
+
+        ScrollTo(animation);
+
+        Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Pasted", copied.Name, copied.SourceName,
+            source.GetAnimationName(entry, animation)));
+
+        // An animation that plays another's motion needs that one in this source too
+        if (copied.GetImportedID() is { } imported && !source.TryFindAnimation(imported, out _, out _))
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_AnimationWindow_Paste_Import_Missing",
+                source.GetAnimationName(entry, animation), source.FormatAnimationName(imported), source.Name));
+        }
+    }
+    #endregion
+
+    #region Change ID
+    private const string ChangeIDPopupID = "##timeActChangeAnimationID";
+
+    private TAE.Animation ChangeIDTarget;
+    private string ChangeIDText = "";
+    private bool OpenChangeIDPopup;
+    private bool FocusChangeIDInput;
+
+    /// <summary>
+    /// Opens the Change ID popup for an animation, the next time the list is drawn. It is opened from outside the
+    /// context menu, as a popup opened from inside another closes with it.
+    /// </summary>
+    private void BeginChangeID(TAE.Animation animation)
+    {
+        ChangeIDTarget = animation;
+        ChangeIDText = $"{animation.ID}";
+        OpenChangeIDPopup = true;
+    }
+
+    /// <summary>
+    /// The ID with the same checks as the Properties field: a whole number not used by another animation of the
+    /// time act. Gives the error to show, or null when it can be applied.
+    /// </summary>
+    private static string ValidateNewID(TimeActEntry entry, TAE.Animation animation, string text, out long id)
+    {
+        if (!long.TryParse(text, out id))
+            return LOC.Get("TAE_PropertiesWindow_TimeAct_Invalid_Value", text, LOC.Get("TAE_PropertiesWindow_Animation_ID"));
+
+        var newID = id;
+
+        if (entry.TimeAct.Animations.Any(e => e != animation && e.ID == newID))
+            return LOC.Get("TAE_PropertiesWindow_Animation_ID_In_Use", id);
+
+        return null;
+    }
+
+    private void DisplayChangeIDPopup(TimeActContainerWrapper source, TimeActEntry entry)
+    {
+        var title = $"{LOC.Get("TAE_AnimationWindow_Change_ID_Title")}{ChangeIDPopupID}";
+
+        if (OpenChangeIDPopup)
+        {
+            ImGui.OpenPopup(title);
+
+            OpenChangeIDPopup = false;
+            FocusChangeIDInput = true;
+        }
+
+        var open = true;
+
+        if (!ImGui.BeginPopupModal(title, ref open, ImGuiWindowFlags.AlwaysAutoResize))
+            return;
+
+        var animation = ChangeIDTarget;
+
+        // The animation may have gone, such as through an undo, while the popup was open
+        if (animation == null || !entry.TimeAct.Animations.Contains(animation))
+        {
+            ChangeIDTarget = null;
+
+            ImGui.CloseCurrentPopup();
+            ImGui.EndPopup();
+            return;
+        }
+
+        ImGui.Text(LOC.Get("TAE_AnimationWindow_Change_ID_Text", source.GetAnimationName(entry, animation)));
+
+        if (FocusChangeIDInput)
+        {
+            ImGui.SetKeyboardFocusHere();
+            FocusChangeIDInput = false;
+        }
+
+        ImGui.SetNextItemWidth(200);
+
+        var entered = ImGui.InputText("##changeAnimationIDInput", ref ChangeIDText, 32,
+            ImGuiInputTextFlags.EnterReturnsTrue | ImGuiInputTextFlags.CharsDecimal);
+
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Change_ID_Input_TT"));
+
+        var error = ValidateNewID(entry, animation, ChangeIDText, out var newID);
+        var unchanged = error == null && newID == animation.ID;
+
+        // What the animation will be called, or why the ID can't be used
+        if (error != null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, error);
+        }
+        else if (!unchanged)
+        {
+            ImGui.Text(LOC.Get("TAE_AnimationWindow_Change_ID_Becomes",
+                source.FormatAnimationName(entry.GetFullAnimationID(newID, source.AnimationCategorySize))));
+        }
+
+        var confirmed = entered && error == null;
+        var cancelled = ImGui.IsKeyPressed(ImGuiKey.Escape, false);
+
+        ImGui.BeginDisabled(error != null || unchanged);
+
+        if (ImGui.Button($"{LOC.Get("TAE_AnimationWindow_Change_ID_Confirm")}##changeAnimationIDConfirm"))
+        {
+            confirmed = true;
+        }
+        GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Change_ID_Confirm_TT"));
+
+        ImGui.EndDisabled();
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{LOC.Get("TAE_AnimationWindow_Change_ID_Cancel")}##changeAnimationIDCancel"))
+        {
+            cancelled = true;
+        }
+
+        if (confirmed && !unchanged)
+        {
+            ApplyChangeID(source, entry, animation, newID);
+        }
+
+        if (confirmed || cancelled || !open)
+        {
+            ChangeIDTarget = null;
+            ImGui.CloseCurrentPopup();
+        }
+
+        ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// Changes the ID as the Properties field does, so the step undoes the same way and the list stays in ID order
+    /// </summary>
+    private void ApplyChangeID(TimeActContainerWrapper source, TimeActEntry entry, TAE.Animation animation, long newID)
+    {
+        var oldName = source.GetAnimationName(entry, animation);
+
+        View.ViewportActionManager.ExecuteAction(new TimeActSetPropertyAction<long>(entry,
+            value => animation.ID = value, animation.ID, newID,
+            () =>
+            {
+                entry.ResortAnimation(animation);
+
+                if (View.Selection.SelectedAnimation == animation)
+                {
+                    View.Playback.OnAnimationChanged();
+                }
+
+                ScrollTo(animation);
+            },
+            LOC.Get("TAE_PropertiesWindow_Animation_ID"), animation));
+
+        Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Changed_ID", oldName, source.GetAnimationName(entry, animation)));
+    }
+    #endregion
+
+    #region Order / File Names / Sort
+
+    /// <summary>
+    /// Where an animation of the ID goes to keep the list in ID order, which is how the game stores them.
+    /// The next free ID after one animation isn't always the next in the list (3000, 3001, 3002 gives 3003),
+    /// so going in after the animation it was made from would put the list out of order.
+    /// </summary>
+    private static int GetSortedIndex(List<TAE.Animation> animations, long id)
+    {
+        var index = animations.FindIndex(e => e.ID > id);
+
+        return index < 0 ? animations.Count : index;
     }
 
     /// <summary>
@@ -469,65 +777,6 @@ public class TimeActAnimationSelectionWindow
         Smithbox.Log(this, LOC.Get("TAE_AnimationWindow_Sorted", entry.Name));
     }
 
-    /// <summary>
-    /// Lets an animation be dragged onto another, which moves it into that one's place
-    /// </summary>
-    private bool DragAndDrop(TAE.Animation animation, string name)
-    {
-        if (!Project.Handler.TimeActData.CanSaveTimeActs)
-            return false;
-
-        if (ImGui.BeginDragDropSource(ImGuiDragDropFlags.None))
-        {
-            DragSourceAnimation = animation;
-
-            unsafe
-            {
-                byte dummy = 0;
-                ImGui.SetDragDropPayload("TAE_ANIMATION", &dummy, 1);
-            }
-
-            ImGui.Text(LOC.Get("TAE_AnimationWindow_Drag_TT", name));
-
-            ImGui.EndDragDropSource();
-        }
-
-        var dropped = false;
-
-        if (ImGui.BeginDragDropTarget())
-        {
-            unsafe
-            {
-                var payload = ImGui.AcceptDragDropPayload("TAE_ANIMATION");
-
-                if (!payload.IsNull && DragSourceAnimation != null && DragSourceAnimation != animation)
-                {
-                    dropped = true;
-                }
-            }
-
-            ImGui.EndDragDropTarget();
-        }
-
-        return dropped;
-    }
-
-    /// <summary>
-    /// The positions are those of the whole list, so a filtered list moves the animation next to the one it was dropped on
-    /// </summary>
-    private void MoveAnimation(TimeActEntry entry, TAE.Animation animation, TAE.Animation target)
-    {
-        var animations = entry.TimeAct.Animations;
-
-        var index = animations.IndexOf(target);
-
-        DragSourceAnimation = null;
-
-        if (index < 0 || !animations.Contains(animation))
-            return;
-
-        View.ViewportActionManager.ExecuteAction(new TimeActMoveAnimationAction(entry, animation, index));
-    }
     #endregion
 
     #region Import / Export

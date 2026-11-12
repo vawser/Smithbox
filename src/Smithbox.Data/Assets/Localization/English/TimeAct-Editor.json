@@ -61,8 +61,192 @@
       "Text": "Finding sources: {0} / {1}"
     },
     {
+      "Key": "TAE_SourceWindow_Open_In_Other_View",
+      "Text": "{0} is already open in view [{1}], so that view has been brought forward. A source can only be open in one view at a time."
+    },
+    {
+      "Key": "TAE_SourceWindow_Open_In_Other_View_TT",
+      "Text": "Open in view [{0}]. Selecting it brings that view forward, as a source can only be open in one view at a time."
+    },
+    {
       "Key": "TAE_SelectionWindow_Entry_Details",
       "Text": "{0} ({1} animations)"
+    },
+    {
+      "Key": "TAE_SelectionWindow_Entry_Details_Vanilla",
+      "Text": "{0} ({1} animations)\n{2}"
+    },
+    {
+      "Key": "TAE_Editor_Options_Vanilla_Markers",
+      "Text": "Vanilla Markers"
+    },
+    {
+      "Key": "TAE_Editor_Options_Vanilla_Markers_TT",
+      "Text": "Colours the time acts, animations and events that differ from the game's version: changed ones as the Param Editor colours changed rows, and new ones as it colours added rows. Events get a mark in their corner. The * after a name still means unsaved."
+    },
+    {
+      "Key": "TAE_Vanilla_Status_Same",
+      "Text": "Same as the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Status_Modified",
+      "Text": "Changed from the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Status_Added",
+      "Text": "Not in the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Status_Reading",
+      "Text": "Reading the game's version..."
+    },
+    {
+      "Key": "TAE_Vanilla_Status_Unknown",
+      "Text": "The game's version couldn't be read"
+    },
+    {
+      "Key": "TAE_Vanilla_Read_Failed",
+      "Text": "Failed to read the game's version of {0}, so it can't be compared or reverted."
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Failed",
+      "Text": "Failed to read the game's version of time act {0}."
+    },
+    {
+      "Key": "TAE_Vanilla_Reverted_TimeAct",
+      "Text": "Reverted time act {0} to the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Restored_Animations",
+      "Text": "Restored {0} of the game's animations to time act {1}"
+    },
+    {
+      "Key": "TAE_Vanilla_Reverted_Animation",
+      "Text": "Reverted animation {0} to the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Reverted_Events",
+      "Text": "Reverted {0} event(s) of animation {1} to the game's version"
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_TimeAct",
+      "Text": "Revert to Vanilla"
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_TimeAct_TT",
+      "Text": "Puts the whole time act back as the game has it: its header and every animation. Only offered when the game has this time act and it has been changed. This can be undone, and is written on save."
+    },
+    {
+      "Key": "TAE_Vanilla_Restore_Animations",
+      "Text": "Restore Removed Animations ({0})"
+    },
+    {
+      "Key": "TAE_Vanilla_Restore_Animations_TT",
+      "Text": "Adds back the game's animations that this time act no longer has, under their own IDs. Select the time act first, as it has to be read to know which are missing."
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Animation",
+      "Text": "Revert to Vanilla"
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Animation_TT",
+      "Text": "Puts the animation back as the game has the animation of this ID: its mini header, file name, events and event groups. Only offered when the game has it and it has been changed. This can be undone."
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Event",
+      "Text": "Revert to Vanilla"
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Events",
+      "Text": "Revert {0} Events to Vanilla"
+    },
+    {
+      "Key": "TAE_Vanilla_Revert_Event_TT",
+      "Text": "Puts the selected events that the game has in a changed form back as the game has them: times, Unk04 and parameters. Events are matched with the game's by lining up the unchanged ones, then pairing the rest by type in order. New events aren't affected, and groups are left as they are."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Vanilla",
+      "Text": "Vanilla"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Vanilla_TT",
+      "Text": "How this compares with the game's own version, read from the game files."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Vanilla_Revert",
+      "Text": "Revert"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Vanilla_Revert_TT",
+      "Text": "Puts this back as the game has it. This can be undone."
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Header",
+      "Text": "The header differs"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Animations_Modified",
+      "Text": "{0} animation(s) changed"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Animations_Added",
+      "Text": "{0} animation(s) not in the game"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Animations_Removed",
+      "Text": "{0} of the game's animation(s) removed"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Mini_Header",
+      "Text": "The mini header differs"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_File_Name",
+      "Text": "File name, game: {0}"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Groups",
+      "Text": "The event groups differ"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Events_Modified",
+      "Text": "{0} event(s) changed"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Events_Added",
+      "Text": "{0} event(s) not in the game"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Events_Removed",
+      "Text": "{0} of the game's event(s) removed"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Value",
+      "Text": "{0}, game: {1}"
+    },
+    {
+      "Key": "TAE_Vanilla_Detail_Bytes",
+      "Text": "{0} parameter byte(s) differ"
+    },
+    {
+      "Key": "TAE_History_Revert_Event",
+      "Text": "Revert {0} to vanilla"
+    },
+    {
+      "Key": "TAE_History_Revert_Events",
+      "Text": "Revert {0} events to vanilla"
+    },
+    {
+      "Key": "TAE_History_Revert_Animation",
+      "Text": "Revert animation to vanilla"
+    },
+    {
+      "Key": "TAE_History_Revert_TimeAct",
+      "Text": "Revert time act to vanilla"
+    },
+    {
+      "Key": "TAE_History_Restore_Animations",
+      "Text": "Restore {0} animation(s) from vanilla"
     },
     {
       "Key": "TAE_Data_Failed_To_Read_Source",
@@ -197,6 +381,214 @@
       "Text": "Saved time acts: {0}"
     },
     {
+      "Key": "TAE_Data_Failed_To_Read_Group_Map",
+      "Text": "Failed to read the event group map: {0}"
+    },
+    {
+      "Key": "TAE_Editor_Edit_History",
+      "Text": "History"
+    },
+    {
+      "Key": "TAE_Editor_Edit_History_TT",
+      "Text": "Opens the History tool, which lists the edits that can be undone and redone, and where each was made."
+    },
+    {
+      "Key": "TAE_ToolWindow_View_Toggle_History",
+      "Text": "History"
+    },
+    {
+      "Key": "TAE_HistoryTool_Header",
+      "Text": "History"
+    },
+    {
+      "Key": "TAE_HistoryTool_Hint",
+      "Text": "The edits made in this view, oldest first, with the source, time act and animation of each. Click an edit to go back to just before it, or click an undone (dimmed) edit to redo up to it. Undo and redo first open what they change, so it can be seen."
+    },
+    {
+      "Key": "TAE_HistoryTool_Steps_Header",
+      "Text": "Edits ({0} of {1} applied)"
+    },
+    {
+      "Key": "TAE_HistoryTool_Steps_Header_TT",
+      "Text": "The highlighted edit is the latest one applied. The history is kept when another source is opened, until the view is closed."
+    },
+    {
+      "Key": "TAE_HistoryTool_Empty",
+      "Text": "No edits have been made in this view yet."
+    },
+    {
+      "Key": "TAE_HistoryTool_Step_Undo_TT",
+      "Text": "Undo this edit and every edit after it."
+    },
+    {
+      "Key": "TAE_HistoryTool_Step_Redo_TT",
+      "Text": "Redo the undone edits up to and including this one."
+    },
+    {
+      "Key": "TAE_HistoryTool_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "TAE_HistoryTool_Actions_Header_TT",
+      "Text": "Undo or redo one edit, the same as the shortcuts."
+    },
+    {
+      "Key": "TAE_HistoryTool_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "TAE_HistoryTool_Undo_TT",
+      "Text": "Undoes the latest edit, after opening what it changes."
+    },
+    {
+      "Key": "TAE_HistoryTool_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "TAE_HistoryTool_Redo_TT",
+      "Text": "Redoes the next undone edit, after opening what it changes."
+    },
+    {
+      "Key": "TAE_HistoryTool_Viewport_Step",
+      "Text": "Move in the viewport"
+    },
+    {
+      "Key": "TAE_HistoryTool_Several",
+      "Text": "Several sources"
+    },
+    {
+      "Key": "TAE_History_Compound",
+      "Text": "{0} (+{1} more)"
+    },
+    {
+      "Key": "TAE_History_Mass_Edit",
+      "Text": "Mass edit ({0} changes)"
+    },
+    {
+      "Key": "TAE_History_Save_Check_Fixes",
+      "Text": "Save check fixes ({0})"
+    },
+    {
+      "Key": "TAE_History_Move_Event",
+      "Text": "Move {0}"
+    },
+    {
+      "Key": "TAE_History_Add_Event",
+      "Text": "Add {0}"
+    },
+    {
+      "Key": "TAE_History_Delete_Event",
+      "Text": "Delete {0}"
+    },
+    {
+      "Key": "TAE_History_Add_Events",
+      "Text": "Add {0} events"
+    },
+    {
+      "Key": "TAE_History_Delete_Events",
+      "Text": "Delete {0} events"
+    },
+    {
+      "Key": "TAE_History_Set_Parameter",
+      "Text": "Set {0} of {1} to {2}"
+    },
+    {
+      "Key": "TAE_History_Set_Bytes",
+      "Text": "Edit the raw bytes of {0}"
+    },
+    {
+      "Key": "TAE_History_Force_Template",
+      "Text": "Apply the {0} template to {1}"
+    },
+    {
+      "Key": "TAE_History_Add_Animation",
+      "Text": "Create animation"
+    },
+    {
+      "Key": "TAE_History_Delete_Animation",
+      "Text": "Delete animation"
+    },
+    {
+      "Key": "TAE_History_Sort_Animations",
+      "Text": "Sort animations by ID"
+    },
+    {
+      "Key": "TAE_History_Import_HKX",
+      "Text": "Import the HKX of {0}"
+    },
+    {
+      "Key": "TAE_History_Add_TimeAct",
+      "Text": "Add time act {0}"
+    },
+    {
+      "Key": "TAE_History_Delete_TimeAct",
+      "Text": "Delete time act {0}"
+    },
+    {
+      "Key": "TAE_History_Rename_TimeAct",
+      "Text": "Rename time act {0} to {1}"
+    },
+    {
+      "Key": "TAE_History_Replace_TimeAct",
+      "Text": "Replace time act {0}"
+    },
+    {
+      "Key": "TAE_History_Set_Property",
+      "Text": "Set {0} to {1}"
+    },
+    {
+      "Key": "TAE_History_Set_Property_Unnamed",
+      "Text": "Change a property"
+    },
+    {
+      "Key": "TAE_History_Mass_Delete_Events",
+      "Text": "Mass delete {0} events in {1} animation(s)"
+    },
+    {
+      "Key": "TAE_History_Mass_Add_Events",
+      "Text": "Mass add {0} events to {1} animation(s)"
+    },
+    {
+      "Key": "TAE_History_Mass_Add_Animations",
+      "Text": "Mass add {0} animations to {1} time act(s)"
+    },
+    {
+      "Key": "TAE_History_Mass_Delete_Animations",
+      "Text": "Mass delete {0} animations from {1} time act(s)"
+    },
+    {
+      "Key": "TAE_SaveCheck_Unsorted_Animations",
+      "Text": "{0} {1}: the animations are out of ID order, which no time act of the game is. Fix: sort them by ID."
+    },
+    {
+      "Key": "TAE_SaveCheck_Duplicate_Animation_ID",
+      "Text": "{0} {1}: {3} animations share the ID of {2}, which no time act of the game has. Change the IDs by hand."
+    },
+    {
+      "Key": "TAE_SaveCheck_Ungrouped_Events",
+      "Text": "{0} {1}: {2} event(s) are outside the event groups of the animation, which no animation of the game has. They can't be fixed for you."
+    },
+    {
+      "Key": "TAE_SaveCheck_More_Issues",
+      "Text": "...and {0} more, listed in the log."
+    },
+    {
+      "Key": "TAE_SaveCheck_Dialog",
+      "Text": "{0} problem(s) were found in the time acts about to be saved, {1} of which can be fixed for you:\n\n{2}\n\nYes: fix what can be fixed, then save (the fixes can be undone).\nNo: save as they are.\nCancel: don't save."
+    },
+    {
+      "Key": "TAE_SaveCheck_Cancelled",
+      "Text": "Save cancelled, as problems were found in the time acts."
+    },
+    {
+      "Key": "TAE_SaveCheck_Fixed",
+      "Text": "Fixed {0} problem(s) before saving."
+    },
+    {
+      "Key": "TAE_Editor_Save_Other_Sources_Unsaved",
+      "Text": "{0} other source(s) still have unsaved time act changes, as Save only writes the open source. Use Save All to write them: {1}"
+    },
+    {
       "Key": "TAE_Editor_Failed_To_Save_Source",
       "Text": "Failed to save time acts: {0}"
     },
@@ -230,7 +622,87 @@
     },
     {
       "Key": "TAE_GraphWindow_Zoom_TT",
-      "Text": "Zoom the timeline. Hold Ctrl and scroll over the graph to zoom around the cursor."
+      "Text": "Zoom the timeline. Hold Ctrl and scroll over the graph to zoom around the cursor.\n\nWith the cursor over the graph:\nLeft / Right: move the selected events a frame (ten with Shift), or step the playhead if none are selected.\nComma / Period: step the playhead a frame (ten with Shift).\nHome / End: go to the start or end of playback.\nHold Alt while dragging to move off whole frames.\nRight-click a track name for its menu."
+    },
+    {
+      "Key": "TAE_GraphWindow_To_Start_TT",
+      "Text": "Go to the start of playback (Home)."
+    },
+    {
+      "Key": "TAE_GraphWindow_Previous_Frame_TT",
+      "Text": "Step back a frame, or ten with Shift (Comma)."
+    },
+    {
+      "Key": "TAE_GraphWindow_Next_Frame_TT",
+      "Text": "Step on a frame, or ten with Shift (Period)."
+    },
+    {
+      "Key": "TAE_GraphWindow_To_End_TT",
+      "Text": "Go to the end of playback (End)."
+    },
+    {
+      "Key": "TAE_GraphWindow_Zoom_Fit_TT",
+      "Text": "Zoom so the whole timeline fits the graph."
+    },
+    {
+      "Key": "TAE_GraphWindow_Zoom_Selection_TT",
+      "Text": "Zoom to the selected events, and scroll to them."
+    },
+    {
+      "Key": "TAE_GraphWindow_Show_All_Types_Solo",
+      "Text": "Only [{0}] shown: show all"
+    },
+    {
+      "Key": "TAE_GraphWindow_Show_All_Types_Hidden",
+      "Text": "{0} type(s) hidden: show all"
+    },
+    {
+      "Key": "TAE_GraphWindow_Show_All_Types_TT",
+      "Text": "Some event types are left off the graph, in every animation, from the track menu. Click to show them all again."
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Collapsed_Label",
+      "Text": "{0} (collapsed)"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Select_All",
+      "Text": "Select the {0} event(s) of this type"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Collapse",
+      "Text": "Collapse to one row"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Expand",
+      "Text": "Expand"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Collapse_TT",
+      "Text": "Draws every event of this type on one row, over each other, to save room. Stays so for every animation."
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Hide",
+      "Text": "Hide this type"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Hide_TT",
+      "Text": "Leaves this type of event off the graph, in every animation, until it is shown again. Hidden events can't be selected."
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Solo",
+      "Text": "Show only this type"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Unsolo",
+      "Text": "Show the other types again"
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Solo_TT",
+      "Text": "Shows only this type of event, in every animation, to follow it through them."
+    },
+    {
+      "Key": "TAE_GraphWindow_Track_Show_All",
+      "Text": "Show all types"
     },
     {
       "Key": "TAE_GraphWindow_Add_Event",
@@ -310,7 +782,131 @@
     },
     {
       "Key": "TAE_PropertiesWindow_No_Template",
-      "Text": "No template fits event type {0}, so its parameters can't be edited. Raw parameter data:"
+      "Text": "No template fits event type {0}, so its parameters are edited as raw bytes. Each row keeps its length, as the game reads a set size for each type."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Time_To_End",
+      "Text": "to the end"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Time_TT",
+      "Text": "Type a time in seconds (0.5), or in frames with an f after it (15f). The frame in brackets is only shown, and can be left in when editing."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Invalid_Time",
+      "Text": "'{0}' is not a time for {1}: type seconds (0.5) or frames (15f)."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Unk04",
+      "Text": "Unk04"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Unk04_TT",
+      "Text": "An unknown value stored with every event, after its times. New events copy it from another event of the same type in the animation."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group",
+      "Text": "Event Group"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_Value",
+      "Text": "Type {0}, data {1} ({2} event(s))"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_TT",
+      "Text": "The group the event belongs to in this animation. It is shown but not edited, as what group types and data mean isn't known well enough. In the game's files the group type is often not the event's own type."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_Data_Type",
+      "Text": "Data type: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_Cutscene",
+      "Text": "Cutscene entity: {0} {1}_{2}, area {3}, block {4}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_None",
+      "Text": "None"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Event_Group_None_TT",
+      "Text": "The event is outside the event groups of the animation, which no animation of the game has. Saving warns about it."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Raw_Empty",
+      "Text": "This event has no parameter data."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Raw_Invalid",
+      "Text": "'{0}' is not {1} bytes of hex, so the row was left as it was."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Raw_Row_TT",
+      "Text": "Type the bytes of this row in hex, with or without spaces. What each four bytes read as:"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Header",
+      "Text": "Apply the {0} template anyway"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Unreadable",
+      "Text": "The template can't read this event even past its fixed values, so it can't be applied: {0}"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Summary",
+      "Text": "Applying it would change {0} byte(s): {1} where the template writes a fixed value, and {2} past the end of the template, which would be dropped."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Column_Offset",
+      "Text": "Offset"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Column_Field",
+      "Text": "Field"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Column_File",
+      "Text": "File"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Column_Template",
+      "Text": "Template"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Dropped",
+      "Text": "(past the template, dropped)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Fixed",
+      "Text": "{0} (fixed value)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_More",
+      "Text": "...and {0} more byte(s)."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Warning",
+      "Text": "The event is then edited and saved through the template, so the bytes above are lost when the time act is saved. This is for trying out a template on this event. It can be undone until then."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Apply",
+      "Text": "Apply template"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Force_Template_Applied",
+      "Text": "Applied the {0} template to the event, changing {1} byte(s)."
+    },
+    {
+      "Key": "TAE_TemplateFit_No_Template",
+      "Text": "The event def has no template for event type {0}."
+    },
+    {
+      "Key": "TAE_TemplateFit_Mismatch",
+      "Text": "The {0} template doesn't write this event back exactly: at byte {1} the file has {2} but the template writes {3} (event {4} bytes, template {5}). It is left as raw bytes so nothing is lost on save."
+    },
+    {
+      "Key": "TAE_TemplateFit_Failed",
+      "Text": "The {0} template couldn't read this event: {1}"
     },
     {
       "Key": "TAE_PropertiesWindow_Invalid_Value",
@@ -945,6 +1541,82 @@
       "Text": "Adds a copy of this animation and its events after it, under the next free ID. Its HKX file is not copied."
     },
     {
+      "Key": "TAE_AnimationWindow_Context_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Copy_TT",
+      "Text": "Copies this animation and its events, so they can be pasted into any time act of the project, in any view. Copying events in the graph is kept apart, so both can be held at once."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Paste",
+      "Text": "Paste"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Paste_Named",
+      "Text": "Paste {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Paste_TT",
+      "Text": "Adds the copied animation to this time act under its own ID, or the next free one after it if that is taken. Its HKX file is not copied: the copy plays the motion its ID or mini header points to in this source."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Change_ID",
+      "Text": "Change ID"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Context_Change_ID_TT",
+      "Text": "Gives this animation another ID. The list stays in ID order, and the name and motion follow the new ID."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Copied",
+      "Text": "Copied animation {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Pasted",
+      "Text": "Pasted animation {0} from {1} as {2}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Paste_Byte_Order",
+      "Text": "Animation {0} can't be pasted into {1}, as their event parameters are stored in a different byte order."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Paste_Import_Missing",
+      "Text": "Pasted animation {0} plays the motion of {1}, which {2} doesn't have. Change its mini header, or it will have no motion in game."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Title",
+      "Text": "Change Animation ID"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Text",
+      "Text": "New ID for {0}:"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Input_TT",
+      "Text": "The ID within this time act, as the Properties ID field has it. Press Enter to apply, or Escape to cancel."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Becomes",
+      "Text": "Becomes {0}"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Confirm",
+      "Text": "Change"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Confirm_TT",
+      "Text": "Changes the ID. This can be undone."
+    },
+    {
+      "Key": "TAE_AnimationWindow_Change_ID_Cancel",
+      "Text": "Cancel"
+    },
+    {
+      "Key": "TAE_AnimationWindow_Changed_ID",
+      "Text": "Changed animation {0} to {1}"
+    },
+    {
       "Key": "TAE_AnimationWindow_Context_Delete",
       "Text": "Delete"
     },
@@ -983,10 +1655,6 @@
     {
       "Key": "TAE_AnimationWindow_Context_Export_All_HKX_TT",
       "Text": "Writes the .hkx files of every animation in the list, as it is filtered, to a hkx folder within the folder of its source, in the export folder. Animations that import the same file share it.\nExport folder: {0}"
-    },
-    {
-      "Key": "TAE_AnimationWindow_Drag_TT",
-      "Text": "Move {0}"
     },
     {
       "Key": "TAE_AnimationWindow_Created",

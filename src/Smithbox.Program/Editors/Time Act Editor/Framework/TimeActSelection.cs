@@ -37,6 +37,36 @@ public class TimeActSelection
         }
     }
 
+    /// <summary>
+    /// Drops selected events that aren't in the selected animation, such as ones an undo in another animation put
+    /// back. The properties and edits go by the selected time act, so an event from elsewhere would be edited
+    /// without its own time act being marked as modified.
+    /// </summary>
+    public void PruneEvents()
+    {
+        if (SelectedEvents.Count == 0)
+            return;
+
+        var events = SelectedAnimation?.Events;
+
+        if (events == null)
+        {
+            SelectedEvents.Clear();
+            return;
+        }
+
+        // A select-all can hold every event of the animation, so the lookup is only built when needed
+        if (SelectedEvents.Count <= 8)
+        {
+            SelectedEvents.RemoveAll(e => !events.Contains(e));
+            return;
+        }
+
+        var inAnimation = new HashSet<TAE.Event>(events);
+
+        SelectedEvents.RemoveAll(e => !inAnimation.Contains(e));
+    }
+
     public bool IsEventSelected(TAE.Event ev)
     {
         return SelectedEvents.Contains(ev);

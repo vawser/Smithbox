@@ -1,0 +1,68 @@
+{
+  "Game": "DES",
+  "Groups": [
+    {
+      "EventType": 0,
+      "GroupType": 0,
+      "DataType": 0,
+      "Count": 1171,
+      "Share": 1
+    },
+    {
+      "EventType": 1,
+      "GroupType": 1,
+      "DataType": 1,
+      "Count": 181,
+      "Share": 0.9669
+    },
+    {
+      "EventType": 2,
+      "GroupType": 2,
+      "DataType": 2,
+      "Count": 4,
+      "Share": 1
+    },
+    {
+      "EventType": 8,
+      "GroupType": 8,
+      "DataType": 8,
+      "Count": 62,
+      "Share": 1
+    },
+    {
+      "EventType": 16,
+      "GroupType": 16,
+      "DataType": 16,
+      "Count": 526,
+      "Share": 1
+    },
+    {
+      "EventType": 32,
+      "GroupType": 32,
+      "DataType": 32,
+      "Count": 6,
+      "Share": 1
+    },
+    {
+      "EventType": 96,
+      "GroupType": 96,
+      "DataType": 96,
+      "Count": 3616,
+      "Share": 1
+    },
+    {
+      "EventType": 112,
+      "GroupType": 112,
+      "DataType": 112,
+      "Count": 112,
+      "Share": 1
+    },
+    {
+      "EventType": 128,
+      "GroupType": 128,
+      "DataType": 128,
+      "Count": 2387,
+      "Share": 1
+    }
+  ]
+}

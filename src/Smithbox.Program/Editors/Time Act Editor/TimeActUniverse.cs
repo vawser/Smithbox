@@ -373,7 +373,9 @@ public class TimeActUniverse : IUniverse
     public void UnloadModel(TimeActModelWrapper modelWrapper)
     {
         View.ViewportSelection.ClearSelection();
-        View.ViewportActionManager.Clear();
+        // Only the actions on the model's entities go, as those are discarded with it. The time act edits
+        // don't depend on the model, so they can still be undone after another source is opened.
+        View.ViewportActionManager.KeepOnlyActionsTouching(TimeActAction.Scope);
         View.ActionManager.Clear();
         View.ViewportWindow.PendingFrameContainer = null;
 

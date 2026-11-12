@@ -216,7 +216,7 @@ namespace SoulsFormats
             /// An unknown 32-bit integer following the event type.
             /// So far confirmed to be used in SOTFS and SDT
             /// </summary>
-            public int Unk04 { get; private set; }
+            public int Unk04 { get; set; }
 
             /// <summary>
             /// When the event begins.
@@ -382,6 +382,16 @@ namespace SoulsFormats
                 }
                 Array.Resize(ref ParameterBytes, template.GetAllParametersByteCount());
                 Parameters = new ParameterContainer(isBigEndian, ParameterBytes, template, suppressAssert: lenientOnAssert);
+            }
+
+            /// <summary>
+            /// Takes the template off the event, leaving it with the raw parameter bytes given,
+            /// as it was before a template was applied. Used to undo applying one.
+            /// </summary>
+            public void RemoveTemplate(byte[] parameterBytes)
+            {
+                Parameters = null;
+                ParameterBytes = parameterBytes;
             }
 
             private void CopyParametersToBytes(bool isBigEndian)

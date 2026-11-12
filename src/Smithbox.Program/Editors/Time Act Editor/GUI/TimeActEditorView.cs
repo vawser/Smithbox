@@ -24,7 +24,17 @@ public class TimeActEditorView : IEditorView
     public ViewportActionManager ViewportActionManager = new();
     public ActionManager ActionManager = new();
 
+    /// <summary>
+    /// Undo and redo go through this, so they first go to what they change
+    /// </summary>
+    public TimeActHistory History;
+
     public int ViewIndex;
+
+    /// <summary>
+    /// Set to bring the view's window to the front the next time it is drawn
+    /// </summary>
+    public bool RequestFocus;
 
     public TimeActSelection Selection = new();
     public ViewportSelection ViewportSelection = new();
@@ -51,6 +61,7 @@ public class TimeActEditorView : IEditorView
     public TimeActSearchTool GlobalSearchTool;
     public TimeActMassEditTool MassEditTool;
     public TimeActComboBuilderTool ComboBuilderTool;
+    public TimeActHistoryTool HistoryTool;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -63,9 +74,9 @@ public class TimeActEditorView : IEditorView
 
         ViewIndex = imguiId;
 
-        // The action history is cleared whenever the loaded model changes, so every action applies to the loaded model
-        ViewportActionManager.ActionPerformed += MarkLoadedModelDirty;
-        ActionManager.ActionPerformed += MarkLoadedModelDirty;
+        // The actions edit the time acts, not the model, so the model in the viewport is never marked as modified:
+        // that would keep its FLVER in memory and stop it being read again (and so show Model Editor saves)
+        History = new TimeActHistory(this, project);
 
         Universe = new TimeActUniverse(this, project);
         Playback = new TimeActPlayback(this, project);
@@ -93,6 +104,7 @@ public class TimeActEditorView : IEditorView
         GlobalSearchTool = new TimeActSearchTool(this, project, TimeActSearchMode.Global);
         MassEditTool = new TimeActMassEditTool(this, project);
         ComboBuilderTool = new TimeActComboBuilderTool(this, project);
+        HistoryTool = new TimeActHistoryTool(this, project);
     }
 
     private ModelMaskTarget GetModelMaskTarget()
@@ -122,16 +134,12 @@ public class TimeActEditorView : IEditorView
         });
     }
 
-    private void MarkLoadedModelDirty()
-    {
-        if (Selection.SelectedTimeActModelWrapper != null)
-        {
-            Selection.SelectedTimeActModelWrapper.IsDirty = true;
-        }
-    }
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         ViewportFilters.Update();
+
+        // Before anything reads the selection, so every window only sees events of the animation on show
+        Selection.PruneEvents();
 
         Playback.Update();
 

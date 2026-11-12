@@ -117,6 +117,37 @@ public class TimeActFieldAnnotation
     public string Description { get; set; } = "";
 }
 
+/// <summary>
+/// TAE/{Game}/Groups.json: the event group each event type sits in, in the game's own files, made by
+/// Tools/TaeTemplateSurvey groupmap. The editor makes new groups to match, as the group type is often not the
+/// event's own type (ER type 129 events are in group type 128).
+/// </summary>
+public class TimeActGroupMap
+{
+    public string Game { get; set; } = "";
+
+    public List<TimeActGroupMapEntry> Groups { get; set; } = new();
+}
+
+public class TimeActGroupMapEntry
+{
+    public int EventType { get; set; }
+
+    public long GroupType { get; set; }
+
+    public long DataType { get; set; }
+
+    /// <summary>
+    /// How many events of the type the game's files have in groups
+    /// </summary>
+    public int Count { get; set; }
+
+    /// <summary>
+    /// How many of them are in this group rather than another, from 0 to 1
+    /// </summary>
+    public double Share { get; set; }
+}
+
 [JsonSourceGenerationOptions(
     WriteIndented = true,
     GenerationMode = JsonSourceGenerationMode.Metadata,
@@ -128,6 +159,8 @@ public class TimeActFieldAnnotation
 [JsonSerializable(typeof(TimeActAnnotations))]
 [JsonSerializable(typeof(TimeActEventAnnotation))]
 [JsonSerializable(typeof(TimeActFieldAnnotation))]
+[JsonSerializable(typeof(TimeActGroupMap))]
+[JsonSerializable(typeof(TimeActGroupMapEntry))]
 
 internal partial class TimeActEditorJsonSerializerContext : JsonSerializerContext
 {

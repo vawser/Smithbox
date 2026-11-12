@@ -9,7 +9,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// <summary>
 /// Adds an animation to a time act, or removes one when it is told to delete instead
 /// </summary>
-public class TimeActAddAnimationAction : ViewportAction
+public class TimeActAddAnimationAction : TimeActAction
 {
     private readonly TimeActEditorView View;
     private readonly TimeActEntry Entry;
@@ -29,6 +29,12 @@ public class TimeActAddAnimationAction : ViewportAction
 
         Index = isDelete ? entry.TimeAct.Animations.IndexOf(animation) : index;
     }
+
+    public override TimeActEntry TargetEntry => Entry;
+    public override TAE.Animation TargetAnimation => Animation;
+
+    public override string Describe() =>
+        LOC.Get(IsDelete ? "TAE_History_Delete_Animation" : "TAE_History_Add_Animation");
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -105,57 +111,9 @@ public class TimeActAddAnimationAction : ViewportAction
 }
 
 /// <summary>
-/// Moves an animation to another position in its time act
-/// </summary>
-public class TimeActMoveAnimationAction : ViewportAction
-{
-    private readonly TimeActEntry Entry;
-    private readonly TAE.Animation Animation;
-
-    private readonly int OldIndex;
-    private readonly int NewIndex;
-
-    public TimeActMoveAnimationAction(TimeActEntry entry, TAE.Animation animation, int newIndex)
-    {
-        Entry = entry;
-        Animation = animation;
-
-        OldIndex = entry.TimeAct.Animations.IndexOf(animation);
-        NewIndex = newIndex;
-    }
-
-    public override ActionEvent Execute(bool isRedo = false)
-    {
-        Move(NewIndex);
-
-        return ActionEvent.NoEvent;
-    }
-
-    public override ActionEvent Undo()
-    {
-        Move(OldIndex);
-
-        return ActionEvent.NoEvent;
-    }
-
-    private void Move(int index)
-    {
-        var animations = Entry.TimeAct.Animations;
-
-        if (!animations.Remove(Animation))
-            return;
-
-        animations.Insert(Math.Clamp(index, 0, animations.Count), Animation);
-
-        Entry.IsDirty = true;
-        Entry.MarkAnimationsChanged();
-    }
-}
-
-/// <summary>
 /// Puts the animations of a time act in ID order, which is the order the game stores them in
 /// </summary>
-public class TimeActSortAnimationsAction : ViewportAction
+public class TimeActSortAnimationsAction : TimeActAction
 {
     private readonly TimeActEntry Entry;
 
@@ -174,6 +132,10 @@ public class TimeActSortAnimationsAction : ViewportAction
     /// Whether sorting would change anything
     /// </summary>
     public bool ChangesOrder => !OldOrder.SequenceEqual(NewOrder);
+
+    public override TimeActEntry TargetEntry => Entry;
+
+    public override string Describe() => LOC.Get("TAE_History_Sort_Animations");
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -204,7 +166,7 @@ public class TimeActSortAnimationsAction : ViewportAction
 /// <summary>
 /// Imports a HKX file for an animation. It is held by the source until it is saved.
 /// </summary>
-public class TimeActImportAnimationFileAction : ViewportAction
+public class TimeActImportAnimationFileAction : TimeActAction
 {
     private readonly TimeActContainerWrapper Source;
     private readonly TimeActPendingAnimationFile File;
@@ -219,6 +181,10 @@ public class TimeActImportAnimationFileAction : ViewportAction
 
         source.PendingAnimationFiles.TryGetValue(file.ID, out Previous);
     }
+
+    public override TimeActContainerWrapper TargetSource => Source;
+
+    public override string Describe() => LOC.Get("TAE_History_Import_HKX", Source.FormatAnimationName(File.ID));
 
     public override ActionEvent Execute(bool isRedo = false)
     {

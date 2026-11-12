@@ -793,6 +793,7 @@ public class CFG
     public bool Interface_TimeActEditor_Tool_GlobalSearch = true;
     public bool Interface_TimeActEditor_Tool_MassEdit = true;
     public bool Interface_TimeActEditor_Tool_ComboBuilder = true;
+    public bool Interface_TimeActEditor_Tool_History = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
     public bool TimeActEditor_DisplayDummies = true;
@@ -801,6 +802,7 @@ public class CFG
     public bool TimeActEditor_DisplayNodeLabels = false;
     public bool TimeActEditor_Graph_Display_Outside_Playback = true;
     public bool TimeActEditor_Graph_Display_Event_Names = true;
+    public bool TimeActEditor_Display_Vanilla_Markers = true;
     public bool TimeActEditor_Auto_Play_Animation = false;
     public bool TimeActEditor_Display_Event_Markers = true;
     public bool TimeActEditor_Display_Attack_Capsules = true;

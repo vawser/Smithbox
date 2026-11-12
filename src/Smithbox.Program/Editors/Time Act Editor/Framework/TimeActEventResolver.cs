@@ -79,6 +79,14 @@ public class TimeActEventResolver
     }
 
     /// <summary>
+    /// Forgets what was read from the params, for when they have been edited
+    /// </summary>
+    public void ClearParamCache()
+    {
+        _npcVariations.Clear();
+    }
+
+    /// <summary>
     /// Gets what an event displays, or null if it doesn't display anything.
     /// </summary>
     public TimeActEventVisual? Resolve(TAE.Event ev, TimeActContainer container)

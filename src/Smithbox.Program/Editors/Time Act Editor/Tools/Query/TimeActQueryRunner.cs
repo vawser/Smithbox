@@ -317,14 +317,17 @@ public class TimeActQueryRunner
     /// </summary>
     public void Jump(TimeActQueryMatch match)
     {
-        var selection = View.Selection;
+        var view = View;
         var source = match.Source;
 
-        if (selection.SelectedTimeActContainerWrapper != source)
+        if (view.Selection.SelectedTimeActContainerWrapper != source)
         {
-            View.SourceWindow.SelectSource(source);
-            View.SourceWindow.ScrollTo(source, match.ListType);
+            // The source may be open in another view, which then takes the rest of the selection
+            view = view.SourceWindow.SelectSource(source);
+            view.SourceWindow.ScrollTo(source, match.ListType);
         }
+
+        var selection = view.Selection;
 
         if (!TryResolve(match, out var entry, out var animation, out var ev))
         {
@@ -336,22 +339,22 @@ public class TimeActQueryRunner
         if (selection.SelectedTimeAct != entry)
         {
             selection.SelectedTimeAct = entry;
-            View.SelectionWindow.ScrollTo(entry);
+            view.SelectionWindow.ScrollTo(entry);
         }
 
         if (selection.SelectedAnimation != animation)
         {
-            View.AnimationSelectionWindow.SelectAnimation(animation);
+            view.AnimationSelectionWindow.SelectAnimation(animation);
         }
 
-        View.AnimationSelectionWindow.ScrollTo(animation);
+        view.AnimationSelectionWindow.ScrollTo(animation);
 
         if (ev != null)
         {
             selection.SelectedEvent = ev;
 
-            View.Playback.Pause();
-            View.Playback.Seek(ev.StartTime);
+            view.Playback.Pause();
+            view.Playback.Seek(ev.StartTime);
         }
     }
 

@@ -10,7 +10,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// back, so the positions of the rest still hold, and put back from the front on undo. The selection is put back
 /// as it was before, rather than to the events of any one animation.
 /// </summary>
-public class TimeActMassDeleteEventsAction : ViewportAction
+public class TimeActMassDeleteEventsAction : TimeActAction
 {
     private record Group(TimeActEntry Entry, TAE.Animation Animation, List<(int Index, TAE.Event Event)> Removed);
 
@@ -21,6 +21,12 @@ public class TimeActMassDeleteEventsAction : ViewportAction
     private List<TAE.Event> SelectionBefore = new();
 
     public int EventCount => RemovedEvents.Count;
+
+    // Only gone to when the edit stayed within one animation
+    public override TimeActEntry TargetEntry => Groups.Count == 1 ? Groups[0].Entry : null;
+    public override TAE.Animation TargetAnimation => Groups.Count == 1 ? Groups[0].Animation : null;
+
+    public override string Describe() => LOC.Get("TAE_History_Mass_Delete_Events", EventCount, Groups.Count);
 
     public TimeActMassDeleteEventsAction(TimeActSelection selection,
         IEnumerable<(TimeActEntry Entry, TAE.Animation Animation, IEnumerable<TAE.Event> Events)> groups)
@@ -91,7 +97,7 @@ public class TimeActMassDeleteEventsAction : ViewportAction
 /// group for each type they have none for, as a single add does. The selection is left as it is, and put back
 /// as it was on undo, without the new events.
 /// </summary>
-public class TimeActMassAddEventsAction : ViewportAction
+public class TimeActMassAddEventsAction : TimeActAction
 {
     private class Group
     {
@@ -111,8 +117,15 @@ public class TimeActMassAddEventsAction : ViewportAction
 
     public int EventCount => Groups.Sum(e => e.Events.Count);
 
+    // Only gone to when the edit stayed within one animation
+    public override TimeActEntry TargetEntry => Groups.Count == 1 ? Groups[0].Entry : null;
+    public override TAE.Animation TargetAnimation => Groups.Count == 1 ? Groups[0].Animation : null;
+
+    public override string Describe() => LOC.Get("TAE_History_Mass_Add_Events", EventCount, Groups.Count);
+
     public TimeActMassAddEventsAction(TimeActSelection selection,
-        IEnumerable<(TimeActEntry Entry, TAE.Animation Animation, List<TAE.Event> Events)> groups)
+        IEnumerable<(TimeActEntry Entry, TAE.Animation Animation, List<TAE.Event> Events)> groups,
+        IReadOnlyDictionary<int, TimeActGroupMapEntry> groupMap = null)
     {
         Selection = selection;
 
@@ -123,24 +136,14 @@ public class TimeActMassAddEventsAction : ViewportAction
 
             var group = new Group { Entry = entry, Animation = animation, Events = events };
 
-            // Only animations that use groups need one, as older files leave them out entirely
-            if (animation.EventGroups.Count > 0)
+            // Each event gets a group of its own, as the game's files mostly have (see TimeActEventGroups)
+            foreach (var ev in events)
             {
-                foreach (var ev in events)
-                {
-                    ev.Group = animation.Events.FirstOrDefault(e => e.Type == ev.Type && e.Group != null)?.Group
-                        ?? animation.EventGroups.FirstOrDefault(e => e.GroupType == ev.Type)
-                        ?? group.NewGroups.FirstOrDefault(e => e.GroupType == ev.Type);
+                if (TimeActEventGroups.Create(animation, ev.Type, groupMap) is not { } eventGroup)
+                    break;
 
-                    if (ev.Group == null)
-                    {
-                        var eventGroup = new TAE.EventGroup(ev.Type);
-                        eventGroup.GroupData.DataType = (TAE.EventGroup.EventGroupDataType)ev.Type;
-
-                        group.NewGroups.Add(eventGroup);
-                        ev.Group = eventGroup;
-                    }
-                }
+                group.NewGroups.Add(eventGroup);
+                ev.Group = eventGroup;
             }
 
             Groups.Add(group);
@@ -194,12 +197,17 @@ public class TimeActMassAddEventsAction : ViewportAction
 /// Adds animations to many time acts at once, for the mass edit, each in its place in ID order. The selection is
 /// left as it is; undo clears it if it was on one of the new animations.
 /// </summary>
-public class TimeActMassAddAnimationsAction : ViewportAction
+public class TimeActMassAddAnimationsAction : TimeActAction
 {
     private readonly TimeActEditorView View;
     private readonly List<(TimeActEntry Entry, List<TAE.Animation> Animations)> Groups;
 
     public int AnimationCount => Groups.Sum(e => e.Animations.Count);
+
+    // Only gone to when the edit stayed within one time act
+    public override TimeActEntry TargetEntry => Groups.Count == 1 ? Groups[0].Entry : null;
+
+    public override string Describe() => LOC.Get("TAE_History_Mass_Add_Animations", AnimationCount, Groups.Count);
 
     public TimeActMassAddAnimationsAction(TimeActEditorView view,
         IEnumerable<(TimeActEntry Entry, List<TAE.Animation> Animations)> groups)
@@ -258,7 +266,7 @@ public class TimeActMassAddAnimationsAction : ViewportAction
 /// <see cref="TimeActMassDeleteEventsAction"/>. If the selected animation goes, the one that took its place is
 /// selected, as a single delete does. Undo puts the selected animation and events back as they were.
 /// </summary>
-public class TimeActMassDeleteAnimationsAction : ViewportAction
+public class TimeActMassDeleteAnimationsAction : TimeActAction
 {
     private record Group(TimeActEntry Entry, List<(int Index, TAE.Animation Animation)> Removed);
 
@@ -270,6 +278,11 @@ public class TimeActMassDeleteAnimationsAction : ViewportAction
     private List<TAE.Event> EventsBefore = new();
 
     public int AnimationCount => RemovedAnimations.Count;
+
+    // Only gone to when the edit stayed within one time act
+    public override TimeActEntry TargetEntry => Groups.Count == 1 ? Groups[0].Entry : null;
+
+    public override string Describe() => LOC.Get("TAE_History_Mass_Delete_Animations", AnimationCount, Groups.Count);
 
     public TimeActMassDeleteAnimationsAction(TimeActEditorView view,
         IEnumerable<(TimeActEntry Entry, IEnumerable<TAE.Animation> Animations)> groups)

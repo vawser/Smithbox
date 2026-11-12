@@ -53,6 +53,16 @@ public class TimeActToolWindow
             View.MassEditTool.OnToolWindow();
         }
 
+        // Editing
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
+
+
+        if (CFG.Current.Interface_TimeActEditor_Tool_History)
+        {
+            View.HistoryTool.OnToolWindow();
+        }
+
         // Animation
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Animation"));
@@ -129,6 +139,13 @@ public class TimeActToolWindow
                 CFG.Current.Interface_TimeActEditor_Tool_MassEdit = !CFG.Current.Interface_TimeActEditor_Tool_MassEdit;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_MassEdit);
+
+            // History
+            if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_History")}##historyToolToggle"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_History = !CFG.Current.Interface_TimeActEditor_Tool_History;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_History);
 
             // Combo Builder
             if (ImGui.MenuItem($"{LOC.Get("TAE_ToolWindow_View_Toggle_Combo_Builder")}##comboBuilderToolToggle"))

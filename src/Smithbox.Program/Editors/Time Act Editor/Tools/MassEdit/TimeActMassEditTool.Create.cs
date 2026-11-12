@@ -538,7 +538,7 @@ public partial class TimeActMassEditTool
         }
 
         var action = new TimeActMassAddEventsAction(View.Selection,
-            groups.Select(e => (e.Key.Item1, e.Key.Item2, e.Value)));
+            groups.Select(e => (e.Key.Item1, e.Key.Item2, e.Value)), Project.Handler.TimeActData.GetGroupMap());
 
         var created = action.EventCount;
 

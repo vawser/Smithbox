@@ -34,7 +34,12 @@ public class TimeActEventDisplay
     private readonly ProjectEntry _project;
     private readonly TimeActEventResolver _resolver;
 
+    // Only the visuals of the animation on show are kept, as a character can have hundreds of thousands of events
     private readonly Dictionary<TAE.Event, TimeActEventVisual?> _visuals = new();
+    private TAE.Animation? _visualsAnimation;
+
+    // Attacks and bullets resolve through the params, so an edit in the Param Editor resolves them again
+    private ActionManager? _paramActionManager;
 
     private readonly List<Shape> _shapes = new();
     private int _usedShapes;
@@ -111,6 +116,14 @@ public class TimeActEventDisplay
         var animation = _view.Selection.SelectedAnimation;
         var container = _view.Selection.SelectedTimeActModelWrapper?.Container;
 
+        WatchParamEdits();
+
+        if (animation != _visualsAnimation)
+        {
+            _visualsAnimation = animation;
+            _visuals.Clear();
+        }
+
         var showMarkers = CFG.Current.TimeActEditor_Display_Event_Markers;
         var showAttacks = CFG.Current.TimeActEditor_Display_Attack_Capsules;
 
@@ -148,6 +161,36 @@ public class TimeActEventDisplay
         {
             _shapes[i].Hide();
         }
+    }
+
+    /// <summary>
+    /// The Param Editor can be opened after this view, so its history is picked up once it exists
+    /// </summary>
+    private void WatchParamEdits()
+    {
+        var manager = _project.Handler.ParamEditor?.ActionManager;
+
+        if (manager == _paramActionManager)
+            return;
+
+        if (_paramActionManager != null)
+        {
+            _paramActionManager.ActionPerformed -= OnParamsEdited;
+        }
+
+        _paramActionManager = manager;
+
+        if (manager != null)
+        {
+            manager.ActionPerformed += OnParamsEdited;
+        }
+    }
+
+    private void OnParamsEdited()
+    {
+        _resolver.ClearParamCache();
+
+        Invalidate();
     }
 
     private void DrawShape(TimeActVisualShape shape, TimeActVisualKind kind, float scale, TimeActContainer container,

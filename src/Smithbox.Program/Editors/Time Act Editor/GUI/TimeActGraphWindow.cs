@@ -24,6 +24,25 @@ public class TimeActGraphWindow
     private const float RowHeight = 22f;
     private const float EdgeGrabWidth = 5f;
     private const float MinEventWidth = 3f;
+
+    // The corner mark of an event that is changed from, or not in, the game's version
+    private const float VanillaMarkerSize = 7f;
+
+    /// <summary>
+    /// The events of the selected animation matched with the game's, or null when the markers are off or the
+    /// comparison isn't known yet
+    /// </summary>
+    private TimeActEventMatch GetVanillaMatch()
+    {
+        var selection = View.Selection;
+
+        if (!TimeActVanillaDisplay.Enabled || selection.SelectedTimeActContainerWrapper == null ||
+            selection.SelectedTimeAct?.TimeAct == null || selection.SelectedAnimation == null)
+            return null;
+
+        return selection.SelectedTimeActContainerWrapper.Vanilla.GetEventMatch(selection.SelectedTimeAct,
+            selection.SelectedAnimation);
+    }
     private const float MinFrameLineSpacing = 4f;
     private const float MinFrameLabelSpacing = 48f;
 
@@ -88,6 +107,35 @@ public class TimeActGraphWindow
     private readonly TimeActEventFilter EventFilter;
     private string EventFilterText = "";
 
+    // Tracks left off the graph, or the one type shown alone, which stay so from animation to animation, so the
+    // same events can be followed through them. Collapsed tracks draw all their events on one row.
+    private readonly HashSet<int> HiddenTypes = new();
+    private int? SoloType;
+    private readonly HashSet<int> CollapsedTypes = new();
+
+    // The event type of each row, for the track menu
+    private List<int> LayoutRowTypes = new();
+    private int TrackMenuType;
+
+    // How far events move for each press of an arrow key, in frames, and with Shift held
+    private const int NudgeFrames = 1;
+    private const int NudgeFramesShift = 10;
+
+    // The zoom and scroll of each animation, so going back to one shows it as it was left
+    private sealed class GraphViewState
+    {
+        public float Zoom;
+        public float ScrollX;
+        public float ScrollY;
+    }
+
+    private readonly System.Runtime.CompilerServices.ConditionalWeakTable<TAE.Animation, GraphViewState> ViewStates = new();
+    private TAE.Animation LastAnimation;
+
+    // Asked for by the toolbar, and done in the graph, where its width is known
+    private bool ZoomToFitRequested;
+    private bool ZoomToSelectionRequested;
+
     public TimeActGraphWindow(TimeActEditorView view, ProjectEntry project)
     {
         View = view;
@@ -103,7 +151,8 @@ public class TimeActGraphWindow
         DisplayToolbar();
         DisplayEventFilter();
 
-        var flags = ImGuiWindowFlags.HorizontalScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
+        // No keyboard navigation, as the graph's own shortcuts use the arrow keys, Home and End
+        var flags = ImGuiWindowFlags.HorizontalScrollbar | ImGuiWindowFlags.NoScrollWithMouse | ImGuiWindowFlags.NoNavInputs;
 
         ImGui.BeginChild($"GraphSection", new Vector2(0, 0), ImGuiChildFlags.Borders, flags);
 
@@ -127,6 +176,35 @@ public class TimeActGraphWindow
             playback.Stop();
         }
 
+        // Frame stepping
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.StepBackward}##graphToStart"))
+        {
+            JumpPlayhead(false);
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_To_Start_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Backward}##graphPreviousFrame"))
+        {
+            StepPlayhead(ImGui.GetIO().KeyShift ? -NudgeFramesShift : -NudgeFrames);
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Previous_Frame_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Forward}##graphNextFrame"))
+        {
+            StepPlayhead(ImGui.GetIO().KeyShift ? NudgeFramesShift : NudgeFrames);
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Next_Frame_TT"));
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.StepForward}##graphToEnd"))
+        {
+            JumpPlayhead(true);
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_To_End_TT"));
+
         ImGui.SameLine();
         ImGui.Checkbox($"{LOC.Get("TAE_GraphWindow_Loop")}##graphLoop", ref playback.Loop);
 
@@ -146,6 +224,23 @@ public class TimeActGraphWindow
             Zoom = Math.Clamp(Zoom * ZoomStep, MinZoom, MaxZoom);
         }
         GUI.Tooltip(LOC.Get("TAE_GraphWindow_Zoom_TT"));
+
+        // Zoom to fit / to selection
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Expand}##graphZoomFit"))
+        {
+            ZoomToFitRequested = true;
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Zoom_Fit_TT"));
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(View.Selection.SelectedEvents.Count == 0);
+        if (ImGui.Button($"{Icons.Crosshairs}##graphZoomSelection"))
+        {
+            ZoomToSelectionRequested = true;
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Zoom_Selection_TT"));
 
         ImGui.SameLine();
         ImGui.BeginDisabled(!CanEdit || View.Selection.SelectedAnimation == null);
@@ -171,6 +266,33 @@ public class TimeActGraphWindow
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("TAE_GraphWindow_Read_Only"));
         }
+
+        // Tracks that are off the graph, which is easy to forget once another animation is picked
+        if (HiddenTypes.Count > 0 || SoloType != null)
+        {
+            ImGui.SameLine();
+
+            var label = SoloType is { } solo
+                ? LOC.Get("TAE_GraphWindow_Show_All_Types_Solo", solo)
+                : LOC.Get("TAE_GraphWindow_Show_All_Types_Hidden", HiddenTypes.Count);
+
+            if (ImGui.Button($"{label}##graphShowAllTypes"))
+            {
+                ShowAllTypes();
+            }
+            GUI.Tooltip(LOC.Get("TAE_GraphWindow_Show_All_Types_TT"));
+        }
+    }
+
+    private bool IsTypeVisible(int type)
+    {
+        return SoloType is { } solo ? type == solo : !HiddenTypes.Contains(type);
+    }
+
+    private void ShowAllTypes()
+    {
+        HiddenTypes.Clear();
+        SoloType = null;
     }
 
     private void DisplayEventFilter()
@@ -200,8 +322,9 @@ public class TimeActGraphWindow
         var ruler = RulerHeight * scale;
         var rowHeight = RowHeight * scale;
 
+        RestoreViewState(animation);
+
         var frameDuration = View.Playback.FrameDuration;
-        var frameWidth = CFG.Current.TimeActEditor_Graph_Frame_Width * Zoom * scale;
 
         // The rows hold still during a drag, so that the event stays under the cursor
         if (DragEvent == null)
@@ -209,6 +332,12 @@ public class TimeActGraphWindow
             LayoutPlacements = LayoutEvents(animation, template, frameDuration, out LayoutRowLabels);
 
             LayoutTimeline(animation, frameDuration);
+
+            // Hidden events can't be acted on unseen, so they leave the selection
+            if (HiddenTypes.Count > 0 || SoloType != null)
+            {
+                View.Selection.SelectedEvents.RemoveAll(e => !IsTypeVisible(e.Type));
+            }
         }
 
         var placements = LayoutPlacements;
@@ -220,6 +349,13 @@ public class TimeActGraphWindow
 
         var viewPos = ImGui.GetWindowPos();
         var viewSize = ImGui.GetWindowSize();
+
+        var baseFrameWidth = CFG.Current.TimeActEditor_Graph_Frame_Width * scale;
+
+        HandleZoomRequests(viewSize.X - gutter - ImGui.GetStyle().ScrollbarSize, baseFrameWidth, frameDuration,
+            firstFrame, lastFrame, timelineEnd);
+
+        var frameWidth = baseFrameWidth * Zoom;
         var contentSize = new Vector2(gutter + (lastFrame - firstFrame) * frameWidth,
             Math.Max(ruler + rowLabels.Count * rowHeight, viewSize.Y - ImGui.GetStyle().ScrollbarSize));
 
@@ -351,6 +487,18 @@ public class TimeActGraphWindow
             UpdateDrag(XToTime(mouse.X), frameDuration);
         }
 
+        // Right-clicking a track name opens the track menu
+        if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && overGutter)
+        {
+            var row = (int)MathF.Floor((mouse.Y - origin.Y - ruler) / rowHeight);
+
+            if (row >= 0 && row < LayoutRowTypes.Count)
+            {
+                TrackMenuType = LayoutRowTypes[row];
+                ImGui.OpenPopup("##graphTrackMenu");
+            }
+        }
+
         if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && !overGutter)
         {
             // Right-clicking one of the selected events keeps the selection, so the menu acts on all of them
@@ -400,6 +548,150 @@ public class TimeActGraphWindow
 
         DisplayEventMenu();
         DisplayAddEventMenu(template);
+        DisplayTrackMenu(placements, template);
+    }
+
+    /// <summary>
+    /// The menu of a track: select its events, collapse it to one row, or hide it or show it alone
+    /// </summary>
+    private void DisplayTrackMenu(List<Placement> placements, TAE.Template.BankTemplate template)
+    {
+        if (!ImGui.BeginPopup("##graphTrackMenu"))
+            return;
+
+        var type = TrackMenuType;
+        var events = placements.Where(e => e.Event.Type == type).Select(e => e.Event).ToList();
+
+        var name = events.Count > 0 ? GetEventName(events[0], template) : $"[{type}]";
+
+        ImGui.TextDisabled(name);
+        ImGui.Separator();
+
+        // Select All of Type
+        if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Track_Select_All", events.Count)}##trackSelectAll"))
+        {
+            View.Selection.SelectedEvents.Clear();
+            View.Selection.SelectedEvents.AddRange(events);
+        }
+
+        // Collapse
+        var collapsed = CollapsedTypes.Contains(type);
+
+        if (ImGui.MenuItem($"{LOC.Get(collapsed ? "TAE_GraphWindow_Track_Expand" : "TAE_GraphWindow_Track_Collapse")}##trackCollapse"))
+        {
+            if (!CollapsedTypes.Remove(type))
+            {
+                CollapsedTypes.Add(type);
+            }
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Track_Collapse_TT"));
+
+        ImGui.Separator();
+
+        // Hide
+        if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Track_Hide")}##trackHide"))
+        {
+            if (SoloType == type)
+            {
+                SoloType = null;
+            }
+
+            HiddenTypes.Add(type);
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Track_Hide_TT"));
+
+        // Solo
+        var isSolo = SoloType == type;
+
+        if (ImGui.MenuItem($"{LOC.Get(isSolo ? "TAE_GraphWindow_Track_Unsolo" : "TAE_GraphWindow_Track_Solo")}##trackSolo"))
+        {
+            SoloType = isSolo ? null : type;
+        }
+        GUI.Tooltip(LOC.Get("TAE_GraphWindow_Track_Solo_TT"));
+
+        // Show All
+        if (HiddenTypes.Count > 0 || SoloType != null)
+        {
+            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Track_Show_All")}##trackShowAll"))
+            {
+                ShowAllTypes();
+            }
+        }
+
+        ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// Keeps the zoom and scroll of the animation being left, and puts back those of the one now on show.
+    /// An animation not seen before starts at the left and top, at the zoom already in use.
+    /// </summary>
+    private void RestoreViewState(TAE.Animation animation)
+    {
+        if (animation == LastAnimation)
+            return;
+
+        // The scroll read here is still that of the animation drawn last frame
+        if (LastAnimation != null)
+        {
+            ViewStates.AddOrUpdate(LastAnimation, new GraphViewState
+            {
+                Zoom = Zoom,
+                ScrollX = ImGui.GetScrollX(),
+                ScrollY = ImGui.GetScrollY()
+            });
+        }
+
+        LastAnimation = animation;
+
+        if (ViewStates.TryGetValue(animation, out var state))
+        {
+            Zoom = state.Zoom;
+            ImGui.SetScrollX(state.ScrollX);
+            ImGui.SetScrollY(state.ScrollY);
+        }
+        else
+        {
+            ImGui.SetScrollX(0);
+            ImGui.SetScrollY(0);
+        }
+    }
+
+    /// <summary>
+    /// Zooms so the whole timeline fits the width of the graph, or so the selected events do, and scrolls to them
+    /// </summary>
+    private void HandleZoomRequests(float visibleWidth, float baseFrameWidth, float frameDuration,
+        int firstFrame, int lastFrame, float timelineEnd)
+    {
+        if (ZoomToFitRequested)
+        {
+            ZoomToFitRequested = false;
+
+            var frames = Math.Max(lastFrame - firstFrame, 1);
+
+            Zoom = Math.Clamp(visibleWidth / (frames * baseFrameWidth), MinZoom, MaxZoom);
+
+            ImGui.SetScrollX(0);
+        }
+
+        if (ZoomToSelectionRequested)
+        {
+            ZoomToSelectionRequested = false;
+
+            var selected = View.Selection.SelectedEvents;
+
+            if (selected.Count == 0)
+                return;
+
+            // A frame either side, so the ends of the events can still be grabbed
+            var start = selected.Min(e => e.StartTime) / frameDuration - 1;
+            var end = selected.Max(e => Math.Min(e.EndTime, timelineEnd)) / frameDuration + 1;
+
+            var frames = Math.Max(end - start, 1);
+
+            Zoom = Math.Clamp(visibleWidth / (frames * baseFrameWidth), MinZoom, MaxZoom);
+
+            ImGui.SetScrollX(Math.Max((start - firstFrame) * baseFrameWidth * Zoom, 0));
+        }
     }
 
     /// <summary>
@@ -440,21 +732,32 @@ public class TimeActGraphWindow
     {
         var placements = new List<Placement>(animation.Events.Count);
         var labels = new List<string>();
+        var rowTypes = new List<int>();
 
         foreach (var track in animation.Events.GroupBy(e => e.Type).OrderBy(e => e.Key))
         {
+            if (!IsTypeVisible(track.Key))
+                continue;
+
+            var collapsed = CollapsedTypes.Contains(track.Key);
+
             var rowEnds = new List<float>();
             var firstRow = labels.Count;
 
             foreach (var ev in track.OrderBy(e => e.StartTime))
             {
-                var row = rowEnds.FindIndex(end => end <= ev.StartTime + OverlapTolerance);
+                // A collapsed track keeps every event on its one row, drawn over each other
+                var row = collapsed && rowEnds.Count > 0 ? 0 : rowEnds.FindIndex(end => end <= ev.StartTime + OverlapTolerance);
 
                 if (row < 0)
                 {
                     row = rowEnds.Count;
                     rowEnds.Add(0);
-                    labels.Add(row == 0 ? GetEventName(ev, template) : "");
+
+                    var name = GetEventName(ev, template);
+
+                    labels.Add(row > 0 ? "" : collapsed ? LOC.Get("TAE_GraphWindow_Track_Collapsed_Label", name) : name);
+                    rowTypes.Add(track.Key);
                 }
 
                 // An event takes up at least a frame on screen, however short it is
@@ -465,6 +768,7 @@ public class TimeActGraphWindow
         }
 
         rowLabels = labels;
+        LayoutRowTypes = rowTypes;
 
         return placements;
     }
@@ -532,14 +836,17 @@ public class TimeActGraphWindow
             return;
         }
 
+        // Holding Alt leaves out the snapping to whole frames
+        var snap = !ImGui.GetIO().KeyAlt;
+
         if (Drag == DragMode.Playhead)
         {
-            View.Playback.Seek(Math.Clamp(Snap(time), 0, View.Playback.PlaybackDuration));
+            View.Playback.Seek(Math.Clamp(snap ? Snap(time) : time, 0, View.Playback.PlaybackDuration));
             return;
         }
 
         // Events move by whole frames, so a click that doesn't drag leaves them exactly where they were
-        var delta = Snap(time - DragGrabTime);
+        var delta = snap ? Snap(time - DragGrabTime) : time - DragGrabTime;
 
         var timelineStart = LayoutFirstFrame * frameDuration;
 
@@ -616,7 +923,7 @@ public class TimeActGraphWindow
         }
         else if (actions.Count > 1)
         {
-            View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actions));
+            View.ViewportActionManager.ExecuteAction(new TimeActCompoundAction(actions));
         }
         else if (ClickCollapseEvent != null)
         {
@@ -678,6 +985,53 @@ public class TimeActGraphWindow
             View.Playback.TogglePlaying();
         }
 
+        var shift = ImGui.GetIO().KeyShift;
+        var ctrl = ImGui.GetIO().KeyCtrl;
+        var frames = shift ? NudgeFramesShift : NudgeFrames;
+
+        // Home / End: the start and end of playback
+        if (ImGui.IsKeyPressed(ImGuiKey.Home, false))
+        {
+            JumpPlayhead(false);
+        }
+
+        if (ImGui.IsKeyPressed(ImGuiKey.End, false))
+        {
+            JumpPlayhead(true);
+        }
+
+        // Comma / Period: a frame back or on, ten with Shift
+        if (ImGui.IsKeyPressed(ImGuiKey.Comma, true))
+        {
+            StepPlayhead(-frames);
+        }
+
+        if (ImGui.IsKeyPressed(ImGuiKey.Period, true))
+        {
+            StepPlayhead(frames);
+        }
+
+        // Left / Right: moves the selected events a frame, ten with Shift. With nothing selected, it steps the
+        // playhead instead. Ctrl is left alone, as other shortcuts use it.
+        if (!ctrl && Drag == DragMode.None)
+        {
+            var direction = ImGui.IsKeyPressed(ImGuiKey.LeftArrow, true) ? -1
+                : ImGui.IsKeyPressed(ImGuiKey.RightArrow, true) ? 1
+                : 0;
+
+            if (direction != 0)
+            {
+                if (View.Selection.SelectedEvents.Count > 0)
+                {
+                    NudgeSelectedEvents(direction * frames);
+                }
+                else
+                {
+                    StepPlayhead(direction * frames);
+                }
+            }
+        }
+
         if (InputManager.IsPressed(KeybindID.SelectAll) && Drag == DragMode.None)
         {
             SelectAllEvents();
@@ -702,6 +1056,49 @@ public class TimeActGraphWindow
         {
             PasteEvent(Snap(View.Playback.Time));
         }
+    }
+
+    /// <summary>
+    /// Moves the playhead to the start or end of playback, pausing it
+    /// </summary>
+    private void JumpPlayhead(bool toEnd)
+    {
+        var playback = View.Playback;
+
+        playback.Pause();
+        playback.Seek(toEnd ? playback.PlaybackDuration : 0);
+    }
+
+    /// <summary>
+    /// Moves the playhead by whole frames from the frame it is on, pausing it
+    /// </summary>
+    private void StepPlayhead(int frames)
+    {
+        var playback = View.Playback;
+
+        playback.Pause();
+        playback.Seek(Math.Clamp(Snap(playback.Time) + frames * playback.FrameDuration, 0, playback.PlaybackDuration));
+    }
+
+    /// <summary>
+    /// Moves every selected event by whole frames, as one edit. Events that last until the end of the animation
+    /// keep their placeholder end, as a drag does.
+    /// </summary>
+    private void NudgeSelectedEvents(int frames)
+    {
+        var selection = View.Selection;
+
+        if (!CanEdit || selection.SelectedEvents.Count == 0 || selection.SelectedTimeAct == null)
+            return;
+
+        var offset = frames * View.Playback.FrameDuration;
+
+        var actions = selection.SelectedEvents
+            .Select(e => (ViewportAction)new TimeActMoveEventAction(selection.SelectedTimeAct, e, e.StartTime, e.EndTime,
+                e.StartTime + offset, IsOpenEnded(e) ? e.EndTime : e.EndTime + offset))
+            .ToList();
+
+        View.ViewportActionManager.ExecuteAction(actions.Count == 1 ? actions[0] : new TimeActCompoundAction(actions));
     }
 
     /// <summary>
@@ -776,6 +1173,9 @@ public class TimeActGraphWindow
             }
         }
 
+        // How the events compare with the game's, marked in their corner
+        var vanillaMatch = GetVanillaMatch();
+
         // Events
         foreach (var placement in placements)
         {
@@ -793,6 +1193,14 @@ public class TimeActGraphWindow
             var isDull = !EventFilter.IsMatch(ev, eventName);
 
             drawList.AddRectFilled(min, max, GetEventColor(ev.Type, isDull));
+
+            if (vanillaMatch != null && TimeActVanillaDisplay.GetColor(vanillaMatch.GetStatus(ev)) is { } vanillaColor)
+            {
+                var size = Math.Min(VanillaMarkerSize * DPI.UIScale(), Math.Min(max.X - min.X, max.Y - min.Y));
+
+                drawList.AddTriangleFilled(new Vector2(max.X - size, min.Y), new Vector2(max.X, min.Y),
+                    new Vector2(max.X, min.Y + size), ImGui.ColorConvertFloat4ToU32(vanillaColor));
+            }
 
             if (View.Selection.IsEventSelected(ev))
             {
@@ -1009,7 +1417,7 @@ public class TimeActGraphWindow
         }
 
         View.ViewportActionManager.ExecuteAction(new TimeActAddEventsAction(selection, selection.SelectedTimeAct,
-            selection.SelectedAnimation, copies));
+            selection.SelectedAnimation, copies, Project.Handler.TimeActData.GetGroupMap()));
     }
 
     private void DisplayEventMenu()
@@ -1037,6 +1445,19 @@ public class TimeActGraphWindow
             {
                 DeleteSelectedEvents();
             }
+
+            // Revert to Vanilla: the selected events the game has in a changed form
+            var selection = View.Selection;
+            var revertible = TimeActRevert.GetRevertibleEvents(selection.SelectedTimeActContainerWrapper,
+                selection.SelectedTimeAct, selection.SelectedAnimation, selection.SelectedEvents).Count;
+
+            if (ImGui.MenuItem($"{GetCountLabel("TAE_Vanilla_Revert_Event", revertible)}##revertEvent", "", false,
+                revertible > 0))
+            {
+                TimeActRevert.RevertEvents(View, selection.SelectedTimeActContainerWrapper, selection.SelectedTimeAct,
+                    selection.SelectedAnimation, selection.SelectedEvents);
+            }
+            GUI.Tooltip(LOC.Get("TAE_Vanilla_Revert_Event_TT"));
 
             ImGui.EndDisabled();
 
@@ -1151,6 +1572,7 @@ public class TimeActGraphWindow
 
         var ev = new TAE.Event(AddEventTime, endTime, eventTemplate.ID, unk04, timeAct.BigEndian, eventTemplate);
 
-        View.ViewportActionManager.ExecuteAction(new TimeActAddEventAction(selection, selection.SelectedTimeAct, animation, ev));
+        View.ViewportActionManager.ExecuteAction(new TimeActAddEventAction(selection, selection.SelectedTimeAct, animation, ev,
+            groupMap: Project.Handler.TimeActData.GetGroupMap()));
     }
 }

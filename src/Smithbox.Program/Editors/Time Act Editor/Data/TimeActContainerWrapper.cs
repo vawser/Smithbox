@@ -46,6 +46,35 @@ public class TimeActContainerWrapper
     }
 
     /// <summary>
+    /// A source read from another file system, such as the game's own copy of this one
+    /// </summary>
+    private TimeActContainerWrapper(ProjectEntry project, string name, string sourcePath, VirtualFileSystem targetFS)
+    {
+        Project = project;
+        TargetFS = targetFS;
+        Name = name;
+        SourcePath = sourcePath;
+
+        Models = new();
+        TimeActs = new();
+    }
+
+    /// <summary>
+    /// The same source as the game has it, read from its own files
+    /// </summary>
+    public TimeActContainerWrapper CreateVanillaCopy()
+    {
+        return new TimeActContainerWrapper(Project, Name, SourcePath, Project.VFS.VanillaFS);
+    }
+
+    private TimeActVanillaSource _vanilla;
+
+    /// <summary>
+    /// The comparison of this source with the game's version of it
+    /// </summary>
+    public TimeActVanillaSource Vanilla => _vanilla ??= new TimeActVanillaSource(this);
+
+    /// <summary>
     /// How many animation IDs each category of animations spans
     /// </summary>
     public int AnimationCategorySize =>
@@ -70,7 +99,29 @@ public class TimeActContainerWrapper
     /// <summary>
     /// Whether time acts have been added or removed since the source was last saved
     /// </summary>
-    public bool HasStructuralChanges { get; set; } = false;
+    public bool HasStructuralChanges
+    {
+        get => _hasStructuralChanges;
+        set
+        {
+            _hasStructuralChanges = value;
+
+            if (value)
+            {
+                _hadStructuralChanges = true;
+            }
+        }
+    }
+
+    private bool _hasStructuralChanges = false;
+    private bool _hadStructuralChanges = false;
+
+    /// <summary>
+    /// Whether the time acts have been edited at any point this session, saved or not. The undo history holds
+    /// these entries, so they must stay the source's list: read again, an undo would change copies that are no
+    /// longer listed, and the list it put them back in would be missing the rest of the binder.
+    /// </summary>
+    public bool HasEditHistory => _hadStructuralChanges || TimeActs.Any(e => e.HasBeenEdited);
 
     /// <summary>
     /// Raised whenever a time act is added or removed, so lists built from them know to rebuild
@@ -197,8 +248,9 @@ public class TimeActContainerWrapper
 
     public void PopulateTimeActList()
     {
-        // Keep the unsaved changes instead of replacing them with the stored version
-        if (HasUnsavedTimeActs)
+        // Keep the unsaved changes instead of replacing them with the stored version, and keep edited
+        // time acts the undo history points at
+        if (HasUnsavedTimeActs || HasEditHistory)
             return;
 
         TimeActs = ReadTimeActs();
@@ -286,15 +338,23 @@ public class TimeActContainerWrapper
     }
 
     /// <summary>
+    /// Whether the source can be written without changes. Its time acts have to be read: the list is the source of
+    /// truth on save, so writing an empty one would remove every time act from the binder.
+    /// </summary>
+    public bool CanSaveUnmodified => TimeActs.Count > 0;
+
+    /// <summary>
     /// Writes the modified time acts into the source container, and the imported animation files into
     /// the containers they belong in. For a character these can be the anibnds split off from the source.
     /// </summary>
-    public void SaveTimeActs()
+    public void SaveTimeActs(bool allowUnmodified = false)
     {
-        if (!HasUnsavedTimeActs)
+        var writeUnmodified = allowUnmodified && CanSaveUnmodified;
+
+        if (!HasUnsavedTimeActs && !writeUnmodified)
             return;
 
-        var timeActsChanged = HasStructuralChanges || TimeActs.Any(e => e.IsDirty);
+        var timeActsChanged = HasStructuralChanges || TimeActs.Any(e => e.IsDirty) || writeUnmodified;
 
         var paths = new List<string>();
 
@@ -546,41 +606,6 @@ public class TimeActContainerWrapper
             ?? Models.FirstOrDefault();
     }
 
-    /// <summary>
-    /// Used to store the map ID for map pieces and collision wrappers
-    /// </summary>
-    public void DeriveMapID()
-    {
-        var parts = Path.Split("/");
-
-        if (Project.Descriptor.ProjectType is ProjectType.ER
-            or ProjectType.AC6
-            or ProjectType.NR
-            or ProjectType.DB_NT
-            or ProjectType.DB)
-        {
-            // '/map/m30/m30_00_00_00/...'
-            if (parts.Length >= 3)
-            {
-                MapID = parts[3];
-            }
-        }
-        else
-        {
-            // '/map/m30_00_00_00/...'
-            if (parts.Length >= 2)
-            {
-                MapID = parts[2];
-
-                if (Project.Descriptor.ProjectType is ProjectType.DS2
-                    or ProjectType.DS2S)
-                {
-                    MapID = FilePathUtils.GetPureFilename(parts[3]);
-                }
-            }
-        }
-    }
-
     public void PopulateModelList()
     {
         if (Path == null)
@@ -659,11 +684,18 @@ public class TimeActContainerWrapper
     }
 
     /// <summary>
-    /// BXF containers are split into a header (BHD) and data (BDT) file
+    /// BXF containers are split into a header (BHD) and data (BDT) file. Only the extension is swapped,
+    /// so a folder or name that happens to contain "bhd" is left alone.
     /// </summary>
-    private string GetBdtPath(string path)
+    private static string GetBdtPath(string path)
     {
-        return path.Replace("bhd", "bdt");
+        var nameStart = path.LastIndexOf('/') + 1;
+        var index = path.LastIndexOf("bhd", StringComparison.OrdinalIgnoreCase);
+
+        if (index < nameStart)
+            return path;
+
+        return path.Substring(0, index) + "bdt" + path.Substring(index + 3);
     }
 
     /// <summary>

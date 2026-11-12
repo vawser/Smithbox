@@ -60,7 +60,8 @@ public class TimeActCommandQueue
 
         if (view.Selection.SelectedTimeActContainerWrapper != source)
         {
-            view.SourceWindow.SelectSource(source);
+            // The source may be open in another view, which then takes the rest of the selection
+            view = view.SourceWindow.SelectSource(source);
             view.SourceWindow.ScrollTo(source, ModelListType.Character);
         }
 

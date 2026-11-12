@@ -252,6 +252,48 @@ public class TimeActData : IDisposable
         return Directory.Exists(folder) ? folder : null;
     }
 
+    // Keyed by event type. Read on first use; empty if the game has no Groups.json.
+    private Dictionary<int, TimeActGroupMapEntry> GroupMap;
+
+    /// <summary>
+    /// The event group each event type sits in, in the game's own files (TAE/{Game}/Groups.json), for the editor to
+    /// match when it makes a group. Empty if there is no file for the game.
+    /// </summary>
+    public IReadOnlyDictionary<int, TimeActGroupMapEntry> GetGroupMap()
+    {
+        if (GroupMap != null)
+            return GroupMap;
+
+        GroupMap = new Dictionary<int, TimeActGroupMapEntry>();
+
+        var folder = GetGameFolder();
+
+        if (folder == null)
+            return GroupMap;
+
+        var path = Path.Join(folder, "Groups.json");
+
+        if (!File.Exists(path))
+            return GroupMap;
+
+        try
+        {
+            var map = JsonSerializer.Deserialize(File.ReadAllText(path),
+                TimeActEditorJsonSerializerContext.Default.TimeActGroupMap);
+
+            foreach (var entry in map?.Groups ?? new())
+            {
+                GroupMap.TryAdd(entry.EventType, entry);
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TAE_Data_Failed_To_Read_Group_Map", path), e);
+        }
+
+        return GroupMap;
+    }
+
     private TimeActDef LoadDef(string defName)
     {
         var folder = GetGameFolder();

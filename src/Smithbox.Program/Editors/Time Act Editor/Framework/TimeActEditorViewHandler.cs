@@ -75,12 +75,36 @@ public class TimeActEditorViewHandler
         return view;
     }
 
+    /// <summary>
+    /// The open view other than the given one that has the source selected, or null if there is none.
+    /// A source is only ever open in one view, as the views share its time acts and model.
+    /// </summary>
+    public TimeActEditorView FindViewWithSource(TimeActContainerWrapper source, TimeActEditorView except = null)
+    {
+        if (source == null)
+            return null;
+
+        return Views.FirstOrDefault(e => e != null && e != except && e.Selection.SelectedTimeActContainerWrapper == source);
+    }
+
+    /// <summary>
+    /// Makes the view the active one, and brings its window to the front the next time it is drawn
+    /// </summary>
+    public void FocusView(TimeActEditorView view)
+    {
+        ActiveView = view;
+        view.RequestFocus = true;
+    }
+
     public bool RemoveView(TimeActEditorView view)
     {
         if (!Views.Contains(view))
         {
             return false;
         }
+
+        // Its source is let go, so it can be opened in another view, and its model doesn't stay in this one
+        view.SourceWindow.ReleaseSource();
 
         Views[view.ViewIndex] = null;
 
@@ -126,6 +150,13 @@ public class TimeActEditorViewHandler
 
             ImGui.SetNextWindowDockID(editorDockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_TimeActEditor);
+
+            if (view.RequestFocus)
+            {
+                view.RequestFocus = false;
+                ImGui.SetNextWindowFocus();
+            }
+
             if (ImGui.Begin($@"{displayTitle}###TimeActEditorView##{view.ViewIndex}", GUI.GetDisplayViewWindowFlags()))
             {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
@@ -149,7 +180,8 @@ public class TimeActEditorViewHandler
                         }
                     }
 
-                    ImGui.EndMenu();
+                    // Closes BeginPopupContextItem (was EndMenu, which unbalanced ImGui's stack)
+                    ImGui.EndPopup();
                 }
             }
 

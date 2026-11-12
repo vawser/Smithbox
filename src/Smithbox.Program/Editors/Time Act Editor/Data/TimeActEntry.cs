@@ -25,7 +25,34 @@ public class TimeActEntry
     /// <summary>
     /// Whether the time act has been modified since it was last saved
     /// </summary>
-    public bool IsDirty { get; set; } = false;
+    public bool IsDirty
+    {
+        get => _isDirty;
+        set
+        {
+            _isDirty = value;
+            EditVersion++;
+
+            if (value)
+            {
+                HasBeenEdited = true;
+            }
+        }
+    }
+
+    private bool _isDirty = false;
+
+    /// <summary>
+    /// Raised by every edit to any time act, as each one marks its time act as modified. The comparisons with the
+    /// game's version are kept until this changes.
+    /// </summary>
+    public static int EditVersion { get; private set; }
+
+    /// <summary>
+    /// Whether the time act has been changed at any point this session, saved or not. The undo history can
+    /// still point at it, so it is kept rather than read again from the file.
+    /// </summary>
+    public bool HasBeenEdited { get; private set; } = false;
 
     /// <summary>
     /// The full name, flags and compression of the binder file, so a copy can be added alongside it
@@ -148,6 +175,49 @@ public class TimeActEntry
     public void MarkAnimationsChanged()
     {
         AnimationsVersion++;
+        EditVersion++;
+    }
+
+    /// <summary>
+    /// Whether the stored bytes of the two time acts are the same. These are the bytes last read or saved, so this
+    /// only says the time acts match while neither has unsaved changes.
+    /// </summary>
+    public bool StoredBytesEqual(TimeActEntry other)
+    {
+        return Data.Span.SequenceEqual(other.Data.Span);
+    }
+
+    /// <summary>
+    /// Puts another time act in place of this one's, keeping the entry, such as when reverting it to the game's
+    /// version. Its events take on their templates once their animation is selected.
+    /// </summary>
+    public void ReplaceTimeAct(TAE timeAct)
+    {
+        TimeAct = timeAct;
+
+        IsDirty = true;
+        MarkAnimationsChanged();
+    }
+
+    /// <summary>
+    /// Lets the template be applied to the animation again, once its events have been swapped for ones without it
+    /// </summary>
+    public void ForgetTemplate(TAE.Animation animation)
+    {
+        TemplatedAnimations.Remove(animation);
+    }
+
+    /// <summary>
+    /// Applies the template to the event if it writes the event back exactly, as when the time act is first read
+    /// </summary>
+    public bool TryApplyTemplateExactly(TAE.Event ev, TAE.Template.EventTemplate eventTemplate)
+    {
+        if (ev.Template != null || eventTemplate == null || !IsExactFit(ev, eventTemplate))
+            return false;
+
+        ev.ApplyTemplate(TimeAct.BigEndian, eventTemplate, true);
+
+        return true;
     }
 
     /// <summary>
@@ -172,8 +242,21 @@ public class TimeActEntry
     /// </summary>
     public TAE.Animation CloneAnimation(TAE.Animation animation, long id, string animFileName)
     {
-        var bigEndian = TimeAct.BigEndian;
+        var clone = CloneAnimation(animation, id, animFileName, TimeAct.BigEndian, true);
 
+        // The events are copied with their templates, so the copy is ready to edit
+        TemplatedAnimations.Add(clone);
+
+        return clone;
+    }
+
+    /// <summary>
+    /// Creates a copy of an animation that belongs to no time act. Without templates, the events keep only their
+    /// bytes, so the copy can go into a time act whose template differs: that template is applied once it is selected.
+    /// </summary>
+    public static TAE.Animation CloneAnimation(TAE.Animation animation, long id, string animFileName, bool bigEndian,
+        bool keepTemplates)
+    {
         var clone = new TAE.Animation(id, animation.MiniHeader?.GetClone(), animFileName);
 
         var groups = new Dictionary<TAE.EventGroup, TAE.EventGroup>();
@@ -188,7 +271,9 @@ public class TimeActEntry
 
         foreach (var ev in animation.Events)
         {
-            var eventClone = ev.GetClone(bigEndian);
+            var eventClone = keepTemplates
+                ? ev.GetClone(bigEndian)
+                : new TAE.Event(ev.StartTime, ev.EndTime, ev.Type, ev.Unk04, ev.GetParameterBytes(bigEndian), bigEndian);
 
             if (ev.Group != null && groups.TryGetValue(ev.Group, out var groupClone))
             {
@@ -197,9 +282,6 @@ public class TimeActEntry
 
             clone.Events.Add(eventClone);
         }
-
-        // The events are copied with their templates, so the copy is ready to edit
-        TemplatedAnimations.Add(clone);
 
         return clone;
     }
@@ -284,6 +366,113 @@ public class TimeActEntry
             return ev;
 
         return TryCreateTemplatedClone(ev, eventTemplate, out var clone) ? clone : ev;
+    }
+
+    /// <summary>
+    /// Why an event without a template on it has none: no template for its type, or the first byte the template
+    /// would write back differently, or the template failing to read it. Null if the template would fit after all.
+    /// </summary>
+    public string DescribeTemplateMismatch(TAE.Event ev, TAE.Template.BankTemplate template)
+    {
+        if (template == null || !template.TryGetValue(ev.Type, out var eventTemplate))
+            return LOC.Get("TAE_TemplateFit_No_Template", ev.Type);
+
+        var bigEndian = TimeAct.BigEndian;
+
+        try
+        {
+            var original = ev.GetParameterBytes(bigEndian);
+
+            var copy = ev.GetClone(bigEndian);
+            copy.ApplyTemplate(bigEndian, eventTemplate, true);
+
+            var written = copy.GetParameterBytes(bigEndian);
+
+            for (int i = 0; i < Math.Max(original.Length, written.Length); i++)
+            {
+                var originalByte = i < original.Length ? original[i] : 0;
+                var writtenByte = i < written.Length ? written[i] : 0;
+
+                if (originalByte != writtenByte)
+                {
+                    return LOC.Get("TAE_TemplateFit_Mismatch", eventTemplate.Name, $"0x{i:X}", $"{originalByte:X2}",
+                        $"{writtenByte:X2}", original.Length, eventTemplate.GetAllParametersByteCount());
+                }
+            }
+
+            return null;
+        }
+        catch (Exception e)
+        {
+            return LOC.Get("TAE_TemplateFit_Failed", eventTemplate.Name, e.Message.Split('\n')[0]);
+        }
+    }
+
+    /// <summary>
+    /// A byte that putting a template on an event anyway would change. Old is null past the end of the event's
+    /// data, and New is null past the end of the template, where the byte would be dropped.
+    /// </summary>
+    public record TemplateByteChange(int Offset, byte? Old, byte? New, string Field, bool IsFixedValue);
+
+    /// <summary>
+    /// Works out what putting the template on the event anyway would change, on a copy. The template reads past
+    /// the values it would assert, and writes its own fixed value there. False if it can't read the event at all.
+    /// </summary>
+    public bool TryPreviewForcedTemplate(TAE.Event ev, TAE.Template.EventTemplate eventTemplate,
+        out List<TemplateByteChange> changes, out string error)
+    {
+        changes = new List<TemplateByteChange>();
+        error = null;
+
+        var bigEndian = TimeAct.BigEndian;
+        byte[] original;
+        byte[] written;
+
+        try
+        {
+            original = ev.GetParameterBytes(bigEndian).ToArray();
+
+            var copy = ev.GetClone(bigEndian);
+            copy.ApplyTemplate(bigEndian, eventTemplate, true);
+
+            written = copy.GetParameterBytes(bigEndian);
+        }
+        catch (Exception e)
+        {
+            error = e.Message.Split('\n')[0];
+            return false;
+        }
+
+        // Which field of the template each byte belongs to, in the order the template writes them
+        var fields = new List<(int Start, int End, string Name, bool Fixed)>();
+        var offset = 0;
+        var index = 0;
+
+        foreach (var parameter in eventTemplate.Values)
+        {
+            var size = parameter.GetByteCount();
+
+            fields.Add((offset, offset + size, parameter.Name ?? $"#{index}", parameter.ValueToAssert != null));
+
+            offset += size;
+            index++;
+        }
+
+        for (var i = 0; i < Math.Max(original.Length, written.Length); i++)
+        {
+            byte? oldByte = i < original.Length ? original[i] : null;
+            byte? newByte = i < written.Length ? written[i] : null;
+
+            // Zero padding that comes or goes changes nothing the game reads
+            if ((oldByte ?? 0) == (newByte ?? 0))
+                continue;
+
+            var field = fields.FirstOrDefault(e => i >= e.Start && i < e.End);
+
+            changes.Add(new TemplateByteChange(i, oldByte, newByte, field.Name, field.Fixed));
+        }
+
+        return true;
     }
 
     /// <summary>

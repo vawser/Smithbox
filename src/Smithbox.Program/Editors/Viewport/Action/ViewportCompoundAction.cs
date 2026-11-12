@@ -12,6 +12,16 @@ public class ViewportCompoundAction : ViewportAction
     public ViewportCompoundAction(List<ViewportAction> actions)
     {
         Actions = actions;
+
+        // Scopes the actions carry from the start (such as time act edits) belong to the whole compound,
+        // as the history only sees the compound
+        foreach (var act in actions)
+        {
+            if (act != null)
+            {
+                TouchedScopes.UnionWith(act.TouchedScopes);
+            }
+        }
     }
 
     public void SetPostExecutionAction(Action<bool> action)

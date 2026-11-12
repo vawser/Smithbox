@@ -1,3 +1,4 @@
+using SoulsFormats;
 using StudioCore.Editors.Common;
 using System;
 using StudioCore.Editors.Viewport;
@@ -8,7 +9,7 @@ namespace StudioCore.Editors.TimeActEditor;
 /// Adds a time act to a source, or removes one when it is told to delete instead.
 /// The binder files are only added or removed when the source is saved.
 /// </summary>
-public class TimeActAddEntryAction : ViewportAction
+public class TimeActAddEntryAction : TimeActAction
 {
     private readonly TimeActEditorView View;
     private readonly TimeActContainerWrapper Source;
@@ -28,6 +29,12 @@ public class TimeActAddEntryAction : ViewportAction
 
         Index = isDelete ? source.TimeActs.IndexOf(entry) : -1;
     }
+
+    public override TimeActContainerWrapper TargetSource => Source;
+    public override TimeActEntry TargetEntry => Entry;
+
+    public override string Describe() =>
+        LOC.Get(IsDelete ? "TAE_History_Delete_TimeAct" : "TAE_History_Add_TimeAct", Entry.Name);
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -83,7 +90,7 @@ public class TimeActAddEntryAction : ViewportAction
 /// <summary>
 /// Renames a time act, which moves it to the category its name stands for
 /// </summary>
-public class TimeActRenameEntryAction : ViewportAction
+public class TimeActRenameEntryAction : TimeActAction
 {
     private readonly TimeActEditorView View;
     private readonly TimeActContainerWrapper Source;
@@ -106,6 +113,11 @@ public class TimeActRenameEntryAction : ViewportAction
         NewName = newName;
         NewBindIndex = newBindIndex;
     }
+
+    public override TimeActContainerWrapper TargetSource => Source;
+    public override TimeActEntry TargetEntry => Entry;
+
+    public override string Describe() => LOC.Get("TAE_History_Rename_TimeAct", OldName, NewName);
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -138,7 +150,7 @@ public class TimeActRenameEntryAction : ViewportAction
 /// <summary>
 /// Replaces a time act with another, such as one imported from a file
 /// </summary>
-public class TimeActReplaceEntryAction : ViewportAction
+public class TimeActReplaceEntryAction : TimeActAction
 {
     private readonly TimeActEditorView View;
     private readonly TimeActContainerWrapper Source;
@@ -153,6 +165,13 @@ public class TimeActReplaceEntryAction : ViewportAction
         OldEntry = oldEntry;
         NewEntry = newEntry;
     }
+
+    public override TimeActContainerWrapper TargetSource => Source;
+
+    // Whichever of the two is in the source now
+    public override TimeActEntry TargetEntry => Source.TimeActs.Contains(NewEntry) ? NewEntry : OldEntry;
+
+    public override string Describe() => LOC.Get("TAE_History_Replace_TimeAct", OldEntry.Name);
 
     public override ActionEvent Execute(bool isRedo = false)
     {
@@ -186,7 +205,7 @@ public class TimeActReplaceEntryAction : ViewportAction
 /// Changes a property of the time act or one of its animations, such as an ID or skeleton name.
 /// The callback runs after each change, for properties that other things depend on.
 /// </summary>
-public class TimeActSetPropertyAction<T> : ViewportAction
+public class TimeActSetPropertyAction<T> : TimeActAction
 {
     private readonly TimeActEntry Entry;
     private readonly Action<T> Set;
@@ -194,14 +213,28 @@ public class TimeActSetPropertyAction<T> : ViewportAction
     private readonly T NewValue;
     private readonly Action OnChanged;
 
-    public TimeActSetPropertyAction(TimeActEntry entry, Action<T> set, T oldValue, T newValue, Action onChanged = null)
+    // The name of the property, and the animation it belongs to, if it isn't a property of the time act itself
+    private readonly string PropertyName;
+    private readonly TAE.Animation Animation;
+
+    public TimeActSetPropertyAction(TimeActEntry entry, Action<T> set, T oldValue, T newValue, Action onChanged = null,
+        string propertyName = null, TAE.Animation animation = null)
     {
         Entry = entry;
         Set = set;
         OldValue = oldValue;
         NewValue = newValue;
         OnChanged = onChanged;
+        PropertyName = propertyName;
+        Animation = animation;
     }
+
+    public override TimeActEntry TargetEntry => Entry;
+    public override TAE.Animation TargetAnimation => Animation;
+
+    public override string Describe() => PropertyName != null
+        ? LOC.Get("TAE_History_Set_Property", PropertyName, FormatValue(NewValue))
+        : LOC.Get("TAE_History_Set_Property_Unnamed");
 
     public override ActionEvent Execute(bool isRedo = false)
     {

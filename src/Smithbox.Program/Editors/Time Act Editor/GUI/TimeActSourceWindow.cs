@@ -163,9 +163,22 @@ public class TimeActSourceWindow
 
                 var labelName = source.HasUnsavedTimeActs ? $"{source.Name}*" : source.Name;
 
+                // Open in another view, which selecting it brings forward
+                var otherView = selected ? null : View.Editor.ViewHandler.FindViewWithSource(source, View);
+
+                if (otherView != null)
+                {
+                    labelName = $"{labelName} [{otherView.ViewIndex}]";
+                }
+
                 if (ImGui.Selectable($"{labelName}##timeActSourceEntry{listType}{i}", selected))
                 {
                     SelectSource(source);
+                }
+
+                if (otherView != null)
+                {
+                    GUI.Tooltip(LOC.Get("TAE_SourceWindow_Open_In_Other_View_TT", otherView.ViewIndex));
                 }
 
                 if (source == ScrollTarget)
@@ -208,28 +221,32 @@ public class TimeActSourceWindow
         return ScrollTarget != null && ScrollTargetList == listType ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
     }
 
-    public void SelectSource(TimeActContainerWrapper source)
+    /// <summary>
+    /// Opens the source in this view, and returns the view it is now open in. A source open in another view is
+    /// left there and that view is brought forward instead, as the views share its time acts and model:
+    /// opening it twice would have each view unload what the other is showing.
+    /// </summary>
+    public TimeActEditorView SelectSource(TimeActContainerWrapper source)
     {
         var selection = View.Selection;
 
         if (selection.SelectedTimeActContainerWrapper == source)
-            return;
+            return View;
 
-        View.Playback.Clear();
+        var viewHandler = View.Editor.ViewHandler;
 
-        // Unsaved changes only exist in the time acts, so those have to stay around
-        if (selection.SelectedTimeActContainerWrapper is { HasUnsavedTimeActs: false } previous)
+        if (viewHandler.FindViewWithSource(source, View) is { } other)
         {
-            previous.TimeActs.Clear();
+            viewHandler.FocusView(other);
+
+            Smithbox.Log(this, LOC.Get("TAE_SourceWindow_Open_In_Other_View", source.Name, other.ViewIndex));
+
+            return other;
         }
 
-        selection.SelectedTimeActModelWrapper?.Unload();
-        selection.SelectedTimeActModelWrapper = null;
+        ReleaseSource();
 
         selection.SelectedTimeActContainerWrapper = source;
-        selection.SelectedTimeAct = null;
-        selection.SelectedAnimation = null;
-        selection.SelectedEvent = null;
 
         try
         {
@@ -248,7 +265,35 @@ public class TimeActSourceWindow
         {
             selection.SelectedTimeActModelWrapper = model;
 
-            model.Load();
+            model.Load(View);
         }
+
+        return View;
+    }
+
+    /// <summary>
+    /// Lets go of the source open in this view: its model is unloaded, and its time acts are dropped unless
+    /// they have changes or undo history that has to stay with them
+    /// </summary>
+    public void ReleaseSource()
+    {
+        var selection = View.Selection;
+
+        View.Playback.Clear();
+
+        // Unsaved changes only exist in the time acts, so those have to stay around, as do edited time acts
+        // the undo history can still change
+        if (selection.SelectedTimeActContainerWrapper is { HasUnsavedTimeActs: false, HasEditHistory: false } previous)
+        {
+            previous.TimeActs.Clear();
+        }
+
+        selection.SelectedTimeActModelWrapper?.Unload(View);
+        selection.SelectedTimeActModelWrapper = null;
+
+        selection.SelectedTimeActContainerWrapper = null;
+        selection.SelectedTimeAct = null;
+        selection.SelectedAnimation = null;
+        selection.SelectedEvent = null;
     }
 }

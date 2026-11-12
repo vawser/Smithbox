@@ -71,6 +71,7 @@ public class ViewportActionManager
     public void ExecuteAction(ViewportAction a)
     {
         NotifyHandlers(Run(a, () => a.Execute()));
+        Version++;
         ActionPerformed?.Invoke();
         UndoStack.Push(a);
         RedoStack.Clear();
@@ -101,7 +102,59 @@ public class ViewportActionManager
         // ActionPerformed isn't raised, as no data changes; its handlers treat it as an edit
         Filter(UndoStack, scope);
         Filter(RedoStack, scope);
+        Version++;
     }
+
+    /// <summary>
+    /// Drops every action that didn't change the scope from the undo and redo history, keeping the rest in order
+    /// </summary>
+    public void KeepOnlyActionsTouching(string scope)
+    {
+        static void Filter(Stack<ViewportAction> stack, string scope)
+        {
+            var kept = stack
+                .Where(a => a.TouchedScopes.Contains(scope))
+                .Reverse()
+                .ToList();
+
+            stack.Clear();
+
+            foreach (var a in kept)
+            {
+                stack.Push(a);
+            }
+        }
+
+        Filter(UndoStack, scope);
+        Filter(RedoStack, scope);
+        Version++;
+    }
+
+    public ViewportAction PeekRedoAction()
+    {
+        return RedoStack.Count == 0 ? null : RedoStack.Peek();
+    }
+
+    /// <summary>
+    /// The actions that can be undone, the most recent first
+    /// </summary>
+    public IReadOnlyList<ViewportAction> GetUndoActions()
+    {
+        return UndoStack.ToList();
+    }
+
+    /// <summary>
+    /// The actions that can be redone, the next to be redone first
+    /// </summary>
+    public IReadOnlyList<ViewportAction> GetRedoActions()
+    {
+        return RedoStack.ToList();
+    }
+
+    /// <summary>
+    /// Raised whenever the history changes, so lists built from it know to rebuild
+    /// </summary>
+    public int Version { get; private set; }
 
     public ViewportAction PeekUndoAction()
     {
@@ -122,6 +175,7 @@ public class ViewportActionManager
 
         ViewportAction a = UndoStack.Pop();
         NotifyHandlers(Run(a, a.Undo));
+        Version++;
         ActionPerformed?.Invoke();
         RedoStack.Push(a);
     }
@@ -137,6 +191,7 @@ public class ViewportActionManager
         {
             ViewportAction a = UndoStack.Pop();
             NotifyHandlers(Run(a, a.Undo));
+            Version++;
             ActionPerformed?.Invoke();
             RedoStack.Push(a);
         }
@@ -151,6 +206,7 @@ public class ViewportActionManager
 
         ViewportAction a = RedoStack.Pop();
         NotifyHandlers(Run(a, () => a.Execute(true)));
+        Version++;
         ActionPerformed?.Invoke();
         UndoStack.Push(a);
     }
@@ -169,6 +225,7 @@ public class ViewportActionManager
     {
         UndoStack.Clear();
         RedoStack.Clear();
+        Version++;
     }
 }
 

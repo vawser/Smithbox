@@ -3,3 +3,17 @@
 #---------------------
 
 Analyze the X for bugs and recommendations for functionality improvements
+
+- Editors:
+    - Map Editor
+    - Model Editor
+    - Param Editor
+    - Text Editor
+    - Gparam Editor
+    - FX Editor
+    - Havok Editor
+    - Material Editor
+    - Texture Editor
+    - EMEVD Editor
+    - ESD Editor
+    - File Browser
