@@ -113,7 +113,7 @@ public static class NavUserEdges
 
     private const uint None = 0xFFFFFFFF;
 
-    private static int Triangle(int k) => k * (k - 1) / 2;
+    internal static int Triangle(int k) => k * (k - 1) / 2;
 
     /// <summary>
     /// The clearance caches of a mesh: the initial caches of its clearance cache seeding (two in most files, one per
@@ -162,7 +162,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The size of a face's block of pair clearances, or -1 if its offsets don't give one.</summary>
-    private static int BlockSize(IHavokNavClearanceCache cache, int face)
+    internal static int BlockSize(IHavokNavClearanceCache cache, int face)
     {
         if (face >= cache.m_faceOffsets.Count)
             return -1;
@@ -174,7 +174,7 @@ public static class NavUserEdges
     }
 
     /// <summary>The last face's block ends at its 0xFF marker: the arrays are sometimes longer than the blocks.</summary>
-    private static long FindBlockEnd(IHavokNavClearanceCache cache, int face)
+    internal static long FindBlockEnd(IHavokNavClearanceCache cache, int face)
     {
         int start = (int)cache.m_faceOffsets[face];
         int marker = cache.m_edgePairClearances.IndexOf(0xFF, start);
@@ -182,7 +182,7 @@ public static class NavUserEdges
     }
 
     /// <summary>A face's block is the size its linked edges give, in every cache.</summary>
-    private static bool BlocksMatch(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int face)
+    internal static bool BlocksMatch(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int face)
     {
         int expected = Triangle(LinkedEdges(mesh, face).Count) + 1;
         return caches.All(c => BlockSize(c, face) == expected);
@@ -444,7 +444,7 @@ public static class NavUserEdges
         return mesh.m_vertices.Count - 1;
     }
 
-    private static void RemoveVertex(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int vertex)
+    internal static void RemoveVertex(IHavokNavMeshEdit mesh, IReadOnlyList<IHavokNavClearanceCache> caches, int vertex)
     {
         mesh.m_vertices.RemoveAt(vertex);
 
@@ -460,7 +460,7 @@ public static class NavUserEdges
     }
 
     /// <summary>Moves every reference to an edge at or after a point by a step, keeping its section bits.</summary>
-    private static void ShiftEdgeReferences(IHavokNavMeshEdit mesh, int from, int step)
+    internal static void ShiftEdgeReferences(IHavokNavMeshEdit mesh, int from, int step)
     {
         foreach (var f in mesh.m_faces)
         {

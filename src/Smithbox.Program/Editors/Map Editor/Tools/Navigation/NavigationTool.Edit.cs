@@ -122,6 +122,8 @@ public partial class NavigationTool
         if (!ShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Needs_Overlay"));
 
+        DisplayEditToolChoice();
+
         // Actions
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Actions_Header"), LOC.Get("MAP_Navigation_Edit_Actions_Header_TT"));
@@ -147,6 +149,13 @@ public partial class NavigationTool
                 GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, VertexMessage);
             else
                 GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, VertexMessage);
+        }
+
+        // Add Face has its own groups; brush edits waiting can still be committed or discarded above
+        if (!IsBrushTool)
+        {
+            DisplayFaceToolOptions(VertexEditActive);
+            return;
         }
 
         // Linked Navmeshes
@@ -340,6 +349,8 @@ public partial class NavigationTool
         }
 
         VertexEditActive = true;
+        ClearFaceCorners();
+        FaceMessage = null;
 
         // The Collision Editor's cursor takes the same keys, so one press would move both meshes
         View.CollisionEditorTool?.StopEditing();
@@ -367,6 +378,8 @@ public partial class NavigationTool
         EndVertexStroke();
         VertexHover = null;
         DisposeVertexCursor();
+        ClearFaceCorners();
+        DisposeFaceAddDrawing();
 
         foreach (var name in VertexFiles.Where(e => !e.Value.IsEdited).Select(e => e.Key).ToList())
             VertexFiles.Remove(name);
@@ -450,10 +463,18 @@ public partial class NavigationTool
         GatherVertexEntries();
 
         if (VertexEditActive)
-            HandleVertexBrush(ray, canInteract);
+        {
+            if (IsFaceTool)
+                HandleFaceAdd(ray, canInteract);
+            else if (IsRemoveTool)
+                HandleFaceRemove(ray, canInteract);
+            else
+                HandleVertexBrush(ray, canInteract);
+        }
 
         UpdateVertexPreviews();
         UpdateVertexCursor();
+        UpdateFaceAddDrawing(VertexEditActive);
 
         return VertexEditActive;
     }

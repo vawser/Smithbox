@@ -88,7 +88,7 @@ public partial class NavigationTool
     /// <summary>The mode that takes the viewport's clicks, if any, with a button that stops it.</summary>
     private void DisplayModeStatus()
     {
-        string mode = VertexEditActive ? "MAP_Navigation_Mode_Vertex_Edit"
+        string mode = VertexEditActive ? EditModeKey
             : GateMode ? "MAP_Navigation_Mode_Gates"
             : LinkMode ? "MAP_Navigation_Mode_Links"
             : PaintMode ? "MAP_Navigation_Mode_Paint"

@@ -235,7 +235,7 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Nvm_Overlay_Show_TT"));
 
         // The mode that takes the clicks
-        string mode = NvmVertexActive ? "MAP_Navigation_Mode_Vertex_Edit" : NvmClickMode switch
+        string mode = NvmVertexActive ? EditModeKey : NvmClickMode switch
         {
             NvmClick.Pick => "MAP_Navigation_Mode_Pick",
             NvmClick.Paint => "MAP_Navigation_Mode_Paint",

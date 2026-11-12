@@ -1870,7 +1870,215 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Description",
-      "Text": "Moves navmesh vertices in the viewport. The cursor sits on the drawn navmesh set (Overlay tab), and the nearest corner of the face under it can be raised, lowered or dragged. Faces, edges and connections are kept; on commit the navmesh's bounds, face tree and clearance values around the moved vertices are worked out again. Moving a map's outer edges can part them from a neighbouring map's navmesh: re-stitch (Stitch tab) or keep them in place."
+      "Text": "Edits navmeshes in the viewport, on the drawn navmesh set (Overlay tab). The Brush moves vertices: the nearest corner of the face under it can be raised, lowered or dragged, faces, edges and connections are kept, and on commit the navmesh's bounds, face tree and clearance values around the moved vertices are worked out again. Moving a map's outer edges can part them from a neighbouring map's navmesh: re-stitch (Stitch tab) or keep them in place. Add Face places a new triangle with three clicks; Remove Face removes the face clicked."
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Header",
+      "Text": "Tool"
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Header_TT",
+      "Text": "What the cursor does while editing."
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Input_TT",
+      "Text": "Choose the brush, which moves vertices, Add Face, which places a new triangle, or Remove Face, which removes the face clicked."
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Brush",
+      "Text": "Brush"
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Add_Face",
+      "Text": "Add Face"
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Brush_TT",
+      "Text": "Raises, lowers, drags or smooths the vertices under the brush while the button is held. The edits wait until they are committed."
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_AddFace_TT",
+      "Text": "Three clicks place the corners of a new triangle. A click near a vertex of the navmesh takes that vertex, so the triangle joins the faces on the edges it shares; elsewhere a new vertex goes where the cursor meets a drawn navmesh, or the height of the last corner. The first corner must be on a navmesh, which the triangle is added to. The third click adds it as one undoable edit. The new face takes the face data (or flags) of the face it joins; change them in the Face Data tab."
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_Remove_Face",
+      "Text": "Remove Face"
+    },
+    {
+      "Key": "MAP_Navigation_Edit_Tool_RemoveFace_TT",
+      "Text": "The face under the cursor is outlined; a click removes it as one undoable edit. Links on the face or leading to it go with it, the edges of the faces it was joined to are left open, and vertices no other face uses go. Later faces move down one, so the navmesh's connections and node bank faces follow; those naming the face or its edges are dropped (re-stitch to join it again)."
+    },
+    {
+      "Key": "MAP_Navigation_Mode_Face_Remove",
+      "Text": "Clicks in the viewport remove the face under the cursor (Edit tab); clicks don't select."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Header",
+      "Text": "Face"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Header_TT",
+      "Text": "The face a click would remove."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Hover",
+      "Text": "Face {0} of {1} ({2} corners), outlined."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Hover_None",
+      "Text": "Point at a face of the drawn navmesh set."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Control_Click",
+      "Text": "{0}: remove the outlined face."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Removed",
+      "Text": "Removed face {1} from {0}: {2} links with it, {3} edges left open, {4} vertices dropped, {5} connections or bank faces dropped."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Removed_Graph",
+      "Text": "Removed face {1} from {0}: {2} links with it, {3} edges left open, {4} vertices dropped, {5} connections or bank faces dropped. The cost graph was built again, as it no longer fitted the mesh."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Remove_Failed",
+      "Text": "Couldn't remove a face from {0}."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Face",
+      "Text": "The navmesh has no such face."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Last",
+      "Text": "That is the navmesh's last face: remove the model in the Models tab instead."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Mcg",
+      "Text": "That triangle is the only one an MCG edge lists at one of its nodes: remove the node or link it again in the Graph tab first."
+    },
+    {
+      "Key": "MAP_Navigation_Mode_Face_Add",
+      "Text": "Clicks in the viewport place the corners of a new face (Edit tab); clicks don't select."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Snap_Header",
+      "Text": "Snap Distance"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Snap_Header_TT",
+      "Text": "How near the cursor a vertex must be for a corner to take it."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Snap_Input_TT",
+      "Text": "In metres, from the line under the cursor. A taken vertex joins the new face to the faces around it; 0 never takes one."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Corners_Header",
+      "Text": "Corners"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Corners_Header_TT",
+      "Text": "The corners placed so far, and where the next would go."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Target",
+      "Text": "Adding to {0}."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Placed",
+      "Text": "{0} of 3 corners placed."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Corner_Vertex",
+      "Text": "{0}: vertex {1} at {2}"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Corner_New",
+      "Text": "{0}: new vertex at {1}"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Hover_Vertex",
+      "Text": "Next: vertex {0} (the larger sphere)."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Hover_New",
+      "Text": "Next: a new vertex at the cursor."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Hover_None_First",
+      "Text": "Next: point at a drawn navmesh to place the first corner."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Hover_None",
+      "Text": "Next: nothing under the cursor."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Undo_Corner",
+      "Text": "Undo Corner"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Undo_Corner_TT",
+      "Text": "Removes the last corner placed."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Clear",
+      "Text": "Clear"
+    },
+    {
+      "Key": "MAP_Navigation_Face_Clear_TT",
+      "Text": "Removes every corner placed, so the next click starts a new face."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Control_Click",
+      "Text": "{0}: place a corner. The third adds the face."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Added",
+      "Text": "Added face {1} to {0}: {2} edges joined to existing faces, {3} new vertices."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Added_Graph",
+      "Text": "Added face {1} to {0}: {2} edges joined to existing faces, {3} new vertices. The cost graph was built again, as the face joins no cluster or more than one."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Failed",
+      "Text": "Couldn't add a face to {0}."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Pending",
+      "Text": "{0} has brush edits waiting: commit or discard them before adding a face to it."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Corners",
+      "Text": "A face needs three corners."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_File",
+      "Text": "The navmesh file couldn't be read for the edit."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Vertex",
+      "Text": "A corner names a vertex the navmesh's faces don't use (a link's own vertex, or one out of range)."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Degenerate",
+      "Text": "The face would have no area seen from above (two corners at one place, or standing on its edge): place the last corner elsewhere."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Overlap",
+      "Text": "The face would lie over a face that shares one of its edges: place the last corner on the open side of the edge."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Edge_Taken",
+      "Text": "One of the face's edges already has faces on both sides."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Edge_Connected",
+      "Text": "One of the face's edges joins another navmesh (a connection in the NVA or an NVC file): the face can't join it. Place the corners so the face doesn't share that edge."
+    },
+    {
+      "Key": "MAP_Navigation_Face_Error_Cache",
+      "Text": "The navmesh's clearance cache isn't laid out as its faces are, where the face would change it, so it can't be kept in step."
     },
     {
       "Key": "MAP_Navigation_Edit_Needs_Overlay",

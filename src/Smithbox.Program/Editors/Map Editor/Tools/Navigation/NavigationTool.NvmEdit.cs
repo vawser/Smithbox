@@ -64,6 +64,8 @@ public partial class NavigationTool
         if (!NvmShowOverlay)
             GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Needs_Overlay"));
 
+        DisplayEditToolChoice();
+
         // Actions
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Actions_Header"), LOC.Get("MAP_Navigation_Edit_Actions_Header_TT"));
@@ -82,6 +84,13 @@ public partial class NavigationTool
 
             "navigationNvmEditDiscard", LOC.Get("MAP_Navigation_Edit_Discard"), LOC.Get("MAP_Navigation_Edit_Discard_TT"),
             DiscardNvmVertexEdits, hasEdits);
+
+        // Add Face has its own groups; brush edits waiting can still be committed or discarded above
+        if (!IsBrushTool)
+        {
+            DisplayFaceToolOptions(NvmVertexActive);
+            return;
+        }
 
         // Linked Navmeshes
         GUI.Spacer();
@@ -163,6 +172,8 @@ public partial class NavigationTool
         View.CollisionEditorTool?.StopEditing();
         SetNvmClick(NvmClick.None);
         NvmVertexActive = true;
+        ClearFaceCorners();
+        FaceMessage = null;
     }
 
     /// <summary>Hides the cursor; pending edits are kept, copies without edits are dropped.</summary>
@@ -175,6 +186,8 @@ public partial class NavigationTool
         EndNvmVertexStroke();
         NvmVertexHover = null;
         DisposeVertexCursor();
+        ClearFaceCorners();
+        DisposeFaceAddDrawing();
 
         foreach (var name in NvmVertexCopies.Where(c => !c.Value.IsEdited).Select(c => c.Key).ToList())
             NvmVertexCopies.Remove(name);
@@ -273,9 +286,17 @@ public partial class NavigationTool
         }
 
         if (NvmVertexActive)
-            HandleNvmVertexBrush(ray, canInteract);
+        {
+            if (IsFaceTool)
+                HandleNvmFaceAdd(ray, canInteract);
+            else if (IsRemoveTool)
+                HandleNvmFaceRemove(ray, canInteract);
+            else
+                HandleNvmVertexBrush(ray, canInteract);
+        }
 
         UpdateNvmVertexCursor();
+        UpdateFaceAddDrawing(NvmVertexActive);
         return NvmVertexActive;
     }
 
