@@ -128,6 +128,8 @@ public class MapEditorView : IEditorView
     public CollisionEditorTool CollisionEditorTool;
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
+    public FirstPersonCollisionWorld FirstPersonCollision;
+    public FirstPersonTool FirstPersonTool;
     public MapExtractionTool MapExtractionTool;
     public MapTextureTransferTool TextureTransferTool;
     public MapPartTransferTool PartTransferTool;
@@ -232,6 +234,8 @@ public class MapEditorView : IEditorView
         CollisionEditorTool = new CollisionEditorTool(this, project);
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
+        FirstPersonCollision = new FirstPersonCollisionWorld(this, project);
+        FirstPersonTool = new FirstPersonTool(this, project);
         MapExtractionTool = new MapExtractionTool(this, project);
         TextureTransferTool = new MapTextureTransferTool(this, project);
         PartTransferTool = new MapPartTransferTool(this, project);
@@ -271,6 +275,10 @@ public class MapEditorView : IEditorView
         SnapToMeshAction.Update();
 
         WorldMapTool.Update();
+
+        // Picks up a finished first person collision build, and checks the walk is still where it can run
+        FirstPersonCollision.Update();
+        FirstPersonTool.UpdateSession();
 
         // The popups that context menus, shortcuts and the Tools window open. Drawn here rather than in the
         // Tools window so they don't depend on it being shown.

@@ -332,6 +332,12 @@ public class VulkanViewport : IViewport
             ResizeViewport(Device, newViewportSize);
 
             // Inputs
+            if (Owner is MapUniverse walkUniverse && walkUniverse.View.FirstPersonTool.TakeViewportFocus(this))
+            {
+                // Starting to walk: the keys go to the viewport, not to the button that started it
+                ImGui.SetWindowFocus();
+            }
+
             if (InputManager.IsMouseDown(MousebindID.Viewport_Enable_Viewport_Movement) && MouseInViewport())
             {
                 ImGui.SetWindowFocus();
@@ -386,6 +392,10 @@ public class VulkanViewport : IViewport
         if (!Instantiated)
             return false;
 
+        // Walking in first person takes all of this viewport's input: no gizmo, picking or camera keys
+        if (Owner is MapUniverse walkUniverse && walkUniverse.View.FirstPersonTool.UpdateWalking(this, window, dt))
+            return true;
+
         Vector2 pos = InputManager.MousePosition;
         Ray ray = GetRay(pos.X - X, pos.Y - Y);
         CursorX = (int)pos.X; // - X;
@@ -422,6 +432,13 @@ public class VulkanViewport : IViewport
         // And placing or picking a ruler point
         if (Owner is MapUniverse rulerUniverse &&
             rulerUniverse.View.RulerTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
+        // And picking the First Person tool's spawn
+        if (Owner is MapUniverse firstPersonUniverse &&
+            firstPersonUniverse.View.FirstPersonTool.HandleViewportInput(this, ray, canPick))
         {
             painting = true;
         }

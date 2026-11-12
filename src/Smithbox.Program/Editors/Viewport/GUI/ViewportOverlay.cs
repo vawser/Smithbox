@@ -65,6 +65,9 @@ public class ViewportOverlay
 
             // The Ruler tool's distance
             mapUniverse.View.RulerTool.DrawLabels(Parent);
+
+            // First person: crosshair and controls
+            mapUniverse.View.FirstPersonTool.DrawOverlay(Parent);
         }
 
         // Model Editor

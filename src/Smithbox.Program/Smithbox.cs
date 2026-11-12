@@ -663,6 +663,9 @@ public class Smithbox
 
             Update((float)deltaSeconds);
 
+            // The first person mode's captured mouse is given back if nothing claimed it this frame
+            StudioCore.Editors.MapEditor.FirstPersonMouse.EndFrame();
+
             // After the update, so a close goes straight to the check below
             HandleCloseRequest();
 

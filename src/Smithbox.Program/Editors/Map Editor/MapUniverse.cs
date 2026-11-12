@@ -120,6 +120,7 @@ public class MapUniverse : IUniverse
 
                 View.HavokCollisionBank.OnLoadMap(mapid);
                 View.HavokNavmeshBank.OnLoadMap(mapid);
+                View.FirstPersonCollision?.OnMapChanged(mapid);
 
                 __havokZone.Dispose();
             }
@@ -509,6 +510,7 @@ public class MapUniverse : IUniverse
                 }
 
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
+                View.FirstPersonCollision?.OnMapChanged(curMapID);
                 View.WallBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
                 View.NavigationBank.OnUnloadMap(curMapID, Project.Handler.MapData.PrimaryBank.Maps.Values

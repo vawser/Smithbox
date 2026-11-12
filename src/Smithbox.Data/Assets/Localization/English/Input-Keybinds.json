@@ -401,6 +401,30 @@
       "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Smooth."
     },
     {
+      "Key": "KEY_MapEditor_FirstPerson_Jump",
+      "Text": "First Person: Jump"
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Jump_TT",
+      "Text": "While walking in first person, jumps. Walking uses the viewport movement keys."
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Run",
+      "Text": "First Person: Run"
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Run_TT",
+      "Text": "While walking in first person, runs while held."
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Release",
+      "Text": "First Person: Release Mouse / Exit"
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Release_TT",
+      "Text": "While walking in first person, gives the mouse back to the editor and pauses. Pressed again while paused, leaves first person. Click in the viewport to carry on walking."
+    },
+    {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
       "Text": "Rotate Selection (+ x-axis)"
     },

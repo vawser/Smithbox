@@ -1411,6 +1411,9 @@ public partial class CollisionEditorTool
     /// </summary>
     private List<MeshRenderableProxy> RefreshLoadedMesh(string mapId, string fileName, bool showNow)
     {
+        // The first person mode walks on the documents too
+        View.FirstPersonCollision?.OnCollisionFileChanged(mapId, fileName);
+
         var document = View.HavokCollisionBank.GetEditableDocument(fileName);
         var refreshed = new HashSet<HavokCollisionResource>();
         var proxies = new List<MeshRenderableProxy>();
@@ -1484,6 +1487,7 @@ public partial class CollisionEditorTool
     public void OnBodiesChanged(string mapId, string fileName)
     {
         View.HavokCollisionBank.MarkModified(fileName);
+        View.FirstPersonCollision?.OnCollisionFileChanged(mapId, fileName);
 
         if (Files.Remove(fileName, out var file))
         {

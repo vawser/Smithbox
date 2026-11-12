@@ -210,8 +210,20 @@ public static class InputManager
 
     // ---------------- Actions ----------------
 
+    /// <summary>
+    /// While set, only these actions are reported as down, pressed or released; every other keybind reads as up.
+    /// Used by the Map Editor's first person mode, so walking with W/A/S/D and Space doesn't trigger the editors'
+    /// shortcuts. The owner clears it on every way out of the mode.
+    /// </summary>
+    public static IReadOnlySet<KeybindID> ExclusiveActions { get; set; }
+
+    private static bool IsBlocked(KeybindID action) => ExclusiveActions != null && !ExclusiveActions.Contains(action);
+
     public static bool IsDown(KeybindID action)
     {
+        if (IsBlocked(action))
+            return false;
+
         if (_bindings.Entries.ContainsKey(action))
         {
             return _bindings.Entries[action].Any(IsBindingDown);
@@ -222,6 +234,9 @@ public static class InputManager
 
     public static bool IsPressed(KeybindID action)
     {
+        if (IsBlocked(action))
+            return false;
+
         if (_bindings.Entries.ContainsKey(action))
         {
             return _bindings.Entries[action].Any(b =>
@@ -237,6 +252,9 @@ public static class InputManager
     float initialDelay = 0.35f,
     float repeatRate = 0.075f)
     {
+        if (IsBlocked(action))
+            return false;
+
         if (!_bindings.Entries.TryGetValue(action, out var bindings))
             return false;
 
@@ -265,6 +283,9 @@ public static class InputManager
 
     public static bool IsReleased(KeybindID action)
     {
+        if (IsBlocked(action))
+            return false;
+
         if (_bindings.Entries.ContainsKey(action))
         {
             return _bindings.Entries[action].Any(b =>

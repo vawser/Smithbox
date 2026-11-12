@@ -198,6 +198,15 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_NavigationEditor_Smooth", Description = "KEY_MapEditor_NavigationEditor_Smooth_TT")]
     MapEditor_NavigationEditor_Smooth,
 
+    [Display(Name = "KEY_MapEditor_FirstPerson_Jump", Description = "KEY_MapEditor_FirstPerson_Jump_TT")]
+    MapEditor_FirstPerson_Jump,
+
+    [Display(Name = "KEY_MapEditor_FirstPerson_Run", Description = "KEY_MapEditor_FirstPerson_Run_TT")]
+    MapEditor_FirstPerson_Run,
+
+    [Display(Name = "KEY_MapEditor_FirstPerson_Release", Description = "KEY_MapEditor_FirstPerson_Release_TT")]
+    MapEditor_FirstPerson_Release,
+
     [Display(Name = "KEY_MapEditor_Enable_Game_Presence_Object", Description = "KEY_MapEditor_Enable_Game_Presence_TT")]
     MapEditor_Enable_Game_Presence,
 
@@ -524,6 +533,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Lower, new() { Key = Key.E });
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Drag, new() { Key = Key.G });
         InputManager.Bind(KeybindID.MapEditor_NavigationEditor_Smooth, new() { Key = Key.T });
+        InputManager.Bind(KeybindID.MapEditor_FirstPerson_Jump, new() { Key = Key.Space });
+        InputManager.Bind(KeybindID.MapEditor_FirstPerson_Run, new() { Key = Key.ShiftLeft });
+        InputManager.Bind(KeybindID.MapEditor_FirstPerson_Release, new() { Key = Key.Escape });
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
@@ -705,6 +717,9 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_NavigationEditor_Lower, InputCategory.MapEditor },
         { KeybindID.MapEditor_NavigationEditor_Drag, InputCategory.MapEditor },
         { KeybindID.MapEditor_NavigationEditor_Smooth, InputCategory.MapEditor },
+        { KeybindID.MapEditor_FirstPerson_Jump, InputCategory.MapEditor },
+        { KeybindID.MapEditor_FirstPerson_Run, InputCategory.MapEditor },
+        { KeybindID.MapEditor_FirstPerson_Release, InputCategory.MapEditor },
         { KeybindID.MapEditor_Enable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Disable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Visibility_Flip, InputCategory.MapEditor },

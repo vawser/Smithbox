@@ -384,6 +384,29 @@ public class CFG
     public Vector3 MapEditor_Ruler_Color = new Vector3(255, 200, 40);
     public Vector3 MapEditor_Ruler_Selected_Color = new Vector3(255, 255, 255);
     public bool MapEditor_Ruler_Show_Label = true;
+    // First person mode: what the player collides with (Low or High; fall protection and assets on top)
+    public HavokCollisionType MapEditor_FirstPerson_Layer = HavokCollisionType.Low;
+    public bool MapEditor_FirstPerson_Fall_Protection = false;
+    public bool MapEditor_FirstPerson_Assets = true;
+    public bool MapEditor_FirstPerson_Dummy_Assets = false;
+    // The player: eye height above the feet, capsule height and radius, steepest walkable slope (degrees)
+    public float MapEditor_FirstPerson_Eye_Height = 1.5f;
+    public float MapEditor_FirstPerson_Height = 1.7f;
+    public float MapEditor_FirstPerson_Radius = 0.35f;
+    public float MapEditor_FirstPerson_Max_Slope = 50f;
+    // Movement: speeds (m/s), gravity (m/s²), jump and step heights (m)
+    public float MapEditor_FirstPerson_Walk_Speed = 4f;
+    public float MapEditor_FirstPerson_Run_Speed = 7f;
+    public float MapEditor_FirstPerson_Gravity = 20f;
+    public float MapEditor_FirstPerson_Jump_Height = 1f;
+    public float MapEditor_FirstPerson_Step_Height = 0.45f;
+    // While walking: hide what the game doesn't draw, show a crosshair; on leaving, keep the camera where the player was
+    public bool MapEditor_FirstPerson_Hide_Helpers = true;
+    public bool MapEditor_FirstPerson_Crosshair = true;
+    public bool MapEditor_FirstPerson_Keep_Camera = false;
+    public bool MapEditor_FirstPerson_Show_Controls = true;
+    public Vector3 MapEditor_FirstPerson_Spawn_Color = new Vector3(40, 230, 120);
+    public Vector3 MapEditor_FirstPerson_Blocked_Color = new Vector3(255, 80, 60);
     public HavokCollisionType MapEditor_CollisionEditor_Layer = HavokCollisionType.Low;
     public bool MapEditor_CollisionEditor_Link_Layers = true;
     public float MapEditor_CollisionEditor_Link_Distance = 0.5f;
@@ -616,6 +639,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;
+    public bool Interface_MapEditor_Tool_FirstPerson = true;
     public bool Interface_MapEditor_Tool_MapExtraction = true;
     public bool Interface_MapEditor_Tool_TextureTransfer = true;
     public bool Interface_MapEditor_Tool_PartTransfer = true;
