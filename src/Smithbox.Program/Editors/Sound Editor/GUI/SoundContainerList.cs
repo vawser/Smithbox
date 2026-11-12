@@ -102,6 +102,14 @@ public class SoundContainerList
             View.SelectContainer(c);
         GUI.Tooltip(c.Path);
 
+        // File alias: the character / asset / map the bank is for
+        var alias = c.FileAlias;
+        if (!string.IsNullOrEmpty(alias))
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
+        }
+
         if (c.State == SoundLoadState.Failed)
         {
             ImGui.SameLine();
@@ -125,7 +133,7 @@ public class SoundContainerList
         foreach (var group in containers.GroupBy(c => c.Group))
         {
             var matches = filtering
-                ? group.Where(c => EditorFilters.IsMatch(Filter, c.Name, ExactFilter) || EditorFilters.IsMatch(Filter, c.Path, ExactFilter)).ToList()
+                ? group.Where(c => EditorFilters.IsMatch(Filter, c.Name, ExactFilter, c.FileAlias ?? "") || EditorFilters.IsMatch(Filter, c.Path, ExactFilter)).ToList()
                 : group.ToList();
             if (matches.Count == 0)
                 continue;

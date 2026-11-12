@@ -32,6 +32,9 @@ public sealed class WwiseBank
     public List<uint> EventIds = new();
     public Dictionary<uint, string> BankNames = new();
 
+    /// <summary>Offset of the HIRC chunk's body (for <see cref="WwiseHirc.Read"/>), or -1.</summary>
+    public int HircBody = -1;
+
     public static WwiseBank Read(byte[] d)
     {
         var b = new WwiseBank();
@@ -64,6 +67,7 @@ public sealed class WwiseBank
                     dataStart = body;
                     break;
                 case "HIRC":
+                    b.HircBody = body;
                     b.ReadHirc(d, body);
                     break;
                 case "STID":

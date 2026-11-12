@@ -22,7 +22,10 @@ public class SoundPlayerBar
     public void Draw()
     {
         var player = View.Player;
-        var sel = View.SelectedEntry;
+        // on the Events tab, Play plays the selected event's first sound
+        var sel = View.ActiveTab == SoundListTab.Events
+            ? View.SelectedEvent?.Entries.FirstOrDefault(e => e.CanPlay)
+            : View.SelectedEntry;
 
         // Now playing
         var current = player.Current;

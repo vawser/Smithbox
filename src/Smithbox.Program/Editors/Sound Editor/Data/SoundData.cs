@@ -19,6 +19,9 @@ public class SoundData : IDisposable
 
     public SoundMiddleware Middleware;
 
+    /// <summary>File aliases, Sounds aliases and the Wwise name table.</summary>
+    public SoundNames Names;
+
     /// <summary>Every container, sorted by group then name.</summary>
     public List<SoundContainer> Containers = new();
 
@@ -41,6 +44,10 @@ public class SoundData : IDisposable
 
         var type = Project.Descriptor.ProjectType;
         Middleware = EditorConditions.UsesWwise(type) ? SoundMiddleware.Wwise : SoundMiddleware.Fmod;
+
+        Names = new SoundNames(Project);
+        if (Middleware == SoundMiddleware.Wwise)
+            Names.LoadWwise();
 
         // The locator's dictionary holds only validated entries. That is right for AC6 (228 listed banks aren't in
         // the game), but every ER sd/sd_dlc02 entry is marked unvalidated although the files exist. So unvalidated

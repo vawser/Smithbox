@@ -3,6 +3,12 @@ using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.SoundEditor;
 
+public enum SoundListTab
+{
+    Sounds,
+    Events,
+}
+
 /// <summary>
 /// The editor's windows: Banks, Sounds, Properties and Player. Read-only in S2: list and play.
 /// </summary>
@@ -13,6 +19,7 @@ public class SoundEditorView : IDisposable
 
     public SoundContainerList ContainerList;
     public SoundEntryList EntryList;
+    public SoundEventList EventList;
     public SoundProperties Properties;
     public SoundPlayerBar PlayerBar;
 
@@ -20,6 +27,13 @@ public class SoundEditorView : IDisposable
 
     public SoundContainer SelectedContainer { get; private set; }
     public SoundEntry SelectedEntry { get; private set; }
+    public SoundEvent SelectedEvent { get; private set; }
+
+    /// <summary>The tab the Sounds window shows (Properties follows it).</summary>
+    public SoundListTab ActiveTab = SoundListTab.Sounds;
+
+    /// <summary>Set to switch tabs on the next frame (e.g. going from an event to one of its sounds).</summary>
+    public SoundListTab? RequestedTab;
 
     public SoundEditorView(SoundEditorScreen editor, ProjectEntry project)
     {
@@ -28,6 +42,7 @@ public class SoundEditorView : IDisposable
 
         ContainerList = new(this);
         EntryList = new(this);
+        EventList = new(this);
         Properties = new(this);
         PlayerBar = new(this);
 
@@ -44,6 +59,7 @@ public class SoundEditorView : IDisposable
 
         SelectedContainer = container;
         SelectedEntry = null;
+        SelectedEvent = null;
         EntryList.ResetScroll();
         container?.BeginLoad();
     }
@@ -58,6 +74,37 @@ public class SoundEditorView : IDisposable
 
         if (play || CFG.Current.SoundEditor_Play_On_Select)
             Play(entry);
+    }
+
+    /// <summary>Selects an event; playing it plays the first sound it can reach.</summary>
+    public void SelectEvent(SoundEvent ev, bool play = false)
+    {
+        SelectedEvent = ev;
+        if (ev == null)
+            return;
+
+        var first = ev.Entries.FirstOrDefault(e => e.CanPlay);
+        if (first != null)
+            RequestInfo(first);
+
+        if (first != null && (play || CFG.Current.SoundEditor_Play_On_Select))
+            Play(first);
+    }
+
+    /// <summary>Shows one of an event's sounds in the Sounds tab (from Properties).</summary>
+    public void GoToEntry(SoundEntry entry, bool play)
+    {
+        RequestedTab = SoundListTab.Sounds;
+        SelectEntry(entry, play);
+        EntryList.ScrollToSelection = true;
+    }
+
+    /// <summary>Shows an event in the Events tab (from a sound's "Played by").</summary>
+    public void GoToEvent(SoundEvent ev)
+    {
+        RequestedTab = SoundListTab.Events;
+        SelectEvent(ev);
+        EventList.ScrollToSelection = true;
     }
 
     public void Play(SoundEntry entry)

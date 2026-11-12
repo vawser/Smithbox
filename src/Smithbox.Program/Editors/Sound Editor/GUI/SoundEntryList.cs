@@ -19,6 +19,7 @@ public class SoundEntryList
     private List<SoundEntry> VisibleSource;
     private string VisibleFilter;
     private bool VisibleExact;
+    private int VisibleNamesVersion = -1;
 
     private bool ResetScrollPending;
     public bool ScrollToSelection;
@@ -35,31 +36,52 @@ public class SoundEntryList
         var c = View.SelectedContainer;
         GUI.TitleHeader(LOC.Get("SOUND_Sounds_Header"), LOC.Get("SOUND_Sounds_Header_TT"));
 
+        if (c == null || c.State != SoundLoadState.Loaded)
+        {
+            ImGui.BeginChild("soundEntryList", Vector2.Zero, ImGuiChildFlags.Borders);
+            if (c == null)
+                ImGui.TextDisabled(LOC.Get("SOUND_Sounds_Select_Bank"));
+            else if (c.State == SoundLoadState.Failed)
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("SOUND_Sounds_Failed", c.Name, c.Error));
+            else
+                ImGui.TextDisabled(LOC.Get("SOUND_Sounds_Loading", c.Name));
+            ImGui.EndChild();
+            return;
+        }
+
+        // Wwise banks: Sounds | Events. FMOD has no events until the FEV parser (S4b).
+        if (c.Kind == SoundContainerKind.WwiseBank && ImGui.BeginTabBar("soundListTabs"))
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("SOUND_Tab_Sounds")} ({c.Entries.Count})###soundTabSounds",
+                    View.RequestedTab == SoundListTab.Sounds ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None))
+            {
+                View.ActiveTab = SoundListTab.Sounds;
+                DrawSounds(c);
+                ImGui.EndTabItem();
+            }
+            if (ImGui.BeginTabItem($"{LOC.Get("SOUND_Tab_Events")} ({c.Events.Count})###soundTabEvents",
+                    View.RequestedTab == SoundListTab.Events ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None))
+            {
+                View.ActiveTab = SoundListTab.Events;
+                View.EventList.Draw(c);
+                ImGui.EndTabItem();
+            }
+            View.RequestedTab = null;
+            ImGui.EndTabBar();
+            return;
+        }
+
+        View.ActiveTab = SoundListTab.Sounds;
+        DrawSounds(c);
+    }
+
+    private void DrawSounds(SoundContainer c)
+    {
         ImGui.BeginChild("soundEntryListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("soundEditor_EntryList", ref Filter, ref ExactFilter);
         ImGui.EndChild();
 
         ImGui.BeginChild("soundEntryList", Vector2.Zero, ImGuiChildFlags.Borders);
-
-        if (c == null)
-        {
-            ImGui.TextDisabled(LOC.Get("SOUND_Sounds_Select_Bank"));
-            ImGui.EndChild();
-            return;
-        }
-
-        switch (c.State)
-        {
-            case SoundLoadState.NotLoaded:
-            case SoundLoadState.Loading:
-                ImGui.TextDisabled(LOC.Get("SOUND_Sounds_Loading", c.Name));
-                ImGui.EndChild();
-                return;
-            case SoundLoadState.Failed:
-                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("SOUND_Sounds_Failed", c.Name, c.Error));
-                ImGui.EndChild();
-                return;
-        }
 
         if (c.Entries.Count == 0)
         {
@@ -78,12 +100,13 @@ public class SoundEntryList
     private void DrawTable()
     {
         var flags = ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable;
-        if (!ImGui.BeginTable("soundEntryTable", 5, flags, Vector2.Zero))
+        if (!ImGui.BeginTable("soundEntryTable", 6, flags, Vector2.Zero))
             return;
 
         ImGui.TableSetupScrollFreeze(0, 1);
         ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Index"));
         ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Name"), ImGuiTableColumnFlags.WidthStretch);
+        ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Alias"), ImGuiTableColumnFlags.WidthStretch);
         ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Length"));
         ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Format"));
         ImGui.TableSetupColumn(LOC.Get("SOUND_Column_Source"));
@@ -140,6 +163,14 @@ public class SoundEntryList
             ImGui.TextDisabled($"{e.DisplayName} {LOC.Get(e.IsNotAudio ? "SOUND_Label_Not_Audio" : "SOUND_Label_Empty")}");
         else
             ImGui.Text(e.DisplayName);
+        if (e.SourceFile != null)
+            GUI.Tooltip(e.SourceFile);
+
+        // Alias (the project's Sounds alias for the sound ID in the name)
+        ImGui.TableNextColumn();
+        var alias = e.Alias;
+        if (!string.IsNullOrEmpty(alias))
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
 
         // Length
         ImGui.TableNextColumn();
@@ -174,6 +205,9 @@ public class SoundEntryList
         if (ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Name")}##copyName"))
             ImGui.SetClipboardText(e.DisplayName);
 
+        if (e.SoundId != null && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Sound_Id")}##copySoundId"))
+            ImGui.SetClipboardText(e.SoundId);
+
         if (e.MediaId != 0 && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Id")}##copyId"))
             ImGui.SetClipboardText(e.MediaId.ToString());
 
@@ -207,16 +241,21 @@ public class SoundEntryList
 
     private void BuildVisible(List<SoundEntry> entries)
     {
-        if (VisibleSource == entries && VisibleFilter == Filter && VisibleExact == ExactFilter)
+        // alias edits change what a filter matches
+        var namesVersion = View.Data?.Names?.Version ?? 0;
+        if (VisibleSource == entries && VisibleFilter == Filter && VisibleExact == ExactFilter && VisibleNamesVersion == namesVersion)
             return;
 
         VisibleSource = entries;
         VisibleFilter = Filter;
         VisibleExact = ExactFilter;
+        VisibleNamesVersion = namesVersion;
 
+        // name, alias, sound ID and media ID all match
         Visible = string.IsNullOrWhiteSpace(Filter)
             ? entries
-            : entries.Where(e => EditorFilters.IsMatch(Filter, e.DisplayName, ExactFilter) ||
+            : entries.Where(e => EditorFilters.IsMatch(Filter, e.DisplayName, ExactFilter, e.Alias ?? "") ||
+                                 (e.SoundId != null && EditorFilters.IsMatch(Filter, e.SoundId, ExactFilter)) ||
                                  (e.MediaId != 0 && EditorFilters.IsMatch(Filter, e.MediaId.ToString(), ExactFilter))).ToList();
     }
 }

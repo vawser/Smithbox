@@ -44,7 +44,7 @@ public class SoundEditorScreen : EditorScreen, IDisposable
     }
 
     /// <summary>
-    /// sound/select/&lt;bank name or path&gt;[/&lt;row index or media ID&gt;], e.g. sound/select/cs_c2010/12
+    /// sound/select/&lt;bank name or path&gt;[/&lt;event ID, media ID or row index&gt;], e.g. sound/select/cs_c2010/12
     /// </summary>
     private void ParseCommands(string[] commands)
     {
@@ -73,6 +73,15 @@ public class SoundEditorScreen : EditorScreen, IDisposable
             return;
 
         _pendingEntry = null;
+
+        // an event ID selects the event in the Events tab
+        var ev = p.Container.Events.FirstOrDefault(x => x.Id == p.Key);
+        if (ev != null)
+        {
+            View.GoToEvent(ev);
+            return;
+        }
+
         var e = p.Container.Entries.FirstOrDefault(x => x.MediaId == p.Key)
                 ?? (p.Key < p.Container.Entries.Count ? p.Container.Entries[(int)p.Key] : null);
         if (e != null)

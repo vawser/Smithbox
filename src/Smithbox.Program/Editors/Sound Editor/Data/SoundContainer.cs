@@ -48,6 +48,26 @@ public class SoundContainer
 
     public List<SoundEntry> Entries = new();
 
+    /// <summary>Wwise: the bank's events (empty for FMOD until the FEV parser, S4b).</summary>
+    public List<SoundEvent> Events = new();
+
+    private string _fileAlias;
+    private bool _fileAliasDone;
+
+    /// <summary>The character / asset / map the bank belongs to, from the project's aliases (worked out once).</summary>
+    public string FileAlias
+    {
+        get
+        {
+            if (!_fileAliasDone)
+            {
+                _fileAlias = Data?.Names?.FileAlias(this);
+                _fileAliasDone = Data?.Project.Handler.ProjectData?.Aliases != null;
+            }
+            return _fileAlias;
+        }
+    }
+
     // shown in Properties once loaded
     public string FormatInfo = "";
     public int EventCount;
@@ -100,8 +120,10 @@ public class SoundContainer
         {
             try
             {
+                _loadedEvents = new();
                 var entries = Load();
                 Entries = entries;
+                Events = _loadedEvents;
                 State = SoundLoadState.Loaded;
             }
             catch (Exception e)
@@ -118,6 +140,7 @@ public class SoundContainer
     {
         if (State == SoundLoadState.Loading) return;
         Entries = new();
+        Events = new();
         _bytes.Clear();
         State = SoundLoadState.NotLoaded;
         VgmstreamCli.Forget(CacheKey(null));
@@ -189,6 +212,7 @@ public class SoundContainer
                 CacheKey = cacheKey,
                 ReadBytes = () => _bytes.TryGetValue(key, out var b) ? b : null,
             };
+            e.ParseSoundId();
             entries.Add(e);
         }
         return entries;
@@ -227,7 +251,10 @@ public class SoundContainer
                 MediaId = id,
                 SoundObjectCount = sounds?.Count ?? 0,
                 Codec = sounds != null ? WwiseBank.PluginName(sounds[0].PluginId) : "",
+                Name = Data.Names?.MediaName(id) ?? "",
+                SourceFile = Data.Names?.MediaSourcePath(id),
             };
+            e.ParseSoundId();
 
             // the in-bank header (also present for prefetched sounds) gives format and the full length
             WemHeader header = null;
@@ -285,6 +312,77 @@ public class SoundContainer
 
             entries.Add(e);
         }
+
+        if (bank.HircBody >= 0)
+            _loadedEvents = BuildEvents(raw, bank, entries);
+
         return entries;
+    }
+
+    // built on the worker, published with Entries
+    private List<SoundEvent> _loadedEvents = new();
+
+    /// <summary>The bank's events, the sounds each can play (HIRC Event → Action → node → descendants), and their names.</summary>
+    private List<SoundEvent> BuildEvents(byte[] raw, WwiseBank bank, List<SoundEntry> entries)
+    {
+        var hirc = WwiseHirc.Read(raw, bank.HircBody, bank.Version);
+        var byMedia = new Dictionary<uint, SoundEntry>();
+        foreach (var e in entries) byMedia.TryAdd(e.MediaId, e);
+
+        var events = new List<SoundEvent>();
+        foreach (var he in hirc.Events)
+        {
+            var ev = new SoundEvent { Container = this, Index = events.Count, Id = he.Id };
+            foreach (var aid in he.ActionIds)
+            {
+                if (!hirc.Actions.TryGetValue(aid, out var a)) { ev.OtherActions++; continue; }
+                if (a.IsPlay)
+                {
+                    ev.PlayActions++;
+                    if (!hirc.Nodes.ContainsKey(a.TargetId)) ev.ExternalTargets++;
+                }
+                else if (a.IsStop) ev.StopActions++;
+                else ev.OtherActions++;
+            }
+            foreach (var mid in hirc.EventMedia(he))
+                if (byMedia.TryGetValue(mid, out var entry))
+                {
+                    ev.Entries.Add(entry);
+                    entry.PlayedBy.Add(ev);
+                }
+
+            var tableName = Data.Names?.EventName(he.Id);
+            if (tableName != null) { ev.Name = tableName; ev.NameSource = SoundEventNameSource.Table; }
+            events.Add(ev);
+        }
+
+        // unnamed events: the Play_/Stop_ + type + 9-digit rule, from the bank's own media sound IDs, then its ID range
+        var unnamed = new HashSet<uint>(events.Where(e => e.NameSource == SoundEventNameSource.None).Select(e => e.Id));
+        if (unnamed.Count > 0)
+        {
+            var soundIds = entries.Where(e => e.SoundId != null).Select(e => (e.SoundType, e.SoundId)).Distinct().ToList();
+            var found = SoundNameRules.MatchEventNames(unnamed, soundIds, Name, out var guessed);
+            foreach (var ev in events)
+                if (ev.NameSource == SoundEventNameSource.None && found.TryGetValue(ev.Id, out var n))
+                {
+                    ev.Name = n;
+                    ev.NameSource = guessed.Contains(ev.Id) ? SoundEventNameSource.Guess : SoundEventNameSource.Rule;
+                }
+        }
+
+        foreach (var ev in events)
+        {
+            var sid = SoundNameRules.ParseSoundId(ev.Name);
+            ev.SoundType = sid?.Type;
+            ev.SoundId = sid?.Id;
+        }
+
+        // Play events first, then by name (Stop_ events follow their Play_)
+        events = events.OrderBy(e => e.DisplayName.StartsWith("Stop_", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
+                       .ThenBy(e => e.NameSource == SoundEventNameSource.None ? 1 : 0)
+                       .ThenBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase)
+                       .ToList();
+        for (int i = 0; i < events.Count; i++) events[i].Index = i;
+        return events;
     }
 }
