@@ -95,6 +95,17 @@ Veldrid.ImageSharp            MIT           Copyright (c) 2017 Eric Mellino and 
 Vortice.Vulkan, Vortice.VulkanMemoryAllocator  MIT  Copyright (c) Amer Koleci and Contributors
 ZstdNet                       BSD-3-Clause  Copyright (c) 2016-2026, SKB Kontur
 
+vgmstream r2168 (vgmstream/, unmodified official win64 release, used by the Sound Editor to decode audio)
+  vgmstream-cli.exe             ISC           Copyright (c) 2008-2025 Adam Gashlin, Fastelbja, Ronny Elfert, bnnm, et al.
+                                              Full text: Licenses/vgmstream/COPYING.txt. https://github.com/vgmstream/vgmstream
+  avcodec/avformat/avutil/swresample-vgmstream  LGPL-2.1-or-later  FFmpeg developers. https://ffmpeg.org (dynamically linked)
+  libmpg123-0.dll               LGPL-2.1      mpg123 project. https://mpg123.de (dynamically linked)
+  libvorbis.dll                 BSD-3-Clause  Copyright (c) Xiph.Org Foundation
+  libspeex-1.dll                BSD-3-Clause  Copyright (c) Xiph.Org Foundation, Jean-Marc Valin
+  libcelt-0061.dll, libcelt-0110.dll  BSD-2-Clause  Copyright (c) Xiph.Org Foundation, Jean-Marc Valin, et al.
+  The LGPL libraries are separate DLLs and can be replaced by the user; their sources are available from the
+  projects above and from the vgmstream repository's build scripts.
+
 Note: DrSwizzler has no license in its repository or package. Until its
 author publishes one, redistribution rights are unclear.
 

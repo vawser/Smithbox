@@ -30,6 +30,10 @@
     <Content Include="NavGen.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <!-- vgmstream r2168 (Sound Editor decoding), see Licenses/vgmstream -->
+    <Content Include="vgmstream\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">

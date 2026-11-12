@@ -4,4 +4,3 @@
 
 - Animations: add representation of
     - Blending
-    - Root Motion
