@@ -2,6 +2,6 @@
 
 namespace Havok.hk2014;
 
-public class hkpRigidBody : hkpEntity
+public partial class hkpRigidBody : hkpEntity
 {
 }

@@ -8,7 +8,4 @@
     - Cutscenes are staged in maps + a set of parts associated with the cutscene
     - Typically animations play on the camera + parts
    
-- First-person Mode for Map Editor (player perspective)
-    - Would require collision checks and movement handling
-    
 - Add 'camera path' authoring for new camera hkxs for cutscenes

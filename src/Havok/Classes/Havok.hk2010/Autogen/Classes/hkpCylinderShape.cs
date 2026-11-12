@@ -2,7 +2,7 @@
 
 namespace Havok.hk2010;
 
-public class hkpCylinderShape : hkpConvexShape
+public partial class hkpCylinderShape : hkpConvexShape
 {
     public float m_cylRadius;
 

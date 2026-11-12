@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hkpListShape : hkpShapeCollection
+public partial class hkpListShape : hkpShapeCollection
 {
     public List<hkpListShapeChildInfo> m_childInfo = new();
 

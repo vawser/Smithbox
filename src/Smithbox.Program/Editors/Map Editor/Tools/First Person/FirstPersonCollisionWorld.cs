@@ -53,7 +53,11 @@ public class FirstPersonCollisionWorld
         Project = project;
     }
 
-    /// <summary>The games whose collision is read: those the collision bank holds (first build scope).</summary>
+    /// <summary>
+    /// The games whose collision is read: those the collision bank holds (ER, NR, AC6, DS3, DB_NT, SDT), and the older
+    /// ones read straight from their files (BB, DS1R, DS1, DES, DS2S). Not DS2, whose map collision Smithbox doesn't
+    /// locate.
+    /// </summary>
     public bool CanUse()
     {
         return Project.Descriptor.ProjectType is ProjectType.ER
@@ -61,7 +65,12 @@ public class FirstPersonCollisionWorld
             or ProjectType.AC6
             or ProjectType.DS3
             or ProjectType.DB_NT
-            or ProjectType.SDT;
+            or ProjectType.SDT
+            or ProjectType.BB
+            or ProjectType.DS1R
+            or ProjectType.DS1
+            or ProjectType.DES
+            or ProjectType.DS2S;
     }
 
     private record struct Settings(HavokCollisionType Layer, bool FallProtection, bool Assets, bool DummyAssets);
@@ -136,6 +145,8 @@ public class FirstPersonCollisionWorld
         public string MapId;
         public string Type;
         public string FileName;
+        public string BinderPath;
+        public string LoosePath;
         public Havok.HavokDocument Document;
 
         // Asset collision
@@ -252,6 +263,7 @@ public class FirstPersonCollisionWorld
         filteredParts = 0;
 
         var bank = View.HavokCollisionBank;
+        var game = Project.Descriptor.ProjectType.ToString();
         var primary = settings.Layer is HavokCollisionType.High ? "h" : "l";
         var fallback = primary == "h" ? "l" : "h";
         var assetCandidates = new Dictionary<string, Candidate>(StringComparer.OrdinalIgnoreCase);
@@ -275,9 +287,13 @@ public class FirstPersonCollisionWorld
                     bankNames.TryAdd(FirstPersonCollisionReader.NormalizeName(name), name);
             }
 
-            Candidate MapCandidate(string type, string fileName)
+            Candidate MapCandidate(string type, string model)
             {
-                var name = FirstPersonCollisionReader.NormalizeName(fileName);
+                var (path, entryName) = FirstPersonCollisionReader.MapCollisionSource(game, mapId, model, type);
+                var name = FirstPersonCollisionReader.NormalizeName(entryName ?? path);
+
+                // The bank holds the documents of its games (with any Collision Editor edits); the others are read
+                // from their binders or loose files
                 var bankName = bankNames.GetValueOrDefault(name);
 
                 return new Candidate
@@ -286,6 +302,8 @@ public class FirstPersonCollisionWorld
                     MapId = mapId,
                     Type = type,
                     FileName = name,
+                    BinderPath = entryName != null ? path : null,
+                    LoosePath = entryName == null ? path : null,
                     Document = bankName == null ? null : bank.PeekEditableDocument(bankName)
                 };
             }
@@ -314,18 +332,16 @@ public class FirstPersonCollisionWorld
                         continue;
                     }
 
-                    // l10_00_00_00_000100: the map's id, then the model's number
-                    var stem = $"{mapId.Substring(1)}_{modelName.Substring(1)}";
-
                     var job = NewJob(FirstPersonMeshKind.Map, mapId, entity, "map", world);
-                    job.Candidates.Add(MapCandidate(primary, primary + stem));
-                    job.Candidates.Add(MapCandidate(fallback, fallback + stem));
+                    job.Candidates.Add(MapCandidate(primary, modelName));
+                    job.Candidates.Add(MapCandidate(fallback, modelName));
                     jobs.Add(job);
 
+                    // Fall protection is only in the games that have it (ER, NR, AC6, DB_NT); elsewhere there's no file
                     if (settings.FallProtection)
                     {
                         var fall = NewJob(FirstPersonMeshKind.Map, mapId, entity, "fall", world);
-                        fall.Candidates.Add(MapCandidate("f", "f" + stem));
+                        fall.Candidates.Add(MapCandidate("f", modelName));
                         jobs.Add(fall);
                     }
 
@@ -566,9 +582,14 @@ public class FirstPersonCollisionWorld
         {
             triangles = FirstPersonCollisionReader.TrianglesOf(candidate.Document, candidate.FileName, error);
         }
+        else if (candidate.LoosePath != null)
+        {
+            // DES and DS1 keep each map collision file loose
+            triangles = FirstPersonCollisionReader.ReadCollisionFile(readFile, game, candidate.LoosePath, Array.Empty<string>(), error);
+        }
         else
         {
-            var binder = GetBinder(candidate.MapId, candidate.Type, game, readFile, error);
+            var binder = GetBinder(candidate.MapId, candidate.BinderPath, game, readFile, error);
             triangles = binder?.ReadTriangles(candidate.FileName, error);
         }
 
@@ -580,10 +601,11 @@ public class FirstPersonCollisionWorld
         return triangles;
     }
 
-    private FirstPersonCollisionReader.MapBinder GetBinder(string mapId, string type, string game, Func<string, byte[]> readFile,
+    private FirstPersonCollisionReader.MapBinder GetBinder(string mapId, string path, string game, Func<string, byte[]> readFile,
         Action<string> error)
     {
-        var key = $"{mapId}|{type}";
+        // By map, so a map's load or unload drops its binders (DS2S keeps every map's in model/map)
+        var key = $"{mapId}|{path}";
 
         lock (CacheLock)
         {
@@ -595,7 +617,7 @@ public class FirstPersonCollisionWorld
 
         try
         {
-            binder = FirstPersonCollisionReader.MapBinder.Read(readFile, game, mapId, type);
+            binder = FirstPersonCollisionReader.MapBinder.ReadAt(readFile, game, path);
         }
         catch (Exception e)
         {
@@ -617,16 +639,17 @@ public class FirstPersonCollisionWorld
     /// Whether a collision part is collided with by the player: its HitFilterID is 8. A part without the field (not
     /// expected in the supported games) counts as the player's.
     /// </summary>
-    private static bool IsPlayerCollision(MsbEntity entity)
+    /// <summary>The player's hit filter in this game, for the tool's status line.</summary>
+    public string PlayerHitFilterName => Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S ? "Map (100)" : "8";
+
+    private bool IsPlayerCollision(MsbEntity entity)
     {
         try
         {
-            return entity.GetPropertyValue("HitFilterID") switch
-            {
-                byte b => b == PlayerHitFilter,
-                null => true,
-                var other => Convert.ToInt32(other) == PlayerHitFilter
-            };
+            // A byte in most games, an enum in DS2 (whose player collision is Map, 100)
+            var value = entity.GetPropertyValue("HitFilterID");
+
+            return value == null || FirstPersonCollisionReader.IsPlayerHitFilter(Project.Descriptor.ProjectType.ToString(), Convert.ToInt32(value));
         }
         catch
         {

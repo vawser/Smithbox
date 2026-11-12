@@ -2,7 +2,7 @@
 
 namespace Havok.hk2010;
 
-public class hkpBoxShape : hkpConvexShape
+public partial class hkpBoxShape : hkpConvexShape
 {
     public Vector4 m_halfExtents = new();
 

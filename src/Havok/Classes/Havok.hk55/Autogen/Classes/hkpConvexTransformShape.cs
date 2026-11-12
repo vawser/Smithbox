@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkpConvexTransformShape : hkpConvexTransformShapeBase
+public partial class hkpConvexTransformShape : hkpConvexTransformShapeBase
 {
     public hkQsTransform m_transform = new();
 

@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkpConvexTranslateShape : hkpConvexShape
+public partial class hkpConvexTranslateShape : hkpConvexShape
 {
     public hkpSingleShapeContainer m_childShape = new();
 

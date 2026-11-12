@@ -20,3 +20,5 @@
 - Nav Editor:
     - Add navigation editor support for the other project types: DS1/DS1R/DES
 
+- First Person:
+    - Add Fly toggle: enables noclip movement

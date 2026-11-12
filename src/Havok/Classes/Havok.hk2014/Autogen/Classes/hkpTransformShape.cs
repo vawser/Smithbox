@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hkpTransformShape : hkpShape
+public partial class hkpTransformShape : hkpShape
 {
     public hkpSingleShapeContainer m_childShape = new();
 

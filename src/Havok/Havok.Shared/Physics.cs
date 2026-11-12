@@ -102,6 +102,119 @@ public interface IHavokCompoundShape
     IEnumerable<(object Shape, Matrix4x4 Transform)> Instances { get; }
 }
 
+/// <summary>
+/// A compressed mesh's extern shapes (hknp 2018/2019): convex shapes placed with the mesh, such as the boxes and
+/// cylinders of some AC6 assets, which the mesh's own primitives don't hold.
+/// </summary>
+public interface IHavokExternShapes
+{
+    IEnumerable<(object Shape, Matrix4x4 Transform)> ExternShapes { get; }
+}
+
+/// <summary>hkpBoxShape: a box about the origin, its half extents grown by the convex radius.</summary>
+public interface IHavokBox
+{
+    Vector3 HalfExtents { get; }
+}
+
+/// <summary>hkpCylinderShape: a cylinder between two points.</summary>
+public interface IHavokCylinder
+{
+    Vector3 A { get; }
+
+    Vector3 B { get; }
+
+    float Radius { get; }
+}
+
+/// <summary>hkpCapsuleShape: the points within a radius of a segment.</summary>
+public interface IHavokCapsule
+{
+    Vector3 A { get; }
+
+    Vector3 B { get; }
+
+    float Radius { get; }
+}
+
+/// <summary>hkpSphereShape: a sphere about the origin.</summary>
+public interface IHavokSphere
+{
+    float Radius { get; }
+}
+
+/// <summary>hkpConvexVerticesShape: a convex shape given as its points; the hull is made from them.</summary>
+public interface IHavokConvexPoints
+{
+    IReadOnlyList<Vector3> Points { get; }
+}
+
+/// <summary>Helpers for the primitive views of each SDK.</summary>
+public static class HavokViewMath
+{
+    /// <summary>
+    /// An hkTransform as read (rotation rows, translation in the fourth row), with its fourth column cleared: the
+    /// reader keeps the vectors' w there, and a zero M44 drops the translation when matrices are combined.
+    /// </summary>
+    public static Matrix4x4 Clean(Matrix4x4 m)
+    {
+        m.M14 = 0;
+        m.M24 = 0;
+        m.M34 = 0;
+        m.M44 = 1;
+        return m;
+    }
+
+    /// <summary>An hkQsTransform as a matrix: scale (none if zero), then rotation, then translation.</summary>
+    public static Matrix4x4 QsTransform(Vector4 translation, Quaternion rotation, Vector4 scale)
+    {
+        var s = new Vector3(scale.X, scale.Y, scale.Z);
+        if (s == Vector3.Zero) s = Vector3.One;
+        if (rotation.LengthSquared() < 1e-6f) rotation = Quaternion.Identity;
+        return Matrix4x4.CreateScale(s) * Matrix4x4.CreateFromQuaternion(Quaternion.Normalize(rotation))
+            * Matrix4x4.CreateTranslation(translation.X, translation.Y, translation.Z);
+    }
+
+    /// <summary>The rotation of an hkTransform as read.</summary>
+    public static Quaternion Rotation(Matrix4x4 m)
+    {
+        var clean = Clean(m);
+        clean.Translation = Vector3.Zero;
+        var q = Quaternion.CreateFromRotationMatrix(clean);
+        return float.IsFinite(q.X) && q.LengthSquared() > 1e-6f ? Quaternion.Normalize(q) : Quaternion.Identity;
+    }
+
+    /// <summary>The points of hkpConvexVerticesShape's rotated vertices: blocks of four, x, y and z in rows.</summary>
+    public static List<Vector3> FourTransposedPoints(IEnumerable<Matrix4x4> blocks, int count)
+    {
+        var points = new List<Vector3>(count);
+
+        foreach (var m in blocks)
+        {
+            for (var k = 0; k < 4 && points.Count < count; k++)
+                points.Add(new Vector3(m[0, k], m[1, k], m[2, k]));
+        }
+
+        return points;
+    }
+
+    /// <summary>As above, from 5.5's blocks of three vectors (x, y, z of four points each).</summary>
+    public static List<Vector3> FourVectorsPoints(IEnumerable<(Vector4 X, Vector4 Y, Vector4 Z)> blocks, int count)
+    {
+        var points = new List<Vector3>(count);
+
+        foreach (var (x, y, z) in blocks)
+        {
+            for (var k = 0; k < 4 && points.Count < count; k++)
+                points.Add(new Vector3(Get(x, k), Get(y, k), Get(z, k)));
+        }
+
+        return points;
+    }
+
+    private static float Get(Vector4 v, int i) => i switch { 0 => v.X, 1 => v.Y, 2 => v.Z, _ => v.W };
+}
+
 /// <summary>hkpStorageExtendedMeshShape: the older (hkp) games' mesh collision.</summary>
 public interface IHavokMeshStorageShape
 {

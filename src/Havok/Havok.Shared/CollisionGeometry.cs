@@ -51,6 +51,20 @@ public static class CollisionGeometry
                 if (triangles.Count > 0) result.Add(triangles);
             }
         }
+
+        // No mesh: the hkp rigid bodies of an object (DES, DS1, DS1R, DS2S), each its primitive shapes placed by the
+        // body's transform. Map collision always has its mesh, so it is read as before.
+        if (result.Count == 0)
+        {
+            foreach (IHavokBody body in list.OfType<IHavokBody>())
+            {
+                var triangles = new List<Vector3>();
+                try { AppendTriangles(body.Shape, BodyTransform(body), triangles); }
+                catch (Exception e) { onError?.Invoke(body.Shape, e); continue; }
+                if (triangles.Count > 0) result.Add(triangles);
+            }
+        }
+
         return result;
     }
 
@@ -118,6 +132,26 @@ public static class CollisionGeometry
                     triangles.Add(Vector3.Transform(b, transform));
                     triangles.Add(Vector3.Transform(c, transform));
                 }
+                if (shape is IHavokExternShapes externs)
+                    foreach (var (child, local) in externs.ExternShapes) AppendTriangles(child, local * transform, triangles);
+                return true;
+            case IHavokMeshStorageShape storages:
+                foreach (var storage in storages.MeshStorages) AppendTriangles(storage, transform, triangles);
+                return true;
+            case IHavokBox box:
+                AppendBox(box.HalfExtents, transform, triangles);
+                return true;
+            case IHavokCylinder cylinder:
+                AppendCylinder(cylinder.A, cylinder.B, cylinder.Radius, transform, triangles, caps: false);
+                return true;
+            case IHavokCapsule capsule:
+                AppendCylinder(capsule.A, capsule.B, capsule.Radius, transform, triangles, caps: true);
+                return true;
+            case IHavokSphere sphere:
+                AppendCylinder(Vector3.Zero, Vector3.Zero, sphere.Radius, transform, triangles, caps: true);
+                return true;
+            case IHavokConvexPoints points:
+                AppendHull(points.Points, transform, triangles);
                 return true;
             case IHavokTriangleMesh mesh:
                 for (int i = 0; i < mesh.TriangleCount; i++)
@@ -148,6 +182,215 @@ public static class CollisionGeometry
                 return false;
         }
     }
+
+    #region Primitives
+
+    private static void Add(List<Vector3> triangles, Matrix4x4 transform, Vector3 a, Vector3 b, Vector3 c)
+    {
+        triangles.Add(Vector3.Transform(a, transform));
+        triangles.Add(Vector3.Transform(b, transform));
+        triangles.Add(Vector3.Transform(c, transform));
+    }
+
+    /// <summary>A box about the origin: 12 triangles, wound outward.</summary>
+    public static void AppendBox(Vector3 half, Matrix4x4 transform, List<Vector3> triangles)
+    {
+        Vector3 C(int x, int y, int z) => new(x * half.X, y * half.Y, z * half.Z);
+
+        // Each face by its outward axis and two in-plane axes, as a quad of two triangles
+        foreach (var (n, u, v) in new[]
+        {
+            (new Vector3(1, 0, 0), new Vector3(0, 1, 0), new Vector3(0, 0, 1)),
+            (new Vector3(-1, 0, 0), new Vector3(0, 0, 1), new Vector3(0, 1, 0)),
+            (new Vector3(0, 1, 0), new Vector3(0, 0, 1), new Vector3(1, 0, 0)),
+            (new Vector3(0, -1, 0), new Vector3(1, 0, 0), new Vector3(0, 0, 1)),
+            (new Vector3(0, 0, 1), new Vector3(1, 0, 0), new Vector3(0, 1, 0)),
+            (new Vector3(0, 0, -1), new Vector3(0, 1, 0), new Vector3(1, 0, 0)),
+        })
+        {
+            var p00 = (n - u - v) * half;
+            var p10 = (n + u - v) * half;
+            var p11 = (n + u + v) * half;
+            var p01 = (n - u + v) * half;
+            Add(triangles, transform, p00, p10, p11);
+            Add(triangles, transform, p00, p11, p01);
+        }
+    }
+
+    /// <summary>
+    /// A cylinder from a to b (16 sides), or with caps a capsule (half spheres on the ends, 4 rings each); a and b equal
+    /// with caps is a sphere.
+    /// </summary>
+    public static void AppendCylinder(Vector3 a, Vector3 b, float radius, Matrix4x4 transform, List<Vector3> triangles, bool caps)
+    {
+        const int sides = 16;
+        const int rings = 4;
+
+        if (radius <= 0)
+            return;
+
+        var axis = b - a;
+        var length = axis.Length();
+        var dir = length > 1e-6f ? axis / length : Vector3.UnitY;
+        var helper = MathF.Abs(dir.Y) < 0.9f ? Vector3.UnitY : Vector3.UnitX;
+        var u = Vector3.Normalize(Vector3.Cross(dir, helper));
+        var w = Vector3.Cross(dir, u);
+
+        Vector3 Ring(int i) => u * MathF.Cos(i * MathF.Tau / sides) + w * MathF.Sin(i * MathF.Tau / sides);
+
+        // The side
+        if (length > 1e-6f)
+        {
+            for (var i = 0; i < sides; i++)
+            {
+                var r0 = Ring(i) * radius;
+                var r1 = Ring(i + 1) * radius;
+                Add(triangles, transform, a + r0, b + r1, b + r0);
+                Add(triangles, transform, a + r0, a + r1, b + r1);
+            }
+        }
+
+        if (!caps)
+        {
+            // Flat ends
+            for (var i = 0; i < sides; i++)
+            {
+                Add(triangles, transform, a, a + Ring(i + 1) * radius, a + Ring(i) * radius);
+                Add(triangles, transform, b, b + Ring(i) * radius, b + Ring(i + 1) * radius);
+            }
+
+            return;
+        }
+
+        // Half spheres: rings from the equator to the pole, on each end
+        foreach (var (centre, pole) in new[] { (b, dir), (a, -dir) })
+        {
+            for (var k = 0; k < rings; k++)
+            {
+                var t0 = k * MathF.PI / 2 / rings;
+                var t1 = (k + 1) * MathF.PI / 2 / rings;
+
+                for (var i = 0; i < sides; i++)
+                {
+                    Vector3 P(float t, int j) => centre + (Ring(j) * MathF.Cos(t) + pole * MathF.Sin(t)) * radius;
+                    Add(triangles, transform, P(t0, i), P(t0, i + 1), P(t1, i + 1));
+                    Add(triangles, transform, P(t0, i), P(t1, i + 1), P(t1, i));
+                }
+            }
+        }
+    }
+
+    /// <summary>The convex hull of a point set, as triangles (incremental hull; duplicate and inner points are dropped).</summary>
+    public static void AppendHull(IReadOnlyList<Vector3> points, Matrix4x4 transform, List<Vector3> triangles)
+    {
+        foreach (var (a, b, c) in ConvexHull(points))
+            Add(triangles, transform, points[a], points[b], points[c]);
+    }
+
+    /// <summary>
+    /// The faces of the convex hull of a point set (indices into it, wound outward). Incremental: a starting
+    /// tetrahedron, then each point outside the hull replaces the faces it sees, joined to the edges around them.
+    /// Fewer than 4 points, or points all in a plane, give no faces.
+    /// </summary>
+    public static List<(int A, int B, int C)> ConvexHull(IReadOnlyList<Vector3> points)
+    {
+        var faces = new List<(int A, int B, int C)>();
+        var n = points.Count;
+
+        if (n < 4)
+            return faces;
+
+        var min = points[0];
+        var max = points[0];
+        foreach (var p in points) { min = Vector3.Min(min, p); max = Vector3.Max(max, p); }
+        var eps = MathF.Max(1e-6f, (max - min).Length() * 1e-5f);
+
+        // The starting tetrahedron: two far points, the point furthest from their line, the one furthest from that plane
+        int i0 = 0, i1 = -1, i2 = -1, i3 = -1;
+        var best = 0f;
+        for (var i = 1; i < n; i++) { var d = Vector3.DistanceSquared(points[i], points[i0]); if (d > best) { best = d; i1 = i; } }
+        if (i1 < 0 || best < eps * eps) return faces;
+
+        best = 0;
+        var line = Vector3.Normalize(points[i1] - points[i0]);
+        for (var i = 0; i < n; i++)
+        {
+            var v = points[i] - points[i0];
+            var d = (v - line * Vector3.Dot(v, line)).LengthSquared();
+            if (d > best) { best = d; i2 = i; }
+        }
+        if (i2 < 0 || best < eps * eps) return faces;
+
+        best = 0;
+        var normal = Vector3.Normalize(Vector3.Cross(points[i1] - points[i0], points[i2] - points[i0]));
+        for (var i = 0; i < n; i++)
+        {
+            var d = MathF.Abs(Vector3.Dot(points[i] - points[i0], normal));
+            if (d > best) { best = d; i3 = i; }
+        }
+        if (i3 < 0 || best < eps) return faces;
+
+        var centroid = (points[i0] + points[i1] + points[i2] + points[i3]) / 4;
+
+        // A face facing away from the centroid
+        (int, int, int) Outward(int a, int b, int c)
+        {
+            var nrm = Vector3.Cross(points[b] - points[a], points[c] - points[a]);
+            return Vector3.Dot(nrm, points[a] - centroid) >= 0 ? (a, b, c) : (a, c, b);
+        }
+
+        faces.Add(Outward(i0, i1, i2));
+        faces.Add(Outward(i0, i1, i3));
+        faces.Add(Outward(i0, i2, i3));
+        faces.Add(Outward(i1, i2, i3));
+
+        bool Sees((int A, int B, int C) f, Vector3 p)
+        {
+            var a = points[f.A];
+            var nrm = Vector3.Cross(points[f.B] - a, points[f.C] - a);
+            var length = nrm.Length();
+            return length > 1e-12f && Vector3.Dot(nrm / length, p - a) > eps;
+        }
+
+        for (var i = 0; i < n; i++)
+        {
+            if (i == i0 || i == i1 || i == i2 || i == i3)
+                continue;
+
+            var p = points[i];
+            var visible = new List<int>();
+
+            for (var f = 0; f < faces.Count; f++)
+                if (Sees(faces[f], p))
+                    visible.Add(f);
+
+            if (visible.Count == 0)
+                continue;
+
+            // The horizon: edges of visible faces whose twin (reversed) edge isn't on a visible face
+            var edges = new HashSet<(int, int)>();
+            foreach (var f in visible)
+            {
+                var (a, b, c) = faces[f];
+                edges.Add((a, b));
+                edges.Add((b, c));
+                edges.Add((c, a));
+            }
+
+            var horizon = edges.Where(e => !edges.Contains((e.Item2, e.Item1))).ToList();
+
+            for (var k = visible.Count - 1; k >= 0; k--)
+                faces.RemoveAt(visible[k]);
+
+            // Kept faces and the new ones keep their winding: an edge (a, b) of a removed face becomes (a, b, i)
+            foreach (var (a, b) in horizon)
+                faces.Add((a, b, i));
+        }
+
+        return faces;
+    }
+
+    #endregion
 
     /// <summary>
     /// A compressed mesh's triangles in local space, with their shape keys. A quad gives two triangles: its first,

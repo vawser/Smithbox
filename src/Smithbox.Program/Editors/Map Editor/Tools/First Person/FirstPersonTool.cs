@@ -517,7 +517,7 @@ public partial class FirstPersonTool
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Map", status.Maps, status.MapParts, $"{status.MapTriangles:N0}"));
 
             if (status.MapPartsFiltered > 0)
-                GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Map_Filtered", status.MapPartsFiltered, FirstPersonCollisionWorld.PlayerHitFilter));
+                GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Map_Filtered", status.MapPartsFiltered, World.PlayerHitFilterName));
 
             if (status.MapPartsFallback > 0 || status.MapPartsMissing > 0)
                 GUI.WrappedText(LOC.Get("MAP_FirstPerson_Built_Map_Other", status.MapPartsFallback, status.MapPartsMissing));

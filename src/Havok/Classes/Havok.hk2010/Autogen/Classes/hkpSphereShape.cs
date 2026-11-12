@@ -2,6 +2,6 @@
 
 namespace Havok.hk2010;
 
-public class hkpSphereShape : hkpConvexShape
+public partial class hkpSphereShape : hkpConvexShape
 {
 }

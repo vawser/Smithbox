@@ -66,7 +66,7 @@
     { "Key": "MAP_FirstPerson_Keep_Camera_TT", "Text": "On leaving, keep the camera at the player's eyes instead of putting it back where it was before walking." },
 
     { "Key": "MAP_FirstPerson_Collision_Header", "Text": "Collision" },
-    { "Key": "MAP_FirstPerson_Collision_Header_TT", "Text": "The collision the player walks on, built from the loaded maps: collision parts with HitFilterID 8 (the player's collision) and the collision of assets. It is built when you pick a spawn, and again when a map is loaded or unloaded, collision is edited, or the options below change." },
+    { "Key": "MAP_FirstPerson_Collision_Header_TT", "Text": "The collision the player walks on, built from the loaded maps: collision parts with the player's hit filter (HitFilterID 8; Map in DS2) and the collision of assets. It is built when you pick a spawn, and again when a map is loaded or unloaded, collision is edited, or the options below change." },
     { "Key": "MAP_FirstPerson_Building", "Text": "Building: {0} / {1}" },
     { "Key": "MAP_FirstPerson_Build_Failed", "Text": "The collision couldn't be built. See the log for the error." },
     { "Key": "MAP_FirstPerson_Not_Built", "Text": "Not built yet. It is built when you pick a spawn." },
