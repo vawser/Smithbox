@@ -100,6 +100,7 @@ public partial class FirstPersonTool
             settings.JumpHeight = MathF.Max(0f, CFG.Current.MapEditor_FirstPerson_Jump_Height);
             settings.StepHeight = Math.Clamp(CFG.Current.MapEditor_FirstPerson_Step_Height, 0f, CFG.Current.MapEditor_FirstPerson_Height * 0.5f);
             settings.MaxSlopeCos = MathF.Cos(Math.Clamp(CFG.Current.MapEditor_FirstPerson_Max_Slope, 0f, 89f) * MathF.PI / 180f);
+            settings.SlideNotStandable = CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable;
             return settings;
         }
     }
@@ -226,9 +227,7 @@ public partial class FirstPersonTool
             return FirstPersonSpawnState.NoGround;
         }
 
-        var maxSlope = MathF.Cos(Math.Clamp(CFG.Current.MapEditor_FirstPerson_Max_Slope, 0f, 89f) * MathF.PI / 180f);
-
-        if (ground.Normal.Y < maxSlope)
+        if (!MoveSettings.CanStandOn(ground))
             return FirstPersonSpawnState.NotWalkable;
 
         // The capsule's bottom sphere touches sloped ground beside the point; push it clear, then check it stayed on
@@ -625,6 +624,9 @@ public partial class FirstPersonTool
         ImGui.SliderFloat("##mapFirstPersonStepHeight", ref CFG.Current.MapEditor_FirstPerson_Step_Height, 0f, 1f, LOC.Get("MAP_FirstPerson_Step_Height_Format"));
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Step_Height_TT"));
 
+        changed |= ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Slide_Not_Standable")}##mapFirstPersonSlide", ref CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable);
+        GUI.Tooltip(LOC.Get("MAP_FirstPerson_Slide_Not_Standable_TT"));
+
         if (ImGui.Button($"{LOC.Get("MAP_FirstPerson_Player_Reset")}##mapFirstPersonPlayerReset", new Vector2(-1, 0)))
         {
             CFG.Current.MapEditor_FirstPerson_Eye_Height = 1.5f;
@@ -636,6 +638,7 @@ public partial class FirstPersonTool
             CFG.Current.MapEditor_FirstPerson_Jump_Height = 1f;
             CFG.Current.MapEditor_FirstPerson_Gravity = 20f;
             CFG.Current.MapEditor_FirstPerson_Step_Height = 0.45f;
+            CFG.Current.MapEditor_FirstPerson_Slide_Not_Standable = true;
             changed = true;
         }
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Player_Reset_TT"));
@@ -695,9 +698,7 @@ public partial class FirstPersonTool
         if (!set.RayCast(feet + new Vector3(0, 0.5f, 0), -Vector3.UnitY, 0.5f + PlayerCapsule.Radius, out var ground))
             return FirstPersonSpawnState.NoGround;
 
-        var maxSlope = MathF.Cos(Math.Clamp(CFG.Current.MapEditor_FirstPerson_Max_Slope, 0f, 89f) * MathF.PI / 180f);
-
-        if (ground.Normal.Y < maxSlope)
+        if (!MoveSettings.CanStandOn(ground))
             return FirstPersonSpawnState.NotWalkable;
 
         return PlayerCapsule.Overlaps(set, feet, Allowance, out _) ? FirstPersonSpawnState.Blocked : FirstPersonSpawnState.Ready;

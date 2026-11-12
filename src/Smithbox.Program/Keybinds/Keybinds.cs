@@ -207,6 +207,12 @@ public enum KeybindID
     [Display(Name = "KEY_MapEditor_FirstPerson_Release", Description = "KEY_MapEditor_FirstPerson_Release_TT")]
     MapEditor_FirstPerson_Release,
 
+    [Display(Name = "KEY_MapEditor_FirstPerson_Noclip", Description = "KEY_MapEditor_FirstPerson_Noclip_TT")]
+    MapEditor_FirstPerson_Noclip,
+
+    [Display(Name = "KEY_MapEditor_FirstPerson_Teleport", Description = "KEY_MapEditor_FirstPerson_Teleport_TT")]
+    MapEditor_FirstPerson_Teleport,
+
     [Display(Name = "KEY_MapEditor_Enable_Game_Presence_Object", Description = "KEY_MapEditor_Enable_Game_Presence_TT")]
     MapEditor_Enable_Game_Presence,
 
@@ -536,6 +542,8 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Jump, new() { Key = Key.Space });
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Run, new() { Key = Key.ShiftLeft });
         InputManager.Bind(KeybindID.MapEditor_FirstPerson_Release, new() { Key = Key.Escape });
+        InputManager.Bind(KeybindID.MapEditor_FirstPerson_Noclip, new() { Key = Key.N });
+        InputManager.Bind(KeybindID.MapEditor_FirstPerson_Teleport, new() { Key = Key.T });
         InputManager.Bind(KeybindID.MapEditor_Enable_Game_Presence, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.MapEditor_Disable_Game_Presence, new() { Key = Key.Unknown });
 
@@ -720,6 +728,8 @@ public static class KeybindMetadata
         { KeybindID.MapEditor_FirstPerson_Jump, InputCategory.MapEditor },
         { KeybindID.MapEditor_FirstPerson_Run, InputCategory.MapEditor },
         { KeybindID.MapEditor_FirstPerson_Release, InputCategory.MapEditor },
+        { KeybindID.MapEditor_FirstPerson_Noclip, InputCategory.MapEditor },
+        { KeybindID.MapEditor_FirstPerson_Teleport, InputCategory.MapEditor },
         { KeybindID.MapEditor_Enable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Disable_Game_Presence, InputCategory.MapEditor },
         { KeybindID.MapEditor_Visibility_Flip, InputCategory.MapEditor },

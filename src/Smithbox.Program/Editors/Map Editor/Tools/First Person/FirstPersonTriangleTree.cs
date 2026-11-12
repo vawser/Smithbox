@@ -19,6 +19,9 @@ public sealed class FirstPersonTriangleTree
     /// <summary>The triangles, three corners each, in leaf order.</summary>
     public readonly Vector3[] Corners;
 
+    /// <summary>Each triangle's collision material, in leaf order; null if the triangles came without them.</summary>
+    public readonly uint[] Materials;
+
     // Node i: bounds, and either two children (Count == 0: Left, Left + 1) or a run of triangles (Start, Count)
     private readonly Vector3[] NodeMin;
     private readonly Vector3[] NodeMax;
@@ -34,7 +37,7 @@ public sealed class FirstPersonTriangleTree
     public Vector3 Max => NodeCountUsed > 0 ? NodeMax[0] : Vector3.Zero;
 
     /// <summary>Bytes held by the tree, for the build status.</summary>
-    public long MemoryBytes => Corners.Length * 12L + NodeCountUsed * (24L + 8L);
+    public long MemoryBytes => Corners.Length * 12L + NodeCountUsed * (24L + 8L) + (Materials?.Length ?? 0) * 4L;
 
     /// <summary>Builds the tree over a triangle list (three corners a triangle). Degenerate triangles are dropped.</summary>
     public FirstPersonTriangleTree(IReadOnlyList<Vector3> triangles)
@@ -137,14 +140,26 @@ public sealed class FirstPersonTriangleTree
 
         Corners = new Vector3[count * 3];
 
+        // The materials follow their triangles into leaf order, when the list has them
+        var materials = (triangles as FirstPersonTriangles)?.Materials;
+
+        if (materials != null && materials.Count * 3 == triangles.Count)
+            Materials = new uint[count];
+
         for (var i = 0; i < count; i++)
         {
             var t = keep[order[i]];
             Corners[i * 3] = triangles[t * 3];
             Corners[i * 3 + 1] = triangles[t * 3 + 1];
             Corners[i * 3 + 2] = triangles[t * 3 + 2];
+
+            if (Materials != null)
+                Materials[i] = materials[t];
         }
     }
+
+    /// <summary>The collision material of a triangle, or <see cref="FirstPersonTriangles.NoMaterial"/>.</summary>
+    public uint Material(int triangle) => Materials != null ? Materials[triangle] : FirstPersonTriangles.NoMaterial;
 
     /// <summary>
     /// Partitions order[start..start+n] by the cheapest binned surface area split along the longest centroid axis.

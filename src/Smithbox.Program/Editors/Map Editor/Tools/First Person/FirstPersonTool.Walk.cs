@@ -6,6 +6,7 @@ using StudioCore.Keybinds;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -35,6 +36,13 @@ public partial class FirstPersonTool
 
     private bool WantsViewportFocus;
     private int LastWalkFrame = -1;
+
+    // Names collision materials for the overlay, as the Collision Generator's picker does
+    private HavokEditor.CollisionMaterialPicker MaterialNames;
+
+    // The collision the session walks on, to notice a rebuild; and when the next automatic rebuild may start
+    private FirstPersonCollisionSet WalkedSet;
+    private int NextAutoBuildFrame;
     private string WalkStatus = "";
 
     /// <summary>The keybinds read while walking; every other shortcut is held off.</summary>
@@ -46,7 +54,9 @@ public partial class FirstPersonTool
         KeybindID.MoveRight,
         KeybindID.MapEditor_FirstPerson_Jump,
         KeybindID.MapEditor_FirstPerson_Run,
-        KeybindID.MapEditor_FirstPerson_Release
+        KeybindID.MapEditor_FirstPerson_Release,
+        KeybindID.MapEditor_FirstPerson_Noclip,
+        KeybindID.MapEditor_FirstPerson_Teleport
     };
 
     /// <summary>What "hide editor helpers" turns off: everything the game doesn't draw.</summary>
@@ -111,6 +121,8 @@ public partial class FirstPersonTool
         camera.CameraTransform.EulerRotation = new Vector3(0, euler.Y, 0);
 
         WalkViewport = viewport;
+        WalkedSet = World.Current;
+        NextAutoBuildFrame = 0;
         Picking = false;
         Hover = null;
         WalkStatus = "";
@@ -130,6 +142,10 @@ public partial class FirstPersonTool
     public void Exit()
     {
         FirstPersonMouse.Release();
+
+        // The release key's other shortcuts come back on the next frame (this frame's already ran)
+        FirstPersonMouse.HoldOff(null);
+        ReleaseConflictCache = null;
 
         if (!IsWalking)
             return;
@@ -192,10 +208,20 @@ public partial class FirstPersonTool
             if (InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Release))
             {
                 FirstPersonMouse.Release();
+
+                // From the next frame's shortcuts on, which run before this
+                FirstPersonMouse.HoldOff(ReleaseConflicts());
             }
             else
             {
                 Look(camera, FirstPersonMouse.Claim(centre));
+
+                if (InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Noclip))
+                    ToggleNoclip();
+
+                if (InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Teleport))
+                    TeleportToCrosshair(camera);
+
                 Controller.Update(World.Current, ReadInput(camera), dt);
 
                 if (Controller.FellOut && Spawn is Vector3 spawn)
@@ -207,7 +233,10 @@ public partial class FirstPersonTool
         }
         else
         {
-            // Paused: Escape again leaves, a click in the viewport carries on
+            // Paused: the editor's shortcuts work, but not those on the release key, which still means "leave"
+            FirstPersonMouse.HoldOff(ReleaseConflicts());
+
+            // Escape again leaves, a click in the viewport carries on
             if (InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Release))
             {
                 Exit();
@@ -246,11 +275,63 @@ public partial class FirstPersonTool
             return;
         }
 
+        // A map loaded or unloaded, collision edited, an option changed: rebuilt in the background, the walk going on
+        // over the old collision until the new one is in. A failed build waits for Build, and a build at most every 2 s.
+        var frame = ImGui.GetFrameCount();
+
+        if (World.IsOutOfDate && !World.IsBuilding && !World.Status.Failed && frame >= NextAutoBuildFrame)
+        {
+            NextAutoBuildFrame = frame + 120;
+            World.RequestBuild();
+        }
+
+        if (World.Current != WalkedSet && !World.IsBuilding)
+        {
+            WalkedSet = World.Current;
+
+            if (WalkedSet.GetBounds(out var min, out _))
+                Controller.KillHeight = min.Y - 50;
+
+            WalkStatus = LOC.Get("MAP_FirstPerson_Status_Rebuilt");
+
+            // Diagnostic for verification: remove once the rebuild is confirmed in the app
+            Smithbox.Log(typeof(FirstPersonTool), $"[First Person] Collision rebuilt mid-session: {World.Status.Describe()}", LogLevel.Debug);
+        }
+
         if (ImGui.GetFrameCount() - LastWalkFrame > 1 && FirstPersonMouse.IsCaptured)
         {
             Smithbox.Log(typeof(FirstPersonTool), "[First Person] Paused: the walked viewport stopped updating", LogLevel.Debug);
             FirstPersonMouse.Release();
         }
+    }
+
+    private HashSet<KeybindID> ReleaseConflictCache;
+
+    /// <summary>
+    /// The keybinds on the same key as the release key (Escape: Deselect All), held off while paused so leaving
+    /// doesn't also run them. Made once a session, as the bindings don't change while walking.
+    /// </summary>
+    private HashSet<KeybindID> ReleaseConflicts()
+    {
+        if (ReleaseConflictCache != null)
+            return ReleaseConflictCache;
+
+        var conflicts = new HashSet<KeybindID>();
+
+        if (InputManager.Bindings.TryGetValue(KeybindID.MapEditor_FirstPerson_Release, out var release))
+        {
+            foreach (var (action, bindings) in InputManager.Bindings)
+            {
+                if (action == KeybindID.MapEditor_FirstPerson_Release)
+                    continue;
+
+                if (bindings.Any(b => release.Any(r => r.Key != Key.Unknown && r.Key == b.Key && r.Ctrl == b.Ctrl && r.Shift == b.Shift && r.Alt == b.Alt)))
+                    conflicts.Add(action);
+            }
+        }
+
+        ReleaseConflictCache = conflicts;
+        return conflicts;
     }
 
     /// <summary>Once, after entering or carrying on, so Space and the keys don't go to the Tools window's buttons.</summary>
@@ -293,19 +374,61 @@ public partial class FirstPersonTool
         if (InputManager.IsDown(KeybindID.MoveLeft)) right -= 1;
 
         var rotation = camera.CameraTransform.Rotation;
-        var facing = Flat(Vector3.Transform(Vector3.UnitZ, rotation));
+        var look = Vector3.Normalize(Vector3.Transform(Vector3.UnitZ, rotation));
+        var facing = Flat(look);
         var side = Flat(Vector3.Transform(Vector3.UnitX, rotation));
         var move = facing * forward + side * right;
 
         if (move.LengthSquared() > 1)
             move = Vector3.Normalize(move);
 
+        // Flying goes where the camera looks, up and down included
+        var fly = look * forward + side * right;
+
+        if (fly.LengthSquared() > 1)
+            fly = Vector3.Normalize(fly);
+
         return new FirstPersonInput
         {
             Move = move,
+            Fly = fly,
             Run = InputManager.IsDown(KeybindID.MapEditor_FirstPerson_Run),
-            Jump = InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Jump)
+            Jump = InputManager.IsPressed(KeybindID.MapEditor_FirstPerson_Jump),
+            Rise = InputManager.IsDown(KeybindID.MapEditor_FirstPerson_Jump)
         };
+    }
+
+    /// <summary>Noclip on or off; off is refused while the player is too deep inside something to be put clear.</summary>
+    private void ToggleNoclip()
+    {
+        if (Controller.SetNoclip(World.Current, !Controller.Noclip))
+        {
+            WalkStatus = Controller.Noclip ? LOC.Get("MAP_FirstPerson_Status_Noclip_On") : "";
+        }
+        else
+        {
+            WalkStatus = LOC.Get("MAP_FirstPerson_Status_Noclip_Stuck");
+        }
+    }
+
+    /// <summary>The player to where the crosshair points, on the ground there or below.</summary>
+    private void TeleportToCrosshair(ViewportCamera camera)
+    {
+        var eye = Controller.Feet + new Vector3(0, CFG.Current.MapEditor_FirstPerson_Eye_Height, 0);
+        var look = Vector3.Normalize(Vector3.Transform(Vector3.UnitZ, camera.CameraTransform.Rotation));
+
+        if (FirstPersonController.FindStandingSpot(World.Current, PlayerCapsule, MoveSettings, eye, look, 5000, out var feet, out var target))
+        {
+            Controller.Teleport(feet);
+            WalkStatus = "";
+
+            // Diagnostic for verification: remove once teleporting is confirmed in the app
+            Smithbox.Log(typeof(FirstPersonTool), $"[First Person] Teleport to {feet} ({target.Mesh?.PartName}, {target.Distance:0.#} m away)", LogLevel.Debug);
+        }
+        else
+        {
+            WalkStatus = LOC.Get(target.Mesh == null ? "MAP_FirstPerson_Status_Teleport_Nothing" : "MAP_FirstPerson_Status_Teleport_No_Room");
+        }
     }
 
     private static Vector3 Flat(Vector3 v)
@@ -373,6 +496,8 @@ public partial class FirstPersonTool
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Run", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Run)));
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Jump", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Jump)));
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Look"));
+            GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Noclip", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Noclip)));
+            GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Teleport", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Teleport)));
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Control_Release", release));
         }
     }
@@ -389,6 +514,9 @@ public partial class FirstPersonTool
 
         ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Crosshair")}##mapFirstPersonCrosshair", ref CFG.Current.MapEditor_FirstPerson_Crosshair);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Crosshair_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Show_Surface")}##mapFirstPersonShowSurface", ref CFG.Current.MapEditor_FirstPerson_Show_Surface);
+        GUI.Tooltip(LOC.Get("MAP_FirstPerson_Show_Surface_TT"));
 
         ImGui.Checkbox($"{LOC.Get("MAP_FirstPerson_Keep_Camera")}##mapFirstPersonKeepCamera", ref CFG.Current.MapEditor_FirstPerson_Keep_Camera);
         GUI.Tooltip(LOC.Get("MAP_FirstPerson_Keep_Camera_TT"));
@@ -423,8 +551,26 @@ public partial class FirstPersonTool
             ? LOC.Get("MAP_FirstPerson_Overlay_Walking", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Release))
             : LOC.Get("MAP_FirstPerson_Overlay_Paused", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Release));
 
+        if (Controller?.Noclip == true)
+            text = LOC.Get("MAP_FirstPerson_Overlay_Noclip", InputManager.GetHint(KeybindID.MapEditor_FirstPerson_Noclip)) + "   " + text;
+
         var at = new Vector2(viewport.X, viewport.Y + viewport.Height) + new Vector2(10, -28) * scale;
         drawList.AddText(at + Vector2.One, shadow, text);
         drawList.AddText(at, white, text);
+
+        // The surface underfoot: its collision material, named from the project's HitMtrlParam
+        if (CFG.Current.MapEditor_FirstPerson_Show_Surface && Controller != null)
+        {
+            var material = Controller.GroundMaterial;
+            var surface = Controller.Noclip ? LOC.Get("MAP_FirstPerson_Surface_Flying")
+                : !Controller.Grounded ? LOC.Get("MAP_FirstPerson_Surface_Air")
+                : material == FirstPersonTriangles.NoMaterial ? LOC.Get("MAP_FirstPerson_Surface_None")
+                : (MaterialNames ??= new HavokEditor.CollisionMaterialPicker(Project)).Describe(material);
+
+            var line = LOC.Get("MAP_FirstPerson_Surface", surface);
+            var lineAt = at - new Vector2(0, 18) * scale;
+            drawList.AddText(lineAt + Vector2.One, shadow, line);
+            drawList.AddText(lineAt, white, line);
+        }
     }
 }

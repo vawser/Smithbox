@@ -92,12 +92,32 @@ public static class FirstPersonMouse
         Window = null;
     }
 
-    /// <summary>Called by the main loop after each frame: a capture nobody claimed this frame is let go.</summary>
+    private static bool HoldClaimedThisFrame;
+
+    /// <summary>
+    /// Holds these keybinds off (<see cref="InputManager.BlockedActions"/>) for this frame and the next one's shortcuts,
+    /// which run before the owner. Claimed every frame it is wanted; <see cref="EndFrame"/> lets go of it otherwise.
+    /// Null lets go now.
+    /// </summary>
+    public static void HoldOff(IReadOnlySet<KeybindID> actions)
+    {
+        InputManager.BlockedActions = actions;
+        HoldClaimedThisFrame = actions != null;
+    }
+
+    /// <summary>
+    /// Called by the main loop after each frame: a capture nobody claimed this frame is let go, and so are held-off
+    /// keybinds.
+    /// </summary>
     public static void EndFrame()
     {
         if (IsCaptured && !ClaimedThisFrame)
             Release();
 
+        if (InputManager.BlockedActions != null && !HoldClaimedThisFrame)
+            InputManager.BlockedActions = null;
+
         ClaimedThisFrame = false;
+        HoldClaimedThisFrame = false;
     }
 }

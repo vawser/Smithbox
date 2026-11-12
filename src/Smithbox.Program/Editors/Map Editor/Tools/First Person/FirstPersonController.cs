@@ -22,6 +22,12 @@ public struct FirstPersonMoveSettings
     /// <summary>A jump still works this long after walking off a ledge.</summary>
     public float CoyoteTime;
 
+    /// <summary>
+    /// Ground whose collision material has the Slide property (Slide1, Slide2) isn't stood on: the player slides off it,
+    /// as on a slope steeper than the limit.
+    /// </summary>
+    public bool SlideNotStandable;
+
     /// <summary>A jump pressed this long before landing happens on landing.</summary>
     public float JumpBuffer;
 
@@ -37,8 +43,13 @@ public struct FirstPersonMoveSettings
         AirAcceleration = 8f,
         MaxFallSpeed = 50f,
         CoyoteTime = 0.1f,
-        JumpBuffer = 0.1f
+        JumpBuffer = 0.1f,
+        SlideNotStandable = true
     };
+
+    /// <summary>Whether a ray hit (or ground below) is somewhere the player can stand: the slope and, if set, not Slide.</summary>
+    public bool CanStandOn(FirstPersonHit hit)
+        => hit.Normal.Y >= MaxSlopeCos && !(SlideNotStandable && FirstPersonCollisionReader.IsSlide(hit.Material));
 }
 
 /// <summary>What the player is asked to do this frame.</summary>
@@ -51,6 +62,15 @@ public struct FirstPersonInput
 
     /// <summary>Jump was pressed this frame (an edge, not held).</summary>
     public bool Jump;
+
+    /// <summary>
+    /// In noclip: the direction to fly in, in world space, with its vertical part (the camera's facing), length up to 1.
+    /// Ignored when walking.
+    /// </summary>
+    public Vector3 Fly;
+
+    /// <summary>In noclip: rise while held (the jump key).</summary>
+    public bool Rise;
 }
 
 /// <summary>
@@ -82,11 +102,26 @@ public sealed class FirstPersonController
     public bool Grounded { get; private set; }
     public Vector3 GroundNormal { get; private set; } = Vector3.UnitY;
 
+    /// <summary>The collision material underfoot while grounded, else <see cref="FirstPersonTriangles.NoMaterial"/>.</summary>
+    public uint GroundMaterial { get; private set; } = FirstPersonTriangles.NoMaterial;
+
+    // The material of the last ground probe's contact
+    private uint ProbedMaterial = FirstPersonTriangles.NoMaterial;
+
     /// <summary>Below this height the player has fallen out of the world.</summary>
     public float KillHeight = float.MinValue;
 
     /// <summary>Set when the player falls below the kill height; the owner respawns them.</summary>
     public bool FellOut { get; private set; }
+
+    /// <summary>Flying through everything: no gravity, no collision, along the camera's facing.</summary>
+    public bool Noclip { get; private set; }
+
+    /// <summary>Noclip flies this many times the walk (or run) speed.</summary>
+    public const float NoclipSpeedFactor = 2.5f;
+
+    /// <summary>Leaving noclip moves the player out of what they're in by at most this much, or not at all.</summary>
+    public const float NoclipExitReach = 1.5f;
 
     // Counters, for the survey and diagnostics
     public int StepCount { get; private set; }
@@ -114,6 +149,86 @@ public sealed class FirstPersonController
         SinceGrounded = 0;
         JumpQueued = 0;
         FellOut = false;
+    }
+
+    /// <summary>
+    /// Turns noclip on, or off. Off puts the player back under collision: pushed out of what they're in if that is
+    /// within <see cref="NoclipExitReach"/>, falling from there. If they're too deep in (inside a wall, under the map),
+    /// noclip stays on and false is returned.
+    /// </summary>
+    public bool SetNoclip(FirstPersonCollisionSet world, bool on)
+    {
+        if (on == Noclip)
+            return true;
+
+        if (on)
+        {
+            Noclip = true;
+            Grounded = false;
+            Velocity = Vector3.Zero;
+            return true;
+        }
+
+        var reach = new Vector3(NoclipExitReach + Capsule.Height);
+        world.CopyNearby(Feet - reach, Feet + reach, Nearby);
+
+        var feet = Feet;
+
+        if (!Capsule.Depenetrate(Nearby, ref feet, Allowance, 16) || Vector3.Distance(feet, Feet) > NoclipExitReach)
+            return false;
+
+        Noclip = false;
+        Feet = feet;
+        PreviousFeet = feet;
+        Velocity = Vector3.Zero;
+        Grounded = false;
+        SinceGrounded = Settings.CoyoteTime + 1;
+        return true;
+    }
+
+    /// <summary>
+    /// Where the player could stand at what a ray from the eye hits: on the surface if it is walkable, else (a wall, a
+    /// ceiling) on the ground below a point backed off from it. The feet are put clear of the collision, and the spot is
+    /// refused if they would have to move more than the radius to be (too tight), or there is no ground. For teleporting.
+    /// </summary>
+    public static bool FindStandingSpot(FirstPersonCollisionSet world, FirstPersonCapsule capsule, FirstPersonMoveSettings settings,
+        Vector3 eye, Vector3 direction, float maxDistance, out Vector3 feet, out FirstPersonHit target)
+    {
+        feet = default;
+
+        if (!world.RayCast(eye, direction, maxDistance, out target))
+            return false;
+
+        FirstPersonHit ground;
+
+        if (settings.CanStandOn(target))
+        {
+            ground = target;
+        }
+        else
+        {
+            // Off the wall by the radius (and a little), then down onto what is below
+            var back = target.Point + target.Normal * (capsule.Radius + 0.1f);
+
+            if (!world.RayCast(back + new Vector3(0, 0.25f, 0), -Vector3.UnitY, 200, out ground) || !settings.CanStandOn(ground))
+                return false;
+        }
+
+        feet = ground.Point + new Vector3(0, 0.01f, 0);
+        var start = feet;
+
+        if (!capsule.Depenetrate(world, ref feet, Allowance) || Vector3.Distance(start, feet) > capsule.Radius)
+            return false;
+
+        return true;
+    }
+
+    /// <summary>Moves the player to the feet, keeping noclip as it is.</summary>
+    public void Teleport(Vector3 feet)
+    {
+        var noclip = Noclip;
+        Reset(feet);
+        Noclip = noclip;
     }
 
     /// <summary>The feet between the last two steps, by how far into the next step this frame is.</summary>
@@ -160,6 +275,21 @@ public sealed class FirstPersonController
         PreviousFeet = Feet;
         StepCount++;
 
+        if (Noclip)
+        {
+            // Straight to the asked speed, along the facing; the jump key rises
+            var fly = input.Fly + (input.Rise ? Vector3.UnitY : Vector3.Zero);
+
+            if (fly.LengthSquared() > 1)
+                fly = Vector3.Normalize(fly);
+
+            Velocity = fly * (input.Run ? s.RunSpeed : s.WalkSpeed) * NoclipSpeedFactor;
+            Feet += Velocity * dt;
+            Grounded = false;
+            JumpQueued = 0;
+            return;
+        }
+
         if (input.Jump)
             JumpQueued = MathF.Max(JumpQueued, s.JumpBuffer);
 
@@ -171,7 +301,13 @@ public sealed class FirstPersonController
 
         var desired = move * (input.Run ? s.RunSpeed : s.WalkSpeed);
         var horizontal = new Vector3(Velocity.X, 0, Velocity.Z);
-        horizontal = MoveTowards(horizontal, desired, (Grounded ? s.GroundAcceleration : s.AirAcceleration) * dt);
+
+        // On the ground, towards the asked velocity (stopping when nothing is asked); in the air, steering only while a
+        // direction is asked, so a jump or a slide keeps its speed
+        if (Grounded)
+            horizontal = MoveTowards(horizontal, desired, s.GroundAcceleration * dt);
+        else if (move.LengthSquared() > 1e-6f)
+            horizontal = MoveTowards(horizontal, desired, s.AirAcceleration * dt);
 
         // Jumping and falling
         SinceGrounded = Grounded ? 0 : SinceGrounded + dt;
@@ -238,6 +374,7 @@ public sealed class FirstPersonController
             {
                 Grounded = true;
                 GroundNormal = normal;
+                GroundMaterial = ProbedMaterial;
                 velocity.Y = 0;
             }
             else
@@ -249,6 +386,9 @@ public sealed class FirstPersonController
         {
             Grounded = false;
         }
+
+        if (!Grounded)
+            GroundMaterial = FirstPersonTriangles.NoMaterial;
 
         if (landed && !Grounded)
             velocity.Y = MathF.Min(velocity.Y, 0);
@@ -284,11 +424,12 @@ public sealed class FirstPersonController
 
             for (var round = 0; round < 4; round++)
             {
-                if (!Capsule.Deepest(set, feet, Allowance, out var depth, out var normal, out var face, out var point, -2f))
+                if (!Capsule.Deepest(set, feet, Allowance, out var depth, out var normal, out var face, out var point, out var material, -2f, false))
                     break;
 
                 var amount = depth - Allowance * 0.5f;
-                var walkable = FirstPersonCapsule.IsGround(normal, face, Settings.MaxSlopeCos);
+                var walkable = FirstPersonCapsule.IsGround(normal, face, Settings.MaxSlopeCos)
+                    && !(Settings.SlideNotStandable && FirstPersonCollisionReader.IsSlide(material));
 
                 // While walking, an edge higher than a step is a wall, however its face lies
                 if (walkable && flatten && point.Y - feet.Y > Settings.StepHeight + 0.01f)
@@ -355,7 +496,8 @@ public sealed class FirstPersonController
             if (!Capsule.Deepest(set, test, Allowance, out _, out _, out _, out _, -2f))
                 continue;
 
-            if (!Capsule.Deepest(set, test, Allowance, out var depth, out var n, out _, out var contact, Settings.MaxSlopeCos))
+            if (!Capsule.Deepest(set, test, Allowance, out var depth, out var n, out _, out var contact, out var material,
+                Settings.MaxSlopeCos, Settings.SlideNotStandable))
                 return false;
 
             // Up out of the ground, by as much as pushing along its normal would
@@ -363,6 +505,7 @@ public sealed class FirstPersonController
             feet = test + new Vector3(0, lift, 0);
             normal = n;
             groundPoint = contact;
+            ProbedMaterial = material;
             return true;
         }
 

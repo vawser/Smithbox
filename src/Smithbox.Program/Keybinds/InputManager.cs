@@ -217,7 +217,15 @@ public static class InputManager
     /// </summary>
     public static IReadOnlySet<KeybindID> ExclusiveActions { get; set; }
 
-    private static bool IsBlocked(KeybindID action) => ExclusiveActions != null && !ExclusiveActions.Contains(action);
+    /// <summary>
+    /// While set, these actions read as up. Used by the first person mode while paused, so its release key (Escape)
+    /// doesn't also run the shortcuts bound to the same key (Deselect All). The owner clears it when done.
+    /// </summary>
+    public static IReadOnlySet<KeybindID> BlockedActions { get; set; }
+
+    private static bool IsBlocked(KeybindID action)
+        => (ExclusiveActions != null && !ExclusiveActions.Contains(action))
+        || (BlockedActions != null && BlockedActions.Contains(action));
 
     public static bool IsDown(KeybindID action)
     {

@@ -425,6 +425,22 @@
       "Text": "While walking in first person, gives the mouse back to the editor and pauses. Pressed again while paused, leaves first person. Click in the viewport to carry on walking."
     },
     {
+      "Key": "KEY_MapEditor_FirstPerson_Noclip",
+      "Text": "First Person: Noclip"
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Noclip_TT",
+      "Text": "While walking in first person, turns flying through walls on or off. In noclip the player flies where the camera looks, and Jump rises. Turning it off drops the player from where they are, if there's room."
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Teleport",
+      "Text": "First Person: Teleport"
+    },
+    {
+      "Key": "KEY_MapEditor_FirstPerson_Teleport_TT",
+      "Text": "While walking in first person, moves the player to where the crosshair points: onto the ground there, or onto the ground below if it points at a wall."
+    },
+    {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
       "Text": "Rotate Selection (+ x-axis)"
     },

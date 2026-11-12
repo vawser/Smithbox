@@ -405,6 +405,9 @@ public class CFG
     public bool MapEditor_FirstPerson_Crosshair = true;
     public bool MapEditor_FirstPerson_Keep_Camera = false;
     public bool MapEditor_FirstPerson_Show_Controls = true;
+    // Collision materials: Slide ground (Slide1/2) can't be stood on; the overlay names the surface underfoot
+    public bool MapEditor_FirstPerson_Slide_Not_Standable = true;
+    public bool MapEditor_FirstPerson_Show_Surface = true;
     public Vector3 MapEditor_FirstPerson_Spawn_Color = new Vector3(40, 230, 120);
     public Vector3 MapEditor_FirstPerson_Blocked_Color = new Vector3(255, 80, 60);
     public HavokCollisionType MapEditor_CollisionEditor_Layer = HavokCollisionType.Low;

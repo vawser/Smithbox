@@ -44,6 +44,9 @@ public struct FirstPersonHit
     public float Distance;
     public FirstPersonMesh Mesh;
     public int Triangle;
+
+    /// <summary>The triangle's collision material, or <see cref="FirstPersonTriangles.NoMaterial"/>.</summary>
+    public uint Material;
 }
 
 /// <summary>
@@ -100,7 +103,8 @@ public sealed class FirstPersonCollisionSet
                     Point = origin + direction * distance,
                     Normal = mesh.Tree.Normal(triangle),
                     Mesh = mesh,
-                    Triangle = triangle
+                    Triangle = triangle,
+                    Material = mesh.Tree.Material(triangle)
                 };
             }
         }

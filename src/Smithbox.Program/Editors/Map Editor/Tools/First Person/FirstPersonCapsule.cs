@@ -112,7 +112,16 @@ public readonly struct FirstPersonCapsule
     /// </summary>
     public bool Deepest(FirstPersonCollisionSet set, Vector3 feet, float allowance, out float depth, out Vector3 normal,
         out Vector3 face, out Vector3 point, float groundSlopeCos)
+        => Deepest(set, feet, allowance, out depth, out normal, out face, out point, out _, groundSlopeCos, false);
+
+    /// <summary>
+    /// As above, also giving the touched triangle's collision material. With slideNotGround, a triangle with the Slide
+    /// property isn't ground (<see cref="FirstPersonCollisionReader.IsSlide"/>).
+    /// </summary>
+    public bool Deepest(FirstPersonCollisionSet set, Vector3 feet, float allowance, out float depth, out Vector3 normal,
+        out Vector3 face, out Vector3 point, out uint material, float groundSlopeCos, bool slideNotGround)
     {
+        var bestMaterial = FirstPersonTriangles.NoMaterial;
         var bottom = Bottom(feet);
         var top = Top(feet);
         var radius = Radius;
@@ -142,20 +151,24 @@ public readonly struct FirstPersonCapsule
                 faceNormal = -faceNormal;
 
             var away = distance > 1e-5f ? (onSegment - onTriangle) / distance : faceNormal;
+            var triangleMaterial = mesh.Tree.Material(t);
 
-            if (groundSlopeCos > -1f && !IsGround(away, faceNormal, groundSlopeCos))
+            if (groundSlopeCos > -1f && (!IsGround(away, faceNormal, groundSlopeCos)
+                || slideNotGround && FirstPersonCollisionReader.IsSlide(triangleMaterial)))
                 return;
 
             best = d;
             direction = away;
             bestFace = faceNormal;
             bestPoint = onTriangle;
+            bestMaterial = triangleMaterial;
         });
 
         depth = best;
         normal = direction;
         face = bestFace;
         point = bestPoint;
+        material = bestMaterial;
         return direction != Vector3.Zero;
     }
 

@@ -279,15 +279,65 @@ public static class FirstPersonCollisionReader
         return ReadAssetTriangles(readFile, game, containerPath, names, onError);
     }
 
-    /// <summary>A read document's triangles, every submesh in one list.</summary>
+    /// <summary>
+    /// A read document's triangles, every submesh in one list, with each triangle's collision material where the file
+    /// has them: the FromSoftware parameters of hknp compressed meshes (DS3 and later). The triangles are the same as
+    /// <see cref="CollisionGeometry.Submeshes"/> gives, in the same order.
+    /// </summary>
     public static List<Vector3> TrianglesOf(Havok.HavokDocument document, string name, Action<string> onError = null)
     {
-        var triangles = new List<Vector3>();
+        var triangles = new FirstPersonTriangles();
 
-        foreach (var submesh in CollisionGeometry.Submeshes(document.Objects,
-            (shape, e) => onError?.Invoke($"{name}: {shape?.GetType().Name}: {e.Message}")))
+        void Error(object shape, Exception e) => onError?.Invoke($"{name}: {shape?.GetType().Name}: {e.Message}");
+
+        if (!document.Objects.Any(o => o is IHavokPhysicsScene or IHavokPhysicsSystem))
         {
-            triangles.AddRange(submesh);
+            foreach (var submesh in CollisionGeometry.Submeshes(document.Objects, Error))
+                triangles.AddUnknown(submesh);
+
+            return triangles;
+        }
+
+        foreach (var body in CollisionGeometry.Bodies(document.Objects))
+        {
+            try
+            {
+                var transform = CollisionGeometry.BodyTransform(body);
+                var shape = body.Shape;
+
+                if (shape is IHavokCompressedMesh mesh and not IHavokCompoundShape)
+                {
+                    var materialOfKey = CollisionEditorShapes.GetMaterialsByKey(shape);
+                    var shift = 32 - mesh.BitsPerKey;
+
+                    foreach (var (key, a, b, c) in CollisionGeometry.CompressedTriangles(mesh, keyed: true))
+                    {
+                        triangles.Add(Vector3.Transform(a, transform), Vector3.Transform(b, transform), Vector3.Transform(c, transform),
+                            materialOfKey.TryGetValue(key >> shift, out var material) ? material : FirstPersonTriangles.NoMaterial);
+                    }
+
+                    // The mesh's extern shapes (boxes, hulls) have no material of their own
+                    if (shape is IHavokExternShapes externs)
+                    {
+                        var extra = new List<Vector3>();
+
+                        foreach (var (child, local) in externs.ExternShapes)
+                            CollisionGeometry.AppendTriangles(child, local * transform, extra);
+
+                        triangles.AddUnknown(extra);
+                    }
+                }
+                else
+                {
+                    var other = new List<Vector3>();
+                    CollisionGeometry.AppendTriangles(shape, transform, other);
+                    triangles.AddUnknown(other);
+                }
+            }
+            catch (Exception e)
+            {
+                Error(body.Shape, e);
+            }
         }
 
         return triangles;
@@ -369,14 +419,63 @@ public static class FirstPersonCollisionReader
         }
     }
 
-    /// <summary>Places a triangle list by a world matrix, into a new list.</summary>
+    /// <summary>Places a triangle list by a world matrix, into a new list (keeping its materials).</summary>
     public static List<Vector3> Place(List<Vector3> local, Matrix4x4 world)
     {
-        var placed = new List<Vector3>(local.Count);
+        var placed = local is FirstPersonTriangles withMaterials
+            ? new FirstPersonTriangles(withMaterials.Materials)
+            : new List<Vector3>(local.Count);
 
         foreach (var v in local)
             placed.Add(Vector3.Transform(v, world));
 
         return placed;
+    }
+
+    /// <summary>
+    /// Whether a collision material has the OBJ2HKX Slide property (Slide1, Slide2: the hundreds 4 and 5), a surface
+    /// the character slides off.
+    /// </summary>
+    public static bool IsSlide(uint material)
+        => material != FirstPersonTriangles.NoMaterial && (material / 100 % 10) is 4 or 5;
+}
+
+/// <summary>
+/// A triangle list (three corners each) with each triangle's collision material, for the files that have them.
+/// <see cref="NoMaterial"/> where a triangle has none (primitive shapes, the older games' mesh storages).
+/// </summary>
+public sealed class FirstPersonTriangles : List<Vector3>
+{
+    public const uint NoMaterial = uint.MaxValue;
+
+    /// <summary>A material for each triangle (Count / 3 of them).</summary>
+    public readonly List<uint> Materials;
+
+    public FirstPersonTriangles()
+    {
+        Materials = new List<uint>();
+    }
+
+    /// <summary>A new list sharing another's materials, for the same triangles placed elsewhere.</summary>
+    public FirstPersonTriangles(List<uint> materials)
+    {
+        Materials = materials;
+    }
+
+    public void Add(Vector3 a, Vector3 b, Vector3 c, uint material)
+    {
+        Add(a);
+        Add(b);
+        Add(c);
+        Materials.Add(material);
+    }
+
+    /// <summary>Adds triangles with no material.</summary>
+    public void AddUnknown(List<Vector3> triangles)
+    {
+        AddRange(triangles);
+
+        for (var i = 0; i < triangles.Count / 3; i++)
+            Materials.Add(NoMaterial);
     }
 }
