@@ -378,6 +378,9 @@ public class VulkanViewport : IViewport
     {
         ViewportCamera.UpdateProjectionMatrix(true);
 
+        // An orthographic view's shadows are centred on the focus
+        ViewPipeline.FocusDepth = ViewportCamera.FocusDistance;
+
         // The scene's pixels start at the viewport's corner, in its own target; the overlays' are the window's
         ViewPipeline.UpdateSceneParameters(ViewportCamera.ProjectionMatrix, ViewportCamera.CameraTransform.CameraViewMatrixLH,
             ViewportCamera.CameraTransform.Position, CursorX, CursorY, (int)RenderViewport.X, (int)RenderViewport.Y);
@@ -684,11 +687,13 @@ public class VulkanViewport : IViewport
     /// <param name="box">The bounding box to frame</param>
     public void FrameBox(BoundingBox box, Vector3 offset, float distance = 5)
     {
-        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
         Vector3 pos = box.GetCenter();
         float radius = Vector3.Distance(box.Max, box.Min);
-        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + distance) + offset; 
+
         // 5 here is a offset so entities with 0 radius have a decent framing
+        FramePosition(pos, radius + distance);
+
+        ViewportCamera.CameraTransform.Position += offset;
     }
 
     /// <summary>
@@ -719,21 +724,37 @@ public class VulkanViewport : IViewport
         }
         else
         {
-            ViewportCamera.OrthographicSize = Math.Clamp(radius * 2.0f / Math.Min(aspectRatio, 1.0f),
-                ViewportCamera.OrthographicMinSize, ViewportCamera.OrthographicMaxSize);
-
-            ViewportCamera.UpdateProjectionMatrix();
+            // FramePosition sizes the view as a perspective would see it from this far, which fits the box
+            float size = radius * 2.0f / Math.Min(aspectRatio, 1.0f);
+            dist = size / (2.0f * Math.Max(ViewportCamera.HalfFovTangent, 1e-4f));
         }
 
         FramePosition(box.GetCenter(), dist);
     }
 
     /// <summary>
-    ///     Moves the camera position such that it is directly looking at a position.
+    ///     Moves the camera position such that it is directly looking at a position from a distance. An orthographic
+    ///     or oblique view is also zoomed to show what a perspective one would from there, and the position becomes the
+    ///     focus, where an oblique view is unsheared.
+    /// </summary>
     public void FramePosition(Vector3 pos, float dist)
     {
-        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
-        ViewportCamera.CameraTransform.Position = pos - camdir * dist;
+        var camera = ViewportCamera;
+        Vector3 camdir = Vector3.Transform(Vector3.UnitZ, camera.CameraTransform.RotationMatrix);
+        camera.CameraTransform.Position = pos - camdir * dist;
+        camera.FocusDistance = dist;
+
+        if (camera.ViewMode is not ViewMode.Perspective)
+        {
+            camera.OrthographicSize = Math.Clamp(2.0f * dist * ViewportCamera.HalfFovTangent,
+                camera.OrthographicMinSize, camera.OrthographicMaxSize);
+        }
+
+        // Drawing remakes it every frame; this is so picking before the next draw sees the new view
+        if (Width > 0 && Height > 0)
+        {
+            camera.UpdateProjectionMatrix();
+        }
     }
 
     /// <summary>
@@ -753,9 +774,11 @@ public class VulkanViewport : IViewport
 
         if (isOrthographic)
         {
-            // In orthographic projection, check if Z is within valid range
-            // Use a more lenient check to catch objects near the clipping planes
-            inFront = clip.Z >= -1.5f && clip.Z <= 1.5f;
+            // In orthographic projection, check if Z is within valid range (0..1, reversed). Lenient so objects
+            // near the clipping planes are caught, except while slicing, where the slab is the point: box selection
+            // then only takes what is in the slice
+            var margin = ViewportCamera.IsSlicing ? 0.001f : 0.5f;
+            inFront = clip.Z >= -margin && clip.Z <= 1.0f + margin;
 
             // No perspective divide needed for orthographic
             Vector2 ndc = new Vector2(clip.X, clip.Y);
@@ -832,23 +855,32 @@ public class VulkanViewport : IViewport
         return new Ray(ViewportCamera.CameraTransform.Position, worldCoords);
     }
 
+    /// <summary>
+    ///     The ray under a screen point for an orthographic or oblique camera. The rays are parallel, but an oblique's
+    ///     are sheared away from the camera's forward, so the ray runs between the point's spots on the near and far
+    ///     planes. Depth is reversed (near is 1, far is 0), and the near plane is usually behind the camera, so the ray
+    ///     starts there to reach everything that is drawn.
+    /// </summary>
     private Ray GetRayOrthographic(float x, float y)
     {
-        // For orthographic/oblique, all rays are parallel to the view direction
-        Vector3 direction = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
+        Matrix4x4 viewProjection = ViewportCamera.CameraTransform.CameraViewMatrixLH * ViewportCamera.ProjectionMatrix;
 
-        // Calculate world position at near plane
-        Vector4 clipCoords = new Vector4(x, y, -1.0f, 1.0f);
+        if (!Matrix4x4.Invert(viewProjection, out Matrix4x4 inverse))
+        {
+            Vector3 forward = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
+            return new Ray(ViewportCamera.CameraTransform.Position, Vector3.Normalize(forward));
+        }
 
-        Matrix4x4 invProj;
-        Matrix4x4.Invert(ViewportCamera.ProjectionMatrix, out invProj);
-        Vector4 viewCoords = Vector4.Transform(clipCoords, invProj);
+        Vector3 nearPoint = Unproject(new Vector4(x, y, 1.0f, 1.0f), inverse);
+        Vector3 farPoint = Unproject(new Vector4(x, y, 0.0f, 1.0f), inverse);
 
-        Matrix4x4 invView;
-        Matrix4x4.Invert(ViewportCamera.CameraTransform.CameraViewMatrixLH, out invView);
-        Vector3 worldPos = Vector4.Transform(viewCoords, invView).XYZ();
+        return new Ray(nearPoint, Vector3.Normalize(farPoint - nearPoint));
+    }
 
-        return new Ray(worldPos, Vector3.Normalize(direction));
+    private static Vector3 Unproject(Vector4 clip, Matrix4x4 inverseViewProjection)
+    {
+        Vector4 world = Vector4.Transform(clip, inverseViewProjection);
+        return world.XYZ() / (MathF.Abs(world.W) > 1e-12f ? world.W : 1.0f);
     }
 
     public bool MouseInViewport()

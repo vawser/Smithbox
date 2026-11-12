@@ -93,7 +93,7 @@ void main()
 	vec3 rgb = color.rgb * m.tuning.x;
 	if ((flags & FlagLit) != 0u)
 	{
-		vec3 toEye = normalize(sceneparam.eye.xyz - fsin_worldpos);
+		vec3 toEye = VIEW_DIRECTION(fsin_worldpos);
 		vec3 n = normalize(fsin_normal);
 		float facing = abs(dot(n, toEye));
 		rgb *= 0.45 + 0.55 * facing;

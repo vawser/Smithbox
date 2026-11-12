@@ -97,6 +97,14 @@
       "Text": "Add Viewport"
     },
     {
+      "Key": "EDITOR_Add_Axis_Viewports",
+      "Text": "Add Top, Front and Right Viewports"
+    },
+    {
+      "Key": "EDITOR_Add_Axis_Viewports_TT",
+      "Text": "Adds three orthographic viewports looking down, along +Z and along -X at what the active viewport is focused on, at the same scale. Dock them beside it for a four-view layout."
+    },
+    {
       "Key": "EDITOR_Close_Viewport",
       "Text": "Close Current Viewport"
     },

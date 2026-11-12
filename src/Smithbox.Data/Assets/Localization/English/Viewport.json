@@ -93,6 +93,146 @@
       "Text": ""
     },
     {
+      "Key": "VIEWPORT_Menubar_Setting_Open_Camera_Tool",
+      "Text": "Open Camera Tool"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Setting_Open_Camera_Tool_TT",
+      "Text": "Opens the Tools window at the Camera section of its Rendering tools, which holds the view mode, preset views, projection and movement settings."
+    },
+    {
+      "Key": "VIEWPORT_Camera_Tool_Hint",
+      "Text": "The view mode, preset views, projection and movement of the current viewport."
+    },
+    {
+      "Key": "VIEWPORT_Camera_Tool_Shortcut",
+      "Text": "{0}\n\nShortcut: {1}"
+    },
+    {
+      "Key": "VIEWPORT_Camera_Tool_Oblique_Header_TT",
+      "Text": "How an oblique view draws depth across the screen, and presets for the standard oblique projections."
+    },
+    {
+      "Key": "VIEWPORT_Camera_Tool_Reset_Header",
+      "Text": "Reset"
+    },
+    {
+      "Key": "VIEWPORT_Camera_Tool_Reset_Header_TT",
+      "Text": "Put the camera settings back to their defaults."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Scale_Bar",
+      "Text": "Scale Bar"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Scale_Bar_TT",
+      "Text": "Shows a bar of a round length in the bottom left corner. In an orthographic view a metre is the same size everywhere, so the bar measures the whole view."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice",
+      "Text": "Slice"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_TT",
+      "Text": "Draws only a slab of depth around the focus, in place of the near and far clips. Looking down, it shows one floor of a building as a plan."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Enabled",
+      "Text": "Slice View"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Enabled_TT",
+      "Text": "Only draw what is within the slice. Alt and the mouse wheel change its thickness; Shift, Alt and the wheel move it nearer or further. Box selection only takes what is in the slice."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Thickness",
+      "Text": "Thickness"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Thickness_TT",
+      "Text": "How deep the slice is, in metres, centred on its distance."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Distance",
+      "Text": "Distance"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Slice_Distance_TT",
+      "Text": "How far ahead of the camera the middle of the slice is. Framing a selection puts it there."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Cabinet",
+      "Text": "Cabinet"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Cabinet_TT",
+      "Text": "45 degrees, depth drawn at half scale. The usual oblique look, with little distortion."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Cavalier",
+      "Text": "Cavalier"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Cavalier_TT",
+      "Text": "45 degrees, depth drawn at full scale, so lengths along every axis can be measured."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Plan",
+      "Text": "Plan"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Plan_TT",
+      "Text": "Looks down with depth at full scale: the ground plan is true to scale and heights rise up the screen at 45 degrees."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Snap_To_Axis",
+      "Text": "Snap to Axis on Entering"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Oblique_Snap_To_Axis_TT",
+      "Text": "Switching to Oblique turns the camera to the nearest world axis, as a slanted view off a free rotation is hard to read."
+    },
+    {
+      "Key": "VIEWPORT_Overlay_Slice",
+      "Text": "Slice: {0} m thick, {1} m ahead"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Camera_Clip_Perspective_Only",
+      "Text": "Perspective only: an orthographic camera sits in the middle of what it draws."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Preset_Views",
+      "Text": "Views"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Preset_Views_TT",
+      "Text": "Look along a world axis. The camera turns about the last framed point, so it stays in view."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Snap_View_To_Axis",
+      "Text": "Snap to Nearest Axis"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Snap_View_To_Axis_TT",
+      "Text": "Turn the camera to the world axis nearest to where it is looking, with the nearest axis as up."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic",
+      "Text": "Views Switch to Orthographic"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Preset_View_Switch_To_Orthographic_TT",
+      "Text": "Choosing a view from Perspective switches to Orthographic, and rotating the camera afterwards switches back to Perspective."
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Zoom_To_Cursor",
+      "Text": "Zoom to Cursor"
+    },
+    {
+      "Key": "VIEWPORT_Menubar_Ortho_Zoom_To_Cursor_TT",
+      "Text": "The mouse wheel zooms about the point under the cursor rather than the centre of the view."
+    },
+    {
       "Key": "VIEWPORT_Menubar_View_Parameters",
       "Text": "View Parameters"
     },
@@ -186,7 +326,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Near_Clip_TT",
-      "Text": "Set the minimum distance at which entities will be rendered within the viewport."
+      "Text": "The nearest depth drawn, measured along the camera's view from its position. Negative values are behind the camera, which an orthographic view still draws."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Far_Clip",
@@ -194,7 +334,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Far_Clip_TT",
-      "Text": "Set the maximum distance at which entities will be rendered within the viewport."
+      "Text": "The furthest depth drawn, measured along the camera's view from its position. Must be greater than the near clip."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity",
@@ -202,7 +342,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT",
-      "Text": "The sensitivity of the mouse panning."
+      "Text": "The speed of middle mouse panning. At 25 the scene follows the cursor exactly; lower is slower, higher is faster."
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Size",
@@ -210,7 +350,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Ortho_Size_TT",
-      "Text": "Set the height of the view in world units."
+      "Text": "The height of the view in world units (metres). The mouse wheel changes it, and framing a selection sets it."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Angle",
@@ -218,7 +358,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Angle_TT",
-      "Text": "Set the angle of the view."
+      "Text": "The screen direction, in degrees, that things nearer the camera are drawn towards: 0 is right, 90 is up. The framed selection stays in place as it changes."
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Scaling",
@@ -226,7 +366,7 @@
     },
     {
       "Key": "VIEWPORT_Menubar_Oblique_Scaling_TT",
-      "Text": "Set the scaling of the view."
+      "Text": "How far depth is drawn across the screen per unit of depth: 0.5 is cabinet, 1.0 is cavalier, 0 is a plain orthographic view."
     },
     {
       "Key": "VIEWPORT_Menubar_Action_Reset_Camera_Settings",
@@ -1146,11 +1286,11 @@
     },
     {
       "Key": "VIEWPORT_Overlay_Perspective_Controls",
-      "Text": "Holding click on the viewport will enable camera controls.\nUse WASD to navigate.\nUse right click to rotate the camera.\nHold Shift to temporarily speed up and Ctrl to temporarily slow down.\nScroll the mouse wheel to adjust overall speed.\nHold Ctrl, Alt and left click to make a box selection."
+      "Text": "Holding click on the viewport will enable camera controls.\nUse WASD to navigate.\nUse right click to rotate the camera.\nHold Shift to temporarily speed up and Ctrl to temporarily slow down.\nScroll the mouse wheel to adjust overall speed.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nHold Ctrl, Alt and left click to make a box selection."
     },
     {
       "Key": "VIEWPORT_Overlay_OrthoOblique_Controls",
-      "Text": "Holding click on the viewport will enable camera controls.\nPan the screen with the middle mouse button.\nUse right click to rotate the camera.\nHold right click and scroll the mouse wheel to adjust the zoom.\nHold Ctrl, Alt and left click to make a box selection."
+      "Text": "Holding click on the viewport will enable camera controls.\nPan the screen with the middle mouse button.\nUse right click to rotate the camera.\nScroll the mouse wheel, or use W and S, to zoom.\nUse A, D, Q and E to move across the view.\nFraming a selection zooms to fit it.\nNumpad 7, 1 and 3 give the top, front and right views; add Alt for the opposite view.\nNumpad 9 snaps to the nearest axis and Numpad 5 cycles the view mode.\nNumpad 0 toggles the slice; Alt and the wheel set its thickness, and Shift, Alt and the wheel move it.\nHold Ctrl, Alt and left click to make a box selection."
     },
     {
       "Key": "VIEWPORT_Overlay_Cull_Time",

@@ -95,7 +95,8 @@ public class SsrPass : PostProcessPass
 
     public override bool IsActive(GparamLighting lighting)
     {
-        return CFG.Current.Viewport_Post_Ssr && (lighting?.PostEffects.Ssr ?? Defaults).Enabled;
+        // Reflections are traced from the eye, which an orthographic view hasn't got
+        return CFG.Current.Viewport_Post_Ssr && (lighting?.PostEffects.Ssr ?? Defaults).Enabled && !Owner.IsOrthographic;
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)

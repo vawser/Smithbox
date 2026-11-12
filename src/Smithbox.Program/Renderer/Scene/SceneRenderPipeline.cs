@@ -137,6 +137,19 @@ public class SceneRenderPipeline
 
     public Vector3 Eye { get; private set; }
 
+    /// <summary>
+    ///     True while the camera is orthographic or oblique (the projection keeps w at 1). Such a view has no eye: it
+    ///     draws a slab around the camera's position, behind it too, so the effects measured from the eye (fog, light
+    ///     shafts, reflections, the camera clip) are left out, and the shadows are fitted to the focus.
+    /// </summary>
+    public bool IsOrthographic { get; private set; }
+
+    /// <summary>
+    ///     How far ahead of the camera its focus is (ViewportCamera.FocusDistance), which an orthographic view's
+    ///     shadows are centred on. Set by the viewport before each <see cref="UpdateSceneParameters" />.
+    /// </summary>
+    public float FocusDepth { get; set; } = 10.0f;
+
     public float CPURenderTime => _renderQueue.CPURenderTime;
 
     /// <summary>
@@ -436,6 +449,8 @@ public class SceneRenderPipeline
             enableTinting = 0;
 
         Eye = eye;
+        var orthographic = MathF.Abs(proj.M34) < 1e-6f;
+        IsOrthographic = orthographic;
 
         // The Viewport Rendering tool's Scene Lighting settings, kept in the CFG so they persist and every
         // viewport shares them. Set before the sun is read for the shadows below.
@@ -561,10 +576,13 @@ public class SceneRenderPipeline
             ? GparamLighting.AngleToDirection(shadowAngle)
             : new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z);
 
-        Shadows?.Update(castShadows, view, proj, shadowTravel, mapLighting?.Shadow ?? DefaultShadow);
+        Shadows?.Update(castShadows, view, proj, shadowTravel, mapLighting?.Shadow ?? DefaultShadow,
+            orthographic ? FocusDepth : null);
 
-        Fog.Prepare(view, renderProj, mapLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
-        DistanceFog.Prepare(mapLighting);
+        // Both fogs grow with distance from the eye, which an orthographic view doesn't have, so it goes without
+        var fogLighting = orthographic ? null : mapLighting;
+        Fog.Prepare(view, renderProj, fogLighting, new Vector3(sunDirection.X, sunDirection.Y, sunDirection.Z));
+        DistanceFog.Prepare(fogLighting);
 
         // For the transparent draws, which come after the fog's own pass this frame
         var fogVolume = CFG.Current.Viewport_Post_Fog_Transparents ? Fog.VolumeTextureIndex : 0;
@@ -692,8 +710,10 @@ public class SceneRenderPipeline
             SceneParams.RainTexelSize = RainOcclusion.TexelSize;
             SceneParams.RainDepthScale = RainOcclusion.DepthScale;
 
+            // An orthographic camera sits in the middle of what it draws, so a clip round it would cut a hole there
             SceneParams.CameraClip = new Vector4(
-                CFG.Current.Viewport_Camera_Clip_Enabled ? CFG.Current.Viewport_Camera_Clip_Radius : 0.0f, 0.0f, 0.0f, 0.0f);
+                CFG.Current.Viewport_Camera_Clip_Enabled && !orthographic ? CFG.Current.Viewport_Camera_Clip_Radius : 0.0f,
+                0.0f, 0.0f, 0.0f);
 
             // Read by the _wire shader variants alone, which only draw while the wireframe view is on
             SceneParams.WireframeColor = new Vector4(CFG.Current.Viewport_Wireframe_Line_Color,

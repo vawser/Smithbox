@@ -51,6 +51,33 @@ public enum KeybindID
     [Display(Name = "KEY_Cycle_Render_Outline_Mode", Description = "KEY_Cycle_Render_Outline_Mode_TT")]
     Cycle_Render_Outline_Mode,
 
+    [Display(Name = "KEY_Viewport_View_Top", Description = "KEY_Viewport_View_Top_TT")]
+    Viewport_View_Top,
+
+    [Display(Name = "KEY_Viewport_View_Bottom", Description = "KEY_Viewport_View_Bottom_TT")]
+    Viewport_View_Bottom,
+
+    [Display(Name = "KEY_Viewport_View_Front", Description = "KEY_Viewport_View_Front_TT")]
+    Viewport_View_Front,
+
+    [Display(Name = "KEY_Viewport_View_Back", Description = "KEY_Viewport_View_Back_TT")]
+    Viewport_View_Back,
+
+    [Display(Name = "KEY_Viewport_View_Right", Description = "KEY_Viewport_View_Right_TT")]
+    Viewport_View_Right,
+
+    [Display(Name = "KEY_Viewport_View_Left", Description = "KEY_Viewport_View_Left_TT")]
+    Viewport_View_Left,
+
+    [Display(Name = "KEY_Viewport_Snap_View_To_Axis", Description = "KEY_Viewport_Snap_View_To_Axis_TT")]
+    Viewport_Snap_View_To_Axis,
+
+    [Display(Name = "KEY_Viewport_Cycle_View_Mode", Description = "KEY_Viewport_Cycle_View_Mode_TT")]
+    Viewport_Cycle_View_Mode,
+
+    [Display(Name = "KEY_Viewport_Toggle_Slice", Description = "KEY_Viewport_Toggle_Slice_TT")]
+    Viewport_Toggle_Slice,
+
     // Common Actions
     [Display(Name = "KEY_Save", Description = "KEY_Save_TT")]
     Save,
@@ -481,6 +508,17 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.Cycle_Gizmo_Space_Mode, new() { Key = Key.Unknown });
         InputManager.Bind(KeybindID.Cycle_Render_Outline_Mode, new() { Key = Key.Number1, Alt = true });
 
+        // Numpad views as in most 3D tools; the opposite views take Alt, since Ctrl+Numpad 1 opens the tools menu
+        InputManager.Bind(KeybindID.Viewport_View_Top, new() { Key = Key.Keypad7 });
+        InputManager.Bind(KeybindID.Viewport_View_Bottom, new() { Key = Key.Keypad7, Alt = true });
+        InputManager.Bind(KeybindID.Viewport_View_Front, new() { Key = Key.Keypad1 });
+        InputManager.Bind(KeybindID.Viewport_View_Back, new() { Key = Key.Keypad1, Alt = true });
+        InputManager.Bind(KeybindID.Viewport_View_Right, new() { Key = Key.Keypad3 });
+        InputManager.Bind(KeybindID.Viewport_View_Left, new() { Key = Key.Keypad3, Alt = true });
+        InputManager.Bind(KeybindID.Viewport_Snap_View_To_Axis, new() { Key = Key.Keypad9 });
+        InputManager.Bind(KeybindID.Viewport_Cycle_View_Mode, new() { Key = Key.Keypad5 });
+        InputManager.Bind(KeybindID.Viewport_Toggle_Slice, new() { Key = Key.Keypad0 });
+
         // Common
         InputManager.Bind(KeybindID.Save, new() { Key = Key.S, Ctrl = true });
         InputManager.Bind(KeybindID.Undo, new() { Key = Key.Z, Ctrl = true });
@@ -672,6 +710,15 @@ public static class KeybindMetadata
         { KeybindID.Cycle_Gizmo_Origin_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Gizmo_Space_Mode, InputCategory.Viewport },
         { KeybindID.Cycle_Render_Outline_Mode, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Top, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Bottom, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Front, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Back, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Right, InputCategory.Viewport },
+        { KeybindID.Viewport_View_Left, InputCategory.Viewport },
+        { KeybindID.Viewport_Snap_View_To_Axis, InputCategory.Viewport },
+        { KeybindID.Viewport_Cycle_View_Mode, InputCategory.Viewport },
+        { KeybindID.Viewport_Toggle_Slice, InputCategory.Viewport },
 
         // Common
         { KeybindID.Save, InputCategory.Common },

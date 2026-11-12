@@ -1570,10 +1570,11 @@ float ViewDepth(float depth)
 {
 	mat4 projection = sceneparam.projection;
 
-	// Orthographic cameras keep w at 1
+	// Orthographic cameras keep w at 1. Their slab reaches behind the camera, so the depth is signed there, which
+	// keeps differences between two depths right
 	if (abs(projection[2][3]) < 1e-6)
 	{
-		return abs((depth - projection[3][2]) / projection[2][2]);
+		return (depth - projection[3][2]) / projection[2][2];
 	}
 
 	return abs(projection[3][2] / (depth * projection[2][3] - projection[2][2]));
@@ -1877,7 +1878,7 @@ void main()
 	g_modelLit = ModelLit();
 	g_envLit = !g_modelLit && EnvLit();
 
-	vec3 viewVec = normalize(sceneparam.eye.xyz - fsin_worldpos);
+	vec3 viewVec = VIEW_DIRECTION(fsin_worldpos);
 
 	vec3 sunDir = SunTravel();
 

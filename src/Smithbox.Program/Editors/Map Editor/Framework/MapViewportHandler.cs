@@ -41,6 +41,12 @@ public class MapViewportHandler
             AddView();
         }
 
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Add_Axis_Viewports")}##addAxisViewports", false))
+        {
+            AddAxisViews();
+        }
+        GUI.Tooltip(LOC.Get("EDITOR_Add_Axis_Viewports_TT"));
+
         var canClose = CountViews() > 1;
         if (ImGui.MenuItem($"{LOC.Get("EDITOR_Close_Viewport")}##closeCurrentViewport", false, canClose))
         {
@@ -79,6 +85,43 @@ public class MapViewportHandler
         ActiveViewport = view;
 
         return view;
+    }
+
+    /// <summary>
+    ///     Adds orthographic Top, Front and Right viewports looking at what the active one is focused on, at the same
+    ///     scale, so with the active viewport they make the usual four-view layout. They open as windows of their own
+    ///     to dock where wanted; the active viewport stays active.
+    /// </summary>
+    public void AddAxisViews()
+    {
+        var source = ActiveViewport;
+
+        if (source?.Viewport is not VulkanViewport sourceViewport)
+            return;
+
+        var sourceCamera = sourceViewport.ViewportCamera;
+
+        foreach (var preset in new[] { ViewportPresetView.Top, ViewportPresetView.Front, ViewportPresetView.Right })
+        {
+            var added = AddView();
+
+            if (added.Viewport is not VulkanViewport viewport)
+                continue;
+
+            added.RenderScene.DrawFilter = source.RenderScene.DrawFilter;
+
+            var camera = viewport.ViewportCamera;
+            camera.CameraTransform = sourceCamera.CameraTransform;
+            camera.FocusDistance = sourceCamera.FocusDistance;
+            camera.OrthographicSize = sourceCamera.OrthographicSize;
+            camera.ViewMode = sourceCamera.ViewMode;
+
+            // Orthographic by hand, so rotating one of these doesn't hand it back to perspective
+            camera.SetProjectionType(ViewMode.Orthographic);
+            camera.SetPresetView(preset);
+        }
+
+        ActiveViewport = source;
     }
 
     public bool RemoveView(ViewportWrapper view)

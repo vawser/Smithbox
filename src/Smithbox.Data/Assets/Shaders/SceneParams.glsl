@@ -130,4 +130,28 @@ struct sceneParams
 // sceneparam block, which is declared after this file is included.
 #define CAMERA_CLIP(worldPos) if (sceneparam.cameraClip.x > 0.0 && distance((worldPos), sceneparam.eye.xyz) < sceneparam.cameraClip.x) discard
 
+// An orthographic or oblique projection keeps w at 1, so it has no M34
+bool SceneIsOrthographic(mat4 projection)
+{
+	return abs(projection[2][3]) < 1e-6;
+}
+
+// The unit direction from a point back towards the viewer. A perspective camera's lines of sight meet at the eye.
+// An orthographic camera's are parallel, and its eye is only the middle of a slab that also draws what is behind
+// it, so the direction is the same everywhere: back along the view axis, sheared for an oblique projection, whose
+// clip x and y gain projection[2][0] and [2][1] per unit of view depth.
+vec3 SceneViewDirection(mat4 projection, mat4 view, vec3 eye, vec3 worldPos)
+{
+	if (SceneIsOrthographic(projection))
+	{
+		vec3 sight = vec3(-projection[2][0] / projection[0][0], -projection[2][1] / projection[1][1], 1.0);
+		return -normalize(transpose(mat3(view)) * sight);
+	}
+
+	return normalize(eye - worldPos);
+}
+
+#define SCENE_IS_ORTHOGRAPHIC SceneIsOrthographic(sceneparam.projection)
+#define VIEW_DIRECTION(worldPos) SceneViewDirection(sceneparam.projection, sceneparam.view, sceneparam.eye.xyz, (worldPos))
+
 #endif

@@ -7,13 +7,6 @@
 - AC MSB: research
 - ONAV v2 for AC6
 
-- Get gizmos to work in Orthographic/Oblique view mode
-
-- Raycast Place:
-    - Let user place a raycast sphere
-    - Then press a button in tool to place Part entity at position (with set properties configured in tool)
-    - Include randomise X/Y/Z rotation button
-
 - Col Editor:
     - Add support for DES/DS1/DS1R/DS2/DS2S/BB
             

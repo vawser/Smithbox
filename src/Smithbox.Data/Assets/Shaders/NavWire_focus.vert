@@ -20,7 +20,7 @@ void main()
 	mat4 w = idata[gl_InstanceIndex].world;
 	fsin_color = vec4(color / 255.0);
     //fsin_color = vec4(vec3((vec4(tnormal, 1.0) / 255.0) + 0.5), 1.0);
-	fsin_view = normalize(sceneparam.eye.xyz - vec3(w * vec4(position, 1)));
+	fsin_view = VIEW_DIRECTION(vec3(w * vec4(position, 1)));
     vec4 p = sceneparam.view * w * vec4(position, 1);
 	p.z -= 0.003;
     gl_Position = sceneparam.projection * p;

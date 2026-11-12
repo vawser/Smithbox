@@ -91,8 +91,13 @@ public class ShadowCascades
     ///     Places the cascades over the camera's view for this frame. <paramref name="lightTravel" /> is the
     ///     direction the sun's light travels in. With <paramref name="enabled" /> false, nothing is drawn.
     /// </summary>
+    /// <remarks>
+    ///     An orthographic view passes <paramref name="orthographicFocus" />, how far ahead of the camera its focus
+    ///     is. Its view is as wide at every depth and reaches behind the camera, so the GPARAM's distance bands
+    ///     don't fit: one cascade covers the view's width around the focus instead, as deep as it is wide.
+    /// </remarks>
     public void Update(bool enabled, Matrix4x4 view, Matrix4x4 projection, Vector3 lightTravel,
-        GparamShadow settings)
+        GparamShadow settings, float? orthographicFocus = null)
     {
         ActiveCount = 0;
 
@@ -109,29 +114,42 @@ public class ShadowCascades
         var count = Math.Clamp(settings.CascadeCount, 1, MaxCascades);
         var far = Math.Max(settings.FarDistance, settings.Near + 1.0f);
 
-        // Where each cascade starts and ends along the camera's view; a split past the last cascade is left out
-        Span<float> ends = stackalloc float[MaxCascades];
-        ends[0] = settings.CascadeSplits.X;
-        ends[1] = settings.CascadeSplits.Y;
-        ends[2] = settings.CascadeSplits.Z;
-        ends[count - 1] = far;
-
-        for (var i = 0; i < count; i++)
-        {
-            ends[i] = Math.Clamp(ends[i], settings.Near + 0.01f, far);
-        }
-
         // The camera's frustum at one meter of depth: perspective widens with depth, orthographic doesn't
         var perspective = MathF.Abs(projection.M34) > 0.5f;
         var halfX = 1.0f / MathF.Max(MathF.Abs(projection.M11), 1e-6f);
         var halfY = 1.0f / MathF.Max(MathF.Abs(projection.M22), 1e-6f);
+
+        // Where each cascade starts and ends along the camera's view; a split past the last cascade is left out
+        Span<float> ends = stackalloc float[MaxCascades];
+        var start = settings.Near;
+
+        if (!perspective && orthographicFocus is { } focus)
+        {
+            var halfDepth = MathF.Max(halfX, halfY);
+
+            count = 1;
+            start = focus - halfDepth;
+            far = focus + halfDepth;
+            ends[0] = far;
+        }
+        else
+        {
+            ends[0] = settings.CascadeSplits.X;
+            ends[1] = settings.CascadeSplits.Y;
+            ends[2] = settings.CascadeSplits.Z;
+            ends[count - 1] = far;
+
+            for (var i = 0; i < count; i++)
+            {
+                ends[i] = Math.Clamp(ends[i], settings.Near + 0.01f, far);
+            }
+        }
 
         // Up for the sun's view, unless it shines straight down that way
         Vector3 up = MathF.Abs(lightTravel.Y) > 0.99f ? Vector3.UnitZ : Vector3.UnitY;
         Vector3 right = Vector3.Normalize(Vector3.Cross(up, lightTravel));
         up = Vector3.Cross(lightTravel, right);
 
-        var start = settings.Near;
         Span<Vector3> corners = stackalloc Vector3[8];
 
         for (var i = 0; i < count; i++)
@@ -212,7 +230,8 @@ public class ShadowCascades
             start = end;
         }
 
-        var fadeStart = Math.Min(settings.FarFadeStart, far);
+        // An orthographic cascade ends at its far side: past it is out of the map, so lit
+        var fadeStart = orthographicFocus.HasValue && !perspective ? far : Math.Min(settings.FarFadeStart, far);
         var biasScale = CFG.Current.Viewport_Shadow_Bias_Scale;
 
         Parameters.FadeStart = fadeStart;

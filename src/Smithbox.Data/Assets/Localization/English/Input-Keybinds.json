@@ -121,6 +121,78 @@
       "Text": "Within the viewport, this will switch the currently selected viewport object's rendering type."
     },
     {
+      "Key": "KEY_Viewport_View_Top",
+      "Text": "Top View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Top_TT",
+      "Text": "Within the viewport, look straight down, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_View_Bottom",
+      "Text": "Bottom View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Bottom_TT",
+      "Text": "Within the viewport, look straight up, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_View_Front",
+      "Text": "Front View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Front_TT",
+      "Text": "Within the viewport, look along +Z, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_View_Back",
+      "Text": "Back View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Back_TT",
+      "Text": "Within the viewport, look along -Z, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_View_Right",
+      "Text": "Right View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Right_TT",
+      "Text": "Within the viewport, look along -X, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_View_Left",
+      "Text": "Left View"
+    },
+    {
+      "Key": "KEY_Viewport_View_Left_TT",
+      "Text": "Within the viewport, look along +X, keeping the focus in view."
+    },
+    {
+      "Key": "KEY_Viewport_Snap_View_To_Axis",
+      "Text": "Snap View to Axis"
+    },
+    {
+      "Key": "KEY_Viewport_Snap_View_To_Axis_TT",
+      "Text": "Within the viewport, turn the camera to the world axis nearest to where it is looking."
+    },
+    {
+      "Key": "KEY_Viewport_Cycle_View_Mode",
+      "Text": "Cycle View Mode"
+    },
+    {
+      "Key": "KEY_Viewport_Cycle_View_Mode_TT",
+      "Text": "Within the viewport, switch between the Perspective, Orthographic and Oblique view modes."
+    },
+    {
+      "Key": "KEY_Viewport_Toggle_Slice",
+      "Text": "Toggle Slice View"
+    },
+    {
+      "Key": "KEY_Viewport_Toggle_Slice_TT",
+      "Text": "Within an orthographic or oblique viewport, only draw a slab of depth around the focus."
+    },
+    {
       "Key": "KEY_Save",
       "Text": "Save"
     },

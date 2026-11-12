@@ -119,6 +119,30 @@
     {
       "Key": "VIEWPORT_ENUM_ViewMode_Oblique",
       "Text": "Oblique"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Top",
+      "Text": "Top (looking down)"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Bottom",
+      "Text": "Bottom (looking up)"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Front",
+      "Text": "Front (looking along +Z)"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Back",
+      "Text": "Back (looking along -Z)"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Right",
+      "Text": "Right (looking along -X)"
+    },
+    {
+      "Key": "VIEWPORT_ENUM_PresetView_Left",
+      "Text": "Left (looking along +X)"
     }
   ]
 }

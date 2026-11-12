@@ -128,29 +128,15 @@ public static class ViewportUtils
     }
 
     /// <summary>
-    /// Creates an orthographic projection matrix
+    ///     Creates an orthographic projection matrix for a left-handed view (looking down +Z), mapping view depth
+    ///     <paramref name="near" /> to 0 and <paramref name="far" /> to 1. Reverse depth passes them swapped, so near
+    ///     lands on 1 and far on 0. Near can be negative, which draws what is behind the camera's position.
     /// </summary>
     private static Matrix4x4 CreateOrthographic(float width, float height, float near, float far)
     {
-        if (width <= 0.0f)
+        if (width <= 0.0f || height <= 0.0f || far == near)
         {
             return Matrix4x4.Identity;
-            //throw new ArgumentOutOfRangeException(nameof(width));
-        }
-
-        if (height <= 0.0f)
-        {
-            return Matrix4x4.Identity;
-            //throw new ArgumentOutOfRangeException(nameof(height));
-        }
-
-        // Note: near can be negative for orthographic projections
-        // This allows viewing objects behind the camera position
-
-        if (far <= near)
-        {
-            return Matrix4x4.Identity;
-            //throw new ArgumentOutOfRangeException(nameof(far), "Far plane must be greater than near plane");
         }
 
         float halfWidth = width * 0.5f;
@@ -165,9 +151,9 @@ public static class ViewportUtils
         result.M22 = 1.0f / halfHeight;
         result.M21 = result.M23 = result.M24 = 0.0f;
 
-        // Depth
+        // Depth: z = near gives 0, z = far gives 1
         var depthRange = far - near;
-        result.M33 = -1.0f / depthRange;
+        result.M33 = 1.0f / depthRange;
         result.M31 = result.M32 = result.M34 = 0.0f;
 
         // Translation
@@ -190,6 +176,7 @@ public static class ViewportUtils
     /// <param name="far">Far clipping plane</param>
     /// <param name="obliqueAngle">Angle of oblique projection in radians</param>
     /// <param name="obliqueScaling">Scaling factor for oblique projection (typically 0.5)</param>
+    /// <param name="focusDepth">View depth that is drawn unsheared, so what sits there stays put on screen</param>
     /// <returns>Oblique projection matrix</returns>
     public static Matrix4x4 CreateOblique(
         GraphicsDevice gd,
@@ -199,12 +186,13 @@ public static class ViewportUtils
         float near,
         float far,
         float obliqueAngle,
-        float obliqueScaling)
+        float obliqueScaling,
+        float focusDepth = 0.0f)
     {
         // Start with orthographic projection
         Matrix4x4 ortho = CreateOrthographic(gd, useReverseDepth, width, height, near, far);
 
-        // Create oblique shearing matrix
+        // Shear x and y by depth from the focus: x' = x + L (z - focus), y' = y + M (z - focus)
         float L = -obliqueScaling * (float)Math.Cos(obliqueAngle);
         float M = -obliqueScaling * (float)Math.Sin(obliqueAngle);
 
@@ -212,7 +200,7 @@ public static class ViewportUtils
             1, 0, 0, 0,
             0, 1, 0, 0,
             L, M, 1, 0,
-            0, 0, 0, 1
+            -L * focusDepth, -M * focusDepth, 0, 1
         );
 
         // Combine shearing with orthographic projection

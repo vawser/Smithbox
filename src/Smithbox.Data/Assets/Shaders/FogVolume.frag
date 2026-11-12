@@ -157,6 +157,13 @@ float Density(fogMaterial m, vec3 local, vec3 worldPos)
 
 void main()
 {
+	// The march runs from the eye, which an orthographic view hasn't got (it draws what is behind its position too),
+	// so its fog boxes are left out
+	if (SCENE_IS_ORTHOGRAPHIC)
+	{
+		discard;
+	}
+
 	fogMaterial m = matdata[fsin_mat];
 
 	vec3 eye = sceneparam.eye.xyz;

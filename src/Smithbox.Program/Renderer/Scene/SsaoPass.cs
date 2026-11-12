@@ -99,6 +99,28 @@ public class SsaoPass : PostProcessPass
         return CFG.Current.Viewport_Post_Ssao;
     }
 
+    /// <summary>
+    ///     The point the shader turns depth normals to face. An orthographic view draws behind its camera too, so its
+    ///     eye is put far back along the view, where every drawn point faces it the way it faces the screen.
+    /// </summary>
+    private static Vector3 SsaoEye(SceneParam scene)
+    {
+        var eye = new Vector3(scene.EyePosition.X, scene.EyePosition.Y, scene.EyePosition.Z);
+
+        if (MathF.Abs(scene.Projection.M34) < 1e-6f)
+        {
+            // The view's third column is the camera's forward
+            var forward = new Vector3(scene.View.M13, scene.View.M23, scene.View.M33);
+
+            if (forward.LengthSquared() > 1e-8f)
+            {
+                eye -= Vector3.Normalize(forward) * 1.0e6f;
+            }
+        }
+
+        return eye;
+    }
+
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)
     {
         var ssao = frame.Effects?.Ssao ?? Defaults;
@@ -120,7 +142,7 @@ public class SsaoPass : PostProcessPass
             Fade = new Vector4(ssao.DepthFadeStart, ssao.DepthFadeRange, ssao.PrecisionDepth, ssao.UseNormal ? 1.0f : 0.0f),
             // GLSL reads the matrix as uploaded, so its [c][r] is M(c+1)(r+1) here
             Depth = new Vector4(projection.M33, projection.M43, projection.M34, Owner.SceneDepth.TextureIndex),
-            Eye = new Vector4(scene.EyePosition.X, scene.EyePosition.Y, scene.EyePosition.Z, MathF.Abs(projection.M22)),
+            Eye = new Vector4(SsaoEye(scene), MathF.Abs(projection.M22)),
             Strength = new Vector4(Math.Max(CFG.Current.Viewport_Post_Ssao_Strength, 0.0f), 0.0f, 0.0f, 0.0f)
         };
 

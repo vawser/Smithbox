@@ -36,6 +36,11 @@ public class ViewportRenderingTool
     /// </summary>
     public bool FocusRequested;
 
+    /// <summary>
+    /// Set to open the Camera section the next time the tool window is drawn
+    /// </summary>
+    public bool CameraFocusRequested;
+
     // The tabs' less-used sections, which each tab shows or hides with the eye on its header, are kept in the
     // settings (Viewport_Rendering_Show_*). They are shared by the tabs, so showing the status in one shows it in all.
 
@@ -232,6 +237,14 @@ public class ViewportRenderingTool
 
         // Materials, with the collision opacity
         Section(ref focus, "VIEWPORT_Menubar_Header_Materials", "viewportRenderingMaterials", MaterialsTab);
+
+        // Camera: the view mode, projection and movement, which were the viewport's Camera menu. It has a focus
+        // request of its own, so the viewport's Settings menu can open it directly
+        var cameraFocus = focus || CameraFocusRequested;
+        CameraFocusRequested = false;
+
+        Section(ref cameraFocus, "VIEWPORT_Menubar_Header_Camera", "viewportRenderingCamera",
+            () => ViewportCameraTool.Display(viewport));
     }
 
     /// <summary>

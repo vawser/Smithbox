@@ -89,7 +89,9 @@ public class LightShaftPass : PostProcessPass
 
     public override bool IsActive(GparamLighting lighting)
     {
-        return CFG.Current.Viewport_Post_Light_Shafts && lighting is { PostEffects.LightShaft.Enabled: true };
+        // The shafts are traced from the eye, which an orthographic view hasn't got
+        return CFG.Current.Viewport_Post_Light_Shafts && lighting is { PostEffects.LightShaft.Enabled: true } &&
+               !Owner.IsOrthographic;
     }
 
     public override unsafe void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame)

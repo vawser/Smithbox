@@ -178,7 +178,8 @@ void main()
 	// The quad's axes by orientation mode
 	vec3 camRight = vec3(sceneparam.view[0][0], sceneparam.view[1][0], sceneparam.view[2][0]);
 	vec3 camUp = vec3(sceneparam.view[0][1], sceneparam.view[1][1], sceneparam.view[2][1]);
-	vec3 toEye = eye - center;
+	// An orthographic camera has no eye to face, so it faces back along the view (a unit vector)
+	vec3 toEye = SCENE_IS_ORTHOGRAPHIC ? VIEW_DIRECTION(center) : eye - center;
 	vec3 right = camRight;
 	vec3 up = camUp;
 	uint orientation = m.params.w;

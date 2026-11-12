@@ -5,6 +5,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Renderer;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 
@@ -35,6 +36,18 @@ public class ViewportOverlay
             {
                 ImGui.Text(LOC.Get("VIEWPORT_Overlay_OrthoOblique_Controls"));
             }
+        }
+
+        var camera = Parent.ViewportCamera;
+
+        if (camera.IsSlicing)
+        {
+            ImGui.Text(LOC.Get("VIEWPORT_Overlay_Slice", $"{camera.SliceHalfDepth * 2.0f:0.##}", $"{camera.FocusDistance:0.##}"));
+        }
+
+        if (camera.ViewMode is not ViewMode.Perspective && CFG.Current.Viewport_DisplayScaleBar)
+        {
+            DrawScaleBar(camera);
         }
 
         // Map Editor
@@ -126,6 +139,53 @@ public class ViewportOverlay
             ImGui.Text(LOC.Get("VIEWPORT_Overlay_Vertex_Buffers_Size", vertexBufferSize));
             ImGui.Text(LOC.Get("VIEWPORT_Overlay_Index_Buffers_Size", indexBufferSize));
         }
+    }
+
+    /// <summary>
+    ///     A bar in the bottom left corner a round number of metres long, which an orthographic view can show since a
+    ///     metre is the same number of pixels everywhere in it. Its length is the largest 1, 2 or 5 x 10^n that fits
+    ///     in about 150 pixels. Measured on the focus plane, where an oblique view is unsheared.
+    /// </summary>
+    private void DrawScaleBar(ViewportCamera camera)
+    {
+        if (Parent.Height <= 0 || camera.OrthographicSize <= 0)
+            return;
+
+        var pixelsPerMetre = Parent.Height / camera.OrthographicSize;
+        var target = 150.0f / pixelsPerMetre;
+
+        var magnitude = MathF.Pow(10.0f, MathF.Floor(MathF.Log10(target)));
+        var length = magnitude;
+
+        foreach (var step in new[] { 2.0f, 5.0f, 10.0f })
+        {
+            if (magnitude * step <= target)
+                length = magnitude * step;
+        }
+
+        var barPixels = length * pixelsPerMetre;
+        var start = new Vector2(Parent.X + 16.0f, Parent.Y + Parent.Height - 24.0f);
+        var end = start + new Vector2(barPixels, 0.0f);
+
+        var drawList = ImGui.GetWindowDrawList();
+        var shadow = ImGui.GetColorU32(new Vector4(0f, 0f, 0f, 0.8f));
+        var color = ImGui.GetColorU32(new Vector4(1f, 1f, 1f, 1f));
+        var tick = new Vector2(0.0f, 6.0f);
+
+        foreach (var (offset, col, thickness) in new[] { (Vector2.One, shadow, 3.0f), (Vector2.Zero, color, 2.0f) })
+        {
+            drawList.AddLine(start + offset, end + offset, col, thickness);
+            drawList.AddLine(start - tick + offset, start + offset, col, thickness);
+            drawList.AddLine(end - tick + offset, end + offset, col, thickness);
+        }
+
+        var label = length >= 1000.0f ? $"{length / 1000.0f:0.##} km"
+            : length >= 1.0f ? $"{length:0.##} m"
+            : $"{length * 100.0f:0.##} cm";
+
+        var textPosition = start + new Vector2(0.0f, -6.0f - ImGui.GetFontSize() - 2.0f);
+        drawList.AddText(textPosition + Vector2.One, shadow, label);
+        drawList.AddText(textPosition, color, label);
     }
 
     /// <summary>

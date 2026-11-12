@@ -116,9 +116,10 @@ vec4 SampleFrame(uint tex, vec2 uv, vec2 dx, vec2 dy, float frame, uint columns,
 float ViewDepth(float depth)
 {
 	mat4 projection = sceneparam.projection;
+	// Signed for an orthographic camera, whose slab reaches behind it, so differences between depths stay right
 	if (abs(projection[2][3]) < 1e-6)
 	{
-		return abs((depth - projection[3][2]) / projection[2][2]);
+		return (depth - projection[3][2]) / projection[2][2];
 	}
 	return abs(projection[3][2] / (depth * projection[2][3] - projection[2][2]));
 }

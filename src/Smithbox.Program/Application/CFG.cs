@@ -1551,6 +1551,11 @@ public class CFG
     public float Viewport_DefaultObliqueAngle { get; set; } = 45.0f;
     public float Viewport_DefaultObliqueScaling { get; set; } = 0.5f;
     public float Viewport_MousePan_Sensitivity { get; set; } = 25.0f;
+    public bool Viewport_Orthographic_Zoom_To_Cursor { get; set; } = true;
+    public bool Viewport_Preset_View_Switch_To_Orthographic { get; set; } = true;
+    public bool Viewport_Oblique_Snap_To_Axis { get; set; } = true;
+    public float Viewport_Slice_Half_Depth { get; set; } = 2.5f;
+    public bool Viewport_DisplayScaleBar { get; set; } = true;
 
     // Rendering Limits
     public uint Viewport_Limit_Buffer_Flver_Bone = 65536;

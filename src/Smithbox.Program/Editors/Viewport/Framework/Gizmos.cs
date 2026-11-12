@@ -70,6 +70,25 @@ public class Gizmos
         return IsTransforming;
     }
 
+    /// <summary>
+    ///     The gizmo's world scale at a point. A perspective camera grows it with distance so it keeps its size on
+    ///     screen. An orthographic or oblique one draws the same size at every distance, so it grows with the view's
+    ///     height instead, matched to the share of the screen it takes in perspective.
+    /// </summary>
+    private float GetGizmoScale(Vector3 center)
+    {
+        var camera = Viewport?.ViewportCamera;
+
+        if (camera != null && camera.ViewMode is not ViewMode.Perspective)
+        {
+            var halfFov = CFG.Current.Viewport_Camera_FOV * MathF.PI / 360.0f;
+            return camera.OrthographicSize * CFG.Current.Viewport_Gizmo_Size_Distance_Scale /
+                   (2.0f * MathF.Tan(halfFov));
+        }
+
+        return (center - CameraPosition).Length() * CFG.Current.Viewport_Gizmo_Size_Distance_Scale;
+    }
+
     private IGizmoTarget ActiveTarget => Target ?? SelectionTarget;
 
     /// <summary>
@@ -332,8 +351,7 @@ public class Gizmos
                 rot = OriginalTransform.Rotation;
             }
 
-            var dist = (center - CameraPosition).Length();
-            Vector3 scale = new(dist * CFG.Current.Viewport_Gizmo_Size_Distance_Scale);
+            Vector3 scale = new(GetGizmoScale(center));
 
             TranslationGizmo.UpdateTransform(center, rot, scale);
             RotationGizmo.UpdateTransform(center, rot, scale);

@@ -32,7 +32,6 @@ public class ViewportMenu
 
         SettingsMenu();
         OverlayMenu();
-        CameraMenu();
         FilterMenu();
         GizmoMenu();
 
@@ -106,287 +105,50 @@ public class ViewportMenu
         }
     }
 
-    public void CameraMenu()
-    {
-        if (ImGui.BeginMenu($"{LOC.Get("VIEWPORT_Menubar_Header_Camera")}##cameraMenuHeader"))
-        {
-            GUI.SimpleHeader(
-                LOC.Get("VIEWPORT_Menubar_View_Mode"),
-                LOC.Get("VIEWPORT_Menubar_View_Mode_TT"));
-
-            var previewName = LOC.Get(Parent.ViewportCamera.ViewMode.GetDisplayName());
-
-            var camera = Parent.ViewportCamera;
-
-            if (ImGui.BeginCombo("##viewModeCombo", previewName))
-            {
-                foreach (var entry in Enum.GetValues(typeof(ViewMode)))
-                {
-                    var type = (ViewMode)entry;
-
-                    var displayName = LOC.Get(type.GetDisplayName());
-
-                    if (ImGui.Selectable(displayName, camera.ViewMode == type))
-                    {
-                        camera.SetProjectionType(type);
-                    }
-                }
-                ImGui.EndCombo();
-            }
-
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("VIEWPORT_Menubar_View_Parameters"),
-                LOC.Get("VIEWPORT_Menubar_View_Parameters_TT"));
-
-            // AlwaysClamp keeps typed (ctrl+click) values inside each slider's range, so no clamping is needed after
-
-            // Perspective
-            if (camera.ViewMode is ViewMode.Perspective)
-            {
-                // Near Clipping Distance
-                var nearClip = CFG.Current.Viewport_Perspective_Near_Clip;
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_View_Near_Clip")}##nearClip",
-                    ref nearClip, 0.01f, 100.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    CFG.Current.Viewport_Perspective_Near_Clip = nearClip;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Near_Clip_TT"));
-
-                // Far Clipping Distance
-                var farClip = CFG.Current.Viewport_Perspective_Far_Clip;
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_View_Far_Clip")}##farClip",
-                    ref farClip, 0.01f, 1000000.0f, "%.0f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    CFG.Current.Viewport_Perspective_Far_Clip = farClip;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_View_Far_Clip_TT"));
-
-                // FOV
-                var cam_fov = CFG.Current.Viewport_Camera_FOV;
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Camera_FOV")}##cameraFov",
-                    ref cam_fov, 40.0f, 140.0f, "%.0f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    CFG.Current.Viewport_Camera_FOV = cam_fov;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_FOV_TT"));
-
-                GUI.Spacer();
-                GUI.SimpleHeader(
-                    LOC.Get("VIEWPORT_Menubar_Camera_Movement"),
-                    LOC.Get("VIEWPORT_Menubar_Camera_Movement_TT"));
-
-                // Sensitivity
-                var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity")}##cameraSensitivity",
-                    ref cam_sensitivity, 0.0f, 0.1f, "%.3f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Sensitivity_TT"));
-
-                // The speeds span four orders of magnitude, so the sliders are logarithmic to keep the low end usable
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow")}##cameraSpeedSlow",
-                    ref camera.CameraMoveSpeed_Slow, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = camera.CameraMoveSpeed_Slow;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Slow_TT"));
-
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal")}##cameraSpeedNormal",
-                    ref camera.CameraMoveSpeed_Normal, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = camera.CameraMoveSpeed_Normal;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Normal_TT"));
-
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast")}##cameraSpeedFast",
-                    ref camera.CameraMoveSpeed_Fast, 0.1f, 9999.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = camera.CameraMoveSpeed_Fast;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Speed_Fast_TT"));
-            }
-
-            // Orthographic / Oblique
-            if (camera.ViewMode is ViewMode.Orthographic or ViewMode.Oblique)
-            {
-                // A slider across two million units can't be moved finely, so these are dragged instead
-                var nearClip = CFG.Current.Viewport_Orthographic_Near_Clip;
-                if (ImGui.DragFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip")}##orthoNearClip",
-                    ref nearClip, 10.0f, -1000000.0f, 1000000.0f, "%.0f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    CFG.Current.Viewport_Orthographic_Near_Clip = nearClip;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Near_Clip_TT"));
-
-                var farClip = CFG.Current.Viewport_Orthographic_Far_Clip;
-                if (ImGui.DragFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip")}##orthoFarClip",
-                    ref farClip, 10.0f, -1000000.0f, 1000000.0f, "%.0f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    CFG.Current.Viewport_Orthographic_Far_Clip = farClip;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Far_Clip_TT"));
-
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity")}##orthoPandSensitivity",
-                    ref camera.PanSensitivity, 1.0f, 100.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    // Update the default
-                    CFG.Current.Viewport_MousePan_Sensitivity = camera.PanSensitivity;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Pan_Sensitivity_TT"));
-            }
-
-            // Orthographic
-            if (camera.ViewMode is ViewMode.Orthographic)
-            {
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Ortho_Size")}##orthoSize",
-                    ref camera.OrthographicSize, 0.1f, 1000.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-                {
-                    // Update the default
-                    CFG.Current.Viewport_DefaultOrthographicSize = camera.OrthographicSize;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Ortho_Size_TT"));
-            }
-
-            // Oblique
-            if (camera.ViewMode is ViewMode.Oblique)
-            {
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Oblique_Angle")}##obliqueAngle",
-                    ref camera.ObliqueAngle, 0.0f, 90.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    // Update the default
-                    CFG.Current.Viewport_DefaultObliqueAngle = camera.ObliqueAngle;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Angle_TT"));
-
-                if (ImGui.SliderFloat(
-                    $"{LOC.Get("VIEWPORT_Menubar_Oblique_Scaling")}##obliqueScaling",
-                    ref camera.ObliqueScaling, 0.0f, 1.0f, "%.2f", ImGuiSliderFlags.AlwaysClamp))
-                {
-                    // Update the default
-                    CFG.Current.Viewport_DefaultObliqueScaling = camera.ObliqueScaling;
-                }
-                GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Oblique_Scaling_TT"));
-            }
-
-            // Camera Clip: drops geometry within a radius of the camera, in every view mode
-            GUI.Spacer();
-            GUI.SimpleHeader(
-                LOC.Get("VIEWPORT_Menubar_Camera_Clip"),
-                LOC.Get("VIEWPORT_Menubar_Camera_Clip_TT"));
-
-            var clipEnabled = CFG.Current.Viewport_Camera_Clip_Enabled;
-            if (ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled")}##cameraClipEnabled", ref clipEnabled))
-            {
-                CFG.Current.Viewport_Camera_Clip_Enabled = clipEnabled;
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Clip_Enabled_TT"));
-
-            var clipRadius = CFG.Current.Viewport_Camera_Clip_Radius;
-            if (ImGui.SliderFloat(
-                $"{LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius")}##cameraClipRadius",
-                ref clipRadius, 0.1f, 1000.0f, "%.1f", ImGuiSliderFlags.AlwaysClamp | ImGuiSliderFlags.Logarithmic))
-            {
-                CFG.Current.Viewport_Camera_Clip_Radius = clipRadius;
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Camera_Clip_Radius_TT"));
-
-            ImGui.Separator();
-
-            if (ImGui.Selectable($"{LOC.Get("VIEWPORT_Menubar_Action_Reset_Camera_Settings")}##resetAction"))
-            {
-                ResetCameraSettings();
-            }
-            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Action_Reset_Camera_Settings_TT"));
-
-            ImGui.EndMenu();
-        }
-    }
-
     /// <summary>
-    ///     Shows the owning editor's tool window with its Viewport Rendering section open
+    ///     Shows the owning editor's tool window with its Rendering category open: at its first section, or at the
+    ///     Camera section when <paramref name="camera" /> is set
     /// </summary>
-    private void OpenRenderingTool()
+    private void OpenRenderingTool(bool camera = false)
     {
+        ViewportRenderingTool tool = null;
+
         switch (Owner)
         {
             case MapUniverse map:
                 CFG.Current.Interface_MapEditor_ToolWindow = true;
                 CFG.Current.Interface_MapEditor_Tool_ViewportRendering = true;
-                map.View.RenderingTool.FocusRequested = true;
+                tool = map.View.RenderingTool;
                 break;
             case ModelUniverse model:
                 CFG.Current.Interface_ModelEditor_ToolWindow = true;
                 CFG.Current.Interface_ModelEditor_Tool_ViewportRendering = true;
-                model.View.RenderingTool.FocusRequested = true;
+                tool = model.View.RenderingTool;
                 break;
             case TimeActUniverse timeAct:
                 CFG.Current.Interface_TimeActEditor_ToolWindow = true;
                 CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering = true;
-                timeAct.View.RenderingTool.FocusRequested = true;
+                tool = timeAct.View.RenderingTool;
                 break;
             case GparamUniverse gparam:
                 CFG.Current.Interface_GparamEditor_ToolWindow = true;
                 CFG.Current.Interface_GparamEditor_Tool_ViewportRendering = true;
-                gparam.View.RenderingTool.FocusRequested = true;
+                tool = gparam.View.RenderingTool;
                 break;
             case FxUniverse fx:
                 CFG.Current.Interface_FxEditor_ToolWindow = true;
                 CFG.Current.Interface_FxEditor_Tool_ViewportRendering = true;
-                fx.Editor.RenderingTool.FocusRequested = true;
+                tool = fx.Editor.RenderingTool;
                 break;
         }
-    }
 
-    /// <summary>
-    ///     Puts the camera settings back to their defaults. The speed, pan, size and oblique sliders edit the camera's
-    ///     own fields, which are only read from the settings when the camera is made, so those are reset too.
-    /// </summary>
-    private void ResetCameraSettings()
-    {
-        CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-        CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
+        if (tool == null)
+            return;
 
-        CFG.Current.Viewport_Perspective_Near_Clip = CFG.Default.Viewport_Perspective_Near_Clip;
-        CFG.Current.Viewport_Perspective_Far_Clip = CFG.Default.Viewport_Perspective_Far_Clip;
-
-        CFG.Current.Viewport_Camera_Clip_Enabled = CFG.Default.Viewport_Camera_Clip_Enabled;
-        CFG.Current.Viewport_Camera_Clip_Radius = CFG.Default.Viewport_Camera_Clip_Radius;
-
-        CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-        CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-        CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
-
-        CFG.Current.Viewport_Orthographic_Near_Clip = CFG.Default.Viewport_Orthographic_Near_Clip;
-        CFG.Current.Viewport_Orthographic_Far_Clip = CFG.Default.Viewport_Orthographic_Far_Clip;
-
-        CFG.Current.Viewport_MousePan_Sensitivity = CFG.Default.Viewport_MousePan_Sensitivity;
-        CFG.Current.Viewport_DefaultOrthographicSize = CFG.Default.Viewport_DefaultOrthographicSize;
-
-        CFG.Current.Viewport_DefaultObliqueAngle = CFG.Default.Viewport_DefaultObliqueAngle;
-        CFG.Current.Viewport_DefaultObliqueScaling = CFG.Default.Viewport_DefaultObliqueScaling;
-
-        var camera = Parent.ViewportCamera;
-        camera.CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
-        camera.CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
-        camera.CameraMoveSpeed_Fast = CFG.Current.Viewport_Camera_MoveSpeed_Fast;
-        camera.PanSensitivity = CFG.Current.Viewport_MousePan_Sensitivity;
-        camera.OrthographicSize = CFG.Current.Viewport_DefaultOrthographicSize;
-        camera.ObliqueAngle = CFG.Current.Viewport_DefaultObliqueAngle;
-        camera.ObliqueScaling = CFG.Current.Viewport_DefaultObliqueScaling;
+        if (camera)
+            tool.CameraFocusRequested = true;
+        else
+            tool.FocusRequested = true;
     }
 
     public void FilterMenu()
@@ -496,6 +258,12 @@ public class ViewportMenu
                 OpenRenderingTool();
             }
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Open_Rendering_Tool_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_Menubar_Setting_Open_Camera_Tool")}##openCameraTool"))
+            {
+                OpenRenderingTool(camera: true);
+            }
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Setting_Open_Camera_Tool_TT"));
 
             if (Owner is MapUniverse mapUniverse)
             {
