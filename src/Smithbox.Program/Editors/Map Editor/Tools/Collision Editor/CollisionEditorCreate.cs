@@ -68,7 +68,7 @@ public class CollisionEditorCreate
     {
         public MsbEntity Entity;
         public string Model;
-        public FLVER2 Flver;
+        public CollisionFlverModel Flver;
         public bool[] MeshSelection = [];
     }
 
@@ -76,7 +76,7 @@ public class CollisionEditorCreate
     private List<FlverSourceEntry> FlverSources = [];
 
     // FLVERs read for the selected parts, by model, so a model placed by several parts is read once
-    private Dictionary<string, FLVER2> FlverCache = new();
+    private Dictionary<string, CollisionFlverModel> FlverCache = new();
 
     private MeshPreview Preview;
     private string PreviewKey;
@@ -270,12 +270,13 @@ public class CollisionEditorCreate
         }
 
         ImGui.SetNextItemWidth(-1);
-        // The size is ImGui's buffer size, which includes the null terminator, so 6 digits need 7
-        ImGui.InputText("##collisionCreateModel", ref ModelNumber, 7, ImGuiInputTextFlags.CharsDecimal);
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Create_Model_Input_TT"));
+        // The size is ImGui's buffer size, which includes the null terminator. The older games' IDs have a B or an _
+        ImGui.InputText("##collisionCreateModel", ref ModelNumber, (uint)Naming.MaxLength + 1,
+            Tool.IsHkpGame ? ImGuiInputTextFlags.None : ImGuiInputTextFlags.CharsDecimal);
+        GUI.Tooltip(LOC.Get(Tool.IsHkpGame ? "MAP_CollisionEditor_Create_Model_Input_Hkp_TT" : "MAP_CollisionEditor_Create_Model_Input_TT", Naming.Example));
 
         var modelProblem = GetModelProblem(ModelNumber);
-        var modelUsed = modelProblem == null && GetUsedModelNumbers(map).Contains(int.Parse(ModelNumber));
+        var modelUsed = modelProblem == null && GetUsedModelIds(map).Contains(Naming.Normalize(ModelNumber));
 
         if (modelProblem != null)
         {
@@ -294,7 +295,7 @@ public class CollisionEditorCreate
 
         if (modelUsed)
         {
-            GUI.SimpleHeader("collisionCreateActionsHeader", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Header", $"h{ModelNumber}"),
+            GUI.SimpleHeader("collisionCreateActionsHeader", LOC.Get("MAP_CollisionEditor_Create_Overwrite_Header", Naming.ModelName(ModelNumber)),
                 LOC.Get("MAP_CollisionEditor_Create_Overwrite_Action_TT"), UI.Current.ImGui_Warning_Text_Color);
         }
         else
@@ -517,8 +518,7 @@ public class CollisionEditorCreate
 
                 for (var i = 0; i < source.MeshSelection.Length; i++)
                 {
-                    var mesh = source.Flver.Meshes[i];
-                    var material = mesh.MaterialIndex < source.Flver.Materials.Count ? source.Flver.Materials[mesh.MaterialIndex].Name : "";
+                    var material = source.Flver.Meshes[i].Material;
 
                     ImGui.Checkbox($"{LOC.Get("MAP_CollisionEditor_Create_Flver_Mesh", i, material)}##collisionCreateMesh{s}_{i}",
                         ref source.MeshSelection[i]);
@@ -753,7 +753,7 @@ public class CollisionEditorCreate
         }
 
         var previous = FlverSources;
-        var cache = new Dictionary<string, FLVER2>();
+        var cache = new Dictionary<string, CollisionFlverModel>();
         var sources = new List<FlverSourceEntry>();
 
         foreach (var (entity, model) in selected)
@@ -816,22 +816,26 @@ public class CollisionEditorCreate
     }
 
     /// <summary>
-    /// Reads the FLVER of a map piece or asset from the binder it is in, as the viewport finds it.
+    /// Reads the model of a map piece or asset (an object in the older games) from where the viewport finds it, in
+    /// every game's layout (see CollisionFlverReader): loose map pieces (DES, DS1, DS1R, BB), map binders (DS3 and
+    /// later), DS2S's split model/map binders, and BND3 (DES, DS1, DS1R) or BND4 object binders; FLVER0 or FLVER2.
     /// </summary>
-    private FLVER2 ReadFlver(MsbEntity entity, string model)
+    private CollisionFlverModel ReadFlver(MsbEntity entity, string model)
     {
         try
         {
             ResourceDescriptor asset;
+            string assetName;
 
             if (EntityHelper.IsPartMapPiece(entity))
             {
                 var mapId = PathBuilder.GetAssetMapID(Project, entity.MapID);
-                var name = ModelLocator.MapModelNameToAssetName(Project, mapId, model);
-                asset = ModelLocator.GetMapModel(Project, mapId, name, name);
+                assetName = ModelLocator.MapModelNameToAssetName(Project, mapId, model);
+                asset = ModelLocator.GetMapModel(Project, mapId, assetName, assetName);
             }
             else
             {
+                assetName = model;
                 asset = ModelLocator.GetObjModel(Project, model, model);
             }
 
@@ -840,27 +844,11 @@ public class CollisionEditorCreate
             if (string.IsNullOrEmpty(path) || !Project.VFS.FS.FileExists(path))
                 return null;
 
-            var data = Project.VFS.FS.ReadFile(path);
+            // A Color normal's W isn't a node index in these games' models (as the OBJ exporter reads them)
+            var colorNormalIsNode = !(Project.Descriptor.ProjectType is ProjectType.NR or ProjectType.DS1 or ProjectType.DS1R);
 
-            if (data == null)
-                return null;
-
-            if (path.Contains("bnd", StringComparison.OrdinalIgnoreCase))
-            {
-                using var binder = new BND4Reader(data.Value);
-
-                var flvers = binder.Files
-                    .Where(f => f.Name != null && f.Name.Contains(".flver", StringComparison.OrdinalIgnoreCase))
-                    .ToList();
-
-                // The model's own FLVER first, if the binder holds others
-                var file = flvers.FirstOrDefault(f => f.Name.Contains(model.TrimStart('m'), StringComparison.OrdinalIgnoreCase))
-                    ?? flvers.FirstOrDefault();
-
-                return file == null ? null : FLVER2.Read(binder.ReadFile(file));
-            }
-
-            return FLVER2.Read(data.Value);
+            return CollisionFlverReader.Read(p => Project.VFS.FS.FileExists(p) ? Project.VFS.FS.ReadFile(p)?.ToArray() : null,
+                path, assetName, colorNormalIsNode);
         }
         catch (Exception e)
         {
@@ -1035,47 +1023,36 @@ public class CollisionEditorCreate
             if (selected.Count == 0)
                 continue;
 
-            // A mesh whose material is named hkm_Name_Property gets that collision material
-            var flver = source.Flver;
-            uint MeshMaterial(int meshIndex)
-            {
-                var name = flver.Materials[flver.Meshes[meshIndex].MaterialIndex].Name;
-                return HavokCollisionMaterials.TryParse(name, out var id) ? id : (uint)MaterialId;
-            }
-
-            var sourceMaterials = new List<uint>();
-            var (sourceVertices, sourceIndices) = HavokShapeGenerator.GenerateFlverCollision(flver, selected, sourceMaterials, MeshMaterial);
-
-            if (sourceIndices.Count == 0)
-                continue;
-
             var matrix = GetSourceMatrix(source, anchor, toAnchor);
 
             // A mirroring placement turns the faces inside out, so their winding is reversed to keep them facing out
             var mirrored = matrix.GetDeterminant() < 0;
 
-            var remap = new int[sourceVertices.Count];
-
-            for (var v = 0; v < sourceVertices.Count; v++)
-                remap[v] = Weld(Vector3.Transform(sourceVertices[v], matrix));
-
-            for (var t = 0; t + 2 < sourceIndices.Count; t += 3)
+            foreach (var meshIndex in selected)
             {
-                var a = remap[sourceIndices[t]];
-                var b = remap[sourceIndices[t + 1]];
-                var c = remap[sourceIndices[t + 2]];
+                var mesh = source.Flver.Meshes[meshIndex];
 
-                // Welding can collapse a small triangle to a line or point
-                if (a == b || b == c || c == a)
-                    continue;
+                // A mesh whose material is named hkm_Name_Property gets that collision material
+                var material = HavokCollisionMaterials.TryParse(mesh.Material, out var id) ? id : (uint)MaterialId;
 
-                if (mirrored)
-                    (b, c) = (c, b);
+                for (var t = 0; t + 2 < mesh.Corners.Count; t += 3)
+                {
+                    var a = Weld(Vector3.Transform(mesh.Corners[t], matrix));
+                    var b = Weld(Vector3.Transform(mesh.Corners[t + 1], matrix));
+                    var c = Weld(Vector3.Transform(mesh.Corners[t + 2], matrix));
 
-                indices.Add(a);
-                indices.Add(b);
-                indices.Add(c);
-                materials.Add(sourceMaterials[t / 3]);
+                    // Welding can collapse a small triangle to a line or point
+                    if (a == b || b == c || c == a)
+                        continue;
+
+                    if (mirrored)
+                        (b, c) = (c, b);
+
+                    indices.Add(a);
+                    indices.Add(b);
+                    indices.Add(c);
+                    materials.Add(material);
+                }
             }
         }
 
@@ -1105,61 +1082,54 @@ public class CollisionEditorCreate
 
     #region Model ID
 
+    /// <summary>How the game names its collision models, files, bodies and parts.</summary>
+    private CollisionEditorNaming Naming => CollisionEditorNaming.For(Project.Descriptor.ProjectType.ToString());
+
     /// <summary>
-    /// The first unused model number after the map's highest below 900000 (the 9xxxxx numbers are kept apart in the
-    /// game's maps).
+    /// A new model ID after the map's used ones (see CollisionEditorNaming.Suggest: six digits below 900000, or the
+    /// older games' block and group forms).
     /// </summary>
     private string SuggestModelNumber(MapContainer map)
     {
-        var used = GetUsedModelNumbers(map);
-        var highest = used.Where(n => n < 900000).DefaultIfEmpty(0).Max();
-
-        for (var n = highest + 1; n < 1000000; n++)
-        {
-            if (!used.Contains(n))
-                return n.ToString("D6");
-        }
-
-        return "";
+        return Naming.Suggest(GetUsedModelIds(map));
     }
 
-    /// <summary>The model numbers the map's collision files and collision parts use.</summary>
-    private HashSet<int> GetUsedModelNumbers(MapContainer map)
+    /// <summary>The model IDs the map's collision files and collision parts use, in the game's form.</summary>
+    private HashSet<string> GetUsedModelIds(MapContainer map)
     {
-        var used = new HashSet<int>();
+        var naming = Naming;
+        var used = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         if (View.HavokCollisionBank.MapCollisions.TryGetValue(map.Name, out var names))
         {
             foreach (var name in names)
             {
-                var match = Regex.Match(name, @"_(\d{6})\.hkx", RegexOptions.IgnoreCase);
-
-                if (match.Success)
-                    used.Add(int.Parse(match.Groups[1].Value));
+                if (naming.IdFromFile(name) is { } id)
+                    used.Add(id);
             }
         }
 
         foreach (var entity in map.Objects.OfType<MsbEntity>().Where(EntityHelper.IsPartCollision))
         {
-            if (entity.GetPropertyValue("ModelName") is string model && model.Length == 7 && int.TryParse(model.Substring(1), out var n))
-                used.Add(n);
+            if (naming.IdFromModel(entity.GetPropertyValue("ModelName") as string) is { } id)
+                used.Add(id);
         }
 
         return used;
     }
 
     /// <summary>
-    /// Why the model number can't be used, or null if it can. A number the map already uses is fine: it is overwritten.
+    /// Why the model ID can't be used, or null if it can. An ID the map already uses is fine: it is overwritten.
     /// </summary>
-    private static string GetModelProblem(string number)
+    private string GetModelProblem(string number)
     {
-        if (number.Length != 6 || !number.All(char.IsDigit))
-            return LOC.Get("MAP_CollisionEditor_Create_Model_Invalid");
+        if (!Naming.IsValid(number))
+            return LOC.Get(Tool.IsHkpGame ? "MAP_CollisionEditor_Create_Model_Invalid_Hkp" : "MAP_CollisionEditor_Create_Model_Invalid", Naming.Example);
 
         return null;
     }
 
-    private static string GetFileName(string type, string mapId, string number) => $"{type}{mapId.Substring(1)}_{number}.hkx.dcx";
+    private string GetFileName(string type, string mapId, string number) => Naming.FileName(type, mapId, number);
 
     #endregion
 
@@ -1177,7 +1147,7 @@ public class CollisionEditorCreate
             return;
 
         var mapId = map.Name;
-        var number = ModelNumber;
+        var number = Naming.Normalize(ModelNumber);
         var bank = View.HavokCollisionBank;
 
         // The part is based on one of the map's own collision parts, so its fields suit the map
@@ -1205,7 +1175,7 @@ public class CollisionEditorCreate
 
             try
             {
-                if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials))
+                if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials, Naming.BodyName(type, number)))
                 {
                     Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", GetFileName(type, mapId, number)));
                     return;
@@ -1240,7 +1210,7 @@ public class CollisionEditorCreate
         Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Created", string.Join(", ", created.Select(c => c.FileName)),
             indices.Count / 3));
 
-        HandOffModel = (mapId, $"h{number}");
+        HandOffModel = (mapId, Naming.ModelName(number));
 
         ModelNumberMap = null;
     }
@@ -1255,7 +1225,7 @@ public class CollisionEditorCreate
     /// </summary>
     private void BeginOverwrite(MapContainer map)
     {
-        PendingOverwrite = BuildOverwritePlan(map, ModelNumber);
+        PendingOverwrite = BuildOverwritePlan(map, Naming.Normalize(ModelNumber));
         OpenOverwriteConfirm = true;
     }
 
@@ -1290,7 +1260,7 @@ public class CollisionEditorCreate
             }
         }
 
-        var modelName = $"h{number}";
+        var modelName = Naming.ModelName(number);
         var partCount = map.Objects.OfType<MsbEntity>()
             .Where(EntityHelper.IsPartCollision)
             .Count(e => string.Equals(e.GetPropertyValue("ModelName") as string, modelName, StringComparison.OrdinalIgnoreCase));
@@ -1320,7 +1290,7 @@ public class CollisionEditorCreate
             return;
 
         // The confirm is for the map and number it was opened for
-        var stale = plan == null || plan.MapId != map.Name || plan.Number != ModelNumber;
+        var stale = plan == null || plan.MapId != map.Name || plan.Number != Naming.Normalize(ModelNumber);
 
         if (stale)
         {
@@ -1329,7 +1299,7 @@ public class CollisionEditorCreate
             return;
         }
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Overwrite_Text", $"h{plan.Number}"));
+        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Create_Overwrite_Text", Naming.ModelName(plan.Number)));
 
         foreach (var file in plan.Files)
         {
@@ -1387,7 +1357,7 @@ public class CollisionEditorCreate
         // lands where the points are for it
         var keptPart = map.Objects.OfType<MsbEntity>()
             .Where(EntityHelper.IsPartCollision)
-            .FirstOrDefault(e => string.Equals(e.GetPropertyValue("ModelName") as string, $"h{number}", StringComparison.OrdinalIgnoreCase));
+            .FirstOrDefault(e => string.Equals(e.GetPropertyValue("ModelName") as string, Naming.ModelName(number), StringComparison.OrdinalIgnoreCase));
 
         if (!TryBuildGeometry(map, keptPart, out var vertices, out var indices, out var materials))
             return;
@@ -1458,7 +1428,7 @@ public class CollisionEditorCreate
                         return;
                     }
 
-                    var modelName = $"h{number}";
+                    var modelName = Naming.ModelName(number);
                     var before = View.WallBank.GetMarks(mapId, modelName);
 
                     if (before != null && (before.Triangles.Count > 0 || before.NoJumpKeys.Count > 0))
@@ -1480,7 +1450,7 @@ public class CollisionEditorCreate
 
                 try
                 {
-                    if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials))
+                    if (!CollisionEditorShapes.MakeNewCollision(document, number, vertices, indices, materials, Naming.BodyName(file.Type, number)))
                     {
                         Tool.ReportFailure(GetType(), CollisionEditorSource.Create, LOC.Get("MAP_CollisionEditor_Create_Build_Failed", file.FileName));
                         return;
@@ -1525,7 +1495,7 @@ public class CollisionEditorCreate
         Tool.ReportSuccess(GetType(), CollisionEditorSource.Create, true, LOC.Get("MAP_CollisionEditor_Overwritten", string.Join(", ", plan.Files.Select(f => f.FileName)),
             indices.Count / 3));
 
-        HandOffModel = (mapId, $"h{number}");
+        HandOffModel = (mapId, Naming.ModelName(number));
 
         ModelNumberMap = null;
     }
@@ -1540,15 +1510,16 @@ public class CollisionEditorCreate
     /// </summary>
     private void AddPart(MapContainer map, MsbEntity template, string number)
     {
-        var modelName = $"h{number}";
+        var modelName = Naming.ModelName(number);
         var part = (MsbEntity)template.Clone();
         var wrapped = part.WrappedObject;
 
         SetProperty(wrapped, "ModelName", modelName);
         part.ModelName = modelName;
 
-        // A new part has no entity of its own yet (the IDs are uint in ER and NR, int in DS3 and SDT)
-        SetProperty(wrapped, "EntityID", 0);
+        // A new part has no entity of its own yet (the IDs are uint in ER and NR, int in DS3 and SDT; DES and DS1 mark
+        // none with -1; DS2S's parts have none)
+        SetProperty(wrapped, "EntityID", Naming.NoEntityId);
 
         if (wrapped.GetType().GetProperty("EntityGroupIDs")?.GetValue(wrapped) is Array groups)
             Array.Clear(groups);
@@ -1581,14 +1552,12 @@ public class CollisionEditorCreate
             SetProperty(wrapped, "Rotation", Vector3.Zero);
         }
 
-        // Named for its model, with the first free instance number, as the game names parts
+        // Named for its model as the game names parts: with the first free instance number, or, in DES and DS1, as
+        // the model itself
         var names = new HashSet<string>(map.Objects.Select(o => o.Name), StringComparer.OrdinalIgnoreCase);
-        var instance = 0;
+        var partName = Naming.PartName(modelName, names, out var instance);
 
-        while (names.Contains($"{modelName}_{instance:D4}"))
-            instance++;
-
-        SetProperty(wrapped, "Name", $"{modelName}_{instance:D4}");
+        SetProperty(wrapped, "Name", partName);
         SetProperty(wrapped, "InstanceID", instance);
 
         // Loaded from the binder by name first, so the part's own load joins this one instead of reading the binder's

@@ -162,14 +162,23 @@ public partial class CollisionEditorTool
     }
 
     /// <summary>
-    /// The games whose map collision the Map Editor holds as documents it can write back, with FromSoftware compressed
-    /// meshes the shared builder makes.
+    /// The games whose map collision the Map Editor holds as documents it can write back: FromSoftware compressed
+    /// meshes (hknp) the shared builder makes, and the older games' MOPP meshes (hkp: DES, DS1, DS1R, DS2S), whose
+    /// MOPP is recompiled on commit. DS2 isn't: its Havok 2012 files have no class set to write them with.
     /// </summary>
     public bool CanUse()
     {
         return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
-            or ProjectType.DB_NT or ProjectType.DS3 or ProjectType.SDT;
+            or ProjectType.DB_NT or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB
+            or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S;
     }
+
+    /// <summary>
+    /// The older games (hkp physics): Create names their models and files their own way (CollisionEditorNaming), and
+    /// Cleanup doesn't cover them (their files are named by model and area, not by number).
+    /// </summary>
+    public bool IsHkpGame => Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1
+        or ProjectType.DS1R or ProjectType.DS2S;
 
     private bool HasEdits => Files.Values.Any(f => f.IsEdited);
 
@@ -1191,7 +1200,10 @@ public partial class CollisionEditorTool
 
                 try
                 {
-                    built = CollisionEditorShapes.BuildShape(body.Body.Shape, vertices, indices, materials);
+                    // The older games' meshes keep their triangles and keys; the others are built afresh
+                    built = Havok.Builders.HkpMeshShapeRebuild.IsSupported(body.Body.Shape)
+                        ? CollisionEditorShapes.BuildHkpShape(body.Body.Shape, vertices, indices, keys)
+                        : CollisionEditorShapes.BuildShape(body.Body.Shape, vertices, indices, materials);
                 }
                 catch (Exception e)
                 {

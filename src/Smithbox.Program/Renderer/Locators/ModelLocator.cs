@@ -104,10 +104,11 @@ public static class ModelLocator
         // DES and PTDE keep each map collision as a loose file; DS1R keeps them in hkxbhd binders, as DS3 does
         if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DES)
         {
+            // The model name already starts with its h (h0029B1A10, h0000b0), as the files do
             if (targetType is HavokCollisionType.High)
             {
                 ret.AssetName = model;
-                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/h{model}.hkx";
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/h{model.Substring(1)}.hkx";
             }
             else if (targetType is HavokCollisionType.Low)
             {
@@ -117,9 +118,19 @@ public static class ModelLocator
         }
         else if (project.Descriptor.ProjectType == ProjectType.DS2S)
         {
-            ret.AssetName = model;
-            ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
-            ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
+            // model/map/h10_02_00_00.hkxbhd holds h02_0300, model/map/l10_02_00_00.hkxbhd its l02_0300
+            if (targetType is HavokCollisionType.Low && !isConnectCollision)
+            {
+                ret.AssetName = model;
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/lo/l{model.Substring(1)}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/lo";
+            }
+            else
+            {
+                ret.AssetName = model;
+                ret.AssetVirtualPath = $@"map/{mapid}/{colType}/hi/{model}.hkx.dcx";
+                ret.AssetArchiveVirtualPath = $@"map/{mapid}/{colType}/hi";
+            }
         }
         else if (project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
         {

@@ -752,8 +752,10 @@ public class MapUniverse : IUniverse
             navSaved |= SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
         }
 
-        // DS3 and SDT collision is edited by the Collision Editor (their navmesh isn't edited here)
-        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT)
+        // DS3, SDT, BB and the hkp games' collision is edited by the Collision Editor (their navmesh isn't edited
+        // here). BB and the hkp games only write the files it changed.
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB
+            or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
         {
             collisionSaved |= SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
         }

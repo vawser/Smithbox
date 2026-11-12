@@ -10,8 +10,9 @@
     },
     {
       "Key": "MAP_CollisionEditor_Unsupported_Game",
-      "Text": "This tool is only supported for Dark Souls III, Sekiro, Elden Ring, Nightreign, Armored Core VI and The Duskbloods (Network Test)."
+      "Text": "This tool isn't supported for this game. Dark Souls II (the original release) isn't: its Havok 2012 collision can't be written; use Scholar of the First Sin."
     },
+    { "Key": "MAP_CollisionEditor_Hkp_Edit_Only", "Text": "Cleanup isn't available for Demon's Souls, Dark Souls, Dark Souls Remastered and Dark Souls II: Scholar of the First Sin: their collision files are named by model and area, which the unused check doesn't read." },
     { "Key": "MAP_CollisionEditor_Tool_Description", "Text": "Reshape, create and wall map collision. Edit moves the vertices of the displayed collision; Create adds a new collision to the active map; Fall Protection builds the walls that stop falls off a collision's edges; Cleanup removes collision files no part uses." },
     { "Key": "MAP_CollisionEditor_Help_Header", "Text": "How this works" },
     { "Key": "MAP_CollisionEditor_Help_Header_TT", "Text": "The steps of this tab. Open the first time the tab is shown; the eye shows or hides them." },
@@ -501,6 +502,8 @@
     { "Key": "MAP_CollisionEditor_Create_Model_Header_TT", "Text": "The number of the new collision model: the part's model is h followed by it, and its files are named for it." },
     { "Key": "MAP_CollisionEditor_Create_Model_Input_TT", "Text": "Six digits. Suggested as the first unused number after the map's highest below 900000." },
     { "Key": "MAP_CollisionEditor_Create_Model_Invalid", "Text": "The model ID must be six digits." },
+    { "Key": "MAP_CollisionEditor_Create_Model_Invalid_Hkp", "Text": "The model ID must be in this game's form, like {0}." },
+    { "Key": "MAP_CollisionEditor_Create_Model_Input_Hkp_TT", "Text": "In this game's form, like {0}: Demon's Souls and Dark Souls use four digits, B and a block digit (h1234B1, files h1234B1A10.hkx); Dark Souls II two digits, _ and four digits (h01_0200). Suggested as the next free number in the block the map uses most." },
     { "Key": "MAP_CollisionEditor_Create_Model_Used", "Text": "The map already has a collision {0}: its mesh will be overwritten, once confirmed." },
     { "Key": "MAP_CollisionEditor_Create_Preview_Header", "Text": "Preview" },
     { "Key": "MAP_CollisionEditor_Create_Preview_Header_TT", "Text": "The triangles the collision will have." },

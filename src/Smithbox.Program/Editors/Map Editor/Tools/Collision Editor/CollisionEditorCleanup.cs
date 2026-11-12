@@ -55,6 +55,14 @@ public class CollisionEditorCleanup
     {
         GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cleanup_Description"));
 
+        // The older games name their files by model and area, which the unused check doesn't read
+        if (Tool.IsHkpGame)
+        {
+            GUI.Spacer();
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Hkp_Edit_Only"));
+            return;
+        }
+
         var map = View.Selection.ResolveTargetMap(MapTargetPicker.ActiveMap);
 
         // Map

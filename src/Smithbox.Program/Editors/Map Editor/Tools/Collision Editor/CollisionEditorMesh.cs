@@ -97,7 +97,10 @@ public sealed class CollisionEditorBody
     /// </summary>
     public static CollisionEditorBody Decode(IHavokBody body)
     {
-        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionEditorShapes.IsSupportedShape(body.Shape))
+        if (Havok.Builders.HkpMeshShapeRebuild.IsSupported(body.Shape))
+            return DecodeHkp(body);
+
+        if (body.Shape is not IHavokCompressedMesh mesh || !CollisionEditorShapes.IsCompressedMeshShape(body.Shape))
             return null;
 
         var materialOfKey = CollisionEditorShapes.GetMaterialsByKey(body.Shape);
@@ -129,6 +132,62 @@ public sealed class CollisionEditorBody
 
             materials.Add(materialOfKey.GetValueOrDefault(key >> shift));
             keys.Add(key);
+        }
+
+        if (indices.Count == 0)
+            return null;
+
+        return new CollisionEditorBody(body, vertices, indices, materials, keys);
+    }
+
+    /// <summary>
+    /// Decodes an older game's (hkp) mesh: a MOPP over a FromSoftware storage-extended mesh, one storage per collision
+    /// material. Corners with exactly the same position are welded across storages, so a vertex shared by two
+    /// materials moves as one. Each triangle's key is its storage and index, which a commit keeps (see
+    /// CollisionEditorShapes.BuildHkpShape); its material is its storage's parameter's material.
+    /// </summary>
+    private static CollisionEditorBody DecodeHkp(IHavokBody body)
+    {
+        var mesh = Havok.Builders.HkpMeshShapeRebuild.Read(body.Shape);
+
+        if (mesh == null)
+            return null;
+
+        var vertices = new List<Vector3>();
+        var weld = new Dictionary<Vector3, int>();
+        var indices = new List<int>();
+        var materials = new List<uint>();
+        var keys = new List<uint>();
+
+        int Add(Vector3 v)
+        {
+            if (!weld.TryGetValue(v, out var i))
+            {
+                i = vertices.Count;
+                vertices.Add(v);
+                weld[v] = i;
+            }
+
+            return i;
+        }
+
+        for (var s = 0; s < mesh.StorageTriangles.Count; s++)
+        {
+            var storage = mesh.StorageVertices[s];
+
+            for (var t = 0; t < mesh.StorageTriangles[s].Count; t++)
+            {
+                var (a, b, c) = mesh.StorageTriangles[s][t];
+
+                if (a >= storage.Length || b >= storage.Length || c >= storage.Length)
+                    continue;
+
+                indices.Add(Add(storage[a]));
+                indices.Add(Add(storage[b]));
+                indices.Add(Add(storage[c]));
+                materials.Add(mesh.StorageMaterials[s]);
+                keys.Add(mesh.Key(s, t));
+            }
         }
 
         if (indices.Count == 0)

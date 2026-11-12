@@ -138,6 +138,15 @@ public class HavokCollisionBank
         if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
+        // DES and DS1 keep each collision as a loose file in the map's folder
+        if (IsLooseGame)
+        {
+            if (!MapCollisions.ContainsKey(mapId))
+                MapCollisions.Add(mapId, new List<string>());
+
+            ListLooseCollision(mapId);
+        }
+
         // The viewport reads its own collision, so these are only listed here and read when they are first asked for
         if (IsListedGame)
         {
@@ -162,22 +171,50 @@ public class HavokCollisionBank
     }
 
     /// <summary>
-    /// The games whose map collision is listed when a map loads and read when it is first asked for (MapDocuments):
-    /// ER, NR, AC6, DB_NT and DS3. SDT's is read at load instead (TagContainers).
+    /// The games whose map collision binders are listed when a map loads and read when first asked for
+    /// (MapDocuments): ER, NR, AC6, DB_NT, DS3, BB, DS1R and DS2S. SDT's is read at load instead (TagContainers);
+    /// DES and DS1 keep loose files (see IsLooseGame).
     /// </summary>
     private bool IsListedGame => Project.Descriptor.ProjectType is ProjectType.ER
         or ProjectType.NR
         or ProjectType.AC6
         or ProjectType.DB_NT
-        or ProjectType.DS3;
+        or ProjectType.DS3
+        or ProjectType.BB
+        or ProjectType.DS1R
+        or ProjectType.DS2S;
+
+    /// <summary>
+    /// DES and DS1 (PTDE) keep each map collision as a loose file, map/m10_01_00_00/h0029B1A10.hkx, read when first
+    /// asked for and written back on its own.
+    /// </summary>
+    private bool IsLooseGame => Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1;
+
+    /// <summary>DS1R's collision binders are BXF3; the other games' BXF4.</summary>
+    private bool IsBxf3Game => Project.Descriptor.ProjectType is ProjectType.DS1R;
+
+    /// <summary>
+    /// The games of which only the collision files the Map Editor changed are written, so the rest keep their bytes:
+    /// SDT (read at load for its walls), and the older games, whose files the Havok writer hasn't written before
+    /// the Collision Editor (MoppSurvey's rebuild mode round-trips edited ones).
+    /// </summary>
+    private bool WritesOnlyModified => Project.Descriptor.ProjectType is ProjectType.SDT
+        or ProjectType.BB
+        or ProjectType.DES
+        or ProjectType.DS1
+        or ProjectType.DS1R
+        or ProjectType.DS2S;
 
     /// <summary>
     /// The paths of a map's collision binder of one type. ER, NR and AC6 keep a map in its area's folder
-    /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3, SDT and DB_NT keep it in the map's own (map/m30_00_00_00/...).
+    /// (map/m30/m30_00_00_00/h30_00_00_00.hkxbhd); DS3, SDT, BB, DS1R and DB_NT keep it in the map's own
+    /// (map/m30_00_00_00/...); DS2S keeps every map's in model/map (model/map/h10_02_00_00.hkxbhd).
     /// </summary>
     private (string Bhd, string Bdt) GetBinderPaths(string mapId, string type)
     {
-        var folder = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.DB_NT
+        var folder = Project.Descriptor.ProjectType is ProjectType.DS2S
+            ? Path.Join("model", "map")
+            : Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB or ProjectType.DB_NT or ProjectType.DS1R
             ? Path.Join("map", mapId)
             : Path.Join("map", mapId.Substring(0, 3), mapId);
 
@@ -185,10 +222,86 @@ public class HavokCollisionBank
     }
 
     /// <summary>
-    /// Collision files of Sekiro that the Map Editor has changed, the only ones of its binders that are written: the
-    /// rest are read at load for the walls and viewport, and keep their bytes.
+    /// Collision files the Map Editor has changed or made, in the games that only write those (WritesOnlyModified).
     /// </summary>
     private readonly HashSet<string> ModifiedTagFiles = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>The project path of each loose collision file of DES and DS1, by file name.</summary>
+    private readonly Dictionary<string, (string MapId, string Path)> LooseFiles = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>Lists a DES or DS1 map's loose h and l collision files, without reading them.</summary>
+    private void ListLooseCollision(string mapId)
+    {
+        try
+        {
+            foreach (var path in Project.VFS.FS.GetFileNamesWithExtensions(Path.Join("map", mapId), ".hkx"))
+            {
+                var name = Path.GetFileName(path);
+
+                if (name.Length < 2 || char.ToLowerInvariant(name[0]) is not ('h' or 'l'))
+                    continue;
+
+                if (LooseFiles.TryAdd(name, (mapId, path)))
+                {
+                    CollisionBinders[name] = (mapId, char.ToLowerInvariant(name[0]).ToString());
+                    MapCollisions[mapId].Add(name);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKXBND", mapId), e);
+        }
+    }
+
+    /// <summary>Reads one loose DES or DS1 collision file into MapDocuments.</summary>
+    private void ReadLooseCollision(string fileName)
+    {
+        if (!LooseFiles.TryGetValue(fileName, out var entry))
+            return;
+
+        var profile = Havok.HavokProfile.FromGame(Project.Descriptor.ProjectType.ToString());
+
+        try
+        {
+            var data = Project.VFS.FS.ReadFile(entry.Path);
+
+            if (data == null)
+                return;
+
+            var bytes = DCX.Is(data.Value) ? DCX.Decompress(data.Value) : data.Value;
+            MapDocuments.TryAdd(fileName, Havok.Files.HavokFile.Read(bytes.ToArray(), profile));
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Read_HKX", fileName), e);
+        }
+    }
+
+    /// <summary>Writes the changed loose collision files of one type of a DES or DS1 map into the project.</summary>
+    private bool SaveLooseCollision(string mapId, string type)
+    {
+        var success = true;
+
+        foreach (var (name, entry) in LooseFiles.Where(e => e.Value.MapId == mapId).ToList())
+        {
+            if (!name.StartsWith(type, StringComparison.OrdinalIgnoreCase) || GetDocumentToSave(name) is not { } document)
+                continue;
+
+            try
+            {
+                Project.VFS.ProjectFS.WriteFile(entry.Path, Havok.Files.HavokFile.Write(document));
+                ModifiedTagFiles.Remove(name);
+            }
+            catch (Exception ex)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Data_Failed_Serialize_HKX", name), ex);
+                success = false;
+            }
+        }
+
+        return success;
+    }
 
     /// <summary>
     /// The editable document of a map collision file, read if it hasn't been: MapDocuments for the listed games,
@@ -210,12 +323,12 @@ public class HavokCollisionBank
     }
 
     /// <summary>
-    /// Marks a collision file as changed, so it is written when its binder is saved. Only Sekiro needs it: the other
-    /// games write every read file of a binder.
+    /// Marks a collision file as changed, so it is written when its binder is saved. Only the games that write just
+    /// their changed files need it (WritesOnlyModified): the others write every read file of a binder.
     /// </summary>
     public void MarkModified(string fileName)
     {
-        if (Project.Descriptor.ProjectType is ProjectType.SDT)
+        if (WritesOnlyModified)
             ModifiedTagFiles.Add(fileName);
     }
 
@@ -224,6 +337,9 @@ public class HavokCollisionBank
     {
         if (Project.Descriptor.ProjectType is ProjectType.SDT)
             return ModifiedTagFiles.Contains(fileName) ? GetTagDocument(fileName) : null;
+
+        if (WritesOnlyModified && !ModifiedTagFiles.Contains(fileName))
+            return null;
 
         return MapDocuments.GetValueOrDefault(fileName);
     }
@@ -241,7 +357,13 @@ public class HavokCollisionBank
     /// </summary>
     public Havok.HavokDocument GetMapDocument(string fileName)
     {
-        if (CollisionBinders.TryGetValue(fileName, out var binder) &&
+        if (LooseFiles.ContainsKey(fileName))
+        {
+            // A loose file is read on its own
+            if (ReadBinders.Add(fileName))
+                ReadLooseCollision(fileName);
+        }
+        else if (CollisionBinders.TryGetValue(fileName, out var binder) &&
             ReadBinders.Add(GetBinderKey(binder.MapId, binder.Type)))
         {
             ReadMapCollision(binder.MapId, binder.Type);
@@ -256,7 +378,7 @@ public class HavokCollisionBank
     /// Opens the collision binder of one type of a map, from the project if it has its own copy.
     /// Null if the map has no binder of this type.
     /// </summary>
-    private BXF4Reader OpenCollisionBinder(string mapId, string type)
+    private BinderReader OpenCollisionBinder(string mapId, string type)
     {
         var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
@@ -276,7 +398,24 @@ public class HavokCollisionBank
         if (bdtData == null || bhdData == null)
             return null;
 
-        return new BXF4Reader((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+        return IsBxf3Game
+            ? new BXF3Reader((Memory<byte>)bhdData, (Memory<byte>)bdtData)
+            : new BXF4Reader((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+    }
+
+    /// <summary>
+    /// A map's collision binder read for writing: its files, and how to write it back (BXF3 for DS1R, BXF4 otherwise).
+    /// </summary>
+    private (List<BinderFile> Files, Func<(byte[] Bhd, byte[] Bdt)> Write) ReadPackedBinder(Memory<byte> bhd, Memory<byte> bdt)
+    {
+        if (IsBxf3Game)
+        {
+            var bxf3 = BXF3.Read(bhd, bdt);
+            return (bxf3.Files, () => { bxf3.Write(out byte[] h, out byte[] d); return (h, d); });
+        }
+
+        var bxf4 = BXF4.Read(bhd, bdt);
+        return (bxf4.Files, () => { bxf4.Write(out byte[] h, out byte[] d); return (h, d); });
     }
 
     private static List<BinderFileHeader> GetCollisionFiles(BinderReader binder)
@@ -466,6 +605,8 @@ public class HavokCollisionBank
             CollisionBinders.Remove(name);
             NewFiles.Remove(name);
             ModifiedTagFiles.Remove(name);
+            LooseFiles.Remove(name);
+            ReadBinders.Remove(name);
 
             lock (TagContainers)
             {
@@ -556,6 +697,33 @@ public class HavokCollisionBank
         if (profile == null)
             return null;
 
+        // DES and DS1: a fresh read of a loose file of the type
+        if (IsLooseGame)
+        {
+            foreach (var (name, entry) in LooseFiles.Where(e => e.Value.MapId == mapId && e.Key.StartsWith(type, StringComparison.OrdinalIgnoreCase)).ToList())
+            {
+                try
+                {
+                    var data = Project.VFS.FS.ReadFile(entry.Path);
+
+                    if (data == null)
+                        continue;
+
+                    var bytes = DCX.Is(data.Value) ? DCX.Decompress(data.Value) : data.Value;
+                    var document = Havok.Files.HavokFile.Read(bytes.ToArray(), profile);
+
+                    if (accept(document))
+                        return document;
+                }
+                catch (Exception)
+                {
+                    // Files that can't be read are skipped: any readable one will do
+                }
+            }
+
+            return null;
+        }
+
         try
         {
             using var binder = OpenCollisionBinder(mapId, type);
@@ -605,6 +773,10 @@ public class HavokCollisionBank
     /// </summary>
     public bool HasCollisionBinder(string mapId, string type)
     {
+        // DES and DS1 have no binders: a type is there if the map has a loose file of it
+        if (IsLooseGame)
+            return LooseFiles.Any(e => e.Value.MapId == mapId && e.Key.StartsWith(type, StringComparison.OrdinalIgnoreCase));
+
         var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
         return Project.VFS.FS.FileExists(bdtPath) && Project.VFS.FS.FileExists(bhdPath);
@@ -638,6 +810,17 @@ public class HavokCollisionBank
         else
         {
             MapDocuments[fileName] = document;
+
+            if (WritesOnlyModified)
+                ModifiedTagFiles.Add(fileName);
+
+            // A loose file goes beside the map's others
+            if (IsLooseGame)
+            {
+                LooseFiles[fileName] = (mapId, Path.Join("map", mapId, fileName));
+                ReadBinders.Add(fileName);
+                NewFiles.Remove(fileName);
+            }
         }
     }
 
@@ -645,7 +828,7 @@ public class HavokCollisionBank
     /// Adds the new collision files of a binder that it doesn't have yet, as its other collision files are stored:
     /// in the same folder of the binder, with their flags and compression, and the next free ID.
     /// </summary>
-    private bool AddNewFiles(BXF4 binder, string mapId, string type, ref bool anyWritten)
+    private bool AddNewFiles(List<BinderFile> binderFiles, string mapId, string type, ref bool anyWritten)
     {
         var success = true;
 
@@ -657,7 +840,7 @@ public class HavokCollisionBank
         if (pending.Count == 0)
             return true;
 
-        var existing = binder.Files
+        var existing = binderFiles
             .Where(f => f.Name != null && f.Name.Contains(".hkx.dcx") && f.Name.Split('\\').Length == 2)
             .ToList();
 
@@ -687,9 +870,9 @@ public class HavokCollisionBank
             try
             {
                 var bytes = DCX.Compress(Havok.Files.HavokFile.Write(document), compression);
-                var id = binder.Files.Count == 0 ? 0 : binder.Files.Max(f => f.ID) + 1;
+                var id = binderFiles.Count == 0 ? 0 : binderFiles.Max(f => f.ID) + 1;
 
-                binder.Files.Add(new BinderFile(sample.Flags, id, $"{folder}\\{name}", bytes)
+                binderFiles.Add(new BinderFile(sample.Flags, id, $"{folder}\\{name}", bytes)
                 {
                     CompressionType = sample.CompressionType
                 });
@@ -753,7 +936,7 @@ public class HavokCollisionBank
                 if (bdtData == null || bhdData == null)
                     continue;
 
-                var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+                var packedBinder = ReadPackedBinder((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
                 // Only collision files: the compendium and anything else in the binder stay
                 var toRemove = packedBinder.Files
@@ -783,7 +966,7 @@ public class HavokCollisionBank
                     Smithbox.Log(this, LOC.Get("MAP_CollisionEditor_Cleanup_Removed_File", file.Name.Split('\\')[1], GetBinderKey(mapId, type)));
                 }
 
-                packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+                var (newBhdBytes, newBdtBytes) = packedBinder.Write();
 
                 Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
                 Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
@@ -838,6 +1021,9 @@ public class HavokCollisionBank
     /// </summary>
     public bool SaveMapCollision(string mapId, string type)
     {
+        if (IsLooseGame)
+            return SaveLooseCollision(mapId, type);
+
         var (bhdPath, bdtPath) = GetBinderPaths(mapId, type);
 
         // Not every map has every collision type, so a missing binder is not a failure
@@ -857,7 +1043,7 @@ public class HavokCollisionBank
             if (bdtData == null || bhdData == null)
                 return true;
 
-            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+            var packedBinder = ReadPackedBinder((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
             var success = true;
             var anyWritten = false;
@@ -890,12 +1076,12 @@ public class HavokCollisionBank
                 }
             }
 
-            success &= AddNewFiles(packedBinder, mapId, type, ref anyWritten);
+            success &= AddNewFiles(packedBinder.Files, mapId, type, ref anyWritten);
 
             if (!anyWritten)
                 return success;
 
-            packedBinder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+            var (newBhdBytes, newBdtBytes) = packedBinder.Write();
 
             Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
             Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);

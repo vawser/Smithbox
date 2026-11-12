@@ -18,12 +18,62 @@ public static class CollisionEditorShapes
     /// <summary>A rebuilt shape, and the shape key (as stored, top-aligned) each input triangle got.</summary>
     public sealed record BuiltShape(object Shape, uint[] StoredKeys);
 
+    /// <summary>
+    /// Whether the editor can reshape a body's shape: a FromSoftware compressed mesh (hknp: DS3, BB, SDT, ER, NR,
+    /// DB_NT, AC6), or a MOPP over a FromSoftware storage-extended mesh (hkp: DES, DS1, DS1R, DS2S).
+    /// </summary>
     public static bool IsSupportedShape(object shape)
+    {
+        return IsCompressedMeshShape(shape) || HkpMeshShapeRebuild.IsSupported(shape);
+    }
+
+    /// <summary>A FromSoftware compressed mesh (hknp), which can also be built from new triangles.</summary>
+    public static bool IsCompressedMeshShape(object shape)
     {
         return shape is Havok.hk2014.fsnpCustomParamCompressedMeshShape
             or Havok.hk2016.fsnpCustomParamCompressedMeshShape
             or Havok.hk2018.fsnpCustomParamCompressedMeshShape
             or Havok.hk2019.fsnpCustomParamCompressedMeshShape;
+    }
+
+    /// <summary>
+    /// An older game's (hkp) shape with its vertices moved: each triangle (by its shape key, which a rebuild keeps)
+    /// gives its storage corners the positions of its welded vertices. Triangles left out of the input (no area left)
+    /// are left out of the MOPP. Null if the shape isn't an hkp mesh this can rebuild.
+    /// </summary>
+    public static BuiltShape BuildHkpShape(object oldShape, List<Vector3> vertices, List<int> indices, List<uint> keys)
+    {
+        var mesh = HkpMeshShapeRebuild.Read(oldShape);
+
+        if (mesh == null)
+            return null;
+
+        var storageVertices = mesh.StorageVertices.Select(v => (Vector3[])v.Clone()).ToList();
+        var skip = new HashSet<uint>();
+
+        for (var s = 0; s < mesh.StorageTriangles.Count; s++)
+        {
+            for (var t = 0; t < mesh.StorageTriangles[s].Count; t++)
+                skip.Add(mesh.Key(s, t));
+        }
+
+        for (var i = 0; i < keys.Count; i++)
+        {
+            var (s, t) = mesh.FromKey(keys[i]);
+
+            if (s >= mesh.StorageTriangles.Count || t >= mesh.StorageTriangles[s].Count)
+                return null;
+
+            var (a, b, c) = mesh.StorageTriangles[s][t];
+            storageVertices[s][a] = vertices[indices[i * 3]];
+            storageVertices[s][b] = vertices[indices[i * 3 + 1]];
+            storageVertices[s][c] = vertices[indices[i * 3 + 2]];
+            skip.Remove(keys[i]);
+        }
+
+        var shape = HkpMeshShapeRebuild.Rebuild(oldShape, storageVertices, skip);
+
+        return shape == null ? null : new BuiltShape(shape, keys.ToArray());
     }
 
     /// <summary>
@@ -81,7 +131,14 @@ public static class CollisionEditorShapes
     {
         var defaultMaterial = materials.FirstOrDefault();
 
-        if (!IsSupportedShape(oldShape))
+        // The older games' (hkp) mesh: a storage per material, copied from the old shape's, and a compiled MOPP
+        if (HkpMeshShapeRebuild.IsSupported(oldShape))
+        {
+            var hkp = HkpMeshShapeRebuild.BuildNew(oldShape, vertices, indices, materials, out var hkpKeys);
+            return hkp == null ? null : new BuiltShape(hkp, hkpKeys);
+        }
+
+        if (!IsCompressedMeshShape(oldShape))
             return null;
 
         var radius = oldShape switch
@@ -161,10 +218,11 @@ public static class CollisionEditorShapes
     /// <summary>
     /// Turns a freshly read template document into a new collision of the given triangles: its body gets a mesh built
     /// in its class set, is placed at the origin unrotated, and is named for the new model (the template's name with
-    /// its model number replaced, as the game names a file's body after it).
+    /// its model number replaced, as the game names a file's body after it). The older games' (hkp) bodies are named
+    /// bodyName (their fixed bodies are already at the origin).
     /// </summary>
     public static bool MakeNewCollision(Havok.HavokDocument document, string modelNumber,
-        List<Vector3> vertices, List<int> indices, List<uint> materials)
+        List<Vector3> vertices, List<int> indices, List<uint> materials, string bodyName = null)
     {
         if (!IsTemplate(document))
             return false;
@@ -174,6 +232,9 @@ public static class CollisionEditorShapes
 
         if (built == null || !SetShape(body, built.Shape))
             return false;
+
+        if (HkpMeshShapeRebuild.GetBodyName(body) != null)
+            return bodyName == null || HkpMeshShapeRebuild.SetBodyName(body, bodyName);
 
         switch (body)
         {
@@ -232,6 +293,7 @@ public static class CollisionEditorShapes
                 return true;
         }
 
-        return false;
+        // An older game's rigid body (hkp), whose collidable holds the shape
+        return HkpMeshShapeRebuild.SetBodyShape(body, shape);
     }
 }

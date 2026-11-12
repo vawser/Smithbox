@@ -16,7 +16,11 @@ public static class CollisionGeometry
         if (list.OfType<IHavokPhysicsScene>().FirstOrDefault() is { } scene)
             return scene.Systems.Where(s => s != null).SelectMany(s => s.Bodies).Where(b => b != null);
 
-        return list.OfType<IHavokPhysicsSystem>().SelectMany(s => s.Bodies).Where(b => b != null);
+        if (list.OfType<IHavokPhysicsSystem>().Any())
+            return list.OfType<IHavokPhysicsSystem>().SelectMany(s => s.Bodies).Where(b => b != null);
+
+        // The hkp games (DES, DS1, DS1R, DS2S): their rigid bodies aren't held in a system view
+        return list.OfType<IHavokBody>();
     }
 
     /// <summary>

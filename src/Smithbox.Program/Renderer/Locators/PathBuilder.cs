@@ -136,7 +136,9 @@ public class PathBuilder
                     }
                     else if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                     {
-                        relPath = Path.Combine("model", "map", $"h{mapid.Substring(1)}.hkxbhd");
+                        // DS2S's low collision has binders of its own (DS2's isn't located)
+                        var prefix = hittype == "lo" && project.Descriptor.ProjectType is ProjectType.DS2S ? "l" : "h";
+                        relPath = Path.Combine("model", "map", $"{prefix}{mapid.Substring(1)}.hkxbhd");
                     }
                     else if (project.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
                     {
