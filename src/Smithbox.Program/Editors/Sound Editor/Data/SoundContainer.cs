@@ -152,12 +152,88 @@ public class SoundContainer
     {
         var raw = Data.ReadFile(Path) ?? throw new FileNotFoundException(LOC.Get("SOUND_Data_Log_Not_Found", Path));
 
-        return Kind switch
+        switch (Kind)
         {
-            SoundContainerKind.Fsb => LoadFsb(raw, null),
-            SoundContainerKind.FsbBinder => LoadBinder(raw),
-            _ => LoadBank(raw),
-        };
+            case SoundContainerKind.Fsb:
+                {
+                    var entries = LoadFsb(raw, null);
+                    // the FMOD Designer project of the same name holds the events
+                    var fev = Data.ReadFile(Path[..^4] + ".fev");
+                    if (fev != null)
+                        _loadedEvents = BuildFevEvents(fev, entries);
+                    return entries;
+                }
+            case SoundContainerKind.FsbBinder:
+                return LoadBinder(raw);
+            default:
+                return LoadBank(raw);
+        }
+    }
+
+    /// <summary>FMOD: what the .fev project says about this bank (shown in Properties).</summary>
+    public string FevInfo;
+
+    /// <summary>
+    /// The .fev project's events, each linked to the bank's samples its layers' sound definitions play. A waveform is
+    /// the sample at its index if the name matches, else the sample of that name, else it is in another bank (SDT keeps
+    /// shared waveforms in other .fsb files).
+    /// </summary>
+    private List<SoundEvent> BuildFevEvents(byte[] fevBytes, List<SoundEntry> entries)
+    {
+        var fev = FevFile.Read(fevBytes);
+        if (fev.SoundDefs.Count == 0 && fev.Events.Count == 0)
+        {
+            FevInfo = fev.Error ?? LOC.Get("SOUND_Fev_Empty");
+            return new();
+        }
+        FevInfo = LOC.Get("SOUND_Fev_Info", fev.Events.Count, fev.SoundDefs.Count);
+
+        var byIndex = new Dictionary<int, SoundEntry>();
+        var byName = new Dictionary<string, SoundEntry>(StringComparer.OrdinalIgnoreCase);
+        foreach (var e in entries)
+        {
+            if (e.SampleIndex >= 0) byIndex.TryAdd(e.SampleIndex, e);
+            byName.TryAdd(System.IO.Path.GetFileNameWithoutExtension(e.Name ?? ""), e);
+        }
+
+        var events = new List<SoundEvent>();
+        foreach (var fe in fev.Events)
+        {
+            var ev = new SoundEvent
+            {
+                Container = this, Id = (uint)fe.Offset, FromFev = true, Name = fe.Name, NameSource = SoundEventNameSource.Fev,
+                PlayActions = 1, LayerCount = fe.LayerCount, LayersUnread = fe.FirstDefIndex < 0,
+            };
+            foreach (var di in fe.DefIndices)
+            {
+                var def = fev.SoundDefs[di];
+                ev.SoundDefs.Add(def.Name);
+                foreach (var w in def.Waveforms)
+                {
+                    SoundEntry entry = null;
+                    if (byIndex.TryGetValue(w.Index, out var atIndex) &&
+                        System.IO.Path.GetFileNameWithoutExtension(atIndex.Name ?? "").Equals(w.FileStem, StringComparison.OrdinalIgnoreCase))
+                        entry = atIndex;
+                    else
+                        byName.TryGetValue(w.FileStem, out entry);
+
+                    if (entry == null) { ev.ExternalTargets++; continue; }
+                    if (!ev.Entries.Contains(entry))
+                    {
+                        ev.Entries.Add(entry);
+                        entry.PlayedBy.Add(ev);
+                    }
+                }
+            }
+            var sid = SoundNameRules.ParseSoundId(ev.Name);
+            ev.SoundType = sid?.Type;
+            ev.SoundId = sid?.Id;
+            events.Add(ev);
+        }
+
+        events = events.OrderBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase).ToList();
+        for (int i = 0; i < events.Count; i++) events[i].Index = i;
+        return events;
     }
 
     private List<SoundEntry> LoadBinder(byte[] raw)
@@ -175,6 +251,11 @@ public class SoundContainer
             foreach (var e in list) { e.Index = entries.Count; entries.Add(e); }
         }
         FormatInfo = string.Join(", ", formats.Distinct());
+
+        // DS2: the binder's .fev (legacy FEV1 ones aren't read yet)
+        var fev = bnd.Files.FirstOrDefault(f => f.Name.EndsWith(".fev", StringComparison.OrdinalIgnoreCase));
+        if (fev != null)
+            _loadedEvents = BuildFevEvents(fev.Bytes.ToArray(), entries);
         return entries;
     }
 
@@ -193,6 +274,7 @@ public class SoundContainer
             {
                 Container = this,
                 Index = entries.Count,
+                SampleIndex = s.Index,
                 Name = s.Name ?? $"#{s.Index}",
                 InnerFile = inner,
                 Codec = s.Codec,

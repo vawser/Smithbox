@@ -47,6 +47,10 @@ public class SoundProperties
                     Row("SOUND_Prop_Streamed", c.Entries.Count(e => e.IsStreamed).ToString());
                     if (c.GeneratedCount > 0) Row("SOUND_Prop_Generated", c.GeneratedCount.ToString());
                 }
+                else
+                {
+                    Row("SOUND_Prop_Fev", c.FevInfo ?? LOC.Get("SOUND_Fev_None"));
+                }
             }
             ImGui.EndTable();
         }
@@ -192,11 +196,13 @@ public class SoundProperties
         if (BeginTable("soundEventProps"))
         {
             Row("SOUND_Prop_Name", ev.DisplayName);
-            Row("SOUND_Prop_Event_Id", ev.Id.ToString());
+            if (!ev.FromFev) Row("SOUND_Prop_Event_Id", ev.Id.ToString());
             Row("SOUND_Prop_Name_Source", LOC.Get($"SOUND_Event_Name_Source_{ev.NameSource}"));
             if (ev.SoundId != null) Row("SOUND_Prop_Sound_Id", $"{ev.SoundId} ({LOC.Get("SOUND_Prop_Sound_Type")} {ev.SoundType})");
-            Row("SOUND_Prop_Actions", ev.ActionSummary);
-            if (ev.ExternalTargets > 0) Row("SOUND_Prop_Note", LOC.Get("SOUND_Events_External_TT"));
+            Row(ev.FromFev ? "SOUND_Prop_Layers" : "SOUND_Prop_Actions", ev.ActionSummary);
+            if (ev.SoundDefs.Count > 0) Row("SOUND_Prop_Sound_Defs", string.Join("\n", ev.SoundDefs));
+            if (ev.LayersUnread) Row("SOUND_Prop_Note", LOC.Get("SOUND_Events_Layers_Unread_TT"));
+            if (ev.ExternalTargets > 0) Row("SOUND_Prop_Note", LOC.Get(ev.FromFev ? "SOUND_Events_External_Fev_TT" : "SOUND_Events_External_TT", ev.ExternalTargets));
             ImGui.EndTable();
         }
 

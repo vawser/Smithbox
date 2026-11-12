@@ -11,6 +11,9 @@ public class SoundEntry
     /// <summary>Position in the container's list.</summary>
     public int Index;
 
+    /// <summary>FMOD: the sample's index in its own .fsb (what FEV waveforms refer to).</summary>
+    public int SampleIndex = -1;
+
     /// <summary>Wwise media ID (0 for FMOD).</summary>
     public uint MediaId;
 

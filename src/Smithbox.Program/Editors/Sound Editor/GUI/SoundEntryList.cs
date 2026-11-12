@@ -49,8 +49,8 @@ public class SoundEntryList
             return;
         }
 
-        // Wwise banks: Sounds | Events. FMOD has no events until the FEV parser (S4b).
-        if (c.Kind == SoundContainerKind.WwiseBank && ImGui.BeginTabBar("soundListTabs"))
+        // Sounds | Events: Wwise banks, and FMOD banks whose .fev project was read
+        if ((c.Kind == SoundContainerKind.WwiseBank || c.Events.Count > 0) && ImGui.BeginTabBar("soundListTabs"))
         {
             if (ImGui.BeginTabItem($"{LOC.Get("SOUND_Tab_Sounds")} ({c.Entries.Count})###soundTabSounds",
                     View.RequestedTab == SoundListTab.Sounds ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None))

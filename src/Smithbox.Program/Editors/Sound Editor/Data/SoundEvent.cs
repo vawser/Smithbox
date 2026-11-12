@@ -10,6 +10,8 @@ public enum SoundEventNameSource
     Rule,
     /// <summary>Found by trying the bank's ID range: the hash matches, but it may be a different name with the same hash.</summary>
     Guess,
+    /// <summary>FMOD: the name in the .fev project.</summary>
+    Fev,
 }
 
 /// <summary>
@@ -32,6 +34,16 @@ public class SoundEvent
     /// <summary>Play targets that aren't in this bank (another bank holds the sound).</summary>
     public int ExternalTargets;
 
+    /// <summary>FMOD: an event of the .fev project (layers instead of actions).</summary>
+    public bool FromFev;
+    public int LayerCount;
+
+    /// <summary>FMOD: the event's layer layout wasn't read (a layout FevFile doesn't know), so its sounds aren't listed.</summary>
+    public bool LayersUnread;
+
+    /// <summary>FMOD: the sound definitions the event's layers play.</summary>
+    public List<string> SoundDefs = new();
+
     /// <summary>The bank's sounds this event can play (any of them, depending on random / switch containers).</summary>
     public List<SoundEntry> Entries = new();
 
@@ -44,6 +56,9 @@ public class SoundEvent
     {
         get
         {
+            if (FromFev)
+                return LayersUnread ? "?" : LayerCount == 1 ? "1 layer" : $"{LayerCount} layers";
+
             var parts = new List<string>();
             if (PlayActions > 0) parts.Add(PlayActions == 1 ? "Play" : $"Play x{PlayActions}");
             if (StopActions > 0) parts.Add(StopActions == 1 ? "Stop" : $"Stop x{StopActions}");

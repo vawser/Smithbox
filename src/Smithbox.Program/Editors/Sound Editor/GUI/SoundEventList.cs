@@ -135,10 +135,15 @@ public class SoundEventList
         ImGui.TableNextColumn();
         if (ev.Entries.Count > 0)
             ImGui.Text(ev.Entries.Count.ToString());
+        else if (ev.LayersUnread)
+        {
+            ImGui.TextDisabled("?");
+            GUI.Tooltip(LOC.Get("SOUND_Events_Layers_Unread_TT"));
+        }
         else if (ev.ExternalTargets > 0)
         {
             ImGui.TextDisabled(LOC.Get("SOUND_Events_External"));
-            GUI.Tooltip(LOC.Get("SOUND_Events_External_TT"));
+            GUI.Tooltip(LOC.Get(ev.FromFev ? "SOUND_Events_External_Fev_TT" : "SOUND_Events_External_TT", ev.ExternalTargets));
         }
     }
 
@@ -151,7 +156,7 @@ public class SoundEventList
         if (ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Event_Name")}##copyName"))
             ImGui.SetClipboardText(ev.DisplayName);
 
-        if (ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Event_Id")}##copyId"))
+        if (!ev.FromFev && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Event_Id")}##copyId"))
             ImGui.SetClipboardText(ev.Id.ToString());
 
         if (ev.SoundId != null && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Sound_Id")}##copySoundId"))
