@@ -353,6 +353,22 @@
       "Text": "If enabled, the hit capsules of attack and bullet events appear in the viewport while they are active."
     },
     {
+      "Key": "TAE_Editor_Options_Apply_Root_Motion",
+      "Text": "Apply Root Motion"
+    },
+    {
+      "Key": "TAE_Editor_Options_Apply_Root_Motion_TT",
+      "Text": "If enabled, the model moves and turns with the root motion of the animation, as the character does in game. It returns to the start each time the animation loops."
+    },
+    {
+      "Key": "TAE_Editor_Options_Root_Motion_Path",
+      "Text": "Display Root Motion Path"
+    },
+    {
+      "Key": "TAE_Editor_Options_Root_Motion_Path_TT",
+      "Text": "If enabled, a green line in the viewport shows the path the root motion of the animation takes, and a white arrow shows where the root is and which way it faces at the current time."
+    },
+    {
       "Key": "TAE_EventDisplay_On_Dummy",
       "Text": "Displayed on dummy poly {0}."
     },

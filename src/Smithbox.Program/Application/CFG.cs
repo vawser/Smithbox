@@ -807,6 +807,8 @@ public class CFG
     public bool TimeActEditor_Auto_Play_Animation = false;
     public bool TimeActEditor_Display_Event_Markers = true;
     public bool TimeActEditor_Display_Attack_Capsules = true;
+    public bool TimeActEditor_Apply_Root_Motion = true;
+    public bool TimeActEditor_Display_Root_Motion = true;
     public float TimeActEditor_Event_Marker_Size = 1f;
     public TimeActAliasDisplayMode TimeActEditor_Animation_List_Alias_Display = TimeActAliasDisplayMode.Wrap;
     public TimeActFieldNameMode TimeActEditor_Field_Name_Mode = TimeActFieldNameMode.Annotation;

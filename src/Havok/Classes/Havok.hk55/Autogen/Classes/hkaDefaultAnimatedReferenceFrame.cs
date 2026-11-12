@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaDefaultAnimatedReferenceFrame : hkaAnimatedReferenceFrame
+public partial class hkaDefaultAnimatedReferenceFrame : hkaAnimatedReferenceFrame
 {
     public Vector4 m_up = new();
 

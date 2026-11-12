@@ -58,6 +58,24 @@ public interface IHavokSplineAnimation : IHavokAnimation
     IReadOnlyList<byte> Data { get; }
 }
 
+/// <summary>
+/// hkaDefaultAnimatedReferenceFrame: the root motion of a clip, which the game moves the character by rather than the
+/// bones. Each sample is the offset from the start of the clip, with the turn about <see cref="Up" /> (radians) in W.
+/// </summary>
+public interface IHavokReferenceFrame
+{
+    Vector4 Up { get; }
+
+    Vector4 Forward { get; }
+
+    float Duration { get; }
+
+    /// <summary>Spread evenly over <see cref="Duration" />, the first at 0 and the last at its end.</summary>
+    int SampleCount { get; }
+
+    Vector4 GetSample(int index);
+}
+
 /// <summary>hkaInterleavedUncompressedAnimation (hkaInterleavedSkeletalAnimation in Havok 5.x).</summary>
 public interface IHavokInterleavedAnimation : IHavokAnimation
 {

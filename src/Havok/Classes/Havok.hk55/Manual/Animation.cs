@@ -39,6 +39,19 @@ public partial class hkaInterleavedSkeletalAnimation : IHavokInterleavedAnimatio
     HavokQsTransform IHavokInterleavedAnimation.GetTransform(int index) => AnimationViews.ToShared(m_transforms[index]);
 }
 
+public partial class hkaDefaultAnimatedReferenceFrame : IHavokReferenceFrame
+{
+    Vector4 IHavokReferenceFrame.Up => m_up;
+
+    Vector4 IHavokReferenceFrame.Forward => m_forward;
+
+    float IHavokReferenceFrame.Duration => m_duration;
+
+    int IHavokReferenceFrame.SampleCount => m_referenceFrameSamples.Count;
+
+    Vector4 IHavokReferenceFrame.GetSample(int index) => m_referenceFrameSamples[index];
+}
+
 internal static class AnimationViews
 {
     public static HavokQsTransform ToShared(hkQsTransform t) =>

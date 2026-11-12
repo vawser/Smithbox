@@ -46,6 +46,60 @@ public enum HavokBlendMode
 }
 
 /// <summary>
+///     The root motion of a clip (hkaDefaultAnimatedReferenceFrame): how far the game moves the whole character
+///     over the clip, apart from what its bones do. It's in the model space of the skeleton.
+/// </summary>
+public sealed class HavokRootMotion
+{
+    private readonly Vector4[] _samples;
+    private readonly float _duration;
+    private readonly Vector3 _up;
+
+    public HavokRootMotion(Vector4[] samples, float duration, Vector3 up)
+    {
+        _samples = samples;
+        _duration = duration;
+        _up = up.LengthSquared() > 1e-8f ? Vector3.Normalize(up) : Vector3.UnitY;
+    }
+
+    public int SampleCount => _samples.Length;
+
+    /// <summary>
+    ///     Where the root is at a sample, for drawing the path it takes.
+    /// </summary>
+    public Vector3 GetSamplePosition(int index)
+    {
+        Vector4 sample = _samples[index];
+        return new Vector3(sample.X, sample.Y, sample.Z);
+    }
+
+    /// <summary>
+    ///     How far the root has moved and turned since the start of the clip, at a time within it.
+    /// </summary>
+    public Matrix4x4 Sample(float time)
+    {
+        if (_samples.Length == 0)
+        {
+            return Matrix4x4.Identity;
+        }
+
+        // The samples are spread evenly over the clip, the first at its start and the last at its end
+        var position = _samples.Length > 1 && _duration > 0
+            ? Math.Clamp(time / _duration, 0, 1) * (_samples.Length - 1)
+            : 0;
+
+        var first = Math.Min((int)position, _samples.Length - 1);
+        var second = Math.Min(first + 1, _samples.Length - 1);
+
+        // The turn in W keeps adding up rather than wrapping, so it lerps like the rest
+        Vector4 sample = Vector4.Lerp(_samples[first], _samples[second], position - first);
+
+        return Matrix4x4.CreateFromAxisAngle(_up, sample.W) *
+               Matrix4x4.CreateTranslation(sample.X, sample.Y, sample.Z);
+    }
+}
+
+/// <summary>
 ///     One decoded animation. Sampling returns the local transform of a transform track.
 /// </summary>
 public abstract class HavokClip
@@ -54,6 +108,9 @@ public abstract class HavokClip
     public float FrameDuration;
     public int FrameCount;
     public HavokBlendMode BlendMode;
+
+    // Null when the clip doesn't move the character, or has no samples
+    public HavokRootMotion? RootMotion;
 
     // Index = hkx bone index, value = transform track index or -1
     public int[] BoneToTrack = Array.Empty<int>();
@@ -241,14 +298,15 @@ public static class HavokAnimationReader
         short[] trackToBone = binding?.TransformTrackToBoneIndices.ToArray() ?? Array.Empty<short>();
         HavokBlendMode blendMode = ToBlendMode(binding?.BlendHint ?? 0);
 
+        HavokClip? clip = null;
+
         if (document.ObjectsOf<IHavokSplineAnimation>().FirstOrDefault() is { } spline)
         {
-            return new HavokSplineClip(spline.Data as byte[] ?? spline.Data.ToArray(), document.Source.BigEndian,
+            clip = new HavokSplineClip(spline.Data as byte[] ?? spline.Data.ToArray(), document.Source.BigEndian,
                 spline.TransformTrackCount, spline.BlockCount, spline.MaxFramesPerBlock, spline.FrameCount,
                 spline.Duration, spline.FrameDuration, trackToBone, skeleton.BoneCount, blendMode);
         }
-
-        if (document.ObjectsOf<IHavokInterleavedAnimation>().FirstOrDefault() is { } interleaved)
+        else if (document.ObjectsOf<IHavokInterleavedAnimation>().FirstOrDefault() is { } interleaved)
         {
             var transforms = new HavokTransformData[interleaved.TransformCount];
             for (var i = 0; i < transforms.Length; i++)
@@ -256,11 +314,25 @@ public static class HavokAnimationReader
                 transforms[i] = ToTransform(interleaved.GetTransform(i));
             }
 
-            return new HavokInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
+            clip = new HavokInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
                 trackToBone, skeleton.BoneCount, blendMode);
         }
 
-        return null;
+        if (clip != null && document.ObjectsOf<IHavokReferenceFrame>().FirstOrDefault() is { SampleCount: > 0 } frame)
+        {
+            var samples = new Vector4[frame.SampleCount];
+            for (var i = 0; i < samples.Length; i++)
+            {
+                samples[i] = frame.GetSample(i);
+            }
+
+            // The reference frame spans the clip, so the clip's duration stands in if it gives none
+            var duration = frame.Duration > 0 ? frame.Duration : clip.Duration;
+
+            clip.RootMotion = new HavokRootMotion(samples, duration, new Vector3(frame.Up.X, frame.Up.Y, frame.Up.Z));
+        }
+
+        return clip;
     }
 
     private static HavokBlendMode ToBlendMode(int blendHint)

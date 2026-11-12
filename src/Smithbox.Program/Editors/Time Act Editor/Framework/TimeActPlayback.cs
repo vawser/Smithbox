@@ -72,7 +72,10 @@ public class TimeActPlayback
         _panel = new AnimationPreviewPanel(project);
 
         EventDisplay = new TimeActEventDisplay(view, project);
+        RootMotionDisplay = new TimeActRootMotionDisplay(view);
     }
+
+    public TimeActRootMotionDisplay RootMotionDisplay { get; }
 
     private ModelAnimator? Animator => _target != null ? _panel.GetAnimator(_target) : null;
 
@@ -118,6 +121,9 @@ public class TimeActPlayback
             animator.Loop = Loop;
             animator.Speed = Speed;
 
+            // Takes effect with the next pose, which a change of this asks for
+            animator.ApplyRootMotion = CFG.Current.TimeActEditor_Apply_Root_Motion;
+
             _time = animator.Time;
             _playing = animator.Playing;
         }
@@ -127,6 +133,7 @@ public class TimeActPlayback
         }
 
         EventDisplay.Update(animator, _time, PlaybackDuration);
+        RootMotionDisplay.Update(animator);
     }
 
     private void UpdateAutoPlay()

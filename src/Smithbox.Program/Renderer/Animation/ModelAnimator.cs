@@ -30,6 +30,7 @@ public sealed class ModelAnimator : IDisposable
     private GPUBufferAllocator.GPUBufferHandle? _skinBuffer;
 
     private bool _poseDirty = true;
+    private bool _applyRootMotion;
 
     public AnimationPackage Package { get; }
     public AnimationEntry? CurrentAnimation { get; private set; }
@@ -42,6 +43,28 @@ public sealed class ModelAnimator : IDisposable
 
     // These go through instance data rather than the bone buffer, so they have to be told about each pose
     public bool HasBoneFollowingMeshes => Array.Exists(_rig.Meshes, m => m.Mode == MeshSkinMode.RigidMesh);
+
+    /// <summary>
+    ///     Moves the whole model along the root motion of the clip, as the game moves the character. Off by
+    ///     default, as an animated entity in a map would otherwise walk away from where it is placed.
+    /// </summary>
+    public bool ApplyRootMotion
+    {
+        get => _applyRootMotion;
+        set
+        {
+            if (_applyRootMotion != value)
+            {
+                _applyRootMotion = value;
+                _poseDirty = true;
+            }
+        }
+    }
+
+    /// <summary>
+    ///     How far the root motion has moved the model at the current pose, or identity if it isn't applied.
+    /// </summary>
+    public Matrix4x4 RootMotion { get; private set; } = Matrix4x4.Identity;
 
     public int NodeCount => _rig.NodeNames.Length;
     public float Duration => CurrentClip?.Duration ?? 0;
@@ -251,6 +274,20 @@ public sealed class ModelAnimator : IDisposable
         _pose!.Apply(CurrentClip, Math.Min(Frame, Math.Max(0, (CurrentClip?.FrameCount ?? 1) - 1)));
 
         var count = NodeCount;
+
+        // Applied to every node, so that the skinning, the parts following this model and anything
+        // attached to its nodes all move along with it
+        RootMotion = ApplyRootMotion && CurrentClip?.RootMotion is { } rootMotion
+            ? rootMotion.Sample(Time)
+            : Matrix4x4.Identity;
+
+        if (!RootMotion.IsIdentity)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                NodeWorld[i] *= RootMotion;
+            }
+        }
 
         // A new array each time, as the upload happens later on the render thread
         var matrices = new Matrix4x4[count * 2];

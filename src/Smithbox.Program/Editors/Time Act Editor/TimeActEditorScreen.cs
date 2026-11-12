@@ -216,6 +216,22 @@ public class TimeActEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("TAE_Editor_Options_Attack_Capsules_TT"));
             GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Display_Attack_Capsules);
 
+            // Apply Root Motion
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Apply_Root_Motion")}##applyRootMotionToggle"))
+            {
+                CFG.Current.TimeActEditor_Apply_Root_Motion = !CFG.Current.TimeActEditor_Apply_Root_Motion;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Apply_Root_Motion_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Apply_Root_Motion);
+
+            // Root Motion Path
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Root_Motion_Path")}##rootMotionPathToggle"))
+            {
+                CFG.Current.TimeActEditor_Display_Root_Motion = !CFG.Current.TimeActEditor_Display_Root_Motion;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Root_Motion_Path_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Display_Root_Motion);
+
             // Outside Playback
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##outsidePlaybackToggle"))
             {
