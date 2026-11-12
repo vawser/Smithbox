@@ -49,8 +49,7 @@ public class WorldMapLayout
         var span = 1 << k;
         var size = 256f * span;
 
-        // Tile (x, y): left = (x * span - 28) * 256, top = (64 - (y + 1) * span + 1) * 256 = 65 * 256 - size - y * size
-        var grid = new WorldMapGrid(-28 * 256f, 65 * 256f - size, 0, 0, size);
+        var grid = ExactGrid(type, 28, 64);
         Grids[type] = grid;
 
         foreach (var x in xs)
@@ -65,6 +64,50 @@ public class WorldMapLayout
                 var origin = grid.TileOrigin(x, y);
                 Tiles.Add(new WorldMapTile(id, origin.X, origin.Y, size, size, type));
             }
+        }
+    }
+
+    /// <summary>
+    /// The grid of a tile size for a converter whose reference block (refX, refY) has its centre at (128, 128):
+    /// tile (x, y) of size type k starts at small tile (x * 2^k, y * 2^k), so left = (x * span - refX) * 256 and
+    /// top = (refY + 1) * 256 - size - y * size (y counts north, the image runs south).
+    /// </summary>
+    private static WorldMapGrid ExactGrid(WorldMapTileType type, int refX, int refY)
+    {
+        var k = type switch { WorldMapTileType.Medium => 1, WorldMapTileType.Large => 2, _ => 0 };
+        var size = 256f * (1 << k);
+        return new WorldMapGrid(-refX * 256f, (refY + 1) * 256f - size, 0, 0, size);
+    }
+
+    /// <summary>
+    /// NR: every map of the area (m60_XX_YY_VK, V the shifting earth variant, K the tile size) placed where the
+    /// game's map puts it, with nightreign.exe's reference block m60_41_40_00 at (128, 128). The variants share the
+    /// same blocks, so each map source keeps only its own with "Restrict by Map Source".
+    /// </summary>
+    public void GenerateExactTilesFromMapList(int refX, int refY)
+    {
+        var pattern = new System.Text.RegularExpressions.Regex($@"^m{Prefix}_(\d\d)_(\d\d)_(\d)([0-2])$");
+
+        foreach (var type in new[] { WorldMapTileType.Small, WorldMapTileType.Medium, WorldMapTileType.Large })
+            Grids[type] = ExactGrid(type, refX, refY);
+
+        foreach (var id in MsbUtils.GetFullMapList(View.Project))
+        {
+            var match = pattern.Match(id);
+
+            if (!match.Success)
+                continue;
+
+            var type = match.Groups[4].Value switch
+            {
+                "1" => WorldMapTileType.Medium,
+                "2" => WorldMapTileType.Large,
+                _ => WorldMapTileType.Small
+            };
+
+            var grid = Grids[type];
+            var origin = grid.TileOrigin(int.Parse(match.Groups[1].Value), int.Parse(match.Groups[2].Value));
+            Tiles.Add(new WorldMapTile(id, origin.X, origin.Y, grid.Size, grid.Size, type));
         }
     }
 

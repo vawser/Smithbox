@@ -38,16 +38,37 @@ public class WorldMapTool : IResourceEventListener
 
     public MapInfoEditor MapInfo { get; }
 
-    /// <summary>The game's map tiles (ER); null for games still using the bundled image</summary>
+    /// <summary>The game's map tiles (ER, NR); null for games still using the bundled image</summary>
     private readonly WorldMapTileSet GameTiles;
 
-    /// <summary>The game's map of a map source: M00 Lands Between, M10 Shadow of the Erdtree</summary>
-    private static string GameMapOf(WorldMapImageSource source) => source switch
+    /// <summary>
+    /// The game's map of a map source. ER: M00 Lands Between, M10 Shadow of the Erdtree. NR: menu/71_maptile_mXX,
+    /// M00 Limveld and M01-M05 the shifting earths (the same order as the map IDs' variant digit), with the
+    /// underground layer when it is shown and the map has one.
+    /// </summary>
+    private string GameMapOf(WorldMapImageSource source)
     {
-        WorldMapImageSource.LandsBetween => "M00",
-        WorldMapImageSource.ShadowOfTheErdtree => "M10",
-        _ => null
-    };
+        var map = source switch
+        {
+            WorldMapImageSource.LandsBetween => "M00",
+            WorldMapImageSource.ShadowOfTheErdtree => "M10",
+            WorldMapImageSource.Limveld => "M00",
+            WorldMapImageSource.Limveld_Mountaintops => "M01",
+            WorldMapImageSource.Limveld_Crater => "M02",
+            WorldMapImageSource.Limveld_Rotted_Woods => "M03",
+            WorldMapImageSource.Forsaken_Hollows => "M04",
+            WorldMapImageSource.Limveld_Noklateo => "M05",
+            _ => null
+        };
+
+        if (map != null && Project.Descriptor.ProjectType is ProjectType.NR
+            && CFG.Current.WorldMapDisplayUnderground && GameTiles?.HasUnderground(map) == true)
+        {
+            map += WorldMapTileSet.UndergroundSuffix;
+        }
+
+        return map;
+    }
 
     private Vector2 MapZoomFactor;
 
@@ -112,7 +133,9 @@ public class WorldMapTool : IResourceEventListener
         {
             CurrentMapSource = WorldMapImageSource.Limveld;
 
-            RegisterWorldMapListeners();
+            // NR also draws the game's own tiles; the bundled images are only a fallback
+            if (GameTiles == null)
+                RegisterWorldMapListeners();
         }
     }
 
@@ -135,6 +158,15 @@ public class WorldMapTool : IResourceEventListener
 
         GenerateWorldMapLayout_Vanilla();
         GenerateWorldMapLayout_SOTE();
+
+        // On the game's tiles, every NR map sits where nightreign.exe's converter puts it (reference block
+        // m60_41_40_00 at (128, 128), as ER's m60_28_64_00)
+        if (GameTiles != null && Project.Descriptor.ProjectType is ProjectType.NR)
+        {
+            LimveldLayout = new WorldMapLayout(View, "60", 0, 0);
+            LimveldLayout.GenerateExactTilesFromMapList(41, 40);
+            return;
+        }
 
         GenerateWorldMapLayout_Limveld(
             smallTile: 256,
@@ -306,6 +338,15 @@ public class WorldMapTool : IResourceEventListener
         {
             ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Filter_Restrict")}##worldMapFilterRestrict", ref CFG.Current.WorldMapFilter_RestrictBySource);
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Filter_Restrict_TT"));
+
+            if (GameTiles != null)
+            {
+                GUI.Spacer();
+                GUI.SimpleHeader(LOC.Get("MAP_MapInfo_Map_Display_Header"), LOC.Get("MAP_MapInfo_Map_Display_Header_TT"));
+
+                ImGui.Checkbox($"{LOC.Get("MAP_MapInfo_Display_Underground")}##worldMapUnderground", ref CFG.Current.WorldMapDisplayUnderground);
+                GUI.Tooltip(LOC.Get("MAP_MapInfo_Display_Underground_TT"));
+            }
         }
     }
 
@@ -420,7 +461,7 @@ public class WorldMapTool : IResourceEventListener
         if (useGameTiles)
         {
             GameTiles.EnsureLoading();
-            imageSize = new Vector2(WorldMapTileSet.ImageSize);
+            imageSize = new Vector2(GameTiles.ImageSize);
         }
         else
         {
@@ -660,7 +701,7 @@ public class WorldMapTool : IResourceEventListener
         if (variant < 0)
             return true;
 
-        return tile.Name.EndsWith($"{variant}0") || tile.Name.EndsWith($"{variant}1");
+        return tile.Name.EndsWith($"{variant}0") || tile.Name.EndsWith($"{variant}1") || tile.Name.EndsWith($"{variant}2");
     }
 
     /// <summary>
@@ -909,13 +950,13 @@ public class WorldMapTool : IResourceEventListener
     }
 
     /// <summary>
-    /// The whole map at about 800 px wide: the game's tiles are 1 px per metre (10496 px), the bundled images
-    /// are about 4500 px
+    /// The whole map at about 840 px wide: the game's tiles are 1 px per metre (ER 10496 px, NR 1536 px), the
+    /// bundled images are about 4500 px
     /// </summary>
     private Vector2 GetDefaultZoomLevel()
     {
         var scale = DPI.UIScale();
-        var zoom = GameTiles != null ? 0.08f : 0.2f;
+        var zoom = GameTiles != null ? 840f / GameTiles.ImageSize : 0.2f;
         return new Vector2(zoom * scale);
     }
 }

@@ -286,6 +286,7 @@ public class CFG
     public bool WorldMapFilter_IncludeMediumTiles = true;
     public bool WorldMapFilter_IncludeLargeTiles = true;
     public bool WorldMapFilter_RestrictBySource = false;
+    public bool WorldMapDisplayUnderground = false;
 
     public int MapInfo_BrushSize = 4;
     public float MapInfo_Opacity = 0.6f;

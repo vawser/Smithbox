@@ -16,35 +16,55 @@ using System.Xml.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The ER world map built from the game's own map tiles (menu/71_maptile.tpfbhd/.tpfbdt), as the game's map menu
-/// does. See Claude/Documentation/World Map Tiles.md.
+/// The world map built from the game's own map tiles, as the game's map menu does (ER and NR). See
+/// Claude/Documentation/World Map Tiles.md.
 ///
-/// Tiles are MENU_MapTile_Mmm_Ll_xx_yy_ffffffff, 256x256: map Mmm (M00 Lands Between, M10 Shadow of the Erdtree),
-/// level Ll, cell (xx, yy) with yy counting from the south, and a set of map fragment bits. The game shows, per
-/// cell, the variant whose bits are the fragments the player has; with every fragment that is the cell's mask from
-/// the map's .mtmsk (menu/71_maptile.mtmskbnd.dcx). That is the variant used here.
+/// ER: menu/71_maptile.tpfbhd/.tpfbdt, tiles MENU_MapTile_Mmm_Ll_xx_yy_ffffffff, 256x256: map Mmm (M00 Lands
+/// Between, M10 Shadow of the Erdtree), level Ll, cell (xx, yy) with yy counting from the south, and a set of map
+/// fragment bits. The game shows, per cell, the variant whose bits are the fragments the player has; with every
+/// fragment that is the cell's mask from the map's .mtmsk (menu/71_maptile.mtmskbnd.dcx). That is the variant used.
 ///
-/// Image space is L0 map pixels, one per metre: the game's CS::WorldMapAreaConverter puts the centre of block
-/// mAA_28_64_00 at (128, 128), with x east and y south, for both m60 and m61. A level with scale s draws an L0
-/// pixel as s of its pixels, and its rows run down from row ceil(10496 * s / 256) - 1.
+/// NR: one TPF per map, menu/71_maptile_mXX.tpf.dcx (m00 Limveld, m01-m05 the shifting earths), tiles
+/// MENU_MapTile_Ll_xx_yy[_B1], 6 x 6 cells at L0 and 3 x 3 at L1. _B1 is the underground layer, for some cells only.
+///
+/// Image space is L0 map pixels, one per metre: the game's CS::WorldMapAreaConverter puts the centre of a reference
+/// block at (128, 128), with x east and y south (ER mAA_28_64_00 for m60 and m61, NR m60_41_40_00). A level with
+/// scale s draws an L0 pixel as s of its pixels, and its rows run down from row ceil(ImageSize * s / 256) - 1.
 /// </summary>
 public class WorldMapTileSet : IDisposable
 {
-    /// <summary>The L0 image is 41 x 41 cells</summary>
-    public const float ImageSize = 41 * 256;
+    /// <summary>The L0 image size in map pixels: ER 41 x 41 cells, NR 6 x 6</summary>
+    public float ImageSize { get; }
 
-    /// <summary>The levels with revealed art (L3 and L4 only have the unrevealed outline)</summary>
-    private static readonly float[] LevelScales = { 1.0f, 0.75f, 0.2f };
+    /// <summary>The levels with revealed art (ER's L3 and L4 only have the unrevealed outline)</summary>
+    private readonly float[] LevelScales;
+
+    /// <summary>The suffix of a map key for its underground layer (NR _B1 tiles)</summary>
+    public const string UndergroundSuffix = "_B1";
 
     private static readonly Regex TileName = new(@"MENU_MapTile_(M\d\d)_L(\d)_(\d\d)_(\d\d)_([0-9a-f]{8})", RegexOptions.IgnoreCase);
+    private static readonly Regex NrTileName = new(@"^MENU_MapTile_L(\d)_(\d\d)_(\d\d)(_B1)?$", RegexOptions.IgnoreCase);
+
+    /// <summary>The NR maps with tiles: m00 Limveld, m01-m05 the shifting earths</summary>
+    private static readonly string[] NrMaps = { "m00", "m01", "m02", "m03", "m04", "m05" };
 
     private readonly ProjectEntry Project;
 
     private IMemoryOwner<byte> MappedData;
     private BXF4Reader Reader;
+    private readonly object ReaderLock = new();
 
-    /// <summary>The binder file shown for each (map, level, x, y)</summary>
-    private Dictionary<(string Map, int Level, int X, int Y), BinderFileHeader> Cells = new();
+    /// <summary>A tile: a binder file of the ER tpfbdt, or a texture of an NR map's TPF</summary>
+    private sealed class TileSource
+    {
+        public string Name;
+        public BinderFileHeader File;
+        public TPF.Texture Texture;
+        public TPF.TPFPlatform Platform;
+    }
+
+    /// <summary>The tile shown for each (map, level, x, y)</summary>
+    private Dictionary<(string Map, int Level, int X, int Y), TileSource> Cells = new();
 
     private Task LoadTask;
     public bool Loaded { get; private set; }
@@ -53,9 +73,23 @@ public class WorldMapTileSet : IDisposable
     public WorldMapTileSet(ProjectEntry project)
     {
         Project = project;
+
+        if (project.Descriptor.ProjectType is ProjectType.NR)
+        {
+            ImageSize = 6 * 256;
+            LevelScales = new[] { 1.0f, 0.5f };
+        }
+        else
+        {
+            ImageSize = 41 * 256;
+            LevelScales = new[] { 1.0f, 0.75f, 0.2f };
+        }
     }
 
-    public static bool IsSupported(ProjectEntry project) => project.Descriptor.ProjectType is ProjectType.ER;
+    public static bool IsSupported(ProjectEntry project) => project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+
+    /// <summary>Whether a map has an underground layer (NR _B1 tiles)</summary>
+    public bool HasUnderground(string map) => Loaded && Cells.Keys.Any(k => k.Map == map + UndergroundSuffix);
 
     #region Load
 
@@ -71,7 +105,11 @@ public class WorldMapTileSet : IDisposable
         {
             try
             {
-                Load(fs);
+                if (Project.Descriptor.ProjectType is ProjectType.NR)
+                    LoadNR(fs);
+                else
+                    Load(fs);
+
                 Loaded = true;
             }
             catch (Exception e)
@@ -127,7 +165,7 @@ public class WorldMapTileSet : IDisposable
         }
 
         // The variant with every fragment of the cell: its mask exactly, else the largest variant inside the mask
-        var cells = new Dictionary<(string, int, int, int), BinderFileHeader>();
+        var cells = new Dictionary<(string, int, int, int), TileSource>();
 
         foreach (var (key, list) in variants)
         {
@@ -144,8 +182,65 @@ public class WorldMapTileSet : IDisposable
             }
 
             if (chosen.File != null)
-                cells[key] = chosen.File;
+                cells[key] = new TileSource { Name = chosen.File.Name, File = chosen.File };
         }
+
+        Cells = cells;
+    }
+
+    /// <summary>
+    /// NR: each map's TPF is small (about 4 MB), so it is read whole. A map's underground layer (map key + _B1) is
+    /// its base tiles with the _B1 tiles in their place, where there are any.
+    /// </summary>
+    private void LoadNR(VirtualFileSystem fs)
+    {
+        var cells = new Dictionary<(string, int, int, int), TileSource>();
+
+        foreach (var map in NrMaps)
+        {
+            var path = $"/menu/71_maptile_{map}.tpf.dcx";
+
+            if (!fs.FileExists(path))
+                continue;
+
+            var tpf = TPF.Read(fs.ReadFileOrThrow(path));
+            var key = map.ToUpperInvariant();
+            var underground = new List<((string, int, int, int), TileSource)>();
+
+            foreach (var texture in tpf.Textures)
+            {
+                var match = NrTileName.Match(texture.Name ?? "");
+
+                if (!match.Success)
+                    continue;
+
+                var level = int.Parse(match.Groups[1].Value);
+
+                if (level >= LevelScales.Length)
+                    continue;
+
+                var x = int.Parse(match.Groups[2].Value);
+                var y = int.Parse(match.Groups[3].Value);
+                var source = new TileSource { Name = $"{map}/{texture.Name}", Texture = texture, Platform = tpf.Platform };
+
+                if (match.Groups[4].Success)
+                    underground.Add(((key + UndergroundSuffix, level, x, y), source));
+                else
+                    cells[(key, level, x, y)] = source;
+            }
+
+            if (underground.Count == 0)
+                continue;
+
+            foreach (var (cell, source) in cells.Where(c => c.Key.Item1 == key).ToList())
+                cells[(key + UndergroundSuffix, cell.Item2, cell.Item3, cell.Item4)] = source;
+
+            foreach (var (cell, source) in underground)
+                cells[cell] = source;
+        }
+
+        if (cells.Count == 0)
+            throw new System.IO.FileNotFoundException("/menu/71_maptile_m00.tpf.dcx");
 
         Cells = cells;
     }
@@ -184,7 +279,7 @@ public class WorldMapTileSet : IDisposable
     #region Draw
 
     /// <summary>The level to draw at a zoom (screen pixels per L0 pixel): the smallest with enough detail</summary>
-    public static int LevelFor(float zoom)
+    public int LevelFor(float zoom)
     {
         for (var level = LevelScales.Length - 1; level >= 0; level--)
         {
@@ -195,10 +290,10 @@ public class WorldMapTileSet : IDisposable
         return 0;
     }
 
-    private static int TopRow(int level) => (int)MathF.Ceiling(ImageSize * LevelScales[level] / 256f) - 1;
+    private int TopRow(int level) => (int)MathF.Ceiling(ImageSize * LevelScales[level] / 256f) - 1;
 
     /// <summary>The L0 rectangle of a level's cell</summary>
-    private static (Vector2 Min, Vector2 Max) CellRect(int level, int x, int y)
+    private (Vector2 Min, Vector2 Max) CellRect(int level, int x, int y)
     {
         var size = 256f / LevelScales[level];
         var min = new Vector2(x * size, (TopRow(level) - y) * size);
@@ -252,19 +347,19 @@ public class WorldMapTileSet : IDisposable
             {
                 var key = (map, level, x, y);
 
-                if (!Cells.TryGetValue(key, out var file))
+                if (!Cells.TryGetValue(key, out var source))
                     continue;
 
                 TexturePool.TextureHandle handle;
 
                 if (request)
                 {
-                    handle = GetTexture(key, file);
+                    handle = GetTexture(source);
                 }
                 else
                 {
                     // Already loaded only; using it keeps it from being freed
-                    if (!Textures.TryGetValue(key, out var loaded))
+                    if (!Textures.TryGetValue(source.Name, out var loaded))
                         continue;
 
                     loaded.LastUsed = Frame;
@@ -291,8 +386,9 @@ public class WorldMapTileSet : IDisposable
         public volatile bool Requested;
     }
 
-    private readonly Dictionary<(string, int, int, int), TileTexture> Textures = new();
-    private readonly ConcurrentQueue<((string, int, int, int) Key, BinderFileHeader File, TileTexture Entry)> Requests = new();
+    /// <summary>By tile name, so a tile shown in several maps (an NR map and its underground layer) loads once</summary>
+    private readonly Dictionary<string, TileTexture> Textures = new();
+    private readonly ConcurrentQueue<(TileSource Source, TileTexture Entry)> Requests = new();
     private int Workers;
     private long Frame;
 
@@ -301,9 +397,9 @@ public class WorldMapTileSet : IDisposable
 
     private const int MaxWorkers = 2;
 
-    private TexturePool.TextureHandle GetTexture((string, int, int, int) key, BinderFileHeader file)
+    private TexturePool.TextureHandle GetTexture(TileSource source)
     {
-        if (!Textures.TryGetValue(key, out var entry))
+        if (!Textures.TryGetValue(source.Name, out var entry))
         {
             var handle = SceneRenderer.GlobalTexturePool.AllocateTextureDescriptor();
 
@@ -311,7 +407,7 @@ public class WorldMapTileSet : IDisposable
                 return null;
 
             entry = new TileTexture { Handle = handle };
-            Textures[key] = entry;
+            Textures[source.Name] = entry;
         }
 
         entry.LastUsed = Frame;
@@ -319,7 +415,7 @@ public class WorldMapTileSet : IDisposable
         if (!entry.Requested)
         {
             entry.Requested = true;
-            Requests.Enqueue((key, file, entry));
+            Requests.Enqueue((source, entry));
             StartWorkers();
         }
 
@@ -350,14 +446,29 @@ public class WorldMapTileSet : IDisposable
 
                         try
                         {
-                            var data = Reader.ReadFile(request.File);
-                            var tpf = TPF.Read(data);
+                            var texture = request.Source.Texture;
+                            var platform = request.Source.Platform;
 
-                            if (tpf.Textures.Count == 0)
-                                continue;
+                            // ER: the tile's own TPF in the tpfbdt
+                            if (texture == null)
+                            {
+                                // The reader isn't thread-safe: its position stack (StepIn/StepOut) is shared, so
+                                // two workers at once pop each other's entries. The read is only a view into the
+                                // mapped data; the decompression and TPF read below stay in parallel.
+                                Memory<byte> data;
 
-                            var texture = tpf.Textures[0];
-                            var platform = tpf.Platform;
+                                lock (ReaderLock)
+                                    data = Reader.ReadFile(request.Source.File);
+
+                                var tpf = TPF.Read(data);
+
+                                if (tpf.Textures.Count == 0)
+                                    continue;
+
+                                texture = tpf.Textures[0];
+                                platform = tpf.Platform;
+                            }
+
                             var handle = request.Entry.Handle;
 
                             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
@@ -367,7 +478,7 @@ public class WorldMapTileSet : IDisposable
                         }
                         catch (Exception e)
                         {
-                            Smithbox.LogError(this, LOC.Get("MAP_WorldMapTiles_Failed_Tile", request.File.Name), e);
+                            Smithbox.LogError(this, LOC.Get("MAP_WorldMapTiles_Failed_Tile", request.Source.Name), e);
                         }
                     }
                 }

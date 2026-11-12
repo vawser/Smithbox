@@ -31,6 +31,10 @@
     { "Key": "MAP_MapInfo_WorldMap_Description", "Text": "The world map with the map tiles over it. {0} on the map picks the maps there, to load from Selected Tiles." },
     { "Key": "MAP_MapInfo_Filter_Restrict", "Text": "Restrict by Map Source" },
     { "Key": "MAP_MapInfo_Filter_Restrict_TT", "Text": "Restrict the tiles to the current map source." },
+    { "Key": "MAP_MapInfo_Map_Display_Header", "Text": "Map Display" },
+    { "Key": "MAP_MapInfo_Map_Display_Header_TT", "Text": "How the game's map is drawn." },
+    { "Key": "MAP_MapInfo_Display_Underground", "Text": "Show Underground" },
+    { "Key": "MAP_MapInfo_Display_Underground_TT", "Text": "Draw the map's underground layer where it has one, as the game's map does when the player is below ground." },
 
     { "Key": "MAP_MapInfo_Tile_Display_Header", "Text": "Tile Display" },
     { "Key": "MAP_MapInfo_Tile_Display_Header_TT", "Text": "The map tile shapes drawn over the map." },
