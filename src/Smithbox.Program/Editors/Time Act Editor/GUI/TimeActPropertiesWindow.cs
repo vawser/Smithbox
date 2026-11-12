@@ -2009,14 +2009,23 @@ public class TimeActPropertiesWindow
 
         // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor (the alias list may not name it)
         bool isEffect = aliasType is ProjectAliasType.Particles;
+        bool isSound = aliasType is ProjectAliasType.Sounds;
         if (isEffect)
             FxReferenceHelper.Click(Project, value);
+        if (isSound)
+            SoundReferenceHelper.Click(Project, value);
 
         if (ImGui.BeginPopupContextItem("##aliasContextMenu"))
         {
             if (isEffect && FxReferenceHelper.IsAvailable(Project) && FxReferenceHelper.TryGetId(value, out _))
             {
                 FxReferenceHelper.ContextMenu(Project, value);
+                ImGui.Separator();
+            }
+
+            if (isSound && SoundReferenceHelper.IsAvailable(Project) && SoundReferenceHelper.TryGetId(value, out _))
+            {
+                SoundReferenceHelper.ContextMenu(Project, value);
                 ImGui.Separator();
             }
 

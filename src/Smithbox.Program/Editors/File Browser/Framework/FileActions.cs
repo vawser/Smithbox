@@ -144,6 +144,16 @@ public class FileActions
             case "gparam":
                 editorName = LOC.Get("FILE_Actions_Editor_Gparam");
                 return $"gparam/view/{name}";
+
+            // sound banks: the Sound Editor finds them by path ('|' for '/', commands split on '/'); an FMOD .fev opens its .fsb
+            case "bnk":
+            case "fsb":
+                editorName = LOC.Get("FILE_Actions_Editor_Sound");
+                return $"sound/select/{entry.Path.Replace('/', '|')}";
+
+            case "fev":
+                editorName = LOC.Get("FILE_Actions_Editor_Sound");
+                return $"sound/select/{entry.Path[..^4].Replace('/', '|')}.fsb";
         }
 
         return null;

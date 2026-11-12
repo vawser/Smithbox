@@ -161,6 +161,12 @@ public class SoundEventList
 
         if (ev.SoundId != null && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Sound_Id")}##copySoundId"))
             ImGui.SetClipboardText(ev.SoundId);
+
+        ImGui.Separator();
+        var count = ev.Entries.Count(e => SoundExportJob.CanExport(e, SoundExportFormat.Wav));
+        if (ImGui.MenuItem($"{LOC.Get("SOUND_Export_Event_Wav", count)}##exportEvent", "", false, View.CanStartExport && count > 0))
+            View.ExportEvent(ev);
+        GUI.Tooltip(LOC.Get("SOUND_Export_Event_Wav_TT"));
     }
 
     private void HandleKeys()

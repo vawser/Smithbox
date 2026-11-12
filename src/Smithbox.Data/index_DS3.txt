@@ -1,0 +1,4 @@
+==================== DS3
+FEV STRR: 234 files (0 legacy/none), 12639 distinct event names; in more than one bank 3043
+  letters with an event for a known sound ID: 1=11084, 2=1278, 3=252, 4=20, 5=5
+

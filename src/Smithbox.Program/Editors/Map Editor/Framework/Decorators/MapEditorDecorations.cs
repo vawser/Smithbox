@@ -584,10 +584,12 @@ public static class MapEditorDecorations
             display = true;
         }
 
+        bool isSound = false;
         if (meta != null && meta.ShowSoundList && aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> soundAliases))
         {
             options = soundAliases;
             isEffect = false;
+            isSound = true;
             display = true;
         }
 
@@ -595,6 +597,7 @@ public static class MapEditorDecorations
         {
             options = talkAliases;
             isEffect = false;
+            isSound = false;
             display = true;
         }
 
@@ -637,15 +640,23 @@ public static class MapEditorDecorations
 
             ImGui.EndGroup();
 
-            // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor
+            // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor; a sound ID likewise in the Sound Editor
             if (isEffect)
                 FxReferenceHelper.Click(view.Project, val);
+            if (isSound)
+                SoundReferenceHelper.Click(view.Project, val);
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
                 if (isEffect && FxReferenceHelper.IsAvailable(view.Project) && FxReferenceHelper.TryGetId(val, out _))
                 {
                     FxReferenceHelper.ContextMenu(view.Project, val);
+                    ImGui.Separator();
+                }
+
+                if (isSound && SoundReferenceHelper.IsAvailable(view.Project) && SoundReferenceHelper.TryGetId(val, out _))
+                {
+                    SoundReferenceHelper.ContextMenu(view.Project, val);
                     ImGui.Separator();
                 }
 

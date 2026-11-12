@@ -1373,6 +1373,9 @@ public class CFG
     public float SoundEditor_Volume = 0.8f;
     public bool SoundEditor_Loop = false;
     public bool SoundEditor_Play_On_Select = false;
+    public bool Interface_SoundEditor_ToolWindow = true;
+    public bool Interface_SoundEditor_Tool_Search = true;
+    public string SoundEditor_Export_Folder = "";
     #endregion
 
     #region EMEVD Editor

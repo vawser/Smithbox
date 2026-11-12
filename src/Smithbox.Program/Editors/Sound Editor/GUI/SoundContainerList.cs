@@ -102,6 +102,23 @@ public class SoundContainerList
             View.SelectContainer(c);
         GUI.Tooltip(c.Path);
 
+        if (ImGui.BeginPopupContextItem($"soundBankContext_{c.Path}"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Path_Bank")}##copyBankPath"))
+                ImGui.SetClipboardText(c.Path);
+
+            ImGui.Separator();
+            if (ImGui.MenuItem($"{LOC.Get("SOUND_Export_Bank_All_Wav")}##exportBankWav", "", false, View.CanStartExport && c.State != SoundLoadState.Failed))
+                View.ExportContainer(c, SoundExportFormat.Wav);
+            GUI.Tooltip(LOC.Get("SOUND_Export_Bank_All_Wav_TT"));
+
+            if (c.Kind == SoundContainerKind.WwiseBank &&
+                ImGui.MenuItem($"{LOC.Get("SOUND_Export_Bank_All_Wem")}##exportBankWem", "", false, View.CanStartExport && c.State != SoundLoadState.Failed))
+                View.ExportContainer(c, SoundExportFormat.Wem);
+
+            ImGui.EndPopup();
+        }
+
         // File alias: the character / asset / map the bank is for
         var alias = c.FileAlias;
         if (!string.IsNullOrEmpty(alias))

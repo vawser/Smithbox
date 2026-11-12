@@ -1,0 +1,7 @@
+==================== DB_NT
+mobnkinfo: 2 sections, 1418 bank entries, 11483 event entries, 11091 distinct events
+bank events 7243: in index 7243 (100.0%), index names their bank 7243 (100.0%)
+  bank events not in the index, by bank shape: 
+index banks that are bank files: 245 of 469
+  letters with a Play_ event for a known sound ID (from the name table): 0=19350, 1=607, 2=30, 3=8, 4=3
+

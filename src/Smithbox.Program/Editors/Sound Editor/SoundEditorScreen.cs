@@ -30,6 +30,7 @@ public class SoundEditorScreen : EditorScreen, IDisposable
     {
         ParseCommands(commands);
         ApplyPendingEntry();
+        ApplyPendingEvent();
 
         if (ImGui.BeginMenuBar())
         {
@@ -44,24 +45,64 @@ public class SoundEditorScreen : EditorScreen, IDisposable
     }
 
     /// <summary>
-    /// sound/select/&lt;bank name or path&gt;[/&lt;event ID, media ID or row index&gt;], e.g. sound/select/cs_c2010/12
+    /// sound/select/&lt;bank&gt;[/&lt;event ID, media ID or row&gt;] · sound/event/&lt;bank&gt;/&lt;event name&gt;[/play] ·
+    /// sound/find/&lt;text&gt;. A bank is its name or its path with '|' for '/' (commands split on '/').
     /// </summary>
     private void ParseCommands(string[] commands)
     {
         var data = Project.Handler.SoundData;
-        if (commands == null || commands.Length < 2 || commands[0] != "select" || data == null)
+        if (commands == null || commands.Length < 2 || data == null)
             return;
 
-        var container = data.Containers.FirstOrDefault(c => string.Equals(c.Name, commands[1], StringComparison.OrdinalIgnoreCase)
-                                                           || string.Equals(c.Path, commands[1], StringComparison.OrdinalIgnoreCase));
+        if (commands[0] == "find")
+        {
+            View.SearchTool.SetQuery(string.Join("/", commands[1..]));
+            return;
+        }
+
+        if (commands[0] is not ("select" or "event"))
+            return;
+
+        var key = commands[1].Replace('|', '/');
+        var container = data.Containers.FirstOrDefault(c => string.Equals(c.Path, key, StringComparison.OrdinalIgnoreCase))
+                        ?? data.Containers.FirstOrDefault(c => string.Equals(c.Name, key, StringComparison.OrdinalIgnoreCase));
         if (container == null)
             return;
 
         View.SelectContainer(container);
         View.ContainerList.ScrollToSelection = true;
 
-        if (commands.Length > 2 && uint.TryParse(commands[2], out var n))
+        if (commands[0] == "select" && commands.Length > 2 && uint.TryParse(commands[2], out var n))
             _pendingEntry = (container, n);
+
+        if (commands[0] == "event" && commands.Length > 2)
+            _pendingEvent = (container, commands[2], commands.Length > 3 && commands[3] == "play");
+    }
+
+    // an event to select (and maybe play) once its bank has loaded (sound/event/...)
+    private (SoundContainer Container, string Name, bool Play)? _pendingEvent;
+
+    private void ApplyPendingEvent()
+    {
+        if (_pendingEvent is not { } p || p.Container.State is SoundLoadState.NotLoaded or SoundLoadState.Loading)
+            return;
+
+        _pendingEvent = null;
+        if (p.Container.State != SoundLoadState.Loaded)
+            return;
+
+        var hash = WwiseBank.Hash(p.Name);
+        var ev = p.Container.Events.FirstOrDefault(e => string.Equals(e.Name, p.Name, StringComparison.OrdinalIgnoreCase))
+                 ?? p.Container.Events.FirstOrDefault(e => !e.FromFev && e.Id == hash);
+        if (ev == null)
+        {
+            Smithbox.Log(this, LOC.Get("SOUND_Log_Event_Not_Found", p.Name, p.Container.Name));
+            return;
+        }
+
+        View.GoToEvent(ev);
+        if (p.Play)
+            View.SelectEvent(ev, true);
     }
 
     // a row to select once its bank has loaded (sound/select/<bank>/<n>)
@@ -101,6 +142,13 @@ public class SoundEditorScreen : EditorScreen, IDisposable
             }
             GUI.Tooltip(LOC.Get("SOUND_View_Toggle_Play_On_Select_TT"));
             GUI.ShowActiveStatus(CFG.Current.SoundEditor_Play_On_Select);
+
+            if (ImGui.MenuItem($"{LOC.Get("SOUND_View_Toggle_Tools")}##toolsToggle"))
+            {
+                CFG.Current.Interface_SoundEditor_ToolWindow = !CFG.Current.Interface_SoundEditor_ToolWindow;
+            }
+            GUI.Tooltip(LOC.Get("SOUND_View_Toggle_Tools_TT"));
+            GUI.ShowActiveStatus(CFG.Current.Interface_SoundEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

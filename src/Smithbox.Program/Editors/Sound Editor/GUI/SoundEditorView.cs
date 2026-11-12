@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.SoundEditor;
 
@@ -22,6 +23,10 @@ public class SoundEditorView : IDisposable
     public SoundEventList EventList;
     public SoundProperties Properties;
     public SoundPlayerBar PlayerBar;
+    public SoundToolWindow ToolWindow;
+
+    // Tools
+    public SoundSearchTool SearchTool;
 
     public SoundPlayer Player = new();
 
@@ -45,6 +50,8 @@ public class SoundEditorView : IDisposable
         EventList = new(this);
         Properties = new(this);
         PlayerBar = new(this);
+        SearchTool = new(this);
+        ToolWindow = new(this);
 
         Player.Volume = CFG.Current.SoundEditor_Volume;
         Player.Loop = CFG.Current.SoundEditor_Loop;
@@ -135,6 +142,50 @@ public class SoundEditorView : IDisposable
         });
     }
 
+    /// <summary>The running or last export (its progress shows in the Player window).</summary>
+    public SoundExportJob ExportJob;
+
+    public bool CanStartExport => ExportJob is not { Running: true };
+
+    /// <summary>
+    /// Asks for a folder and exports <paramref name="entries"/> into a sub-folder named <paramref name="label"/>
+    /// (a single sound goes straight into the chosen folder).
+    /// </summary>
+    public void Export(string label, SoundExportFormat format, Func<IReadOnlyList<SoundEntry>> entries,
+        SoundContainer waitFor = null, bool subFolder = true)
+    {
+        if (!CanStartExport)
+            return;
+
+        if (format == SoundExportFormat.Wav && !VgmstreamCli.IsAvailable)
+        {
+            Smithbox.LogError(this, LOC.Get("SOUND_Log_No_Vgmstream", VgmstreamCli.ExePath));
+            return;
+        }
+
+        var last = CFG.Current.SoundEditor_Export_Folder;
+        if (!PlatformUtils.Instance.OpenFolderDialog(LOC.Get("SOUND_Export_Dialog_Folder"), out var folder,
+                Directory.Exists(last) ? last : null) || string.IsNullOrEmpty(folder))
+            return;
+
+        CFG.Current.SoundEditor_Export_Folder = folder;
+        var target = subFolder ? Path.Combine(folder, SoundExportJob.Sanitize(label)) : folder;
+        ExportJob = SoundExportJob.Start(target, label, format, entries, waitFor);
+    }
+
+    public void ExportEntry(SoundEntry e, SoundExportFormat format)
+        => Export(e.DisplayName, format, () => new[] { e }, subFolder: false);
+
+    public void ExportEvent(SoundEvent ev)
+        => Export(ev.DisplayName, SoundExportFormat.Wav, () => ev.Entries);
+
+    /// <summary>Exports a whole bank, loading it first if it wasn't opened.</summary>
+    public void ExportContainer(SoundContainer c, SoundExportFormat format)
+    {
+        var label = string.IsNullOrEmpty(c.Language) ? c.Name : $"{c.Name}_{c.Language}";
+        Export(label, format, () => c.Entries, c.State == SoundLoadState.Loaded ? null : c);
+    }
+
     /// <summary>Is this entry the one the player has (playing, paused or loading)?</summary>
     public bool IsCurrent(SoundEntry entry)
     {
@@ -152,6 +203,8 @@ public class SoundEditorView : IDisposable
         Window("SOUND_Window_Sounds", "soundEditor_Sounds", EditorFocusContext.SoundEditor_Sounds, dockspaceId, EntryList.Draw);
         Window("SOUND_Window_Properties", "soundEditor_Properties", EditorFocusContext.SoundEditor_Properties, dockspaceId, Properties.Draw);
         Window("SOUND_Window_Player", "soundEditor_Player", EditorFocusContext.SoundEditor_Sounds, dockspaceId, PlayerBar.Draw);
+        if (CFG.Current.Interface_SoundEditor_ToolWindow)
+            DisplayToolWindow(dockspaceId);
 
         // keep settings in step with the player bar's controls
         CFG.Current.SoundEditor_Volume = Player.Volume;
@@ -169,6 +222,23 @@ public class SoundEditorView : IDisposable
                 FocusManager.SetFocus(focus);
 
             draw();
+        }
+
+        ImGui.End();
+    }
+
+    /// <summary>The Tools window has its own menu bar (View + tool navigation options), so main-window flags.</summary>
+    private void DisplayToolWindow(uint dockspaceId)
+    {
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditor);
+
+        if (ImGui.Begin($"{LOC.Get("SOUND_Window_Tools")}{SoundToolWindow.WindowId}", GUI.GetMainWindowFlags()))
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+                FocusManager.SetFocus(EditorFocusContext.SoundEditor_ToolWindow);
+
+            ToolWindow.Display();
         }
 
         ImGui.End();

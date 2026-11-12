@@ -305,6 +305,11 @@ public class ParamFieldDecorators
             FxReferenceHelper.Click(ParentView.Project, oldval);
         }
 
+        if (metaContext.DisplaySoundEnum)
+        {
+            SoundReferenceHelper.Click(ParentView.Project, oldval);
+        }
+
         if (metaContext.DisplayTextReferences)
         {
             TextReferenceHelper.Click(ParentView, oldval, row, metaContext.TextReferences, metaContext.FmgRefRoleOverride);
@@ -355,6 +360,11 @@ public class ParamFieldDecorators
             if (metaContext.DisplaySoundEnum && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.Sounds, out List<AliasEntry> sounds))
             {
                 result |= AliasEnumHelper.ContextMenu(ParentView, sounds, oldval, ref newval);
+            }
+
+            if (metaContext.DisplaySoundEnum)
+            {
+                SoundReferenceHelper.ContextMenu(ParentView.Project, oldval);
             }
 
             if (metaContext.DisplayEventFlagEnum && ParentView.Project.Handler.ProjectData.Aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlags))

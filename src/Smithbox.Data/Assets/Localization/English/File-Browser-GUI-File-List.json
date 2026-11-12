@@ -89,6 +89,10 @@
       "Text": "Gparam Editor"
     },
     {
+      "Key": "FILE_Actions_Editor_Sound",
+      "Text": "Sound Editor"
+    },
+    {
       "Key": "FILE_Actions_Copy_Path",
       "Text": "Copy Path"
     },

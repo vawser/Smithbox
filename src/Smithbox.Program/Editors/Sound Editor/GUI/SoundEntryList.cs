@@ -213,6 +213,33 @@ public class SoundEntryList
 
         if (e.StreamPath != null && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Path")}##copyPath"))
             ImGui.SetClipboardText(e.StreamPath);
+
+        ImGui.Separator();
+        var canStart = View.CanStartExport;
+
+        if (ImGui.MenuItem($"{LOC.Get("SOUND_Export_Wav")}##exportWav", "", false, canStart && SoundExportJob.CanExport(e, SoundExportFormat.Wav)))
+            View.ExportEntry(e, SoundExportFormat.Wav);
+        GUI.Tooltip(LOC.Get("SOUND_Export_Wav_TT"));
+
+        if (e.Container.Kind == SoundContainerKind.WwiseBank)
+        {
+            if (ImGui.MenuItem($"{LOC.Get("SOUND_Export_Wem")}##exportWem", "", false, canStart && SoundExportJob.CanExport(e, SoundExportFormat.Wem)))
+                View.ExportEntry(e, SoundExportFormat.Wem);
+            GUI.Tooltip(LOC.Get("SOUND_Export_Wem_TT"));
+        }
+
+        // the list as filtered: a whole bank when there is no filter
+        var visible = Visible;
+        var filtered = !string.IsNullOrWhiteSpace(Filter);
+        var label = filtered ? LOC.Get("SOUND_Export_Visible_Wav", visible.Count) : LOC.Get("SOUND_Export_Bank_Wav", visible.Count);
+        if (ImGui.MenuItem($"{label}##exportVisible", "", false, canStart && visible.Count > 0))
+        {
+            var c = e.Container;
+            var name = string.IsNullOrEmpty(c.Language) ? c.Name : $"{c.Name}_{c.Language}";
+            var list = visible.ToList();
+            View.Export(filtered ? $"{name}_filtered" : name, SoundExportFormat.Wav, () => list);
+        }
+        GUI.Tooltip(LOC.Get("SOUND_Export_Visible_Wav_TT"));
     }
 
     private void HandleKeys()

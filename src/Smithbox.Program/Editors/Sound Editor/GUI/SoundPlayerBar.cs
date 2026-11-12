@@ -1,4 +1,5 @@
 using Hexa.NET.ImGui;
+using System.Diagnostics;
 using System.Numerics;
 
 namespace StudioCore.Editors.SoundEditor;
@@ -92,6 +93,41 @@ public class SoundPlayerBar
 
         if (player.State == SoundPlayerState.Failed && player.Error != null)
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, player.Error);
+
+        DrawExport();
+    }
+
+    /// <summary>Progress of the running export, or the result of the last one until dismissed.</summary>
+    private void DrawExport()
+    {
+        var job = View.ExportJob;
+        if (job == null)
+            return;
+
+        ImGui.Separator();
+        if (job.Running)
+        {
+            var frac = job.Total > 0 ? (float)(job.Done + job.Failed) / job.Total : 0f;
+            var text = job.Total > 0 ? LOC.Get("SOUND_Export_Progress", job.Label, job.Done + job.Failed, job.Total) : LOC.Get("SOUND_Export_Preparing", job.Label);
+            ImGui.ProgressBar(frac, new Vector2(-90 * DPI.UIScale(), 0), text);
+            ImGui.SameLine();
+            if (ImGui.Button($"{LOC.Get("SOUND_Export_Cancel")}##soundExportCancel", new Vector2(-1, 0)))
+                job.Cancel();
+        }
+        else
+        {
+            var key = job.Cancelled ? "SOUND_Export_Result_Cancelled" : job.Failed > 0 || job.Total == 0 ? "SOUND_Export_Result_Failed" : "SOUND_Export_Result_Done";
+            ImGui.TextUnformatted(LOC.Get(key, job.Label, job.Done, job.Total, job.Failed));
+            ImGui.SameLine();
+            if (ImGui.SmallButton($"{LOC.Get("SOUND_Export_Open_Folder")}##soundExportOpen") && Directory.Exists(job.Folder))
+                Process.Start("explorer.exe", job.Folder);
+            ImGui.SameLine();
+            if (ImGui.SmallButton($"{LOC.Get("SOUND_Export_Dismiss")}##soundExportDismiss"))
+                View.ExportJob = null;
+        }
+
+        if (job.FirstError != null)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, job.FirstError);
     }
 
     private static string StateKey(SoundPlayerState s) => s switch

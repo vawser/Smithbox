@@ -22,6 +22,14 @@ public class SoundData : IDisposable
     /// <summary>File aliases, Sounds aliases and the Wwise name table.</summary>
     public SoundNames Names;
 
+    /// <summary>Sound ID / name → bank, without opening every bank (built on first use).</summary>
+    public SoundIndex Index;
+
+    private readonly HashSet<string> _allPaths = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>The path of a listed file whose name ends with <paramref name="fileName"/>, or null.</summary>
+    public string FindPath(string fileName) => _allPaths.FirstOrDefault(p => p.EndsWith("/" + fileName, StringComparison.OrdinalIgnoreCase));
+
     /// <summary>Every container, sorted by group then name.</summary>
     public List<SoundContainer> Containers = new();
 
@@ -48,6 +56,10 @@ public class SoundData : IDisposable
         Names = new SoundNames(Project);
         if (Middleware == SoundMiddleware.Wwise)
             Names.LoadWwise();
+        Index = new SoundIndex(this);
+
+        foreach (var e in Project.Locator.FileDictionary.Entries)
+            _allPaths.Add(e.Path);
 
         // The locator's dictionary holds only validated entries. That is right for AC6 (228 listed banks aren't in
         // the game), but every ER sd/sd_dlc02 entry is marked unvalidated although the files exist. So unvalidated

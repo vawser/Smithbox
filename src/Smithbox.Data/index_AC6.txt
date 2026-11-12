@@ -1,0 +1,7 @@
+==================== AC6
+mobnkinfo: 3 sections, 333 bank entries, 33199 event entries, 19196 distinct events
+bank events 33179: in index 33179 (100.0%), index names their bank 33179 (100.0%)
+  bank events not in the index, by bank shape: 
+index banks that are bank files: 240 of 243
+  letters with a Play_ event for a known sound ID (from the name table): 0=19639, 1=324, 2=25, 3=10
+

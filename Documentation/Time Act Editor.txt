@@ -4,3 +4,5 @@
 
 - Animations: add representation of
     - Blending
+    
+- Playback sound events

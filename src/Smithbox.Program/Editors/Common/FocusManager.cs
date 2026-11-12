@@ -179,7 +179,8 @@ public static class FocusManager
         return Focus is EditorFocusContext.SoundEditor_None
             or EditorFocusContext.SoundEditor_Banks
             or EditorFocusContext.SoundEditor_Sounds
-            or EditorFocusContext.SoundEditor_Properties;
+            or EditorFocusContext.SoundEditor_Properties
+            or EditorFocusContext.SoundEditor_ToolWindow;
     }
 
     public static bool IsInEsdEditor()
@@ -303,6 +304,7 @@ public enum EditorFocusContext
     SoundEditor_Banks,
     SoundEditor_Sounds,
     SoundEditor_Properties,
+    SoundEditor_ToolWindow,
 
     BehaviorEditor_None,
     BehaviorEditor_FileList,
