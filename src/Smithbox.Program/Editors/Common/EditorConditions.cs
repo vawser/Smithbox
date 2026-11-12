@@ -50,6 +50,19 @@ public static class EditorConditions
         return curType is ProjectType.AC6;
     }
 
+    /// <summary>The Sound Editor: FMOD games (DS1 to SDT) and Wwise games (ER, NR, AC6, DB_NT). Not DES (Sony MultiStream).</summary>
+    public static bool SupportsSoundEditor(ProjectType curType)
+    {
+        return curType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+            or ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB_NT;
+    }
+
+    /// <summary>The games whose sound is Wwise (.bnk / .wem); the others the Sound Editor supports are FMOD (.fsb)</summary>
+    public static bool UsesWwise(ProjectType curType)
+    {
+        return curType is ProjectType.ER or ProjectType.NR or ProjectType.AC6 or ProjectType.DB_NT;
+    }
+
     /// <summary>The EMEVD Editor: the games with instruction layouts in Assets/EMEVD/Layouts</summary>
     public static bool SupportsEmevdEditor(ProjectType curType)
     {

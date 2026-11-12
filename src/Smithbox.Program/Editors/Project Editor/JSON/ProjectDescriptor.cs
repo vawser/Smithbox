@@ -36,6 +36,7 @@ public class ProjectDescriptor
     public bool EnableBehaviorEditor = false;
     public bool EnableEmevdEditor = false;
     public bool EnableEsdEditor = false;
+    public bool EnableSoundEditor = false;
     public bool EnableTimeActEditor = false;
 
     public List<string> PinnedParams { get; set; } = new();
@@ -69,6 +70,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
         EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
         EnableEsdEditor = newDescriptor.EnableEsdEditor;
+        EnableSoundEditor = newDescriptor.EnableSoundEditor;
         EnableTimeActEditor = newDescriptor.EnableTimeActEditor;
         EnableExternalMaterialData = newDescriptor.EnableExternalMaterialData;
 
@@ -148,6 +150,7 @@ public class ProjectDescriptor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
             && EnableEmevdEditor == other.EnableEmevdEditor
             && EnableEsdEditor == other.EnableEsdEditor
+            && EnableSoundEditor == other.EnableSoundEditor
             && EnableTimeActEditor == other.EnableTimeActEditor
             && EnableExternalMaterialData == other.EnableExternalMaterialData;
     }
@@ -179,6 +182,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
         EnableEmevdEditor = edited.EnableEmevdEditor;
         EnableEsdEditor = edited.EnableEsdEditor;
+        EnableSoundEditor = edited.EnableSoundEditor;
         EnableTimeActEditor = edited.EnableTimeActEditor;
         EnableExternalMaterialData = edited.EnableExternalMaterialData;
     }
@@ -210,6 +214,7 @@ public class ProjectDescriptor
             EnableBehaviorEditor = this.EnableBehaviorEditor,
             EnableEmevdEditor = this.EnableEmevdEditor,
             EnableEsdEditor = this.EnableEsdEditor,
+            EnableSoundEditor = this.EnableSoundEditor,
             EnableTimeActEditor = this.EnableTimeActEditor,
             EnableExternalMaterialData = this.EnableExternalMaterialData,
 
@@ -250,6 +255,7 @@ public class ProjectDescriptor
         EnableBehaviorEditor = true;
         EnableEmevdEditor = true;
         EnableEsdEditor = true;
+        EnableSoundEditor = true;
         EnableTimeActEditor = true;
         EnableExternalMaterialData = true;
     }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using System.Threading;
+using System.Linq;
 
 namespace StudioCore.Editors.SoundEditor;
 
@@ -75,7 +75,22 @@ public static class VgmstreamCli
     /// <summary>Drops the temp file of one container, e.g. after its bytes changed.</summary>
     public static void Forget(string cacheKey)
     {
-        TempFiles.TryRemove(cacheKey, out _);
+        if (TempFiles.TryRemove(cacheKey, out var path))
+            TryDelete(path);
+    }
+
+    /// <summary>Removes the temp files written this session (called when the editor's data is unloaded).</summary>
+    public static void ClearTempFiles()
+    {
+        foreach (var key in TempFiles.Keys.ToArray())
+            if (TempFiles.TryRemove(key, out var path))
+                TryDelete(path);
+    }
+
+    private static void TryDelete(string path)
+    {
+        // a decode may still have it open; it is left for the next clear in that case
+        try { if (File.Exists(path)) File.Delete(path); } catch { }
     }
 
     /// <summary>Reads format and length without decoding. Throws with vgmstream's message on failure.</summary>

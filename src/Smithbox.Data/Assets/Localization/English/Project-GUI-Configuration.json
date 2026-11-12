@@ -161,6 +161,14 @@
       "Text": "If enabled, the ESD Editor (EzState machines: NPC talk, character, menu and DS2 AI/event scripts, shown as blocks) and associated data will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Sound_Editor",
+      "Text": "Sound Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Sound_Editor_TT",
+      "Text": "If enabled, the Sound Editor (lists the FMOD .fsb or Wwise .bnk/.wem sound banks and plays their sounds) and associated data will be initialized for this project."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Gparam_Editor",
       "Text": "Graphics Param Editor"
     },

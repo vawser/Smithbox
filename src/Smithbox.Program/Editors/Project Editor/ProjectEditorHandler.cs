@@ -10,6 +10,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.SoundEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
@@ -101,6 +102,10 @@ public class ProjectEditorHandler : IDisposable
     public EsdEditorScreen EsdEditor;
     public EsdEditorStub EsdEditorStub;
 
+    // Sound Editor (FMOD / Wwise)
+    public SoundData SoundData;
+    public SoundEditorScreen SoundEditor;
+    public SoundEditorStub SoundEditorStub;
 
     // The lighting the Model and Time Act Editors' viewports borrow from a map, made when a viewport first asks
     private ViewportEnvironment _viewportEnvironment;
@@ -125,6 +130,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _behaviorDataTask;
     private Task<bool> _emevdDataTask;
     private Task<bool> _esdDataTask;
+    private Task<bool> _soundDataTask;
     private Task<bool> _timeActDataTask;
 
     public ProjectEditorHandler(ProjectEntry project)
@@ -148,6 +154,7 @@ public class ProjectEditorHandler : IDisposable
         BehaviorEditorStub = new(Project);
         EmevdEditorStub = new(Project);
         EsdEditorStub = new(Project);
+        SoundEditorStub = new(Project);
     }
 
     public async Task<bool> InitializeData(ProjectInitType initType, bool silent)
@@ -290,6 +297,16 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_esdDataTask);
         }
 
+        // Sound (FMOD / Wwise)
+        if (Project.Descriptor.EnableSoundEditor &&
+            EditorConditions.SupportsSoundEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            SoundData = new(Project);
+            _soundDataTask = SoundData.Setup();
+            tasks.Add(_soundDataTask);
+        }
+
         bool[] results = await Task.WhenAll(tasks);
 
         if (!silent)
@@ -315,6 +332,7 @@ public class ProjectEditorHandler : IDisposable
         LogDataResult(_behaviorDataTask, "PROJECT_Data_Setup_Behavior_Data_PASS", "PROJECT_Data_Setup_Behavior_Data_FAIL");
         LogDataResult(_emevdDataTask, "PROJECT_Data_Setup_Emevd_Data_PASS", "PROJECT_Data_Setup_Emevd_Data_FAIL");
         LogDataResult(_esdDataTask, "PROJECT_Data_Setup_Esd_Data_PASS", "PROJECT_Data_Setup_Esd_Data_FAIL");
+        LogDataResult(_soundDataTask, "PROJECT_Data_Setup_Sound_Data_PASS", "PROJECT_Data_Setup_Sound_Data_FAIL");
     }
 
     /// <summary>
@@ -422,6 +440,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= EsdEditor;
         }
 
+        if (SoundData != null)
+        {
+            SoundEditor = new SoundEditorScreen(Project);
+            firstEditor ??= SoundEditor;
+        }
+
         FocusedEditor = firstEditor;
     }
 
@@ -448,6 +472,7 @@ public class ProjectEditorHandler : IDisposable
             BehaviorEditorScreen => "###behaviorEditor",
             EmevdEditorScreen => "###emevdEditor",
             EsdEditorScreen => "###esdEditor",
+            SoundEditorScreen => "###soundEditor",
             _ => null
         };
 
@@ -481,6 +506,10 @@ public class ProjectEditorHandler : IDisposable
         BehaviorData?.Dispose();
         EmevdData?.Dispose();
         EsdData?.Dispose();
+
+        // The Sound Editor's player holds an SDL audio device and maybe a decoder process
+        SoundEditor?.Dispose();
+        SoundData?.Dispose();
 
         // The FX Editor's debug shapes hold GPU buffers
         FxEditor?.ViewportWindow?.Dispose();

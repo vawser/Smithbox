@@ -123,6 +123,9 @@ public class ProjectEntry
 
             if (Handler.EsdEditorStub != null)
                 Handler.EsdEditorStub.Display(dt, commands);
+
+            if (Handler.SoundEditorStub != null)
+                Handler.SoundEditorStub.Display(dt, commands);
         }
 
         // Auto-Save
@@ -366,6 +369,7 @@ public class ProjectEntry
             Handler.BehaviorEditor,
             Handler.EmevdEditor,
             Handler.EsdEditor,
+            Handler.SoundEditor,
             Handler.TextureViewer,
             Handler.FileBrowser,
         ];

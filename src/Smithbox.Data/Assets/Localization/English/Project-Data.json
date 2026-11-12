@@ -145,6 +145,14 @@
       "Text": "[ESD Editor] Failed to load the ESD file list."
     },
     {
+      "Key": "PROJECT_Data_Setup_Sound_Data_PASS",
+      "Text": "[Sound Editor] Listed the sound banks."
+    },
+    {
+      "Key": "PROJECT_Data_Setup_Sound_Data_FAIL",
+      "Text": "[Sound Editor] Failed to list the sound banks."
+    },
+    {
       "Key": "PROJECT_Data_Setup_Common_Data_PASS",
       "Text": "[Project] Setup Common Data."
     },

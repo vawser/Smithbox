@@ -681,6 +681,9 @@ public class ProjectConfigureMenu
         EditorToggle("PROJECT_Configuration_Checkbox_Esd_Editor",
             ref Descriptor.EnableEsdEditor, EditorConditions.SupportsEsdEditor(type));
 
+        EditorToggle("PROJECT_Configuration_Checkbox_Sound_Editor",
+            ref Descriptor.EnableSoundEditor, EditorConditions.SupportsSoundEditor(type));
+
         EditorToggle("PROJECT_Configuration_Checkbox_Material_Editor",
             ref Descriptor.EnableMaterialEditor, EditorConditions.SupportsMaterialEditor(type));
 
@@ -735,6 +738,7 @@ public class ProjectConfigureMenu
         Descriptor.EnableBehaviorEditor = enabled;
         Descriptor.EnableEmevdEditor = enabled;
         Descriptor.EnableEsdEditor = enabled;
+        Descriptor.EnableSoundEditor = enabled;
         Descriptor.EnableMaterialEditor = enabled;
         Descriptor.EnableTextureViewer = enabled;
         Descriptor.EnableFileBrowser = enabled;

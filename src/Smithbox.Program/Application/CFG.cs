@@ -1366,6 +1366,15 @@ public class CFG
     public bool Interface_BehaviorEditor_Tool_Problems = true;
     #endregion
 
+    #region Sound Editor
+    ///------------------------------------------------------------
+    /// Sound Editor (FMOD / Wwise)
+    ///------------------------------------------------------------
+    public float SoundEditor_Volume = 0.8f;
+    public bool SoundEditor_Loop = false;
+    public bool SoundEditor_Play_On_Select = false;
+    #endregion
+
     #region EMEVD Editor
     ///------------------------------------------------------------
     /// EMEVD Editor (event scripts)

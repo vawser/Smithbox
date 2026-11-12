@@ -174,6 +174,14 @@ public static class FocusManager
             or EditorFocusContext.EmevdEditor_Tools;
     }
 
+    public static bool IsInSoundEditor()
+    {
+        return Focus is EditorFocusContext.SoundEditor_None
+            or EditorFocusContext.SoundEditor_Banks
+            or EditorFocusContext.SoundEditor_Sounds
+            or EditorFocusContext.SoundEditor_Properties;
+    }
+
     public static bool IsInEsdEditor()
     {
         return Focus is EditorFocusContext.EsdEditor_None
@@ -290,6 +298,11 @@ public enum EditorFocusContext
     FxEditor_Inspector,
     FxEditor_Viewport,
     FxEditor_Tools,
+
+    SoundEditor_None,
+    SoundEditor_Banks,
+    SoundEditor_Sounds,
+    SoundEditor_Properties,
 
     BehaviorEditor_None,
     BehaviorEditor_FileList,

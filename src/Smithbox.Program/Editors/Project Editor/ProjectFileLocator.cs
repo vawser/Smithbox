@@ -17,6 +17,13 @@ public class ProjectFileLocator : IDisposable
 
     public FileDictionary FileDictionary = new();
 
+    /// <summary>
+    /// The base dictionary's entries marked "Validated": false, which <see cref="FileDictionary"/> leaves out. Some are
+    /// files the game doesn't have (AC6's 228 extra banks), but some exist: every ER sd/sd_dlc02 entry is marked
+    /// false. An editor that wants them checks each against the VFS (the Sound Editor does).
+    /// </summary>
+    public FileDictionary UnvalidatedFileDictionary = new();
+
     public FileDictionary MapFiles = new();
     public FileDictionary MapPieceFiles = new();
     public FileDictionary ChrFiles = new();
@@ -179,6 +186,7 @@ public class ProjectFileLocator : IDisposable
         }
 
         var baseDictionary = new FileDictionary();
+        var unvalidated = new FileDictionary();
         // Add only validated entries
         foreach(var entry in jsonFileDictionary.Entries)
         {
@@ -186,7 +194,12 @@ public class ProjectFileLocator : IDisposable
             {
                 baseDictionary.Entries.Add(entry);
             }
+            else
+            {
+                unvalidated.Entries.Add(entry);
+            }
         }
+        UnvalidatedFileDictionary = unvalidated;
 
         if (!silent)
         {
