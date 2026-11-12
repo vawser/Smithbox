@@ -508,7 +508,7 @@ public partial class MassCreateTool
     /// Gives each new part a name the map doesn't use yet, in the game's model_suffix form. For ER and NR the suffix
     /// is the instance ID, which is unique per model, as in c1000_9000. For AC6 the type index is made unique.
     /// </summary>
-    private sealed class InstanceIdTracker
+    internal sealed class InstanceIdTracker
     {
         private readonly ProjectType Game;
         private readonly Dictionary<string, HashSet<int>> UsedInstanceIDs = new(StringComparer.OrdinalIgnoreCase);

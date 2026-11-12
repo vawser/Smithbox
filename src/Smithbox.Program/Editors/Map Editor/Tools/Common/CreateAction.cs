@@ -33,6 +33,7 @@ public class CreateAction
     public CreateTargetType TargetBaseType = CreateTargetType.Part;
 
     public MassCreateTool MassCreate;
+    public CreateAtPointTool CreateAtPoint;
 
     public CreateAction(MapEditorView view, ProjectEntry project)
     {
@@ -40,6 +41,7 @@ public class CreateAction
         Project = project;
 
         MassCreate = new MassCreateTool(view, project, this);
+        CreateAtPoint = new CreateAtPointTool(view, project, this);
 
         // The type flags persist in the config, so the combo has to start on the one they select
         TargetBaseType = CFG.Current.Toolbar_Create_Light ? CreateTargetType.Light
@@ -95,6 +97,12 @@ public class CreateAction
             if (ImGui.BeginTabItem($"{LOC.Get("MAP_MassCreate_Tab_Create")}##createActionTabSingle"))
             {
                 DisplayMenu();
+                ImGui.EndTabItem();
+            }
+
+            if (ImGui.BeginTabItem($"{LOC.Get("MAP_CreateAtPoint_Tab")}##createActionTabAtPoint"))
+            {
+                CreateAtPoint.Display();
                 ImGui.EndTabItem();
             }
 

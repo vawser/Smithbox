@@ -436,6 +436,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And placing a point in the Create tool's Create at Point tab
+        if (Owner is MapUniverse createUniverse &&
+            createUniverse.View.CreateAction.CreateAtPoint.HandleViewportInput(this, canPick))
+        {
+            painting = true;
+        }
+
         // And picking the First Person tool's spawn
         if (Owner is MapUniverse firstPersonUniverse &&
             firstPersonUniverse.View.FirstPersonTool.HandleViewportInput(this, ray, canPick))
