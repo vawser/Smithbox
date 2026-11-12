@@ -65,6 +65,26 @@ public enum NavOverlayLayer
 
     /// <summary>The collision of the parts tagged as blockers, filled in red: generation goes around them.</summary>
     Blockers,
+
+    // NVM mode (DeS, DS1, DS1R). The NVM mode uses Faces (keyed by triangle flags), InnerEdges, OpenEdges and Highlight too
+
+    /// <summary>The outline of the triangles flagged GATE, where MCG nodes join navmeshes.</summary>
+    NvmGates,
+
+    /// <summary>The outline of the triangles an NVM entity lists (disabled by event entity ID).</summary>
+    NvmEntities,
+
+    /// <summary>The MCP room boxes of the map's own rooms.</summary>
+    McpRooms,
+
+    /// <summary>The MCG nodes, as crosses.</summary>
+    McgNodes,
+
+    /// <summary>The MCG edges between their nodes.</summary>
+    McgEdges,
+
+    /// <summary>The MCG node or edge chosen in the Graph tab, drawn over everything.</summary>
+    McgSelected,
 }
 
 /// <summary>

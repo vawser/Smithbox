@@ -80,7 +80,8 @@ public partial class NavigationTool
 
     /// <summary>The layers the user can toggle, in the order they are listed. Highlight is the tool's own.</summary>
     private static readonly NavOverlayLayer[] ToggleLayers = Enum.GetValues<NavOverlayLayer>()
-        .Where(l => l is not (NavOverlayLayer.Highlight or NavOverlayLayer.Blockers or NavOverlayLayer.GateSelected)).ToArray();
+        .Where(l => l is not (NavOverlayLayer.Highlight or NavOverlayLayer.Blockers or NavOverlayLayer.GateSelected)
+            && l < NavOverlayLayer.NvmGates).ToArray();
 
     /// <summary>
     /// Keeps the overlay on the map picked above, and draws it again after a change. Called before the tabs, so it works
@@ -472,6 +473,9 @@ public partial class NavigationTool
     {
         if (!CanUse())
             return false;
+
+        if (IsNvmMode)
+            return HandleNvmViewportInput(ray, canInteract);
 
         if (OverlayContainer != null && OverlayContainer.LoadState != MapContentLoadState.Loaded)
         {

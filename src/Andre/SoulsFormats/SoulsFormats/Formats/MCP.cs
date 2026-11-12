@@ -25,6 +25,12 @@ namespace SoulsFormats
         public List<Room> Rooms { get; set; }
 
         /// <summary>
+        /// Bytes after the last structure the file points at, kept so an unedited file writes back byte for byte.
+        /// Some DeS files carry stale data there that nothing references. Null when there are none.
+        /// </summary>
+        public byte[] TrailingData { get; set; }
+
+        /// <summary>
         /// Creates an empty MCP.
         /// </summary>
         public MCP()
@@ -46,8 +52,14 @@ namespace SoulsFormats
 
             br.Position = roomsOffset;
             Rooms = new List<Room>(roomCount);
+            long end = br.Position;
             for (int i = 0; i < roomCount; i++)
+            {
                 Rooms.Add(new Room(br));
+                end = Math.Max(end, Math.Max(br.Position, br.GetInt32(br.Position - 0x1C) + Rooms[i].ConnectedRoomIndices.Count * 4L));
+            }
+            end = Math.Max(end, 0x10);
+            TrailingData = end < br.Length ? br.GetBytes(end, (int)(br.Length - end)) : null;
         }
 
         /// <summary>
@@ -98,6 +110,9 @@ namespace SoulsFormats
             bw.FillInt32("RoomsOffset", (int)bw.Position);
             for (int i = 0; i < Rooms.Count; i++)
                 Rooms[i].Write(bw, indicesOffsets[i]);
+
+            if (TrailingData != null)
+                bw.WriteBytes(TrailingData);
         }
 
         /// <summary>

@@ -357,6 +357,9 @@ public partial class NavigationTool
     /// </summary>
     public void StopVertexEdit()
     {
+        // The NVM mode's brush takes the same keys
+        StopNvmVertexEdit();
+
         if (!VertexEditActive)
             return;
 

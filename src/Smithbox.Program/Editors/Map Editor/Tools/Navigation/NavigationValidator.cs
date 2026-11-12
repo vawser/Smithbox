@@ -41,6 +41,9 @@ public sealed record NavIssue(NavIssueSeverity Severity, NavIssueCode Code, stri
     /// <summary>The gate node of that navmesh the issue is on, if it is on one.</summary>
     public int? Gate { get; init; }
 
+    /// <summary>NVM mode: the room (MSB navmesh part index) the issue is on; Face is then its triangle.</summary>
+    public int? Room { get; init; }
+
     /// <summary>The code, file and arguments, which say whether two issues are the same.</summary>
     public string Key => $"{Code}|{File}|{string.Join("|", Args)}";
 }
@@ -82,6 +85,29 @@ public enum NavIssueCode
     OnavGrid,
     OnavLinkTarget,
     OnavLinkLayer,
+
+    // NVM mode (DeS, DS1, DS1R): the binder, the NVMs, the MCP and the MCG (NvmValidator)
+    NvmBinderMissing,
+    NvmPartFileMissing,
+    NvmVertexRange,
+    NvmNeighbourRange,
+    NvmNeighbourNotShared,
+    NvmNeighbourOneWay,
+    NvmVertexOutsideRoot,
+    NvmTriangleNotInTree,
+    NvmTreeExtraTriangle,
+    NvmEntityTriangleRange,
+    McpMissing,
+    McpRoomCount,
+    McpRoomBox,
+    McpConnectionRange,
+    McpConnectionAsymmetric,
+    McgMissing,
+    McgEdgeNodeRange,
+    McgEdgeRoomRange,
+    McgNodeEdgeMismatch,
+    McgEdgeTriangleRange,
+    McgNodeOffGate,
 }
 
 /// <summary>

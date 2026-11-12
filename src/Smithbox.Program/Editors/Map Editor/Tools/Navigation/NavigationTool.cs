@@ -54,7 +54,8 @@ public partial class NavigationTool
     private NavigationBank Bank => View.NavigationBank;
 
     public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.DB_NT or ProjectType.AC6
-        or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT;
+        or ProjectType.DS3 or ProjectType.BB or ProjectType.SDT
+        or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R;
 
     private List<MapContainer> LoadedMaps()
     {
@@ -90,7 +91,7 @@ public partial class NavigationTool
             Current.BaselineDone = true;
         }
 
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Description"));
+        GUI.WrappedText(LOC.Get(IsNvmMode ? "MAP_Navigation_Nvm_Description" : "MAP_Navigation_Description"));
 
         var maps = LoadedMaps();
 
@@ -124,6 +125,14 @@ public partial class NavigationTool
         GUI.Tooltip(LOC.Get("MAP_Navigation_Map_TT"));
 
         var map = maps.First(m => m.Name == SelectedMap);
+
+        // DeS, DS1 and DS1R keep NVM navigation, edited by the NVM mode (NavigationTool.Nvm.cs)
+        if (IsNvmMode)
+        {
+            DisplayNvm(map);
+            ImGui.EndChild();
+            return;
+        }
 
         if (map.NavmeshParent?.WrappedObject is not SoulsFormats.NVA)
         {

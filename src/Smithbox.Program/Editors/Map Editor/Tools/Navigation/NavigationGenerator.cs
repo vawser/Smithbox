@@ -133,15 +133,33 @@ public sealed class NavGenResult
     public bool Ok => Error == null;
 }
 
+/// <summary>The faces of a generated navmesh before they are built into a file's format, or why there are none.</summary>
+public sealed class NavGenPolygons
+{
+    public List<List<Vector3>> Polygons { get; init; }
+
+    /// <summary>The blockers widened as they were cut, and their triangles.</summary>
+    public List<NavBlocker> Cuts { get; init; }
+    public List<Vector3> BlockerTriangles { get; init; }
+
+    public string Error { get; init; }
+    public int InputTriangles { get; init; }
+    public int SnappedVertices { get; init; }
+    public int SpilledVertices { get; init; }
+    public int ClippedFaces { get; init; }
+
+    public bool Ok => Error == null;
+}
+
 public static class NavigationGenerator
 {
     /// <summary>Recast's index for a missing vertex or neighbour.</summary>
     private const int Null = 0xFFFF;
 
     /// <summary>
-    /// Generates a navmesh from triangles (three points each, in the space the navmesh is to have). The template gives
-    /// the per-face and per-mesh values the game's files carry (cluster index, padding, flags, AABB w); faces get no face
-    /// data, edges flags 4 (ORIGINAL) and no edge data, as the game's do.
+    /// The faces of a navmesh generated from triangles (three points each, in the space the navmesh is to have), as
+    /// polygons whose shared corners are the same points: Recast's, snapped to the collision, split by the face grid,
+    /// spilled over ledges and cut by the blockers. Format-free, so the NVM mode builds NVMs from it too.
     /// </summary>
     /// <param name="blockers">
     /// Boxes that are solid and never walkable, in the same space. No part of the navmesh is left inside a box widened
@@ -153,15 +171,10 @@ public static class NavigationGenerator
     /// - every face is then clipped against the widened box, as Recast's simplified outlines can reach up to the max
     ///   edge error back into the cut. The pieces outside are kept, joined to their neighbours.
     /// </param>
-    /// <param name="createMesh">
-    /// Makes the empty mesh to build into when there is no template mesh, in the class set of the files it will go into
-    /// (the template file's). With a template, the mesh is made in the template's class set.
-    /// </param>
-    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, IHavokNavMeshEdit template = null, IReadOnlyList<NavBlocker> blockers = null,
-        Func<IHavokNavMeshEdit> createMesh = null)
+    public static NavGenPolygons GeneratePolygons(IReadOnlyList<Vector3> triangles, NavGenParameters p, IReadOnlyList<NavBlocker> blockers = null)
     {
         if (triangles.Count < 3)
-            return new NavGenResult { Error = "MAP_Navigation_Generate_Error_No_Collision" };
+            return new NavGenPolygons { Error = "MAP_Navigation_Generate_Error_No_Collision" };
 
         blockers ??= Array.Empty<NavBlocker>();
         var cuts = blockers.Select(b => b.Widened(p.AgentRadius, p.MaxClimb)).ToList();
@@ -235,12 +248,12 @@ public static class NavigationGenerator
         }
         catch (Exception)
         {
-            return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Recast", InputTriangles = triangles.Count / 3 };
+            return new NavGenPolygons { Error = "MAP_Navigation_Generate_Error_Recast", InputTriangles = triangles.Count / 3 };
         }
 
         var poly = built?.Mesh;
         if (poly == null || poly.npolys == 0)
-            return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
+            return new NavGenPolygons { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
 
         // Vertices, from voxel coordinates
         var points = new Vector3[poly.nverts];
@@ -306,7 +319,36 @@ public static class NavigationGenerator
         }
 
         if (polygons.Count == 0)
-            return new NavGenResult { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
+            return new NavGenPolygons { Error = "MAP_Navigation_Generate_Error_Empty", InputTriangles = triangles.Count / 3 };
+
+        return new NavGenPolygons
+        {
+            Polygons = polygons, Cuts = cuts, BlockerTriangles = blockerTriangles, InputTriangles = triangles.Count / 3,
+            SnappedVertices = snapped, SpilledVertices = spilled, ClippedFaces = clipped,
+        };
+    }
+
+    /// <summary>
+    /// Generates a navmesh from triangles (three points each, in the space the navmesh is to have): the faces of
+    /// <see cref="GeneratePolygons"/>, built into an hkaiNavMesh. The template gives the per-face and per-mesh values the
+    /// game's files carry (cluster index, padding, flags, AABB w); faces get no face data, edges flags 4 (ORIGINAL) and
+    /// no edge data, as the game's do.
+    /// </summary>
+    /// <param name="createMesh">
+    /// Makes the empty mesh to build into when there is no template mesh, in the class set of the files it will go into
+    /// (the template file's). With a template, the mesh is made in the template's class set.
+    /// </param>
+    public static NavGenResult Generate(IReadOnlyList<Vector3> triangles, NavGenParameters p, IHavokNavMeshEdit template = null, IReadOnlyList<NavBlocker> blockers = null,
+        Func<IHavokNavMeshEdit> createMesh = null)
+    {
+        var generated = GeneratePolygons(triangles, p, blockers);
+        if (!generated.Ok)
+            return new NavGenResult { Error = generated.Error, InputTriangles = generated.InputTriangles };
+
+        var polygons = generated.Polygons;
+        var cuts = generated.Cuts;
+        var blockerTriangles = generated.BlockerTriangles;
+        int snapped = generated.SnappedVertices, spilled = generated.SpilledVertices, clipped = generated.ClippedFaces;
 
         var mesh = BuildMesh(polygons, template, createMesh, p.TrianglesOnly, out int dropped);
 

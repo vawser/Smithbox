@@ -41,6 +41,12 @@ namespace SoulsFormats
         public int Unk1C { get; set; }
 
         /// <summary>
+        /// Bytes after the last structure the file points at, kept so an unedited file writes back byte for byte.
+        /// Some DeS files carry stale data there that nothing references. Null when there are none.
+        /// </summary>
+        public byte[] TrailingData { get; set; }
+
+        /// <summary>
         /// Creates an empty MCG.
         /// </summary>
         public MCG()
@@ -74,6 +80,20 @@ namespace SoulsFormats
             Edges = new List<Edge>(edgeCount);
             for (int i = 0; i < edgeCount; i++)
                 Edges.Add(new Edge(br));
+
+            // The furthest byte any structure reaches (the node and edge tables, and their index lists)
+            long end = Math.Max(0x20, Math.Max(nodesOffset + nodeCount * 0x20L, edgesOffset + edgeCount * 0x24L));
+            for (int i = 0; i < nodeCount; i++)
+            {
+                long n = nodesOffset + i * 0x20L, count = br.GetInt32(n);
+                end = Math.Max(end, Math.Max(br.GetInt32(n + 0x10) + count * 4, br.GetInt32(n + 0x14) + count * 4));
+            }
+            for (int i = 0; i < edgeCount; i++)
+            {
+                long e = edgesOffset + i * 0x24L;
+                end = Math.Max(end, Math.Max(br.GetInt32(e + 8) + br.GetInt32(e + 4) * 4L, br.GetInt32(e + 0x14) + br.GetInt32(e + 0x10) * 4L));
+            }
+            TrailingData = end < br.Length ? br.GetBytes(end, (int)(br.Length - end)) : null;
         }
 
         /// <summary>
@@ -167,6 +187,9 @@ namespace SoulsFormats
             bw.FillInt32("NodesOffset", (int)bw.Position);
             for (int i = 0; i < Nodes.Count; i++)
                 Nodes[i].Write(bw, nodeNodeIndicesOffsets[i], nodeEdgeIndicesOffsets[i]);
+
+            if (TrailingData != null)
+                bw.WriteBytes(TrailingData);
         }
 
         /// <summary>

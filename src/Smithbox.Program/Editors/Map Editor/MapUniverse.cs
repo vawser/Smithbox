@@ -515,6 +515,7 @@ public class MapUniverse : IUniverse
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
                 View.NavigationBank.OnUnloadMap(curMapID, Project.Handler.MapData.PrimaryBank.Maps.Values
                     .Where(w => w.MapContainer != null).Select(w => w.MapContainer.Name));
+                View.NvmBank.OnUnloadMap(curMapID);
                 View.IrradianceVolumeBank.OnUnloadMap(curMapID);
 
                 if (wrapper != null)
@@ -758,6 +759,18 @@ public class MapUniverse : IUniverse
             or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
         {
             collisionSaved |= SaveFile(map, MapFileType.Collision, () => View.HavokCollisionBank.SaveMapCollisionFiles(map.Name));
+        }
+
+        // The Navigation tool edits DS3, SDT and BB navmeshes (Phase N5) in the same nvmhktbnd binders as ER's
+        if (Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
+        {
+            navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.HavokNavmeshBank.SaveHavokNavmeshModels(map.Name));
+        }
+
+        // DeS, DS1 and DS1R navigation (NVM binder, loose DeS NVMs, MCP, MCG), edited by the Navigation tool's NVM mode
+        if (Project.Descriptor.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+        {
+            navSaved |= SaveFile(map, MapFileType.Navmesh, () => View.NvmBank.SaveMap(map));
         }
 
         // The WALL files belong to the collisions

@@ -42,6 +42,7 @@ public class MapEditorView : IEditorView
     public WallBank WallBank => Project.Handler.MapData.WallBank;
     public HavokNavmeshBank HavokNavmeshBank => Project.Handler.MapData.HavokNavmeshBank;
     public NavigationBank NavigationBank => Project.Handler.MapData.NavigationBank;
+    public NvmBank NvmBank => Project.Handler.MapData.NvmBank;
     public LightAtlasBank LightAtlasBank => Project.Handler.MapData.LightAtlasBank;
     public LightProbeBank LightProbeBank => Project.Handler.MapData.LightProbeBank;
     public AssetConfigurationBank AssetConfigurationBank => Project.Handler.MapData.AssetConfigurationBank;

@@ -101,6 +101,12 @@ public sealed class NavigationOverlayRenderer
         NavOverlayLayer.OnavCells => new(0.45f, 0.45f, 0.75f),
         NavOverlayLayer.Highlight => new(1.00f, 1.00f, 1.00f),
         NavOverlayLayer.Blockers => new(1.00f, 0.15f, 0.15f),
+        NavOverlayLayer.NvmGates => new(1.00f, 1.00f, 1.00f),
+        NavOverlayLayer.NvmEntities => new(1.00f, 0.55f, 0.10f),
+        NavOverlayLayer.McpRooms => new(0.60f, 0.60f, 1.00f),
+        NavOverlayLayer.McgNodes => new(1.00f, 0.90f, 0.20f),
+        NavOverlayLayer.McgEdges => new(0.25f, 0.90f, 1.00f),
+        NavOverlayLayer.McgSelected => new(1.00f, 0.00f, 0.45f),
         _ => new(1, 1, 1),
     };
 
@@ -206,7 +212,7 @@ public sealed class NavigationOverlayRenderer
                     BaseColor = color,
                     HighlightedColor = color,
                     // The picked face shows through what is in front of it
-                    RenderOverlay = batch.Layer is NavOverlayLayer.Highlight or NavOverlayLayer.GateSelected,
+                    RenderOverlay = batch.Layer is NavOverlayLayer.Highlight or NavOverlayLayer.GateSelected or NavOverlayLayer.McgSelected,
                 };
                 Add(proxy, primitive.Release);
             }

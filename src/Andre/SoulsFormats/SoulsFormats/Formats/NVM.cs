@@ -40,6 +40,13 @@ namespace SoulsFormats
         public List<Entity> Entities;
 
         /// <summary>
+        /// Bytes after the last structure the file points at, kept so an unedited file writes back byte for byte.
+        /// In vanilla DS1R (39 of 847 files) and DeS (706 of 1,566) they are stale data the game's tools left behind
+        /// (the tail of an earlier, larger navmesh); nothing in the file references them. Null when there are none.
+        /// </summary>
+        public byte[] TrailingData;
+
+        /// <summary>
         /// Deserializes file data from a stream.
         /// </summary>
         protected override void Read(BinaryReaderEx br)
@@ -70,12 +77,17 @@ namespace SoulsFormats
                 Triangles.Add(new Triangle(br));
 
             br.Position = rootBoxOffset;
-            RootBox = new Box(br);
+            // The furthest byte any structure reaches; what follows it is TrailingData
+            var extent = new long[] { br.Position };
+            RootBox = new Box(br, extent);
 
             br.Position = entityOffset;
             Entities = new List<Entity>(entityCount);
             for (int i = 0; i < entityCount; i++)
-                Entities.Add(new Entity(br));
+                Entities.Add(new Entity(br, extent));
+
+            long end = Math.Max(extent[0], 0x80 + vertexCount * 0xC + triangleCount * 0x1C);
+            TrailingData = end < br.Length ? br.GetBytes(end, (int)(br.Length - end)) : null;
         }
 
         /// <summary>
@@ -138,9 +150,13 @@ namespace SoulsFormats
                 bw.WriteInt32s(entity.TriangleIndices);
             }
 
-            bw.FillInt32("EntityOffset", (int)bw.Position);
+            // The game leaves the entity offset at 0 when a navmesh has no entities
+            bw.FillInt32("EntityOffset", Entities.Count == 0 ? 0 : (int)bw.Position);
             for (int i = 0; i < Entities.Count; i++)
                 Entities[i].Write(bw, entityTriangleIndexOffsets[i]);
+
+            if (TrailingData != null)
+                bw.WriteBytes(TrailingData);
         }
 
         /// <summary>
@@ -302,8 +318,9 @@ namespace SoulsFormats
 
             }
 
-            internal Box(BinaryReaderEx br)
+            internal Box(BinaryReaderEx br, long[] extent)
             {
+                extent[0] = Math.Max(extent[0], br.Position + 0x40);
                 MinValueCorner = br.ReadVector3();
                 int triangleCount = br.ReadInt32();
                 MaxValueCorner = br.ReadVector3();
@@ -320,7 +337,10 @@ namespace SoulsFormats
                 if (triangleCount == 0)
                     TriangleIndices = new List<int>();
                 else
+                {
                     TriangleIndices = new List<int>(br.GetInt32s(triangleOffset, triangleCount));
+                    extent[0] = Math.Max(extent[0], triangleOffset + triangleCount * 4L);
+                }
 
                 Box ReadBox(int boxOffset)
                 {
@@ -328,7 +348,7 @@ namespace SoulsFormats
                         return null;
 
                     br.Position = boxOffset;
-                    return new Box(br);
+                    return new Box(br, extent);
                 }
 
                 ChildBox1 = ReadBox(boxOffset1);
@@ -384,12 +404,13 @@ namespace SoulsFormats
 
             }
 
-            internal Entity(BinaryReaderEx br)
+            internal Entity(BinaryReaderEx br, long[] extent)
             {
                 EntityID = br.ReadInt32();
                 int indexOffset = br.ReadInt32();
                 int indexCount = br.ReadInt32();
                 br.AssertInt32(0);
+                extent[0] = Math.Max(extent[0], Math.Max(br.Position, indexOffset + indexCount * 4L));
 
                 TriangleIndices = new List<int>(br.GetInt32s(indexOffset, indexCount));
             }

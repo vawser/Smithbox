@@ -2,9 +2,6 @@
 # Project TODO
 #----------------------------------------------------
 
-- Add highlight during New Project create for the Create button when the project is valid
-- Add warning on Define Project action if a New Project create is on-going
-
 - Implement test suite for:
     - verifying round-trip read and write for formats
     - expected functionality of data actions (i.e. Create/Duplicate/Delete, undo/redo chains)
