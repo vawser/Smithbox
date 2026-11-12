@@ -180,6 +180,11 @@ public static class TimeActCompare
     }
 
     /// <summary>
+    /// Whether two events end at the same time, counting every end past the placeholder as the same
+    /// </summary>
+    public static bool EndsEqual(TAE.Event a, TAE.Event b) => GetEnd(a) == GetEnd(b);
+
+    /// <summary>
     /// Any end at or past the placeholder means the event lasts to the end of the animation. The writer stores
     /// every such end as the placeholder (a Sekiro event ending at 133.33 is written as 100), so they compare as one.
     /// </summary>

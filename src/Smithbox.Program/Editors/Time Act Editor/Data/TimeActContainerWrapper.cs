@@ -74,6 +74,13 @@ public class TimeActContainerWrapper
     /// </summary>
     public TimeActVanillaSource Vanilla => _vanilla ??= new TimeActVanillaSource(this);
 
+    private TimeActReverseLinks _reverseLinks;
+
+    /// <summary>
+    /// What imports each animation and which events are shared, found on demand
+    /// </summary>
+    public TimeActReverseLinks ReverseLinks => _reverseLinks ??= new TimeActReverseLinks(this);
+
     /// <summary>
     /// How many animation IDs each category of animations spans
     /// </summary>

@@ -165,6 +165,66 @@
       "Text": "Puts the selected events that the game has in a changed form back as the game has them: times, Unk04 and parameters. Events are matched with the game's by lining up the unchanged ones, then pairing the rest by type in order. New events aren't affected, and groups are left as they are."
     },
     {
+      "Key": "TAE_PropertiesWindow_Reverse_Links_Shown_TT",
+      "Text": "The Imported By and Identical Events sections are shown below the animation and event properties. Click to hide them."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Reverse_Links_Hidden_TT",
+      "Text": "The Imported By and Identical Events sections are hidden. Click to show them below the animation and event properties."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By",
+      "Text": "Imported By"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By_TT",
+      "Text": "The animations of this source whose mini header points at this one. Import HKX plays this animation's motion. Import Other Anim plays its motion and its events too, so an edit here changes them as well. Opening this reads every time act of the source."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By_None",
+      "Text": "No animation of this source imports this one."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By_Count",
+      "Text": "{0} animation(s) import this one, {1} of them with its events."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By_Motion",
+      "Text": "(motion)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Imported_By_Events",
+      "Text": "(motion and events)"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events",
+      "Text": "Identical Events"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events_TT",
+      "Text": "The events of other animations of this source with the same type, Unk04 and parameters as this one. Useful to see how far a shared event reaches before changing it. Opening this reads every time act of the source."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events_Same_Times",
+      "Text": "Same times too"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events_Same_Times_TT",
+      "Text": "Only list events that also start and end at the same time. Ends past the end of the animation count as the same."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events_None",
+      "Text": "No other event of this source is the same."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Identical_Events_Count",
+      "Text": "{0} identical event(s) in {1} animation(s)."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Link_TT",
+      "Text": "Time act {0}. Click to go to it."
+    },
+    {
       "Key": "TAE_PropertiesWindow_Vanilla",
       "Text": "Vanilla"
     },

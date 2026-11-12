@@ -165,6 +165,19 @@ public class TimeActPropertiesWindow
             ? "TAE_PropertiesWindow_Obsolete_Fields_Hidden_TT"
             : "TAE_PropertiesWindow_Obsolete_Fields_Shown_TT"));
 
+        // Reverse Links: the Imported By and Identical Events sections
+        ImGui.SameLine();
+
+        var showLinks = CFG.Current.TimeActEditor_Display_Reverse_Links;
+
+        if (ImGui.Button($"{(showLinks ? Icons.Link : Icons.ChainBroken)}##timeActDisplayReverseLinks"))
+        {
+            CFG.Current.TimeActEditor_Display_Reverse_Links = !showLinks;
+        }
+        GUI.Tooltip(LOC.Get(showLinks
+            ? "TAE_PropertiesWindow_Reverse_Links_Shown_TT"
+            : "TAE_PropertiesWindow_Reverse_Links_Hidden_TT"));
+
         ImGui.EndChild();
     }
 
@@ -354,6 +367,8 @@ public class TimeActPropertiesWindow
 
             ImGui.EndDisabled();
         }
+
+        DisplayIdenticalEvents(ev);
     }
 
     private const int RawBytesPerRow = 16;
@@ -1087,7 +1102,168 @@ public class TimeActPropertiesWindow
         ImGui.EndTable();
 
         PropertyAnimation = null;
+
+        DisplayImportedBy(entry, animation);
     }
+
+    #region Reverse Links
+    // Whether Identical Events also needs the same start and end
+    private bool IdenticalEventsSameTimes = false;
+
+    /// <summary>
+    /// The animations of the source whose mini header points here, so they play this motion, or with Import Other
+    /// Anim these events too. Reads every time act of the source, so only once opened.
+    /// </summary>
+    private void DisplayImportedBy(TimeActEntry entry, TAE.Animation animation)
+    {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (!CFG.Current.TimeActEditor_Display_Reverse_Links)
+            return;
+
+        GUI.Spacer();
+
+        if (!ImGui.CollapsingHeader($"{LOC.Get("TAE_PropertiesWindow_Imported_By")}##timeActImportedBy"))
+        {
+            GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Imported_By_TT"));
+            return;
+        }
+
+        GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Imported_By_TT"));
+
+        var links = source.ReverseLinks.GetImporters(entry, animation);
+
+        if (links.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_Imported_By_None"));
+            return;
+        }
+
+        GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_Imported_By_Count", links.Count,
+            links.Count(e => e.ImportsEvents)));
+
+        DisplayLinkList("importedBy", links.Count, i =>
+        {
+            var link = links[i];
+            var kind = LOC.Get(link.ImportsEvents
+                ? "TAE_PropertiesWindow_Imported_By_Events"
+                : "TAE_PropertiesWindow_Imported_By_Motion");
+
+            return ($"{source.GetAnimationName(link.Entry, link.Animation)}  {kind}", link.Entry, link.Animation, null);
+        });
+    }
+
+    /// <summary>
+    /// Other animations of the source with an event the same as this one, which helps when changing a motion
+    /// several animations share. Times are left out unless asked for, as a shared event often sits at other times.
+    /// </summary>
+    private void DisplayIdenticalEvents(TAE.Event ev)
+    {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (source == null || !CFG.Current.TimeActEditor_Display_Reverse_Links)
+            return;
+
+        GUI.Spacer();
+
+        if (!ImGui.CollapsingHeader($"{LOC.Get("TAE_PropertiesWindow_Identical_Events")}##timeActIdenticalEvents"))
+        {
+            GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Identical_Events_TT"));
+            return;
+        }
+
+        GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Identical_Events_TT"));
+
+        ImGui.Checkbox($"{LOC.Get("TAE_PropertiesWindow_Identical_Events_Same_Times")}##identicalEventsSameTimes",
+            ref IdenticalEventsSameTimes);
+        GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Identical_Events_Same_Times_TT"));
+
+        var links = source.ReverseLinks.FindIdenticalEvents(ev, IdenticalEventsSameTimes);
+
+        if (links.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_Identical_Events_None"));
+            return;
+        }
+
+        var animations = links.Select(e => e.Animation).Distinct().Count();
+
+        GUI.WrappedText(LOC.Get("TAE_PropertiesWindow_Identical_Events_Count", links.Count, animations));
+
+        var frameDuration = View.Playback.FrameDuration;
+
+        DisplayLinkList("identicalEvents", links.Count, i =>
+        {
+            var link = links[i];
+            var times = $"{FormatTime(link.Event.StartTime, frameDuration)} - {FormatTime(link.Event.EndTime, frameDuration)}";
+
+            return ($"{source.GetAnimationName(link.Entry, link.Animation)}  {times}", link.Entry, link.Animation, link.Event);
+        });
+    }
+
+    /// <summary>
+    /// A clipped list of links, each going to its animation (and event) when clicked
+    /// </summary>
+    private void DisplayLinkList(string id, int count,
+        Func<int, (string Label, TimeActEntry Entry, TAE.Animation Animation, TAE.Event Event)> get)
+    {
+        var rowHeight = ImGui.GetTextLineHeightWithSpacing();
+        var height = Math.Min(count, 12) * rowHeight + ImGui.GetStyle().FramePadding.Y * 2;
+
+        ImGui.BeginChild($"##{id}", new Vector2(0, height), ImGuiChildFlags.Borders);
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(count);
+
+        while (clipper.Step())
+        {
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+            {
+                var (label, entry, animation, ev) = get(i);
+
+                if (ImGui.Selectable($"{label}##{id}{i}", View.Selection.SelectedAnimation == animation))
+                {
+                    GoToLink(entry, animation, ev);
+                }
+
+                GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Link_TT", entry.Name));
+            }
+        }
+
+        clipper.End();
+
+        ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Opens the time act and animation of a link in this view, and selects its event
+    /// </summary>
+    private void GoToLink(TimeActEntry entry, TAE.Animation animation, TAE.Event ev)
+    {
+        var selection = View.Selection;
+
+        if (selection.SelectedTimeAct != entry)
+        {
+            View.SelectionWindow.SelectTimeAct(entry);
+            View.SelectionWindow.ScrollTo(entry);
+        }
+
+        if (entry.TimeAct?.Animations.Contains(animation) != true)
+            return;
+
+        if (selection.SelectedAnimation != animation)
+        {
+            View.AnimationSelectionWindow.SelectAnimation(animation);
+        }
+
+        View.AnimationSelectionWindow.ScrollTo(animation);
+
+        if (ev != null && animation.Events.Contains(ev))
+        {
+            selection.SelectedEvent = ev;
+        }
+    }
+    #endregion
 
     // The animation whose tab is being drawn, which its property edits belong to; null in the time act tab
     private TAE.Animation PropertyAnimation;

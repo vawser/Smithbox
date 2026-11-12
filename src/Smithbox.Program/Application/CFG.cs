@@ -803,6 +803,7 @@ public class CFG
     public bool TimeActEditor_Graph_Display_Outside_Playback = true;
     public bool TimeActEditor_Graph_Display_Event_Names = true;
     public bool TimeActEditor_Display_Vanilla_Markers = true;
+    public bool TimeActEditor_Display_Reverse_Links = true;
     public bool TimeActEditor_Auto_Play_Animation = false;
     public bool TimeActEditor_Display_Event_Markers = true;
     public bool TimeActEditor_Display_Attack_Capsules = true;
