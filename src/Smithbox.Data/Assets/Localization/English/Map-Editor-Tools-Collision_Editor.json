@@ -15,7 +15,7 @@
     { "Key": "MAP_CollisionEditor_Tool_Description", "Text": "Reshape, create and wall map collision. Edit moves the vertices of the displayed collision; Create adds a new collision to the active map; Fall Protection builds the walls that stop falls off a collision's edges; Cleanup removes collision files no part uses." },
     { "Key": "MAP_CollisionEditor_Help_Header", "Text": "How this works" },
     { "Key": "MAP_CollisionEditor_Help_Header_TT", "Text": "The steps of this tab. Open the first time the tab is shown; the eye shows or hides them." },
-    { "Key": "MAP_CollisionEditor_Help_Edit", "Text": "1. Choose the Layer to edit (show it if it is hidden), then Start Collision Edit.\n2. Move the mouse over the collision: the cursor marks the vertex that moves, and the Cursor section says how many move with it. Raise and lower it with the keys, or hold the drag key to slide it at its height.\n3. A Radius moves the vertices around it too; with Link High and Low on, the other layer follows.\n4. Commit (above the tabs) rebuilds the edited files and writes them into the project; Discard puts the vertices back." },
+    { "Key": "MAP_CollisionEditor_Help_Edit", "Text": "1. Choose the Layer to edit (show it if it is hidden), then Start Collision Edit.\n2. Pick a Brush mode (Raise, Lower, Drag or Smooth) and its Radius. Move the mouse over the collision: the sphere shows what the brush reaches, and the Cursor section says how many vertices that is.\n3. Hold the left mouse button to brush. Raise, Lower and Smooth apply again at each interval while it is held, wherever the brush is; Drag slides the vertices under the brush with the mouse at their height. With Link High and Low on, the other layer follows.\n4. Commit (above the tabs) rebuilds the edited files and writes them into the project; Discard puts the vertices back." },
     { "Key": "MAP_CollisionEditor_Help_Create", "Text": "1. Check the Map: the collision is made for the active map.\n2. Choose a Shape: a basic shape (made at the placement orb), the FLVERs of the selected map pieces and assets, or User-Defined points placed in the viewport. Set its Facing, Material and size.\n3. Keep the suggested Model ID, or type one. An ID the map already uses overwrites that collision, once confirmed.\n4. Create writes the new h and l files into the project and adds a part placing them (saved with the map). The buttons under the result select it or go on to its fall protection." },
     { "Key": "MAP_CollisionEditor_Help_Fall", "Text": "1. Select one collision part, or pick it from the list. Fall Protection for It (Create) and Regenerate Walls (after a commit) bring you here with it selected.\n2. Choose the Source Layer whose outer edges the walls follow, and the Direction. Drop Edges Only leaves out seams and the edges of walls and ceilings.\n3. Check the walls in the viewport and the counts, then Generate. They go in the model's f file, written into the project, as one undo.\nOnly Elden Ring, Nightreign and The Duskbloods (Network Test) have walls this tab can build." },
     { "Key": "MAP_CollisionEditor_Glossary_Header", "Text": "Glossary" },
@@ -33,7 +33,7 @@
     { "Key": "MAP_CollisionEditor_Glossary_Linked", "Text": "Linked layers" },
     { "Key": "MAP_CollisionEditor_Glossary_Linked_Text", "Text": "High and low don't share vertices, so with Link High and Low on, an edit of one moves the other's vertices near the edited one: fully within the link distance, fading out past it with the radius." },
     { "Key": "MAP_CollisionEditor_Glossary_Radius", "Text": "Radius" },
-    { "Key": "MAP_CollisionEditor_Glossary_Radius_Text", "Text": "How far around the cursor's vertex an edit reaches. Vertices nearer it move more; those past the radius don't move. 0 moves the vertex alone." },
+    { "Key": "MAP_CollisionEditor_Glossary_Radius_Text", "Text": "How far around the brush's centre a stroke reaches, shown by the brush sphere. Vertices nearer the centre move more; those past the radius don't move. A brush with no vertex inside it moves the nearest corner of the triangle under it alone." },
     { "Key": "MAP_CollisionEditor_Glossary_Facing", "Text": "Facing" },
     { "Key": "MAP_CollisionEditor_Glossary_Facing_Text", "Text": "Which side of a triangle is solid. Ground faces up. If a new collision can be fallen or walked through in game, try the other facing." },
     { "Key": "MAP_CollisionEditor_Glossary_Material", "Text": "Collision material" },
@@ -53,7 +53,7 @@
     { "Key": "MAP_CollisionEditor_Show_Collision", "Text": "Show Collision" },
     { "Key": "MAP_CollisionEditor_Show_Collision_TT", "Text": "The viewport's collision filter, as in the Filters menu. Collision must be shown to be edited, and for the previews to be seen. Which layers (high, low, fall protection) are drawn is set separately; the Edit tab offers to show the layer it edits." },
     { "Key": "MAP_CollisionEditor_Mode_None", "Text": "Clicks in the viewport select map objects as usual." },
-    { "Key": "MAP_CollisionEditor_Mode_Edit", "Text": "Editing {0} collision: {1} raise, {2} lower, hold {3} drag." },
+    { "Key": "MAP_CollisionEditor_Mode_Edit", "Text": "Editing {0} collision: hold {1} to {2} (radius {3}). Clicks in the viewport brush instead of selecting." },
     { "Key": "MAP_CollisionEditor_Mode_Placing", "Text": "Placing User-Defined points: clicks in the viewport add points." },
     { "Key": "MAP_CollisionEditor_Mode_Point_Gizmo", "Text": "The gizmo moves User-Defined point {0}, not the selection." },
     { "Key": "MAP_CollisionEditor_Mode_Stop_TT", "Text": "Hide the edit cursor, stop placing points and let go of the picked point, so clicks and the gizmo act on map objects again. Edits that haven't been committed, and placed points, are kept." },
@@ -93,7 +93,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Start_TT",
-      "Text": "Shows the cursor on the collision under the mouse, so its vertices can be moved with the keys below. Turns off the Navigation tool's vertex editing, which uses the same keys. Editing stops when this tab is left or the Collision Editor is closed; edits that haven't been committed are kept, and Commit and Discard appear above the tabs."
+      "Text": "Shows the brush on the collision under the mouse, so its vertices can be moved by holding the left mouse button. Clicks in the viewport brush instead of selecting while editing. Turns off the Navigation tool's vertex editing, which uses the same keys. Editing stops when this tab is left or the Collision Editor is closed; edits that haven't been committed are kept, and Commit and Discard appear above the tabs."
     },
     {
       "Key": "MAP_CollisionEditor_Stop",
@@ -157,7 +157,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Link_Toggle_TT",
-      "Text": "Moves the vertices of the other layer near the edited vertex by the same amount, and commits both files. The layers don't share vertices, and don't always cover the same ground, so only vertices within the link distance follow. Works whether or not the other layer is displayed."
+      "Text": "Moves the vertices of the other layer under the brush with the edited layer (Smooth flattens each layer towards its own plane), and commits both files. The layers don't share vertices, and don't always cover the same ground, so only vertices within the link distance follow. Works whether or not the other layer is displayed."
     },
     {
       "Key": "MAP_CollisionEditor_Link_None",
@@ -173,7 +173,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Link_Distance_Header_TT",
-      "Text": "How close the other layer's vertices must be to the edited vertex to follow it fully. Past it, the radius fades them out."
+      "Text": "How close the other layer's vertices must be to the brush's centre to follow it fully. Past it, the radius fades them out."
     },
     {
       "Key": "MAP_CollisionEditor_Link_Distance_Input_TT",
@@ -184,9 +184,27 @@
       "Text": "Linked: {0}, {1} of its vertices follow."
     },
     { "Key": "MAP_CollisionEditor_Cursor_Linked_Far", "Text": "Linked: {0}, but none of its vertices are within the link distance, so it doesn't follow here." },
-    { "Key": "MAP_CollisionEditor_Cursor_Moves", "Text": "An edit here moves {0} vertices (radius {1})." },
+    { "Key": "MAP_CollisionEditor_Cursor_Moves", "Text": "A stroke here moves {0} vertices in {1} files (radius {2})." },
+    { "Key": "MAP_CollisionEditor_Cursor_Point", "Text": "Brush centre: {0}" },
     { "Key": "MAP_CollisionEditor_Cursor_Display_Header", "Text": "Cursor Display" },
-    { "Key": "MAP_CollisionEditor_Cursor_Display_Header_TT", "Text": "The size and opacity of the cursor sphere. Rarely changed, so hidden by default." },
+    { "Key": "MAP_CollisionEditor_Cursor_Display_Header_TT", "Text": "The opacity of the brush sphere (its size is the Radius). Rarely changed, so hidden by default." },
+    { "Key": "MAP_CollisionEditor_Brush_Header", "Text": "Brush" },
+    { "Key": "MAP_CollisionEditor_Brush_Header_TT", "Text": "What holding the left mouse button does to the vertices under the brush. The mode keys switch it between strokes." },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Input_TT", "Text": "The brush mode. Raise, Lower and Smooth apply at each interval while the button is held; Drag follows the mouse." },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Raise", "Text": "Raise" },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Raise_TT", "Text": "Raise: lifts the vertices under the brush by the step at each interval while the button is held, the centre most." },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Lower", "Text": "Lower" },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Lower_TT", "Text": "Lower: sinks the vertices under the brush by the step at each interval while the button is held, the centre most." },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Drag", "Text": "Drag" },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Drag_TT", "Text": "Drag: takes the vertices under the brush when the button goes down, and slides them with the mouse at their height until it is let go." },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Smooth", "Text": "Smooth" },
+    { "Key": "MAP_CollisionEditor_Brush_Mode_Smooth_TT", "Text": "Smooth: pulls the vertices under the brush towards the plane that best fits them at each interval while the button is held. Bumps flatten; slopes, ramps and walls keep their angle." },
+    { "Key": "MAP_CollisionEditor_Smooth_Strength_Header", "Text": "Strength" },
+    { "Key": "MAP_CollisionEditor_Smooth_Strength_Header_TT", "Text": "How much of the way to the plane the vertices at the brush's centre move each interval; those further out move less." },
+    { "Key": "MAP_CollisionEditor_Smooth_Strength_Input_TT", "Text": "100% puts the centre vertices on the plane in one interval." },
+    { "Key": "MAP_CollisionEditor_Brush_Interval_Header", "Text": "Interval" },
+    { "Key": "MAP_CollisionEditor_Brush_Interval_Header_TT", "Text": "How often the brush applies again while the button is held. It also applies once when the button goes down." },
+    { "Key": "MAP_CollisionEditor_Brush_Interval_Input_TT", "Text": "The time in seconds between applications." },
     {
       "Key": "MAP_CollisionEditor_Cursor_Linked_None",
       "Text": "Linked: none (this part has no other layer that can be edited)"
@@ -197,7 +215,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Step_Header_TT",
-      "Text": "How far each press of the raise or lower key moves the vertex."
+      "Text": "How far the vertex at the brush's centre moves each interval; those further out move less."
     },
     {
       "Key": "MAP_CollisionEditor_Step_Input_TT",
@@ -209,23 +227,11 @@
     },
     {
       "Key": "MAP_CollisionEditor_Radius_Header_TT",
-      "Text": "Moves the vertices around the target as well, less the further they are from it."
+      "Text": "The size of the brush: every vertex within it moves, less the further it is from the centre. Shown by the brush sphere."
     },
     {
       "Key": "MAP_CollisionEditor_Radius_Input_TT",
-      "Text": "The distance in world units. 0 moves the target vertex alone."
-    },
-    {
-      "Key": "MAP_CollisionEditor_Cursor_Size_Header",
-      "Text": "Cursor Size"
-    },
-    {
-      "Key": "MAP_CollisionEditor_Cursor_Size_Header_TT",
-      "Text": "The size of the cursor sphere. The vertex marker is a little smaller."
-    },
-    {
-      "Key": "MAP_CollisionEditor_Cursor_Size_Input_TT",
-      "Text": "The radius in world units."
+      "Text": "The distance in world units. With no vertex inside the brush, the nearest corner of the triangle under it moves alone."
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_Opacity_Header",
@@ -245,19 +251,15 @@
     },
     {
       "Key": "MAP_CollisionEditor_Controls_Header_TT",
-      "Text": "The keys work while the mouse is over the viewport and no mouse button is held, as the mouse buttons fly the camera with the same keys. They can be changed in the keybind settings."
+      "Text": "The brush works while the mouse is over the viewport; holding the right or middle button flies the camera instead. The mode keys work while no mouse button is held. They can be changed in the keybind and mousebind settings."
     },
     {
-      "Key": "MAP_CollisionEditor_Control_Raise",
-      "Text": "{0}: raise the vertex."
+      "Key": "MAP_CollisionEditor_Control_Brush",
+      "Text": "Hold {0}: brush the collision under the cursor."
     },
     {
-      "Key": "MAP_CollisionEditor_Control_Lower",
-      "Text": "{0}: lower the vertex."
-    },
-    {
-      "Key": "MAP_CollisionEditor_Control_Drag",
-      "Text": "Hold {0}: drag the vertex across the ground at its height."
+      "Key": "MAP_CollisionEditor_Control_Modes",
+      "Text": "{0} Raise, {1} Lower, {2} Drag, {3} Smooth: switch the brush mode."
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_Header",
@@ -265,7 +267,7 @@
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_Header_TT",
-      "Text": "The collision and vertex under the cursor."
+      "Text": "The collision under the brush, and how many vertices a stroke there moves."
     },
     {
       "Key": "MAP_CollisionEditor_Collision_Hidden",
@@ -278,10 +280,6 @@
     {
       "Key": "MAP_CollisionEditor_Cursor_File",
       "Text": "Collision: {0} ({1})"
-    },
-    {
-      "Key": "MAP_CollisionEditor_Cursor_Vertex",
-      "Text": "Vertex {0}: {1}"
     },
     {
       "Key": "MAP_CollisionEditor_Cursor_None",

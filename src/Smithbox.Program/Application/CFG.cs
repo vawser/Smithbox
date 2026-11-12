@@ -368,9 +368,13 @@ public class CFG
     public bool MapEditor_Wall_Display_Cells = true;
     public bool MapEditor_Wall_Display_NoJump = true;
     public float MapEditor_CollisionEditor_Step = 0.25f;
-    public float MapEditor_CollisionEditor_Radius = 0f;
-    public float MapEditor_CollisionEditor_Cursor_Size = 0.15f;
+    public CollisionBrushMode MapEditor_CollisionEditor_Brush_Mode = CollisionBrushMode.Raise;
+    public float MapEditor_CollisionEditor_Brush_Radius = 2f;
+    public float MapEditor_CollisionEditor_Brush_Interval = 0.1f;
+    public float MapEditor_CollisionEditor_Smooth_Strength = 0.25f;
     public bool MapEditor_CollisionEditor_Show_Cursor_Display = false;
+    public bool MapEditor_CollisionEditor_Show_Controls = true;
+    public bool MapEditor_CollisionEditor_Show_Cursor = true;
     public bool MapEditor_CollisionEditor_Show_Create_Material = true;
     public bool MapEditor_CollisionEditor_Show_Create_Parameters = true;
     public float MapEditor_CollisionEditor_Cursor_Fill_Alpha = 20f;

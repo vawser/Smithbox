@@ -187,30 +187,32 @@ public sealed class CollisionEditorBody
     }
 
     /// <summary>
-    /// The vertices within a radius of a point, with their weights: 1 at the point, falling smoothly to 0 at the
-    /// radius. The target vertex is always included at full weight, even with no radius.
+    /// The vertices a brush at a point (in the space of the shape) reaches, with their weights: 1 at the point,
+    /// falling smoothly to 0 at the radius. Empty if no vertex is within the radius.
     /// </summary>
-    public List<(int Vertex, float Weight)> GetFalloff(int target, float radius)
+    public List<(int Vertex, float Weight)> GetBrushFalloff(Vector3 center, float radius)
     {
-        var result = new List<(int, float)> { (target, 1f) };
+        var result = new List<(int, float)>();
 
         if (radius <= 0)
             return result;
 
-        var center = Vertices[target];
         var radiusSquared = radius * radius;
+
+        // The brush's box, so bodies it doesn't reach aren't searched
+        var reach = new Vector3(radius);
+
+        if (!Bounds.Intersects(new BoundingBox(center - reach, center + reach)))
+            return result;
 
         for (var v = 0; v < Vertices.Length; v++)
         {
-            if (v == target)
-                continue;
-
             var d = Vector3.DistanceSquared(Vertices[v], center);
 
             if (d >= radiusSquared)
                 continue;
 
-            // Smoothstep from the edge of the radius in to the target
+            // Smoothstep from the edge of the radius in to the centre
             var x = 1f - MathF.Sqrt(d) / radius;
             result.Add((v, x * x * (3f - 2f * x)));
         }
@@ -262,6 +264,22 @@ public sealed class CollisionEditorBody
         foreach (var (v, weight) in vertices)
         {
             Vertices[v] += offset * weight;
+            MarkVertexDirty(v);
+        }
+
+        IsEdited = true;
+        UpdateBounds();
+    }
+
+    /// <summary>Moves each vertex by its own offset in the space of the shape.</summary>
+    public void Offset(List<(int Vertex, Vector3 Offset)> offsets)
+    {
+        if (offsets.Count == 0)
+            return;
+
+        foreach (var (v, offset) in offsets)
+        {
+            Vertices[v] += offset;
             MarkVertexDirty(v);
         }
 

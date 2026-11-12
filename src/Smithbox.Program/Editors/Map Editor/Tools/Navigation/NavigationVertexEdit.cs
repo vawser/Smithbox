@@ -273,6 +273,22 @@ public sealed class NavVertexFile
         Revision++;
     }
 
+    /// <summary>Moves each vertex by its own offset in the viewport.</summary>
+    public void OffsetWorld(List<(int Vertex, Vector3 Offset)> offsets)
+    {
+        if (offsets.Count == 0)
+            return;
+
+        foreach (var (v, offset) in offsets)
+        {
+            Vertices[v] += Vector3.TransformNormal(offset, Inverse);
+            Touched.Add(v);
+        }
+
+        BoundsDirty = true;
+        Revision++;
+    }
+
     /// <summary>Puts every vertex back where it was read.</summary>
     public void Reset()
     {

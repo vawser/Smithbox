@@ -326,7 +326,7 @@
     },
     {
       "Key": "MAP_Navigation_Mode_Vertex_Edit",
-      "Text": "The viewport cursor moves navmesh vertices (Edit tab)."
+      "Text": "The viewport brush moves navmesh vertices while the left mouse button is held (Edit tab); clicks don't select."
     },
     {
       "Key": "MAP_Navigation_Mode_No_Overlay",
@@ -426,7 +426,7 @@
     },
     {
       "Key": "MAP_Navigation_Help_Edit",
-      "Text": "Needs the overlay.\n1. Start Navmesh Edit and move the mouse over the drawn navmesh: the cursor shows the corner it moves.\n2. Raise, lower or drag it with the keys under Controls. Radius moves the vertices around it too.\n3. Commit Changes writes the moved vertices as one undo; Discard Changes puts them back. Until then they stay pending, on any tab.\nAfter moving outer edges, stitch again; after large moves, recompute the gate costs."
+      "Text": "Needs the overlay.\n1. Start Navmesh Edit, pick a Brush mode (Raise, Lower, Drag or Smooth) and its Radius, and move the mouse over the drawn navmesh: the sphere shows what the brush reaches.\n2. Hold the left mouse button to brush. Raise, Lower and Smooth apply again at each interval while it is held; Drag slides the vertices under the brush with the mouse.\n3. Commit Changes writes the moved vertices as one undo; Discard Changes puts them back. Until then they stay pending, on any tab.\nAfter moving outer edges, stitch again; after large moves, recompute the gate costs."
     },
     {
       "Key": "MAP_Navigation_Help_Check",
@@ -1890,7 +1890,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Start_TT",
-      "Text": "Shows the cursor on the navmesh under the mouse, so its vertices can be moved with the keys below. Turns off picking, painting and linking, and the Collision Editor's cursor, which uses the same keys. Stops when you leave this tab; edits that aren't committed are kept."
+      "Text": "Shows the brush on the navmesh under the mouse, so its vertices can be moved by holding the left mouse button; clicks in the viewport brush instead of selecting. Turns off picking, painting and linking, and the Collision Editor's brush, which uses the same keys. Stops when you leave this tab; edits that aren't committed are kept."
     },
     {
       "Key": "MAP_Navigation_Edit_Stop",
@@ -1938,7 +1938,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Header_TT",
-      "Text": "Which other navmeshes of the map follow an edit. Their vertices within the link distance of the moved vertex move with it; past that, the radius fades them out."
+      "Text": "Which other navmeshes of the map the brush moves. Neighbours of the same set take the same falloff as the brushed navmesh; the other set's vertices within the link distance of the brush's centre move fully, then the radius fades them out."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Neighbours",
@@ -1946,7 +1946,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Neighbours_TT",
-      "Text": "The map's other navmeshes of the same set follow, so edges joined to them stay joined."
+      "Text": "The map's other navmeshes of the same set under the brush move with the same falloff, so edges joined to them stay joined. Off, only the navmesh under the cursor moves."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Other_Set",
@@ -1954,7 +1954,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Other_Set_TT",
-      "Text": "The other set's navmeshes follow too: o for an edit of n, n for an edit of o. The sets are the same ground for different agent sizes, but their vertices rarely coincide, so a radius is usually needed for them to follow."
+      "Text": "The other set's navmeshes follow too: o for an edit of n, n for an edit of o. The sets are the same ground for different agent sizes, but their vertices rarely coincide; those within the link distance of the brush's centre move fully. Smooth flattens each set towards its own plane."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Distance_Header",
@@ -1962,19 +1962,36 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Distance_Header_TT",
-      "Text": "How close a linked navmesh's vertex must be to the moved vertex to move fully with it."
+      "Text": "How close the other set's vertices must be to the brush's centre to move fully with it."
     },
     {
       "Key": "MAP_Navigation_Edit_Link_Distance_Input_TT",
-      "Text": "In metres. Joined edges share their end points, so a small distance is enough for them."
+      "Text": "In metres. Past it, the radius fades them out."
     },
+    { "Key": "MAP_Navigation_Edit_Brush_Header", "Text": "Brush" },
+    { "Key": "MAP_Navigation_Edit_Brush_Header_TT", "Text": "What holding the left mouse button does to the vertices under the brush. The mode keys switch it between strokes." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Input_TT", "Text": "The brush mode. Raise, Lower and Smooth apply at each interval while the button is held; Drag follows the mouse." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Raise_TT", "Text": "Raise: lifts the vertices under the brush by the step at each interval while the button is held, the centre most." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Lower_TT", "Text": "Lower: sinks the vertices under the brush by the step at each interval while the button is held, the centre most." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Drag_TT", "Text": "Drag: takes the vertices under the brush when the button goes down, and slides them with the mouse at their height until it is let go." },
+    { "Key": "MAP_Navigation_Edit_Brush_Mode_Smooth_TT", "Text": "Smooth: pulls the vertices under the brush towards the plane that best fits them at each interval while the button is held. Bumps flatten; slopes and ramps keep their angle." },
+    { "Key": "MAP_Navigation_Edit_Smooth_Strength_Header", "Text": "Strength" },
+    { "Key": "MAP_Navigation_Edit_Smooth_Strength_Header_TT", "Text": "How much of the way to the plane the vertices at the brush's centre move each interval; those further out move less." },
+    { "Key": "MAP_Navigation_Edit_Smooth_Strength_Input_TT", "Text": "100% puts the centre vertices on the plane in one interval." },
+    { "Key": "MAP_Navigation_Edit_Brush_Interval_Header", "Text": "Interval" },
+    { "Key": "MAP_Navigation_Edit_Brush_Interval_Header_TT", "Text": "How often the brush applies again while the button is held. It also applies once when the button goes down." },
+    { "Key": "MAP_Navigation_Edit_Brush_Interval_Input_TT", "Text": "The time in seconds between applications." },
+    { "Key": "MAP_Navigation_Edit_Control_Brush", "Text": "Hold {0}: brush the navmesh under the cursor." },
+    { "Key": "MAP_Navigation_Edit_Control_Modes", "Text": "{0} Raise, {1} Lower, {2} Drag, {3} Smooth: switch the brush mode." },
+    { "Key": "MAP_Navigation_Edit_Cursor_Point", "Text": "Brush centre: {0}" },
+    { "Key": "MAP_Navigation_Edit_Cursor_Moves", "Text": "A stroke here moves {0} vertices in {1} navmeshes (radius {2})." },
     {
       "Key": "MAP_Navigation_Edit_Step_Header",
       "Text": "Step"
     },
     {
       "Key": "MAP_Navigation_Edit_Step_Header_TT",
-      "Text": "How far each press of the raise or lower key moves the vertex."
+      "Text": "How far the vertex at the brush's centre moves each interval; those further out move less."
     },
     {
       "Key": "MAP_Navigation_Edit_Step_Input_TT",
@@ -1986,23 +2003,11 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Radius_Header_TT",
-      "Text": "Vertices within this distance of the moved vertex move too, less the further away they are."
+      "Text": "The size of the brush: every vertex within it moves, less the further it is from the centre. Shown by the brush sphere."
     },
     {
       "Key": "MAP_Navigation_Edit_Radius_Input_TT",
-      "Text": "In metres. 0 moves only the vertex."
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Cursor_Size_Header",
-      "Text": "Cursor Size"
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Cursor_Size_Header_TT",
-      "Text": "The radius of the cursor sphere."
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Cursor_Size_Input_TT",
-      "Text": "In metres."
+      "Text": "In metres. With no vertex inside the brush, the nearest corner of the face under it moves alone."
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Opacity_Header",
@@ -2022,19 +2027,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Controls_Header_TT",
-      "Text": "The keys work while the mouse is over the viewport and no mouse button is held, as the mouse buttons fly the camera with the same keys. They can be changed in the keybind settings."
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Control_Raise",
-      "Text": "{0}: raise the vertex."
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Control_Lower",
-      "Text": "{0}: lower the vertex."
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Control_Drag",
-      "Text": "Hold {0}: drag the vertex across the ground at its height."
+      "Text": "The brush works while the mouse is over the viewport; holding the right or middle button flies the camera instead. The mode keys work while no mouse button is held. They can be changed in the keybind and mousebind settings."
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Header",
@@ -2042,7 +2035,7 @@
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Header_TT",
-      "Text": "The navmesh and vertex under the cursor."
+      "Text": "The navmesh under the brush, and how many vertices a stroke there moves."
     },
     {
       "Key": "MAP_Navigation_Edit_Cursor_Inactive",
@@ -2055,10 +2048,6 @@
     {
       "Key": "MAP_Navigation_Edit_Cursor_File",
       "Text": "Navmesh: {0} (NameID {1}, model {2})"
-    },
-    {
-      "Key": "MAP_Navigation_Edit_Cursor_Vertex",
-      "Text": "Vertex {0} of face {1}: {2}"
     },
     {
       "Key": "MAP_Navigation_Edit_Pending_Header",

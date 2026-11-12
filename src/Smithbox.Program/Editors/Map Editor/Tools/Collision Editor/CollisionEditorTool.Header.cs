@@ -119,9 +119,9 @@ public partial class CollisionEditorTool
         {
             mode = LOC.Get("MAP_CollisionEditor_Mode_Edit",
                 LOC.Get(CFG.Current.MapEditor_CollisionEditor_Layer.GetDisplayName()),
-                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Raise),
-                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Lower),
-                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag));
+                InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action),
+                LOC.Get(CFG.Current.MapEditor_CollisionEditor_Brush_Mode.GetDisplayName()),
+                $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}");
         }
         else if (userDefined.IsShown && userDefined.Placing)
         {

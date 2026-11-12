@@ -16,16 +16,7 @@
 
 - Col Editor:
     - Add support for DES/DS1/DS1R/DS2/DS2S/BB
-    - Switch Raise/Lower/Grab to a Brush model:
-        - Make the brush affect more than one vertex at a time in Edit mode
-        - Brush can:
-            - Raise (raises vertices up, at a fixed interval whilst left-click is held)
-            - Lower (lowers vertices down, at a fixed interval whilst left-click is held)
-            - Drag (vertices move with cursor whilst left-click is held)
-            - Smooth (vertices are smoothed towards a flat plane whilst left-click is held)
             
 - Nav Editor:
     - Add navigation editor support for the other project types: DS1/DS1R/DES
-    - Apply Brush model from Collision Editor to this
-
 

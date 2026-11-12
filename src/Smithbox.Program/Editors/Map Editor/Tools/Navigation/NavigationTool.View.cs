@@ -507,7 +507,7 @@ public partial class NavigationTool
         if (GateOverlayDirty && !OverlayDirty)
             DrawGateOverlay();
 
-        // Vertex editing works by keys; it only takes the clicks while a vertex is dragged
+        // Vertex editing brushes with the picking button, so it takes the clicks while it is on
         if (UpdateVertexEdit(ray, canInteract))
             return true;
 

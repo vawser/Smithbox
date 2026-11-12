@@ -15,10 +15,10 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// Reshapes map collision in the viewport. While editing, a cursor sphere sits where the mouse ray meets the nearest
-/// displayed collision, and the nearest vertex of the triangle under it can be raised, lowered or dragged. The edits
-/// are previewed until they are committed, which rebuilds the compressed meshes of the edited files, puts them in
-/// the collision documents and writes the collision binders into the project.
+/// Reshapes map collision in the viewport. While editing, a brush sphere sits where the mouse ray meets the nearest
+/// displayed collision, and holding the picking button raises, lowers, drags or smooths the vertices within it (see
+/// CollisionEditorTool.Brush). The edits are previewed until they are committed, which rebuilds the compressed meshes
+/// of the edited files, puts them in the collision documents and writes the collision binders into the project.
 /// </summary>
 /// <summary>The tab an action result came from.</summary>
 public enum CollisionEditorSource
@@ -50,13 +50,7 @@ public partial class CollisionEditorTool
 
     private Hit Hover;
 
-    // The vertex being dragged, and how the drag follows the mouse
-    private Hit Drag;
-    private float DragHeight;
-    private Vector3 DragGrabOffset;
-    private List<MoveSet> DragMoves;
-
-    // The cursor is drawn with the detection spheres (radius 1) and the vertex marker with the placement orb's sphere
+    // The brush is drawn with the detection spheres (radius 1) and the vertex marker with the placement orb's sphere
     // (radius 0.1): these are uploaded at startup, while a sphere made when it is first needed can be drawn before
     // its geometry is, and its proxy doesn't try again
     private DebugPrimitiveRenderableProxy CursorWire;
@@ -176,9 +170,6 @@ public partial class CollisionEditorTool
         return Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6
             or ProjectType.DB_NT or ProjectType.DS3 or ProjectType.SDT;
     }
-
-    /// <summary>True while a vertex is dragged, so the viewport's clicks don't select anything.</summary>
-    public bool IsDragging => Drag != null;
 
     private bool HasEdits => Files.Values.Any(f => f.IsEdited);
 
@@ -315,29 +306,20 @@ public partial class CollisionEditorTool
 
         // Controls
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Controls_Header"), LOC.Get("MAP_CollisionEditor_Controls_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Controls);
 
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Raise", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Raise)));
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Lower", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Lower)));
-        GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Drag", InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag)));
+        if (CFG.Current.MapEditor_CollisionEditor_Show_Controls)
+        {
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Brush", InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action)));
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Control_Modes",
+                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Raise),
+                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Lower),
+                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Drag),
+                InputManager.GetHint(KeybindID.MapEditor_CollisionEditor_Smooth)));
+        }
 
-        // Step
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Step_Header"), LOC.Get("MAP_CollisionEditor_Step_Header_TT"));
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##collisionEditorStep", ref CFG.Current.MapEditor_CollisionEditor_Step))
-            CFG.Current.MapEditor_CollisionEditor_Step = Math.Max(0.001f, CFG.Current.MapEditor_CollisionEditor_Step);
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Step_Input_TT"));
-
-        // Radius
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Radius_Header"), LOC.Get("MAP_CollisionEditor_Radius_Header_TT"));
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##collisionEditorRadius", ref CFG.Current.MapEditor_CollisionEditor_Radius))
-            CFG.Current.MapEditor_CollisionEditor_Radius = Math.Max(0f, CFG.Current.MapEditor_CollisionEditor_Radius);
-        GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Radius_Input_TT"));
+        DisplayBrushOptions();
 
         DisplayLinkOptions();
 
@@ -348,16 +330,7 @@ public partial class CollisionEditorTool
 
         if (CFG.Current.MapEditor_CollisionEditor_Show_Cursor_Display)
         {
-            // Cursor Size
-            GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Size_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Size_Header_TT"));
-
-            ImGui.SetNextItemWidth(-1);
-            if (ImGui.InputFloat("##collisionEditorCursorSize", ref CFG.Current.MapEditor_CollisionEditor_Cursor_Size))
-                CFG.Current.MapEditor_CollisionEditor_Cursor_Size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Cursor_Size);
-            GUI.Tooltip(LOC.Get("MAP_CollisionEditor_Cursor_Size_Input_TT"));
-
             // Cursor Opacity
-            GUI.Spacer();
             GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Opacity_Header_TT"));
 
             ImGui.SetNextItemWidth(-1);
@@ -389,8 +362,8 @@ public partial class CollisionEditorTool
                 {
                     CFG.Current.MapEditor_CollisionEditor_Layer = type;
 
-                    // The cursor and drag belong to the layer they were on
-                    Drag = null;
+                    // The cursor and stroke belong to the layer they were on
+                    EndStroke();
                     Hover = null;
                 }
             }
@@ -479,7 +452,11 @@ public partial class CollisionEditorTool
 
         // Cursor
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_CollisionEditor_Cursor_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_CollisionEditor_Cursor_Header"), LOC.Get("MAP_CollisionEditor_Cursor_Header_TT"),
+            ref CFG.Current.MapEditor_CollisionEditor_Show_Cursor);
+
+        if (!CFG.Current.MapEditor_CollisionEditor_Show_Cursor)
+            return;
 
         if (scene != null && !scene.DrawFilter.HasFlag(RenderFilter.Collision))
         {
@@ -489,26 +466,26 @@ public partial class CollisionEditorTool
         {
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Inactive"));
         }
-        else if ((Drag ?? Hover) is { } hit)
+        else if (((IsDragStroke ? Stroke : null) ?? Hover) is { } hit)
         {
-            var world = GetBodyWorld(hit.File, hit.Body);
-            var position = Vector3.Transform(hit.Body.Vertices[hit.Vertex], world);
+            var position = GetCursorPosition(hit);
 
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_File", hit.File.FileName, hit.File.Entity.Name));
-            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Vertex", hit.Vertex,
+            GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Point",
                 $"{position.X:0.###}, {position.Y:0.###}, {position.Z:0.###}"));
 
             var moves = GetCursorMoves(hit);
+            var brushed = moves.Where(m => m.File.Type == hit.File.Type).ToList();
 
             GUI.WrappedText(LOC.Get("MAP_CollisionEditor_Cursor_Moves",
-                moves.Where(m => m.File == hit.File).Sum(m => m.Falloff.Count),
-                $"{CFG.Current.MapEditor_CollisionEditor_Radius:0.###}"));
+                brushed.Sum(m => m.Falloff.Count), brushed.Select(m => m.File).Distinct().Count(),
+                $"{CFG.Current.MapEditor_CollisionEditor_Brush_Radius:0.###}"));
 
             if (CFG.Current.MapEditor_CollisionEditor_Link_Layers && GetLinkedLayer(hit.File.Type) != null)
             {
                 var linkedName = GetLinkedFileName(hit.File.FileName);
                 var linked = linkedName != null && Files.ContainsKey(linkedName) ? linkedName : null;
-                var following = moves.Where(m => m.File != hit.File).Sum(m => m.Falloff.Count);
+                var following = moves.Where(m => m.File.Type != hit.File.Type).Sum(m => m.Falloff.Count);
 
                 GUI.WrappedText(linked == null ? LOC.Get("MAP_CollisionEditor_Cursor_Linked_None")
                     : following > 0 ? LOC.Get("MAP_CollisionEditor_Cursor_Linked", linked, following)
@@ -521,17 +498,25 @@ public partial class CollisionEditorTool
         }
     }
 
-    // What an edit at the cursor moves, worked out again only when the target or an option it depends on changes
-    // (the radius search goes over the whole body), and after each raise or lower
-    private (CollisionEditorFile File, CollisionEditorBody Body, int Vertex, float Radius, float LinkDistance, bool Link) CursorMovesKey;
+    // What a stroke at the cursor moves, worked out again only when the cursor or an option it depends on changes
+    // (the radius search goes over the bodies it reaches), and after each application of the brush
+    private (CollisionEditorFile File, CollisionEditorBody Body, Vector3 Point, float Radius, float LinkDistance, bool Link) CursorMovesKey;
     private List<MoveSet> CursorMoves;
+
+    private bool IsDragStroke => Stroke != null && StrokeMode is CollisionBrushMode.Drag;
+
+    /// <summary>Where the brush is drawn: on the hit, or, while dragging, with the vertices it holds.</summary>
+    private Vector3 GetCursorPosition(Hit hit)
+    {
+        return IsDragStroke ? DragAnchor : hit.Point;
+    }
 
     private List<MoveSet> GetCursorMoves(Hit hit)
     {
-        if (Drag != null && DragMoves != null)
+        if (IsDragStroke && DragMoves != null)
             return DragMoves;
 
-        var key = (hit.File, hit.Body, hit.Vertex, CFG.Current.MapEditor_CollisionEditor_Radius,
+        var key = (hit.File, hit.Body, hit.Point, CFG.Current.MapEditor_CollisionEditor_Brush_Radius,
             CFG.Current.MapEditor_CollisionEditor_Link_Distance, CFG.Current.MapEditor_CollisionEditor_Link_Layers);
 
         if (CursorMoves == null || !key.Equals(CursorMovesKey))
@@ -584,7 +569,7 @@ public partial class CollisionEditorTool
 
         if (!Active)
         {
-            Drag = null;
+            EndStroke();
             Hover = null;
             DisposeCursor();
 
@@ -599,8 +584,7 @@ public partial class CollisionEditorTool
 
     private void DiscardChanges()
     {
-        Drag = null;
-        CursorMoves = null;
+        EndStroke();
 
         foreach (var file in Files.Values)
         {
@@ -656,7 +640,8 @@ public partial class CollisionEditorTool
         UpdateRetiringPreviews();
         FallProtection.UpdatePreview(scene);
 
-        return IsDragging || placing;
+        // While editing, the picking button brushes, so it doesn't select what is under the brush as well
+        return Active || placing;
     }
 
     /// <summary>The gizmo target of the Create tab's picked User-Defined point.</summary>
@@ -664,104 +649,42 @@ public partial class CollisionEditorTool
 
     private void HandleEditing(RenderScene scene, Ray ray, bool canInteract)
     {
-        // Mouse buttons fly the camera with the same keys, and typed text shouldn't edit
-        var keysFree = canInteract
-            && !ImGui.GetIO().WantTextInput
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Left)
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Right)
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Middle);
+        // Typed text shouldn't change the brush, and the right and middle buttons fly the camera
+        var typing = ImGui.GetIO().WantTextInput;
+        var flying = InputManager.IsMouseDown(Veldrid.MouseButton.Right) || InputManager.IsMouseDown(Veldrid.MouseButton.Middle);
+
+        // The mode keys are WASD's neighbours, which fly the camera while a button is held
+        var keysFree = canInteract && !typing && !flying && !InputManager.IsMouseDown(Veldrid.MouseButton.Left);
+        var brushFree = canInteract && !typing && !flying;
 
         var collisionShown = scene.DrawFilter.HasFlag(RenderFilter.Collision);
 
-        if (Drag != null)
-        {
-            if (!keysFree || !collisionShown || !InputManager.IsDown(KeybindID.MapEditor_CollisionEditor_Drag))
-            {
-                Drag = null;
-            }
-            else
-            {
-                ContinueDrag(ray);
-            }
-        }
+        if (keysFree && Stroke == null)
+            HandleBrushKeys();
 
-        if (Drag == null)
+        if (Stroke != null && (!brushFree || !collisionShown || !InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action)))
+            EndStroke();
+
+        // A drag holds the vertices it took; the other brushes follow the mouse over the collision
+        if (!IsDragStroke)
         {
             Hover = canInteract && collisionShown ? RayCast(ray) : null;
 
             // Decoded ahead of the first edit, so the status can say what follows
             if (Hover != null)
                 GetLinkedFile(Hover.File);
-
-            if (keysFree && Hover != null && InputManager.IsPressed(KeybindID.MapEditor_CollisionEditor_Drag))
-            {
-                BeginDrag(Hover, ray);
-            }
         }
 
-        var target = Drag ?? Hover;
-
-        if (keysFree && target != null)
+        if (Stroke != null)
         {
-            var step = CFG.Current.MapEditor_CollisionEditor_Step;
-
-            if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_CollisionEditor_Raise))
-                Raise(target, step);
-
-            if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_CollisionEditor_Lower))
-                Raise(target, -step);
+            ContinueStroke(ray);
+        }
+        else if (brushFree && Hover != null && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+        {
+            BeginStroke(Hover);
         }
 
         UpdateCursor(scene);
-    }
-
-    /// <summary>
-    /// Moves the target vertex (and those around it, with a radius) up or down in the world.
-    /// </summary>
-    private void Raise(Hit target, float amount)
-    {
-        var moves = Drag != null ? DragMoves : GetMoves(target);
-
-        foreach (var move in moves)
-            MoveWorld(move, new Vector3(0, amount, 0));
-
-        // The vertices around the target have moved, so what the radius reaches may have changed
-        CursorMoves = null;
-
-        // The drag plane follows the vertex, so dragging after raising doesn't pull it back down
-        if (Drag != null)
-            DragHeight += amount;
-    }
-
-    /// <summary>
-    /// The vertices an edit of the target moves: the target and those within the radius of it, then, with linked
-    /// layers, the vertices of the other layer of the same part near the target.
-    /// </summary>
-    private List<MoveSet> GetMoves(Hit target)
-    {
-        var radius = CFG.Current.MapEditor_CollisionEditor_Radius;
-        var moves = new List<MoveSet> { new(target.File, target.Body, target.Body.GetFalloff(target.Vertex, radius)) };
-
-        var linked = GetLinkedFile(target.File);
-
-        if (linked == null)
-            return moves;
-
-        var point = Vector3.Transform(target.Body.Vertices[target.Vertex], GetBodyWorld(target.File, target.Body));
-
-        foreach (var body in linked.Bodies)
-        {
-            if (!Matrix4x4.Invert(GetBodyWorld(linked, body), out var inverse))
-                continue;
-
-            var falloff = body.GetLinkedFalloff(Vector3.Transform(point, inverse),
-                CFG.Current.MapEditor_CollisionEditor_Link_Distance, radius);
-
-            if (falloff.Count > 0)
-                moves.Add(new MoveSet(linked, body, falloff));
-        }
-
-        return moves;
     }
 
     /// <summary>
@@ -812,40 +735,6 @@ public partial class CollisionEditorTool
         }
 
         return null;
-    }
-
-    private void BeginDrag(Hit hit, Ray ray)
-    {
-        var world = GetBodyWorld(hit.File, hit.Body);
-        var position = Vector3.Transform(hit.Body.Vertices[hit.Vertex], world);
-
-        Drag = hit;
-        DragHeight = position.Y;
-        DragMoves = GetMoves(hit);
-
-        // Keeps the vertex where it is relative to the mouse, so it doesn't jump to it
-        DragGrabOffset = IntersectHeight(ray, DragHeight, out var point) ? position - point : Vector3.Zero;
-        DragGrabOffset.Y = 0;
-    }
-
-    /// <summary>
-    /// Puts the dragged vertex where the mouse ray meets the horizontal plane at its height.
-    /// </summary>
-    private void ContinueDrag(Ray ray)
-    {
-        if (!IntersectHeight(ray, DragHeight, out var point))
-            return;
-
-        var world = GetBodyWorld(Drag.File, Drag.Body);
-        var current = Vector3.Transform(Drag.Body.Vertices[Drag.Vertex], world);
-        var target = new Vector3(point.X + DragGrabOffset.X, DragHeight, point.Z + DragGrabOffset.Z);
-
-        if (Vector3.DistanceSquared(current, target) < 1e-10f)
-            return;
-
-        // The linked layer takes the same move as the dragged vertex, so it stays under it
-        foreach (var move in DragMoves)
-            MoveWorld(move, target - current);
     }
 
     private static bool IntersectHeight(Ray ray, float height, out Vector3 point)
@@ -1112,8 +1001,9 @@ public partial class CollisionEditorTool
             Files.Remove(key);
         }
 
-        if (Drag != null && !Files.ContainsValue(Drag.File))
-            Drag = null;
+        // A stroke's vertices may be in a dropped file
+        if (Stroke != null)
+            EndStroke();
 
         if (Hover != null && !Files.ContainsValue(Hover.File))
             Hover = null;
@@ -1179,11 +1069,11 @@ public partial class CollisionEditorTool
     }
 
     /// <summary>
-    /// Places the cursor sphere on the hit, and a smaller sphere on the vertex that will be moved.
+    /// Places the brush sphere on the hit, at the brush's radius, so it shows what a stroke reaches.
     /// </summary>
     private void UpdateCursor(RenderScene scene)
     {
-        var target = Drag ?? Hover;
+        var target = (IsDragStroke ? Stroke : null) ?? Hover;
 
         if (target == null)
         {
@@ -1196,17 +1086,9 @@ public partial class CollisionEditorTool
 
         var cursorColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Cursor_Color);
 
-        // A wireframe over a translucent fill, so the collision under a large cursor can still be seen
+        // A wireframe over a translucent fill, so the collision under a large brush can still be seen
         CursorWire ??= RenderableHelper.GetDetectionSphereProxy(scene, cursorColor);
         CursorFill ??= RenderableHelper.GetDetectionSphereFillProxy(scene, cursorColor);
-
-        VertexMesh ??= new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, RenderableHelper._placementOrb)
-        {
-            Pickable = false,
-            RenderOverlay = true,
-            BaseColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
-            HighlightedColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
-        };
 
         // Follows the option as it is changed
         var fill = ColorHelper.GetTransparencyColor(cursorColor, CFG.Current.MapEditor_CollisionEditor_Cursor_Fill_Alpha);
@@ -1217,14 +1099,21 @@ public partial class CollisionEditorTool
             CursorFill.HighlightedColor = fill;
         }
 
-        var size = CFG.Current.MapEditor_CollisionEditor_Cursor_Size;
+        VertexMesh ??= new DebugPrimitiveRenderableProxy(scene.OpaqueRenderables, RenderableHelper._placementOrb)
+        {
+            Pickable = false,
+            RenderOverlay = true,
+            BaseColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color),
+            HighlightedColor = ToColor(CFG.Current.MapEditor_CollisionEditor_Vertex_Color)
+        };
+
+        // The detection spheres have a radius of 1
+        var size = Math.Max(0.01f, CFG.Current.MapEditor_CollisionEditor_Brush_Radius);
+        var cursorWorld = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(GetCursorPosition(target));
+
+        // The hit triangle's nearest corner, where it is now (a drag carries it): small, so it doesn't hide the
+        // vertices around it, and smaller than a small brush
         var vertex = Vector3.Transform(target.Body.Vertices[target.Vertex], GetBodyWorld(target.File, target.Body));
-
-        // While dragging, the cursor stays on the vertex it holds
-        var cursor = Drag != null ? vertex : target.Point;
-        var cursorWorld = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(cursor);
-
-        // The marker stays small with a large cursor, so it doesn't hide the vertices around it
         var markerSize = MathF.Min(size * 0.6f, MaxVertexMarkerSize);
 
         CursorWire.World = cursorWorld;
@@ -1268,7 +1157,7 @@ public partial class CollisionEditorTool
     /// </summary>
     private void CommitChanges()
     {
-        Drag = null;
+        EndStroke();
 
         var swaps = new List<CollisionEditorAction.ShapeSwap>();
         var remaps = new List<CollisionEditorAction.WallRemap>();
@@ -1455,8 +1344,9 @@ public partial class CollisionEditorTool
             {
                 Files.Remove(fileName);
 
-                if (Drag?.File == file)
-                    Drag = null;
+                // A stroke may hold vertices of the file
+                if (Stroke != null)
+                    EndStroke();
 
                 if (Hover?.File == file)
                     Hover = null;
@@ -1597,8 +1487,9 @@ public partial class CollisionEditorTool
 
         if (Files.Remove(fileName, out var file))
         {
-            if (Drag?.File == file)
-                Drag = null;
+            // A stroke may hold vertices of the file
+            if (Stroke != null)
+                EndStroke();
 
             if (Hover?.File == file)
                 Hover = null;

@@ -4,8 +4,10 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -14,10 +16,10 @@ using Veldrid.Utilities;
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// The Edit tab: moves navmesh vertices in the viewport, as the Collision Editor does for collision. While editing, a
-/// cursor sphere sits where the mouse ray meets the drawn navmesh set, and the nearest corner of the face under it can
-/// be raised, lowered or dragged, with the vertices around it following within a radius. Vertices of the map's other
-/// navmeshes that lie on the moved one follow too, so connected edges stay joined. The edits are drawn in place of the
+/// The Edit tab: moves navmesh vertices in the viewport with a brush, as the Collision Editor does for collision. While
+/// editing, a brush sphere sits where the mouse ray meets the drawn navmesh set, and holding the picking button raises,
+/// lowers, drags or smooths the vertices within its radius (Raise, Lower and Smooth again at each interval while held).
+/// Vertices of the map's other navmeshes under the brush follow too, so connected edges stay joined. The edits are drawn in place of the
 /// overlay of their navmeshes until they are committed, which swaps the edited files' documents as one undoable action
 /// (NavigationVertexEditAction); the map's save writes them. See NavVertexEdit.
 /// </summary>
@@ -37,21 +39,43 @@ public partial class NavigationTool
     private sealed record VertexMove(NavVertexFile File, List<(int Vertex, float Weight)> Falloff);
 
     private VertexHit VertexHover;
-    private VertexHit VertexDrag;
-    private float VertexDragHeight;
-    private Vector3 VertexDragGrab;
-    private List<VertexMove> VertexDragMoves;
 
+    // The hit a brush stroke started on, while the button is held; null between strokes
+    private VertexHit VertexStroke;
+    private CollisionBrushMode VertexStrokeMode;
+
+    // When Raise, Lower or Smooth next applies, as a Stopwatch timestamp
+    private long VertexNextApply;
+
+    // A Drag stroke: the vertices it took, the horizontal plane they slide on, where the mouse last met it, and where
+    // the brush is drawn
+    private List<VertexMove> VertexDragMoves;
+    private float VertexDragHeight;
+    private Vector3 VertexDragLast;
+    private Vector3 VertexDragAnchor;
+
+    private CollisionBrushMode VertexBrushMode = CollisionBrushMode.Raise;
     private float VertexStep = 0.1f;
-    private float VertexRadius = 0f;
+    private float VertexRadius = 2f;
+    private float VertexInterval = 0.1f;
+    private float VertexSmoothStrength = 0.25f;
     private bool VertexLinkNeighbours = true;
     private bool VertexLinkOtherSet;
     private float VertexLinkDistance = 0.1f;
-    private float VertexCursorSize = 0.15f;
     private float VertexCursorOpacity = 20f;
 
-    /// <summary>Vertices of the edited navmesh this close to the moved one are the same vertex, and move fully.</summary>
-    private const float VertexWeld = 0.001f;
+    private bool ShowVertexControls = true;
+    private bool ShowVertexCursor = true;
+
+    private bool IsVertexDragStroke => VertexStroke != null && VertexStrokeMode is CollisionBrushMode.Drag;
+
+    private static readonly (KeybindID Key, CollisionBrushMode Mode)[] VertexBrushKeys =
+    {
+        (KeybindID.MapEditor_NavigationEditor_Raise, CollisionBrushMode.Raise),
+        (KeybindID.MapEditor_NavigationEditor_Lower, CollisionBrushMode.Lower),
+        (KeybindID.MapEditor_NavigationEditor_Drag, CollisionBrushMode.Drag),
+        (KeybindID.MapEditor_NavigationEditor_Smooth, CollisionBrushMode.Smooth),
+    };
 
     private const float VertexSphereRadius = 0.1f;
     private const float VertexMaxMarkerSize = 0.1f;
@@ -152,32 +176,7 @@ public partial class NavigationTool
             VertexLinkDistance = Math.Max(0f, VertexLinkDistance);
         GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Link_Distance_Input_TT"));
 
-        // Step
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Step_Header"), LOC.Get("MAP_Navigation_Edit_Step_Header_TT"));
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##navigationEditStep", ref VertexStep))
-            VertexStep = Math.Max(0.001f, VertexStep);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Step_Input_TT"));
-
-        // Radius
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Radius_Header"), LOC.Get("MAP_Navigation_Edit_Radius_Header_TT"));
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##navigationEditRadius", ref VertexRadius))
-            VertexRadius = Math.Max(0f, VertexRadius);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Radius_Input_TT"));
-
-        // Cursor Size
-        GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Cursor_Size_Header"), LOC.Get("MAP_Navigation_Edit_Cursor_Size_Header_TT"));
-
-        ImGui.SetNextItemWidth(-1);
-        if (ImGui.InputFloat("##navigationEditCursorSize", ref VertexCursorSize))
-            VertexCursorSize = Math.Max(0.01f, VertexCursorSize);
-        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Cursor_Size_Input_TT"));
+        DisplayVertexBrushOptions();
 
         // Cursor Opacity
         GUI.Spacer();
@@ -189,13 +188,96 @@ public partial class NavigationTool
 
         // Controls
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Controls_Header"), LOC.Get("MAP_Navigation_Edit_Controls_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Edit_Controls_Header"), LOC.Get("MAP_Navigation_Edit_Controls_Header_TT"),
+            ref ShowVertexControls);
 
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Control_Raise", InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Raise)));
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Control_Lower", InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Lower)));
-        GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Control_Drag", InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Drag)));
+        if (ShowVertexControls)
+        {
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Control_Brush", InputManager.GetMouseHint(MousebindID.Viewport_Picking_Action)));
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Control_Modes",
+                InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Raise),
+                InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Lower),
+                InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Drag),
+                InputManager.GetHint(KeybindID.MapEditor_NavigationEditor_Smooth)));
+        }
 
         DisplayVertexStatus();
+    }
+
+    /// <summary>The brush mode, its radius, and the options of the chosen mode.</summary>
+    private void DisplayVertexBrushOptions()
+    {
+        var mode = VertexBrushMode;
+
+        // Brush
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Brush_Header"), LOC.Get("MAP_Navigation_Edit_Brush_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##navigationEditBrushMode", LOC.Get(mode.GetDisplayName())))
+        {
+            foreach (var (key, value) in VertexBrushKeys)
+            {
+                var label = $"{LOC.Get(value.GetDisplayName())} ({InputManager.GetHint(key)})";
+
+                if (ImGui.Selectable($"{label}##navigationEditBrushMode{value}", value == mode))
+                    VertexBrushMode = value;
+                GUI.Tooltip(LOC.Get($"MAP_Navigation_Edit_Brush_Mode_{value}_TT"));
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Brush_Mode_Input_TT"));
+
+        mode = VertexBrushMode;
+        GUI.WrappedText(LOC.Get($"MAP_Navigation_Edit_Brush_Mode_{mode}_TT"));
+
+        // Radius
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Radius_Header"), LOC.Get("MAP_Navigation_Edit_Radius_Header_TT"));
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.InputFloat("##navigationEditRadius", ref VertexRadius))
+            VertexRadius = Math.Max(0.01f, VertexRadius);
+        GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Radius_Input_TT"));
+
+        if (mode is CollisionBrushMode.Raise or CollisionBrushMode.Lower)
+        {
+            // Step
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Step_Header"), LOC.Get("MAP_Navigation_Edit_Step_Header_TT"));
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputFloat("##navigationEditStep", ref VertexStep))
+                VertexStep = Math.Max(0.001f, VertexStep);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Step_Input_TT"));
+        }
+
+        if (mode is CollisionBrushMode.Smooth)
+        {
+            // Strength
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Smooth_Strength_Header"), LOC.Get("MAP_Navigation_Edit_Smooth_Strength_Header_TT"));
+
+            var percent = VertexSmoothStrength * 100f;
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.SliderFloat("##navigationEditSmoothStrength", ref percent, 1f, 100f, "%.0f%%"))
+                VertexSmoothStrength = Math.Clamp(percent / 100f, 0.01f, 1f);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Smooth_Strength_Input_TT"));
+        }
+
+        if (mode is not CollisionBrushMode.Drag)
+        {
+            // Interval
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Brush_Interval_Header"), LOC.Get("MAP_Navigation_Edit_Brush_Interval_Header_TT"));
+
+            ImGui.SetNextItemWidth(-1);
+            if (ImGui.InputFloat("##navigationEditBrushInterval", ref VertexInterval))
+                VertexInterval = Math.Max(0.01f, VertexInterval);
+            GUI.Tooltip(LOC.Get("MAP_Navigation_Edit_Brush_Interval_Input_TT"));
+        }
     }
 
     /// <summary>What is under the cursor, and which files have edits waiting to be committed.</summary>
@@ -203,19 +285,27 @@ public partial class NavigationTool
     {
         // Cursor
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAP_Navigation_Edit_Cursor_Header"), LOC.Get("MAP_Navigation_Edit_Cursor_Header_TT"));
+        GUI.ConditionalHeader(LOC.Get("MAP_Navigation_Edit_Cursor_Header"), LOC.Get("MAP_Navigation_Edit_Cursor_Header_TT"),
+            ref ShowVertexCursor);
 
-        if (!VertexEditActive)
+        // Hidden, the section shows nothing; Pending Edits below is still shown
+        if (!ShowVertexCursor)
+        {
+        }
+        else if (!VertexEditActive)
         {
             GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Cursor_Inactive"));
         }
-        else if ((VertexDrag ?? VertexHover) is { } hit)
+        else if (((IsVertexDragStroke ? VertexStroke : null) ?? VertexHover) is { } hit)
         {
-            var position = hit.File.WorldVertex(hit.Vertex);
+            var position = IsVertexDragStroke ? VertexDragAnchor : hit.Point;
+            var moves = IsVertexDragStroke && VertexDragMoves != null ? VertexDragMoves : GetCursorVertexMoves(hit);
 
             GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Cursor_File", hit.File.File.Name, (uint)hit.File.Entry.NameID, hit.File.Entry.ModelID));
-            GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Cursor_Vertex", hit.Vertex, hit.Face,
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Cursor_Point",
                 $"{position.X:0.###}, {position.Y:0.###}, {position.Z:0.###}"));
+            GUI.WrappedText(LOC.Get("MAP_Navigation_Edit_Cursor_Moves",
+                moves.Sum(m => m.Falloff.Count), moves.Count, $"{VertexRadius:0.###}"));
         }
         else
         {
@@ -271,7 +361,7 @@ public partial class NavigationTool
             return;
 
         VertexEditActive = false;
-        VertexDrag = null;
+        EndVertexStroke();
         VertexHover = null;
         DisposeVertexCursor();
 
@@ -281,7 +371,7 @@ public partial class NavigationTool
 
     private void DiscardVertexEdits()
     {
-        VertexDrag = null;
+        EndVertexStroke();
 
         foreach (var file in VertexFiles.Values)
             file.Reset();
@@ -296,7 +386,7 @@ public partial class NavigationTool
     /// </summary>
     private void CommitVertexEdits()
     {
-        VertexDrag = null;
+        EndVertexStroke();
 
         var map = VertexMap;
         var edited = VertexFiles.Values.Where(f => f.IsEdited).ToList();
@@ -349,7 +439,7 @@ public partial class NavigationTool
 
     /// <summary>
     /// Called each frame by HandleViewportInput: handles the cursor and keys while editing, and keeps the previews of
-    /// the edited files up to date. Returns true while a vertex is dragged, so the viewport's clicks don't select.
+    /// the edited files up to date. Returns true while editing, as the picking button brushes, so it doesn't select.
     /// </summary>
     private bool UpdateVertexEdit(Ray ray, bool canInteract)
     {
@@ -357,12 +447,12 @@ public partial class NavigationTool
         GatherVertexEntries();
 
         if (VertexEditActive)
-            HandleVertexKeys(ray, canInteract);
+            HandleVertexBrush(ray, canInteract);
 
         UpdateVertexPreviews();
         UpdateVertexCursor();
 
-        return VertexDrag != null;
+        return VertexEditActive;
     }
 
     /// <summary>
@@ -392,8 +482,9 @@ public partial class NavigationTool
                 VertexFiles.Remove(name);
         }
 
-        if (VertexDrag != null && !VertexFiles.ContainsValue(VertexDrag.File))
-            VertexDrag = null;
+        // A stroke's vertices may be in a dropped file
+        if (VertexStroke != null && (stale != null || !VertexFiles.ContainsValue(VertexStroke.File)))
+            EndVertexStroke();
 
         if (VertexHover != null && !VertexFiles.ContainsValue(VertexHover.File))
             VertexHover = null;
@@ -428,44 +519,39 @@ public partial class NavigationTool
     private Matrix4x4 VertexEntryWorld(NVA.Navmesh entry)
         => VertexEntries.TryGetValue(entry, out var placed) ? placed.World : MapWorld(VertexMap ?? OverlayContainer);
 
-    private void HandleVertexKeys(Ray ray, bool canInteract)
+    private void HandleVertexBrush(Ray ray, bool canInteract)
     {
         // Edits are made on the overlay's map; edits pending on another map wait for it
         var canEdit = OverlayNavigation != null && OverlayContainer != null && (VertexMap == null || VertexMap == OverlayContainer);
 
-        // Mouse buttons fly the camera with the same keys, and typed text shouldn't edit
-        var keysFree = canInteract
-            && !ImGui.GetIO().WantTextInput
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Left)
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Right)
-            && !InputManager.IsMouseDown(Veldrid.MouseButton.Middle);
+        // Typed text shouldn't change the brush, and the right and middle buttons fly the camera
+        var typing = ImGui.GetIO().WantTextInput;
+        var flying = InputManager.IsMouseDown(Veldrid.MouseButton.Right) || InputManager.IsMouseDown(Veldrid.MouseButton.Middle);
 
-        if (VertexDrag != null)
+        // The mode keys are WASD's neighbours, which fly the camera while a button is held
+        var keysFree = canInteract && !typing && !flying && !InputManager.IsMouseDown(Veldrid.MouseButton.Left);
+        var brushFree = canInteract && !typing && !flying;
+
+        if (keysFree && VertexStroke == null)
         {
-            if (!keysFree || !canEdit || !InputManager.IsDown(KeybindID.MapEditor_NavigationEditor_Drag))
-                VertexDrag = null;
-            else
-                ContinueVertexDrag(ray);
+            foreach (var (key, mode) in VertexBrushKeys)
+            {
+                if (InputManager.IsPressed(key))
+                    VertexBrushMode = mode;
+            }
         }
 
-        if (VertexDrag == null)
-        {
+        if (VertexStroke != null && (!brushFree || !canEdit || !InputManager.IsMouseDown(MousebindID.Viewport_Picking_Action)))
+            EndVertexStroke();
+
+        // A drag holds the vertices it took; the other brushes follow the mouse over the navmesh
+        if (!IsVertexDragStroke)
             VertexHover = canInteract && canEdit ? VertexRayCast(ray) : null;
 
-            if (keysFree && VertexHover != null && InputManager.IsPressed(KeybindID.MapEditor_NavigationEditor_Drag))
-                BeginVertexDrag(VertexHover, ray);
-        }
-
-        var target = VertexDrag ?? VertexHover;
-
-        if (!keysFree || target == null)
-            return;
-
-        if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_NavigationEditor_Raise))
-            RaiseVertex(target, VertexStep);
-
-        if (InputManager.IsPressedOrRepeated(KeybindID.MapEditor_NavigationEditor_Lower))
-            RaiseVertex(target, -VertexStep);
+        if (VertexStroke != null)
+            ContinueVertexStroke(ray);
+        else if (brushFree && VertexHover != null && InputManager.IsMousePressed(MousebindID.Viewport_Picking_Action))
+            BeginVertexStroke(VertexHover);
     }
 
     /// <summary>
@@ -527,13 +613,24 @@ public partial class NavigationTool
     }
 
     /// <summary>
-    /// The vertices an edit of the target moves: the target, those of its navmesh within the radius of it, and with
-    /// linking, those of the map's other navmeshes on it (within the link distance), with the radius past that.
+    /// The vertices a brush at a hit moves: those of the hit navmesh within the radius of the hit point; with
+    /// neighbours linked, those of the map's other navmeshes of the same set within it, by the same falloff, so joined
+    /// edges stay joined; and with the other set linked, its vertices, fully within the link distance and fading out
+    /// over the radius past it. If no vertex of the hit navmesh is within the radius, the face's nearest corner moves
+    /// alone, so a small brush still moves something.
     /// </summary>
     private List<VertexMove> GetVertexMoves(VertexHit target)
     {
-        var point = target.File.WorldVertex(target.Vertex);
-        var moves = new List<VertexMove> { new(target.File, target.File.Falloff(point, VertexWeld, VertexRadius)) };
+        var point = target.Point;
+        var radius = Math.Max(0.01f, VertexRadius);
+        var moves = new List<VertexMove>();
+
+        var own = target.File.Falloff(point, 0f, radius);
+
+        if (own.Count == 0)
+            own.Add((target.Vertex, 1f));
+
+        moves.Add(new VertexMove(target.File, own));
 
         if ((!VertexLinkNeighbours && !VertexLinkOtherSet) || OverlayNavigation == null)
             return moves;
@@ -545,12 +642,16 @@ public partial class NavigationTool
             if (sameSet ? !VertexLinkNeighbours : !VertexLinkOtherSet)
                 continue;
 
+            // The overlay only draws the selected model with that option, and the brush only reaches what is drawn
+            if (sameSet && !IsEntryDrawn(entry))
+                continue;
+
             var file = GetVertexFile(entry);
 
             if (file == null || file == target.File)
                 continue;
 
-            var falloff = file.Falloff(point, VertexLinkDistance, VertexRadius);
+            var falloff = file.Falloff(point, sameSet ? 0f : VertexLinkDistance, radius);
 
             if (falloff.Count > 0)
                 moves.Add(new VertexMove(file, falloff));
@@ -559,46 +660,149 @@ public partial class NavigationTool
         return moves;
     }
 
-    private void RaiseVertex(VertexHit target, float amount)
+    // What a stroke at the cursor moves, worked out again only when the cursor or an option it depends on changes
+    private (VertexHit Hit, float Radius, float LinkDistance, bool Neighbours, bool OtherSet) CursorVertexMovesKey;
+    private List<VertexMove> CursorVertexMoves;
+
+    private List<VertexMove> GetCursorVertexMoves(VertexHit hit)
     {
-        var moves = VertexDrag != null ? VertexDragMoves : GetVertexMoves(target);
+        var key = (hit, VertexRadius, VertexLinkDistance, VertexLinkNeighbours, VertexLinkOtherSet);
+
+        if (CursorVertexMoves == null || !key.Equals(CursorVertexMovesKey))
+        {
+            CursorVertexMovesKey = key;
+            CursorVertexMoves = GetVertexMoves(hit);
+        }
+
+        return CursorVertexMoves;
+    }
+
+    private void BeginVertexStroke(VertexHit hit)
+    {
+        VertexStroke = hit;
+        VertexStrokeMode = VertexBrushMode;
+
+        if (VertexStrokeMode is CollisionBrushMode.Drag)
+        {
+            // The vertices are taken once, so dragging over other ground doesn't pick it up too
+            VertexDragMoves = GetVertexMoves(hit);
+            VertexDragHeight = hit.Point.Y;
+            VertexDragLast = hit.Point;
+            VertexDragAnchor = hit.Point;
+            return;
+        }
+
+        // Applied on the press, so a click is one step
+        ApplyVertexBrush(hit);
+        VertexNextApply = Stopwatch.GetTimestamp() + VertexIntervalTicks();
+    }
+
+    private void ContinueVertexStroke(Ray ray)
+    {
+        if (VertexStrokeMode is CollisionBrushMode.Drag)
+        {
+            if (!IntersectVertexHeight(ray, VertexDragHeight, out var point))
+                return;
+
+            var offset = point - VertexDragLast;
+            offset.Y = 0;
+
+            if (offset.LengthSquared() < 1e-10f)
+                return;
+
+            foreach (var move in VertexDragMoves)
+                move.File.MoveWorld(move.Falloff, offset);
+
+            VertexDragLast = point;
+            VertexDragAnchor += offset;
+            return;
+        }
+
+        var now = Stopwatch.GetTimestamp();
+
+        if (now < VertexNextApply)
+            return;
+
+        // Off the navmesh, nothing is brushed until the brush is back on it; the stroke goes on
+        if (VertexHover != null)
+            ApplyVertexBrush(VertexHover);
+
+        // From now rather than from the last time, so a slow frame doesn't apply several steps at once
+        VertexNextApply = now + VertexIntervalTicks();
+    }
+
+    private void EndVertexStroke()
+    {
+        VertexStroke = null;
+        VertexDragMoves = null;
+        CursorVertexMoves = null;
+    }
+
+    private long VertexIntervalTicks() => (long)(Math.Max(0.01f, VertexInterval) * Stopwatch.Frequency);
+
+    /// <summary>One application of the Raise, Lower or Smooth brush at a hit.</summary>
+    private void ApplyVertexBrush(VertexHit hit)
+    {
+        var moves = GetVertexMoves(hit);
+
+        switch (VertexStrokeMode)
+        {
+            case CollisionBrushMode.Raise:
+                foreach (var move in moves)
+                    move.File.MoveWorld(move.Falloff, new Vector3(0, VertexStep, 0));
+                break;
+
+            case CollisionBrushMode.Lower:
+                foreach (var move in moves)
+                    move.File.MoveWorld(move.Falloff, new Vector3(0, -VertexStep, 0));
+                break;
+
+            case CollisionBrushMode.Smooth:
+                // Each set towards a plane of its own, so a linked set keeps its distance from the edited one
+                foreach (var set in moves.GroupBy(m => NavigationMap.SetOf(m.File.Entry, Bank.Profile)))
+                    SmoothVerticesTowardsPlane(set.ToList());
+                break;
+        }
+
+        // The vertices under the brush have moved, so what it reaches may have changed
+        CursorVertexMoves = null;
+    }
+
+    /// <summary>
+    /// Pulls the brushed vertices towards the plane that best fits them (weighted by the falloff), along its normal, by
+    /// the strength's share of their distance to it, scaled by their weight (as the Collision Editor's Smooth brush).
+    /// </summary>
+    private void SmoothVerticesTowardsPlane(List<VertexMove> moves)
+    {
+        var points = new List<(Vector3 Position, float Weight)>();
 
         foreach (var move in moves)
-            move.File.MoveWorld(move.Falloff, new Vector3(0, amount, 0));
+        {
+            foreach (var (v, weight) in move.Falloff)
+                points.Add((move.File.WorldVertex(v), weight));
+        }
 
-        // The drag plane follows the vertex, so dragging after raising doesn't pull it back down
-        if (VertexDrag != null)
-            VertexDragHeight += amount;
-    }
-
-    private void BeginVertexDrag(VertexHit hit, Ray ray)
-    {
-        var position = hit.File.WorldVertex(hit.Vertex);
-
-        VertexDrag = hit;
-        VertexDragHeight = position.Y;
-        VertexDragMoves = GetVertexMoves(hit);
-
-        // Keeps the vertex where it is relative to the mouse, so it doesn't jump to it
-        VertexDragGrab = IntersectVertexHeight(ray, VertexDragHeight, out var point) ? position - point : Vector3.Zero;
-        VertexDragGrab.Y = 0;
-    }
-
-    /// <summary>Puts the dragged vertex where the mouse ray meets the horizontal plane at its height.</summary>
-    private void ContinueVertexDrag(Ray ray)
-    {
-        if (!IntersectVertexHeight(ray, VertexDragHeight, out var point))
+        if (!CollisionEditorTool.FitPlane(points, out var center, out var normal))
             return;
 
-        var current = VertexDrag.File.WorldVertex(VertexDrag.Vertex);
-        var target = new Vector3(point.X + VertexDragGrab.X, VertexDragHeight, point.Z + VertexDragGrab.Z);
+        var strength = Math.Clamp(VertexSmoothStrength, 0f, 1f);
 
-        if (Vector3.DistanceSquared(current, target) < 1e-10f)
-            return;
+        foreach (var move in moves)
+        {
+            var offsets = new List<(int, Vector3)>(move.Falloff.Count);
 
-        // The followers take the same move as the dragged vertex, so joined edges stay joined
-        foreach (var move in VertexDragMoves)
-            move.File.MoveWorld(move.Falloff, target - current);
+            foreach (var (v, weight) in move.Falloff)
+            {
+                var distance = Vector3.Dot(move.File.WorldVertex(v) - center, normal);
+
+                if (MathF.Abs(distance) < 1e-6f)
+                    continue;
+
+                offsets.Add((v, -normal * (distance * weight * strength)));
+            }
+
+            move.File.OffsetWorld(offsets);
+        }
     }
 
     private static bool IntersectVertexHeight(Ray ray, float height, out Vector3 point)
@@ -741,10 +945,12 @@ public partial class NavigationTool
         }
     }
 
-    /// <summary>Places the cursor sphere on the hit, and a smaller sphere on the vertex that will be moved.</summary>
+    /// <summary>
+    /// Places the brush sphere on the hit at the brush's radius, and a smaller sphere on the face's nearest corner.
+    /// </summary>
     private void UpdateVertexCursor()
     {
-        var target = VertexEditActive ? VertexDrag ?? VertexHover : null;
+        var target = VertexEditActive ? (IsVertexDragStroke ? VertexStroke : null) ?? VertexHover : null;
 
         if (target == null)
         {
@@ -782,14 +988,16 @@ public partial class NavigationTool
             VertexCursorFill.HighlightedColor = fill;
         }
 
+        // Where it is now: a drag carries it
         var vertex = target.File.WorldVertex(target.Vertex);
 
-        // While dragging, the cursor stays on the vertex it holds
-        var cursor = VertexDrag != null ? vertex : target.Point;
-        var cursorWorld = Matrix4x4.CreateScale(VertexCursorSize) * Matrix4x4.CreateTranslation(cursor);
+        // The detection spheres have a radius of 1; while dragging, the brush stays with the vertices it holds
+        var size = Math.Max(0.01f, VertexRadius);
+        var cursor = IsVertexDragStroke ? VertexDragAnchor : target.Point;
+        var cursorWorld = Matrix4x4.CreateScale(size) * Matrix4x4.CreateTranslation(cursor);
 
-        // The marker stays small with a large cursor, so it doesn't hide the vertices around it
-        var markerSize = MathF.Min(VertexCursorSize * 0.6f, VertexMaxMarkerSize);
+        // The marker stays small with a large brush, so it doesn't hide the vertices around it
+        var markerSize = MathF.Min(size * 0.6f, VertexMaxMarkerSize);
 
         VertexCursorWire.World = cursorWorld;
         VertexCursorFill.World = cursorWorld;

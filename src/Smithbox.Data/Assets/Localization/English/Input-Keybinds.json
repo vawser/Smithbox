@@ -338,51 +338,67 @@
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Raise",
-      "Text": "Collision Editor: Raise Vertex"
+      "Text": "Collision Editor: Raise Brush"
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Raise_TT",
-      "Text": "While editing collision with the Collision Editor, raises the vertex under the cursor."
+      "Text": "While editing collision with the Collision Editor, switches the brush to Raise."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Lower",
-      "Text": "Collision Editor: Lower Vertex"
+      "Text": "Collision Editor: Lower Brush"
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Lower_TT",
-      "Text": "While editing collision with the Collision Editor, lowers the vertex under the cursor."
+      "Text": "While editing collision with the Collision Editor, switches the brush to Lower."
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Drag",
-      "Text": "Collision Editor: Drag Vertex"
+      "Text": "Collision Editor: Drag Brush"
     },
     {
       "Key": "KEY_MapEditor_CollisionEditor_Drag_TT",
-      "Text": "While editing collision with the Collision Editor, held to drag the vertex under the cursor."
+      "Text": "While editing collision with the Collision Editor, switches the brush to Drag."
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Smooth",
+      "Text": "Collision Editor: Smooth Brush"
+    },
+    {
+      "Key": "KEY_MapEditor_CollisionEditor_Smooth_TT",
+      "Text": "While editing collision with the Collision Editor, switches the brush to Smooth."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Raise",
-      "Text": "Navigation Editor: Raise Vertex"
+      "Text": "Navigation Editor: Raise Brush"
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Raise_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, raises the vertex under the cursor."
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Raise."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Lower",
-      "Text": "Navigation Editor: Lower Vertex"
+      "Text": "Navigation Editor: Lower Brush"
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Lower_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, lowers the vertex under the cursor."
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Lower."
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Drag",
-      "Text": "Navigation Editor: Drag Vertex"
+      "Text": "Navigation Editor: Drag Brush"
     },
     {
       "Key": "KEY_MapEditor_NavigationEditor_Drag_TT",
-      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, held to drag the vertex under the cursor."
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Drag."
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Smooth",
+      "Text": "Navigation Editor: Smooth Brush"
+    },
+    {
+      "Key": "KEY_MapEditor_NavigationEditor_Smooth_TT",
+      "Text": "While editing navmesh vertices in the Navigation Editor's Edit tab, switches the brush to Smooth."
     },
     {
       "Key": "KEY_MapEditor_Rotate_X_Axis",
