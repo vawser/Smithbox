@@ -287,6 +287,26 @@ public class MapListView : IActionEventHandler
         if (loading.Count == 0 && queued == 0)
             return;
 
+        // Several maps (Load Related Maps, or loads queued behind each other): one line with the count, and the
+        // names on hover, rather than a list of every map
+        var (done, total) = View.Universe.LoadProgress;
+
+        if (total > 1)
+        {
+            var fraction = Math.Clamp(done / (float)total, 0f, 1f);
+
+            ImGui.ProgressBar(fraction, new Vector2(-1, 0), LOC.Get("MAP_List_Loading_Batch", total, done));
+
+            if (ImGui.IsItemHovered())
+            {
+                var loadingNames = loading.Count > 0 ? string.Join(", ", loading.OrderBy(e => e)) : "-";
+
+                GUI.Tooltip(LOC.Get("MAP_List_Loading_Batch_TT", loadingNames, queued));
+            }
+
+            return;
+        }
+
         var names = loading.Count > 0 ? string.Join(", ", loading.OrderBy(e => e)) : "";
         var text = queued > 0
             ? LOC.Get("MAP_List_Loading_Status_Queued", names, queued)
@@ -540,10 +560,11 @@ public class MapListView : IActionEventHandler
                     View.Universe.RequestUnloadMap(mapWrapper.Name);
                 }
 
-                // How much undo history goes with it: the history is held by the view that loaded the map
-                if (ImGui.IsItemHovered())
+                // How much undo history goes with it: the history is held by the view that loaded the map.
+                // Clicking Unload Map above unloads it in this same frame, leaving no container, so skip then.
+                if (ImGui.IsItemHovered() && mapWrapper.MapContainer is { } hoveredMap)
                 {
-                    var manager = (mapWrapper.MapContainer.OwnerView ?? View).ViewportActionManager;
+                    var manager = (hoveredMap.OwnerView ?? View).ViewportActionManager;
                     var dropped = manager.CountActionsTouching(mapWrapper.Name);
 
                     GUI.Tooltip(dropped > 0

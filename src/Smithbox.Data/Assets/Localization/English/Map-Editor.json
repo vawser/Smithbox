@@ -329,6 +329,14 @@
       "Text": "Loading {0} ({1} queued)"
     },
     {
+      "Key": "MAP_List_Loading_Batch",
+      "Text": "Loading {0} maps: {1} done"
+    },
+    {
+      "Key": "MAP_List_Loading_Batch_TT",
+      "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you asked for is made the active map, unless you pick another one meanwhile."
+    },
+    {
       "Key": "MAP_Universe_Log_Map_Load_Queued",
       "Text": "{0} will load once the current load finishes."
     },

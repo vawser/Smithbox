@@ -69,7 +69,51 @@ public class MapUniverse : IUniverse
         return View.ViewportHandler.ActiveViewport.RenderScene;
     }
 
+    // The loads of the current batch: every load from the first one started while nothing was loading, until
+    // nothing is loading or queued again. Shown as one progress line ("Loading 9 maps: 4 done").
+    private int _batchStarted;
+    private int _batchFinished;
+
+    /// <summary>
+    /// How many maps the current batch of loads has finished, and how many it has in all (running, queued and
+    /// finished). Both are 0 while nothing is loading.
+    /// </summary>
+    public (int Done, int Total) LoadProgress
+    {
+        get
+        {
+            var done = Volatile.Read(ref _batchFinished);
+            var started = Volatile.Read(ref _batchStarted);
+
+            return (done, started + _loadQueue.Count);
+        }
+    }
+
+    // The map the latest load with selectOnLoad asked for: only that map is selected once the loads finish, so a
+    // later request wins over an earlier one, and maps loaded alongside it (Load Related Maps) never take over.
+    // UI thread only.
+    private string _selectTarget;
+
+    // The active map when the target was asked for, so a map the user picks while it loads isn't overridden
+    private string _selectTargetPreviousMap;
+
+    // The target, once its load has finished, waiting for the rest of the batch
+    private MapContainer _finishedTarget;
+
     public bool LoadMap(string mapid, bool selectOnLoad = false, bool ignoreHavokLoad = false, bool allowConcurrentMapLoad = false)
+    {
+        // Claimed at request time, so a queued request still replaces an earlier one
+        if (selectOnLoad)
+        {
+            _selectTarget = mapid;
+            _selectTargetPreviousMap = View.Selection.SelectedMapID;
+            _finishedTarget = null;
+        }
+
+        return StartLoad(mapid, selectOnLoad, ignoreHavokLoad, allowConcurrentMapLoad);
+    }
+
+    private bool StartLoad(string mapid, bool selectOnLoad, bool ignoreHavokLoad, bool allowConcurrentMapLoad)
     {
         if(!allowConcurrentMapLoad && IsLoading)
         {
@@ -108,8 +152,8 @@ public class MapUniverse : IUniverse
         ResourceManager.ClearUnusedResources();
 
         // Only a load that will select its map replaces the selection; any other (a queued load, each map of
-        // Load Related Maps) leaves what the user has selected alone
-        if (selectOnLoad)
+        // Load Related Maps, a request since replaced by another) leaves what the user has selected alone
+        if (selectOnLoad && mapid == _selectTarget)
         {
             View.ViewportSelection.ClearSelection();
         }
@@ -158,6 +202,7 @@ public class MapUniverse : IUniverse
 
         // Before the first await, so the load counts as running as soon as LoadMap returns
         Interlocked.Increment(ref _activeLoads);
+        Interlocked.Increment(ref _batchStarted);
 
         Profiler.TracyFiberEnter("loadMapAsync");
         using var __loadMapZone = Profiler.TracyZoneAuto();
@@ -368,6 +413,8 @@ public class MapUniverse : IUniverse
 
             _loadingMaps.TryRemove(mapid, out _);
 
+            Interlocked.Increment(ref _batchFinished);
+
             // A failed or empty load must not leave the editor waiting for a load that is over
             if (Interlocked.Decrement(ref _activeLoads) == 0)
             {
@@ -381,25 +428,65 @@ public class MapUniverse : IUniverse
     // Selections asked for by loads, applied on the UI thread: the root to select, or the map to make active
     private readonly ConcurrentQueue<(MapContainer Map, bool SelectRoot)> _pendingSelections = new();
 
+    /// <summary>
+    /// Applies what finished loads asked for. The root of the asked-for map is selected as soon as it is there,
+    /// unless the user has selected something since. That map is made the active map once every load of the
+    /// batch is over, unless the user has picked another map since, so the last load to finish doesn't decide.
+    /// </summary>
     private void ApplyPendingSelections()
+    {
+        DrainPendingSelections();
+
+        if (HasPendingLoads)
+            return;
+
+        // A load may have finished between the drain and the check: it queues before it stops counting as loading
+        DrainPendingSelections();
+
+        var target = _finishedTarget;
+
+        _selectTarget = null;
+        _finishedTarget = null;
+
+        if (target == null || !IsStillLoaded(target))
+            return;
+
+        var current = View.Selection.SelectedMapID;
+
+        // The user picked another map while it loaded (selecting the root makes it the active map, which is fine)
+        if (!string.IsNullOrEmpty(current) && current != _selectTargetPreviousMap && current != target.Name)
+            return;
+
+        View.Selection.SelectedMapID = target.Name;
+        View.Selection.SelectedMapContainer = target;
+    }
+
+    private void DrainPendingSelections()
     {
         while (_pendingSelections.TryDequeue(out var pending))
         {
-            // Unloaded again before this frame
-            if (pending.Map.LoadState is not MapContentLoadState.Loaded || View.Selection.GetMapContainerFromMapID(pending.Map.Name) != pending.Map)
+            // Unloaded again before this frame, or no longer the map asked for
+            if (!IsStillLoaded(pending.Map) || pending.Map.Name != _selectTarget)
                 continue;
 
             if (pending.SelectRoot)
             {
-                View.ViewportSelection.ClearSelection();
-                View.ViewportSelection.AddSelection(pending.Map.RootObject);
+                // Selected at the request, so anything selected now was selected by the user while it loaded
+                if (View.ViewportSelection.GetSelection().Count == 0)
+                {
+                    View.ViewportSelection.AddSelection(pending.Map.RootObject);
+                }
             }
             else
             {
-                View.Selection.SelectedMapID = pending.Map.Name;
-                View.Selection.SelectedMapContainer = pending.Map;
+                _finishedTarget = pending.Map;
             }
         }
+    }
+
+    private bool IsStillLoaded(MapContainer map)
+    {
+        return map.LoadState is MapContentLoadState.Loaded && View.Selection.GetMapContainerFromMapID(map.Name) == map;
     }
 
     /// <summary>
@@ -409,6 +496,13 @@ public class MapUniverse : IUniverse
     public void ProcessLoadQueue()
     {
         ApplyPendingSelections();
+
+        // The batch is over: the next load starts a new count
+        if (!HasPendingLoads)
+        {
+            Volatile.Write(ref _batchStarted, 0);
+            Volatile.Write(ref _batchFinished, 0);
+        }
 
         if (IsLoading || _loadQueue.Count == 0)
             return;
@@ -420,7 +514,8 @@ public class MapUniverse : IUniverse
         if (View.Selection.GetMapContainerFromMapID(mapID) != null)
             return;
 
-        LoadMap(mapID, selectOnLoad);
+        // Not LoadMap: the request already claimed (or lost) the selection when it was queued
+        StartLoad(mapID, selectOnLoad, false, false);
     }
 
     /// <summary>
