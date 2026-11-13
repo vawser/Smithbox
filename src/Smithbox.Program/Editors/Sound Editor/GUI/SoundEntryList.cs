@@ -226,9 +226,12 @@ public class SoundEntryList
         {
             ImGui.Separator();
             var canReplace = !e.IsNotAudio && !View.Data.Edits.IsSaving;
-            if (ImGui.MenuItem($"{LOC.Get("SOUND_Replace")}##replace", "", false, canReplace))
-                View.ReplaceEntry(e);
-            GUI.Tooltip(LOC.Get("SOUND_Replace_TT"));
+            if (SoundEditorView.ReplaceSoundEnabled)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("SOUND_Replace")}##replace", "", false, canReplace))
+                    View.ReplaceEntry(e);
+                GUI.Tooltip(LOC.Get("SOUND_Replace_TT"));
+            }
 
             if (View.Data.Edits.Get(e) != null && ImGui.MenuItem($"{LOC.Get("SOUND_Replace_Discard")}##discardReplace"))
                 View.DiscardReplacement(e);

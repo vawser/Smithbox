@@ -69,13 +69,19 @@ public class SoundEditorView : IDisposable
     public bool CanEdit => Data?.Middleware == SoundMiddleware.Wwise &&
                            Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6;
 
+    /// <summary>
+    /// Replace Sound is turned off for now. Discard and Revert to Vanilla stay available so existing
+    /// replacements can still be undone. Set to true to bring Replace Sound back.
+    /// </summary>
+    public static readonly bool ReplaceSoundEnabled = false;
+
     // after a save reloads the selected bank: the sound to select again once it has loaded
     private uint? _reselectMedia;
 
     /// <summary>Asks for a file and replaces the sound with it (unsaved until Save).</summary>
     public void ReplaceEntry(SoundEntry e)
     {
-        if (!CanEdit || e == null || e.IsNotAudio)
+        if (!ReplaceSoundEnabled || !CanEdit || e == null || e.IsNotAudio)
             return;
 
         if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("SOUND_Replace_Dialog"), SoundImport.Filters,
