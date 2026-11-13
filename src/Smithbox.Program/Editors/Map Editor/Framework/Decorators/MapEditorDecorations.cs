@@ -619,6 +619,10 @@ public static class MapEditorDecorations
 
             ImGui.BeginGroup();
 
+            // inline Play, in front of the alias text
+            if (isSound)
+                SoundReferenceHelper.PlayButton(view.Project, val, propinfo.Name);
+
             if (match != null)
             {
                 currentEntry = match.Name;

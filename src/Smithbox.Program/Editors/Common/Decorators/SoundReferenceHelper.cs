@@ -87,6 +87,140 @@ public static class SoundReferenceHelper
         }
     }
 
+    // Inline play: a request waits here while the index builds and the bank loads, then plays on the Sound Editor's
+    // player. Ticked by the buttons themselves, so it only advances while one is drawn.
+    private static ProjectEntry _pendingProject;
+    private static string _pendingId;
+    private static SoundContainer _pendingContainer;
+    private static string _pendingEvent;
+
+    // the sound ID the inline button last started, so its buttons show Stop while it plays
+    private static string _playingId;
+
+    private static SoundPlayer Player(ProjectEntry project) => project?.Handler?.SoundEditor?.View?.Player;
+
+    /// <summary>
+    /// A small Play / Stop button for the sound ID in <paramref name="value"/>, followed by SameLine so the alias text
+    /// sits after it. Plays on the Sound Editor's player without switching to it. Draws nothing (and returns false)
+    /// when the project has no Sound Editor or the value is no sound.
+    /// </summary>
+    public static bool PlayButton(ProjectEntry project, object value, string imguiId)
+    {
+        if (!IsAvailable(project) || !TryGetId(value, out var id))
+            return false;
+
+        Tick(project);
+
+        var player = Player(project);
+        bool pending = _pendingId == id && _pendingProject == project;
+        bool playing = !pending && _playingId == id && player?.IsActive == true;
+
+        if (ImGui.SmallButton($"{(pending || playing ? Icons.Stop : Icons.Play)}##soundRefInline_{imguiId}"))
+        {
+            if (pending || playing)
+            {
+                ClearPending();
+                _playingId = null;
+                player?.Stop();
+            }
+            else
+            {
+                Request(project, id);
+            }
+        }
+        GUI.Tooltip(LOC.Get(pending ? "SOUND_Reference_Inline_Loading_TT"
+            : playing ? "SOUND_Reference_Inline_Stop_TT" : "SOUND_Reference_Inline_Play_TT"));
+
+        ImGui.SameLine();
+        return true;
+    }
+
+    private static void Request(ProjectEntry project, string id)
+    {
+        Player(project)?.Stop();
+        _playingId = null;
+        _pendingProject = project;
+        _pendingId = id;
+        _pendingContainer = null;
+        _pendingEvent = null;
+        project.Handler.SoundData.Index.EnsureBuilt();
+        Tick(project);
+    }
+
+    private static void ClearPending()
+    {
+        _pendingProject = null;
+        _pendingId = null;
+        _pendingContainer = null;
+        _pendingEvent = null;
+    }
+
+    /// <summary>Moves a waiting request on: index built → bank loading → bank loaded → play.</summary>
+    private static void Tick(ProjectEntry project)
+    {
+        if (_pendingId == null || _pendingProject != project)
+            return;
+
+        var data = project.Handler.SoundData;
+        var index = data.Index;
+
+        if (_pendingContainer == null)
+        {
+            if (!index.IsBuilt)
+            {
+                if (index.Error != null)
+                    ClearPending(); // the index logged why
+                else
+                    index.EnsureBuilt();
+                return;
+            }
+
+            var matches = index.Find(_pendingId);
+            if (matches.Count == 0)
+            {
+                Smithbox.Log(typeof(SoundReferenceHelper), LOC.Get("SOUND_Reference_Missing", _pendingId));
+                ClearPending();
+                return;
+            }
+
+            _pendingContainer = matches[0].Container;
+            _pendingEvent = matches[0].EventName;
+            _pendingContainer.BeginLoad();
+        }
+
+        var c = _pendingContainer;
+        if (c.State is SoundLoadState.NotLoaded or SoundLoadState.Loading)
+            return;
+
+        var id = _pendingId;
+        var name = _pendingEvent;
+        ClearPending();
+
+        if (c.State != SoundLoadState.Loaded)
+            return; // the bank logged why
+
+        // the same lookup as the Sound Editor's sound/event command
+        var hash = WwiseBank.Hash(name);
+        var ev = c.Events.FirstOrDefault(e => string.Equals(e.Name, name, StringComparison.OrdinalIgnoreCase))
+                 ?? c.Events.FirstOrDefault(e => !e.FromFev && e.Id == hash);
+        if (ev == null)
+        {
+            Smithbox.Log(typeof(SoundReferenceHelper), LOC.Get("SOUND_Log_Event_Not_Found", name, c.Name));
+            return;
+        }
+
+        var entry = ev.Entries.FirstOrDefault(e => e.CanPlay);
+        var view = project.Handler.SoundEditor?.View;
+        if (entry == null || view == null)
+        {
+            Smithbox.Log(typeof(SoundReferenceHelper), LOC.Get("SOUND_Reference_Inline_No_Audio", name));
+            return;
+        }
+
+        view.Play(entry);
+        _playingId = id;
+    }
+
     /// <summary>Ctrl+click on the last item opens the sound (its first event). Call right after the item it applies to.</summary>
     public static void Click(ProjectEntry project, object value)
     {

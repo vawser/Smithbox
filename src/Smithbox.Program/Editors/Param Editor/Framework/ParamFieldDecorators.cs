@@ -220,6 +220,10 @@ public class ParamFieldDecorators
                 if (Editor.Project.Handler.ProjectData.Aliases.TryGetValue(
                     ProjectAliasType.Sounds, out List<AliasEntry> sounds))
                 {
+                    // inline Play, in front of the alias text
+                    if (CFG.Current.ParamEditor_Field_List_Display_Enums)
+                        SoundReferenceHelper.PlayButton(ParentView.Project, oldval, internalName);
+
                     AliasEnumHelper.Hint(ParentView, sounds, oldval.ToString());
                 }
             }

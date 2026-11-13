@@ -36,6 +36,10 @@
     { "Key": "SOUND_Reference_Go_To", "Text": "Open {0} in Sound Editor" },
     { "Key": "SOUND_Reference_Go_To_TT", "Text": "Show this sound's event in the Sound Editor. Ctrl+click the field does the same." },
     { "Key": "SOUND_Reference_More", "Text": "{0} more: show all in Search" },
+    { "Key": "SOUND_Reference_Inline_Play_TT", "Text": "Play this sound here, without leaving the editor.\nThe first sound its event can reach is played. Volume and Loop follow the Sound Editor's player." },
+    { "Key": "SOUND_Reference_Inline_Stop_TT", "Text": "Stop the sound." },
+    { "Key": "SOUND_Reference_Inline_Loading_TT", "Text": "Loading the sound bank..." },
+    { "Key": "SOUND_Reference_Inline_No_Audio", "Text": "Sound Editor: event {0} has no playable sound." },
 
     { "Key": "SOUND_View_Toggle_Play_On_Select", "Text": "Play on Select" },
     { "Key": "SOUND_View_Toggle_Play_On_Select_TT", "Text": "Play a sound as soon as it is selected, including when stepping through the list with the arrow keys." },

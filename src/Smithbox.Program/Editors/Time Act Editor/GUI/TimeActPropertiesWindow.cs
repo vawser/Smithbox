@@ -1996,6 +1996,13 @@ public class TimeActPropertiesWindow
 
         ImGui.TableSetColumnIndex(1);
 
+        bool isEffect = aliasType is ProjectAliasType.Particles;
+        bool isSound = aliasType is ProjectAliasType.Sounds;
+
+        // inline Play, in front of the alias text
+        if (isSound)
+            SoundReferenceHelper.PlayButton(Project, value, key);
+
         if (alias != "")
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
@@ -2008,8 +2015,6 @@ public class TimeActPropertiesWindow
         }
 
         // An effect id: Ctrl+click, or the context menu, opens it in the FX Editor (the alias list may not name it)
-        bool isEffect = aliasType is ProjectAliasType.Particles;
-        bool isSound = aliasType is ProjectAliasType.Sounds;
         if (isEffect)
             FxReferenceHelper.Click(Project, value);
         if (isSound)
