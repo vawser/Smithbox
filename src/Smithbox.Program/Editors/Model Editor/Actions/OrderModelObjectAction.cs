@@ -14,13 +14,18 @@ namespace StudioCore.Editors.ModelEditor;
 /// <summary>
 /// Moves a model object within the objects of its type. Only a single object can be moved at a time.
 /// </summary>
-public class OrderModelObjectAction : ViewportAction
+public class OrderModelObjectAction : ViewportAction, IModelHistoryItem
 {
     private ModelEditorView View;
     private ProjectEntry Project;
 
     private ModelContainer Container;
     private List<ModelEntity> Selection = new();
+
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Reorder", ModelHistory.NameObjects(Selection.Cast<Entity>().ToList()));
+    }
 
     // The object order before the last execution, or null if it didn't move anything
     private List<Entity> StoredObjectOrder;

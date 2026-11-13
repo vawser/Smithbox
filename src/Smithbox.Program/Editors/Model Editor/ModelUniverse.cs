@@ -99,39 +99,107 @@ public class ModelUniverse : IUniverse
             View.ViewportWindow.PendingFrameContainer = newContainer;
         }
 
+        await LoadResources(modelWrapper, newContainer);
+    }
+
+    /// <summary>
+    /// Brings back a model parked in this view (see <see cref="ModelEditorView.LoadModel"/>): its objects are put
+    /// back in the scene as they were, and the resources it is drawn from are loaded again in case another model's
+    /// load released them meanwhile. Nothing is read from the model file.
+    /// </summary>
+    public async void RestoreParkedModel(ModelWrapper modelWrapper, ModelContainer container)
+    {
+        container.Unpark();
+
+        SetupModelLoadList(modelWrapper.Name.ToLower(), modelWrapper.Parent);
+        SetupTextureLoadList(modelWrapper.Name.ToLower(), modelWrapper.Parent);
+
+        HasLoadedModel = true;
+
+        // A parked model was edited (it has history), so it may be drawn from an in-memory preview. Those are kept
+        // while used, but a fresh one also covers a save made while it was parked.
+        container.MarkPreviewStale(immediate: true);
+
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
         {
-            ResourceLoadTracker.BeginSession(modelWrapper.Name);
+            View.ViewportWindow.PendingFrameContainer = container;
+        }
 
-            var loadGeneration = ++_loadGeneration;
+        await LoadResources(modelWrapper, container);
+    }
 
-            try
+    /// <summary>
+    /// Loads the textures and models the container draws from into the default pool. Resources already loaded are
+    /// left as they are.
+    /// </summary>
+    private async Task LoadResources(ModelWrapper modelWrapper, ModelContainer container)
+    {
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport_Enable_Rendering)
+            return;
+
+        ResourceLoadTracker.BeginSession(modelWrapper.Name);
+
+        var loadGeneration = ++_loadGeneration;
+
+        try
+        {
+            ReserveLoadCategories();
+
+            // Each load keeps its own tasks, so they don't pile up over the life of the view
+            var textureTasks = LoadTextures(new List<Task>(), container);
+            await Task.WhenAll(textureTasks);
+
+            var modelTasks = LoadModels(new List<Task>(), container);
+            await Task.WhenAll(modelTasks);
+
+            // Another model was loaded or this one unloaded meanwhile, so the refresh is left to that load
+            if (loadGeneration == _loadGeneration)
             {
-                ReserveLoadCategories();
-
-                // Each load keeps its own tasks, so they don't pile up over the life of the view
-                var textureTasks = LoadTextures(new List<Task>(), newContainer);
-                await Task.WhenAll(textureTasks);
-
-                var modelTasks = LoadModels(new List<Task>(), newContainer);
-                await Task.WhenAll(modelTasks);
-
-                // Another model was loaded or this one unloaded meanwhile, so the refresh is left to that load
-                if (loadGeneration == _loadGeneration)
-                {
-                    ScheduleTextureRefresh();
-                }
-            }
-            catch (Exception e)
-            {
-                // This method is async void, so an exception would otherwise end the program
-                Smithbox.LogError(this, LOC.Get("MODEL_Universe_Model_Load_Failed", modelWrapper.Name), e);
-            }
-            finally
-            {
-                ResourceLoadTracker.EndSession(modelWrapper.Name);
+                ScheduleTextureRefresh();
             }
         }
+        catch (Exception e)
+        {
+            // The callers are async void, so an exception would otherwise end the program
+            Smithbox.LogError(this, LOC.Get("MODEL_Universe_Model_Load_Failed", modelWrapper.Name), e);
+        }
+        finally
+        {
+            ResourceLoadTracker.EndSession(modelWrapper.Name);
+        }
+    }
+
+    /// <summary>
+    /// Takes the loaded model out of the scene while keeping its objects, for <see cref="ModelEditorView.LoadModel"/>
+    /// </summary>
+    public void ParkModel(ModelContainer container)
+    {
+        // A load still running for this model mustn't refresh into the next one
+        _loadGeneration++;
+
+        View.ViewportSelection.ClearSelection();
+
+        if (View.ViewportWindow.PendingFrameContainer == container)
+        {
+            View.ViewportWindow.PendingFrameContainer = null;
+        }
+
+        View.EntityTypeCache.RemoveModelFromCache(container);
+
+        container.Park();
+    }
+
+    /// <summary>
+    /// Releases a parked model's objects and drawables, dropping its history
+    /// </summary>
+    public void DiscardParkedModel(ModelContainer container)
+    {
+        View.EntityTypeCache.RemoveModelFromCache(container);
+
+        container.Unload();
+        container.Clear();
+
+        ResourceManager.ClearUnusedResources();
     }
 
     /// <summary>

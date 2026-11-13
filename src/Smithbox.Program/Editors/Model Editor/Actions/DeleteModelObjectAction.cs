@@ -19,12 +19,17 @@ public class EntityRemovalRecord
 
     public bool HadRenderMesh;
 }
-public class DeleteModelObjectAction : ViewportAction
+public class DeleteModelObjectAction : ViewportAction, IModelHistoryItem
 {
     private readonly ModelEditorView View;
     private readonly ProjectEntry Project;
 
     private List<Entity> Targets;
+
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Delete", ModelHistory.NameObjects(Targets));
+    }
     private readonly List<EntityRemovalRecord> Records = new();
 
     private bool Captured = false;

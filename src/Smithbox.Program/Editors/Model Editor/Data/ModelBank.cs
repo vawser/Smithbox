@@ -209,7 +209,8 @@ public class ModelContainerWrapper
 
         foreach (var model in Models)
         {
-            if (model.IsDirty || model.Container != null)
+            // Parked models keep their objects and history too
+            if (model.IsDirty || model.Container != null || model.Parked != null)
             {
                 existingModels.TryAdd(model.Name, model);
             }
@@ -407,6 +408,12 @@ public class ModelWrapper
     /// Whether the model has been modified since it was last loaded or saved
     /// </summary>
     public bool IsDirty { get; set; } = false;
+
+    /// <summary>
+    /// Set while the model is switched away from in a view but keeps its objects and undo history there.
+    /// <see cref="Container"/> is null meanwhile, as the model isn't loaded. Managed by <see cref="ModelEditorView"/>.
+    /// </summary>
+    public ParkedModel Parked { get; set; }
 
     /// <summary>
     /// The position of each mesh in the FLVER as stored on disk, which is the submesh the viewport draws it from.
@@ -906,6 +913,9 @@ public class ModelWrapper
 
     public void Unload()
     {
+        // Unloading a parked model drops its kept objects and history
+        Parked?.View.DiscardParked(this);
+
         // Store the unsaved changes in the FLVER, as the container holding them is discarded on unload
         if (IsDirty && Container != null)
         {

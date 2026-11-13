@@ -237,5 +237,62 @@ public class ViewportActionManager
         RedoStack.Clear();
         Version++;
     }
+
+    /// <summary>
+    /// Moves the undo and redo history out, leaving the manager empty, so it can be given back later with
+    /// <see cref="RestoreHistory"/>. The manager object stays the same, so everything holding it keeps working.
+    /// </summary>
+    public ViewportActionHistory TakeHistory()
+    {
+        var history = new ViewportActionHistory(UndoStack.Reverse().ToList(), RedoStack.Reverse().ToList());
+
+        UndoStack.Clear();
+        RedoStack.Clear();
+        Version++;
+
+        return history;
+    }
+
+    /// <summary>
+    /// Replaces the history with one taken by <see cref="TakeHistory"/>. Nothing is executed or undone.
+    /// </summary>
+    public void RestoreHistory(ViewportActionHistory history)
+    {
+        UndoStack.Clear();
+        RedoStack.Clear();
+
+        if (history != null)
+        {
+            foreach (var a in history.Undo)
+            {
+                UndoStack.Push(a);
+            }
+
+            foreach (var a in history.Redo)
+            {
+                RedoStack.Push(a);
+            }
+        }
+
+        Version++;
+    }
+}
+
+/// <summary>
+/// An undo and redo history taken out of a <see cref="ViewportActionManager"/>. Each list is in push order: the
+/// first undo step is the oldest, and the last redo step is the next to be redone.
+/// </summary>
+public sealed class ViewportActionHistory
+{
+    public IReadOnlyList<ViewportAction> Undo { get; }
+    public IReadOnlyList<ViewportAction> Redo { get; }
+
+    public ViewportActionHistory(IReadOnlyList<ViewportAction> undo, IReadOnlyList<ViewportAction> redo)
+    {
+        Undo = undo;
+        Redo = redo;
+    }
+
+    public int Count => Undo.Count + Redo.Count;
 }
 

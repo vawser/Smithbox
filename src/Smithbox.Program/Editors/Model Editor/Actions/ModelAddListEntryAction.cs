@@ -7,8 +7,14 @@ using System.Text;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelAddListEntryAction : ViewportAction
+public class ModelAddListEntryAction : ViewportAction, IModelHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Add_Entry", Property?.Name ?? LOC.Get("MODEL_History_Field_Unnamed"),
+            ModelHistory.NameObject(TargetEnt));
+    }
+
     private readonly object ChangedObject;
     private readonly int Index;
     private readonly object NewValue;

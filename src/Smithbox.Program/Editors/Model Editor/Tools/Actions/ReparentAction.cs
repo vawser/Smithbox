@@ -55,7 +55,10 @@ public static class ReparentAction
             actions.Add(Change(view, entity, nameof(FLVER.Node.Scale), scale));
         }
 
-        return new ViewportCompoundAction(actions);
+        return new ViewportCompoundAction(actions)
+        {
+            Label = LOC.Get("MODEL_History_Reparent", ModelHistory.NameObject(entity), NameParent(container, newParent))
+        };
     }
 
     /// <summary>
@@ -86,7 +89,18 @@ public static class ReparentAction
             actions.Add(Change(view, entity, nameof(FLVER.Dummy.Upward), Vector3.TransformNormal(dummy.Upward, move)));
         }
 
-        return new ViewportCompoundAction(actions);
+        return new ViewportCompoundAction(actions)
+        {
+            Label = LOC.Get("MODEL_History_Reparent", ModelHistory.NameObject(entity), NameParent(container, newParent))
+        };
+    }
+
+    // The new parent bone for a history step's name
+    private static string NameParent(ModelContainer container, int index)
+    {
+        return index >= 0 && index < container.Nodes.Count
+            ? ModelHistory.NameObject(container.Nodes[index])
+            : LOC.Get("MODEL_History_Top_Level");
     }
 
     /// <summary>

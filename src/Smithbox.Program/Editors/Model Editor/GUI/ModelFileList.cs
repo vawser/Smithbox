@@ -114,6 +114,12 @@ public class ModelFileList
                 displayedName = $"{displayedName} {LOC.Get("MODEL_FileList_Open_In_View", ownerView.ViewIndex)}";
             }
 
+            // Mark models switched away from that keep their undo history in this view
+            if (curWrapper.Parked?.View == View)
+            {
+                displayedName = $"{displayedName} {LOC.Get("MODEL_FileList_History_Kept", curWrapper.Parked.History.Count)}";
+            }
+
             // Loads the same way as the Source List: on a single click, or a double click if that is required there
             var requireDoubleClick = CFG.Current.ModelEditor_ModelSourceList_RequireDoubleClick;
 

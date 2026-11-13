@@ -12,13 +12,18 @@ namespace StudioCore.Editors.ModelEditor;
 /// Adds a new object (a dummy, node or material) to the end of the model's objects of its type. Appending keeps the
 /// position of every existing material and node, so nothing that refers to them by index needs rewriting.
 /// </summary>
-public class AddModelObjectAction : ViewportAction
+public class AddModelObjectAction : ViewportAction, IModelHistoryItem
 {
     private readonly ModelEditorView View;
     private readonly ProjectEntry Project;
 
     private readonly ModelContainer Container;
     private readonly ModelEntity Added;
+
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Add", ModelHistory.NameObject(Added));
+    }
 
     // The entity the new one sits under: a dummy's parent bone, a node's parent node, or the model root
     private readonly Entity Parent;

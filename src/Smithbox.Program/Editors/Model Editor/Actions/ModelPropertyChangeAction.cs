@@ -8,8 +8,21 @@ using System.Reflection;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelPropertyChangeAction : ViewportAction
+public class ModelPropertyChangeAction : ViewportAction, IModelHistoryItem
 {
+    /// <summary>The fields this step changes, for the History tool. A nested list element has no field name.</summary>
+    public IReadOnlyList<string> PropertyNames =>
+        Changes.Where(c => c.Property != null).Select(c => c.Property.Name).Distinct().ToList();
+
+    /// <summary>The objects this step changes</summary>
+    public IReadOnlyList<Entity> Entities =>
+        Changes.Select(c => c.Entity).Where(e => e != null).Distinct().ToList();
+
+    public string Describe()
+    {
+        return ModelHistory.DescribePropertyChange(PropertyNames, Entities);
+    }
+
     private ModelEditorView View;
 
     private readonly HashSet<Entity> ChangedEnts = new();

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class CloneModelObjectAction : ViewportAction
+public class CloneModelObjectAction : ViewportAction, IModelHistoryItem
 {
     private ModelEditorView View;
     private ProjectEntry Project;
@@ -17,6 +17,11 @@ public class CloneModelObjectAction : ViewportAction
     private ModelContainer Container;
     private List<ModelEntity> Clonables = new();
     private List<ModelEntity> Clones = new();
+
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Duplicate", ModelHistory.NameObjects(Clonables.Cast<Entity>().ToList()));
+    }
 
     private IndexChangeRecord NodeLinks;
 

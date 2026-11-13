@@ -710,6 +710,13 @@ public class CFG
     public bool ModelEditor_Viewport_Live_Preview = true;
     public bool ModelEditor_Contents_Node_Hierarchy = false;
 
+    // Save Check: File › Save and Save All check the models they will write first, and stop on errors (or warnings too)
+    public bool ModelEditor_SaveCheck_Enabled = true;
+    public bool ModelEditor_SaveCheck_Stop_On_Warnings = false;
+
+    // History: how many models switched away from keep their objects and undo history in each view (0 = none)
+    public int ModelEditor_History_Parked_Limit = 4;
+
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
@@ -782,6 +789,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_Animation = true;
     public bool Interface_ModelEditor_Tool_CharacterPreview = true;
     public bool Interface_ModelEditor_Tool_DisplayRotation = true;
+    public bool Interface_ModelEditor_Tool_History = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;

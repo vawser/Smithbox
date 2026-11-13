@@ -46,6 +46,14 @@ public class ModelToolWindow
 
         Sections.Begin();
 
+        // Actions
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_History)
+        {
+            View.HistoryTool.OnToolWindow();
+        }
+
         // Assets
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Assets"));
 
@@ -117,6 +125,13 @@ public class ModelToolWindow
         // View
         if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_View_Header")}##viewMenuHeader"))
         {
+            // History
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_History")}##toggleHistoryTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_History = !CFG.Current.Interface_ModelEditor_Tool_History;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_History);
+
             // Grid Configuration
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
             {

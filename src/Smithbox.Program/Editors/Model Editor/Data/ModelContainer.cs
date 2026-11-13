@@ -478,8 +478,83 @@ public class ModelContainer : ObjectContainer
         MeshProviderCache.InvalidateUidEntries(RootObject.EntityCacheUID);
     }
 
+    #region Parking
+    // The drawables taken out of the scene when the model was parked, with whether each was registered, and the
+    // character parts that were shown
+    private List<(RenderableProxy Proxy, bool WasRegistered, bool WasAutoRegister)> ParkedProxies;
+    private CharacterAppearance ParkedAppearance;
+
+    public bool IsParked => ParkedProxies != null;
+
+    /// <summary>
+    /// Takes the model out of the viewport while keeping its objects, so the undo history that refers to them stays
+    /// valid. The drawables leave the scene the way Delete takes an object out, keeping their mesh resources, so
+    /// <see cref="Unpark"/> brings them back without reading the model again.
+    /// </summary>
+    public void Park()
+    {
+        if (IsParked)
+            return;
+
+        ParkedProxies = new();
+
+        foreach (var obj in Objects.Append(RootObject).Append(ModelOffsetNode))
+        {
+            var proxy = obj?.RenderSceneMesh;
+
+            if (proxy == null)
+                continue;
+
+            ParkedProxies.Add((proxy, proxy._registered, proxy.AutoRegister));
+
+            proxy.AutoRegister = false;
+            proxy.UnregisterWithScene();
+        }
+
+        // The part models are built per appearance, so they are made again on return
+        ParkedAppearance = CharacterAppearance;
+        ClearCharacterParts();
+    }
+
+    /// <summary>
+    /// Brings a parked model back into the viewport, as it was when it was parked
+    /// </summary>
+    public void Unpark()
+    {
+        if (!IsParked)
+            return;
+
+        foreach (var (proxy, wasRegistered, wasAutoRegister) in ParkedProxies)
+        {
+            if (proxy.disposedValue)
+                continue;
+
+            proxy.AutoRegister = wasAutoRegister;
+
+            // A drawable whose resource was still loading registers itself once it arrives, unless it can't now
+            if (wasRegistered || wasAutoRegister)
+            {
+                proxy.Register();
+            }
+        }
+
+        ParkedProxies = null;
+
+        if (ParkedAppearance != null)
+        {
+            AssignCharacterParts(ParkedAppearance);
+            ParkedAppearance = null;
+        }
+
+        RefreshDisplayTransforms();
+    }
+    #endregion
+
     public void Unload()
     {
+        ParkedProxies = null;
+        ParkedAppearance = null;
+
         ClearCharacterParts();
 
         foreach (Entity obj in Objects)

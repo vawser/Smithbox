@@ -22,6 +22,11 @@ public class ModelEditorScreen : EditorScreen
     public ModelCommandQueue CommandQueue;
     public ModelShortcuts Shortcuts;
 
+    /// <summary>
+    /// The problems that stopped the last save, for the user to fix or save past
+    /// </summary>
+    public ModelSaveCheckWindow SaveCheckWindow;
+
     public ModelEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -30,6 +35,8 @@ public class ModelEditorScreen : EditorScreen
 
         CommandQueue = new ModelCommandQueue(this, project);
         Shortcuts = new ModelShortcuts(this, project);
+
+        SaveCheckWindow = new ModelSaveCheckWindow(this, project);
     }
 
     public string EditorName => "Model Editor";
@@ -75,6 +82,8 @@ public class ModelEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_ModelEditor);
 
         ViewHandler.HandleViews(dsid);
+
+        SaveCheckWindow.Display();
     }
 
     public void FileMenu()
@@ -121,8 +130,75 @@ public class ModelEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
             GUI.ShowActiveStatus(CFG.Current.ModelEditor_Allow_Automatic_Save);
 
+            ImGui.Separator();
+
+            // Check Models Before Saving
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_SaveCheck_Menu_Enabled")}##saveCheckEnabled"))
+            {
+                CFG.Current.ModelEditor_SaveCheck_Enabled = !CFG.Current.ModelEditor_SaveCheck_Enabled;
+            }
+            GUI.Tooltip(LOC.Get("MODEL_SaveCheck_Menu_Enabled_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_SaveCheck_Enabled);
+
+            // Stop on Warnings
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_SaveCheck_Menu_Stop_On_Warnings")}##saveCheckWarnings", "", false,
+                CFG.Current.ModelEditor_SaveCheck_Enabled))
+            {
+                CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings;
+            }
+            GUI.Tooltip(LOC.Get("MODEL_SaveCheck_Menu_Stop_On_Warnings_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings);
+
+            // Check the loaded model now, without saving
+            var loaded = ViewHandler.ActiveView?.Selection.SelectedModelWrapper;
+
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_SaveCheck_Menu_Check_Now")}##saveCheckNow", "", false, loaded?.FLVER != null))
+            {
+                var models = new List<ModelWrapper> { loaded };
+
+                SaveCheckWindow.Open(ModelCheck.Run(Project, models), models, null);
+            }
+            GUI.Tooltip(LOC.Get("MODEL_SaveCheck_Menu_Check_Now_TT"));
+
             ImGui.EndMenu();
         }
+    }
+
+    /// <summary>
+    /// Runs the save check over the models a save is about to write. Returns false, and opens the Save Check window,
+    /// if the save should stop. Autosaves and disabled checks always pass.
+    /// </summary>
+    private bool PassesSaveCheck(List<ModelWrapper> models, bool autoSave, bool skipCheck, Action saveWithoutCheck)
+    {
+        if (autoSave || skipCheck || !CFG.Current.ModelEditor_SaveCheck_Enabled || models.Count == 0)
+            return true;
+
+        var issues = ModelCheck.Run(Project, models);
+
+        if (ModelCheck.StopsSave(issues, CFG.Current.ModelEditor_SaveCheck_Stop_On_Warnings))
+        {
+            SaveCheckWindow.Open(issues, models, saveWithoutCheck);
+
+            Smithbox.Log(this, LOC.Get("MODEL_SaveCheck_Log_Stopped",
+                issues.Count(i => i.Severity is ModelCheckSeverity.Error),
+                issues.Count(i => i.Severity is ModelCheckSeverity.Warning)), LogLevel.Warning);
+
+            return false;
+        }
+
+        // Nothing stops this save, so an open report is out of date
+        SaveCheckWindow.Close();
+
+        return true;
+    }
+
+    /// <summary>The models Save All writes: every modified one, loaded or not</summary>
+    private List<ModelWrapper> GetUnsavedModels()
+    {
+        return Project.Handler.ModelData?.PrimaryBank?.Models.Values
+            .SelectMany(c => c.Models)
+            .Where(m => m.IsDirty)
+            .ToList() ?? new();
     }
 
     public void EditMenu()
@@ -142,6 +218,10 @@ public class ModelEditorScreen : EditorScreen
                         activeView.ViewportActionManager.UndoAction();
                     }
                 }
+                if (activeView.ViewportActionManager.PeekUndoAction() is { } undoNext)
+                {
+                    GUI.Tooltip(LOC.Get("MODEL_History_Tool_Undo_TT", ModelHistory.Describe(undoNext)));
+                }
 
                 // Undo All
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
@@ -160,6 +240,19 @@ public class ModelEditorScreen : EditorScreen
                         activeView.ViewportActionManager.RedoAction();
                     }
                 }
+                if (activeView.ViewportActionManager.PeekRedoAction() is { } redoNext)
+                {
+                    GUI.Tooltip(LOC.Get("MODEL_History_Tool_Redo_TT", ModelHistory.Describe(redoNext)));
+                }
+
+                // History: opens the History tool
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_History_Menu")}##historyAction"))
+                {
+                    CFG.Current.Interface_ModelEditor_ToolWindow = true;
+                    CFG.Current.Interface_ModelEditor_Tool_History = true;
+                    activeView.HistoryTool.FocusOnNextDraw = true;
+                }
+                GUI.Tooltip(LOC.Get("MODEL_History_Menu_TT"));
 
                 ImGui.Separator();
 
@@ -357,7 +450,7 @@ public class ModelEditorScreen : EditorScreen
         return activeView.ViewportWindow.InputCaptured();
     }
 
-    public void Save(bool autoSave = false)
+    public void Save(bool autoSave = false, bool skipCheck = false)
     {
         var activeView = ViewHandler.ActiveView;
 
@@ -366,9 +459,20 @@ public class ModelEditorScreen : EditorScreen
 
         if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
-            if (activeView.Selection.SelectedModelWrapper != null)
+            var wrapper = activeView.Selection.SelectedModelWrapper;
+
+            if (wrapper != null)
             {
-                activeView.Selection.SelectedModelWrapper.Save();
+                // Only a model the save will write is checked
+                var willWrite = wrapper.IsDirty || CFG.Current.ModelEditor_Allow_Unmodified_Save;
+
+                if (willWrite && !PassesSaveCheck(new List<ModelWrapper> { wrapper }, autoSave, skipCheck,
+                    () => SaveModelWithoutCheck(wrapper)))
+                {
+                    return;
+                }
+
+                wrapper.Save();
             }
         }
 
@@ -391,18 +495,34 @@ public class ModelEditorScreen : EditorScreen
             .ToList();
     }
 
+    /// <summary>
+    /// Saves the model the Save Check window stopped, whether or not it is still the loaded one
+    /// </summary>
+    private void SaveModelWithoutCheck(ModelWrapper wrapper)
+    {
+        wrapper.Save();
+
+        Smithbox.Instance.SaveConfiguration();
+    }
+
+    /// <summary>
+    /// Called when closing with unsaved changes, so it isn't stopped by the check, as the Map Editor's isn't
+    /// </summary>
     public void SaveUnsaved()
     {
-        SaveAll();
+        SaveAll(skipCheck: true);
     }
 
     /// <summary>
     /// Save all modified models, including those that are not currently loaded
     /// </summary>
-    public void SaveAll(bool autoSave = false)
+    public void SaveAll(bool autoSave = false, bool skipCheck = false)
     {
         if (autoSave && CFG.Current.ModelEditor_Allow_Automatic_Save || !autoSave)
         {
+            if (!PassesSaveCheck(GetUnsavedModels(), autoSave, skipCheck, () => SaveAll(skipCheck: true)))
+                return;
+
             Project.Handler.ModelData.PrimaryBank.SaveAllModels();
         }
 

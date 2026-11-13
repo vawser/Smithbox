@@ -18,11 +18,19 @@ namespace StudioCore.Editors.ModelEditor;
 /// with: there the move is carried into the bone's space first.
 /// </para>
 /// </summary>
-public class MeshTransformAction : ViewportAction
+public class MeshTransformAction : ViewportAction, IModelHistoryItem
 {
     private readonly ModelContainer Container;
     private readonly ModelEntity Entity;
     private readonly Matrix4x4 Move;
+
+    /// <summary>The mesh this step moves</summary>
+    public ModelEntity Target => Entity;
+
+    public string Describe()
+    {
+        return LOC.Get("MODEL_History_Transform", ModelHistory.NameObject(Entity));
+    }
 
     private MeshState Before;
     private MeshState After;

@@ -1,0 +1,63 @@
+{
+  "Entries": [
+    { "Key": "MODEL_History_Menu", "Text": "History" },
+    { "Key": "MODEL_History_Menu_TT", "Text": "Opens the History tool: the undo history of the loaded model, and the models that keep theirs." },
+    { "Key": "MODEL_ToolWindow_View_Toggle_History", "Text": "History" },
+
+    { "Key": "MODEL_History_Tool_Header", "Text": "History" },
+    { "Key": "MODEL_History_Tool_Hint", "Text": "The undo history of the loaded model, oldest first. Click a step to go back to before it, or click a greyed (undone) step to redo up to it. A model you switch away from keeps its history here, so switching back lets you undo again." },
+
+    { "Key": "MODEL_History_Tool_Steps_Header", "Text": "Steps ({0} of {1})" },
+    { "Key": "MODEL_History_Tool_Steps_Header_TT", "Text": "Done steps, then undone steps in grey. The highlighted step is where the model is now." },
+    { "Key": "MODEL_History_Tool_Empty", "Text": "No edits to {0} yet." },
+    { "Key": "MODEL_History_Tool_No_Model", "Text": "Load a model to see its history." },
+    { "Key": "MODEL_History_Tool_Step_Undo_TT", "Text": "Undoes this step and the {0} steps from here to the latest (this one included)." },
+    { "Key": "MODEL_History_Tool_Step_Redo_TT", "Text": "Redoes the {0} steps up to and including this one." },
+
+    { "Key": "MODEL_History_Tool_Actions_Header", "Text": "Actions" },
+    { "Key": "MODEL_History_Tool_Actions_Header_TT", "Text": "Undo or redo one step." },
+    { "Key": "MODEL_History_Tool_Undo", "Text": "Undo" },
+    { "Key": "MODEL_History_Tool_Undo_TT", "Text": "Undo: {0}" },
+    { "Key": "MODEL_History_Tool_Redo", "Text": "Redo" },
+    { "Key": "MODEL_History_Tool_Redo_TT", "Text": "Redo: {0}" },
+    { "Key": "MODEL_History_Tool_Nothing_TT", "Text": "Nothing to do." },
+
+    { "Key": "MODEL_History_Tool_Kept_Header", "Text": "Kept Models ({0} of {1})" },
+    { "Key": "MODEL_History_Tool_Kept_Header_TT", "Text": "Models switched away from in this view that keep their history. They stay in memory (with their drawables, out of the viewport) until loaded again, unloaded, or dropped to stay within the limit. Saved models are dropped before unsaved ones, oldest first. Dropping one loses only its history: unsaved edits are kept." },
+    { "Key": "MODEL_History_Tool_Kept_Limit_TT", "Text": "How many models this view keeps with their history. 0 keeps none, so switching models clears the history as before." },
+    { "Key": "MODEL_History_Tool_Kept_None", "Text": "None. Edit a model, then load another: the first one is kept here." },
+    { "Key": "MODEL_History_Tool_Kept_Steps", "Text": "{0} steps" },
+    { "Key": "MODEL_History_Tool_Kept_Row_TT", "Text": "{0} undo and redo steps kept. * means unsaved edits." },
+    { "Key": "MODEL_History_Tool_Kept_Load", "Text": "Load" },
+    { "Key": "MODEL_History_Tool_Kept_Load_TT", "Text": "Loads the model here again, with its history and selection." },
+    { "Key": "MODEL_History_Tool_Kept_Forget", "Text": "Forget" },
+    { "Key": "MODEL_History_Tool_Kept_Forget_TT", "Text": "Drops the model's history and frees its memory." },
+    { "Key": "MODEL_History_Tool_Kept_Forget_Unsaved_TT", "Text": "Drops the model's history and frees its memory. Its unsaved edits are kept and can still be saved; only undo is lost." },
+
+    { "Key": "MODEL_FileList_History_Kept", "Text": "[{0} steps kept]" },
+
+    { "Key": "MODEL_History_Restored", "Text": "{0}: its {1} history steps are back." },
+    { "Key": "MODEL_History_Dropped_Limit", "Text": "{0}: dropped its {1} history steps to stay within the kept-models limit (History tool)." },
+    { "Key": "MODEL_History_Dropped_Other_View", "Text": "{0}: dropped its {1} history steps kept in view {2}, as it is loaded in another view." },
+
+    { "Key": "MODEL_History_Step_Other", "Text": "Edit" },
+    { "Key": "MODEL_History_Transform", "Text": "Transform {0}" },
+    { "Key": "MODEL_History_Set_Field", "Text": "Set {0} on {1}" },
+    { "Key": "MODEL_History_Fields", "Text": "{0} fields" },
+    { "Key": "MODEL_History_Field_Unnamed", "Text": "a list entry" },
+    { "Key": "MODEL_History_Compound", "Text": "{0} (+{1} more)" },
+    { "Key": "MODEL_History_Delete", "Text": "Delete {0}" },
+    { "Key": "MODEL_History_Duplicate", "Text": "Duplicate {0}" },
+    { "Key": "MODEL_History_Reorder", "Text": "Reorder {0}" },
+    { "Key": "MODEL_History_Add", "Text": "Add {0}" },
+    { "Key": "MODEL_History_Add_Entry", "Text": "Add an entry to {0} on {1}" },
+    { "Key": "MODEL_History_Remove_Entry", "Text": "Remove an entry from {0} on {1}" },
+    { "Key": "MODEL_History_Reparent", "Text": "Move {0} under {1}" },
+    { "Key": "MODEL_History_Top_Level", "Text": "the top level" },
+    { "Key": "MODEL_History_Objects", "Text": "{0} objects" },
+    { "Key": "MODEL_History_Unnamed", "Text": "(unnamed)" },
+    { "Key": "MODEL_History_Dummy", "Text": "Dummy {0}" },
+    { "Key": "MODEL_History_Mesh", "Text": "Mesh {0}" },
+    { "Key": "MODEL_History_Mesh_Removed", "Text": "a removed mesh" }
+  ]
+}

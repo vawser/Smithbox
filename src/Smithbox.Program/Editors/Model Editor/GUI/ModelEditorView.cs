@@ -52,6 +52,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ResourceListTool ResourceListTool;
     public ModelExportTool ModelExportTool;
     public AssetBrowserTool AssetBrowserTool;
+    public ModelHistoryTool HistoryTool;
 
     // Actions
     public DuplicateAction DuplicateAction;
@@ -75,7 +76,8 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         EntityTypeCache = new(this, project);
 
-        // The action history is cleared whenever the loaded model changes, so every action applies to the loaded model
+        // The history always belongs to the loaded model: switching models parks it with the model it belongs to
+        // (or clears it), so every action applies to the loaded model
         ViewportActionManager.ActionPerformed += MarkLoadedModelDirty;
         ActionManager.ActionPerformed += MarkLoadedModelDirty;
 
@@ -107,6 +109,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         ModelExportTool = new ModelExportTool(this, Project);
         AssetBrowserTool = new AssetBrowserTool(Project, LOC.Get("MODEL_AssetBrowser_Hint"),
             e => SourceList.SelectAndLoadModel(e.ID));
+        HistoryTool = new ModelHistoryTool(this, Project);
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);
@@ -217,18 +220,169 @@ public class ModelEditorView : IEditorView, IActionEventHandler
             return false;
         }
 
-        // Also unloads the model itself when it is being reloaded
-        Selection.SelectedModelWrapper?.Unload();
+        // A model parked in another view gives up its history there, as its objects belong to that view
+        if (wrapper.Parked != null && wrapper.Parked.View != this)
+        {
+            Smithbox.Log(this, LOC.Get("MODEL_History_Dropped_Other_View", wrapper.Name, wrapper.Parked.History.Count,
+                wrapper.Parked.View.ViewIndex));
+
+            wrapper.Parked.View.DiscardParked(wrapper);
+        }
+
+        var current = Selection.SelectedModelWrapper;
+
+        // Switching to another model keeps this one's history when it has any; loading the same model again is a
+        // reload, which drops it
+        if (current != null && current != wrapper && CanPark(current))
+        {
+            ParkModel(current);
+        }
+        else
+        {
+            current?.Unload();
+        }
 
         Selection.SelectedModelWrapper = wrapper;
 
-        ViewportActionManager.Clear();
         ActionManager.Clear();
 
-        wrapper.Load(this);
+        if (wrapper.Parked != null)
+        {
+            UnparkModel(wrapper);
+        }
+        else
+        {
+            ViewportActionManager.Clear();
+
+            wrapper.Load(this);
+        }
+
+        EnforceParkLimit();
 
         return true;
     }
+
+    #region Parking
+    /// <summary>
+    /// Whether switching away from the model keeps it, with its history: it is loaded here, has undo or redo steps,
+    /// and models are kept at all
+    /// </summary>
+    private bool CanPark(ModelWrapper wrapper)
+    {
+        return CFG.Current.ModelEditor_History_Parked_Limit > 0 &&
+               wrapper.Container?.View == this &&
+               (ViewportActionManager.CanUndo() || ViewportActionManager.CanRedo());
+    }
+
+    /// <summary>
+    /// Takes the loaded model out of the view, keeping its objects, history and selection for when it is loaded again
+    /// </summary>
+    private void ParkModel(ModelWrapper wrapper)
+    {
+        var container = wrapper.Container;
+
+        ModelAnimationTool.StopAll();
+
+        // The FLVER is what a save or the save check reads while the objects are parked
+        if (wrapper.FLVER != null)
+        {
+            wrapper.UpdateFLVER();
+        }
+
+        var selection = ViewportSelection.GetSelection().OfType<Entity>().ToList();
+
+        wrapper.Parked = new ParkedModel
+        {
+            View = this,
+            Container = container,
+            History = ViewportActionManager.TakeHistory(),
+            Selection = selection,
+            ParkedAt = System.Diagnostics.Stopwatch.GetTimestamp()
+        };
+
+        Universe.ParkModel(container);
+
+        wrapper.Container = null;
+
+        if (Selection.SelectedModelWrapper == wrapper)
+        {
+            Selection.SelectedModelWrapper = null;
+        }
+    }
+
+    /// <summary>
+    /// Puts a model parked in this view back, with its history and selection
+    /// </summary>
+    private void UnparkModel(ModelWrapper wrapper)
+    {
+        var parked = wrapper.Parked;
+        wrapper.Parked = null;
+
+        wrapper.Container = parked.Container;
+
+        Universe.RestoreParkedModel(wrapper, parked.Container);
+
+        ViewportActionManager.RestoreHistory(parked.History);
+
+        ViewportSelection.ClearSelection();
+
+        foreach (var entity in parked.Selection.Where(e => parked.Container.Objects.Contains(e) ||
+                                                           e == parked.Container.RootObject))
+        {
+            ViewportSelection.AddSelection(entity);
+        }
+
+        Smithbox.Log(this, LOC.Get("MODEL_History_Restored", wrapper.Name, parked.History.Count));
+    }
+
+    /// <summary>
+    /// Drops a model parked in this view: its objects are released and its history is lost. Its edits stay in the
+    /// FLVER, so nothing unsaved is lost.
+    /// </summary>
+    public void DiscardParked(ModelWrapper wrapper)
+    {
+        var parked = wrapper.Parked;
+
+        if (parked == null || parked.View != this)
+            return;
+
+        wrapper.Parked = null;
+
+        Universe.DiscardParkedModel(parked.Container);
+    }
+
+    /// <summary>
+    /// The models parked in this view, oldest first
+    /// </summary>
+    public List<ModelWrapper> GetParkedModels()
+    {
+        return Project.Handler.ModelData?.PrimaryBank?.Models.Values
+            .SelectMany(e => e.Models)
+            .Where(m => m.Parked?.View == this)
+            .OrderBy(m => m.Parked.ParkedAt)
+            .ToList() ?? new();
+    }
+
+    /// <summary>
+    /// Keeps the number of parked models within the limit, dropping saved models before unsaved ones, oldest first.
+    /// Dropping an unsaved one only loses its history: its edits are in the FLVER.
+    /// </summary>
+    private void EnforceParkLimit()
+    {
+        var parked = GetParkedModels();
+        var excess = parked.Count - Math.Max(0, CFG.Current.ModelEditor_History_Parked_Limit);
+
+        if (excess <= 0)
+            return;
+
+        foreach (var wrapper in parked.OrderBy(m => m.IsDirty).ThenBy(m => m.Parked.ParkedAt).Take(excess))
+        {
+            Smithbox.Log(this, LOC.Get("MODEL_History_Dropped_Limit", wrapper.Name, wrapper.Parked.History.Count));
+
+            DiscardParked(wrapper);
+        }
+    }
+    #endregion
 
     /// <summary>
     /// How many selected objects the editing actions can act on: the model root is not one of them
@@ -296,6 +450,11 @@ public class ModelEditorView : IEditorView, IActionEventHandler
             foreach (var model in ownedModels)
             {
                 UnloadModel(model);
+            }
+
+            foreach (var model in GetParkedModels())
+            {
+                DiscardParked(model);
             }
         }
 
