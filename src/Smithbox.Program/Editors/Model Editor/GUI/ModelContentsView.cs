@@ -147,6 +147,19 @@ public class ModelContentsView : IActionEventHandler
 
         GUI.Tooltip(LOC.Get("MODEL_Contents_Node_Hierarchy_TT", hierarchyMode));
 
+        // Refresh Viewport: spins while a preview of the edits is on its way
+        ImGui.SameLine();
+
+        var isPreviewPending = wrapper?.Container?.IsPreviewPending ?? false;
+
+        ImGui.BeginDisabled(wrapper?.Container == null);
+        if (ImGui.Button($"{(isPreviewPending ? Icons.Spinner : Icons.Refresh)}##refreshViewportFromEdits"))
+        {
+            View.RefreshViewportFromEdits();
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("MODEL_Editor_Viewport_Refresh_TT"));
+
         ImGui.EndChild();
     }
 

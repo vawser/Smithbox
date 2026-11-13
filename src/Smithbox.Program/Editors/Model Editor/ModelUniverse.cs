@@ -78,6 +78,12 @@ public class ModelUniverse : IUniverse
         modelWrapper.Container = newContainer;
         HasLoadedModel = true;
 
+        // A model loaded again with unsaved edits is drawn from them, not from the stored file
+        if (modelWrapper.IsDirty)
+        {
+            newContainer.MarkPreviewStale(immediate: true);
+        }
+
         // The model of a composite character is only a skeleton, so the rest of it comes from the part models
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
             CFG.Current.ModelEditor_ModelLoad_Parts && CharacterComposition.IsComposite(modelWrapper.Name))

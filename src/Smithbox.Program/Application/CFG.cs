@@ -705,6 +705,9 @@ public class CFG
 
     public bool ModelEditor_Contents_Auto_Open_Tree = false;
     public bool ModelEditor_Contents_NodeNameInMeshEntry = true;
+
+    // Redraw the model from its edited data shortly after each edit, rather than from the stored file
+    public bool ModelEditor_Viewport_Live_Preview = true;
     public bool ModelEditor_Contents_Node_Hierarchy = false;
 
     public bool ModelEditor_ViewMeshes = true;

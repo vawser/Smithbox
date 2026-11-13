@@ -143,9 +143,30 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
     private void MarkLoadedModelDirty()
     {
-        if (Selection.SelectedModelWrapper != null)
+        var wrapper = Selection.SelectedModelWrapper;
+
+        if (wrapper != null)
         {
-            Selection.SelectedModelWrapper.IsDirty = true;
+            wrapper.IsDirty = true;
+
+            // Redraw the model from its edits once they pause
+            if (CFG.Current.ModelEditor_Viewport_Live_Preview && wrapper.Container?.View == this)
+            {
+                wrapper.Container.MarkPreviewStale();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Redraws the loaded model from its edited data now, whether or not the live preview is on
+    /// </summary>
+    public void RefreshViewportFromEdits()
+    {
+        var wrapper = Selection.SelectedModelWrapper;
+
+        if (wrapper?.Container?.View == this)
+        {
+            wrapper.Container.MarkPreviewStale(immediate: true);
         }
     }
 
@@ -277,6 +298,14 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         // Done before the panels are drawn, as the File List that requests it may not be visible
         FileList.ProcessPendingLoad();
+
+        // Makes and swaps in the preview of the edited model
+        var loadedWrapper = Selection.SelectedModelWrapper;
+
+        if (loadedWrapper?.Container?.View == this)
+        {
+            loadedWrapper.Container.UpdatePreview(loadedWrapper);
+        }
 
         if (CFG.Current.Interface_ModelEditor_EditorDisplayType is EditorDisplayType.Windows)
         {

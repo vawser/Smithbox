@@ -80,6 +80,7 @@ public class ModelAnimationTool
     {
         ModelContainer container = wrapper.Container;
         MeshRenderableProxy? characterMesh = container.CharacterMesh;
+        var meshGeneration = container.MeshGeneration;
 
         return new AnimationTarget(
             container,
@@ -89,9 +90,10 @@ public class ModelAnimationTool
             wrapper.Parent.Path,
             () => GetMeshes(container),
             // Loading another model discards the container, and the meshes along with it.
-            // Changing the equipment of a character replaces its part meshes.
+            // Changing the equipment of a character replaces its part meshes, and a preview of the edited model
+            // replaces the model's own meshes.
             () => wrapper.Container == container && View.Selection.SelectedModelWrapper == wrapper &&
-                  container.CharacterMesh == characterMesh,
+                  container.CharacterMesh == characterMesh && container.MeshGeneration == meshGeneration,
             animator => UpdateMarkers(container, animator),
             characterMesh != null
                 ? CharacterComposition.GetAnimatedParts(Project, container.CharacterAppearance, characterMesh)

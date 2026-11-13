@@ -49,6 +49,30 @@
       "Text": "If enabled, the linked node name is displayed in the mesh entry name."
     },
     {
+      "Key": "MODEL_Editor_Option_Viewport_Header",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "MODEL_Editor_Viewport_Live_Preview",
+      "Text": "Live Preview"
+    },
+    {
+      "Key": "MODEL_Editor_Viewport_Live_Preview_TT",
+      "Text": "If enabled, the model is redrawn from its edits shortly after each change, so the viewport shows the model as it would be saved.\nIf disabled, the viewport shows the stored model until Refresh Viewport is used."
+    },
+    {
+      "Key": "MODEL_Editor_Viewport_Refresh",
+      "Text": "Refresh Viewport"
+    },
+    {
+      "Key": "MODEL_Editor_Viewport_Refresh_TT",
+      "Text": "Redraws the loaded model from its edits now."
+    },
+    {
+      "Key": "MODEL_Preview_Write_Failed",
+      "Text": "Couldn't build the viewport preview of {0}: the edited model can't be written. The viewport shows the last preview."
+    },
+    {
       "Key": "MODEL_Editor_Invalid_Save_Project_Type_DES",
       "Text": "Model Editor is not supported for DES."
     },

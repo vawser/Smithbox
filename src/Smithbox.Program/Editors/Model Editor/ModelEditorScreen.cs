@@ -267,6 +267,28 @@ public class ModelEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
+            // Viewport
+            if (ImGui.BeginMenu($"{LOC.Get("MODEL_Editor_Option_Viewport_Header")}##viewportMenuHeader"))
+            {
+                // Live Preview
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Viewport_Live_Preview")}##livePreviewToggle"))
+                {
+                    CFG.Current.ModelEditor_Viewport_Live_Preview = !CFG.Current.ModelEditor_Viewport_Live_Preview;
+                }
+                GUI.Tooltip(LOC.Get("MODEL_Editor_Viewport_Live_Preview_TT"));
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Viewport_Live_Preview);
+
+                // Refresh Viewport
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_Editor_Viewport_Refresh")}##refreshViewport", false,
+                    ViewHandler.ActiveView?.Selection.SelectedModelWrapper?.Container != null))
+                {
+                    ViewHandler.ActiveView?.RefreshViewportFromEdits();
+                }
+                GUI.Tooltip(LOC.Get("MODEL_Editor_Viewport_Refresh_TT"));
+
+                ImGui.EndMenu();
+            }
+
             ImGui.EndMenu();
         }
     }

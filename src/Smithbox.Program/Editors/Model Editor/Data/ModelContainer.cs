@@ -166,7 +166,16 @@ public class ModelContainer : ObjectContainer
             case FLVER2.Mesh cloneMesh:
                 if (MeshSourceIndices.TryGetValue(original, out var sourceIndex))
                 {
-                    AssignMeshDrawable(clone, wrapper, sourceIndex);
+                    // Drawn from the resource the original is drawn from, which may be the edited preview
+                    if (MeshResource != null)
+                    {
+                        LoadMeshFrom(clone, MeshResource, sourceIndex);
+                    }
+                    else
+                    {
+                        AssignMeshDrawable(clone, wrapper, sourceIndex);
+                    }
+
                     MeshSourceIndices[clone] = sourceIndex;
                 }
 
@@ -477,7 +486,179 @@ public class ModelContainer : ObjectContainer
                 MeshProviderCache.InvalidateUidEntries(obj.EntityCacheUID);
             }
         }
+
+        ReleasePreviews();
     }
+
+    #region Live Preview
+    /// <summary>
+    /// The model resource the mesh drawables are read from: the stored file when the model is loaded, and a preview
+    /// built from the edited model once one has been made
+    /// </summary>
+    public ResourceHandle<FlverResource> MeshResource { get; private set; }
+
+    /// <summary>
+    /// Counts the times the mesh drawables were replaced, so things holding on to them (the animation preview) can
+    /// tell that they have gone
+    /// </summary>
+    public int MeshGeneration { get; private set; }
+
+    // A preview being loaded, which replaces the drawables once it has arrived
+    private ResourceHandle<FlverResource> _pendingPreview;
+
+    // Every preview made for this model, released when it is unloaded
+    private readonly List<ResourceHandle<FlverResource>> _previews = new();
+
+    private int _previewCount;
+
+    // When the model was last edited without a preview made since, or null if the drawables are up to date
+    private DateTime? _previewStaleSince;
+
+    // Edits keep coming while a value is dragged, so a preview is only made once they pause
+    private static readonly TimeSpan PreviewDelay = TimeSpan.FromSeconds(0.4);
+
+    public bool IsPreviewPending => _pendingPreview != null || _previewStaleSince != null;
+
+    /// <summary>
+    /// Asks for a preview of the edited model. It is made once the edits pause, unless <paramref name="immediate"/>.
+    /// </summary>
+    public void MarkPreviewStale(bool immediate = false)
+    {
+        _previewStaleSince = immediate ? DateTime.MinValue : DateTime.Now;
+    }
+
+    /// <summary>
+    /// Called every frame: makes a preview once the edits have paused, and swaps the drawables over to it once it
+    /// has loaded.
+    /// </summary>
+    public void UpdatePreview(ModelWrapper wrapper)
+    {
+        if (_previewStaleSince is { } staleSince && DateTime.Now - staleSince >= PreviewDelay &&
+            !ImGuiIsEditing())
+        {
+            _previewStaleSince = null;
+            RequestPreview(wrapper);
+        }
+
+        if (_pendingPreview != null && _pendingPreview.IsLoaded)
+        {
+            SwapToPreview(_pendingPreview);
+            _pendingPreview = null;
+        }
+    }
+
+    // A field still being dragged or typed in, or the gizmo held: the edit isn't finished yet
+    private static bool ImGuiIsEditing()
+    {
+        return Hexa.NET.ImGui.ImGui.IsAnyItemActive() || Hexa.NET.ImGui.ImGui.IsMouseDown(Hexa.NET.ImGui.ImGuiMouseButton.Left);
+    }
+
+    /// <summary>
+    /// Writes the edited model the way a save would and loads the result as a new resource, which the drawables
+    /// move to once it has loaded. Returns false if there is nothing to draw it with or it couldn't be written.
+    /// </summary>
+    public bool RequestPreview(ModelWrapper wrapper)
+    {
+        if (Smithbox.Instance.CurrentBackend is not RenderingBackend.Vulkan || !CFG.Current.Viewport_Enable_Rendering)
+            return false;
+
+        if (wrapper?.FLVER == null || wrapper.Container != this)
+            return false;
+
+        // The FLVER's lists follow the objects, so the preview has the meshes in the order they are listed here
+        wrapper.UpdateFLVER();
+
+        byte[] data;
+
+        try
+        {
+            data = Flver0Converter.WriteEditorFlver(Project, wrapper.FLVER);
+        }
+        catch (Exception e)
+        {
+            // Usually an edit that leaves the model unwritable (an index out of range). The last preview stays.
+            Smithbox.LogError(this, LOC.Get("MODEL_Preview_Write_Failed", wrapper.Name), e);
+            return false;
+        }
+
+        // Each preview has a name of its own, so the drawables of the last one keep working until the swap
+        _previewCount++;
+        var name = $"modeleditorpreview_{View.ViewIndex}_{wrapper.Name}_{_previewCount}.flver";
+
+        var handle = ResourceManager.DefaultPool.Find<FlverResource>(name);
+
+        if (_pendingPreview != null)
+        {
+            ReleasePreview(_pendingPreview);
+        }
+
+        _pendingPreview = handle;
+        _previews.Add(handle);
+
+        var options = new LoadOptions
+        {
+            JobName = "Model Preview",
+            Types = ResourceType.Flver,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            HideFromLoadWindow = true
+        };
+
+        ResourceManager.DefaultPool.LoadContainerData(name, data, options);
+
+        return true;
+    }
+
+    /// <summary>
+    /// Moves every mesh's drawable to the preview: the preview was written from the meshes in their current order,
+    /// so each mesh is the submesh at its position in the list.
+    /// </summary>
+    private void SwapToPreview(ResourceHandle<FlverResource> preview)
+    {
+        var previous = MeshResource;
+
+        for (var i = 0; i < Meshes.Count; i++)
+        {
+            LoadMeshFrom(Meshes[i], preview, i);
+            MeshSourceIndices[Meshes[i]] = i;
+        }
+
+        MeshResource = preview;
+        MeshGeneration++;
+
+        // The stored model is left to the resource manager, as other things may draw it too
+        if (previous != null && _previews.Contains(previous))
+        {
+            ReleasePreview(previous);
+        }
+
+        // Textures are bound to the materials of the new resource
+        View.Universe.ScheduleTextureRefresh();
+    }
+
+    private void ReleasePreview(ResourceHandle<FlverResource> handle)
+    {
+        _previews.Remove(handle);
+
+        MeshProviderCache.InvalidateMeshProvider(handle);
+
+        // Deleted meshes can still hold a drawable of an older preview, in case the delete is undone, so it is
+        // only unloaded if nothing uses it. Anything left is picked up by the unused resource sweep.
+        handle.UnloadIfUnused();
+    }
+
+    private void ReleasePreviews()
+    {
+        _pendingPreview = null;
+        _previewStaleSince = null;
+
+        foreach (var handle in _previews.ToList())
+        {
+            ReleasePreview(handle);
+        }
+
+        MeshResource = null;
+    }
+    #endregion
 
     public void AssignMeshDrawable(Entity ent, ModelWrapper wrapper, int index = -1)
     {
@@ -587,6 +768,21 @@ public class ModelContainer : ObjectContainer
     {
         var handle = ResourceManager.DefaultPool.Find<FlverResource>(resource.Name);
 
+        // The stored model, until a preview of the edited one replaces it
+        if (index != -1)
+        {
+            MeshResource ??= handle;
+        }
+
+        LoadMeshFrom(ent, handle, index);
+
+        // The file holding the mesh is loaded by the universe's model jobs, in the background, and the drawable
+        // fills in once it arrives. Waiting for it here read the whole binder on the UI thread for the first mesh,
+        // and left the background job with nothing to do.
+    }
+
+    private void LoadMeshFrom(Entity ent, ResourceHandle<FlverResource> handle, int index)
+    {
         // Build only this entity's submesh. Building all of them and discarding the rest created
         // renderables that outlived the discard (and kept the other entities' meshes drawn).
         MeshRenderableProxy mesh = index != -1
@@ -600,10 +796,6 @@ public class ModelContainer : ObjectContainer
         mesh.SetSelectable(ent);
 
         ent.RenderSceneMesh = mesh;
-
-        // The file holding the mesh is loaded by the universe's model jobs, in the background, and the drawable
-        // fills in once it arrives. Waiting for it here read the whole binder on the UI thread for the first mesh,
-        // and left the background job with nothing to do.
     }
 
     public void LoadCollision(Entity ent, ResourceDescriptor resource, bool isConnectCollision = false)
