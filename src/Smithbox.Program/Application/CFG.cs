@@ -198,6 +198,12 @@ public class CFG
     public bool MapEditor_Map_List_Display_Map_Aliases = true;
     public bool MapEditor_Map_List_Enable_Load_on_Double_Click = false;
 
+    // Tile outlines (ER, NR): toggled in the Map List header, colours by tile size (0-255)
+    public bool MapEditor_Display_Tile_Outlines = false;
+    public Vector3 MapEditor_Tile_Outline_Small_Color = new Vector3(60, 200, 255);
+    public Vector3 MapEditor_Tile_Outline_Medium_Color = new Vector3(255, 210, 60);
+    public Vector3 MapEditor_Tile_Outline_Large_Color = new Vector3(235, 90, 200);
+
     public bool MapEditor_Map_Contents_Display_Character_Aliases = true;
     public bool MapEditor_Map_Contents_Display_Asset_Aliases = true;
     public bool MapEditor_Map_Contents_Display_Map_Piece_Aliases = true;

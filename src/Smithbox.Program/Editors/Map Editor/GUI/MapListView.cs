@@ -126,6 +126,9 @@ public class MapListView : IActionEventHandler
             }
             GUI.Tooltip(LOC.Get("MAP_MapInfo_Open_TT", InputManager.GetHint(KeybindID.MapEditor_Toggle_World_Map_Menu)));
 
+            // Tile outlines in the viewport
+            View.TileOutlineTool.DisplayHeaderButton();
+
             if(FilteredMapList.Count > 0)
             {
                 ImGui.SameLine();

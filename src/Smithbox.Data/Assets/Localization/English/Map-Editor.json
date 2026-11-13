@@ -337,6 +337,30 @@
       "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you asked for is made the active map, unless you pick another one meanwhile."
     },
     {
+      "Key": "MAP_Tile_Outline_Show_TT",
+      "Text": "Show tile outlines: each loaded overworld tile's area is outlined in the viewport, with its map ID and name along the top edge. Small, medium and large tiles have their own colours.\n\nRight-click to change the colours."
+    },
+    {
+      "Key": "MAP_Tile_Outline_Hide_TT",
+      "Text": "Hide tile outlines.\n\nRight-click to change the colours."
+    },
+    {
+      "Key": "MAP_Tile_Outline_Colors_Header",
+      "Text": "Tile Outline Colours"
+    },
+    {
+      "Key": "MAP_Tile_Outline_Small_Color",
+      "Text": "Small tile (_00, 256 m)"
+    },
+    {
+      "Key": "MAP_Tile_Outline_Medium_Color",
+      "Text": "Medium tile (_01, 512 m)"
+    },
+    {
+      "Key": "MAP_Tile_Outline_Large_Color",
+      "Text": "Large tile (_02, 1024 m)"
+    },
+    {
       "Key": "MAP_List_Load_Maps",
       "Text": "Load Maps ({0})"
     },

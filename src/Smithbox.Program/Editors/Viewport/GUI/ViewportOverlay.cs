@@ -79,6 +79,9 @@ public class ViewportOverlay
             // The Ruler tool's distance
             mapUniverse.View.RulerTool.DrawLabels(Parent);
 
+            // The tile outlines' map IDs and names
+            mapUniverse.View.TileOutlineTool.DrawLabels(Parent);
+
             // The Create at Point marker
             mapUniverse.View.CreateAction.CreateAtPoint.DrawOverlay(Parent);
 

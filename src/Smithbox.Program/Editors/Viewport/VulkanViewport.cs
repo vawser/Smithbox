@@ -456,6 +456,12 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // The Map List's tile outlines (takes no clicks)
+        if (Owner is MapUniverse tileUniverse)
+        {
+            tileUniverse.View.TileOutlineTool.Update(this);
+        }
+
         // And placing a point in the Create tool's Create at Point tab
         if (Owner is MapUniverse createUniverse &&
             createUniverse.View.CreateAction.CreateAtPoint.HandleViewportInput(this, canPick))

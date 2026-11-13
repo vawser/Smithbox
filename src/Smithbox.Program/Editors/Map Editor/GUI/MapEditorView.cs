@@ -131,6 +131,7 @@ public class MapEditorView : IEditorView
     public CollisionEditorTool CollisionEditorTool;
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
+    public MapTileOutlineTool TileOutlineTool;
     public FirstPersonCollisionWorld FirstPersonCollision;
     public FirstPersonTool FirstPersonTool;
     public MapExtractionTool MapExtractionTool;
@@ -239,6 +240,7 @@ public class MapEditorView : IEditorView
         CollisionEditorTool = new CollisionEditorTool(this, project);
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
+        TileOutlineTool = new MapTileOutlineTool(this, project);
         FirstPersonCollision = new FirstPersonCollisionWorld(this, project);
         FirstPersonTool = new FirstPersonTool(this, project);
         MapExtractionTool = new MapExtractionTool(this, project);
