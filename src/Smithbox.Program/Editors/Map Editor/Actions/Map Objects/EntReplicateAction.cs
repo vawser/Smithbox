@@ -17,11 +17,12 @@ public class EntReplicateAction : ViewportAction
 {
     private MapEditorView View;
 
-    private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
-
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
+
+    // The source of each clone, by the same index as Clones, so a redo can put each back where it went
+    private readonly List<MsbEntity> CloneSources = new();
 
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
@@ -68,163 +69,169 @@ public class EntReplicateAction : ViewportAction
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        var clonesCached = Clones.Count() > 0;
+        // A redo puts back the clones of the first execute as they were: same names, IDs and transforms (the square's
+        // side counters are used up, and the scramble is random, so recomputing them would give other objects)
+        if (Clones.Count > 0)
+        {
+            for (var i = 0; i < Clones.Count; i++)
+            {
+                var map = CloneMaps[i] as MapContainer;
 
-        var objectnames = new Dictionary<string, HashSet<string>>();
-        Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
+                Place(CloneSources[i], Clones[i], map);
+
+                Clones[i].AssignDrawable();
+                Clones[i].UpdateRenderModel();
+
+                if (Clones[i].RenderSceneMesh != null)
+                {
+                    Clones[i].RenderSceneMesh.RenderSelectionOutline = true;
+                    Clones[i].RenderSceneMesh.SetSelectable(Clones[i]);
+                    Clones[i].RenderSceneMesh.AutoRegister = true;
+                    Clones[i].RenderSceneMesh.Register();
+                }
+
+                MapContainer.MarkEntityDirty(map, Clones[i]);
+            }
+
+            AtlasEdit?.Redo();
+            SelectClones();
+
+            return ActionEvent.ObjectAddedRemoved;
+        }
+
+        // The names in use in each map's list, so each copy gets one of its own (MsbNaming)
+        var nameSets = new Dictionary<(MapContainer, Type), HashSet<string>>();
 
         for (var k = 0; k < iterationCount; k++)
         {
             for (var i = 0; i < Clonables.Count(); i++)
             {
-                if (Clonables[i].MapID == null)
+                var source = Clonables[i];
+
+                if (source.MapID == null)
                 {
                     Smithbox.LogError(this,
-                        LOC.Get("MAP_Actions_Duplicate_Failed", Clonables[i].Name));
+                        LOC.Get("MAP_Actions_Duplicate_Failed", source.Name));
 
                     continue;
                 }
 
-                MapContainer map;
-                if (TargetMap != null)
+                MapContainer map = TargetMap != null
+                    ? View.Selection.GetMapContainerFromMapID(TargetMap.Name)
+                    : View.Selection.GetMapContainerFromMapID(source.MapID);
+
+                if (map == null)
+                    continue;
+
+                var key = (map, MsbNaming.GetNameScope(source.WrappedObject));
+
+                if (!nameSets.TryGetValue(key, out var names))
                 {
-                    map = View.Selection.GetMapContainerFromMapID(TargetMap.Name);
+                    names = MsbNaming.GetNames(map, source.WrappedObject);
+                    nameSets[key] = names;
                 }
-                else
+
+                MsbEntity newobj = (MsbEntity)source.Clone();
+                newobj.Name = MsbNaming.MakeUnique(source.Name, names, alwaysNew: true);
+
+                Place(source, newobj, map);
+
+                newobj.AssignDrawable();
+                newobj.UpdateRenderModel();
+
+                if (newobj.RenderSceneMesh != null)
                 {
-                    map = View.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
+                    newobj.RenderSceneMesh.RenderSelectionOutline = true;
+                    newobj.RenderSceneMesh.SetSelectable(newobj);
                 }
 
-                if (map != null)
+                MapContainer.MarkEntityDirty(map, newobj);
+
+                Clones.Add(newobj);
+                CloneMaps.Add(map);
+                CloneSources.Add(source);
+
+                // Apply other property changes
+                if (CFG.Current.Replicator_Increment_Entity_ID)
                 {
-                    // Get list of names that exist so our duplicate names don't trample over them
-                    if (!objectnames.ContainsKey(Clonables[i].MapID))
-                    {
-                        var nameset = new HashSet<string>();
-                        foreach (Entity n in map.Objects)
-                        {
-                            nameset.Add(n.Name);
-                        }
-
-                        objectnames.Add(Clonables[i].MapID, nameset);
-                    }
-
-                    MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
-
-                    GenerateUniqueName(Clonables[i], newobj, objectnames);
-
-                    if (TargetMap == null)
-                    {
-                        map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
-                    }
-                    else
-                    {
-                        map.Objects.Insert(map.Objects.IndexOf(Clonables[i]) + 1, newobj);
-                        //map.Objects.Add(newobj);
-                    }
-
-                    if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
-                    {
-                        TargetBTL.AddChild(newobj);
-                    }
-                    else if (TargetMap != null)
-                    {
-                        // Duping to a targeted map, update parent.
-                        if (TargetMap.MapOffsetNode != null)
-                        {
-                            TargetMap.MapOffsetNode.AddChild(newobj);
-                        }
-                        else
-                        {
-                            TargetMap.RootObject.AddChild(newobj);
-                        }
-                    }
-                    else if (Clonables[i].Parent != null)
-                    {
-                        var idx = Clonables[i].Parent.ChildIndex(Clonables[i]);
-                        Clonables[i].Parent.AddChild(newobj, idx + 1);
-                    }
-
-                    if (newobj is MsbEntity msbEnt)
-                    {
-                        msbEnt.AssignDrawable();
-                    }
-                    newobj.UpdateRenderModel();
-
-                    if (newobj.RenderSceneMesh != null)
-                    {
-                        newobj.RenderSceneMesh.RenderSelectionOutline = true;
-                        newobj.RenderSceneMesh.SetSelectable(newobj);
-                    }
-
-                    // Marked on redo as well, as the clones are re-added to the map
-                    MapContainer.MarkEntityDirty(map, newobj);
-
-                    if (!clonesCached)
-                    {
-                        Clones.Add(newobj);
-                        CloneMaps.Add(map);
-                    }
-                    else
-                    {
-                        if (Clones[i].RenderSceneMesh != null)
-                        {
-                            Clones[i].RenderSceneMesh.AutoRegister = true;
-                            Clones[i].RenderSceneMesh.Register();
-                        }
-                    }
-
-                    // Apply other property changes
-                    if (CFG.Current.Replicator_Increment_Entity_ID)
-                    {
-                        MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
-                    }
-                    if (CFG.Current.Replicator_Increment_InstanceID)
-                    {
-                        MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
-                    }
-                    if (CFG.Current.Replicator_Increment_PartNames)
-                    {
-                        MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
-                    }
-                    if (CFG.Current.Replicator_Clear_Entity_ID)
-                    {
-                        MapEditorActionHelper.ClearEntityID(View, newobj, map);
-                    }
-                    if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
-                    {
-                        MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
-                    }
-
-                    // Apply transform changes
-                    ApplyReplicateTransform(newobj, k);
-                    ApplyScrambleTransform(newobj);
-
+                    MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
                 }
+                if (CFG.Current.Replicator_Increment_InstanceID)
+                {
+                    MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
+                }
+                if (CFG.Current.Replicator_Increment_PartNames)
+                {
+                    MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
+                }
+                if (CFG.Current.Replicator_Clear_Entity_ID)
+                {
+                    MapEditorActionHelper.ClearEntityID(View, newobj, map);
+                }
+                if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
+                {
+                    MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
+                }
+
+                // Apply transform changes
+                ApplyReplicateTransform(newobj, k);
+                ApplyScrambleTransform(newobj);
             }
         }
 
-        if (AtlasEdit == null)
-        {
-            AtlasEdit = LightAtlasEdit.ForNewParts(Clones, CloneMaps);
-        }
-        else
-        {
-            AtlasEdit.Redo();
-        }
+        AtlasEdit = LightAtlasEdit.ForNewParts(Clones, CloneMaps);
 
+        SelectClones();
+
+        return ActionEvent.ObjectAddedRemoved;
+    }
+
+    private void SelectClones()
+    {
         View.ViewportSelection.ClearSelection();
         foreach (MsbEntity c in Clones)
         {
             View.ViewportSelection.AddSelection(c);
         }
+    }
 
-        return ActionEvent.ObjectAddedRemoved;
+    /// <summary>
+    /// Puts the clone in the map's object list straight after its source (or at the end, if the source isn't in
+    /// that map, rather than at index 0, ahead of every other object) and under its parent
+    /// </summary>
+    private void Place(MsbEntity source, MsbEntity clone, MapContainer map)
+    {
+        var sourceIndex = map.Objects.IndexOf(source);
+        map.Objects.Insert(sourceIndex >= 0 ? sourceIndex + 1 : map.Objects.Count, clone);
+
+        if (TargetBTL != null && clone.WrappedObject is BTL.Light)
+        {
+            TargetBTL.AddChild(clone);
+        }
+        else if (TargetMap != null)
+        {
+            // Duping to a targeted map, update parent. The container resolved by ID is used, as the one passed in
+            // may be from an earlier load of the map.
+            if (map.MapOffsetNode != null)
+            {
+                map.MapOffsetNode.AddChild(clone);
+            }
+            else
+            {
+                map.RootObject.AddChild(clone);
+            }
+        }
+        else if (source.Parent != null)
+        {
+            var idx = source.Parent.ChildIndex(source);
+            source.Parent.AddChild(clone, idx + 1);
+        }
     }
 
     private void ApplyReplicateTransform(MsbEntity sel, int iteration)
     {
-        if (sel.WrappedObject is not IMsbPart or IMsbRegion)
+        // Parenthesised: "is not IMsbPart or IMsbRegion" reads as "(not a part) or a region", which skipped regions
+        if (sel.WrappedObject is not (IMsbPart or IMsbRegion))
             return;
 
         Transform objT = sel.GetLocalTransform();
@@ -261,14 +268,16 @@ public class EntReplicateAction : ViewportAction
 
         if (CFG.Current.Replicator_Mode_Circle)
         {
-            double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
+            // 360.0: an int division gave uneven spacing for counts that do not divide 360
+            double angleIncrement = 360.0 / CFG.Current.Replicator_Circle_Size;
 
             double radius = CFG.Current.Replicator_Circle_Radius;
             double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
-            double x = radius * Math.Cos(rad) * 180 / Math.PI;
-            double z = radius * Math.Sin(rad) * 180 / Math.PI;
+            // The radius is a length; it was multiplied by 180/pi as if it were an angle, putting objects 57 times too far out
+            double x = radius * Math.Cos(rad);
+            double z = radius * Math.Sin(rad);
 
             newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
@@ -344,14 +353,16 @@ public class EntReplicateAction : ViewportAction
 
         if (CFG.Current.Replicator_Mode_Sphere)
         {
-            double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
+            // 360.0: an int division gave uneven spacing for counts that do not divide 360
+            double angleIncrement = 360.0 / CFG.Current.Replicator_Circle_Size;
 
             double radius = CFG.Current.Replicator_Circle_Radius;
             double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
-            double x = radius * Math.Cos(rad) * 180 / Math.PI;
-            double z = radius * Math.Sin(rad) * 180 / Math.PI;
+            // The radius is a length; it was multiplied by 180/pi as if it were an angle, putting objects 57 times too far out
+            double x = radius * Math.Cos(rad);
+            double z = radius * Math.Sin(rad);
 
             newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
@@ -477,49 +488,5 @@ public class EntReplicateAction : ViewportAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    private void GenerateUniqueName(MsbEntity source, MsbEntity clone, Dictionary<string, HashSet<string>> objectnames)
-    {
-        if (source.Name == null)
-        {
-            clone.Name = "";
-            objectnames[source.MapID].Add(clone.Name);
-        }
-        else
-        {
-            Match idmatch = TrailIDRegex.Match(source.Name);
-            if (idmatch.Success)
-            {
-                var idstring = idmatch.Result("${id}");
-                var id = int.Parse(idstring);
-                var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
-                var newid = idstring;
-
-                while (objectnames[source.MapID].Contains(baseName + newid))
-                {
-                    id++;
-                    newid = id.ToString("D" + idstring.Length);
-                }
-
-                clone.Name = baseName + newid;
-                objectnames[source.MapID].Add(clone.Name);
-            }
-            else
-            {
-                var idstring = "0001";
-                var id = int.Parse(idstring);
-                var newid = idstring;
-
-                while (objectnames[source.MapID].Contains(source.Name + "_" + newid))
-                {
-                    id++;
-                    newid = id.ToString("D" + idstring.Length);
-                }
-
-                clone.Name = source.Name + "_" + newid;
-                objectnames[source.MapID].Add(clone.Name);
-            }
-        }
     }
 }

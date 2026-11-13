@@ -524,6 +524,26 @@ public class PrefabTool
             return;
         }
 
+        // Before the first object goes in: the prefix alone doesn't keep a second import of the same prefab (or one
+        // with an empty prefix) apart from what the map already has, so clashing names are numbered on, with the
+        // references within the prefab following. Done here on the UI thread, where the map can't change under it.
+        if (action.AddedCount == 0)
+        {
+            var renamed = MsbNaming.MakeUniqueWithReferences(
+                action.Entities.Select(e => e.WrappedObject as SoulsFormats.IMsbEntry).ToList(), ActiveImport.Map);
+
+            if (renamed > 0)
+            {
+                // The entities cache their names
+                foreach (var entity in action.Entities)
+                {
+                    entity.Name = (entity.WrappedObject as SoulsFormats.IMsbEntry)?.Name ?? entity.Name;
+                }
+
+                Smithbox.Log<PrefabTool>(LOC.Get("MAP_Prefab_Import_Renamed", ActiveImport.Name, renamed));
+            }
+        }
+
         var finished = action.ExecuteStep(ImportFrameBudget);
 
         ResourceLoadTracker.SetTaskProgress(ActiveImport.ProgressName, action.AddedCount, action.TotalCount);

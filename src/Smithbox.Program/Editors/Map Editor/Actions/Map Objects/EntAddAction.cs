@@ -28,6 +28,11 @@ public class EntAddAction : ViewportAction
     public int AddedCount => NextIndex;
     public int TotalCount => Added.Count;
 
+    /// <summary>
+    /// The objects the action adds
+    /// </summary>
+    public IReadOnlyList<MsbEntity> Entities => Added;
+
     public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects, Entity parent)
     {
         View = view;

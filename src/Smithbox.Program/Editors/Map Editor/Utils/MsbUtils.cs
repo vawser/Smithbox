@@ -116,12 +116,17 @@ public static class MsbUtils
         }
     }
 
+    /// <summary>
+    /// Whether a reference holding <paramref name="name" /> of <paramref name="refType" /> points at the entry. The
+    /// attribute's list counts (parts, regions or events), not its exact subtype, as SoulsFormats resolves it
+    /// (see MsbNaming.CanReferTo): a DS1 object's CollisionName may name a map piece.
+    /// </summary>
     public static bool Matches(string name, Type refType, IMsbEntry entry)
     {
         if (entry == null)
             return false;
 
-        return entry.Name == name && refType.IsAssignableFrom(entry.GetType());
+        return entry.Name == name && MsbNaming.CanReferTo(refType, entry);
     }
 
     // Reading attributes is slow, and a type's references never change

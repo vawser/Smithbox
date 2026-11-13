@@ -401,11 +401,22 @@ public class CreateAction
         MsbEntity obj = new(View.Universe, map, newent, etype);
 
         // The type's default name is a placeholder (ER assets are all "AEGxxx_xxx_xxxx"), or empty, so each new
-        // object is given one of its own in its list, as name references need
+        // object is given one of its own in its list, as name references need. A part is named from its model,
+        // the game's convention, as Create at Point and Mass Create do (with its InstanceID in ER and NR).
         if (obj.SupportsName)
         {
-            var baseName = string.IsNullOrEmpty(obj.Name) ? typ.Name : obj.Name;
-            obj.Name = MsbNaming.MakeUnique(baseName, MsbNaming.GetNames(map, newent));
+            var names = MsbNaming.GetNames(map, newent);
+
+            if (newent is IMsbPart part && !string.IsNullOrEmpty(part.ModelName))
+            {
+                new MassCreateTool.InstanceIdTracker(Project.Descriptor.ProjectType, map).Assign(newent, part.ModelName, names);
+                obj.Name = part.Name;
+            }
+            else
+            {
+                var baseName = string.IsNullOrEmpty(obj.Name) ? typ.Name : obj.Name;
+                obj.Name = MsbNaming.MakeUnique(baseName, names);
+            }
         }
 
         parent ??= map.RootObject;

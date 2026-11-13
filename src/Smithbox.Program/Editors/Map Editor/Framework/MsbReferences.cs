@@ -41,37 +41,14 @@ public readonly record struct ReferenceSlot(Entity Referrer, PropertyInfo Proper
     /// </summary>
     public bool CanReferTo(Entity entity)
     {
-        if (entity?.WrappedObject == null)
-            return false;
-
-        if (ReferenceType == null)
-            return true;
-
-        var scope = ListOf(ReferenceType);
-
-        return scope != null ? scope.IsInstanceOfType(entity.WrappedObject) : ReferenceType.IsInstanceOfType(entity.WrappedObject);
+        return MsbNaming.CanReferTo(ReferenceType, entity?.WrappedObject);
     }
 
     /// <summary>
     /// The MSB list (parts, regions or events) the name is looked up in, or null if it isn't one of those (or the
     /// field names no type)
     /// </summary>
-    public Type TargetList => ReferenceType == null ? null : ListOf(ReferenceType);
-
-    /// <summary>The MSB list (parts, regions or events) a type belongs to, or null for anything else</summary>
-    private static Type ListOf(Type type)
-    {
-        if (typeof(IMsbPart).IsAssignableFrom(type))
-            return typeof(IMsbPart);
-
-        if (typeof(IMsbRegion).IsAssignableFrom(type))
-            return typeof(IMsbRegion);
-
-        if (typeof(IMsbEvent).IsAssignableFrom(type))
-            return typeof(IMsbEvent);
-
-        return null;
-    }
+    public Type TargetList => MsbNaming.GetListOfType(ReferenceType);
 }
 
 /// <summary>

@@ -31,6 +31,46 @@ public static class MsbNaming
         };
     }
 
+    /// <summary>
+    /// The MSB list (parts, regions or events) a type belongs to, or null for anything else. A reference attribute's
+    /// type names a subtype, but SoulsFormats resolves the name against the whole list (MSB.FindIndex over
+    /// entries.Parts, entries.Regions), and vanilla maps rely on that: DS1 objects whose CollisionName names a map
+    /// piece, DS3 WindAreaName naming other regions (Claude/Tools/SaveCheckSurvey).
+    /// </summary>
+    public static Type GetListOfType(Type type)
+    {
+        if (type == null)
+            return null;
+
+        if (typeof(IMsbPart).IsAssignableFrom(type))
+            return typeof(IMsbPart);
+
+        if (typeof(IMsbRegion).IsAssignableFrom(type))
+            return typeof(IMsbRegion);
+
+        if (typeof(IMsbEvent).IsAssignableFrom(type))
+            return typeof(IMsbEvent);
+
+        return null;
+    }
+
+    /// <summary>
+    /// Whether a reference field whose attribute names <paramref name="referenceType" /> can refer to
+    /// <paramref name="target" />: same list (or the exact type, for anything that isn't in one)
+    /// </summary>
+    public static bool CanReferTo(Type referenceType, object target)
+    {
+        if (target == null)
+            return false;
+
+        if (referenceType == null)
+            return true;
+
+        var list = GetListOfType(referenceType);
+
+        return list != null ? list.IsInstanceOfType(target) : referenceType.IsInstanceOfType(target);
+    }
+
     private static bool InScope(Entity ent, Type scope)
     {
         return scope != null && ent?.WrappedObject != null && scope.IsInstanceOfType(ent.WrappedObject);
@@ -75,6 +115,72 @@ public static class MsbNaming
         var scope = GetNameScope(ent.WrappedObject);
 
         return map.Objects.Where(o => o != ent && o.Name == name && InScope(o, scope)).ToList();
+    }
+
+    /// <summary>
+    /// Renames the incoming entries (a prefab, say) whose names are already used in the target map's list, and
+    /// rewrites the references between the entries to match, so the set keeps pointing at itself. References to
+    /// objects outside the set are left as they are. Returns how many entries were renamed.
+    /// </summary>
+    public static int MakeUniqueWithReferences(IReadOnlyList<IMsbEntry> entries, MapContainer target)
+    {
+        // The names in use in each of the target map's lists
+        var namesByScope = new Dictionary<Type, HashSet<string>>();
+
+        HashSet<string> NamesFor(IMsbEntry entry)
+        {
+            var scope = GetNameScope(entry);
+
+            if (!namesByScope.TryGetValue(scope, out var set))
+            {
+                set = GetNames(target, entry);
+                namesByScope[scope] = set;
+            }
+
+            return set;
+        }
+
+        var renames = new Dictionary<IMsbEntry, string>();
+
+        foreach (var entry in entries)
+        {
+            if (entry == null || string.IsNullOrEmpty(entry.Name))
+                continue;
+
+            var newName = MakeUnique(entry.Name, NamesFor(entry));
+
+            if (newName != entry.Name)
+            {
+                renames[entry] = newName;
+            }
+        }
+
+        if (renames.Count == 0)
+            return 0;
+
+        // References first, matched against the old names
+        foreach (var entry in entries)
+        {
+            foreach (var (current, type, set) in MsbUtils.GetMsbReferences(entry))
+            {
+                if (string.IsNullOrEmpty(current))
+                    continue;
+
+                var renamed = renames.FirstOrDefault(r => MsbUtils.Matches(current, type, r.Key));
+
+                if (renamed.Key != null)
+                {
+                    set(renamed.Value);
+                }
+            }
+        }
+
+        foreach (var (entry, newName) in renames)
+        {
+            entry.Name = newName;
+        }
+
+        return renames.Count;
     }
 
     /// <summary>

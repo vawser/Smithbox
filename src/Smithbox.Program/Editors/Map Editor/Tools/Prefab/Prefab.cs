@@ -96,6 +96,8 @@ public abstract class Prefab : PrefabAttributes
             }
         }
 
+        // Names that clash with the target map are made unique when the import is added, on the UI thread
+        // (PrefabTool.Update), as this runs on a pool thread while the map can still change
         MsbUtils.PrefixNamesWithRefs(ents.Select((entity) => entity.WrappedObject as IMsbEntry).ToList(), prefixName);
 
         return new(view, targetMap, ents, parent);

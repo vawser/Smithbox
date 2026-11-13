@@ -515,12 +515,18 @@ public partial class MassCreateTool
         private readonly HashSet<int> UsedTypeIndices = new();
         private int NextTypeIndex = 0;
 
-        public InstanceIdTracker(ProjectType game, MapContainer map)
+        /// <param name="exclude">Parts whose IDs don't count as used, as they are being renamed</param>
+        public InstanceIdTracker(ProjectType game, MapContainer map, IEnumerable<Entity> exclude = null)
         {
             Game = game;
 
+            var excluded = exclude != null ? new HashSet<Entity>(exclude) : null;
+
             foreach (var obj in map.Objects)
             {
+                if (excluded != null && excluded.Contains(obj))
+                    continue;
+
                 switch (obj.WrappedObject)
                 {
                     case MSBE.Part p:
@@ -549,7 +555,12 @@ public partial class MassCreateTool
             return set;
         }
 
-        public void Assign(object part, string modelName, HashSet<string> names)
+        /// <summary>
+        /// Reserves the next model-based part name, the game's own convention: {model}_{nnnn}. In ER and NR the
+        /// number is also the part's InstanceID, from 9000 (as added parts are in vanilla), unused by any part of
+        /// that model; in AC6 a free TypeIndex comes with it. Nothing is set on a part.
+        /// </summary>
+        public (string Name, int? InstanceID, int? TypeIndex) Reserve(string modelName, HashSet<string> names)
         {
             var usesInstanceID = Game is ProjectType.ER or ProjectType.NR;
             var used = usesInstanceID ? Used(modelName) : null;
@@ -562,14 +573,15 @@ public partial class MassCreateTool
 
             var name = $"{modelName}_{suffix:D4}";
             names.Add(name);
-            SetProperty(part, "Name", name);
 
+            int? instanceID = null;
             if (usesInstanceID)
             {
                 used.Add(suffix);
-                SetProperty(part, "InstanceID", suffix);
+                instanceID = suffix;
             }
 
+            int? typeIndex = null;
             if (Game == ProjectType.AC6)
             {
                 while (UsedTypeIndices.Contains(NextTypeIndex))
@@ -578,8 +590,26 @@ public partial class MassCreateTool
                 }
 
                 UsedTypeIndices.Add(NextTypeIndex);
-                SetProperty(part, "TypeIndex", NextTypeIndex);
+                typeIndex = NextTypeIndex;
             }
+
+            return (name, instanceID, typeIndex);
+        }
+
+        /// <summary>
+        /// Gives a new part (not yet in a map) the next model-based name, with its InstanceID or TypeIndex
+        /// </summary>
+        public void Assign(object part, string modelName, HashSet<string> names)
+        {
+            var (name, instanceID, typeIndex) = Reserve(modelName, names);
+
+            SetProperty(part, "Name", name);
+
+            if (instanceID is int id)
+                SetProperty(part, "InstanceID", id);
+
+            if (typeIndex is int index)
+                SetProperty(part, "TypeIndex", index);
         }
     }
     #endregion

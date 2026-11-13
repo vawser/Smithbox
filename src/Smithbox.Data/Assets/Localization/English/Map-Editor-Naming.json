@@ -1,0 +1,8 @@
+{
+  "Entries": [
+    { "Key": "MAP_Name_From_Model", "Text": "Name from Model" },
+    { "Key": "MAP_Name_From_Model_TT", "Text": "Renames the selected parts after their models, as the game names them: model_0000, model_0001 and so on. In Elden Ring and Nightreign the number is the part's InstanceID, from 9000 up, and in Armored Core VI the part gets a free TypeIndex. Parts already named this way keep their names. References follow the new names when Referenced Rename is on. Can be undone." },
+    { "Key": "MAP_Name_From_Model_Nothing", "Text": "The selected parts are already named after their models." },
+    { "Key": "MAP_Prefab_Import_Renamed", "Text": "Prefab {0}: {1} objects were renamed, as the map already used their names. The references within the prefab follow the new names." }
+  ]
+}

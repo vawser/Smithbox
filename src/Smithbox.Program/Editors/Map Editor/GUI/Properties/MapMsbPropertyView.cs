@@ -575,6 +575,128 @@ public class MapMsbPropertyView
         ImGui.NextColumn();
     }
 
+    /// <summary>
+    /// For parts: renames them after their models, the game's convention ({model}_{nnnn}, with the number as the
+    /// InstanceID in ER and NR, and a free TypeIndex in AC6), as Create at Point and Mass Create name new parts.
+    /// </summary>
+    private void PropEditorNameFromModel(IEnumerable<MsbEntity> entities)
+    {
+        var parts = entities.Where(e => e.SupportsName && e.WrappedObject is IMsbPart p && !string.IsNullOrEmpty(p.ModelName)).ToList();
+
+        if (parts.Count == 0 || parts.Count != entities.Count())
+            return;
+
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("");
+        ImGui.NextColumn();
+
+        if (ImGui.Button($"{LOC.Get("MAP_Name_From_Model")}##nameFromModel", DPI.WholeWidthButton(ImGui.GetColumnWidth() * 0.95f, 24)))
+        {
+            ApplyNameFromModel(parts);
+        }
+        GUI.Tooltip(LOC.Get("MAP_Name_From_Model_TT"));
+
+        ImGui.NextColumn();
+    }
+
+    private void ApplyNameFromModel(List<MsbEntity> parts)
+    {
+        var renamed = new List<MsbEntity>();
+        var newNames = new List<string>();
+        var idChanges = new List<ViewportAction>();
+
+        foreach (var group in parts.GroupBy(p => p.Container as MapContainer))
+        {
+            var map = group.Key;
+
+            if (map == null)
+                continue;
+
+            // The selected parts give up their names and IDs, so a part can keep its own number
+            var tracker = new MassCreateTool.InstanceIdTracker(Project.Descriptor.ProjectType, map, group);
+            var names = MsbNaming.GetNames(map, group.First().WrappedObject, group);
+
+            // Parts already named for their model keep their names (and numbers), so the rest don't take them
+            var toRename = new List<MsbEntity>();
+
+            foreach (var ent in group)
+            {
+                if (IsNamedFromModel(ent) && names.Add(ent.Name))
+                    continue;
+
+                toRename.Add(ent);
+            }
+
+            foreach (var ent in toRename)
+            {
+                var part = (IMsbPart)ent.WrappedObject;
+                var (name, instanceID, typeIndex) = tracker.Reserve(part.ModelName, names);
+
+                renamed.Add(ent);
+                newNames.Add(name);
+
+                var idAction = new PropChangeAction(ent, ent.WrappedObject);
+                var hasChange = false;
+
+                foreach (var (field, value) in new[] { ("InstanceID", instanceID), ("TypeIndex", typeIndex) })
+                {
+                    var prop = value != null ? ent.WrappedObject.GetType().GetProperty(field) : null;
+
+                    if (prop != null && prop.CanWrite)
+                    {
+                        idAction.AddPropertyChange(prop, Convert.ChangeType(value.Value, prop.PropertyType));
+                        hasChange = true;
+                    }
+                }
+
+                if (hasChange)
+                {
+                    idChanges.Add(idAction);
+                }
+            }
+        }
+
+        if (renamed.Count == 0)
+        {
+            Smithbox.Log(this, LOC.Get("MAP_Name_From_Model_Nothing"));
+            return;
+        }
+
+        // References follow the new names when Referenced Rename is on, as for any rename
+        var actions = new List<ViewportAction>
+        {
+            new EntRenameAction(View, renamed, newNames, CFG.Current.MapEditor_Properties_Enable_Referenced_Rename)
+        };
+
+        actions.AddRange(idChanges);
+
+        View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actions));
+    }
+
+    /// <summary>
+    /// Whether the part is already named {model}_{nnnn}, with the number as its InstanceID where the game has one
+    /// </summary>
+    private bool IsNamedFromModel(MsbEntity ent)
+    {
+        if (ent.WrappedObject is not IMsbPart part || string.IsNullOrEmpty(part.ModelName) || ent.Name == null)
+            return false;
+
+        var prefix = $"{part.ModelName}_";
+
+        if (!ent.Name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) ||
+            !int.TryParse(ent.Name.AsSpan(prefix.Length), out var number) ||
+            ent.Name.Length != prefix.Length + 4)
+        {
+            return false;
+        }
+
+        var instanceProp = Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR
+            ? ent.WrappedObject.GetType().GetProperty("InstanceID")
+            : null;
+
+        return instanceProp == null || Convert.ToInt32(instanceProp.GetValue(ent.WrappedObject)) == number;
+    }
+
     // The reference count shown under the direct rename, kept until the selection or the map data changes
     private (Entity Entity, int Version, int Count) _referenceCount = (null, -1, 0);
 
@@ -813,6 +935,8 @@ public class MapMsbPropertyView
                 PropEditorNameDirect(entities);
             }
         }
+
+        PropEditorNameFromModel(entities);
 
         PropEditorCommunityName(entities);
 
