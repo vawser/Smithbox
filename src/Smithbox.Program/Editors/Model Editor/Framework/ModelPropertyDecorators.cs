@@ -58,6 +58,10 @@ public static class ModelPropertyDecorators
             new ParamRef(null, fieldMeta.ParamRef)
         };
 
+        // A row of its own beneath the value, laid out like the other reference rows: the label in the name column,
+        // the reference in the value column, and the type column left empty
+        var changed = false;
+
         ImGui.NextColumn();
 
         ParamReferenceHelper.Label(activeView, refs, null);
@@ -71,9 +75,8 @@ public static class ModelPropertyDecorators
 
             if (ImGui.BeginPopupContextItem($"{prop.Name}EnumContextMenu"))
             {
-                var opened = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
+                changed = ParamReferenceHelper.ContextMenu(activeView, refs, null, val, ref newObj, null);
                 ImGui.EndPopup();
-                return opened;
             }
         }
 
@@ -82,7 +85,7 @@ public static class ModelPropertyDecorators
             ImGui.NextColumn();
         }
 
-        return false;
+        return changed;
     }
 
     // Dummy Reference

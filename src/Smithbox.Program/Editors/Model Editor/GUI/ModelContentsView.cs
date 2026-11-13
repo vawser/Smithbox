@@ -22,6 +22,14 @@ public class ModelContentsView : IActionEventHandler
     private string ContentTreeFilter = "";
     private bool ExactContentTreeFilter = false;
 
+    // The rows in the order they were drawn, this frame and the last, so a shift-click selects the rows between the
+    // two clicks as they appear (categories and the node hierarchy order them differently from the objects)
+    private List<Entity> _displayOrder = new();
+    private List<Entity> _lastDisplayOrder = new();
+
+    // The row a shift-click range starts from: the last one clicked without shift
+    private Entity _rangeAnchor;
+
     public ModelContentsView(ModelEditorView view, ProjectEntry project)
     {
         View = view;
@@ -149,6 +157,9 @@ public class ModelContentsView : IActionEventHandler
 
     public void DisplayContentTree(ModelContainer container)
     {
+        _lastDisplayOrder = _displayOrder;
+        _displayOrder = new();
+
         ImGui.BeginChild($"modelContentsTree_{ImguiID}");
 
         Entity modelRoot = container?.RootObject;
@@ -178,7 +189,10 @@ public class ModelContentsView : IActionEventHandler
         }
 
         var nodeopen = false;
-        var unsaved = container != null && container.HasUnsavedChanges ? "*" : "";
+        // The same marker as the File and Source Lists, which every kind of edit sets and saving clears
+        var unsaved = View.Selection.SelectedModelWrapper is { IsDirty: true } wrapper && wrapper.Container == container
+            ? "*"
+            : "";
 
         ImGui.BeginGroup();
 
@@ -556,6 +570,8 @@ public class ModelContentsView : IActionEventHandler
             }
 
             nodeopen = ImGui.TreeNodeEx($"{key}##{e.PrettyName}", treeflags);
+            _displayOrder.Add(e);
+
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
                 if (e.RenderSceneMesh != null)
@@ -563,6 +579,10 @@ public class ModelContentsView : IActionEventHandler
                     View.FrameAction.FrameCurrentEntity(e);
                 }
             }
+
+            // Bones with children get the same actions as the rest
+            treeImGuiId++;
+            DisplayModelObjectContextMenu(container, e, treeImGuiId);
 
             if (ImGui.IsItemFocused())
             {
@@ -586,7 +606,10 @@ public class ModelContentsView : IActionEventHandler
             {
                 DisplayVisibilityButton(e, container, key, index);
 
-                if (ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags))
+                var isSelectableClicked = ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags);
+                _displayOrder.Add(e);
+
+                if (isSelectableClicked)
                 {
                     doSelect = true;
 
@@ -728,7 +751,7 @@ public class ModelContentsView : IActionEventHandler
 
     }
 
-    public void HandleEntitySelection(Entity entity, bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
+    public void HandleEntitySelection(Entity entity, bool itemSelected, bool isItemFocused)
     {
         // Up/Down arrow mass selection
         var arrowKeySelect = false;
@@ -752,6 +775,8 @@ public class ModelContentsView : IActionEventHandler
                     View.ViewportSelection.ClearSelection();
                     View.ViewportSelection.AddSelection(entity);
                 }
+
+                _rangeAnchor = entity;
             }
             else if (InputManager.HasCtrlDown())
             {
@@ -764,56 +789,27 @@ public class ModelContentsView : IActionEventHandler
                 {
                     View.ViewportSelection.AddSelection(entity);
                 }
+
+                _rangeAnchor = entity;
             }
             else if (View.ViewportSelection.GetSelection().Count > 0
                      && InputManager.HasShiftDown())
             {
-                // Select Range
-                List<Entity> entList;
-                if (filteredEntityList != null)
-                {
-                    entList = new();
-                    foreach (WeakReference<Entity> ent in filteredEntityList)
-                    {
-                        if (ent.TryGetTarget(out Entity e))
-                        {
-                            entList.Add(e);
-                        }
-                    }
-                }
-                else
-                {
-                    entList = entity.Container.Objects;
-                }
-
-                var i1 = -1;
-
-                if (entity.GetType() == typeof(ModelEntity))
-                {
-                    i1 = entList.IndexOf(View.ViewportSelection.GetFilteredSelection<ModelEntity>()
-                        .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
-                }
-
-                var i2 = -1;
-
-                if (entity.GetType() == typeof(ModelEntity))
-                {
-                    i2 = entList.IndexOf((ModelEntity)entity);
-                }
+                // Select Range: the rows between the anchor and this one, as drawn. The anchor stays put, so
+                // further shift-clicks change the end of the range.
+                var i1 = _rangeAnchor != null ? _lastDisplayOrder.IndexOf(_rangeAnchor) : -1;
+                var i2 = _lastDisplayOrder.IndexOf(entity);
 
                 if (i1 != -1 && i2 != -1)
                 {
-                    var iStart = i1;
-                    var iEnd = i2;
-                    if (i2 < i1)
-                    {
-                        iStart = i2;
-                        iEnd = i1;
-                    }
+                    var iStart = Math.Min(i1, i2);
+                    var iEnd = Math.Max(i1, i2);
+
+                    View.ViewportSelection.ClearSelection();
 
                     for (var i = iStart; i <= iEnd; i++)
                     {
-                        View.ViewportSelection.AddSelection(entList[i]);
+                        View.ViewportSelection.AddSelection(_lastDisplayOrder[i]);
                     }
                 }
                 else
@@ -826,6 +822,8 @@ public class ModelContentsView : IActionEventHandler
                 // Exclusive Selection
                 View.ViewportSelection.ClearSelection();
                 View.ViewportSelection.AddSelection(entity);
+
+                _rangeAnchor = entity;
             }
         }
     }

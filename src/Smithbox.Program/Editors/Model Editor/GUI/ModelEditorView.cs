@@ -11,7 +11,7 @@ using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelEditorView : IEditorView
+public class ModelEditorView : IEditorView, IActionEventHandler
 {
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
@@ -78,6 +78,9 @@ public class ModelEditorView : IEditorView
         ViewportActionManager.ActionPerformed += MarkLoadedModelDirty;
         ActionManager.ActionPerformed += MarkLoadedModelDirty;
 
+        ViewportActionManager.AddEventHandler(this);
+        ActionManager.AddEventHandler(this);
+
         Universe = new ModelUniverse(this, project);
 
         ViewportWindow = new(this, project);
@@ -143,6 +146,24 @@ public class ModelEditorView : IEditorView
         if (Selection.SelectedModelWrapper != null)
         {
             Selection.SelectedModelWrapper.IsDirty = true;
+        }
+    }
+
+    /// <summary>
+    /// Keeps the FLVER's material, node, dummy and mesh lists in step with the objects after they are added, removed
+    /// or moved (and when that is undone or redone). The tools that read the FLVER (the Mask Toggler, Export) would
+    /// otherwise see the lists as they were when the model was last saved.
+    /// </summary>
+    public void OnActionEvent(ActionEvent evt)
+    {
+        if (!evt.HasFlag(ActionEvent.ObjectAddedRemoved))
+            return;
+
+        var wrapper = Selection.SelectedModelWrapper;
+
+        if (wrapper?.Container != null && wrapper.Container.View == this && wrapper.FLVER != null)
+        {
+            wrapper.UpdateFLVER();
         }
     }
 

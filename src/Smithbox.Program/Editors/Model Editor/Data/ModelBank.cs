@@ -86,6 +86,9 @@ public class ModelBank : IDisposable
         {
             var newEntry = new ModelContainerWrapper(Project, entry, TargetFS);
 
+            // Collisions are found through their map, as map pieces are
+            newEntry.DeriveMapID();
+
             if (!Collisions.ContainsKey(entry))
                 Collisions.Add(entry, newEntry);
 
@@ -406,6 +409,36 @@ public class ModelWrapper
     public bool IsDirty { get; set; } = false;
 
     /// <summary>
+    /// The position of each mesh in the FLVER as stored on disk, which is the submesh the viewport draws it from.
+    /// The viewport reads the stored file, so once meshes are deleted, copied or moved and the model is loaded again
+    /// before saving, a mesh's position in the edited list no longer names its submesh. Copies use the submesh of
+    /// the mesh they were copied from.
+    /// </summary>
+    public Dictionary<FLVER2.Mesh, int> MeshSourceIndices { get; } = new(ReferenceEqualityComparer.Instance);
+
+    /// <summary>
+    /// Records the meshes of the FLVER as matching the stored file, after it has been read or written
+    /// </summary>
+    private void ResetMeshSourceIndices()
+    {
+        MeshSourceIndices.Clear();
+
+        if (FLVER == null)
+            return;
+
+        for (var i = 0; i < FLVER.Meshes.Count; i++)
+        {
+            MeshSourceIndices[FLVER.Meshes[i]] = i;
+        }
+    }
+
+    // The file each of the other files was read from, so a save writes them back to that file only
+    private string CLM2_FileName;
+    private string HKXPWV_FileName;
+    private string GRASS_FileName;
+    private string EDGE_FileName;
+
+    /// <summary>
     /// Load the model into a view. Use <see cref="ModelEditorView.LoadModel"/>, which also handles the selection and
     /// the model the view had loaded before.
     /// </summary>
@@ -425,6 +458,8 @@ public class ModelWrapper
         if (!IsDirty || FLVER == null)
         {
             LoadFromStorage();
+
+            ResetMeshSourceIndices();
         }
 
         // FLVER
@@ -574,6 +609,7 @@ public class ModelWrapper
                 try
                 {
                     CLM2 = CLM2.Read(data);
+                    CLM2_FileName = filepath;
                 }
                 catch (Exception e)
                 {
@@ -590,6 +626,7 @@ public class ModelWrapper
                 try
                 {
                     HKXPWV = HKXPWV.Read(data);
+                    HKXPWV_FileName = filepath;
                 }
                 catch (Exception e)
                 {
@@ -608,6 +645,7 @@ public class ModelWrapper
                     try
                     {
                         GRASS = GRASS.Read(data);
+                        GRASS_FileName = filepath;
                     }
                     catch (Exception e)
                     {
@@ -628,6 +666,7 @@ public class ModelWrapper
                 try
                 {
                     EDGE = EDGE.Read(data);
+                    EDGE_FileName = filepath;
                 }
                 catch (Exception e)
                 {
@@ -668,6 +707,10 @@ public class ModelWrapper
         if (isSaved)
         {
             IsDirty = false;
+
+            // The stored file now matches the edited meshes. A drawn model keeps the drawables it has until it is
+            // loaded again, which is when this mapping is next read.
+            ResetMeshSourceIndices();
         }
 
         return isSaved;
@@ -779,10 +822,13 @@ public class ModelWrapper
             }
         }
 
+        // The other files go back to the file they were read from: a binder can hold the files of several models,
+        // and matching by name alone could write this model's data over another model's
+
         // CLM2
         if (filepath.Contains(".clm2") && CLM2 != null)
         {
-            if (filename.Contains(Name))
+            if (filepath == CLM2_FileName)
             {
                 try
                 {
@@ -801,7 +847,7 @@ public class ModelWrapper
         // HKXPWV
         if (filepath.Contains(".hkxpwv") && HKXPWV != null)
         {
-            if (filename == Name)
+            if (filepath == HKXPWV_FileName)
             {
                 try
                 {
@@ -820,7 +866,7 @@ public class ModelWrapper
         // GRASS
         if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
-            if (filepath.Contains(".grass") && GRASS != null)
+            if (filepath.Contains(".grass") && GRASS != null && filepath == GRASS_FileName)
             {
                 try
                 {
@@ -839,7 +885,7 @@ public class ModelWrapper
         // EDGE
         if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
-            if (filepath.Contains(".edge") && EDGE != null)
+            if (filepath.Contains(".edge") && EDGE != null && filepath == EDGE_FileName)
             {
                 try
                 {

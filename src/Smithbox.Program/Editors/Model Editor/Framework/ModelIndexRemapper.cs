@@ -64,13 +64,20 @@ public static class ModelIndexRemapper
     }
 
     /// <summary>
-    /// The objects of the model that the editing actions may change: not the model root or its offset node
+    /// The objects of the model that the editing actions may change: the entries of the FLVER's material, node,
+    /// dummy and mesh lists. The skeleton set and the other files (CLM2, HKX, ...) are single objects saved from
+    /// elsewhere, so removing or copying them either breaks the save or is lost.
     /// </summary>
     public static List<ModelEntity> GetEditableSelection(ModelEditorView view, ModelContainer container)
     {
         return view.ViewportSelection.GetFilteredSelection<ModelEntity>()
-            .Where(e => e.WrappedObject != null && container.Objects.Contains(e))
+            .Where(e => e.WrappedObject != null && IsListEntry(e) && container.Objects.Contains(e))
             .ToList();
+    }
+
+    public static bool IsListEntry(ModelEntity entity)
+    {
+        return entity.WrappedObject is FLVER2.Material or FLVER.Node or FLVER.Dummy or FLVER2.Mesh;
     }
 
     #region Vertex Layout
@@ -284,6 +291,85 @@ public static class ModelIndexRemapper
 
         SetNextSibling(nodes[last], cloneIndex, record);
         SetPreviousSibling(clone, (short)last, record);
+    }
+
+    /// <summary>
+    /// Moves a node from the sibling chain under its old parent to the end of the chain under its new parent, after
+    /// its ParentIndex has been changed. Root nodes (-1) form a chain of their own. Returns false, changing nothing,
+    /// if the new parent is out of range or is the node itself or one of its descendants.
+    /// </summary>
+    public static bool RelinkNode(List<FLVER.Node> nodes, int index, int oldParent, int newParent, IndexChangeRecord record)
+    {
+        if (!IsValid(index, nodes.Count) || oldParent == newParent)
+            return false;
+
+        if (newParent != -1 && (!IsValid(newParent, nodes.Count) || IsSelfOrDescendant(nodes, index, newParent)))
+            return false;
+
+        var node = nodes[index];
+
+        // Out of the old chain
+        var previous = node.PreviousSiblingIndex;
+        var next = node.NextSiblingIndex;
+
+        if (IsValid(previous, nodes.Count) && nodes[previous].NextSiblingIndex == index)
+            SetNextSibling(nodes[previous], next, record);
+
+        if (IsValid(next, nodes.Count) && nodes[next].PreviousSiblingIndex == index)
+            SetPreviousSibling(nodes[next], previous, record);
+
+        if (IsValid(oldParent, nodes.Count) && nodes[oldParent].FirstChildIndex == index)
+            SetFirstChild(nodes[oldParent], next, record);
+
+        SetNextSibling(node, -1, record);
+        SetPreviousSibling(node, -1, record);
+
+        // Onto the end of the new chain
+        int first;
+
+        if (newParent == -1)
+        {
+            first = nodes.FindIndex(n => n != node && n.ParentIndex == -1 && n.PreviousSiblingIndex == -1);
+        }
+        else
+        {
+            first = nodes[newParent].FirstChildIndex;
+
+            if (!IsValid(first, nodes.Count) || first == index)
+            {
+                SetFirstChild(nodes[newParent], (short)index, record);
+                return true;
+            }
+        }
+
+        if (first == -1)
+            return true;
+
+        var last = first;
+        var visited = new HashSet<int>();
+
+        while (IsValid(nodes[last].NextSiblingIndex, nodes.Count) && nodes[last].NextSiblingIndex != index && visited.Add(last))
+        {
+            last = nodes[last].NextSiblingIndex;
+        }
+
+        SetNextSibling(nodes[last], (short)index, record);
+        SetPreviousSibling(node, (short)last, record);
+
+        return true;
+    }
+
+    private static bool IsSelfOrDescendant(List<FLVER.Node> nodes, int index, int candidate)
+    {
+        var visited = new HashSet<int>();
+
+        for (var i = candidate; IsValid(i, nodes.Count) && visited.Add(i); i = nodes[i].ParentIndex)
+        {
+            if (i == index)
+                return true;
+        }
+
+        return false;
     }
 
     private static void SetNextSibling(FLVER.Node node, short value, IndexChangeRecord record)

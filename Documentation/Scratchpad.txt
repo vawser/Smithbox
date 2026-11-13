@@ -18,4 +18,3 @@ Analyze the X for bugs and recommendations for functionality improvements
     - ESD Editor
     - File Browser
     
-    FFX Older Games Plan.md

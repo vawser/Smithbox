@@ -163,11 +163,19 @@ public class ModelContainer : ObjectContainer
                 AssignNodeDrawable(clone, wrapper);
                 break;
 
-            case FLVER2.Mesh:
+            case FLVER2.Mesh cloneMesh:
                 if (MeshSourceIndices.TryGetValue(original, out var sourceIndex))
                 {
                     AssignMeshDrawable(clone, wrapper, sourceIndex);
                     MeshSourceIndices[clone] = sourceIndex;
+                }
+
+                // For when the model is loaded again before it is saved. The stored file may have been saved since
+                // this model was loaded, so the copy takes the original's submesh in that file.
+                if (original.WrappedObject is FLVER2.Mesh originalMesh &&
+                    wrapper.MeshSourceIndices.TryGetValue(originalMesh, out var storedIndex))
+                {
+                    wrapper.MeshSourceIndices[cloneMesh] = storedIndex;
                 }
                 break;
         }
@@ -344,23 +352,25 @@ public class ModelContainer : ObjectContainer
         }
 
         // Meshes
-        int index = 0;
         foreach (var entry in flver.Meshes)
         {
             var newObject = new ModelEntity(View.Universe, this, entry, ModelEntityType.Mesh);
 
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+            // The drawable is read from the stored file, so it is the mesh's submesh there, which differs from its
+            // position here when meshes were deleted, copied or moved and the model wasn't saved since
+            if (wrapper.MeshSourceIndices.TryGetValue(entry, out var sourceIndex))
             {
-                AssignMeshDrawable(newObject, wrapper, index);
-            }
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+                {
+                    AssignMeshDrawable(newObject, wrapper, sourceIndex);
+                }
 
-            MeshSourceIndices[newObject] = index;
+                MeshSourceIndices[newObject] = sourceIndex;
+            }
 
             Meshes.Add(newObject);
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
-
-            index++;
         }
 
         // Buffer Layouts
@@ -499,11 +509,8 @@ public class ModelContainer : ObjectContainer
         {
             resource = ModelLocator.GetObjModel(Project, modelName, modelName);
         }
-        else if (modelName.StartsWith("am") || modelName.StartsWith("AM") ||
-            modelName.StartsWith("lg") || modelName.StartsWith("LG") ||
-            modelName.StartsWith("bd") || modelName.StartsWith("BD") ||
-            modelName.StartsWith("hd") || modelName.StartsWith("HD") ||
-            modelName.StartsWith("wp") || modelName.StartsWith("WP"))
+        // The same rule as the universe's load list, which loads the file the drawable is read from
+        else if (View.Universe.IsPartModelName(modelName))
         {
             resource = ModelLocator.GetPartsModel(View.Project, modelName, modelName);
         }
@@ -594,7 +601,9 @@ public class ModelContainer : ObjectContainer
 
         ent.RenderSceneMesh = mesh;
 
-        LoadResource<FlverResource>(resource, ResourceManager.DefaultPool, ResourceType.Flver | ResourceType.Texture, false);
+        // The file holding the mesh is loaded by the universe's model jobs, in the background, and the drawable
+        // fills in once it arrives. Waiting for it here read the whole binder on the UI thread for the first mesh,
+        // and left the background job with nothing to do.
     }
 
     public void LoadCollision(Entity ent, ResourceDescriptor resource, bool isConnectCollision = false)

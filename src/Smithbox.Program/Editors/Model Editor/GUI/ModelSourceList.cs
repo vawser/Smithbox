@@ -261,8 +261,11 @@ public class ModelContainerList
                     labelName = $"{labelName}*";
                 }
 
-                if (ImGui.Selectable($"{labelName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, 
-                    flags))
+                // Picking the container again would reload its model, which clears the undo history
+                var isLoadedHere = selected && IsLoadedInView(View.Selection.SelectedModelContainerWrapper);
+
+                if (ImGui.Selectable($"{labelName}##modelSourceListEntry{modelListType.ToString()}{i}", selected,
+                    flags) && !isLoadedHere)
                 {
                     SelectModel(fileEntry);
 
@@ -319,6 +322,14 @@ public class ModelContainerList
 
             LoadModel(entry.Value);
         }
+    }
+
+    /// <summary>
+    /// Whether one of the container's models is loaded in this view
+    /// </summary>
+    private bool IsLoadedInView(ModelContainerWrapper container)
+    {
+        return container != null && container.Models.Any(m => m.Container?.View == View);
     }
 
     private void SelectModel(FileDictionaryEntry fileEntry)

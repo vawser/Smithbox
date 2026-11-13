@@ -1,11 +1,10 @@
-﻿using StudioCore.Editors.Common;
+﻿using SoulsFormats;
+using StudioCore.Editors.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -18,6 +17,9 @@ public class ModelPropertyChangeAction : ViewportAction
 
     public bool UpdateRenderModel = false;
     public bool ClearName { get; set; }
+
+    // The node links rewritten and the entities moved when a parent index changed, undone in reverse
+    private IndexChangeRecord HierarchyChanges;
 
     /// <param name="ownerObject">The object holding the property, when known. Searching for it by index from the
     /// entity only keeps the innermost index, so it can find the wrong object in deeply nested data.</param>
@@ -42,6 +44,7 @@ public class ModelPropertyChangeAction : ViewportAction
             {
                 var change = new PropertyChange
                 {
+                    Entity = o,
                     ChangedObj = propObj,
                     Property = prop,
                     NewValue = newval,
@@ -75,6 +78,10 @@ public class ModelPropertyChangeAction : ViewportAction
             }
         }
     }
+
+    /// <summary>
+    /// Changes an element of a list nested within another list, which has no property of its own
+    /// </summary>
     public ModelPropertyChangeAction(Entity ent, IList list, int index, object oldval, object newval, bool clearName = true)
     {
         ClearName = clearName;
@@ -85,6 +92,7 @@ public class ModelPropertyChangeAction : ViewportAction
 
         var change = new PropertyChange
         {
+            Entity = ent,
             DirectList = list,
             ArrayIndex = index,
             OldValue = oldval,
@@ -98,78 +106,130 @@ public class ModelPropertyChangeAction : ViewportAction
     {
         foreach (PropertyChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
-
-            Type valType = null;
-
-            if (value != null)
-            {
-                valType = value.GetType();
-            }
-
-            if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
-            {
-                var a = (Array)value;
-                a.SetValue(change.NewValue, change.ArrayIndex);
-            }
-            else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
-            {
-                list[change.ArrayIndex] = change.NewValue;
-            }
-            else
-            {
-                change.Property.SetValue(change.ChangedObj, change.NewValue);
-            }
+            Apply(change, change.NewValue);
         }
 
-        if (ClearName)
+        HierarchyChanges = new IndexChangeRecord();
+
+        foreach (PropertyChange change in Changes)
         {
-            foreach (Entity e in ChangedEnts)
-            {
-                if (UpdateRenderModel)
-                {
-                    e.UpdateRenderModel();
-                }
-
-                // Clear name cache, forcing it to update.
-                e.Name = null;
-            }
+            ApplyParentChange(change, HierarchyChanges);
         }
+
+        RefreshEntities();
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
+        HierarchyChanges?.Revert();
+        HierarchyChanges = null;
+
         foreach (PropertyChange change in Changes)
         {
-            var value = change.Property.GetValue(change.ChangedObj);
-
-            Type valType = null;
-
-            if (value != null)
-            {
-                valType = value.GetType();
-            }
-
-            if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
-            {
-                var a = (Array)value;
-                a.SetValue(change.OldValue, change.ArrayIndex);
-            }
-            else if (value != null && valType != null && valType.IsGenericType && change.ArrayIndex != -1 && value is IList list)
-            {
-                list[change.ArrayIndex] = change.OldValue;
-            }
-            else
-            {
-                change.Property.SetValue(change.ChangedObj, change.OldValue);
-            }
+            Apply(change, change.OldValue);
         }
+
+        RefreshEntities();
+
+        return ActionEvent.NoEvent;
+    }
+
+    private static void Apply(PropertyChange change, object value)
+    {
+        if (change.DirectList != null)
+        {
+            change.DirectList[change.ArrayIndex] = value;
+            return;
+        }
+
+        var current = change.Property.GetValue(change.ChangedObj);
+
+        if (change.Property.PropertyType.IsArray && change.ArrayIndex != -1)
+        {
+            ((Array)current).SetValue(value, change.ArrayIndex);
+        }
+        else if (current != null && current.GetType().IsGenericType && change.ArrayIndex != -1 && current is IList list)
+        {
+            list[change.ArrayIndex] = value;
+        }
+        else
+        {
+            change.Property.SetValue(change.ChangedObj, value);
+        }
+    }
+
+    /// <summary>
+    /// A dummy's parent bone and a node's parent decide where they sit in the tree and which bone they move with,
+    /// so the entity is moved under its new parent. A node is also moved between the sibling chains of the FLVER.
+    /// </summary>
+    private static void ApplyParentChange(PropertyChange change, IndexChangeRecord record)
+    {
+        var entity = change.Entity;
+
+        if (entity?.Container is not ModelContainer container || change.ChangedObj != entity.WrappedObject)
+            return;
+
+        if (Equals(change.OldValue, change.NewValue))
+            return;
+
+        int newParent;
+
+        if (entity.WrappedObject is FLVER.Dummy && change.Property?.Name == nameof(FLVER.Dummy.ParentBoneIndex))
+        {
+            newParent = Convert.ToInt32(change.NewValue);
+        }
+        else if (entity.WrappedObject is FLVER.Node && change.Property?.Name == nameof(FLVER.Node.ParentIndex))
+        {
+            var nodes = ModelIndexRemapper.GetNodes(container);
+            var index = container.Nodes.IndexOf(entity);
+
+            newParent = Convert.ToInt32(change.NewValue);
+
+            // A parent that would loop the tree, or doesn't exist, leaves the links (and the tree) as they were
+            if (!ModelIndexRemapper.RelinkNode(nodes, index, Convert.ToInt32(change.OldValue), newParent, record))
+                return;
+        }
+        else
+        {
+            return;
+        }
+
+        var newParentEntity = newParent >= 0 && newParent < container.Nodes.Count
+            ? container.Nodes[newParent]
+            : container.RootObject;
+
+        var oldParentEntity = entity.Parent;
+
+        if (oldParentEntity == newParentEntity)
+            return;
+
+        var oldChildIndex = oldParentEntity?.ChildIndex(entity) ?? -1;
+
+        oldParentEntity?.RemoveChild(entity);
+        newParentEntity.AddChild(entity);
+
+        record.Record(() =>
+        {
+            newParentEntity.RemoveChild(entity);
+
+            if (oldParentEntity != null)
+            {
+                oldParentEntity.AddChild(entity, oldChildIndex);
+            }
+        });
+    }
+
+    private void RefreshEntities()
+    {
+        if (ChangedEnts == null)
+            return;
 
         foreach (Entity e in ChangedEnts)
         {
-            if (UpdateRenderModel)
+            // Bones and dummies place their markers (and those of their children) from their properties
+            if (UpdateRenderModel || e.HasTransform)
             {
                 e.UpdateRenderModel();
             }
@@ -178,12 +238,11 @@ public class ModelPropertyChangeAction : ViewportAction
             if (ClearName)
                 e.Name = null;
         }
-
-        return ActionEvent.NoEvent;
     }
 
     private class PropertyChange
     {
+        public Entity Entity;
         public int ArrayIndex;
         public object ChangedObj;
         public object NewValue;

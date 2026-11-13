@@ -27,7 +27,7 @@ public class PullToCameraAction
     /// </summary>
     public void OnShortcut()
     {
-        if (View.ViewportSelection.IsSelection())
+        if (CanPull())
         {
             if (InputManager.IsPressed(KeybindID.Pull))
             {
@@ -37,12 +37,22 @@ public class PullToCameraAction
     }
 
     /// <summary>
+    /// Only dummies and bones have a position of their own to move
+    /// </summary>
+    private bool CanPull()
+    {
+        return View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform).Count > 0;
+    }
+
+    /// <summary>
     /// Context Menu
     /// </summary>
     public void OnContext()
     {
         // Pull to Camera
-        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction"))
+        var flags = CanPull() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled;
+
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction", false, flags))
         {
             ApplyMoveToCamera();
         }
@@ -55,7 +65,8 @@ public class PullToCameraAction
     public void OnMenu()
     {
         // Pull to Camera
-        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction", InputManager.GetHint(KeybindID.Pull)))
+        if (ImGui.MenuItem($"{LOC.Get("MODEL_Tools_Action_Pull_Title")}##pullAction", InputManager.GetHint(KeybindID.Pull),
+            false, CanPull()))
         {
             ApplyMoveToCamera();
         }
@@ -80,7 +91,7 @@ public class PullToCameraAction
         if (View.ViewportWindow.Viewport == null)
             return;
 
-        if (View.ViewportSelection.IsSelection())
+        if (CanPull())
         {
             List<ViewportAction> actlist = new();
             HashSet<Entity> sels = View.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);

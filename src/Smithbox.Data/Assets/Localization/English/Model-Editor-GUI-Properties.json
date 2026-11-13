@@ -57,6 +57,18 @@
       "Text": "The selection contains objects of different types ({0}). Select objects of a single type to edit them together."
     },
     {
+      "Key": "MODEL_Properties_Collision_Read_Only",
+      "Text": "Collision is shown for reference only: the Model Editor doesn't save it. Use the Collision Editor in the Map Editor to change collision."
+    },
+    {
+      "Key": "MODEL_Properties_Page",
+      "Text": "{0}-{1} of {2}"
+    },
+    {
+      "Key": "MODEL_Properties_Page_TT",
+      "Text": "Long lists are shown a page at a time."
+    },
+    {
       "Key": "MODEL_Properties_Search_Hint_TT",
       "Text": "Search matches the field names.\n\nStart the search with val: to match field values instead, e.g. val:1000.\nWith the exact match box ticked, the value must match in full."
     },

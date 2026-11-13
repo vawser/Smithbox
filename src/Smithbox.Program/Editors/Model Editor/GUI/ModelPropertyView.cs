@@ -9,6 +9,7 @@ using System.Collections;
 using System.Drawing;
 using System.Numerics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -33,6 +34,14 @@ public class ModelPropertyView
 
     private string PropertyListFilter = "";
     private bool ExactPropertyListFilter = false;
+
+    // Set while drawing objects the editor doesn't save (collision), so their values are shown but can't be changed
+    private bool _readOnly = false;
+
+    // Lists longer than this are shown a page at a time: meshes hold thousands of vertices and indices
+    private const int PageSize = 100;
+    // Weak, so the page of a list doesn't keep an unloaded model alive
+    private readonly ConditionalWeakTable<object, StrongBox<int>> _listPages = new();
 
     public void Display()
     {
@@ -185,6 +194,15 @@ public class ModelPropertyView
 
         var meta = ModelMetaHelper.GetMeta(Project, type, metaType);
 
+        // Collision has no write path in the Model Editor, so an edit to it would be lost on save
+        _readOnly = first.Type is ModelEntityType.HKX;
+
+        if (_readOnly)
+        {
+            GUI.WrappedText(LOC.Get("MODEL_Properties_Collision_Read_Only"));
+            ImGui.Separator();
+        }
+
         var columnCount = 2;
         if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
         {
@@ -268,6 +286,14 @@ public class ModelPropertyView
                 isMeshData = ModelMetaHelper.GetMeshDataBool(classMeta, prop.Name);
             }
 
+            // Hidden mesh data is skipped whole, lists included: the vertex and face lists are lists of objects,
+            // which the per-value check below never reaches
+            if (isMeshData && !CFG.Current.ModelEditor_Properties_Enable_Mesh_Fields)
+            {
+                id++;
+                continue;
+            }
+
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
 
@@ -276,7 +302,7 @@ public class ModelPropertyView
             if (typ.IsArray)
             {
                 var a = (Array)prop.GetValue(obj);
-                var open = ImGui.TreeNodeEx($@"{fieldName}s", treeFlags);
+                var open = ImGui.TreeNodeEx($@"{fieldName}s", GetListTreeFlags(treeFlags, a?.Length ?? 0));
                 GUI.Tooltip(fieldDescription);
                 ImGui.NextColumn();
                 ImGui.NextColumn();
@@ -293,7 +319,9 @@ public class ModelPropertyView
 
                 if (open)
                 {
-                    for (var i = 0; i < a.Length; i++)
+                    var (start, end) = a != null ? DisplayPager(a, a.Length) : (0, 0);
+
+                    for (var i = start; i < end; i++)
                     {
                         ImGui.PushID(i);
                         Type arrtyp = typ.GetElementType();
@@ -421,11 +449,11 @@ public class ModelPropertyView
         ImGui.Text(name);
 
         // Remove-from-list button (only passed in by list entries)
-        if (onRemove != null)
+        if (onRemove != null && !_readOnly)
         {
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+            if (RemoveListEntryButton())
             {
                 onRemove();
             }
@@ -441,7 +469,11 @@ public class ModelPropertyView
         object newval;
 
         // Property Editor UI
+        ImGui.BeginDisabled(_readOnly);
+
         (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
+
+        ImGui.EndDisabled();
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
@@ -451,12 +483,6 @@ public class ModelPropertyView
         if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
         {
             ImGui.SetItemDefaultFocus();
-        }
-
-        if (ModelPropertyDecorators.ParamRefRow(View, classMeta, prop, oldval, ref newval))
-        {
-            changed = true;
-            committed = true;
         }
 
         if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
@@ -472,11 +498,21 @@ public class ModelPropertyView
             }
         }
 
+        // The reference rows each add a row of their own beneath the value, so they come after the type column
+        if (ModelPropertyDecorators.ParamRefRow(View, classMeta, prop, oldval, ref newval))
+        {
+            changed = true;
+            committed = true;
+        }
+
         ModelPropertyDecorators.DummyRefRow(View, classMeta, prop, oldval, ref newval);
         ModelPropertyDecorators.NodeRefRow(View, classMeta, prop, oldval, ref newval);
         ModelPropertyDecorators.MaterialRefRow(View, classMeta, prop, oldval, ref newval);
 
-        UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex, owner);
+        if (!_readOnly)
+        {
+            UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex, owner);
+        }
 
         ImGui.NextColumn();
     }
@@ -492,11 +528,11 @@ public class ModelPropertyView
     {
         ImGui.Text(name);
 
-        if (onRemove != null)
+        if (onRemove != null && !_readOnly)
         {
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+            if (RemoveListEntryButton())
             {
                 onRemove();
             }
@@ -511,7 +547,11 @@ public class ModelPropertyView
         var oldval = list[index];
         object newval;
 
+        ImGui.BeginDisabled(_readOnly);
+
         (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, null, new[] { firstEnt });
+
+        ImGui.EndDisabled();
 
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
@@ -521,9 +561,92 @@ public class ModelPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        UpdatePropertyDirect(firstEnt, list, index, oldval, newval, changed, committed);
+        if (!_readOnly)
+        {
+            UpdatePropertyDirect(firstEnt, list, index, oldval, newval, changed, committed);
+        }
+
+        // Keeps the row the same width as the others
+        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        {
+            ImGui.NextColumn();
+
+            if (type != null)
+            {
+                ImGui.Text(type.FullName);
+            }
+        }
 
         ImGui.NextColumn();
+    }
+
+    private bool RemoveListEntryButton()
+    {
+        ImGui.BeginDisabled(_readOnly);
+
+        var clicked = ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry");
+
+        ImGui.EndDisabled();
+
+        return clicked && !_readOnly;
+    }
+
+    /// <summary>
+    /// Long lists don't open by themselves, as every entry would be drawn
+    /// </summary>
+    private static ImGuiTreeNodeFlags GetListTreeFlags(ImGuiTreeNodeFlags treeFlags, int count)
+    {
+        return count > PageSize ? treeFlags & ~ImGuiTreeNodeFlags.DefaultOpen : treeFlags;
+    }
+
+    /// <summary>
+    /// For a list longer than a page, draws a row to step between pages, and returns the entries of the current page.
+    /// Shorter lists are shown whole.
+    /// </summary>
+    private (int Start, int End) DisplayPager(object list, int count)
+    {
+        if (count <= PageSize)
+            return (0, count);
+
+        var pageCount = (count + PageSize - 1) / PageSize;
+
+        var pageBox = _listPages.GetValue(list, _ => new StrongBox<int>(0));
+        var page = Math.Clamp(pageBox.Value, 0, pageCount - 1);
+
+        ImGui.AlignTextToFramePadding();
+
+        if (ImGui.ArrowButton("##listPagePrevious", ImGuiDir.Left) && page > 0)
+        {
+            page--;
+        }
+
+        ImGui.SameLine();
+
+        if (ImGui.ArrowButton("##listPageNext", ImGuiDir.Right) && page < pageCount - 1)
+        {
+            page++;
+        }
+
+        pageBox.Value = page;
+
+        var start = page * PageSize;
+        var end = Math.Min(start + PageSize, count);
+
+        ImGui.SameLine();
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text(LOC.Get("MODEL_Properties_Page", start + 1, end, count));
+        GUI.Tooltip(LOC.Get("MODEL_Properties_Page_TT"));
+
+        // The rest of the row
+        ImGui.NextColumn();
+        ImGui.NextColumn();
+
+        if (CFG.Current.ModelEditor_Properties_Enable_Type_Column)
+        {
+            ImGui.NextColumn();
+        }
+
+        return (start, end);
     }
 
     public bool DisplayProperty(ModelClass classMeta, object propObj, PropertyInfo prop, Type type, bool isMeshData)
@@ -592,11 +715,11 @@ public class ModelPropertyView
     {
         var list = (IList)prop.GetValue(obj);
 
-        var open = ImGui.TreeNodeEx($@"{fieldName}", treeFlags);
+        var open = ImGui.TreeNodeEx($@"{fieldName}", GetListTreeFlags(treeFlags, list?.Count ?? 0));
         GUI.Tooltip(fieldDescription);
         ImGui.NextColumn();
 
-        if (list != null)
+        if (list != null && !_readOnly)
         {
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addListEntry"))
@@ -621,7 +744,9 @@ public class ModelPropertyView
             {
                 var removeIndex = -1;
 
-                for (var i = 0; i < list.Count; i++)
+                var (start, end) = DisplayPager(list, list.Count);
+
+                for (var i = start; i < end; i++)
                 {
                     ImGui.PushID(i);
                     var idx = i;
@@ -640,7 +765,7 @@ public class ModelPropertyView
 
                         ImGui.SameLine();
                         ImGui.AlignTextToFramePadding();
-                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                        if (RemoveListEntryButton())
                         {
                             OnRemove();
                         }
@@ -683,7 +808,7 @@ public class ModelPropertyView
 
                         ImGui.SameLine();
                         ImGui.AlignTextToFramePadding();
-                        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                        if (RemoveListEntryButton())
                         {
                             OnRemove();
                         }
@@ -794,18 +919,23 @@ public class ModelPropertyView
             return;
         }
 
-        ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addNestedListEntry"))
+        if (!_readOnly)
         {
-            var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
-            var action = new ModelAddListEntryAction(firstEnt, list, newEntry, list.Count);
-            View.ViewportActionManager.ExecuteAction(action);
+            ImGui.AlignTextToFramePadding();
+            if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Add_List_Entry")}##addNestedListEntry"))
+            {
+                var newEntry = PropFinderUtil.CreateDefaultListElement(elementType);
+                var action = new ModelAddListEntryAction(firstEnt, list, newEntry, list.Count);
+                View.ViewportActionManager.ExecuteAction(action);
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
         }
-        GUI.Tooltip(LOC.Get("EDITOR_PropEdit_Add_List_Entry_TT"));
 
         var removeIndex = -1;
 
-        for (var i = 0; i < list.Count; i++)
+        var (start, end) = DisplayPager(list, list.Count);
+
+        for (var i = start; i < end; i++)
         {
             ImGui.PushID(i);
             var idx = i;
@@ -825,7 +955,7 @@ public class ModelPropertyView
 
                 ImGui.SameLine();
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                if (RemoveListEntryButton())
                 {
                     OnRemove();
                 }
@@ -867,7 +997,7 @@ public class ModelPropertyView
 
                 ImGui.SameLine();
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Button($"{LOC.Get("EDITOR_PropEdit_Remove_List_Entry")}##removeListEntry"))
+                if (RemoveListEntryButton())
                 {
                     OnRemove();
                 }

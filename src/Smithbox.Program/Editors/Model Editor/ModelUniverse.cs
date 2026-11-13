@@ -249,7 +249,7 @@ public class ModelUniverse : IUniverse
     /// Whether a model is a part: arms, legs, bodies, heads and weapons in every game, plus the hair (hr),
     /// accessories (as) and faces (fc) of Demon's Souls
     /// </summary>
-    private bool IsPartModelName(string modelName)
+    public bool IsPartModelName(string modelName)
     {
         foreach (var prefix in new[] { "am", "lg", "bd", "hd", "wp" })
         {

@@ -6,6 +6,10 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
+/// <summary>
+/// Adds new objects to the end of the model's objects. Appending keeps the position of every existing material and
+/// node, so nothing that refers to them by index needs rewriting.
+/// </summary>
 public class AddModelObjectAction : ViewportAction
 {
     private readonly ModelEditorView View;
@@ -21,25 +25,27 @@ public class AddModelObjectAction : ViewportAction
 
         Container = container;
 
-        Added.AddRange(objects);
+        Added.AddRange(objects.Where(e => e != null));
     }
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        for (var i = 0; i < Added.Count(); i++)
+        foreach (var added in Added)
         {
-            Container.Objects.Add(Added[i]);
-            Container.RootObject.AddChild(Added[i]);
-            Added[i].UpdateRenderModel();
+            Container.Objects.Add(added);
+            Container.RootObject.AddChild(added);
+            added.UpdateRenderModel();
 
-            if (Added[i].RenderSceneMesh != null)
+            if (added.RenderSceneMesh != null)
             {
-                Added[i].RenderSceneMesh.SetSelectable(Added[i]);
+                added.RenderSceneMesh.SetSelectable(added);
 
-                Added[i].RenderSceneMesh.AutoRegister = true;
-                Added[i].RenderSceneMesh.Register();
+                added.RenderSceneMesh.AutoRegister = true;
+                added.RenderSceneMesh.Register();
             }
         }
+
+        Container.RefreshTypeLists();
 
         View.ViewportSelection.ClearSelection();
 
@@ -53,24 +59,23 @@ public class AddModelObjectAction : ViewportAction
 
     public override ActionEvent Undo()
     {
-        for (var i = 0; i < Added.Count(); i++)
+        foreach (var added in Added)
         {
-            Container.Objects.Remove(Added[i]);
-            if (Added[i] != null)
-            {
-                Added[i].Parent.RemoveChild(Added[i]);
-            }
+            Container.Objects.Remove(added);
 
-            if (Added[i].RenderSceneMesh != null)
+            added.Parent?.RemoveChild(added);
+
+            if (added.RenderSceneMesh != null)
             {
-                Added[i].RenderSceneMesh.AutoRegister = false;
-                Added[i].RenderSceneMesh.UnregisterWithScene();
+                added.RenderSceneMesh.AutoRegister = false;
+                added.RenderSceneMesh.UnregisterWithScene();
             }
         }
+
+        Container.RefreshTypeLists();
 
         View.ViewportSelection.ClearSelection();
 
         return ActionEvent.ObjectAddedRemoved;
     }
-
 }
