@@ -1,0 +1,74 @@
+{
+  "Entries": [
+    { "Key": "MODEL_SearchTool_Local_Header", "Text": "Local Search" },
+    { "Key": "MODEL_SearchTool_Global_Header", "Text": "Global Search" },
+    { "Key": "MODEL_SearchTool_Local_Hint", "Text": "Find the header, dummies, materials, bones and meshes of the loaded model by their names, fields and values. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Click a result to select it." },
+    { "Key": "MODEL_SearchTool_Global_Hint", "Text": "Find models, and the dummies, materials, bones and meshes within them, across every model of the project. Fill in any of the inputs: empty ones are ignored, and the rest must all match. Models with unsaved edits are searched as they are in the editor. Click a result to load its model and select it." },
+    { "Key": "MODEL_SearchTool_No_Model", "Text": "Load a model to search it." },
+
+    { "Key": "MODEL_SearchTool_Scope", "Text": "Scope" },
+    { "Key": "MODEL_SearchTool_Scope_TT", "Text": "Search the loaded model only, or every model of its file (a part or map binder can hold several)." },
+    { "Key": "MODEL_SearchTool_Scope_Current", "Text": "Current Model" },
+    { "Key": "MODEL_SearchTool_Scope_All", "Text": "All Models in File" },
+
+    { "Key": "MODEL_SearchTool_Lists", "Text": "Lists" },
+    { "Key": "MODEL_SearchTool_Lists_TT", "Text": "Search every model of the project, or only one list of the Source List. A search of every model reads each file, so it can take a while; narrowing it here, or giving a model name, makes it quicker." },
+    { "Key": "MODEL_SearchTool_Lists_All", "Text": "All Lists" },
+
+    { "Key": "MODEL_SearchTool_Model", "Text": "Model" },
+    { "Key": "MODEL_SearchTool_Model_TT", "Text": "Matches the model name, the name of the file holding it, or its alias. Given on its own, the models themselves are listed." },
+    { "Key": "MODEL_SearchTool_Object", "Text": "Object" },
+    { "Key": "MODEL_SearchTool_Object_TT", "Text": "Matches the kind of object (Header, Dummy, Material, Node or Bone, Mesh) or its name: a bone or material by name, a dummy by reference ID, a mesh by position." },
+    { "Key": "MODEL_SearchTool_Field", "Text": "Field" },
+    { "Key": "MODEL_SearchTool_Field_TT", "Text": "Matches the name of a field, as the Properties view shows it. Nested fields are named by their path, such as Textures[0].Path or BoundingBox.Min; the last part alone matches too. Meshes also have VertexCount." },
+    { "Key": "MODEL_SearchTool_Value", "Text": "Value" },
+    { "Key": "MODEL_SearchTool_Value_TT", "Text": "Matches the value of any field, or the name of an enum value. When a field is also given, the value must be in that field. Vectors are written x, y, z and lists of indices as 1, 2, 3." },
+    { "Key": "MODEL_SearchTool_Value_Between_TT", "Text": "The ends of the range. Either can be left empty." },
+    { "Key": "MODEL_SearchTool_Value_Low_Hint", "Text": "From" },
+    { "Key": "MODEL_SearchTool_Value_High_Hint", "Text": "To" },
+
+    { "Key": "MODEL_SearchTool_Comparison_Contains", "Text": "contains" },
+    { "Key": "MODEL_SearchTool_Comparison_Contains_TT", "Text": "The value contains the text, or the name of its enum entry does." },
+    { "Key": "MODEL_SearchTool_Comparison_Equals_TT", "Text": "The value is the same. Numbers are compared as numbers, so 1 matches 1.0 but not 10." },
+    { "Key": "MODEL_SearchTool_Comparison_Not_Equals_TT", "Text": "The value is not the same. Numbers are compared as numbers." },
+    { "Key": "MODEL_SearchTool_Comparison_Between", "Text": "between" },
+    { "Key": "MODEL_SearchTool_Comparison_Between_TT", "Text": "The value is a number within the range, including both ends. Either end can be left empty." },
+    { "Key": "MODEL_SearchTool_Comparison_Number_TT", "Text": "The value is a number, compared with the one given. True and false count as 1 and 0." },
+
+    { "Key": "MODEL_SearchTool_Options_Header", "Text": "Options" },
+    { "Key": "MODEL_SearchTool_Options_Header_TT", "Text": "How the inputs are matched." },
+    { "Key": "MODEL_SearchTool_Exact", "Text": "Exact Match" },
+    { "Key": "MODEL_SearchTool_Exact_TT", "Text": "Inputs must equal the text rather than be contained in it. Numbers are compared as numbers, so 1 finds 1.0." },
+
+    { "Key": "MODEL_SearchTool_Actions_Header", "Text": "Actions" },
+    { "Key": "MODEL_SearchTool_Actions_Header_TT", "Text": "Run the search, or start over." },
+    { "Key": "MODEL_SearchTool_Search", "Text": "Search" },
+    { "Key": "MODEL_SearchTool_Search_TT", "Text": "Runs the search. Leaving an input after changing it, or pressing Enter in it, does the same." },
+    { "Key": "MODEL_SearchTool_Clear", "Text": "Clear" },
+    { "Key": "MODEL_SearchTool_Clear_TT", "Text": "Empties the inputs and the results." },
+
+    { "Key": "MODEL_SearchTool_Progress_Header", "Text": "Progress" },
+    { "Key": "MODEL_SearchTool_Progress_Header_TT", "Text": "The search runs in the background. Results are listed as they are found." },
+    { "Key": "MODEL_SearchTool_Progress", "Text": "{0} / {1}" },
+    { "Key": "MODEL_SearchTool_Searching", "Text": "Searching {0}..." },
+    { "Key": "MODEL_SearchTool_Cancel", "Text": "Cancel" },
+    { "Key": "MODEL_SearchTool_Cancel_TT", "Text": "Stops the search. The results found so far are kept." },
+
+    { "Key": "MODEL_SearchTool_Results_Header", "Text": "Results" },
+    { "Key": "MODEL_SearchTool_Results_Header_TT", "Text": "Click a result to jump to it. The filter narrows the list down without searching again." },
+    { "Key": "MODEL_SearchTool_Results", "Text": "{0} results" },
+    { "Key": "MODEL_SearchTool_Results_Truncated", "Text": "Over {0} results; only the first {0} are shown. Narrow the search to see the rest." },
+    { "Key": "MODEL_SearchTool_Results_Filtered", "Text": "({0} shown)" },
+    { "Key": "MODEL_SearchTool_Jump_TT", "Text": "Jump to this result." },
+
+    { "Key": "MODEL_SearchTool_Kind_Header", "Text": "Header" },
+    { "Key": "MODEL_SearchTool_Kind_Dummy", "Text": "Dummy" },
+    { "Key": "MODEL_SearchTool_Kind_Material", "Text": "Material" },
+    { "Key": "MODEL_SearchTool_Kind_Node", "Text": "Node" },
+    { "Key": "MODEL_SearchTool_Kind_Mesh", "Text": "Mesh" },
+
+    { "Key": "MODEL_SearchTool_Failed", "Text": "The model search failed." },
+    { "Key": "MODEL_SearchTool_Model_Failed", "Text": "Failed to search {1} of {0}." },
+    { "Key": "MODEL_SearchTool_Stale_Result", "Text": "The search result no longer exists. Search again." }
+  ]
+}

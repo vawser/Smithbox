@@ -46,6 +46,24 @@ public class ModelToolWindow
 
         Sections.Begin();
 
+        // Search
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_LocalSearch)
+        {
+            View.LocalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_GlobalSearch)
+        {
+            View.GlobalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_MassEdit)
+        {
+            View.MassEditTool.OnToolWindow();
+        }
+
         // Actions
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
 
@@ -149,6 +167,27 @@ public class ModelToolWindow
         // View
         if (ImGui.BeginMenu($"{LOC.Get("MODEL_ToolWindow_View_Header")}##viewMenuHeader"))
         {
+            // Local Search
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_SearchTool_Local_Header")}##toggleLocalSearchTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_LocalSearch = !CFG.Current.Interface_ModelEditor_Tool_LocalSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_LocalSearch);
+
+            // Global Search
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_SearchTool_Global_Header")}##toggleGlobalSearchTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_GlobalSearch = !CFG.Current.Interface_ModelEditor_Tool_GlobalSearch;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_GlobalSearch);
+
+            // Mass Edit
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_MassEditTool_Header")}##toggleMassEditTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_MassEdit = !CFG.Current.Interface_ModelEditor_Tool_MassEdit;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_MassEdit);
+
             // History
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_History")}##toggleHistoryTool"))
             {

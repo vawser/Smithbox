@@ -56,6 +56,9 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ModelHistoryTool HistoryTool;
     public ModelVanillaCompareTool VanillaCompareTool;
     public ModelDummyTool DummyTool;
+    public ModelSearchTool LocalSearchTool;
+    public ModelSearchTool GlobalSearchTool;
+    public ModelMassEditTool MassEditTool;
 
     // The loaded model against the game's own
     public ModelVanillaCompare VanillaCompare;
@@ -119,6 +122,9 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         VanillaCompare = new ModelVanillaCompare(this, Project);
         VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
+        LocalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Local);
+        GlobalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Global);
+        MassEditTool = new ModelMassEditTool(this, Project);
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);

@@ -481,6 +481,21 @@ public class ModelWrapper
         }
     }
 
+    /// <summary>
+    /// Reads the model and its other files from storage without loading it into a view, so a tool can edit its FLVER
+    /// directly (the mass edit). Does nothing when the model is loaded, kept, or has unsaved edits, as its FLVER is
+    /// then already the one to edit. The caller marks it dirty once it has changed it.
+    /// </summary>
+    public void LoadForEdit()
+    {
+        if (Container != null || Parked != null || (IsDirty && FLVER != null))
+            return;
+
+        LoadFromStorage();
+
+        ResetMeshSourceIndices();
+    }
+
     private void LoadFromStorage()
     {
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Parent.Project, Parent.Path);

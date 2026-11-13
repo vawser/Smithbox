@@ -796,6 +796,9 @@ public class CFG
     public bool Interface_ModelEditor_Tool_VanillaCompare = true;
     public bool Interface_ModelEditor_Tool_Dummies = true;
     public bool Interface_ModelEditor_Tool_DataTransfer = true;
+    public bool Interface_ModelEditor_Tool_LocalSearch = true;
+    public bool Interface_ModelEditor_Tool_GlobalSearch = true;
+    public bool Interface_ModelEditor_Tool_MassEdit = true;
 
     // Viewport labels only on the selected dummies and bones, as a character has hundreds
     public bool ModelEditor_Labels_Selected_Only = false;

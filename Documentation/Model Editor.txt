@@ -2,11 +2,39 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- Animation:
-    - Add option to hide non-used bones/dummies during animations
+- Editor:
+    - Support editing GX Items
+    
+    
+- Event Graph
+    - Read-only graph for imported animations
 
-- Add support for displaying DES models
-- Add support for playing back DES anims
+- Playback:
+    - Animation blending between animations
+    - Throw hitboxes
+    - Weapon style simulation
+    - Weapon location overrides
+    - Additive animation playback
+    - Character turning / tracking
+    - Animation speed events
+    - Model opacity / model masks
+    - Rumble cam
+    - FX preview
+    - StateInfo markers
+    - Root Motion multipliers
+    - Toggle option: hide unused bones/dummies during animations
+
+- Tools:
+    - NPC Param Selector
+    - Behavior / Hit Source Selector
+    - Scan for unused animations
+    - Animation Builder: builds new animation from combo of animations
+    - FBX to HKX
+    - TAE Reload (is HKS Reload)
+
+- Bugs:
+    - Add support for displaying DES models
+    - Add support for playing back DES anims
 
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
@@ -14,7 +42,3 @@
 - GRASS
  - Add method to great new GRASS definition for a model (user would need to place points)
 
-- Add Local / Global Search impl from Time Act Editor
-- Add Mass Edit impl from Time Act Editor
-
-- Support editing GX Items
