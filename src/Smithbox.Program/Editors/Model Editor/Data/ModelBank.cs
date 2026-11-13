@@ -581,10 +581,31 @@ public class ModelWrapper
     /// The model as the game ships it, read from the vanilla files the same way a load reads the project's. Null when
     /// the game has no such file (a model the mod added) or it can't be read.
     /// </summary>
-    public FLVER2 ReadVanillaFlver()
-    {
-        var vanillaFS = Parent.Project.VFS.VanillaFS;
+    public FLVER2 ReadVanillaFlver() => ReadFlverFrom(Parent.Project.VFS.VanillaFS);
 
+    /// <summary>
+    /// The model as another tool should read it without loading it: the edited FLVER when the model has edits in
+    /// memory (loaded, kept or unsaved), else a fresh read of its stored file. The result may be the model's own
+    /// FLVER, so it must only be read.
+    /// </summary>
+    public FLVER2 GetFlverForReading()
+    {
+        if (FLVER != null && (IsDirty || Container != null || Parked != null))
+        {
+            // A loaded model's lists follow its objects
+            if (Container != null)
+            {
+                UpdateFLVER();
+            }
+
+            return FLVER;
+        }
+
+        return ReadFlverFrom(Parent.TargetFS);
+    }
+
+    private FLVER2 ReadFlverFrom(VirtualFileSystem vanillaFS)
+    {
         if (vanillaFS == null)
             return null;
 

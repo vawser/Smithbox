@@ -12,11 +12,13 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(ModelClass))]
 [JsonSerializable(typeof(ModelField))]
 
-[JsonSerializable(typeof(FlverDummyList))]
-[JsonSerializable(typeof(FlverDummyRepresentation))]
-
-[JsonSerializable(typeof(FlverNodeList))]
-[JsonSerializable(typeof(FlverNodeRepresentation))]
+// Data Transfer
+[JsonSerializable(typeof(ModelTransferFile))]
+[JsonSerializable(typeof(ModelTransferDummy))]
+[JsonSerializable(typeof(ModelTransferMaterial))]
+[JsonSerializable(typeof(ModelTransferTexture))]
+[JsonSerializable(typeof(ModelTransferGxList))]
+[JsonSerializable(typeof(ModelTransferGxItem))]
 
 internal partial class ModelEditorJsonSerializerContext : JsonSerializerContext
 {

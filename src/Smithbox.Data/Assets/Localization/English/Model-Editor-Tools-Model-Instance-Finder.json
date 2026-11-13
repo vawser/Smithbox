@@ -1,92 +1,37 @@
 {
   "Entries": [
-    {
-      "Key": "MODEL_InstanceFinder_Header",
-      "Text": "Model Instance Finder"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Hint",
-      "Text": "Search through all maps for usage of the specificed model name."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Model_Name_Header",
-      "Text": "Model Name"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Model_Name_Header_TT",
-      "Text": "The name of the model to search for. cXXXX is the typicall format for model names."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Options_Header",
-      "Text": "Options"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Options_Header_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project",
-      "Text": "Target Project Files"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Checkbox_Target_Project_TT",
-      "Text": "Uses the project map files instead of game root."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match",
-      "Text": "Loose Name Match"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match_TT",
-      "Text": "Only require the Model Name field to contain the search string, instead of requiring an exact match."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Actions_Header",
-      "Text": "Actions"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Actions_Header_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Search_Action",
-      "Text": "Search"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Search_Action_TT",
-      "Text": "Search through all maps for instances of the specified model name."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Reading_Maps",
-      "Text": "Reading maps... {0} / {1}"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Refresh_Action",
-      "Text": "Refresh and Search"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Refresh_Action_TT",
-      "Text": "Read all the maps again, to include changes made since they were last read, then search them."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Results_Header",
-      "Text": "Results"
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Results_Header_TT",
-      "Text": ""
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Instances_TT",
-      "Text": "The value in the [] is the number of instances with the map."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_No_Results",
-      "Text": "No results."
-    },
-    {
-      "Key": "MODEL_InstanceFinder_Log_Failed_MSB_Read",
-      "Text": "Failed to read MSB: {0}"
-    }
+    { "Key": "MODEL_InstanceFinder_Header", "Text": "Model Instance Finder" },
+    { "Key": "MODEL_InstanceFinder_Hint", "Text": "Lists every map part that uses a model, grouped by map. Click a part to load its map in the Map Editor and select it. The maps are read once, in the background, into an index; the maps themselves aren't kept." },
+    { "Key": "MODEL_InstanceFinder_Model_Name_Header", "Text": "Model Name" },
+    { "Key": "MODEL_InstanceFinder_Model_Name_Header_TT", "Text": "The model name as map parts give it: c4100, AEG099_090, or for map pieces the MSB's name (m001000 in Elden Ring, not the file name). Use Loaded Model works this out." },
+    { "Key": "MODEL_InstanceFinder_Use_Loaded", "Text": "Use Loaded Model" },
+    { "Key": "MODEL_InstanceFinder_Use_Loaded_TT", "Text": "Searches for the loaded model, as map parts name it: {0}" },
+
+    { "Key": "MODEL_InstanceFinder_Options_Header", "Text": "Options" },
+    { "Key": "MODEL_InstanceFinder_Options_Header_TT", "Text": "Which maps are read, and how names match." },
+    { "Key": "MODEL_InstanceFinder_Checkbox_Target_Project", "Text": "Target Project Files" },
+    { "Key": "MODEL_InstanceFinder_Checkbox_Target_Project_TT", "Text": "Reads the project's maps (with the game's for those it doesn't change). Off reads only the game's maps. Changing this builds the index again." },
+    { "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match", "Text": "Loose Name Match" },
+    { "Key": "MODEL_InstanceFinder_Checkbox_Loose_Name_Match_TT", "Text": "Matches every model whose name contains the text (c41 finds c4100, c4110...), instead of the exact name." },
+
+    { "Key": "MODEL_InstanceFinder_Actions_Header", "Text": "Actions" },
+    { "Key": "MODEL_InstanceFinder_Actions_Header_TT", "Text": "Search the index, or read the maps again first." },
+    { "Key": "MODEL_InstanceFinder_Search_Action", "Text": "Search" },
+    { "Key": "MODEL_InstanceFinder_Search_Action_TT", "Text": "Lists the parts using the model. The first search reads every map, which takes a while in the larger games." },
+    { "Key": "MODEL_InstanceFinder_Refresh_Action", "Text": "Refresh and Search" },
+    { "Key": "MODEL_InstanceFinder_Refresh_Action_TT", "Text": "Reads every map again, to include changes saved since, then searches." },
+    { "Key": "MODEL_InstanceFinder_Reading_Maps", "Text": "Reading maps... {0} / {1}" },
+    { "Key": "MODEL_InstanceFinder_Index_Summary", "Text": "Index: {0} parts in {1} maps, using {2} models ({3})." },
+    { "Key": "MODEL_InstanceFinder_Index_Project", "Text": "project files" },
+    { "Key": "MODEL_InstanceFinder_Index_Vanilla", "Text": "game files" },
+
+    { "Key": "MODEL_InstanceFinder_Results_Header", "Text": "Results" },
+    { "Key": "MODEL_InstanceFinder_Results_Header_TT", "Text": "Every part using the model, by map. Open a map to see its parts; click a part to select it in the Map Editor." },
+    { "Key": "MODEL_InstanceFinder_Not_Searched", "Text": "Type a model name and search." },
+    { "Key": "MODEL_InstanceFinder_No_Results", "Text": "No part uses that model." },
+    { "Key": "MODEL_InstanceFinder_Result_Summary", "Text": "{0} parts in {1} maps ({2} models matched)." },
+    { "Key": "MODEL_InstanceFinder_Map_TT", "Text": "Open to list the map's parts. Double-click to load the map in the Map Editor." },
+    { "Key": "MODEL_InstanceFinder_Part_TT", "Text": "{0} part. Click to load its map in the Map Editor and select it." },
+    { "Key": "MODEL_InstanceFinder_Log_Failed_MSB_Read", "Text": "Failed to read MSB: {0}" }
   ]
 }

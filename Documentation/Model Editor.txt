@@ -14,7 +14,7 @@
 - GRASS
  - Add method to great new GRASS definition for a model (user would need to place points)
 
-- Add Data Transfer (for dummies)
-
 - Add Local / Global Search impl from Time Act Editor
 - Add Mass Edit impl from Time Act Editor
+
+- Support editing GX Items
