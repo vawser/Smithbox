@@ -667,6 +667,7 @@ public class SceneRenderPipeline
             }
 
             SceneParams.MapLightingFlags = mapLightingFlags;
+
             SceneParams.EnvMapScale = mapEnvMapScale;
             SceneParams.EnvMapSaturate = mapEnvMapSaturate;
 

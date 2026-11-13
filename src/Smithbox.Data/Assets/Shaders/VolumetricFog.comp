@@ -59,11 +59,7 @@ layout(set = 0, binding = 1) uniform SceneParamBuffer
 layout(set = 0, binding = 2) uniform texture2D shadowMap;
 layout(set = 0, binding = 3) uniform sampler pointSampler;
 
-struct mapLight
-{
-	sceneLight light;
-	vec4 specular;
-};
+#include "MapLight.glsl"
 
 layout(set = 0, binding = 4, std140) readonly buffer mapLights
 {
@@ -205,8 +201,9 @@ vec3 MapLights(vec3 worldPos)
 
 		if (type == LIGHT_SPOT)
 		{
-			float cosAngle = dot(-toLight / max(dist, 1e-4), normalize(directionType.xyz));
-			attenuation *= smoothstep(spot.y, spot.x, cosAngle);
+			// Copied out, as the buffer's readonly entries can't be passed to a function
+			mapLight light = maplightdata[index];
+			attenuation *= MapSpotCone(light, -toLight);
 		}
 
 		total += colorIntensity.rgb * colorIntensity.a * attenuation;

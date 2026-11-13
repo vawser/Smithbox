@@ -90,11 +90,6 @@ public unsafe struct SceneParam
     /// <summary>The GPARAM's EnvMapColorConvert saturation for reflections: 0 grey, 1 unchanged</summary>
     public float EnvMapSaturate;
 
-    // Fills the last 16 byte row, as the shaders lay the struct out
-    public float MapLightingPad0;
-    public float MapLightingPad1;
-    public float MapLightingPad2;
-
     /// <summary>The first entry of <see cref="SceneRenderer.MapLights" /> in the material buffer</summary>
     public uint MapLightStart;
 
@@ -113,6 +108,12 @@ public unsafe struct SceneParam
     ///     albedo unlit, which Editor mode sets (see RenderMode). Also in what was padding.
     /// </summary>
     public uint LightingDebugView;
+
+    // std140 packs the uints straight after EnvMapSaturate, so the row is only filled here, before the shadow
+    // matrices, which start on a 16 byte row
+    public float MapLightingPad0;
+    public float MapLightingPad1;
+    public float MapLightingPad2;
 
     /// <summary>
     ///     World to shadow map clip space of each cascade, see <see cref="ShadowCascades" />. The shadow map's depth

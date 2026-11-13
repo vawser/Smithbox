@@ -72,6 +72,19 @@ public class SceneLight
     public float OuterConeAngleDegrees { get; set; } = 35.0f;
 
     /// <summary>
+    ///     Spot lights: the world direction across the cone that <see cref="HorizontalOuterConeAngleDegrees" /> is
+    ///     measured along; <see cref="OuterConeAngleDegrees" /> is then the angle at right angles to it.
+    /// </summary>
+    public Vector3 HorizontalAxis { get; set; } = Vector3.UnitX;
+
+    /// <summary>
+    ///     Spot lights: the outer angle along <see cref="HorizontalAxis" />, for a cone wider one way than the other, as
+    ///     BTL's HorizontalFov and VerticalFov give it. 0 for a round cone. Only lights in
+    ///     <see cref="SceneLightTable" /> have one; the scene params' lights are round.
+    /// </summary>
+    public float HorizontalOuterConeAngleDegrees { get; set; }
+
+    /// <summary>
     ///     Linear RGB color of the light's highlights, as BTL lights give it. Null for the same as <see cref="Color" />.
     ///     Only lights in <see cref="SceneLightTable" /> have their own; the scene params' lights use the color.
     /// </summary>
@@ -83,10 +96,23 @@ public class SceneLight
     /// <summary>The light with its highlights, as <see cref="SceneLightTable" /> holds it</summary>
     internal MapLightData ToMapGpu()
     {
+        // A cone of its own width across is only sent when it differs from the round one, which is cheaper to shade
+        var shape = Vector4.Zero;
+        var outer = Math.Clamp(OuterConeAngleDegrees, 0.0f, 90.0f);
+        var horizontal = Math.Clamp(HorizontalOuterConeAngleDegrees, 0.0f, 89.0f);
+
+        if (Type == SceneLightType.Spot && horizontal > 0.0f && MathF.Abs(horizontal - outer) > 1e-3f &&
+            HorizontalAxis.LengthSquared() > 1e-10f)
+        {
+            horizontal = Math.Max(horizontal, MinConeSeparationDegrees);
+            shape = new Vector4(Vector3.Normalize(HorizontalAxis), MathF.Tan(horizontal * MathF.PI / 180.0f));
+        }
+
         return new MapLightData
         {
             Light = ToGpu(),
-            Specular = new Vector4(SpecularColor ?? Color, Math.Max(SpecularIntensity ?? Intensity, 0.0f))
+            Specular = new Vector4(SpecularColor ?? Color, Math.Max(SpecularIntensity ?? Intensity, 0.0f)),
+            Shape = shape
         };
     }
 
@@ -124,19 +150,26 @@ public struct SceneLightData
 }
 
 /// <summary>
-///     A light of <see cref="SceneLightTable" /> as the shaders read it, with its own highlights. Must match mapLight in
-///     FlverShader.frag: a sceneLight and a vec4, 80 bytes. Kept apart from <see cref="SceneLightData" /> so the scene
-///     params' light array, which every shader's copy of them lays out, is unchanged.
+///     A light of <see cref="SceneLightTable" /> as the shaders read it, with its own highlights and the shape of its
+///     cone. Must match mapLight in MapLight.glsl: a sceneLight and two vec4s, 96 bytes. Kept apart from
+///     <see cref="SceneLightData" /> so the scene params' light array, which every shader's copy of them lays out, is
+///     unchanged.
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct MapLightData
 {
-    public const int Size = 80;
+    public const int Size = 96;
 
     public SceneLightData Light;
 
     /// <summary>rgb: color of the highlights, a: their intensity</summary>
     public Vector4 Specular;
+
+    /// <summary>
+    ///     Spot lights, xyz: the cone's horizontal axis, w: the tangent of its horizontal outer angle. 0 for a round
+    ///     cone, see <see cref="SceneLight.HorizontalOuterConeAngleDegrees" />
+    /// </summary>
+    public Vector4 Shape;
 }
 
 /// <summary>

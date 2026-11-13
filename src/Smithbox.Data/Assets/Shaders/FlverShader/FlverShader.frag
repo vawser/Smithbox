@@ -208,12 +208,8 @@ layout(set = 4, binding = 0, std140) buffer irradianceVolumes
     readonly irradianceVolumeData volumedata[];
 };
 
-// A light of the map, with the color and intensity of its highlights, which BTL gives separately
-struct mapLight
-{
-	sceneLight light;
-	vec4 specular;   // rgb: color of the highlights, a: their intensity
-};
+// A light of the map, with its own highlights and spot cone
+#include "../MapLight.glsl"
 
 // The map's lights near the camera, in the same buffer, see SceneLightTable
 layout(set = 4, binding = 0, std140) buffer mapLights
@@ -971,7 +967,8 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
 
 // Works out the direction to a scene light at a point in the world, and how much of its light reaches it, from
 // its distance and cone, leaving out its color
-float LightAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
+// The falloff of a light with distance, without a spot light's cone
+float LightDistanceAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
 {
 	int type = int(light.directionType.w + 0.5);
 
@@ -1005,7 +1002,14 @@ float LightAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
 		}
 	}
 
-	if (type == LIGHT_SPOT)
+	return attenuation;
+}
+
+float LightAttenuation(sceneLight light, vec3 worldPos, out vec3 L)
+{
+	float attenuation = LightDistanceAttenuation(light, worldPos, L);
+
+	if (int(light.directionType.w + 0.5) == LIGHT_SPOT)
 	{
 		float cosAngle = dot(-L, normalize(light.directionType.xyz));
 		attenuation *= smoothstep(light.spot.y, light.spot.x, cosAngle);
@@ -2238,7 +2242,12 @@ void main()
 		mapLight light = maplightdata[index];
 
 		vec3 L;
-		float attenuation = LightAttenuation(light.light, fsin_worldpos, L);
+		float attenuation = LightDistanceAttenuation(light.light, fsin_worldpos, L);
+
+		// A spot light's cone may be wider one way than the other, see MapSpotCone
+		if (attenuation > 0.0 && int(light.light.directionType.w + 0.5) == LIGHT_SPOT)
+			attenuation *= MapSpotCone(light, fsin_worldpos - light.light.positionRange.xyz);
+
 		if (attenuation > 0.0)
 		{
 			vec3 radiance = light.light.colorIntensity.rgb * light.light.colorIntensity.a * attenuation;
@@ -2265,7 +2274,6 @@ void main()
 	{
 		litColor = vec3(g_probeSunMask);
 	}
-
 	// Editor mode's fullbright, see RenderMode: the albedo as it is, lit by nothing
 	bool fullbright = sceneparam.lightingDebugView == 4u;
 	if (fullbright)

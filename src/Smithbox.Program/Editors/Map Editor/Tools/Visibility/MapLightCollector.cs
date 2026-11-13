@@ -227,7 +227,12 @@ public class MapLightCollector
 
     public static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
     {
-        var outerAngle = btlLight.VerticalFov / 2.0f;
+        // A spot light's FoVs are the cone's full widths, each the same as the other when 0. The vertical one is
+        // measured along the light's local Y, the horizontal one along its local X (to check in app: SDT m10's
+        // 059_本家_窓光_000 is V 45 / H 90, so its patch should be twice as wide as it is tall).
+        var verticalFov = btlLight.VerticalFov != 0.0f ? btlLight.VerticalFov : btlLight.HorizontalFov;
+        var horizontalFov = btlLight.HorizontalFov != 0.0f ? btlLight.HorizontalFov : verticalFov;
+        var outerAngle = verticalFov / 2.0f;
 
         return new SceneLight
         {
@@ -248,7 +253,9 @@ public class MapLightCollector
             Range = btlLight.Radius,
             FadeAcrossRange = true,
             InnerConeAngleDegrees = outerAngle * InnerConeRatio,
-            OuterConeAngleDegrees = outerAngle
+            OuterConeAngleDegrees = outerAngle,
+            HorizontalAxis = Vector3.TransformNormal(Vector3.UnitX, world),
+            HorizontalOuterConeAngleDegrees = horizontalFov / 2.0f
         };
     }
 
