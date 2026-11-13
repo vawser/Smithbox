@@ -29,8 +29,23 @@ namespace SoulsFormats
             /// <summary>
             /// Dark Souls III
             /// </summary>
-            DS3
+            DS3,
+            /// <summary>
+            /// Demon's Souls: big endian, version 0, one table of 4-byte entries split into six groups
+            /// </summary>
+            DES
         }
+
+        /// <summary>
+        /// Demon's Souls only: the header value at 0x0A (1 in every vanilla file).
+        /// </summary>
+        private ushort DesUnk0A { get; set; }
+
+        /// <summary>
+        /// Demon's Souls only: how many of <see cref="BoneMapEntries"/> belong to each of the six groups, in order.
+        /// The groups always add up to the entry count.
+        /// </summary>
+        private ushort[] DesGroupCounts { get; set; } = new ushort[6];
         /// <summary>
         /// Whether the file is big endian.
         /// </summary>
@@ -80,6 +95,14 @@ namespace SoulsFormats
         {
             // Value should be 1 in either endianness
             Version = br.ReadInt32();
+
+            // Demon's Souls: version 0, and the header size (0x20) at 0x06 in big endian
+            if (Version == 0 && br.Length >= 0x20 && br.GetUInt16(6) == 0x2000)
+            {
+                ReadDes(br);
+                return;
+            }
+
             if (Version == 0x1000000)
             {
                 BigEndian = true;
@@ -124,8 +147,70 @@ namespace SoulsFormats
                 RagdollBoneEntries.Add(new RagdollBoneEntry(br, Game));
         }
 
+        /// <summary>
+        /// Demon's Souls layout (all 39 vanilla files): 0x00 int 0, 0x04 short 0, 0x06 short 0x20 (header size),
+        /// 0x08 entry count, 0x0A unknown (1), 0x0C-0x16 six group counts adding up to the entry count, 0x18 8 zero
+        /// bytes, then the entries as two shorts each.
+        /// </summary>
+        private void ReadDes(BinaryReaderEx br)
+        {
+            Game = GameType.DES;
+            BigEndian = true;
+            br.BigEndian = true;
+            br.Position = 4;
+
+            br.AssertInt16(0);
+            br.AssertInt16(0x20);
+            ushort entryCount = br.ReadUInt16();
+            DesUnk0A = br.ReadUInt16();
+
+            int sum = 0;
+            for (int i = 0; i < 6; i++)
+            {
+                DesGroupCounts[i] = br.ReadUInt16();
+                sum += DesGroupCounts[i];
+            }
+
+            br.AssertInt32(0);
+            br.AssertInt32(0);
+
+            if (sum != entryCount || br.Length != 0x20 + entryCount * 4)
+                throw new System.IO.InvalidDataException("Invalid struct sizes found in Demon's Souls HKXPWV file.");
+
+            for (int i = 0; i < entryCount; i++)
+                BoneMapEntries.Add(new BoneMapEntry(br, Game));
+        }
+
+        private void WriteDes(BinaryWriterEx bw)
+        {
+            int sum = DesGroupCounts.Sum(c => c);
+            if (sum != BoneMapEntries.Count)
+                throw new InvalidOperationException(
+                    $"The Demon's Souls HKXPWV groups hold {sum} entries, but there are {BoneMapEntries.Count}.");
+
+            bw.BigEndian = true;
+            bw.WriteInt32(0);
+            bw.WriteInt16(0);
+            bw.WriteInt16(0x20);
+            bw.WriteUInt16((ushort)BoneMapEntries.Count);
+            bw.WriteUInt16(DesUnk0A);
+            foreach (var count in DesGroupCounts)
+                bw.WriteUInt16(count);
+            bw.WriteInt32(0);
+            bw.WriteInt32(0);
+
+            foreach (var boneMapEntry in BoneMapEntries)
+                boneMapEntry.Write(bw, Game);
+        }
+
         protected override void Write(BinaryWriterEx bw)
         {
+            if (Game == GameType.DES)
+            {
+                WriteDes(bw);
+                return;
+            }
+
             bw.BigEndian = BigEndian;
 
             bw.WriteInt32(Version);

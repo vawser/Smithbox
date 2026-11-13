@@ -1311,36 +1311,95 @@ public class FlverResource : IResource, IDisposable
 
     /// <summary>
     /// DES models often use textures that live in another model's container, which nothing else would load. The path
-    /// of each texture still names that container, so it is loaded into this model's pool, textures only. The pool
-    /// skips containers that are loaded or loading already, so this is cheap when the map has them.
+    /// of each texture usually still names that container, so it is loaded into this model's pool, textures only.
+    /// When no container the model gets holds a texture (its path names the wrong one, e.g. c6050's head textures are
+    /// only in the m06/m08 area TPFs), <see cref="DesTextureIndex"/> finds one by name once it is built. The pool skips
+    /// containers that are loaded or loading already, so this is cheap when the map has them.
     /// </summary>
     private void RequestDesTextureContainers(ProjectEntry project, IFlverMaterial mat)
     {
         var pool = Context?.Pool ?? ResourceManager.DefaultPool;
-        var ownContainer = Context?.ContainerPath?.Replace('\\', '/');
+        var ownContainer = NormalizeContainerPath(Context?.ContainerPath);
+        List<(string Name, HashSet<string> Covered)> textures = new();
 
         foreach (IFlverTexture? texture in mat.Textures)
         {
+            if (string.IsNullOrWhiteSpace(texture.Path))
+                continue;
+
+            var covered = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            if (ownContainer != null)
+                covered.Add(ownContainer);
+
             foreach (ResourceDescriptor container in TextureLocator.GetDesReferencedTextureContainers(project, texture.Path))
             {
                 var path = container.GetContainerPath(project);
-
-                if (path == null || string.Equals(path.Replace('\\', '/').TrimStart('/'), ownContainer?.TrimStart('/'),
-                        StringComparison.OrdinalIgnoreCase))
+                if (path == null)
                     continue;
 
-                if (!_requestedTextureContainers.Add(path))
-                    continue;
+                covered.Add(NormalizeContainerPath(path)!);
 
-                pool.LoadContainer(path, new LoadOptions
-                {
-                    Types = ResourceType.Texture,
-                    AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
-                    HideFromLoadWindow = true,
-                    JobName = $"DES textures: {path}"
-                });
+                if (NormalizeContainerPath(path) != ownContainer)
+                    RequestDesTextureContainer(pool, path);
             }
+
+            textures.Add((Path.GetFileNameWithoutExtension(texture.Path.Replace('\\', '/')).ToLowerInvariant(), covered));
         }
+
+        if (textures.Count == 0)
+            return;
+
+        DesTextureIndex.Get(project).ContinueWith(task =>
+        {
+            var index = task.Result;
+
+            foreach (var (name, covered) in textures)
+            {
+                var holders = index.Find(name).ToList();
+
+                // Nowhere in the game (dev paths, missing debug textures), or in a container the model gets anyway
+                if (holders.Count == 0 || holders.Any(h => covered.Contains(NormalizeContainerPath(h.FilePath)!)))
+                    continue;
+
+                // One this model is loading already, else the most preferred (chr, common parts, parts, obj, map)
+                var paths = holders.Select(h => h.ToDescriptor().GetContainerPath(project)).Where(p => p != null).ToList();
+                string? chosen;
+                lock (_requestedTextureContainers)
+                {
+                    chosen = paths.FirstOrDefault(p => _requestedTextureContainers.Contains(p!)) ?? paths.FirstOrDefault();
+                }
+
+                if (chosen != null)
+                    RequestDesTextureContainer(pool, chosen);
+            }
+        }, TaskContinuationOptions.OnlyOnRanToCompletion);
+    }
+
+    private void RequestDesTextureContainer(ResourcePool pool, string path)
+    {
+        lock (_requestedTextureContainers)
+        {
+            if (!_requestedTextureContainers.Add(path))
+                return;
+        }
+
+        pool.LoadContainer(path, new LoadOptions
+        {
+            Types = ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            HideFromLoadWindow = true,
+            JobName = $"DES textures: {path}"
+        });
+    }
+
+    /// <summary>A container path compared without its slashes' direction, leading slash, case or .dcx</summary>
+    private static string? NormalizeContainerPath(string? path)
+    {
+        if (path == null)
+            return null;
+
+        var p = path.Replace('\\', '/').TrimStart('/').ToLowerInvariant();
+        return p.EndsWith(".dcx") ? p[..^4] : p;
     }
 
     /// <summary>

@@ -2,9 +2,6 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- Bugs:
-    - HKXPWV needs DES support
-
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces
  
