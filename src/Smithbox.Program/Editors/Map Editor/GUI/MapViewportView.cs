@@ -246,11 +246,9 @@ public class MapViewportView
                 Entity targetedEnt = curSelection.OfType<Entity>().FirstOrDefault(e => e.WrappedObject is IMsbPart or IMsbRegion)
                     ?? curSelection.OfType<Entity>().FirstOrDefault();
 
-                if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Copy")))
-                {
-                    View.DuplicateToMapAction.OnCopy(View);
-                }
-                GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Copy_TT", InputManager.GetHint(KeybindID.Copy)));
+                View.DuplicateToMapAction.OnClipboardContext(canCopy: true);
+
+                ImGui.Separator();
 
                 View.DuplicateAction.OnContext();
                 View.DeleteAction.OnContext();
@@ -309,12 +307,8 @@ public class MapViewportView
 
         View.CreateAction.OnMenu();
 
-        if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Paste"), false,
-            View.DuplicateToMapAction.HasCopiedObjects ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
-        {
-            View.DuplicateToMapAction.OnPaste(View);
-        }
-        GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Paste_TT", InputManager.GetHint(KeybindID.Paste)));
+        // Paste (N objects), and Paste into Source Map
+        View.DuplicateToMapAction.OnClipboardContext(canCopy: false);
 
         ImGui.Separator();
 

@@ -571,6 +571,9 @@ public class MapListView : IActionEventHandler
                         ? LOC.Get("MAP_History_Unload_Map_TT", dropped)
                         : LOC.Get("MAP_History_Unload_Map_None_TT"));
                 }
+
+                // Paste into this map, when something is copied (and the map is still loaded after the items above)
+                View.DuplicateToMapAction.OnPasteIntoMapContext(mapWrapper.MapContainer);
             }
 
             // ER: Load Related Maps

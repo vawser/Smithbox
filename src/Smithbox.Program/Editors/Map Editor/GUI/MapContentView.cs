@@ -381,6 +381,14 @@ public class MapContentView
                 View.GlobalSearchTool.TargetMap(map.Name);
             }
 
+            // Paste into this map, when something is copied
+            if (View.DuplicateToMapAction.HasCopiedObjects)
+            {
+                ImGui.Separator();
+
+                View.DuplicateToMapAction.OnPasteIntoMapContext(map);
+            }
+
             ImGui.EndPopup();
         }
     }
@@ -394,6 +402,11 @@ public class MapContentView
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{map.Name}_{imguiID}"))
         {
             View.ReorderAction.OnContext(ent);
+
+            // Copy, Paste (N objects), Paste into Source Map
+            View.DuplicateToMapAction.OnClipboardContext(canCopy: true);
+
+            ImGui.Separator();
 
             View.DuplicateAction.OnContext();
             View.DeleteAction.OnContext();

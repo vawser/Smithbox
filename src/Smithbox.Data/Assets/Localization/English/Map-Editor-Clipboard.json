@@ -1,0 +1,18 @@
+{
+  "Entries": [
+    { "Key": "MAP_Clipboard_Paste_Count", "Text": "Paste ({0})" },
+    { "Key": "MAP_Clipboard_Paste_Active_TT", "Text": "Pastes the copied map objects into the active map ({0}).\n\nShortcut: {1}" },
+    { "Key": "MAP_Clipboard_Copy_Menu_TT", "Text": "Copies the selected map objects. The copy is shared by every view, so it can be pasted in another one." },
+    { "Key": "MAP_Clipboard_Paste_Into", "Text": "Paste Into" },
+    { "Key": "MAP_Clipboard_Paste_Into_TT", "Text": "Pastes the copied map objects into the map they were copied from, or into any loaded map." },
+    { "Key": "MAP_Clipboard_Paste_Here", "Text": "Paste {0} Here" },
+    { "Key": "MAP_Clipboard_Paste_Here_TT", "Text": "Pastes the copied map objects into {0}." },
+    { "Key": "MAP_Clipboard_Paste_Source_One", "Text": "Paste into Source Map ({0})" },
+    { "Key": "MAP_Clipboard_Paste_Source_Many", "Text": "Paste into Source Maps ({0} maps)" },
+    { "Key": "MAP_Clipboard_Paste_Source_TT", "Text": "Pastes each copied object into the map it was copied from: {0}. Objects from maps that are no longer loaded are skipped." },
+    { "Key": "MAP_Clipboard_Paste_Source_Unloaded_TT", "Text": "The maps the objects were copied from are not loaded: {0}." },
+    { "Key": "MAP_Clipboard_Source_Not_Loaded", "Text": "{0} copied objects were not pasted: the maps they were copied from are not loaded." },
+    { "Key": "MAP_Clipboard_History_Paste", "Text": "Paste {0} into {1}" },
+    { "Key": "MAP_Clipboard_History_Paste_Source", "Text": "Paste {0} into source maps" }
+  ]
+}

@@ -38,6 +38,11 @@ public class MapEditorScreen : EditorScreen
     public Dictionary<MsbEntity, Matrix4x4> ClipboardParentWorlds = new();
 
     /// <summary>
+    /// The map each copied object was copied from, for Paste into Source Map
+    /// </summary>
+    public Dictionary<MsbEntity, string> ClipboardSourceMaps = new();
+
+    /// <summary>
     /// The problems that stopped the last save, for the user to fix or save past
     /// </summary>
     public MapSaveCheckWindow SaveCheckWindow;
@@ -235,6 +240,11 @@ public class MapEditorScreen : EditorScreen
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
                 GUI.Tooltip(LOC.Get("MAP_History_Menu_History_TT"));
+
+                ImGui.Separator();
+
+                // Copy, Paste (N objects) and Paste Into
+                activeView.DuplicateToMapAction.OnClipboardMenu();
 
                 ImGui.Separator();
 
