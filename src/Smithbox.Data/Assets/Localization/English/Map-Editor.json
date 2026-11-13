@@ -361,6 +361,54 @@
       "Text": "Large tile (_02, 1024 m)"
     },
     {
+      "Key": "MAP_List_Load_Adjacent",
+      "Text": "Load Adjacent"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_North",
+      "Text": "North"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_North_East",
+      "Text": "North-East"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_East",
+      "Text": "East"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_South_East",
+      "Text": "South-East"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_South",
+      "Text": "South"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_South_West",
+      "Text": "South-West"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_West",
+      "Text": "West"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_North_West",
+      "Text": "North-West"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_All",
+      "Text": "All Adjacent"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_TT",
+      "Text": "Loads:\n{0}"
+    },
+    {
+      "Key": "MAP_List_Load_Adjacent_None_TT",
+      "Text": "No tile of the same size there to load: it doesn't exist, or is already loaded."
+    },
+    {
       "Key": "MAP_List_Load_Maps",
       "Text": "Load Maps ({0})"
     },

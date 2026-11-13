@@ -809,6 +809,12 @@ public class MapListView : IActionEventHandler
                 }
             }
 
+            // Tile maps (ER, NR): Load Adjacent
+            if (View.TileOutlineTool.IsSupported)
+            {
+                DisplayLoadAdjacentMenu(targets);
+            }
+
             ImGui.Separator();
 
             // Utils: with several maps, one per line
@@ -830,6 +836,108 @@ public class MapListView : IActionEventHandler
             }
 
             ImGui.EndPopup();
+        }
+    }
+
+    // The eight neighbours of a tile, as (localization key, X step, Z step). +X is east and +Z is north: the tile
+    // grid indices in the map ID grow that way, as MapConnections_ER/NR place them.
+    private static readonly (string Key, int DX, int DZ)[] AdjacentDirections =
+    {
+        ("MAP_List_Load_Adjacent_North", 0, 1),
+        ("MAP_List_Load_Adjacent_North_East", 1, 1),
+        ("MAP_List_Load_Adjacent_East", 1, 0),
+        ("MAP_List_Load_Adjacent_South_East", 1, -1),
+        ("MAP_List_Load_Adjacent_South", 0, -1),
+        ("MAP_List_Load_Adjacent_South_West", -1, -1),
+        ("MAP_List_Load_Adjacent_West", -1, 0),
+        ("MAP_List_Load_Adjacent_North_West", -1, 1),
+    };
+
+    /// <summary>
+    /// Load Adjacent: the neighbouring tiles of the same size and variant, in one direction or all eight, for every
+    /// selected tile map. A direction is disabled when none of its tiles exist or all are loaded. The active map is
+    /// left as it is.
+    /// </summary>
+    private void DisplayLoadAdjacentMenu(List<MapWrapper> targets)
+    {
+        var tiles = targets.Where(e => MapTileOutlineTool.GetTileScale(e.Name) >= 0).ToList();
+
+        if (tiles.Count == 0)
+            return;
+
+        if (!ImGui.BeginMenu(LOC.Get("MAP_List_Load_Adjacent")))
+            return;
+
+        var all = new List<string>();
+
+        foreach (var (key, dx, dz) in AdjacentDirections)
+        {
+            var toLoad = GetAdjacentToLoad(tiles, dx, dz);
+            all.AddRange(toLoad);
+
+            if (ImGui.MenuItem(LOC.Get(key), "", false, toLoad.Count > 0))
+            {
+                LoadAdjacent(toLoad);
+            }
+            GUI.Tooltip(toLoad.Count > 0
+                ? LOC.Get("MAP_List_Load_Adjacent_TT", string.Join("\n", toLoad))
+                : LOC.Get("MAP_List_Load_Adjacent_None_TT"));
+        }
+
+        ImGui.Separator();
+
+        all = all.Distinct().ToList();
+
+        if (ImGui.MenuItem(LOC.Get("MAP_List_Load_Adjacent_All"), "", false, all.Count > 0))
+        {
+            LoadAdjacent(all);
+        }
+        GUI.Tooltip(all.Count > 0
+            ? LOC.Get("MAP_List_Load_Adjacent_TT", string.Join("\n", all))
+            : LOC.Get("MAP_List_Load_Adjacent_None_TT"));
+
+        ImGui.EndMenu();
+    }
+
+    /// <summary>
+    /// The neighbours one step along (dx, dz) of each tile that exist in the project and aren't loaded or loading
+    /// </summary>
+    private List<string> GetAdjacentToLoad(List<MapWrapper> tiles, int dx, int dz)
+    {
+        var result = new List<string>();
+
+        foreach (var tile in tiles)
+        {
+            if (!MapConnectionsUtil.TryParseMap(tile.Name, out var parts))
+                continue;
+
+            var x = parts[1] + dx;
+            var z = parts[2] + dz;
+
+            if (x <= 0 || z <= 0 || x > 99 || z > 99)
+                continue;
+
+            var neighbour = MapConnectionsUtil.FormatMap(new[] { parts[0], (byte)x, (byte)z, parts[3] });
+
+            if (result.Contains(neighbour))
+                continue;
+
+            var wrapper = Project.Handler.MapData.PrimaryBank.Maps.Values.FirstOrDefault(e => e.Name == neighbour);
+
+            if (wrapper == null || IsLoaded(wrapper) || View.Universe.IsMapLoading(neighbour) || View.Universe.IsMapQueued(neighbour))
+                continue;
+
+            result.Add(neighbour);
+        }
+
+        return result;
+    }
+
+    private void LoadAdjacent(List<string> mapIDs)
+    {
+        foreach (var mapID in mapIDs)
+        {
+            View.Universe.LoadMap(mapID, false);
         }
     }
 
