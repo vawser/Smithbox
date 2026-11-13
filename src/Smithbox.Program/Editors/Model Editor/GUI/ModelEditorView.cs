@@ -55,6 +55,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public AssetBrowserTool AssetBrowserTool;
     public ModelHistoryTool HistoryTool;
     public ModelVanillaCompareTool VanillaCompareTool;
+    public ModelRenderSnapshotTool RenderSnapshotTool;
     public ModelDummyTool DummyTool;
     public ModelSearchTool LocalSearchTool;
     public ModelSearchTool GlobalSearchTool;
@@ -121,6 +122,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         HistoryTool = new ModelHistoryTool(this, Project);
         VanillaCompare = new ModelVanillaCompare(this, Project);
         VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
+        RenderSnapshotTool = new ModelRenderSnapshotTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
         LocalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Local);
         GlobalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Global);
@@ -544,6 +546,9 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         ModelDisplayRotationTool.Update();
 
         ModelAnimationTool.Update();
+
+        // A render snapshot run carries on whether its tool is shown or not
+        RenderSnapshotTool.Update();
 
         ToolView.View.ModelExportTool.DetectFlverSelectionMenu();
         ToolView.View.ModelExportTool.DisplayFlverSelectionMenu();

@@ -1,0 +1,51 @@
+{
+  "Game": "NR",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c4750",
+      "Model": "c4750",
+      "Shows": "chr: C[DetailBlend], C[AMSN], C[Fur], C[DetailBlend]_cloth (+11 more)"
+    },
+    {
+      "Container": "aeg100_017",
+      "Model": "AEG100_017",
+      "Shows": "asset: M[AMSN_V][Mb4][3Mask][Far_AN], M[AMSN_V], M[AMSN_V][Ov_N], M[AMSN_V][Mb4][3Mask][Ov_AN] (+1 more)"
+    },
+    {
+      "Container": "bd_m_5030_l",
+      "Model": "BD_M_5030_L",
+      "Shows": "parts: C[AMSN]_cloth, P[ChrCustomize][EyeAO], P[ChrCustomize][Eye], P[ChrCustomize][AMSN]_SSS (+2 more)"
+    },
+    {
+      "Container": "m60_42_36_50_423654",
+      "Model": "m60_42_36_50_423654",
+      "Shows": "map: M[AMSN_V][Mb2], M[AMSN][Ov_N], M[AMSN_V][Mb2][Ov_N], M[AMSN_V][Mb3] (+2 more)"
+    },
+    {
+      "Container": "c4911",
+      "Model": "c4911",
+      "Shows": "chr: C[AMSN]_ContactFade, C[AMSN]_Glow[Int], C[AMSN]_Glow"
+    },
+    {
+      "Container": "aeg364_021",
+      "Model": "AEG364_021",
+      "Shows": "asset: M[AMSN_V][Ov_N][Crystal], M[AMSN_V][Ov_AN], M[AMSN_V][Mb2][Ov_AN]"
+    },
+    {
+      "Container": "aeg574_469",
+      "Model": "AEG574_469",
+      "Shows": "asset: M[AMSN], M[AMSN_V]_Edge, M[AMSN_V][Ov_N]_Edge, M[AMSN]_Edge"
+    },
+    {
+      "Container": "m60_21_19_11_37433900",
+      "Model": "m60_21_19_11_37433900",
+      "Shows": "map: M[AMSN_V][Mb4][3Mask][Far_AN][cheap_A], M[AMSN_V][Mb2][1mask][Ov_N]"
+    }
+  ]
+}

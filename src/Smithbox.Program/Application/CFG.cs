@@ -703,6 +703,9 @@ public class CFG
 
     public bool ModelEditor_Files_AutoLoadFirstEntry = true;
 
+    // Where the Render Snapshots tool writes its images: <folder>/<GAME>/Current
+    public string ModelEditor_RenderSnapshot_Folder = "";
+
     public bool ModelEditor_Contents_Auto_Open_Tree = false;
     public bool ModelEditor_Contents_NodeNameInMeshEntry = true;
 
@@ -794,6 +797,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_DisplayRotation = true;
     public bool Interface_ModelEditor_Tool_History = true;
     public bool Interface_ModelEditor_Tool_VanillaCompare = true;
+    public bool Interface_ModelEditor_Tool_RenderSnapshots = true;
     public bool Interface_ModelEditor_Tool_Dummies = true;
     public bool Interface_ModelEditor_Tool_DataTransfer = true;
     public bool Interface_ModelEditor_Tool_LocalSearch = true;

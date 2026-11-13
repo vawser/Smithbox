@@ -107,6 +107,15 @@ public class VulkanViewport : IViewport
     /// </summary>
     public int Height { get; private set; }
 
+    /// <summary>Takes this viewport's tone mapped scene off the GPU, for the render snapshots</summary>
+    public ViewportSnapshot Snapshot { get; } = new();
+
+    /// <summary>
+    ///     While set, the scene is drawn at this size whatever the window's, so render snapshots are the same size on
+    ///     every run. The scene may run past the window's edge meanwhile. Overlays such as the grid are hidden too.
+    /// </summary>
+    public (int Width, int Height)? CaptureSize { get; set; }
+
     private bool Instantiated = false;
 
     public bool Visible = false;
@@ -240,6 +249,9 @@ public class VulkanViewport : IViewport
             // are kept as they are
             ViewPipeline.SetOverlayViewportSetupAction((d, cl) =>
             {
+                // A snapshot taken frames ago is read once they are done
+                Snapshot.Update(d);
+
                 // The screen effects run on the scene first, binding their own targets
                 var frameLighting = ViewPipeline.ActiveMapLighting;
                 var toneMapSource = IsViewportVisible
@@ -258,6 +270,12 @@ public class VulkanViewport : IViewport
                     ViewPipeline.Fxaa.BeginImage(d, cl, ViewPipeline.Target);
                     ViewPipeline.ToneMap.Draw(d, cl, toneMapSource, FxaaPass.ImageOutputs, Vector2.Zero,
                         frameLighting, ViewPipeline.AutoExposure, passThrough);
+                }
+
+                // A requested snapshot draws the same image into a target of its own, before the overlays
+                if (IsViewportVisible && Snapshot.Pending)
+                {
+                    Snapshot.Record(d, cl, ViewPipeline, toneMapSource, frameLighting, passThrough, fxaa);
                 }
 
                 cl.SetFramebuffer(Device.SwapchainFramebuffer);
@@ -303,6 +321,7 @@ public class VulkanViewport : IViewport
     /// </summary>
     public void Dispose()
     {
+        Snapshot.Dispose();
         Gizmos?.Dispose();
         PrimaryGrid?.Dispose();
         SecondaryGrid?.Dispose();
@@ -345,6 +364,12 @@ public class VulkanViewport : IViewport
             var loadPanelHeight = (int)(IsFocusedViewport() ? ResourceLoadWindow.GetHeight(s) : 0);
 
             Rectangle newViewportSize = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3 - loadPanelHeight);
+
+            // Render snapshots are drawn at their own size, so every run's images match
+            if (CaptureSize is { } captureSize)
+            {
+                newViewportSize = new Rectangle(newViewportSize.X, newViewportSize.Y, captureSize.Width, captureSize.Height);
+            }
 
             ResizeViewport(Device, newViewportSize);
 
@@ -1020,6 +1045,12 @@ public class VulkanViewport : IViewport
 
     private void UpdateGrids(ViewportGridEditor editor, bool isEditorFocused)
     {
+        // Render snapshots show the model alone
+        if (CaptureSize != null)
+        {
+            isEditorFocused = false;
+        }
+
         PrimaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Primary), ViewportCamera.CameraTransform.Position);
         SecondaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Secondary), ViewportCamera.CameraTransform.Position);
         TertiaryGrid.Update(isEditorFocused, ViewportGridConfig.Get(editor, ViewportGridType.Tertiary), ViewportCamera.CameraTransform.Position);

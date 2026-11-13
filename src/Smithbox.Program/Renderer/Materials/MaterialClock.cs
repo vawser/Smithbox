@@ -102,12 +102,23 @@ public static class MaterialClock
     }
 
     /// <summary>
+    /// While set, <see cref="Time" /> is this, whatever the clock says. Set while render snapshots are taken.
+    /// </summary>
+    public static float? FixedTime { get; set; }
+
+    /// <summary>
     /// Seconds of animation so far.
     /// </summary>
     public static float Time
     {
         get
         {
+            // Render snapshots draw every material at the same moment, so runs can be compared
+            if (FixedTime is { } fixedTime)
+            {
+                return fixedTime;
+            }
+
             // Paused in Editor mode, so Game mode picks the animation up where it was left
             if (CFG.Current.Viewport_Enable_Material_Animation && RenderMode.IsGame)
             {

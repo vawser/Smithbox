@@ -1,0 +1,51 @@
+{
+  "Game": "DES",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c2101",
+      "Model": "c2101",
+      "Shows": "chr: DS_Phn_ColDifSpcBmp_Skin, DS_Phn_ColDifSpcBmp"
+    },
+    {
+      "Container": "o2462",
+      "Model": "o2462",
+      "Shows": "asset: DS_Phn_ColDif, DS_Phn_ColDifLit, DS_Phn_ColDifBmpLit, DS_Phn_ColDifMulLit"
+    },
+    {
+      "Container": "hr_m_0003_l",
+      "Model": "HR_M_0003",
+      "Shows": "parts: DS_Phn_ColDif_Skin, DS_Phn_ColDifSpc_Skin"
+    },
+    {
+      "Container": "m3030b0",
+      "Model": "m3030b0",
+      "Shows": "map: DS_Phn_ColDifSpcBmpLit, DS_Phn_ColDifSpcLit, DS_Phn_ColDifSpcBmpMulLit, DS_Phn_ColDifSpcMulLit"
+    },
+    {
+      "Container": "m0010b2",
+      "Model": "m0010b2",
+      "Shows": "map: DS_Phn_ColDifBmp, DS_Phn_ColDifBmpMulLit, DS_Phn_ColDifBmpMul"
+    },
+    {
+      "Container": "c7105",
+      "Model": "c7105",
+      "Shows": "chr: DS_Ghost_Skin, DS_Ghost_ParamSkin"
+    },
+    {
+      "Container": "wp_a_1607",
+      "Model": "WP_A_1607",
+      "Shows": "parts: DS_Phn_ColDifSpc"
+    },
+    {
+      "Container": "wp_a_1090_l",
+      "Model": "WP_A_1090",
+      "Shows": "parts: DS_Ghost_Tod"
+    }
+  ]
+}

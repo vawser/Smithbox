@@ -1,0 +1,51 @@
+{
+  "Game": "SDT",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c5080",
+      "Model": "c5080",
+      "Shows": "chr: character_AMSN, Character_AMSN_[DetailBlend], Fur_NTC, Character_AMSN_SSS (+7 more)"
+    },
+    {
+      "Container": "o174562",
+      "Model": "o174562",
+      "Shows": "asset: MetallicValue, M[Multiple], M[Translucency]_e"
+    },
+    {
+      "Container": "bd_m_9000",
+      "Model": "BD_M_9000",
+      "Shows": "parts: Character_AN_Blend_AMSN_[Fresnel], Character_AN_Blend_AMSN_[Fresnel]_cloth"
+    },
+    {
+      "Container": "m11_01_00_00_015590",
+      "Model": "m11_01_00_00_015590",
+      "Shows": "map: M[MultipleGround], MetallicTex, WallTest_dobei_ver2, WallTest_dobei"
+    },
+    {
+      "Container": "c7200",
+      "Model": "c7200",
+      "Shows": "chr: Character_AMSN_[AO_SSS], Character_AMSN_[AO_SSS]_[Cs], Character_AMSN_[Eye], Fur_hair (+1 more)"
+    },
+    {
+      "Container": "m11_00_00_00_002500",
+      "Model": "m11_00_00_00_002500",
+      "Shows": "map: WallTest_dobei_ver1, GXFlver_ColDifSpcBumpIbl, SnowTest_mb1_ver1"
+    },
+    {
+      "Container": "m11_01_00_00_105000",
+      "Model": "m11_01_00_00_105000",
+      "Shows": "map: M[AMSN]_VA_e, MetallicValue_MeshDecal"
+    },
+    {
+      "Container": "c1550",
+      "Model": "c1550",
+      "Shows": "chr: Fur_NTC_SSS, Character_AN_Blend_AMSN_SSS, Character_AN_Blend_AMSN, Sample_Blend_ntc"
+    }
+  ]
+}

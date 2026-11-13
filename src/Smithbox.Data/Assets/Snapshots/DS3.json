@@ -1,0 +1,51 @@
+{
+  "Game": "DS3",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c2030",
+      "Model": "c2030",
+      "Shows": "chr: GXFlver_ColDifSpcBumpIbl_Bloody, GXFlver_ColDifSpcBumpIbl, GXFlver_ColDifSpcBumpIbl_Bloody_Cloth"
+    },
+    {
+      "Container": "o004682",
+      "Model": "o004682",
+      "Shows": "asset: GXFlver_ColDifSpcBumpDOL, MultiBlend2_et1_lightmap, GXFlver_ColDifSpcBumpMulMaskDOL"
+    },
+    {
+      "Container": "fc_m_0003_l",
+      "Model": "FC_M_0003_L",
+      "Shows": "parts: SAT_Equip, GXFlver_SSSIbl_Bloody, SAT_HairIbl2, GXFlver_SkinSSSIbl_Bloody (+2 more)"
+    },
+    {
+      "Container": "m39_00_00_00_000100",
+      "Model": "m39_00_00_00_000100",
+      "Shows": "map: MultiBlend3_et1_lightmap, GXFlver_ColDif"
+    },
+    {
+      "Container": "wp_a_0506_l",
+      "Model": "WP_A_0506_L",
+      "Shows": "parts: GXFlver_Equip, SAT_Equip_em"
+    },
+    {
+      "Container": "bd_f_7000",
+      "Model": "BD_F_7000",
+      "Shows": "parts: SAT_Equip_cloth, SAT_MultiBlend2_BlendOpacity_Equip_Cm, SAT_MultiBlend2_BlendOpacity_Equip_Cm_cloth"
+    },
+    {
+      "Container": "lg_m_1080_l",
+      "Model": "LG_M_1080_L",
+      "Shows": "parts: GXFlver_ColDifSpcBumpEmiMulIblGhost, GXFlver_ColDifSpcBumpEmiMulIblGhost_Cloth"
+    },
+    {
+      "Container": "o325110",
+      "Model": "o325110",
+      "Shows": "asset: MultiBlend2_et1, GXFlver_GrassSpcBump"
+    }
+  ]
+}

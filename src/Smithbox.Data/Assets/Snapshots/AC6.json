@@ -1,0 +1,51 @@
+{
+  "Game": "AC6",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c6350",
+      "Model": "c6350",
+      "Shows": "chr: M[MS][MB][M1], M[AMSN][M0][M1]_Edge, M[MS][MB][M0], M[A][M0]_Emissive_Glow (+2 more)"
+    },
+    {
+      "Container": "aeg065_600",
+      "Model": "AEG065_600",
+      "Shows": "asset: C[A][M0]_Emissive_Glow, C[AMSN][M0][M1]_Edge, M[MS][Mask][M0], M[AMSN][M1][2Blend]_Combustion"
+    },
+    {
+      "Container": "bd_m_8030_l",
+      "Model": "BD_M_8030_L",
+      "Shows": "parts: P[ACParts]_ColorMaterial_Repair_Damage, P[ACParts]_Emissive_Glow, P[ACParts]_Marking, P[ACParts][AMSN]_Emissive_Glow"
+    },
+    {
+      "Container": "m10_00_00_00_000026",
+      "Model": "m10_00_00_00_000026",
+      "Shows": "map: M[m10_00]025_AET101_034, M[m10_00]026_AET101_033, M[m10_00]330_PaintedMetal, M[m10_00]107_AET001_042 (+40 more)"
+    },
+    {
+      "Container": "c8145",
+      "Model": "c8145",
+      "Shows": "chr: C[Enemy]_ColorMaterial, C[Enemy][A]_Emissive_Glow, C[Enemy][AMSN]_Emissive_Glow, M[AMSN][M0][M1]_Edge_DecalBlend (+1 more)"
+    },
+    {
+      "Container": "m10_00_00_00_000014",
+      "Model": "m10_00_00_00_000014",
+      "Shows": "map: M[m10_00]031_AET001_018, M[m10_00]089_AET101_135, M[m10_00]015_AET101_060, M[m10_00]227_AET101_138 (+16 more)"
+    },
+    {
+      "Container": "c8130",
+      "Model": "c8130",
+      "Shows": "chr: P[AMSN], M[AMSN], C[EyeLight][A]_EXAM"
+    },
+    {
+      "Container": "m10_00_00_00_000010",
+      "Model": "m10_00_00_00_000010",
+      "Shows": "map: M[m10_00]319_AET101_300, M[m10_00]105_AET101_065, M[m10_00]137_AET001_301, M[m10_00]090_AET101_132 (+10 more)"
+    }
+  ]
+}

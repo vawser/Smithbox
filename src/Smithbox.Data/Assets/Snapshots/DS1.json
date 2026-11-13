@@ -1,0 +1,51 @@
+{
+  "Game": "DS1",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c5220",
+      "Model": "c5220",
+      "Shows": "chr: FRPG_Phn_ColDifSpcBmp, FRPG_Phn_ColDif, FRPG_Phn_ColDifSpcBmpMul"
+    },
+    {
+      "Container": "o1002",
+      "Model": "o1002",
+      "Shows": "asset: FRPG_Phn_ColDifBmpLit, FRPG_Phn_ColDifBmp, FRPG_Phn_ColDifLit"
+    },
+    {
+      "Container": "BD_M_9450_L",
+      "Model": "BD_M_9450_L",
+      "Shows": "parts: FRPG_Phn_ColDifSpc"
+    },
+    {
+      "Container": "m0600B0A13",
+      "Model": "m0600B0A13",
+      "Shows": "map: FRPG_Phn_ColDifSpcBmpLit, FRPG_Phn_ColDifBmpMulLit, FRPG_Phn_ColDifSpcBmpMulLit, FRPG_Phn_ColDifMulLit"
+    },
+    {
+      "Container": "m3700B0A16",
+      "Model": "m3700B0A16",
+      "Shows": "map: FRPG_Phn_ColDifBmpMul, FRPG_Water_Reflect"
+    },
+    {
+      "Container": "m2400B0A10",
+      "Model": "m2400B0A10",
+      "Shows": "map: FRPG_Phn_ColDifSpcLit"
+    },
+    {
+      "Container": "WP_A_2023",
+      "Model": "WP_A_2023",
+      "Shows": "parts: FRPG_Ghost_Tod"
+    },
+    {
+      "Container": "m1011B0A11",
+      "Model": "m1011B0A11",
+      "Shows": "map: FRPG_Phn_ColDifMul, FRPG_Snow"
+    }
+  ]
+}

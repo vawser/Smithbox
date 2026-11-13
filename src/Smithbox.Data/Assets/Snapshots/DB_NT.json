@@ -1,0 +1,51 @@
+{
+  "Game": "DB_NT",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c6040",
+      "Model": "c6040",
+      "Shows": "chr: C[DetailBlend], C[AMSN], C[DetailBlend]_SSS_LocalAO, C[DetailBlend]_LocalAO (+2 more)"
+    },
+    {
+      "Container": "aeg101_387",
+      "Model": "AEG101_387",
+      "Shows": "asset: M[AMSN], M[AMSN][Mb2], M[AMSN][Mb3][Ov_N][Wet], M[AMSN_V][Array_4][Atlas][Mb2][HeightMask] (+4 more)"
+    },
+    {
+      "Container": "hd_m_8501",
+      "Model": "HD_M_8501",
+      "Shows": "parts: P[ChrCustomize][Eye], C[EyeAO], P[ChrCustomize][Hair], C[DetailBlend]_SSS (+1 more)"
+    },
+    {
+      "Container": "m80_00_00_00_000000",
+      "Model": "m80_00_00_00_000000",
+      "Shows": "map: M[AMSN_V][Mb3][3Mask_ch18][Ov_N][Wet], M[AMSN_V][Array_Mb4][HeightMask]"
+    },
+    {
+      "Container": "aeg107_105",
+      "Model": "AEG107_105",
+      "Shows": "asset: M[AMSN][Mb2][Ov_N][Wet], M[AMSN][Array_4][Atlas][Mb2][HeightMask], M[AMSN_V][CrossFade]"
+    },
+    {
+      "Container": "aeg103_462",
+      "Model": "AEG103_462",
+      "Shows": "asset: M[AMSN_V][Translucency], M[AMSN][Emissive]_e, M[Candle]"
+    },
+    {
+      "Container": "aeg101_356",
+      "Model": "AEG101_356",
+      "Shows": "asset: M[A], M[AMSN][Ov_N][Wet]"
+    },
+    {
+      "Container": "aeg312_411",
+      "Model": "AEG312_411",
+      "Shows": "asset: M[AMSN_V][Grass], M[AMSN_V][Grass3]"
+    }
+  ]
+}

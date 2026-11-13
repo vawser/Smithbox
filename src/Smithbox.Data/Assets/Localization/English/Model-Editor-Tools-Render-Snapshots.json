@@ -1,0 +1,41 @@
+{
+  "Entries": [
+    { "Key": "MODEL_ToolWindow_View_Toggle_Render_Snapshots", "Text": "Render Snapshots" },
+    { "Key": "MODEL_RenderSnapshot_Header", "Text": "Render Snapshots" },
+    { "Key": "MODEL_RenderSnapshot_Hint", "Text": "Captures every model of this game's snapshot set from a fixed angle and size, in Game mode, and saves each as a PNG. Compare a run with a baseline using Tools/RenderSnapshotDiff to see which games a renderer change affected. Keep the viewport on screen while it runs." },
+
+    { "Key": "MODEL_RenderSnapshot_Set_Header", "Text": "Snapshot Set" },
+    { "Key": "MODEL_RenderSnapshot_Set_Header_TT", "Text": "The models to capture, read from Assets/Snapshots/<GAME>.json. Generate it with RenderSnapshotDiff's pick mode." },
+    { "Key": "MODEL_RenderSnapshot_Set_Missing", "Text": "There is no snapshot set for {0}. Generate one with 'RenderSnapshotDiff pick {0}', which writes {1}." },
+    { "Key": "MODEL_RenderSnapshot_Set_Unreadable", "Text": "The snapshot set {0} can't be read: {1}" },
+    { "Key": "MODEL_RenderSnapshot_Set_Summary", "Text": "{0} models, {1} x {2}, yaw {3}°, pitch {4}°" },
+    { "Key": "MODEL_RenderSnapshot_Reload_Set", "Text": "Reload Snapshot Set" },
+    { "Key": "MODEL_RenderSnapshot_Reload_Set_TT", "Text": "Reads the snapshot set file again, after it has been regenerated or edited." },
+
+    { "Key": "MODEL_RenderSnapshot_Folder_Header", "Text": "Output Folder" },
+    { "Key": "MODEL_RenderSnapshot_Folder_Header_TT", "Text": "Where the images are written. Each run replaces <folder>/<GAME>/Current." },
+    { "Key": "MODEL_RenderSnapshot_Folder_Input_TT", "Text": "The snapshot folder, for example Smithbox/Claude/Snapshots. The images go in <folder>/<GAME>/Current, with a manifest.json listing what was captured and with which settings." },
+
+    { "Key": "MODEL_RenderSnapshot_Actions_Header", "Text": "Actions" },
+    { "Key": "MODEL_RenderSnapshot_Actions_Header_TT", "Text": "Start or stop a run." },
+    { "Key": "MODEL_RenderSnapshot_Capture", "Text": "Capture Snapshot Set" },
+    { "Key": "MODEL_RenderSnapshot_Capture_TT", "Text": "Loads each model of the set in turn, waits for its textures and the exposure to settle, and saves the image. TAA is turned off and the material clock is held still for the run, then put back." },
+    { "Key": "MODEL_RenderSnapshot_Cancel", "Text": "Cancel" },
+    { "Key": "MODEL_RenderSnapshot_Cancel_TT", "Text": "Stops the run. The images saved so far are kept, and the manifest marks the run as incomplete." },
+
+    { "Key": "MODEL_RenderSnapshot_Block_No_Set", "Text": "There is no snapshot set for this game." },
+    { "Key": "MODEL_RenderSnapshot_Block_No_Folder", "Text": "Choose an output folder first." },
+    { "Key": "MODEL_RenderSnapshot_Block_Not_Game_Mode", "Text": "Snapshots are taken in Game render mode. Switch the viewport to Game mode first." },
+    { "Key": "MODEL_RenderSnapshot_Block_No_Viewport", "Text": "Snapshots need the Vulkan viewport." },
+
+    { "Key": "MODEL_RenderSnapshot_Progress_Header", "Text": "Progress" },
+    { "Key": "MODEL_RenderSnapshot_Progress_Header_TT", "Text": "The run's progress, and the models that couldn't be captured." },
+    { "Key": "MODEL_RenderSnapshot_Status_Loading", "Text": "Loading {0} ({1} of {2})" },
+    { "Key": "MODEL_RenderSnapshot_Status_Settling", "Text": "Waiting for {0} to settle ({1} of {2})" },
+    { "Key": "MODEL_RenderSnapshot_Status_Done", "Text": "Captured {0} of {1} models into {2}" },
+    { "Key": "MODEL_RenderSnapshot_Status_Cancelled", "Text": "Cancelled" },
+    { "Key": "MODEL_RenderSnapshot_Status_No_Viewport", "Text": "Stopped: the viewport was closed" },
+    { "Key": "MODEL_RenderSnapshot_Status_Folder_Failed", "Text": "Can't create {0}: {1}" },
+    { "Key": "MODEL_RenderSnapshot_Failed_Entry", "Text": "{0}: {1}" }
+  ]
+}

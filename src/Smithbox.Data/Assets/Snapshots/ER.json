@@ -1,0 +1,51 @@
+{
+  "Game": "ER",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c5391",
+      "Model": "c5391",
+      "Shows": "chr: C[DetailBlend], C[AMSN], C[DetailBlend]_cloth, C[Fur] (+7 more)"
+    },
+    {
+      "Container": "aeg030_500",
+      "Model": "AEG030_500",
+      "Shows": "asset: M[AMSN_V], M[AMSN_V][Ov_N], M[AMSN_V][Mb2][Ov_N], M[AMSN_V][Mb2] (+2 more)"
+    },
+    {
+      "Container": "bd_m_1640_l",
+      "Model": "BD_M_1640_L",
+      "Shows": "parts: C[DetailBlend][S2], C[DetailBlend][S2]_cloth, C[AMSN]_Glow"
+    },
+    {
+      "Container": "m10_00_00_00_001505",
+      "Model": "m10_00_00_00_001505",
+      "Shows": "map: M[AMSN], M[A], M[AMSN_V][Ov_AN], M[AMSN_V][Mb3] (+6 more)"
+    },
+    {
+      "Container": "c2120",
+      "Model": "c2120",
+      "Shows": "chr: C[DetailBlend]_SSS, C[Fur]_FurBlur, C[Shell]_FurBlur, P[ChrCustomize][Hair] (+6 more)"
+    },
+    {
+      "Container": "m61_47_44_00_474400",
+      "Model": "m61_47_44_00_474400",
+      "Shows": "map: M[AMSN_V][Mb4][3Mask][Far_AN], M[AMSN_V][Ov_N][Mb3_ColorAdjust][3Mask_ch18], M[AMSN_V][Mb4][3Mask][Far_AN][cheap_C], M[Road_Ground]"
+    },
+    {
+      "Container": "c3950",
+      "Model": "c3950",
+      "Shows": "chr: C[AMSN]_cloth, C[AMSN]_Glow[Int], C[Shell], C[AMSN]_Glow_cloth"
+    },
+    {
+      "Container": "aeg030_052",
+      "Model": "AEG030_052",
+      "Shows": "asset: M[AMSN_V][Mb2][Ov_N][Snow_VtxMask], M[AMSN_V][Mb4][3Mask][Ov_AN], M[AMSN_V][Snow], M[AMSN_V][Ov_N][Snow_VtxMask]"
+    }
+  ]
+}

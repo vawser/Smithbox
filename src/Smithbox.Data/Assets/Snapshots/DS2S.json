@@ -1,0 +1,51 @@
+{
+  "Game": "DS2S",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c8050",
+      "Model": "c8050",
+      "Shows": "chr: Flver_EquipIbl, Flver_SkinIbl, Flver_EquipClothIbl, Flver_ColDifBumpA"
+    },
+    {
+      "Container": "o31_1010",
+      "Model": "o31_1010",
+      "Shows": "asset: Flver_ColDifBump, Flver_ColDifSpcBump, Flver_ColDif"
+    },
+    {
+      "Container": "wp_2850_m",
+      "Model": "WP_2850_M",
+      "Shows": "parts: Flver_WeaponIbl, Flver_WeaponEmiIbl"
+    },
+    {
+      "Container": "m50_37_00_00",
+      "Model": "m0000",
+      "Shows": "map: Flver_ColDifBumpGI, Flver_ColDifBumpMulMaskGI, Flver_ColDifSpcBumpGI, Flver_ColDifGI (+1 more)"
+    },
+    {
+      "Container": "c7050",
+      "Model": "c7050",
+      "Shows": "chr: Flver_ColDifSpcBumpIbl, Flver_ColDifSpcBumpIblA, Flver_HairIbl, Flver_EyeIbl (+2 more)"
+    },
+    {
+      "Container": "m10_34_00_00",
+      "Model": "m0000",
+      "Shows": "map: Flver_ColDifBumpMulMask, Flver_ColDifSpcBumpA, Flver_Col, Flver_ColDifSpcBumpMulMask (+1 more)"
+    },
+    {
+      "Container": "o16_9002",
+      "Model": "o16_9002",
+      "Shows": "asset: Flver_ColDifA, Flver_ColDifSpc"
+    },
+    {
+      "Container": "m10_31_00_00",
+      "Model": "m0000",
+      "Shows": "map: Flver_ColDifBumpMulGI, Flver_ColA"
+    }
+  ]
+}

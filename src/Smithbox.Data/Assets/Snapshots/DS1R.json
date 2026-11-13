@@ -1,0 +1,51 @@
+{
+  "Game": "DS1R",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c2830",
+      "Model": "c2830",
+      "Shows": "chr: FRPG_Phn_ColDifSpcBmp, FRPG_Phn_ColDifSpcBmpMul"
+    },
+    {
+      "Container": "o3450",
+      "Model": "o3450",
+      "Shows": "asset: FRPG_Phn_ColDifSpcBmpLit, FRPG_Phn_ColDifSpcBmpMulLit"
+    },
+    {
+      "Container": "WP_A_2023",
+      "Model": "WP_A_2023",
+      "Shows": "parts: FRPG_Ghost_Tod"
+    },
+    {
+      "Container": "m2201B1A10",
+      "Model": "m2201B1A10",
+      "Shows": "map: FRPG_Phn_ColDifSpcBmpHeightLit, FRPG_Foliage_ColDifSpcBmpLit, FRPG_Ivy_ColDifSpcBmpLit"
+    },
+    {
+      "Container": "m5010B2A10",
+      "Model": "m5010B2A10",
+      "Shows": "map: FRPG_Foliage_ColDifSpcBmp, FRPG_Ivy_ColDifSpcBmp"
+    },
+    {
+      "Container": "m3700B0A16",
+      "Model": "m3700B0A16",
+      "Shows": "map: FRPG_Water_Reflect, FRPG_Phn_ColDifSpcBmpMulHeight"
+    },
+    {
+      "Container": "m2230B0A11",
+      "Model": "m2230B0A11",
+      "Shows": "map: FRPG_Snow_Lit"
+    },
+    {
+      "Container": "m6100B2A10",
+      "Model": "m6100B2A10",
+      "Shows": "map: FRPG_NormalToAlpha"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "Game": "BB",
+  "Width": 768,
+  "Height": 768,
+  "Yaw": 35,
+  "Pitch": 20,
+  "Fov": 60,
+  "Time": 0,
+  "Models": [
+    {
+      "Container": "c4000",
+      "Model": "c4000",
+      "Shows": "chr: GXFlver_ColDifSpcBumpIbl_Bloody, GXFlver_ColDifSpcBumpIbl, GXFlver_ColDifSpcBumpIbl_BlC, GXFlver_ColDifSpcBumpIbl_Bloody_Df_Cloth"
+    },
+    {
+      "Container": "o350012",
+      "Model": "o350012",
+      "Shows": "asset: GXFlver_ColDifSpcBumpDOL, GXFlver_ColDifSpcBumpDirtMaskDOL, GXFlver_ColDifSpcBumpEmiIblGlow"
+    },
+    {
+      "Container": "am_a_5210",
+      "Model": "AM_A_5210",
+      "Shows": "parts: GXFlver_ColDifSpcBumpIbl_Bloody_Cm, GXFlver_SSSIbl_Bloody, GXFlver_ColDifSpcBumpIbl_Bloody_Cm_Cloth"
+    },
+    {
+      "Container": "m29_00_00_00_204050",
+      "Model": "m29_00_00_00_204050",
+      "Shows": "map: GXFlver_ColDifSpcBumpMulIbl, GXFlver_ColDifSpcBumpTrIbl, GXFlver_Grass, GXFlver_ColDifSpcPomIbl"
+    },
+    {
+      "Container": "hd_a_1509_l",
+      "Model": "HD_A_1509_L",
+      "Shows": "parts: GXFlver_ColDifSpcBumpEmiMulIblGhost, GXFlver_ColDifSpcBumpEmiMulIblGhost_Cloth"
+    },
+    {
+      "Container": "m24_01_00_00_004002",
+      "Model": "m24_01_00_00_004002",
+      "Shows": "map: GXFlver_ColDifSpcBumpMulMaskDOL, GXFlver_ColDifSpcBumpEnvDOL, GXFlver_ColDifSpcBumpMulMaskEnvDOL"
+    },
+    {
+      "Container": "c5420",
+      "Model": "c5420",
+      "Shows": "chr: GXFlver_ColDifSpcBumpEmiIblGlow_Bloody, GXFlver_SSSIbl_Bloody_Cloth, GXFlver_ColDifSpcBumpMulIbl_Bloody"
+    },
+    {
+      "Container": "bd_m_6310_l",
+      "Model": "BD_M_6310_L",
+      "Shows": "parts: GXFlver_ColDifSpcBumpIbl_Bloody_Df_Cm_Cloth, GXFlver_ColDifSpcBumpIbl_Bloody_Df_Cm"
+    }
+  ]
+}

@@ -96,6 +96,12 @@ public class ModelToolWindow
             View.VanillaCompareTool.OnToolWindow();
         }
 
+        // Render Snapshots: a developer tool, for checking renderer changes against a baseline
+        if (CFG.Current.Developer_Enable_Tools && CFG.Current.Interface_ModelEditor_Tool_RenderSnapshots)
+        {
+            View.RenderSnapshotTool.OnToolWindow();
+        }
+
         // Assets
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Assets"));
 
@@ -215,6 +221,16 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_VanillaCompare = !CFG.Current.Interface_ModelEditor_Tool_VanillaCompare;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_VanillaCompare);
+
+            // Render Snapshots
+            if (CFG.Current.Developer_Enable_Tools)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Render_Snapshots")}##toggleRenderSnapshotTool"))
+                {
+                    CFG.Current.Interface_ModelEditor_Tool_RenderSnapshots = !CFG.Current.Interface_ModelEditor_Tool_RenderSnapshots;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_RenderSnapshots);
+            }
 
             // Grid Configuration
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
