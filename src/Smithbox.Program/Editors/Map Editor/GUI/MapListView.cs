@@ -33,6 +33,8 @@ public class MapListView : IActionEventHandler
 
         DisplayLoadStatus();
 
+        UpdateListSelection();
+
         ImGui.BeginChild("MapListSection", new Vector2(0, 0), ImGuiChildFlags.Borders);
 
         DisplayMapList(MapContentLoadState.Loaded);
@@ -202,27 +204,23 @@ public class MapListView : IActionEventHandler
             {
                 var curWrapper = filteredEntries[i];
 
-                if (ImGui.Selectable($"##mapListEntry{curWrapper.Name}", curWrapper.Name == View.Selection.SelectedMapID, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($"##mapListEntry{curWrapper.Name}", _selectedMaps.Contains(curWrapper.Name), ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (loadType == MapContentLoadState.Loaded)
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        View.Selection.SelectedMapID = curWrapper.Name;
-                        View.Selection.SelectedMapContainer = curWrapper.MapContainer;
-                    }
+                        // The first click of the pair has already set the selection (and left a multi-selection
+                        // standing), so the double-click acts on all of it
+                        _pendingCollapse = null;
+                        _selectedMaps.Add(curWrapper.Name);
 
-                    if (CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click &&
-                        ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                        if (CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click)
+                        {
+                            OnDoubleClick(curWrapper, loadType);
+                        }
+                    }
+                    else
                     {
-                        // A loaded map is framed: unloading drops its collision, navmesh and models, which are
-                        // slow to load again, so that is left to the context menu
-                        if (loadType == MapContentLoadState.Loaded)
-                        {
-                            View.ViewportWindow.FrameMap(curWrapper.MapContainer);
-                        }
-                        else
-                        {
-                            View.Universe.LoadMap(curWrapper.Name, true);
-                        }
+                        OnClick(curWrapper, loadType);
                     }
                 }
 
@@ -274,6 +272,190 @@ public class MapListView : IActionEventHandler
 
         if (loadType == MapContentLoadState.Loaded)
             ImGui.Separator();
+    }
+
+    // The maps selected in the list, by ID. The active map (View.Selection.SelectedMapID) is separate: it is one
+    // loaded map, and follows the last loaded map clicked here.
+    private readonly HashSet<string> _selectedMaps = new();
+
+    // Where a Shift+click range starts
+    private string _selectionAnchor;
+
+    // The active map last seen, so a change made elsewhere (a viewport click, a load) can be followed
+    private string _lastActiveMap;
+
+    // A plain click on one map of a multi-selection collapses the selection to it only once the double-click time
+    // has passed, so that a double-click acts on the whole selection
+    private string _pendingCollapse;
+    private double _pendingCollapseTime;
+
+    /// <summary>
+    /// Runs once a frame, before the lists are drawn
+    /// </summary>
+    private void UpdateListSelection()
+    {
+        if (_pendingCollapse != null &&
+            ImGui.GetTime() - _pendingCollapseTime > ImGui.GetIO().MouseDoubleClickTime)
+        {
+            _selectedMaps.Clear();
+            _selectedMaps.Add(_pendingCollapse);
+            _pendingCollapse = null;
+        }
+
+        // The active map was changed elsewhere: the selection follows it, unless it is already part of it
+        // (as when one of several selected maps finishes loading)
+        var active = View.Selection.SelectedMapID;
+
+        if (active != _lastActiveMap)
+        {
+            _lastActiveMap = active;
+
+            if (!string.IsNullOrEmpty(active) && !_selectedMaps.Contains(active))
+            {
+                _selectedMaps.Clear();
+                _selectedMaps.Add(active);
+                _selectionAnchor = active;
+                _pendingCollapse = null;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Click: select only this map. Ctrl+click: add or remove it. Shift+click: select the range from the last
+    /// clicked map (added to the selection with Ctrl held).
+    /// </summary>
+    private void OnClick(MapWrapper wrapper, MapContentLoadState loadType)
+    {
+        var io = ImGui.GetIO();
+        var name = wrapper.Name;
+
+        _pendingCollapse = null;
+
+        if (io.KeyShift && _selectionAnchor != null && SelectRange(_selectionAnchor, name, io.KeyCtrl))
+        {
+            // The anchor stays, so the range can be changed with another Shift+click
+        }
+        else if (io.KeyCtrl)
+        {
+            if (!_selectedMaps.Remove(name))
+                _selectedMaps.Add(name);
+
+            _selectionAnchor = name;
+        }
+        else
+        {
+            if (_selectedMaps.Count > 1 && _selectedMaps.Contains(name))
+            {
+                _pendingCollapse = name;
+                _pendingCollapseTime = ImGui.GetTime();
+            }
+            else
+            {
+                _selectedMaps.Clear();
+                _selectedMaps.Add(name);
+            }
+
+            _selectionAnchor = name;
+        }
+
+        // A loaded map clicked becomes the active map, as before (not when Ctrl+click took it out of the selection)
+        if (loadType == MapContentLoadState.Loaded && _selectedMaps.Contains(name))
+        {
+            View.Selection.SelectedMapID = name;
+            View.Selection.SelectedMapContainer = wrapper.MapContainer;
+            _lastActiveMap = name;
+        }
+    }
+
+    /// <summary>
+    /// Selects the maps from one to the other, in the order shown (loaded maps, then unloaded maps). False if
+    /// either is no longer in the list.
+    /// </summary>
+    private bool SelectRange(string from, string to, bool add)
+    {
+        var visible = GetVisibleMaps();
+
+        var start = visible.FindIndex(e => e.Name == from);
+        var end = visible.FindIndex(e => e.Name == to);
+
+        if (start < 0 || end < 0)
+            return false;
+
+        if (!add)
+            _selectedMaps.Clear();
+
+        for (int i = Math.Min(start, end); i <= Math.Max(start, end); i++)
+        {
+            _selectedMaps.Add(visible[i].Name);
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Every unloaded selected map is loaded, the clicked one made active once loaded (or the first, if the
+    /// clicked map is already loaded, in which case it is framed). Unloading a loaded map drops its collision,
+    /// navmesh and models, which are slow to load again, so that is left to the context menu.
+    /// </summary>
+    private void OnDoubleClick(MapWrapper wrapper, MapContentLoadState loadType)
+    {
+        LoadMaps(GetSelectedMaps(wrapper), wrapper.Name);
+
+        if (loadType == MapContentLoadState.Loaded && wrapper.MapContainer != null)
+        {
+            View.ViewportWindow.FrameMap(wrapper.MapContainer);
+        }
+    }
+
+    /// <summary>
+    /// The maps shown, in the order shown
+    /// </summary>
+    private List<MapWrapper> GetVisibleMaps()
+    {
+        var visible = new List<MapWrapper>(GetFilteredEntries(MapContentLoadState.Loaded));
+        visible.AddRange(GetFilteredEntries(MapContentLoadState.Unloaded));
+        return visible;
+    }
+
+    /// <summary>
+    /// The selected maps the list shows (a map hidden by the search or a filter is left out, so an action never
+    /// reaches a map the user can't see), in the order shown. Always includes the clicked map.
+    /// </summary>
+    private List<MapWrapper> GetSelectedMaps(MapWrapper clicked)
+    {
+        var selected = GetVisibleMaps().Where(e => _selectedMaps.Contains(e.Name)).ToList();
+
+        if (!selected.Contains(clicked))
+            selected.Insert(0, clicked);
+
+        return selected;
+    }
+
+    private static bool IsLoaded(MapWrapper wrapper)
+    {
+        return wrapper.MapContainer != null && wrapper.MapContainer.LoadState is MapContentLoadState.Loaded;
+    }
+
+    /// <summary>
+    /// Loads the unloaded maps. One is made the active map once loaded: the preferred map if it is among them,
+    /// otherwise the first. That one starts first; the rest queue behind it.
+    /// </summary>
+    private void LoadMaps(List<MapWrapper> maps, string preferred)
+    {
+        var toLoad = maps.Where(e => !IsLoaded(e)).Select(e => e.Name).ToList();
+
+        if (toLoad.Count == 0)
+            return;
+
+        var selectTarget = toLoad.Contains(preferred) ? preferred : toLoad[0];
+
+        View.Universe.LoadMap(selectTarget, true);
+
+        foreach (var mapID in toLoad)
+        {
+            if (mapID != selectTarget)
+                View.Universe.LoadMap(mapID, false);
+        }
     }
 
     /// <summary>
@@ -526,84 +708,122 @@ public class MapListView : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"mapListEntryContext_{mapWrapper.Name}"))
         {
-            // Unloaded Map
-            if (mapWrapper.MapContainer == null ||
-                mapWrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
+            // Right-clicking a map outside the selection selects just it, so the menu never acts on maps the
+            // user didn't mean
+            if (ImGui.IsWindowAppearing() && !_selectedMaps.Contains(mapWrapper.Name))
+            {
+                _selectedMaps.Clear();
+                _selectedMaps.Add(mapWrapper.Name);
+                _selectionAnchor = mapWrapper.Name;
+                _pendingCollapse = null;
+            }
+
+            var targets = GetSelectedMaps(mapWrapper);
+            var unloaded = targets.Where(e => !IsLoaded(e)).ToList();
+            var loaded = targets.Where(IsLoaded).ToList();
+
+            // Unloaded maps
+            if (unloaded.Count > 0)
             {
                 // Load Map
-                if (ImGui.Selectable("Load Map"))
+                if (ImGui.Selectable(unloaded.Count == 1 ? "Load Map" : LOC.Get("MAP_List_Load_Maps", unloaded.Count)))
                 {
-                    View.Universe.LoadMap(mapWrapper.Name, true);
+                    LoadMaps(unloaded, mapWrapper.Name);
                 }
             }
 
-            // Loaded Map
-            if (mapWrapper.MapContainer != null &&
-                mapWrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
+            // Loaded maps
+            if (loaded.Count > 0)
             {
                 // Save Map
-                if (ImGui.Selectable("Save Map"))
+                if (ImGui.Selectable(loaded.Count == 1 ? "Save Map" : LOC.Get("MAP_List_Save_Maps", loaded.Count)))
                 {
-                    try
+                    foreach (var map in loaded)
                     {
-                        View.Universe.SaveMap(mapWrapper.MapContainer);
-                    }
-                    catch (SavingFailedException e)
-                    {
-                        View.Editor.HandleSaveException(e);
+                        try
+                        {
+                            View.Universe.SaveMap(map.MapContainer);
+                        }
+                        catch (SavingFailedException e)
+                        {
+                            // The save error dialog is shown once, and the maps after it are left unsaved
+                            View.Editor.HandleSaveException(e);
+                            break;
+                        }
                     }
                 }
 
                 // Unload Map
-                if (ImGui.Selectable("Unload Map"))
+                if (ImGui.Selectable(loaded.Count == 1 ? "Unload Map" : LOC.Get("MAP_List_Unload_Maps", loaded.Count)))
                 {
-                    View.Universe.RequestUnloadMap(mapWrapper.Name);
+                    View.Universe.RequestUnloadMaps(loaded.Select(e => e.Name).ToList());
                 }
 
-                // How much undo history goes with it: the history is held by the view that loaded the map.
-                // Clicking Unload Map above unloads it in this same frame, leaving no container, so skip then.
-                if (ImGui.IsItemHovered() && mapWrapper.MapContainer is { } hoveredMap)
+                // How much undo history goes with them: the history is held by the view that loaded each map.
+                // Clicking Unload above unloads them in this same frame, leaving no container, so skip those.
+                if (ImGui.IsItemHovered())
                 {
-                    var manager = (hoveredMap.OwnerView ?? View).ViewportActionManager;
-                    var dropped = manager.CountActionsTouching(mapWrapper.Name);
+                    var dropped = 0;
+
+                    foreach (var map in loaded)
+                    {
+                        if (map.MapContainer is { } hoveredMap)
+                        {
+                            var manager = (hoveredMap.OwnerView ?? View).ViewportActionManager;
+                            dropped += manager.CountActionsTouching(map.Name);
+                        }
+                    }
 
                     GUI.Tooltip(dropped > 0
                         ? LOC.Get("MAP_History_Unload_Map_TT", dropped)
                         : LOC.Get("MAP_History_Unload_Map_None_TT"));
                 }
+            }
 
-                // Paste into this map, when something is copied (and the map is still loaded after the items above)
+            // Paste into the right-clicked map, when something is copied (and the map is still loaded after the
+            // items above). It targets one map, so it stays with the map clicked.
+            if (IsLoaded(mapWrapper))
+            {
                 View.DuplicateToMapAction.OnPasteIntoMapContext(mapWrapper.MapContainer);
             }
 
             // ER: Load Related Maps
             if (View.Project.Descriptor.ProjectType is ProjectType.ER)
             {
-                if (mapWrapper.Name.StartsWith("m60") || mapWrapper.Name.StartsWith("m61"))
+                var overworld = targets.Where(e => e.Name.StartsWith("m60") || e.Name.StartsWith("m61")).ToList();
+
+                if (overworld.Count > 0)
                 {
                     if (ImGui.Selectable("Load Related Maps"))
                     {
-                        View.Universe.LoadMap(mapWrapper.Name, true);
-                        View.Universe.LoadRelatedMapsER(mapWrapper.Name);
+                        LoadMaps(overworld, mapWrapper.Name);
+
+                        foreach (var map in overworld)
+                        {
+                            View.Universe.LoadRelatedMapsER(map.Name);
+                        }
                     }
                 }
             }
 
             ImGui.Separator();
 
-            // Utils
-            if (ImGui.Selectable("Copy Map ID"))
+            // Utils: with several maps, one per line
+            if (ImGui.Selectable(targets.Count == 1 ? "Copy Map ID" : LOC.Get("MAP_List_Copy_Map_IDs", targets.Count)))
             {
-                PlatformUtils.Instance.SetClipboardText(mapWrapper.Name);
+                PlatformUtils.Instance.SetClipboardText(string.Join("\n", targets.Select(e => e.Name)));
             }
-            if (ImGui.Selectable("Copy Map Name"))
+            if (ImGui.Selectable(targets.Count == 1 ? "Copy Map Name" : LOC.Get("MAP_List_Copy_Map_Names", targets.Count)))
             {
-                var mapName = AliasHelper.GetMapNameAlias(View.Project, mapWrapper.Name);
-                PlatformUtils.Instance.SetClipboardText(mapName);
+                var mapNames = targets.Select(e => AliasHelper.GetMapNameAlias(View.Project, e.Name));
+                PlatformUtils.Instance.SetClipboardText(string.Join("\n", mapNames));
             }
             if (ImGui.Selectable("Add to Map Filter"))
             {
-                View.GlobalSearchTool.TargetMap(mapWrapper.Name);
+                foreach (var map in targets)
+                {
+                    View.GlobalSearchTool.TargetMap(map.Name);
+                }
             }
 
             ImGui.EndPopup();

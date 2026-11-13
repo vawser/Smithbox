@@ -697,23 +697,67 @@ public class MapMsbPropertyView
         return instanceProp == null || Convert.ToInt32(instanceProp.GetValue(ent.WrappedObject)) == number;
     }
 
-    // The reference count shown under the direct rename, kept until the selection or the map data changes
-    private (Entity Entity, int Version, int Count) _referenceCount = (null, -1, 0);
+    // The references shown under the rename input, kept until the selection or the map data changes. Only the
+    // object's own map is searched: a survey of ER, NR, Sekiro, DS3 and AC6 found no MSB name that points into
+    // another map (Claude/Tools/CrossMapRefSurvey).
+    private (Entity First, int Count, int Version, List<(ReferenceSlot Slot, Entity Target)> References) _references = (null, 0, -1, new());
+
+    private List<(ReferenceSlot Slot, Entity Target)> GetReferences(IEnumerable<MsbEntity> entities)
+    {
+        var list = entities.ToList();
+        var version = View.ViewportActionManager.Version;
+
+        if (_references.First != list[0] || _references.Count != list.Count || _references.Version != version)
+        {
+            var references = list
+                .Where(e => e.Container != null)
+                .GroupBy(e => e.Container)
+                .SelectMany(g => MsbReferences.FindReferencesTo(g.Key, g))
+                .ToList();
+
+            _references = (list[0], list.Count, version, references);
+        }
+
+        return _references.References;
+    }
 
     private int GetReferenceCount(Entity ent)
     {
-        var version = View.ViewportActionManager.Version;
+        return ent is MsbEntity msb ? GetReferences(new[] { msb }).Count : 0;
+    }
 
-        if (_referenceCount.Entity != ent || _referenceCount.Version != version)
+    /// <summary>
+    /// "N references in M objects will be updated", under the referenced rename, with the objects on hover
+    /// </summary>
+    private void DisplayReferencePreview(IEnumerable<MsbEntity> entities)
+    {
+        var references = GetReferences(entities);
+
+        if (references.Count == 0)
         {
-            var count = ent.Container != null
-                ? MsbReferences.FindReferencesTo(ent.Container, new[] { ent }).Count
-                : 0;
-
-            _referenceCount = (ent, version, count);
+            ImGui.TextDisabled(LOC.Get("MAP_Rename_Preview_None"));
+            return;
         }
 
-        return _referenceCount.Count;
+        var referrers = references.Select(r => r.Slot.Referrer).Distinct().ToList();
+
+        ImGui.TextDisabled(LOC.Get("MAP_Rename_Preview", references.Count, referrers.Count));
+
+        if (ImGui.IsItemHovered())
+        {
+            const int max = 12;
+
+            var lines = references
+                .Take(max)
+                .Select(r => $"{MapHistory.NameObject(r.Slot.Referrer)} › {r.Slot.FieldName} → {MapHistory.NameObject(r.Target)}");
+
+            var text = string.Join("\n", lines);
+
+            if (references.Count > max)
+                text += "\n" + LOC.Get("MAP_Rename_Preview_More", references.Count - max);
+
+            GUI.Tooltip(text);
+        }
     }
 
     /// <summary>
@@ -830,6 +874,9 @@ public class MapMsbPropertyView
             }
         }
         ImGui.PopItemWidth();
+
+        // What the rename will rewrite
+        DisplayReferencePreview(entities);
 
         ImGui.NextColumn();
     }

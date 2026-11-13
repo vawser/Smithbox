@@ -577,6 +577,26 @@ public class MapUniverse : IUniverse
     }
 
     /// <summary>
+    /// Unloads the maps, with one prompt covering all of those with unsaved changes, and one garbage collection
+    /// at the end rather than one per map
+    /// </summary>
+    public void RequestUnloadMaps(IReadOnlyList<string> mapIDs)
+    {
+        if (mapIDs.Count == 0)
+            return;
+
+        if (!ConfirmUnload(mapIDs.Select(id => View.Selection.GetMapContainerFromMapID(id))))
+            return;
+
+        foreach (var mapID in mapIDs)
+        {
+            UnloadMap(mapID, collectGarbage: false);
+        }
+
+        CollectGarbage();
+    }
+
+    /// <summary>
     /// Unloads every loaded map, offering to save those with unsaved changes first
     /// </summary>
     public void RequestUnloadAllMaps()

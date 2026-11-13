@@ -337,6 +337,26 @@
       "Text": "Loading now: {0}\nQueued: {1}\nOnce all are loaded, the map you asked for is made the active map, unless you pick another one meanwhile."
     },
     {
+      "Key": "MAP_List_Load_Maps",
+      "Text": "Load Maps ({0})"
+    },
+    {
+      "Key": "MAP_List_Save_Maps",
+      "Text": "Save Maps ({0})"
+    },
+    {
+      "Key": "MAP_List_Unload_Maps",
+      "Text": "Unload Maps ({0})"
+    },
+    {
+      "Key": "MAP_List_Copy_Map_IDs",
+      "Text": "Copy Map IDs ({0})"
+    },
+    {
+      "Key": "MAP_List_Copy_Map_Names",
+      "Text": "Copy Map Names ({0})"
+    },
+    {
       "Key": "MAP_Universe_Log_Map_Load_Queued",
       "Text": "{0} will load once the current load finishes."
     },
@@ -371,6 +391,18 @@
     {
       "Key": "MAP_Rename_References_Will_Break",
       "Text": "{0} references point at this name. Renaming here leaves them pointing at the old name, and the map won't save until they are fixed."
+    },
+    {
+      "Key": "MAP_Rename_Preview",
+      "Text": "{0} references in {1} objects will be updated."
+    },
+    {
+      "Key": "MAP_Rename_Preview_None",
+      "Text": "No references point at this name."
+    },
+    {
+      "Key": "MAP_Rename_Preview_More",
+      "Text": "… and {0} more"
     },
     {
       "Key": "MAP_Rename_Enable_Referenced",
