@@ -26,6 +26,16 @@ public class FxSelection
 
     public FxrAction Action => Item as FxrAction;
 
+    /// <summary>
+    /// The selected item through the format-neutral model (Model/): an IFxNode, IFxConfig, IFxAction or IFxState
+    /// adapter, or null. <see cref="Item"/> stays the file's own object, so reference checks and format-specific
+    /// operations keep working.
+    /// </summary>
+    public object ModelItem => Editor.Data.Adapt(Entry, Item);
+
+    /// <summary>The selected action through the model, or null.</summary>
+    public Model.IFxAction ModelAction => ModelItem as Model.IFxAction;
+
     public void SelectEntry(FxEntry entry)
     {
         if (entry == Entry)

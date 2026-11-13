@@ -36,19 +36,19 @@ public class FxInspector
         var entry = Editor.Selection.Entry;
         var item = Editor.Selection.Item;
 
-        switch (item)
+        // FXR3 state conditions are edited as FXR3 data; everything else goes through the format-neutral model
+        if (item is FxrState state && entry?.Fxr != null)
+            DisplayState(entry, state);
+        else switch (Editor.Selection.ModelItem)
         {
-            case FxrAction action when entry != null:
+            case Model.IFxAction action when entry != null:
                 DisplayAction(entry, action);
                 break;
-            case FxrState state when entry?.Fxr != null:
-                DisplayState(entry, state);
-                break;
-            case FxrNode node:
+            case Model.IFxNode node:
                 DisplayNode(node);
                 break;
-            case FxrConfig config:
-                GUI.WrappedText(LOC.Get("FX_Inspector_Config", FxNames.ConfigType(config.Type), config.Actions.Count));
+            case Model.IFxConfig config:
+                GUI.WrappedText(LOC.Get("FX_Inspector_Config", FxNames.Config(config), config.Actions.Count));
                 break;
             default:
                 GUI.WrappedText(LOC.Get("FX_Inspector_No_Selection"));
@@ -240,25 +240,23 @@ public class FxInspector
         }
     }
 
-    private void DisplayNode(FxrNode node)
+    private void DisplayNode(Model.IFxNode node)
     {
-        GUI.WrappedText(LOC.Get("FX_Inspector_Node", FxNames.NodeType(node.Type), node.Configs.Count, node.Actions.Count, node.Children.Count));
+        int configs = node is Model.IFxConfigured c ? c.Configs.Count : 0;
+        GUI.WrappedText(LOC.Get("FX_Inspector_Node", FxNames.Node(node), configs, node.Actions.Count, node.Children.Count));
     }
 
     // ---------------------------------------------------------------- actions
 
-    private void DisplayAction(FxEntry entry, FxrAction action)
+    private void DisplayAction(FxEntry entry, Model.IFxAction action)
     {
-        var view = Data.View(entry, action);
-        var def = view.Definition;
-
         // Action
         GUI.SimpleHeader(LOC.Get("FX_Inspector_Action_Header"), LOC.Get("FX_Inspector_Action_Header_TT"));
-        GUI.WrappedText(def != null ? $"{def.Name} ({action.Type})" : LOC.Get("FX_Action_Unknown", action.Type));
-        if (def?.Slot != null)
-            GUI.WrappedText(LOC.Get("FX_Inspector_Slot", def.Slot));
-        if (def?.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, def.Description);
+        GUI.WrappedText(action.Name != null ? $"{action.Name} ({action.TypeId})" : LOC.Get("FX_Action_Unknown", action.TypeId));
+        if (action.Slot != null)
+            GUI.WrappedText(LOC.Get("FX_Inspector_Slot", action.Slot));
+        if (action.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, action.Description);
 
         // Options
         GUI.Spacer();
@@ -267,10 +265,10 @@ public class FxInspector
         ImGui.Checkbox($"{LOC.Get("FX_Inspector_Show_Unknown")}##fxShowUnknown", ref CFG.Current.FxEditor_Inspector_Show_Unknown);
         GUI.Tooltip(LOC.Get("FX_Inspector_Show_Unknown_TT"));
 
-        if (!view.IsTyped)
+        if (!action.IsTyped)
         {
             GUI.Spacer();
-            GUI.WrappedText(view.Layout == null
+            GUI.WrappedText(!action.HasLayout
                 ? LOC.Get("FX_Inspector_No_Layout", Data.Game)
                 : LOC.Get("FX_Inspector_Does_Not_Fit"));
             DisplayRaw(action);
@@ -283,14 +281,14 @@ public class FxInspector
             return;
         }
 
-        var names = view.Names.ToList();
-        var known = names.Where(n => view.Describe(n)?.IsUnknown != true).ToList();
-        var unknown = names.Where(n => view.Describe(n)?.IsUnknown == true).ToList();
+        var values = action.Values;
+        var known = values.Where(v => !v.IsUnknown).ToList();
+        var unknown = values.Where(v => v.IsUnknown).ToList();
 
         // Values
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_Inspector_Values_Header"), LOC.Get("FX_Inspector_Values_Header_TT"));
-        DisplayValueTable("fxKnownValues", entry, action, view, known);
+        DisplayValueTable("fxKnownValues", entry, action, known);
 
         // Unknown values
         if (unknown.Count > 0)
@@ -299,11 +297,11 @@ public class FxInspector
             GUI.ConditionalHeader(LOC.Get("FX_Inspector_Unknown_Header"), LOC.Get("FX_Inspector_Unknown_Header_TT"),
                 ref CFG.Current.FxEditor_Inspector_Show_Unknown);
             if (CFG.Current.FxEditor_Inspector_Show_Unknown)
-                DisplayValueTable("fxUnknownValues", entry, action, view, unknown);
+                DisplayValueTable("fxUnknownValues", entry, action, unknown);
         }
     }
 
-    private void DisplayValueTable(string id, FxEntry entry, FxrAction action, FxrActionView view, List<string> names)
+    private void DisplayValueTable(string id, FxEntry entry, Model.IFxAction action, List<Model.IFxValue> values)
     {
         if (!ImGui.BeginTable(id, 2, ImGuiTableFlags.SizingStretchProp | ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV))
             return;
@@ -311,15 +309,15 @@ public class FxInspector
         ImGui.TableSetupColumn("##name", ImGuiTableColumnFlags.WidthStretch, 0.4f);
         ImGui.TableSetupColumn("##value", ImGuiTableColumnFlags.WidthStretch, 0.6f);
 
-        foreach (var name in names)
+        foreach (var value in values)
         {
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            var def = view.Describe(name);
-            bool stored = view.IsStored(name);
+            string name = value.Name;
+            bool stored = value.IsStored;
             var label = FxNames.Pretty(name);
-            if (view.KindOf(name) == FxrValueKind.Property)
+            if (value.Kind == Model.FxValueKind.Curve)
             {
                 // Properties open in the Curve Editor
                 if (!stored) ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color with { W = 0.5f });
@@ -335,20 +333,20 @@ public class FxInspector
             else
                 ImGui.TextDisabled(label);
             if (ImGui.IsItemHovered())
-                ImGui.SetTooltip(Tooltip(name, def, stored, view));
+                ImGui.SetTooltip(Tooltip(value));
 
             ImGui.TableSetColumnIndex(1);
             ImGui.SetNextItemWidth(-1);
-            switch (view.KindOf(name))
+            switch (value.Kind)
             {
-                case FxrValueKind.Field:
-                    DisplayField(entry, action, view, name, def);
+                case Model.FxValueKind.Int or Model.FxValueKind.Float or Model.FxValueKind.Bool or Model.FxValueKind.Vector:
+                    DisplayField(entry, action, value);
                     break;
-                case FxrValueKind.Property:
-                    DisplayProperty(entry, action, view, name, def);
+                case Model.FxValueKind.Curve when value is Model.IFxCurveValue curve:
+                    DisplayProperty(entry, action, value, curve);
                     break;
-                case FxrValueKind.Section10:
-                    var list = view.GetSection10(name);
+                case Model.FxValueKind.IntList when value is Model.IFxListValue lv:
+                    var list = lv.GetList();
                     ImGui.TextUnformatted(list == null || list.Count == 0 ? "—" : string.Join(", ", list));
                     break;
             }
@@ -357,50 +355,50 @@ public class FxInspector
         ImGui.EndTable();
     }
 
-    private string Tooltip(string name, FxrPropDef def, bool stored, FxrActionView view)
+    private static string Tooltip(Model.IFxValue value)
     {
-        var lines = new List<string> { name };
-        if (def?.Description != null) lines.Add(def.Description);
-        if (def?.Argument != null) lines.Add(LOC.Get("FX_Inspector_Argument", def.Argument));
-        if (view.ConversionsOf(name).Any()) lines.Add(LOC.Get("FX_Inspector_Converted"));
-        if (!stored) lines.Add(LOC.Get("FX_Inspector_Not_Stored"));
+        var lines = new List<string> { value.Name };
+        if (value.Description != null) lines.Add(value.Description);
+        if (value.Argument != null) lines.Add(LOC.Get("FX_Inspector_Argument", value.Argument));
+        if (value.IsConverted) lines.Add(LOC.Get("FX_Inspector_Converted"));
+        if (!value.IsStored) lines.Add(LOC.Get("FX_Inspector_Not_Stored"));
         return string.Join("\n\n", lines);
     }
 
     // ---------------------------------------------------------------- fields
 
-    private void DisplayField(FxEntry entry, FxrAction action, FxrActionView view, string name, FxrPropDef def)
+    private void DisplayField(FxEntry entry, Model.IFxAction action, Model.IFxValue value)
     {
-        view.FindField(name, out var slot, out _);
-        var values = view.GetValue(name);
+        string name = value.Name;
+        var values = value.Get();
         string id = $"##fxField_{name}";
 
         // The edit setting the field to some values: committed, or shown live while the value is being edited
         EditorAction Make(double[] newValues)
         {
             var copy = (double[])newValues.Clone();
-            return new FxEditFieldAction(Data.Bank, entry, action, a => Data.View(entry, a).SetValue(name, copy));
+            return new FxEditValueAction(Data.Bank, entry, action, a => FxEditValueAction.Value(a, name).Set(copy));
         }
 
         void Commit(double[] newValues) => Editor.ActionManager.ExecuteAction(Make(newValues));
 
-        switch (slot.Type)
+        switch (value.Kind)
         {
-            case FxrFieldType.Bool:
+            case Model.FxValueKind.Bool:
             {
                 bool b = values[0] != 0;
                 if (ImGui.Checkbox(id, ref b))
                     Commit(new[] { b ? 1.0 : 0.0 });
                 break;
             }
-            case FxrFieldType.Int when def?.Enum != null && Data.Schema.Enums.TryGetValue(def.Enum, out var en):
+            case Model.FxValueKind.Int when value.Enum != null && value.EnumMembers.Count > 0:
             {
                 int cur = (int)values[0];
-                var member = en.Members.FirstOrDefault(m => m.Value == cur);
+                var member = value.EnumMembers.FirstOrDefault(m => m.Value == cur);
                 var preview = member != null ? $"{member.Name} ({cur})" : cur.ToString();
                 if (ImGui.BeginCombo(id, preview))
                 {
-                    foreach (var m in en.Members)
+                    foreach (var m in value.EnumMembers)
                     {
                         if (ImGui.Selectable($"{m.Name} ({m.Value})##{m.Name}", m.Value == cur))
                             Commit(new[] { (double)m.Value });
@@ -411,10 +409,10 @@ public class FxInspector
                 }
                 break;
             }
-            case FxrFieldType.Int when def?.Resource != null:
-                DisplayResource(id, def, (int)values[0], v => Commit(new[] { (double)v }));
+            case Model.FxValueKind.Int when value.Resource != null:
+                DisplayResource(id, value.Resource, value.TextureType, (int)values[0], v => Commit(new[] { (double)v }));
                 break;
-            case FxrFieldType.Int:
+            case Model.FxValueKind.Int:
             {
                 int v = Pending.TryGetValue(id, out var p) ? (int)p : (int)values[0];
                 if (ImGui.InputInt(id, ref v))
@@ -424,12 +422,10 @@ public class FxInspector
                     Editor.Live.Show(id, entry, () => Make(new[] { (double)live }));
                 }
                 CommitOnDeactivate(id, () => Commit(new[] { (double)v }));
-                if (def?.Resource != null && v > 0)
-                    ImGui.TextDisabled(ResourceName(def, v));
                 break;
             }
             default:
-                DisplayFloats(id, values, def, entry, Make);
+                DisplayFloats(id, values, value.IsColor, entry, Make);
                 break;
         }
     }
@@ -438,12 +434,12 @@ public class FxInspector
     /// Float and vector inputs (colour picker for colour values) that commit on deactivation. While being edited, the
     /// value shows in the preview (live editing).
     /// </summary>
-    private void DisplayFloats(string id, double[] values, FxrPropDef def, FxEntry entry, Func<double[], EditorAction> make)
+    private void DisplayFloats(string id, double[] values, bool isColor, FxEntry entry, Func<double[], EditorAction> make)
     {
         var cur = Pending.TryGetValue(id, out var p) ? (float[])p : values.Select(v => (float)v).ToArray();
         bool changed = false;
 
-        if (cur.Length == 4 && def?.Color != null)
+        if (cur.Length == 4 && isColor)
         {
             var v = new Vector4(cur[0], cur[1], cur[2], cur[3]);
             changed = ImGui.ColorEdit4(id, ref v, ImGuiColorEditFlags.Float | ImGuiColorEditFlags.Hdr | ImGuiColorEditFlags.AlphaPreviewHalf);
@@ -521,7 +517,7 @@ public class FxInspector
     /// number (88300) or a file name (s88300, s88300_a, s88300_a.tpf, s88300.flver.dcx, with any folder). Below
     /// it, the file the game loads for that id, and a warning when no sfx binder holds it.
     /// </summary>
-    private void DisplayResource(string id, FxrPropDef def, int current, Action<int> commit)
+    private void DisplayResource(string id, string resource, string textureType, int current, Action<int> commit)
     {
         string text = Pending.TryGetValue(id, out var p) && p is string s ? s : current.ToString();
         if (ImGui.InputText(id, ref text, 255))
@@ -545,9 +541,9 @@ public class FxInspector
             return;
 
         // The typed TPF first, then the plain one, as FxTextureLibrary looks them up
-        var file = ResourceName(def, shown);
+        var file = ResourceName(resource, textureType, shown);
         bool known = true;
-        if (def.Resource == "texture")
+        if (resource == "texture")
         {
             var plain = $"s{shown:D5}";
             known = Data.Bank.Textures.ContainsKey(Path.GetFileNameWithoutExtension(file));
@@ -557,7 +553,7 @@ public class FxInspector
                 known = true;
             }
         }
-        else if (def.Resource == "model")
+        else if (resource == "model")
             known = Data.Bank.Models.ContainsKey($"s{shown:D5}");
 
         if (known || !Data.Bank.IsIndexed)
@@ -592,52 +588,43 @@ public class FxInspector
         return int.TryParse(t, NumberStyles.Integer, CultureInfo.InvariantCulture, out var id) && id >= 0 ? id : null;
     }
 
-    private string ResourceName(FxrPropDef def, int id) => def.Resource switch
+    private string ResourceName(string resource, string textureType, int id) => resource switch
     {
-        "texture" => Data.Game is FxrGame.DS3 or FxrGame.SDT ? $"s{id:D5}.tpf" : $"s{id:D5}_{def.TextureType ?? "a"}.tpf",
+        "texture" => Data.Game is FxrGame.DS3 or FxrGame.SDT ? $"s{id:D5}.tpf" : $"s{id:D5}_{textureType ?? "a"}.tpf",
         "model" => $"s{id:D5}.flver",
         "anibnd" => $"s{id:D5}.anibnd",
-        _ => def.Resource,
+        _ => resource,
     };
 
     // ---------------------------------------------------------------- properties
 
-    private void DisplayProperty(FxEntry entry, FxrAction action, FxrActionView view, string name, FxrPropDef def)
+    private void DisplayProperty(FxEntry entry, Model.IFxAction action, Model.IFxValue value, Model.IFxCurveValue curveValue)
     {
-        var prop = view.GetProperty(name);
-        var curve = view.GetCurve(name);
+        string name = value.Name;
+        var curve = curveValue.GetCurve();
         string id = $"##fxProp_{name}";
 
-        if (curve.Constant is { Length: 1 } && def?.Resource != null)
+        // Sets the curve to a constant (the inspector's only curve edit; keys are edited in the Curve Editor)
+        FxEditValueAction SetConstant(float[] constant) => new(Data.Bank, entry, action, a =>
         {
-            DisplayResource(id, def, (int)Math.Round(curve.Constant[0]), v =>
-            {
-                Editor.ActionManager.ExecuteAction(new FxEditPropertyAction(Data.Bank, entry, action, a =>
-                {
-                    var pv = Data.View(entry, a);
-                    var c = pv.GetCurve(name);
-                    c.Function = FxrPropertyFunction.Constant;
-                    c.Constant = new[] { (float)v };
-                    pv.SetCurve(name, c);
-                }));
-            });
+            var cv = (Model.IFxCurveValue)FxEditValueAction.Value(a, name);
+            var c = cv.GetCurve();
+            c.Function = FxrPropertyFunction.Constant;
+            c.Constant = constant;
+            cv.SetCurve(c);
+        });
+
+        if (curve.Constant is { Length: 1 } && value.Resource != null)
+        {
+            DisplayResource(id, value.Resource, value.TextureType, (int)Math.Round(curve.Constant[0]), v =>
+                Editor.ActionManager.ExecuteAction(SetConstant(new[] { (float)v })));
         }
         else if (curve.Constant != null)
         {
-            DisplayFloats(id, curve.Constant.Select(v => (double)v).ToArray(), def, entry, values =>
-            {
-                var copy = values.Select(v => (float)v).ToArray();
-                return new FxEditPropertyAction(Data.Bank, entry, action, a =>
-                {
-                    var v = Data.View(entry, a);
-                    var c = v.GetCurve(name);
-                    c.Function = FxrPropertyFunction.Constant;
-                    c.Constant = copy;
-                    v.SetCurve(name, c);
-                });
-            });
-            if (def?.Resource != null && curve.Constant.Length == 1 && curve.Constant[0] > 0)
-                ImGui.TextDisabled(ResourceName(def, (int)Math.Round(curve.Constant[0])));
+            DisplayFloats(id, curve.Constant.Select(v => (double)v).ToArray(), value.IsColor, entry, values =>
+                SetConstant(values.Select(v => (float)v).ToArray()));
+            if (value.Resource != null && curve.Constant.Length == 1 && curve.Constant[0] > 0)
+                ImGui.TextDisabled(ResourceName(value.Resource, value.TextureType, (int)Math.Round(curve.Constant[0])));
         }
         else
         {
@@ -660,18 +647,19 @@ public class FxInspector
             }
         }
 
-        if (prop?.Modifiers.Count > 0)
-            ImGui.TextDisabled(LOC.Get("FX_Inspector_Modifiers", string.Join(", ", prop.Modifiers.Select(ModifierName))));
+        var modifiers = curveValue.ModifierTypes;
+        if (modifiers.Count > 0)
+            ImGui.TextDisabled(LOC.Get("FX_Inspector_Modifiers", string.Join(", ", modifiers.Select(ModifierName))));
     }
 
-    private static string ModifierName(FxrModifier m) => m.ModifierType switch
+    private static string ModifierName(int type) => type switch
     {
         21 => "RandomDelta",
         24 => "RandomRange",
         38 => "ExternalValue1",
         39 => "ExternalValue2",
         53 => "RandomFraction",
-        _ => m.ModifierType.ToString(),
+        _ => type.ToString(),
     };
 
     private static void DisplayKeys(FxrCurve curve)
@@ -694,8 +682,18 @@ public class FxInspector
 
     // ---------------------------------------------------------------- raw
 
-    private static void DisplayRaw(FxrAction action)
+    /// <summary>The stored data as the file has it: FXR3 words and properties; other formats list their raw values.</summary>
+    private static void DisplayRaw(Model.IFxAction model)
     {
+        if (model.Source is not FxrAction action)
+        {
+            GUI.Spacer();
+            GUI.SimpleHeader(LOC.Get("FX_Inspector_Raw_Header"), LOC.Get("FX_Inspector_Raw_Header_TT"));
+            foreach (var v in model.Values)
+                ImGui.TextUnformatted($"{v.Name}  {(v.Get() is double[] d ? string.Join(", ", d.Select(x => x.ToString("G6", CultureInfo.InvariantCulture))) : v.Kind.ToString())}");
+            return;
+        }
+
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("FX_Inspector_Raw_Header"), LOC.Get("FX_Inspector_Raw_Header_TT"));
         ImGui.TextUnformatted($"Unk02 {action.Unk02}  Unk03 {action.Unk03}  Unk04 {action.Unk04}");

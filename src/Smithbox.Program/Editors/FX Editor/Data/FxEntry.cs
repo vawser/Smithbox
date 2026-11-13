@@ -38,6 +38,12 @@ public class FxEntry
     public FXR Fxr;
 
     /// <summary>
+    /// The model view of the loaded effect (<see cref="FxData.Effect"/>), kept while the same file object is loaded,
+    /// so its adapters keep their identity. Format-neutral code reads the effect through it.
+    /// </summary>
+    internal Model.IFxEffect ModelCache;
+
+    /// <summary>
     /// The effect's file bytes as last read or saved, deflated. Loading and reloading unpack this, so no binder
     /// has to be decompressed when an effect is selected.
     /// </summary>

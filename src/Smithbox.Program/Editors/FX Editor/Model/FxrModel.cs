@@ -248,7 +248,7 @@ public sealed class FxrConfigAdapter : IFxConfig
     public IReadOnlyList<int[]> SlotTypes => FxrModel.SlotsFor(owner.Schema, Config.Type, owner.Game);
 }
 
-public sealed class FxrActionAdapter : IFxAction
+public sealed class FxrActionAdapter : IFxAction, IFxSnapshot
 {
     private readonly FxrEffectAdapter owner;
     public FxrAction Action { get; }
@@ -266,7 +266,78 @@ public sealed class FxrActionAdapter : IFxAction
     public string Name => View.Definition?.Name;
     public string Slot => View.Definition?.Slot;
     public bool IsAppearance => View.Definition?.IsAppearance ?? false;
+    public string Description => View.Definition?.Description;
+    public bool HasLayout => View.Layout != null;
     public bool IsTyped => View.IsTyped;
+
+    // ---- snapshot: everything a value edit can change (field words, property lists and each property's full
+    // state with its modifiers, section10 lists), the same coverage FxEditFieldAction + FxEditPropertyAction had
+
+    private sealed record PropState(FxrProperty Prop, FxrValueType ValueType, FxrPropertyFunction Function, bool Loop, int TypeEnumB,
+        List<uint> Fields, List<FxrModifier> Modifiers, List<ModState> ModStates);
+    private sealed record ModState(FxrModifier Mod, ushort TypeEnumA, int TypeEnumB, List<uint> Fields, List<FxrProperty> Properties, List<PropState> PropStates);
+    private sealed record State(List<uint> Fields1, List<uint> Fields2, List<FxrProperty> Props1, List<FxrProperty> Props2,
+        List<PropState> PropStates, List<List<int>> S10Lists, List<List<int>> S10Contents);
+
+    private static PropState TakeProp(FxrProperty p) => new(p, p.ValueType, p.Function, p.Loop, p.TypeEnumB, p.Fields.ToList(),
+        p.Modifiers.ToList(),
+        p.Modifiers.Select(m => new ModState(m, m.TypeEnumA, m.TypeEnumB, m.Fields.ToList(), m.Properties.ToList(),
+            m.Properties.Select(TakeProp).ToList())).ToList());
+
+    private static void RestoreProp(PropState st)
+    {
+        var p = st.Prop;
+        p.ValueType = st.ValueType;
+        p.Function = st.Function;
+        p.Loop = st.Loop;
+        p.TypeEnumB = st.TypeEnumB;
+        p.Fields.Clear();
+        p.Fields.AddRange(st.Fields);
+        p.Modifiers.Clear();
+        p.Modifiers.AddRange(st.Modifiers);
+        foreach (var ms in st.ModStates)
+        {
+            ms.Mod.TypeEnumA = ms.TypeEnumA;
+            ms.Mod.TypeEnumB = ms.TypeEnumB;
+            ms.Mod.Fields.Clear();
+            ms.Mod.Fields.AddRange(ms.Fields);
+            ms.Mod.Properties.Clear();
+            ms.Mod.Properties.AddRange(ms.Properties);
+            foreach (var ps in ms.PropStates)
+                RestoreProp(ps);
+        }
+    }
+
+    public object Snapshot() => new State(
+        Action.Fields1.ToList(),
+        Action.Fields2.ToList(),
+        Action.Properties1.ToList(),
+        Action.Properties2.ToList(),
+        Action.Properties1.Concat(Action.Properties2).Select(TakeProp).ToList(),
+        Action.Section10s.ToList(),
+        Action.Section10s.Select(l => l.ToList()).ToList());
+
+    public void Restore(object state)
+    {
+        var s = (State)state;
+        Action.Fields1.Clear();
+        Action.Fields1.AddRange(s.Fields1);
+        Action.Fields2.Clear();
+        Action.Fields2.AddRange(s.Fields2);
+        Action.Properties1.Clear();
+        Action.Properties1.AddRange(s.Props1);
+        Action.Properties2.Clear();
+        Action.Properties2.AddRange(s.Props2);
+        foreach (var ps in s.PropStates)
+            RestoreProp(ps);
+        Action.Section10s.Clear();
+        Action.Section10s.AddRange(s.S10Lists);
+        for (int i = 0; i < s.S10Lists.Count; i++)
+        {
+            s.S10Lists[i].Clear();
+            s.S10Lists[i].AddRange(s.S10Contents[i]);
+        }
+    }
     public IReadOnlyList<IFxAction> Calls => Array.Empty<IFxAction>();
     public object Source => Action;
 
@@ -333,11 +404,34 @@ public sealed class FxrNamedValue : IFxValue, IFxCurveValue, IFxListValue
         _ => 1,
     };
 
-    public bool IsUnknown => Def?.IsUnknown ?? Name.StartsWith("unk", StringComparison.Ordinal);
+    public bool IsUnknown => Def?.IsUnknown == true;
     public bool IsStored => view.IsStored(Name);
     public string Description => Def?.Description;
     public string Enum => Def?.Enum;
     public string Resource => Def?.Resource;
+    public string TextureType => Def?.TextureType;
+    public string Argument => Def?.Argument;
+    public bool IsConverted => view.ConversionsOf(Name).Any();
+    public bool IsColor => Def?.Color != null;
+
+    public IReadOnlyList<FxEnumMember> EnumMembers =>
+        Def?.Enum != null && view.Schema.Enums.TryGetValue(Def.Enum, out var en)
+            ? en.Members.Select(m => new FxEnumMember(m.Name, m.Value, m.Description)).ToList()
+            : Array.Empty<FxEnumMember>();
+
+    public float[] DisplayFactors
+    {
+        get
+        {
+            var conversions = view.ConversionsOf(Name);
+            return Enumerable.Range(0, 4).Select(i => (float)FxrConversions.CurveFactor(conversions, i)).ToArray();
+        }
+    }
+
+    public IReadOnlyList<int> ModifierTypes =>
+        view.KindOf(Name) == FxrValueKind.Property && view.GetProperty(Name) is FxrProperty p
+            ? p.Modifiers.Select(m => m.ModifierType).ToList()
+            : Array.Empty<int>();
 
     public double[] Get() => view.KindOf(Name) == FxrValueKind.Field ? view.GetValue(Name) : null;
 
@@ -399,6 +493,11 @@ public sealed class FxrRawWord : IFxValue
     public string Description => null;
     public string Enum => null;
     public string Resource => null;
+    public string TextureType => null;
+    public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
+    public string Argument => null;
+    public bool IsConverted => false;
+    public bool IsColor => false;
     public double[] Get() => [(int)words[index]];
 
     public void Set(double[] display)
@@ -430,8 +529,15 @@ public sealed class FxrRawProperty : IFxValue, IFxCurveValue
     public string Description => null;
     public string Enum => null;
     public string Resource => null;
+    public string TextureType => null;
+    public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
+    public string Argument => null;
+    public bool IsConverted => false;
+    public bool IsColor => false;
     public double[] Get() => null;
     public void Set(double[] display) => throw new InvalidOperationException($"{Name} is a curve.");
+    public float[] DisplayFactors => [1, 1, 1, 1];
+    public IReadOnlyList<int> ModifierTypes => property.Modifiers.Select(m => m.ModifierType).ToList();
 
     public FxrCurve GetCurve()
     {
@@ -473,6 +579,11 @@ public sealed class FxrRawList : IFxValue, IFxListValue
     public string Description => null;
     public string Enum => null;
     public string Resource => null;
+    public string TextureType => null;
+    public IReadOnlyList<FxEnumMember> EnumMembers => Array.Empty<FxEnumMember>();
+    public string Argument => null;
+    public bool IsConverted => false;
+    public bool IsColor => false;
     public double[] Get() => null;
     public void Set(double[] display) => throw new InvalidOperationException($"{Name} is a list.");
     public List<int> GetList() => lists[index];

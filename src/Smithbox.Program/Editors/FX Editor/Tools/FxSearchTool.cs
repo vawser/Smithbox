@@ -259,6 +259,9 @@ public class FxSearchTool
                 yield break;
         }
 
+        // Values are matched through the format-neutral model (Model/); navigation keeps FXR3 tree paths
+        var effect = Model.FxrModel.Adapt(fxr, schema, game);
+
         foreach (var node in FXR.Walk(fxr.Root))
         {
             var path = FxNodeOps.PathOf(fxr.Root, node);
@@ -278,8 +281,8 @@ public class FxSearchTool
                     string valueMatch = null;
                     if (valueText != "")
                     {
-                        var view = new FxrActionView(schema, action, game, fxr);
-                        if (!view.IsTyped || !MatchValues(view, valueText, useRange, min, max, out valueMatch))
+                        if (effect.Adapt(action) is not Model.IFxAction model || !model.IsTyped
+                            || !MatchValues(model, valueText, useRange, min, max, out valueMatch))
                             continue;
                     }
 
@@ -295,23 +298,23 @@ public class FxSearchTool
     /// Whether a value whose name contains the text is stored (and, with a range, has a component in it): fields,
     /// constants, and the values of every curve key.
     /// </summary>
-    private static bool MatchValues(FxrActionView view, string text, bool useRange, float min, float max, out string match)
+    private static bool MatchValues(Model.IFxAction action, string text, bool useRange, float min, float max, out string match)
     {
         match = null;
-        foreach (var name in view.Names)
+        foreach (var value in action.Values)
         {
-            if (!name.Contains(text, StringComparison.OrdinalIgnoreCase) || !view.IsStored(name))
+            var name = value.Name;
+            if (!name.Contains(text, StringComparison.OrdinalIgnoreCase) || !value.IsStored)
                 continue;
 
             IEnumerable<double> values;
             try
             {
-                values = view.KindOf(name) switch
+                values = value switch
                 {
-                    FxrValueKind.Field => view.GetValue(name),
-                    FxrValueKind.Property => CurveValues(view.GetCurve(name)),
-                    FxrValueKind.Section10 => view.GetSection10(name)?.Select(v => (double)v) ?? Enumerable.Empty<double>(),
-                    _ => Enumerable.Empty<double>(),
+                    Model.IFxCurveValue curve when value.Kind == Model.FxValueKind.Curve => CurveValues(curve.GetCurve()),
+                    Model.IFxListValue list when value.Kind == Model.FxValueKind.IntList => list.GetList()?.Select(v => (double)v) ?? Enumerable.Empty<double>(),
+                    _ => value.Get() ?? Enumerable.Empty<double>(),
                 };
             }
             catch
@@ -319,10 +322,10 @@ public class FxSearchTool
                 continue;
             }
 
-            var list = values.ToList();
-            if (useRange && !list.Any(v => v >= min && v <= max))
+            var found = values.ToList();
+            if (useRange && !found.Any(v => v >= min && v <= max))
                 continue;
-            match = $"{FxNames.Pretty(name)} = {string.Join(", ", list.Take(4).Select(v => v.ToString("G4", CultureInfo.InvariantCulture)))}{(list.Count > 4 ? ", ..." : "")}";
+            match = $"{FxNames.Pretty(name)} = {string.Join(", ", found.Take(4).Select(v => v.ToString("G4", CultureInfo.InvariantCulture)))}{(found.Count > 4 ? ", ..." : "")}";
             return true;
         }
         return false;

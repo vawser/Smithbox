@@ -136,13 +136,14 @@ public class FxEffectTree
             return;
         }
 
-        var fxr = entry.Fxr;
+        var effect = Data.Effect(entry);
         Notes.EnsureLoaded(entry);
         RefreshInfo(entry);
         RefreshFilter(entry);
 
         // States
-        bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", fxr.States.Count)}##fxStates", ImGuiTreeNodeFlags.DefaultOpen);
+        var states = effect.States;
+        bool statesOpen = !Filtering && ImGui.TreeNodeEx($"{LOC.Get("FX_EffectTree_States", states.Count)}##fxStates", ImGuiTreeNodeFlags.DefaultOpen);
         if (!Filtering && ImGui.BeginPopupContextItem("##fxStatesContext"))
         {
             if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_State_Add")}##fxStatesAdd"))
@@ -152,12 +153,13 @@ public class FxEffectTree
         }
         if (statesOpen)
         {
-            for (int i = 0; i < fxr.States.Count; i++)
+            for (int i = 0; i < states.Count; i++)
             {
-                var state = fxr.States[i];
+                var state = states[i];
+                var transitions = state.Transitions;
                 var flags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow;
-                if (state.Conditions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
-                if (Editor.Selection.IsSelected(state)) flags |= ImGuiTreeNodeFlags.Selected;
+                if (transitions.Count == 0) flags |= ImGuiTreeNodeFlags.Leaf;
+                if (Editor.Selection.IsSelected(state.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
                 var stateLabel = LOC.Get("FX_EffectTree_State", i);
                 if (i == 0)
@@ -167,12 +169,13 @@ public class FxEffectTree
 
                 bool open = ImGui.TreeNodeEx($"{stateLabel}##fxState_{i}", flags);
                 if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
-                    Editor.Selection.SelectItem(state);
-                DisplayStateContextMenu(entry, state, i);
+                    Editor.Selection.SelectItem(state.Source);
+                if (state.Source is FxrState fxrState)
+                    DisplayStateContextMenu(entry, fxrState, i);
                 if (open)
                 {
-                    foreach (var c in state.Conditions)
-                        GUI.WrappedText(FxNames.Condition(c));
+                    foreach (var t in transitions)
+                        GUI.WrappedText(FxNames.Condition(t));
                     ImGui.TreePop();
                 }
             }
@@ -184,7 +187,7 @@ public class FxEffectTree
 
         // Nodes
         int id = 0;
-        DisplayNode(entry, fxr.Root, null, ref id, 0, false);
+        DisplayNode(entry, effect.Root, null, ref id, 0, false);
 
         ImGui.EndChild();
 
@@ -229,41 +232,50 @@ public class FxEffectTree
         ImGui.EndChild();
     }
 
-    private void DisplayNode(FxEntry entry, FxrNode node, FxrNode parent, ref int id, int depth, bool parentHidden)
+    /// <summary>
+    /// One tree node through the format-neutral model. Features only FXR3 has (playback visibility, notes, summaries
+    /// and checks, drag and drop, the context menus) get the node's FXR3 object, and are left out when it has none.
+    /// </summary>
+    private void DisplayNode(FxEntry entry, Model.IFxNode node, Model.IFxNode parent, ref int id, int depth, bool parentHidden)
     {
         int nodeId = id++;
+        var fxrNode = node.Source as FxrNode;
+        var fxrParent = parent?.Source as FxrNode;
+        var children = node.Children;
 
-        if (Filtering && !FilterShown.Contains(node))
+        if (Filtering && (fxrNode == null || !FilterShown.Contains(fxrNode)))
             return;
 
-        var info = InfoOf(node);
-        var label = FxNames.NodeType(node.Type);
-        if (node.Children.Count > 0)
-            label = $"{label} ({node.Children.Count})";
+        var info = fxrNode != null ? InfoOf(fxrNode) : null;
+        bool proxy = node.Kind == Model.FxNodeKind.Proxy;
+        var label = FxNames.Node(node);
+        if (children.Count > 0)
+            label = $"{label} ({children.Count})";
         if (CFG.Current.FxEditor_EffectTree_Show_Summaries && info?.Summary != null)
-            label = node.Type == FxNodeOps.ProxyType ? $"{label} → {info.Summary}" : $"{label}: {info.Summary}";
-        else if (node.Type == FxNodeOps.ProxyType && info?.Summary != null)
+            label = proxy ? $"{label} → {info.Summary}" : $"{label}: {info.Summary}";
+        else if (proxy && info?.Summary != null)
             label = $"{label} → {info.Summary}";
 
-        var note = Notes.Get(node);
+        var note = fxrNode != null ? Notes.Get(fxrNode) : null;
         if (note != null)
             label = $"{label}  · {Shorten(note, 40)}";
 
         var flags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.OpenOnDoubleClick;
         if (depth == 0) flags |= ImGuiTreeNodeFlags.DefaultOpen;
-        if (Editor.Selection.IsSelected(node)) flags |= ImGuiTreeNodeFlags.Selected;
+        if (Editor.Selection.IsSelected(node.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
-        DisplayVisibilityButton(entry, node, nodeId);
+        if (fxrNode != null)
+            DisplayVisibilityButton(entry, fxrNode, nodeId);
         DisplayProblems(info);
 
         // Hidden nodes, and nodes under a hidden one, are dimmed; search matches are coloured
-        bool hidden = parentHidden || Editor.Playback.IsNodeHidden(node);
-        bool colored = hidden || Filtering && FilterMatches.Contains(node);
+        bool hidden = parentHidden || fxrNode != null && Editor.Playback.IsNodeHidden(fxrNode);
+        bool colored = hidden || Filtering && FilterMatches.Contains(fxrNode);
         if (colored)
             ImGui.PushStyleColor(ImGuiCol.Text, hidden ? ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled] : UI.Current.ImGui_Benefit_Text_Color);
 
         // A search opens the way to its matches
-        if (Filtering && node.Children.Any(FilterShown.Contains))
+        if (Filtering && children.Any(c => c.Source is FxrNode n && FilterShown.Contains(n)))
             ImGui.SetNextItemOpen(true, ImGuiCond.Always);
 
         bool open = ImGui.TreeNodeEx($"{label}##fxNode_{nodeId}", flags);
@@ -272,13 +284,16 @@ public class FxEffectTree
             ImGui.PopStyleColor();
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
-            Editor.Selection.SelectItem(node);
+            Editor.Selection.SelectItem(node.Source);
 
         if (note != null && ImGui.IsItemHovered())
             ImGui.SetTooltip(note);
 
-        DragAndDrop(entry, node, parent);
-        DisplayNodeContextMenu(entry, node, parent, nodeId);
+        if (fxrNode != null)
+        {
+            DragAndDrop(entry, fxrNode, fxrParent);
+            DisplayNodeContextMenu(entry, fxrNode, fxrParent, nodeId);
+        }
 
         if (!open)
             return;
@@ -290,58 +305,65 @@ public class FxEffectTree
                 DisplayAction(entry, action, ref id);
 
             // Configs, with the states that use them
-            var map = FxNames.StateConfigMap(node);
-            for (int c = 0; c < node.Configs.Count; c++)
+            if (node is Model.IFxConfigured configured)
             {
-                var config = node.Configs[c];
-                var cfgLabel = FxNames.ConfigType(config.Type);
-                if (map != null)
+                var map = configured.StateConfigMap;
+                var configs = configured.Configs;
+                for (int c = 0; c < configs.Count; c++)
                 {
-                    var states = Enumerable.Range(0, map.Count).Where(s => map[s] == c).ToList();
-                    cfgLabel = states.Count > 0
-                        ? $"{cfgLabel} {LOC.Get("FX_EffectTree_Config_States", string.Join(", ", states))}"
-                        : $"{cfgLabel} {LOC.Get("FX_EffectTree_Config_Unused")}";
-                }
+                    var config = configs[c];
+                    var cfgLabel = FxNames.Config(config);
+                    if (map != null)
+                    {
+                        var states = Enumerable.Range(0, map.Count).Where(s => map[s] == c).ToList();
+                        cfgLabel = states.Count > 0
+                            ? $"{cfgLabel} {LOC.Get("FX_EffectTree_Config_States", string.Join(", ", states))}"
+                            : $"{cfgLabel} {LOC.Get("FX_EffectTree_Config_Unused")}";
+                    }
 
-                var cflags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.DefaultOpen;
-                if (Editor.Selection.IsSelected(config)) cflags |= ImGuiTreeNodeFlags.Selected;
+                    var cflags = ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.DefaultOpen;
+                    if (Editor.Selection.IsSelected(config.Source)) cflags |= ImGuiTreeNodeFlags.Selected;
 
-                int configId = id++;
-                bool copen = ImGui.TreeNodeEx($"{cfgLabel}##fxConfig_{configId}", cflags);
-                if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
-                    Editor.Selection.SelectItem(config);
-                DisplayConfigContextMenu(entry, node, config, c, configId);
-                if (copen)
-                {
-                    foreach (var action in config.Actions)
-                        DisplayAction(entry, action, ref id);
-                    ImGui.TreePop();
+                    int configId = id++;
+                    bool copen = ImGui.TreeNodeEx($"{cfgLabel}##fxConfig_{configId}", cflags);
+                    if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
+                        Editor.Selection.SelectItem(config.Source);
+                    if (fxrNode != null && config.Source is FxrConfig fxrConfig)
+                        DisplayConfigContextMenu(entry, fxrNode, fxrConfig, c, configId);
+                    if (copen)
+                    {
+                        foreach (var action in config.Actions)
+                            DisplayAction(entry, action, ref id);
+                        ImGui.TreePop();
+                    }
                 }
             }
         }
 
         // Child nodes
-        foreach (var child in node.Children)
+        foreach (var child in children)
             DisplayNode(entry, child, node, ref id, depth + 1, hidden);
 
         ImGui.TreePop();
     }
 
-    private void DisplayAction(FxEntry entry, FxrAction action, ref int id)
+    private void DisplayAction(FxEntry entry, Model.IFxAction action, ref int id)
     {
-        // Empty slots (type 0) aren't worth a row
-        if (action.Type == 0 && action.Fields1.Count + action.Fields2.Count + action.Properties1.Count + action.Properties2.Count == 0)
+        // Empty FXR3 slots (type 0 with nothing stored) aren't worth a row
+        if (action.Source is FxrAction empty && empty.Type == 0
+            && empty.Fields1.Count + empty.Fields2.Count + empty.Properties1.Count + empty.Properties2.Count == 0)
             return;
 
         int actionId = id++;
         var flags = ImGuiTreeNodeFlags.Leaf | ImGuiTreeNodeFlags.NoTreePushOnOpen | ImGuiTreeNodeFlags.SpanAvailWidth;
-        if (Editor.Selection.IsSelected(action)) flags |= ImGuiTreeNodeFlags.Selected;
+        if (Editor.Selection.IsSelected(action.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
-        ImGui.TreeNodeEx($"{FxNames.Action(Data, entry, action)}##fxAction_{actionId}", flags);
+        ImGui.TreeNodeEx($"{FxNames.Action(action)}##fxAction_{actionId}", flags);
         if (ImGui.IsItemClicked())
-            Editor.Selection.SelectItem(action);
+            Editor.Selection.SelectItem(action.Source);
 
-        DisplayActionContextMenu(entry, action, actionId);
+        if (action.Source is FxrAction fxrAction)
+            DisplayActionContextMenu(entry, fxrAction, actionId);
     }
 
     /// <summary>The eye before each node: hides the node, and everything under it, in playback. Alt+click solos it.</summary>

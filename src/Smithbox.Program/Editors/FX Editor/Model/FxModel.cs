@@ -177,6 +177,12 @@ public interface IFxAction
 
     bool IsAppearance { get; }
 
+    /// <summary>The schema's description, or null.</summary>
+    string Description { get; }
+
+    /// <summary>The schema has a layout for this type in this game (it may still not fit: see <see cref="IsTyped"/>).</summary>
+    bool HasLayout { get; }
+
     /// <summary>True when the action fits its schema layout; otherwise <see cref="Values"/> are the raw data.</summary>
     bool IsTyped { get; }
 
@@ -229,6 +235,21 @@ public interface IFxValue
     /// <summary>The resource kind it refers to (texture, model, …), or null.</summary>
     string Resource { get; }
 
+    /// <summary>For a texture: the texture type suffix the game loads (a, n, …), or null.</summary>
+    string TextureType { get; }
+
+    /// <summary>The members of <see cref="Enum"/>, empty when it has none.</summary>
+    IReadOnlyList<FxEnumMember> EnumMembers { get; }
+
+    /// <summary>The external value or argument the value is scaled by, as the schema names it, or null.</summary>
+    string Argument { get; }
+
+    /// <summary>A display conversion applies (seconds, degrees, mirrored axis, …): shown values differ from stored ones.</summary>
+    bool IsConverted { get; }
+
+    /// <summary>The value is a colour (shown with a colour picker).</summary>
+    bool IsColor { get; }
+
     /// <summary>Int/Float/Bool/Vector/Raw values in display units; null for other kinds.</summary>
     double[] Get();
 
@@ -247,6 +268,26 @@ public interface IFxCurveValue
 
     /// <summary>Writes a curve in display units; an unchanged curve leaves the file unchanged.</summary>
     void SetCurve(FxrCurve curve);
+
+    /// <summary>Per component (up to 4): display value = stored value × factor (1 when no conversion applies).</summary>
+    float[] DisplayFactors { get; }
+
+    /// <summary>The modifiers on the curve, by the format's modifier type id (FXR3: 21 RandomDelta, …); empty when none.</summary>
+    IReadOnlyList<int> ModifierTypes { get; }
+}
+
+/// <summary>One member of a value's enum.</summary>
+public sealed record FxEnumMember(string Name, int Value, string Description);
+
+/// <summary>
+/// Capability: an action whose whole stored state can be captured and put back exactly (for undo). The state object
+/// is opaque; restoring it returns the action to the bytes it had, including list padding and curve modifiers.
+/// </summary>
+public interface IFxSnapshot
+{
+    object Snapshot();
+
+    void Restore(object state);
 }
 
 /// <summary>Capability: a value stored as a list of ints.</summary>

@@ -57,6 +57,23 @@ public class FxData : IDisposable
         _ => FxrGame.ER,
     };
 
+    /// <summary>
+    /// The entry's effect through the format-neutral model (Model/), or null when it isn't loaded. The same object is
+    /// returned while the entry holds the same file object, so adapters keep their identity across frames; replacing
+    /// the file object (reload, revert, undo of a whole-effect change) gives a new one.
+    /// </summary>
+    public Model.IFxEffect Effect(FxEntry entry)
+    {
+        if (entry?.Fxr == null)
+            return null;
+        if (entry.ModelCache == null || !ReferenceEquals(entry.ModelCache.Source, entry.Fxr))
+            entry.ModelCache = Model.FxrModel.Adapt(entry.Fxr, Schema, Game);
+        return entry.ModelCache;
+    }
+
+    /// <summary>The model adapter of an item of the entry's effect (an FxrNode, FxrAction, …), or null.</summary>
+    public object Adapt(FxEntry entry, object item) => item == null ? null : Effect(entry)?.Adapt(item);
+
     /// <summary>A view of an action in this project's game, using the file's curve bounds style.</summary>
     public FxrActionView View(FxEntry entry, FxrAction action) =>
         new FxrActionView(Schema, action, Game, entry.Fxr);

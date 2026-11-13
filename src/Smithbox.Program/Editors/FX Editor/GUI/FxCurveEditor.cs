@@ -21,7 +21,7 @@ public class FxCurveEditor
     // The working copy and what it was made from
     private FxrCurve Working;
     private float[] Factors;
-    private (FxEntry Entry, FxrAction Action, string Name, int Version) WorkingFor;
+    private (FxEntry Entry, Model.IFxAction Action, string Name, int Version) WorkingFor;
     private bool Dirty;
     private bool DragHeld;
     private int Version;
@@ -44,31 +44,36 @@ public class FxCurveEditor
         ImGui.BeginChild("FxCurveEditorSection", ImGuiChildFlags.Borders);
 
         var entry = Editor.Selection.Entry;
-        var action = Editor.Selection.Action;
+        var action = Editor.Selection.ModelAction;
         var name = Editor.Selection.Property;
 
-        if (entry?.Fxr == null || action == null || name == null)
+        if (entry == null || action == null || name == null)
         {
             GUI.WrappedText(LOC.Get("FX_CurveEditor_No_Property"));
             ImGui.EndChild();
             return;
         }
 
-        var view = Data.View(entry, action);
-        if (!view.IsTyped || view.KindOf(name) != FxrValueKind.Property)
+        var value = action.IsTyped ? action.Values.FirstOrDefault(v => v.Name == name) : null;
+        if (value is not Model.IFxCurveValue curveValue || value.Kind != Model.FxValueKind.Curve)
         {
             GUI.WrappedText(LOC.Get("FX_CurveEditor_Not_Property"));
             ImGui.EndChild();
             return;
         }
 
-        Prepare(entry, action, name, view);
+        // FXR3 only: the stored property, for its modifiers (random bands on the graph, the Modifiers section)
+        var fxrAction = action.Source as FxrAction;
+        var fxrProperty = fxrAction != null ? Data.View(entry, fxrAction).GetProperty(name) : null;
 
-        DisplayHeader(view, name);
-        DisplayFunction(view);
-        DisplayGraph(view, name);
+        Prepare(entry, action, name, curveValue);
+
+        DisplayHeader(action, value);
+        DisplayFunction();
+        DisplayGraph(value, fxrProperty);
         DisplayKeys();
-        DisplayModifiers(entry, action, view, name);
+        if (fxrAction != null)
+            DisplayModifiers(entry, fxrAction, Data.View(entry, fxrAction), name);
 
         CommitIfIdle(entry, action, name);
 
@@ -76,7 +81,7 @@ public class FxCurveEditor
     }
 
     /// <summary>Remakes the working copy when the property, or the file under it, changed (and nothing is pending).</summary>
-    private void Prepare(FxEntry entry, FxrAction action, string name, FxrActionView view)
+    private void Prepare(FxEntry entry, Model.IFxAction action, string name, Model.IFxCurveValue value)
     {
         var key = (entry, action, name, Version);
         if (Working != null && key.Equals(WorkingFor))
@@ -86,13 +91,10 @@ public class FxCurveEditor
 
         // A curve shown live for another property (or before an undo) comes off before this one is read
         if (Editor.Live.Owner == this)
-        {
             Editor.Live.Revert(this);
-            view = Data.View(entry, action);
-        }
 
-        Factors = Enumerable.Range(0, 4).Select(i => (float)FxrConversions.CurveFactor(view.ConversionsOf(name), i)).ToArray();
-        Working = FxCurveOps.ToEditable(view.GetCurve(name), Factors);
+        Factors = value.DisplayFactors;
+        Working = FxCurveOps.ToEditable(value.GetCurve(), Factors);
         WorkingFor = key;
         Dirty = false;
         Component = Math.Min(Component, Working.Components - 1);
@@ -107,7 +109,7 @@ public class FxCurveEditor
             Editor.Live.Revert(this);
     }
 
-    private void CommitIfIdle(FxEntry entry, FxrAction action, string name)
+    private void CommitIfIdle(FxEntry entry, Model.IFxAction action, string name)
     {
         if (!Dirty)
             return;
@@ -126,7 +128,7 @@ public class FxCurveEditor
     /// showing replays the effect to the current time). The working copy itself isn't sorted, so a key being dragged
     /// past another keeps its place under the mouse.
     /// </summary>
-    private void ShowLive(FxEntry entry, FxrAction action, string name)
+    private void ShowLive(FxEntry entry, Model.IFxAction action, string name)
     {
         if (!FxLiveEdit.Enabled || (DateTime.Now - LiveShown).TotalSeconds < 1 / 15.0)
             return;
@@ -135,11 +137,10 @@ public class FxCurveEditor
         var display = FxCurveOps.ToDisplay(Working, Factors);
         FxCurveOps.SortKeys(display);
         FxCurveOps.Normalize(display);
-        Editor.Live.Show(this, entry, () => new FxEditPropertyAction(Data.Bank, entry, action, a =>
-            Data.View(entry, a).SetCurve(name, display)));
+        Editor.Live.Show(this, entry, () => SetCurve(entry, action, name, display));
     }
 
-    private void Commit(FxEntry entry, FxrAction action, string name)
+    private void Commit(FxEntry entry, Model.IFxAction action, string name)
     {
         // The live change comes off first, so the committed step records the curve from before the edit
         Editor.Live.Revert(this);
@@ -148,25 +149,25 @@ public class FxCurveEditor
         var display = FxCurveOps.ToDisplay(Working, Factors);
         FxCurveOps.Normalize(display);
 
-        Editor.ActionManager.ExecuteAction(new FxEditPropertyAction(Data.Bank, entry, action, a =>
-            Data.View(entry, a).SetCurve(name, display)));
+        Editor.ActionManager.ExecuteAction(SetCurve(entry, action, name, display));
     }
+
+    private FxEditValueAction SetCurve(FxEntry entry, Model.IFxAction action, string name, FxrCurve display) =>
+        new(Data.Bank, entry, action, a => ((Model.IFxCurveValue)FxEditValueAction.Value(a, name)).SetCurve(display));
 
     // ---------------------------------------------------------------- header and function
 
-    private void DisplayHeader(FxrActionView view, string name)
+    private void DisplayHeader(Model.IFxAction action, Model.IFxValue value)
     {
-        var def = view.Describe(name);
-
         // Property
         GUI.SimpleHeader(LOC.Get("FX_CurveEditor_Property_Header"), LOC.Get("FX_CurveEditor_Property_Header_TT"));
-        GUI.WrappedText($"{view.Definition.Name}: {FxNames.Pretty(name)}");
-        if (def?.Argument != null)
-            GUI.WrappedText(LOC.Get("FX_CurveEditor_Argument", ArgumentName(def.Argument)));
-        if (view.ConversionsOf(name).Any())
+        GUI.WrappedText($"{action.Name}: {FxNames.Pretty(value.Name)}");
+        if (value.Argument != null)
+            GUI.WrappedText(LOC.Get("FX_CurveEditor_Argument", ArgumentName(value.Argument)));
+        if (value.IsConverted)
             GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, LOC.Get("FX_Inspector_Converted"));
-        if (def?.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
-            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, def.Description);
+        if (value.Description != null && CFG.Current.FxEditor_Inspector_Show_Descriptions)
+            GUI.WrappedTextColored(UI.Current.ImGui_Default_Text_Color with { W = 0.75f }, value.Description);
     }
 
     private static string ArgumentName(string argument) => argument switch
@@ -178,7 +179,7 @@ public class FxCurveEditor
         _ => argument,
     };
 
-    private void DisplayFunction(FxrActionView view)
+    private void DisplayFunction()
     {
         // Function
         GUI.Spacer();
@@ -234,7 +235,7 @@ public class FxCurveEditor
     private static readonly string[] AxisLabels = { "X", "Y", "Z", "W" };
     private static readonly string[] ColorLabels = { "R", "G", "B", "A" };
 
-    private unsafe void DisplayGraph(FxrActionView view, string name)
+    private unsafe void DisplayGraph(Model.IFxValue shown, FxrProperty prop)
     {
         // Graph
         GUI.Spacer();
@@ -242,7 +243,7 @@ public class FxCurveEditor
 
         int c = Working.Components;
         bool keyed = FxCurveOps.IsKeyed(Working.Function);
-        bool isColor = view.Describe(name)?.Color != null;
+        bool isColor = shown.IsColor;
         var labels = isColor ? ColorLabels : AxisLabels;
 
         // Up to the last key plus some, or a full extra period of a looping curve
@@ -263,8 +264,7 @@ public class FxCurveEditor
             for (int i = 0; i < c; i++) ys[i][s] = float.IsFinite(value[i]) ? value[i] : 0;
         }
 
-        // The random modifiers' range around the curve
-        var prop = view.GetProperty(name);
+        // The random modifiers' range around the curve (FXR3 modifiers; null for formats without them)
         var bands = new List<(string Label, double[] Low, double[] High, int Component)>();
         if (prop != null)
         {
