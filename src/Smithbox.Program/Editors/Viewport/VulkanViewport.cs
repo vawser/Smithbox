@@ -296,6 +296,23 @@ public class VulkanViewport : IViewport
         Instantiated = true;
     }
 
+    /// <summary>
+    ///     Releases the viewport's render pipeline (its targets, passes and queues), gizmos and grids, for a viewport
+    ///     that is being closed. GPU resources are released once frames in flight are done with them. The viewport
+    ///     must not be displayed, updated or drawn afterwards. The render scene isn't touched, as it can be shared.
+    /// </summary>
+    public void Dispose()
+    {
+        Gizmos?.Dispose();
+        PrimaryGrid?.Dispose();
+        SecondaryGrid?.Dispose();
+        TertiaryGrid?.Dispose();
+        ViewPipeline?.Dispose();
+
+        Visible = false;
+        IsActiveViewport = false;
+    }
+
     public void Display()
     {
         // The resource load panel ends at the very bottom of the window, which would otherwise make it scrollable
@@ -534,6 +551,10 @@ public class VulkanViewport : IViewport
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_Viewport);
+
+                // Only the active view's viewport is updated (MapEditorScreen.Update), so hovering a viewport
+                // makes its view the active one, as hovering its other panels does
+                mapUniverse.View.Editor.ViewHandler.ActiveView = mapUniverse.View;
 
                 // Need to loop through since we can't easily pass in the wrapper since this is a shared class with the Model Editor
                 foreach (var wrapper in mapUniverse.View.ViewportHandler.Viewports)

@@ -58,6 +58,32 @@ public class BloomPass : PostProcessPass
     private readonly DeviceBuffer[] ParamBuffers = new DeviceBuffer[MaxLevels * 2];
     private readonly List<Step> Steps = new();
 
+    public override void Dispose()
+    {
+        // A step's framebuffer can be the chain's, so only its set is this pass's
+        foreach (var step in Steps)
+            SceneRenderer.DisposeAllAfterFramesInFlight(step.ResourceSet);
+
+        Steps.Clear();
+
+        SceneRenderer.DisposeAllAfterFramesInFlight(ParamBuffers);
+        SceneRenderer.DisposeAllAfterFramesInFlight(DownFramebuffers.ToArray());
+        SceneRenderer.DisposeAllAfterFramesInFlight(Down.ToArray());
+        SceneRenderer.DisposeAllAfterFramesInFlight(UpFramebuffers.ToArray());
+        SceneRenderer.DisposeAllAfterFramesInFlight(Up.ToArray());
+
+        Array.Clear(ParamBuffers);
+        DownFramebuffers.Clear();
+        Down.Clear();
+        UpFramebuffers.Clear();
+        Up.Clear();
+
+        BoundSource = null;
+        BoundDestination = null;
+        BoundExposureState = null;
+        BoundGlow = null;
+    }
+
     // What the steps' resource sets were made for
     private Texture BoundSource;
     private Texture BoundDestination;

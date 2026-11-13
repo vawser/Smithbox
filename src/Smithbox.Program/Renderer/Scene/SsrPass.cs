@@ -69,6 +69,21 @@ public class SsrPass : PostProcessPass
     private ResourceSet TraceSet;
     private ResourceSet CompositeSet;
 
+    public override void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(TraceSet, CompositeSet, TracedFramebuffer, Traced, ColorMips);
+        SceneRenderer.DisposeAllAfterFramesInFlight(ParamBuffers);
+        Array.Clear(ParamBuffers);
+
+        TraceSet = null;
+        CompositeSet = null;
+        TracedFramebuffer = null;
+        Traced = null;
+        ColorMips = null;
+        BoundSource = null;
+        BoundDestination = null;
+    }
+
     // What the resource sets were made for
     private Texture BoundSource;
     private Texture BoundDestination;

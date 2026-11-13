@@ -12,8 +12,13 @@ public class PropArrayCopyAction : ViewportAction
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
 
-    public PropArrayCopyAction(Array source, Array target)
+    // The entity whose data holds the target array, marked as modified on execute and undo so the map is saved
+    private readonly Entity Owner;
+
+    public PropArrayCopyAction(Array source, Array target, Entity owner = null)
     {
+        Owner = owner;
+
         for (var i = 0; i < target.Length; i++)
         {
             PropertyChange change = new()
@@ -57,6 +62,8 @@ public class PropArrayCopyAction : ViewportAction
             change.ChangedObj.SetValue(change.NewVal, change.ArrayIndex);
         }
 
+        MapContainer.MarkEntityDirty(Owner);
+
         if (PostExecutionAction != null)
         {
             PostExecutionAction.Invoke(false);
@@ -71,6 +78,8 @@ public class PropArrayCopyAction : ViewportAction
         {
             change.ChangedObj.SetValue(change.OldVal, change.ArrayIndex);
         }
+
+        MapContainer.MarkEntityDirty(Owner);
 
         if (PostExecutionAction != null)
         {

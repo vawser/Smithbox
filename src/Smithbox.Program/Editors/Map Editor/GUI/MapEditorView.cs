@@ -390,12 +390,18 @@ public class MapEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
+            // Only the hovered panel takes the active view, as in Windows mode; otherwise every open view
+            // claims it each frame and the last one drawn always wins
+            var hovered = ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows);
+
             ImGui.BeginTabBar("leftPanelTabs");
 
             if(ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_List")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_FileList);
-                Editor.ViewHandler.ActiveView = this;
+
+                if (hovered)
+                    Editor.ViewHandler.ActiveView = this;
 
                 MapListView.Display(width, height);
 
@@ -405,7 +411,9 @@ public class MapEditorView : IEditorView
             if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Contents")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentTree);
-                Editor.ViewHandler.ActiveView = this;
+
+                if (hovered)
+                    Editor.ViewHandler.ActiveView = this;
 
                 MapContentView.Display(width, height);
 
@@ -428,12 +436,16 @@ public class MapEditorView : IEditorView
             var width = ImGui.GetContentRegionAvail().X;
             var height = ImGui.GetContentRegionAvail().Y;
 
+            var hovered = ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows);
+
             ImGui.BeginTabBar("rightPanelTabs");
 
             if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Properties")))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_Properties);
-                Editor.ViewHandler.ActiveView = this;
+
+                if (hovered)
+                    Editor.ViewHandler.ActiveView = this;
 
                 MapPropertyView.Display();
 
@@ -445,7 +457,9 @@ public class MapEditorView : IEditorView
                 if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Tools")))
                 {
                     FocusManager.SetFocus(EditorFocusContext.MapEditor_Tools);
-                    Editor.ViewHandler.ActiveView = this;
+
+                    if (hovered)
+                        Editor.ViewHandler.ActiveView = this;
 
                     ToolView.Display();
 
@@ -485,6 +499,24 @@ public class MapEditorView : IEditorView
             Selection.SelectedMapID = map.Name;
             Selection.SelectedMapContainer = map;
         }
+    }
+
+    /// <summary>
+    /// Releases what the view holds once it has been closed and its maps unloaded: its viewports' render
+    /// pipelines (GPU targets, passes and queues), the placement orb, its patrol routes, selection and history.
+    /// The view must not be displayed or updated afterwards.
+    /// </summary>
+    public void Dispose()
+    {
+        ViewportSelection.ClearSelection();
+        ViewportActionManager.Clear();
+
+        PatrolDrawManager.Clear();
+
+        ViewportWindow.PlacementOrb?.Dispose();
+        ViewportWindow.PlacementOrb = null;
+
+        ViewportHandler.Dispose();
     }
 
     public void ToggleMapData()

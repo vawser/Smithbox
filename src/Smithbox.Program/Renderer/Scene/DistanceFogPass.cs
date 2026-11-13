@@ -34,6 +34,14 @@ public class DistanceFogPass
     private DeviceBuffer ParamBuffer;
     private ResourceSet DrawSet;
 
+    /// <summary>Releases this pass's own buffer and set; the layout, pipeline and sampler are shared</summary>
+    public void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(DrawSet, ParamBuffer);
+        DrawSet = null;
+        ParamBuffer = null;
+    }
+
     private DistanceFogParam Params;
     private bool Pending;
 

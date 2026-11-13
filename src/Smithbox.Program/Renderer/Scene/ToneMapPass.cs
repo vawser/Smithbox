@@ -75,6 +75,15 @@ public class ToneMapPass
 
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
+
+    /// <summary>Releases this pass's own buffer and set; the layout, LUTs and sampler are shared</summary>
+    public void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ResourceSet, ParamBuffer);
+        ResourceSet = null;
+        ParamBuffer = null;
+        BoundSource = null;
+    }
     // The texture ResourceSet reads: the scene target's color, or the post-processing chain's output. A resized
     // target or chain makes new textures, so the reference tells when the set is stale.
     private Texture BoundSource;

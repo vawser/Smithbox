@@ -17,6 +17,16 @@ public class SceneColor
     /// <summary>The index in the global texture pool, or 0 until the first capture</summary>
     public uint TextureIndex => Handle?.TexHandle ?? 0;
 
+    /// <summary>
+    ///     Gives the pool slot back. The pool retires the copy with it, once frames that may sample it are done.
+    /// </summary>
+    public void Dispose()
+    {
+        Handle?.Dispose();
+        Handle = null;
+        Copy = null;
+    }
+
     /// <summary>Set each frame by what reads the copy; while false no copy is taken</summary>
     public volatile bool Wanted;
 

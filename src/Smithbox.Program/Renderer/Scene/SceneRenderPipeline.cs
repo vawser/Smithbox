@@ -386,6 +386,46 @@ public class SceneRenderPipeline
         _overlayQueue.IsOffscreen = true;
     }
 
+    private bool _disposed;
+
+    /// <summary>
+    ///     Stops the pipeline's queues and releases its GPU resources and those of its passes, for a viewport that is
+    ///     going away. Everything is released through <see cref="SceneRenderer.DisposeAfterFramesInFlight" />, so
+    ///     frames still executing can finish with it. The pipeline must not be drawn with afterwards.
+    ///     The scene param and picking sets come from <see cref="StaticResourceCache" />, which keeps them.
+    /// </summary>
+    public void Dispose()
+    {
+        if (_disposed)
+            return;
+
+        _disposed = true;
+
+        SceneRenderer.UnregisterRenderQueue(_renderQueue);
+        SceneRenderer.UnregisterRenderQueue(_overlayQueue);
+
+        Shadows?.Dispose();
+        Rain?.Dispose();
+        SnapDepth?.Dispose();
+
+        // Holds SSAO, SSR, TAA, auto exposure, light shafts, both blooms and the surface view
+        PostProcess.Dispose();
+        ToneMap.Dispose();
+        Fxaa.Dispose();
+        Fog.Dispose();
+        DistanceFog.Dispose();
+        SceneDepth.Dispose();
+        SceneColor.Dispose();
+        Target.Dispose();
+
+        SceneRenderer.DisposeAllAfterFramesInFlight(OverlayParamResourceSet, OverlayParamBuffer,
+            SceneParamBuffer, SceneLightingBuffer);
+
+        // A pick may still be waiting for its readback
+        SceneRenderer.DisposeAfterFramesInFlight(PickingResultsBuffer, SceneRenderer.ReadbackReleaseFrames);
+        SceneRenderer.DisposeAfterFramesInFlight(PickingResultReadbackBuffer, SceneRenderer.ReadbackReleaseFrames);
+    }
+
     /// <summary>
     ///     Copies <see cref="Target" />'s depth for the transparent draws that follow, see <see cref="SceneDepth" />,
     ///     and lays the fog over the opaque draws, which reads it

@@ -815,15 +815,26 @@ public class MapUniverse : IUniverse
 
             var mapData = (Memory<byte>)Project.Handler.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
+            // DS2's generators, events and object instances are serialized before anything is written, so a
+            // failure (a duplicate ID) leaves the map unsaved and still marked as modified, rather than writing
+            // the MSB without its params
+            List<(Param Param, string Path)> ds2Params = null;
+
+            if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2 && map.DS2GeneratorsLoaded)
+            {
+                ds2Params = SerializeDS2Generators(map)
+                    ?? throw new InvalidOperationException(LOC.Get("MAP_Universe_DS2_Generator_Save_Failed", map.Name));
+            }
+
             var msb = adapter.CreateForWrite(mapData);
             map.SerializeToMSB(msb, Project.Descriptor.ProjectType);
 
             var newMapData = msb.Write(adapter.Compression);
             Project.VFS.ProjectFS.WriteFile(curEntry.Path, newMapData);
 
-            if (Project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            if (ds2Params != null)
             {
-                SaveDS2Generators(map);
+                WriteDS2Generators(ds2Params);
             }
 
             CheckDupeEntityIDs(map);
@@ -852,6 +863,26 @@ public class MapUniverse : IUniverse
         Dictionary<long, MergedParamRow> generatorParams = new();
         Dictionary<long, Entity> generatorObjs = new();
 
+        // The six per-map params are all written back on save, so without any one of them the generators are not
+        // loaded at all (and SaveDS2Generators leaves the files alone) rather than saved with a param emptied
+        var paramNames = new[] { "generatorregistparam", "generatorlocation", "generatorparam",
+            "eventparam", "eventlocation", "mapobjectinstanceparam" };
+
+        var missing = paramNames.Where(p => !Project.Handler.ParamData.PrimaryBank.Params.ContainsKey($"{p}_{mapid}")).ToList();
+
+        if (missing.Count > 0)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_DS2_Generator_Params_Missing", mapid, string.Join(", ", missing.Select(p => $"{p}_{mapid}"))));
+            map.DS2GeneratorsLoaded = false;
+            return;
+        }
+
+        map.DS2GeneratorsLoaded = true;
+
+        // Duplicate row IDs are kept as objects of their own, so nothing is lost; the save reports them
+        // (SerializeDS2*) and refuses to write until they are made unique
+        var duplicateIds = new List<string>();
+
         Param regparam = Project.Handler.ParamData.PrimaryBank.Params[$"generatorregistparam_{mapid}"];
         foreach (Param.Row row in regparam.Rows)
         {
@@ -860,7 +891,10 @@ public class MapUniverse : IUniverse
                 row.Name = "regist_" + row.ID;
             }
 
-            registParams.Add(row.ID, row);
+            if (!registParams.TryAdd(row.ID, row))
+            {
+                duplicateIds.Add($"generatorregistparam {row.ID}");
+            }
 
             MsbEntity obj = new(View.Universe, map, row, MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
@@ -874,13 +908,21 @@ public class MapUniverse : IUniverse
                 row.Name = "generator_" + row.ID;
             }
 
-
             MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
             mergedRow.AddRow("generator-loc", row);
-            generatorParams.Add(row.ID, mergedRow);
 
             MsbEntity obj = new(View.Universe, map, mergedRow, MsbEntityType.DS2Generator);
-            generatorObjs.Add(row.ID, obj);
+
+            // A duplicate location gets its own object, but the generator rows of that ID join the first one
+            if (generatorParams.TryAdd(row.ID, mergedRow))
+            {
+                generatorObjs.Add(row.ID, obj);
+            }
+            else
+            {
+                duplicateIds.Add($"generatorlocation {row.ID}");
+            }
+
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
         }
@@ -894,18 +936,32 @@ public class MapUniverse : IUniverse
                 row.Name = "generator_" + row.ID;
             }
 
-            if (generatorParams.ContainsKey(row.ID))
+            if (generatorParams.TryGetValue(row.ID, out var existing) && existing.GetRow("generator") == null)
             {
-                generatorParams[row.ID].AddRow("generator", row);
+                existing.AddRow("generator", row);
             }
             else
             {
+                if (existing != null)
+                {
+                    duplicateIds.Add($"generatorparam {row.ID}");
+                }
+
                 MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
-                generatorParams.Add(row.ID, mergedRow);
                 MsbEntity obj = new(View.Universe, map, mergedRow, MsbEntityType.DS2Generator);
-                generatorObjs.Add(row.ID, obj);
+
+                if (existing == null)
+                {
+                    generatorParams.Add(row.ID, mergedRow);
+                    generatorObjs.Add(row.ID, obj);
+                }
+
                 map.AddObject(obj);
+
+                // Only the first generator of an ID gets the character model below
+                if (existing != null)
+                    continue;
             }
 
             var registid = (int)row.GetCellHandleOrThrow("GeneratorRegistParam").Value;
@@ -986,6 +1042,11 @@ public class MapUniverse : IUniverse
             map.AddObject(obj);
         }
 
+        if (duplicateIds.Count > 0)
+        {
+            Smithbox.LogError(this, LOC.Get("MAP_Universe_DS2_Generator_Duplicate_IDs", mapid, string.Join(", ", duplicateIds)));
+        }
+
         ResourceManager.DefaultPool.LoadAssets(Project, chrsToLoad, new LoadOptions
         {
             JobName = LOC.Get("MAP_ResourceManager_Character_Models"),
@@ -1058,7 +1119,11 @@ public class MapUniverse : IUniverse
         }
     }
 
-    private void SaveDS2Generators(MapContainer map)
+    /// <summary>
+    /// Builds the map's six DS2 per-map params from its objects, ready to write. Null if any of them failed to
+    /// serialize (the reason is logged), in which case nothing should be written.
+    /// </summary>
+    private List<(Param Param, string Path)> SerializeDS2Generators(MapContainer map)
     {
         // Load all the params
         var (regparam, regparamPath) = ReadDS2Param(ParamLocator.GetDS2GeneratorRegistParam, map.Name);
@@ -1076,45 +1141,43 @@ public class MapUniverse : IUniverse
         evtlparam.ClearRows();
         objparam.ClearRows();
 
-        // Serialize objects
-        if (!map.SerializeDS2Generators(locparam, genparam))
+        // Serialize objects; every step runs, so all the ID collisions are logged at once
+        var ok = map.SerializeDS2Generators(locparam, genparam);
+        ok &= map.SerializeDS2Regist(regparam);
+        ok &= map.SerializeDS2Events(evtparam);
+        ok &= map.SerializeDS2EventLocations(evtlparam);
+        ok &= map.SerializeDS2ObjInstances(objparam);
+
+        if (!ok)
         {
-            return;
+            return null;
         }
 
-        if (!map.SerializeDS2Regist(regparam))
+        return new List<(Param, string)>
         {
-            return;
-        }
+            (regparam, regparamPath),
+            (locparam, locparamPath),
+            (genparam, genparamPath),
+            (evtparam, evtparamPath),
+            (evtlparam, evtlparamPath),
+            (objparam, objparamPath)
+        };
+    }
 
-        if (!map.SerializeDS2Events(evtparam))
+    private static void WriteDS2Generators(List<(Param Param, string Path)> ds2Params)
+    {
+        foreach (var (param, path) in ds2Params)
         {
-            return;
-        }
+            // Create the param directory if it does not exist
+            var directory = Path.GetDirectoryName(path);
 
-        if (!map.SerializeDS2EventLocations(evtlparam))
-        {
-            return;
-        }
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
 
-        if (!map.SerializeDS2ObjInstances(objparam))
-        {
-            return;
+            WriteDS2Param(param, path);
         }
-
-        // Create a param directory if it does not exist
-        if (!Directory.Exists(Path.GetDirectoryName(regparamPath)))
-        {
-            Directory.CreateDirectory(Path.GetDirectoryName(regparamPath));
-        }
-
-        // Save all the params
-        WriteDS2Param(regparam, regparamPath);
-        WriteDS2Param(locparam, locparamPath);
-        WriteDS2Param(genparam, genparamPath);
-        WriteDS2Param(evtparam, evtparamPath);
-        WriteDS2Param(evtlparam, evtlparamPath);
-        WriteDS2Param(objparam, objparamPath);
     }
 
     /// <summary>

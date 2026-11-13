@@ -127,6 +127,13 @@ public class MapContainer : ObjectContainer
     [XmlIgnore]
     public string SaveError { get; set; }
 
+    /// <summary>
+    /// DS2: whether the map's generator, event and object instance params were loaded as objects. When they
+    /// weren't, saving leaves those param files alone, as writing them would empty them.
+    /// </summary>
+    [XmlIgnore]
+    public bool DS2GeneratorsLoaded { get; set; }
+
     public void MarkDirty(MapFileType fileType)
     {
         // Ties the running action to this map, so unloading the map drops only the history that touched it

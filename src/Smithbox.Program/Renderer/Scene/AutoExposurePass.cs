@@ -51,6 +51,24 @@ public class AutoExposurePass : PostProcessPass
     private DeviceBuffer ParamBuffer;
     private DeviceBuffer ReadbackBuffer;
     private ResourceSet ResourceSet;
+
+    public override void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ResourceSet, ParamBuffer);
+
+        // A readback of the state may still be queued, so these are kept longer
+        if (StateBuffer != null)
+            SceneRenderer.DisposeAfterFramesInFlight(StateBuffer, SceneRenderer.ReadbackReleaseFrames);
+
+        if (ReadbackBuffer != null)
+            SceneRenderer.DisposeAfterFramesInFlight(ReadbackBuffer, SceneRenderer.ReadbackReleaseFrames);
+
+        ResourceSet = null;
+        ParamBuffer = null;
+        StateBuffer = null;
+        ReadbackBuffer = null;
+        BoundSource = null;
+    }
     private Texture BoundSource;
     private AutoExposureParam Params;
 

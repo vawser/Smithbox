@@ -161,7 +161,8 @@ public class PropertiesActionTool
 
     public PropChangeAction GetTransformChange(Entity sel, string propName, Vector3 resetValue)
     {
-        PropChangeAction act = new(sel.WrappedObject);
+        // Built with the entity, so the change marks its map as modified and is saved
+        PropChangeAction act = new(sel, sel.WrappedObject);
 
         PropertyInfo prop = sel.WrappedObject.GetType().GetProperty(propName);
 
@@ -178,71 +179,44 @@ public class PropertiesActionTool
 
     public void ClearDisplayGroups()
     {
-        List<ViewportAction> actlist = new();
-        foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>())
-        {
-            uint[] displayGroups = null;
-
-            displayGroups = sel.DisplayGroups;
-
-            if (displayGroups != null)
-            {
-                for (var i = 0; i < displayGroups.Length; i++)
-                {
-                    displayGroups[i] = 0;
-                }
-
-                PropArrayCopyAction action = new(displayGroups, sel.DisplayGroups);
-
-                View.ViewportActionManager.ExecuteAction(action);
-            }
-        }
+        ClearGroupArrays(sel => sel.DisplayGroups);
     }
 
     public void ClearDrawGroups()
     {
-        List<ViewportAction> actlist = new();
-        foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>())
-        {
-            uint[] drawGroups = null;
-
-            drawGroups = sel.DrawGroups;
-
-            if (drawGroups != null)
-            {
-                for (var i = 0; i < drawGroups.Length; i++)
-                {
-                    drawGroups[i] = 0;
-                }
-
-                PropArrayCopyAction action = new(drawGroups, sel.DrawGroups);
-
-                View.ViewportActionManager.ExecuteAction(action);
-            }
-        }
+        ClearGroupArrays(sel => sel.DrawGroups);
     }
 
     public void ClearCollisionMasks()
     {
+        ClearGroupArrays(sel => sel.CollisionMasks);
+    }
+
+    /// <summary>
+    /// Zeroes one of the group arrays of every selected object, as one undo step. The array is copied into from
+    /// a zeroed copy, so the action still holds the old values for undo. For a part whose groups come from the
+    /// collision it names, the array is the collision's, so that is the object marked as modified.
+    /// </summary>
+    private void ClearGroupArrays(Func<Entity, uint[]> getArray)
+    {
         List<ViewportAction> actlist = new();
+        var cleared = new HashSet<uint[]>(ReferenceEqualityComparer.Instance);
+
         foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>())
         {
-            uint[] collisionMasks = null;
+            var groups = getArray(sel);
 
-            collisionMasks = sel.CollisionMasks;
+            // Parts sharing a collision share its array, which needs clearing once
+            if (groups == null || !cleared.Add(groups))
+                continue;
 
-            if (collisionMasks != null)
-            {
-                for (var i = 0; i < collisionMasks.Length; i++)
-                {
-                    collisionMasks[i] = 0;
-                }
-
-                PropArrayCopyAction action = new(collisionMasks, sel.CollisionMasks);
-
-                View.ViewportActionManager.ExecuteAction(action);
-            }
+            actlist.Add(new PropArrayCopyAction(new uint[groups.Length], groups, sel.RenderGroupOwner ?? sel));
         }
+
+        if (actlist.Count == 0)
+            return;
+
+        View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actlist));
     }
 
     public void ClearEntityID()
@@ -250,15 +224,22 @@ public class PropertiesActionTool
         List<ViewportAction> actlist = new();
         foreach (Entity sel in View.ViewportSelection.GetFilteredSelection<Entity>())
         {
-            PropChangeAction act = new(sel.WrappedObject);
+            PropertyInfo prop = sel.WrappedObject?.GetType().GetProperty("EntityID");
 
-            PropertyInfo prop = sel.WrappedObject.GetType().GetProperty("EntityID");
+            if (prop == null || !prop.CanWrite)
+                continue;
 
-            if (prop != null)
-                act.AddPropertyChange(prop, (uint)0);
+            // Built with the entity, so the change marks its map as modified and is saved
+            PropChangeAction act = new(sel, sel.WrappedObject);
+
+            // EntityID is an int in the older MSBs and a uint from Elden Ring on, and SetValue doesn't convert
+            act.AddPropertyChange(prop, Convert.ChangeType(0, prop.PropertyType));
 
             actlist.Add(act);
         }
+
+        if (actlist.Count == 0)
+            return;
 
         var action = new ViewportCompoundAction(actlist);
         View.ViewportActionManager.ExecuteAction(action);
@@ -271,22 +252,19 @@ public class PropertiesActionTool
         {
             var entityGroupIdsProp = PropFinderUtil.FindProperty("EntityGroupIDs", sel.WrappedObject);
 
-            if (entityGroupIdsProp != null)
-            {
-                var entityGroupIds = (uint[])PropFinderUtil.FindPropertyValue(entityGroupIdsProp, sel.WrappedObject);
+            if (entityGroupIdsProp == null)
+                continue;
 
+            if (PropFinderUtil.FindPropertyValue(entityGroupIdsProp, sel.WrappedObject) is not uint[] entityGroupIds)
+                continue;
 
-                uint[] newEntityGroupIds = (uint[])entityGroupIds.Clone();
-                for(int i = 0; i < newEntityGroupIds.Length; i++)
-                {
-                    newEntityGroupIds[i] = 0;
-                }
-
-                PropArrayCopyAction action = new(newEntityGroupIds, entityGroupIds);
-
-                View.ViewportActionManager.ExecuteAction(action);
-            }
+            actlist.Add(new PropArrayCopyAction(new uint[entityGroupIds.Length], entityGroupIds, sel));
         }
 
+        if (actlist.Count == 0)
+            return;
+
+        // One undo step for the whole selection
+        View.ViewportActionManager.ExecuteAction(new ViewportCompoundAction(actlist));
     }
 }

@@ -61,6 +61,20 @@ public class SceneTarget
     public Texture Depth { get; private set; }
     public Framebuffer Framebuffer { get; private set; }
 
+    /// <summary>Releases the target's textures once frames in flight are done with them</summary>
+    public void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(Framebuffer, Color, Surface, Indirect, Reflection, Glow, Depth);
+
+        Framebuffer = null;
+        Color = null;
+        Surface = null;
+        Indirect = null;
+        Reflection = null;
+        Glow = null;
+        Depth = null;
+    }
+
     public uint Width => Color?.Width ?? 0;
     public uint Height => Color?.Height ?? 0;
 

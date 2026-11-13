@@ -54,6 +54,14 @@ public abstract class PostProcessPass
     public abstract bool IsActive(GparamLighting lighting);
 
     public abstract void Run(GraphicsDevice gd, CommandList cl, PostProcessFrame frame);
+
+    /// <summary>
+    ///     Releases the pass's own resources (not its static, shared ones) once frames in flight are done with them,
+    ///     when its pipeline goes away. The pass isn't run again.
+    /// </summary>
+    public virtual void Dispose()
+    {
+    }
 }
 
 /// <summary>
@@ -83,6 +91,22 @@ public class PostProcessChain
     public void Add(PostProcessPass pass)
     {
         Passes.Add(pass);
+    }
+
+    /// <summary>Releases the chain's textures and every pass in it, for a pipeline that is going away</summary>
+    public void Dispose()
+    {
+        foreach (var pass in Passes)
+        {
+            pass.Dispose();
+        }
+
+        for (var i = 0; i < Textures.Length; i++)
+        {
+            SceneRenderer.DisposeAllAfterFramesInFlight(Framebuffers[i], Textures[i]);
+            Framebuffers[i] = null;
+            Textures[i] = null;
+        }
     }
 
     /// <summary>

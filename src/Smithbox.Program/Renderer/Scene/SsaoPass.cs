@@ -70,6 +70,26 @@ public class SsaoPass : PostProcessPass
     private readonly DeviceBuffer[] ParamBuffers = new DeviceBuffer[4];
     private readonly List<Step> Steps = new();
 
+    public override void Dispose()
+    {
+        // A step's framebuffer can be the chain's, so only its set is this pass's
+        foreach (var step in Steps)
+            SceneRenderer.DisposeAllAfterFramesInFlight(step.ResourceSet);
+
+        Steps.Clear();
+
+        SceneRenderer.DisposeAllAfterFramesInFlight(ParamBuffers);
+        SceneRenderer.DisposeAllAfterFramesInFlight(HalfFramebuffers);
+        SceneRenderer.DisposeAllAfterFramesInFlight(Half);
+
+        Array.Clear(ParamBuffers);
+        Array.Clear(HalfFramebuffers);
+        Array.Clear(Half);
+
+        BoundSource = null;
+        BoundDestination = null;
+    }
+
     // What the steps' resource sets were made for
     private Texture BoundSource;
     private Texture BoundDestination;

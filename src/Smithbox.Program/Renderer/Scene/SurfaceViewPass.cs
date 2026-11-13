@@ -34,6 +34,15 @@ public class SurfaceViewPass : PostProcessPass
 
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
+
+    public override void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ResourceSet, ParamBuffer);
+        ResourceSet = null;
+        ParamBuffer = null;
+        BoundOcclusion = null;
+        BoundReflections = null;
+    }
     private int BoundVersion = -1;
     private SceneTarget BoundTarget;
     private Texture BoundOcclusion;

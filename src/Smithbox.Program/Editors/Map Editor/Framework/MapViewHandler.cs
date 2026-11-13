@@ -86,6 +86,7 @@ public class MapViewHandler
             return false;
         }
 
+        // Completed before the prompt below, as finishing them adds objects, so the prompt sees those edits
         view.PrefabTool.FinishImport();
         view.CreateAction.MassCreate.Finish();
 
@@ -102,12 +103,18 @@ public class MapViewHandler
             return false;
         }
 
+        // One collection at the end rather than two per map
         foreach (var map in ownedMaps)
         {
-            view.Universe.UnloadMap(map.Name);
+            view.Universe.UnloadMap(map.Name, collectGarbage: false);
         }
 
         Views[view.ViewIndex] = null;
+
+        // Its render pipelines' queues would otherwise keep running every frame, and its GPU targets stay allocated
+        view.Dispose();
+
+        GC.Collect();
 
         if (view == ActiveView || ActiveView == null)
         {

@@ -133,12 +133,26 @@ public class MapViewportHandler
 
         Viewports[view.ID] = null;
 
+        // Its pipeline's queues would otherwise keep running and its targets stay allocated
+        (view.Viewport as VulkanViewport)?.Dispose();
+
         if (view == ActiveViewport || ActiveViewport == null)
         {
             ActiveViewport = Viewports.FindLast(e => e != null);
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Releases every viewport of the view, for a view that is being closed
+    /// </summary>
+    public void Dispose()
+    {
+        foreach (var wrapper in Viewports)
+        {
+            (wrapper?.Viewport as VulkanViewport)?.Dispose();
+        }
     }
 
     public int CountViews()

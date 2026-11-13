@@ -69,6 +69,18 @@ public class VolumetricFogPass
 
     private DeviceBuffer ParamBuffer;
     private Texture Volume;
+
+    /// <summary>Releases this pass's own volume, buffer and sets; the layouts, pipeline and samplers are shared</summary>
+    public void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ComputeSet, DrawSet, Volume, ParamBuffer);
+        ComputeSet = null;
+        DrawSet = null;
+        Volume = null;
+        ParamBuffer = null;
+        BoundShadowMap = null;
+        BoundLightBuffer = null;
+    }
     private TexturePool.TextureHandle VolumeHandle;
     private ResourceSet ComputeSet;
     private ResourceSet DrawSet;

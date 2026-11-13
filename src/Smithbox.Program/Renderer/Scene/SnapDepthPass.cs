@@ -138,6 +138,38 @@ public class SnapDepthPass
         SceneRenderer.RegisterRenderQueue(Queue);
     }
 
+    /// <summary>
+    ///     Stops the queue and releases the maps, buffers, layout and set once frames in flight are done with them.
+    ///     A snap still in progress never completes.
+    /// </summary>
+    public void Dispose()
+    {
+        SceneRenderer.UnregisterRenderQueue(Queue);
+        SceneRenderer.DisposeAllAfterFramesInFlight(Queue.SceneParamSet, ParamBuffer, ComputeSet,
+            MapFramebuffer, Map, SinkFramebuffer, Sink, GroupBuffer);
+
+        // The result is read back, and a readback can still be queued, so these are kept longer
+        if (ResultBuffer != null)
+            SceneRenderer.DisposeAfterFramesInFlight(ResultBuffer, SceneRenderer.ReadbackReleaseFrames);
+
+        if (ReadbackBuffer != null)
+            SceneRenderer.DisposeAfterFramesInFlight(ReadbackBuffer, SceneRenderer.ReadbackReleaseFrames);
+
+        // After the set made from it
+        if (ComputeLayout != null)
+            SceneRenderer.DisposeAfterFramesInFlight(ComputeLayout, SceneRenderer.ReadbackReleaseFrames);
+
+        ComputeSet = null;
+        MapFramebuffer = null;
+        Map = null;
+        SinkFramebuffer = null;
+        Sink = null;
+        GroupBuffer = null;
+        ResultBuffer = null;
+        ReadbackBuffer = null;
+        ComputeLayout = null;
+    }
+
     /// <summary>Asks for a snap. It starts once the pass is idle; a request not yet started is replaced.</summary>
     public void Request(SnapDepthRequest request)
     {

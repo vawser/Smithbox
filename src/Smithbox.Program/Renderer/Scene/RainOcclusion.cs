@@ -110,6 +110,33 @@ public class RainOcclusion
     }
 
     /// <summary>
+    ///     Stops the queue and releases the maps, buffer and set once frames in flight are done with them
+    /// </summary>
+    public void Dispose()
+    {
+        SceneRenderer.UnregisterRenderQueue(Queue);
+        SceneRenderer.DisposeAllAfterFramesInFlight(Queue.SceneParamSet, ParamBuffer,
+            MapFramebuffer, SinkFramebuffer, Sink);
+
+        MapFramebuffer = null;
+        SinkFramebuffer = null;
+        Sink = null;
+
+        // The pool retires the map with its slot; without a slot the map is only this pass's
+        if (Handle != null)
+        {
+            Handle.Dispose();
+            Handle = null;
+        }
+        else
+        {
+            SceneRenderer.DisposeAllAfterFramesInFlight(Map);
+        }
+
+        Map = null;
+    }
+
+    /// <summary>
     ///     Decides whether the map is drawn this frame. <paramref name="enabled" /> is whether anything is wet;
     ///     <paramref name="signature" /> changes whenever the casters do, see
     ///     <see cref="MeshRenderables.ShadowCasterSignature" />.

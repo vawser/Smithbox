@@ -65,6 +65,16 @@ public class TaaPass : PostProcessPass
     private DeviceBuffer ParamBuffer;
     private ResourceSet ResourceSet;
 
+    public override void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ResourceSet, ParamBuffer, History);
+        ResourceSet = null;
+        ParamBuffer = null;
+        History = null;
+        BoundSource = null;
+        BoundHistory = null;
+    }
+
     // What the resource set was made for
     private Texture BoundSource;
     private Texture BoundHistory;

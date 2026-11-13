@@ -52,6 +52,21 @@ public class Gizmos
     /// </summary>
     public ViewportGridSettings SnapGrid { get; set; }
 
+    /// <summary>Takes the gizmo meshes out of the scene and releases them, for a viewport that is going away</summary>
+    public void Dispose()
+    {
+        foreach (var proxy in new RenderableProxy[]
+                 {
+                     TranslationGizmo.X_Arrow_Proxy, TranslationGizmo.Y_Arrow_Proxy, TranslationGizmo.Z_Arrow_Proxy,
+                     TranslationGizmo.X_Square_Proxy, TranslationGizmo.Y_Square_Proxy, TranslationGizmo.Z_Square_Proxy,
+                     RotationGizmo.X_Ring_Proxy, RotationGizmo.Y_Ring_Proxy, RotationGizmo.Z_Ring_Proxy,
+                     ScaleGizmo.X_Cube_Proxy, ScaleGizmo.Y_Cube_Proxy, ScaleGizmo.Z_Cube_Proxy
+                 })
+        {
+            proxy?.Dispose();
+        }
+    }
+
     // The snap grid as it was when the drag started. A grid moving itself snaps to where it started.
     private Transform DragSnapGrid;
     private float DragSnapSize;

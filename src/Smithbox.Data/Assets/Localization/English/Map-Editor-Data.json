@@ -173,6 +173,18 @@
       "Text": "{0}:{1} has an ID that's already used. Change it to an unique value."
     },
     {
+      "Key": "MAP_Universe_DS2_Generator_Params_Missing",
+      "Text": "{0}: the generators, events and object instances were not loaded, as these params are missing: {1}. They will not be saved for this map."
+    },
+    {
+      "Key": "MAP_Universe_DS2_Generator_Duplicate_IDs",
+      "Text": "{0}: these param rows share an ID with an earlier row: {1}. Each is shown as its own object; make the IDs unique before saving."
+    },
+    {
+      "Key": "MAP_Universe_DS2_Generator_Save_Failed",
+      "Text": "The generator, event or object instance params of {0} could not be serialized (see the log above). Nothing was written for this map."
+    },
+    {
       "Key": "MAP_Data_Setup_Primary_Bank_PASS",
       "Text": "Setup the Primary Bank."
     },

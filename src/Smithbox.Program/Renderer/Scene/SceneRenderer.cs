@@ -200,6 +200,68 @@ public static class SceneRenderer
         RenderQueues.Add(queue);
     }
 
+    // Queues to stop running, taken out of RenderQueues at the start of the next frame's queue loop rather than
+    // while it may be iterating
+    private static readonly List<RenderQueue> PendingQueueRemovals = new();
+
+    /// <summary>
+    ///     Stops running the queue (from the next frame) and releases its buffers once frames in flight are done
+    ///     with them. For a pipeline that is going away; see <see cref="SceneRenderPipeline.Dispose" />.
+    /// </summary>
+    public static void UnregisterRenderQueue(RenderQueue queue)
+    {
+        if (queue == null)
+            return;
+
+        lock (PendingQueueRemovals)
+        {
+            PendingQueueRemovals.Add(queue);
+        }
+    }
+
+    private static void ApplyQueueRemovals()
+    {
+        lock (PendingQueueRemovals)
+        {
+            if (PendingQueueRemovals.Count == 0)
+                return;
+
+            foreach (var queue in PendingQueueRemovals)
+            {
+                RenderQueues.Remove(queue);
+                queue.Dispose();
+            }
+
+            // TEMP (B20 verification): remove once closing a view is confirmed to release its queues
+            Smithbox.Log(typeof(SceneRenderer),
+                $"[B20] Removed {PendingQueueRemovals.Count} render queues; {RenderQueues.Count} remain registered.");
+
+            PendingQueueRemovals.Clear();
+        }
+    }
+
+    /// <summary>
+    ///     How many frames a buffer used by <see cref="AddAsyncReadback" /> is kept after it is released. A readback
+    ///     can wait in the queue for one batch to finish, then for its copy to be recorded and its fence to signal,
+    ///     each up to a cycle of the frames in flight.
+    /// </summary>
+    public const int ReadbackReleaseFrames = 4 * BUFFER_COUNT;
+
+    /// <summary>
+    ///     <see cref="DisposeAfterFramesInFlight" /> for each resource that isn't null. For tearing down everything a
+    ///     pass or pipeline owns.
+    /// </summary>
+    public static void DisposeAllAfterFramesInFlight(params IDisposable[] resources)
+    {
+        foreach (var resource in resources)
+        {
+            if (resource != null)
+            {
+                DisposeAfterFramesInFlight(resource);
+            }
+        }
+    }
+
     /// <summary>
     /// Gets the instance data of one renderable, or null if the budget has run out, in which case it isn't drawn.
     /// </summary>
@@ -513,6 +575,9 @@ public static class SceneRenderer
 
         SuspendSceneDraws = IsLoading();
 
+        // The queues of pipelines disposed since the last frame
+        ApplyQueueRemovals();
+
         for (int i = 0; i < RenderQueues.Count; i++)
         {
             var curRq = RenderQueues[i];
@@ -681,6 +746,13 @@ public static class SceneRenderer
             _indirectBuffer = Factory.CreateBuffer(desc);
             _indirectStagingBuffer = new IndirectDrawIndexedArgumentsPacked[capacity];
             _directBuffer = new IndirectDrawIndexedArgumentsPacked[capacity];
+        }
+
+        /// <summary>Releases the GPU buffer once frames in flight are done with it</summary>
+        public void Dispose()
+        {
+            SceneRenderer.DisposeAllAfterFramesInFlight(_indirectBuffer);
+            _indirectBuffer = null;
         }
 
         private void ResizeBuffers(uint newCapacity)
@@ -1109,6 +1181,27 @@ public static class SceneRenderer
         public void SetPredrawSetupAction(Action<GraphicsDevice, CommandList> setup)
         {
             PreDrawSetup = setup;
+        }
+
+        /// <summary>
+        ///     Releases the queue's draw buffers and fences once frames in flight are done with them. Called by
+        ///     <see cref="UnregisterRenderQueue" /> once the queue no longer runs. The scene param set is left to
+        ///     whoever made it.
+        /// </summary>
+        public void Dispose()
+        {
+            foreach (var encoder in _drawEncoders)
+            {
+                encoder.Dispose();
+            }
+
+            foreach (var fence in _resourcesUpdatedFence)
+            {
+                SceneRenderer.DisposeAllAfterFramesInFlight(fence);
+            }
+
+            Indices.Clear();
+            Renderables.Clear();
         }
 
         public void Clear()

@@ -78,6 +78,41 @@ public class ShadowCascades
         }
     }
 
+    /// <summary>
+    ///     Stops the cascades' queues and releases the map, buffers and sets once frames in flight are done with them
+    /// </summary>
+    public void Dispose()
+    {
+        for (var i = 0; i < MaxCascades; i++)
+        {
+            if (Queues[i] != null)
+            {
+                SceneRenderer.UnregisterRenderQueue(Queues[i]);
+                SceneRenderer.DisposeAllAfterFramesInFlight(Queues[i].SceneParamSet);
+                Queues[i] = null;
+            }
+        }
+
+        SceneRenderer.DisposeAllAfterFramesInFlight(ParamBuffers);
+        Array.Clear(ParamBuffers);
+
+        SceneRenderer.DisposeAllAfterFramesInFlight(MapFramebuffer);
+        MapFramebuffer = null;
+
+        // The pool retires the map with its slot; without a slot the map is only this pass's
+        if (Handle != null)
+        {
+            Handle.Dispose();
+            Handle = null;
+        }
+        else
+        {
+            SceneRenderer.DisposeAllAfterFramesInFlight(Map);
+        }
+
+        Map = null;
+    }
+
     /// <summary>The shadow map's index in the global texture pool, or 0 if there are no shadows this frame</summary>
     public uint TextureIndex => ActiveCount > 0 ? Handle?.TexHandle ?? 0 : 0;
 

@@ -10,3 +10,4 @@
     - Add support for DES/DS1/DS2
  
 - Add Behavior Merge tool
+- Add Behavior templates

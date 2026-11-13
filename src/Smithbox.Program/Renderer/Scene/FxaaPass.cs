@@ -45,6 +45,16 @@ public class FxaaPass
 
     public Framebuffer Framebuffer { get; private set; }
 
+    /// <summary>Releases this pass's own image, buffer and set; the layout and sampler are shared</summary>
+    public void Dispose()
+    {
+        SceneRenderer.DisposeAllAfterFramesInFlight(ResourceSet, Framebuffer, Image, ParamBuffer);
+        ResourceSet = null;
+        Framebuffer = null;
+        Image = null;
+        ParamBuffer = null;
+    }
+
     public bool IsActive(GparamLighting lighting)
     {
         if (!RenderMode.PostEffects || !CFG.Current.Viewport_Post_Fxaa)

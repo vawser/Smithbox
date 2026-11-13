@@ -27,6 +27,15 @@ public class ViewportGrid
         HiddenGrid = CreateProxy(renderlist, true);
     }
 
+    /// <summary>Takes the grid out of the scene and releases it, for a viewport that is going away</summary>
+    public void Dispose()
+    {
+        Grid?.Dispose();
+        HiddenGrid?.Dispose();
+        Grid = null;
+        HiddenGrid = null;
+    }
+
     private static DebugPrimitiveRenderableProxy CreateProxy(MeshRenderables renderlist, bool occludedOnly)
     {
         var proxy = new DebugPrimitiveRenderableProxy(renderlist, new DbgPrimGridPlane());
