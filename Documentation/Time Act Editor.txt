@@ -2,6 +2,27 @@
 # Time Act Editor TODO
 #----------------------------------------------------
 
-- Animations: add representation of
-    - Blending
+- Event Graph
+    - Read-only graph for imported animations
+
+- Playback:
+    - Animation blending between animations
+    - Throw hitboxes
+    - Weapon style simulation
+    - Weapon location overrides
+    - Additive animation playback
+    - Character turning / tracking
+    - Animation speed events
+    - Model opacity / model masks
+    - Rumble cam
+    - FX preview
+    - StateInfo markers
+    - Root Motion multipliers
     
+- Tools:
+    - NPC Param Selector
+    - Behavior / Hit Source Selector
+    - Scan for unused animations
+    - Animation Builder: builds new animation from combo of animations
+    - FBX to HKX
+    - TAE Reload (is HKS Reload)

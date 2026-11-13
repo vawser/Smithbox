@@ -2,38 +2,8 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- Editor:
-    - Support editing GX Items
-    
-    
-- Event Graph
-    - Read-only graph for imported animations
-
-- Playback:
-    - Animation blending between animations
-    - Throw hitboxes
-    - Weapon style simulation
-    - Weapon location overrides
-    - Additive animation playback
-    - Character turning / tracking
-    - Animation speed events
-    - Model opacity / model masks
-    - Rumble cam
-    - FX preview
-    - StateInfo markers
-    - Root Motion multipliers
-    - Toggle option: hide unused bones/dummies during animations
-
-- Tools:
-    - NPC Param Selector
-    - Behavior / Hit Source Selector
-    - Scan for unused animations
-    - Animation Builder: builds new animation from combo of animations
-    - FBX to HKX
-    - TAE Reload (is HKS Reload)
-
 - Bugs:
-    - Add support for playing back DES anims
+    - HKXPWV needs DES support
 
 - EDGE
  - Read map mapbnd for edges and then associate with FLVER on load for map pieces

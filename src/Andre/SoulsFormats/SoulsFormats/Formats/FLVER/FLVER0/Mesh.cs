@@ -258,11 +258,7 @@ namespace SoulsFormats
                     LayoutIndex = buffer.LayoutIndex;
                     BufferLayout layout = materials[MaterialIndex].Layouts[LayoutIndex];
 
-                    float uvFactor = 1024;
-
-                    // NB hack
-                    if (version >= 0x12 || !br.BigEndian)
-                        uvFactor = 2048;
+                    float uvFactor = GetUVFactor(br.BigEndian);
 
                     Vertices = new List<FLVER.Vertex>(vertexCount);
                     for (int i = 0; i < vertexCount; i++)
@@ -405,9 +401,7 @@ namespace SoulsFormats
                 foreach (FLVER.Vertex vertex in Vertices)
                     vertex.PrepareWrite();
 
-                float uvFactor = 1024;
-                if (flv.Header.Version >= 0x12 || !bw.BigEndian)
-                    uvFactor = 2048;
+                float uvFactor = GetUVFactor(bw.BigEndian);
 
                 foreach (FLVER.Vertex vertex in Vertices)
                     vertex.Write(bw, flv.Materials[MaterialIndex].Layouts[LayoutIndex], uvFactor);
@@ -470,6 +464,13 @@ namespace SoulsFormats
 
                 return counter;
             }
+
+            /// <summary>
+            /// The divisor for Short2/Short4 UVs. Big-endian (PS3 Demon's Souls) models use 1024 at every version:
+            /// a 2048 rule for version 0x12+ halved the UVs of 1200+ DES models (chr/obj/parts UVs peaked at exactly 0.5,
+            /// and c1030's UV islands only line up with its atlas at 1024). See DesModelSurvey uvrange/uvoverlay.
+            /// </summary>
+            internal static float GetUVFactor(bool bigEndian) => bigEndian ? 1024 : 2048;
 
             /// <summary>
             /// Triangulate the mesh face indices.

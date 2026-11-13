@@ -920,8 +920,16 @@ public class TexturePool
             var isCubemap = (dds.dwCaps2 & DDS.DDSCAPS2.CUBEMAP) > 0;
             var arrayCount = isCubemap ? 6u : 1;
 
-            // The game's volumes have one mip, which some files leave as a count of 0
-            var mipCount = isVolume ? (uint)Math.Max(1, dds.dwMipMapCount) : (uint)dds.dwMipMapCount;
+            // The header's mip count can't be trusted: the game's volumes and DDS files saved by image editors leave
+            // it as 0, and some files end before their mip chain does. A count of 0 is an invalid Vulkan image, and
+            // reading past the data throws mid-upload; both crashed the icon preview on DXT5 icons
+            var mipCount = GetUploadableMipCount(dds, format, depth, arrayCount, bytes.Length);
+
+            if (mipCount == 0)
+            {
+                Smithbox.LogError(this, $"Texture {name} has less data than its first mip needs, so it is not loaded.");
+                return;
+            }
 
             TextureDescription desc = new();
             desc.Width = width;
@@ -935,22 +943,6 @@ public class TexturePool
             desc.CreateFlags = VkImageCreateFlags.None;
             desc.Tiling = VkImageTiling.Linear;
             desc.Format = format;
-
-            var isDS2 = false;
-
-            if (curProject != null)
-            {
-                // TODO: this is a hack to stop DXT5 saved icon files from crashing the program
-                // Really we need to fix the Veldrid workflow to properly handle them
-                // We need to use a staging buffer instead a linear image to do so.
-                isDS2 = curProject.Descriptor.ProjectType is Application.ProjectType.DS2 or Application.ProjectType.DS2S;
-            }
-
-            // Block BC3 unless we are working with DS2, where it works correctly.
-            if (format is VkFormat.Bc3SrgbBlock && !isDS2)
-            {
-                return;
-            }
 
             _staging = d.ResourceFactory.CreateTexture(desc);
 
@@ -1008,6 +1000,37 @@ public class TexturePool
 
             Resident = true;
             PublishTexture(previousTexture);
+        }
+
+        /// <summary>
+        /// How many mips of a DDS can be uploaded: at least 1, no more than the full chain for its size, and only the
+        /// levels its data holds in full (laid out slice by slice, each slice's mips in order, as the upload reads
+        /// them). 0 when not even the first mip is there.
+        /// </summary>
+        private static uint GetUploadableMipCount(DDS dds, VkFormat format, uint depth, uint arrayCount, int dataLength)
+        {
+            var declared = Math.Max(1, dds.dwMipMapCount);
+            var largest = Math.Max(Math.Max(dds.dwWidth, dds.dwHeight), (int)depth);
+            var fullChain = 1 + (int)Math.Floor(Math.Log2(Math.Max(1, largest)));
+            var count = Math.Min(declared, fullChain);
+
+            long available = dataLength - dds.DataOffset;
+            long perSlice = 0;
+
+            for (var level = 0; level < count; level++)
+            {
+                var mipDepth = Math.Max(1L, depth >> level);
+                var next = perSlice + GetMipInfo(format, dds.dwWidth, dds.dwHeight, level, false) * mipDepth;
+
+                if (next * arrayCount > available)
+                {
+                    return (uint)level;
+                }
+
+                perSlice = next;
+            }
+
+            return (uint)count;
         }
 
         /// <summary>
