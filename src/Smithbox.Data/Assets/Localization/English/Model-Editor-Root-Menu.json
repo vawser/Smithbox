@@ -1,0 +1,23 @@
+{
+  "Entries": [
+    { "Key": "MODEL_Root_Save", "Text": "Save" },
+    { "Key": "MODEL_Root_Save_TT", "Text": "Saves this model, through the save check, as File > Save does." },
+    { "Key": "MODEL_Root_Reload", "Text": "Reload from Disk" },
+    { "Key": "MODEL_Root_Reload_TT", "Text": "Throws away this model's unsaved edits and undo history and reads it again from its stored file (the project's copy, else the game's). Asks first when there is anything to lose." },
+    { "Key": "MODEL_Root_Unload", "Text": "Unload" },
+    { "Key": "MODEL_Root_Unload_TT", "Text": "Unloads this model from the view. Unsaved edits are kept (Save All still saves them); the undo history is dropped." },
+    { "Key": "MODEL_Root_Show_In_File_Browser", "Text": "Show in File Browser" },
+    { "Key": "MODEL_Root_Show_In_File_Browser_TT", "Text": "Opens the File Browser with this model's file selected." },
+    { "Key": "MODEL_Root_File_Browser_Off_TT", "Text": "The File Browser isn't enabled for this project." },
+    { "Key": "MODEL_Root_Copy_Path", "Text": "Copy Path" },
+    { "Key": "MODEL_Root_Copy_Path_TT", "Text": "Copies the path of the file holding this model, within the game's files: {0}" },
+
+    { "Key": "MODEL_Root_Reload_Confirm_Title", "Text": "Reload from Disk" },
+    { "Key": "MODEL_Root_Reload_Confirm_Text", "Text": "Reload {0} from disk? Its unsaved edits and undo history are lost, and this can't be undone." },
+    { "Key": "MODEL_Root_Reload_Confirm_Yes", "Text": "Reload" },
+    { "Key": "MODEL_Root_Reload_Confirm_Yes_TT", "Text": "Discards the edits and reads the stored file." },
+    { "Key": "MODEL_Root_Reload_Confirm_No", "Text": "Cancel" },
+    { "Key": "MODEL_Root_Reload_Confirm_No_TT", "Text": "Keeps the model as it is." },
+    { "Key": "MODEL_Root_Reload_Done", "Text": "{0} was reloaded from disk." }
+  ]
+}

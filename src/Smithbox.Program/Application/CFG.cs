@@ -794,6 +794,10 @@ public class CFG
     public bool Interface_ModelEditor_Tool_DisplayRotation = true;
     public bool Interface_ModelEditor_Tool_History = true;
     public bool Interface_ModelEditor_Tool_VanillaCompare = true;
+    public bool Interface_ModelEditor_Tool_Dummies = true;
+
+    // Viewport labels only on the selected dummies and bones, as a character has hundreds
+    public bool ModelEditor_Labels_Selected_Only = false;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;

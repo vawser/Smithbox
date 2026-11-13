@@ -86,6 +86,9 @@ public class ModelContentsView : IActionEventHandler
         }
 
         ImGui.EndChild();
+
+        // The model root menu's reload and unload, after the tree they replace
+        ProcessModelFileActions();
     }
 
     public void DisplayHeader()
@@ -399,8 +402,7 @@ public class ModelContentsView : IActionEventHandler
             }
 
             var matchCount = isFiltering
-                ? entries.Select((e, i) => GetEntryLabel(container, e, i))
-                    .Count(label => EditorFilters.IsMatch(ContentTreeFilter, label, ExactContentTreeFilter))
+                ? entries.Where((e, i) => MatchesFilter(e, GetEntryLabel(container, e, i))).Count()
                 : entries.Count;
 
             if (isFiltering && matchCount == 0)
@@ -470,10 +472,26 @@ public class ModelContentsView : IActionEventHandler
         return false;
     }
 
+    // Set from the model root's menu, run after it, as they unload the model the menu belongs to
+    private ModelWrapper _pendingUnload;
+    private ModelWrapper _pendingReload;
+    private ModelWrapper _confirmReload;
+    private bool _openReloadConfirm;
+
     private void DisplayTopContextMenu(ModelContainer map, bool selected)
     {
         if (ImGui.BeginPopupContextItem($@"modelTopContext_{map.Name}"))
         {
+            // The model this root belongs to, which is the one loaded in this view
+            var wrapper = View.Selection.SelectedModelWrapper?.Container == map ? View.Selection.SelectedModelWrapper : null;
+
+            if (wrapper != null)
+            {
+                DisplayModelFileActions(wrapper);
+
+                ImGui.Separator();
+            }
+
             // Add: with the model root selected, new objects go to their defaults
             View.AddAction.OnContext();
 
@@ -489,10 +507,127 @@ public class ModelContentsView : IActionEventHandler
                 }
                 GUI.Tooltip(LOC.Get("MODEL_Contents_Action_Copy_Model_Name_TT"));
 
+                // Copy Path
+                var wrapperForPath = View.Selection.SelectedModelWrapper?.Container == map ? View.Selection.SelectedModelWrapper : null;
+
+                if (ImGui.Selectable($"{LOC.Get("MODEL_Root_Copy_Path")}##copyModelPathAction", false,
+                    wrapperForPath != null ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                {
+                    PlatformUtils.Instance.SetClipboardText(wrapperForPath.Parent.Path);
+                }
+                GUI.Tooltip(LOC.Get("MODEL_Root_Copy_Path_TT", wrapperForPath?.Parent.Path ?? ""));
+
                 ImGui.EndMenu();
             }
 
             ImGui.EndPopup();
+        }
+    }
+
+    /// <summary>
+    /// Save, Reload from Disk, Unload and Show in File Browser for the loaded model
+    /// </summary>
+    private void DisplayModelFileActions(ModelWrapper wrapper)
+    {
+        // Save
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Root_Save")}##modelRootSave"))
+        {
+            View.Editor.SaveModel(wrapper);
+        }
+        GUI.Tooltip(LOC.Get("MODEL_Root_Save_TT"));
+
+        // Reload from Disk: asks first when there is something to lose
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Root_Reload")}##modelRootReload"))
+        {
+            var hasHistory = View.ViewportActionManager.CanUndo() || View.ViewportActionManager.CanRedo();
+
+            if (wrapper.IsDirty || hasHistory)
+            {
+                _confirmReload = wrapper;
+                _openReloadConfirm = true;
+            }
+            else
+            {
+                _pendingReload = wrapper;
+            }
+        }
+        GUI.Tooltip(LOC.Get("MODEL_Root_Reload_TT"));
+
+        // Unload
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Root_Unload")}##modelRootUnload"))
+        {
+            _pendingUnload = wrapper;
+        }
+        GUI.Tooltip(LOC.Get("MODEL_Root_Unload_TT"));
+
+        // Show in File Browser
+        var fileBrowser = Project.Descriptor.EnableFileBrowser &&
+            EditorConditions.SupportsFileBrowser(Project.Descriptor.ProjectType);
+
+        if (ImGui.Selectable($"{LOC.Get("MODEL_Root_Show_In_File_Browser")}##modelRootShowFile", false,
+            fileBrowser ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            // The command's slashes split the path; the File Browser puts it back together
+            EditorCommandQueue.AddCommand($"file/select/{wrapper.Parent.Path.TrimStart('/')}");
+        }
+        GUI.Tooltip(fileBrowser ? LOC.Get("MODEL_Root_Show_In_File_Browser_TT") : LOC.Get("MODEL_Root_File_Browser_Off_TT"));
+    }
+
+    /// <summary>
+    /// Runs the root menu's unload and reload, and draws the reload confirmation. Called every frame, outside the menu
+    /// and after the model's tree, as both replace the objects the tree was drawn from.
+    /// </summary>
+    private void ProcessModelFileActions()
+    {
+        var title = $"{LOC.Get("MODEL_Root_Reload_Confirm_Title")}###modelReloadConfirm";
+
+        if (_openReloadConfirm)
+        {
+            _openReloadConfirm = false;
+            ImGui.OpenPopup(title);
+        }
+
+        ImGui.SetNextWindowSize(new Vector2(460, 0) * DPI.UIScale(), ImGuiCond.Always);
+
+        var open = true;
+
+        if (ImGui.BeginPopupModal(title, ref open, ImGuiWindowFlags.AlwaysAutoResize))
+        {
+            GUI.WrappedText(LOC.Get("MODEL_Root_Reload_Confirm_Text", _confirmReload?.Name ?? ""));
+
+            GUI.MultiButtonInput("modelReloadConfirmButtons",
+                "modelReloadConfirmYes", LOC.Get("MODEL_Root_Reload_Confirm_Yes"), LOC.Get("MODEL_Root_Reload_Confirm_Yes_TT"),
+                () =>
+                {
+                    _pendingReload = _confirmReload;
+                    _confirmReload = null;
+                    ImGui.CloseCurrentPopup();
+                },
+
+                "modelReloadConfirmNo", LOC.Get("MODEL_Root_Reload_Confirm_No"), LOC.Get("MODEL_Root_Reload_Confirm_No_TT"),
+                () =>
+                {
+                    _confirmReload = null;
+                    ImGui.CloseCurrentPopup();
+                });
+
+            ImGui.EndPopup();
+        }
+
+        if (_pendingReload != null)
+        {
+            var wrapper = _pendingReload;
+            _pendingReload = null;
+
+            View.ReloadModelFromDisk(wrapper);
+        }
+
+        if (_pendingUnload != null)
+        {
+            var wrapper = _pendingUnload;
+            _pendingUnload = null;
+
+            View.UnloadModel(wrapper);
         }
     }
 
@@ -574,6 +709,23 @@ public class ModelContentsView : IActionEventHandler
 
             ModelObjectSelectable(container, obj, index, true);
         }
+    }
+
+    /// <summary>
+    /// Whether a row passes the Contents filter. "ref:" followed by IDs and ranges ("ref:220", "ref:200-299, 310")
+    /// lists the dummies with those reference IDs; anything else matches the row's text.
+    /// </summary>
+    private bool MatchesFilter(Entity e, string label)
+    {
+        if (ContentTreeFilter.StartsWith("ref:", StringComparison.OrdinalIgnoreCase))
+        {
+            var query = RefIdQuery.Parse(ContentTreeFilter[4..]);
+
+            // Until the IDs are typed, every dummy shows
+            return e.WrappedObject is FLVER.Dummy dummy && (query == null || query.Contains(dummy.ReferenceID));
+        }
+
+        return EditorFilters.IsMatch(ContentTreeFilter, label, ExactContentTreeFilter);
     }
 
     /// <summary>
@@ -765,7 +917,7 @@ public class ModelContentsView : IActionEventHandler
 
             var displayName = key;
 
-            var isMatch = EditorFilters.IsMatch(ContentTreeFilter, displayName, ExactContentTreeFilter);
+            var isMatch = MatchesFilter(e, displayName);
 
             if (isMatch)
             {
@@ -889,6 +1041,9 @@ public class ModelContentsView : IActionEventHandler
             ImGui.Separator();
 
             View.ReorderAction.OnContext();
+
+            // Dummies: Select All With Ref ID, Change Reference IDs
+            View.DummyTool.OnContext(ent);
 
             ImGui.EndPopup();
         }

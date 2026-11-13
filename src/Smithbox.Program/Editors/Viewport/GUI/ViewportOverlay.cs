@@ -97,14 +97,21 @@ public class ViewportOverlay
 
             if (container != null)
             {
+                // Optionally only the selected ones, as a character has hundreds of dummies and bones
+                var selection = modelUniverse.View.ViewportSelection.GetSelection();
+
+                IEnumerable<Entity> Labelled(List<Entity> entities) => CFG.Current.ModelEditor_Labels_Selected_Only
+                    ? entities.Where(selection.Contains)
+                    : entities;
+
                 if (CFG.Current.ModelEditor_DisplayDummyLabels && drawFilter.HasFlag(RenderFilter.Dummies))
                 {
-                    DrawEntityLabels(container.Dummies, CFG.Current.Viewport_Dummy_Polygon_Base_Color);
+                    DrawEntityLabels(Labelled(container.Dummies), CFG.Current.Viewport_Dummy_Polygon_Base_Color);
                 }
 
                 if (CFG.Current.ModelEditor_DisplayNodeLabels && drawFilter.HasFlag(RenderFilter.Nodes))
                 {
-                    DrawEntityLabels(container.Nodes, CFG.Current.Viewport_Bone_Marker_Base_Color);
+                    DrawEntityLabels(Labelled(container.Nodes), CFG.Current.Viewport_Bone_Marker_Base_Color);
                 }
             }
         }

@@ -54,6 +54,14 @@ public class ModelToolWindow
             View.HistoryTool.OnToolWindow();
         }
 
+        // Editing
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_Dummies)
+        {
+            View.DummyTool.OnToolWindow();
+        }
+
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
@@ -139,6 +147,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_History = !CFG.Current.Interface_ModelEditor_Tool_History;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_History);
+
+            // Dummies
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Dummies")}##toggleDummyTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_Dummies = !CFG.Current.Interface_ModelEditor_Tool_Dummies;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_Dummies);
 
             // Vanilla Compare
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Vanilla_Compare")}##toggleVanillaCompareTool"))

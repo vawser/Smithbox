@@ -55,6 +55,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public AssetBrowserTool AssetBrowserTool;
     public ModelHistoryTool HistoryTool;
     public ModelVanillaCompareTool VanillaCompareTool;
+    public ModelDummyTool DummyTool;
 
     // The loaded model against the game's own
     public ModelVanillaCompare VanillaCompare;
@@ -117,6 +118,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         HistoryTool = new ModelHistoryTool(this, Project);
         VanillaCompare = new ModelVanillaCompare(this, Project);
         VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
+        DummyTool = new ModelDummyTool(this, Project);
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);
@@ -286,6 +288,23 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         wrapper.MeshSourceIndices.Clear();
 
         LoadModel(wrapper);
+    }
+
+    /// <summary>
+    /// Throws away the model's unsaved edits and history and loads it again from the stored file (the project's copy,
+    /// else the game's), with its cloth, collision and other files.
+    /// </summary>
+    public void ReloadModelFromDisk(ModelWrapper wrapper)
+    {
+        UnloadModel(wrapper);
+
+        // A load reads the stored file when the model isn't dirty or has no FLVER
+        wrapper.IsDirty = false;
+        wrapper.FLVER = null;
+
+        LoadModel(wrapper);
+
+        Smithbox.Log(this, LOC.Get("MODEL_Root_Reload_Done", wrapper.Name));
     }
 
     #region Parking

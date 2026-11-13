@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    { "Key": "MODEL_ToolWindow_View_Toggle_Dummies", "Text": "Dummies" },
+
+    { "Key": "MODEL_Dummy_Tool_Header", "Text": "Dummies" },
+    { "Key": "MODEL_Dummy_Tool_Hint", "Text": "Select dummies by reference ID, and change the IDs of many at once. Reference IDs are what TAE events, params and effects use to find a dummy. In Contents, type ref: and IDs (ref:200-299) in the filter to list those dummies." },
+    { "Key": "MODEL_Dummy_Tool_No_Model", "Text": "Load a model to work on its dummies." },
+    { "Key": "MODEL_Dummy_Tool_No_Dummies", "Text": "This model has no dummies." },
+    { "Key": "MODEL_Dummy_Tool_Query_TT", "Text": "Reference IDs and ranges, separated by commas: 220, or 200-299, or 100, 120, 300-310." },
+
+    { "Key": "MODEL_Dummy_Tool_Select_Header", "Text": "Select by Reference ID" },
+    { "Key": "MODEL_Dummy_Tool_Select_Header_TT", "Text": "Selects the dummies whose reference IDs are listed, or that share an ID with the selected dummies." },
+    { "Key": "MODEL_Dummy_Tool_Select_Query", "Text": "Select Matching ({0})" },
+    { "Key": "MODEL_Dummy_Tool_Select_Query_TT", "Text": "Selects every dummy with one of the IDs typed above, in place of the current selection." },
+    { "Key": "MODEL_Dummy_Tool_Select_Same", "Text": "Select All With the Selected IDs" },
+    { "Key": "MODEL_Dummy_Tool_Select_Same_TT", "Text": "Selects every dummy sharing a reference ID with a selected dummy, such as all the points of one hitbox or effect." },
+
+    { "Key": "MODEL_Dummy_Tool_Change_Header", "Text": "Change Reference IDs" },
+    { "Key": "MODEL_Dummy_Tool_Change_Header_TT", "Text": "Adds an amount to, or sets, the reference IDs of the selected dummies or of those with the listed IDs. One undo step." },
+    { "Key": "MODEL_Dummy_Tool_Scope_Selected", "Text": "Selected dummies ({0})" },
+    { "Key": "MODEL_Dummy_Tool_Scope_Selected_TT", "Text": "Changes the dummies selected in Contents or the viewport." },
+    { "Key": "MODEL_Dummy_Tool_Scope_Query", "Text": "Dummies with these IDs" },
+    { "Key": "MODEL_Dummy_Tool_Scope_Query_TT", "Text": "Changes every dummy whose reference ID is listed below." },
+    { "Key": "MODEL_Dummy_Tool_Operation_Offset", "Text": "Offset by" },
+    { "Key": "MODEL_Dummy_Tool_Operation_Offset_TT", "Text": "Adds the amount to each ID: 200-210 offset by 100 become 300-310." },
+    { "Key": "MODEL_Dummy_Tool_Operation_Set", "Text": "Set to" },
+    { "Key": "MODEL_Dummy_Tool_Operation_Set_TT", "Text": "Gives every dummy the same ID." },
+    { "Key": "MODEL_Dummy_Tool_Value_Offset_TT", "Text": "The amount added to each ID. Negative to subtract." },
+    { "Key": "MODEL_Dummy_Tool_Value_Set_TT", "Text": "The ID every dummy gets." },
+    { "Key": "MODEL_Dummy_Tool_No_Targets", "Text": "No dummies to change: select some, or type IDs." },
+    { "Key": "MODEL_Dummy_Tool_Preview", "Text": "{0} of {1} dummies change: {2}" },
+    { "Key": "MODEL_Dummy_Tool_Out_Of_Range", "Text": "{0} IDs would fall outside -32768 to 32767, so nothing can be applied." },
+    { "Key": "MODEL_Dummy_Tool_Shared", "Text": "{0} of the new IDs are already used by other dummies. That is how the games group points, so it may be intended." },
+    { "Key": "MODEL_Dummy_Tool_Apply", "Text": "Apply ({0})" },
+    { "Key": "MODEL_Dummy_Tool_Apply_TT", "Text": "Changes the IDs as previewed. Can be undone as one step." },
+
+    { "Key": "MODEL_Dummy_Context_Ids", "Text": "{0} IDs" },
+    { "Key": "MODEL_Dummy_Context_Select_Same", "Text": "Select All With Ref ID {0}" },
+    { "Key": "MODEL_Dummy_Context_Select_Same_TT", "Text": "Selects every dummy with this reference ID (or the selected dummies' IDs)." },
+    { "Key": "MODEL_Dummy_Context_Change", "Text": "Change Reference IDs..." },
+    { "Key": "MODEL_Dummy_Context_Change_TT", "Text": "Opens Tools > Dummies to offset or set the selected dummies' reference IDs." },
+
+    { "Key": "MODEL_Dummy_History_Change", "Text": "Change the reference IDs of {0} dummies" },
+
+    { "Key": "MODEL_Framework_Filter_Labels_Selected_Only", "Text": "Labels on Selection Only" },
+    { "Key": "MODEL_Framework_Filter_Labels_Selected_Only_TT", "Text": "Draws dummy and bone labels only for the selected dummies and bones, as a character has hundreds. Turn the labels on above." }
+  ]
+}

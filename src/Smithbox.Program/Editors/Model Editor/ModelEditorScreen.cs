@@ -471,20 +471,32 @@ public class ModelEditorScreen : EditorScreen
 
             if (wrapper != null)
             {
-                // Only a model the save will write is checked
-                var willWrite = wrapper.IsDirty || CFG.Current.ModelEditor_Allow_Unmodified_Save;
-
-                if (willWrite && !PassesSaveCheck(new List<ModelWrapper> { wrapper }, autoSave, skipCheck,
-                    () => SaveModelWithoutCheck(wrapper)))
-                {
-                    return;
-                }
-
-                wrapper.Save();
+                SaveModel(wrapper, autoSave, skipCheck);
+                return;
             }
         }
 
         // Save the configuration JSONs
+        Smithbox.Instance.SaveConfiguration();
+    }
+
+    /// <summary>
+    /// Saves one model, through the save check, as File › Save does for the loaded model. Also used by the model
+    /// root's context menu in Contents.
+    /// </summary>
+    public void SaveModel(ModelWrapper wrapper, bool autoSave = false, bool skipCheck = false)
+    {
+        // Only a model the save will write is checked
+        var willWrite = wrapper.IsDirty || CFG.Current.ModelEditor_Allow_Unmodified_Save;
+
+        if (willWrite && !PassesSaveCheck(new List<ModelWrapper> { wrapper }, autoSave, skipCheck,
+            () => SaveModelWithoutCheck(wrapper)))
+        {
+            return;
+        }
+
+        wrapper.Save();
+
         Smithbox.Instance.SaveConfiguration();
     }
 

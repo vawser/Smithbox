@@ -75,6 +75,14 @@ public class ModelViewportFilters
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Bone_Labels_TT"));
             GUI.ShowActiveStatus(ticked);
 
+            // Labels on the selection only
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Labels_Selected_Only")}##labelsSelectedOnlyToggle"))
+            {
+                CFG.Current.ModelEditor_Labels_Selected_Only = !CFG.Current.ModelEditor_Labels_Selected_Only;
+            }
+            GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Labels_Selected_Only_TT"));
+            GUI.ShowActiveStatus(CFG.Current.ModelEditor_Labels_Selected_Only);
+
             // Collision
             if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_Collision")}##collisionToggle"))
             {
