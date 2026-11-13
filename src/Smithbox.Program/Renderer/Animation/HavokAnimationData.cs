@@ -314,7 +314,20 @@ public static class HavokAnimationReader
                 transforms[i] = ToTransform(interleaved.GetTransform(i));
             }
 
-            clip = new HavokInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
+            clip = NewInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
+                trackToBone, skeleton.BoneCount, blendMode);
+        }
+        else if (document.ObjectsOf<IHavokQuantizedAnimation>().FirstOrDefault() is { } quantized)
+        {
+            // DES wavelet and delta clips: decoded once into whole poses, then played like an interleaved clip
+            HavokQsTransform[] poses = quantized.DecodePoses();
+            var transforms = new HavokTransformData[poses.Length];
+            for (var i = 0; i < transforms.Length; i++)
+            {
+                transforms[i] = ToTransform(poses[i]);
+            }
+
+            clip = NewInterleavedClip(transforms, quantized.TransformTrackCount, quantized.Duration,
                 trackToBone, skeleton.BoneCount, blendMode);
         }
 
@@ -333,6 +346,18 @@ public static class HavokAnimationReader
         }
 
         return clip;
+    }
+
+    private static HavokClip? NewInterleavedClip(HavokTransformData[] transforms, int trackCount, float duration,
+        short[] trackToBone, int boneCount, HavokBlendMode blendMode)
+    {
+        // A clip without a whole frame has nothing to sample
+        if (trackCount <= 0 || transforms.Length < trackCount)
+        {
+            return null;
+        }
+
+        return new HavokInterleavedClip(transforms, trackCount, duration, trackToBone, boneCount, blendMode);
     }
 
     private static HavokBlendMode ToBlendMode(int blendHint)

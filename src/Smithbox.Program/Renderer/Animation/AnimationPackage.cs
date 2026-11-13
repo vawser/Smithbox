@@ -71,8 +71,8 @@ public sealed class AnimationPackage : IDisposable
     public static bool IsSupportedGame(ProjectType game)
     {
         // DS2 animates through morpheme networks, not plain hkx clips.
-        // DES has 32-bit packfiles from an older Havok, whose skeletons the HKX reader does not fit.
-        return game is not (ProjectType.DES or ProjectType.DS2 or ProjectType.DS2S or ProjectType.Undefined);
+        // DES clips are Havok 5.x wavelet, delta or interleaved, which HavokQuantizedAnimationCodec decodes.
+        return game is not (ProjectType.DS2 or ProjectType.DS2S or ProjectType.Undefined);
     }
 
     private static bool UsesLegacyBinders(ProjectType game)
@@ -189,6 +189,9 @@ public sealed class AnimationPackage : IDisposable
             found.Add(path);
         }
 
+        // DES ships each binder twice, as X and X.dcx with the same content: keep the .dcx, as the file list does
+        found.RemoveWhere(p => !p.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) && found.Contains(p + ".dcx"));
+
         // The base binder goes first, so a skeleton is known before any clips are listed
         return found.OrderBy(p => Path.GetFileName(p).Split('.')[0].Length)
             .ThenBy(p => p, StringComparer.OrdinalIgnoreCase);
@@ -245,7 +248,17 @@ public sealed class AnimationPackage : IDisposable
             BinderFileHeader? skeleton = binder.Files.FirstOrDefault(f => f.ID == skeletonId);
             if (skeleton != null)
             {
-                Skeleton = HavokAnimationReader.ReadSkeleton(Game, binder.ReadFile(skeleton).ToArray(), compendium);
+                try
+                {
+                    Skeleton = HavokAnimationReader.ReadSkeleton(Game, binder.ReadFile(skeleton).ToArray(),
+                        compendium);
+                }
+                catch (NotSupportedException ex)
+                {
+                    // The DES test characters (c9xxx, c0100, c0200) are Havok 4.x: listed as having no animations
+                    Smithbox.LogError(this, $"Skeleton in an unsupported Havok version: {ex.Message}",
+                        LogPriority.Low);
+                }
             }
         }
 
@@ -307,6 +320,12 @@ public sealed class AnimationPackage : IDisposable
         {
             entry.Clip = HavokAnimationReader.ReadClip(Game, entry.Binder.ReadFile(entry.Header).ToArray(),
                 entry.Compendium, Skeleton);
+        }
+        catch (NotSupportedException ex)
+        {
+            // e.g. the Havok 4.x clips of the DES test characters (c9xxx, c0100, c0200), which no reader handles
+            Smithbox.LogError(this, $"Animation {entry.Name} is in an unsupported Havok version: {ex.Message}",
+                LogPriority.Low);
         }
         catch (Exception ex)
         {

@@ -33,7 +33,6 @@
     - TAE Reload (is HKS Reload)
 
 - Bugs:
-    - Add support for displaying DES models
     - Add support for playing back DES anims
 
 - EDGE

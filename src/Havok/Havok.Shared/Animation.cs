@@ -76,6 +76,19 @@ public interface IHavokReferenceFrame
     Vector4 GetSample(int index);
 }
 
+/// <summary>
+/// hkaWaveletSkeletalAnimation and hkaDeltaCompressedSkeletalAnimation (Havok 5.x): clips quantized into blocks, which
+/// <see cref="HavokQuantizedAnimationCodec" /> decodes into whole poses.
+/// </summary>
+public interface IHavokQuantizedAnimation : IHavokAnimation
+{
+    /// <summary>The number of poses (frames), the first at time 0 and the last at the end of the clip.</summary>
+    int PoseCount { get; }
+
+    /// <summary>Frame-major like <see cref="IHavokInterleavedAnimation" />: frame f's track t is at f × tracks + t.</summary>
+    HavokQsTransform[] DecodePoses();
+}
+
 /// <summary>hkaInterleavedUncompressedAnimation (hkaInterleavedSkeletalAnimation in Havok 5.x).</summary>
 public interface IHavokInterleavedAnimation : IHavokAnimation
 {

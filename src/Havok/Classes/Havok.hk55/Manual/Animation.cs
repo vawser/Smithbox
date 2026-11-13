@@ -32,7 +32,7 @@ public partial class hkaInterleavedSkeletalAnimation : IHavokInterleavedAnimatio
 {
     float IHavokAnimation.Duration => m_duration;
 
-    int IHavokAnimation.TransformTrackCount => m_numberOfTransformTracks;
+    int IHavokAnimation.TransformTrackCount => AnimationViews.TransformTracks(this);
 
     int IHavokInterleavedAnimation.TransformCount => m_transforms.Count;
 
@@ -52,8 +52,70 @@ public partial class hkaDefaultAnimatedReferenceFrame : IHavokReferenceFrame
     Vector4 IHavokReferenceFrame.GetSample(int index) => m_referenceFrameSamples[index];
 }
 
+public partial class hkaWaveletSkeletalAnimation : IHavokQuantizedAnimation
+{
+    float IHavokAnimation.Duration => m_duration;
+
+    int IHavokAnimation.TransformTrackCount => AnimationViews.TransformTracks(this);
+
+    int IHavokQuantizedAnimation.PoseCount => m_numberOfPoses;
+
+    HavokQsTransform[] IHavokQuantizedAnimation.DecodePoses() => HavokQuantizedAnimationCodec.Decode(new HavokQuantizedLayout
+    {
+        Codec = HavokQuantizedCodec.Wavelet,
+        TransformTracks = AnimationViews.TransformTracks(this),
+        FloatTracks = m_numberOfFloatTracks,
+        Poses = m_numberOfPoses,
+        BlockSize = m_blockSize,
+        Preserved = m_qFormat.m_preserved,
+        DynamicCount = (int)m_qFormat.m_numD,
+        OffsetIdx = (int)m_qFormat.m_offsetIdx,
+        ScaleIdx = (int)m_qFormat.m_scaleIdx,
+        BitWidthIdx = (int)m_qFormat.m_bitWidthIdx,
+        StaticMaskIdx = (int)m_staticMaskIdx,
+        StaticDofsIdx = (int)m_staticDOFsIdx,
+        QuantizedDataIdx = (int)m_quantizedDataIdx,
+        QuantizedDataSize = (int)m_quantizedDataSize,
+        BlockIndexIdx = (int)m_blockIndexIdx,
+        BlockIndexSize = (int)m_blockIndexSize,
+        Data = m_dataBuffer.ToArray()
+    });
+}
+
+public partial class hkaDeltaCompressedSkeletalAnimation : IHavokQuantizedAnimation
+{
+    float IHavokAnimation.Duration => m_duration;
+
+    int IHavokAnimation.TransformTrackCount => AnimationViews.TransformTracks(this);
+
+    int IHavokQuantizedAnimation.PoseCount => m_numberOfPoses;
+
+    HavokQsTransform[] IHavokQuantizedAnimation.DecodePoses() => HavokQuantizedAnimationCodec.Decode(new HavokQuantizedLayout
+    {
+        Codec = HavokQuantizedCodec.Delta,
+        TransformTracks = AnimationViews.TransformTracks(this),
+        FloatTracks = m_numberOfFloatTracks,
+        Poses = m_numberOfPoses,
+        BlockSize = m_blockSize,
+        Preserved = m_qFormat.m_preserved,
+        DynamicCount = (int)m_qFormat.m_numD,
+        OffsetIdx = (int)m_qFormat.m_offsetIdx,
+        ScaleIdx = (int)m_qFormat.m_scaleIdx,
+        BitWidthIdx = (int)m_qFormat.m_bitWidthIdx,
+        StaticMaskIdx = (int)m_staticMaskIdx,
+        StaticDofsIdx = (int)m_staticDOFsIdx,
+        QuantizedDataIdx = (int)m_quantizedDataIdx,
+        QuantizedDataSize = (int)m_quantizedDataSize,
+        Data = m_dataBuffer.ToArray()
+    });
+}
+
 internal static class AnimationViews
 {
+    // Havok 5.1 files (46 DES clips) leave numberOfTransformTracks at 0 and give the count in numberOfTracks
+    public static int TransformTracks(hkaSkeletalAnimation animation) =>
+        animation.m_numberOfTransformTracks > 0 ? animation.m_numberOfTransformTracks : animation.m_numberOfTracks;
+
     public static HavokQsTransform ToShared(hkQsTransform t) =>
         new(new Vector3(t.m_translation.X, t.m_translation.Y, t.m_translation.Z), t.m_rotation,
             new Vector3(t.m_scale.X, t.m_scale.Y, t.m_scale.Z));

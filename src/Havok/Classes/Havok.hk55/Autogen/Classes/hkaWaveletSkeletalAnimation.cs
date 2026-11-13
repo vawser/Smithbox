@@ -2,7 +2,7 @@
 
 namespace Havok.hk55;
 
-public class hkaWaveletSkeletalAnimation : hkaSkeletalAnimation
+public partial class hkaWaveletSkeletalAnimation : hkaSkeletalAnimation
 {
     public int m_numberOfPoses;
 
