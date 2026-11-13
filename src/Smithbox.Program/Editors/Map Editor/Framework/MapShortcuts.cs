@@ -50,29 +50,31 @@ public class MapShortcuts
             Editor.Save();
         }
 
-        // Undo
-        if (activeView.ViewportActionManager.CanUndo())
+        // Undo and Redo belong to a text field being typed in, not to the map
+        var typing = ImGui.GetIO().WantTextInput;
+
+        // Undo. Modifiers are matched as "at least these", so Undo Repeat (Ctrl+Alt+Z) also matches Undo (Ctrl+Z):
+        // the more specific binding is checked first, and only one of the two acts in a frame
+        if (!typing && activeView.ViewportActionManager.CanUndo())
         {
-            if (InputManager.IsPressed(KeybindID.Undo))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
             {
                 activeView.ViewportActionManager.UndoAction();
             }
-
-            if (InputManager.IsPressedOrRepeated(KeybindID.Undo_Repeat))
+            else if (InputManager.IsPressed(KeybindID.Undo) && !InputManager.IsDown(KeybindID.Undo_Repeat))
             {
                 activeView.ViewportActionManager.UndoAction();
             }
         }
 
-        // Redo
-        if (activeView.ViewportActionManager.CanRedo())
+        // Redo, the same way
+        if (!typing && activeView.ViewportActionManager.CanRedo())
         {
-            if (InputManager.IsPressed(KeybindID.Redo))
+            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
             {
                 activeView.ViewportActionManager.RedoAction();
             }
-
-            if (InputManager.IsPressedOrRepeated(KeybindID.Redo_Repeat))
+            else if (InputManager.IsPressed(KeybindID.Redo) && !InputManager.IsDown(KeybindID.Redo_Repeat))
             {
                 activeView.ViewportActionManager.RedoAction();
             }

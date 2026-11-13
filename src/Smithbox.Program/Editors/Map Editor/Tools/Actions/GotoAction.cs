@@ -35,7 +35,12 @@ public class GotoAction
     /// </summary>
     public void OnContext()
     {
-        // Not shown here
+        // After a pick in the viewport, the object's entry in the Map Contents tree
+        if (ImGui.Selectable("Go to in List"))
+        {
+            GotoMapObjectEntry();
+        }
+        GUI.Tooltip($"Shows the selected map object in the Map Contents list.\n\nShortcut: {InputManager.GetHint(KeybindID.Jump)}");
     }
 
     /// <summary>

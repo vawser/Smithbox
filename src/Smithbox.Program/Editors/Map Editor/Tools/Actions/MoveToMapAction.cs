@@ -120,7 +120,19 @@ public class MoveToMapAction
 
             if (ImGui.Button("Move##moveToMapAction", DPI.WholeWidthButton(sectionWidth, 24)))
             {
-                MoveToMap(sel, targetMap, TargetBTL.Item2);
+                // A BTL picked for an earlier target map belongs to that map
+                var targetBtl = TargetBTL.Item2 != null && targetMap.BTLParents.Contains(TargetBTL.Item2)
+                    ? TargetBTL.Item2
+                    : null;
+
+                if (targetBtl == null && sel.Any(e => e.WrappedObject is BTL.Light))
+                {
+                    Smithbox.LogError<MoveToMapAction>(LOC.Get("MAP_Move_No_Target_BTL"));
+                }
+                else
+                {
+                    MoveToMap(sel, targetMap, targetBtl);
+                }
             }
         }
     }
@@ -130,6 +142,26 @@ public class MoveToMapAction
     /// </summary>
     public void MoveToMap(List<MsbEntity> selection, MapContainer targetMap, Entity targetBtl)
     {
+        // Name references resolve by name, so a moved object can't take a name already used in the target map's
+        // list (parts, regions or events). Moving them under new names would break the references between them,
+        // so the move is refused and the clashes named.
+        var clashes = selection
+            .Where(e => e.Container != targetMap)
+            .SelectMany(e => MsbNaming.FindClashes(targetMap, e, e.Name).Where(c => !selection.Contains(c)))
+            .Select(c => c.Name)
+            .Distinct()
+            .ToList();
+
+        if (clashes.Count > 0)
+        {
+            PlatformUtils.Instance.MessageBox(
+                LOC.Get("MAP_Move_Dialog_Name_Clash", targetMap.Name, string.Join(", ", clashes.Take(10)),
+                    clashes.Count > 10 ? LOC.Get("MAP_Move_Dialog_Name_Clash_More", clashes.Count - 10) : ""),
+                LOC.Get("MAP_Options_Dialog_Confirm"),
+                MessageBoxButtons.OK);
+            return;
+        }
+
         ViewportAction action = new EntMoveAction(View, selection, true, targetMap, targetBtl);
 
         // MSB references only resolve within a map, so moving breaks those between the moved objects and the

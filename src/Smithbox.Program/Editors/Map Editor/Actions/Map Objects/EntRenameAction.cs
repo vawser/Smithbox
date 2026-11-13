@@ -79,12 +79,33 @@ public class EntRenameAction : ViewportAction
         entity.Name = name;
         entity.CachedAliasName = null;
 
+        MoveCommunityName(entity.MapID, oldName, name);
+
         if (CFG.Current.MapEditor_MapContentGroup_AutoAdjustName)
         {
             View.SelectionGroupsTool.UpdateMapGroupEntry(oldName, name);
         }
 
         (entity.Container as MapContainer)?.LightAtlasResolver.AutomaticAdjustment(entity, oldName, name);
+    }
+
+    /// <summary>
+    /// Community names are kept by map and object name, so the alias goes with the object to its new name
+    /// (and back on undo), rather than staying on the old name for whatever takes it next
+    /// </summary>
+    private void MoveCommunityName(string mapID, string oldName, string newName)
+    {
+        if (string.IsNullOrEmpty(mapID) || string.IsNullOrEmpty(oldName) || oldName == newName || newName == null)
+            return;
+
+        var mapData = View.Project.Handler.MapData;
+        var alias = mapData.GetMapObjectName(mapID, oldName);
+
+        if (string.IsNullOrEmpty(alias))
+            return;
+
+        mapData.UpdateMapObjectName(mapID, newName, alias);
+        mapData.UpdateMapObjectName(mapID, oldName, "");
     }
 
     /// <summary>

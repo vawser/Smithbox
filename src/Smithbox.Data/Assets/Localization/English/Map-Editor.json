@@ -345,6 +345,34 @@
       "Text": "{0} references between the objects being moved and those staying behind will break, as references only work within a map:\n\n{1}\n\nYes: move and clear these references\nNo: move and keep them\nCancel: don't move"
     },
     {
+      "Key": "MAP_Move_Dialog_Name_Clash",
+      "Text": "{0} already has objects with these names, so the move was not made, as name references could no longer tell them apart:\n\n{1}{2}\n\nRename the objects (with Referenced Rename on, so references follow) and move them again."
+    },
+    {
+      "Key": "MAP_Move_Dialog_Name_Clash_More",
+      "Text": " and {0} more"
+    },
+    {
+      "Key": "MAP_Move_No_Target_BTL",
+      "Text": "The selection holds lights, but no BTL of the target map has been picked."
+    },
+    {
+      "Key": "MAP_Rename_Name_Clash",
+      "Text": "\"{0}\" is already used by {1} in {2}, so the rename was not made: name references could no longer tell them apart."
+    },
+    {
+      "Key": "MAP_Rename_References_Will_Break",
+      "Text": "{0} references point at this name. Renaming here leaves them pointing at the old name, and the map won't save until they are fixed."
+    },
+    {
+      "Key": "MAP_Rename_Enable_Referenced",
+      "Text": "Update references when renaming"
+    },
+    {
+      "Key": "MAP_Rename_Enable_Referenced_TT",
+      "Text": "Turns on Referenced Rename, so renaming an object also rewrites the name fields that point at it."
+    },
+    {
       "Key": "MAP_SaveException_Missing_Reference",
       "Text": "{0} refers to \"{2}\" in {1}, but no object with that name exists in the map, so the map can't be saved.\n\nYes: clear the reference\nNo: select {0}\nCancel: do nothing"
     },
@@ -371,6 +399,14 @@
     {
       "Key": "MAP_Target_Picker_None",
       "Text": "None"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Copy",
+      "Text": "Copy"
+    },
+    {
+      "Key": "MAP_Viewport_Context_Copy_TT",
+      "Text": "Copies the selected map objects, to paste into the active map.\n\nShortcut: {0}"
     },
     {
       "Key": "MAP_Viewport_Context_Paste",

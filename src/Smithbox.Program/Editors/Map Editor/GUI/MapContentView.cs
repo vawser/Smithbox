@@ -708,31 +708,40 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
             if (ImGui.Button($"{icon}##mapObject{key}{index}", DPI.InlineIconButtonSize))
             {
-                if (InputManager.IsPressed(KeybindID.Apply_to_All))
+                // Shift+click: every object of this type in the map takes the clicked object's new state. Held,
+                // not pressed, so it doesn't have to land on the frame the key went down; and over the map's whole
+                // object list, as lights and some navmesh objects sit under other nodes than the root.
+                if (ImGui.GetIO().KeyShift && e.WrappedObject != null)
                 {
+                    var newState = !e.EditorVisible;
+                    var type = e.WrappedObject.GetType();
                     var targetContainer = View.Selection.GetMapContainerFromMapID(map.Name);
 
-                    var mapRoot = targetContainer.RootObject;
-                    foreach(var entry in mapRoot.Children)
+                    if (targetContainer != null)
                     {
-                        if (entry.WrappedObject.GetType() == e.WrappedObject.GetType())
+                        foreach (var entry in targetContainer.Objects)
                         {
-                            entry.EditorVisible = !entry.EditorVisible;
-                            doSelect = false;
+                            if (entry.WrappedObject?.GetType() == type)
+                            {
+                                entry.EditorVisible = newState;
+                            }
                         }
                     }
+
+                    e.EditorVisible = newState;
                 }
                 else
                 {
                     e.EditorVisible = !e.EditorVisible;
-                    doSelect = false;
                 }
+
+                doSelect = false;
             }
             ImGui.PopStyleColor(4);
             ImGui.PopItemFlag();
             ImGui.SameLine();
 
-            GUI.Tooltip("Toggle visibility state of this map object.");
+            GUI.Tooltip("Toggle visibility state of this map object.\n\nShift+click: set every object of this type in the map to the same state.");
         }
 
         if (hierarchial && e.Children.Count > 0)

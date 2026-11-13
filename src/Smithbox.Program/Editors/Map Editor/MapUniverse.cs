@@ -107,7 +107,12 @@ public class MapUniverse : IUniverse
 
         ResourceManager.ClearUnusedResources();
 
-        View.ViewportSelection.ClearSelection();
+        // Only a load that will select its map replaces the selection; any other (a queued load, each map of
+        // Load Related Maps) leaves what the user has selected alone
+        if (selectOnLoad)
+        {
+            View.ViewportSelection.ClearSelection();
+        }
 
         // Load collisions before async map loading
         Profiler.TracyFiberEnter("loadMapCollision");
@@ -266,12 +271,12 @@ public class MapUniverse : IUniverse
 
                 if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
-                    // Intervene in the UI to change selection if requested.
-                    // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
+                    // Select the map as soon as its RootObject is available, rather than at the end of all jobs.
+                    // This runs on a thread pool thread, and the selection is read by the UI every frame, so it is
+                    // handed to the UI thread (ApplyPendingSelections) instead of being changed here.
                     if (selectOnLoad)
                     {
-                        View.ViewportSelection.ClearSelection();
-                        View.ViewportSelection.AddSelection(newMap.RootObject);
+                        _pendingSelections.Enqueue((newMap, SelectRoot: true));
                     }
                 }
 
@@ -299,7 +304,12 @@ public class MapUniverse : IUniverse
                 Profiler.TracyFiberLeave();
                 await Task.WhenAll(tasks);
                 Profiler.TracyFiberEnter("loadMapAsync");
-                HasProcessedMapLoad = true;
+
+                // Only the last of the loads running at once says loading is over
+                if (Volatile.Read(ref _activeLoads) <= 1)
+                {
+                    HasProcessedMapLoad = true;
+                }
 
                 if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -319,12 +329,18 @@ public class MapUniverse : IUniverse
 
                 if (selectOnLoad)
                 {
-                    View.Selection.SelectedMapID = mapid;
-                    View.Selection.SelectedMapContainer = newMap;
+                    // Made the active map on the UI thread too
+                    _pendingSelections.Enqueue((newMap, SelectRoot: false));
                 }
 
                 ScheduleTextureRefresh();
                 ResourceManager.ScheduleCompassRefresh();
+            }
+            else
+            {
+                // Nothing was published, so the map stays unloaded; say why, and drop what was set up for it
+                Smithbox.LogError(this, LOC.Get("MAP_Universe_Map_Load_No_MSB", mapid));
+                View.ModelInsightTool.ClearEntry(newMap);
             }
         }
         catch (Exception e)
@@ -340,7 +356,8 @@ public class MapUniverse : IUniverse
 
             // This task is fire-and-forget, so a rethrow here would be lost (even in debug builds).
             // Store the exception instead; it is rethrown on the main thread in MapEditorScreen.Update.
-            LoadMapExceptions = ExceptionDispatchInfo.Capture(e);
+            // Loads can fail at once, so the first is kept rather than replaced (each is logged above).
+            Interlocked.CompareExchange(ref LoadMapExceptions, ExceptionDispatchInfo.Capture(e), null);
         }
         finally
         {
@@ -350,17 +367,49 @@ public class MapUniverse : IUniverse
             ResourceLoadTracker.EndSession(mapid);
 
             _loadingMaps.TryRemove(mapid, out _);
-            Interlocked.Decrement(ref _activeLoads);
+
+            // A failed or empty load must not leave the editor waiting for a load that is over
+            if (Interlocked.Decrement(ref _activeLoads) == 0)
+            {
+                HasProcessedMapLoad = true;
+            }
         }
 
         return true;
     }
 
+    // Selections asked for by loads, applied on the UI thread: the root to select, or the map to make active
+    private readonly ConcurrentQueue<(MapContainer Map, bool SelectRoot)> _pendingSelections = new();
+
+    private void ApplyPendingSelections()
+    {
+        while (_pendingSelections.TryDequeue(out var pending))
+        {
+            // Unloaded again before this frame
+            if (pending.Map.LoadState is not MapContentLoadState.Loaded || View.Selection.GetMapContainerFromMapID(pending.Map.Name) != pending.Map)
+                continue;
+
+            if (pending.SelectRoot)
+            {
+                View.ViewportSelection.ClearSelection();
+                View.ViewportSelection.AddSelection(pending.Map.RootObject);
+            }
+            else
+            {
+                View.Selection.SelectedMapID = pending.Map.Name;
+                View.Selection.SelectedMapContainer = pending.Map;
+            }
+        }
+    }
+
     /// <summary>
-    /// Starts the next queued load once nothing is loading. Called every frame.
+    /// Starts the next queued load once nothing is loading, and applies the selections finished loads asked
+    /// for. Called every frame, on the UI thread.
     /// </summary>
     public void ProcessLoadQueue()
     {
+        ApplyPendingSelections();
+
         if (IsLoading || _loadQueue.Count == 0)
             return;
 

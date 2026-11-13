@@ -93,14 +93,15 @@ public class EntMoveAction : ViewportAction
             }
             else if (TargetMap != null)
             {
-                // Moving to a targeted map, update parent.
-                if (TargetMap.MapOffsetNode != null)
+                // Moving to a targeted map, update parent. The container resolved by ID is used, as the one
+                // passed in may be from an earlier load of the map.
+                if (move.Target.MapOffsetNode != null)
                 {
-                    TargetMap.MapOffsetNode.AddChild(ent);
+                    move.Target.MapOffsetNode.AddChild(ent);
                 }
                 else
                 {
-                    TargetMap.RootObject.AddChild(ent);
+                    move.Target.RootObject.AddChild(ent);
                 }
             }
             else

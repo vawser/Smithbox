@@ -87,9 +87,12 @@ public class MapPropertyView
             "MAP_Properties_Toggle_Community_Names_Community",
             "MAP_Properties_Toggle_Community_Names_TT");
 
-        if (CollisionViewMode is MapCollisionViewMode.CollisionHKX)
+        // Each kind has its own view mode: a navmesh's is the navmesh one, not the collision one
+        var showsHavok = (IsCollisionType() && CollisionViewMode is MapCollisionViewMode.CollisionHKX)
+            || (IsNavmeshType() && NavmeshViewMode is MapNavmeshViewMode.NavmeshHKX);
+
+        if (showsHavok)
         {
-            if (IsCollisionType() || IsNavmeshType())
             {
                 // Toggle: Type Column
                 GUI.DisplayToggleButton("typeColumnToggle", Icons.Calculator,
@@ -104,10 +107,6 @@ public class MapPropertyView
                     "HAVOK_PropertyView_Mesh_Data_Toggle_Hide",
                     "HAVOK_PropertyView_Mesh_Data_Toggle_Show",
                     "HAVOK_PropertyView_Mesh_Data_Toggle_TT");
-            }
-            else
-            {
-                DisplayMsbHeaderToggles();
             }
         }
         else

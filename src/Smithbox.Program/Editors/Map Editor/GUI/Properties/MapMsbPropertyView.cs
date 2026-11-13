@@ -46,10 +46,9 @@ public class MapMsbPropertyView
             Entity firstEnt = entSelection.First();
             if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
             {
+                // Only the child was opened here; the window and its colours belong to the caller
                 ImGui.Text("Cannot edit multiples of this object at once.");
                 ImGui.EndChild();
-                ImGui.End();
-                ImGui.PopStyleColor(2);
                 return;
             }
 
@@ -74,8 +73,6 @@ public class MapMsbPropertyView
             {
                 ImGui.Text("Select a map object to edit its properties.");
                 ImGui.EndChild();
-                ImGui.End();
-                ImGui.PopStyleColor(2);
                 return;
             }
 
@@ -549,25 +546,94 @@ public class MapMsbPropertyView
             editName = (newValue, first);
             if (entities.Count() == 1)
             {
-                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
-                    View,
-                    entities.ToList(),
-                    new List<string> { newValue },
-                    false
-                ));
+                ExecuteRename(entities.ToList(), new List<string> { newValue }, false);
             }
             else
             {
-                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
-                    View,
-                    entities.ToList(),
-                    entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
-                    false
-                ));
+                ExecuteRename(entities.ToList(), entities.Select((ent, i) => $"{newValue}_{i}").ToList(), false);
             }
         }
         ImGui.PopItemWidth();
+
+        // This path leaves references at the old name, so say how many there are while one object is selected
+        if (entities.Count() == 1)
+        {
+            var refCount = GetReferenceCount(first);
+
+            if (refCount > 0)
+            {
+                GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MAP_Rename_References_Will_Break", refCount));
+
+                if (ImGui.Button($"{LOC.Get("MAP_Rename_Enable_Referenced")}##enableReferencedRename"))
+                {
+                    CFG.Current.MapEditor_Properties_Enable_Referenced_Rename = true;
+                }
+                GUI.Tooltip(LOC.Get("MAP_Rename_Enable_Referenced_TT"));
+            }
+        }
+
         ImGui.NextColumn();
+    }
+
+    // The reference count shown under the direct rename, kept until the selection or the map data changes
+    private (Entity Entity, int Version, int Count) _referenceCount = (null, -1, 0);
+
+    private int GetReferenceCount(Entity ent)
+    {
+        var version = View.ViewportActionManager.Version;
+
+        if (_referenceCount.Entity != ent || _referenceCount.Version != version)
+        {
+            var count = ent.Container != null
+                ? MsbReferences.FindReferencesTo(ent.Container, new[] { ent }).Count
+                : 0;
+
+            _referenceCount = (ent, version, count);
+        }
+
+        return _referenceCount.Count;
+    }
+
+    /// <summary>
+    /// Renames the objects, as long as no name is taken in its map's list (parts, regions or events) by an object
+    /// that isn't being renamed. A single rename onto a taken name is refused; the numbered names of a multiple
+    /// rename are made unique instead.
+    /// </summary>
+    private void ExecuteRename(List<MsbEntity> entities, List<string> names, bool updateReferences)
+    {
+        if (entities.Count == 1)
+        {
+            var ent = entities[0];
+            var clash = MsbNaming.FindClashes(ent.Container as MapContainer, ent, names[0]).FirstOrDefault();
+
+            if (clash != null)
+            {
+                Smithbox.LogError(this, LOC.Get("MAP_Rename_Name_Clash", names[0], clash.PrettyName, ent.MapID));
+                editName = (ent.Name, ent);
+                return;
+            }
+        }
+        else
+        {
+            // The names in use in each map's list, without the objects being renamed, as they give theirs up
+            var nameSets = new Dictionary<(MapContainer, Type), HashSet<string>>();
+
+            for (var i = 0; i < entities.Count; i++)
+            {
+                var map = entities[i].Container as MapContainer;
+                var key = (map, MsbNaming.GetNameScope(entities[i].WrappedObject));
+
+                if (!nameSets.TryGetValue(key, out var set))
+                {
+                    set = MsbNaming.GetNames(map, entities[i].WrappedObject, entities);
+                    nameSets[key] = set;
+                }
+
+                names[i] = MsbNaming.MakeUnique(names[i], set);
+            }
+        }
+
+        View.ViewportActionManager.ExecuteAction(new EntRenameAction(View, entities, names, updateReferences));
     }
 
     private void PropEditorNameWithRef(IEnumerable<MsbEntity> entities)
@@ -619,12 +685,7 @@ public class MapMsbPropertyView
 
             if (single)
             {
-                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
-                    View,
-                    new List<MsbEntity> { first },
-                    new List<string> { editName.name },
-                    true
-                ));
+                ExecuteRename(new List<MsbEntity> { first }, new List<string> { editName.name }, true);
             }
             else
             {
@@ -643,12 +704,7 @@ public class MapMsbPropertyView
                     nameList.Add($"{editName.name}-{type.Name}_{index}");
                 }
 
-                View.ViewportActionManager.ExecuteAction(new EntRenameAction(
-                    View,
-                    entityList,
-                    nameList,
-                    true
-                ));
+                ExecuteRename(entityList, nameList, true);
             }
         }
         ImGui.PopItemWidth();
@@ -666,7 +722,8 @@ public class MapMsbPropertyView
 
         ImGui.NextColumn();
 
-        var mapId = View.Selection.SelectedMapID;
+        // The object's own map: the active map can be another one while the object stays selected
+        var mapId = (first as MsbEntity)?.MapID ?? View.Selection.SelectedMapID;
         var mapObjectKey = first.Name;
 
         var mapObjectName = Project.Handler.MapData.GetMapObjectName(mapId, mapObjectKey);
@@ -687,6 +744,14 @@ public class MapMsbPropertyView
     private void PropEditorSelectedEntities(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<MsbEntity>();
+
+        // The selection's entities may not be map objects (edge points, the placement orb)
+        if (entities.Count == 0 || entities.Any(e => e.WrappedObject == null))
+        {
+            ImGui.Text("Select a map object to edit its properties.");
+            return;
+        }
+
         var types = entities.Select(t => t.WrappedObject.GetType()).Distinct();
         var maps = entities.Select(t => t.Container).Distinct();
         var first = entities.First();

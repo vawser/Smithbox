@@ -173,9 +173,10 @@ public class SelectionGroupsTool
 
             if (InputManager.IsPressed(KeybindID.Delete))
             {
+                // Only the list entry: deleting the group's map objects too is the "Delete Group and Objects"
+                // button. The objects could be brought back with undo but the entry couldn't, as it is saved at once.
                 if (CurrentMapGroupEntry != null)
                 {
-                    DeleteMapGroupEntryObjects(CurrentMapGroupEntry);
                     DeleteMapGroupEntry(CurrentMapGroupEntryGUID);
                 }
             }

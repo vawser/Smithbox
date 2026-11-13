@@ -198,24 +198,40 @@ public class DuplicateToMapAction
         View.DelayPicking();
     }
 
-    private List<MsbEntity> StoredSelection = new();
+    // Kept by the editor rather than the view, so what is copied in one view can be pasted in another
+    private List<MsbEntity> StoredSelection
+    {
+        get => View.Editor.Clipboard;
+        set => View.Editor.Clipboard = value;
+    }
 
     public bool HasCopiedObjects => StoredSelection.Count > 0;
 
     public void OnCopy(MapEditorView activeView)
     {
-        StoredSelection = new();
-
         var sel = activeView.ViewportSelection.GetPlacedEntities();
+
+        // Copying with nothing selected keeps what was copied before
+        if (sel.Count == 0)
+            return;
+
+        var copied = new List<MsbEntity>();
+
         foreach(var entry in sel)
         {
             var clone = entry.Clone();
-            StoredSelection.Add((MsbEntity)clone);
+            copied.Add((MsbEntity)clone);
         }
+
+        StoredSelection = copied;
     }
 
     public void OnPaste(MapEditorView activeView)
     {
+        // Nothing to paste: no empty undo step, and the selection is left alone
+        if (!HasCopiedObjects)
+            return;
+
         var mapContainer = activeView.Selection.SelectedMapContainer;
 
         if (mapContainer == null)

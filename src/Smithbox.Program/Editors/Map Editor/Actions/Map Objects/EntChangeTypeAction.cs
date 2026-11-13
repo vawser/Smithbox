@@ -1,5 +1,7 @@
-﻿using StudioCore.Editors.Common;
+﻿using SoulsFormats;
+using StudioCore.Editors.Common;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -51,6 +53,10 @@ public class EntChangeTypeAction : ViewportAction
                 if (currentType == sourceType)
                 {
                     var sourceObj = ent.WrappedObject;
+
+                    // Values are read from a deep copy, so the new object shares nothing (arrays, the class-typed
+                    // sub-structs of later games) with the old one that undo puts back
+                    object readFrom = sourceObj is IMsbPart part ? part.DeepCopy() : sourceObj;
                     var targetObj = targetType.GetConstructor(Type.EmptyTypes).Invoke(Array.Empty<object>());
 
                     // Go through properties of source type and set them to target type (if they exist under the same name)
@@ -61,7 +67,7 @@ public class EntChangeTypeAction : ViewportAction
                         PropertyInfo targetProp = targetObj.GetType().GetProperty(property.Name);
                         if (targetProp != null)
                         {
-                            targetProp.SetValue(targetObj, property.GetValue(sourceObj, null), null);
+                            targetProp.SetValue(targetObj, CopyValue(property.GetValue(readFrom, null)), null);
                         }
                     }
 
@@ -73,7 +79,7 @@ public class EntChangeTypeAction : ViewportAction
                         if (targetProp != null)
                         {
                             PropertyInfo targetPropInner = targetProp.DeclaringType.GetProperty(property.Name);
-                            targetPropInner.SetValue(targetObj, property.GetValue(sourceObj, null),
+                            targetPropInner.SetValue(targetObj, CopyValue(property.GetValue(readFrom, null)),
                                 BindingFlags.NonPublic | BindingFlags.Instance, null, null, null);
                         }
                     }
@@ -81,6 +87,36 @@ public class EntChangeTypeAction : ViewportAction
                     MapObjectChanges.Add(new MapObjectChange(sourceObj, targetObj, ent));
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// Arrays and lists are copied, so the new object doesn't share them with the old one: an edit made after
+    /// the change would otherwise also change the object that undo puts back
+    /// </summary>
+    private static object CopyValue(object value)
+    {
+        return value switch
+        {
+            Array array => array.Clone(),
+            IList list when value.GetType().IsGenericType => Activator.CreateInstance(value.GetType(), list),
+            _ => value
+        };
+    }
+
+    /// <summary>
+    /// The entity now wraps another object, so its model, its group arrays and its map's references are rebuilt
+    /// </summary>
+    private static void Refresh(IEnumerable<MsbEntity> entities)
+    {
+        foreach (var ent in entities)
+        {
+            ent.UpdateRenderModel();
+        }
+
+        foreach (var container in entities.Select(e => e.Container).Where(c => c != null).Distinct())
+        {
+            Entity.BuildReferenceMaps(container.Objects);
         }
     }
 
@@ -93,6 +129,8 @@ public class EntChangeTypeAction : ViewportAction
 
             MapContainer.MarkEntityDirty(mapChangeObj.Entity);
         }
+
+        Refresh(MapObjectChanges.Select(c => c.Entity));
 
         return ActionEvent.ObjectAddedRemoved;
     }
@@ -108,6 +146,8 @@ public class EntChangeTypeAction : ViewportAction
 
             MapContainer.MarkEntityDirty(mapChangeObj.Entity);
         }
+
+        Refresh(MapObjectChanges.Select(c => c.Entity));
 
         if (SetSelection)
         {

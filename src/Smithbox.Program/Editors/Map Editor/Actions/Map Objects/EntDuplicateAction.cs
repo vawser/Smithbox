@@ -19,8 +19,6 @@ public class EntDuplicateAction : ViewportAction
     private MapEditorView View;
     private Action<bool> PostExecutionAction;
 
-    private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
-
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
@@ -200,34 +198,39 @@ public class EntDuplicateAction : ViewportAction
                     }
                 }
 
-                if (IncrementEntityID)
+                // Only on the first execute: a redone clone keeps the IDs and rotation it was given, so redo
+                // brings back the same object that was undone
+                if (!clonesCached)
                 {
-                    MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
-                }
+                    if (IncrementEntityID)
+                    {
+                        MapEditorActionHelper.SetUniqueEntityID(View, newobj, map);
+                    }
 
-                if (IncrementInstanceID)
-                {
-                    MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
-                }
+                    if (IncrementInstanceID)
+                    {
+                        MapEditorActionHelper.SetUniqueInstanceID(View, newobj, map);
+                    }
 
-                if (IncrementPartNames)
-                {
-                    MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
-                }
+                    if (IncrementPartNames)
+                    {
+                        MapEditorActionHelper.SetSelfPartNames(View, newobj, map);
+                    }
 
-                if (ClearEntityID)
-                {
-                    MapEditorActionHelper.ClearEntityID(View, newobj, map);
-                }
+                    if (ClearEntityID)
+                    {
+                        MapEditorActionHelper.ClearEntityID(View, newobj, map);
+                    }
 
-                if (ClearEntityGroupID)
-                {
-                    MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
-                }
+                    if (ClearEntityGroupID)
+                    {
+                        MapEditorActionHelper.ClearEntityGroupID(View, newobj, map);
+                    }
 
-                if(RandomiseRotation)
-                {
-                    MapEditorActionHelper.RandomiseRotation(View, newobj, map, RandomRotationDir, RandomRotationRange);
+                    if (RandomiseRotation)
+                    {
+                        MapEditorActionHelper.RandomiseRotation(View, newobj, map, RandomRotationDir, RandomRotationRange);
+                    }
                 }
             }
         }
@@ -343,45 +346,7 @@ public class EntDuplicateAction : ViewportAction
 
     private void GenerateUniqueName(MsbEntity source, MsbEntity clone, HashSet<string> names)
     {
-        if (source.Name == null)
-        {
-            clone.Name = "";
-            names.Add(clone.Name);
-        }
-        else
-        {
-            Match idmatch = TrailIDRegex.Match(source.Name);
-            if (idmatch.Success)
-            {
-                var idstring = idmatch.Result("${id}");
-                var id = int.Parse(idstring);
-                var baseName = source.Name.Substring(0, source.Name.Length - idstring.Length);
-                var newid = idstring;
-
-                while (names.Contains(baseName + newid))
-                {
-                    id++;
-                    newid = id.ToString("D" + idstring.Length);
-                }
-
-                clone.Name = baseName + newid;
-                names.Add(clone.Name);
-            }
-            else
-            {
-                var idstring = "0001";
-                var id = int.Parse(idstring);
-                var newid = idstring;
-
-                while (names.Contains(source.Name + "_" + newid))
-                {
-                    id++;
-                    newid = id.ToString("D" + idstring.Length);
-                }
-
-                clone.Name = source.Name + "_" + newid;
-                names.Add(clone.Name);
-            }
-        }
+        // A copy always gets a name of its own, even in a map where the source's name is free
+        clone.Name = MsbNaming.MakeUnique(source.Name, names, alwaysNew: true);
     }
 }

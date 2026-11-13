@@ -14,7 +14,7 @@
     },
     {
       "Key": "PREF_MapEditor_Map_List_Enable_Load_on_Double_Click_TT",
-      "Text": "If enabled, double-clicking a map in the map list will load it."
+      "Text": "If enabled, double-clicking a map in the map list will load it, or frame it in the viewport if it is already loaded. Maps are unloaded from the context menu."
     },
     {
       "Key": "PREF_MapEditor_Map_List_Display_Map_Aliases",

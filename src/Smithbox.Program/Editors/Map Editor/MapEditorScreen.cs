@@ -27,6 +27,11 @@ public class MapEditorScreen : EditorScreen
 
     public ResourceListTool ResourceList;
 
+    /// <summary>
+    /// The copied map objects, shared by every view so a copy in one can be pasted in another
+    /// </summary>
+    public List<MsbEntity> Clipboard = new();
+
     public MapEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -128,8 +133,11 @@ public class MapEditorScreen : EditorScreen
         {
             if (activeView != null)
             {
-                // Undo
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}"))
+                var canUndo = activeView.ViewportActionManager.CanUndo();
+                var canRedo = activeView.ViewportActionManager.CanRedo();
+
+                // Undo (greyed out when there is nothing to undo)
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)} / {InputManager.GetHint(KeybindID.Undo_Repeat)}", false, canUndo))
                 {
                     if (activeView.ViewportActionManager.CanUndo())
                     {
@@ -138,7 +146,7 @@ public class MapEditorScreen : EditorScreen
                 }
 
                 // Undo All
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction", "", false, canUndo))
                 {
                     if (activeView.ViewportActionManager.CanUndo())
                     {
@@ -147,7 +155,7 @@ public class MapEditorScreen : EditorScreen
                 }
 
                 // Redo
-                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}"))
+                if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)} / {InputManager.GetHint(KeybindID.Redo_Repeat)}", false, canRedo))
                 {
                     if (activeView.ViewportActionManager.CanRedo())
                     {

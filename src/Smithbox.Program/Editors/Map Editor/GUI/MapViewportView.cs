@@ -246,6 +246,12 @@ public class MapViewportView
                 Entity targetedEnt = curSelection.OfType<Entity>().FirstOrDefault(e => e.WrappedObject is IMsbPart or IMsbRegion)
                     ?? curSelection.OfType<Entity>().FirstOrDefault();
 
+                if (ImGui.Selectable(LOC.Get("MAP_Viewport_Context_Copy")))
+                {
+                    View.DuplicateToMapAction.OnCopy(View);
+                }
+                GUI.Tooltip(LOC.Get("MAP_Viewport_Context_Copy_TT", InputManager.GetHint(KeybindID.Copy)));
+
                 View.DuplicateAction.OnContext();
                 View.DeleteAction.OnContext();
                 View.DuplicateToMapAction.OnContext();
@@ -260,6 +266,7 @@ public class MapViewportView
                     ImGui.Separator();
 
                     View.FrameAction.OnContext(targetedEnt);
+                    View.GotoAction.OnContext();
                     View.PullToCameraAction.OnContext(targetedEnt);
                     View.SnapToMeshAction.OnContext(targetedEnt);
                 }
@@ -332,11 +339,11 @@ public class MapViewportView
     /// <summary>
     /// Frames the bounds of every drawn object of the map
     /// </summary>
-    private void FrameMap(MapContainer map)
+    public void FrameMap(MapContainer map)
     {
         var viewport = View.ViewportHandler.ActiveViewport?.Viewport;
 
-        if (viewport == null)
+        if (viewport == null || map == null)
             return;
 
         BoundingBox? bounds = null;

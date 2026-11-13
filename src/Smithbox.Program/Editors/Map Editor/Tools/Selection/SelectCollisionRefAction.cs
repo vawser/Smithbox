@@ -90,9 +90,14 @@ public class SelectCollisionRefAction
 
         if (View.ViewportSelection.IsSelection())
         {
-            var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
+            // The selection can hold no map object at all (a reference to an unloaded map)
+            var selection = View.ViewportSelection.GetFilteredSelection<MsbEntity>().FirstOrDefault();
 
-            if (EntityHelper.IsPartCollision(selection))
+            if (selection == null)
+            {
+                GUI.WrappedText("No valid map object has been selected.");
+            }
+            else if (EntityHelper.IsPartCollision(selection))
             {
                 GUI.MultiButtonInput("colRefActions_1",
                 "selectRefParts", "Select Referenced Parts", "", SelectCollisionReferences);
@@ -125,9 +130,9 @@ public class SelectCollisionRefAction
 
         if (View.ViewportSelection.IsSelection())
         {
-            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().FirstOrDefault();
 
-            if(EntityHelper.IsPartCollision(sel))
+            if (sel != null && EntityHelper.IsPartCollision(sel))
             {
                 foreach (Entity refEnt in sel.GetReferencingObjects())
                 {
@@ -155,9 +160,9 @@ public class SelectCollisionRefAction
 
         if (View.ViewportSelection.IsSelection())
         {
-            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().First();
+            var sel = View.ViewportSelection.GetFilteredSelection<MsbEntity>().FirstOrDefault();
 
-            if (EntityHelper.IsPart(sel) && !EntityHelper.IsPartCollision(sel) && !EntityHelper.IsPartConnectCollision(sel))
+            if (sel != null && EntityHelper.IsPart(sel) && !EntityHelper.IsPartCollision(sel) && !EntityHelper.IsPartConnectCollision(sel))
             {
                 foreach (KeyValuePair<string, object[]> m in sel.References)
                 {

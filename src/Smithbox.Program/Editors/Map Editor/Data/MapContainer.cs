@@ -734,14 +734,19 @@ public class MapContainer : ObjectContainer
 
     public void SerializeToMSB(IMsb msb, ProjectType game)
     {
+        // The models written: every model the MSB had when it was loaded (LoadedModels, kept as they are), plus a
+        // new entry for each model a part names now that it didn't have. Built per save, so a model added by an
+        // edit (or a mistyped name) is dropped again once no part uses it.
+        var models = new Dictionary<string, IMsbModel>(LoadedModels);
+
         foreach (Entity m in Objects)
         {
             if (m.WrappedObject != null && m.WrappedObject is IMsbPart p)
             {
                 msb.Parts.Add(p);
-                if (p.ModelName != null && !LoadedModels.ContainsKey(p.ModelName))
+                if (p.ModelName != null && !models.ContainsKey(p.ModelName))
                 {
-                    LoadedModels.Add(p.ModelName, null);
+                    models.Add(p.ModelName, null);
                 }
             }
             else if (m.WrappedObject != null && m.WrappedObject is IMsbRegion r)
@@ -768,7 +773,7 @@ public class MapContainer : ObjectContainer
             }
         }
 
-        MsbGameAdapter.For(game)?.AddModels(msb, Name, LoadedModels);
+        MsbGameAdapter.For(game)?.AddModels(msb, Name, models);
     }
 
     /// <summary>

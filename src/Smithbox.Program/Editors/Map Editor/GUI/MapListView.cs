@@ -213,9 +213,11 @@ public class MapListView : IActionEventHandler
                     if (CFG.Current.MapEditor_Map_List_Enable_Load_on_Double_Click &&
                         ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
+                        // A loaded map is framed: unloading drops its collision, navmesh and models, which are
+                        // slow to load again, so that is left to the context menu
                         if (loadType == MapContentLoadState.Loaded)
                         {
-                            View.Universe.RequestUnloadMap(curWrapper.Name);
+                            View.ViewportWindow.FrameMap(curWrapper.MapContainer);
                         }
                         else
                         {

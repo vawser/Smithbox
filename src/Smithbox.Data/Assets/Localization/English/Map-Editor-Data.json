@@ -173,6 +173,10 @@
       "Text": "{0}:{1} has an ID that's already used. Change it to an unique value."
     },
     {
+      "Key": "MAP_Universe_Map_Load_No_MSB",
+      "Text": "{0} was not loaded: its MSB could not be found or read (see the log above)."
+    },
+    {
       "Key": "MAP_Universe_DS2_Generator_Params_Missing",
       "Text": "{0}: the generators, events and object instances were not loaded, as these params are missing: {1}. They will not be saved for this map."
     },

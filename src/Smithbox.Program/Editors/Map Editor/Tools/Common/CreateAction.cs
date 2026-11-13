@@ -400,6 +400,14 @@ public class CreateAction
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
         MsbEntity obj = new(View.Universe, map, newent, etype);
 
+        // The type's default name is a placeholder (ER assets are all "AEGxxx_xxx_xxxx"), or empty, so each new
+        // object is given one of its own in its list, as name references need
+        if (obj.SupportsName)
+        {
+            var baseName = string.IsNullOrEmpty(obj.Name) ? typ.Name : obj.Name;
+            obj.Name = MsbNaming.MakeUnique(baseName, MsbNaming.GetNames(map, newent));
+        }
+
         parent ??= map.RootObject;
 
         PlaceAtPlacementOrb(newent, parent);
