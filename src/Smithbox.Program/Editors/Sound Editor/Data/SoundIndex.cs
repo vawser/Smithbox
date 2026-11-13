@@ -1,3 +1,4 @@
+using SoulsFormats;
 using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.SoundEditor;
@@ -24,7 +25,8 @@ public sealed class SoundMatch
 /// <list type="bullet">
 /// <item>Wwise: soundbanksinfo.mobnkinfo (bank → events; all of every game's bank events are in it, under the right
 /// bank), and the event name rule Play_ + type + 9-digit ID.</item>
-/// <item>FMOD: the STRR event names of every bank's .fev.</item>
+/// <item>FMOD: the event names of each bank's own .fev (RIFF STRR, or FEV1 inline), DS2 binders' inner .fev, and shared
+/// projects (DS1 frpg.fev / fdlc.fev, DS2S frpg2.fevbnd.dcx) under the banks their events play in.</item>
 /// </list>
 /// A bare number (params, TAE, MSB) has no type letter, so it is tried with every letter in use; 90–98% of sound IDs
 /// match one letter only.
@@ -106,16 +108,59 @@ public class SoundIndex
     private void BuildFmod()
     {
         var map = new Dictionary<string, List<SoundContainer>>(StringComparer.OrdinalIgnoreCase);
+        void Add(string name, SoundContainer c)
+        {
+            if (!Regex.IsMatch(name, @"^[a-z]\d{9,10}$")) return;
+            var l = map.TryGetValue(name, out var x) ? x : map[name] = new();
+            if (!l.Contains(c)) l.Add(c);
+        }
+
+        // own projects: the loose .fev next to each .fsb
         foreach (var c in Data.Containers.Where(c => c.Kind == SoundContainerKind.Fsb))
         {
             var fev = Data.ReadFile(c.Path[..^4] + ".fev");
-            if (fev == null) continue;
-            foreach (var name in SoundBanksInfo.FevStrings(fev))
-                if (Regex.IsMatch(name, @"^[a-z]\d{9,10}$"))
-                    (map.TryGetValue(name, out var l) ? l : map[name] = new()).Add(c);
+            if (fev != null)
+                foreach (var name in FevEventNames(fev)) Add(name, c);
         }
+
+        // DS2: the .fev inside each binder. DS2S binders hold only the .fsb (its projects are in frpg2.fevbnd.dcx), so
+        // they aren't opened.
+        bool sharedProjectGame = Data.FmodProjectPaths().Any(p => p.Contains(".fevbnd", StringComparison.OrdinalIgnoreCase));
+        if (!sharedProjectGame)
+        {
+            foreach (var c in Data.Containers.Where(c => c.Kind == SoundContainerKind.FsbBinder))
+            {
+                var raw = Data.ReadFile(c.Path);
+                if (raw == null) continue;
+                try
+                {
+                    Memory<byte> d = DCX.Is(raw) ? DCX.Decompress(raw) : raw;
+                    IBinder bnd = d.Span[3] == '4' ? BND4.Read(d) : BND3.Read(d);
+                    var fev = bnd.Files.FirstOrDefault(f => f.Name.EndsWith(".fev", StringComparison.OrdinalIgnoreCase));
+                    if (fev != null)
+                        foreach (var name in FevEventNames(fev.Bytes.ToArray())) Add(name, c);
+                }
+                catch { }
+            }
+        }
+
+        // shared projects (DS1 frpg.fev / fdlc.fev, DS2S frpg2.fevbnd.dcx): each event under the banks it plays in
+        var byStem = Data.Containers.Where(c => c.Kind is SoundContainerKind.Fsb or SoundContainerKind.FsbBinder)
+            .GroupBy(c => c.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.ToList(), StringComparer.OrdinalIgnoreCase);
+        foreach (var (_, fev) in Data.FevCatalog.AllProjects())
+            foreach (var bank in fev.BankNames)
+                if (byStem.TryGetValue(bank, out var cs))
+                    foreach (var ev in fev.EventsForBank(bank))
+                        foreach (var c in cs) Add(ev.Name, c);
+
         _fmod = map;
     }
+
+    /// <summary>RIFF FEV: the STRR strings (cheap); FEV1: the parsed events (names are inline).</summary>
+    private static IEnumerable<string> FevEventNames(byte[] fev)
+        => fev.Length >= 4 && fev[0] == 'F' && fev[1] == 'E' && fev[2] == 'V' && fev[3] == '1'
+            ? FevFile.Read(fev).EventNames()
+            : SoundBanksInfo.FevStrings(fev);
 
     /// <summary>
     /// The Play events of a sound ID. With <paramref name="type"/> null, every type letter is tried (params and TAE give

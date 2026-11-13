@@ -57,6 +57,7 @@ public class SoundData : IDisposable
         if (Middleware == SoundMiddleware.Wwise)
             Names.LoadWwise();
         Index = new SoundIndex(this);
+        FevCatalog = new SoundFevCatalog(this);
 
         foreach (var e in Project.Locator.FileDictionary.Entries)
             _allPaths.Add(e.Path);
@@ -117,6 +118,15 @@ public class SoundData : IDisposable
         return path.EndsWith(".fsb", StringComparison.OrdinalIgnoreCase)
             || (path.StartsWith("/sound/", StringComparison.OrdinalIgnoreCase) && (path.EndsWith(".bnd", StringComparison.OrdinalIgnoreCase) || path.EndsWith(".bnd.dcx", StringComparison.OrdinalIgnoreCase)));
     }
+
+    /// <summary>FMOD: event projects shared by several banks (built on first use).</summary>
+    public SoundFevCatalog FevCatalog;
+
+    /// <summary>FMOD: loose .fev files and binders of projects (DS2S frpg2.fevbnd.dcx).</summary>
+    public IEnumerable<string> FmodProjectPaths()
+        => _allPaths.Where(p => p.EndsWith(".fev", StringComparison.OrdinalIgnoreCase) ||
+                                p.EndsWith(".fevbnd.dcx", StringComparison.OrdinalIgnoreCase) ||
+                                p.EndsWith(".fevbnd", StringComparison.OrdinalIgnoreCase));
 
     /// <summary>The bytes of a file in the project's VFS, or null.</summary>
     public byte[] ReadFile(string path)

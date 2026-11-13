@@ -1,7 +1,0 @@
-==================== ER
-mobnkinfo: 2 sections, 730 bank entries, 57968 event entries, 49504 distinct events
-bank events 57544: in index 57544 (100.0%), index names their bank 57544 (100.0%)
-  bank events not in the index, by bank shape: 
-index banks that are bank files: 587 of 630
-  letters with a Play_ event for a known sound ID (from the name table): 1=19592, 2=359, 3=38, 7=6, 4=3
-

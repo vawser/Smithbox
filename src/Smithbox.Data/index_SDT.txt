@@ -1,4 +1,0 @@
-==================== SDT
-FEV STRR: 132 files (0 legacy/none), 11890 distinct event names; in more than one bank 764
-  letters with an event for a known sound ID: 1=11521, 2=294, 3=51, 4=24
-

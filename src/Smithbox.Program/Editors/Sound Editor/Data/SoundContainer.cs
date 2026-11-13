@@ -157,10 +157,8 @@ public class SoundContainer
             case SoundContainerKind.Fsb:
                 {
                     var entries = LoadFsb(raw, null);
-                    // the FMOD Designer project of the same name holds the events
-                    var fev = Data.ReadFile(Path[..^4] + ".fev");
-                    if (fev != null)
-                        _loadedEvents = BuildFevEvents(fev, entries);
+                    // the FMOD Designer project of the same name holds the events, plus projects shared by several banks
+                    _loadedEvents = LoadFevEvents(Data.ReadFile(Path[..^4] + ".fev"), entries);
                     return entries;
                 }
             case SoundContainerKind.FsbBinder:
@@ -174,20 +172,53 @@ public class SoundContainer
     public string FevInfo;
 
     /// <summary>
-    /// The .fev project's events, each linked to the bank's samples its layers' sound definitions play. A waveform is
-    /// the sample at its index if the name matches, else the sample of that name, else it is in another bank (SDT keeps
-    /// shared waveforms in other .fsb files).
+    /// The bank's events: every event of its own project (<paramref name="ownFev"/>, may be null), then the events of
+    /// projects shared by several banks that play something here (DS1 frpg.fev / fdlc.fev, DS2S frpg2.fevbnd.dcx).
     /// </summary>
-    private List<SoundEvent> BuildFevEvents(byte[] fevBytes, List<SoundEntry> entries)
+    private List<SoundEvent> LoadFevEvents(byte[] ownFev, List<SoundEntry> entries)
     {
-        var fev = FevFile.Read(fevBytes);
-        if (fev.SoundDefs.Count == 0 && fev.Events.Count == 0)
-        {
-            FevInfo = fev.Error ?? LOC.Get("SOUND_Fev_Empty");
-            return new();
-        }
-        FevInfo = LOC.Get("SOUND_Fev_Info", fev.Events.Count, fev.SoundDefs.Count);
+        var events = new List<SoundEvent>();
+        var info = new List<string>();
 
+        if (ownFev != null)
+        {
+            var fev = FevFile.Read(ownFev);
+            if (fev.SoundDefs.Count == 0 && fev.Events.Count == 0)
+                info.Add(fev.Error ?? LOC.Get("SOUND_Fev_Empty"));
+            else
+            {
+                info.Add(LOC.Get(fev.Legacy ? "SOUND_Fev_Info_Legacy" : "SOUND_Fev_Info", fev.Events.Count, fev.SoundDefs.Count));
+                events.AddRange(BuildFevEvents(fev, fev.Events, entries, null));
+            }
+        }
+
+        var shared = new List<string>();
+        foreach (var (name, fev) in Data.FevCatalog.ProjectsFor(Name))
+        {
+            var mine = fev.EventsForBank(Name);
+            if (mine.Count == 0)
+                continue;
+            events.AddRange(BuildFevEvents(fev, mine, entries, Name));
+            shared.Add($"{name}.fev ({mine.Count})");
+        }
+        if (shared.Count > 0)
+            info.Add(LOC.Get("SOUND_Fev_Info_Shared", string.Join(", ", shared)));
+
+        FevInfo = info.Count > 0 ? string.Join("; ", info) : null;
+
+        events = events.OrderBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase).ToList();
+        for (int i = 0; i < events.Count; i++) events[i].Index = i;
+        return events;
+    }
+
+    /// <summary>
+    /// Events of a project, each linked to the bank's samples its layers' sound definitions play. A waveform is the
+    /// sample at its index if the name matches, else the sample of that name, else it is in another bank (SDT keeps
+    /// shared waveforms in other .fsb files). For a shared project (<paramref name="bank"/> set), only waveforms whose
+    /// bank is this one can match: the same index in another bank is another sample.
+    /// </summary>
+    private List<SoundEvent> BuildFevEvents(FevFile fev, List<FevFile.Event> fevEvents, List<SoundEntry> entries, string bank)
+    {
         var byIndex = new Dictionary<int, SoundEntry>();
         var byName = new Dictionary<string, SoundEntry>(StringComparer.OrdinalIgnoreCase);
         foreach (var e in entries)
@@ -197,7 +228,7 @@ public class SoundContainer
         }
 
         var events = new List<SoundEvent>();
-        foreach (var fe in fev.Events)
+        foreach (var fe in fevEvents)
         {
             var ev = new SoundEvent
             {
@@ -211,7 +242,9 @@ public class SoundContainer
                 foreach (var w in def.Waveforms)
                 {
                     SoundEntry entry = null;
-                    if (byIndex.TryGetValue(w.Index, out var atIndex) &&
+                    if (bank != null && !string.Equals(w.BankName, bank, StringComparison.OrdinalIgnoreCase))
+                        entry = null;
+                    else if (byIndex.TryGetValue(w.Index, out var atIndex) &&
                         System.IO.Path.GetFileNameWithoutExtension(atIndex.Name ?? "").Equals(w.FileStem, StringComparison.OrdinalIgnoreCase))
                         entry = atIndex;
                     else
@@ -230,9 +263,6 @@ public class SoundContainer
             ev.SoundId = sid?.Id;
             events.Add(ev);
         }
-
-        events = events.OrderBy(e => e.DisplayName, StringComparer.OrdinalIgnoreCase).ToList();
-        for (int i = 0; i < events.Count; i++) events[i].Index = i;
         return events;
     }
 
@@ -252,10 +282,9 @@ public class SoundContainer
         }
         FormatInfo = string.Join(", ", formats.Distinct());
 
-        // DS2: the binder's .fev (legacy FEV1 ones aren't read yet)
+        // DS2: the binder's .fev (RIFF or FEV1); DS2S binders have none, their events are in frpg2.fevbnd.dcx
         var fev = bnd.Files.FirstOrDefault(f => f.Name.EndsWith(".fev", StringComparison.OrdinalIgnoreCase));
-        if (fev != null)
-            _loadedEvents = BuildFevEvents(fev.Bytes.ToArray(), entries);
+        _loadedEvents = LoadFevEvents(fev?.Bytes.ToArray(), entries);
         return entries;
     }
 

@@ -1,4 +1,0 @@
-==================== BB
-FEV STRR: 252 files (2 legacy/none), 20603 distinct event names; in more than one bank 2479
-  letters with an event for a known sound ID: 1=19331, 2=573, 3=89, 4=7
-
