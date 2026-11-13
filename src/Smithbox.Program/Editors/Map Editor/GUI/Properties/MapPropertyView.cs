@@ -80,6 +80,9 @@ public class MapPropertyView
 
         EditorFilters.DisplaySearchbar("MapPropSearch", ref MapPropFilter, ref ExactMapPropFilter);
 
+        // Action: Go To
+        DisplayGoToButton();
+
         // Toggle: Community Names
         GUI.DisplayToggleButton("communityNameToggle", Icons.Book,
             ref CFG.Current.MapEditor_Properties_Enable_Commmunity_Names,
@@ -115,6 +118,44 @@ public class MapPropertyView
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Shows the selected entity (the first, with several selected) in the Map Contents tree
+    /// </summary>
+    private void DisplayGoToButton()
+    {
+        var target = GetGoToTarget();
+
+        ImGui.SameLine();
+
+        ImGui.BeginDisabled(target == null);
+
+        if (ImGui.Button($"{Icons.LocationArrow}##propertiesGoTo", DPI.IconButtonSize))
+        {
+            View.MapContentView.RevealEntity(target);
+        }
+
+        ImGui.EndDisabled();
+
+        GUI.Tooltip(LOC.Get("MAP_Properties_Go_To_TT"));
+    }
+
+    /// <summary>
+    /// The first selected entity that belongs to a loaded map, as the selection orders it
+    /// </summary>
+    private Entity GetGoToTarget()
+    {
+        if (!View.Universe.HasProcessedMapLoad)
+            return null;
+
+        foreach (var ent in View.ViewportSelection.GetFilteredSelection<Entity>())
+        {
+            if (ent.Container is MapContainer { LoadState: MapContentLoadState.Loaded })
+                return ent;
+        }
+
+        return null;
     }
 
     public void DisplayMsbHeaderToggles()

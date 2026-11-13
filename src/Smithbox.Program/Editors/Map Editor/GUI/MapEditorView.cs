@@ -68,6 +68,11 @@ public class MapEditorView : IEditorView
     /// </summary>
     public bool ShowMapData { get; private set; } = false;
 
+    /// <summary>
+    /// Set by Go To: the Map Contents window (or tab) is brought forward on the next frame
+    /// </summary>
+    public bool FocusMapContents;
+
     private bool _focusCenterWindow = false;
 
     public BasicFilters BasicFilters;
@@ -321,6 +326,14 @@ public class MapEditorView : IEditorView
         // Map Contents
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
+
+        // Brought forward (out from behind another tab of its dock) by Go To
+        if (FocusMapContents)
+        {
+            ImGui.SetNextWindowFocus();
+            FocusMapContents = false;
+        }
+
         if (ImGui.Begin($@"{LOC.Get("MAP_Window_Map_Contents")}##mapEditor_MapContents_{viewIndex}", GUI.GetInnerWindowFlags()))
         {
             var width = ImGui.GetContentRegionAvail().X;
@@ -414,7 +427,11 @@ public class MapEditorView : IEditorView
                 ImGui.EndTabItem();
             }
 
-            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Contents")))
+            // Switched to by Go To
+            var contentsTabFlags = FocusMapContents ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+            FocusMapContents = false;
+
+            if (ImGui.BeginTabItem(LOC.Get("MAP_Window_Map_Contents"), contentsTabFlags))
             {
                 FocusManager.SetFocus(EditorFocusContext.MapEditor_ContentTree);
 

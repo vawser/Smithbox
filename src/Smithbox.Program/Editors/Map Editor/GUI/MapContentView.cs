@@ -48,6 +48,90 @@ public class MapContentView
         _pendingGoto = ent;
     }
 
+    // Go To (Properties header): the entity to show, waiting for the Contents window to be drawn
+    private Entity _pendingReveal;
+
+    // The entity being shown, whose tree nodes are opened until the tree has scrolled to it
+    private Entity _revealTarget;
+
+    // Frames left to open the nodes, so a target the tree can't show (hidden by the search) doesn't hold them open
+    private int _revealFrames;
+
+    /// <summary>
+    /// Brings the Map Contents window forward, makes the entity's map the active map, opens the tree nodes holding
+    /// the entity and scrolls to it. The selection is left as it is.
+    /// </summary>
+    public void RevealEntity(Entity ent)
+    {
+        if (ent == null)
+            return;
+
+        _pendingReveal = ent;
+        View.FocusMapContents = true;
+    }
+
+    private void StartReveal()
+    {
+        var ent = _pendingReveal;
+        _pendingReveal = null;
+
+        // The tree shows the active map only
+        if (ent.Container is MapContainer map && map.LoadState is MapContentLoadState.Loaded &&
+            map != View.Selection.SelectedMapContainer)
+        {
+            View.Selection.SelectedMapID = map.Name;
+            View.Selection.SelectedMapContainer = map;
+        }
+
+        View.ViewportSelection.GotoTreeTarget = ent;
+
+        _revealTarget = ent;
+        _revealFrames = 3;
+    }
+
+    private void EndRevealFrame()
+    {
+        if (_revealTarget == null)
+            return;
+
+        // Scrolled to (the goto target is cleared then), replaced by another goto, or given up on
+        if (View.ViewportSelection.GotoTreeTarget != _revealTarget || --_revealFrames <= 0)
+        {
+            _revealTarget = null;
+        }
+    }
+
+    /// <summary>
+    /// Opens the next tree node if it holds the Go To target
+    /// </summary>
+    private void OpenIfRevealing(bool holdsTarget)
+    {
+        if (_revealTarget != null && holdsTarget)
+        {
+            ImGui.SetNextItemOpen(true);
+        }
+    }
+
+    private bool CategoryHoldsReveal(MapContainer map, MsbEntityType category, List<(Type Key, List<MsbEntity> Value)> types)
+    {
+        var target = _revealTarget;
+
+        if (target == null)
+            return false;
+
+        if (types.Any(t => t.Value.Any(e => e == target)))
+            return true;
+
+        // Lights, light atlas entries and light probes are listed under their parent files rather than by type
+        return category switch
+        {
+            MsbEntityType.Light => target.Parent != null && map.BTLParents.Contains(target.Parent),
+            MsbEntityType.LightAtlas => target.Parent != null && map.LightAtlasParents.Contains(target.Parent),
+            MsbEntityType.LightProbeVolume => target.Parent != null && map.LightProbeParents.Contains(target.Parent),
+            _ => false
+        };
+    }
+
     /// <summary>
     /// Handles the update for each frame
     /// </summary>
@@ -60,6 +144,11 @@ public class MapContentView
             View.ViewportSelection.GotoTreeTarget = _pendingGoto;
 
             _pendingGoto = null;
+        }
+
+        if (_pendingReveal != null)
+        {
+            StartReveal();
         }
 
         GUI.TitleHeader("Contents", "");
@@ -79,6 +168,8 @@ public class MapContentView
         }
 
         ImGui.EndChild();
+
+        EndRevealFrame();
     }
 
     public void DisplaySearchbar()
@@ -232,6 +323,8 @@ public class MapContentView
 
         if (map != null)
         {
+            OpenIfRevealing(_revealTarget != null && _revealTarget != mapRoot);
+
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
             var mapName = AliasHelper.GetMapNameAlias(View.Project, map.Name);
@@ -473,6 +566,8 @@ public class MapContentView
                     ImGui.SetNextItemOpen(true);
                 }
 
+                OpenIfRevealing(CategoryHoldsReveal(map, cats.Key, cats.Value));
+
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), treeflags))
                 {
                     foreach (var typ in cats.Value)
@@ -501,6 +596,8 @@ public class MapContentView
                                 foreach (Entity parent in map.BTLParents)
                                 {
                                     var parentName = parent.WrappedObject;
+
+                                    OpenIfRevealing(_revealTarget?.Parent == parent);
 
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
@@ -531,6 +628,10 @@ public class MapContentView
                                     {
                                         ImGui.SetNextItemOpen(true);
                                     }
+                                    else
+                                    {
+                                        OpenIfRevealing(_revealTarget?.Parent == parent);
+                                    }
 
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
@@ -554,6 +655,8 @@ public class MapContentView
                             else if (cats.Key == MsbEntityType.MapLimitArea)
                             {
                                 // Each area is a node holding its edges
+                                OpenIfRevealing(typ.Value.Any(e => e == _revealTarget));
+
                                 if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
                                 {
                                     int index = 0;
@@ -576,6 +679,8 @@ public class MapContentView
                                 {
                                     var parentName = parent.WrappedObject;
 
+                                    OpenIfRevealing(_revealTarget?.Parent == parent);
+
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
                                     {
@@ -595,7 +700,7 @@ public class MapContentView
                                     }
                                 }
                             }
-                            else if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
+                            else if (OpenTypeNode(typ.Value, typ.Key.Name, treeflags))
                             {
                                 DisplayTypeList(map, typ.Value);
 
@@ -616,6 +721,16 @@ public class MapContentView
                 ImGui.Text($@"   {cats.Key.ToString()}");
             }
         }
+    }
+
+    /// <summary>
+    /// A type's node, opened if it holds the Go To target
+    /// </summary>
+    private bool OpenTypeNode(List<MsbEntity> objects, string label, ImGuiTreeNodeFlags treeflags)
+    {
+        OpenIfRevealing(_revealTarget != null && objects.Any(e => e == _revealTarget));
+
+        return ImGui.TreeNodeEx(label, treeflags);
     }
 
     // Lists shorter than this are drawn in full; clipping only pays off for long ones

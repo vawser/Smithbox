@@ -13,6 +13,10 @@
       "Text": "Toggle which field names are displayed in the property editor.\n\nCurrent Mode:\n{0}"
     },
     {
+      "Key": "MAP_Properties_Go_To_TT",
+      "Text": "Go To: show the selected object in the Map Contents tree, opening its tree nodes and scrolling to it. With several selected, the first is shown. Its map becomes the active map if it isn't already."
+    },
+    {
       "Key": "MAP_Properties_Toggle_Unknown_Field_Hide",
       "Text": "Show unknown fields"
     },
