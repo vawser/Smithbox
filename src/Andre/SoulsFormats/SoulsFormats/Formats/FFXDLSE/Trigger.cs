@@ -20,21 +20,21 @@ namespace SoulsFormats
 
             public Trigger() { }
 
-            internal Trigger(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Trigger(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 StateIndex = br.ReadInt32();
                 Evaluator = Evaluatable.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Evaluator.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(StateIndex);
                 Evaluator.Write(bw, classNames);

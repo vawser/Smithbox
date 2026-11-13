@@ -21,9 +21,9 @@ namespace SoulsFormats
                 Triggers = new List<Trigger>();
             }
 
-            internal State(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal State(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 int actionCount = br.ReadInt32();
                 int triggerCount = br.ReadInt32();
@@ -35,7 +35,7 @@ namespace SoulsFormats
                     Triggers.Add(new Trigger(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (Action action in Actions)
@@ -44,7 +44,7 @@ namespace SoulsFormats
                     trigger.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(Actions.Count);
                 bw.WriteInt32(Triggers.Count);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace SoulsFormats
@@ -54,26 +55,83 @@ namespace SoulsFormats
 
             internal override int Version => 2;
 
+            /// <summary>The DS2 type id; the class is named after it.</summary>
             internal abstract int Type { get; }
+
+            /// <summary>
+            /// DeS numbers param types differently from DS2. Each DeS type id maps to the DS2 class with the same body;
+            /// several DeS ids share a body (the two-int "indexed" types, the int types), so the id is kept in <see cref="FileType"/>.
+            /// Decoded from every vanilla DeS file by FfxSurvey --census (Claude/Documentation/FFX Older Games Plan.md, F1).
+            /// </summary>
+            public static readonly IReadOnlyDictionary<int, int> DesBodyClass = new Dictionary<int, int>
+            {
+                [1] = 1,   // int primitive
+                [2] = 2,   // int primitive array
+                [3] = 5,   // tick/int sequence
+                [5] = 5,   // tick/int sequence
+                [6] = 6,   // tick/int sequence
+                [7] = 7,   // float primitive
+                [9] = 9,   // tick/float sequence
+                [11] = 11, // tick/float sequence
+                [13] = 15, // colour primitive
+                [17] = 17, // tick/colour sequence
+                [31] = 37, // effect call: i32 effect id, ParamList
+                [32] = 38, // action call: i32 action id, ParamList
+                [34] = 40, // i32 (texture id)
+                [35] = 41, // i32
+                [38] = 44, [39] = 44, [40] = 44, [41] = 44, [43] = 44, [46] = 44, [47] = 44,
+                [53] = 44, [54] = 44, [56] = 44, [60] = 44, [65] = 44, // i32 unk, i32 arg index
+                [62] = 68, // i32 (sound id)
+                [63] = 69, // i32
+                [64] = 70, // tick primitive
+                [66] = 72, // i32 unk, i32 arg index, i32 unk (DeS only)
+            };
+
+            private int? fileType;
+
+            /// <summary>
+            /// The type id stored in the file. Same as <see cref="Type"/> in DS2; in DeS it's the DeS id, and the class
+            /// only describes the body layout (see <see cref="DesBodyClass"/>).
+            /// </summary>
+            [XmlIgnore]
+            public int FileType
+            {
+                get => fileType ?? Type;
+                set => fileType = value;
+            }
 
             public Param() { }
 
-            internal Param(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
-                br.AssertInt32(Type);
+                int type = br.ReadInt32();
+                int bodyType = classNames.Format == StreamFormat.DES && DesBodyClass.TryGetValue(type, out int b) ? b : type;
+                if (bodyType != Type)
+                    throw new System.IO.InvalidDataException($"Param type {type} read as {GetType().Name}.");
+                FileType = type;
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
-                bw.WriteInt32(Type);
+                // A new param in a DeS file gets the first DeS id with its body (ambiguous for the shared bodies; set FileType to choose)
+                if (fileType == null && classNames.Format == StreamFormat.DES)
+                    fileType = DesBodyClass.Where(kv => kv.Value == Type).Select(kv => (int?)kv.Key).FirstOrDefault()
+                        ?? throw new InvalidOperationException($"{GetType().Name} has no DeS type id.");
+                bw.WriteInt32(FileType);
             }
 
-            internal static Param Read(BinaryReaderEx br, List<string> classNames)
+            internal static Param Read(BinaryReaderEx br, ClassTable classNames)
             {
                 // Don't @ me.
-                int type = br.GetInt32(br.Position + 0xA);
+                int type = br.GetInt32(br.Position + classNames.HeaderSize);
+                if (classNames.Format == StreamFormat.DES)
+                {
+                    if (!DesBodyClass.TryGetValue(type, out int bodyType))
+                        throw new NotImplementedException($"Unimplemented DeS param type: {type}");
+                    type = bodyType;
+                }
                 switch (type)
                 {
                     case 1: return new Param1(br, classNames);
@@ -106,6 +164,7 @@ namespace SoulsFormats
                     case 69: return new Param69(br, classNames);
                     case 70: return new Param70(br, classNames);
                     case 71: return new Param71(br, classNames);
+                    case 72: return new Param72(br, classNames);
                     case 79: return new Param79(br, classNames);
                     case 81: return new Param81(br, classNames);
                     case 82: return new Param82(br, classNames);
@@ -129,21 +188,21 @@ namespace SoulsFormats
 
             public Param1() { }
 
-            internal Param1(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param1(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Int = PrimitiveInt.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveInt.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveInt.Write(bw, classNames, Int);
@@ -161,9 +220,9 @@ namespace SoulsFormats
                 Ints = new List<int>();
             }
 
-            internal Param2(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param2(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -172,13 +231,13 @@ namespace SoulsFormats
                     Ints.Add(PrimitiveInt.Read(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveInt.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Ints.Count);
@@ -198,9 +257,9 @@ namespace SoulsFormats
                 TickInts = new List<TickInt>();
             }
 
-            internal Param5(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param5(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -209,14 +268,14 @@ namespace SoulsFormats
                     TickInts.Add(new TickInt(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickInt tickInt in TickInts)
                     tickInt.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickInts.Count);
@@ -236,9 +295,9 @@ namespace SoulsFormats
                 TickInts = new List<TickInt>();
             }
 
-            internal Param6(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param6(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -247,14 +306,14 @@ namespace SoulsFormats
                     TickInts.Add(new TickInt(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickInt tickInt in TickInts)
                     tickInt.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickInts.Count);
@@ -272,21 +331,21 @@ namespace SoulsFormats
 
             public Param7() { }
 
-            internal Param7(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param7(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Float = PrimitiveFloat.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveFloat.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveFloat.Write(bw, classNames, Float);
@@ -304,9 +363,9 @@ namespace SoulsFormats
                 TickFloats = new List<TickFloat>();
             }
 
-            internal Param9(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param9(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -315,14 +374,14 @@ namespace SoulsFormats
                     TickFloats.Add(new TickFloat(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickFloat tickFloat in TickFloats)
                     tickFloat.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickFloats.Count);
@@ -342,9 +401,9 @@ namespace SoulsFormats
                 TickFloats = new List<TickFloat>();
             }
 
-            internal Param11(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param11(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -353,14 +412,14 @@ namespace SoulsFormats
                     TickFloats.Add(new TickFloat(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickFloat tickFloat in TickFloats)
                     tickFloat.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickFloats.Count);
@@ -380,9 +439,9 @@ namespace SoulsFormats
                 TickFloats = new List<TickFloat>();
             }
 
-            internal Param12(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param12(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -391,14 +450,14 @@ namespace SoulsFormats
                     TickFloats.Add(new TickFloat(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickFloat tickFloat in TickFloats)
                     tickFloat.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickFloats.Count);
@@ -418,9 +477,9 @@ namespace SoulsFormats
                 TickFloat3s = new List<TickFloat3>();
             }
 
-            internal Param13(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param13(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -429,14 +488,14 @@ namespace SoulsFormats
                     TickFloat3s.Add(new TickFloat3(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickFloat3 tickFloat3 in TickFloat3s)
                     tickFloat3.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickFloat3s.Count);
@@ -456,21 +515,21 @@ namespace SoulsFormats
                 Color = new PrimitiveColor();
             }
 
-            internal Param15(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param15(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Color = new PrimitiveColor(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Color.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Color.Write(bw, classNames);
@@ -488,9 +547,9 @@ namespace SoulsFormats
                 TickColors = new List<TickColor>();
             }
 
-            internal Param17(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param17(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -499,14 +558,14 @@ namespace SoulsFormats
                     TickColors.Add(new TickColor(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickColor tickColor in TickColors)
                     tickColor.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickColors.Count);
@@ -526,9 +585,9 @@ namespace SoulsFormats
                 TickColors = new List<TickColor>();
             }
 
-            internal Param18(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param18(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -537,14 +596,14 @@ namespace SoulsFormats
                     TickColors.Add(new TickColor(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickColor tickColor in TickColors)
                     tickColor.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickColors.Count);
@@ -564,9 +623,9 @@ namespace SoulsFormats
                 TickColors = new List<TickColor>();
             }
 
-            internal Param19(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param19(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -575,14 +634,14 @@ namespace SoulsFormats
                     TickColors.Add(new TickColor(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickColor tickColor in TickColors)
                     tickColor.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickColors.Count);
@@ -602,9 +661,9 @@ namespace SoulsFormats
                 TickColors = new List<TickColor>();
             }
 
-            internal Param20(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param20(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -613,14 +672,14 @@ namespace SoulsFormats
                     TickColors.Add(new TickColor(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickColor tickColor in TickColors)
                     tickColor.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickColors.Count);
@@ -640,9 +699,9 @@ namespace SoulsFormats
                 TickColor3s = new List<TickColor3>();
             }
 
-            internal Param21(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param21(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 int count = br.ReadInt32();
@@ -651,14 +710,14 @@ namespace SoulsFormats
                     TickColor3s.Add(new TickColor3(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (TickColor3 tickColor3 in TickColor3s)
                     tickColor3.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TickColor3s.Count);
@@ -681,22 +740,22 @@ namespace SoulsFormats
                 ParamList = new ParamList();
             }
 
-            internal Param37(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param37(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 EffectID = br.ReadInt32();
                 ParamList = new ParamList(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 ParamList.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(EffectID);
@@ -718,22 +777,22 @@ namespace SoulsFormats
                 ParamList = new ParamList();
             }
 
-            internal Param38(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param38(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 ActionID = br.ReadInt32();
                 ParamList = new ParamList(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 ParamList.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(ActionID);
@@ -750,15 +809,15 @@ namespace SoulsFormats
 
             public Param40() { }
 
-            internal Param40(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param40(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 TextureID = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(TextureID);
@@ -774,15 +833,15 @@ namespace SoulsFormats
 
             public Param41() { }
 
-            internal Param41(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param41(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -801,16 +860,16 @@ namespace SoulsFormats
 
             public Param44() { }
 
-            internal Param44(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param44(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -830,16 +889,16 @@ namespace SoulsFormats
 
             public Param45() { }
 
-            internal Param45(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param45(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -859,16 +918,16 @@ namespace SoulsFormats
 
             public Param46() { }
 
-            internal Param46(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param46(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -888,16 +947,16 @@ namespace SoulsFormats
 
             public Param47() { }
 
-            internal Param47(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param47(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -917,16 +976,16 @@ namespace SoulsFormats
 
             public Param59() { }
 
-            internal Param59(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param59(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -946,16 +1005,16 @@ namespace SoulsFormats
 
             public Param60() { }
 
-            internal Param60(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param60(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -975,16 +1034,16 @@ namespace SoulsFormats
 
             public Param66() { }
 
-            internal Param66(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param66(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -1001,15 +1060,15 @@ namespace SoulsFormats
 
             public Param68() { }
 
-            internal Param68(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param68(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 SoundID = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(SoundID);
@@ -1025,15 +1084,15 @@ namespace SoulsFormats
 
             public Param69() { }
 
-            internal Param69(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param69(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -1049,21 +1108,21 @@ namespace SoulsFormats
 
             public Param70() { }
 
-            internal Param70(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param70(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Tick = PrimitiveTick.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveTick.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveTick.Write(bw, classNames, Tick);
@@ -1082,16 +1141,16 @@ namespace SoulsFormats
 
             public Param71() { }
 
-            internal Param71(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param71(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -1111,22 +1170,22 @@ namespace SoulsFormats
 
             public Param79() { }
 
-            internal Param79(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param79(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Int1 = PrimitiveInt.Read(br, classNames);
                 Int2 = PrimitiveInt.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveInt.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveInt.Write(bw, classNames, Int1);
@@ -1146,22 +1205,22 @@ namespace SoulsFormats
 
             public Param81() { }
 
-            internal Param81(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param81(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Float1 = PrimitiveFloat.Read(br, classNames);
                 Float2 = PrimitiveFloat.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveFloat.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveFloat.Write(bw, classNames, Float1);
@@ -1182,23 +1241,23 @@ namespace SoulsFormats
                 Param = new Param1();
             }
 
-            internal Param82(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param82(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Param = Param.Read(br, classNames);
                 Float = PrimitiveFloat.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Param.AddClassNames(classNames);
                 PrimitiveFloat.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Param.Write(bw, classNames);
@@ -1220,23 +1279,23 @@ namespace SoulsFormats
                 Color2 = new PrimitiveColor();
             }
 
-            internal Param83(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param83(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Color1 = new PrimitiveColor(br, classNames);
                 Color2 = new PrimitiveColor(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Color1.AddClassNames(classNames);
                 Color2.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Color1.Write(bw, classNames);
@@ -1258,23 +1317,23 @@ namespace SoulsFormats
                 Color = new PrimitiveColor();
             }
 
-            internal Param84(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param84(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Param = Param.Read(br, classNames);
                 Color = new PrimitiveColor(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Param.AddClassNames(classNames);
                 Color.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Param.Write(bw, classNames);
@@ -1294,22 +1353,22 @@ namespace SoulsFormats
 
             public Param85() { }
 
-            internal Param85(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param85(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Tick1 = PrimitiveTick.Read(br, classNames);
                 Tick2 = PrimitiveTick.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 PrimitiveTick.AddClassName(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 PrimitiveTick.Write(bw, classNames, Tick1);
@@ -1329,16 +1388,16 @@ namespace SoulsFormats
 
             public Param87() { }
 
-            internal Param87(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Param87(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk04 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk04);
@@ -1362,19 +1421,19 @@ namespace SoulsFormats
                 Int = primInt;
             }
 
-            internal TickInt(BinaryReaderEx br, List<string> classNames)
+            internal TickInt(BinaryReaderEx br, ClassTable classNames)
             {
                 Tick = PrimitiveTick.Read(br, classNames);
                 Int = PrimitiveInt.Read(br, classNames);
             }
 
-            internal void AddClassNames(List<string> classNames)
+            internal void AddClassNames(ClassTable classNames)
             {
                 PrimitiveTick.AddClassName(classNames);
                 PrimitiveInt.AddClassName(classNames);
             }
 
-            internal void Write(BinaryWriterEx bw, List<string> classNames)
+            internal void Write(BinaryWriterEx bw, ClassTable classNames)
             {
                 PrimitiveTick.Write(bw, classNames, Tick);
                 PrimitiveInt.Write(bw, classNames, Int);
@@ -1397,19 +1456,19 @@ namespace SoulsFormats
                 Float = primFloat;
             }
 
-            internal TickFloat(BinaryReaderEx br, List<string> classNames)
+            internal TickFloat(BinaryReaderEx br, ClassTable classNames)
             {
                 Tick = PrimitiveTick.Read(br, classNames);
                 Float = PrimitiveFloat.Read(br, classNames);
             }
 
-            internal void AddClassNames(List<string> classNames)
+            internal void AddClassNames(ClassTable classNames)
             {
                 PrimitiveTick.AddClassName(classNames);
                 PrimitiveFloat.AddClassName(classNames);
             }
 
-            internal void Write(BinaryWriterEx bw, List<string> classNames)
+            internal void Write(BinaryWriterEx bw, ClassTable classNames)
             {
                 PrimitiveTick.Write(bw, classNames, Tick);
                 PrimitiveFloat.Write(bw, classNames, Float);
@@ -1437,7 +1496,7 @@ namespace SoulsFormats
                 Float3 = float3;
             }
 
-            internal TickFloat3(BinaryReaderEx br, List<string> classNames)
+            internal TickFloat3(BinaryReaderEx br, ClassTable classNames)
             {
                 Tick = PrimitiveTick.Read(br, classNames);
                 Float1 = PrimitiveFloat.Read(br, classNames);
@@ -1445,13 +1504,13 @@ namespace SoulsFormats
                 Float3 = PrimitiveFloat.Read(br, classNames);
             }
 
-            internal void AddClassNames(List<string> classNames)
+            internal void AddClassNames(ClassTable classNames)
             {
                 PrimitiveTick.AddClassName(classNames);
                 PrimitiveFloat.AddClassName(classNames);
             }
 
-            internal void Write(BinaryWriterEx bw, List<string> classNames)
+            internal void Write(BinaryWriterEx bw, ClassTable classNames)
             {
                 PrimitiveTick.Write(bw, classNames, Tick);
                 PrimitiveFloat.Write(bw, classNames, Float1);
@@ -1478,19 +1537,19 @@ namespace SoulsFormats
                 Color = color;
             }
 
-            internal TickColor(BinaryReaderEx br, List<string> classNames)
+            internal TickColor(BinaryReaderEx br, ClassTable classNames)
             {
                 Tick = PrimitiveTick.Read(br, classNames);
                 Color = new PrimitiveColor(br, classNames);
             }
 
-            internal void AddClassNames(List<string> classNames)
+            internal void AddClassNames(ClassTable classNames)
             {
                 PrimitiveTick.AddClassName(classNames);
                 Color.AddClassNames(classNames);
             }
 
-            internal void Write(BinaryWriterEx bw, List<string> classNames)
+            internal void Write(BinaryWriterEx bw, ClassTable classNames)
             {
                 PrimitiveTick.Write(bw, classNames, Tick);
                 Color.Write(bw, classNames);
@@ -1523,7 +1582,7 @@ namespace SoulsFormats
                 Color3 = color3;
             }
 
-            internal TickColor3(BinaryReaderEx br, List<string> classNames)
+            internal TickColor3(BinaryReaderEx br, ClassTable classNames)
             {
                 Tick = PrimitiveTick.Read(br, classNames);
                 Color1 = new PrimitiveColor(br, classNames);
@@ -1531,7 +1590,7 @@ namespace SoulsFormats
                 Color3 = new PrimitiveColor(br, classNames);
             }
 
-            internal void AddClassNames(List<string> classNames)
+            internal void AddClassNames(ClassTable classNames)
             {
                 PrimitiveTick.AddClassName(classNames);
                 Color1.AddClassNames(classNames);
@@ -1539,7 +1598,7 @@ namespace SoulsFormats
                 Color3.AddClassNames(classNames);
             }
 
-            internal void Write(BinaryWriterEx bw, List<string> classNames)
+            internal void Write(BinaryWriterEx bw, ClassTable classNames)
             {
                 PrimitiveTick.Write(bw, classNames, Tick);
                 Color1.Write(bw, classNames);

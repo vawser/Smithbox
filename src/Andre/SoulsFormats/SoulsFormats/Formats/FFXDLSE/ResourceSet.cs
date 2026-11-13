@@ -30,9 +30,9 @@ namespace SoulsFormats
                 Vector5 = new List<int>();
             }
 
-            internal ResourceSet(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal ResourceSet(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 Vector1 = DLVector.Read(br, classNames);
                 Vector2 = DLVector.Read(br, classNames);
@@ -41,13 +41,13 @@ namespace SoulsFormats
                 Vector5 = DLVector.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 DLVector.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 DLVector.Write(bw, classNames, Vector1);
                 DLVector.Write(bw, classNames, Vector2);

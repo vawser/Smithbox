@@ -22,25 +22,25 @@ namespace SoulsFormats
                 Value = value;
             }
 
-            internal PrimitiveInt(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal PrimitiveInt(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 Value = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(Value);
             }
 
-            internal static int Read(BinaryReaderEx br, List<string> classNames)
+            internal static int Read(BinaryReaderEx br, ClassTable classNames)
                 => new PrimitiveInt(br, classNames).Value;
 
-            internal static void AddClassName(List<string> classNames)
+            internal static void AddClassName(ClassTable classNames)
                 => new PrimitiveInt().AddClassNames(classNames);
 
-            internal static void Write(BinaryWriterEx bw, List<string> classNames, int value)
+            internal static void Write(BinaryWriterEx bw, ClassTable classNames, int value)
                 => new PrimitiveInt(value).Write(bw, classNames);
         }
 
@@ -60,25 +60,25 @@ namespace SoulsFormats
                 Value = value;
             }
 
-            internal PrimitiveFloat(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal PrimitiveFloat(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 Value = br.ReadSingle();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteSingle(Value);
             }
 
-            internal static float Read(BinaryReaderEx br, List<string> classNames)
+            internal static float Read(BinaryReaderEx br, ClassTable classNames)
                 => new PrimitiveFloat(br, classNames).Value;
 
-            internal static void AddClassName(List<string> classNames)
+            internal static void AddClassName(ClassTable classNames)
                 => new PrimitiveFloat().AddClassNames(classNames);
 
-            internal static void Write(BinaryWriterEx bw, List<string> classNames, float value)
+            internal static void Write(BinaryWriterEx bw, ClassTable classNames, float value)
                 => new PrimitiveFloat(value).Write(bw, classNames);
         }
 
@@ -98,25 +98,25 @@ namespace SoulsFormats
                 Value = value;
             }
 
-            internal PrimitiveTick(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal PrimitiveTick(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 Value = br.ReadSingle();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteSingle(Value);
             }
 
-            internal static float Read(BinaryReaderEx br, List<string> classNames)
+            internal static float Read(BinaryReaderEx br, ClassTable classNames)
                 => new PrimitiveTick(br, classNames).Value;
 
-            internal static void AddClassName(List<string> classNames)
+            internal static void AddClassName(ClassTable classNames)
                 => new PrimitiveTick().AddClassNames(classNames);
 
-            internal static void Write(BinaryWriterEx bw, List<string> classNames, float value)
+            internal static void Write(BinaryWriterEx bw, ClassTable classNames, float value)
                 => new PrimitiveTick(value).Write(bw, classNames);
         }
 
@@ -144,9 +144,9 @@ namespace SoulsFormats
                 A = a;
             }
 
-            internal PrimitiveColor(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal PrimitiveColor(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 R = br.ReadSingle();
                 G = br.ReadSingle();
@@ -154,7 +154,7 @@ namespace SoulsFormats
                 A = br.ReadSingle();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteSingle(R);
                 bw.WriteSingle(G);

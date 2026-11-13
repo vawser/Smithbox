@@ -21,9 +21,9 @@ namespace SoulsFormats
                 States = new List<State>();
             }
 
-            internal StateMap(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal StateMap(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 int stateCount = br.ReadInt32();
                 States = new List<State>(stateCount);
@@ -31,14 +31,14 @@ namespace SoulsFormats
                     States.Add(new State(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (State state in States)
                     state.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(States.Count);
                 foreach (State state in States)

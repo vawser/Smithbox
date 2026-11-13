@@ -41,24 +41,24 @@ namespace SoulsFormats
 
             public Evaluatable() { }
 
-            internal Evaluatable(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Evaluatable(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 br.AssertInt32(Opcode);
                 br.AssertInt32(Type);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(Opcode);
                 bw.WriteInt32(Type);
             }
 
-            internal static Evaluatable Read(BinaryReaderEx br, List<string> classNames)
+            internal static Evaluatable Read(BinaryReaderEx br, ClassTable classNames)
             {
                 // Don't @ me.
-                int opcode = br.GetInt32(br.Position + 0xA);
+                int opcode = br.GetInt32(br.Position + classNames.HeaderSize);
                 switch (opcode)
                 {
                     case 1: return new EvaluatableConstant(br, classNames);
@@ -94,21 +94,21 @@ namespace SoulsFormats
 
             public EvaluatableUnary() { }
 
-            internal EvaluatableUnary(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableUnary(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Operand = Evaluatable.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Operand.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Operand.Write(bw, classNames);
@@ -125,23 +125,23 @@ namespace SoulsFormats
 
             public EvaluatableBinary() { }
 
-            internal EvaluatableBinary(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableBinary(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Right = Evaluatable.Read(br, classNames);
                 Left = Evaluatable.Read(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 Left.AddClassNames(classNames);
                 Right.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 Right.Write(bw, classNames);
@@ -160,15 +160,15 @@ namespace SoulsFormats
 
             public EvaluatableConstant() { }
 
-            internal EvaluatableConstant(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableConstant(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Value = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Value);
@@ -191,16 +191,16 @@ namespace SoulsFormats
 
             public Evaluatable2() { }
 
-            internal Evaluatable2(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Evaluatable2(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk00 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk00);
@@ -224,16 +224,16 @@ namespace SoulsFormats
 
             public Evaluatable3() { }
 
-            internal Evaluatable3(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Evaluatable3(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 base.Deserialize(br, classNames);
                 Unk00 = br.ReadInt32();
                 ArgIndex = br.ReadInt32();
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 base.Serialize(bw, classNames);
                 bw.WriteInt32(Unk00);
@@ -251,7 +251,7 @@ namespace SoulsFormats
 
             public EvaluatableCurrentTick() { }
 
-            internal EvaluatableCurrentTick(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableCurrentTick(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "CurrentTick";
         }
@@ -264,7 +264,7 @@ namespace SoulsFormats
 
             public EvaluatableTotalTick() { }
 
-            internal EvaluatableTotalTick(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableTotalTick(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "TotalTick";
         }
@@ -275,7 +275,7 @@ namespace SoulsFormats
 
             public EvaluatableAnd() { }
 
-            internal EvaluatableAnd(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableAnd(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) && ({Right})";
         }
@@ -286,7 +286,7 @@ namespace SoulsFormats
 
             public EvaluatableOr() { }
 
-            internal EvaluatableOr(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableOr(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) || ({Right})";
         }
@@ -297,7 +297,7 @@ namespace SoulsFormats
 
             public EvaluatableGE() { }
 
-            internal EvaluatableGE(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableGE(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) >= ({Right})";
         }
@@ -308,7 +308,7 @@ namespace SoulsFormats
 
             public EvaluatableGT() { }
 
-            internal EvaluatableGT(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableGT(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) > ({Right})";
         }
@@ -319,7 +319,7 @@ namespace SoulsFormats
 
             public EvaluatableLE() { }
 
-            internal EvaluatableLE(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableLE(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) <= ({Right})";
         }
@@ -330,7 +330,7 @@ namespace SoulsFormats
 
             public EvaluatableLT() { }
 
-            internal EvaluatableLT(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableLT(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) < ({Right})";
         }
@@ -341,7 +341,7 @@ namespace SoulsFormats
 
             public EvaluatableEQ() { }
 
-            internal EvaluatableEQ(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableEQ(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) == ({Right})";
         }
@@ -352,7 +352,7 @@ namespace SoulsFormats
 
             public EvaluatableNE() { }
 
-            internal EvaluatableNE(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableNE(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"({Left}) != ({Right})";
         }
@@ -363,7 +363,7 @@ namespace SoulsFormats
 
             public EvaluatableNot() { }
 
-            internal EvaluatableNot(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableNot(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => $"!({Operand})";
         }
@@ -376,7 +376,7 @@ namespace SoulsFormats
 
             public EvaluatableChildExists() { }
 
-            internal EvaluatableChildExists(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableChildExists(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "ChildExists";
         }
@@ -389,7 +389,7 @@ namespace SoulsFormats
 
             public EvaluatableParentExists() { }
 
-            internal EvaluatableParentExists(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableParentExists(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "ParentExists";
         }
@@ -402,7 +402,7 @@ namespace SoulsFormats
 
             public EvaluatableDistanceFromCamera() { }
 
-            internal EvaluatableDistanceFromCamera(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableDistanceFromCamera(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "DistanceFromCamera";
         }
@@ -415,7 +415,7 @@ namespace SoulsFormats
 
             public EvaluatableEmittersStopped() { }
 
-            internal EvaluatableEmittersStopped(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal EvaluatableEmittersStopped(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
             public override string ToString() => "EmittersStopped";
         }

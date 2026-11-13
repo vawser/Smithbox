@@ -23,21 +23,21 @@ namespace SoulsFormats
                 ParamList = new ParamList();
             }
 
-            internal Action(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal Action(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 ID = br.ReadInt32();
                 ParamList = new ParamList(br, classNames);
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 ParamList.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(ID);
                 ParamList.Write(bw, classNames);

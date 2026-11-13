@@ -24,28 +24,28 @@ namespace SoulsFormats
                 Params = new List<Param>();
             }
 
-            internal ParamList(BinaryReaderEx br, List<string> classNames) : base(br, classNames) { }
+            internal ParamList(BinaryReaderEx br, ClassTable classNames) : base(br, classNames) { }
 
-            protected internal override void Deserialize(BinaryReaderEx br, List<string> classNames)
+            protected internal override void Deserialize(BinaryReaderEx br, ClassTable classNames)
             {
                 int paramCount = br.ReadInt32();
-                Unk04 = br.ReadInt32();
+                if (ClassVersion >= 2) Unk04 = br.ReadInt32();
                 Params = new List<Param>(paramCount);
                 for (int i = 0; i < paramCount; i++)
                     Params.Add(Param.Read(br, classNames));
             }
 
-            internal override void AddClassNames(List<string> classNames)
+            internal override void AddClassNames(ClassTable classNames)
             {
                 base.AddClassNames(classNames);
                 foreach (Param param in Params)
                     param.AddClassNames(classNames);
             }
 
-            protected internal override void Serialize(BinaryWriterEx bw, List<string> classNames)
+            protected internal override void Serialize(BinaryWriterEx bw, ClassTable classNames)
             {
                 bw.WriteInt32(Params.Count);
-                bw.WriteInt32(Unk04);
+                if (ClassVersion >= 2) bw.WriteInt32(Unk04);
                 foreach (Param param in Params)
                     param.Write(bw, classNames);
             }
