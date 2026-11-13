@@ -1,0 +1,68 @@
+{
+  "Entries": [
+    { "Key": "MAP_SaveCheck_Window_Title", "Text": "Save Check" },
+    { "Key": "MAP_SaveCheck_Hint", "Text": "Problems found in the maps the save was about to write. Click an object to select it, fix what is listed, then check again. Errors make the save fail or write data the game can't use; warnings are saved, but are probably mistakes." },
+
+    { "Key": "MAP_SaveCheck_Summary_Header", "Text": "Summary" },
+    { "Key": "MAP_SaveCheck_Summary_Header_TT", "Text": "What the last check found." },
+    { "Key": "MAP_SaveCheck_Summary", "Text": "{0} errors and {1} warnings in {2} maps." },
+    { "Key": "MAP_SaveCheck_Summary_None", "Text": "No problems found in the {0} maps checked." },
+    { "Key": "MAP_SaveCheck_Summary_Can_Save", "Text": "Nothing here stops the save." },
+
+    { "Key": "MAP_SaveCheck_Actions_Header", "Text": "Actions" },
+    { "Key": "MAP_SaveCheck_Actions_Header_TT", "Text": "Check the same maps again, save, or close this window." },
+    { "Key": "MAP_SaveCheck_Check_Again", "Text": "Check Again" },
+    { "Key": "MAP_SaveCheck_Check_Again_TT", "Text": "Runs the check again on the same maps, after you have fixed some of the problems." },
+    { "Key": "MAP_SaveCheck_Save", "Text": "Save" },
+    { "Key": "MAP_SaveCheck_Save_TT", "Text": "Saves every modified map, as File > Save does." },
+    { "Key": "MAP_SaveCheck_Save_Anyway", "Text": "Save Anyway" },
+    { "Key": "MAP_SaveCheck_Save_Anyway_TT", "Text": "Saves without checking. A map with a broken reference still fails to save, and says why." },
+    { "Key": "MAP_SaveCheck_Close", "Text": "Close" },
+    { "Key": "MAP_SaveCheck_Close_TT", "Text": "Closes this window without saving." },
+
+    { "Key": "MAP_SaveCheck_List_Header", "Text": "Problems" },
+    { "Key": "MAP_SaveCheck_List_Header_TT", "Text": "Errors first, then warnings, by map." },
+    { "Key": "MAP_SaveCheck_Show_Warnings", "Text": "Show Warnings" },
+    { "Key": "MAP_SaveCheck_Show_Warnings_TT", "Text": "Lists the warnings as well as the errors. Vanilla maps have some duplicate entity IDs of their own, so hiding the warnings can make the errors easier to find." },
+    { "Key": "MAP_SaveCheck_Column_Severity", "Text": "Severity" },
+    { "Key": "MAP_SaveCheck_Column_Map", "Text": "Map" },
+    { "Key": "MAP_SaveCheck_Column_Object", "Text": "Object" },
+    { "Key": "MAP_SaveCheck_Column_Problem", "Text": "Problem" },
+    { "Key": "MAP_SaveCheck_Severity_Error", "Text": "Error" },
+    { "Key": "MAP_SaveCheck_Severity_Warning", "Text": "Warning" },
+    { "Key": "MAP_SaveCheck_Select_TT", "Text": "Selects and frames the object." },
+    { "Key": "MAP_SaveCheck_Stale_TT", "Text": "The object or its map is gone since the check. Check again." },
+    { "Key": "MAP_SaveCheck_Clear", "Text": "Clear" },
+    { "Key": "MAP_SaveCheck_Clear_TT", "Text": "Clears {0}, so it no longer refers to anything. Can be undone." },
+
+    { "Key": "MAP_SaveCheck_Issue_Broken_Reference", "Text": "{0} refers to \"{1}\", which no object of the right type in the map is named" },
+    { "Key": "MAP_SaveCheck_Issue_DS2_Duplicate_ID", "Text": "Another {0} row already has ID {1}" },
+    { "Key": "MAP_SaveCheck_Issue_Duplicate_Name", "Text": "\"{0}\" is also the name of {1}, so references to it are ambiguous" },
+    { "Key": "MAP_SaveCheck_Issue_Duplicate_Entity_ID", "Text": "Entity ID {0} is also used by {1}" },
+    { "Key": "MAP_SaveCheck_Issue_Missing_Param_Row", "Text": "{0} is {1}, which the param has no row for" },
+
+    { "Key": "MAP_SaveCheck_Log_Stopped", "Text": "Nothing was saved: the save check found {0} errors and {1} warnings. See the Save Check window." },
+
+    { "Key": "MAP_SaveCheck_Menu_Enabled", "Text": "Check Maps Before Saving" },
+    { "Key": "MAP_SaveCheck_Menu_Enabled_TT", "Text": "Before File > Save writes anything, checks the maps it will write for broken references, duplicate names and entity IDs, missing param rows and DS2 duplicate IDs. Errors stop the save and open the Save Check window. Autosaves aren't checked." },
+    { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings", "Text": "Stop on Warnings" },
+    { "Key": "MAP_SaveCheck_Menu_Stop_On_Warnings_TT", "Text": "Warnings stop the save too, not only errors. Vanilla maps have some duplicate entity IDs, so this is off by default." },
+    { "Key": "MAP_SaveCheck_Menu_Check_Now", "Text": "Check Maps Now" },
+    { "Key": "MAP_SaveCheck_Menu_Check_Now_TT", "Text": "Checks every loaded map and shows the result in the Save Check window, without saving." },
+
+    { "Key": "MAP_Validator_Hint", "Text": "Checks the active map for broken references, duplicate names and entity IDs, missing param rows and DS2 duplicate IDs. This is the same check File > Save runs." },
+    { "Key": "MAP_Validator_No_Map", "Text": "Load a map, or select an object in one, to check it." },
+    { "Key": "MAP_Validator_Actions_Header", "Text": "Actions" },
+    { "Key": "MAP_Validator_Actions_Header_TT", "Text": "Check the active map." },
+    { "Key": "MAP_Validator_Validate", "Text": "Validate" },
+    { "Key": "MAP_Validator_Validate_TT", "Text": "Checks {0}." },
+    { "Key": "MAP_Validator_Results_Header", "Text": "Results: {0}" },
+    { "Key": "MAP_Validator_Results_Header_TT", "Text": "The problems found, by kind. Click one to select and frame its object." },
+    { "Key": "MAP_Validator_No_Issues", "Text": "No issues found." },
+    { "Key": "MAP_Validator_Tab_Broken_References", "Text": "Broken References ({0})" },
+    { "Key": "MAP_Validator_Tab_DS2_Duplicate_IDs", "Text": "Duplicate IDs ({0})" },
+    { "Key": "MAP_Validator_Tab_Duplicate_Names", "Text": "Duplicate Names ({0})" },
+    { "Key": "MAP_Validator_Tab_Duplicate_Entity_IDs", "Text": "Entity IDs ({0})" },
+    { "Key": "MAP_Validator_Tab_Missing_Param_Rows", "Text": "Param Rows ({0})" }
+  ]
+}

@@ -658,6 +658,10 @@ public class CFG
     public bool Project_Automatic_Save_Include_Map_Editor = true;
 
     public bool MapEditor_Allow_Unmodified_Save = false;
+
+    // Save Check: File › Save checks the maps it will write first, and stops on errors (or warnings too)
+    public bool MapEditor_SaveCheck_Enabled = true;
+    public bool MapEditor_SaveCheck_Stop_On_Warnings = false;
     public bool MapEditor_Allow_Automatic_Save = true;
 
     // Navigation tool: the tabs whose "How this works" section has been shown once, so it starts closed on them

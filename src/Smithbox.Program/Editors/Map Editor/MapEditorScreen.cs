@@ -32,6 +32,11 @@ public class MapEditorScreen : EditorScreen
     /// </summary>
     public List<MsbEntity> Clipboard = new();
 
+    /// <summary>
+    /// The problems that stopped the last save, for the user to fix or save past
+    /// </summary>
+    public MapSaveCheckWindow SaveCheckWindow;
+
     public MapEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -42,6 +47,8 @@ public class MapEditorScreen : EditorScreen
 
         CommandQueue = new MapCommandQueue(this, project);
         Shortcuts = new MapShortcuts(this, project);
+
+        SaveCheckWindow = new MapSaveCheckWindow(this, project);
     }
 
     public string EditorName => "Visual Map Editor";
@@ -86,6 +93,8 @@ public class MapEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0), ref GUI.DockGroup_MapEditor);
 
         ViewHandler.HandleViews(dsid);
+
+        SaveCheckWindow.Display();
     }
 
     public void FileMenu()
@@ -119,6 +128,37 @@ public class MapEditorScreen : EditorScreen
             }
             GUI.Tooltip(LOC.Get("EDITOR_Menubar_Allow_Automatic_Save_TT"));
             GUI.ShowActiveStatus(CFG.Current.MapEditor_Allow_Automatic_Save);
+
+            ImGui.Separator();
+
+            // Check Maps Before Saving
+            if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Enabled")}##saveCheckEnabled"))
+            {
+                CFG.Current.MapEditor_SaveCheck_Enabled = !CFG.Current.MapEditor_SaveCheck_Enabled;
+            }
+            GUI.Tooltip(LOC.Get("MAP_SaveCheck_Menu_Enabled_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_SaveCheck_Enabled);
+
+            // Stop on Warnings
+            if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Stop_On_Warnings")}##saveCheckWarnings", "", false,
+                CFG.Current.MapEditor_SaveCheck_Enabled))
+            {
+                CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings = !CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings;
+            }
+            GUI.Tooltip(LOC.Get("MAP_SaveCheck_Menu_Stop_On_Warnings_TT"));
+            GUI.ShowActiveStatus(CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings);
+
+            // Show the last report
+            if (ImGui.MenuItem($"{LOC.Get("MAP_SaveCheck_Menu_Check_Now")}##saveCheckNow"))
+            {
+                var maps = Project.Handler.MapData.PrimaryBank.Maps.Values
+                    .Select(w => w.MapContainer)
+                    .Where(m => m != null)
+                    .ToList();
+
+                SaveCheckWindow.Open(MapCheck.Run(Project, maps), maps);
+            }
+            GUI.Tooltip(LOC.Get("MAP_SaveCheck_Menu_Check_Now_TT"));
 
             ImGui.EndMenu();
         }
@@ -630,12 +670,33 @@ public class MapEditorScreen : EditorScreen
         return activeView.ViewportWindow.InputCaptured();
     }
 
-    public void Save(bool autoSave = false)
+    /// <param name="autoSave">An autosave: skipped unless allowed, and it opens no windows</param>
+    /// <param name="skipCheck">Save without the save check, as Save Anyway does</param>
+    public void Save(bool autoSave = false, bool skipCheck = false)
     {
         var activeView = ViewHandler.ActiveView;
 
         if (activeView == null)
             return;
+
+        // The save check: problems in the maps about to be written are listed in the Save Check window, and
+        // nothing is saved if any of them stops the save. Autosaves keep their old behaviour (U10).
+        if (!autoSave && !skipCheck && CFG.Current.MapEditor_SaveCheck_Enabled)
+        {
+            var maps = GetMapsToSave();
+            var issues = MapCheck.Run(Project, maps);
+
+            if (MapCheck.StopsSave(issues, CFG.Current.MapEditor_SaveCheck_Stop_On_Warnings))
+            {
+                SaveCheckWindow.Open(issues, maps);
+                Smithbox.Log(this, LOC.Get("MAP_SaveCheck_Log_Stopped", issues.Count(i => i.Severity is MapCheckSeverity.Error),
+                    issues.Count(i => i.Severity is MapCheckSeverity.Warning)), LogLevel.Warning);
+                return;
+            }
+
+            // Nothing stops this save, so an open report is out of date
+            SaveCheckWindow.Close();
+        }
 
         try
         {
@@ -708,7 +769,22 @@ public class MapEditorScreen : EditorScreen
 
     public void SaveUnsaved()
     {
-        Save();
+        // From the unsaved changes prompt when exiting or closing the project, which can't wait for the Save
+        // Check window; a failure still shows the save-failure dialog
+        Save(skipCheck: true);
+    }
+
+    /// <summary>
+    /// The loaded maps whose MSB a save will write: those with MSB edits, or all of them when unmodified saves
+    /// are allowed. Shared by every view, like the save.
+    /// </summary>
+    public List<MapContainer> GetMapsToSave()
+    {
+        return Project.Handler.MapData.PrimaryBank.Maps.Values
+            .Select(w => w.MapContainer)
+            .Where(m => m != null && m.LoadState is MapContentLoadState.Loaded &&
+                (CFG.Current.MapEditor_Allow_Unmodified_Save || m.IsDirty(MapFileType.MSB)))
+            .ToList();
     }
 
     public void HandleSaveException(SavingFailedException e)

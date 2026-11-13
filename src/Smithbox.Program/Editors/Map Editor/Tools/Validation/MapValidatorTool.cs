@@ -1,408 +1,134 @@
-﻿using Andre.Formats;
-using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor;
 
+/// <summary>
+/// Map Validation: checks the active map with <see cref="MapCheck" />, the same check File › Save runs, and lists
+/// the problems by kind. Its own checks (by property name) were retired for the shared ones; the old version is in
+/// .archive/MapValidatorTool_PreSaveCheck.cs.txt.
+/// </summary>
 public class MapValidatorTool
 {
     private MapEditorView View;
     private ProjectEntry Project;
 
-    private List<MapValidationEntry> ValidationEntries;
+    private List<MapCheckIssue> Issues = new();
+    private MapContainer CheckedMap;
 
     private bool FirstValidate = false;
+
+    private static readonly (MapCheckKind Kind, string Key)[] Tabs =
+    {
+        (MapCheckKind.BrokenReference, "MAP_Validator_Tab_Broken_References"),
+        (MapCheckKind.DS2DuplicateID, "MAP_Validator_Tab_DS2_Duplicate_IDs"),
+        (MapCheckKind.DuplicateName, "MAP_Validator_Tab_Duplicate_Names"),
+        (MapCheckKind.DuplicateEntityID, "MAP_Validator_Tab_Duplicate_Entity_IDs"),
+        (MapCheckKind.MissingParamRow, "MAP_Validator_Tab_Missing_Param_Rows")
+    };
 
     public MapValidatorTool(MapEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
-
-        ValidationEntries = new();
     }
 
     public void OnToolWindow()
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        GUI.WrappedText(LOC.Get("MAP_Validator_Hint"));
 
-        var windowSize = DPI.GetWindowSize(Smithbox.Instance._context);
-        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-        var sectionHeight = windowSize.Y * 0.25f;
-        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+        var map = View.Selection.SelectedMapContainer;
 
-        GUI.WrappedText("Validate the currently loaded map.");
-        GUI.WrappedText("");
+        if (map == null)
+        {
+            GUI.WrappedText(LOC.Get("MAP_Validator_No_Map"));
+            return;
+        }
+
+        // Actions
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Validator_Actions_Header"), LOC.Get("MAP_Validator_Actions_Header_TT"));
 
         GUI.MultiButtonInput("validateActions",
-            "validateMap", "Validate", "", ValidateMap);
+            "validateMap", LOC.Get("MAP_Validator_Validate"), LOC.Get("MAP_Validator_Validate_TT", map.Name), ValidateMap);
 
-        if (ValidationEntries.Count > 0)
+        if (!FirstValidate)
+            return;
+
+        // Results
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("MAP_Validator_Results_Header", CheckedMap?.Name ?? ""), LOC.Get("MAP_Validator_Results_Header_TT"));
+
+        if (Issues.Count == 0)
         {
-            GUI.Spacer();
-            GUI.SimpleHeader("Results", "");
+            GUI.WrappedText(LOC.Get("MAP_Validator_No_Issues"));
+            return;
+        }
 
-            ImGui.BeginChild("ValidationTabs", ImGuiChildFlags.Borders);
+        ImGui.BeginChild("ValidationTabs", ImGuiChildFlags.Borders);
 
-            ImGui.BeginTabBar("##mapValidationTabBar");
-
-            DisplayEntityID();
-
-            DisplayCommonMatches(
-                "Collision Name", "collisionName", 
-                "refers to a collision name that doesn't exist:",
-                MapValidationType.CollisionName);
-
-            DisplayCommonMatches(
-                "Walk Route", "walkRoute",
-                "refers to a walk route name that doesn't exist:",
-                MapValidationType.WalkRoute);
-
-            DisplayCommonMatches(
-                "Part Name", "partName",
-                "refers to a part name entry that doesn't exist:",
-                MapValidationType.PartNames);
-
-            DisplayCommonMatches(
-                "NPC Think", "npcThink",
-                "refers to a NpcThinkParam entry that doesn't exist:",
-                MapValidationType.ThinkParamID);
-
-            DisplayCommonMatches(
-                "NPC Param", "npcParam",
-                "refers to a NpcParam entry that doesn't exist:",
-                MapValidationType.NPCParamID);
-
-            DisplayCommonMatches(
-                "Character Init", "charaInit",
-                "refers to a CharaInitParam entry that doesn't exist:",
-                MapValidationType.CharaInitID);
-
-            DisplayCommonMatches(
-                "Chameleon Param", "chameleonParam",
-                "refers to a MapMimicryEstablishmentParam entry that doesn't exist:",
-                MapValidationType.ChameleonParamID);
+        if (ImGui.BeginTabBar("##mapValidationTabBar"))
+        {
+            foreach (var (kind, key) in Tabs)
+            {
+                DisplayTab(kind, key);
+            }
 
             ImGui.EndTabBar();
-
-            ImGui.EndChild();
         }
-        else if(FirstValidate && ValidationEntries.Count == 0)
-        {
-            GUI.Spacer();
-            GUI.SimpleHeader("Results", "");
 
-            GUI.WrappedText("No issues found.");
-        }
+        ImGui.EndChild();
     }
 
     public void ValidateMap()
     {
-        ValidationEntries = new();
-
-        var mapContainer = View.Selection.SelectedMapContainer;
-
-        if (mapContainer != null)
-        {
-            // Entity ID
-            ValidateEntityID(mapContainer);
-
-            // Collision Name
-            if (Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                ValidateReferenceProperty(mapContainer, "CollisionPartName", MapValidationType.CollisionName, true);
-
-                ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
-            }
-            else
-            {
-                ValidateReferenceProperty(mapContainer, "CollisionName", MapValidationType.CollisionName, true);
-
-                ValidateReferenceProperty(mapContainer, "UnkHitName", MapValidationType.CollisionName, true);
-            }
-
-            // Walk Route
-            ValidateReferenceProperty(mapContainer, "WalkRouteName",
-                MapValidationType.WalkRoute, true);
-
-            // Part Names
-            if (Project.Descriptor.ProjectType is ProjectType.ER 
-                or ProjectType.AC6 
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
-            {
-                ValidateStringArrayReferenceProperty(mapContainer, "PartNames", MapValidationType.PartNames, true);
-
-                ValidateReferenceProperty(mapContainer, "UnkT54PartName",
-                    MapValidationType.PartNames, true);
-            }
-
-            // Params
-            ValidateParamProperty(mapContainer, "NpcThinkParam", "ThinkParamID",
-            MapValidationType.ThinkParamID, [-1]);
-
-            ValidateParamProperty(mapContainer, "NpcParam", "NPCParamID",
-                MapValidationType.NPCParamID, [-1]);
-
-            ValidateParamProperty(mapContainer, "CharaInitParam", "CharaInitID",
-                MapValidationType.CharaInitID, [-1]);
-
-            ValidateParamProperty(mapContainer, "MapMimicryEstablishmentParam", "ChameleonParamID",
-                MapValidationType.ChameleonParamID, [-1]);
-        }
+        CheckedMap = View.Selection.SelectedMapContainer;
+        Issues = CheckedMap != null ? MapCheck.Run(Project, new[] { CheckedMap }) : new();
 
         FirstValidate = true;
     }
 
-    public void DisplayEntityID()
+    private void DisplayTab(MapCheckKind kind, string key)
     {
-        if (!ValidationEntries.Any(e => e.Type is MapValidationType.EntityID))
+        var entries = Issues.Where(e => e.Kind == kind).ToList();
+
+        if (entries.Count == 0)
             return;
 
-        if (ImGui.BeginTabItem("Entity ID##entityIdValidationList"))
+        if (ImGui.BeginTabItem($"{LOC.Get(key, entries.Count)}##validationTab_{kind}"))
         {
-            var entries = ValidationEntries.ToLookup(e => e.Type is MapValidationType.EntityID);
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(entries.Count);
 
-            int i = 0;
-            foreach (var entry in entries[true])
+            while (clipper.Step())
             {
-                var message = $"{entry.Name} has a duplicate entity ID of {entry.Value}";
-
-                if(ImGui.Selectable($"{message}##validationEntry_entityID_{i}"))
+                for (var i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                 {
-                    FocusEntry(entry);
-                }
+                    var entry = entries[i];
+                    var current = entry.Map.Objects.Contains(entry.Entity);
 
-                i++;
+                    if (ImGui.Selectable($"{entry.Entity.PrettyName}: {entry.Describe()}##validationEntry_{kind}_{i}", false,
+                        current ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                    {
+                        FocusEntry(entry);
+                    }
+                }
             }
+
+            clipper.End();
 
             ImGui.EndTabItem();
         }
     }
 
-    public void DisplayCommonMatches(string title, string id, string msg, MapValidationType validationType)
-    {
-        if (!ValidationEntries.Any(e => e.Type == validationType))
-            return;
-
-        if (ImGui.BeginTabItem($"{title}##{id}ValidationList"))
-        {
-            var entries = ValidationEntries.ToLookup(e => e.Type == validationType);
-
-            int i = 0;
-            foreach (var entry in entries[true])
-            {
-                var message = $"{entry.Name} {msg} {entry.Value}";
-
-                if (ImGui.Selectable($"{message}##{id}_validationEntry_{i}"))
-                {
-                    FocusEntry(entry);
-                }
-
-                i++;
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void FocusEntry(MapValidationEntry entry)
+    private void FocusEntry(MapCheckIssue entry)
     {
         View.ViewportSelection.ClearSelection();
-        View.ViewportHandler.ActiveViewport.Viewport.FramePosition(entry.AssociatedEntity.GetLocalTransform().Position, 10f);
-        View.ViewportSelection.AddSelection(entry.AssociatedEntity);
+        View.ViewportSelection.AddSelection(entry.Entity);
+        View.FrameAction.ApplyViewportFrame();
     }
-
-    public void ValidateEntityID(MapContainer map)
-    {
-        Dictionary<int, string> entityIDList = new();
-        foreach (Entity obj in map.Objects)
-        {
-            var objType = obj.WrappedObject.GetType().ToString();
-            PropertyInfo entityIdProperty = obj.GetProperty("EntityID");
-
-            if (entityIdProperty != null)
-            {
-                var idObj = entityIdProperty.GetValue(obj.WrappedObject);
-                if (idObj is not int entityID)
-                {
-                    // EntityID is uint in Elden Ring. Only <2^31 is used in practice.
-                    // If really desired, a separate routine could be created.
-                    if (idObj is uint uID)
-                    {
-                        entityID = unchecked((int)uID);
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-
-                if (entityID > 0)
-                {
-                    var entryExists = entityIDList.TryGetValue(entityID, out var name);
-                    if (entryExists)
-                    {
-                        var validationEntry = new MapValidationEntry();
-                        validationEntry.AssociatedEntity = obj;
-                        validationEntry.Type = MapValidationType.EntityID;
-                        validationEntry.Name = obj.Name;
-                        validationEntry.Value = $"{entityID}";
-
-                        ValidationEntries.Add(validationEntry);
-                    }
-                    else
-                    {
-                        entityIDList.Add(entityID, obj.PrettyName);
-                    }
-                }
-            }
-        }
-    }
-
-    public void ValidateReferenceProperty(MapContainer map, string propName, MapValidationType type, bool ignoreEmpty = false)
-    {
-        foreach (Entity obj in map.Objects)
-        {
-            var prop = PropFinderUtil.FindProperty(propName, obj.WrappedObject);
-
-            if (prop == null)
-                continue;
-
-            var entResult = (string)PropFinderUtil.FindPropertyValue(prop, obj.WrappedObject);
-
-            if (ignoreEmpty)
-            {
-                if (entResult == null || entResult == "")
-                    continue;
-            }
-
-            var colNameEnt = map.GetObjectByName(entResult);
-
-            if (colNameEnt == null)
-            {
-                var validationEntry = new MapValidationEntry();
-                validationEntry.AssociatedEntity = obj;
-                validationEntry.Type = type;
-                validationEntry.Name = obj.Name;
-                validationEntry.Value = $"{entResult}";
-
-                ValidationEntries.Add(validationEntry);
-            }
-        }
-    }
-
-    public void ValidateStringArrayReferenceProperty(MapContainer map, string propName, MapValidationType type, bool ignoreEmpty = false)
-    {
-        foreach (Entity obj in map.Objects)
-        {
-            var prop = PropFinderUtil.FindProperty(propName, obj.WrappedObject);
-
-            if (prop == null)
-                continue;
-
-            var entResult = (string[])PropFinderUtil.FindPropertyValue(prop, obj.WrappedObject);
-
-            foreach (var entry in entResult)
-            {
-                if (ignoreEmpty)
-                {
-                    if (entry == null || entry == "")
-                        continue;
-                }
-
-                var colNameEnt = map.GetObjectByName(entry);
-
-                if (colNameEnt == null)
-                {
-                    var validationEntry = new MapValidationEntry();
-                    validationEntry.AssociatedEntity = obj;
-                    validationEntry.Type = type;
-                    validationEntry.Name = obj.Name;
-                    validationEntry.Value = $"{entry}";
-
-                    ValidationEntries.Add(validationEntry);
-                }
-            }
-        }
-    }
-
-    public void ValidateParamProperty(MapContainer map, string paramName, string propName, MapValidationType type, int[] defaultValues)
-    {
-        if (Project.Handler.ParamEditor == null)
-            return;
-
-        if (!Project.Handler.ParamData.PrimaryBank.Params.ContainsKey(paramName))
-            return;
-
-
-        foreach (Entity obj in map.Objects)
-        {
-            var prop = PropFinderUtil.FindProperty(propName, obj.WrappedObject);
-
-            if (prop == null)
-                continue;
-
-            var entResult = PropFinderUtil.FindPropertyValue(prop, obj.WrappedObject);
-
-            var success = int.TryParse(entResult.ToString(), out var id);
-
-            if(success)
-            {
-                var skip = false;
-                for (int i = 0; i < defaultValues.Length; i++)
-                {
-                    var defaultValue = defaultValues[i];
-
-                    if (id == defaultValue)
-                    {
-                        skip = true;
-                    }
-                }
-
-                if (skip)
-                {
-                    continue;
-                }
-
-                if (!Project.Handler.ParamData.PrimaryBank.Params[paramName].ContainsRow(id))
-                {
-                    var validationEntry = new MapValidationEntry();
-                    validationEntry.AssociatedEntity = obj;
-                    validationEntry.Type = type;
-                    validationEntry.Name = obj.Name;
-                    validationEntry.Value = $"{entResult}";
-
-                    ValidationEntries.Add(validationEntry);
-                }
-            }
-        }
-    }
-}
-
-public class MapValidationEntry
-{
-    public Entity AssociatedEntity { get; set; }
-
-    public MapValidationType Type { get; set; }
-
-    public string Name { get; set; }
-
-    public string Value { get; set; }
-
-    public MapValidationEntry() { }
 }

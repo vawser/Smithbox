@@ -385,7 +385,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// The part that the treasure is attached to.
                 /// </summary>
-                [MSBReference(ReferenceType = typeof(Region))]
+                [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 public int TreasurePartIndex { get; set; }
 

@@ -34,11 +34,43 @@ public readonly record struct ReferenceSlot(Entity Referrer, PropertyInfo Proper
     }
 
     /// <summary>
-    /// Whether the field can refer to the entity (a part and a region may share a name, so the type matters)
+    /// Whether the field can refer to the entity. A part and a region may share a name, so the list matters,
+    /// but not the subtype: SoulsFormats resolves most reference names against the whole list (MSB.FindIndex over
+    /// entries.Parts or entries.Regions), whatever subtype the attribute names. Vanilla maps rely on it, as DS1
+    /// objects whose CollisionName names a map piece, or DS3 WindAreaName naming other regions (SaveCheckSurvey).
     /// </summary>
     public bool CanReferTo(Entity entity)
     {
-        return entity?.WrappedObject != null && (ReferenceType == null || ReferenceType.IsInstanceOfType(entity.WrappedObject));
+        if (entity?.WrappedObject == null)
+            return false;
+
+        if (ReferenceType == null)
+            return true;
+
+        var scope = ListOf(ReferenceType);
+
+        return scope != null ? scope.IsInstanceOfType(entity.WrappedObject) : ReferenceType.IsInstanceOfType(entity.WrappedObject);
+    }
+
+    /// <summary>
+    /// The MSB list (parts, regions or events) the name is looked up in, or null if it isn't one of those (or the
+    /// field names no type)
+    /// </summary>
+    public Type TargetList => ReferenceType == null ? null : ListOf(ReferenceType);
+
+    /// <summary>The MSB list (parts, regions or events) a type belongs to, or null for anything else</summary>
+    private static Type ListOf(Type type)
+    {
+        if (typeof(IMsbPart).IsAssignableFrom(type))
+            return typeof(IMsbPart);
+
+        if (typeof(IMsbRegion).IsAssignableFrom(type))
+            return typeof(IMsbRegion);
+
+        if (typeof(IMsbEvent).IsAssignableFrom(type))
+            return typeof(IMsbEvent);
+
+        return null;
     }
 }
 
