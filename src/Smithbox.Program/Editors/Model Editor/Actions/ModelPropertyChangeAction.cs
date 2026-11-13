@@ -176,20 +176,46 @@ public class ModelPropertyChangeAction : ViewportAction
 
         int newParent;
 
-        if (entity.WrappedObject is FLVER.Dummy && change.Property?.Name == nameof(FLVER.Dummy.ParentBoneIndex))
+        if (entity.WrappedObject is FLVER.Dummy dummy && change.Property?.Name is
+            nameof(FLVER.Dummy.ParentBoneIndex) or nameof(FLVER.Dummy.AttachBoneIndex))
         {
-            newParent = Convert.ToInt32(change.NewValue);
+            var newBone = Convert.ToInt32(change.NewValue);
+            var nodes = ModelIndexRemapper.GetNodes(container);
+
+            // In the games every bone a dummy names is marked as a dummy owner
+            if (newBone >= 0 && newBone < nodes.Count)
+            {
+                ModelIndexRemapper.MarkDummyOwner(nodes[newBone], record);
+            }
+
+            // ... and a dummy follows its attach bone exactly when it has one
+            if (change.Property.Name == nameof(FLVER.Dummy.AttachBoneIndex))
+            {
+                var oldFollow = dummy.FollowAttachBone;
+                dummy.FollowAttachBone = newBone != -1;
+                record.Record(() => dummy.FollowAttachBone = oldFollow);
+
+                // The attach bone doesn't decide where the dummy sits in the tree
+                return;
+            }
+
+            newParent = newBone;
         }
-        else if (entity.WrappedObject is FLVER.Node && change.Property?.Name == nameof(FLVER.Node.ParentIndex))
+        else if (entity.WrappedObject is FLVER.Node node && change.Property?.Name == nameof(FLVER.Node.ParentIndex))
         {
             var nodes = ModelIndexRemapper.GetNodes(container);
             var index = container.Nodes.IndexOf(entity);
 
             newParent = Convert.ToInt32(change.NewValue);
 
-            // A parent that would loop the tree, or doesn't exist, leaves the links (and the tree) as they were
+            // A parent that would loop the tree, or doesn't exist, is refused: the value goes back, so the saved
+            // model never holds a loop. Undo puts back the old value anyway.
             if (!ModelIndexRemapper.RelinkNode(nodes, index, Convert.ToInt32(change.OldValue), newParent, record))
+            {
+                node.ParentIndex = (short)Convert.ToInt32(change.OldValue);
+                Smithbox.LogError(typeof(ModelPropertyChangeAction), LOC.Get("MODEL_Properties_Parent_Refused", node.Name, newParent));
                 return;
+            }
         }
         else
         {

@@ -61,6 +61,30 @@
       "Text": "Collision is shown for reference only: the Model Editor doesn't save it. Use the Collision Editor in the Map Editor to change collision."
     },
     {
+      "Key": "MODEL_Properties_Reference_None",
+      "Text": "None"
+    },
+    {
+      "Key": "MODEL_Properties_Reference_Missing",
+      "Text": "<missing>"
+    },
+    {
+      "Key": "MODEL_Properties_Reference_Filter_Hint",
+      "Text": "Search..."
+    },
+    {
+      "Key": "MODEL_Properties_Reference_GoTo_TT",
+      "Text": "Select the referenced object."
+    },
+    {
+      "Key": "MODEL_Properties_Reference_Maintained_TT",
+      "Text": "Kept in step with the bones' Parent Index by the editor. Change a bone's parent to change these."
+    },
+    {
+      "Key": "MODEL_Properties_Parent_Refused",
+      "Text": "{0} can't be placed under node {1}: that node is the bone itself, one of the bones below it, or doesn't exist."
+    },
+    {
       "Key": "MODEL_Properties_Page",
       "Text": "{0}-{1} of {2}"
     },

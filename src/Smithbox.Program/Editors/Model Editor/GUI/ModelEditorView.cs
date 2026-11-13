@@ -60,6 +60,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public GotoAction GotoAction;
     public PullToCameraAction PullToCameraAction;
     public ReorderAction ReorderAction;
+    public AddAction AddAction;
 
     public ModelEditorView(ModelEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -114,6 +115,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         GotoAction = new GotoAction(this, Project);
         PullToCameraAction = new PullToCameraAction(this, Project);
         ReorderAction = new ReorderAction(this, Project);
+        AddAction = new AddAction(this, Project);
     }
 
     private ModelMaskTarget GetModelMaskTarget()

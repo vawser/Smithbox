@@ -18,10 +18,15 @@ public class ModelPropertyView
     public ModelEditorView View;
     public ProjectEntry Project;
 
+    // Material and node indices are picked by name
+    private readonly ModelReferencePicker _referencePicker;
+
     public ModelPropertyView(ModelEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
+
+        _referencePicker = new ModelReferencePicker(view);
     }
 
     private object _changingObject;
@@ -469,14 +474,28 @@ public class ModelPropertyView
         object newval;
 
         // Property Editor UI
-        ImGui.BeginDisabled(_readOnly);
+        bool changed;
+        bool committed;
 
-        (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
+        var isPicker = ModelReferencePicker.IsPickerField(prop, type, out _);
 
-        ImGui.EndDisabled();
+        if (isPicker)
+        {
+            // A pick is a whole edit: it is changed and committed at once
+            changed = _referencePicker.Draw(prop, type, oldval, owner, _readOnly, out newval);
+            committed = changed;
+        }
+        else
+        {
+            ImGui.BeginDisabled(_readOnly);
 
-        var changed = propEditResults.Item1;
-        var committed = propEditResults.Item2;
+            (bool, bool) propEditResults = PropertyRow(type, oldval, out newval, prop, entSelection);
+
+            ImGui.EndDisabled();
+
+            changed = propEditResults.Item1;
+            committed = propEditResults.Item2;
+        }
 
         DisplayContextMenu(name, description, prop);
 
@@ -505,9 +524,13 @@ public class ModelPropertyView
             committed = true;
         }
 
-        ModelPropertyDecorators.DummyRefRow(View, classMeta, prop, oldval, ref newval);
-        ModelPropertyDecorators.NodeRefRow(View, classMeta, prop, oldval, ref newval);
-        ModelPropertyDecorators.MaterialRefRow(View, classMeta, prop, oldval, ref newval);
+        // A picker shows the name and has its own Go To, so the reference rows would only repeat it
+        if (!isPicker)
+        {
+            ModelPropertyDecorators.DummyRefRow(View, classMeta, prop, oldval, ref newval);
+            ModelPropertyDecorators.NodeRefRow(View, classMeta, prop, oldval, ref newval);
+            ModelPropertyDecorators.MaterialRefRow(View, classMeta, prop, oldval, ref newval);
+        }
 
         if (!_readOnly)
         {

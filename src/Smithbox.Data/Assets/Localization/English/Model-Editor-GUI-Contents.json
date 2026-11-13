@@ -66,7 +66,27 @@
     },
     {
       "Key": "MODEL_Contents_Node_Hierarchy_TT",
-      "Text": "Toggle how nodes are listed.\n\nCurrent Mode:\n{0}"
+      "Text": "Toggle how nodes are listed.\n\nCurrent Mode:\n{0}\n\nIn the hierarchy, drag a bone onto another bone to place it under that bone, or onto the Node header to place it at the top of the skeleton. Drag a dummy onto a bone to attach it to that bone or move it into the bone's space.\nBones and dummies keep their place in the model when moved."
+    },
+    {
+      "Key": "MODEL_Contents_Drop_Into_Own_Child",
+      "Text": "{0} can't be placed under {1}, which is the bone itself or one of the bones below it."
+    },
+    {
+      "Key": "MODEL_Contents_Drop_Dummy_Attach",
+      "Text": "Attach to {0}"
+    },
+    {
+      "Key": "MODEL_Contents_Drop_Dummy_Attach_TT",
+      "Text": "The dummy follows this bone (its Attach Bone). It stays where it is."
+    },
+    {
+      "Key": "MODEL_Contents_Drop_Dummy_Parent",
+      "Text": "Move into the space of {0}"
+    },
+    {
+      "Key": "MODEL_Contents_Drop_Dummy_Parent_TT",
+      "Text": "The dummy's position is measured from this bone (its Parent Bone), and it is listed under it. It stays where it is.\n\nThe games place each dummy in a Dmypoly group bone, so this is rarely what is wanted."
     },
     {
       "Key": "MODEL_Contents_Node_Hierarchy_On",

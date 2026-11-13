@@ -359,6 +359,71 @@ public static class ModelIndexRemapper
         return true;
     }
 
+    /// <summary>
+    /// Adds a new node, already given its ParentIndex, to the end of the sibling chain under its parent (or of the
+    /// root nodes for -1). The node must have no links of its own yet.
+    /// </summary>
+    public static void LinkNewNode(List<FLVER.Node> nodes, int index, IndexChangeRecord record)
+    {
+        if (!IsValid(index, nodes.Count))
+            return;
+
+        var node = nodes[index];
+        var parent = node.ParentIndex;
+
+        SetFirstChild(node, -1, record);
+        SetNextSibling(node, -1, record);
+        SetPreviousSibling(node, -1, record);
+
+        int first;
+
+        if (IsValid(parent, nodes.Count))
+        {
+            first = nodes[parent].FirstChildIndex;
+
+            if (!IsValid(first, nodes.Count) || first == index)
+            {
+                SetFirstChild(nodes[parent], (short)index, record);
+                return;
+            }
+        }
+        else
+        {
+            first = nodes.FindIndex(n => n != node && n.ParentIndex == -1 && n.PreviousSiblingIndex == -1);
+
+            if (first == -1)
+                return;
+        }
+
+        var last = first;
+        var visited = new HashSet<int>();
+
+        while (IsValid(nodes[last].NextSiblingIndex, nodes.Count) && nodes[last].NextSiblingIndex != index && visited.Add(last))
+        {
+            last = nodes[last].NextSiblingIndex;
+        }
+
+        SetNextSibling(nodes[last], (short)index, record);
+        SetPreviousSibling(node, (short)last, record);
+    }
+
+    /// <summary>
+    /// Marks a node as one that dummies refer to. In the games every node a dummy names as its parent or attach bone
+    /// has this flag, and no other node does. A node marked as unused (Disabled) loses that mark, as it is never
+    /// combined with the others.
+    /// </summary>
+    public static void MarkDummyOwner(FLVER.Node node, IndexChangeRecord record)
+    {
+        var old = node.Flags;
+        var flags = (old & ~FLVER.Node.NodeFlags.Disabled) | FLVER.Node.NodeFlags.DummyOwner;
+
+        if (flags == old)
+            return;
+
+        node.Flags = flags;
+        record.Record(() => node.Flags = old);
+    }
+
     private static bool IsSelfOrDescendant(List<FLVER.Node> nodes, int index, int candidate)
     {
         var visited = new HashSet<int>();

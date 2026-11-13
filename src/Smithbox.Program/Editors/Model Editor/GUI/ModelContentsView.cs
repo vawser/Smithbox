@@ -30,6 +30,13 @@ public class ModelContentsView : IActionEventHandler
     // The row a shift-click range starts from: the last one clicked without shift
     private Entity _rangeAnchor;
 
+    // Drag and drop in the node hierarchy: what is being dragged, and a dummy dropped on a bone waiting for the
+    // choice between attaching it and moving it into the bone's space
+    private const string HierarchyPayload = "MODEL_HIERARCHY_ENTRY";
+    private Entity _dragEntity;
+    private (Entity Dummy, Entity Bone)? _pendingDummyDrop;
+    private bool _openDummyDropMenu;
+
     public ModelContentsView(ModelEditorView view, ProjectEntry project)
     {
         View = view;
@@ -243,8 +250,130 @@ public class ModelContentsView : IActionEventHandler
             ImGui.TreePop();
         }
 
+        DisplayDummyDropMenu(container);
+
         ImGui.EndChild();
     }
+
+    #region Drag and Drop
+    /// <summary>
+    /// Bones and dummies in the node hierarchy can be dragged onto bones. Called right after the row is drawn.
+    /// </summary>
+    private unsafe void HandleHierarchyDragDrop(ModelContainer container, Entity e, string label)
+    {
+        if (e.WrappedObject is FLVER.Node or FLVER.Dummy && ImGui.BeginDragDropSource())
+        {
+            _dragEntity = e;
+
+            byte dummy = 0;
+            ImGui.SetDragDropPayload(HierarchyPayload, &dummy, 1);
+            ImGui.Text(label);
+
+            ImGui.EndDragDropSource();
+        }
+
+        if (e.WrappedObject is FLVER.Node && ImGui.BeginDragDropTarget())
+        {
+            var payload = ImGui.AcceptDragDropPayload(HierarchyPayload);
+
+            if (!payload.IsNull && _dragEntity is ModelEntity dragged && dragged != e)
+            {
+                OnDropOnBone(container, dragged, e);
+                _dragEntity = null;
+            }
+
+            ImGui.EndDragDropTarget();
+        }
+    }
+
+    /// <summary>
+    /// The Node category header takes bones dropped on it to the top of the skeleton
+    /// </summary>
+    private void HandleRootDropTarget(ModelContainer container)
+    {
+        if (!ImGui.BeginDragDropTarget())
+            return;
+
+        var payload = ImGui.AcceptDragDropPayload(HierarchyPayload);
+
+        if (!payload.IsNull && _dragEntity is ModelEntity { WrappedObject: FLVER.Node } dragged)
+        {
+            Execute(ReparentAction.ForNode(View, container, dragged, -1));
+            _dragEntity = null;
+        }
+
+        ImGui.EndDragDropTarget();
+    }
+
+    private void OnDropOnBone(ModelContainer container, ModelEntity dragged, Entity bone)
+    {
+        var boneIndex = container.Nodes.IndexOf(bone);
+
+        if (boneIndex < 0)
+            return;
+
+        if (dragged.WrappedObject is FLVER.Node)
+        {
+            var action = ReparentAction.ForNode(View, container, dragged, boneIndex);
+
+            if (action == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Contents_Drop_Into_Own_Child", dragged.Name, bone.Name));
+                return;
+            }
+
+            Execute(action);
+        }
+        else if (dragged.WrappedObject is FLVER.Dummy)
+        {
+            // A dummy has two links to bones: which one is meant is asked
+            _pendingDummyDrop = (dragged, bone);
+            _openDummyDropMenu = true;
+        }
+    }
+
+    private void DisplayDummyDropMenu(ModelContainer container)
+    {
+        if (_openDummyDropMenu)
+        {
+            ImGui.OpenPopup("##modelDummyDropMenu");
+            _openDummyDropMenu = false;
+        }
+
+        if (!ImGui.BeginPopup("##modelDummyDropMenu"))
+            return;
+
+        if (_pendingDummyDrop is { } drop && drop.Dummy is ModelEntity dummy)
+        {
+            var boneIndex = container.Nodes.IndexOf(drop.Bone);
+            var boneName = (drop.Bone.WrappedObject as FLVER.Node)?.Name ?? "";
+
+            if (ImGui.Selectable(LOC.Get("MODEL_Contents_Drop_Dummy_Attach", boneName)))
+            {
+                Execute(ReparentAction.ForDummyAttach(View, dummy, boneIndex));
+                _pendingDummyDrop = null;
+            }
+            GUI.Tooltip(LOC.Get("MODEL_Contents_Drop_Dummy_Attach_TT"));
+
+            if (ImGui.Selectable(LOC.Get("MODEL_Contents_Drop_Dummy_Parent", boneName)))
+            {
+                Execute(ReparentAction.ForDummyParent(View, container, dummy, boneIndex));
+                _pendingDummyDrop = null;
+            }
+            GUI.Tooltip(LOC.Get("MODEL_Contents_Drop_Dummy_Parent_TT"));
+        }
+
+        ImGui.EndPopup();
+    }
+
+    private void Execute(ViewportAction action)
+    {
+        if (action != null)
+        {
+            View.ViewportActionManager.ExecuteAction(action);
+        }
+    }
+    #endregion
 
     private void TypeView(ModelContainer container)
     {
@@ -293,13 +422,21 @@ public class ModelContentsView : IActionEventHandler
                 ImGui.SetNextItemOpen(true);
             }
 
-            if (ImGui.TreeNodeEx($"{cats.Key} ({countText})###category_{cats.Key}", treeflags))
-            {
-                // The flat list is kept while filtering, as matches can be nested deep within the hierarchy
-                var useHierarchy = cats.Key == ModelEntityType.Node
-                    && CFG.Current.ModelEditor_Contents_Node_Hierarchy
-                    && !isFiltering;
+            // The flat list is kept while filtering, as matches can be nested deep within the hierarchy
+            var useHierarchy = cats.Key == ModelEntityType.Node
+                && CFG.Current.ModelEditor_Contents_Node_Hierarchy
+                && !isFiltering;
 
+            var categoryOpen = ImGui.TreeNodeEx($"{cats.Key} ({countText})###category_{cats.Key}", treeflags);
+
+            // Bones dropped on the header go to the top of the skeleton
+            if (useHierarchy)
+            {
+                HandleRootDropTarget(container);
+            }
+
+            if (categoryOpen)
+            {
                 if (useHierarchy)
                 {
                     HierarchyView(container, container.RootObject, entries);
@@ -337,6 +474,11 @@ public class ModelContentsView : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelTopContext_{map.Name}"))
         {
+            // Add: with the model root selected, new objects go to their defaults
+            View.AddAction.OnContext();
+
+            ImGui.Separator();
+
             // Information
             if (ImGui.BeginMenu($"{LOC.Get("MODEL_Contents_Context_Info_Header")}##infoMenuHeader"))
             {
@@ -585,6 +727,8 @@ public class ModelContentsView : IActionEventHandler
             nodeopen = ImGui.TreeNodeEx($"{key}##{e.PrettyName}", treeflags);
             _displayOrder.Add(e);
 
+            HandleHierarchyDragDrop(container, e, key);
+
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
                 if (e.RenderSceneMesh != null)
@@ -621,6 +765,12 @@ public class ModelContentsView : IActionEventHandler
 
                 var isSelectableClicked = ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags);
                 _displayOrder.Add(e);
+
+                // Childless bones and the dummies under bones, in the node hierarchy
+                if (hierarchial)
+                {
+                    HandleHierarchyDragDrop(container, e, displayName);
+                }
 
                 if (isSelectableClicked)
                 {
@@ -707,6 +857,10 @@ public class ModelContentsView : IActionEventHandler
     {
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
+            View.AddAction.OnContext();
+
+            ImGui.Separator();
+
             View.DuplicateAction.OnContext();
             View.DeleteAction.OnContext();
 

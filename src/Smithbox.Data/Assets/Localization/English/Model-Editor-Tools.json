@@ -17,6 +17,38 @@
       "Text": "Delete the currently selected model objects."
     },
     {
+      "Key": "MODEL_Tools_Action_Add_Title",
+      "Text": "Add"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Dummy",
+      "Text": "Dummy"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Dummy_TT",
+      "Text": "Adds a dummy with the next free reference ID.\n\nWith a bone selected, the dummy sits on it and follows it.\nWith a dummy selected, it joins that dummy's group at the same place.\nOtherwise it is placed in front of the camera.\n\nIts group (parent bone) is the one the model's dummies on the same bone use most."
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Dummy_No_Nodes",
+      "Text": "A dummy needs a bone to belong to, and this model has none."
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Bone",
+      "Text": "Bone"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Bone_TT",
+      "Text": "Adds a bone under the selected bone, at its origin, or at the top of the skeleton if no bone is selected.\n\nThe new bone is added to the end of the bone list, so no existing bone index changes."
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Material",
+      "Text": "Material"
+    },
+    {
+      "Key": "MODEL_Tools_Action_Add_Material_TT",
+      "Text": "Adds a copy of the selected material, or of the model's first material, under a new name.\n\nMove a mesh onto it by setting the mesh's Material Index."
+    },
+    {
       "Key": "MODEL_Tools_Action_Duplicate_Title",
       "Text": "Duplicate"
     },

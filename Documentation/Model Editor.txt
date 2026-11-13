@@ -2,10 +2,6 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- Functionality:
-    - Allow bones to be moved around
-    - Allow meshes to be moved around
-
 - Animation:
     - Add option to hide non-used bones/dummies during animations
 
