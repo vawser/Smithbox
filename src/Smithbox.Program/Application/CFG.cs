@@ -1850,7 +1850,7 @@ public class CFG
     public float Viewport_Light_Intensity_Scale = 5.0f;
 
     // The Map Editor's BTL lights: those within this many metres of the camera light the viewports, nearest first,
-    // up to the count; with the enable distance on, each also only within its own EnableDist, as in game.
+    // up to the count; with the enable distance on, each also only within its own ViewDistance, as in game.
     // Selected lights always do.
     public bool Viewport_BTL_Lights_Near_Camera = true;
     public float Viewport_BTL_Light_Radius = 150.0f;

@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// Lights the viewports with the loaded maps' BTL lights near the camera, as the game turns them on: within the
-/// viewport's light radius, and within each light's own EnableDist. Selected lights shine wherever they are. The
+/// viewport's light radius, and within each light's own ViewDistance. Selected lights shine wherever they are. The
 /// nearest are kept, up to the viewport's limit, in <see cref="SceneRenderer.MapLights" />. Rebuilt every frame,
 /// so they follow the camera, gizmo drags and property edits.
 /// </summary>
@@ -188,8 +188,8 @@ public class MapLightCollector
         if (!CFG.Current.Viewport_BTL_Lights_Near_Camera || distance > radius)
             return false;
 
-        // The game turns a light on within its EnableDist of the camera; 0 is taken as no limit
-        if (CFG.Current.Viewport_BTL_Light_Use_Enable_Distance && light.EnableDist > 0.0f && distance > light.EnableDist)
+        // The game turns a light on within its ViewDistance of the camera; 0 is taken as no limit
+        if (CFG.Current.Viewport_BTL_Light_Use_Enable_Distance && light.ViewDistance > 0.0f && distance > light.ViewDistance)
             return false;
 
         return true;
@@ -227,7 +227,7 @@ public class MapLightCollector
 
     public static SceneLight CreateLight(BTL.Light btlLight, Matrix4x4 world, float intensityScale)
     {
-        var outerAngle = btlLight.ConeAngle / 2.0f;
+        var outerAngle = btlLight.VerticalFov / 2.0f;
 
         return new SceneLight
         {

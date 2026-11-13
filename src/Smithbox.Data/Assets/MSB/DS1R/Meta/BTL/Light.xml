@@ -1,211 +1,231 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
-  <Self 
+  <Self
   Wiki="" />
-  
+
   <Field>
     <Name
     AltName="Name"
     Wiki="The name of the light." />
-  
+
     <Type
     AltName="Emitter Type"
     Wiki="The emitter type for this light." />
-  
+
     <Position
     AltName="Position"
     Wiki="Location of the light."
     PositionProperty="" />
-    
+
     <Rotation
     AltName="Rotation"
     Wiki="Rotation of the light, in degrees."
     RotationProperty="" />
-    
+
     <Radius
     AltName="Radius"
-    Wiki="The radius of this light." />
-    
-    <Sharpness
-    AltName="Sharpness"
-    Wiki="The sharpness of the light." />
-    
-    <LightStartCutoff
-    AltName="Minimum Light Distance"
-    Wiki="Distance from start before light appears." />
-    
-    <ShadowModelCullFlip
-    AltName="Shadow Model Cull Flip"
-    Wiki="" 
-    IsBool="" />
-    
-    <EnableDist
-    AltName="Enable Distance"
-    Wiki="Distance required for a light to transition into view. 0 = always enabled." />
-    
-    <EnableState_UnkC0
-    AltName="Enable State"
-    Wiki="The enable state for this light."
-    ArrayProperty="" />
-    
+    Wiki="Distance the light shines. Far plane of a spot light or radius of a point light." />
+
+    <SourceRadius
+    AltName="Source Radius"
+    Wiki="Radius of the light source." />
+
+    <ViewDistance
+    AltName="View Distance"
+    Wiki="Distance from the camera this light is shown within. 0 = always shown." />
+
     <DiffuseColor
     AltName="Diffuse Color"
     Wiki="The diffuse color for this light." />
-    
+
     <DiffusePower
     AltName="Diffuse Intensity"
     Wiki="The intensity of the diffuse lighting" />
-    
+
     <SpecularColor
     AltName="Specular Color"
     Wiki="The specular color for this light." />
-    
+
+    <SpecularPower
+    AltName="Specular Intensity"
+    Wiki="The intensity of the specular lighting" />
+
     <CastShadows
     AltName="Cast Shadows"
-    Wiki="If ON, this light will cast shadows" 
+    Wiki="If ON, this light will cast shadows"
     IsBool="" />
-    
+
     <ShadowColor
     AltName="Shadow Color"
     Wiki="The color of the shadows for this light." />
-    
+
+    <ShadowIntensity
+    AltName="Shadow Intensity"
+    Wiki="How dark the light's shadow is in range of [0, 1). Higher values draw darker shadows." />
+
+    <ShadowDepthBias
+    AltName="Shadow Depth Bias"
+    Wiki="Depth bias of the light's shadow map in the range of [-7, 7). Offsets the depth of shadows cast by this light." />
+
+    <ShadowModelCullFlip
+    AltName="Shadow Model Cull Flip"
+    Wiki="Likely inverts the face culling test for the shadow pass."
+    IsBool="" />
+
+    <ShadowSpecLevel
+    AltName="Shadow Spec Level"
+    Wiki="The lowest shadow quality level this light casts shadows at. Not present before Sekiro." />
+
+    <CachesShadow
+    AltName="Shadow Cache"
+    Wiki="Named 'Shadow Cache' in the debug menu."
+    IsBool="" />
+
+    <BakesShadow
+    AltName="Bake Shadow"
+    Wiki=""
+    IsBool="" />
+
     <FlickerIntervalMin
     AltName="Flicker: Minimal Interval"
     Wiki="For a flicking light, this is the minimal interval between each flicker." />
-    
+
     <FlickerIntervalMax
     AltName="Flicker: Maximum Interval"
-    Wiki="For a flicking light, this is the minimal interval between each flicker." />
-    
+    Wiki="For a flicking light, this is the maximum interval between each flicker." />
+
     <FlickerBrightnessMult
     AltName="Flicker: Brightness Multiplier"
     Wiki="For a flickering light, the brightness multiplier to apply." />
-    
-    <Width
-    AltName="Spot Light: Width"
-    Wiki="The width of the spot light." />
-    
-    <NearClip
-    AltName="Spot Light: Start Distance"
-    Wiki="Distance at which spot light beam starts." />
-    
-    <ConeAngle
-    AltName="Spot Light: Tightness"
-    Wiki="" />
-    
+
+    <VerticalFov
+    AltName="Spot Light: Vertical FoV"
+    Wiki="Vertical FoV of a spot light. Identical to the horizontal FoV when set to 0." />
+
+    <HorizontalFov
+    AltName="Spot Light: Horizontal FoV"
+    Wiki="Horizontal FoV of a spot light. Identical to the vertical FoV when set to 0." />
+
+    <NearDistance
+    AltName="Spot Light: Near Distance"
+    Wiki="Near plane of a spot light. Defaults to Radius / 100 when set to 0." />
+
+    <TranslucencyIntensity
+    AltName="Translucency Intensity"
+    Wiki="Strength of the light passing through translucent and thin surfaces." />
+
+    <TranslucencyPower
+    AltName="Translucency Power"
+    Wiki="Exponent of the light passing through translucent surfaces, at least 0.01." />
+
+    <BakesIrradianceVolumeDirect
+    AltName="Irradiance Volume: Bake Direct"
+    Wiki="Controls whether this light contributes to baked lighting."
+    IsBool="" />
+
+    <BakesIrradianceVolumeIndirect
+    AltName="Irradiance Volume: Bake Indirect"
+    Wiki="Controls whether this light contributes to baked indirect lighting."
+    IsBool="" />
+
+    <IrradianceVolumeDirectScale
+    AltName="Irradiance Volume: Direct Scale"
+    Wiki="Likely scales the light baked into the irradiance volume's direct light. Not present before Sekiro." />
+
+    <IrradianceVolumeIndirectScale
+    AltName="Irradiance Volume: Indirect Scale"
+    Wiki="Likely scales the light baked into the irradiance volume's indirect light. Not present before Sekiro." />
+
+    <ScatteringScale
+    AltName="Scattering: Scale"
+    Wiki="Scales the diffuse color in volumetric fog. Not present before Sekiro." />
+
+    <ScatteringFlickerInfluence
+    AltName="Scattering: Flicker Influence"
+    Wiki="Not present before Sekiro." />
+
+    <ScatteringG
+    AltName="Scattering: Anisotropy"
+    Wiki="Scattering anisotropy in volumetric fog, -1 to 1. Not present before Sekiro." />
+
+    <OverridesScatteringG
+    AltName="Scattering: Override Anisotropy"
+    Wiki="Whether the scattering anisotropy replaces the fog's own anisotropy for this light. Not present before Sekiro."
+    IsBool="" />
+
+    <AntiExposureRate
+    AltName="Anti-Exposure Rate"
+    Wiki="Not present before Sekiro." />
+
     <EventID
     AltName="Event ID"
     Wiki="Referenced by map events. Only used in DS2." />
-    
-    <VolumeDensity
-    AltName="Volume Density"
-    Wiki="" />
-    
+
     <Unk1C
     AltName="Unknown: 0x1C"
     Wiki="" />
-    
+
     <Unk30
     AltName="Unknown: 0x30"
     Wiki="" />
-    
+
     <Unk34
     AltName="Unknown: 0x34"
     Wiki="" />
-    
+
     <Unk50
     AltName="Unknown: 0x50"
     Wiki="" />
-    
+
     <Unk54
     AltName="Unknown: 0x54"
     Wiki="" />
-    
+
     <Unk5C
     AltName="Unknown: 0x5C"
     Wiki="" />
-    
+
     <Unk64
     AltName="Unknown: 0x64"
     Wiki="" />
-    
+
     <Unk68
     AltName="Unknown: 0x68"
     Wiki="" />
-    
+
     <Unk70
     AltName="Unknown: 0x70"
     Wiki="" />
-    
+
     <Unk84
     AltName="Unknown: 0x84"
     Wiki="" />
-    
+
     <Unk88
     AltName="Unknown: 0x88"
     Wiki="" />
-    
+
     <Unk90
     AltName="Unknown: 0x90"
     Wiki="" />
-    
-    <Unk98
-    AltName="Unknown: 0x98"
-    Wiki="" />
-    
+
     <UnkA0
     AltName="Unknown: 0xA0"
     Wiki="" />
-    
+
     <UnkA1
     AltName="Unknown: 0xA1"
     Wiki="" />
-    
-    <UnkA2
-    AltName="Unknown: 0xA2"
-    Wiki="" />
-    
-    <UnkAC
-    AltName="Unknown: 0xAC"
-    Wiki="" />
-    
-    <UnkC8
-    AltName="Unknown: 0xC8"
-    Wiki="" />
-    
-    <UnkCC
-    AltName="Unknown: 0xCC"
-    Wiki="" />
-    
-    <UnkD4
-    AltName="Unknown: 0xD4"
-    Wiki="" />
-    
-    <UnkD8
-    AltName="Unknown: 0xD8"
-    Wiki="" />
-    
-    <UnkDC
-    AltName="Unknown: 0xDC"
-    Wiki="" />
-    
-    <UnkE0
-    AltName="Unknown: 0xE0"
-    Wiki="" />
-    
-    <UnkE4
-    AltName="Unknown: 0xE4"
-    Wiki="" />
-    
+
     <UnkE8
     AltName="Unknown: 0xE8"
     Wiki="" />
-    
+
     <UnkEB
     AltName="Unknown: 0xEB"
     Wiki="" />
   </Field>
-  
+
   <Enums>
   </Enums>
 </MSBMETA>

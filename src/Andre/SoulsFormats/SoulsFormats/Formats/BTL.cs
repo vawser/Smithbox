@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 
 namespace SoulsFormats
 {
     /// <summary>
-    /// Point light sources in a map, used in BB, DS3, and Sekiro.
+    /// Point light sources in a map, used in BB, DS3, Sekiro and ER.
     /// </summary>
     public class BTL : SoulsFile<BTL>
     {
@@ -36,6 +35,7 @@ namespace SoulsFormats
         public BTL()
         {
             Version = 16;
+            LightSize = 0xE8;
             LongOffsets = true;
             Lights = new List<Light>();
         }
@@ -137,41 +137,15 @@ namespace SoulsFormats
             public Vector3 Position { get; set; }
 
             /// <summary>
-            /// Rotation of a spot light.
+            /// Rotation of a spot light, in radians.
             /// </summary>
             [RotationRadians]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
-            /// Distance the light shines.
+            /// Distance the light shines. Far plane of a spot light or radius of a point light.
             /// </summary>
             public float Radius { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public float Sharpness { get; set; }
-
-            /// <summary>
-            /// Distance from start before light appears.
-            /// </summary>
-            public float LightStartCutoff { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public bool ShadowModelCullFlip { get; set; }
-
-            /// <summary>
-            /// Distance required for a light to transition into view. 0 = always enabled.
-            /// </summary>
-            public float EnableDist { get; set; }
-
-            /// <summary>
-            /// Unknown; 4 bytes.
-            /// Affects if a light appears normally, but details are unknown.
-            /// </summary>
-            public byte[] EnableState_UnkC0 { get; set; }
 
             /// <summary>
             /// Color of the light on diffuse surfaces.
@@ -222,19 +196,19 @@ namespace SoulsFormats
             public float FlickerBrightnessMult { get; set; }
 
             /// <summary>
-            /// Stretches the spot light beam.
+            /// Vertical FoV of a spot light. Identical to <see cref="HorizontalFov"/> when set to 0.
             /// </summary>
-            public float Width { get; set; }
+            public float VerticalFov { get; set; }
 
             /// <summary>
-            /// Distance at which spot light beam starts.
+            /// Horizontal FoV of a spot light. Identical to <see cref="VerticalFov"/> when set to 0.
             /// </summary>
-            public float NearClip { get; set; }
+            public float HorizontalFov { get; set; }
 
             /// <summary>
-            /// Tightness of the spot light beam.
+            /// Near plane of a spot light. Defaults to <see cref="Radius"/>/100 when set to 0.
             /// </summary>
-            public float ConeAngle { get; set; }
+            public float NearDistance { get; set; }
 
             /// <summary>
             /// Referenced by map events. Only used in DS2.
@@ -242,9 +216,101 @@ namespace SoulsFormats
             public int EventID { get; set; }
 
             /// <summary>
+            /// Strength of the light passing through translucent and thin surfaces.
+            /// </summary>
+            public float TranslucencyIntensity { get; set; }
+
+            /// <summary>
+            /// Exponent of the light passing through translucent surfaces, at least 0.01.
+            /// </summary>
+            public float TranslucencyPower { get; set; }
+
+            /// <summary>
+            /// Depth bias of the light's shadow map in the range of [-7, 7). Offsets the depth of shadows cast
+            /// by this light.
+            /// </summary>
+            public sbyte ShadowDepthBias { get; set; }
+
+            /// <summary>
+            /// Unknown. Likely inverts the face culling test for the shadow pass.
+            /// </summary>
+            public bool ShadowModelCullFlip { get; set; }
+
+            /// <summary>
+            /// Radius of the light source.
+            /// </summary>
+            public float SourceRadius { get; set; }
+
+            /// <summary>
+            /// How dark the light's shadow is in range of [0, 1). Higher values draw darker shadows.
+            /// </summary>
+            public float ShadowIntensity { get; set; }
+
+            /// <summary>
+            /// Controls whether this light contributes to baked lighting.
+            /// </summary>
+            public bool BakesIrradianceVolumeDirect { get; set; }
+
+            /// <summary>
+            /// Controls whether this light contributes to baked indirect lighting.
+            /// </summary>
+            public bool BakesIrradianceVolumeIndirect { get; set; }
+
+            /// <summary>
+            /// Unknown. Named "Shadow Cache" in debug menu.
+            /// </summary>
+            public bool CachesShadow { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public bool BakesShadow { get; set; }
+
+            /// <summary>
+            /// Distance from the camera this light is shown within. 0 = always shown.
+            /// </summary>
+            public float ViewDistance { get; set; }
+
+            /// <summary>
+            /// Unknown. Likely scales the light baked into the irradiance volume's direct light. Not present before Sekiro.
+            /// </summary>
+            public float IrradianceVolumeDirectScale { get; set; }
+
+            /// <summary>
+            /// Unknown. Likely scales the light baked into the irradiance volume's indirect light. Not present before Sekiro.
+            /// </summary>
+            public float IrradianceVolumeIndirectScale { get; set; }
+
+            /// <summary>
+            /// Scales the diffuse color in volumetric fog. Not present before Sekiro.
+            /// </summary>
+            public float ScatteringScale { get; set; }
+
+            /// <summary>
+            /// Unknown. Not present before Sekiro.
+            /// </summary>
+            public float ScatteringFlickerInfluence { get; set; }
+
+            /// <summary>
+            /// Scattering anisotropy in volumetric fog, -1 to 1. Not present before Sekiro.
+            /// <see href="https://bartwronski.com/wp-content/uploads/2014/08/bwronski_volumetric_fog_siggraph2014.pdf"/>
+            /// </summary>
+            public float ScatteringG { get; set; }
+
+            /// <summary>
+            /// Whether <see cref="ScatteringG"/> replaces the fog's own anisotropy for this light. Not present before Sekiro.
+            /// </summary>
+            public bool OverridesScatteringG { get; set; }
+
+            /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            public float VolumeDensity { get; set; }
+            public float AntiExposureRate { get; set; }
+
+            /// <summary>
+            /// The lowest shadow quality level this light casts shadows at. Not present before Sekiro.
+            /// </summary>
+            public int ShadowSpecLevel { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -291,7 +357,6 @@ namespace SoulsFormats
             /// </summary>
             public float Unk70 { get; set; }
 
-            
             /// <summary>
             /// Unknown; 4 bytes.
             /// </summary>
@@ -310,62 +375,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public float Unk98 { get; set; }
-            
-            /// <summary>
-            /// Unknown.
-            /// </summary>
             public byte UnkA0 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             public byte UnkA1 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public byte UnkA2 { get; set; }
-            
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public float UnkAC { get; set; }
-            
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public float UnkC8 { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public float UnkCC { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public float UnkD4 { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public float UnkD8 { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public int UnkDC { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public float UnkE0 { get; set; }
-
-            /// <summary>
-            /// Unknown; not present before Sekiro.
-            /// </summary>
-            public int UnkE4 { get; set; }
 
             /// <summary>
             /// Unknown; only present in version 15 BTLs in ER (of which there are only 2).
@@ -402,14 +417,13 @@ namespace SoulsFormats
                 FlickerBrightnessMult = 1;
                 EventID = -1;
                 Unk84 = new byte[4];
-                Unk98 = 1;
-                NearClip = 1;
+                TranslucencyIntensity = 1;
+                TranslucencyPower = 1;
                 UnkA0 = 1;
                 UnkA1 = 0;
-                UnkA2 = 2;
+                ShadowDepthBias = 2;
                 ShadowModelCullFlip = true;
-                Sharpness = 1;
-                EnableState_UnkC0 = new byte[4];
+                SourceRadius = 1;
             }
 
             /// <summary>
@@ -421,7 +435,6 @@ namespace SoulsFormats
                 clone.Unk00 = (byte[])Unk00.Clone();
                 clone.Unk64 = (byte[])Unk64.Clone();
                 clone.Unk84 = (byte[])Unk84.Clone();
-                clone.EnableState_UnkC0 = (byte[])EnableState_UnkC0.Clone();
                 return clone;
             }
 
@@ -436,7 +449,7 @@ namespace SoulsFormats
                 SpecularColor = ReadRGB(br);
                 CastShadows = br.ReadBoolean();
                 SpecularPower = br.ReadSingle();
-                ConeAngle = br.ReadSingle();
+                VerticalFov = br.ReadSingle();
                 Unk30 = br.ReadSingle();
                 Unk34 = br.ReadSingle();
                 Position = br.ReadVector3();
@@ -459,33 +472,37 @@ namespace SoulsFormats
                 br.AssertInt32(0);
                 Unk90 = br.ReadSingle();
                 br.AssertInt32(0);
-                Unk98 = br.ReadSingle();
-                NearClip = br.ReadSingle();
+                TranslucencyIntensity = br.ReadSingle();
+                TranslucencyPower = br.ReadSingle();
                 UnkA0 = br.ReadByte();
                 UnkA1 = br.ReadByte();
-                UnkA2 = br.ReadByte();
+                ShadowDepthBias = br.ReadSByte();
                 ShadowModelCullFlip = br.ReadBoolean();
-                Sharpness = br.ReadSingle();
+                SourceRadius = br.ReadSingle();
                 br.AssertInt32(0);
-                UnkAC = br.ReadSingle();
+                ShadowIntensity = br.ReadSingle();
                 br.AssertVarint(0);
-                Width = br.ReadSingle();
-                LightStartCutoff = br.ReadSingle();
-                EnableState_UnkC0 = br.ReadBytes(4);
-                EnableDist = br.ReadSingle();
+                HorizontalFov = br.ReadSingle();
+                NearDistance = br.ReadSingle();
+                BakesIrradianceVolumeDirect = br.ReadBoolean();
+                BakesIrradianceVolumeIndirect = br.ReadBoolean();
+                CachesShadow = br.ReadBoolean();
+                BakesShadow = br.ReadBoolean();
+                ViewDistance = br.ReadSingle();
 
                 // Variable light sizes start here
 
                 if (lightSize > 0xC8)
                 {
-                    UnkC8 = br.ReadSingle();
-                    UnkCC = br.ReadSingle();
-                    VolumeDensity = br.ReadSingle();
-                    UnkD4 = br.ReadSingle();
-                    UnkD8 = br.ReadSingle();
-                    UnkDC = br.ReadInt32();
-                    UnkE0 = br.ReadSingle();
-                    UnkE4 = br.ReadInt32();
+                    IrradianceVolumeDirectScale = br.ReadSingle();
+                    IrradianceVolumeIndirectScale = br.ReadSingle();
+                    ScatteringScale = br.ReadSingle();
+                    ScatteringFlickerInfluence = br.ReadSingle();
+                    ScatteringG = br.ReadSingle();
+                    // Asserted so a value other than 0/1 fails loudly instead of being lost on save
+                    OverridesScatteringG = br.AssertInt32([0, 1]) == 1;
+                    AntiExposureRate = br.ReadSingle();
+                    ShadowSpecLevel = br.ReadInt32();
                 }
 
                 if (lightSize > 0xE8)
@@ -506,7 +523,7 @@ namespace SoulsFormats
                 WriteRGB(bw, SpecularColor);
                 bw.WriteBoolean(CastShadows);
                 bw.WriteSingle(SpecularPower);
-                bw.WriteSingle(ConeAngle);
+                bw.WriteSingle(VerticalFov);
                 bw.WriteSingle(Unk30);
                 bw.WriteSingle(Unk34);
                 bw.WriteVector3(Position);
@@ -529,33 +546,36 @@ namespace SoulsFormats
                 bw.WriteInt32(0);
                 bw.WriteSingle(Unk90);
                 bw.WriteInt32(0);
-                bw.WriteSingle(Unk98);
-                bw.WriteSingle(NearClip);
+                bw.WriteSingle(TranslucencyIntensity);
+                bw.WriteSingle(TranslucencyPower);
                 bw.WriteByte(UnkA0);
                 bw.WriteByte(UnkA1);
-                bw.WriteByte(UnkA2);
+                bw.WriteSByte(ShadowDepthBias);
                 bw.WriteBoolean(ShadowModelCullFlip);
-                bw.WriteSingle(Sharpness);
+                bw.WriteSingle(SourceRadius);
                 bw.WriteInt32(0);
-                bw.WriteSingle(UnkAC);
+                bw.WriteSingle(ShadowIntensity);
                 bw.WriteVarint(0);
-                bw.WriteSingle(Width);
-                bw.WriteSingle(LightStartCutoff);
-                bw.WriteBytes(EnableState_UnkC0);
-                bw.WriteSingle(EnableDist);
+                bw.WriteSingle(HorizontalFov);
+                bw.WriteSingle(NearDistance);
+                bw.WriteBoolean(BakesIrradianceVolumeDirect);
+                bw.WriteBoolean(BakesIrradianceVolumeIndirect);
+                bw.WriteBoolean(CachesShadow);
+                bw.WriteBoolean(BakesShadow);
+                bw.WriteSingle(ViewDistance);
 
                 // Variable light sizes start here
 
                 if (lightSize > 0xC8)
                 {
-                    bw.WriteSingle(UnkC8);
-                    bw.WriteSingle(UnkCC);
-                    bw.WriteSingle(VolumeDensity);
-                    bw.WriteSingle(UnkD4);
-                    bw.WriteSingle(UnkD8);
-                    bw.WriteInt32(UnkDC);
-                    bw.WriteSingle(UnkE0);
-                    bw.WriteInt32(UnkE4);
+                    bw.WriteSingle(IrradianceVolumeDirectScale);
+                    bw.WriteSingle(IrradianceVolumeIndirectScale);
+                    bw.WriteSingle(ScatteringScale);
+                    bw.WriteSingle(ScatteringFlickerInfluence);
+                    bw.WriteSingle(ScatteringG);
+                    bw.WriteInt32(OverridesScatteringG ? 1 : 0);
+                    bw.WriteSingle(AntiExposureRate);
+                    bw.WriteInt32(ShadowSpecLevel);
                 }
 
                 if (lightSize > 0xE8)
@@ -563,7 +583,6 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkE8);
                     bw.WriteInt32(UnkEB);
                 }
-
             }
 
             /// <summary>
