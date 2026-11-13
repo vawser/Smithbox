@@ -361,6 +361,14 @@
       "Text": "If enabled, the model moves and turns with the root motion of the animation, as the character does in game. It returns to the start each time the animation loops."
     },
     {
+      "Key": "TAE_Editor_Options_Play_Event_Sounds",
+      "Text": "Play Event Sounds"
+    },
+    {
+      "Key": "TAE_Editor_Options_Play_Event_Sounds_TT",
+      "Text": "If enabled, sound events play their sound as the playback passes their start, using the banks the Sound Editor reads. Needs the Sound Editor to be enabled for the project, and uses its volume."
+    },
+    {
       "Key": "TAE_Editor_Options_Root_Motion_Path",
       "Text": "Display Root Motion Path"
     },

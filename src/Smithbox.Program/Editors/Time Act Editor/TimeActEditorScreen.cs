@@ -232,6 +232,14 @@ public class TimeActEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("TAE_Editor_Options_Root_Motion_Path_TT"));
             GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Display_Root_Motion);
 
+            // Play Event Sounds
+            if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Play_Event_Sounds")}##playEventSoundsToggle"))
+            {
+                CFG.Current.TimeActEditor_Play_Event_Sounds = !CFG.Current.TimeActEditor_Play_Event_Sounds;
+            }
+            GUI.Tooltip(LOC.Get("TAE_Editor_Options_Play_Event_Sounds_TT"));
+            GUI.ShowActiveStatus(CFG.Current.TimeActEditor_Play_Event_Sounds);
+
             // Outside Playback
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Outside_Playback")}##outsidePlaybackToggle"))
             {

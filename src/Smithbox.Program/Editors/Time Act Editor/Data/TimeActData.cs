@@ -108,20 +108,55 @@ public class TimeActData : IDisposable
     /// <summary>
     /// Whether the meta tags any parameter of the event with the alias type, such as the FFXID of an effect event
     /// </summary>
-    public bool HasAliasField(TAE.Event ev, ProjectAliasType aliasType)
+    public bool HasAliasField(TAE.Event ev, ProjectAliasType aliasType) => GetAliasParameter(ev, aliasType) != null;
+
+    /// <summary>
+    /// The name of the first parameter of the event the meta tags with the alias type, or null if there is none
+    /// </summary>
+    public string GetAliasParameter(TAE.Event ev, ProjectAliasType aliasType)
     {
         if (ev?.Parameters == null)
-            return false;
+            return null;
 
         var alias = aliasType.ToString();
 
         foreach (var parameter in ev.Parameters.Template.Values)
         {
             if (GetFieldMeta(ev, parameter.Name) is { } meta && meta.Alias == alias)
-                return true;
+                return parameter.Name;
         }
 
-        return false;
+        return null;
+    }
+
+    private Dictionary<int, string> SoundTypeLetters;
+
+    /// <summary>
+    /// The letter a SoundType value stands for in sound event names (1 → c for c000001000), read from the
+    /// "(c)" in the English names of the SoundType enum, as the letters differ past 9 between games.
+    /// Null when the enum has no letter for the value.
+    /// </summary>
+    public string GetSoundTypeLetter(int soundType)
+    {
+        if (SoundTypeLetters == null)
+        {
+            SoundTypeLetters = new();
+            Enums ??= LoadEnums();
+
+            if (Enums.TryGetValue("SoundType", out var entry))
+            {
+                foreach (var option in entry.Options)
+                {
+                    var text = option.Names.FirstOrDefault(n => n.Language == "English")?.Text ?? "";
+                    var match = System.Text.RegularExpressions.Regex.Match(text, @"\(([a-z])\)");
+
+                    if (match.Success && int.TryParse(option.Key, out var value))
+                        SoundTypeLetters[value] = match.Groups[1].Value;
+                }
+            }
+        }
+
+        return SoundTypeLetters.GetValueOrDefault(soundType);
     }
 
     /// <summary>

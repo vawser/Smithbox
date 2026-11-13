@@ -73,7 +73,13 @@ public class TimeActPlayback
 
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
+        Sounds = new TimeActSoundPlayback(view, project);
     }
+
+    /// <summary>
+    /// Plays the sound events as the clock passes them
+    /// </summary>
+    public TimeActSoundPlayback Sounds { get; }
 
     public TimeActRootMotionDisplay RootMotionDisplay { get; }
 
@@ -134,6 +140,9 @@ public class TimeActPlayback
 
         EventDisplay.Update(animator, _time, PlaybackDuration);
         RootMotionDisplay.Update(animator);
+
+        // While a clip is on its way the clock stands still, and the sounds wait with it
+        Sounds.Update(_time, _playing && !IsClipLoading);
     }
 
     private void UpdateAutoPlay()
@@ -201,6 +210,8 @@ public class TimeActPlayback
         _playing = false;
         Animator?.SetPlaying(false);
 
+        Sounds.StopAll();
+
         Seek(0);
     }
 
@@ -235,6 +246,7 @@ public class TimeActPlayback
     {
         _request++;
         _panel.StopAll();
+        Sounds.StopAll();
 
         _target = null;
         _boundClip = null;
