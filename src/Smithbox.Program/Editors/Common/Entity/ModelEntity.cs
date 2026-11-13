@@ -1,6 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
 using System;
@@ -71,10 +72,176 @@ public class ModelEntity : Entity
 
         // A drag in progress is drawn as the move it will write, beneath it the move the drawable hasn't caught up
         // with yet, and above both the viewport's display rotation
-        var drag = ActiveTemporaryTransform is { } temp ? GetMeshMove(temp, true) : Matrix4x4.Identity;
+        var drag = ActiveTemporaryTransform is { } temp ? temp.WorldMatrix : Matrix4x4.Identity;
 
         RenderSceneMesh.World = DrawableOffset * drag * container.DisplayMatrix;
     }
+
+    #region Gizmo
+    private bool IsGizmoMovable => Type is ModelEntityType.Dummy or ModelEntityType.Node or ModelEntityType.Mesh;
+
+    /// <summary>
+    /// The matrix the parents place this object with, built the way its marker is drawn: the bones above it, then
+    /// the root's display rotation
+    /// </summary>
+    private Matrix4x4 GetParentMatrix()
+    {
+        var m = Matrix4x4.Identity;
+
+        for (Entity p = Parent; p != null; p = p.Parent)
+        {
+            m *= p.GetLocalTransform().WorldMatrix;
+        }
+
+        return m;
+    }
+
+    // A mesh's own transform is always identity: its moves are written into its vertices
+    private Matrix4x4 GetGizmoLocalMatrix()
+    {
+        return Type is ModelEntityType.Mesh ? Matrix4x4.Identity : GetLocalTransform().WorldMatrix;
+    }
+
+    /// <summary>
+    /// Works the gizmo's drag out in matrices. Bones and dummies sit within their parent bones, so the drag, made in
+    /// the viewport's space, is carried into the parent's space: new local = local · parent · drag · parent⁻¹.
+    /// The drag turns and scales about the gizmo's origin, which for a mesh is the middle of its geometry.
+    /// </summary>
+    public override Transform ProjectGizmoDelta(Transform original, Transform current)
+    {
+        if (!IsGizmoMovable || !Matrix4x4.Invert(original.WorldMatrix, out var toGizmo))
+            return base.ProjectGizmoDelta(original, current);
+
+        var parent = GetParentMatrix();
+
+        if (!Matrix4x4.Invert(parent, out var toParent))
+            return base.ProjectGizmoDelta(original, current);
+
+        var drag = toGizmo * current.WorldMatrix;
+        var local = GetGizmoLocalMatrix() * parent * drag * toParent;
+
+        // Meshes write the whole matrix into their vertices, shear and all
+        if (Type is ModelEntityType.Mesh)
+            return new Transform(local);
+
+        if (!Matrix4x4.Decompose(local, out var scale, out var rotation, out var position))
+            return new Transform(local.Translation, GetLocalTransform().Rotation, GetLocalTransform().Scale);
+
+        return new Transform(position, rotation, scale);
+    }
+
+    /// <summary>
+    /// Where the gizmo sits for this object, in the viewport's space: the drawn position and rotation of a bone or
+    /// dummy, and the middle of a mesh's geometry
+    /// </summary>
+    public override Transform GetRootLocalTransform()
+    {
+        if (!IsGizmoMovable)
+            return base.GetRootLocalTransform();
+
+        var parent = GetParentMatrix();
+
+        if (Type is ModelEntityType.Mesh)
+        {
+            var rotation = Matrix4x4.Decompose(parent, out _, out var parentRotation, out _)
+                ? parentRotation
+                : Quaternion.Identity;
+
+            return new Transform(Vector3.Transform(GetMeshPivot(), parent), rotation, Vector3.One);
+        }
+
+        var world = GetLocalTransform().WorldMatrix * parent;
+
+        if (Matrix4x4.Decompose(world, out _, out var worldRotation, out var worldPosition))
+            return new Transform(worldPosition, worldRotation, Vector3.One);
+
+        return new Transform(world.Translation, Quaternion.Identity, Vector3.One);
+    }
+
+    /// <summary>
+    /// Writes a gizmo move: into the vertices of a mesh, into the translation, rotation and scale of a bone, and into
+    /// the position and direction vectors of a dummy. Parts the move left as they were aren't written, so a move
+    /// doesn't add rounding noise to a rotation it didn't change.
+    /// </summary>
+    public override ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    {
+        if (Type is ModelEntityType.Mesh && Container is ModelContainer container)
+        {
+            return new MeshTransformAction(container, this, newt.WorldMatrix);
+        }
+
+        if (WrappedObject is FLVER.Node node)
+        {
+            return GetNodeTransformAction(node, newt, includeScale);
+        }
+
+        if (WrappedObject is FLVER.Dummy dummy)
+        {
+            return GetDummyTransformAction(dummy, newt);
+        }
+
+        return base.GetUpdateTransformAction(newt, includeScale);
+    }
+
+    private ViewportAction GetNodeTransformAction(FLVER.Node node, Transform newt, bool includeScale)
+    {
+        var current = GetLocalTransform();
+        var type = node.GetType();
+
+        var act = new PropChangeAction(this, node);
+
+        act.AddPropertyChange(type.GetProperty(nameof(FLVER.Node.Translation)), newt.Position);
+
+        // FLVER bones store XZY euler radians
+        if (!IsSameRotation(current.Rotation, newt.Rotation))
+        {
+            var euler = EulerUtils.MatrixToEulerXZY(Matrix4x4.CreateFromQuaternion(newt.Rotation));
+            act.AddPropertyChange(type.GetProperty(nameof(FLVER.Node.Rotation)), euler);
+        }
+
+        if (includeScale && Vector3.DistanceSquared(node.Scale, newt.Scale) > 1e-12f)
+        {
+            act.AddPropertyChange(type.GetProperty(nameof(FLVER.Node.Scale)), newt.Scale);
+        }
+
+        act.SetPostExecutionAction(_ => UpdateRenderModel());
+
+        return act;
+    }
+
+    private ViewportAction GetDummyTransformAction(FLVER.Dummy dummy, Transform newt)
+    {
+        var current = GetLocalTransform();
+        var type = dummy.GetType();
+
+        var act = new PropChangeAction(this, dummy);
+
+        act.AddPropertyChange(type.GetProperty(nameof(FLVER.Dummy.Position)), newt.Position);
+
+        // The direction vectors are turned by the change in rotation, which keeps their lengths (and the angle
+        // between them, which needn't be square)
+        if (!IsSameRotation(current.Rotation, newt.Rotation))
+        {
+            // Undo the old rotation, then apply the new one
+            var turn = Matrix4x4.CreateFromQuaternion(Quaternion.Inverse(current.Rotation)) *
+                       Matrix4x4.CreateFromQuaternion(newt.Rotation);
+
+            act.AddPropertyChange(type.GetProperty(nameof(FLVER.Dummy.Forward)),
+                Vector3.TransformNormal(dummy.Forward, turn));
+            act.AddPropertyChange(type.GetProperty(nameof(FLVER.Dummy.Upward)),
+                Vector3.TransformNormal(dummy.Upward, turn));
+        }
+
+        act.SetPostExecutionAction(_ => UpdateRenderModel());
+
+        return act;
+    }
+
+    private static bool IsSameRotation(Quaternion a, Quaternion b)
+    {
+        return MathF.Abs(Quaternion.Dot(Quaternion.Normalize(a), Quaternion.Normalize(b))) > 1 - 1e-7f;
+    }
+    #endregion
 
     #region Mesh Moves
     // The middle of the mesh in model space, worked out from its vertices. The data doesn't change during a drag, so
@@ -101,50 +268,7 @@ public class ModelEntity : Entity
         return _meshPivot ?? Vector3.Zero;
     }
 
-    /// <summary>
-    /// The model space move for a gizmo transform. The gizmo turns a mesh about its pivot but scales it about its own
-    /// origin, which for a mesh is the model's origin, so the scale is moved onto the pivot here.
-    /// </summary>
-    private Matrix4x4 GetMeshMove(Transform t, bool includeScale)
-    {
-        var scale = includeScale ? t.Scale : Vector3.One;
-        var pivot = GetMeshPivot();
-
-        var position = t.Position + Vector3.Transform(pivot - pivot * scale, t.Rotation);
-
-        return new Transform(position, t.Rotation, scale).WorldMatrix;
-    }
     #endregion
-
-    /// <summary>
-    /// A mesh is moved about the middle of its geometry, as its own transform sits at the model's origin
-    /// </summary>
-    public override Transform GetRootLocalTransform()
-    {
-        Transform t = base.GetRootLocalTransform();
-
-        if (Type is ModelEntityType.Mesh)
-        {
-            var root = GetRootTransform();
-
-            t.Position = Vector3.Transform(GetMeshPivot(), root.Rotation) + root.Position;
-        }
-
-        return t;
-    }
-
-    /// <summary>
-    /// A mesh's move is written into its vertices, as a mesh has no transform of its own
-    /// </summary>
-    public override ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
-    {
-        if (Type is ModelEntityType.Mesh && Container is ModelContainer container)
-        {
-            return new MeshTransformAction(container, this, GetMeshMove(newt, includeScale));
-        }
-
-        return base.GetUpdateTransformAction(newt, includeScale);
-    }
 
     public override Transform GetLocalTransform()
     {

@@ -100,43 +100,45 @@ public class PullToCameraAction
             Vector3 camPos = View.ViewportWindow.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
-            // Get the accumulated center position of all selections
-            Vector3 accumPos = Vector3.Zero;
-            foreach (Entity sel in sels)
+            // An object whose parent is also selected follows its parent, so it isn't moved itself
+            var moved = sels.Where(sel =>
             {
-                if (GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
+                for (Entity p = sel.Parent; p != null; p = p.Parent)
+                {
+                    if (sels.Contains(p))
+                        return false;
+                }
+
+                return true;
+            }).ToList();
+
+            // Get the accumulated center position of all selections, where they are drawn
+            Vector3 accumPos = Vector3.Zero;
+            foreach (Entity sel in moved)
+            {
+                if (GizmoState.Origin == GizmoState.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null &&
+                    sel.WrappedObject is not SoulsFormats.FLVER2.Mesh)
                 {
                     // Use bounding box origin as center
                     accumPos += sel.RenderSceneMesh.GetBounds().GetCenter();
                 }
                 else
                 {
-                    // Use actual position as center
+                    // Use actual position as center (the middle of the geometry, for a mesh)
                     accumPos += sel.GetRootLocalTransform().Position;
                 }
             }
 
-            Transform centerT = new(accumPos / sels.Count, Vector3.Zero);
+            var center = accumPos / moved.Count;
 
-            // Offset selection positions to place accumulated center in front of camera
-            foreach (Entity sel in sels)
+            // The whole selection moves by the same step, as a gizmo drag from its centre to the camera would.
+            // Each object carries the step into its own parent's space.
+            var from = new Transform(center, Quaternion.Identity, Vector3.One);
+            var to = new Transform(targetCamPos, Quaternion.Identity, Vector3.One);
+
+            foreach (Entity sel in moved)
             {
-                Transform localT = sel.GetLocalTransform();
-                Transform rootT = sel.GetRootTransform();
-
-                // Get new localized position by applying reversed root offsets to target camera position.  
-                Vector3 newPos = Vector3.Transform(targetCamPos, Quaternion.Inverse(rootT.Rotation))
-                                 - Vector3.Transform(rootT.Position, Quaternion.Inverse(rootT.Rotation));
-
-                // Offset from center of multiple selections.
-                Vector3 localCenter = Vector3.Transform(centerT.Position, Quaternion.Inverse(rootT.Rotation))
-                                          - Vector3.Transform(rootT.Position, Quaternion.Inverse(rootT.Rotation));
-                Vector3 offsetFromCenter = localCenter - localT.Position;
-                newPos -= offsetFromCenter;
-
-                Transform newT = new(newPos, localT.EulerRotation);
-
-                actlist.Add(sel.GetUpdateTransformAction(newT));
+                actlist.Add(sel.GetUpdateTransformAction(sel.ProjectGizmoDelta(from, to)));
             }
 
             if (actlist.Any())

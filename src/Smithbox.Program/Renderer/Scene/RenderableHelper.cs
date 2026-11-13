@@ -157,12 +157,7 @@ public static class RenderableHelper
             Color.Blue);
 
         // DUMMY POLYGON
-        _dmyPoint = new DbgPrimWireSphere(
-            Transform.Default,
-            CFG.Current.DummyMeshSize,
-            Color.Blue,
-            6,
-            6);
+        _dmyPoint = CreateDummyMarker();
 
         _dmySphereFwdUp = new DbgPrimWireSphereForwardUp(
             Transform.Default,
@@ -174,12 +169,7 @@ public static class RenderableHelper
             4);
 
         // BONE
-        _jointSphere = new DbgPrimWireSphere(
-            Transform.Default,
-            CFG.Current.NodeMeshSize,
-            Color.Blue,
-            6,
-            6);
+        _jointSphere = CreateBoneMarker();
 
         // MODEL MARKER
         _modelMarkerChr = new DbgPrimWireSpheroidWithArrow(
@@ -265,20 +255,41 @@ public static class RenderableHelper
     public static void UpdateProxySizes()
     {
         // DUMMY POLYGON
-        _dmyPoint = new DbgPrimWireSphere(
+        _dmyPoint = CreateDummyMarker();
+
+        // BONE
+        _jointSphere = CreateBoneMarker();
+    }
+
+    /// <summary>
+    /// A dummy faces along its Forward vector, the marker's +Z, with its Upward vector, +Y, as up: the long arrow
+    /// shows where it faces and the short one which way is up
+    /// </summary>
+    private static DbgPrimWireSphere CreateDummyMarker()
+    {
+        return new DbgPrimWireSphereWithArrows(
             Transform.Default,
             CFG.Current.DummyMeshSize,
             Color.Blue,
             6,
-            6);
+            6,
+            new DbgPrimWireSphereWithArrows.Arrow(Vector3.UnitZ, 3.5f, 0.9f),
+            new DbgPrimWireSphereWithArrows.Arrow(Vector3.UnitY, 2.2f, 0.6f));
+    }
 
-        // BONE
-        _jointSphere = new DbgPrimWireSphere(
+    /// <summary>
+    /// A bone points along its local +X, towards its children: four in five child bones lie along it in ER and DS3
+    /// characters (Tools/BoneAxisSurvey)
+    /// </summary>
+    private static DbgPrimWireSphere CreateBoneMarker()
+    {
+        return new DbgPrimWireSphereWithArrows(
             Transform.Default,
             CFG.Current.NodeMeshSize,
             Color.Blue,
             6,
-            6);
+            6,
+            new DbgPrimWireSphereWithArrows.Arrow(Vector3.UnitX, 3.5f, 0.9f));
     }
 
     // BOX REGION

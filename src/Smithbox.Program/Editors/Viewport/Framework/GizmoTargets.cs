@@ -108,22 +108,22 @@ public class SelectionGizmoTarget : IGizmoTarget
 
     public void Preview(Transform original, Transform current, GizmoState.GizmosMode mode)
     {
-        foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
+        foreach (Entity sel in GetMovedSelection())
         {
-            sel.SetTemporaryTransform(ProjectTransformDelta(sel, original, current));
+            sel.SetTemporaryTransform(sel.ProjectGizmoDelta(original, current));
         }
     }
 
     public void Commit(Transform original, Transform current, GizmoState.GizmosMode mode)
     {
         List<ViewportAction> actlist = new();
-        foreach (Entity sel in Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
+        foreach (Entity sel in GetMovedSelection())
         {
             sel.ClearTemporaryTransform(false);
 
             var includeScale = mode == GizmoState.GizmosMode.Scale;
 
-            actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel, original, current), includeScale));
+            actlist.Add(sel.GetUpdateTransformAction(sel.ProjectGizmoDelta(original, current), includeScale));
         }
 
         ViewportCompoundAction action = new(actlist);
@@ -131,36 +131,22 @@ public class SelectionGizmoTarget : IGizmoTarget
     }
 
     /// <summary>
-    /// Calculate position of selection as its being moved
+    /// The selected objects the drag moves itself. An object whose parent (or a parent of that) is also selected
+    /// already follows its parent, so moving it as well would move it twice.
     /// </summary>
-    private static Transform ProjectTransformDelta(Entity sel, Transform original, Transform current)
+    private List<Entity> GetMovedSelection()
     {
-        Transform objt = sel.GetLocalTransform();
-        Transform rootT = sel.GetRootTransform();
+        HashSet<Entity> selection = Viewport.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-        Quaternion deltaRot = current.Rotation * Quaternion.Inverse(original.Rotation);
+        return selection.Where(sel =>
+        {
+            for (Entity p = sel.Parent; p != null; p = p.Parent)
+            {
+                if (selection.Contains(p))
+                    return false;
+            }
 
-        Vector3 deltaPos = Vector3.Transform(
-            current.Position - original.Position,
-            Quaternion.Inverse(rootT.Rotation));
-
-        objt.Rotation = deltaRot * objt.Rotation;
-
-        // TODO: fix rotation gizmo being wrong due to root object transform node rotation
-        Vector3 rotateCenterOffset = Vector3.Transform(rootT.Position, rootT.Rotation);
-
-        Vector3 posdif = objt.Position - original.Position + rotateCenterOffset;
-
-        posdif = Vector3.Transform(
-            Vector3.Transform(posdif, Quaternion.Conjugate(original.Rotation)),
-            current.Rotation);
-
-        objt.Position = original.Position + posdif;
-        objt.Position += deltaPos - rotateCenterOffset;
-
-        Vector3 deltaScale = current.Scale / original.Scale;
-        objt.Scale *= deltaScale;
-
-        return objt;
+            return true;
+        }).ToList();
     }
 }

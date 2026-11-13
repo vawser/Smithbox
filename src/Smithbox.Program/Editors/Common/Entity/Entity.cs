@@ -1356,6 +1356,41 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// The local transform this object takes when the gizmo, started at <paramref name="original"/>, is dragged to
+    /// <paramref name="current"/>. Entities whose transforms nest can override this to work it out exactly.
+    /// </summary>
+    public virtual Transform ProjectGizmoDelta(Transform original, Transform current)
+    {
+        Transform objt = GetLocalTransform();
+        Transform rootT = GetRootTransform();
+
+        Quaternion deltaRot = current.Rotation * Quaternion.Inverse(original.Rotation);
+
+        Vector3 deltaPos = Vector3.Transform(
+            current.Position - original.Position,
+            Quaternion.Inverse(rootT.Rotation));
+
+        objt.Rotation = deltaRot * objt.Rotation;
+
+        // TODO: fix rotation gizmo being wrong due to root object transform node rotation
+        Vector3 rotateCenterOffset = Vector3.Transform(rootT.Position, rootT.Rotation);
+
+        Vector3 posdif = objt.Position - original.Position + rotateCenterOffset;
+
+        posdif = Vector3.Transform(
+            Vector3.Transform(posdif, Quaternion.Conjugate(original.Rotation)),
+            current.Rotation);
+
+        objt.Position = original.Position + posdif;
+        objt.Position += deltaPos - rotateCenterOffset;
+
+        Vector3 deltaScale = current.Scale / original.Scale;
+        objt.Scale *= deltaScale;
+
+        return objt;
+    }
+
+    /// <summary>
     /// Get root object's transform.
     /// </summary>
     public virtual Transform GetRootTransform()
