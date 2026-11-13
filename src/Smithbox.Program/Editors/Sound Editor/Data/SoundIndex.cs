@@ -123,6 +123,20 @@ public class SoundIndex
                 foreach (var name in FevEventNames(fev)) Add(name, c);
         }
 
+        // language variants (BB sprj_c2631_eng …): only where the base bank has no .fsb of its own, else every event
+        // would be listed once per language. One variant stands for the set: English, else the first by name.
+        var fsbStems = new HashSet<string>(Data.Containers.Where(c => c.Kind == SoundContainerKind.Fsb).Select(c => c.Name), StringComparer.OrdinalIgnoreCase);
+        var variants = Data.Containers.Where(c => c.Kind == SoundContainerKind.Fsb && FevFile.LanguageBase(c.Name) is { } b && !fsbStems.Contains(b))
+            .GroupBy(c => FevFile.LanguageBase(c.Name), StringComparer.OrdinalIgnoreCase);
+        foreach (var g in variants)
+        {
+            var pick = g.FirstOrDefault(c => c.Name.EndsWith("_eng", StringComparison.OrdinalIgnoreCase) || c.Name.EndsWith("_enu", StringComparison.OrdinalIgnoreCase))
+                       ?? g.OrderBy(c => c.Name, StringComparer.OrdinalIgnoreCase).First();
+            var fev = Data.ReadFile($"{pick.Path[..(pick.Path.LastIndexOf('/') + 1)]}{g.Key}.fev");
+            if (fev != null)
+                foreach (var name in FevEventNames(fev)) Add(name, pick);
+        }
+
         // DS2: the .fev inside each binder. DS2S binders hold only the .fsb (its projects are in frpg2.fevbnd.dcx), so
         // they aren't opened.
         bool sharedProjectGame = Data.FmodProjectPaths().Any(p => p.Contains(".fevbnd", StringComparison.OrdinalIgnoreCase));

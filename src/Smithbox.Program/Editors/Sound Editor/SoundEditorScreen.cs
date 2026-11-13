@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Keybinds;
 using System.Numerics;
 
 namespace StudioCore.Editors.SoundEditor;
@@ -31,9 +32,13 @@ public class SoundEditorScreen : EditorScreen, IDisposable
         ParseCommands(commands);
         ApplyPendingEntry();
         ApplyPendingEvent();
+        View.Update();
+        MonitorShortcuts();
 
         if (ImGui.BeginMenuBar())
         {
+            FileMenu();
+            EditMenu();
             ViewMenu();
             ImGui.EndMenuBar();
         }
@@ -154,11 +159,69 @@ public class SoundEditorScreen : EditorScreen, IDisposable
         }
     }
 
+    private void MonitorShortcuts()
+    {
+        if (!FocusManager.IsInSoundEditor() || ImGui.GetIO().WantTextInput)
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Save))
+            Save();
+
+        if (View.ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+            View.ActionManager.UndoAction();
+
+        if (View.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+            View.ActionManager.RedoAction();
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##fileMenuHeader"))
+        {
+            var edits = Project.Handler.SoundData?.Edits;
+            bool canSave = edits is { Count: > 0, IsSaving: false };
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##saveAction", $"{InputManager.GetHint(KeybindID.Save)}", false, canSave))
+            {
+                Save();
+            }
+            GUI.Tooltip(LOC.Get("SOUND_Menubar_Save_TT"));
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##editMenuHeader"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##undoAction", $"{InputManager.GetHint(KeybindID.Undo)}", false, View.ActionManager.CanUndo()))
+            {
+                View.ActionManager.UndoAction();
+            }
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##redoAction", $"{InputManager.GetHint(KeybindID.Redo)}", false, View.ActionManager.CanRedo()))
+            {
+                View.ActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>Saves every replaced sound: the banks that hold or reference it, and its streamed .wem.</summary>
     public void Save()
     {
-        // read-only in S2; keep the volume/loop settings
+        View.SaveEdits();
+        // and the volume/loop settings
         Smithbox.Instance.SaveConfiguration();
     }
+
+    public List<string> GetUnsavedFiles()
+        => Project.Handler.SoundData?.Edits is { Count: > 0 } edits ? edits.PendingFiles() : new();
+
+    public void SaveUnsaved() => Save();
+
+    public bool IsSavingUnsaved => Project.Handler.SoundData?.Edits?.IsSaving == true;
 
     public void OnDefocus()
     {

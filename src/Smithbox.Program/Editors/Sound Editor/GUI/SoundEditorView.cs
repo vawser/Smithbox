@@ -59,6 +59,113 @@ public class SoundEditorView : IDisposable
 
     public SoundData Data => Project.Handler.SoundData;
 
+    /// <summary>Undo/redo of replacements (write plan W2).</summary>
+    public ActionManager ActionManager = new();
+
+    /// <summary>
+    /// Sounds can be replaced: Wwise on PC (ER, NR, AC6). FMOD games stay read-only (write plan D3); DB_NT is a
+    /// console build (Opus), read-only until a write path for it is proven.
+    /// </summary>
+    public bool CanEdit => Data?.Middleware == SoundMiddleware.Wwise &&
+                           Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6;
+
+    // after a save reloads the selected bank: the sound to select again once it has loaded
+    private uint? _reselectMedia;
+
+    /// <summary>Asks for a file and replaces the sound with it (unsaved until Save).</summary>
+    public void ReplaceEntry(SoundEntry e)
+    {
+        if (!CanEdit || e == null || e.IsNotAudio)
+            return;
+
+        if (!PlatformUtils.Instance.OpenFileDialog(LOC.Get("SOUND_Replace_Dialog"), SoundImport.Filters,
+                CFG.Current.SoundEditor_Import_Folder, out var file) || string.IsNullOrEmpty(file))
+            return;
+        CFG.Current.SoundEditor_Import_Folder = Path.GetDirectoryName(file);
+
+        var edit = SoundImport.Load(file, e.StreamPath, out var error);
+        if (edit == null)
+        {
+            Smithbox.LogError(this, error);
+            return;
+        }
+
+        StopIfCurrent(e);
+        ActionManager.ExecuteAction(new ReplaceSoundAction(Data.Edits, SoundEdits.KeyOf(e), edit));
+        Smithbox.Log(this, LOC.Get("SOUND_Replace_Log", e.DisplayName, edit.Label));
+    }
+
+    /// <summary>Drops an unsaved replacement.</summary>
+    public void DiscardReplacement(SoundEntry e)
+    {
+        if (Data.Edits.Get(e) == null) return;
+        StopIfCurrent(e);
+        ActionManager.ExecuteAction(new ReplaceSoundAction(Data.Edits, SoundEdits.KeyOf(e), null));
+    }
+
+    /// <summary>Replaces the sound with the game's own audio (undoes a saved replacement once saved).</summary>
+    public void RevertToVanilla(SoundEntry e)
+    {
+        if (!CanEdit || e == null) return;
+        var edit = SoundImport.Vanilla(Data, e, out var error);
+        if (edit == null)
+        {
+            Smithbox.LogError(this, error);
+            return;
+        }
+        StopIfCurrent(e);
+        ActionManager.ExecuteAction(new ReplaceSoundAction(Data.Edits, SoundEdits.KeyOf(e), edit));
+    }
+
+    /// <summary>Is a saved (project) version of this sound's files there, so Revert to Vanilla means something?</summary>
+    public bool HasProjectVersion(SoundEntry e)
+        => e != null && (e.Container.InProject || (e.StreamPath != null && Data.IsInProject(e.StreamPath)));
+
+    private void StopIfCurrent(SoundEntry e)
+    {
+        if (IsCurrent(e))
+            Player.Stop();
+    }
+
+    /// <summary>Saves every replacement (on a worker; <see cref="Update"/> picks up the result).</summary>
+    public void SaveEdits()
+    {
+        if (Data.Edits.Count == 0 || Data.Edits.IsSaving)
+            return;
+        Player.Stop();
+        Data.Edits.SaveAll();
+    }
+
+    /// <summary>Each frame: apply a finished save (reload rewritten banks, clear undo, reselect).</summary>
+    public void Update()
+    {
+        var reloaded = Data?.Edits.ApplySaved();
+        if (reloaded != null)
+        {
+            // the saved state is on disk; undo would no longer match it
+            ActionManager.Clear();
+
+            var c = SelectedContainer;
+            if (c != null && reloaded.Contains(c))
+            {
+                _reselectMedia = SelectedEntry?.MediaId;
+                SelectedContainer = null;
+                SelectContainer(c);
+            }
+        }
+
+        if (_reselectMedia is { } id && SelectedContainer?.State == SoundLoadState.Loaded)
+        {
+            _reselectMedia = null;
+            var e = SelectedContainer.Entries.FirstOrDefault(x => x.MediaId == id);
+            if (e != null)
+            {
+                SelectEntry(e);
+                EntryList.ScrollToSelection = true;
+            }
+        }
+    }
+
     public void SelectContainer(SoundContainer container)
     {
         if (SelectedContainer == container)

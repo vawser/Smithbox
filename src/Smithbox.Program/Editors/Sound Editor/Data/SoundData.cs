@@ -62,6 +62,14 @@ public class SoundData : IDisposable
         foreach (var e in Project.Locator.FileDictionary.Entries)
             _allPaths.Add(e.Path);
 
+        // which sound files come from the sd archives (ER sd/sd_dlc02, NR sd/sd_dlc01, AC6 sd)
+        foreach (var e in Project.Locator.FileDictionary.Entries.Concat(Project.Locator.UnvalidatedFileDictionary.Entries))
+            if (e.Archive != null && e.Archive.StartsWith("sd", StringComparison.OrdinalIgnoreCase) && IsBankOrWem(e.Path))
+                _sdPaths.Add(e.Path);
+
+        Edits = new SoundEdits(this);
+        MediaMap = new SoundMediaMap(this);
+
         // The locator's dictionary holds only validated entries. That is right for AC6 (228 listed banks aren't in
         // the game), but every ER sd/sd_dlc02 entry is marked unvalidated although the files exist. So unvalidated
         // sound entries are taken too, when the VFS has the file.
@@ -128,15 +136,67 @@ public class SoundData : IDisposable
                                 p.EndsWith(".fevbnd.dcx", StringComparison.OrdinalIgnoreCase) ||
                                 p.EndsWith(".fevbnd", StringComparison.OrdinalIgnoreCase));
 
-    /// <summary>The bytes of a file in the project's VFS, or null.</summary>
+    /// <summary>Replaced sounds not yet saved (write plan W2).</summary>
+    public SoundEdits Edits;
+
+    /// <summary>Wwise: which banks hold or reference each media ID (built on first use).</summary>
+    public SoundMediaMap MediaMap;
+
+    // VFS paths of .bnk/.wem files from the sd archives
+    private readonly HashSet<string> _sdPaths = new(StringComparer.OrdinalIgnoreCase);
+
+    private static bool IsBankOrWem(string path)
+        => path.EndsWith(".bnk", StringComparison.OrdinalIgnoreCase) || path.EndsWith(".wem", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// Where a sound file lives in the project: the VFS path, except for files of the sd archives, whose VFS paths
+    /// have no folder (/cs_c2010.bnk) while the game reads loose ones from sd/ (write plan W0, D4): /sd/cs_c2010.bnk.
+    /// </summary>
+    public string ProjectPath(string path) => _sdPaths.Contains(path) ? "/sd" + path : path;
+
+    /// <summary>Does the project folder hold its own copy of this file?</summary>
+    public bool IsInProject(string path)
+    {
+        try { return Project.VFS.ProjectFS.FileExists(ProjectPath(path)); }
+        catch { return false; }
+    }
+
+    /// <summary>Writes a sound file to the project (at <see cref="ProjectPath"/>).</summary>
+    public void WriteProjectFile(string path, byte[] bytes) => Project.VFS.ProjectFS.WriteFile(ProjectPath(path), bytes);
+
+    /// <summary>
+    /// The bytes of a file: the project's copy first (for sd files, at /sd/…, which the VFS path doesn't reach), then the
+    /// project's VFS. Null if missing.
+    /// </summary>
     public byte[] ReadFile(string path)
     {
+        var mapped = ProjectPath(path);
+        if (mapped != path)
+        {
+            var pfs = Project.VFS.ProjectFS;
+            if (pfs.FileExists(mapped))
+                return pfs.ReadFile(mapped)?.ToArray();
+        }
+
         var fs = Project.VFS.FS;
         if (!fs.FileExists(path))
             return null;
 
         return fs.ReadFile(path)?.ToArray();
     }
+
+    /// <summary>The game's own bytes of a file (no project copy), or null.</summary>
+    public byte[] ReadVanillaFile(string path)
+    {
+        var fs = Project.VFS.VanillaFS;
+        if (!fs.FileExists(path))
+            return null;
+        return fs.ReadFile(path)?.ToArray();
+    }
+
+    /// <summary>The streamed .wem paths of a media ID (one per language folder), or none.</summary>
+    public IReadOnlyList<string> StreamedWems(uint mediaId)
+        => _wemPaths.TryGetValue(mediaId, out var l) ? l : Array.Empty<string>();
 
     /// <summary>
     /// The streamed .wem of a media ID: the one in the bank's language folder if there is one, else the SFX one,

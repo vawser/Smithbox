@@ -95,6 +95,32 @@ public class SoundPlayerBar
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, player.Error);
 
         DrawExport();
+        DrawEdits();
+    }
+
+    /// <summary>Unsaved replacements: how many, finding the banks they touch, saving.</summary>
+    private void DrawEdits()
+    {
+        var data = View.Data;
+        if (data == null || !View.CanEdit || (data.Edits.Count == 0 && !data.Edits.IsSaving))
+            return;
+
+        ImGui.Separator();
+        var map = data.MediaMap;
+        if (data.Edits.IsSaving)
+            ImGui.TextUnformatted(LOC.Get("SOUND_Edits_Saving"));
+        else if (!map.IsBuilt && map.Error == null)
+            ImGui.ProgressBar(map.Total > 0 ? (float)map.Progress / map.Total : 0f, new Vector2(-1, 0),
+                LOC.Get("SOUND_MediaMap_Progress", map.Progress, map.Total));
+        else
+        {
+            var files = data.Edits.PendingFiles();
+            ImGui.TextUnformatted(LOC.Get("SOUND_Edits_Pending", data.Edits.Count, files.Count));
+            GUI.Tooltip(string.Join("\n", files.Take(40)) + (files.Count > 40 ? "\n…" : ""));
+            ImGui.SameLine();
+            if (ImGui.SmallButton($"{LOC.Get("EDITOR_Menubar_Action_Save")}##soundEditsSave"))
+                View.SaveEdits();
+        }
     }
 
     /// <summary>Progress of the running export, or the result of the last one until dismissed.</summary>

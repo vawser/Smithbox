@@ -157,8 +157,15 @@ public class SoundEntryList
             ImGui.EndPopup();
         }
 
-        // Name
+        // Name (* = replaced, not saved yet)
         ImGui.TableNextColumn();
+        var edit = View.Data?.Edits.Get(e);
+        if (edit != null)
+        {
+            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, "*");
+            GUI.Tooltip(LOC.Get(edit.IsVanilla ? "SOUND_Edit_Mark_Vanilla_TT" : "SOUND_Edit_Mark_TT", edit.Label));
+            ImGui.SameLine();
+        }
         if (e.IsEmpty || e.IsNotAudio)
             ImGui.TextDisabled($"{e.DisplayName} {LOC.Get(e.IsNotAudio ? "SOUND_Label_Not_Audio" : "SOUND_Label_Empty")}");
         else
@@ -213,6 +220,26 @@ public class SoundEntryList
 
         if (e.StreamPath != null && ImGui.MenuItem($"{LOC.Get("SOUND_Action_Copy_Path")}##copyPath"))
             ImGui.SetClipboardText(e.StreamPath);
+
+        // Replace (write plan W2)
+        if (View.CanEdit)
+        {
+            ImGui.Separator();
+            var canReplace = !e.IsNotAudio && !View.Data.Edits.IsSaving;
+            if (ImGui.MenuItem($"{LOC.Get("SOUND_Replace")}##replace", "", false, canReplace))
+                View.ReplaceEntry(e);
+            GUI.Tooltip(LOC.Get("SOUND_Replace_TT"));
+
+            if (View.Data.Edits.Get(e) != null && ImGui.MenuItem($"{LOC.Get("SOUND_Replace_Discard")}##discardReplace"))
+                View.DiscardReplacement(e);
+
+            if (View.HasProjectVersion(e))
+            {
+                if (ImGui.MenuItem($"{LOC.Get("SOUND_Revert_Vanilla")}##revertVanilla", "", false, canReplace))
+                    View.RevertToVanilla(e);
+                GUI.Tooltip(LOC.Get("SOUND_Revert_Vanilla_TT"));
+            }
+        }
 
         ImGui.Separator();
         var canStart = View.CanStartExport;

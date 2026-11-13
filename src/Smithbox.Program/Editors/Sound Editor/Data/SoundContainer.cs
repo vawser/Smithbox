@@ -135,10 +135,25 @@ public class SoundContainer
         });
     }
 
+    private bool? _inProject;
+
+    /// <summary>The project folder has its own copy of this bank (saved edits, or a mod's file). Cached.</summary>
+    public bool InProject => _inProject ??= Data.IsInProject(Path);
+
+    /// <summary>After a save rewrote this bank: forget the cached facts and reload on next use.</summary>
+    public void MarkSaved()
+    {
+        _inProject = null;
+        Unload();
+    }
+
     /// <summary>Drops the parsed data and bytes (reloaded on next selection).</summary>
     public void Unload()
     {
         if (State == SoundLoadState.Loading) return;
+        // each sound's decode temp file too, or a reload after a save would play the old audio
+        foreach (var e in Entries)
+            if (e.Source?.CacheKey != null) VgmstreamCli.Forget(e.Source.CacheKey);
         Entries = new();
         Events = new();
         _bytes.Clear();
@@ -203,6 +218,21 @@ public class SoundContainer
         }
         if (shared.Count > 0)
             info.Add(LOC.Get("SOUND_Fev_Info_Shared", string.Join(", ", shared)));
+
+        // a language variant (BB sprj_c1020_eng, SDT vm10_enu) has no project: the base bank's project plays it, its
+        // waveforms in the base bank resolving to this FSB's samples (fevbanks: 100% in BB and SDT)
+        if (events.Count == 0 && ownFev == null && FevFile.LanguageBase(Name) is { } baseName)
+        {
+            var basePath = $"{Path[..(Path.LastIndexOf('/') + 1)]}{baseName}.fev";
+            var baseBytes = Data.ReadFile(basePath);
+            if (baseBytes != null)
+            {
+                var fev = FevFile.Read(baseBytes);
+                var mine = fev.EventsForBank(baseName);
+                events.AddRange(BuildFevEvents(fev, mine, entries, baseName));
+                info.Add(LOC.Get("SOUND_Fev_Info_Language", $"{baseName}.fev", mine.Count));
+            }
+        }
 
         FevInfo = info.Count > 0 ? string.Join("; ", info) : null;
 
@@ -387,12 +417,14 @@ public class SoundContainer
             {
                 e.IsStreamed = true;
                 e.StreamPath = streamPath;
+                var key = new SoundMediaKey(id, Language ?? "");
                 e.Source = new SoundSource
                 {
                     Name = streamPath,
                     Extension = "wem",
                     CacheKey = $"{Data.Project.Descriptor.ProjectPath}|{streamPath}",
-                    ReadBytes = () => Data.ReadFile(streamPath),
+                    // an unsaved replacement plays instead (SoundEdits)
+                    ReadBytes = () => Data.Edits.ReadFor(key, () => Data.ReadFile(streamPath)),
                 };
             }
             else if (inBank.TryGetValue(id, out var m) && header == null)
@@ -406,12 +438,13 @@ public class SoundContainer
                 e.IsEmpty = m.Size == 0;
                 var offset = m.Offset;
                 var size = m.Size;
+                var key = new SoundMediaKey(id, Language ?? "");
                 e.Source = new SoundSource
                 {
                     Name = $"{Path}#{id}",
                     Extension = "wem",
                     CacheKey = $"{Data.Project.Descriptor.ProjectPath}|{Path}#{id}",
-                    ReadBytes = () => _bytes.TryGetValue("", out var b) ? b.AsSpan(offset, size).ToArray() : null,
+                    ReadBytes = () => Data.Edits.ReadFor(key, () => _bytes.TryGetValue("", out var b) ? b.AsSpan(offset, size).ToArray() : null),
                 };
             }
             else

@@ -1376,6 +1376,7 @@ public class CFG
     public bool Interface_SoundEditor_ToolWindow = true;
     public bool Interface_SoundEditor_Tool_Search = true;
     public string SoundEditor_Export_Folder = "";
+    public string SoundEditor_Import_Folder = "";
     #endregion
 
     #region EMEVD Editor

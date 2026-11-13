@@ -152,6 +152,18 @@ public sealed class FevFile
         return f;
     }
 
+    private static readonly Regex LanguageSuffix = new(@"^(.+)_(ded|eng|enu|esa|ese|frf|iti|jaj|ptb|kok|zht|zhs|rur|plp|ara|thth)$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+    /// <summary>
+    /// The base bank of a language variant FSB (BB sprj_c1020_eng → sprj_c1020, SDT vm10_enu → vm10), or null. Such
+    /// FSBs have no project; the base bank's project plays them, with the language picked at run time.
+    /// </summary>
+    public static string LanguageBase(string bankStem)
+    {
+        var m = LanguageSuffix.Match(bankStem ?? "");
+        return m.Success ? m.Groups[1].Value : null;
+    }
+
     /// <summary>Only the header's wave bank list (cheap: no definitions or events), for cataloguing a game's projects.</summary>
     public static List<string> ReadBankNames(byte[] d)
     {

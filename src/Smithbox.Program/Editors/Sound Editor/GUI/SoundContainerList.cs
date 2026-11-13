@@ -132,6 +132,23 @@ public class SoundContainerList
             ImGui.SameLine();
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("SOUND_Banks_Failed"));
         }
+
+        // * = a save will rewrite it; "project" = the project has its own copy
+        if (View.CanEdit)
+        {
+            if (View.Data.Edits.Affects(c))
+            {
+                ImGui.SameLine();
+                ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, "*");
+                GUI.Tooltip(LOC.Get("SOUND_Banks_Modified_TT"));
+            }
+            if (c.InProject)
+            {
+                ImGui.SameLine();
+                ImGui.TextDisabled(LOC.Get("SOUND_Banks_Project"));
+                GUI.Tooltip(LOC.Get("SOUND_Banks_Project_TT", View.Data.ProjectPath(c.Path)));
+            }
+        }
         ImGui.Unindent();
     }
 
