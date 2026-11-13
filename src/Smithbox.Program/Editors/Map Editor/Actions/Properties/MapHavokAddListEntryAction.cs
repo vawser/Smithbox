@@ -8,8 +8,10 @@ using System.Text;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class MapHavokAddListEntryAction : ViewportAction
+public class MapHavokAddListEntryAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Add_Entry_No_Object", Property.Name);
+
     private readonly object ChangedObject;
     private readonly int Index;
     private readonly object NewValue;

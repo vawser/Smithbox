@@ -9,8 +9,10 @@ namespace StudioCore.Editors.MapEditor;
 /// An edit of the Navigation tool's NVM mode (DeS, DS1, DS1R): swaps the edited NVMs, and the MCP and MCG when they
 /// change, for the copies the edit made (NvmEdit), and back on undo. The map's save writes them (MapFileType.Navmesh).
 /// </summary>
-public class NavigationNvmEditAction : ViewportAction
+public class NavigationNvmEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Mesh");
+
     public sealed record FileChange(string Name, NVM Before, NVM After);
 
     private readonly MapContainer Map;

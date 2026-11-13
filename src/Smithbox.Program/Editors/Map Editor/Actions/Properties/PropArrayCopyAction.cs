@@ -7,8 +7,15 @@ namespace StudioCore.Editors.MapEditor;
 /// <summary>
 ///     Copies values from one array to another without affecting references.
 /// </summary>
-public class PropArrayCopyAction : ViewportAction
+public class PropArrayCopyAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return Owner != null
+            ? LOC.Get("MAP_History_Copy_Array", MapHistory.NameObject(Owner))
+            : LOC.Get("MAP_History_Copy_Array_No_Object");
+    }
+
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
 

@@ -213,8 +213,13 @@ public static class MsbReferences
 /// <summary>
 /// Clears reference fields (sets them to null, which an MSB writes as "no reference"), restoring them on undo
 /// </summary>
-public class ClearReferencesAction : ViewportAction
+public class ClearReferencesAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Clear_References", Slots.Count);
+    }
+
     private readonly List<ReferenceSlot> Slots;
 
     public ClearReferencesAction(IEnumerable<ReferenceSlot> slots)

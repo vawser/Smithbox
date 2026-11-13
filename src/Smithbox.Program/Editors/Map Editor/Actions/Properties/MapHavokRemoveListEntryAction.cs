@@ -8,8 +8,10 @@ using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class MapHavokRemoveListEntryAction : ViewportAction
+public class MapHavokRemoveListEntryAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Remove_Entry_No_Object", Property.Name);
+
     private readonly object ChangedObject;
     private readonly int Index;
     private object OldValue;

@@ -154,6 +154,12 @@ public class MapToolWindow
             View.SelectionGroupsTool.OnToolWindow();
         }
 
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_History)
+        {
+            View.HistoryTool.OnToolWindow();
+        }
+
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
@@ -408,6 +414,7 @@ public class MapToolWindow
             ToolToggle("MAP_ToolWindow_Property_Actions", ref CFG.Current.Interface_MapEditor_Tool_Properties_Action);
             ToolToggle("MAP_ToolWindow_Selection", ref CFG.Current.Interface_MapEditor_Tool_Select_Action);
             ToolToggle("MAP_ToolWindow_Selection_Groups", ref CFG.Current.Interface_MapEditor_Tool_SelectionGroups);
+            ToolToggle("MAP_ToolWindow_History", ref CFG.Current.Interface_MapEditor_Tool_History);
 
             // Viewport visibility
             ToolToggle("MAP_ToolWindow_Viewport_Filters", ref CFG.Current.Interface_MapEditor_Tool_ViewportFilters);

@@ -9,8 +9,17 @@ using System.Linq;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class EntMoveAction : ViewportAction
+public class EntMoveAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        var objects = MapHistory.NameObjects(Moveables);
+
+        return TargetMap != null
+            ? LOC.Get("MAP_History_Move_To_Map", objects, TargetMap.Name)
+            : LOC.Get("MAP_History_Move", objects);
+    }
+
     private MapEditorView View;
 
     private readonly List<MsbEntity> Moveables = new();

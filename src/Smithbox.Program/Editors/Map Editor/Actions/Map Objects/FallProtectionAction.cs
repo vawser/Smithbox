@@ -10,8 +10,10 @@ namespace StudioCore.Editors.MapEditor;
 /// generated walls (with or without the walls it had). Undoing puts the old bodies back. Both mark the map's collision
 /// as modified, and call back so the displayed mesh follows.
 /// </summary>
-public class FallProtectionAction : ViewportAction
+public class FallProtectionAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Fall_Protection", FileName);
+
     private readonly MapContainer Map;
     private readonly string FileName;
     private readonly List<BodyCinfo> Bodies;

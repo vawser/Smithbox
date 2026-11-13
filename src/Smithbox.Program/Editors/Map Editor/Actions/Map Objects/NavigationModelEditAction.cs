@@ -10,8 +10,10 @@ namespace StudioCore.Editors.MapEditor;
 /// replaced, and puts back one side or the other. The map's save writes the NVA, the navmesh binder (adding or
 /// dropping files) and the changed NVC files.
 /// </summary>
-public class NavigationModelEditAction : ViewportAction
+public class NavigationModelEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Mesh");
+
     private readonly MapContainer Map;
     private readonly NavigationBank Bank;
     private readonly NavModelState Before;

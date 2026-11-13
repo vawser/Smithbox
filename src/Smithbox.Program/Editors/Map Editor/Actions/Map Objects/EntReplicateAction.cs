@@ -13,8 +13,13 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class EntReplicateAction : ViewportAction
+public class EntReplicateAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Replicate", MapHistory.NameObjects(Clonables));
+    }
+
     private MapEditorView View;
 
     private readonly List<MsbEntity> Clonables = new();

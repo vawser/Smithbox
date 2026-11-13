@@ -9,8 +9,10 @@ namespace StudioCore.Editors.MapEditor;
 /// moved vertices (see NavVertexEdit.Build). No face, edge or vertex is renumbered, so the NVA, NVC and ONAV files are
 /// untouched; the map's save writes the navmesh binder (MapFileType.Navmesh).
 /// </summary>
-public class NavigationVertexEditAction : ViewportAction
+public class NavigationVertexEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Vertices");
+
     private readonly MapContainer Map;
     private readonly NavigationBank Bank;
     private readonly IReadOnlyList<NavFileChange> Files;

@@ -7,8 +7,13 @@ using System.Linq;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class EntDeleteAction : ViewportAction
+public class EntDeleteAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Delete", MapHistory.NameObjects(Deletables));
+    }
+
     private MapEditorView View;
 
     private readonly List<MsbEntity> Deletables = new();

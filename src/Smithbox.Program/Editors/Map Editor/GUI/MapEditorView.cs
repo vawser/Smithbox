@@ -119,6 +119,7 @@ public class MapEditorView : IEditorView
     public MapListFilterTool MapListFilterTool;
     public MapValidatorTool MapValidatorTool;
     public VanillaCompareTool VanillaCompareTool;
+    public MapHistoryTool HistoryTool;
     public IrradianceVolumeIdTool IrradianceVolumeIdTool;
     public MapModelInsightView MapModelInsightTool;
     public MapModelInsightHelper ModelInsightTool;
@@ -227,6 +228,7 @@ public class MapEditorView : IEditorView
         MapListFilterTool = new MapListFilterTool(this, project);
         MapValidatorTool = new MapValidatorTool(this, project);
         VanillaCompareTool = new VanillaCompareTool(this, project);
+        HistoryTool = new MapHistoryTool(this, project);
         IrradianceVolumeIdTool = new IrradianceVolumeIdTool(this, project);
         MapModelInsightTool = new MapModelInsightView(this, project);
         ModelInsightTool = new MapModelInsightHelper(this, project);

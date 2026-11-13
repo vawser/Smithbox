@@ -31,8 +31,10 @@ public record WallTriangleChange(MsbEntity Entity, string MapId, string ModelNam
 /// <summary>
 /// The triangles painted in one stroke of the Wall Painting tool.
 /// </summary>
-public class WallPaintAction : ViewportAction
+public class WallPaintAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Wall_Paint");
+
     private readonly WallBank Bank;
     private readonly List<WallTriangleChange> Changes;
 

@@ -106,6 +106,16 @@ public class ViewportActionManager
     }
 
     /// <summary>
+    /// How many undo and redo steps RemoveActionsTouching would drop for the scope
+    /// </summary>
+    public int CountActionsTouching(string scope)
+    {
+        static bool Dropped(ViewportAction a, string scope) => a.TouchedScopes.Count == 0 || a.TouchedScopes.Contains(scope);
+
+        return UndoStack.Count(a => Dropped(a, scope)) + RedoStack.Count(a => Dropped(a, scope));
+    }
+
+    /// <summary>
     /// Drops every action that didn't change the scope from the undo and redo history, keeping the rest in order
     /// </summary>
     public void KeepOnlyActionsTouching(string scope)

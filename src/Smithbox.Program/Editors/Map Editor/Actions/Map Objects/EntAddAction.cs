@@ -10,8 +10,13 @@ using System.Text.RegularExpressions;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class EntAddAction : ViewportAction
+public class EntAddAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Add", MapHistory.NameObjects(Added));
+    }
+
     private MapEditorView View;
 
     private readonly List<MsbEntity> Added = new();

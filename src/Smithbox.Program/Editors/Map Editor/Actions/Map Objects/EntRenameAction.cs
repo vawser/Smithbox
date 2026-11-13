@@ -8,8 +8,15 @@ namespace StudioCore.Editors.MapEditor;
 /// Renames map objects. When updating references, the [MSBReference] name fields of the other objects in the
 /// same map that point to a renamed object are rewritten to its new name, so the MSB still resolves on save.
 /// </summary>
-public class EntRenameAction : ViewportAction
+public class EntRenameAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return Entities.Count == 1 && NewNames.Count == 1
+            ? LOC.Get("MAP_History_Rename_One", OldNames[0], NewNames[0])
+            : LOC.Get("MAP_History_Rename", MapHistory.NameObjects(Entities));
+    }
+
     private readonly MapEditorView View;
     private readonly List<MsbEntity> Entities;
     private readonly List<string> NewNames;

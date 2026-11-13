@@ -11,8 +11,13 @@ namespace StudioCore.Editors.MapEditor;
 /// order in the saved MSB. Several can be moved at once, also across types and maps: within each type the
 /// selected objects move together as a block, keeping their relative order, and the others keep theirs.
 /// </summary>
-public class EntReorderAction : ViewportAction
+public class EntReorderAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Reorder", MapHistory.NameObjects(selection));
+    }
+
     private MapEditorView View;
 
     private List<MsbEntity> selection = new();

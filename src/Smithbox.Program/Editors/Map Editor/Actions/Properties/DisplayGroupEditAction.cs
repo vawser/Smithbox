@@ -8,8 +8,21 @@ namespace StudioCore.Editors.MapEditor;
 /// Sets the values of one or more group arrays (DrawGroups / DisplayGroups) in a single undo step, each with its
 /// own new values, and marks the map that owns each array as modified.
 /// </summary>
-public class DisplayGroupEditAction : ViewportAction
+public class DisplayGroupEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        var owners = new List<Entity>();
+
+        foreach (var change in Changes)
+        {
+            if (change.Owner != null && !owners.Contains(change.Owner))
+                owners.Add(change.Owner);
+        }
+
+        return LOC.Get("MAP_History_Display_Groups", MapHistory.NameObjects(owners));
+    }
+
     public class Change
     {
         /// <summary>The live array, edited in place (the renderer holds the same reference).</summary>

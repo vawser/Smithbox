@@ -6,12 +6,27 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class PropMultChangeAction : ViewportAction
+public class PropMultChangeAction : ViewportAction, IMapHistoryItem
 {
     private MapEditorView View;
 
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
+
+    /// <summary>
+    /// The property changed on every object
+    /// </summary>
+    public string PropertyName { get; }
+
+    /// <summary>
+    /// The objects changed
+    /// </summary>
+    public IReadOnlyCollection<Entity> Entities => ChangedEnts;
+
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Set_Field", PropertyName, MapHistory.NameObjects(ChangedEnts));
+    }
 
     private bool UpdateRenderMesh = false;
 
@@ -22,6 +37,7 @@ public class PropMultChangeAction : ViewportAction
         int index = -1, int classIndex = -1)
     {
         View = view;
+        PropertyName = prop.Name;
 
         var isModelChange = prop.Name == "ModelName";
 

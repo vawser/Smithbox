@@ -14,8 +14,17 @@ using static StudioCore.Editors.MapEditor.DuplicateAction;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class EntDuplicateAction : ViewportAction
+public class EntDuplicateAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        var objects = MapHistory.NameObjects(Clonables);
+
+        return DuplicateToMap && TargetMap != null
+            ? LOC.Get("MAP_History_Duplicate_To_Map", objects, TargetMap.Name)
+            : LOC.Get("MAP_History_Duplicate", objects);
+    }
+
     private MapEditorView View;
     private Action<bool> PostExecutionAction;
 

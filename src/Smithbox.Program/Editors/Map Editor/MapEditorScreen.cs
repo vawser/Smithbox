@@ -197,6 +197,12 @@ public class MapEditorScreen : EditorScreen
                     }
                 }
 
+                // Named only on hover, as naming a large step looks through all of it
+                if (canUndo && ImGui.IsItemHovered())
+                {
+                    GUI.Tooltip(LOC.Get("MAP_History_Menu_Undo_TT", MapHistory.Describe(activeView.ViewportActionManager.PeekUndoAction())));
+                }
+
                 // Undo All
                 if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##undoAllAction", "", false, canUndo))
                 {
@@ -214,6 +220,21 @@ public class MapEditorScreen : EditorScreen
                         activeView.ViewportActionManager.RedoAction();
                     }
                 }
+
+                if (canRedo && ImGui.IsItemHovered())
+                {
+                    GUI.Tooltip(LOC.Get("MAP_History_Menu_Redo_TT", MapHistory.Describe(activeView.ViewportActionManager.PeekRedoAction())));
+                }
+
+                // History: opens the tool that lists the steps
+                if (ImGui.MenuItem($"{LOC.Get("MAP_History_Menu_History")}##historyAction"))
+                {
+                    CFG.Current.Interface_MapEditor_ToolWindow = true;
+                    CFG.Current.Interface_MapEditor_Tool_History = true;
+
+                    activeView.HistoryTool.FocusOnNextDraw = true;
+                }
+                GUI.Tooltip(LOC.Get("MAP_History_Menu_History_TT"));
 
                 ImGui.Separator();
 

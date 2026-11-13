@@ -16,8 +16,10 @@ public record NavEdgeChange(NavmeshFile File, int Edge, int FlagsBefore, int Fla
 /// and user edge flags and data. Connections stay valid, as no face or edge is renumbered. The edits are made to the
 /// navmesh bank's Havok documents, which the map's save writes back (MapFileType.Navmesh).
 /// </summary>
-public class NavigationEditAction : ViewportAction
+public class NavigationEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Faces");
+
     private readonly MapContainer Map;
     private readonly IReadOnlyList<NavFaceDataChange> Faces;
     private readonly IReadOnlyList<NavEdgeChange> Edges;

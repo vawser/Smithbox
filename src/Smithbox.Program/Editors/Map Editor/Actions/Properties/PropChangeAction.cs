@@ -8,7 +8,7 @@ using System.Reflection;
 namespace StudioCore.Editors.MapEditor;
 
 
-public class PropChangeAction : ViewportAction
+public class PropChangeAction : ViewportAction, IMapHistoryItem
 {
     private readonly object ChangedObject;
     private readonly List<PropertyChange> Changes = new();
@@ -17,6 +17,25 @@ public class PropChangeAction : ViewportAction
     private Entity TargetEnt;
 
     private LightAtlasEdit AtlasEdit;
+
+    /// <summary>
+    /// The map object the change belongs to, if it was given one
+    /// </summary>
+    public Entity TargetEntity => TargetEnt;
+
+    /// <summary>
+    /// The names of the properties changed, each once, in the order they were added
+    /// </summary>
+    public IReadOnlyList<string> PropertyNames => Changes.Select(e => e.Property.Name).Distinct().ToList();
+
+    public string Describe()
+    {
+        var fields = string.Join(", ", PropertyNames);
+
+        return TargetEnt != null
+            ? LOC.Get("MAP_History_Set_Field", fields, MapHistory.NameObject(TargetEnt))
+            : LOC.Get("MAP_History_Set_Field_No_Object", fields);
+    }
 
     public PropChangeAction(object changed)
     {

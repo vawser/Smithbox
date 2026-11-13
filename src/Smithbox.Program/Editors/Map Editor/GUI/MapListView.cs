@@ -539,6 +539,17 @@ public class MapListView : IActionEventHandler
                 {
                     View.Universe.RequestUnloadMap(mapWrapper.Name);
                 }
+
+                // How much undo history goes with it: the history is held by the view that loaded the map
+                if (ImGui.IsItemHovered())
+                {
+                    var manager = (mapWrapper.MapContainer.OwnerView ?? View).ViewportActionManager;
+                    var dropped = manager.CountActionsTouching(mapWrapper.Name);
+
+                    GUI.Tooltip(dropped > 0
+                        ? LOC.Get("MAP_History_Unload_Map_TT", dropped)
+                        : LOC.Get("MAP_History_Unload_Map_None_TT"));
+                }
             }
 
             // ER: Load Related Maps

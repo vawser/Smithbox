@@ -309,6 +309,7 @@ public class CFG
     // Map Contents colours objects that differ from, or aren't in, the vanilla map
     public bool MapEditor_Vanilla_Highlight = true;
     public bool Interface_MapEditor_Tool_VanillaCompare = true;
+    public bool Interface_MapEditor_Tool_History = true;
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
     public bool MapEditor_ModelLoad_MapPieces = true;

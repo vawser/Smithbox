@@ -8,8 +8,18 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class EntChangeTypeAction : ViewportAction
+public class EntChangeTypeAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        var objects = MapHistory.NameObjects(Entities);
+        var types = NewTypes?.Distinct().ToList();
+
+        return types is { Count: 1 }
+            ? LOC.Get("MAP_History_Change_Type_To", objects, types[0])
+            : LOC.Get("MAP_History_Change_Type", objects);
+    }
+
     private MapEditorView View;
 
     private readonly List<MsbEntity> Entities = new();

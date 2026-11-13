@@ -7,8 +7,13 @@ using System.Text;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class RemoveListEntryAction : ViewportAction
+public class RemoveListEntryAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Remove_Entry", Property.Name, MapHistory.NameObject(TargetEnt));
+    }
+
     private readonly object ChangedObject;
     private readonly int Index;
     private object OldValue;

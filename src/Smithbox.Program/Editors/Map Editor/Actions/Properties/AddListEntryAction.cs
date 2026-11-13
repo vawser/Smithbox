@@ -7,8 +7,13 @@ using System.Text;
 
 namespace StudioCore.Editors.MapEditor;
 
-public class AddListEntryAction : ViewportAction
+public class AddListEntryAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe()
+    {
+        return LOC.Get("MAP_History_Add_Entry", Property.Name, MapHistory.NameObject(TargetEnt));
+    }
+
     private readonly object ChangedObject;
     private readonly int Index;
     private readonly object NewValue;

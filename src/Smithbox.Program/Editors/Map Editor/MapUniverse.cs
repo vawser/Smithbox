@@ -539,7 +539,15 @@ public class MapUniverse : IUniverse
             }
         }
 
+        // Said in the log, as the steps can't be got back (the History tool shows the count before unloading)
+        var droppedSteps = View.ViewportActionManager.CountActionsTouching(mapID);
+
         View.ViewportActionManager.RemoveActionsTouching(mapID);
+
+        if (droppedSteps > 0)
+        {
+            Smithbox.Log(this, LOC.Get("MAP_History_Unload_Dropped", mapID, droppedSteps));
+        }
 
         foreach (var entry in View.Project.Handler.MapData.PrimaryBank.Maps)
         {

@@ -9,6 +9,16 @@ public class ViewportCompoundAction : ViewportAction
 
     private Action<bool> PostExecutionAction;
 
+    /// <summary>
+    /// The actions run by this one, in order, so a history list can name the step from them
+    /// </summary>
+    public IReadOnlyList<ViewportAction> Children => Actions;
+
+    /// <summary>
+    /// What a history list calls this step. Null lets it be named from its actions.
+    /// </summary>
+    public string Label { get; set; }
+
     public ViewportCompoundAction(List<ViewportAction> actions)
     {
         Actions = actions;

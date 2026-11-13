@@ -8,8 +8,10 @@ namespace StudioCore.Editors.MapEditor;
 /// keeps the connectors from before and after the re-stitch and puts back one or the other. The changed files are
 /// marked, so the map's save writes them (MapFileType.NVA and NVC).
 /// </summary>
-public class NavigationStitchAction : ViewportAction
+public class NavigationStitchAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Stitch");
+
     private readonly MapContainer Map;
     private readonly NavigationBank Bank;
     private readonly NavConnectionState Before;

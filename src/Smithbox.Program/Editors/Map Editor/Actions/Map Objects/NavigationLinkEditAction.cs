@@ -9,8 +9,10 @@ namespace StudioCore.Editors.MapEditor;
 /// the other. Only user edges move, which no connection names (NavUserEdges.ConnectionsNameEdgesFrom is checked first),
 /// so the NVA and NVC files need no change. Saved through the map's navmesh files (MapFileType.Navmesh).
 /// </summary>
-public class NavigationLinkEditAction : ViewportAction
+public class NavigationLinkEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Links");
+
     private readonly MapContainer Map;
     private readonly NavmeshFile File;
     private readonly NavMeshState Before;

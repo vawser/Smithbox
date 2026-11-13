@@ -11,8 +11,10 @@ namespace StudioCore.Editors.MapEditor;
 /// meshes follow. In Sekiro, the WALL and NOJUMPWALL marks of rebuilt low collisions move to the new shape keys with
 /// them.
 /// </summary>
-public class CollisionEditorAction : ViewportAction
+public class CollisionEditorAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Collision");
+
     public record ShapeSwap(MapContainer Map, string FileName, IHavokBody Body, object OldShape, object NewShape);
 
     /// <summary>The wall marks of a collision before and after its triangles were given new keys.</summary>

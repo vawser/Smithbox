@@ -7,8 +7,10 @@ namespace StudioCore.Editors.MapEditor;
 /// A gate edit of the Navigation tool (rebuild, move, cost, add, remove): the NVA's gate nodes from before and after,
 /// of which one or the other is put back. The NVA is marked, so the map's save writes it.
 /// </summary>
-public class NavigationGateEditAction : ViewportAction
+public class NavigationGateEditAction : ViewportAction, IMapHistoryItem
 {
+    public string Describe() => LOC.Get("MAP_History_Navigation_Gates");
+
     private readonly MapContainer Map;
     private readonly NavGateState Before;
     private readonly NavGateState After;
