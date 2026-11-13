@@ -956,6 +956,117 @@ public class MapMsbPropertyView
         {
             DisplayPropertyViewDecorations(selection, 0);
         }
+
+        if (entities.Count == 1)
+        {
+            PropEditorVanillaCompare(entities.First());
+        }
+    }
+
+    /// <summary>
+    /// Compare with Vanilla: the object's fields that differ from its vanilla counterpart, each with Revert, and
+    /// Revert Object. Plan: Documentation/Map Editor Vanilla Compare.md.
+    /// </summary>
+    private void PropEditorVanillaCompare(MsbEntity ent)
+    {
+        var compare = View.Editor.VanillaCompare;
+
+        // Only for parts, regions and events, in a map vanilla has
+        if (MsbDiff.ListOf(ent.WrappedObject) == null || ent.Container is not MapContainer map)
+            return;
+
+        ImGui.Separator();
+
+        if (!ImGui.CollapsingHeader($"{LOC.Get("MAP_Vanilla_Compare_Header")}##vanillaCompareHeader"))
+            return;
+
+        var status = compare.GetStatus(ent);
+
+        switch (status)
+        {
+            case VanillaStatus.NoVanilla:
+                GUI.WrappedText(LOC.Get("MAP_Vanilla_Compare_No_Vanilla", map.Name));
+                return;
+
+            case VanillaStatus.Added:
+                GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaAdded_Text, LOC.Get("MAP_Vanilla_Compare_Added"));
+                return;
+
+            case VanillaStatus.Unchanged:
+                GUI.WrappedText(LOC.Get("MAP_Vanilla_Compare_Unchanged"));
+                return;
+
+            case VanillaStatus.None:
+                return;
+        }
+
+        var diffs = compare.GetDiffs(ent);
+
+        GUI.WrappedTextColored(UI.Current.ImGui_MapEditor_VanillaModified_Text, LOC.Get("MAP_Vanilla_Compare_Modified", diffs.Count));
+
+        ViewportAction revert = null;
+
+        if (ImGui.Button($"{LOC.Get("MAP_Vanilla_Compare_Revert_Object")}##vanillaRevertObject", DPI.WholeWidthButton(ImGui.GetContentRegionAvail().X, 24)))
+        {
+            revert = MapVanillaCompare.BuildRevertAction(ent, diffs);
+        }
+        GUI.Tooltip(LOC.Get("MAP_Vanilla_Compare_Revert_Object_TT"));
+
+        var flags = ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchProp;
+
+        if (ImGui.BeginTable("vanillaCompareTable", 4, flags))
+        {
+            ImGui.TableSetupColumn(LOC.Get("MAP_Vanilla_Compare_Column_Field"), ImGuiTableColumnFlags.WidthStretch, 1.2f);
+            ImGui.TableSetupColumn(LOC.Get("MAP_Vanilla_Compare_Column_Vanilla"), ImGuiTableColumnFlags.WidthStretch, 1.0f);
+            ImGui.TableSetupColumn(LOC.Get("MAP_Vanilla_Compare_Column_Current"), ImGuiTableColumnFlags.WidthStretch, 1.0f);
+            ImGui.TableSetupColumn("##revert", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableHeadersRow();
+
+            for (var i = 0; i < diffs.Count; i++)
+            {
+                var diff = diffs[i];
+
+                ImGui.TableNextRow();
+
+                // Field
+                ImGui.TableNextColumn();
+                ImGui.TextUnformatted(diff.Path);
+
+                // Vanilla
+                ImGui.TableNextColumn();
+                var vanillaText = MapVanillaCompare.Format(diff.Vanilla);
+                ImGui.TextUnformatted(vanillaText);
+                GUI.Tooltip(vanillaText);
+
+                // Current
+                ImGui.TableNextColumn();
+                var currentText = MapVanillaCompare.Format(diff.Current);
+                ImGui.TextUnformatted(currentText);
+                GUI.Tooltip(currentText);
+
+                // Revert
+                ImGui.TableNextColumn();
+                if (MapVanillaCompare.CanRevert(diff))
+                {
+                    if (ImGui.Button($"{LOC.Get("MAP_Vanilla_Compare_Revert")}##vanillaRevert{i}"))
+                    {
+                        revert = MapVanillaCompare.BuildRevertAction(ent, new[] { diff });
+                    }
+                    GUI.Tooltip(LOC.Get("MAP_Vanilla_Compare_Revert_TT", diff.Path));
+                }
+            }
+
+            ImGui.EndTable();
+        }
+
+        // After the table, so the list isn't changed while it is drawn
+        if (revert != null)
+        {
+            View.ViewportActionManager.ExecuteAction(revert);
+
+            // The vanilla values now belong to the map, so its vanilla copy is read again
+            compare.Invalidate(map);
+        }
     }
 
     public bool DisplayProperty(object propObj, PropertyInfo prop, Type type, MapEntityPropertyFieldMeta meta)

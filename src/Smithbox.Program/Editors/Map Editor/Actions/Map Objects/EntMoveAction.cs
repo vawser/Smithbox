@@ -94,15 +94,8 @@ public class EntMoveAction : ViewportAction
             else if (TargetMap != null)
             {
                 // Moving to a targeted map, update parent. The container resolved by ID is used, as the one
-                // passed in may be from an earlier load of the map.
-                if (move.Target.MapOffsetNode != null)
-                {
-                    move.Target.MapOffsetNode.AddChild(ent);
-                }
-                else
-                {
-                    move.Target.RootObject.AddChild(ent);
-                }
+                // passed in may be from an earlier load of the map. MSB entries go under the root, as at load.
+                MapPlacement.GetDefaultParent(move.Target, ent).AddChild(ent);
             }
             else
             {

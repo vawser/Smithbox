@@ -122,7 +122,10 @@ public class DuplicateAction
         GUI.Tooltip("When enabled, a duplicated map object is placed at the end of its category list, rather than after its source map object.");
 
         ImGui.Checkbox("Paste at Placement Orb", ref CFG.Current.MapEditor_Paste_At_Placement_Orb);
-        GUI.Tooltip($"When enabled, pasted map objects are moved so the centre of the group is at the placement orb, keeping their layout. When disabled, they keep the positions they were copied with.\n\nShortcut: {InputManager.GetHint(KeybindID.Paste)}");
+        GUI.Tooltip($"When enabled, pasted map objects are moved so the centre of the group is at the placement orb, keeping their layout. When disabled, they keep the positions they were copied with (see Keep World Position).\n\nShortcut: {InputManager.GetHint(KeybindID.Paste)}");
+
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##pasteKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
 
         ImGui.Checkbox("Randomise Rotation", ref CFG.Current.Toolbar_Duplicate_Randomise_Rotation);
         GUI.Tooltip("When enabled, a duplicated map object's rotation is randomised.");

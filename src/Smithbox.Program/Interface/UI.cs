@@ -96,6 +96,10 @@ public class UI
     public Vector4 ImGui_AuxAdded_Text = new Vector4(0.7f, 0.7f, 1, 1);
     public Vector4 ImGui_PrimaryChanged_Text = new Vector4(0.7f, 1, 0.7f, 1);
     public Vector4 ImGui_ModifiedFilter_Text = new Vector4(1.0f, 0.8f, 0.35f, 1.0f); // AMBER
+
+    // Map Editor vanilla compare: objects that differ from, or aren't in, the vanilla map (as PrimaryChanged / AuxAdded)
+    public Vector4 ImGui_MapEditor_VanillaModified_Text = new Vector4(0.7f, 1, 0.7f, 1);
+    public Vector4 ImGui_MapEditor_VanillaAdded_Text = new Vector4(0.7f, 0.7f, 1, 1);
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
     public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_GparamPreviewable_Text = new Vector4(0.45f, 0.85f, 1.0f, 1.0f);

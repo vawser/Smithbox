@@ -85,6 +85,9 @@ public class MoveToMapAction
 
         MapTargetPicker.Display(View, "moveTargetMapSelect", ref TargetMap);
 
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##moveKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
+
         var targetMap = View.Selection.ResolveTargetMap(TargetMap);
 
         if (targetMap == null)
@@ -163,6 +166,19 @@ public class MoveToMapAction
         }
 
         ViewportAction action = new EntMoveAction(View, selection, true, targetMap, targetBtl);
+
+        // The objects stay where they are in the world, rather than at the same local coordinates in the other map
+        // (another tile in ER and NR). Their frames are taken now, before the move gives them new parents.
+        if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        {
+            var frames = selection.Select(e => ((Entity)e, MapPlacement.GetParentWorld(e))).ToList();
+
+            action = new ViewportCompoundAction(new List<ViewportAction>
+            {
+                action,
+                new DeferredAction(() => MapPlacement.BuildKeepWorldAction(frames))
+            });
+        }
 
         // MSB references only resolve within a map, so moving breaks those between the moved objects and the
         // ones left behind, in either direction

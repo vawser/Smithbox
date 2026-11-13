@@ -109,6 +109,9 @@ public class DuplicateToMapAction
 
         MapTargetPicker.Display(View, "targetMapSelect", ref TargetMap);
 
+        ImGui.Checkbox($"{LOC.Get("MAP_Keep_World_Position")}##duplicateKeepWorld", ref CFG.Current.MapEditor_Keep_World_Position_Across_Maps);
+        GUI.Tooltip(LOC.Get("MAP_Keep_World_Position_TT"));
+
         var targetMap = View.Selection.ResolveTargetMap(TargetMap);
 
         if (targetMap == null)
@@ -193,7 +196,23 @@ public class DuplicateToMapAction
                 randomRotationDir: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Dir,
                 randomRotationRange: CFG.Current.Toolbar_Duplicate_Randomise_Rotation_Range);
 
-        View.ViewportActionManager.ExecuteAction(action);
+        ViewportAction duplicate = action;
+
+        // The copies stay where the sources are in the world, rather than at the same local coordinates in the other
+        // map (another tile in ER and NR). Each source's frame is taken now, as the step runs after the clones exist.
+        if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        {
+            var sourceFrames = mapObjects.ToDictionary(e => e, MapPlacement.GetParentWorld);
+
+            duplicate = new ViewportCompoundAction(new List<ViewportAction>
+            {
+                action,
+                new DeferredAction(() => MapPlacement.BuildKeepWorldAction(
+                    action.CreatedPairs.Select(p => ((Entity)p.Clone, sourceFrames[p.Source]))))
+            });
+        }
+
+        View.ViewportActionManager.ExecuteAction(duplicate);
 
         View.DelayPicking();
     }
@@ -216,14 +235,19 @@ public class DuplicateToMapAction
             return;
 
         var copied = new List<MsbEntity>();
+        var frames = new Dictionary<MsbEntity, Matrix4x4>();
 
         foreach(var entry in sel)
         {
-            var clone = entry.Clone();
-            copied.Add((MsbEntity)clone);
+            var clone = (MsbEntity)entry.Clone();
+            copied.Add(clone);
+
+            // Where the copied object's map placed it, so a paste into another map can keep it there
+            frames[clone] = MapPlacement.GetParentWorld(entry);
         }
 
         StoredSelection = copied;
+        View.Editor.ClipboardParentWorlds = frames;
     }
 
     public void OnPaste(MapEditorView activeView)
@@ -266,6 +290,21 @@ public class DuplicateToMapAction
             {
                 action,
                 new DeferredAction(() => PullToCameraAction.BuildMoveToPointAction(action.CreatedClones, target))
+            });
+        }
+        else if (CFG.Current.MapEditor_Keep_World_Position_Across_Maps)
+        {
+            // Without the orb, the pasted objects go where the copied ones were in the world, rather than at the
+            // same local coordinates in the active map (another tile in ER and NR)
+            var frames = View.Editor.ClipboardParentWorlds;
+
+            paste = new ViewportCompoundAction(new List<ViewportAction>
+            {
+                action,
+                new DeferredAction(() => MapPlacement.BuildKeepWorldAction(
+                    action.CreatedPairs
+                        .Where(p => frames.ContainsKey(p.Source))
+                        .Select(p => ((Entity)p.Clone, frames[p.Source]))))
             });
         }
 

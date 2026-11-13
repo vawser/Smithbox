@@ -211,15 +211,8 @@ public class EntReplicateAction : ViewportAction
         else if (TargetMap != null)
         {
             // Duping to a targeted map, update parent. The container resolved by ID is used, as the one passed in
-            // may be from an earlier load of the map.
-            if (map.MapOffsetNode != null)
-            {
-                map.MapOffsetNode.AddChild(clone);
-            }
-            else
-            {
-                map.RootObject.AddChild(clone);
-            }
+            // may be from an earlier load of the map. MSB entries go under the root, as at load.
+            MapPlacement.GetDefaultParent(map, clone).AddChild(clone);
         }
         else if (source.Parent != null)
         {

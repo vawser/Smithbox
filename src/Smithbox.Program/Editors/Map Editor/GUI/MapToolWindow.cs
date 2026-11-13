@@ -285,6 +285,8 @@ public class MapToolWindow
 
         ActionSection(CFG.Current.Interface_MapEditor_Tool_MsbValidation, "MAP_ToolWindow_Msb_Validation", "mapMsbValidationSection", View.MapValidatorTool.OnToolWindow);
 
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_VanillaCompare, "MAP_ToolWindow_Vanilla_Compare", "mapVanillaCompareSection", View.VanillaCompareTool.OnToolWindow);
+
         ActionSection(CFG.Current.Interface_MapEditor_Tool_EntityIds && !(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S),
             "MAP_ToolWindow_Entity_Ids", "mapEntityIdsSection", View.EntityIdentifierTool.OnToolWindow);
 
@@ -414,6 +416,7 @@ public class MapToolWindow
 
             // Validation
             ToolToggle("MAP_ToolWindow_Msb_Validation", ref CFG.Current.Interface_MapEditor_Tool_MsbValidation);
+            ToolToggle("MAP_ToolWindow_Vanilla_Compare", ref CFG.Current.Interface_MapEditor_Tool_VanillaCompare);
 
             if (!(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S))
             {

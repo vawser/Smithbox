@@ -337,6 +337,7 @@ namespace SoulsFormats
             /// <summary>
             /// Region is inactive unless this part is drawn; null for always active.
             /// </summary>
+            [MSBReference(ReferenceType = typeof(Part))]
             public string ActivationPartName { get; set; }
             public int ActivationPartIndex { get; set; }
 

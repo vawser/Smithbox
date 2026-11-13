@@ -335,6 +335,7 @@ namespace SoulsFormats
             /// <summary>
             /// If specified, the region is only active when the part is loaded.
             /// </summary>
+            [MSBReference(ReferenceType = typeof(Part))]
             public string ActivationPartName { get; set; }
             public int ActivationPartIndex { get; set; }
 

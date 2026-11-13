@@ -1,5 +1,7 @@
 {
   "Entries": [
+    { "Key": "MAP_Keep_World_Position", "Text": "Keep World Position" },
+    { "Key": "MAP_Keep_World_Position_TT", "Text": "Duplicate to Map, Move to Map and Paste (without the placement orb) keep objects where they are in the world. Positions are relative to their map, so without this an object put in another map keeps its numbers and moves with that map: by a tile (256 m) between Elden Ring and Nightreign tiles, or by the map offset in games that have one. Shared by all three." },
     { "Key": "MAP_Name_From_Model", "Text": "Name from Model" },
     { "Key": "MAP_Name_From_Model_TT", "Text": "Renames the selected parts after their models, as the game names them: model_0000, model_0001 and so on. In Elden Ring and Nightreign the number is the part's InstanceID, from 9000 up, and in Armored Core VI the part gets a free TypeIndex. Parts already named this way keep their names. References follow the new names when Referenced Rename is on. Can be undone." },
     { "Key": "MAP_Name_From_Model_Nothing", "Text": "The selected parts are already named after their models." },

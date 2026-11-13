@@ -33,6 +33,11 @@ public class MapEditorScreen : EditorScreen
     public List<MsbEntity> Clipboard = new();
 
     /// <summary>
+    /// The world matrix of each copied object's parents when it was copied, for Keep World Position on paste
+    /// </summary>
+    public Dictionary<MsbEntity, Matrix4x4> ClipboardParentWorlds = new();
+
+    /// <summary>
     /// The problems that stopped the last save, for the user to fix or save past
     /// </summary>
     public MapSaveCheckWindow SaveCheckWindow;
@@ -49,7 +54,14 @@ public class MapEditorScreen : EditorScreen
         Shortcuts = new MapShortcuts(this, project);
 
         SaveCheckWindow = new MapSaveCheckWindow(this, project);
+        VanillaCompare = new MapVanillaCompare(project);
     }
+
+    /// <summary>
+    /// The loaded maps compared with their vanilla MSBs, for the Map Contents highlighting, Properties and the
+    /// Vanilla Compare tool
+    /// </summary>
+    public MapVanillaCompare VanillaCompare;
 
     public string EditorName => "Visual Map Editor";
     public string CommandEndpoint => "map";
@@ -502,6 +514,16 @@ public class MapEditorScreen : EditorScreen
                 }
                 GUI.Tooltip(LOC.Get("MAP_Options_ContentDisplay_Action_Flat_TT"));
                 GUI.ShowActiveStatus(activeView.MapContentView.ContentViewType == MapContentViewType.Flat);
+
+                ImGui.Separator();
+
+                // Highlight Changes from Vanilla
+                if (ImGui.MenuItem($"{LOC.Get("MAP_Vanilla_Highlight")}##vanillaHighlight"))
+                {
+                    CFG.Current.MapEditor_Vanilla_Highlight = !CFG.Current.MapEditor_Vanilla_Highlight;
+                }
+                GUI.Tooltip(LOC.Get("MAP_Vanilla_Highlight_TT"));
+                GUI.ShowActiveStatus(CFG.Current.MapEditor_Vanilla_Highlight);
 
                 ImGui.EndMenu();
             }

@@ -278,6 +278,32 @@ public class MapContentView
     /// <summary>
     /// Handle the pending click stuff
     /// </summary>
+    /// <summary>
+    /// Colours the next label if the object differs from, or isn't in, the vanilla map (Highlight Changes from
+    /// Vanilla). True if a colour was pushed, to pop after the item.
+    /// </summary>
+    private bool PushVanillaColour(Entity e)
+    {
+        if (!CFG.Current.MapEditor_Vanilla_Highlight)
+            return false;
+
+        var status = View.Editor.VanillaCompare.GetStatus(e);
+
+        switch (status)
+        {
+            case VanillaStatus.Modified:
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaModified_Text);
+                return true;
+
+            case VanillaStatus.Added:
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_MapEditor_VanillaAdded_Text);
+                return true;
+
+            default:
+                return false;
+        }
+    }
+
     private void HandleSelectionClick(ISelectable selectTarget, Entity mapRoot, ObjectContainerReference mapRef, bool nodeopen)
     {
         if (ImGui.IsItemClicked())
@@ -758,7 +784,11 @@ public class MapContentView
                 treeflags |= ImGuiTreeNodeFlags.Selected;
             }
 
+            var vanillaColour = PushVanillaColour(e);
             nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
+            if (vanillaColour)
+                ImGui.PopStyleColor();
+
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
             {
                 if (e.RenderSceneMesh != null)
@@ -796,12 +826,18 @@ public class MapContentView
 
                     case MapObjectNameDisplayType.Community:
                     case MapObjectNameDisplayType.Community_FMG:
-                        displayName = Project.Handler.MapData.GetMapObjectName(View.Selection.SelectedMapID, key);
+                        // The object's own map, as the active map can be another (X7)
+                        displayName = Project.Handler.MapData.GetMapObjectName((e as MsbEntity)?.MapID ?? View.Selection.SelectedMapID, key);
                         break;
                 }
             }
 
-            if (ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags))
+            var vanillaColour = PushVanillaColour(e);
+            var clicked = ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags);
+            if (vanillaColour)
+                ImGui.PopStyleColor();
+
+            if (clicked)
             {
                 doSelect = true;
 

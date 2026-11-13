@@ -1,0 +1,43 @@
+{
+  "Entries": [
+    { "Key": "MAP_Vanilla_Read_Failed", "Text": "Could not read the vanilla MSB of {0}, so it is not compared with vanilla." },
+
+    { "Key": "MAP_Vanilla_Highlight", "Text": "Highlight Changes from Vanilla" },
+    { "Key": "MAP_Vanilla_Highlight_TT", "Text": "Colours the objects in Map Contents that differ from the vanilla map (modified) or that the vanilla map doesn't have (added). Objects are matched by list and name, so a renamed object counts as added. The colours can be changed in the theme." },
+
+    { "Key": "MAP_Vanilla_Compare_Header", "Text": "Compare with Vanilla" },
+    { "Key": "MAP_Vanilla_Compare_No_Vanilla", "Text": "{0} has no vanilla MSB (the project added it), so there is nothing to compare with." },
+    { "Key": "MAP_Vanilla_Compare_Added", "Text": "The vanilla map has no object of this type with this name: it was added (or renamed)." },
+    { "Key": "MAP_Vanilla_Compare_Unchanged", "Text": "Same as vanilla." },
+    { "Key": "MAP_Vanilla_Compare_Modified", "Text": "{0} fields differ from vanilla." },
+    { "Key": "MAP_Vanilla_Compare_Revert_Object", "Text": "Revert Object" },
+    { "Key": "MAP_Vanilla_Compare_Revert_Object_TT", "Text": "Sets every field listed below back to its vanilla value, as one step that can be undone. The name stays, as objects are matched by name." },
+    { "Key": "MAP_Vanilla_Compare_Column_Field", "Text": "Field" },
+    { "Key": "MAP_Vanilla_Compare_Column_Vanilla", "Text": "Vanilla" },
+    { "Key": "MAP_Vanilla_Compare_Column_Current", "Text": "Current" },
+    { "Key": "MAP_Vanilla_Compare_Revert", "Text": "Revert" },
+    { "Key": "MAP_Vanilla_Compare_Revert_TT", "Text": "Sets {0} back to its vanilla value. Can be undone." },
+
+    { "Key": "MAP_ToolWindow_Vanilla_Compare", "Text": "Vanilla Compare" },
+    { "Key": "MAP_Vanilla_Tool_Hint", "Text": "Lists what the active map changes from the vanilla map: objects modified, objects added, and vanilla objects no longer in it, which can be restored." },
+    { "Key": "MAP_Vanilla_Tool_No_Map", "Text": "Load a map, or select an object in one, to compare it." },
+    { "Key": "MAP_Vanilla_Tool_Actions_Header", "Text": "Actions" },
+    { "Key": "MAP_Vanilla_Tool_Actions_Header_TT", "Text": "Compare the active map with its vanilla MSB." },
+    { "Key": "MAP_Vanilla_Tool_Compare", "Text": "Compare" },
+    { "Key": "MAP_Vanilla_Tool_Compare_TT", "Text": "Compares {0} with its vanilla MSB." },
+    { "Key": "MAP_Vanilla_Tool_Results_Header", "Text": "Results: {0}" },
+    { "Key": "MAP_Vanilla_Tool_Results_Header_TT", "Text": "Parts, regions and events, matched with vanilla by list and name. Lights and the other map files are not compared." },
+    { "Key": "MAP_Vanilla_Tool_Unloaded", "Text": "The compared map has been unloaded. Compare again." },
+    { "Key": "MAP_Vanilla_Tool_Summary", "Text": "{0} modified, {1} added, {2} removed." },
+    { "Key": "MAP_Vanilla_Tool_Out_Of_Date", "Text": "The map has been edited since this comparison. Compare again to update it." },
+    { "Key": "MAP_Vanilla_Tool_Tab_Modified", "Text": "Modified ({0})" },
+    { "Key": "MAP_Vanilla_Tool_Tab_Added", "Text": "Added ({0})" },
+    { "Key": "MAP_Vanilla_Tool_Tab_Removed", "Text": "Removed ({0})" },
+    { "Key": "MAP_Vanilla_Tool_None", "Text": "None." },
+    { "Key": "MAP_Vanilla_Tool_Select_TT", "Text": "Selects and frames the object. Properties > Compare with Vanilla lists what changed." },
+    { "Key": "MAP_Vanilla_Tool_Stale_TT", "Text": "The object is gone since the comparison. Compare again." },
+    { "Key": "MAP_Vanilla_Tool_Restore", "Text": "Restore" },
+    { "Key": "MAP_Vanilla_Tool_Restore_TT", "Text": "Puts the vanilla object back in the map, as it is in vanilla. Can be undone." },
+    { "Key": "MAP_Vanilla_Tool_Restore_Clash", "Text": "\"{0}\" was not restored: {1} already has an object of that type with that name." }
+  ]
+}

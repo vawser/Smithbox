@@ -51,6 +51,12 @@ public class EntDuplicateAction : ViewportAction
     /// </summary>
     public IReadOnlyList<MsbEntity> CreatedClones => Clones;
 
+    /// <summary>
+    /// Each clone made by the first execute, with the object it was cloned from
+    /// </summary>
+    public IEnumerable<(MsbEntity Source, MsbEntity Clone)> CreatedPairs =>
+        CloneBySource.Select(e => (Clonables[e.Key], e.Value));
+
     public EntDuplicateAction(MapEditorView view, 
         List<MsbEntity> objects, 
         MapContainer targetMap = null, 
@@ -152,15 +158,9 @@ public class EntDuplicateAction : ViewportAction
                 else if (DuplicateToMap && TargetMap != null)
                 {
                     // Duping to a targeted map, update parent. The container resolved by ID is used, as
-                    // the one passed in may be from an earlier load of the map.
-                    if (map.MapOffsetNode != null)
-                    {
-                        map.MapOffsetNode.AddChild(newobj);
-                    }
-                    else
-                    {
-                        map.RootObject.AddChild(newobj);
-                    }
+                    // the one passed in may be from an earlier load of the map. MSB entries go under the root,
+                    // as at load; under the map offset node they would be drawn shifted by the map's offset.
+                    MapPlacement.GetDefaultParent(map, newobj).AddChild(newobj);
                 }
                 else if (Clonables[i].Parent != null)
                 {

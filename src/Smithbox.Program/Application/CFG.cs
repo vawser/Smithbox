@@ -305,6 +305,10 @@ public class CFG
     public float CompassNorthOffset = -90f;
 
     public bool MapEditor_MapContentList_Auto_Open_Tree = false;
+
+    // Map Contents colours objects that differ from, or aren't in, the vanilla map
+    public bool MapEditor_Vanilla_Highlight = true;
+    public bool Interface_MapEditor_Tool_VanillaCompare = true;
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
     public bool MapEditor_ModelLoad_MapPieces = true;
@@ -451,6 +455,10 @@ public class CFG
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
     public bool Toolbar_Duplicate_Place_at_List_End = false;
     public bool MapEditor_Paste_At_Placement_Orb = true;
+
+    // Duplicate to Map, Move to Map and Paste keep objects where they are in the world, rather than at the same
+    // local coordinates in the other map (which in ER and NR is another tile, 256 m away)
+    public bool MapEditor_Keep_World_Position_Across_Maps = true;
 
     public bool Toolbar_Duplicate_Clear_Entity_ID = false;
     public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
