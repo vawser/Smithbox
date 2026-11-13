@@ -8,6 +8,7 @@
 // Macros (set by the variant list in FlverShader.json):
 //   MATERIAL_BLEND       - the material has more than one texture layer
 //   MATERIAL_BLEND_MASK  - layer weights come from a blend mask texture instead of the vertex colors
+//   MATERIAL_UV3         - with MATERIAL_BLEND: a third UV set, a DES multi texture material's lightmap UV
 //   MATERIAL_DEFORM      - the mesh has the TEXCOORD1-3 attributes, which can hold the layer weight
 //   SELECTED             - used for selected objects: adds selection dithering and tinting
 //   OUTLINE              - only draws the selection outline, for meshes with a deformer to outline
@@ -111,6 +112,10 @@ layout(location = 12) flat in uint fsin_flags;
 #endif
 // The lighting set the instance is lit by, see g_lightingSet
 layout(location = 17) flat in uint fsin_lightingSet;
+#ifdef MATERIAL_UV3
+	// The third UV set, a DES multi texture material's lightmap UV (FlverResource.LookupDesLightmap)
+	layout(location = 19) in vec2 fsin_texcoord3;
+#endif
 
 #define INSTANCE_NO_SHADOW 1u
 
@@ -1371,7 +1376,8 @@ vec3 IndirectLight(Surface s)
 		}
 	}
 
-	// A DES map piece's g_Lightmap, a texture of its own material read through the second UV set: its baked light
+	// A DES map piece's g_Lightmap, a texture of its own material read through its last UV set (the second, or the
+	// third for a multi texture material, whose second is layer 2's): its baked light
 	// stands in for the light from around. Squared from its stored gamma, as DS3's DOL 1 is; the game's own scale
 	// isn't traced, so it is DES_LIGHTMAP_SCALE until matched by eye. 0 until the texture is on the GPU
 	if (c_gameID == GAME_DES)
@@ -1379,7 +1385,12 @@ vec3 IndirectLight(Surface s)
 		uint desLightmap = MaterialValue(ROW_EXTRA, 2);
 		if (desLightmap != 0u)
 		{
-			vec3 lm = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(desLightmap))], linearSampler), g_uv[1]).rgb;
+  #ifdef MATERIAL_UV3
+			vec2 lightmapUv = fsin_texcoord3;
+  #else
+			vec2 lightmapUv = g_uv[1];
+  #endif
+			vec3 lm = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(desLightmap))], linearSampler), lightmapUv).rgb;
 			ambientDiffuse = lm * lm * DES_LIGHTMAP_SCALE;
 			g_lightSource = 2u;
 		}
@@ -1905,6 +1916,13 @@ void main()
 #else
 	vec4 diffuseColor = SampleLayer(ROW_ALBEDO, 0);
 #endif
+
+	// Every DES shader is a "Col" one (DS_Phn_ColDif...): the diffuse times the vertex color. FLVER0 vertices without
+	// a color are filled white (FlverResource.FillDesColor). The alpha is the multi texture weight, not opacity
+	if (c_gameID == GAME_DES)
+	{
+		diffuseColor.rgb *= fsin_color.rgb;
+	}
 
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
 

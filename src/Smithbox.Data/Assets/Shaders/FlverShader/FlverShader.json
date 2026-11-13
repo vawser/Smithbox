@@ -771,5 +771,170 @@
 				"Name": "WIREFRAME"
 			}
 		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3_selected",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			},
+			{
+				"Name": "SELECTED"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3_focus",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			},
+			{
+				"Name": "FOCUS"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3_selected_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			},
+			{
+				"Name": "SELECTED"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
+	},
+	{
+		"Name": "FlverShader_blend_uv3_focus_wire",
+		"Shaders": [
+			{
+				"Stage": "1",
+				"FileName": "FlverShader.vert"
+			},
+			{
+				"Stage": "8",
+				"FileName": "FlverShader.geom"
+			},
+			{
+				"Stage": "16",
+				"FileName": "FlverShader.frag"
+			}
+		],
+		"Targets": [],
+		"Macros": [
+			{
+				"Name": "MATERIAL_BLEND"
+			},
+			{
+				"Name": "MATERIAL_UV3"
+			},
+			{
+				"Name": "FOCUS"
+			},
+			{
+				"Name": "WIREFRAME"
+			}
+		]
 	}
 ]

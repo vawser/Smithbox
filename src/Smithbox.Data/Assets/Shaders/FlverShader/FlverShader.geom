@@ -5,7 +5,7 @@
 // vertices between triangles, so the vertex stage can't give them.
 //
 // The inputs are FlverShader.vert's outputs and the outputs FlverShader.frag's inputs, under the same macros
-// (MATERIAL_BLEND, MATERIAL_DEFORM), so a varying added there is added here as well.
+// (MATERIAL_BLEND, MATERIAL_DEFORM, MATERIAL_UV3), so a varying added there is added here as well.
 
 layout(triangles) in;
 layout(triangle_strip, max_vertices = 3) out;
@@ -28,6 +28,9 @@ layout(location = 12) flat in uint gsin_flags[];
 	layout(location = 14) flat in mat3 gsin_modelToWorld[];
 #endif
 layout(location = 17) flat in uint gsin_lightingSet[];
+#ifdef MATERIAL_UV3
+	layout(location = 19) in vec2 gsin_texcoord3[];
+#endif
 
 layout(location = 0) out vec2 fsin_texcoord;
 layout(location = 1) out vec3 fsin_worldpos;
@@ -47,6 +50,9 @@ layout(location = 12) flat out uint fsin_flags;
 	layout(location = 14) flat out mat3 fsin_modelToWorld;
 #endif
 layout(location = 17) flat out uint fsin_lightingSet;
+#ifdef MATERIAL_UV3
+	layout(location = 19) out vec2 fsin_texcoord3;
+#endif
 
 // Wireframe.glsl
 layout(location = 18) noperspective out vec3 fsin_bary;
@@ -75,6 +81,9 @@ void main()
 		fsin_modelToWorld = gsin_modelToWorld[i];
 #endif
 		fsin_lightingSet = gsin_lightingSet[i];
+#ifdef MATERIAL_UV3
+		fsin_texcoord3 = gsin_texcoord3[i];
+#endif
 
 		fsin_bary = vec3(i == 0 ? 1.0 : 0.0, i == 1 ? 1.0 : 0.0, i == 2 ? 1.0 : 0.0);
 

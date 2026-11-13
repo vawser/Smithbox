@@ -780,6 +780,12 @@ public class FlverResource : IResource, IDisposable
             dest.ShaderName = layers.IsBlended ? @"FlverShader\FlverShader_deform_blend" : @"FlverShader\FlverShader_deform";
             dest.LayoutType = MeshLayoutType.LayoutDeform;
         }
+        else if (dest.DesLightmapThirdUv && !layers.HasBlendMask)
+        {
+            // DES [ML]: two layers on UV 1 and 2, the lightmap on UV 3 (LookupDesLightmap)
+            dest.ShaderName = @"FlverShader\FlverShader_blend_uv3";
+            dest.LayoutType = MeshLayoutType.LayoutUV3;
+        }
         else if (layers.HasBlendMask)
         {
             dest.ShaderName = @"FlverShader\FlverShader_blendmask";
@@ -1404,13 +1410,13 @@ public class FlverResource : IResource, IDisposable
 
     /// <summary>
     /// A DES map piece's g_Lightmap: its static light, a texture of the area TPFs read through the last UV set (the MTDs
-    /// give it UV 3, after the diffuse layers'). Drawn with the blend variant, whose second UV set is that one when the
-    /// mesh has two. Layered materials ([ML], about 6% of the lightmapped meshes) have three UV sets, more than the
-    /// variant carries, so they go without.
+    /// give it UV 3, after the diffuse layers'). A single layer material is drawn with the blend variant, whose second
+    /// UV set is that one when the mesh has two. A multi texture material ([ML], DS_Phn_*MulLit, 855 meshes) has three
+    /// UV sets: layer 1, layer 2 and the lightmap, so it is drawn with the blend_uv3 variant, which carries the third.
     /// </summary>
     private void LookupDesLightmap(FlverMaterial dest, IFlverMaterial mat, MaterialLayers layers)
     {
-        if (!CFG.Current.Viewport_Map_Lightmaps || layers.IsBlended)
+        if (!CFG.Current.Viewport_Map_Lightmaps)
             return;
 
         foreach (IFlverTexture? texture in mat.Textures)
@@ -1419,6 +1425,7 @@ public class FlverResource : IResource, IDisposable
             {
                 LookupTexture(FlverMaterial.TextureType.LightmapTextureResource, dest, texture.ParamName, texture.Path, mat.MTD);
                 dest.UsesLightmap = true;
+                dest.DesLightmapThirdUv = layers.IsBlended;
                 return;
             }
         }
@@ -2475,6 +2482,8 @@ public class FlverResource : IResource, IDisposable
                     FillUVShortZero((*v).Uv1);
                 }
 
+                FillDesColor((*v).Color, ref vert);
+
                 if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
@@ -2853,6 +2862,22 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
+    /// <summary>
+    /// A FLVER0 vertex color, which the DES "Col" shaders (all of them) multiply the diffuse by, see FlverShader.frag.
+    /// White when the vertex has none, so the multiply leaves it as it is. Every surveyed DES layout has one.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private unsafe void FillDesColor(byte* dest, ref FLVER.Vertex v)
+    {
+        if (v.Colors == null || v.Colors.Count == 0)
+        {
+            dest[0] = dest[1] = dest[2] = dest[3] = 255;
+            return;
+        }
+
+        FillColorUNorm(dest, ref v);
+    }
+
     private unsafe void FillVerticesUV2(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
     {
         Span<FlverLayoutUV2> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
@@ -2868,7 +2893,44 @@ public class FlverResource : IResource, IDisposable
                 FillVertex(ref (*v).Position, ref vert);
                 FillNormalSNorm8((*v).Normal, ref vert);
                 FillUVPairShort(v, ref vert);
-                FillColorUNorm((*v).Color, ref vert);
+                FillDesColor((*v).Color, ref vert);
+                if (vert.Tangents.Count > 0)
+                {
+                    FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
+                }
+                else
+                {
+                    FillBinormalBitangentSNorm8Zero((*v).Binormal, (*v).Bitangent);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// DES multi texture meshes with a lightmap ([ML]): UV 1 (layer 1), UV 2 (layer 2) and the last UV set (the
+    /// lightmap's, UV 3 in the MTD). A mesh with fewer sets repeats its last one, as <see cref="FillUVPairShort"/> does.
+    /// </summary>
+    private unsafe void FillVerticesUV3(FLVER0.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer)
+    {
+        Span<FlverLayoutUV3> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
+        fixed (FlverLayoutUV3* pverts = verts)
+        {
+            for (var i = 0; i < mesh.Vertices.Count; i++)
+            {
+                FLVER.Vertex vert = mesh.Vertices[i];
+
+                verts[i] = new FlverLayoutUV3();
+                pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
+                FlverLayoutUV3* v = &pverts[i];
+                FillVertex(ref (*v).Position, ref vert);
+                FillNormalSNorm8((*v).Normal, ref vert);
+
+                var last = (byte)Math.Max(vert.UVs.Count - 1, 0);
+                FillUVShort((*v).Uv1, ref vert, 0);
+                FillUVShort((*v).Uv2, ref vert, Math.Min((byte)1, last));
+                FillUVShort((*v).Uv3, ref vert, last);
+
+                FillDesColor((*v).Color, ref vert);
                 if (vert.Tangents.Count > 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, ref vert, 0);
@@ -2979,6 +3041,10 @@ public class FlverResource : IResource, IDisposable
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV2)
         {
             FillVerticesUV2(mesh, pvhandle, meshVertices);
+        }
+        else if (dest.Material.LayoutType == MeshLayoutType.LayoutUV3)
+        {
+            FillVerticesUV3(mesh, pvhandle, meshVertices);
         }
         else
         {
@@ -4033,6 +4099,12 @@ public class FlverResource : IResource, IDisposable
         ///     is drawn with the second UV set for them (see DolLightmapBank)
         /// </summary>
         public bool UsesLightmap;
+
+        /// <summary>
+        ///     A DES multi texture material ([ML], DS_Phn_*MulLit) with a g_Lightmap: its layers read UV 1 and 2 and the
+        ///     lightmap UV 3, so it is drawn with the blend_uv3 variant and <see cref="MeshLayoutType.LayoutUV3"/>
+        /// </summary>
+        public bool DesLightmapThirdUv;
 
         /// <summary>The extended blend form's per-layer values, uploaded after the water entries (see MaterialWithLayerDetail)</summary>
         public MaterialLayerDetail? LayerDetail;

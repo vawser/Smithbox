@@ -232,13 +232,14 @@ public static class MaterialBinding
 
     /// <summary>
     /// Works out which layer (0 based) of a kind of texture a parameter name refers to.
-    /// Layer 1 (index 0) has no number, the layers after it are numbered 2, 3 and 4.
+    /// Layer 1 (index 0) has no number, the layers after it are numbered 2, 3 and 4. DES and DS1 put an underscore
+    /// before the number (g_Diffuse_2, g_Specular_2, g_Bumpmap_2 of their [M] multi texture materials).
     /// </summary>
     public static bool MatchLayer(string name, string exact1, string exact2, string containsPrefix, string containsBase, out int layer)
     {
         for (var n = MaxLayers; n >= 2; n--)
         {
-            if (name == exact1 + n || name == exact2 + n || name.Contains(containsPrefix + n))
+            if (name == exact1 + n || name == exact2 + n || name == exact2 + "_" + n || name.Contains(containsPrefix + n))
             {
                 layer = n - 1;
                 return true;

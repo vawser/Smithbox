@@ -9,6 +9,7 @@
 // Macros (set by the variant list in FlverShader.json):
 //   MATERIAL_BLEND  - the mesh has a second UV set, which is passed on for blended materials
 //   MATERIAL_DEFORM - the mesh has the TEXCOORD1-3 attributes, for vertex animation and blend weights
+//   MATERIAL_UV3    - with MATERIAL_BLEND: a third UV set (FlverLayoutUV3), a DES multi texture material's lightmap
 //   SELECTED        - used for selected objects (shares this file; the fragment stage does the tinting)
 //   FOCUS           - used for maps that are out of focus (the fragment stage does the dithering)
 
@@ -84,6 +85,10 @@ layout(location = 5) in uvec4 color;
 #if defined(MATERIAL_BLEND) || defined(MATERIAL_DEFORM)
 	layout(location = 6) in ivec2 uv2;
 #endif
+#ifdef MATERIAL_UV3
+	// FlverLayoutUV3's third UV set (never with MATERIAL_DEFORM, which has its attributes here)
+	layout(location = 7) in ivec2 uv3;
+#endif
 #ifdef MATERIAL_DEFORM
 	layout(location = 7) in vec4 texcoord1;
 	layout(location = 8) in vec4 texcoord2;
@@ -113,6 +118,10 @@ layout(location = 12) flat out uint fsin_flags;
 #endif
 // The lighting set the instance is lit by (instanceData.lighting.x, SceneLighting.glsl), 0 for the view's own
 layout(location = 17) flat out uint fsin_lightingSet;
+#ifdef MATERIAL_UV3
+	// The third UV set: a DES multi texture material's lightmap UV (18 is the wireframe's barycentrics)
+	layout(location = 19) out vec2 fsin_texcoord3;
+#endif
 
 // materialID.z of a static instance with a lightmap: InstanceData.LightmapFlag and the entry
 #define SKIN_KIND_MASK 0xC0000000u
@@ -473,6 +482,9 @@ void main()
 	fsin_texcoord = vec2(uv) * UV_SCALE;
 #ifdef MATERIAL_BLEND
 	fsin_texcoord2 = vec2(uv2) * UV_SCALE;
+#endif
+#ifdef MATERIAL_UV3
+	fsin_texcoord3 = vec2(uv3) * UV_SCALE;
 #endif
 #if defined(MATERIAL_BLEND) && defined(MATERIAL_DEFORM)
 	fsin_vertexBlend = vec4(texcoord1.xyz, texcoord2.x);
