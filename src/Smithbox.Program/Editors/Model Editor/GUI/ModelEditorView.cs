@@ -214,6 +214,19 @@ public class ModelEditorView : IEditorView
     /// <summary>
     /// Unloads every model loaded in this view, for when the view is closed. Unsaved changes are kept in the bank.
     /// </summary>
+    /// <summary>
+    /// Releases the view's viewport (its render pipeline's GPU targets, passes and queues, gizmos and grids), with its
+    /// selection and history, once the view has been closed and its models unloaded. Also called when the project
+    /// closes. The view must not be displayed or updated afterwards.
+    /// </summary>
+    public void Dispose()
+    {
+        ViewportSelection.ClearSelection();
+        ViewportActionManager.Clear();
+
+        (ViewportWindow?.Viewport as VulkanViewport)?.Dispose();
+    }
+
     public void UnloadAllModels()
     {
         ModelAnimationTool.StopAll();

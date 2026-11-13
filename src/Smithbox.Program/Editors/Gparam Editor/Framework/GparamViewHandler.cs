@@ -92,12 +92,26 @@ public class GparamViewHandler
 
         TexViews[view.ViewIndex] = null;
 
+        // Its render pipeline's queues would otherwise keep running every frame, and its GPU targets stay allocated
+        view.Dispose();
+
         if (view == ActiveView || ActiveView == null)
         {
             ActiveView = TexViews.FindLast(e => e != null);
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Releases every view's viewport, for the project closing
+    /// </summary>
+    public void DisposeViews()
+    {
+        foreach (var view in TexViews)
+        {
+            view?.Dispose();
+        }
     }
 
     public int CountViews()

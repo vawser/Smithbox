@@ -488,6 +488,13 @@ public class ProjectEditorHandler : IDisposable
 
     public void Dispose()
     {
+        // The editors' viewports first: their render pipelines' queues are registered with the global renderer, so
+        // they would keep running (and their GPU targets stay allocated) after the project is gone
+        MapEditor?.ViewHandler?.DisposeViews();
+        ModelEditor?.ViewHandler?.DisposeViews();
+        TimeActEditor?.ViewHandler?.DisposeViews();
+        GparamEditor?.ViewHandler?.DisposeViews();
+
         ModelPreviewCache.Release(Project);
 
         CommonData?.Dispose();
@@ -511,7 +518,7 @@ public class ProjectEditorHandler : IDisposable
         SoundEditor?.Dispose();
         SoundData?.Dispose();
 
-        // The FX Editor's debug shapes hold GPU buffers
+        // The FX Editor's debug shapes hold GPU buffers, and its viewport a render pipeline
         FxEditor?.ViewportWindow?.Dispose();
 
         _viewportEnvironment?.Dispose();

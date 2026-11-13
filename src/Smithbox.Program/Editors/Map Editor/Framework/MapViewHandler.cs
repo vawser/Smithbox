@@ -124,6 +124,17 @@ public class MapViewHandler
         return true;
     }
 
+    /// <summary>
+    /// Releases every view's viewports, for the project closing (the maps go with the project's map data)
+    /// </summary>
+    public void DisposeViews()
+    {
+        foreach (var view in Views)
+        {
+            view?.Dispose();
+        }
+    }
+
     public int CountViews()
     {
         return Views.Where(e => e != null).Count();

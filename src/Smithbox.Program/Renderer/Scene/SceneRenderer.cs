@@ -232,10 +232,6 @@ public static class SceneRenderer
                 queue.Dispose();
             }
 
-            // TEMP (B20 verification): remove once closing a view is confirmed to release its queues
-            Smithbox.Log(typeof(SceneRenderer),
-                $"[B20] Removed {PendingQueueRemovals.Count} render queues; {RenderQueues.Count} remain registered.");
-
             PendingQueueRemovals.Clear();
         }
     }

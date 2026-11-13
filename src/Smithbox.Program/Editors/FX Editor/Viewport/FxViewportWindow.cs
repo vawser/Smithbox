@@ -377,5 +377,9 @@ public class FxViewportWindow
         Lights.Clear();
         Textures.Clear();
         Runtime.Clear();
+
+        // The viewport's render pipeline (GPU targets, passes and queues), gizmos and grids
+        (Viewport as VulkanViewport)?.Dispose();
+        Viewport = null;
     }
 }

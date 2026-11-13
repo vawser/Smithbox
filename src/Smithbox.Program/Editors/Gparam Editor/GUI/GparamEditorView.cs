@@ -78,6 +78,19 @@ public class GparamEditorView : IEditorView
         ToolView = new GparamToolView(this, Project);
     }
 
+    /// <summary>
+    /// Releases the view's viewport (its render pipeline's GPU targets, passes and queues, gizmos and grids), with its
+    /// selection and history, once the view has been closed and its map unloaded. Also called when the project
+    /// closes. The view must not be displayed or updated afterwards.
+    /// </summary>
+    public void Dispose()
+    {
+        ViewportSelection.ClearSelection();
+        ViewportActionManager.Clear();
+
+        (ViewportWindow?.Viewport as VulkanViewport)?.Dispose();
+    }
+
     public void Display(uint dockspaceId, int viewIndex, bool doFocus, bool isActiveView)
     {
         // Re-find the selection's indices from its keys before anything draws. Done every frame rather than on this
