@@ -177,6 +177,13 @@ public class ModelContainer : ObjectContainer
                     }
 
                     MeshSourceIndices[clone] = sourceIndex;
+
+                    // The copy is drawn from the original's geometry, so any move not yet in it applies to the copy too
+                    if (original is ModelEntity originalEntity && clone is ModelEntity cloneEntity)
+                    {
+                        cloneEntity.DrawableOffset = originalEntity.DrawableOffset;
+                        cloneEntity.UpdateRenderModel();
+                    }
                 }
 
                 // For when the model is loaded again before it is saved. The stored file may have been saved since
@@ -506,6 +513,11 @@ public class ModelContainer : ObjectContainer
     // A preview being loaded, which replaces the drawables once it has arrived
     private ResourceHandle<FlverResource> _pendingPreview;
 
+    // The meshes the pending preview was written from, in its submesh order, with the offset each one's drawable
+    // had then: edits made while it loads aren't in it
+    private List<Entity> _pendingPreviewMeshes;
+    private Dictionary<Entity, Matrix4x4> _pendingPreviewOffsets;
+
     // Every preview made for this model, released when it is unloaded
     private readonly List<ResourceHandle<FlverResource>> _previews = new();
 
@@ -595,6 +607,9 @@ public class ModelContainer : ObjectContainer
         _pendingPreview = handle;
         _previews.Add(handle);
 
+        _pendingPreviewMeshes = Meshes.ToList();
+        _pendingPreviewOffsets = Meshes.ToDictionary(e => e, GetDrawableOffset);
+
         var options = new LoadOptions
         {
             JobName = "Model Preview",
@@ -609,18 +624,42 @@ public class ModelContainer : ObjectContainer
     }
 
     /// <summary>
-    /// Moves every mesh's drawable to the preview: the preview was written from the meshes in their current order,
-    /// so each mesh is the submesh at its position in the list.
+    /// Moves the drawables of the meshes the preview was written from over to it, each to its submesh there. Meshes
+    /// added since keep the drawable they have, until the next preview.
     /// </summary>
     private void SwapToPreview(ResourceHandle<FlverResource> preview)
     {
         var previous = MeshResource;
 
-        for (var i = 0; i < Meshes.Count; i++)
+        var meshes = _pendingPreviewMeshes ?? Meshes.ToList();
+        var offsets = _pendingPreviewOffsets ?? new Dictionary<Entity, Matrix4x4>();
+
+        for (var i = 0; i < meshes.Count; i++)
         {
-            LoadMeshFrom(Meshes[i], preview, i);
-            MeshSourceIndices[Meshes[i]] = i;
+            var mesh = meshes[i];
+
+            // Deleted since
+            if (!Objects.Contains(mesh))
+                continue;
+
+            // The preview holds the mesh as it was when it was written, so only moves made since are still to show
+            if (mesh is ModelEntity modelMesh)
+            {
+                var written = offsets.TryGetValue(mesh, out var o) ? o : Matrix4x4.Identity;
+
+                modelMesh.DrawableOffset = Matrix4x4.Invert(written, out var inverse)
+                    ? inverse * modelMesh.DrawableOffset
+                    : Matrix4x4.Identity;
+            }
+
+            LoadMeshFrom(mesh, preview, i);
+            MeshSourceIndices[mesh] = i;
+
+            mesh.UpdateRenderModel();
         }
+
+        _pendingPreviewMeshes = null;
+        _pendingPreviewOffsets = null;
 
         MeshResource = preview;
         MeshGeneration++;
@@ -633,6 +672,11 @@ public class ModelContainer : ObjectContainer
 
         // Textures are bound to the materials of the new resource
         View.Universe.ScheduleTextureRefresh();
+    }
+
+    private static Matrix4x4 GetDrawableOffset(Entity entity)
+    {
+        return entity is ModelEntity modelEntity ? modelEntity.DrawableOffset : Matrix4x4.Identity;
     }
 
     private void ReleasePreview(ResourceHandle<FlverResource> handle)
@@ -649,6 +693,8 @@ public class ModelContainer : ObjectContainer
     private void ReleasePreviews()
     {
         _pendingPreview = null;
+        _pendingPreviewMeshes = null;
+        _pendingPreviewOffsets = null;
         _previewStaleSince = null;
 
         foreach (var handle in _previews.ToList())

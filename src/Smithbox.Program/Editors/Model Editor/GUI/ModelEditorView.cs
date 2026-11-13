@@ -149,6 +149,15 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         {
             wrapper.IsDirty = true;
 
+            // Any edit may have changed vertices, so the meshes work out their pivots again
+            if (wrapper.Container?.View == this)
+            {
+                foreach (var mesh in wrapper.Container.Meshes.OfType<ModelEntity>())
+                {
+                    mesh.InvalidateMeshPivot();
+                }
+            }
+
             // Redraw the model from its edits once they pause
             if (CFG.Current.ModelEditor_Viewport_Live_Preview && wrapper.Container?.View == this)
             {

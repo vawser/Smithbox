@@ -21,7 +21,16 @@ public class ModelEntity : Entity
     protected IUniverse Owner;
     public ModelEntityType Type { get; set; }
 
-    public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node;
+    // Meshes have no transform in the FLVER: theirs is always identity, and a move is written into their vertices
+    // (see GetUpdateTransformAction), but having one lets the gizmo move them
+    public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node or ModelEntityType.Mesh;
+
+    /// <summary>
+    /// For meshes: how the mesh's data differs from the geometry its drawable was built with. A move is written into
+    /// the vertices at once, but the drawable only catches up with the next preview of the edited model, so until
+    /// then it is drawn moved by this.
+    /// </summary>
+    public Matrix4x4 DrawableOffset { get; set; } = Matrix4x4.Identity;
 
     public override string ViewportLabel => WrappedObject switch
     {
@@ -53,6 +62,88 @@ public class ModelEntity : Entity
     public override void UpdateRenderModel()
     {
         base.UpdateRenderModel();
+
+        if (Type is not ModelEntityType.Mesh || RenderSceneMesh == null || Container is not ModelContainer container)
+            return;
+
+        if (Smithbox.Instance.CurrentBackend is RenderingBackend.OpenGL || !CFG.Current.Viewport_Enable_Rendering)
+            return;
+
+        // A drag in progress is drawn as the move it will write, beneath it the move the drawable hasn't caught up
+        // with yet, and above both the viewport's display rotation
+        var drag = ActiveTemporaryTransform is { } temp ? GetMeshMove(temp, true) : Matrix4x4.Identity;
+
+        RenderSceneMesh.World = DrawableOffset * drag * container.DisplayMatrix;
+    }
+
+    #region Mesh Moves
+    // The middle of the mesh in model space, worked out from its vertices. The data doesn't change during a drag, so
+    // the pivot the drag starts about is the one the move is written about.
+    private Vector3? _meshPivot;
+
+    /// <summary>
+    /// Call when the mesh's vertices have changed
+    /// </summary>
+    public void InvalidateMeshPivot()
+    {
+        _meshPivot = null;
+    }
+
+    private Vector3 GetMeshPivot()
+    {
+        if (_meshPivot == null && WrappedObject is FLVER2.Mesh mesh && Container is ModelContainer container &&
+            container.Flver != null)
+        {
+            _meshPivot = MeshTransformAction.GetDrawnCenter(container.Flver, mesh,
+                container.Project.Descriptor.ProjectType) ?? Vector3.Zero;
+        }
+
+        return _meshPivot ?? Vector3.Zero;
+    }
+
+    /// <summary>
+    /// The model space move for a gizmo transform. The gizmo turns a mesh about its pivot but scales it about its own
+    /// origin, which for a mesh is the model's origin, so the scale is moved onto the pivot here.
+    /// </summary>
+    private Matrix4x4 GetMeshMove(Transform t, bool includeScale)
+    {
+        var scale = includeScale ? t.Scale : Vector3.One;
+        var pivot = GetMeshPivot();
+
+        var position = t.Position + Vector3.Transform(pivot - pivot * scale, t.Rotation);
+
+        return new Transform(position, t.Rotation, scale).WorldMatrix;
+    }
+    #endregion
+
+    /// <summary>
+    /// A mesh is moved about the middle of its geometry, as its own transform sits at the model's origin
+    /// </summary>
+    public override Transform GetRootLocalTransform()
+    {
+        Transform t = base.GetRootLocalTransform();
+
+        if (Type is ModelEntityType.Mesh)
+        {
+            var root = GetRootTransform();
+
+            t.Position = Vector3.Transform(GetMeshPivot(), root.Rotation) + root.Position;
+        }
+
+        return t;
+    }
+
+    /// <summary>
+    /// A mesh's move is written into its vertices, as a mesh has no transform of its own
+    /// </summary>
+    public override ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    {
+        if (Type is ModelEntityType.Mesh && Container is ModelContainer container)
+        {
+            return new MeshTransformAction(container, this, GetMeshMove(newt, includeScale));
+        }
+
+        return base.GetUpdateTransformAction(newt, includeScale);
     }
 
     public override Transform GetLocalTransform()

@@ -95,6 +95,11 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     private bool UseTempTransform;
 
+    /// <summary>
+    /// The transform of a gizmo drag in progress, for entities that draw it their own way
+    /// </summary>
+    protected Transform? ActiveTemporaryTransform => UseTempTransform ? TempTransform : null;
+
     private IUniverse Owner;
 
     /// <summary>
