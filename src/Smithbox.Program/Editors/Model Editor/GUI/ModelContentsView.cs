@@ -724,7 +724,15 @@ public class ModelContentsView : IActionEventHandler
                 ImGui.SetNextItemOpen(true);
             }
 
+            var highlighted = View.VanillaCompare.PushHighlightColour(e);
+
             nodeopen = ImGui.TreeNodeEx($"{key}##{e.PrettyName}", treeflags);
+
+            if (highlighted)
+            {
+                ImGui.PopStyleColor();
+            }
+
             _displayOrder.Add(e);
 
             HandleHierarchyDragDrop(container, e, key);
@@ -763,7 +771,16 @@ public class ModelContentsView : IActionEventHandler
             {
                 DisplayVisibilityButton(e, container, key, index);
 
+                // Changes from vanilla
+                var highlighted = View.VanillaCompare.PushHighlightColour(e);
+
                 var isSelectableClicked = ImGui.Selectable($"{displayName}##{treeImGuiId}", View.ViewportSelection.GetSelection().Contains(e), selectableFlags);
+
+                if (highlighted)
+                {
+                    ImGui.PopStyleColor();
+                }
+
                 _displayOrder.Add(e);
 
                 // Childless bones and the dummies under bones, in the node hierarchy

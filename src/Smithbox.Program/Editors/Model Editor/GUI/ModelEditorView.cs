@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
@@ -53,6 +54,10 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ModelExportTool ModelExportTool;
     public AssetBrowserTool AssetBrowserTool;
     public ModelHistoryTool HistoryTool;
+    public ModelVanillaCompareTool VanillaCompareTool;
+
+    // The loaded model against the game's own
+    public ModelVanillaCompare VanillaCompare;
 
     // Actions
     public DuplicateAction DuplicateAction;
@@ -110,6 +115,8 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         AssetBrowserTool = new AssetBrowserTool(Project, LOC.Get("MODEL_AssetBrowser_Hint"),
             e => SourceList.SelectAndLoadModel(e.ID));
         HistoryTool = new ModelHistoryTool(this, Project);
+        VanillaCompare = new ModelVanillaCompare(this, Project);
+        VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
 
         // Actions
         DuplicateAction = new DuplicateAction(this, Project);
@@ -260,6 +267,25 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         EnforceParkLimit();
 
         return true;
+    }
+
+    /// <summary>
+    /// Replaces the model's FLVER with the given vanilla one and loads it again in this view. The model is marked
+    /// unsaved and drawn from the new FLVER by the live preview; its undo history is cleared, as its objects are
+    /// replaced. The other files (cloth, collision) are kept.
+    /// </summary>
+    public void RevertModelToVanilla(ModelWrapper wrapper, FLVER2 vanilla)
+    {
+        // Unloading first, as unloading writes the objects back into the FLVER
+        UnloadModel(wrapper);
+
+        wrapper.FLVER = vanilla;
+        wrapper.IsDirty = true;
+
+        // None of the new meshes is in the stored file, so they are drawn once the preview arrives
+        wrapper.MeshSourceIndices.Clear();
+
+        LoadModel(wrapper);
     }
 
     #region Parking

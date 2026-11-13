@@ -358,6 +358,14 @@ public class ModelEditorScreen : EditorScreen
                 GUI.Tooltip($"{LOC.Get("MODEL_Editor_Contents_Display_Node_Name_in_Mesh_Entry_TT")}");
                 GUI.ShowActiveStatus(CFG.Current.ModelEditor_Contents_NodeNameInMeshEntry);
 
+                // Highlight Changes from Vanilla
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_Vanilla_Highlight")}##vanillaHighlightToggle"))
+                {
+                    CFG.Current.ModelEditor_Vanilla_Highlight = !CFG.Current.ModelEditor_Vanilla_Highlight;
+                }
+                GUI.Tooltip(LOC.Get("MODEL_Vanilla_Highlight_TT"));
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_Vanilla_Highlight);
+
                 ImGui.EndMenu();
             }
 

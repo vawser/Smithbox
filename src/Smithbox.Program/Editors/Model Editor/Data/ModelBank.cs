@@ -289,7 +289,12 @@ public class ModelContainerWrapper
     /// Read the container as a BND, or as a BXF if it is split into a header and data file.
     /// Returns null if the container could not be found or is not a binder.
     /// </summary>
-    public IBinder ReadContainer()
+    public IBinder ReadContainer() => ReadContainer(TargetFS);
+
+    /// <summary>
+    /// Read the container from the given file system (the vanilla one, for Vanilla Compare)
+    /// </summary>
+    public IBinder ReadContainer(VirtualFileSystem TargetFS)
     {
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Project, Path);
 
@@ -569,6 +574,57 @@ public class ModelWrapper
             {
                 Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Binder_File", binderPath), e);
             }
+        }
+    }
+
+    /// <summary>
+    /// The model as the game ships it, read from the vanilla files the same way a load reads the project's. Null when
+    /// the game has no such file (a model the mod added) or it can't be read.
+    /// </summary>
+    public FLVER2 ReadVanillaFlver()
+    {
+        var vanillaFS = Parent.Project.VFS.VanillaFS;
+
+        if (vanillaFS == null)
+            return null;
+
+        try
+        {
+            var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(Parent.Project, Parent.Path);
+
+            if (binderType is ResourceContainerType.None)
+            {
+                if (!vanillaFS.FileExists(Parent.Path))
+                    return null;
+
+                var data = vanillaFS.ReadFile(Parent.Path);
+                return data == null ? null : Flver0Converter.ReadEditorFlver(Parent.Project, data.Value);
+            }
+
+            using var binder = Parent.ReadContainer(vanillaFS);
+
+            if (binder == null)
+                return null;
+
+            foreach (var file in binder.Files)
+            {
+                var filename = FilePathUtils.GetPureFilename(file.Name);
+                var filepath = file.Name.ToLower();
+
+                if ((filepath.Contains(".flver") || filepath.Contains(".flv")) &&
+                    string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    return Flver0Converter.ReadEditorFlver(Parent.Project, file.Bytes);
+                }
+            }
+
+            // DES binders can name their model differently, as LoadFromStorage allows
+            return Flver0Converter.ReadOnlyFlver(Parent.Project, binder);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Vanilla_Read_Failed", Name), e);
+            return null;
         }
     }
 

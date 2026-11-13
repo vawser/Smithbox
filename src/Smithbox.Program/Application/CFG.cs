@@ -714,6 +714,9 @@ public class CFG
     public bool ModelEditor_SaveCheck_Enabled = true;
     public bool ModelEditor_SaveCheck_Stop_On_Warnings = false;
 
+    // Contents colours objects that differ from, or aren't in, the vanilla model
+    public bool ModelEditor_Vanilla_Highlight = true;
+
     // History: how many models switched away from keep their objects and undo history in each view (0 = none)
     public int ModelEditor_History_Parked_Limit = 4;
 
@@ -790,6 +793,7 @@ public class CFG
     public bool Interface_ModelEditor_Tool_CharacterPreview = true;
     public bool Interface_ModelEditor_Tool_DisplayRotation = true;
     public bool Interface_ModelEditor_Tool_History = true;
+    public bool Interface_ModelEditor_Tool_VanillaCompare = true;
     public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
     public bool Interface_ModelEditor_Tool_ModelExport = true;

@@ -54,6 +54,14 @@ public class ModelToolWindow
             View.HistoryTool.OnToolWindow();
         }
 
+        // Validation
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_VanillaCompare)
+        {
+            View.VanillaCompareTool.OnToolWindow();
+        }
+
         // Assets
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Assets"));
 
@@ -131,6 +139,13 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_History = !CFG.Current.Interface_ModelEditor_Tool_History;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_History);
+
+            // Vanilla Compare
+            if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Vanilla_Compare")}##toggleVanillaCompareTool"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_VanillaCompare = !CFG.Current.Interface_ModelEditor_Tool_VanillaCompare;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_VanillaCompare);
 
             // Grid Configuration
             if (ImGui.MenuItem($"{LOC.Get("VIEWPORT_GridConfig_Header")}##toggleGridConfigTool"))
