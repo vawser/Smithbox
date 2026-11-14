@@ -37,6 +37,20 @@ public static class RenderMode
 
     public static ViewportTexturingMode Texturing => (ViewportTexturingMode)CFG.Current.Viewport_Texturing_Mode;
 
-    /// <summary>The lighting debug view value the flver shader takes for fullbright, see SceneParam.LightingDebugView</summary>
+    /// <summary>
+    ///     The lighting debug view value the flver shader takes for fullbright, see SceneParam.LightingDebugView. It
+    ///     skips the lighting, and the normal maps with it.
+    /// </summary>
     public const uint FullbrightDebugView = 4;
+
+    /// <summary>
+    ///     Fullbright with the normal-mapped normals still written, for Texturing (Normal), which shows them. Takes
+    ///     the shader's whole lit path, so it costs what Game mode does.
+    /// </summary>
+    public const uint FullbrightSurfaceDebugView = 5;
+
+    /// <summary>The fullbright debug view value for this frame</summary>
+    public static uint FullbrightView => Texturing == ViewportTexturingMode.Normal
+        ? FullbrightSurfaceDebugView
+        : FullbrightDebugView;
 }

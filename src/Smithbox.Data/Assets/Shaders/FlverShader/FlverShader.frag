@@ -1803,6 +1803,64 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 	return mix(1.0, lit, sceneparam.shadowStrength);
 }
 
+// The lighting debug view values that draw Editor mode's fullbright, see SceneParam.LightingDebugView and RenderMode.
+// FULLBRIGHT skips the lighting; FULLBRIGHT_SURFACE takes the whole lit path for the normal-mapped normals that
+// Texturing (Normal) shows, and shows the albedo all the same.
+#define LIGHTING_VIEW_FULLBRIGHT 4u
+#define LIGHTING_VIEW_FULLBRIGHT_SURFACE 5u
+
+// The end of every pixel: the selection tint, the fog on transparents, the display curve and the outputs.
+// litColor already has the glow added; the indirect outputs are from g_indirectDiffuse and g_indirectSpecular.
+void WritePixel(vec3 litColor, float alpha, vec3 glow, vec3 N, float roughness, float F0max, float wireCoverage)
+{
+#ifdef SELECTED
+	if (sceneparam.EnableTinting == 1)
+	{
+		vec3 tint = sceneparam.selectionColor.rgb;
+		float strength = sceneparam.selectionColor.a;
+		litColor = mix(litColor, litColor * tint, strength);
+	}
+#endif
+
+	// Transparents are drawn over the fogged scene, so they fog themselves to their own depth. Alpha blending
+	// lets the fog's light through by the alpha, as the scene behind has it; an additive or subtractive one only
+	// dims, as its light would be added again on each layer.
+	if (c_transparent && c_linearOutput && sceneparam.fogVolumeTexture != 0u)
+	{
+		vec4 fog = FogAtPixel(fsin_worldpos);
+		litColor = max(litColor, vec3(0.0)) * fog.a + (c_blending == BLENDING_ALPHA ? fog.rgb : vec3(0.0));
+	}
+
+	vec3 finalColor = sqrt(max(litColor, vec3(0.0)));
+
+#ifdef FOCUS
+	finalColor = mix(vec3(dot(finalColor, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
+#endif
+
+#ifdef WIREFRAME
+	// In display color, as the lines' color is given
+	finalColor = WireframeOver(finalColor, WireframeLineColor(), wireCoverage);
+#endif
+
+	// In the HDR target the tone map applies the square root, so it is undone: what is left is linear light, kept
+	// above 1 for the tone map to bring down
+	if (c_linearOutput)
+	{
+		finalColor *= finalColor;
+	}
+
+	fsout_color = vec4(finalColor, alpha);
+
+	// Unlit surfaces take no ambient light, so ambient occlusion has nothing to take from them
+	bool unlit = c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT);
+	fsout_surface = vec4(OctahedralEncode(N), roughness, F0max);
+	fsout_indirect = vec4(unlit ? vec3(0.0) :
+		max(g_indirectDiffuse, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
+	fsout_reflection = vec4(unlit ? vec3(0.0) :
+		max(g_indirectSpecular, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
+	fsout_glow = vec4(max(glow, vec3(0.0)), 1.0);
+}
+
 void main()
 {
 	// Before the outline, so a clipped part loses its outline as well
@@ -1818,6 +1876,11 @@ void main()
 #ifdef WIREFRAME
 	// Before anything that discards, as it takes derivatives
 	float wireCoverage = WireframeCoverage();
+#else
+	float wireCoverage = 0.0;
+#endif
+
+#ifdef WIREFRAME
 
 	// The lines alone, unlit, so what is behind the surfaces shows through between them
 	if (WireframeOnly())
@@ -2009,6 +2072,45 @@ void main()
 		discard;
 	}
 #endif
+
+	// Editor mode's fullbright: the albedo, lit by nothing, as the full path below ends up with it (Editor mode has no
+	// wet surfaces, glow or magma), without the normal maps, the lighting and the light loops it would throw away.
+	// Nothing reads the light outputs in Editor mode, so they are left black. Water takes the full path, as its
+	// volume is what colors it.
+	if (sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT && !IsWater())
+	{
+		vec3 plainAlbedo = diffuseColor.xyz * diffuseAlpha.xyz;
+
+		// A metal has no diffuse, as below
+		if (c_metallic)
+		{
+			float metallic = MetallicLayer(0);
+#ifdef MATERIAL_BLEND
+			if (c_blendSpecular)
+			{
+				metallic = 0.0;
+				for (int i = 0; i < MAX_LAYERS; i++)
+				{
+					if (i < c_layerCount && g_weight[i] > 0.0)
+					{
+						metallic += MetallicLayer(i) * g_weight[i];
+					}
+				}
+			}
+#endif
+			plainAlbedo *= 1.0 - metallic;
+		}
+
+		vec3 plainColor = (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
+			? diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult
+			: plainAlbedo;
+
+		vec3 faceNormal = normalize(fsin_worldToTangent[2]);
+		faceNormal = gl_FrontFacing ? faceNormal : -faceNormal;
+
+		WritePixel(plainColor, c_transparent ? diffuseColor.w : 1.0, vec3(0.0), faceNormal, 1.0, 0.04, wireCoverage);
+		return;
+	}
 
 #ifdef MATERIAL_BLEND
 	vec3 normalColor = SampleLayered(ROW_NORMAL, c_blendNormal).xyz;
@@ -2248,7 +2350,9 @@ void main()
 		litColor = vec3(g_probeSunMask);
 	}
 	// Editor mode's fullbright, see RenderMode: the albedo as it is, lit by nothing
-	bool fullbright = sceneparam.lightingDebugView == 4u;
+	// Water and Texturing (Normal) come here, see LIGHTING_VIEW_FULLBRIGHT
+	bool fullbright = sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT ||
+		sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT_SURFACE;
 	if (fullbright)
 	{
 		litColor = albedo;
@@ -2303,50 +2407,5 @@ void main()
 
 	litColor += glow;
 
-#ifdef SELECTED
-	if (sceneparam.EnableTinting == 1)
-	{
-		vec3 tint = sceneparam.selectionColor.rgb;
-		float strength = sceneparam.selectionColor.a;
-		litColor = mix(litColor, litColor * tint, strength);
-	}
-#endif
-
-	// Transparents are drawn over the fogged scene, so they fog themselves to their own depth. Alpha blending
-	// lets the fog's light through by the alpha, as the scene behind has it; an additive or subtractive one only
-	// dims, as its light would be added again on each layer.
-	if (c_transparent && c_linearOutput && sceneparam.fogVolumeTexture != 0u)
-	{
-		vec4 fog = FogAtPixel(fsin_worldpos);
-		litColor = max(litColor, vec3(0.0)) * fog.a + (c_blending == BLENDING_ALPHA ? fog.rgb : vec3(0.0));
-	}
-
-	vec3 finalColor = sqrt(max(litColor, vec3(0.0)));
-
-#ifdef FOCUS
-	finalColor = mix(vec3(dot(finalColor, vec3(0.299, 0.587, 0.114))), vec3(0.5), 0.5);
-#endif
-
-#ifdef WIREFRAME
-	// In display color, as the lines' color is given
-	finalColor = WireframeOver(finalColor, WireframeLineColor(), wireCoverage);
-#endif
-
-	// In the HDR target the tone map applies the square root, so it is undone: what is left is linear light, kept
-	// above 1 for the tone map to bring down
-	if (c_linearOutput)
-	{
-		finalColor *= finalColor;
-	}
-
-	fsout_color = vec4(finalColor, alpha);
-
-	// Unlit surfaces take no ambient light, so ambient occlusion has nothing to take from them
-	bool unlit = c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT);
-	fsout_surface = vec4(OctahedralEncode(surface.N), surface.roughness, max(F0.r, max(F0.g, F0.b)));
-	fsout_indirect = vec4(unlit ? vec3(0.0) :
-		max(g_indirectDiffuse, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
-	fsout_reflection = vec4(unlit ? vec3(0.0) :
-		max(g_indirectSpecular, vec3(0.0)) * sceneparam.indirectLightMult * sceneparam.sceneBrightness, 1.0);
-	fsout_glow = vec4(max(glow, vec3(0.0)), 1.0);
+	WritePixel(litColor, alpha, glow, surface.N, surface.roughness, max(F0.r, max(F0.g, F0.b)), wireCoverage);
 }

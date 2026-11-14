@@ -105,7 +105,8 @@ public unsafe struct SceneParam
     /// <summary>
     ///     What FlverShader.frag draws in place of the lit color, CFG.Viewport_Lighting_Debug_View: 0 the lit color,
     ///     1 where the light from around comes from, 2 that light alone, 3 the share of the sun let through, 4 the
-    ///     albedo unlit, which Editor mode sets (see RenderMode). Also in what was padding.
+    ///     albedo unlit, which Editor mode sets (see RenderMode), with the lighting skipped, 5 the same with the
+    ///     normal-mapped normals kept for Texturing (Normal). Also in what was padding.
     /// </summary>
     public uint LightingDebugView;
 

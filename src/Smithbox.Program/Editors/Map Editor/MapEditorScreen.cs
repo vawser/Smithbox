@@ -646,9 +646,14 @@ public class MapEditorScreen : EditorScreen
             .Where(m => m != null && m.LoadState == MapContentLoadState.Loaded)
             .ToList();
 
-        var (bake, blendBake, blendRatio) = activeView.IrradianceVolumeBank.ResolveBakes(loadedMaps);
+        // Editor mode draws fullbright and reads no volumes (SceneRenderPipeline), so the table is only rebuilt in Game
+        // mode; its first frame back rebuilds it before anything is drawn
+        if (RenderMode.IsGame)
+        {
+            var (bake, blendBake, blendRatio) = activeView.IrradianceVolumeBank.ResolveBakes(loadedMaps);
 
-        activeView.IrradianceVolumeBank.UpdateGpuTable(loadedMaps, bake, blendBake, blendRatio);
+            activeView.IrradianceVolumeBank.UpdateGpuTable(loadedMaps, bake, blendBake, blendRatio);
+        }
 
         // The sun and exposure of the loaded maps' GPARAMs, shared by all views; for Demon's Souls, of their DrawParam
         SceneRenderer.MapLighting = activeView.DrawParamLightingBank.CanUse()

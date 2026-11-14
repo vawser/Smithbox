@@ -49,6 +49,14 @@ public class MapLightCollector
         if (table == null)
             return;
 
+        // Editor mode draws fullbright and gives the shaders no map lights (SceneRenderPipeline), so none are looked for
+        if (!RenderMode.IsGame)
+        {
+            InRangeCount = 0;
+            ShadedCount = 0;
+            return;
+        }
+
         var eye = View.GetCurrentViewport()?.ViewPipeline.Eye;
 
         var maps = View.Project.Handler.MapData.PrimaryBank.Maps.Values

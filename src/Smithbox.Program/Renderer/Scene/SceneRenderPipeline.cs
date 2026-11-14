@@ -507,15 +507,21 @@ public class SceneRenderPipeline
         CameraLight.Intensity = CFG.Current.Viewport_Camera_Light_Intensity;
         CameraLight.Range = CFG.Current.Viewport_Camera_Light_Range;
 
+        // Editor mode draws fullbright, so nothing is lit: no lights are gathered, and the shader gets none to loop over
+        var gameMode = RenderMode.IsGame;
+
         // Lights are gathered here, where the scene can't change under us, and copied in below
         List<SceneLightData> lights = new(SceneLightList.MaxLights);
-        if (CameraLight.Enabled)
+        if (gameMode)
         {
-            CameraLight.Position = eye;
-            lights.Add(CameraLight.ToGpu());
-        }
+            if (CameraLight.Enabled)
+            {
+                CameraLight.Position = eye;
+                lights.Add(CameraLight.ToGpu());
+            }
 
-        Scene.Lights.CollectEnabled(lights);
+            Scene.Lights.CollectEnabled(lights);
+        }
 
         var materialTime = MaterialClock.Time;
         Vector4 wind = MaterialClock.Wind;
@@ -527,7 +533,6 @@ public class SceneRenderPipeline
         var navVolumeSliceHeight = NavVolumeSlice.Height;
         var navVolumeSliceFlags = NavVolumeSlice.Flags;
         var volumeTable = ActiveVolumeTable;
-        var gameMode = RenderMode.IsGame;
         var useIrradianceVolumes = UseIrradianceVolumes && CFG.Current.Viewport_GI_Enable && gameMode;
         var irradianceExposure = CFG.Current.Viewport_GI_Intensity *
             (CFG.Current.Viewport_GI_Auto_Exposure ? volumeTable.AutoExposure : 1.0f);
@@ -690,11 +695,11 @@ public class SceneRenderPipeline
 
             // As with the volumes, read here so the count only covers lights already on the GPU
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
-            SceneParams.MapLightCount = UseMapLights ? SceneRenderer.MapLights.Count : 0;
+            SceneParams.MapLightCount = UseMapLights && gameMode ? SceneRenderer.MapLights.Count : 0;
             SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
             SceneParams.LightingDebugView = gameMode
                 ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
-                : RenderMode.FullbrightDebugView;
+                : RenderMode.FullbrightView;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)
