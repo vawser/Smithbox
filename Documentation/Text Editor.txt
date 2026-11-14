@@ -2,6 +2,4 @@
 # Text Editor TODO
 #----------------------------------------------------
 
-- ER: FMG Reloader
-
 - Change the Grouped Entry feature to allow for up to 10 associated entries, and allow the names of each input to be defined per association

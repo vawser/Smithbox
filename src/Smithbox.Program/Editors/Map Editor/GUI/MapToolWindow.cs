@@ -316,6 +316,11 @@ public class MapToolWindow
             ActionSection(true, "MAP_GI_Tool_Tab", "mapIrradianceVolumeIdsSection", View.IrradianceVolumeIdTool.OnToolWindow);
         }
 
+        // Game Memory: tools that act on the running game
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_WorldReloader && View.WorldReloaderTool.CanUse(),
+            "MAP_WorldReloader_Header", "mapWorldReloaderSection", View.WorldReloaderTool.OnToolWindow);
 
         // Viewport
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
@@ -360,7 +365,6 @@ public class MapToolWindow
         {
             View.ResourceListTool.Display("mapEditor", View.Universe);
         }
-
         // Rendering: sets its own category, so it comes last
         if (CFG.Current.Interface_MapEditor_Tool_ViewportRendering)
         {
@@ -602,6 +606,12 @@ public class MapToolWindow
                     CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList = !CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList);
+            }
+
+            // World Reloader
+            if (View.WorldReloaderTool.CanUse())
+            {
+                ToolToggle("MAP_ToolWindow_View_Toggle_World_Reloader", ref CFG.Current.Interface_MapEditor_Tool_WorldReloader);
             }
 
             if (ImGui.MenuItem("Viewport Configuration"))

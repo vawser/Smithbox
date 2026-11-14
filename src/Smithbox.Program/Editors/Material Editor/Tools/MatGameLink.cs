@@ -1,4 +1,5 @@
 using StudioCore.Application;
+using StudioCore.Memory;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -16,7 +17,7 @@ namespace StudioCore.Editors.MaterialEditor;
 ///   Find(repo, wchar* name)      returns the ResCap
 ///   Init(rc, bytes, size)        parses a MATBIN into a new GXMaterialData and swaps it in, releasing the old one
 /// </summary>
-public class MatGameLink
+public class MatGameLink : IGameProcess
 {
     public enum LinkState { NotRunning, Attached, Failed }
 
@@ -83,28 +84,25 @@ public class MatGameLink
     private static readonly byte[] QuitOutPrologue = { 0x48, 0x83, 0xEC, 0x28, 0x48, 0x8B, 0x05 }; // sub rsp,28h; mov rax,[rip+x]
     private const int QuitOutMenuOffset = 0x8, QuitOutFlagOffset = 0x5D;
 
-    // Reload world: MoveMapStep's save/load handler (0x140AFD060) loads the save slot in GameMan +LoadSlot when it isn't
-    // -1, through RequestLoad (0x14067C500) and LoadGame (0x14067C590), which restarts the world from that save without
-    // the title screen. The game only ever resets that field, so this looks like a leftover developer path.
-    // Before it, a save request (GameMan +SaveRequest) writes the current state, so the reload loses nothing.
-    private nint GameManGlobal;
-    private int SaveRequestOffset, LoadSlotOffset, CurrentSlotOffset;
-
-    // mov rax,[GameMan]; mov eax,[rax+CurrentSlot]; ret (AC0 in 1.16; the 0x0AC0 pins it among the many such getters)
-    private const string CurrentSlotAob = "48 8B 05 ?? ?? ?? ?? 8B 80 C0 0A 00 00 C3";
-    // the save request getter: mov rax,[GameMan]; movzx ebx,byte ptr [rax+SaveRequest]; call; xor edi,edi; test al,al; cmovne ebx,edi
-    private const string SaveRequestAob = "48 8B 05 ?? ?? ?? ?? 0F B6 98 ?? ?? ?? ?? E8 ?? ?? ?? ?? 33 FF 84 C0 0F 45 DF";
-    // the load slot getter (mov rax,[GameMan]; mov eax,[rax+LoadSlot]; ret) sits just before the save request getter:
-    // 0x14067A6C0 vs the save AOB match at 0x14067A6DA
-    private const int LoadSlotBeforeSave = 0x1A;
+    // Reload world: the save-then-load request lives in Memory/EldenRingWorldReload, shared with the Map Editor
+    private readonly EldenRingWorldReload WorldReload = new();
 
     /// <summary>
     /// Whether the world reload request was found; without it, materials still reload
     /// </summary>
-    public bool CanReloadWorld => GameManGlobal != 0;
+    public bool CanReloadWorld => WorldReload.CanReload;
 
-    public volatile string LastWorldReload;
-    public volatile bool IsReloadingWorld;
+    public string LastWorldReload
+    {
+        get => WorldReload.LastMessage;
+        private set => WorldReload.LastMessage = value;
+    }
+
+    public bool IsReloadingWorld
+    {
+        get => WorldReload.IsRunning;
+        private set => WorldReload.IsRunning = value;
+    }
 
     public enum AfterReload { Nothing, ReloadWorld, QuitOut }
 
@@ -317,122 +315,9 @@ public class MatGameLink
     }
 
     /// <summary>
-    /// Saves, then asks the world step to load the current save slot again. Each request is withdrawn if the game
-    /// doesn't take it, so nothing is left to fire later.
+    /// Saves, then asks the world step to load the current save slot again (Memory/EldenRingWorldReload)
     /// </summary>
-    private void ReloadWorldAndConfirm()
-    {
-        IsReloadingWorld = true;
-
-        try
-        {
-            nint gameMan;
-            int slot;
-
-            lock (GameLock)
-            {
-                if (!CanReloadWorld)
-                {
-                    LastWorldReload = LOC.Get("MAT_InGameTool_World_Unavailable");
-                    return;
-                }
-
-                gameMan = ReadPtr(GameManGlobal);
-                slot = gameMan != 0 ? ReadI32(gameMan + CurrentSlotOffset) : -1;
-
-                if (slot < 0 || slot > 9)
-                {
-                    LastWorldReload = LOC.Get("MAT_InGameTool_World_No_Save");
-                    return;
-                }
-
-                if (ReadI32(gameMan + LoadSlotOffset) != -1)
-                {
-                    LastWorldReload = LOC.Get("MAT_InGameTool_World_Busy");
-                    return;
-                }
-
-                // Save first, as quitting does, so the reload doesn't go back to an older save
-                WriteBytes(gameMan + SaveRequestOffset, new byte[] { 1 });
-            }
-
-            Smithbox.Log(typeof(MatGameLink), $"[Material Editor] Reload world: save requested (slot {slot}).");
-
-            var saved = WaitFor(() => ReadBytes(gameMan + SaveRequestOffset, 1)[0] == 0, 10000);
-            if (saved == null)
-                return;
-
-            if (saved == false)
-            {
-                lock (GameLock)
-                {
-                    if (Handle != 0)
-                        WriteBytes(gameMan + SaveRequestOffset, new byte[] { 0 });
-                }
-
-                LastWorldReload = LOC.Get("MAT_InGameTool_World_Save_Not_Taken");
-                Smithbox.Log(typeof(MatGameLink), "[Material Editor] Reload world: save not taken within 10 s; nothing reloaded.");
-                return;
-            }
-
-            lock (GameLock)
-            {
-                if (Handle == 0)
-                    return;
-
-                WriteBytes(gameMan + LoadSlotOffset, BitConverter.GetBytes(slot));
-            }
-
-            Smithbox.Log(typeof(MatGameLink), $"[Material Editor] Reload world: load of slot {slot} requested.");
-
-            // The world step clears the field once it has accepted the load
-            var loaded = WaitFor(() => ReadI32(gameMan + LoadSlotOffset) == -1, 10000);
-            if (loaded == null)
-                return;
-
-            if (loaded == false)
-            {
-                lock (GameLock)
-                {
-                    if (Handle != 0)
-                        WriteBytes(gameMan + LoadSlotOffset, BitConverter.GetBytes(-1));
-                }
-
-                LastWorldReload = LOC.Get("MAT_InGameTool_World_Load_Not_Taken");
-                Smithbox.Log(typeof(MatGameLink), "[Material Editor] Reload world: load not taken within 10 s; request withdrawn.");
-                return;
-            }
-
-            LastWorldReload = LOC.Get("MAT_InGameTool_World_Done", DateTime.Now.ToString("T"));
-            Smithbox.Log(typeof(MatGameLink), "[Material Editor] Reload world: load accepted.");
-        }
-        finally
-        {
-            IsReloadingWorld = false;
-        }
-    }
-
-    /// <summary>
-    /// Polls a condition on the game every 100 ms. True when it held, false on timeout, null when the game went away.
-    /// </summary>
-    private bool? WaitFor(Func<bool> condition, int timeoutMs)
-    {
-        for (var waited = 0; waited < timeoutMs; waited += 100)
-        {
-            Thread.Sleep(100);
-
-            lock (GameLock)
-            {
-                if (Handle == 0)
-                    return null;
-
-                if (condition())
-                    return true;
-            }
-        }
-
-        return false;
-    }
+    private void ReloadWorldAndConfirm() => WorldReload.Run(this);
 
     /// <summary>
     /// Asks the game to quit to the title screen, on a background task
@@ -624,7 +509,7 @@ public class MatGameLink
         RepoPtrAddr = FindAddr = InitAddr = 0;
         NameCache.Clear();
         MenuManGlobal = 0;
-        GameManGlobal = 0;
+        WorldReload.Clear();
         FlverRepoPtrAddr = 0;
         MaterialFirstSeen.Clear();
         ModelFirstSeen.Clear();
@@ -669,7 +554,7 @@ public class MatGameLink
         }
 
         ResolveQuitOut();
-        ResolveReloadWorld();
+        WorldReload.Resolve(this);
         ResolveModels();
 
         return true;
@@ -700,50 +585,6 @@ public class MatGameLink
 
         FlverRepoPtrAddr = site + 7 + ReadI32(site + 3);
         Smithbox.Log(typeof(MatGameLink), $"[Material Editor] Loaded models: FlverRepository global 0x{FlverRepoPtrAddr:X}");
-    }
-
-    /// <summary>
-    /// Finds GameMan and its save request, load slot and current slot fields. Optional.
-    /// </summary>
-    private void ResolveReloadWorld()
-    {
-        GameManGlobal = 0;
-
-        var saves = Scan(SaveRequestAob);
-        var currents = Scan(CurrentSlotAob);
-
-        if (saves.Count != 1 || currents.Count != 1)
-        {
-            Smithbox.Log(typeof(MatGameLink), $"[Material Editor] Reload world unavailable: save request {saves.Count}, current slot {currents.Count} match(es).");
-            return;
-        }
-
-        var save = saves[0];
-        var load = save - LoadSlotBeforeSave;
-        var loadBytes = ReadBytes(load, 14);
-
-        if (loadBytes[0] != 0x48 || loadBytes[1] != 0x8B || loadBytes[2] != 0x05 || loadBytes[7] != 0x8B || loadBytes[8] != 0x80 || loadBytes[13] != 0xC3)
-        {
-            Smithbox.Log(typeof(MatGameLink), $"[Material Editor] Reload world unavailable: unexpected load slot getter {Convert.ToHexString(loadBytes)}.");
-            return;
-        }
-
-        var gameMan = save + 7 + ReadI32(save + 3);
-
-        // All three must read the same GameMan
-        if (load + 7 + ReadI32(load + 3) != gameMan || currents[0] + 7 + ReadI32(currents[0] + 3) != gameMan)
-        {
-            Smithbox.Log(typeof(MatGameLink), "[Material Editor] Reload world unavailable: the getters read different globals.");
-            return;
-        }
-
-        GameManGlobal = gameMan;
-        SaveRequestOffset = ReadI32(save + 10);
-        LoadSlotOffset = BitConverter.ToInt32(loadBytes, 9);
-        CurrentSlotOffset = ReadI32(currents[0] + 9);
-
-        Smithbox.Log(typeof(MatGameLink),
-            $"[Material Editor] Reload world: GameMan global 0x{GameManGlobal:X}, save request +0x{SaveRequestOffset:X}, load slot +0x{LoadSlotOffset:X}, current slot +0x{CurrentSlotOffset:X}");
     }
 
     /// <summary>
@@ -1098,6 +939,13 @@ public class MatGameLink
     #endregion
 
     #region Memory
+
+    // IGameProcess: what the shared memory code in Memory/ (Reload World) reaches the game through
+    object IGameProcess.Lock => GameLock;
+    bool IGameProcess.IsOpen => Handle != 0;
+    List<nint> IGameProcess.Scan(string aob) => Scan(aob);
+    byte[] IGameProcess.ReadBytes(nint address, int length) => ReadBytes(address, length);
+    void IGameProcess.WriteBytes(nint address, byte[] bytes) => WriteBytes(address, bytes);
 
     private byte[] ReadBytes(nint address, int length)
     {

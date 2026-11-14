@@ -2,6 +2,13 @@
 # TODO 
 #---------------------
 
+Unknown formats:
+    mfr
+    relationinfo
+    moaei
+    bsipwv
+
+
 Analyze the X for bugs and recommendations for functionality improvements
 
 - Editors:
@@ -17,4 +24,5 @@ Analyze the X for bugs and recommendations for functionality improvements
     - EMEVD Editor
     - ESD Editor
     - File Browser
+    
     

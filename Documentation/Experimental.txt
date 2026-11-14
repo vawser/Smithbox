@@ -8,4 +8,6 @@
     - Cutscenes are staged in maps + a set of parts associated with the cutscene
     - Typically animations play on the camera + parts
    
-- Add 'camera path' authoring for new camera hkxs for cutscenes
+- FaceGen Editor
+
+- Scaleform Editor

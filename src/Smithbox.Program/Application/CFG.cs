@@ -660,6 +660,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;
     public bool Interface_MapEditor_Tool_FirstPerson = true;
+    public bool Interface_MapEditor_Tool_WorldReloader = true;
     public bool Interface_MapEditor_Tool_MapExtraction = true;
     public bool Interface_MapEditor_Tool_TextureTransfer = true;
     public bool Interface_MapEditor_Tool_PartTransfer = true;

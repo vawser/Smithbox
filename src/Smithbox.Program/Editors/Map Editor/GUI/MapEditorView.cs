@@ -147,6 +147,7 @@ public class MapEditorView : IEditorView
     public LoadListTool LoadListTool;
     public EntryFileListTool EntryFileListTool;
     public PartsTokenIdListTool PartsTokenIdListTool;
+    public WorldReloaderTool WorldReloaderTool;
 
     public ResourceListTool ResourceListTool;
 
@@ -257,6 +258,7 @@ public class MapEditorView : IEditorView
         LoadListTool = new LoadListTool(this, project);
         EntryFileListTool = new EntryFileListTool(this, project);
         PartsTokenIdListTool = new PartsTokenIdListTool(this, project);
+        WorldReloaderTool = new WorldReloaderTool(this, project);
 
         ResourceListTool = new ResourceListTool();
 
