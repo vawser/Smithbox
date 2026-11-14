@@ -106,7 +106,8 @@ public class TimeActUniverse : IUniverse
                 Tasks = LoadModels(Tasks, newContainer);
                 await Task.WhenAll(Tasks);
 
-                ScheduleTextureRefresh();
+                // Inside the session, so the textures found for the model are part of this load
+                await ResourceManager.LoadMissingTexturesAsync();
             }
             finally
             {

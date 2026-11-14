@@ -35,7 +35,19 @@ public static class ResourceManager
 
     public static int _prevCount;
 
-    public static bool _schedulePostTextureLoad;
+    // A pending missing texture load, shared by everything that asks for one before it runs
+    private static readonly object _postTextureLock = new();
+    private static MissingTextureRequest _postTextureLoad;
+
+    // Passes a request makes before it gives up on containers that keep failing to deliver
+    private const int MaxMissingTexturePasses = 4;
+
+    private sealed class MissingTextureRequest
+    {
+        public readonly TaskCompletionSource Done = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        public int Passes;
+    }
+
     public static bool _scheduleWorldMapLoad;
     public static bool _scheduleCompassLoad;
 
@@ -178,7 +190,85 @@ public static class ResourceManager
 
     public static void SchedulePostTextureRefresh()
     {
-        _schedulePostTextureLoad = true;
+        LoadMissingTexturesAsync();
+    }
+
+    /// <summary>
+    ///     Loads the textures that models asked for but no loaded container had, from the containers
+    ///     <see cref="ResourceFallbacks"/> finds for them. This runs once no job is in flight, as only then is every
+    ///     loaded texture registered with its pool, so a load awaits this before it ends its
+    ///     <see cref="ResourceLoadTracker"/> session to make these part of its own progress.
+    ///     The task completes once a pass finds nothing more to load. Each pass runs once every job is done, so the
+    ///     textures of the one before are registered by then, and anything started meanwhile (grass, composite
+    ///     character parts, the Model Editor's preview) has asked for its textures too.
+    /// </summary>
+    public static Task LoadMissingTexturesAsync()
+    {
+        lock (_postTextureLock)
+        {
+            _postTextureLoad ??= new MissingTextureRequest();
+            return _postTextureLoad.Done.Task;
+        }
+    }
+
+    private static void RunMissingTextureLoad()
+    {
+        MissingTextureRequest request;
+
+        lock (_postTextureLock)
+        {
+            request = _postTextureLoad;
+            _postTextureLoad = null;
+        }
+
+        if (request == null)
+        {
+            return;
+        }
+
+        request.Passes++;
+
+        var loads = new List<Task>();
+        var queued = 0;
+
+        try
+        {
+            foreach (ResourcePool pool in Pools)
+            {
+                loads.Add(ResourceFallbacks.LoadMissingTextures(pool, out var poolQueued));
+                queued += poolQueued;
+            }
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(typeof(ResourceManager), "Failed to start the load of missing textures.", e);
+        }
+
+        // A failed container is logged by its job; the waiting load carries on either way
+        Task.WhenAll(loads).ContinueWith(_ =>
+        {
+            if (queued == 0 || request.Passes >= MaxMissingTexturePasses)
+            {
+                request.Done.TrySetResult();
+                return;
+            }
+
+            // Look again once idle. A request made meanwhile is joined rather than run twice.
+            MissingTextureRequest joined;
+
+            lock (_postTextureLock)
+            {
+                if (_postTextureLoad == null)
+                {
+                    _postTextureLoad = request;
+                    return;
+                }
+
+                joined = _postTextureLoad;
+            }
+
+            joined.Done.Task.ContinueWith(_ => request.Done.TrySetResult(), TaskScheduler.Default);
+        }, TaskScheduler.Default);
     }
 
     public static void ScheduleWorldMapRefresh()
@@ -255,14 +345,7 @@ public static class ResourceManager
                 SceneRenderer.GeometryBufferAllocator.FlushStaging(true);
             }
 
-            if (_schedulePostTextureLoad)
-            {
-                _schedulePostTextureLoad = false;
-                foreach (ResourcePool pool in Pools)
-                {
-                    ResourceFallbacks.LoadMissingTextures(pool);
-                }
-            }
+            RunMissingTextureLoad();
 
             if (_scheduleWorldMapLoad)
             {

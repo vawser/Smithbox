@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace StudioCore.Renderer;
 
@@ -22,13 +23,17 @@ internal static class ResourceFallbacks
 
     /// <summary>
     ///     For every texture the pool has been asked for but doesn't have, tries to find a container that holds it.
+    ///     The task completes once the containers it started have been read. <paramref name="queued" /> is how many
+    ///     containers it started, so a caller can tell whether looking again could find more.
     /// </summary>
-    public static void LoadMissingTextures(ResourcePool pool)
+    public static Task LoadMissingTextures(ResourcePool pool, out int queued)
     {
+        queued = 0;
+
         ProjectEntry? project = Smithbox.Orchestrator.SelectedProject;
         if (project == null)
         {
-            return;
+            return Task.CompletedTask;
         }
 
         HashSet<string> vfsPaths = new();
@@ -36,6 +41,9 @@ internal static class ResourceFallbacks
 
         HashSet<string> tried = _indexTried.GetValue(pool, _ => new HashSet<string>(StringComparer.OrdinalIgnoreCase));
         var indexed = 0;
+
+        // The containers this pass loads for the index, so textures that share a holder don't each load another one
+        HashSet<string> indexPaths = new(StringComparer.OrdinalIgnoreCase);
 
         foreach (IResourceHandle handle in pool.Handles)
         {
@@ -87,13 +95,16 @@ internal static class ResourceFallbacks
 
             // Last: the shipped texture name index, for textures whose container nothing above can name (DES c6050's
             // head textures are only in an m06 area TPF). Only when no rule above has a container still to load for
-            // it, and each container at most once per pool, so a holder that doesn't deliver isn't retried every pass.
+            // it. A container is tried until its load delivers, so one that fails isn't retried every pass.
             if (!ruleMatched)
             {
-                var container = TextureNameIndex.ChooseContainer(project, pool, name, tried);
-                if (container != null && tried.Add(container) && vfsPaths.Add(container))
+                lock (tried)
                 {
-                    indexed++;
+                    var container = TextureNameIndex.ChooseContainer(project, pool, name, tried, indexPaths);
+                    if (container != null && tried.Add(container) && indexPaths.Add(container) && vfsPaths.Add(container))
+                    {
+                        indexed++;
+                    }
                 }
             }
         }
@@ -108,15 +119,52 @@ internal static class ResourceFallbacks
             Types = ResourceType.Texture, JobName = LOC.Get("REND_Job_Additional_Textures")
         };
 
+        List<Task> loads = new();
+
+        // Containers a rule names that are loaded already are skipped by the pool, so only the rest count
+        foreach (var path in vfsPaths)
+        {
+            if (!pool.IsContainerLoaded(path))
+            {
+                queued++;
+            }
+        }
+
+        queued += externalPaths.Count;
+
         if (vfsPaths.Count > 0)
         {
-            pool.LoadContainers(vfsPaths, options);
+            Task load = pool.LoadContainers(vfsPaths, options);
+
+            // A container that delivered no longer counts as tried. While it stays loaded ChooseContainer passes over
+            // its textures anyway; once its textures are unloaded (the model was closed) it must be loadable again,
+            // or the next model that needs them never gets them.
+            if (indexPaths.Count > 0)
+            {
+                load = load.ContinueWith(_ =>
+                {
+                    lock (tried)
+                    {
+                        foreach (var path in indexPaths)
+                        {
+                            if (pool.IsContainerLoaded(path))
+                            {
+                                tried.Remove(path);
+                            }
+                        }
+                    }
+                }, TaskScheduler.Default);
+            }
+
+            loads.Add(load);
         }
 
         foreach (var path in externalPaths)
         {
-            pool.LoadExternalContainer(path, options);
+            loads.Add(pool.LoadExternalContainer(path, options));
         }
+
+        return Task.WhenAll(loads);
     }
 
     /// <summary>

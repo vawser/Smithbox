@@ -378,8 +378,18 @@ public class MapUniverse : IUniverse
                     _pendingSelections.Enqueue((newMap, SelectRoot: false));
                 }
 
-                ScheduleTextureRefresh();
                 ResourceManager.ScheduleCompassRefresh();
+
+                // Textures in containers the load lists can't name, inside the session so they are part of this load
+                // rather than one that starts after it. Last, as building the drawables above can start loads of its
+                // own (grass, composite characters) whose models ask for textures too.
+                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering &&
+                    CFG.Current.Viewport_Enable_Texturing)
+                {
+                    Profiler.TracyFiberLeave();
+                    await ResourceManager.LoadMissingTexturesAsync();
+                    Profiler.TracyFiberEnter("loadMapAsync");
+                }
             }
             else
             {

@@ -461,6 +461,9 @@ public class GparamUniverse : IUniverse
                     LoadAssets(mapTextures, mapTextureJob, ResourceType.Texture),
                     LoadAssets(assetTextures, assetTextureJob, ResourceType.Texture),
                     LoadAssets(otherTextures, otherTextureJob, ResourceType.Texture));
+
+                // Inside the session, so the textures found for the models are part of this load
+                await ResourceManager.LoadMissingTexturesAsync();
             }
         }
         catch (Exception e)
@@ -471,8 +474,6 @@ public class GparamUniverse : IUniverse
         {
             ResourceLoadTracker.EndSession(session);
         }
-
-        ResourceManager.SchedulePostTextureRefresh();
 
         ResourcesLoadedGeneration = generation;
         ResourcesLoaded = true;

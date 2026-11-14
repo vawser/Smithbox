@@ -87,17 +87,19 @@ public static class TextureNameIndex
     }
 
     /// <summary>
-    /// The container to load for a missing texture: none when the index doesn't know the name or a holder is loaded
-    /// already (so loading again would add nothing), else the most preferred holder that exists and hasn't been tried.
+    /// The container to load for a missing texture: none when the index doesn't know the name, a holder is loaded
+    /// already (so loading again would add nothing) or is in <paramref name="queued" /> (being loaded for another
+    /// texture), else the most preferred holder that exists and hasn't been tried.
     /// </summary>
-    public static string? ChooseContainer(ProjectEntry project, ResourcePool pool, string name, ISet<string> tried)
+    public static string? ChooseContainer(ProjectEntry project, ResourcePool pool, string name, ISet<string> tried,
+        ISet<string>? queued = null)
     {
         var index = Get(project.Descriptor.ProjectType);
         if (index == null)
             return null;
 
         var holders = index.Find(name).ToList();
-        if (holders.Count == 0 || holders.Any(h => pool.IsContainerLoaded(h.Path)))
+        if (holders.Count == 0 || holders.Any(h => pool.IsContainerLoaded(h.Path) || queued?.Contains(h.Path) == true))
             return null;
 
         foreach (var holder in holders.OrderBy(h => h.Rank))

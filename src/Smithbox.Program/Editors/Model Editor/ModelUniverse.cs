@@ -152,10 +152,11 @@ public class ModelUniverse : IUniverse
             var modelTasks = LoadModels(new List<Task>(), container);
             await Task.WhenAll(modelTasks);
 
-            // Another model was loaded or this one unloaded meanwhile, so the refresh is left to that load
+            // Textures in containers the load lists can't name, inside the session so they are part of this load.
+            // Another model was loaded or this one unloaded meanwhile, so the refresh is left to that load.
             if (loadGeneration == _loadGeneration)
             {
-                ScheduleTextureRefresh();
+                await ResourceManager.LoadMissingTexturesAsync();
             }
         }
         catch (Exception e)
