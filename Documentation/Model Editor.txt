@@ -2,9 +2,9 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- EDGE
- - Read map mapbnd for edges and then associate with FLVER on load for map pieces
- 
-- GRASS
- - Add method to great new GRASS definition for a model (user would need to place points)
+- EDGE:
+    - Improve workflow to match Map Editor's tooling
+
+- GRASS:
+    - Add method to great new GRASS definition for a model (user would need to place points)
 

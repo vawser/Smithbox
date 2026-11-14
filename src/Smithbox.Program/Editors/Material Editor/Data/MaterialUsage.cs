@@ -39,6 +39,30 @@ public class MaterialUsage
     private Dictionary<string, List<MaterialUse>> ByName;
     private bool Loaded;
 
+    /// <summary>A model's kind and the short names of its materials, from the same scan</summary>
+    public record ModelMaterials(string Kind, List<string> Materials);
+
+    // Model name (the FLVER's file name up to its first '.', as the game names loaded models) to its materials
+    private Dictionary<string, ModelMaterials> ByModel;
+
+    /// <summary>The materials of a model, by the game's model name (c2010, AEG099_001); null when unknown</summary>
+    public ModelMaterials MaterialsOfModel(string modelName)
+    {
+        EnsureLoaded();
+        return ByModel != null && ByModel.TryGetValue(modelName ?? "", out var model) ? model : null;
+    }
+
+    /// <summary>The kinds of model (Character, Asset, Part, MapPiece) that use a material</summary>
+    public IEnumerable<string> KindsOf(string shortName) => UsesOf(shortName).Select(u => u.Kind).Distinct();
+
+    private static string ModelNameOf(string flver)
+    {
+        var cut = Math.Max(flver.LastIndexOf('\\'), flver.LastIndexOf('/'));
+        var name = cut >= 0 ? flver[(cut + 1)..] : flver;
+        var dot = name.IndexOf('.');
+        return dot >= 0 ? name[..dot] : name;
+    }
+
     public DateTime? ScannedAt { get; private set; }
     public int ContainerCount { get; private set; }
     public int FlverCount { get; private set; }
@@ -91,6 +115,25 @@ public class MaterialUsage
             return;
 
         ByName = new Dictionary<string, List<MaterialUse>>(cache.Uses, StringComparer.OrdinalIgnoreCase);
+
+        var byModel = new Dictionary<string, ModelMaterials>(StringComparer.OrdinalIgnoreCase);
+        foreach (var (material, uses) in ByName)
+        {
+            foreach (var use in uses)
+            {
+                var model = ModelNameOf(use.Flver);
+                if (!byModel.TryGetValue(model, out var entry))
+                    byModel[model] = entry = new ModelMaterials(use.Kind, new List<string>());
+
+                if (!entry.Materials.Contains(material, StringComparer.OrdinalIgnoreCase))
+                    entry.Materials.Add(material);
+            }
+        }
+
+        foreach (var entry in byModel.Values)
+            entry.Materials.Sort(StringComparer.OrdinalIgnoreCase);
+
+        ByModel = byModel;
         ScannedAt = cache.ScannedAt;
         ContainerCount = cache.Containers;
         FlverCount = cache.Flvers;

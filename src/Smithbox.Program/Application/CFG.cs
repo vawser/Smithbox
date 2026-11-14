@@ -1345,6 +1345,11 @@ public class CFG
     public bool Interface_MaterialEditor_Tool_Search = true;
     public bool Interface_MaterialEditor_Tool_UsedBy = true;
     public bool Interface_MaterialEditor_Tool_ShaderInfo = true;
+    public bool Interface_MaterialEditor_Tool_InGame = true;
+    public bool MaterialEditor_InGame_AutoRefresh = true;
+    public bool MaterialEditor_InGame_SortRecent = true;
+    public bool MaterialEditor_InGame_SendOnSave = false;
+    public int MaterialEditor_InGame_AfterReload = 1; // MatGameLink.AfterReload: 0 nothing, 1 reload world, 2 quit out
 
     public bool MaterialEditor_Textures_Display_Preview = true;
 

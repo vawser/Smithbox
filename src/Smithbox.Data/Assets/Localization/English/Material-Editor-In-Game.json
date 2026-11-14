@@ -1,0 +1,480 @@
+{
+  "Entries": [
+    {
+      "Key": "MAT_ToolWindow_View_Toggle_In_Game",
+      "Text": "Material Reloader"
+    },
+    {
+      "Key": "MAT_InGameTool_Header",
+      "Text": "Material Reloader"
+    },
+    {
+      "Key": "MAT_InGameTool_Game_Not_Supported",
+      "Text": "The Material Reloader works with Elden Ring only."
+    },
+    {
+      "Key": "MAT_InGameTool_Hint",
+      "Text": "Connects to the running game: lists the materials loaded models use, and reloads the selected material in the game from this editor's copy. The game must run offline with EAC disabled."
+    },
+    {
+      "Key": "MAT_InGameTool_Game_Header",
+      "Text": "Game"
+    },
+    {
+      "Key": "MAT_InGameTool_Game_Header_TT",
+      "Text": "The connection to eldenring.exe."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Waiting",
+      "Text": "Not connected yet."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Not_Running",
+      "Text": "Elden Ring isn't running."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Attached",
+      "Text": "Connected to Elden Ring (process {0})."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Open_Failed",
+      "Text": "Couldn't open the game process (error {0}). EAC may be running, or Smithbox may need the same rights as the game."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Version",
+      "Text": "Couldn't find the game's material functions (matches: {0}, {1}). This game version may not be supported."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Not_Loaded",
+      "Text": "Connected, but the game hasn't loaded its materials yet."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Bad_Map",
+      "Text": "Connected, but the game's material table looks wrong ({0} buckets). This game version may not be supported."
+    },
+    {
+      "Key": "MAT_InGameTool_State_Read_Failed",
+      "Text": "Reading the game failed: {0}"
+    },
+    {
+      "Key": "MAT_InGameTool_Auto_Refresh",
+      "Text": "Refresh automatically"
+    },
+    {
+      "Key": "MAT_InGameTool_Auto_Refresh_TT",
+      "Text": "Reads the game's materials every {0} seconds while this tool is shown."
+    },
+    {
+      "Key": "MAT_InGameTool_Refresh",
+      "Text": "Refresh"
+    },
+    {
+      "Key": "MAT_InGameTool_Refresh_TT",
+      "Text": "Read the game's materials now."
+    },
+    {
+      "Key": "MAT_InGameTool_Detach",
+      "Text": "Disconnect"
+    },
+    {
+      "Key": "MAT_InGameTool_Detach_TT",
+      "Text": "Close the connection to the game and turn off automatic refresh."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Header",
+      "Text": "Reload"
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Header_TT",
+      "Text": "Replace the selected material in the running game with this editor's copy, including unsaved changes."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_No_Selection",
+      "Text": "Select a MATBIN material to reload it."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Selected",
+      "Text": "Selected: {0}"
+    },
+    {
+      "Key": "MAT_InGameTool_Reload",
+      "Text": "Reload in Game"
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_TT",
+      "Text": "Send the selected material to the game. Models loaded after this use the new version."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Running",
+      "Text": "Reloading..."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Note",
+      "Text": "Models already loaded keep the old material until they load again. Reload the world (below) to rebuild every model with the new material."
+    },
+    {
+      "Key": "MAT_InGameTool_Send_Vanilla",
+      "Text": "Send Vanilla"
+    },
+    {
+      "Key": "MAT_InGameTool_Send_Vanilla_TT",
+      "Text": "Send the game's original version of this material, undoing edits in the game without changing the project."
+    },
+    {
+      "Key": "MAT_InGameTool_Vanilla_Not_Ready",
+      "Text": "The vanilla materials are still loading; try again in a moment."
+    },
+    {
+      "Key": "MAT_InGameTool_Vanilla_None",
+      "Text": "{0} isn't a vanilla material, so there's no original to send."
+    },
+    {
+      "Key": "MAT_InGameTool_Modified_Header",
+      "Text": "Modified"
+    },
+    {
+      "Key": "MAT_InGameTool_Modified_Header_TT",
+      "Text": "Send every material with unsaved changes at once, followed by one world reload (the choice above)."
+    },
+    {
+      "Key": "MAT_InGameTool_Modified_Count",
+      "Text": "{0} material(s) with unsaved changes."
+    },
+    {
+      "Key": "MAT_InGameTool_Modified_Reload",
+      "Text": "Reload Modified"
+    },
+    {
+      "Key": "MAT_InGameTool_Modified_Reload_TT",
+      "Text": "Send every material with unsaved changes to the game, then do the choice above once. Materials with check errors are left out."
+    },
+    {
+      "Key": "MAT_InGameTool_Send_On_Save",
+      "Text": "Send to the game on save"
+    },
+    {
+      "Key": "MAT_InGameTool_Send_On_Save_TT",
+      "Text": "When you save the Material Editor while connected, the materials the save writes are also sent to the game, followed by the choice above. Automatic saves don't send."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Busy",
+      "Text": "A reload is still running, so {0} material(s) weren't sent to the game. Send them again when it's done (History or Reload Modified)."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Many_Name",
+      "Text": "{0} materials"
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Many_Done",
+      "Text": "Reloaded {0} of {1} materials in the game."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Many_Not_Found",
+      "Text": "Not in the game: {0}."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Many_Failed",
+      "Text": "{0} failed (see the log)."
+    },
+    {
+      "Key": "MAT_InGameTool_History_Header",
+      "Text": "History"
+    },
+    {
+      "Key": "MAT_InGameTool_History_Header_TT",
+      "Text": "The materials sent to the game this session, newest first. Send sends the editor's current copy again; Vanilla sends the original."
+    },
+    {
+      "Key": "MAT_InGameTool_History_Empty",
+      "Text": "Nothing sent yet."
+    },
+    {
+      "Key": "MAT_InGameTool_History_Column_Sent",
+      "Text": "Sent"
+    },
+    {
+      "Key": "MAT_InGameTool_History_Row_TT",
+      "Text": "Last sent from: {0}. Result: {1}. Click to select it."
+    },
+    {
+      "Key": "MAT_InGameTool_History_Send",
+      "Text": "Send"
+    },
+    {
+      "Key": "MAT_InGameTool_History_Send_TT",
+      "Text": "Send the editor's current copy of this material again."
+    },
+    {
+      "Key": "MAT_InGameTool_History_Vanilla",
+      "Text": "Vanilla"
+    },
+    {
+      "Key": "MAT_InGameTool_History_Clear",
+      "Text": "Clear History"
+    },
+    {
+      "Key": "MAT_InGameTool_History_Clear_TT",
+      "Text": "Empty the history. Nothing in the game changes."
+    },
+    {
+      "Key": "MAT_InGameTool_Source_Selected",
+      "Text": "selected"
+    },
+    {
+      "Key": "MAT_InGameTool_Source_Modified",
+      "Text": "modified"
+    },
+    {
+      "Key": "MAT_InGameTool_Source_Save",
+      "Text": "save"
+    },
+    {
+      "Key": "MAT_InGameTool_Source_History",
+      "Text": "re-send"
+    },
+    {
+      "Key": "MAT_InGameTool_Source_Vanilla",
+      "Text": "vanilla"
+    },
+    {
+      "Key": "MAT_InGameTool_After_Nothing",
+      "Text": "Then: nothing"
+    },
+    {
+      "Key": "MAT_InGameTool_After_Reload_World",
+      "Text": "Then: reload the world"
+    },
+    {
+      "Key": "MAT_InGameTool_After_Quit_Out",
+      "Text": "Then: quit to the title screen"
+    },
+    {
+      "Key": "MAT_InGameTool_After_TT",
+      "Text": "What happens after the material reloads. Reloading the world saves and loads your save again, so every model is rebuilt with the new material."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Header",
+      "Text": "World"
+    },
+    {
+      "Key": "MAT_InGameTool_World_Header_TT",
+      "Text": "Reload the world from your save, or quit to the title screen. Loading the world again rebuilds every model, so all of them use the materials reloaded here."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Reload",
+      "Text": "Reload World"
+    },
+    {
+      "Key": "MAT_InGameTool_World_Reload_TT",
+      "Text": "Save, then load the same save again without going to the title screen."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Running",
+      "Text": "Reloading the world..."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Done",
+      "Text": "{0}  Saved and reloading the world."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Unavailable",
+      "Text": "Couldn't reload the world: the game's load request wasn't found in this version."
+    },
+    {
+      "Key": "MAT_InGameTool_World_No_Save",
+      "Text": "Couldn't reload the world: no save is loaded."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Busy",
+      "Text": "Couldn't reload the world: a load is already pending."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Save_Not_Taken",
+      "Text": "The game didn't save within 10 seconds, so the world wasn't reloaded. Is a world loaded?"
+    },
+    {
+      "Key": "MAT_InGameTool_World_Load_Not_Taken",
+      "Text": "The game didn't start the load within 10 seconds, so the request was withdrawn."
+    },
+    {
+      "Key": "MAT_InGameTool_World_Failed",
+      "Text": "Reload world failed: {0}"
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut",
+      "Text": "Quit Out"
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_TT",
+      "Text": "Quit to the title screen now. Then choose Continue to load back in."
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Running",
+      "Text": "Quitting out..."
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Done",
+      "Text": "{0}  Quitting to the title screen. Choose Continue to load back in."
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Not_Taken",
+      "Text": "The game didn't act on the quit request within 5 seconds, so it was withdrawn. Is a world loaded?"
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Not_In_World",
+      "Text": "Couldn't quit out: the game's menu isn't set up yet."
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Unavailable",
+      "Text": "Couldn't quit out: the game's quit request wasn't found in this version."
+    },
+    {
+      "Key": "MAT_InGameTool_QuitOut_Failed",
+      "Text": "Quit out failed: {0}"
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Done",
+      "Text": "Reloaded {0} in the game."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Not_Found",
+      "Text": "The game has no material named {0}. Only materials in the game's binders can be reloaded; a new material needs a restart."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Alloc_Failed",
+      "Text": "Couldn't allocate memory in the game."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Thread_Failed",
+      "Text": "Couldn't start the reload in the game (error {0})."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Timeout",
+      "Text": "The reload didn't finish within 10 seconds."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Has_Errors",
+      "Text": "{0} has errors (see Material Check), so it wasn't sent to the game."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Write_Failed",
+      "Text": "Couldn't write {0} as a MATBIN."
+    },
+    {
+      "Key": "MAT_InGameTool_Browse_Header",
+      "Text": "Browse"
+    },
+    {
+      "Key": "MAT_InGameTool_Browse_Header_TT",
+      "Text": "The models loaded in the game and the materials they use. Click a model to show its materials, and a material to select it here. Users is how many model materials hold it in the game."
+    },
+    {
+      "Key": "MAT_InGameTool_Browse_Count",
+      "Text": "{0} models loaded; {1} of {2} materials in use."
+    },
+    {
+      "Key": "MAT_InGameTool_List_Not_Attached",
+      "Text": "Connect to the game to see its models and materials."
+    },
+    {
+      "Key": "MAT_InGameTool_Filter_Hint",
+      "Text": "Filter..."
+    },
+    {
+      "Key": "MAT_InGameTool_Filter_TT",
+      "Text": "Show only models whose ID or name contains this text, or that use a material whose name contains it."
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_All",
+      "Text": "All kinds"
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_Character",
+      "Text": "Character"
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_Asset",
+      "Text": "Asset"
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_MapPiece",
+      "Text": "Map Piece"
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_Part",
+      "Text": "Part"
+    },
+    {
+      "Key": "MAT_InGameTool_Kind_TT",
+      "Text": "Show only one kind of model, or materials used by that kind."
+    },
+    {
+      "Key": "MAT_InGameTool_Sort_Recent",
+      "Text": "Recently loaded first"
+    },
+    {
+      "Key": "MAT_InGameTool_Sort_Recent_TT",
+      "Text": "Sort by when each model or material loaded, newest first: walk up to something and it comes to the top. Ones loaded within {0} seconds are marked in the Loaded column; ones already loaded when Smithbox connected go last."
+    },
+    {
+      "Key": "MAT_InGameTool_Tab_Models",
+      "Text": "Models"
+    },
+    {
+      "Key": "MAT_InGameTool_Tab_Materials",
+      "Text": "Materials"
+    },
+    {
+      "Key": "MAT_InGameTool_Models_Unavailable",
+      "Text": "The game's loaded model list wasn't found in this version; use the Materials tab."
+    },
+    {
+      "Key": "MAT_InGameTool_Models_Needs_Scan",
+      "Text": "Run the Used By scan to see each model's materials."
+    },
+    {
+      "Key": "MAT_InGameTool_Model_No_Materials_TT",
+      "Text": "None of this model's materials are in use, or the Used By scan doesn't include it."
+    },
+    {
+      "Key": "MAT_InGameTool_Column_Name",
+      "Text": "Name"
+    },
+    {
+      "Key": "MAT_InGameTool_Column_Kind",
+      "Text": "Kind"
+    },
+    {
+      "Key": "MAT_InGameTool_Column_Users",
+      "Text": "Users"
+    },
+    {
+      "Key": "MAT_InGameTool_Column_Loaded",
+      "Text": "Loaded"
+    },
+    {
+      "Key": "MAT_InGameTool_Loaded_Ago",
+      "Text": "{0} ago"
+    },
+    {
+      "Key": "MAT_InGameTool_Selected_Not_In_Use",
+      "Text": "Not in use in the game right now."
+    },
+    {
+      "Key": "MAT_InGameTool_Selected_In_Use",
+      "Text": "In use by {0} model material(s)."
+    },
+    {
+      "Key": "MAT_InGameTool_Selected_In_Use_By",
+      "Text": "In use by {0} model material(s), in: {1}"
+    },
+    {
+      "Key": "MAT_InGameTool_Row_TT",
+      "Text": "Select this material ({0})."
+    },
+    {
+      "Key": "MAT_InGameTool_Row_Not_In_Project_TT",
+      "Text": "This project's material binders don't have this material."
+    }
+  ]
+}

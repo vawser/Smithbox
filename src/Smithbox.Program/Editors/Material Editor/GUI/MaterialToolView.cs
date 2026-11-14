@@ -21,6 +21,7 @@ public class MaterialToolWindow
     public MatSearchTool SearchTool;
     public MatUsedByTool UsedByTool;
     public MatShaderTool ShaderTool;
+    public MatInGameTool InGameTool;
 
     private ToolSections Sections = new();
 
@@ -34,6 +35,7 @@ public class MaterialToolWindow
         SearchTool = new(view, project);
         UsedByTool = new(view, project);
         ShaderTool = new(view, project);
+        InGameTool = new(view, project);
     }
 
     public void Draw()
@@ -83,6 +85,15 @@ public class MaterialToolWindow
         {
             // Material Check
             CheckTool.OnToolWindow();
+        }
+
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        if (CFG.Current.Interface_MaterialEditor_Tool_InGame)
+        {
+            // In-Game
+            InGameTool.OnToolWindow();
         }
 
         Sections.End();
@@ -136,6 +147,13 @@ public class MaterialToolWindow
                 CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck = !CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck);
+
+            // In-Game
+            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_In_Game")}##inGameToolToggle"))
+            {
+                CFG.Current.Interface_MaterialEditor_Tool_InGame = !CFG.Current.Interface_MaterialEditor_Tool_InGame;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_InGame);
 
             ImGui.EndMenu();
         }
