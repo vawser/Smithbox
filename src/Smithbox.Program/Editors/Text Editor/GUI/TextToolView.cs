@@ -17,6 +17,8 @@ public class TextToolView
     public TextLanguageSyncTool LanguageSyncTool;
     public TextDataTransferTool DataTransferTool;
 
+    public FmgReloaderTool FmgReloader;
+
     private ToolSections Sections = new();
 
     public TextToolView(TextEditorView view, ProjectEntry project)
@@ -30,6 +32,8 @@ public class TextToolView
 
         LanguageSyncTool = new(view, project);
         DataTransferTool = new(view, project);
+
+        FmgReloader = new(view, project);
     }
 
     public void Display()
@@ -110,6 +114,15 @@ public class TextToolView
             }
         }
 
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        // FMG Reloader
+        if (CFG.Current.Interface_TextEditor_Tool_FmgReloader)
+        {
+            FmgReloader.OnToolWindow();
+        }
+
         Sections.End();
     }
     public void ViewMenu()
@@ -151,6 +164,12 @@ public class TextToolView
                 CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
+
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Fmg_Reloader")}##fmgReloaderViewToggle"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_FmgReloader = !CFG.Current.Interface_TextEditor_Tool_FmgReloader;
+            }
+            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_FmgReloader);
 
             ImGui.EndMenu();
         }

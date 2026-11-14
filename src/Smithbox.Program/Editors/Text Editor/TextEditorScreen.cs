@@ -17,6 +17,9 @@ public class TextEditorScreen : EditorScreen
     public TextCommandQueue CommandQueue;
     public TextShortcuts Shortcuts;
 
+    /// <summary>The FMG Reloader's link to the running game, shared by every view and by Save</summary>
+    public TextGameLink GameLink = new();
+
     public TextEditorScreen(ProjectEntry project)
     {
         Project = project;
@@ -207,6 +210,9 @@ public class TextEditorScreen : EditorScreen
 
             if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
             {
+                // FMG Reloader: what this save writes also goes to the running game, if asked
+                var toGame = FmgsForGame(autoSave, wrapper);
+
                 try
                 {
                     if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -222,6 +228,9 @@ public class TextEditorScreen : EditorScreen
                 {
                     Smithbox.LogError(this, LOC.Get("TEXT_Save_File_FAIL", fileEntry.Path), ex);
                 }
+
+                if (toGame?.Count > 0)
+                    GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
             }
 
             // Save the configuration JSONs
@@ -262,6 +271,9 @@ public class TextEditorScreen : EditorScreen
     {
         if (autoSave && CFG.Current.TextEditor_Allow_Automatic_Save || !autoSave)
         {
+            // FMG Reloader: what this save writes also goes to the running game, if asked
+            var toGame = FmgsForGame(autoSave, null);
+
             try
             {
                 Project.Handler.TextData.PrimaryBank.SaveTextFiles();
@@ -270,6 +282,9 @@ public class TextEditorScreen : EditorScreen
             {
                 Smithbox.LogError(this, LOC.Get("TEXT_Save_All_File_FAIL"), ex);
             }
+
+            if (toGame?.Count > 0)
+                GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
         }
 
         // Save the configuration JSONs
@@ -280,6 +295,23 @@ public class TextEditorScreen : EditorScreen
         {
             RefreshFmgTextCache();
         }
+    }
+
+    /// <summary>
+    /// For "send on save": the modified FMGs the game reads (only in the saved container when one is given), taken
+    /// before the save clears their modified state. Manual saves only, and only while the reloader is connected.
+    /// </summary>
+    private List<TextGameLink.SendItem> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
+    {
+        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || Project.Descriptor.ProjectType is not ProjectType.ER ||
+            GameLink.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(GameLink.Language))
+            return null;
+
+        var fmgs = FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink.Language)
+            .Where(p => onlyContainer == null || p.Container == onlyContainer)
+            .Where(p => GameLink.Fmgs.Any(f => f.Id == p.Fmg.ID));
+
+        return fmgs.Select(p => FmgReloadSource.FromEditor(p.Container, p.Fmg)).Where(i => i != null).ToList();
     }
 
     public void RefreshFmgTextCache()

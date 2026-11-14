@@ -1163,6 +1163,10 @@ public class CFG
     // Wrapped, markup-highlighted preview under each Contents text box
     public bool TextEditor_Contents_Show_Text_Preview = true;
 
+    // FMG Reloader (ER, Game Memory)
+    public bool TextEditor_FmgReloader_AutoRefresh = true;
+    public bool TextEditor_FmgReloader_SendOnSave = false;
+
     public bool TextEditor_Text_Clipboard_Escape_New_Lines = true;
     public bool TextEditor_Text_Clipboard_Include_ID = true;
 
@@ -1207,6 +1211,7 @@ public class CFG
     public bool Interface_TextEditor_Tool_TextSearch = true;
     public bool Interface_TextEditor_Tool_TextReplacement = true;
     public bool Interface_TextEditor_Tool_TextMerge = true;
+    public bool Interface_TextEditor_Tool_FmgReloader = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Text_Editor = true;

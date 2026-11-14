@@ -2,4 +2,4 @@
 # Material Editor TODO
 #----------------------------------------------------
 
-- ER: MATBIN reloader
+- Material Reloader: extend to NR/AC6
