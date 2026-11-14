@@ -58,6 +58,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ModelRenderSnapshotTool RenderSnapshotTool;
     public ModelDummyTool DummyTool;
     public ModelEdgeEditorTool EdgeEditorTool;
+    public ModelGrassBuilderTool GrassBuilderTool;
     public ModelSearchTool LocalSearchTool;
     public ModelSearchTool GlobalSearchTool;
     public ModelMassEditTool MassEditTool;
@@ -126,6 +127,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         RenderSnapshotTool = new ModelRenderSnapshotTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
         EdgeEditorTool = new ModelEdgeEditorTool(this, Project);
+        GrassBuilderTool = new ModelGrassBuilderTool(this, Project);
         LocalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Local);
         GlobalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Global);
         MassEditTool = new ModelMassEditTool(this, Project);

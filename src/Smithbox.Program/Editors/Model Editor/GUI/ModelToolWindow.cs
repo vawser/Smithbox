@@ -85,6 +85,11 @@ public class ModelToolWindow
             View.EdgeEditorTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_GrassBuilder && View.GrassBuilderTool.CanUse())
+        {
+            View.GrassBuilderTool.OnToolWindow();
+        }
+
         // Data Transfer
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
 
@@ -221,6 +226,16 @@ public class ModelToolWindow
                     CFG.Current.Interface_ModelEditor_Tool_EdgeEditor = !CFG.Current.Interface_ModelEditor_Tool_EdgeEditor;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_EdgeEditor);
+            }
+
+            // GRASS Builder (Sekiro)
+            if (View.GrassBuilderTool.CanUse())
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Grass_Builder")}##toggleGrassBuilderTool"))
+                {
+                    CFG.Current.Interface_ModelEditor_Tool_GrassBuilder = !CFG.Current.Interface_ModelEditor_Tool_GrassBuilder;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_GrassBuilder);
             }
 
             // Data Transfer

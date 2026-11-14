@@ -503,6 +503,37 @@ public class ModelWrapper
         EDGE_IsNew = edge != null;
     }
 
+    // A GRASS file built in the GRASS Builder for a map piece that had none: added to the mapbnd on the next save
+    private bool GRASS_IsNew;
+
+    /// <summary>
+    /// Whether a GRASS file can be built for this model here: a Sekiro map piece's, in its mapbnd. Only map pieces
+    /// carry one (772 of 5094 mapbnds, no objbnd, GrassSurvey), and only the MSB's map piece parts name the
+    /// GrassTypeParam rows its density slots stand for.
+    /// </summary>
+    public bool CanBuildGrass => IsSekiroMapPiece();
+
+    /// <summary>The mapbnd name of the GRASS file, as read, or the one a new file will be saved under.</summary>
+    public string GrassFileName => GRASS_FileName != null
+        ? FilePathUtils.GetPureFilename(GRASS_FileName) + ".grass"
+        : $"{Name}.grass";
+
+    /// <summary>Whether the GRASS file was made here and isn't in the mapbnd yet.</summary>
+    public bool IsGrassFileNew => GRASS_IsNew && GRASS != null;
+
+    /// <summary>
+    /// Gives a map piece without a GRASS file a new one (or, with null, takes back one made here), which the next save
+    /// adds to the mapbnd. Only through <see cref="ModelGrassEditAction"/>, which also adds or removes its node.
+    /// </summary>
+    public void SetCreatedGrassFile(GRASS grass)
+    {
+        if (!CanBuildGrass || (GRASS != null && !GRASS_IsNew))
+            return;
+
+        GRASS = grass;
+        GRASS_IsNew = grass != null;
+    }
+
     /// <summary>
     /// The collision model the EDGE file belongs to, as the MSB names it (h000200 for m11_00_00_00_000200)
     /// </summary>
@@ -594,6 +625,10 @@ public class ModelWrapper
         EDGE = null;
         EDGE_FileName = null;
         EDGE_IsNew = false;
+
+        GRASS = null;
+        GRASS_FileName = null;
+        GRASS_IsNew = false;
 
         try
         {
@@ -1110,6 +1145,9 @@ public class ModelWrapper
             if (!AddCreatedEdgeFile(binder))
                 isFilesWritten = false;
 
+            if (!AddCreatedGrassFile(binder))
+                isFilesWritten = false;
+
             try
             {
                 Parent.WriteContainer(binder);
@@ -1152,6 +1190,61 @@ public class ModelWrapper
         catch (Exception e)
         {
             Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", Parent.Path), e);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Adds a GRASS file made in the GRASS Builder to the mapbnd, as every vanilla map piece holds its own (GrassSurvey,
+    /// 772/772): {model}.grass beside the FLVER, binder ID the FLVER's + 1000, Flag1, Zlib. False if it failed.
+    /// </summary>
+    private bool AddCreatedGrassFile(IBinder binder)
+    {
+        if (!IsGrassFileNew || !CanBuildGrass)
+            return true;
+
+        try
+        {
+            var flver = binder.Files.FirstOrDefault(f =>
+                f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(FilePathUtils.GetPureFilename(f.Name), Name, StringComparison.OrdinalIgnoreCase));
+
+            if (flver == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_GRASS", Parent.Path));
+                return false;
+            }
+
+            // Another file already there (written outside the editor since the load): leave it be
+            var name = flver.Name.Substring(0, flver.Name.Length - ".flver".Length) + ".grass";
+
+            if (binder.Files.Any(f => f.Name.EndsWith(".grass", StringComparison.OrdinalIgnoreCase)))
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Grass_Already_In_Binder", Parent.Path));
+                return false;
+            }
+
+            var file = new BinderFile(Binder.FileFlags.Flag1, flver.ID + GrassBuilder.BinderIdOffset, name, GRASS.Write())
+            {
+                CompressionType = DCX.Type.Zlib
+            };
+
+            // Kept in ID order, as the game's binders are
+            var index = binder.Files.FindIndex(f => f.ID > file.ID);
+            if (index < 0)
+                binder.Files.Add(file);
+            else
+                binder.Files.Insert(index, file);
+
+            GRASS_FileName = file.Name.ToLower();
+            GRASS_IsNew = false;
+
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Write_GRASS_Log", file.Name));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_GRASS", Parent.Path), e);
             return false;
         }
     }

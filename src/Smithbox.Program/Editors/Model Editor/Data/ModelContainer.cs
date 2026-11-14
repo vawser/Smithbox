@@ -965,6 +965,33 @@ public class ModelContainer : ObjectContainer
     }
 
     /// <summary>
+    /// Replaces the GRASS node with one for this file, or removes it with null: a GRASS file built for a map piece that
+    /// had none, or taken back.
+    /// </summary>
+    public void SetGrassNode(GRASS grass)
+    {
+        if (GRASS_Parent != null)
+        {
+            Objects.Remove(GRASS_Parent);
+            GRASS_Parent.Parent?.RemoveChild(GRASS_Parent);
+            GRASS_Parent = null;
+        }
+
+        if (grass != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, grass, ModelEntityType.GRASS);
+
+            GRASS_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        RefreshTypeLists();
+        View.EntityTypeCache.InvalidateCache();
+    }
+
+    /// <summary>
     /// Carries the EDGE file's points into the model's space. See <see cref="ModelWrapper.EdgeSpace"/>.
     /// </summary>
     public Matrix4x4 EdgeSpace { get; private set; } = Matrix4x4.Identity;

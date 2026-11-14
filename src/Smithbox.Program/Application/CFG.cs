@@ -775,6 +775,7 @@ public class CFG
     public float ModelEditor_LabelScale = 1.0f;
     public bool ModelEditor_DisplayEdgePoints = true;
     public bool Interface_ModelEditor_Tool_EdgeEditor = true;
+    public bool Interface_ModelEditor_Tool_GrassBuilder = true;
 
     public bool ModelEditor_ModelSourceList_RequireDoubleClick = false;
 

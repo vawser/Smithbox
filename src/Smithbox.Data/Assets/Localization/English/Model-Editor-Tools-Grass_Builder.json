@@ -1,0 +1,61 @@
+{
+  "Entries": [
+    { "Key": "MODEL_GrassBuilder_Header", "Text": "GRASS Builder" },
+    { "Key": "MODEL_ToolWindow_View_Toggle_Grass_Builder", "Text": "GRASS Builder" },
+    { "Key": "MODEL_GrassBuilder_Unsupported_Game", "Text": "GRASS files are only used by Sekiro." },
+    { "Key": "MODEL_GrassBuilder_Hint", "Text": "Give the loaded map piece a GRASS file, built from its meshes. The game grows dynamic grass on the GRASS mesh, using the density of each vertex in six slots. The map piece part in the MSB picks the grass type of each slot (GrassTypeParamID0-5)." },
+
+    { "Key": "MODEL_GrassBuilder_File_Header", "Text": "File" },
+    { "Key": "MODEL_GrassBuilder_File_Header_TT", "Text": "The GRASS file of the model loaded in this view." },
+    { "Key": "MODEL_GrassBuilder_No_Model", "Text": "Load a map piece to build its GRASS file." },
+    { "Key": "MODEL_GrassBuilder_Not_Map_Piece", "Text": "{0} isn't a map piece. Only Sekiro map pieces (mapbnd) use a GRASS file: no object has one, and only map piece parts name the grass types." },
+    { "Key": "MODEL_GrassBuilder_No_File", "Text": "{0} has no GRASS file. Choose the meshes to grow grass on and the starting densities, then build one." },
+    { "Key": "MODEL_GrassBuilder_File_Info", "Text": "{0}: {1} vertices, {2} faces, {3} volumes" },
+    { "Key": "MODEL_GrassBuilder_New_File", "Text": "Built here. It is added to the mapbnd when the model is saved." },
+
+    { "Key": "MODEL_GrassBuilder_Meshes_Header", "Text": "Meshes" },
+    { "Key": "MODEL_GrassBuilder_Meshes_Header_TT", "Text": "The FLVER meshes whose triangles (LOD 0) make up the GRASS mesh." },
+    { "Key": "MODEL_GrassBuilder_Meshes_Selected", "Text": "{0} of {1} meshes chosen." },
+    { "Key": "MODEL_GrassBuilder_Select_All", "Text": "Choose All" },
+    { "Key": "MODEL_GrassBuilder_Select_All_TT", "Text": "Choose every mesh of the model." },
+    { "Key": "MODEL_GrassBuilder_Select_None", "Text": "Choose None" },
+    { "Key": "MODEL_GrassBuilder_Select_None_TT", "Text": "Clear the chosen meshes." },
+    { "Key": "MODEL_GrassBuilder_Mesh_Entry", "Text": "Mesh {0}: {1} ({2} triangles)" },
+    { "Key": "MODEL_GrassBuilder_Mesh_Entry_TT", "Text": "Whether this mesh's triangles go into the GRASS mesh. Ground meshes are the usual choice." },
+
+    { "Key": "MODEL_GrassBuilder_Faces_Header", "Text": "Faces" },
+    { "Key": "MODEL_GrassBuilder_Faces_Header_TT", "Text": "Which of the chosen meshes' triangles are kept, by the way they face." },
+    { "Key": "MODEL_GrassBuilder_Max_Angle_Format", "Text": "Steepest: %.0f degrees from up" },
+    { "Key": "MODEL_GrassBuilder_Max_Angle_TT", "Text": "Triangles facing further from straight up than this are left out. 90 keeps walls, 180 keeps every triangle. Vanilla GRASS files cover walls and overhangs too." },
+    { "Key": "MODEL_GrassBuilder_Faces_Kept", "Text": "{0} of {1} triangles kept." },
+
+    { "Key": "MODEL_GrassBuilder_Densities_Header", "Text": "Densities" },
+    { "Key": "MODEL_GrassBuilder_Densities_Header_TT", "Text": "The density every vertex starts with, per slot. 0 grows none of that slot's grass, 1 is full density." },
+    { "Key": "MODEL_GrassBuilder_Density_Format", "Text": "Slot {0}: %.2f" },
+    { "Key": "MODEL_GrassBuilder_Density_TT", "Text": "The density of slot {0}, whose grass type is the map piece part's GrassTypeParamID{0}." },
+    { "Key": "MODEL_GrassBuilder_No_Density", "Text": "Every slot is 0, so the file would grow no grass." },
+
+    { "Key": "MODEL_GrassBuilder_Actions_Header", "Text": "Actions" },
+    { "Key": "MODEL_GrassBuilder_Actions_Header_TT", "Text": "Build the GRASS file from the settings above. The build can be undone." },
+    { "Key": "MODEL_GrassBuilder_Rebuild_Note", "Text": "This map piece already has a GRASS file. Rebuilding replaces its mesh and painted densities with the settings above." },
+    { "Key": "MODEL_GrassBuilder_Build", "Text": "Build GRASS File" },
+    { "Key": "MODEL_GrassBuilder_Build_TT", "Text": "Build {0} from the chosen meshes. It is added to the mapbnd when the model is saved." },
+    { "Key": "MODEL_GrassBuilder_Rebuild", "Text": "Rebuild GRASS File" },
+    { "Key": "MODEL_GrassBuilder_Rebuild_TT", "Text": "Replace the contents of {0} with a mesh built from the chosen meshes." },
+
+    { "Key": "MODEL_GrassBuilder_Progress_Header", "Text": "Progress" },
+    { "Key": "MODEL_GrassBuilder_Progress_Header_TT", "Text": "The build in progress." },
+    { "Key": "MODEL_GrassBuilder_Building", "Text": "Building..." },
+    { "Key": "MODEL_GrassBuilder_Cancel", "Text": "Cancel" },
+    { "Key": "MODEL_GrassBuilder_Cancel_TT", "Text": "Stop the build. Nothing is changed." },
+
+    { "Key": "MODEL_GrassBuilder_Built_Log", "Text": "Built GRASS file for {0}: {1} vertices, {2} faces, {3} volumes" },
+    { "Key": "MODEL_GrassBuilder_Build_Failed", "Text": "Failed to build the GRASS file for {0}" },
+    { "Key": "MODEL_GrassBuilder_Check_Failed", "Text": "The GRASS file built for {0} failed its checks and wasn't used: {1}" },
+
+    { "Key": "MODEL_History_Grass_Build", "Text": "Build GRASS file for {0}" },
+    { "Key": "MODEL_History_Grass_Rebuild", "Text": "Rebuild GRASS file for {0}" },
+
+    { "Key": "MODEL_Data_Grass_Already_In_Binder", "Text": "Didn't add the built GRASS file: {0} already holds one" }
+  ]
+}
