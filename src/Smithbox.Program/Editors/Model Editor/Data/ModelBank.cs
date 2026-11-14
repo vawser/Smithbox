@@ -503,17 +503,49 @@ public class ModelWrapper
         EDGE_IsNew = edge != null;
     }
 
-    // A GRASS file built in the GRASS Builder for a map piece that had none: added to the mapbnd on the next save
+    // A GRASS file built in the GRASS Builder for a model that had none: added to its binder on the next save
     private bool GRASS_IsNew;
 
     /// <summary>
-    /// Whether a GRASS file can be built for this model here: a Sekiro map piece's, in its mapbnd. Only map pieces
-    /// carry one (772 of 5094 mapbnds, no objbnd, GrassSurvey), and only the MSB's map piece parts name the
-    /// GrassTypeParam rows its density slots stand for.
+    /// Whether the game has GRASS files at all: Sekiro, Elden Ring, Armored Core VI and Nightreign, all in the same
+    /// format and binder layout (GrassSurvey buildcheck / later).
     /// </summary>
-    public bool CanBuildGrass => IsSekiroMapPiece();
+    public bool IsGrassGame => Parent.Project.Descriptor.ProjectType is ProjectType.SDT or ProjectType.ER
+        or ProjectType.AC6 or ProjectType.NR;
 
-    /// <summary>The mapbnd name of the GRASS file, as read, or the one a new file will be saved under.</summary>
+    /// <summary>
+    /// Whether a GRASS file can be built for this model here: the models whose MSB parts name GrassTypeParam rows and
+    /// whose binders hold GRASS files in vanilla. Sekiro map pieces (mapbnd; no objbnd has one); ER and NR map pieces
+    /// (mapbnd) and assets (geombnd); AC6 assets (geombnd; its few map pieces never name grass).
+    /// </summary>
+    public bool CanBuildGrass
+    {
+        get
+        {
+            var isMapPiece = Parent.Path.EndsWith(".mapbnd.dcx", StringComparison.OrdinalIgnoreCase);
+            var isAsset = Parent.Path.EndsWith(".geombnd.dcx", StringComparison.OrdinalIgnoreCase);
+
+            return Parent.Project.Descriptor.ProjectType switch
+            {
+                ProjectType.SDT => isMapPiece && !string.IsNullOrEmpty(Parent.MapID),
+                ProjectType.ER or ProjectType.NR => isMapPiece || isAsset,
+                ProjectType.AC6 => isAsset,
+                _ => false
+            };
+        }
+    }
+
+    /// <summary>
+    /// Whether this is a map piece of an open-world tile (ER m60/m61, NR m60). Those name grass types in the MSB but
+    /// never hold a GRASS file in vanilla (25/25 sampled per area), so whether the game reads one there is untested.
+    /// </summary>
+    public bool IsOpenWorldTilePiece =>
+        Parent.Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR
+        && Parent.Path.EndsWith(".mapbnd.dcx", StringComparison.OrdinalIgnoreCase)
+        && (Name.StartsWith("m60_", StringComparison.OrdinalIgnoreCase)
+            || (Parent.Project.Descriptor.ProjectType is ProjectType.ER && Name.StartsWith("m61_", StringComparison.OrdinalIgnoreCase)));
+
+    /// <summary>The binder name of the GRASS file, as read, or the one a new file will be saved under.</summary>
     public string GrassFileName => GRASS_FileName != null
         ? FilePathUtils.GetPureFilename(GRASS_FileName) + ".grass"
         : $"{Name}.grass";
@@ -522,8 +554,8 @@ public class ModelWrapper
     public bool IsGrassFileNew => GRASS_IsNew && GRASS != null;
 
     /// <summary>
-    /// Gives a map piece without a GRASS file a new one (or, with null, takes back one made here), which the next save
-    /// adds to the mapbnd. Only through <see cref="ModelGrassEditAction"/>, which also adds or removes its node.
+    /// Gives a model without a GRASS file a new one (or, with null, takes back one made here), which the next save
+    /// adds to its binder. Only through <see cref="ModelGrassEditAction"/>, which also adds or removes its node.
     /// </summary>
     public void SetCreatedGrassFile(GRASS grass)
     {
@@ -993,12 +1025,12 @@ public class ModelWrapper
             }
         }
 
-        // GRASS
-        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        // GRASS: the same format in SDT, ER, AC6 and NR, named after the model it belongs to
+        if (IsGrassGame)
         {
             if (filepath.Contains(".grass"))
             {
-                if (filename == Name)
+                if (string.Equals(filename, Name, StringComparison.OrdinalIgnoreCase))
                 {
                     try
                     {
@@ -1195,8 +1227,8 @@ public class ModelWrapper
     }
 
     /// <summary>
-    /// Adds a GRASS file made in the GRASS Builder to the mapbnd, as every vanilla map piece holds its own (GrassSurvey,
-    /// 772/772): {model}.grass beside the FLVER, binder ID the FLVER's + 1000, Flag1, Zlib. False if it failed.
+    /// Adds a GRASS file made in the GRASS Builder to the model's binder (mapbnd or geombnd) by the vanilla rule, see
+    /// <see cref="GrassBuilder.AddToBinder"/>. False if it failed.
     /// </summary>
     private bool AddCreatedGrassFile(IBinder binder)
     {
@@ -1205,36 +1237,20 @@ public class ModelWrapper
 
         try
         {
-            var flver = binder.Files.FirstOrDefault(f =>
-                f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(FilePathUtils.GetPureFilename(f.Name), Name, StringComparison.OrdinalIgnoreCase));
-
-            if (flver == null)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_GRASS", Parent.Path));
-                return false;
-            }
-
-            // Another file already there (written outside the editor since the load): leave it be
-            var name = flver.Name.Substring(0, flver.Name.Length - ".flver".Length) + ".grass";
-
+            // Another file already there (written outside the editor since the load) is left be
             if (binder.Files.Any(f => f.Name.EndsWith(".grass", StringComparison.OrdinalIgnoreCase)))
             {
                 Smithbox.LogError(this, LOC.Get("MODEL_Data_Grass_Already_In_Binder", Parent.Path));
                 return false;
             }
 
-            var file = new BinderFile(Binder.FileFlags.Flag1, flver.ID + GrassBuilder.BinderIdOffset, name, GRASS.Write())
-            {
-                CompressionType = DCX.Type.Zlib
-            };
+            var file = GrassBuilder.AddToBinder(binder, Name, GRASS.Write());
 
-            // Kept in ID order, as the game's binders are
-            var index = binder.Files.FindIndex(f => f.ID > file.ID);
-            if (index < 0)
-                binder.Files.Add(file);
-            else
-                binder.Files.Insert(index, file);
+            if (file == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_GRASS", Parent.Path));
+                return false;
+            }
 
             GRASS_FileName = file.Name.ToLower();
             GRASS_IsNew = false;
@@ -1318,7 +1334,7 @@ public class ModelWrapper
         }
 
         // GRASS
-        if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
+        if (IsGrassGame)
         {
             if (filepath.Contains(".grass") && GRASS != null && filepath == GRASS_FileName)
             {

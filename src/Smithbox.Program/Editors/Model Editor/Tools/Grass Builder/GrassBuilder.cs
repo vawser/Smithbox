@@ -40,6 +40,46 @@ public static class GrassBuilder
     /// <summary>The binder ID of a GRASS file: the FLVER's plus 1000 (772/772 vanilla mapbnds, 200 -> 1200).</summary>
     public const int BinderIdOffset = 1000;
 
+    /// <summary>
+    /// Adds a GRASS file for a model to its binder, as every vanilla holder does in SDT, ER, AC6 and NR (GrassSurvey
+    /// buildcheck and later): {model}.grass in the FLVER's folder (mapbnd Model\, geombnd sib\), binder ID the FLVER's +
+    /// 1000, Flag1, Zlib, kept in ID order. Null when the binder has no FLVER for the model, or already holds a GRASS file.
+    /// </summary>
+    public static BinderFile AddToBinder(IBinder binder, string modelName, byte[] data)
+    {
+        static string Stem(string name)
+        {
+            var file = name.Substring(name.LastIndexOf('\\') + 1);
+            var dot = file.IndexOf('.');
+            return dot < 0 ? file : file.Substring(0, dot);
+        }
+
+        if (binder.Files.Any(f => f.Name != null && f.Name.EndsWith(".grass", StringComparison.OrdinalIgnoreCase)))
+            return null;
+
+        var flver = binder.Files.FirstOrDefault(f => f.Name != null
+            && f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase)
+            && string.Equals(Stem(f.Name), modelName, StringComparison.OrdinalIgnoreCase));
+
+        if (flver == null)
+            return null;
+
+        var file = new BinderFile(Binder.FileFlags.Flag1, flver.ID + BinderIdOffset,
+            flver.Name.Substring(0, flver.Name.Length - ".flver".Length) + ".grass", data)
+        {
+            CompressionType = DCX.Type.Zlib
+        };
+
+        var index = binder.Files.FindIndex(f => f.ID > file.ID);
+
+        if (index < 0)
+            binder.Files.Add(file);
+        else
+            binder.Files.Insert(index, file);
+
+        return file;
+    }
+
     /// <summary>Whether a face at this angle from up is kept.</summary>
     public static bool IsKept(Vector3 normal, float maxAngle)
     {

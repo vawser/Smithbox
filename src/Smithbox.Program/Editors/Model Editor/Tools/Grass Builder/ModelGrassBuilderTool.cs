@@ -13,14 +13,14 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ModelEditor;
 
 /// <summary>
-/// The Model Editor's GRASS Builder: gives a Sekiro map piece a GRASS file built from chosen FLVER meshes, or rebuilds
+/// The Model Editor's GRASS Builder: gives a map piece or asset a GRASS file built from chosen FLVER meshes, or rebuilds
 /// the one it has. Faces can be limited by how steep they are, and every vertex starts with the chosen density in each
-/// of the six slots (the map piece part's GrassTypeParamID0-5). The file follows the vanilla rules (see
-/// <see cref="GrassBuilder"/>, Claude/Documentation/GRASS Builder.md).
+/// of the six slots (the part's six GrassTypeParam IDs). The file follows the vanilla rules, the same in SDT, ER, AC6
+/// and NR (see <see cref="GrassBuilder"/>, Claude/Documentation/GRASS Builder.md and GRASS Later Games.md).
 /// <para>
 /// A build is one <see cref="ModelGrassEditAction"/> on the view's history, and the model's save writes the file
-/// (adding it to the mapbnd when it is new). Only map pieces are offered: no objbnd holds a GRASS file, and only the
-/// MSB's map piece parts name the grass types.
+/// (adding it to the binder when it is new). Only the models whose parts name grass types are offered
+/// (<see cref="ModelWrapper.CanBuildGrass"/>); open-world tile pieces get a warning, as no vanilla one holds a file.
 /// </para>
 /// </summary>
 public class ModelGrassBuilderTool
@@ -64,7 +64,8 @@ public class ModelGrassBuilderTool
         };
     }
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.SDT;
+    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.SDT or ProjectType.ER
+        or ProjectType.AC6 or ProjectType.NR;
 
     /// <summary>The loaded model of this view, if any.</summary>
     private ModelWrapper GetWrapper()
@@ -132,11 +133,21 @@ public class ModelGrassBuilderTool
 
         if (!wrapper.CanBuildGrass)
         {
-            GUI.WrappedText(LOC.Get("MODEL_GrassBuilder_Not_Map_Piece", wrapper.Name));
+            GUI.WrappedText(LOC.Get(Project.Descriptor.ProjectType switch
+            {
+                ProjectType.SDT => "MODEL_GrassBuilder_Not_Holder_SDT",
+                ProjectType.AC6 => "MODEL_GrassBuilder_Not_Holder_AC6",
+                _ => "MODEL_GrassBuilder_Not_Holder"
+            }, wrapper.Name));
             return;
         }
 
         var grass = wrapper.GRASS;
+
+        if (wrapper.IsOpenWorldTilePiece)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("MODEL_GrassBuilder_Open_World_Tile"));
+        }
 
         if (grass == null)
         {
