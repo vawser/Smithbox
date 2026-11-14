@@ -31,9 +31,11 @@ public static class TextureNameIndex
     public sealed class Index
     {
         public Container[] Containers = Array.Empty<Container>();
-        public Dictionary<string, int[]> Textures = new(StringComparer.Ordinal);
+        public Dictionary<string, int[]> Textures = new(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>The containers holding a texture, by its normalized name (<see cref="ResourceName.Normalize" />)</summary>
+        // Names are matched ignoring case: the indexes store them lower case, while FLVERs name them as they please
+        // (DS1's WP_A_2023 asks for Ghost_128x512_1), so a case-sensitive lookup missed them
         public IEnumerable<Container> Find(string name)
         {
             return Textures.TryGetValue(name, out var ids) ? ids.Select(i => Containers[i]) : Enumerable.Empty<Container>();
@@ -71,7 +73,7 @@ public static class TextureNameIndex
                 .Select(c => new Container(c.GetProperty("Path").GetString() ?? "", c.GetProperty("Rank").GetInt32()))
                 .ToArray();
 
-            var textures = new Dictionary<string, int[]>(StringComparer.Ordinal);
+            var textures = new Dictionary<string, int[]>(StringComparer.OrdinalIgnoreCase);
             foreach (var t in root.GetProperty("Textures").EnumerateObject())
             {
                 textures[t.Name] = t.Value.EnumerateArray().Select(v => v.GetInt32()).ToArray();

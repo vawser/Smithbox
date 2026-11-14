@@ -185,6 +185,11 @@ public class ProjectFileLocator : IDisposable
             }
         }
 
+        if (Project.Descriptor.ProjectType is ProjectType.DS1)
+        {
+            UseUnpackedDs1Names(jsonFileDictionary);
+        }
+
         var baseDictionary = new FileDictionary();
         var unvalidated = new FileDictionary();
         // Add only validated entries
@@ -754,6 +759,49 @@ public class ProjectFileLocator : IDisposable
     // Helper methods to check if entries should be added to specific categories
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    /// <summary>
+    /// The DS1 dictionary names the packed archives' files (/chr/c1000.chrbnd.dcx), but Prepare to Die is modded
+    /// unpacked (UnpackDarkSoulsForModding), where they are uncompressed and named without the .dcx (/chr/c1000.chrbnd),
+    /// which is how PathBuilder already names them. Its validation was run against such an install, so 4,970 of the
+    /// 5,171 entries it marked unvalidated were only .dcx names, and the Model Editor listed no models at all.
+    /// An entry whose file is on disk without the .dcx takes that name and counts as validated; any other unvalidated
+    /// entry that exists counts too. A .dcx file that does exist is left as it is.
+    /// </summary>
+    private void UseUnpackedDs1Names(FileDictionary dictionary)
+    {
+        var fs = Project.VFS?.FS;
+
+        if (fs == null)
+            return;
+
+        // Rebuilt from copies, as the set hashes an entry by its path
+        var entries = new HashSet<FileDictionaryEntry>();
+
+        foreach (var original in dictionary.Entries)
+        {
+            var entry = original.Clone();
+
+            if (entry.Path.EndsWith(".dcx", StringComparison.OrdinalIgnoreCase) && !fs.FileExists(entry.Path))
+            {
+                var unpacked = entry.Path[..^4];
+
+                if (fs.FileExists(unpacked))
+                {
+                    entry.Path = unpacked;
+                    entry.Validated = true;
+                }
+            }
+            else if (!entry.Validated && fs.FileExists(entry.Path))
+            {
+                entry.Validated = true;
+            }
+
+            entries.Add(entry);
+        }
+
+        dictionary.Entries = entries;
+    }
+
     private static bool ShouldAddToMapFiles(FileDictionaryEntry entry, bool isMap, bool isSd)
     {
         return isMap && entry.Extension == "msb" && !entry.Folder.Contains("autoroute") && !isSd;

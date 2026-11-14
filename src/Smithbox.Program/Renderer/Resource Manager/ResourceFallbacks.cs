@@ -69,6 +69,32 @@ internal static class ResourceFallbacks
                 }
             }
 
+            // DS1: unpacked, a character's textures are loose TPFs named after the texture, in the character's folder
+            // (chr/c5220/c5220_01.tpf), which the packed game keeps in its chrtpfbhd. The project's copy wins
+            if (CFG.Current.MapEditor_TextureLoad_Characters && project.Descriptor.ProjectType is ProjectType.DS1)
+            {
+                Match chr = ChrIdPrefix.Match(name);
+                if (chr.Success)
+                {
+                    foreach (var root in new[] { project.Descriptor.ProjectPath, project.Descriptor.DataPath })
+                    {
+                        var path = Path.Join(root, "chr", chr.Groups[1].Value, $"{name}.tpf");
+                        if (!File.Exists(path))
+                        {
+                            continue;
+                        }
+
+                        if (!pool.IsContainerLoaded(path))
+                        {
+                            externalPaths.Add(path);
+                            ruleMatched = true;
+                        }
+
+                        break;
+                    }
+                }
+            }
+
             // Asset textures are in the AET container named by the first 10 characters of the texture name.
             // These are loaded after the models since many models use textures from other assets.
             if (CFG.Current.MapEditor_TextureLoad_Objects &&
