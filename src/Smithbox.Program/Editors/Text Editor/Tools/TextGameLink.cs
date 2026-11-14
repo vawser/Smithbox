@@ -6,13 +6,13 @@ using System.Text;
 namespace StudioCore.Editors.TextEditor;
 
 /// <summary>
-/// The link to a running eldenring.exe used by the FMG Reloader: reads which FMGs the game holds, and replaces one with
-/// the editor's copy. See Claude/Documentation/FMG Live Reload Analysis.md.
+/// The link to a running game used by the FMG Reloader (ER, NR, AC6, DS3): reads which FMGs the game holds, and replaces
+/// one with the editor's copy. See Claude/Documentation/FMG Live Reload Analysis.md and FMG Reloader Other Games.md.
 ///
-/// How the game holds text (addresses are the 1.16 Steam build, found by AOB at runtime; checked by
-/// Claude/Tools/FmgReloadAob):
-///   MsgRepositoryImp (singleton) +08 version array (one version), +10 version count, +14 slot count (0x200),
-///     +30 allocator (vfn +50 = alloc(size, align))
+/// How the games hold text (the same FD4 message repository in all of them; found at runtime by game-independent code
+/// shapes, checked on every exe by Claude/Tools/FmgReloadAob probe):
+///   MsgRepositoryImp (singleton) +08 version array (one version), +10 version count, +14 slot count
+///     (ER/DS3 0x200, NR 0x206, AC6 0xD3), allocator at +30 (DS3 +38; read from the insert's code), vfn +50 = alloc
 ///   [[repo+8]][id] = the FMG of binder entry id: the file's bytes, copied into the game heap, with the string offset
 ///     table offset at +18 turned into a pointer. Lookups binary-search it in place and return pointers into it.
 ///
@@ -31,8 +31,11 @@ public class TextGameLink
     /// <summary>An FMG the game holds: its binder entry ID, string count and whether this session replaced it</summary>
     public record GameFmg(int Id, int StringCount, bool Replaced);
 
-    /// <summary>An FMG to send: binder entry ID, a label for the history, its bytes, and where it came from</summary>
-    public record SendItem(int Id, string Label, byte[] Bytes, string ContainerPath);
+    /// <summary>
+    /// An FMG to send: binder entry ID, a label for the history, its bytes, where it came from, and its entry ID range
+    /// for the identity check (Min > Max when it has no entries: not checked)
+    /// </summary>
+    public record SendItem(int Id, string Label, byte[] Bytes, string ContainerPath, int MinId, int MaxId);
 
     /// <summary>Where a send came from, shown in the history</summary>
     public enum SendSource { Selected, Container, Modified, Save, History }
@@ -51,44 +54,65 @@ public class TextGameLink
     public long KeptBytes => Interlocked.Read(ref keptBytes);
     private long keptBytes;
 
-    /// <summary>The binders the game loads; the others (item, menu, _dlc01) are never read</summary>
-    public static readonly string[] ResidentContainers = { "item_dlc02", "menu_dlc02", "ngword", "sellregion" };
+    /// <summary>
+    /// What differs per game: the process, and the binders the reloader may send. Each group lists the candidates for
+    /// one binder, most complete first. The one the game loaded is told apart by which slots are filled (DS3 loads
+    /// item/menu_dlc2 or _dlc1 depending on DLC ownership). ngword and sellregion are left out everywhere: ngword's only
+    /// FMG has binder ID 1, the same as menu's first FMG, and it doesn't go through the message repository.
+    /// </summary>
+    public record GameProfile(ProjectType Type, string ProcessName, string GameName, string[][] Groups)
+    {
+        public bool IsCandidate(string containerName) =>
+            Groups.Any(g => g.Contains(containerName, StringComparer.OrdinalIgnoreCase));
+    }
 
-    private const string ProcessName = "eldenring";
+    public static readonly GameProfile[] Profiles =
+    {
+        new(ProjectType.ER, "eldenring", "Elden Ring", new[] { new[] { "item_dlc02" }, new[] { "menu_dlc02" } }),
+        new(ProjectType.NR, "nightreign", "Nightreign", new[] { new[] { "item_dlc01" }, new[] { "menu_dlc01" } }),
+        new(ProjectType.AC6, "armoredcore6", "Armored Core VI", new[] { new[] { "item" }, new[] { "menu" } }),
+        new(ProjectType.DS3, "DarkSoulsIII", "Dark Souls III", new[] { new[] { "item_dlc2", "item_dlc1" }, new[] { "menu_dlc2", "menu_dlc1" } }),
+    };
+
+    public static GameProfile ProfileFor(ProjectType type) => Profiles.FirstOrDefault(p => p.Type == type);
+
+    public readonly GameProfile Profile;
+
+    public TextGameLink(ProjectType type)
+    {
+        Profile = ProfileFor(type);
+    }
 
     private readonly object GameLock = new();
     private Process GameProcess;
     private nint Handle;
     private nint RepoGlobal, LanguageIndexAddr, LanguageTableAddr;
-    private int LanguageCount;
+    private int LanguageCount;      // 0 when the getter has no bounds check (AC6): read until an entry isn't a language code
+    private int AllocatorOffset;    // +30, or +38 in DS3: read from the insert's code
 
     // Slot pointers this session wrote, so the list can mark them
     private readonly Dictionary<int, nint> Replaced = new();
 
-    // MsgbndFileCap load: mov rcx,[MsgRepository]; mov [rsp+20h],r12; mov r9,[rsp+30h]; mov r8,r15; mov edx,r14d;
-    // call Insert; test al,al
-    private const string RepoInsertSiteAob = "48 8B 0D ?? ?? ?? ?? 4C 89 64 24 20 4C 8B 4C 24 30 4D 8B C7 41 8B D6 E8 ?? ?? ?? ?? 84 C0";
-    // lea r9,["MsgRepository"] of the singleton check just before the site
-    private const int RepoNameLeaBefore = 0x1F;
-    // Insert wrapper (repo, id, data, size, name) calls the FD4 insert at +1B
-    private const int WrapperCallOffset = 0x1B;
-    // FD4 insert: the string offset fix-up at +137, and the layout the swap relies on
-    private const int InsertFixupOffset = 0x137;
-    private static readonly byte[] InsertFixup = { 0x48, 0x8B, 0x47, 0x18, 0x48, 0x85, 0xC0, 0x74, 0x07, 0x48, 0x03, 0xC7, 0x48, 0x89, 0x47, 0x18 };
-    private static readonly byte[] InsertPrologue = { 0x48, 0x89, 0x5C, 0x24, 0x18, 0x55, 0x56, 0x41, 0x54 };
-    private static readonly (int Offset, byte[] Bytes)[] InsertChecks =
-    {
-        (0x18, new byte[] { 0x3B, 0x51, 0x10 }),                // cmp edx,[rcx+10h]: version count
-        (0x21, new byte[] { 0x3B, 0x69, 0x14 }),                // cmp ebp,[rcx+14h]: slot count
-        (0x3F, new byte[] { 0x48, 0x8B, 0x41, 0x08 }),          // mov rax,[rcx+8]: version array
-        (0xF2, new byte[] { 0x48, 0x8B, 0x4B, 0x30, 0x41, 0xB8, 0x10, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x54, 0x24, 0x60, 0x48, 0x8B, 0x01, 0xFF, 0x50, 0x50 }),
-                                                                 // allocator [rcx+30h], alloc = vfn +50h (size, 10h)
-    };
-    private const int VersionArrayOffset = 0x8, VersionCountOffset = 0x10, SlotCountOffset = 0x14, AllocatorOffset = 0x30;
+    // The FD4 singleton check: mov reg,[global]; test reg,reg; jne; lea r9,["MsgRepository"]
+    private const string SingletonCheckAob = "48 8B ?? ?? ?? ?? ?? 48 85 ?? 75 ?? 4C 8D 0D ?? ?? ?? ??";
+    private static readonly byte[] RepositoryName = Encoding.ASCII.GetBytes("MsgRepository\0");
 
-    // mov ecx,[langIndex]; call GetLanguageFolder; mov r8,rax; lea rdx,[path format] (the item_dlc02 one is used)
+    // Insert wrappers (repo, id, data, size, name) → FD4 insert(repo, version 0, id, data, size, name): int id
+    // (ER, NR, DS3) or short id (AC6). Each ends with the call.
+    private static readonly string[] InsertWrapperAobs =
+    {
+        "48 83 EC 38 48 8B 44 24 60 48 89 44 24 28 4C 89 4C 24 20 4D 8B C8 44 8B C2 33 D2 E8",
+        "48 83 EC 38 48 8B 44 24 60 4D 8B D0 48 89 44 24 28 4C 89 4C 24 20 4D 8B CA 44 0F BF C2 33 D2 E8",
+    };
+
+    // In the FD4 insert: the +18 fix-up (string offset table → pointer)
+    private const string InsertFixupAob = "48 8B ?? 18 48 85 C0 74 ?? 48 03 ?? 48 89 ?? 18";
+
+    private const int VersionArrayOffset = 0x8, VersionCountOffset = 0x10, SlotCountOffset = 0x14;
+
+    // mov ecx,[langIndex]; call GetLanguageFolder; mov r8,rax; lea rdx,[msg:/%s/... path]. sellregion's uses a region
+    // index instead, so it is skipped.
     private const string LanguageSiteAob = "8B 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 4C 8B C0 48 8D 15 ?? ?? ?? ??";
-    private const string LanguagePath = "msg:/%s/item_dlc02.msgbnd";
 
     /// <summary>
     /// Starts a background read of the game's language and FMG table, unless one is running
@@ -193,19 +217,12 @@ public class TextGameLink
         return new ReloadResult(label, outcome, message, DateTime.Now);
     }
 
-    /// <summary>
-    /// Whether the game reads this container: one of the binders it loads, in the language it runs in
-    /// </summary>
-    public static bool IsResident(TextContainerWrapper container, string gameLanguage)
-    {
-        if (container?.FileEntry == null || string.IsNullOrEmpty(gameLanguage))
-            return false;
+    /// <summary>Whether the reloader may send this container at all (one of the profile's candidates)</summary>
+    public bool IsCandidate(TextContainerWrapper container) =>
+        Profile != null && container?.FileEntry != null && Profile.IsCandidate(container.FileEntry.Filename);
 
-        return IsResidentName(container) && string.Equals(LanguageOf(container), gameLanguage, StringComparison.OrdinalIgnoreCase);
-    }
-
-    public static bool IsResidentName(TextContainerWrapper container) =>
-        container?.FileEntry != null && ResidentContainers.Contains(container.FileEntry.Filename, StringComparer.OrdinalIgnoreCase);
+    public bool IsInGameLanguage(TextContainerWrapper container) =>
+        !string.IsNullOrEmpty(Language) && string.Equals(LanguageOf(container), Language, StringComparison.OrdinalIgnoreCase);
 
     /// <summary>The language folder a container sits in: /msg/engus/item_dlc02.msgbnd.dcx → engus</summary>
     public static string LanguageOf(TextContainerWrapper container)
@@ -271,11 +288,18 @@ public class TextGameLink
 
         Close();
 
-        var processes = Process.GetProcessesByName(ProcessName);
+        if (Profile == null)
+        {
+            State = LinkState.Failed;
+            StateMessage = LOC.Get("TEXT_FmgReloader_Game_Not_Supported");
+            return false;
+        }
+
+        var processes = Process.GetProcessesByName(Profile.ProcessName);
         if (processes.Length == 0)
         {
             State = LinkState.NotRunning;
-            StateMessage = LOC.Get("TEXT_FmgReloader_State_Not_Running");
+            StateMessage = LOC.Get("TEXT_FmgReloader_State_Not_Running", Profile.GameName);
             return false;
         }
 
@@ -296,10 +320,11 @@ public class TextGameLink
         }
 
         State = LinkState.Attached;
-        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id);
+        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id, Profile.GameName);
 
         Smithbox.Log(typeof(TextGameLink),
-            $"[Text Editor] FMG Reloader link: pid {GameProcess.Id}, MsgRepository global 0x{RepoGlobal:X}, language index 0x{LanguageIndexAddr:X}, table 0x{LanguageTableAddr:X} ({LanguageCount})");
+            $"[Text Editor] FMG Reloader link ({Profile.ProcessName}): pid {GameProcess.Id}, MsgRepository global 0x{RepoGlobal:X}, allocator +0x{AllocatorOffset:X}, " +
+            $"language index 0x{LanguageIndexAddr:X}, table 0x{LanguageTableAddr:X} ({(LanguageCount == 0 ? "unbounded" : LanguageCount)})");
 
         return true;
     }
@@ -321,62 +346,82 @@ public class TextGameLink
         GameProcess = null;
         RepoGlobal = LanguageIndexAddr = LanguageTableAddr = 0;
         LanguageCount = 0;
+        AllocatorOffset = 0;
         Replaced.Clear();
         Fmgs = Array.Empty<GameFmg>();
         Language = "";
     }
 
     /// <summary>
-    /// Finds the repository global and the language index and table in the running exe's code, and checks that the
-    /// game's insert still uses the layout the swap relies on
+    /// Finds the repository global, the insert's allocator offset and the language index and table in the running exe,
+    /// using code shapes shared by ER, NR, AC6 and DS3 (FmgReloadAob probe checks them on each exe)
     /// </summary>
     private bool Resolve(out string error)
     {
         error = "";
 
-        // Repository
-        var sites = Scan(RepoInsertSiteAob);
-        if (sites.Count != 1)
+        // Repository: the singleton checks whose lea r9 names "MsgRepository" must all read one global
+        var names = FindInData(RepositoryName).ToHashSet();
+        var globals = new HashSet<nint>();
+
+        foreach (var (at, bytes) in ScanWith(SingletonCheckAob))
         {
-            error = LOC.Get("TEXT_FmgReloader_State_Version", $"repository site {sites.Count}");
+            if ((bytes[2] & 0xC7) != 0x05)                       // mov reg,[rip+x]
+                continue;
+
+            if (names.Contains(at + 19 + BitConverter.ToInt32(bytes, 15)))
+                globals.Add(at + 7 + BitConverter.ToInt32(bytes, 3));
+        }
+
+        if (globals.Count != 1)
+        {
+            error = LOC.Get("TEXT_FmgReloader_State_Version", $"MsgRepository {globals.Count}");
             return false;
         }
 
-        var site = sites[0];
-        var nameLea = site - RepoNameLeaBefore;
-        var nameLeaBytes = ReadBytes(nameLea, 3);
-
-        if (nameLeaBytes[0] != 0x4C || nameLeaBytes[1] != 0x8D || nameLeaBytes[2] != 0x0D ||
-            ReadAscii(nameLea + 7 + ReadI32(nameLea + 3), 32) != "MsgRepository")
+        // Insert: through the wrapper; the allocator offset and the fix-up must be in it
+        nint insert = 0;
+        foreach (var aob in InsertWrapperAobs)
         {
-            error = LOC.Get("TEXT_FmgReloader_State_Version", "MsgRepository");
-            return false;
+            var hits = Scan(aob);
+            if (hits.Count != 1)
+                continue;
+
+            var call = hits[0] + aob.Split(' ').Length - 1;
+            insert = call + 5 + ReadI32(call + 1);
+            break;
         }
 
-        var wrapper = site + 28 + ReadI32(site + 24);
-        if (ReadBytes(wrapper + WrapperCallOffset, 1)[0] != 0xE8)
+        if (insert == 0)
         {
             error = LOC.Get("TEXT_FmgReloader_State_Version", "insert wrapper");
             return false;
         }
 
-        var insert = wrapper + WrapperCallOffset + 5 + ReadI32(wrapper + WrapperCallOffset + 1);
+        var code = ReadBytes(insert, 0x400);
 
-        if (!ReadBytes(insert, InsertPrologue.Length).AsSpan().SequenceEqual(InsertPrologue) ||
-            !ReadBytes(insert + InsertFixupOffset, InsertFixup.Length).AsSpan().SequenceEqual(InsertFixup) ||
-            InsertChecks.Any(c => !ReadBytes(insert + c.Offset, c.Bytes.Length).AsSpan().SequenceEqual(c.Bytes)))
+        // mov rcx,[reg+30h|38h] (ModRM mod=01, reg=rcx), then call [rax+50h]
+        var allocAt = -1;
+        for (var i = 0; i + 4 <= 0x300 && allocAt < 0; i++)
+        {
+            if (code[i] == 0x48 && code[i + 1] == 0x8B && (code[i + 2] & 0xF8) == 0x48 && (code[i + 2] & 7) != 4 && code[i + 3] is 0x30 or 0x38)
+                allocAt = i;
+        }
+
+        if (allocAt < 0 || IndexOf(code, "FF 50 50", allocAt, 0x40) < 0 || IndexOf(code, InsertFixupAob, 0, code.Length - 16) < 0)
         {
             error = LOC.Get("TEXT_FmgReloader_State_Version", "insert layout");
             return false;
         }
 
-        // Language
+        // Language: the first msgbnd path build that isn't sellregion's
         nint languageSite = 0;
-        foreach (var hit in Scan(LanguageSiteAob))
+        foreach (var (at, bytes) in ScanWith(LanguageSiteAob))
         {
-            if (ReadUnicode(hit + 21 + ReadI32(hit + 17), 80).StartsWith(LanguagePath, StringComparison.Ordinal))
+            var path = ReadUnicode(at + 21 + BitConverter.ToInt32(bytes, 17), 80);
+            if (path.Contains(".msgbnd", StringComparison.OrdinalIgnoreCase) && !path.Contains("sellregion", StringComparison.OrdinalIgnoreCase))
             {
-                languageSite = hit;
+                languageSite = at;
                 break;
             }
         }
@@ -388,53 +433,125 @@ public class TextGameLink
         }
 
         var getter = languageSite + 11 + ReadI32(languageSite + 7);
-        var getterBytes = ReadBytes(getter, 0x30);
+        var getterBytes = ReadBytes(getter, 0x50);
 
-        if (getterBytes[0x8] != 0x83 || getterBytes[0x9] != 0xF9 ||
-            getterBytes[0x25] != 0x48 || getterBytes[0x26] != 0x8D || getterBytes[0x27] != 0x0D ||
-            getterBytes[0x2C] != 0x48 || getterBytes[0x2D] != 0x8B || getterBytes[0x2E] != 0x04 || getterBytes[0x2F] != 0xD9)
+        // lea rcx,[table]; mov rax,[rcx+rbx*8] (ER, NR, DS3) or [rcx+rax*8] (AC6, no bounds check)
+        var lea = IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 D9", 0, 0x40);
+        if (lea < 0)
+            lea = IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 C1", 0, 0x40);
+
+        if (lea < 0)
         {
             error = LOC.Get("TEXT_FmgReloader_State_Version", "language getter");
             return false;
         }
 
+        var bound = IndexOf(getterBytes, "83 F9 ??", 0, 0x10);
+
+        RepoGlobal = globals.First();
+        AllocatorOffset = code[allocAt + 3];
         LanguageIndexAddr = languageSite + 6 + ReadI32(languageSite + 2);
-        LanguageTableAddr = getter + 0x2C + BitConverter.ToInt32(getterBytes, 0x28);
-        LanguageCount = getterBytes[0xA];
-        RepoGlobal = site + 7 + ReadI32(site + 3);
+        LanguageTableAddr = getter + lea + 7 + BitConverter.ToInt32(getterBytes, lea + 3);
+        LanguageCount = bound >= 0 ? getterBytes[bound + 2] : 0;
 
         return true;
     }
 
-    /// <summary>
-    /// Every match of an AOB in the executable sections of the main module
-    /// </summary>
-    private List<nint> Scan(string aob)
+    /// <summary>First match of a pattern in bytes[from, from+length), or -1</summary>
+    private static int IndexOf(byte[] bytes, string aob, int from, int length)
     {
         var pattern = aob.Split(' ').Select(t => t.StartsWith('?') ? -1 : Convert.ToInt32(t, 16)).ToArray();
-        var hits = new List<nint>();
-        var module = GameProcess.MainModule.BaseAddress;
 
+        for (var i = from; i < from + length && i + pattern.Length <= bytes.Length; i++)
+        {
+            var match = true;
+            for (var j = 0; j < pattern.Length && match; j++)
+                match = pattern[j] < 0 || bytes[i + j] == pattern[j];
+
+            if (match)
+                return i;
+        }
+
+        return -1;
+    }
+
+    /// <summary>A language code as the games name their msg folders: three lower-case letters, two upper-case (engUS)</summary>
+    private static bool IsLanguageCode(string s) =>
+        s.Length == 5 && s.Take(3).All(char.IsAsciiLetterLower) && s.Skip(3).All(char.IsAsciiLetterUpper);
+
+    private record Section(nint Start, int Size, bool Executable);
+
+    private List<Section> Sections()
+    {
+        var module = GameProcess.MainModule.BaseAddress;
         var header = ReadBytes(module, 0x1000);
         var peOff = BitConverter.ToInt32(header, 0x3C);
         var sectionCount = BitConverter.ToUInt16(header, peOff + 6);
         var optSize = BitConverter.ToUInt16(header, peOff + 20);
         var sec = peOff + 24 + optSize;
+        var list = new List<Section>();
 
         for (var s = 0; s < sectionCount; s++, sec += 40)
         {
             var virtualSize = BitConverter.ToInt32(header, sec + 8);
             var rva = BitConverter.ToInt32(header, sec + 12);
             var characteristics = BitConverter.ToUInt32(header, sec + 36);
+            list.Add(new Section(module + rva, virtualSize, (characteristics & 0x20000000) != 0)); // IMAGE_SCN_MEM_EXECUTE
+        }
 
-            if ((characteristics & 0x20000000) == 0) // IMAGE_SCN_MEM_EXECUTE
-                continue;
+        return list;
+    }
 
+    /// <summary>
+    /// Every start of these bytes in the module's data sections, preceded by a 0 byte (a whole C string)
+    /// </summary>
+    private List<nint> FindInData(byte[] needle)
+    {
+        var hits = new List<nint>();
+
+        foreach (var section in Sections().Where(s => !s.Executable))
+        {
             const int chunk = 0x100000;
-            for (var offset = 0; offset < virtualSize; offset += chunk)
+            for (var offset = 0; offset < section.Size; offset += chunk)
             {
-                var length = Math.Min(chunk + pattern.Length, virtualSize - offset);
-                var start = module + rva + offset;
+                var length = Math.Min(chunk + needle.Length, section.Size - offset);
+                var start = section.Start + offset;
+                var bytes = new byte[length];
+
+                if (!ReadProcessMemory(Handle, start, bytes, length, out _))
+                    continue;
+
+                for (var i = 1; i <= length - needle.Length && i < chunk; i++)
+                {
+                    if (bytes[i - 1] == 0 && bytes.AsSpan(i, needle.Length).SequenceEqual(needle))
+                        hits.Add(start + i);
+                }
+            }
+        }
+
+        return hits;
+    }
+
+    /// <summary>
+    /// Every match of an AOB in the executable sections of the main module
+    /// </summary>
+    private List<nint> Scan(string aob) => ScanWith(aob).Select(h => h.At).ToList();
+
+    /// <summary>
+    /// Every match of an AOB in the executable sections of the main module, with the matched bytes
+    /// </summary>
+    private List<(nint At, byte[] Bytes)> ScanWith(string aob)
+    {
+        var pattern = aob.Split(' ').Select(t => t.StartsWith('?') ? -1 : Convert.ToInt32(t, 16)).ToArray();
+        var hits = new List<(nint, byte[])>();
+
+        foreach (var section in Sections().Where(s => s.Executable))
+        {
+            const int chunk = 0x100000;
+            for (var offset = 0; offset < section.Size; offset += chunk)
+            {
+                var length = Math.Min(chunk + pattern.Length, section.Size - offset);
+                var start = section.Start + offset;
                 var bytes = new byte[length];
 
                 if (!ReadProcessMemory(Handle, start, bytes, length, out _))
@@ -453,7 +570,7 @@ public class TextGameLink
                     }
 
                     if (match)
-                        hits.Add(start + i);
+                        hits.Add((start + i, bytes.AsSpan(i, pattern.Length).ToArray()));
                 }
             }
         }
@@ -490,8 +607,10 @@ public class TextGameLink
     /// </summary>
     private void Poll()
     {
+        // AC6's table has no bound (14 languages, then font names), so an entry counts only if it looks like a code
         var index = ReadI32(LanguageIndexAddr);
-        Language = index >= 0 && index < LanguageCount ? ReadUnicode(ReadPtr(LanguageTableAddr + index * 8), 32) : "";
+        var language = index >= 0 && index < (LanguageCount > 0 ? LanguageCount : 32) ? ReadUnicode(ReadPtr(LanguageTableAddr + index * 8), 32) : "";
+        Language = IsLanguageCode(language) ? language : "";
 
         var slots = SlotArray(out _, out var slotCount);
         if (slots == 0)
@@ -516,7 +635,22 @@ public class TextGameLink
         }
 
         Fmgs = fmgs;
-        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id);
+        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id, Profile.GameName);
+    }
+
+    /// <summary>
+    /// The entry ID range of an FMG block in the game: the first group's first ID to the last group's last ID.
+    /// Groups are 16 bytes from +28 (offset index, first ID, last ID); the group count is at +C.
+    /// </summary>
+    private (int Min, int Max)? IdRangeOf(nint fmg)
+    {
+        var groupCount = ReadI32(fmg + 0xC);
+        if (groupCount <= 0 || groupCount > 0x100000)
+            return null;
+
+        var first = ReadI32(fmg + 0x28 + 4);
+        var last = ReadI32(fmg + 0x28 + (groupCount - 1) * 0x10 + 8);
+        return (first, last);
     }
 
     #endregion
@@ -527,7 +661,7 @@ public class TextGameLink
     {
         var bytes = item.Bytes;
 
-        // Version 2 (Elden Ring) little-endian FMG: 64-bit string offsets, offset table offset at +18
+        // Version 2 little-endian FMG (all supported games): 64-bit string offsets, offset table offset at +18
         if (bytes.Length < 0x28 || bytes[1] != 0 || bytes[2] != 2)
             return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Bad_Format", item.Label), DateTime.Now);
 
@@ -550,6 +684,19 @@ public class TextGameLink
             return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Bad_Slot", item.Label, item.Id), DateTime.Now);
 
         var oldSize = BitConverter.ToInt32(oldHeader, 4);
+
+        // Identity check: the game's block must cover some of the same entry IDs as the FMG sent, so a slot that holds a
+        // different FMG (an ID shared by two binders, or a project that doesn't match the running game) is left alone
+        if (item.MinId <= item.MaxId)
+        {
+            var range = IdRangeOf(old);
+            if (range == null || range.Value.Max < item.MinId || range.Value.Min > item.MaxId)
+            {
+                var game = range == null ? "?" : $"{range.Value.Min}-{range.Value.Max}";
+                return new(item.Label, ReloadOutcome.Failed,
+                    LOC.Get("TEXT_FmgReloader_Reload_Different_Fmg", item.Label, item.Id, game, $"{item.MinId}-{item.MaxId}"), DateTime.Now);
+            }
+        }
 
         var allocator = ReadPtr(repo + AllocatorOffset);
         if (allocator == 0)

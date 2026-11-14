@@ -18,11 +18,12 @@ public class TextEditorScreen : EditorScreen
     public TextShortcuts Shortcuts;
 
     /// <summary>The FMG Reloader's link to the running game, shared by every view and by Save</summary>
-    public TextGameLink GameLink = new();
+    public TextGameLink GameLink;
 
     public TextEditorScreen(ProjectEntry project)
     {
         Project = project;
+        GameLink = new TextGameLink(project.Descriptor.ProjectType);
 
         ViewHandler = new TextViewHandler(this, project);
 
@@ -303,11 +304,11 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     private List<TextGameLink.SendItem> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
     {
-        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || Project.Descriptor.ProjectType is not ProjectType.ER ||
+        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || GameLink.Profile == null ||
             GameLink.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(GameLink.Language))
             return null;
 
-        var fmgs = FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink.Language)
+        var fmgs = FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink)
             .Where(p => onlyContainer == null || p.Container == onlyContainer)
             .Where(p => GameLink.Fmgs.Any(f => f.Id == p.Fmg.ID));
 

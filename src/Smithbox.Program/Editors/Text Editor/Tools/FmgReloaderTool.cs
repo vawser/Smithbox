@@ -6,7 +6,7 @@ using System.Numerics;
 namespace StudioCore.Editors.TextEditor;
 
 /// <summary>
-/// FMG Reloader (ER): replaces FMGs in the running game with the editor's copies, so text edits can be tested without
+/// FMG Reloader (ER, NR, AC6, DS3): replaces FMGs in the running game with the editor's copies, so text edits can be tested without
 /// a restart. Lists the FMGs the game holds; a click selects that FMG here. See
 /// Claude/Documentation/FMG Live Reload Analysis.md.
 /// </summary>
@@ -25,9 +25,6 @@ public class FmgReloaderTool
     private bool ShowHistory = true;
     private bool ShowGameFmgs = true;
     private string Filter = "";
-
-    // The language whose resident containers have had their FMGs loaded for the names in the list
-    private string LoadedNamesFor;
 
     public FmgReloaderTool(TextEditorView view, ProjectEntry project)
     {
@@ -49,7 +46,7 @@ public class FmgReloaderTool
 
     private void Display()
     {
-        if (Project.Descriptor.ProjectType is not ProjectType.ER)
+        if (Link.Profile == null)
         {
             GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Game_Not_Supported"));
             return;
@@ -154,14 +151,14 @@ public class FmgReloaderTool
         }
         else
         {
-            var dirty = FmgReloadSource.DirtyFmgs(Bank, Link.Language);
+            var dirty = FmgReloadSource.DirtyFmgs(Bank, Link);
             GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Modified_Count", dirty.Count, Link.Language));
 
             if (dirty.Count > 0 && !Link.IsReloading)
             {
                 GUI.MultiButtonInput("fmgReloaderModifiedActions",
                     "fmgReloaderReloadModified", LOC.Get("TEXT_FmgReloader_Modified_Reload"), LOC.Get("TEXT_FmgReloader_Modified_Reload_TT"),
-                    () => Send(FmgReloadSource.Dirty(Bank, Link.Language), TextGameLink.SendSource.Modified));
+                    () => Send(FmgReloadSource.Dirty(Bank, Link), TextGameLink.SendSource.Modified));
             }
         }
 
@@ -187,18 +184,30 @@ public class FmgReloaderTool
     /// </summary>
     private string SelectionProblem(TextContainerWrapper container, TextFmgWrapper fmg)
     {
-        if (!TextGameLink.IsResidentName(container))
-            return LOC.Get("TEXT_FmgReloader_Problem_Not_Resident", container.FileEntry.Filename, string.Join(", ", TextGameLink.ResidentContainers));
+        if (!Link.IsCandidate(container))
+        {
+            var names = string.Join(", ", Link.Profile.Groups.SelectMany(g => g));
+            return LOC.Get("TEXT_FmgReloader_Problem_Not_Resident", container.FileEntry.Filename, names);
+        }
 
         if (Link.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(Link.Language))
             return LOC.Get("TEXT_FmgReloader_List_Not_Attached");
 
         var language = TextGameLink.LanguageOf(container);
-        if (!string.Equals(language, Link.Language, StringComparison.OrdinalIgnoreCase))
+        if (!Link.IsInGameLanguage(container))
             return LOC.Get("TEXT_FmgReloader_Problem_Language", language, Link.Language);
 
         if (Link.Fmgs.Count == 0)
             return LOC.Get("TEXT_FmgReloader_State_Not_Loaded");
+
+        // DS3 loads one of item/menu_dlc2 or _dlc1, depending on DLC ownership
+        if (!FmgReloadSource.Resident(Bank, Link).Contains(container))
+        {
+            var instead = FmgReloadSource.LoadedInstead(Bank, Link, container);
+            return instead != null
+                ? LOC.Get("TEXT_FmgReloader_Problem_Loaded_Instead", container.FileEntry.Filename, instead.FileEntry.Filename)
+                : LOC.Get("TEXT_FmgReloader_Problem_Not_Matched", container.FileEntry.Filename);
+        }
 
         if (!InGame(fmg.ID))
             return LOC.Get("TEXT_FmgReloader_Problem_No_Slot", fmg.ID);
@@ -357,23 +366,14 @@ public class FmgReloaderTool
     }
 
     /// <summary>
-    /// The editor's FMG for each binder entry ID, from the containers the game reads. Their FMGs are loaded once per
-    /// language so the list can name them.
+    /// The editor's FMG for each binder entry ID, from the containers the game loaded (their FMGs are loaded by the
+    /// resident check)
     /// </summary>
     private Dictionary<int, (TextContainerWrapper Container, TextFmgWrapper Fmg)> EditorFmgsById()
     {
         var map = new Dictionary<int, (TextContainerWrapper, TextFmgWrapper)>();
-        var resident = FmgReloadSource.Resident(Bank, Link.Language).ToList();
 
-        if (LoadedNamesFor != Link.Language)
-        {
-            foreach (var container in resident.Where(c => c.FmgWrappers == null || c.FmgWrappers.Count == 0))
-                Bank.LoadFmgWrappers(container);
-
-            LoadedNamesFor = Link.Language;
-        }
-
-        foreach (var container in resident)
+        foreach (var container in FmgReloadSource.Resident(Bank, Link))
         {
             if (container.FmgWrappers == null)
                 continue;
