@@ -3,7 +3,6 @@
 #---------------------
 
 Unknown formats:
-    mfr
     relationinfo
     moaei
     bsipwv

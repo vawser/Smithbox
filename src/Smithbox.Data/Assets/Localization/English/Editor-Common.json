@@ -133,6 +133,10 @@
       "Text": "The tool to show. Tools are grouped by category."
     },
     {
+      "Key": "EDITOR_ToolSections_Category_TT",
+      "Text": "Double-click to hide or show the tools in this category."
+    },
+    {
       "Key": "EDITOR_ToolCategory_Actions",
       "Text": "Actions"
     },

@@ -37,6 +37,9 @@ public class ToolSections
 
     private bool ContentOpen;
 
+    // The categories whose entries are hidden in the navigation, toggled by double-clicking the category title
+    private HashSet<string> CollapsedCategories = new();
+
     // Below this width the navigation is drawn as a combo, so the tool keeps the width it needs
     private const float SideListMinWindowWidth = 420f;
 
@@ -209,7 +212,11 @@ public class ToolSections
                     ImGui.Spacing();
                 }
 
-                ImGui.SeparatorText(group.Key);
+                if (!DisplayCategory(group))
+                {
+                    first = false;
+                    continue;
+                }
             }
 
             first = false;
@@ -237,9 +244,9 @@ public class ToolSections
         {
             foreach (var group in GetGroups())
             {
-                if (group.Key != null)
+                if (group.Key != null && !DisplayCategory(group))
                 {
-                    ImGui.SeparatorText(group.Key);
+                    continue;
                 }
 
                 foreach (var entry in group)
@@ -251,6 +258,38 @@ public class ToolSections
             ImGui.EndCombo();
         }
         GUI.Tooltip(LOC.Get("EDITOR_ToolSections_Dropdown_TT"));
+    }
+
+    /// <summary>
+    /// Draws a category title. Double-clicking it hides or shows the category's entries; a hidden category shows
+    /// its entry count in the title. Returns true when the entries should be drawn.
+    /// </summary>
+    private bool DisplayCategory(IGrouping<string, Entry> group)
+    {
+        var collapsed = CollapsedCategories.Contains(group.Key);
+
+        ImGui.SeparatorText(collapsed ? $"{group.Key} ({group.Count()})" : group.Key);
+
+        if (ImGui.IsItemHovered())
+        {
+            if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+            {
+                if (collapsed)
+                {
+                    CollapsedCategories.Remove(group.Key);
+                }
+                else
+                {
+                    CollapsedCategories.Add(group.Key);
+                }
+
+                collapsed = !collapsed;
+            }
+
+            ImGui.SetTooltip(LOC.Get("EDITOR_ToolSections_Category_TT"));
+        }
+
+        return !collapsed;
     }
 
     private void DisplayEntry(Entry entry, bool indent)
