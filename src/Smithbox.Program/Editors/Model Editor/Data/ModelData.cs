@@ -10,9 +10,13 @@ public class ModelData : IDisposable
 
     public ModelMeta ModelMeta;
 
+    /// <summary>Which containers have EDGE or GRASS files, for the Containers list's filter commands.</summary>
+    public ModelSidecarIndex SidecarIndex;
+
     public ModelData(ProjectEntry project)
     {
         Project = project;
+        SidecarIndex = new ModelSidecarIndex(project);
     }
 
     public async Task<bool> Setup()

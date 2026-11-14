@@ -5,6 +5,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Keybinds;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -27,6 +28,10 @@ public class ModelContainerList
     private string _previousFilter = "";
     private bool _previousExactFilter = false;
     private bool _previousIncludeAlias = false;
+
+    // What the edge: / grass: matches were last built from, and when
+    private (int IndexVersion, int OverlayVersion) _commandMatchKey = (-1, -1);
+    private long _commandMatchTime;
 
     private ModelListType CurrentTab = ModelListType.Character;
     private ModelListType _previousTab = ModelListType.Character;
@@ -147,6 +152,9 @@ public class ModelContainerList
 
         GUI.Tooltip(LOC.Get("MODEL_SourceList_Filter_TT"));
 
+        // edge: / grass: list only the containers with those files
+        var command = ParseSidecarCommand(ContainerListFilter, out var commandRest);
+
         ImGui.SameLine();
 
         // Load Mode
@@ -162,6 +170,31 @@ public class ModelContainerList
         GUI.Tooltip(LOC.Get("MODEL_SourceList_Toggle_Load_Mode_TT", loadMode));
 
         ImGui.EndChild();
+
+        var commandIndex = command != null ? GetSidecarIndex(CurrentTab) : null;
+
+        if (commandIndex != null && !commandIndex.Finished)
+        {
+            GUI.WrappedText(LOC.Get(command == ModelSidecarKind.Edge
+                ? "MODEL_SourceList_Indexing_Edge"
+                : "MODEL_SourceList_Indexing_Grass", commandIndex.Done, commandIndex.Total));
+        }
+
+        // The matches of a command are kept until what they depend on changes: the index finding more containers
+        // (taken at most a few times a second while it is still reading), or an EDGE file made or taken back in the
+        // EDGE Editor (OverlayVersion)
+        if (commandIndex != null)
+        {
+            var key = (commandIndex.Version, Project.Handler.ModelData.SidecarIndex.OverlayVersion);
+            var now = Environment.TickCount64;
+
+            if (key != _commandMatchKey && (commandIndex.Finished || now - _commandMatchTime >= 250))
+            {
+                _commandMatchKey = key;
+                _commandMatchTime = now;
+                filterChanged = true;
+            }
+        }
 
         if (filterChanged)
         {
@@ -197,10 +230,28 @@ public class ModelContainerList
             var modelName = entry.Filename;
             var nameAlias = "";
 
+            // A command rules most entries out before their alias is looked up
+            if (command is ModelSidecarKind sidecarKind
+                && (commandIndex == null || !Project.Handler.ModelData.SidecarIndex.Has(commandIndex, entry, sidecarKind)))
+            {
+                continue;
+            }
+
             if (CFG.Current.ModelEditor_Containers_IncludeAliasInSearch
                 && AliasTypeMap.TryGetValue(CurrentTab, out var aliasType))
             {
                 nameAlias = AliasHelper.GetAlias(Project, modelName, CurrentTab); // collapsed below
+            }
+
+            if (command != null)
+            {
+                if (commandRest.Length == 0
+                    || EditorFilters.IsMatch(commandRest, modelName, ExactContainerListFilter, nameAlias, true, true))
+                {
+                    matches.Add(modelName);
+                }
+
+                continue;
             }
 
             if (EditorFilters.IsMatch(ContainerListFilter, modelName, ExactContainerListFilter, nameAlias, true, true))
@@ -208,6 +259,46 @@ public class ModelContainerList
         }
 
         CachedSearchMatches[CurrentTab] = matches;
+    }
+
+    /// <summary>
+    /// The filter command typed, if any: "edge:" or "grass:", with the rest of the filter (which still matches names,
+    /// e.g. "edge: o002").
+    /// </summary>
+    private static ModelSidecarKind? ParseSidecarCommand(string filter, out string rest)
+    {
+        rest = "";
+
+        var text = filter?.TrimStart() ?? "";
+
+        foreach (var (prefix, kind) in new[] { ("edge:", ModelSidecarKind.Edge), ("grass:", ModelSidecarKind.Grass) })
+        {
+            if (text.StartsWith(prefix, System.StringComparison.OrdinalIgnoreCase))
+            {
+                rest = text.Substring(prefix.Length).Trim();
+                return kind;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>The EDGE/GRASS index of a tab's list, started the first time a command is typed on it.</summary>
+    private ModelSidecarIndex.ListIndex GetSidecarIndex(ModelListType tab)
+    {
+        var dictionary = tab switch
+        {
+            ModelListType.Character => Project.Locator.ChrFiles,
+            ModelListType.Asset => Project.Locator.AssetFiles,
+            ModelListType.Part => Project.Locator.PartFiles,
+            ModelListType.MapPiece => Project.Locator.MapPieceFiles,
+            _ => null
+        };
+
+        if (dictionary == null || Project.Handler.ModelData?.SidecarIndex == null)
+            return null;
+
+        return Project.Handler.ModelData.SidecarIndex.Get(dictionary, tab == ModelListType.MapPiece);
     }
 
     public void DisplayModelSourceList(ModelListType modelListType, FileDictionary fileDictionary)

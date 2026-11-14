@@ -30,7 +30,19 @@
     },
     {
       "Key": "MODEL_SourceList_Filter_TT",
-      "Text": "Filter the model list entries."
+      "Text": "Filter the model list entries.\n\nCommands:\nedge: lists only the containers with an EDGE file (a Sekiro object's in its objbnd, or a map piece's in its map's edgebhd).\ngrass: lists only the containers with a GRASS file.\nText after the command still filters by name, e.g. edge: o002. The first use on a tab reads the tab's files in the background."
+    },
+    {
+      "Key": "MODEL_SourceList_Indexing_Edge",
+      "Text": "Finding EDGE files: {0} / {1} containers read."
+    },
+    {
+      "Key": "MODEL_SourceList_Indexing_Grass",
+      "Text": "Finding GRASS files: {0} / {1} containers read."
+    },
+    {
+      "Key": "MODEL_SourceList_Sidecar_Index_Failed",
+      "Text": "Couldn't read {0} to find its EDGE and GRASS files."
     },
     {
       "Key": "MODEL_SourceList_Toggle_Load_Mode_Select",

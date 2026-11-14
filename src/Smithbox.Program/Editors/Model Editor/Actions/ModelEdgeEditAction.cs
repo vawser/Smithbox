@@ -60,6 +60,7 @@ public class ModelEdgeEditAction : ViewportAction, IModelHistoryItem
             {
                 Wrapper.SetCreatedEdgeFile(null);
                 container?.SetEdgeNode(null);
+                MarkListsChanged();
             }
 
             return;
@@ -69,8 +70,12 @@ public class ModelEdgeEditAction : ViewportAction, IModelHistoryItem
         {
             Wrapper.SetCreatedEdgeFile(state.File);
             container?.SetEdgeNode(state.File);
+            MarkListsChanged();
         }
 
         state.Apply();
     }
+
+    // The Containers list's edge: command counts loaded models by what they hold
+    private void MarkListsChanged() => Wrapper.Parent?.Project?.Handler?.ModelData?.SidecarIndex?.MarkOverlayChanged();
 }
