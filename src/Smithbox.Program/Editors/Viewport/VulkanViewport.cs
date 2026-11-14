@@ -501,6 +501,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And picking, moving and placing EDGE points in the Model Editor's EDGE Editor
+        if (Owner is ModelUniverse modelEdgeUniverse &&
+            modelEdgeUniverse.View.EdgeEditorTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
         // And picking the First Person tool's spawn
         if (Owner is MapUniverse firstPersonUniverse &&
             firstPersonUniverse.View.FirstPersonTool.HandleViewportInput(this, ray, canPick))
@@ -1036,6 +1043,13 @@ public class VulkanViewport : IViewport
         if (Owner is MapUniverse edgeUniverse && edgeUniverse.View.EdgeEditorTool.GizmoTarget.HasTarget)
         {
             Gizmos.Target = edgeUniverse.View.EdgeEditorTool.GizmoTarget;
+            return;
+        }
+
+        // A picked handle of the Model Editor's EDGE Editor
+        if (Owner is ModelUniverse modelEdgeUniverse && modelEdgeUniverse.View.EdgeEditorTool.GizmoTarget.HasTarget)
+        {
+            Gizmos.Target = modelEdgeUniverse.View.EdgeEditorTool.GizmoTarget;
             return;
         }
 

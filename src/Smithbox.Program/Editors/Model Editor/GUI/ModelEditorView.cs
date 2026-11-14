@@ -57,6 +57,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ModelVanillaCompareTool VanillaCompareTool;
     public ModelRenderSnapshotTool RenderSnapshotTool;
     public ModelDummyTool DummyTool;
+    public ModelEdgeEditorTool EdgeEditorTool;
     public ModelSearchTool LocalSearchTool;
     public ModelSearchTool GlobalSearchTool;
     public ModelMassEditTool MassEditTool;
@@ -124,6 +125,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
         RenderSnapshotTool = new ModelRenderSnapshotTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
+        EdgeEditorTool = new ModelEdgeEditorTool(this, Project);
         LocalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Local);
         GlobalSearchTool = new ModelSearchTool(this, Project, ModelSearchMode.Global);
         MassEditTool = new ModelMassEditTool(this, Project);

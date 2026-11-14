@@ -773,10 +773,8 @@ public class CFG
     public bool ModelEditor_DisplayDummies = true;
     public bool ModelEditor_DisplayNodes = true;
     public float ModelEditor_LabelScale = 1.0f;
-    public bool DisplayEdgePoints = false;
-    public Vector3 StartEdgePoint = new Vector3();
-    public Vector3 EndEdgePoint = new Vector3();
-    public Vector3 PullEdgePoint = new Vector3();
+    public bool ModelEditor_DisplayEdgePoints = true;
+    public bool Interface_ModelEditor_Tool_EdgeEditor = true;
 
     public bool ModelEditor_ModelSourceList_RequireDoubleClick = false;
 

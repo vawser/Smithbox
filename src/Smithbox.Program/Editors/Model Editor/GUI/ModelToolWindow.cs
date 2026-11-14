@@ -80,6 +80,11 @@ public class ModelToolWindow
             View.DummyTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_EdgeEditor && View.EdgeEditorTool.CanUse())
+        {
+            View.EdgeEditorTool.OnToolWindow();
+        }
+
         // Data Transfer
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
 
@@ -207,6 +212,16 @@ public class ModelToolWindow
                 CFG.Current.Interface_ModelEditor_Tool_Dummies = !CFG.Current.Interface_ModelEditor_Tool_Dummies;
             }
             GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_Dummies);
+
+            // EDGE Editor (Sekiro)
+            if (View.EdgeEditorTool.CanUse())
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Edge_Editor")}##toggleEdgeEditorTool"))
+                {
+                    CFG.Current.Interface_ModelEditor_Tool_EdgeEditor = !CFG.Current.Interface_ModelEditor_Tool_EdgeEditor;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_EdgeEditor);
+            }
 
             // Data Transfer
             if (ImGui.MenuItem($"{LOC.Get("MODEL_ToolWindow_View_Toggle_Data_Transfer")}##toggleDataTransferTool"))

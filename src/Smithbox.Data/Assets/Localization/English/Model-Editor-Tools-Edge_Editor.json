@@ -1,0 +1,48 @@
+{
+  "Entries": [
+    { "Key": "MODEL_EdgeEditor_Header", "Text": "EDGE Editor" },
+    { "Key": "MODEL_ToolWindow_View_Toggle_Edge_Editor", "Text": "EDGE Editor" },
+    { "Key": "MODEL_EdgeEditor_Hint", "Text": "Edit the grapple points, hangable ledges and huggable walls of the loaded object. An object's EDGE file is in its objbnd, and its points are in the object's own space." },
+    { "Key": "MODEL_EdgeEditor_Show_Points_TT", "Text": "Turn on the EDGE Points filter, which draws the loaded model's EDGE file in the viewport." },
+
+    { "Key": "MODEL_EdgeEditor_File_Header", "Text": "File" },
+    { "Key": "MODEL_EdgeEditor_File_Header_TT", "Text": "The EDGE file of the model loaded in this view." },
+    { "Key": "MODEL_EdgeEditor_No_Model", "Text": "Load a model to edit its EDGE file." },
+    { "Key": "MODEL_EdgeEditor_Not_Object", "Text": "{0} has no EDGE file. Only Sekiro objects (objbnd) have one that is edited here; map EDGE files are edited in the Map Editor's EDGE Editor, on their collision part." },
+    { "Key": "MODEL_EdgeEditor_No_File", "Text": "{0} has no EDGE file. Create an empty one here, or turn on Edit in Viewport and add a grapple point or draw a ledge on the model, which creates it." },
+    { "Key": "MODEL_EdgeEditor_Create_File_TT", "Text": "Make an empty EDGE file for this object, with the object's number as its ID (as 151 of the game's 182 object files have). The save adds it to the objbnd as {0}, beside the FLVER, with binder ID 1300, as every game object holds its file." },
+    { "Key": "MODEL_EdgeEditor_File_Info", "Text": "File {0}, ID {1}." },
+    { "Key": "MODEL_EdgeEditor_New_File", "Text": "New file: added to the objbnd when the model is saved." },
+    { "Key": "MODEL_EdgeEditor_Map_File", "Text": "This is the map EDGE file of collision {0}, shown with this map piece. Its points are in the collision's space, placed here by the MSB." },
+    { "Key": "MODEL_EdgeEditor_Read_Only", "Text": "Read-only here: map EDGE files are edited in the Map Editor's EDGE Editor, on the collision part, so only one editor writes the map's edgebhd." },
+    { "Key": "MODEL_EdgeEditor_Save_Note", "Text": "Edits are written to the objbnd when the model is saved." },
+
+    { "Key": "MODEL_EdgeEditor_Viewport_Header_TT", "Text": "Pick, move and place the loaded object's EDGE points in the viewport." },
+    { "Key": "MODEL_EdgeEditor_Editing_TT", "Text": "While on, clicks in the viewport pick and place EDGE points instead of selecting the model's objects. Turn it off to select objects again. It also stops while this tool isn't shown." },
+    { "Key": "MODEL_EdgeEditor_Mode_Select_TT", "Text": "Click a point to pick it, and the gizmo moves it freely. Drag a point to slide it over the model's surface under the cursor. A chain's shared point moves every segment that meets there; a grapple's direction point moves with it. Click a ledge or wall to select its entry." },
+    { "Key": "MODEL_EdgeEditor_Mode_AddGrapple_TT", "Text": "Click the model to add a grapple point there, as the game's object grapples are: Variation 1, a pull point 0.5 m above it (Has Pull Point 1), and its direction point 4 cm to the side, level and facing the camera. The model gets an EDGE file if it has none." },
+    { "Key": "MODEL_EdgeEditor_Mode_DrawHang_TT", "Text": "Click points on the model to lay down a ledge, one segment per click. Start on a ledge's end to continue it; end on another ledge's opposite end to join the two. New ledges get the next free chain ID and Variation 0." },
+    { "Key": "MODEL_EdgeEditor_Mode_DrawHug_TT", "Text": "Click points on the model to lay down a huggable wall, one segment per click. Start on a wall's end to continue it; end on another wall's opposite end to join the two. New walls get the next free chain ID and Variation 0, as most object walls have." },
+    { "Key": "MODEL_EdgeEditor_Drawing_Start", "Text": "Click the model to start a chain, or a chain's end to continue it." },
+    { "Key": "MODEL_EdgeEditor_No_Target", "Text": "Nothing to place on under the cursor. Points go on the model's meshes, or on displayed EDGE points." },
+    { "Key": "MODEL_EdgeEditor_Target", "Text": "Under the cursor: the model" },
+    { "Key": "MODEL_EdgeEditor_No_Surface", "Text": "The model has no triangles to place on, so a dragged point stays at the distance it was picked at." },
+    { "Key": "MODEL_EdgeEditor_Hovered", "Text": "Under the cursor: {0}" },
+    { "Key": "MODEL_EdgeEditor_Hovered_Segment", "Text": "Under the cursor: segment of entry {0}" },
+
+    { "Key": "MODEL_EdgeEditor_Field_Start_TT", "Text": "The start of the segment, in the object's space." },
+    { "Key": "MODEL_EdgeEditor_Field_End_TT", "Text": "The end of the segment, in the object's space. The next segment of the chain usually starts here." },
+    { "Key": "MODEL_EdgeEditor_Field_Grapple_Start_TT", "Text": "The grapple point, in the object's space." },
+    { "Key": "MODEL_EdgeEditor_Field_Grapple_End_TT", "Text": "A second point a few centimetres from the position (3.5 cm in the middle of the game's object files), giving the grapple point a direction. On objects it is usually level with it." },
+    { "Key": "MODEL_EdgeEditor_Field_Pull_TT", "Text": "The point the player is pulled towards, in the object's space. Zero when the grapple point has none." },
+    { "Key": "MODEL_EdgeEditor_Field_HasPull_TT", "Text": "1 when the grapple point has a pull point, 0 when it doesn't (always so in the game's files)." },
+    { "Key": "MODEL_EdgeEditor_Add_Pull_TT", "Text": "Give the selected grapple a pull point 0.5 m above it and set Has Pull Point; move it with the gizmo. The game's object pull points lie a median 0.43 m to the side and 0.13 m up." },
+
+    { "Key": "MODEL_EdgeEditor_Checks_Header_TT", "Text": "Things in this file that look like mistakes. They are warnings: the game's own files have a few. Click one to select its entry, double-click to frame it." },
+    { "Key": "MODEL_EdgeEditor_Fix_GrappleNoDirection_TT", "Text": "Put the direction point 4 cm to the side of the grapple point, level with it, as object grapples have." },
+
+    { "Key": "MODEL_Properties_Edge_Select_Entry_TT", "Text": "Select this entry in the EDGE Editor and frame it in the viewport." },
+    { "Key": "MODEL_Framework_Filter_EdgePoints", "Text": "EDGE Points" },
+    { "Key": "MODEL_Framework_Filter_EdgePoints_TT", "Text": "Draw the loaded model's EDGE file: grapple points, ledges and walls." }
+  ]
+}

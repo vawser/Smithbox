@@ -631,7 +631,7 @@ public class MsbEntity : Entity
         EdgePointMeshes = meshes;
     }
 
-    private static Vector3 GetEdgeColor(EdgeMarker marker)
+    public static Vector3 GetEdgeColor(EdgeMarker marker)
     {
         if (marker.Kind is EdgeMarkerKind.Pull or EdgeMarkerKind.PullLine)
             return CFG.Current.Viewport_Edge_Pull_Color;

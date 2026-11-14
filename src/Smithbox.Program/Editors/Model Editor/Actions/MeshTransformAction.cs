@@ -181,7 +181,7 @@ public class MeshTransformAction : ViewportAction, IModelHistoryItem
     /// The bone each vertex of a mesh is placed by, or -1 for vertices in model space. Follows the viewport's rules,
     /// so the vertices end up where they were seen to be moved to.
     /// </summary>
-    private sealed class VertexPlacement
+    internal sealed class VertexPlacement
     {
         private readonly FLVER2.Mesh Mesh;
 

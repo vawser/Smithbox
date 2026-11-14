@@ -21,10 +21,6 @@ public class ModelViewportWindow
     public bool ShiftHeld;
     public bool ViewportUsingKeyboard;
 
-    public EdgePointEntity StartEdgePoint;
-    public EdgePointEntity EndEdgePoint;
-    public EdgePointEntity PullEdgePoint;
-
     // The model to frame once its meshes have loaded
     public ModelContainer PendingFrameContainer;
 
@@ -60,35 +56,8 @@ public class ModelViewportWindow
 
             UpdatePendingFrame();
 
-            // Start Edge Point
-            if (View.Universe != null && StartEdgePoint == null)
-            {
-                StartEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.Start);
-            }
-            else if (StartEdgePoint != null)
-            {
-                StartEdgePoint.UpdateRenderModel();
-            }
-
-            // End Edge Point
-            if (View.Universe != null && EndEdgePoint == null)
-            {
-                EndEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.End);
-            }
-            else if (EndEdgePoint != null)
-            {
-                EndEdgePoint.UpdateRenderModel();
-            }
-
-            // Pull Edge Point
-            if (View.Universe != null && PullEdgePoint == null)
-            {
-                PullEdgePoint = new EdgePointEntity(View.Universe, EdgePointEntity.EdgePointType.Pull);
-            }
-            else if (PullEdgePoint != null)
-            {
-                PullEdgePoint.UpdateRenderModel();
-            }
+            // The loaded model's EDGE file, drawn live (EDGE Editor)
+            View.EdgeEditorTool.UpdateMarkers();
         }
 
         if (Viewport is NullViewport nullViewport)

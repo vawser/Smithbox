@@ -92,6 +92,17 @@ public class ModelViewportFilters
             GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_Collision_TT"));
             GUI.ShowActiveStatus(ticked);
 
+            // EDGE Points (Sekiro)
+            if (Project.Descriptor.ProjectType is ProjectType.SDT)
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MODEL_Framework_Filter_EdgePoints")}##edgePointsToggle"))
+                {
+                    CFG.Current.ModelEditor_DisplayEdgePoints = !CFG.Current.ModelEditor_DisplayEdgePoints;
+                }
+                GUI.Tooltip(LOC.Get("MODEL_Framework_Filter_EdgePoints_TT"));
+                GUI.ShowActiveStatus(CFG.Current.ModelEditor_DisplayEdgePoints);
+            }
+
             ImGui.EndMenu();
         }
 

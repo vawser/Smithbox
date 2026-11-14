@@ -938,6 +938,33 @@ public class ModelContainer : ObjectContainer
     }
 
     /// <summary>
+    /// Adds the hierarchy node of an EDGE file made in the EDGE Editor, or (with null) removes it when the file is
+    /// taken back. Object EDGE files only, which have no collision drawn for them.
+    /// </summary>
+    public void SetEdgeNode(EDGE edge)
+    {
+        if (EDGE_Parent != null)
+        {
+            Objects.Remove(EDGE_Parent);
+            EDGE_Parent.Parent?.RemoveChild(EDGE_Parent);
+            EDGE_Parent = null;
+        }
+
+        if (edge != null)
+        {
+            var newObject = new ModelEntity(View.Universe, this, edge, ModelEntityType.EDGE);
+
+            EDGE_Parent = newObject;
+
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        RefreshTypeLists();
+        View.EntityTypeCache.InvalidateCache();
+    }
+
+    /// <summary>
     /// Carries the EDGE file's points into the model's space. See <see cref="ModelWrapper.EdgeSpace"/>.
     /// </summary>
     public Matrix4x4 EdgeSpace { get; private set; } = Matrix4x4.Identity;

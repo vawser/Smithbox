@@ -5,6 +5,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System.Numerics;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -470,6 +471,38 @@ public class ModelWrapper
     /// </summary>
     public bool EdgeInCollisionSpace => EDGE_InMapBinder && EDGE != null;
 
+    // An EDGE file made in the EDGE Editor for an object that had none: added to the objbnd on the next save
+    private bool EDGE_IsNew;
+
+    /// <summary>
+    /// Whether this model's EDGE file can be edited and saved here: a Sekiro object's, in its objbnd. Map EDGE files
+    /// belong to a collision and are edited in the Map Editor's EDGE Editor.
+    /// </summary>
+    public bool CanEditEdge => Parent.Project.Descriptor.ProjectType is ProjectType.SDT
+        && !EDGE_InMapBinder
+        && Parent.Path.EndsWith(".objbnd.dcx", StringComparison.OrdinalIgnoreCase);
+
+    /// <summary>The objbnd name of the EDGE file, as read, or the one a new file will be saved under.</summary>
+    public string EdgeFileName => EDGE_FileName != null
+        ? FilePathUtils.GetPureFilename(EDGE_FileName) + ".edge"
+        : EdgeAuthoring.ObjectDefaults.FileName(Name);
+
+    /// <summary>Whether the EDGE file was made here and isn't in the objbnd yet.</summary>
+    public bool IsEdgeFileNew => EDGE_IsNew && EDGE != null;
+
+    /// <summary>
+    /// Gives an object without an EDGE file a new one (or, with null, takes back one made here), which the next save
+    /// adds to the objbnd. Only through <see cref="ModelEdgeEditAction"/>, which also adds or removes its node.
+    /// </summary>
+    public void SetCreatedEdgeFile(EDGE edge)
+    {
+        if (!CanEditEdge || (EDGE != null && !EDGE_IsNew))
+            return;
+
+        EDGE = edge;
+        EDGE_IsNew = edge != null;
+    }
+
     /// <summary>
     /// The collision model the EDGE file belongs to, as the MSB names it (h000200 for m11_00_00_00_000200)
     /// </summary>
@@ -510,9 +543,6 @@ public class ModelWrapper
             Smithbox.LogError(this, LOC.Get("MODEL_Universe_Model_Already_Loaded", Name));
             return;
         }
-
-        // Disable the visualisation of these when the file changes
-        CFG.Current.DisplayEdgePoints = false;
 
         // Keep the unsaved changes instead of replacing them with the stored version
         if (!IsDirty || FLVER == null)
@@ -559,6 +589,11 @@ public class ModelWrapper
             LoadDirect();
             return;
         }
+
+        // A file made here and never saved goes with the rest of the unsaved edits
+        EDGE = null;
+        EDGE_FileName = null;
+        EDGE_IsNew = false;
 
         try
         {
@@ -1072,6 +1107,9 @@ public class ModelWrapper
                     isFilesWritten = false;
             }
 
+            if (!AddCreatedEdgeFile(binder))
+                isFilesWritten = false;
+
             try
             {
                 Parent.WriteContainer(binder);
@@ -1083,6 +1121,38 @@ public class ModelWrapper
             }
 
             return isFilesWritten;
+        }
+    }
+
+    /// <summary>
+    /// Adds an EDGE file made in the EDGE Editor to the objbnd, as the game's objects hold theirs (EdgeSurvey objects,
+    /// 182/182): e{number}.edge beside the FLVER, binder ID 1300, Flag1, Zlib. False if it failed.
+    /// </summary>
+    private bool AddCreatedEdgeFile(IBinder binder)
+    {
+        if (!IsEdgeFileNew || !CanEditEdge)
+            return true;
+
+        try
+        {
+            var file = EdgeAuthoring.ObjectDefaults.AddToBinder(binder, Name, EDGE.Write());
+
+            if (file == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", Parent.Path));
+                return false;
+            }
+
+            EDGE_FileName = file.Name.ToLower();
+            EDGE_IsNew = false;
+
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Write_EDGE_Log", file.Name));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", Parent.Path), e);
+            return false;
         }
     }
 

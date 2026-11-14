@@ -331,7 +331,7 @@ public class EdgeBank
     /// The markers of a file. Each entry gets its own, so an entry can be drawn as selected (the game's files repeat
     /// a few entries exactly, which then draw twice). <paramref name="selected"/> is the selected entry, or -1.
     /// </summary>
-    private static EdgeMarkers GetMarkers(EDGE edge, int selected)
+    public static EdgeMarkers GetMarkers(EDGE edge, int selected)
     {
         List<EdgeMarker> markers = new(edge.Edges.Count + 8);
 

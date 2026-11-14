@@ -32,6 +32,82 @@ public static class EdgeAuthoring
         _ => 0
     };
 
+    /// <summary>
+    /// What the game's object EDGE files do (EdgeSurvey objects, 182 objbnds), which the Model Editor's new entries
+    /// follow: the file is e{number}.edge next to the FLVER, binder ID 1300, Flag1, Zlib; its ID header is the object
+    /// number (151/182); grapples have a pull point (188/255) and Variation 1 (171/255); their direction point is
+    /// horizontal (202/255 with Y 0), not up as in maps; ledges and walls use Variation 0 (71/71, 146/273).
+    /// </summary>
+    public static class ObjectDefaults
+    {
+        public const int BinderFileId = 1300;
+        public const byte GrappleVariation = 1;
+        public const byte HangVariation = 0;
+        public const byte HugVariation = 0;
+
+        public static byte Variation(EDGE.EdgeType type) => type switch
+        {
+            EDGE.EdgeType.Grapple => GrappleVariation,
+            EDGE.EdgeType.Hang => HangVariation,
+            _ => HugVariation
+        };
+
+        /// <summary>The binder name of an object's EDGE file, e.g. e001000.edge for o001000. Null without a number.</summary>
+        public static string FileName(string objectName)
+        {
+            if (string.IsNullOrEmpty(objectName) || objectName.Length < 2 || !int.TryParse(objectName.Substring(1), out var number))
+                return null;
+
+            return $"e{number:D6}.edge";
+        }
+
+        /// <summary>
+        /// Puts an object's EDGE file into its objbnd as the game's are: beside the FLVER named after the object (or the
+        /// first FLVER), binder ID 1300 unless taken (then the next free one), Flag1. An existing file of that name gets
+        /// the new bytes. Returns the binder file, or null if the object name has no number.
+        /// </summary>
+        public static BinderFile AddToBinder(IBinder binder, string objectName, byte[] data)
+        {
+            var fileName = FileName(objectName);
+
+            if (fileName == null)
+                return null;
+
+            static string Stem(string name)
+            {
+                var file = name.Substring(name.LastIndexOf('\\') + 1);
+                var dot = file.IndexOf('.');
+                return dot < 0 ? file : file.Substring(0, dot);
+            }
+
+            var flver = binder.Files.FirstOrDefault(f => f.Name != null && f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase)
+                    && string.Equals(Stem(f.Name), objectName, StringComparison.OrdinalIgnoreCase))
+                ?? binder.Files.FirstOrDefault(f => f.Name != null && f.Name.EndsWith(".flver", StringComparison.OrdinalIgnoreCase));
+
+            var directory = flver != null ? flver.Name.Substring(0, flver.Name.LastIndexOf('\\') + 1) : "";
+            var name = directory + fileName;
+
+            var existing = binder.Files.FirstOrDefault(f => string.Equals(f.Name, name, StringComparison.OrdinalIgnoreCase));
+
+            if (existing != null)
+            {
+                existing.Bytes = data;
+                return existing;
+            }
+
+            var id = BinderFileId;
+            while (binder.Files.Any(f => f.ID == id))
+                id++;
+
+            var file = new BinderFile(Binder.FileFlags.Flag1, id, name, data) { CompressionType = DCX.Type.Zlib };
+
+            binder.Files.Add(file);
+            binder.Files.Sort((a, b) => a.ID.CompareTo(b.ID));
+
+            return file;
+        }
+    }
+
     /// <summary>An empty file for a collision, e.g. 500 for h000500. Null if the name has no number.</summary>
     public static EDGE CreateFile(string modelName)
     {
@@ -48,8 +124,12 @@ public static class EdgeAuthoring
 
     #region Grapples
 
-    /// <summary>A new grapple point, after the file's other grapples. <paramref name="up"/> is up in the part's space.</summary>
-    public static EDGE AddGrapple(EDGE edge, Vector3 position, Vector3 up, out int index)
+    /// <summary>
+    /// A new grapple point, after the file's other grapples. <paramref name="direction"/> is the way its direction
+    /// point lies from it in the part's space: up for map grapples; object grapples point sideways (see
+    /// <see cref="ObjectDefaults"/>).
+    /// </summary>
+    public static EDGE AddGrapple(EDGE edge, Vector3 position, Vector3 direction, out int index, byte? variation = null)
     {
         var after = Copy(edge);
 
@@ -57,11 +137,11 @@ public static class EdgeAuthoring
         {
             Type = EDGE.EdgeType.Grapple,
             V1 = position,
-            V2 = position + Vector3.Normalize(up) * GrappleDirectionLength,
+            V2 = position + Vector3.Normalize(direction) * GrappleDirectionLength,
             V3 = Vector3.Zero,
             Unk2C = 0,
             Unk30 = NextChainId(edge),
-            VariationID = DefaultVariation(EDGE.EdgeType.Grapple),
+            VariationID = variation ?? DefaultVariation(EDGE.EdgeType.Grapple),
             Unk36 = 0
         };
 
@@ -117,7 +197,7 @@ public static class EdgeAuthoring
     }
 
     /// <summary>A new chain of one segment, added at the end of the file. Index is the new segment's.</summary>
-    public static EDGE AddChain(EDGE edge, EDGE.EdgeType type, Vector3 start, Vector3 end, out int index)
+    public static EDGE AddChain(EDGE edge, EDGE.EdgeType type, Vector3 start, Vector3 end, out int index, byte? variation = null)
     {
         index = -1;
 
@@ -132,7 +212,7 @@ public static class EdgeAuthoring
             V1 = start,
             V2 = end,
             Unk30 = NextChainId(edge),
-            VariationID = DefaultVariation(type),
+            VariationID = variation ?? DefaultVariation(type),
             Unk36 = 0
         });
 

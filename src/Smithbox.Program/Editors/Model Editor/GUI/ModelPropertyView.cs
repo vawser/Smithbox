@@ -906,41 +906,14 @@ public class ModelPropertyView
 
                         if (elementType == typeof(EDGE.Edge))
                         {
-                            // EDGE Points: Show
+                            // The whole file is drawn live; this picks the entry in the EDGE Editor and frames it
                             ImGui.SameLine();
                             ImGui.AlignTextToFramePadding();
-                            if (ImGui.Button($"{Icons.Eye}##edgePointsShow"))
+                            if (ImGui.Button($"{Icons.Eye}##edgeEntrySelect{i}"))
                             {
-                                var startEdgePoint = PropFinderUtil.FindPropertyValue("V1", elem);
-                                if(startEdgePoint != null)
-                                {
-                                    CFG.Current.StartEdgePoint = (Vector3)startEdgePoint;
-                                }
-
-                                var endEdgePoint = PropFinderUtil.FindPropertyValue("V2", elem);
-                                if (endEdgePoint != null)
-                                {
-                                    CFG.Current.EndEdgePoint = (Vector3)endEdgePoint;
-                                }
-
-                                var pullEdgePoint = PropFinderUtil.FindPropertyValue("V3", elem);
-                                if (pullEdgePoint != null)
-                                {
-                                    CFG.Current.PullEdgePoint = (Vector3)pullEdgePoint;
-                                }
-
-                                CFG.Current.DisplayEdgePoints = true;
+                                View.EdgeEditorTool.SelectAndFrame(i);
                             }
-                            GUI.Tooltip("Show the edge points for this entry in the viewport.");
-
-                            // EDGE Points: Hide
-                            ImGui.SameLine();
-                            ImGui.AlignTextToFramePadding();
-                            if (ImGui.Button($"{Icons.EyeSlash}##edgePointsHide"))
-                            {
-                                CFG.Current.DisplayEdgePoints = false;
-                            }
-                            GUI.Tooltip("Hide any edge points in the viewport.");
+                            GUI.Tooltip(LOC.Get("MODEL_Properties_Edge_Select_Entry_TT"));
                         }
 
                         ImGui.NextColumn();
