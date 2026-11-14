@@ -4,7 +4,7 @@
     { "Key": "MODEL_Vanilla_Highlight", "Text": "Highlight Changes from Vanilla" },
     { "Key": "MODEL_Vanilla_Highlight_TT", "Text": "Colours the materials, bones, dummies and meshes in Contents that differ from the game's own model (green) or aren't in it (blue). The vanilla model is read once when a model is loaded; Tools › Vanilla Compare lists the differences." },
 
-    { "Key": "MODEL_Vanilla_Tool_Header", "Text": "Vanilla Compare" },
+    { "Key": "MODEL_Vanilla_Tool_Header", "Text": "Vanilla Comparison" },
     { "Key": "MODEL_Vanilla_Tool_Hint", "Text": "How the loaded model differs from the game's own. Select an object (here, in Contents or in the viewport) to see its fields against vanilla and revert them. Objects are paired by name (dummies by reference ID, meshes by material and vertex count), and indices are compared by the bone or material they point at, so adding or moving objects doesn't make others look changed." },
     { "Key": "MODEL_Vanilla_Tool_No_Model", "Text": "Load a model to compare it with vanilla." },
     { "Key": "MODEL_Vanilla_Tool_No_Vanilla", "Text": "The game has no model {0} (the mod added it), or it couldn't be read." },

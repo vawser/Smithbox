@@ -2,3 +2,5 @@
 # Model Editor TODO
 #----------------------------------------------------
 
+- Cloth
+- Model Import

@@ -1,6 +1,9 @@
 #-------------
 # Blue Sky
 #-------------
+- Game Porter
+    - Port assets from X game to Y game
+
 - HKS intepreter (to link with behaviors and animation playback)
     - Work allow for powerful visualization of movesets
 

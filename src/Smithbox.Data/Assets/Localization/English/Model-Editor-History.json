@@ -4,7 +4,7 @@
     { "Key": "MODEL_History_Menu_TT", "Text": "Opens the History tool: the undo history of the loaded model, and the models that keep theirs." },
     { "Key": "MODEL_ToolWindow_View_Toggle_History", "Text": "History" },
 
-    { "Key": "MODEL_History_Tool_Header", "Text": "History" },
+    { "Key": "MODEL_History_Tool_Header", "Text": "Edit History" },
     { "Key": "MODEL_History_Tool_Hint", "Text": "The undo history of the loaded model, oldest first. Click a step to go back to before it, or click a greyed (undone) step to redo up to it. A model you switch away from keeps its history here, so switching back lets you undo again." },
 
     { "Key": "MODEL_History_Tool_Steps_Header", "Text": "Steps ({0} of {1})" },

@@ -370,7 +370,7 @@
     },
     {
       "Key": "MAP_ToolWindow_Entity_Ids",
-      "Text": "Entity IDs"
+      "Text": "Entity ID Assignments"
     },
     {
       "Key": "MAP_ToolWindow_Property_Actions_Display_Tab",
@@ -383,6 +383,42 @@
     {
       "Key": "MAP_ToolWindow_Property_Actions_Game_Visibility_Tab",
       "Text": "Game Visibility"
+    },
+    {
+      "Key": "MAP_WallEditor_Header",
+      "Text": "Walls"
+    },
+    {
+      "Key": "MAP_DestructableAssets_Header",
+      "Text": "Destructables"
+    },
+    {
+      "Key": "MAP_LoadLists_Header",
+      "Text": "Load Lists"
+    },
+    {
+      "Key": "MAP_EntryFileLists_Header",
+      "Text": "Entry File Lists"
+    },
+    {
+      "Key": "MAP_PartTokenLists_Header",
+      "Text": "Part Token Lists"
+    },
+    {
+      "Key": "MAP_AnimationBrowser_Header",
+      "Text": "Animation Browser"
+    },
+    {
+      "Key": "MAP_ModelBrowser_Header",
+      "Text": "Model Browser"
+    },
+    {
+      "Key": "MAP_Prefabs_Header",
+      "Text": "Prefabs"
+    },
+    {
+      "Key": "MAP_AI_Visualization_Header",
+      "Text": "AI Visualization"
     }
   ]
 }

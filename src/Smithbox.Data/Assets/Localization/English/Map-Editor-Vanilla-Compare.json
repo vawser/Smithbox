@@ -18,7 +18,7 @@
     { "Key": "MAP_Vanilla_Compare_Revert", "Text": "Revert" },
     { "Key": "MAP_Vanilla_Compare_Revert_TT", "Text": "Sets {0} back to its vanilla value. Can be undone." },
 
-    { "Key": "MAP_ToolWindow_Vanilla_Compare", "Text": "Vanilla Compare" },
+    { "Key": "MAP_ToolWindow_Vanilla_Compare", "Text": "Vanilla Comparison" },
     { "Key": "MAP_Vanilla_Tool_Hint", "Text": "Lists what the active map changes from the vanilla map: objects modified, objects added, and vanilla objects no longer in it, which can be restored." },
     { "Key": "MAP_Vanilla_Tool_No_Map", "Text": "Load a map, or select an object in one, to compare it." },
     { "Key": "MAP_Vanilla_Tool_Actions_Header", "Text": "Actions" },

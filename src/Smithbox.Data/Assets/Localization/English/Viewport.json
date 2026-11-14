@@ -742,7 +742,7 @@
     },
     {
       "Key": "VIEWPORT_Rendering_Tab_BTL_Lights",
-      "Text": "BTL Lights"
+      "Text": "Placed Lights"
     },
     {
       "Key": "VIEWPORT_Rendering_BTL_Near_Camera",

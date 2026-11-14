@@ -2,11 +2,11 @@
   "Entries": [
     {
       "Key": "MAP_Navigation_Header",
-      "Text": "Navigation Editor"
+      "Text": "Navigation"
     },
     {
       "Key": "MAP_ToolWindow_View_Toggle_Navigation",
-      "Text": "Navigation"
+      "Text": "Navigation Editor"
     },
     {
       "Key": "MAP_Navigation_Unsupported_Game",

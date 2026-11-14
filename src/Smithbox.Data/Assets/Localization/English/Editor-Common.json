@@ -141,6 +141,10 @@
       "Text": "Actions"
     },
     {
+      "Key": "EDITOR_ToolCategory_Selection",
+      "Text": "Selection"
+    },
+    {
       "Key": "EDITOR_ToolCategory_Search",
       "Text": "Search & Edit"
     },
@@ -195,6 +199,18 @@
     {
       "Key": "EDITOR_ToolCategory_Editing",
       "Text": "Editing"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_General",
+      "Text": "General"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Authoring",
+      "Text": "Authoring"
+    },
+    {
+      "Key": "EDITOR_ToolCategory_Creation",
+      "Text": "Creation"
     },
     {
       "Key": "EDITOR_ToolCategory_Create",

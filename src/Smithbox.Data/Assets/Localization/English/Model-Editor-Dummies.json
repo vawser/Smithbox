@@ -1,8 +1,8 @@
 {
   "Entries": [
-    { "Key": "MODEL_ToolWindow_View_Toggle_Dummies", "Text": "Dummies" },
+    { "Key": "MODEL_ToolWindow_View_Toggle_Dummies", "Text": "Dummy Polygons" },
 
-    { "Key": "MODEL_Dummy_Tool_Header", "Text": "Dummies" },
+    { "Key": "MODEL_Dummy_Tool_Header", "Text": "Dummy Polygons" },
     { "Key": "MODEL_Dummy_Tool_Hint", "Text": "Select dummies by reference ID, and change the IDs of many at once. Reference IDs are what TAE events, params and effects use to find a dummy. In Contents, type ref: and IDs (ref:200-299) in the filter to list those dummies." },
     { "Key": "MODEL_Dummy_Tool_No_Model", "Text": "Load a model to work on its dummies." },
     { "Key": "MODEL_Dummy_Tool_No_Dummies", "Text": "This model has no dummies." },

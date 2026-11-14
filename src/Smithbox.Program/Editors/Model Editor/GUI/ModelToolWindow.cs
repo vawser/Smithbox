@@ -46,7 +46,72 @@ public class ModelToolWindow
 
         Sections.Begin();
 
-        // Search
+        //********************************
+        // General
+        //********************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_History)
+        {
+            View.HistoryTool.OnToolWindow();
+        }
+
+        //********************************
+        // Authoring
+        //********************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Authoring"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_Dummies)
+        {
+            View.DummyTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_GrassBuilder && View.GrassBuilderTool.CanUse())
+        {
+            View.GrassBuilderTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_EdgeEditor && View.EdgeEditorTool.CanUse())
+        {
+            View.EdgeEditorTool.OnToolWindow();
+        }
+
+        //********************************
+        // Preview
+        //********************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));
+
+        if (CFG.Current.Interface_ModelEditor_Tool_DisplayRotation)
+        {
+            View.ModelDisplayRotationTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_Animation)
+        {
+            View.ModelAnimationTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_AssetBrowser)
+        {
+            if (ToolSections.Header($"{LOC.Get("MODEL_AssetBrowser_Header")}##modelAssetBrowserHeader"))
+            {
+                View.AssetBrowserTool.Display();
+            }
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_CharacterPreview)
+        {
+            View.ModelCharacterPreview.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
+        {
+            View.ModelMaskToggler.OnToolWindow();
+        }
+
+        //********************************
+        // Search & Edit
+        //********************************
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
         if (CFG.Current.Interface_ModelEditor_Tool_LocalSearch)
@@ -64,41 +129,29 @@ public class ModelToolWindow
             View.MassEditTool.OnToolWindow();
         }
 
-        // Actions
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
-
-        if (CFG.Current.Interface_ModelEditor_Tool_History)
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
         {
-            View.HistoryTool.OnToolWindow();
+            View.ModelInstanceFinder.OnToolWindow();
         }
 
-        // Editing
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
-
-        if (CFG.Current.Interface_ModelEditor_Tool_Dummies)
-        {
-            View.DummyTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_EdgeEditor && View.EdgeEditorTool.CanUse())
-        {
-            View.EdgeEditorTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_GrassBuilder && View.GrassBuilderTool.CanUse())
-        {
-            View.GrassBuilderTool.OnToolWindow();
-        }
-
-        // Data Transfer
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
+        //********************************
+        // Data
+        //********************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
 
         if (CFG.Current.Interface_ModelEditor_Tool_DataTransfer)
         {
             DataTransferTool.OnToolWindow();
         }
 
+        if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
+        {
+            View.ModelExportTool.OnToolWindow();
+        }
+
+        //********************************
         // Validation
+        //********************************
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
         if (CFG.Current.Interface_ModelEditor_Tool_VanillaCompare)
@@ -112,51 +165,9 @@ public class ModelToolWindow
             View.RenderSnapshotTool.OnToolWindow();
         }
 
-        // Assets
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Assets"));
-
-        if (CFG.Current.Interface_ModelEditor_Tool_AssetBrowser)
-        {
-            if (ToolSections.Header($"{LOC.Get("MODEL_AssetBrowser_Header")}##modelAssetBrowserHeader"))
-            {
-                View.AssetBrowserTool.Display();
-            }
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelInstanceFinder)
-        {
-            View.ModelInstanceFinder.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelExport)
-        {
-            View.ModelExportTool.OnToolWindow();
-        }
-
-        // Preview
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));
-
-        if (CFG.Current.Interface_ModelEditor_Tool_Animation)
-        {
-            View.ModelAnimationTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_CharacterPreview)
-        {
-            View.ModelCharacterPreview.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_ModelMaskToggler)
-        {
-            View.ModelMaskToggler.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_ModelEditor_Tool_DisplayRotation)
-        {
-            View.ModelDisplayRotationTool.OnToolWindow();
-        }
-
+        //********************************
         // Viewport
+        //********************************
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
 
         if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
@@ -169,7 +180,9 @@ public class ModelToolWindow
             View.ResourceListTool.Display("modelEditor", View.Universe);
         }
 
-        // Rendering: sets its own category, so it comes last
+        //********************************
+        // Rendering
+        //********************************
         if (CFG.Current.Interface_ModelEditor_Tool_ViewportRendering)
         {
             View.RenderingTool.OnToolWindow();

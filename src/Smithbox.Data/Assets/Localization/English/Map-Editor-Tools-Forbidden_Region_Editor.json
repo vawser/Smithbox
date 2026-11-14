@@ -1,6 +1,6 @@
 {
   "Entries": [
-    { "Key": "MAP_MfrEditor_Header", "Text": "Forbidden Region Editor" },
+    { "Key": "MAP_MfrEditor_Header", "Text": "Forbidden Regions" },
     { "Key": "MAP_ToolWindow_View_Toggle_Forbidden_Region_Editor", "Text": "Forbidden Region Editor" },
     { "Key": "MAP_MfrEditor_Unsupported_Game", "Text": "Only Elden Ring has forbidden region (.mfr) files." },
     { "Key": "MAP_MfrEditor_Hint", "Text": "Creates and edits a map's forbidden region boxes (its .mfr file). Inside a Save Limit box the game won't save the player's position; inside a Multiplay Limit box multiplayer is limited. The boxes are saved with the map." },

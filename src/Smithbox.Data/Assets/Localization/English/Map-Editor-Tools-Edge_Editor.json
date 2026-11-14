@@ -1,6 +1,6 @@
 {
   "Entries": [
-    { "Key": "MAP_EdgeEditor_Header", "Text": "EDGE Editor" },
+    { "Key": "MAP_EdgeEditor_Header", "Text": "Edges" },
     { "Key": "MAP_ToolWindow_View_Toggle_Edge_Editor", "Text": "EDGE Editor" },
     { "Key": "MAP_EdgeEditor_Unsupported_Game", "Text": "EDGE files are only used by Sekiro." },
     { "Key": "MAP_EdgeEditor_Hint", "Text": "Edit the grapple points, hangable ledges and huggable walls of a collision. Each collision's EDGE file is in its map's edgebhd, and its points are relative to the collision part." },

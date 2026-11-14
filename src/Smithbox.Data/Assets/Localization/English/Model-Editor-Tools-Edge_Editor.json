@@ -1,6 +1,6 @@
 {
   "Entries": [
-    { "Key": "MODEL_EdgeEditor_Header", "Text": "EDGE Editor" },
+    { "Key": "MODEL_EdgeEditor_Header", "Text": "Edges" },
     { "Key": "MODEL_ToolWindow_View_Toggle_Edge_Editor", "Text": "EDGE Editor" },
     { "Key": "MODEL_EdgeEditor_Hint", "Text": "Edit the grapple points, hangable ledges and huggable walls of the loaded object. An object's EDGE file is in its objbnd, and its points are in the object's own space." },
     { "Key": "MODEL_EdgeEditor_Show_Points_TT", "Text": "Turn on the EDGE Points filter, which draws the loaded model's EDGE file in the viewport." },

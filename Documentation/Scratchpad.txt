@@ -24,4 +24,32 @@ Analyze the X for bugs and recommendations for functionality improvements
     - ESD Editor
     - File Browser
     
+- General
+    - Edit History
+    
+- Authoring
+    - Dummy Polygons
+    - Grass
+    - Edges
+    
+- Preview
+    - Display Carousel
+    - Animation Browser
+    - Model Browser
+    - Character Preview
+    - Model Masks
+    
+- Search & Edit
+    - Local Search
+    - Global Search
+    - Mass Edit
+    - Model Instance Finder
+    
+- Data
+    - Data Transfer 
+    - Model Export
+    
+- Validation
+    - Vanilla Comparison
+    - Render Snapshots
     

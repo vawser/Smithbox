@@ -1,6 +1,6 @@
 {
   "Entries": [
-    { "Key": "MAP_ToolWindow_History", "Text": "History" },
+    { "Key": "MAP_ToolWindow_History", "Text": "Edit History" },
 
     { "Key": "MAP_History_Menu_History", "Text": "History" },
     { "Key": "MAP_History_Menu_History_TT", "Text": "Opens the History tool, which lists the steps that can be undone and redone, and which maps each one changed." },

@@ -86,14 +86,6 @@ public class MapToolWindow
                 }
 
                 ///--------------------
-                /// Entity ID Checker
-                ///--------------------
-                if (View.Editor.Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-                {
-                    View.EntityIdCheckAction.OnToolMenu();
-                }
-
-                ///--------------------
                 /// Name Map Objects
                 ///--------------------
                 // Tool for AC6 since its maps come with unnamed Regions and Events
@@ -124,111 +116,32 @@ public class MapToolWindow
 
         Sections.Begin();
 
-        // Create: tools that add new map objects
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Create"));
+        //*****************************
+        // General
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
 
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Create, "MAP_ToolWindow_Create", "mapCreateSection", View.CreateAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Duplicate, "MAP_ToolWindow_Duplicate", "mapDuplicateSection", View.DuplicateAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_DuplicateToMap, "MAP_ToolWindow_Duplicate_To_Map", "mapDuplicateToMapSection", View.DuplicateToMapAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Replicate, "MAP_ToolWindow_Replicate", "mapReplicateSection", View.ReplicateAction.OnToolWindow);
-
-        // Transform: tools that change the position, rotation or scale of the selection
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Transform"));
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Translate, "MAP_ToolWindow_Translate", "mapTranslateSection", View.TranslateAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Rotate, "MAP_ToolWindow_Rotate", "mapRotateSection", View.RotateAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_PullToCamera, "MAP_ToolWindow_Pull_To_Camera", "mapPullToCameraSection", View.PullToCameraAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_SnapToMesh, "MAP_ToolWindow_Snap_To_Mesh", "mapSnapToMeshSection", View.SnapToMeshAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Scramble, "MAP_ToolWindow_Scramble", "mapScrambleSection", View.ScrambleAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_ResetTransform, "MAP_ToolWindow_Reset_Transform", "mapResetTransformSection", PropertiesActionTool.DisplayResetTransform);
-
-        // Actions: property writes and selection changes
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Actions"));
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Properties_Action, "MAP_ToolWindow_Property_Actions", "mapPropertyActionsSection", PropertiesActionTool.Display);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_Select_Action, "MAP_ToolWindow_Selection", "mapSelectionSection", SelectActionTool.Display);
-
-        // Draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_SelectionGroups)
+        if (CFG.Current.Interface_MapEditor_Tool_Ruler)
         {
-            View.SelectionGroupsTool.OnToolWindow();
+            if (ToolSections.Header($"{LOC.Get("MAP_Ruler_Header")}##rulerToolHeader"))
+            {
+                View.RulerTool.OnToolWindow();
+            }
         }
 
-        // Draws its own header and section
         if (CFG.Current.Interface_MapEditor_Tool_History)
         {
             View.HistoryTool.OnToolWindow();
         }
 
-        // Search & Edit
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_ViewportFilters, "MAP_ToolWindow_Viewport_Filters", "mapViewportFiltersSection", View.ViewportFiltersAction.OnToolWindow);
 
-        // Each draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_LocalSearch)
-        {
-            View.LocalSearchTool.OnToolWindow();
-        }
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_LowDetail, "MAP_ToolWindow_Low_Detail", "mapLowDetailSection", View.LowDetailVisibilityAction.OnToolWindow);
 
-        if (CFG.Current.Interface_MapEditor_Tool_GlobalSearch)
-        {
-            View.GlobalSearchTool.OnToolWindow();
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_MassEdit)
-        {
-            View.MassEditTool.OnToolWindow();
-        }
-
-        // Browse
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
-
-        if (CFG.Current.Interface_MapEditor_Tool_Animation)
-        {
-            if (ToolSections.Header("Animation Browser"))
-            {
-                View.MapAnimationTool.OnToolWindow();
-            }
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_ModelBrowser)
-        {
-            if (ToolSections.Header("Model Browser"))
-            {
-                View.ModelBrowserTool.OnToolWindow();
-            }
-        }
-
-        if (CFG.Current.Interface_MapEditor_Tool_Prefab)
-        {
-            if (ToolSections.Header("Prefabs"))
-            {
-                View.PrefabTool.OnToolWindow();
-            }
-        }
-
-        // Data Transfer
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data_Transfer"));
-
-        // Draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_MapExtraction)
-        {
-            View.MapExtractionTool.OnToolWindow();
-        }
-
-        // Draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_TextureTransfer && View.TextureTransferTool.CanUse())
-        {
-            View.TextureTransferTool.OnToolWindow();
-        }
-
-        // Draws its own header and section
-        if (CFG.Current.Interface_MapEditor_Tool_PartTransfer && View.PartTransferTool.CanUse())
-        {
-            View.PartTransferTool.OnToolWindow();
-        }
-
-        // Map Data
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Map_Data"));
+        //*****************************
+        // Authoring
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Authoring"));
 
         if (CFG.Current.Interface_MapEditor_Tool_CollisionEditor && View.CollisionEditorTool.CanUse())
         {
@@ -248,7 +161,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_DestructionGeneration && View.DestructionGenerationTool.CanUse())
         {
-            if (ToolSections.Header(View.DestructionGenerationTool.Title))
+            if (ToolSections.Header($"{LOC.Get("MAP_DestructableAssets_Header")}##destructableAssetsHeader"))
             {
                 View.DestructionGenerationTool.OnToolWindow();
             }
@@ -256,7 +169,7 @@ public class MapToolWindow
 
         if (CFG.Current.Interface_MapEditor_Tool_WallPaint && View.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
-            if (ToolSections.Header("Wall Painting"))
+            if (ToolSections.Header($"{LOC.Get("MAP_WallEditor_Header")}##wallEditorHeader"))
             {
                 View.WallPaintTool.OnToolWindow();
             }
@@ -278,81 +191,48 @@ public class MapToolWindow
             }
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_LoadList)
-        {
-            if (ToolSections.Header("Load Lists"))
-            {
-                View.LoadListTool.OnToolWindow();
-            }
-        }
-
         if (CFG.Current.Interface_MapEditor_Tool_EntryFileList && View.EntryFileListTool.CanUse())
         {
-            if (ToolSections.Header("Entry File Lists"))
+            if (ToolSections.Header($"{LOC.Get("MAP_EntryFileLists_Header")}##entryFileListsHeader"))
             {
                 View.EntryFileListTool.OnToolWindow();
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_LoadList)
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_LoadLists_Header")}##loadListsHeader"))
+            {
+                View.LoadListTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_PartsTokenIdList && View.PartsTokenIdListTool.CanUse())
         {
-            if (ToolSections.Header("Parts Token ID Lists"))
+            if (ToolSections.Header($"{LOC.Get("MAP_PartTokenLists_Header")}##partTokenListsHeader"))
             {
                 View.PartsTokenIdListTool.OnToolWindow();
             }
         }
 
-        // Validation
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
+        //*****************************
+        // Preview
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Preview"));
 
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_MsbValidation, "MAP_ToolWindow_Msb_Validation", "mapMsbValidationSection", View.MapValidatorTool.OnToolWindow);
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_VanillaCompare, "MAP_ToolWindow_Vanilla_Compare", "mapVanillaCompareSection", View.VanillaCompareTool.OnToolWindow);
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_EntityIds && !(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S),
-            "MAP_ToolWindow_Entity_Ids", "mapEntityIdsSection", View.EntityIdentifierTool.OnToolWindow);
-
-        if (CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds && View.IrradianceVolumeBank.CanUse())
+        if (CFG.Current.Interface_MapEditor_Tool_Animation)
         {
-            // The Viewport Rendering section's Global Illumination tab asks for this tool
-            if (View.IrradianceVolumeIdTool.FocusRequested)
+            if (ToolSections.Header($"{LOC.Get("MAP_AnimationBrowser_Header")}##animationBrowserHeader"))
             {
-                ToolSections.Focus();
-                View.IrradianceVolumeIdTool.FocusRequested = false;
-            }
-
-            ActionSection(true, "MAP_GI_Tool_Tab", "mapIrradianceVolumeIdsSection", View.IrradianceVolumeIdTool.OnToolWindow);
-        }
-
-        // Game Memory: tools that act on the running game
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_WorldReloader && View.WorldReloaderTool.CanUse(),
-            "MAP_WorldReloader_Header", "mapWorldReloaderSection", View.WorldReloaderTool.OnToolWindow);
-
-        // Viewport
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
-
-        // Editor-only visibility: these change what the viewport draws, not the map data
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_ViewportFilters, "MAP_ToolWindow_Viewport_Filters", "mapViewportFiltersSection", View.ViewportFiltersAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_EditorVisibility, "MAP_ToolWindow_Editor_Visibility", "mapEditorVisibilitySection", View.EditorVisibilityAction.OnToolWindow);
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_LowDetail, "MAP_ToolWindow_Low_Detail", "mapLowDetailSection", View.LowDetailVisibilityAction.OnToolWindow);
-
-        ActionSection(CFG.Current.Interface_MapEditor_Tool_DisplayGroups, "MAP_DisplayGroups_Header", "mapDisplayGroupsSection", View.DisplayGroupTool.OnToolWindow);
-
-        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
-        {
-            if (ToolSections.Header("Detection Visualization"))
-            {
-                View.EnemyAIVisualizationTool.OnToolWindow();
+                View.MapAnimationTool.OnToolWindow();
             }
         }
 
-        if (CFG.Current.Interface_MapEditor_Tool_Ruler)
+        if (CFG.Current.Interface_MapEditor_Tool_ModelBrowser)
         {
-            if (ToolSections.Header($"{LOC.Get("MAP_Ruler_Header")}##rulerToolHeader"))
+            if (ToolSections.Header($"{LOC.Get("MAP_ModelBrowser_Header")}##modelBrowserHeader"))
             {
-                View.RulerTool.OnToolWindow();
+                View.ModelBrowserTool.OnToolWindow();
             }
         }
 
@@ -364,6 +244,146 @@ public class MapToolWindow
             }
         }
 
+        //*****************************
+        // Creation
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Creation"));
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Create, "MAP_ToolWindow_Create", "mapCreateSection", View.CreateAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Duplicate, "MAP_ToolWindow_Duplicate", "mapDuplicateSection", View.DuplicateAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_DuplicateToMap, "MAP_ToolWindow_Duplicate_To_Map", "mapDuplicateToMapSection", View.DuplicateToMapAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Replicate, "MAP_ToolWindow_Replicate", "mapReplicateSection", View.ReplicateAction.OnToolWindow);
+
+        if (CFG.Current.Interface_MapEditor_Tool_Prefab)
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_Prefabs_Header")}##prefabsToolHeader"))
+            {
+                View.PrefabTool.OnToolWindow();
+            }
+        }
+
+        //*****************************
+        // Transform
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Transform"));
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Translate, "MAP_ToolWindow_Translate", "mapTranslateSection", View.TranslateAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Rotate, "MAP_ToolWindow_Rotate", "mapRotateSection", View.RotateAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_PullToCamera, "MAP_ToolWindow_Pull_To_Camera", "mapPullToCameraSection", View.PullToCameraAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_SnapToMesh, "MAP_ToolWindow_Snap_To_Mesh", "mapSnapToMeshSection", View.SnapToMeshAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Scramble, "MAP_ToolWindow_Scramble", "mapScrambleSection", View.ScrambleAction.OnToolWindow);
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_ResetTransform, "MAP_ToolWindow_Reset_Transform", "mapResetTransformSection", PropertiesActionTool.DisplayResetTransform);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_EditorVisibility, "MAP_ToolWindow_Editor_Visibility", "mapEditorVisibilitySection", View.EditorVisibilityAction.OnToolWindow);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_DisplayGroups, "MAP_DisplayGroups_Header", "mapDisplayGroupsSection", View.DisplayGroupTool.OnToolWindow);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Properties_Action, "MAP_ToolWindow_Property_Actions", "mapPropertyActionsSection", PropertiesActionTool.Display);
+
+        //*****************************
+        // Selection
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Selection"));
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_Select_Action, "MAP_ToolWindow_Selection", "mapSelectionSection", SelectActionTool.Display);
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_SelectionGroups)
+        {
+            View.SelectionGroupsTool.OnToolWindow();
+        }
+
+        //*****************************
+        // Search & Edit
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
+
+        // Each draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_LocalSearch)
+        {
+            View.LocalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_GlobalSearch)
+        {
+            View.GlobalSearchTool.OnToolWindow();
+        }
+
+        if (CFG.Current.Interface_MapEditor_Tool_MassEdit)
+        {
+            View.MassEditTool.OnToolWindow();
+        }
+
+        //*****************************
+        // Data
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_MapExtraction)
+        {
+            View.MapExtractionTool.OnToolWindow();
+        }
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_PartTransfer && View.PartTransferTool.CanUse())
+        {
+            View.PartTransferTool.OnToolWindow();
+        }
+
+        // Draws its own header and section
+        if (CFG.Current.Interface_MapEditor_Tool_TextureTransfer && View.TextureTransferTool.CanUse())
+        {
+            View.TextureTransferTool.OnToolWindow();
+        }
+
+        //*****************************
+        // Validation
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
+
+        // Save Check does this now
+        //ActionSection(CFG.Current.Interface_MapEditor_Tool_MsbValidation, "MAP_ToolWindow_Msb_Validation", "mapMsbValidationSection", View.MapValidatorTool.OnToolWindow);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_VanillaCompare, "MAP_ToolWindow_Vanilla_Compare", "mapVanillaCompareSection", View.VanillaCompareTool.OnToolWindow);
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_EntityIds && !(View.Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S),
+            "MAP_ToolWindow_Entity_Ids", "mapEntityIdsSection", View.EntityIdentifierTool.OnToolWindow);
+
+        if (CFG.Current.Interface_MapEditor_Tool_EnemyAIVisualization)
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_AI_Visualization_Header")}##aiVisToolHeader"))
+            {
+                View.EnemyAIVisualizationTool.OnToolWindow();
+            }
+        }
+
+        //if (CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds && View.IrradianceVolumeBank.CanUse())
+        //{
+        //    // The Viewport Rendering section's Global Illumination tab asks for this tool
+        //    if (View.IrradianceVolumeIdTool.FocusRequested)
+        //    {
+        //        ToolSections.Focus();
+        //        View.IrradianceVolumeIdTool.FocusRequested = false;
+        //    }
+
+        //    ActionSection(true, "MAP_GI_Tool_Tab", "mapIrradianceVolumeIdsSection", View.IrradianceVolumeIdTool.OnToolWindow);
+        //}
+
+        //*****************************
+        // Game Memory
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        ActionSection(CFG.Current.Interface_MapEditor_Tool_WorldReloader && View.WorldReloaderTool.CanUse(),
+            "MAP_WorldReloader_Header", "mapWorldReloaderSection", View.WorldReloaderTool.OnToolWindow);
+
+        //*****************************
+        // Viewport
+        //*****************************
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));
+
+
         if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
         {
             View.GridTool.OnToolWindow();
@@ -373,7 +393,10 @@ public class MapToolWindow
         {
             View.ResourceListTool.Display("mapEditor", View.Universe);
         }
-        // Rendering: sets its own category, so it comes last
+
+        //*****************************
+        // Rendering
+        //*****************************
         if (CFG.Current.Interface_MapEditor_Tool_ViewportRendering)
         {
             View.RenderingTool.OnToolWindow();

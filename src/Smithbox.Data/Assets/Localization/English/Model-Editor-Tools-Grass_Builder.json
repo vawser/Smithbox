@@ -1,6 +1,6 @@
 {
   "Entries": [
-    { "Key": "MODEL_GrassBuilder_Header", "Text": "GRASS Builder" },
+    { "Key": "MODEL_GrassBuilder_Header", "Text": "Grass" },
     { "Key": "MODEL_ToolWindow_View_Toggle_Grass_Builder", "Text": "GRASS Builder" },
     { "Key": "MODEL_GrassBuilder_Unsupported_Game", "Text": "GRASS files are used by Sekiro, Elden Ring, Armored Core VI and Nightreign." },
     { "Key": "MODEL_GrassBuilder_Hint", "Text": "Give the loaded map piece or asset a GRASS file, built from its meshes. The game grows dynamic grass on the GRASS mesh, using the density of each vertex in six slots. The part in the MSB picks the grass type of each slot (its six GrassTypeParam IDs)." },
