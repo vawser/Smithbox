@@ -29,14 +29,9 @@
 //     c_blendFromRecipe    -> worked out as the game's shader does, see ComputeRecipeWeights
 //     otherwise            -> vertex color, channels a, r, g
 
-#define GAME_DES 1
-#define GAME_DS1_PTDE 2
-#define GAME_DS1_REMASTER 3
-#define GAME_DS2 4
-#define GAME_BLOODBORNE 6
-#define GAME_DS3 5
-#define GAME_SEKIRO 7
-layout (constant_id = 0) const int c_gameID = GAME_DS3;
+// The game (constant 0) and its family
+#include "../GameFamily.glsl"
+
 #ifdef MATERIAL_BLEND
 layout (constant_id = 1) const bool c_blendNormal = false;
 layout (constant_id = 2) const bool c_blendSpecular = false;
@@ -948,7 +943,7 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
 	float NdotH = clamp(dot(H, s.N), 0.0, 1.0);
 
 	// traditional phong model
-	if (c_gameID == GAME_DES || c_gameID == GAME_DS1_PTDE)
+	if (c_isLegacy)
 	{
 		vec3 diffuse = s.diffuse * LdotN;
 		// no highlight on the side facing away from the light
@@ -1401,7 +1396,7 @@ vec3 IndirectLight(Surface s)
 	ambientDiffuse *= sceneparam.ambientLightMult;
 
 	// traditional phong model
-	if (c_gameID == GAME_DES || c_gameID == GAME_DS1_PTDE)
+	if (c_isLegacy)
 	{
 		// A DES map material's HemEnv lighting: the env cubemaps on top of the hemisphere, the specular one through the
 		// specular map. A lightmap, where there is one, already is the light from around, so the diffuse env is left out.
@@ -2091,7 +2086,7 @@ void main()
 	}
 
 	float roughness;
-	if (c_gameID == GAME_BLOODBORNE || c_gameID == GAME_DS1_PTDE || c_gameID == GAME_DS2)
+	if (c_roughnessFromShininess)
 	{
 #ifdef MATERIAL_BLEND
 		vec3 shininessColor = SampleLayered(ROW_SHININESS, c_blendShininess).xyz;

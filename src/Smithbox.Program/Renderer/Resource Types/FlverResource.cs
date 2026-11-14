@@ -626,6 +626,8 @@ public class FlverResource : IResource, IDisposable
         MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
+        // The Transitional family; the shader reads this row as roughness for them (GameFamily.glsl,
+        // c_roughnessFromShininess), so keep the two lists in step
         var glossInSpecular = curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2;
 
         MaterialTextureRoute route = MaterialBinding.Route(dest.Definition, texType, dest.MetallicType, glossInSpecular);
