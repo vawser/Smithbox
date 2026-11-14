@@ -485,6 +485,7 @@ public class VulkanViewport : IViewport
         if (Owner is MapUniverse tileUniverse)
         {
             tileUniverse.View.TileOutlineTool.Update(this);
+            tileUniverse.View.ForbiddenRegionTool.Update(this);
         }
 
         // And placing a point in the Create tool's Create at Point tab

@@ -129,6 +129,9 @@ public class MapListView : IActionEventHandler
             // Tile outlines in the viewport
             View.TileOutlineTool.DisplayHeaderButton();
 
+            // Forbidden region (.mfr) boxes in the viewport
+            View.ForbiddenRegionTool.DisplayHeaderButton();
+
             if(FilteredMapList.Count > 0)
             {
                 ImGui.SameLine();

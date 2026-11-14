@@ -30,8 +30,6 @@ public static class EditorFilters
         ImGui.EndChild();
     }
 
-    public static bool SearchMinimized = false;
-
     public static void DisplaySearchbar(string id, ref string input, ref bool exactBool)
     {
         ImGui.Checkbox($"##{id}_listFilter_exactMatch", ref exactBool);
@@ -41,11 +39,11 @@ public static class EditorFilters
         if (CFG.Current.Interface_Display_Searchbar_Minimize)
         {
             ImGui.SameLine();
-            if (SearchMinimized)
+            if (CFG.Current.Interface_Searchbar_Fixed_Width)
             {
                 if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
                 {
-                    SearchMinimized = false;
+                    CFG.Current.Interface_Searchbar_Fixed_Width = false;
                 }
                 GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
             }
@@ -53,7 +51,7 @@ public static class EditorFilters
             {
                 if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
                 {
-                    SearchMinimized = true;
+                    CFG.Current.Interface_Searchbar_Fixed_Width = true;
                 }
                 GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
             }
@@ -61,7 +59,10 @@ public static class EditorFilters
 
         ImGui.SameLine();
 
-        if(SearchMinimized)
+        // Only use the fixed width while the toggle is shown, so hiding the
+        // buttons can never leave the searchbar stuck at the small size.
+        if (CFG.Current.Interface_Display_Searchbar_Minimize
+            && CFG.Current.Interface_Searchbar_Fixed_Width)
             ImGui.SetNextItemWidth(80f * DPI.UIScale());
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);

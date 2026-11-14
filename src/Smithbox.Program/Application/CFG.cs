@@ -178,6 +178,7 @@ public class CFG
     // Editor Presentation
     public bool Interface_Display_Title_Headers = false;
     public bool Interface_Display_Searchbar_Minimize = true;
+    public bool Interface_Searchbar_Fixed_Width = true;
 
     public EditorDisplayType Interface_MapEditor_EditorDisplayType = EditorDisplayType.Windows;
     public EditorDisplayType Interface_ModelEditor_EditorDisplayType = EditorDisplayType.Windows;
@@ -203,6 +204,13 @@ public class CFG
     public Vector3 MapEditor_Tile_Outline_Small_Color = new Vector3(60, 200, 255);
     public Vector3 MapEditor_Tile_Outline_Medium_Color = new Vector3(255, 210, 60);
     public Vector3 MapEditor_Tile_Outline_Large_Color = new Vector3(235, 90, 200);
+
+    // Forbidden regions (ER .mfr boxes): toggled in the Map List header, per-type visibility and colours (0-255)
+    public bool MapEditor_Display_Forbidden_Regions = false;
+    public bool MapEditor_Forbidden_Region_Show_Save_Limit = true;
+    public bool MapEditor_Forbidden_Region_Show_Multiplay_Limit = true;
+    public Vector3 MapEditor_Forbidden_Region_Save_Limit_Color = new Vector3(255, 80, 60);
+    public Vector3 MapEditor_Forbidden_Region_Multiplay_Limit_Color = new Vector3(170, 100, 255);
 
     public bool MapEditor_Map_Contents_Display_Character_Aliases = true;
     public bool MapEditor_Map_Contents_Display_Asset_Aliases = true;

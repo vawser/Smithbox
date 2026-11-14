@@ -361,6 +361,30 @@
       "Text": "Large tile (_02, 1024 m)"
     },
     {
+      "Key": "MAP_Forbidden_Region_Show_TT",
+      "Text": "Show forbidden regions: the boxes from each loaded map's .mfr file. Inside a Save Limit box the game won't save the player's position; inside a Multiplay Limit box multiplayer is limited.\n\nThese boxes aren't MSB entries: they are display only.\n\nRight-click to pick which types to show and their colours."
+    },
+    {
+      "Key": "MAP_Forbidden_Region_Hide_TT",
+      "Text": "Hide forbidden regions.\n\nRight-click to pick which types to show and their colours."
+    },
+    {
+      "Key": "MAP_Forbidden_Region_Options_Header",
+      "Text": "Forbidden Regions"
+    },
+    {
+      "Key": "MAP_Forbidden_Region_Save_Limit",
+      "Text": "Save Limit"
+    },
+    {
+      "Key": "MAP_Forbidden_Region_Multiplay_Limit",
+      "Text": "Multiplay Limit"
+    },
+    {
+      "Key": "MAP_Forbidden_Region_Read_Failed",
+      "Text": "Failed to read forbidden regions: {0}"
+    },
+    {
       "Key": "MAP_List_Load_Adjacent",
       "Text": "Load Adjacent"
     },
