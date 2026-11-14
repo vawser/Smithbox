@@ -443,6 +443,38 @@ public static class RenderableHelper
         return GetEdgeFillProxy(scene, _regionSolidCylinder);
     }
 
+    /// <summary>
+    /// The wireframe of an EDGE marker in a colour (0-255 per channel): a sphere, or a cylinder for ledges, walls and
+    /// pull lines. Drawn over the geometry when <paramref name="overlay"/> is set (the EDGE Editor's selected entry).
+    /// </summary>
+    public static DebugPrimitiveRenderableProxy GetEdgeMarkerWireProxy(RenderScene scene, bool cylinder, Vector3 color, bool overlay)
+    {
+        var tint = ColorHelper.GetTransparencyColor(color / 255.0f, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, cylinder ? _regionCylinder : _regionPoint);
+
+        r.Pickable = false;
+        r.BaseColor = tint;
+        r.HighlightedColor = tint;
+
+        if (overlay)
+        {
+            r.RenderOverlay = true;
+        }
+
+        return r;
+    }
+
+    /// <summary>The translucent fill of an EDGE marker, see <see cref="GetEdgeMarkerWireProxy"/>.</summary>
+    public static DebugPrimitiveRenderableProxy GetEdgeMarkerFillProxy(RenderScene scene, bool cylinder, Vector3 color)
+    {
+        DebugPrimitiveRenderableProxy r = GetRegionFillProxy(scene, cylinder ? _regionSolidCylinder : _regionSolidPoint, color / 255.0f);
+
+        r.Visible = true;
+
+        return r;
+    }
+
     private static DebugPrimitiveRenderableProxy GetEdgeWireProxy(RenderScene scene, IDbgPrim prim)
     {
         var color = ColorHelper.GetTransparencyColor(Color.Cyan, CFG.Current.GFX_Renderable_Default_Wireframe_Alpha);

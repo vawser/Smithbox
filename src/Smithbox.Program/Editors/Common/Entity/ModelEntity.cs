@@ -297,6 +297,13 @@ public class ModelEntity : Entity
     {
         Matrix4x4 m = GetModelMatrix();
 
+        // A map EDGE file and the collision drawn for it are in the collision part's space, placed into the map
+        // piece's by the MSB
+        if (Type is ModelEntityType.EDGE && Container is ModelContainer edgeContainer)
+        {
+            m = edgeContainer.EdgeSpace * m;
+        }
+
         if (Container is ModelContainer root && root.RootObject != null && this != root.RootObject)
         {
             m *= root.DisplayMatrix;

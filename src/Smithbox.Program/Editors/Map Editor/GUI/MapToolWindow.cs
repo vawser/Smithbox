@@ -262,6 +262,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_EdgeEditor && View.EdgeEditorTool.CanUse())
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_EdgeEditor_Header")}##edgeEditorHeader"))
+            {
+                View.EdgeEditorTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_LoadList)
         {
             if (ToolSections.Header("Load Lists"))
@@ -531,6 +539,16 @@ public class MapToolWindow
                     CFG.Current.Interface_MapEditor_Tool_WallPaint = !CFG.Current.Interface_MapEditor_Tool_WallPaint;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_WallPaint);
+            }
+
+            // EDGE Editor
+            if (View.EdgeEditorTool.CanUse())
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Edge_Editor")}##edgeEditorToolToggle"))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_EdgeEditor = !CFG.Current.Interface_MapEditor_Tool_EdgeEditor;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EdgeEditor);
             }
 
             // Collision Editor

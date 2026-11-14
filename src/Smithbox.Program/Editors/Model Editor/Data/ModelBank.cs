@@ -2,8 +2,18 @@
 using Havok.Shared;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
+using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
+
+/// <summary>
+/// A map piece part that places the map piece in the map, paired with the collision part whose EDGE file the map
+/// piece shows. <see cref="CollisionToModel"/> carries a point of the EDGE file (collision space) into the map
+/// piece's model space: collision part world × map piece part world⁻¹.
+/// </summary>
+public record EdgePlacement(string MapPiecePartName, string CollisionPartName, Matrix4x4 CollisionToModel);
 
 public class ModelBank : IDisposable
 {
@@ -450,10 +460,43 @@ public class ModelWrapper
     private string GRASS_FileName;
     private string EDGE_FileName;
 
-    // Sekiro map pieces keep their EDGE file in the edgebhd/edgebdt of their map rather than in their mapbnd,
-    // under the same name as the map piece (m11_00_00_00_000200.edge.dcx for m11_00_00_00_000200)
+    // The edgebhd/edgebdt of a Sekiro map holds the EDGE file of each collision, named with the collision's number
+    // (m11_00_00_00_000200.edge.dcx for h000200). A map piece with the same number shows it, read-only.
     private bool EDGE_InMapBinder;
-    private DCX.Type EDGE_Compression = DCX.Type.DCX_KRAK;
+
+    /// <summary>
+    /// Whether the EDGE file is a map one, whose points are relative to the collision part with the same ID rather
+    /// than to this map piece. The two parts are almost never placed alike (EdgeSurvey values: 3 of 141).
+    /// </summary>
+    public bool EdgeInCollisionSpace => EDGE_InMapBinder && EDGE != null;
+
+    /// <summary>
+    /// The collision model the EDGE file belongs to, as the MSB names it (h000200 for m11_00_00_00_000200)
+    /// </summary>
+    public string EdgeCollisionModelName => $"h{GetMapPieceId()}";
+
+    /// <summary>
+    /// The ways the MSB places this map piece relative to the EDGE's collision: one per map piece part. Null until
+    /// worked out on the first load into a view; empty when the MSB has no such pair.
+    /// </summary>
+    public List<EdgePlacement> EdgePlacements { get; private set; }
+
+    /// <summary>
+    /// Which of <see cref="EdgePlacements"/> the viewport uses
+    /// </summary>
+    public int EdgePlacementIndex { get; set; }
+
+    /// <summary>
+    /// Carries the EDGE file's points into this model's space. Identity for object EDGEs, and for map EDGEs whose
+    /// placement isn't known (then the collision and the points still line up with each other).
+    /// </summary>
+    public Matrix4x4 EdgeSpace =>
+        EdgeInCollisionSpace && EdgePlacements != null && EdgePlacementIndex >= 0 && EdgePlacementIndex < EdgePlacements.Count
+            ? EdgePlacements[EdgePlacementIndex].CollisionToModel
+            : Matrix4x4.Identity;
+
+    // m11_00_00_00_000200 -> 000200
+    private string GetMapPieceId() => Name.Substring(Name.LastIndexOf('_') + 1);
 
     /// <summary>
     /// Load the model into a view. Use <see cref="ModelEditorView.LoadModel"/>, which also handles the selection and
@@ -477,6 +520,12 @@ public class ModelWrapper
             LoadFromStorage();
 
             ResetMeshSourceIndices();
+        }
+
+        // Read here rather than with the files, so tools that only edit the files (the mass edit) don't read the MSB
+        if (EdgeInCollisionSpace && EdgePlacements == null)
+        {
+            ResolveEdgePlacements();
         }
 
         // FLVER
@@ -552,12 +601,16 @@ public class ModelWrapper
     private string GetMapEdgeBdtPath() => $"/map/{Parent.MapID}/{Parent.MapID}.edgebdt";
 
     /// <summary>
-    /// Sekiro map pieces have their EDGE file in the edgebhd/edgebdt of their map, named after the map piece.
-    /// The same file is the one the Map Editor shows on the collision with that ID, as the two share their ID.
+    /// Reads the EDGE file of the collision with this map piece's number from the map's edgebhd/edgebdt, for display
+    /// only. Its points lie on that collision (EdgeSurvey placement: 0.1% on the same-number map piece), and it is
+    /// edited in the Map Editor, so it is never saved from here.
     /// </summary>
     private void LoadMapPieceEdge()
     {
         EDGE_InMapBinder = false;
+
+        // The MSB may have moved the parts since the last read
+        EdgePlacements = null;
 
         if (!IsSekiroMapPiece())
             return;
@@ -583,12 +636,11 @@ public class ModelWrapper
             if (file == null)
                 return;
 
-            var data = DCX.Decompress(file.Bytes, out var compression);
+            var data = DCX.Decompress(file.Bytes);
 
             EDGE = EDGE.Read(data);
             EDGE_FileName = null;
             EDGE_InMapBinder = true;
-            EDGE_Compression = compression;
         }
         catch (Exception e)
         {
@@ -608,55 +660,69 @@ public class ModelWrapper
     }
 
     /// <summary>
-    /// Writes the map piece's EDGE file back into the edgebhd/edgebdt of its map. The other files of the map are left
-    /// as they are (the binder round trips byte for byte, checked by Claude/Tools/EdgeSurvey).
-    /// Returns false if it couldn't be written.
+    /// Works out where the EDGE's collision sits relative to this map piece, from the parts of the map's MSB (as
+    /// stored: unsaved Map Editor moves aren't seen). Each map piece part of this model gives one placement, paired
+    /// with the first collision part of the collision model.
     /// </summary>
-    private bool SaveMapPieceEdge()
+    private void ResolveEdgePlacements()
     {
-        if (!EDGE_InMapBinder || EDGE == null)
-            return true;
-
-        var bhdPath = GetMapEdgeBhdPath();
-        var bdtPath = GetMapEdgeBdtPath();
+        EdgePlacements = new();
+        EdgePlacementIndex = 0;
 
         try
         {
-            var bhdData = Parent.TargetFS.ReadFile(bhdPath);
-            var bdtData = Parent.TargetFS.ReadFile(bdtPath);
+            var entry = Parent.Project.Locator.MapFiles.Entries.FirstOrDefault(e => e.Filename == Parent.MapID);
 
-            if (bhdData == null || bdtData == null)
+            if (entry == null)
+                return;
+
+            var data = Parent.Project.VFS.FS.ReadFile(entry.Path);
+
+            if (data == null)
+                return;
+
+            var msb = MSBS.Read(data.Value);
+
+            var id = GetMapPieceId();
+            var collision = msb.Parts.Collisions.FirstOrDefault(p =>
+                string.Equals(p.ModelName, $"h{id}", StringComparison.OrdinalIgnoreCase));
+
+            if (collision == null)
+                return;
+
+            var collisionWorld = GetPartWorld(collision);
+
+            foreach (var piece in msb.Parts.MapPieces.Where(p =>
+                         string.Equals(p.ModelName, $"m{id}", StringComparison.OrdinalIgnoreCase)))
             {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath));
-                return false;
+                if (!Matrix4x4.Invert(GetPartWorld(piece), out var toPiece))
+                    continue;
+
+                EdgePlacements.Add(new EdgePlacement(piece.Name, collision.Name, collisionWorld * toPiece));
             }
-
-            using var binder = BXF4.Read(bhdData.Value, bdtData.Value);
-
-            var file = binder.Files.FirstOrDefault(e => IsMapPieceEdgeFile(e.Name));
-
-            if (file == null)
-            {
-                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath));
-                return false;
-            }
-
-            file.Bytes = DCX.Compress(EDGE.Write(), EDGE_Compression);
-
-            binder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
-
-            Parent.Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
-            Parent.Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
-
-            Smithbox.Log(this, LOC.Get("MODEL_Data_Write_EDGE_Log", $"{bhdPath} ({file.Name})"));
-            return true;
         }
         catch (Exception e)
         {
-            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath), e);
-            return false;
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_Edge_Placement", Parent.MapID), e);
         }
     }
+
+    /// <summary>
+    /// A Sekiro part's world matrix, built as the Map Editor builds it: degrees, Y·Z·X order, scale then rotation then
+    /// translation
+    /// </summary>
+    private static Matrix4x4 GetPartWorld(MSBS.Part part)
+    {
+        var radians = new Vector3(
+            Utils.DegToRadians(part.Rotation.X),
+            Utils.DegToRadians(part.Rotation.Y),
+            Utils.DegToRadians(part.Rotation.Z));
+
+        var scale = part.Scale == Vector3.Zero ? Vector3.One : part.Scale;
+
+        return new Transform(part.Position, radians, scale).WorldMatrix;
+    }
+
 
     /// <summary>
     /// Assets keep their collision in separate binders beside the model binder, one per collision type.
@@ -926,9 +992,8 @@ public class ModelWrapper
             ? SaveDirect()
             : SaveContainer();
 
-        // Kept apart from the container, so it is written to its own binder
-        if (!SaveMapPieceEdge())
-            isSaved = false;
+        // A map EDGE file (the edgebhd one shown with Sekiro map pieces) is never written here: it belongs to a
+        // collision and is edited by the Map Editor's EDGE tool, so the two editors can't overwrite each other
 
         if (isSaved)
         {

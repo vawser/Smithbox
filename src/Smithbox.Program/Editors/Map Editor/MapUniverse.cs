@@ -694,6 +694,7 @@ public class MapUniverse : IUniverse
                 View.HavokCollisionBank.OnUnloadMap(curMapID);
                 View.FirstPersonCollision?.OnMapChanged(curMapID);
                 View.WallBank.OnUnloadMap(curMapID);
+                View.EdgeBank.OnUnloadMap(curMapID);
                 View.HavokNavmeshBank.OnUnloadMap(curMapID);
                 View.NavigationBank.OnUnloadMap(curMapID, Project.Handler.MapData.PrimaryBank.Maps.Values
                     .Where(w => w.MapContainer != null).Select(w => w.MapContainer.Name));
@@ -959,6 +960,9 @@ public class MapUniverse : IUniverse
         if (Project.Descriptor.ProjectType is ProjectType.SDT)
         {
             collisionSaved |= SaveFile(map, MapFileType.Wall, () => View.WallBank.SaveWalls(map.Name));
+
+            // As do the EDGE files, edited by the EDGE Editor
+            collisionSaved |= SaveFile(map, MapFileType.Edge, () => View.EdgeBank.SaveEdges(map.Name));
         }
 
         if (navSaved)

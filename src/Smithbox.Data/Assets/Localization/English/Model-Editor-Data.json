@@ -69,6 +69,10 @@
       "Text": "Written EDGE file: {0}"
     },
     {
+      "Key": "MODEL_Data_Failed_To_Read_Edge_Placement",
+      "Text": "Failed to read the MSB of {0} to place the EDGE collision."
+    },
+    {
       "Key": "MODEL_Data_Setup_Primary_Bank_PASS",
       "Text": "Setup the Primary Bank."
     },

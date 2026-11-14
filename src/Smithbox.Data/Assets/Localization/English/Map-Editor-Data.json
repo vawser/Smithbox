@@ -273,6 +273,14 @@
       "Text": "Failed to read the EDGE data of {0}."
     },
     {
+      "Key": "MAP_Edge_Failed_To_Write",
+      "Text": "Failed to write the EDGE files of {0}."
+    },
+    {
+      "Key": "MAP_Edge_Saved",
+      "Text": "Saved {1} EDGE file(s) in {0}."
+    },
+    {
       "Key": "MAP_Wall_Failed_To_Read",
       "Text": "Failed to read the WALL data of {0}."
     },

@@ -69,6 +69,23 @@
     { "Key": "MAP_History_Navigation_Vertices", "Text": "Edit navigation vertices" },
     { "Key": "MAP_History_Collision", "Text": "Edit collision" },
     { "Key": "MAP_History_Fall_Protection", "Text": "Edit fall protection {0}" },
-    { "Key": "MAP_History_Wall_Paint", "Text": "Paint walls" }
+    { "Key": "MAP_History_Wall_Paint", "Text": "Paint walls" },
+    { "Key": "MAP_History_Edge_Field", "Text": "Change EDGE {0} of {1}" },
+    { "Key": "MAP_History_Edge_Add", "Text": "Add EDGE entry to {0}" },
+    { "Key": "MAP_History_Edge_Duplicate", "Text": "Duplicate EDGE entry {0} of {1}" },
+    { "Key": "MAP_History_Edge_Delete", "Text": "Delete EDGE entry {0} of {1}" },
+    { "Key": "MAP_History_Edge_Move", "Text": "Move EDGE point of {0}" },
+    { "Key": "MAP_History_Edge_Add_Grapple", "Text": "Add EDGE grapple point to {0}" },
+    { "Key": "MAP_History_Edge_Add_Chain", "Text": "Add EDGE {0} chain to {1}" },
+    { "Key": "MAP_History_Edge_Extend", "Text": "Extend EDGE chain of {0}" },
+    { "Key": "MAP_History_Edge_Join", "Text": "Join EDGE chains of {0}" },
+    { "Key": "MAP_History_Edge_Split", "Text": "Split EDGE segment {0} of {1}" },
+    { "Key": "MAP_History_Edge_Delete_Chain", "Text": "Delete EDGE chain {0} of {1}" },
+    { "Key": "MAP_History_Edge_Delete_Point", "Text": "Delete EDGE point of {0}" },
+    { "Key": "MAP_History_Edge_Add_Pull", "Text": "Add pull point to EDGE grapple {0} of {1}" },
+    { "Key": "MAP_History_Edge_Remove_Pull", "Text": "Remove pull point of EDGE grapple {0} of {1}" },
+    { "Key": "MAP_History_Edge_Create_File", "Text": "Create EDGE file for {0}" },
+    { "Key": "MAP_History_Edge_Fix", "Text": "Fix EDGE issue ({0}) of {1}" },
+    { "Key": "MAP_History_Edge_Fix_All", "Text": "Fix {0} EDGE issues of {1}" }
   ]
 }

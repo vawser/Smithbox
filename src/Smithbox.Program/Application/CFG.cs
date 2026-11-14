@@ -655,6 +655,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_IrradianceVolumeIds = true;
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_WallPaint = true;
+    public bool Interface_MapEditor_Tool_EdgeEditor = true;
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;
@@ -1668,6 +1669,16 @@ public class CFG
     public Vector3 Viewport_Wall_NoJump_Color = new Vector3(255, 170, 30);
     public Vector3 Viewport_Wall_Hover_Color = new Vector3(255, 255, 255);
     public float Viewport_Wall_Alpha = 45.0f;
+
+    // EDGE points (SDT), drawn by type; the EDGE Editor's selected entry is drawn in the selected colour
+    public Vector3 Viewport_Edge_Grapple_Color = new Vector3(255, 220, 40);
+    public Vector3 Viewport_Edge_Hang_Color = new Vector3(40, 220, 255);
+    public Vector3 Viewport_Edge_Hug_Color = new Vector3(255, 110, 200);
+    public Vector3 Viewport_Edge_Pull_Color = new Vector3(255, 140, 0);
+    public Vector3 Viewport_Edge_Selected_Color = new Vector3(255, 255, 255);
+    public Vector3 Viewport_Edge_Hover_Color = new Vector3(120, 255, 120);
+    public float Viewport_Edge_Point_Size = 0.15f;
+    public float Viewport_Edge_Segment_Radius = 0.05f;
     public Vector3 Viewport_Connect_Collision_Color = new Vector3(146, 57, 158);
     public Vector3 Viewport_Navmesh_Color = new Vector3(157, 53, 255);
     public Vector3 Viewport_Navmesh_Gate_Color = new Vector3(50, 220, 0);

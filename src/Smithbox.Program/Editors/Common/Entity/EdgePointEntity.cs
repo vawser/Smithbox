@@ -5,6 +5,7 @@ using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -80,21 +81,23 @@ public class EdgePointEntity : Entity
     /// </summary>
     public override Transform GetLocalTransform()
     {
-        Transform t = base.GetLocalTransform();
+        var point = Type switch
+        {
+            EdgePointType.Start => CFG.Current.StartEdgePoint,
+            EdgePointType.End => CFG.Current.EndEdgePoint,
+            _ => CFG.Current.PullEdgePoint
+        };
 
-        if (Type is EdgePointType.Start)
+        // The point is in the EDGE file's space (the collision's, for map EDGEs), carried into the model's and then
+        // turned by the viewport's display rotation, as the EDGE's collision is. The marker has no parent, so this
+        // is its world transform.
+        var space = Matrix4x4.Identity;
+
+        if (Owner is ModelUniverse universe && universe.View.Selection.SelectedModelWrapper?.Container is { } container)
         {
-            t.Position = CFG.Current.StartEdgePoint;
-        }
-        else if (Type is EdgePointType.End)
-        {
-            t.Position = CFG.Current.EndEdgePoint;
-        }
-        else if (Type is EdgePointType.Pull)
-        {
-            t.Position = CFG.Current.PullEdgePoint;
+            space = container.EdgeSpace * container.DisplayMatrix;
         }
 
-        return t;
+        return new Transform(Matrix4x4.CreateTranslation(point) * space);
     }
 }

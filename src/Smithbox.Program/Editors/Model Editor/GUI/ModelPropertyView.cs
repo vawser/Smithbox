@@ -162,6 +162,62 @@ public class ModelPropertyView
         ImGui.EndChild();
     }
 
+    /// <summary>
+    /// Says which space the EDGE file's points are in. Map EDGEs are in the space of the collision with the same ID,
+    /// which the MSB places relative to the map piece; the user picks the map piece part when there are several.
+    /// </summary>
+    private void DisplayEdgeSpace()
+    {
+        var wrapper = View.Selection.SelectedModelWrapper;
+        var container = wrapper?.Container;
+
+        if (wrapper == null || container == null)
+            return;
+
+        if (!wrapper.EdgeInCollisionSpace)
+        {
+            GUI.WrappedText(LOC.Get("MODEL_Properties_Edge_Model_Space"));
+            ImGui.Separator();
+            return;
+        }
+
+        GUI.WrappedText(LOC.Get("MODEL_Properties_Edge_Collision_Space", wrapper.EdgeCollisionModelName));
+        GUI.WrappedText(LOC.Get("MODEL_Properties_Edge_Read_Only"));
+
+        var placements = wrapper.EdgePlacements;
+
+        if (placements == null || placements.Count == 0)
+        {
+            GUI.WrappedText(LOC.Get("MODEL_Properties_Edge_No_Placement", wrapper.EdgeCollisionModelName));
+        }
+        else
+        {
+            var current = Math.Clamp(wrapper.EdgePlacementIndex, 0, placements.Count - 1);
+            string Label(EdgePlacement p) => $"{p.MapPiecePartName} / {p.CollisionPartName}";
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text(LOC.Get("MODEL_Properties_Edge_Placed_By"));
+            ImGui.SameLine();
+            ImGui.SetNextItemWidth(-1);
+
+            if (ImGui.BeginCombo("##edgePlacement", Label(placements[current])))
+            {
+                for (var i = 0; i < placements.Count; i++)
+                {
+                    if (ImGui.Selectable(Label(placements[i]), i == current))
+                    {
+                        container.SetEdgePlacement(wrapper, i);
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            GUI.Tooltip(LOC.Get("MODEL_Properties_Edge_Placed_By_TT"));
+        }
+
+        ImGui.Separator();
+    }
+
     private void PropertyTreeHeader(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<ModelEntity>();
@@ -202,10 +258,21 @@ public class ModelPropertyView
         // Collision has no write path in the Model Editor, so an edit to it would be lost on save
         _readOnly = first.Type is ModelEntityType.HKX;
 
-        if (_readOnly)
+        // Map EDGE files belong to a collision and are edited in the Map Editor's EDGE tool; they aren't saved here
+        if (first.WrappedObject is EDGE && View.Selection.SelectedModelWrapper is { EdgeInCollisionSpace: true })
+        {
+            _readOnly = true;
+        }
+
+        if (_readOnly && first.Type is ModelEntityType.HKX)
         {
             GUI.WrappedText(LOC.Get("MODEL_Properties_Collision_Read_Only"));
             ImGui.Separator();
+        }
+
+        if (first.WrappedObject is EDGE)
+        {
+            DisplayEdgeSpace();
         }
 
         var columnCount = 2;

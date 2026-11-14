@@ -56,5 +56,10 @@ public enum MapFileType
     /// <summary>
     /// The ONAV file of a map, its occlusion graph (ER)
     /// </summary>
-    ONAV = 1 << 15
+    ONAV = 1 << 15,
+
+    /// <summary>
+    /// The EDGE files of the collisions, in the map's edgebhd (SDT)
+    /// </summary>
+    Edge = 1 << 16
 }

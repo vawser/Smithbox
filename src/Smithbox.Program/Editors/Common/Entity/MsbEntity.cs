@@ -566,9 +566,8 @@ public class MsbEntity : Entity
         GrassSceneMeshes = meshes;
     }
 
-    // The region meshes these reuse are a unit in size, which would swallow the geometry they mark
-    private const float EdgePointSize = 0.15f;
-    private const float EdgeSegmentRadius = 0.05f;
+    // The EDGE markers reuse region meshes, which are a unit in size, so they are scaled by the
+    // Viewport_Edge_Point_Size and Viewport_Edge_Segment_Radius settings
 
     // MPW panels have no thickness in the game, but are given some so they can be seen and clicked edge on
     private const float MultiPlayerWallDepth = 0.2f;
@@ -606,25 +605,43 @@ public class MsbEntity : Entity
     {
         var scene = (Owner as MapUniverse).GetCurrentScene();
 
-        List<EdgePointMesh> meshes = new((markers.Points.Count + markers.Segments.Count) * 2);
+        List<EdgePointMesh> meshes = new(markers.Markers.Count * 2);
 
-        foreach (Vector3 point in markers.Points)
+        var pointSize = Math.Max(CFG.Current.Viewport_Edge_Point_Size, 0.01f);
+        var radius = Math.Max(CFG.Current.Viewport_Edge_Segment_Radius, 0.005f);
+
+        foreach (var marker in markers.Markers)
         {
-            var local = Matrix4x4.CreateScale(EdgePointSize) * Matrix4x4.CreateTranslation(point);
+            // The selected entry is drawn a little larger, in its own colour and over the geometry
+            var grow = marker.Selected ? 1.4f : 1.0f;
+            var color = marker.Selected ? CFG.Current.Viewport_Edge_Selected_Color : GetEdgeColor(marker);
 
-            AddEdgePointMesh(meshes, RenderableHelper.GetEdgePointProxy(scene), local);
-            AddEdgePointMesh(meshes, RenderableHelper.GetEdgePointFillProxy(scene), local);
-        }
+            var (cylinder, local) = marker.Kind switch
+            {
+                EdgeMarkerKind.Point => (false, Matrix4x4.CreateScale(pointSize * grow) * Matrix4x4.CreateTranslation(marker.A)),
+                EdgeMarkerKind.Pull => (false, Matrix4x4.CreateScale(pointSize * 0.6f * grow) * Matrix4x4.CreateTranslation(marker.A)),
+                EdgeMarkerKind.Segment => (true, GetEdgeSegmentTransform(marker.A, marker.B, radius * grow)),
+                _ => (true, GetEdgeSegmentTransform(marker.A, marker.B, radius * 0.4f * grow))
+            };
 
-        foreach (var (start, end) in markers.Segments)
-        {
-            var local = GetEdgeSegmentTransform(start, end);
-
-            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeSegmentProxy(scene), local);
-            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeSegmentFillProxy(scene), local);
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeMarkerWireProxy(scene, cylinder, color, marker.Selected), local);
+            AddEdgePointMesh(meshes, RenderableHelper.GetEdgeMarkerFillProxy(scene, cylinder, color), local);
         }
 
         EdgePointMeshes = meshes;
+    }
+
+    private static Vector3 GetEdgeColor(EdgeMarker marker)
+    {
+        if (marker.Kind is EdgeMarkerKind.Pull or EdgeMarkerKind.PullLine)
+            return CFG.Current.Viewport_Edge_Pull_Color;
+
+        return marker.Type switch
+        {
+            EDGE.EdgeType.Grapple => CFG.Current.Viewport_Edge_Grapple_Color,
+            EDGE.EdgeType.Hang => CFG.Current.Viewport_Edge_Hang_Color,
+            _ => CFG.Current.Viewport_Edge_Hug_Color
+        };
     }
 
     private static void AddEdgePointMesh(List<EdgePointMesh> meshes, DebugPrimitiveRenderableProxy mesh, Matrix4x4 local)
@@ -713,7 +730,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// Fits the unit cylinder, which stands on the origin, between two points with its top at the start.
     /// </summary>
-    private static Matrix4x4 GetEdgeSegmentTransform(Vector3 start, Vector3 end)
+    public static Matrix4x4 GetEdgeSegmentTransform(Vector3 start, Vector3 end, float radius)
     {
         var axis = start - end;
         var length = axis.Length();
@@ -725,7 +742,7 @@ public class MsbEntity : Entity
             ? Quaternion.CreateFromAxisAngle(Vector3.UnitX, MathF.PI)
             : Quaternion.Normalize(new Quaternion(Vector3.Cross(Vector3.UnitY, direction), 1 + dot));
 
-        return Matrix4x4.CreateScale(EdgeSegmentRadius, length, EdgeSegmentRadius)
+        return Matrix4x4.CreateScale(radius, length, radius)
             * Matrix4x4.CreateFromQuaternion(rotation)
             * Matrix4x4.CreateTranslation(end);
     }

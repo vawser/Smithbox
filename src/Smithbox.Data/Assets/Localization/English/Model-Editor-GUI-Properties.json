@@ -61,6 +61,30 @@
       "Text": "Collision is shown for reference only: the Model Editor doesn't save it. Use the Collision Editor in the Map Editor to change collision."
     },
     {
+      "Key": "MODEL_Properties_Edge_Model_Space",
+      "Text": "EDGE points are in this model's space."
+    },
+    {
+      "Key": "MODEL_Properties_Edge_Collision_Space",
+      "Text": "This EDGE file belongs to collision {0} (it only shares the map piece's number). Its points are in that collision's space and lie on the collision, which is drawn with them; most are on other map pieces, not this one."
+    },
+    {
+      "Key": "MODEL_Properties_Edge_Read_Only",
+      "Text": "Shown for reference only: the Model Editor doesn't save map EDGE files. Edit them on the collision part in the Map Editor."
+    },
+    {
+      "Key": "MODEL_Properties_Edge_No_Placement",
+      "Text": "The map's MSB doesn't place both this map piece and {0}, so the collision and points are drawn at the model origin and may not line up with the map piece."
+    },
+    {
+      "Key": "MODEL_Properties_Edge_Placed_By",
+      "Text": "Placed by"
+    },
+    {
+      "Key": "MODEL_Properties_Edge_Placed_By_TT",
+      "Text": "The map piece part and collision part of the map's MSB (as saved) that place the collision relative to the map piece. Only changes the display: the EDGE file isn't changed."
+    },
+    {
       "Key": "MODEL_Properties_Reference_None",
       "Text": "None"
     },

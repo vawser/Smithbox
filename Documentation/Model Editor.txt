@@ -2,9 +2,6 @@
 # Model Editor TODO
 #----------------------------------------------------
 
-- EDGE:
-    - Improve workflow to match Map Editor's tooling
-
 - GRASS:
     - Add method to great new GRASS definition for a model (user would need to place points)
 

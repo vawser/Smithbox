@@ -241,6 +241,16 @@ public class ModelContainer : ObjectContainer
             var newObject = new ModelEntity(View.Universe, this, wrapper.EDGE, ModelEntityType.EDGE);
 
             EDGE_Parent = newObject;
+            EdgeSpace = wrapper.EdgeSpace;
+
+            // A map EDGE belongs to the collision with the same ID, so that collision is drawn as the EDGE's own
+            // object, in the space its points are in (see ModelEntity.GetWorldMatrix)
+            if (wrapper.EdgeInCollisionSpace
+                && Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan
+                && CFG.Current.ModelEditor_ModelLoad_Collisions)
+            {
+                AssignEdgeCollisionDrawable(newObject, wrapper);
+            }
 
             Objects.Add(newObject);
             RootObject.AddChild(newObject);
@@ -910,6 +920,40 @@ public class ModelContainer : ObjectContainer
         resource = ModelLocator.GetObjCollision(Project, wrapper.Parent.Name, modelName, wrapper.HKX_BinderName);
 
         LoadCollision(ent, resource);
+    }
+
+    /// <summary>
+    /// The high collision a Sekiro map EDGE file belongs to (h11_00_00_00_000200 in the map's hit/hi binder for
+    /// m11_00_00_00_000200). Grapple points and ledges are placed on this surface, not on the map piece.
+    /// </summary>
+    private void AssignEdgeCollisionDrawable(Entity ent, ModelWrapper wrapper)
+    {
+        var resource = ModelLocator.GetMapCollisionModel(Project, wrapper.Parent.MapID, wrapper.Name, false,
+            HavokCollisionType.High);
+
+        if (resource == null || !resource.IsValid())
+            return;
+
+        LoadCollision(ent, resource);
+    }
+
+    /// <summary>
+    /// Carries the EDGE file's points into the model's space. See <see cref="ModelWrapper.EdgeSpace"/>.
+    /// </summary>
+    public Matrix4x4 EdgeSpace { get; private set; } = Matrix4x4.Identity;
+
+    /// <summary>
+    /// Places the EDGE (and its collision) by another of the MSB's map piece parts
+    /// </summary>
+    public void SetEdgePlacement(ModelWrapper wrapper, int index)
+    {
+        wrapper.EdgePlacementIndex = index;
+        EdgeSpace = wrapper.EdgeSpace;
+
+        if (EDGE_Parent?.RenderSceneMesh != null)
+        {
+            EDGE_Parent.RenderSceneMesh.World = EDGE_Parent.GetWorldMatrix();
+        }
     }
 
     public void LoadMesh(Entity ent, ResourceDescriptor resource, int index = -1)

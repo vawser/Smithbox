@@ -133,6 +133,7 @@ public class MapEditorView : IEditorView
     public CompassTool CompassTool;
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
+    public EdgeEditorTool EdgeEditorTool;
     public CollisionEditorTool CollisionEditorTool;
     public NavigationTool NavigationTool;
     public MapRulerTool RulerTool;
@@ -242,6 +243,7 @@ public class MapEditorView : IEditorView
         CompassTool = new CompassTool(this, project);
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
+        EdgeEditorTool = new EdgeEditorTool(this, project);
         CollisionEditorTool = new CollisionEditorTool(this, project);
         NavigationTool = new NavigationTool(this, project);
         RulerTool = new MapRulerTool(this, project);
