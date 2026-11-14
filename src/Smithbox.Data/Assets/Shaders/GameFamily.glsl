@@ -6,8 +6,8 @@
 // other families cost nothing.
 //
 // A rule for one family tests its family constant. A rule for one game inside a family tests the game, but only
-// within its family's code. The same membership is used in C# (FlverResource's glossInSpecular) and by
-// Tools/RenderSnapshotDiff's impact mode; keep them in step.
+// within its family's code. The C# side's membership is RenderProfile.FamilyOf (Renderer/Scene/RenderProfile.cs),
+// which MaterialBinding's gloss routing follows; Tools/RenderSnapshotDiff's families mode checks this file against it.
 
 #define GAME_DES 1
 #define GAME_DS1_PTDE 2

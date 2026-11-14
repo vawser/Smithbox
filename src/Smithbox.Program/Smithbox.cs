@@ -631,7 +631,8 @@ public class Smithbox
         while (_context.Window.Exists)
         {
             // Limit frame rate when window isn't focused unless we are profiling
-            if (!_context.Window.Focused)
+            // A render snapshot run keeps the full rate, as it is usually started from another window
+            if (!_context.Window.Focused && !StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Active)
             {
                 _desiredFrameLengthSeconds = 1.0 / 20.0f;
             }

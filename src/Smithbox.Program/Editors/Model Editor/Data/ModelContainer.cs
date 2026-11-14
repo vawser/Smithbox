@@ -412,6 +412,33 @@ public class ModelContainer : ObjectContainer
     /// <summary>
     ///     Gets the bounds of all the meshes. Returns false if the mesh resources haven't finished loading yet.
     /// </summary>
+    /// <summary>
+    /// What <see cref="TryGetMeshBounds"/> waits on, for the render snapshots' log: meshes still loading and meshes
+    /// without geometry, of all the drawn meshes.
+    /// </summary>
+    public string DescribeMeshState()
+    {
+        int total = 0, loading = 0, empty = 0;
+
+        foreach (var ent in Meshes)
+        {
+            if (ent.RenderSceneMesh is not MeshRenderableProxy mesh)
+                continue;
+
+            total++;
+
+            if (!mesh._meshProvider.IsAvailable())
+                loading++;
+            else if (!mesh.HasRenderableGeometry())
+                empty++;
+        }
+
+        var character = CharacterMesh == null ? "" :
+            $", character parts loading {CharacterMesh.Submeshes.Count(part => !part._meshProvider.IsAvailable())}";
+
+        return $"{total} meshes, {loading} loading, {empty} without geometry{character}";
+    }
+
     public bool TryGetMeshBounds(out BoundingBox bounds)
     {
         bounds = new BoundingBox();

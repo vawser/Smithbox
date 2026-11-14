@@ -41,6 +41,9 @@ public static unsafe class Program
 
         Profiler.Startup();
 
+        // --render-snapshots: capture the render snapshot sets and close (RenderSnapshotAutomation)
+        StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Configure(args);
+
         Instance = new Smithbox(_version, RenderingBackend.Vulkan, ProgramType.Editor);
 
         try

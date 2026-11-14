@@ -99,8 +99,9 @@ public class FlverResource : IResource, IDisposable
         }
 
         bool ret;
+        var profile = RenderProfile.Of(curProject);
 
-        if (curProject.Descriptor.ProjectType is ProjectType.DES)
+        if (profile.Flver0)
         {
             FlverDeS = FLVER0.Read(bytes);
             ret = LoadInternalDeS(al);
@@ -108,9 +109,7 @@ public class FlverResource : IResource, IDisposable
         else
         {
             if (al == AccessLevel.AccessGPUOptimizedOnly &&
-                curProject.Descriptor.ProjectType != ProjectType.NR &&
-                curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !RequiresFullFlver))
+                profile.OptimizedFlverLoad && (ModelsOnly || !RequiresFullFlver))
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
@@ -155,7 +154,9 @@ public class FlverResource : IResource, IDisposable
 
             if (fileData != null && fileData.Value.Length > 1)
             {
-                if (curProject.Descriptor.ProjectType is ProjectType.DES)
+                var profile = RenderProfile.Of(curProject);
+
+                if (profile.Flver0)
                 {
                     FlverDeS = FLVER0.Read(fileData.Value);
                     ret = LoadInternalDeS(al);
@@ -163,9 +164,7 @@ public class FlverResource : IResource, IDisposable
                 else
                 {
                     if (al == AccessLevel.AccessGPUOptimizedOnly &&
-                        curProject.Descriptor.ProjectType != ProjectType.NR &&
-                        curProject.Descriptor.ProjectType != ProjectType.DS1R &&
-                        curProject.Descriptor.ProjectType != ProjectType.DS1 && (ModelsOnly || !RequiresFullFlver))
+                        profile.OptimizedFlverLoad && (ModelsOnly || !RequiresFullFlver))
                     {
                         BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
@@ -247,7 +246,9 @@ public class FlverResource : IResource, IDisposable
         // Duskbloods FLVERs only give paths for albedo slots, and most that differ from the MATBIN name the
         // normal map (810 of 882 in DB_NT), so the MATBIN's path wins where it has one.
         // See Documentation/Claude/DB_NT Textures.md
-        if (mpath != "" && type != null && curProject.Descriptor.ProjectType is ProjectType.DB_NT or ProjectType.DB)
+        var profile = RenderProfile.Of(curProject);
+
+        if (mpath != "" && type != null && profile.MatbinTexturePaths)
         {
             var mtdName = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
             var sampler = bank.GetMatbin(mtdName)?.Samplers.Find(x => x.Type == type);
@@ -262,11 +263,7 @@ public class FlverResource : IResource, IDisposable
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
 
-            if (curProject.Descriptor.ProjectType is ProjectType.ER
-                or ProjectType.AC6
-                or ProjectType.NR
-                or ProjectType.DB_NT
-                or ProjectType.DB)
+            if (profile.Matbin)
             {
                 matbin = bank.GetMatbin(mtdstring);
             }
@@ -626,9 +623,8 @@ public class FlverResource : IResource, IDisposable
         MaterialLayers layers)
     {
         var curProject = Smithbox.Orchestrator.SelectedProject;
-        // The Transitional family; the shader reads this row as roughness for them (GameFamily.glsl,
-        // c_roughnessFromShininess), so keep the two lists in step
-        var glossInSpecular = curProject.Descriptor.ProjectType is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2;
+        // The Transitional family, whose shininess row the shader reads as roughness (RenderProfile.GlossInSpecular)
+        var glossInSpecular = RenderProfile.Of(curProject).GlossInSpecular;
 
         MaterialTextureRoute route = MaterialBinding.Route(dest.Definition, texType, dest.MetallicType, glossInSpecular);
         var layer = route.Layer;
@@ -835,8 +831,7 @@ public class FlverResource : IResource, IDisposable
         specConstants.Add(new SpecializationConstant(10, (uint)(dest.Definition?.Surface ?? MaterialSurface.Standard)));
         // Metallic shading for the games that use it, unless the material has an old specular color map instead.
         // Without a metallic map the default black one makes it a non-metal, which reflects 4% as in these games
-        var metallicGame = curProject.Descriptor.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR
-            or ProjectType.DB_NT or ProjectType.DB;
+        var metallicGame = RenderProfile.Of(curProject).Metallic;
         dest.MetallicShading = metallicGame &&
             (dest.UsesMetallic || !dest.TextureResourceFilled[(int)FlverMaterial.TextureType.SpecularTextureResource]);
         specConstants.Add(new SpecializationConstant(12, dest.MetallicShading));
@@ -1306,7 +1301,7 @@ public class FlverResource : IResource, IDisposable
             ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, layers);
         }
 
-        if (curProject.Descriptor.ProjectType is ProjectType.DES)
+        if (RenderProfile.Of(curProject).DesMaterials)
         {
             RequestDesTextureContainers(curProject, mat);
             LookupDesLightmap(dest, mat, layers);
@@ -1471,7 +1466,7 @@ public class FlverResource : IResource, IDisposable
     /// </summary>
     private void MarkModelLighting(FlverMaterial dest)
     {
-        if (Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.DES &&
+        if (RenderProfile.Current.MaterialLightingType &&
             dest.Definition?.Params is { } mtdParams &&
             mtdParams.TryGetValue("g_LightingType", out var lightingType) && lightingType.Length > 0)
         {
@@ -2101,7 +2096,7 @@ public class FlverResource : IResource, IDisposable
     /// See <see cref="FillVerticesSpeedTree(BinaryReaderEx, ref FlverVertexBuffer, Span{FlverBufferLayoutMember}, Span{Vector3}, nint, FlverMaterial)"/>
     /// </summary>
     private bool HasSpeedTreeVertices => IsSpeedtree &&
-        Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR;
+        RenderProfile.Current.SpeedTreeVertices;
 
     /// <summary>
     /// Stores a SpeedTree vertex in the layout of its material. The tangent of a SpeedTree vertex follows U, where

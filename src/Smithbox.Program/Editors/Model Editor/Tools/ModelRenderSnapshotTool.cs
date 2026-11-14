@@ -130,6 +130,34 @@ public class ModelRenderSnapshotTool
 
     public bool IsRunning => CurrentStage != Stage.Idle;
 
+    /// <summary>The last status line: where a run is, or how the last one ended</summary>
+    public string LastStatus => Status;
+
+    /// <summary>How many of the last run's models were captured, of how many were tried</summary>
+    public (int Ok, int Total) LastRunCounts => (Results.Count(r => r.Outcome == "ok"), Results.Count);
+
+    /// <summary>The last run's models that weren't captured, with why</summary>
+    public IEnumerable<string> LastRunFailures =>
+        Results.Where(r => r.Outcome != "ok").Select(r => $"{r.Container}: {r.Outcome}");
+
+    /// <summary>
+    /// Starts a run, as the Capture button does. Returns false, with why, if it can't start. Used by
+    /// <see cref="RenderSnapshotAutomation"/>.
+    /// </summary>
+    public bool Start(out string reason)
+    {
+        Begin();
+
+        reason = IsRunning || Results.Count > 0 ? null : Status;
+        return IsRunning || Results.Count > 0;
+    }
+
+    /// <summary>Stops the run in progress, keeping what was saved</summary>
+    public void Cancel()
+    {
+        Finish(LOC.Get("MODEL_RenderSnapshot_Status_Cancelled"));
+    }
+
     /// <summary>Advances a run. Called every frame by the view, whether the tool is shown or not.</summary>
     public void Update()
     {
@@ -400,6 +428,25 @@ public class ModelRenderSnapshotTool
         return null;
     }
 
+    /// <summary>What a model's load is still waiting on, for a timeout's outcome</summary>
+    private string DescribeWait()
+    {
+        if (View.Selection.SelectedModelWrapper != Target)
+            return $"selected is {View.Selection.SelectedModelWrapper?.Name ?? "nothing"}";
+
+        var container = Target?.Container;
+
+        if (container == null)
+            return "the model has no container";
+
+        var jobs = string.Join(", ", ResourceManager.ActiveJobProgress.Keys.Select(j => j.Name));
+        var session = ResourceLoadTracker.GetSessionName(out var others);
+        var bounded = container.TryGetMeshBounds(out _);
+
+        return $"{container.DescribeMeshState()}, bounds {(bounded ? "found" : "missing")}, " +
+            $"jobs [{jobs}], session {session ?? "none"}{(others > 0 ? $" +{others}" : "")}";
+    }
+
     private static bool ResourcesIdle =>
         ResourceManager.ActiveJobProgress.IsEmpty && !ResourceLoadTracker.HasActiveSession;
 
@@ -409,7 +456,7 @@ public class ModelRenderSnapshotTool
 
         if (StageTime.Elapsed > LoadTimeout)
         {
-            NextEntry(viewport, entry, "load timed out");
+            NextEntry(viewport, entry, $"load timed out ({DescribeWait()})");
             return;
         }
 

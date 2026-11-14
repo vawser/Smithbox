@@ -37,7 +37,17 @@ public static class ModelLocator
             return $@"{modelname}";
 
         if (project.Descriptor.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-            return $@"{modelname}A{mapid.Substring(1, 2)}";
+        {
+            // An MSB names the model (m2201B1) and the file adds the area (m2201B1A10). The Model and Time Act Editors
+            // pass file names, which already have it: adding it again asked for m2201b1a10A10, which doesn't exist,
+            // so DS1R map pieces never loaded there
+            var area = $"A{mapid.Substring(1, 2)}";
+
+            if (modelname.EndsWith(area, System.StringComparison.OrdinalIgnoreCase))
+                return modelname;
+
+            return $@"{modelname}{area}";
+        }
 
         if (project.Descriptor.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             return modelname;

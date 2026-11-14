@@ -1178,7 +1178,7 @@ public class ViewportRenderingTool
             ImGui.EndDisabled();
         }
         // DES's lightmaps are textures of the map pieces' own materials, picked up as a map loads
-        else if (Smithbox.Orchestrator.SelectedProject?.Descriptor.ProjectType is ProjectType.DES)
+        else if (RenderProfile.Current.DesMaterials)
         {
             ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Lightmaps")}##mapLightingLightmaps",
                 ref CFG.Current.Viewport_Map_Lightmaps);

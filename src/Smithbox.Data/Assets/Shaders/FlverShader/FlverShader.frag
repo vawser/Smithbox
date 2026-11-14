@@ -932,6 +932,9 @@ struct Surface
 	vec3 V;
 };
 
+// A family's own lighting model, if it has one (Families.glsl, included further down)
+bool FamilyShadeLight(Surface s, float LdotN, float NdotH, vec3 radiance, vec3 specularRadiance, out vec3 light);
+
 // Light arriving from direction L (pointing from the surface towards the light), with the radiance it lights
 // surfaces with and the radiance of its highlights, which a GPARAM sun gives separately
 vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
@@ -942,14 +945,10 @@ vec3 ShadeLight(Surface s, vec3 L, vec3 radiance, vec3 specularRadiance)
 	vec3 H = dot(halfway, halfway) > 1e-8 ? normalize(halfway) : s.N;
 	float NdotH = clamp(dot(H, s.N), 0.0, 1.0);
 
-	// traditional phong model
-	if (c_isLegacy)
-	{
-		vec3 diffuse = s.diffuse * LdotN;
-		// no highlight on the side facing away from the light
-		vec3 specular = s.F0 * pow(NdotH, 4.0) * (LdotN > 0.0 ? 1.0 : 0.0);
-		return diffuse * radiance + specular * specularRadiance;
-	}
+	// Legacy: Phong
+	vec3 familyLight;
+	if (FamilyShadeLight(s, LdotN, NdotH, radiance, specularRadiance, familyLight))
+		return familyLight;
 
 	// PBR model
 	float VdotH = clamp(dot(H, s.V), 0.0, 1.0);
@@ -1286,10 +1285,10 @@ vec3 AmbientBase(vec3 N)
 		vec3(N * vec3(1, 1, -1)), 5).xyz;
 }
 
-#ifdef MATERIAL_BLEND
-// The scale on a DES g_Lightmap's light, see IndirectLight. 1 until matched against the game
-#define DES_LIGHTMAP_SCALE 1.0
+// The family hooks, after the helpers they use
+#include "Families.glsl"
 
+#ifdef MATERIAL_BLEND
 // fsin_lightmap of a lightmapped material whose part found no lightmap: InstanceData.MissingLightmap plus 1
 #define LIGHTMAP_MISSING 0x40000000u
 
@@ -1371,52 +1370,17 @@ vec3 IndirectLight(Surface s)
 		}
 	}
 
-	// A DES map piece's g_Lightmap, a texture of its own material read through its last UV set (the second, or the
-	// third for a multi texture material, whose second is layer 2's): its baked light
-	// stands in for the light from around. Squared from its stored gamma, as DS3's DOL 1 is; the game's own scale
-	// isn't traced, so it is DES_LIGHTMAP_SCALE until matched by eye. 0 until the texture is on the GPU
-	if (c_gameID == GAME_DES)
-	{
-		uint desLightmap = MaterialValue(ROW_EXTRA, 2);
-		if (desLightmap != 0u)
-		{
-  #ifdef MATERIAL_UV3
-			vec2 lightmapUv = fsin_texcoord3;
-  #else
-			vec2 lightmapUv = g_uv[1];
-  #endif
-			vec3 lm = texture(sampler2D(globalTextures[nonuniformEXT(TextureIndex(desLightmap))], linearSampler), lightmapUv).rgb;
-			ambientDiffuse = lm * lm * DES_LIGHTMAP_SCALE;
-			g_lightSource = 2u;
-		}
-	}
+	// A material's own baked light (Legacy: a DES g_Lightmap)
+	FamilyBakedAmbient(s, ambientDiffuse);
 #endif
 
 	g_ambientRaw = ambientDiffuse;
 	ambientDiffuse *= sceneparam.ambientLightMult;
 
-	// traditional phong model
-	if (c_isLegacy)
-	{
-		// A DES map material's HemEnv lighting: the env cubemaps on top of the hemisphere, the specular one through the
-		// specular map. A lightmap, where there is one, already is the light from around, so the diffuse env is left out.
-		if (g_envLit)
-		{
-			vec3 envDiffuse;
-			vec3 envSpecular;
-			EnvLight(s.N, reflect(-s.V, s.N), envDiffuse, envSpecular);
-
-			if (g_lightSource != 2u)
-				ambientDiffuse += envDiffuse * sceneparam.ambientLightMult;
-
-			g_indirectDiffuse = s.diffuse * ambientDiffuse;
-			g_indirectSpecular = s.F0 * envSpecular * sceneparam.ambientLightMult;
-			return g_indirectDiffuse + g_indirectSpecular;
-		}
-
-		g_indirectDiffuse = s.diffuse * ambientDiffuse;
-		return g_indirectDiffuse;
-	}
+	// Legacy: the hemisphere, with HemEnv's env cubemaps
+	vec3 familyIndirect;
+	if (FamilyIndirectLight(s, ambientDiffuse, familyIndirect))
+		return familyIndirect;
 
 	// PBR model
 	float envMip = min(6.0, -(1.0 - s.roughness) * 6.5 + 6.5);
@@ -1912,12 +1876,8 @@ void main()
 	vec4 diffuseColor = SampleLayer(ROW_ALBEDO, 0);
 #endif
 
-	// Every DES shader is a "Col" one (DS_Phn_ColDif...): the diffuse times the vertex color. FLVER0 vertices without
-	// a color are filled white (FlverResource.FillDesColor). The alpha is the multi texture weight, not opacity
-	if (c_gameID == GAME_DES)
-	{
-		diffuseColor.rgb *= fsin_color.rgb;
-	}
+	// Legacy: DES's vertex color
+	FamilyAlbedo(diffuseColor);
 
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
 

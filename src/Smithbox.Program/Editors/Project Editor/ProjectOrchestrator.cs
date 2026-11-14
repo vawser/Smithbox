@@ -115,6 +115,9 @@ public class ProjectOrchestrator : IDisposable
         }
 
         HoldProjectEditorFocus();
+
+        // A render snapshot run started from the command line, if any
+        StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Update();
     }
 
     // The Project Editor's window, as the ProjectScreen draws it
@@ -308,7 +311,8 @@ public class ProjectOrchestrator : IDisposable
             }
         }
 
-        if (CFG.Current.Project_Enable_Auto_Load)
+        // A render snapshot run loads its own projects
+        if (CFG.Current.Project_Enable_Auto_Load && !StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Active)
         {
             // Auto-load marks a single project (SetAsAutoLoad clears the others), so the first marked is used. A
             // snapshot is iterated, as the user can add projects while this one loads.
@@ -410,6 +414,15 @@ public class ProjectOrchestrator : IDisposable
     public Task<bool> StartupProject(ProjectEntry curProject, Action onLoaded = null, LoadFocus focus = LoadFocus.ProjectEditor)
     {
         return LoadProject(curProject, CFG.Current.Project_Enable_Automatic_Auto_Load_Assignment, onLoaded, focus);
+    }
+
+    /// <summary>
+    /// Loads a project that isn't in the project list, without marking it to load at startup, so nothing about it is
+    /// saved. Used by the render snapshot automation for its vanilla projects.
+    /// </summary>
+    public Task<bool> StartupTemporaryProject(ProjectEntry curProject)
+    {
+        return LoadProject(curProject, false, null, LoadFocus.FirstEditor);
     }
 
     /// <summary>
