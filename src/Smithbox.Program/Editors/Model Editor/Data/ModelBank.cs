@@ -450,6 +450,11 @@ public class ModelWrapper
     private string GRASS_FileName;
     private string EDGE_FileName;
 
+    // Sekiro map pieces keep their EDGE file in the edgebhd/edgebdt of their map rather than in their mapbnd,
+    // under the same name as the map piece (m11_00_00_00_000200.edge.dcx for m11_00_00_00_000200)
+    private bool EDGE_InMapBinder;
+    private DCX.Type EDGE_Compression = DCX.Type.DCX_KRAK;
+
     /// <summary>
     /// Load the model into a view. Use <see cref="ModelEditorView.LoadModel"/>, which also handles the selection and
     /// the model the view had loaded before.
@@ -533,6 +538,124 @@ public class ModelWrapper
         }
 
         LoadAssetCollision();
+        LoadMapPieceEdge();
+    }
+
+    private bool IsSekiroMapPiece()
+    {
+        return Parent.Project.Descriptor.ProjectType is ProjectType.SDT
+            && !string.IsNullOrEmpty(Parent.MapID)
+            && Parent.Path.EndsWith(".mapbnd.dcx", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private string GetMapEdgeBhdPath() => $"/map/{Parent.MapID}/{Parent.MapID}.edgebhd";
+    private string GetMapEdgeBdtPath() => $"/map/{Parent.MapID}/{Parent.MapID}.edgebdt";
+
+    /// <summary>
+    /// Sekiro map pieces have their EDGE file in the edgebhd/edgebdt of their map, named after the map piece.
+    /// The same file is the one the Map Editor shows on the collision with that ID, as the two share their ID.
+    /// </summary>
+    private void LoadMapPieceEdge()
+    {
+        EDGE_InMapBinder = false;
+
+        if (!IsSekiroMapPiece())
+            return;
+
+        var bhdPath = GetMapEdgeBhdPath();
+        var bdtPath = GetMapEdgeBdtPath();
+
+        if (!Parent.TargetFS.FileExists(bhdPath) || !Parent.TargetFS.FileExists(bdtPath))
+            return;
+
+        try
+        {
+            var bhdData = Parent.TargetFS.ReadFile(bhdPath);
+            var bdtData = Parent.TargetFS.ReadFile(bdtPath);
+
+            if (bhdData == null || bdtData == null)
+                return;
+
+            using var binder = BXF4.Read(bhdData.Value, bdtData.Value);
+
+            var file = binder.Files.FirstOrDefault(e => IsMapPieceEdgeFile(e.Name));
+
+            if (file == null)
+                return;
+
+            var data = DCX.Decompress(file.Bytes, out var compression);
+
+            EDGE = EDGE.Read(data);
+            EDGE_FileName = null;
+            EDGE_InMapBinder = true;
+            EDGE_Compression = compression;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Read_EDGE", bhdPath), e);
+        }
+    }
+
+    /// <summary>
+    /// Whether a file in the map's EDGE binder is this map piece's, e.g. m11_00_00_00_000200.edge.dcx
+    /// </summary>
+    private bool IsMapPieceEdgeFile(string binderName)
+    {
+        var fileName = binderName.Substring(binderName.LastIndexOf('\\') + 1);
+
+        return fileName.Split('.')[0].Equals(Name, StringComparison.OrdinalIgnoreCase)
+            && fileName.Contains(".edge", StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Writes the map piece's EDGE file back into the edgebhd/edgebdt of its map. The other files of the map are left
+    /// as they are (the binder round trips byte for byte, checked by Claude/Tools/EdgeSurvey).
+    /// Returns false if it couldn't be written.
+    /// </summary>
+    private bool SaveMapPieceEdge()
+    {
+        if (!EDGE_InMapBinder || EDGE == null)
+            return true;
+
+        var bhdPath = GetMapEdgeBhdPath();
+        var bdtPath = GetMapEdgeBdtPath();
+
+        try
+        {
+            var bhdData = Parent.TargetFS.ReadFile(bhdPath);
+            var bdtData = Parent.TargetFS.ReadFile(bdtPath);
+
+            if (bhdData == null || bdtData == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath));
+                return false;
+            }
+
+            using var binder = BXF4.Read(bhdData.Value, bdtData.Value);
+
+            var file = binder.Files.FirstOrDefault(e => IsMapPieceEdgeFile(e.Name));
+
+            if (file == null)
+            {
+                Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath));
+                return false;
+            }
+
+            file.Bytes = DCX.Compress(EDGE.Write(), EDGE_Compression);
+
+            binder.Write(out byte[] newBhdBytes, out byte[] newBdtBytes);
+
+            Parent.Project.VFS.ProjectFS.WriteFile(bhdPath, newBhdBytes);
+            Parent.Project.VFS.ProjectFS.WriteFile(bdtPath, newBdtBytes);
+
+            Smithbox.Log(this, LOC.Get("MODEL_Data_Write_EDGE_Log", $"{bhdPath} ({file.Name})"));
+            return true;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("MODEL_Data_Failed_To_Write_EDGE", bhdPath), e);
+            return false;
+        }
     }
 
     /// <summary>
@@ -757,8 +880,8 @@ public class ModelWrapper
         // EDGE
         if (Parent.Project.Descriptor.ProjectType is ProjectType.SDT)
         {
-            // TODO: map pieces have .edge.dcx files in the mapbnds
-
+            // Objects hold their EDGE file in their objbnd. Map pieces don't hold theirs in their mapbnd,
+            // see LoadMapPieceEdge.
             if (filepath.Contains(".edge"))
             {
                 // Assumption of only one per
@@ -802,6 +925,10 @@ public class ModelWrapper
         var isSaved = binderType is ResourceContainerType.None
             ? SaveDirect()
             : SaveContainer();
+
+        // Kept apart from the container, so it is written to its own binder
+        if (!SaveMapPieceEdge())
+            isSaved = false;
 
         if (isSaved)
         {
