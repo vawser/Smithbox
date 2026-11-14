@@ -61,5 +61,10 @@ public enum MapFileType
     /// <summary>
     /// The EDGE files of the collisions, in the map's edgebhd (SDT)
     /// </summary>
-    Edge = 1 << 16
+    Edge = 1 << 16,
+
+    /// <summary>
+    /// The MFR file of a map, its forbidden region boxes (ER)
+    /// </summary>
+    MFR = 1 << 17
 }

@@ -934,6 +934,9 @@ public class MapUniverse : IUniverse
         {
             navSaved |= SaveFile(map, MapFileType.NVC, () => View.NavigationBank.SaveNVC(map));
             navSaved |= SaveFile(map, MapFileType.ONAV, () => View.NavigationBank.SaveONAV(map));
+
+            // The forbidden region boxes, edited by the Forbidden Region Editor
+            SaveFile(map, MapFileType.MFR, () => View.MfrBank.Save(map));
         }
 
         // DS3, SDT, BB and the hkp games' collision is edited by the Collision Editor (their navmesh isn't edited

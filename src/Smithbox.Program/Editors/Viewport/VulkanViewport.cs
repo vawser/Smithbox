@@ -502,6 +502,13 @@ public class VulkanViewport : IViewport
             painting = true;
         }
 
+        // And picking and placing forbidden region boxes in the Forbidden Region Editor
+        if (Owner is MapUniverse mfrUniverse &&
+            mfrUniverse.View.MfrEditorTool.HandleViewportInput(this, ray, canPick))
+        {
+            painting = true;
+        }
+
         // And picking, moving and placing EDGE points in the Model Editor's EDGE Editor
         if (Owner is ModelUniverse modelEdgeUniverse &&
             modelEdgeUniverse.View.EdgeEditorTool.HandleViewportInput(this, ray, canPick))
@@ -1044,6 +1051,13 @@ public class VulkanViewport : IViewport
         if (Owner is MapUniverse edgeUniverse && edgeUniverse.View.EdgeEditorTool.GizmoTarget.HasTarget)
         {
             Gizmos.Target = edgeUniverse.View.EdgeEditorTool.GizmoTarget;
+            return;
+        }
+
+        // The Forbidden Region Editor's selected box
+        if (Owner is MapUniverse mfrUniverse && mfrUniverse.View.MfrEditorTool.GizmoTarget.HasTarget)
+        {
+            Gizmos.Target = mfrUniverse.View.MfrEditorTool.GizmoTarget;
             return;
         }
 

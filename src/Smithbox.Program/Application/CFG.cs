@@ -211,6 +211,8 @@ public class CFG
     public bool MapEditor_Forbidden_Region_Show_Multiplay_Limit = true;
     public Vector3 MapEditor_Forbidden_Region_Save_Limit_Color = new Vector3(255, 80, 60);
     public Vector3 MapEditor_Forbidden_Region_Multiplay_Limit_Color = new Vector3(170, 100, 255);
+    public Vector3 MapEditor_Forbidden_Region_Selected_Color = new Vector3(255, 255, 255);
+    public Vector3 MapEditor_Forbidden_Region_Hovered_Color = new Vector3(255, 230, 80);
 
     public bool MapEditor_Map_Contents_Display_Character_Aliases = true;
     public bool MapEditor_Map_Contents_Display_Asset_Aliases = true;
@@ -664,6 +666,7 @@ public class CFG
     public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
     public bool Interface_MapEditor_Tool_WallPaint = true;
     public bool Interface_MapEditor_Tool_EdgeEditor = true;
+    public bool Interface_MapEditor_Tool_ForbiddenRegionEditor = true;
     public bool Interface_MapEditor_Tool_CollisionEditor = true;
     public bool Interface_MapEditor_Tool_Navigation = true;
     public bool Interface_MapEditor_Tool_Ruler = true;

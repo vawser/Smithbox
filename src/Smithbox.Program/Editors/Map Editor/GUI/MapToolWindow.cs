@@ -270,6 +270,14 @@ public class MapToolWindow
             }
         }
 
+        if (CFG.Current.Interface_MapEditor_Tool_ForbiddenRegionEditor && View.MfrEditorTool.CanUse())
+        {
+            if (ToolSections.Header($"{LOC.Get("MAP_MfrEditor_Header")}##mfrEditorHeader"))
+            {
+                View.MfrEditorTool.OnToolWindow();
+            }
+        }
+
         if (CFG.Current.Interface_MapEditor_Tool_LoadList)
         {
             if (ToolSections.Header("Load Lists"))
@@ -553,6 +561,16 @@ public class MapToolWindow
                     CFG.Current.Interface_MapEditor_Tool_EdgeEditor = !CFG.Current.Interface_MapEditor_Tool_EdgeEditor;
                 }
                 GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_EdgeEditor);
+            }
+
+            // Forbidden Region Editor
+            if (View.MfrEditorTool.CanUse())
+            {
+                if (ImGui.MenuItem($"{LOC.Get("MAP_ToolWindow_View_Toggle_Forbidden_Region_Editor")}##mfrEditorToolToggle"))
+                {
+                    CFG.Current.Interface_MapEditor_Tool_ForbiddenRegionEditor = !CFG.Current.Interface_MapEditor_Tool_ForbiddenRegionEditor;
+                }
+                GUI.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ForbiddenRegionEditor);
             }
 
             // Collision Editor

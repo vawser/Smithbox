@@ -139,6 +139,8 @@ public class MapEditorView : IEditorView
     public MapRulerTool RulerTool;
     public MapTileOutlineTool TileOutlineTool;
     public MapForbiddenRegionTool ForbiddenRegionTool;
+    public MfrBank MfrBank;
+    public MfrEditorTool MfrEditorTool;
     public FirstPersonCollisionWorld FirstPersonCollision;
     public FirstPersonTool FirstPersonTool;
     public MapExtractionTool MapExtractionTool;
@@ -251,6 +253,8 @@ public class MapEditorView : IEditorView
         RulerTool = new MapRulerTool(this, project);
         TileOutlineTool = new MapTileOutlineTool(this, project);
         ForbiddenRegionTool = new MapForbiddenRegionTool(this, project);
+        MfrBank = new MfrBank(project);
+        MfrEditorTool = new MfrEditorTool(this, project);
         FirstPersonCollision = new FirstPersonCollisionWorld(this, project);
         FirstPersonTool = new FirstPersonTool(this, project);
         MapExtractionTool = new MapExtractionTool(this, project);
