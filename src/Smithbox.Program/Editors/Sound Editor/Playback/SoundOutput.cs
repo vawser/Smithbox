@@ -13,6 +13,13 @@ public sealed unsafe class SoundOutput : IDisposable
 {
     private const ushort AudioS16Lsb = 0x8010;
 
+    // Every player opens its output on its own worker thread, and several can start at once (the Cutscene Editor
+    // fires all of a frame's sound events together). SDL's subsystem init isn't thread-safe: two threads both seeing
+    // it uninitialised and both starting it crashed in native code (ExecutionEngineException). The init, and opening
+    // and closing devices, are done under this lock.
+    private static readonly object SdlAudioLock = new();
+    private static bool _audioStarted;
+
     private uint _device;
 
     public int SampleRate { get; private set; }
@@ -32,30 +39,39 @@ public sealed unsafe class SoundOutput : IDisposable
         Close();
 
         var sdl = SdlProvider.SDL.Value;
-        if (sdl.WasInit(Sdl.InitAudio) == 0 && sdl.InitSubSystem(Sdl.InitAudio) != 0)
-        {
-            error = $"SDL audio init failed: {sdl.GetErrorS()}";
-            return false;
-        }
 
-        var want = new AudioSpec
+        lock (SdlAudioLock)
         {
-            Freq = sampleRate,
-            Format = AudioS16Lsb,
-            Channels = (byte)channels,
-            Samples = 2048,
-        };
-        AudioSpec have;
-        _device = sdl.OpenAudioDevice((byte*)null, 0, &want, &have, 0);
-        if (_device == 0)
-        {
-            error = $"SDL could not open an audio device ({sampleRate} Hz, {channels} ch): {sdl.GetErrorS()}";
-            return false;
+            if (!_audioStarted)
+            {
+                if (sdl.WasInit(Sdl.InitAudio) == 0 && sdl.InitSubSystem(Sdl.InitAudio) != 0)
+                {
+                    error = $"SDL audio init failed: {sdl.GetErrorS()}";
+                    return false;
+                }
+
+                _audioStarted = true;
+            }
+
+            var want = new AudioSpec
+            {
+                Freq = sampleRate,
+                Format = AudioS16Lsb,
+                Channels = (byte)channels,
+                Samples = 2048,
+            };
+            AudioSpec have;
+            _device = sdl.OpenAudioDevice((byte*)null, 0, &want, &have, 0);
+            if (_device == 0)
+            {
+                error = $"SDL could not open an audio device ({sampleRate} Hz, {channels} ch): {sdl.GetErrorS()}";
+                return false;
+            }
         }
 
         SampleRate = sampleRate;
         Channels = channels;
-        sdl.PauseAudioDevice(_device, 0);
+        SdlProvider.SDL.Value.PauseAudioDevice(_device, 0);
         return true;
     }
 
@@ -83,8 +99,11 @@ public sealed unsafe class SoundOutput : IDisposable
     {
         if (_device == 0) return;
         var sdl = SdlProvider.SDL.Value;
-        sdl.ClearQueuedAudio(_device);
-        sdl.CloseAudioDevice(_device);
+        lock (SdlAudioLock)
+        {
+            sdl.ClearQueuedAudio(_device);
+            sdl.CloseAudioDevice(_device);
+        }
         _device = 0;
     }
 
