@@ -377,6 +377,30 @@
       "Text": "If enabled, a green line in the viewport shows the path the root motion of the animation takes, and a white arrow shows where the root is and which way it faces at the current time."
     },
     {
+      "Key": "TAE_Editor_Options_Display_Effects",
+      "Text": "Display Effects"
+    },
+    {
+      "Key": "TAE_Editor_Options_Display_Effects_TT",
+      "Text": "If enabled, FFX events play their effect in the viewport while they run, on the dummy poly they spawn on. One-shot effects run to their own end; the others stop at the end of their event. Which particle kinds are drawn, and how bright, follows the FX Editor's Viewport Rendering options."
+    },
+    {
+      "Key": "TAE_FiltersTool_Effects_No_Fx",
+      "Text": "Turn on the FX Editor for the project to show effect events."
+    },
+    {
+      "Key": "TAE_FiltersTool_Effects_Indexing",
+      "Text": "Reading the project's effects: {0} of {1} binders."
+    },
+    {
+      "Key": "TAE_FiltersTool_Effects_None",
+      "Text": "This animation has no effect events."
+    },
+    {
+      "Key": "TAE_FiltersTool_Effects_Status",
+      "Text": "{0} effect events: {1} running ({2} particles). {3} not in the project's effects."
+    },
+    {
       "Key": "TAE_EventDisplay_On_Dummy",
       "Text": "Displayed on dummy poly {0}."
     },

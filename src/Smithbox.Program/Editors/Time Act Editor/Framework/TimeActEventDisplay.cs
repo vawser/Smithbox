@@ -47,6 +47,7 @@ public class TimeActEventDisplay
     private TimeActContainer? _dummySource;
     private readonly Dictionary<int, List<Entity>> _bodyDummies = new();
     private readonly Dictionary<Entity, Vector3> _dummyRest = new();
+    private readonly Dictionary<Entity, Matrix4x4> _dummyRestWorld = new();
     private Entity? _bodyCenter;
 
     // Weapons aren't part of the container, so their dummy polys come from their own files
@@ -233,6 +234,7 @@ public class TimeActEventDisplay
         _dummySource = container;
         _bodyDummies.Clear();
         _dummyRest.Clear();
+        _dummyRestWorld.Clear();
         _visuals.Clear();
 
         foreach (Entity dummy in container.Dummies)
@@ -291,6 +293,84 @@ public class TimeActEventDisplay
         return animator != null && node >= 0 && node < animator.NodeCount
             ? Vector3.Transform(rest, animator.GetNodeDelta(node))
             : rest;
+    }
+
+    /// <summary>
+    /// Where an effect event puts its effect at the current pose: on its dummy poly, turned as the dummy is, or on
+    /// the center of the body for no dummy. A weapon's dummy is turned as the weapon is. Null if the event isn't an
+    /// effect event, or its dummy can't be found (on neither the weapon nor the body).
+    /// </summary>
+    /// <param name="ignoreAngle">Only the position is followed, as with IsIgnoreDummyPolyAngle</param>
+    /// <summary>
+    /// Whether the event spawns an effect, as its marker tells
+    /// </summary>
+    public bool IsEffectEvent(TAE.Event ev, TimeActContainer container)
+    {
+        PrepareDummies(container);
+
+        return GetVisual(ev, container)?.Kind == TimeActVisualKind.Effect;
+    }
+
+    public Matrix4x4? GetEffectAnchor(TAE.Event ev, TimeActContainer container, ModelAnimator? animator, bool ignoreAngle)
+    {
+        PrepareDummies(container);
+
+        if (GetVisual(ev, container) is not { Kind: TimeActVisualKind.Effect, Shapes.Count: > 0 } visual)
+            return null;
+
+        var shape = visual.Shapes[0];
+        Matrix4x4? anchor = null;
+
+        if (shape.Dummy < 0)
+        {
+            anchor = Matrix4x4.CreateTranslation(GetBodyCenter(container, animator));
+        }
+        else if (shape.WeaponPart >= 0 && GetWeaponAnchor(shape.Dummy, shape.WeaponPart, container) is { } onWeapon)
+        {
+            anchor = onWeapon;
+        }
+        else if (_bodyDummies.TryGetValue(shape.Dummy, out var entities) && entities.Count > 0)
+        {
+            anchor = GetBodyMatrix(entities[0], animator);
+        }
+
+        if (anchor is { } m && ignoreAngle)
+            return Matrix4x4.CreateTranslation(m.Translation);
+
+        return anchor;
+    }
+
+    private Matrix4x4 GetBodyMatrix(Entity entity, ModelAnimator? animator)
+    {
+        if (!_dummyRestWorld.TryGetValue(entity, out Matrix4x4 rest))
+        {
+            rest = entity.GetWorldMatrix();
+            _dummyRestWorld[entity] = rest;
+        }
+
+        var dummy = (FLVER.Dummy)entity.WrappedObject;
+        var node = dummy.AttachBoneIndex >= 0 ? dummy.AttachBoneIndex : dummy.ParentBoneIndex;
+
+        return animator != null && node >= 0 && node < animator.NodeCount
+            ? rest * animator.GetNodeDelta(node)
+            : rest;
+    }
+
+    // The dummy's place on the weapon, turned as the weapon is held
+    private Matrix4x4? GetWeaponAnchor(int dummy, int weaponPart, TimeActContainer container)
+    {
+        if (container.CharacterMesh is not { } mesh || container.CharacterAppearance is not { } appearance ||
+            weaponPart >= mesh.Submeshes.Count)
+        {
+            return null;
+        }
+
+        if (!GetWeaponDummies(appearance.Parts[weaponPart].Name).TryGetValue(dummy, out var points) || points.Count == 0)
+            return null;
+
+        Matrix4x4 attach = mesh.Submeshes[weaponPart].AttachTransform;
+
+        return Matrix4x4.CreateTranslation(points[0]) * attach;
     }
 
     private Vector3 GetBodyCenter(TimeActContainer container, ModelAnimator? animator)

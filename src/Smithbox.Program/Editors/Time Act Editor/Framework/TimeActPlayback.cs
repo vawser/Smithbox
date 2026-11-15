@@ -74,7 +74,13 @@ public class TimeActPlayback
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
         Sounds = new TimeActSoundPlayback(view, project);
+        Effects = new TimeActEffectPlayback(view, project);
     }
+
+    /// <summary>
+    /// Plays the effects of the FFX events in the viewport
+    /// </summary>
+    public TimeActEffectPlayback Effects { get; }
 
     /// <summary>
     /// Plays the sound events as the clock passes them
@@ -143,6 +149,9 @@ public class TimeActPlayback
 
         // While a clip is on its way the clock stands still, and the sounds wait with it
         Sounds.Update(_time, _playing && !IsClipLoading);
+
+        // After the event display, which has found the dummies the effects sit on for this pose
+        Effects.Update(animator, _time);
     }
 
     private void UpdateAutoPlay()
@@ -247,6 +256,7 @@ public class TimeActPlayback
         _request++;
         _panel.StopAll();
         Sounds.StopAll();
+        Effects.Clear();
 
         _target = null;
         _boundClip = null;
@@ -288,6 +298,7 @@ public class TimeActPlayback
 
         // Attacks of a player go by the weapon, which may have just changed
         EventDisplay.Invalidate();
+        Effects.Invalidate();
 
         // Queued first, as the animations would otherwise be released along with the last thing playing them
         QueueClip();

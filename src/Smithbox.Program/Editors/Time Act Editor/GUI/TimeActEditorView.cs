@@ -84,6 +84,7 @@ public class TimeActEditorView : IEditorView
 
         // Editing the parameters of an event can change what it displays
         ViewportActionManager.ActionPerformed += Playback.EventDisplay.Invalidate;
+        ViewportActionManager.ActionPerformed += Playback.Effects.Invalidate;
 
         ViewportWindow = new(this, project);
         ViewportFilters = new(this, project);
@@ -145,6 +146,9 @@ public class TimeActEditorView : IEditorView
     {
         ViewportSelection.ClearSelection();
         ViewportActionManager.Clear();
+
+        // Before the viewport, as its drawables are in the view's scene
+        Playback.Effects.Dispose();
 
         (ViewportWindow?.Viewport as VulkanViewport)?.Dispose();
     }

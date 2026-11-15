@@ -15,7 +15,6 @@
     - Animation speed events
     - Model opacity / model masks
     - Rumble cam
-    - FX preview
     - StateInfo markers
     - Root Motion multipliers
     

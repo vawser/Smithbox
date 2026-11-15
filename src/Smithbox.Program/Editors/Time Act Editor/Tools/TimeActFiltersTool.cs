@@ -61,6 +61,14 @@ public class TimeActFiltersTool
         ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Root_Motion_Path")}##timeActFilterRootMotionPath", ref CFG.Current.TimeActEditor_Display_Root_Motion);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Root_Motion_Path_TT"));
 
+        if (ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Display_Effects")}##timeActFilterDisplayEffects", ref CFG.Current.TimeActEditor_Display_Effects)
+            && !CFG.Current.TimeActEditor_Display_Effects)
+        {
+            View.Playback.Effects.Clear();
+        }
+        GUI.Tooltip(LOC.Get("TAE_Editor_Options_Display_Effects_TT"));
+        DisplayEffectStatus();
+
         // Event Graph
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TAE_FiltersTool_Graph_Header"), LOC.Get("TAE_FiltersTool_Graph_Header_TT"));
@@ -77,5 +85,31 @@ public class TimeActFiltersTool
 
         ImGui.Checkbox($"{LOC.Get("TAE_Editor_Options_Vanilla_Markers")}##timeActFilterVanillaMarkers", ref CFG.Current.TimeActEditor_Display_Vanilla_Markers);
         GUI.Tooltip(LOC.Get("TAE_Editor_Options_Vanilla_Markers_TT"));
+    }
+
+    /// <summary>Why effects may not show, or what the animation's effect events are doing</summary>
+    private void DisplayEffectStatus()
+    {
+        if (!CFG.Current.TimeActEditor_Display_Effects)
+            return;
+
+        var effects = View.Playback.Effects;
+
+        if (!effects.IsAvailable)
+        {
+            GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_No_Fx"));
+            return;
+        }
+
+        if (View.Selection.SelectedAnimation == null)
+            return;
+
+        if (effects.Bank is { IsIndexing: true } bank)
+            GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_Indexing", bank.IndexedBinders, bank.TotalBinders));
+        else if (effects.EventCount == 0)
+            GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_None"));
+        else
+            GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_Status", effects.EventCount, effects.RunningCount,
+                effects.ParticleCount, effects.MissingCount));
     }
 }
