@@ -24,6 +24,15 @@ public class TimeActToolWindow
     {
         Sections.Begin();
 
+        // General
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
+
+
+        View.FiltersTool.OnToolWindow();
+
+        View.HistoryTool.OnToolWindow();
+
         // Search & Edit
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
@@ -34,13 +43,6 @@ public class TimeActToolWindow
         View.GlobalSearchTool.OnToolWindow();
 
         View.MassEditTool.OnToolWindow();
-
-        // Editing
-
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
-
-
-        View.HistoryTool.OnToolWindow();
 
         // Animation
 

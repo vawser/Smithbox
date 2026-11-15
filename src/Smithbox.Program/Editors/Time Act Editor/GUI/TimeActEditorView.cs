@@ -62,6 +62,7 @@ public class TimeActEditorView : IEditorView
     public TimeActMassEditTool MassEditTool;
     public TimeActComboBuilderTool ComboBuilderTool;
     public TimeActHistoryTool HistoryTool;
+    public TimeActFiltersTool FiltersTool;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -105,6 +106,7 @@ public class TimeActEditorView : IEditorView
         MassEditTool = new TimeActMassEditTool(this, project);
         ComboBuilderTool = new TimeActComboBuilderTool(this, project);
         HistoryTool = new TimeActHistoryTool(this, project);
+        FiltersTool = new TimeActFiltersTool(this, project);
     }
 
     private ModelMaskTarget GetModelMaskTarget()

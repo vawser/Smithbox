@@ -33,7 +33,9 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, 0.5f, 4.0f);
+                // AlwaysClamp keeps a typed (ctrl+click) value inside the range: a scale of 0 would collapse the UI
+                ImGui.SliderFloat("##inputValue", ref PreferencesUtil.TempScale, CFG.MinUIScale, CFG.MaxUIScale, "%.2f",
+                    ImGuiSliderFlags.AlwaysClamp);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -99,7 +101,8 @@ public class InterfacePrefs
 
             Draw = () => {
                 DPI.ApplyInputWidth();
-                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Font_Size, 8.0f, 32.0f);
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Font_Size, CFG.MinFontSize, CFG.MaxFontSize, "%.0f",
+                    ImGuiSliderFlags.AlwaysClamp);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {

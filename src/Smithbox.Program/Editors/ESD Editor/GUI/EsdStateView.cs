@@ -794,7 +794,7 @@ public class EsdStateView
         }
 
         ImGui.TextDisabled(LOC.Get("ESD_Edit_Target_Header"));
-        ImGui.BeginChild("##esdTargetList", new Vector2(220f * DPI.UIScale(), Math.Min(300f, (machine.Count + 1) * ImGui.GetTextLineHeightWithSpacing() + 8f) * DPI.UIScale()));
+        ImGui.BeginChild("##esdTargetList", new Vector2(220f * DPI.UIScale(), Math.Min(300f * DPI.UIScale(), (machine.Count + 1) * ImGui.GetTextLineHeightWithSpacing() + 8f * DPI.UIScale())));
 
         foreach (var id in machine.Keys.OrderBy(k => k))
         {

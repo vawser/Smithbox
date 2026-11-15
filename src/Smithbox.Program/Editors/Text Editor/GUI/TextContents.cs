@@ -265,7 +265,7 @@ public class TextContents
                     curText = "";
 
                 // Grows for multi-line titles (was a fixed 32px)
-                height = Math.Max(32f, ImGui.CalcTextSize(curText).Y + 16f) * DPI.UIScale();
+                height = Math.Max(32f * DPI.UIScale(), ImGui.CalcTextSize(curText).Y + 16f * DPI.UIScale());
 
                 ImGui.TableNextRow();
 
@@ -314,7 +314,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.UIScale();
+                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
 
                 ImGui.TableNextRow();
 
@@ -362,7 +362,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.UIScale();
+                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
 
                 ImGui.TableNextRow();
 
@@ -410,7 +410,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.UIScale();
+                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
 
                 ImGui.TableNextRow();
 
@@ -501,7 +501,7 @@ public class TextContents
             if (curText == null)
                 curText = "";
 
-            var height = (textboxHeight + ImGui.CalcTextSize(curText).Y) * DPI.UIScale();
+            var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
 
             ImGui.TableNextRow();
 

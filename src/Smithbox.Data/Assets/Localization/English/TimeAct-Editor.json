@@ -474,15 +474,55 @@
     },
     {
       "Key": "TAE_Editor_Edit_History_TT",
-      "Text": "Opens the History tool, which lists the edits that can be undone and redone, and where each was made."
+      "Text": "Opens the Edit History tool, which lists the edits that can be undone and redone, and where each was made."
     },
     {
       "Key": "TAE_ToolWindow_View_Toggle_History",
-      "Text": "History"
+      "Text": "Edit History"
     },
     {
       "Key": "TAE_HistoryTool_Header",
-      "Text": "History"
+      "Text": "Edit History"
+    },
+    {
+      "Key": "TAE_FiltersTool_Header",
+      "Text": "Time Act Filters"
+    },
+    {
+      "Key": "TAE_FiltersTool_Hint",
+      "Text": "What the editor shows and plays: the overlays drawn in the viewport, how the animation plays, and what the event graph and lists display."
+    },
+    {
+      "Key": "TAE_FiltersTool_Playback_Header",
+      "Text": "Playback"
+    },
+    {
+      "Key": "TAE_FiltersTool_Playback_Header_TT",
+      "Text": "How the selected animation plays."
+    },
+    {
+      "Key": "TAE_FiltersTool_Viewport_Header",
+      "Text": "Viewport"
+    },
+    {
+      "Key": "TAE_FiltersTool_Viewport_Header_TT",
+      "Text": "The overlays drawn over the model in the viewport."
+    },
+    {
+      "Key": "TAE_FiltersTool_Graph_Header",
+      "Text": "Event Graph"
+    },
+    {
+      "Key": "TAE_FiltersTool_Graph_Header_TT",
+      "Text": "What the event graph displays."
+    },
+    {
+      "Key": "TAE_FiltersTool_Lists_Header",
+      "Text": "Lists"
+    },
+    {
+      "Key": "TAE_FiltersTool_Lists_Header_TT",
+      "Text": "How the time act, animation and event lists mark their entries."
     },
     {
       "Key": "TAE_HistoryTool_Hint",

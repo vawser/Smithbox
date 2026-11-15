@@ -1974,6 +1974,26 @@ public class CFG
         Current = new CFG();
     }
 
+    public const float MinUIScale = 0.5f;
+    public const float MaxUIScale = 4.0f;
+    public const float MinFontSize = 8.0f;
+    public const float MaxFontSize = 32.0f;
+
+    /// <summary>
+    /// Keeps the UI scale and font size from the configuration file within the ranges the preferences allow.
+    /// An edited or broken file could otherwise give a scale or font size of 0, which collapses the UI.
+    /// </summary>
+    private static void ClampInterfaceScale()
+    {
+        Current.Interface_UI_Scale = float.IsFinite(Current.Interface_UI_Scale)
+            ? Math.Clamp(Current.Interface_UI_Scale, MinUIScale, MaxUIScale)
+            : Default.Interface_UI_Scale;
+
+        Current.Interface_Font_Size = float.IsFinite(Current.Interface_Font_Size)
+            ? Math.Clamp(Current.Interface_Font_Size, MinFontSize, MaxFontSize)
+            : Default.Interface_Font_Size;
+    }
+
     public static void Load()
     {
         var folder = ProjectUtils.GetConfigurationFolder();
@@ -1997,6 +2017,7 @@ public class CFG
                 }
 
                 MigrateGridSettings(filestring);
+                ClampInterfaceScale();
             }
             catch (Exception e)
             {

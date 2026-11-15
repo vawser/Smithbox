@@ -224,7 +224,7 @@ public class TextEntryCreatorTool
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Title")}##createTitle", ref NewEntry_CreateTitle);
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Title_TT"));
 
-                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_TitleText).Y) * DPI.UIScale();
+                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_TitleText).Y;
                     if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, 2000, new Vector2(-1, height)))
                     {
                     }
@@ -240,7 +240,7 @@ public class TextEntryCreatorTool
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Summary")}##createSummary", ref NewEntry_CreateSummary);
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Summary_TT"));
 
-                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_SummaryText).Y) * DPI.UIScale();
+                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_SummaryText).Y;
                     if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, 2000, new Vector2(-1, height)))
                     {
                     }
@@ -256,7 +256,7 @@ public class TextEntryCreatorTool
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Description")}##createDescription", ref NewEntry_CreateDescription);
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Header_Description_TT"));
 
-                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_DescriptionText).Y) * DPI.UIScale();
+                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_DescriptionText).Y;
                     if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, 2000, new Vector2(-1, height)))
                     {
                     }
@@ -272,7 +272,7 @@ public class TextEntryCreatorTool
                     ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Effect")}##createEffect", ref NewEntry_CreateEffect);
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Effect_TT"));
 
-                    var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_EffectText).Y) * DPI.UIScale();
+                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_EffectText).Y;
                     if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, 2000, new Vector2(-1, height)))
                     {
                     }
@@ -285,7 +285,7 @@ public class TextEntryCreatorTool
                         LOC.Get("TEXT_Creator_Header_Basic"),
                         LOC.Get("TEXT_Creator_Header_Basic_TT"));
 
-                var height = (textboxHeight + ImGui.CalcTextSize(NewEntry_BasicText).Y) * DPI.UIScale();
+                var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_BasicText).Y;
                 if (ImGui.InputTextMultiline($"##newEntryText_BasicText", ref NewEntry_BasicText, 2000, new Vector2(-1, height)))
                 {
                 }
