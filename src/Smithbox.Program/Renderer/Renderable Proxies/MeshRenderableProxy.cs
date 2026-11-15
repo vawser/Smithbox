@@ -107,6 +107,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
     public IReadOnlyList<MeshRenderableProxy> Submeshes => _submeshes;
 
+    // Construction makes the renderables with their bounds and fills the world buffer, all an update does
+    protected override bool ConstructionCoversUpdate => true;
+
     public IResourceHandle ResourceHandle => _meshProvider.ResourceHandle;
 
     public override bool AutoRegister
@@ -144,6 +147,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         get => _animator;
         set
         {
+            // Setting the same animator again is how a new pose is pushed (AnimationPreviewPanel), so only
+            // null to null, which every new submesh gets from its parent, is skipped
+            if (value == null && _animator == null)
+                return;
+
             _animator = value;
             ScheduleRenderableUpdate();
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
@@ -183,6 +191,9 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         get => _attachTransform;
         set
         {
+            if (_attachTransform == value)
+                return;
+
             _attachTransform = value;
             ScheduleRenderableUpdate();
             foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
@@ -201,6 +212,10 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         get => _instanceTransforms;
         set
         {
+            // Only null to null is skipped: an array set again may have been changed in place
+            if (value == null && _instanceTransforms == null)
+                return;
+
             _instanceTransforms = value;
 
             if (value is { Length: > 0 })
@@ -755,7 +770,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         if (_meshProvider.GeometryBuffer.AllocStatus !=
             VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
         {
-            ScheduleRenderableConstruction();
+            ScheduleConstructionWhenResident(_meshProvider.GeometryBuffer);
             return;
         }
 

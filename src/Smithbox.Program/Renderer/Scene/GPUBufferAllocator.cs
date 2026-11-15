@@ -688,6 +688,7 @@ public class VertexIndexBufferAllocator
             }
 
             _currentStaging._handleCount++;
+            _lastAllocationMs = Environment.TickCount64;
         }
 
         if (needsFlush)
@@ -717,6 +718,42 @@ public class VertexIndexBufferAllocator
 
             _currentStaging = CreateNewStagingBuffer();
             _buffers.Add(_currentStaging);
+        }
+    }
+
+    // When the last allocation was made (Environment.TickCount64)
+    private long _lastAllocationMs = Environment.TickCount64;
+
+    /// <summary>
+    ///     Uploads the staging buffer if it holds anything and nothing has been allocated from it for
+    ///     <paramref name="idleMs" />. Without this, a part filled buffer is only uploaded once loading stops
+    ///     altogether, and a long load (a large map runs ~100 jobs at once) keeps the geometry in it off screen,
+    ///     with its renderables waiting, until the very end. True if it was flushed.
+    /// </summary>
+    public bool FlushIfIdle(long idleMs)
+    {
+        lock (_allocationLock)
+        {
+            if (_currentStaging._stagingVertsSize == 0 && _currentStaging._stagingIndicesSize == 0)
+            {
+                return false;
+            }
+
+            var now = Environment.TickCount64;
+            if (now - _lastAllocationMs < idleMs)
+            {
+                return false;
+            }
+
+            _lastAllocationMs = now;
+
+            // Uploaded once the allocations still being filled are done (FlushIfNeeded runs again as each fills)
+            _currentStaging._allocationsFull = true;
+            _currentStaging.FlushIfNeeded();
+
+            _currentStaging = CreateNewStagingBuffer();
+            _buffers.Add(_currentStaging);
+            return true;
         }
     }
 
@@ -803,6 +840,51 @@ public class VertexIndexBufferAllocator
             AllocStatus = Status.Staging;
         }
 
+        // Run once the buffer is resident, e.g. renderables waiting for their geometry, rather than each of them
+        // asking again on every pass of the upload queue until it is
+        private readonly object _residentLock = new();
+        private List<Action> _onResident;
+
+        /// <summary>
+        ///     Runs the action once the buffer is resident (on the render thread). False, and the action isn't kept,
+        ///     if it already is.
+        /// </summary>
+        public bool RunWhenResident(Action action)
+        {
+            lock (_residentLock)
+            {
+                if (AllocStatus == Status.Resident)
+                {
+                    return false;
+                }
+
+                (_onResident ??= new List<Action>()).Add(action);
+                return true;
+            }
+        }
+
+        private void MarkResident()
+        {
+            List<Action> waiting;
+
+            lock (_residentLock)
+            {
+                AllocStatus = Status.Resident;
+                waiting = _onResident;
+                _onResident = null;
+            }
+
+            if (waiting == null)
+            {
+                return;
+            }
+
+            foreach (Action action in waiting)
+            {
+                action();
+            }
+        }
+
         public Status AllocStatus { get; internal set; }
 
         public int BufferIndex { get; internal set; } = -1;
@@ -868,9 +950,9 @@ public class VertexIndexBufferAllocator
                                 Profiler.TracyCZoneN(1, $@"Buffer {BufferIndex} I transfer done");
                             _stagingVertsSize = 0;
                             _stagingIndicesSize = 0;
-                            AllocStatus = Status.Resident;
                             _stagingBufferIndices.Dispose();
                             _stagingBufferIndices = null;
+                            MarkResident();
                             Profiler.TracyCZoneEnd(ctx2);
                         });
                     Profiler.TracyCZoneEnd(ctx);
@@ -913,6 +995,16 @@ public class VertexIndexBufferAllocator
         public uint IAllocationSize { get; internal set; }
 
         public VertexIndexBuffer.Status AllocStatus => _buffer.AllocStatus;
+
+        /// <summary>
+        ///     Runs the action once this allocation's buffer is resident. False if it already is, or the handle has
+        ///     been disposed, in which case the action isn't kept.
+        /// </summary>
+        public bool RunWhenResident(Action action)
+        {
+            VertexIndexBuffer buffer = _buffer;
+            return buffer != null && buffer.RunWhenResident(action);
+        }
 
         public int BufferIndex => _buffer != null ? _buffer.BufferIndex : -1;
 

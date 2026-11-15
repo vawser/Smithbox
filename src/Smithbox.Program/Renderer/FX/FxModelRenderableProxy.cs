@@ -299,7 +299,7 @@ public class FxModelRenderableProxy : RenderableProxy
         var geombuffer = _submesh.GeomBuffer;
         if (geombuffer == null || geombuffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
         {
-            ScheduleRenderableConstruction();
+            ScheduleConstructionWhenResident(geombuffer);
             return;
         }
 

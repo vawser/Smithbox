@@ -299,7 +299,7 @@ public class FxBillboardRenderableProxy : RenderableProxy
         if (_quad.GeometryBuffer == null ||
             _quad.GeometryBuffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
         {
-            ScheduleRenderableConstruction();
+            ScheduleConstructionWhenResident(_quad.GeometryBuffer);
             return;
         }
 

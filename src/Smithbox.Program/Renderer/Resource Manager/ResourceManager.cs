@@ -322,6 +322,10 @@ public static class ResourceManager
 
         if (count > 0)
         {
+            // Loading may go on for a long time; geometry already read is uploaded once its buffer goes quiet,
+            // rather than only once every job is done
+            SceneRenderer.GeometryBufferAllocator?.FlushIfIdle(GeometryFlushIdleMs);
+
             HashSet<ResourceJob> toRemove = new();
             foreach (KeyValuePair<ResourceJob, int> job in ActiveJobProgress)
             {
@@ -370,6 +374,9 @@ public static class ResourceManager
 
         _prevCount = ActiveJobProgress.Count;
     }
+
+    // How long the geometry staging buffer has to go without a new allocation before it is uploaded during a load
+    private const long GeometryFlushIdleMs = 1000;
 
     // Upload tasks that some features queue again every frame, so a queue this short counts as idle
     private const int IdleUploadQueueLength = 200;

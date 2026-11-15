@@ -240,7 +240,7 @@ public class FogVolumeRenderableProxy : RenderableProxy, IResourceEventListener
 
         if (_box.GeometryBuffer.AllocStatus != VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
         {
-            ScheduleRenderableConstruction();
+            ScheduleConstructionWhenResident(_box.GeometryBuffer);
             return;
         }
 

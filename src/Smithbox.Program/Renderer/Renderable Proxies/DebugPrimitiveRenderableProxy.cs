@@ -442,7 +442,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         if (_debugPrimitive.GeometryBuffer.AllocStatus !=
             VertexIndexBufferAllocator.VertexIndexBuffer.Status.Resident)
         {
-            ScheduleRenderableConstruction();
+            ScheduleConstructionWhenResident(_debugPrimitive.GeometryBuffer);
             return;
         }
 
