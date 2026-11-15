@@ -40,7 +40,7 @@ name Dagger && idrange 10000 Infinity (This searches for all rows with a name co
         {
             if (ParamEditor.ParamEditorScreen.EditorMode && canEdit) //remove this, editor mode should be called earlier
             {
-                ImGui.InputTextMultiline("", ref hint, 8196, new Vector2(720, 480));
+                ImGui.InputTextMultiline("", ref hint, 8196, new Vector2(720, 480) * DPI.UIScale());
                 if (ImGui.IsItemDeactivatedAfterEdit())
                     ret = true;
             }

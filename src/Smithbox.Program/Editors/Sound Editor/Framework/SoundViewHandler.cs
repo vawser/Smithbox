@@ -105,7 +105,7 @@ public class SoundViewHandler
 
             displayTitle = $"{displayTitle} [{view.ViewIndex}]";
 
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
             if (CountViews() == 1)
                 displayTitle = LOC.Get("EDITOR_Active_View");

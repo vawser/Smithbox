@@ -404,7 +404,7 @@ public class BhvStructureEdits
             OpenRequested = false;
         }
 
-        ImGui.SetNextWindowSize(new Vector2(520, 0), ImGuiCond.Appearing);
+        ImGui.SetNextWindowSize(new Vector2(520 * DPI.UIScale(), 0), ImGuiCond.Appearing);
 
         if (!ImGui.BeginPopupModal($"{LOC.Get("BHV_Delete_Title")}{PopupId}", ImGuiWindowFlags.AlwaysAutoResize))
             return;
@@ -418,7 +418,7 @@ public class BhvStructureEdits
 
         GUI.Spacer();
 
-        if (ImGui.Button($"{LOC.Get("BHV_Delete_Confirm")}##bhvDeleteConfirm", new Vector2(120, 0)))
+        if (ImGui.Button($"{LOC.Get("BHV_Delete_Confirm")}##bhvDeleteConfirm", new Vector2(120 * DPI.UIScale(), 0)))
         {
             PendingAction?.Invoke();
             PendingAction = null;
@@ -427,7 +427,7 @@ public class BhvStructureEdits
 
         ImGui.SameLine();
 
-        if (ImGui.Button($"{LOC.Get("BHV_Delete_Cancel")}##bhvDeleteCancel", new Vector2(120, 0)) || ImGui.IsKeyPressed(ImGuiKey.Escape))
+        if (ImGui.Button($"{LOC.Get("BHV_Delete_Cancel")}##bhvDeleteCancel", new Vector2(120 * DPI.UIScale(), 0)) || ImGui.IsKeyPressed(ImGuiKey.Escape))
         {
             PendingAction = null;
             ImGui.CloseCurrentPopup();

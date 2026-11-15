@@ -250,13 +250,16 @@ public static class GUI
         ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1);
         ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 1);
         ImGui.PushStyleVar(ImGuiStyleVar.PopupBorderSize, 1);
-        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, style.WindowPadding * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.GrabMinSize, style.GrabMinSize * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.SeparatorTextPadding, style.SeparatorTextPadding * scale);
+        ImGui.PushStyleVar(ImGuiStyleVar.DockingSeparatorSize, style.DockingSeparatorSize * scale);
     }
 
     public static void UnapplyBaseStyle()
     {
         ImGui.PopStyleColor(29);
-        ImGui.PopStyleVar(14);
+        ImGui.PopStyleVar(17);
     }
 
     public static void RestoreImguiIfMissing()
@@ -725,7 +728,7 @@ public static class GUI
 
     public static float GetEnumListHeight(int count)
     {
-        return 20 + (ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f);
+        return 20 * DPI.UIScale() + (ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, count) * 1f);
     }
 
     public static void SetupPopupWindow()
@@ -768,7 +771,8 @@ public static class GUI
     // Sizing
     public static void SetInputWidth()
     {
-        ImGui.SetNextItemWidth((ImGui.GetWindowWidth() * 0.75f) * DPI.UIScale());
+        // The window width is in screen pixels, so it already follows the UI scale
+        ImGui.SetNextItemWidth(ImGui.GetWindowWidth() * 0.75f);
     }
 
     public static Vector2 GetSmallPopupSize()

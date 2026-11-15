@@ -184,7 +184,7 @@ public class BhvDisplay
 
         ImGui.TableSetupColumn(LOC.Get("BHV_Column_Offset"));
         ImGui.TableSetupColumn(LOC.Get("BHV_Column_Field"));
-        ImGui.TableSetupColumn(LOC.Get("BHV_Column_Value"), ImGuiTableColumnFlags.WidthFixed, 220);
+        ImGui.TableSetupColumn(LOC.Get("BHV_Column_Value"), ImGuiTableColumnFlags.WidthFixed, 220 * DPI.UIScale());
         ImGui.TableSetupColumn(LOC.Get("BHV_Column_Meaning"), ImGuiTableColumnFlags.WidthStretch);
         ImGui.TableHeadersRow();
 

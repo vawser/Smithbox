@@ -287,9 +287,9 @@ public static class MapEditorDecorations
         ref object newVal,
         List<ParamEnumOption> options)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350 * DPI.UIScale(), ImGui.GetFrameHeight()), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
         {
             try
             {
@@ -325,9 +325,9 @@ public static class MapEditorDecorations
         ref object newVal,
         Dictionary<string, string> options)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350 * DPI.UIScale(), ImGui.GetFrameHeight()), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
         {
             try
             {
@@ -681,9 +681,9 @@ public static class MapEditorDecorations
         ref object newVal,
         List<AliasEntry> options)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350 * DPI.UIScale(), ImGui.GetFrameHeight()), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
         {
             try
             {
@@ -802,9 +802,9 @@ public static class MapEditorDecorations
         ref object newVal,
         List<SpawnStateContents> options)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350 * DPI.UIScale(), ImGui.GetFrameHeight()), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, options.Count))))
         {
             try
             {

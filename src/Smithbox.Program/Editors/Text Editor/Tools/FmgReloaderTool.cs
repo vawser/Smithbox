@@ -247,8 +247,8 @@ public class FmgReloaderTool
             {
                 ImGui.TableSetupScrollFreeze(0, 1);
                 ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Fmg"), ImGuiTableColumnFlags.WidthStretch);
-                ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_History_Column_Sent"), ImGuiTableColumnFlags.WidthFixed, 120);
-                ImGui.TableSetupColumn("##send", ImGuiTableColumnFlags.WidthFixed, 45);
+                ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_History_Column_Sent"), ImGuiTableColumnFlags.WidthFixed, 120 * DPI.UIScale());
+                ImGui.TableSetupColumn("##send", ImGuiTableColumnFlags.WidthFixed, 45 * DPI.UIScale());
                 ImGui.TableHeadersRow();
 
                 foreach (var entry in history)
@@ -325,10 +325,10 @@ public class FmgReloaderTool
             return;
 
         ImGui.TableSetupScrollFreeze(0, 1);
-        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Id"), ImGuiTableColumnFlags.WidthFixed, 40);
+        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Id"), ImGuiTableColumnFlags.WidthFixed, 40 * DPI.UIScale());
         ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Fmg"), ImGuiTableColumnFlags.WidthStretch);
-        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Strings"), ImGuiTableColumnFlags.WidthFixed, 60);
-        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_State"), ImGuiTableColumnFlags.WidthFixed, 60);
+        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_Strings"), ImGuiTableColumnFlags.WidthFixed, 60 * DPI.UIScale());
+        ImGui.TableSetupColumn(LOC.Get("TEXT_FmgReloader_Column_State"), ImGuiTableColumnFlags.WidthFixed, 60 * DPI.UIScale());
         ImGui.TableHeadersRow();
 
         foreach (var game in fmgs)

@@ -247,9 +247,9 @@ public class MatInGameTool
         {
             ImGui.TableSetupScrollFreeze(0, 1);
             ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Name"), ImGuiTableColumnFlags.WidthStretch);
-            ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_History_Column_Sent"), ImGuiTableColumnFlags.WidthFixed, 110);
-            ImGui.TableSetupColumn("##send", ImGuiTableColumnFlags.WidthFixed, 45);
-            ImGui.TableSetupColumn("##vanilla", ImGuiTableColumnFlags.WidthFixed, 60);
+            ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_History_Column_Sent"), ImGuiTableColumnFlags.WidthFixed, 110 * DPI.UIScale());
+            ImGui.TableSetupColumn("##send", ImGuiTableColumnFlags.WidthFixed, 45 * DPI.UIScale());
+            ImGui.TableSetupColumn("##vanilla", ImGuiTableColumnFlags.WidthFixed, 60 * DPI.UIScale());
             ImGui.TableHeadersRow();
 
             foreach (var entry in history)
@@ -411,9 +411,9 @@ public class MatInGameTool
 
         ImGui.TableSetupScrollFreeze(0, 1);
         ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Name"), ImGuiTableColumnFlags.WidthStretch);
-        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Kind"), ImGuiTableColumnFlags.WidthFixed, 80);
-        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Users"), ImGuiTableColumnFlags.WidthFixed, 50);
-        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Loaded"), ImGuiTableColumnFlags.WidthFixed, 70);
+        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Kind"), ImGuiTableColumnFlags.WidthFixed, 80 * DPI.UIScale());
+        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Users"), ImGuiTableColumnFlags.WidthFixed, 50 * DPI.UIScale());
+        ImGui.TableSetupColumn(LOC.Get("MAT_InGameTool_Column_Loaded"), ImGuiTableColumnFlags.WidthFixed, 70 * DPI.UIScale());
         ImGui.TableHeadersRow();
 
         var now = DateTime.Now;

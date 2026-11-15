@@ -94,7 +94,7 @@ public static class ProjectEnumHelper
         if (en.Options.Count > 0)
             count = en.Options.Count;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {

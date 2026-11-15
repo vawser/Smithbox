@@ -648,7 +648,7 @@ public class TimeActAnimationSelectionWindow
             FocusChangeIDInput = false;
         }
 
-        ImGui.SetNextItemWidth(200);
+        ImGui.SetNextItemWidth(200 * DPI.UIScale());
 
         ImGui.InputText("##changeAnimationIDInput", ref ChangeIDText, 32, ImGuiInputTextFlags.CharsDecimal);
 

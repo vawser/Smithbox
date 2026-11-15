@@ -140,7 +140,7 @@ public class BhvGraphWindow
 
         string DepthLabel(int d) => d == 0 ? LOC.Get("BHV_Graph_Focus_All", b.States.Count) : LOC.Get("BHV_Graph_Focus_Steps", d);
 
-        ImGui.SetNextItemWidth(160);
+        ImGui.SetNextItemWidth(160 * DPI.UIScale());
         if (ImGui.BeginCombo("##bhvGraphDepth", DepthLabel(Depth)))
         {
             for (int d = 0; d <= 2; d++)

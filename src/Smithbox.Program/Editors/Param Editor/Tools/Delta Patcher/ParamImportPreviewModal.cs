@@ -114,7 +114,7 @@ public class ParamImportPreviewModal
 
     private void DrawPatchContents()
     {
-        ImGui.BeginChild("##import_preview_scroll", new Vector2(600, 400));
+        ImGui.BeginChild("##import_preview_scroll", new Vector2(600, 400) * DPI.UIScale());
 
         foreach (var param in PatchForImport.Params)
         {
@@ -208,7 +208,7 @@ public class ParamImportPreviewModal
     private void DrawFooterButtons()
     {
         // Import
-        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Import")}##importAction", new Vector2(120, 0)))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Import")}##importAction", new Vector2(120 * DPI.UIScale(), 0)))
         {
             var filtered = BuildFilteredPatch();
 
@@ -222,7 +222,7 @@ public class ParamImportPreviewModal
         ImGui.SameLine();
 
         // Cancel
-        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Cancel")}##cancelAction", new Vector2(120, 0)))
+        if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Cancel")}##cancelAction", new Vector2(120 * DPI.UIScale(), 0)))
         {
             Hide();
         }

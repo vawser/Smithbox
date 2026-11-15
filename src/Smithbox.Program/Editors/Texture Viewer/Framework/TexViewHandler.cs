@@ -123,7 +123,7 @@ public class TexViewHandler
 
             displayTitle = $"{displayTitle} [{view.ViewIndex}]";
 
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f), ImGuiCond.FirstUseEver);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
             if (CountViews() == 1)
             {

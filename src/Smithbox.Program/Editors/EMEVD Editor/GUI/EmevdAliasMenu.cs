@@ -32,7 +32,7 @@ public class EmevdAliasMenu
 
             ImGui.TextDisabled(LOC.Get("EMEVD_Alias_Name"));
 
-            ImGui.SetNextItemWidth(250f);
+            ImGui.SetNextItemWidth(250f * DPI.UIScale());
             ImGui.InputText($"##{id}_name", ref Buffer, 255);
 
             // Leaving the field after an edit (Enter, Tab or a click elsewhere, which also closes the menu) applies it

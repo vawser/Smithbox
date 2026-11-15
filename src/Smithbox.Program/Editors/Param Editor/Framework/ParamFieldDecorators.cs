@@ -775,7 +775,7 @@ public static class EnumHelper
         if (en.Values.Count > 0)
             count = en.Values.Count;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
@@ -926,7 +926,7 @@ public static class AliasEnumHelper
         if (entries.Count > 0)
             count = entries.Count;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
@@ -1038,7 +1038,7 @@ public static class ConditionalAliasEnumHelper
         if (entries.Count > 0)
             count = entries.Count;
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350f, GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
+        if (ImGui.BeginChild("EnumList", new Vector2(350f * DPI.UIScale(), GUI.GetEnumListHeight(count)), ImGuiChildFlags.Borders))
         {
             try
             {
