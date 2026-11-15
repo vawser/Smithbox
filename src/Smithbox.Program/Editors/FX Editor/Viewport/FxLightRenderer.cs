@@ -10,7 +10,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxLightRenderer
 {
-    private readonly FxEditorScreen Editor;
+    private readonly IFxDisplayHost Host;
     private readonly List<SceneLight> Lights = new();
     private readonly List<FxParticleOutput> Scratch = new();
     private readonly List<FxLightInstance> Found = new();
@@ -22,22 +22,33 @@ public class FxLightRenderer
     /// <summary>The drawn lights, for the debug markers.</summary>
     public IReadOnlyList<FxLightInstance> Current => Found;
 
-    public FxLightRenderer(FxEditorScreen editor)
+    public FxLightRenderer(IFxDisplayHost host)
     {
-        Editor = editor;
+        Host = host;
     }
+
+    private readonly FxEffectInstance[] One = new FxEffectInstance[1];
 
     public void Update(FxEffectInstance instance)
     {
-        var scene = Editor.RenderScene;
+        One[0] = instance;
+        Update(instance == null ? Array.Empty<FxEffectInstance>() : One);
+        One[0] = null;
+    }
+
+    /// <summary>The lights of every effect given; the brightest are kept when there are more than the scene draws.</summary>
+    public void Update(IReadOnlyList<FxEffectInstance> instances)
+    {
+        var scene = Host.RenderScene;
         if (scene == null)
             return;
 
         Found.Clear();
-        if (instance != null && CFG.Current.FxEditor_Viewport_Display_Lights)
+        if (instances.Count > 0 && Host.Settings.Lights)
         {
             Scratch.Clear();
-            instance.CollectParticles(Scratch);
+            foreach (var instance in instances)
+                instance.CollectParticles(Scratch);
             foreach (var p in Scratch)
             {
                 var appearances = p.Node.Config?.Appearances;
@@ -81,7 +92,7 @@ public class FxLightRenderer
             light.Position = f.Position;
             light.Direction = f.Spot ? f.Direction : -Vector3.UnitY;
             light.Color = f.Color;
-            light.Intensity = f.Intensity * CFG.Current.FxEditor_Viewport_Light_Brightness;
+            light.Intensity = f.Intensity * Host.Settings.LightBrightness;
             light.Range = f.Range;
             light.FadeAcrossRange = true;
             if (f.Spot)
@@ -96,7 +107,7 @@ public class FxLightRenderer
 
     public void Clear()
     {
-        var scene = Editor.RenderScene;
+        var scene = Host.RenderScene;
         foreach (var light in Lights)
             scene?.Lights.Remove(light);
         Lights.Clear();

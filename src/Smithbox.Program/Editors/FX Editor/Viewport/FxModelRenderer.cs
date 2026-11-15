@@ -16,7 +16,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxModelRenderer
 {
-    private readonly FxEditorScreen Editor;
+    private readonly IFxDisplayHost Host;
     private readonly FxTextureLibrary Library;
 
     // ---------------------------------------------------------------- RichModel: pooled FLVER renderables
@@ -53,7 +53,7 @@ public class FxModelRenderer
     // Appearances whose model can't take the effect shader (no uvs), drawn by the pool instead
     private readonly HashSet<FxAppearanceDef> PoolOnly = new();
 
-    private FxEffectDef CacheFor;
+    private readonly HashSet<FxEffectDef> CacheFor = new();
     private readonly List<FxParticleOutput> Scratch = new();
 
     /// <summary>Most models drawn per appearance.</summary>
@@ -61,28 +61,35 @@ public class FxModelRenderer
 
     public int DrawnModels { get; private set; }
 
-    public FxModelRenderer(FxEditorScreen editor, FxTextureLibrary library)
+    public FxModelRenderer(IFxDisplayHost host, FxTextureLibrary library)
     {
-        Editor = editor;
+        Host = host;
         Library = library;
     }
 
+    private readonly FxEffectInstance[] One = new FxEffectInstance[1];
+
     public void Update(FxEffectInstance instance, Vector3 eye, Vector3 cameraForward)
     {
-        if (Editor.RenderScene == null)
+        One[0] = instance;
+        Update(instance == null ? Array.Empty<FxEffectInstance>() : One, eye, cameraForward);
+        One[0] = null;
+    }
+
+    /// <summary>Draws the models of every effect given; one appearance's particles share its pool or batch.</summary>
+    public void Update(IReadOnlyList<FxEffectInstance> instances, Vector3 eye, Vector3 cameraForward)
+    {
+        if (Host.RenderScene == null)
             return;
 
-        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Models)
+        if (instances.Count == 0 || !Host.Settings.Models)
         {
             Clear();
             return;
         }
 
-        if (instance.Def != CacheFor)
-        {
-            Clear();
-            CacheFor = instance.Def;
-        }
+        // Pools and batches of effects that were rebuilt or have finished go once nothing uses them
+        bool effectsGone = FxDisplay.DefsChanged(CacheFor, instances);
 
         foreach (var pool in Pools.Values)
             pool.Used = 0;
@@ -90,7 +97,8 @@ public class FxModelRenderer
             batch.Particles.Clear();
 
         Scratch.Clear();
-        instance.CollectParticles(Scratch);
+        foreach (var instance in instances)
+            instance.CollectParticles(Scratch);
 
         int drawn = 0;
         foreach (var p in Scratch)
@@ -135,7 +143,7 @@ public class FxModelRenderer
 
                 if (pool.Used == pool.Meshes.Count)
                 {
-                    var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Editor.RenderScene, pool.Model,
+                    var mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(Host.RenderScene, pool.Model,
                         ModelMarkerType.None, $"fx_{def.Model}", null);
                     pool.Meshes.Add(mesh);
                 }
@@ -154,10 +162,33 @@ public class FxModelRenderer
                 if (pool.Meshes[i].Visible)
                     pool.Meshes[i].Visible = false;
 
+        if (effectsGone)
+            ReleaseUnused();
+
         foreach (var batch in Batches.Values)
             UploadBatch(batch);
 
         DrawnModels = drawn;
+    }
+
+    /// <summary>Drops the pools and batches no particle used this frame (their effects were rebuilt or ended).</summary>
+    private void ReleaseUnused()
+    {
+        foreach (var (appearance, pool) in Pools.Where(kv => kv.Value.Used == 0).ToList())
+        {
+            foreach (var mesh in pool.Meshes)
+                mesh.Dispose();
+            Pools.Remove(appearance);
+        }
+
+        foreach (var (appearance, batch) in Batches.Where(kv => kv.Value.Particles.Count == 0).ToList())
+        {
+            foreach (var sub in batch.Submeshes)
+                sub.Proxy.Dispose();
+            Batches.Remove(appearance);
+        }
+
+        PoolOnly.RemoveWhere(a => !Pools.ContainsKey(a));
     }
 
     /// <summary>
@@ -204,7 +235,7 @@ public class FxModelRenderer
 
             batch.Submeshes.Add(new SubmeshBatch
             {
-                Proxy = new FxModelRenderableProxy(Editor.RenderScene.OpaqueRenderables, submesh),
+                Proxy = new FxModelRenderableProxy(Host.RenderScene.OpaqueRenderables, submesh),
                 Mesh = mesh,
                 Lit = IsLit(material),
             });
@@ -235,7 +266,7 @@ public class FxModelRenderer
     private void UploadBatch(EffectBatch batch)
     {
         batch.Particles.Sort((a, b) => b.Distance.CompareTo(a.Distance));
-        var brightness = CFG.Current.FxEditor_Viewport_Billboard_Brightness;
+        var brightness = Host.Settings.BillboardBrightness;
         var flver = batch.Def;
 
         foreach (var sub in batch.Submeshes)
@@ -287,9 +318,9 @@ public class FxModelRenderer
             foreach (var sub in batch.Submeshes)
                 sub.Proxy.Dispose();
         Batches.Clear();
-        PoolOnly.Clear();
+        PoolOnly.RemoveWhere(a => !Pools.ContainsKey(a));
 
-        CacheFor = null;
+        CacheFor.Clear();
         DrawnModels = 0;
     }
 }

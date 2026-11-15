@@ -21,6 +21,12 @@ public class FxData : IDisposable
 
     public FxBank Bank;
 
+    /// <summary>
+    /// Bumped by every FX Editor edit, undo and redo: effects are edited in place, so other editors showing them
+    /// (through <see cref="FxDefCache"/>) build them again when this changes.
+    /// </summary>
+    public int EditVersion;
+
     public FxData(ProjectEntry project)
     {
         Project = project;

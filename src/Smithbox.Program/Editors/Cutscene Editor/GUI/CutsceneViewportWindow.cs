@@ -68,6 +68,16 @@ public class CutsceneViewportWindow
         }
     }
 
+    /// <summary>Where the viewport camera is and which way it looks (the cut's camera while looking through it)</summary>
+    public (Vector3 Eye, Vector3 Forward) CameraEyeAndForward()
+    {
+        if (Viewport is not VulkanViewport vk)
+            return (Vector3.Zero, Vector3.UnitZ);
+
+        var transform = vk.ViewportCamera.CameraTransform;
+        return (transform.Position, Vector3.Transform(Vector3.UnitZ, transform.RotationMatrix));
+    }
+
     public void Display(uint dockspaceId)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);

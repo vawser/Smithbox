@@ -15,7 +15,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxTextureLibrary : IResourceEventListener
 {
-    private readonly FxEditorScreen Editor;
+    private readonly IFxDisplayHost Host;
 
     private enum Kind { Texture, Model }
 
@@ -33,9 +33,9 @@ public class FxTextureLibrary : IResourceEventListener
     /// <summary>Texture and model names that the effects ask for but no binder holds, for the Preview tool.</summary>
     public IReadOnlyCollection<string> MissingTextures => Missing;
 
-    public FxTextureLibrary(FxEditorScreen editor)
+    public FxTextureLibrary(IFxDisplayHost host)
     {
-        Editor = editor;
+        Host = host;
     }
 
     /// <summary>
@@ -68,9 +68,9 @@ public class FxTextureLibrary : IResourceEventListener
         if (LoadedModels.TryGetValue(name, out var handle))
             return handle.IsLoaded ? handle : null;
 
-        if (!Editor.Data.Bank.Models.ContainsKey(name))
+        if (!Host.Data.Bank.Models.ContainsKey(name))
         {
-            if (Editor.Data.Bank.IsIndexed)
+            if (Host.Data.Bank.IsIndexed)
                 Missing.Add($"{name}.flver");
             return null;
         }
@@ -86,7 +86,7 @@ public class FxTextureLibrary : IResourceEventListener
         if (Names.TryGetValue((id, type), out var name))
             return name;
 
-        var textures = Editor.Data.Bank.Textures;
+        var textures = Host.Data.Bank.Textures;
         var typed = string.IsNullOrEmpty(type) ? null : $"s{id:D5}_{type}";
         var plain = $"s{id:D5}";
 
@@ -98,11 +98,11 @@ public class FxTextureLibrary : IResourceEventListener
         {
             name = null;
             // Indexing may not have finished; only remember a miss once it has
-            if (Editor.Data.Bank.IsIndexed)
+            if (Host.Data.Bank.IsIndexed)
                 Missing.Add(typed ?? plain);
         }
 
-        if (name != null || Editor.Data.Bank.IsIndexed)
+        if (name != null || Host.Data.Bank.IsIndexed)
             Names[(id, type)] = name;
         return name;
     }
@@ -114,7 +114,7 @@ public class FxTextureLibrary : IResourceEventListener
 
     private void StartLoad(string name, Kind kind)
     {
-        var index = kind == Kind.Model ? Editor.Data.Bank.Models : Editor.Data.Bank.Textures;
+        var index = kind == Kind.Model ? Host.Data.Bank.Models : Host.Data.Bank.Textures;
         if (!index.TryGetValue(name, out var binders) || binders.Count == 0)
             return;
 
@@ -136,7 +136,7 @@ public class FxTextureLibrary : IResourceEventListener
     private void RequestModelTexture(string path)
     {
         var name = Stem(path);
-        if (Editor.Data.Bank.Textures.ContainsKey(name))
+        if (Host.Data.Bank.Textures.ContainsKey(name))
             RequestTextureByName(name);
         else
             RequestPartTextures(path);
@@ -157,7 +157,7 @@ public class FxTextureLibrary : IResourceEventListener
         int partsIndex = Array.FindLastIndex(parts, p => p.Equals("parts", StringComparison.OrdinalIgnoreCase));
         int texIndex = Array.FindLastIndex(parts, p => p.Equals("tex", StringComparison.OrdinalIgnoreCase));
         var stem = Stem(path);
-        var project = Editor.Project;
+        var project = Host.Project;
 
         ResourceDescriptor descriptor;
         if (partsIndex >= 0 && texIndex > partsIndex)
@@ -205,7 +205,7 @@ public class FxTextureLibrary : IResourceEventListener
     /// <summary>A texture by its name (as a model's material names it), if a binder holds it.</summary>
     private void RequestTextureByName(string name)
     {
-        if (Loaded.ContainsKey(name) || !Editor.Data.Bank.Textures.ContainsKey(name))
+        if (Loaded.ContainsKey(name) || !Host.Data.Bank.Textures.ContainsKey(name))
             return;
         ModelTextures.Add(name);
         if (Requested.Add(name))
@@ -219,8 +219,8 @@ public class FxTextureLibrary : IResourceEventListener
 
         var (path, wanted) = Pending.First();
         Pending.Remove(path);
-        var fs = Editor.Project.VFS.FS;
-        var materials = Editor.Project.Handler.MaterialData?.PrimaryBank;
+        var fs = Host.Project.VFS.FS;
+        var materials = Host.Project.Handler.MaterialData?.PrimaryBank;
 
         Reading = Task.Run(() =>
         {

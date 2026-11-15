@@ -3,7 +3,6 @@
 #----------------------------------------------------
 
 - Support playback for:
-    - FX
     - Fades
     - Point Lights
     - Map GPARAM
@@ -25,5 +24,4 @@
     - Actor add/remove
     
 - Tweaks:
-    - Allow draw group col selection to persist between cuts
     - Improve presentation of properties

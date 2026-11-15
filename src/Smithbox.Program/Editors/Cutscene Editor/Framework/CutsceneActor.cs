@@ -276,6 +276,57 @@ public sealed class CutsceneActor : IDisposable
         ? cutRoot
         : CutsceneSkeletonPose.BoneWorld(Skeleton, Clip, 0, frame) * cutRoot;
 
+    /// <summary>The model's rig (nodes and dummy polys), once it is read and the actor is posed: null before, or with models off</summary>
+    public ModelRig? Rig => LeaderRig;
+
+    // The clip skeleton's bone each rig node follows, by name (-1 for none): made the first time an anchor asks
+    private int[]? NodeToBone;
+    private ModelRig? NodeToBoneFor;
+
+    /// <summary>
+    /// Where something an event puts on the actor's dummy poly is, at any frame of the cut (effects ask for past frames
+    /// when they replay): the dummy on the bone it follows, posed by the clip. A dummy id below 0, or one the model
+    /// hasn't got (or no rig yet), gives the actor's root.
+    /// <para>The bone is posed from the clip by name rather than read from the animator, which only holds the frame
+    /// shown; a rig node no bone of the clip moves stays in its rest pose.</para>
+    /// </summary>
+    public Matrix4x4 AnchorWorld(int dummyId, float frame, Matrix4x4 cutRoot)
+    {
+        var rig = LeaderRig;
+        if (dummyId < 0 || rig == null || Skeleton == null || rig.FindDummy(dummyId) is not { } dummy)
+            return RootWorld(frame, cutRoot);
+
+        // The mesh's own place: the cut's root, or the root bone for a model none of whose nodes follow the clip
+        var meshWorld = Animator is { MappedNodeCount: 0 } ? RootWorld(frame, cutRoot) : cutRoot;
+        if (dummy.Node < 0)
+            return dummy.Offset * meshWorld;
+
+        if (NodeToBone == null || NodeToBoneFor != rig)
+        {
+            NodeToBone = MapNodesToBones(rig, Skeleton);
+            NodeToBoneFor = rig;
+        }
+
+        var bone = dummy.Node < NodeToBone.Length ? NodeToBone[dummy.Node] : -1;
+        return bone < 0
+            ? dummy.Offset * rig.NodeReferenceWorld[dummy.Node] * meshWorld
+            : dummy.Offset * CutsceneSkeletonPose.BoneWorld(Skeleton, Clip, bone, frame) * cutRoot;
+    }
+
+    /// <summary>Each rig node's bone in the clip's skeleton, matched by name as the animator matches them</summary>
+    private static int[] MapNodesToBones(ModelRig rig, HavokSkeletonData skeleton)
+    {
+        var names = CutsceneSkeletonPose.WithoutActorPrefix(skeleton).Names;
+        var byName = new Dictionary<string, int>(StringComparer.Ordinal);
+        for (var i = 0; i < names.Length; i++)
+            byName.TryAdd(names[i], i);
+
+        var map = new int[rig.NodeNames.Length];
+        for (var n = 0; n < map.Length; n++)
+            map[n] = byName.TryGetValue(rig.NodeNames[n], out var bone) ? bone : -1;
+        return map;
+    }
+
     /// <summary>Drawn as a marker rather than a model</summary>
     public bool ShowsMarker => State is CutsceneActorState.NoModel or CutsceneActorState.Failed or CutsceneActorState.ModelsOff;
 

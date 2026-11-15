@@ -28,13 +28,15 @@ public class FxViewportWindow
     public FxPreviewRuntime Runtime;
     public FxDebugRenderer ParticleRenderer = new();
 
-    /// <summary>The particles drawn as their billboards (phase V3), and the textures they use.</summary>
-    public FxTextureLibrary Textures;
-    public FxBillboardRenderer Billboards;
-
-    /// <summary>Model particles and lights (phase V4).</summary>
-    public FxModelRenderer Models;
-    public FxLightRenderer Lights;
+    /// <summary>
+    /// The effect drawn: its billboards (phase V3), model particles and lights (phase V4), and the textures they use.
+    /// The same display the Cutscene Editor (and any other editor) shows effects with.
+    /// </summary>
+    public FxDisplay EffectDisplay;
+    public FxTextureLibrary Textures => EffectDisplay.Textures;
+    public FxBillboardRenderer Billboards => EffectDisplay.Billboards;
+    public FxModelRenderer Models => EffectDisplay.Models;
+    public FxLightRenderer Lights => EffectDisplay.Lights;
     private DateTime LastParticleBuild;
     private float LastParticleTime = -1;
     private static readonly TimeSpan ParticleInterval = TimeSpan.FromMilliseconds(50);
@@ -72,13 +74,16 @@ public class FxViewportWindow
                 Viewport = new NullViewport(editor.Universe, "FxViewport", Rect.Width, Rect.Height, editor.RenderScene);
         }
 
-        editor.ActionManager.ActionPerformed += () => EditVersion++;
+        editor.ActionManager.ActionPerformed += () =>
+        {
+            EditVersion++;
+            // Other editors showing this project's effects build them again
+            if (editor.Data != null)
+                editor.Data.EditVersion++;
+        };
 
         Runtime = new FxPreviewRuntime(editor);
-        Textures = new FxTextureLibrary(editor);
-        Billboards = new FxBillboardRenderer(editor, Textures);
-        Models = new FxModelRenderer(editor, Textures);
-        Lights = new FxLightRenderer(editor);
+        EffectDisplay = new FxDisplay(new FxDisplayHost(project, () => editor.RenderScene, () => FxDisplayHost.PipelineOf(Viewport)));
     }
 
     public void Display(uint dockspaceId)
@@ -372,10 +377,7 @@ public class FxViewportWindow
     {
         DebugRenderer.Clear();
         ParticleRenderer.Clear();
-        Billboards.Clear();
-        Models.Clear();
-        Lights.Clear();
-        Textures.Clear();
+        EffectDisplay.Dispose();
         Runtime.Clear();
 
         // The viewport's render pipeline (GPU targets, passes and queues), gizmos and grids

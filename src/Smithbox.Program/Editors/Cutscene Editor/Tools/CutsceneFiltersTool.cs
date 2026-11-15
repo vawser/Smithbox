@@ -80,6 +80,12 @@ public class CutsceneFiltersTool
         ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Subtitles")}##cutsceneFilterSubtitles", ref CFG.Current.CutsceneEditor_Display_Subtitles);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Display_Subtitles_TT"));
 
+        var effects = CFG.Current.CutsceneEditor_Display_Effects;
+        if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Effects")}##cutsceneFilterEffects", ref effects))
+            Editor.SetDisplayEffects(effects);
+        GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Effects_TT"));
+        DisplayEffectStatus();
+
         // Playback
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("CUTSCENE_FiltersTool_Playback_Header"), LOC.Get("CUTSCENE_FiltersTool_Playback_Header_TT"));
@@ -97,6 +103,31 @@ public class CutsceneFiltersTool
         // Audio needs the Sound Editor: say so rather than leave the toggles doing nothing
         if (!SoundReferenceHelper.IsAvailable(Editor.Project))
             GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_No_Sound"));
+    }
+
+    /// <summary>Why effects may not show, or what the cut's effect events are doing</summary>
+    private void DisplayEffectStatus()
+    {
+        if (!CFG.Current.CutsceneEditor_Display_Effects)
+            return;
+
+        var effects = Editor.Effects;
+        if (!effects.IsAvailable)
+        {
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Effects_No_Fx"));
+            return;
+        }
+
+        if (Editor.Scene == null)
+            return;
+
+        if (effects.Bank is { IsIndexing: true } bank)
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Effects_Indexing", bank.IndexedBinders, bank.TotalBinders));
+        else if (effects.EventCount == 0)
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Effects_None"));
+        else
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Effects_Status", effects.EventCount, effects.RunningCount,
+                effects.ParticleCount, effects.MissingCount));
     }
 
     private string CollisionFilter = "";

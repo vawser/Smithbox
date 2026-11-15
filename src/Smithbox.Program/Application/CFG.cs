@@ -1550,6 +1550,9 @@ public class CFG
 
     // Sound events (seId/seType): played as the cut plays past their start
     public bool CutsceneEditor_Play_Sounds = true;
+
+    // Effect events (sfxId): the effect drawn on its actor's dummy poly while the event runs (needs the FX Editor's data)
+    public bool CutsceneEditor_Display_Effects = true;
     public bool CutsceneEditor_Loop = true;
     public bool CutsceneEditor_Continue_To_Next_Cut = false;
     public float CutsceneEditor_Playback_Speed = 1.0f;

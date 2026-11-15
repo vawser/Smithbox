@@ -51,7 +51,7 @@ public sealed class CutscenePlacement
     }
 
     // Rotation in degrees, as MSB parts store theirs (see Entity, which reads them the same way)
-    private static Matrix4x4 ToMatrix(Vector3 translation, Vector3 rotationDegrees, Vector3 scale)
+    internal static Matrix4x4 ToMatrix(Vector3 translation, Vector3 rotationDegrees, Vector3 scale)
     {
         var radians = rotationDegrees * (MathF.PI / 180f);
         if (scale == Vector3.Zero)

@@ -15,7 +15,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxBillboardRenderer
 {
-    private readonly FxEditorScreen Editor;
+    private readonly IFxDisplayHost Host;
     private readonly FxTextureLibrary Textures;
 
     private sealed class Batch
@@ -30,7 +30,7 @@ public class FxBillboardRenderer
 
     // One batch per appearance; lens flares one per layer (each layer has its own texture)
     private readonly Dictionary<(FxAppearanceDef Appearance, int Layer), Batch> Batches = new();
-    private FxEffectDef BatchesFor;
+    private readonly HashSet<FxEffectDef> BatchesFor = new();
     private readonly List<FxParticleOutput> Scratch = new();
     private readonly List<FxSegment> Segments = new();
 
@@ -45,7 +45,7 @@ public class FxBillboardRenderer
     /// <summary>The scene colour copy's texture index in the FX viewport's pipeline, 0 until it's been taken once.</summary>
     private uint SceneColorIndex;
 
-    private SceneRenderPipeline Pipeline => (Editor.ViewportWindow?.Viewport as StudioCore.Editors.Viewport.VulkanViewport)?.ViewPipeline;
+    private SceneRenderPipeline Pipeline => Host.Pipeline;
 
     /// <summary>A batch unused for this many frames goes.</summary>
     private const int IdleFramesBeforeRelease = 120;
@@ -59,31 +59,38 @@ public class FxBillboardRenderer
     /// <summary>The shader's orientation mode for lens flares (camera-facing at the source, moved on screen).</summary>
     private const uint LensFlareOrientation = 101;
 
-    public FxBillboardRenderer(FxEditorScreen editor, FxTextureLibrary textures)
+    public FxBillboardRenderer(IFxDisplayHost host, FxTextureLibrary textures)
     {
-        Editor = editor;
+        Host = host;
         Textures = textures;
     }
 
+    private readonly FxEffectInstance[] One = new FxEffectInstance[1];
+
     public void Update(FxEffectInstance instance, Vector3 eye)
+    {
+        One[0] = instance;
+        Update(instance == null ? Array.Empty<FxEffectInstance>() : One, eye);
+        One[0] = null;
+    }
+
+    /// <summary>Draws every effect given, together: particles of one appearance share a batch whichever effect they're in.</summary>
+    public void Update(IReadOnlyList<FxEffectInstance> instances, Vector3 eye)
     {
         Textures.Update();
 
-        if (Editor.RenderScene == null)
+        if (Host.RenderScene == null)
             return;
 
-        if (instance == null || !CFG.Current.FxEditor_Viewport_Display_Billboards)
+        if (instances.Count == 0 || !Host.Settings.Billboards)
         {
             Clear();
             return;
         }
 
-        // A rebuilt effect has new appearance objects: the old batches can't be reused
-        if (instance.Def != BatchesFor)
-        {
-            Clear();
-            BatchesFor = instance.Def;
-        }
+        // A rebuilt or finished effect leaves batches of appearance objects nothing will use again: they go once
+        // they've emptied, rather than waiting out the idle time
+        bool effectsGone = FxDisplay.DefsChanged(BatchesFor, instances);
 
         foreach (var batch in Batches.Values)
         {
@@ -93,7 +100,8 @@ public class FxBillboardRenderer
         }
 
         Scratch.Clear();
-        instance.CollectParticles(Scratch);
+        foreach (var instance in instances)
+            instance.CollectParticles(Scratch);
 
         int billboards = 0, segments = 0;
         foreach (var p in Scratch)
@@ -106,7 +114,7 @@ public class FxBillboardRenderer
             {
                 if (appearance.Billboard is { } def)
                 {
-                    if (def.IsScreenEffect && !CFG.Current.FxEditor_Viewport_Display_Screen_Effects)
+                    if (def.IsScreenEffect && !Host.Settings.ScreenEffects)
                         continue;
                     if (!def.Evaluate(p.Node, p.Particle, p.Position, out var b))
                         continue;
@@ -122,7 +130,7 @@ public class FxBillboardRenderer
                 }
                 else if (appearance.LensFlare is { } flare)
                 {
-                    if (!CFG.Current.FxEditor_Viewport_Display_Lens_Flares)
+                    if (!Host.Settings.LensFlares)
                         continue;
                     float distance = Vector3.Distance(eye, p.Position);
                     for (int layer = 0; layer < flare.Layers.Length; layer++)
@@ -144,7 +152,7 @@ public class FxBillboardRenderer
                 }
                 else if (appearance.LightShaft is { } shaft)
                 {
-                    if (!CFG.Current.FxEditor_Viewport_Display_Lens_Flares)
+                    if (!Host.Settings.LensFlares)
                         continue;
                     float distance = Vector3.Distance(eye, p.Position);
                     var batch = BatchFor(appearance);
@@ -181,8 +189,9 @@ public class FxBillboardRenderer
             }
         }
 
-        if (CFG.Current.FxEditor_Viewport_Display_Gpu_Particles)
-            AddGpuParticles(instance, eye, ref billboards, ref segments);
+        if (Host.Settings.GpuParticles)
+            foreach (var instance in instances)
+                AddGpuParticles(instance, eye, ref billboards, ref segments);
 
         // The scene colour copy is taken only while a screen effect has something to draw (it costs a full-size copy
         // each frame); its index goes into their materials once it exists
@@ -202,7 +211,7 @@ public class FxBillboardRenderer
 
             if (batch.Items.Count == 0)
             {
-                if (++batch.IdleFrames > IdleFramesBeforeRelease)
+                if (++batch.IdleFrames > IdleFramesBeforeRelease || effectsGone)
                     idle.Add(key);
                 batch.Proxy.SetParticles(Array.Empty<FxBillboardGpu>(), 0, new BoundingBox(Vector3.Zero, Vector3.Zero));
                 continue;
@@ -323,7 +332,7 @@ public class FxBillboardRenderer
         {
             batch = new Batch
             {
-                Proxy = new FxBillboardRenderableProxy(Editor.RenderScene.OpaqueRenderables),
+                Proxy = new FxBillboardRenderableProxy(Host.RenderScene.OpaqueRenderables),
                 Min = new Vector3(float.MaxValue),
                 Max = new Vector3(float.MinValue),
             };
@@ -359,7 +368,7 @@ public class FxBillboardRenderer
 
     private void UpdateMaterial(FxAppearanceDef appearance, int layer, Batch batch)
     {
-        var brightness = new Vector4(CFG.Current.FxEditor_Viewport_Billboard_Brightness, DepthFadeDistance, 0, 0);
+        var brightness = new Vector4(Host.Settings.BillboardBrightness, DepthFadeDistance, 0, 0);
         FxBillboardMaterial material;
 
         if (appearance.GpuParticles is { } gpu)
@@ -574,7 +583,7 @@ public class FxBillboardRenderer
         foreach (var batch in Batches.Values)
             batch.Proxy.Dispose();
         Batches.Clear();
-        BatchesFor = null;
+        BatchesFor.Clear();
         if (Pipeline is { } pipeline)
             pipeline.SceneColor.Wanted = false;
         DrawnScreenEffects = false;

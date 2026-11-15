@@ -59,6 +59,9 @@ public class CutsceneEditorScreen : EditorScreen
     /// <summary>The cut's sound events, played as it plays</summary>
     public CutsceneSoundPlayback Sounds;
 
+    /// <summary>The cut's effect events (sfxId), drawn with the shared FX display as it plays</summary>
+    public CutsceneEffects Effects;
+
     /// <summary>The viewport gizmo on <see cref="SelectedCameraKey" /></summary>
     public CutsceneCameraKeyGizmoTarget CameraKeyGizmo;
 
@@ -111,6 +114,7 @@ public class CutsceneEditorScreen : EditorScreen
         CameraKeyGizmo = new CutsceneCameraKeyGizmoTarget(this);
         Subtitles = new CutsceneSubtitles(this);
         Sounds = new CutsceneSoundPlayback(this);
+        Effects = new CutsceneEffects(this);
         CharacterPreview = new StudioCore.Editors.ModelEditor.ModelCharacterPreview(project, GetCharacterPreviewTarget);
         Templates = new CutsceneTemplateIndex(project, () => Data?.Files ?? new List<CutsceneFile>());
 
@@ -679,6 +683,13 @@ public class CutsceneEditorScreen : EditorScreen
             Subtitles.StopVoice();
     }
 
+    public void SetDisplayEffects(bool on)
+    {
+        CFG.Current.CutsceneEditor_Display_Effects = on;
+        if (!on)
+            Effects.Clear();
+    }
+
     public void SetPlaySounds(bool on)
     {
         CFG.Current.CutsceneEditor_Play_Sounds = on;
@@ -775,6 +786,10 @@ public class CutsceneEditorScreen : EditorScreen
         }
 
         ViewportWindow.Update(dt);
+
+        // After the viewport, so the effects face and sort from the camera it shows (the cut's, looking through it)
+        var (eye, forward) = ViewportWindow.CameraEyeAndForward();
+        Effects.Update(Scene, Playback.Frame, eye, forward);
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
@@ -820,6 +835,7 @@ public class CutsceneEditorScreen : EditorScreen
         Backdrop.UnloadMap();
         Subtitles.Dispose();
         Sounds.Dispose();
+        Effects.Dispose();
         ViewportWindow.Dispose();
     }
 }

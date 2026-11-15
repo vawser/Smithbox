@@ -40,6 +40,17 @@ public struct SkinVertex
     public uint Padding;
 }
 
+/// <summary>
+///     A dummy poly of a rig: its reference id (what events name as dmypolyId), the node it follows, and its matrix in
+///     that node's space (in model space when it follows none). Its model space matrix is Offset * the node's world.
+/// </summary>
+public sealed class RigDummy
+{
+    public int ReferenceId;
+    public int Node = -1;
+    public Matrix4x4 Offset = Matrix4x4.Identity;
+}
+
 public sealed class MeshRig
 {
     public MeshSkinMode Mode;
@@ -63,6 +74,66 @@ public sealed class ModelRig
     public int[] NodeOrder = Array.Empty<int>();
 
     public MeshRig[] Meshes = Array.Empty<MeshRig>();
+
+    /// <summary>The model's dummy polys, each placed relative to the node it follows</summary>
+    public RigDummy[] Dummies = Array.Empty<RigDummy>();
+
+    /// <summary>The first dummy with the reference id, or null: several dummies may share one, as the games use them</summary>
+    public RigDummy? FindDummy(int referenceId)
+    {
+        foreach (var dummy in Dummies)
+        {
+            if (dummy.ReferenceId == referenceId)
+            {
+                return dummy;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    ///     Reads the dummies as CharacterComposition places them: the dummy's frame (position, forward and up) in its
+    ///     parent bone's reference space, then kept relative to the bone it is attached to (the parent if it has none).
+    /// </summary>
+    private void ReadDummies(List<FLVER.Dummy>? dummies)
+    {
+        if (dummies == null)
+        {
+            return;
+        }
+
+        var result = new List<RigDummy>(dummies.Count);
+        foreach (FLVER.Dummy d in dummies)
+        {
+            Vector3 forward = d.Forward == Vector3.Zero ? Vector3.UnitZ : Vector3.Normalize(d.Forward);
+            Vector3 up = d.UseUpwardVector && d.Upward != Vector3.Zero ? Vector3.Normalize(d.Upward) : Vector3.UnitY;
+
+            // CreateWorld needs up to not be along forward
+            if (MathF.Abs(Vector3.Dot(forward, up)) > 0.999f)
+            {
+                up = MathF.Abs(forward.Y) < 0.9f ? Vector3.UnitY : Vector3.UnitX;
+            }
+
+            Matrix4x4 model = Matrix4x4.CreateWorld(d.Position, forward, up);
+            if (d.ParentBoneIndex >= 0 && d.ParentBoneIndex < NodeReferenceWorld.Length)
+            {
+                model *= NodeReferenceWorld[d.ParentBoneIndex];
+            }
+
+            var node = d.AttachBoneIndex >= 0 && d.AttachBoneIndex < NodeNames.Length ? d.AttachBoneIndex
+                : d.ParentBoneIndex >= 0 && d.ParentBoneIndex < NodeNames.Length ? d.ParentBoneIndex : -1;
+
+            result.Add(new RigDummy
+            {
+                ReferenceId = d.ReferenceID,
+                Node = node,
+                Offset = node >= 0 ? model * NodeInverseReferenceWorld[node] : model
+            });
+        }
+
+        Dummies = result.ToArray();
+    }
 
     /// <summary>
     ///     Reads the rig of the named model from its binder. Returns null if the binder has no such model.
@@ -115,6 +186,7 @@ public sealed class ModelRig
     {
         ModelRig rig = new();
         rig.ReadNodes(flver.Nodes);
+        rig.ReadDummies(flver.Dummies);
 
         // Vertex bone indices refer to the bone table of the mesh in older versions
         var perMeshBoneTable = flver.Header.Version <= 0x2000D;
@@ -144,6 +216,7 @@ public sealed class ModelRig
     {
         ModelRig rig = new();
         rig.ReadNodes(flver.Nodes);
+        rig.ReadDummies(flver.Dummies);
 
         rig.Meshes = new MeshRig[flver.Meshes.Count];
         for (var i = 0; i < flver.Meshes.Count; i++)
