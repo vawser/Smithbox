@@ -25,6 +25,7 @@ public static class GUI
     public static uint EMEVD_EDITOR_DOCK_GROUP = 1017;
     public static uint ESD_EDITOR_DOCK_GROUP = 1018;
     public static uint SOUND_EDITOR_DOCK_GROUP = 1019;
+    public static uint CUTSCENE_EDITOR_DOCK_GROUP = 1020;
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
@@ -94,6 +95,10 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_FxEditor = new(
         classId: FX_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_CutsceneEditor = new(
+        classId: CUTSCENE_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_MapEditorView = new(

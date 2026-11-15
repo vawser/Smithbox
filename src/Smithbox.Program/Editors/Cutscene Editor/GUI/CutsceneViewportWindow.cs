@@ -1,0 +1,230 @@
+#nullable enable
+using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
+using StudioCore.Editors.Viewport;
+using StudioCore.Renderer;
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using Veldrid;
+using Veldrid.Sdl2;
+
+namespace StudioCore.Editors.CutsceneEditor;
+
+/// <summary>
+/// The Cutscene Editor's viewport: the cut's actors, its camera's path and frustum, and markers for what has no model.
+/// While looking through the camera, the viewport takes the camera's place and field of view every frame and ignores
+/// the fly and orbit input; turning it off leaves a free camera where the cutscene camera was.
+/// </summary>
+public class CutsceneViewportWindow
+{
+    public CutsceneEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public IViewport? Viewport;
+    public Rectangle Rect;
+
+    public bool ViewportUsingKeyboard;
+
+    private readonly CutsceneDebugLines Lines = new();
+
+    // What the lines were last built for, to rebuild them only when it changes
+    private (CutsceneScene? Scene, int Frame, bool Path, bool Camera, bool Markers, bool LookThrough, int Forward, int Up, bool Horizontal, float Aspect) BuiltKey;
+    private DateTime LastBuild;
+    private static readonly TimeSpan BuildInterval = TimeSpan.FromMilliseconds(50);
+
+    private bool WasLookingThrough;
+
+    public CutsceneViewportWindow(CutsceneEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+
+        var window = Smithbox.Instance._context.Window;
+        Rect = window.Bounds;
+
+        if (Smithbox.Instance._context.Device != null)
+        {
+            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
+                Viewport = new VulkanViewport(editor.Universe, "CutsceneViewport", Rect.Width, Rect.Height, editor.RenderScene);
+            else
+                Viewport = new NullViewport(editor.Universe, "CutsceneViewport", Rect.Width, Rect.Height, editor.RenderScene);
+        }
+    }
+
+    public void Display(uint dockspaceId)
+    {
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_CutsceneEditor);
+
+        if (Viewport is VulkanViewport vulkanViewport)
+            vulkanViewport.Display();
+        else if (Viewport is NullViewport nullViewport)
+            nullViewport.Display();
+    }
+
+    /// <summary>A new cut: its lines are built again, and the free camera starts where its camera does.</summary>
+    public void OnSceneChanged()
+    {
+        BuiltKey = default;
+
+        if (Viewport is VulkanViewport vk && Editor.Scene is { } scene && scene.ActiveCamera(0) is { Skeleton: not null } camera)
+        {
+            CutsceneCamera.GetView(camera.World(0, scene.RootOf(camera.Resource, 0)), out var eye, out var forward, out var up);
+            vk.ViewportCamera.CameraTransform.Position = eye;
+            vk.ViewportCamera.CameraTransform.Rotation = CutsceneCamera.ViewportRotation(forward, up);
+        }
+    }
+
+    public void Update(float deltatime)
+    {
+        if (Viewport != null)
+            ViewportUsingKeyboard = Viewport.Update(Smithbox.Instance._context.Window, deltatime);
+
+        UpdateCamera();
+        UpdateLines();
+        Lines.Update();
+    }
+
+    private float Aspect => Viewport is VulkanViewport vk && vk.Height > 0 ? vk.Width / (float)vk.Height : 16f / 9f;
+
+    private void UpdateCamera()
+    {
+        if (Viewport is not VulkanViewport vk)
+            return;
+
+        var scene = Editor.Scene;
+        var frame = Editor.Playback.Frame;
+        var camera = scene?.ActiveCamera(frame);
+
+        var lookThrough = CFG.Current.CutsceneEditor_Look_Through_Camera && scene != null && camera?.Skeleton != null;
+
+        if (lookThrough)
+        {
+            CutsceneCamera.GetView(camera!.World(frame, scene!.RootOf(camera.Resource, frame)), out var eye, out var forward, out var up);
+
+            vk.ViewportCamera.CameraTransform.Position = eye;
+            vk.ViewportCamera.CameraTransform.Rotation = CutsceneCamera.ViewportRotation(forward, up);
+            vk.ViewportCamera.FovOverrideDegrees = camera.VerticalFovRadians(frame, Aspect) * 180f / MathF.PI;
+            vk.CameraInputLocked = true;
+            vk.ViewportCamera.UpdateProjectionMatrix();
+        }
+        else if (WasLookingThrough)
+        {
+            // Back to a free camera, from where the cutscene camera was
+            vk.ViewportCamera.FovOverrideDegrees = null;
+            vk.CameraInputLocked = false;
+            vk.ViewportCamera.UpdateProjectionMatrix();
+        }
+
+        WasLookingThrough = lookThrough;
+    }
+
+    private void UpdateLines()
+    {
+        if (Editor.RenderScene == null || Lines.IsUpdating)
+            return;
+
+        var scene = Editor.Scene;
+        var frame = (int)MathF.Round(Editor.Playback.Frame);
+        var key = (scene, frame, CFG.Current.CutsceneEditor_Display_Camera_Path, CFG.Current.CutsceneEditor_Display_Camera,
+            CFG.Current.CutsceneEditor_Display_Markers, CFG.Current.CutsceneEditor_Look_Through_Camera,
+            CFG.Current.CutsceneEditor_Camera_Forward_Axis, CFG.Current.CutsceneEditor_Camera_Up_Axis,
+            CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal, MathF.Round(Aspect, 2));
+
+        if (key == BuiltKey)
+            return;
+
+        // A new cut shows at once; a moving frame at most every BuildInterval
+        if (scene == BuiltKey.Scene && DateTime.UtcNow - LastBuild < BuildInterval)
+            return;
+
+        BuiltKey = key;
+        LastBuild = DateTime.UtcNow;
+
+        if (scene == null)
+        {
+            Lines.Clear();
+            return;
+        }
+
+        var lines = new Dictionary<CutsceneLineLayer, List<(Vector3, Vector3)>>
+        {
+            [CutsceneLineLayer.CameraPath] = new(),
+            [CutsceneLineLayer.Camera] = new(),
+            [CutsceneLineLayer.Markers] = new(),
+            [CutsceneLineLayer.Root] = new()
+        };
+
+        foreach (var placement in scene.Placements.Values)
+            CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.Root], placement.At(frame), 1.0f);
+
+        if (CFG.Current.CutsceneEditor_Display_Camera_Path)
+        {
+            foreach (var camera in scene.Cameras)
+            {
+                if (camera.Skeleton == null)
+                    continue;
+
+                Vector3? last = null;
+                for (var f = 0; f < scene.FrameCount; f++)
+                {
+                    if (!camera.IsActiveAt(f))
+                    {
+                        last = null;
+                        continue;
+                    }
+
+                    var p = camera.World(f, scene.RootOf(camera.Resource, f)).Translation;
+                    if (last is { } l)
+                        lines[CutsceneLineLayer.CameraPath].Add((l, p));
+                    last = p;
+                }
+            }
+        }
+
+        // The camera at this frame; not while looking through it, as it would fill the view
+        var active = scene.ActiveCamera(frame);
+        if (CFG.Current.CutsceneEditor_Display_Camera && active?.Skeleton != null && !CFG.Current.CutsceneEditor_Look_Through_Camera)
+        {
+            CutsceneCamera.GetView(active.World(frame, scene.RootOf(active.Resource, frame)), out var eye, out var forward, out var up);
+            CutsceneDebugLines.AddFrustum(lines[CutsceneLineLayer.Camera], eye, forward, up,
+                active.VerticalFovRadians(frame, Aspect), Aspect, 1.0f);
+        }
+
+        if (CFG.Current.CutsceneEditor_Display_Markers)
+        {
+            foreach (var actor in scene.Actors)
+            {
+                if (!actor.ShowsMarker || !actor.IsVisibleAt(frame))
+                    continue;
+
+                CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.Markers],
+                    actor.RootWorld(frame, scene.RootOf(actor.Resource, frame)), 0.5f);
+            }
+        }
+
+        Lines.Show(Editor.RenderScene, lines);
+    }
+
+    public void EditorResized(Sdl2Window window, GraphicsDevice device)
+    {
+        Rect = window.Bounds;
+    }
+
+    public void Draw(GraphicsDevice device, CommandList cl)
+    {
+        Viewport?.Draw(device, cl);
+    }
+
+    public bool InputCaptured()
+    {
+        return Viewport != null && Viewport.IsViewportSelected;
+    }
+
+    public void Dispose()
+    {
+        Lines.Clear();
+        (Viewport as VulkanViewport)?.Dispose();
+    }
+}

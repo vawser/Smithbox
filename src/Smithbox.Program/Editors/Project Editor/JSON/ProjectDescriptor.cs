@@ -33,6 +33,7 @@ public class ProjectDescriptor
     public bool EnableAnimEditor = false;
     public bool EnableHavokEditor = false;
     public bool EnableFxEditor = false;
+    public bool EnableCutsceneEditor = false;
     public bool EnableBehaviorEditor = false;
     public bool EnableEmevdEditor = false;
     public bool EnableEsdEditor = false;
@@ -67,6 +68,7 @@ public class ProjectDescriptor
         EnableAnimEditor = newDescriptor.EnableAnimEditor;
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
         EnableFxEditor = newDescriptor.EnableFxEditor;
+        EnableCutsceneEditor = newDescriptor.EnableCutsceneEditor;
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
         EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
         EnableEsdEditor = newDescriptor.EnableEsdEditor;
@@ -147,6 +149,7 @@ public class ProjectDescriptor
             && EnableAnimEditor == other.EnableAnimEditor
             && EnableHavokEditor == other.EnableHavokEditor
             && EnableFxEditor == other.EnableFxEditor
+            && EnableCutsceneEditor == other.EnableCutsceneEditor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
             && EnableEmevdEditor == other.EnableEmevdEditor
             && EnableEsdEditor == other.EnableEsdEditor
@@ -179,6 +182,7 @@ public class ProjectDescriptor
         EnableAnimEditor = edited.EnableAnimEditor;
         EnableHavokEditor = edited.EnableHavokEditor;
         EnableFxEditor = edited.EnableFxEditor;
+        EnableCutsceneEditor = edited.EnableCutsceneEditor;
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
         EnableEmevdEditor = edited.EnableEmevdEditor;
         EnableEsdEditor = edited.EnableEsdEditor;
@@ -211,6 +215,7 @@ public class ProjectDescriptor
             EnableAnimEditor = this.EnableAnimEditor,
             EnableHavokEditor = this.EnableHavokEditor,
             EnableFxEditor = this.EnableFxEditor,
+            EnableCutsceneEditor = this.EnableCutsceneEditor,
             EnableBehaviorEditor = this.EnableBehaviorEditor,
             EnableEmevdEditor = this.EnableEmevdEditor,
             EnableEsdEditor = this.EnableEsdEditor,
@@ -252,6 +257,7 @@ public class ProjectDescriptor
         EnableAnimEditor = true;
         EnableHavokEditor = true;
         EnableFxEditor = true;
+        EnableCutsceneEditor = true;
         EnableBehaviorEditor = true;
         EnableEmevdEditor = true;
         EnableEsdEditor = true;

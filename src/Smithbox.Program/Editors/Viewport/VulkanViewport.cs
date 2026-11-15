@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
@@ -122,6 +123,11 @@ public class VulkanViewport : IViewport
 
     public bool IsActiveViewport = false;
 
+    /// <summary>
+    ///     While set, the camera ignores the user's fly and orbit input, as something else places it every frame.
+    /// </summary>
+    public bool CameraInputLocked;
+
     public VulkanViewport(IUniverse owner, string id, int width, int height, RenderScene scene)
     {
         Owner = owner;
@@ -176,6 +182,13 @@ public class VulkanViewport : IViewport
             ActionManager = fxUniverse.ViewportActionManager;
         }
 
+        if (owner is CutsceneUniverse cutsceneUniverse)
+        {
+            RenderScene = cutsceneUniverse.RenderScene;
+            ViewportSelection = cutsceneUniverse.ViewportSelection;
+            ActionManager = cutsceneUniverse.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -196,6 +209,7 @@ public class VulkanViewport : IViewport
                 ModelUniverse model => model.Project,
                 TimeActUniverse timeAct => timeAct.Project,
                 FxUniverse fx => fx.Project,
+                CutsceneUniverse cutscene => cutscene.Project,
                 _ => null
             };
 
@@ -298,7 +312,7 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -351,6 +365,7 @@ public class VulkanViewport : IViewport
             HandleTimeActEditorFocus();
             HandleGparamEditorFocus();
             HandleFxEditorFocus();
+            HandleCutsceneEditorFocus();
 
             HandleCompass();
 
@@ -525,7 +540,9 @@ public class VulkanViewport : IViewport
 
         if (canPick)
         {
-            kbbusy = ViewportCamera.UpdateInput(window, dt);
+            // Another source drives the camera (looking through a cutscene camera): no fly or orbit input
+            if (!CameraInputLocked)
+                kbbusy = ViewportCamera.UpdateInput(window, dt);
 
             if (!painting)
             {
@@ -579,6 +596,12 @@ public class VulkanViewport : IViewport
         if (Owner is FxUniverse fxUniverse)
         {
             return fxUniverse.Editor.ViewportWindow?.Viewport == this;
+        }
+
+        // So has the Cutscene Editor
+        if (Owner is CutsceneUniverse cutsceneUniverse)
+        {
+            return cutsceneUniverse.Editor.ViewportWindow?.Viewport == this;
         }
 
         return false;
@@ -705,6 +728,22 @@ public class VulkanViewport : IViewport
                         IsActiveViewport = true;
                     }
                 }
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleCutsceneEditorFocus()
+    {
+        if (Owner is CutsceneUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.CutsceneEditor_Viewport);
+                IsActiveViewport = true;
             }
             else
             {

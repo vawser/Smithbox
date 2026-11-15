@@ -32,7 +32,8 @@ public sealed class ModelAnimator : IDisposable
     private bool _poseDirty = true;
     private bool _applyRootMotion;
 
-    public AnimationPackage Package { get; }
+    /// <summary>Null for an animator made from a skeleton alone (a cutscene actor), which plays clips it is given.</summary>
+    public AnimationPackage? Package { get; }
     public AnimationEntry? CurrentAnimation { get; private set; }
     public HavokClip? CurrentClip { get; private set; }
 
@@ -67,6 +68,9 @@ public sealed class ModelAnimator : IDisposable
     public Matrix4x4 RootMotion { get; private set; } = Matrix4x4.Identity;
 
     public int NodeCount => _rig.NodeNames.Length;
+
+    /// <summary>How many of the model's nodes found a bone of the skeleton by name (0 for a part following a leader)</summary>
+    public int MappedNodeCount => _pose?.MappedNodeCount ?? 0;
     public float Duration => CurrentClip?.Duration ?? 0;
     public float Frame => CurrentClip is { FrameDuration: > 0 } ? Time / CurrentClip.FrameDuration : 0;
 
@@ -76,6 +80,22 @@ public sealed class ModelAnimator : IDisposable
     /// <param name="rig">The model to animate.</param>
     /// <param name="leader">The character this model is a part of. It drives this one, see <see cref="Follow" />.</param>
     public ModelAnimator(AnimationPackage package, ModelRig rig, ModelAnimator? leader = null)
+        : this(package, package.Skeleton!, package.RetargetSkeleton, rig, leader)
+    {
+    }
+
+    /// <summary>
+    ///     An animator for clips that come from somewhere other than an animation package, such as the actors of a
+    ///     cutscene, whose skeletons and clips are all in the cut's file. Play them with <see cref="Play(HavokClip)" />.
+    /// </summary>
+    /// <param name="skeleton">The skeleton the clips are bound to. FLVER nodes follow its bones by name.</param>
+    public ModelAnimator(HavokSkeletonData skeleton, ModelRig rig)
+        : this(null, skeleton, null, rig, null)
+    {
+    }
+
+    private ModelAnimator(AnimationPackage? package, HavokSkeletonData skeleton, HavokSkeletonData? retarget,
+        ModelRig rig, ModelAnimator? leader)
     {
         Package = package;
         _rig = rig;
@@ -88,7 +108,7 @@ public sealed class ModelAnimator : IDisposable
         }
         else
         {
-            _pose = new ModelPose(rig, package.Skeleton!, package.RetargetSkeleton);
+            _pose = new ModelPose(rig, skeleton, retarget);
         }
 
         _meshSkinStart = new int[rig.Meshes.Length];
@@ -133,8 +153,25 @@ public sealed class ModelAnimator : IDisposable
     /// <summary>
     ///     Starts an animation from the beginning. Returns false if the clip could not be read.
     /// </summary>
+    /// <summary>
+    ///     Shows a clip given directly, paused at its start: the owner moves it with <see cref="Seek" />.
+    /// </summary>
+    public void Play(HavokClip clip)
+    {
+        CurrentAnimation = null;
+        CurrentClip = clip;
+        Time = 0;
+        Playing = false;
+        _poseDirty = true;
+    }
+
     public bool Play(AnimationEntry entry)
     {
+        if (Package == null)
+        {
+            return false;
+        }
+
         HavokClip? clip = Package.GetClip(entry);
         if (clip == null)
         {

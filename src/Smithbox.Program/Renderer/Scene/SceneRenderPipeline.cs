@@ -507,7 +507,8 @@ public class SceneRenderPipeline
         CameraLight.Intensity = CFG.Current.Viewport_Camera_Light_Intensity;
         CameraLight.Range = CFG.Current.Viewport_Camera_Light_Range;
 
-        // Editor mode draws fullbright, so nothing is lit: no lights are gathered, and the shader gets none to loop over
+        // Editor mode lights by the viewport's sun and the environment map alone: no lights are gathered, and the
+        // shader gets none to loop over
         var gameMode = RenderMode.IsGame;
 
         // Lights are gathered here, where the scene can't change under us, and copied in below

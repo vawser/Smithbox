@@ -71,6 +71,9 @@ public class ProjectEntry
             if (Handler.FxEditorStub != null)
                 Handler.FxEditorStub.Draw(device, cl);
 
+            if (Handler.CutsceneEditorStub != null)
+                Handler.CutsceneEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
         }
@@ -114,6 +117,9 @@ public class ProjectEntry
 
             if (Handler.FxEditorStub != null)
                 Handler.FxEditorStub.Display(dt, commands);
+
+            if (Handler.CutsceneEditorStub != null)
+                Handler.CutsceneEditorStub.Display(dt, commands);
 
             if (Handler.BehaviorEditorStub != null)
                 Handler.BehaviorEditorStub.Display(dt, commands);
@@ -162,6 +168,9 @@ public class ProjectEntry
 
             if (Handler.FxEditorStub != null)
                 Handler.FxEditorStub.EditorResized(window, device);
+
+            if (Handler.CutsceneEditorStub != null)
+                Handler.CutsceneEditorStub.EditorResized(window, device);
         }
     }
 
@@ -366,6 +375,7 @@ public class ProjectEntry
             Handler.MaterialEditor,
             Handler.HavokEditor,
             Handler.FxEditor,
+            Handler.CutsceneEditor,
             Handler.BehaviorEditor,
             Handler.EmevdEditor,
             Handler.EsdEditor,

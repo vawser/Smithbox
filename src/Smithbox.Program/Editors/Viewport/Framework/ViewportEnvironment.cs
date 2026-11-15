@@ -128,7 +128,7 @@ public class ViewportEnvironment : IDisposable
 
         ActiveLighting = LightingBank.ResolveCached(MapId, CFG.Current.Viewport_Environment_Lighting_File);
 
-        // Editor mode draws fullbright, so the volumes are only read, and their textures only held, in Game mode
+        // Editor mode has no GI, so the volumes are only read, and their textures only held, in Game mode
         if (!RenderMode.IsGame)
         {
             if (VolumesLoaded)

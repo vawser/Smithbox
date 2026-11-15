@@ -854,12 +854,18 @@ public class ViewportCamera
         }
     }
 
+    /// <summary>
+    ///     A vertical field of view in degrees that replaces the configured one while set, for a camera that another
+    ///     source drives (looking through a cutscene camera). Null uses <c>Viewport_Camera_FOV</c>.
+    /// </summary>
+    public float? FovOverrideDegrees;
+
     private Matrix4x4 CreatePerspectiveMatrix(float aspectRatio)
     {
         return ViewportUtils.CreatePerspective(
             Viewport.Device,
             true,
-            CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
+            (FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV) * (float)Math.PI / 180.0f,
             aspectRatio,
             CFG.Current.Viewport_Perspective_Near_Clip,
             CFG.Current.Viewport_Perspective_Far_Clip);

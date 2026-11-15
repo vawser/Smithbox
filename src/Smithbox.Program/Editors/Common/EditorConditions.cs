@@ -44,6 +44,15 @@ public static class EditorConditions
         return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
     }
 
+    /// <summary>
+    /// The Cutscene Editor: the games whose MQBs and cut Havok files are read in full (Cutscene Editor Analysis, phases
+    /// 0 and 1). BB and DS2 aren't surveyed yet.
+    /// </summary>
+    public static bool SupportsCutsceneEditor(ProjectType curType)
+    {
+        return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+    }
+
     /// <summary>The Behavior Editor: AC6 .bhv state machines in chr behbnds</summary>
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {

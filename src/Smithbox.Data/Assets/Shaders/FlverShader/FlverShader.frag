@@ -1803,11 +1803,11 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 	return mix(1.0, lit, sceneparam.shadowStrength);
 }
 
-// The lighting debug view values that draw Editor mode's fullbright, see SceneParam.LightingDebugView and RenderMode.
-// FULLBRIGHT skips the lighting; FULLBRIGHT_SURFACE takes the whole lit path for the normal-mapped normals that
-// Texturing (Normal) shows, and shows the albedo all the same.
-#define LIGHTING_VIEW_FULLBRIGHT 4u
-#define LIGHTING_VIEW_FULLBRIGHT_SURFACE 5u
+// The lighting debug view values that draw Editor mode, see SceneParam.LightingDebugView and RenderMode. Both light
+// the whole surface by the view's sun and the environment map, without shadows or the light loops; they draw the
+// same, EDITOR_SURFACE being what Texturing (Normal) sends.
+#define LIGHTING_VIEW_EDITOR 4u
+#define LIGHTING_VIEW_EDITOR_SURFACE 5u
 
 // The end of every pixel: the selection tint, the fog on transparents, the display curve and the outputs.
 // litColor already has the glow added; the indirect outputs are from g_indirectDiffuse and g_indirectSpecular.
@@ -2073,44 +2073,10 @@ void main()
 	}
 #endif
 
-	// Editor mode's fullbright: the albedo, lit by nothing, as the full path below ends up with it (Editor mode has no
-	// wet surfaces, glow or magma), without the normal maps, the lighting and the light loops it would throw away.
-	// Nothing reads the light outputs in Editor mode, so they are left black. Water takes the full path, as its
-	// volume is what colors it.
-	if (sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT && !IsWater())
-	{
-		vec3 plainAlbedo = diffuseColor.xyz * diffuseAlpha.xyz;
-
-		// A metal has no diffuse, as below
-		if (c_metallic)
-		{
-			float metallic = MetallicLayer(0);
-#ifdef MATERIAL_BLEND
-			if (c_blendSpecular)
-			{
-				metallic = 0.0;
-				for (int i = 0; i < MAX_LAYERS; i++)
-				{
-					if (i < c_layerCount && g_weight[i] > 0.0)
-					{
-						metallic += MetallicLayer(i) * g_weight[i];
-					}
-				}
-			}
-#endif
-			plainAlbedo *= 1.0 - metallic;
-		}
-
-		vec3 plainColor = (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
-			? diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult
-			: plainAlbedo;
-
-		vec3 faceNormal = normalize(fsin_worldToTangent[2]);
-		faceNormal = gl_FrontFacing ? faceNormal : -faceNormal;
-
-		WritePixel(plainColor, c_transparent ? diffuseColor.w : 1.0, vec3(0.0), faceNormal, 1.0, 0.04, wireCoverage);
-		return;
-	}
+	// Editor mode's lighting, see RenderMode: the whole surface (normal maps, specular, metallic), lit by the view's
+	// sun and the environment map alone, without shadows or the light loops
+	bool editorLighting = sceneparam.lightingDebugView == LIGHTING_VIEW_EDITOR ||
+		sceneparam.lightingDebugView == LIGHTING_VIEW_EDITOR_SURFACE;
 
 #ifdef MATERIAL_BLEND
 	vec3 normalColor = SampleLayered(ROW_NORMAL, c_blendNormal).xyz;
@@ -2252,10 +2218,17 @@ void main()
 	surface.N = (gl_FrontFacing ? normalMap : -normalMap);
 	surface.V = viewVec;
 
-	// The sun's shadow is found with the mesh's own normal, which the normal map doesn't bend, facing the side drawn
-	vec3 geometryNormal = normalize(fsin_worldToTangent[2]);
-	geometryNormal = gl_FrontFacing ? geometryNormal : -geometryNormal;
-	float sunShadow = SunShadow(fsin_worldpos, geometryNormal, sunDir);
+	// Editor mode lights with the cheap part alone, so the normal, specular and metallic maps still read: the view's
+	// own sun and the environment map's ambient and reflections. The shadow lookup and the light loops are Game mode's.
+	// (RenderMode also leaves the shadows, volumes, map lighting and lights off on the CPU side in Editor mode.)
+	float sunShadow = 1.0;
+	if (!editorLighting)
+	{
+		// The sun's shadow is found with the mesh's own normal, which the normal map doesn't bend, facing the side drawn
+		vec3 geometryNormal = normalize(fsin_worldToTangent[2]);
+		geometryNormal = gl_FrontFacing ? geometryNormal : -geometryNormal;
+		sunShadow = SunShadow(fsin_worldpos, geometryNormal, sunDir);
+	}
 	g_sunShadow = sunShadow;
 
 	// The indirect light first, as DS3 and Bloodborne's light probes found with it also say how much of the sun
@@ -2290,6 +2263,8 @@ void main()
 		direct = ShadeLight(surface, -sunDir, sunColor.rgb * sunColor.a, sunSpecColor.rgb * sunSpecColor.a) * sunShadow;
 	}
 
+	if (!editorLighting)
+	{
 	uint lightCount = min(sceneparam.lightCount, uint(MAX_SCENE_LIGHTS));
 	for (uint i = 0; i < lightCount; i++)
 	{
@@ -2330,6 +2305,7 @@ void main()
 			direct += ShadeLight(surface, L, radiance, specularRadiance);
 		}
 	}
+	} // !editorLighting
 
 	vec3 litColor = (direct * sceneparam.directLightMult + indirect * sceneparam.indirectLightMult) *
 		sceneparam.sceneBrightness;
@@ -2349,15 +2325,6 @@ void main()
 	{
 		litColor = vec3(g_probeSunMask);
 	}
-	// Editor mode's fullbright, see RenderMode: the albedo as it is, lit by nothing
-	// Water and Texturing (Normal) come here, see LIGHTING_VIEW_FULLBRIGHT
-	bool fullbright = sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT ||
-		sceneparam.lightingDebugView == LIGHTING_VIEW_FULLBRIGHT_SURFACE;
-	if (fullbright)
-	{
-		litColor = albedo;
-	}
-
 	if (c_surface == SURFACE_UNLIT && HasFeature(FEATURE_UNLIT))
 	{
 		litColor = diffuseColor.rgb * diffuseAlpha.rgb * sceneparam.sceneBrightness * sceneparam.emissiveMapMult;
@@ -2386,9 +2353,9 @@ void main()
 	// Materials without an emissive texture have the black default, which is index 2.
 	vec3 glow = vec3(0.0);
 
-	// Fullbright leaves it out, as it would only wash out the albedo with nothing to tone map it
+	// Editor mode leaves it out, as it would only wash out the albedo with nothing to tone map it
 	uint emissiveTex = MaterialValue(ROW_EXTRA, 1);
-	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE) && !fullbright)
+	if (emissiveTex != 2u && HasFeature(FEATURE_EMISSIVE) && !editorLighting)
 	{
 		effectsData effects = effectsdata[g_mat + 2u];
 		vec3 emissive = SampleAt(emissiveTex, 0, effects.emissiveTiling.xy, effects.emissiveTiling.zw).rgb;
@@ -2400,7 +2367,7 @@ void main()
 		glow += emissive * effects.emissiveColor.xyz * sceneparam.emissiveMapMult;
 	}
 
-	if (c_magma && HasFeature(FEATURE_MAGMA) && !fullbright)
+	if (c_magma && HasFeature(FEATURE_MAGMA) && !editorLighting)
 	{
 		glow += MagmaGlow() * sceneparam.emissiveMapMult;
 	}

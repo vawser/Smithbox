@@ -1520,6 +1520,28 @@ public class CFG
     public float FxEditor_Preview_Wind_Strength = 10;
     public bool FxEditor_Preview_Effect_Forces = true;
 
+    // ---- Cutscene Editor
+    public bool CutsceneEditor_Look_Through_Camera = true;
+
+    // The local axes of a cutscene camera bone that it looks and points up along (CutsceneCameraAxis): not known from
+    // the files, so they can be changed until a cutscene looks right
+    public int CutsceneEditor_Camera_Forward_Axis = 5; // -Z
+    public int CutsceneEditor_Camera_Up_Axis = 2; // +Y
+
+    // The camNNNN_FOV track gives a horizontal rather than a vertical field of view
+    public bool CutsceneEditor_Camera_Fov_Is_Horizontal = false;
+
+    public bool CutsceneEditor_Load_Models = true;
+    public bool CutsceneEditor_Display_Camera_Path = true;
+    public bool CutsceneEditor_Display_Camera = true;
+    public bool CutsceneEditor_Display_Markers = true;
+    public bool CutsceneEditor_Loop = true;
+    public bool CutsceneEditor_Continue_To_Next_Cut = false;
+    public float CutsceneEditor_Playback_Speed = 1.0f;
+
+    // Writes what each cut is built from (actors, cameras, placement, the camera's first frame) to the log
+    public bool CutsceneEditor_Diagnostics_Log = false;
+
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;
     public bool Interface_FxEditor_CurveEditor = true;

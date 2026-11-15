@@ -5,8 +5,9 @@ namespace StudioCore.Renderer;
 /// <summary>How the viewports draw the scene, <see cref="CFG.Viewport_Render_Mode" /></summary>
 public enum ViewportRenderMode
 {
-    /// <summary>Fullbright: surfaces show their albedo unlit, and the map lighting, GI, shadows, fog and screen
-    /// effects are off whatever the Rendering tool says</summary>
+    /// <summary>Cheap lighting: surfaces are lit by the viewport's sun and the environment map alone, so their
+    /// normal, specular and metallic maps read, and the map lighting, GI, shadows, lights, fog and screen effects are
+    /// off whatever the Rendering tool says</summary>
     Editor = 0,
 
     /// <summary>The Rendering tool's settings decide the lighting and effects</summary>
@@ -38,14 +39,14 @@ public static class RenderMode
     public static ViewportTexturingMode Texturing => (ViewportTexturingMode)CFG.Current.Viewport_Texturing_Mode;
 
     /// <summary>
-    ///     The lighting debug view value the flver shader takes for fullbright, see SceneParam.LightingDebugView. It
-    ///     skips the lighting, and the normal maps with it.
+    ///     The lighting debug view value the flver shader takes for Editor mode, see SceneParam.LightingDebugView. It
+    ///     lights the whole surface by the view's sun and the environment map, without shadows or the light loops.
     /// </summary>
     public const uint FullbrightDebugView = 4;
 
     /// <summary>
-    ///     Fullbright with the normal-mapped normals still written, for Texturing (Normal), which shows them. Takes
-    ///     the shader's whole lit path, so it costs what Game mode does.
+    ///     Editor mode for Texturing (Normal). The shader treats it as <see cref="FullbrightDebugView" />, as both
+    ///     write the normal-mapped normals.
     /// </summary>
     public const uint FullbrightSurfaceDebugView = 5;
 

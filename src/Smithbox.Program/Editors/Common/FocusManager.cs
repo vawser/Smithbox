@@ -145,6 +145,15 @@ public static class FocusManager
 
         return false;
     }
+    public static bool IsInCutsceneEditor()
+    {
+        return Focus is EditorFocusContext.CutsceneEditor_None
+            or EditorFocusContext.CutsceneEditor_List
+            or EditorFocusContext.CutsceneEditor_Timeline
+            or EditorFocusContext.CutsceneEditor_Properties
+            or EditorFocusContext.CutsceneEditor_Viewport;
+    }
+
     public static bool IsInFxEditor()
     {
         return Focus is EditorFocusContext.FxEditor_None
@@ -299,6 +308,12 @@ public enum EditorFocusContext
     FxEditor_Inspector,
     FxEditor_Viewport,
     FxEditor_Tools,
+
+    CutsceneEditor_None,
+    CutsceneEditor_List,
+    CutsceneEditor_Timeline,
+    CutsceneEditor_Properties,
+    CutsceneEditor_Viewport,
 
     SoundEditor_None,
     SoundEditor_Banks,

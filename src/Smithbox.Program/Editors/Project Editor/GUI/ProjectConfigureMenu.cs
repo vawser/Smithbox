@@ -672,6 +672,9 @@ public class ProjectConfigureMenu
         EditorToggle("PROJECT_Configuration_Checkbox_Fx_Editor",
             ref Descriptor.EnableFxEditor, EditorConditions.SupportsFxEditor(type));
 
+        EditorToggle("PROJECT_Configuration_Checkbox_Cutscene_Editor",
+            ref Descriptor.EnableCutsceneEditor, EditorConditions.SupportsCutsceneEditor(type));
+
         EditorToggle("PROJECT_Configuration_Checkbox_Behavior_Editor",
             ref Descriptor.EnableBehaviorEditor, EditorConditions.SupportsBehaviorEditor(type));
 
@@ -735,6 +738,7 @@ public class ProjectConfigureMenu
         Descriptor.EnableHavokEditor = enabled;
         Descriptor.EnableGparamEditor = enabled;
         Descriptor.EnableFxEditor = enabled;
+        Descriptor.EnableCutsceneEditor = enabled;
         Descriptor.EnableBehaviorEditor = enabled;
         Descriptor.EnableEmevdEditor = enabled;
         Descriptor.EnableEsdEditor = enabled;

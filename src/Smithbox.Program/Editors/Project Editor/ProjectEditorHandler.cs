@@ -5,6 +5,7 @@ using StudioCore.Editors.BehaviorEditor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EsdEditor;
 using StudioCore.Editors.FxEditor;
+using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.HavokEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
@@ -87,6 +88,11 @@ public class ProjectEditorHandler : IDisposable
     public FxEditorScreen FxEditor;
     public FxEditorStub FxEditorStub;
 
+    // Cutscene Editor
+    public CutsceneData CutsceneData;
+    public CutsceneEditorScreen CutsceneEditor;
+    public CutsceneEditorStub CutsceneEditorStub;
+
     // Behavior Editor (AC6 .bhv)
     public BhvData BehaviorData;
     public BehaviorEditorScreen BehaviorEditor;
@@ -127,6 +133,7 @@ public class ProjectEditorHandler : IDisposable
     private Task<bool> _textureDataTask;
     private Task<bool> _havokDataTask;
     private Task<bool> _fxDataTask;
+    private Task<bool> _cutsceneDataTask;
     private Task<bool> _behaviorDataTask;
     private Task<bool> _emevdDataTask;
     private Task<bool> _esdDataTask;
@@ -151,6 +158,7 @@ public class ProjectEditorHandler : IDisposable
         FileBrowserStub = new(Project);
         HavokEditorStub = new(Project);
         FxEditorStub = new(Project);
+        CutsceneEditorStub = new(Project);
         BehaviorEditorStub = new(Project);
         EmevdEditorStub = new(Project);
         EsdEditorStub = new(Project);
@@ -267,6 +275,16 @@ public class ProjectEditorHandler : IDisposable
             tasks.Add(_fxDataTask);
         }
 
+        // Cutscenes (MQB)
+        if (Project.Descriptor.EnableCutsceneEditor &&
+            EditorConditions.SupportsCutsceneEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            CutsceneData = new(Project);
+            _cutsceneDataTask = CutsceneData.Setup();
+            tasks.Add(_cutsceneDataTask);
+        }
+
         // Behavior (AC6 .bhv)
         if (Project.Descriptor.EnableBehaviorEditor &&
             EditorConditions.SupportsBehaviorEditor(Project.Descriptor.ProjectType) &&
@@ -329,6 +347,7 @@ public class ProjectEditorHandler : IDisposable
         LogDataResult(_textureDataTask, "PROJECT_Data_Setup_Texture_Data_PASS", "PROJECT_Data_Setup_Texture_Data_FAIL");
         LogDataResult(_havokDataTask, "PROJECT_Data_Setup_Havok_Data_PASS", "PROJECT_Data_Setup_Havok_Data_FAIL");
         LogDataResult(_fxDataTask, "PROJECT_Data_Setup_Fx_Data_PASS", "PROJECT_Data_Setup_Fx_Data_FAIL");
+        LogDataResult(_cutsceneDataTask, "PROJECT_Data_Setup_Cutscene_Data_PASS", "PROJECT_Data_Setup_Cutscene_Data_FAIL");
         LogDataResult(_behaviorDataTask, "PROJECT_Data_Setup_Behavior_Data_PASS", "PROJECT_Data_Setup_Behavior_Data_FAIL");
         LogDataResult(_emevdDataTask, "PROJECT_Data_Setup_Emevd_Data_PASS", "PROJECT_Data_Setup_Emevd_Data_FAIL");
         LogDataResult(_esdDataTask, "PROJECT_Data_Setup_Esd_Data_PASS", "PROJECT_Data_Setup_Esd_Data_FAIL");
@@ -422,6 +441,12 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= FxEditor;
         }
 
+        if (CutsceneData != null)
+        {
+            CutsceneEditor = new CutsceneEditorScreen(Project);
+            firstEditor ??= CutsceneEditor;
+        }
+
         if (BehaviorData != null)
         {
             BehaviorEditor = new BehaviorEditorScreen(Project);
@@ -469,6 +494,7 @@ public class ProjectEditorHandler : IDisposable
             FileBrowserScreen => "###fileBrowserStub",
             HavokEditorScreen => "###havokEditor",
             FxEditorScreen => "###fxEditor",
+            CutsceneEditorScreen => "###cutsceneEditor",
             BehaviorEditorScreen => "###behaviorEditor",
             EmevdEditorScreen => "###emevdEditor",
             EsdEditorScreen => "###esdEditor",
@@ -510,6 +536,7 @@ public class ProjectEditorHandler : IDisposable
         TextureData?.Dispose();
         HavokData?.Dispose();
         FxData?.Dispose();
+        CutsceneData?.Dispose();
         BehaviorData?.Dispose();
         EmevdData?.Dispose();
         EsdData?.Dispose();
@@ -520,6 +547,9 @@ public class ProjectEditorHandler : IDisposable
 
         // The FX Editor's debug shapes hold GPU buffers, and its viewport a render pipeline
         FxEditor?.ViewportWindow?.Dispose();
+
+        // The Cutscene Editor's actors hold meshes and animators, its lines GPU buffers, its viewport a render pipeline
+        CutsceneEditor?.Dispose();
 
         _viewportEnvironment?.Dispose();
         _viewportEnvironment = null;
