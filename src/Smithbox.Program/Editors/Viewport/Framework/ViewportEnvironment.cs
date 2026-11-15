@@ -52,6 +52,12 @@ public class ViewportEnvironment : IDisposable
     // Whether the map's volumes are loaded, which they only are in Game mode
     private bool VolumesLoaded;
 
+    // The GPARAM the volumes were loaded with, so they are only loaded again when it is changed, see Invalidate
+    private string LoadedLightingFile;
+
+    // Set when a GPARAM was saved or deleted, so the volumes are loaded again on the next update
+    private bool ReloadRequested;
+
     private readonly IrradianceVolumeData[] Entries = new IrradianceVolumeData[1];
 
     // The volume textures held, so the Model and Time Act Editors' clearing of unused resources keeps them loaded
@@ -104,6 +110,16 @@ public class ViewportEnvironment : IDisposable
     }
 
     /// <summary>
+    /// Drops the cached GPARAM lighting and has the volumes loaded again on the next update. Called when a GPARAM is
+    /// saved or deleted; the volumes are otherwise loaded once per map.
+    /// </summary>
+    public void Invalidate()
+    {
+        LightingBank.ClearCache();
+        ReloadRequested = true;
+    }
+
+    /// <summary>
     /// Resolves the lighting and the volume for this frame. Called by the Model and Time Act Editors every frame.
     /// </summary>
     public void Update()
@@ -138,8 +154,21 @@ public class ViewportEnvironment : IDisposable
             return;
         }
 
+        // A GPARAM changed by hand, chosen in the Rendering tool or saved or deleted in the Gparam Editor, loads the
+        // volumes again; nothing else does but a change of map or mode, so a model load keeps them as they are
+        var lightingFile = CFG.Current.Viewport_Environment_Lighting_File ?? "";
+
+        if (VolumesLoaded && (ReloadRequested ||
+                              !string.Equals(LoadedLightingFile, lightingFile, StringComparison.OrdinalIgnoreCase)))
+            UnloadVolumes();
+
+        ReloadRequested = false;
+
         if (!VolumesLoaded)
+        {
             LoadVolumes();
+            LoadedLightingFile = lightingFile;
+        }
 
         var volumes = VolumeBank.GetMap(MapId);
 
@@ -183,7 +212,7 @@ public class ViewportEnvironment : IDisposable
         if (blendBake >= 0)
             RetryIfMissing(volumes, blendBake);
 
-        HoldTextures(bake, blendBake);
+        HoldTextures(volumes, bake, blendBake);
 
         UploadVolume(volumes, bake, (blendBake, blendRatio));
     }
@@ -292,15 +321,19 @@ public class ViewportEnvironment : IDisposable
     }
 
     /// <summary>
-    /// Takes a reference on the volume's textures of the bakes lit with, and lets go of any others
+    /// Takes a reference on every texture of the bakes lit with, and lets go of any others. The whole bake is held,
+    /// not just the volume lit with, as its files are loaded whole: a texture left unheld would be freed by the next
+    /// clearing of unused resources (every Model Editor model load does one) and the bake loaded again for it.
     /// </summary>
-    private void HoldTextures(int bake, int blendBake)
+    private void HoldTextures(IrradianceVolumeBank.MapVolumes volumes, int bake, int blendBake)
     {
-        var wanted = new HashSet<string>(IrradianceVolumeBank.GetTextureNames(MapId, VolumeId, bake),
-            StringComparer.OrdinalIgnoreCase);
+        var wanted = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        if (blendBake >= 0)
-            wanted.UnionWith(IrradianceVolumeBank.GetTextureNames(MapId, VolumeId, blendBake));
+        foreach (var key in volumes.Infos.Keys)
+        {
+            if (key.Bake == bake || (blendBake >= 0 && key.Bake == blendBake))
+                wanted.UnionWith(IrradianceVolumeBank.GetTextureNames(MapId, key.Id, key.Bake));
+        }
 
         ReleaseTextures(wanted);
 

@@ -512,7 +512,7 @@ public class GparamFileList
         // The Map, Model and Time Act Editors keep their own copies of the GPARAMs they read
         Project.Handler.MapData?.FogVolumeBank?.ClearSettingsCache();
         Project.Handler.MapData?.GparamLightingBank?.ClearCache();
-        Project.Handler.ExistingViewportEnvironment?.LightingBank.ClearCache();
+        Project.Handler.ExistingViewportEnvironment?.Invalidate();
 
         // Every view's selection is checked against the bank each frame, so the others clear themselves.
         // This one shows the vanilla file in its place, if there is one.
