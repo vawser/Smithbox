@@ -467,7 +467,7 @@ public partial class MassCreateTool
 
     private Vector3 GetPlacementOrigin()
     {
-        if (View.ViewportHandler.ActiveViewport?.Viewport == null)
+        if (View.ViewportHandler.ActiveViewport?.Viewport is not global::StudioCore.Editors.Viewport.VulkanViewport)
             return Vector3.Zero;
 
         return View.ViewportWindow.GetPlacementPosition();

@@ -26,20 +26,32 @@ public static class SceneRenderer
 
     public static GraphicsDevice Device;
 
-    private static List<RenderQueue> RenderQueues;
-    private static Queue<Action<GraphicsDevice, CommandList>> BackgroundUploadQueue;
-    private static Queue<Action<GraphicsDevice, CommandList>> LowPriorityBackgroundUploadQueue;
-    private static Queue<Action<GraphicsDevice, CommandList>> LowPriorityBackgroundUploadQueueBackfill;
+    /// <summary>
+    /// Whether <see cref="Initialize" /> has finished, so the device, allocators and texture pools exist and
+    /// <see cref="Frame" /> runs the queued work. False under OpenGL, and after <see cref="Reset" />.
+    /// </summary>
+    public static bool IsInitialized { get; private set; }
+
+    // Set from the start of Initialize, which itself queues uploads (the default textures), until Reset. Work added
+    // while it is false is dropped, as no frame would ever run it.
+    private static bool _acceptsWork;
+
+    // The queues exist before Initialize, so code that runs on either backend (the resource manager) can read and
+    // add to them. Without a renderer nothing runs them, so work added then is dropped instead (see the Add methods).
+    private static List<RenderQueue> RenderQueues = new();
+    private static Queue<Action<GraphicsDevice, CommandList>> BackgroundUploadQueue = new();
+    private static Queue<Action<GraphicsDevice, CommandList>> LowPriorityBackgroundUploadQueue = new();
+    private static Queue<Action<GraphicsDevice, CommandList>> LowPriorityBackgroundUploadQueueBackfill = new();
 
     private static Fence _readbackFence;
-    private static Queue<(DeviceBuffer, DeviceBuffer, Action<GraphicsDevice>)> _readbackQueue;
-    private static Queue<(DeviceBuffer, DeviceBuffer, Action<GraphicsDevice>)> _readbackPendingQueue;
+    private static Queue<(DeviceBuffer, DeviceBuffer, Action<GraphicsDevice>)> _readbackQueue = new();
+    private static Queue<(DeviceBuffer, DeviceBuffer, Action<GraphicsDevice>)> _readbackPendingQueue = new();
 
     private static ConcurrentQueue<(DeviceBuffer, DeviceBuffer, VkAccessFlags2, Action<GraphicsDevice>)>
-        _asyncTransfersPendingQueue;
+        _asyncTransfersPendingQueue = new();
 
-    private static List<(Fence, Action<GraphicsDevice>)> _asyncTransfers;
-    private static Queue<Fence> _freeTransferFences;
+    private static List<(Fence, Action<GraphicsDevice>)> _asyncTransfers = new();
+    private static Queue<Fence> _freeTransferFences = new();
 
     private static bool _readyForReadback;
     private static int _readbackPendingFence = -1;
@@ -103,6 +115,7 @@ public static class SceneRenderer
     public static unsafe void Initialize(GraphicsDevice device)
     {
         Device = device;
+        _acceptsWork = true;
         BackgroundUploadQueue = new Queue<Action<GraphicsDevice, CommandList>>();
         LowPriorityBackgroundUploadQueue = new Queue<Action<GraphicsDevice, CommandList>>(100000);
         LowPriorityBackgroundUploadQueueBackfill = new Queue<Action<GraphicsDevice, CommandList>>(100000);
@@ -193,10 +206,77 @@ public static class SceneRenderer
         // Initialize global debug primitives
         // TODO: Make vertex buffer allocation smarter so that we don't need to do this
         RenderableHelper.InitializeDebugMeshes();
+
+        IsInitialized = true;
+    }
+
+    /// <summary>
+    /// Puts the renderer back to its state before <see cref="Initialize" />. For the fallback to OpenGL when Vulkan
+    /// fails after Initialize has run (in full or in part): everything it made belongs to the device that has been
+    /// disposed, so it is let go of rather than disposed, and the queued work, which nothing would run, is dropped.
+    /// </summary>
+    public static void Reset()
+    {
+        IsInitialized = false;
+        _acceptsWork = false;
+        Device = null;
+
+        lock (BackgroundUploadQueue)
+        {
+            BackgroundUploadQueue.Clear();
+        }
+
+        lock (LowPriorityBackgroundUploadQueueBackfill)
+        {
+            LowPriorityBackgroundUploadQueue.Clear();
+            LowPriorityBackgroundUploadQueueBackfill.Clear();
+        }
+
+        lock (_readbackQueue)
+        {
+            _readbackQueue.Clear();
+        }
+
+        _readbackPendingQueue.Clear();
+        _asyncTransfersPendingQueue.Clear();
+        _asyncTransfers.Clear();
+        _freeTransferFences.Clear();
+        _drawFences.Clear();
+        _postDrawCommandLists.Clear();
+        RenderQueues.Clear();
+
+        lock (PendingQueueRemovals)
+        {
+            PendingQueueRemovals.Clear();
+        }
+
+        _readbackFence = null;
+        _readyForReadback = false;
+        _readbackPendingFence = -1;
+        _currentBuffer = 0;
+        _loadInProgress = false;
+        SuspendSceneDraws = false;
+
+        GeometryBufferAllocator = null;
+        UniformBufferAllocator = null;
+        GrassInstanceAllocator = null;
+        MaterialBufferAllocator = null;
+        BoneBufferAllocator = null;
+        GlobalTexturePool = null;
+        GlobalCubeTexturePool = null;
+        GlobalVolumeTexturePool = null;
+        IrradianceVolumes = null;
+        MapLights = null;
+        Lightmaps = null;
+        MapLighting = null;
+        MapLightSets = Array.Empty<GparamLighting>();
     }
 
     public static void RegisterRenderQueue(RenderQueue queue)
     {
+        if (!_acceptsWork)
+            return;
+
         RenderQueues.Add(queue);
     }
 
@@ -283,6 +363,13 @@ public static class SceneRenderer
     /// </summary>
     public static void DisposeAfterFramesInFlight(IDisposable range, int frames = BUFFER_COUNT + 1)
     {
+        // With no frames running nothing can be drawing from it, and nothing would run the task below
+        if (!_acceptsWork)
+        {
+            range?.Dispose();
+            return;
+        }
+
         AddBackgroundUploadTask((_, _) =>
         {
             if (frames <= 1)
@@ -380,8 +467,13 @@ public static class SceneRenderer
         return (high, low);
     }
 
+    // Without a renderer no frame runs these queues, so work added to them would only pile up; it is dropped instead
+
     public static void AddBackgroundUploadTask(Action<GraphicsDevice, CommandList> action)
     {
+        if (!_acceptsWork)
+            return;
+
         lock (BackgroundUploadQueue)
         {
             BackgroundUploadQueue.Enqueue(action);
@@ -390,6 +482,9 @@ public static class SceneRenderer
 
     public static void AddLowPriorityBackgroundUploadTask(Action<GraphicsDevice, CommandList> action)
     {
+        if (!_acceptsWork)
+            return;
+
         lock (LowPriorityBackgroundUploadQueueBackfill)
         {
             LowPriorityBackgroundUploadQueueBackfill.Enqueue(action);
@@ -398,6 +493,9 @@ public static class SceneRenderer
 
     public static void AddAsyncReadback(DeviceBuffer dest, DeviceBuffer source, Action<GraphicsDevice> onFinished)
     {
+        if (!_acceptsWork)
+            return;
+
         lock (_readbackQueue)
         {
             _readbackQueue.Enqueue((dest, source, onFinished));
@@ -409,6 +507,9 @@ public static class SceneRenderer
         VkAccessFlags2 dstAccessFlags,
         Action<GraphicsDevice> onFinished)
     {
+        if (!_acceptsWork)
+            return;
+
         _asyncTransfersPendingQueue.Enqueue((dest, source, dstAccessFlags, onFinished));
     }
 
@@ -432,6 +533,9 @@ public static class SceneRenderer
 
     public static Fence Frame(CommandList drawCommandList, bool backgroundOnly)
     {
+        if (!IsInitialized)
+            return null;
+
         var sw = Stopwatch.StartNew();
         Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, "RenderQueue::Frame");
         CommandList mainCommandList = Factory.CreateCommandList(QueueType.Graphics);

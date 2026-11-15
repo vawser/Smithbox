@@ -59,13 +59,11 @@ public class CutsceneViewportWindow
         var window = Smithbox.Instance._context.Window;
         Rect = window.Bounds;
 
-        if (Smithbox.Instance._context.Device != null)
-        {
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-                Viewport = new VulkanViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
-            else
-                Viewport = new NullViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
-        }
+        // Without a renderer the viewport is still shown, as a disabled placeholder
+        if (Smithbox.Instance.HasRenderer)
+            Viewport = new VulkanViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
+        else
+            Viewport = new NullViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
     }
 
     /// <summary>Where the viewport camera is and which way it looks (the cut's camera while looking through it)</summary>

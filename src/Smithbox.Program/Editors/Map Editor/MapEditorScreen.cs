@@ -347,7 +347,7 @@ public class MapEditorScreen : EditorScreen
             return;
 
         var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
-             activeView.ViewportHandler.ActiveViewport.Viewport != null;
+             activeView.ViewportHandler.ActiveViewport.Viewport is VulkanViewport;
 
         // General Filters
         if (ImGui.BeginMenu($"{LOC.Get("MAP_Filter_Header")}##filtersMenuHeader", validViewportState))
@@ -463,7 +463,7 @@ public class MapEditorScreen : EditorScreen
             return;
 
         var validViewportState = activeView.ViewportHandler.ActiveViewport.RenderScene != null &&
-            activeView.ViewportHandler.ActiveViewport.Viewport != null;
+            activeView.ViewportHandler.ActiveViewport.Viewport is VulkanViewport;
 
         var bank = activeView.HavokCollisionBank;
 

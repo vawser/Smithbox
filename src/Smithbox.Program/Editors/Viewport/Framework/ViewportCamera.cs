@@ -405,6 +405,9 @@ public class ViewportCamera
 
     public unsafe void HandleMousePanning(Sdl2Window window)
     {
+        if (Viewport == null)
+            return;
+
         if (ViewMode != ViewMode.Orthographic &&
             ViewMode != ViewMode.Oblique)
         {
@@ -822,6 +825,10 @@ public class ViewportCamera
 
     public void UpdateProjectionMatrix(bool adjustFrustrum = false)
     {
+        // A NullViewport's camera (no renderer) has no device to build a projection for
+        if (Viewport == null)
+            return;
+
         float aspectRatio = Viewport.Width / (float)Viewport.Height;
 
         switch (ViewMode)

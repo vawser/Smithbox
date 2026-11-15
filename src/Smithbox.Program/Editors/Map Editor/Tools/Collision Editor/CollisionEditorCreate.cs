@@ -204,7 +204,7 @@ public class CollisionEditorCreate
         // A basic shape is made at the placement orb, which follows the camera, so where that is now
         if (Shape is CollisionCreateShape.Square or CollisionCreateShape.Triangle or CollisionCreateShape.Circle or CollisionCreateShape.SemiCircle)
         {
-            var orb = View.ViewportHandler.ActiveViewport?.Viewport != null
+            var orb = View.ViewportHandler.ActiveViewport?.Viewport is VulkanViewport
                 ? View.ViewportWindow.GetPlacementPosition()
                 : Vector3.Zero;
 
@@ -1590,7 +1590,7 @@ public class CollisionEditorCreate
     /// </summary>
     private Vector3 GetPlacementPosition(Entity parent)
     {
-        if (View.ViewportHandler.ActiveViewport?.Viewport == null)
+        if (View.ViewportHandler.ActiveViewport?.Viewport is not VulkanViewport)
             return Vector3.Zero;
 
         return ToParentLocal(parent, View.ViewportWindow.GetPlacementPosition());

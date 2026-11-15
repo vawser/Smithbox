@@ -3906,6 +3906,10 @@ public class FlverResource : IResource, IDisposable
     // Read only flver loader designed to be very fast at reading with low memory usage
     private bool LoadInternalFast(BinaryReaderEx br)
     {
+        // Builds GPU buffers as it reads, so there is nothing to load into without a renderer
+        if (!SceneRenderer.IsInitialized)
+            return false;
+
         // TO FIX: NR flvers don't seem to work with this properly (reads but no rendering)
 
         // Parse header

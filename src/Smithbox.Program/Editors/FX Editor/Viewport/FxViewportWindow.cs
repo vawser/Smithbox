@@ -66,13 +66,11 @@ public class FxViewportWindow
         var window = Smithbox.Instance._context.Window;
         Rect = window.Bounds;
 
-        if (Smithbox.Instance._context.Device != null)
-        {
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-                Viewport = new VulkanViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
-            else
-                Viewport = new NullViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
-        }
+        // Without a renderer the viewport is still shown, as a disabled placeholder
+        if (Smithbox.Instance.HasRenderer)
+            Viewport = new VulkanViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
+        else
+            Viewport = new NullViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
 
         Runtime = new FxPreviewRuntime(editor);
         EffectDisplay = new FxDisplay(new FxDisplayHost(project, () => editor.RenderScene, () => FxDisplayHost.PipelineOf(Viewport)));

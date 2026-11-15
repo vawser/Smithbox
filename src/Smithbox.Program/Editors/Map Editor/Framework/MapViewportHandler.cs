@@ -178,19 +178,16 @@ public class ViewportWrapper
 
     public void Setup()
     {
-        if (View.Device != null)
+        var rect = View.Window.Bounds;
+
+        // Without a renderer the viewport is still shown, as a disabled placeholder
+        if (Smithbox.Instance.HasRenderer)
         {
-            var rect = View.Window.Bounds;
-
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                Viewport = new VulkanViewport(View.Universe, $"MapViewport_{View.ViewIndex}_{ID}", rect.Width, rect.Height, RenderScene);
-
-            }
-            else
-            {
-                Viewport = new NullViewport(View.Universe, $"MapViewport_{View.ViewIndex}_{ID}", rect.Width, rect.Height, RenderScene);
-            }
+            Viewport = new VulkanViewport(View.Universe, $"MapViewport_{View.ViewIndex}_{ID}", rect.Width, rect.Height, RenderScene);
+        }
+        else
+        {
+            Viewport = new NullViewport(View.Universe, $"MapViewport_{View.ViewIndex}_{ID}", rect.Width, rect.Height, RenderScene);
         }
     }
 }

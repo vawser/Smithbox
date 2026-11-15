@@ -123,6 +123,11 @@ public sealed class ModelAnimator : IDisposable
         _meshSkinStart = new int[rig.Meshes.Length];
         Array.Fill(_meshSkinStart, -1);
 
+        // Without a renderer (OpenGL) the pose is still worked out on the CPU, for the editors that read it (bone
+        // positions, the Time Act timeline), but there is nothing to draw it with, so it gets no GPU buffers
+        if (!SceneRenderer.IsInitialized)
+            return;
+
         _boneBuffer = SceneRenderer.BoneBufferAllocator.Allocate((uint)(NodeCount * 2 * MatrixSize), MatrixSize);
         UploadSkin();
     }
@@ -409,6 +414,9 @@ public sealed class ModelAnimator : IDisposable
         GPUBufferAllocator.GPUBufferHandle? skin = _skinBuffer;
         _boneBuffer = null;
         _skinBuffer = null;
+
+        if (bones == null && skin == null)
+            return;
 
         SceneRenderer.AddBackgroundUploadTask((_, _) =>
         {

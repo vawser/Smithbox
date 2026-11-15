@@ -735,7 +735,7 @@ public class CollisionEditorUserDefined
 
         if (Points.Count == 0)
         {
-            position = View.ViewportHandler.ActiveViewport?.Viewport != null
+            position = View.ViewportHandler.ActiveViewport?.Viewport is VulkanViewport
                 ? View.ViewportWindow.GetPlacementPosition()
                 : Vector3.Zero;
             index = 0;

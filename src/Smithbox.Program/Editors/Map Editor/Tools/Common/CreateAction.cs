@@ -439,7 +439,7 @@ public class CreateAction
         if (positionProp == null || positionProp.PropertyType != typeof(Vector3) || !positionProp.CanWrite)
             return;
 
-        if (View.ViewportHandler.ActiveViewport?.Viewport == null)
+        if (View.ViewportHandler.ActiveViewport?.Viewport is not global::StudioCore.Editors.Viewport.VulkanViewport)
             return;
 
         var world = View.ViewportWindow.GetPlacementPosition();

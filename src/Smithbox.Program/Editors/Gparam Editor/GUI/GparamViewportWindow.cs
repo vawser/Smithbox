@@ -63,16 +63,14 @@ public class GparamViewportWindow
 
         Rect = view.Window.Bounds;
 
-        if (view.Device != null)
+        // Without a renderer the viewport is still shown, as a disabled placeholder
+        if (Smithbox.Instance.HasRenderer)
         {
-            if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-            {
-                Viewport = new VulkanViewport(View.Universe, $"GparamViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
-            }
-            else
-            {
-                Viewport = new NullViewport(View.Universe, $"GparamViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
-            }
+            Viewport = new VulkanViewport(View.Universe, $"GparamViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
+        }
+        else
+        {
+            Viewport = new NullViewport(View.Universe, $"GparamViewport_{View.ViewIndex}", Rect.Width, Rect.Height, view.RenderScene);
         }
     }
 
@@ -144,7 +142,7 @@ public class GparamViewportWindow
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        Viewport.Draw(device, cl);
+        Viewport?.Draw(device, cl);
     }
 
     public bool InputCaptured()

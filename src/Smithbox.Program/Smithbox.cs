@@ -60,6 +60,13 @@ public class Smithbox
     public RenderingBackend CurrentBackend = RenderingBackend.Vulkan;
     public ProgramType ProgramType = ProgramType.Editor;
 
+    /// <summary>
+    /// Whether the 3D renderer is available: the Vulkan context with its device and SceneRenderer set up. False
+    /// under OpenGL, where the editors still work and their viewports are shown disabled (NullViewport).
+    /// </summary>
+    public bool HasRenderer => CurrentBackend is RenderingBackend.Vulkan && _context?.Device != null &&
+                               SceneRenderer.IsInitialized;
+
     // Updater
     public ProgramUpdater Updater;
     public DeveloperKit DeveloperKit;
@@ -211,8 +218,9 @@ public class Smithbox
                     }
                 }
 
-                // The scene renderer was set up with the device that has just been disposed
-                SceneRenderer.Device = null;
+                // The scene renderer was set up (in full or in part) with the device that has just been disposed, so
+                // all of it is let go of, leaving it as it is when starting on OpenGL
+                SceneRenderer.Reset();
 
                 CurrentBackend = RenderingBackend.OpenGL;
             }
@@ -796,12 +804,13 @@ public class Smithbox
             ImGuiWindowFlags.NoNavFocus |
             ImGuiWindowFlags.MenuBar;
 
+        // Passthru for both backends: the editor rail and the editor host windows are NoBringToFrontOnFocus, so
+        // ImGui places them behind this window. A solid central node (as OpenGL used to have) covers them.
         var dockFlags = ImGuiDockNodeFlags.PassthruCentralNode;
 
-        if (_context is OpenGLCompatGraphicsContext glContext)
+        if (_context is OpenGLCompatGraphicsContext)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.1f, 0.1f, 0.1f, 0.1f));
-            dockFlags = ImGuiDockNodeFlags.None;
         }
         else
         {

@@ -67,6 +67,11 @@ public class HavokCollisionResource : IResource, IDisposable
     /// </summary>
     private bool Load(ProjectEntry curProject, Memory<byte> bytes, AccessLevel al, ResourceLoadContext ctx)
     {
+        // The collision mesh is written straight into GPU buffers, which don't exist without a renderer. The
+        // Collision Editor reads its documents from the HavokCollisionBank, not from this resource.
+        if (!SceneRenderer.IsInitialized)
+            return false;
+
         if (ctx.IsConnectCollision)
         {
             IsConnectCollision = true;

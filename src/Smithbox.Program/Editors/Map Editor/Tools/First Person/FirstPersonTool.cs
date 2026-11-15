@@ -476,7 +476,8 @@ public partial class FirstPersonTool
             GUI.WrappedText(LOC.Get("MAP_FirstPerson_Spawn_None"));
         }
 
-        var camera = View.ViewportHandler.ActiveViewport?.Viewport?.ViewportCamera;
+        // A disabled viewport (no renderer) has a camera that never moves, so there is no view to drop from
+        var camera = (View.ViewportHandler.ActiveViewport?.Viewport as VulkanViewport)?.ViewportCamera;
         var selection = GetSelectionPosition();
 
         GUI.ConditionalMultiButtonInput("mapFirstPersonSpawnActions",

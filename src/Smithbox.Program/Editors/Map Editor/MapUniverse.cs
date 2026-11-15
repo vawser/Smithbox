@@ -232,7 +232,8 @@ public class MapUniverse : IUniverse
             {
                 newMap.LoadMSB(resourceHandler.Msb);
 
-                if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan || CFG.Current.Viewport_Enable_Rendering)
+                // The load lists are only read by the model and texture loads, which need the renderer
+                if (Smithbox.Instance.HasRenderer && CFG.Current.Viewport_Enable_Rendering)
                 {
                     resourceHandler.SetupHumanEnemySubstitute();
 
@@ -244,10 +245,7 @@ public class MapUniverse : IUniverse
                     resourceHandler.SetupTextureLoadLists();
                     __texScope.Dispose();
 
-                    if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan && CFG.Current.Viewport_Enable_Rendering)
-                    {
-                        resourceHandler.ReserveLoadCategories();
-                    }
+                    resourceHandler.ReserveLoadCategories();
                 }
 
                 using var __lightScope = Profiler.TracyZoneAuto();

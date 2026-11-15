@@ -621,7 +621,7 @@ public class MapPartTransferTool
             // The clones exist only once the duplicate has run
             actions.Add(new DeferredAction(() => BuildModelSwitch(duplicate.CreatedClones, targetMap, modelMap)));
 
-            if (CFG.Current.MapEditor_PartTransfer_Move_To_Orb && View.ViewportHandler.ActiveViewport?.Viewport != null)
+            if (CFG.Current.MapEditor_PartTransfer_Move_To_Orb && View.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
             {
                 var point = View.ViewportWindow.GetPlacementPosition();
                 actions.Add(new DeferredAction(() => PullToCameraAction.BuildMoveToPointAction(duplicate.CreatedClones, point)));

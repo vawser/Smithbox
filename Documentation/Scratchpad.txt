@@ -21,4 +21,3 @@ Analyze the X for bugs and recommendations for functionality improvements
     - ESD Editor
     - File Browser
     
-- Fix OpenGL

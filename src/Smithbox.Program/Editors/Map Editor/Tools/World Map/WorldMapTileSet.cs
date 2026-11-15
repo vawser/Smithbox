@@ -401,7 +401,8 @@ public class WorldMapTileSet : IDisposable
     {
         if (!Textures.TryGetValue(source.Name, out var entry))
         {
-            var handle = SceneRenderer.GlobalTexturePool.AllocateTextureDescriptor();
+            // No pool without a renderer (OpenGL): the tiles are then not drawn, the rest of the tool still works
+            var handle = SceneRenderer.GlobalTexturePool?.AllocateTextureDescriptor();
 
             if (handle == null)
                 return null;

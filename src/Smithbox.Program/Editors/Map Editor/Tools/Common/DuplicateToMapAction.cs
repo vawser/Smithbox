@@ -377,7 +377,7 @@ public class DuplicateToMapAction
         var actions = new List<ViewportAction> { action };
 
         // Moved in the same undo step, once the clones exist; the orb's position is taken now, at the paste
-        if (CFG.Current.MapEditor_Paste_At_Placement_Orb && view.ViewportHandler.ActiveViewport?.Viewport != null)
+        if (CFG.Current.MapEditor_Paste_At_Placement_Orb && view.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport)
         {
             var target = view.ViewportWindow.GetPlacementPosition();
 

@@ -123,6 +123,10 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al)
     {
+        // Its mesh goes into GPU buffers, which don't exist without a renderer
+        if (!SceneRenderer.IsInitialized)
+            return false;
+
         LoadedAccess = al;
 
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)

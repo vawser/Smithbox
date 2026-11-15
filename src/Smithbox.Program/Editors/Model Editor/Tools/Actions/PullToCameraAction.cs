@@ -88,7 +88,7 @@ public class PullToCameraAction
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        if (View.ViewportWindow.Viewport == null)
+        if (View.ViewportWindow.Viewport is not VulkanViewport)
             return;
 
         if (CanPull())
