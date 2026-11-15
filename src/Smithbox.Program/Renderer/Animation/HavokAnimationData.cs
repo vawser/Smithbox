@@ -29,12 +29,25 @@ public struct HavokTransformData
 /// </summary>
 public sealed class HavokSkeletonData
 {
+    // The skeleton's own name. In a cutscene cut it is the name of the MQB resource it animates (cam0010, c4750_0000).
+    public string Name = "";
+
     public string[] Names = Array.Empty<string>();
     public short[] Parents = Array.Empty<short>();
     public HavokTransformData[] ReferencePose = Array.Empty<HavokTransformData>();
 
+    // Named scalar channels beside the bones, such as camNNNN_FOV, and their values when no track drives them
+    public string[] FloatSlots = Array.Empty<string>();
+    public float[] ReferenceFloats = Array.Empty<float>();
+
     public int BoneCount => Names.Length;
+    public int FloatSlotCount => FloatSlots.Length;
 }
+
+/// <summary>
+///     One skeleton of a multi-skeleton file (a cutscene cut) and the clip bound to it, if any.
+/// </summary>
+public sealed record HavokSceneTrack(HavokSkeletonData Skeleton, HavokClip? Clip);
 
 public enum HavokBlendMode
 {
@@ -115,7 +128,42 @@ public abstract class HavokClip
     // Index = hkx bone index, value = transform track index or -1
     public int[] BoneToTrack = Array.Empty<int>();
 
+    // Index = skeleton float slot, value = float track index or -1
+    public int[] SlotToFloatTrack = Array.Empty<int>();
+
     public abstract NewBlendableTransform Sample(int track, float frame);
+
+    /// <summary>
+    ///     A float track's value at a frame, or null when the track has no data there and its slot keeps the
+    ///     reference value.
+    /// </summary>
+    public virtual float? SampleFloat(int track, float frame) => null;
+
+    /// <summary>
+    ///     A skeleton float slot's value at a frame: its track's, else the skeleton's reference value.
+    /// </summary>
+    public float SampleSlot(HavokSkeletonData skeleton, int slot, float frame)
+    {
+        var track = slot < SlotToFloatTrack.Length ? SlotToFloatTrack[slot] : -1;
+        var value = track >= 0 ? SampleFloat(track, frame) : null;
+        return value ?? (slot < skeleton.ReferenceFloats.Length ? skeleton.ReferenceFloats[slot] : 0);
+    }
+
+    protected void BuildFloatSlotMap(short[] trackToSlot, int slotCount, int trackCount)
+    {
+        SlotToFloatTrack = new int[slotCount];
+        Array.Fill(SlotToFloatTrack, -1);
+
+        for (var track = 0; track < trackCount; track++)
+        {
+            // Unbound tracks are in slot order
+            int slot = trackToSlot.Length == 0 ? track : track < trackToSlot.Length ? trackToSlot[track] : -1;
+            if (slot >= 0 && slot < slotCount)
+            {
+                SlotToFloatTrack[slot] = track;
+            }
+        }
+    }
 
     protected void BuildBoneMap(short[] trackToBone, int boneCount, int trackCount)
     {
@@ -147,11 +195,13 @@ public abstract class HavokClip
 public sealed class HavokSplineClip : HavokClip
 {
     private readonly List<SplineCompressedAnimation.TransformTrack[]> _blocks;
+    private readonly List<SplineCompressedAnimation.FloatTrack[]> _floatBlocks;
     private readonly int _framesPerBlock;
 
     public HavokSplineClip(byte[] data, bool bigEndian, int trackCount, int blockCount, int framesPerBlock,
         int frameCount, float duration, float frameDuration, short[] trackToBone, int boneCount,
-        HavokBlendMode blendMode)
+        HavokBlendMode blendMode, IReadOnlyList<uint>? blockOffsets = null, int floatTrackCount = 0,
+        IReadOnlyList<uint>? floatBlockOffsets = null, short[]? floatTrackToSlot = null, int floatSlotCount = 0)
     {
         Duration = duration;
         FrameCount = frameCount;
@@ -160,19 +210,39 @@ public sealed class HavokSplineClip : HavokClip
         _framesPerBlock = framesPerBlock;
 
         _blocks = SplineCompressedAnimation.ReadSplineCompressedAnimByteBlock(bigEndian, data, trackCount,
-            blockCount);
+            blockCount, blockOffsets, floatTrackCount);
+        _floatBlocks = SplineCompressedAnimation.ReadSplineCompressedFloatBlocks(bigEndian, data, trackCount,
+            floatTrackCount, blockOffsets, floatBlockOffsets);
 
         BuildBoneMap(trackToBone, boneCount, trackCount);
+        BuildFloatSlotMap(floatTrackToSlot ?? Array.Empty<short>(), floatSlotCount,
+            _floatBlocks.Count > 0 ? floatTrackCount : 0);
+    }
+
+    // Each block covers maxFramesPerBlock frames, of which the last is shared with the next block
+    private int BlockOf(float frame, int blockCount, out float frameInBlock)
+    {
+        var span = _framesPerBlock - 1;
+        var block = span > 0 ? (int)(frame / span) : 0;
+        block = Math.Clamp(block, 0, blockCount - 1);
+        frameInBlock = Math.Max(0, frame - block * span);
+        return block;
+    }
+
+    public override float? SampleFloat(int track, float frame)
+    {
+        if (_floatBlocks.Count == 0)
+        {
+            return null;
+        }
+
+        var block = BlockOf(frame, _floatBlocks.Count, out var frameInBlock);
+        return _floatBlocks[block][track].GetValue(frameInBlock);
     }
 
     public override NewBlendableTransform Sample(int track, float frame)
     {
-        // Each block covers maxFramesPerBlock frames, of which the last is shared with the next block
-        var span = _framesPerBlock - 1;
-        var block = span > 0 ? (int)(frame / span) : 0;
-        block = Math.Clamp(block, 0, _blocks.Count - 1);
-
-        var frameInBlock = Math.Max(0, frame - block * span);
+        var block = BlockOf(frame, _blocks.Count, out var frameInBlock);
         SplineCompressedAnimation.TransformTrack t = _blocks[block][track];
 
         NewBlendableTransform result = NewBlendableTransform.Identity;
@@ -208,6 +278,23 @@ public sealed class HavokSplineClip : HavokClip
             result.Translation = t.StaticPosition;
         }
 
+        // Some vanilla clips store NaN keys on bones scaled to nothing (ER s12_05_0020, c8905 wing support bones).
+        // The game draws nothing there; here one NaN would spread through the bone matrices, so fall back.
+        if (!float.IsFinite(result.Rotation.X + result.Rotation.Y + result.Rotation.Z + result.Rotation.W))
+        {
+            result.Rotation = Quaternion.Identity;
+        }
+
+        if (!float.IsFinite(result.Translation.X + result.Translation.Y + result.Translation.Z))
+        {
+            result.Translation = Vector3.Zero;
+        }
+
+        if (!float.IsFinite(result.Scale.X + result.Scale.Y + result.Scale.Z))
+        {
+            result.Scale = Vector3.One;
+        }
+
         return result;
     }
 }
@@ -216,9 +303,12 @@ public sealed class HavokInterleavedClip : HavokClip
 {
     private readonly HavokTransformData[] _transforms;
     private readonly int _trackCount;
+    private readonly float[] _floats;
+    private readonly int _floatTrackCount;
 
     public HavokInterleavedClip(HavokTransformData[] transforms, int trackCount, float duration,
-        short[] trackToBone, int boneCount, HavokBlendMode blendMode)
+        short[] trackToBone, int boneCount, HavokBlendMode blendMode, float[]? floats = null,
+        int floatTrackCount = 0, short[]? floatTrackToSlot = null, int floatSlotCount = 0)
     {
         _transforms = transforms;
         _trackCount = trackCount;
@@ -228,7 +318,28 @@ public sealed class HavokInterleavedClip : HavokClip
         FrameDuration = FrameCount > 1 ? duration / (FrameCount - 1) : duration;
         BlendMode = blendMode;
 
+        // Frame-major like the transforms; ignored unless there is a value per track for every frame
+        _floats = floats ?? Array.Empty<float>();
+        _floatTrackCount = floatTrackCount > 0 && _floats.Length >= FrameCount * floatTrackCount ? floatTrackCount : 0;
+
         BuildBoneMap(trackToBone, boneCount, trackCount);
+        BuildFloatSlotMap(floatTrackToSlot ?? Array.Empty<short>(), floatSlotCount, _floatTrackCount);
+    }
+
+    public override float? SampleFloat(int track, float frame)
+    {
+        if (_floatTrackCount == 0 || FrameCount == 0)
+        {
+            return null;
+        }
+
+        var first = Math.Clamp((int)frame, 0, FrameCount - 1);
+        var second = Math.Min(first + 1, FrameCount - 1);
+        var t = Math.Clamp(frame - first, 0, 1);
+
+        var a = _floats[first * _floatTrackCount + track];
+        var b = _floats[second * _floatTrackCount + track];
+        return a + (b - a) * t;
     }
 
     public override NewBlendableTransform Sample(int track, float frame)
@@ -268,19 +379,39 @@ public static class HavokAnimationReader
         IHavokSkeleton skeleton = document.ObjectsOf<IHavokSkeleton>().FirstOrDefault()
                                   ?? throw new InvalidOperationException("The file has no skeleton.");
 
-        var count = skeleton.BoneCount;
-        HavokSkeletonData result = new()
-        {
-            Names = new string[count],
-            Parents = new short[count],
-            ReferencePose = new HavokTransformData[count]
-        };
+        return ToSkeletonData(skeleton);
+    }
 
-        for (var i = 0; i < count; i++)
+    /// <summary>
+    ///     Every skeleton in a file with the clip bound to it, paired by the binding's original skeleton name. A cutscene
+    ///     cut keeps one per actor and camera in a single hkaAnimationContainer. A skeleton without a binding comes
+    ///     back with a null clip, and so does one whose clip this reader doesn't understand.
+    /// </summary>
+    public static List<HavokSceneTrack> ReadScene(ProjectType game, byte[] data, HavokCompendium? compendium)
+    {
+        HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game), compendium);
+        List<IHavokSkeleton> skeletons = document.ObjectsOf<IHavokSkeleton>().ToList();
+        List<IHavokAnimationBinding> bindings = document.ObjectsOf<IHavokAnimationBinding>().ToList();
+
+        List<HavokSceneTrack> result = new();
+        foreach (IHavokSkeleton skeleton in skeletons)
         {
-            result.Names[i] = skeleton.GetBoneName(i) ?? "";
-            result.Parents[i] = skeleton.GetParent(i);
-            result.ReferencePose[i] = ToTransform(skeleton.GetReferencePose(i));
+            HavokSkeletonData skeletonData = ToSkeletonData(skeleton);
+
+            IHavokAnimationBinding? binding = bindings.FirstOrDefault(b =>
+                string.Equals(b.OriginalSkeletonName, skeleton.Name, StringComparison.Ordinal));
+
+            // A file with one of each needn't name the skeleton
+            if (binding == null && skeletons.Count == 1 && bindings.Count == 1)
+            {
+                binding = bindings[0];
+            }
+
+            HavokClip? clip = binding?.Animation is { } animation
+                ? BuildClip(animation, binding, skeletonData, document.Source.BigEndian)
+                : null;
+
+            result.Add(new HavokSceneTrack(skeletonData, clip));
         }
 
         return result;
@@ -295,41 +426,14 @@ public static class HavokAnimationReader
         HavokDocument document = HavokFile.Read(Decompress(data), ProfileOf(game), compendium);
 
         IHavokAnimationBinding? binding = document.ObjectsOf<IHavokAnimationBinding>().FirstOrDefault();
-        short[] trackToBone = binding?.TransformTrackToBoneIndices.ToArray() ?? Array.Empty<short>();
-        HavokBlendMode blendMode = ToBlendMode(binding?.BlendHint ?? 0);
 
-        HavokClip? clip = null;
+        IHavokAnimation? animation = (IHavokAnimation?)document.ObjectsOf<IHavokSplineAnimation>().FirstOrDefault()
+                                     ?? (IHavokAnimation?)document.ObjectsOf<IHavokInterleavedAnimation>().FirstOrDefault()
+                                     ?? document.ObjectsOf<IHavokQuantizedAnimation>().FirstOrDefault();
 
-        if (document.ObjectsOf<IHavokSplineAnimation>().FirstOrDefault() is { } spline)
-        {
-            clip = new HavokSplineClip(spline.Data as byte[] ?? spline.Data.ToArray(), document.Source.BigEndian,
-                spline.TransformTrackCount, spline.BlockCount, spline.MaxFramesPerBlock, spline.FrameCount,
-                spline.Duration, spline.FrameDuration, trackToBone, skeleton.BoneCount, blendMode);
-        }
-        else if (document.ObjectsOf<IHavokInterleavedAnimation>().FirstOrDefault() is { } interleaved)
-        {
-            var transforms = new HavokTransformData[interleaved.TransformCount];
-            for (var i = 0; i < transforms.Length; i++)
-            {
-                transforms[i] = ToTransform(interleaved.GetTransform(i));
-            }
-
-            clip = NewInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
-                trackToBone, skeleton.BoneCount, blendMode);
-        }
-        else if (document.ObjectsOf<IHavokQuantizedAnimation>().FirstOrDefault() is { } quantized)
-        {
-            // DES wavelet and delta clips: decoded once into whole poses, then played like an interleaved clip
-            HavokQsTransform[] poses = quantized.DecodePoses();
-            var transforms = new HavokTransformData[poses.Length];
-            for (var i = 0; i < transforms.Length; i++)
-            {
-                transforms[i] = ToTransform(poses[i]);
-            }
-
-            clip = NewInterleavedClip(transforms, quantized.TransformTrackCount, quantized.Duration,
-                trackToBone, skeleton.BoneCount, blendMode);
-        }
+        HavokClip? clip = animation != null
+            ? BuildClip(animation, binding, skeleton, document.Source.BigEndian)
+            : null;
 
         if (clip != null && document.ObjectsOf<IHavokReferenceFrame>().FirstOrDefault() is { SampleCount: > 0 } frame)
         {
@@ -348,8 +452,113 @@ public static class HavokAnimationReader
         return clip;
     }
 
+    private static HavokSkeletonData ToSkeletonData(IHavokSkeleton skeleton)
+    {
+        var count = skeleton.BoneCount;
+        var slots = skeleton.FloatSlotCount;
+        HavokSkeletonData result = new()
+        {
+            Name = skeleton.Name ?? "",
+            Names = new string[count],
+            Parents = new short[count],
+            ReferencePose = new HavokTransformData[count],
+            FloatSlots = new string[slots],
+            ReferenceFloats = new float[slots]
+        };
+
+        for (var i = 0; i < count; i++)
+        {
+            result.Names[i] = skeleton.GetBoneName(i) ?? "";
+            result.Parents[i] = skeleton.GetParent(i);
+            result.ReferencePose[i] = ToTransform(skeleton.GetReferencePose(i));
+        }
+
+        for (var i = 0; i < slots; i++)
+        {
+            result.FloatSlots[i] = skeleton.GetFloatSlotName(i) ?? "";
+            result.ReferenceFloats[i] = skeleton.GetReferenceFloat(i);
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    ///     A playable clip from one animation and the binding that maps it onto the skeleton. Null when the animation
+    ///     is of a kind this reader doesn't understand.
+    /// </summary>
+    private static HavokClip? BuildClip(IHavokAnimation animation, IHavokAnimationBinding? binding,
+        HavokSkeletonData skeleton, bool bigEndian)
+    {
+        short[] trackToBone = binding?.TransformTrackToBoneIndices.ToArray() ?? Array.Empty<short>();
+        short[] floatTrackToSlot = binding?.FloatTrackToFloatSlotIndices.ToArray() ?? Array.Empty<short>();
+        HavokBlendMode blendMode = ToBlendMode(binding?.BlendHint ?? 0);
+
+        switch (animation)
+        {
+            case IHavokSplineAnimation spline:
+                return new HavokSplineClip(spline.Data as byte[] ?? spline.Data.ToArray(), bigEndian,
+                    spline.TransformTrackCount, spline.BlockCount, spline.MaxFramesPerBlock, spline.FrameCount,
+                    spline.Duration, spline.FrameDuration, trackToBone, skeleton.BoneCount, blendMode,
+                    spline.BlockOffsets, spline.FloatTrackCount, spline.FloatBlockOffsets, floatTrackToSlot,
+                    skeleton.FloatSlotCount);
+
+            case IHavokInterleavedAnimation interleaved:
+            {
+                var transforms = new HavokTransformData[interleaved.TransformCount];
+                for (var i = 0; i < transforms.Length; i++)
+                {
+                    transforms[i] = ToTransform(interleaved.GetTransform(i));
+                }
+
+                var floats = new float[interleaved.FloatCount];
+                for (var i = 0; i < floats.Length; i++)
+                {
+                    floats[i] = interleaved.GetFloat(i);
+                }
+
+                return NewInterleavedClip(transforms, interleaved.TransformTrackCount, interleaved.Duration,
+                    trackToBone, skeleton.BoneCount, blendMode, floats, interleaved.FloatTrackCount, floatTrackToSlot,
+                    skeleton.FloatSlotCount);
+            }
+
+            case IHavokQuantizedAnimation quantized:
+            {
+                // Decoded once into whole poses, then played like an interleaved clip. hkaQuantizedAnimation leaves
+                // out the components equal to the reference pose, which comes from the bone each track drives.
+                HavokQsTransform ReferenceOf(int track)
+                {
+                    int bone = trackToBone.Length == 0 ? track : track < trackToBone.Length ? trackToBone[track] : -1;
+                    if (bone < 0 || bone >= skeleton.ReferencePose.Length)
+                    {
+                        return new HavokQsTransform(Vector3.Zero, Quaternion.Identity, Vector3.One);
+                    }
+
+                    HavokTransformData r = skeleton.ReferencePose[bone];
+                    return new HavokQsTransform(r.Translation, r.Rotation, r.Scale);
+                }
+
+                HavokQsTransform[] poses = quantized.DecodePoses(ReferenceOf);
+                var transforms = new HavokTransformData[poses.Length];
+                for (var i = 0; i < transforms.Length; i++)
+                {
+                    transforms[i] = ToTransform(poses[i]);
+                }
+
+                float[] floats = quantized.FloatTrackCount > 0 ? quantized.DecodeFloats() : Array.Empty<float>();
+
+                return NewInterleavedClip(transforms, quantized.TransformTrackCount, quantized.Duration,
+                    trackToBone, skeleton.BoneCount, blendMode, floats, quantized.FloatTrackCount,
+                    floatTrackToSlot, skeleton.FloatSlotCount);
+            }
+
+            default:
+                return null;
+        }
+    }
+
     private static HavokClip? NewInterleavedClip(HavokTransformData[] transforms, int trackCount, float duration,
-        short[] trackToBone, int boneCount, HavokBlendMode blendMode)
+        short[] trackToBone, int boneCount, HavokBlendMode blendMode, float[]? floats = null,
+        int floatTrackCount = 0, short[]? floatTrackToSlot = null, int floatSlotCount = 0)
     {
         // A clip without a whole frame has nothing to sample
         if (trackCount <= 0 || transforms.Length < trackCount)
@@ -357,7 +566,8 @@ public static class HavokAnimationReader
             return null;
         }
 
-        return new HavokInterleavedClip(transforms, trackCount, duration, trackToBone, boneCount, blendMode);
+        return new HavokInterleavedClip(transforms, trackCount, duration, trackToBone, boneCount, blendMode,
+            floats, floatTrackCount, floatTrackToSlot, floatSlotCount);
     }
 
     private static HavokBlendMode ToBlendMode(int blendHint)

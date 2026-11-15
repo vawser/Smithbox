@@ -17,7 +17,13 @@ namespace SoulsFormats
             /// </summary>
             public int Duration { get; set; }
 
+            /// <summary>
+            /// Each timeline's <see cref="Timeline.ParentIndex"/> is an index into this list.
+            /// </summary>
             public List<Timeline> Timelines { get; set; }
+
+            // Where the timelines were read from, for finding unused timeline slots after them
+            internal long TimelinesOffset;
 
             public Cut()
             {
@@ -39,6 +45,7 @@ namespace SoulsFormats
                 long timelinesOffset = br.ReadVarint();
                 if (version != MQBVersion.DarkSouls2Scholar)
                     br.AssertInt64(0);
+                TimelinesOffset = timelinesOffset;
 
                 var eventsByOffset = new Dictionary<long, Event>(eventCount);
                 for (int i = 0; i < eventCount; i++)
@@ -69,8 +76,8 @@ namespace SoulsFormats
                 if (version != MQBVersion.DarkSouls2Scholar)
                     bw.WriteInt64(0);
 
-                foreach (Timeline timeline in Timelines)
-                    timeline.WriteEvents(bw, offsetsByEvent, allParameters, parameterValueOffsets);
+                for (int i = 0; i < Timelines.Count; i++)
+                    Timelines[i].WriteEvents(bw, i, offsetsByEvent, allParameters, parameterValueOffsets);
             }
 
             internal void WriteTimelines(BinaryWriterEx bw, MQBVersion version, int cutIndex)

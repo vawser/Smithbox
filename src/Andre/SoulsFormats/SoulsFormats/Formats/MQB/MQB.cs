@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SoulsFormats
 {
@@ -14,7 +15,16 @@ namespace SoulsFormats
             DarkSouls2 = 0x94,
             DarkSouls2Scholar = 0xCA,
             Bloodborne = 0xCB,
+
+            /// <summary>
+            /// Also used by Sekiro, Elden Ring and Armored Core VI.
+            /// </summary>
             DarkSouls3 = 0xCC,
+
+            /// <summary>
+            /// Same layout as <see cref="DarkSouls3"/>.
+            /// </summary>
+            Nightreign = 0xCD,
         }
 
         public bool BigEndian { get; set; }
@@ -30,6 +40,13 @@ namespace SoulsFormats
         public List<Cut> Cuts { get; set; }
 
         public string ResourceDirectory { get; set; }
+
+        /// <summary>
+        /// Empty timeline records after the last cut's timelines that no cut counts or refers to.
+        /// Seen in a few DS3 files, probably left behind by the authoring tool when timelines were deleted.
+        /// Kept only so the file writes back the same; the game can't see them.
+        /// </summary>
+        public int UnusedTimelineSlots { get; set; }
 
         protected override bool Is(BinaryReaderEx br)
         {
@@ -56,7 +73,7 @@ namespace SoulsFormats
             if (Version == MQBVersion.DarkSouls2 && headerSize != 0x14
                 || Version == MQBVersion.DarkSouls2Scholar && headerSize != 0x28
                 || Version == MQBVersion.Bloodborne && headerSize != 0x20
-                || Version == MQBVersion.DarkSouls3 && headerSize != 0x24)
+                || Version >= MQBVersion.DarkSouls3 && headerSize != 0x24)
                 throw new FormatException($"Unexpected header size {headerSize} for version {Version}.");
 
             br.VarintLong = Version == MQBVersion.DarkSouls2Scholar;
@@ -95,6 +112,8 @@ namespace SoulsFormats
             for (int i = 0; i < cutCount; i++)
                 Cuts.Add(new Cut(br, Version));
 
+            UnusedTimelineSlots = ReadUnusedTimelineSlots(br);
+
             br.Position = resourcePathsOffset;
             long[] resourcePathOffsets = br.ReadVarints(resourceCount);
             ResourceDirectory = br.ReadUTF16();
@@ -122,7 +141,8 @@ namespace SoulsFormats
                 case MQBVersion.DarkSouls2: bw.WriteInt32(0x14); break;
                 case MQBVersion.DarkSouls2Scholar: bw.WriteInt32(0x28); break;
                 case MQBVersion.Bloodborne: bw.WriteInt32(0x20); break;
-                case MQBVersion.DarkSouls3: bw.WriteInt32(0x24); break;
+                case MQBVersion.DarkSouls3:
+                case MQBVersion.Nightreign: bw.WriteInt32(0x24); break;
                 default:
                     throw new NotImplementedException($"Missing header size for version {Version}.");
             }
@@ -167,6 +187,8 @@ namespace SoulsFormats
             for (int i = 0; i < Cuts.Count; i++)
                 Cuts[i].WriteTimelines(bw, Version, i);
 
+            WriteUnusedTimelineSlots(bw);
+
             for (int i = 0; i < Cuts.Count; i++)
                 Cuts[i].WriteTimelineParameters(bw, i, allParameters, ParameterValueOffsets);
 
@@ -203,6 +225,62 @@ namespace SoulsFormats
 
             for (int i = 0; i < allParameters.Count; i++)
                 allParameters[i].WriteSequencePoints(bw, i);
+        }
+
+        internal static int TimelineRecordSize(MQBVersion version) => version == MQBVersion.DarkSouls2Scholar ? 0x20 : 0x14;
+
+        /// <summary>
+        /// Counts the empty records between the end of the last cut's timelines and the timeline parameters,
+        /// which every timeline's parameter offset points into.
+        /// </summary>
+        private int ReadUnusedTimelineSlots(BinaryReaderEx br)
+        {
+            var withTimelines = Cuts.Where(c => c.Timelines.Count > 0).ToList();
+            if (withTimelines.Count == 0)
+                return 0;
+
+            int recordSize = TimelineRecordSize(Version);
+            long timelinesEnd = withTimelines.Max(c => c.TimelinesOffset + c.Timelines.Count * recordSize);
+            long parametersStart = withTimelines.SelectMany(c => c.Timelines).Min(t => t.ParametersOffset);
+            if (parametersStart <= timelinesEnd)
+                return 0;
+
+            long gap = parametersStart - timelinesEnd;
+            if (gap % recordSize != 0)
+                throw new FormatException($"Unexpected 0x{gap:X} bytes between the timelines and their parameters.");
+
+            int count = (int)(gap / recordSize);
+            br.StepIn(timelinesEnd);
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    br.AssertVarint(parametersStart); // Event offsets offset
+                    br.AssertInt32(0); // Event count
+                    if (Version == MQBVersion.DarkSouls2Scholar)
+                        br.AssertInt32(0);
+                    br.AssertVarint(0); // Parameters offset
+                    br.AssertInt32(0); // Parameter count
+                    br.AssertInt32(0); // Parent timeline
+                }
+            }
+            br.StepOut();
+            return count;
+        }
+
+        private void WriteUnusedTimelineSlots(BinaryWriterEx bw)
+        {
+            // Their event offsets point to where the timeline parameters start, right after them
+            long parametersStart = bw.Position + UnusedTimelineSlots * TimelineRecordSize(Version);
+            for (int i = 0; i < UnusedTimelineSlots; i++)
+            {
+                bw.WriteVarint(parametersStart);
+                bw.WriteInt32(0);
+                if (Version == MQBVersion.DarkSouls2Scholar)
+                    bw.WriteInt32(0);
+                bw.WriteVarint(0);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+            }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }

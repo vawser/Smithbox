@@ -17,6 +17,12 @@ public partial class hkaSkeleton : IHavokSkeleton
     short IHavokSkeleton.GetParent(int bone) => bone < m_parentIndices.Count ? m_parentIndices[bone] : (short)-1;
 
     HavokQsTransform IHavokSkeleton.GetReferencePose(int bone) => AnimationViews.ToShared(m_referencePose[bone]);
+
+    int IHavokSkeleton.FloatSlotCount => m_floatSlots.Count;
+
+    string? IHavokSkeleton.GetFloatSlotName(int slot) => m_floatSlots[slot];
+
+    float IHavokSkeleton.GetReferenceFloat(int slot) => slot < m_referenceFloats.Count ? m_referenceFloats[slot] : 0;
 }
 
 public partial class hkaAnimationBinding : IHavokAnimationBinding
@@ -26,6 +32,10 @@ public partial class hkaAnimationBinding : IHavokAnimationBinding
     IReadOnlyList<short> IHavokAnimationBinding.TransformTrackToBoneIndices => m_transformTrackToBoneIndices;
 
     int IHavokAnimationBinding.BlendHint => (int)m_blendHint;
+
+    string? IHavokAnimationBinding.OriginalSkeletonName => m_originalSkeletonName;
+
+    IReadOnlyList<short> IHavokAnimationBinding.FloatTrackToFloatSlotIndices => m_floatTrackToFloatSlotIndices;
 }
 
 public partial class hkaSplineCompressedAnimation : IHavokSplineAnimation
@@ -43,6 +53,12 @@ public partial class hkaSplineCompressedAnimation : IHavokSplineAnimation
     float IHavokSplineAnimation.FrameDuration => m_frameDuration;
 
     IReadOnlyList<byte> IHavokSplineAnimation.Data => m_data;
+
+    int IHavokAnimation.FloatTrackCount => m_numberOfFloatTracks;
+
+    IReadOnlyList<uint> IHavokSplineAnimation.BlockOffsets => m_blockOffsets;
+
+    IReadOnlyList<uint> IHavokSplineAnimation.FloatBlockOffsets => m_floatBlockOffsets;
 }
 
 public partial class hkaDefaultAnimatedReferenceFrame : IHavokReferenceFrame

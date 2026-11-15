@@ -17,6 +17,12 @@ public partial class hkaSkeleton : IHavokSkeleton
     short IHavokSkeleton.GetParent(int bone) => bone < m_parentIndices.Count ? m_parentIndices[bone] : (short)-1;
 
     HavokQsTransform IHavokSkeleton.GetReferencePose(int bone) => AnimationViews.ToShared(m_referencePose[bone]);
+
+    int IHavokSkeleton.FloatSlotCount => m_floatSlots.Count;
+
+    string? IHavokSkeleton.GetFloatSlotName(int slot) => m_floatSlots[slot];
+
+    float IHavokSkeleton.GetReferenceFloat(int slot) => slot < m_referenceFloats.Count ? m_referenceFloats[slot] : 0;
 }
 
 public partial class hkaAnimationBinding : IHavokAnimationBinding
@@ -26,6 +32,10 @@ public partial class hkaAnimationBinding : IHavokAnimationBinding
     IReadOnlyList<short> IHavokAnimationBinding.TransformTrackToBoneIndices => m_transformTrackToBoneIndices;
 
     int IHavokAnimationBinding.BlendHint => (int)m_blendHint;
+
+    string? IHavokAnimationBinding.OriginalSkeletonName => m_originalSkeletonName;
+
+    IReadOnlyList<short> IHavokAnimationBinding.FloatTrackToFloatSlotIndices => m_floatTrackToFloatSlotIndices;
 }
 
 public partial class hkaSplineCompressedAnimation : IHavokSplineAnimation
@@ -43,6 +53,12 @@ public partial class hkaSplineCompressedAnimation : IHavokSplineAnimation
     float IHavokSplineAnimation.FrameDuration => m_frameDuration;
 
     IReadOnlyList<byte> IHavokSplineAnimation.Data => m_data;
+
+    int IHavokAnimation.FloatTrackCount => m_numberOfFloatTracks;
+
+    IReadOnlyList<uint> IHavokSplineAnimation.BlockOffsets => m_blockOffsets;
+
+    IReadOnlyList<uint> IHavokSplineAnimation.FloatBlockOffsets => m_floatBlockOffsets;
 }
 
 public partial class hkaInterleavedUncompressedAnimation : IHavokInterleavedAnimation
@@ -54,6 +70,12 @@ public partial class hkaInterleavedUncompressedAnimation : IHavokInterleavedAnim
     int IHavokInterleavedAnimation.TransformCount => m_transforms.Count;
 
     HavokQsTransform IHavokInterleavedAnimation.GetTransform(int index) => AnimationViews.ToShared(m_transforms[index]);
+
+    int IHavokAnimation.FloatTrackCount => m_numberOfFloatTracks;
+
+    int IHavokInterleavedAnimation.FloatCount => m_floats.Count;
+
+    float IHavokInterleavedAnimation.GetFloat(int index) => m_floats[index];
 }
 
 public partial class hkaDefaultAnimatedReferenceFrame : IHavokReferenceFrame
@@ -74,4 +96,23 @@ internal static class AnimationViews
     public static HavokQsTransform ToShared(hkQsTransform t) =>
         new(new Vector3(t.m_translation.X, t.m_translation.Y, t.m_translation.Z), t.m_rotation,
             new Vector3(t.m_scale.X, t.m_scale.Y, t.m_scale.Z));
+}
+
+// Made partial by hand in Autogen: add hkaQuantizedAnimation to the generator's partial list on the next regeneration
+public partial class hkaQuantizedAnimation : IHavokQuantizedAnimation
+{
+    float IHavokAnimation.Duration => m_duration;
+
+    int IHavokAnimation.TransformTrackCount => m_numberOfTransformTracks;
+
+    int IHavokAnimation.FloatTrackCount => m_numberOfFloatTracks;
+
+    int IHavokQuantizedAnimation.PoseCount => HavokQuantizedAnimation2014Codec.ReadLayout(m_data.ToArray()).Frames;
+
+    HavokQsTransform[] IHavokQuantizedAnimation.DecodePoses() => HavokQuantizedAnimation2014Codec.Decode(m_data.ToArray()).Poses;
+
+    HavokQsTransform[] IHavokQuantizedAnimation.DecodePoses(Func<int, HavokQsTransform>? referencePose) =>
+        HavokQuantizedAnimation2014Codec.Decode(m_data.ToArray(), referencePose).Poses;
+
+    float[] IHavokQuantizedAnimation.DecodeFloats() => HavokQuantizedAnimation2014Codec.Decode(m_data.ToArray()).Floats;
 }

@@ -21,6 +21,16 @@ public interface IHavokSkeleton
     short GetParent(int bone);
 
     HavokQsTransform GetReferencePose(int bone);
+
+    // Float slots: named scalar channels beside the bones, such as a cutscene camera's FOV (camNNNN_FOV).
+    // Defaults for SDKs whose skeletons have none.
+
+    int FloatSlotCount => 0;
+
+    string? GetFloatSlotName(int slot) => null;
+
+    /// <summary>The slot's value when no float track drives it.</summary>
+    float GetReferenceFloat(int slot) => 0;
 }
 
 /// <summary>hkaAnimationBinding: which bone each transform track drives.</summary>
@@ -33,6 +43,15 @@ public interface IHavokAnimationBinding
 
     /// <summary>hkaAnimationBinding::BlendHint: 0 normal, 1 additive (deprecated, parent space), 2 additive.</summary>
     int BlendHint { get; }
+
+    /// <summary>
+    /// The name of the skeleton the clip was made for. A file holding several skeletons and clips, such as a cutscene
+    /// cut, pairs them by this name.
+    /// </summary>
+    string? OriginalSkeletonName => null;
+
+    /// <summary>Which float slot each float track drives. Empty when the tracks are in slot order.</summary>
+    IReadOnlyList<short> FloatTrackToFloatSlotIndices => [];
 }
 
 /// <summary>hkaAnimation (hkaSkeletalAnimation in Havok 5.x).</summary>
@@ -41,6 +60,8 @@ public interface IHavokAnimation
     float Duration { get; }
 
     int TransformTrackCount { get; }
+
+    int FloatTrackCount => 0;
 }
 
 /// <summary>hkaSplineCompressedAnimation.</summary>
@@ -56,6 +77,16 @@ public interface IHavokSplineAnimation : IHavokAnimation
 
     /// <summary>The compressed blocks, in the byte order of the file they were read from.</summary>
     IReadOnlyList<byte> Data { get; }
+
+    /// <summary>Where each block starts in <see cref="Data" />. Empty for SDKs that don't store them.</summary>
+    IReadOnlyList<uint> BlockOffsets => [];
+
+    /// <summary>
+    /// Where each block's float track data starts, from the start of the block. The block begins with one 4-byte mask
+    /// per transform track, then one mask byte per float track: 0x01 a static float, 0x10 a spline, 0x02 16-bit
+    /// (rather than 8-bit) spline values.
+    /// </summary>
+    IReadOnlyList<uint> FloatBlockOffsets => [];
 }
 
 /// <summary>
@@ -87,6 +118,15 @@ public interface IHavokQuantizedAnimation : IHavokAnimation
 
     /// <summary>Frame-major like <see cref="IHavokInterleavedAnimation" />: frame f's track t is at f × tracks + t.</summary>
     HavokQsTransform[] DecodePoses();
+
+    /// <summary>
+    /// As <see cref="DecodePoses()" />, for codecs that leave out the components equal to the reference pose
+    /// (hkaQuantizedAnimation): those come from <paramref name="referencePose" />, by transform track.
+    /// </summary>
+    HavokQsTransform[] DecodePoses(Func<int, HavokQsTransform>? referencePose) => DecodePoses();
+
+    /// <summary>The float tracks, frame-major like the poses. Empty for codecs without them.</summary>
+    float[] DecodeFloats() => [];
 }
 
 /// <summary>hkaInterleavedUncompressedAnimation (hkaInterleavedSkeletalAnimation in Havok 5.x).</summary>
@@ -96,4 +136,9 @@ public interface IHavokInterleavedAnimation : IHavokAnimation
     int TransformCount { get; }
 
     HavokQsTransform GetTransform(int index);
+
+    /// <summary>Frame-major like the transforms: frame f's float track t is at f × float tracks + t.</summary>
+    int FloatCount => 0;
+
+    float GetFloat(int index) => 0;
 }

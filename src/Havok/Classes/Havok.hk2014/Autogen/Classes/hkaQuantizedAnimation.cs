@@ -2,7 +2,7 @@
 
 namespace Havok.hk2014;
 
-public class hkaQuantizedAnimation : hkaAnimation
+public partial class hkaQuantizedAnimation : hkaAnimation
 {
     public List<byte> m_data = new();
 

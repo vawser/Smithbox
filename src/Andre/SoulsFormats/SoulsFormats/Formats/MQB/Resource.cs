@@ -9,9 +9,16 @@ namespace SoulsFormats
         {
             public string Name { get; set; }
 
+            /// <summary>
+            /// Index of the owning resource, or -1. An actor or camera is owned by the HKT whose skeleton animates it.
+            /// </summary>
             public int ParentIndex { get; set; }
 
-            public int Unk48 { get; set; }
+            /// <summary>
+            /// What kind of resource this is, which decides the parameters its events take. For example 1 model,
+            /// 3 camera, 27 subtitle, 103 SFX, 135 sound, 243 point light, 265 offset (.sib), 266 animation (.HKT).
+            /// </summary>
+            public int Type { get; set; }
 
             public List<Parameter> Parameters { get; set; }
 
@@ -28,7 +35,7 @@ namespace SoulsFormats
                 Name = br.ReadFixStrW(0x40);
                 ParentIndex = br.ReadInt32();
                 br.AssertInt32(resourceIndex);
-                Unk48 = br.ReadInt32();
+                Type = br.ReadInt32();
                 int parameterCount = br.ReadInt32();
 
                 Parameters = new List<Parameter>(parameterCount);
@@ -41,7 +48,7 @@ namespace SoulsFormats
                 bw.WriteFixStrW(Name, 0x40, 0x00);
                 bw.WriteInt32(ParentIndex);
                 bw.WriteInt32(resourceIndex);
-                bw.WriteInt32(Unk48);
+                bw.WriteInt32(Type);
                 bw.WriteInt32(Parameters.Count);
 
                 foreach (Parameter parameter in Parameters)

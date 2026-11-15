@@ -11,10 +11,8 @@ namespace SoulsFormats
 
             public int ResourceIndex { get; set; }
 
-            /// <summary>
-            /// Unknown; possibly a timeline index.
-            /// </summary>
-            public int Unk08 { get; set; }
+            // The event also stores the index of its timeline and of that timeline's parent. Every vanilla file
+            // agrees with the timeline tree, so they are written from it (Timeline.ParentIndex) instead of kept here.
 
             public int StartFrame { get; set; }
 
@@ -33,8 +31,6 @@ namespace SoulsFormats
 
             public List<Parameter> Parameters { get; set; }
 
-            public int Unk28 { get; set; }
-
             public List<Transform> Transforms { get; set; }
 
             public Event()
@@ -47,7 +43,7 @@ namespace SoulsFormats
             {
                 ID = br.ReadInt32();
                 ResourceIndex = br.ReadInt32();
-                Unk08 = br.ReadInt32();
+                br.ReadInt32(); // Timeline index
                 StartFrame = br.ReadInt32();
                 Duration = br.ReadInt32();
                 Unk14 = br.ReadInt32();
@@ -55,7 +51,7 @@ namespace SoulsFormats
                 Unk1C = br.ReadInt32();
                 Unk20 = br.AssertInt32([0, 1]);
                 int parameterCount = br.ReadInt32();
-                Unk28 = br.ReadInt32();
+                br.ReadInt32(); // Parent timeline index
                 br.AssertInt32(0);
 
                 Parameters = new List<Parameter>(parameterCount);
@@ -76,11 +72,11 @@ namespace SoulsFormats
                     Transforms.Add(new Transform(br));
             }
 
-            internal void Write(BinaryWriterEx bw, List<Parameter> allParameters, List<long> parameterValueOffsets)
+            internal void Write(BinaryWriterEx bw, int timelineIndex, int parentTimelineIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
                 bw.WriteInt32(ID);
                 bw.WriteInt32(ResourceIndex);
-                bw.WriteInt32(Unk08);
+                bw.WriteInt32(timelineIndex);
                 bw.WriteInt32(StartFrame);
                 bw.WriteInt32(Duration);
                 bw.WriteInt32(Unk14);
@@ -88,7 +84,7 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk1C);
                 bw.WriteInt32(Unk20);
                 bw.WriteInt32(Parameters.Count);
-                bw.WriteInt32(Unk28);
+                bw.WriteInt32(parentTimelineIndex);
                 bw.WriteInt32(0);
 
                 foreach (Parameter parameter in Parameters)

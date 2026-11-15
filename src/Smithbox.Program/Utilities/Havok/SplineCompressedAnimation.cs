@@ -345,8 +345,9 @@ public static class SplineCompressedAnimation
         for (var i = 1; i <= degree; i++)
         for (var j = i - 1; j >= 0; j--)
         {
-            var A = (frame - knots[knotSpanIndex - j]) /
-                    (knots[knotSpanIndex + i - j] - knots[knotSpanIndex - j]);
+            // A repeated knot spans nothing: 0/0 counts as 0, or a frame landing on it reads NaN
+            float span = knots[knotSpanIndex + i - j] - knots[knotSpanIndex - j];
+            var A = span != 0 ? (frame - knots[knotSpanIndex - j]) / span : 0;
             // without multiplying A, model jitters slightly
             var tmp = N[j] * A;
             // without subtracting tmp, model flies away then resets to origin every few frames
@@ -375,8 +376,9 @@ public static class SplineCompressedAnimation
         for (var i = 1; i <= degree; i++)
         for (var j = i - 1; j >= 0; j--)
         {
-            var A = (frame - knots[knotSpanIndex - j]) /
-                    (knots[knotSpanIndex + i - j] - knots[knotSpanIndex - j]);
+            // A repeated knot spans nothing: 0/0 counts as 0, or a frame landing on it reads NaN
+            float span = knots[knotSpanIndex + i - j] - knots[knotSpanIndex - j];
+            var A = span != 0 ? (frame - knots[knotSpanIndex - j]) / span : 0;
             var tmp = N[j] * A;
             N[j + 1] += N[j] - tmp;
             N[j] = tmp;
@@ -392,15 +394,30 @@ public static class SplineCompressedAnimation
         return retVal;
     }
 
+    /// <param name="blockOffsets">
+    ///     Where each block starts (m_blockOffsets). Without them the blocks are read one after another, which is only
+    ///     right for clips without float tracks: their float data sits between the blocks.
+    /// </param>
+    /// <param name="numFloatTracks">
+    ///     The block's masks are one 4-byte mask per transform track, then one byte per float track, before the
+    ///     transform data starts.
+    /// </param>
     public static List<TransformTrack[]> ReadSplineCompressedAnimByteBlock(
-        bool isBigEndian, byte[] animationData, int numTransformTracks, int numBlocks)
+        bool isBigEndian, byte[] animationData, int numTransformTracks, int numBlocks,
+        IReadOnlyList<uint> blockOffsets = null, int numFloatTracks = 0)
     {
         List<TransformTrack[]> blocks = new();
 
         var br = new BinaryReaderEx(isBigEndian, animationData);
+        var useOffsets = blockOffsets != null && blockOffsets.Count == numBlocks;
 
         for (var blockIndex = 0; blockIndex < numBlocks; blockIndex++)
         {
+            if (useOffsets)
+            {
+                br.Position = blockOffsets[blockIndex];
+            }
+
             var TransformTracks = new TransformTrack[numTransformTracks];
 
             for (var i = 0; i < numTransformTracks; i++)
@@ -412,6 +429,9 @@ public static class SplineCompressedAnimation
             {
                 TransformTracks[i].Mask = new TransformMask(br);
             }
+
+            // The float track masks, read with the float data
+            br.Position += Math.Max(0, numFloatTracks);
 
             br.Pad(4);
 
@@ -512,6 +532,80 @@ public static class SplineCompressedAnimation
         }
 
         return blocks;
+    }
+
+    /// <summary>
+    ///     Reads the float tracks of every block. A block starts with one 4-byte mask per transform track, then one
+    ///     mask byte per float track. The float data is at the block's start + m_floatBlockOffsets[block]: each track
+    ///     4-aligned, a static float (mask 0x01) or a scalar spline (mask 0x10, laid out like one channel of a position
+    ///     spline, with 16-bit values when 0x02 is set). A track with neither has no data and keeps its slot's reference
+    ///     value. Checked against every cutscene camera FOV track of ER, NR, AC6, SDT and DS3 (only 0x03 and 0x12 occur).
+    /// </summary>
+    public static List<FloatTrack[]> ReadSplineCompressedFloatBlocks(bool isBigEndian, byte[] animationData,
+        int numTransformTracks, int numFloatTracks, IReadOnlyList<uint> blockOffsets,
+        IReadOnlyList<uint> floatBlockOffsets)
+    {
+        List<FloatTrack[]> blocks = new();
+        if (numFloatTracks <= 0 || blockOffsets == null || floatBlockOffsets == null
+            || floatBlockOffsets.Count != blockOffsets.Count)
+        {
+            return blocks;
+        }
+
+        var br = new BinaryReaderEx(isBigEndian, animationData);
+        List<FlagOffset> splineChannel = new() { FlagOffset.SplineX };
+
+        for (var blockIndex = 0; blockIndex < blockOffsets.Count; blockIndex++)
+        {
+            long blockStart = blockOffsets[blockIndex];
+            var tracks = new FloatTrack[numFloatTracks];
+
+            br.Position = blockStart + numTransformTracks * 4L;
+            var masks = br.ReadBytes(numFloatTracks);
+
+            br.Position = blockStart + floatBlockOffsets[blockIndex];
+            for (var i = 0; i < numFloatTracks; i++)
+            {
+                var track = new FloatTrack();
+                byte mask = masks[i];
+                br.Pad(4);
+
+                if ((mask & 0x10) != 0)
+                {
+                    var quantization = (mask & 0x02) != 0 ? ScalarQuantizationType.BITS16 : ScalarQuantizationType.BITS8;
+                    track.Spline = new SplineTrackVector3(br, splineChannel, quantization, false);
+                }
+                else if ((mask & 0x01) != 0)
+                {
+                    track.IsStatic = true;
+                    track.StaticValue = br.ReadSingle();
+                }
+
+                tracks[i] = track;
+            }
+
+            blocks.Add(tracks);
+        }
+
+        return blocks;
+    }
+
+    public class FloatTrack
+    {
+        public bool IsStatic;
+        public float StaticValue;
+        public SplineTrackVector3 Spline;
+
+        /// <summary>Null when the track has no data, so its slot keeps the reference value.</summary>
+        public float? GetValue(float frameInBlock)
+        {
+            if (Spline != null)
+            {
+                return Spline.GetValueX(frameInBlock);
+            }
+
+            return IsStatic ? StaticValue : null;
+        }
     }
 
     public class SplineChannel<T>

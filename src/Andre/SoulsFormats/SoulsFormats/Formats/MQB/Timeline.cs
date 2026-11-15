@@ -12,9 +12,13 @@ namespace SoulsFormats
             public List<Parameter> Parameters { get; set; }
 
             /// <summary>
-            /// Unknown; possibly a timeline index.
+            /// Index of the parent timeline in the same cut, or -1 for a root. The parent is usually earlier in the list.
+            /// The tree goes offset.sib → HKT → actors and camera → effects attached to them.
             /// </summary>
-            public int Unk10 { get; set; }
+            public int ParentIndex { get; set; }
+
+            // Where the parameters were read from, for finding unused timeline slots before them
+            internal long ParametersOffset;
 
             public Timeline()
             {
@@ -30,7 +34,8 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                 long parameterOffset = br.ReadVarint();
                 int parameterCount = br.ReadInt32();
-                Unk10 = br.ReadInt32();
+                ParentIndex = br.ReadInt32();
+                ParametersOffset = parameterOffset;
 
                 Events = new List<Event>(eventCount);
                 long[] eventOffsets = br.GetVarints(eventOffsetsOffset, eventCount);
@@ -49,12 +54,12 @@ namespace SoulsFormats
                 br.StepOut();
             }
 
-            internal void WriteEvents(BinaryWriterEx bw, Dictionary<Event, long> offsetsByEvent, List<Parameter> allParameters, List<long> parameterValueOffsets)
+            internal void WriteEvents(BinaryWriterEx bw, int timelineIndex, Dictionary<Event, long> offsetsByEvent, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
                 foreach (Event ev in Events)
                 {
                     offsetsByEvent[ev] = bw.Position;
-                    ev.Write(bw, allParameters, parameterValueOffsets);
+                    ev.Write(bw, timelineIndex, ParentIndex, allParameters, parameterValueOffsets);
                 }
             }
 
@@ -66,7 +71,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 bw.ReserveVarint($"TimelineParametersOffset[{cutIndex}:{timelineIndex}]");
                 bw.WriteInt32(Parameters.Count);
-                bw.WriteInt32(Unk10);
+                bw.WriteInt32(ParentIndex);
             }
 
             internal void WriteParameters(BinaryWriterEx bw, int cutIndex, int timelineIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
