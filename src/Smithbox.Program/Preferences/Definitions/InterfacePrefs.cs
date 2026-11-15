@@ -221,6 +221,25 @@ public class InterfacePrefs
         };
     }
 
+    public static PreferenceItem Interface_Editor_Rail_Text_Labels()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 9,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.General,
+
+            Title = "PREF_Interface_Editor_Rail_Text_Labels",
+            Description = "PREF_Interface_Editor_Rail_Text_Labels_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Editor_Rail_Text_Labels);
+            }
+        };
+    }
+
     #endregion
 
     #region Editor Presentation

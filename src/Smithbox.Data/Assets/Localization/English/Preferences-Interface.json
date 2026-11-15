@@ -25,6 +25,14 @@
       "Text": "Adjusts the size of the font in Smithbox."
     },
     {
+      "Key": "PREF_Interface_Editor_Rail_Text_Labels",
+      "Text": "Show Editor Names in Editor Rail"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Text_Labels_TT",
+      "Text": "If enabled, the editor rail shows each editor as a button with its name. Otherwise, it shows icon buttons."
+    },
+    {
       "Key": "PREF_Interface_Alias_Wordwrap_General",
       "Text": "Enable Alias Word-wrap"
     },

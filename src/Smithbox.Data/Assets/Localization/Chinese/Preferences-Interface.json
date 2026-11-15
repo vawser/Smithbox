@@ -25,6 +25,14 @@
       "Text": "调整 Smithbox 中的字体大小。"
     },
     {
+      "Key": "PREF_Interface_Editor_Rail_Text_Labels",
+      "Text": "在编辑器栏中显示编辑器名称"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Text_Labels_TT",
+      "Text": "启用后，编辑器栏以带名称的按钮显示各编辑器。否则显示图标按钮。"
+    },
+    {
       "Key": "PREF_Interface_Alias_Wordwrap_General",
       "Text": "启用别名自动换行"
     },

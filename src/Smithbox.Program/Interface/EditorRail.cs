@@ -25,7 +25,9 @@ public static class EditorHost
         ImGuiWindowFlags.NoBringToFrontOnFocus;
 
     /// <summary>Width of the editor rail, which the host area starts after</summary>
-    public static float RailWidth => MathF.Round(ImGui.GetFrameHeight() * 2.0f);
+    public static float RailWidth => CFG.Current.Interface_Editor_Rail_Text_Labels
+        ? EditorRail.TextRailWidth()
+        : MathF.Round(ImGui.GetFrameHeight() * 2.0f);
 
     /// <summary>
     /// Begins a top-level editor's window over the host area. Pair with <see cref="ImGui.End"/> as for
@@ -56,6 +58,32 @@ public static class EditorRail
     private static double _nextUnsavedRefresh = 0;
 
     private static readonly Vector4 UnsavedColor = new(0.95f, 0.70f, 0.20f, 1.0f);
+
+    /// <summary>
+    /// Width of the rail when it shows editor names, fitting the longest name. Every registered editor is
+    /// measured, not just the ones the project has, so the rail keeps its width between projects.
+    /// </summary>
+    public static float TextRailWidth()
+    {
+        var scale = DPI.UIScale();
+        var padding = MathF.Round(4.0f * scale);
+        var style = ImGui.GetStyle();
+
+        var widest = MathF.Max(ImGui.CalcTextSize(LOC.Get("PROJECT_Editor_Title")).X,
+            ImGui.CalcTextSize(LOC.Get("SETTINGS_Editor_Title")).X);
+
+        foreach (var entry in EditorRegistry.Entries)
+            widest = MathF.Max(widest, ImGui.CalcTextSize(LOC.Get(entry.LabelKey)).X);
+
+        // Text, its frame padding, the accent bar on its left and room for the unsaved marker on its right
+        var button = widest + style.FramePadding.X * 2 + AccentWidth(scale) + MarkerRadius(scale) * 4;
+
+        return MathF.Round(button + padding * 2);
+    }
+
+    private static float AccentWidth(float scale) => MathF.Max(2.0f, 3.0f * scale);
+
+    private static float MarkerRadius(float scale) => MathF.Max(2.0f, 3.0f * scale);
 
     public static unsafe void Display(ProjectOrchestrator orchestrator, EditorEntry activeEntry)
     {
@@ -188,7 +216,26 @@ public static class EditorRail
             pushed++;
         }
 
-        var clicked = ImGui.Button($"{icon}##editorRail_{id}", new Vector2(size, size));
+        var textLabels = CFG.Current.Interface_Editor_Rail_Text_Labels;
+        bool clicked;
+
+        if (textLabels)
+        {
+            // Left-aligned name, indented past the accent bar
+            var framePadding = ImGui.GetStyle().FramePadding;
+            ImGui.PushStyleVar(ImGuiStyleVar.ButtonTextAlign, new Vector2(0.0f, 0.5f));
+            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding,
+                new Vector2(framePadding.X + AccentWidth(scale), framePadding.Y));
+
+            clicked = ImGui.Button($"{label}##editorRail_{id}",
+                new Vector2(size, MathF.Round(ImGui.GetFrameHeight() * 1.25f)));
+
+            ImGui.PopStyleVar(2);
+        }
+        else
+        {
+            clicked = ImGui.Button($"{icon}##editorRail_{id}", new Vector2(size, size));
+        }
 
         ImGui.PopStyleColor(pushed);
 
@@ -199,22 +246,26 @@ public static class EditorRail
         // Accent bar on the active editor
         if (active)
         {
-            drawList.AddRectFilled(min, new Vector2(min.X + MathF.Max(2.0f, 3.0f * scale), max.Y),
+            drawList.AddRectFilled(min, new Vector2(min.X + AccentWidth(scale), max.Y),
                 ImGui.GetColorU32(ImGuiCol.CheckMark));
         }
 
         // Unsaved marker
         if (unsaved > 0)
         {
-            var radius = MathF.Max(2.0f, 3.0f * scale);
-            drawList.AddCircleFilled(new Vector2(max.X - radius * 2, min.Y + radius * 2), radius,
+            var radius = MarkerRadius(scale);
+            var markerY = textLabels ? (min.Y + max.Y) * 0.5f : min.Y + radius * 2;
+            drawList.AddCircleFilled(new Vector2(max.X - radius * 2, markerY), radius,
                 ImGui.GetColorU32(UnsavedColor));
         }
 
-        if (ImGui.IsItemHovered())
+        // With names shown, the tooltip only has something to add while loading or unsaved
+        if (ImGui.IsItemHovered() && (!textLabels || loading || unsaved > 0))
         {
             ImGui.BeginTooltip();
-            ImGui.TextUnformatted(label);
+
+            if (!textLabels)
+                ImGui.TextUnformatted(label);
 
             if (loading)
                 ImGui.TextDisabled(LOC.Get("EDITOR_Editor_Is_Loading"));
