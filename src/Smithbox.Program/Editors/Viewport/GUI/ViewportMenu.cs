@@ -133,7 +133,7 @@ public class ViewportMenu
                 break;
             case FxUniverse fx:
                 CFG.Current.Interface_FxEditor_ToolWindow = true;
-                tool = fx.Editor.RenderingTool;
+                tool = fx.View.RenderingTool;
                 break;
         }
 

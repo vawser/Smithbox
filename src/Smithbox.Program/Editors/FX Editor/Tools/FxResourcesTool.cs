@@ -12,12 +12,12 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxResourcesTool
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     // Rebuilt when the effect or an edit changes it
     private (FxEntry, object, int) BuiltFor;
     private List<Row> Rows = new();
-    private int Edits;
+    private int Edits => Editor.Data?.EditVersion ?? 0;
 
     private sealed class Row
     {
@@ -31,10 +31,9 @@ public class FxResourcesTool
         public List<string> ActionNames = new();
     }
 
-    public FxResourcesTool(FxEditorScreen editor)
+    public FxResourcesTool(FxEditorView editor)
     {
         Editor = editor;
-        editor.ActionManager.ActionPerformed += () => Edits++;
     }
 
     public void OnToolWindow()

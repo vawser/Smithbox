@@ -19,7 +19,7 @@ public record FxSearchMatch(int EffectId, string NodePath, int Config, int Actio
 /// </summary>
 public class FxSearchTool
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     private string ActionText = "";
     private string ValueText = "";
@@ -39,7 +39,7 @@ public class FxSearchTool
     private string ResultFilter = "";
     private bool ResultExact;
 
-    public FxSearchTool(FxEditorScreen editor)
+    public FxSearchTool(FxEditorView editor)
     {
         Editor = editor;
     }

@@ -11,62 +11,39 @@ using Veldrid.Sdl2;
 namespace StudioCore.Editors.FxEditor;
 
 /// <summary>
-/// The FX Editor: browse and edit FXR effects (FX Editor Plan, milestone E1+E2), with a viewport (phase V1). The
-/// windows in the editor's dockspace: the Effect List, the Effect Tree, the Action Inspector, the Viewport and the
-/// Tools window.
+/// The FX Editor: browse and edit FXR effects (FX Editor Plan, milestone E1+E2), with a viewport (phase V1). Each
+/// view (<see cref="FxEditorView"/>) has its own Effect List, Effect Tree, Action Inspector, Viewport and Tools
+/// window; the screen keeps what the views share: the bank, saving, and the notes, favorites, templates and scans.
 /// </summary>
 public class FxEditorScreen : EditorScreen
 {
     public ProjectEntry Project;
 
-    public ActionManager ActionManager = new();
+    public FxViewHandler ViewHandler;
 
-    public FxSelection Selection;
+    /// <summary>The view the menus, shortcuts and commands act on</summary>
+    public FxEditorView ActiveView => ViewHandler.ActiveView;
 
-    public FxEffectList EffectList;
-    public FxEffectTree EffectTree;
-    public FxInspector Inspector;
-    public FxCurveEditor CurveEditor;
-
-    // Viewport
-    public RenderScene RenderScene;
-    public ViewportSelection ViewportSelection = new();
-    public ViewportActionManager ViewportActionManager = new();
-    public FxUniverse Universe;
-    public FxViewportWindow ViewportWindow;
-    public FxPlayback Playback = new();
-    public FxLiveEdit Live = new();
-
-    // Tools
-    public FxToolWindow ToolWindow;
-    public FxPreviewTool PreviewTool;
-    public FxSearchTool SearchTool;
-    public FxReferencesTool ReferencesTool;
-    public FxResourcesTool ResourcesTool;
-    public ViewportGridTool GridTool;
-    public ViewportRenderingTool RenderingTool;
+    // Shared by every view: kept in the project's files (notes, favorites, templates), or scans of the whole project
+    public FxNotes Notes;
+    public FxFavorites Favorites;
+    public FxTemplates Templates;
+    public FxUsage Usage;
+    public FxExternalReferences External;
+    public FxProjectCheck ProjectCheck;
 
     public FxEditorScreen(ProjectEntry project)
     {
         Project = project;
 
-        Selection = new FxSelection(this);
-        EffectList = new FxEffectList(this);
-        EffectTree = new FxEffectTree(this);
-        Inspector = new FxInspector(this);
-        CurveEditor = new FxCurveEditor(this);
+        Notes = new FxNotes(this);
+        Favorites = new FxFavorites(this);
+        Templates = new FxTemplates(this);
+        Usage = new FxUsage(this);
+        External = new FxExternalReferences(this);
+        ProjectCheck = new FxProjectCheck(this);
 
-        RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
-        Universe = new FxUniverse(this, project);
-        ViewportWindow = new FxViewportWindow(this, project);
-
-        PreviewTool = new FxPreviewTool(this);
-        SearchTool = new FxSearchTool(this);
-        ReferencesTool = new FxReferencesTool(this);
-        ResourcesTool = new FxResourcesTool(this);
-        GridTool = new ViewportGridTool(ViewportGridEditor.Fx, () => ViewportWindow?.Viewport as VulkanViewport);
-        RenderingTool = new ViewportRenderingTool(() => ViewportWindow?.Viewport as VulkanViewport);
-        ToolWindow = new FxToolWindow(this);
+        ViewHandler = new FxViewHandler(this, project);
     }
 
     public FxData Data => Project.Handler.FxData;
@@ -120,25 +97,7 @@ public class FxEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_FxEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_FxEditor);
 
-        Window($"{LOC.Get("FX_Window_Effect_List")}###fxEditor_EffectList", dsid, EditorFocusContext.FxEditor_EffectList, EffectList.Display);
-        Window($"{LOC.Get("FX_Window_Effect_Tree")}###fxEditor_EffectTree", dsid, EditorFocusContext.FxEditor_EffectTree, EffectTree.Display);
-        Window($"{LOC.Get("FX_Window_Inspector")}###fxEditor_Inspector", dsid, EditorFocusContext.FxEditor_Inspector, Inspector.Display);
-
-        if (CurveEditorFocusRequested)
-        {
-            CurveEditorFocusRequested = false;
-            if (CFG.Current.Interface_FxEditor_CurveEditor)
-                ImGui.SetNextWindowFocus();
-        }
-
-        if (CFG.Current.Interface_FxEditor_CurveEditor)
-            Window($"{LOC.Get("FX_Window_Curve_Editor")}###fxEditor_CurveEditor", dsid, EditorFocusContext.FxEditor_Inspector, CurveEditor.Display);
-
-        // Viewport: the shared viewport window sets the focus itself
-        ViewportWindow.Display(dsid);
-
-        if (CFG.Current.Interface_FxEditor_ToolWindow)
-            Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools", dsid, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetInnerWindowFlags());
+        ViewHandler.HandleViews(dsid);
     }
 
     // ---------------------------------------------------------------- commands
@@ -147,8 +106,8 @@ public class FxEditorScreen : EditorScreen
     private int? PendingJump;
 
     /// <summary>
-    /// fx/select/&lt;id&gt;: select the effect f&lt;id&gt; and scroll the list to it (FxReferenceHelper sends this from the
-    /// other editors). The bank indexes on first use, so a jump made before then waits for it.
+    /// fx/select/&lt;id&gt;: select the effect f&lt;id&gt; in the active view and scroll the list to it (FxReferenceHelper
+    /// sends this from the other editors). The bank indexes on first use, so a jump made before then waits for it.
     /// </summary>
     private void HandleCommands(string[] commands)
     {
@@ -158,89 +117,54 @@ public class FxEditorScreen : EditorScreen
             PendingJump = id;
         }
 
-        if (PendingJump is not int jump || !Data.Bank.IsIndexed)
+        if (PendingJump is not int jump || !Data.Bank.IsIndexed || ActiveView == null)
             return;
 
         PendingJump = null;
-        JumpTo(jump);
-    }
-
-    /// <summary>Selects an effect by id, as a jump: the list scrolls to it. False if no binder holds it.</summary>
-    public bool JumpTo(int id)
-    {
-        if (!Data.Bank.Entries.TryGetValue(id, out var entry))
-        {
-            Smithbox.LogWarning(this, LOC.Get("FX_Jump_Not_Found", $"f{id:D9}"));
-            return false;
-        }
-
-        Selection.SelectEntry(entry);
-        Selection.FocusEntry = Selection.Entry == entry;
-        return Selection.FocusEntry;
+        ActiveView.JumpTo(jump);
     }
 
     // ---------------------------------------------------------------- viewport
 
     public void Update(float dt)
     {
-        // A new effect starts playing from the beginning
-        if (Selection.Entry != PlaybackEntry)
-        {
-            PlaybackEntry = Selection.Entry;
-            Playback.Restart();
-        }
+        // Only the active view's viewport takes input and plays, as in the Time Act Editor
+        var view = ActiveView;
+        if (view == null)
+            return;
 
-        Playback.Update(dt);
-
-        ViewportWindow.Update(dt);
+        view.Update(dt);
 
         // The map lighting the viewport borrows, loaded once there is an effect to show: reading the map's volumes
         // and GPARAM on the editor's first frame would hold it up (as in the Time Act Editor)
-        if (Selection.Entry?.Fxr != null)
+        if (view.Selection.Entry?.Fxr != null)
             Project.Handler.ViewportEnvironment.Update();
     }
 
-    private FxEntry PlaybackEntry;
-
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (ViewportWindow.Viewport is VulkanViewport { Visible: true })
-            ViewportWindow.Draw(device, cl);
+        if (ViewHandler.ViewToClose == null)
+        {
+            foreach (var view in ViewHandler.OpenViews)
+                view.Draw(device, cl);
+        }
+
+        // Done here so the list isn't changed while the views are drawn
+        if (ViewHandler.ViewToClose != null)
+        {
+            ViewHandler.RemoveView(ViewHandler.ViewToClose);
+            ViewHandler.ViewToClose = null;
+        }
     }
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
-        ViewportWindow.EditorResized(window, device);
+        ActiveView?.EditorResized(window, device);
     }
 
     public bool InputCaptured()
     {
-        return ViewportWindow.InputCaptured();
-    }
-
-    private bool CurveEditorFocusRequested;
-
-    /// <summary>
-    /// Brings the Curve Editor to the front on the next frame (selecting its tab when docked), showing it first if
-    /// it is hidden. The inspector calls this when a property is opened in it.
-    /// </summary>
-    public void FocusCurveEditor()
-    {
-        CFG.Current.Interface_FxEditor_CurveEditor = true;
-        CurveEditorFocusRequested = true;
-    }
-
-    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw, ImGuiWindowFlags? flags = null)
-    {
-        ImGui.SetNextWindowDockID(dockspace, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_FxEditor);
-        if (ImGui.Begin(title, flags ?? GUI.GetInnerWindowFlags()))
-        {
-            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
-                FocusManager.SetFocus(focus);
-            draw();
-        }
-        ImGui.End();
+        return ActiveView?.InputCaptured() ?? false;
     }
 
     private void Shortcuts()
@@ -248,24 +172,28 @@ public class FxEditorScreen : EditorScreen
         if (!FocusManager.IsInFxEditor())
             return;
 
+        var view = ActiveView;
+        if (view == null)
+            return;
+
         if (InputManager.IsPressed(KeybindID.Save))
             Save();
 
         // A value being edited is committed first, so undo never runs under a live change
-        if (ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+        if (view.ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
         {
-            FlushEdits();
-            ActionManager.UndoAction();
+            view.FlushEdits();
+            view.ActionManager.UndoAction();
         }
 
-        if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+        if (view.ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
         {
-            FlushEdits();
-            ActionManager.RedoAction();
+            view.FlushEdits();
+            view.ActionManager.RedoAction();
         }
 
-        EffectTree.Shortcuts();
-        EffectList.Shortcuts();
+        view.EffectTree.Shortcuts();
+        view.EffectList.Shortcuts();
     }
 
     private void FileMenu()
@@ -286,8 +214,9 @@ public class FxEditorScreen : EditorScreen
         ImGui.Separator();
 
         // Reload the selected effect, dropping its unsaved changes
-        if (ImGui.MenuItem($"{LOC.Get("FX_Menu_Reload")}##fxReload", "", false, Selection.Entry?.IsLoaded == true))
-            ReloadEntry(Selection.Entry);
+        var selected = ActiveView?.Selection.Entry;
+        if (ImGui.MenuItem($"{LOC.Get("FX_Menu_Reload")}##fxReload", "", false, selected?.IsLoaded == true))
+            ReloadEntry(selected);
         GUI.Tooltip(LOC.Get("FX_Menu_Reload_TT"));
 
         ImGui.Separator();
@@ -306,36 +235,42 @@ public class FxEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##fxEditMenu"))
             return;
 
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##fxUndo", InputManager.GetHint(KeybindID.Undo), false, ActionManager.CanUndo()))
+        var view = ActiveView;
+        if (view != null)
         {
-            FlushEdits();
-            ActionManager.UndoAction();
+            var actions = view.ActionManager;
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##fxUndo", InputManager.GetHint(KeybindID.Undo), false, actions.CanUndo()))
+            {
+                view.FlushEdits();
+                actions.UndoAction();
+            }
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##fxUndoAll", "", false, actions.CanUndo()))
+            {
+                view.FlushEdits();
+                actions.UndoAllAction();
+            }
+
+            if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##fxRedo", InputManager.GetHint(KeybindID.Redo), false, actions.CanRedo()))
+            {
+                view.FlushEdits();
+                actions.RedoAction();
+            }
+
+            ImGui.Separator();
+
+            // The selected node in the Effect Tree
+            var node = view.EffectTree.EditableNode;
+
+            if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Duplicate")}##fxDuplicateNode", InputManager.GetHint(KeybindID.Duplicate), false, node != null))
+                view.EffectTree.DuplicateNode(node);
+            GUI.Tooltip(LOC.Get("FX_EffectTree_Duplicate_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Delete")}##fxDeleteNode", InputManager.GetHint(KeybindID.Delete), false, node != null))
+                view.EffectTree.DeleteNode(node);
+            GUI.Tooltip(LOC.Get("FX_EffectTree_Delete_TT"));
         }
-
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo_All")}##fxUndoAll", "", false, ActionManager.CanUndo()))
-        {
-            FlushEdits();
-            ActionManager.UndoAllAction();
-        }
-
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##fxRedo", InputManager.GetHint(KeybindID.Redo), false, ActionManager.CanRedo()))
-        {
-            FlushEdits();
-            ActionManager.RedoAction();
-        }
-
-        ImGui.Separator();
-
-        // The selected node in the Effect Tree
-        var node = EffectTree.EditableNode;
-
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Duplicate")}##fxDuplicateNode", InputManager.GetHint(KeybindID.Duplicate), false, node != null))
-            EffectTree.DuplicateNode(node);
-        GUI.Tooltip(LOC.Get("FX_EffectTree_Duplicate_TT"));
-
-        if (ImGui.MenuItem($"{LOC.Get("FX_EffectTree_Delete")}##fxDeleteNode", InputManager.GetHint(KeybindID.Delete), false, node != null))
-            EffectTree.DeleteNode(node);
-        GUI.Tooltip(LOC.Get("FX_EffectTree_Delete_TT"));
 
         ImGui.EndMenu();
     }
@@ -373,27 +308,30 @@ public class FxEditorScreen : EditorScreen
             CFG.Current.Interface_FxEditor_ToolWindow = !CFG.Current.Interface_FxEditor_ToolWindow;
         GUI.ShowActiveStatus(CFG.Current.Interface_FxEditor_ToolWindow);
 
+        ImGui.Separator();
+
+        ViewHandler.DisplayMenu();
+
         ImGui.EndMenu();
     }
 
-    /// <summary>Commits values still being edited in the Inspector and Curve Editor (and takes back their live change).</summary>
-    public void FlushEdits()
-    {
-        Inspector.FlushPending();
-        CurveEditor.FlushPending();
-        Live.Revert();
-    }
-
-    /// <summary>Drops the effect's unsaved changes. Its undo history goes too, as it points at the old objects.</summary>
+    /// <summary>
+    /// Drops the effect's unsaved changes. Every view's undo history goes too, as it may point at the old objects, and
+    /// every view showing the effect lets go of it.
+    /// </summary>
     public void ReloadEntry(FxEntry entry)
     {
         if (entry == null)
             return;
         Data.Bank.Reload(entry);
-        EffectTree.Notes.OnReloaded(entry);
-        ActionManager.Clear();
-        if (Selection.Entry == entry)
-            Selection.ClearItem();
+        Notes.OnReloaded(entry);
+
+        foreach (var view in ViewHandler.OpenViews)
+        {
+            view.ActionManager.Clear();
+            if (view.Selection.Entry == entry)
+                view.Selection.ClearItem();
+        }
     }
 
     // ---------------------------------------------------------------- saving
@@ -412,8 +350,11 @@ public class FxEditorScreen : EditorScreen
 
         if (!autoSave)
         {
-            Inspector.FlushPending();
-            CurveEditor.FlushPending();
+            foreach (var view in ViewHandler.OpenViews)
+            {
+                view.Inspector.FlushPending();
+                view.CurveEditor.FlushPending();
+            }
         }
 
         var dirty = Data.Bank.DirtyEntries.ToList();
@@ -425,7 +366,7 @@ public class FxEditorScreen : EditorScreen
         await Data.Bank.SaveGuarded(dirty);
 
         // Node notes are keyed by position in the saved effect, so they're written once it is saved
-        EffectTree.Notes.OnSaved(dirty);
+        Notes.OnSaved(dirty);
 
         Smithbox.Instance.SaveConfiguration();
     }
@@ -471,4 +412,10 @@ public class FxEditorScreen : EditorScreen
     }
 
     public bool IsSavingUnsaved => _unsavedSave is { IsCompleted: false };
+
+    /// <summary>Releases every view's viewport, for the project closing</summary>
+    public void Dispose()
+    {
+        ViewHandler.DisposeViews();
+    }
 }

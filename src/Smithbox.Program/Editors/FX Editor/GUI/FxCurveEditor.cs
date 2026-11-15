@@ -16,7 +16,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxCurveEditor
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     // The working copy and what it was made from
     private FxrCurve Working;
@@ -24,15 +24,15 @@ public class FxCurveEditor
     private (FxEntry Entry, Model.IFxAction Action, string Name, int Version) WorkingFor;
     private bool Dirty;
     private bool DragHeld;
-    private int Version;
+    /// <summary>Bumped by every edit, undo and redo, in any view (the views share the effects)</summary>
+    private int Version => Editor.Data?.EditVersion ?? 0;
     private int Component;
 
     private readonly Random Seeds = new();
 
-    public FxCurveEditor(FxEditorScreen editor)
+    public FxCurveEditor(FxEditorView editor)
     {
         Editor = editor;
-        editor.ActionManager.ActionPerformed += () => Version++;
     }
 
     private FxData Data => Editor.Data;

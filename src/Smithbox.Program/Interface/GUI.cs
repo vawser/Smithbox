@@ -41,6 +41,11 @@ public static class GUI
     public static uint HAVOK_EDITOR_VIEW_DOCK_GROUP = 1112;
     public static uint TIME_ACT_EDITOR_VIEW_DOCK_GROUP = 1113;
     public static uint BEHAVIOR_EDITOR_VIEW_DOCK_GROUP = 1114;
+    public static uint EMEVD_EDITOR_VIEW_DOCK_GROUP = 1115;
+    public static uint ESD_EDITOR_VIEW_DOCK_GROUP = 1116;
+    public static uint SOUND_EDITOR_VIEW_DOCK_GROUP = 1117;
+    public static uint FX_EDITOR_VIEW_DOCK_GROUP = 1118;
+    public static uint CUTSCENE_EDITOR_VIEW_DOCK_GROUP = 1119;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -172,6 +177,26 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_BehaviorEditorView = new(
         classId: BEHAVIOR_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_EmevdEditorView = new(
+        classId: EMEVD_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_EsdEditorView = new(
+        classId: ESD_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_SoundEditorView = new(
+        classId: SOUND_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_FxEditorView = new(
+        classId: FX_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_CutsceneEditorView = new(
+        classId: CUTSCENE_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static void ApplyBaseStyle()

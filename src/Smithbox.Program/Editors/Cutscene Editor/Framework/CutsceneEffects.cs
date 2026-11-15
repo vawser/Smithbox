@@ -24,7 +24,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public sealed class CutsceneEffects : IDisposable
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
     private readonly FxDisplay? Display;
     private readonly FxDefCache Defs;
     private readonly FxCuePlayer Player;
@@ -35,7 +35,7 @@ public sealed class CutsceneEffects : IDisposable
     private readonly HashSet<int> LoggedMissing = new();
     private bool MissingLogged;
 
-    public CutsceneEffects(CutsceneEditorScreen editor)
+    public CutsceneEffects(CutsceneEditorView editor)
     {
         Editor = editor;
         var project = editor.Project;

@@ -524,7 +524,7 @@ public class ProjectEditorHandler : IDisposable
         SoundData?.Dispose();
 
         // The FX Editor's debug shapes hold GPU buffers, and its viewport a render pipeline
-        FxEditor?.ViewportWindow?.Dispose();
+        FxEditor?.Dispose();
 
         // The Cutscene Editor's actors hold meshes and animators, its lines GPU buffers, its viewport a render pipeline
         CutsceneEditor?.Dispose();

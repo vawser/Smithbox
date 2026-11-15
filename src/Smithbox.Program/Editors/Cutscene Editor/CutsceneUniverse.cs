@@ -10,16 +10,16 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneUniverse : IUniverse
 {
-    public CutsceneEditorScreen Editor;
+    public CutsceneEditorView View;
     public ProjectEntry Project;
 
-    public RenderScene RenderScene => Editor.RenderScene;
-    public ViewportSelection ViewportSelection => Editor.ViewportSelection;
-    public ViewportActionManager ViewportActionManager => Editor.ViewportActionManager;
+    public RenderScene RenderScene => View.RenderScene;
+    public ViewportSelection ViewportSelection => View.ViewportSelection;
+    public ViewportActionManager ViewportActionManager => View.ViewportActionManager;
 
-    public CutsceneUniverse(CutsceneEditorScreen editor, ProjectEntry project)
+    public CutsceneUniverse(CutsceneEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 }

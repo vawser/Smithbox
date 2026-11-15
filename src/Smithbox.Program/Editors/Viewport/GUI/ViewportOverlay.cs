@@ -28,7 +28,7 @@ public class ViewportOverlay
         // Cutscene Editor: the cut's fade over the scene, first so the overlay's text stays on top of it
         if (Parent.Owner is CutsceneEditor.CutsceneUniverse fadeUniverse)
         {
-            fadeUniverse.Editor.Fades.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height, ImGui.GetCursorScreenPos().Y);
+            fadeUniverse.View.Fades.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height, ImGui.GetCursorScreenPos().Y);
         }
 
         if(CFG.Current.Viewport_DisplayControls)
@@ -145,7 +145,7 @@ public class ViewportOverlay
         // Cutscene Editor: the subtitles covering the playhead, at the bottom centre
         if (Parent.Owner is CutsceneEditor.CutsceneUniverse cutsceneUniverse)
         {
-            cutsceneUniverse.Editor.Subtitles.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height);
+            cutsceneUniverse.View.Subtitles.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height);
         }
 
         // Profiling

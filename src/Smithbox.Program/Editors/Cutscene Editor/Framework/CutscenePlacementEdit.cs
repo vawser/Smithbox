@@ -69,13 +69,13 @@ public class CutscenePlacementAction : EditorAction
 /// </summary>
 public class CutscenePlacementGizmoTarget : IGizmoTarget
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     // The keys as they were when the drag started
     private (Vector3, Vector3)[]? DragStart;
     private CutscenePlacement? DragPlacement;
 
-    public CutscenePlacementGizmoTarget(CutsceneEditorScreen editor)
+    public CutscenePlacementGizmoTarget(CutsceneEditorView editor)
     {
         Editor = editor;
     }

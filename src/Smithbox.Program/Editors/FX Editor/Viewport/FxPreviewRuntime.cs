@@ -10,7 +10,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxPreviewRuntime
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     public FxEffectInstance Instance { get; private set; }
     public FxRuntimeContext Context { get; private set; }
@@ -28,7 +28,7 @@ public class FxPreviewRuntime
     private const int MaxStepsPerFrame = 900;
     private const float Step = 1f / 30f;
 
-    public FxPreviewRuntime(FxEditorScreen editor)
+    public FxPreviewRuntime(FxEditorView editor)
     {
         Editor = editor;
     }

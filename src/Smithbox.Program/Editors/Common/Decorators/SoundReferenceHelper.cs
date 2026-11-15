@@ -169,7 +169,7 @@ public static class SoundReferenceHelper
     // the sound (type letter + ID) the inline button last started, so its buttons show Stop while it plays
     private static string _playingKey;
 
-    private static SoundPlayer Player(ProjectEntry project) => project?.Handler?.SoundEditor?.View?.Player;
+    private static SoundPlayer Player(ProjectEntry project) => project?.Handler?.SoundEditor?.Player;
 
     private static string Key(string id, string type) => $"{type}{id}";
 

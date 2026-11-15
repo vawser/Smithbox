@@ -12,9 +12,9 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxReferencesTool
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
-    public FxReferencesTool(FxEditorScreen editor)
+    public FxReferencesTool(FxEditorView editor)
     {
         Editor = editor;
     }

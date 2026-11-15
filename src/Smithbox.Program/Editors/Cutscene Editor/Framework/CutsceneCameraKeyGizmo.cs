@@ -15,14 +15,14 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneCameraKeyGizmoTarget : IGizmoTarget
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     // The camera's keys as they were when the drag started, and which key
     private CutsceneCameraKeys? DragStart;
     private CutsceneCamera? DragCamera;
     private int DragIndex = -1;
 
-    public CutsceneCameraKeyGizmoTarget(CutsceneEditorScreen editor)
+    public CutsceneCameraKeyGizmoTarget(CutsceneEditorView editor)
     {
         Editor = editor;
     }

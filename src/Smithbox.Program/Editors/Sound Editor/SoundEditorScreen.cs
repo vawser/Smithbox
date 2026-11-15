@@ -13,12 +13,22 @@ public class SoundEditorScreen : EditorScreen, IDisposable
 {
     private ProjectEntry Project;
 
-    public SoundEditorView View;
+    public SoundViewHandler ViewHandler;
+
+    /// <summary>The view the menus, shortcuts and commands act on</summary>
+    public SoundEditorView View => ViewHandler.ActiveView;
+
+    /// <summary>The one player every view (and the inline Play buttons of the other editors) plays on</summary>
+    public SoundPlayer Player = new();
 
     public SoundEditorScreen(ProjectEntry project)
     {
         Project = project;
-        View = new SoundEditorView(this, project);
+
+        Player.Volume = CFG.Current.SoundEditor_Volume;
+        Player.Loop = CFG.Current.SoundEditor_Loop;
+
+        ViewHandler = new SoundViewHandler(this, project);
     }
 
     public string EditorName => "Sound Editor##SoundEditor";
@@ -32,7 +42,11 @@ public class SoundEditorScreen : EditorScreen, IDisposable
         ParseCommands(commands);
         ApplyPendingEntry();
         ApplyPendingEvent();
-        View.Update();
+        // A finished save is taken once, for every view
+        var reloaded = Project.Handler.SoundData?.Edits.ApplySaved();
+        foreach (var view in ViewHandler.OpenViews)
+            view.Update(reloaded);
+
         MonitorShortcuts();
 
         if (ImGui.BeginMenuBar())
@@ -48,7 +62,7 @@ public class SoundEditorScreen : EditorScreen, IDisposable
         var dsid = ImGui.GetID("DockSpace_SoundEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_SoundEditor);
 
-        View.Display(dsid);
+        ViewHandler.HandleViews(dsid);
     }
 
     /// <summary>
@@ -58,7 +72,7 @@ public class SoundEditorScreen : EditorScreen, IDisposable
     private void ParseCommands(string[] commands)
     {
         var data = Project.Handler.SoundData;
-        if (commands == null || commands.Length < 2 || data == null)
+        if (commands == null || commands.Length < 2 || data == null || View == null)
             return;
 
         if (commands[0] == "find")
@@ -157,13 +171,17 @@ public class SoundEditorScreen : EditorScreen, IDisposable
             GUI.Tooltip(LOC.Get("SOUND_View_Toggle_Tools_TT"));
             GUI.ShowActiveStatus(CFG.Current.Interface_SoundEditor_ToolWindow);
 
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
             ImGui.EndMenu();
         }
     }
 
     private void MonitorShortcuts()
     {
-        if (!FocusManager.IsInSoundEditor() || ImGui.GetIO().WantTextInput)
+        if (!FocusManager.IsInSoundEditor() || ImGui.GetIO().WantTextInput || View == null)
             return;
 
         if (InputManager.IsPressed(KeybindID.Save))
@@ -231,6 +249,9 @@ public class SoundEditorScreen : EditorScreen, IDisposable
 
     public void Dispose()
     {
-        View.Dispose();
+        foreach (var view in ViewHandler.OpenViews)
+            view.Dispose();
+
+        Player.Dispose();
     }
 }

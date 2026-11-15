@@ -14,12 +14,15 @@ public class EmevdEditorScreen : EditorScreen
 {
     private ProjectEntry Project;
 
-    public EmevdEditorView View;
+    public EmevdViewHandler ViewHandler;
+
+    /// <summary>The view the menus, shortcuts and commands act on</summary>
+    public EmevdEditorView View => ViewHandler.ActiveView;
 
     public EmevdEditorScreen(ProjectEntry project)
     {
         Project = project;
-        View = new EmevdEditorView(this, project);
+        ViewHandler = new EmevdViewHandler(this, project);
     }
 
     public string EditorName => "EMEVD Editor##EmevdEditor";
@@ -49,7 +52,7 @@ public class EmevdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EmevdEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_EmevdEditor);
 
-        View.Display(dsid);
+        ViewHandler.HandleViews(dsid);
     }
 
     /// <summary>
@@ -58,13 +61,13 @@ public class EmevdEditorScreen : EditorScreen
     private void ParseCommands(string[] commands)
     {
         // emevd/search/<value>: every event use of a value (from the ESD Editor's flag links)
-        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && long.TryParse(commands[1], out var value))
+        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && View != null && long.TryParse(commands[1], out var value))
         {
             View.ToolWindow.SearchTool.SearchValue(value);
             return;
         }
 
-        if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null)
+        if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null || View == null)
             return;
 
         var file = Bank.FindFile(commands[1]);
@@ -87,6 +90,9 @@ public class EmevdEditorScreen : EditorScreen
     private void MonitorShortcuts()
     {
         if (!FocusManager.IsInEmevdEditor())
+            return;
+
+        if (View == null)
             return;
 
         if (InputManager.IsPressed(KeybindID.Save))
@@ -225,6 +231,10 @@ public class EmevdEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Tools_TT"));
             GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolWindow);
 
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
             ImGui.EndMenu();
         }
     }
@@ -255,7 +265,7 @@ public class EmevdEditorScreen : EditorScreen
 
         if (bank != null && (!autoSave || CFG.Current.EmevdEditor_Allow_Automatic_Save))
         {
-            var selected = View.Selection.SelectedFile;
+            var selected = View?.Selection.SelectedFile;
 
             if (!autoSave && selected is { IsLoaded: true, IsDirty: false } && CFG.Current.EmevdEditor_Allow_Unmodified_Save)
                 selected.IsDirty = true;

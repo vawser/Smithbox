@@ -16,7 +16,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneListView
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     private string Filter = "";
     public bool ScrollToSelection;
@@ -25,7 +25,7 @@ public class CutsceneListView
 
     private Dictionary<string, string>? Aliases;
 
-    public CutsceneListView(CutsceneEditorScreen editor)
+    public CutsceneListView(CutsceneEditorView editor)
     {
         Editor = editor;
     }

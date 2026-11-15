@@ -9,8 +9,8 @@ namespace StudioCore.Editors.SoundEditor;
 /// </summary>
 public class SoundToolWindow
 {
-    /// <summary>The window's ImGui ID, so other code can focus it.</summary>
-    public const string WindowId = "###soundEditor_ToolWindow";
+    /// <summary>The window's ImGui ID (one per view), so other code can focus it.</summary>
+    public string WindowId => $"###soundEditor_ToolWindow_{View.ViewIndex}";
 
     private readonly SoundEditorView View;
 

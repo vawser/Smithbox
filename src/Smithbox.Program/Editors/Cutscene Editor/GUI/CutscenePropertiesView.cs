@@ -16,12 +16,12 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutscenePropertiesView
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     /// <summary>What parameters' values name, shown under them</summary>
     private readonly CutsceneParameterLinks Links;
 
-    public CutscenePropertiesView(CutsceneEditorScreen editor)
+    public CutscenePropertiesView(CutsceneEditorView editor)
     {
         Editor = editor;
         Links = new CutsceneParameterLinks(editor);

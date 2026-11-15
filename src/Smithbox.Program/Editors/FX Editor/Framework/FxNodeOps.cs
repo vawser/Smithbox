@@ -280,7 +280,7 @@ public static class FxNodeOps
     }
 
     /// <summary>What looks wrong with the node on its own, for the tree's warning icon. Empty when nothing does.</summary>
-    public static List<string> Check(FxEditorScreen editor, FxEntry entry, FxrNode node)
+    public static List<string> Check(FxEditorView editor, FxEntry entry, FxrNode node)
     {
         var bank = editor.Data.Bank;
         var problems = StructureProblems(entry.Fxr, entry.Id, id => !bank.IsIndexed || bank.Entries.ContainsKey(id), node);

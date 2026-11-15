@@ -18,7 +18,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneViewportWindow
 {
-    public CutsceneEditorScreen Editor;
+    public CutsceneEditorView Editor;
     public ProjectEntry Project;
 
     public IViewport? Viewport;
@@ -51,7 +51,7 @@ public class CutsceneViewportWindow
 
     private bool WasLookingThrough;
 
-    public CutsceneViewportWindow(CutsceneEditorScreen editor, ProjectEntry project)
+    public CutsceneViewportWindow(CutsceneEditorView editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -62,9 +62,9 @@ public class CutsceneViewportWindow
         if (Smithbox.Instance._context.Device != null)
         {
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-                Viewport = new VulkanViewport(editor.Universe, "CutsceneViewport", Rect.Width, Rect.Height, editor.RenderScene);
+                Viewport = new VulkanViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
             else
-                Viewport = new NullViewport(editor.Universe, "CutsceneViewport", Rect.Width, Rect.Height, editor.RenderScene);
+                Viewport = new NullViewport(editor.Universe, $"CutsceneViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
         }
     }
 
@@ -81,7 +81,7 @@ public class CutsceneViewportWindow
     public void Display(uint dockspaceId)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_CutsceneEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_CutsceneEditorView);
 
         if (Viewport is VulkanViewport vulkanViewport)
             vulkanViewport.Display();

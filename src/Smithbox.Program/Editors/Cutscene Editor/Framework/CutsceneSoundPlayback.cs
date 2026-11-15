@@ -33,7 +33,7 @@ public class CutsceneSoundPlayback : IDisposable
     // A sound still waiting on its bank after this long has missed its moment
     private const float PendingTimeout = 1.5f;
 
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
     private readonly List<SoundPlayer> Players = new();
     private int NextPlayer;
     private readonly Random Random = new();
@@ -50,7 +50,7 @@ public class CutsceneSoundPlayback : IDisposable
     private bool WarnedVgmstream;
     private readonly HashSet<(int, string?)> Logged = new();
 
-    public CutsceneSoundPlayback(CutsceneEditorScreen editor)
+    public CutsceneSoundPlayback(CutsceneEditorView editor)
     {
         Editor = editor;
     }

@@ -25,7 +25,7 @@ public enum FxListFilter
 /// </summary>
 public partial class FxEffectList
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     private string Filter = "";
     private bool ExactFilter = false;
@@ -39,7 +39,7 @@ public partial class FxEffectList
     private DateTime CacheTime;
 
     /// <summary>Bumped by every edit, undo and redo.</summary>
-    private int Edits;
+    private int Edits => Editor.Data?.EditVersion ?? 0;
 
     public FxUsage Usage;
     public FxExternalReferences External;
@@ -50,14 +50,14 @@ public partial class FxEffectList
     private readonly HashSet<FxEntry> Picked = new();
     private FxEntry Anchor;
 
-    public FxEffectList(FxEditorScreen editor)
+    public FxEffectList(FxEditorView editor)
     {
         Editor = editor;
-        Usage = new FxUsage(editor);
-        External = new FxExternalReferences(editor);
-        Favorites = new FxFavorites(editor);
-        ProjectCheck = new FxProjectCheck(editor);
-        editor.ActionManager.ActionPerformed += () => Edits++;
+        // Shared by every view: one scan, one favorites list
+        Usage = editor.Editor.Usage;
+        External = editor.Editor.External;
+        Favorites = editor.Editor.Favorites;
+        ProjectCheck = editor.Editor.ProjectCheck;
     }
 
     private FxBank Bank => Editor.Data.Bank;

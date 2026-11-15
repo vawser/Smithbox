@@ -10,9 +10,9 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneFiltersTool
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
-    public CutsceneFiltersTool(CutsceneEditorScreen editor)
+    public CutsceneFiltersTool(CutsceneEditorView editor)
     {
         Editor = editor;
     }

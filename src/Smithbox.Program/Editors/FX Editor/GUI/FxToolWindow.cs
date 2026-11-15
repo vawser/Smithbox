@@ -6,11 +6,11 @@ namespace StudioCore.Editors.FxEditor;
 /// <summary>The FX Editor's Tools window: the viewport preview, plus the shared grid and rendering tools.</summary>
 public class FxToolWindow
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     private readonly ToolSections Sections = new();
 
-    public FxToolWindow(FxEditorScreen editor)
+    public FxToolWindow(FxEditorView editor)
     {
         Editor = editor;
     }

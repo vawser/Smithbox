@@ -9,11 +9,11 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxPreviewTool
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     private int NewExternalId = 1;
 
-    public FxPreviewTool(FxEditorScreen editor)
+    public FxPreviewTool(FxEditorView editor)
     {
         Editor = editor;
     }

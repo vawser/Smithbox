@@ -1,0 +1,554 @@
+{
+  "ImGui_MainBg": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "ImGui_ChildBg": {
+    "X": 0.071,
+    "Y": 0.086,
+    "Z": 0.125,
+    "W": 1
+  },
+  "ImGui_PopupBg": {
+    "X": 0.051,
+    "Y": 0.063,
+    "Z": 0.094,
+    "W": 1
+  },
+  "ImGui_Border": {
+    "X": 0.173,
+    "Y": 0.204,
+    "Z": 0.275,
+    "W": 1
+  },
+  "ImGui_TitleBarBg": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "ImGui_TitleBarBg_Active": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "ImGui_MenuBarBg": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "Imgui_Moveable_MainBg": {
+    "X": 0.051,
+    "Y": 0.063,
+    "Z": 0.094,
+    "W": 1
+  },
+  "Imgui_Moveable_ChildBg": {
+    "X": 0.071,
+    "Y": 0.086,
+    "Z": 0.125,
+    "W": 1
+  },
+  "Imgui_Moveable_ChildBgSecondary": {
+    "X": 0.059,
+    "Y": 0.072,
+    "Z": 0.107,
+    "W": 1
+  },
+  "Imgui_Moveable_TitleBg": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "Imgui_Moveable_TitleBg_Active": {
+    "X": 0.165,
+    "Y": 0.196,
+    "Z": 0.271,
+    "W": 1
+  },
+  "Imgui_Moveable_Header": {
+    "X": 0.184,
+    "Y": 0.416,
+    "Z": 0.784,
+    "W": 0.45
+  },
+  "ImGui_ScrollbarBg": {
+    "X": 0.094,
+    "Y": 0.114,
+    "Z": 0.163,
+    "W": 1
+  },
+  "ImGui_ScrollbarGrab": {
+    "X": 0.296,
+    "Y": 0.329,
+    "Z": 0.404,
+    "W": 1
+  },
+  "ImGui_ScrollbarGrab_Hover": {
+    "X": 0.541,
+    "Y": 0.576,
+    "Z": 0.651,
+    "W": 1
+  },
+  "ImGui_ScrollbarGrab_Active": {
+    "X": 0.435,
+    "Y": 0.659,
+    "Z": 1,
+    "W": 1
+  },
+  "ImGui_SliderGrab": {
+    "X": 0.31,
+    "Y": 0.537,
+    "Z": 0.892,
+    "W": 1
+  },
+  "ImGui_SliderGrab_Active": {
+    "X": 0.435,
+    "Y": 0.659,
+    "Z": 1,
+    "W": 1
+  },
+  "ImGui_Tab": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "ImGui_Tab_Hover": {
+    "X": 0.155,
+    "Y": 0.323,
+    "Z": 0.594,
+    "W": 1
+  },
+  "ImGui_Tab_Active": {
+    "X": 0.184,
+    "Y": 0.416,
+    "Z": 0.784,
+    "W": 1
+  },
+  "ImGui_UnfocusedTab": {
+    "X": 0.086,
+    "Y": 0.106,
+    "Z": 0.149,
+    "W": 1
+  },
+  "ImGui_UnfocusedTab_Active": {
+    "X": 0.165,
+    "Y": 0.196,
+    "Z": 0.271,
+    "W": 1
+  },
+  "ImGui_Button": {
+    "X": 0.118,
+    "Y": 0.141,
+    "Z": 0.2,
+    "W": 1
+  },
+  "ImGui_Button_Hovered": {
+    "X": 0.165,
+    "Y": 0.196,
+    "Z": 0.271,
+    "W": 1
+  },
+  "ImGui_ButtonActive": {
+    "X": 0.184,
+    "Y": 0.416,
+    "Z": 0.784,
+    "W": 1
+  },
+  "ImGui_Selection": {
+    "X": 0.106,
+    "Y": 0.227,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_Selection_Hover": {
+    "X": 0.165,
+    "Y": 0.196,
+    "Z": 0.271,
+    "W": 1
+  },
+  "ImGui_Selection_Active": {
+    "X": 0.184,
+    "Y": 0.416,
+    "Z": 0.784,
+    "W": 1
+  },
+  "ImGui_Input_Background": {
+    "X": 0.118,
+    "Y": 0.141,
+    "Z": 0.2,
+    "W": 1
+  },
+  "ImGui_Input_Background_Hover": {
+    "X": 0.165,
+    "Y": 0.196,
+    "Z": 0.271,
+    "W": 1
+  },
+  "ImGui_Input_Background_Active": {
+    "X": 0.118,
+    "Y": 0.141,
+    "Z": 0.2,
+    "W": 1
+  },
+  "ImGui_Input_CheckMark": {
+    "X": 0.435,
+    "Y": 0.659,
+    "Z": 1,
+    "W": 1
+  },
+  "ImGui_Input_Conflict_Background": {
+    "X": 0.267,
+    "Y": 0.188,
+    "Z": 0.25,
+    "W": 1
+  },
+  "ImGui_Input_Vanilla_Background": {
+    "X": 0.152,
+    "Y": 0.205,
+    "Z": 0.236,
+    "W": 1
+  },
+  "ImGui_Input_Default_Background": {
+    "X": 0.102,
+    "Y": 0.124,
+    "Z": 0.175,
+    "W": 1
+  },
+  "ImGui_Input_AuxVanilla_Background": {
+    "X": 0.204,
+    "Y": 0.265,
+    "Z": 0.383,
+    "W": 1
+  },
+  "ImGui_Input_DiffCompare_Background": {
+    "X": 0.204,
+    "Y": 0.265,
+    "Z": 0.383,
+    "W": 1
+  },
+  "ImGui_MultipleInput_Background": {
+    "X": 0.498,
+    "Y": 0.851,
+    "Z": 0.604,
+    "W": 0.12
+  },
+  "ImGui_ErrorInput_Background": {
+    "X": 0.647,
+    "Y": 0.297,
+    "Z": 0.363,
+    "W": 1
+  },
+  "ImGui_Default_Text_Color": {
+    "X": 0.839,
+    "Y": 0.863,
+    "Z": 0.91,
+    "W": 1
+  },
+  "ImGui_Warning_Text_Color": {
+    "X": 0.949,
+    "Y": 0.4,
+    "Z": 0.478,
+    "W": 1
+  },
+  "ImGui_Benefit_Text_Color": {
+    "X": 0.498,
+    "Y": 0.851,
+    "Z": 0.604,
+    "W": 1
+  },
+  "ImGui_Invalid_Text_Color": {
+    "X": 0.927,
+    "Y": 0.493,
+    "Z": 0.565,
+    "W": 1
+  },
+  "ImGui_ParamRef_Text": {
+    "X": 0.911,
+    "Y": 0.562,
+    "Z": 0.629,
+    "W": 1
+  },
+  "ImGui_ParamRefMissing_Text": {
+    "X": 0.353,
+    "Y": 0.384,
+    "Z": 0.459,
+    "W": 1
+  },
+  "ImGui_ParamRefInactive_Text": {
+    "X": 0.541,
+    "Y": 0.576,
+    "Z": 0.651,
+    "W": 1
+  },
+  "ImGui_EnumName_Text": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_EnumValue_Text": {
+    "X": 0.911,
+    "Y": 0.562,
+    "Z": 0.629,
+    "W": 1
+  },
+  "ImGui_FmgLink_Text": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_FmgRef_Text": {
+    "X": 0.911,
+    "Y": 0.562,
+    "Z": 0.629,
+    "W": 1
+  },
+  "ImGui_FmgRefInactive_Text": {
+    "X": 0.541,
+    "Y": 0.576,
+    "Z": 0.651,
+    "W": 1
+  },
+  "ImGui_IsRef_Text": {
+    "X": 0.941,
+    "Y": 0.545,
+    "Z": 0.847,
+    "W": 1
+  },
+  "ImGui_VirtualRef_Text": {
+    "X": 0.9,
+    "Y": 0.672,
+    "Z": 0.872,
+    "W": 1
+  },
+  "ImGui_Ref_Text": {
+    "X": 0.889,
+    "Y": 0.655,
+    "Z": 0.716,
+    "W": 1
+  },
+  "ImGui_AuxConflict_Text": {
+    "X": 0.9,
+    "Y": 0.608,
+    "Z": 0.673,
+    "W": 1
+  },
+  "ImGui_AuxAdded_Text": {
+    "X": 0.605,
+    "Y": 0.73,
+    "Z": 0.943,
+    "W": 1
+  },
+  "ImGui_PrimaryChanged_Text": {
+    "X": 0.617,
+    "Y": 0.855,
+    "Z": 0.711,
+    "W": 1
+  },
+  "ImGui_ModifiedFilter_Text": {
+    "X": 0.961,
+    "Y": 0.62,
+    "Z": 0.357,
+    "W": 1
+  },
+  "ImGui_MapEditor_VanillaModified_Text": {
+    "X": 0.617,
+    "Y": 0.855,
+    "Z": 0.711,
+    "W": 1
+  },
+  "ImGui_MapEditor_VanillaAdded_Text": {
+    "X": 0.605,
+    "Y": 0.73,
+    "Z": 0.943,
+    "W": 1
+  },
+  "ImGui_ParamRow_Text": {
+    "X": 0.735,
+    "Y": 0.763,
+    "Z": 0.819,
+    "W": 1
+  },
+  "ImGui_AliasName_Text": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_GparamPreviewable_Text": {
+    "X": 0.373,
+    "Y": 0.831,
+    "Z": 0.878,
+    "W": 1
+  },
+  "ImGui_Logger_Information_Color": {
+    "X": 0.498,
+    "Y": 0.851,
+    "Z": 0.604,
+    "W": 1
+  },
+  "ImGui_Logger_Warning_Color": {
+    "X": 0.961,
+    "Y": 0.62,
+    "Z": 0.357,
+    "W": 1
+  },
+  "ImGui_Logger_Error_Color": {
+    "X": 0.949,
+    "Y": 0.4,
+    "Z": 0.478,
+    "W": 1
+  },
+  "DisplayGroupEditor_Border_Highlight": {
+    "X": 0.949,
+    "Y": 0.4,
+    "Z": 0.478,
+    "W": 1
+  },
+  "DisplayGroupEditor_DisplayActive_Frame": {
+    "X": 0.397,
+    "Y": 0.212,
+    "Z": 0.268,
+    "W": 1
+  },
+  "DisplayGroupEditor_DisplayActive_Checkbox": {
+    "X": 0.949,
+    "Y": 0.4,
+    "Z": 0.478,
+    "W": 1
+  },
+  "DisplayGroupEditor_DrawActive_Frame": {
+    "X": 0.21,
+    "Y": 0.329,
+    "Z": 0.285,
+    "W": 1
+  },
+  "DisplayGroupEditor_DrawActive_Checkbox": {
+    "X": 0.498,
+    "Y": 0.851,
+    "Z": 0.604,
+    "W": 1
+  },
+  "DisplayGroupEditor_CombinedActive_Frame": {
+    "X": 0.345,
+    "Y": 0.324,
+    "Z": 0.23,
+    "W": 1
+  },
+  "DisplayGroupEditor_CombinedActive_Checkbox": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_TextEditor_ModifiedTextEntry_Text": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_TextureEditor_ProjectFile_Text": {
+    "X": 0.569,
+    "Y": 0.71,
+    "Z": 0.948,
+    "W": 1
+  },
+  "ImGui_TextureEditor_ModifiedFile_Text": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_TextureEditor_Cell": {
+    "X": 0.373,
+    "Y": 0.831,
+    "Z": 0.878,
+    "W": 0.7
+  },
+  "ImGui_TextureEditor_Cell_Hovered": {
+    "X": 0.839,
+    "Y": 0.863,
+    "Z": 0.91,
+    "W": 1
+  },
+  "ImGui_TextureEditor_Cell_Selected": {
+    "X": 0.961,
+    "Y": 0.62,
+    "Z": 0.357,
+    "W": 1
+  },
+  "ImGui_TextureEditor_Cell_Half": {
+    "X": 0.718,
+    "Y": 0.604,
+    "Z": 0.961,
+    "W": 0.8
+  },
+  "ImGui_TextEditor_UniqueTextEntry_Text": {
+    "X": 0.435,
+    "Y": 0.841,
+    "Z": 0.741,
+    "W": 1
+  },
+  "ImGui_TimeAct_InfoText_1_Color": {
+    "X": 0.949,
+    "Y": 0.831,
+    "Z": 0.42,
+    "W": 1
+  },
+  "ImGui_TimeAct_InfoText_2_Color": {
+    "X": 0.435,
+    "Y": 0.841,
+    "Z": 0.741,
+    "W": 1
+  },
+  "ImGui_TimeAct_InfoText_3_Color": {
+    "X": 0.373,
+    "Y": 0.831,
+    "Z": 0.878,
+    "W": 1
+  },
+  "ImGui_TimeAct_InfoText_4_Color": {
+    "X": 0.941,
+    "Y": 0.545,
+    "Z": 0.847,
+    "W": 1
+  },
+  "ParamDiffBackgroundColor": {
+    "X": 0.21,
+    "Y": 0.329,
+    "Z": 0.285,
+    "W": 1
+  },
+  "ParamConflictBackgroundColor": {
+    "X": 0.345,
+    "Y": 0.194,
+    "Z": 0.248,
+    "W": 1
+  },
+  "ParamCompareDiffBackgroundColor": {
+    "X": 0.204,
+    "Y": 0.272,
+    "Z": 0.393,
+    "W": 1
+  },
+  "ParamRowDiffBackgroundColor": {
+    "X": 0.21,
+    "Y": 0.329,
+    "Z": 0.285,
+    "W": 1
+  },
+  "ParamRowModifiedFilterBackgroundColor": {
+    "X": 0.375,
+    "Y": 0.275,
+    "Z": 0.218,
+    "W": 1
+  }
+}

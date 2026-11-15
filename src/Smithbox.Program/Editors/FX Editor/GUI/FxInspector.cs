@@ -14,13 +14,13 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxInspector
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     // Text inputs keep their value here while being typed in, and commit once when they lose focus,
     // so one edit is one undo step
     private readonly Dictionary<string, object> Pending = new();
 
-    public FxInspector(FxEditorScreen editor)
+    public FxInspector(FxEditorView editor)
     {
         Editor = editor;
     }

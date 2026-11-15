@@ -23,7 +23,7 @@ public class CutsceneSubtitles : IDisposable
     /// <summary>The MQB resource types whose events show a subtitle (Subtitle_N, and the faded kind)</summary>
     public static readonly int[] SubtitleTypes = [27, 28];
 
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
     private readonly CutsceneTalk Talk;
 
     // A TalkParam's text and voice, read again now and then so edits in the Param and Text Editors show
@@ -42,7 +42,7 @@ public class CutsceneSubtitles : IDisposable
     private bool WarnedVgmstream;
     private readonly HashSet<int> Logged = new();
 
-    public CutsceneSubtitles(CutsceneEditorScreen editor)
+    public CutsceneSubtitles(CutsceneEditorView editor)
     {
         Editor = editor;
         Talk = new CutsceneTalk(editor.Project);

@@ -592,16 +592,20 @@ public class VulkanViewport : IViewport
                 && view.ViewportWindow.Viewport == this;
         }
 
-        // The FX Editor has one viewport
         if (Owner is FxUniverse fxUniverse)
         {
-            return fxUniverse.Editor.ViewportWindow?.Viewport == this;
+            var view = fxUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportWindow?.Viewport == this;
         }
 
-        // So has the Cutscene Editor
         if (Owner is CutsceneUniverse cutsceneUniverse)
         {
-            return cutsceneUniverse.Editor.ViewportWindow?.Viewport == this;
+            var view = cutsceneUniverse.View;
+
+            return view.Editor.ViewHandler.ActiveView == view
+                && view.ViewportWindow?.Viewport == this;
         }
 
         return false;
@@ -738,11 +742,15 @@ public class VulkanViewport : IViewport
 
     public void HandleCutsceneEditorFocus()
     {
-        if (Owner is CutsceneUniverse)
+        if (Owner is CutsceneUniverse cutsceneUniverse)
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.CutsceneEditor_Viewport);
+
+                // Only the active view's viewport is updated (CutsceneEditorScreen.Update), so hovering a viewport
+                // makes its view the active one
+                cutsceneUniverse.View.Editor.ViewHandler.ActiveView = cutsceneUniverse.View;
                 IsActiveViewport = true;
             }
             else
@@ -754,11 +762,15 @@ public class VulkanViewport : IViewport
 
     public void HandleFxEditorFocus()
     {
-        if (Owner is FxUniverse)
+        if (Owner is FxUniverse fxUniverse)
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
             {
                 FocusManager.SetFocus(EditorFocusContext.FxEditor_Viewport);
+
+                // Only the active view's viewport is updated (FxEditorScreen.Update), so hovering a viewport makes its
+                // view the active one
+                fxUniverse.View.Editor.ViewHandler.ActiveView = fxUniverse.View;
                 IsActiveViewport = true;
             }
             else
@@ -1108,16 +1120,16 @@ public class VulkanViewport : IViewport
         }
 
         // The Cutscene Editor's selected camera key
-        if (Owner is CutsceneUniverse cutsceneKeyUniverse && cutsceneKeyUniverse.Editor.CameraKeyGizmo.HasTarget)
+        if (Owner is CutsceneUniverse cutsceneKeyUniverse && cutsceneKeyUniverse.View.CameraKeyGizmo.HasTarget)
         {
-            Gizmos.Target = cutsceneKeyUniverse.Editor.CameraKeyGizmo;
+            Gizmos.Target = cutsceneKeyUniverse.View.CameraKeyGizmo;
             return;
         }
 
         // The Cutscene Editor's selected cut placement (offset.sib)
-        if (Owner is CutsceneUniverse cutsceneUniverse && cutsceneUniverse.Editor.PlacementGizmo.HasTarget)
+        if (Owner is CutsceneUniverse cutsceneUniverse && cutsceneUniverse.View.PlacementGizmo.HasTarget)
         {
-            Gizmos.Target = cutsceneUniverse.Editor.PlacementGizmo;
+            Gizmos.Target = cutsceneUniverse.View.PlacementGizmo;
             return;
         }
 

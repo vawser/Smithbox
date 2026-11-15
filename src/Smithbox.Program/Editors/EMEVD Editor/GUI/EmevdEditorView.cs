@@ -27,10 +27,13 @@ public class EmevdEditorView
     public EmevdRoleLinks RoleLinks;
     public EmevdTemplateLibrary Templates;
 
-    public EmevdEditorView(EmevdEditorScreen editor, ProjectEntry project)
+    public int ViewIndex;
+
+    public EmevdEditorView(EmevdEditorScreen editor, ProjectEntry project, int viewIndex)
     {
         Editor = editor;
         Project = project;
+        ViewIndex = viewIndex;
 
         Selection = new(this);
 
@@ -45,8 +48,13 @@ public class EmevdEditorView
         RoleLinks = new(this);
         Templates = new(this);
 
-        // Undo/redo of a structural edit can shorten the event under the selection
-        ActionManager.ActionPerformed += Selection.Validate;
+        // Undo/redo of a structural edit can shorten the event under the selection, in this view or in another one
+        // showing the same event (the views share the files)
+        ActionManager.ActionPerformed += () =>
+        {
+            foreach (var view in Editor.ViewHandler?.OpenViews ?? [this])
+                view.Selection.Validate();
+        };
     }
 
     /// <summary>Runs an edit through the undo stack, unless it would change nothing</summary>
@@ -79,12 +87,15 @@ public class EmevdEditorView
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw, ImGuiWindowFlags? flags = null)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EmevdEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EmevdEditorView);
 
-        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}", flags ?? GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}_{ViewIndex}", flags ?? GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
                 FocusManager.SetFocus(focus);
+                Editor.ViewHandler.ActiveView = this;
+            }
 
             draw();
         }

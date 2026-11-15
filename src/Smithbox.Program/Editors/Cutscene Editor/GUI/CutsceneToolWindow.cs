@@ -6,13 +6,13 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// <summary>The Cutscene Editor's Tools window (see Claude/Documentation/Tool UI Styling.md): General → Cutscene Filters.</summary>
 public class CutsceneToolWindow
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     public CutsceneFiltersTool FiltersTool;
 
     private readonly ToolSections Sections = new();
 
-    public CutsceneToolWindow(CutsceneEditorScreen editor)
+    public CutsceneToolWindow(CutsceneEditorView editor)
     {
         Editor = editor;
         FiltersTool = new CutsceneFiltersTool(editor);

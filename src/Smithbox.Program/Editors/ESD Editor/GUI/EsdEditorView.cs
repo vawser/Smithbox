@@ -23,10 +23,13 @@ public class EsdEditorView
     public ActionManager ActionManager = new();
     public EsdEditCommands Commands;
 
-    public EsdEditorView(EsdEditorScreen editor, ProjectEntry project)
+    public int ViewIndex;
+
+    public EsdEditorView(EsdEditorScreen editor, ProjectEntry project, int viewIndex)
     {
         Editor = editor;
         Project = project;
+        ViewIndex = viewIndex;
 
         Selection = new(this);
 
@@ -65,12 +68,15 @@ public class EsdEditorView
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw, ImGuiWindowFlags? flags = null)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EsdEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_EsdEditorView);
 
-        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}", flags ?? GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}_{ViewIndex}", flags ?? GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
                 FocusManager.SetFocus(focus);
+                Editor.ViewHandler.ActiveView = this;
+            }
 
             draw();
         }

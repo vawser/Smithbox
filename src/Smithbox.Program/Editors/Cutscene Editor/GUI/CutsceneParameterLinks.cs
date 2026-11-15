@@ -58,12 +58,12 @@ public enum CutsceneLinkKind
 /// </summary>
 public class CutsceneParameterLinks
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     // GPARAMs read for descriptions, by file name; null when the project has no such file
     private readonly Dictionary<string, GPARAM?> GparamCache = new(StringComparer.OrdinalIgnoreCase);
 
-    public CutsceneParameterLinks(CutsceneEditorScreen editor)
+    public CutsceneParameterLinks(CutsceneEditorView editor)
     {
         Editor = editor;
         Talk = new CutsceneTalk(editor.Project);

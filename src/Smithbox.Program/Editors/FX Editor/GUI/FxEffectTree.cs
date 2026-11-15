@@ -16,7 +16,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxEffectTree
 {
-    private readonly FxEditorScreen Editor;
+    private readonly FxEditorView Editor;
 
     public readonly FxClipboard Clipboard = new();
     public readonly FxTemplates Templates;
@@ -28,19 +28,21 @@ public class FxEffectTree
     /// <summary>Structure changes wait until the tree is drawn, so the lists aren't changed while they're walked.</summary>
     private readonly List<Action> Deferred = new();
 
-    public FxEffectTree(FxEditorScreen editor)
+    public FxEffectTree(FxEditorView editor)
     {
         Editor = editor;
-        Templates = new FxTemplates(editor);
-        Notes = new FxNotes(editor);
-        editor.ActionManager.ActionPerformed += () => Edits++;
+        // Shared by every view, as they are kept in the project's files
+        Templates = editor.Editor.Templates;
+        Notes = editor.Editor.Notes;
     }
 
     private FxData Data => Editor.Data;
 
     // ---------------------------------------------------------------- per-node info
 
-    private int Edits;
+    // Every edit, undo and redo in any view (the views share the effects), and the tree's own refreshes
+    private int LocalEdits;
+    private int Edits => LocalEdits + (Editor.Data?.EditVersion ?? 0);
 
     private class NodeInfo
     {
@@ -826,7 +828,7 @@ public class FxEffectTree
             if (ImGui.Button(LOC.Get("FX_EffectTree_Save")) && PopupNode != null)
             {
                 Notes.Set(entry, PopupNode, PopupText);
-                Edits++;
+                LocalEdits++;
                 ImGui.CloseCurrentPopup();
             }
             ImGui.SameLine();

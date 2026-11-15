@@ -28,7 +28,10 @@ public class SoundEditorView : IDisposable
     // Tools
     public SoundSearchTool SearchTool;
 
-    public SoundPlayer Player = new();
+    /// <summary>The editor's one player, shared by every view</summary>
+    public SoundPlayer Player => Editor.Player;
+
+    public int ViewIndex;
 
     public SoundContainer SelectedContainer { get; private set; }
     public SoundEntry SelectedEntry { get; private set; }
@@ -40,10 +43,11 @@ public class SoundEditorView : IDisposable
     /// <summary>Set to switch tabs on the next frame (e.g. going from an event to one of its sounds).</summary>
     public SoundListTab? RequestedTab;
 
-    public SoundEditorView(SoundEditorScreen editor, ProjectEntry project)
+    public SoundEditorView(SoundEditorScreen editor, ProjectEntry project, int viewIndex)
     {
         Editor = editor;
         Project = project;
+        ViewIndex = viewIndex;
 
         ContainerList = new(this);
         EntryList = new(this);
@@ -52,9 +56,6 @@ public class SoundEditorView : IDisposable
         PlayerBar = new(this);
         SearchTool = new(this);
         ToolWindow = new(this);
-
-        Player.Volume = CFG.Current.SoundEditor_Volume;
-        Player.Loop = CFG.Current.SoundEditor_Loop;
     }
 
     public SoundData Data => Project.Handler.SoundData;
@@ -142,10 +143,12 @@ public class SoundEditorView : IDisposable
         Data.Edits.SaveAll();
     }
 
-    /// <summary>Each frame: apply a finished save (reload rewritten banks, clear undo, reselect).</summary>
-    public void Update()
+    /// <summary>
+    /// Each frame: apply a finished save (reload rewritten banks, clear undo, reselect). The screen takes the save's
+    /// result once and passes it to every view.
+    /// </summary>
+    public void Update(List<SoundContainer> reloaded)
     {
-        var reloaded = Data?.Edits.ApplySaved();
         if (reloaded != null)
         {
             // the saved state is on disk; undo would no longer match it
@@ -327,12 +330,15 @@ public class SoundEditorView : IDisposable
     private void Window(string titleKey, string id, EditorFocusContext focus, uint dockspaceId, Action draw)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditorView);
 
-        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get(titleKey)}###{id}_{ViewIndex}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
                 FocusManager.SetFocus(focus);
+                Editor.ViewHandler.ActiveView = this;
+            }
 
             draw();
         }
@@ -344,12 +350,15 @@ public class SoundEditorView : IDisposable
     private void DisplayToolWindow(uint dockspaceId)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditorView);
 
-        if (ImGui.Begin($"{LOC.Get("SOUND_Window_Tools")}{SoundToolWindow.WindowId}", GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("SOUND_Window_Tools")}{ToolWindow.WindowId}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
                 FocusManager.SetFocus(EditorFocusContext.SoundEditor_ToolWindow);
+                Editor.ViewHandler.ActiveView = this;
+            }
 
             ToolWindow.Display();
         }
@@ -366,6 +375,6 @@ public class SoundEditorView : IDisposable
 
     public void Dispose()
     {
-        Player.Dispose();
+        // The player is the editor's, so it outlives the view
     }
 }

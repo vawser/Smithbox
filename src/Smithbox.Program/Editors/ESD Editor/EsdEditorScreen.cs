@@ -15,12 +15,15 @@ public class EsdEditorScreen : EditorScreen
 {
     private ProjectEntry Project;
 
-    public EsdEditorView View;
+    public EsdViewHandler ViewHandler;
+
+    /// <summary>The view the menus, shortcuts and commands act on</summary>
+    public EsdEditorView View => ViewHandler.ActiveView;
 
     public EsdEditorScreen(ProjectEntry project)
     {
         Project = project;
-        View = new EsdEditorView(this, project);
+        ViewHandler = new EsdViewHandler(this, project);
     }
 
     public string EditorName => "ESD Editor##EsdEditor";
@@ -49,7 +52,7 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_EsdEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None, ref GUI.DockGroup_EsdEditor);
 
-        View.Display(dsid);
+        ViewHandler.HandleViews(dsid);
     }
 
     /// <summary>
@@ -59,13 +62,13 @@ public class EsdEditorScreen : EditorScreen
     private void ParseCommands(string[] commands)
     {
         // esd/search/<value>: every ESD use of an event flag (from the EMEVD Editor's flag links)
-        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && long.TryParse(commands[1], out var flag))
+        if (commands != null && commands.Length >= 2 && commands[0] == "search" && Bank != null && View != null && long.TryParse(commands[1], out var flag))
         {
             View.ToolWindow.SearchTool.SearchValue(flag, true);
             return;
         }
 
-        if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null)
+        if (commands == null || commands.Length < 2 || commands[0] != "select" || Bank == null || View == null)
             return;
 
         var container = Bank.FindContainer(commands[1]);
@@ -89,6 +92,9 @@ public class EsdEditorScreen : EditorScreen
     private void MonitorShortcuts()
     {
         if (!FocusManager.IsInEsdEditor())
+            return;
+
+        if (View == null)
             return;
 
         if (InputManager.IsPressed(KeybindID.Save))
@@ -165,6 +171,10 @@ public class EsdEditorScreen : EditorScreen
                 CFG.Current.Interface_EsdEditor_ToolWindow = !CFG.Current.Interface_EsdEditor_ToolWindow;
             GUI.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ToolWindow);
 
+            ImGui.Separator();
+
+            ViewHandler.DisplayMenu();
+
             ImGui.EndMenu();
         }
     }
@@ -191,7 +201,10 @@ public class EsdEditorScreen : EditorScreen
         var removals = bank.HasFileRemovals;
         bank.SaveAllDirty();
         if (removals)
-            View.ActionManager.Clear();
+        {
+            foreach (var view in ViewHandler.OpenViews)
+                view.ActionManager.Clear();
+        }
     }
 
     public void SaveAll()

@@ -16,7 +16,7 @@ namespace StudioCore.Editors.CutsceneEditor;
 /// </summary>
 public class CutsceneTimelineView
 {
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     // The rows of the cut last drawn: each timeline and how deep it is in the tree
     private MQB.Cut? RowsFor;
@@ -35,7 +35,7 @@ public class CutsceneTimelineView
     // The bar right-clicked, for its menu
     private MQB.Event? MenuEvent;
 
-    public CutsceneTimelineView(CutsceneEditorScreen editor)
+    public CutsceneTimelineView(CutsceneEditorView editor)
     {
         Editor = editor;
     }

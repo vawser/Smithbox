@@ -27,13 +27,13 @@ public class CutsceneFades
     public const int FadeOut = 16;
     public const int FadeInOut = 17;
 
-    private readonly CutsceneEditorScreen Editor;
+    private readonly CutsceneEditorView Editor;
 
     // The fade events of the shown cut, by start; their colours and timing are read when drawn, so edits show at once
     private List<(MQB.Event Event, int Type)> Events = new();
     private (CutsceneScene? Scene, int Version) EventsFor;
 
-    public CutsceneFades(CutsceneEditorScreen editor)
+    public CutsceneFades(CutsceneEditorView editor)
     {
         Editor = editor;
     }

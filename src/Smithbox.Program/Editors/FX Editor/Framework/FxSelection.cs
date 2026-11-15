@@ -5,7 +5,7 @@ namespace StudioCore.Editors.FxEditor;
 /// <summary>What the FX Editor has selected: an effect, an item in its tree, and a property of the action.</summary>
 public class FxSelection
 {
-    public FxEditorScreen Editor;
+    public FxEditorView Editor;
 
     /// <summary>The selected effect, loaded.</summary>
     public FxEntry Entry;
@@ -19,7 +19,7 @@ public class FxSelection
     /// <summary>Set when a selection is made from outside the list, so the list scrolls to it.</summary>
     public bool FocusEntry;
 
-    public FxSelection(FxEditorScreen editor)
+    public FxSelection(FxEditorView editor)
     {
         Editor = editor;
     }

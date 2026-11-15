@@ -14,7 +14,7 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxViewportWindow
 {
-    public FxEditorScreen Editor;
+    public FxEditorView Editor;
     public ProjectEntry Project;
 
     public IViewport Viewport;
@@ -52,13 +52,13 @@ public class FxViewportWindow
     /// <summary>The effect last framed, so selecting another item of the same effect keeps the camera.</summary>
     private FxEntry FramedEntry;
 
-    /// <summary>Bumped by every edit, undo and redo.</summary>
-    private int EditVersion;
+    /// <summary>Bumped by every edit, undo and redo, in any view (the views share the effects).</summary>
+    private int EditVersion => Editor.Data?.EditVersion ?? 0;
 
     public int ShownNodes { get; private set; }
     public int ShownShapes { get; private set; }
 
-    public FxViewportWindow(FxEditorScreen editor, ProjectEntry project)
+    public FxViewportWindow(FxEditorView editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
@@ -69,18 +69,10 @@ public class FxViewportWindow
         if (Smithbox.Instance._context.Device != null)
         {
             if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
-                Viewport = new VulkanViewport(editor.Universe, "FxViewport", Rect.Width, Rect.Height, editor.RenderScene);
+                Viewport = new VulkanViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
             else
-                Viewport = new NullViewport(editor.Universe, "FxViewport", Rect.Width, Rect.Height, editor.RenderScene);
+                Viewport = new NullViewport(editor.Universe, $"FxViewport_{editor.ViewIndex}", Rect.Width, Rect.Height, editor.RenderScene);
         }
-
-        editor.ActionManager.ActionPerformed += () =>
-        {
-            EditVersion++;
-            // Other editors showing this project's effects build them again
-            if (editor.Data != null)
-                editor.Data.EditVersion++;
-        };
 
         Runtime = new FxPreviewRuntime(editor);
         EffectDisplay = new FxDisplay(new FxDisplayHost(project, () => editor.RenderScene, () => FxDisplayHost.PipelineOf(Viewport)));
@@ -89,7 +81,7 @@ public class FxViewportWindow
     public void Display(uint dockspaceId)
     {
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_FxEditor);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_FxEditorView);
 
         if (Viewport is VulkanViewport vulkanViewport)
             vulkanViewport.Display();

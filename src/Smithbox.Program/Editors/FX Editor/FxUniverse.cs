@@ -10,16 +10,16 @@ namespace StudioCore.Editors.FxEditor;
 /// </summary>
 public class FxUniverse : IUniverse
 {
-    public FxEditorScreen Editor;
+    public FxEditorView View;
     public ProjectEntry Project;
 
-    public RenderScene RenderScene => Editor.RenderScene;
-    public ViewportSelection ViewportSelection => Editor.ViewportSelection;
-    public ViewportActionManager ViewportActionManager => Editor.ViewportActionManager;
+    public RenderScene RenderScene => View.RenderScene;
+    public ViewportSelection ViewportSelection => View.ViewportSelection;
+    public ViewportActionManager ViewportActionManager => View.ViewportActionManager;
 
-    public FxUniverse(FxEditorScreen editor, ProjectEntry project)
+    public FxUniverse(FxEditorView view, ProjectEntry project)
     {
-        Editor = editor;
+        View = view;
         Project = project;
     }
 }
