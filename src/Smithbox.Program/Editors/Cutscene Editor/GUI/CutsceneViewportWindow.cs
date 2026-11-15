@@ -79,6 +79,9 @@ public class CutsceneViewportWindow
             nullViewport.Display();
     }
 
+    /// <summary>The same cut with changed data (a camera written back): its lines are built again.</summary>
+    public void InvalidateLines() => BuiltKey = default;
+
     /// <summary>A new cut: its lines are built again, and the free camera starts where its camera does.</summary>
     public void OnSceneChanged()
     {

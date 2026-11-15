@@ -135,6 +135,9 @@ public class CutscenePropertiesView
                 Row(LOC.Get("CUTSCENE_Properties_State"), $"{actor.State}{(actor.Status != null ? $": {actor.Status}" : "")}");
                 Row(LOC.Get("CUTSCENE_Properties_Bones"), actor.Skeleton?.BoneCount.ToString() ?? LOC.Get("CUTSCENE_Properties_None"));
             }
+
+            if (scene.Cameras.FirstOrDefault(c => c.ResourceIndex == e.ResourceIndex) is { } camera)
+                DisplayCameraClip(camera);
         }
 
         DisplayParameters("event", e.Parameters, true, e);
@@ -151,6 +154,98 @@ public class CutscenePropertiesView
             var timeline = scene.Cut.Timelines[Editor.SelectedTimeline];
             ImGui.SeparatorText(LOC.Get("CUTSCENE_Properties_Timeline", Editor.SelectedTimeline, timeline.ParentIndex));
             DisplayParameters("timeline", timeline.Parameters, false);
+        }
+    }
+
+    // ---- camera clip: what it is, and writing it back (phase 5b; keying the camera comes with camera authoring)
+
+    private Vector3 CameraOffset;
+    private float CameraFovChange;
+    private int CameraFormat;
+    private string? CameraWriteResult;
+
+    private void DisplayCameraClip(CutsceneCamera camera)
+    {
+        ImGui.SeparatorText(LOC.Get("CUTSCENE_Camera_Clip"));
+
+        var clip = camera.Clip;
+        if (clip == null)
+        {
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_Properties_None"));
+            return;
+        }
+
+        var kind = clip is StudioCore.Renderer.HavokSplineClip ? LOC.Get("CUTSCENE_Camera_Format_Spline") : LOC.Get("CUTSCENE_Camera_Format_Interleaved");
+        var fov = camera.FovRadians(Editor.Playback.Frame);
+        ImGui.TextWrapped(LOC.Get("CUTSCENE_Camera_Clip_Summary", kind, clip.FrameCount,
+            fov.HasValue ? (fov.Value * 180f / MathF.PI).ToString("0.##") : "-"));
+
+        if (!ImGui.TreeNode($"{LOC.Get("CUTSCENE_Camera_Write")}##cutsceneCameraWrite"))
+            return;
+
+        ImGui.TextWrapped(LOC.Get("CUTSCENE_Camera_Write_Hint"));
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Offset"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(-1);
+        ImGui.DragFloat3("##cutsceneCameraOffset", ref CameraOffset, 0.05f);
+        GUI.Tooltip(LOC.Get("CUTSCENE_Camera_Offset_TT"));
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Fov_Change"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(120 * DPI.UIScale());
+        ImGui.DragFloat("##cutsceneCameraFov", ref CameraFovChange, 0.1f, -60, 60);
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Format"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(-1);
+        string[] formats =
+        [
+            LOC.Get("CUTSCENE_Camera_Format_Auto"), LOC.Get("CUTSCENE_Camera_Format_Spline"),
+            LOC.Get("CUTSCENE_Camera_Format_Interleaved")
+        ];
+        ImGui.Combo("##cutsceneCameraFormat", ref CameraFormat, formats, formats.Length);
+
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Camera_Apply")}##cutsceneCameraApply"))
+            WriteCamera(camera, CameraOffset, CameraFovChange);
+
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Camera_Reencode")}##cutsceneCameraReencode"))
+            WriteCamera(camera, Vector3.Zero, 0);
+        GUI.Tooltip(LOC.Get("CUTSCENE_Camera_Reencode_TT"));
+
+        if (CameraWriteResult != null)
+            ImGui.TextWrapped(CameraWriteResult);
+
+        if (Editor.SelectedFile is { IsDirty: true })
+            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("CUTSCENE_Properties_Unsaved"));
+
+        ImGui.TreePop();
+    }
+
+    private void WriteCamera(CutsceneCamera camera, Vector3 offset, float fovDegrees)
+    {
+        if (Editor.SelectedFile is not { } file)
+            return;
+
+        try
+        {
+            var format = (StudioCore.Utilities.HavokClipFormat)Math.Clamp(CameraFormat, 0, 2);
+            var (action, result) = CutsceneCameraEdit.Offset(Editor.Project, file, camera, offset, fovDegrees, format);
+            Editor.Execute(action);
+
+            CameraWriteResult = result.Format == StudioCore.Utilities.HavokClipFormat.Spline
+                ? LOC.Get("CUTSCENE_Camera_Written", LOC.Get("CUTSCENE_Camera_Format_Spline"), result.DataBytes,
+                    result.MaxFramesPerBlock, result.WorstErrorRatio)
+                : LOC.Get("CUTSCENE_Camera_Written_Interleaved", result.DataBytes);
+
+            if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+                Smithbox.Log(this, $"[Cutscene Editor] {file.Name} {camera.Name}: offset {offset}, FOV {fovDegrees:+0.##;-0.##;0}°, {CameraWriteResult}");
+        }
+        catch (Exception ex)
+        {
+            CameraWriteResult = LOC.Get("CUTSCENE_Camera_Write_Failed", ex.Message);
+            Smithbox.LogError(this, CameraWriteResult, ex);
         }
     }
 

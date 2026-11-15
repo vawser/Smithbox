@@ -142,3 +142,50 @@ public interface IHavokInterleavedAnimation : IHavokAnimation
 
     float GetFloat(int index) => 0;
 }
+
+/// <summary>
+/// The content of a new animation for a binding, for <see cref="IHavokAnimationContainer.ReplaceAnimation" />: what
+/// differs between clips. The rest of the animation (annotation tracks, extracted motion) is kept from the one it
+/// replaces.
+/// </summary>
+public abstract class HavokAnimationContent
+{
+    public float Duration;
+    public int TransformTrackCount;
+    public int FloatTrackCount;
+}
+
+/// <summary>hkaSplineCompressedAnimation's fields, as an encoder gives them.</summary>
+public sealed class HavokSplineContent : HavokAnimationContent
+{
+    public int FrameCount;
+    public int BlockCount;
+    public int MaxFramesPerBlock;
+    public int MaskAndQuantizationSize;
+    public float BlockDuration;
+    public float BlockInverseDuration;
+    public float FrameDuration;
+    public byte[] Data = [];
+    public uint[] BlockOffsets = [];
+    public uint[] FloatBlockOffsets = [];
+}
+
+/// <summary>hkaInterleavedUncompressedAnimation's fields: every frame of every track, frame-major.</summary>
+public sealed class HavokInterleavedContent : HavokAnimationContent
+{
+    public HavokQsTransform[] Transforms = [];
+    public float[] Floats = [];
+}
+
+/// <summary>hkaAnimationContainer, for editing which animation a binding plays.</summary>
+public interface IHavokAnimationContainer
+{
+    IReadOnlyList<IHavokAnimationBinding> Bindings { get; }
+
+    /// <summary>
+    /// Gives the binding a new animation of the content's kind, in place of its old one both in the binding and in the
+    /// container's animation list. The old animation's annotation tracks, extracted motion and property bag carry
+    /// over; every other object in the document is left as it was.
+    /// </summary>
+    void ReplaceAnimation(IHavokAnimationBinding binding, HavokAnimationContent content);
+}

@@ -220,6 +220,13 @@ public class CutsceneEditorScreen : EditorScreen
         StructureVersion++;
         Scene?.RefreshEvents();
 
+        // A camera written back (or that edit undone): play the cut's cameras from their new clips
+        if (Scene != null && Scene.HavokVersionRead != Scene.File.HavokVersion)
+        {
+            Scene.ReloadCameras(Project);
+            ViewportWindow.InvalidateLines();
+        }
+
         // A selected event that an undo took away
         if (SelectedEvent != null && Scene != null && CutsceneMqbOps.TimelineOf(Scene.Cut, SelectedEvent) < 0)
         {

@@ -97,8 +97,49 @@ public sealed class CutsceneScene : IDisposable
         return scene;
     }
 
+    /// <summary>The file's <see cref="CutsceneFile.HavokVersion" /> the cameras were read at</summary>
+    public int HavokVersionRead { get; private set; }
+
+    /// <summary>
+    /// Reads the cameras' skeletons and clips again from their cut Havok files, after camera authoring wrote one. The
+    /// actors are left as they are: only camera bindings are ever written.
+    /// </summary>
+    public void ReloadCameras(ProjectEntry project)
+    {
+        HavokVersionRead = File.HavokVersion;
+        var resources = File.Mqb!.Resources;
+
+        foreach (var group in Cameras.GroupBy(c => c.Resource.ParentIndex))
+        {
+            if (group.Key < 0 || group.Key >= resources.Count || File.GetHavokFile(resources[group.Key]) is not { } bytes)
+                continue;
+
+            try
+            {
+                var byName = new Dictionary<string, HavokSceneTrack>(StringComparer.OrdinalIgnoreCase);
+                foreach (var track in HavokAnimationReader.ReadScene(project.Descriptor.ProjectType, bytes, null))
+                    byName.TryAdd(track.Skeleton.Name, track);
+
+                foreach (var camera in group)
+                {
+                    if (!byName.TryGetValue(camera.Name, out var track))
+                        continue;
+
+                    camera.Skeleton = track.Skeleton;
+                    camera.Clip = track.Clip;
+                    camera.FindFovSlot();
+                }
+            }
+            catch (Exception ex)
+            {
+                Problems.Add(LOC.Get("CUTSCENE_Problem_Havok_Read", resources[group.Key].Name, ex.Message));
+            }
+        }
+    }
+
     private void Read(ProjectEntry project)
     {
+        HavokVersionRead = File.HavokVersion;
         var mqb = File.Mqb!;
         var resources = mqb.Resources;
 

@@ -30,6 +30,15 @@ public class CutsceneFile
     // of the MQB names its file by the same two parts (...\cut0010\hkx\a0000.HKT).
     private readonly Dictionary<string, byte[]> HavokFiles = new(StringComparer.OrdinalIgnoreCase);
 
+    // Each cut Havok file's DCX compression inside the binder (DCX_NONE if none), to write an edited one back alike
+    private readonly Dictionary<string, DCX.Type> HavokCompression = new(StringComparer.OrdinalIgnoreCase);
+
+    // The cut Havok files edited since the last save (the camera written back by camera authoring)
+    private readonly HashSet<string> ModifiedHavok = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>Bumped whenever a cut Havok file changes, so the viewport reads its cameras again</summary>
+    public int HavokVersion { get; private set; }
+
     public CutsceneFile(FileDictionaryEntry entry)
     {
         Entry = entry;
@@ -67,7 +76,8 @@ public class CutsceneFile
             foreach (var file in files)
             {
                 var name = (file.Name ?? "").Replace('\\', '/');
-                var bytes = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes) : file.Bytes;
+                var compression = DCX.Type.None;
+                var bytes = DCX.Is(file.Bytes) ? DCX.Decompress(file.Bytes, out compression) : file.Bytes;
 
                 if (name.EndsWith(".mqb", StringComparison.OrdinalIgnoreCase))
                 {
@@ -77,7 +87,10 @@ public class CutsceneFile
                 {
                     var key = HavokKey(name);
                     if (key != null)
+                    {
                         HavokFiles[key] = bytes.ToArray();
+                        HavokCompression[key] = compression;
+                    }
                 }
             }
 
@@ -110,6 +123,22 @@ public class CutsceneFile
     public int HavokFileCount => HavokFiles.Count;
 
     /// <summary>
+    /// Replaces the Havok file an HKT resource names (uncompressed bytes), to be written into the binder on save. Use
+    /// through <see cref="CutsceneHavokEditAction" />, so it can be undone.
+    /// </summary>
+    public void SetHavokFile(MQB.Resource hktResource, byte[] bytes)
+    {
+        var key = HavokKey(hktResource.Path ?? "")
+                  ?? throw new InvalidOperationException($"{hktResource.Name} names no cut Havok file.");
+        if (!HavokFiles.ContainsKey(key))
+            throw new InvalidOperationException($"The binder has no Havok file for {hktResource.Path}.");
+
+        HavokFiles[key] = bytes;
+        ModifiedHavok.Add(key);
+        HavokVersion++;
+    }
+
+    /// <summary>
     /// Reads only the MQB of the binder, without keeping its Havok files: for indexing every cutscene. The file's own
     /// MQB if it is loaded, so its unsaved edits count.
     /// </summary>
@@ -135,12 +164,12 @@ public class CutsceneFile
         }
     }
 
-    /// <summary>The MQB has changes that aren't written to the project yet</summary>
+    /// <summary>The MQB or a cut Havok file has changes that aren't written to the project yet</summary>
     public bool IsDirty;
 
     /// <summary>
-    /// Writes the MQB back into the project's copy of the binder, leaving its other files (the cut Havok files) as they
-    /// are. Returns false, with the error logged, if it couldn't.
+    /// Writes the MQB, and the cut Havok files that were edited, back into the project's copy of the binder, leaving
+    /// its other files as they are. Returns false, with the error logged, if it couldn't.
     /// </summary>
     public bool Save(ProjectEntry project)
     {
@@ -160,18 +189,21 @@ public class CutsceneFile
             {
                 var bnd = BND4.Read(raw);
                 MqbFileOf(bnd.Files).Bytes = bytes;
+                PutHavokFiles(bnd.Files);
                 written = ProjectUtils.WriteWithBackup(project, Entry.Path, bnd);
             }
             else
             {
                 var bnd = BND3.Read(raw);
                 MqbFileOf(bnd.Files).Bytes = bytes;
+                PutHavokFiles(bnd.Files);
                 written = ProjectUtils.WriteWithBackup(project, Entry.Path, bnd);
             }
 
             if (written)
             {
                 IsDirty = false;
+                ModifiedHavok.Clear();
                 Smithbox.Log(this, LOC.Get("CUTSCENE_Saved", Entry.Path));
             }
 
@@ -181,6 +213,21 @@ public class CutsceneFile
         {
             Smithbox.LogError(this, LOC.Get("CUTSCENE_Save_Failed", Entry.Path), e);
             return false;
+        }
+    }
+
+    // The edited cut Havok files, in their binder entries, compressed as they were
+    private void PutHavokFiles(List<BinderFile> files)
+    {
+        foreach (var key in ModifiedHavok)
+        {
+            var file = files.FirstOrDefault(f => (f.Name ?? "").EndsWith(".hkx", StringComparison.OrdinalIgnoreCase)
+                                                 && string.Equals(HavokKey(f.Name!), key, StringComparison.OrdinalIgnoreCase))
+                       ?? throw new InvalidOperationException($"The binder has no Havok file {key}.");
+
+            var bytes = HavokFiles[key];
+            var compression = HavokCompression.GetValueOrDefault(key, DCX.Type.None);
+            file.Bytes = compression == DCX.Type.None ? bytes : DCX.Compress(bytes, compression);
         }
     }
 
