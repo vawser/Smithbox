@@ -1107,6 +1107,13 @@ public class VulkanViewport : IViewport
             return;
         }
 
+        // The Cutscene Editor's selected camera key
+        if (Owner is CutsceneUniverse cutsceneKeyUniverse && cutsceneKeyUniverse.Editor.CameraKeyGizmo.HasTarget)
+        {
+            Gizmos.Target = cutsceneKeyUniverse.Editor.CameraKeyGizmo;
+            return;
+        }
+
         // The Cutscene Editor's selected cut placement (offset.sib)
         if (Owner is CutsceneUniverse cutsceneUniverse && cutsceneUniverse.Editor.PlacementGizmo.HasTarget)
         {

@@ -1538,12 +1538,24 @@ public class CFG
     public bool CutsceneEditor_Display_Camera_Path = true;
     public bool CutsceneEditor_Display_Camera = true;
     public bool CutsceneEditor_Display_Markers = true;
+
+    // Subtitle events: their TalkParam text at the bottom of the viewport, and their voice while the cut plays
+    public bool CutsceneEditor_Display_Subtitles = true;
+    public bool CutsceneEditor_Play_Voices = true;
+
+    // Sound events (seId/seType): played as the cut plays past their start
+    public bool CutsceneEditor_Play_Sounds = true;
     public bool CutsceneEditor_Loop = true;
     public bool CutsceneEditor_Continue_To_Next_Cut = false;
     public float CutsceneEditor_Playback_Speed = 1.0f;
 
     // Writes what each cut is built from (actors, cameras, placement, the camera's first frame) to the log
     public bool CutsceneEditor_Diagnostics_Log = false;
+
+    // Tools window, and its tools
+    public bool Interface_CutsceneEditor_ToolWindow = true;
+    public bool Interface_CutsceneEditor_Tool_Filters = true;
+    public bool Interface_CutsceneEditor_Tool_CharacterPreview = true;
 
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;

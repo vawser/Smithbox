@@ -1,4 +1,5 @@
 #nullable enable
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,10 @@ public sealed record CutsceneModel(CutsceneModelKind Kind, string ModelName)
                 {
                     Add(TextureLocator.GetCharacterTextureVirtualPath(project, ModelName, false));
                     Add(TextureLocator.GetCharacterTextureVirtualPath(project, ModelName, true));
+
+                    // The player's body and face textures are shared, in a container of their own
+                    if (CharacterComposition.IsComposite(ModelName) && CharacterComposition.GetCommonTexture(project) is { } common)
+                        Add(common);
                 }
                 break;
 

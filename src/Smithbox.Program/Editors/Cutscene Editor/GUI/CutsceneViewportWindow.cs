@@ -79,6 +79,29 @@ public class CutsceneViewportWindow
             nullViewport.Display();
     }
 
+    /// <summary>
+    /// Where the free viewport camera is and looks (it looks along its rotation's +Z, with +Y up), for setting a camera
+    /// key from the view. <paramref name="fovRadians" /> is the viewport's field of view as a cutscene camera's file
+    /// would store it (see <see cref="CutsceneCamera.FileFovRadians" />). False while looking through the cutscene
+    /// camera, which then is the view.
+    /// </summary>
+    public bool TryGetFreeView(out Vector3 eye, out Vector3 forward, out Vector3 up, out float fovRadians)
+    {
+        eye = forward = up = default;
+        fovRadians = 0;
+        if (Viewport is not VulkanViewport vk || CFG.Current.CutsceneEditor_Look_Through_Camera)
+            return false;
+
+        var transform = vk.ViewportCamera.CameraTransform;
+        eye = transform.Position;
+        forward = Vector3.Normalize(Vector3.Transform(Vector3.UnitZ, transform.Rotation));
+        up = Vector3.Normalize(Vector3.Transform(Vector3.UnitY, transform.Rotation));
+
+        var vertical = (vk.ViewportCamera.FovOverrideDegrees ?? CFG.Current.Viewport_Camera_FOV) * MathF.PI / 180f;
+        fovRadians = CutsceneCamera.FileFovRadians(vertical, Aspect);
+        return true;
+    }
+
     /// <summary>The same cut with changed data (a camera written back): its lines are built again.</summary>
     public void InvalidateLines() => BuiltKey = default;
 
@@ -175,8 +198,12 @@ public class CutsceneViewportWindow
             [CutsceneLineLayer.Root] = new()
         };
 
-        foreach (var placement in scene.Placements.Values)
-            CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.Root], placement.At(frame), 1.0f);
+        // The animations' roots (each HKT's placement): markers like the actors' below
+        if (CFG.Current.CutsceneEditor_Display_Markers)
+        {
+            foreach (var placement in scene.Placements.Values)
+                CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.Root], placement.At(frame), 1.0f);
+        }
 
         if (CFG.Current.CutsceneEditor_Display_Camera_Path)
         {
@@ -198,6 +225,14 @@ public class CutsceneViewportWindow
                     if (last is { } l)
                         lines[CutsceneLineLayer.CameraPath].Add((l, p));
                     last = p;
+                }
+
+                // Its keys, as axes where the camera is at each
+                if (camera.PlaysKeys)
+                {
+                    foreach (var cameraKey in camera.Keys!.Keys)
+                        CutsceneDebugLines.AddAxes(lines[CutsceneLineLayer.CameraPath],
+                            camera.World(cameraKey.Frame, scene.RootOf(camera.Resource, cameraKey.Frame)), 0.4f);
                 }
             }
         }

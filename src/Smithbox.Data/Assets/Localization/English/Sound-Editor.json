@@ -31,6 +31,7 @@
     { "Key": "SOUND_Reference_Indexing", "Text": "Sound Editor: indexing the sound banks..." },
     { "Key": "SOUND_Reference_Index_Failed", "Text": "Sound Editor: the sound banks could not be indexed." },
     { "Key": "SOUND_Reference_Missing", "Text": "No sound event for {0}" },
+    { "Key": "SOUND_Reference_Type_Enum_Failed", "Text": "Couldn't read the SoundType enum, so sound types aren't narrowed to their letter." },
     { "Key": "SOUND_Reference_Play", "Text": "Play {0}" },
     { "Key": "SOUND_Reference_Play_TT", "Text": "Play this sound in the Sound Editor." },
     { "Key": "SOUND_Reference_Go_To", "Text": "Open {0} in Sound Editor" },

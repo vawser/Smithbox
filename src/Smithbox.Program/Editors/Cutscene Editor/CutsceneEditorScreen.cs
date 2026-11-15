@@ -44,6 +44,31 @@ public class CutsceneEditorScreen : EditorScreen
     /// <summary>The cut placement (offset.sib) being moved, picked with its event in the timeline or the properties</summary>
     public CutscenePlacement? SelectedPlacement;
 
+    /// <summary>The cut's subtitles in the viewport, and their voices while it plays</summary>
+    public CutsceneSubtitles Subtitles;
+
+    /// <summary>The actors' models, kept across the cuts of a cutscene so a cut only loads what earlier ones didn't</summary>
+    public CutsceneModelPool Models = new();
+
+    /// <summary>The Character Preview tool (shared with the Model and Time Act Editors): what the player-like actors wear</summary>
+    public StudioCore.Editors.ModelEditor.ModelCharacterPreview CharacterPreview;
+
+    /// <summary>What c0000 actors wear: the tool's choice, a bare body until one is made. Kept for the session.</summary>
+    public CharacterAppearance? PlayerAppearance { get; private set; }
+
+    /// <summary>The cut's sound events, played as it plays</summary>
+    public CutsceneSoundPlayback Sounds;
+
+    /// <summary>The viewport gizmo on <see cref="SelectedCameraKey" /></summary>
+    public CutsceneCameraKeyGizmoTarget CameraKeyGizmo;
+
+    /// <summary>The key picked in the properties' key table, of <see cref="SelectedCamera" />; -1 for none</summary>
+    public int SelectedCameraKey = -1;
+
+    /// <summary>The camera of the selected event, if it is a camera event</summary>
+    public CutsceneCamera? SelectedCamera =>
+        SelectedEvent is { } e ? Scene?.Cameras.FirstOrDefault(c => c.ResourceIndex == e.ResourceIndex) : null;
+
     /// <summary>Bumped by every edit, undo and redo: the timeline builds its rows again when it changes</summary>
     public int StructureVersion { get; private set; }
 
@@ -56,6 +81,7 @@ public class CutsceneEditorScreen : EditorScreen
     public CutsceneListView ListView;
     public CutsceneTimelineView TimelineView;
     public CutscenePropertiesView PropertiesView;
+    public CutsceneToolWindow ToolWindow;
 
     /// <summary>The cutscene being shown, and which of its cuts</summary>
     public CutsceneFile? SelectedFile { get; private set; }
@@ -82,6 +108,10 @@ public class CutsceneEditorScreen : EditorScreen
         ViewportWindow = new CutsceneViewportWindow(this, project);
         Backdrop = new CutsceneMapBackdrop(project, () => RenderScene);
         PlacementGizmo = new CutscenePlacementGizmoTarget(this);
+        CameraKeyGizmo = new CutsceneCameraKeyGizmoTarget(this);
+        Subtitles = new CutsceneSubtitles(this);
+        Sounds = new CutsceneSoundPlayback(this);
+        CharacterPreview = new StudioCore.Editors.ModelEditor.ModelCharacterPreview(project, GetCharacterPreviewTarget);
         Templates = new CutsceneTemplateIndex(project, () => Data?.Files ?? new List<CutsceneFile>());
 
         // An edit, undo or redo may have moved, added or taken away events
@@ -90,6 +120,7 @@ public class CutsceneEditorScreen : EditorScreen
         ListView = new CutsceneListView(this);
         TimelineView = new CutsceneTimelineView(this);
         PropertiesView = new CutscenePropertiesView(this);
+        ToolWindow = new CutsceneToolWindow(this);
     }
 
     public CutsceneData Data => Project.Handler.CutsceneData;
@@ -113,11 +144,31 @@ public class CutsceneEditorScreen : EditorScreen
         SelectedEvent = null;
         SelectedTimeline = -1;
         SelectedPlacement = null;
+        SelectedCameraKey = -1;
         BuildError = null;
 
-        var project = Project;
         SceneTaskFor = (file, cut);
-        SceneTask = Task.Run<CutsceneScene?>(() =>
+
+        // The next cut of a play-through may already be read
+        if (Prefetch is { } prefetch && prefetch.File == file && prefetch.Cut == cut)
+        {
+            SceneTask = prefetch.Task;
+            Prefetch = null;
+            return;
+        }
+
+        DropPrefetch();
+        SceneTask = BuildTask(file, cut);
+    }
+
+    private Task<CutsceneScene?> BuildTask(CutsceneFile file, int cut)
+    {
+        var project = Project;
+
+        // Read here, on the main thread: the map the actors' map parts are looked for in first
+        var shownMap = MapForCutscene.TryGetValue(file.Name, out var chosen) ? chosen : CutsceneMapBackdrop.ImpliedMap(file.Name);
+
+        return Task.Run<CutsceneScene?>(() =>
         {
             if (!file.Load(project))
                 return null;
@@ -126,7 +177,38 @@ public class CutsceneEditorScreen : EditorScreen
             if (mqb.Cuts.Count == 0)
                 return null;
 
-            return CutsceneScene.Prepare(project, file, Math.Clamp(cut, 0, mqb.Cuts.Count - 1));
+            return CutsceneScene.Prepare(project, file, Math.Clamp(cut, 0, mqb.Cuts.Count - 1), shownMap);
+        });
+    }
+
+    // The cut a play-through goes to next, read in the background while this one plays
+    private (CutsceneFile File, int Cut, Task<CutsceneScene?> Task)? Prefetch;
+
+    /// <summary>With Play Through on, starts reading the cut after the one shown, so moving on to it doesn't wait</summary>
+    private void PrefetchNextCut()
+    {
+        if (!CFG.Current.CutsceneEditor_Continue_To_Next_Cut || SelectedFile?.Mqb is not { } mqb)
+            return;
+
+        var next = SelectedCut + 1 < mqb.Cuts.Count ? SelectedCut + 1 : CFG.Current.CutsceneEditor_Loop ? 0 : -1;
+        if (next < 0 || next == SelectedCut || Prefetch is { } p && p.File == SelectedFile && p.Cut == next)
+            return;
+
+        DropPrefetch();
+        Prefetch = (SelectedFile, next, BuildTask(SelectedFile, next));
+    }
+
+    /// <summary>Lets a background read go: its scene holds nothing loaded yet, so it is disposed once it ends</summary>
+    private void DropPrefetch()
+    {
+        if (Prefetch is not { } prefetch)
+            return;
+
+        Prefetch = null;
+        prefetch.Task.ContinueWith(t =>
+        {
+            if (t.IsCompletedSuccessfully)
+                t.Result?.Dispose();
         });
     }
 
@@ -162,9 +244,11 @@ public class CutsceneEditorScreen : EditorScreen
             return;
         }
 
+        // The last cut's actors hand their models back, and this cut takes the ones it shares with them
         ClearScene();
+        Models.BeginScene(built.File);
         Scene = built;
-        Scene.StartLoads(Project, RenderScene);
+        Scene.StartLoads(Project, RenderScene, Models, EnsurePlayerAppearance());
 
         var keepPlaying = Playback.Playing;
         Playback.Restart();
@@ -172,11 +256,15 @@ public class CutsceneEditorScreen : EditorScreen
 
         ViewportWindow.OnSceneChanged();
 
+        // The same map for every cut of a cutscene: LoadMap keeps the one drawn
         if (CFG.Current.CutsceneEditor_Load_Map)
             LoadMapFor(Scene.File);
 
+        PrefetchNextCut();
+
         if (CFG.Current.CutsceneEditor_Diagnostics_Log)
-            Smithbox.Log(this, Scene.Describe() + $"  map: {CurrentMapFor(Scene.File) ?? "none"} (loaded {Backdrop.LoadedMapId ?? "none"})");
+            Smithbox.Log(this, Scene.Describe() + $"  map: {CurrentMapFor(Scene.File) ?? "none"} (loaded {Backdrop.LoadedMapId ?? "none"})" +
+                               $"  models: {Models.Reused} kept from earlier cuts, {Models.Created} loaded, {Models.MeshCount} held");
     }
 
     // ---- map
@@ -217,21 +305,41 @@ public class CutsceneEditorScreen : EditorScreen
 
     private void OnEdited()
     {
+        // A cut read before the edit would show the data as it was
+        DropPrefetch();
         StructureVersion++;
         Scene?.RefreshEvents();
 
-        // A camera written back (or that edit undone): play the cut's cameras from their new clips
-        if (Scene != null && Scene.HavokVersionRead != Scene.File.HavokVersion)
-        {
-            Scene.ReloadCameras(Project);
-            ViewportWindow.InvalidateLines();
-        }
+        RefreshCameras();
 
         // A selected event that an undo took away
         if (SelectedEvent != null && Scene != null && CutsceneMqbOps.TimelineOf(Scene.Cut, SelectedEvent) < 0)
         {
             SelectedEvent = null;
             SelectedTimeline = -1;
+        }
+    }
+
+    /// <summary>
+    /// Plays the cut's cameras from what changed: their keys after a key edit (or its undo), their clips after a save
+    /// baked them into the cut's Havok file.
+    /// </summary>
+    public void RefreshCameras()
+    {
+        if (Scene == null)
+            return;
+
+        if (Scene.HavokVersionRead != Scene.File.HavokVersion)
+        {
+            DropPrefetch();
+            Scene.ReloadCameras(Project);
+            ViewportWindow.InvalidateLines();
+        }
+
+        if (Scene.KeysVersionRead != Scene.File.KeysVersion)
+        {
+            Scene.RefreshKeys();
+            ViewportWindow.InvalidateLines();
         }
     }
 
@@ -245,6 +353,10 @@ public class CutsceneEditorScreen : EditorScreen
     /// <summary>Selects an event, and its cut's placement if the event is of an offset.sib or an HKT</summary>
     public void SelectEvent(MQB.Event e, int timeline)
     {
+        // Another resource's event: its camera's keys aren't the ones picked
+        if (SelectedEvent?.ResourceIndex != e.ResourceIndex)
+            SelectedCameraKey = -1;
+
         SelectedEvent = e;
         SelectedTimeline = timeline;
 
@@ -274,6 +386,7 @@ public class CutsceneEditorScreen : EditorScreen
 
         var file = SelectedFile;
         var cut = SelectedCut;
+        DropPrefetch();
         ClearScene();
         SelectedFile = null;
         Select(file, cut);
@@ -308,6 +421,10 @@ public class CutsceneEditorScreen : EditorScreen
         Window($"{LOC.Get("CUTSCENE_Window_List")}###cutsceneEditor_List", dsid, EditorFocusContext.CutsceneEditor_List, ListView.Display);
         Window($"{LOC.Get("CUTSCENE_Window_Timeline")}###cutsceneEditor_Timeline", dsid, EditorFocusContext.CutsceneEditor_Timeline, TimelineView.Display);
         Window($"{LOC.Get("CUTSCENE_Window_Properties")}###cutsceneEditor_Properties", dsid, EditorFocusContext.CutsceneEditor_Properties, PropertiesView.Display);
+
+        // Its own menu bar (View, Options), as the other editors' Tools windows have
+        if (CFG.Current.Interface_CutsceneEditor_ToolWindow)
+            Window($"{LOC.Get("CUTSCENE_Window_Tools")}###cutsceneEditor_Tools", dsid, EditorFocusContext.CutsceneEditor_Tools, ToolWindow.Display, GUI.GetMainWindowFlags());
 
         // The viewport window sets the focus itself
         ViewportWindow.Display(dsid);
@@ -387,45 +504,10 @@ public class CutsceneEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##cutsceneViewMenu"))
             return;
 
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Load_Map"), "", CFG.Current.CutsceneEditor_Load_Map))
-        {
-            CFG.Current.CutsceneEditor_Load_Map = !CFG.Current.CutsceneEditor_Load_Map;
-            if (!CFG.Current.CutsceneEditor_Load_Map)
-                Backdrop.UnloadMap();
-            else if (SelectedFile != null)
-                LoadMapFor(SelectedFile);
-        }
-        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Load_Map_TT"));
-
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Map_Assets"), "", CFG.Current.CutsceneEditor_Map_Load_Assets))
-        {
-            CFG.Current.CutsceneEditor_Map_Load_Assets = !CFG.Current.CutsceneEditor_Map_Load_Assets;
-
-            // Read the map again, with or without its assets
-            var map = Backdrop.LoadedMapId;
-            Backdrop.UnloadMap();
-            if (map != null)
-                Backdrop.LoadMap(map);
-        }
-
-        ImGui.Separator();
-
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Load_Models"), "", CFG.Current.CutsceneEditor_Load_Models))
-        {
-            CFG.Current.CutsceneEditor_Load_Models = !CFG.Current.CutsceneEditor_Load_Models;
-            Rebuild();
-        }
-        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Load_Models_TT"));
-
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Display_Camera_Path"), "", CFG.Current.CutsceneEditor_Display_Camera_Path))
-            CFG.Current.CutsceneEditor_Display_Camera_Path = !CFG.Current.CutsceneEditor_Display_Camera_Path;
-
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Display_Camera"), "", CFG.Current.CutsceneEditor_Display_Camera))
-            CFG.Current.CutsceneEditor_Display_Camera = !CFG.Current.CutsceneEditor_Display_Camera;
-
-        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Display_Markers"), "", CFG.Current.CutsceneEditor_Display_Markers))
-            CFG.Current.CutsceneEditor_Display_Markers = !CFG.Current.CutsceneEditor_Display_Markers;
-        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Display_Markers_TT"));
+        // Tools window (what is shown and played back is its Cutscene Filters tool)
+        if (ImGui.MenuItem($"{LOC.Get("CUTSCENE_View_Toggle_Tools")}##cutsceneToggleTools"))
+            CFG.Current.Interface_CutsceneEditor_ToolWindow = !CFG.Current.Interface_CutsceneEditor_ToolWindow;
+        GUI.ShowActiveStatus(CFG.Current.Interface_CutsceneEditor_ToolWindow);
 
         ImGui.Separator();
 
@@ -438,6 +520,91 @@ public class CutsceneEditorScreen : EditorScreen
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Log_Cut_TT"));
 
         ImGui.EndMenu();
+    }
+
+    // ---- the player: dressed by the Character Preview tool
+
+    /// <summary>The player's appearance, the tool's current choice (a bare body) the first time it is asked for</summary>
+    private CharacterAppearance? EnsurePlayerAppearance()
+    {
+        if (PlayerAppearance != null)
+            return PlayerAppearance;
+
+        try
+        {
+            PlayerAppearance = CharacterPreview.GetAppearance();
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("CUTSCENE_Player_Appearance_Failed"), e);
+        }
+
+        return PlayerAppearance;
+    }
+
+    // What the tool dresses: always c0000, so a look can be chosen before a cut with the player is shown
+    private StudioCore.Editors.ModelEditor.CharacterPreviewTarget GetCharacterPreviewTarget() =>
+        new(CharacterComposition.CompositeModel, EnsurePlayerAppearance()!, SetPlayerAppearance);
+
+    /// <summary>Dresses the player-like actors of the cut shown, and of every cut after, in an appearance</summary>
+    public void SetPlayerAppearance(CharacterAppearance appearance)
+    {
+        PlayerAppearance = appearance;
+        Scene?.DressPlayers(appearance);
+
+        // The parts of the look before are kept by no cut any more
+        Models.DiscardUnused(CutscenePlayerParts.PoolPrefix);
+
+        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+            Smithbox.Log(this, LOC.Get("CUTSCENE_Player_Dressed", string.Join(", ", appearance.Parts.Select(p => p.Name))));
+    }
+
+    // ---- filters: what is shown and played back (the Cutscene Filters tool). The ones that load or play something
+    // do what the change needs at once.
+
+    /// <summary>The map behind the cut: loaded or let go</summary>
+    public void SetLoadMap(bool on)
+    {
+        CFG.Current.CutsceneEditor_Load_Map = on;
+        if (!on)
+            Backdrop.UnloadMap();
+        else if (SelectedFile != null)
+            LoadMapFor(SelectedFile);
+    }
+
+    /// <summary>The map's assets: the map is read again, with or without them</summary>
+    public void SetMapAssets(bool on)
+    {
+        CFG.Current.CutsceneEditor_Map_Load_Assets = on;
+
+        var map = Backdrop.LoadedMapId;
+        Backdrop.UnloadMap();
+        if (map != null)
+            Backdrop.LoadMap(map);
+    }
+
+    /// <summary>The actors' models: the cut is built again; turned off, the models kept for later cuts go too</summary>
+    public void SetLoadModels(bool on)
+    {
+        CFG.Current.CutsceneEditor_Load_Models = on;
+        Rebuild();
+
+        if (!on)
+            Models.Clear();
+    }
+
+    public void SetPlayVoices(bool on)
+    {
+        CFG.Current.CutsceneEditor_Play_Voices = on;
+        if (!on)
+            Subtitles.StopVoice();
+    }
+
+    public void SetPlaySounds(bool on)
+    {
+        CFG.Current.CutsceneEditor_Play_Sounds = on;
+        if (!on)
+            Sounds.StopAll();
     }
 
     private static readonly string[] AxisNames = ["+X", "-X", "+Y", "-Y", "+Z", "-Z"];
@@ -481,11 +648,11 @@ public class CutsceneEditorScreen : EditorScreen
         }
     }
 
-    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)
+    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw, ImGuiWindowFlags? flags = null)
     {
         ImGui.SetNextWindowDockID(dockspace, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_CutsceneEditor);
-        if (ImGui.Begin(title, GUI.GetInnerWindowFlags()))
+        if (ImGui.Begin(title, flags ?? GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 FocusManager.SetFocus(focus);
@@ -514,9 +681,17 @@ public class CutsceneEditorScreen : EditorScreen
             }
 
             Scene?.Update(Playback.Frame);
+            Subtitles.Update(Scene, Playback.Frame, Playback.Playing);
+            Sounds.Update(Scene, Playback.Frame, Playback.Playing);
 
             // The lighting the viewport borrows, once there is something to light (as the FX Editor does)
             Project.Handler.ViewportEnvironment.Update();
+        }
+        else
+        {
+            // No cut shown (another being built): its voice stops
+            Subtitles.Update(null, 0, false);
+            Sounds.Update(null, 0, false);
         }
 
         ViewportWindow.Update(dt);
@@ -543,12 +718,14 @@ public class CutsceneEditorScreen : EditorScreen
     {
         if (SelectedFile is { IsDirty: true } file)
             file.Save(Project);
+        RefreshCameras();
     }
 
     public void SaveAll()
     {
         foreach (var file in Data.Files.Where(f => f.IsDirty))
             file.Save(Project);
+        RefreshCameras();
     }
 
     public List<string> GetUnsavedFiles() => Data?.Files.Where(f => f.IsDirty).Select(f => f.Entry.Path).OrderBy(p => p).ToList() ?? new();
@@ -557,8 +734,12 @@ public class CutsceneEditorScreen : EditorScreen
 
     public void Dispose()
     {
+        DropPrefetch();
         ClearScene();
+        Models.Dispose();
         Backdrop.UnloadMap();
+        Subtitles.Dispose();
+        Sounds.Dispose();
         ViewportWindow.Dispose();
     }
 }

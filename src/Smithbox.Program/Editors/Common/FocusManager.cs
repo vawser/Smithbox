@@ -151,7 +151,8 @@ public static class FocusManager
             or EditorFocusContext.CutsceneEditor_List
             or EditorFocusContext.CutsceneEditor_Timeline
             or EditorFocusContext.CutsceneEditor_Properties
-            or EditorFocusContext.CutsceneEditor_Viewport;
+            or EditorFocusContext.CutsceneEditor_Viewport
+            or EditorFocusContext.CutsceneEditor_Tools;
     }
 
     public static bool IsInFxEditor()
@@ -314,6 +315,7 @@ public enum EditorFocusContext
     CutsceneEditor_Timeline,
     CutsceneEditor_Properties,
     CutsceneEditor_Viewport,
+    CutsceneEditor_Tools,
 
     SoundEditor_None,
     SoundEditor_Banks,

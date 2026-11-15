@@ -1,6 +1,7 @@
 #nullable enable
 using SoulsFormats;
 using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
@@ -94,17 +95,98 @@ public sealed class CutsceneCamera
         return false;
     }
 
-    public Matrix4x4 World(float frame, Matrix4x4 cutRoot) => Skeleton == null
-        ? cutRoot
-        : CutsceneSkeletonPose.BoneWorld(Skeleton, Clip, 0, frame) * cutRoot;
+    // ---- camera authoring: the keys, and the game's own camera they apply to
 
-    /// <summary>The field of view the file gives, in radians, or null if it gives none.</summary>
+    /// <summary>The camera's keys, from the cutscene's sidecar; null or Vanilla when it plays its clip</summary>
+    public CutsceneCameraKeys? Keys;
+
+    /// <summary>The game's own skeleton and clip for this camera: what Offset keys correct</summary>
+    public HavokSkeletonData? BaseSkeleton;
+    public HavokClip? BaseClip;
+
+    /// <summary>"cutNNNN/aNNNN/camNNNN": the camera's id in the key store</summary>
+    public string KeyId = "";
+
+    /// <summary>Whether the camera plays from keys rather than its clip</summary>
+    public bool PlaysKeys => Keys is { Applies: true } && BaseSkeleton != null && BaseSkeleton.BoneCount > 0 &&
+                             BaseSkeleton.Parents[0] < 0;
+
+    public int FrameCount => Math.Max(1, (BaseClip ?? Clip)?.FrameCount ?? 1);
+
+    /// <summary>The base camera's bone (local, which is the cut's space for a root) at a frame</summary>
+    public HavokTransformData BaseBone(float frame)
+    {
+        var skeleton = BaseSkeleton ?? Skeleton;
+        var clip = BaseSkeleton != null ? BaseClip : Clip;
+        if (skeleton == null || skeleton.BoneCount == 0)
+            return new HavokTransformData { Rotation = Quaternion.Identity, Scale = Vector3.One };
+
+        var track = clip != null && clip.BoneToTrack.Length > 0 ? clip.BoneToTrack[0] : -1;
+        var x = track >= 0
+            ? clip!.Sample(track, Math.Clamp(frame, 0, Math.Max(0, clip.FrameCount - 1)))
+            : skeleton.ReferencePose[0].ToBlendable();
+        return new HavokTransformData { Translation = x.Translation, Rotation = x.Rotation, Scale = x.Scale };
+    }
+
+    /// <summary>The base camera's FOV in radians at a frame (the default view's when it gives none)</summary>
+    public float BaseFov(float frame)
+    {
+        var skeleton = BaseSkeleton ?? Skeleton;
+        var clip = BaseSkeleton != null ? BaseClip : Clip;
+        var slot = skeleton != null ? FovSlotOf(skeleton) : -1;
+        if (skeleton == null || clip == null || slot < 0)
+            return CFG.Current.Viewport_Camera_FOV * MathF.PI / 180f;
+
+        return clip.SampleSlot(skeleton, slot, Math.Clamp(frame, 0, Math.Max(0, clip.FrameCount - 1)));
+    }
+
+    /// <summary>The bone and FOV (radians) the camera has at a frame: from its keys when it has them</summary>
+    public (HavokTransformData Bone, float Fov) Pose(float frame)
+    {
+        var baseBone = BaseBone(frame);
+        var baseFov = BaseFov(frame);
+        return PlaysKeys ? Keys!.Evaluate(frame, baseBone, baseFov) : (baseBone, baseFov);
+    }
+
+    private static int FovSlotOf(HavokSkeletonData skeleton)
+    {
+        for (var i = 0; i < skeleton.FloatSlotCount; i++)
+        {
+            if (skeleton.FloatSlots[i].EndsWith("_FOV", StringComparison.OrdinalIgnoreCase))
+                return i;
+        }
+
+        return -1;
+    }
+
+    public Matrix4x4 World(float frame, Matrix4x4 cutRoot)
+    {
+        if (PlaysKeys)
+        {
+            var bone = Keys!.Evaluate(frame, BaseBone(frame), BaseFov(frame)).Bone;
+            var local = new NewBlendableTransform { Translation = bone.Translation, Rotation = bone.Rotation, Scale = bone.Scale };
+            return Matrix4x4.CreateScale(bone.Scale) * local.GetMatrix() * cutRoot;
+        }
+
+        return Skeleton == null ? cutRoot : CutsceneSkeletonPose.BoneWorld(Skeleton, Clip, 0, frame) * cutRoot;
+    }
+
+    /// <summary>The field of view the file (or the keys) give, in radians, or null if none.</summary>
     public float? FovRadians(float frame)
     {
-        if (Skeleton == null || Clip == null || FovSlot < 0)
-            return null;
+        float fov;
+        if (PlaysKeys)
+        {
+            fov = Pose(frame).Fov;
+        }
+        else
+        {
+            if (Skeleton == null || Clip == null || FovSlot < 0)
+                return null;
 
-        var fov = Clip.SampleSlot(Skeleton, FovSlot, Math.Clamp(frame, 0, Math.Max(0, Clip.FrameCount - 1)));
+            fov = Clip.SampleSlot(Skeleton, FovSlot, Math.Clamp(frame, 0, Math.Max(0, Clip.FrameCount - 1)));
+        }
+
         return fov > 0.001f && fov < MathF.PI ? fov : null;
     }
 
@@ -117,6 +199,18 @@ public sealed class CutsceneCamera
             fov = 2 * MathF.Atan(MathF.Tan(fov / 2) / aspect);
 
         return fov;
+    }
+
+    /// <summary>
+    /// The FOV in radians the file would store for a vertical field of view at an aspect ratio: the inverse of
+    /// <see cref="VerticalFovRadians" />.
+    /// </summary>
+    public static float FileFovRadians(float verticalRadians, float aspect)
+    {
+        if (CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal && aspect > 0)
+            return 2 * MathF.Atan(MathF.Tan(verticalRadians / 2) * aspect);
+
+        return verticalRadians;
     }
 
     /// <summary>The camera's eye, forward and up in the scene, by the axes chosen in the options.</summary>

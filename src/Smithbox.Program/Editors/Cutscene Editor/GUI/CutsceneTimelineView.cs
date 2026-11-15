@@ -274,6 +274,23 @@ public class CutsceneTimelineView
                 if (e == Editor.SelectedEvent)
                     drawList.AddRect(min, max, selectedColor, 2 * scale, ImDrawFlags.None, 2 * scale);
 
+                // A keyed camera's keys, as diamonds on its bar
+                if (res?.Type == CutsceneResourceTypes.Camera
+                    && scene.Cameras.FirstOrDefault(c => c.ResourceIndex == e.ResourceIndex) is { PlaysKeys: true } keyed)
+                {
+                    var mid = (min.Y + max.Y) / 2;
+                    var half = Math.Max(2, (max.Y - min.Y) / 2 - 1);
+                    foreach (var key in keyed.Keys!.Keys)
+                    {
+                        if (key.Frame < e.StartFrame || key.Frame > e.StartFrame + e.Duration)
+                            continue;
+
+                        var kx = FrameToX(key.Frame);
+                        drawList.AddQuadFilled(new Vector2(kx, mid - half), new Vector2(kx + half, mid), new Vector2(kx, mid + half),
+                            new Vector2(kx - half, mid), textColor);
+                    }
+                }
+
                 if (hovered && mouse.X >= min.X && mouse.X <= max.X + edge && mouse.Y >= min.Y && mouse.Y <= max.Y)
                 {
                     hoveredEvent = e;

@@ -3,7 +3,6 @@
 #---------------------
 
 Unknown formats:
-    moaei
     bsipwv
     
 Analyze the X for bugs and recommendations for functionality improvements

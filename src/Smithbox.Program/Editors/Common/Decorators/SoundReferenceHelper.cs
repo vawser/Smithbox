@@ -44,8 +44,79 @@ public static class SoundReferenceHelper
         }
     }
 
-    /// <summary>The context menu entries: play or open each event of the sound ID. Call inside an open popup.</summary>
-    public static void ContextMenu(ProjectEntry project, object value)
+    /// <summary>
+    /// The Play events of a sound ID. A <paramref name="type"/> letter (from a sound type field, see
+    /// <see cref="TypeLetter"/>) narrows them; one that matches nothing tries every letter, as the Time Act playback
+    /// does. Empty until the index is built.
+    /// </summary>
+    public static List<SoundMatch> Find(ProjectEntry project, string id, string type = null)
+    {
+        var index = project?.Handler?.SoundData?.Index;
+        if (index == null)
+            return new();
+
+        index.EnsureBuilt();
+        var matches = index.Find(id, type);
+        return matches.Count == 0 && type != null ? index.Find(id) : matches;
+    }
+
+    // The type letters of each game's SoundType enum (Assets/TAE/<game>/Enums/SoundType.json, "4: (p) Cutscene SE")
+    private static readonly Dictionary<ProjectType, Dictionary<int, string>> TypeLetters = new();
+
+    /// <summary>
+    /// The sound type letter of a sound type value (TAE SoundType, MQB seType: the same numbering), or null if the
+    /// game's enum has none. Read from the Time Act Editor's enum file, so it works without that editor.
+    /// </summary>
+    public static string TypeLetter(ProjectEntry project, int soundType)
+    {
+        if (project?.Descriptor == null)
+            return null;
+
+        var game = project.Descriptor.ProjectType switch
+        {
+            ProjectType.DS1R => ProjectType.DS1,
+            ProjectType.DB_NT => ProjectType.DB,
+            var type => type
+        };
+
+        lock (TypeLetters)
+        {
+            if (!TypeLetters.TryGetValue(game, out var letters))
+            {
+                letters = new();
+                try
+                {
+                    var path = Path.Join(AppContext.BaseDirectory, "Assets", "TAE", ProjectUtils.GetGameDirectory(game), "Enums", "SoundType.json");
+                    if (File.Exists(path))
+                    {
+                        var entry = System.Text.Json.JsonSerializer.Deserialize(File.ReadAllText(path),
+                            StudioCore.Editors.ParamEditor.ParamEditorJsonSerializerContext.Default.ParamEnumEntry);
+                        foreach (var option in entry?.Options ?? new())
+                        {
+                            var text = option.Names.FirstOrDefault(n => n.Language == "English")?.Text ?? "";
+                            var match = System.Text.RegularExpressions.Regex.Match(text, @"\(([a-z])\)");
+                            if (match.Success && int.TryParse(option.Key, out var key))
+                                letters[key] = match.Groups[1].Value;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Smithbox.LogError(typeof(SoundReferenceHelper), LOC.Get("SOUND_Reference_Type_Enum_Failed"), e);
+                }
+
+                TypeLetters[game] = letters;
+            }
+
+            return letters.GetValueOrDefault(soundType);
+        }
+    }
+
+    /// <summary>
+    /// The context menu entries: play or open each event of the sound ID (of the type letter, when given). Call
+    /// inside an open popup.
+    /// </summary>
+    public static void ContextMenu(ProjectEntry project, object value, string type = null)
     {
         if (!IsAvailable(project) || !TryGetId(value, out var id))
             return;
@@ -58,7 +129,7 @@ public static class SoundReferenceHelper
             return;
         }
 
-        var matches = index.Find(id);
+        var matches = Find(project, id, type);
         if (matches.Count == 0)
         {
             ImGui.TextDisabled(LOC.Get("SOUND_Reference_Missing", id));
@@ -91,20 +162,23 @@ public static class SoundReferenceHelper
     // player. Ticked by the buttons themselves, so it only advances while one is drawn.
     private static ProjectEntry _pendingProject;
     private static string _pendingId;
+    private static string _pendingType;
     private static SoundContainer _pendingContainer;
     private static string _pendingEvent;
 
-    // the sound ID the inline button last started, so its buttons show Stop while it plays
-    private static string _playingId;
+    // the sound (type letter + ID) the inline button last started, so its buttons show Stop while it plays
+    private static string _playingKey;
 
     private static SoundPlayer Player(ProjectEntry project) => project?.Handler?.SoundEditor?.View?.Player;
 
+    private static string Key(string id, string type) => $"{type}{id}";
+
     /// <summary>
-    /// A small Play / Stop button for the sound ID in <paramref name="value"/>, followed by SameLine so the alias text
-    /// sits after it. Plays on the Sound Editor's player without switching to it. Draws nothing (and returns false)
-    /// when the project has no Sound Editor or the value is no sound.
+    /// A small Play / Stop button for the sound ID in <paramref name="value"/> (of the <paramref name="type"/> letter,
+    /// when given), followed by SameLine so the alias text sits after it. Plays on the Sound Editor's player without
+    /// switching to it. Draws nothing (and returns false) when the project has no Sound Editor or the value is no sound.
     /// </summary>
-    public static bool PlayButton(ProjectEntry project, object value, string imguiId)
+    public static bool PlayButton(ProjectEntry project, object value, string imguiId, string type = null)
     {
         if (!IsAvailable(project) || !TryGetId(value, out var id))
             return false;
@@ -112,20 +186,20 @@ public static class SoundReferenceHelper
         Tick(project);
 
         var player = Player(project);
-        bool pending = _pendingId == id && _pendingProject == project;
-        bool playing = !pending && _playingId == id && player?.IsActive == true;
+        bool pending = _pendingId == id && _pendingType == type && _pendingProject == project;
+        bool playing = !pending && _playingKey == Key(id, type) && player?.IsActive == true;
 
         if (ImGui.SmallButton($"{(pending || playing ? Icons.Stop : Icons.Play)}##soundRefInline_{imguiId}"))
         {
             if (pending || playing)
             {
                 ClearPending();
-                _playingId = null;
+                _playingKey = null;
                 player?.Stop();
             }
             else
             {
-                Request(project, id);
+                Request(project, id, type);
             }
         }
         GUI.Tooltip(LOC.Get(pending ? "SOUND_Reference_Inline_Loading_TT"
@@ -135,12 +209,13 @@ public static class SoundReferenceHelper
         return true;
     }
 
-    private static void Request(ProjectEntry project, string id)
+    private static void Request(ProjectEntry project, string id, string type)
     {
         Player(project)?.Stop();
-        _playingId = null;
+        _playingKey = null;
         _pendingProject = project;
         _pendingId = id;
+        _pendingType = type;
         _pendingContainer = null;
         _pendingEvent = null;
         project.Handler.SoundData.Index.EnsureBuilt();
@@ -151,6 +226,7 @@ public static class SoundReferenceHelper
     {
         _pendingProject = null;
         _pendingId = null;
+        _pendingType = null;
         _pendingContainer = null;
         _pendingEvent = null;
     }
@@ -175,7 +251,7 @@ public static class SoundReferenceHelper
                 return;
             }
 
-            var matches = index.Find(_pendingId);
+            var matches = Find(project, _pendingId, _pendingType);
             if (matches.Count == 0)
             {
                 Smithbox.Log(typeof(SoundReferenceHelper), LOC.Get("SOUND_Reference_Missing", _pendingId));
@@ -192,7 +268,7 @@ public static class SoundReferenceHelper
         if (c.State is SoundLoadState.NotLoaded or SoundLoadState.Loading)
             return;
 
-        var id = _pendingId;
+        var key = Key(_pendingId, _pendingType);
         var name = _pendingEvent;
         ClearPending();
 
@@ -218,18 +294,16 @@ public static class SoundReferenceHelper
         }
 
         view.Play(entry);
-        _playingId = id;
+        _playingKey = key;
     }
 
     /// <summary>Ctrl+click on the last item opens the sound (its first event). Call right after the item it applies to.</summary>
-    public static void Click(ProjectEntry project, object value)
+    public static void Click(ProjectEntry project, object value, string type = null)
     {
         if (!ImGui.IsItemClicked(ImGuiMouseButton.Left) || !InputManager.HasCtrlDown() || !IsAvailable(project) || !TryGetId(value, out var id))
             return;
 
-        var index = project.Handler.SoundData.Index;
-        index.EnsureBuilt();
-        var matches = index.Find(id);
+        var matches = Find(project, id, type);
         if (matches.Count == 1)
             EditorCommandQueue.AddCommand(SoundIndex.Command(matches[0], false));
         else

@@ -18,9 +18,13 @@ public class CutscenePropertiesView
 {
     private readonly CutsceneEditorScreen Editor;
 
+    /// <summary>What parameters' values name, shown under them</summary>
+    private readonly CutsceneParameterLinks Links;
+
     public CutscenePropertiesView(CutsceneEditorScreen editor)
     {
         Editor = editor;
+        Links = new CutsceneParameterLinks(editor);
     }
 
     public void Display()
@@ -134,6 +138,25 @@ public class CutscenePropertiesView
                 Row(LOC.Get("CUTSCENE_Properties_Model"), actor.Model?.ModelName ?? LOC.Get("CUTSCENE_Properties_None"));
                 Row(LOC.Get("CUTSCENE_Properties_State"), $"{actor.State}{(actor.Status != null ? $": {actor.Status}" : "")}");
                 Row(LOC.Get("CUTSCENE_Properties_Bones"), actor.Skeleton?.BoneCount.ToString() ?? LOC.Get("CUTSCENE_Properties_None"));
+
+                // Who it is: its map part (where its masks and look come from), or the player
+                if (actor.Cast is { } cast)
+                {
+                    Row(LOC.Get("CUTSCENE_Properties_Map_Part"), $"{cast.Map}: {cast.PartName}");
+                    Row(LOC.Get("CUTSCENE_Properties_Npc_Param"), cast.NpcParamId > 0
+                        ? $"{cast.NpcParamId}{(actor.Masks != null ? LOC.Get("CUTSCENE_Properties_Masks", actor.Masks.Count(m => m != 0)) : "")}"
+                        : LOC.Get("CUTSCENE_Properties_None"));
+                    if (actor.IsComposite)
+                        Row(LOC.Get("CUTSCENE_Properties_Chara_Init"), cast.CharaInitId >= 0 ? cast.CharaInitId.ToString() : LOC.Get("CUTSCENE_Properties_None"));
+                }
+                else if (actor.IsPlayer)
+                {
+                    Row(LOC.Get("CUTSCENE_Properties_Map_Part"), LOC.Get("CUTSCENE_Properties_Player"));
+                }
+                else if (actor.Model?.Kind == CutsceneModelKind.Character)
+                {
+                    Row(LOC.Get("CUTSCENE_Properties_Map_Part"), LOC.Get("CUTSCENE_Properties_No_Map_Part"));
+                }
             }
 
             if (scene.Cameras.FirstOrDefault(c => c.ResourceIndex == e.ResourceIndex) is { } camera)
@@ -154,101 +177,315 @@ public class CutscenePropertiesView
             var timeline = scene.Cut.Timelines[Editor.SelectedTimeline];
             ImGui.SeparatorText(LOC.Get("CUTSCENE_Properties_Timeline", Editor.SelectedTimeline, timeline.ParentIndex));
             DisplayParameters("timeline", timeline.Parameters, false);
+            Links.DisplayTimelineMap("timeline", timeline.Parameters);
         }
     }
 
-    // ---- camera clip: what it is, and writing it back (phase 5b; keying the camera comes with camera authoring)
+    // ---- camera keys (camera authoring): the mode, the keys, and setting them from the view
 
-    private Vector3 CameraOffset;
-    private float CameraFovChange;
-    private int CameraFormat;
-    private string? CameraWriteResult;
+    private CutsceneCamera? KeysCamera;
+    // Kept by the screen, where the viewport's key gizmo reads it
+    private int SelectedKey
+    {
+        get => Editor.SelectedCameraKey;
+        set => Editor.SelectedCameraKey = value;
+    }
+
+    private int ConvertEvery = 15;
+    private CutsceneCameraKeys? KeysEditStart;
 
     private void DisplayCameraClip(CutsceneCamera camera)
     {
         ImGui.SeparatorText(LOC.Get("CUTSCENE_Camera_Clip"));
 
+        if (KeysCamera != camera)
+        {
+            KeysCamera = camera;
+            SelectedKey = -1;
+        }
+
+        var frame = Editor.Playback.Frame;
         var clip = camera.Clip;
-        if (clip == null)
+        if (clip == null || Editor.SelectedFile is not { } file)
         {
             ImGui.TextDisabled(LOC.Get("CUTSCENE_Properties_None"));
             return;
         }
 
         var kind = clip is StudioCore.Renderer.HavokSplineClip ? LOC.Get("CUTSCENE_Camera_Format_Spline") : LOC.Get("CUTSCENE_Camera_Format_Interleaved");
-        var fov = camera.FovRadians(Editor.Playback.Frame);
+        var fov = camera.FovRadians(frame);
         ImGui.TextWrapped(LOC.Get("CUTSCENE_Camera_Clip_Summary", kind, clip.FrameCount,
             fov.HasValue ? (fov.Value * 180f / MathF.PI).ToString("0.##") : "-"));
 
-        if (!ImGui.TreeNode($"{LOC.Get("CUTSCENE_Camera_Write")}##cutsceneCameraWrite"))
-            return;
+        var keys = camera.Keys;
+        var mode = (int)(keys?.Mode ?? CutsceneCameraMode.Vanilla);
 
-        ImGui.TextWrapped(LOC.Get("CUTSCENE_Camera_Write_Hint"));
-
-        ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Offset"));
+        // Mode and format: each change is one undo step
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Mode"));
         ImGui.SameLine(140 * DPI.UIScale());
         ImGui.SetNextItemWidth(-1);
-        ImGui.DragFloat3("##cutsceneCameraOffset", ref CameraOffset, 0.05f);
-        GUI.Tooltip(LOC.Get("CUTSCENE_Camera_Offset_TT"));
+        string[] modes = [LOC.Get("CUTSCENE_Keys_Mode_Vanilla"), LOC.Get("CUTSCENE_Keys_Mode_Offset"), LOC.Get("CUTSCENE_Keys_Mode_Keyed")];
+        if (ImGui.Combo("##cutsceneKeysMode", ref mode, modes, modes.Length))
+        {
+            var after = keys?.Clone() ?? new CutsceneCameraKeys();
+            if (after.Mode != (CutsceneCameraMode)mode)
+            {
+                // The keys of one mode mean nothing in the other
+                if (after.Mode != CutsceneCameraMode.Vanilla && (CutsceneCameraMode)mode != CutsceneCameraMode.Vanilla)
+                    after.Keys.Clear();
+                after.Mode = (CutsceneCameraMode)mode;
+                Commit(file, camera, keys, after);
+                SelectedKey = -1;
+            }
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Keys_Mode_TT"));
 
-        ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Fov_Change"));
-        ImGui.SameLine(140 * DPI.UIScale());
-        ImGui.SetNextItemWidth(120 * DPI.UIScale());
-        ImGui.DragFloat("##cutsceneCameraFov", ref CameraFovChange, 0.1f, -60, 60);
+        if ((CutsceneCameraMode)mode == CutsceneCameraMode.Offset && !file.HasVanilla(Editor.Project))
+            ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("CUTSCENE_Keys_No_Vanilla"));
 
+        var format = (int)(keys?.Format ?? StudioCore.Utilities.HavokClipFormat.Auto);
         ImGui.TextDisabled(LOC.Get("CUTSCENE_Camera_Format"));
         ImGui.SameLine(140 * DPI.UIScale());
         ImGui.SetNextItemWidth(-1);
-        string[] formats =
-        [
-            LOC.Get("CUTSCENE_Camera_Format_Auto"), LOC.Get("CUTSCENE_Camera_Format_Spline"),
-            LOC.Get("CUTSCENE_Camera_Format_Interleaved")
-        ];
-        ImGui.Combo("##cutsceneCameraFormat", ref CameraFormat, formats, formats.Length);
+        string[] formats = [LOC.Get("CUTSCENE_Camera_Format_Auto"), LOC.Get("CUTSCENE_Camera_Format_Spline"), LOC.Get("CUTSCENE_Camera_Format_Interleaved")];
+        if (ImGui.Combo("##cutsceneKeysFormat", ref format, formats, formats.Length))
+        {
+            var after = keys?.Clone() ?? new CutsceneCameraKeys();
+            after.Format = (StudioCore.Utilities.HavokClipFormat)format;
+            Commit(file, camera, keys, after);
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Camera_Format_TT"));
 
-        if (ImGui.Button($"{LOC.Get("CUTSCENE_Camera_Apply")}##cutsceneCameraApply"))
-            WriteCamera(camera, CameraOffset, CameraFovChange);
+        // Convert: the camera as it plays now, as keys every N frames
+        ImGui.SetNextItemWidth(80 * DPI.UIScale());
+        ImGui.InputInt("##cutsceneKeysEvery", ref ConvertEvery);
+        ConvertEvery = Math.Clamp(ConvertEvery, 1, 1000);
+        ImGui.SameLine();
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Keys_Convert")}##cutsceneKeysConvert"))
+        {
+            var after = keys?.Clone() ?? new CutsceneCameraKeys();
+            after.Mode = CutsceneCameraMode.Keyed;
+            after.Keys.Clear();
+            var last = camera.FrameCount - 1;
+            for (var f = 0; ; f = Math.Min(f + ConvertEvery, last))
+            {
+                var (bone, fovNow) = camera.Pose(f);
+                after.Keys.Add(after.KeyFor(f, bone, fovNow, camera.BaseBone(f), camera.BaseFov(f), after.Keys.LastOrDefault()));
+                if (f >= last)
+                    break;
+            }
+
+            Commit(file, camera, keys, after);
+            SelectedKey = -1;
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Keys_Convert_TT"));
+
+        if (keys is not { Applies: true })
+        {
+            ImGui.TextWrapped(LOC.Get("CUTSCENE_Keys_Vanilla_Hint"));
+            return;
+        }
+
+        // Adding keys
+        var playhead = (int)MathF.Round(frame);
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Keys_Add")}##cutsceneKeysAdd"))
+        {
+            var (bone, fovNow) = camera.Pose(playhead);
+            AddKey(file, camera, keys, keys.KeyFor(playhead, bone, fovNow, camera.BaseBone(playhead), camera.BaseFov(playhead), keys.Nearest(playhead)));
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Keys_Add_TT"));
 
         ImGui.SameLine();
-        if (ImGui.Button($"{LOC.Get("CUTSCENE_Camera_Reencode")}##cutsceneCameraReencode"))
-            WriteCamera(camera, Vector3.Zero, 0);
-        GUI.Tooltip(LOC.Get("CUTSCENE_Camera_Reencode_TT"));
+        var canView = Editor.ViewportWindow.TryGetFreeView(out var eye, out var viewForward, out var viewUp, out var viewFov);
+        ImGui.BeginDisabled(!canView);
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Keys_From_View")}##cutsceneKeysView") && Editor.Scene is { } scene)
+        {
+            // The view in the cut's own space, where the camera bone is
+            Matrix4x4.Invert(scene.RootOf(camera.Resource, playhead), out var toCut);
+            var current = camera.Pose(playhead);
+            var bone = current.Bone;
+            bone.Translation = Vector3.Transform(eye, toCut);
+            bone.Rotation = CutsceneCameraRotation.FromView(Vector3.Normalize(Vector3.TransformNormal(viewForward, toCut)),
+                Vector3.Normalize(Vector3.TransformNormal(viewUp, toCut)));
+            // The viewport's FOV too, so the key frames what the view shows
+            AddKey(file, camera, keys, keys.KeyFor(playhead, bone, viewFov, camera.BaseBone(playhead), camera.BaseFov(playhead), keys.Nearest(playhead)));
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get(canView ? "CUTSCENE_Keys_From_View_TT" : "CUTSCENE_Keys_From_View_Disabled_TT"));
 
-        if (CameraWriteResult != null)
-            ImGui.TextWrapped(CameraWriteResult);
+        ImGui.SameLine();
+        ImGui.BeginDisabled(SelectedKey < 0 || SelectedKey >= keys.Keys.Count);
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Keys_Delete")}##cutsceneKeysDelete"))
+        {
+            var after = keys.Clone();
+            after.Keys.RemoveAt(SelectedKey);
+            Commit(file, camera, keys, after);
+            SelectedKey = Math.Min(SelectedKey, after.Keys.Count - 1);
+        }
+        ImGui.EndDisabled();
 
-        if (Editor.SelectedFile is { IsDirty: true })
-            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("CUTSCENE_Properties_Unsaved"));
+        // The keys: a click selects one and puts the playhead on it
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Count", keys.Keys.Count));
+        if (ImGui.BeginTable("##cutsceneKeysTable", 3, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.ScrollY,
+                new Vector2(0, Math.Min(8, Math.Max(2, keys.Keys.Count + 1)) * ImGui.GetTextLineHeightWithSpacing())))
+        {
+            ImGui.TableSetupScrollFreeze(0, 1);
+            ImGui.TableSetupColumn(LOC.Get("CUTSCENE_Keys_Frame"), ImGuiTableColumnFlags.WidthFixed, 60 * DPI.UIScale());
+            ImGui.TableSetupColumn(LOC.Get("CUTSCENE_Keys_Values"));
+            ImGui.TableSetupColumn(LOC.Get("CUTSCENE_Keys_Interpolation"), ImGuiTableColumnFlags.WidthFixed, 70 * DPI.UIScale());
+            ImGui.TableHeadersRow();
 
-        ImGui.TreePop();
+            for (var i = 0; i < keys.Keys.Count; i++)
+            {
+                var k = keys.Keys[i];
+                ImGui.TableNextRow();
+                ImGui.TableNextColumn();
+                if (ImGui.Selectable($"{k.Frame}##cutsceneKey{i}", i == SelectedKey, ImGuiSelectableFlags.SpanAllColumns))
+                {
+                    SelectedKey = i;
+                    Editor.Playback.Frame = k.Frame;
+                }
+                ImGui.TableNextColumn();
+                ImGui.TextUnformatted($"{Vec(k.Position)}  {Vec(k.Rotation)}°  {k.FovDegrees:0.##}°");
+                ImGui.TableNextColumn();
+                ImGui.TextUnformatted(InterpolationName(k.Interpolation));
+            }
+
+            ImGui.EndTable();
+        }
+
+        if (SelectedKey >= 0 && SelectedKey < keys.Keys.Count)
+            DisplayKey(file, camera, keys, keys.Keys[SelectedKey]);
     }
 
-    private void WriteCamera(CutsceneCamera camera, Vector3 offset, float fovDegrees)
+    private void DisplayKey(CutsceneFile file, CutsceneCamera camera, CutsceneCameraKeys keys, CutsceneCameraKey key)
     {
-        if (Editor.SelectedFile is not { } file)
+        var offset = keys.Mode == CutsceneCameraMode.Offset;
+        ImGui.SeparatorText(LOC.Get(offset ? "CUTSCENE_Keys_Key_Offset" : "CUTSCENE_Keys_Key", key.Frame));
+
+        // Edited live, so the viewport follows a drag; one undo step when let go
+        var changed = false;
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Frame"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(120 * DPI.UIScale());
+        var keyFrame = key.Frame;
+        StartKeysEdit(keys);
+        if (ImGui.InputInt("##cutsceneKeyFrame", ref keyFrame))
+        {
+            key.Frame = Math.Clamp(keyFrame, 0, camera.FrameCount - 1);
+            changed = true;
+        }
+        EndKeysEdit(file, camera, keys, sort: true);
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Position"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(-1);
+        var position = key.Position;
+        StartKeysEdit(keys);
+        if (ImGui.DragFloat3("##cutsceneKeyPosition", ref position, 0.01f))
+        {
+            key.Position = position;
+            changed = true;
+        }
+        EndKeysEdit(file, camera, keys);
+        GUI.Tooltip(LOC.Get(offset ? "CUTSCENE_Keys_Position_Offset_TT" : "CUTSCENE_Keys_Position_TT"));
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Rotation"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(-1);
+        var rotation = key.Rotation;
+        StartKeysEdit(keys);
+        if (ImGui.DragFloat3("##cutsceneKeyRotation", ref rotation, 0.1f))
+        {
+            key.Rotation = rotation;
+            changed = true;
+        }
+        EndKeysEdit(file, camera, keys);
+        GUI.Tooltip(LOC.Get(offset ? "CUTSCENE_Keys_Rotation_Offset_TT" : "CUTSCENE_Keys_Rotation_TT"));
+
+        ImGui.TextDisabled(LOC.Get(offset ? "CUTSCENE_Keys_Fov_Offset" : "CUTSCENE_Keys_Fov"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(120 * DPI.UIScale());
+        var keyFov = key.FovDegrees;
+        StartKeysEdit(keys);
+        if (ImGui.DragFloat("##cutsceneKeyFov", ref keyFov, 0.1f, offset ? -90 : 1, offset ? 90 : 170))
+        {
+            key.FovDegrees = keyFov;
+            changed = true;
+        }
+        EndKeysEdit(file, camera, keys);
+
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Keys_Interpolation"));
+        ImGui.SameLine(140 * DPI.UIScale());
+        ImGui.SetNextItemWidth(-1);
+        var interpolation = (int)key.Interpolation;
+        string[] names = [InterpolationName(CutsceneKeyInterpolation.Smooth), InterpolationName(CutsceneKeyInterpolation.Linear), InterpolationName(CutsceneKeyInterpolation.Hold)];
+        if (ImGui.Combo("##cutsceneKeyInterpolation", ref interpolation, names, names.Length))
+        {
+            var after = keys.Clone();
+            after.Keys[keys.Keys.IndexOf(key)].Interpolation = (CutsceneKeyInterpolation)interpolation;
+            Commit(file, camera, keys, after);
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Keys_Interpolation_TT"));
+
+        if (changed)
+            Editor.ViewportWindow.InvalidateLines();
+
+        if (file.IsDirty)
+            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("CUTSCENE_Properties_Unsaved"));
+    }
+
+    // Before a key widget: its keys as they were when it was activated
+    private void StartKeysEdit(CutsceneCameraKeys keys)
+    {
+        // Taken before the widget, whose activation shows only after it; kept for the one that activates
+        PendingStart = keys.Clone();
+    }
+
+    private CutsceneCameraKeys? PendingStart;
+
+    // After a key widget: when it is let go after an edit, one undo step from where it started
+    private void EndKeysEdit(CutsceneFile file, CutsceneCamera camera, CutsceneCameraKeys keys, bool sort = false)
+    {
+        if (ImGui.IsItemActivated())
+            KeysEditStart = PendingStart;
+
+        if (!ImGui.IsItemDeactivatedAfterEdit() || KeysEditStart is not { } start)
             return;
 
-        try
-        {
-            var format = (StudioCore.Utilities.HavokClipFormat)Math.Clamp(CameraFormat, 0, 2);
-            var (action, result) = CutsceneCameraEdit.Offset(Editor.Project, file, camera, offset, fovDegrees, format);
-            Editor.Execute(action);
+        var after = keys.Clone();
+        var selected = SelectedKey >= 0 && SelectedKey < after.Keys.Count ? after.Keys[SelectedKey] : null;
+        if (sort)
+            after.Sort();
 
-            CameraWriteResult = result.Format == StudioCore.Utilities.HavokClipFormat.Spline
-                ? LOC.Get("CUTSCENE_Camera_Written", LOC.Get("CUTSCENE_Camera_Format_Spline"), result.DataBytes,
-                    result.MaxFramesPerBlock, result.WorstErrorRatio)
-                : LOC.Get("CUTSCENE_Camera_Written_Interleaved", result.DataBytes);
-
-            if (CFG.Current.CutsceneEditor_Diagnostics_Log)
-                Smithbox.Log(this, $"[Cutscene Editor] {file.Name} {camera.Name}: offset {offset}, FOV {fovDegrees:+0.##;-0.##;0}°, {CameraWriteResult}");
-        }
-        catch (Exception ex)
+        KeysEditStart = null;
+        if (!start.SameAs(after))
         {
-            CameraWriteResult = LOC.Get("CUTSCENE_Camera_Write_Failed", ex.Message);
-            Smithbox.LogError(this, CameraWriteResult, ex);
+            Commit(file, camera, start, after);
+            SelectedKey = selected != null ? after.Keys.IndexOf(selected) : -1;
         }
     }
 
+    private void AddKey(CutsceneFile file, CutsceneCamera camera, CutsceneCameraKeys keys, CutsceneCameraKey key)
+    {
+        var after = keys.Clone();
+        after.Keys.Add(key);
+        after.Sort();
+        Commit(file, camera, keys, after);
+        SelectedKey = after.Keys.FindIndex(k => k.Frame == key.Frame);
+    }
+
+    private void Commit(CutsceneFile file, CutsceneCamera camera, CutsceneCameraKeys? before, CutsceneCameraKeys after)
+    {
+        if (string.IsNullOrEmpty(camera.KeyId))
+            return;
+
+        Editor.Execute(new CutsceneCameraKeysAction(file, camera.KeyId, before, after));
+    }
+
+    private static string InterpolationName(CutsceneKeyInterpolation interpolation) =>
+        LOC.Get($"CUTSCENE_Keys_Interpolation_{interpolation}");
     // ---- editing: a field's value when it started being edited, by what it edits, so an edit is one undo step
 
     private readonly Dictionary<object, object?> EditStart = new();
@@ -301,6 +538,7 @@ public class CutscenePropertiesView
 
             ImGui.SetNextItemWidth(-1);
             EditValue($"##{id}_p{i}", p, () => p.Value, v => p.Value = v);
+            Links.Display($"{id}_p{i}", parameters, i);
 
             if (p.Sequences.Count > 0)
                 DisplaySequences($"{id}_p{i}", p, owner);

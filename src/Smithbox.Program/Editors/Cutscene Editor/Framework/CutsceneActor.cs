@@ -1,5 +1,6 @@
 #nullable enable
 using SoulsFormats;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
@@ -78,8 +79,51 @@ public sealed class CutsceneActor : IDisposable
         return false;
     }
 
-    /// <summary>Starts loading the model and its rig. Call once, on the main thread.</summary>
-    public void StartLoad(ProjectEntry project, RenderScene? scene)
+    // Where the mesh came from and goes back to when the cut is replaced; null when it was made for this cut alone
+    private CutsceneModelPool? Pool;
+
+    // Each mesh has its own cache ID, so two actors of one model (each skinned by its own animator) share nothing
+    private static int MeshSerial;
+
+    // ---- who the actor is: its map part (masks, and a c0000 NPC's look), or the player
+
+    /// <summary>The map part the actor stands for (<see cref="CutsceneCast" />), null if none: set when the cut is read</summary>
+    public CutsceneCastEntry? Cast;
+
+    /// <summary>Whether the actor's look is made of part models (c0000)</summary>
+    public bool IsComposite => Model != null && CharacterComposition.IsComposite(Model.ModelName);
+
+    /// <summary>
+    /// The player: c0000 that stands for no map part, dressed in what the Character Preview tool chose. A c0000 with a
+    /// part is an NPC, dressed in its part's CharaInit.
+    /// </summary>
+    public bool IsPlayer => IsComposite && Cast == null;
+
+    /// <summary>The NpcParam model masks the actor's mesh was made with, null for none (all shown)</summary>
+    public int[]? Masks { get; private set; }
+
+    /// <summary>The parts a c0000 actor wears; null for other actors, or before it is dressed</summary>
+    public CutscenePlayerParts? PlayerParts { get; private set; }
+
+    private ProjectEntry? LoadedProject;
+    private RenderScene? LoadedScene;
+    private ModelRig? LeaderRig;
+
+    /// <summary>Puts a c0000 actor in an appearance, in place of the one it wore. Call after <see cref="StartLoad" />.</summary>
+    public void Dress(CharacterAppearance? appearance)
+    {
+        if (!IsComposite || LoadedProject == null || LoadedScene == null)
+            return;
+
+        PlayerParts?.Dispose();
+        PlayerParts = appearance is { Parts.Count: > 0 } ? new CutscenePlayerParts(LoadedProject, LoadedScene, Pool, appearance) : null;
+    }
+
+    /// <summary>
+    /// Starts loading the model and its rig. Call once, on the main thread. With a <paramref name="pool" />, a model an
+    /// earlier cut of the cutscene loaded is taken from it as it is, and nothing is read again.
+    /// </summary>
+    public void StartLoad(ProjectEntry project, RenderScene? scene, CutsceneModelPool? pool = null)
     {
         if (Model == null || scene == null || Skeleton == null)
             return;
@@ -93,28 +137,62 @@ public sealed class CutsceneActor : IDisposable
             return;
         }
 
-        var options = new LoadOptions
+        var modelName = Model.ModelName;
+        var model = Model;
+        LoadedProject = project;
+        LoadedScene = scene;
+
+        // An NPC's model masks, as its map part's NpcParam sets them (the Map Editor shows placed enemies so)
+        var masks = Cast != null ? CutsceneCast.Masks(project, Cast.NpcParamId) : null;
+        Masks = masks;
+
+        MeshRenderableProxy Create()
         {
-            JobName = LOC.Get("CUTSCENE_Load_Job", Model.ModelName),
-            Types = ResourceType.Flver | ResourceType.Texture,
-            AccessLevel = AccessLevel.AccessGPUOptimizedOnly
-        };
+            var options = new LoadOptions
+            {
+                JobName = LOC.Get("CUTSCENE_Load_Job", modelName),
+                Types = ResourceType.Flver | ResourceType.Texture,
+                AccessLevel = AccessLevel.AccessGPUOptimizedOnly
+            };
 
-        _ = ResourceManager.DefaultPool.LoadAssets(project, Model.GetLoadList(project), options);
+            _ = ResourceManager.DefaultPool.LoadAssets(project, model.GetLoadList(project), options);
 
-        // The renderable appears once the resource is loaded
-        Mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
-            ResourceManager.DefaultPool.Find<FlverResource>(descriptor.Name), ModelMarkerType.None, $"Cutscene_{Name}", null);
+            // The renderable appears once the resource is loaded
+            return MeshRenderableProxy.MeshRenderableFromFlverResource(scene,
+                ResourceManager.DefaultPool.Find<FlverResource>(descriptor.Name), ModelMarkerType.None,
+                $"Cutscene_{modelName}_{System.Threading.Interlocked.Increment(ref MeshSerial)}", masks);
+        }
+
+        // Pooled by model and masks: a mesh's masks are set when it is made
+        Pool = pool;
+        Mesh = pool != null ? pool.Take(masks != null ? $"{modelName}|{string.Concat(masks)}" : modelName, Create) : Create();
         Mesh.Visible = false;
 
-        var containerPath = Model.FindContainerPath(project);
-        var game = project.Descriptor.ProjectType;
-        var fs = project.VFS.FS;
-        var modelName = Model.ModelName;
+        Task<ModelRig?> ReadRig()
+        {
+            var containerPath = model.FindContainerPath(project);
+            var game = project.Descriptor.ProjectType;
+            var fs = project.VFS.FS;
 
-        RigTask = containerPath == null
-            ? Task.FromResult<ModelRig?>(null)
-            : Task.Run(() => fs.ReadFile(containerPath) is { } data ? ModelRig.Read(game, data, modelName) : null);
+            return containerPath == null
+                ? Task.FromResult<ModelRig?>(null)
+                : Task.Run(() => fs.ReadFile(containerPath) is { } data ? ModelRig.Read(game, data, modelName) : null);
+        }
+
+        RigTask = pool != null ? pool.Rig(modelName, ReadRig) : ReadRig();
+
+        // A c0000 NPC wears its own equipment: its map part's CharaInit row (a bare body without one)
+        if (IsComposite && Cast != null)
+        {
+            try
+            {
+                Dress(CharacterComposition.Resolve(project, Cast.CharaInitId));
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("CUTSCENE_Actor_Look_Failed", Name, Cast.CharaInitId), e);
+            }
+        }
     }
 
     private void Fail(string status)
@@ -144,6 +222,7 @@ public sealed class CutsceneActor : IDisposable
             else
             {
                 Animator = new ModelAnimator(CutsceneSkeletonPose.WithoutActorPrefix(Skeleton), rig);
+                LeaderRig = rig;
                 if (Clip != null)
                     Animator.Play(Clip);
                 Mesh.Animator = Animator;
@@ -156,7 +235,10 @@ public sealed class CutsceneActor : IDisposable
             Mesh.Visible = visible;
 
         if (!visible || Animator == null)
+        {
+            PlayerParts?.Update(Animator, LeaderRig, cutRoot, false);
             return;
+        }
 
         if (Mesh.World != cutRoot)
             Mesh.World = cutRoot;
@@ -167,6 +249,9 @@ public sealed class CutsceneActor : IDisposable
             if (Animator.Update(0) && Animator.HasBoneFollowingMeshes)
                 Mesh.Animator = Animator;
         }
+
+        // The player's parts take on the pose just set
+        PlayerParts?.Update(Animator, LeaderRig, cutRoot, true);
     }
 
     /// <summary>Where the actor's root is, for drawing it as a marker.</summary>
@@ -179,11 +264,21 @@ public sealed class CutsceneActor : IDisposable
 
     public void Dispose()
     {
+        // Before the animator they follow goes
+        PlayerParts?.Dispose();
+        PlayerParts = null;
+
         if (Mesh != null)
         {
-            Mesh.Animator = null;
-            Mesh.Dispose();
+            // A pooled mesh stays loaded for the next cut; one of this cut alone goes, and its model with it
+            if (Pool?.Return(Mesh) != true)
+            {
+                Mesh.Animator = null;
+                Mesh.Dispose();
+            }
+
             Mesh = null;
+            Pool = null;
         }
 
         Animator?.Dispose();

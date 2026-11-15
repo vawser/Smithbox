@@ -1,5 +1,6 @@
 #nullable enable
 using SoulsFormats;
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
@@ -90,11 +91,53 @@ public sealed class CutsceneScene : IDisposable
     }
 
     /// <summary>Reads the cut: safe to call on a worker thread. Models start loading in <see cref="StartLoads" />.</summary>
-    public static CutsceneScene Prepare(ProjectEntry project, CutsceneFile file, int cutIndex)
+    /// <param name="shownMap">The map behind the cutscene, looked in first for the actors' map parts</param>
+    public static CutsceneScene Prepare(ProjectEntry project, CutsceneFile file, int cutIndex, string? shownMap = null)
     {
         var scene = new CutsceneScene(file, cutIndex);
         scene.Read(project);
+        scene.FindCast(project, shownMap);
         return scene;
+    }
+
+    /// <summary>
+    /// The map part each character actor stands for (<see cref="CutsceneCast" />): its NpcParam masks, and for a
+    /// c0000 NPC its CharaInit look. Reads the MSBs of the cutscene's area once per session.
+    /// </summary>
+    private void FindCast(ProjectEntry project, string? shownMap)
+    {
+        if (!Actors.Any(a => a.Model?.Kind == CutsceneModelKind.Character))
+            return;
+
+        try
+        {
+            var maps = CutsceneCast.CandidateMaps(project, File.Name, shownMap);
+            foreach (var actor in Actors.Where(a => a.Model?.Kind == CutsceneModelKind.Character))
+                actor.Cast = CutsceneCast.Find(project, maps, actor.Name);
+        }
+        catch (Exception ex)
+        {
+            Problems.Add(LOC.Get("CUTSCENE_Problem_Cast", ex.Message));
+        }
+    }
+
+    private static Dictionary<string, HavokSceneTrack> ReadTracks(ProjectEntry project, byte[] bytes)
+    {
+        var byName = new Dictionary<string, HavokSceneTrack>(StringComparer.OrdinalIgnoreCase);
+        foreach (var track in HavokAnimationReader.ReadScene(project.Descriptor.ProjectType, bytes, null))
+            byName.TryAdd(track.Skeleton.Name, track);
+        return byName;
+    }
+
+    /// <summary>The file's <see cref="CutsceneFile.KeysVersion" /> the cameras' keys were taken at</summary>
+    public int KeysVersionRead { get; private set; }
+
+    /// <summary>Gives each camera its keys from the file's key store again, after they were edited</summary>
+    public void RefreshKeys()
+    {
+        KeysVersionRead = File.KeysVersion;
+        foreach (var camera in Cameras)
+            camera.Keys = File.CameraKeys.Cameras.GetValueOrDefault(camera.KeyId);
     }
 
     /// <summary>The file's <see cref="CutsceneFile.HavokVersion" /> the cameras were read at</summary>
@@ -170,8 +213,10 @@ public sealed class CutsceneScene : IDisposable
             }
         }
 
-        // The skeletons and clips of each HKT, read once
+        // The skeletons and clips of each HKT, read once, and of the game's own file where it differs (camera keys
+        // apply to the game's cameras)
         var tracks = new Dictionary<int, Dictionary<string, HavokSceneTrack>>();
+        var baseTracks = new Dictionary<int, Dictionary<string, HavokSceneTrack>>();
         foreach (var hktIndex in Placements.Keys)
         {
             var hkt = resources[hktIndex];
@@ -184,10 +229,14 @@ public sealed class CutsceneScene : IDisposable
 
             try
             {
-                var byName = new Dictionary<string, HavokSceneTrack>(StringComparer.OrdinalIgnoreCase);
-                foreach (var track in HavokAnimationReader.ReadScene(project.Descriptor.ProjectType, bytes, null))
-                    byName.TryAdd(track.Skeleton.Name, track);
+                var byName = ReadTracks(project, bytes);
                 tracks[hktIndex] = byName;
+
+                // Only the cameras' tracks are needed from the game's file
+                var baseBytes = File.GetBaseHavokFile(project, hkt);
+                baseTracks[hktIndex] = baseBytes == null || baseBytes.AsSpan().SequenceEqual(bytes)
+                    ? byName
+                    : ReadTracks(project, baseBytes);
             }
             catch (Exception ex)
             {
@@ -243,10 +292,22 @@ public sealed class CutsceneScene : IDisposable
             camera.ReadEventParameters();
             if (track == null)
                 Problems.Add(LOC.Get("CUTSCENE_Problem_No_Skeleton", camera.Name));
+
+            var parent = camera.Resource.ParentIndex;
+            if (parent >= 0 && parent < resources.Count)
+            {
+                camera.KeyId = CutsceneFile.KeyIdOf(resources[parent], camera.Name);
+                if (baseTracks.TryGetValue(parent, out var byName) && byName.TryGetValue(camera.Name, out var baseTrack))
+                {
+                    camera.BaseSkeleton = baseTrack.Skeleton;
+                    camera.BaseClip = baseTrack.Clip;
+                }
+            }
         }
 
         Actors = actors.Values.OrderBy(a => a.Name, StringComparer.OrdinalIgnoreCase).ToList();
         Cameras = cameras.Values.OrderBy(c => c.Events.Count > 0 ? c.Events.Min(e => e.StartFrame) : 0).ToList();
+        RefreshKeys();
     }
 
     /// <summary>
@@ -275,14 +336,33 @@ public sealed class CutsceneScene : IDisposable
         }
     }
 
-    /// <summary>Starts loading the actors' models. Call on the main thread.</summary>
-    public void StartLoads(ProjectEntry project, RenderScene? renderScene)
+    /// <summary>
+    /// Starts loading the actors' models, taking the ones earlier cuts of the cutscene loaded from the pool. Call on
+    /// the main thread.
+    /// </summary>
+    public void StartLoads(ProjectEntry project, RenderScene? renderScene, CutsceneModelPool? pool = null,
+        CharacterAppearance? playerAppearance = null)
     {
         if (!CFG.Current.CutsceneEditor_Load_Models)
             return;
 
         foreach (var actor in Actors)
-            actor.StartLoad(project, renderScene);
+            actor.StartLoad(project, renderScene, pool);
+
+        DressPlayers(playerAppearance);
+    }
+
+    /// <summary>
+    /// Puts the cut's player (c0000 with no map part) in an appearance: the Character Preview tool's choice. c0000
+    /// NPCs keep their own look, from their part's CharaInit.
+    /// </summary>
+    public void DressPlayers(CharacterAppearance? appearance)
+    {
+        foreach (var actor in Actors)
+        {
+            if (actor.IsPlayer)
+                actor.Dress(appearance);
+        }
     }
 
     /// <summary>The placement of an actor's or camera's HKT at a frame.</summary>
@@ -326,7 +406,10 @@ public sealed class CutsceneScene : IDisposable
             var root = a.RootWorld(0, RootOf(a.Resource, 0)).Translation;
             sb.AppendLine($"  actor {a.Name}: model={a.Model?.ModelName ?? "none"} bones={a.Skeleton?.BoneCount ?? 0} clip={a.Clip?.GetType().Name ?? "none"} " +
                           $"root@0={root} events={string.Join(",", a.Events.Select(e => $"{e.StartFrame}+{e.Duration}"))} state={a.State} " +
-                          $"mappedNodes={a.MappedNodeCount}/{a.ModelNodeCount} {a.Status}");
+                          $"mappedNodes={a.MappedNodeCount}/{a.ModelNodeCount} {a.Status}" +
+                          (a.Cast is { } cast ? $" part={cast.Map}:{cast.PartName} npc={cast.NpcParamId} charaInit={cast.CharaInitId}" : "") +
+                          (a.IsPlayer ? " (player)" : "") +
+                          (a.PlayerParts != null ? $" parts={a.PlayerParts.PartCount}" : ""));
         }
 
         foreach (var problem in Problems)

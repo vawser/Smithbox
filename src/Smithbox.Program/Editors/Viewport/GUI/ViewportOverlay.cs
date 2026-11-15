@@ -136,6 +136,12 @@ public class ViewportOverlay
             }
         }
 
+        // Cutscene Editor: the subtitles covering the playhead, at the bottom centre
+        if (Parent.Owner is CutsceneEditor.CutsceneUniverse cutsceneUniverse)
+        {
+            cutsceneUniverse.Editor.Subtitles.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height);
+        }
+
         // Profiling
         if (CFG.Current.Viewport_Display_Profiling)
         {

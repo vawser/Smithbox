@@ -94,6 +94,15 @@ public sealed class ModelAnimator : IDisposable
     {
     }
 
+    /// <summary>
+    ///     A part of a character that follows the character's animator, whatever plays it (a cutscene actor's animator
+    ///     has no package). Call <see cref="Follow" /> after each pose of the leader.
+    /// </summary>
+    public ModelAnimator(ModelRig rig, ModelAnimator leader)
+        : this(leader.Package, null!, null, rig, leader)
+    {
+    }
+
     private ModelAnimator(AnimationPackage? package, HavokSkeletonData skeleton, HavokSkeletonData? retarget,
         ModelRig rig, ModelAnimator? leader)
     {
