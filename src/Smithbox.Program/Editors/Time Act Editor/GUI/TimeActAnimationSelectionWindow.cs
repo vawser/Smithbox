@@ -650,8 +650,10 @@ public class TimeActAnimationSelectionWindow
 
         ImGui.SetNextItemWidth(200);
 
-        var entered = ImGui.InputText("##changeAnimationIDInput", ref ChangeIDText, 32,
-            ImGuiInputTextFlags.EnterReturnsTrue | ImGuiInputTextFlags.CharsDecimal);
+        ImGui.InputText("##changeAnimationIDInput", ref ChangeIDText, 32, ImGuiInputTextFlags.CharsDecimal);
+
+        // Leaving the field after an edit applies it, unless the click that left it was on Cancel (checked below)
+        var entered = GUI.InputCommitted();
 
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Change_ID_Input_TT"));
 
@@ -669,8 +671,9 @@ public class TimeActAnimationSelectionWindow
                 source.FormatAnimationName(entry.GetFullAnimationID(newID, source.AnimationCategorySize))));
         }
 
-        var confirmed = entered && error == null;
         var cancelled = ImGui.IsKeyPressed(ImGuiKey.Escape, false);
+
+        var confirmed = false;
 
         ImGui.BeginDisabled(error != null || unchanged);
 
@@ -688,6 +691,13 @@ public class TimeActAnimationSelectionWindow
         {
             cancelled = true;
         }
+
+        // The click that left the field was on Cancel: don't apply
+        if (ImGui.IsItemActive())
+            entered = false;
+
+        if (entered && error == null && !cancelled)
+            confirmed = true;
 
         if (confirmed && !unchanged)
         {

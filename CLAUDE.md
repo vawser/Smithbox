@@ -6,6 +6,12 @@ It provides a database-like model for editing game data, and 3D editors for maps
 Do not delete files or folders. Instead move them to the .archive folder.
 Do not create or force-push git commits.
 
+# UI
+Do not use ImGuiInputTextFlags.EnterReturnsTrue: it confuses users, since an edit is lost when they click away instead of pressing Enter.
+Apply a text field when it is deactivated instead: call GUI.InputCommitted() right after the InputText (true when the field is left after an edit, by Enter, Tab or a click, but not by Escape).
+Beside a Cancel button, check ImGui.IsItemActive() right after drawing Cancel and skip the commit if true (the click that left the field was on Cancel).
+In a dialog with several inputs, don't apply the dialog on a field's deactivation (moving to the next field would apply it): use the Apply button only.
+
 # Game Data
 The game data locations are found in the game_data.txt file.
 For ER, use the VFS functionality from Smithbox to access the files.

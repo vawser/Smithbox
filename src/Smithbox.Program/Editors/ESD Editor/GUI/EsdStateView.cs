@@ -604,7 +604,10 @@ public class EsdStateView
         ImGui.SetNextItemWidth(520f * DPI.UIScale());
         if (ImGui.IsWindowAppearing())
             ImGui.SetKeyboardFocusHere();
-        var enter = ImGui.InputText("##esdExprText", ref TextValue, 4096, ImGuiInputTextFlags.EnterReturnsTrue);
+        ImGui.InputText("##esdExprText", ref TextValue, 4096);
+
+        // Leaving the field after an edit applies it, unless the click that left it was on a suggestion (below)
+        var committed = GUI.InputCommitted();
 
         // Live check: the error and where, or what it compiles to
         var bytes = EsdExprText.Recompile(old, TextValue, cat, out var error);
@@ -641,6 +644,8 @@ public class EsdStateView
                 {
                     if (ImGui.Selectable($"{f.Name}({string.Join(", ", f.Args.Select(a => a.Name))})##esdTextFn{f.Id}", false, ImGuiSelectableFlags.NoAutoClosePopups))
                         TextValue = TextValue[..start] + f.Name + "(";
+                    if (ImGui.IsItemActive())
+                        committed = false;
                     if (ImGui.IsItemHovered() && !string.IsNullOrEmpty(f.Comment))
                         GUI.Tooltip(f.Comment);
                 }
@@ -649,7 +654,7 @@ public class EsdStateView
 
         ImGui.TextDisabled(LOC.Get("ESD_Text_Hint"));
 
-        if (enter && bytes != null)
+        if (committed && bytes != null)
         {
             if (TextCommand != null)
                 View.Commands.SetArgument(TextCommand, TextArg, bytes);
@@ -708,11 +713,17 @@ public class EsdStateView
 
         // An enum arg: its values to pick from
         var e = EditArgDef?.Enum != null ? cat?.FindEnum(EditArgDef.Enum) : null;
+        var comboClicked = false;
         if (e != null && EditNode.Kind == EsdExprKind.Int)
         {
             ImGui.SetNextItemWidth(220f * DPI.UIScale());
             var current = e.ValueName(EditNode.IntValue) ?? EditNode.IntValue.ToString();
-            if (ImGui.BeginCombo("##esdEnumValue", current))
+            var comboOpen = ImGui.BeginCombo("##esdEnumValue", current);
+
+            // Opening the combo leaves the text field: pick from the combo rather than apply the typed text
+            comboClicked = ImGui.IsItemActive();
+
+            if (comboOpen)
             {
                 foreach (var (value, name) in e.Values.OrderBy(v => v.Key))
                 {
@@ -730,7 +741,10 @@ public class EsdStateView
         if (ImGui.IsWindowAppearing())
             ImGui.SetKeyboardFocusHere();
 
-        if (ImGui.InputText("##esdLiteralText", ref EditText, 256, ImGuiInputTextFlags.EnterReturnsTrue))
+        ImGui.InputText("##esdLiteralText", ref EditText, 256);
+
+        // Leaving the field after an edit applies it
+        if (GUI.InputCommitted() && !comboClicked)
         {
             var ok = EditNode.Kind switch
             {

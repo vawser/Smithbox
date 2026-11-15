@@ -148,7 +148,8 @@ public class EsdSearchTool
         GUI.SimpleHeader(LOC.Get("ESD_SearchTool_Value_Header"), LOC.Get("ESD_SearchTool_Value_Header_TT"));
 
         ImGui.SetNextItemWidth(-1);
-        var enter = ImGui.InputText("##esdSearchValue", ref ValueText, 32, ImGuiInputTextFlags.EnterReturnsTrue);
+        // The search starts with the Search button, so the options below can be set after typing the value
+        ImGui.InputText("##esdSearchValue", ref ValueText, 32);
 
         ImGui.Checkbox($"{LOC.Get("ESD_SearchTool_Flags_Only")}##esdSearchFlags", ref FlagsOnly);
         GUI.Tooltip(LOC.Get("ESD_SearchTool_Flags_Only_TT"));
@@ -158,7 +159,7 @@ public class EsdSearchTool
 
         var parsed = long.TryParse(ValueText.Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out var value);
         ImGui.BeginDisabled(!parsed || Pending != null);
-        if (ImGui.Button($"{LOC.Get("ESD_SearchTool_Search")}##esdSearchGo", new Vector2(-1, 0)) || enter && parsed)
+        if (ImGui.Button($"{LOC.Get("ESD_SearchTool_Search")}##esdSearchGo", new Vector2(-1, 0)))
             Start(value);
         ImGui.EndDisabled();
 

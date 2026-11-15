@@ -178,14 +178,18 @@ public class EsdFileList
         ImGui.SetNextItemWidth(260f * DPI.UIScale());
         if (ImGui.IsWindowAppearing())
             ImGui.SetKeyboardFocusHere();
-        var enter = ImGui.InputText("##esdNameText", ref NameText, 64, ImGuiInputTextFlags.EnterReturnsTrue);
+        ImGui.InputText("##esdNameText", ref NameText, 64);
+
+        // Leaving the field after an edit applies it, unless the click that left it was on Cancel (checked below).
+        // A new binder has two names, so it applies with its button only: moving to the second field mustn't apply.
+        var committed = Mode != NameMode.NewBinder && GUI.InputCommitted();
 
         // A new binder also names its first ESD
         if (Mode == NameMode.NewBinder)
         {
             ImGui.TextDisabled(LOC.Get("ESD_File_New_Binder_First"));
             ImGui.SetNextItemWidth(260f * DPI.UIScale());
-            enter |= ImGui.InputText("##esdNameText2", ref NameText2, 64, ImGuiInputTextFlags.EnterReturnsTrue);
+            ImGui.InputText("##esdNameText2", ref NameText2, 64);
         }
 
         var name = NameText.Trim();
@@ -228,7 +232,18 @@ public class EsdFileList
         };
 
         ImGui.BeginDisabled(refusal != null);
-        if (ImGui.Button($"{label}##esdNameGo") || enter && refusal == null)
+        var go = ImGui.Button($"{label}##esdNameGo");
+        ImGui.EndDisabled();
+
+        ImGui.SameLine();
+        var cancel = ImGui.Button($"{LOC.Get("ESD_File_Cancel")}##esdNameCancel");
+        var cancelClicked = ImGui.IsItemActive();
+
+        if (cancel)
+        {
+            ImGui.CloseCurrentPopup();
+        }
+        else if (go || committed && refusal == null && !cancelClicked)
         {
             switch (Mode)
             {
@@ -240,11 +255,6 @@ public class EsdFileList
             }
             ImGui.CloseCurrentPopup();
         }
-        ImGui.EndDisabled();
-
-        ImGui.SameLine();
-        if (ImGui.Button($"{LOC.Get("ESD_File_Cancel")}##esdNameCancel"))
-            ImGui.CloseCurrentPopup();
 
         ImGui.EndPopup();
     }

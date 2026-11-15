@@ -20,12 +20,17 @@ public class EmevdEventList
     private int CachedRevision = -1;
     private string CachedFilter;
     private bool CachedExact;
+    private int CachedAliasVersion = -1;
     private List<EMEVD.Event> Visible = new();
+
+    private readonly EmevdAliasMenu AliasMenu = new();
 
     public EmevdEventList(EmevdEditorView view)
     {
         View = view;
     }
+
+    private EmevdAliases Aliases => View.Project.Handler.EmevdData?.Aliases;
 
     public void Draw()
     {
@@ -65,17 +70,23 @@ public class EmevdEventList
 
     private void Refresh(EmevdFileWrapper file)
     {
-        // Adding, removing or renumbering an event is an edit, so the revision catches it
-        if (file == CachedFile && file.Revision == CachedRevision && Filter == CachedFilter && ExactFilter == CachedExact)
+        // Adding, removing or renumbering an event is an edit, so the revision catches it; an alias change bumps the
+        // aliases' version
+        var aliases = Aliases;
+        var aliasVersion = aliases?.Version ?? 0;
+
+        if (file == CachedFile && file.Revision == CachedRevision && Filter == CachedFilter && ExactFilter == CachedExact
+            && aliasVersion == CachedAliasVersion)
             return;
 
         CachedFile = file;
         CachedRevision = file.Revision;
         CachedFilter = Filter;
         CachedExact = ExactFilter;
+        CachedAliasVersion = aliasVersion;
 
         Visible = file.Emevd.Events
-            .Where(e => EditorFilters.IsMatch(Filter, e.ID.ToString(), ExactFilter, e.Name ?? ""))
+            .Where(e => EditorFilters.IsMatch(Filter, e.ID.ToString(), ExactFilter, DisplayName(file, e)))
             .ToList();
     }
 
@@ -110,14 +121,16 @@ public class EmevdEventList
                 {
                     selection.SelectEvent(ev);
                     View.EventCommands.MenuItems();
+                    DrawAliasMenu(file, ev);
                     ImGui.EndPopup();
                 }
 
                 ImGui.SameLine();
 
-                if (!string.IsNullOrEmpty(ev.Name))
+                var name = DisplayName(file, ev);
+                if (!string.IsNullOrEmpty(name))
                 {
-                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, ev.Name);
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                     ImGui.SameLine();
                 }
 
@@ -126,5 +139,31 @@ public class EmevdEventList
         }
 
         clipper.End();
+    }
+
+    /// <summary>The event's alias, else its .emeld name, else empty</summary>
+    private string DisplayName(EmevdFileWrapper file, EMEVD.Event ev)
+    {
+        return Aliases?.EventDisplayName(file, ev) ?? ev.Name ?? "";
+    }
+
+    private void DrawAliasMenu(EmevdFileWrapper file, EMEVD.Event ev)
+    {
+        var aliases = Aliases;
+        if (aliases == null)
+            return;
+
+        ImGui.Separator();
+
+        // The field starts from the alias, or from the .emeld name so it can be adjusted rather than retyped
+        var alias = aliases.EventAlias(file, ev);
+        var current = !string.IsNullOrEmpty(alias) ? alias : ev.Name ?? "";
+        var hint = !string.IsNullOrEmpty(ev.Name) ? LOC.Get("EMEVD_Alias_Emeld_Name", ev.Name) : null;
+
+        if (AliasMenu.Draw("emevdEventAlias", current, LOC.Get("EMEVD_Alias_Menu_Event_TT"), hint, out var name))
+        {
+            aliases.SetEventAlias(file, ev, name);
+            ImGui.CloseCurrentPopup();
+        }
     }
 }

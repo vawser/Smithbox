@@ -311,6 +311,16 @@
     { "Key": "EMEVD_EventList_Not_Loaded", "Text": "The file could not be read." },
     { "Key": "EMEVD_EventList_Event_Info", "Text": "({0})" },
 
+    { "Key": "EMEVD_Alias_Menu", "Text": "Alias" },
+    { "Key": "EMEVD_Alias_Menu_File_TT", "Text": "Sets this file's alias, stored with the project's Map Names aliases. Leave the name empty and confirm to remove it." },
+    { "Key": "EMEVD_Alias_Menu_Event_TT", "Text": "Sets this event's alias, stored with the project's Events aliases as file:id. An alias is shown in place of the event's .emeld name. Leave the name empty and confirm to remove it." },
+    { "Key": "EMEVD_Alias_Name", "Text": "Name" },
+    { "Key": "EMEVD_Alias_Emeld_Name", "Text": ".emeld name: {0}" },
+    { "Key": "EMEVD_Alias_Confirm", "Text": "Confirm" },
+    { "Key": "EMEVD_Alias_Confirm_TT", "Text": "Saves the alias to the project's alias folder. Leaving the name field after an edit (Enter, or clicking elsewhere) saves too; Escape discards the edit." },
+    { "Key": "EMEVD_Alias_Removed", "Text": "(removed)" },
+    { "Key": "EMEVD_Alias_Log_Updated", "Text": "Alias {0}: {1}" },
+
     { "Key": "EMEVD_Script_Header", "Text": "Script" },
     { "Key": "EMEVD_Script_Header_TT", "Text": "The selected event as blocks, one per instruction.\nClick a value to edit it or link it to an event parameter. Drag a block to move it (a C-block moves with its body), or right-click it to copy, paste, duplicate, move or delete; Alt+Up/Down moves it, Ctrl+Z undoes, and Ctrl+S saves.\nCtrl+click adds or removes a block from the selection, Shift+click or Shift+Up/Down selects a range, and Ctrl+A selects the whole event; block edits and drags then act on every selected block.\nBlue hexagons are conditions, orange blocks control flow, red blocks end the event, purple blocks start other events, and the other colours are commands by class.\nA skip or goto that wraps whole blocks is a C-block holding the lines it jumps over (they run only when it doesn't jump), with an Else part when the body ends by jumping past one. A jump to the end of an enclosing block is marked as an exit. A run of gotos to labels that don't nest is a switch: its other gotos, a Default part for when none jump, then one Case per label. Click a block's caret (or press Left/Right) to collapse or expand it. Conditions sit just above the wait, skip, end or goto that evaluates them, joined by a strip.\nJumps that don't nest keep a bracket on the left: skips orange, gotos blue, red when they run past the end of the event or miss their label.\nYellow pills are event parameters: the value comes from the arguments the event is started with.\nUp/Down moves the selection, Enter or a double-click follows an Initialize Event, and Backspace goes back." },
     { "Key": "EMEVD_Script_No_Event", "Text": "Select an event." },

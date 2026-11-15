@@ -798,22 +798,26 @@ public class FxEffectTree
             ImGui.SetNextItemWidth(300 * DPI.UIScale());
             if (ImGui.IsWindowAppearing())
                 ImGui.SetKeyboardFocusHere();
-            bool enter = ImGui.InputText("##fxTemplateName", ref PopupText, 128, ImGuiInputTextFlags.EnterReturnsTrue);
+            ImGui.InputText("##fxTemplateName", ref PopupText, 128);
+
+            // Leaving the field after an edit saves, unless the click that left it was on Cancel (checked below)
+            bool committed = GUI.InputCommitted();
 
             var clean = FxTemplates.Clean(PopupText ?? "");
             if (clean != null && Templates.Exists(clean))
                 ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("FX_EffectTree_Template_Exists"));
 
             ImGui.BeginDisabled(clean == null);
-            if ((ImGui.Button(LOC.Get("FX_EffectTree_Save")) || enter && clean != null) && PopupNode != null)
-            {
-                Templates.Save(clean, entry, PopupNode);
-                ImGui.CloseCurrentPopup();
-            }
+            bool save = ImGui.Button(LOC.Get("FX_EffectTree_Save"));
             ImGui.EndDisabled();
             ImGui.SameLine();
             if (ImGui.Button(LOC.Get("FX_EffectTree_Cancel")))
                 ImGui.CloseCurrentPopup();
+            else if ((save || committed && clean != null && !ImGui.IsItemActive()) && PopupNode != null)
+            {
+                Templates.Save(clean, entry, PopupNode);
+                ImGui.CloseCurrentPopup();
+            }
             ImGui.EndPopup();
         }
 

@@ -12,9 +12,13 @@ public class EmevdData : IDisposable
 
     public EmevdBank PrimaryBank;
 
+    /// <summary>The file (Map Names) and event aliases the editor shows and edits</summary>
+    public EmevdAliases Aliases;
+
     public EmevdData(ProjectEntry project)
     {
         Project = project;
+        Aliases = new EmevdAliases(project);
     }
 
     public async Task<bool> Setup()

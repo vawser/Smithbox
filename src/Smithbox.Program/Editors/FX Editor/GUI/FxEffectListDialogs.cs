@@ -417,14 +417,18 @@ public partial class FxEffectList
         ImGui.SetNextItemWidth(400 * DPI.UIScale());
         if (ImGui.IsWindowAppearing())
             ImGui.SetKeyboardFocusHere();
-        bool enter = ImGui.InputText("##fxAliasText", ref AliasText, 255, ImGuiInputTextFlags.EnterReturnsTrue);
+        ImGui.InputText("##fxAliasText", ref AliasText, 255);
 
-        if (ImGui.Button($"{LOC.Get("FX_EffectList_Alias_Save")}##fxAliasSave") || enter)
+        // Leaving the field after an edit saves, unless the click that left it was on Cancel
+        bool committed = GUI.InputCommitted();
+
+        bool save = ImGui.Button($"{LOC.Get("FX_EffectList_Alias_Save")}##fxAliasSave");
+
+        if (!CancelButton() && (save || committed && !ImGui.IsItemActive()))
         {
             SetAlias(AliasEntry, AliasText.Trim());
             ImGui.CloseCurrentPopup();
         }
-        CancelButton();
         ImGui.EndPopup();
     }
 

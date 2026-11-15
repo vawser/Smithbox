@@ -405,7 +405,10 @@ public class CutsceneListView
         ImGui.SetNextItemWidth(260f * DPI.UIScale());
         if (ImGui.IsWindowAppearing())
             ImGui.SetKeyboardFocusHere();
-        var enter = ImGui.InputText("##cutsceneNameText", ref NameText, 64, ImGuiInputTextFlags.EnterReturnsTrue);
+        ImGui.InputText("##cutsceneNameText", ref NameText, 64);
+
+        // Leaving the field after an edit applies it, unless the click that left it was on Cancel (checked below)
+        var committed = GUI.InputCommitted();
 
         var name = NameText.Trim();
         var refusal = Mode switch
@@ -429,16 +432,17 @@ public class CutsceneListView
         };
 
         ImGui.BeginDisabled(refusal != null);
-        if (ImGui.Button($"{label}##cutsceneNameGo") || enter && refusal == null)
-        {
-            Apply(file, NameCut, name);
-            ImGui.CloseCurrentPopup();
-        }
+        var go = ImGui.Button($"{label}##cutsceneNameGo");
         ImGui.EndDisabled();
 
         ImGui.SameLine();
         if (ImGui.Button($"{LOC.Get("CUTSCENE_Name_Cancel")}##cutsceneNameCancel"))
             ImGui.CloseCurrentPopup();
+        else if (go || committed && refusal == null && !ImGui.IsItemActive())
+        {
+            Apply(file, NameCut, name);
+            ImGui.CloseCurrentPopup();
+        }
 
         ImGui.EndPopup();
     }

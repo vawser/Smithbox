@@ -23,6 +23,10 @@ public class EmevdFileList
 
     private EmevdBank Bank => View.Project.Handler.EmevdData?.PrimaryBank;
 
+    private EmevdAliases Aliases => View.Project.Handler.EmevdData?.Aliases;
+
+    private readonly EmevdAliasMenu AliasMenu = new();
+
     public void Draw()
     {
         GUI.TitleHeader(LOC.Get("EMEVD_FileList_Header"), LOC.Get("EMEVD_FileList_Header_TT"));
@@ -39,9 +43,11 @@ public class EmevdFileList
             if (bank.Files.Count == 0)
                 ImGui.TextDisabled(LOC.Get("EMEVD_FileList_No_Files"));
 
+            var aliases = Aliases;
+
             foreach (var file in bank.Files)
             {
-                if (!EditorFilters.IsMatch(Filter, file.Name, ExactFilter))
+                if (!EditorFilters.IsMatch(Filter, file.Name, ExactFilter, aliases?.FileAlias(file) ?? ""))
                     continue;
 
                 DrawFile(file);
@@ -62,10 +68,30 @@ public class EmevdFileList
             View.Selection.SelectFile(file);
         }
 
+        var alias = Aliases?.FileAlias(file) ?? "";
+
+        // Right-click: the file's alias
+        if (Aliases != null && ImGui.BeginPopupContextItem($"##emevdFileMenu_{file.Name}"))
+        {
+            if (AliasMenu.Draw("emevdFileAlias", alias, LOC.Get("EMEVD_Alias_Menu_File_TT"), null, out var name))
+            {
+                Aliases.SetFileAlias(file, name);
+                ImGui.CloseCurrentPopup();
+            }
+
+            ImGui.EndPopup();
+        }
+
         if (selected && ScrollToSelection)
         {
             ImGui.SetScrollHereY();
             ScrollToSelection = false;
+        }
+
+        if (!string.IsNullOrEmpty(alias))
+        {
+            ImGui.SameLine();
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
         }
 
         if (file.LoadError != null)

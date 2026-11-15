@@ -297,6 +297,18 @@ public static class GUI
         }
     }
 
+    /// <summary>
+    /// Call right after an InputText: true on the frame the field is left after its text was edited, whether by
+    /// Enter, Tab or a click elsewhere, but not by Escape (which reverts the text). Use this to apply a text field
+    /// instead of ImGuiInputTextFlags.EnterReturnsTrue, which loses the edit when the user clicks away.
+    /// When the field sits beside a Cancel button, also check <see cref="ImGui.IsItemActive"/> right after drawing
+    /// that button: the click that left the field may have been on it.
+    /// </summary>
+    public static bool InputCommitted()
+    {
+        return ImGui.IsItemDeactivatedAfterEdit() && !ImGui.IsKeyPressed(ImGuiKey.Escape, false);
+    }
+
     public static void Tooltip(string desc)
     {
         if (ImGui.IsItemHovered())

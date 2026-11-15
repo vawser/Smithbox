@@ -23,14 +23,14 @@ public class EsdInput
         var shown = ActiveId == imId ? ActiveText : current;
 
         ImGui.SetNextItemWidth(width);
-        var enter = ImGui.InputText(id, ref shown, 4096, flags | ImGuiInputTextFlags.EnterReturnsTrue);
+        ImGui.InputText(id, ref shown, 4096, flags);
         if (ImGui.IsItemActive())
         {
             ActiveId = imId;
             ActiveText = shown;
         }
 
-        if (!(enter || ImGui.IsItemDeactivatedAfterEdit()) || ActiveId != imId)
+        if (!GUI.InputCommitted() || ActiveId != imId)
             return false;
 
         ActiveId = 0;
@@ -107,8 +107,9 @@ public class EsdInput
 
         ImGui.SetNextItemWidth(width);
         Current = this;
-        var flags = ImGuiInputTextFlags.EnterReturnsTrue | ImGuiInputTextFlags.CallbackAlways | ImGuiInputTextFlags.CallbackCompletion | ImGuiInputTextFlags.CallbackHistory;
-        var enter = ImGui.InputText(id, ref shown, 4096, flags, CallbackDelegate);
+        var flags = ImGuiInputTextFlags.CallbackAlways | ImGuiInputTextFlags.CallbackCompletion | ImGuiInputTextFlags.CallbackHistory;
+        ImGui.InputText(id, ref shown, 4096, flags, CallbackDelegate);
+        var committed = GUI.InputCommitted();
         Current = null;
 
         if (ImGui.IsItemActive())
@@ -122,7 +123,7 @@ public class EsdInput
             ActiveText = shown;
         }
 
-        if (!(enter || ImGui.IsItemDeactivatedAfterEdit()) || ActiveId != imId)
+        if (!committed || ActiveId != imId)
             return false;
 
         ActiveId = 0;

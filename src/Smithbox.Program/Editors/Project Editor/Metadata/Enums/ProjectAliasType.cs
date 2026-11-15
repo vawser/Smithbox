@@ -38,5 +38,7 @@ public enum ProjectAliasType
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Time_Acts")]
     TimeActs,
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Animations")]
-    Animations
+    Animations,
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Events")]
+    Events
 }

@@ -116,6 +116,10 @@
     {
       "Key": "PROJECT_Enum_ProjectAliasType_Animations",
       "Text": "Animations"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Events",
+      "Text": "Events"
     }
   ]
 }

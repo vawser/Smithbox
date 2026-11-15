@@ -760,7 +760,8 @@ public class HavokBehaviorActionsView
         ImGui.Text(LOC.Get("HAVOK_BehaviorActions_State", HavokBehaviorSymbols.GetOutlineLabel(TargetState)));
 
         ImGui.SetNextItemWidth(-1);
-        var enter = ImGui.InputText("##cloneName", ref CloneName, 255, ImGuiInputTextFlags.EnterReturnsTrue);
+        // The name is applied with the dialog's Apply button
+        ImGui.InputText("##cloneName", ref CloneName, 255);
 
         ImGui.Checkbox(LOC.Get("HAVOK_BehaviorActions_Copy_Shared"), ref CloneCopyShared);
         GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Copy_Shared_TT"));
@@ -768,7 +769,7 @@ public class HavokBehaviorActionsView
         var nextId = HavokBehaviorOperations.GetFreeStateID(TargetStateMachine);
         ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_New_State_ID", nextId));
 
-        return enter;
+        return false;
     }
 
     private bool DisplayAddTransition()
@@ -886,8 +887,8 @@ public class HavokBehaviorActionsView
         var types = HavokBehaviorOperations.VariableTypeNames;
 
         ImGui.SetNextItemWidth(-1);
-        var enter = ImGui.InputTextWithHint("##variableName", LOC.Get("HAVOK_BehaviorActions_Variable_Name_Hint"), ref VariableName, 255,
-            ImGuiInputTextFlags.EnterReturnsTrue);
+        // The name is applied with the dialog's Apply button
+        ImGui.InputTextWithHint("##variableName", LOC.Get("HAVOK_BehaviorActions_Variable_Name_Hint"), ref VariableName, 255);
 
         VariableTypeIndex = Math.Clamp(VariableTypeIndex, 0, types.Count - 1);
 
@@ -917,7 +918,7 @@ public class HavokBehaviorActionsView
             ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Variable_Not_Word"));
         }
 
-        return enter;
+        return false;
     }
 
     private bool IsSelectorTarget => TargetObject?.GetType().Name == "CustomManualSelectorGenerator";
@@ -1031,8 +1032,8 @@ public class HavokBehaviorActionsView
             ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Some_Placements_Unsupported", DuplicateUnsupported));
 
         ImGui.SetNextItemWidth(-1);
-        var enter = ImGui.InputTextWithHint("##duplicateName", LOC.Get("HAVOK_BehaviorActions_Name_Hint"), ref DuplicateName, 255,
-            ImGuiInputTextFlags.EnterReturnsTrue);
+        // The names are applied with the dialog's Apply button
+        ImGui.InputTextWithHint("##duplicateName", LOC.Get("HAVOK_BehaviorActions_Name_Hint"), ref DuplicateName, 255);
 
         if (IsSelectorTarget)
         {
@@ -1051,7 +1052,7 @@ public class HavokBehaviorActionsView
         {
             ImGui.Text(LOC.Get("HAVOK_BehaviorActions_New_State_Name"));
             ImGui.SetNextItemWidth(-1);
-            enter |= ImGui.InputText("##duplicateStateName", ref DuplicateStateName, 255, ImGuiInputTextFlags.EnterReturnsTrue);
+            ImGui.InputText("##duplicateStateName", ref DuplicateStateName, 255);
 
             ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_New_State_ID", HavokBehaviorOperations.GetFreeStateID(placement.StateMachine)));
         }
@@ -1063,7 +1064,7 @@ public class HavokBehaviorActionsView
         ImGui.Checkbox(LOC.Get("HAVOK_BehaviorActions_Copy_Shared"), ref DuplicateCopyShared);
         GUI.Tooltip(LOC.Get("HAVOK_BehaviorActions_Copy_Shared_TT"));
 
-        return enter;
+        return false;
     }
 
     private void DisplayDuplicateClip(out bool canApply)
@@ -1179,12 +1180,13 @@ public class HavokBehaviorActionsView
             HavokBehaviorOperations.GetVariableTypeName(symbols, TargetVariable)));
 
         ImGui.SetNextItemWidth(-1);
-        var enter = ImGui.InputTextWithHint("##duplicateVariableName", LOC.Get("HAVOK_BehaviorActions_Variable_Name_Hint"),
-            ref DuplicateVariableName, 255, ImGuiInputTextFlags.EnterReturnsTrue);
+        // The name is applied with the dialog's Apply button
+        ImGui.InputTextWithHint("##duplicateVariableName", LOC.Get("HAVOK_BehaviorActions_Variable_Name_Hint"),
+            ref DuplicateVariableName, 255);
 
         ImGui.TextDisabled(LOC.Get("HAVOK_BehaviorActions_Duplicate_Variable_Note", symbols.VariableNames?.Count ?? 0));
 
-        return enter;
+        return false;
     }
 
     private void DisplayDeleteVariable()
