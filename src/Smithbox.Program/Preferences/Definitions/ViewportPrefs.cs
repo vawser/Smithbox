@@ -153,6 +153,121 @@ public class ViewportPrefs
 
     #endregion
 
+    #region Resource Loading
+    private static readonly (LoadMemoryBudget.Profile Profile, string Name)[] LoadMemoryProfiles =
+    {
+        (LoadMemoryBudget.Profile.Low, "PREF_Viewport_Load_Memory_Profile_Low"),
+        (LoadMemoryBudget.Profile.Balanced, "PREF_Viewport_Load_Memory_Profile_Balanced"),
+        (LoadMemoryBudget.Profile.High, "PREF_Viewport_Load_Memory_Profile_High"),
+        (LoadMemoryBudget.Profile.Unlimited, "PREF_Viewport_Load_Memory_Profile_Unlimited"),
+        (LoadMemoryBudget.Profile.Custom, "PREF_Viewport_Load_Memory_Profile_Custom"),
+    };
+
+    public static PreferenceItem Viewport_Load_Memory_Profile()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 0,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ResourceLoading,
+
+            Title = "PREF_Viewport_Load_Memory_Profile",
+            Description = "PREF_Viewport_Load_Memory_Profile_TT",
+
+            Draw = () =>
+            {
+                var current = (LoadMemoryBudget.Profile)CFG.Current.Viewport_Load_Memory_Profile;
+                var preview = LoadMemoryProfiles.FirstOrDefault(p => p.Profile == current).Name ?? "";
+
+                DPI.ApplyInputWidth();
+                if (ImGui.BeginCombo("##inputValue", LOC.Get(preview)))
+                {
+                    foreach (var (profile, name) in LoadMemoryProfiles)
+                    {
+                        if (ImGui.Selectable(LOC.Get(name), profile == current))
+                        {
+                            CFG.Current.Viewport_Load_Memory_Profile = (int)profile;
+                        }
+
+                        GUI.Tooltip(LOC.Get($"{name}_TT"));
+                    }
+
+                    ImGui.EndCombo();
+                }
+
+                // What the chosen profile comes to on this machine
+                var budget = LoadMemoryBudget.BudgetBytes;
+                var readers = LoadMemoryBudget.ContainerReaders;
+                ImGui.TextDisabled(LOC.Get("PREF_Viewport_Load_Memory_Profile_Summary",
+                    budget > 0 ? $"{budget / (1024 * 1024)} MB" : LOC.Get("PREF_Viewport_Load_Memory_No_Limit"),
+                    readers > 0 ? readers.ToString() : LOC.Get("PREF_Viewport_Load_Memory_No_Limit")));
+            }
+        };
+    }
+
+    public static PreferenceItem Viewport_Load_Memory_Budget_MB()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ResourceLoading,
+
+            Title = "PREF_Viewport_Load_Memory_Budget_MB",
+            Description = "PREF_Viewport_Load_Memory_Budget_MB_TT",
+
+            Draw = () =>
+            {
+                ImGui.BeginDisabled(CFG.Current.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
+
+                DPI.ApplyInputWidth();
+                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Load_Memory_Budget_MB, 256, 1024))
+                {
+                    CFG.Current.Viewport_Load_Memory_Budget_MB = Math.Max(0, CFG.Current.Viewport_Load_Memory_Budget_MB);
+                }
+
+                ImGui.EndDisabled();
+            }
+        };
+    }
+
+    public static PreferenceItem Viewport_Load_Container_Readers()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.Viewport,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.ResourceLoading,
+
+            Title = "PREF_Viewport_Load_Container_Readers",
+            Description = "PREF_Viewport_Load_Container_Readers_TT",
+
+            Draw = () =>
+            {
+                ImGui.BeginDisabled(CFG.Current.Viewport_Load_Memory_Profile != (int)LoadMemoryBudget.Profile.Custom);
+
+                DPI.ApplyInputWidth();
+                if (ImGui.InputInt("##inputValue", ref CFG.Current.Viewport_Load_Container_Readers, 1, 4))
+                {
+                    CFG.Current.Viewport_Load_Container_Readers = Math.Clamp(CFG.Current.Viewport_Load_Container_Readers, 0, 256);
+                }
+
+                ImGui.EndDisabled();
+            }
+        };
+    }
+
+    #endregion
+
     #region Model Rendering
     public static PreferenceItem Viewport_Enable_Model_Masks()
     {

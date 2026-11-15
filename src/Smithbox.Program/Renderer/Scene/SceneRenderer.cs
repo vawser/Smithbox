@@ -360,6 +360,26 @@ public static class SceneRenderer
             $"  Load jobs active: {ResourceManager.ActiveJobProgress.Count}";
     }
 
+    /// <summary>
+    ///     The upload tasks waiting to run. Also used to tell when loading has gone idle (ResourceManager).
+    /// </summary>
+    public static (int highPriority, int lowPriority) GetUploadQueueCounts()
+    {
+        int high;
+        lock (BackgroundUploadQueue)
+        {
+            high = BackgroundUploadQueue.Count;
+        }
+
+        int low;
+        lock (LowPriorityBackgroundUploadQueueBackfill)
+        {
+            low = LowPriorityBackgroundUploadQueue.Count + LowPriorityBackgroundUploadQueueBackfill.Count;
+        }
+
+        return (high, low);
+    }
+
     public static void AddBackgroundUploadTask(Action<GraphicsDevice, CommandList> action)
     {
         lock (BackgroundUploadQueue)

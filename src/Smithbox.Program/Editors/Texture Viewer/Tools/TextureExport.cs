@@ -196,14 +196,6 @@ public class TextureExport
         }
     }
 
-    private void ExportTextureFileFromTextureResource(TextureResource texResource, string exportFilePath)
-    {
-        var tex = texResource.GPUTexture.TpfTexture;
-        var bytes = tex.Bytes.ToArray();
-
-        ExportTextureFile(exportFilePath, bytes);
-    }
-
     private void ExportTextureFile(string exportFilePath, byte[] bytes)
     {
         TexUtils.ExportImage(exportFilePath, bytes, CFG.Current.TextureViewerToolbar_ExportTextureType);

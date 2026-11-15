@@ -359,6 +359,29 @@ public sealed class ResourcePool : IDisposable
     }
 
     /// <summary>
+    ///     The names of the resources of type <typeparamref name="T" /> that have been asked for (with
+    ///     <see cref="Find{T}" /> or <see cref="AddListener{T}" />) but aren't loaded. Models ask for their textures
+    ///     this way as they load, so after a model load this is the textures they still need.
+    /// </summary>
+    public HashSet<string> GetRequestedUnloadedNames<T>() where T : class, IResource, IDisposable, new()
+    {
+        HashSet<string> names = new(StringComparer.OrdinalIgnoreCase);
+
+        lock (_lock)
+        {
+            foreach (var (key, entry) in _entries)
+            {
+                if (key.Item2 == typeof(T) && !entry.Handle.IsLoaded())
+                {
+                    names.Add(key.Item1);
+                }
+            }
+        }
+
+        return names;
+    }
+
+    /// <summary>
     ///     True if the resource is in the pool, loaded, and usable at the given access level.
     /// </summary>
     public bool IsLoaded<T>(string name, AccessLevel accessLevel = AccessLevel.AccessGPUOptimizedOnly)

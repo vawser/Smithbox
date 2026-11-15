@@ -1674,6 +1674,17 @@ public class CFG
     // bakes they need as the time moves, instead of the Global Illumination tab's bake settings
     public bool Viewport_Map_Lighting_Follow_Bakes = true;
 
+    // Elden Ring, while the bakes follow the time of day: whether every bake is loaded with a map, so the time can be
+    // changed without waiting, or only those of the time of day the map is loaded at, the others loading as the time
+    // reaches them. A map's bakes take hundreds of MB of GPU memory each (m11_00_00_00 has 5, about 700 textures each).
+    public bool Viewport_Map_Lighting_Load_All_Bakes = false;
+
+    // Resource loading: how much memory a load may hold in flight and how many containers it reads at once, see
+    // LoadMemoryBudget. A LoadMemoryBudget.Profile; the two values below are used by the Custom profile.
+    public int Viewport_Load_Memory_Profile = (int)StudioCore.Renderer.LoadMemoryBudget.Profile.Balanced;
+    public int Viewport_Load_Memory_Budget_MB = 1024;
+    public int Viewport_Load_Container_Readers = 4;
+
     // The Model and Time Act Editors' viewport environment (AC6, ER, NR): the map whose GPARAM lighting and
     // irradiance bake light them ("" for the project type's default, see ViewportEnvironment), the GPARAM looked in
     // first ("" for the map's own), the volume of the bake (-1 for the one of median light), and the size of the

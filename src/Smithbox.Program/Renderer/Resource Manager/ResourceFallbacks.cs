@@ -21,6 +21,13 @@ internal static class ResourceFallbacks
     // The containers each pool has loaded for the texture name index, so a holder that didn't deliver isn't retried
     private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ResourcePool, HashSet<string>> _indexTried = new();
 
+    // The (container, texture) pairs each pool has loaded for the name rules and which haven't delivered (yet). A rule's
+    // container is loaded for just the textures asked of it, so it never counts as loaded as a whole: this is what
+    // stops a container that doesn't have a texture from being read for it again on every pass.
+    private static readonly System.Runtime.CompilerServices.ConditionalWeakTable<ResourcePool, HashSet<string>> _ruleTried = new();
+
+    private static string RulePair(string container, string name) => $"{container}|{name}";
+
     /// <summary>
     ///     For every texture the pool has been asked for but doesn't have, tries to find a container that holds it.
     ///     The task completes once the containers it started have been read. <paramref name="queued" /> is how many
@@ -38,6 +45,22 @@ internal static class ResourceFallbacks
 
         HashSet<string> vfsPaths = new();
         HashSet<string> externalPaths = new();
+
+        // The containers the name rules named, with the textures each is asked for
+        Dictionary<string, HashSet<string>> ruleNames = new(StringComparer.OrdinalIgnoreCase);
+        HashSet<string> ruleTried = _ruleTried.GetValue(pool, _ => new HashSet<string>(StringComparer.OrdinalIgnoreCase));
+
+        // A pair that delivered no longer counts as tried, so that once its texture is unloaded (the model was closed)
+        // the next model that needs it gets it again. Done here rather than when the load ends, as a pass runs once
+        // every job is done, by when the textures of the last one are registered.
+        lock (ruleTried)
+        {
+            ruleTried.RemoveWhere(pair =>
+            {
+                var bar = pair.LastIndexOf('|');
+                return bar >= 0 && pool.IsLoaded<TextureResource>(pair.Substring(bar + 1));
+            });
+        }
 
         HashSet<string> tried = _indexTried.GetValue(pool, _ => new HashSet<string>(StringComparer.OrdinalIgnoreCase));
         var indexed = 0;
@@ -105,7 +128,7 @@ internal static class ResourceFallbacks
                 or ProjectType.DB &&
                 name.StartsWith("aet") && name.Length >= 10)
             {
-                ruleMatched |= AddIfExists(project, pool, vfsPaths, $"aet/{name.Substring(0, 10)}/tex");
+                ruleMatched |= AddRuleContainer(project, pool, ruleNames, ruleTried, $"aet/{name.Substring(0, 10)}/tex", name);
             }
 
             // Character textures whose container is named after a different character than the model
@@ -115,7 +138,7 @@ internal static class ResourceFallbacks
                 Match m = ChrIdPrefix.Match(name);
                 if (m.Success)
                 {
-                    ruleMatched |= AddIfExists(project, pool, vfsPaths, $"chr/{m.Groups[1].Value}/tex");
+                    ruleMatched |= AddRuleContainer(project, pool, ruleNames, ruleTried, $"chr/{m.Groups[1].Value}/tex", name);
                 }
             }
 
@@ -145,8 +168,6 @@ internal static class ResourceFallbacks
             Types = ResourceType.Texture, JobName = LOC.Get("REND_Job_Additional_Textures")
         };
 
-        List<Task> loads = new();
-
         // Containers a rule names that are loaded already are skipped by the pool, so only the rest count
         foreach (var path in vfsPaths)
         {
@@ -156,7 +177,27 @@ internal static class ResourceFallbacks
             }
         }
 
-        queued += externalPaths.Count;
+        queued += externalPaths.Count + ruleNames.Count;
+
+        List<Task> loads = new();
+
+        // Only the asked for textures are loaded from a rule's container: an AET or character container holds the
+        // textures of many models, and a single one of them is often all that is missing
+        foreach (var (path, names) in ruleNames)
+        {
+            lock (ruleTried)
+            {
+                foreach (var name in names)
+                {
+                    ruleTried.Add(RulePair(path, name));
+                }
+            }
+
+            LoadOptions ruleOptions = options.Clone();
+            ruleOptions.OnlyNames = names;
+
+            loads.Add(pool.LoadContainer(path, ruleOptions));
+        }
 
         if (vfsPaths.Count > 0)
         {
@@ -236,10 +277,12 @@ internal static class ResourceFallbacks
     }
 
     /// <summary>
-    ///     Queues the container a virtual path names, if it exists. True when it does and isn't loaded yet, i.e. the
-    ///     rule still has something to try for the texture.
+    ///     Asks the container a virtual path names for a texture, if the container exists. True when it does and it
+    ///     hasn't been asked for this texture already (or is loaded in full), i.e. the rule still has something to try
+    ///     for the texture.
     /// </summary>
-    private static bool AddIfExists(ProjectEntry project, ResourcePool pool, HashSet<string> paths, string virtualPath)
+    private static bool AddRuleContainer(ProjectEntry project, ResourcePool pool,
+        Dictionary<string, HashSet<string>> ruleNames, HashSet<string> ruleTried, string virtualPath, string name)
     {
         var relative = PathBuilder.GetRelativePath(project, virtualPath);
         if (string.IsNullOrEmpty(relative) || !project.VFS.FS.FileExists(relative))
@@ -247,7 +290,27 @@ internal static class ResourceFallbacks
             return false;
         }
 
-        paths.Add(relative);
-        return !pool.IsContainerLoaded(relative);
+        // Loaded in full, or already asked for this texture: either way the texture isn't in it
+        if (pool.IsContainerLoaded(relative))
+        {
+            return false;
+        }
+
+        lock (ruleTried)
+        {
+            if (ruleTried.Contains(RulePair(relative, name)))
+            {
+                return false;
+            }
+        }
+
+        if (!ruleNames.TryGetValue(relative, out var names))
+        {
+            names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            ruleNames.Add(relative, names);
+        }
+
+        names.Add(name);
+        return true;
     }
 }

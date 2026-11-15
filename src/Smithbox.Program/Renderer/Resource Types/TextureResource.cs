@@ -24,6 +24,45 @@ public class TextureResource : IResource, IDisposable
 
     public TexturePool.TextureHandle GPUTexture { get; private set; }
 
+    /// <summary>
+    ///     Whether <see cref="TexturePool.TextureHandle.TpfTexture" />, and with it the texture's file data, is kept
+    ///     once the texture is on the GPU. True for textures made on their own (the Texture Viewer's, previews), which
+    ///     are read back. Textures loaded into a pool drop it, as a map holds thousands of them, which would otherwise
+    ///     keep a copy of each in memory as well as on the GPU: read one again with <see cref="TextureSourceReader" />.
+    /// </summary>
+    public bool KeepSourceData { get; init; } = true;
+
+    private long _budgetBytes;
+
+    /// <summary>
+    ///     This texture's share of the <see cref="LoadMemoryBudget" />, given back once it is uploaded (or its upload
+    ///     is given up), as its data is held until then.
+    /// </summary>
+    public long BudgetBytes
+    {
+        get => Interlocked.Read(ref _budgetBytes);
+        init => _budgetBytes = value;
+    }
+
+    /// <summary>
+    ///     Gives back this texture's share of the load memory budget. Only the first call does anything.
+    /// </summary>
+    public void ReleaseBudget()
+    {
+        LoadMemoryBudget.Release(Interlocked.Exchange(ref _budgetBytes, 0));
+    }
+
+    /// <summary>
+    ///     Called on the render thread once the texture has been filled.
+    /// </summary>
+    private void OnUploaded(TexturePool.TextureHandle handle)
+    {
+        if (!KeepSourceData && handle != null)
+        {
+            handle.TpfTexture = null;
+        }
+    }
+
     public bool _LoadTexture(AccessLevel al)
     {
         if (Smithbox.Instance.CurrentBackend is RenderingBackend.Vulkan)
@@ -93,20 +132,32 @@ public class TextureResource : IResource, IDisposable
 
             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
             {
-                if (GPUTexture == null)
+                try
                 {
-                    return;
-                }
-
-                // Intercept unsupported DDS textures here
-                if (capturedIndex < capturedTexture.Textures.Count)
-                {
-                    if (capturedTexture.Textures[capturedIndex] != null)
+                    var gpuTexture = GPUTexture;
+                    if (gpuTexture == null)
                     {
-                        GPUTexture.FillWithTPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex], capturedTexture.Textures[capturedIndex].Name);
+                        return;
                     }
+
+                    // Intercept unsupported DDS textures here
+                    if (capturedIndex < capturedTexture.Textures.Count)
+                    {
+                        if (capturedTexture.Textures[capturedIndex] != null)
+                        {
+                            gpuTexture.FillWithTPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex], capturedTexture.Textures[capturedIndex].Name);
+                        }
+                    }
+
+                    OnUploaded(gpuTexture);
+                }
+                finally
+                {
+                    ReleaseBudget();
                 }
             });
+
+            return true;
         }
         else if (Texture.Platform == TPF.TPFPlatform.PS4)
         {
@@ -116,16 +167,30 @@ public class TextureResource : IResource, IDisposable
 
             SceneRenderer.AddLowPriorityBackgroundUploadTask((d, cl) =>
             {
-                if (GPUTexture == null)
+                try
                 {
-                    return;
-                }
+                    var gpuTexture = GPUTexture;
+                    if (gpuTexture == null)
+                    {
+                        return;
+                    }
 
-                GPUTexture.FillWithPS4TPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex],
-                    capturedTexture.Textures[capturedIndex].Name);
+                    gpuTexture.FillWithPS4TPF(d, cl, capturedTexture.Platform, capturedTexture.Textures[capturedIndex],
+                        capturedTexture.Textures[capturedIndex].Name);
+
+                    OnUploaded(gpuTexture);
+                }
+                finally
+                {
+                    ReleaseBudget();
+                }
             });
+
+            return true;
         }
 
+        // Nothing was queued for upload, so nothing will give the budget back later
+        ReleaseBudget();
         return true;
     }
 

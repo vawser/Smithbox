@@ -61,6 +61,10 @@
       "Text": "Filter Presets"
     },
     {
+      "Key": "PREF_Category_Viewport_Resource_Loading",
+      "Text": "Resource Loading"
+    },
+    {
       "Key": "PREF_Category_MapEditor_General",
       "Text": "General"
     },

@@ -439,6 +439,78 @@
     {
       "Key": "PREF_FilterPreset_Configure_Filters",
       "Text": "Configure each of the six filter presets available."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile",
+      "Text": "Load Memory Limit"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_TT",
+      "Text": "How much memory loading maps and models may use at once. Loading reads files ahead of what can be processed and sent to the GPU; a lower limit holds less of that at once, so loading peaks lower but takes longer. A higher limit loads faster on a machine with memory to spare. Applies to loads started after it is changed."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Summary",
+      "Text": "Memory in flight: {0}, containers read at once: {1}"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_No_Limit",
+      "Text": "no limit"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Low",
+      "Text": "Low"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Low_TT",
+      "Text": "For machines with little memory (16 GB or less). Holds at most 512 MB of loading data at once and reads 2 files at a time. Slowest."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Balanced",
+      "Text": "Balanced"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Balanced_TT",
+      "Text": "Holds at most 1 GB of loading data at once and reads with half of the processor's cores."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_High",
+      "Text": "High"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_High_TT",
+      "Text": "For machines with plenty of memory (32 GB or more). Holds up to 8 GB of loading data at once and reads with every core."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Unlimited",
+      "Text": "Unlimited"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Unlimited_TT",
+      "Text": "No limit: reads everything as fast as it can. Fastest, but a large map can peak at many GB."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Custom",
+      "Text": "Custom"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Profile_Custom_TT",
+      "Text": "Use the two values below."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Budget_MB",
+      "Text": "Load Memory In Flight (MB)"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Memory_Budget_MB_TT",
+      "Text": "With the Custom limit: the most loading data, in MB, held at once (read but not yet processed, or not yet on the GPU). 0 for no limit."
+    },
+    {
+      "Key": "PREF_Viewport_Load_Container_Readers",
+      "Text": "Files Read at Once"
+    },
+    {
+      "Key": "PREF_Viewport_Load_Container_Readers_TT",
+      "Text": "With the Custom limit: how many files are read at the same time, over every load. 0 for no limit."
     }
   ]
 }

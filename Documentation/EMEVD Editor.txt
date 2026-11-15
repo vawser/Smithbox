@@ -2,6 +2,3 @@
 # EMEVD Editor TODO
 #----------------------------------------------------
 
-- Add aliases for:
-    - Files
-    - Events

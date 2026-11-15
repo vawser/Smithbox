@@ -87,17 +87,20 @@ public enum SectionCategory
     [Display(Name = "PREF_Category_Viewport_Rendering")]
     Rendering = 400,
 
+    [Display(Name = "PREF_Category_Viewport_Resource_Loading")]
+    ResourceLoading = 401,
+
     [Display(Name = "PREF_Category_Viewport_Model_Rendering")]
-    ModelRendering = 401,
+    ModelRendering = 402,
 
     [Display(Name = "PREF_Category_Viewport_Selection")]
-    Selection = 402,
+    Selection = 403,
 
     [Display(Name = "PREF_Category_Viewport_Coloring")]
-    Coloring = 403,
+    Coloring = 404,
 
     [Display(Name = "PREF_Category_Viewport_Filter_Presets")]
-    FilterPresets = 404,
+    FilterPresets = 405,
 
     // Map Editor
     [Display(Name = "PREF_Category_MapEditor_General")]

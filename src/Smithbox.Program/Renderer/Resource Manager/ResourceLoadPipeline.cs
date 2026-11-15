@@ -21,7 +21,8 @@ public readonly record struct LoadTPFTextureResourceRequest(
     ResourceLoadContext Context,
     TPF Tpf,
     int Index,
-    AccessLevel AccessLevel);
+    AccessLevel AccessLevel,
+    long BudgetBytes = 0);
 
 public readonly record struct ResourceLoadedReply(
     ResourceLoadContext Context,
@@ -66,9 +67,14 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch(Exception ex)
             {
-                Smithbox.LogError(this, 
+                Smithbox.LogError(this,
                     LOC.Get("REND_Resource_Pipeline_Load_Error_File_Path",
                     r.Data, r.Context.QualifiedName, r.AccessLevel), ex);
+            }
+            finally
+            {
+                // The entry's data is done with once it is parsed
+                LoadMemoryBudget.Release(r.Data.Length);
             }
 
         }, options);
@@ -133,12 +139,36 @@ public class TextureLoadPipeline : IResourceLoadPipeline
 
         _loadTPFResourcesTransform = new ActionBlock<LoadTPFTextureResourceRequest>(r =>
         {
-            var res = new TextureResource(r.Tpf, r.Index);
-            var success = res._LoadTexture(r.AccessLevel);
-            if (success)
+            TextureResource res = null;
+
+            try
             {
-                _loadedResources.Post(
-                    new ResourceLoadedReply(r.Context, r.AccessLevel, res));
+                // Pooled textures are read again from their container when their data is wanted (TextureSourceReader).
+                // The texture gives back its share of the load memory budget once it is uploaded.
+                res = new TextureResource(r.Tpf, r.Index) { KeepSourceData = false, BudgetBytes = r.BudgetBytes };
+                var success = res._LoadTexture(r.AccessLevel);
+                if (success)
+                {
+                    _loadedResources.Post(
+                        new ResourceLoadedReply(r.Context, r.AccessLevel, res));
+                }
+                else
+                {
+                    res.ReleaseBudget();
+                }
+            }
+            catch
+            {
+                if (res != null)
+                {
+                    res.ReleaseBudget();
+                }
+                else
+                {
+                    LoadMemoryBudget.Release(r.BudgetBytes);
+                }
+
+                throw;
             }
         }, options);
     }

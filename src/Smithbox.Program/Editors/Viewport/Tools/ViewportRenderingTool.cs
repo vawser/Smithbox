@@ -1350,6 +1350,14 @@ public class ViewportRenderingTool
             ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes")}##mapLightingFollowBakes",
                 ref CFG.Current.Viewport_Map_Lighting_Follow_Bakes);
             GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Follow_Bakes_TT"));
+
+            ImGui.BeginDisabled(!CFG.Current.Viewport_Map_Lighting_Follow_Bakes);
+            ImGui.Indent();
+            ImGui.Checkbox($"{LOC.Get("VIEWPORT_Menubar_Map_Lighting_Load_All_Bakes")}##mapLightingLoadAllBakes",
+                ref CFG.Current.Viewport_Map_Lighting_Load_All_Bakes);
+            GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_Map_Lighting_Load_All_Bakes_TT"));
+            ImGui.Unindent();
+            ImGui.EndDisabled();
         }
     }
 

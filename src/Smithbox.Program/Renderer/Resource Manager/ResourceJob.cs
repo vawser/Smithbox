@@ -23,7 +23,13 @@ public class ResourceJob
     {
         Name = name;
 
-        ExecutionDataflowBlockOptions options = new() { MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
+        // Containers are read on a scheduler shared by every job, which limits how many are read at once in all
+        // (see LoadMemoryBudget.ContainerReaders), or on the default scheduler when there is no limit
+        ExecutionDataflowBlockOptions options = new()
+        {
+            MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded,
+            TaskScheduler = LoadMemoryBudget.ReaderScheduler ?? TaskScheduler.Default
+        };
 
         _loadContainers = new ActionBlock<ContainerLoadAction>(a =>
         {

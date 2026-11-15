@@ -375,7 +375,13 @@ public static class ModelPropertyDecorators
         // The model's textures are held in the pool by name, once they have been uploaded
         ResourceManager.DefaultPool.TryFind<TextureResource>(texturePath, out var handle);
 
+        // Pooled textures don't keep their data once they are on the GPU, so it is read again from their container
         var texture = handle?.Get()?.GPUTexture?.TpfTexture;
+
+        if (texture == null && handle != null && handle.IsLoaded)
+        {
+            texture = TextureSourceReader.Read(view.Project, handle);
+        }
 
         if (texture == null)
         {

@@ -85,6 +85,9 @@ internal sealed class ContainerLoadAction
     {
         ContainerFormat format = ResourceClassifier.DetectContainer(Path);
 
+        // Don't read further ahead than the load memory budget allows
+        LoadMemoryBudget.WaitForRoom();
+
         switch (format)
         {
             case ContainerFormat.Tpf:
@@ -166,6 +169,7 @@ internal sealed class ContainerLoadAction
         }
 
         _job.IncrementEstimateTaskSize(1);
+        LoadMemoryBudget.Add(data.Length);
         pipeline.LoadByteResourceBlock.Post(new LoadByteResourceRequest(ctx, data, Options.AccessLevel));
         return true;
     }
@@ -198,6 +202,7 @@ internal sealed class ContainerLoadAction
                     case ContainerFormat.Tpf:
                         if (Options.Types.HasFlag(ResourceType.Texture))
                         {
+                            LoadMemoryBudget.WaitForRoom();
                             LoadTpf(TPF.Read(binder.ReadFile(header)));
                         }
 
@@ -229,8 +234,10 @@ internal sealed class ContainerLoadAction
                 }
 
                 // Reading decompresses the entry, so it is only done for entries that are going to be used
+                LoadMemoryBudget.WaitForRoom();
                 Memory<byte> data = binder.ReadFile(header);
                 _job.IncrementEstimateTaskSize(1);
+                LoadMemoryBudget.Add(data.Length);
                 PipelineFor(kind).LoadByteResourceBlock.Post(new LoadByteResourceRequest(ctx, data, Options.AccessLevel));
             }
             catch (Exception e)
@@ -250,6 +257,8 @@ internal sealed class ContainerLoadAction
 
         for (var i = 0; i < tpf.Textures.Count; i++)
         {
+            long texBytes = tpf.Textures[i].Bytes?.Length ?? 0;
+
             // Textures are named by the texture, not by the TPF they are packed in
             var ctx = new ResourceLoadContext(Pool, tpf.Textures[i].Name, Path, NextOrder());
             if (!Options.Accepts(ctx.Name) ||
@@ -258,9 +267,12 @@ internal sealed class ContainerLoadAction
                 continue;
             }
 
+            // Held until the texture is on the GPU, see TextureResource
+            LoadMemoryBudget.Add(texBytes);
+
             _job.IncrementEstimateTaskSize(1);
             _job.TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Post(
-                new LoadTPFTextureResourceRequest(ctx, tpf, i, Options.AccessLevel));
+                new LoadTPFTextureResourceRequest(ctx, tpf, i, Options.AccessLevel, texBytes));
         }
     }
 

@@ -10,3 +10,8 @@
 - FaceGen Editor
 
 - Scaleform Editor
+
+- Icon Builder
+    - Preview a model with adjustable bones so it can be placed in a specific way
+    - Include consistent camera angles
+    - Automatic icon capture

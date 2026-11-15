@@ -5,3 +5,5 @@
 - Add aliases for:
     - Files
     - Machines
+    
+- EDD files

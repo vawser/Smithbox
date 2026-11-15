@@ -376,14 +376,16 @@ public class MapResourceHandler
     ///     Loads the containers that hold a set of assets into a pool as one job.
     /// </summary>
     private Task LoadAssets(IEnumerable<ResourceDescriptor> assets, string jobName, ResourceType types,
-        ResourcePool pool = null, bool onlyListedAssets = false, bool isConnectCollision = false)
+        ResourcePool pool = null, bool onlyListedAssets = false, bool isConnectCollision = false,
+        IEnumerable<string> onlyNames = null)
     {
         var options = new LoadOptions
         {
             JobName = jobName,
             Types = types,
             AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
-            IsConnectCollision = isConnectCollision
+            IsConnectCollision = isConnectCollision,
+            OnlyNames = onlyNames
         };
 
         Task load = (pool ?? ResourceManager.DefaultPool).LoadAssets(View.Project, assets, options, onlyListedAssets);
@@ -397,24 +399,34 @@ public class MapResourceHandler
         if (!CFG.Current.Viewport_Enable_Texturing)
             return tasks;
 
+        // The models are loaded by now, and their materials have asked the pool for the textures they use. Texture
+        // containers hold many textures no loaded model uses (about half of them for ER's m11_00_00_00), which would
+        // take GPU memory for nothing, so only the asked for ones are loaded from the model texture containers.
+        // A texture asked for later (e.g. by a model loaded afterwards) is found by the missing texture pass.
+        // See Claude/Documentation/Map Load Memory Analysis.md
+        HashSet<string> requested = ResourceManager.DefaultPool.GetRequestedUnloadedNames<TextureResource>();
+
         // Map
         if (CFG.Current.MapEditor_TextureLoad_MapPieces)
         {
-            task = LoadAssets(LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"), ResourceType.Texture);
+            task = LoadAssets(LoadList_Map_Texture, LOC.Get("MAP_ResourceManager_Map_Textures"), ResourceType.Texture,
+                onlyNames: requested);
             tasks.Add(task);
         }
 
         // Character
         if (CFG.Current.MapEditor_TextureLoad_Characters)
         {
-            task = LoadAssets(LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"), ResourceType.Texture);
+            task = LoadAssets(LoadList_Character_Texture, LOC.Get("MAP_ResourceManager_Character_Textures"), ResourceType.Texture,
+                onlyNames: requested);
             tasks.Add(task);
         }
 
         // Asset
         if (CFG.Current.MapEditor_TextureLoad_Objects)
         {
-            task = LoadAssets(LoadList_Asset_Texture, GetObjectTexturesName(View.Project), ResourceType.Texture);
+            task = LoadAssets(LoadList_Asset_Texture, GetObjectTexturesName(View.Project), ResourceType.Texture,
+                onlyNames: requested);
             tasks.Add(task);
         }
 

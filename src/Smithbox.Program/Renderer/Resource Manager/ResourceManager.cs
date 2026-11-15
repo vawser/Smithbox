@@ -282,6 +282,9 @@ public static class ResourceManager
 
     public static void UpdateTasks()
     {
+        // The main thread runs the uploads that free the load memory budget, so it must never wait on it
+        LoadMemoryBudget.SetMainThread();
+
         // Process any resource notification requests
         var res = _notificationRequests.TryReceiveAll(out IList<AddResourceLoadNotificationRequest> requests);
 
@@ -335,6 +338,7 @@ public static class ResourceManager
                 int o;
                 ActiveJobProgress.TryRemove(rm, out o);
                 ResourceLoadTracker.Retire(rm);
+                _memoryReleasePending = true;
             }
         }
         else
@@ -362,7 +366,66 @@ public static class ResourceManager
 
         ResourceLoadTracker.Update();
 
+        ReleaseMemoryAfterLoad();
+
         _prevCount = ActiveJobProgress.Count;
+    }
+
+    // Upload tasks that some features queue again every frame, so a queue this short counts as idle
+    private const int IdleUploadQueueLength = 200;
+
+    // How long loading has to stay idle before memory is given back, so a load that follows straight on isn't held up
+    private const long MemoryReleaseIdleMs = 5000;
+
+    // Memory the GC holds beyond what it uses that is worth a blocking collection to give back
+    private const long MemoryReleaseThreshold = 512L * 1024 * 1024;
+
+    private static readonly System.Diagnostics.Stopwatch _idleClock = System.Diagnostics.Stopwatch.StartNew();
+    private static bool _memoryReleasePending;
+    private static long _idleSinceMs = -1;
+
+    /// <summary>
+    ///     A load decompresses every file it reads into large buffers, which leaves the GC holding gigabytes of
+    ///     committed memory once they are freed: it keeps freed memory to reuse rather than give it back, even after
+    ///     a compacting collection. Once loading has been idle for a while, an aggressive collection returns it.
+    /// </summary>
+    private static void ReleaseMemoryAfterLoad()
+    {
+        if (!_memoryReleasePending)
+        {
+            return;
+        }
+
+        var (_, lowQueue) = SceneRenderer.GetUploadQueueCounts();
+        if (ActiveJobProgress.Count > 0 || lowQueue > IdleUploadQueueLength)
+        {
+            _idleSinceMs = -1;
+            return;
+        }
+
+        var now = _idleClock.ElapsedMilliseconds;
+        if (_idleSinceMs < 0)
+        {
+            _idleSinceMs = now;
+            return;
+        }
+
+        if (now - _idleSinceMs < MemoryReleaseIdleMs)
+        {
+            return;
+        }
+
+        _memoryReleasePending = false;
+        _idleSinceMs = -1;
+
+        GCMemoryInfo info = GC.GetGCMemoryInfo();
+        var unused = info.TotalCommittedBytes - info.HeapSizeBytes + info.FragmentedBytes;
+        if (unused < MemoryReleaseThreshold)
+        {
+            return;
+        }
+
+        GC.Collect(GC.MaxGeneration, GCCollectionMode.Aggressive, blocking: true, compacting: true);
     }
 
     public static void ClearUnusedResources()

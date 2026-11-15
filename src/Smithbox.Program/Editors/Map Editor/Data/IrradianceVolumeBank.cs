@@ -249,14 +249,31 @@ public class IrradianceVolumeBank
         CFG.Current.Viewport_Map_Lighting && CFG.Current.Viewport_Map_Lighting_Follow_Bakes;
 
     /// <summary>
-    /// The bakes whose envmap files are loaded with a map: every bake of the map when the bakes follow the time of
-    /// day, so moving through the day never waits for a load, otherwise the Global Illumination tab's bake and the
-    /// bake it blends towards
+    /// The bakes whose envmap files are loaded with a map. When the bakes follow the time of day: every bake of the
+    /// map if <see cref="CFG.Viewport_Map_Lighting_Load_All_Bakes" /> is set, so moving through the day never waits
+    /// for a load, else the timezones either side of the current time, with the rest queued by
+    /// <see cref="ResolveBakes(IEnumerable{string}, float?)" /> as the time reaches them. Otherwise the Global
+    /// Illumination tab's bake and the bake it blends towards.
     /// </summary>
     public HashSet<int> GetBakesToLoad(string mapId)
     {
         if (BakesFollowTime)
-            return GetBakeFiles(mapId).Keys.ToHashSet();
+        {
+            var available = GetBakeFiles(mapId).Keys.ToHashSet();
+
+            if (CFG.Current.Viewport_Map_Lighting_Load_All_Bakes)
+                return available;
+
+            var wanted = GparamLighting.TimezonesAt(CFG.Current.Viewport_Map_Lighting_Hours);
+            var current = new HashSet<int> { wanted.From };
+
+            // The bake blended towards is only needed part way between two timezones
+            if (wanted.Ratio > 0.0f)
+                current.Add(wanted.To);
+
+            current.IntersectWith(available);
+            return current;
+        }
 
         var bakes = new HashSet<int> { CFG.Current.Viewport_GI_Bake };
 
@@ -373,12 +390,17 @@ public class IrradianceVolumeBank
         var wanted = GparamLighting.TimezonesAt(hours ?? CFG.Current.Viewport_Map_Lighting_Hours);
         var ready = true;
 
+        // At a timezone's own time nothing is blended towards, so the next timezone's bake isn't needed yet
+        var blends = wanted.Ratio > 0.0f;
+
         foreach (var mapId in mapIds)
         {
             RequestBake(mapId, wanted.From);
-            RequestBake(mapId, wanted.To);
 
-            ready &= IsBakeResident(mapId, wanted.From) && IsBakeResident(mapId, wanted.To);
+            if (blends)
+                RequestBake(mapId, wanted.To);
+
+            ready &= IsBakeResident(mapId, wanted.From) && (!blends || IsBakeResident(mapId, wanted.To));
         }
 
         var current = FollowedBakes;
