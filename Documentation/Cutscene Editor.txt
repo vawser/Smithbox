@@ -1,0 +1,10 @@
+#----------------------------------------------------
+# Cutscene Editor
+#----------------------------------------------------
+
+- Support playback for:
+    - Subtitles
+    - FX
+    - Sound
+    - Model masks
+    - Hide LOD

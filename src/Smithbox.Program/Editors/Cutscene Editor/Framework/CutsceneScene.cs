@@ -208,6 +208,32 @@ public sealed class CutsceneScene : IDisposable
         Cameras = cameras.Values.OrderBy(c => c.Events.Count > 0 ? c.Events.Min(e => e.StartFrame) : 0).ToList();
     }
 
+    /// <summary>
+    /// Finds again which events show each actor and camera, after an edit has moved, added or removed some. The cut's
+    /// Havok data is unchanged, so nothing else is read again.
+    /// </summary>
+    public void RefreshEvents()
+    {
+        foreach (var actor in Actors)
+            actor.Events.Clear();
+        foreach (var camera in Cameras)
+            camera.Events.Clear();
+
+        var actors = Actors.ToDictionary(a => a.ResourceIndex);
+        var cameras = Cameras.ToDictionary(c => c.ResourceIndex);
+
+        foreach (var timeline in Cut.Timelines)
+        {
+            foreach (var e in timeline.Events)
+            {
+                if (actors.TryGetValue(e.ResourceIndex, out var actor))
+                    actor.Events.Add(e);
+                else if (cameras.TryGetValue(e.ResourceIndex, out var camera))
+                    camera.Events.Add(e);
+            }
+        }
+    }
+
     /// <summary>Starts loading the actors' models. Call on the main thread.</summary>
     public void StartLoads(ProjectEntry project, RenderScene? renderScene)
     {

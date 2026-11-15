@@ -44,6 +44,12 @@ public class CutsceneEditorScreen : EditorScreen
     /// <summary>The cut placement (offset.sib) being moved, picked with its event in the timeline or the properties</summary>
     public CutscenePlacement? SelectedPlacement;
 
+    /// <summary>Bumped by every edit, undo and redo: the timeline builds its rows again when it changes</summary>
+    public int StructureVersion { get; private set; }
+
+    /// <summary>Events of every resource type, from the project's cutscenes, to add new ones from</summary>
+    public CutsceneTemplateIndex Templates;
+
     // The map chosen for each cutscene this session, over the one its name implies
     private readonly Dictionary<string, string> MapForCutscene = new(StringComparer.OrdinalIgnoreCase);
 
@@ -76,6 +82,10 @@ public class CutsceneEditorScreen : EditorScreen
         ViewportWindow = new CutsceneViewportWindow(this, project);
         Backdrop = new CutsceneMapBackdrop(project, () => RenderScene);
         PlacementGizmo = new CutscenePlacementGizmoTarget(this);
+        Templates = new CutsceneTemplateIndex(project, () => Data?.Files ?? new List<CutsceneFile>());
+
+        // An edit, undo or redo may have moved, added or taken away events
+        ActionManager.ActionPerformed += OnEdited;
 
         ListView = new CutsceneListView(this);
         TimelineView = new CutsceneTimelineView(this);
@@ -205,6 +215,26 @@ public class CutsceneEditorScreen : EditorScreen
             Backdrop.LoadMap(map);
     }
 
+    private void OnEdited()
+    {
+        StructureVersion++;
+        Scene?.RefreshEvents();
+
+        // A selected event that an undo took away
+        if (SelectedEvent != null && Scene != null && CutsceneMqbOps.TimelineOf(Scene.Cut, SelectedEvent) < 0)
+        {
+            SelectedEvent = null;
+            SelectedTimeline = -1;
+        }
+    }
+
+    /// <summary>Runs an edit of the selected cutscene, so it can be undone</summary>
+    public void Execute(EditorAction? action)
+    {
+        if (action != null)
+            ActionManager.ExecuteAction(action);
+    }
+
     /// <summary>Selects an event, and its cut's placement if the event is of an offset.sib or an HKT</summary>
     public void SelectEvent(MQB.Event e, int timeline)
     {
@@ -304,6 +334,15 @@ public class CutsceneEditorScreen : EditorScreen
 
         if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             ActionManager.RedoAction();
+
+        // Not while a value is being typed
+        if (SelectedEvent is { } e && !ImGui.GetIO().WantTextInput)
+        {
+            if (InputManager.IsPressed(KeybindID.Delete))
+                TimelineView.Delete(e);
+            else if (InputManager.IsPressed(KeybindID.Duplicate))
+                TimelineView.Duplicate(e, false);
+        }
     }
 
     private void FileMenu()

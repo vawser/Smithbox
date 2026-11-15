@@ -109,6 +109,32 @@ public class CutsceneFile
 
     public int HavokFileCount => HavokFiles.Count;
 
+    /// <summary>
+    /// Reads only the MQB of the binder, without keeping its Havok files: for indexing every cutscene. The file's own
+    /// MQB if it is loaded, so its unsaved edits count.
+    /// </summary>
+    public MQB? ReadMqbOnly(ProjectEntry project)
+    {
+        if (Mqb != null)
+            return Mqb;
+
+        try
+        {
+            var raw = project.VFS.FS.ReadFile(Entry.Path);
+            if (raw == null)
+                return null;
+
+            var data = DCX.Is(raw.Value) ? DCX.Decompress(raw.Value) : raw.Value;
+            var files = data.Length >= 4 && data.Span[..4].SequenceEqual("BND4"u8) ? BND4.Read(data).Files : BND3.Read(data).Files;
+            var mqb = files.FirstOrDefault(f => (f.Name ?? "").EndsWith(".mqb", StringComparison.OrdinalIgnoreCase));
+            return mqb != null ? MQB.Read(DCX.Is(mqb.Bytes) ? DCX.Decompress(mqb.Bytes) : mqb.Bytes) : null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     /// <summary>The MQB has changes that aren't written to the project yet</summary>
     public bool IsDirty;
 
