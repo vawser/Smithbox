@@ -25,6 +25,12 @@ public class ViewportOverlay
 
     public void Draw()
     {
+        // Cutscene Editor: the cut's fade over the scene, first so the overlay's text stays on top of it
+        if (Parent.Owner is CutsceneEditor.CutsceneUniverse fadeUniverse)
+        {
+            fadeUniverse.Editor.Fades.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height, ImGui.GetCursorScreenPos().Y);
+        }
+
         if(CFG.Current.Viewport_DisplayControls)
         {
             if (Parent.ViewportCamera.ViewMode is ViewMode.Perspective)

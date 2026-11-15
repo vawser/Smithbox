@@ -2,4 +2,4 @@
 # FX Editor TODO
 #----------------------------------------------------
 
-    FFX Older Games Plan.md
+- FFX Older Games Plan.md

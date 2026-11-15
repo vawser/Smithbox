@@ -47,6 +47,9 @@ public class CutsceneEditorScreen : EditorScreen
     /// <summary>The cut's subtitles in the viewport, and their voices while it plays</summary>
     public CutsceneSubtitles Subtitles;
 
+    /// <summary>The cut's fades, laid over the viewport</summary>
+    public CutsceneFades Fades;
+
     /// <summary>The actors' models, kept across the cuts of a cutscene so a cut only loads what earlier ones didn't</summary>
     public CutsceneModelPool Models = new();
 
@@ -113,6 +116,7 @@ public class CutsceneEditorScreen : EditorScreen
         PlacementGizmo = new CutscenePlacementGizmoTarget(this);
         CameraKeyGizmo = new CutsceneCameraKeyGizmoTarget(this);
         Subtitles = new CutsceneSubtitles(this);
+        Fades = new CutsceneFades(this);
         Sounds = new CutsceneSoundPlayback(this);
         Effects = new CutsceneEffects(this);
         CharacterPreview = new StudioCore.Editors.ModelEditor.ModelCharacterPreview(project, GetCharacterPreviewTarget);
@@ -530,21 +534,22 @@ public class CutsceneEditorScreen : EditorScreen
 
     private (CutsceneScene? Scene, string? Map, int Collision, bool Use, int Keys, string? Chosen) MapGroupsFor;
 
-    // The collision chosen to stand on for a cut (where the camera's start is a poor guess), by map, for the session
-    private readonly Dictionary<(string Cutscene, int Cut, string Map), string> ChosenCollisions = new();
+    // The collision chosen to stand on (where the camera's start is a poor guess), by cutscene and map, for the session.
+    // Not by cut: the choice holds as the user moves between the cutscene's cuts, rather than going back to auto.
+    private readonly Dictionary<(string Cutscene, string Map), string> ChosenCollisions = new();
 
-    /// <summary>The collision chosen for the cut shown in the map shown, null to take the one under the camera</summary>
+    /// <summary>The collision chosen for the cutscene shown in the map shown, null to take the one under the camera</summary>
     public string? ChosenCollision =>
         SelectedFile != null && Backdrop.LoadedMapId != null &&
-        ChosenCollisions.TryGetValue((SelectedFile.Name, SelectedCut, Backdrop.LoadedMapId), out var name) ? name : null;
+        ChosenCollisions.TryGetValue((SelectedFile.Name, Backdrop.LoadedMapId), out var name) ? name : null;
 
-    /// <summary>Stands the cut shown on a collision of the map (null: the one under the camera's start again)</summary>
+    /// <summary>Stands the cutscene shown on a collision of the map (null: the one under each cut camera's start again)</summary>
     public void SetChosenCollision(string? collision)
     {
         if (SelectedFile == null || Backdrop.LoadedMapId == null)
             return;
 
-        var key = (SelectedFile.Name, SelectedCut, Backdrop.LoadedMapId);
+        var key = (SelectedFile.Name, Backdrop.LoadedMapId);
         if (collision == null)
             ChosenCollisions.Remove(key);
         else

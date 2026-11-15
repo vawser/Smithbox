@@ -80,6 +80,9 @@ public class CutsceneFiltersTool
         ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Subtitles")}##cutsceneFilterSubtitles", ref CFG.Current.CutsceneEditor_Display_Subtitles);
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Display_Subtitles_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Fades")}##cutsceneFilterFades", ref CFG.Current.CutsceneEditor_Display_Fades);
+        GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Fades_TT"));
+
         var effects = CFG.Current.CutsceneEditor_Display_Effects;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Effects")}##cutsceneFilterEffects", ref effects))
             Editor.SetDisplayEffects(effects);
@@ -165,7 +168,7 @@ public class CutsceneFiltersTool
         if (!CFG.Current.CutsceneEditor_Map_Use_Draw_Groups || backdrop.Collisions.Count == 0)
             return;
 
-        // The collision to stand on, for this cut
+        // The collision to stand on, for this cutscene (kept across its cuts)
         GUI.Spacer();
         EditorFilters.DisplayFramedListFilter("cutsceneCollisionFilter", ref CollisionFilter, ref CollisionFilterExact);
 

@@ -1548,6 +1548,9 @@ public class CFG
     public bool CutsceneEditor_Display_Subtitles = true;
     public bool CutsceneEditor_Play_Voices = true;
 
+    // Fade events (Fade-in, Fade-out, Fade-in/out): their colour laid over the viewport
+    public bool CutsceneEditor_Display_Fades = true;
+
     // Sound events (seId/seType): played as the cut plays past their start
     public bool CutsceneEditor_Play_Sounds = true;
 
