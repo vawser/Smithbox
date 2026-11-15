@@ -3,6 +3,30 @@
     {
       "Key": "PROJECT_Window_Project_Editor",
       "Text": "Projects"
+    },
+    {
+      "Key": "PROJECT_Editor_Title",
+      "Text": "Project Editor"
+    },
+    {
+      "Key": "PROJECT_Sidebar_Group_TT",
+      "Text": "Double-click to hide or show the projects in this group."
+    },
+    {
+      "Key": "PROJECT_Menu_File",
+      "Text": "File"
+    },
+    {
+      "Key": "PROJECT_Action_Open_Project_Storage",
+      "Text": "Open Project Storage"
+    },
+    {
+      "Key": "PROJECT_Action_Open_Project_Storage_TT",
+      "Text": "Open the folder that holds the project files."
+    },
+    {
+      "Key": "PROJECT_Open_Project_Storage_Failed",
+      "Text": "Failed to open the project storage folder {0}: {1}"
     }
   ]
 }

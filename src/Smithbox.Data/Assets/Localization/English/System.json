@@ -105,6 +105,10 @@
       "Text": "https://soulsmodding.com/doku.php?id=smithbox"
     },
     {
+      "Key": "HELP_Github_Link",
+      "Text": "https://github.com/vawser/Smithbox"
+    },
+    {
       "Key": "DIALOG_Select",
       "Text": "Select"
     },

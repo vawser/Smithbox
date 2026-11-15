@@ -73,7 +73,7 @@ public class KeybindsMenu
                 SaveAll();
             }
 
-            DisplayRevertAllItem();
+            DisplayRevertAllItem(LOC.Get("INPUT_Menu_Revert_All_Action"));
 
             ImGui.EndMenu();
         }
@@ -84,9 +84,9 @@ public class KeybindsMenu
     /// <summary>
     /// The Revert All menu item, drawn into the current menu. Asks before reverting.
     /// </summary>
-    public void DisplayRevertAllItem()
+    public void DisplayRevertAllItem(string label)
     {
-        if (ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Revert_All_Action")}##revertAllAction"))
+        if (ImGui.MenuItem($"{label}##revertAllShortcutsAction"))
         {
             var dialog = PlatformUtils.Instance.MessageBox(
                 LOC.Get("INPUT_Menu_Revert_All_Confirm"),

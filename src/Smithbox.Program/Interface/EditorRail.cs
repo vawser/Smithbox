@@ -93,7 +93,7 @@ public static class EditorRail
             var settingsShown = orchestrator.ActiveEditorId == EditorRegistry.SettingsEditorId;
 
             if (RailButton(EditorRegistry.ProjectEditorId, Icons.Home,
-                    LOC.Get("PROJECT_Window_Project_Editor"), activeEntry == null && !settingsShown, false, 0,
+                    LOC.Get("PROJECT_Editor_Title"), activeEntry == null && !settingsShown, false, 0,
                     buttonSize, scale))
             {
                 orchestrator.ActivateEditor(EditorRegistry.ProjectEditorId);

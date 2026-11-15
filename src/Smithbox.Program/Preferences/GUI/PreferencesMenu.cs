@@ -124,7 +124,7 @@ public class PreferencesMenu
                 SavePreferences();
             }
 
-            DisplayRevertMenu();
+            DisplayRevertItem(LOC.Get("PREF_Action_Revert_All"));
 
             ImGui.EndMenu();
         }
@@ -142,16 +142,24 @@ public class PreferencesMenu
     }
 
     /// <summary>
-    /// The Reset to Default submenu, drawn into the current menu
+    /// A menu item that reverts every preference to its default, drawn into the current menu. Asks before
+    /// reverting.
     /// </summary>
-    public void DisplayRevertMenu()
+    public void DisplayRevertItem(string label)
     {
-        if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Revert_Action")}##revertAction"))
+        if (ImGui.MenuItem($"{label}##revertAllPreferencesAction"))
         {
-            DisplayRevertOptions();
+            var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("PREF_Action_Prompt"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            ImGui.EndMenu();
+            if (dialog is DialogResult.Yes)
+            {
+                CFGHelpers.ResetCurrentToDefault();
+            }
         }
+        GUI.Tooltip(LOC.Get("PREF_Action_Revert_All_TT"));
     }
 
     /// <summary>
@@ -501,115 +509,6 @@ public class PreferencesMenu
 
                 ImGui.PopID();
             }
-        }
-    }
-
-    public void DisplayRevertOptions()
-    {
-        if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Revert_All")}##revertAllAction"))
-        {
-            var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (dialog is DialogResult.Yes)
-            {
-                CFGHelpers.ResetCurrentToDefault();
-            }
-        }
-        GUI.Tooltip(
-            LOC.Get("PREF_Action_Revert_All_TT"));
-
-        // Add these to the user can revert these easily without reverting everything
-        if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Header_Viewport")}##viewportMenuHeader"))
-        {
-            if(ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_General")}##viewportGeneralAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportGeneralCFG();
-                }
-            }
-            GUI.Tooltip(
-                LOC.Get("PREF_Action_Viewport_General_TT"));
-
-            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Rendering")}##viewportRenderingAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportRenderingCFG();
-                }
-            }
-            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Rendering_TT"));
-
-            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Model_Rendering")}##viewportModelRenderingAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportModelRenderingCFG();
-                }
-            }
-            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Model_Rendering_TT"));
-
-            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Selection")}##viewportSelectionAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportSelectionCFG();
-                }
-            }
-            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Selection_TT"));
-
-            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Coloring")}##viewportColoringAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportColoringCFG();
-                }
-            }
-            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Coloring_TT"));
-
-            if (ImGui.MenuItem($"{LOC.Get("PREF_Action_Viewport_Display_Preset")}##viewportDpAction"))
-            {
-                var dialog = PlatformUtils.Instance.MessageBox(
-                LOC.Get("PREF_Action_Prompt"),
-                LOC.Get("SYS_Warning_Header"),
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialog is DialogResult.Yes)
-                {
-                    PreferencesUtil.ResetViewportDisplayPresetCFG();
-                }
-            }
-            GUI.Tooltip(LOC.Get("PREF_Action_Viewport_Display_Preset_TT"));
-
-            ImGui.EndMenu();
         }
     }
 }

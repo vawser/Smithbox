@@ -225,9 +225,30 @@ public class ProjectScreen
             RequestFocus = false;
         }
 
-        var flags = GUI.GetMainWindowFlags() & ~ImGuiWindowFlags.MenuBar;
+        // Includes a menu bar
+        var flags = GUI.GetMainWindowFlags();
 
-        if (EditorHost.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", flags))
+        uint dockspaceId = 0;
+
+        if (EditorHost.Begin($"{LOC.Get("PROJECT_Editor_Title")}###ProjectEditor", flags))
+        {
+            DisplayMenuBar();
+
+            dockspaceId = ImGui.GetID("DockSpace_ProjectEditor");
+
+            ImGui.DockSpace(dockspaceId, Vector2.Zero, ImGuiDockNodeFlags.None, ref GUI.DockGroup_ProjectEditor);
+        }
+
+        ImGui.End();
+
+        if (dockspaceId == 0)
+            return;
+
+        // Projects, docked into the editor's dockspace; only windows of the Project Editor's class can join it
+        ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_ProjectEditor);
+
+        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###projectsWindow", GUI.GetInnerWindowFlags()))
         {
             Shortcuts();
 
@@ -235,6 +256,52 @@ public class ProjectScreen
         }
 
         ImGui.End();
+    }
+
+    /// <summary>
+    /// The Project Editor's menu bar, drawn into its host window
+    /// </summary>
+    private void DisplayMenuBar()
+    {
+        if (!ImGui.BeginMenuBar())
+            return;
+
+        // File
+        if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Menu_File")}##projectFileMenu"))
+        {
+            if (ImGui.MenuItem($"{LOC.Get("PROJECT_Action_Open_Project_Storage")}##openProjectStorageAction"))
+            {
+                OpenProjectStorage();
+            }
+            GUI.Tooltip(LOC.Get("PROJECT_Action_Open_Project_Storage_TT"));
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.EndMenuBar();
+    }
+
+    /// <summary>
+    /// Opens the folder the project files (one JSON per project) are stored in, in the system's file browser
+    /// </summary>
+    private void OpenProjectStorage()
+    {
+        var folder = ProjectUtils.GetProjectsFolder();
+
+        try
+        {
+            Directory.CreateDirectory(folder);
+
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = folder,
+                UseShellExecute = true
+            });
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("PROJECT_Open_Project_Storage_Failed", folder, e.Message), e);
+        }
     }
 
     private void Display()
@@ -251,7 +318,10 @@ public class ProjectScreen
             // Projects
             ImGui.TableSetColumnIndex(0);
 
-            ImGui.BeginChild("projectSidebar", Vector2.Zero, ImGuiChildFlags.None);
+            // The project list below the actions and filter scrolls itself and fills the rest of the column, which
+            // can come out a pixel taller than the column, so the column itself never scrolls
+            ImGui.BeginChild("projectSidebar", Vector2.Zero, ImGuiChildFlags.None,
+                ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse);
 
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 FocusManager.SetFocus(EditorFocusContext.Project_None);

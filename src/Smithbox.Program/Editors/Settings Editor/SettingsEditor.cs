@@ -91,21 +91,10 @@ public class SettingsEditor
                 shortcuts.SaveAll();
             }
 
-            ImGui.EndMenu();
-        }
+            ImGui.Separator();
 
-        // Preferences
-        if (ImGui.BeginMenu($"{LOC.Get("PREF_Window_Preferences")}##settingsPreferencesMenu"))
-        {
-            preferences.DisplayRevertMenu();
-
-            ImGui.EndMenu();
-        }
-
-        // Shortcuts
-        if (ImGui.BeginMenu($"{LOC.Get("INPUT_Window_Shortcuts")}##settingsShortcutsMenu"))
-        {
-            shortcuts.DisplayRevertAllItem();
+            preferences.DisplayRevertItem(LOC.Get("SETTINGS_Action_Revert_Preferences"));
+            shortcuts.DisplayRevertAllItem(LOC.Get("SETTINGS_Action_Revert_Shortcuts"));
 
             ImGui.EndMenu();
         }
@@ -185,12 +174,11 @@ public class SettingsEditor
 
     private void DisplayHelp()
     {
-        ImGui.TextWrapped(LOC.Get("SETTINGS_Help_Text"));
+        ImGui.Text(LOC.Get("HELP_Current_Version", Smithbox.Instance._version));
 
         ImGui.Separator();
 
         ImGui.Text(LOC.Get("HELP_Developed_By"));
-        ImGui.Text(LOC.Get("HELP_Current_Version", Smithbox.Instance._version));
 
         ImGui.Separator();
 

@@ -23,6 +23,14 @@
     {
       "Key": "SETTINGS_Action_Save_Shortcuts",
       "Text": "Save Shortcuts"
+    },
+    {
+      "Key": "SETTINGS_Action_Revert_Preferences",
+      "Text": "Revert Preferences"
+    },
+    {
+      "Key": "SETTINGS_Action_Revert_Shortcuts",
+      "Text": "Revert Shortcuts"
     }
   ]
 }

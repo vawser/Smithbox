@@ -266,30 +266,46 @@ public class ToolSections
     /// </summary>
     private bool DisplayCategory(IGrouping<string, Entry> group)
     {
-        var collapsed = CollapsedCategories.Contains(group.Key);
+        return CategoryHeader(group.Key, group.Key, group.Count(), CollapsedCategories,
+            LOC.Get("EDITOR_ToolSections_Category_TT"));
+    }
 
-        ImGui.SeparatorText(collapsed ? $"{group.Key} ({group.Count()})" : group.Key);
+    /// <summary>
+    /// Draws a category title in the Tools window's style: a separator with the title in it. Double-clicking it
+    /// hides or shows the entries below; a hidden category shows its entry count in the title.
+    /// </summary>
+    /// <param name="key">Identifies the category in <paramref name="collapsed"/></param>
+    /// <param name="title">The displayed title</param>
+    /// <param name="count">How many entries the category has, shown while it is hidden</param>
+    /// <param name="collapsed">The keys of the hidden categories, updated by a double-click</param>
+    /// <param name="tooltip">Shown while the title is hovered</param>
+    /// <returns>True when the entries should be drawn</returns>
+    public static bool CategoryHeader(string key, string title, int count, ICollection<string> collapsed, string tooltip)
+    {
+        var isCollapsed = collapsed.Contains(key);
+
+        ImGui.SeparatorText(isCollapsed ? $"{title} ({count})" : title);
 
         if (ImGui.IsItemHovered())
         {
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
-                if (collapsed)
+                if (isCollapsed)
                 {
-                    CollapsedCategories.Remove(group.Key);
+                    collapsed.Remove(key);
                 }
                 else
                 {
-                    CollapsedCategories.Add(group.Key);
+                    collapsed.Add(key);
                 }
 
-                collapsed = !collapsed;
+                isCollapsed = !isCollapsed;
             }
 
-            ImGui.SetTooltip(LOC.Get("EDITOR_ToolSections_Category_TT"));
+            ImGui.SetTooltip(tooltip);
         }
 
-        return !collapsed;
+        return !isCollapsed;
     }
 
     private void DisplayEntry(Entry entry, bool indent)

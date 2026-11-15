@@ -1,4 +1,5 @@
 using Hexa.NET.ImGui;
+using StudioCore.Editors;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -6,7 +7,8 @@ using System.Numerics;
 namespace StudioCore.Application;
 
 /// <summary>
-/// The Project Editor's list of projects: an Open tab first, then one tab per game, grouped by group tag.
+/// The Project Editor's list of projects, in the Tools window's style: an Open group first, then one group per
+/// game (its projects grouped by group tag). Double-clicking a group's title hides or shows its projects.
 /// </summary>
 public class ProjectSidebar
 {
@@ -40,84 +42,102 @@ public class ProjectSidebar
 
         var projects = orchestrator.Projects.ToList();
 
+        ImGui.BeginChild("projectSidebarList", Vector2.Zero, ImGuiChildFlags.Borders);
+
         if (projects.Count == 0)
         {
-            ImGui.BeginChild("projectSidebarList", Vector2.Zero, ImGuiChildFlags.Borders);
-
             if (orchestrator.ExistingProjectsRead)
                 ImGui.TextDisabled(LOC.Get("PROJECT_Sidebar_No_Projects"));
-
-            ImGui.EndChild();
-            return;
         }
-
-        // Tabs come from the unfiltered list so typing in the filter never removes the tab being viewed
-        if (ImGui.BeginTabBar("projectSidebarTabs", ImGuiTabBarFlags.FittingPolicyScroll))
+        else
         {
-            DisplayOpenTab(projects);
-            DisplayGameTabs(projects);
-
-            ImGui.EndTabBar();
+            DisplayOpenGroup(projects);
+            DisplayGameGroups(projects);
         }
+
+        ImGui.EndChild();
+    }
+
+    // The groups whose projects are hidden, toggled by double-clicking the group's title. Kept in the config so it
+    // survives a restart; read through CFG.Current each time, as reverting the preferences replaces it.
+    private static List<string> CollapsedGroups =>
+        CFG.Current.Interface_Project_List_Collapsed_Groups ??= new List<string>();
+
+    private const string OpenGroupKey = "open";
+
+    // Spacing goes between groups, not above the first
+    private bool _firstGroup;
+
+    /// <summary>
+    /// A group's title, as the Tools window draws its categories. Returns true when its projects should be drawn.
+    /// </summary>
+    private bool DisplayGroupHeader(string key, string title, int count)
+    {
+        if (!_firstGroup)
+            ImGui.Spacing();
+
+        _firstGroup = false;
+
+        return ToolSections.CategoryHeader(key, title, count, CollapsedGroups,
+            LOC.Get("PROJECT_Sidebar_Group_TT"));
     }
 
     /// <summary>
     /// The loaded projects. Projects loaded only for another project's comparison data aren't open projects.
     /// </summary>
-    private void DisplayOpenTab(List<ProjectEntry> projects)
+    private void DisplayOpenGroup(List<ProjectEntry> projects)
     {
-        if (!projects.Any(e => e.IsActive))
+        _firstGroup = true;
+
+        var openProjects = projects.Where(e => e.IsActive && IsMatch(e)).ToList();
+
+        if (openProjects.Count == 0)
             return;
 
-        if (!ImGui.BeginTabItem($"{LOC.Get("PROJECT_Sidebar_Open_Header")}##sidebarOpenTab"))
+        if (!DisplayGroupHeader(OpenGroupKey, LOC.Get("PROJECT_Sidebar_Open_Header"), openProjects.Count))
             return;
 
-        ImGui.BeginChild("projectSidebarList_open", Vector2.Zero, ImGuiChildFlags.Borders);
+        ImGui.Indent();
 
-        foreach (var project in projects.Where(e => e.IsActive && IsMatch(e)))
+        foreach (var project in openProjects)
         {
             DisplayEntry(project, "open", true);
         }
 
-        ImGui.EndChild();
-        ImGui.EndTabItem();
+        ImGui.Unindent();
     }
 
     /// <summary>
-    /// One tab per game in the project type order; within a tab, projects are grouped by group tag.
+    /// One group per game in the project type order; within a game, projects are grouped by group tag. Games
+    /// with no project matching the filter are left out.
     /// </summary>
-    private void DisplayGameTabs(List<ProjectEntry> projects)
+    private void DisplayGameGroups(List<ProjectEntry> projects)
     {
         foreach (var projectType in ProjectTypeOrder.Order)
         {
-            if (!projects.Any(e => e.Descriptor.ProjectType == projectType))
+            var gameProjects = projects
+                .Where(e => e.Descriptor.ProjectType == projectType && IsMatch(e))
+                .OrderBy(e => e.Descriptor.ProjectName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            if (gameProjects.Count == 0)
                 continue;
 
-            var shortName = LOC.Get($"EDITOR_Short_Project_Type_{projectType}");
-            var tabOpen = ImGui.BeginTabItem($"{shortName}##sidebarGameTab_{projectType}");
+            var title = LOC.Get(projectType.GetDisplayName());
 
-            if (ImGui.IsItemHovered())
-                GUI.Tooltip(LOC.Get(projectType.GetDisplayName()));
-
-            if (!tabOpen)
+            if (!DisplayGroupHeader($"game_{projectType}", title, gameProjects.Count))
                 continue;
 
-            ImGui.BeginChild($"projectSidebarList_{projectType}", Vector2.Zero, ImGuiChildFlags.Borders);
+            ImGui.Indent();
 
-            DisplayGameProjects(projects, projectType);
+            DisplayGameProjects(gameProjects, projectType);
 
-            ImGui.EndChild();
-            ImGui.EndTabItem();
+            ImGui.Unindent();
         }
     }
 
-    private void DisplayGameProjects(List<ProjectEntry> projects, ProjectType projectType)
+    private void DisplayGameProjects(List<ProjectEntry> gameProjects, ProjectType projectType)
     {
-        var gameProjects = projects
-            .Where(e => e.Descriptor.ProjectType == projectType && IsMatch(e))
-            .OrderBy(e => e.Descriptor.ProjectName, StringComparer.OrdinalIgnoreCase)
-            .ToList();
-
         // Group Tags
         var tagged = gameProjects
             .Where(e => e.Descriptor.FolderTag != "")

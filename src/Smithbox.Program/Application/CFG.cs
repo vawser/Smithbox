@@ -161,6 +161,9 @@ public class CFG
     public bool Interface_Allow_Window_Movement = true;
     public bool Interface_Tool_Window_Dropdown_Navigation = false;
 
+    // The Project Editor list's groups whose projects are hidden: "open", or "game_" + the project type
+    public List<string> Interface_Project_List_Collapsed_Groups = new List<string>();
+
     public bool Interface_Alias_Wordwrap_General = true;
     public bool Interface_Alias_Wordwrap_Map_Editor = true;
     public bool Interface_Alias_Wordwrap_Model_Editor = true;
