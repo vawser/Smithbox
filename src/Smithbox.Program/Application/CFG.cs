@@ -1535,6 +1535,11 @@ public class CFG
     public bool CutsceneEditor_Load_Models = true;
     public bool CutsceneEditor_Load_Map = true;
     public bool CutsceneEditor_Map_Load_Assets = true;
+
+    // The map's own characters in the backdrop (static, with their NpcParam masks), and drawing only the parts in the
+    // draw groups of the collision under the cut camera's start
+    public bool CutsceneEditor_Map_Load_Characters = true;
+    public bool CutsceneEditor_Map_Use_Draw_Groups = true;
     public bool CutsceneEditor_Display_Camera_Path = true;
     public bool CutsceneEditor_Display_Camera = true;
     public bool CutsceneEditor_Display_Markers = true;

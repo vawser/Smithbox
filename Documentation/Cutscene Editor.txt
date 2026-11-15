@@ -3,8 +3,27 @@
 #----------------------------------------------------
 
 - Support playback for:
-    - Subtitles
     - FX
-    - Sound
-    - Model masks
-    - Hide LOD
+    - Fades
+    - Point Lights
+    - Map GPARAM
+    - DOF
+    
+- Links:
+    - Light Set
+    - Rumble
+    - Movie
+    - Gparam
+    
+- Subtitles:
+    - Need timing cuts as some sounds play partial in cut X and then continue in cut Y
+    
+- Editor:
+    - Add/Rename/Delete/Copy/Paste Cutscene files
+    - Add/Rename/Delete/Copy/Paste Cuts
+    - Actor animation edit
+    - Actor add/remove
+    
+- Tweaks:
+    - Allow draw group col selection to persist between cuts
+    - Improve presentation of properties

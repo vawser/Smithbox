@@ -71,17 +71,22 @@ public static class EntityHelper
     /// <summary>
     /// Returns true if this entity is an Enemy
     /// </summary>
-    public static bool IsPartEnemy(Entity ent)
+    public static bool IsPartEnemy(Entity ent) => IsPartEnemy(ent.WrappedObject);
+
+    /// <summary>
+    /// Returns true if this MSB part is an Enemy
+    /// </summary>
+    public static bool IsPartEnemy(object part)
     {
-        return ent.WrappedObject is MSB1.Part.Enemy ||
-            ent.WrappedObject is MSB3.Part.Enemy ||
-            ent.WrappedObject is MSBB.Part.Enemy ||
-            ent.WrappedObject is MSBD.Part.Enemy ||
-            ent.WrappedObject is MSBE.Part.Enemy ||
-            ent.WrappedObject is MSBS.Part.Enemy ||
-            ent.WrappedObject is MSB_AC6.Part.Enemy ||
-            ent.WrappedObject is MSB_NR.Part.Enemy ||
-            ent.WrappedObject is MSB_DB_NT.Part.Enemy ? true : false;
+        return part is MSB1.Part.Enemy ||
+            part is MSB3.Part.Enemy ||
+            part is MSBB.Part.Enemy ||
+            part is MSBD.Part.Enemy ||
+            part is MSBE.Part.Enemy ||
+            part is MSBS.Part.Enemy ||
+            part is MSB_AC6.Part.Enemy ||
+            part is MSB_NR.Part.Enemy ||
+            part is MSB_DB_NT.Part.Enemy ? true : false;
     }
 
     /// <summary>
@@ -182,18 +187,23 @@ public static class EntityHelper
     /// <summary>
     /// Returns true if this entity is an Collision
     /// </summary>
-    public static bool IsPartCollision(Entity ent)
+    public static bool IsPartCollision(Entity ent) => IsPartCollision(ent.WrappedObject);
+
+    /// <summary>
+    /// Returns true if this MSB part is a Collision
+    /// </summary>
+    public static bool IsPartCollision(object part)
     {
-        return ent.WrappedObject is MSB1.Part.Collision ||
-            ent.WrappedObject is MSB2.Part.Collision ||
-            ent.WrappedObject is MSB3.Part.Collision ||
-            ent.WrappedObject is MSBB.Part.Collision ||
-            ent.WrappedObject is MSBD.Part.Collision ||
-            ent.WrappedObject is MSBE.Part.Collision ||
-            ent.WrappedObject is MSBS.Part.Collision ||
-            ent.WrappedObject is MSB_AC6.Part.Collision ||
-            ent.WrappedObject is MSB_NR.Part.Collision ||
-            ent.WrappedObject is MSB_DB_NT.Part.Collision ? true : false;
+        return part is MSB1.Part.Collision ||
+            part is MSB2.Part.Collision ||
+            part is MSB3.Part.Collision ||
+            part is MSBB.Part.Collision ||
+            part is MSBD.Part.Collision ||
+            part is MSBE.Part.Collision ||
+            part is MSBS.Part.Collision ||
+            part is MSB_AC6.Part.Collision ||
+            part is MSB_NR.Part.Collision ||
+            part is MSB_DB_NT.Part.Collision ? true : false;
     }
 
     /// <summary>

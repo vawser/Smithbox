@@ -109,10 +109,21 @@ public static class DisplayGroupFields
     public static (uint[] draw, uint[] display)? ApplyLoader(Entity owner, uint[] storedDraw, uint[] storedDisplay,
         DisplayGroupLoaderMode mode)
     {
-        if (mode == DisplayGroupLoaderMode.Stored || owner?.WrappedObject == null || storedDraw == null)
+        if (owner?.WrappedObject == null)
             return null;
 
-        var part = owner.WrappedObject;
+        return ApplyLoader(owner.WrappedObject, EntityHelper.IsPartCollision(owner), storedDraw, storedDisplay, mode);
+    }
+
+    /// <summary>
+    /// <see cref="ApplyLoader(Entity, uint[], uint[], DisplayGroupLoaderMode)" /> for an MSB part that isn't an entity
+    /// (the Cutscene Editor's map backdrop). <paramref name="isCollision" /> says whether it is a collision part.
+    /// </summary>
+    public static (uint[] draw, uint[] display)? ApplyLoader(object part, bool isCollision, uint[] storedDraw,
+        uint[] storedDisplay, DisplayGroupLoaderMode mode)
+    {
+        if (mode == DisplayGroupLoaderMode.Stored || part == null || storedDraw == null)
+            return null;
 
         if (Get(part, "UseAltGroups") is not byte useAlt)
             return null;
@@ -151,7 +162,7 @@ public static class DisplayGroupFields
         }
 
         // A collision always draws in the groups it displays (all loader states)
-        if (EntityHelper.IsPartCollision(owner))
+        if (isCollision)
         {
             for (int i = 0; i < draw.Length && i < display.Length; i++)
                 draw[i] |= display[i];

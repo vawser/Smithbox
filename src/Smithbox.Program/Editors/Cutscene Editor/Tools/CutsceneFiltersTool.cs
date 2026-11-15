@@ -46,13 +46,23 @@ public class CutsceneFiltersTool
         var mapAssets = CFG.Current.CutsceneEditor_Map_Load_Assets;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Map_Assets")}##cutsceneFilterMapAssets", ref mapAssets))
             Editor.SetMapAssets(mapAssets);
-        ImGui.EndDisabled();
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Map_Assets_TT"));
+
+        var mapCharacters = CFG.Current.CutsceneEditor_Map_Load_Characters;
+        if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Map_Characters")}##cutsceneFilterMapCharacters", ref mapCharacters))
+            Editor.SetMapCharacters(mapCharacters);
+        GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Map_Characters_TT"));
+        ImGui.EndDisabled();
 
         var models = CFG.Current.CutsceneEditor_Load_Models;
         if (ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Models")}##cutsceneFilterModels", ref models))
             Editor.SetLoadModels(models);
         GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Models_TT"));
+
+        // Draw Groups
+        GUI.Spacer();
+        GUI.SimpleHeader(LOC.Get("CUTSCENE_FiltersTool_Draw_Groups_Header"), LOC.Get("CUTSCENE_FiltersTool_Draw_Groups_Header_TT"));
+        DisplayDrawGroups();
 
         // Overlays
         GUI.Spacer();
@@ -87,5 +97,74 @@ public class CutsceneFiltersTool
         // Audio needs the Sound Editor: say so rather than leave the toggles doing nothing
         if (!SoundReferenceHelper.IsAvailable(Editor.Project))
             GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_No_Sound"));
+    }
+
+    private string CollisionFilter = "";
+    private bool CollisionFilterExact;
+
+    /// <summary>
+    /// The draw groups the map is drawn in: on or off, what they came from, and the map's collisions to stand on
+    /// instead of the one under the camera's start (for a cut whose camera starts somewhere the player can't be).
+    /// </summary>
+    private void DisplayDrawGroups()
+    {
+        var backdrop = Editor.Backdrop;
+
+        if (!CFG.Current.CutsceneEditor_Load_Map || backdrop.LoadedMapId == null)
+        {
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_No_Map"));
+            return;
+        }
+
+        ImGui.Checkbox($"{LOC.Get("CUTSCENE_FiltersTool_Draw_Groups")}##cutsceneFilterDrawGroups", ref CFG.Current.CutsceneEditor_Map_Use_Draw_Groups);
+        GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Draw_Groups_TT"));
+
+        // What the draw groups came from, so a wrong guess shows
+        if (!CFG.Current.CutsceneEditor_Map_Use_Draw_Groups)
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_Off", backdrop.ShownCount, backdrop.PartCount));
+        else if (!backdrop.HasCollision)
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_No_Collision", backdrop.PartCount));
+        else if (backdrop.StandingOn == null)
+            GUI.WrappedText(LOC.Get("CUTSCENE_FiltersTool_Groups_No_Hit", backdrop.PartCount));
+        else
+            GUI.WrappedText(LOC.Get(backdrop.StandingOnChosen ? "CUTSCENE_FiltersTool_Groups_Chosen" : "CUTSCENE_FiltersTool_Groups_Standing",
+                backdrop.StandingOn, backdrop.ActiveDisplay?.Sum(w => System.Numerics.BitOperations.PopCount(w)) ?? 0,
+                backdrop.ShownCount, backdrop.PartCount));
+
+        if (!CFG.Current.CutsceneEditor_Map_Use_Draw_Groups || backdrop.Collisions.Count == 0)
+            return;
+
+        // The collision to stand on, for this cut
+        GUI.Spacer();
+        EditorFilters.DisplayFramedListFilter("cutsceneCollisionFilter", ref CollisionFilter, ref CollisionFilterExact);
+
+        var chosen = Editor.ChosenCollision;
+        var height = Math.Min(10, backdrop.Collisions.Count + 1) * ImGui.GetTextLineHeightWithSpacing() + ImGui.GetStyle().FramePadding.Y * 2;
+        if (ImGui.BeginChild("cutsceneCollisionList", new System.Numerics.Vector2(0, height), ImGuiChildFlags.Borders))
+        {
+            // Auto: the collision under the camera's start, as it was before a choice
+            var auto = backdrop.CollisionUnderPoint != null
+                ? LOC.Get("CUTSCENE_FiltersTool_Collision_Auto_Named", backdrop.CollisionUnderPoint)
+                : LOC.Get("CUTSCENE_FiltersTool_Collision_Auto_None");
+            if (ImGui.Selectable($"{auto}##cutsceneCollisionAuto", chosen == null))
+                Editor.SetChosenCollision(null);
+            GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Collision_Auto_TT"));
+
+            foreach (var (name, groups) in backdrop.Collisions)
+            {
+                if (!string.IsNullOrEmpty(CollisionFilter) && !EditorFilters.IsMatch(CollisionFilter, name, CollisionFilterExact))
+                    continue;
+
+                var label = name == backdrop.CollisionUnderPoint
+                    ? LOC.Get("CUTSCENE_FiltersTool_Collision_Row_Under", name, groups)
+                    : LOC.Get("CUTSCENE_FiltersTool_Collision_Row", name, groups);
+
+                if (ImGui.Selectable($"{label}##cutsceneCollision_{name}", string.Equals(chosen, name, StringComparison.OrdinalIgnoreCase)))
+                    Editor.SetChosenCollision(name);
+            }
+        }
+
+        ImGui.EndChild();
+        GUI.Tooltip(LOC.Get("CUTSCENE_FiltersTool_Collision_List_TT"));
     }
 }

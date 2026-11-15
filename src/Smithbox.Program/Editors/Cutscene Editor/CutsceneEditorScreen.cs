@@ -522,6 +522,82 @@ public class CutsceneEditorScreen : EditorScreen
         ImGui.EndMenu();
     }
 
+    // ---- the map's draw groups: what the player sees standing where the cut's camera starts
+
+    private (CutsceneScene? Scene, string? Map, int Collision, bool Use, int Keys, string? Chosen) MapGroupsFor;
+
+    // The collision chosen to stand on for a cut (where the camera's start is a poor guess), by map, for the session
+    private readonly Dictionary<(string Cutscene, int Cut, string Map), string> ChosenCollisions = new();
+
+    /// <summary>The collision chosen for the cut shown in the map shown, null to take the one under the camera</summary>
+    public string? ChosenCollision =>
+        SelectedFile != null && Backdrop.LoadedMapId != null &&
+        ChosenCollisions.TryGetValue((SelectedFile.Name, SelectedCut, Backdrop.LoadedMapId), out var name) ? name : null;
+
+    /// <summary>Stands the cut shown on a collision of the map (null: the one under the camera's start again)</summary>
+    public void SetChosenCollision(string? collision)
+    {
+        if (SelectedFile == null || Backdrop.LoadedMapId == null)
+            return;
+
+        var key = (SelectedFile.Name, SelectedCut, Backdrop.LoadedMapId);
+        if (collision == null)
+            ChosenCollisions.Remove(key);
+        else
+            ChosenCollisions[key] = collision;
+    }
+
+    /// <summary>Where the cut's camera is at its first frame, in the map's space (null without a camera)</summary>
+    public Vector3? CameraStart()
+    {
+        if (Scene?.ActiveCamera(0) is not { Skeleton: not null } camera)
+            return null;
+
+        return camera.World(0, Scene.RootOf(camera.Resource, 0)).Translation;
+    }
+
+    /// <summary>
+    /// Draws the map's parts in the draw groups of the collision under the cut camera's start (cast straight down),
+    /// and hides the map characters that cutscene actors stand for, whenever the cut, the map, its collision or the
+    /// option change.
+    /// </summary>
+    private void UpdateMapGroups()
+    {
+        var chosen = ChosenCollision;
+        var key = (Scene, Backdrop.LoadedMapId, Backdrop.CollisionVersion, CFG.Current.CutsceneEditor_Map_Use_Draw_Groups,
+            Scene?.File.KeysVersion ?? 0, chosen);
+        if (key == MapGroupsFor || Backdrop.LoadedMapId == null)
+            return;
+
+        MapGroupsFor = key;
+
+        // The characters the cut plays itself
+        var excluded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var actor in Scene?.Actors ?? new List<CutsceneActor>())
+        {
+            if (actor.Cast is { } cast && cast.Map.Equals(Backdrop.LoadedMapId, StringComparison.OrdinalIgnoreCase))
+                excluded.Add(cast.PartName);
+        }
+
+        Backdrop.ApplyGroups(CameraStart(), CFG.Current.CutsceneEditor_Map_Use_Draw_Groups, excluded, chosen);
+
+        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+            Smithbox.Log(this, LOC.Get("CUTSCENE_Map_Groups_Log", Backdrop.StandingOn ?? "-",
+                Backdrop.ActiveDisplay?.Sum(w => System.Numerics.BitOperations.PopCount(w)) ?? 0,
+                Backdrop.ShownCount, Backdrop.PartCount, excluded.Count));
+    }
+
+    /// <summary>The map's own characters: the map is read again, with or without them</summary>
+    public void SetMapCharacters(bool on)
+    {
+        CFG.Current.CutsceneEditor_Map_Load_Characters = on;
+
+        var map = Backdrop.LoadedMapId;
+        Backdrop.UnloadMap();
+        if (map != null)
+            Backdrop.LoadMap(map);
+    }
+
     // ---- the player: dressed by the Character Preview tool
 
     /// <summary>The player's appearance, the tool's current choice (a bare body) the first time it is asked for</summary>
@@ -666,6 +742,7 @@ public class CutsceneEditorScreen : EditorScreen
     {
         ApplyBuiltScene();
         Backdrop.Update();
+        UpdateMapGroups();
 
         if (Scene != null)
         {
