@@ -39,9 +39,23 @@ public class CutsceneFile
     /// <summary>Bumped whenever a cut Havok file changes, so the viewport reads its cameras again</summary>
     public int HavokVersion { get; private set; }
 
-    // The cut Havok files as they were read from the project, and as the game has them (read when first needed)
+    // The cut Havok files as they were read from the project, and the ones camera keys apply to: as the game has them
+    // (read when first needed), or carried over from the cutscene a new one was copied or renamed from
     private readonly Dictionary<string, byte[]> LoadedHavokFiles = new(StringComparer.OrdinalIgnoreCase);
     private Dictionary<string, byte[]>? VanillaHavokFiles;
+
+    /// <summary>
+    /// Made in the editor (added, pasted, or renamed) and not saved yet: nothing at its path is this cutscene. Saved,
+    /// it is built from <see cref="TemplateRaw" />.
+    /// </summary>
+    public bool IsNew { get; private set; }
+
+    /// <summary>Deleted, but the game has it too: the next save moves the project's copy away and reads the game's</summary>
+    public bool PendingRevert;
+
+    // For a new file: the binder it is built from on save, for its header and any entry that is neither the MQB nor a
+    // cut Havok file (theirs come from this file)
+    private byte[]? TemplateRaw;
 
     /// <summary>The camera keys of this cutscene, from its sidecar (<see cref="CutsceneCameraKeyStore" />)</summary>
     public CutsceneCameraKeyStore CameraKeys { get; private set; } = new();
@@ -122,6 +136,253 @@ public class CutsceneFile
         Entry = entry;
         Name = entry.Filename;
     }
+
+    // ---- files made in the editor
+
+    /// <summary>
+    /// A new cutscene with one empty cut (cut0010, five seconds), in the MQB version and framerate of
+    /// <paramref name="template" />, whose binder (<paramref name="templateRaw" />) gives the new one its header.
+    /// </summary>
+    public static CutsceneFile CreateBlank(FileDictionaryEntry entry, byte[] templateRaw, MQB template)
+    {
+        var fps = template.Framerate > 0 ? template.Framerate : 30;
+        var mqb = new MQB
+        {
+            BigEndian = template.BigEndian,
+            Version = template.Version,
+            Name = entry.Filename,
+            Framerate = template.Framerate,
+            ResourceDirectory = template.ResourceDirectory ?? "",
+            Resources = new List<MQB.Resource>(),
+            Cuts = new List<MQB.Cut> { new() { Name = "cut0010", Duration = (int)(fps * 5) } }
+        };
+
+        return new CutsceneFile(entry)
+        {
+            Mqb = mqb,
+            TemplateRaw = templateRaw,
+            IsNew = true,
+            IsDirty = true,
+            VanillaHavokFiles = new(StringComparer.OrdinalIgnoreCase)
+        };
+    }
+
+    /// <summary>
+    /// A copy of this loaded cutscene under another name, unsaved edits included: its MQB, cut Havok files and camera
+    /// keys, with the paths that name the cutscene renamed.
+    /// </summary>
+    public CutsceneFile CopyAs(ProjectEntry project, FileDictionaryEntry entry)
+    {
+        if (Mqb == null)
+            throw new InvalidOperationException($"{Name} is not loaded.");
+
+        var raw = TemplateRaw ?? project.VFS.FS.ReadFile(Entry.Path)?.ToArray()
+                  ?? throw new InvalidOperationException($"{Entry.Path} could not be read.");
+        VanillaHavokFiles ??= ReadVanillaHavokFiles(project);
+
+        var copy = new CutsceneFile(entry)
+        {
+            Mqb = MQB.Read(Mqb.Write()),
+            TemplateRaw = raw,
+            IsNew = true,
+            IsDirty = true,
+            VanillaHavokFiles = new(VanillaHavokFiles, StringComparer.OrdinalIgnoreCase)
+        };
+
+        // The byte arrays are never changed in place (an edit puts in a new one), so they can be shared
+        foreach (var (key, bytes) in HavokFiles)
+        {
+            copy.HavokFiles[key] = bytes;
+            copy.LoadedHavokFiles[key] = LoadedHavokFiles.GetValueOrDefault(key, bytes);
+            copy.HavokCompression[key] = HavokCompression.GetValueOrDefault(key, DCX.Type.None);
+            copy.ModifiedHavok.Add(key);
+        }
+
+        foreach (var (id, keys) in CameraKeys.Cameras)
+            copy.CameraKeys.Cameras[id] = keys.Clone();
+        copy.BakedCameras.UnionWith(BakedCameras);
+
+        copy.Retarget(Name, entry.Filename);
+        return copy;
+    }
+
+    /// <summary>The binder's bytes as they are in the project (or the game), or the one a new file is built from</summary>
+    public byte[]? ReadRaw(ProjectEntry project) => TemplateRaw ?? project.VFS.FS.ReadFile(Entry.Path)?.ToArray();
+
+    /// <summary>What <see cref="Rename" /> changes, to put back on undo</summary>
+    public sealed record Identity(FileDictionaryEntry Entry, string Name, bool IsNew, byte[]? TemplateRaw, string MqbName, List<string?> Paths);
+
+    public Identity CaptureIdentity() =>
+        new(Entry, Name, IsNew, TemplateRaw, Mqb?.Name ?? "", Mqb?.Resources.Select(r => (string?)r.Path).ToList() ?? new());
+
+    public void RestoreIdentity(Identity identity)
+    {
+        Entry = identity.Entry;
+        Name = identity.Name;
+        IsNew = identity.IsNew;
+        TemplateRaw = identity.TemplateRaw;
+        if (Mqb != null)
+        {
+            Mqb.Name = identity.MqbName;
+            for (var i = 0; i < Mqb.Resources.Count && i < identity.Paths.Count; i++)
+                Mqb.Resources[i].Path = identity.Paths[i];
+        }
+    }
+
+    /// <summary>
+    /// Gives this loaded cutscene another name and path. It becomes a new file, built on save from the binder it was
+    /// read from, with the game's Havok files of its old name kept as the base its camera keys apply to. Use through
+    /// <see cref="CutsceneFileAction" />.
+    /// </summary>
+    public void Rename(ProjectEntry project, FileDictionaryEntry entry)
+    {
+        if (Mqb == null)
+            throw new InvalidOperationException($"{Name} is not loaded.");
+
+        VanillaHavokFiles ??= ReadVanillaHavokFiles(project);
+        if (!IsNew)
+            TemplateRaw = project.VFS.FS.ReadFile(Entry.Path)?.ToArray()
+                          ?? throw new InvalidOperationException($"{Entry.Path} could not be read.");
+
+        var old = Name;
+        Entry = entry;
+        Name = entry.Filename;
+        IsNew = true;
+
+        // Every cut Havok file goes into the new binder
+        ModifiedHavok.UnionWith(HavokFiles.Keys);
+        Retarget(old, Name);
+    }
+
+    /// <summary>The MQB's name, and the resource paths' folder of the cutscene (...\scn\s10_00_0020\...), renamed</summary>
+    private void Retarget(string oldName, string newName)
+    {
+        if (Mqb == null || string.Equals(oldName, newName, StringComparison.OrdinalIgnoreCase))
+            return;
+
+        if (Mqb.Name != null && Mqb.Name.Contains(oldName, StringComparison.OrdinalIgnoreCase))
+            Mqb.Name = Mqb.Name.Replace(oldName, newName, StringComparison.OrdinalIgnoreCase);
+
+        foreach (var r in Mqb.Resources)
+            if (r.Path != null)
+                r.Path = ReplaceFolder(r.Path, oldName, newName);
+    }
+
+    /// <summary>A path with a folder of one name (\old\ or /old/) given another; the rest as it was</summary>
+    public static string ReplaceFolder(string path, string oldFolder, string newFolder)
+    {
+        foreach (var sep in new[] { '\\', '/' })
+            path = path.Replace($"{sep}{oldFolder}{sep}", $"{sep}{newFolder}{sep}", StringComparison.OrdinalIgnoreCase);
+        return path;
+    }
+
+    /// <summary>After its project copy is moved away: unloaded, to read the game's file on next use</summary>
+    public void ResetToVanilla()
+    {
+        lock (LoadLock)
+        {
+            Mqb = null;
+            LoadError = null;
+            HavokFiles.Clear();
+            HavokCompression.Clear();
+            LoadedHavokFiles.Clear();
+            ModifiedHavok.Clear();
+            VanillaHavokFiles = null;
+            CameraKeys = new();
+            BakedCameras.Clear();
+            IsDirty = false;
+            PendingRevert = false;
+            IsNew = false;
+            TemplateRaw = null;
+            HavokVersion++;
+            KeysVersion++;
+        }
+    }
+
+    // ---- the Havok files and camera keys of one cut folder, for adding, deleting, renaming, and copying cuts
+
+    /// <summary>
+    /// The cut Havok files of one folder (cutNNNN), and their cameras' keys, as they are now: what a copy of the cut
+    /// takes with it. Keys and file names are relative to the folder (aNNNN, aNNNN/camNNNN).
+    /// </summary>
+    public sealed class CutHavok
+    {
+        public List<(string Stem, byte[] Bytes, byte[]? Base, DCX.Type Compression)> Files = new();
+        public Dictionary<string, CutsceneCameraKeys> Keys = new(StringComparer.OrdinalIgnoreCase);
+        public HashSet<string> Baked = new(StringComparer.OrdinalIgnoreCase);
+    }
+
+    private static bool InFolder(string key, string folder) => key.StartsWith(folder + "/", StringComparison.OrdinalIgnoreCase);
+
+    public CutHavok TakeCut(ProjectEntry project, string folder)
+    {
+        folder = folder.ToLowerInvariant();
+        VanillaHavokFiles ??= ReadVanillaHavokFiles(project);
+
+        var result = new CutHavok();
+        foreach (var (key, bytes) in HavokFiles.Where(p => InFolder(p.Key, folder)))
+        {
+            var baseFile = VanillaHavokFiles.TryGetValue(key, out var v) ? v : LoadedHavokFiles.GetValueOrDefault(key);
+            result.Files.Add((key[(folder.Length + 1)..], bytes, baseFile, HavokCompression.GetValueOrDefault(key, DCX.Type.None)));
+        }
+
+        foreach (var (id, keys) in CameraKeys.Cameras.Where(p => InFolder(p.Key, folder)))
+            result.Keys[id[(folder.Length + 1)..]] = keys.Clone();
+        foreach (var id in BakedCameras.Where(id => InFolder(id, folder)))
+            result.Baked.Add(id[(folder.Length + 1)..]);
+
+        return result;
+    }
+
+    /// <summary>Puts a cut's Havok files and keys under a folder, written into the binder on save</summary>
+    public void PutCut(ProjectEntry project, string folder, CutHavok cut)
+    {
+        folder = folder.ToLowerInvariant();
+        VanillaHavokFiles ??= ReadVanillaHavokFiles(project);
+
+        foreach (var (stem, bytes, baseFile, compression) in cut.Files)
+        {
+            var key = $"{folder}/{stem}".ToLowerInvariant();
+            HavokFiles[key] = bytes;
+            LoadedHavokFiles[key] = baseFile ?? bytes;
+            VanillaHavokFiles[key] = baseFile ?? bytes;
+            HavokCompression[key] = compression;
+            ModifiedHavok.Add(key);
+        }
+
+        foreach (var (id, keys) in cut.Keys)
+            CameraKeys.Cameras[$"{folder}/{id}"] = keys.Clone();
+        foreach (var id in cut.Baked)
+            BakedCameras.Add($"{folder}/{id}");
+
+        HavokVersion++;
+        KeysVersion++;
+    }
+
+    /// <summary>Takes a cut folder's Havok files and keys away: their binder entries go on save</summary>
+    public void RemoveCut(string folder)
+    {
+        foreach (var key in HavokFiles.Keys.Where(k => InFolder(k, folder)).ToList())
+        {
+            HavokFiles.Remove(key);
+            HavokCompression.Remove(key);
+            LoadedHavokFiles.Remove(key);
+            ModifiedHavok.Remove(key);
+        }
+
+        foreach (var id in CameraKeys.Cameras.Keys.Where(k => InFolder(k, folder)).ToList())
+            CameraKeys.Cameras.Remove(id);
+        BakedCameras.RemoveWhere(id => InFolder(id, folder));
+
+        HavokVersion++;
+        KeysVersion++;
+    }
+
+    /// <summary>Whether a cut folder has Havok files</summary>
+    public bool HasCutFolder(string folder) => HavokFiles.Keys.Any(k => InFolder(k, folder));
+
+    /// <summary>The folder (cutNNNN) of an HKT resource's path, or null</summary>
+    public static string? CutFolderOf(string? path) => HavokKey(path ?? "") is { } key ? key[..key.IndexOf('/')] : null;
 
     private readonly object LoadLock = new();
 
@@ -263,15 +524,14 @@ public class CutsceneFile
 
         try
         {
-            var raw = project.VFS.FS.ReadFile(Entry.Path)
-                      ?? throw new InvalidOperationException($"{Entry.Path} could not be read.");
+            Memory<byte> raw = TemplateRaw != null ? TemplateRaw
+                : project.VFS.FS.ReadFile(Entry.Path) ?? throw new InvalidOperationException($"{Entry.Path} could not be read.");
             var bytes = Mqb.Write();
 
             BakeCameras(project);
 
             var binder = ReadBinder(project, raw, out _);
-            MqbFileOf(binder.Files).Bytes = bytes;
-            PutHavokFiles(binder.Files);
+            RebuildEntries(binder.Files, bytes);
 
             // Written as it is, with its own DCX compression, as the other editors write their binders.
             // ProjectUtils.WriteWithBackup isn't used: for DS3, ER, NR and AC6 it encrypts every BND4 as a regulation.bin.
@@ -285,6 +545,8 @@ public class CutsceneFile
 
             IsDirty = false;
             ModifiedHavok.Clear();
+            IsNew = false;
+            TemplateRaw = null;
 
             // The keys stay with the project; a camera with neither keys nor a mode needs no entry
             foreach (var id in CameraKeys.Cameras.Where(p => !p.Value.Applies && p.Value.Keys.Count == 0).Select(p => p.Key).ToList())
@@ -347,19 +609,89 @@ public class CutsceneFile
         }
     }
 
-    // The edited cut Havok files, in their binder entries, compressed as they were
-    private void PutHavokFiles(List<BinderFile> files)
+    /// <summary>
+    /// The binder's entries for this cutscene as it is now: the MQB; a cut Havok entry for each of its cut Havok files
+    /// (an unchanged one as it was; a new one named, flagged and numbered as the game's are: cut0090\a0010.hkx is
+    /// 900010), and none for the files it no longer has; every other entry as it was. Every entry's path takes the
+    /// cutscene's name, for a binder read from a cutscene of another name (renamed or copied).
+    /// </summary>
+    private void RebuildEntries(List<BinderFile> files, byte[] mqbBytes)
     {
-        foreach (var key in ModifiedHavok)
-        {
-            var file = files.FirstOrDefault(f => (f.Name ?? "").EndsWith(".hkx", StringComparison.OrdinalIgnoreCase)
-                                                 && string.Equals(HavokKey(f.Name!), key, StringComparison.OrdinalIgnoreCase))
-                       ?? throw new InvalidOperationException($"The binder has no Havok file {key}.");
+        var mqbFile = MqbFileOf(files);
+        var mqbName = mqbFile.Name ?? "";
+        var slash = mqbName.LastIndexOfAny(['\\', '/']);
+        var sep = slash >= 0 ? mqbName[slash] : '\\';
+        var oldStem = mqbName[(slash + 1)..].Split('.')[0];
 
-            var bytes = HavokFiles[key];
-            var compression = HavokCompression.GetValueOrDefault(key, DCX.Type.None);
-            file.Bytes = compression == DCX.Type.None ? bytes : DCX.Compress(bytes, compression);
+        string Renamed(string? name)
+        {
+            if (name == null || string.Equals(oldStem, Name, StringComparison.OrdinalIgnoreCase))
+                return name ?? "";
+            name = ReplaceFolder(name, oldStem, Name);
+            var s = name.LastIndexOfAny(['\\', '/']);
+            return name[(s + 1)..].StartsWith(oldStem + ".", StringComparison.OrdinalIgnoreCase)
+                ? name[..(s + 1)] + Name + name[(s + 1 + oldStem.Length)..]
+                : name;
         }
+
+        mqbFile.Name = Renamed(mqbName);
+        mqbFile.Bytes = mqbBytes;
+        var folder = mqbFile.Name[..(mqbFile.Name.LastIndexOfAny(['\\', '/']) + 1)];
+
+        var result = new List<BinderFile> { mqbFile };
+        var existing = new Dictionary<string, BinderFile>(StringComparer.OrdinalIgnoreCase);
+        var hkxFlags = mqbFile.Flags;
+
+        foreach (var f in files)
+        {
+            if (f == mqbFile)
+                continue;
+
+            var name = (f.Name ?? "").Replace('\\', '/');
+            if (name.EndsWith(".hkx", StringComparison.OrdinalIgnoreCase) && HavokKey(name) is { } key)
+            {
+                hkxFlags = f.Flags;
+                if (!HavokFiles.ContainsKey(key) || existing.ContainsKey(key))
+                    continue;
+                existing[key] = f;
+            }
+
+            f.Name = Renamed(f.Name);
+            result.Add(f);
+        }
+
+        var ids = result.Select(f => f.ID).ToHashSet();
+        foreach (var (key, bytes) in HavokFiles)
+        {
+            var compression = HavokCompression.GetValueOrDefault(key, DCX.Type.None);
+            Memory<byte> Packed() => compression == DCX.Type.None ? bytes : DCX.Compress(bytes, compression);
+
+            if (existing.TryGetValue(key, out var file))
+            {
+                if (ModifiedHavok.Contains(key))
+                    file.Bytes = Packed();
+                continue;
+            }
+
+            var id = IdFor(key, ids);
+            ids.Add(id);
+            result.Add(new BinderFile(hkxFlags, id, folder + key.Replace('/', sep) + ".hkx", Packed()));
+        }
+
+        files.Clear();
+        files.AddRange(result.OrderBy(f => f.ID));
+    }
+
+    // The game's numbering: cut number × 10000 + the file's number (cut0090/a0010 → 900010); the next free one if taken
+    private static int IdFor(string key, HashSet<int> taken)
+    {
+        var m = System.Text.RegularExpressions.Regex.Match(key, @"^cut(\d+)/a(\d+)$", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        var id = m.Success && long.TryParse(m.Groups[1].Value, out var c) && long.TryParse(m.Groups[2].Value, out var a) && c * 10000 + a < 100000000
+            ? (int)(c * 10000 + a)
+            : taken.Where(i => i < 100000000).DefaultIfEmpty(0).Max() + 1;
+        while (taken.Contains(id))
+            id++;
+        return id;
     }
 
     /// <summary>

@@ -3,7 +3,6 @@
 #----------------------------------------------------
 
 - Support playback for:
-    - Fades
     - Point Lights
     - Map GPARAM
     - DOF
@@ -18,8 +17,6 @@
     - Need timing cuts as some sounds play partial in cut X and then continue in cut Y
     
 - Editor:
-    - Add/Rename/Delete/Copy/Paste Cutscene files
-    - Add/Rename/Delete/Copy/Paste Cuts
     - Actor animation edit
     - Actor add/remove
     

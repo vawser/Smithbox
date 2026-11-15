@@ -89,6 +89,15 @@ public class CutsceneEditorScreen : EditorScreen
     public CutscenePropertiesView PropertiesView;
     public CutsceneToolWindow ToolWindow;
 
+    /// <summary>The cutscene copied in the list, to paste as a new one under another name</summary>
+    public CutsceneFile? CopiedFile;
+
+    /// <summary>The cut copied in the list, with its resources and Havok files as they were, to paste into any cutscene</summary>
+    public CutsceneCutClipboard? CopiedCut;
+
+    // The resource list the shown cut was built from: a cut deleted elsewhere in the file moves the indices it uses
+    private (List<MQB.Resource>? List, int Count) SceneResources;
+
     /// <summary>The cutscene being shown, and which of its cuts</summary>
     public CutsceneFile? SelectedFile { get; private set; }
     public int SelectedCut { get; private set; }
@@ -256,6 +265,7 @@ public class CutsceneEditorScreen : EditorScreen
         ClearScene();
         Models.BeginScene(built.File);
         Scene = built;
+        SceneResources = (built.File.Mqb?.Resources, built.File.Mqb?.Resources.Count ?? 0);
         Scene.StartLoads(Project, RenderScene, Models, EnsurePlayerAppearance());
 
         var keepPlaying = Playback.Playing;
@@ -316,6 +326,9 @@ public class CutsceneEditorScreen : EditorScreen
         // A cut read before the edit would show the data as it was
         DropPrefetch();
         StructureVersion++;
+
+        if (FollowStructure())
+            return;
         Scene?.RefreshEvents();
 
         RefreshCameras();
@@ -326,6 +339,64 @@ public class CutsceneEditorScreen : EditorScreen
             SelectedEvent = null;
             SelectedTimeline = -1;
         }
+    }
+
+    /// <summary>
+    /// After an edit of the cutscene list or of a cutscene's cuts (or its undo): nothing shown if the cutscene went, the
+    /// cut built again if it went or the resources it was built from moved, and the cut's new place if it only moved.
+    /// True if the scene was let go or is being built again.
+    /// </summary>
+    private bool FollowStructure()
+    {
+        if (SelectedFile == null)
+            return false;
+
+        if (!Data.Files.Contains(SelectedFile))
+        {
+            Deselect();
+            return true;
+        }
+
+        if (SelectedFile.Mqb is not { } mqb || Scene == null || Scene.File != SelectedFile)
+            return false;
+
+        var index = mqb.Cuts.IndexOf(Scene.Cut);
+        if (index >= 0 && SceneResources == (mqb.Resources, mqb.Resources.Count))
+        {
+            SelectedCut = index;
+            return false;
+        }
+
+        RebuildAt(index >= 0 ? index : Math.Clamp(SelectedCut, 0, Math.Max(0, mqb.Cuts.Count - 1)));
+        return true;
+    }
+
+    /// <summary>Shows nothing</summary>
+    private void Deselect()
+    {
+        DropPrefetch();
+        ClearScene();
+        SelectedFile = null;
+        SelectedCut = 0;
+        SelectedEvent = null;
+        SelectedTimeline = -1;
+        SelectedPlacement = null;
+        SelectedCameraKey = -1;
+
+        // A cut still being built is let go when it ends (ApplyBuiltScene: it is no longer the selection)
+    }
+
+    /// <summary>Builds a cut of the shown cutscene again</summary>
+    private void RebuildAt(int cut)
+    {
+        if (SelectedFile == null)
+            return;
+
+        var file = SelectedFile;
+        DropPrefetch();
+        ClearScene();
+        SelectedFile = null;
+        Select(file, cut);
     }
 
     /// <summary>
@@ -467,6 +538,13 @@ public class CutsceneEditorScreen : EditorScreen
         if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             ActionManager.RedoAction();
 
+        // In the list: copy, paste, and delete its cutscenes and cuts
+        if (FocusManager.IsFocus(EditorFocusContext.CutsceneEditor_List))
+        {
+            ListView.Shortcuts();
+            return;
+        }
+
         // Not while a value is being typed
         if (SelectedEvent is { } e && !ImGui.GetIO().WantTextInput)
         {
@@ -482,11 +560,17 @@ public class CutsceneEditorScreen : EditorScreen
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##cutsceneFileMenu"))
             return;
 
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##cutsceneSave", InputManager.GetHint(KeybindID.Save), false, SelectedFile?.IsDirty == true))
+        if (ImGui.MenuItem($"{LOC.Get("CUTSCENE_File_New")}##cutsceneNew", "", false, Data.Files.Count > 0))
+            ListView.NewFile();
+        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_New_TT"));
+
+        ImGui.Separator();
+
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##cutsceneSave", InputManager.GetHint(KeybindID.Save), false, SelectedFile?.IsDirty == true || Data.HasFileRemovals))
             Save();
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Save_TT"));
 
-        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##cutsceneSaveAll", "", false, Data.Files.Any(f => f.IsDirty)))
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##cutsceneSaveAll", "", false, Data.Files.Any(f => f.IsDirty) || Data.HasFileRemovals))
             SaveAll();
         GUI.Tooltip(LOC.Get("CUTSCENE_Menu_SaveAll_TT"));
 
@@ -813,22 +897,38 @@ public class CutsceneEditorScreen : EditorScreen
         return ViewportWindow.InputCaptured();
     }
 
-    /// <summary>Writes the selected cutscene's MQB into the project, if it has changes</summary>
-    public void Save()
+    /// <summary>
+    /// Writes the selected cutscene into the project, if it has changes, and moves the project files of deleted,
+    /// renamed and reverted cutscenes into the project's backup folder
+    /// </summary>
+    public void Save() => SaveFiles(SelectedFile is { IsDirty: true } file ? [file] : []);
+
+    public void SaveAll() => SaveFiles(Data.Files.Where(f => f.IsDirty).ToList());
+
+    private void SaveFiles(List<CutsceneFile> files)
     {
-        if (SelectedFile is { IsDirty: true } file)
+        // Undoing a file added, renamed or deleted after it is written would leave the list and the project apart
+        var filesChange = Data.HasFileRemovals || files.Any(f => f.IsNew);
+        var shownReverts = SelectedFile?.PendingRevert == true;
+
+        // First, so a new file may take a path a removed one leaves
+        Data.ApplyRemovals();
+
+        foreach (var file in files)
             file.Save(Project);
+
+        if (filesChange)
+            ActionManager.Clear();
+
+        // The reverted cutscene shown is the game's now
+        if (shownReverts && SelectedFile is { PendingRevert: false })
+            RebuildAt(SelectedCut);
+
         RefreshCameras();
     }
 
-    public void SaveAll()
-    {
-        foreach (var file in Data.Files.Where(f => f.IsDirty))
-            file.Save(Project);
-        RefreshCameras();
-    }
-
-    public List<string> GetUnsavedFiles() => Data?.Files.Where(f => f.IsDirty).Select(f => f.Entry.Path).OrderBy(p => p).ToList() ?? new();
+    public List<string> GetUnsavedFiles() => Data?.Files.Where(f => f.IsDirty || f.PendingRevert).Select(f => f.Entry.Path)
+        .Concat(Data.PendingDeletes.Select(d => d.Path)).Distinct().OrderBy(p => p).ToList() ?? new();
 
     public void SaveUnsaved() => SaveAll();
 
