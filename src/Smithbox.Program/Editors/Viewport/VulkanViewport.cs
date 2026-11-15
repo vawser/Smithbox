@@ -1107,6 +1107,13 @@ public class VulkanViewport : IViewport
             return;
         }
 
+        // The Cutscene Editor's selected cut placement (offset.sib)
+        if (Owner is CutsceneUniverse cutsceneUniverse && cutsceneUniverse.Editor.PlacementGizmo.HasTarget)
+        {
+            Gizmos.Target = cutsceneUniverse.Editor.PlacementGizmo;
+            return;
+        }
+
         // A picked User-Defined point of the Collision Editor's Create tab
         if (Owner is MapUniverse collisionUniverse && collisionUniverse.View.CollisionEditorTool.PointGizmoTarget.HasTarget)
         {

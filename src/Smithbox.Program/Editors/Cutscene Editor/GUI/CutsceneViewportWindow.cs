@@ -29,7 +29,23 @@ public class CutsceneViewportWindow
     private readonly CutsceneDebugLines Lines = new();
 
     // What the lines were last built for, to rebuild them only when it changes
-    private (CutsceneScene? Scene, int Frame, bool Path, bool Camera, bool Markers, bool LookThrough, int Forward, int Up, bool Horizontal, float Aspect) BuiltKey;
+    private (CutsceneScene? Scene, int Frame, bool Path, bool Camera, bool Markers, bool LookThrough, int Forward, int Up, bool Horizontal, float Aspect, float Placement) BuiltKey;
+
+    // Changes when a placement is moved, so the lines follow it
+    private static float PlacementSignature(CutsceneScene? scene)
+    {
+        if (scene == null)
+            return 0;
+
+        var sum = 0f;
+        foreach (var p in scene.Placements.Values)
+        {
+            foreach (var k in p.Keys)
+                sum += k.Translation.X + k.Translation.Y * 3 + k.Translation.Z * 7 + k.Rotation.X + k.Rotation.Y * 3 + k.Rotation.Z * 7;
+        }
+
+        return sum;
+    }
     private DateTime LastBuild;
     private static readonly TimeSpan BuildInterval = TimeSpan.FromMilliseconds(50);
 
@@ -130,7 +146,7 @@ public class CutsceneViewportWindow
         var key = (scene, frame, CFG.Current.CutsceneEditor_Display_Camera_Path, CFG.Current.CutsceneEditor_Display_Camera,
             CFG.Current.CutsceneEditor_Display_Markers, CFG.Current.CutsceneEditor_Look_Through_Camera,
             CFG.Current.CutsceneEditor_Camera_Forward_Axis, CFG.Current.CutsceneEditor_Camera_Up_Axis,
-            CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal, MathF.Round(Aspect, 2));
+            CFG.Current.CutsceneEditor_Camera_Fov_Is_Horizontal, MathF.Round(Aspect, 2), PlacementSignature(scene));
 
         if (key == BuiltKey)
             return;

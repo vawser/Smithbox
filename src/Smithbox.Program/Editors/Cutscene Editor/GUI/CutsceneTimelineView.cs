@@ -266,8 +266,7 @@ public class CutsceneTimelineView
         {
             if (hoveredEvent != null)
             {
-                Editor.SelectedEvent = hoveredEvent;
-                Editor.SelectedTimeline = hoveredTimeline;
+                Editor.SelectEvent(hoveredEvent, hoveredTimeline);
             }
             else if (mouse.X > origin.X + gutter)
             {

@@ -2,8 +2,6 @@
 # Rendering
 #----------------------------------------------------
 
-- Restore spec/normal/metallic coverage for Editor mode: skip only lighting (default to fullbright) and shadow (no shadows) in that mode.
-
 - DS3: some chrs missing textures: c1280
 - DS3: non-map external resource usage: m903400
 - SDT: regression for some objects/mappieces, pink multi-color, flame shader related?: m504040, m002679

@@ -1523,15 +1523,18 @@ public class CFG
     // ---- Cutscene Editor
     public bool CutsceneEditor_Look_Through_Camera = true;
 
-    // The local axes of a cutscene camera bone that it looks and points up along (CutsceneCameraAxis): not known from
-    // the files, so they can be changed until a cutscene looks right
-    public int CutsceneEditor_Camera_Forward_Axis = 5; // -Z
-    public int CutsceneEditor_Camera_Up_Axis = 2; // +Y
+    // The local axes of a cutscene camera bone that it looks and points up along (CutsceneCameraAxis). Forward -Y was
+    // found by eye in the app; up +Z is the axis that lines up with world up (0.96 on average over ER s10_00_0020's
+    // camera frames, CutsceneSceneCheck --axes). Both stay options, in case another game differs.
+    public int CutsceneEditor_Camera_Forward_Axis = 3; // -Y
+    public int CutsceneEditor_Camera_Up_Axis = 4; // +Z
 
     // The camNNNN_FOV track gives a horizontal rather than a vertical field of view
     public bool CutsceneEditor_Camera_Fov_Is_Horizontal = false;
 
     public bool CutsceneEditor_Load_Models = true;
+    public bool CutsceneEditor_Load_Map = true;
+    public bool CutsceneEditor_Map_Load_Assets = true;
     public bool CutsceneEditor_Display_Camera_Path = true;
     public bool CutsceneEditor_Display_Camera = true;
     public bool CutsceneEditor_Display_Markers = true;

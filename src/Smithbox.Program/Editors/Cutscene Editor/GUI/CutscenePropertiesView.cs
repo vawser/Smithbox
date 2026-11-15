@@ -29,12 +29,16 @@ public class CutscenePropertiesView
         if (mqb == null || scene == null)
             return;
 
+        if (Editor.SelectedPlacement is { } placement)
+            DisplayPlacementEditor(placement);
+
         if (Editor.SelectedEvent is { } e)
         {
             if (ImGui.Button($"{LOC.Get("CUTSCENE_Properties_Back")}##cutsceneDeselect"))
             {
                 Editor.SelectedEvent = null;
                 Editor.SelectedTimeline = -1;
+                Editor.SelectedPlacement = null;
                 return;
             }
 
@@ -186,8 +190,80 @@ public class CutscenePropertiesView
         foreach (var p in scene.Placements.Values)
         {
             var m = p.At(Editor.Playback.Frame);
+
+            if (p.OffsetEvent != null)
+            {
+                if (ImGui.SmallButton($"{LOC.Get("CUTSCENE_Properties_Move")}##cutsceneMove{p.HktResourceIndex}"))
+                    Editor.SelectedPlacement = p;
+                GUI.Tooltip(LOC.Get("CUTSCENE_Properties_Move_TT"));
+                ImGui.SameLine();
+            }
+
             ImGui.Text($"{p.HktName}: {Vec(m.Translation)}{(p.Keys.Count == 0 ? $"  ({LOC.Get("CUTSCENE_Properties_Origin")})" : "")}");
         }
+    }
+
+    // The keys of the placement as they were when a drag field started being edited, for one undo step per edit
+    private (Vector3, Vector3)[]? FieldEditStart;
+    private CutscenePlacement? FieldEditPlacement;
+
+    /// <summary>
+    /// The selected placement's position and rotation, as its first key has them. An edit moves every key by as much,
+    /// and becomes one undo step when the field is let go. The viewport's gizmo moves it too.
+    /// </summary>
+    private void DisplayPlacementEditor(CutscenePlacement placement)
+    {
+        if (placement.OffsetEvent == null || placement.Keys.Count == 0 || Editor.SelectedFile is not { } file)
+            return;
+
+        ImGui.SeparatorText(LOC.Get("CUTSCENE_Properties_Placement", placement.HktName));
+        ImGui.TextDisabled(LOC.Get("CUTSCENE_Properties_Placement_Hint"));
+
+        var first = placement.Keys[0];
+        var translation = first.Translation;
+        var rotation = first.Rotation;
+
+        var changed = false;
+        var t = translation;
+        var r = rotation;
+
+        ImGui.SetNextItemWidth(-1);
+        changed |= ImGui.DragFloat3("##cutscenePlacementPos", ref t, 0.01f);
+        var activated = ImGui.IsItemActivated();
+        var deactivated = ImGui.IsItemDeactivatedAfterEdit();
+
+        ImGui.SetNextItemWidth(-1);
+        changed |= ImGui.DragFloat3("##cutscenePlacementRot", ref r, 0.25f);
+        activated |= ImGui.IsItemActivated();
+        deactivated |= ImGui.IsItemDeactivatedAfterEdit();
+        GUI.Tooltip(LOC.Get("CUTSCENE_Properties_Placement_Fields_TT"));
+
+        if (activated || FieldEditPlacement != placement)
+        {
+            FieldEditStart = CutscenePlacementAction.Snapshot(placement.Keys);
+            FieldEditPlacement = placement;
+        }
+
+        // Live while dragging, from the keys as they were when the drag started
+        if (changed && FieldEditStart != null)
+        {
+            var dt = t - FieldEditStart[0].Item1;
+            var dr = r - FieldEditStart[0].Item2;
+            CutscenePlacementAction.Apply(placement.Keys, CutscenePlacementAction.Shifted(FieldEditStart, dt, dr));
+        }
+
+        if (deactivated && FieldEditStart != null)
+        {
+            var after = CutscenePlacementAction.Snapshot(placement.Keys);
+            Editor.ActionManager.ExecuteAction(new CutscenePlacementAction(file, placement.Keys, FieldEditStart, after));
+            FieldEditStart = CutscenePlacementAction.Snapshot(placement.Keys);
+        }
+
+        if (file.IsDirty)
+            ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, LOC.Get("CUTSCENE_Properties_Unsaved"));
+
+        if (ImGui.Button($"{LOC.Get("CUTSCENE_Properties_Placement_Done")}##cutscenePlacementDone"))
+            Editor.SelectedPlacement = null;
     }
 
     private static void Row(string label, string value)

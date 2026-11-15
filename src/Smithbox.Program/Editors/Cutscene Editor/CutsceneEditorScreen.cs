@@ -33,6 +33,20 @@ public class CutsceneEditorScreen : EditorScreen
 
     public CutscenePlayback Playback = new();
 
+    public ActionManager ActionManager = new();
+
+    /// <summary>The map behind the cut (phase 3)</summary>
+    public CutsceneMapBackdrop Backdrop;
+
+    /// <summary>The viewport gizmo on <see cref="SelectedPlacement" /></summary>
+    public CutscenePlacementGizmoTarget PlacementGizmo;
+
+    /// <summary>The cut placement (offset.sib) being moved, picked with its event in the timeline or the properties</summary>
+    public CutscenePlacement? SelectedPlacement;
+
+    // The map chosen for each cutscene this session, over the one its name implies
+    private readonly Dictionary<string, string> MapForCutscene = new(StringComparer.OrdinalIgnoreCase);
+
     public CutsceneListView ListView;
     public CutsceneTimelineView TimelineView;
     public CutscenePropertiesView PropertiesView;
@@ -60,6 +74,8 @@ public class CutsceneEditorScreen : EditorScreen
         RenderScene = Smithbox.Instance._context.Device != null ? new RenderScene() : null;
         Universe = new CutsceneUniverse(this, project);
         ViewportWindow = new CutsceneViewportWindow(this, project);
+        Backdrop = new CutsceneMapBackdrop(project, () => RenderScene);
+        PlacementGizmo = new CutscenePlacementGizmoTarget(this);
 
         ListView = new CutsceneListView(this);
         TimelineView = new CutsceneTimelineView(this);
@@ -86,6 +102,7 @@ public class CutsceneEditorScreen : EditorScreen
         SelectedCut = cut;
         SelectedEvent = null;
         SelectedTimeline = -1;
+        SelectedPlacement = null;
         BuildError = null;
 
         var project = Project;
@@ -145,8 +162,64 @@ public class CutsceneEditorScreen : EditorScreen
 
         ViewportWindow.OnSceneChanged();
 
+        if (CFG.Current.CutsceneEditor_Load_Map)
+            LoadMapFor(Scene.File);
+
         if (CFG.Current.CutsceneEditor_Diagnostics_Log)
-            Smithbox.Log(this, Scene.Describe());
+            Smithbox.Log(this, Scene.Describe() + $"  map: {CurrentMapFor(Scene.File) ?? "none"} (loaded {Backdrop.LoadedMapId ?? "none"})");
+    }
+
+    // ---- map
+
+    /// <summary>The map shown behind a cutscene: the one chosen for it, else the one its name implies if the project has it</summary>
+    public string? CurrentMapFor(CutsceneFile file)
+    {
+        if (MapForCutscene.TryGetValue(file.Name, out var chosen))
+            return chosen;
+
+        var implied = CutsceneMapBackdrop.ImpliedMap(file.Name);
+        return implied != null && Backdrop.HasMap(implied) ? implied : null;
+    }
+
+    /// <summary>Shows another map behind a cutscene, for the rest of the session</summary>
+    public void SetMapFor(CutsceneFile file, string? mapId)
+    {
+        if (mapId == null)
+        {
+            MapForCutscene.Remove(file.Name);
+            Backdrop.UnloadMap();
+            return;
+        }
+
+        MapForCutscene[file.Name] = mapId;
+        if (CFG.Current.CutsceneEditor_Load_Map)
+            Backdrop.LoadMap(mapId);
+    }
+
+    private void LoadMapFor(CutsceneFile file)
+    {
+        var map = CurrentMapFor(file);
+        if (map == null)
+            Backdrop.UnloadMap();
+        else
+            Backdrop.LoadMap(map);
+    }
+
+    /// <summary>Selects an event, and its cut's placement if the event is of an offset.sib or an HKT</summary>
+    public void SelectEvent(MQB.Event e, int timeline)
+    {
+        SelectedEvent = e;
+        SelectedTimeline = timeline;
+
+        var mqb = SelectedFile?.Mqb;
+        var resource = mqb != null && e.ResourceIndex >= 0 && e.ResourceIndex < mqb.Resources.Count ? mqb.Resources[e.ResourceIndex] : null;
+
+        SelectedPlacement = resource?.Type switch
+        {
+            CutsceneResourceTypes.Offset => Scene?.Placements.Values.FirstOrDefault(p => p.OffsetEvent == e),
+            CutsceneResourceTypes.Animation => Scene?.Placements.GetValueOrDefault(e.ResourceIndex),
+            _ => null
+        };
     }
 
     private void ClearScene()
@@ -174,9 +247,12 @@ public class CutsceneEditorScreen : EditorScreen
     public void OnGUI(string[] commands)
     {
         HandleCommands(commands);
+        Shortcuts();
 
         if (ImGui.BeginMenuBar())
         {
+            FileMenu();
+            EditMenu();
             ViewMenu();
             CameraMenu();
 
@@ -215,10 +291,78 @@ public class CutsceneEditorScreen : EditorScreen
         ListView.ScrollToSelection = true;
     }
 
+    private void Shortcuts()
+    {
+        if (!FocusManager.IsInCutsceneEditor())
+            return;
+
+        if (InputManager.IsPressed(KeybindID.Save))
+            Save();
+
+        if (ActionManager.CanUndo() && InputManager.IsPressed(KeybindID.Undo))
+            ActionManager.UndoAction();
+
+        if (ActionManager.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
+            ActionManager.RedoAction();
+    }
+
+    private void FileMenu()
+    {
+        if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_File")}##cutsceneFileMenu"))
+            return;
+
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Save")}##cutsceneSave", InputManager.GetHint(KeybindID.Save), false, SelectedFile?.IsDirty == true))
+            Save();
+        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Save_TT"));
+
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_SaveAll")}##cutsceneSaveAll", "", false, Data.Files.Any(f => f.IsDirty)))
+            SaveAll();
+        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_SaveAll_TT"));
+
+        ImGui.EndMenu();
+    }
+
+    private void EditMenu()
+    {
+        if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Edit")}##cutsceneEditMenu"))
+            return;
+
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Undo")}##cutsceneUndo", InputManager.GetHint(KeybindID.Undo), false, ActionManager.CanUndo()))
+            ActionManager.UndoAction();
+
+        if (ImGui.MenuItem($"{LOC.Get("EDITOR_Menubar_Action_Redo")}##cutsceneRedo", InputManager.GetHint(KeybindID.Redo), false, ActionManager.CanRedo()))
+            ActionManager.RedoAction();
+
+        ImGui.EndMenu();
+    }
+
     private void ViewMenu()
     {
         if (!ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##cutsceneViewMenu"))
             return;
+
+        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Load_Map"), "", CFG.Current.CutsceneEditor_Load_Map))
+        {
+            CFG.Current.CutsceneEditor_Load_Map = !CFG.Current.CutsceneEditor_Load_Map;
+            if (!CFG.Current.CutsceneEditor_Load_Map)
+                Backdrop.UnloadMap();
+            else if (SelectedFile != null)
+                LoadMapFor(SelectedFile);
+        }
+        GUI.Tooltip(LOC.Get("CUTSCENE_Menu_Load_Map_TT"));
+
+        if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Map_Assets"), "", CFG.Current.CutsceneEditor_Map_Load_Assets))
+        {
+            CFG.Current.CutsceneEditor_Map_Load_Assets = !CFG.Current.CutsceneEditor_Map_Load_Assets;
+
+            // Read the map again, with or without its assets
+            var map = Backdrop.LoadedMapId;
+            Backdrop.UnloadMap();
+            if (map != null)
+                Backdrop.LoadMap(map);
+        }
+
+        ImGui.Separator();
 
         if (ImGui.MenuItem(LOC.Get("CUTSCENE_Menu_Load_Models"), "", CFG.Current.CutsceneEditor_Load_Models))
         {
@@ -308,6 +452,7 @@ public class CutsceneEditorScreen : EditorScreen
     public void Update(float dt)
     {
         ApplyBuiltScene();
+        Backdrop.Update();
 
         if (Scene != null)
         {
@@ -347,24 +492,27 @@ public class CutsceneEditorScreen : EditorScreen
         return ViewportWindow.InputCaptured();
     }
 
-    // Nothing is edited yet
+    /// <summary>Writes the selected cutscene's MQB into the project, if it has changes</summary>
     public void Save()
     {
+        if (SelectedFile is { IsDirty: true } file)
+            file.Save(Project);
     }
 
     public void SaveAll()
     {
+        foreach (var file in Data.Files.Where(f => f.IsDirty))
+            file.Save(Project);
     }
 
-    public List<string> GetUnsavedFiles() => new();
+    public List<string> GetUnsavedFiles() => Data?.Files.Where(f => f.IsDirty).Select(f => f.Entry.Path).OrderBy(p => p).ToList() ?? new();
 
-    public void SaveUnsaved()
-    {
-    }
+    public void SaveUnsaved() => SaveAll();
 
     public void Dispose()
     {
         ClearScene();
+        Backdrop.UnloadMap();
         ViewportWindow.Dispose();
     }
 }

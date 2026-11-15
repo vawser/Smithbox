@@ -18,7 +18,10 @@ public sealed class CutscenePlacement
     public int HktResourceIndex;
     public string HktName = "";
 
-    /// <summary>The offset.sib event's keys, by frame. Empty for the origin.</summary>
+    /// <summary>The offset.sib event, whose keys these are; null for a placement at the origin, which can't be moved</summary>
+    public MQB.Event? OffsetEvent;
+
+    /// <summary>The offset.sib event's keys, by frame: the MQB's own objects, so moving them edits the file. Empty for the origin.</summary>
     public List<MQB.Transform> Keys = new();
 
     public Matrix4x4 At(float frame)
@@ -116,7 +119,10 @@ public sealed class CutsceneScene : IDisposable
                 {
                     var offset = Cut.Timelines[timeline.ParentIndex].Events.FirstOrDefault(p => ResourceOf(p) is { Type: 265 });
                     if (offset != null)
+                    {
+                        placement.OffsetEvent = offset;
                         placement.Keys = offset.Transforms.OrderBy(k => k.Frame).ToList();
+                    }
                 }
 
                 Placements[e.ResourceIndex] = placement;

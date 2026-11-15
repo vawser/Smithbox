@@ -1,5 +1,6 @@
 #nullable enable
 using SoulsFormats;
+using StudioCore.Application;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -107,6 +108,59 @@ public class CutsceneFile
     }
 
     public int HavokFileCount => HavokFiles.Count;
+
+    /// <summary>The MQB has changes that aren't written to the project yet</summary>
+    public bool IsDirty;
+
+    /// <summary>
+    /// Writes the MQB back into the project's copy of the binder, leaving its other files (the cut Havok files) as they
+    /// are. Returns false, with the error logged, if it couldn't.
+    /// </summary>
+    public bool Save(ProjectEntry project)
+    {
+        if (Mqb == null)
+            return false;
+
+        try
+        {
+            var raw = project.VFS.FS.ReadFile(Entry.Path)
+                      ?? throw new InvalidOperationException($"{Entry.Path} could not be read.");
+            var data = DCX.Is(raw) ? DCX.Decompress(raw) : raw;
+            var isBnd4 = data.Length >= 4 && data.Span[..4].SequenceEqual("BND4"u8);
+            var bytes = Mqb.Write();
+
+            bool written;
+            if (isBnd4)
+            {
+                var bnd = BND4.Read(raw);
+                MqbFileOf(bnd.Files).Bytes = bytes;
+                written = ProjectUtils.WriteWithBackup(project, Entry.Path, bnd);
+            }
+            else
+            {
+                var bnd = BND3.Read(raw);
+                MqbFileOf(bnd.Files).Bytes = bytes;
+                written = ProjectUtils.WriteWithBackup(project, Entry.Path, bnd);
+            }
+
+            if (written)
+            {
+                IsDirty = false;
+                Smithbox.Log(this, LOC.Get("CUTSCENE_Saved", Entry.Path));
+            }
+
+            return written;
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("CUTSCENE_Save_Failed", Entry.Path), e);
+            return false;
+        }
+    }
+
+    private static BinderFile MqbFileOf(List<BinderFile> files) =>
+        files.FirstOrDefault(f => (f.Name ?? "").EndsWith(".mqb", StringComparison.OrdinalIgnoreCase))
+        ?? throw new InvalidOperationException("The binder has no MQB.");
 
     // "cut0010/a0000" from N:\GR\data\INTERROOT_win64\cutscene\s10_00_0020\cut0010\a0000.hkx or from
     // N:\GR\data\Model\cutscene\scn\s10_00_0020\cut0010\hkx\a0000.HKT: the nearest folder named cut*, and the stem

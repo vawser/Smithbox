@@ -54,6 +54,59 @@ public class CutsceneListView
         return CutsceneId(name) is { } id && Aliases.TryGetValue(id.ToString(), out var alias) ? alias : null;
     }
 
+    private string MapFilter = "";
+
+    /// <summary>
+    /// The map behind the selected cutscene: the one its name implies (sAA_BB → mAA_BB_00_00), or one picked here,
+    /// which open world cutscenes need, as nothing in their files says which tile they are on.
+    /// </summary>
+    private void DisplayMapPicker(CutsceneFile file)
+    {
+        ImGui.SeparatorText(LOC.Get("CUTSCENE_List_Map"));
+
+        var backdrop = Editor.Backdrop;
+        if (!backdrop.CanLoadMaps())
+        {
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Unavailable"));
+            return;
+        }
+
+        var current = Editor.CurrentMapFor(file);
+        var implied = CutsceneMapBackdrop.ImpliedMap(file.Name);
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##cutsceneMap", current ?? LOC.Get("CUTSCENE_List_Map_None")))
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.InputTextWithHint("##cutsceneMapFilter", LOC.Get("CUTSCENE_List_Filter_Hint"), ref MapFilter, 64);
+
+            if (ImGui.Selectable(LOC.Get("CUTSCENE_List_Map_None"), current == null))
+                Editor.SetMapFor(file, null);
+
+            foreach (var map in backdrop.ListMaps())
+            {
+                if (MapFilter.Length > 0 && !map.Contains(MapFilter, StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                var label = map.Equals(implied, StringComparison.OrdinalIgnoreCase) ? $"{map}  ({LOC.Get("CUTSCENE_List_Map_Implied")})" : map;
+                if (ImGui.Selectable($"{label}##map_{map}", map.Equals(current, StringComparison.OrdinalIgnoreCase)))
+                    Editor.SetMapFor(file, map);
+            }
+
+            ImGui.EndCombo();
+        }
+
+        if (implied == null)
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Open_World"));
+
+        if (backdrop.LoadingMapId != null)
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Loading", backdrop.LoadingMapId));
+        else if (backdrop.LoadedMapId != null)
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Loaded", backdrop.LoadedMapId, backdrop.PieceCount, backdrop.PartCount));
+        else if (!CFG.Current.CutsceneEditor_Load_Map)
+            ImGui.TextDisabled(LOC.Get("CUTSCENE_List_Map_Off"));
+    }
+
     public void Display()
     {
         var files = Editor.Data?.Files;
@@ -76,6 +129,8 @@ public class CutsceneListView
                 if (ImGui.Selectable($"{cut.Name}  ({cut.Duration} f, {seconds:0.0} s)##cut{i}", i == Editor.SelectedCut))
                     Editor.SelectCut(i);
             }
+
+            DisplayMapPicker(selected);
         }
         else if (selected?.LoadError is { } error)
         {
