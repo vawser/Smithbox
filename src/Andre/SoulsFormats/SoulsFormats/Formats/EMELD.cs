@@ -52,13 +52,14 @@ namespace SoulsFormats
             br.AssertASCII("ELD\0");
             bool bigEndian = br.ReadBoolean();
             bool is64Bit = br.AssertSByte([0, -1]) == -1;
-            br.AssertByte(0);
+            // The Duskbloods: 1 here, with version 0x66 / 0xCD; the layout after the header is Bloodborne's
+            byte revision = br.AssertByte([0, 1]);
             br.AssertByte(0);
             br.BigEndian = bigEndian;
             br.VarintLong = is64Bit;
 
-            br.AssertInt16(0x65);
-            br.AssertInt16(0xCC);
+            br.AssertInt16((short)(revision == 1 ? 0x66 : 0x65));
+            br.AssertInt16((short)(revision == 1 ? 0xCD : 0xCC));
             br.ReadInt32(); // File size
 
             if (!bigEndian && !is64Bit)

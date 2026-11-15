@@ -1,0 +1,4090 @@
+[
+  {
+    "ID": "common:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:700",
+    "Name": "Camera-related reset",
+    "Description": "カメラ関連リセット",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:800",
+    "Name": "BGM control",
+    "Description": "ＢＧＭ管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:810",
+    "Name": "Specific map special effect XX",
+    "Description": "特定マップ特殊効果_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:5490",
+    "Name": "Is in single-player mission",
+    "Description": "シングルプレイミッション中か",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:5491",
+    "Name": "Tutorial display: mission 2 final phase",
+    "Description": "チュートリアル表示_ミッション2_最終フェイズ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:5492",
+    "Name": "Tutorial display: mission 2 bloodline record",
+    "Description": "チュートリアル表示_ミッション2_血族録",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:5493",
+    "Name": "Objective control: defeat all bloodlines and win",
+    "Description": "行動目標制御_全ての血族を倒して勝利する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:5494",
+    "Name": "Objective control: flag, bot X",
+    "Description": "行動目標制御_フラグ_botX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common:9608",
+    "Name": "Environment event: dark spirit",
+    "Description": "環境イベント_闇霊",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003000",
+    "Name": "[Common environment event] Display switch: assets",
+    "Description": "【共通環境イベント】表示切替_アセット",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003011",
+    "Name": "[Common environment event] Lord of Locusts",
+    "Description": "【共通環境イベント】蝗の王",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003020",
+    "Name": "[Common environment event] Otherworld transfer",
+    "Description": "【共通環境イベント】異界転送",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003021",
+    "Name": "[Common environment event] Otherworld transfer: boss control",
+    "Description": "【共通環境イベント】異界転送_ボス管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003022",
+    "Name": "[Common environment event] Otherworld transfer: return",
+    "Description": "【共通環境イベント】異界転送_帰還",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003030",
+    "Name": "[Common environment event] Infectious poison",
+    "Description": "【共通環境イベント】感染毒",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003040",
+    "Name": "[Common environment event] Pursuing strong enemy: control",
+    "Description": "【共通環境イベント】追跡強敵_管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003045",
+    "Name": "[Common] Pursuing strong enemy: initial setup",
+    "Description": "【共通】追跡強敵_初期設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003070",
+    "Name": "[Common environment event] Area switch",
+    "Description": "【共通環境イベント】エリア切替",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003080",
+    "Name": "[Common environment event] Airship",
+    "Description": "【共通環境イベント】飛行船",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003081",
+    "Name": "[Common environment event] Airship: cannon character attach",
+    "Description": "【共通環境イベント】飛行船_砲キャラアタッチ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003082",
+    "Name": "[Common environment event] Airship: item attach",
+    "Description": "【共通環境イベント】飛行船_アイテムアタッチ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003083",
+    "Name": "[Common environment event] Airship: weapon upgrade attach",
+    "Description": "【共通環境イベント】飛行船_武器強化アタッチ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003090",
+    "Name": "[Common environment event] Halley's Comet: initial setup",
+    "Description": "【共通環境イベント】ハレー彗星_初期設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003100",
+    "Name": "[Common environment] Apply environment special effect",
+    "Description": "【共通環境】環境特殊効果付与",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200003210",
+    "Name": "[Common environment event] Lullaby",
+    "Description": "【共通環境イベント】子守",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004010",
+    "Name": "[Common] Indoor/outdoor check",
+    "Description": "【共通】屋内外判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004011",
+    "Name": "[Common] Normal BGM check",
+    "Description": "【共通】通常BGM判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004100",
+    "Name": "[Common] Switch displayed map parts by time of day",
+    "Description": "【共通】時間帯表示物切替_マップパーツ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004101",
+    "Name": "[Common] Switch displayed characters by time of day",
+    "Description": "【共通】時間帯表示物切替_キャラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004102",
+    "Name": "[Common] Switch displayed objects by time of day",
+    "Description": "【共通】時間帯表示物切替_オブジェ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004105",
+    "Name": "[Common] Switch placement for vengeful spirits (characters)",
+    "Description": "【共通】復讐霊用配置切替_キャラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004110",
+    "Name": "[Common] Switch displayed map parts by flag",
+    "Description": "【共通】特定フラグ表示物切替_マップパーツ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004111",
+    "Name": "[Common] Switch displayed characters by flag",
+    "Description": "【共通】特定フラグ表示物切替_キャラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004112",
+    "Name": "[Common] Switch displayed objects by flag",
+    "Description": "【共通】特定フラグ表示物切替_オブジェ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004113",
+    "Name": "[Common] Switch action edges by flag",
+    "Description": "【共通】特定フラグアクションエッジ切替",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004114",
+    "Name": "[Common] Switch displayed collision by flag",
+    "Description": "【共通】特定フラグ表示物切替_ヒット",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004115",
+    "Name": "[Common] Switch collision & navmesh by flag",
+    "Description": "【共通】特定フラグ切替_ヒット＆ナビメッシュ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004120",
+    "Name": "[Common] Replay object animation by flag",
+    "Description": "【共通】特定フラグオブジェアニメ再現",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004130",
+    "Name": "[Common] Switch displayed characters per phase",
+    "Description": "【共通】フェーズ毎表示物切替_キャラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004150",
+    "Name": "[Common] Open-progression map time-of-day change: cutscene",
+    "Description": "【共通】進行自由度マップ時間帯変化_カットシーン",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004900",
+    "Name": "[Common] Switch camera set ID by area",
+    "Description": "【共通】カメラセットID切り替え_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200004901",
+    "Name": "[Common] Switch camera set ID by flag",
+    "Description": "【共通】カメラセットID切り替え_フラグ判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005000",
+    "Name": "[Common] Convert buff on phase change",
+    "Description": "【共通】フェーズ移行時_バフ変換",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005001",
+    "Name": "[Common] Apply buff on phase change",
+    "Description": "【共通】フェーズ移行時_バフ付与",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005110",
+    "Name": "[Common] Enemy AI logic on: area check",
+    "Description": "【共通】敵思考ロジックON_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005120",
+    "Name": "[Common] Enemy AI logic on: distance check",
+    "Description": "【共通】敵思考ロジックON_距離判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005130",
+    "Name": "[Common] Enemy AI logic on: distance + area check",
+    "Description": "【共通】敵思考ロジックON_距離判定＋領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005132",
+    "Name": "[Common] Enemy AI logic on: distance / area check",
+    "Description": "【共通】敵思考ロジックON_距離判定／領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005200",
+    "Name": "[Common] Special idle: area check",
+    "Description": "【共通】特殊待機_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005210",
+    "Name": "[Common] Special idle: distance check",
+    "Description": "【共通】特殊待機_距離判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005211",
+    "Name": "[Common] Special idle: distance + special effect check",
+    "Description": "【共通】特殊待機_距離＋特殊効果判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005212",
+    "Name": "[Common] Special idle: distance + area check",
+    "Description": "【共通】特殊待機_距離判定＋領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005213",
+    "Name": "[Common] Special idle: distance / area check",
+    "Description": "【共通】特殊待機_距離判定／領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005240",
+    "Name": "[Common] Special idle: object destroyed",
+    "Description": "【共通】特殊待機_オブジェ破壊",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005250",
+    "Name": "[Common] Special idle: special effect check",
+    "Description": "【共通】特殊待機_特殊効果判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005265",
+    "Name": "[Common] Special idle: when another character leaves special idle",
+    "Description": "【共通】特殊待機_別キャラが特殊待機を解除したら",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005290",
+    "Name": "[Common] Special idle: AI state / other character in combat / damage",
+    "Description": "【共通】特殊待機_ＡＩ状態／別キャラ戦闘状態／ダメージ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005300",
+    "Name": "[Common] Patrol setup: area check",
+    "Description": "【共通】巡回情報設定_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005301",
+    "Name": "[Common] Patrol setup: area check with start timer",
+    "Description": "【共通】巡回情報設定_領域判定＋起動タイマー付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005302",
+    "Name": "[Common] Patrol setup: event flag check",
+    "Description": "【共通】巡回情報設定_イベントフラグ判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005303",
+    "Name": "[Common] Patrol setup: event flag check with start timer",
+    "Description": "【共通】巡回情報設定_イベントフラグ判定＋起動タイマー付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005305",
+    "Name": "[Common] Patrol setup: distance check",
+    "Description": "【共通】巡回情報設定_距離判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005310",
+    "Name": "[Common] First action only",
+    "Description": "【共通】初回行動限定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005320",
+    "Name": "[Common] Set running patrol special effect until player is found",
+    "Description": "【共通】PCを発見するまで、走行巡回の特殊効果を設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005321",
+    "Name": "[Common] Running patrol switch",
+    "Description": "【共通】走行巡回切り替え",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005330",
+    "Name": "[Common] Mid-boss gauge display & BGM switch",
+    "Description": "【共通】中ボスゲージ表示＆BGM切替",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005340",
+    "Name": "[Common] Strong enemy respawn control",
+    "Description": "【共通】強敵リスポン制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005341",
+    "Name": "[Common] Strong enemy respawn control with item pickup",
+    "Description": "【共通】強敵リスポン制御_アイテム取得付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005344",
+    "Name": "[Common] Respawning enemy: force item pickup on first kill only",
+    "Description": "【共通】リスポン敵_初回撃破時のみ特定アイテムを強制取得",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005350",
+    "Name": "[Common] Strong enemy: important message",
+    "Description": "【共通】強敵_重要メッセージ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005370",
+    "Name": "[Common] Disable logic when enemy dies",
+    "Description": "【共通】敵が死んだらロジックを切る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005380",
+    "Name": "[Common] Character back-read control",
+    "Description": "【共通】キャラバックリード制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005381",
+    "Name": "[Common] Character always-update control",
+    "Description": "【共通】キャラ常時更新制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005390",
+    "Name": "[Common] Apply a special effect when a given special effect ends",
+    "Description": "【共通】指定の特殊効果が切れたら、任意の特殊効果をかける",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005391",
+    "Name": "[Common] Special effect check: apply special effect (can loop)",
+    "Description": "【共通】特殊効果付与判定_特殊効果付与_ループ可",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005395",
+    "Name": "[Common] Item check: remove item / apply special effect",
+    "Description": "【共通】アイテム判定_アイテム削除／特殊効果付与",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005500",
+    "Name": "[Common] Boss defeat bonfire",
+    "Description": "【共通】ボス撃破篝火",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005505",
+    "Name": "[Common] Buddy pickup object",
+    "Description": "【共通】バディ取得OBJ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005510",
+    "Name": "[Common] Treasure chest (randomised)",
+    "Description": "【共通】宝箱_ランダム化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005511",
+    "Name": "[Common] Treasure chest (weapon upgrade object)",
+    "Description": "【共通】宝箱_武器強化obj",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005515",
+    "Name": "[Common] Treasure chest (generic)",
+    "Description": "【共通】宝箱_汎用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005516",
+    "Name": "[Common] Treasure chest (NTC generic)",
+    "Description": "【共通】宝箱_NTC汎用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005517",
+    "Name": "[Common] Treasure chest (NTC sunken city)",
+    "Description": "【共通】宝箱_NTC水没都",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005523",
+    "Name": "[Common] Treasure corpse (for new game+)",
+    "Description": "【共通】宝死体_周回用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005540",
+    "Name": "[Common] Resident damage object",
+    "Description": "【共通】常駐ダメージOBJ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005541",
+    "Name": "[Common] Resident damage object with SFX",
+    "Description": "【共通】常駐ダメージOBJ_SFX付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005542",
+    "Name": "[Common] Resident damage object: stop damage when the object breaks",
+    "Description": "【共通】常駐ダメージOBJ_OBJが壊れたらダメージを無くす",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005550",
+    "Name": "[Common] Object animation play: area check",
+    "Description": "【共通】OBJアニメ再生_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005551",
+    "Name": "[Common] Object animation play: area check, with random wait in seconds",
+    "Description": "【共通】OBJアニメ再生_領域判定_ランダム秒数待機付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005552",
+    "Name": "[Common] Object animation play: area check, random frame count",
+    "Description": "【共通】OBJアニメ再生_領域判定_ランダムフレーム数",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005553",
+    "Name": "[Common] Object animation play: area check, random frame count, with start animation",
+    "Description": "【共通】OBJアニメ再生_領域判定_ランダムフレーム数_起動アニメ付き",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005560",
+    "Name": "[Common] Enable fall-prevention wall only on object",
+    "Description": "【共通】オブジェ上のみ落下防止壁有効化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005570",
+    "Name": "[Common] Fall-prevention disabled area",
+    "Description": "【共通】落下防止無効化領域",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005580",
+    "Name": "[Common] Action edge group switch (flag can be set)",
+    "Description": "【共通】アクションエッジ_グループ切替_フラグ設定可",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005590",
+    "Name": "[Common] Object repair",
+    "Description": "【共通】OBJ修理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005591",
+    "Name": "[Common] Object repair, multiple access",
+    "Description": "【共通】OBJ修理_複数アクセス",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005600",
+    "Name": "[Common] Warp portal: select",
+    "Description": "【共通】ワープポータル_選択",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005601",
+    "Name": "[Common] Warp portal: travel",
+    "Description": "【共通】ワープポータル_移動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005610",
+    "Name": "[Common] Examine message",
+    "Description": "【共通】調査メッセージ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005611",
+    "Name": "[Common] Information item",
+    "Description": "【共通】情報アイテム",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005620",
+    "Name": "[Common] Double door: error message",
+    "Description": "【共通】両開き扉_エラーメッセージ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005621",
+    "Name": "[Common] Double door: opening one side disables the other",
+    "Description": "【共通】両開き扉_片側起動でもう片側無効",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005622",
+    "Name": "[Common] One-way door: cling edge switch",
+    "Description": "【共通】一方通行扉_張り付きエッジ切り替え",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005623",
+    "Name": "[Common] One-way door",
+    "Description": "【共通】一方通行扉",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005624",
+    "Name": "[Common] Locked door: unlock message",
+    "Description": "【共通】施錠扉_開放メッセージ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005625",
+    "Name": "[Common] Locked door: apply special effect",
+    "Description": "【共通】施錠扉_特殊効果付与",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005626",
+    "Name": "[Common] Locked door: no interaction after unlocking",
+    "Description": "【共通】施錠扉_開放後操作禁止",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005630",
+    "Name": "[Common] 2-floor elevator: initial setup",
+    "Description": "【共通】2フロア移動エレベータ_初期設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005631",
+    "Name": "[Common] 2-floor elevator",
+    "Description": "【共通】2フロア移動エレベータ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005820",
+    "Name": "[Common] Boss white door handling",
+    "Description": "【共通】ボス用白扉処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005821",
+    "Name": "[Common] Mid-boss white door handling",
+    "Description": "【共通】中ボス用白扉処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005825",
+    "Name": "[Common] Boss game wall handling",
+    "Description": "【共通】ボス用ゲーム壁処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005830",
+    "Name": "[Common] Boss battle BGM: 1 track",
+    "Description": "【共通】ボス戦闘BGM処理_１曲",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005831",
+    "Name": "[Common] Boss battle BGM: 2 tracks",
+    "Description": "【共通】ボス戦闘BGM処理_２曲",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005832",
+    "Name": "[Common] Boss battle BGM: 1+2 tracks",
+    "Description": "【共通】ボス戦闘BGM処理_１＋２曲",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005840",
+    "Name": "[Common] Shop stock flag control",
+    "Description": "【共通】ショップ在庫フラグ管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005900",
+    "Name": "[Single mission] Tutorial display: by flag, no phase",
+    "Description": "【シングルミッション】チュートリアル表示_フラグ管理版_フェーズ指定無し",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005901",
+    "Name": "[Single mission] Tutorial display: at phase start",
+    "Description": "【シングルミッション】チュートリアル表示_フェーズ開始時版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005902",
+    "Name": "[Single mission] Tutorial display: several by flag, no phase",
+    "Description": "【シングルミッション】チュートリアル表示_フラグ管理で複数出す版_フェーズ指定無し",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005903",
+    "Name": "[Single mission] Tutorial display: several at phase start",
+    "Description": "【シングルミッション】チュートリアル表示_フェーズ開始時に複数出す用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005904",
+    "Name": "[Single mission] Tutorial display: by area",
+    "Description": "【シングルミッション】チュートリアル表示_領域版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005905",
+    "Name": "[Single mission] Tutorial display: several by area",
+    "Description": "【シングルミッション】チュートリアル表示_領域で複数出す版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005906",
+    "Name": "[Single mission] Tutorial display: by flag",
+    "Description": "【シングルミッション】チュートリアル表示_フラグ管理版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005907",
+    "Name": "[Single mission] Tutorial display: several by flag",
+    "Description": "【シングルミッション】チュートリアル表示_フラグ管理で複数出す版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005908",
+    "Name": "[Single mission] Tutorial display: intermission reward screen",
+    "Description": "【シングルミッション】チュートリアル表示_インターミッション_報酬画面",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005909",
+    "Name": "[Single mission] Tutorial display: intermission map screen",
+    "Description": "【シングルミッション】チュートリアル表示_インターミッション_地図画面",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005910",
+    "Name": "[Single mission] Controls tutorial display by area, can show again",
+    "Description": "【シングルミッション】操作チュートリアル表示_領域_再表示可能",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005911",
+    "Name": "[Single mission] Tutorial display: hide",
+    "Description": "【シングルミッション】チュートリアル表示_非表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005920",
+    "Name": "[Single mission] Remove toast by flag",
+    "Description": "【シングルミッション】トースト削除_フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005921",
+    "Name": "[Single mission] Remove toast by area",
+    "Description": "【シングルミッション】トースト削除_領域",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005950",
+    "Name": "[Single mission] Convert archive display flag",
+    "Description": "【シングルミッション】アーカイブ表示フラグ変換",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005960",
+    "Name": "Set bot identification special effect XX",
+    "Description": "bot識別用特殊効果設定_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005970",
+    "Name": "Set co-op delayed special effect XX",
+    "Description": "共闘遅延特殊効果設定_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200005990",
+    "Name": "Tutorial: set archive registration flag XX",
+    "Description": "チュートリアル_アーカイブ登録フラグ設定_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006000",
+    "Name": "[Talk] Make NPC hostile",
+    "Description": "【会話】NPC敵対化処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006001",
+    "Name": "[Talk] Set flag when NPC is attacked X times",
+    "Description": "【会話】NPCがX回攻撃されたらフラグを立てる処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006002",
+    "Name": "[Talk] NPC death handling",
+    "Description": "【会話】NPC死亡処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006003",
+    "Name": "[Talk] Make NPC a follower",
+    "Description": "【会話】NPC従者化処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006004",
+    "Name": "[Talk] Make NPC a follower: animation control",
+    "Description": "【会話】NPC従者化処理_アニメ制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006005",
+    "Name": "[Talk] Play level-up animation (player)",
+    "Description": "【会話】レベルアップアニメ再生_PC",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006006",
+    "Name": "[Talk] Play level-up animation (speaker)",
+    "Description": "【会話】レベルアップアニメ再生_話者",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006010",
+    "Name": "[Talk] Play covenant altar offering animation",
+    "Description": "【会話】誓約祭壇に捧げ物を行うアニメ再生",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006011",
+    "Name": "[Talk] Play SFX on player when flag is set",
+    "Description": "【会話】フラグが立ったらPCにSFX再生",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006020",
+    "Name": "[Talk] Duplicate shop lineup control",
+    "Description": "【会話】重複ラインナップ制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006030",
+    "Name": "[Talk] Item glow appears",
+    "Description": "【会話】アイテム光出現",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006031",
+    "Name": "[Talk] Set talk flag only while player is in area",
+    "Description": "【会話】領域内にPCが入っている時にだけ会話用フラグを立てる",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006032",
+    "Name": "[Talk] Set talk flag once player has entered area",
+    "Description": "【会話】領域内に一度PCが入ったら会話用フラグを立てる",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006040",
+    "Name": "[Talk] Special idle NPC alignment",
+    "Description": "【会話】特殊待機NPC位置合わせ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006041",
+    "Name": "[Talk] Bonfire dummy alignment",
+    "Description": "【会話】篝火ダミー位置合わせ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006042",
+    "Name": "[Talk] Special idle: lock NPC to specific animation",
+    "Description": "【会話】特殊待機_NPC特定アニメ固定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006060",
+    "Name": "[Talk] Hint character generic init",
+    "Description": "【会話】ヒントキャラ汎用初期化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006100",
+    "Name": "[Talk] State transition (Sculptor)",
+    "Description": "【会話】状態遷移_仏師",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006200",
+    "Name": "Talk: blood-offering NPC, generic init",
+    "Description": "会話_血を捧げるNPC_初期化_汎用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:200006300",
+    "Name": "Talk: local NPC, generic init",
+    "Description": "会話_現地NPC_初期化_汎用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "common_func:700001000",
+    "Name": "[Talk] No-attack area check",
+    "Description": "【会話】攻撃不可領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:110004630",
+    "Name": "Drawbridge: activation",
+    "Description": "跳ね橋_起動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:110004631",
+    "Name": "Drawbridge: initial setup",
+    "Description": "跳ね橋_初期設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:110005600",
+    "Name": "Dark sun god: initial setup",
+    "Description": "暗黒太陽神_初期設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:110005630",
+    "Name": "Dark sun god: gives birth to offspring XX",
+    "Description": "暗黒太陽神_子を産む_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_00_00_00:110005900",
+    "Name": "Dark sun god: enable offspring XX",
+    "Description": "暗黒太陽神_子を有効化する_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800000",
+    "Name": "Mission 001 check",
+    "Description": "ミッション001判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800010",
+    "Name": "Phase time control",
+    "Description": "フェーズ時間制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800011",
+    "Name": "Phase time control: ritual ground unlock effect end flag",
+    "Description": "フェーズ時間制御_儀式場解放演出終了フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800020",
+    "Name": "Mission only: set info screen open/close state",
+    "Description": "ミッション専用_情報画面の開閉状況設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800030",
+    "Name": "Mission only: all first-half objectives achieved",
+    "Description": "ミッション専用_前半の行動目標全達成",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800031",
+    "Name": "Mission only: all first-half objectives achieved (flag)",
+    "Description": "ミッション専用_前半の行動目標全達成_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800040",
+    "Name": "Mission only: all second-half objectives achieved",
+    "Description": "ミッション専用_後半の行動目標全達成",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800041",
+    "Name": "Mission only: all second-half objectives achieved (flag)",
+    "Description": "ミッション専用_後半の行動目標全達成_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800080",
+    "Name": "Bot waiting XX",
+    "Description": "bot待機中_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800090",
+    "Name": "Co-op enemy icon disabled flag",
+    "Description": "共闘敵アイコン無効フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800101",
+    "Name": "Objective control: open the map",
+    "Description": "行動目標制御_地図を開く",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800132",
+    "Name": "Objective control: gain the virtue of the oath",
+    "Description": "行動目標制御_誓約の美徳を得る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800133",
+    "Name": "Objective control: gain the virtue of the sword",
+    "Description": "行動目標制御_剣の美徳を得る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800200",
+    "Name": "Talk event flag: Tanran 200",
+    "Description": "会話イベント用フラグ_タンラン_200",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800201",
+    "Name": "Talk event flag: Tanran 201",
+    "Description": "会話イベント用フラグ_タンラン_201",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800240",
+    "Name": "Talk event flag: Tanran 240",
+    "Description": "会話イベント用フラグ_タンラン_240",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800249",
+    "Name": "Talk event flag: Tanran 249",
+    "Description": "会話イベント用フラグ_タンラン_249",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800250",
+    "Name": "Talk event flag: Bloody Hand knight 250",
+    "Description": "会話イベント用フラグ_血の手の騎士_250",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800251",
+    "Name": "Talk event flag: Bloody Hand knight 251",
+    "Description": "会話イベント用フラグ_血の手の騎士_251",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800252",
+    "Name": "Talk event flag: Bloody Hand knight 252",
+    "Description": "会話イベント用フラグ_血の手の騎士_252",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800253",
+    "Name": "Talk event flag: Bloody Hand knight 253",
+    "Description": "会話イベント用フラグ_血の手の騎士_253",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800290",
+    "Name": "Talk event flag: Bloody Hand knight 290",
+    "Description": "会話イベント用フラグ_血の手の騎士_290",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800300",
+    "Name": "Forced pin event X",
+    "Description": "強制ピン打ちイベント_X",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800310",
+    "Name": "Set busy flag: in co-op fight",
+    "Description": "取り込み中フラグ設定_共闘中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800311",
+    "Name": "Set busy flag: in co-op fight (reserve flag)",
+    "Description": "取り込み中フラグ設定_共闘中_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800320",
+    "Name": "Blood power screen open/close control",
+    "Description": "血の力画面開閉制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800330",
+    "Name": "Set busy flag: jumping",
+    "Description": "取り込み中フラグ設定_ジャンプ中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800331",
+    "Name": "Set busy flag: jumping (reserve flag)",
+    "Description": "取り込み中フラグ設定_ジャンプ中_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800400",
+    "Name": "Set bot activation conditions",
+    "Description": "bot起動条件設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800410",
+    "Name": "Co-op warp: reminder notification",
+    "Description": "共闘ワープ_リマインド通知",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800420",
+    "Name": "Return Dasyu to start position",
+    "Description": "ダスユを初期位置に回収",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800421",
+    "Name": "Return Dasyu to start position (flag)",
+    "Description": "ダスユを初期位置に回収_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800423",
+    "Name": "Dasyu: invisibility control",
+    "Description": "ダスユ_透明化管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800424",
+    "Name": "Dasyu: hiding control",
+    "Description": "ダスユ_姿隠し管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800425",
+    "Name": "Dasyu: return warp",
+    "Description": "ダスユ_帰還ワープ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800426",
+    "Name": "Debug: move bots to start position",
+    "Description": "デバッグ_bot初期位置移動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800427",
+    "Name": "Debug: move bots to start position (reserve flag)",
+    "Description": "デバッグ_bot初期位置移動_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800428",
+    "Name": "Dasyu: footprint stealth removed",
+    "Description": "ダスユ_足跡ステルス解除",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800430",
+    "Name": "Activate co-op enemy",
+    "Description": "共闘敵アクティブ化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800431",
+    "Name": "Co-op enemy icon control",
+    "Description": "共闘敵アイコン制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800432",
+    "Name": "Zoak: co-op join timing control",
+    "Description": "ゾーク_共闘参加タイミング制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800440",
+    "Name": "Co-op bot undying setting",
+    "Description": "共闘bot不死設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800450",
+    "Name": "White Pita bot: co-op fight start talk kick",
+    "Description": "白ピタbot_共闘開始会話のキック",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800451",
+    "Name": "White Pita bot: in co-op fight flag",
+    "Description": "白ピタbot_共闘参加中フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800452",
+    "Name": "White Pita bot: warp to start co-op fight",
+    "Description": "白ピタbot_共闘起動用ワープ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800453",
+    "Name": "White Pita bot: warp to return from co-op fight",
+    "Description": "白ピタbot_共闘帰還用ワープ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800454",
+    "Name": "White Pita bot: warping to join co-op fight flag",
+    "Description": "白ピタbot_共闘にワープ参加中フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800500",
+    "Name": "Tutorial display: by area, prayer toast only",
+    "Description": "チュートリアル表示_領域で出す版_祈りトースト専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800600",
+    "Name": "Flag: joined co-op fight",
+    "Description": "フラグ用_共闘に参加した",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800610",
+    "Name": "[Single mission] Item appears",
+    "Description": "【シングルミッション】アイテム出現",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800620",
+    "Name": "Flag: transfer travel modal display",
+    "Description": "フラグ用_転送移動モーダル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800621",
+    "Name": "Flag: transfer travel modal display (reserve flag)",
+    "Description": "フラグ用_転送移動モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800630",
+    "Name": "Flag: hunt, strong enemy modal display, closed the map",
+    "Description": "フラグ用_討伐_強敵モーダル表示_地図を閉じた",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800631",
+    "Name": "Flag: hunt, strong enemy modal display, spotted by strong enemy",
+    "Description": "フラグ用_討伐_強敵モーダル表示_強敵に見つかった",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800632",
+    "Name": "Flag: hunt, strong enemy modal display (reserve flag)",
+    "Description": "フラグ用_討伐_強敵モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800640",
+    "Name": "Flag: hunt, co-op enemy modal display, set time after defeating strong enemy",
+    "Description": "フラグ用_討伐_共闘敵モーダル表示_強敵撃破後一定時間",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800641",
+    "Name": "Flag: hunt, co-op enemy modal display (reserve flag)",
+    "Description": "フラグ用_討伐_共闘敵モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800642",
+    "Name": "Flag: hunt, co-op enemy modal display, picked up blood power",
+    "Description": "フラグ用_討伐_共闘敵モーダル表示_血の力を拾った",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800643",
+    "Name": "Flag: hunt, co-op enemy modal display, started fighting co-op enemy",
+    "Description": "フラグ用_討伐_共闘敵モーダル表示_共闘的と戦闘を始めた",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800650",
+    "Name": "Flag: hunt, blood rose modal display, got blood power",
+    "Description": "フラグ用_討伐_血の薔薇モーダル表示_血の力取得",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800651",
+    "Name": "Flag: hunt, blood rose modal display, time passed",
+    "Description": "フラグ用_討伐_血の薔薇モーダル表示_時間経過",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800652",
+    "Name": "Flag: hunt, blood rose modal display (reserve flag)",
+    "Description": "フラグ用_討伐_血の薔薇モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800660",
+    "Name": "Flag: map modal display",
+    "Description": "フラグ用_地図モーダル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800661",
+    "Name": "Flag: map modal display (reserve flag)",
+    "Description": "フラグ用_地図モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800665",
+    "Name": "[Single mission] Tutorial display: map toast only",
+    "Description": "【シングルミッション】チュートリアル表示_地図表示トースト専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800670",
+    "Name": "Flag: virtue of the oath modal display",
+    "Description": "フラグ用_誓約の美徳モーダル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110800671",
+    "Name": "Flag: virtue of the oath modal display (reserve flag)",
+    "Description": "フラグ用_誓約の美徳モーダル表示_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110802700",
+    "Name": "NPC650 Dasyu's assassin: area check",
+    "Description": "NPC650_ダスユの暗殺者_領域判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110802701",
+    "Name": "NPC650 Dasyu's assassin: set talk processing distance limit",
+    "Description": "NPC650_ダスユの暗殺者_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:110802705",
+    "Name": "NPC620 \"Bloody Hand\" knight: set talk processing distance limit",
+    "Description": "NPC620_「血の手」の騎士_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:1108001120",
+    "Name": "Objective control: defeat a predator and gain a virtue",
+    "Description": "行動目標制御_捕食者を倒し美徳を得る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:1108001121",
+    "Name": "Objective control: defeat a strong enemy and gain a virtue",
+    "Description": "行動目標制御_強敵を倒し美徳を得る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_80_00_00:1108001130",
+    "Name": "Objective control: head to the shelter",
+    "Description": "行動目標制御_避難所へ向かう",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810000",
+    "Name": "Mission 002 check",
+    "Description": "ミッション002判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810010",
+    "Name": "Bot doping: Leila, extended vision",
+    "Description": "botドーピング_レイラ_視界増強",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810020",
+    "Name": "Bot doping: Samir, shortened vision",
+    "Description": "botドーピング_サミール_視界短縮",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810021",
+    "Name": "Bot doping: Samir, shortened vision flag",
+    "Description": "botドーピング_サミール_視界短縮_フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810030",
+    "Name": "Bot doping: White Pita, extended vision",
+    "Description": "botドーピング_白ピタ_視界増強",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810040",
+    "Name": "Bot game non-participation flag (White Pita)",
+    "Description": "botゲーム非参加フラグ_白ピタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810041",
+    "Name": "Bot game non-participation flag (Leila)",
+    "Description": "botゲーム非参加フラグ_レイラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810042",
+    "Name": "Bot game non-participation flag (Samir)",
+    "Description": "botゲーム非参加フラグ_サミール",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810045",
+    "Name": "Bot: warp to non-participation area XX",
+    "Description": "bot_非参加領域へワープ_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810050",
+    "Name": "Bot participation control: phase 1, White Pita",
+    "Description": "bot参加コントロール_フェイズ1_白ピタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810051",
+    "Name": "Bot participation control: phase 1, Leila",
+    "Description": "bot参加コントロール_フェイズ1_レイラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810052",
+    "Name": "Bot participation control: phase 1, Samir",
+    "Description": "bot参加コントロール_フェイズ1_サミール",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810060",
+    "Name": "Bot participation control: phase 2, White Pita",
+    "Description": "bot参加コントロール_フェイズ2_白ピタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810061",
+    "Name": "Bot participation control: phase 2, Leila",
+    "Description": "bot参加コントロール_フェイズ2_レイラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810062",
+    "Name": "Bot participation control: phase 2, Samir",
+    "Description": "bot参加コントロール_フェイズ2_サミール",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810070",
+    "Name": "Bot participation control: phase 3, White Pita",
+    "Description": "bot参加コントロール_フェイズ3_白ピタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810071",
+    "Name": "Bot participation control: phase 3, Leila",
+    "Description": "bot参加コントロール_フェイズ3_レイラ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810072",
+    "Name": "Bot participation control: phase 3, Samir",
+    "Description": "bot参加コントロール_フェイズ3_サミール",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810080",
+    "Name": "Bot waiting XX",
+    "Description": "bot待機中_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810090",
+    "Name": "Set flag for having obtained a familiar in a mission",
+    "Description": "ミッションで眷属を入手したことがあるフラグを設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810100",
+    "Name": "Objective control: make a pact with a familiar",
+    "Description": "行動目標制御_眷属と契約する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810101",
+    "Name": "Objective control: prepare for the ritual ground to appear",
+    "Description": "行動目標制御_儀式場の出現へ備える",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810102",
+    "Name": "Objective control: head to the ritual ground",
+    "Description": "行動目標制御_儀式場へ向かう",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810103",
+    "Name": "Objective control: gain a virtue at the ritual ground",
+    "Description": "行動目標制御_儀式場で美徳を得る",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810104",
+    "Name": "Objective control: explore this land",
+    "Description": "行動目標制御_この地を探索する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810105",
+    "Name": "Objective control: obtain a red stone or golden stone",
+    "Description": "行動目標制御_赤石か黄金石を取得する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810110",
+    "Name": "Remove objective",
+    "Description": "行動目標削除",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810120",
+    "Name": "Delay result presentation",
+    "Description": "リザルト演出遅延",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810200",
+    "Name": "Talk event flag: Bloody Hand knight 200",
+    "Description": "会話イベント用フラグ_血の手の騎士_200",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810201",
+    "Name": "Talk event flag: Bloody Hand knight 201",
+    "Description": "会話イベント用フラグ_血の手の騎士_201",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810202",
+    "Name": "Talk event flag: Bloody Hand knight 202",
+    "Description": "会話イベント用フラグ_血の手の騎士_202",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810203",
+    "Name": "Talk event flag: Bloody Hand knight 203",
+    "Description": "会話イベント用フラグ_血の手の騎士_203",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810204",
+    "Name": "Talk event flag: Bloody Hand knight 204",
+    "Description": "会話イベント用フラグ_血の手の騎士_204",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810205",
+    "Name": "Talk event flag: Bloody Hand knight 205",
+    "Description": "会話イベント用フラグ_血の手の騎士_205",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810206",
+    "Name": "Talk event flag: Bloody Hand knight 206",
+    "Description": "会話イベント用フラグ_血の手の騎士_206",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810207",
+    "Name": "Talk event flag: Bloody Hand knight 207",
+    "Description": "会話イベント用フラグ_血の手の騎士_207",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810210",
+    "Name": "Talk event flag: Bloody Hand knight 210",
+    "Description": "会話イベント用フラグ_血の手の騎士_210",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810211",
+    "Name": "Talk event flag: Bloody Hand knight 211",
+    "Description": "会話イベント用フラグ_血の手の騎士_211",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810212",
+    "Name": "Talk event flag: Bloody Hand knight 212",
+    "Description": "会話イベント用フラグ_血の手の騎士_212",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810213",
+    "Name": "Talk event flag: Bloody Hand knight 213",
+    "Description": "会話イベント用フラグ_血の手の騎士_213",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810220",
+    "Name": "Talk event flag: Bloody Hand knight 220",
+    "Description": "会話イベント用フラグ_血の手の騎士_220",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810221",
+    "Name": "Talk event flag: Bloody Hand knight 221",
+    "Description": "会話イベント用フラグ_血の手の騎士_221",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810222",
+    "Name": "Talk event flag: Bloody Hand knight 222",
+    "Description": "会話イベント用フラグ_血の手の騎士_222",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810223",
+    "Name": "Talk event flag: Bloody Hand knight 223",
+    "Description": "会話イベント用フラグ_血の手の騎士_223",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810224",
+    "Name": "Talk event flag: Bloody Hand knight 224",
+    "Description": "会話イベント用フラグ_血の手の騎士_224",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810225",
+    "Name": "Talk event flag: Bloody Hand knight 225",
+    "Description": "会話イベント用フラグ_血の手の騎士_225",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810226",
+    "Name": "Talk event flag: Bloody Hand knight 226",
+    "Description": "会話イベント用フラグ_血の手の騎士_226",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810227",
+    "Name": "Talk event flag: Bloody Hand knight 227",
+    "Description": "会話イベント用フラグ_血の手の騎士_227",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810230",
+    "Name": "Talk event flag: Bloody Hand knight 230",
+    "Description": "会話イベント用フラグ_血の手の騎士_230",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810231",
+    "Name": "Talk event flag: Bloody Hand knight 231",
+    "Description": "会話イベント用フラグ_血の手の騎士_231",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810240",
+    "Name": "Talk event flag: Bloody Hand knight 240",
+    "Description": "会話イベント用フラグ_血の手の騎士_240",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810241",
+    "Name": "Talk event flag: Bloody Hand knight 241",
+    "Description": "会話イベント用フラグ_血の手の騎士_241",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810242",
+    "Name": "Talk event flag: Bloody Hand knight 242",
+    "Description": "会話イベント用フラグ_血の手の騎士_242",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810243",
+    "Name": "Talk event flag: Bloody Hand knight 243",
+    "Description": "会話イベント用フラグ_血の手の騎士_243",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810244",
+    "Name": "Talk event flag: Bloody Hand knight 244",
+    "Description": "会話イベント用フラグ_血の手の騎士_244",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810245",
+    "Name": "Talk event flag: Bloody Hand knight 245",
+    "Description": "会話イベント用フラグ_血の手の騎士_245",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810246",
+    "Name": "Talk event flag: Bloody Hand knight 246",
+    "Description": "会話イベント用フラグ_血の手の騎士_246",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810249",
+    "Name": "Talk event flag: Bloody Hand knight 249",
+    "Description": "会話イベント用フラグ_血の手の騎士_249",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810250",
+    "Name": "Talk event flag: sniper 250",
+    "Description": "会話イベント用フラグ_狙撃手_250",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810251",
+    "Name": "Talk event flag: sniper 251",
+    "Description": "会話イベント用フラグ_狙撃手_251",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810252",
+    "Name": "Talk event flag: sniper 252",
+    "Description": "会話イベント用フラグ_狙撃手_252",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810253",
+    "Name": "Talk event flag: sniper 253",
+    "Description": "会話イベント用フラグ_狙撃手_253",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810290",
+    "Name": "Talk event flag: sniper 290",
+    "Description": "会話イベント用フラグ_狙撃手_290",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810291",
+    "Name": "Talk event flag: sniper 291",
+    "Description": "会話イベント用フラグ_狙撃手_291",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810292",
+    "Name": "Talk event flag: sniper 292",
+    "Description": "会話イベント用フラグ_狙撃手_292",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810293",
+    "Name": "Talk event flag: sniper 293",
+    "Description": "会話イベント用フラグ_狙撃手_293",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810295",
+    "Name": "Talk event flag: sniper 295",
+    "Description": "会話イベント用フラグ_狙撃手_295",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810299",
+    "Name": "Talk event flag: sniper 299",
+    "Description": "会話イベント用フラグ_狙撃手_299",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810300",
+    "Name": "Talk event flag: Bloodline Church 300",
+    "Description": "会話イベント用フラグ_血統教会_300",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810301",
+    "Name": "Talk event flag: Bloodline Church 301",
+    "Description": "会話イベント用フラグ_血統教会_301",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810340",
+    "Name": "Talk event flag: Bloodline Church 340",
+    "Description": "会話イベント用フラグ_血統教会_340",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810342",
+    "Name": "Talk event flag: Bloodline Church 342",
+    "Description": "会話イベント用フラグ_血統教会_342",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810345",
+    "Name": "Talk event flag: Bloodline Church 345",
+    "Description": "会話イベント用フラグ_血統教会_345",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810349",
+    "Name": "Talk event flag: Bloodline Church 349",
+    "Description": "会話イベント用フラグ_血統教会_349",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810400",
+    "Name": "Tutorial: show at intermission XX",
+    "Description": "チュートリアル_インターミッションで表示_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810410",
+    "Name": "Fade on tutorial convenience warp XX",
+    "Description": "チュートリアル都合ワープ時のフェード_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810500",
+    "Name": "Drawbridge: initial setup (mission 2)",
+    "Description": "跳ね橋_初期設定_ミッション2",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810501",
+    "Name": "Drawbridge: activation (mission 2)",
+    "Description": "跳ね橋_起動_ミッション2",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810510",
+    "Name": "Set busy flag: in combat",
+    "Description": "取り込み中フラグ設定_戦闘中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810511",
+    "Name": "Set busy flag: jumping",
+    "Description": "取り込み中フラグ設定_ジャンプ中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810512",
+    "Name": "Set busy flag: in co-op fight",
+    "Description": "取り込み中フラグ設定_共闘中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810513",
+    "Name": "Set busy flag: blood power shown",
+    "Description": "取り込み中フラグ設定_血の力表示中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810514",
+    "Name": "Set busy flag: map menu open",
+    "Description": "取り込み中フラグ設定_地図メニュー表示中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810515",
+    "Name": "Set busy flag: after phase end",
+    "Description": "取り込み中フラグ設定_フェイズ終了後",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810516",
+    "Name": "Set busy flag: in co-op fight, for talk playback",
+    "Description": "取り込み中フラグ設定_共闘中_会話再生用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810519",
+    "Name": "Set busy flag: all",
+    "Description": "取り込み中フラグ設定_全て",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810520",
+    "Name": "Busy flag: in combat",
+    "Description": "取り込み中フラグ_戦闘中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810521",
+    "Name": "Busy flag: jumping",
+    "Description": "取り込み中フラグ_ジャンプ中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810522",
+    "Name": "Busy flag: in co-op fight",
+    "Description": "取り込み中フラグ_共闘中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810523",
+    "Name": "Busy flag: blood power shown",
+    "Description": "取り込み中フラグ_血の力表示中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810524",
+    "Name": "Busy flag: map menu open",
+    "Description": "取り込み中フラグ_地図メニュー表示中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810525",
+    "Name": "Busy flag: after phase end",
+    "Description": "取り込み中フラグ_フェイズ終了後",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810526",
+    "Name": "Busy flag: in co-op fight, for talk playback",
+    "Description": "取り込み中フラグ_共闘中_会話再生用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810529",
+    "Name": "Busy flag: all",
+    "Description": "取り込み中フラグ_全て",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810540",
+    "Name": "Phase 3: remove enemies in the cathedral hall",
+    "Description": "フェーズ3_聖堂ホールの敵撤去",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810545",
+    "Name": "Phase 2: remove enemies on the great bridge and at the back of the cathedral hall",
+    "Description": "フェーズ2_大橋、聖堂ホール奥の敵撤去",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810550",
+    "Name": "Phase 1: remove enemies at the back of the cathedral hall",
+    "Description": "フェーズ1_聖堂ホール奥の敵撤去",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810600",
+    "Name": "[Single mission] Flag: show exploration modal a set time after getting a familiar",
+    "Description": "【シングルミッション】フラグ用_探索のモーダルを出す_眷属入手から一定時間",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810601",
+    "Name": "[Single mission] Flag: show exploration modal after a set time",
+    "Description": "【シングルミッション】フラグ用_探索のモーダルを出す_一定時間",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810602",
+    "Name": "[Single mission] Flag: exploration modal display permission flag",
+    "Description": "【シングルミッション】フラグ用_探索のモーダル表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810603",
+    "Name": "[Single mission] Flag: show exploration modal one fight after getting a familiar",
+    "Description": "【シングルミッション】フラグ用_探索のモーダルを出す_眷属入手後に一戦闘",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810610",
+    "Name": "[Single mission] Flag: observation view modal display",
+    "Description": "【シングルミッション】フラグ用_観察視点モーダル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810611",
+    "Name": "[Single mission] Flag: observation view modal display permission flag",
+    "Description": "【シングルミッション】フラグ用_観察視点モーダル表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810620",
+    "Name": "[Single mission] Tutorial display: bloodline art switch, show",
+    "Description": "【シングルミッション】チュートリアル表示_血族技の切り替え_表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810621",
+    "Name": "[Single mission] Tutorial display: bloodline art switch, show permission flag",
+    "Description": "【シングルミッション】チュートリアル表示_血族技の切り替え_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810625",
+    "Name": "[Single mission] Tutorial display: bloodline art upgrade, show",
+    "Description": "【シングルミッション】チュートリアル表示_血族技強化_表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810626",
+    "Name": "[Single mission] Tutorial display: bloodline art upgrade, show permission flag",
+    "Description": "【シングルミッション】チュートリアル表示_血族技強化_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810630",
+    "Name": "[Single mission] Tutorial display: familiar magic circle",
+    "Description": "【シングルミッション】チュートリアル表示_眷属の魔法陣表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810631",
+    "Name": "[Single mission] Tutorial display: familiar magic circle permission flag",
+    "Description": "【シングルミッション】チュートリアル表示_眷属の魔法陣表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810640",
+    "Name": "[Single mission] Flag: familiar summon modal display",
+    "Description": "【シングルミッション】フラグ用_眷属の召喚モーダル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810641",
+    "Name": "[Single mission] Flag: familiar summon modal display permission flag",
+    "Description": "【シングルミッション】フラグ用_眷属の召喚モーダル表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810650",
+    "Name": "[Single mission] Flag: familiar upgrade",
+    "Description": "【シングルミッション】フラグ用_眷属強化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810651",
+    "Name": "[Single mission] Flag: familiar upgrade display permission flag",
+    "Description": "【シングルミッション】フラグ用_眷属強化表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810660",
+    "Name": "[Single mission] Tutorial display: bloodline art required level, show",
+    "Description": "【シングルミッション】チュートリアル表示_血族技の必要レベル_表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810661",
+    "Name": "[Single mission] Tutorial display: bloodline art required level, show permission flag",
+    "Description": "【シングルミッション】チュートリアル表示_血族技の必要レベル_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810670",
+    "Name": "[Single mission] Tutorial display: familiar growth, show",
+    "Description": "【シングルミッション】チュートリアル表示_眷属の成長_表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810671",
+    "Name": "[Single mission] Tutorial display: familiar growth, show permission flag",
+    "Description": "【シングルミッション】チュートリアル表示_眷属の成長_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810680",
+    "Name": "[Single mission] Flag: virtue of the lamp",
+    "Description": "【シングルミッション】フラグ用_灯の美徳",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810681",
+    "Name": "[Single mission] Flag: virtue of the lamp, display permission flag",
+    "Description": "【シングルミッション】フラグ用_灯の美徳_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810690",
+    "Name": "[Single mission] Flag: transfer travel",
+    "Description": "【シングルミッション】フラグ用_転送移動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110810691",
+    "Name": "[Single mission] Flag: transfer travel, display permission flag",
+    "Description": "【シングルミッション】フラグ用_転送移動_表示許可フラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811000",
+    "Name": "White Pita bot: doping control during alliance",
+    "Description": "白ピタbot_同盟時ドーピング制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811010",
+    "Name": "White Pita bot: undying during talk",
+    "Description": "白ピタbot_会話時不死",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811011",
+    "Name": "White Pita bot: undying during co-op fight",
+    "Description": "白ピタbot_共闘時不死",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811012",
+    "Name": "White Pita bot: joined co-op fight early?",
+    "Description": "白ピタbot_共闘先行参加か",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811013",
+    "Name": "White Pita bot: replan request at alliance talk end",
+    "Description": "白ピタbot_同盟会話終了時のリプラン要求",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811100",
+    "Name": "Leila bot: pass sniping position target to AI",
+    "Description": "レイラbot_狙撃位置のターゲットをAIに渡す",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811110",
+    "Name": "[Single mission] Tutorial display: alliance only",
+    "Description": "【シングルミッション】チュートリアル表示_同盟専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811120",
+    "Name": "[Single mission] Tutorial display: weapon affinity only",
+    "Description": "【シングルミッション】チュートリアル表示_武器属性化専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811130",
+    "Name": "[Single mission] Tutorial display: boost stone only",
+    "Description": "【シングルミッション】チュートリアル表示_ブースト石専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110811139",
+    "Name": "[Single mission] Boost stone tutorial shown flag",
+    "Description": "【シングルミッション】ブースト石のチュートリアル表示済みフラグ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110812700",
+    "Name": "NPC640 Bloodline Association knight: set talk processing distance limit",
+    "Description": "NPC640_血統協会の騎士_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110812705",
+    "Name": "NPC620 \"Bloody Hand\" knight: set talk processing distance limit",
+    "Description": "NPC620_「血の手」の騎士_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110812706",
+    "Name": "NPC620 \"Bloody Hand\" knight: attacked once check",
+    "Description": "NPC620_「血の手」の騎士_1回攻撃されたか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110812707",
+    "Name": "NPC620 \"Bloody Hand\" knight: attacked 3 times check",
+    "Description": "NPC620_「血の手」の騎士_3回攻撃されたか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_81_00_00:110812710",
+    "Name": "NPC630 Leila's sniper: set talk processing distance limit",
+    "Description": "NPC630_レイラの狙撃者_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820000",
+    "Name": "Mission: brand check",
+    "Description": "ミッション_烙印_判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820001",
+    "Name": "Mission: sub brand check",
+    "Description": "ミッション_サブ烙印_判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820010",
+    "Name": "Phase time control: brand",
+    "Description": "フェーズ時間制御_烙印",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820011",
+    "Name": "Phase time control: sub brand",
+    "Description": "フェーズ時間制御_サブ烙印",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820020",
+    "Name": "Intermission time control (brand)",
+    "Description": "インターミッション時間制御_烙印",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820100",
+    "Name": "Objective control: check the brand details",
+    "Description": "行動目標制御_烙印の詳細を確認する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820101",
+    "Name": "Objective control: achieve the unforgettable nemesis brand",
+    "Description": "行動目標制御_忘れ得ぬ宿敵の烙印を達成する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820102",
+    "Name": "Objective control: find the nemesis",
+    "Description": "行動目標制御_宿敵を見つける",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820103",
+    "Name": "Objective control: defeat the nemesis",
+    "Description": "行動目標制御_宿敵を倒す",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820111",
+    "Name": "Objective control: achieve the old enemy brand",
+    "Description": "行動目標制御_古き敵の烙印を達成する",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820200",
+    "Name": "Talk event flag: Tanran 200",
+    "Description": "会話イベント用フラグ_タンラン_200",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820201",
+    "Name": "Talk event flag: Tanran 201",
+    "Description": "会話イベント用フラグ_タンラン_201",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820240",
+    "Name": "Talk event flag: Tanran 240",
+    "Description": "会話イベント用フラグ_タンラン_240",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820241",
+    "Name": "Talk event flag: Tanran 241",
+    "Description": "会話イベント用フラグ_タンラン_241",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820242",
+    "Name": "Talk event flag: Tanran 242",
+    "Description": "会話イベント用フラグ_タンラン_242",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820300",
+    "Name": "Toast: open info screen",
+    "Description": "トースト_情報画面を開く",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820301",
+    "Name": "Toast: open brand details",
+    "Description": "トースト_烙印詳細を開く",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820302",
+    "Name": "Toast: item",
+    "Description": "トースト_アイテム",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820303",
+    "Name": "Toast: lock-on",
+    "Description": "トースト_ロックオン",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820400",
+    "Name": "Set info screen open/close state",
+    "Description": "情報画面の開閉状況設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820401",
+    "Name": "Blood power screen open/close control",
+    "Description": "血の力画面開閉制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820410",
+    "Name": "Mission only: activate nemesis bot",
+    "Description": "ミッション専用_宿敵botの起動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820415",
+    "Name": "Mission only: seal nemesis bot",
+    "Description": "ミッション専用_宿敵botの封印",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820420",
+    "Name": "Mission only: nemesis bot talk kick",
+    "Description": "ミッション専用_宿敵botの会話キック",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820430",
+    "Name": "Set busy flag: jumping",
+    "Description": "取り込み中フラグ設定_ジャンプ中",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820431",
+    "Name": "Set busy flag: jumping (reserve flag)",
+    "Description": "取り込み中フラグ設定_ジャンプ中_フラグ確保",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820500",
+    "Name": "Tutorial display: brand perfume timing",
+    "Description": "チュートリアル表示_烙印の香水表示タイミング",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820501",
+    "Name": "Tutorial display: brand perfume timing (flag)",
+    "Description": "チュートリアル表示_烙印の香水表示タイミング_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820510",
+    "Name": "Tutorial display: nemesis identification timing",
+    "Description": "チュートリアル表示_宿敵の判別表示タイミング",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820511",
+    "Name": "Tutorial display: nemesis identification timing (flag)",
+    "Description": "チュートリアル表示_宿敵の判別表示タイミング_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820520",
+    "Name": "Tutorial display: brand achieved timing",
+    "Description": "チュートリアル表示_烙印達成表示タイミング",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110820521",
+    "Name": "Tutorial display: brand achieved timing (flag)",
+    "Description": "チュートリアル表示_烙印達成表示タイミング_フラグ用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m10_82_00_00:110822700",
+    "Name": "NPC650 Dasyu's assassin: set talk processing distance limit",
+    "Description": "NPC650_ダスユの暗殺者_会話処理限界距離設定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000000",
+    "Name": "NPC003 talk marker asset: new talk check",
+    "Description": "NPC003_会話記号アセット_新規会話判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000001",
+    "Name": "Talk marker asset: animation control XX",
+    "Description": "会話記号アセット_アニメ制御_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000500",
+    "Name": "Tutorial display: lobby XX",
+    "Description": "チュートリアル表示_ロビー用_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000520",
+    "Name": "Tutorial display: roles only XX",
+    "Description": "チュートリアル表示_ロール関連専用_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000530",
+    "Name": "Tutorial display: lobby, by area XX",
+    "Description": "チュートリアル表示_ロビー用_領域_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000540",
+    "Name": "Tutorial display: praise only",
+    "Description": "チュートリアル表示_称賛専用",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000550",
+    "Name": "Lobby white wall: NT access event XX",
+    "Description": "ロビー白壁_NT用アクセス時イベント_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000560",
+    "Name": "Warp feature unlock: entry check XX",
+    "Description": "ワープ機能開放_入場判定_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000570",
+    "Name": "Change Gparam while lobby menu is open",
+    "Description": "ロビーメニュー展開中Gpara変更",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000590",
+    "Name": "Tutorial display flag control: praise",
+    "Description": "チュートリアル表示フラグ制御_称賛",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000591",
+    "Name": "Tutorial display flag: praise",
+    "Description": "チュートリアル表示フラグ_称賛",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000600",
+    "Name": "Recreate results for hub travel cutscene playback",
+    "Description": "拠点移動カットシーン再生用の結果再現",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000610",
+    "Name": "Make hub characters invincible event",
+    "Description": "拠点キャラ無敵化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000620",
+    "Name": "Practice match recommendation dialog display flag control",
+    "Description": "模擬戦推奨ダイアログ表示フラグ操作",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000630",
+    "Name": "Function shortcut unavailable",
+    "Description": "機能ショートカット不可",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000700",
+    "Name": "Player special behaviour in hub",
+    "Description": "拠点内のPC特殊挙動",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180000710",
+    "Name": "Enemy generation test XX",
+    "Description": "敵ジェネレート_テスト_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180001495",
+    "Name": "NPC room: non-combat area special effect control",
+    "Description": "NPC部屋_非戦闘領域_特殊効果管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180001496",
+    "Name": "Talk team EzState: NT version check",
+    "Description": "会話班EzStateでNT版判定用処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002000",
+    "Name": "NPC400 hub NPC: init event",
+    "Description": "NPC400_拠点NPC_初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002001",
+    "Name": "NPC400 hub NPC: Book of Agalisia access check event",
+    "Description": "NPC400_拠点NPC_アガリシアの書アクセス判定イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002002",
+    "Name": "NPC400 hub NPC: bell piercing mask switch event",
+    "Description": "NPC400_拠点NPC_鈴ピアスのマスク切り替えイベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002003",
+    "Name": "NPC400 hub NPC: play Ending A event",
+    "Description": "NPC400_拠点NPC_エンディングA再生イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002004",
+    "Name": "NPC400 hub NPC: check for new talk",
+    "Description": "NPC400_拠点NPC_新規会話があるか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002005",
+    "Name": "NPC420 Blood Merchant: init event",
+    "Description": "NPC420_血の商人_初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002006",
+    "Name": "NPC420 Blood Merchant: shop purchase total count",
+    "Description": "NPC420_血の商人_ショップ買い物累計カウント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002007",
+    "Name": "NPC420 Blood Merchant: check for new talk",
+    "Description": "NPC420_血の商人_新規会話があるか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002008",
+    "Name": "NPC420 Blood Merchant: living blood vial mask switch event",
+    "Description": "NPC420_血の商人_生きた血の小瓶のマスク切り替えイベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002009",
+    "Name": "NPC420 Blood Merchant: animation play event",
+    "Description": "NPC420_血の商人_アニメ再生イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002010",
+    "Name": "NPC410 Black Wing: phase 1 init event",
+    "Description": "NPC410_黒翼_Ph1初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002011",
+    "Name": "NPC410 Black Wing: phase 2 init event",
+    "Description": "NPC410_黒翼_Ph2初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002012",
+    "Name": "NPC410 Black Wing: phase 3 init event",
+    "Description": "NPC410_黒翼_Ph3初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002013",
+    "Name": "NPC410 Black Wing: check for new talk",
+    "Description": "NPC410_黒翼_新規会話があるか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002014",
+    "Name": "NPC410 Black Wing: motion wait XX",
+    "Description": "NPC410_黒翼_モーション待機_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002017",
+    "Name": "NPC410 Black Wing: ending reached check",
+    "Description": "NPC410_黒翼_エンディング到達判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002020",
+    "Name": "NPC430 Androgynous: male init event",
+    "Description": "NPC430_アンドロギュノス_男_初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002021",
+    "Name": "NPC430 Androgynous: female init event",
+    "Description": "NPC430_アンドロギュノス_女_初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002022",
+    "Name": "NPC430 Androgynous: third persona init event",
+    "Description": "NPC430_アンドロギュノス_第三人格_初期化イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002023",
+    "Name": "NPC430 Androgynous male: check for new talk",
+    "Description": "NPC430_アンドロギュノス男_新規会話があるか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002024",
+    "Name": "NPC430 Androgynous female: check for new talk",
+    "Description": "NPC430_アンドロギュノス女_新規会話があるか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002026",
+    "Name": "NPC430 Androgynous: male/female switch object display control",
+    "Description": "NPC430_アンドロギュノス_男女切り替えOBJ表示制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002027",
+    "Name": "NPC430 Androgynous: kitchen standing animation control",
+    "Description": "NPC430_アンドロギュノス_キッチン立ちアニメ制御",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002028",
+    "Name": "NPC430 Androgynous: motion wait XX",
+    "Description": "NPC430_アンドロギュノス_モーション待機_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002044",
+    "Name": "NPC430 Androgynous: chair animation play",
+    "Description": "NPC430_アンドロギュノス_椅子アニメ再生",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002045",
+    "Name": "NPC430 Androgynous: male/female switch object warp",
+    "Description": "NPC430_アンドロギュノス_男女切り替えOBJワープ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002046",
+    "Name": "NPC430 Androgynous: check whether player has sweets",
+    "Description": "NPC430_アンドロギュノス_PCがお菓子を持っているか判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002047",
+    "Name": "NPC430 Androgynous: male/female switch object dummy character init",
+    "Description": "NPC430_アンドロギュノス_男女切り替えOBJダミーキャラ初期化",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002048",
+    "Name": "NPC430 Androgynous: male/female switch object camera transition wait",
+    "Description": "NPC430_アンドロギュノス_男女切り替えOBJカメラ遷移待ち",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002049",
+    "Name": "NPC430 Androgynous: inside/outside Andro's room check",
+    "Description": "NPC430_アンドロギュノス_アンドロ部屋内外判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002050",
+    "Name": "NPC430 Androgynous: NPC inside/outside room check",
+    "Description": "NPC430_アンドロギュノス_NPC部屋内外判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002051",
+    "Name": "NPC430 Androgynous: event re-run control",
+    "Description": "NPC430_アンドロギュノス_イベント再実行管理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002052",
+    "Name": "NPC430 Androgynous: switch object placement handling",
+    "Description": "NPC430_アンドロギュノス_切り替えOBJ配置時処理",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002053",
+    "Name": "NPC430 Androgynous: wait for switch object",
+    "Description": "NPC430_アンドロギュノス_切り替えOBJ実行待ち",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002055",
+    "Name": "NPC400 hub NPC: play Ending A event (debug test version)",
+    "Description": "NPC400_拠点NPC_エンディングA再生イベント_デバッグテスト版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002060",
+    "Name": "NPC430 Androgynous: play ending XX",
+    "Description": "NPC430_アンドロギュノス_エンディング再生_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002062",
+    "Name": "NPC430 Androgynous male: idle animation reset XX",
+    "Description": "NPC430_アンドロギュノス男_待機アニメリセット_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002068",
+    "Name": "NPC430 Androgynous: pseudo-throw at male/female switch object",
+    "Description": "NPC430_アンドロギュノス_男女切り替えOBJに投げもどき",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002450",
+    "Name": "Crest blood letters XX",
+    "Description": "紋章血文字_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180002475",
+    "Name": "Crest blood letters: show character info window XX",
+    "Description": "紋章血文字_キャラ情報ウィンドウ表示_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:180009500",
+    "Name": "Play cutscene on entry",
+    "Description": "入場時にカットシーン再生",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m80_00_00_00:799990990",
+    "Name": "NPC000 test character: init event XX",
+    "Description": "NPC000_テストキャラ_初期化イベント_XX",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:0",
+    "Name": "Constructor",
+    "Description": "コンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:50",
+    "Name": "Pre-constructor",
+    "Description": "プリコンストラクタ",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000000",
+    "Name": "Mission 000 check",
+    "Description": "ミッション000判定",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000010",
+    "Name": "NT version: in event action area",
+    "Description": "NT版_イベントアクション可能領域にいる",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000100",
+    "Name": "Function shortcut unavailable",
+    "Description": "機能ショートカット不可",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000200",
+    "Name": "Play opening cutscene",
+    "Description": "オープニングカットシーン再生",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000400",
+    "Name": "Tutorial UI: scream toast",
+    "Description": "チュートリアルUI表示_専用_叫びのトースト表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000401",
+    "Name": "Tutorial UI: blood-drinking toast",
+    "Description": "チュートリアルUI表示_専用_吸血のトースト表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000490",
+    "Name": "Tutorial UI: by area, with enemy check",
+    "Description": "チュートリアルUI表示_領域_敵判定あり",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000495",
+    "Name": "Tutorial UI: game start movement tutorial",
+    "Description": "チュートリアルUI表示_専用_ゲーム開始時移動チュートリアル",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000500",
+    "Name": "Tutorial UI: by area, several",
+    "Description": "チュートリアルUI表示_領域_複数出すver",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000550",
+    "Name": "Modal display by area",
+    "Description": "モーダル表示_領域版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000560",
+    "Name": "Modal display by event flag",
+    "Description": "モーダル表示_イベントフラグ版",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000580",
+    "Name": "Toast display by event flag, can show again",
+    "Description": "トースト表示_イベントフラグ版_再表示可能",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000590",
+    "Name": "Event flag: Estus pickup after NPC fight",
+    "Description": "イベントフラグ_NPC戦後エスト入手",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000591",
+    "Name": "Event flag: item pickup after NPC fight",
+    "Description": "イベントフラグ_NPC戦後アイテム入手",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000599",
+    "Name": "Event flag: show some modal",
+    "Description": "イベントフラグ_何かしらのモーダルを表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000600",
+    "Name": "Flag: item tutorial display",
+    "Description": "フラグ用_アイテムチュートリアル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000601",
+    "Name": "Flag: item tutorial display, flag itself",
+    "Description": "フラグ用_アイテムチュートリアル表示_フラグ本体",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000610",
+    "Name": "Flag: blood-drinking tutorial display",
+    "Description": "フラグ用_吸血チュートリアル表示",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000611",
+    "Name": "Flag: blood-drinking tutorial display, flag itself",
+    "Description": "フラグ用_吸血チュートリアル表示_フラグ本体",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181000900",
+    "Name": "Update respawn point",
+    "Description": "リスポン地点更新",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001210",
+    "Name": "Activation event for the sacrifice in front of the church",
+    "Description": "教会前の贄起動イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001220",
+    "Name": "Target switch event",
+    "Description": "ターゲット切り替えイベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001800",
+    "Name": "Church NPC fight end event",
+    "Description": "教会のNPC戦終了イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001810",
+    "Name": "Church NPC fight start event",
+    "Description": "教会のNPC戦起動イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001820",
+    "Name": "Boss fight end event",
+    "Description": "ボス戦終了イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001825",
+    "Name": "Boss fight end event: after victory",
+    "Description": "ボス戦終了イベント_勝利後",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001830",
+    "Name": "Boss appearance event",
+    "Description": "ボス出現イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001835",
+    "Name": "Boss fight start event",
+    "Description": "ボス戦起動イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001836",
+    "Name": "Show embers in front of camera event",
+    "Description": "カメラ前火の粉表示イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001840",
+    "Name": "NT version: show end message event",
+    "Description": "NT版_終了メッセージ表示イベント",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001841",
+    "Name": "NT version: show end message event, message panel progress flag (OK)",
+    "Description": "NT版_終了メッセージ表示イベント_メッセージパネル進行フラグ_OK",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001842",
+    "Name": "NT version: show end message event, message panel progress flag (Cancel)",
+    "Description": "NT版_終了メッセージ表示イベント_メッセージパネル進行フラグ_Cancel",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001843",
+    "Name": "NT version: show end message event, message panel progress flag (other)",
+    "Description": "NT版_終了メッセージ表示イベント_メッセージパネル進行フラグ_その他",
+    "Tags": [
+      "emeld"
+    ]
+  },
+  {
+    "ID": "m81_00_00_00:181001900",
+    "Name": "[Dev] Show the lobby menu tutorial correctly",
+    "Description": "【開発用】ロビーメニューチュートリアルを正しく出す用処理",
+    "Tags": [
+      "emeld"
+    ]
+  }
+]
