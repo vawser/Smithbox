@@ -1,7 +1,9 @@
 #nullable enable
+using StudioCore.Editors.Common;
 using StudioCore.Renderer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.CutsceneEditor;
@@ -153,6 +155,61 @@ public sealed class CutsceneModelPool : IDisposable
         return task;
     }
 
+    // The cutscene texture binders the vertex animation textures were loaded from, and for which cutscene
+    private readonly List<string> VertexAnimationContainers = new();
+    private CutsceneFile? VertexAnimationFile;
+
+    /// <summary>
+    /// Loads the textures of the cutscene's vertex animations (<see cref="CutsceneVertexAnimation" />): every one any of
+    /// its cuts names, from its own texture binders (/cutscene/&lt;name&gt;_NN.tpfbnd.dcx), in one load. The binders also
+    /// hold the cutscene's other textures, which are left out. Once per cutscene; let go with the models.
+    /// </summary>
+    public void LoadVertexAnimationTextures(ProjectEntry project, CutsceneFile file)
+    {
+        if (VertexAnimationFile == file || file.Mqb == null)
+            return;
+
+        UnloadVertexAnimationTextures();
+        VertexAnimationFile = file;
+
+        var names = CutsceneVertexAnimation.TextureNames(file.Mqb);
+        if (names.Count == 0)
+            return;
+
+        var prefix = $"/cutscene/{file.Name}_";
+        VertexAnimationContainers.AddRange(project.Locator.FileDictionary.Entries
+            .Where(e => e.Path.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)
+                        && e.Path.Contains(".tpfbnd", StringComparison.OrdinalIgnoreCase))
+            .Select(e => e.Path)
+            .Distinct(StringComparer.OrdinalIgnoreCase));
+
+        if (VertexAnimationContainers.Count == 0)
+        {
+            Smithbox.Log(this, $"[Cutscene Editor] {file.Name}: no texture binders for its {names.Count} vertex animation textures");
+            return;
+        }
+
+        _ = ResourceManager.DefaultPool.LoadContainers(VertexAnimationContainers, new LoadOptions
+        {
+            JobName = LOC.Get("CUTSCENE_Load_Job_Vertex_Animation", file.Name),
+            Types = ResourceType.Texture,
+            AccessLevel = AccessLevel.AccessGPUOptimizedOnly,
+            OnlyNames = names
+        });
+
+        if (CFG.Current.CutsceneEditor_Diagnostics_Log)
+            Smithbox.Log(this, $"[Cutscene Editor] {file.Name}: loading {names.Count} vertex animation textures from {string.Join(", ", VertexAnimationContainers)}");
+    }
+
+    private void UnloadVertexAnimationTextures()
+    {
+        foreach (var container in VertexAnimationContainers)
+            ResourceManager.DefaultPool.UnloadContainer(container);
+
+        VertexAnimationContainers.Clear();
+        VertexAnimationFile = null;
+    }
+
     /// <summary>Lets every model go (their resources unload once nothing else uses them)</summary>
     public void Clear()
     {
@@ -165,6 +222,8 @@ public sealed class CutsceneModelPool : IDisposable
         Meshes.Clear();
         Rigs.Clear();
         File = null;
+
+        UnloadVertexAnimationTextures();
     }
 
     public void Dispose() => Clear();

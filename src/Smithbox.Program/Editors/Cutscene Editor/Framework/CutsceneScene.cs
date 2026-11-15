@@ -308,6 +308,15 @@ public sealed class CutsceneScene : IDisposable
         Actors = actors.Values.OrderBy(a => a.Name, StringComparer.OrdinalIgnoreCase).ToList();
         Cameras = cameras.Values.OrderBy(c => c.Events.Count > 0 ? c.Events.Min(e => e.StartFrame) : 0).ToList();
         RefreshKeys();
+        FindVertexAnimations();
+    }
+
+    /// <summary>Which actors play baked vertex animations, from the 189/190 events under their timelines</summary>
+    private void FindVertexAnimations()
+    {
+        var byActor = CutsceneVertexAnimation.Read(File.Mqb!, Cut);
+        foreach (var actor in Actors)
+            actor.VertexAnimation = byActor.GetValueOrDefault(actor.ResourceIndex);
     }
 
     /// <summary>
@@ -334,6 +343,8 @@ public sealed class CutsceneScene : IDisposable
                     camera.Events.Add(e);
             }
         }
+
+        FindVertexAnimations();
     }
 
     /// <summary>
@@ -348,6 +359,10 @@ public sealed class CutsceneScene : IDisposable
 
         foreach (var actor in Actors)
             actor.StartLoad(project, renderScene, pool);
+
+        // The textures of every cut's vertex animations, in one load for the cutscene
+        if (Actors.Any(a => a.VertexAnimation != null))
+            pool?.LoadVertexAnimationTextures(project, File);
 
         DressPlayers(playerAppearance);
     }
@@ -410,6 +425,9 @@ public sealed class CutsceneScene : IDisposable
                           (a.Cast is { } cast ? $" part={cast.Map}:{cast.PartName} npc={cast.NpcParamId} charaInit={cast.CharaInitId}" : "") +
                           (a.IsPlayer ? " (player)" : "") +
                           (a.PlayerParts != null ? $" parts={a.PlayerParts.PartCount}" : ""));
+
+            if (a.VertexAnimation != null)
+                sb.Append(a.VertexAnimation.Describe(a.LoadedFlver, "    "));
         }
 
         foreach (var problem in Problems)

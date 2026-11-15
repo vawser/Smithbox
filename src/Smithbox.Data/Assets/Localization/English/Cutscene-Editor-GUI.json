@@ -70,6 +70,7 @@
     { "Key": "CUTSCENE_File_Load_Failed", "Text": "[Cutscene Editor] Failed to read {0}." },
     { "Key": "CUTSCENE_Build_Failed", "Text": "The cut could not be built." },
     { "Key": "CUTSCENE_Load_Job", "Text": "Cutscene model {0}" },
+    { "Key": "CUTSCENE_Load_Job_Vertex_Animation", "Text": "Cutscene vertex animations {0}" },
 
     { "Key": "CUTSCENE_Problem_No_Havok_File", "Text": "{0}: the binder has no Havok file for {1}." },
     { "Key": "CUTSCENE_Problem_Havok_Read", "Text": "{0}: the Havok file could not be read: {1}" },

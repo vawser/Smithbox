@@ -1001,7 +1001,7 @@ public class FlverResource : IResource, IDisposable
 
         // Some vertex animations play as they are, with no parameter to scale them
         deform.Amplitude = GetDeformValue(definition, "Amplitude",
-            definition.Deformer is MaterialDeformer.Vat or MaterialDeformer.VatLoop ? 1 : 0);
+            definition.Deformer is MaterialDeformer.Vat or MaterialDeformer.VatLoop or MaterialDeformer.VatFrame ? 1 : 0);
         deform.Rate = GetDeformValue(definition, definition.Deformer switch
         {
             MaterialDeformer.Vat or MaterialDeformer.VatLoop or MaterialDeformer.Birds => "FrameRate",
@@ -1059,6 +1059,9 @@ public class FlverResource : IResource, IDisposable
         var reach = definition.Deformer switch
         {
             MaterialDeformer.Vat or MaterialDeformer.VatLoop => Math.Abs(deform.Amplitude) * 2.0f,
+
+            // A cutscene's cloth and flags move further: up to 4.2 units in ER
+            MaterialDeformer.VatFrame => 5.0f,
             MaterialDeformer.Sway => Math.Abs(deform.Amplitude) * deform.Direction.Length(),
 
             // The whole flight path is around the model, on top of the animation
@@ -1253,6 +1256,7 @@ public class FlverResource : IResource, IDisposable
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
+        dest.FlverMaterialName = mat.Name;
         dest.Definition = GetMaterialDefinition(mat.MTD);
         dest.MaterialBuffer = AllocateMaterialBuffer(dest);
         dest.MaterialData = new Material();
@@ -1400,6 +1404,7 @@ public class FlverResource : IResource, IDisposable
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
         var matName = isUTF ? br.GetUTF16(mat.nameOffset) : br.GetShiftJIS(mat.nameOffset);
         dest.MaterialName = Path.GetFileNameWithoutExtension(mtd);
+        dest.FlverMaterialName = matName;
         dest.Definition = GetMaterialDefinition(mtd);
         if (!string.IsNullOrWhiteSpace(matName) && matName.Length >= 3 && matName[0] == '#' && char.IsDigit(matName[1]) && char.IsDigit(matName[2]))
         {
@@ -2595,7 +2600,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private unsafe void FillVerticesDeform(BinaryReaderEx br, ref FlverVertexBuffer buffer,
-        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets, int blendAttribute = 1)
+        Span<FlverBufferLayoutMember> layouts, Span<Vector3> pickingVerts, nint vertBuffer, int[] meshBoneIndices, bool useNormalWTransform, float uvFactor, bool firstBuffer, ref int uvSetsFilled, int maxUvSets, int blendAttribute = 1, int vatColumnMember = -1)
     {
         Span<FlverLayoutDeform> verts = new(vertBuffer.ToPointer(), buffer.vertexCount);
         br.StepIn(buffer.bufferOffset);
@@ -2616,6 +2621,8 @@ public class FlverResource : IResource, IDisposable
                 }
 
                 uvsfilled = uvSetsFilled;
+                var hasColumn = false;
+                byte columnLow = 0, columnHigh = 0;
                 foreach (FlverBufferLayoutMember l in layouts)
                 {
                     // ER meme
@@ -2626,7 +2633,30 @@ public class FlverResource : IResource, IDisposable
 
                     var texCoord = GetTexCoordIndex(l.semantic, l.type, l.index, blendAttribute);
 
-                    if (l.semantic == FLVER.LayoutSemantic.Position)
+                    if (vatColumnMember > 0 && l.index == vatColumnMember && IsVatFrameColumnCandidate(l.semantic, l.type, l.index))
+                    {
+                        // Kept as it would be otherwise, and its first two bytes are the vertex's column
+                        for (var c = 0; c < FlverLayoutDeform.TexCoordSize; c++)
+                        {
+                            var value = br.ReadByte();
+                            if (texCoord >= 0)
+                            {
+                                SetByteTexCoord(d, texCoord, c, value);
+                            }
+
+                            if (c == 0)
+                            {
+                                columnLow = value;
+                            }
+                            else if (c == 1)
+                            {
+                                columnHigh = value;
+                            }
+                        }
+
+                        hasColumn = true;
+                    }
+                    else if (l.semantic == FLVER.LayoutSemantic.Position)
                     {
                         // Edge compression is not supported here
                         if (l.type == LayoutType.EdgeCompressed)
@@ -2689,12 +2719,36 @@ public class FlverResource : IResource, IDisposable
                     (*v).Uv2[1] = (*v).Uv1[1];
                 }
 
+                if (hasColumn)
+                {
+                    SetVatFrameColumn(d, columnLow, columnHigh);
+                }
+
                 pickingVerts[i] = (*v).Position;
             }
         }
 
         uvSetsFilled = uvsfilled;
         br.StepOut();
+    }
+
+    /// <summary>
+    /// Whether a vertex attribute can hold a cutscene vertex animation's column: a TEXCOORD1-3 byte attribute. The
+    /// highest one a mesh has holds it (Claude/Documentation/Cutscene Vertex Animation.md).
+    /// </summary>
+    private static bool IsVatFrameColumnCandidate(FLVER.LayoutSemantic semantic, FLVER.LayoutType type, int index)
+    {
+        return semantic == FLVER.LayoutSemantic.UV && type == FLVER.LayoutType.UByte4Norm && index is >= 1 and <= 3;
+    }
+
+    /// <summary>
+    /// Puts a cutscene vertex animation's column in TEXCOORD3.xy, which those materials don't otherwise read. The two
+    /// bytes go in as whole numbers, as columns go past what a half float holds exactly (7977 in ER).
+    /// </summary>
+    private static unsafe void SetVatFrameColumn(FlverLayoutDeform* dest, byte low, byte high)
+    {
+        (*dest).TexCoord3[0] = BitConverter.HalfToUInt16Bits((Half)low);
+        (*dest).TexCoord3[1] = BitConverter.HalfToUInt16Bits((Half)high);
     }
 
     /// <summary>
@@ -2734,9 +2788,41 @@ public class FlverResource : IResource, IDisposable
         return uvs;
     }
 
-    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int blendAttribute = 1)
+    /// <summary>
+    /// Where a cutscene vertex animation's column is in the flat UV list of a vertex: the first UV of the mesh's highest
+    /// TEXCOORD1-3 byte attribute, or -1 if it has none.
+    /// </summary>
+    private int GetVatFrameColumnUV(FLVER2.Mesh mesh)
+    {
+        int uvIndex = 0, column = -1, columnIndex = -1;
+        foreach (FLVER2.VertexBuffer buffer in mesh.VertexBuffers)
+        {
+            foreach (FLVER.LayoutMember member in Flver!.BufferLayouts[buffer.LayoutIndex])
+            {
+                if (member.Semantic != FLVER.LayoutSemantic.UV)
+                {
+                    continue;
+                }
+
+                if (IsVatFrameColumnCandidate(member.Semantic, member.Type, member.Index) && member.Index > columnIndex)
+                {
+                    columnIndex = member.Index;
+                    column = uvIndex;
+                }
+
+                // As GetTexCoordUVs counts them
+                uvIndex += member.Type is FLVER.LayoutType.Float4 or FLVER.LayoutType.UByte4Norm
+                    or FLVER.LayoutType.Short4 or FLVER.LayoutType.Half4 ? 2 : 1;
+            }
+        }
+
+        return column;
+    }
+
+    private unsafe void FillVerticesDeform(FLVER2.Mesh mesh, Span<Vector3> pickingVerts, nint vertBuffer, int maxUvSets, int blendAttribute = 1, bool vatFrame = false)
     {
         var texCoordUVs = GetTexCoordUVs(mesh, out var halfTexCoord3, blendAttribute);
+        var vatColumnUV = vatFrame ? GetVatFrameColumnUV(mesh) : -1;
 
         // FLVER.Vertex reads half floats as if they were 16 bit fixed point, so this gets the bits back
         float uvFactor = Flver!.Header.Version >= 0x2000E ? 2048 : 1024;
@@ -2787,6 +2873,12 @@ public class FlverResource : IResource, IDisposable
                     SetByteTexCoord(d, t, 1, (byte)Math.Round(first.Y * 255f));
                     SetByteTexCoord(d, t, 2, (byte)Math.Round(second.X * 255f));
                     SetByteTexCoord(d, t, 3, (byte)Math.Round(second.Y * 255f));
+                }
+
+                if (vatColumnUV >= 0)
+                {
+                    Vector3 column = vert.UVs[vatColumnUV];
+                    SetVatFrameColumn(d, (byte)Math.Round(column.X * 255f), (byte)Math.Round(column.Y * 255f));
                 }
             }
         }
@@ -3140,8 +3232,8 @@ public class FlverResource : IResource, IDisposable
         }
         else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
         {
-            FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute);
-        }
+            FillVerticesDeform(mesh, pvhandle, meshVertices, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute,
+                dest.Material.Definition?.Deformer == MaterialDeformer.VatFrame);        }
         else
         {
             FillVerticesStandard(mesh, pvhandle, meshVertices);
@@ -3366,6 +3458,27 @@ public class FlverResource : IResource, IDisposable
 
         Span<FlverBufferLayoutMember> layoutmembersBuffer = stackalloc FlverBufferLayoutMember[maxLayoutMemberCount];
 
+        // A cutscene vertex animation's column can be in any of the buffers, so it is found across all of them first
+        var vatColumnMember = -1;
+        if (dest.Material!.Definition?.Deformer == MaterialDeformer.VatFrame)
+        {
+            foreach (var vbi in vertexBufferIndices)
+            {
+                FlverBufferLayout columnLayout = layouts[buffers[vbi].layoutIndex];
+                br.StepIn(columnLayout.membersOffset);
+                for (var i = 0; i < columnLayout.memberCount; i++)
+                {
+                    var member = new FlverBufferLayoutMember(br);
+                    if (IsVatFrameColumnCandidate(member.semantic, member.type, member.index))
+                    {
+                        vatColumnMember = Math.Max(vatColumnMember, member.index);
+                    }
+                }
+
+                br.StepOut();
+            }
+        }
+
         var firstBuffer = true;
         var uvSetsFilled = 0;
 
@@ -3414,7 +3527,7 @@ public class FlverResource : IResource, IDisposable
             }
             else if (dest.Material.LayoutType == MeshLayoutType.LayoutDeform)
             {
-                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute);
+                FillVerticesDeform(br, ref vb, layoutmembers, pvhandle, meshVertices, meshBoneIndices, dest.UseNormalWBoneTransform, version >= 0x2000E ? 2048 : 1024, firstBuffer, ref uvSetsFilled, dest.Material.MaxUvSets, dest.Material.BlendVertexAttribute, vatColumnMember);
             }
             else
             {
@@ -3423,7 +3536,6 @@ public class FlverResource : IResource, IDisposable
 
             firstBuffer = false;
         }
-
         dest.VertexCount = vertexCount;
         dest.MeshFacesets = new List<FlverSubmesh.FlverSubmeshFaceSet>();
 
@@ -4017,7 +4129,54 @@ public class FlverResource : IResource, IDisposable
         public GPUBufferAllocator.GPUBufferHandle? MaterialBuffer;
         public Material MaterialData;
         public string? MaterialName;
+
+        /// <summary>The FLVER material's own name (e.g. #11#Hair01), which MQB events name materials by</summary>
+        public string? FlverMaterialName;
+
         public MaterialDefinition? Definition;
+
+        // A cutscene's vertex animation (MaterialDeformer.VatFrame), see SetVertexAnimation
+        private ResourceHandle<TextureResource>? _vatFramePosition;
+        private ResourceHandle<TextureResource>? _vatFrameNormal;
+        private uint _vatFramePositionTex;
+        private uint _vatFrameNormalTex;
+        private float _vatFramePlay;
+
+        /// <summary>
+        /// Plays a cutscene's vertex animation on a <see cref="MaterialDeformer.VatFrame"/> material: the textures of its
+        /// offsets and normals, and how far through it is (0 to 1). A null position stops it, leaving the bind pose.
+        /// Uploads only when something changed, so it can be called every frame. The caller keeps the textures loaded.
+        /// </summary>
+        public void SetVertexAnimation(ResourceHandle<TextureResource>? position, ResourceHandle<TextureResource>? normal, float play)
+        {
+            if (Definition?.Deformer != MaterialDeformer.VatFrame)
+            {
+                return;
+            }
+
+            // A texture that is still loading reads as none, and is picked up once it is on the GPU
+            var positionTex = TextureIndexOf(position);
+            var normalTex = positionTex == 0 ? 0 : TextureIndexOf(normal);
+            play = positionTex == 0 ? 0 : play;
+
+            if (position == _vatFramePosition && normal == _vatFrameNormal && positionTex == _vatFramePositionTex
+                && normalTex == _vatFrameNormalTex && play == _vatFramePlay)
+            {
+                return;
+            }
+
+            _vatFramePosition = position;
+            _vatFrameNormal = normal;
+            _vatFramePositionTex = positionTex;
+            _vatFrameNormalTex = normalTex;
+            _vatFramePlay = play;
+            UpdateMaterial();
+        }
+
+        private static uint TextureIndexOf(ResourceHandle<TextureResource>? handle)
+        {
+            return handle is { IsLoaded: true } && handle.Get() is { GPUTexture: { } texture } ? texture.TexHandle : 0u;
+        }
 
         /// <summary>Uploaded straight after the material</summary>
         public MaterialShading Shading = MaterialShading.Default;
@@ -4462,6 +4621,13 @@ public class FlverResource : IResource, IDisposable
                 SetMaterialTexture(TextureType.VatNormalTextureResource, ref normal, 0);
                 deform.VatPositionTex = position;
                 deform.VatNormalTex = normal;
+
+                // The cutscene's textures and frame, rather than the material's own (placeholders in the MATBIN)
+                if (Definition?.Deformer == MaterialDeformer.VatFrame)
+                {
+                    deform.VatPositionTex = _vatFramePositionTex;
+                    deform.VatNormalTex = _vatFrameNormalTex;
+                    deform.Rate = _vatFramePlay;                }
 
                 deformed = new MaterialWithDeform { Material = MaterialData, Shading = Shading, Effects = Effects, Deform = deform };
             }

@@ -45,8 +45,17 @@ public sealed class CutsceneActor : IDisposable
     public CutsceneActorState State { get; private set; }
     public string? Status { get; private set; }
 
+    /// <summary>The baked vertex animations the actor plays in this cut, null if none</summary>
+    public CutsceneVertexAnimation? VertexAnimation;
+
     private MeshRenderableProxy? Mesh;
     private ModelAnimator? Animator;
+
+    // The model's resource, whose materials the vertex animations are played on
+    private ResourceHandle<FlverResource>? Flver;
+
+    /// <summary>The model's resource once it is loaded, for the log</summary>
+    public FlverResource? LoadedFlver => Flver is { IsLoaded: true } ? Flver.Get() : null;
     private Task<ModelRig?>? RigTask;
     private bool AnimatorTried;
 
@@ -163,6 +172,8 @@ public sealed class CutsceneActor : IDisposable
                 $"Cutscene_{modelName}_{System.Threading.Interlocked.Increment(ref MeshSerial)}", masks);
         }
 
+        Flver = ResourceManager.DefaultPool.Find<FlverResource>(descriptor.Name);
+
         // Pooled by model and masks: a mesh's masks are set when it is made
         Pool = pool;
         Mesh = pool != null ? pool.Take(masks != null ? $"{modelName}|{string.Concat(masks)}" : modelName, Create) : Create();
@@ -240,8 +251,11 @@ public sealed class CutsceneActor : IDisposable
             return;
         }
 
-        if (Mesh.World != cutRoot)
-            Mesh.World = cutRoot;
+        // The bones carry the actor's placement within the cut. A model none of whose nodes follow them (an asset with
+        // a skeleton of just its root, named as the actor: AEG099_330_9000) is placed by that root instead
+        var world = Animator.MappedNodeCount == 0 && Skeleton is { BoneCount: > 0 } ? RootWorld(frame, cutRoot) : cutRoot;
+        if (Mesh.World != world)
+            Mesh.World = world;
 
         if (Clip != null)
         {
@@ -252,6 +266,9 @@ public sealed class CutsceneActor : IDisposable
 
         // The player's parts take on the pose just set
         PlayerParts?.Update(Animator, LeaderRig, cutRoot, true);
+
+        if (VertexAnimation != null && Flver is { IsLoaded: true } && Flver.Get() is { } flver)
+            VertexAnimation.Apply(frame, flver, ResourceManager.DefaultPool);
     }
 
     /// <summary>Where the actor's root is, for drawing it as a marker.</summary>
@@ -264,6 +281,11 @@ public sealed class CutsceneActor : IDisposable
 
     public void Dispose()
     {
+        // The model's materials are shared with whatever shows it next (the next cut, the Map Editor)
+        if (VertexAnimation != null && Flver is { IsLoaded: true } && Flver.Get() is { } flver)
+            CutsceneVertexAnimation.Stop(flver);
+        Flver = null;
+
         // Before the animator they follow goes
         PlayerParts?.Dispose();
         PlayerParts = null;

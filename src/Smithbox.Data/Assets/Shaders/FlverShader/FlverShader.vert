@@ -42,6 +42,7 @@ layout (constant_id = 50) const bool c_normalWBoneTransform = false;
 #define DEFORM_SWING 6
 #define DEFORM_BIRDS 7
 #define DEFORM_DIRECTIONAL_WAVE 8
+#define DEFORM_VAT_FRAME 9
 
 #define FEATURE_WIND 1u
 #define FEATURE_VERTEX_ANIMATION 2u
@@ -232,6 +233,41 @@ void DeformVat(deformData deform, vec2 columnBytes, float strength, float startO
 	pos += offset * deform.params.x * strength;
 
 	nrm = mix(FetchVat(van, column, row), FetchVat(van, column, nextRow), blend) * 2.0 - 1.0;
+}
+
+// A cutscene's baked animation ([VA_Frame] shaders). The cutscene picks the textures, and params.y is how far
+// through it is, 0 to 1, which spans the rows. The vertex's column is in texcoord3.xy as two whole bytes;
+// one past the texture (65535) is a vertex that doesn't move
+void DeformVatFrame(deformData deform, inout vec3 pos, inout vec3 nrm)
+{
+	uint vat = deform.textures.x;
+	uint van = deform.textures.y;
+
+	// Not playing
+	if (vat == 0u)
+	{
+		return;
+	}
+
+	ivec2 size = textureSize(sampler2D(globalTextures[nonuniformEXT(TextureIndex(vat))], linearSampler), 0);
+	int column = int(texcoord3.x + texcoord3.y * 256.0 + 0.5);
+
+	if (column >= size.x)
+	{
+		return;
+	}
+
+	float frame = clamp(deform.params.y, 0.0, 1.0) * float(max(size.y - 1, 0));
+	int row = int(floor(frame));
+	int nextRow = min(row + 1, size.y - 1);
+	float blend = fract(frame);
+
+	pos += mix(FetchVat(vat, column, row), FetchVat(vat, column, nextRow), blend) * deform.params.x;
+
+	if (van != 0u)
+	{
+		nrm = mix(FetchVat(van, column, row), FetchVat(van, column, nextRow), blend) * 2.0 - 1.0;
+	}
 }
 
 // Moves along a direction by a smoothed triangle wave. TEXCOORD1.x offsets its
@@ -468,6 +504,12 @@ void main()
 	else if (c_deformer == DEFORM_VAT_LOOP && HasFeature(FEATURE_VERTEX_ANIMATION))
 	{
 		DeformVat(deform, texcoord1.xy, 1.0, texcoord2.x, localPosition, localNormal);
+	}
+	// Played in both render modes: it is a cutscene's own motion, like its skeletal animation, and only
+	// the Cutscene Editor gives the material its textures (none elsewhere, so nothing moves)
+	else if (c_deformer == DEFORM_VAT_FRAME)
+	{
+		DeformVatFrame(deform, localPosition, localNormal);
 	}
 	else if (c_deformer == DEFORM_BIRDS && HasFeature(FEATURE_BIRDS))
 	{

@@ -571,12 +571,15 @@ public class CutsceneEditorScreen : EditorScreen
 
         MapGroupsFor = key;
 
-        // The characters the cut plays itself
+        // The characters and assets the cut plays itself. An asset actor stands for the map part of its own name, as
+        // 1285 of ER's do (AEG099_330_9000, the banner Godrick carries; Claude/Tools/CutsceneAssetCastProbe)
         var excluded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (var actor in Scene?.Actors ?? new List<CutsceneActor>())
         {
             if (actor.Cast is { } cast && cast.Map.Equals(Backdrop.LoadedMapId, StringComparison.OrdinalIgnoreCase))
                 excluded.Add(cast.PartName);
+            else if (actor.Model is { Kind: CutsceneModelKind.Asset or CutsceneModelKind.Object })
+                excluded.Add(actor.Name);
         }
 
         Backdrop.ApplyGroups(CameraStart(), CFG.Current.CutsceneEditor_Map_Use_Draw_Groups, excluded, chosen);

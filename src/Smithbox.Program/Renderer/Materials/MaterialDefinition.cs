@@ -40,7 +40,14 @@ public enum MaterialDeformer
     Birds,
 
     /// <summary>Leans around a pivot stored per vertex, and moves by a wave with its phase from a noise texture</summary>
-    DirectionalWave
+    DirectionalWave,
+
+    /// <summary>
+    /// A cutscene's baked vertex animation (the [VA_Frame] shaders). The cutscene sets the textures and the frame through
+    /// <see cref="FlverResource.FlverMaterial.SetVertexAnimation"/>; without them the model keeps its bind pose.
+    /// See Claude/Documentation/Cutscene Vertex Animation.md
+    /// </summary>
+    VatFrame
 }
 
 /// <summary>
@@ -991,6 +998,12 @@ public class MaterialDefinition
         if (table != null && table.Shaders.TryGetValue(ShaderName, out MaterialShaderEntry? entry))
         {
             ApplyShaderEntry(entry);
+        }
+
+        // Cutscene vertex animations, which ER and NR have under many shader names, all with this token
+        if (Deformer == MaterialDeformer.None && ShaderTokens.Exists(t => t.Equals("VA_Frame", StringComparison.OrdinalIgnoreCase)))
+        {
+            Deformer = MaterialDeformer.VatFrame;
         }
 
         ResolveBlendRecipe(table);
