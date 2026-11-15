@@ -225,12 +225,9 @@ public class ProjectScreen
             RequestFocus = false;
         }
 
-        ImGui.SetNextWindowDockID(mainDockspaceID, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-
         var flags = GUI.GetMainWindowFlags() & ~ImGuiWindowFlags.MenuBar;
 
-        if (ImGui.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", flags))
+        if (EditorHost.Begin($"{LOC.Get("PROJECT_Window_Project_Editor")}###ProjectEditor", flags))
         {
             Shortcuts();
 

@@ -33,81 +33,112 @@ public class KeybindsMenu
 
             if (ImGui.Begin($"{LOC.Get("INPUT_Window_Shortcuts")}###keybindsMenu", ref IsDisplayed, GUI.GetFloatingWindowFlags()))
             {
-                ImGui.BeginMenuBar();
-
-                if(ImGui.BeginMenu($"{LOC.Get("INPUT_Menu_Header_Options")}##optionsMenuHeader"))
-                {
-                    if(ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Save_Action")}##saveAction"))
-                    {
-                        InputManager.SaveKeybinds();
-                        InputManager.SaveMousebinds();
-                        Smithbox.Log(this, LOC.Get("INPUT_Saved_Keybinds"));
-                    }
-
-                    if (ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Revert_All_Action")}##revertAllAction"))
-                    {
-                        var dialog = PlatformUtils.Instance.MessageBox(
-                            LOC.Get("INPUT_Menu_Revert_All_Confirm"),
-                            LOC.Get("SYS_Warning_Header"), 
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                        if (dialog is DialogResult.Yes)
-                        {
-                            RevertAllKeysToDefault();
-                            RevertAllMouseButtonsToDefault();
-                        }
-                    }
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenuBar();
-
-                ImGui.BeginTabBar("shortcutTabs");
-
-                if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Keybinds")}##keybindsTab"))
-                {
-                    DrawKeybindSearchBar();
-
-                    ImGui.BeginChild("shortcutSection");
-
-                    DisplayKeybindRebindSection();
-
-                    ImGui.EndChild();
-
-                    ListenForKeybindCombo();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Mousebinds")}##mousebindsTab"))
-                {
-                    DrawMousebindSearchBar();
-
-                    ImGui.BeginChild("shortcutSection");
-
-                    DisplayMousebindRebindSection();
-
-                    ImGui.EndChild();
-
-                    ListenForMousebindCombo();
-
-                    ImGui.EndTabItem();
-                }
-
-                ImGui.EndTabBar();
-
-                ImGui.End();
+                DrawMenuBar();
+                DrawContents();
             }
+
+            ImGui.End();
         }
+
         if (!IsDisplayed && _wasDisplayedLastFrame)
         {
-            InputManager.SaveKeybinds();
-            InputManager.SaveMousebinds();
-            Smithbox.Log(this, LOC.Get("INPUT_Saved_Keybinds"));
+            SaveAll();
         }
 
         _wasDisplayedLastFrame = IsDisplayed;
+    }
+
+    /// <summary>
+    /// Saves the key and mouse bindings, as closing the Shortcuts window does
+    /// </summary>
+    public void SaveAll()
+    {
+        InputManager.SaveKeybinds();
+        InputManager.SaveMousebinds();
+        Smithbox.Log(this, LOC.Get("INPUT_Saved_Keybinds"));
+    }
+
+    /// <summary>
+    /// The Options menu, drawn into the menu bar of the current window, which must have one
+    /// </summary>
+    public void DrawMenuBar()
+    {
+        if (!ImGui.BeginMenuBar())
+            return;
+
+        if(ImGui.BeginMenu($"{LOC.Get("INPUT_Menu_Header_Options")}##optionsMenuHeader"))
+        {
+            if(ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Save_Action")}##saveAction"))
+            {
+                SaveAll();
+            }
+
+            DisplayRevertAllItem();
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.EndMenuBar();
+    }
+
+    /// <summary>
+    /// The Revert All menu item, drawn into the current menu. Asks before reverting.
+    /// </summary>
+    public void DisplayRevertAllItem()
+    {
+        if (ImGui.MenuItem($"{LOC.Get("INPUT_Menu_Revert_All_Action")}##revertAllAction"))
+        {
+            var dialog = PlatformUtils.Instance.MessageBox(
+                LOC.Get("INPUT_Menu_Revert_All_Confirm"),
+                LOC.Get("SYS_Warning_Header"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialog is DialogResult.Yes)
+            {
+                RevertAllKeysToDefault();
+                RevertAllMouseButtonsToDefault();
+            }
+        }
+    }
+
+    /// <summary>
+    /// The keybind and mousebind tabs, drawn into the current window
+    /// </summary>
+    public void DrawContents()
+    {
+        ImGui.BeginTabBar("shortcutTabs");
+
+        if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Keybinds")}##keybindsTab"))
+        {
+            DrawKeybindSearchBar();
+
+            ImGui.BeginChild("shortcutSection");
+
+            DisplayKeybindRebindSection();
+
+            ImGui.EndChild();
+
+            ListenForKeybindCombo();
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("INPUT_Tab_Mousebinds")}##mousebindsTab"))
+        {
+            DrawMousebindSearchBar();
+
+            ImGui.BeginChild("shortcutSection");
+
+            DisplayMousebindRebindSection();
+
+            ImGui.EndChild();
+
+            ListenForMousebindCombo();
+
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
     }
 
     private bool IsModifier(Key key)

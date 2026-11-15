@@ -47,8 +47,7 @@ public class SoundEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("SOUND_Editor_Stub")}###soundEditor", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("SOUND_Editor_Stub")}###soundEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

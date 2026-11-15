@@ -53,6 +53,7 @@ public class ProjectOrchestrator : IDisposable
 
     // Top-Level Editors
     public ProjectScreen ProjectEditor;
+    public StudioCore.Editors.SettingsEditor.SettingsEditor SettingsEditor = new();
 
     // What is brought to the front once the load in progress finishes
     private LoadFocus _loadFocus = LoadFocus.ProjectEditor;
@@ -73,12 +74,46 @@ public class ProjectOrchestrator : IDisposable
         // First, so the frame draws the state the finished loads left
         RunMainThreadActions();
 
-        ProjectEditor.OnGUI(mainDockspaceID);
-
-        // Project Dock
-        if (SelectedProject != null && SelectedProject.Initialized)
+        // Before anything is drawn, so the loaded project opens straight onto the editor it should show
+        if (FinishedProjectLoad)
         {
-            SelectedProject.Update(dt);
+            FinishedProjectLoad = false;
+
+            var firstEditor = _loadFocus is LoadFocus.FirstEditor
+                ? EditorRegistry.FindByScreen(SelectedProject?.Handler, SelectedProject?.Handler?.FocusedEditor)
+                : null;
+
+            ActiveEditorId = firstEditor?.Id ?? EditorRegistry.ProjectEditorId;
+        }
+
+        var projectReady = SelectedProject is { Initialized: true };
+
+        // An editor command switches to the editor it is for, which is then the one drawn and given it
+        string[] commands = null;
+
+        if (projectReady)
+        {
+            commands = EditorCommandQueue.GetNextCommand();
+
+            if (commands is { Length: > 0 })
+                ActivateEditor(commands[0]);
+        }
+
+        var activeEditor = ResolveActiveEditor();
+        var showSettings = ActiveEditorId == EditorRegistry.SettingsEditorId;
+
+        EditorRail.Display(this, activeEditor);
+
+        if (showSettings)
+            SettingsEditor.OnGUI();
+        else if (activeEditor == null)
+            ProjectEditor.OnGUI(mainDockspaceID);
+
+        SettingsEditor.Update(showSettings);
+
+        if (projectReady)
+        {
+            SelectedProject.Update(dt, activeEditor, commands);
         }
 
         if (!Smithbox.FirstFrame && !InitExistingProjects)
@@ -86,23 +121,6 @@ public class ProjectOrchestrator : IDisposable
             InitExistingProjects = true;
 
             _ = LoadExistingProjects();
-        }
-
-        // After the project has drawn its editors this frame, so their windows exist to be focused
-        if (FinishedProjectLoad)
-        {
-            FinishedProjectLoad = false;
-
-            if (_loadFocus is LoadFocus.FirstEditor && SelectedProject?.Handler != null &&
-                SelectedProject.Handler.FocusEditorWindow(SelectedProject.Handler.FocusedEditor))
-            {
-                // The project's first editor is in front
-            }
-            else
-            {
-                ProjectEditor.RequestFocus = true;
-                _projectEditorFocusHoldFrames = ProjectEditorFocusHoldLength;
-            }
         }
 
         DrawProjectLoadingUI();
@@ -114,52 +132,58 @@ public class ProjectOrchestrator : IDisposable
             UnsavedChangesPrompt.Draw();
         }
 
-        HoldProjectEditorFocus();
-
         // A render snapshot run started from the command line, if any
         StudioCore.Editors.ModelEditor.RenderSnapshotAutomation.Update();
     }
 
-    // The Project Editor's window, as the ProjectScreen draws it
-    private const string ProjectEditorWindowName = "###ProjectEditor";
-
-    // How many frames the Project Editor is kept in front after a load
-    private const int ProjectEditorFocusHoldLength = 60;
-
-    private int _projectEditorFocusHoldFrames = 0;
+    /// <summary>
+    /// Id of the editor the editor host shows (an <see cref="EditorEntry.Id"/>, or
+    /// <see cref="EditorRegistry.ProjectEditorId"/>). Kept when the selected project doesn't have that editor, so
+    /// switching back to a project that does shows it again.
+    /// </summary>
+    public string ActiveEditorId = EditorRegistry.ProjectEditorId;
 
     /// <summary>
-    /// Keeps the Project Editor in front for the first frames after a load.
+    /// The editor the editor host shows for the selected project, or null when the Project Editor is shown.
     /// </summary>
-    /// <remarks>
-    /// Requesting focus once is not enough. The loaded project's editor stubs join the main dock node as new
-    /// tabs, and the dock node selects the newest tab. On the next frame that editor draws its own dockspace,
-    /// and its docked windows take focus as they appear for the first time, which brings the editor's tab back
-    /// to the front. So focus is given back to the Project Editor at the end of each frame, after the editors have
-    /// drawn, until the editors have stopped appearing. Once the Project Editor's tab is selected again the
-    /// editors are hidden and their windows aren't drawn, so nothing else takes focus. A mouse click ends the
-    /// hold early, so a click on another editor's tab isn't undone.
-    /// </remarks>
-    private void HoldProjectEditorFocus()
+    public EditorEntry ResolveActiveEditor()
     {
-        if (_projectEditorFocusHoldFrames <= 0)
-            return;
+        if (ActiveEditorId is EditorRegistry.ProjectEditorId or EditorRegistry.SettingsEditorId)
+            return null;
 
-        if (ImGui.IsMouseClicked(ImGuiMouseButton.Left) ||
-            ImGui.IsMouseClicked(ImGuiMouseButton.Right) ||
-            ImGui.IsMouseClicked(ImGuiMouseButton.Middle))
+        var project = SelectedProject;
+
+        if (project is not { Initialized: true } || project.Handler == null)
+            return null;
+
+        var entry = EditorRegistry.FindById(ActiveEditorId);
+
+        if (entry == null || !entry.IsAvailable(project))
+            return null;
+
+        return entry;
+    }
+
+    /// <summary>
+    /// Shows an editor in the editor host, from its id or command endpoint.
+    /// </summary>
+    /// <returns>Whether the id names the Project Editor or an editor the selected project has.</returns>
+    public bool ActivateEditor(string id)
+    {
+        if (id is EditorRegistry.ProjectEditorId or EditorRegistry.SettingsEditorId)
         {
-            _projectEditorFocusHoldFrames = 0;
-            return;
+            ActiveEditorId = id;
+            return true;
         }
 
-        _projectEditorFocusHoldFrames--;
+        var entry = EditorRegistry.FindById(id);
+        var project = SelectedProject;
 
-        // Taking focus while a popup is open would move it away from the popup
-        if (ImGui.IsPopupOpen("", ImGuiPopupFlags.AnyPopupId | ImGuiPopupFlags.AnyPopupLevel))
-            return;
+        if (entry == null || project is not { Initialized: true } || !entry.IsAvailable(project))
+            return false;
 
-        ImGui.SetWindowFocus(ProjectEditorWindowName);
+        ActiveEditorId = id;
+        return true;
     }
 
     /// <summary>

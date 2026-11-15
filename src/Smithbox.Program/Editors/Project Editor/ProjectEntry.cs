@@ -54,7 +54,15 @@ public class ProjectEntry
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (Handler != null)
+        // The Project Editor covers the host area, so the last editor's viewport would render unseen behind it
+        var editorShown = Smithbox.Orchestrator?.ResolveActiveEditor() != null;
+
+        if (Handler != null && !editorShown)
+        {
+            ModelPreviewCache.Draw(this);
+            MeshPreviewRenderer.Draw();
+        }
+        else if (Handler != null)
         {
             if (Handler.MapEditorStub != null)
                 Handler.MapEditorStub.Draw(device, cl);
@@ -79,59 +87,14 @@ public class ProjectEntry
         }
     }
 
-    public unsafe void Update(float dt)
+    /// <param name="activeEditor">The editor the editor host shows, or null when the Project Editor is shown</param>
+    /// <param name="commands">This frame's editor command, already used to pick <paramref name="activeEditor"/></param>
+    public void Update(float dt, EditorEntry activeEditor, string[] commands)
     {
-        var commands = EditorCommandQueue.GetNextCommand();
-
-        if (Handler != null)
+        // Only the shown editor is drawn, as only the selected tab was when the editors were docked tabs
+        if (Handler != null && activeEditor != null)
         {
-            if (Handler.MapEditorStub != null)
-                Handler.MapEditorStub.Display(dt, commands);
-
-            if (Handler.ModelEditorStub != null)
-                Handler.ModelEditorStub.Display(dt, commands);
-
-            if (Handler.TimeActEditorStub != null)
-                Handler.TimeActEditorStub.Display(dt, commands);
-
-            if (Handler.TextEditorStub != null)
-                Handler.TextEditorStub.Display(dt, commands);
-
-            if (Handler.ParamEditorStub != null)
-                Handler.ParamEditorStub.Display(dt, commands);
-
-            if (Handler.GparamEditorStub != null)
-                Handler.GparamEditorStub.Display(dt, commands);
-
-            if (Handler.MaterialEditorStub != null)
-                Handler.MaterialEditorStub.Display(dt, commands);
-
-            if (Handler.TextureViewerStub != null)
-                Handler.TextureViewerStub.Display(dt, commands);
-
-            if (Handler.FileBrowserStub != null)
-                Handler.FileBrowserStub.Display(dt, commands);
-
-            if (Handler.HavokEditorStub != null)
-                Handler.HavokEditorStub.Display(dt, commands);
-
-            if (Handler.FxEditorStub != null)
-                Handler.FxEditorStub.Display(dt, commands);
-
-            if (Handler.CutsceneEditorStub != null)
-                Handler.CutsceneEditorStub.Display(dt, commands);
-
-            if (Handler.BehaviorEditorStub != null)
-                Handler.BehaviorEditorStub.Display(dt, commands);
-
-            if (Handler.EmevdEditorStub != null)
-                Handler.EmevdEditorStub.Display(dt, commands);
-
-            if (Handler.EsdEditorStub != null)
-                Handler.EsdEditorStub.Display(dt, commands);
-
-            if (Handler.SoundEditorStub != null)
-                Handler.SoundEditorStub.Display(dt, commands);
+            activeEditor.Display(Handler, dt, commands);
         }
 
         // Auto-Save

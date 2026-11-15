@@ -45,8 +45,7 @@ public class CutsceneEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("CUTSCENE_Window_Cutscene_Editor")}###cutsceneEditor", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("CUTSCENE_Window_Cutscene_Editor")}###cutsceneEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

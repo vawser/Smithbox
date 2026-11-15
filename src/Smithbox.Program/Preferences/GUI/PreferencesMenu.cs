@@ -66,10 +66,11 @@ public class PreferencesMenu
         return list;
     }
 
+    /// <summary>
+    /// The floating Preferences window, used where there is no Settings Editor (the updater and developer kit)
+    /// </summary>
     public void Draw()
     {
-        var curProject = Smithbox.Orchestrator.SelectedProject;
-
         if (IsDisplayed)
         {
             if (!InitialLayout)
@@ -81,271 +82,310 @@ public class PreferencesMenu
             // Preferences
             if (ImGui.Begin($"{LOC.Get("PREF_Window_Preferences")}###preferencesMenu", ref IsDisplayed, GUI.GetFloatingWindowFlags()))
             {
-                ImGui.BeginMenuBar();
-
-                // Options
-                if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Header_Options")}##optionsMenuHeader"))
-                {
-                    // Save
-                    if (ImGui.MenuItem($"{LOC.Get("PREF_Menu_Save_Action")}##saveAction"))
-                    {
-                        CFG.Save();
-                        Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
-                    }
-
-                    // Reset to Default
-                    if(ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Revert_Action")}##revertAction"))
-                    {
-                        DisplayRevertOptions();
-
-                        ImGui.EndMenu();
-                    }
-
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenuBar();
-
-                DisplaySettingsSearch();
-
-                ImGui.BeginTabBar("settingsTabs");
-
-                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_System")}##systemTab"))
-                {
-                    ImGui.BeginChild("systemPrefSection");
-
-                    DisplaySettings(SystemPrefList);
-
-                    ImGui.EndChild();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Project")}##projectTab"))
-                {
-                    ImGui.BeginChild("projectPrefSection");
-
-                    DisplaySettings(ProjectPrefList);
-
-                    ImGui.EndChild();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Interface")}##interfaceTab"))
-                {
-                    ImGui.BeginChild("interfacePrefSection");
-
-                    DisplaySettings(InterfacePrefList);
-
-                    ImGui.EndChild();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Viewport")}##viewportTab"))
-                {
-                    ImGui.BeginChild("viewportPrefSection");
-
-                    DisplaySettings(ViewportPrefList);
-
-                    ImGui.EndChild();
-
-                    ImGui.EndTabItem();
-                }
-
-                if (curProject != null && curProject.Handler != null && 
-                    curProject.Handler.MapEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Map_Editor")}##mapEditorTab"))
-                    {
-                        ImGui.BeginChild("mapEditorPrefSection");
-
-                        if (MapEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(MapEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.ModelEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Model_Editor")}##modelEditorTab"))
-                    {
-                        ImGui.BeginChild("modelEditorPrefSection");
-
-                        if (ModelEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(ModelEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.ParamEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Param_Editor")}##paramEditorTab"))
-                    {
-                        ImGui.BeginChild("paramEditorPrefSection");
-
-                        if (ParamEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(ParamEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.TextEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Text_Editor")}##textEditorTab"))
-                    {
-                        ImGui.BeginChild("textEditorPrefSection");
-
-                        if (TextEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(TextEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.GparamEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Graphics_Param_Editor")}##gparamEditorTab"))
-                    {
-                        ImGui.BeginChild("gparamEditorPrefSection");
-
-                        if (GparamEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(GparamEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.MaterialEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Material_Editor")}##materialEditorTab"))
-                    {
-                        ImGui.BeginChild("materialEditorPrefSection");
-
-                        if (MaterialEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(MaterialEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.TextureViewer != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Texture_Viewer")}##textureViewerTab"))
-                    {
-                        ImGui.BeginChild("textureViewerPrefSection");
-
-                        if (TextureViewerPrefList.Count > 0)
-                        {
-                            DisplaySettings(TextureViewerPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                if (curProject != null && curProject.Handler != null &&
-                    curProject.Handler.TimeActEditor != null)
-                {
-                    if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Time_Act_Editor")}##timeActEditorTab"))
-                    {
-                        ImGui.BeginChild("timeActEditorPrefSection");
-
-                        if (TimeActEditorPrefList.Count > 0)
-                        {
-                            DisplaySettings(TimeActEditorPrefList);
-                        }
-                        else
-                        {
-                            ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
-                        }
-
-                        ImGui.EndChild();
-
-                        ImGui.EndTabItem();
-                    }
-                }
-
-                ImGui.EndTabBar();
-
-
-                ImGui.End();
+                DrawMenuBar();
+                DrawContents();
             }
+
+            ImGui.End();
         }
 
         if (!IsDisplayed && _wasDisplayedLastFrame)
         {
-            CFG.Save();
-            Startup.Save();
-            Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
+            SaveAll();
         }
 
         _wasDisplayedLastFrame = IsDisplayed;
+    }
+
+    /// <summary>
+    /// Saves the preferences and startup settings, as closing the Preferences window does
+    /// </summary>
+    public void SaveAll()
+    {
+        CFG.Save();
+        Startup.Save();
+        Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
+    }
+
+    /// <summary>
+    /// The Options menu, drawn into the menu bar of the current window, which must have one
+    /// </summary>
+    public void DrawMenuBar()
+    {
+        if (!ImGui.BeginMenuBar())
+            return;
+
+        // Options
+        if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Header_Options")}##optionsMenuHeader"))
+        {
+            // Save
+            if (ImGui.MenuItem($"{LOC.Get("PREF_Menu_Save_Action")}##saveAction"))
+            {
+                SavePreferences();
+            }
+
+            DisplayRevertMenu();
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.EndMenuBar();
+    }
+
+    /// <summary>
+    /// Saves the preferences, as the Save menu actions do
+    /// </summary>
+    public void SavePreferences()
+    {
+        CFG.Save();
+        Smithbox.Log(this, LOC.Get("PREF_Preferences_Saved"), LogLevel.Information);
+    }
+
+    /// <summary>
+    /// The Reset to Default submenu, drawn into the current menu
+    /// </summary>
+    public void DisplayRevertMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("PREF_Menu_Revert_Action")}##revertAction"))
+        {
+            DisplayRevertOptions();
+
+            ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>
+    /// The search box and preference tabs, drawn into the current window
+    /// </summary>
+    public void DrawContents()
+    {
+        var curProject = Smithbox.Orchestrator?.SelectedProject;
+
+        DisplaySettingsSearch();
+
+        ImGui.BeginTabBar("settingsTabs");
+
+        if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_System")}##systemTab"))
+        {
+            ImGui.BeginChild("systemPrefSection");
+
+            DisplaySettings(SystemPrefList);
+
+            ImGui.EndChild();
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Project")}##projectTab"))
+        {
+            ImGui.BeginChild("projectPrefSection");
+
+            DisplaySettings(ProjectPrefList);
+
+            ImGui.EndChild();
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Interface")}##interfaceTab"))
+        {
+            ImGui.BeginChild("interfacePrefSection");
+
+            DisplaySettings(InterfacePrefList);
+
+            ImGui.EndChild();
+
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Viewport")}##viewportTab"))
+        {
+            ImGui.BeginChild("viewportPrefSection");
+
+            DisplaySettings(ViewportPrefList);
+
+            ImGui.EndChild();
+
+            ImGui.EndTabItem();
+        }
+
+        if (curProject != null && curProject.Handler != null && 
+            curProject.Handler.MapEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Map_Editor")}##mapEditorTab"))
+            {
+                ImGui.BeginChild("mapEditorPrefSection");
+
+                if (MapEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(MapEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.ModelEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Model_Editor")}##modelEditorTab"))
+            {
+                ImGui.BeginChild("modelEditorPrefSection");
+
+                if (ModelEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(ModelEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.ParamEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Param_Editor")}##paramEditorTab"))
+            {
+                ImGui.BeginChild("paramEditorPrefSection");
+
+                if (ParamEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(ParamEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.TextEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Text_Editor")}##textEditorTab"))
+            {
+                ImGui.BeginChild("textEditorPrefSection");
+
+                if (TextEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(TextEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.GparamEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Graphics_Param_Editor")}##gparamEditorTab"))
+            {
+                ImGui.BeginChild("gparamEditorPrefSection");
+
+                if (GparamEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(GparamEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.MaterialEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Material_Editor")}##materialEditorTab"))
+            {
+                ImGui.BeginChild("materialEditorPrefSection");
+
+                if (MaterialEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(MaterialEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.TextureViewer != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Texture_Viewer")}##textureViewerTab"))
+            {
+                ImGui.BeginChild("textureViewerPrefSection");
+
+                if (TextureViewerPrefList.Count > 0)
+                {
+                    DisplaySettings(TextureViewerPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        if (curProject != null && curProject.Handler != null &&
+            curProject.Handler.TimeActEditor != null)
+        {
+            if (ImGui.BeginTabItem($"{LOC.Get("PREF_Tab_Time_Act_Editor")}##timeActEditorTab"))
+            {
+                ImGui.BeginChild("timeActEditorPrefSection");
+
+                if (TimeActEditorPrefList.Count > 0)
+                {
+                    DisplaySettings(TimeActEditorPrefList);
+                }
+                else
+                {
+                    ImGui.Text(LOC.Get("PREF_No_Preferences_Yet"));
+                }
+
+                ImGui.EndChild();
+
+                ImGui.EndTabItem();
+            }
+        }
+
+        ImGui.EndTabBar();
     }
 
     private string searchFilter = "";

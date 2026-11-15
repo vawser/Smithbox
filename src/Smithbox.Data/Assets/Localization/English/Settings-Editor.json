@@ -1,0 +1,28 @@
+{
+  "Entries": [
+    {
+      "Key": "SETTINGS_Editor_Title",
+      "Text": "Settings"
+    },
+    {
+      "Key": "SETTINGS_Help_Text",
+      "Text": "EMPTY"
+    },
+    {
+      "Key": "SETTINGS_Menu_Developer",
+      "Text": "Developer"
+    },
+    {
+      "Key": "SETTINGS_Menu_File",
+      "Text": "File"
+    },
+    {
+      "Key": "SETTINGS_Action_Save_Preferences",
+      "Text": "Save Preferences"
+    },
+    {
+      "Key": "SETTINGS_Action_Save_Shortcuts",
+      "Text": "Save Shortcuts"
+    }
+  ]
+}

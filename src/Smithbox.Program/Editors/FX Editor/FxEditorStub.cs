@@ -44,8 +44,7 @@ public class FxEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("FX_Window_Fx_Editor")}###fxEditor", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("FX_Window_Fx_Editor")}###fxEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

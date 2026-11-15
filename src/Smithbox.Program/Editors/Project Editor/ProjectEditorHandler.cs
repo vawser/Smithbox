@@ -475,39 +475,17 @@ public class ProjectEditorHandler : IDisposable
     }
 
     /// <summary>
-    /// Brings an editor's window to the front.
+    /// Makes an editor the one the editor host shows.
     /// </summary>
-    /// <returns>Whether the editor has a window to focus.</returns>
+    /// <returns>Whether the editor is one of this project's top-level editors.</returns>
     public bool FocusEditorWindow(EditorScreen editor)
     {
-        // The window names the editor stubs draw their windows with
-        var windowName = editor switch
-        {
-            MapEditorScreen => "###mapEditor",
-            ModelEditorScreen => "###modelEditor",
-            TimeActEditorScreen => "###timeActEditor",
-            ParamEditorScreen => "###paramEditor",
-            TextEditorScreen => "###textEditorStub",
-            GparamEditorScreen => $"{LOC.Get("GPARAM_Editor_Stub")}##gparamEditorStub",
-            MaterialEditorScreen => "###materialEditor",
-            TextureViewerScreen => "###textureViewerStub",
-            FileBrowserScreen => "###fileBrowserStub",
-            HavokEditorScreen => "###havokEditor",
-            FxEditorScreen => "###fxEditor",
-            CutsceneEditorScreen => "###cutsceneEditor",
-            BehaviorEditorScreen => "###behaviorEditor",
-            EmevdEditorScreen => "###emevdEditor",
-            EsdEditorScreen => "###esdEditor",
-            SoundEditorScreen => "###soundEditor",
-            _ => null
-        };
+        var entry = EditorRegistry.FindByScreen(this, editor);
 
-        if (windowName == null)
+        if (entry == null)
             return false;
 
-        Hexa.NET.ImGui.ImGui.SetWindowFocus(windowName);
-
-        return true;
+        return Smithbox.Orchestrator.ActivateEditor(entry.Id);
     }
 
     #region Dispose

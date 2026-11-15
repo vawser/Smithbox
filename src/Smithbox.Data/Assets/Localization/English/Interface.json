@@ -47,6 +47,10 @@
     {
       "Key": "INTERFACE_ImGui_Binding_Error",
       "Text": "No registered ImGui binding with id {0}"
+    },
+    {
+      "Key": "INTERFACE_Rail_Unsaved_Files",
+      "Text": "{0} unsaved file(s)"
     }
   ]
 }

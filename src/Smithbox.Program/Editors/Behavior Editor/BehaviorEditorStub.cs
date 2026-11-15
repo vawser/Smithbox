@@ -43,8 +43,7 @@ public class BehaviorEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("BHV_Editor_Stub")}###behaviorEditor", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("BHV_Editor_Stub")}###behaviorEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

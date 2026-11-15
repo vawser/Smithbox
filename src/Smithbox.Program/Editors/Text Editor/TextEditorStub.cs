@@ -43,8 +43,7 @@ public class TextEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("TEXT_Window_TextEditor")}###textEditorStub", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("TEXT_Window_TextEditor")}###textEditorStub", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

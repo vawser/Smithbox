@@ -45,8 +45,7 @@ public class MapEditorStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("MAP_Editor_Stub")}###mapEditor", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("MAP_Editor_Stub")}###mapEditor", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);

@@ -844,52 +844,56 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
-            // Preferences
-            if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Preferences")}##prefMenuHeader"))
+            // The editor shows these in its Settings Editor, from the editor rail
+            if (ProgramType is not ProgramType.Editor)
             {
-                PreferencesMenu.IsDisplayed = !PreferencesMenu.IsDisplayed;
-            }
-
-            // Keybinds
-            if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Shortcuts")}##shortcutMenuHeader"))
-            {
-                KeybindsMenu.IsDisplayed = !KeybindsMenu.IsDisplayed;
-            }
-
-            // Help
-            if (ImGui.BeginMenu($"{LOC.Get("PROGRAM_Menu_Header_Help")}##helpMenuHeader"))
-            {
-                ImGui.Text(LOC.Get("HELP_Developed_By"));
-                ImGui.Text(LOC.Get("HELP_Current_Version", _version));
-
-                ImGui.Separator();
-
-                // Go to Wiki
-                if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Wiki")}##wikiAction"))
+                // Preferences
+                if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Preferences")}##prefMenuHeader"))
                 {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = LOC.Get("HELP_Wiki_Link");
-                    myProcess.Start();
-                }
-                GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Wiki_TT"));
-
-                // Go to Github Repository
-                if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Github")}##githubAction"))
-                {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = LOC.Get("HELP_Github_Link");
-                    myProcess.Start();
-                }
-                GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
-
-                if (CFG.Current.Developer_Enable_Tools)
-                {
-                    DeveloperPanel.DisplayDropdown();
+                    PreferencesMenu.IsDisplayed = !PreferencesMenu.IsDisplayed;
                 }
 
-                ImGui.EndMenu();
+                // Keybinds
+                if (ImGui.MenuItem($"{LOC.Get("PROGRAM_Menu_Header_Shortcuts")}##shortcutMenuHeader"))
+                {
+                    KeybindsMenu.IsDisplayed = !KeybindsMenu.IsDisplayed;
+                }
+
+                // Help
+                if (ImGui.BeginMenu($"{LOC.Get("PROGRAM_Menu_Header_Help")}##helpMenuHeader"))
+                {
+                    ImGui.Text(LOC.Get("HELP_Developed_By"));
+                    ImGui.Text(LOC.Get("HELP_Current_Version", _version));
+
+                    ImGui.Separator();
+
+                    // Go to Wiki
+                    if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Wiki")}##wikiAction"))
+                    {
+                        Process myProcess = new();
+                        myProcess.StartInfo.UseShellExecute = true;
+                        myProcess.StartInfo.FileName = LOC.Get("HELP_Wiki_Link");
+                        myProcess.Start();
+                    }
+                    GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Wiki_TT"));
+
+                    // Go to Github Repository
+                    if (ImGui.MenuItem($"{LOC.Get("HELP_Action_Go_To_Github")}##githubAction"))
+                    {
+                        Process myProcess = new();
+                        myProcess.StartInfo.UseShellExecute = true;
+                        myProcess.StartInfo.FileName = LOC.Get("HELP_Github_Link");
+                        myProcess.Start();
+                    }
+                    GUI.Tooltip(LOC.Get("HELP_Action_Go_To_Github_TT"));
+
+                    if (CFG.Current.Developer_Enable_Tools)
+                    {
+                        DeveloperPanel.DisplayDropdown();
+                    }
+
+                    ImGui.EndMenu();
+                }
             }
 
             // draw log toggles
@@ -932,8 +936,12 @@ public class Smithbox
             ImGui.ShowDemoWindow();
         }
 
-        KeybindsMenu.Draw();
-        PreferencesMenu.Draw();
+        // Floating windows for the updater and developer kit; the editor shows these in its Settings Editor
+        if (ProgramType is not ProgramType.Editor)
+        {
+            KeybindsMenu.Draw();
+            PreferencesMenu.Draw();
+        }
 
         ImGui.PopStyleVar(2);
 

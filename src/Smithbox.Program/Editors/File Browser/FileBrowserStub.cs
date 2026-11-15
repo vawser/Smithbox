@@ -43,8 +43,7 @@ public class FileBrowserStub : IEditorStub
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
 
-        ImGui.SetNextWindowClass(ref GUI.DockGroup_EditorView);
-        if (ImGui.Begin($"{LOC.Get("FILE_FileBrowser_Stub")}###fileBrowserStub", ImGuiWindowFlags.MenuBar))
+        if (EditorHost.Begin($"{LOC.Get("FILE_FileBrowser_Stub")}###fileBrowserStub", ImGuiWindowFlags.MenuBar))
         {
             ImGui.PopStyleColor(1);
             ImGui.PopStyleVar(1);
