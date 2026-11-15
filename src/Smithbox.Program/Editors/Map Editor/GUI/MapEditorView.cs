@@ -387,7 +387,7 @@ public class MapEditorView : IEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_MapEditorView);
-            if (ImGui.Begin($@"{LOC.Get("MAP_Window_Tools")}##mapEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MAP_Window_Tools")}##mapEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

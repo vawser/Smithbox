@@ -40,61 +40,37 @@ public class MaterialToolWindow
 
     public void Draw()
     {
-        if (ImGui.BeginMenuBar())
-        {
-            ViewMenu();
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
-        if (CFG.Current.Interface_MaterialEditor_Tool_Search)
-        {
-            // Material Search and Mass Edit
-            SearchTool.OnToolWindow();
-        }
+        // Material Search and Mass Edit
+        SearchTool.OnToolWindow();
 
         // Browse
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
 
-        if (CFG.Current.Interface_MaterialEditor_Tool_UsedBy)
-        {
-            // Used By
-            UsedByTool.OnToolWindow();
-        }
+        // Used By
+        UsedByTool.OnToolWindow();
 
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
 
-        if (CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo)
-        {
-            // Shader Information
-            ShaderTool.OnToolWindow();
-        }
+        // Shader Information
+        ShaderTool.OnToolWindow();
 
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
-        if (CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck)
-        {
-            // Material Check
-            CheckTool.OnToolWindow();
-        }
+        // Material Check
+        CheckTool.OnToolWindow();
 
         // Game Memory
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
 
-        if (CFG.Current.Interface_MaterialEditor_Tool_InGame)
-        {
-            // In-Game
-            InGameTool.OnToolWindow();
-        }
+        // In-Game
+        InGameTool.OnToolWindow();
 
         Sections.End();
 
@@ -106,57 +82,6 @@ public class MaterialToolWindow
         //        DataTransferTool.Display();
         //    }
         //}
-    }
-
-    public void ViewMenu()
-    {
-        // View
-        if (ImGui.BeginMenu($"{LOC.Get("MAT_Tools_Header_View")}##viewMenuHeader"))
-        {
-            // Data Transfer
-            if (ImGui.MenuItem($"{LOC.Get("MAT_Tools_Data_Transfer")}##dataTransferToggle"))
-            {
-                CFG.Current.MaterialEditor_Tool_Data_Transfer = !CFG.Current.MaterialEditor_Tool_Data_Transfer;
-            }
-            GUI.ShowActiveStatus(CFG.Current.MaterialEditor_Tool_Data_Transfer);
-
-            // Material Search
-            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Search")}##materialSearchToolToggle"))
-            {
-                CFG.Current.Interface_MaterialEditor_Tool_Search = !CFG.Current.Interface_MaterialEditor_Tool_Search;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_Search);
-
-            // Used By
-            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Used_By")}##usedByToolToggle"))
-            {
-                CFG.Current.Interface_MaterialEditor_Tool_UsedBy = !CFG.Current.Interface_MaterialEditor_Tool_UsedBy;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_UsedBy);
-
-            // Shader Information
-            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Shader_Info")}##shaderInfoToolToggle"))
-            {
-                CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo = !CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_ShaderInfo);
-
-            // Material Check
-            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_Material_Check")}##materialCheckToolToggle"))
-            {
-                CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck = !CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_MaterialCheck);
-
-            // In-Game
-            if (ImGui.MenuItem($"{LOC.Get("MAT_ToolWindow_View_Toggle_In_Game")}##inGameToolToggle"))
-            {
-                CFG.Current.Interface_MaterialEditor_Tool_InGame = !CFG.Current.Interface_MaterialEditor_Tool_InGame;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_MaterialEditor_Tool_InGame);
-
-            ImGui.EndMenu();
-        }
     }
 
     public void ToolMenu()

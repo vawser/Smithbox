@@ -240,7 +240,6 @@ public class ModelDummyTool
             ChangeScope = Scope.Selected;
 
             CFG.Current.Interface_ModelEditor_ToolWindow = true;
-            CFG.Current.Interface_ModelEditor_Tool_Dummies = true;
             FocusOnNextDraw = true;
         }
         GUI.Tooltip(LOC.Get("MODEL_Dummy_Context_Change_TT"));

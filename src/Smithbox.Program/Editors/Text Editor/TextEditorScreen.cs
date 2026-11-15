@@ -60,6 +60,8 @@ public class TextEditorScreen : EditorScreen
                 activeView.ToolView.DisplayDropdown();
             }
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

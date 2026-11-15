@@ -117,27 +117,22 @@ public class ViewportMenu
         {
             case MapUniverse map:
                 CFG.Current.Interface_MapEditor_ToolWindow = true;
-                CFG.Current.Interface_MapEditor_Tool_ViewportRendering = true;
                 tool = map.View.RenderingTool;
                 break;
             case ModelUniverse model:
                 CFG.Current.Interface_ModelEditor_ToolWindow = true;
-                CFG.Current.Interface_ModelEditor_Tool_ViewportRendering = true;
                 tool = model.View.RenderingTool;
                 break;
             case TimeActUniverse timeAct:
                 CFG.Current.Interface_TimeActEditor_ToolWindow = true;
-                CFG.Current.Interface_TimeActEditor_Tool_ViewportRendering = true;
                 tool = timeAct.View.RenderingTool;
                 break;
             case GparamUniverse gparam:
                 CFG.Current.Interface_GparamEditor_ToolWindow = true;
-                CFG.Current.Interface_GparamEditor_Tool_ViewportRendering = true;
                 tool = gparam.View.RenderingTool;
                 break;
             case FxUniverse fx:
                 CFG.Current.Interface_FxEditor_ToolWindow = true;
-                CFG.Current.Interface_FxEditor_Tool_ViewportRendering = true;
                 tool = fx.Editor.RenderingTool;
                 break;
         }

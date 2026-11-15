@@ -622,7 +622,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ModelEditorView);
-            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Tools")}##modelEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("MODEL_Window_Tools")}##modelEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

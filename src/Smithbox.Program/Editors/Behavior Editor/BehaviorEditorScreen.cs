@@ -40,6 +40,8 @@ public class BehaviorEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

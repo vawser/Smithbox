@@ -34,9 +34,6 @@ public class HavokScriptReloader : IDisposable
     {
         UpdateFileChangeDetection();
 
-        if (!CFG.Current.HavokEditor_ToolVisibility_ScriptReloader)
-            return;
-
         if (ToolSections.Header($"{LOC.Get("HAVOK_ScriptReloader_Title")}##scriptReloaderTool"))
         {
             ImGui.BeginChild("ScriptReloaderSection", ImGuiChildFlags.Borders);

@@ -41,6 +41,8 @@ public class EsdEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

@@ -119,209 +119,51 @@ public class ParamToolMenu
 
     public void Draw()
     {
-        if (ImGui.BeginMenuBar())
-        {
-            // View
-            if (ImGui.BeginMenu($"{LOC.Get("PARAM_Tools_Header_View")}##viewMenuHeader"))
-            {
-                // Sort Rows
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Sort_Rows")}##viewToggle_SortRows"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Sort_Rows = !CFG.Current.ParamEditor_Show_Tool_Sort_Rows;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Sort_Rows);
-
-                // Row Names
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Row_Names")}##viewToggle_RowNames"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Row_Names = !CFG.Current.ParamEditor_Show_Tool_Row_Names;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Names);
-
-                // Data Transfer
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Transfer")}##viewToggle_DataTransfer"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Data_Converter = !CFG.Current.ParamEditor_Show_Tool_Data_Converter;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Converter);
-
-                // Data Comparison
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Comparison")}##viewToggle_DataComparison"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Data_Comparison = !CFG.Current.ParamEditor_Show_Tool_Data_Comparison;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Comparison);
-
-                // Data Finders
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Data_Finders")}##viewToggle_DataFinders"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Data_Finders = !CFG.Current.ParamEditor_Show_Tool_Data_Finders;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Data_Finders);
-
-                // Param Upgrader
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Upgrader")}##viewToggle_ParamUpgrader"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Param_Upgrader = !CFG.Current.ParamEditor_Show_Tool_Param_Upgrader;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Upgrader);
-
-                // Param Merger
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Merger")}##viewToggle_ParamMerger"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Param_Merger = !CFG.Current.ParamEditor_Show_Tool_Param_Merger;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Merger);
-
-                // Param Delta Patcher
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Delta_Patcher")}##viewToggle_ParamDeltaPatcher"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher = !CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher);
-
-                // Param Reloader
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_Reloader")}##viewToggle_ParamReloader"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Param_Reloader = !CFG.Current.ParamEditor_Show_Tool_Param_Reloader;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_Reloader);
-
-                // Item Gib
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Item_Gib")}##viewToggle_ItemGib"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Item_Gib = !CFG.Current.ParamEditor_Show_Tool_Item_Gib;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Item_Gib);
-
-                // Mass Edit
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Mass_Edit")}##viewToggle_MassEdit"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Mass_Edit = !CFG.Current.ParamEditor_Show_Tool_Mass_Edit;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Mass_Edit);
-
-                // Modified Filter
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Modified_Filter")}##viewToggle_ModifiedFilter"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Modified_Filter = !CFG.Current.ParamEditor_Show_Tool_Modified_Filter;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Modified_Filter);
-
-                // Param List Categories
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Param_List_Categories")}##viewToggle_ParamListCategories"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Param_List_Categories = !CFG.Current.ParamEditor_Show_Tool_Param_List_Categories;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Param_List_Categories);
-
-                // Pin Groups
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Pin_Groups")}##viewToggle_PinGroups"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Pin_Groups = !CFG.Current.ParamEditor_Show_Tool_Pin_Groups;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Pin_Groups);
-
-                // Row Name Manipulation
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Row_Name_Manipulation")}##viewToggle_RowNameManipulation"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation = !CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation);
-
-                // Projectile Simulator
-                if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Projectile_Simulator")}##viewToggle_ProjectileSimulator"))
-                {
-                    CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator = !CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator);
-
-                ImGui.EndMenu();
-            }
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Data_Finders)
+        DisplayDataFinders();
+
+        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
         {
-            DisplayDataFinders();
+            ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
+
+            View.MassEdit.ToolMenu.Display();
+
+            ImGui.EndChild();
         }
 
-        if (CFG.Current.ParamEditor_Show_Tool_Mass_Edit)
-        {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Mass_Edit")}##massEditMenuHeader"))
-            {
-                ImGui.BeginChild("MassEditToolSection", ImGuiChildFlags.Borders);
+        ModifiedFilter.Display();
 
-                View.MassEdit.ToolMenu.Display();
-
-                ImGui.EndChild();
-            }
-        }
-
-        if (CFG.Current.ParamEditor_Show_Tool_Modified_Filter)
-        {
-            ModifiedFilter.Display();
-        }
-
-        if (CFG.Current.ParamEditor_Show_Tool_Data_Comparison)
-        {
-            ParamComparisonTool.Display();
-        }
+        ParamComparisonTool.Display();
 
         // Rows
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Rows"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Sort_Rows)
-        {
-            SortTool.Display();
-        }
-        if (CFG.Current.ParamEditor_Show_Tool_Row_Names)
-        {
-            RowNameTool.Display();
-        }
+        SortTool.Display();
+        RowNameTool.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Row_Name_Manipulation)
+        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
         {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Row_Name_Manipulation")}##rowNameManipMenuHeader"))
-            {
-                ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
+            ImGui.BeginChild("RowNameManipToolSection", ImGuiChildFlags.Borders);
 
-                RowNameManipulationTool.Display();
+            RowNameManipulationTool.Display();
 
-                ImGui.EndChild();
-            }
+            ImGui.EndChild();
         }
 
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Data_Converter)
-        {
-            DataConverterTool.Display();
-        }
+        DataConverterTool.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_Upgrader)
-        {
-            ParamUpgrader.Display();
-        }
+        ParamUpgrader.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_Merger)
-        {
-            ParamMerger.Display();
-        }
+        ParamMerger.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_Delta_Patcher)
-        {
-            DeltaPatcher.Display();
-        }
+        DeltaPatcher.Display();
 
         DeltaPatcher.ExportProgressModal.Draw();
         DeltaPatcher.ImportProgressModal.Draw();
@@ -332,42 +174,27 @@ public class ParamToolMenu
         // Organization
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Organization"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_List_Categories)
-        {
-            ParamListCategories.Display();
-        }
+        ParamListCategories.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Pin_Groups)
-        {
-            PinGroups.Display();
-        }
+        PinGroups.Display();
 
         // Game Memory
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Param_Reloader)
-        {
-            ParamReloader.Display();
-        }
+        ParamReloader.Display();
 
-        if (CFG.Current.ParamEditor_Show_Tool_Item_Gib)
-        {
-            ItemGib.Display();
-        }
+        ItemGib.Display();
 
         // Simulation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Simulation"));
 
-        if (CFG.Current.ParamEditor_Show_Tool_Projectile_Simulator)
+        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
         {
-            if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
-            {
-                ImGui.BeginChild("ProjectileSimulatorToolSection", ImGuiChildFlags.Borders);
+            ImGui.BeginChild("ProjectileSimulatorToolSection", ImGuiChildFlags.Borders);
 
-                ProjectileSimulator.Display();
+            ProjectileSimulator.Display();
 
-                ImGui.EndChild();
-            }
+            ImGui.EndChild();
         }
 
         Sections.End();

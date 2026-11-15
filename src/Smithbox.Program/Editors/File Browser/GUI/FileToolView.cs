@@ -39,70 +39,25 @@ public class FileToolView
 
     public void Display()
     {
-        if (ImGui.BeginMenuBar())
-        {
-            ViewMenu();
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Files"));
 
-        if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
+        if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))
         {
-            if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Unpacker_Header")}##fileUnpacker"))
-            {
-                UnpackTool.Display();
-            }
+            UnpackTool.Display();
         }
 
-        if (CFG.Current.Interface_FileBrowser_Tool_FileExtract)
+        if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Exporter_Header")}##fileExporter"))
         {
-            if (ToolSections.Header($"{LOC.Get("FILE_Tools_File_Exporter_Header")}##fileExporter"))
-            {
-                ExtractTool.Display();
-            }
+            ExtractTool.Display();
         }
 
-        if (CFG.Current.Interface_FileBrowser_Tool_BinderSearch)
+        if (ToolSections.Header($"{LOC.Get("FILE_Tools_Binder_Search_Header")}##binderSearch"))
         {
-            if (ToolSections.Header($"{LOC.Get("FILE_Tools_Binder_Search_Header")}##binderSearch"))
-            {
-                BinderSearchTool.Display();
-            }
+            BinderSearchTool.Display();
         }
 
         Sections.End();
-    }
-
-    public void ViewMenu()
-    {
-        // View
-        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##viewMenuHeader"))
-        {
-            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_File_Unpacker")}##toggleFileUnpacker"))
-            {
-                CFG.Current.Interface_FileBrowser_Tool_GameUnpacker = !CFG.Current.Interface_FileBrowser_Tool_GameUnpacker;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
-
-            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_File_Exporter")}##toggleFileExporter"))
-            {
-                CFG.Current.Interface_FileBrowser_Tool_FileExtract = !CFG.Current.Interface_FileBrowser_Tool_FileExtract;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_FileExtract);
-
-            if (ImGui.MenuItem($"{LOC.Get("FILE_Tools_ViewToggle_Binder_Search")}##toggleBinderSearch"))
-            {
-                CFG.Current.Interface_FileBrowser_Tool_BinderSearch = !CFG.Current.Interface_FileBrowser_Tool_BinderSearch;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_BinderSearch);
-
-            ImGui.EndMenu();
-        }
     }
 }

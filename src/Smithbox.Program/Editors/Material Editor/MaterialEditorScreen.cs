@@ -72,6 +72,8 @@ public class MaterialEditorScreen : EditorScreen
 
             //OptionsMenu();
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

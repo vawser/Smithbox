@@ -235,7 +235,6 @@ public class MapEditorScreen : EditorScreen
                 if (ImGui.MenuItem($"{LOC.Get("MAP_History_Menu_History")}##historyAction"))
                 {
                     CFG.Current.Interface_MapEditor_ToolWindow = true;
-                    CFG.Current.Interface_MapEditor_Tool_History = true;
 
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
@@ -497,6 +496,8 @@ public class MapEditorScreen : EditorScreen
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_Options")}##optionsHeader"))
         {
+            ToolSections.ToolsOptionsMenu();
+
             // Map List
             if (ImGui.BeginMenu($"{LOC.Get("MAP_Options_Header_MapList")}##mapListHeader"))
             {

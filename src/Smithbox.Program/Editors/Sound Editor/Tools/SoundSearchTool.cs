@@ -33,7 +33,6 @@ public class SoundSearchTool
         FocusInput = true;
         FocusOnNextDraw = true;
         CFG.Current.Interface_SoundEditor_ToolWindow = true;
-        CFG.Current.Interface_SoundEditor_Tool_Search = true;
         ImGui.SetWindowFocus(SoundToolWindow.WindowId);
     }
 

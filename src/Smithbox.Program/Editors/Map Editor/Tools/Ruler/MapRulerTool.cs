@@ -92,8 +92,6 @@ public class MapRulerTool
         UpdateDrawing();
     }
 
-    private bool IsEnabled => CFG.Current.Interface_MapEditor_Tool_Ruler;
-
     #region Viewport
 
     /// <summary>
@@ -102,15 +100,6 @@ public class MapRulerTool
     /// </summary>
     public bool HandleViewportInput(VulkanViewport viewport, Ray ray, bool canPick)
     {
-        if (!IsEnabled)
-        {
-            Placing = RulerPoint.None;
-            Selected = RulerPoint.None;
-            AwaitingPick = false;
-            ReleaseDrawing();
-            return false;
-        }
-
         if (viewport.RenderScene != Scene)
         {
             ReleaseDrawing();
@@ -293,7 +282,7 @@ public class MapRulerTool
     /// <summary>Brings the spheres and the line up to date with the points, making them if they aren't yet.</summary>
     private void UpdateDrawing()
     {
-        if (Scene == null || !IsEnabled)
+        if (Scene == null)
             return;
 
         SpherePrim ??= new DbgPrimWireSphere(Transform.Default, 1.0f, Color.White, 8, 12);
@@ -391,7 +380,7 @@ public class MapRulerTool
     /// </summary>
     public void DrawLabels(VulkanViewport viewport)
     {
-        if (!IsEnabled || !CFG.Current.MapEditor_Ruler_Show_Label || viewport.Owner is not MapUniverse)
+        if (!CFG.Current.MapEditor_Ruler_Show_Label || viewport.Owner is not MapUniverse)
             return;
 
         if (Start is not Vector3 a || End is not Vector3 b)
@@ -589,7 +578,7 @@ public class RulerGizmoTarget : IGizmoTarget
         Tool = tool;
     }
 
-    public bool HasTarget => CFG.Current.Interface_MapEditor_Tool_Ruler && Tool.GetPoint(Tool.Selected) != null;
+    public bool HasTarget => Tool.GetPoint(Tool.Selected) != null;
 
     public bool AllowScale => false;
 

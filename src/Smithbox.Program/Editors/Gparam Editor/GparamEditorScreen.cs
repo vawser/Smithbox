@@ -62,6 +62,8 @@ public class GparamEditorScreen : EditorScreen
                 ImGui.Text(LOC.Get("SYS_OpenGL_Viewport_Blocked"));
             }
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

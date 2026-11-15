@@ -188,7 +188,6 @@ public partial class ModelMassEditTool
         Changed();
         ClearResults();
 
-        CFG.Current.Interface_ModelEditor_Tool_MassEdit = true;
 
         PendingFind = true;
         SelectFindTab = true;

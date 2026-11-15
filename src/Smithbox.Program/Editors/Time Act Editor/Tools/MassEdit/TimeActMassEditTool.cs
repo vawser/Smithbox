@@ -220,7 +220,6 @@ public partial class TimeActMassEditTool
         Changed();
         ClearResults();
 
-        CFG.Current.Interface_TimeActEditor_Tool_MassEdit = true;
 
         PendingFind = true;
         SelectFindTab = true;

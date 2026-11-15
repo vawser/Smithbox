@@ -112,6 +112,8 @@ public class FxEditorScreen : EditorScreen
                 ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color,
                     LOC.Get("FX_Menu_Saving", bank.SaveCurrent ?? "", Math.Min(bank.SaveDone + 1, Math.Max(bank.SaveTotal, 1)), Math.Max(bank.SaveTotal, 1)));
             }
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
@@ -136,7 +138,7 @@ public class FxEditorScreen : EditorScreen
         ViewportWindow.Display(dsid);
 
         if (CFG.Current.Interface_FxEditor_ToolWindow)
-            Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools", dsid, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetMainWindowFlags());
+            Window($"{LOC.Get("FX_Window_Tools")}###fxEditor_Tools", dsid, EditorFocusContext.FxEditor_Tools, ToolWindow.Display, GUI.GetInnerWindowFlags());
     }
 
     // ---------------------------------------------------------------- commands

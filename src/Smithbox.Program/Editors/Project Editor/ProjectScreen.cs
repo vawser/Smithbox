@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
 using StudioCore.Utilities;
@@ -278,6 +279,8 @@ public class ProjectScreen
             ImGui.EndMenu();
         }
 
+        ToolSections.EditorOptionsMenu();
+
         ImGui.EndMenuBar();
     }
 
@@ -537,7 +540,7 @@ public class ProjectScreen
         {
             if (IsReadyForLoadedData(project, LOC.Get("PROJECT_Tab_Tools_Need")))
             {
-                ImGui.BeginChild("projectToolsTab", Vector2.Zero, ImGuiChildFlags.None, ImGuiWindowFlags.MenuBar);
+                ImGui.BeginChild("projectToolsTab", Vector2.Zero, ImGuiChildFlags.None);
 
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                     FocusManager.SetFocus(EditorFocusContext.Project_None);

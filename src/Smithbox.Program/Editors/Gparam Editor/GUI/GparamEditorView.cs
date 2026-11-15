@@ -181,7 +181,7 @@ public class GparamEditorView : IEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_GparamEditorView);
-            if (ImGui.Begin($@"{LOC.Get("GPARAM_Editor_Tools")}##gparamEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("GPARAM_Editor_Tools")}##gparamEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

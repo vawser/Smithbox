@@ -40,139 +40,60 @@ public class TextToolView
     {
         LanguageSyncTool.OnGui();
 
-        if (ImGui.BeginMenuBar())
-        {
-            ViewMenu();
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
         // Global Text Search
-        if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Search")}##globalTextSearchSection"))
-            {
-                TextSearch.Display();
-            }
+            TextSearch.Display();
         }
 
         // Global Text Replacement
-        if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Replacement")}##globalTextReplacementSection"))
-            {
-                TextReplace.Display();
-            }
+            TextReplace.Display();
         }
 
         // Editing
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
 
         // Entry Creator
-        if (CFG.Current.Interface_TextEditor_Tool_EntryCreator)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Text_Entry_Creator")}##textEntryCreatorSection"))
-            {
-                View.TextEntryCreator.DisplayTool();
-            }
+            View.TextEntryCreator.DisplayTool();
         }
 
         // Language Sync
-        if (CFG.Current.Interface_TextEditor_Tool_LanguageSync)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Language_Sync")}##languageSyncSection"))
-            {
-                LanguageSyncTool.Display();
-            }
+            LanguageSyncTool.Display();
         }
 
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
 
         // Data Transfer
-        if (CFG.Current.Interface_TextEditor_Tool_DataTransfer)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Header_Data_Transfer")}##dataTransferSection"))
-            {
-                DataTransferTool.Display();
-            }
+            DataTransferTool.Display();
         }
 
         // Text Merge
-        if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
         {
-            if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
-            {
-                TextMerge.Display();
-            }
+            TextMerge.Display();
         }
 
         // Game Memory
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
 
         // FMG Reloader
-        if (CFG.Current.Interface_TextEditor_Tool_FmgReloader)
-        {
-            FmgReloader.OnToolWindow();
-        }
+        FmgReloader.OnToolWindow();
 
         Sections.End();
-    }
-    public void ViewMenu()
-    {
-        if (ImGui.BeginMenu($"{LOC.Get("TEXT_Tools_Menu_Header_View")}##viewMenuHeader"))
-        {
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Entry_Creator")}##textEntryCreatorViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_EntryCreator = !CFG.Current.Interface_TextEditor_Tool_EntryCreator;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_EntryCreator);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Data_Transfer")}##dataTransferViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_DataTransfer = !CFG.Current.Interface_TextEditor_Tool_DataTransfer;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_DataTransfer);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Language_Sync")}##languageSyncViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_LanguageSync = !CFG.Current.Interface_TextEditor_Tool_LanguageSync;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_LanguageSync);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Search")}##textSearchViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_TextSearch = !CFG.Current.Interface_TextEditor_Tool_TextSearch;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextSearch);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Replacement")}##textReplacementViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_TextReplacement = !CFG.Current.Interface_TextEditor_Tool_TextReplacement;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextReplacement);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Text_Merge")}##textMergeViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
-
-            if (ImGui.MenuItem($"{LOC.Get("TEXT_Tools_View_Fmg_Reloader")}##fmgReloaderViewToggle"))
-            {
-                CFG.Current.Interface_TextEditor_Tool_FmgReloader = !CFG.Current.Interface_TextEditor_Tool_FmgReloader;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_FmgReloader);
-
-            ImGui.EndMenu();
-        }
     }
 
     public void DisplayDropdown()

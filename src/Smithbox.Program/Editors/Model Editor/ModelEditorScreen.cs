@@ -249,7 +249,6 @@ public class ModelEditorScreen : EditorScreen
                 if (ImGui.MenuItem($"{LOC.Get("MODEL_History_Menu")}##historyAction"))
                 {
                     CFG.Current.Interface_ModelEditor_ToolWindow = true;
-                    CFG.Current.Interface_ModelEditor_Tool_History = true;
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
                 GUI.Tooltip(LOC.Get("MODEL_History_Menu_TT"));
@@ -319,6 +318,8 @@ public class ModelEditorScreen : EditorScreen
         // Otpions
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##optionsMenuHeader"))
         {
+            ToolSections.ToolsOptionsMenu();
+
             // Containers
             if (ImGui.BeginMenu($"{LOC.Get("MODEL_Editor_Option_Container_Header")}##containerMenuHeaer"))
             {

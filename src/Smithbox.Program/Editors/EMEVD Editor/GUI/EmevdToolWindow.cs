@@ -33,103 +33,38 @@ public class EmevdToolWindow
 
     public void Draw()
     {
-        if (ImGui.BeginMenuBar())
-        {
-            ViewMenu();
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_Search)
-        {
-            // Search
-            SearchTool.OnToolWindow();
-        }
+        // Search
+        SearchTool.OnToolWindow();
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_MassEdit)
-        {
-            // Mass Edit
-            MassEditTool.OnToolWindow();
-        }
+        // Mass Edit
+        MassEditTool.OnToolWindow();
 
         // Browse
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Browse"));
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_CalledBy)
-        {
-            // Called By
-            CalledByTool.OnToolWindow();
-        }
+        // Called By
+        CalledByTool.OnToolWindow();
 
         // Editing
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Editing"));
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_Palette)
-        {
-            // Palette
-            PaletteTool.OnToolWindow();
-        }
+        // Palette
+        PaletteTool.OnToolWindow();
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_Templates)
-        {
-            // Templates
-            TemplatesTool.OnToolWindow();
-        }
+        // Templates
+        TemplatesTool.OnToolWindow();
 
         // Validation
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Validation"));
 
-        if (CFG.Current.Interface_EmevdEditor_Tool_Problems)
-        {
-            // Problems
-            ProblemsTool.OnToolWindow();
-        }
+        // Problems
+        ProblemsTool.OnToolWindow();
 
         Sections.End();
-    }
-
-    private void ViewMenu()
-    {
-        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_View")}##emevdToolViewMenu"))
-        {
-            // Search
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Search")}##emevdSearchToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_Search = !CFG.Current.Interface_EmevdEditor_Tool_Search;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Search);
-
-            // Mass Edit
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Mass_Edit")}##emevdMassEditToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_MassEdit = !CFG.Current.Interface_EmevdEditor_Tool_MassEdit;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_MassEdit);
-
-            // Called By
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Called_By")}##emevdCalledByToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_CalledBy = !CFG.Current.Interface_EmevdEditor_Tool_CalledBy;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_CalledBy);
-
-            // Palette
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Palette")}##emevdPaletteToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_Palette = !CFG.Current.Interface_EmevdEditor_Tool_Palette;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Palette);
-
-            // Templates
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Templates")}##emevdTemplatesToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_Templates = !CFG.Current.Interface_EmevdEditor_Tool_Templates;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Templates);
-
-            // Problems
-            if (ImGui.MenuItem($"{LOC.Get("EMEVD_ToolWindow_View_Toggle_Problems")}##emevdProblemsToolToggle"))
-                CFG.Current.Interface_EmevdEditor_Tool_Problems = !CFG.Current.Interface_EmevdEditor_Tool_Problems;
-            GUI.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Tool_Problems);
-
-            ImGui.EndMenu();
-        }
     }
 }

@@ -101,7 +101,6 @@ public class CFG
     public string Project_Default_Data_Directory = "";
     public string Project_ME3_Profile_Directory = "";
 
-
     public bool Project_Scan_Directory_For_Additions = true;
     public bool Project_Scan_Directory_Strict_Mode = false;
     public bool Project_VFS_Prefer_Loose_Files = false;
@@ -148,7 +147,6 @@ public class CFG
     public bool Param_Editor_Enable_Row_FMG_Annotation_Override = false;
     public bool Param_Editor_Enable_Row_FMG_Annotation_Addition = true;
 
-    public bool ProjectEditor_Show_Tool_ProjectMerge = true;
     #endregion
 
     #region Interface
@@ -327,8 +325,6 @@ public class CFG
 
     // Map Contents colours objects that differ from, or aren't in, the vanilla map
     public bool MapEditor_Vanilla_Highlight = true;
-    public bool Interface_MapEditor_Tool_VanillaCompare = true;
-    public bool Interface_MapEditor_Tool_History = true;
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
     public bool MapEditor_ModelLoad_MapPieces = true;
@@ -366,14 +362,12 @@ public class CFG
     public bool MapEditor_LightAtlas_AutomaticDelete = true;
     public bool MapEditor_LightAtlas_AutomaticAdjust = true;
 
-
     public HavokCollisionType CurrentHavokCollisionType = HavokCollisionType.Low;
 
     // Map collision types displayed in the Map Editor, any combination of them can be shown at once
     public bool MapEditor_Display_Low_Collision = true;
     public bool MapEditor_Display_High_Collision = false;
     public bool MapEditor_Display_FallProtection_Collision = false;
-
 
     // Map Visibility Filters
     public bool MapEditor_BasicFilter_MapPiece = true;
@@ -630,60 +624,11 @@ public class CFG
     public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_ToolWindow = true;
     public bool Interface_MapEditor_MapInformation = false;
-    public bool Interface_MapEditor_ResourceList = true;
 
     // Tools
-    public bool Interface_MapEditor_Tool_Create = true;
-    public bool Interface_MapEditor_Tool_Duplicate = true;
-    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
-    public bool Interface_MapEditor_Tool_Replicate = true;
-    public bool Interface_MapEditor_Tool_Translate = true;
-    public bool Interface_MapEditor_Tool_Rotate = true;
-    public bool Interface_MapEditor_Tool_PullToCamera = true;
-    public bool Interface_MapEditor_Tool_SnapToMesh = true;
-    public bool Interface_MapEditor_Tool_Scramble = true;
-    public bool Interface_MapEditor_Tool_ResetTransform = true;
-    public bool Interface_MapEditor_Tool_Properties_Action = true;
-    public bool Interface_MapEditor_Tool_Select_Action = true;
-    public bool Interface_MapEditor_Tool_ViewportFilters = true;
-    public bool Interface_MapEditor_Tool_EditorVisibility = true;
-    public bool Interface_MapEditor_Tool_LowDetail = true;
-    public bool Interface_MapEditor_Tool_Viewport = true;
-    public bool Interface_MapEditor_Tool_Data_Transfer = true;
-
-    public bool Interface_MapEditor_Tool_Prefab = true;
-    public bool Interface_MapEditor_Tool_SelectionGroups = true;
-    public bool Interface_MapEditor_Tool_LocalSearch = true;
-    public bool Interface_MapEditor_Tool_GlobalSearch = true;
-    public bool Interface_MapEditor_Tool_MassEdit = true;
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
-    public bool Interface_MapEditor_Tool_GridConfiguration = true;
-    public bool Interface_MapEditor_Tool_ViewportRendering = true;
-    public bool Interface_MapEditor_Tool_ModelBrowser = true;
-    public bool Interface_MapEditor_Tool_Animation = true;
-    public bool Interface_MapEditor_Tool_DisplayGroups = true;
-    public bool Interface_MapEditor_Tool_MsbValidation = true;
-    public bool Interface_MapEditor_Tool_EntityIds = true;
-    public bool Interface_MapEditor_Tool_IrradianceVolumeIds = true;
-    public bool Interface_MapEditor_Tool_EnemyAIVisualization = true;
-    public bool Interface_MapEditor_Tool_WallPaint = true;
-    public bool Interface_MapEditor_Tool_EdgeEditor = true;
-    public bool Interface_MapEditor_Tool_ForbiddenRegionEditor = true;
-    public bool Interface_MapEditor_Tool_CollisionEditor = true;
-    public bool Interface_MapEditor_Tool_Navigation = true;
-    public bool Interface_MapEditor_Tool_Ruler = true;
-    public bool Interface_MapEditor_Tool_FirstPerson = true;
-    public bool Interface_MapEditor_Tool_WorldReloader = true;
-    public bool Interface_MapEditor_Tool_MapExtraction = true;
-    public bool Interface_MapEditor_Tool_TextureTransfer = true;
-    public bool Interface_MapEditor_Tool_PartTransfer = true;
-    public bool Interface_MapEditor_Tool_DestructionGeneration = true;
-    public bool Interface_MapEditor_Tool_LoadList = true;
-    public bool Interface_MapEditor_Tool_EntryFileList = true;
-    public bool Interface_MapEditor_Tool_PartsTokenIdList = true;
     public bool Interface_MapEditor_Tool_AssetBrowser = true;
-    public bool Interface_MapEditor_Tool_ViewportConfig = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Map_Editor = true;
@@ -753,8 +698,6 @@ public class CFG
     public bool ModelEditor_Properties_Auto_Open_Tree = true;
     public bool ModelEditor_Properties_Enable_Mesh_Fields = true;
 
-
-
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
@@ -789,8 +732,6 @@ public class CFG
     public bool ModelEditor_DisplayNodes = true;
     public float ModelEditor_LabelScale = 1.0f;
     public bool ModelEditor_DisplayEdgePoints = true;
-    public bool Interface_ModelEditor_Tool_EdgeEditor = true;
-    public bool Interface_ModelEditor_Tool_GrassBuilder = true;
 
     public bool ModelEditor_ModelSourceList_RequireDoubleClick = false;
 
@@ -802,29 +743,11 @@ public class CFG
 
     // Tools
     public bool Interface_ModelEditor_Tool_CreateAction = true;
-    public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
-    public bool Interface_ModelEditor_Tool_ViewportRendering = true;
     public bool Interface_ModelEditor_Tool_ModelInsight = true;
-    public bool Interface_ModelEditor_Tool_ModelInstanceFinder = true;
-    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
-    public bool Interface_ModelEditor_Tool_Animation = true;
-    public bool Interface_ModelEditor_Tool_CharacterPreview = true;
-    public bool Interface_ModelEditor_Tool_DisplayRotation = true;
-    public bool Interface_ModelEditor_Tool_History = true;
-    public bool Interface_ModelEditor_Tool_VanillaCompare = true;
-    public bool Interface_ModelEditor_Tool_RenderSnapshots = true;
-    public bool Interface_ModelEditor_Tool_Dummies = true;
-    public bool Interface_ModelEditor_Tool_DataTransfer = true;
-    public bool Interface_ModelEditor_Tool_LocalSearch = true;
-    public bool Interface_ModelEditor_Tool_GlobalSearch = true;
-    public bool Interface_ModelEditor_Tool_MassEdit = true;
 
     // Viewport labels only on the selected dummies and bones, as a character has hundreds
     public bool ModelEditor_Labels_Selected_Only = false;
-    public bool Interface_ModelEditor_Tool_ResourceMonitor = true;
     public bool Interface_ModelEditor_Tool_Data_Transfer = true;
-    public bool Interface_ModelEditor_Tool_ModelExport = true;
-    public bool Interface_ModelEditor_Tool_AssetBrowser = true;
     public bool Interface_ModelEditor_Tool_ViewportConfig = true;
 
     // Saving
@@ -844,17 +767,6 @@ public class CFG
     public bool TimeActEditor_Allow_Automatic_Save = true;
     public string TimeActEditor_Export_Directory = "";
     public bool AutomaticSave_TimeActEditor = true;
-
-    public bool Interface_TimeActEditor_Tool_ResourceMonitor = true;
-    public bool Interface_TimeActEditor_Tool_ViewportRendering = true;
-    public bool Interface_TimeActEditor_Tool_GridConfiguration = true;
-    public bool Interface_TimeActEditor_Tool_CharacterPreview = true;
-    public bool Interface_TimeActEditor_Tool_ModelMaskToggler = true;
-    public bool Interface_TimeActEditor_Tool_LocalSearch = true;
-    public bool Interface_TimeActEditor_Tool_GlobalSearch = true;
-    public bool Interface_TimeActEditor_Tool_MassEdit = true;
-    public bool Interface_TimeActEditor_Tool_ComboBuilder = true;
-    public bool Interface_TimeActEditor_Tool_History = true;
 
     public float TimeActEditor_Graph_Frame_Width = 10f;
     public bool TimeActEditor_DisplayDummies = true;
@@ -940,7 +852,6 @@ public class CFG
     // Table List
     public bool ParamEditor_Display_Table_List = true;
 
-
     // Row List
     public bool ParamEditor_Row_List_Pinned_Stay_Visible = true;
     public bool ParamEditor_Row_List_Enable_Line_Wrapping = true;
@@ -1011,7 +922,6 @@ public class CFG
     public bool ParamEditor_Field_Context_Display_References = true;
     public bool Param_FieldContextMenu_ImagePreview_ContextMenu = false;
 
-
     public int Param_Toolbar_Duplicate_Amount = 1;
     public int Param_Toolbar_Duplicate_Offset = 1;
 
@@ -1058,22 +968,6 @@ public class CFG
     public bool Interface_ParamEditor_ToolWindow = true;
 
     // Tools
-    public bool ParamEditor_Show_Tool_Sort_Rows = true;
-    public bool ParamEditor_Show_Tool_Row_Names = true;
-    public bool ParamEditor_Show_Tool_Data_Converter = true;
-    public bool ParamEditor_Show_Tool_Data_Comparison = true;
-    public bool ParamEditor_Show_Tool_Mass_Edit = true;
-    public bool ParamEditor_Show_Tool_Data_Finders = true;
-    public bool ParamEditor_Show_Tool_Param_List_Categories = true;
-    public bool ParamEditor_Show_Tool_Item_Gib = true;
-    public bool ParamEditor_Show_Tool_Param_Reloader = true;
-    public bool ParamEditor_Show_Tool_Param_Merger = true;
-    public bool ParamEditor_Show_Tool_Param_Upgrader = true;
-    public bool ParamEditor_Show_Tool_Pin_Groups = true;
-    public bool ParamEditor_Show_Tool_Param_Delta_Patcher = true;
-    public bool ParamEditor_Show_Tool_Row_Name_Manipulation = true;
-    public bool ParamEditor_Show_Tool_Projectile_Simulator = true;
-    public bool ParamEditor_Show_Tool_Modified_Filter = true;
     public bool ParamEditor_Show_Projectile_Simulator_Window = false;
 
     // Projectile Simulator
@@ -1219,15 +1113,6 @@ public class CFG
     // Windows
     public bool Interface_TextEditor_ToolWindow = true;
 
-    // Tools
-    public bool Interface_TextEditor_Tool_EntryCreator = true;
-    public bool Interface_TextEditor_Tool_DataTransfer = true;
-    public bool Interface_TextEditor_Tool_LanguageSync = true;
-    public bool Interface_TextEditor_Tool_TextSearch = true;
-    public bool Interface_TextEditor_Tool_TextReplacement = true;
-    public bool Interface_TextEditor_Tool_TextMerge = true;
-    public bool Interface_TextEditor_Tool_FmgReloader = true;
-
     // Saving
     public bool Project_Automatic_Save_Include_Text_Editor = true;
 
@@ -1274,13 +1159,6 @@ public class CFG
 
     // Tools
     public bool Interface_GparamEditor_ToolWindow = true;
-    public bool Interface_GparamEditor_Tool_DataTransfer = true;
-    public bool Interface_GparamEditor_Tool_LocalSearch = true;
-    public bool Interface_GparamEditor_Tool_GlobalSearch = true;
-    public bool Interface_GparamEditor_Tool_MassEdit = true;
-    public bool Interface_GparamEditor_Tool_ViewportPreview = true;
-    public bool Interface_GparamEditor_Tool_ViewportRendering = true;
-    public bool Interface_GparamEditor_Tool_GridConfiguration = true;
 
     // Viewport: the map shown is the selected GPARAM's (or the one chosen), lit by the editor's copy of the GPARAM.
     // The time of day and weather are the Map Editor's (Viewport Rendering: Map Lighting), unless following the value.
@@ -1324,10 +1202,6 @@ public class CFG
     public bool TextureViewerLayout_ShowNames = false;
     public int TextureViewerLayout_Snap = 1;
 
-    // Tools
-    public bool Interface_TextureViewer_Tool_ExportTexture = true;
-    public bool Interface_TextureViewer_Tool_ImportTexture = true;
-
     // Texture Import: 0 = keep the replaced texture's format, otherwise the DXGI format to write
     public int TextureViewerImport_Format = 0;
     // 0 = match the replaced texture, 1 = full chain, 2 = top level only
@@ -1358,14 +1232,8 @@ public class CFG
     public bool Interface_MaterialEditor_ToolWindow = true;
 
     // Tools
-    public bool MaterialEditor_Tool_Data_Transfer = true;
-    public bool Interface_MaterialEditor_Tool_MaterialCheck = true;
     public bool MaterialEditor_Live_Preview = true;
     public bool MaterialEditor_FileList_Modified_Only = false;
-    public bool Interface_MaterialEditor_Tool_Search = true;
-    public bool Interface_MaterialEditor_Tool_UsedBy = true;
-    public bool Interface_MaterialEditor_Tool_ShaderInfo = true;
-    public bool Interface_MaterialEditor_Tool_InGame = true;
     public bool MaterialEditor_InGame_AutoRefresh = true;
     public bool MaterialEditor_InGame_SortRecent = true;
     public bool MaterialEditor_InGame_SendOnSave = false;
@@ -1388,10 +1256,6 @@ public class CFG
     public bool Interface_FileBrowser_FileList = true;
     public bool Interface_FileBrowser_ItemViewer = true;
     public bool Interface_FileBrowser_ToolView = true;
-
-    public bool Interface_FileBrowser_Tool_GameUnpacker = true;
-    public bool Interface_FileBrowser_Tool_FileExtract = true;
-    public bool Interface_FileBrowser_Tool_BinderSearch = true;
 
     public string UnpackDirectory = "";
     public string ExtractDirectory = "";
@@ -1433,9 +1297,6 @@ public class CFG
     public bool BehaviorEditor_Properties_Show_Hex = true;
     public bool BehaviorEditor_Transitions_Game_Order = true;
     public bool Interface_BehaviorEditor_ToolWindow = true;
-    public bool Interface_BehaviorEditor_Tool_Search = true;
-    public bool Interface_BehaviorEditor_Tool_UsedBy = true;
-    public bool Interface_BehaviorEditor_Tool_Problems = true;
     #endregion
 
     #region Sound Editor
@@ -1446,7 +1307,6 @@ public class CFG
     public bool SoundEditor_Loop = false;
     public bool SoundEditor_Play_On_Select = false;
     public bool Interface_SoundEditor_ToolWindow = true;
-    public bool Interface_SoundEditor_Tool_Search = true;
     public string SoundEditor_Export_Folder = "";
     public string SoundEditor_Import_Folder = "";
     #endregion
@@ -1461,12 +1321,6 @@ public class CFG
     public bool EmevdEditor_Allow_Unmodified_Save = false;
     public bool EmevdEditor_Allow_Automatic_Save = true;
     public bool Interface_EmevdEditor_ToolWindow = true;
-    public bool Interface_EmevdEditor_Tool_Palette = true;
-    public bool Interface_EmevdEditor_Tool_Templates = true;
-    public bool Interface_EmevdEditor_Tool_Problems = true;
-    public bool Interface_EmevdEditor_Tool_Search = true;
-    public bool Interface_EmevdEditor_Tool_MassEdit = true;
-    public bool Interface_EmevdEditor_Tool_CalledBy = true;
     #endregion
 
     #region ESD Editor
@@ -1475,9 +1329,6 @@ public class CFG
     ///------------------------------------------------------------
     public bool EsdEditor_Code_View = true;
     public bool Interface_EsdEditor_ToolWindow = true;
-    public bool Interface_EsdEditor_Tool_Palette = true;
-    public bool Interface_EsdEditor_Tool_Search = true;
-    public bool Interface_EsdEditor_Tool_CalledBy = true;
     #endregion
 
     #region FX Editor
@@ -1568,18 +1419,10 @@ public class CFG
 
     // Tools window, and its tools
     public bool Interface_CutsceneEditor_ToolWindow = true;
-    public bool Interface_CutsceneEditor_Tool_Filters = true;
-    public bool Interface_CutsceneEditor_Tool_CharacterPreview = true;
 
     // Tools window
     public bool Interface_FxEditor_ToolWindow = true;
     public bool Interface_FxEditor_CurveEditor = true;
-    public bool Interface_FxEditor_Tool_Preview = true;
-    public bool Interface_FxEditor_Tool_Search = true;
-    public bool Interface_FxEditor_Tool_References = true;
-    public bool Interface_FxEditor_Tool_Resources = true;
-    public bool Interface_FxEditor_Tool_GridConfiguration = true;
-    public bool Interface_FxEditor_Tool_ViewportRendering = true;
     #endregion
 
     #region Havok Editor
@@ -1602,9 +1445,6 @@ public class CFG
     public bool HavokEditor_Properties_Display_Raw_Data_Fields = true;
     public bool HavokEditor_Properties_Auto_Open_Tree = false;
     public bool HavokEditor_Properties_Display_Property_Bags = false;
-
-    public bool HavokEditor_ToolVisibility_CollisionGenerator = true;
-    public bool HavokEditor_ToolVisibility_ScriptReloader = true;
 
     // Whether the Collision Generator shows its FLVER mesh list and its 3D preview
     public bool HavokEditor_CollisionGen_Show_Flver_Meshes = true;

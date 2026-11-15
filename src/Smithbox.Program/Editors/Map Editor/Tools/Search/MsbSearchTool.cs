@@ -213,11 +213,6 @@ public class MsbSearchTool
 
     private void Show()
     {
-        if (Mode is MsbSearchMode.Local)
-            CFG.Current.Interface_MapEditor_Tool_LocalSearch = true;
-        else
-            CFG.Current.Interface_MapEditor_Tool_GlobalSearch = true;
-
         FocusRequested = true;
     }
     #endregion

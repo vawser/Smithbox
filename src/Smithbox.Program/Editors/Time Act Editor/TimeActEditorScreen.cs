@@ -157,7 +157,6 @@ public class TimeActEditorScreen : EditorScreen
                 if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Edit_History")}##historyAction"))
                 {
                     CFG.Current.Interface_TimeActEditor_ToolWindow = true;
-                    CFG.Current.Interface_TimeActEditor_Tool_History = true;
 
                     activeView.HistoryTool.FocusOnNextDraw = true;
                 }
@@ -192,6 +191,8 @@ public class TimeActEditorScreen : EditorScreen
         // Options
         if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##optionsMenuHeader"))
         {
+            ToolSections.ToolsOptionsMenu();
+
             // Auto Play
             if (ImGui.MenuItem($"{LOC.Get("TAE_Editor_Options_Auto_Play")}##autoPlayToggle"))
             {

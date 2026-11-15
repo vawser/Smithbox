@@ -137,24 +137,21 @@ public class GparamSearchTool
 
     #region Targeting
     /// <summary>
-    /// Fills an input from a list's context menu, and shows the tool so it can be seen
+    /// Fills an input from a list's context menu
     /// </summary>
     public void TargetFile(string filename)
     {
         FileText = filename;
-        Show();
     }
 
     public void TargetGroup(string groupKey)
     {
         GroupText = groupKey;
-        Show();
     }
 
     public void TargetField(string fieldKey)
     {
         FieldText = fieldKey;
-        Show();
     }
 
     /// <summary>
@@ -168,16 +165,8 @@ public class GparamSearchTool
         Value2Text = "";
         ValueTarget = GparamQueryValueTarget.ID;
         Comparison = GparamQueryComparison.Equals;
-        Show();
     }
 
-    private void Show()
-    {
-        if (Mode is GparamSearchMode.Local)
-            CFG.Current.Interface_GparamEditor_Tool_LocalSearch = true;
-        else
-            CFG.Current.Interface_GparamEditor_Tool_GlobalSearch = true;
-    }
     #endregion
 
     #region Inputs

@@ -215,7 +215,6 @@ public partial class GparamMassEditTool
         Changed();
         ClearResults();
 
-        CFG.Current.Interface_GparamEditor_Tool_MassEdit = true;
 
         PendingFind = true;
         SelectFindTab = true;

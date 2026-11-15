@@ -41,6 +41,8 @@ public class EmevdEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

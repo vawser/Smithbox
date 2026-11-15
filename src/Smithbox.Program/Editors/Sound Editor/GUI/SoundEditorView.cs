@@ -346,7 +346,7 @@ public class SoundEditorView : IDisposable
         ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowClass(ref GUI.DockGroup_SoundEditor);
 
-        if (ImGui.Begin($"{LOC.Get("SOUND_Window_Tools")}{SoundToolWindow.WindowId}", GUI.GetMainWindowFlags()))
+        if (ImGui.Begin($"{LOC.Get("SOUND_Window_Tools")}{SoundToolWindow.WindowId}", GUI.GetInnerWindowFlags()))
         {
             if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 FocusManager.SetFocus(EditorFocusContext.SoundEditor_ToolWindow);

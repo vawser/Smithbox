@@ -80,7 +80,7 @@ public class FileEditorView : IEditorView
             // Tools
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_FileBrowserView);
-            if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Tools")}###fileBrowser_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("FILE_FileBrowser_Tools")}###fileBrowser_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
                 {

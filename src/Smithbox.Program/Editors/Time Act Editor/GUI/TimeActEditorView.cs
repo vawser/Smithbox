@@ -269,7 +269,7 @@ public class TimeActEditorView : IEditorView
             // Tool Window
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_TimeActEditorView);
-            if (ImGui.Begin($@"{LOC.Get("TAE_Editor_Tool_Window")}##timeActEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("TAE_Editor_Tool_Window")}##timeActEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

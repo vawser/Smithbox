@@ -66,6 +66,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 ImGui.Text(LOC.Get("SYS_OpenGL_Texture_Viewer_Blocked"));
             }
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

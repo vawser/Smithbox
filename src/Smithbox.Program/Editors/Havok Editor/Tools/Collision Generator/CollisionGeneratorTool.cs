@@ -55,9 +55,6 @@ public class CollisionGeneratorTool
 
     public void Display()
     {
-        if (!CFG.Current.HavokEditor_ToolVisibility_CollisionGenerator)
-            return;
-
         if(ToolSections.Header($"{LOC.Get("HAVOK_Tools_Collision_Generator_Tool")}##collisionGeneratorTool"))
         {
             ImGui.BeginChild("CollisionGeneratorSection", ImGuiChildFlags.Borders);

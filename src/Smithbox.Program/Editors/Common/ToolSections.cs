@@ -97,14 +97,28 @@ public class ToolSections
     }
 
     /// <summary>
-    /// The Options menu for the menubar of a Tools window.
+    /// The Tools submenu of an editor's Options menu: the Tools window's navigation options.
     /// </summary>
-    public static void OptionsMenu()
+    public static void ToolsOptionsMenu()
     {
-        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##toolOptionsMenuHeader"))
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Options_Tools_Header")}##toolsOptionsMenu"))
         {
             ImGui.Checkbox($"{LOC.Get("PREF_Interface_Tool_Window_Dropdown_Navigation")}##toolDropdownNavigation", ref CFG.Current.Interface_Tool_Window_Dropdown_Navigation);
             GUI.Tooltip(LOC.Get("PREF_Interface_Tool_Window_Dropdown_Navigation_TT"));
+
+            ImGui.EndMenu();
+        }
+    }
+
+    /// <summary>
+    /// An Options menu holding only <see cref="ToolsOptionsMenu"/>, for the menubar of an editor that has no
+    /// Options menu of its own.
+    /// </summary>
+    public static void EditorOptionsMenu()
+    {
+        if (ImGui.BeginMenu($"{LOC.Get("EDITOR_Menubar_Header_Options")}##optionsMenuHeader"))
+        {
+            ToolsOptionsMenu();
 
             ImGui.EndMenu();
         }

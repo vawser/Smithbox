@@ -271,7 +271,6 @@ public partial class ModelEdgeEditorTool
         if (wrapper?.EDGE == null || index < 0 || index >= wrapper.EDGE.Edges.Count)
             return;
 
-        CFG.Current.Interface_ModelEditor_Tool_EdgeEditor = true;
         CFG.Current.ModelEditor_DisplayEdgePoints = true;
         FocusOnNextDraw = true;
 

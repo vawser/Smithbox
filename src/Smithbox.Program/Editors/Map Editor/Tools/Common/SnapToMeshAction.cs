@@ -195,7 +195,7 @@ public class SnapToMeshAction
         var frame = ImGui.GetFrameCount();
 
         // Drawn this frame or the last, as the Tools window may be drawn before or after this
-        var shown = ShownFrame >= frame - 1 && CFG.Current.Interface_MapEditor_Tool_SnapToMesh;
+        var shown = ShownFrame >= frame - 1;
 
         if (!shown && PreviewWasShown)
         {

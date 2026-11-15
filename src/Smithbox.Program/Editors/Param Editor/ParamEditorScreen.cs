@@ -80,6 +80,8 @@ public class ParamEditorScreen : EditorScreen
                 activeView.ToolMenu.ParamUpgrader.ParamUpgradeWarning();
             }
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

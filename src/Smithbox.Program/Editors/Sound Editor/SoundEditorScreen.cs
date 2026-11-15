@@ -40,6 +40,8 @@ public class SoundEditorScreen : EditorScreen, IDisposable
             FileMenu();
             EditMenu();
             ViewMenu();
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

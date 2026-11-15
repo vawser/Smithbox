@@ -238,7 +238,6 @@ public partial class MsbMassEditTool
         Changed();
         ClearResults();
 
-        CFG.Current.Interface_MapEditor_Tool_MassEdit = true;
         FocusRequested = true;
 
         PendingFind = true;

@@ -129,6 +129,10 @@
       "Text": "Options"
     },
     {
+      "Key": "EDITOR_Options_Tools_Header",
+      "Text": "Tools"
+    },
+    {
       "Key": "EDITOR_ToolSections_Dropdown_TT",
       "Text": "The tool to show. Tools are grouped by category."
     },

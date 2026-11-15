@@ -491,6 +491,8 @@ public class CutsceneEditorScreen : EditorScreen
                 ImGui.Text(LOC.Get("SYS_OpenGL_Viewport_Blocked"));
             }
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 
@@ -503,7 +505,7 @@ public class CutsceneEditorScreen : EditorScreen
 
         // Its own menu bar (View, Options), as the other editors' Tools windows have
         if (CFG.Current.Interface_CutsceneEditor_ToolWindow)
-            Window($"{LOC.Get("CUTSCENE_Window_Tools")}###cutsceneEditor_Tools", dsid, EditorFocusContext.CutsceneEditor_Tools, ToolWindow.Display, GUI.GetMainWindowFlags());
+            Window($"{LOC.Get("CUTSCENE_Window_Tools")}###cutsceneEditor_Tools", dsid, EditorFocusContext.CutsceneEditor_Tools, ToolWindow.Display, GUI.GetInnerWindowFlags());
 
         // The viewport window sets the focus itself
         ViewportWindow.Display(dsid);

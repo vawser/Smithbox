@@ -47,7 +47,6 @@ public class EsdSearchTool
         FlagsOnly = flagsOnly;
         AllFiles = true;
         CFG.Current.Interface_EsdEditor_ToolWindow = true;
-        CFG.Current.Interface_EsdEditor_Tool_Search = true;
         FocusNext = true;
         Start(value);
     }

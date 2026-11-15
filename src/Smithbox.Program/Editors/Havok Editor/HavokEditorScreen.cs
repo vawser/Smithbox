@@ -181,6 +181,8 @@ public class HavokEditorScreen : EditorScreen
             EditMenu();
             ViewMenu();
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

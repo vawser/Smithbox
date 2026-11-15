@@ -529,7 +529,6 @@ public class ViewportRenderingTool
         if (ImGui.Button($"{LOC.Get("VIEWPORT_Menubar_GI_Open_Tool")}##giOpenTool"))
         {
             CFG.Current.Interface_MapEditor_ToolWindow = true;
-            CFG.Current.Interface_MapEditor_Tool_IrradianceVolumeIds = true;
             view.IrradianceVolumeIdTool.FocusRequested = true;
         }
         GUI.Tooltip(LOC.Get("VIEWPORT_Menubar_GI_Open_Tool_TT"));

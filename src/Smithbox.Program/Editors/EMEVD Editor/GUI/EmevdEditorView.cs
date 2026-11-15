@@ -68,7 +68,7 @@ public class EmevdEditorView
         Window("EMEVD_Window_Script", "emevdEditor_Script", EditorFocusContext.EmevdEditor_Script, dockspaceId, BlockView.Draw);
         Window("EMEVD_Window_Properties", "emevdEditor_Properties", EditorFocusContext.EmevdEditor_Properties, dockspaceId, Properties.Draw);
         if (CFG.Current.Interface_EmevdEditor_ToolWindow)
-            Window("EMEVD_Window_Tools", "emevdEditor_Tools", EditorFocusContext.EmevdEditor_Tools, dockspaceId, ToolWindow.Draw, GUI.GetMainWindowFlags());
+            Window("EMEVD_Window_Tools", "emevdEditor_Tools", EditorFocusContext.EmevdEditor_Tools, dockspaceId, ToolWindow.Draw, GUI.GetInnerWindowFlags());
 
         EventCommands.DisplayPopups();
 

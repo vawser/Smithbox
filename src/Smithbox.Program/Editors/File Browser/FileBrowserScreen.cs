@@ -63,6 +63,8 @@ public class FileBrowserScreen : EditorScreen
             // No Edit menu: nothing in the File Browser records undoable actions (EditMenu kept for when it does)
             ViewMenu();
 
+            ToolSections.EditorOptionsMenu();
+
             ImGui.EndMenuBar();
         }
 

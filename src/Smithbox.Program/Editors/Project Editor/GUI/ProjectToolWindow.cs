@@ -21,50 +21,21 @@ public class ProjectToolWindow
 
     public void Draw()
     {
-
-        if (ImGui.BeginMenuBar())
-        {
-            // View
-            if (ImGui.BeginMenu($"{LOC.Get("PROJECT_Tools_Header_Tools")}##viewMenuHeader"))
-            {
-                // Project Merge
-                if (ImGui.MenuItem($"{LOC.Get("PROJECT_Tools_View_Project_Merge")}##viewToggle_ProjectMerge"))
-                {
-                    CFG.Current.ProjectEditor_Show_Tool_ProjectMerge = !CFG.Current.ProjectEditor_Show_Tool_ProjectMerge;
-                }
-                GUI.ShowActiveStatus(CFG.Current.ProjectEditor_Show_Tool_ProjectMerge);
-
-                ImGui.EndMenu();
-            }
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         var curProject = Smithbox.Orchestrator.SelectedProject;
 
         if (curProject != null && curProject.Initialized && curProject.Handler != null)
         {
-            if (!CFG.Current.ProjectEditor_Show_Tool_ProjectMerge)
+            var activeView = curProject.Handler.ParamEditor?.ViewHandler.ActiveView;
+
+            if (activeView != null)
             {
-                // Every tool is toggled off in the Tools menu
-                GUI.WrappedText(LOC.Get("PROJECT_Tools_No_Tools_Enabled"));
+                DisplayProjectMerge(activeView);
             }
             else
             {
-                var activeView = curProject.Handler.ParamEditor?.ViewHandler.ActiveView;
-
-                if (activeView != null)
-                {
-                    DisplayProjectMerge(activeView);
-                }
-                else
-                {
-                    GUI.WrappedText(LOC.Get("PROJECT_Tools_Project_Merge_Requires_Param_Editor"));
-                }
+                GUI.WrappedText(LOC.Get("PROJECT_Tools_Project_Merge_Requires_Param_Editor"));
             }
         }
         else

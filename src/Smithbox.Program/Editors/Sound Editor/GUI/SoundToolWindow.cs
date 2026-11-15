@@ -23,15 +23,6 @@ public class SoundToolWindow
 
     public void Display()
     {
-        if (ImGui.BeginMenuBar())
-        {
-            ViewMenu();
-
-            ToolSections.OptionsMenu();
-
-            ImGui.EndMenuBar();
-        }
-
         Sections.Begin();
 
         // Search & Edit
@@ -39,27 +30,8 @@ public class SoundToolWindow
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));
 
 
-        if (CFG.Current.Interface_SoundEditor_Tool_Search)
-        {
-            View.SearchTool.OnToolWindow();
-        }
+        View.SearchTool.OnToolWindow();
 
         Sections.End();
-    }
-
-    public void ViewMenu()
-    {
-        // View
-        if (ImGui.BeginMenu($"{LOC.Get("SOUND_ToolWindow_View_Header")}##viewMenuHeader"))
-        {
-            // Search
-            if (ImGui.MenuItem($"{LOC.Get("SOUND_ToolWindow_View_Toggle_Search")}##searchToolToggle"))
-            {
-                CFG.Current.Interface_SoundEditor_Tool_Search = !CFG.Current.Interface_SoundEditor_Tool_Search;
-            }
-            GUI.ShowActiveStatus(CFG.Current.Interface_SoundEditor_Tool_Search);
-
-            ImGui.EndMenu();
-        }
     }
 }

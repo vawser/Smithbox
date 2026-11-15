@@ -177,7 +177,7 @@ public class ParamEditorView : IEditorView
         {
             ImGui.SetNextWindowDockID(dockspaceId, ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowClass(ref GUI.DockGroup_ParamEditorView);
-            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", GUI.GetMainWindowFlags()))
+            if (ImGui.Begin($@"{LOC.Get("PARAM_Window_Tool_Window")}###paramEditor_ToolWindow_{viewIndex}", GUI.GetInnerWindowFlags()))
             {
                 var width = ImGui.GetContentRegionAvail().X;
                 var height = ImGui.GetContentRegionAvail().Y;

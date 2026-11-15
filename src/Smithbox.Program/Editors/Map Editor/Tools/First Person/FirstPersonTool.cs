@@ -84,7 +84,7 @@ public partial class FirstPersonTool
 
     public bool CanUse() => World.CanUse();
 
-    private bool IsEnabled => CFG.Current.Interface_MapEditor_Tool_FirstPerson && CanUse();
+    private bool IsEnabled => CanUse();
 
     public static FirstPersonCapsule PlayerCapsule => new(CFG.Current.MapEditor_FirstPerson_Radius, CFG.Current.MapEditor_FirstPerson_Height);
 
