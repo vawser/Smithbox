@@ -25,3 +25,8 @@ bool Transitional_IndirectLight(Surface s, vec3 ambientDiffuse, out vec3 light)
 void Transitional_Albedo(inout vec4 diffuseColor)
 {
 }
+
+// The shared core's tangent space (x along T, y along B)
+void Transitional_TangentNormal(inout vec3 n)
+{
+}

@@ -65,7 +65,7 @@ public class RenderSnapshotEntry
 /// size, waits for its resources and the auto exposure to settle, and saves the tone mapped scene as a PNG. A run is
 /// compared with a baseline by Tools/RenderSnapshotDiff. Plan: Documentation/Shader Family Split Plan.md, S1.
 /// </summary>
-public class ModelRenderSnapshotTool
+public class ModelRenderSnapshotTool : IAutomatedCapture
 {
     private enum Stage { Idle, Loading, Settling, Capturing }
 
@@ -113,6 +113,7 @@ public class ModelRenderSnapshotTool
     // Settings changed for the run, put back after it
     private bool SavedTaa;
     private float SavedFov;
+    private CaptureDisplay SavedDisplay;
 
     private string Status = "";
 
@@ -343,6 +344,9 @@ public class ModelRenderSnapshotTool
         SavedFov = CFG.Current.Viewport_Camera_FOV;
         CFG.Current.Viewport_Post_Taa = false;
         CFG.Current.Viewport_Camera_FOV = RunSet.Fov;
+
+        // The models alone: no dummy or bone markers, labels or asset collision (the grid stays, as the baselines have it)
+        SavedDisplay = CaptureDisplay.Hide(View.RenderScene, hideGrid: false);
 
         MaterialClock.FixedTime = RunSet.Time;
         viewport.CaptureSize = (RunSet.Width, RunSet.Height);
@@ -603,6 +607,8 @@ public class ModelRenderSnapshotTool
 
         CFG.Current.Viewport_Post_Taa = SavedTaa;
         CFG.Current.Viewport_Camera_FOV = SavedFov;
+        SavedDisplay?.Restore();
+        SavedDisplay = null;
         MaterialClock.FixedTime = null;
 
         var ok = Results.Count(r => r.Outcome == "ok");

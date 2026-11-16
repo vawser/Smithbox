@@ -56,9 +56,15 @@ public static class RenderSnapshotAutomation
     /// <summary>Reads the command line. Called before Smithbox starts.</summary>
     public static void Configure(string[] args)
     {
+        // --material-oracle runs the material oracle instead (MaterialOracleTool), with the same project handling:
+        // Smithbox.exe --material-oracle ER --snapshot-root <dir> [--oracle-set <file>] [--game-data <game_data.txt>]
         var games = Value(args, "--render-snapshots");
-        if (games == null)
+        var oracleGames = Value(args, "--material-oracle");
+        if (games == null && oracleGames == null)
             return;
+
+        Oracle = games == null;
+        games ??= oracleGames;
 
         Root = Value(args, "--snapshot-root");
         if (string.IsNullOrWhiteSpace(Root))
@@ -76,8 +82,22 @@ public static class RenderSnapshotAutomation
         Log = new StreamWriter(Path.Join(Root, "automation.log"), append: false) { AutoFlush = true };
         Active = true;
 
-        Write($"Render snapshot automation: {string.Join(", ", Games)} into {Root}, game data from {GameDataPath}");
+        if (Oracle)
+        {
+            // Before anything loads, so every pipeline is built for it (no culling)
+            StudioCore.Renderer.MaterialOracleCapture.Active = true;
+            MaterialOracleTool.Root = Root;
+            MaterialOracleTool.SetPath = Value(args, "--oracle-set");
+        }
+
+        Write($"{(Oracle ? "Material oracle" : "Render snapshot")} automation: {string.Join(", ", Games)} into {Root}, game data from {GameDataPath}");
     }
+
+    /// <summary>Whether the run is the material oracle's rather than the render snapshots'</summary>
+    private static bool Oracle;
+
+    private static IAutomatedCapture ToolOf(ModelEditorView view) =>
+        Oracle ? view?.MaterialOracleTool : view?.RenderSnapshotTool;
 
     private static string Value(string[] args, string name)
     {
@@ -271,13 +291,14 @@ public static class RenderSnapshotAutomation
             return;
         }
 
-        if (view?.RenderSnapshotTool == null || models == null || models.Count == 0)
+        if (ToolOf(view) == null || models == null || models.Count == 0)
             return;
 
         if (view.ViewportWindow?.Viewport is not VulkanViewport { Visible: true })
             return;
 
-        RunStarted = view.RenderSnapshotTool.Start(out var reason);
+        Write($"{game}: starting {ToolOf(view).GetType().Name}");
+        RunStarted = ToolOf(view).Start(out var reason);
 
         if (!RunStarted)
         {
@@ -293,7 +314,7 @@ public static class RenderSnapshotAutomation
     private static void UpdateCapturing()
     {
         var game = Games[GameIndex];
-        var tool = Project.Handler.ModelEditor.ViewHandler?.ActiveView?.RenderSnapshotTool;
+        var tool = ToolOf(Project.Handler.ModelEditor.ViewHandler?.ActiveView);
 
         // The editor is kept in front, as the snapshot is only drawn while the viewport is on screen
         Project.Handler.FocusEditorWindow(Project.Handler.ModelEditor);

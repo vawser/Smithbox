@@ -50,6 +50,18 @@ bool FamilyIndirectLight(Surface s, vec3 ambientDiffuse, out vec3 light)
 	return Modern_IndirectLight(s, ambientDiffuse, light);
 }
 
+// A normal map's tangent space value (x, y, z), just before fsin_worldToTangent turns it into world space, whose
+// columns are T (the FLVER tangent), B (cross(N, T) * w) and N. Modern: ER, AC6 and NR take x along B and y along T
+void FamilyTangentNormal(inout vec3 n)
+{
+	if (c_isLegacy)
+		Legacy_TangentNormal(n);
+	else if (c_isTransitional)
+		Transitional_TangentNormal(n);
+	else
+		Modern_TangentNormal(n);
+}
+
 // The sampled albedo, before the material's diffuse color and the overlays. Legacy: DES vertex color
 void FamilyAlbedo(inout vec4 diffuseColor)
 {

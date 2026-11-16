@@ -28,6 +28,9 @@ public class SceneRenderPipeline
     /// <summary>The HDR target the scene is drawn into, before <see cref="ToneMap" /> takes it to the screen</summary>
     public SceneTarget Target { get; } = new();
 
+    /// <summary>The material oracle's readback of <see cref="Target" />, see <see cref="MaterialOracleCapture" /></summary>
+    public MaterialOracleCapture Oracle { get; } = new();
+
     public ToneMapPass ToneMap { get; } = new();
 
     /// <summary>The screen effects run on <see cref="Target" /> before <see cref="ToneMap" /> reads it</summary>
@@ -432,6 +435,9 @@ public class SceneRenderPipeline
     /// </summary>
     public void CaptureSceneDepth(CommandList cl)
     {
+        // The material oracle's attachments, before anything is laid over the opaque draws
+        Oracle.Record(Device, cl, Target);
+
         SceneDepth.Capture(Device, cl, Target.Depth);
 
         // The colour behind the transparent draws, for the FX Editor's screen effects; only while one asks for it
@@ -698,9 +704,11 @@ public class SceneRenderPipeline
             SceneParams.MapLightStart = SceneRenderer.MapLights.Start;
             SceneParams.MapLightCount = UseMapLights && gameMode ? SceneRenderer.MapLights.Count : 0;
             SceneParams.LightmapStart = SceneRenderer.Lightmaps?.Start ?? 0;
-            SceneParams.LightingDebugView = gameMode
-                ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
-                : RenderMode.FullbrightView;
+            SceneParams.LightingDebugView = MaterialOracleCapture.Active
+                ? MaterialOracleCapture.LightingView
+                : gameMode
+                    ? (uint)Math.Clamp(CFG.Current.Viewport_Lighting_Debug_View, 0, 3)
+                    : RenderMode.FullbrightView;
 
             SceneParams.LightCount = (uint)lights.Count;
             fixed (float* destination = SceneParams.Lights)

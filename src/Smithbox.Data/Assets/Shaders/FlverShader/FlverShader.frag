@@ -690,6 +690,9 @@ vec4 SampleLayered(int row, bool blendLayers)
 #ifdef MATERIAL_BLEND
 // The game's shaders mix each layer over the ones before it. The rest of this
 // file adds up layers by weight, so each mix takes its share from the layers below
+// A family's own tangent space for a normal map's value, before fsin_worldToTangent (Families.glsl, included further down)
+void FamilyTangentNormal(inout vec3 n);
+
 void ComputeRecipeWeights()
 {
 	layerTilingData tiling = layertilingdata[g_mat + 4u];
@@ -738,6 +741,7 @@ void ComputeRecipeWeights()
 			vec3 n;
 			n.xy = SampleLayer(ROW_NORMAL, 0).xy * 2.0 - 1.0;
 			n.z = sqrt(1.0 - min(dot(n.xy, n.xy), 1.0));
+			FamilyTangentNormal(n);
 			n = normalize(fsin_worldToTangent * n);
 			vec3 direction = layerdetaildata[g_mat + 13u].channels[1].yzw;
 			value = clamp(layerdetailextradata[g_mat + 14u].layer[i - 1].w + dot(n, direction), 0.0, 1.0);
@@ -1808,6 +1812,9 @@ float SunShadow(vec3 worldPos, vec3 geometryNormal, vec3 sunTravel)
 // same, EDITOR_SURFACE being what Texturing (Normal) sends.
 #define LIGHTING_VIEW_EDITOR 4u
 #define LIGHTING_VIEW_EDITOR_SURFACE 5u
+// The material oracle: the mesh drawn in UV space with a fixed frame (FlverShader.vert), writing its material's values
+// instead of light. Only set by the --material-oracle run (MaterialOracleTool)
+#define LIGHTING_VIEW_ORACLE 6u
 
 // The end of every pixel: the selection tint, the fog on transparents, the display curve and the outputs.
 // litColor already has the glow added; the indirect outputs are from g_indirectDiffuse and g_indirectSpecular.
@@ -2166,11 +2173,19 @@ void main()
 
 	normalMap.z = sqrt(1.0 - min(dot(normalMap.xy, normalMap.xy), 1.0));
 	normalMap = normalize(normalMap);
+	FamilyTangentNormal(normalMap);
 	normalMap = normalize(fsin_worldToTangent * normalMap);
 
 	// In rain, what faces the sky darkens and turns glossier, walls half as much, and what faces down not at all.
 	// What is under a roof stays dry, by the rain map.
 	vec3 albedo = diffuseColor.xyz * diffuseAlpha.xyz;
+
+	// The material oracle's values, before the weather and the metal take their share (see LIGHTING_VIEW_ORACLE)
+	vec3 oracleAlbedo = albedo;
+	float oracleMetallic = 0.0;
+	vec3 oracleNormal = normalMap;
+	float oracleRoughness = roughness;
+
 	if (sceneparam.wetAlbedo.a > 0.0 || sceneparam.wetShininess.y > 0.0)
 	{
 		vec3 faceNormal = normalize(fsin_worldToTangent[2]) * (gl_FrontFacing ? 1.0 : -1.0);
@@ -2208,6 +2223,7 @@ void main()
 #endif
 		F0 = mix(vec3(0.04), albedo, metallic);
 		albedo *= 1.0 - metallic;
+		oracleMetallic = metallic;
 	}
 
 	Surface surface;
@@ -2373,6 +2389,20 @@ void main()
 	}
 
 	litColor += glow;
+
+	// The material oracle (Claude/Documentation/Material Fidelity/Oracle.md): the surface's own values, laid out for
+	// the targets' precision rather than lit. Color: albedo before the metal's share, a metallic. Surface: the world
+	// normal as the game's G-buffer stores it (n * 0.5 + 0.5, unflipped, as the drawing is in UV space), w gloss.
+	// Indirect: 1 where a pixel was drawn. Glow: the emissive light.
+	if (sceneparam.lightingDebugView == LIGHTING_VIEW_ORACLE)
+	{
+		fsout_color = vec4(oracleAlbedo, oracleMetallic);
+		fsout_surface = vec4(oracleNormal * 0.5 + 0.5, 1.0 - oracleRoughness);
+		fsout_indirect = vec4(1.0, 0.0, 0.0, 1.0);
+		fsout_reflection = vec4(0.0, 0.0, 0.0, 1.0);
+		fsout_glow = vec4(max(glow, vec3(0.0)), 1.0);
+		return;
+	}
 
 	WritePixel(litColor, alpha, glow, surface.N, surface.roughness, max(F0.r, max(F0.g, F0.b)), wireCoverage);
 }

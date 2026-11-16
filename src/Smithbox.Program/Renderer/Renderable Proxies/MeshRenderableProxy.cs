@@ -852,7 +852,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             ? DepthStencilStateDescription.DepthOnlyGreaterEqual
             : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
         pipelineDescription.RasterizerState = WithDecalBias(new RasterizerStateDescription(
-            _meshProvider.CullMode,
+            MaterialOracleCapture.CullFor(_meshProvider.CullMode),
             _meshProvider.FillMode,
             _meshProvider.FrontFace,
             true,

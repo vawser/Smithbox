@@ -56,6 +56,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
     public ModelHistoryTool HistoryTool;
     public ModelVanillaCompareTool VanillaCompareTool;
     public ModelRenderSnapshotTool RenderSnapshotTool;
+    public MaterialOracleTool MaterialOracleTool;
     public ModelDummyTool DummyTool;
     public ModelEdgeEditorTool EdgeEditorTool;
     public ModelGrassBuilderTool GrassBuilderTool;
@@ -125,6 +126,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
         VanillaCompare = new ModelVanillaCompare(this, Project);
         VanillaCompareTool = new ModelVanillaCompareTool(this, Project);
         RenderSnapshotTool = new ModelRenderSnapshotTool(this, Project);
+        MaterialOracleTool = new MaterialOracleTool(this, Project);
         DummyTool = new ModelDummyTool(this, Project);
         EdgeEditorTool = new ModelEdgeEditorTool(this, Project);
         GrassBuilderTool = new ModelGrassBuilderTool(this, Project);
@@ -553,6 +555,7 @@ public class ModelEditorView : IEditorView, IActionEventHandler
 
         // A render snapshot run carries on whether its tool is shown or not
         RenderSnapshotTool.Update();
+        MaterialOracleTool.Update();
 
         ToolView.View.ModelExportTool.DetectFlverSelectionMenu();
         ToolView.View.ModelExportTool.DisplayFlverSelectionMenu();

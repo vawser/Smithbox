@@ -602,6 +602,15 @@ void main()
 
 	gl_Position = sceneparam.projection * sceneparam.view * worldPos;
 
+	// The material oracle (lighting view 6, FlverShader.frag): drawn in UV space, at one depth so later triangles
+	// win as in the game's side, with the frame game models have and the game's side uses: flat (N = z), the
+	// tangent along +V (y) with w = -1, so cross(N, T) * w, this shader's B, lies along +U (x)
+	if (sceneparam.lightingDebugView == 6u)
+	{
+		fsin_worldToTangent = mat3(vec3(0.0, 1.0, 0.0), vec3(1.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0));
+		gl_Position = vec4(fsin_texcoord * 2.0 - 1.0, 0.5, 1.0);
+	}
+
 #ifdef OUTLINE
 	// Pushed out along the normal in screen space, so it keeps its width at any distance
 	vec3 screenNormal = mat3(sceneparam.projection) * mat3(sceneparam.view) * N;

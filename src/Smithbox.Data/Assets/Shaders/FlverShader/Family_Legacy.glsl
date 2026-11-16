@@ -73,3 +73,8 @@ void Legacy_Albedo(inout vec4 diffuseColor)
 	if (c_gameID == GAME_DES)
 		diffuseColor.rgb *= fsin_color.rgb;
 }
+
+// The shared core's tangent space (x along T, y along B)
+void Legacy_TangentNormal(inout vec3 n)
+{
+}

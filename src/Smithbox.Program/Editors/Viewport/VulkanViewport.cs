@@ -265,6 +265,7 @@ public class VulkanViewport : IViewport
             {
                 // A snapshot taken frames ago is read once they are done
                 Snapshot.Update(d);
+                ViewPipeline.Oracle.Update(d);
 
                 // The screen effects run on the scene first, binding their own targets
                 var frameLighting = ViewPipeline.ActiveMapLighting;
