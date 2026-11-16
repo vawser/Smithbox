@@ -211,6 +211,7 @@ public class ViewportCamera
             if (RightMousePressed)
             {
                 MousePos = InputManager.MousePosition;
+                EndRelativeMouse();
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
                 SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.False);
                 SDL.ShowCursor(1);
@@ -366,17 +367,18 @@ public class ViewportCamera
                     MousePressPos = InputManager.MousePosition;
                     SDL.ShowCursor(0);
                     SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.True);
+                    BeginRelativeMouse();
                 }
             }
             else
             {
-                int windowX = 0;
-                int windowY = 0;
+                // The motion of every mouse event since the last frame, so a slow frame turns the camera as far as
+                // the mouse moved rather than as far as the cursor got before reaching the edge of the window
+                Vector2 mouseDelta = -window.MouseDelta;
 
-                Vector2 mouseDelta = MousePressPos - InputManager.MousePosition;
-
-                SDL.GetWindowPosition(window.SdlWindowHandle, ref windowX, ref windowY);
-                SDL.WarpMouseGlobal(windowX + (int)MousePressPos.X, windowY + (int)MousePressPos.Y);
+                // Relative mode leaves the cursor where it is, but its reported position still drifts, so it is kept at
+                // the press point for the hover checks that decide whether the viewport takes input
+                SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
 
                 var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
                 var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
@@ -395,12 +397,29 @@ public class ViewportCamera
         {
             if (RightMousePressed)
             {
+                EndRelativeMouse();
                 SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressPos.X, (int)MousePressPos.Y);
                 SDL.SetWindowGrab(window.SdlWindowHandle, SdlBool.False);
                 SDL.ShowCursor(1);
                 RightMousePressed = false;
             }
         }
+    }
+
+    /// <summary>
+    /// Has SDL report the mouse's motion rather than the cursor's position, so a look isn't cut short by the cursor
+    /// reaching the edge of the window or screen between two slow frames. The motion keeps the system's pointer speed
+    /// and acceleration, so the look feels as it did with the cursor.
+    /// </summary>
+    private void BeginRelativeMouse()
+    {
+        SDL.SetHint("SDL_MOUSE_RELATIVE_SYSTEM_SCALE", "1");
+        SDL.SetRelativeMouseMode(SdlBool.True);
+    }
+
+    private void EndRelativeMouse()
+    {
+        SDL.SetRelativeMouseMode(SdlBool.False);
     }
 
     public unsafe void HandleMousePanning(Sdl2Window window)
