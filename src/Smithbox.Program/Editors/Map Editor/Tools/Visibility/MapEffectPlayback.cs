@@ -100,7 +100,16 @@ public sealed class MapEffectPlayback : IDisposable
         _view = view;
         _project = project;
         _defs = new FxDefCache(() => project.Handler.FxData);
+        _preload = new FxPreload(_defs);
     }
+
+    // An element's effect starts once it is ready (built, textures and models loaded), so it doesn't stall as it shows
+    private readonly FxPreload _preload;
+
+    /// <summary>The effects in range, and how many of them are ready to play</summary>
+    public int LoadingCount => _preload.Count;
+    public int LoadedCount => _preload.ReadyCount;
+    public bool IsLoading => !_preload.IsDone;
 
     /// <summary>Whether time moves on. Paused effects stay on show where they are.</summary>
     public bool IsPlaying { get; private set; } = true;
@@ -224,9 +233,11 @@ public sealed class MapEffectPlayback : IDisposable
         // Paused effects are only drawn, a stopped one has been dropped
         var advance = IsPlaying ? Math.Clamp(dt, 0, 0.1f) * Speed : 0;
 
+        // Before stepping: the effects' textures and models are loaded through it
+        _display ??= CreateDisplay();
+
         StepEffects(eye, advance);
 
-        _display ??= CreateDisplay();
         _display?.Update(_instances, eye, forward);
     }
 
@@ -514,12 +525,20 @@ public sealed class MapEffectPlayback : IDisposable
         foreach (var gone in _running.Keys.Where(k => !wanted.ContainsKey(k)).ToList())
             _running.Remove(gone);
 
+        _preload.Set(wanted.Values.Select(s => s.EffectId));
+        _preload.Update(_display);
+
         _instances.Clear();
         ParticleCount = 0;
         MissingCount = 0;
 
         foreach (var (key, source) in wanted)
         {
+            // Not started until it's ready: building it here would stall the frame it first shows in
+            if ((!_running.TryGetValue(key, out var started) || started.EffectId != source.EffectId)
+                && !_preload.IsReady(source.EffectId))
+                continue;
+
             // The definition (again, if the FX Editor changed the effect)
             var def = _defs.Get(source.EffectId);
             if (def == null)

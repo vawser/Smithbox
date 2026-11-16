@@ -719,7 +719,9 @@ public class CutsceneEditorView : IEditorView
 
         if (Scene != null)
         {
-            Playback.Update(dt, Scene.Framerate, Scene.FrameCount);
+            // The clock waits while the cut's effects load (read last frame), so they don't stall as they first show
+            var held = Effects.IsLoading;
+            Playback.Update(held ? 0 : dt, Scene.Framerate, Scene.FrameCount);
 
             if (Playback.ReachedEnd && SelectedFile?.Mqb is { } mqb)
             {
@@ -731,8 +733,8 @@ public class CutsceneEditorView : IEditorView
             }
 
             Scene?.Update(Playback.Frame);
-            Subtitles.Update(Scene, Playback.Frame, Playback.Playing);
-            Sounds.Update(Scene, Playback.Frame, Playback.Playing);
+            Subtitles.Update(Scene, Playback.Frame, Playback.Playing && !held);
+            Sounds.Update(Scene, Playback.Frame, Playback.Playing && !held);
 
             // The lighting the viewport borrows, once there is something to light (as the FX Editor does)
             Project.Handler.ViewportEnvironment.Update();

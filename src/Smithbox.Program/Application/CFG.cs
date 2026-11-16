@@ -1029,6 +1029,11 @@ public class CFG
     public bool ProjectileEditor_Display_Reach = true;
     public bool ProjectileEditor_Display_Damage = true;
     public bool ProjectileEditor_Display_Ground_Grid = true;
+    public bool ProjectileEditor_Display_Bullets = true;
+    public bool ProjectileEditor_Display_Impacts = true;
+    public bool ProjectileEditor_Display_Target = true;
+    public bool ProjectileEditor_Display_Target_Path = true;
+    public bool ProjectileEditor_Display_Wall = true;
     public bool ProjectileEditor_Frame_On_Select = false;
     public bool ProjectileEditor_Loop = true;
     public float ProjectileEditor_Speed = 1.0f;

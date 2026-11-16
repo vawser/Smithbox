@@ -286,6 +286,9 @@ public class ViewportFiltersAction
                 status += $", {playback.MissingCount} not in the FX bank";
 
             GUI.WrappedText(status);
+
+            if (playback.IsLoading)
+                GUI.WrappedText(LOC.Get("FX_Display_Loading_Map_Effects", playback.LoadedCount, playback.LoadingCount));
         }
     }
 

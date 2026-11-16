@@ -128,10 +128,13 @@ public class TimeActPlayback
             }
         }
 
+        // The clock waits while the animation's effects load (read last frame), so they don't stall as they first show
+        var held = Effects.IsLoading;
+
         if (animator != null)
         {
             animator.Loop = Loop;
-            animator.Speed = Speed;
+            animator.Speed = held ? 0 : Speed;
 
             // Takes effect with the next pose, which a change of this asks for
             animator.ApplyRootMotion = CFG.Current.TimeActEditor_Apply_Root_Motion;
@@ -139,7 +142,7 @@ public class TimeActPlayback
             _time = animator.Time;
             _playing = animator.Playing;
         }
-        else if (_playing)
+        else if (_playing && !held)
         {
             AdvanceClock();
         }
@@ -148,7 +151,7 @@ public class TimeActPlayback
         RootMotionDisplay.Update(animator);
 
         // While a clip is on its way the clock stands still, and the sounds wait with it
-        Sounds.Update(_time, _playing && !IsClipLoading);
+        Sounds.Update(_time, _playing && !IsClipLoading && !held);
 
         // After the event display, which has found the dummies the effects sit on for this pose
         Effects.Update(animator, _time);

@@ -64,6 +64,11 @@ public sealed class TimeActEffectPlayback : IDisposable
     public int ParticleCount => _player.ParticleCount;
     public int MissingCount => _player.MissingCount;
 
+    /// <summary>Whether the animation's effects are still loading: the clock waits, so their first showing doesn't stall</summary>
+    public bool IsLoading => _player.IsLoading;
+    public int LoadingCount => _player.Preload.Count;
+    public int LoadedCount => _player.Preload.ReadyCount;
+
     /// <summary>
     /// Makes the cues again, for when an event was edited or the character's parts changed
     /// </summary>
@@ -108,6 +113,7 @@ public sealed class TimeActEffectPlayback : IDisposable
 
         _display ??= CreateDisplay();
 
+        _player.Prepare(_display);
         _player.Update(time, eye);
         _display?.Update(_player.Instances, eye, forward);
     }

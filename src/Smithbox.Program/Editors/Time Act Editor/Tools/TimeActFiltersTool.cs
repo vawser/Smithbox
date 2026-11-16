@@ -108,6 +108,8 @@ public class TimeActFiltersTool
             GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_Indexing", bank.IndexedBinders, bank.TotalBinders));
         else if (effects.EventCount == 0)
             GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_None"));
+        else if (effects.IsLoading)
+            GUI.WrappedText(LOC.Get("FX_Display_Loading_Effects", effects.LoadedCount, effects.LoadingCount));
         else
             GUI.WrappedText(LOC.Get("TAE_FiltersTool_Effects_Status", effects.EventCount, effects.RunningCount,
                 effects.ParticleCount, effects.MissingCount));

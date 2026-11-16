@@ -61,6 +61,11 @@ public sealed class CutsceneEffects : IDisposable
     public int MissingCount => Player.MissingCount;
     public int ParticleCount => Player.ParticleCount;
 
+    /// <summary>Whether the cut's effects are still loading: the clock waits, so their first showing doesn't stall</summary>
+    public bool IsLoading => Player.IsLoading;
+    public int LoadingCount => Player.Preload.Count;
+    public int LoadedCount => Player.Preload.ReadyCount;
+
     /// <param name="frame">The cut's frame</param>
     /// <param name="eye">The viewport camera's position and forward direction, for sorting and facing particles</param>
     public void Update(CutsceneScene? scene, float frame, Vector3 eye, Vector3 forward)
@@ -91,6 +96,7 @@ public sealed class CutsceneEffects : IDisposable
             bank.Update();
         }
 
+        Player.Prepare(Display);
         Player.Update(frame / scene.Framerate, eye);
         Display!.Update(Player.Instances, eye, forward);
 

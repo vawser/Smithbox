@@ -127,6 +127,12 @@ public class ProjectilePlaybackTool
             return;
         }
 
+        if (effects.IsLoading)
+        {
+            ImGui.TextDisabled(LOC.Get("FX_Display_Loading_Effects", effects.LoadedCount, effects.LoadingCount));
+            return;
+        }
+
         var status = LOC.Get("PROJECTILE_Effects_Status", effects.EffectCount, effects.RunningCount, effects.ParticleCount);
 
         if (effects.MissingCount > 0)

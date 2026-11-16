@@ -461,6 +461,46 @@
       "Text": "Draws the ground as a grid of one metre squares, with a brighter line every five metres."
     },
     {
+      "Key": "PROJECTILE_Display_Bullets",
+      "Text": "Bullets"
+    },
+    {
+      "Key": "PROJECTILE_Display_Bullets_TT",
+      "Text": "Draws each bullet in flight as a sphere of its hit radius, coloured by its generation."
+    },
+    {
+      "Key": "PROJECTILE_Display_Impacts",
+      "Text": "Impacts"
+    },
+    {
+      "Key": "PROJECTILE_Display_Impacts_TT",
+      "Text": "Leaves a sphere of the attack's reach for a moment where a bullet hit."
+    },
+    {
+      "Key": "PROJECTILE_Display_Target",
+      "Text": "Target"
+    },
+    {
+      "Key": "PROJECTILE_Display_Target_TT",
+      "Text": "Draws the simulated target as a sphere of its radius, with a line down to the ground. The target is still simulated when this is off."
+    },
+    {
+      "Key": "PROJECTILE_Display_Target_Path",
+      "Text": "Target Path"
+    },
+    {
+      "Key": "PROJECTILE_Display_Target_Path_TT",
+      "Text": "Draws the path a moving target follows. It is still simulated when this is off."
+    },
+    {
+      "Key": "PROJECTILE_Display_Wall",
+      "Text": "Wall"
+    },
+    {
+      "Key": "PROJECTILE_Display_Wall_TT",
+      "Text": "Draws the simulated wall as a grid of one metre cells. The wall still stops bullets when this is off."
+    },
+    {
       "Key": "PROJECTILE_Frame_On_Select",
       "Text": "Frame on Select"
     },

@@ -132,7 +132,8 @@ public class ProjectileEditorView
 
     public void Update(float dt)
     {
-        Simulator.Update(dt);
+        // The clock waits while the bullets' effects load (read last frame), so they don't stall as they first show
+        Simulator.Update(Effects.IsLoading ? 0 : dt);
 
         // The lighting the viewport borrows, once there is something to light (as the FX Editor does)
         if (Simulator.Result != null)

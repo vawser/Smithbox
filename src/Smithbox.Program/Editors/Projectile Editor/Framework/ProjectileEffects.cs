@@ -59,6 +59,11 @@ public sealed class ProjectileEffects : IDisposable
     public int MissingCount => Player.MissingCount;
     public int ParticleCount => Player.ParticleCount;
 
+    /// <summary>Whether the bullets' effects are still loading: the simulation waits, so their first showing doesn't stall</summary>
+    public bool IsLoading => Player.IsLoading;
+    public int LoadingCount => Player.Preload.Count;
+    public int LoadedCount => Player.Preload.ReadyCount;
+
     public void Update(Vector3 eye, Vector3 forward)
     {
         var simulator = View.Simulator;
@@ -89,6 +94,7 @@ public sealed class ProjectileEffects : IDisposable
         Display ??= new FxDisplay(new FxDisplayHost(View.Project, () => View.RenderScene!,
             () => FxDisplayHost.PipelineOf(View.ViewportWindow.Viewport)));
 
+        Player.Prepare(Display);
         Player.Update(simulator.Time, eye);
         Display.Update(Player.Instances, eye, forward);
     }

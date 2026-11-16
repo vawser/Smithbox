@@ -683,6 +683,8 @@
     { "Key": "FX_CurveEditor_Modifier_External", "Text": "External value" },
     { "Key": "FX_CurveEditor_Modifier_External_TT", "Text": "The id of the external value the factor is read by (0 Terminate, 1 precipitation, 2 time of day, ...)." },
     { "Key": "FX_CurveEditor_Modifier_Factor", "Text": "Factor by external value (value, factor)" },
-    { "Key": "FX_CurveEditor_Modifier_Factor_Key_TT", "Text": "A key of the factor curve: the external value, then the factor for each component." }
+    { "Key": "FX_CurveEditor_Modifier_Factor_Key_TT", "Text": "A key of the factor curve: the external value, then the factor for each component." },
+    { "Key": "FX_Display_Loading_Effects", "Text": "Loading effects: {0} of {1} ready. Playback waits until they have loaded." },
+    { "Key": "FX_Display_Loading_Map_Effects", "Text": "Loading effects: {0} of {1} ready. Each starts once it has loaded." }
   ]
 }

@@ -72,6 +72,29 @@ public sealed class FxDefCache
         return def;
     }
 
+    /// <summary>
+    /// The effect's definition if <see cref="Get"/> would hand it back without building it (it's built and current,
+    /// or the bank has no such effect); false when getting it would read and build the effect.
+    /// </summary>
+    public bool TryGetBuilt(int id, out FxEffectDef def)
+    {
+        def = null;
+        var data = GetData();
+        var bank = data?.Bank;
+        if (bank == null || data.Schema == null)
+            return false;
+
+        if (!bank.Entries.TryGetValue(id, out var entry))
+            return bank.IsIndexed;
+
+        if (!entry.IsLoaded || !Defs.TryGetValue(id, out var known) || !ReferenceEquals(known.Fxr, entry.Fxr)
+            || known.Version != data.EditVersion)
+            return false;
+
+        def = known.Def;
+        return true;
+    }
+
     /// <summary>Whether the bank holds the effect, once it's indexed (null until then).</summary>
     public bool? Has(int id)
     {
@@ -124,9 +147,19 @@ public sealed class FxCuePlayer
     /// <summary>Particles across the running effects, last update.</summary>
     public int ParticleCount { get; private set; }
 
+    /// <summary>
+    /// Gets the cues' effects ready before they play (<see cref="Prepare"/>): an effect isn't started until it is,
+    /// and the host holds its clock while <see cref="IsLoading"/>.
+    /// </summary>
+    public readonly FxPreload Preload;
+
+    /// <summary>Whether the cues' effects are still being made ready: the host's playback should wait.</summary>
+    public bool IsLoading => Cues.Count > 0 && !Preload.IsDone;
+
     public FxCuePlayer(FxDefCache defs)
     {
         Defs = defs;
+        Preload = new FxPreload(defs);
     }
 
     public void SetCues(IEnumerable<FxCue> cues)
@@ -135,7 +168,17 @@ public sealed class FxCuePlayer
         Active.Clear();
         foreach (var cue in cues)
             Cues.Add(new Running { Cue = cue });
+
+        // The same effects again (an edit elsewhere in the timeline) stay ready
+        Preload.Set(Cues.Select(r => r.Cue.EffectId));
     }
+
+    /// <summary>
+    /// Makes the cues' effects ready a little more: definitions, textures and models. Call every frame before
+    /// <see cref="Update"/>, after the bank's own update. Returns whether they're all ready.
+    /// </summary>
+    /// <param name="display">The display that draws them, for their textures and models</param>
+    public bool Prepare(FxDisplay display) => Preload.Update(display);
 
     public void Clear() => SetCues(Array.Empty<FxCue>());
 
@@ -165,6 +208,10 @@ public sealed class FxCuePlayer
                 r.Instance = null;
                 continue;
             }
+
+            // Not started until it's ready: building it here would stall the frame it first shows in
+            if (r.Instance == null && !Preload.IsReady(cue.EffectId))
+                continue;
 
             // The definition (again, if the FX Editor changed the effect)
             var def = Defs.Get(cue.EffectId);

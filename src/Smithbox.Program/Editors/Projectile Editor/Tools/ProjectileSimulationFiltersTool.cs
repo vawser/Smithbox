@@ -52,9 +52,14 @@ public class ProjectileSimulationFiltersTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("PROJECTILE_SimulationFilters_Overlays_Header"), LOC.Get("PROJECTILE_SimulationFilters_Overlays_Header_TT"));
 
+        Toggle("PROJECTILE_Display_Bullets", ref cfg.ProjectileEditor_Display_Bullets);
+        Toggle("PROJECTILE_Display_Impacts", ref cfg.ProjectileEditor_Display_Impacts);
         Toggle("PROJECTILE_Display_Trails", ref cfg.ProjectileEditor_Display_Trails);
         Toggle("PROJECTILE_Display_Reach", ref cfg.ProjectileEditor_Display_Reach);
         Toggle("PROJECTILE_Display_Damage", ref cfg.ProjectileEditor_Display_Damage);
+        Toggle("PROJECTILE_Display_Target", ref cfg.ProjectileEditor_Display_Target);
+        Toggle("PROJECTILE_Display_Target_Path", ref cfg.ProjectileEditor_Display_Target_Path);
+        Toggle("PROJECTILE_Display_Wall", ref cfg.ProjectileEditor_Display_Wall);
         Toggle("PROJECTILE_Display_Ground_Grid", ref cfg.ProjectileEditor_Display_Ground_Grid);
 
         // Camera

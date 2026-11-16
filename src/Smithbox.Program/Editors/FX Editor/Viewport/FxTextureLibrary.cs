@@ -80,6 +80,46 @@ public class FxTextureLibrary : IResourceEventListener
         return null;
     }
 
+    // Entries a binder was found not to hold, or couldn't be read from: they'll never load (models as s12345.flver)
+    private readonly HashSet<string> Unreadable = new(StringComparer.OrdinalIgnoreCase);
+    private readonly ConcurrentQueue<string> FailedReads = new();
+
+    /// <summary>
+    /// Whether a texture is loaded, or never will be (no binder holds it, or it couldn't be read), for
+    /// <see cref="FxPreload"/>. The first call starts loading it, as <see cref="Get"/> does.
+    /// </summary>
+    public bool Prefetch(int id, string type)
+    {
+        if (id <= 0)
+            return true;
+
+        var name = Resolve(id, type);
+        if (name == null)
+            return Host.Data.Bank.IsIndexed;
+
+        return Get(id, type) != 0 || Unreadable.Contains(name);
+    }
+
+    /// <summary>Whether a model is loaded, or never will be, for <see cref="FxPreload"/>. The first call starts loading it.</summary>
+    public bool PrefetchModel(int id)
+    {
+        if (id <= 0)
+            return true;
+
+        if (GetModel(id) != null)
+            return true;
+
+        var name = $"s{id:D5}";
+        if (!Host.Data.Bank.Models.ContainsKey(name))
+            return Host.Data.Bank.IsIndexed;
+
+        return Unreadable.Contains($"{name}.flver");
+    }
+
+    /// <summary>Whether textures a loaded model's materials name are still on their way (sfx TPFs or part containers).</summary>
+    public bool IsLoadingModelTextures =>
+        ContainerLoads.Count > 0 || ModelTextures.Any(n => !Loaded.ContainsKey(n) && !Unreadable.Contains(n));
+
     /// <summary>s&lt;id&gt;_&lt;type&gt; if a binder holds it, else s&lt;id&gt; (DS3 and SDT have both kinds), else null.</summary>
     private string Resolve(int id, string type)
     {
@@ -231,7 +271,10 @@ public class FxTextureLibrary : IResourceEventListener
                 {
                     var file = reader.Files.FirstOrDefault(f => f.Name == internalName);
                     if (file == null)
+                    {
+                        FailedReads.Enqueue(kind == Kind.Model ? $"{name}.flver" : name);
                         continue;
+                    }
 
                     var bytes = reader.ReadFile(file).ToArray();
                     List<string> textures = null;
@@ -243,6 +286,8 @@ public class FxTextureLibrary : IResourceEventListener
             catch (Exception e)
             {
                 Smithbox.LogError(this, $"[FX Editor] Couldn't read textures or models from {path}: {e.Message}", e);
+                foreach (var (name, _, kind) in wanted)
+                    FailedReads.Enqueue(kind == Kind.Model ? $"{name}.flver" : name);
             }
         });
     }
@@ -291,6 +336,9 @@ public class FxTextureLibrary : IResourceEventListener
     public void Update()
     {
         ReadNextBinder();
+
+        while (FailedReads.TryDequeue(out var failed))
+            Unreadable.Add(failed);
 
         // A part container's textures arrived: have the models pick them up
         if (ContainerLoads.RemoveAll(t => t.IsCompleted) > 0)
@@ -387,5 +435,7 @@ public class FxTextureLibrary : IResourceEventListener
         ModelTextures.Clear();
         RequestedContainers.Clear();
         ContainerLoads.Clear();
+        Unreadable.Clear();
+        FailedReads.Clear();
     }
 }

@@ -63,8 +63,8 @@ public class ProjectileViewportWindow
     private readonly ProjectileDebugLines Scenery = new();
     private readonly ProjectileDebugLines Bullets = new();
 
-    private (SimulationSettings? Settings, bool Grid) SceneryFor;
-    private (int Version, float Time, SimulationSettings? Settings, bool Trails, bool Reach) BulletsFor;
+    private (SimulationSettings? Settings, bool Grid, bool Wall, bool TargetPath) SceneryFor;
+    private (int Version, float Time, SimulationSettings? Settings, bool Trails, bool Reach, bool Bullets, bool Impacts, bool Target) BulletsFor;
     private DateTime LastBuild;
 
     public ProjectileViewportWindow(ProjectileEditorView view, ProjectEntry project)
@@ -164,7 +164,9 @@ public class ProjectileViewportWindow
             return;
 
         var settings = View.Simulator.Settings;
-        var key = (settings, CFG.Current.ProjectileEditor_Display_Ground_Grid);
+        var cfg = CFG.Current;
+        var key = (settings, cfg.ProjectileEditor_Display_Ground_Grid, cfg.ProjectileEditor_Display_Wall,
+            cfg.ProjectileEditor_Display_Target_Path);
 
         if (key == SceneryFor)
             return;
@@ -188,10 +190,11 @@ public class ProjectileViewportWindow
             }
         }
 
-        if (settings.SimulateWall)
+        // Only what is drawn: the wall and target are simulated either way
+        if (settings.SimulateWall && cfg.ProjectileEditor_Display_Wall)
             AddWall(Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.WallColor)), settings);
 
-        if (settings.SimulateTarget && settings.IsTargetMoving)
+        if (settings.SimulateTarget && settings.IsTargetMoving && cfg.ProjectileEditor_Display_Target_Path)
             AddTargetPath(Lines(lines, ProjectileDebugLines.ToColor(Dim(ProjectileFormat.TargetColor, 0.5f))), settings);
 
         Scenery.Show(View.RenderScene!, lines);
@@ -204,8 +207,10 @@ public class ProjectileViewportWindow
 
         var simulator = View.Simulator;
         var settings = simulator.Settings;
-        var key = (simulator.Version, simulator.Time, settings, CFG.Current.ProjectileEditor_Display_Trails,
-            CFG.Current.ProjectileEditor_Display_Reach);
+        var cfg = CFG.Current;
+        var key = (simulator.Version, simulator.Time, settings, cfg.ProjectileEditor_Display_Trails,
+            cfg.ProjectileEditor_Display_Reach, cfg.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor_Display_Impacts,
+            cfg.ProjectileEditor_Display_Target);
 
         if (key == BulletsFor)
             return;
@@ -220,7 +225,7 @@ public class ProjectileViewportWindow
         var lines = new Dictionary<Color, List<(Vector3, Vector3)>>();
         var time = simulator.Time;
 
-        if (settings.SimulateTarget)
+        if (settings.SimulateTarget && cfg.ProjectileEditor_Display_Target)
         {
             var target = Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.TargetColor));
             var position = settings.GetTargetPosition(time);
@@ -235,8 +240,10 @@ public class ProjectileViewportWindow
             if (CFG.Current.ProjectileEditor_Display_Trails)
                 AddTrails(lines, result, time);
 
-            AddProjectiles(lines, result, time);
-            AddImpacts(lines, result, time);
+            AddProjectiles(lines, result, time, cfg.ProjectileEditor_Display_Bullets, cfg.ProjectileEditor_Display_Reach);
+
+            if (cfg.ProjectileEditor_Display_Impacts)
+                AddImpacts(lines, result, time);
         }
 
         Bullets.Show(View.RenderScene!, lines);
@@ -322,8 +329,13 @@ public class ProjectileViewportWindow
         }
     }
 
-    private static void AddProjectiles(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time)
+    /// <summary>The bullets in flight as spheres of their radius, and the rings of attacks reaching beyond them</summary>
+    private static void AddProjectiles(Dictionary<Color, List<(Vector3, Vector3)>> lines, SimulationResult result, float time,
+        bool spheres, bool reachRings)
     {
+        if (!spheres && !reachRings)
+            return;
+
         var active = 0;
         foreach (var track in result.Tracks)
         {
@@ -342,12 +354,15 @@ public class ProjectileViewportWindow
             var position = track.GetPosition(time);
             var radius = MathF.Max(track.GetRadius(time), MinSphereRadius);
 
-            ProjectileDebugLines.AddSphere(Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.GetColor(track.Generation))),
-                position, radius, segments);
+            if (spheres)
+            {
+                ProjectileDebugLines.AddSphere(Lines(lines, ProjectileDebugLines.ToColor(ProjectileFormat.GetColor(track.Generation))),
+                    position, radius, segments);
+            }
 
             var attackReach = track.Attack?.Radius ?? 0;
 
-            if (CFG.Current.ProjectileEditor_Display_Reach && attackReach > radius)
+            if (reachRings && attackReach > radius)
             {
                 ProjectileDebugLines.AddCircle(reach, position, Vector3.UnitX, Vector3.UnitZ, attackReach, segments * 2);
             }
