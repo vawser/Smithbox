@@ -85,10 +85,12 @@ public class ParamCommandQueue
                         int id;
                         var parsed = int.TryParse(args[3], out id);
 
-                        // In Table Group mode: set the current Table Group to this ID
-                        if (viewToModify.ParamTableWindow.IsInTableGroupMode(curActiveParam))
+                        // In Table Group mode: select the Table Group with this ID, recomputing its roll chances
+                        // (an unparsable ID leaves the group selection alone rather than selecting group 0)
+                        if (parsed && viewToModify.ParamTableWindow.IsInTableGroupMode(curActiveParam))
                         {
-                            viewToModify.ParamTableWindow.CurrentTableGroupID = id;
+                            viewToModify.ParamTableWindow.UpdateTableGroupSelection(id);
+                            viewToModify.ParamTableWindow.RequestScrollToGroup();
                         }
 
                         if (parsed)

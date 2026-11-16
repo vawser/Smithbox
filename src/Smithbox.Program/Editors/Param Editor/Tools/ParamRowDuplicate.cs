@@ -88,12 +88,25 @@ public static class ParamRowDuplicate
                 actions.Add(dupeAction);
             }
 
+            // A whole-group duplicate selects the first copy, and its undo goes back to the source group.
+            // Rows duplicated within a group stay in it.
+            var sourceGroup = rows[0].ID;
+            var firstCopyGroup = sourceGroup + offset;
+
             var compoundAction = new CompoundAction(actions);
             compoundAction.SetPostExecutionAction(undo =>
             {
                 var curParam = curView.Selection.GetActiveParam();
 
-                if (curView.ParamTableWindow.IsInTableGroupMode(curParam))
+                if (curParam != curParamKey || !curView.ParamTableWindow.IsInTableGroupMode(curParam))
+                    return;
+
+                if (wholeTableGroupDuplicate && amount > 0)
+                {
+                    curView.ParamTableWindow.UpdateTableGroupSelection(undo ? sourceGroup : firstCopyGroup);
+                    curView.ParamTableWindow.RequestScrollToGroup();
+                }
+                else
                 {
                     var curGroup = curView.ParamTableWindow.CurrentTableGroupID;
                     curView.ParamTableWindow.UpdateTableGroupSelection(curGroup);

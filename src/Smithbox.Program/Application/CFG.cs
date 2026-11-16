@@ -876,6 +876,8 @@ public class CFG
 
     // Table List
     public bool ParamEditor_Display_Table_List = true;
+    public bool ParamEditor_Table_List_Display_Group_Stats = true;
+    public bool ParamEditor_Table_List_Search_Rows = false;
 
     // Row List
     public bool ParamEditor_Row_List_Pinned_Stay_Visible = true;

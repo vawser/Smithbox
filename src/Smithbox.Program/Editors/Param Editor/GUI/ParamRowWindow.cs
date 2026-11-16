@@ -482,6 +482,14 @@ public class ParamRowWindow
                     inTableGroupMode ? $"regular_{tableGroupID}" : "regular");
             }
 
+            // In table-group mode with no group selected the list is empty: say where to pick one
+            if (inTableGroupMode && tableGroupID == -1 && displayRows.Count == 0)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(1);
+                ImGui.TextDisabled(LOC.Get("PARAM_RowWindow_Select_Table_Group_Hint"));
+            }
+
             DisplayRows(displayRows, selectionCache);
 
             if (Context.DoFocus)

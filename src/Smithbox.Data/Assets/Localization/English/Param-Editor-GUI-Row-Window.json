@@ -49,6 +49,10 @@
       "Text": "Id"
     },
     {
+      "Key": "PARAM_RowWindow_Select_Table_Group_Hint",
+      "Text": "Select a table group in the Table List to show its rows."
+    },
+    {
       "Key": "PARAM_RowWindow_Col_Name",
       "Text": "Name"
     },

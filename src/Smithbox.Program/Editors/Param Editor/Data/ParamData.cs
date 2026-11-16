@@ -1614,7 +1614,8 @@ public class ParamData : IDisposable
         var srcFile = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
         var projFile = Path.Combine(Project.Descriptor.ProjectPath, ".smithbox", "Project", "Table Params.json");
 
-        if (Directory.Exists(projFile))
+        // A file, so File.Exists (Directory.Exists was always false, so the project override never loaded)
+        if (File.Exists(projFile))
         {
             srcFile = projFile;
         }

@@ -6,7 +6,123 @@
     },
     {
       "Key": "PARAM_TableWindow_Table_List_TT",
-      "Text": ""
+      "Text": "The table groups of this param: rows that share an ID form one group.\nSelect a group to show its rows in the Rows window.\nAlt+click a group's name to rename it."
+    },
+    {
+      "Key": "PARAM_TableWindow_Action_Rename",
+      "Text": "Rename table group {0}"
+    },
+    {
+      "Key": "PARAM_TableWindow_Search_Rows_Hint",
+      "Text": "Search rows..."
+    },
+    {
+      "Key": "PARAM_TableWindow_Search_Match_Count",
+      "Text": "{0} / {1} groups"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleSearchRows_Groups",
+      "Text": "Group IDs and names"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleSearchRows_Rows",
+      "Text": "Rows (row search syntax)"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleSearchRows_Hint",
+      "Text": "Toggle what the search matches.\nIn row mode, the search uses the same syntax as the Rows window's search, and shows the groups that contain a matching row, with the number of matches in the Rows column.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleGroupStats_Hidden",
+      "Text": "Hidden"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleGroupStats_Visible",
+      "Text": "Visible"
+    },
+    {
+      "Key": "PARAM_TableWindow_ToggleGroupStats_Hint",
+      "Text": "Toggle the Rows and Weight columns.\n\nCurrent Mode:\n{0}"
+    },
+    {
+      "Key": "PARAM_TableWindow_Col_Rows",
+      "Text": "Rows"
+    },
+    {
+      "Key": "PARAM_TableWindow_Col_Rows_TT",
+      "Text": "The number of rows in the group.\nWhile searching rows: matching rows / rows."
+    },
+    {
+      "Key": "PARAM_TableWindow_Col_Weight",
+      "Text": "Weight"
+    },
+    {
+      "Key": "PARAM_TableWindow_Col_Weight_TT",
+      "Text": "The total chanceWeight of the group's rows. Each row's roll chance is its weight divided by this total."
+    },
+    {
+      "Key": "PARAM_TableWindow_Col_Weight_Zero_TT",
+      "Text": "The weights of this group add up to 0, so none of its rows can be rolled."
+    },
+    {
+      "Key": "PARAM_TableWindow_Placeholder_Name_TT",
+      "Text": "This group has no name: showing its first row's name.\nAlt+click to give the group a name."
+    },
+    {
+      "Key": "PARAM_TableWindow_Roll_Chance_TT",
+      "Text": "Weight {0} of the group's total {1}."
+    },
+    {
+      "Key": "PARAM_TableWindow_Delete_Log",
+      "Text": "Deleted table group {0} ({1} rows)."
+    },
+    {
+      "Key": "PARAM_TableWindow_Action_Change_ID",
+      "Text": "Change table group ID {0} to {1}"
+    },
+    {
+      "Key": "PARAM_TableWindow_Action_New_Group",
+      "Text": "New table group {0}"
+    },
+    {
+      "Key": "PARAM_TableWindow_Context_Change_ID",
+      "Text": "Group ID"
+    },
+    {
+      "Key": "PARAM_TableWindow_Context_Change_ID_TT",
+      "Text": "Change the ID of every row in this group, and move its name with it.\nApplied when you leave the field (Escape cancels). Refused if the ID is already used by another group."
+    },
+    {
+      "Key": "PARAM_TableWindow_Change_ID_Error_Used",
+      "Text": "ID {0} is already used by a table group. The next free ID is {1}."
+    },
+    {
+      "Key": "PARAM_TableWindow_Context_New_Group_Header",
+      "Text": "New Group"
+    },
+    {
+      "Key": "PARAM_TableWindow_New_Group_ID",
+      "Text": "ID"
+    },
+    {
+      "Key": "PARAM_TableWindow_New_Group_ID_TT",
+      "Text": "The ID of the new group. Defaults to the next free ID after this group."
+    },
+    {
+      "Key": "PARAM_TableWindow_New_Group_ID_Used",
+      "Text": "Already used. The next free ID is {0}."
+    },
+    {
+      "Key": "PARAM_TableWindow_New_Group_Action_Create",
+      "Text": "Create"
+    },
+    {
+      "Key": "PARAM_TableWindow_New_Group_Action_Create_TT",
+      "Text": "Add a new table group with one row, using the field defaults."
+    },
+    {
+      "Key": "PARAM_TableWindow_Duplicate_Error_Abort_Suggest",
+      "Text": "Duplicate aborted: ID {0} is already used by a table group. An offset of {1} would be free."
     },
     {
       "Key": "PARAM_TableWindow_Search_Hint",
@@ -38,7 +154,7 @@
     },
     {
       "Key": "PARAM_TableWindow_Duplicate_Offset_TT",
-      "Text": "The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected."
+      "Text": "The ID offset of each copy: copy N gets the group ID + N x offset.\n\nShared with the row Duplicate setting (Rows window and toolbar): changing it here changes it there too."
     },
     {
       "Key": "PARAM_TableWindow_Duplicate_Amount",
@@ -46,7 +162,7 @@
     },
     {
       "Key": "PARAM_TableWindow_Duplicate_Amount_TT",
-      "Text": "The number of times the current selection will be duplicated."
+      "Text": "The number of copies of the group to make.\n\nShared with the row Duplicate setting (Rows window and toolbar): changing it here changes it there too."
     },
     {
       "Key": "PARAM_TableWindow_Duplicate_Toggle_Unrestricted",
