@@ -119,6 +119,10 @@
     {
       "Key": "TEXT_LanguageSync_No_Vanilla_Source",
       "Text": "Skipped text file {0}: no vanilla {1} version was found to compare against, so its changes can't be worked out."
+    },
+    {
+      "Key": "TEXT_LanguageSync_No_Source_Language",
+      "Text": "No source language has been selected."
     }
   ]
 }

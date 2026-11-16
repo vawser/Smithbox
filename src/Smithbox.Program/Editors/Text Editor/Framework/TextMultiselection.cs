@@ -17,6 +17,14 @@ public class TextMultiselection
         Parent = view;
     }
 
+    private void SetAnchor(List<FMG.Entry> entries, int index)
+    {
+        if (entries != null && index >= 0 && index < entries.Count)
+        {
+            AnchorEntry = entries[index];
+        }
+    }
+
     public bool HasValidMultiselection()
     {
         if (StoredEntries.Count < 1)
@@ -75,20 +83,42 @@ public class TextMultiselection
         StoredEntries = rebuilt;
     }
 
+    /// <summary>
+    /// Where Shift ranges start: the row last clicked without Shift. Kept by reference, as
+    /// indices drift. It used to be the last clicked row, Shift-clicks included, so a second
+    /// Shift-click ranged from the first one's end instead of from the original row.
+    /// </summary>
+    public FMG.Entry AnchorEntry;
+
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
+        var entries = Parent.Selection.SelectedFmgWrapper?.File?.Entries;
+
+        var anchorIndex = AnchorEntry != null && entries != null ? entries.IndexOf(AnchorEntry) : -1;
+
+        // No anchor yet (or its entry is gone): range from the current selection
+        if (anchorIndex == -1)
+            anchorIndex = currentSelectionIndex;
+
         // Multi-Select: Range Select
         // Needs an anchor: with no current selection (-1), treat it as a normal click
         // rather than starting the range at Entries[-1].
-        if (InputManager.HasShiftDown() && currentSelectionIndex >= 0)
+        if (InputManager.HasShiftDown() && anchorIndex >= 0)
         {
-            var start = currentSelectionIndex;
+            // Shift: the range replaces the selection, as in other list views.
+            // Ctrl+Shift: the range is added to it.
+            if (!InputManager.HasCtrlDown())
+            {
+                StoredEntries.Clear();
+            }
+
+            var start = anchorIndex;
             var end = currentIndex;
 
             if (end < start)
             {
                 start = currentIndex;
-                end = currentSelectionIndex;
+                end = anchorIndex;
             }
 
             for (int k = start; k <= end; k++)
@@ -114,6 +144,8 @@ public class TextMultiselection
         // Multi-Select Mode
         else if (InputManager.HasCtrlDown())
         {
+            SetAnchor(entries, currentIndex);
+
             if (StoredEntries.ContainsKey(currentIndex) && StoredEntries.Count > 1)
             {
                 StoredEntries.Remove(currentIndex);
@@ -136,6 +168,8 @@ public class TextMultiselection
         // Reset Multi-Selection if normal selection occurs
         else
         {
+            SetAnchor(entries, currentIndex);
+
             StoredEntries.Clear();
 
             if (Parent.Selection.SelectedFmgWrapper != null && Parent.Selection.SelectedFmgWrapper.File != null)

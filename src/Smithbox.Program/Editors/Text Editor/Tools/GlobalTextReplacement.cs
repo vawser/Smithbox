@@ -26,6 +26,19 @@ public class GlobalTextReplacement
 
     private bool hasAlreadySearched = false;
 
+    /// <summary>
+    /// The regex and replacement the preview was made with. Apply uses these, not the current
+    /// inputs: editing the pattern or options after Preview made Apply run a different
+    /// replacement than the one shown.
+    /// </summary>
+    private Regex previewRegex;
+    private string previewReplaceTerm;
+
+    /// <summary>
+    /// Per-match limit, so a pattern that backtracks badly (e.g. (a+)+$) can't freeze the editor
+    /// </summary>
+    private static readonly TimeSpan RegexTimeout = TimeSpan.FromMilliseconds(250);
+
     public GlobalTextReplacement(TextEditorView view, ProjectEntry project)
     {
         View = view;
@@ -271,7 +284,7 @@ public class GlobalTextReplacement
             options = options | RegexOptions.IgnorePatternWhitespace;
         }
 
-        return new Regex(searchTerm, options);
+        return new Regex(searchTerm, options, RegexTimeout);
     }
 
     public void PreviewEdit()
@@ -291,22 +304,35 @@ public class GlobalTextReplacement
         // The replacement term is a substitution string, not a pattern, so it isn't
         // validated as a regex: "(" or "[" are valid replacements.
 
-        hasAlreadySearched = true;
+        var newResults = new List<ReplacementResult>();
 
-        var results = TextFinder.GetReplacementResult(View, searchRegex, searchTerm, filterType, matchType);
-
-        replacementResults = new List<ReplacementResult>();
-
-        foreach (var result in results)
+        try
         {
-            result.NewText = searchRegex.Replace(result.Entry.Text, replaceTerm);
+            var results = TextFinder.GetReplacementResult(View, searchRegex, searchTerm, filterType, matchType);
 
-            // Only list entries the replacement would actually change
-            if (result.NewText != result.Entry.Text)
+            foreach (var result in results)
             {
-                replacementResults.Add(result);
+                result.NewText = searchRegex.Replace(result.Entry.Text, replaceTerm);
+
+                // Only list entries the replacement would actually change
+                if (result.NewText != result.Entry.Text)
+                {
+                    newResults.Add(result);
+                }
             }
         }
+        catch (RegexMatchTimeoutException ex)
+        {
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Regex_Timeout"), ex);
+            ClearPreview();
+            return;
+        }
+
+        hasAlreadySearched = true;
+        replacementResults = newResults;
+
+        previewRegex = searchRegex;
+        previewReplaceTerm = replaceTerm;
     }
 
     private void SetAllIncluded(bool included)
@@ -321,46 +347,47 @@ public class GlobalTextReplacement
     {
         hasAlreadySearched = false;
         replacementResults.Clear();
+
+        previewRegex = null;
+        previewReplaceTerm = null;
     }
 
     public void ApplyReplacement()
     {
-        if (replacementResults.Count == 0)
+        if (replacementResults.Count == 0 || previewRegex == null)
         {
             Smithbox.Log(this, LOC.Get("TEXT_TextReplacement_Preview_Required"));
             return;
         }
 
-        Regex searchRegex;
+        List<EditorAction> actions = new List<EditorAction>();
 
         try
         {
-            searchRegex = BuildSearchRegex();
+            foreach (var result in replacementResults)
+            {
+                // Unticked in the preview
+                if (!result.Included)
+                    continue;
+
+                if (result.Entry.Text == null)
+                    continue;
+
+                // Recompute from the current text, in case the entry was edited since the preview,
+                // but with the previewed pattern and replacement
+                var newText = previewRegex.Replace(result.Entry.Text, previewReplaceTerm);
+
+                if (newText == result.Entry.Text)
+                    continue;
+
+                actions.Add(new ChangeFmgEntryText(View, result.ContainerWrapper, result.Entry, newText));
+            }
         }
-        catch (Exception ex)
+        catch (RegexMatchTimeoutException ex)
         {
-            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Invalid_Regex_Search"), ex);
+            // Nothing has been changed yet: the actions only run below
+            Smithbox.LogError<GlobalTextReplacement>(LOC.Get("TEXT_TextReplacement_Regex_Timeout"), ex);
             return;
-        }
-
-        List<EditorAction> actions = new List<EditorAction>();
-
-        foreach (var result in replacementResults)
-        {
-            // Unticked in the preview
-            if (!result.Included)
-                continue;
-
-            if (result.Entry.Text == null)
-                continue;
-
-            // Recompute from the current text, in case the entry was edited since the preview
-            var newText = searchRegex.Replace(result.Entry.Text, replaceTerm);
-
-            if (newText == result.Entry.Text)
-                continue;
-
-            actions.Add(new ChangeFmgEntryText(View, result.ContainerWrapper, result.Entry, newText));
         }
 
         if (actions.Count > 0)

@@ -1,6 +1,7 @@
 {
   "Entries": [
     { "Key": "TEXT_Tools_View_Fmg_Reloader", "Text": "FMG Reloader" },
+    { "Key": "TEXT_FmgReloader_Send_On_Save_Skipped_Unsaved", "Text": "Send on save: {0} FMGs were not sent to the game because they failed to save. See the save errors above." },
     { "Key": "TEXT_FmgReloader_Header", "Text": "FMG Reloader" },
     { "Key": "TEXT_FmgReloader_Game_Not_Supported", "Text": "The FMG Reloader works with Elden Ring, Nightreign, Armored Core VI and Dark Souls III." },
     { "Key": "TEXT_FmgReloader_Hint", "Text": "Connects to the running game and replaces its text (FMG files) with this editor's copies, so text edits can be tested without restarting. The game must run offline with EAC disabled." },

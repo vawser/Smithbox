@@ -54,7 +54,7 @@
     },
     {
       "Key": "TEXT_Creator_Header_Amount_TT",
-      "Text": "The number of text entries to create."
+      "Text": "The number of entries to create after the Base ID, each one ID Spacing further on. An entry is also created at the Base ID itself if that ID is free (normally it is the selected entry, so it is skipped)."
     },
     {
       "Key": "TEXT_Creator_Header_ID_Spacing",

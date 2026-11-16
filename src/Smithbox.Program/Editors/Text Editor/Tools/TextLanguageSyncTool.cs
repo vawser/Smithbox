@@ -168,7 +168,7 @@ public class TextLanguageSyncTool
     {
         if (CurrentSourceLanguage is TextContainerCategory.None)
         {
-            Smithbox.LogError<TextLanguageSyncTool>(LOC.Get("No source language has been selected."));
+            Smithbox.LogError<TextLanguageSyncTool>(LOC.Get("TEXT_LanguageSync_No_Source_Language"));
             return; 
         }
 
@@ -211,6 +211,10 @@ public class TextLanguageSyncTool
                 }
             }
         }
+
+        // Nothing to sync: don't add an undo step that does nothing
+        if (actions.Count == 0)
+            return;
 
         var compandAction = new FmgGroupedAction(actions);
         View.ActionManager.ExecuteAction(compandAction);
@@ -282,8 +286,11 @@ public class TextLanguageSyncTool
                     {
                         var actions = SyncLanguage(syncTargetWrapper, syncSrcWrapper, targetFmgId);
 
-                        var compandAction = new FmgGroupedAction(actions);
-                        View.ActionManager.ExecuteAction(compandAction);
+                        if (actions.Count > 0)
+                        {
+                            var compandAction = new FmgGroupedAction(actions);
+                            View.ActionManager.ExecuteAction(compandAction);
+                        }
                     }
                     GUI.Tooltip(
                         LOC.Get("TEXT_LanguageSync_Action_Sync_TT", selectableName));
@@ -328,6 +335,8 @@ public class TextLanguageSyncTool
                     {
                         var result = FmgDifferenceFinder.GetFmgDifferenceResult(View, vanillaSrcWrapper, syncSrcWrapper);
 
+                        var addedBeforeFmg = addedCount;
+
                         // One ID map per target FMG (first entry wins), instead of a linear scan per source entry
                         var targetById = new Dictionary<int, FMG.Entry>();
                         foreach (var targetFmgEntry in syncTargetWrapper.File.Entries)
@@ -359,7 +368,7 @@ public class TextLanguageSyncTool
                                 {
                                     targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
-                                    if (targetEntry != null)
+                                    if (IsSyncChange(targetEntry, result.AdditionCache[syncSrcEntry.ID]))
                                     {
                                         actions.Add(
                                             new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID], true));
@@ -371,7 +380,7 @@ public class TextLanguageSyncTool
                             {
                                 targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
-                                if (targetEntry != null)
+                                if (IsSyncChange(targetEntry, result.ModifiedCache[syncSrcEntry.ID]))
                                 {
                                     actions.Add(
                                         new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID], true));
@@ -382,7 +391,7 @@ public class TextLanguageSyncTool
                             {
                                 targetById.TryGetValue(syncSrcEntry.ID, out var targetEntry);
 
-                                if (targetEntry != null)
+                                if (IsSyncChange(targetEntry, result.DefaultCache[syncSrcEntry.ID]))
                                 {
                                     actions.Add(
                                         new ChangeFmgEntryText(View, syncTargetContainerWrapper, targetEntry, result.DefaultCache[syncSrcEntry.ID], true));
@@ -390,7 +399,12 @@ public class TextLanguageSyncTool
                             }
                         }
 
-                        actions.Add(new SortFmgList(syncTargetWrapper));
+                        // Only when this FMG gained entries: the sort marks the FMG modified, so
+                        // adding it always put * on every target FMG even when nothing changed
+                        if (addedCount > addedBeforeFmg)
+                        {
+                            actions.Add(new SortFmgList(syncTargetWrapper));
+                        }
                     }
                     else
                     {
@@ -411,6 +425,26 @@ public class TextLanguageSyncTool
             syncTargetDisplayName, syncTargetContainerWrapper.FileEntry.Filename, syncSrcDisplayName, addedCount, changedCount));
 
         return actions;
+    }
+
+    /// <summary>
+    /// Whether syncing this text into the target entry would change it. Matching entries used
+    /// to get a change action anyway, which marked the target FMG modified for nothing.
+    /// Compares with the text the action writes, including the sync prefix when it is enabled.
+    /// </summary>
+    private static bool IsSyncChange(FMG.Entry targetEntry, string newText)
+    {
+        if (targetEntry == null)
+            return false;
+
+        var written = newText;
+
+        if (CFG.Current.TextEditor_Language_Sync_Apply_Prefix)
+        {
+            written = $"{CFG.Current.TextEditor_Language_Sync_Prefix}{newText}";
+        }
+
+        return targetEntry.Text != written;
     }
 
     public TextFmgWrapper GetVanillaSrcWrapper(TextContainerWrapper srcContainerWrapper, TextFmgWrapper srcWrapper)

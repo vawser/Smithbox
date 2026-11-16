@@ -101,11 +101,12 @@ public class TextActionHandler
     /// <summary>
     /// Duplicate current selection of FMG.Entries
     /// </summary>
+    /// <remarks>
+    /// No focus check here: the shortcut checks entry-list focus before calling this. Checking it
+    /// here too made Edit ▸ Duplicate silently do nothing after clicking another panel.
+    /// </remarks>
     public void DuplicateEntries()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
-            return;
-
         if (Parent.Selection._selectedFmgEntry == null)
             return;
 
@@ -131,8 +132,10 @@ public class TextActionHandler
             // Get next valid ID: free in every FMG the duplicate will be written to
             // (the selected FMG plus its title/summary/description/effect FMGs),
             // and not already used by an earlier duplicate in this batch.
-            var startId = newId == -1 ? curEntry.ID : newId;
-            newId = GetNextValidId(GetGroupFmgs(curEntry, lookup), startId, claimedIds, lookup);
+            // From each entry's own ID, so each copy stays next to its original (100 → 101,
+            // 5000 → 5001). It used to continue from the previous copy's ID (5000 → 102).
+            // claimedIds keeps copies in the same batch apart (100 and 101 → 102 and 103).
+            newId = GetNextValidId(GetGroupFmgs(curEntry, lookup), curEntry.ID, claimedIds, lookup);
             claimedIds.Add(newId);
 
             // If this is enabled, just use the current entry ID
@@ -147,6 +150,9 @@ public class TextActionHandler
                 actions.Add(action);
             }
         }
+
+        if (actions.Count == 0)
+            return;
 
         // Reverse so ID order makes sense
         actions.Reverse();
@@ -370,11 +376,11 @@ public class TextActionHandler
     /// Deleting two or more selected entries asks for confirmation first
     /// (single deletes stay instant; Ctrl+Z covers mistakes).
     /// </summary>
+    /// <remarks>
+    /// No focus check here, for the same reason as DuplicateEntries: the Delete shortcut checks it.
+    /// </remarks>
     public void DeleteEntries()
     {
-        if (!FocusManager.IsFocus(EditorFocusContext.TextEditor_EntryList))
-            return;
-
         if (Parent.Selection._selectedFmgEntry == null)
             return;
 

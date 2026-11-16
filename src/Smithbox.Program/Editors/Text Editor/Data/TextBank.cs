@@ -101,7 +101,10 @@ public class TextBank : IDisposable
 
                 if (containerCategory == CFG.Current.TextEditor_Primary_Category)
                 {
-                    LoadFmgWrappers(containerWrapper);
+                    // Leave a container that can't be read out of the bank, as before
+                    // (LoadFmgWrappers logs why)
+                    if (!LoadFmgWrappers(containerWrapper))
+                        return;
                 }
 
                 if (containerWrapper != null)
@@ -152,7 +155,30 @@ public class TextBank : IDisposable
         }
     }
 
-    public void LoadFmgWrappers(TextContainerWrapper container)
+    /// <summary>
+    /// Read the container's FMGs into its wrappers. Returns false (and logs why) if the file is
+    /// missing or can't be read. It used to throw, and the callers on the UI thread (selecting a
+    /// container, Search/Replace, Language Sync, changing the primary language) didn't catch it,
+    /// so one corrupt file broke the editor.
+    /// </summary>
+    public bool LoadFmgWrappers(TextContainerWrapper container)
+    {
+        try
+        {
+            return ReadFmgWrappers(container);
+        }
+        catch (Exception e)
+        {
+            var filename = Path.GetFileNameWithoutExtension(container.FileEntry.Path);
+
+            Smithbox.LogError(this,
+                LOC.Get("TEXT_Data_Load_FMG_Container_FAIL", filename, container.FileEntry.Path, Name), e);
+
+            return false;
+        }
+    }
+
+    private bool ReadFmgWrappers(TextContainerWrapper container)
     {
         if (TargetFS.FileExists(container.FileEntry.Path))
         {
@@ -214,10 +240,14 @@ public class TextBank : IDisposable
 
             // Newly loaded text can satisfy lookups that were cached as misses
             TextFinder.InvalidateCache();
+
+            return true;
         }
         else
         {
             Smithbox.LogError(this, LOC.Get("TEXT_Data_Find_FMG_Wrapper_FAIL", container.FileEntry.Path));
+
+            return false;
         }
     }
 

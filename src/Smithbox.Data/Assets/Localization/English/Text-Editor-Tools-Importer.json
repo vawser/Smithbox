@@ -57,6 +57,10 @@
       "Text": "Failed to deserialize JSON file string."
     },
     {
+      "Key": "TEXT_Importer_Stored_File_Skipped",
+      "Text": "Skipped stored text file {0}: it could not be read as stored text JSON."
+    },
+    {
       "Key": "TEXT_Importer_Failed_JSON_File_Deserialization",
       "Text": "Failed to deserialize JSON file: {0}."
     },

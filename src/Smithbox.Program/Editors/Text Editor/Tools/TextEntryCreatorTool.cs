@@ -225,7 +225,7 @@ public class TextEntryCreatorTool
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Title_TT"));
 
                     var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_TitleText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, 2000, new Vector2(-1, height)))
+                    if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, TextContents.GetEditBufferSize(NewEntry_TitleText), new Vector2(-1, height)))
                     {
                     }
                 }
@@ -241,7 +241,7 @@ public class TextEntryCreatorTool
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Summary_TT"));
 
                     var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_SummaryText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, 2000, new Vector2(-1, height)))
+                    if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, TextContents.GetEditBufferSize(NewEntry_SummaryText), new Vector2(-1, height)))
                     {
                     }
                 }
@@ -257,7 +257,7 @@ public class TextEntryCreatorTool
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Header_Description_TT"));
 
                     var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_DescriptionText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, 2000, new Vector2(-1, height)))
+                    if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, TextContents.GetEditBufferSize(NewEntry_DescriptionText), new Vector2(-1, height)))
                     {
                     }
                 }
@@ -273,7 +273,7 @@ public class TextEntryCreatorTool
                     GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Effect_TT"));
 
                     var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_EffectText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, 2000, new Vector2(-1, height)))
+                    if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, TextContents.GetEditBufferSize(NewEntry_EffectText), new Vector2(-1, height)))
                     {
                     }
                 }
@@ -286,7 +286,7 @@ public class TextEntryCreatorTool
                         LOC.Get("TEXT_Creator_Header_Basic_TT"));
 
                 var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_BasicText).Y;
-                if (ImGui.InputTextMultiline($"##newEntryText_BasicText", ref NewEntry_BasicText, 2000, new Vector2(-1, height)))
+                if (ImGui.InputTextMultiline($"##newEntryText_BasicText", ref NewEntry_BasicText, TextContents.GetEditBufferSize(NewEntry_BasicText), new Vector2(-1, height)))
                 {
                 }
             }
@@ -411,7 +411,10 @@ public class TextEntryCreatorTool
 
                 if (ImGui.Selectable(displayName))
                 {
-                    IncrementTemplate = entry.Entries;
+                    // A copy: editing the rows used to change the loaded template itself
+                    IncrementTemplate = entry.Entries?.Count > 0
+                        ? new List<string>(entry.Entries)
+                        : new List<string>() { "" };
                     ApplyTemplateAsPrefix = entry.ApplyAsPrefix;
                     NewEntry_IncrementID = entry.IncrementID;
                     NewEntry_Amount = entry.Amount;
@@ -444,6 +447,12 @@ public class TextEntryCreatorTool
 
         List<EditorAction> groupedActions = new();
 
+        // IDs this batch has already used, so entries in the same batch can't collide
+        ClaimedIds.Clear();
+
+        // Inclusive on purpose: step 0 is the Base ID itself (normally the selected entry, so it's
+        // skipped as taken), then Amount more steps. The bundled templates rely on this: ER
+        // Infusions is Amount 12 with 13 rows, the first being the base weapon's empty prefix.
         for (int i = 0; i <= NewEntry_Amount; i++)
         {
             var incrementText = IncrementTemplate.ElementAtOrDefault(i);
@@ -463,11 +472,23 @@ public class TextEntryCreatorTool
         // Reverse add order so they are added to the entry list in the expected order (0, 100, 200, etc)
         groupedActions.Reverse();
 
+        // Every ID collided: nothing to create, so don't add an undo step that does nothing.
+        // The modal stays open so the parameters can be adjusted.
+        if (groupedActions.Count == 0)
+            return;
+
         Parent.ActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
         ShowModal = false;
     }
 
     private bool HasIdCollision = false;
+
+    /// <summary>
+    /// (FMG, ID) pairs created by the current CreateEntries batch. The actions only run once the
+    /// whole batch is built, so checking the FMG alone let entries in one batch share an ID.
+    /// Keyed per FMG: a group's title, summary and description entries share their ID by design.
+    /// </summary>
+    private readonly HashSet<(FMG, int)> ClaimedIds = new();
 
     /// <summary>
     /// Create new entries based on passed parameters.
@@ -530,6 +551,11 @@ public class TextEntryCreatorTool
         if (fmgEntryGroup.SupportsTitle)
         {
             TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+
+            // The container may have no FMG for this slot (this threw a NullReferenceException)
+            if (wrapper?.File == null)
+                return;
+
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -568,6 +594,11 @@ public class TextEntryCreatorTool
         if (fmgEntryGroup.SupportsSummary)
         {
             TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+
+            // The container may have no FMG for this slot (this threw a NullReferenceException)
+            if (wrapper?.File == null)
+                return;
+
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -592,6 +623,11 @@ public class TextEntryCreatorTool
         if (fmgEntryGroup.SupportsDescription)
         {
             TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+
+            // The container may have no FMG for this slot (this threw a NullReferenceException)
+            if (wrapper?.File == null)
+                return;
+
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -616,6 +652,11 @@ public class TextEntryCreatorTool
         if (fmgEntryGroup.SupportsEffect)
         {
             TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+
+            // The container may have no FMG for this slot (this threw a NullReferenceException)
+            if (wrapper?.File == null)
+                return;
+
             var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
 
             if (IsAvailableID(sourceEntry, newId))
@@ -666,6 +707,12 @@ public class TextEntryCreatorTool
             return false;
         }
 
+        // Already used by an earlier entry of this batch in the same FMG (e.g. ID Spacing 0)
+        if (ClaimedIds.Contains((currentFmg, id)))
+        {
+            return false;
+        }
+
         foreach (var entry in currentFmg.Entries)
         {
             if(entry.ID == id)
@@ -685,6 +732,8 @@ public class TextEntryCreatorTool
     {
         var currentFmg = entry.Parent;
         var newEntry = new FMG.Entry(currentFmg, id, contents);
+
+        ClaimedIds.Add((currentFmg, id));
 
         return new AddFmgEntry(Parent, Parent.Selection.SelectedContainerWrapper, entry, newEntry, id);
     }

@@ -263,10 +263,32 @@ public class TextViewSelection
         Parent.TextEntryList.FocusSelection = true;
     }
 
+    /// <summary>
+    /// Select just this entry and scroll to it, for jumps from outside the entry list (search
+    /// results, links from other editors, Find). Ignores Shift/Ctrl, and clears the entry list
+    /// filter when it hides the entry, so the jump never lands on a row the user can't see.
+    /// </summary>
+    public void RevealEntry(int index, FMG.Entry entry)
+    {
+        if (entry == null || index < 0)
+            return;
+
+        var entryList = Parent.TextEntryList;
+
+        if (!entryList.IsEntryVisible(entry) && !string.IsNullOrEmpty(entryList.EntryListFilter))
+        {
+            entryList.EntryListFilter = "";
+        }
+
+        SetSingleSelection(index, entry);
+        entryList.FocusSelection = true;
+    }
+
     private void SetSingleSelection(int index, FMG.Entry entry)
     {
         FmgEntryMultiselect.StoredEntries.Clear();
         FmgEntryMultiselect.StoredEntries.Add(index, entry);
+        FmgEntryMultiselect.AnchorEntry = entry;
 
         _selectedFmgEntryIndex = index;
         _selectedFmgEntry = entry;

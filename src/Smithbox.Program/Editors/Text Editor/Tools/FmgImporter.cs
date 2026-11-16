@@ -312,8 +312,10 @@ public class FmgImporter
                         {
                             wrapper = JsonSerializer.Deserialize(stream, StoredContainerWrapperSerializationContext.Default.StoredFmgContainer);
                         }
-                        catch
+                        catch (Exception e)
                         {
+                            // This used to skip the file without saying so
+                            Smithbox.LogWarning(this, LOC.Get("TEXT_Importer_Stored_File_Skipped", path), e);
                             continue;
                         }
                     }

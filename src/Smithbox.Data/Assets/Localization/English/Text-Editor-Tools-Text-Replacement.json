@@ -133,6 +133,10 @@
       "Text": "Invalid regex in search filter."
     },
     {
+      "Key": "TEXT_TextReplacement_Regex_Timeout",
+      "Text": "The search pattern took too long to match and was stopped. Nothing was changed. Simplify the pattern (nested repeats such as (a+)+ are the usual cause)."
+    },
+    {
       "Key": "TEXT_TextReplacement_Invalid_Regex_Replace",
       "Text": "Invalid regex in replacement filter."
     },

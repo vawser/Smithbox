@@ -13,6 +13,11 @@ public class TextShortcuts
     private TextEditorScreen Editor;
     private ProjectEntry Project;
 
+    /// <summary>
+    /// Frames left before a Save requested while a text box was active runs (0 = none pending)
+    /// </summary>
+    private int PendingSaveFrames = 0;
+
     public TextShortcuts(TextEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -27,7 +32,29 @@ public class TextShortcuts
         // Global Replace, Language Sync and Import change many containers at once.
         if (InputManager.IsPressed(KeybindID.Save))
         {
-            Editor.SaveAll();
+            if (ImGui.GetIO().WantTextInput)
+            {
+                // A text box is being edited. Its edit is only applied when the box is left,
+                // so saving now wrote the file without it (and the edit then landed unsaved).
+                // Leave the box so it commits, and save once the commit has run.
+                ImGuiP.ClearActiveID();
+                PendingSaveFrames = 2;
+            }
+            else
+            {
+                PendingSaveFrames = 0;
+                Editor.SaveAll();
+            }
+        }
+        else if (PendingSaveFrames > 0)
+        {
+            // The box commits in the frame it's left or the one after; save on the second frame
+            PendingSaveFrames--;
+
+            if (PendingSaveFrames == 0)
+            {
+                Editor.SaveAll();
+            }
         }
 
         if (InputManager.IsPressed(KeybindID.Toggle_Tools_Menu))

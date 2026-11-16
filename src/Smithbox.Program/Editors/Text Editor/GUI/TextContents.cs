@@ -145,10 +145,39 @@ public class TextContents
         TextMarkupPreview.Display(id, text);
     }
 
-    private static nuint GetEditBufferSize(string text)
+    /// <remarks>Also used by the Entry Creator's text boxes.</remarks>
+    internal static nuint GetEditBufferSize(string text)
     {
         var byteCount = Encoding.UTF8.GetByteCount(text ?? "");
         return (nuint)Math.Max(2000, byteCount + 4096);
+    }
+
+    /// <summary>
+    /// Limit a text box's grown height to half the panel (at least 150px), so a long description
+    /// doesn't push the other fields off screen. The box scrolls inside past that.
+    /// </summary>
+    private static float CapBoxHeight(float height)
+    {
+        var max = Math.Max(150f * DPI.UIScale(), ImGui.GetWindowHeight() * 0.5f);
+
+        return Math.Min(height, max);
+    }
+
+    /// <summary>
+    /// Apply the committed text box edit to the entry. Skipped when the text ends up as it
+    /// was (typed then deleted again): that used to add an undo step and mark the file modified.
+    /// A null entry and an empty box count as the same, since the box shows null as "".
+    /// </summary>
+    private void CommitText(FMG.Entry target)
+    {
+        if (target == null)
+            return;
+
+        if (_textCache == (target.Text ?? ""))
+            return;
+
+        var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, target, _textCache);
+        Parent.ActionManager.ExecuteAction(action);
     }
 
     /// <summary>
@@ -197,6 +226,9 @@ public class TextContents
         }
 
         Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+
+        // The ID change moves the entry to its sorted place; scroll the list to follow it
+        Parent.TextEntryList.FocusSelection = true;
     }
 
     public void DisplayGroupedTextInput(FMG.Entry entry, FmgEntryGroup fmgEntryGroup)
@@ -238,7 +270,7 @@ public class TextContents
                     _idCache = curId;
                 }
 
-                var idCommit = ImGui.IsItemDeactivatedAfterEdit();
+                var idCommit = GUI.InputCommitted();
 
                 // Update the ID of every entry in the group once the input is exited
                 if (idCommit)
@@ -265,7 +297,7 @@ public class TextContents
                     curText = "";
 
                 // Grows for multi-line titles (was a fixed 32px)
-                height = Math.Max(32f * DPI.UIScale(), ImGui.CalcTextSize(curText).Y + 16f * DPI.UIScale());
+                height = CapBoxHeight(Math.Max(32f * DPI.UIScale(), ImGui.CalcTextSize(curText).Y + 16f * DPI.UIScale()));
 
                 ImGui.TableNextRow();
 
@@ -280,15 +312,14 @@ public class TextContents
                     _textCache = curText;
                 }
 
-                var titleTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                var titleTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("title", curText);
 
                 // Title Text
-                if (fmgEntryGroup.Title != null && titleTextCommit)
+                if (titleTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Title, _textCache);
-                    Parent.ActionManager.ExecuteAction(action);
+                    CommitText(fmgEntryGroup.Title);
                 }
             }
             else if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
@@ -314,7 +345,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
+                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
 
                 ImGui.TableNextRow();
 
@@ -329,14 +360,13 @@ public class TextContents
                     _textCache = curText;
                 }
 
-                var summaryTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                var summaryTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("summary", curText);
 
-                if (fmgEntryGroup.Summary != null && summaryTextCommit)
+                if (summaryTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Summary, _textCache);
-                    Parent.ActionManager.ExecuteAction(action);
+                    CommitText(fmgEntryGroup.Summary);
                 }
             }
             else if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
@@ -362,7 +392,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
+                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
 
                 ImGui.TableNextRow();
 
@@ -377,14 +407,13 @@ public class TextContents
                     _textCache = curText;
                 }
 
-                var descriptionTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                var descriptionTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("description", curText);
 
-                if (fmgEntryGroup.Description != null && descriptionTextCommit)
+                if (descriptionTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Description, _textCache);
-                    Parent.ActionManager.ExecuteAction(action);
+                    CommitText(fmgEntryGroup.Description);
                 }
             }
             else if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
@@ -410,7 +439,7 @@ public class TextContents
                 if (curText == null)
                     curText = "";
 
-                height = 100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
+                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
 
                 ImGui.TableNextRow();
 
@@ -425,14 +454,13 @@ public class TextContents
                     _textCache = curText;
                 }
 
-                var effectTextCommit = ImGui.IsItemDeactivatedAfterEdit();
+                var effectTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("effect", curText);
 
-                if (fmgEntryGroup.Effect != null && effectTextCommit)
+                if (effectTextCommit)
                 {
-                    var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, fmgEntryGroup.Effect, _textCache);
-                    Parent.ActionManager.ExecuteAction(action);
+                    CommitText(fmgEntryGroup.Effect);
                 }
             }
             else if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
@@ -484,7 +512,7 @@ public class TextContents
                 _idCache = curId;
             }
 
-            var idCommit = ImGui.IsItemDeactivatedAfterEdit();
+            var idCommit = GUI.InputCommitted();
 
             if (idCommit)
             {
@@ -501,7 +529,7 @@ public class TextContents
             if (curText == null)
                 curText = "";
 
-            var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(curText).Y;
+            var height = CapBoxHeight(textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
 
             ImGui.TableNextRow();
 
@@ -516,13 +544,13 @@ public class TextContents
                 _textCache = curText;
             }
 
-            var textCommit = ImGui.IsItemDeactivatedAfterEdit();
-                ShowLengthTooltip(curText);
-                ShowPreview("basic", curText);
+            var textCommit = GUI.InputCommitted();
+            ShowLengthTooltip(curText);
+            ShowPreview("basic", curText);
+
             if (textCommit)
             {
-                var action = new ChangeFmgEntryText(Parent, Parent.Selection.SelectedContainerWrapper, entry, _textCache);
-                Parent.ActionManager.ExecuteAction(action);
+                CommitText(entry);
             }
 
             ImGui.EndTable();

@@ -107,6 +107,11 @@ public class TextData : IDisposable
         {
             Smithbox.LogError(this, LOC.Get("TEXT_Data_Aux_Bank_Setup_FAIL", targetProject.Descriptor.ProjectName));
         }
+        else
+        {
+            // Only report success when the setup worked (this logged PASS right after FAIL)
+            Smithbox.Log(this, LOC.Get("TEXT_Data_Aux_Bank_Setup_PASS", targetProject.Descriptor.ProjectName));
+        }
 
         if (AuxBanks.ContainsKey(targetProject.Descriptor.ProjectName))
         {
@@ -116,8 +121,6 @@ public class TextData : IDisposable
         {
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
-
-        Smithbox.Log(this, LOC.Get("TEXT_Data_Aux_Bank_Setup_PASS", targetProject.Descriptor.ProjectName));
 
         return true;
     }
@@ -131,6 +134,13 @@ public class TextData : IDisposable
 
         var folder = @$"{AppContext.BaseDirectory}/Assets/FMG/Templates";
 
+        // EnumerateFiles throws on a missing folder, which failed the whole text setup
+        if (!Directory.Exists(folder))
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_Data_Incremental_Template_Folder_Missing", folder));
+            return true;
+        }
+
         foreach(var file in Directory.EnumerateFiles(folder))
         {
             try
@@ -141,6 +151,13 @@ public class TextData : IDisposable
                 try
                 {
                     newTemplate = JsonSerializer.Deserialize(filestring, TextEditorJsonSerializerContext.Default.IncrementalTemplateEntry);
+
+                    // A file holding just "null" deserializes without error; don't add it
+                    if (newTemplate == null)
+                    {
+                        Smithbox.LogError(this, LOC.Get("TEXT_Data_Deserialize_Incremental_Template_FAIL", file));
+                        continue;
+                    }
 
                     Templates.Add(newTemplate);
                 }

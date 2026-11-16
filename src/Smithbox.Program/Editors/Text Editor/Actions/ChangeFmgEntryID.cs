@@ -26,10 +26,32 @@ public class ChangeFmgEntryID : EditorAction, ITextActionTarget
         OldID = entry.ID;
     }
 
+    /// <summary>
+    /// Where the entry was before Execute moved it; -1 if it wasn't in the list
+    /// </summary>
+    private int PreviousIndex = -1;
+
     public override ActionEvent Execute()
     {
-        Entry.ID = NewID;
-        Info.MarkDirty(Entry.Parent);
+        var fmg = Entry.Parent;
+
+        // Move the entry to its place in ID order. It used to stay where it was, so the list
+        // was out of order until a save sorted it (the row then jumped), and later adds,
+        // which assume a sorted list, could land in the wrong place.
+        PreviousIndex = fmg?.Entries.IndexOf(Entry) ?? -1;
+
+        if (PreviousIndex != -1)
+        {
+            fmg.Entries.RemoveAt(PreviousIndex);
+            Entry.ID = NewID;
+            fmg.Entries.Insert(FmgEntryUtils.GetSortedInsertionIndex(fmg, NewID), Entry);
+        }
+        else
+        {
+            Entry.ID = NewID;
+        }
+
+        Info.MarkDirty(fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 
@@ -38,8 +60,20 @@ public class ChangeFmgEntryID : EditorAction, ITextActionTarget
 
     public override ActionEvent Undo()
     {
-        Entry.ID = OldID;
-        Info.MarkDirty(Entry.Parent);
+        var fmg = Entry.Parent;
+
+        // Put it back where it was (clamped in case the list shrank since)
+        if (PreviousIndex != -1 && fmg != null && fmg.Entries.Remove(Entry))
+        {
+            Entry.ID = OldID;
+            fmg.Entries.Insert(System.Math.Min(PreviousIndex, fmg.Entries.Count), Entry);
+        }
+        else
+        {
+            Entry.ID = OldID;
+        }
+
+        Info.MarkDirty(fmg);
 
         Parent.DifferenceManager.TrackFmgDifferences();
 

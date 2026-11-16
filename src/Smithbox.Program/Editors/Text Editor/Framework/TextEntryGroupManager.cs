@@ -1089,6 +1089,12 @@ public class FmgEntryGroup
         {
             if (fmg.ID == targetBndId)
             {
+                // The slot is the selected entry's own FMG: use the entry itself. Finding it by
+                // ID took the first entry with that ID, so with duplicate IDs the Contents panel,
+                // Delete and Duplicate acted on a different entry than the one selected.
+                if (fmg.File == baseEntry.Parent)
+                    return baseEntry;
+
                 if (Lookup != null)
                 {
                     return Lookup.Find(fmg.File, baseEntry.ID);

@@ -32,16 +32,18 @@ public class TextCommandQueue
                 var fmgName = commands[3];
                 var fmgEntryId = commands[4];
 
-                // Try the containers in the order the game uses them: DLC2, then DLC1, then base.
-                // The bank is a ConcurrentDictionary with no defined order, so taking the first
-                // match could jump to an obsolete container (e.g. ER 'item' instead of 'item_dlc02').
+                // The named container first: every sender passes the filename of the container the
+                // entry was found in. Trying the DLC names first jumped a result in e.g. ER 'item'
+                // (listed when Hide Unused is off) to 'item_dlc02' when that has the same ID.
+                // The DLC names, in the order the game uses them, are only a fallback for when the
+                // entry isn't in the named container.
                 string[] candidateNames =
                 {
+                    containerName,
                     $"{containerName}_dlc02",
                     $"{containerName}_dlc2",
                     $"{containerName}_dlc01",
-                    $"{containerName}_dlc1",
-                    containerName
+                    $"{containerName}_dlc1"
                 };
 
                 var containers = Editor.Project.Handler.TextData.PrimaryBank.Containers;
@@ -79,8 +81,9 @@ public class TextCommandQueue
                             activeView.Selection.SelectFmg(fmg);
                             activeView.Selection.FocusFmgSelection = true;
 
-                            activeView.Selection.SelectFmgEntry(index, entry);
-                            activeView.TextEntryList.FocusSelection = true;
+                            // Single selection (not SelectFmgEntry, which reads Shift/Ctrl and could
+                            // range-select from a search result), shown even if the filter hid it
+                            activeView.Selection.RevealEntry(index, entry);
 
                             return;
                         }

@@ -232,8 +232,7 @@ public class TextEditorScreen : EditorScreen
                     Smithbox.LogError(this, LOC.Get("TEXT_Save_File_FAIL", fileEntry.Path), ex);
                 }
 
-                if (toGame?.Count > 0)
-                    GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
+                SendSavedToGame(toGame);
             }
 
             // Save the configuration JSONs
@@ -286,8 +285,7 @@ public class TextEditorScreen : EditorScreen
                 Smithbox.LogError(this, LOC.Get("TEXT_Save_All_File_FAIL"), ex);
             }
 
-            if (toGame?.Count > 0)
-                GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
+            SendSavedToGame(toGame);
         }
 
         // Save the configuration JSONs
@@ -304,17 +302,42 @@ public class TextEditorScreen : EditorScreen
     /// For "send on save": the modified FMGs the game reads (only in the saved container when one is given), taken
     /// before the save clears their modified state. Manual saves only, and only while the reloader is connected.
     /// </summary>
-    private List<TextGameLink.SendItem> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
+    private List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
     {
         if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || GameLink.Profile == null ||
             GameLink.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(GameLink.Language))
             return null;
 
-        var fmgs = FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink)
+        return FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink)
             .Where(p => onlyContainer == null || p.Container == onlyContainer)
-            .Where(p => GameLink.Fmgs.Any(f => f.Id == p.Fmg.ID));
+            .Where(p => GameLink.Fmgs.Any(f => f.Id == p.Fmg.ID))
+            .ToList();
+    }
 
-        return fmgs.Select(p => FmgReloadSource.FromEditor(p.Container, p.Fmg)).Where(i => i != null).ToList();
+    /// <summary>
+    /// Send the FMGs from FmgsForGame that the save actually wrote. A save only clears the modified
+    /// state when the file was written, so an FMG still marked modified failed to save: sending it
+    /// anyway showed the game text that wasn't on disk.
+    /// </summary>
+    private void SendSavedToGame(List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> candidates)
+    {
+        if (candidates == null || candidates.Count == 0)
+            return;
+
+        var saved = candidates.Where(p => !p.Fmg.IsDirty).ToList();
+
+        if (saved.Count < candidates.Count)
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_FmgReloader_Send_On_Save_Skipped_Unsaved", candidates.Count - saved.Count));
+        }
+
+        var toGame = saved
+            .Select(p => FmgReloadSource.FromEditor(p.Container, p.Fmg))
+            .Where(i => i != null)
+            .ToList();
+
+        if (toGame.Count > 0)
+            GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
     }
 
     public void RefreshFmgTextCache()

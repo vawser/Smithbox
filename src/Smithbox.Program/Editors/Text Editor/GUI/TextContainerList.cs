@@ -90,7 +90,8 @@ public class TextContainerList
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
-            var name = $"{category.GetDisplayName()}";
+            // GetDisplayName is the loc key (this showed e.g. "TEXT_Language_English")
+            var name = LOC.Get(category.GetDisplayName());
 
             GUI.SimpleHeader(name, "");
 
