@@ -92,9 +92,11 @@ public static class DPI
             int index = SdlProvider.SDL.Value.GetWindowDisplayIndex(window);
             float ddpi = DefaultDpi;
             float _ = 0f;
-            SdlProvider.SDL.Value.GetDisplayDPI(index, ref ddpi, ref _, ref _);
+            var result = SdlProvider.SDL.Value.GetDisplayDPI(index, ref ddpi, ref _, ref _);
 
-            Dpi = ddpi;
+            // Without a usable physical display size (e.g. under Xvfb) SDL fails or reports 0, which would make the
+            // font size 0 and crash ImGui's font atlas
+            Dpi = result == 0 && float.IsFinite(ddpi) && ddpi > 0 ? ddpi : DefaultDpi;
         }
     }
 
