@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Numerics;
 
 namespace StudioCore.Preferences;
 
@@ -224,15 +225,18 @@ public class InterfacePrefs
         };
     }
 
+    #endregion
+
+    #region Editor Rail
     public static PreferenceItem Interface_Editor_Rail_Text_Labels()
     {
         return new PreferenceItem
         {
-            OrderID = 9,
+            OrderID = 0,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
-            Section = SectionCategory.General,
+            Section = SectionCategory.EditorRail,
 
             Title = "PREF_Interface_Editor_Rail_Text_Labels",
             Description = "PREF_Interface_Editor_Rail_Text_Labels_TT",
@@ -241,6 +245,111 @@ public class InterfacePrefs
                 ImGui.Checkbox("##inputValue", ref CFG.Current.Interface_Editor_Rail_Text_Labels);
             }
         };
+    }
+
+    public static PreferenceItem Interface_Editor_Rail_Order()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+
+            Section = SectionCategory.EditorRail,
+
+            Title = "PREF_Interface_Editor_Rail_Order",
+            Description = "PREF_Interface_Editor_Rail_Order_TT",
+
+            Draw = () => {
+                ImGui.BeginDisabled(!EditorRail.HasCustomOrder);
+
+                if (ImGui.Button($"{LOC.Get("PREF_Interface_Editor_Rail_Order_Reset")}##resetRailOrder",
+                        DPI.SelectorButtonSize))
+                {
+                    EditorRail.ResetOrder();
+                }
+
+                ImGui.EndDisabled();
+            }
+        };
+    }
+
+    public static PreferenceItem Interface_Editor_Rail_Colors_Header()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
+            Category = PreferenceCategory.Interface,
+            Spacer = false,
+
+            Section = SectionCategory.EditorRail,
+
+            Title = "PREF_Interface_Editor_Rail_Colors",
+            Description = "PREF_Interface_Editor_Rail_Colors_TT",
+        };
+    }
+
+    /// <summary>One color setting per editor, listed under <see cref="Interface_Editor_Rail_Colors_Header"/></summary>
+    public static List<PreferenceItem> Interface_Editor_Rail_Colors()
+    {
+        var items = new List<PreferenceItem>();
+        var order = 3;
+
+        foreach (var (id, labelKey) in EditorRail.AllEditors())
+        {
+            var editorId = id;
+
+            items.Add(new PreferenceItem
+            {
+                OrderID = order++,
+                Category = PreferenceCategory.Interface,
+                Spacer = false,
+                InlineName = true,
+
+                Section = SectionCategory.EditorRail,
+
+                // The editor's name, which also makes the row searchable by it
+                Title = labelKey,
+
+                Draw = () => {
+                    CFG.Current.Interface_Editor_Rail_Colors ??= new Dictionary<string, Vector3>();
+                    var colors = CFG.Current.Interface_Editor_Rail_Colors;
+
+                    var isSet = colors.TryGetValue(editorId, out var color);
+
+                    if (!isSet)
+                    {
+                        unsafe
+                        {
+                            var text = *ImGui.GetStyleColorVec4(ImGuiCol.Text);
+                            color = new Vector3(text.X, text.Y, text.Z);
+                        }
+                    }
+
+                    // The swatch edits live, so there is no typed value to lose on leaving it
+                    if (ImGui.ColorEdit3("##railColor", ref color,
+                            ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.NoLabel))
+                    {
+                        colors[editorId] = color;
+                    }
+
+                    ImGui.SameLine();
+
+                    ImGui.BeginDisabled(!isSet);
+
+                    if (ImGui.Button($"{LOC.Get("PREF_Interface_Editor_Rail_Colors_Reset")}##railColorReset"))
+                        colors.Remove(editorId);
+
+                    ImGui.EndDisabled();
+                }
+            });
+        }
+
+        // Space after the list, as after other settings
+        if (items.Count > 0)
+            items[^1].Spacer = true;
+
+        return items;
     }
 
     #endregion

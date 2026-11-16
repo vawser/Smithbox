@@ -33,6 +33,30 @@
       "Text": "If enabled, the editor rail shows each editor as a button with its name. Otherwise, it shows icon buttons."
     },
     {
+      "Key": "PREF_Interface_Editor_Rail_Order",
+      "Text": "Editor Rail Order"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Order_TT",
+      "Text": "Ctrl+Left Click and drag an editor rail button to move it. A custom order drops the category separators. Reset restores the default order."
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Order_Reset",
+      "Text": "Reset"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Colors",
+      "Text": "Editor Button Colors"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Colors_TT",
+      "Text": "Colors each editor's icon (or name) in the editor rail. Reset returns an editor to the theme's text color."
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Colors_Reset",
+      "Text": "Reset"
+    },
+    {
       "Key": "PREF_Interface_Alias_Wordwrap_General",
       "Text": "Enable Alias Word-wrap"
     },

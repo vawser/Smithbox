@@ -158,6 +158,13 @@ public class CFG
     public float Interface_Font_Size = 14.0f;
     public bool Interface_Allow_Window_Movement = true;
     public bool Interface_Editor_Rail_Text_Labels = false;
+
+    // The editor rail's button order as editor ids, set by ctrl+dragging the buttons. Empty is the registry's
+    // order, grouped by category.
+    public List<string> Interface_Editor_Rail_Order = new List<string>();
+
+    // Editor rail button colors (RGB, 0 to 1) by editor id. An editor missing here uses the theme's text color.
+    public Dictionary<string, Vector3> Interface_Editor_Rail_Colors = new Dictionary<string, Vector3>();
     public bool Interface_Tool_Window_Dropdown_Navigation = false;
 
     // The Project Editor list's groups whose projects are hidden: "open", or "game_" + the project type

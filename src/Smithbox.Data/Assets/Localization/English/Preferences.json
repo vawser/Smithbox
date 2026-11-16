@@ -33,6 +33,10 @@
       "Text": "Editor Presentation"
     },
     {
+      "Key": "PREF_Category_UI_Editor_Rail",
+      "Text": "Editor Rail"
+    },
+    {
       "Key": "PREF_Category_UI_Theme",
       "Text": "Theme"
     },

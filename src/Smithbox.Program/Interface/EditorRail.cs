@@ -59,6 +59,124 @@ public static class EditorRail
 
     private static readonly Vector4 UnsavedColor = new(0.95f, 0.70f, 0.20f, 1.0f);
 
+    // The editor id being ctrl+dragged, or null when no drag is under way
+    private static string _dragId;
+
+    // The dragged button's rect this frame, and the shown editor ids in rail order, for the move after the loop
+    private static Vector2 _dragMin;
+    private static Vector2 _dragMax;
+    private static readonly List<string> _shownIds = new();
+
+    /// <summary>True when the user has a custom rail order, which drops the category separators</summary>
+    public static bool HasCustomOrder => CFG.Current.Interface_Editor_Rail_Order is { Count: > 0 };
+
+    /// <summary>Every editor with a rail button, as its id and name key, in the default rail order</summary>
+    public static IEnumerable<(string Id, string LabelKey)> AllEditors()
+    {
+        yield return (EditorRegistry.ProjectEditorId, "PROJECT_Editor_Title");
+
+        foreach (var entry in EditorRegistry.Entries)
+            yield return (entry.Id, entry.LabelKey);
+
+        yield return (EditorRegistry.SettingsEditorId, "SETTINGS_Editor_Title");
+    }
+
+    /// <summary>The user's color for an editor's rail button, if one is set</summary>
+    public static bool TryGetColor(string id, out Vector4 color)
+    {
+        if (CFG.Current.Interface_Editor_Rail_Colors?.TryGetValue(id, out var rgb) == true)
+        {
+            color = new Vector4(rgb, 1.0f);
+            return true;
+        }
+
+        color = default;
+        return false;
+    }
+
+    /// <summary>Restores the registry's order, grouped by category</summary>
+    public static void ResetOrder()
+    {
+        CFG.Current.Interface_Editor_Rail_Order = new List<string>();
+        _dragId = null;
+    }
+
+    /// <summary>
+    /// Every registered editor in rail order. Editors missing from the saved order (added since it was saved)
+    /// go at the end, in registry order.
+    /// </summary>
+    private static List<EditorEntry> OrderedEntries()
+    {
+        var result = new List<EditorEntry>(EditorRegistry.Entries);
+
+        if (!HasCustomOrder)
+            return result;
+
+        var order = CFG.Current.Interface_Editor_Rail_Order;
+
+        int Rank(EditorEntry entry)
+        {
+            var index = order.IndexOf(entry.Id);
+            return index < 0 ? int.MaxValue : index;
+        }
+
+        // A stable sort, so unknown editors keep their registry order among themselves
+        var registryIndex = new Dictionary<EditorEntry, int>();
+        for (var i = 0; i < result.Count; i++)
+            registryIndex[result[i]] = i;
+
+        result.Sort((a, b) =>
+        {
+            var c = Rank(a).CompareTo(Rank(b));
+            return c != 0 ? c : registryIndex[a].CompareTo(registryIndex[b]);
+        });
+
+        return result;
+    }
+
+    /// <summary>
+    /// Moves the dragged editor one shown slot up or down when the mouse leaves its button past that edge. The
+    /// order covers every registered editor, so editors hidden for this project keep their places for others.
+    /// </summary>
+    private static void ApplyDragMove()
+    {
+        if (_dragId == null)
+            return;
+
+        var shownIndex = _shownIds.IndexOf(_dragId);
+
+        if (shownIndex < 0)
+            return;
+
+        var mouseY = ImGui.GetMousePos().Y;
+        string neighbour = null;
+        var after = false;
+
+        if (mouseY < _dragMin.Y && shownIndex > 0)
+        {
+            neighbour = _shownIds[shownIndex - 1];
+        }
+        else if (mouseY > _dragMax.Y && shownIndex < _shownIds.Count - 1)
+        {
+            neighbour = _shownIds[shownIndex + 1];
+            after = true;
+        }
+
+        if (neighbour == null)
+            return;
+
+        var order = new List<string>();
+        foreach (var entry in OrderedEntries())
+            order.Add(entry.Id);
+
+        order.Remove(_dragId);
+
+        var target = order.IndexOf(neighbour) + (after ? 1 : 0);
+        order.Insert(target, _dragId);
+
+        CFG.Current.Interface_Editor_Rail_Order = order;
+    }
+
     /// <summary>
     /// Width of the rail when it shows editor names, fitting the longest name. Every registered editor is
     /// measured, not just the ones the project has, so the rail keeps its width between projects.
@@ -133,28 +251,70 @@ public static class EditorRail
             {
                 RefreshUnsavedCounts(project);
 
+                // A custom order mixes categories, so separators between them would no longer mean anything
+                var customOrder = HasCustomOrder;
                 var lastCategory = EditorCategory.Project;
+                var firstShown = true;
 
-                foreach (var entry in EditorRegistry.Entries)
+                _shownIds.Clear();
+
+                foreach (var entry in OrderedEntries())
                 {
                     if (!entry.IsAvailable(project))
                         continue;
 
-                    if (entry.Category != lastCategory)
-                    {
+                    if (customOrder ? firstShown : entry.Category != lastCategory)
                         ImGui.Separator();
-                        lastCategory = entry.Category;
-                    }
+
+                    lastCategory = entry.Category;
+                    firstShown = false;
 
                     var loading = entry.Screen(project.Handler) == null;
                     _unsavedCounts.TryGetValue(entry.Id, out var unsaved);
 
-                    if (RailButton(entry.Id, entry.Icon, LOC.Get(entry.LabelKey),
-                            activeEntry == entry, loading, unsaved, buttonSize, scale))
+                    var clicked = RailButton(entry.Id, entry.Icon, LOC.Get(entry.LabelKey),
+                        activeEntry == entry, loading, unsaved, buttonSize, scale);
+
+                    _shownIds.Add(entry.Id);
+
+                    // Ctrl+left click starts a drag rather than opening the editor
+                    if (_dragId == null && ImGui.IsItemClicked(ImGuiMouseButton.Left) && ImGui.GetIO().KeyCtrl)
+                        _dragId = entry.Id;
+
+                    if (_dragId == entry.Id)
+                    {
+                        _dragMin = ImGui.GetItemRectMin();
+                        _dragMax = ImGui.GetItemRectMax();
+
+                        ImGui.GetWindowDrawList().AddRect(_dragMin, _dragMax,
+                            ImGui.GetColorU32(ImGuiCol.CheckMark), 0, ImDrawFlags.None,
+                            MathF.Max(1.0f, MathF.Round(scale)));
+                    }
+                    else if (clicked && _dragId == null)
                     {
                         orchestrator.ActivateEditor(entry.Id);
                     }
                 }
+
+                if (_dragId != null)
+                {
+                    if (ImGui.IsMouseDown(ImGuiMouseButton.Left))
+                    {
+                        ImGui.SetMouseCursor(ImGuiMouseCursor.ResizeNs);
+                        ApplyDragMove();
+                    }
+                    else
+                    {
+                        _dragId = null;
+
+                        if (HasCustomOrder)
+                            CFG.Save();
+                    }
+                }
+            }
+            else
+            {
+                _dragId = null;
             }
 
             // Settings Editor, always present and always last
@@ -210,9 +370,15 @@ public static class EditorRail
             pushed++;
         }
 
+        // Loading wins over the user's color, as the dimmed text is what says the editor isn't ready
         if (loading)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, *ImGui.GetStyleColorVec4(ImGuiCol.TextDisabled));
+            pushed++;
+        }
+        else if (TryGetColor(id, out var userColor))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, userColor);
             pushed++;
         }
 

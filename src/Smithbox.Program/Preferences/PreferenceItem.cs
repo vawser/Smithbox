@@ -83,6 +83,9 @@ public enum SectionCategory
     [Display(Name = "PREF_Category_UI_Theme_Builder")]
     ThemeBuilder = 303,
 
+    [Display(Name = "PREF_Category_UI_Editor_Rail")]
+    EditorRail = 304,
+
     // Viewport
     [Display(Name = "PREF_Category_Viewport_Rendering")]
     Rendering = 400,

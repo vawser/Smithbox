@@ -58,8 +58,14 @@ public class PreferencesMenu
         var methods = targetPref.GetMethods(BindingFlags.Public | BindingFlags.Static)
         .Where(m => m.ReturnType == typeof(PreferenceItem) && m.GetParameters().Length == 0);
 
+        // Methods returning a list add one setting per item, for settings made per editor, per game, etc.
+        var listMethods = targetPref.GetMethods(BindingFlags.Public | BindingFlags.Static)
+        .Where(m => typeof(IEnumerable<PreferenceItem>).IsAssignableFrom(m.ReturnType) &&
+                    m.GetParameters().Length == 0);
+
         list = methods
             .Select(m => (PreferenceItem)m.Invoke(null, null))
+            .Concat(listMethods.SelectMany(m => (IEnumerable<PreferenceItem>)m.Invoke(null, null)))
             .OrderBy(s => s.Section)
             .ToList();
 
@@ -434,7 +440,8 @@ public class PreferencesMenu
         var filteredSettings = sectionGroup
             .Where(s => string.IsNullOrWhiteSpace(searchFilter) ||
                         LOC.Get(s.Title).Contains(searchFilter, StringComparison.OrdinalIgnoreCase) ||
-                        LOC.Get(s.Description).Contains(searchFilter, StringComparison.OrdinalIgnoreCase))
+                        (!string.IsNullOrEmpty(s.Description) &&
+                         LOC.Get(s.Description).Contains(searchFilter, StringComparison.OrdinalIgnoreCase)))
             .OrderBy(s => s.OrderID)
             .ToList();
 
@@ -478,7 +485,8 @@ public class PreferencesMenu
                 }
 
                 var displayName = LOC.Get(setting.Title);
-                var description = LOC.Get(setting.Description);
+                // A setting can leave its description out, such as one row of a per-editor list
+                var description = string.IsNullOrEmpty(setting.Description) ? "" : LOC.Get(setting.Description);
 
                 ImGui.PushID(setting.Title);
 
