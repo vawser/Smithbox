@@ -4,3 +4,5 @@
 
 - UX for Properties
 - Aliases for ID references within States graph
+- Add filter that greys out non-matches in Script graph
+    - Include Go to action that jumps through the match list

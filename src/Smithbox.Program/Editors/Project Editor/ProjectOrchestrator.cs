@@ -764,6 +764,13 @@ public class ProjectOrchestrator : IDisposable
 
         Smithbox.Instance.SetProgramName(project);
 
+        // Switching to a project makes it the next startup's auto-load, as loading one does.
+        // Skipped when it already is, as SetAsAutoLoad saves every project's descriptor.
+        if (!project.Descriptor.AutoSelect)
+        {
+            SetAsAutoLoad(project);
+        }
+
         ProjectEditor.OnProjectSelected(project);
     }
 

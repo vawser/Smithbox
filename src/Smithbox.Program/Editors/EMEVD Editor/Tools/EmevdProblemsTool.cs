@@ -130,11 +130,30 @@ public class EmevdProblemsTool
         var flags = View.Project.Handler.ProjectData?.EventFlags;
         Func<long, bool> isFlagStored = flags != null ? flags.IsValid : null;
 
+        var scripts = new List<EmevdScript>();
         foreach (var ev in file.Emevd.Events)
         {
             var script = EmevdScript.Build(catalog, ev);
+            scripts.Add(script);
             foreach (var p in EmevdChecks.Run(script, id => bank?.ResolveEvent(file, id).ev, isFlagStored))
                 Problems.Add((ev, p));
+        }
+
+        // ER: the own flags the file's Initialize Event lines give the events they start
+        if (isFlagStored != null)
+        {
+            var started = new Dictionary<long, EmevdScript>();
+            EmevdScript FindScript(long id)
+            {
+                if (!started.TryGetValue(id, out var s))
+                    started[id] = s = bank?.ResolveEvent(file, id).ev is { } target ? EmevdScript.Build(catalog, target) : null;
+                return s;
+            }
+
+            var byId = file.Emevd.Events.GroupBy(e => e.ID).ToDictionary(g => g.Key, g => g.First());
+            foreach (var p in EmevdChecks.RunOwnFlags(file.Name, scripts, FindScript, isFlagStored))
+                if (byId.TryGetValue(p.EventId, out var ev))
+                    Problems.Add((ev, p));
         }
     }
 

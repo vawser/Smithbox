@@ -95,6 +95,20 @@ public class EmevdRoleLinks
                     : LOC.Get("EMEVD_Role_Entity");
 
             case EmevdArgRole.EventFlag:
+                // ER: an offset from the event's own flag, or no flag at all, depending on the line's target type
+                if (Project.Handler.ProjectData?.EventFlags != null)
+                {
+                    switch (EmevdChecks.FlagTargetType(line))
+                    {
+                        case 1:
+                            return LOC.Get("EMEVD_Role_EventFlag_Event_Id");
+                        case 2:
+                            return LOC.Get("EMEVD_Role_EventFlag_Own_Offset", v);
+                        case null:
+                            return LOC.Get("EMEVD_Role_EventFlag");
+                    }
+                }
+
                 // ER: whether the game stores the flag, its range and what that range is for
                 return EventFlagDisplay.Summary(Project, v) is { } summary
                     ? $"{LOC.Get("EMEVD_Role_EventFlag")}: {summary}"
@@ -234,7 +248,7 @@ public class EmevdRoleLinks
     /// <summary>A warning icon for an event flag arg the game doesn't store (same line; nothing otherwise)</summary>
     public void FlagMarker(EmevdLine line, EmevdArg arg)
     {
-        if (arg.Def.Role == EmevdArgRole.EventFlag && !line.Params.ContainsKey(arg.Offset))
+        if (arg.Def.Role == EmevdArgRole.EventFlag && !line.Params.ContainsKey(arg.Offset) && EmevdChecks.FlagTargetType(line) is -1 or 0)
             EventFlagDisplay.Marker(Project, ValueOf(arg));
     }
 
