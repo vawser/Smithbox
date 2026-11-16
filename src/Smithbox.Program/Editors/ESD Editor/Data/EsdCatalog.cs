@@ -177,7 +177,9 @@ public class EsdCatalog
                 def.Args.Add(new EsdArgDef
                 {
                     Name = Str(a, "Name"),
-                    Type = Str(a, "Type"),
+                    // Some catalogue args have no type (ER, SDT, ...): never null, since the views print it as-is
+                    // (ImGui.TextDisabled(null) is a native crash); every edit treats an unknown type as a whole number
+                    Type = Str(a, "Type") ?? "unknown",
                     Role = Str(a, "Role"),
                     Enum = Str(a, "Enum"),
                     Optional = Bool(a, "Optional"),
