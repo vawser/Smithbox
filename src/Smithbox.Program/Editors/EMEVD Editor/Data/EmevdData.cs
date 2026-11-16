@@ -15,10 +15,14 @@ public class EmevdData : IDisposable
     /// <summary>The file (Map Names) and event aliases the editor shows and edits</summary>
     public EmevdAliases Aliases;
 
+    /// <summary>The user's comments on events and instructions, kept with the project (not in the files)</summary>
+    public EmevdComments Comments;
+
     public EmevdData(ProjectEntry project)
     {
         Project = project;
         Aliases = new EmevdAliases(project);
+        Comments = new EmevdComments(project);
     }
 
     public async Task<bool> Setup()

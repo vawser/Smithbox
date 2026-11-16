@@ -200,6 +200,13 @@ public class EmevdEditorScreen : EditorScreen
             GUI.Tooltip(LOC.Get("EMEVD_View_Toggle_Arg_Names_TT"));
             GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Arg_Names);
 
+            if (ImGui.MenuItem($"{LOC.Get("EMEVD_Comments_Toggle")}##commentsToggle"))
+            {
+                CFG.Current.EmevdEditor_Show_Comments = !CFG.Current.EmevdEditor_Show_Comments;
+            }
+            GUI.Tooltip(LOC.Get("EMEVD_Comments_Toggle_TT"));
+            GUI.ShowActiveStatus(CFG.Current.EmevdEditor_Show_Comments);
+
             // DS2 / SotFS: MustSub calls shown as the SpEffectMustSub event they run
             if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
@@ -247,6 +254,7 @@ public class EmevdEditorScreen : EditorScreen
     public void SaveUnsaved()
     {
         Bank?.SaveAllDirty();
+        Project.Handler.EmevdData?.Comments?.OnSaved();
         Smithbox.Instance.SaveConfiguration();
     }
 
@@ -279,6 +287,10 @@ public class EmevdEditorScreen : EditorScreen
             {
                 bank.SaveAllDirty();
             }
+
+            // Comments are anchored by instruction index, so they're written once the files they're on match the
+            // saved ones (also after an undo back to the saved state, which leaves nothing to save)
+            Project.Handler.EmevdData?.Comments?.OnSaved();
         }
 
         Smithbox.Instance.SaveConfiguration();

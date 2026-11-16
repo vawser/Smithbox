@@ -72,6 +72,25 @@ public class EmevdBlockView
 
     private bool Filtering => !string.IsNullOrWhiteSpace(FilterText);
 
+    // Comment bubbles (EmevdComments): drawn in a column right of the blocks, level with the block they're on
+    private EmevdComments Comments => View.Project.Handler.EmevdData?.Comments;
+    private List<EmevdRow> CommentRowsFor;
+    private EMEVD.Event CommentEventFor;
+    private int CommentVersion = -1;
+    private bool HasComments;
+
+    // The open comment editor: the block it's on (the event or an instruction), and where
+    private object EditCommentBlock;
+    private EmevdFileWrapper EditCommentFile;
+    private EMEVD.Event EditCommentEvent;
+    private int EditCommentRow = NoRow;
+    private string CommentText = "";
+    private bool FocusComment;
+
+    // The hat's "row" for a comment; NoRow: the block has no row (hidden in a collapsed block, or gone)
+    private const int HatRow = -1;
+    private const int NoRow = int.MinValue;
+
     private const float LaneWidth = 7f;
     private const float RowGap = 2f;
 
@@ -252,12 +271,14 @@ public class EmevdBlockView
     public void Draw()
     {
         _ = CurrentScript;
+        Comments?.EnsureLoaded(View.Selection.SelectedFile);
 
         DrawHeader();
         UpdateMatches();
         DrawFilterBar();
 
-        ImGui.BeginChild("emevdScript", Vector2.Zero, ImGuiChildFlags.Borders);
+        // Scrolls sideways when a narrow window puts the comment column past its right edge
+        ImGui.BeginChild("emevdScript", Vector2.Zero, ImGuiChildFlags.Borders, ImGuiWindowFlags.HorizontalScrollbar);
 
         if (Script == null)
         {
@@ -620,8 +641,19 @@ public class EmevdBlockView
         var indexW = ImGui.CalcTextSize(Script.Lines.Count.ToString()).X + 8f;
         var lanes = Math.Min(DrawnLanes, 12);
         var marginW = indexW + lanes * LaneWidth + 6f;
+
+        // The comment column takes the right of the view while the event has comments (or one is being written)
+        var showComments = CFG.Current.EmevdEditor_Show_Comments && Comments != null && (EventHasComments() || EditCommentBlock != null);
+        var commentW = 240f * DPI.UIScale();
+        var commentGap = 16f * DPI.UIScale();
+        var blocksW = showComments
+            ? Math.Max(width - commentW - commentGap, marginW + 300f * DPI.UIScale())
+            : Math.Max(width, marginW + 200f);
+
         var blockX0 = origin.X + marginW;
-        var blockX1 = origin.X + Math.Max(width, marginW + 200f) - 4f;
+        var blockX1 = origin.X + blocksW - 4f;
+        var cx0 = blockX1 + commentGap;
+        var cx1 = cx0 + commentW;
 
         // Row tops (relative to the first row) as a prefix sum, since C-block feet are shorter than lines
         var tops = new float[Rows.Count + 1];
@@ -756,11 +788,300 @@ public class EmevdBlockView
             drawList.AddLine(new Vector2(x, y1), new Vector2(RowX(toRow) - 1f, y1), color, 1.5f);
         }
 
+        if (showComments)
+        {
+            var editorH = Math.Max(blockH, lineH * 6f + 8f);
+            var editorBottom = DrawCommentColumn(drawList, tops, first, last, origin, linesTop, hatH, lineH, editorH, blockX1, cx0, cx1);
+            totalH = Math.Max(totalH, editorBottom - origin.Y + 8f);
+        }
+        else if (EditCommentBlock != null && !CFG.Current.EmevdEditor_Show_Comments)
+        {
+            // Comments hidden while one was open
+            EndCommentEdit(true);
+        }
+
         // Reserve the whole column, so the scrollbar covers every row
         ImGui.SetCursorScreenPos(origin);
-        ImGui.Dummy(new Vector2(Math.Max(width, marginW + 200f), totalH));
+        ImGui.Dummy(new Vector2(showComments ? cx1 - origin.X + 4f : blocksW, totalH));
 
         DrawArgPopup();
+    }
+
+    // ---------------------------------------------------------------- comments
+
+    /// <summary>The block a row comments on: its instruction; null for feet and dividers</summary>
+    private object AnchorOf(int r) =>
+        r == HatRow ? Script?.Event
+        : r >= 0 && r < Rows.Count && Rows[r].Kind == EmevdRowKind.Line ? Script.Lines[Rows[r].Line].Instr
+        : null;
+
+    /// <summary>Whether the event's header or a row on show has a comment, cached by rows and comment version</summary>
+    private bool EventHasComments()
+    {
+        var comments = Comments;
+        if (comments == null || Script == null)
+            return false;
+
+        if (!ReferenceEquals(CommentRowsFor, Rows) || !ReferenceEquals(CommentEventFor, Script.Event) || CommentVersion != comments.Version)
+        {
+            CommentRowsFor = Rows;
+            CommentEventFor = Script.Event;
+            CommentVersion = comments.Version;
+            HasComments = comments.Has(Script.Event) || Enumerable.Range(0, Rows.Count).Any(r => comments.Has(AnchorOf(r)));
+        }
+
+        return HasComments;
+    }
+
+    /// <summary>Opens the in-place editor on a line's comment (a new one if it has none); -1 is the event's header</summary>
+    public void BeginComment(int line)
+    {
+        if (Script == null || Comments == null || line >= Script.Lines.Count)
+            return;
+
+        var block = line < 0 ? (object)Script.Event : Script.Lines[line].Instr;
+
+        if (EditCommentBlock != null && !ReferenceEquals(EditCommentBlock, block))
+            EndCommentEdit(true);
+
+        // A line hidden in a collapsed block is shown first
+        if (line >= 0)
+            Reveal(line);
+
+        EditCommentBlock = block;
+        EditCommentFile = View.Selection.SelectedFile;
+        EditCommentEvent = Script.Event;
+        EditCommentRow = line < 0 ? HatRow : LineRow[line];
+        CommentText = Comments.Get(block) ?? "";
+        FocusComment = true;
+        CFG.Current.EmevdEditor_Show_Comments = true;
+    }
+
+    /// <summary>
+    /// Closes the editor. keepChange: the editor went away without the field being left (another event was
+    /// selected, its block was collapsed away, the comments were hidden): a typed change is kept rather than lost.
+    /// </summary>
+    private void EndCommentEdit(bool keepChange)
+    {
+        if (keepChange && EditCommentBlock != null && CommentText != (Comments?.Get(EditCommentBlock) ?? ""))
+            Comments?.Set(EditCommentFile, EditCommentBlock, CommentText);
+
+        EditCommentBlock = null;
+        EditCommentFile = null;
+        EditCommentEvent = null;
+        EditCommentRow = NoRow;
+        FocusComment = false;
+    }
+
+    /// <summary>The open editor's row: where it was opened, else wherever its block is now (an edit moves rows)</summary>
+    private int CommentEditRow()
+    {
+        if (ReferenceEquals(EditCommentBlock, Script.Event))
+            return HatRow;
+
+        if (EditCommentRow >= 0 && ReferenceEquals(AnchorOf(EditCommentRow), EditCommentBlock))
+            return EditCommentRow;
+
+        for (var r = 0; r < Rows.Count; r++)
+        {
+            if (ReferenceEquals(AnchorOf(r), EditCommentBlock))
+                return r;
+        }
+
+        return NoRow;
+    }
+
+    /// <summary>
+    /// The comment column: a bubble level with the header and each commented block on screen, then the editor if one
+    /// is open. Returns the bottom of what it drew past the rows (the editor can reach below the last row).
+    /// </summary>
+    private float DrawCommentColumn(ImDrawListPtr drawList, float[] tops, int first, int last, Vector2 origin, float linesTop, float hatH,
+        float lineH, float editorH, float x1, float cx0, float cx1)
+    {
+        var comments = Comments;
+        var bottom = 0f;
+
+        var editRow = NoRow;
+        Vector2 editMin = default, editMax = default;
+        if (EditCommentBlock != null)
+        {
+            editRow = CommentEditRow();
+
+            if (View.Selection.SelectedFile != EditCommentFile || !ReferenceEquals(Script.Event, EditCommentEvent) || (editRow == NoRow && !LayoutDirty))
+            {
+                EndCommentEdit(true);
+            }
+            else if (editRow != NoRow)
+            {
+                EditCommentRow = editRow;
+                editMin = new Vector2(cx0, editRow == HatRow ? origin.Y + 2f : linesTop + tops[editRow]);
+                editMax = new Vector2(cx1, editMin.Y + editorH);
+            }
+            // else: the block is being revealed (its rows are rebuilt next frame)
+        }
+
+        // A bubble clicked below opens its editor next frame, where its place is known
+        var editBlock = EditCommentBlock;
+
+        var bubbleColor = ImGui.GetColorU32(EmevdFormat.CommentColor);
+        var textColor = ImGui.GetColorU32(new Vector4(0.10f, 0.09f, 0.05f, 1f));
+        var lineColor = ImGui.GetColorU32(EmevdFormat.Darken(EmevdFormat.CommentColor, 0.7f));
+
+        void Bubble(int r, float top, float h)
+        {
+            var block = AnchorOf(r);
+            var text = comments.Get(block);
+            if (text == null || (EditCommentBlock != null && r == editRow))
+                return;
+
+            var line = r == HatRow ? -1 : Rows[r].Line;
+            var min = new Vector2(cx0, top);
+            var max = new Vector2(cx1, top + h);
+            var midY = (min.Y + max.Y) * 0.5f;
+
+            // A line from the block to the bubble's tail
+            drawList.AddLine(new Vector2(x1 + 2f, midY), new Vector2(cx0 - 6f, midY), lineColor, 1f);
+            drawList.AddTriangleFilled(new Vector2(cx0, midY - 5f), new Vector2(cx0 - 7f, midY), new Vector2(cx0, midY + 5f), bubbleColor);
+            drawList.AddRectFilled(min, max, bubbleColor, 6f);
+
+            var selected = line < 0 ? View.Selection.InstructionIndex < 0 : View.Selection.IsSelected(line);
+            if (selected)
+                drawList.AddRect(min, max, ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), 6f, ImDrawFlags.None, 2f);
+
+            drawList.PushClipRect(min, max, true);
+            var preview = FirstLine(text, cx1 - cx0 - 16f, out var cut);
+            drawList.AddText(new Vector2(min.X + 8f, min.Y + (h - lineH) * 0.5f), textColor, cut ? preview + "…" : preview);
+            drawList.PopClipRect();
+
+            // A bubble under the open editor doesn't take clicks
+            if (EditCommentBlock != null && editRow != NoRow && min.Y < editMax.Y && max.Y > editMin.Y)
+                return;
+
+            ImGui.SetCursorScreenPos(min);
+            ImGui.InvisibleButton($"##emevdComment{r}", max - min);
+            if (ImGui.IsItemHovered())
+                GUI.Tooltip(LOC.Get("EMEVD_Comment_Bubble_TT", text));
+            if (ImGui.IsItemClicked())
+            {
+                View.Selection.SelectInstruction(line);
+                BeginComment(line);
+            }
+
+            if (ImGui.BeginPopupContextItem($"##emevdComment{r}_menu"))
+            {
+                if (ImGui.MenuItem(LOC.Get("EMEVD_Comment_Edit")))
+                    BeginComment(line);
+                if (ImGui.MenuItem(LOC.Get("EMEVD_Comment_Remove")))
+                    comments.Set(View.Selection.SelectedFile, block, null);
+                ImGui.EndPopup();
+            }
+        }
+
+        Bubble(HatRow, origin.Y + 2f, hatH - 2f);
+        for (var r = first; r <= last && r < Rows.Count; r++)
+            Bubble(r, linesTop + tops[r], tops[r + 1] - tops[r] - RowGap);
+
+        if (EditCommentBlock != null && ReferenceEquals(EditCommentBlock, editBlock) && editRow != NoRow)
+            bottom = DrawCommentEditor(drawList, editMin, editMax, x1, lineH, lineColor);
+
+        return bottom;
+    }
+
+    /// <summary>The open comment's text box, over its bubble's place. Leaving it after an edit keeps the text; Escape discards.</summary>
+    private float DrawCommentEditor(ImDrawListPtr drawList, Vector2 min, Vector2 max, float x1, float lineH, uint lineColor)
+    {
+        var midY = min.Y + lineH * 0.5f + 4f;
+        drawList.AddLine(new Vector2(x1 + 2f, midY), new Vector2(min.X - 6f, midY), lineColor, 1f);
+
+        if (FocusComment)
+        {
+            // A narrow view puts the column past the right edge: bring the editor into view
+            var winX = ImGui.GetWindowPos().X;
+            var winW = ImGui.GetWindowWidth();
+            if (max.X > winX + winW - ImGui.GetStyle().ScrollbarSize)
+                ImGui.SetScrollFromPosX(max.X - winX + 8f, 1f);
+        }
+
+        ImGui.SetCursorScreenPos(min);
+        var focusing = FocusComment;
+        if (FocusComment)
+        {
+            ImGui.SetKeyboardFocusHere();
+            FocusComment = false;
+        }
+
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, EmevdFormat.Darken(EmevdFormat.CommentColor, 0.35f));
+        ImGui.InputTextMultiline("##emevdCommentEdit", ref CommentText, 4096, max - min);
+        ImGui.PopStyleColor();
+
+        var hovered = ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem);
+        var active = ImGui.IsItemActive();
+        var clickedAway = !hovered && (ImGui.IsMouseClicked(ImGuiMouseButton.Left) || ImGui.IsMouseClicked(ImGuiMouseButton.Right));
+
+        if (GUI.InputCommitted())
+        {
+            Comments?.Set(EditCommentFile, EditCommentBlock, CommentText);
+            EndCommentEdit(false);
+        }
+        else if (ImGui.IsItemDeactivated())
+        {
+            if (ImGui.IsKeyPressed(ImGuiKey.Escape, false) || clickedAway)
+                EndCommentEdit(false);
+            else
+                FocusComment = true; // Focus taken away without the user leaving (a closing menu hands focus back to its window): take it back
+        }
+        else if (!active && !focusing && clickedAway)
+        {
+            // Never focused (or focus didn't take), and the user clicked elsewhere: nothing was typed
+            EndCommentEdit(false);
+        }
+
+        var hintPos = new Vector2(min.X, max.Y + 2f);
+        drawList.AddText(hintPos, ImGui.GetColorU32(ImGuiCol.TextDisabled), LOC.Get("EMEVD_Comment_Hint"));
+        return hintPos.Y + lineH;
+    }
+
+    /// <summary>The comment items of a block's menu: add / edit / remove; line -1 is the event's header</summary>
+    private void CommentItems(int line)
+    {
+        var comments = Comments;
+        if (comments == null || Script == null || line >= Script.Lines.Count)
+            return;
+
+        var block = line < 0 ? (object)Script.Event : Script.Lines[line].Instr;
+        var has = comments.Has(block);
+
+        if (ImGui.MenuItem(LOC.Get(has ? "EMEVD_Comment_Edit" : "EMEVD_Comment_Add")))
+            BeginComment(line);
+        GUI.Tooltip(LOC.Get("EMEVD_Comment_Add_TT"));
+
+        if (has && ImGui.MenuItem(LOC.Get("EMEVD_Comment_Remove")))
+            comments.Set(View.Selection.SelectedFile, block, null);
+    }
+
+    /// <summary>The text's first line, cut to fit a width; cut is true when anything was left out</summary>
+    private static string FirstLine(string text, float width, out bool cut)
+    {
+        var nl = text.IndexOfAny(new[] { '\r', '\n' });
+        var line = nl >= 0 ? text[..nl] : text;
+        cut = nl >= 0 && text[nl..].Trim().Length > 0;
+
+        var ellipsis = ImGui.CalcTextSize("…").X;
+        if (ImGui.CalcTextSize(line).X <= width - (cut ? ellipsis : 0f))
+            return line;
+
+        cut = true;
+        var lo = 0;
+        var hi = line.Length;
+        while (lo < hi)
+        {
+            var mid = (lo + hi + 1) / 2;
+            if (ImGui.CalcTextSize(line[..mid]).X <= width - ellipsis)
+                lo = mid;
+            else
+                hi = mid - 1;
+        }
+        return line[..lo].TrimEnd();
     }
 
     /// <summary>Edits the arg whose chip was clicked: its value and the parameter slot that writes it</summary>
@@ -833,8 +1154,14 @@ public class EmevdBlockView
         DropTarget(View.Structure.TopTarget());
 
         var hovered = ImGui.IsItemHovered();
-        if (ImGui.IsItemClicked())
+        if (ImGui.IsItemClicked() || ImGui.IsItemClicked(ImGuiMouseButton.Right))
             selection.SelectInstruction(-1);
+
+        if (ImGui.BeginPopupContextItem("##emevdHatMenu"))
+        {
+            CommentItems(-1);
+            ImGui.EndPopup();
+        }
 
         var color = EmevdFormat.HatColor;
         if (hovered)
@@ -1164,6 +1491,11 @@ public class EmevdBlockView
 
         var s = View.Structure;
         EditItems(s);
+
+        // The comment is the clicked line's, even in a multi-selection
+        ImGui.Separator();
+        CommentItems(line);
+
         ImGui.EndPopup();
     }
 

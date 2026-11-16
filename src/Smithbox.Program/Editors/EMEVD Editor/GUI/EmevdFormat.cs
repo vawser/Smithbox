@@ -99,5 +99,8 @@ public static class EmevdFormat
     public static readonly Vector4 BrokenSpanColor = new(0.95f, 0.30f, 0.30f, 1f);
     public static readonly Vector4 ParamChipColor = new(0.95f, 0.75f, 0.25f, 1f);
 
+    /// <summary>The comment bubbles, as the ESD Editor's</summary>
+    public static readonly Vector4 CommentColor = new(0.97f, 0.90f, 0.55f, 1f);
+
     public static Vector4 Darken(Vector4 c, float f) => new(c.X * f, c.Y * f, c.Z * f, c.W);
 }

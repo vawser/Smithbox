@@ -1374,6 +1374,7 @@ public class CFG
     /// EMEVD Editor (event scripts)
     ///------------------------------------------------------------
     public bool EmevdEditor_Show_Arg_Names = true;
+    public bool EmevdEditor_Show_Comments = true;
     public bool EmevdEditor_Structured_View = true;
     public bool EmevdEditor_Inline_MustSub_Calls = true;
     public bool EmevdEditor_Allow_Unmodified_Save = false;
