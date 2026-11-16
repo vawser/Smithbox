@@ -609,6 +609,14 @@
       "Text": "Moves the camera back until the whole simulation is in view."
     },
     {
+      "Key": "PROJECTILE_Auto_Play_On_Select",
+      "Text": "Auto-play on selection"
+    },
+    {
+      "Key": "PROJECTILE_Auto_Play_On_Select_TT",
+      "Text": "Starts playing the simulation when a row is selected. When off, a selected row waits at the start until Play is pressed."
+    },
+    {
       "Key": "PROJECTILE_Effects_Off",
       "Text": "Effects are turned off (FX, in the Simulation Filters tool)."
     },

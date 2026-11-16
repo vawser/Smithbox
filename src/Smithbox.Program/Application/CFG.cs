@@ -1036,6 +1036,7 @@ public class CFG
     public bool ProjectileEditor_Display_Wall = true;
     public bool ProjectileEditor_Frame_On_Select = false;
     public bool ProjectileEditor_Loop = true;
+    public bool ProjectileEditor_Auto_Play_On_Select = true;
     public float ProjectileEditor_Speed = 1.0f;
     public bool ProjectileEditor_Show_Community_Names = true;
     public bool Interface_ProjectileEditor_List = true;

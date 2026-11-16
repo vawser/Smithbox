@@ -35,5 +35,23 @@ public static class ParamRowDelete
 
         curView.Editor.ActionManager.ExecuteAction(act);
     }
+
+    /// <summary>
+    /// Deletes the given rows of <paramref name="param"/>, as one undoable step, for an editor that keeps its own
+    /// selection (the action still clears the deleted rows from every Param Editor view's selection).
+    /// False if nothing was deleted.
+    /// </summary>
+    public static bool ApplyDelete(ParamEditorScreen editor, Param param, IEnumerable<Param.Row> rows)
+    {
+        List<Param.Row> toRemove = rows
+            .Where(row => row != null && row.GetParentParam() == param && param.IndexOfRow(row) >= 0)
+            .Distinct()
+            .ToList();
+
+        if (toRemove.Count == 0)
+            return false;
+
+        return editor.ActionManager.ExecuteAction(new DeleteParamsAction(editor, param, toRemove));
+    }
     #endregion
 }

@@ -60,9 +60,41 @@ public class ParamPasteMenu
 
     private void DisplayContents(ParamEditorView activeView, ParamClipboard clipboard)
     {
-        var bank = activeView.GetPrimaryBank();
+        var res = DisplayPasteControls(activeView.Selection.GetActiveParam(), activeView.Selection.GetSelectedRows(),
+            key => EditorCommandQueue.AddCommand($@"param/view/{activeView.ViewIndex}/{key}"));
+
+        if (res == null)
+            return;
+
+        // Selection management
+        if (CFG.Current.Param_PasteThenSelect && res.Count > 0)
+        {
+            activeView.Selection.SetActiveRow(res[0], true);
+
+            foreach (Param.Row r in res)
+            {
+                activeView.Selection.AddRowToSelection(r);
+            }
+
+            EditorCommandQueue.AddCommand($@"param/select/-1/{activeView.Selection.GetActiveParam()}/{res[0].ID}/addOnly");
+        }
+
+        ImGui.CloseCurrentPopup();
+    }
+
+    /// <summary>
+    /// The paste menu's options, and its Submit button, for an editor showing <paramref name="activeParamKey"/>
+    /// with <paramref name="selectedRows"/> selected (for Paste After Selection). Returns the pasted rows on the
+    /// frame Submit pasted them, otherwise null. The caller selects them (if Select New Rows is on) and closes its
+    /// popup. <paramref name="goToParam"/>, when given, is offered as a button when the clipboard holds another
+    /// param's rows.
+    /// </summary>
+    public List<Param.Row> DisplayPasteControls(string activeParamKey, IReadOnlyList<Param.Row> selectedRows,
+        Action<string> goToParam)
+    {
+        var clipboard = Editor.Clipboard;
+        var bank = Project.Handler.ParamData.PrimaryBank;
         var clipboardParamKey = bank.ClipboardParam;
-        var activeParamKey = activeView.Selection.GetActiveParam();
 
         // Rows are pasted into the param they were copied from. Their row data belongs to that param, so
         // pasting them anywhere else isn't supported here. If the user is looking at a different param, say so
@@ -71,7 +103,7 @@ public class ParamPasteMenu
             || !bank.Params.TryGetValue(clipboardParamKey, out var targetParam))
         {
             ImGui.TextUnformatted(LOC.Get("PARAM_PasteMenu_Clipboard_Empty"));
-            return;
+            return null;
         }
 
         ImGui.TextUnformatted(LOC.Get("PARAM_PasteMenu_Target", bank.ClipboardRows.Count, clipboardParamKey));
@@ -82,12 +114,12 @@ public class ParamPasteMenu
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color,
                 LOC.Get("PARAM_PasteMenu_Different_Param", clipboardParamKey, activeParamKey ?? "-"));
 
-            if (ImGui.Button($"{LOC.Get("PARAM_PasteMenu_Action_Go_To_Param", clipboardParamKey)}##goToClipboardParam"))
+            if (goToParam != null && ImGui.Button($"{LOC.Get("PARAM_PasteMenu_Action_Go_To_Param", clipboardParamKey)}##goToClipboardParam"))
             {
-                EditorCommandQueue.AddCommand($@"param/view/{activeView.ViewIndex}/{clipboardParamKey}");
+                goToParam(clipboardParamKey);
             }
 
-            return;
+            return null;
         }
 
         ImGui.Checkbox(
@@ -97,7 +129,6 @@ public class ParamPasteMenu
         ImGui.Checkbox($"{LOC.Get("PARAM_PasteMenu_Checkbox_Paste_After_Selection")}##pasteAfterSelectionToggle",
             ref CFG.Current.Param_PasteAfterSelection);
 
-        var pasteThenSelect = CFG.Current.Param_PasteThenSelect;
         var pasteAfterSelection = CFG.Current.Param_PasteAfterSelection;
 
         long offset = 0;
@@ -151,7 +182,7 @@ public class ParamPasteMenu
 
         if (pasteAfterSelection)
         {
-            anchorRow = activeView.Selection.GetSelectedRows()?
+            anchorRow = selectedRows?
                 .Where(r => r != null && r.GetParentParam() == targetParam)
                 .OrderBy(r => targetParam.IndexOfRow(r))
                 .LastOrDefault();
@@ -165,12 +196,12 @@ public class ParamPasteMenu
         if (inputError != null)
         {
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, inputError);
-            return;
+            return null;
         }
 
         if (!ImGui.Button($"{LOC.Get("PARAM_PasteMenu_Action_Submit")}##submitAction"))
         {
-            return;
+            return null;
         }
 
         List<Param.Row> rowsToInsert = new();
@@ -219,26 +250,9 @@ public class ParamPasteMenu
         // Refused while a save is running
         if (!Editor.ActionManager.ExecuteAction(paramAction))
         {
-            return;
+            return null;
         }
 
-        // Selection management
-        if (pasteThenSelect)
-        {
-            var res = paramAction.GetResultantRows();
-            if (res.Count > 0)
-            {
-                activeView.Selection.SetActiveRow(res[0], true);
-
-                foreach (Param.Row r in res)
-                {
-                    activeView.Selection.AddRowToSelection(r);
-                }
-
-                EditorCommandQueue.AddCommand($@"param/select/-1/{activeView.Selection.GetActiveParam()}/{res[0].ID}/addOnly");
-            }
-        }
-
-        ImGui.CloseCurrentPopup();
+        return paramAction.GetResultantRows();
     }
 }

@@ -23,7 +23,13 @@ public static class ParamRowOperations
     /// </summary>
     public static bool SetRowName(ParamEditorView curView, IEnumerable<Param.Row> rows, string newName)
     {
-        return SetRowProperty(curView, rows, nameof(Param.Row.Name), newName ?? "");
+        return SetRowName(curView.Editor, rows, newName);
+    }
+
+    /// <inheritdoc cref="SetRowName(ParamEditorView, IEnumerable{Param.Row}, string)"/>
+    public static bool SetRowName(ParamEditorScreen editor, IEnumerable<Param.Row> rows, string newName)
+    {
+        return SetRowProperty(editor, rows, nameof(Param.Row.Name), newName ?? "");
     }
 
     /// <summary>
@@ -32,10 +38,16 @@ public static class ParamRowOperations
     /// </summary>
     public static bool SetRowID(ParamEditorView curView, IEnumerable<Param.Row> rows, int newID)
     {
-        return SetRowProperty(curView, rows, nameof(Param.Row.ID), newID);
+        return SetRowID(curView.Editor, rows, newID);
     }
 
-    private static bool SetRowProperty(ParamEditorView curView, IEnumerable<Param.Row> rows, string propertyName, object value)
+    /// <inheritdoc cref="SetRowID(ParamEditorView, IEnumerable{Param.Row}, int)"/>
+    public static bool SetRowID(ParamEditorScreen editor, IEnumerable<Param.Row> rows, int newID)
+    {
+        return SetRowProperty(editor, rows, nameof(Param.Row.ID), newID);
+    }
+
+    private static bool SetRowProperty(ParamEditorScreen editor, IEnumerable<Param.Row> rows, string propertyName, object value)
     {
         var prop = typeof(Param.Row).GetProperty(propertyName);
 
@@ -49,10 +61,10 @@ public static class ParamRowOperations
             return false;
 
         // Refused while a save is running
-        if (!curView.Editor.ActionManager.ExecuteAction(new CompoundAction(actions)))
+        if (!editor.ActionManager.ExecuteAction(new CompoundAction(actions)))
             return false;
 
-        curView.GetParamData().RefreshParamDifferenceCacheTask();
+        editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
         return true;
     }
@@ -61,18 +73,27 @@ public static class ParamRowOperations
     #region Set Row to Default
     public static void SetRowToDefault(ParamEditorView curView)
     {
-        var curParamKey = curView.Selection.GetActiveParam();
+        SetRowToDefault(curView.Editor, curView.Selection.GetActiveParam(), curView.Selection.GetSelectedRows());
+    }
 
+    /// <summary>
+    /// Sets the values of the given rows of <paramref name="curParamKey"/> back to their vanilla values, as one
+    /// undoable step
+    /// </summary>
+    public static void SetRowToDefault(ParamEditorScreen editor, string curParamKey, IEnumerable<Param.Row> selectedRows)
+    {
         if (curParamKey == null)
             return;
 
-        if (!curView.GetPrimaryBank().Params.TryGetValue(curParamKey, out Param baseParam) || baseParam == null)
+        var paramData = editor.Project.Handler.ParamData;
+
+        if (!paramData.PrimaryBank.Params.TryGetValue(curParamKey, out Param baseParam) || baseParam == null)
             return;
 
-        if (!curView.GetVanillaBank().Params.TryGetValue(curParamKey, out Param vanillaParam) || vanillaParam == null)
+        if (!paramData.VanillaBank.Params.TryGetValue(curParamKey, out Param vanillaParam) || vanillaParam == null)
             return;
 
-        var rows = curView.Selection.GetSelectedRows()?.Where(r => r != null).ToList();
+        var rows = selectedRows?.Where(r => r != null).ToList();
 
         if (rows == null || rows.Count == 0)
             return;
@@ -114,8 +135,8 @@ public static class ParamRowOperations
         if (actions.Count == 0)
             return;
 
-        curView.Editor.ActionManager.ExecuteAction(new CompoundAction(actions));
-        curView.GetParamData().RefreshParamDifferenceCacheTask();
+        editor.ActionManager.ExecuteAction(new CompoundAction(actions));
+        paramData.RefreshParamDifferenceCacheTask();
     }
 
     /// <summary>

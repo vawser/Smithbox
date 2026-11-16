@@ -89,7 +89,7 @@ public sealed class ProjectileSimulator
         Rebuild();
 
         Time = 0;
-        Playing = Result != null;
+        Playing = Result != null && CFG.Current.ProjectileEditor_Auto_Play_On_Select;
     }
 
     public void Clear()

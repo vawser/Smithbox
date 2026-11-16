@@ -79,6 +79,7 @@ public class ProjectileEditorView
         var framing = Simulator.Row == null;
 
         ListView.ShowParam(paramName);
+        ListView.SelectOnly(row);
         ListView.ScrollToSelection = true;
         Simulator.Select(paramName, row);
 

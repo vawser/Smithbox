@@ -47,14 +47,24 @@ public class ParamClipboard
 
     public void CopySelectionToClipboard(ParamSelection selectionState)
     {
-        Project.Handler.ParamData.PrimaryBank.ClipboardParam = selectionState.GetActiveParam();
+        selectionState.SortSelection();
+
+        CopyRowsToClipboard(selectionState.GetActiveParam(), selectionState.GetSelectedRows());
+    }
+
+    /// <summary>
+    /// Copies the given rows of <paramref name="paramKey"/> (in the order given) to the row clipboard, for Paste, and
+    /// their IDs and names to the OS clipboard as the row copy setting says
+    /// </summary>
+    public void CopyRowsToClipboard(string paramKey, IReadOnlyList<Param.Row> rows)
+    {
+        Project.Handler.ParamData.PrimaryBank.ClipboardParam = paramKey;
 
         Project.Handler.ParamData.PrimaryBank.ClipboardRows.Clear();
 
         var baseValue = long.MaxValue;
-        selectionState.SortSelection();
 
-        foreach (Param.Row r in selectionState.GetSelectedRows())
+        foreach (Param.Row r in rows)
         {
             if (r == null)
                 continue;
@@ -73,7 +83,7 @@ public class ParamClipboard
         // Only Name mode skips unnamed rows; ID and ID;Name always have something to write.
         var lines = new List<string>();
 
-        foreach (Param.Row r in selectionState.GetSelectedRows())
+        foreach (Param.Row r in rows)
         {
             if (r == null)
                 continue;

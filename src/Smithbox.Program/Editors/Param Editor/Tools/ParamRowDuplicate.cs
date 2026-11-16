@@ -43,29 +43,7 @@ public static class ParamRowDuplicate
         // Default Behavior
         if (!IsInTableGroupMode)
         {
-            // AddParamsAction clones the rows itself, so the selected rows are passed as they are
-            List<Param.Row> rowsToInsert = new(rows);
-
-            if (offset == 0)
-            {
-                insertIndex = param.IndexOfRow(rows.Last()) + 1;
-
-                // Each row is inserted at the same index, so insert the last one first
-                rowsToInsert.Reverse();
-            }
-
-            List<EditorAction> actions = new List<EditorAction>();
-
-            // Each copy finds the next free ID after the previous copies (ID + offset, ID + 2 * offset, ...), and
-            // AddParamsAction offsets the copy's reference fields by the same amount its ID moved
-            for (int i = 0; i < amount; i++)
-            {
-                var dupeAction = new AddParamsAction(curView.Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, offset, true);
-                actions.Add(dupeAction);
-            }
-
-            var compoundAction = new CompoundAction(actions);
-            compoundAction.SetPostExecutionAction(undo =>
+            DuplicateRows(curView.Editor, param, rows, undo =>
             {
                 var curParam = curView.Selection.GetActiveParam();
 
@@ -75,8 +53,6 @@ public static class ParamRowDuplicate
                     curView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
                 }
             });
-
-            curView.Editor.ActionManager.ExecuteAction(compoundAction);
         }
         // Row Group Mode behavior
         else
@@ -127,6 +103,65 @@ public static class ParamRowDuplicate
             curView.Editor.ActionManager.ExecuteAction(compoundAction);
         }
     }
+
+    /// <summary>
+    /// Duplicates the given rows of <paramref name="param"/> with the duplicate offset and amount (and reference
+    /// offsets) set in the Duplicate menu, as one undoable step. Not for table-group mode, where a row's ID is its
+    /// group. Returns the copies, in param order, or an empty list if nothing was duplicated.
+    /// </summary>
+    public static List<Param.Row> DuplicateRows(ParamEditorScreen editor, Param param, IEnumerable<Param.Row> selectedRows,
+        Action<bool> postExecutionAction = null)
+    {
+        // In param order (a selection is usually in click order), so the copies keep the rows' order and "after the
+        // selection" means after the bottom-most selected row
+        List<Param.Row> rows = selectedRows
+            .Where(r => r != null && param.IndexOfRow(r) >= 0)
+            .Distinct()
+            .OrderBy(r => param.IndexOfRow(r))
+            .ToList();
+
+        if (rows.Count == 0)
+            return new List<Param.Row>();
+
+        var insertIndex = -1;
+        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
+        var amount = CFG.Current.Param_Toolbar_Duplicate_Amount;
+
+        // AddParamsAction clones the rows itself, so the selected rows are passed as they are
+        List<Param.Row> rowsToInsert = new(rows);
+
+        if (offset == 0)
+        {
+            insertIndex = param.IndexOfRow(rows.Last()) + 1;
+
+            // Each row is inserted at the same index, so insert the last one first
+            rowsToInsert.Reverse();
+        }
+
+        List<AddParamsAction> dupeActions = new();
+
+        // Each copy finds the next free ID after the previous copies (ID + offset, ID + 2 * offset, ...), and
+        // AddParamsAction offsets the copy's reference fields by the same amount its ID moved
+        for (int i = 0; i < amount; i++)
+        {
+            dupeActions.Add(new AddParamsAction(editor, param, "legacystring", rowsToInsert, true, false, insertIndex, offset, true));
+        }
+
+        var compoundAction = new CompoundAction(dupeActions.Cast<EditorAction>().ToList());
+
+        if (postExecutionAction != null)
+            compoundAction.SetPostExecutionAction(postExecutionAction);
+
+        // Refused while a save is running
+        if (!editor.ActionManager.ExecuteAction(compoundAction))
+            return new List<Param.Row>();
+
+        return dupeActions
+            .SelectMany(action => action.GetResultantRows())
+            .Where(row => param.IndexOfRow(row) >= 0)
+            .OrderBy(row => param.IndexOfRow(row))
+            .ToList();
+    }
     #endregion
 
     #region Reference Offsets
@@ -168,23 +203,32 @@ public static class ParamRowDuplicate
     /// </summary>
     public static List<(string Field, List<string> Targets)> GetDeepCopyFields(ParamEditorView curView)
     {
-        var result = new List<(string, List<string>)>();
         var paramKey = curView.Selection.GetActiveParam();
 
         if (paramKey == null || !curView.GetPrimaryBank().Params.TryGetValue(paramKey, out var param))
+            return new List<(string, List<string>)>();
+
+        return GetDeepCopyFields(curView.GetParamData(), param);
+    }
+
+    /// <summary>
+    /// The fields of <paramref name="param"/> that have a DeepCopyTarget, with their target kinds
+    /// </summary>
+    public static List<(string Field, List<string> Targets)> GetDeepCopyFields(ParamData paramData, Param param)
+    {
+        var result = new List<(string, List<string>)>();
+
+        if (param?.AppliedParamdef == null)
             return result;
 
-        if (param.AppliedParamdef == null)
-            return result;
-
-        var paramMeta = curView.GetParamData().GetParamMeta(param.AppliedParamdef);
+        var paramMeta = paramData.GetParamMeta(param.AppliedParamdef);
 
         if (paramMeta == null)
             return result;
 
         foreach (var fieldDef in param.AppliedParamdef.Fields)
         {
-            var fieldMeta = curView.GetParamData().GetParamFieldMeta(paramMeta, fieldDef);
+            var fieldMeta = paramData.GetParamFieldMeta(paramMeta, fieldDef);
 
             if (fieldMeta?.DeepCopyTargetType == null || fieldMeta.DeepCopyTargetType.Count == 0)
                 continue;
@@ -201,8 +245,17 @@ public static class ParamRowDuplicate
     /// </summary>
     public static void DisplayReferenceOffsetOptions(ParamEditorView curView)
     {
-        var fields = GetDeepCopyFields(curView);
+        DisplayReferenceOffsetOptions(GetDeepCopyFields(curView));
+    }
 
+    /// <inheritdoc cref="DisplayReferenceOffsetOptions(ParamEditorView)"/>
+    public static void DisplayReferenceOffsetOptions(ParamData paramData, Param param)
+    {
+        DisplayReferenceOffsetOptions(GetDeepCopyFields(paramData, param));
+    }
+
+    private static void DisplayReferenceOffsetOptions(List<(string Field, List<string> Targets)> fields)
+    {
         ImGui.Separator();
         ImGui.TextDisabled(LOC.Get("PARAM_Duplicate_Reference_Header"));
 

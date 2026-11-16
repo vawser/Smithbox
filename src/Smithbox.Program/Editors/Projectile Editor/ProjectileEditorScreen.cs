@@ -101,6 +101,10 @@ public class ProjectileEditorScreen : EditorScreen
         if (actions.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             actions.RedoAction();
 
+        // Copy, paste, duplicate, delete and select all, on the list's rows
+        if (FocusManager.IsFocus(EditorFocusContext.ProjectileEditor_List))
+            View.ListView.Shortcuts();
+
         // Play or pause, as the Play/Pause button does, while the viewport is focused
         if (FocusManager.IsFocus(EditorFocusContext.ProjectileEditor_Viewport) &&
             InputManager.IsPressed(KeybindID.ProjectileEditor_Toggle_Playback))
