@@ -312,6 +312,9 @@ public sealed class ProjectileSimulation
         public Vector3 ShootDirection;
         public float Range;
         public AttackDamage DamageRates = AttackDamage.One;
+
+        // Whether its chained bullets were already launched, by touching the map
+        public bool Chained;
     }
 
     /// <summary>
@@ -844,6 +847,8 @@ public sealed class ProjectileSimulation
 
         DealDamage(shot, radius);
 
+        TouchMap(shot, radius);
+
         if (shot.Age + Epsilon >= shot.Life)
         {
             shot.Track.Samples.Add(new TrackSample(Time, next));
@@ -983,11 +988,35 @@ public sealed class ProjectileSimulation
         }
     }
 
+    /// <summary>
+    ///     A bullet resting on the ground doesn't move into it, so it never lands, but it does touch the collision floor.
+    ///     For a chain that only launches on a hit (such as launchConditionType 5, a map hit), that touch launches it,
+    ///     once, and the bullet carries on. Without this, a stationary bullet created where its parent landed could
+    ///     never launch such a chain.
+    /// </summary>
+    private void TouchMap(ActiveShot shot, float radius)
+    {
+        BulletDefinition definition = shot.Definition;
+
+        if (shot.Chained || definition.ChainChildren.Count == 0 || !Settings.GroundCollision ||
+            shot.Position.Y - radius > 0 ||
+            AllowsChain(definition.ChainCondition, null) || !AllowsChain(definition.ChainCondition, Settings.Surface))
+        {
+            return;
+        }
+
+        shot.Chained = true;
+
+        FireChildren(shot, definition.ChainChildren, Time + definition.ChainDelay, ProjectileOrigin.Chain, Vector3.UnitY,
+            shot.Position with { Y = 0 });
+    }
+
     private void Chain(ActiveShot shot, Impact? impact, Vector3? hitLocation)
     {
         BulletDefinition definition = shot.Definition;
 
-        if (definition.ChainChildren.Count == 0)
+        // Nothing to do, or already launched when it touched the map
+        if (definition.ChainChildren.Count == 0 || shot.Chained)
         {
             return;
         }
@@ -1125,7 +1154,10 @@ public sealed class ProjectileSimulation
                      HitTarget(from, to, GetReach(definition, radius))
                  })
         {
-            if (candidate is { } impact && !Penetrates(definition, impact.Surface) &&
+            // isPenetrateMap passes through map pieces and assets, which is what the wall stands in for, but not the
+            // collision under them: the ground is that collision, so every bullet lands on it
+            if (candidate is { } impact &&
+                (impact.End is ProjectileEnd.HitGround || !Penetrates(definition, impact.Surface)) &&
                 (first == null || impact.Progress < first.Value.Progress))
             {
                 first = impact;
