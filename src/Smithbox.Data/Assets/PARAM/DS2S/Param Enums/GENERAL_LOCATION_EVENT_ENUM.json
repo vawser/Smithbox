@@ -222,6 +222,33 @@
           "Text": "Backread Aafety between Map Connections"
         }
       ]
+    },
+    {
+      "Key": "24",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Summon Sign Redirection Source"
+        }
+      ]
+    },
+    {
+      "Key": "25",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Summon Sign Redirection Destination"
+        }
+      ]
+    },
+    {
+      "Key": "26",
+      "Names": [
+        {
+          "Language": "English",
+          "Text": "Warp Redirection"
+        }
+      ]
     }
   ]
 }
