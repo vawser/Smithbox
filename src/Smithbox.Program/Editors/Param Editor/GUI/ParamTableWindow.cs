@@ -63,8 +63,13 @@ public class ParamTableWindow
     {
         ImGui.BeginChild("ParamTableListHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
+        // Collapse / stretch toggle, shared with the other editors' search bars
         ImGui.AlignTextToFramePadding();
-        ImGui.InputTextWithHint($"##rowGroupSearch", 
+        EditorFilters.DisplaySearchbarSizeToggle();
+
+        ImGui.AlignTextToFramePadding();
+        EditorFilters.ApplySearchbarWidth();
+        ImGui.InputTextWithHint($"##rowGroupSearch",
             LOC.Get("PARAM_TableWindow_Search_Hint"),
             ref CurrentTableGroupSearch, 256);
 

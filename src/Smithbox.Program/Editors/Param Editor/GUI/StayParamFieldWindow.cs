@@ -64,6 +64,10 @@ public class StayParamFieldWindow
 
         if (_searchFilterTerm != null)
         {
+            // Collapse / stretch toggle, shared with the other editors' search bars
+            ImGui.AlignTextToFramePadding();
+            EditorFilters.DisplaySearchbarSizeToggle();
+
             if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
             {
                 ImGui.SetKeyboardFocusHere();
@@ -71,6 +75,7 @@ public class StayParamFieldWindow
 
             // Field search
             ImGui.AlignTextToFramePadding();
+            EditorFilters.ApplySearchbarWidth();
             ImGui.InputTextWithHint("##fieldSearch", LOC.Get("PARAM_SP_FieldWindow_Search_Hint"), ref _searchFilterTerm,
                 255);
             GUI.Tooltip(

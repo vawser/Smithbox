@@ -81,21 +81,11 @@ public class ParamListWindow
     {
         ImGui.BeginChild("ParamFileHeaderSection", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
 
-        // Autofill
-        if (ParentView.MassEdit.AutoFill != null)
-        {
-            ImGui.AlignTextToFramePadding();
-            var resAutoParam = ParentView.MassEdit.AutoFill.ParamSearchBarAutoFill();
+        // Collapse / stretch toggle, shared with the other editors' search bars
+        ImGui.AlignTextToFramePadding();
+        EditorFilters.DisplaySearchbarSizeToggle();
 
-            if (resAutoParam != null &&
-                Editor.ViewHandler.ActiveView.Selection.ActiveParamExists())
-            {
-                currentParamSearchString = resAutoParam;
-            }
-        }
-
-        ImGui.SameLine();
-
+        // Right before the input, so the focus keybind focuses the input
         if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
         {
             ImGui.SetKeyboardFocusHere();
@@ -103,6 +93,7 @@ public class ParamListWindow
 
         // Search
         ImGui.AlignTextToFramePadding();
+        EditorFilters.ApplySearchbarWidth();
         ImGui.InputTextWithHint($"##paramSearch", LOC.Get("PARAM_ParamWindow_Search_Hint"), ref currentParamSearchString, 256);
 
         GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT",
@@ -114,6 +105,20 @@ public class ParamListWindow
             // Only the Param Editor's cached lists depend on the search (this used to clear every editor's caches)
             CacheBank.RemoveCache(Editor);
             lastParamSearch = currentParamSearchString;
+        }
+
+        // Autofill, on the right of the search bar
+        if (ParentView.MassEdit.AutoFill != null)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            var resAutoParam = ParentView.MassEdit.AutoFill.ParamSearchBarAutoFill();
+
+            if (resAutoParam != null &&
+                Editor.ViewHandler.ActiveView.Selection.ActiveParamExists())
+            {
+                currentParamSearchString = resAutoParam;
+            }
         }
 
         if (AllowTableGroupToggle())

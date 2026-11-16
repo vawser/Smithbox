@@ -373,27 +373,20 @@ public class ParamFieldWindow
 
         if (propSearchString != null)
         {
+            // Collapse / stretch toggle, shared with the other editors' search bars
+            ImGui.AlignTextToFramePadding();
+            EditorFilters.DisplaySearchbarSizeToggle();
+
+            // Right before the input, so the focus keybind focuses the input (it used to come before the autofill
+            // button, so the keybind focused that button instead)
             if (isActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
             {
                 ImGui.SetKeyboardFocusHere();
             }
 
-            // Autofill
-            if (ParentView.MassEdit.AutoFill != null)
-            {
-                ImGui.AlignTextToFramePadding();
-                var resAutoCol = ParentView.MassEdit.AutoFill.ColumnSearchBarAutoFill();
-                if (resAutoCol != null)
-                {
-                    propSearchString = resAutoCol;
-                    CacheBank.RemoveCache(Editor);
-                }
-            }
-
-            ImGui.SameLine();
-
             // Search
             ImGui.AlignTextToFramePadding();
+            EditorFilters.ApplySearchbarWidth();
             ImGui.InputTextWithHint("##fieldSearch", LOC.Get("PARAM_FieldWindow_Search_Hint"), ref propSearchString,
                 255);
             GUI.Tooltip(
@@ -405,6 +398,19 @@ public class ParamFieldWindow
             {
                 // Only the Param Editor's cached lists depend on the search
                 CacheBank.RemoveCache(Editor);
+            }
+
+            // Autofill, on the right of the search bar
+            if (ParentView.MassEdit.AutoFill != null)
+            {
+                ImGui.SameLine();
+                ImGui.AlignTextToFramePadding();
+                var resAutoCol = ParentView.MassEdit.AutoFill.ColumnSearchBarAutoFill();
+                if (resAutoCol != null)
+                {
+                    propSearchString = resAutoCol;
+                    CacheBank.RemoveCache(Editor);
+                }
             }
 
             // Toggle Community Field Names

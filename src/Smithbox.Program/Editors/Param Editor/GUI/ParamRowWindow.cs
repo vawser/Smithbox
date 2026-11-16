@@ -147,20 +147,11 @@ public class ParamRowWindow
 
         Context.ScrollTo = 0;
 
-        // Auto fill
-        if (ParentView.MassEdit.AutoFill != null)
-        {
-            ImGui.AlignTextToFramePadding();
-            var resAutoRow = ParentView.MassEdit.AutoFill.RowSearchBarAutoFill();
+        // Collapse / stretch toggle, shared with the other editors' search bars
+        ImGui.AlignTextToFramePadding();
+        EditorFilters.DisplaySearchbarSizeToggle();
 
-            if (resAutoRow != null)
-            {
-                ParentView.Selection.SetCurrentRowSearchString(resAutoRow);
-            }
-        }
-
-        ImGui.SameLine();
-
+        // Right before the input, so the focus keybind focuses the input
         if (Context.IsActiveView && InputManager.IsPressed(KeybindID.ParamEditor_Focus_Searchbar))
         {
             ImGui.SetKeyboardFocusHere();
@@ -168,6 +159,7 @@ public class ParamRowWindow
 
         // Search
         ImGui.AlignTextToFramePadding();
+        EditorFilters.ApplySearchbarWidth();
         ImGui.InputTextWithHint($"##rowSearch",
             LOC.Get("PARAM_RowWindow_Search_Hint"),
             ref ParentView.Selection.GetCurrentRowSearchString(), 256);
@@ -192,6 +184,19 @@ public class ParamRowWindow
         else
         {
             ParentView._isSearchBarActive = false;
+        }
+
+        // Autofill, on the right of the search bar (after the checks above, which read the input as the last item)
+        if (ParentView.MassEdit.AutoFill != null)
+        {
+            ImGui.SameLine();
+            ImGui.AlignTextToFramePadding();
+            var resAutoRow = ParentView.MassEdit.AutoFill.RowSearchBarAutoFill();
+
+            if (resAutoRow != null)
+            {
+                ParentView.Selection.SetCurrentRowSearchString(resAutoRow);
+            }
         }
 
         ImGui.SameLine();

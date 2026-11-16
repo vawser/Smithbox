@@ -36,39 +36,59 @@ public static class EditorFilters
         GUI.Tooltip(
             LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
 
-        if (CFG.Current.Interface_Display_Searchbar_Minimize)
-        {
-            ImGui.SameLine();
-            if (CFG.Current.Interface_Searchbar_Fixed_Width)
-            {
-                if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
-                {
-                    CFG.Current.Interface_Searchbar_Fixed_Width = false;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
-            }
-            else
-            {
-                if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
-                {
-                    CFG.Current.Interface_Searchbar_Fixed_Width = true;
-                }
-                GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
-            }
-        }
-
         ImGui.SameLine();
 
-        // Only use the fixed width while the toggle is shown, so hiding the
-        // buttons can never leave the searchbar stuck at the small size.
-        if (CFG.Current.Interface_Display_Searchbar_Minimize
-            && CFG.Current.Interface_Searchbar_Fixed_Width)
-            ImGui.SetNextItemWidth(80f * DPI.UIScale());
+        DisplaySearchbarSizeToggle();
+        ApplySearchbarWidth();
 
         ImGui.InputTextWithHint($"##{id}_listFilter", "Search...", ref input, 255);
 
         GUI.Tooltip(
         LOC.Get("EDITOR_List_Filter_Input_TT", SplitChr, OR_Chr));
+    }
+
+    /// <summary>
+    /// The arrow that switches search bars between collapsed (a short fixed width) and stretched, followed by
+    /// SameLine. Drawn only while the "Display Searchbar Minimize" preference is on. The setting is shared, so every
+    /// search bar that uses this follows the same mode. Call just before the search input, then
+    /// <see cref="ApplySearchbarWidth"/>.
+    /// </summary>
+    public static void DisplaySearchbarSizeToggle()
+    {
+        if (!CFG.Current.Interface_Display_Searchbar_Minimize)
+            return;
+
+        if (CFG.Current.Interface_Searchbar_Fixed_Width)
+        {
+            if (ImGui.ArrowButton("##searchMaximize", ImGuiDir.Right))
+            {
+                CFG.Current.Interface_Searchbar_Fixed_Width = false;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
+        }
+        else
+        {
+            if (ImGui.ArrowButton("##searchMinimize", ImGuiDir.Left))
+            {
+                CFG.Current.Interface_Searchbar_Fixed_Width = true;
+            }
+            GUI.Tooltip(LOC.Get("EDITOR_Search_Size_Toggle_TT"));
+        }
+
+        ImGui.SameLine();
+    }
+
+    /// <summary>
+    /// Sets the next item (the search input) to the collapsed width when search bars are collapsed. Stretched bars
+    /// keep the default width.
+    /// </summary>
+    public static void ApplySearchbarWidth()
+    {
+        // Only use the fixed width while the toggle is shown, so hiding the
+        // buttons can never leave the searchbar stuck at the small size.
+        if (CFG.Current.Interface_Display_Searchbar_Minimize
+            && CFG.Current.Interface_Searchbar_Fixed_Width)
+            ImGui.SetNextItemWidth(80f * DPI.UIScale());
     }
 
     public static bool IsMatch(string rawInput, string rawText, bool exactBool, string rawAliasText = "", bool partSplit = false, bool aliasSplit = false, string rawSecondaryText = "")
