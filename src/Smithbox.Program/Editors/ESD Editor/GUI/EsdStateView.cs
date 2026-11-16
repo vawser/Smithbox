@@ -76,6 +76,18 @@ public class EsdStateView
     private string CommentText = "";
     private bool FocusComment;
 
+    // The filter bar: rows whose names and values don't match draw grey; Go To steps through the matches
+    private string FilterText = "";
+    private bool FilterExact;
+    private List<EsdRow> FilterRowsFor;
+    private string FilterFor;
+    private bool FilterExactFor;
+    private bool[] RowMatches;
+    private int MatchCount;
+    private int GoToIndex = -1;
+
+    private bool Filtering => !string.IsNullOrWhiteSpace(FilterText);
+
     private const float RowGap = 2f;
 
     // The command row being dragged (P4 drag and drop)
@@ -120,8 +132,10 @@ public class EsdStateView
         Refresh();
         Comments?.EnsureLoaded(View.Selection.SelectedFile);
         DrawHeader();
+        UpdateMatches();
+        DrawFilterBar();
 
-        ImGui.BeginChild("esdStates", Vector2.Zero, ImGuiChildFlags.Borders, ImGuiWindowFlags.HorizontalScrollbar);
+        ImGui.BeginChild("esdStates",Vector2.Zero, ImGuiChildFlags.Borders, ImGuiWindowFlags.HorizontalScrollbar);
 
         if (View.Selection.Machine == null)
         {
@@ -217,7 +231,196 @@ public class EsdStateView
         _ => LOC.Get("ESD_Problem_Undecoded", p.State)
     };
 
-    private bool Selectable(EsdRow row) => row.Kind is EsdRowKind.State or EsdRowKind.Command or EsdRowKind.Condition;
+    // --- filter ---
+
+    private void DrawFilterBar()
+    {
+        ImGui.BeginChild("esdStatesFilter", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        ImGui.BeginDisabled(View.Selection.Machine == null);
+
+        ImGui.Checkbox("##esdStatesFilterExact", ref FilterExact);
+        GUI.Tooltip(LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
+
+        ImGui.SameLine();
+        var goToLabel = $"{LOC.Get("ESD_Filter_Go_To")}##esdStatesFilterGoTo";
+        var count = Filtering ? LOC.Get("ESD_Filter_Matches", MatchCount) : "";
+        var style = ImGui.GetStyle();
+        var rightW = ImGui.CalcTextSize(LOC.Get("ESD_Filter_Go_To")).X + style.FramePadding.X * 2 + style.ItemSpacing.X
+            + (count.Length > 0 ? ImGui.CalcTextSize(count).X + style.ItemSpacing.X : 0f);
+        ImGui.SetNextItemWidth(Math.Max(120f * DPI.UIScale(), ImGui.GetContentRegionAvail().X - rightW));
+        ImGui.InputTextWithHint("##esdStatesFilterText", LOC.Get("ESD_Filter_Hint"), ref FilterText, 255);
+        GUI.Tooltip(LOC.Get("ESD_Filter_TT", EditorFilters.SplitChr, EditorFilters.OR_Chr));
+
+        // The filter applies as it's typed; Enter in the field also goes to the next match
+        var enterGoTo = ImGui.IsItemDeactivated() && ImGui.IsKeyPressed(ImGuiKey.Enter, false);
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(!Filtering);
+        if ((ImGui.Button(goToLabel) || enterGoTo) && Filtering)
+        {
+            UpdateMatches();
+            GoToNextMatch();
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("ESD_Filter_Go_To_TT"));
+
+        if (count.Length > 0)
+        {
+            ImGui.SameLine();
+            if (MatchCount == 0)
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, count);
+            else
+                ImGui.TextDisabled(count);
+        }
+
+        ImGui.EndDisabled();
+        ImGui.EndChild();
+    }
+
+    /// <summary>Recomputes which rows match the filter, when the rows or the filter changed</summary>
+    private void UpdateMatches()
+    {
+        if (ReferenceEquals(FilterRowsFor, Rows) && FilterFor == FilterText && FilterExactFor == FilterExact && RowMatches?.Length == Rows.Count)
+            return;
+
+        FilterRowsFor = Rows;
+        FilterFor = FilterText;
+        FilterExactFor = FilterExact;
+        RowMatches = new bool[Rows.Count];
+        MatchCount = 0;
+
+        if (!Filtering)
+        {
+            GoToIndex = -1;
+            return;
+        }
+
+        var cat = Catalog;
+        for (var r = 0; r < Rows.Count; r++)
+        {
+            var row = Rows[r];
+            if (row.Kind == EsdRowKind.ConditionEnd)
+                continue;
+
+            RowMatches[r] = RowMatchesFilter(row, cat);
+
+            // A condition's foot follows its header
+            if (row.Kind == EsdRowKind.Condition && row.EndRow >= 0 && row.EndRow < Rows.Count)
+                RowMatches[row.EndRow] = RowMatches[r];
+
+            if (RowMatches[r] && Selectable(row))
+                MatchCount++;
+        }
+    }
+
+    /// <summary>The names and values a row shows, matched against the filter</summary>
+    private bool RowMatchesFilter(EsdRow row, EsdKindCatalog cat)
+    {
+        var fields = new List<string>();
+        var file = View.Selection.SelectedFile;
+
+        void AddState(long id)
+        {
+            fields.Add(LOC.Get("ESD_States_State_Title", id));
+            fields.Add(id.ToString());
+            if (file != null && View.Selection.SelectedMachine is long m && file.StateNames.TryGetValue((m, id), out var name))
+                fields.Add(name);
+        }
+
+        switch (row.Kind)
+        {
+            case EsdRowKind.Function:
+                if (View.Selection.SelectedMachine is long machine)
+                    fields.Add(EsdFormat.MachineLabel(file, machine));
+                break;
+            case EsdRowKind.State:
+                AddState(row.StateId);
+                break;
+            case EsdRowKind.Section:
+                fields.Add(EsdFormat.ListName(row.List));
+                break;
+            case EsdRowKind.Command:
+                {
+                    var c = row.Command;
+                    var def = EsdLayout.KindOf(c) == EsdCommandKind.Game ? cat?.Command(c.CommandBank, c.CommandID) : null;
+                    fields.Add(EsdFormat.CommandName(cat, c));
+                    fields.Add($"{c.CommandBank}:{c.CommandID}");
+                    fields.Add(c.CommandID.ToString());
+                    for (var i = 0; i < c.Arguments.Count; i++)
+                    {
+                        var node = EsdExpr.Decode(c.Arguments[i]);
+                        fields.Add(node != null ? EsdFormat.ArgText(cat, def, i, node) : EsdFormat.Hex(c.Arguments[i]));
+                    }
+                    break;
+                }
+            case EsdRowKind.Condition:
+                {
+                    var c = row.Condition;
+                    var always = EsdExpr.IsAlways(c.Evaluator);
+                    fields.Add(row.Branch != null ? CodeLabel(row.Branch.Label) : LOC.Get(always ? "ESD_States_Always" : "ESD_States_If"));
+                    if (!always)
+                        fields.Add(EsdFormat.ExprText(cat, c.Evaluator));
+                    if (c.TargetState is long target)
+                        AddState(target);
+                    break;
+                }
+        }
+
+        fields.RemoveAll(string.IsNullOrEmpty);
+        if (fields.Count == 0)
+            return false;
+
+        // Each field on its own (so exact matching works on a single name or value), and, when not exact, all of the
+        // row's text together (so "a+b" can find a and b in different chips of the same block)
+        if (fields.Any(f => EditorFilters.IsMatch(FilterText, f, FilterExact)))
+            return true;
+        return !FilterExact && EditorFilters.IsMatch(FilterText, string.Join("\n", fields), false);
+    }
+
+    private bool IsDimmed(int r) => Filtering && RowMatches != null && r < RowMatches.Length && !RowMatches[r];
+
+    /// <summary>Selects the next matching block after the last one gone to (or the selection), wrapping round</summary>
+    private void GoToNextMatch()
+    {
+        if (MatchCount == 0 || Rows.Count == 0)
+            return;
+
+        var start = GoToIndex >= 0 && GoToIndex < Rows.Count && View.Selection.IsSelected(Rows[GoToIndex]) ? GoToIndex : SelectedRow();
+        for (var step = 1; step <= Rows.Count; step++)
+        {
+            // start is -1 with nothing selected: the search begins at the first row
+            var r = (start + step) % Rows.Count;
+            if (!RowMatches[r] || !Selectable(Rows[r]))
+                continue;
+
+            GoToIndex = r;
+            View.Selection.SelectRow(Rows[r]);
+            View.Selection.ScrollToItem = true;
+            return;
+        }
+    }
+
+    /// <summary>
+    /// Turns the vertices drawn since `from` grey (their brightness kept, squeezed toward mid-grey), so a block that
+    /// doesn't match the filter reads as greyed out whatever colours it was drawn with
+    /// </summary>
+    private static unsafe void Grey(ImDrawListPtr drawList, int from)
+    {
+        var vtx = drawList.VtxBuffer;
+        var data = vtx.Data;
+        for (var i = from; i < vtx.Size; i++)
+        {
+            var col = data[i].Col;
+            var r = col & 0xFF;
+            var g = (col >> 8) & 0xFF;
+            var b = (col >> 16) & 0xFF;
+            var a = col & 0xFF000000;
+            var lum = (uint)Math.Clamp((r * 0.299f + g * 0.587f + b * 0.114f) * 0.45f + 45f, 0f, 255f);
+            data[i].Col = a | (lum << 16) | (lum << 8) | lum;
+        }
+    }
+
+    private bool Selectable(EsdRow row) =>row.Kind is EsdRowKind.State or EsdRowKind.Command or EsdRowKind.Condition;
 
     private int SelectedRow()
     {
@@ -367,7 +570,10 @@ public class EsdStateView
 
             var color = ImGui.GetColorU32(ConditionColor(row));
             var x = RowX(r);
+            var armVtx = drawList.VtxBuffer.Size;
             drawList.AddRectFilled(new Vector2(x, origin.Y + tops[r] + blockH), new Vector2(x + armW, origin.Y + tops[row.EndRow]), color);
+            if (IsDimmed(r))
+                Grey(drawList, armVtx);
         }
 
         for (var r = first; r <= last && r < Rows.Count; r++)
@@ -376,6 +582,7 @@ public class EsdStateView
             var min = new Vector2(RowX(r), origin.Y + tops[r]);
             var h = RowHeight(row, lineH, blockH);
             var max = new Vector2(x1, min.Y + h);
+            var rowVtx = drawList.VtxBuffer.Size;
 
             switch (row.Kind)
             {
@@ -402,6 +609,9 @@ public class EsdStateView
                     drawList.AddRectFilled(min, footMax, ImGui.GetColorU32(ConditionColor(row)), 4f, ImDrawFlags.RoundCornersBottom);
                     break;
             }
+
+            if (IsDimmed(r))
+                Grey(drawList, rowVtx);
         }
 
         if (showComments)

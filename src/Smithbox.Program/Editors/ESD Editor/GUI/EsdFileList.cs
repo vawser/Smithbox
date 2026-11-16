@@ -60,7 +60,7 @@ public class EsdFileList
     /// <summary>An alias after a list item's name, in the alias colour</summary>
     private static void AliasText(string alias)
     {
-        if (string.IsNullOrEmpty(alias))
+        if (!CFG.Current.EsdEditor_File_List_Display_Aliases || string.IsNullOrEmpty(alias))
             return;
 
         ImGui.SameLine();
@@ -80,6 +80,13 @@ public class EsdFileList
             "ESD_FileList_Count_Toggle_Hide",
             "ESD_FileList_Count_Toggle_Show",
             "ESD_FileList_Count_Toggle_TT");
+
+        // Toggle: aliases
+        GUI.DisplayToggleButton("esdFileAliasToggle", Icons.StickyNote,
+            ref CFG.Current.EsdEditor_File_List_Display_Aliases,
+            "ESD_FileList_Alias_Toggle_Hide",
+            "ESD_FileList_Alias_Toggle_Show",
+            "ESD_FileList_Alias_Toggle_TT");
 
         ImGui.EndChild();
 

@@ -54,6 +54,13 @@ public class EsdMachineList
             "ESD_MachineList_Call_Toggle_Show",
             "ESD_MachineList_Call_Toggle_TT");
 
+        // Toggle: aliases
+        GUI.DisplayToggleButton("esdMachineAliasToggle", Icons.StickyNote,
+            ref CFG.Current.EsdEditor_Machine_List_Display_Aliases,
+            "ESD_MachineList_Alias_Toggle_Hide",
+            "ESD_MachineList_Alias_Toggle_Show",
+            "ESD_MachineList_Alias_Toggle_TT");
+
         ImGui.EndChild();
 
         ImGui.BeginChild("esdMachineList", Vector2.Zero, ImGuiChildFlags.Borders);
@@ -159,7 +166,7 @@ public class EsdMachineList
 
                 ImGui.SameLine();
 
-                if (name.Length > 0)
+                if (name.Length > 0 && CFG.Current.EsdEditor_Machine_List_Display_Aliases)
                 {
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                     ImGui.SameLine();

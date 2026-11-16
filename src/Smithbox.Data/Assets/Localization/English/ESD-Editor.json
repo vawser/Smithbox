@@ -73,6 +73,9 @@
     { "Key": "ESD_FileList_Count_Toggle_Show", "Text": "Show file counts" },
     { "Key": "ESD_FileList_Count_Toggle_Hide", "Text": "Hide file counts" },
     { "Key": "ESD_FileList_Count_Toggle_TT", "Text": "Toggle the display of the ESD count after each binder and the machine count after each ESD.\n\nCurrent Mode:\n{0}" },
+    { "Key": "ESD_FileList_Alias_Toggle_Show", "Text": "Show aliases" },
+    { "Key": "ESD_FileList_Alias_Toggle_Hide", "Text": "Hide aliases" },
+    { "Key": "ESD_FileList_Alias_Toggle_TT", "Text": "Toggle the display of the alias after each binder and ESD.\n\nCurrent Mode:\n{0}" },
     { "Key": "ESD_FileList_In_Project_TT", "Text": "The project has its own copy of this file." },
 
     { "Key": "ESD_Kind_Talk", "Text": "Talk" },
@@ -102,6 +105,9 @@
     { "Key": "ESD_MachineList_Call_Toggle_Show", "Text": "Show call counts" },
     { "Key": "ESD_MachineList_Call_Toggle_Hide", "Text": "Hide call counts" },
     { "Key": "ESD_MachineList_Call_Toggle_TT", "Text": "Toggle the display of how many calls in the file start each machine.\n\nCurrent Mode:\n{0}" },
+    { "Key": "ESD_MachineList_Alias_Toggle_Show", "Text": "Show aliases" },
+    { "Key": "ESD_MachineList_Alias_Toggle_Hide", "Text": "Hide aliases" },
+    { "Key": "ESD_MachineList_Alias_Toggle_TT", "Text": "Toggle the display of the alias (or .edd name) after each machine.\n\nCurrent Mode:\n{0}" },
     { "Key": "ESD_MachineList_Entry_TT", "Text": "Machine {0} ({1}): an entry machine." },
     { "Key": "ESD_MachineList_Sub_TT", "Text": "Machine {0} ({1}): a sub-machine, started by call blocks in this file." },
 
@@ -217,6 +223,9 @@
     { "Key": "ESD_Properties_Command", "Text": "Command" },
     { "Key": "ESD_Properties_Go_To_Machine_TT", "Text": "Go to the machine this call starts." },
     { "Key": "ESD_Properties_Bytecode", "Text": "Bytecode" },
+    { "Key": "ESD_Properties_Bytecode_Toggle_Show", "Text": "Show bytecode" },
+    { "Key": "ESD_Properties_Bytecode_Toggle_Hide", "Text": "Hide bytecode" },
+    { "Key": "ESD_Properties_Bytecode_Toggle_TT", "Text": "Toggle the display of the Bytecode section (the expression's opcodes and bytes) under a transition's test and each command arg.\n\nCurrent Mode:\n{0}" },
     { "Key": "ESD_Properties_Undecoded", "Text": "These bytes don't decode as one expression." },
     { "Key": "ESD_Properties_Op_A6", "Text": "(separator)" },
     { "Key": "ESD_Properties_Op_B7", "Text": "(stop if false)" },
@@ -403,6 +412,12 @@
     { "Key": "ESD_Alias_Confirm_TT", "Text": "Saves the alias to the project's alias folder. Leaving the name field after an edit (Enter, or clicking elsewhere) saves too; Escape discards the edit." },
     { "Key": "ESD_Alias_Removed", "Text": "(removed)" },
     { "Key": "ESD_Alias_Log_Updated", "Text": "Alias {0}: {1}" },
+
+    { "Key": "ESD_Filter_Hint", "Text": "Filter blocks..." },
+    { "Key": "ESD_Filter_TT", "Text": "Filters the blocks by their names and values: state ids and names, command names and args, transition tests and targets. Blocks that don't match are greyed out.\n\nUse {0} to require several terms in one block, {1} to match any of several." },
+    { "Key": "ESD_Filter_Go_To", "Text": "Go To" },
+    { "Key": "ESD_Filter_Go_To_TT", "Text": "Selects the next block matching the filter, wrapping round to the first. Enter in the filter does the same." },
+    { "Key": "ESD_Filter_Matches", "Text": "{0} matches" },
 
     { "Key": "ESD_Comments_Toggle", "Text": "Comments" },
     { "Key": "ESD_Comments_Toggle_TT", "Text": "Shows the comment bubbles beside the blocks. Comments are your own notes: they aren't saved into the ESD, but kept with the project in .smithbox/Project/ESD/Comments." },

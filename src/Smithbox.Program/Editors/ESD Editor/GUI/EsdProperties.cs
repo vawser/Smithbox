@@ -24,6 +24,17 @@ public class EsdProperties
     {
         GUI.TitleHeader(LOC.Get("ESD_Properties_Header"), LOC.Get("ESD_Properties_Header_TT"));
 
+        ImGui.BeginChild("esdPropertiesHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+
+        // Toggle: the bytecode folds (an expression's opcodes and bytes)
+        GUI.DisplayToggleButton("esdPropBytecodeToggle", Icons.Microchip,
+            ref CFG.Current.EsdEditor_Properties_Display_Bytecode,
+            "ESD_Properties_Bytecode_Toggle_Hide",
+            "ESD_Properties_Bytecode_Toggle_Show",
+            "ESD_Properties_Bytecode_Toggle_TT");
+
+        ImGui.EndChild();
+
         ImGui.BeginChild("esdProperties", Vector2.Zero, ImGuiChildFlags.Borders);
 
         var selection = View.Selection;
@@ -689,6 +700,9 @@ public class EsdProperties
     /// <summary>An expression's tree (each node with its opcode) and its bytes, folded away by default</summary>
     private void Expression(byte[] code, EsdKindCatalog cat, EsdArgDef argDef, string id)
     {
+        if (!CFG.Current.EsdEditor_Properties_Display_Bytecode)
+            return;
+
         var node = EsdExpr.Decode(code);
 
         if (ImGui.TreeNodeEx($"{LOC.Get("ESD_Properties_Bytecode")}##{id}", ImGuiTreeNodeFlags.None))
