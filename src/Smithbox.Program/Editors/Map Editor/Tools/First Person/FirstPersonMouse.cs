@@ -9,7 +9,7 @@ namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// The captured mouse of the first person mode: hidden, held in the window, and put back at the viewport's centre
-/// each frame, the look being how far it moved from there. Held in one place so it is always given back: the owner
+/// each frame, the look being the mouse's motion (SDL's relative mode) since the last frame. Held in one place so it is always given back: the owner
 /// claims it every frame it is in use (<see cref="Claim"/>), and the main loop's <see cref="EndFrame"/> lets go of a
 /// capture nobody claimed (the editor tab changed, the viewport closed, an exception skipped the owner).
 /// </summary>
@@ -43,6 +43,12 @@ public static class FirstPersonMouse
 
         sdl.ShowCursor(0);
         sdl.SetWindowGrab(window.SdlWindowHandle, SdlBool.True);
+
+        // SDL reports the mouse's motion rather than the cursor's position, so a look isn't cut short by the cursor
+        // reaching the edge of the window between two slow frames. The motion keeps the system's pointer speed.
+        sdl.SetHint("SDL_MOUSE_RELATIVE_SYSTEM_SCALE", "1");
+        sdl.SetRelativeMouseMode(SdlBool.True);
+
         sdl.WarpMouseInWindow(window.SdlWindowHandle, (int)centre.X, (int)centre.Y);
     }
 
@@ -57,7 +63,8 @@ public static class FirstPersonMouse
 
         ClaimedThisFrame = true;
 
-        var delta = InputManager.MousePosition - Centre;
+        // Every mouse event's motion since the last frame, however long the frame took
+        var delta = Window.MouseDelta;
 
         if (SkipNextDelta || centre != Centre)
         {
@@ -81,6 +88,9 @@ public static class FirstPersonMouse
 
         IsCaptured = false;
         InputManager.ExclusiveActions = null;
+
+        // Off before the warp, which relative mode would only note rather than carry out
+        sdl.SetRelativeMouseMode(SdlBool.False);
 
         if (Window != null)
         {
