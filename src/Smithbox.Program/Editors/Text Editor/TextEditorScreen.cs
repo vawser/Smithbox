@@ -163,6 +163,43 @@ public class TextEditorScreen : EditorScreen
                     activeView.ActionHandler.DeleteEntries();
                 }
                 GUI.Tooltip(LOC.Get("TEXT_Menubar_Action_Delete_TT"));
+
+                ImGui.Separator();
+
+                // Copy / Paste Entries
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Copy")}##copyEntriesAction", InputManager.GetHint(KeybindID.Copy)))
+                {
+                    activeView.ActionHandler.CopyEntries();
+                }
+                GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Copy_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Paste")}##pasteEntriesAction", InputManager.GetHint(KeybindID.Paste), false, TextEntryClipboard.HasEntries))
+                {
+                    activeView.ActionHandler.PasteEntries(asNew: false);
+                }
+                GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Paste_TT"));
+
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Paste_As_New")}##pasteNewEntriesAction", InputManager.GetHint(KeybindID.TextEditor_Paste_As_New_Entries), false, TextEntryClipboard.HasEntries))
+                {
+                    activeView.ActionHandler.PasteEntries(asNew: true);
+                }
+                GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Paste_As_New_TT"));
+
+                ImGui.Separator();
+
+                // Edit Selection
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_BulkEdit_Action")}##bulkEditAction"))
+                {
+                    activeView.TextBulkEditPopup.OpenRequested = true;
+                }
+                GUI.Tooltip(LOC.Get("TEXT_BulkEdit_Action_TT"));
+
+                // Revert to Vanilla
+                if (ImGui.MenuItem($"{LOC.Get("TEXT_Vanilla_Revert")}##revertToVanillaAction"))
+                {
+                    activeView.ActionHandler.RevertToVanilla();
+                }
+                GUI.Tooltip(LOC.Get("TEXT_Vanilla_Revert_TT"));
             }
 
             ImGui.EndMenu();

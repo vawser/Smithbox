@@ -37,6 +37,7 @@ public class TextEditorView : IEditorView
     public TextExporterModal TextExportModal;
     public TextDuplicatePopup TextDuplicatePopup;
     public TextDeleteConfirmPopup TextDeleteConfirmPopup;
+    public TextBulkEditPopup TextBulkEditPopup;
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
@@ -66,6 +67,7 @@ public class TextEditorView : IEditorView
         TextExportModal = new TextExporterModal(this, Project);
         TextDuplicatePopup = new TextDuplicatePopup(this, Project);
         TextDeleteConfirmPopup = new TextDeleteConfirmPopup(this, Project);
+        TextBulkEditPopup = new TextBulkEditPopup(this, Project);
 
         FmgExporter = new FmgExporter(this, Project);
         FmgImporter = new FmgImporter(this, Project);
@@ -217,6 +219,7 @@ public class TextEditorView : IEditorView
         TextEntryCreator.Display();
         TextDuplicatePopup.Display();
         TextDeleteConfirmPopup.Display();
+        TextBulkEditPopup.Display();
         FmgImporter.OnGui();
         FmgExporter.OnGui();
 

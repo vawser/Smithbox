@@ -531,6 +531,280 @@ public class TextActionHandler
         }
     }
 
+    #region Copy / Paste Entries
+
+    /// <summary>
+    /// The associated FMG for a group slot of the passed FMG, or null if it has none
+    /// </summary>
+    private TextFmgWrapper GetSlotWrapper(TextEntryClipboard.GroupSlot slot, int fmgId)
+    {
+        var groups = Parent.EntryGroupManager;
+
+        return slot switch
+        {
+            TextEntryClipboard.GroupSlot.Title => groups.GetAssociatedTitleWrapper(fmgId),
+            TextEntryClipboard.GroupSlot.Summary => groups.GetAssociatedSummaryWrapper(fmgId),
+            TextEntryClipboard.GroupSlot.Description => groups.GetAssociatedDescriptionWrapper(fmgId),
+            _ => groups.GetAssociatedEffectWrapper(fmgId)
+        };
+    }
+
+    /// <summary>
+    /// Copy the selected entries for Paste (in this or another FMG, container or language).
+    /// With grouping on, each entry's title/summary/description/effect texts come along.
+    /// The text also goes to the system clipboard, as Copy Text does.
+    /// </summary>
+    public void CopyEntries()
+    {
+        var entries = GetSelectedListedEntries();
+
+        if (entries.Count == 0)
+            return;
+
+        var groupingOn = CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries;
+        var lookup = new FmgEntryLookup();
+        var copied = new List<TextEntryClipboard.CopiedEntry>();
+
+        foreach (var entry in entries)
+        {
+            var item = new TextEntryClipboard.CopiedEntry { ID = entry.ID, Text = entry.Text };
+
+            var group = groupingOn ? Parent.EntryGroupManager.GetEntryGroup(entry, lookup) : null;
+
+            if (group != null && group.SupportsGrouping)
+            {
+                item.Group = new();
+
+                if (group.Title != null) item.Group[TextEntryClipboard.GroupSlot.Title] = group.Title.Text;
+                if (group.Summary != null) item.Group[TextEntryClipboard.GroupSlot.Summary] = group.Summary.Text;
+                if (group.Description != null) item.Group[TextEntryClipboard.GroupSlot.Description] = group.Description.Text;
+                if (group.Effect != null) item.Group[TextEntryClipboard.GroupSlot.Effect] = group.Effect.Text;
+            }
+
+            copied.Add(item);
+        }
+
+        TextEntryClipboard.Set(copied);
+
+        CopyEntryTextToClipboard(CFG.Current.TextEditor_Text_Clipboard_Include_ID);
+
+        Smithbox.Log(this, LOC.Get("TEXT_EntryClipboard_Copied", copied.Count));
+    }
+
+    /// <summary>
+    /// Paste the copied entries into the selected FMG.
+    /// asNew false: each entry is written at its own ID, changing the text of an existing
+    /// entry and adding a missing one. asNew true: each is added at the next free ID after its own.
+    /// Grouped copies go into the matching associated FMGs when the target FMG has them.
+    /// </summary>
+    public void PasteEntries(bool asNew)
+    {
+        var fmgWrapper = Parent.Selection.SelectedFmgWrapper;
+        var container = Parent.Selection.SelectedContainerWrapper;
+
+        if (fmgWrapper?.File == null || container == null || !TextEntryClipboard.HasEntries)
+            return;
+
+        // The target's group slots, when grouping is on and the FMG is grouped
+        var slotWrappers = new Dictionary<TextEntryClipboard.GroupSlot, TextFmgWrapper>();
+
+        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        {
+            foreach (TextEntryClipboard.GroupSlot slot in Enum.GetValues(typeof(TextEntryClipboard.GroupSlot)))
+            {
+                var wrapper = GetSlotWrapper(slot, fmgWrapper.ID);
+
+                if (wrapper?.File != null)
+                    slotWrappers[slot] = wrapper;
+            }
+        }
+
+        var lookup = new FmgEntryLookup();
+        var claimedIds = new HashSet<int>();
+
+        // Entries this paste adds, which the lookup (built before any action runs) can't see
+        var pendingAdds = new HashSet<(FMG, int)>();
+
+        var actions = new List<EditorAction>();
+        var added = 0;
+        var changed = 0;
+
+        FMG.Entry revealEntry = null;
+
+        foreach (var item in TextEntryClipboard.Entries)
+        {
+            var writes = new List<(FMG Fmg, string Text)>();
+
+            if (slotWrappers.Count > 0 && item.Group != null)
+            {
+                foreach (var (slot, text) in item.Group)
+                {
+                    if (slotWrappers.TryGetValue(slot, out var wrapper))
+                        writes.Add((wrapper.File, text));
+                }
+            }
+            else
+            {
+                writes.Add((fmgWrapper.File, item.Text));
+            }
+
+            if (writes.Count == 0)
+                continue;
+
+            var id = item.ID;
+
+            if (asNew)
+            {
+                var fmgs = writes.Select(w => w.Fmg).Distinct().ToList();
+                id = GetNextValidId(fmgs, item.ID, claimedIds, lookup);
+                claimedIds.Add(id);
+            }
+
+            foreach (var (fmg, text) in writes)
+            {
+                if (pendingAdds.Contains((fmg, id)))
+                    continue;
+
+                var existing = asNew ? null : lookup.Find(fmg, id);
+
+                if (existing != null)
+                {
+                    if (existing.Text == text)
+                        continue;
+
+                    actions.Add(new ChangeFmgEntryText(Parent, container, existing, text));
+                    changed++;
+
+                    if (revealEntry == null && fmg == fmgWrapper.File)
+                        revealEntry = existing;
+                }
+                else
+                {
+                    var newEntry = new FMG.Entry(fmg, id, text);
+
+                    actions.Add(new AddFmgEntry(Parent, container, newEntry, newEntry, id));
+                    pendingAdds.Add((fmg, id));
+                    added++;
+
+                    if (revealEntry == null && fmg == fmgWrapper.File)
+                        revealEntry = newEntry;
+                }
+            }
+        }
+
+        if (actions.Count == 0)
+        {
+            // Pasting into the FMG the entries came from changes nothing
+            Smithbox.Log(this, LOC.Get("TEXT_EntryClipboard_Nothing_To_Paste"));
+            return;
+        }
+
+        Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+
+        if (revealEntry != null)
+        {
+            Parent.Selection.RevealEntry(fmgWrapper.File.Entries.IndexOf(revealEntry), revealEntry);
+        }
+
+        Smithbox.Log(this, LOC.Get("TEXT_EntryClipboard_Pasted", added, changed));
+    }
+
+    #endregion
+
+    #region Vanilla
+
+    /// <summary>
+    /// Set the selected modified entries back to their vanilla text. Entries unique to the mod
+    /// have no vanilla text and are left alone.
+    /// </summary>
+    public void RevertToVanilla()
+    {
+        if (!CFG.Current.TextEditor_Include_Vanilla_Cache)
+        {
+            Smithbox.LogWarning(this, LOC.Get("TEXT_Vanilla_Cache_Disabled"));
+            return;
+        }
+
+        var diff = Parent.DifferenceManager;
+        var container = Parent.Selection.SelectedContainerWrapper;
+        var actions = new List<EditorAction>();
+
+        foreach (var entry in GetSelectedListedEntries())
+        {
+            if (!diff.IsDifferentToVanilla(entry) || diff.IsUniqueToProject(entry))
+                continue;
+
+            if (!diff.TryGetVanillaText(entry, out var vanillaText))
+                continue;
+
+            actions.Add(new ChangeFmgEntryText(Parent, container, entry, vanillaText));
+        }
+
+        if (actions.Count > 0)
+        {
+            Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+        }
+
+        Smithbox.Log(this, LOC.Get("TEXT_Vanilla_Reverted", actions.Count));
+    }
+
+    /// <summary>
+    /// Add vanilla entries that the mod has deleted back into the selected FMG, with their vanilla text
+    /// </summary>
+    public void RestoreDeletedEntries(IEnumerable<FMG.Entry> vanillaEntries)
+    {
+        var fmg = Parent.Selection.SelectedFmgWrapper?.File;
+        var container = Parent.Selection.SelectedContainerWrapper;
+
+        if (fmg == null || container == null)
+            return;
+
+        var existingIds = fmg.Entries.Select(e => e.ID).ToHashSet();
+        var actions = new List<EditorAction>();
+
+        foreach (var vanillaEntry in vanillaEntries)
+        {
+            // Already back (or added again since the list was built)
+            if (!existingIds.Add(vanillaEntry.ID))
+                continue;
+
+            var newEntry = new FMG.Entry(fmg, vanillaEntry.ID, vanillaEntry.Text);
+            actions.Add(new AddFmgEntry(Parent, container, newEntry, newEntry, vanillaEntry.ID));
+        }
+
+        if (actions.Count == 0)
+            return;
+
+        Parent.ActionManager.ExecuteAction(new FmgGroupedAction(actions));
+
+        Smithbox.Log(this, LOC.Get("TEXT_Vanilla_Restored", actions.Count));
+    }
+
+    #endregion
+
+    /// <summary>
+    /// The selected entries of the selected FMG that are listed (pass the filter), in list order.
+    /// Shared by Edit Selection, Copy Entries and Revert to Vanilla, so none of them reach rows
+    /// the user can't see.
+    /// </summary>
+    public List<FMG.Entry> GetSelectedListedEntries()
+    {
+        var result = new List<FMG.Entry>();
+
+        if (Parent.Selection.SelectedFmgWrapper?.File == null)
+            return result;
+
+        Parent.Selection.RevalidateEntrySelection();
+
+        foreach (var entry in Parent.Selection.FmgEntryMultiselect.StoredEntries.Values)
+        {
+            if (Parent.TextEntryList.IsEntryVisible(entry))
+                result.Add(entry);
+        }
+
+        return result;
+    }
+
     /// <summary>
     /// Copy the currently selected Text Entries to the clipboard.
     /// Runs on the UI thread: it used to run as a background task, reading the

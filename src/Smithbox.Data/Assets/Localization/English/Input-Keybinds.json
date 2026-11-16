@@ -1169,6 +1169,14 @@
       "Text": "Toggles the Text Entry Creator menu."
     },
     {
+      "Key": "KEY_TextEditor_Paste_As_New_Entries",
+      "Text": "Paste as New Entries"
+    },
+    {
+      "Key": "KEY_TextEditor_Paste_As_New_Entries_TT",
+      "Text": "Pastes the copied text entries as new entries, each at the next free ID after its own."
+    },
+    {
       "Key": "KEY_TextEditor_Configurable_Duplicate",
       "Text": "Toggle Configurable Duplicate"
     },

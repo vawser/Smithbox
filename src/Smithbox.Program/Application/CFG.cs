@@ -1096,6 +1096,11 @@ public class CFG
     // Wrapped, markup-highlighted preview under each Contents text box
     public bool TextEditor_Contents_Show_Text_Preview = true;
 
+    // Read-only reference column in the Contents panel: the same entry from vanilla, or from another language
+    public bool TextEditor_Contents_Show_Reference = false;
+    public bool TextEditor_Contents_Reference_Use_Vanilla = true;
+    public TextContainerCategory TextEditor_Contents_Reference_Category = TextContainerCategory.English;
+
     // FMG Reloader (ER, Game Memory)
     public bool TextEditor_FmgReloader_AutoRefresh = true;
     public bool TextEditor_FmgReloader_SendOnSave = false;

@@ -124,6 +124,23 @@ public class TextShortcuts
                     activeView.ActionHandler.DeleteEntries();
                 }
 
+                // Copy / Paste Entries
+                if (InputManager.IsPressed(KeybindID.Copy))
+                {
+                    activeView.ActionHandler.CopyEntries();
+                }
+
+                // Paste as New first: bindings match when their modifiers are held, without
+                // requiring the others to be up, so Ctrl+Shift+V also counts as Ctrl+V
+                if (InputManager.IsPressed(KeybindID.TextEditor_Paste_As_New_Entries))
+                {
+                    activeView.ActionHandler.PasteEntries(asNew: true);
+                }
+                else if (InputManager.IsPressed(KeybindID.Paste))
+                {
+                    activeView.ActionHandler.PasteEntries(asNew: false);
+                }
+
                 // Focus Selected Entry
                 if (InputManager.IsPressed(KeybindID.Jump))
                 {

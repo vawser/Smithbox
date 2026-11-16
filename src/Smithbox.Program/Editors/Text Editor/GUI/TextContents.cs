@@ -1,5 +1,6 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Utilities;
 using StudioCore.Editors.Common;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,122 @@ public class TextContents
     private TextEditorView Parent;
     private ProjectEntry Project;
 
+    private TextReferenceLookup ReferenceLookup;
+
     public TextContents(TextEditorView view, ProjectEntry project)
     {
         Parent = view;
         Project = project;
+
+        ReferenceLookup = new TextReferenceLookup(view, project);
+    }
+
+    private static bool ShowReference => CFG.Current.TextEditor_Contents_Show_Reference;
+
+    /// <summary>
+    /// The bordered header strip under the title, as in the File List and Text Entries panels,
+    /// holding the panel's toggles (they used to sit at the top of the contents area)
+    /// </summary>
+    private void DisplayHeader()
+    {
+        ImGui.BeginChild("textEditor_Contents_Section_Header", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+
+        // Preview toggle
+        var previewIcon = CFG.Current.TextEditor_Contents_Show_Text_Preview ? Icons.Eye : Icons.EyeSlash;
+        if (ImGui.Button($"{previewIcon}##toggleTextPreview", DPI.IconButtonSize))
+        {
+            CFG.Current.TextEditor_Contents_Show_Text_Preview = !CFG.Current.TextEditor_Contents_Show_Text_Preview;
+        }
+        GUI.Tooltip(LOC.Get("TEXT_Contents_Preview_Toggle_TT",
+            LOC.Get(CFG.Current.TextEditor_Contents_Show_Text_Preview ? "TEXT_Contents_Preview_Shown" : "TEXT_Contents_Preview_Hidden")));
+
+        DisplayReferenceControls();
+
+        ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Reference toggle and source picker, beside the preview toggle
+    /// </summary>
+    private void DisplayReferenceControls()
+    {
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Columns}##toggleReference", DPI.IconButtonSize))
+        {
+            CFG.Current.TextEditor_Contents_Show_Reference = !CFG.Current.TextEditor_Contents_Show_Reference;
+        }
+        GUI.Tooltip(LOC.Get("TEXT_Reference_Toggle_TT"));
+
+        if (!ShowReference)
+            return;
+
+        ImGui.SameLine();
+
+        DPI.ApplyInputWidth(180f);
+        if (ImGui.BeginCombo("##referenceSource", ReferenceLookup.SourceLabel()))
+        {
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Reference_Source_Vanilla")}##refVanilla",
+                CFG.Current.TextEditor_Contents_Reference_Use_Vanilla))
+            {
+                CFG.Current.TextEditor_Contents_Reference_Use_Vanilla = true;
+            }
+            GUI.Tooltip(LOC.Get("TEXT_Reference_Source_Vanilla_TT"));
+
+            foreach (var language in TextUtils.GetSupportedLanguages(Project))
+            {
+                var isCurrent = !CFG.Current.TextEditor_Contents_Reference_Use_Vanilla &&
+                    CFG.Current.TextEditor_Contents_Reference_Category == language;
+
+                if (ImGui.Selectable($"{LOC.Get(language.GetDisplayName())}##ref{language}", isCurrent))
+                {
+                    CFG.Current.TextEditor_Contents_Reference_Use_Vanilla = false;
+                    CFG.Current.TextEditor_Contents_Reference_Category = language;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip(LOC.Get("TEXT_Reference_Source_TT"));
+    }
+
+    private int ColumnCount => ShowReference ? 3 : 2;
+
+    private void SetupColumns()
+    {
+        ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+        ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
+
+        if (ShowReference)
+        {
+            ImGui.TableSetupColumn("Reference", ImGuiTableColumnFlags.WidthStretch);
+        }
+    }
+
+    /// <summary>
+    /// The read-only reference text for this row's entry, in the third column
+    /// </summary>
+    private void ReferenceCell(FMG.Entry entry)
+    {
+        if (!ShowReference)
+            return;
+
+        ImGui.TableSetColumnIndex(2);
+
+        if (entry != null && ReferenceLookup.TryGetReference(entry, out var referenceText))
+        {
+            ImGui.PushTextWrapPos(0f);
+            ImGui.TextUnformatted(referenceText ?? "<null>");
+            ImGui.PopTextWrapPos();
+
+            GUI.Tooltip(LOC.Get("TEXT_Reference_Cell_TT", ReferenceLookup.SourceLabel()));
+        }
+        else
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
+            ImGui.TextUnformatted(LOC.Get("TEXT_Reference_Not_Found", ReferenceLookup.SourceLabel()));
+            ImGui.PopStyleColor();
+        }
     }
 
     /// <summary>
@@ -32,16 +145,9 @@ public class TextContents
             LOC.Get("TEXT_Contents_Header_Contents"),
             LOC.Get("TEXT_Contents_Header_Contents_TT"));
 
-        ImGui.BeginChild("FmgEntryContents", ImGuiChildFlags.Borders);
+        DisplayHeader();
 
-        // Preview toggle
-        var previewIcon = CFG.Current.TextEditor_Contents_Show_Text_Preview ? Icons.Eye : Icons.EyeSlash;
-        if (ImGui.Button($"{previewIcon}##toggleTextPreview", DPI.IconButtonSize))
-        {
-            CFG.Current.TextEditor_Contents_Show_Text_Preview = !CFG.Current.TextEditor_Contents_Show_Text_Preview;
-        }
-        GUI.Tooltip(LOC.Get("TEXT_Contents_Preview_Toggle_TT",
-            LOC.Get(CFG.Current.TextEditor_Contents_Show_Text_Preview ? "TEXT_Contents_Preview_Shown" : "TEXT_Contents_Preview_Hidden")));
+        ImGui.BeginChild("FmgEntryContents", ImGuiChildFlags.Borders);
 
         if (Parent.Selection._selectedFmgEntry != null)
         {
@@ -139,6 +245,14 @@ public class TextContents
     /// </summary>
     private static void ShowPreview(string id, string text)
     {
+        // Markup problems are shown whether or not the preview is
+        var warnings = TextMarkupPreview.GetWarnings(text);
+
+        if (warnings != null)
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, warnings);
+        }
+
         if (!CFG.Current.TextEditor_Contents_Show_Text_Preview)
             return;
 
@@ -246,11 +360,9 @@ public class TextContents
         // This used to return early and leave the panel blank, so the
         // "Add Title Entry" button below could never show.
 
-        if (ImGui.BeginTable($"fmgEditTableGrouped", 2, ImGuiTableFlags.SizingFixedFit))
+        if (ImGui.BeginTable($"fmgEditTableGrouped", ColumnCount, ImGuiTableFlags.SizingFixedFit))
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
-            //ImGui.TableHeadersRow();
+            SetupColumns();
 
             // ID: shown from the title when it exists, otherwise from the selected entry
             {
@@ -315,6 +427,7 @@ public class TextContents
                 var titleTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("title", curText);
+                ReferenceCell(fmgEntryGroup.Title);
 
                 // Title Text
                 if (titleTextCommit)
@@ -363,6 +476,7 @@ public class TextContents
                 var summaryTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("summary", curText);
+                ReferenceCell(fmgEntryGroup.Summary);
 
                 if (summaryTextCommit)
                 {
@@ -410,6 +524,7 @@ public class TextContents
                 var descriptionTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("description", curText);
+                ReferenceCell(fmgEntryGroup.Description);
 
                 if (descriptionTextCommit)
                 {
@@ -457,6 +572,7 @@ public class TextContents
                 var effectTextCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
                 ShowPreview("effect", curText);
+                ReferenceCell(fmgEntryGroup.Effect);
 
                 if (effectTextCommit)
                 {
@@ -490,11 +606,9 @@ public class TextContents
         var textboxHeight = 100;
         var textboxWidth = ImGui.GetWindowWidth() * 0.92f;
 
-        if (ImGui.BeginTable($"fmgEditTableBasic", 2, ImGuiTableFlags.SizingFixedFit))
+        if (ImGui.BeginTable($"fmgEditTableBasic", ColumnCount, ImGuiTableFlags.SizingFixedFit))
         {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-            ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
-            //ImGui.TableHeadersRow();
+            SetupColumns();
 
             // ID
             var curId = entry.ID;
@@ -547,6 +661,7 @@ public class TextContents
             var textCommit = GUI.InputCommitted();
             ShowLengthTooltip(curText);
             ShowPreview("basic", curText);
+            ReferenceCell(entry);
 
             if (textCommit)
             {

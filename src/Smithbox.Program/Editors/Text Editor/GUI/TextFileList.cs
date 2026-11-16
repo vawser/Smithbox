@@ -416,7 +416,7 @@ public class TextFileList
                 ImGui.EndMenu();
             }
 
-            // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
+            // Syncs this FMG and, with grouping on, its associated title/summary/description/effect FMGs
             View.ToolView.LanguageSyncTool.DisplaySyncOptions(View.Selection.SelectedFmgKey);
 
             View.FmgImporter.TextFileDropdownOptions();

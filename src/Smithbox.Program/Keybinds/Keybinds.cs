@@ -456,6 +456,9 @@ public enum KeybindID
     [Display(Name = "KEY_TextEditor_Configurable_Duplicate", Description = "KEY_TextEditor_Configurable_Duplicate_TT")]
     TextEditor_Configurable_Duplicate,
 
+    [Display(Name = "KEY_TextEditor_Paste_As_New_Entries", Description = "KEY_TextEditor_Paste_As_New_Entries_TT")]
+    TextEditor_Paste_As_New_Entries,
+
     // Gparam Editor
     [Display(Name = "KEY_GparamEditor_Add_Missing_Groups", Description = "KEY_GparamEditor_Add_Missing_Groups_TT")]
     GparamEditor_Add_Missing_Groups,
@@ -672,6 +675,7 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.TextEditor_Focus_Searchbar, new() { Key = Key.F, Ctrl = true });
         InputManager.Bind(KeybindID.TextEditor_Configurable_Duplicate, new() { Key = Key.D, Alt = true });
         InputManager.Bind(KeybindID.TextEditor_Create_New_Entry, new() { Key = Key.Insert });
+        InputManager.Bind(KeybindID.TextEditor_Paste_As_New_Entries, new() { Key = Key.V, Ctrl = true, Shift = true });
 
         // Gparam Editor
 
@@ -853,6 +857,7 @@ public static class KeybindMetadata
         { KeybindID.TextEditor_Focus_Searchbar, InputCategory.TextEditor },
         { KeybindID.TextEditor_Configurable_Duplicate, InputCategory.TextEditor },
         { KeybindID.TextEditor_Create_New_Entry, InputCategory.TextEditor },
+        { KeybindID.TextEditor_Paste_As_New_Entries, InputCategory.TextEditor },
 
         // Gparam Editor
 

@@ -19,6 +19,9 @@ public class TextToolView
 
     public FmgReloaderTool FmgReloader;
 
+    public TextCoverageReport CoverageReport;
+    public TextUndoHistory UndoHistory;
+
     private ToolSections Sections = new();
 
     public TextToolView(TextEditorView view, ProjectEntry project)
@@ -34,6 +37,9 @@ public class TextToolView
         DataTransferTool = new(view, project);
 
         FmgReloader = new(view, project);
+
+        CoverageReport = new(view, project);
+        UndoHistory = new(view, project);
     }
 
     public void Display()
@@ -72,6 +78,12 @@ public class TextToolView
             LanguageSyncTool.Display();
         }
 
+        // Undo History
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Undo_History")}##undoHistorySection"))
+        {
+            UndoHistory.Display();
+        }
+
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));
 
@@ -85,6 +97,12 @@ public class TextToolView
         if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Text_Merge")}##textMergeSection"))
         {
             TextMerge.Display();
+        }
+
+        // Translation Coverage
+        if (ToolSections.Header($"{LOC.Get("TEXT_Tools_Translation_Coverage")}##translationCoverageSection"))
+        {
+            CoverageReport.Display();
         }
 
         // Game Memory

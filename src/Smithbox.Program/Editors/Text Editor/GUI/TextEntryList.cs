@@ -167,6 +167,12 @@ public class TextEntryList
 
         var fmg = Parent.Selection.SelectedFmgWrapper.File;
 
+        if (IsDeletedMode())
+        {
+            DisplayDeletedRows();
+            return;
+        }
+
         RefreshVisibleRows(fmg);
 
         // With truncated names every row is one line high, so only the rows in view are drawn.
@@ -381,6 +387,15 @@ public class TextEntryList
             ImGui.PopStyleColor(1);
         }
 
+        // Modified rows: show what the text was in vanilla
+        if (ImGui.IsItemHovered() &&
+            Parent.DifferenceManager.IsDifferentToVanilla(entry) &&
+            !Parent.DifferenceManager.IsUniqueToProject(entry) &&
+            Parent.DifferenceManager.TryGetVanillaText(entry, out var vanillaText))
+        {
+            GUI.Tooltip(LOC.Get("TEXT_Vanilla_Tooltip", vanillaText ?? "<null>"));
+        }
+
         // Arrow Selection
         if (ImGui.IsItemHovered() && Parent.Selection.SelectNextFmgEntry)
         {
@@ -457,8 +472,83 @@ public class TextEntryList
         {
             return true;
         }
+        else if (input == "deleted")
+        {
+            return true;
+        }
 
         return false;
+    }
+
+    /// <summary>
+    /// The 'deleted' command lists vanilla entries the mod no longer has, instead of the FMG's own rows
+    /// </summary>
+    public bool IsDeletedMode()
+    {
+        return EntryListFilter != null && EntryListFilter.Trim().ToLower() == "deleted";
+    }
+
+    /// <summary>
+    /// Rows for the 'deleted' command: greyed, not selectable, restored from the context menu
+    /// </summary>
+    private void DisplayDeletedRows()
+    {
+        var deleted = Parent.DifferenceManager.DeletedEntries;
+
+        if (deleted.Count == 0)
+        {
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(1);
+            ImGui.TextDisabled(LOC.Get(CFG.Current.TextEditor_Include_Vanilla_Cache
+                ? "TEXT_Vanilla_No_Deleted_Entries"
+                : "TEXT_Vanilla_Cache_Disabled"));
+            return;
+        }
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(deleted.Count);
+
+        while (clipper.Step())
+        {
+            for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++)
+            {
+                var vanillaEntry = deleted[row];
+
+                ImGui.TableNextRow();
+
+                ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
+
+                ImGui.TableSetColumnIndex(0);
+                ImGui.Selectable($"{vanillaEntry.ID}##deletedEntryID_{row}", false, ImGuiSelectableFlags.SpanAllColumns);
+
+                ImGui.PopStyleColor();
+
+                GUI.Tooltip(LOC.Get("TEXT_Vanilla_Deleted_Row_TT"));
+
+                if (ImGui.BeginPopupContextItem($"##deletedEntryContext_{row}"))
+                {
+                    if (ImGui.Selectable($"{LOC.Get("TEXT_Vanilla_Restore")}##restoreDeleted"))
+                    {
+                        Parent.ActionHandler.RestoreDeletedEntries(new[] { vanillaEntry });
+                    }
+
+                    if (ImGui.Selectable($"{LOC.Get("TEXT_Vanilla_Restore_All", deleted.Count)}##restoreAllDeleted"))
+                    {
+                        Parent.ActionHandler.RestoreDeletedEntries(deleted.ToList());
+                    }
+
+                    ImGui.EndPopup();
+                }
+
+                // TextUnformatted: TextDisabled treats its text as a format string ('%' in game text)
+                ImGui.TableSetColumnIndex(1);
+                ImGui.PushStyleColor(ImGuiCol.Text, ImGui.GetStyle().Colors[(int)ImGuiCol.TextDisabled]);
+                ImGui.TextUnformatted(FormatDisplayName(vanillaEntry.Text));
+                ImGui.PopStyleColor();
+            }
+        }
+
+        clipper.End();
     }
 
     public bool HandleMatchCommands(string rawInput, FMG.Entry curEntry)
@@ -489,6 +579,7 @@ public class TextEntryList
             return false;
         }
 
+        // 'deleted' lists vanilla rows instead (DisplayDeletedRows); none of the FMG's own rows
         return false;
     }
 
@@ -519,6 +610,43 @@ public class TextEntryList
             {
                 Parent.Editor.Shortcuts.HandleCopyEntryText();
             }
+
+            ImGui.Separator();
+
+            // Copy / Paste Entries
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Copy")}##copyEntriesAction", InputManager.GetHint(KeybindID.Copy)))
+            {
+                Parent.ActionHandler.CopyEntries();
+            }
+            GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Copy_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Paste")}##pasteEntriesAction", InputManager.GetHint(KeybindID.Paste), false, TextEntryClipboard.HasEntries))
+            {
+                Parent.ActionHandler.PasteEntries(asNew: false);
+            }
+            GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Paste_TT"));
+
+            if (ImGui.MenuItem($"{LOC.Get("TEXT_EntryClipboard_Paste_As_New")}##pasteNewEntriesAction", InputManager.GetHint(KeybindID.TextEditor_Paste_As_New_Entries), false, TextEntryClipboard.HasEntries))
+            {
+                Parent.ActionHandler.PasteEntries(asNew: true);
+            }
+            GUI.Tooltip(LOC.Get("TEXT_EntryClipboard_Paste_As_New_TT"));
+
+            ImGui.Separator();
+
+            // Edit Selection
+            if (ImGui.Selectable($"{LOC.Get("TEXT_BulkEdit_Action")}##bulkEditAction"))
+            {
+                Parent.TextBulkEditPopup.OpenRequested = true;
+            }
+            GUI.Tooltip(LOC.Get("TEXT_BulkEdit_Action_TT"));
+
+            // Revert to Vanilla
+            if (ImGui.Selectable($"{LOC.Get("TEXT_Vanilla_Revert")}##revertToVanillaAction"))
+            {
+                Parent.ActionHandler.RevertToVanilla();
+            }
+            GUI.Tooltip(LOC.Get("TEXT_Vanilla_Revert_TT"));
 
             ImGui.Separator();
 

@@ -302,6 +302,40 @@ public class TextLanguageSyncTool
         GUI.Tooltip(LOC.Get("TEXT_LanguageSync_Header_Sync_With_TT"));
     }
 
+    /// <summary>
+    /// The FMG IDs to sync: null for every FMG (no target given), otherwise the target FMG plus,
+    /// with grouping on, its associated FMGs. The group lookup works on the selected container,
+    /// which is the sync target whenever a single FMG is synced (from the file context menu).
+    /// </summary>
+    private HashSet<int> GetSyncFmgIds(TextContainerWrapper targetContainer, int targetFmgId)
+    {
+        if (targetFmgId == -1)
+            return null;
+
+        var ids = new HashSet<int> { targetFmgId };
+
+        if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries &&
+            targetContainer == View.Selection.SelectedContainerWrapper)
+        {
+            var groups = View.EntryGroupManager;
+            var associated = new[]
+            {
+                groups.GetAssociatedTitleWrapper(targetFmgId),
+                groups.GetAssociatedSummaryWrapper(targetFmgId),
+                groups.GetAssociatedDescriptionWrapper(targetFmgId),
+                groups.GetAssociatedEffectWrapper(targetFmgId)
+            };
+
+            foreach (var wrapper in associated)
+            {
+                if (wrapper != null)
+                    ids.Add(wrapper.ID);
+            }
+        }
+
+        return ids;
+    }
+
     private List<EditorAction> SyncLanguage(TextContainerWrapper syncTargetContainerWrapper, TextContainerWrapper syncSrcContainerWrapper, int targetFmgId = -1)
     {
         List<EditorAction> actions = new();
@@ -320,13 +354,17 @@ public class TextLanguageSyncTool
             Project.Handler.TextData.PrimaryBank.LoadFmgWrappers(syncSrcContainerWrapper);
         }
 
+        // Syncing one FMG also syncs its associated title/summary/description/effect FMGs when
+        // grouping is on (it used to sync only the one FMG, leaving e.g. descriptions behind)
+        var targetFmgIds = GetSyncFmgIds(syncTargetContainerWrapper, targetFmgId);
+
         foreach (var syncTargetWrapper in syncTargetContainerWrapper.FmgWrappers)
         {
 
             foreach (var syncSrcWrapper in syncSrcContainerWrapper.FmgWrappers)
             {
-                if (targetFmgId == -1 && syncTargetWrapper.ID == syncSrcWrapper.ID
-                    || targetFmgId == syncTargetWrapper.ID && targetFmgId == syncSrcWrapper.ID)
+                if (syncTargetWrapper.ID == syncSrcWrapper.ID &&
+                    (targetFmgIds == null || targetFmgIds.Contains(syncTargetWrapper.ID)))
                 {
                     // Get the added/modified entries, comparing the sync source with its vanilla version
                     var vanillaSrcWrapper = GetVanillaSrcWrapper(syncSrcContainerWrapper, syncSrcWrapper);

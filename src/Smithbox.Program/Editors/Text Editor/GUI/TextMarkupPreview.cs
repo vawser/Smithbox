@@ -2,6 +2,7 @@ using Hexa.NET.ImGui;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
@@ -49,6 +50,68 @@ public static class TextMarkupPreview
         }
 
         ImGui.EndChild();
+    }
+
+    private static readonly Regex FontOpenPattern = new(@"^<\s*font\b",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    private static readonly Dictionary<string, string> WarningCache = new();
+
+    /// <summary>
+    /// Markup problems in the text, one per line, or null if there are none: a &lt;font&gt; that is
+    /// never closed, a &lt;/font&gt; with no &lt;font&gt; before it, and a '&lt;' with no closing '&gt;'.
+    /// Unknown tags aren't flagged, as the tags in use vary between games.
+    /// </summary>
+    public static string GetWarnings(string text)
+    {
+        if (string.IsNullOrEmpty(text) || !text.Contains('<'))
+            return null;
+
+        if (WarningCache.TryGetValue(text, out var cached))
+            return cached;
+
+        if (WarningCache.Count >= MaxCacheEntries)
+            WarningCache.Clear();
+
+        var depth = 0;
+        var strayCloses = 0;
+        var tagCount = 0;
+
+        foreach (Match tag in TagPattern.Matches(text))
+        {
+            tagCount++;
+
+            if (FontOpenPattern.IsMatch(tag.Value))
+            {
+                depth++;
+            }
+            else if (FontClosePattern.IsMatch(tag.Value))
+            {
+                if (depth > 0)
+                    depth--;
+                else
+                    strayCloses++;
+            }
+        }
+
+        // Every complete tag holds exactly one '<'; any others never reach a '>'
+        var unclosedTags = text.Count(c => c == '<') - tagCount;
+
+        var warnings = new List<string>();
+
+        if (depth > 0)
+            warnings.Add(LOC.Get("TEXT_Markup_Warning_Unclosed_Font", depth));
+
+        if (strayCloses > 0)
+            warnings.Add(LOC.Get("TEXT_Markup_Warning_Stray_Font_Close", strayCloses));
+
+        if (unclosedTags > 0)
+            warnings.Add(LOC.Get("TEXT_Markup_Warning_Unclosed_Tag", unclosedTags));
+
+        var result = warnings.Count > 0 ? string.Join("\n", warnings) : null;
+        WarningCache[text] = result;
+
+        return result;
     }
 
     private static List<Segment> GetSegments(string text)

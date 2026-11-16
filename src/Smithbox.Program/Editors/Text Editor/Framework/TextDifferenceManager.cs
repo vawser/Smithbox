@@ -36,6 +36,18 @@ public class TextDifferenceManager
     private bool CacheFilled = false;
 
     /// <summary>
+    /// The compared vanilla FMG's text by ID, for Revert to Vanilla and the vanilla tooltip
+    /// </summary>
+    private Dictionary<int, string> VanillaTextById = new();
+
+    /// <summary>
+    /// Vanilla entries whose ID the mod's FMG doesn't have (deleted by the mod), in vanilla order.
+    /// Listed by the entry list's 'deleted' filter command.
+    /// </summary>
+    public IReadOnlyList<FMG.Entry> DeletedEntries => _deletedEntries;
+    private List<FMG.Entry> _deletedEntries = new();
+
+    /// <summary>
     /// Changes on every rebuild, so caches built from the 'modified' / 'unique' state
     /// (the entry list's filtered rows) know when to rebuild too.
     /// </summary>
@@ -90,6 +102,8 @@ public class TextDifferenceManager
         CacheFilled = false;
         AdditionCache = new(ReferenceEqualityComparer.Instance);
         DifferenceCache = new(ReferenceEqualityComparer.Instance);
+        VanillaTextById = new();
+        _deletedEntries = new();
 
         var selectedContainer = Parent.Selection.SelectedContainerWrapper;
 
@@ -155,8 +169,12 @@ public class TextDifferenceManager
         if (primaryFmg == null)
             return;
 
+        var primaryIds = new HashSet<int>(primaryFmg.File.Entries.Count);
+
         foreach (var entry in primaryFmg.File.Entries)
         {
+            primaryIds.Add(entry.ID);
+
             if (vanillaEntries.TryGetValue(entry.ID, out var vanillaText))
             {
                 // A null vanilla entry with project text counts as different
@@ -173,7 +191,34 @@ public class TextDifferenceManager
             }
         }
 
+        // Vanilla entries the mod no longer has (the first entry of a repeated vanilla ID only)
+        var listedDeleted = new HashSet<int>();
+
+        foreach (var vanillaEntry in vanillaFmg.File.Entries)
+        {
+            if (!primaryIds.Contains(vanillaEntry.ID) && listedDeleted.Add(vanillaEntry.ID))
+            {
+                _deletedEntries.Add(vanillaEntry);
+            }
+        }
+
+        VanillaTextById = vanillaEntries;
+
         CacheFilled = true;
+    }
+
+    /// <summary>
+    /// The vanilla text for an entry of the compared FMG. False for entries unique to the mod,
+    /// and when the vanilla comparison is off or unavailable.
+    /// </summary>
+    public bool TryGetVanillaText(FMG.Entry entry, out string text)
+    {
+        text = null;
+
+        if (!CacheFilled || entry == null)
+            return false;
+
+        return VanillaTextById.TryGetValue(entry.ID, out text);
     }
 
     public bool IsDifferentToVanilla(FMG.Entry entry)
