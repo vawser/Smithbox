@@ -66,7 +66,10 @@ public sealed class ProjectileSimulator
                 cfg.ProjectileEditor_TargetMotion,
                 cfg.ProjectileEditor_TargetSpeed,
                 cfg.ProjectileEditor_TargetRange,
-                cfg.ProjectileEditor_Seed);
+                cfg.ProjectileEditor_Seed,
+                cfg.ProjectileEditor_EmitterDuration,
+                cfg.ProjectileEditor_DistanceScale,
+                cfg.ProjectileEditor_DistanceUpEffect);
         }
     }
 

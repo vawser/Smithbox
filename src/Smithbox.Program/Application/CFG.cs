@@ -1017,6 +1017,9 @@ public class CFG
     public float ProjectileEditor_TargetRange = 5.0f;
     public bool ProjectileEditor_UseEnemyAttacks = false;
     public int ProjectileEditor_Seed = 1;
+    public float ProjectileEditor_EmitterDuration = 0.0f;
+    public float ProjectileEditor_DistanceScale = 1.0f;
+    public bool ProjectileEditor_DistanceUpEffect = false;
 
     // Projectile Editor: display
     public bool ProjectileEditor_Display_Fx = true;

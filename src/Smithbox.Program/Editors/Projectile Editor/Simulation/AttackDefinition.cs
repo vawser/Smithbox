@@ -13,6 +13,25 @@ public readonly record struct AttackDamage(float Physical, float Magic, float Fi
         return new AttackDamage(a.Physical + b.Physical, a.Magic + b.Magic, a.Fire + b.Fire,
             a.Lightning + b.Lightning, a.Dark + b.Dark, a.Stamina + b.Stamina);
     }
+
+    public static readonly AttackDamage One = new(1, 1, 1, 1, 1, 1);
+
+    /// <summary>Each type of damage multiplied by its own rate</summary>
+    public static AttackDamage Scale(AttackDamage a, AttackDamage rates)
+    {
+        return new AttackDamage(a.Physical * rates.Physical, a.Magic * rates.Magic, a.Fire * rates.Fire,
+            a.Lightning * rates.Lightning, a.Dark * rates.Dark, a.Stamina * rates.Stamina);
+    }
+
+    /// <summary>Each rate lowered by its own amount, stopping at 0</summary>
+    public static AttackDamage Reduce(AttackDamage rates, AttackDamage by)
+    {
+        return new AttackDamage(MathF.Max(0, rates.Physical - by.Physical), MathF.Max(0, rates.Magic - by.Magic),
+            MathF.Max(0, rates.Fire - by.Fire), MathF.Max(0, rates.Lightning - by.Lightning),
+            MathF.Max(0, rates.Dark - by.Dark), MathF.Max(0, rates.Stamina - by.Stamina));
+    }
+
+    public bool IsZero => Physical == 0 && Magic == 0 && Fire == 0 && Lightning == 0 && Dark == 0 && Stamina == 0;
 }
 
 /// <summary>

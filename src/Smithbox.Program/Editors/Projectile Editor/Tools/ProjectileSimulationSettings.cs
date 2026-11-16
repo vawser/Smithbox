@@ -143,6 +143,31 @@ public class ProjectileSimulationSettings
         }
         GUI.Tooltip(LOC.Get("PROJECTILE_Cast_Orientation_TT"));
 
+        // What the bullet rows leave to the animation and the shooter, each shown when the param has its field
+        var bulletParam = View.GetBulletParam();
+
+        if (bulletParam?["shootInterval"] != null)
+        {
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##emitterDuration", ref cfg.ProjectileEditor_EmitterDuration, 0, 10,
+                $"{LOC.Get("PROJECTILE_Emitter_Duration")}: %.2f s");
+            GUI.Tooltip(LOC.Get("PROJECTILE_Emitter_Duration_TT"));
+        }
+
+        if (bulletParam?["dist"] != null)
+        {
+            ImGui.SetNextItemWidth(-1);
+            changed |= ImGui.SliderFloat("##distanceScale", ref cfg.ProjectileEditor_DistanceScale, 0.1f, 3,
+                $"{LOC.Get("PROJECTILE_Distance_Scale")}: %.2f");
+            GUI.Tooltip(LOC.Get("PROJECTILE_Distance_Scale_TT"));
+        }
+
+        if (bulletParam?["spBulletDistUpRate"] != null)
+        {
+            changed |= ImGui.Checkbox($"{LOC.Get("PROJECTILE_Distance_Up_Effect")}##distanceUpEffect", ref cfg.ProjectileEditor_DistanceUpEffect);
+            GUI.Tooltip(LOC.Get("PROJECTILE_Distance_Up_Effect_TT"));
+        }
+
         if (ImGui.Button($"{LOC.Get("PROJECTILE_Reroll")}##reroll"))
         {
             cfg.ProjectileEditor_Seed++;
@@ -283,7 +308,6 @@ public class ProjectileSimulationSettings
         Warning(result, SimulationWarning.TimeLimit, "PROJECTILE_Warning_Time_Limit", ProjectileSimulation.DurationLimit);
         Warning(result, SimulationWarning.MissingRow, "PROJECTILE_Warning_Missing_Row");
         Warning(result, SimulationWarning.SelfReference, "PROJECTILE_Warning_Self_Reference");
-        Warning(result, SimulationWarning.UndocumentedCondition, "PROJECTILE_Warning_Undocumented_Condition");
         Warning(result, SimulationWarning.AbsorbedCondition, "PROJECTILE_Warning_Absorbed_Condition");
 
         Ignored(result, BulletIgnoredBehavior.Homing, "PROJECTILE_Ignored_Homing");

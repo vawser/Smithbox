@@ -400,7 +400,7 @@ public class ProjectileViewportWindow
         {
             if (hit.Time <= time)
             {
-                total += hit.Attack.Flat;
+                total += hit.Flat;
                 hits++;
             }
         }
@@ -430,7 +430,7 @@ public class ProjectileViewportWindow
 
             var height = (time - hit.Time) * DamageRiseSpeed + lines * lineHeight;
             var position = origin - new Vector2(0, height + lineHeight);
-            var text = ProjectileFormat.FormatDamage(hit.Attack.Flat, hit.Attack.Correction, projectType);
+            var text = ProjectileFormat.FormatDamage(hit.Flat, hit.Correction, projectType);
 
             drawList.AddText(position + Vector2.One, shadow, text);
             drawList.AddText(position, color, text);

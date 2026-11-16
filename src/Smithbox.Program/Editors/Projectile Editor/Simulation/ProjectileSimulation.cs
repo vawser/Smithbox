@@ -62,7 +62,6 @@ public enum SimulationWarning
     TimeLimit = 2,
     MissingRow = 4,
     SelfReference = 8,
-    UndocumentedCondition = 16,
     AbsorbedCondition = 32
 }
 
@@ -85,6 +84,12 @@ public enum SimulationWarning
 /// <param name="TargetSpeed">How fast the target moves.</param>
 /// <param name="TargetRange">How far the target moves from its position.</param>
 /// <param name="Seed">Rows can vary their timing and aim, so this keeps a simulation repeatable.</param>
+/// <param name="EmitterDuration">
+///     How long the emitter of the first bullets lasts (the length of the animation's bullet event), during
+///     which a volley with a shootInterval fires again. 0 fires once.
+/// </param>
+/// <param name="DistanceScale">The range multiplier of the weapon or catalyst that fires the bullets.</param>
+/// <param name="DistanceUpEffect">Whether the shooter has the special effect that applies spBulletDistUpRate.</param>
 public sealed record SimulationSettings(
     float LaunchHeight,
     float EmitHeight,
@@ -104,7 +109,10 @@ public sealed record SimulationSettings(
     TargetMotion Motion,
     float TargetSpeed,
     float TargetRange,
-    int Seed)
+    int Seed,
+    float EmitterDuration = 0,
+    float DistanceScale = 1,
+    bool DistanceUpEffect = false)
 {
     public bool IsTargetMoving => Motion is not TargetMotion.Still && TargetSpeed > 0 && TargetRange > 0;
 
@@ -141,7 +149,14 @@ public readonly record struct TrackSample(float Time, Vector3 Position);
 /// <summary>
 ///     A bullet landing a hit on the target.
 /// </summary>
-public readonly record struct DamageEvent(float Time, int Track, AttackDefinition Attack);
+/// <param name="Rates">
+///     How much of each type of damage is left, from 1 down to 0, for bullets that lose damage past their range.
+/// </param>
+public readonly record struct DamageEvent(float Time, int Track, AttackDefinition Attack, AttackDamage Rates)
+{
+    public AttackDamage Flat => AttackDamage.Scale(Attack.Flat, Rates);
+    public AttackDamage Correction => AttackDamage.Scale(Attack.Correction, Rates);
+}
 
 /// <summary>
 ///     The recorded flight of a single bullet.
@@ -238,8 +253,6 @@ public sealed class ProjectileSimulation
 
     private const float Epsilon = 0.0001f;
     private const float VerticalLimit = 0.999f;
-    private const float ArcAngleStep = 0.5f;
-    private const float MinArcCosine = 0.01f;
 
     // A bullet stopped by the target sits at the very edge of its reach
     private const float ReachTolerance = 0.01f;
@@ -293,6 +306,12 @@ public sealed class ProjectileSimulation
         public Vector3 AimOffset;
         public bool HomingStopped;
         public float NextDamageTime;
+
+        // The direction it was fired in (externalForce pushes along it), its range with the shooter's
+        // multipliers, and how much of its damage is left
+        public Vector3 ShootDirection;
+        public float Range;
+        public AttackDamage DamageRates = AttackDamage.One;
     }
 
     /// <summary>
@@ -337,7 +356,15 @@ public sealed class ProjectileSimulation
         {
             if (GetDefinition(id) is { } root)
             {
-                Fire(root, 0, origin, forward, null, ProjectileOrigin.Root, -1, 0);
+                // The emitter fires the volley again every shootInterval for as long as it lasts
+                var batches = root.BatchInterval > 0 && Settings.EmitterDuration > 0
+                    ? (int)MathF.Floor(Settings.EmitterDuration / root.BatchInterval + Epsilon) + 1
+                    : 1;
+
+                for (var batch = 0; batch < batches; batch++)
+                {
+                    Fire(root, batch * root.BatchInterval, origin, forward, null, ProjectileOrigin.Root, -1, 0);
+                }
             }
             else
             {
@@ -401,6 +428,18 @@ public sealed class ProjectileSimulation
             ? ~(BulletIgnoredBehavior.Homing | BulletIgnoredBehavior.EmitPosition | BulletIgnoredBehavior.Arc)
             : definition.NoLockTargetDistance != 0 ? ~BulletIgnoredBehavior.Homing : BulletIgnoredBehavior.None);
 
+        var root = origin is ProjectileOrigin.Root;
+
+        // A bullet set to be level when created is levelled from the cast too
+        if (root && definition.Posture is BulletChildPosture.Horizontal)
+        {
+            forward = Flatten(forward, Vector3.UnitZ);
+        }
+
+        // The emitter's shot angles only apply to bullets that start at the shooter, or above it. Bullets created by
+        // other bullets are left with theirs, as the rows that use them suggest
+        var applyAngles = !root || definition.EmitPosition is BulletEmitPosition.Source or BulletEmitPosition.AboveSource;
+
         for (var volley = 0; volley < definition.VolleyCount; volley++)
         {
             for (var shot = 0; shot < definition.ShotsPerVolley; shot++)
@@ -411,10 +450,13 @@ public sealed class ProjectileSimulation
                     return;
                 }
 
-                var angleY = definition.AngleY + volley * definition.VolleyAngleY + shot * definition.ShotAngleY +
-                             Random(definition.AngleYRandom);
-                var angleX = definition.AngleX + volley * definition.VolleyAngleX + shot * definition.ShotAngleX +
-                             Random(definition.AngleXRandom);
+                var baseY = applyAngles ? definition.AngleY : 0;
+                var baseX = applyAngles ? definition.AngleX : 0;
+                var fanY = applyAngles ? volley * definition.VolleyAngleY + shot * definition.ShotAngleY : 0;
+                var fanX = applyAngles ? volley * definition.VolleyAngleX + shot * definition.ShotAngleX : 0;
+
+                var angleY = baseY + fanY + Random(definition.AngleYRandom);
+                var angleX = baseX + fanX + Random(definition.AngleXRandom);
 
                 var due = time + volley * definition.VolleyInterval;
 
@@ -425,17 +467,21 @@ public sealed class ProjectileSimulation
 
                 float? shotSpeed = speed;
 
-                if (definition.FiresBackward && Settings.SimulateTarget &&
-                    TrySolveArc(definition, start, due, out Vector3 aim, out var arcAngle, out var arcSpeed))
+                // The emitter turns towards the target first, as far as the row lets it
+                if (root && Settings.SimulateTarget && definition.LockAngle > 0)
                 {
-                    facing = aim;
-                    angleX += arcAngle - definition.AngleX;
-                    shotSpeed = arcSpeed;
+                    facing = TurnTowards(facing, GetAimPoint(definition, start, due) - start,
+                        float.DegreesToRadians(definition.LockAngle));
                 }
-                else if (definition.FiresBackward)
+
+                if (definition.Howitzer && Settings.SimulateTarget &&
+                    SolveHowitzer(definition, start, due, out Vector3 level, out var lobAngle, out var lobSpeed))
                 {
-                    // Turning around keeps it pointing up or down, which negating the whole direction wouldn't
-                    facing = new Vector3(-facing.X, facing.Y, -facing.Z);
+                    // The solved elevation replaces the row's, and the fan and spread still apply on top
+                    facing = level;
+                    angleY = fanY + Random(definition.AngleYRandom);
+                    angleX = lobAngle + fanX + Random(definition.AngleXRandom);
+                    shotSpeed = lobSpeed;
                 }
 
                 Vector3 direction = RotateFrom(facing, float.DegreesToRadians(angleY), float.DegreesToRadians(angleX));
@@ -479,74 +525,141 @@ public sealed class ProjectileSimulation
     }
 
     /// <summary>
-    ///     Finds the angle and speed that land a lobbed bullet on the target, staying inside the limits of the row.
-    ///     The angle closest to the row's own is used, and a target out of reach gets the bullet's best effort.
+    ///     Where a bullet aims when it's fired: the target, raised by targetYOffsetRange, and ahead of
+    ///     where the target is going when the row predicts it.
     /// </summary>
-    /// <param name="aim">The level direction towards the target.</param>
+    private Vector3 GetAimPoint(BulletDefinition definition, Vector3 start, float time, bool raise = true)
+    {
+        Vector3 target = Settings.GetTargetPosition(time);
+
+        if (definition.LeadsTarget && Settings.IsTargetMoving)
+        {
+            var speed = MathF.Max(definition.InitialSpeed, 1);
+
+            // Twice is enough for the time of flight to settle
+            for (var i = 0; i < 2; i++)
+            {
+                target = Settings.GetTargetPosition(time + Vector3.Distance(start, target) / speed);
+            }
+        }
+
+        return raise ? target + Vector3.UnitY * definition.HomingHeightOffset : target;
+    }
+
+    /// <summary>
+    ///     Turns a direction towards another one, by at most an angle in radians.
+    /// </summary>
+    private static Vector3 TurnTowards(Vector3 from, Vector3 to, float maxAngle)
+    {
+        if (to.LengthSquared() < Epsilon)
+        {
+            return from;
+        }
+
+        from = Vector3.Normalize(from);
+        to = Vector3.Normalize(to);
+
+        var angle = MathF.Acos(Math.Clamp(Vector3.Dot(from, to), -1, 1));
+
+        if (angle <= maxAngle)
+        {
+            return to;
+        }
+
+        Vector3 axis = Vector3.Cross(from, to);
+
+        // Straight away from it there is no one way to turn, so it turns over the top
+        if (axis.LengthSquared() < Epsilon)
+        {
+            axis = Vector3.Cross(from, MathF.Abs(from.Y) < VerticalLimit ? Vector3.UnitY : Vector3.UnitZ);
+        }
+
+        return Vector3.Normalize(Vector3.Transform(from, Quaternion.CreateFromAxisAngle(Vector3.Normalize(axis), maxAngle)));
+    }
+
+    /// <summary>
+    ///     The howitzer, as eldenring.exe 1403ACC20 solves it. At its own speed, a bullet takes whichever of the two
+    ///     elevations that reach the target is nearest its row's angle, inside the row's limits. If neither fits, it
+    ///     takes the angle with the longest reach (halfway between the target and straight up, inside the limits) and
+    ///     the speed that angle needs, inside the row's speed limits.
+    /// </summary>
+    /// <param name="level">The level direction towards the target.</param>
     /// <param name="angle">The elevation in degrees.</param>
     /// <param name="speed">The speed to fire at.</param>
-    private bool TrySolveArc(BulletDefinition definition, Vector3 start, float time, out Vector3 aim, out float angle,
-        out float speed)
+    private bool SolveHowitzer(BulletDefinition definition, Vector3 start, float time, out Vector3 level,
+        out float angle, out float speed)
     {
-        Vector3 offset = Settings.GetTargetPosition(time) - start;
-        var distance = (offset with { Y = 0 }).Length();
+        Vector3 offset = GetAimPoint(definition, start, time, false) - start;
+        var dx = (offset with { Y = 0 }).Length();
+        var dy = offset.Y;
 
-        aim = default;
+        level = default;
         angle = 0;
         speed = 0;
 
-        if (distance < Epsilon)
+        if (dx < Epsilon)
         {
             return false;
         }
 
-        aim = (offset with { Y = 0 }) / distance;
+        level = (offset with { Y = 0 }) / dx;
 
-        var minAngle = Math.Min(definition.HowitzerAngleMin, definition.HowitzerAngleMax);
-        var maxAngle = Math.Max(definition.HowitzerAngleMin, definition.HowitzerAngleMax);
+        var min = Math.Clamp(Math.Min(definition.HowitzerAngleMin, definition.HowitzerAngleMax), -90, 90);
+        var max = Math.Clamp(Math.Max(definition.HowitzerAngleMin, definition.HowitzerAngleMax), -90, 90);
+        var preferred = definition.AngleX;
+        var g = definition.GravityInRange;
+        var v0 = definition.InitialSpeed;
 
-        // Some rows leave these empty, which leaves the bullet with the speed it has
-        var hasSpeedLimits = definition.HowitzerSpeedMax > 0;
-        var minSpeed = hasSpeedLimits ? definition.HowitzerSpeedMin : definition.InitialSpeed;
-        var maxSpeed = hasSpeedLimits ? definition.HowitzerSpeedMax : definition.InitialSpeed;
-
-        var preferred = Math.Clamp(definition.AngleX, minAngle, maxAngle);
-
-        angle = preferred;
-        speed = Math.Clamp(GetArcSpeed(definition, preferred, distance, offset.Y), minSpeed, maxSpeed);
-
-        var closest = float.MaxValue;
-
-        for (var candidate = minAngle; candidate <= maxAngle; candidate += ArcAngleStep)
+        if (MathF.Abs(g) < Epsilon)
         {
-            var needed = GetArcSpeed(definition, candidate, distance, offset.Y);
+            angle = Math.Clamp(preferred, min, max);
+            speed = v0;
+            return true;
+        }
 
-            if (needed >= minSpeed && needed <= maxSpeed && MathF.Abs(candidate - preferred) < closest)
+        // The two elevations that reach the target at the bullet's own speed
+        var v2 = v0 * v0;
+        var discriminant = v2 * v2 - g * (g * dx * dx + 2 * dy * v2);
+
+        if (discriminant >= 0)
+        {
+            var root = MathF.Sqrt(discriminant);
+            var found = false;
+            var closest = float.MaxValue;
+
+            foreach (var tangent in new[] { (v2 + root) / (g * dx), (v2 - root) / (g * dx) })
             {
-                closest = MathF.Abs(candidate - preferred);
-                angle = candidate;
-                speed = needed;
+                var candidate = float.RadiansToDegrees(MathF.Atan(tangent));
+
+                if (candidate >= min && candidate <= max && MathF.Abs(candidate - preferred) < closest)
+                {
+                    closest = MathF.Abs(candidate - preferred);
+                    angle = candidate;
+                    found = true;
+                }
+            }
+
+            if (found)
+            {
+                speed = v0;
+                return true;
             }
         }
 
+        // Out of reach at that speed: the angle with the longest reach, and the speed it needs
+        var elevation = float.RadiansToDegrees(MathF.Atan2(dy, dx));
+
+        angle = Math.Clamp(elevation / 2 + 45, min, max);
+
+        var tan = MathF.Tan(float.DegreesToRadians(angle));
+        var climb = dx * tan - dy;
+        var needed = climb > 0 ? g * dx * dx * (1 + tan * tan) / (2 * climb) : -1;
+        var maxSpeed = definition.HowitzerSpeedMax > 0 ? definition.HowitzerSpeedMax : float.MaxValue;
+
+        speed = needed > 0 ? MathF.Min(MathF.Sqrt(needed), maxSpeed) : maxSpeed == float.MaxValue ? v0 : maxSpeed;
+        speed = MathF.Max(speed, definition.HowitzerSpeedMin);
+
         return true;
-    }
-
-    /// <summary>
-    ///     The speed needed to land on a point at an angle, or a very large number if that angle can't reach it.
-    /// </summary>
-    private static float GetArcSpeed(BulletDefinition definition, float angle, float distance, float height)
-    {
-        var radians = float.DegreesToRadians(angle);
-        var cosine = MathF.Cos(radians);
-        var climb = distance * MathF.Tan(radians) - height;
-
-        if (cosine < MinArcCosine || climb <= 0 || definition.GravityInRange <= 0)
-        {
-            return float.MaxValue;
-        }
-
-        return MathF.Sqrt(definition.GravityInRange * distance * distance / (2 * cosine * cosine * climb));
     }
 
     /// <summary>
@@ -616,13 +729,35 @@ public sealed class ProjectileSimulation
                 Aim = shot.Aim,
 
                 Velocity = shot.Direction * (shot.Speed ?? definition.InitialSpeed),
-                Life = definition.Life < 0 ? float.MaxValue : definition.Life + Random(definition.LifeRandom),
+                Life = GetLife(definition),
+                ShootDirection = shot.Direction,
+                Range = GetRange(definition),
                 NextInterval = definition.IntervalWait + GetInterval(definition),
                 AimOffset = Vector3.UnitY * definition.HomingHeightOffset +
                             new Vector3(Random(definition.HomingOffset), Random(definition.HomingOffset),
                                Random(definition.HomingOffset))
             });
         }
+    }
+
+    private float GetLife(BulletDefinition definition)
+    {
+        if (definition.Life < 0)
+        {
+            return float.MaxValue;
+        }
+
+        // The random range only ever adds to the life
+        return definition.Life + Rng.NextSingle() * MathF.Max(0, definition.LifeRandom);
+    }
+
+    /// <summary>
+    ///     The distance past which a bullet uses its out-of-range gravity and acceleration, and loses damage: scaled by
+    ///     the weapon, and by spBulletDistUpRate while the shooter has its effect.
+    /// </summary>
+    private float GetRange(BulletDefinition definition)
+    {
+        return definition.Range * Settings.DistanceScale * (Settings.DistanceUpEffect ? definition.DistanceUpRate : 1);
     }
 
     /// <returns>False once the bullet has ended.</returns>
@@ -632,18 +767,21 @@ public sealed class ProjectileSimulation
 
         shot.Age += StepTime;
 
+        // For the howitzer, which moves by the average of this step's velocity and the last
+        Vector3 previousVelocity = shot.Velocity;
+
         Home(shot);
 
-        var inRange = shot.Travelled < definition.Range;
+        // Out of range once it has gone past it
+        var inRange = shot.Travelled <= shot.Range;
         var accel = inRange ? definition.AccelInRange : definition.AccelOutRange;
         var gravity = inRange ? definition.GravityInRange : definition.GravityOutRange;
 
-        // Pushed level along the heading, and once a step rather than per second
-        Vector3 flat = new(shot.Direction.X, 0, shot.Direction.Z);
-
-        if (flat.LengthSquared() > Epsilon)
+        // Once a frame rather than per second, along the way it was fired with the height taken out (not normalized),
+        // and only ever forward
+        if (definition.ExternalForce > 0)
         {
-            shot.Velocity += Vector3.Normalize(flat) * definition.ExternalForce;
+            shot.Velocity += new Vector3(shot.ShootDirection.X, 0, shot.ShootDirection.Z) * definition.ExternalForce;
         }
 
         if (shot.Age >= definition.AccelStartTime && shot.Age < definition.AccelEndTime)
@@ -657,17 +795,25 @@ public sealed class ProjectileSimulation
             shot.Velocity -= Vector3.UnitY * (gravity * StepTime);
         }
 
-        // Limits hold every step, and rows can start outside of them
+        // Limits hold every step, and rows can start outside of them. The minimum is checked first, and a maximum of 0
+        // stops the bullet
         var speed = shot.Velocity.Length();
-        var limit = MathF.Max(definition.MinSpeed,
-            definition.MaxSpeed > 0 ? MathF.Min(speed, definition.MaxSpeed) : speed);
+        var limit = speed < definition.MinSpeed ? definition.MinSpeed : MathF.Min(speed, definition.MaxSpeed);
 
         if (limit != speed)
         {
             shot.Velocity = Normalize(shot.Velocity, shot.Direction) * limit;
         }
 
-        Vector3 next = shot.Position + shot.Velocity * StepTime;
+        // Past its range, each type of damage drops by its own percentage per second
+        if (!inRange && !definition.DamageFalloff.IsZero)
+        {
+            shot.DamageRates = AttackDamage.Reduce(shot.DamageRates,
+                AttackDamage.Scale(definition.DamageFalloff, new AttackDamage(StepTime, StepTime, StepTime, StepTime,
+                    StepTime, StepTime)));
+        }
+
+        Vector3 next = shot.Position + (definition.Howitzer ? (previousVelocity + shot.Velocity) / 2 : shot.Velocity) * StepTime;
 
         var radius = shot.Track.GetRadius(Time);
 
@@ -737,7 +883,7 @@ public sealed class ProjectileSimulation
             return;
         }
 
-        Result.Damage.Add(new DamageEvent(Time, shot.Index, attack));
+        Result.Damage.Add(new DamageEvent(Time, shot.Index, attack, shot.DamageRates));
 
         var interval = shot.Definition.DamageInterval;
 
@@ -755,8 +901,8 @@ public sealed class ProjectileSimulation
     }
 
     /// <summary>
-    ///     Turns the bullet towards the target. Left and right turn separately from up and down, as rows can
-    ///     limit them differently. Nothing is aimed high to make up for gravity, so a heavy bullet can still
+    ///     Turns the bullet towards the target, within a cone of its homing rate.
+    ///     Nothing is aimed high to make up for gravity, so a heavy bullet can still
     ///     drop short of the point it turns towards.
     /// </summary>
     private void Home(ActiveShot shot)
@@ -765,7 +911,7 @@ public sealed class ProjectileSimulation
 
         if (shot.HomingStopped || shot.Age < definition.HomingBeginTime ||
             shot.Travelled < definition.HomingBeginDistance ||
-            definition.HomingRateY <= 0 && definition.HomingRateX <= 0)
+            definition.HomingRate <= 0)
         {
             return;
         }
@@ -807,19 +953,9 @@ public sealed class ProjectileSimulation
             return;
         }
 
-        var yaw = MathF.Atan2(heading.X, heading.Z);
-        var pitch = MathF.Asin(Math.Clamp(heading.Y, -1, 1));
-
-        var yawChange = MathF.IEEERemainder(MathF.Atan2(wanted.X, wanted.Z) - yaw, MathF.Tau);
-        var pitchChange = MathF.Asin(Math.Clamp(wanted.Y, -1, 1)) - pitch;
-
-        var maxYaw = float.DegreesToRadians(definition.HomingRateY) * StepTime;
-        var maxPitch = float.DegreesToRadians(definition.HomingRateX) * StepTime;
-
-        shot.Direction = GetDirection(yaw + Math.Clamp(yawChange, -maxYaw, maxYaw),
-            pitch + Math.Clamp(pitchChange, -maxPitch, maxPitch));
-
-        // Turning only costs the bullet its heading, not the speed it has
+        // Straight towards the target, by at most the rate in any direction (eldenring.exe 140398280). Turning only
+        // costs the bullet its heading, not the speed it has
+        shot.Direction = TurnTowards(heading, wanted, float.DegreesToRadians(definition.HomingRate) * StepTime);
         shot.Velocity = shot.Direction * shot.Velocity.Length();
     }
 
@@ -856,11 +992,7 @@ public sealed class ProjectileSimulation
             return;
         }
 
-        if (definition.ChainCondition is BulletChainCondition.Undocumented)
-        {
-            Result.Warnings |= SimulationWarning.UndocumentedCondition;
-        }
-        else if (definition.ChainCondition is BulletChainCondition.Absorbed)
+        if (definition.ChainCondition is BulletChainCondition.Absorbed)
         {
             Result.Warnings |= SimulationWarning.AbsorbedCondition;
         }
@@ -913,7 +1045,8 @@ public sealed class ProjectileSimulation
             return Vector3.UnitZ;
         }
 
-        switch (shot.Definition.ChildPosture)
+        // A new bullet is turned by its own posture
+        switch (child.Posture ?? BulletChildPosture.Horizontal)
         {
             case BulletChildPosture.Horizontal:
                 Vector3 flat = new(shot.Velocity.X, 0, shot.Velocity.Z);
@@ -949,7 +1082,12 @@ public sealed class ProjectileSimulation
         return condition switch
         {
             BulletChainCondition.Water or BulletChainCondition.WaterOrSwamp => surface is ImpactSurface.Water,
-            BulletChainCondition.NotCharacter => surface is not ImpactSurface.Character,
+
+            // Never held back, despite the name (eldenring.exe 14039DA50)
+            BulletChainCondition.NotCharacter => true,
+
+            // Any hit on the map or an object, water included, but not a character or running out
+            BulletChainCondition.MapOnly => surface is ImpactSurface.Map or ImpactSurface.Water,
 
             // Documented as only being for hitting a character, but Elden Ring mostly uses it for bullets with
             // several stages of flight, such as Star Shower, where the next stage takes over when one runs out

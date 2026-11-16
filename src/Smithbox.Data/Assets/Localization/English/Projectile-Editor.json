@@ -121,6 +121,30 @@
       "Text": "Where bullets with an emit position of 'Above and behind target' start. The params don't say how far this is, so this is an estimate."
     },
     {
+      "Key": "PROJECTILE_Emitter_Duration",
+      "Text": "Emitter Duration"
+    },
+    {
+      "Key": "PROJECTILE_Emitter_Duration_TT",
+      "Text": "How long the animation's bullet event lasts. While it does, a bullet with a shoot interval fires its whole volley again every interval. At 0 it fires once."
+    },
+    {
+      "Key": "PROJECTILE_Distance_Scale",
+      "Text": "Range Multiplier"
+    },
+    {
+      "Key": "PROJECTILE_Distance_Scale_TT",
+      "Text": "The range bonus of the weapon or catalyst that fires the bullet. Bullets switch to their out-of-range gravity and acceleration, and start to lose damage, past their distance times this."
+    },
+    {
+      "Key": "PROJECTILE_Distance_Up_Effect",
+      "Text": "Range Up Effect"
+    },
+    {
+      "Key": "PROJECTILE_Distance_Up_Effect_TT",
+      "Text": "Whether the shooter has the special effect that multiplies a bullet's distance by its Special Effect Distance Rate (spBulletDistUpRate)."
+    },
+    {
       "Key": "PROJECTILE_Cast_Orientation",
       "Text": "Cast Orientation"
     },
@@ -269,10 +293,6 @@
       "Text": "A bullet refers to itself, which was skipped."
     },
     {
-      "Key": "PROJECTILE_Warning_Undocumented_Condition",
-      "Text": "A bullet uses an undocumented launch condition, which was treated as Always."
-    },
-    {
       "Key": "PROJECTILE_Warning_Absorbed_Condition",
       "Text": "A bullet only chains when absorbing another bullet, which isn't simulated."
     },
@@ -290,7 +310,7 @@
     },
     {
       "Key": "PROJECTILE_Ignored_Arc",
-      "Text": "This bullet lobs itself at a target, so without one it fires backward instead."
+      "Text": "This bullet lobs itself at a target, so without one its arc isn't worked out."
     },
     {
       "Key": "PROJECTILE_Header_Projectiles",

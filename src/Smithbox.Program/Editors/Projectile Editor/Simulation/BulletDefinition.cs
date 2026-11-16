@@ -14,8 +14,9 @@ public enum BulletChainCondition
     NotCharacter = 3,
     CharacterOnly = 4,
 
-    // Used throughout Elden Ring, for timed follow-ups as much as anything, but not defined by any TDF
-    Undocumented = 5,
+    // Not defined by any TDF. Elden Ring launches these only when a bullet hits the map or an object, never on a
+    // character or when it runs out (eldenring.exe 14039DA50)
+    MapOnly = 5,
 
     // Only when another bullet is absorbed, which isn't something that happens in the simulation
     Absorbed = 6,
@@ -114,9 +115,9 @@ public sealed class BulletDefinition
     public float RadiusMax { get; init; }
     public float SpreadTime { get; init; }
 
-    // The most the bullet can turn each second, in degrees
-    public float HomingRateY { get; init; }
-    public float HomingRateX { get; init; }
+    // The most the bullet can turn each second, in degrees, in any direction. homingAngleX isn't used: eldenring.exe
+    // never reads it
+    public float HomingRate { get; init; }
     public float HomingBeginDistance { get; init; }
     public float HomingBeginTime { get; init; }
 
@@ -132,7 +133,8 @@ public sealed class BulletDefinition
     // How far ahead a bullet aims with no target. Off at 0, and -1 falls back on the row's own range
     public float NoLockTargetDistance { get; init; }
 
-    // Volleys are fired one after the other, and each one is made up of shots fired at the same time
+    // Volleys are fired one after the other, and each one is made up of shots fired at the same time. Only Dark Souls
+    // II spaces them out (automaticInterval): elsewhere numShoot fires in one frame
     public int VolleyCount { get; init; } = 1;
     public float VolleyInterval { get; init; }
     public float VolleyAngleY { get; init; }
@@ -156,9 +158,8 @@ public sealed class BulletDefinition
     public float IntervalWait { get; init; }
     public int IntervalLimit { get; init; }
 
-    public bool FiresBackward { get; init; }
-
-    // Every row that fires backward also has these, which lob it at the target when there is one
+    // Lobs the bullet at the target (ballisticCalcType 1), solving its angle and speed within these limits
+    public bool Howitzer { get; init; }
     public float HowitzerAngleMin { get; init; }
     public float HowitzerAngleMax { get; init; }
     public float HowitzerSpeedMin { get; init; }
@@ -170,7 +171,9 @@ public sealed class BulletDefinition
     // as they use a fixed distance
     public float? EmitRadius { get; init; }
 
-    public BulletChildPosture ChildPosture { get; init; }
+    // How this bullet is turned when it's created (sfxPostureType), or null for params without the field, whose
+    // bullets are measured from the horizontal, as shootAngleXZ is described
+    public BulletChildPosture? Posture { get; init; }
     public bool ChildAimedFromOwner { get; init; }
     public bool ChildInheritsSpeed { get; init; }
 
@@ -178,6 +181,24 @@ public sealed class BulletDefinition
     public bool PenetratesCharacter { get; init; }
 
     public BulletIgnoredBehavior Ignored { get; init; }
+
+    // The rules below follow eldenring.exe (Claude/Documentation/ER Projectile Analysis.md). Each comes from a field,
+    // so a game without the field doesn't have it
+
+    // How often the whole volley fires again while its emitter lasts (shootInterval), or 0 for once
+    public float BatchInterval { get; init; }
+
+    // How far a bullet turns towards the target when it's fired, in degrees (lockShootLimitAng)
+    public float LockAngle { get; init; }
+
+    // Whether a bullet aims ahead of a moving target (predictionShootObserveTime)
+    public bool LeadsTarget { get; init; }
+
+    // The range multiplier used while the shooter has the special effect that raises it (spBulletDistUpRate)
+    public float DistanceUpRate { get; init; } = 1;
+
+    // How much of each type of damage a bullet loses per second past its range, from 0 to 1 (the *DamageDamp fields)
+    public AttackDamage DamageFalloff { get; init; }
 
     /// <summary>
     ///     False for the params whose layouts aren't known yet, where the fields only have placeholder names.
@@ -230,7 +251,6 @@ public sealed class BulletDefinition
         var radius = Float(row, 0, "hitRadius");
         var radiusMax = Float(row, -1, "hitRadiusMax");
         var homingAngle = Float(row, 0, "homingAngle");
-        var homingAngleX = Float(row, -1, "homingAngleX", "homingCorrectAngle");
 
         var ignored = BulletIgnoredBehavior.None;
 
@@ -258,6 +278,7 @@ public sealed class BulletDefinition
 
         var attack = Int(row, -1, "atkId_Bullet", "atkBullet_Id");
 
+
         return new BulletDefinition
         {
             RowId = row.ID,
@@ -277,7 +298,7 @@ public sealed class BulletDefinition
             AccelStartTime = Float(row, 0, "accelTime"),
             AccelEndTime = Float(row, float.MaxValue, "accelEndTime"),
             InitialSpeed = Float(row, 0, "initVellocity"),
-            MaxSpeed = Float(row, 0, "maxVellocity"),
+            MaxSpeed = Float(row, float.MaxValue, "maxVellocity"),
             MinSpeed = Float(row, 0, "minVellocity"),
             ExternalForce = Float(row, 0, "externalForce"),
 
@@ -285,8 +306,7 @@ public sealed class BulletDefinition
             RadiusMax = radiusMax < 0 ? radius : radiusMax,
             SpreadTime = Float(row, 0, "spreadTime"),
 
-            HomingRateY = homingAngle,
-            HomingRateX = homingAngleX < 0 ? homingAngle : homingAngleX,
+            HomingRate = homingAngle,
             HomingBeginDistance = Float(row, 0, "homingBeginDist"),
             HomingBeginTime = Float(row, 0, "homingBeginTime"),
             HomingStopRange = Float(row, 0, "hormingStopRange", "homingStopRange"),
@@ -294,15 +314,17 @@ public sealed class BulletDefinition
             HomingHeightOffset = Float(row, 0, "targetYOffsetRange"),
             NoLockTargetDistance = Float(row, 0, "nolockTargetDist"),
 
+            // The whole volley fires in one frame, and again every shootInterval while the emitter lasts
             VolleyCount = Math.Max(1, Int(row, 1, "numShoot")),
-            VolleyInterval = Float(row, 0, "shootInterval"),
+            BatchInterval = Float(row, 0, "shootInterval"),
             VolleyAngleY = Float(row, 0, "shootAngleInterval"),
             VolleyAngleX = Float(row, 0, "shootAngleXInterval"),
 
             AngleY = Float(row, 0, "shootAngle"),
             AngleX = Float(row, 0, "shootAngleXZ"),
-            AngleYRandom = Float(row, 0, "shootAngleYMaxRandom"),
-            AngleXRandom = Float(row, 0, "shootAngleXMaxRandom"),
+            // These are the whole width of the spread, so half of it either way
+            AngleYRandom = Float(row, 0, "shootAngleYMaxRandom") / 2,
+            AngleXRandom = Float(row, 0, "shootAngleXMaxRandom") / 2,
 
             ChainChildren = Ids(row, "HitBulletID", "hitBulletId"),
             ChainCondition = (BulletChainCondition)Int(row, 0, "launchConditionType"),
@@ -314,7 +336,7 @@ public sealed class BulletDefinition
             IntervalWait = Float(row, 0, "intervalCreateWaitTime"),
             IntervalLimit = Int(row, 0, "intervalCreateBulletMax"),
 
-            FiresBackward = Int(row, 0, "ballisticCalcType") == 1,
+            Howitzer = Int(row, 0, "ballisticCalcType") == 1,
             HowitzerAngleMin = Float(row, 0, "howitzerShootAngleXMin"),
             HowitzerAngleMax = Float(row, 0, "howitzerShootAngleXMax"),
             HowitzerSpeedMin = Float(row, 0, "howitzerInitMinVelocity"),
@@ -322,16 +344,27 @@ public sealed class BulletDefinition
             EmitPosition = emitPosition,
             EmitRadius = row["randomCreateRadius"] != null ? Float(row, 0, "randomCreateRadius") : null,
 
-            // Games without this field measure from the horizontal, which is how shootAngleXZ is described
-            ChildPosture = (BulletChildPosture)Int(row, (int)BulletChildPosture.Horizontal, "sfxPostureType"),
+            Posture = row["sfxPostureType"] != null ? (BulletChildPosture)Int(row, 0, "sfxPostureType") : null,
             ChildAimedFromOwner = Int(row, 0, "isOwnerOverrideInitAngle") != 0,
             ChildInheritsSpeed = Int(row, 0, "isInheritSpeedToChild", "IsInheritSpeedToChild") != 0,
 
             PenetratesMap = Int(row, 0, "isPenetrateMap", "IsPenetrateMap") != 0,
             PenetratesCharacter = Int(row, 0, "isPenetrateChr", "isPenetrate", "charaPenetrateType") != 0,
 
-            Ignored = ignored
+            Ignored = ignored,
+
+            LockAngle = Int(row, 0, "lockShootLimitAng"),
+            LeadsTarget = Float(row, 0, "predictionShootObserveTime") != 0,
+            DistanceUpRate = Float(row, 1, "spBulletDistUpRate"),
+            DamageFalloff = new AttackDamage(Percent(row, "damageDamp"), Percent(row, "spelDamageDamp"),
+                Percent(row, "fireDamageDamp"), Percent(row, "thunderDamageDamp"), Percent(row, "darkDamageDamp"),
+                Percent(row, "staminaDamp"))
         };
+    }
+
+    private static float Percent(Param.Row row, string name)
+    {
+        return Float(row, 0, name) / 100;
     }
 
     private static BulletDefinition FromDS2Row(Param.Row row)
@@ -362,15 +395,14 @@ public sealed class BulletDefinition
             AccelOutRange = Float(row, 0, "acceleration"),
             AccelStartTime = Float(row, 0, "acceleStartTime"),
             InitialSpeed = Float(row, 0, "initialVelocity"),
-            MaxSpeed = Float(row, 0, "maxSpeed"),
+            MaxSpeed = Float(row, float.MaxValue, "maxSpeed"),
             ExternalForce = Float(row, 0, "externalForce"),
 
             // The size of the hit is set by the attack, rather than here
             Radius = DefaultRadius,
             RadiusMax = DefaultRadius,
 
-            HomingRateY = homingAngle,
-            HomingRateX = homingAngle,
+            HomingRate = homingAngle,
             HomingBeginTime = Float(row, 0, "homingStartTime"),
             HomingEndDistance = Float(row, 0, "homingStopDistance"),
             HomingStopRange = Float(row, 0, "homingStopTargetDistance"),
