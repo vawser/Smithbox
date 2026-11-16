@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace StudioCore.Editors.TextEditor;
@@ -8,25 +9,20 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public static class TextEntryClipboard
 {
-    public enum GroupSlot
-    {
-        Title,
-        Summary,
-        Description,
-        Effect
-    }
-
     public class CopiedEntry
     {
         public int ID;
         public string Text;
 
         /// <summary>
-        /// The grouped texts (title, summary, ...) when the entry was copied with grouping on;
-        /// null otherwise. A slot is only present if the entry had it.
+        /// The grouped texts by slot meaning (e.g. "Title", "Summary", "Lore") when the entry was
+        /// copied with grouping on; null otherwise. Paste puts each into the target group's slot
+        /// with the same meaning, so groups defined with different slot orders still match.
         /// </summary>
-        public Dictionary<GroupSlot, string> Group;
+        public Dictionary<string, string> Group;
     }
+
+    public static Dictionary<string, string> NewGroupTexts() => new(StringComparer.OrdinalIgnoreCase);
 
     public static List<CopiedEntry> Entries { get; private set; } = new();
 

@@ -317,19 +317,10 @@ public class TextLanguageSyncTool
         if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries &&
             targetContainer == View.Selection.SelectedContainerWrapper)
         {
-            var groups = View.EntryGroupManager;
-            var associated = new[]
+            // Every FMG of the group (up to 10 slots)
+            foreach (var (_, wrapper) in View.EntryGroupManager.GetGroupWrappers(targetFmgId))
             {
-                groups.GetAssociatedTitleWrapper(targetFmgId),
-                groups.GetAssociatedSummaryWrapper(targetFmgId),
-                groups.GetAssociatedDescriptionWrapper(targetFmgId),
-                groups.GetAssociatedEffectWrapper(targetFmgId)
-            };
-
-            foreach (var wrapper in associated)
-            {
-                if (wrapper != null)
-                    ids.Add(wrapper.ID);
+                ids.Add(wrapper.ID);
             }
         }
 

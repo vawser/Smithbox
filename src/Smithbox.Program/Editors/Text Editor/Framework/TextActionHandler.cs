@@ -19,83 +19,20 @@ public class TextActionHandler
     }
 
     /// <summary>
-    /// Add title entry (used for associated entries)
+    /// Add the missing entry of a group slot (with the group's ID and empty text), from the
+    /// Contents panel's "Add ... Entry" button. Replaces the four Add Title/Summary/Description/
+    /// Effect methods, as a group can now have up to 10 slots of any meaning.
     /// </summary>
-    public void AddTitleEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
+    public void AddGroupEntry(FmgEntryGroupSlot slot, FMG.Entry curEntry)
     {
+        if (slot?.Wrapper?.File == null || curEntry == null || slot.Entry != null)
+            return;
+
         var selectedContainer = Parent.Selection.SelectedContainerWrapper;
+        var newEntry = new FMG.Entry(slot.Wrapper.File, curEntry.ID, "");
 
-        var wrapper = Parent.EntryGroupManager.GetAssociatedTitleWrapper(curFmgWrapper.ID);
-
-        if (wrapper != null)
-        {
-            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
-
-            newEntry.ID = curEntry.ID;
-
-            var action = new AddAssociatedEntry(Parent, selectedContainer, wrapper.File, newEntry);
-            Parent.ActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    /// Add summary entry (used for associated entries)
-    /// </summary>
-    public void AddSummaryEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
-    {
-        var selectedContainer = Parent.Selection.SelectedContainerWrapper;
-
-        var wrapper = Parent.EntryGroupManager.GetAssociatedSummaryWrapper(curFmgWrapper.ID);
-
-        if (wrapper != null)
-        {
-            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
-
-            newEntry.ID = curEntry.ID;
-
-            var action = new AddAssociatedEntry(Parent, selectedContainer, wrapper.File, newEntry);
-            Parent.ActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    /// Add description entry (used for associated entries)
-    /// </summary>
-    public void AddDescriptionEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
-    {
-        var selectedContainer = Parent.Selection.SelectedContainerWrapper;
-
-        var wrapper = Parent.EntryGroupManager.GetAssociatedDescriptionWrapper(curFmgWrapper.ID);
-
-        if (wrapper != null)
-        {
-            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
-
-            newEntry.ID = curEntry.ID;
-
-            var action = new AddAssociatedEntry(Parent, selectedContainer, wrapper.File, newEntry);
-            Parent.ActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    /// Add effect entry (used for associated entries)
-    /// </summary>
-    public void AddEffectEntry(TextFmgWrapper curFmgWrapper, FMG.Entry curEntry)
-    {
-        var selectedContainer = Parent.Selection.SelectedContainerWrapper;
-
-        var wrapper = Parent.EntryGroupManager.GetAssociatedEffectWrapper(curFmgWrapper.ID);
-
-        if (wrapper != null)
-        {
-            var newEntry = new FMG.Entry(wrapper.File, curEntry.ID, "");
-
-            newEntry.ID = curEntry.ID;
-
-            var action = new AddAssociatedEntry(Parent, selectedContainer, wrapper.File, newEntry);
-            Parent.ActionManager.ExecuteAction(action);
-        }
+        var action = new AddAssociatedEntry(Parent, selectedContainer, slot.Wrapper.File, newEntry);
+        Parent.ActionManager.ExecuteAction(action);
     }
 
     /// <summary>
@@ -236,8 +173,8 @@ public class TextActionHandler
     }
 
     /// <summary>
-    /// The FMGs a duplicate or ID change of this entry writes to: its own FMG, plus the
-    /// associated title/summary/description/effect FMGs when the entry is grouped.
+    /// The FMGs a duplicate or ID change of this entry writes to: its own FMG, plus every
+    /// FMG of its group (up to 10 slots) when the entry is grouped.
     /// </summary>
     public List<FMG> GetGroupFmgs(FMG.Entry entry, FmgEntryLookup lookup = null)
     {
@@ -246,24 +183,14 @@ public class TextActionHandler
         if (entry?.Parent != null)
             fmgs.Add(entry.Parent);
 
-        var selectedFmg = Parent.Selection.SelectedFmgWrapper;
         var group = Parent.EntryGroupManager.GetEntryGroup(entry, lookup);
 
-        if (selectedFmg != null && group != null && group.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+        if (group != null && group.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
-            var groupManager = Parent.EntryGroupManager;
-            var associated = new[]
+            foreach (var slot in group.Slots)
             {
-                groupManager.GetAssociatedTitleWrapper(selectedFmg.ID),
-                groupManager.GetAssociatedSummaryWrapper(selectedFmg.ID),
-                groupManager.GetAssociatedDescriptionWrapper(selectedFmg.ID),
-                groupManager.GetAssociatedEffectWrapper(selectedFmg.ID)
-            };
-
-            foreach (var wrapper in associated)
-            {
-                if (wrapper?.File != null && !fmgs.Contains(wrapper.File))
-                    fmgs.Add(wrapper.File);
+                if (!fmgs.Contains(slot.Wrapper.File))
+                    fmgs.Add(slot.Wrapper.File);
             }
         }
 
@@ -318,54 +245,26 @@ public class TextActionHandler
         List<EditorAction> actions = new List<EditorAction>();
 
         var selectedContainer = Parent.Selection.SelectedContainerWrapper;
-        var selectedFmg = curEntry.Parent;
         var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(curEntry, lookup);
 
-        if (fmgEntryGroup != null)
+        if (fmgEntryGroup == null || newId == -1)
+            return actions;
+
+        // Duplicate every entry of the group together (each slot that has one)
+        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
-            if (newId != -1)
+            foreach (var slot in fmgEntryGroup.Slots)
             {
-                // Duplicate all related entries together based on selection
-                if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+                if (slot.Entry != null)
                 {
-                    if (fmgEntryGroup.Title != null)
-                    {
-                        var titleEntry = fmgEntryGroup.Title;
-                        var titleFmg = titleEntry.Parent;
-
-                        actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, titleFmg, titleEntry, newId));
-                    }
-
-                    if (fmgEntryGroup.Summary != null)
-                    {
-                        var summaryEntry = fmgEntryGroup.Summary;
-                        var summaryFmg = summaryEntry.Parent;
-
-                        actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, summaryFmg, summaryEntry, newId));
-                    }
-
-                    if (fmgEntryGroup.Description != null)
-                    {
-                        var descriptionEntry = fmgEntryGroup.Description;
-                        var descriptionFmg = descriptionEntry.Parent;
-
-                        actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, descriptionFmg, descriptionEntry, newId));
-                    }
-
-                    if (fmgEntryGroup.Effect != null)
-                    {
-                        var effectEntry = fmgEntryGroup.Effect;
-                        var effectFmg = effectEntry.Parent;
-
-                        actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, effectFmg, effectEntry, newId));
-                    }
-                }
-                // Otherwise just duplicate selection
-                else
-                {
-                    actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, selectedFmg, curEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, slot.Wrapper.File, slot.Entry, newId));
                 }
             }
+        }
+        // Otherwise just duplicate selection
+        else
+        {
+            actions.Add(new DuplicateFmgEntry(Parent, selectedContainer, curEntry.Parent, curEntry, newId));
         }
 
         return actions;
@@ -462,51 +361,26 @@ public class TextActionHandler
         List<EditorAction> actions = new List<EditorAction>();
 
         var selectedContainer = Parent.Selection.SelectedContainerWrapper;
-        var selectedFmg = curEntry.Parent;
         var fmgEntryGroup = Parent.EntryGroupManager.GetEntryGroup(curEntry, lookup);
 
-        if (fmgEntryGroup != null)
+        if (fmgEntryGroup == null)
+            return actions;
+
+        // Delete every entry of the group together (each slot that has one)
+        if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
-            // Delete all related entries together based on selection
-            if (fmgEntryGroup.SupportsGrouping && CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
+            foreach (var slot in fmgEntryGroup.Slots)
             {
-                if (fmgEntryGroup.Title != null)
+                if (slot.Entry != null)
                 {
-                    var titleEntry = fmgEntryGroup.Title;
-                    var titleFmg = titleEntry.Parent;
-
-                    actions.Add(new DeleteFmgEntry(Parent, selectedContainer, titleFmg, titleEntry));
-                }
-
-                if (fmgEntryGroup.Summary != null)
-                {
-                    var summaryEntry = fmgEntryGroup.Summary;
-                    var summaryFmg = summaryEntry.Parent;
-
-                    actions.Add(new DeleteFmgEntry(Parent, selectedContainer, summaryFmg, summaryEntry));
-                }
-
-                if (fmgEntryGroup.Description != null)
-                {
-                    var descriptionEntry = fmgEntryGroup.Description;
-                    var descriptionFmg = descriptionEntry.Parent;
-
-                    actions.Add(new DeleteFmgEntry(Parent, selectedContainer, descriptionFmg, descriptionEntry));
-                }
-
-                if (fmgEntryGroup.Effect != null)
-                {
-                    var effectEntry = fmgEntryGroup.Effect;
-                    var effectFmg = effectEntry.Parent;
-
-                    actions.Add(new DeleteFmgEntry(Parent, selectedContainer, effectFmg, effectEntry));
+                    actions.Add(new DeleteFmgEntry(Parent, selectedContainer, slot.Wrapper.File, slot.Entry));
                 }
             }
-            // Otherwise just duplicate selection
-            else
-            {
-                actions.Add(new DeleteFmgEntry(Parent, selectedContainer, selectedFmg, curEntry));
-            }
+        }
+        // Otherwise just delete the selection
+        else
+        {
+            actions.Add(new DeleteFmgEntry(Parent, selectedContainer, curEntry.Parent, curEntry));
         }
 
         return actions;
@@ -534,24 +408,8 @@ public class TextActionHandler
     #region Copy / Paste Entries
 
     /// <summary>
-    /// The associated FMG for a group slot of the passed FMG, or null if it has none
-    /// </summary>
-    private TextFmgWrapper GetSlotWrapper(TextEntryClipboard.GroupSlot slot, int fmgId)
-    {
-        var groups = Parent.EntryGroupManager;
-
-        return slot switch
-        {
-            TextEntryClipboard.GroupSlot.Title => groups.GetAssociatedTitleWrapper(fmgId),
-            TextEntryClipboard.GroupSlot.Summary => groups.GetAssociatedSummaryWrapper(fmgId),
-            TextEntryClipboard.GroupSlot.Description => groups.GetAssociatedDescriptionWrapper(fmgId),
-            _ => groups.GetAssociatedEffectWrapper(fmgId)
-        };
-    }
-
-    /// <summary>
     /// Copy the selected entries for Paste (in this or another FMG, container or language).
-    /// With grouping on, each entry's title/summary/description/effect texts come along.
+    /// With grouping on, the texts of each entry's group slots come along, by slot meaning.
     /// The text also goes to the system clipboard, as Copy Text does.
     /// </summary>
     public void CopyEntries()
@@ -573,12 +431,13 @@ public class TextActionHandler
 
             if (group != null && group.SupportsGrouping)
             {
-                item.Group = new();
+                item.Group = TextEntryClipboard.NewGroupTexts();
 
-                if (group.Title != null) item.Group[TextEntryClipboard.GroupSlot.Title] = group.Title.Text;
-                if (group.Summary != null) item.Group[TextEntryClipboard.GroupSlot.Summary] = group.Summary.Text;
-                if (group.Description != null) item.Group[TextEntryClipboard.GroupSlot.Description] = group.Description.Text;
-                if (group.Effect != null) item.Group[TextEntryClipboard.GroupSlot.Effect] = group.Effect.Text;
+                foreach (var slot in group.Slots)
+                {
+                    if (slot.Entry != null)
+                        item.Group.TryAdd(slot.Meaning, slot.Entry.Text);
+                }
             }
 
             copied.Add(item);
@@ -605,17 +464,15 @@ public class TextActionHandler
         if (fmgWrapper?.File == null || container == null || !TextEntryClipboard.HasEntries)
             return;
 
-        // The target's group slots, when grouping is on and the FMG is grouped
-        var slotWrappers = new Dictionary<TextEntryClipboard.GroupSlot, TextFmgWrapper>();
+        // The target's group slots by meaning, when grouping is on and the FMG is grouped
+        var slotWrappers = new Dictionary<string, TextFmgWrapper>(StringComparer.OrdinalIgnoreCase);
 
         if (CFG.Current.TextEditor_Text_Entry_Enable_Grouped_Entries)
         {
-            foreach (TextEntryClipboard.GroupSlot slot in Enum.GetValues(typeof(TextEntryClipboard.GroupSlot)))
+            foreach (var (slot, wrapper) in Parent.EntryGroupManager.GetGroupWrappers(fmgWrapper.ID))
             {
-                var wrapper = GetSlotWrapper(slot, fmgWrapper.ID);
-
                 if (wrapper?.File != null)
-                    slotWrappers[slot] = wrapper;
+                    slotWrappers.TryAdd(slot.Meaning, wrapper);
             }
         }
 

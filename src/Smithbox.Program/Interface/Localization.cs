@@ -131,6 +131,16 @@ public static class LOC
         }
     }
 
+    /// <summary>
+    /// Whether the key has a text in the current language or the English fallback. For keys built
+    /// from data (e.g. text entry group slot meanings), where a missing key is expected and Get
+    /// would log it as an error.
+    /// </summary>
+    public static bool Has(string locKey)
+    {
+        return Localization.ContainsKey(locKey) || FallbackLocalization.ContainsKey(locKey);
+    }
+
     public static string Get(string locKey, params object[] parameters)
     {
         if (Startup.Current.Program_Language == "Test Language")

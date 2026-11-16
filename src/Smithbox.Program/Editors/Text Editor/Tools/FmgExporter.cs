@@ -206,43 +206,12 @@ public class FmgExporter
                 {
                     if (fmgEntryGroup.SupportsGrouping)
                     {
-                        // This sends the associated fmg wrappers for processing.
-                        // The current entry multiselection IDs will still match, even though the entries
-                        // (as an object) is not within the associated wrappers.
-                        if (fmgEntryGroup.SupportsTitle)
+                        // Every FMG of the group (up to 10 slots), the selected FMG included.
+                        // The current entry multiselection IDs still match, even though the entries
+                        // (as objects) aren't in the other FMGs.
+                        foreach (var slot in fmgEntryGroup.Slots)
                         {
-                            var wrapper = View.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
-
-                            // If not null, then use the associated wrapper
-                            if (wrapper != null)
-                                ProcessFmg(wrapper, storedFmgContainer, true);
-                            // If null, then it means the current selection IS this wrapper, so use that
-                            else
-                                ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
-                        }
-                        if (fmgEntryGroup.SupportsSummary)
-                        {
-                            var wrapper = View.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
-                            if (wrapper != null)
-                                ProcessFmg(wrapper, storedFmgContainer, true);
-                            else
-                                ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
-                        }
-                        if (fmgEntryGroup.SupportsDescription)
-                        {
-                            var wrapper = View.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
-                            if (wrapper != null)
-                                ProcessFmg(wrapper, storedFmgContainer, true);
-                            else
-                                ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
-                        }
-                        if (fmgEntryGroup.SupportsEffect)
-                        {
-                            var wrapper = View.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
-                            if (wrapper != null)
-                                ProcessFmg(wrapper, storedFmgContainer, true);
-                            else
-                                ProcessFmg(selectedFmgWrapper, storedFmgContainer, true);
+                            ProcessFmg(slot.Wrapper, storedFmgContainer, true);
                         }
                     }
                     else

@@ -180,22 +180,13 @@ public class FmgImporter
 
             var scopedFmgs = new List<TextFmgWrapper> { selectedFmg };
 
-            // Entry exports can include the associated title/summary/description/effect
-            // FMGs (Include Grouped Entries), so entry-level imports target the group too.
+            // Entry exports can include the FMGs of the entry's group (Include Grouped
+            // Entries), so entry-level imports target the whole group too.
             if (importType is FmgImportType.FMG_Entries)
             {
-                var groupManager = Parent.EntryGroupManager;
-                var associated = new[]
+                foreach (var (_, wrapper) in Parent.EntryGroupManager.GetGroupWrappers(selectedFmg.ID))
                 {
-                    groupManager.GetAssociatedTitleWrapper(selectedFmg.ID),
-                    groupManager.GetAssociatedSummaryWrapper(selectedFmg.ID),
-                    groupManager.GetAssociatedDescriptionWrapper(selectedFmg.ID),
-                    groupManager.GetAssociatedEffectWrapper(selectedFmg.ID)
-                };
-
-                foreach (var wrapper in associated)
-                {
-                    if (wrapper != null && !scopedFmgs.Contains(wrapper))
+                    if (!scopedFmgs.Contains(wrapper))
                         scopedFmgs.Add(wrapper);
                 }
             }

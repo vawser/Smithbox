@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.Common;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -76,15 +77,12 @@ public class TextEntryCreatorTool
     private int NewEntry_Amount = 12;
     private int NewEntry_IncrementID = 100;
 
-    private bool NewEntry_CreateTitle = true;
-    private bool NewEntry_CreateSummary = true;
-    private bool NewEntry_CreateDescription = true;
-    private bool NewEntry_CreateEffect = false;
+    // One create toggle and text per group slot, by slot index (a group has up to 10 slots;
+    // these were four fixed title/summary/description/effect fields)
+    private const int MaxSlots = TextEntryGroupDefinition.MaxSlots;
+    private readonly bool[] NewEntry_CreateSlot = Enumerable.Repeat(true, MaxSlots).ToArray();
+    private readonly string[] NewEntry_SlotText = Enumerable.Repeat("", MaxSlots).ToArray();
 
-    private string NewEntry_TitleText = "";
-    private string NewEntry_SummaryText = "";
-    private string NewEntry_DescriptionText = "";
-    private string NewEntry_EffectText = "";
     private string NewEntry_BasicText = "";
 
     private bool AllowParameterUpdate = true;
@@ -124,17 +122,15 @@ public class TextEntryCreatorTool
 
                 if (fmgEntryGroup.SupportsGrouping)
                 {
-                    NewEntry_CreateTitle = fmgEntryGroup.SupportsTitle;
-                    NewEntry_CreateSummary = fmgEntryGroup.SupportsSummary;
-                    NewEntry_CreateDescription = fmgEntryGroup.SupportsDescription;
-                    NewEntry_CreateEffect = fmgEntryGroup.SupportsEffect;
+                    // Every slot the group has is created by default. Slots the newly selected
+                    // entry doesn't have get empty text, rather than the previous entry's.
+                    for (int i = 0; i < MaxSlots; i++)
+                    {
+                        var slot = i < fmgEntryGroup.Slots.Count ? fmgEntryGroup.Slots[i] : null;
 
-                    // Clear fields the newly selected entry doesn't have, rather than keeping
-                    // the previous entry's summary/description/effect text
-                    NewEntry_TitleText = fmgEntryGroup.Title?.Text ?? "";
-                    NewEntry_SummaryText = fmgEntryGroup.Summary?.Text ?? "";
-                    NewEntry_DescriptionText = fmgEntryGroup.Description?.Text ?? "";
-                    NewEntry_EffectText = fmgEntryGroup.Effect?.Text ?? "";
+                        NewEntry_CreateSlot[i] = slot != null;
+                        NewEntry_SlotText[i] = slot?.Entry?.Text ?? "";
+                    }
                 }
                 else
                 {
@@ -142,6 +138,17 @@ public class TextEntryCreatorTool
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// The slot the incremental template is added to: the title, or the first slot when the
+    /// group has no title slot
+    /// </summary>
+    private static int TemplateSlotIndex(FmgEntryGroup group)
+    {
+        var title = group.Slots.FindIndex(s => s.IsTitle);
+
+        return title >= 0 ? title : 0;
     }
 
     public void CreationMenu()
@@ -215,67 +222,22 @@ public class TextEntryCreatorTool
         {
             if (fmgEntryGroup.SupportsGrouping)
             {
-                if (fmgEntryGroup.SupportsTitle)
+                // One section per slot of the group, labelled by what the slot means
+                for (int i = 0; i < fmgEntryGroup.Slots.Count && i < MaxSlots; i++)
                 {
-                    GUI.SimpleHeader(
-                        LOC.Get("TEXT_Creator_Header_Title"), 
-                        LOC.Get("TEXT_Creator_Header_Title_TT"));
+                    var slot = fmgEntryGroup.Slots[i];
 
-                    ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Title")}##createTitle", ref NewEntry_CreateTitle);
-                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Title_TT"));
+                    if (i > 0)
+                        GUI.Spacer();
 
-                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_TitleText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Title", ref NewEntry_TitleText, TextContents.GetEditBufferSize(NewEntry_TitleText), new Vector2(-1, height)))
-                    {
-                    }
-                }
+                    GUI.SimpleHeader(slot.Label, LOC.Get("TEXT_Creator_Header_Slot_TT", slot.Label));
 
-                if (fmgEntryGroup.SupportsSummary)
-                {
-                    GUI.Spacer();
-                    GUI.SimpleHeader(
-                        LOC.Get("TEXT_Creator_Header_Summary"),
-                        LOC.Get("TEXT_Creator_Header_Summary_TT"));
+                    ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Slot", slot.Label)}##createSlot{i}", ref NewEntry_CreateSlot[i]);
+                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Slot_TT", slot.Label));
 
-                    ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Summary")}##createSummary", ref NewEntry_CreateSummary);
-                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Summary_TT"));
-
-                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_SummaryText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Summary", ref NewEntry_SummaryText, TextContents.GetEditBufferSize(NewEntry_SummaryText), new Vector2(-1, height)))
-                    {
-                    }
-                }
-
-                if (fmgEntryGroup.SupportsDescription)
-                {
-                    GUI.Spacer();
-                    GUI.SimpleHeader(
-                        LOC.Get("TEXT_Creator_Header_Description"),
-                        LOC.Get("TEXT_Creator_Header_Description_TT"));
-
-                    ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Description")}##createDescription", ref NewEntry_CreateDescription);
-                    GUI.Tooltip(LOC.Get("TEXT_Creator_Header_Description_TT"));
-
-                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_DescriptionText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Description", ref NewEntry_DescriptionText, TextContents.GetEditBufferSize(NewEntry_DescriptionText), new Vector2(-1, height)))
-                    {
-                    }
-                }
-
-                if (fmgEntryGroup.SupportsEffect)
-                {
-                    GUI.Spacer();
-                    GUI.SimpleHeader(
-                        LOC.Get("TEXT_Creator_Header_Effect"),
-                        LOC.Get("TEXT_Creator_Header_Effect_TT"));
-
-                    ImGui.Checkbox($"{LOC.Get("TEXT_Creator_Checkbox_Create_Effect")}##createEffect", ref NewEntry_CreateEffect);
-                    GUI.Tooltip(LOC.Get("TEXT_Creator_Checkbox_Create_Effect_TT"));
-
-                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_EffectText).Y;
-                    if (ImGui.InputTextMultiline($"##newEntryText_Effect", ref NewEntry_EffectText, TextContents.GetEditBufferSize(NewEntry_EffectText), new Vector2(-1, height)))
-                    {
-                    }
+                    var height = textboxHeight * DPI.UIScale() + ImGui.CalcTextSize(NewEntry_SlotText[i]).Y;
+                    ImGui.InputTextMultiline($"##newEntryText_Slot{i}", ref NewEntry_SlotText[i],
+                        TextContents.GetEditBufferSize(NewEntry_SlotText[i]), new Vector2(-1, height));
                 }
             }
             else
@@ -501,17 +463,17 @@ public class TextEntryCreatorTool
 
             if (fmgEntryGroup.SupportsGrouping)
             {
-                if(NewEntry_CreateTitle)
-                    HandleNewTitleEntry(entry, fmgEntryGroup, newID, incrementText, actions);
+                var templateSlot = TemplateSlotIndex(fmgEntryGroup);
 
-                if (NewEntry_CreateSummary)
-                    HandleNewSummaryEntry(entry, fmgEntryGroup, newID, actions);
+                for (int i = 0; i < fmgEntryGroup.Slots.Count && i < MaxSlots; i++)
+                {
+                    if (!NewEntry_CreateSlot[i])
+                        continue;
 
-                if (NewEntry_CreateDescription)
-                    HandleNewDescriptionEntry(entry, fmgEntryGroup, newID, actions);
-
-                if (NewEntry_CreateEffect)
-                    HandleNewEffectEntry(entry, fmgEntryGroup, newID, actions);
+                    // The incremental template goes on the title (or the first slot) only
+                    HandleNewSlotEntry(entry, fmgEntryGroup.Slots[i], NewEntry_SlotText[i], newID,
+                        i == templateSlot ? incrementText : null, actions);
+                }
             }
             else
             {
@@ -541,134 +503,33 @@ public class TextEntryCreatorTool
     }
 
     /// <summary>
-    /// Handle title entry creation
+    /// Create the entry for one group slot, in the slot's FMG. The incremental template text is
+    /// added when given (only for the template slot). Replaces the four title/summary/
+    /// description/effect handlers, as a group can have up to 10 slots of any meaning.
     /// </summary>
-    private void HandleNewTitleEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, string incrementText, List<EditorAction> actions)
+    private void HandleNewSlotEntry(FMG.Entry entry, FmgEntryGroupSlot slot, string slotText, int newId, string incrementText, List<EditorAction> actions)
     {
-        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
+        if (slot?.Wrapper?.File == null)
+            return;
 
-        // Title
-        if (fmgEntryGroup.SupportsTitle)
+        var sourceEntry = new FMG.Entry(slot.Wrapper.File, entry.ID, entry.Text);
+
+        if (!IsAvailableID(sourceEntry, newId))
         {
-            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
-
-            // The container may have no FMG for this slot (this threw a NullReferenceException)
-            if (wrapper?.File == null)
-                return;
-
-            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
-
-            if (IsAvailableID(sourceEntry, newId))
-            {
-                var newTitleText = NewEntry_TitleText;
-
-                if (AllowIncrementalTemplate)
-                {
-                    if(ApplyTemplateAsPrefix)
-                    {
-                        newTitleText = $"{incrementText}{newTitleText}";
-                    }
-                    else
-                    {
-                        newTitleText = $"{newTitleText}{incrementText}";
-                    }
-                }
-
-                actions.Add(CreateNewEntry(sourceEntry, newId, newTitleText));
-            }
-            else
-            {
-                HasIdCollision = true;
-            }
+            HasIdCollision = true;
+            return;
         }
+
+        var newText = slotText;
+
+        if (AllowIncrementalTemplate && incrementText != null)
+        {
+            newText = ApplyTemplateAsPrefix ? $"{incrementText}{newText}" : $"{newText}{incrementText}";
+        }
+
+        actions.Add(CreateNewEntry(sourceEntry, newId, newText));
     }
 
-    /// <summary>
-    /// Handle summary entry creation
-    /// </summary>
-    private void HandleNewSummaryEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
-    {
-        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
-
-        // Summary
-        if (fmgEntryGroup.SupportsSummary)
-        {
-            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
-
-            // The container may have no FMG for this slot (this threw a NullReferenceException)
-            if (wrapper?.File == null)
-                return;
-
-            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
-
-            if (IsAvailableID(sourceEntry, newId))
-            {
-                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_SummaryText));
-            }
-            else
-            {
-                HasIdCollision = true;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Handle description entry creation
-    /// </summary>
-    private void HandleNewDescriptionEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
-    {
-        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
-
-        // Description
-        if (fmgEntryGroup.SupportsDescription)
-        {
-            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
-
-            // The container may have no FMG for this slot (this threw a NullReferenceException)
-            if (wrapper?.File == null)
-                return;
-
-            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
-
-            if (IsAvailableID(sourceEntry, newId))
-            {
-                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_DescriptionText));
-            }
-            else
-            {
-                HasIdCollision = true;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Handle effect entry creation
-    /// </summary>
-    private void HandleNewEffectEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, List<EditorAction> actions)
-    {
-        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
-
-        // Description
-        if (fmgEntryGroup.SupportsEffect)
-        {
-            TextFmgWrapper wrapper = Parent.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
-
-            // The container may have no FMG for this slot (this threw a NullReferenceException)
-            if (wrapper?.File == null)
-                return;
-
-            var sourceEntry = new FMG.Entry(wrapper.File, entry.ID, entry.Text);
-
-            if (IsAvailableID(sourceEntry, newId))
-            {
-                actions.Add(CreateNewEntry(sourceEntry, newId, NewEntry_EffectText));
-            }
-            else
-            {
-                HasIdCollision = true;
-            }
-        }
-    }
     private void HandleNewBasicEntry(FMG.Entry entry, FmgEntryGroup fmgEntryGroup, int newId, string incrementText, List<EditorAction> actions)
     {
         if (IsAvailableID(entry, newId))

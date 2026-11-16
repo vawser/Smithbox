@@ -1,0 +1,170 @@
+{
+  "Groups": [
+    {
+      "Name": "Goods",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 10
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 20
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 24
+        }
+      ]
+    },
+    {
+      "Name": "Weapons",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 11
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 21
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 25
+        }
+      ]
+    },
+    {
+      "Name": "Armors",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 12
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 22
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 26
+        }
+      ]
+    },
+    {
+      "Name": "Accessories",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 13
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 23
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 27
+        }
+      ]
+    },
+    {
+      "Name": "Spells",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 14
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 28
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 29
+        }
+      ]
+    },
+    {
+      "Name": "Goods",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 111
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 110
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 100
+        }
+      ]
+    },
+    {
+      "Name": "Weapons",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 115
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 114
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 106
+        }
+      ]
+    },
+    {
+      "Name": "Armors",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 117
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 116
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 108
+        }
+      ]
+    },
+    {
+      "Name": "Accessories",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 113
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 112
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 109
+        }
+      ]
+    },
+    {
+      "Name": "Spells",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 118
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 105
+        }
+      ]
+    }
+  ]
+}

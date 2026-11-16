@@ -345,20 +345,15 @@ public class TextContents
         Parent.TextEntryList.FocusSelection = true;
     }
 
+    /// <summary>
+    /// Group Editor: the ID, then one row per slot of the entry's group (up to 10, in the
+    /// definition's order, labelled by what the slot means). A slot without an entry yet
+    /// shows an Add button.
+    /// </summary>
     public void DisplayGroupedTextInput(FMG.Entry entry, FmgEntryGroup fmgEntryGroup)
     {
         var windowWidth = ImGui.GetWindowWidth();
-
-        var textboxHeight = 32f;
-        var textboxWidth = ImGui.GetWindowWidth() * 0.92f;
-        var height = textboxHeight;
-
-        var selectedFmgWrapper = Parent.Selection.SelectedFmgWrapper;
-        var selectedEntry = Parent.Selection._selectedFmgEntry;
-
-        // The Title entry may not exist (e.g. a description with no name entry).
-        // This used to return early and leave the panel blank, so the
-        // "Add Title Entry" button below could never show.
+        var textboxWidth = windowWidth * 0.92f;
 
         if (ImGui.BeginTable($"fmgEditTableGrouped", ColumnCount, ImGuiTableFlags.SizingFixedFit))
         {
@@ -382,215 +377,58 @@ public class TextContents
                     _idCache = curId;
                 }
 
-                var idCommit = GUI.InputCommitted();
-
                 // Update the ID of every entry in the group once the input is exited
-                if (idCommit)
+                if (GUI.InputCommitted())
                 {
-                    ApplyIdChange(new List<FMG.Entry>
-                    {
-                        fmgEntryGroup.Title,
-                        fmgEntryGroup.Summary,
-                        fmgEntryGroup.Description,
-                        fmgEntryGroup.Effect,
-                        entry
-                    }.Distinct().ToList(), _idCache);
+                    ApplyIdChange(fmgEntryGroup.Entries.Append(entry).Distinct().ToList(), _idCache);
                 }
 
                 DisplayIdError();
             }
 
-            // Title
-            if (fmgEntryGroup.Title != null)
+            for (int i = 0; i < fmgEntryGroup.Slots.Count; i++)
             {
-                var curText = fmgEntryGroup.Title.Text;
-
-                if (curText == null)
-                    curText = "";
-
-                // Grows for multi-line titles (was a fixed 32px)
-                height = CapBoxHeight(Math.Max(32f * DPI.UIScale(), ImGui.CalcTextSize(curText).Y + 16f * DPI.UIScale()));
+                var slot = fmgEntryGroup.Slots[i];
 
                 ImGui.TableNextRow();
-
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Title"));
+                // TextUnformatted: the label can come from the group file, and Text reads '%' as a format
+                ImGui.TextUnformatted(slot.Label);
 
                 ImGui.TableSetColumnIndex(1);
 
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Title", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
+                // No entry with this ID in the slot's FMG yet
+                if (slot.Entry == null)
+                {
+                    if (ImGui.Button($"{LOC.Get("TEXT_Contents_Add_Group_Entry", slot.Label)}##addGroupEntry{i}", DPI.HalfWidthButton(windowWidth, 24)))
+                    {
+                        Parent.ActionHandler.AddGroupEntry(slot, entry);
+                    }
+
+                    continue;
+                }
+
+                var curText = slot.Entry.Text ?? "";
+
+                // A title is one line (growing for multi-line titles); other slots start taller
+                var height = slot.IsTitle
+                    ? CapBoxHeight(Math.Max(32f * DPI.UIScale(), ImGui.CalcTextSize(curText).Y + 16f * DPI.UIScale()))
+                    : CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
+
+                if (ImGui.InputTextMultiline($"##fmgTextInput_Slot{i}", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
                 {
                     _textCache = curText;
                 }
 
-                var titleTextCommit = GUI.InputCommitted();
+                var textCommit = GUI.InputCommitted();
                 ShowLengthTooltip(curText);
-                ShowPreview("title", curText);
-                ReferenceCell(fmgEntryGroup.Title);
+                ShowPreview($"slot{i}", curText);
+                ReferenceCell(slot.Entry);
 
-                // Title Text
-                if (titleTextCommit)
+                if (textCommit)
                 {
-                    CommitText(fmgEntryGroup.Title);
-                }
-            }
-            else if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Title"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.Button($"{LOC.Get("TEXT_Contents_Add_Title_Entry")}##addTitleEntry", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    Parent.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
-                }
-            }
-
-            // Summary
-            if (fmgEntryGroup.Summary != null)
-            {
-                var curText = fmgEntryGroup.Summary.Text;
-
-                if (curText == null)
-                    curText = "";
-
-                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
-
-                ImGui.TableNextRow();
-
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Summary"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Summary", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
-                {
-                    _textCache = curText;
-                }
-
-                var summaryTextCommit = GUI.InputCommitted();
-                ShowLengthTooltip(curText);
-                ShowPreview("summary", curText);
-                ReferenceCell(fmgEntryGroup.Summary);
-
-                if (summaryTextCommit)
-                {
-                    CommitText(fmgEntryGroup.Summary);
-                }
-            }
-            else if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Summary"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.Button($"{LOC.Get("TEXT_Contents_Add_Summary_Entry")}##addSummaryEntry", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    Parent.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
-                }
-            }
-
-            // Description
-            if (fmgEntryGroup.Description != null)
-            {
-                var curText = fmgEntryGroup.Description.Text;
-
-                if (curText == null)
-                    curText = "";
-
-                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
-
-                ImGui.TableNextRow();
-
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Description"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Description", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
-                {
-                    _textCache = curText;
-                }
-
-                var descriptionTextCommit = GUI.InputCommitted();
-                ShowLengthTooltip(curText);
-                ShowPreview("description", curText);
-                ReferenceCell(fmgEntryGroup.Description);
-
-                if (descriptionTextCommit)
-                {
-                    CommitText(fmgEntryGroup.Description);
-                }
-            }
-            else if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Description"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.Button($"{LOC.Get("TEXT_Contents_Add_Description_Entry")}##addDescriptionEntry", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    Parent.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
-                }
-            }
-
-            // Effect
-            if (fmgEntryGroup.Effect != null)
-            {
-                var curText = fmgEntryGroup.Effect.Text;
-
-                if (curText == null)
-                    curText = "";
-
-                height = CapBoxHeight(100 * DPI.UIScale() + ImGui.CalcTextSize(curText).Y);
-
-                ImGui.TableNextRow();
-
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Effect"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.InputTextMultiline($"##fmgTextInput_Effect", ref curText, GetEditBufferSize(curText), new Vector2(-1, height)))
-                {
-                    _textCache = curText;
-                }
-
-                var effectTextCommit = GUI.InputCommitted();
-                ShowLengthTooltip(curText);
-                ShowPreview("effect", curText);
-                ReferenceCell(fmgEntryGroup.Effect);
-
-                if (effectTextCommit)
-                {
-                    CommitText(fmgEntryGroup.Effect);
-                }
-            }
-            else if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
-            {
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                ImGui.Text(LOC.Get("TEXT_Contents_Column_Header_Effect"));
-
-                ImGui.TableSetColumnIndex(1);
-
-                if (ImGui.Button($"{LOC.Get("TEXT_Contents_Add_Effect_Entry")}##addEffectEntry", DPI.HalfWidthButton(windowWidth, 24)))
-                {
-                    Parent.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
+                    CommitText(slot.Entry);
                 }
             }
 

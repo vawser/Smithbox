@@ -1,0 +1,392 @@
+{
+  "Groups": [
+    {
+      "Name": "Goods",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 10
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 20
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 24
+        },
+        {
+          "Meaning": "Effect",
+          "FmgID": 46
+        }
+      ]
+    },
+    {
+      "Name": "Weapons",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 11
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 21
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 25
+        }
+      ]
+    },
+    {
+      "Name": "Armors",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 12
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 22
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 26
+        }
+      ]
+    },
+    {
+      "Name": "Accessories",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 13
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 23
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 27
+        }
+      ]
+    },
+    {
+      "Name": "Spells",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 14
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 28
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 29
+        }
+      ]
+    },
+    {
+      "Name": "Skills",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 42
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 45
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 43
+        }
+      ]
+    },
+    {
+      "Name": "Relics",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 47
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 48
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 49
+        }
+      ]
+    },
+    {
+      "Name": "Permanent Buffs",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 51
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 52
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 53
+        }
+      ]
+    },
+    {
+      "Name": "Attached Effects",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 44
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 50
+        }
+      ]
+    },
+    {
+      "Name": "Loading Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 205
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 206
+        }
+      ]
+    },
+    {
+      "Name": "Personal Scenario",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 212
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 213
+        }
+      ]
+    },
+    {
+      "Name": "Tutorial Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 207
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 208
+        }
+      ]
+    },
+    {
+      "Name": "SpEffect",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 214
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 215
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 216
+        }
+      ]
+    },
+    {
+      "Name": "Goods",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 411
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 412
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 414
+        },
+        {
+          "Meaning": "Effect",
+          "FmgID": 413
+        }
+      ]
+    },
+    {
+      "Name": "Weapons",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 426
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 427
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 428
+        }
+      ]
+    },
+    {
+      "Name": "Accessories",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 400
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 401
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 402
+        }
+      ]
+    },
+    {
+      "Name": "Spells",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 415
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 416
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 417
+        }
+      ]
+    },
+    {
+      "Name": "Skills",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 406
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 407
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 408
+        }
+      ]
+    },
+    {
+      "Name": "Relics",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 403
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 404
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 405
+        }
+      ]
+    },
+    {
+      "Name": "Permanent Buffs",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 419
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 420
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 421
+        }
+      ]
+    },
+    {
+      "Name": "Attached Effects",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 409
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 410
+        }
+      ]
+    },
+    {
+      "Name": "Personal Scenario",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 510
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 511
+        }
+      ]
+    },
+    {
+      "Name": "Tutorial Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 516
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 517
+        }
+      ]
+    },
+    {
+      "Name": "SpEffect",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 512
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 513
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 216
+        }
+      ]
+    }
+  ]
+}

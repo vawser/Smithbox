@@ -7,7 +7,11 @@ using System.Linq;
 namespace StudioCore.Editors.TextEditor;
 
 /// <summary>
-/// Manager for the FMG Entry Groups and the setup of the BND ID groupings
+/// Text entry groups: FMGs whose entries with the same ID belong together (e.g. a weapon's
+/// name, summary and description), edited, duplicated and deleted as one.
+/// The groups are defined per game in Assets/FMG/&lt;game&gt;/Text Entry Groups.json, up to
+/// TextEntryGroupDefinition.MaxSlots slots each, every slot naming what it means.
+/// (They were hard-coded here with four fixed slots: title, summary, description, effect.)
 /// </summary>
 public class TextEntryGroupManager
 {
@@ -20,104 +24,68 @@ public class TextEntryGroupManager
         Project = project;
     }
 
-    /// <summary>
-    /// Get the associated title FMG wrapper based on the passed binder ID
-    /// </summary>
-    public TextFmgWrapper GetAssociatedTitleWrapper(int parentFmgID)
-    {
-        var fmgWrappers = Parent.Selection.SelectedContainerWrapper.FmgWrappers;
-        var groupings = GetGroupings();
+    private List<EntryGroupAssociation> _groupings;
+    private TextEntryGroupDefinitions _groupingsSource;
 
-        foreach (var group in groupings)
+    /// <summary>
+    /// The game's groups, built from the loaded definitions (rebuilt if they are reloaded)
+    /// </summary>
+    public List<EntryGroupAssociation> GetGroupings()
+    {
+        var source = Project.Handler.TextData?.EntryGroups;
+
+        if (_groupings == null || source != _groupingsSource)
         {
-            if (group.GetTitleEnumID() == parentFmgID || 
-                group.GetSummaryEnumID() == parentFmgID ||
-                group.GetDescriptionEnumID() == parentFmgID ||
-                group.GetEffectEnumID() == parentFmgID)
-            {
-                if (group.SupportsTitle)
-                {
-                    return fmgWrappers.Where(e => e.ID == group.GetTitleEnumID()).FirstOrDefault();
-                }
-            }
+            _groupings = source?.Groups.Select(g => new EntryGroupAssociation(g)).ToList() ?? new();
+            _groupingsSource = source;
         }
 
-        return null;
+        return _groupings;
     }
 
     /// <summary>
-    /// Get the associated summary FMG wrapper based on the passed binder ID
+    /// The group the FMG with this binder ID belongs to, or null. The first group wins when an
+    /// FMG is listed in more than one.
     /// </summary>
-    public TextFmgWrapper GetAssociatedSummaryWrapper(int parentFmgID)
+    public EntryGroupAssociation GetAssociation(int fmgId)
     {
-        var fmgWrappers = Parent.Selection.SelectedContainerWrapper.FmgWrappers;
-        var groupings = GetGroupings();
-
-        foreach(var group in groupings)
-        {
-            if(group.GetTitleEnumID() == parentFmgID ||
-               group.GetSummaryEnumID() == parentFmgID ||
-               group.GetDescriptionEnumID() == parentFmgID ||
-               group.GetEffectEnumID() == parentFmgID)
-            {
-                if (group.SupportsSummary)
-                {
-                    return fmgWrappers.Where(e => e.ID == group.GetSummaryEnumID()).FirstOrDefault();
-                }
-            }
-        }
-
-        return null;
+        return GetGroupings().FirstOrDefault(g => g.Contains(fmgId));
     }
 
     /// <summary>
-    /// Get the associated description FMG wrapper based on the passed binder ID
+    /// The FMGs of the group the passed FMG belongs to, in slot order, that the selected
+    /// container has (a slot whose FMG the container lacks is left out). Empty if the FMG isn't
+    /// grouped. The passed FMG itself is included, in its own slot.
     /// </summary>
-    public TextFmgWrapper GetAssociatedDescriptionWrapper(int parentFmgID)
+    public List<(EntryGroupSlot Slot, TextFmgWrapper Wrapper)> GetGroupWrappers(int fmgId)
     {
-        var fmgWrappers = Parent.Selection.SelectedContainerWrapper.FmgWrappers;
-        var groupings = GetGroupings();
+        var result = new List<(EntryGroupSlot, TextFmgWrapper)>();
 
-        foreach (var group in groupings)
+        var association = GetAssociation(fmgId);
+        var fmgWrappers = Parent.Selection.SelectedContainerWrapper?.FmgWrappers;
+
+        if (association == null || fmgWrappers == null)
+            return result;
+
+        foreach (var slot in association.Slots)
         {
-            if (group.GetTitleEnumID() == parentFmgID ||
-               group.GetSummaryEnumID() == parentFmgID ||
-               group.GetDescriptionEnumID() == parentFmgID ||
-               group.GetEffectEnumID() == parentFmgID)
-            {
-                if (group.SupportsDescription)
-                {
-                    return fmgWrappers.Where(e => e.ID == group.GetDescriptionEnumID()).FirstOrDefault();
-                }
-            }
+            var wrapper = fmgWrappers.FirstOrDefault(w => w.ID == slot.FmgID);
+
+            if (wrapper != null)
+                result.Add((slot, wrapper));
         }
 
-        return null;
+        return result;
     }
 
     /// <summary>
-    /// Get the associated effect FMG wrapper based on the passed binder ID
+    /// The FMG holding the slot with this meaning in the passed FMG's group, or null
     /// </summary>
-    public TextFmgWrapper GetAssociatedEffectWrapper(int parentFmgID)
+    public TextFmgWrapper GetSlotWrapper(int fmgId, string meaning)
     {
-        var fmgWrappers = Parent.Selection.SelectedContainerWrapper.FmgWrappers;
-        var groupings = GetGroupings();
-
-        foreach (var group in groupings)
-        {
-            if (group.GetTitleEnumID() == parentFmgID ||
-               group.GetSummaryEnumID() == parentFmgID ||
-               group.GetDescriptionEnumID() == parentFmgID ||
-               group.GetEffectEnumID() == parentFmgID)
-            {
-                if (group.SupportsEffect)
-                {
-                    return fmgWrappers.Where(e => e.ID == group.GetEffectEnumID()).FirstOrDefault();
-                }
-            }
-        }
-
-        return null;
+        return GetGroupWrappers(fmgId)
+            .FirstOrDefault(p => EntryGroupSlot.SameMeaning(p.Slot.Meaning, meaning))
+            .Wrapper;
     }
 
     /// <param name="lookup">
@@ -139,893 +107,106 @@ public class TextEntryGroupManager
             Parent.Selection.SelectedContainerWrapper,
             Parent.Selection.SelectedFmgWrapper, entry, lookup);
     }
-
-    /// <summary>
-    /// Build association groupings.
-    /// Note: the row ID needs to match between each FMG for this to work correctly.
-    /// </summary>
-    /// <returns></returns>
-    public List<EntryGroupAssociation> GetGroupings()
-    {
-        // The groupings depend only on the project type, which a view never changes.
-        // They were rebuilt (with boxing enum conversions) several times per frame.
-        return _groupings ??= BuildGroupings();
-    }
-
-    private List<EntryGroupAssociation> _groupings;
-
-    private List<EntryGroupAssociation> BuildGroupings()
-    {
-        List<EntryGroupAssociation> groupings = new();
-
-        switch (Project.Descriptor.ProjectType)
-        {
-            case ProjectType.DES:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DES.Title_Goods,
-                    Item_MsgBndID_DES.Summary_Goods,
-                    Item_MsgBndID_DES.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DES.Title_Weapons,
-                    Item_MsgBndID_DES.Summary_Weapons,
-                    Item_MsgBndID_DES.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DES.Title_Armor,
-                    Item_MsgBndID_DES.Summary_Armor,
-                    Item_MsgBndID_DES.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DES.Title_Accessories,
-                    Item_MsgBndID_DES.Summary_Accessories,
-                    Item_MsgBndID_DES.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DES.Title_Magic,
-                    Item_MsgBndID_DES.Summary_Magic,
-                    Item_MsgBndID_DES.Description_Magic,
-                    null));
-                break;
-
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Goods,
-                    Item_MsgBndID_DS1.Summary_Goods,
-                    Item_MsgBndID_DS1.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Weapons,
-                    Item_MsgBndID_DS1.Summary_Weapons,
-                    Item_MsgBndID_DS1.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Armor,
-                    Item_MsgBndID_DS1.Summary_Armor,
-                    Item_MsgBndID_DS1.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Accessories,
-                    Item_MsgBndID_DS1.Summary_Accessories,
-                    Item_MsgBndID_DS1.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Magic,
-                    Item_MsgBndID_DS1.Summary_Magic,
-                    Item_MsgBndID_DS1.Description_Magic,
-                    null));
-
-                // DLC 1
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Goods_DLC,
-                    Item_MsgBndID_DS1.Summary_Goods_DLC,
-                    Item_MsgBndID_DS1.Description_Goods_DLC,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Weapons_DLC,
-                    Item_MsgBndID_DS1.Summary_Weapons_DLC,
-                    Item_MsgBndID_DS1.Description_Weapons_DLC,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Armor_DLC,
-                    Item_MsgBndID_DS1.Summary_Armor_DLC,
-                    Item_MsgBndID_DS1.Description_Armor_DLC,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Accessories_DLC,
-                    Item_MsgBndID_DS1.Summary_Accessories_DLC,
-                    Item_MsgBndID_DS1.Description_Accessories_DLC,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS1.Title_Magic_DLC,
-                    null,
-                    Item_MsgBndID_DS1.Description_Magic_DLC,
-                    null));
-                break;
-
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                break;
-
-            case ProjectType.BB:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_BB.Title_Goods,
-                    Item_MsgBndID_BB.Summary_Goods,
-                    Item_MsgBndID_BB.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_BB.Title_Weapons,
-                    Item_MsgBndID_BB.Summary_Weapons,
-                    Item_MsgBndID_BB.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_BB.Title_Armor,
-                    Item_MsgBndID_BB.Summary_Armor,
-                    Item_MsgBndID_BB.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_BB.Title_Accessories,
-                    Item_MsgBndID_BB.Summary_Accessories,
-                    Item_MsgBndID_BB.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_BB.Title_Magic,
-                    Item_MsgBndID_BB.Summary_Magic,
-                    Item_MsgBndID_BB.Description_Magic,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_BB.Title_Blood_Gem,
-                    Menu_MsgBndID_BB.Summary_Blood_Gem,
-                    Menu_MsgBndID_BB.Description_Blood_Gem,
-                    null));
-
-                break;
-
-            case ProjectType.DS3:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Goods,
-                    Item_MsgBndID_DS3.Summary_Goods,
-                    Item_MsgBndID_DS3.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Weapons,
-                    Item_MsgBndID_DS3.Summary_Weapons,
-                    Item_MsgBndID_DS3.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Armor,
-                    Item_MsgBndID_DS3.Summary_Armor,
-                    Item_MsgBndID_DS3.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Accessories,
-                    Item_MsgBndID_DS3.Summary_Accessories,
-                    Item_MsgBndID_DS3.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Magic,
-                    Item_MsgBndID_DS3.Summary_Magic,
-                    Item_MsgBndID_DS3.Description_Magic,
-                    null));
-
-                // DLC1
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Goods_DLC1,
-                    Item_MsgBndID_DS3.Summary_Goods_DLC1,
-                    Item_MsgBndID_DS3.Description_Goods_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Weapons_DLC1,
-                    null,
-                    Item_MsgBndID_DS3.Description_Weapons_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Armor_DLC1,
-                    null,
-                    Item_MsgBndID_DS3.Description_Armor_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Accessories_DLC1,
-                    Item_MsgBndID_DS3.Summary_Accessories_DLC1,
-                    Item_MsgBndID_DS3.Description_Accessories_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Magic_DLC1,
-                    Item_MsgBndID_DS3.Summary_Magic_DLC1,
-                    Item_MsgBndID_DS3.Description_Magic_DLC1,
-                    null));
-
-                // DLC2
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Goods_DLC2,
-                    Item_MsgBndID_DS3.Summary_Goods_DLC2,
-                    Item_MsgBndID_DS3.Description_Goods_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Weapons_DLC2,
-                    null,
-                    Item_MsgBndID_DS3.Description_Weapons_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Armor_DLC2,
-                    null,
-                    Item_MsgBndID_DS3.Description_Armor_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Accessories_DLC2,
-                    Item_MsgBndID_DS3.Summary_Accessories_DLC2,
-                    Item_MsgBndID_DS3.Description_Accessories_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DS3.Title_Magic_DLC2,
-                    Item_MsgBndID_DS3.Summary_Magic_DLC2,
-                    Item_MsgBndID_DS3.Description_Magic_DLC2,
-                    null));
-                break;
-
-            case ProjectType.SDT:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_SDT.Title_Goods,
-                    Item_MsgBndID_SDT.Summary_Goods,
-                    Item_MsgBndID_SDT.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_SDT.Title_Weapons,
-                    Item_MsgBndID_SDT.Summary_Weapons,
-                    Item_MsgBndID_SDT.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_SDT.Title_Armor,
-                    Item_MsgBndID_SDT.Summary_Armor,
-                    Item_MsgBndID_SDT.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_SDT.Title_Accessories,
-                    Item_MsgBndID_SDT.Summary_Accessories,
-                    Item_MsgBndID_SDT.Description_Accessories,
-                    null));
-                break;
-            
-            case ProjectType.ER:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Goods,
-                    Item_MsgBndID_ER.Summary_Goods,
-                    Item_MsgBndID_ER.Description_Goods,
-                    Item_MsgBndID_ER.Effect_Goods));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Weapons,
-                    Item_MsgBndID_ER.Summary_Weapons,
-                    Item_MsgBndID_ER.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Armor,
-                    Item_MsgBndID_ER.Summary_Armor,
-                    Item_MsgBndID_ER.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Accessories,
-                    Item_MsgBndID_ER.Summary_Accessories,
-                    Item_MsgBndID_ER.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Magic,
-                    Item_MsgBndID_ER.Summary_Magic,
-                    Item_MsgBndID_ER.Description_Magic,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Ash_of_War,
-                    Item_MsgBndID_ER.Summary_Ash_of_War,
-                    Item_MsgBndID_ER.Description_Ash_of_War,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Skill,
-                    null,
-                    Item_MsgBndID_ER.Description_Skill,
-                    null));
-
-                // DLC 1
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Goods_DLC1,
-                    Item_MsgBndID_ER.Summary_Goods_DLC1,
-                    Item_MsgBndID_ER.Description_Goods_DLC1,
-                    Item_MsgBndID_ER.Effect_Goods_DLC1));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Weapons_DLC1,
-                    Item_MsgBndID_ER.Summary_Weapons_DLC1,
-                    Item_MsgBndID_ER.Description_Weapons_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Armor_DLC1,
-                    Item_MsgBndID_ER.Summary_Armor_DLC1,
-                    Item_MsgBndID_ER.Description_Armor_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Accessories_DLC1,
-                    Item_MsgBndID_ER.Summary_Accessories_DLC1,
-                    Item_MsgBndID_ER.Description_Accessories_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Magic_DLC1,
-                    Item_MsgBndID_ER.Summary_Magic_DLC1,
-                    Item_MsgBndID_ER.Description_Magic_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Ash_of_War_DLC1,
-                    Item_MsgBndID_ER.Summary_Ash_of_War_DLC1,
-                    Item_MsgBndID_ER.Description_Ash_of_War_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Skill_DLC1,
-                    null,
-                    Item_MsgBndID_ER.Description_Skill_DLC1,
-                    null));
-
-                // DLC 2
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Goods_DLC2,
-                    Item_MsgBndID_ER.Summary_Goods_DLC2,
-                    Item_MsgBndID_ER.Description_Goods_DLC2,
-                    Item_MsgBndID_ER.Effect_Goods_DLC2));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Weapons_DLC2,
-                    Item_MsgBndID_ER.Summary_Weapons_DLC2,
-                    Item_MsgBndID_ER.Description_Weapons_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Armor_DLC2,
-                    Item_MsgBndID_ER.Summary_Armor_DLC2,
-                    Item_MsgBndID_ER.Description_Armor_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Accessories_DLC2,
-                    Item_MsgBndID_ER.Summary_Accessories_DLC2,
-                    Item_MsgBndID_ER.Description_Accessories_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Magic_DLC2,
-                    Item_MsgBndID_ER.Summary_Magic_DLC2,
-                    Item_MsgBndID_ER.Description_Magic_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Ash_of_War_DLC2,
-                    Item_MsgBndID_ER.Summary_Ash_of_War_DLC2,
-                    Item_MsgBndID_ER.Description_Ash_of_War_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ER.Title_Skill_DLC2,
-                    null,
-                    Item_MsgBndID_ER.Description_Skill_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Loading_Title,
-                    null,
-                    Menu_MsgBndID_ER.Loading_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Tutorial_Title,
-                    null,
-                    Menu_MsgBndID_ER.Tutorial_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Loading_Title_DLC1,
-                    null,
-                    Menu_MsgBndID_ER.Loading_Text_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Tutorial_Title_DLC1,
-                    null,
-                    Menu_MsgBndID_ER.Tutorial_Text_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Loading_Title_DLC2,
-                    null,
-                    Menu_MsgBndID_ER.Loading_Text_DLC2,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ER.Tutorial_Title_DLC2,
-                    null,
-                    Menu_MsgBndID_ER.Tutorial_Text_DLC2,
-                    null));
-
-                break;
-
-            case ProjectType.AC6:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_AC6.Title_Weapons,
-                    null,
-                    Item_MsgBndID_AC6.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_AC6.Title_Armor,
-                    null,
-                    Item_MsgBndID_AC6.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_AC6.Title_Generator,
-                    null,
-                    Item_MsgBndID_AC6.Description_Generator,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_AC6.Title_Booster,
-                    null,
-                    Item_MsgBndID_AC6.Description_Booster,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_AC6.Title_FCS,
-                    null,
-                    Item_MsgBndID_AC6.Description_FCS,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_AC6.Archive_Name,
-                    null,
-                    Menu_MsgBndID_AC6.Archive_Content,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_AC6.Mission_Name,
-                    Menu_MsgBndID_AC6.Mission_Objective,
-                    Menu_MsgBndID_AC6.Mission_Overview,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_AC6.Loading_Title,
-                    null,
-                    Menu_MsgBndID_AC6.Loading_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_AC6.Tutorial_Title,
-                    null,
-                    Menu_MsgBndID_AC6.Tutorial_Text,
-                    null));
-                break;
-
-
-            case ProjectType.NR:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Goods,
-                    Item_MsgBndID_NR.Summary_Goods,
-                    Item_MsgBndID_NR.Description_Goods,
-                    Item_MsgBndID_NR.Effect_Goods));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Weapons,
-                    Item_MsgBndID_NR.Summary_Weapons,
-                    Item_MsgBndID_NR.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Armor,
-                    Item_MsgBndID_NR.Summary_Armor,
-                    Item_MsgBndID_NR.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Accessories,
-                    Item_MsgBndID_NR.Summary_Accessories,
-                    Item_MsgBndID_NR.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Magic,
-                    Item_MsgBndID_NR.Summary_Magic,
-                    Item_MsgBndID_NR.Description_Magic,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Skill,
-                    Item_MsgBndID_NR.Summary_Skill,
-                    Item_MsgBndID_NR.Description_Skill,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Antique,
-                    Item_MsgBndID_NR.Summary_Antique,
-                    Item_MsgBndID_NR.Description_Antique,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_PermanentBuff,
-                    Item_MsgBndID_NR.Summary_PermanentBuff,
-                    Item_MsgBndID_NR.Description_PermanentBuff,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_AttachEffect,
-                    Item_MsgBndID_NR.Summary_AttachEffect,
-                    null,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Loading_Title,
-                    null,
-                    Menu_MsgBndID_NR.Loading_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Personal_Scenario_Title,
-                    null,
-                    Menu_MsgBndID_NR.Personal_Scenario_Body,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Tutorial_Title,
-                    null,
-                    Menu_MsgBndID_NR.Tutorial_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.SpEffect_Name,
-                    Menu_MsgBndID_NR.SpEffect_Info,
-                    Menu_MsgBndID_NR.SpEffect_Caption,
-                    null));
-
-                // DLC1
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Goods_DLC1,
-                    Item_MsgBndID_NR.Summary_Goods_DLC1,
-                    Item_MsgBndID_NR.Description_Goods_DLC1,
-                    Item_MsgBndID_NR.Effect_Goods_DLC1));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Weapons_DLC1,
-                    Item_MsgBndID_NR.Summary_Weapons_DLC1,
-                    Item_MsgBndID_NR.Description_Weapons_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Accessories_DLC1,
-                    Item_MsgBndID_NR.Summary_Accessories_DLC1,
-                    Item_MsgBndID_NR.Description_Accessories_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Magic_DLC1,
-                    Item_MsgBndID_NR.Summary_Magic_DLC1,
-                    Item_MsgBndID_NR.Description_Magic_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Skill_DLC1,
-                    Item_MsgBndID_NR.Summary_Skill_DLC1,
-                    Item_MsgBndID_NR.Description_Skill_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_Antique_DLC1,
-                    Item_MsgBndID_NR.Summary_Antique_DLC1,
-                    Item_MsgBndID_NR.Description_Antique_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_PermanentBuff_DLC1,
-                    Item_MsgBndID_NR.Summary_PermanentBuff_DLC1,
-                    Item_MsgBndID_NR.Description_PermanentBuff_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_NR.Title_AttachEffect_DLC1,
-                    Item_MsgBndID_NR.Summary_AttachEffect_DLC1,
-                    null,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Personal_Scenario_Title_DLC1,
-                    null,
-                    Menu_MsgBndID_NR.Personal_Scenario_Body_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Tutorial_Title_DLC1,
-                    null,
-                    Menu_MsgBndID_NR.Tutorial_Text_DLC1,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.SpEffect_Name_DLC1,
-                    Menu_MsgBndID_NR.SpEffect_Info_DLC1,
-                    Menu_MsgBndID_NR.SpEffect_Caption,
-                    null));
-                break;
-
-
-            case ProjectType.DB_NT:
-                // Vanilla
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_Goods,
-                    Item_MsgBndID_DB_NT.Summary_Goods,
-                    Item_MsgBndID_DB_NT.Description_Goods,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_Weapons,
-                    Item_MsgBndID_DB_NT.Summary_Weapons,
-                    Item_MsgBndID_DB_NT.Description_Weapons,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_Armor,
-                    Item_MsgBndID_DB_NT.Summary_Armor,
-                    Item_MsgBndID_DB_NT.Description_Armor,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_Accessories,
-                    Item_MsgBndID_DB_NT.Summary_Accessories,
-                    Item_MsgBndID_DB_NT.Description_Accessories,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_Skill,
-                    Item_MsgBndID_DB_NT.Summary_Skill,
-                    Item_MsgBndID_DB_NT.Description_Skill,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_PersonMat,
-                    Item_MsgBndID_DB_NT.Summary_PersonMat,
-                    Item_MsgBndID_DB_NT.Description_PersonMat,
-                    Item_MsgBndID_DB_NT.Effect_PersonMat));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_ProfileMat,
-                    Item_MsgBndID_DB_NT.Summary_ProfileMat,
-                    Item_MsgBndID_DB_NT.Description_ProfileMat,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_FamilyTreeSheet,
-                    Item_MsgBndID_DB_NT.Summary_FamilyTreeSheet,
-                    Item_MsgBndID_DB_NT.Description_FamilyTreeSheet,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_DB_NT.Title_TribeAction,
-                    Item_MsgBndID_DB_NT.Summary_TribeAction,
-                    Item_MsgBndID_DB_NT.Description_TribeAction,
-                    Item_MsgBndID_DB_NT.Effect_TribeAction));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Tutorial_Title,
-                    null,
-                    Menu_MsgBndID_DB_NT.Tutorial_Text,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Single_Play_Mission_Title,
-                    Menu_MsgBndID_DB_NT.Single_Play_Mission_Summary,
-                    null,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Theme_Title,
-                    Menu_MsgBndID_DB_NT.Theme_Summary,
-                    null,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Theme_Block_Title,
-                    Menu_MsgBndID_DB_NT.Theme_Block_Summary,
-                    Menu_MsgBndID_DB_NT.Theme_Block_Description,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.EnvEvent_Title,
-                    Menu_MsgBndID_DB_NT.EnvEvent_Summary,
-                    Menu_MsgBndID_DB_NT.EnvEvent_Description,
-                    Menu_MsgBndID_DB_NT.EnvEvent_Effect));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Buddy_Title,
-                    Menu_MsgBndID_DB_NT.Buddy_Summary,
-                    Menu_MsgBndID_DB_NT.Buddy_Description,
-                    null));
-
-                groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_DB_NT.Tips_Text_Title,
-                    null,
-                    Menu_MsgBndID_DB_NT.Tips_Text_Description,
-                    null));
-
-                break;
-        }
-
-        return groupings;
-    }
-
 }
 
 /// <summary>
-/// Represents a BND ID grouping, e.g. which BND IDs should be a Title, Summary, etc
+/// One slot of a group definition: which FMG, and what it holds
+/// </summary>
+public class EntryGroupSlot
+{
+    public const string TitleMeaning = "Title";
+
+    public string Meaning { get; }
+    public int FmgID { get; }
+
+    public EntryGroupSlot(string meaning, int fmgId)
+    {
+        Meaning = meaning.Trim();
+        FmgID = fmgId;
+    }
+
+    /// <summary>
+    /// The title slot: the ID field shows its ID, the Entry Creator's incremental template is
+    /// added to it, and its box is sized for one line
+    /// </summary>
+    public bool IsTitle => SameMeaning(Meaning, TitleMeaning);
+
+    /// <summary>
+    /// The localized label (TEXT_GroupSlot_&lt;Meaning&gt;) when there is one, otherwise the meaning itself
+    /// </summary>
+    public string Label
+    {
+        get
+        {
+            var key = $"TEXT_GroupSlot_{Meaning.Replace(' ', '_')}";
+
+            return LOC.Has(key) ? LOC.Get(key) : Meaning;
+        }
+    }
+
+    public static bool SameMeaning(string a, string b) =>
+        string.Equals(a?.Trim(), b?.Trim(), StringComparison.OrdinalIgnoreCase);
+}
+
+/// <summary>
+/// A group definition: the FMG binder IDs whose same-ID entries belong together, in slot order
 /// </summary>
 public class EntryGroupAssociation
 {
-    public Enum Title { get; set; }
-    public bool SupportsTitle { get; set; }
+    public string Name { get; }
 
-    public Enum Summary { get; set; }
-    public bool SupportsSummary { get; set; }
+    public IReadOnlyList<EntryGroupSlot> Slots { get; }
 
-    public Enum Description { get; set; }
-    public bool SupportsDescription { get; set; }
-
-    public Enum Effect { get; set; }
-    public bool SupportsEffect { get; set; }
-
-    public EntryGroupAssociation(Enum titleEnum, Enum summaryEnum, Enum descriptionEnum, Enum effectEnum)
+    public EntryGroupAssociation(TextEntryGroupDefinition definition)
     {
-        Title = titleEnum;
-        Summary = summaryEnum;
-        Description = descriptionEnum;
-        Effect = effectEnum;
-
-        if (titleEnum != null)
-        {
-            SupportsTitle = true;
-        }
-        if (summaryEnum != null)
-        {
-            SupportsSummary = true;
-        }
-        if (descriptionEnum != null)
-        {
-            SupportsDescription = true;
-        }
-        if (effectEnum != null)
-        {
-            SupportsEffect = true;
-        }
-
-        TitleID = ToBinderID(titleEnum);
-        SummaryID = ToBinderID(summaryEnum);
-        DescriptionID = ToBinderID(descriptionEnum);
-        EffectID = ToBinderID(effectEnum);
+        Name = definition.Name ?? "";
+        Slots = definition.Slots
+            .Select(s => new EntryGroupSlot(s.Meaning, s.FmgID))
+            .ToList();
     }
 
-    /// <summary>
-    /// Binder ID used for a slot the group doesn't have. Convert.ToInt32(null) is 0,
-    /// so an empty slot used to match a real FMG with binder ID 0.
-    /// </summary>
-    public const int NoBinderID = int.MinValue;
-
-    private static int ToBinderID(Enum value) => value == null ? NoBinderID : Convert.ToInt32(value);
-
-    private readonly int TitleID;
-    private readonly int SummaryID;
-    private readonly int DescriptionID;
-    private readonly int EffectID;
-
-    public string GetTitleEnumName()
-    {
-        return $"{Title}";
-    }
-    public int GetTitleEnumID()
-    {
-        return TitleID;
-    }
-
-    public string GetSummaryEnumName()
-    {
-        return $"{Summary}";
-    }
-    public int GetSummaryEnumID()
-    {
-        return SummaryID;
-    }
-
-    public string GetDescriptionEnumName()
-    {
-        return $"{Description}";
-    }
-    public int GetDescriptionEnumID()
-    {
-        return DescriptionID;
-    }
-
-    public string GetEffectEnumName()
-    {
-        return $"{Effect}";
-    }
-    public int GetEffectEnumID()
-    {
-        return EffectID;
-    }
+    public bool Contains(int fmgId) => Slots.Any(s => s.FmgID == fmgId);
 }
 
 /// <summary>
-/// Represents a FMG Entry Group, which is an arbitary grouping of FMG Entries 
-/// based on a Entry Group Association that the currently selected FMG Entry belongs to.
+/// One slot of an entry's group: the slot, the FMG that holds it in the container, and the
+/// entry with the group's ID in that FMG (null when the FMG has no such entry yet)
+/// </summary>
+public class FmgEntryGroupSlot
+{
+    public EntryGroupSlot Slot { get; init; }
+    public TextFmgWrapper Wrapper { get; init; }
+    public FMG.Entry Entry { get; init; }
+
+    public string Meaning => Slot.Meaning;
+    public string Label => Slot.Label;
+    public bool IsTitle => Slot.IsTitle;
+}
+
+/// <summary>
+/// The group of entries the selected FMG entry belongs to: for each slot of its FMG's group,
+/// the entry with the same ID. Slots whose FMG the container doesn't have are left out.
 /// </summary>
 public class FmgEntryGroup
 {
-    public FMG.Entry Title { get; set; }
-    public bool SupportsTitle { get; set; }
+    /// <summary>
+    /// The selected FMG is in a group. If false, the Contents panel shows the simple editor.
+    /// </summary>
+    public bool SupportsGrouping { get; }
 
-    public FMG.Entry Summary { get; set; }
-    public bool SupportsSummary { get; set; }
+    public List<FmgEntryGroupSlot> Slots { get; } = new();
 
-    public FMG.Entry Description { get; set; }
-    public bool SupportsDescription { get; set; }
-
-    public FMG.Entry Effect { get; set; }
-    public bool SupportsEffect { get; set; }
+    public FmgEntryGroupSlot TitleSlot => Slots.FirstOrDefault(s => s.IsTitle);
 
     /// <summary>
-    /// If this is false, fallback to Simple Editor in Group Editor mode
+    /// The title slot's entry, or null when the group has no title slot or no entry in it
     /// </summary>
-    public bool SupportsGrouping = false;
+    public FMG.Entry Title => TitleSlot?.Entry;
 
-    private readonly FmgEntryLookup Lookup;
+    /// <summary>
+    /// The entries the group has, in slot order
+    /// </summary>
+    public IEnumerable<FMG.Entry> Entries => Slots.Select(s => s.Entry).Where(e => e != null);
 
     public FmgEntryGroup(TextEntryGroupManager entryManager,
         TextContainerWrapper containerInfo,
@@ -1033,82 +214,44 @@ public class FmgEntryGroup
         FMG.Entry baseEntry,
         FmgEntryLookup lookup = null)
     {
-        Lookup = lookup;
+        var association = entryManager.GetAssociation(selectedFmgInfo.ID);
 
-        var targetBinderID = selectedFmgInfo.ID;
+        if (association == null)
+            return;
 
-        var associationGroup = entryManager.GetGroupings()
-            .Where(e => 
-            e.GetTitleEnumID() == targetBinderID || 
-            e.GetSummaryEnumID() == targetBinderID ||
-            e.GetDescriptionEnumID() == targetBinderID ||
-            e.GetEffectEnumID() == targetBinderID)
-            .FirstOrDefault();
+        SupportsGrouping = true;
 
-        if(associationGroup != null)
+        foreach (var slot in association.Slots)
         {
-            SupportsGrouping = true;
+            var wrapper = containerInfo.FmgWrappers.FirstOrDefault(w => w.ID == slot.FmgID);
 
-            if (associationGroup.SupportsTitle)
-                SupportsTitle = true;
+            if (wrapper?.File == null)
+                continue;
 
-            if (associationGroup.SupportsSummary)
-                SupportsSummary = true;
-
-            if (associationGroup.SupportsDescription)
-                SupportsDescription = true;
-
-            if (associationGroup.SupportsEffect)
-                SupportsEffect = true;
-
-            Title = SetGroupEntry(containerInfo, 
-                associationGroup.GetTitleEnumID(), 
-                baseEntry);
-
-            Summary = SetGroupEntry(containerInfo, 
-                associationGroup.GetSummaryEnumID(), 
-                baseEntry);
-
-            Description = SetGroupEntry(containerInfo, 
-                associationGroup.GetDescriptionEnumID(), 
-                baseEntry);
-
-            Effect = SetGroupEntry(containerInfo, 
-                associationGroup.GetEffectEnumID(), 
-                baseEntry);
+            Slots.Add(new FmgEntryGroupSlot
+            {
+                Slot = slot,
+                Wrapper = wrapper,
+                Entry = FindEntry(wrapper.File, baseEntry, lookup)
+            });
         }
     }
 
-    public FMG.Entry SetGroupEntry(TextContainerWrapper containerInfo, int targetBndId, FMG.Entry baseEntry)
+    private static FMG.Entry FindEntry(FMG fmg, FMG.Entry baseEntry, FmgEntryLookup lookup)
     {
-        // The group has no FMG for this slot
-        if (targetBndId == EntryGroupAssociation.NoBinderID)
-            return null;
+        // The slot is the selected entry's own FMG: use the entry itself. Finding it by ID took
+        // the first entry with that ID, so with duplicate IDs the Contents panel, Delete and
+        // Duplicate acted on a different entry than the one selected.
+        if (fmg == baseEntry.Parent)
+            return baseEntry;
 
-        foreach (var fmg in containerInfo.FmgWrappers)
+        if (lookup != null)
+            return lookup.Find(fmg, baseEntry.ID);
+
+        for (var i = 0; i < fmg.Entries.Count; i++)
         {
-            if (fmg.ID == targetBndId)
-            {
-                // The slot is the selected entry's own FMG: use the entry itself. Finding it by
-                // ID took the first entry with that ID, so with duplicate IDs the Contents panel,
-                // Delete and Duplicate acted on a different entry than the one selected.
-                if (fmg.File == baseEntry.Parent)
-                    return baseEntry;
-
-                if (Lookup != null)
-                {
-                    return Lookup.Find(fmg.File, baseEntry.ID);
-                }
-
-                for(var i = 0; i < fmg.File.Entries.Count; i++)
-                { 
-                    var curEntry = fmg.File.Entries[i];
-                    if (curEntry.ID == baseEntry.ID)
-                    {
-                        return curEntry;
-                    }
-                }
-            }
+            if (fmg.Entries[i].ID == baseEntry.ID)
+                return fmg.Entries[i];
         }
 
         return null;

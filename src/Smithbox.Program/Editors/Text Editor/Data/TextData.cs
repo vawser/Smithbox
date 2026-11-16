@@ -23,6 +23,11 @@ public class TextData : IDisposable
 
     public IncrementalTemplates Templates = new();
 
+    /// <summary>
+    /// The game's text entry groups (Assets/FMG/&lt;game&gt;/Text Entry Groups.json)
+    /// </summary>
+    public TextEntryGroupDefinitions EntryGroups = new();
+
     public TextData(ProjectEntry project)
     {
         Project = project;
@@ -52,6 +57,9 @@ public class TextData : IDisposable
         {
             Smithbox.Log(this, LOC.Get("TEXT_Data_FMG_Descriptor_Setup_PASS"));
         }
+
+        // Text Entry Groups
+        await SetupEntryGroups();
 
         // Templates
         Task<bool> templatesTask = SetupIncrementalTemplates();
@@ -186,6 +194,75 @@ public class TextData : IDisposable
 
         return true;
     }
+    #endregion
+
+    #region Text Entry Groups
+
+    /// <summary>
+    /// Load the game's entry group definitions. A missing file means the game has no groups.
+    /// Groups are checked here so the editor can trust them: at most MaxSlots slots, each with a
+    /// meaning, and no FMG twice in one group.
+    /// </summary>
+    public async Task<bool> SetupEntryGroups()
+    {
+        await Task.Yield();
+
+        EntryGroups = new();
+
+        var file = Path.Combine(AppContext.BaseDirectory, "Assets", "FMG",
+            ProjectUtils.GetGameDirectory(Project), "Text Entry Groups.json");
+
+        if (!File.Exists(file))
+            return true;
+
+        TextEntryGroupDefinitions loaded;
+
+        try
+        {
+            var filestring = await File.ReadAllTextAsync(file);
+            loaded = JsonSerializer.Deserialize(filestring, TextEditorJsonSerializerContext.Default.TextEntryGroupDefinitions);
+        }
+        catch (Exception e)
+        {
+            Smithbox.LogError(this, LOC.Get("TEXT_Data_Entry_Groups_Read_FAIL", file), e);
+            return false;
+        }
+
+        foreach (var group in loaded?.Groups ?? new())
+        {
+            if (group?.Slots == null)
+                continue;
+
+            var name = group.Name ?? "";
+
+            // Drop slots without a meaning, and an FMG listed twice in the group
+            var seenFmgs = new HashSet<int>();
+            var slots = group.Slots
+                .Where(s => s != null && !string.IsNullOrWhiteSpace(s.Meaning) && seenFmgs.Add(s.FmgID))
+                .ToList();
+
+            if (slots.Count < group.Slots.Count)
+            {
+                Smithbox.LogWarning(this, LOC.Get("TEXT_Data_Entry_Groups_Invalid_Slots", name, group.Slots.Count - slots.Count));
+            }
+
+            if (slots.Count > TextEntryGroupDefinition.MaxSlots)
+            {
+                Smithbox.LogWarning(this, LOC.Get("TEXT_Data_Entry_Groups_Too_Many_Slots",
+                    name, slots.Count, TextEntryGroupDefinition.MaxSlots));
+
+                slots = slots.Take(TextEntryGroupDefinition.MaxSlots).ToList();
+            }
+
+            if (slots.Count == 0)
+                continue;
+
+            EntryGroups.Groups.Add(new TextEntryGroupDefinition { Name = group.Name, Slots = slots });
+        }
+
+        return true;
+    }
+
     #endregion
 
     #region FMG Descriptors

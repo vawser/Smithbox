@@ -1,0 +1,125 @@
+{
+  "Groups": [
+    {
+      "Name": "Weapons",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 11
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 21
+        }
+      ]
+    },
+    {
+      "Name": "Armors",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 12
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 22
+        }
+      ]
+    },
+    {
+      "Name": "Generators",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 35
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 36
+        }
+      ]
+    },
+    {
+      "Name": "Boosters",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 38
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 39
+        }
+      ]
+    },
+    {
+      "Name": "FCS",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 41
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 42
+        }
+      ]
+    },
+    {
+      "Name": "Archive Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 65
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 66
+        }
+      ]
+    },
+    {
+      "Name": "Mission Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 60
+        },
+        {
+          "Meaning": "Summary",
+          "FmgID": 62
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 61
+        }
+      ]
+    },
+    {
+      "Name": "Loading Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 207
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 208
+        }
+      ]
+    },
+    {
+      "Name": "Tutorial Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 73
+        },
+        {
+          "Meaning": "Description",
+          "FmgID": 74
+        }
+      ]
+    }
+  ]
+}
