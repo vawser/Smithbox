@@ -27,7 +27,7 @@ public static class EditorHost
     /// <summary>Width of the editor rail, which the host area starts after</summary>
     public static float RailWidth => CFG.Current.Interface_Editor_Rail_Text_Labels
         ? EditorRail.TextRailWidth()
-        : MathF.Round(ImGui.GetFrameHeight() * 2.0f);
+        : MathF.Round(ImGui.GetFrameHeight() * 2.0f * EditorRail.IconScale);
 
     /// <summary>
     /// Begins a top-level editor's window over the host area. Pair with <see cref="ImGui.End"/> as for
@@ -69,6 +69,10 @@ public static class EditorRail
 
     /// <summary>True when the user has a custom rail order, which drops the category separators</summary>
     public static bool HasCustomOrder => CFG.Current.Interface_Editor_Rail_Order is { Count: > 0 };
+
+    /// <summary>The icon button scale, clamped in case the config was edited by hand</summary>
+    public static float IconScale => Math.Clamp(CFG.Current.Interface_Editor_Rail_Icon_Scale,
+        CFG.MinRailIconScale, CFG.MaxRailIconScale);
 
     /// <summary>Every editor with a rail button, as its id and name key, in the default rail order</summary>
     public static IEnumerable<(string Id, string LabelKey)> AllEditors()
@@ -233,6 +237,10 @@ public static class EditorRail
 
         if (ImGui.Begin("##editorRail", flags))
         {
+            // The icons are font glyphs, so they grow with the buttons by scaling this window's font. Names
+            // keep the normal size, as the text rail is sized to fit them.
+            ImGui.SetWindowFontScale(CFG.Current.Interface_Editor_Rail_Text_Labels ? 1.0f : IconScale);
+
             var buttonSize = railWidth - padding * 2;
 
             // Project Editor, always present

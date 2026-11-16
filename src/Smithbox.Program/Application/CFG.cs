@@ -159,6 +159,11 @@ public class CFG
     public bool Interface_Allow_Window_Movement = true;
     public bool Interface_Editor_Rail_Text_Labels = false;
 
+    // Size of the editor rail's icon buttons and their icons, as a multiple of the default
+    public float Interface_Editor_Rail_Icon_Scale = 1.0f;
+    public const float MinRailIconScale = 0.5f;
+    public const float MaxRailIconScale = 3.0f;
+
     // The editor rail's button order as editor ids, set by ctrl+dragging the buttons. Empty is the registry's
     // order, grouped by category.
     public List<string> Interface_Editor_Rail_Order = new List<string>();

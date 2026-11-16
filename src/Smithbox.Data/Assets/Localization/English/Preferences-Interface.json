@@ -33,6 +33,18 @@
       "Text": "If enabled, the editor rail shows each editor as a button with its name. Otherwise, it shows icon buttons."
     },
     {
+      "Key": "PREF_Interface_Editor_Rail_Icon_Scale",
+      "Text": "Editor Rail Icon Scale"
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Icon_Scale_TT",
+      "Text": "Adjusts the size of the editor rail's icon buttons and their icons. Has no effect while editor names are shown."
+    },
+    {
+      "Key": "PREF_Interface_Editor_Rail_Icon_Scale_Reset",
+      "Text": "Reset"
+    },
+    {
       "Key": "PREF_Interface_Editor_Rail_Order",
       "Text": "Editor Rail Order"
     },

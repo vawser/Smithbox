@@ -74,17 +74,18 @@ public enum SectionCategory
     [Display(Name = "PREF_Category_UI_Editor_Presentation")]
     EditorPresentation = 300,
 
+    // Sections are listed by value (after General), so this puts the Editor Rail third
+    [Display(Name = "PREF_Category_UI_Editor_Rail")]
+    EditorRail = 301,
+
     [Display(Name = "PREF_Category_UI_Fonts")]
-    Fonts = 301,
+    Fonts = 302,
 
     [Display(Name = "PREF_Category_UI_Theme")]
-    Theme = 302,
+    Theme = 303,
 
     [Display(Name = "PREF_Category_UI_Theme_Builder")]
-    ThemeBuilder = 303,
-
-    [Display(Name = "PREF_Category_UI_Editor_Rail")]
-    EditorRail = 304,
+    ThemeBuilder = 304,
 
     // Viewport
     [Display(Name = "PREF_Category_Viewport_Rendering")]

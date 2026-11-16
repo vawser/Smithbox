@@ -247,11 +247,42 @@ public class InterfacePrefs
         };
     }
 
-    public static PreferenceItem Interface_Editor_Rail_Order()
+    public static PreferenceItem Interface_Editor_Rail_Icon_Scale()
     {
         return new PreferenceItem
         {
             OrderID = 1,
+            Category = PreferenceCategory.Interface,
+            Spacer = true,
+            InlineName = false,
+
+            Section = SectionCategory.EditorRail,
+
+            Title = "PREF_Interface_Editor_Rail_Icon_Scale",
+            Description = "PREF_Interface_Editor_Rail_Icon_Scale_TT",
+
+            Draw = () => {
+                DPI.ApplyInputWidth();
+                // AlwaysClamp keeps a typed (ctrl+click) value inside the range
+                ImGui.SliderFloat("##inputValue", ref CFG.Current.Interface_Editor_Rail_Icon_Scale,
+                    CFG.MinRailIconScale, CFG.MaxRailIconScale, "%.2f", ImGuiSliderFlags.AlwaysClamp);
+
+                ImGui.SameLine();
+
+                if (ImGui.Button($"{LOC.Get("PREF_Interface_Editor_Rail_Icon_Scale_Reset")}##resetRailIconScale",
+                        DPI.SelectorButtonSize))
+                {
+                    CFG.Current.Interface_Editor_Rail_Icon_Scale = CFG.Default.Interface_Editor_Rail_Icon_Scale;
+                }
+            }
+        };
+    }
+
+    public static PreferenceItem Interface_Editor_Rail_Order()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 2,
             Category = PreferenceCategory.Interface,
             Spacer = true,
 
@@ -278,7 +309,7 @@ public class InterfacePrefs
     {
         return new PreferenceItem
         {
-            OrderID = 2,
+            OrderID = 3,
             Category = PreferenceCategory.Interface,
             Spacer = false,
 
@@ -293,7 +324,7 @@ public class InterfacePrefs
     public static List<PreferenceItem> Interface_Editor_Rail_Colors()
     {
         var items = new List<PreferenceItem>();
-        var order = 3;
+        var order = 4;
 
         foreach (var (id, labelKey) in EditorRail.AllEditors())
         {
