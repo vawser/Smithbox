@@ -38,6 +38,21 @@ public class EmevdEventList
 
         ImGui.BeginChild("emevdEventListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("emevdEditor_EventList", ref Filter, ref ExactFilter);
+
+        // Toggle: line counts
+        GUI.DisplayToggleButton("emevdEventCountToggle", Icons.Hashtag,
+            ref CFG.Current.EmevdEditor_Event_List_Display_Line_Count,
+            "EMEVD_EventList_Count_Toggle_Hide",
+            "EMEVD_EventList_Count_Toggle_Show",
+            "EMEVD_EventList_Count_Toggle_TT");
+
+        // Toggle: aliases
+        GUI.DisplayToggleButton("emevdEventAliasToggle", Icons.StickyNote,
+            ref CFG.Current.EmevdEditor_Event_List_Display_Aliases,
+            "EMEVD_EventList_Alias_Toggle_Hide",
+            "EMEVD_EventList_Alias_Toggle_Show",
+            "EMEVD_EventList_Alias_Toggle_TT");
+
         ImGui.EndChild();
 
         ImGui.BeginChild("emevdEventList", Vector2.Zero, ImGuiChildFlags.Borders);
@@ -98,7 +113,7 @@ public class EmevdEventList
         {
             var index = Visible.IndexOf(selection.SelectedEvent);
             if (index >= 0)
-                ImGui.SetScrollY(index * ImGui.GetTextLineHeightWithSpacing());
+                GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), index);
 
             selection.ScrollToEvent = false;
         }
@@ -125,20 +140,41 @@ public class EmevdEventList
                     ImGui.EndPopup();
                 }
 
-                ImGui.SameLine();
-
-                var name = DisplayName(file, ev);
+                var name = CFG.Current.EmevdEditor_Event_List_Display_Aliases ? DisplayName(file, ev) : "";
                 if (!string.IsNullOrEmpty(name))
                 {
-                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                     ImGui.SameLine();
+                    ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                 }
 
-                ImGui.TextDisabled(LOC.Get("EMEVD_EventList_Event_Info", ev.Instructions.Count));
+                if (CFG.Current.EmevdEditor_Event_List_Display_Line_Count)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextDisabled(LOC.Get("EMEVD_EventList_Event_Info", ev.Instructions.Count));
+                }
             }
         }
 
         clipper.End();
+
+        HandleKeys();
+    }
+
+    /// <summary>Up / Down step through the visible events while the list has focus</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive() || Visible.Count == 0)
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var selection = View.Selection;
+        var at = selection.SelectedEvent == null ? -1 : Visible.IndexOf(selection.SelectedEvent);
+
+        selection.SelectEvent(Visible[Math.Clamp(at + dir, 0, Visible.Count - 1)]);
+        selection.ScrollToEvent = true;
     }
 
     /// <summary>The event's alias, else its .emeld name, else empty</summary>

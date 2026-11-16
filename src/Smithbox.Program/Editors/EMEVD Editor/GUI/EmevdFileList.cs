@@ -33,6 +33,21 @@ public class EmevdFileList
 
         ImGui.BeginChild("emevdFileListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("emevdEditor_FileList", ref Filter, ref ExactFilter);
+
+        // Toggle: event counts
+        GUI.DisplayToggleButton("emevdFileCountToggle", Icons.Hashtag,
+            ref CFG.Current.EmevdEditor_File_List_Display_Event_Count,
+            "EMEVD_FileList_Count_Toggle_Hide",
+            "EMEVD_FileList_Count_Toggle_Show",
+            "EMEVD_FileList_Count_Toggle_TT");
+
+        // Toggle: aliases
+        GUI.DisplayToggleButton("emevdFileAliasToggle", Icons.StickyNote,
+            ref CFG.Current.EmevdEditor_File_List_Display_Aliases,
+            "EMEVD_FileList_Alias_Toggle_Hide",
+            "EMEVD_FileList_Alias_Toggle_Show",
+            "EMEVD_FileList_Alias_Toggle_TT");
+
         ImGui.EndChild();
 
         ImGui.BeginChild("emevdFileList", Vector2.Zero, ImGuiChildFlags.Borders);
@@ -44,17 +59,41 @@ public class EmevdFileList
                 ImGui.TextDisabled(LOC.Get("EMEVD_FileList_No_Files"));
 
             var aliases = Aliases;
+            Visible.Clear();
 
             foreach (var file in bank.Files)
             {
                 if (!EditorFilters.IsMatch(Filter, file.Name, ExactFilter, aliases?.FileAlias(file) ?? ""))
                     continue;
 
+                Visible.Add(file);
                 DrawFile(file);
             }
+
+            HandleKeys();
         }
 
         ImGui.EndChild();
+    }
+
+    /// <summary>The files drawn this frame (those matching the filter), top to bottom</summary>
+    private readonly List<EmevdFileWrapper> Visible = new();
+
+    /// <summary>Up / Down step through the visible files while the list has focus</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive() || Visible.Count == 0)
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var selection = View.Selection;
+        var at = selection.SelectedFile == null ? -1 : Visible.IndexOf(selection.SelectedFile);
+
+        selection.SelectFile(Visible[Math.Clamp(at + dir, 0, Visible.Count - 1)]);
+        ScrollToSelection = true;
     }
 
     private void DrawFile(EmevdFileWrapper file)
@@ -82,13 +121,15 @@ public class EmevdFileList
             ImGui.EndPopup();
         }
 
+        // Centre the selection only when it's out of view, so stepping with the arrow keys doesn't recentre every press
         if (selected && ScrollToSelection)
         {
-            ImGui.SetScrollHereY();
+            if (!GUI.IsLastItemFullyInView())
+                ImGui.SetScrollHereY();
             ScrollToSelection = false;
         }
 
-        if (!string.IsNullOrEmpty(alias))
+        if (CFG.Current.EmevdEditor_File_List_Display_Aliases && !string.IsNullOrEmpty(alias))
         {
             ImGui.SameLine();
             ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
@@ -100,7 +141,7 @@ public class EmevdFileList
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
             GUI.Tooltip(file.LoadError);
         }
-        else if (file.IsLoaded)
+        else if (file.IsLoaded && CFG.Current.EmevdEditor_File_List_Display_Event_Count)
         {
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("EMEVD_FileList_Event_Count", file.Emevd.Events.Count));

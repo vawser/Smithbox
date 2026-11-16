@@ -312,6 +312,47 @@ public static class GUI
         return ImGui.IsItemDeactivatedAfterEdit() && !ImGui.IsKeyPressed(ImGuiKey.Escape, false);
     }
 
+    /// <summary>
+    /// True when the last item lies wholly inside the current window's visible area (vertically). Lets a list scroll
+    /// to its selection only when needed, so stepping with the arrow keys doesn't recentre it every press.
+    /// </summary>
+    public static bool IsLastItemFullyInView()
+    {
+        var top = ImGui.GetWindowPos().Y;
+        var bottom = top + ImGui.GetWindowHeight();
+        return ImGui.GetItemRectMin().Y >= top && ImGui.GetItemRectMax().Y <= bottom;
+    }
+
+    /// <summary>
+    /// For a list stepped with the arrow keys: +1 for Down, -1 for Up, else 0. Arrows with Ctrl, Alt or Shift are
+    /// left alone, as those are other shortcuts (Alt+Up / Down reorders, for one).
+    /// Call it only while the list's window has focus and no field is being edited.
+    /// </summary>
+    public static int ListStepKey()
+    {
+        var io = ImGui.GetIO();
+        if (io.KeyCtrl || io.KeyAlt || io.KeyShift)
+            return 0;
+
+        return ImGui.IsKeyPressed(ImGuiKey.DownArrow) ? 1 : ImGui.IsKeyPressed(ImGuiKey.UpArrow) ? -1 : 0;
+    }
+
+    /// <summary>
+    /// Scrolls a clipped list (rows of one text line each, starting at <paramref name="startY"/>, the cursor Y before
+    /// the clipper) so row <paramref name="index"/> is visible: only when it's out of view, and then centred, so
+    /// stepping with the arrow keys doesn't move the list until the selection reaches its edge.
+    /// </summary>
+    public static void ScrollClippedRowIntoView(float startY, int index)
+    {
+        var lineHeight = ImGui.GetTextLineHeightWithSpacing();
+        var itemTop = startY + index * lineHeight;
+        var viewTop = ImGui.GetScrollY();
+        var viewHeight = ImGui.GetWindowHeight();
+
+        if (itemTop < viewTop || itemTop + lineHeight > viewTop + viewHeight)
+            ImGui.SetScrollY(Math.Max(0f, itemTop - (viewHeight - lineHeight) * 0.5f));
+    }
+
     public static void Tooltip(string desc)
     {
         if (ImGui.IsItemHovered())

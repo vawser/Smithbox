@@ -135,10 +135,17 @@ public partial class FxEffectList
         if (Mode == FxListFilter.UsesResource && !Usage.HasScan)
             ScanProgress();
 
+        DrawnLists.Clear();
         if (CFG.Current.FxEditor_EffectList_Group_By_Binder)
             DisplayGrouped();
         else
-            DisplayRows(Cache, true);
+            DisplayRows(Cache, true, "");
+
+        // A step's scroll waits for its list; a group collapsed meanwhile drops it
+        if (StepScrollKey != null && !DrawnLists.Any(l => l.Key == StepScrollKey))
+            StepScrollKey = null;
+
+        HandleKeys();
 
         ImGui.EndChild();
 
@@ -268,9 +275,14 @@ public partial class FxEffectList
 
     // ---------------------------------------------------------------- rows
 
-    /// <summary>A clipped list of rows; <paramref name="focus"/> lets it scroll to a jumped-to effect.</summary>
-    private void DisplayRows(List<FxEntry> rows, bool focus)
+    /// <summary>
+    /// A clipped list of rows; <paramref name="focus"/> lets it scroll to a jumped-to effect. <paramref name="key"/>
+    /// names the list for the arrow keys: the binder's path when grouped, "" for the flat list.
+    /// </summary>
+    private void DisplayRows(List<FxEntry> rows, bool focus, string key)
     {
+        DrawnLists.Add((key, rows));
+
         var clipper = new ImGuiListClipper();
         clipper.Begin(rows.Count);
 
@@ -281,12 +293,66 @@ public partial class FxEffectList
         else if (focus)
             Editor.Selection.FocusEntry = false;
 
+        // ... and the row the arrow keys stepped to, so it can be scrolled to
+        int stepIndex = StepEntry != null && key == StepScrollKey ? rows.IndexOf(StepEntry) : -1;
+        if (stepIndex >= 0)
+            clipper.IncludeItemByIndex(stepIndex);
+
         while (clipper.Step())
         {
             for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
-                DisplayRow(rows, rows[i], i == focusIndex);
+                DisplayRow(rows, rows[i], i == focusIndex, i == stepIndex);
         }
         clipper.End();
+    }
+
+    // ---------------------------------------------------------------- arrow keys
+
+    /// <summary>The lists drawn this frame, top to bottom: the flat list, or each open binder group.</summary>
+    private readonly List<(string Key, List<FxEntry> Rows)> DrawnLists = new();
+
+    /// <summary>The effect the arrow keys last stepped to, and the list it was in (an effect can be in several groups).</summary>
+    private FxEntry StepEntry;
+    private string StepKey;
+
+    /// <summary>The list holding a row just stepped to, until it is scrolled into view; null once done.</summary>
+    private string StepScrollKey;
+
+    /// <summary>Up / Down step through the effects shown (collapsed groups are skipped) while the list has focus.</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused(ImGuiFocusedFlags.RootAndChildWindows) || ImGui.IsAnyItemActive())
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var flat = DrawnLists.SelectMany(l => l.Rows.Select(e => (l.Key, Entry: e))).ToList();
+        if (flat.Count == 0)
+            return;
+
+        // Where we are: the row last stepped to while it's still selected, else the selected effect's first row
+        var selected = Editor.Selection.Entry;
+        int at = -1;
+        if (selected != null && StepEntry == selected)
+            at = flat.FindIndex(r => r.Key == StepKey && r.Entry == selected);
+        if (at < 0 && selected != null)
+            at = flat.FindIndex(r => r.Entry == selected);
+
+        var (key, entry) = flat[Math.Clamp(at + dir, 0, flat.Count - 1)];
+
+        // A plain step, like a plain click: the picked set is just this effect
+        Picked.Clear();
+        Anchor = entry;
+        Select(entry);
+
+        if (Editor.Selection.Entry == entry)
+        {
+            StepEntry = entry;
+            StepKey = key;
+            StepScrollKey = key;
+        }
     }
 
     /// <summary>
@@ -314,7 +380,7 @@ public partial class FxEffectList
 
             if (open)
             {
-                DisplayRows(rows, focusBinder != null && path == focusBinder);
+                DisplayRows(rows, focusBinder != null && path == focusBinder, path);
                 ImGui.TreePop();
             }
         }
@@ -337,7 +403,7 @@ public partial class FxEffectList
         return set.Where(e => Bank.Entries.TryGetValue(e.Id, out var x) && x == e).OrderBy(e => e.Id).ToList();
     }
 
-    private void DisplayRow(List<FxEntry> rows, FxEntry entry, bool focus)
+    private void DisplayRow(List<FxEntry> rows, FxEntry entry, bool focus, bool stepped)
     {
         // Marks: favorite, then how it compares with the game's copy
         var marks = "";
@@ -364,6 +430,13 @@ public partial class FxEffectList
         {
             Editor.Selection.FocusEntry = false;
             ImGui.SetScrollHereY(0.5f);
+        }
+        else if (stepped)
+        {
+            // An arrow-key step scrolls only when the row is out of view, so the list holds still until the edge
+            StepScrollKey = null;
+            if (!GUI.IsLastItemFullyInView())
+                ImGui.SetScrollHereY(0.5f);
         }
 
         if (CFG.Current.FxEditor_EffectList_Display_Aliases && !string.IsNullOrEmpty(entry.Alias))

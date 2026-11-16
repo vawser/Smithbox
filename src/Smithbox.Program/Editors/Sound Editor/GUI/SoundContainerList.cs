@@ -51,6 +51,17 @@ public class SoundContainerList
 
         BuildRows(data.Containers);
 
+        HandleKeys();
+
+        // Scrolls before the rows are drawn, so the clipper draws the rows now in view
+        if (ScrollToSelection)
+        {
+            int row = Rows.FindIndex(r => r.Container == View.SelectedContainer);
+            if (row >= 0)
+                GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), row);
+            ScrollToSelection = false;
+        }
+
         var clipper = new ImGuiListClipper();
         clipper.Begin(Rows.Count);
         while (clipper.Step())
@@ -66,15 +77,37 @@ public class SoundContainerList
         }
         clipper.End();
 
-        if (ScrollToSelection)
+        ImGui.EndChild();
+    }
+
+    /// <summary>Up / Down step through the banks shown (group rows are skipped) while the list has focus</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive())
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        int at = View.SelectedContainer == null ? -1 : Rows.FindIndex(r => r.Container == View.SelectedContainer);
+
+        // From nothing selected, either key picks the first bank
+        if (at < 0)
         {
-            int row = Rows.FindIndex(r => r.Container == View.SelectedContainer);
-            if (row >= 0)
-                ImGui.SetScrollY(row * ImGui.GetTextLineHeightWithSpacing() - ImGui.GetWindowHeight() / 2);
-            ScrollToSelection = false;
+            at = -1;
+            dir = 1;
         }
 
-        ImGui.EndChild();
+        for (int i = at + dir; i >= 0 && i < Rows.Count; i += dir)
+        {
+            if (Rows[i].Container == null)
+                continue;
+
+            View.SelectContainer(Rows[i].Container);
+            ScrollToSelection = true;
+            return;
+        }
     }
 
     private void DrawGroupRow(string group, int count)

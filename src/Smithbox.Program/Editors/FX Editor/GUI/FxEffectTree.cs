@@ -138,6 +138,8 @@ public class FxEffectTree
             return;
         }
 
+        TreeRows.Clear();
+
         var effect = Data.Effect(entry);
         Notes.EnsureLoaded(entry);
         RefreshInfo(entry);
@@ -170,6 +172,7 @@ public class FxEffectTree
                     stateLabel = $"{stateLabel} {LOC.Get("FX_EffectTree_State_Previewed")}";
 
                 bool open = ImGui.TreeNodeEx($"{stateLabel}##fxState_{i}", flags);
+                TreeRow(state.Source);
                 if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
                     Editor.Selection.SelectItem(state.Source);
                 if (state.Source is FxrState fxrState)
@@ -190,6 +193,12 @@ public class FxEffectTree
         // Nodes
         int id = 0;
         DisplayNode(entry, effect.Root, null, ref id, 0, false);
+
+        // A step's scroll waits for its row; a branch collapsed meanwhile drops it
+        if (StepScrollItem != null && !TreeRows.Any(r => ReferenceEquals(r, StepScrollItem)))
+            StepScrollItem = null;
+
+        HandleKeys();
 
         ImGui.EndChild();
 
@@ -281,6 +290,7 @@ public class FxEffectTree
             ImGui.SetNextItemOpen(true, ImGuiCond.Always);
 
         bool open = ImGui.TreeNodeEx($"{label}##fxNode_{nodeId}", flags);
+        TreeRow(node.Source);
 
         if (colored)
             ImGui.PopStyleColor();
@@ -328,6 +338,7 @@ public class FxEffectTree
 
                     int configId = id++;
                     bool copen = ImGui.TreeNodeEx($"{cfgLabel}##fxConfig_{configId}", cflags);
+                    TreeRow(config.Source);
                     if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
                         Editor.Selection.SelectItem(config.Source);
                     if (fxrNode != null && config.Source is FxrConfig fxrConfig)
@@ -361,11 +372,58 @@ public class FxEffectTree
         if (Editor.Selection.IsSelected(action.Source)) flags |= ImGuiTreeNodeFlags.Selected;
 
         ImGui.TreeNodeEx($"{FxNames.Action(action)}##fxAction_{actionId}", flags);
+        TreeRow(action.Source);
         if (ImGui.IsItemClicked())
             Editor.Selection.SelectItem(action.Source);
 
         if (action.Source is FxrAction fxrAction)
             DisplayActionContextMenu(entry, fxrAction, actionId);
+    }
+
+    // ---------------------------------------------------------------- arrow keys
+
+    /// <summary>The selectable rows drawn this frame, top to bottom: states, nodes, configs and actions (their sources).</summary>
+    private readonly List<object> TreeRows = new();
+
+    /// <summary>The row the arrow keys just stepped to, until it is scrolled into view.</summary>
+    private object StepScrollItem;
+
+    /// <summary>Records a row just drawn (the last item), and scrolls to it when it was just stepped to.</summary>
+    private void TreeRow(object source)
+    {
+        if (source == null)
+            return;
+
+        TreeRows.Add(source);
+
+        // Only when it's out of view, so the tree holds still until the selection reaches its edge
+        if (StepScrollItem != null && ReferenceEquals(source, StepScrollItem))
+        {
+            StepScrollItem = null;
+            if (!GUI.IsLastItemFullyInView())
+                ImGui.SetScrollHereY(0.5f);
+        }
+    }
+
+    /// <summary>
+    /// Up / Down step through the rows shown (collapsed branches are skipped) while the tree has focus. Alt+Up / Down
+    /// stay the reorder shortcuts.
+    /// </summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive() || TreeRows.Count == 0)
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var item = Editor.Selection.Item;
+        int at = item == null ? -1 : TreeRows.FindIndex(r => ReferenceEquals(r, item));
+
+        var next = TreeRows[Math.Clamp(at + dir, 0, TreeRows.Count - 1)];
+        Editor.Selection.SelectItem(next);
+        StepScrollItem = next;
     }
 
     /// <summary>The eye before each node: hides the node, and everything under it, in playback. Alt+click solos it.</summary>

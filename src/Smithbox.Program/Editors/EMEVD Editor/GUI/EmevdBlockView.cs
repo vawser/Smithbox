@@ -57,6 +57,21 @@ public class EmevdBlockView
     // The popup edits a call arg from its in-place form: the name of the arg it sets there
     private string PopupSetsName;
 
+    // The filter bar: blocks whose names and values don't match draw grey; Go To steps through the matching lines.
+    // Matches are worked out per line (so a line hidden in a collapsed block can still be found), then per row.
+    private string FilterText = "";
+    private bool FilterExact;
+    private EmevdScript FilterScriptFor;
+    private string FilterFor;
+    private bool FilterExactFor;
+    private bool FilterInlineFor;
+    private bool[] LineMatches;
+    private List<EmevdRow> FilterRowsFor;
+    private bool[] RowMatches;
+    private int MatchCount;
+
+    private bool Filtering => !string.IsNullOrWhiteSpace(FilterText);
+
     private const float LaneWidth = 7f;
     private const float RowGap = 2f;
 
@@ -239,6 +254,8 @@ public class EmevdBlockView
         _ = CurrentScript;
 
         DrawHeader();
+        UpdateMatches();
+        DrawFilterBar();
 
         ImGui.BeginChild("emevdScript", Vector2.Zero, ImGuiChildFlags.Borders);
 
@@ -298,6 +315,223 @@ public class EmevdBlockView
         }
 
         ImGui.EndChild();
+    }
+
+    // ---------------------------------------------------------------- filter
+
+    private void DrawFilterBar()
+    {
+        ImGui.BeginChild("emevdScriptFilter", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
+        ImGui.BeginDisabled(Script == null);
+
+        ImGui.Checkbox("##emevdScriptFilterExact", ref FilterExact);
+        GUI.Tooltip(LOC.Get("EDITOR_List_Filter_Exact_Match_TT"));
+
+        ImGui.SameLine();
+        var goToLabel = $"{LOC.Get("EMEVD_Filter_Go_To")}##emevdScriptFilterGoTo";
+        var count = Filtering ? LOC.Get("EMEVD_Filter_Matches", MatchCount) : "";
+        var style = ImGui.GetStyle();
+        var rightW = ImGui.CalcTextSize(LOC.Get("EMEVD_Filter_Go_To")).X + style.FramePadding.X * 2 + style.ItemSpacing.X
+            + (count.Length > 0 ? ImGui.CalcTextSize(count).X + style.ItemSpacing.X : 0f);
+        ImGui.SetNextItemWidth(Math.Max(120f * DPI.UIScale(), ImGui.GetContentRegionAvail().X - rightW));
+        ImGui.InputTextWithHint("##emevdScriptFilterText", LOC.Get("EMEVD_Filter_Hint"), ref FilterText, 255);
+        GUI.Tooltip(LOC.Get("EMEVD_Filter_TT", EditorFilters.SplitChr, EditorFilters.OR_Chr));
+
+        // The filter applies as it's typed; Enter in the field also goes to the next match
+        var enterGoTo = ImGui.IsItemDeactivated() && ImGui.IsKeyPressed(ImGuiKey.Enter, false);
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(!Filtering);
+        if ((ImGui.Button(goToLabel) || enterGoTo) && Filtering)
+        {
+            UpdateMatches();
+            GoToNextMatch();
+        }
+        ImGui.EndDisabled();
+        GUI.Tooltip(LOC.Get("EMEVD_Filter_Go_To_TT"));
+
+        if (count.Length > 0)
+        {
+            ImGui.SameLine();
+            if (MatchCount == 0)
+                ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, count);
+            else
+                ImGui.TextDisabled(count);
+        }
+
+        ImGui.EndDisabled();
+        ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Recomputes which lines match the filter when the script or the filter changed, and which rows when the rows
+    /// changed (collapsing a block rebuilds them)
+    /// </summary>
+    private void UpdateMatches()
+    {
+        if (Script == null)
+        {
+            LineMatches = null;
+            RowMatches = null;
+            FilterScriptFor = null;
+            FilterRowsFor = null;
+            MatchCount = 0;
+            return;
+        }
+
+        var inline = CFG.Current.EmevdEditor_Inline_MustSub_Calls;
+        var linesStale = !ReferenceEquals(FilterScriptFor, Script) || FilterFor != FilterText || FilterExactFor != FilterExact
+            || FilterInlineFor != inline || LineMatches?.Length != Script.Lines.Count;
+
+        if (linesStale)
+        {
+            FilterScriptFor = Script;
+            FilterFor = FilterText;
+            FilterExactFor = FilterExact;
+            FilterInlineFor = inline;
+            LineMatches = new bool[Script.Lines.Count];
+            MatchCount = 0;
+            FilterRowsFor = null;
+
+            if (Filtering)
+            {
+                for (var l = 0; l < Script.Lines.Count; l++)
+                {
+                    LineMatches[l] = LineMatchesFilter(Script.Lines[l]);
+                    if (LineMatches[l])
+                        MatchCount++;
+                }
+            }
+        }
+
+        if (ReferenceEquals(FilterRowsFor, Rows) && RowMatches?.Length == Rows.Count)
+            return;
+
+        FilterRowsFor = Rows;
+        RowMatches = new bool[Rows.Count];
+
+        if (!Filtering)
+            return;
+
+        for (var r = 0; r < Rows.Count; r++)
+        {
+            if (Rows[r].Kind == EmevdRowKind.Line)
+                RowMatches[r] = LineMatches[Rows[r].Line];
+        }
+
+        // A collapsed header stays lit when a line it hides matches
+        foreach (var (line, row) in HiddenRow)
+        {
+            if (LineMatches[line] && row >= 0 && row < RowMatches.Length)
+                RowMatches[row] = true;
+        }
+
+        // A C-block's foot and a switch's Default divider follow their header
+        for (var r = 0; r < Rows.Count; r++)
+        {
+            if (Rows[r].Kind != EmevdRowKind.Line && Rows[r].Line >= 0 && Rows[r].Line < LineRow.Length)
+                RowMatches[r] = RowMatches[LineRow[Rows[r].Line]];
+        }
+    }
+
+    /// <summary>The names and values a block shows, matched against the filter</summary>
+    private bool LineMatchesFilter(EmevdLine line)
+    {
+        var fields = new List<string>();
+
+        void AddLine(EmevdLine l)
+        {
+            fields.Add(l.Name);
+            fields.Add(l.Key);
+
+            if (!l.Decoded.Fits)
+                return;
+
+            foreach (var arg in l.Decoded.Args)
+            {
+                fields.Add(EmevdFormat.ArgName(arg));
+                fields.Add(l.Params.TryGetValue(arg.Offset, out var p)
+                    ? EmevdScript.SlotName(p.SourceStartByte, p.ByteCount)
+                    : EmevdFormat.Value(Catalog, arg));
+            }
+        }
+
+        AddLine(line);
+
+        // A MustSub call shown in place: what it's drawn as, and the event it runs
+        if (Inlined(line) is { } inlined)
+        {
+            AddLine(inlined.Line);
+            fields.Add(EmevdFormat.EventLabel(inlined.Target));
+        }
+        else if (line.Kind == EmevdBlockKind.Call && !line.CallTargetIsParam && line.CallTarget >= 0)
+        {
+            var (file, ev) = ResolveCall(line);
+            if (ev != null)
+            {
+                fields.Add(EmevdFormat.EventLabel(ev));
+                fields.Add(ev.ID.ToString());
+                if (file != null && file != View.Selection.SelectedFile)
+                    fields.Add(file.Name);
+            }
+        }
+
+        fields.RemoveAll(string.IsNullOrEmpty);
+        if (fields.Count == 0)
+            return false;
+
+        // Each field on its own (so exact matching works on a single name or value), and, when not exact, all of the
+        // block's text together (so "a+b" can find a and b in different chips of the same block)
+        if (fields.Any(f => EditorFilters.IsMatch(FilterText, f, FilterExact)))
+            return true;
+        return !FilterExact && EditorFilters.IsMatch(FilterText, string.Join("\n", fields), false);
+    }
+
+    private bool IsDimmed(int r) => Filtering && RowMatches != null && r < RowMatches.Length && !RowMatches[r];
+
+    /// <summary>
+    /// Selects the next matching line after the selected one (or from the top), wrapping round; a line hidden in a
+    /// collapsed block is revealed by the scroll
+    /// </summary>
+    private void GoToNextMatch()
+    {
+        if (Script == null || MatchCount == 0 || LineMatches == null)
+            return;
+
+        var count = Script.Lines.Count;
+        var start = View.Selection.InstructionIndex;
+
+        for (var step = 1; step <= count; step++)
+        {
+            // start is -1 with the hat (or nothing) selected: the search begins at the first line
+            var l = ((start + step) % count + count) % count;
+            if (!LineMatches[l])
+                continue;
+
+            View.Selection.SelectInstruction(l);
+            View.Selection.ScrollToInstruction = true;
+            return;
+        }
+    }
+
+    /// <summary>
+    /// Turns the vertices drawn since `from` grey (their brightness kept, squeezed toward mid-grey), so a block that
+    /// doesn't match the filter reads as greyed out whatever colours it was drawn with (as the ESD Editor's state view)
+    /// </summary>
+    private static unsafe void Grey(ImDrawListPtr drawList, int from)
+    {
+        var vtx = drawList.VtxBuffer;
+        var data = vtx.Data;
+        for (var i = from; i < vtx.Size; i++)
+        {
+            var col = data[i].Col;
+            var r = col & 0xFF;
+            var g = (col >> 8) & 0xFF;
+            var b = (col >> 16) & 0xFF;
+            var a = col & 0xFF000000;
+            var lum = (uint)Math.Clamp((r * 0.299f + g * 0.587f + b * 0.114f) * 0.45f + 45f, 0f, 255f);
+            data[i].Col = a | (lum << 16) | (lum << 8) | lum;
+        }
     }
 
     private void HandleKeys()
@@ -434,10 +668,21 @@ public class EmevdBlockView
 
             var color = ImGui.GetColorU32(EmevdFormat.BlockColor(Script.Lines[row.Line]));
             var x = blockX0 + row.Depth * indent;
+            var armVtx = drawList.VtxBuffer.Size;
             drawList.AddRectFilled(new Vector2(x, linesTop + tops[r] + blockH), new Vector2(x + armW, linesTop + tops[row.EndRow]), color);
+            if (IsDimmed(r))
+                Grey(drawList, armVtx);
         }
 
         for (var r = first; r <= last && r < Rows.Count; r++)
+        {
+            var rowVtx = drawList.VtxBuffer.Size;
+            DrawRow(r);
+            if (IsDimmed(r))
+                Grey(drawList, rowVtx);
+        }
+
+        void DrawRow(int r)
         {
             var row = Rows[r];
             var top = linesTop + tops[r];
@@ -457,7 +702,7 @@ public class EmevdBlockView
                 ImGui.InvisibleButton($"##emevdSection{r}", new Vector2(blockX1 - x, h));
                 GUI.Tooltip(LOC.Get("EMEVD_Script_Default_TT"));
                 DropTarget(View.Structure.TargetOf(row));
-                continue;
+                return;
             }
 
             if (row.Kind == EmevdRowKind.BlockEnd)
@@ -471,7 +716,7 @@ public class EmevdBlockView
                 ImGui.InvisibleButton($"##emevdFoot{r}", new Vector2(blockX1 - x, footH));
                 GUI.Tooltip(LOC.Get("EMEVD_Script_Foot_TT"));
                 DropTarget(View.Structure.TargetOf(row));
-                continue;
+                return;
             }
 
             var line = Script.Lines[row.Line];

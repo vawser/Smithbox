@@ -1345,6 +1345,10 @@ public class CFG
     public bool EmevdEditor_Allow_Unmodified_Save = false;
     public bool EmevdEditor_Allow_Automatic_Save = true;
     public bool Interface_EmevdEditor_ToolWindow = true;
+    public bool EmevdEditor_File_List_Display_Aliases = true;
+    public bool EmevdEditor_File_List_Display_Event_Count = true;
+    public bool EmevdEditor_Event_List_Display_Aliases = true;
+    public bool EmevdEditor_Event_List_Display_Line_Count = true;
     #endregion
 
     #region ESD Editor

@@ -113,20 +113,9 @@ public class EsdMachineList
         if (selection.ScrollToMachine && selection.SelectedMachine is long sel)
         {
             var index = Visible.IndexOf(sel);
+            // Only scrolls when the entry is out of view, so clicking a visible entry doesn't move the list
             if (index >= 0)
-            {
-                // Only scroll when the entry is out of view, and then center it,
-                // so clicking a visible entry doesn't move the list
-                var lineHeight = ImGui.GetTextLineHeightWithSpacing();
-                var itemTop = ImGui.GetCursorPosY() + index * lineHeight;
-                var itemBottom = itemTop + lineHeight;
-                var viewTop = ImGui.GetScrollY();
-                var viewHeight = ImGui.GetWindowHeight();
-                var viewBottom = viewTop + viewHeight;
-
-                if (itemTop < viewTop || itemBottom > viewBottom)
-                    ImGui.SetScrollY(Math.Max(0f, itemTop - (viewHeight - lineHeight) * 0.5f));
-            }
+                GUI.ScrollClippedRowIntoView(ImGui.GetCursorPosY(), index);
             selection.ScrollToMachine = false;
         }
 
@@ -190,12 +179,32 @@ public class EsdMachineList
 
         clipper.End();
 
+        HandleKeys();
+
         // Right-click on empty space: a new machine (no alias: there's no machine yet)
         if (ImGui.BeginPopupContextWindow("##esdMachinesMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
         {
             View.Commands.MachineMenu(null);
             ImGui.EndPopup();
         }
+    }
+
+    /// <summary>Up / Down step through the visible machines while the list has focus</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive() || Visible.Count == 0)
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var selection = View.Selection;
+        var at = selection.SelectedMachine is long sel ? Visible.IndexOf(sel) : -1;
+        var next = Math.Clamp(at + dir, 0, Visible.Count - 1);
+
+        // SetMachine raises ScrollToMachine, which scrolls only when the row is out of view
+        selection.SelectMachine(Visible[next]);
     }
 
     /// <summary>

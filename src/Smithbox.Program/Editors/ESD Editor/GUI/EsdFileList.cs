@@ -92,6 +92,8 @@ public class EsdFileList
 
         ImGui.BeginChild("esdFileList", Vector2.Zero, ImGuiChildFlags.Borders);
 
+        Rows.Clear();
+
         var bank = Bank;
         if (bank != null)
         {
@@ -116,9 +118,47 @@ public class EsdFileList
             }
         }
 
+        HandleKeys();
+
         DrawNamePopup();
 
         ImGui.EndChild();
+    }
+
+    /// <summary>The rows drawn this frame, top to bottom: a container (File null) or an ESD of an open binder</summary>
+    private readonly List<(EsdContainer Container, EsdFileWrapper File)> Rows = new();
+
+    /// <summary>Up / Down step through the drawn rows (collapsed groups and binders are skipped) while the list has focus</summary>
+    private void HandleKeys()
+    {
+        if (!ImGui.IsWindowFocused() || ImGui.IsAnyItemActive() || Rows.Count == 0)
+            return;
+
+        var dir = GUI.ListStepKey();
+        if (dir == 0)
+            return;
+
+        var selection = View.Selection;
+
+        // A loose ESD's row is its container (which also selects its one ESD); a binder's row is selected with no ESD
+        var at = Rows.FindIndex(r => r.File != null
+            ? r.File == selection.SelectedFile
+            : r.Container == selection.SelectedContainer && (!r.Container.IsBinder || selection.SelectedFile == null));
+
+        var (container, file) = Rows[Math.Clamp(at + dir, 0, Rows.Count - 1)];
+
+        if (file != null)
+            selection.SelectFile(file);
+        else
+        {
+            selection.SelectContainer(container);
+
+            // Up from a binder's ESD to the binder itself: SelectContainer keeps the ESD (same container), so drop it
+            if (container.IsBinder)
+                selection.SelectFile(null);
+        }
+
+        ScrollToSelection = true;
     }
 
     /// <summary>What the name popup is for</summary>
@@ -343,6 +383,7 @@ public class EsdFileList
 
             if (ImGui.Selectable($"{container.Name}{(container.IsDirty || container.PendingRevert ? "*" : "")}##esdContainer_{container.Path}", selected))
                 selection.SelectContainer(container);
+            Rows.Add((container, null));
 
             if (ImGui.BeginPopupContextItem($"##esdContainerMenu_{container.Path}"))
             {
@@ -369,6 +410,7 @@ public class EsdFileList
 
         if (ImGui.IsItemClicked() && !ImGui.IsItemToggledOpen())
             selection.SelectContainer(container);
+        Rows.Add((container, null));
 
         if (ImGui.BeginPopupContextItem($"##esdContainerMenu_{container.Path}"))
         {
@@ -377,6 +419,7 @@ public class EsdFileList
             ImGui.EndPopup();
         }
 
+        Scroll(selection.SelectedContainer == container && selection.SelectedFile == null);
         AliasText(Aliases?.ContainerAlias(container));
         Markers(container, null);
 
@@ -398,6 +441,7 @@ public class EsdFileList
                 var selected = selection.SelectedFile == file;
                 if (ImGui.Selectable($"{file.Name}##esdFile_{container.Path}_{file.EntryName}", selected))
                     selection.SelectFile(file);
+                Rows.Add((container, file));
 
                 if (ImGui.BeginPopupContextItem($"##esdFileMenu_{container.Path}_{file.EntryName}"))
                 {
@@ -426,11 +470,16 @@ public class EsdFileList
         ImGui.TreePop();
     }
 
+    /// <summary>
+    /// Scrolls to the selected row when asked, centring it only when it's out of view, so stepping with the arrow keys
+    /// doesn't move the list until the selection reaches its edge
+    /// </summary>
     private void Scroll(bool selected)
     {
         if (selected && ScrollToSelection)
         {
-            ImGui.SetScrollHereY();
+            if (!GUI.IsLastItemFullyInView())
+                ImGui.SetScrollHereY();
             ScrollToSelection = false;
         }
     }
