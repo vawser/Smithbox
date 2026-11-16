@@ -37,7 +37,10 @@ public class AliasEntry : IComparable<AliasEntry>
                 string numA = a.Substring(startI, i - startI);
                 string numB = b.Substring(startJ, j - startJ);
 
-                int numCompare = int.Parse(numA).CompareTo(int.Parse(numB));
+                // long: ESD machine IDs (file:id) reach 2147483647, and a digit run past int's range mustn't throw
+                int numCompare = numA.Length > 18 || numB.Length > 18
+                    ? string.CompareOrdinal(numA.TrimStart('0').PadLeft(64, '0'), numB.TrimStart('0').PadLeft(64, '0'))
+                    : long.Parse(numA).CompareTo(long.Parse(numB));
                 if (numCompare != 0) return numCompare;
             }
             else

@@ -14,6 +14,11 @@ namespace SoulsFormats
         public bool LongFormat { get; set; }
 
         /// <summary>
+        /// The format version: 1 for DS2, 2 for ER.
+        /// </summary>
+        public int Version { get; set; } = 1;
+
+        /// <summary>
         /// Descriptions of built-in functions which can be used in the ESD file.
         /// </summary>
         public List<FunctionSpec> FunctionSpecs { get; set; }
@@ -62,8 +67,9 @@ namespace SoulsFormats
             br.VarintLong = LongFormat;
 
             br.AssertInt32(1);
-            br.AssertInt32(1);
-            br.AssertInt32(1);
+            // DS2's are version 1; ER's (from a debug build) version 2, with the same layout
+            Version = br.AssertInt32([1, 2]);
+            br.AssertInt32(Version);
             br.AssertInt32(0x7C);
             int dataSize = br.ReadInt32();
             br.AssertInt32(11);
@@ -178,7 +184,7 @@ namespace SoulsFormats
             Machines = new List<MachineDesc>();
             for (int i = 0; i < machineCount; i++)
             {
-                Machines.Add(new MachineDesc(br, strings, states, stateSize));
+                Machines.Add(new MachineDesc(br, strings, states, stateSize, Version, dataStart));
             }
 
             if (conditions.Count > 0 || commands.Count > 0 || passCommands.Count > 0 || states.Count > 0)
@@ -340,8 +346,9 @@ namespace SoulsFormats
 
             internal PassCommandDesc(BinaryReaderEx br, Dictionary<long, CommandDesc> commands, int commandSize)
             {
-                int commandOffset = br.ReadInt32();
-                int commandCount = br.ReadInt32();
+                // Varints: 0x10 bytes each in the long format (ER), as the header's pass command size says
+                long commandOffset = br.ReadVarint();
+                long commandCount = br.ReadVarint();
                 PassCommands = GetUniqueOffsetList(commandOffset, commandCount, commands, commandSize);
             }
         }
@@ -473,12 +480,26 @@ namespace SoulsFormats
                 States = new List<StateDesc>();
             }
 
-            internal MachineDesc(BinaryReaderEx br, List<string> strings, Dictionary<long, StateDesc> states, int stateSize)
+            internal MachineDesc(BinaryReaderEx br, List<string> strings, Dictionary<long, StateDesc> states, int stateSize, int version, long dataStart)
             {
                 ID = br.ReadInt32();
                 short nameIndex = br.ReadInt16();
                 Unk06 = br.ReadInt16();
-                short[] paramIndices = br.ReadInt16s(8);
+                short[] paramIndices;
+                if (version >= 2)
+                {
+                    // Version 2: the param names are a list (offset, count) of string indices instead of 8 inline
+                    long paramOffset = br.ReadVarint();
+                    long paramCount = br.ReadVarint();
+                    paramIndices = new short[8];
+                    Array.Fill(paramIndices, (short)-1);
+                    for (int i = 0; i < paramCount && i < 8; i++)
+                        paramIndices[i] = br.GetInt16(dataStart + paramOffset + i * 2);
+                }
+                else
+                {
+                    paramIndices = br.ReadInt16s(8);
+                }
                 br.AssertVarint(-1);
                 br.AssertVarint(0);
                 br.AssertVarint(-1);

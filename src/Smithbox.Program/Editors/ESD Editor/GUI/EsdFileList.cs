@@ -23,6 +23,50 @@ public class EsdFileList
 
     private EsdBank Bank => View.Project.Handler.EsdData?.PrimaryBank;
 
+    private EsdAliases Aliases => View.Project.Handler.EsdData?.Aliases;
+
+    private readonly EsdAliasMenu AliasMenu = new();
+
+    /// <summary>The container's alias submenu, at the top of its right-click menu</summary>
+    private void ContainerAliasMenu(EsdContainer container)
+    {
+        var aliases = Aliases;
+        if (aliases == null)
+            return;
+
+        if (AliasMenu.Draw("esdContainerAlias", aliases.ContainerAlias(container), LOC.Get("ESD_Alias_Menu_File_TT"), null, out var name))
+        {
+            aliases.SetContainerAlias(container, name);
+            ImGui.CloseCurrentPopup();
+        }
+        ImGui.Separator();
+    }
+
+    /// <summary>A binder entry's alias submenu, at the top of its right-click menu</summary>
+    private void FileAliasMenu(EsdFileWrapper file)
+    {
+        var aliases = Aliases;
+        if (aliases == null)
+            return;
+
+        if (AliasMenu.Draw("esdFileAlias", aliases.FileAlias(file), LOC.Get("ESD_Alias_Menu_File_TT"), null, out var name))
+        {
+            aliases.SetFileAlias(file, name);
+            ImGui.CloseCurrentPopup();
+        }
+        ImGui.Separator();
+    }
+
+    /// <summary>An alias after a list item's name, in the alias colour</summary>
+    private static void AliasText(string alias)
+    {
+        if (string.IsNullOrEmpty(alias))
+            return;
+
+        ImGui.SameLine();
+        ImGui.TextColored(UI.Current.ImGui_AliasName_Text, alias);
+    }
+
     public void Draw()
     {
         GUI.TitleHeader(LOC.Get("ESD_FileList_Header"), LOC.Get("ESD_FileList_Header_TT"));
@@ -261,11 +305,16 @@ public class EsdFileList
 
     private bool Matches(EsdContainer c)
     {
-        if (string.IsNullOrEmpty(Filter) || EditorFilters.IsMatch(Filter, c.Name, ExactFilter))
+        if (string.IsNullOrEmpty(Filter) || EditorFilters.IsMatch(Filter, c.Name, ExactFilter, Aliases?.ContainerAlias(c) ?? ""))
             return true;
 
-        // An opened binder also matches by its ESDs' names
-        return c.IsLoaded && c.Files.Any(f => EditorFilters.IsMatch(Filter, f.Name, ExactFilter));
+        // An opened binder also matches by its ESDs' names and aliases
+        return c.IsLoaded && c.Files.Any(FileMatches);
+    }
+
+    private bool FileMatches(EsdFileWrapper f)
+    {
+        return EditorFilters.IsMatch(Filter, f.Name, ExactFilter, Aliases?.FileAlias(f) ?? "");
     }
 
     private void DrawContainer(EsdContainer container)
@@ -282,11 +331,13 @@ public class EsdFileList
 
             if (ImGui.BeginPopupContextItem($"##esdContainerMenu_{container.Path}"))
             {
+                ContainerAliasMenu(container);
                 ContainerMenu(container);
                 ImGui.EndPopup();
             }
 
             Scroll(selected);
+            AliasText(Aliases?.ContainerAlias(container));
             Markers(container, file);
             return;
         }
@@ -306,10 +357,12 @@ public class EsdFileList
 
         if (ImGui.BeginPopupContextItem($"##esdContainerMenu_{container.Path}"))
         {
+            ContainerAliasMenu(container);
             ContainerMenu(container);
             ImGui.EndPopup();
         }
 
+        AliasText(Aliases?.ContainerAlias(container));
         Markers(container, null);
 
         if (!open)
@@ -322,8 +375,9 @@ public class EsdFileList
 
             foreach (var file in container.Files)
             {
-                if (!string.IsNullOrEmpty(Filter) && !EditorFilters.IsMatch(Filter, container.Name, ExactFilter)
-                    && !EditorFilters.IsMatch(Filter, file.Name, ExactFilter))
+                if (!string.IsNullOrEmpty(Filter)
+                    && !EditorFilters.IsMatch(Filter, container.Name, ExactFilter, Aliases?.ContainerAlias(container) ?? "")
+                    && !FileMatches(file))
                     continue;
 
                 var selected = selection.SelectedFile == file;
@@ -332,11 +386,13 @@ public class EsdFileList
 
                 if (ImGui.BeginPopupContextItem($"##esdFileMenu_{container.Path}_{file.EntryName}"))
                 {
+                    FileAliasMenu(file);
                     FileMenu(file);
                     ImGui.EndPopup();
                 }
 
                 Scroll(selected);
+                AliasText(Aliases?.FileAlias(file));
 
                 if (file.LoadError != null)
                 {

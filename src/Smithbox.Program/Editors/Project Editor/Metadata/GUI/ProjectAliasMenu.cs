@@ -1110,9 +1110,7 @@ public class ProjectAliasMenu
 
             string path = Path.Combine(projectFolder, $"{aliasType}.json");
 
-            if (!aliases.Any())
-                continue;
-
+            // An empty list is still written: the type's last alias was removed, and the project file must say so
             aliases.Sort();
 
             var options = new JsonSerializerOptions

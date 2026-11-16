@@ -382,6 +382,16 @@
     { "Key": "ESD_Edit_Delete_Called_Machine_Refused", "Text": "Another machine of the file calls this one. Remove those calls first (Properties lists the callers)." },
     { "Key": "ESD_Edit_Delete_Last_Machine_Refused", "Text": "An ESD needs at least one machine." },
     { "Key": "ESD_Edit_Machine_Range_Full", "Text": "No free sub-machine ID is left." },
-    { "Key": "ESD_Code_Inline_Target_TT", "Text": "When the test passes, the machine goes to state {0}, drawn inside this block." }
+    { "Key": "ESD_Code_Inline_Target_TT", "Text": "When the test passes, the machine goes to state {0}, drawn inside this block." },
+
+    { "Key": "ESD_Alias_Menu", "Text": "Alias" },
+    { "Key": "ESD_Alias_Menu_File_TT", "Text": "Sets this file's alias, stored with the project's ESD Files aliases. Leave the name empty and confirm to remove it." },
+    { "Key": "ESD_Alias_Menu_Machine_TT", "Text": "Sets this machine's alias, stored with the project's ESD Machines aliases as esd:id. An alias is shown in place of the machine's .edd name. Leave the name empty and confirm to remove it." },
+    { "Key": "ESD_Alias_Name", "Text": "Name" },
+    { "Key": "ESD_Alias_Edd_Name", "Text": ".edd name: {0}" },
+    { "Key": "ESD_Alias_Confirm", "Text": "Confirm" },
+    { "Key": "ESD_Alias_Confirm_TT", "Text": "Saves the alias to the project's alias folder. Leaving the name field after an edit (Enter, or clicking elsewhere) saves too; Escape discards the edit." },
+    { "Key": "ESD_Alias_Removed", "Text": "(removed)" },
+    { "Key": "ESD_Alias_Log_Updated", "Text": "Alias {0}: {1}" }
   ]
 }

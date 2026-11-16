@@ -200,7 +200,7 @@ public static class EditorRegistry
         },
         new()
         {
-            Id = "esd", LabelKey = "ESD_Editor_Stub", Icon = Icons.CodeFork, Category = EditorCategory.Scripting,
+            Id = "esd", LabelKey = "ESD_Editor_Stub", Icon = Icons.Hashtag, Category = EditorCategory.Scripting,
             IsAvailable = p => p.Descriptor.EnableEsdEditor &&
                                EditorConditions.SupportsEsdEditor(p.Descriptor.ProjectType) &&
                                p.Handler?.EsdEditorStub != null,

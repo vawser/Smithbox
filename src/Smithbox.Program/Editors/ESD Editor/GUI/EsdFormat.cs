@@ -25,11 +25,27 @@ public static class EsdFormat
         return cat?.Function(id)?.Name ?? $"f{id}";
     }
 
-    /// <summary>A machine's label: its id (or x&lt;n&gt; for a sub-machine), with DS2's .edd name when there is one</summary>
+    /// <summary>
+    /// A machine's label: its id (or x&lt;n&gt; for a sub-machine), with its alias, else DS2's .edd name, when there is one
+    /// </summary>
     public static string MachineLabel(EsdFileWrapper file, long id)
     {
         var label = EsdLayout.MachineLabel(id);
-        return file != null && file.MachineNames.TryGetValue(id, out var name) ? $"{label} {name}" : label;
+        var name = MachineName(file, id);
+        return name.Length > 0 ? $"{label} {name}" : label;
+    }
+
+    /// <summary>A machine's alias, else its .edd name, else empty</summary>
+    public static string MachineName(EsdFileWrapper file, long id)
+    {
+        if (file == null)
+            return "";
+
+        var aliases = file.Container.Bank.Project.Handler?.EsdData?.Aliases;
+        if (aliases != null)
+            return aliases.MachineDisplayName(file, id);
+
+        return file.MachineNames.TryGetValue(id, out var name) ? name : "";
     }
 
     /// <summary>

@@ -40,5 +40,9 @@ public enum ProjectAliasType
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Animations")]
     Animations,
     [Display(Name = "PROJECT_Enum_ProjectAliasType_Events")]
-    Events
+    Events,
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Esd_Files")]
+    EsdFiles,
+    [Display(Name = "PROJECT_Enum_ProjectAliasType_Esd_Machines")]
+    EsdMachines
 }

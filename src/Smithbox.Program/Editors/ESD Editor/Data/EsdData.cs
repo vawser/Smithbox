@@ -13,9 +13,13 @@ public class EsdData : IDisposable
 
     public EsdBank PrimaryBank;
 
+    /// <summary>The file and machine aliases the editor shows and edits</summary>
+    public EsdAliases Aliases;
+
     public EsdData(ProjectEntry project)
     {
         Project = project;
+        Aliases = new EsdAliases(project);
     }
 
     public async Task<bool> Setup()

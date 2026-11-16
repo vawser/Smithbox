@@ -120,6 +120,14 @@
     {
       "Key": "PROJECT_Enum_ProjectAliasType_Events",
       "Text": "Events"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Esd_Files",
+      "Text": "ESD Files"
+    },
+    {
+      "Key": "PROJECT_Enum_ProjectAliasType_Esd_Machines",
+      "Text": "ESD Machines"
     }
   ]
 }

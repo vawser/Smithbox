@@ -20,13 +20,18 @@ public class EsdMachineList
     private string CachedFilter;
     private bool CachedExact;
     private int CachedRevision = -1;
+    private int CachedAliasVersion = -1;
     private List<long> Visible = new();
     private Dictionary<long, int> Calls = new();
+
+    private readonly EsdAliasMenu AliasMenu = new();
 
     public EsdMachineList(EsdEditorView view)
     {
         View = view;
     }
+
+    private EsdAliases Aliases => View.Project.Handler.EsdData?.Aliases;
 
     public void Draw()
     {
@@ -56,14 +61,18 @@ public class EsdMachineList
     private void Refresh(EsdFileWrapper file)
     {
         // Edits (new / deleted machines, calls) change the list: rebuild on the container's revision too
+        // An alias change bumps the aliases' version: the filter matches aliases too
         var revision = file.Container.Revision;
-        if (file == CachedFile && Filter == CachedFilter && ExactFilter == CachedExact && revision == CachedRevision)
+        var aliasVersion = Aliases?.Version ?? 0;
+        if (file == CachedFile && Filter == CachedFilter && ExactFilter == CachedExact && revision == CachedRevision
+            && aliasVersion == CachedAliasVersion)
             return;
 
         if (file != CachedFile || revision != CachedRevision)
             Calls = EsdLayout.CallCounts(file.Esd);
 
         CachedRevision = revision;
+        CachedAliasVersion = aliasVersion;
         CachedFile = file;
         CachedFilter = Filter;
         CachedExact = ExactFilter;
@@ -101,18 +110,29 @@ public class EsdMachineList
                 if (ImGui.Selectable($"{EsdLayout.MachineLabel(id)}##esdMachine_{id}", selected))
                     selection.SelectMachine(id);
 
+                var name = EsdFormat.MachineName(file, id);
+                var eddName = EddName(file, id);
+
                 if (ImGui.IsItemHovered())
-                    GUI.Tooltip(LOC.Get(EsdLayout.IsSubMachine(id) ? "ESD_MachineList_Sub_TT" : "ESD_MachineList_Entry_TT", id, $"0x{id:X}"));
+                {
+                    var tip = LOC.Get(EsdLayout.IsSubMachine(id) ? "ESD_MachineList_Sub_TT" : "ESD_MachineList_Entry_TT", id, $"0x{id:X}");
+                    // A translated or renamed machine: its original .edd name too
+                    if (!string.IsNullOrEmpty(eddName) && eddName != name)
+                        tip += "\n" + LOC.Get("ESD_Alias_Edd_Name", eddName);
+                    GUI.Tooltip(tip);
+                }
 
                 if (ImGui.BeginPopupContextItem($"##esdMachineMenu_{id}"))
                 {
+                    DrawAliasMenu(file, id, eddName);
+                    ImGui.Separator();
                     View.Commands.MachineMenu(id);
                     ImGui.EndPopup();
                 }
 
                 ImGui.SameLine();
 
-                if (file.MachineNames.TryGetValue(id, out var name))
+                if (name.Length > 0)
                 {
                     ImGui.TextColored(UI.Current.ImGui_AliasName_Text, name);
                     ImGui.SameLine();
@@ -127,11 +147,42 @@ public class EsdMachineList
 
         clipper.End();
 
-        // Right-click on empty space: a new machine
+        // Right-click on empty space: a new machine (no alias: there's no machine yet)
         if (ImGui.BeginPopupContextWindow("##esdMachinesMenu", ImGuiPopupFlags.MouseButtonRight | ImGuiPopupFlags.NoOpenOverItems))
         {
             View.Commands.MachineMenu(null);
             ImGui.EndPopup();
+        }
+    }
+
+    /// <summary>
+    /// The machine's original .edd name: the project's .edd (DS2), else the one a translated built-in alias keeps as
+    /// its description; null if none
+    /// </summary>
+    private string EddName(EsdFileWrapper file, long id)
+    {
+        if (file.MachineNames.TryGetValue(id, out var name))
+            return name;
+
+        var entry = Aliases?.MachineAliasEntry(file, id);
+        return entry?.Tags?.Contains("edd") == true && !string.IsNullOrEmpty(entry.Description) ? entry.Description : null;
+    }
+
+    private void DrawAliasMenu(EsdFileWrapper file, long id, string eddName)
+    {
+        var aliases = Aliases;
+        if (aliases == null)
+            return;
+
+        // The field starts from the alias, or from the .edd name so it can be adjusted rather than retyped
+        var alias = aliases.MachineAlias(file, id);
+        var current = !string.IsNullOrEmpty(alias) ? alias : eddName ?? "";
+        var hint = !string.IsNullOrEmpty(eddName) ? LOC.Get("ESD_Alias_Edd_Name", eddName) : null;
+
+        if (AliasMenu.Draw("esdMachineAlias", current, LOC.Get("ESD_Alias_Menu_Machine_TT"), hint, out var name))
+        {
+            aliases.SetMachineAlias(file, id, name);
+            ImGui.CloseCurrentPopup();
         }
     }
 }
