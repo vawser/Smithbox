@@ -1,7 +1,7 @@
 using Andre.Formats;
 using System;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ProjectileEditor;
 
 /// <summary>
 ///     An amount for each type of damage.

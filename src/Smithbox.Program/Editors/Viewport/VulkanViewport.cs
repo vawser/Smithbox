@@ -5,6 +5,7 @@ using StudioCore.Editors.FxEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ProjectileEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Keybinds;
 using StudioCore.Renderer;
@@ -189,6 +190,13 @@ public class VulkanViewport : IViewport
             ActionManager = cutsceneUniverse.ViewportActionManager;
         }
 
+        if (owner is ProjectileUniverse projectileUniverse)
+        {
+            RenderScene = projectileUniverse.RenderScene;
+            ViewportSelection = projectileUniverse.ViewportSelection;
+            ActionManager = projectileUniverse.ViewportActionManager;
+        }
+
         if (RenderScene != null && Device != null)
         {
             ViewPipeline = new SceneRenderPipeline(RenderScene, Device, width, height);
@@ -210,6 +218,7 @@ public class VulkanViewport : IViewport
                 TimeActUniverse timeAct => timeAct.Project,
                 FxUniverse fx => fx.Project,
                 CutsceneUniverse cutscene => cutscene.Project,
+                ProjectileUniverse projectile => projectile.Project,
                 _ => null
             };
 
@@ -313,7 +322,7 @@ public class VulkanViewport : IViewport
                 cl.ClearDepthStencil(0);
             });
 
-            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse)
+            if (owner is MapUniverse || owner is ModelUniverse || owner is TimeActUniverse || owner is GparamUniverse || owner is FxUniverse || owner is CutsceneUniverse || owner is ProjectileUniverse)
             {
                 Gizmos = new Gizmos(this, RenderScene.OverlayRenderables);
 
@@ -367,6 +376,7 @@ public class VulkanViewport : IViewport
             HandleGparamEditorFocus();
             HandleFxEditorFocus();
             HandleCutsceneEditorFocus();
+            HandleProjectileEditorFocus();
 
             HandleCompass();
 
@@ -609,6 +619,11 @@ public class VulkanViewport : IViewport
                 && view.ViewportWindow?.Viewport == this;
         }
 
+        if (Owner is ProjectileUniverse projectileUniverse)
+        {
+            return projectileUniverse.View.ViewportWindow?.Viewport == this;
+        }
+
         return false;
     }
 
@@ -752,6 +767,22 @@ public class VulkanViewport : IViewport
                 // Only the active view's viewport is updated (CutsceneEditorScreen.Update), so hovering a viewport
                 // makes its view the active one
                 cutsceneUniverse.View.Editor.ViewHandler.ActiveView = cutsceneUniverse.View;
+                IsActiveViewport = true;
+            }
+            else
+            {
+                IsActiveViewport = false;
+            }
+        }
+    }
+
+    public void HandleProjectileEditorFocus()
+    {
+        if (Owner is ProjectileUniverse)
+        {
+            if (ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows))
+            {
+                FocusManager.SetFocus(EditorFocusContext.ProjectileEditor_Viewport);
                 IsActiveViewport = true;
             }
             else

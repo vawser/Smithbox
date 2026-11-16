@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ProjectileEditor;
 
 /// <summary>
 ///     What the wall stands in for, as bullets treat each kind of surface differently.

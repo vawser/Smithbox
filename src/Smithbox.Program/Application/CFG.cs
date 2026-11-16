@@ -3,6 +3,7 @@ using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ProjectileEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
@@ -995,30 +996,45 @@ public class CFG
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_ToolWindow = true;
 
-    // Tools
-    public bool ParamEditor_Show_Projectile_Simulator_Window = false;
+    // Projectile Editor: the simulation
+    public float ProjectileEditor_LaunchHeight = 1.5f;
+    public float ProjectileEditor_EmitHeight = 1.0f;
+    public float ProjectileEditor_FixedEmitRadius = 6.0f;
+    public float ProjectileEditor_BehindTargetHeight = 8.0f;
+    public float ProjectileEditor_BehindTargetDistance = 2.0f;
+    public CastOrientation ProjectileEditor_Orientation = CastOrientation.Forward;
+    public bool ProjectileEditor_GroundCollision = true;
+    public bool ProjectileEditor_SimulateWall = false;
+    public float ProjectileEditor_WallDistance = 10.0f;
+    public float ProjectileEditor_WallWidth = 12.0f;
+    public float ProjectileEditor_WallHeight = 8.0f;
+    public ImpactSurface ProjectileEditor_Surface = ImpactSurface.Map;
+    public bool ProjectileEditor_SimulateTarget = false;
+    public Vector3 ProjectileEditor_TargetPosition = new Vector3(5.0f, 1.5f, 15.0f);
+    public float ProjectileEditor_TargetRadius = 0.5f;
+    public TargetMotion ProjectileEditor_TargetMotion = TargetMotion.Still;
+    public float ProjectileEditor_TargetSpeed = 5.0f;
+    public float ProjectileEditor_TargetRange = 5.0f;
+    public bool ProjectileEditor_UseEnemyAttacks = false;
+    public int ProjectileEditor_Seed = 1;
 
-    // Projectile Simulator
-    public float ParamEditor_ProjectileSimulator_LaunchHeight = 1.5f;
-    public float ParamEditor_ProjectileSimulator_EmitHeight = 1.0f;
-    public float ParamEditor_ProjectileSimulator_FixedEmitRadius = 6.0f;
-    public float ParamEditor_ProjectileSimulator_BehindTargetHeight = 8.0f;
-    public float ParamEditor_ProjectileSimulator_BehindTargetDistance = 2.0f;
-    public CastOrientation ParamEditor_ProjectileSimulator_Orientation = CastOrientation.Forward;
-    public bool ParamEditor_ProjectileSimulator_GroundCollision = true;
-    public bool ParamEditor_ProjectileSimulator_SimulateWall = false;
-    public float ParamEditor_ProjectileSimulator_WallDistance = 10.0f;
-    public float ParamEditor_ProjectileSimulator_WallWidth = 12.0f;
-    public float ParamEditor_ProjectileSimulator_WallHeight = 8.0f;
-    public ImpactSurface ParamEditor_ProjectileSimulator_Surface = ImpactSurface.Map;
-    public bool ParamEditor_ProjectileSimulator_SimulateTarget = false;
-    public Vector3 ParamEditor_ProjectileSimulator_TargetPosition = new Vector3(5.0f, 1.5f, 15.0f);
-    public float ParamEditor_ProjectileSimulator_TargetRadius = 0.5f;
-    public TargetMotion ParamEditor_ProjectileSimulator_TargetMotion = TargetMotion.Still;
-    public float ParamEditor_ProjectileSimulator_TargetSpeed = 5.0f;
-    public float ParamEditor_ProjectileSimulator_TargetRange = 5.0f;
-    public bool ParamEditor_ProjectileSimulator_UseEnemyAttacks = false;
-    public int ParamEditor_ProjectileSimulator_Seed = 1;
+    // Projectile Editor: display
+    public bool ProjectileEditor_Display_Fx = true;
+    public bool ProjectileEditor_Display_Effects = true;
+    public bool ProjectileEditor_Display_Hit_Effects = true;
+    public bool ProjectileEditor_Display_Trails = true;
+    public bool ProjectileEditor_Display_Reach = true;
+    public bool ProjectileEditor_Display_Damage = true;
+    public bool ProjectileEditor_Display_Ground_Grid = true;
+    public bool ProjectileEditor_Frame_On_Select = false;
+    public bool ProjectileEditor_Loop = true;
+    public float ProjectileEditor_Speed = 1.0f;
+    public bool ProjectileEditor_Show_Community_Names = true;
+    public bool Interface_ProjectileEditor_List = true;
+    public bool Interface_ProjectileEditor_Properties = true;
+    public bool Interface_ProjectileEditor_ToolWindow = true;
+    public bool Interface_ProjectileEditor_Tool_Playback = true;
+    public bool Interface_ProjectileEditor_Tool_SimulationFilters = true;
 
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;

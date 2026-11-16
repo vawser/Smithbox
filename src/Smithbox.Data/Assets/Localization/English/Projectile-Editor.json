@@ -1,0 +1,624 @@
+{
+  "Entries": [
+    {
+      "Key": "PROJECTILE_Header_Bullet",
+      "Text": "Bullet"
+    },
+    {
+      "Key": "PROJECTILE_Header_Bullet_TT",
+      "Text": "What is being simulated. Select a row in the Bullets window to change it."
+    },
+    {
+      "Key": "PROJECTILE_No_Bullet",
+      "Text": "Select a row in the Bullets window to simulate it."
+    },
+    {
+      "Key": "PROJECTILE_Spell_Bullets",
+      "Text": "Bullets fired together:"
+    },
+    {
+      "Key": "PROJECTILE_Slot_Charged",
+      "Text": "Charged"
+    },
+    {
+      "Key": "PROJECTILE_Slot_None",
+      "Text": ""
+    },
+    {
+      "Key": "PROJECTILE_Spell_No_Bullets",
+      "Text": "This row has no bullets."
+    },
+    {
+      "Key": "PROJECTILE_Enemy_Attacks",
+      "Text": "Prefer Enemy Attacks"
+    },
+    {
+      "Key": "PROJECTILE_Enemy_Attacks_TT",
+      "Text": "Some attack IDs exist for both players and enemies. This looks in AtkParam_Npc first, rather than AtkParam_Pc."
+    },
+    {
+      "Key": "PROJECTILE_Attack",
+      "Text": "Attack {0}, reach {1:F2} m."
+    },
+    {
+      "Key": "PROJECTILE_Damage_Total",
+      "Text": "{0} hit(s): {1}"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Attacker",
+      "Text": "Attacker's power"
+    },
+    {
+      "Key": "PROJECTILE_Damage_None",
+      "Text": "None"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Physical",
+      "Text": "Phys"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Magic",
+      "Text": "Magic"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Fire",
+      "Text": "Fire"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Lightning",
+      "Text": "Lightning"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Dark",
+      "Text": "Dark"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Holy",
+      "Text": "Holy"
+    },
+    {
+      "Key": "PROJECTILE_Damage_Stamina",
+      "Text": "Stamina"
+    },
+    {
+      "Key": "PROJECTILE_Unsupported_Layout",
+      "Text": "The fields of this param aren't known for this game, so it can't be simulated."
+    },
+    {
+      "Key": "PROJECTILE_Header_Setup",
+      "Text": "Setup"
+    },
+    {
+      "Key": "PROJECTILE_Launch_Height",
+      "Text": "Launch Height"
+    },
+    {
+      "Key": "PROJECTILE_Emit_Height",
+      "Text": "Emit Height"
+    },
+    {
+      "Key": "PROJECTILE_Emit_Height_TT",
+      "Text": "How far above their source that bullets with an emit position of 'Higher elevation' start. The game doesn't say how much this is, and it sets the spacing of chains that hop along the ground."
+    },
+    {
+      "Key": "PROJECTILE_Fixed_Emit_Radius",
+      "Text": "Emit Radius"
+    },
+    {
+      "Key": "PROJECTILE_Fixed_Emit_Radius_TT",
+      "Text": "How far around the cast point that storm spells can emit. This game uses a fixed distance that isn't in its params, so this is an estimate."
+    },
+    {
+      "Key": "PROJECTILE_Behind_Target_Height",
+      "Text": "Behind Target Height"
+    },
+    {
+      "Key": "PROJECTILE_Behind_Target_Distance",
+      "Text": "Behind Target Distance"
+    },
+    {
+      "Key": "PROJECTILE_Behind_Target_TT",
+      "Text": "Where bullets with an emit position of 'Above and behind target' start. The params don't say how far this is, so this is an estimate."
+    },
+    {
+      "Key": "PROJECTILE_Cast_Orientation",
+      "Text": "Cast Orientation"
+    },
+    {
+      "Key": "PROJECTILE_Cast_Orientation_TT",
+      "Text": "The way that the first bullets are pointing. In-game this comes from the casting animation rather than the row, and all of a bullet's angles are relative to it."
+    },
+    {
+      "Key": "PROJECTILE_Orientation_Forward",
+      "Text": "Forward"
+    },
+    {
+      "Key": "PROJECTILE_Orientation_Down",
+      "Text": "Down"
+    },
+    {
+      "Key": "PROJECTILE_Orientation_Up",
+      "Text": "Up"
+    },
+    {
+      "Key": "PROJECTILE_Reroll",
+      "Text": "Reroll Random Values"
+    },
+    {
+      "Key": "PROJECTILE_Reroll_TT",
+      "Text": "Bullets can vary their aim, life and creation timing. This tries another set of random values."
+    },
+    {
+      "Key": "PROJECTILE_Ground_Collision",
+      "Text": "Ground Collision"
+    },
+    {
+      "Key": "PROJECTILE_Ground_Collision_TT",
+      "Text": "Bullets that come down land on the ground. Otherwise they keep falling through it."
+    },
+    {
+      "Key": "PROJECTILE_Simulate_Wall",
+      "Text": "Wall"
+    },
+    {
+      "Key": "PROJECTILE_Simulate_Wall_TT",
+      "Text": "Places a wall in the line of fire for bullets to hit."
+    },
+    {
+      "Key": "PROJECTILE_Simulate_Target",
+      "Text": "Target"
+    },
+    {
+      "Key": "PROJECTILE_Simulate_Target_TT",
+      "Text": "Places a target for homing bullets to turn towards. Bullets that reach it count as hitting a character. The shooter still fires straight ahead."
+    },
+    {
+      "Key": "PROJECTILE_Target_Right",
+      "Text": "Target Right"
+    },
+    {
+      "Key": "PROJECTILE_Target_Height",
+      "Text": "Target Height"
+    },
+    {
+      "Key": "PROJECTILE_Target_Forward",
+      "Text": "Target Forward"
+    },
+    {
+      "Key": "PROJECTILE_Target_Motion",
+      "Text": "Target Motion"
+    },
+    {
+      "Key": "PROJECTILE_Target_Motion_TT",
+      "Text": "Moves the target around its position during the simulation, which shows how well a bullet keeps up with it. The speed is its fastest, at the middle of its range."
+    },
+    {
+      "Key": "PROJECTILE_Motion_Still",
+      "Text": "Still"
+    },
+    {
+      "Key": "PROJECTILE_Motion_Strafe",
+      "Text": "Strafe"
+    },
+    {
+      "Key": "PROJECTILE_Motion_Advance",
+      "Text": "Advance and Retreat"
+    },
+    {
+      "Key": "PROJECTILE_Motion_Circle",
+      "Text": "Circle"
+    },
+    {
+      "Key": "PROJECTILE_Target_Speed",
+      "Text": "Target Speed"
+    },
+    {
+      "Key": "PROJECTILE_Target_Range",
+      "Text": "Target Range"
+    },
+    {
+      "Key": "PROJECTILE_Target_Radius",
+      "Text": "Target Radius"
+    },
+    {
+      "Key": "PROJECTILE_Wall_Distance",
+      "Text": "Wall Distance"
+    },
+    {
+      "Key": "PROJECTILE_Wall_Width",
+      "Text": "Wall Width"
+    },
+    {
+      "Key": "PROJECTILE_Wall_Height",
+      "Text": "Wall Height"
+    },
+    {
+      "Key": "PROJECTILE_Surface_TT",
+      "Text": "What the ground and wall are made of. This decides whether a bullet passes through, and which chain conditions are met."
+    },
+    {
+      "Key": "PROJECTILE_Surface_Map",
+      "Text": "Map"
+    },
+    {
+      "Key": "PROJECTILE_Surface_Water",
+      "Text": "Water"
+    },
+    {
+      "Key": "PROJECTILE_Header_Warnings",
+      "Text": "Notes"
+    },
+    {
+      "Key": "PROJECTILE_Header_Warnings_TT",
+      "Text": "Ways in which this simulation differs from what happens in-game."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Projectile_Limit",
+      "Text": "Stopped creating bullets at the limit of {0}."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Time_Limit",
+      "Text": "Stopped at the limit of {0} seconds."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Missing_Row",
+      "Text": "A bullet refers to a row that doesn't exist, so that bullet was skipped."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Self_Reference",
+      "Text": "A bullet refers to itself, which was skipped."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Undocumented_Condition",
+      "Text": "A bullet uses an undocumented launch condition, which was treated as Always."
+    },
+    {
+      "Key": "PROJECTILE_Warning_Absorbed_Condition",
+      "Text": "A bullet only chains when absorbing another bullet, which isn't simulated."
+    },
+    {
+      "Key": "PROJECTILE_Ignored_Homing",
+      "Text": "Homing needs a target, so this bullet flies straight."
+    },
+    {
+      "Key": "PROJECTILE_Ignored_Emit_Position",
+      "Text": "Some bullets start by the target, so these start from their source without one."
+    },
+    {
+      "Key": "PROJECTILE_Ignored_Following",
+      "Text": "Following the shooter isn't simulated."
+    },
+    {
+      "Key": "PROJECTILE_Ignored_Arc",
+      "Text": "This bullet lobs itself at a target, so without one it fires backward instead."
+    },
+    {
+      "Key": "PROJECTILE_Header_Projectiles",
+      "Text": "Projectiles"
+    },
+    {
+      "Key": "PROJECTILE_Header_Projectiles_TT",
+      "Text": "Every bullet in the simulation in the order they appear, with the time they appear at. Each generation of bullets has a color of its own."
+    },
+    {
+      "Key": "PROJECTILE_Origin_Root",
+      "Text": "Fired directly."
+    },
+    {
+      "Key": "PROJECTILE_Origin_Chain",
+      "Text": "Chained from {0}."
+    },
+    {
+      "Key": "PROJECTILE_Origin_Interval",
+      "Text": "Emitted by {0}."
+    },
+    {
+      "Key": "PROJECTILE_End_Hit_Wall",
+      "Text": "Hit the wall at {0:F2}s."
+    },
+    {
+      "Key": "PROJECTILE_End_Hit_Ground",
+      "Text": "Hit the ground at {0:F2}s."
+    },
+    {
+      "Key": "PROJECTILE_End_Hit_Target",
+      "Text": "Hit the target at {0:F2}s."
+    },
+    {
+      "Key": "PROJECTILE_End_Expired",
+      "Text": "Expired at {0:F2}s."
+    },
+    {
+      "Key": "PROJECTILE_End_Time_Limit",
+      "Text": "Still active when the simulation stopped at {0:F2}s."
+    },
+    {
+      "Key": "PROJECTILE_Chain_Withheld",
+      "Text": "Its launch condition wasn't met, so it didn't chain."
+    },
+    {
+      "Key": "PROJECTILE_Play",
+      "Text": "Play"
+    },
+    {
+      "Key": "PROJECTILE_Pause",
+      "Text": "Pause"
+    },
+    {
+      "Key": "PROJECTILE_Stop",
+      "Text": "Stop"
+    },
+    {
+      "Key": "PROJECTILE_Frame",
+      "Text": "Frame"
+    },
+    {
+      "Key": "PROJECTILE_Loop",
+      "Text": "Loop"
+    },
+    {
+      "Key": "PROJECTILE_Speed",
+      "Text": "Speed"
+    },
+    {
+      "Key": "PROJECTILE_Window_Projectile_Editor",
+      "Text": "Projectile Editor"
+    },
+    {
+      "Key": "PROJECTILE_Window_List",
+      "Text": "Bullets"
+    },
+    {
+      "Key": "PROJECTILE_Window_Properties",
+      "Text": "Properties"
+    },
+    {
+      "Key": "PROJECTILE_Select_Missing_Row",
+      "Text": "Projectile Editor: {0} has no row {1}, or isn't a bullet or spell param."
+    },
+    {
+      "Key": "PROJECTILE_Menu_Save_Params",
+      "Text": "Save Params"
+    },
+    {
+      "Key": "PROJECTILE_Menu_Save_Params_TT",
+      "Text": "Saves the params, as the Param Editor does. The Projectile Editor edits the Param Editor's params, so its edits are saved with them."
+    },
+    {
+      "Key": "PROJECTILE_Display_Fx",
+      "Text": "FX"
+    },
+    {
+      "Key": "PROJECTILE_Display_Fx_TT",
+      "Text": "Plays the bullets' effects in the viewport. Flight Effects and Hit Effects pick which kinds play while this is on. Needs the FX Editor to be enabled for the project."
+    },
+    {
+      "Key": "PROJECTILE_Display_Effects",
+      "Text": "Flight Effects"
+    },
+    {
+      "Key": "PROJECTILE_Display_Effects_TT",
+      "Text": "Plays each bullet's flight effect (sfxId_Bullet) on it as it flies. Needs the FX Editor to be enabled for the project."
+    },
+    {
+      "Key": "PROJECTILE_Display_Hit_Effects",
+      "Text": "Hit Effects"
+    },
+    {
+      "Key": "PROJECTILE_Display_Hit_Effects_TT",
+      "Text": "Plays each bullet's hit effect (sfxId_Hit) where it hits the ground, the wall or the target."
+    },
+    {
+      "Key": "PROJECTILE_Display_Trails",
+      "Text": "Trails"
+    },
+    {
+      "Key": "PROJECTILE_Display_Trails_TT",
+      "Text": "Draws the path each bullet has taken so far."
+    },
+    {
+      "Key": "PROJECTILE_Display_Reach",
+      "Text": "Attack Reach"
+    },
+    {
+      "Key": "PROJECTILE_Display_Reach_TT",
+      "Text": "Draws a ring around a bullet whose attack reaches further than the bullet itself."
+    },
+    {
+      "Key": "PROJECTILE_Display_Damage",
+      "Text": "Damage"
+    },
+    {
+      "Key": "PROJECTILE_Display_Damage_TT",
+      "Text": "Shows the damage dealt to the target, when there is one."
+    },
+    {
+      "Key": "PROJECTILE_Display_Ground_Grid",
+      "Text": "Ground Grid"
+    },
+    {
+      "Key": "PROJECTILE_Display_Ground_Grid_TT",
+      "Text": "Draws the ground as a grid of one metre squares, with a brighter line every five metres."
+    },
+    {
+      "Key": "PROJECTILE_Frame_On_Select",
+      "Text": "Frame on Select"
+    },
+    {
+      "Key": "PROJECTILE_Frame_On_Select_TT",
+      "Text": "Frames the camera on the simulation every time a row is selected. Otherwise only the first row is framed, and the camera stays where it is put."
+    },
+    {
+      "Key": "PROJECTILE_Show_Community_Names",
+      "Text": "Community Field Names"
+    },
+    {
+      "Key": "PROJECTILE_Show_Community_Names_TT",
+      "Text": "Shows the fields in the Properties window by their community names, rather than their internal names."
+    },
+    {
+      "Key": "PROJECTILE_List_No_Params",
+      "Text": "The project has no bullet or spell params."
+    },
+    {
+      "Key": "PROJECTILE_List_Spell",
+      "Text": "spells"
+    },
+    {
+      "Key": "PROJECTILE_List_Param_TT",
+      "Text": "The param to list the rows of. A bullet row is simulated on its own; a spell row fires the bullets in its slots."
+    },
+    {
+      "Key": "PROJECTILE_List_Filter_Hint",
+      "Text": "Filter by ID or name"
+    },
+    {
+      "Key": "PROJECTILE_List_Count",
+      "Text": "{0} of {1} rows"
+    },
+    {
+      "Key": "PROJECTILE_Open_In_Param_Editor",
+      "Text": "Open in Param Editor"
+    },
+    {
+      "Key": "PROJECTILE_Properties_None",
+      "Text": "Select a row in the Bullets window."
+    },
+    {
+      "Key": "PROJECTILE_Properties_Filter_Hint",
+      "Text": "Filter fields"
+    },
+    {
+      "Key": "PROJECTILE_Properties_Row_TT",
+      "Text": "Right-click to open this row in the Param Editor."
+    },
+    {
+      "Key": "PROJECTILE_Properties_No_Attack",
+      "Text": "This bullet has no attack."
+    },
+    {
+      "Key": "PROJECTILE_Properties_Missing_Attack",
+      "Text": "Attack {0} isn't in the player's or the enemies' attack params."
+    },
+    {
+      "Key": "PROJECTILE_Properties_Attack_Used",
+      "Text": "used by the simulation"
+    },
+    {
+      "Key": "PROJECTILE_Properties_Child_Bullets",
+      "Text": "Bullets Created"
+    },
+    {
+      "Key": "PROJECTILE_Properties_Child_Bullets_TT",
+      "Text": "The bullets this row fires. Click one to show it, or right-click to open it in the Param Editor."
+    },
+    {
+      "Key": "PROJECTILE_Properties_Spell_Bullets",
+      "Text": "Spell Bullets"
+    },
+    {
+      "Key": "PROJECTILE_Properties_Missing_Row",
+      "Text": "missing"
+    },
+    {
+      "Key": "PROJECTILE_Properties_Bullet_Link_TT",
+      "Text": "Shows this bullet on its own."
+    },
+    {
+      "Key": "PROJECTILE_Show_Bullet",
+      "Text": "Show this Bullet"
+    },
+    {
+      "Key": "PROJECTILE_Show_Bullet_TT",
+      "Text": "Selects this bullet's row, simulating it on its own."
+    },
+    {
+      "Key": "PROJECTILE_Frame_TT",
+      "Text": "Moves the camera back until the whole simulation is in view."
+    },
+    {
+      "Key": "PROJECTILE_Effects_Off",
+      "Text": "Effects are turned off (FX, in the Simulation Filters tool)."
+    },
+    {
+      "Key": "PROJECTILE_Effects_Unsupported",
+      "Text": "Bullet effects aren't available for this game."
+    },
+    {
+      "Key": "PROJECTILE_Effects_Need_Fx_Editor",
+      "Text": "Enable the FX Editor for the project to see the bullets' effects."
+    },
+    {
+      "Key": "PROJECTILE_Effects_Indexing",
+      "Text": "Reading the project's effects..."
+    },
+    {
+      "Key": "PROJECTILE_Effects_Status",
+      "Text": "Effects: {0}, playing {1}, particles {2}"
+    },
+    {
+      "Key": "PROJECTILE_Effects_Missing",
+      "Text": "({0} not in the project)"
+    },
+    {
+      "Key": "PROJECTILE_Window_Tools",
+      "Text": "Tools"
+    },
+    {
+      "Key": "PROJECTILE_Tool_Playback",
+      "Text": "Playback"
+    },
+    {
+      "Key": "PROJECTILE_Tool_Simulation_Filters",
+      "Text": "Simulation Filters"
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Hint",
+      "Text": "What the viewport and the Properties window show. None of these change the simulation itself."
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Effects_Header",
+      "Text": "Effects"
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Effects_Header_TT",
+      "Text": "The bullets' own effects, played from the project's FX files. Needs the FX Editor to be enabled for the project."
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Overlays_Header",
+      "Text": "Overlays"
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Overlays_Header_TT",
+      "Text": "The lines and text drawn over the viewport to show what the simulation is doing."
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Camera_Header",
+      "Text": "Camera"
+    },
+    {
+      "Key": "PROJECTILE_SimulationFilters_Properties_Header",
+      "Text": "Properties"
+    },
+    {
+      "Key": "PROJECTILE_Playback_Time_Header",
+      "Text": "Time"
+    },
+    {
+      "Key": "PROJECTILE_Playback_Time_Header_TT",
+      "Text": "Where the simulation is. Dragging the slider pauses it there."
+    },
+    {
+      "Key": "PROJECTILE_Playback_Options_Header",
+      "Text": "Options"
+    },
+    {
+      "Key": "PROJECTILE_Playback_Effects_Header",
+      "Text": "Effects"
+    },
+    {
+      "Key": "PROJECTILE_Playback_Effects_Header_TT",
+      "Text": "How many effects the bullets have, how many are playing now, and how many particles they have."
+    }
+  ]
+}

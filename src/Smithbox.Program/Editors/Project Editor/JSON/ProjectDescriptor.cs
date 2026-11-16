@@ -34,6 +34,9 @@ public class ProjectDescriptor
     public bool EnableHavokEditor = false;
     public bool EnableFxEditor = false;
     public bool EnableCutsceneEditor = false;
+
+    // On by default, so projects made before the editor existed keep the Projectile Simulator it replaced
+    public bool EnableProjectileEditor = true;
     public bool EnableBehaviorEditor = false;
     public bool EnableEmevdEditor = false;
     public bool EnableEsdEditor = false;
@@ -69,6 +72,7 @@ public class ProjectDescriptor
         EnableHavokEditor = newDescriptor.EnableHavokEditor;
         EnableFxEditor = newDescriptor.EnableFxEditor;
         EnableCutsceneEditor = newDescriptor.EnableCutsceneEditor;
+        EnableProjectileEditor = newDescriptor.EnableProjectileEditor;
         EnableBehaviorEditor = newDescriptor.EnableBehaviorEditor;
         EnableEmevdEditor = newDescriptor.EnableEmevdEditor;
         EnableEsdEditor = newDescriptor.EnableEsdEditor;
@@ -150,6 +154,7 @@ public class ProjectDescriptor
             && EnableHavokEditor == other.EnableHavokEditor
             && EnableFxEditor == other.EnableFxEditor
             && EnableCutsceneEditor == other.EnableCutsceneEditor
+            && EnableProjectileEditor == other.EnableProjectileEditor
             && EnableBehaviorEditor == other.EnableBehaviorEditor
             && EnableEmevdEditor == other.EnableEmevdEditor
             && EnableEsdEditor == other.EnableEsdEditor
@@ -183,6 +188,7 @@ public class ProjectDescriptor
         EnableHavokEditor = edited.EnableHavokEditor;
         EnableFxEditor = edited.EnableFxEditor;
         EnableCutsceneEditor = edited.EnableCutsceneEditor;
+        EnableProjectileEditor = edited.EnableProjectileEditor;
         EnableBehaviorEditor = edited.EnableBehaviorEditor;
         EnableEmevdEditor = edited.EnableEmevdEditor;
         EnableEsdEditor = edited.EnableEsdEditor;
@@ -216,6 +222,7 @@ public class ProjectDescriptor
             EnableHavokEditor = this.EnableHavokEditor,
             EnableFxEditor = this.EnableFxEditor,
             EnableCutsceneEditor = this.EnableCutsceneEditor,
+            EnableProjectileEditor = this.EnableProjectileEditor,
             EnableBehaviorEditor = this.EnableBehaviorEditor,
             EnableEmevdEditor = this.EnableEmevdEditor,
             EnableEsdEditor = this.EnableEsdEditor,
@@ -258,6 +265,7 @@ public class ProjectDescriptor
         EnableHavokEditor = true;
         EnableFxEditor = true;
         EnableCutsceneEditor = true;
+        EnableProjectileEditor = true;
         EnableBehaviorEditor = true;
         EnableEmevdEditor = true;
         EnableEsdEditor = true;

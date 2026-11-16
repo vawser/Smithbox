@@ -1,7 +1,7 @@
 using Andre.Formats;
 using System;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ProjectileEditor;
 
 /// <summary>
 ///     When a bullet may hand over to its chained bullets. The values match launchConditionType.

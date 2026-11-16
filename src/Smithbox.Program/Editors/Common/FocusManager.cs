@@ -155,6 +155,15 @@ public static class FocusManager
             or EditorFocusContext.CutsceneEditor_Tools;
     }
 
+    public static bool IsInProjectileEditor()
+    {
+        return Focus is EditorFocusContext.ProjectileEditor_None
+            or EditorFocusContext.ProjectileEditor_List
+            or EditorFocusContext.ProjectileEditor_Properties
+            or EditorFocusContext.ProjectileEditor_Tools
+            or EditorFocusContext.ProjectileEditor_Viewport;
+    }
+
     public static bool IsInFxEditor()
     {
         return Focus is EditorFocusContext.FxEditor_None
@@ -316,6 +325,12 @@ public enum EditorFocusContext
     CutsceneEditor_Properties,
     CutsceneEditor_Viewport,
     CutsceneEditor_Tools,
+
+    ProjectileEditor_None,
+    ProjectileEditor_List,
+    ProjectileEditor_Properties,
+    ProjectileEditor_Tools,
+    ProjectileEditor_Viewport,
 
     SoundEditor_None,
     SoundEditor_Banks,

@@ -145,6 +145,14 @@
       "Text": "If enabled, the Cutscene Editor (MQB cutscenes, played with their cameras and actors) and its list of cutscenes will be initialized for this project."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_Projectile_Editor",
+      "Text": "Projectile Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_Projectile_Editor_TT",
+      "Text": "If enabled, the Projectile Editor (bullet and spell rows simulated in a 3D viewport, with their effects) will be initialized for this project. It edits the Param Editor's params, so it needs the Param Editor too."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Behavior_Editor",
       "Text": "Behavior Editor"
     },

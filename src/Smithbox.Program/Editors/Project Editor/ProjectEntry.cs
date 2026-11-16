@@ -82,6 +82,9 @@ public class ProjectEntry
             if (Handler.CutsceneEditorStub != null)
                 Handler.CutsceneEditorStub.Draw(device, cl);
 
+            if (Handler.ProjectileEditorStub != null)
+                Handler.ProjectileEditorStub.Draw(device, cl);
+
             ModelPreviewCache.Draw(this);
             MeshPreviewRenderer.Draw();
         }
@@ -134,6 +137,9 @@ public class ProjectEntry
 
             if (Handler.CutsceneEditorStub != null)
                 Handler.CutsceneEditorStub.EditorResized(window, device);
+
+            if (Handler.ProjectileEditorStub != null)
+                Handler.ProjectileEditorStub.EditorResized(window, device);
         }
     }
 
@@ -339,6 +345,7 @@ public class ProjectEntry
             Handler.HavokEditor,
             Handler.FxEditor,
             Handler.CutsceneEditor,
+            Handler.ProjectileEditor,
             Handler.BehaviorEditor,
             Handler.EmevdEditor,
             Handler.EsdEditor,
@@ -472,7 +479,9 @@ public class ProjectEntry
                         }
                     }
 
-                    if (CFG.Current.Project_Automatic_Save_Include_Param_Editor && Handler.FocusedEditor is ParamEditorScreen)
+                    // The Projectile Editor edits the Param Editor's params, so they are saved while it is shown too
+                    if (CFG.Current.Project_Automatic_Save_Include_Param_Editor &&
+                        Handler.FocusedEditor is ParamEditorScreen or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen)
                     {
                         if (Handler.ParamEditor != null)
                         {

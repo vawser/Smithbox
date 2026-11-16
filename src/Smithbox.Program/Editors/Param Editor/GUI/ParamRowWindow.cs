@@ -1376,6 +1376,18 @@ public class ParamRowWindow
                         Context.FmgRowDecorator.DecorateContextMenuItems(r);
                     }
 
+                    // Bullet and spell rows: their simulation in the Projectile Editor
+                    if (HasProjectileEditorLink())
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Open_In_Projectile_Editor")}##openInProjectileEditor"))
+                        {
+                            EditorCommandQueue.AddCommand($"projectile/select/{Context.ActiveParam}/{r.ID}");
+                        }
+                        ImGui.PopStyleColor();
+                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Open_In_Projectile_Editor_TT"));
+                    }
+
                     ImGui.EndMenu();
                 }
             }
@@ -1590,7 +1602,23 @@ public class ParamRowWindow
         if (Context.FmgRowDecorator != null)
             return true;
 
+        if (HasProjectileEditorLink())
+            return true;
+
         return false;
+    }
+
+    /// <summary>
+    /// Whether the active param's rows can be shown in the Projectile Editor: a bullet or spell param, in a project
+    /// that has the editor
+    /// </summary>
+    private bool HasProjectileEditorLink()
+    {
+        var project = Editor.Project;
+
+        return project.Handler?.ProjectileEditor != null
+            && Context.ActiveParam != null
+            && StudioCore.Editors.ProjectileEditor.ProjectileParams.IsProjectileParam(project, Context.ActiveParam);
     }
 
     /// <summary>

@@ -53,6 +53,16 @@ public static class EditorConditions
         return curType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
     }
 
+    /// <summary>
+    /// The Projectile Editor: the games whose bullet params the simulation reads (BulletDefinition). Its effects also
+    /// need the FX Editor (<see cref="SupportsFxEditor"/>).
+    /// </summary>
+    public static bool SupportsProjectileEditor(ProjectType curType)
+    {
+        return curType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S
+            or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
+    }
+
     /// <summary>The Behavior Editor: AC6 .bhv state machines in chr behbnds</summary>
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {

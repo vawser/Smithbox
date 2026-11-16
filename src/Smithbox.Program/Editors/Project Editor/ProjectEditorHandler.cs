@@ -11,6 +11,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ProjectileEditor;
 using StudioCore.Editors.SoundEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
@@ -93,6 +94,10 @@ public class ProjectEditorHandler : IDisposable
     public CutsceneEditorScreen CutsceneEditor;
     public CutsceneEditorStub CutsceneEditorStub;
 
+    // Projectile Editor (reads and edits the Param Editor's params)
+    public ProjectileEditorScreen ProjectileEditor;
+    public ProjectileEditorStub ProjectileEditorStub;
+
     // Behavior Editor (AC6 .bhv)
     public BhvData BehaviorData;
     public BehaviorEditorScreen BehaviorEditor;
@@ -159,6 +164,7 @@ public class ProjectEditorHandler : IDisposable
         HavokEditorStub = new(Project);
         FxEditorStub = new(Project);
         CutsceneEditorStub = new(Project);
+        ProjectileEditorStub = new(Project);
         BehaviorEditorStub = new(Project);
         EmevdEditorStub = new(Project);
         EsdEditorStub = new(Project);
@@ -404,6 +410,16 @@ public class ProjectEditorHandler : IDisposable
             firstEditor ??= ParamEditor;
         }
 
+        // No data of its own: the Param Editor's params, so it is made with the Param Editor
+        if (ParamData != null && ParamEditor != null &&
+            Project.Descriptor.EnableProjectileEditor &&
+            EditorConditions.SupportsProjectileEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            ProjectileEditor = new ProjectileEditorScreen(Project);
+            firstEditor ??= ProjectileEditor;
+        }
+
         if (TextData != null)
         {
             TextEditor = new TextEditorScreen(Project);
@@ -529,6 +545,9 @@ public class ProjectEditorHandler : IDisposable
 
         // The Cutscene Editor's actors hold meshes and animators, its lines GPU buffers, its viewport a render pipeline
         CutsceneEditor?.Dispose();
+
+        // The Projectile Editor's lines and effects hold GPU buffers, its viewport a render pipeline
+        ProjectileEditor?.Dispose();
 
         _viewportEnvironment?.Dispose();
         _viewportEnvironment = null;

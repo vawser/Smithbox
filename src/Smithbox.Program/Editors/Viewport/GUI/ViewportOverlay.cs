@@ -148,6 +148,12 @@ public class ViewportOverlay
             cutsceneUniverse.View.Subtitles.DrawOverlay(Parent.X, Parent.Y, Parent.Width, Parent.Height);
         }
 
+        // Projectile Editor: the damage dealt to the target
+        if (Parent.Owner is ProjectileEditor.ProjectileUniverse projectileUniverse)
+        {
+            projectileUniverse.View.ViewportWindow.DrawOverlay(Parent);
+        }
+
         // Profiling
         if (CFG.Current.Viewport_Display_Profiling)
         {

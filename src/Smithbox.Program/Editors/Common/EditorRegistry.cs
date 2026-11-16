@@ -11,6 +11,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ProjectileEditor;
 using StudioCore.Editors.SoundEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
@@ -170,6 +171,16 @@ public static class EditorRegistry
                                p.Handler?.ParamEditorStub != null,
             Screen = h => h.ParamEditor,
             Display = (h, dt, c) => h.ParamEditorStub.Display(dt, c)
+        },
+        new()
+        {
+            Id = "projectile", LabelKey = "PROJECTILE_Window_Projectile_Editor", Icon = Icons.Rocket, Category = EditorCategory.Data,
+            IsAvailable = p => p.Descriptor.EnableProjectileEditor &&
+                               p.Descriptor.EnableParamEditor &&
+                               EditorConditions.SupportsProjectileEditor(p.Descriptor.ProjectType) &&
+                               p.Handler?.ProjectileEditorStub != null,
+            Screen = h => h.ProjectileEditor,
+            Display = (h, dt, c) => h.ProjectileEditorStub.Display(dt, c)
         },
         new()
         {

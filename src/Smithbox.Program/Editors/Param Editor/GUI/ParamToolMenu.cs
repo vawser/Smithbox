@@ -33,7 +33,6 @@ public class ParamToolMenu
     public ParamPinGroups PinGroups;
     public ParamDeltaPatcher DeltaPatcher;
     public ParamRowNameManipulationTool RowNameManipulationTool;
-    public ProjectileSimulatorTool ProjectileSimulator;
     public ParamModifiedFilter ModifiedFilter;
     public ParamEditHistoryTool EditHistory;
 
@@ -66,7 +65,6 @@ public class ParamToolMenu
         PinGroups = new(view, project);
         DeltaPatcher = new(view, project);
         RowNameManipulationTool = new(view, project);
-        ProjectileSimulator = new(view, project);
         ModifiedFilter = new(view, project);
     }
 
@@ -108,13 +106,6 @@ public class ParamToolMenu
 
                 ImGui.EndMenu();
             }
-
-            // Projectile Simulator
-            if (ImGui.MenuItem($"{LOC.Get("PARAM_Tools_View_Projectile_Simulator_Window")}##projectileSimulatorMenuItem"))
-            {
-                CFG.Current.ParamEditor_Show_Projectile_Simulator_Window = !CFG.Current.ParamEditor_Show_Projectile_Simulator_Window;
-            }
-            GUI.ShowActiveStatus(CFG.Current.ParamEditor_Show_Projectile_Simulator_Window);
 
             ImGui.EndMenu();
         }
@@ -192,18 +183,6 @@ public class ParamToolMenu
         ParamReloader.Display();
 
         ItemGib.Display();
-
-        // Simulation
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Simulation"));
-
-        if (ToolSections.Header($"{LOC.Get("PARAM_Tools_Header_Projectile_Simulator")}##projectileSimulatorMenuHeader"))
-        {
-            ImGui.BeginChild("ProjectileSimulatorToolSection", ImGuiChildFlags.Borders);
-
-            ProjectileSimulator.Display();
-
-            ImGui.EndChild();
-        }
 
         Sections.End();
     }
