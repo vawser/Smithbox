@@ -95,7 +95,10 @@ public class EmevdRoleLinks
                     : LOC.Get("EMEVD_Role_Entity");
 
             case EmevdArgRole.EventFlag:
-                return LOC.Get("EMEVD_Role_EventFlag");
+                // ER: whether the game stores the flag, its range and what that range is for
+                return EventFlagDisplay.Summary(Project, v) is { } summary
+                    ? $"{LOC.Get("EMEVD_Role_EventFlag")}: {summary}"
+                    : LOC.Get("EMEVD_Role_EventFlag");
 
             case EmevdArgRole.Param:
             {
@@ -226,6 +229,13 @@ public class EmevdRoleLinks
                 EditorCommandQueue.AddCommand($"esd/search/{v}");
             GUI.Tooltip(LOC.Get("EMEVD_Role_Link_Flag_Esd_TT", v));
         }
+    }
+
+    /// <summary>A warning icon for an event flag arg the game doesn't store (same line; nothing otherwise)</summary>
+    public void FlagMarker(EmevdLine line, EmevdArg arg)
+    {
+        if (arg.Def.Role == EmevdArgRole.EventFlag && !line.Params.ContainsKey(arg.Offset))
+            EventFlagDisplay.Marker(Project, ValueOf(arg));
     }
 
     public static string RoleName(EmevdArgRole role) => LOC.Get($"EMEVD_Role_{role}");

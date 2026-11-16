@@ -569,6 +569,7 @@ public class EmevdBlockView
         if (View.RoleLinks.Describe(line, arg) is { } refers)
         {
             View.RoleLinks.Button("popupRoleLink", line, arg);
+            View.RoleLinks.FlagMarker(line, arg);
             ImGui.SameLine();
             ImGui.TextDisabled(refers);
         }

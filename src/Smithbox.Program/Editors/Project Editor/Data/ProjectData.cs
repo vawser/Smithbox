@@ -9,9 +9,37 @@ public class ProjectData : IDisposable
 
     public AliasStore Aliases;
 
+    private ErEventFlagAllocation eventFlags;
+    private bool eventFlagsBuilt;
+
     public ProjectData(ProjectEntry project)
     {
         Project = project;
+    }
+
+    /// <summary>
+    /// The event flags the game stores (ER only; null for other games or when the data can't be read).
+    /// Built on first use from the project's eventflagalloclist files.
+    /// </summary>
+    public ErEventFlagAllocation EventFlags
+    {
+        get
+        {
+            if (!eventFlagsBuilt && Project?.VFS != null)
+            {
+                eventFlagsBuilt = true;
+                if (Project.Descriptor.ProjectType == ProjectType.ER)
+                    eventFlags = ErEventFlagAllocation.TryBuild(Project);
+            }
+            return eventFlags;
+        }
+    }
+
+    /// <summary>Rebuilds the event flag allocation on next use (after the eventflagalloclist files change)</summary>
+    public void ResetEventFlags()
+    {
+        eventFlags = null;
+        eventFlagsBuilt = false;
     }
 
     public async Task<bool> Setup()
@@ -123,6 +151,7 @@ public class ProjectData : IDisposable
     public void Dispose()
     {
         Aliases = null;
+        eventFlags = null;
     }
     #endregion
 }

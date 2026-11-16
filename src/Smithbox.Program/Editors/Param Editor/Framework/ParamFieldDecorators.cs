@@ -237,6 +237,14 @@ public class ParamFieldDecorators
                     ConditionalAliasEnumHelper.Hint(ParentView, eventFlags, oldval.ToString(),
                         row, metaContext.EventFlagConditionalField, metaContext.EventFlagConditionalValue);
                 }
+
+                // ER: a warning when the game doesn't store the flag
+                if (CFG.Current.ParamEditor_Field_List_Display_Enums
+                    && ConditionalAliasEnumHelper.IsActive(row, metaContext.EventFlagConditionalField, metaContext.EventFlagConditionalValue)
+                    && long.TryParse(oldval?.ToString(), out var flag))
+                {
+                    EventFlagDisplay.Marker(Editor.Project, flag);
+                }
             }
 
             // Cutscene list
@@ -984,6 +992,16 @@ public static class ConditionalAliasEnumHelper
             ImGui.TextUnformatted($@"   {name}");
             ImGui.PopStyleColor(1);
         }
+    }
+
+    /// <summary>False when the field's conditional field doesn't hold the value that makes it an alias field</summary>
+    public static bool IsActive(Param.Row row, string conditionalField, string conditionalValue)
+    {
+        if (string.IsNullOrEmpty(conditionalField))
+            return true;
+
+        Param.Cell? c = row?[conditionalField];
+        return row == null || c == null || Convert.ToInt32(c.Value.Value) == Convert.ToInt32(conditionalValue);
     }
 
     public static void Hint(ParamEditorView curView, List<AliasEntry> entries, string value, Param.Row row, string conditionalField, string conditionalValue)

@@ -96,7 +96,12 @@ public class EmevdProblemsTool
 
                 if (ImGui.Selectable($"{where}##emevdProblem{i}"))
                     View.Selection.JumpTo(file, ev, p.Line);
-                GUI.Tooltip(LOC.Get($"EMEVD_Problem_{p.Kind}_TT"));
+                // An unallocated flag: why the game doesn't store it, and its range
+                if (p.Kind == EmevdProblemKind.UnallocatedFlag && long.TryParse(p.Detail, out var flag)
+                    && EventFlagDisplay.Info(View.Project, flag) is { } flagInfo)
+                    GUI.Tooltip(EventFlagDisplay.Tooltip(flagInfo));
+                else
+                    GUI.Tooltip(LOC.Get($"EMEVD_Problem_{p.Kind}_TT"));
 
                 ImGui.SameLine();
                 ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get($"EMEVD_Problem_{p.Kind}"));
@@ -122,11 +127,13 @@ public class EmevdProblemsTool
 
         var catalog = View.Project.Handler.EmevdData?.Catalog;
         var bank = View.Project.Handler.EmevdData?.PrimaryBank;
+        var flags = View.Project.Handler.ProjectData?.EventFlags;
+        Func<long, bool> isFlagStored = flags != null ? flags.IsValid : null;
 
         foreach (var ev in file.Emevd.Events)
         {
             var script = EmevdScript.Build(catalog, ev);
-            foreach (var p in EmevdChecks.Run(script, id => bank?.ResolveEvent(file, id).ev))
+            foreach (var p in EmevdChecks.Run(script, id => bank?.ResolveEvent(file, id).ev, isFlagStored))
                 Problems.Add((ev, p));
         }
     }

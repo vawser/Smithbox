@@ -577,10 +577,12 @@ public static class MapEditorDecorations
             display = true;
         }
 
+        bool isFlag = false;
         if (meta != null && meta.ShowEventFlagList && aliases.TryGetValue(ProjectAliasType.EventFlags, out List<AliasEntry> eventFlagAliases))
         {
             options = eventFlagAliases;
             isEffect = false;
+            isFlag = true;
             display = true;
         }
 
@@ -590,6 +592,7 @@ public static class MapEditorDecorations
             options = soundAliases;
             isEffect = false;
             isSound = true;
+            isFlag = false;
             display = true;
         }
 
@@ -598,6 +601,7 @@ public static class MapEditorDecorations
             options = talkAliases;
             isEffect = false;
             isSound = false;
+            isFlag = false;
             display = true;
         }
 
@@ -641,6 +645,10 @@ public static class MapEditorDecorations
                 ImGui.TextUnformatted(currentEntry);
                 ImGui.PopStyleColor();
             }
+
+            // ER: a warning when the game doesn't store the flag
+            if (isFlag && long.TryParse(val?.ToString(), out var flag))
+                EventFlagDisplay.Marker(view.Project, flag);
 
             ImGui.EndGroup();
 

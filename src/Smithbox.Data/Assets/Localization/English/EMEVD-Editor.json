@@ -263,6 +263,8 @@
     { "Key": "EMEVD_Problem_Undecoded_TT", "Text": "No layout decodes this instruction's bytes." },
     { "Key": "EMEVD_Problem_CallTooFewArgs", "Text": "too few arguments" },
     { "Key": "EMEVD_Problem_CallTooFewArgs_TT", "Text": "The Initialize Event passes fewer argument bytes (passed/needed) than the event it starts reads with its parameters." },
+    { "Key": "EMEVD_Problem_UnallocatedFlag", "Text": "flag not stored by the game" },
+    { "Key": "EMEVD_Problem_UnallocatedFlag_TT", "Text": "The game doesn't allocate this event flag: it always reads as off, and setting it does nothing." },
 
     { "Key": "EMEVD_View_Toggle_Structured", "Text": "Structured View" },
     { "Key": "EMEVD_View_Toggle_Structured_TT", "Text": "Show skips and gotos as C-blocks holding the lines they jump over, with Else parts, and conditions just above the flow that evaluates them. Turn off to see every line flat, with every jump as a bracket in the margin. The file is the same either way." },

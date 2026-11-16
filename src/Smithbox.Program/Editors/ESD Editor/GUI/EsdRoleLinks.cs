@@ -142,7 +142,12 @@ public class EsdRoleLinks
         switch (role.Kind)
         {
             case EsdRoleKind.EventFlag:
-                return value <= 0 ? LOC.Get("ESD_Role_Flag_None") : LOC.Get("ESD_Role_Flag", value);
+                if (value <= 0)
+                    return LOC.Get("ESD_Role_Flag_None");
+                // ER: whether the game stores the flag, its range and what that range is for
+                return EventFlagDisplay.Summary(Project, value) is { } summary
+                    ? $"{LOC.Get("ESD_Role_Flag", value)}: {summary}"
+                    : LOC.Get("ESD_Role_Flag", value);
 
             case EsdRoleKind.Param:
             case EsdRoleKind.Item:
@@ -191,6 +196,7 @@ public class EsdRoleLinks
         switch (role.Kind)
         {
             case EsdRoleKind.EventFlag when value > 0:
+                EventFlagDisplay.Marker(Project, value);
                 Button(Icons.Search, "esd", LOC.Get("ESD_Role_Link_Flag_Esd_TT", value), () => View.ToolWindow.SearchTool.SearchValue(value, true));
                 if (Project.Descriptor.EnableEmevdEditor)
                     Button(Icons.ExternalLink, "emevd", LOC.Get("ESD_Role_Link_Flag_Emevd_TT", value), () => EditorCommandQueue.AddCommand($"emevd/search/{value}"));

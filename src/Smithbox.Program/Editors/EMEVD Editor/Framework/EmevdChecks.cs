@@ -16,6 +16,8 @@ public enum EmevdProblemKind
     Undecoded,
     /// <summary>An Initialize Event passes fewer argument bytes than the started event's parameters read</summary>
     CallTooFewArgs,
+    /// <summary>An event flag arg holds a flag the game doesn't store (ER: its block isn't allocated)</summary>
+    UnallocatedFlag,
 }
 
 public record EmevdProblem(EmevdProblemKind Kind, long EventId, int Line, string Detail);
@@ -28,7 +30,8 @@ public record EmevdProblem(EmevdProblemKind Kind, long EventId, int Line, string
 public static class EmevdChecks
 {
     /// <param name="findEvent">Finds the event an Initialize Event starts (own file, common_func, common), or null</param>
-    public static List<EmevdProblem> Run(EmevdScript script, Func<long, EMEVD.Event> findEvent = null)
+    /// <param name="isFlagStored">True when the game stores an event flag (ER's allocation), or null to skip the flag check</param>
+    public static List<EmevdProblem> Run(EmevdScript script, Func<long, EMEVD.Event> findEvent = null, Func<long, bool> isFlagStored = null)
     {
         var problems = new List<EmevdProblem>();
         var id = script.Event.ID;
@@ -71,6 +74,18 @@ public static class EmevdChecks
                 if (passed < needed)
                     problems.Add(new(EmevdProblemKind.CallTooFewArgs, id, line.Index, $"{passed}/{needed}"));
             }
+        }
+
+        // Fixed flag args only: a parameter's value comes from the Initialize Event that starts the event
+        if (isFlagStored != null)
+        {
+            foreach (var line in script.Lines.Where(l => l.Decoded.Fits))
+                foreach (var arg in line.Decoded.Args.Where(a => a.Def?.Role == EmevdArgRole.EventFlag && !line.Params.ContainsKey(a.Offset)))
+                {
+                    var v = arg.Type == EmevdArgType.U32 && arg.Int == uint.MaxValue ? -1 : arg.Int;
+                    if (v > 0 && !isFlagStored(v))
+                        problems.Add(new(EmevdProblemKind.UnallocatedFlag, id, line.Index, $"{v}"));
+                }
         }
 
         return problems;

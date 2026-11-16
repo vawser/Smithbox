@@ -286,6 +286,7 @@ public class EmevdProperties
         {
             // What the value refers to, with a link to the editor that owns it
             View.RoleLinks.Button($"argRoleLink{index}", line, arg);
+            View.RoleLinks.FlagMarker(line, arg);
             ImGui.SameLine();
             ImGui.TextWrapped(View.RoleLinks.Describe(line, arg) ?? EmevdRoleLinks.RoleName(arg.Def.Role));
             GUI.Tooltip(LOC.Get("EMEVD_Role_Source_TT", EmevdRoleLinks.RoleName(arg.Def.Role), arg.Def.RoleSource ?? "-"));
