@@ -16,10 +16,14 @@ public class EsdData : IDisposable
     /// <summary>The file and machine aliases the editor shows and edits</summary>
     public EsdAliases Aliases;
 
+    /// <summary>The user's comments on the state view's blocks, kept in a sidecar file with the project</summary>
+    public EsdComments Comments;
+
     public EsdData(ProjectEntry project)
     {
         Project = project;
         Aliases = new EsdAliases(project);
+        Comments = new EsdComments(project);
     }
 
     public async Task<bool> Setup()

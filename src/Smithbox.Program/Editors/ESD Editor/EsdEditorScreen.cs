@@ -200,6 +200,10 @@ public class EsdEditorScreen : EditorScreen
             return;
         var removals = bank.HasFileRemovals;
         bank.SaveAllDirty();
+
+        // Comments are anchored by block place, so they're written once the containers they're on match the saved files
+        Project.Handler.EsdData?.Comments?.OnSaved();
+
         if (removals)
         {
             foreach (var view in ViewHandler.OpenViews)
@@ -220,7 +224,11 @@ public class EsdEditorScreen : EditorScreen
             return;
 
         if (bank.GetDirtyFiles().Count == 0)
+        {
             Smithbox.Log(this, LOC.Get("EDITOR_Data_Skip_File_Save", View.Selection.SelectedContainer?.Name ?? LOC.Get("ESD_Editor_Stub")));
+            // An undo back to the saved state leaves a comment change waiting with nothing to save
+            Project.Handler.EsdData?.Comments?.OnSaved();
+        }
         else
             SaveBank(bank);
 

@@ -918,6 +918,25 @@ public class EsdEditCommands
                 CommandMenu(LOC.Get("ESD_Edit_Add_Pass"), row.State, row.StateId, row.Condition, EsdCommandList.Pass, -1);
                 break;
         }
+
+        CommentMenu(row);
+    }
+
+    /// <summary>Add / edit / remove the block's comment (kept in the project's sidecar file, not the ESD)</summary>
+    private void CommentMenu(EsdRow row)
+    {
+        var comments = View.Project.Handler.EsdData?.Comments;
+        var block = EsdComments.AnchorOf(row);
+        if (comments == null || block == null)
+            return;
+
+        ImGui.Separator();
+        var has = comments.Has(block);
+        if (ImGui.MenuItem(LOC.Get(has ? "ESD_Comment_Edit" : "ESD_Comment_Add")))
+            View.StateView.BeginComment(row);
+        GUI.Tooltip(LOC.Get("ESD_Comment_Add_TT"));
+        if (has && ImGui.MenuItem(LOC.Get("ESD_Comment_Remove")))
+            comments.Set(Selection.SelectedFile, block, null);
     }
 
     private string CommandFilter = "";

@@ -139,6 +139,8 @@ public static class EsdFormat
     public static readonly Vector4 StatusChipColor = new(0.55f, 0.55f, 0.58f, 1f);
     public static readonly Vector4 TargetChipColor = new(0.95f, 0.85f, 0.85f, 1f);
     public static readonly Vector4 SharedChipColor = new(0.80f, 0.70f, 0.95f, 1f);
+    /// A comment bubble: a sticky-note yellow, apart from every block colour
+    public static readonly Vector4 CommentColor = new(0.97f, 0.90f, 0.55f, 1f);
 
     public static Vector4 Darken(Vector4 c, float f) => new(c.X * f, c.Y * f, c.Z * f, c.W);
 }

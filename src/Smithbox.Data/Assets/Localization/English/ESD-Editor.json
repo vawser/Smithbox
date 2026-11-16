@@ -402,6 +402,18 @@
     { "Key": "ESD_Alias_Confirm", "Text": "Confirm" },
     { "Key": "ESD_Alias_Confirm_TT", "Text": "Saves the alias to the project's alias folder. Leaving the name field after an edit (Enter, or clicking elsewhere) saves too; Escape discards the edit." },
     { "Key": "ESD_Alias_Removed", "Text": "(removed)" },
-    { "Key": "ESD_Alias_Log_Updated", "Text": "Alias {0}: {1}" }
+    { "Key": "ESD_Alias_Log_Updated", "Text": "Alias {0}: {1}" },
+
+    { "Key": "ESD_Comments_Toggle", "Text": "Comments" },
+    { "Key": "ESD_Comments_Toggle_TT", "Text": "Shows the comment bubbles beside the blocks. Comments are your own notes: they aren't saved into the ESD, but kept with the project in .smithbox/Project/ESD/Comments." },
+    { "Key": "ESD_Comment_Add", "Text": "Add Comment" },
+    { "Key": "ESD_Comment_Edit", "Text": "Edit Comment" },
+    { "Key": "ESD_Comment_Remove", "Text": "Remove Comment" },
+    { "Key": "ESD_Comment_Add_TT", "Text": "A note on this block, shown in a bubble beside it. It's kept with the project, not in the ESD, and follows the block when it's moved. While the file has unsaved changes, comment changes are written when the file is saved." },
+    { "Key": "ESD_Comment_Hint", "Text": "Click away to keep · Esc discards" },
+    { "Key": "ESD_Comment_Bubble_TT", "Text": "{0}\n\nClick to edit; right-click to remove." },
+    { "Key": "ESD_Comment_Shared_TT", "Text": "This transition is shared by {0} places: its comment shows at each of them." },
+    { "Key": "ESD_Comments_Failed_Load", "Text": "[ESD Editor] The comments in {0} couldn't be read." },
+    { "Key": "ESD_Comments_Failed_Save", "Text": "[ESD Editor] The comments couldn't be written to {0}." }
   ]
 }

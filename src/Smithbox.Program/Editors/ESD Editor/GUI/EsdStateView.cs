@@ -63,6 +63,19 @@ public class EsdStateView
     private string TextValue = "";
     private bool OpenTextPopup;
 
+    // Comment bubbles (EsdComments): drawn in a column right of the blocks, level with the block they're on
+    private EsdComments Comments => View.Project.Handler.EsdData?.Comments;
+    private List<EsdRow> CommentRowsFor;
+    private int CommentVersion = -1;
+    private bool HasComments;
+
+    // The bubble being edited, in place in the column
+    private object EditCommentBlock;
+    private EsdFileWrapper EditCommentFile;
+    private int EditCommentRow = -1;
+    private string CommentText = "";
+    private bool FocusComment;
+
     private const float RowGap = 2f;
 
     // The command row being dragged (P4 drag and drop)
@@ -105,6 +118,7 @@ public class EsdStateView
     public void Draw()
     {
         Refresh();
+        Comments?.EnsureLoaded(View.Selection.SelectedFile);
         DrawHeader();
 
         ImGui.BeginChild("esdStates", Vector2.Zero, ImGuiChildFlags.Borders, ImGuiWindowFlags.HorizontalScrollbar);
@@ -144,6 +158,12 @@ public class EsdStateView
             selection.ScrollToItem = true;
         }
         GUI.Tooltip(LOC.Get("ESD_Code_Toggle_TT"));
+
+        ImGui.SameLine();
+        var showComments = CFG.Current.EsdEditor_Show_Comments;
+        if (ImGui.Checkbox($"{LOC.Get("ESD_Comments_Toggle")}##esdShowComments", ref showComments))
+            CFG.Current.EsdEditor_Show_Comments = showComments;
+        GUI.Tooltip(LOC.Get("ESD_Comments_Toggle_TT"));
 
         if (selection.Machine is { } machine && selection.SelectedMachine is long id)
         {
@@ -292,8 +312,17 @@ public class EsdStateView
 
         var origin = ImGui.GetCursorScreenPos();
         var width = ImGui.GetContentRegionAvail().X;
+
+        // The comment column takes the right of the view while the machine has comments (or one is being written)
+        var showComments = CFG.Current.EsdEditor_Show_Comments && Comments != null && (MachineHasComments() || EditCommentBlock != null);
+        var commentW = 240f * DPI.UIScale();
+        var commentGap = 16f * DPI.UIScale();
+        var blocksW = Math.Max(width - (showComments ? commentW + commentGap : 0f), 420f * DPI.UIScale());
+
         var x0 = origin.X + 4f;
-        var x1 = origin.X + Math.Max(width, 420f * DPI.UIScale()) - 4f;
+        var x1 = origin.X + blocksW - 4f;
+        var cx0 = x1 + commentGap;
+        var cx1 = cx0 + commentW;
 
         // Row tops as a prefix sum, with a gap before every state but the first
         var tops = new float[Rows.Count + 1];
@@ -375,11 +404,263 @@ public class EsdStateView
             }
         }
 
+        if (showComments)
+        {
+            var editorH = Math.Max(blockH, lineH * 6f + 8f);
+            var editorBottom = DrawCommentColumn(drawList, tops, first, last, lineH, blockH, editorH, x1, cx0, cx1, origin);
+            totalH = Math.Max(totalH, editorBottom - origin.Y + 8f);
+        }
+        else if (EditCommentBlock != null && !CFG.Current.EsdEditor_Show_Comments)
+        {
+            // Comments hidden while one was open (an editor opened this frame, from a block's menu, shows next frame)
+            CommentDiag("editor closed: comments hidden");
+            EndCommentEdit(true);
+        }
+
         // Reserve the whole column, so the scrollbar covers every row
         ImGui.SetCursorScreenPos(origin);
-        ImGui.Dummy(new Vector2(x1 - origin.X + 4f, totalH));
+        ImGui.Dummy(new Vector2((showComments ? cx1 : x1) - origin.X + 4f, totalH));
 
         DrawPopups();
+    }
+
+    // --- comments ---
+
+    private bool MachineHasComments()
+    {
+        var comments = Comments;
+        if (comments == null)
+            return false;
+
+        if (!ReferenceEquals(CommentRowsFor, Rows) || CommentVersion != comments.Version)
+        {
+            CommentRowsFor = Rows;
+            CommentVersion = comments.Version;
+            HasComments = Rows.Any(r => comments.Has(EsdComments.AnchorOf(r)));
+        }
+        return HasComments;
+    }
+
+    /// <summary>Opens the in-place editor on the row's block comment (a new one if it has none)</summary>
+    public void BeginComment(EsdRow row)
+    {
+        var block = EsdComments.AnchorOf(row);
+        if (block == null || Comments == null)
+            return;
+
+        if (EditCommentBlock != null && !ReferenceEquals(EditCommentBlock, block))
+            EndCommentEdit(true);
+
+        EditCommentBlock = block;
+        EditCommentFile = View.Selection.SelectedFile;
+        EditCommentRow = Rows.IndexOf(row);
+        CommentText = Comments.Get(block) ?? "";
+        FocusComment = true;
+        CFG.Current.EsdEditor_Show_Comments = true;
+        CommentDiag($"begin on {row.Kind} (state {row.StateId}), row {EditCommentRow} of {Rows.Count}");
+    }
+
+    // TEMPORARY diagnostics for the comment editor: remove once Add Comment is confirmed working
+    private void CommentDiag(string what) => Smithbox.Log(this, $"[ESD Comments] {what}");
+
+    /// <summary>
+    /// Closes the editor. keepChange: the editor went away without the field being left (its block scrolled out of the
+    /// rows, the comments were hidden): a typed change is kept rather than lost.
+    /// </summary>
+    private void EndCommentEdit(bool keepChange)
+    {
+        if (keepChange && EditCommentBlock != null && CommentText != (Comments?.Get(EditCommentBlock) ?? ""))
+            Comments?.Set(EditCommentFile, EditCommentBlock, CommentText);
+
+        EditCommentBlock = null;
+        EditCommentFile = null;
+        EditCommentRow = -1;
+        FocusComment = false;
+    }
+
+    /// <summary>
+    /// The comment column: a bubble level with each commented block on screen, then the editor if one is open. Returns
+    /// the bottom of what it drew past the rows (the editor can reach below the last row).
+    /// </summary>
+    private float DrawCommentColumn(ImDrawListPtr drawList, float[] tops, int first, int last, float lineH, float blockH, float editorH,
+        float x1, float cx0, float cx1, Vector2 origin)
+    {
+        var comments = Comments;
+        var bottom = 0f;
+
+        // The editor's row: where it was opened, else wherever its block is now (a rebuild moves rows)
+        var editRow = -1;
+        Vector2 editMin = default, editMax = default;
+        if (EditCommentBlock != null)
+        {
+            editRow = EditCommentRow >= 0 && EditCommentRow < Rows.Count && ReferenceEquals(EsdComments.AnchorOf(Rows[EditCommentRow]), EditCommentBlock)
+                ? EditCommentRow
+                : Rows.FindIndex(r => ReferenceEquals(EsdComments.AnchorOf(r), EditCommentBlock));
+
+            if (editRow < 0 || View.Selection.SelectedFile != EditCommentFile)
+            {
+                CommentDiag($"editor closed: block row {editRow}, same file {View.Selection.SelectedFile == EditCommentFile}");
+                EndCommentEdit(true);
+            }
+            else
+            {
+                EditCommentRow = editRow;
+                editMin = new Vector2(cx0, origin.Y + tops[editRow]);
+                editMax = new Vector2(cx1, editMin.Y + editorH);
+            }
+        }
+
+        var bubbleColor = ImGui.GetColorU32(EsdFormat.CommentColor);
+        var textColor = ImGui.GetColorU32(new Vector4(0.10f, 0.09f, 0.05f, 1f));
+        var lineColor = ImGui.GetColorU32(EsdFormat.Darken(EsdFormat.CommentColor, 0.7f));
+
+        for (var r = first; r <= last && r < Rows.Count; r++)
+        {
+            var row = Rows[r];
+            var block = EsdComments.AnchorOf(row);
+            var text = comments.Get(block);
+            if (text == null || r == editRow)
+                continue;
+
+            var h = RowHeight(row, lineH, blockH);
+            var min = new Vector2(cx0, origin.Y + tops[r]);
+            var max = new Vector2(cx1, min.Y + h);
+            var midY = (min.Y + max.Y) * 0.5f;
+
+            // A line from the block to the bubble's tail
+            drawList.AddLine(new Vector2(x1 + 2f, midY), new Vector2(cx0 - 6f, midY), lineColor, 1f);
+            drawList.AddTriangleFilled(new Vector2(cx0, midY - 5f), new Vector2(cx0 - 7f, midY), new Vector2(cx0, midY + 5f), bubbleColor);
+            drawList.AddRectFilled(min, max, bubbleColor, 6f);
+            if (View.Selection.IsSelected(row))
+                drawList.AddRect(min, max, ImGui.GetColorU32(new Vector4(1, 1, 1, 1)), 6f, ImDrawFlags.None, 2f);
+
+            drawList.PushClipRect(min, max, true);
+            var preview = FirstLine(text, cx1 - cx0 - 16f, out var cut);
+            drawList.AddText(new Vector2(min.X + 8f, min.Y + (h - lineH) * 0.5f), textColor, cut ? preview + "…" : preview);
+            drawList.PopClipRect();
+
+            // A bubble under the open editor doesn't take clicks
+            if (EditCommentBlock != null && min.Y < editMax.Y && max.Y > editMin.Y)
+                continue;
+
+            ImGui.SetCursorScreenPos(min);
+            ImGui.InvisibleButton($"##esdComment{r}", max - min);
+            if (ImGui.IsItemHovered())
+                GUI.Tooltip(LOC.Get("ESD_Comment_Bubble_TT", text) + (row.SharedCount > 1 ? "\n" + LOC.Get("ESD_Comment_Shared_TT", row.SharedCount) : ""));
+            if (ImGui.IsItemClicked())
+            {
+                View.Selection.SelectRow(row);
+                BeginComment(row);
+            }
+
+            if (ImGui.BeginPopupContextItem($"##esdComment{r}_menu"))
+            {
+                if (ImGui.MenuItem(LOC.Get("ESD_Comment_Edit")))
+                    BeginComment(row);
+                if (ImGui.MenuItem(LOC.Get("ESD_Comment_Remove")))
+                    comments.Set(View.Selection.SelectedFile, block, null);
+                ImGui.EndPopup();
+            }
+        }
+
+        if (EditCommentBlock != null)
+            bottom = DrawCommentEditor(drawList, editMin, editMax, x1, lineH, lineColor);
+
+        return bottom;
+    }
+
+    /// <summary>The open comment's text box, over its bubble's place. Leaving it after an edit keeps the text; Escape discards.</summary>
+    private float DrawCommentEditor(ImDrawListPtr drawList, Vector2 min, Vector2 max, float x1, float lineH, uint lineColor)
+    {
+        var midY = min.Y + lineH * 0.5f + 4f;
+        drawList.AddLine(new Vector2(x1 + 2f, midY), new Vector2(min.X - 6f, midY), lineColor, 1f);
+
+        if (FocusComment)
+        {
+            // A narrow view puts the column past the right edge: bring the editor into view
+            var winX = ImGui.GetWindowPos().X;
+            var winW = ImGui.GetWindowWidth();
+            if (max.X > winX + winW - ImGui.GetStyle().ScrollbarSize)
+                ImGui.SetScrollFromPosX(max.X - winX + 8f, 1f);
+        }
+
+        ImGui.SetCursorScreenPos(min);
+        var focusing = FocusComment;
+        if (FocusComment)
+        {
+            ImGui.SetKeyboardFocusHere();
+            FocusComment = false;
+        }
+
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, EsdFormat.Darken(EsdFormat.CommentColor, 0.35f));
+        ImGui.InputTextMultiline("##esdCommentEdit", ref CommentText, 4096, max - min);
+        ImGui.PopStyleColor();
+
+        var hovered = ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem);
+        var active = ImGui.IsItemActive();
+        var clickedAway = !hovered && (ImGui.IsMouseClicked(ImGuiMouseButton.Left) || ImGui.IsMouseClicked(ImGuiMouseButton.Right));
+
+        if (GUI.InputCommitted())
+        {
+            CommentDiag("commit (field left after an edit)");
+            Comments?.Set(EditCommentFile, EditCommentBlock, CommentText);
+            EndCommentEdit(false);
+        }
+        else if (ImGui.IsItemDeactivated())
+        {
+            if (ImGui.IsKeyPressed(ImGuiKey.Escape, false))
+            {
+                CommentDiag("escape");
+                EndCommentEdit(false);
+            }
+            else if (clickedAway)
+            {
+                CommentDiag("left with no edit");
+                EndCommentEdit(false);
+            }
+            else
+            {
+                // Focus taken away without the user leaving (a closing menu hands focus back to its window): take it back
+                CommentDiag("focus lost without a click or escape: refocusing");
+                FocusComment = true;
+            }
+        }
+        else if (!active && !focusing && clickedAway)
+        {
+            // Never focused (or focus didn't take), and the user clicked elsewhere: nothing was typed
+            CommentDiag("clicked away while not active");
+            EndCommentEdit(false);
+        }
+
+        var hint = LOC.Get("ESD_Comment_Hint");
+        var hintPos = new Vector2(min.X, max.Y + 2f);
+        drawList.AddText(hintPos, ImGui.GetColorU32(ImGuiCol.TextDisabled), hint);
+        return hintPos.Y + lineH;
+    }
+
+    /// <summary>The text's first line, cut to fit a width; cut is true when anything was left out</summary>
+    private static string FirstLine(string text, float width, out bool cut)
+    {
+        var nl = text.IndexOfAny(new[] { '\r', '\n' });
+        var line = nl >= 0 ? text[..nl] : text;
+        cut = nl >= 0 && text[nl..].Trim().Length > 0;
+
+        var ellipsis = ImGui.CalcTextSize("…").X;
+        if (ImGui.CalcTextSize(line).X <= width - (cut ? ellipsis : 0f))
+            return line;
+
+        cut = true;
+        var lo = 0;
+        var hi = line.Length;
+        while (lo < hi)
+        {
+            var mid = (lo + hi + 1) / 2;
+            if (ImGui.CalcTextSize(line[..mid]).X <= width - ellipsis)
+                lo = mid;
+            else
+                hi = mid - 1;
+        }
+        return line[..lo].TrimEnd();
     }
 
     private static Vector4 ConditionColor(EsdRow row) =>

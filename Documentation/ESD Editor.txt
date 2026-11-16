@@ -2,8 +2,5 @@
 # ESD Editor TODO
 #----------------------------------------------------
 
-- Add aliases for:
-    - Files
-    - Machines
-    
-- EDD files
+- UX for Properties
+- Aliases for ID references within States graph
