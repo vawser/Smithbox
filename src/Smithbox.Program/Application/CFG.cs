@@ -1353,6 +1353,9 @@ public class CFG
     ///------------------------------------------------------------
     public bool EsdEditor_Code_View = true;
     public bool Interface_EsdEditor_ToolWindow = true;
+    public bool EsdEditor_File_List_Display_Counts = true;
+    public bool EsdEditor_Machine_List_Display_State_Count = true;
+    public bool EsdEditor_Machine_List_Display_Call_Count = true;
     #endregion
 
     #region FX Editor

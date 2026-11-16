@@ -73,6 +73,14 @@ public class EsdFileList
 
         ImGui.BeginChild("esdFileListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("esdEditor_FileList", ref Filter, ref ExactFilter);
+
+        // Toggle: ESD and machine counts
+        GUI.DisplayToggleButton("esdFileCountToggle", Icons.Hashtag,
+            ref CFG.Current.EsdEditor_File_List_Display_Counts,
+            "ESD_FileList_Count_Toggle_Hide",
+            "ESD_FileList_Count_Toggle_Show",
+            "ESD_FileList_Count_Toggle_TT");
+
         ImGui.EndChild();
 
         ImGui.BeginChild("esdFileList", Vector2.Zero, ImGuiChildFlags.Borders);
@@ -400,7 +408,7 @@ public class EsdFileList
                     ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
                     GUI.Tooltip(file.LoadError);
                 }
-                else
+                else if (CFG.Current.EsdEditor_File_List_Display_Counts)
                 {
                     ImGui.SameLine();
                     ImGui.TextDisabled(LOC.Get("ESD_FileList_Machine_Count", file.Esd.StateGroups.Count));
@@ -428,15 +436,18 @@ public class EsdFileList
             ImGui.TextColored(UI.Current.ImGui_Warning_Text_Color, Icons.ExclamationTriangle);
             GUI.Tooltip(container.LoadError ?? file.LoadError);
         }
-        else if (container.IsLoaded && container.IsBinder)
+        else if (CFG.Current.EsdEditor_File_List_Display_Counts)
         {
-            ImGui.SameLine();
-            ImGui.TextDisabled(LOC.Get("ESD_FileList_Esd_Count", container.Files.Count));
-        }
-        else if (file?.Esd != null)
-        {
-            ImGui.SameLine();
-            ImGui.TextDisabled(LOC.Get("ESD_FileList_Machine_Count", file.Esd.StateGroups.Count));
+            if (container.IsLoaded && container.IsBinder)
+            {
+                ImGui.SameLine();
+                ImGui.TextDisabled(LOC.Get("ESD_FileList_Esd_Count", container.Files.Count));
+            }
+            else if (file?.Esd != null)
+            {
+                ImGui.SameLine();
+                ImGui.TextDisabled(LOC.Get("ESD_FileList_Machine_Count", file.Esd.StateGroups.Count));
+            }
         }
 
         if (container.IsNew)

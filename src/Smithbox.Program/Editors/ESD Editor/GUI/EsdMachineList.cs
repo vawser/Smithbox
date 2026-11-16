@@ -39,6 +39,21 @@ public class EsdMachineList
 
         ImGui.BeginChild("esdMachineListHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
         EditorFilters.DisplaySearchbar("esdEditor_MachineList", ref Filter, ref ExactFilter);
+
+        // Toggle: state counts
+        GUI.DisplayToggleButton("esdMachineStateCountToggle", Icons.Hashtag,
+            ref CFG.Current.EsdEditor_Machine_List_Display_State_Count,
+            "ESD_MachineList_State_Toggle_Hide",
+            "ESD_MachineList_State_Toggle_Show",
+            "ESD_MachineList_State_Toggle_TT");
+
+        // Toggle: call counts
+        GUI.DisplayToggleButton("esdMachineCallCountToggle", Icons.Phone,
+            ref CFG.Current.EsdEditor_Machine_List_Display_Call_Count,
+            "ESD_MachineList_Call_Toggle_Hide",
+            "ESD_MachineList_Call_Toggle_Show",
+            "ESD_MachineList_Call_Toggle_TT");
+
         ImGui.EndChild();
 
         ImGui.BeginChild("esdMachineList", Vector2.Zero, ImGuiChildFlags.Borders);
@@ -92,7 +107,19 @@ public class EsdMachineList
         {
             var index = Visible.IndexOf(sel);
             if (index >= 0)
-                ImGui.SetScrollY(index * ImGui.GetTextLineHeightWithSpacing());
+            {
+                // Only scroll when the entry is out of view, and then center it,
+                // so clicking a visible entry doesn't move the list
+                var lineHeight = ImGui.GetTextLineHeightWithSpacing();
+                var itemTop = ImGui.GetCursorPosY() + index * lineHeight;
+                var itemBottom = itemTop + lineHeight;
+                var viewTop = ImGui.GetScrollY();
+                var viewHeight = ImGui.GetWindowHeight();
+                var viewBottom = viewTop + viewHeight;
+
+                if (itemTop < viewTop || itemBottom > viewBottom)
+                    ImGui.SetScrollY(Math.Max(0f, itemTop - (viewHeight - lineHeight) * 0.5f));
+            }
             selection.ScrollToMachine = false;
         }
 
@@ -138,10 +165,19 @@ public class EsdMachineList
                     ImGui.SameLine();
                 }
 
-                var calls = Calls.TryGetValue(id, out var n) ? n : 0;
-                ImGui.TextDisabled(calls > 0
-                    ? LOC.Get("ESD_MachineList_Info_Called", machine.Count, calls)
-                    : LOC.Get("ESD_MachineList_Info", machine.Count));
+                var calls = CFG.Current.EsdEditor_Machine_List_Display_Call_Count && Calls.TryGetValue(id, out var n) ? n : 0;
+                var states = CFG.Current.EsdEditor_Machine_List_Display_State_Count;
+                var info = (states, calls > 0) switch
+                {
+                    (true, true) => LOC.Get("ESD_MachineList_Info_Called", machine.Count, calls),
+                    (true, false) => LOC.Get("ESD_MachineList_Info", machine.Count),
+                    (false, true) => LOC.Get("ESD_MachineList_Info_Called_Only", calls),
+                    _ => null
+                };
+                if (info != null)
+                    ImGui.TextDisabled(info);
+                else
+                    ImGui.NewLine(); // ends the SameLine after the label / alias
             }
         }
 

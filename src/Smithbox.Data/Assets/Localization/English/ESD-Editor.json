@@ -70,6 +70,9 @@
     { "Key": "ESD_FileList_Binder_Empty", "Text": "No ESDs in this binder." },
     { "Key": "ESD_FileList_Esd_Count", "Text": "{0} ESDs" },
     { "Key": "ESD_FileList_Machine_Count", "Text": "{0} machines" },
+    { "Key": "ESD_FileList_Count_Toggle_Show", "Text": "Show file counts" },
+    { "Key": "ESD_FileList_Count_Toggle_Hide", "Text": "Hide file counts" },
+    { "Key": "ESD_FileList_Count_Toggle_TT", "Text": "Toggle the display of the ESD count after each binder and the machine count after each ESD.\n\nCurrent Mode:\n{0}" },
     { "Key": "ESD_FileList_In_Project_TT", "Text": "The project has its own copy of this file." },
 
     { "Key": "ESD_Kind_Talk", "Text": "Talk" },
@@ -92,6 +95,13 @@
     { "Key": "ESD_MachineList_Not_Loaded", "Text": "This ESD couldn't be read." },
     { "Key": "ESD_MachineList_Info", "Text": "{0} states" },
     { "Key": "ESD_MachineList_Info_Called", "Text": "{0} states, called {1}x" },
+    { "Key": "ESD_MachineList_Info_Called_Only", "Text": "called {0}x" },
+    { "Key": "ESD_MachineList_State_Toggle_Show", "Text": "Show state counts" },
+    { "Key": "ESD_MachineList_State_Toggle_Hide", "Text": "Hide state counts" },
+    { "Key": "ESD_MachineList_State_Toggle_TT", "Text": "Toggle the display of the state count after each machine.\n\nCurrent Mode:\n{0}" },
+    { "Key": "ESD_MachineList_Call_Toggle_Show", "Text": "Show call counts" },
+    { "Key": "ESD_MachineList_Call_Toggle_Hide", "Text": "Hide call counts" },
+    { "Key": "ESD_MachineList_Call_Toggle_TT", "Text": "Toggle the display of how many calls in the file start each machine.\n\nCurrent Mode:\n{0}" },
     { "Key": "ESD_MachineList_Entry_TT", "Text": "Machine {0} ({1}): an entry machine." },
     { "Key": "ESD_MachineList_Sub_TT", "Text": "Machine {0} ({1}): a sub-machine, started by call blocks in this file." },
 

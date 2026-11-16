@@ -1,0 +1,1490 @@
+[
+  {
+    "ID": "t000001000",
+    "Name": "Grace",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t000002000",
+    "Name": "BuddyStone",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t000002100",
+    "Name": "BuddyStone (Colosseum)",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101006000",
+    "Name": "Finger Reader Crone [North of Stormhill Shack]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101206000",
+    "Name": "Finger Reader Crone [Bellum Highway]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101236000",
+    "Name": "Finger Reader Crone [Gate Town Southwest]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101306000",
+    "Name": "Finger Reader Crone [Forest-Spanning Greatbridge]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101316000",
+    "Name": "Finger Reader Crone [Capital Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t101601203",
+    "Name": "Godwyn's Wet Nurse [Deeproot Depths]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t102001110",
+    "Name": "Finger Reader Enia [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t106006000",
+    "Name": "Renna the Witch [Church of Elleh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t106016000",
+    "Name": "Ranni the Witch [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t106026000",
+    "Name": "Ranni the Witch [Moonlight Altar]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t106111201",
+    "Name": "Ranni [Ainsel River / Lake of Rot]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t112001100",
+    "Name": "The Noble Goldmask [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t112006000",
+    "Name": "The Noble Goldmask [Stargazer's Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t200001400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t200101400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t200111400",
+    "Name": "Rennala, Queen of the Full Moon [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t202101300",
+    "Name": "Maliketh [Crumbling Farum Azula]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t202111300",
+    "Name": "Beast Clergyman [Crumbling Farum Azula]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t203101500",
+    "Name": "Malenia, Blade of Miquella [Miquella's Haligtree]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t204006000",
+    "Name": "Margit [Capital Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t204111100",
+    "Name": "Morgott, the Omen King [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t204201100",
+    "Name": "Morgott (Dead) [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t206101105",
+    "Name": "Godfrey / Hoarah Loux [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t213001110",
+    "Name": "Smithing Master Hewg [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t214101600",
+    "Name": "Rykard, Lord of Blasphemy [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216001202",
+    "Name": "Blaidd the Half-Wolf [Siofra River / Nokron]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216006000",
+    "Name": "Blaidd the Half-Wolf [Forlorn Hound Evergaol / Redmane Castle / Ranni's Rise / Radahn Arena]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216016000",
+    "Name": "Balidd the Half-Wolf [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216026000",
+    "Name": "Blaidd the Half-Wolf [Forlorn Hound Evergaol]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216036000",
+    "Name": "Blaidd the Half-Wolf [Forlorn Hound Evergaol]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t216906000",
+    "Name": "Blaidd the Half-Wolf [Waypoint Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t219006000",
+    "Name": "Old Albus [Village of the Albinaurics]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t220006000",
+    "Name": "Alexander, Warrior Jar [Saintsbridge / Radahn Arena]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t220026000",
+    "Name": "Alexander, Warrior Jar [Jarbug]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t220036000",
+    "Name": "Alexander, Warrior Jar [Seethewater Terminus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t223001100",
+    "Name": "Boc the Seamster [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t223001105",
+    "Name": "Boc the Seamster [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t223001400",
+    "Name": "Boc the Seamster [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t223003115",
+    "Name": "Demi-Human Boc [Coastal Cave]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t223006000",
+    "Name": "Boc the Seamster [Lake-Facing Cliffs / Bellum Highway]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t224006000",
+    "Name": "War Counselor Iji [Road to the Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t226006000",
+    "Name": "Jar-Bairn [Jarburg]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t228106000",
+    "Name": "Latenna the Albinauric [Apostate Derelict]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t228206000",
+    "Name": "Latenna [Stargazer's Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t228306000",
+    "Name": "Latenna [Consecrated Snowfield]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t300001600",
+    "Name": "Tanith [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t301006000",
+    "Name": "White Mask Varre [North Rose Church / Church of Elleh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t301011205",
+    "Name": "White Mask Varre [Mohgwyn Palace]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t301101205",
+    "Name": "White Mask Varre [Mohgwyn Palace]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302001000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302011000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302021000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302031000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302041000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302051000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t302061000",
+    "Name": "Gatekeeper Gostoc [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t307006000",
+    "Name": "Preceptor Seluvis [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t307036000",
+    "Name": "Preceptor Seluvis [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t307306000",
+    "Name": "Preceptor Seluvis [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t309001600",
+    "Name": "Patches [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t309003100",
+    "Name": "Patches (Boss) [Murkwater Cave]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t309006000",
+    "Name": "Patches [Seethewater Cave Entrance / Scenic Isle / Shaded Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t310003500",
+    "Name": "Finger Maiden Hyetta [Subterranean Shunning-Grounds]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t310006000",
+    "Name": "Lightseeker Hyetta [Lake-Facing Cliffs / Gate Town Bridge / Bellum Church]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t310006000",
+    "Name": "Irina of Morne [Impaler's Catacombs Entrance]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t310016000",
+    "Name": "Irina of Morne [Impaler's Catacomb Entrance]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t311006000",
+    "Name": "Castellan Edgar [Castle Morne / Impaler's Catacombs Entrance]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t312001400",
+    "Name": "Witch-Hunter Jerren [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t312006000",
+    "Name": "Castellen Jerren [Forth Church of Marika / Redmane Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t312101400",
+    "Name": "Witch-Hunter Jerren [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t313001600",
+    "Name": "Rya / Zorayas the Scout [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t313006000",
+    "Name": "Rya the Scout [Grand Lift of Dectus / Scenic Isle / Lux Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t314001110",
+    "Name": "Knight Diallos [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t314001600",
+    "Name": "Knight Diallos [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t314006000",
+    "Name": "Potentate Diallos [Jarburg]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t314006000",
+    "Name": "Knight Diallos [Gate Town Southeast]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316006000",
+    "Name": "Sorceress Sellen [Waypoint Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316106000",
+    "Name": "Sorceress Sellen [Witchbane Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316206000",
+    "Name": "Sorceress Sellen [Ranni's Rise]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316211400",
+    "Name": "Sorceress Sellen [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316301400",
+    "Name": "Sorceress Sellen (Graven School) [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t316401400",
+    "Name": "Sorceress Sellen [Raya Lucaria]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t318001110",
+    "Name": "Yura, Hunter of Bloody Fingers [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t318006000",
+    "Name": "Yura, Hunter of Bloody Fingers [Seaside Ruins / Artist's Shack / Second Church of Marika / Main Academy Gate / West Zamor Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t318016000",
+    "Name": "Yura, Hunter of Bloody Fingers [Murkwater Coast]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t319001110",
+    "Name": "D, Hunter of the Dead [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t319006000",
+    "Name": "D, Hunter of the Dead [Summonwater Village]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t319201202",
+    "Name": "D, Beholder of Death [Siofra River / Nokron]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t319201203",
+    "Name": "D, Beholder of Death [Deeproot Depths]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t320001110",
+    "Name": "Roderika, Spirit Tuner [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t320006000",
+    "Name": "Heartbroken Maiden (Roderika) [Stormhill Shack]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t321001000",
+    "Name": "Kenneth Haight [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t321006000",
+    "Name": "Kenneth Haight [Fort Haight / South of Summonwater Village]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t322001110",
+    "Name": "Fia, Deathbed Companion [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t322001203",
+    "Name": "Fia, Deathbed Companion [Deeproot Depths]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t322011203",
+    "Name": "Fia, Deathbed Companion [Deeproot Depths]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t323001110",
+    "Name": "Dung Eater [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t323003500",
+    "Name": "Dung Eater [Subterranean Shunning-Grounds]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t323006000",
+    "Name": "Dung Eater [Ashen Capital Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t324001105",
+    "Name": "Sir Gideon Ofnir [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t324001110",
+    "Name": "Sir Gideon Ofnir [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t325001000",
+    "Name": "Sorcerer Rogier [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t325001110",
+    "Name": "Sorcerer Rogier [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t326001600",
+    "Name": "Recusant Bernhal [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t326006000",
+    "Name": "Knight Bernahl [Warmaster's Shack]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t326101600",
+    "Name": "Sword of Bernhal [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t330006000",
+    "Name": "Miriel, Pastor of Vows [Church of Vows]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t330016000",
+    "Name": "Basin of Atonement [Church of Vows]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t331006000",
+    "Name": "Blackguard [Boilprawn Shack / Capital Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t331206000",
+    "Name": "Blackguard [Capital Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t332001600",
+    "Name": "Rykard-Hating Ghost [Volcano Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t333006000",
+    "Name": "Sorcerer Thops [Church of Irith]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t334001000",
+    "Name": "Nepheli Loux [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t334001110",
+    "Name": "Nepheli Loux [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t334006000",
+    "Name": "Nepheli Loux [Village of the Albinaurics]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t334011000",
+    "Name": "Nepheli Loux [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t339001110",
+    "Name": "Ensha of the Royal Remains [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t348001500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t348001500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t348006000",
+    "Name": "Millicent [Erdtree-Gazing Hill / Windmill Heights / Gowry's Shack / Stargazer's Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t348201500",
+    "Name": "Millicent [Miquella's Haligtree]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t349006000",
+    "Name": "Sage Gowry [Gowry's Shack]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t351001100",
+    "Name": "Scribe Corhyn [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t351001110",
+    "Name": "Brother Corhyn [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t351006000",
+    "Name": "Brother Corhyn [Forest-Spanning Greatbridge / Road of Iniquity Side Path / Stargazer's Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t401102101",
+    "Name": "Messmer the Impaler [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t403006100",
+    "Name": "Igon [Jagged Peak / Pillar Path Waypoint]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t403106100",
+    "Name": "Drake Warrior Igon (Coop) [Jagged Peak]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t404102800",
+    "Name": "Midra (Human) [Midra's Manse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t405002200",
+    "Name": "St. Trina [Stone Coffin Fissure]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t406006100",
+    "Name": "Dragon Communion Priestess  [Jagged Peak]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t409006100",
+    "Name": "Swordhand of Night Jolan [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t409106100",
+    "Name": "Swordhand of Night Jolan (Invasion) [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t410102001",
+    "Name": "Promised Consort Radahn",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t412006100",
+    "Name": "Swordhand of Night Anna [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t413002100",
+    "Name": "Fire Knight Queelign [Shadow Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t413102000",
+    "Name": "Fire Knight Queelign [Belurat]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t413106100",
+    "Name": "Fire Knight Queelgn (Invasion) [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414002101",
+    "Name": "Hornsent [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414006100",
+    "Name": "Hornsent [Gravesite Plain / Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414102100",
+    "Name": "Hornsent (Coop) [Shadoe Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414102101",
+    "Name": "Hornsent (Coop) [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414132100",
+    "Name": "Hornsent (Invasion) [Shadow Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414142100",
+    "Name": "Hornsent (Assisted Spirit) [Shadow Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414152001",
+    "Name": "Hornsent (Boss) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t414206100",
+    "Name": "Hornsent (Invasion) [Ancient Ruins of Rauh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t415006100",
+    "Name": "Moore [Gravesite Plain / Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t415016100",
+    "Name": "Moore (Invasion) [Gravesite Plain / Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t415152001",
+    "Name": "Moore (Boss) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416002001",
+    "Name": "Sir Ansbach [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416002101",
+    "Name": "Sir Ansbach [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416006100",
+    "Name": "Sir Ansbach [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416112101",
+    "Name": "Sir Ansbach (Invasion) [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416122101",
+    "Name": "Sir Ansbach (Assisted Spirit) [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416132001",
+    "Name": "Pureblood Knight Ansbach (Coop) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t416152001",
+    "Name": "Pureblood Knight Ansbach (Helpful Spirit) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t417002101",
+    "Name": "Redmane Freyja [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t417006100",
+    "Name": "Redmane Freyja (Three-Path Cross) [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t417152001",
+    "Name": "Redmane Freyja (Boss) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418001205",
+    "Name": "Needle Knight Leda [Mohgwyn Palace]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418006100",
+    "Name": "Needle Knight Leda [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418012001",
+    "Name": "Needle Knight Leda [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418112101",
+    "Name": "Needle Knight Leda (Helpful Spirit) [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418122101",
+    "Name": "Needle Knight Leda (Invasion) [Specimen Storehouse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418132100",
+    "Name": "Needle Knight Leda (Coop) [Shadow Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418142100",
+    "Name": "Needle Knight Leda (Invasion) [Shadow Keep]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t418152001",
+    "Name": "Needle Knight Leda (Boss) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419002001",
+    "Name": "Thiollier [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419002200",
+    "Name": "Thiollier [Stone Coffin Fissure]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419006100",
+    "Name": "Thiollier (Pillar Path Cross) [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419112200",
+    "Name": "Thiollier (Invasion) [Stone Coffin Fissure]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419122001",
+    "Name": "Thiollier (Coop) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t419152001",
+    "Name": "Thiollier (Helpful Spirit) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t420006100",
+    "Name": "Count Ymir [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t420106100",
+    "Name": "Count Ymir, Mother of Fingers (Cathedral of Manus Metyr) [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t425006100",
+    "Name": "Dryleaf Dane [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t425152001",
+    "Name": "Dryleaf Dane (Boss) [Enir-Ilim]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t430006100",
+    "Name": "Kindred of Rot [East Castle Enis]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t430026100",
+    "Name": "Kindred of Rot [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450002200",
+    "Name": "Commoner (Pot) [Stone Coffin Fissure]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450002800",
+    "Name": "Commoner (Pot) [Midra's Manse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450004200",
+    "Name": "Commoner (Pot) [Ruined Forge Lava Intake]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450004202",
+    "Name": "Commoner (Pot) [Ruined Forge of Starfall Past]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450006100",
+    "Name": "Commoner (Pot) [Abyssal Woods]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450012200",
+    "Name": "Commoner (Pot) [Stone Coffin Fissure]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450012800",
+    "Name": "Commoner (Pot) [Midra's Manse]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450026100",
+    "Name": "Commoner (Pot) [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450036100",
+    "Name": "Commoner (Pot) [Cerulean Coast]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450046100",
+    "Name": "Commoner (Pot) [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450056100",
+    "Name": "Messmer Soldier [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450076100",
+    "Name": "Messmer Soldier [Ancient Ruins of Rauh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t450086100",
+    "Name": "Commoner (Pot) [Gravesite Plain]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t600001110",
+    "Name": "Twin Maiden Husks [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t601006000",
+    "Name": "Church of Dragon Communion [Limgrave]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t601016000",
+    "Name": "Church of Dragon Communion [Caelid]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t602006000",
+    "Name": "Smithing Table [Church of Elleh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t603001203",
+    "Name": "Walking Mausoleum [Deeproot Depths]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t607001900",
+    "Name": "Talk Dummy [Stone Platform]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t608001110",
+    "Name": "Clouded Mirror Stand [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t620001100",
+    "Name": "Talk Dummy [Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t620001105",
+    "Name": "Unknown [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t621006000",
+    "Name": "Unknown [Stormhill Colosseum]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t622006000",
+    "Name": "Great-Jar [Caelid]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t623001110",
+    "Name": "Unknown [Roundtable Hold]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t630006100",
+    "Name": "Grand Altar of Dragon Communion [Jagged Peak]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t631006100",
+    "Name": "Wandering Mausoleum Corpse [Scadu Altus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t631016100",
+    "Name": "Wandering Mausoleum Corpse [Scaduview]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t631026100",
+    "Name": "Wandering Mausoleum Corpse [Finger Ruins of Rhia]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t700003002",
+    "Name": "Commoner (Stranded Soul) [Stormfoot Catacombs]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t700016000",
+    "Name": "Wandering Noble (Stranded Soul) [Mistwood Outskirts]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t700026000",
+    "Name": "Silent Spirit [Stormhill Colosseum]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t700046000",
+    "Name": "Wandering Noble (Stranded Soul) [Castle Morne]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t700221000",
+    "Name": "Commoner (Stranded Soul) [Stormveil Castle]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701036000",
+    "Name": "Commoner (Stranded Soul) [Village of the Albinaurics]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701046000",
+    "Name": "Commoner (Stranded Soul) [Frenzy-Flaming Tower]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701066000",
+    "Name": "Wandering Noble (Stranded Soul) [Liurnia Highway]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701093411",
+    "Name": "Wandering Noble (Stranded Soul) [Divine Tower of Liurnia]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701106000",
+    "Name": "Silent Spirit [Caria Manor]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701116000",
+    "Name": "Commoner (Stranded Soul) [Purified Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t701136000",
+    "Name": "Wandering Noble (Stranded Soul) [Grand Lift of Dectus]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t702036000",
+    "Name": "Commoner (Stranded Soul) [Stormcaller Church]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t702166000",
+    "Name": "Wandering Noble (Stranded Soul) [Road of Iniquity]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t703016000",
+    "Name": "Commoner (Stranded Soul) [Caelid Waypoint Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t703026000",
+    "Name": "Wandering Noble (Stranded Soul) [West Aeonia Swamp]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t703036000",
+    "Name": "Silent Spirit [Dragonbarrow]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t703046000",
+    "Name": "Wandering Noble (Stranded Soul) [Rotview Balcony]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t704086000",
+    "Name": "Wandering Noble (Stranded Soul) [North Castle Sol]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t704126000",
+    "Name": "Wandering Noble (Stranded Soul) [Consecrated Snowfield]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t704136000",
+    "Name": "Wandering Noble (Stranded Soul) [Inner Consecrated Snowfield]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t706001105",
+    "Name": "Commoner (Stranded Soul) [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t706011105",
+    "Name": "Commoner (Stranded Soul) [Ashen Leyndell]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t800006000",
+    "Name": "Merchant Kale [Church of Elleh]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801116000",
+    "Name": "Nomadic Merchant [Summonwater Village]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801126000",
+    "Name": "Nomadic Merchant [Fort Haight]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801136000",
+    "Name": "Nomadic Merchant [Coastal Cave Entrance]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801156000",
+    "Name": "Nomadic Merchant [Laskyar Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801176000",
+    "Name": "Isolated Merchant [South Raya Lucaria Gate]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801186000",
+    "Name": "Nomadic Merchant [Bellum Highway]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801206000",
+    "Name": "Nomadic Merchant [Forest-Spanning Greatbridge]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801216000",
+    "Name": "Nomadic Merchant [Seethewater Cave Entrance]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801236000",
+    "Name": "Nomadic Merchant [Aeonia Swmap Bank]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801256000",
+    "Name": "Isolated Merchant [Isolated Merchant's Shack]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801266000",
+    "Name": "Hermit Merchant [Stargazer's Ruins]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801281201",
+    "Name": "Hermit Merchant [Ainsel River / Lake of Rot]",
+    "Description": "",
+    "Tags": []
+  },
+  {
+    "ID": "t801291205",
+    "Name": "Imprisoned Merchant [Mohgwyn Palace]",
+    "Description": "",
+    "Tags": []
+  }
+]
