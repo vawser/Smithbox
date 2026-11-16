@@ -482,6 +482,10 @@ public enum KeybindID
     [Display(Name = "KEY_HavokEditor_Navigate_Forward", Description = "KEY_HavokEditor_Navigate_Forward_TT")]
     HavokEditor_Navigate_Forward,
 
+    // Projectile Editor
+    [Display(Name = "KEY_ProjectileEditor_Toggle_Playback", Description = "KEY_ProjectileEditor_Toggle_Playback_TT")]
+    ProjectileEditor_Toggle_Playback,
+
     // Developer
     [Display(Name = "KEY_CaptureThumbnailImage", Description = "KEY_CaptureThumbnailImage_TT")]
     CaptureThumbnailImage
@@ -689,6 +693,9 @@ public static class DefaultKeyBindings
         InputManager.Bind(KeybindID.HavokEditor_Navigate_Back, new() { Key = Key.Left, Alt = true });
         InputManager.Bind(KeybindID.HavokEditor_Navigate_Forward, new() { Key = Key.Right, Alt = true });
 
+        // Projectile Editor
+        InputManager.Bind(KeybindID.ProjectileEditor_Toggle_Playback, new() { Key = Key.Space });
+
         InputManager.Bind(KeybindID.CaptureThumbnailImage, new() { Key = Key.F8 });
     }
 }
@@ -870,6 +877,9 @@ public static class KeybindMetadata
         // Developer
         { KeybindID.HavokEditor_Navigate_Back, InputCategory.HavokEditor },
         { KeybindID.HavokEditor_Navigate_Forward, InputCategory.HavokEditor },
+
+        // Projectile Editor
+        { KeybindID.ProjectileEditor_Toggle_Playback, InputCategory.ProjectileEditor },
 
         { KeybindID.CaptureThumbnailImage, InputCategory.Developer },
     };

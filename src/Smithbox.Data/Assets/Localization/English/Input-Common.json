@@ -45,6 +45,10 @@
       "Text": "Havok Editor"
     },
     {
+      "Key": "INPUT_CATEGORY_Projectile_Editor",
+      "Text": "Projectile Editor"
+    },
+    {
       "Key": "INPUT_CATEGORY_Developer",
       "Text": "Developer"
     },

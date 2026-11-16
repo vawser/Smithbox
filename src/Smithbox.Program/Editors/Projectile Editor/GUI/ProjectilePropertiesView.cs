@@ -1,25 +1,24 @@
 #nullable enable
 using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
 namespace StudioCore.Editors.ProjectileEditor;
 
 /// <summary>
-/// The selected row's fields, then the attack rows its attack id points at, then the bullets it creates, as links.
-/// A spell row shows its own fields and the bullets in its slots.
+/// A tab for the selected row, then one for each attack row its attack id points at. The bullet tab also lists the
+/// bullets it creates, as links. A spell row has one tab, with its own fields and the bullets in its slots.
 /// <para>
-/// Fields are edited as in the Param Editor: a value is applied when its field is left after an edit (Enter, Tab or a
-/// click elsewhere, but not Escape), as an action of the Param Editor's, so it can be undone in either editor and the
-/// simulation runs again with it.
+/// Fields are drawn and edited with the Param Editor's own decorators and inputs, so they show the same community
+/// names, descriptions, param references, enums, aliases and text references, and a value is applied the same way:
+/// when its field is left after an edit (Enter, Tab or a click elsewhere, but not Escape), as an action of the Param
+/// Editor's, so it can be undone in either editor and the simulation runs again with it.
 /// </para>
 /// </summary>
 public class ProjectilePropertiesView
@@ -30,9 +29,11 @@ public class ProjectilePropertiesView
 
     private string FieldFilter = "";
 
-    // The text field being edited, and what has been typed in it
-    private string? EditKey;
-    private string EditText = "";
+    // The Param Editor view the decorators and inputs work through, and this window's own copies of them, so an
+    // edit in progress here never mixes with one in the Param Editor
+    private ParamEditorView? FieldView;
+    private ParamFieldDecorators? Decorators;
+    private ParamFieldInput? FieldInput;
 
     public ProjectilePropertiesView(ProjectileEditorView view)
     {
@@ -56,41 +57,118 @@ public class ProjectilePropertiesView
         if (param == null)
             return;
 
+        if (!UpdateFieldView())
+        {
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("PROJECTILE_Properties_No_Param_Editor"));
+            return;
+        }
+
         ImGui.SetNextItemWidth(-1);
         ImGui.InputTextWithHint("##projectileFieldFilter", LOC.Get("PROJECTILE_Properties_Filter_Hint"), ref FieldFilter, 256);
 
-        if (ImGui.BeginChild("projectileProperties"))
-        {
-            DisplayRow(paramName, param, row, true, null);
+        // The tabs are named by param, not by row, so the open tab stays open as other rows are selected
+        if (!ImGui.BeginTabBar("projectilePropertiesTabs", ImGuiTabBarFlags.FittingPolicyScroll))
+            return;
 
-            if (simulator.IsSpell)
+        if (ImGui.BeginTabItem($"{paramName}###projectileTab_{paramName}"))
+        {
+            DisplayRowTab(paramName, param, row, null, () =>
             {
-                DisplaySpellBullets(row);
-            }
-            else
-            {
-                DisplayAttacks(row);
-                DisplayChildBullets(paramName, param, row);
-            }
+                if (simulator.IsSpell)
+                {
+                    DisplaySpellBullets(row);
+                }
+                else
+                {
+                    DisplayAttackNote(row);
+                    DisplayChildBullets(paramName, param, row);
+                }
+            });
+
+            ImGui.EndTabItem();
         }
 
-        ImGui.EndChild();
+        if (!simulator.IsSpell)
+            DisplayAttackTabs(row);
+
+        ImGui.EndTabBar();
     }
 
-    // ---- sections
-
-    /// <summary>A row's header (with a link to it in the Param Editor) and, when open, its fields</summary>
-    private void DisplayRow(string paramName, Param param, Param.Row row, bool defaultOpen, string? note)
+    /// <summary>
+    /// Points the decorators and inputs at the Param Editor's active view, making new ones when it changes.
+    /// False if there is no Param Editor to edit through.
+    /// </summary>
+    private bool UpdateFieldView()
     {
-        var label = $"{paramName}: {ProjectileParams.RowLabel(row.ID, row.Name)}";
+        var paramEditor = View.Editor.ParamEditor;
+        var activeView = paramEditor?.ViewHandler?.ActiveView;
+
+        if (paramEditor == null || activeView == null)
+            return false;
+
+        if (FieldView != activeView)
+        {
+            FieldView = activeView;
+            Decorators = new ParamFieldDecorators(paramEditor, Project, activeView);
+            FieldInput = new ParamFieldInput(paramEditor, Project, activeView);
+        }
+
+        return true;
+    }
+
+    // ---- tabs
+
+    /// <summary>The attack rows the bullet's attack id points at, a tab each: the one the simulation uses first</summary>
+    private void DisplayAttackTabs(Param.Row row)
+    {
+        var attackId = ProjectileParams.GetAttackId(row);
+
+        if (attackId <= 0)
+            return;
+
+        var used = ProjectileParams.FindAttackRow(Project, attackId, out var usedParam);
+
+        if (used == null || usedParam == null || ProjectileParams.GetParam(Project, usedParam) is not { } usedParamData)
+            return;
+
+        if (ImGui.BeginTabItem($"{usedParam}###projectileTab_{usedParam}"))
+        {
+            DisplayRowTab(usedParam, usedParamData, used, LOC.Get("PROJECTILE_Properties_Attack_Used"), null);
+            ImGui.EndTabItem();
+        }
+        GUI.Tooltip(LOC.Get("PROJECTILE_Properties_Attack_Tab_Used_TT"));
+
+        // The same id in the other attack param, which the simulation uses with the other setting
+        var otherParam = usedParam == ProjectileParams.PlayerAttackParam
+            ? ProjectileParams.EnemyAttackParam
+            : ProjectileParams.PlayerAttackParam;
+
+        if (ProjectileParams.GetParam(Project, otherParam) is { } other && other[attackId] is { } otherRow)
+        {
+            if (ImGui.BeginTabItem($"{otherParam}###projectileTab_{otherParam}"))
+            {
+                DisplayRowTab(otherParam, other, otherRow, null, null);
+                ImGui.EndTabItem();
+            }
+            GUI.Tooltip(LOC.Get("PROJECTILE_Properties_Attack_Tab_Other_TT"));
+        }
+    }
+
+    /// <summary>
+    /// A tab's content: the row's label (with a link to it in the Param Editor), its fields, then anything after them
+    /// </summary>
+    private void DisplayRowTab(string paramName, Param param, Param.Row row, string? note, Action? after)
+    {
+        var label = ProjectileParams.RowLabel(row.ID, row.Name);
 
         if (note != null)
             label += $"  ({note})";
 
-        var flags = defaultOpen ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None;
-        var open = ImGui.CollapsingHeader($"{label}###projectileRowHeader_{paramName}_{row.ID}", flags);
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+        ImGui.Selectable($"{label}##projectileRowLabel_{paramName}");
+        ImGui.PopStyleColor();
 
-        if (ImGui.BeginPopupContextItem($"projectileRowHeaderContext_{paramName}_{row.ID}"))
+        if (ImGui.BeginPopupContextItem($"projectileRowLabelContext_{paramName}"))
         {
             if (ImGui.Selectable($"{LOC.Get("PROJECTILE_Open_In_Param_Editor")}##openInParamEditor"))
                 OpenInParamEditor(paramName, row.ID);
@@ -99,40 +177,32 @@ public class ProjectilePropertiesView
         }
         GUI.Tooltip(LOC.Get("PROJECTILE_Properties_Row_TT"));
 
-        if (open)
+        if (ImGui.BeginChild($"projectileTabContent_{paramName}"))
+        {
             DisplayFields(paramName, param, row);
+            after?.Invoke();
+        }
+
+        ImGui.EndChild();
     }
 
-    /// <summary>The attack rows the bullet's attack id points at: the one the simulation uses first</summary>
-    private void DisplayAttacks(Param.Row row)
+    /// <summary>Why a bullet has no attack tab, when it has none</summary>
+    private void DisplayAttackNote(Param.Row row)
     {
         var attackId = ProjectileParams.GetAttackId(row);
 
-        GUI.Spacer();
-
         if (attackId <= 0)
         {
+            GUI.Spacer();
             ImGui.TextDisabled(LOC.Get("PROJECTILE_Properties_No_Attack"));
             return;
         }
 
-        var used = ProjectileParams.FindAttackRow(Project, attackId, out var usedParam);
-
-        if (used == null || usedParam == null)
+        if (ProjectileParams.FindAttackRow(Project, attackId, out _) == null)
         {
+            GUI.Spacer();
             GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("PROJECTILE_Properties_Missing_Attack", attackId));
-            return;
         }
-
-        DisplayRow(usedParam, ProjectileParams.GetParam(Project, usedParam)!, used, true, LOC.Get("PROJECTILE_Properties_Attack_Used"));
-
-        // The same id in the other attack param, which the simulation uses with the other setting
-        var otherParam = usedParam == ProjectileParams.PlayerAttackParam
-            ? ProjectileParams.EnemyAttackParam
-            : ProjectileParams.PlayerAttackParam;
-
-        if (ProjectileParams.GetParam(Project, otherParam) is { } other && other[attackId] is { } otherRow)
-            DisplayRow(otherParam, other, otherRow, false, null);
     }
 
     /// <summary>The bullets this one creates, each a link that shows it</summary>
@@ -209,180 +279,168 @@ public class ProjectilePropertiesView
     {
         var paramData = Project.Handler.ParamData;
         var meta = paramData.GetParamMeta(param.AppliedParamdef);
+        var annotations = paramData.GetParamAnnotations(param.ParamType);
         var filter = FieldFilter.Trim();
 
         var tableFlags = ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.Resizable;
 
-        if (!ImGui.BeginTable($"projectileFields_{paramName}_{row.ID}", 2, tableFlags))
+        if (!ImGui.BeginTable($"projectileFields_{paramName}", 2, tableFlags))
             return;
 
         ImGui.TableSetupColumn("##name", ImGuiTableColumnFlags.WidthStretch, 0.5f);
         ImGui.TableSetupColumn("##value", ImGuiTableColumnFlags.WidthStretch, 0.5f);
 
+        var index = 0;
+
         foreach (var cell in row.Cells)
         {
             var field = cell.Def;
+            var internalName = field.InternalName;
             var fieldMeta = paramData.GetParamFieldMeta(meta, field);
+            var annotation = paramData.GetFieldAnnotation(annotations, internalName);
+            var context = new FieldMetaContext(FieldView!, meta, fieldMeta, annotation, paramName, internalName);
 
-            if (fieldMeta?.IsPaddingField == true || cell.Value is byte[])
+            if (context.IsPadding && !CFG.Current.ParamEditor_Field_List_Display_Padding)
                 continue;
 
-            var name = DisplayName(field, fieldMeta);
+            var name = DisplayName(internalName, annotation);
 
             if (filter.Length > 0 &&
                 !name.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                !field.InternalName.Contains(filter, StringComparison.OrdinalIgnoreCase))
+                !internalName.Contains(filter, StringComparison.OrdinalIgnoreCase))
             {
                 continue;
             }
 
-            ImGui.TableNextRow();
-
-            ImGui.TableSetColumnIndex(0);
-            ImGui.AlignTextToFramePadding();
-            ImGui.TextUnformatted(name);
-
-            if (ImGui.IsItemHovered())
-                ImGui.SetTooltip(FieldTooltip(field, fieldMeta));
-
-            ImGui.TableSetColumnIndex(1);
-            DisplayFieldInput($"{paramName}/{row.ID}/{field.InternalName}", cell, fieldMeta);
+            ImGui.PushID(index++);
+            FieldRow(paramName, row, cell, context, name);
+            ImGui.PopID();
         }
 
         ImGui.EndTable();
     }
 
-    private static string DisplayName(PARAMDEF.Field field, ParamFieldMeta? meta)
+    /// <summary>One field, as the Param Editor draws it: name, labels, input, hints, clicks and context menu</summary>
+    private void FieldRow(string paramName, Param.Row row, Param.Cell cell, FieldMetaContext context, string name)
     {
-        if (CFG.Current.ProjectileEditor_Show_Community_Names && !string.IsNullOrEmpty(meta?.AltName))
-            return meta.AltName;
+        var decorators = Decorators!;
+        var input = FieldInput!;
+        var field = cell.Def;
+        var oldval = cell.Value;
+        object newval = null!;
 
-        return field.InternalName;
-    }
+        ImGui.TableNextRow();
 
-    private static string FieldTooltip(PARAMDEF.Field field, ParamFieldMeta? meta)
-    {
-        var tooltip = field.InternalName;
+        // Name, with the Param Editor's description tooltip and labels (param references, enums and the like)
+        ImGui.TableSetColumnIndex(0);
 
-        if (!string.IsNullOrEmpty(meta?.AltName) && meta.AltName != field.InternalName)
-            tooltip = $"{meta.AltName}\n{tooltip}";
+        if (context.InjectSeparator)
+            ImGui.Separator();
 
-        if (!string.IsNullOrEmpty(meta?.Wiki))
-            tooltip += $"\n\n{meta.Wiki}";
+        FieldTooltipHelper.IconTooltip(FieldView!, context, field);
 
-        return tooltip;
-    }
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextUnformatted(name);
+        FieldTooltipHelper.HoverTooltip(FieldView!, context, field);
 
-    private void DisplayFieldInput(string key, Param.Cell cell, ParamFieldMeta? meta)
-    {
-        var value = cell.Value;
-        var id = $"##{key}";
+        decorators.HandleCache(context, row, oldval);
+        decorators.HandleLabels(context, row, oldval);
 
-        ImGui.SetNextItemWidth(-1);
+        // The labels (param references, enums and the like), or the name when there are none, open the value's menu
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            ImGui.OpenPopup("projectileFieldValueMenu");
 
-        // A flag: a checkbox, applied when it is clicked
-        if (meta?.IsBool == true && value is IConvertible)
+        // Value, coloured as a reference when it points at something
+        ImGui.TableSetColumnIndex(1);
+
+        if (context.InjectSeparator)
+            ImGui.Separator();
+
+        var isReference = context.HasAnyReferenceElements();
+
+        if (isReference)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_IsRef_Text);
+
+        input.DisplayFieldInput(context, oldval.GetType(), oldval, ref newval, field.BitSize);
+
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            ImGui.OpenPopup("projectileFieldValueMenu");
+
+        decorators.HandleHints(context, row, paramName, field.InternalName, oldval);
+
+        // So do the hints beside the value (the referenced row's name, the enum's name and the like)
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
+            ImGui.OpenPopup("projectileFieldValueMenu");
+
+        decorators.HandleClick(context, row, oldval);
+
+        // Effect ids the metadata doesn't mark as effects still lead to the effect in the FX Editor
+        var isUnmarkedEffect = !context.DisplayParticleEnum && oldval is IConvertible &&
+            field.InternalName.Contains("sfx", StringComparison.OrdinalIgnoreCase);
+
+        if (isUnmarkedEffect)
+            FxReferenceHelper.Click(Project, oldval);
+
+        if (isReference)
+            ImGui.PopStyleColor();
+
+        // The value's menu: the Param Editor's reference, enum and alias choices
+        if (ImGui.BeginPopup("projectileFieldValueMenu"))
         {
-            var on = Convert.ToInt64(value, CultureInfo.InvariantCulture) != 0;
+            var anyShown = false;
 
-            if (ImGui.Checkbox(id, ref on))
-                Commit(cell, on ? 1 : 0);
-
-            return;
-        }
-
-        // An enum: its names, applied when one is picked
-        if (meta?.EnumType is { Values.Count: > 0 } enumType)
-        {
-            var current = Convert.ToString(value, CultureInfo.InvariantCulture) ?? "";
-            var preview = enumType.Values.TryGetValue(current, out var currentName) ? $"{currentName} ({current})" : current;
-
-            if (ImGui.BeginCombo(id, preview))
+            if (context.HasAnyDisplayedElements())
             {
-                foreach (var (optionValue, optionName) in enumType.Values)
-                {
-                    if (ImGui.Selectable($"{optionName} ({optionValue})", optionValue == current))
-                        Commit(cell, optionValue);
-                }
+                if (decorators.HandleContextMenu(context, row, oldval, ref newval))
+                    input.SetLastPropertyManual(newval);
 
-                ImGui.EndCombo();
+                anyShown = true;
             }
 
-            return;
-        }
-
-        // Anything else: its text, applied when the field is left after an edit
-        var text = EditKey == key ? EditText : Format(value);
-
-        if (ImGui.InputText(id, ref text, 256))
-        {
-            EditKey = key;
-            EditText = text;
-        }
-
-        if (GUI.InputCommitted())
-        {
-            if (EditKey == key)
-                Commit(cell, EditText);
-
-            EditKey = null;
-        }
-        else if (ImGui.IsItemDeactivated() && EditKey == key)
-        {
-            // Left with Escape: the edit is dropped
-            EditKey = null;
-        }
-
-        // Effect ids lead to the effect in the FX Editor
-        if (value is IConvertible && cell.Def.InternalName.Contains("sfx", StringComparison.OrdinalIgnoreCase))
-        {
-            FxReferenceHelper.Click(Project, value);
-
-            if (ImGui.BeginPopupContextItem($"fxContext{key}"))
+            if (CFG.Current.ParamEditor_Field_Context_Display_Reference_Search &&
+                (context.DisplayVirtualReference || context.DisplayExternalReference))
             {
-                FxReferenceHelper.ContextMenu(Project, value);
-                ImGui.EndPopup();
+                VirtualParamReferenceHelper.ContextMenu(FieldView!, context.VirtualReference, oldval, row, field.InternalName);
+                ExternalReferenceHelper.ContextMenu(FieldView!, context.VirtualReference, oldval, row, field.InternalName, context.ExternalReferences);
+                anyShown = true;
             }
+
+            if (isUnmarkedEffect)
+            {
+                FxReferenceHelper.ContextMenu(Project, oldval);
+                anyShown = true;
+            }
+
+            if (!anyShown)
+            {
+                if (ImGui.Selectable($"{LOC.Get("PROJECTILE_Open_In_Param_Editor")}##openInParamEditor"))
+                    OpenInParamEditor(paramName, row.ID);
+            }
+
+            ImGui.EndPopup();
         }
+
+        if (input.UpdateProperty(cell, CellValue, oldval))
+            Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(View.Editor.ParamEditor!, row, paramName);
     }
 
-    private static string Format(object value) => value switch
+    /// <summary>
+    /// The field's name: its community name, shown as the Param Editor's field name setting says, if the
+    /// Projectile Editor's community names setting is on
+    /// </summary>
+    private static string DisplayName(string internalName, ParamAnnotationFieldEntry? annotation)
     {
-        float f => f.ToString("R", CultureInfo.InvariantCulture),
-        double d => d.ToString("R", CultureInfo.InvariantCulture),
-        IFormattable formattable => formattable.ToString(null, CultureInfo.InvariantCulture),
-        _ => value?.ToString() ?? ""
-    };
+        var altName = annotation?.Name;
 
-    /// <summary>Sets a cell to a value (converted to the field's type) as an undoable Param Editor action</summary>
-    private void Commit(Param.Cell cell, object input)
-    {
-        var current = cell.Value;
-        object newValue;
+        if (!CFG.Current.ProjectileEditor_Show_Community_Names || string.IsNullOrWhiteSpace(altName))
+            return internalName;
 
-        try
+        return CFG.Current.ParamEditor_FieldNameMode switch
         {
-            newValue = current is string
-                ? Convert.ToString(input, CultureInfo.InvariantCulture) ?? ""
-                : Convert.ChangeType(input is string s ? s.Trim() : input, current.GetType(), CultureInfo.InvariantCulture);
-        }
-        catch (Exception)
-        {
-            Smithbox.Log(this, LOC.Get("PARAM_FieldInput_Invalid_Value_Rejected", input, current), LogLevel.Warning);
-            return;
-        }
-
-        if (Equals(newValue, current))
-            return;
-
-        if (View.Editor.ActionManager is not { } actions)
-            return;
-
-        var action = new PropertiesChangedAction(CellValue, cell, newValue)
-        {
-            DisplayName = LOC.Get("PARAM_Action_Name_Edit_Field", cell.Def.InternalName, cell.GetRow().ID)
+            ParamFieldNameMode.Source => internalName,
+            ParamFieldNameMode.Source_Community => $"{internalName} ({altName})",
+            ParamFieldNameMode.Community_Source => $"{altName} ({internalName})",
+            _ => altName
         };
-
-        actions.ExecuteAction(action);
     }
 }

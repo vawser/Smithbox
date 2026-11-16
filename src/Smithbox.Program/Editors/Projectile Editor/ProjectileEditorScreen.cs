@@ -100,6 +100,13 @@ public class ProjectileEditorScreen : EditorScreen
 
         if (actions.CanRedo() && InputManager.IsPressed(KeybindID.Redo))
             actions.RedoAction();
+
+        // Play or pause, as the Play/Pause button does, while the viewport is focused
+        if (FocusManager.IsFocus(EditorFocusContext.ProjectileEditor_Viewport) &&
+            InputManager.IsPressed(KeybindID.ProjectileEditor_Toggle_Playback))
+        {
+            View.Simulator.TogglePlay();
+        }
     }
 
     private void FileMenu()

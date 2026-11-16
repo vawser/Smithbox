@@ -42,6 +42,9 @@ public enum InputCategory
     [Display(Name = "INPUT_CATEGORY_Havok_Editor")]
     HavokEditor,
 
+    [Display(Name = "INPUT_CATEGORY_Projectile_Editor")]
+    ProjectileEditor,
+
     [Display(Name = "INPUT_CATEGORY_Developer")]
     Developer
 }

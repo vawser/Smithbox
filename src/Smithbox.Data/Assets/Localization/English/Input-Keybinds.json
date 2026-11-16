@@ -1239,6 +1239,14 @@
     {
       "Key": "KEY_HavokEditor_Navigate_Forward_TT",
       "Text": "In the Havok Editor's behavior outline, go forward again after going back."
+    },
+    {
+      "Key": "KEY_ProjectileEditor_Toggle_Playback",
+      "Text": "Toggle Playback"
+    },
+    {
+      "Key": "KEY_ProjectileEditor_Toggle_Playback_TT",
+      "Text": "In the Projectile Editor's viewport, play or pause the simulation."
     }
   ]
 }
