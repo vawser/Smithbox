@@ -468,6 +468,7 @@ public class ParamRowWindow
                 inTableGroupMode ? $"regular_{tableGroupID}" : "regular");
 
             HandlePageKeys(displayRows);
+            HandleReorderKeys(displayRows, inTableGroupMode);
 
             // Page keys change the selection, so rebuild the cache this frame rather than drawing stale highlights
             if (_keyFocusRow != null)
@@ -609,7 +610,7 @@ public class ParamRowWindow
             var metaContext = new FieldMetaContext(
                 ParentView, Context.CurMeta, Context.CurMeta.GetField(c.Def), fieldAnnotation, ParentView.Selection.GetActiveParam(), c.Def.InternalName);
 
-            ParentView.FieldInputHandler.DisplayFieldInput(metaContext, Context.CompareColumn.ValueType, c.Value, ref newval);
+            ParentView.FieldInputHandler.DisplayFieldInput(metaContext, Context.CompareColumn.ValueType, c.Value, ref newval, Context.CompareColumn.Def.BitSize);
 
             if (ParentView.FieldInputHandler.UpdateProperty(c, Context.CompareColumnProperty,
                     c.Value))
@@ -766,6 +767,88 @@ public class ParamRowWindow
     /// page, selecting it (or, with Shift, extending the range from the active row to it).
     /// Called inside the row table (its scrolling window), before the rows are drawn.
     /// </summary>
+    /// <summary>
+    /// Reorder Up / Down (Alt+Up / Alt+Down by default) move the selected rows past the next shown row above or
+    /// below them, as one block (like dragging them). "Shown" means in the current list, so with a search active
+    /// the rows move past the next matching row rather than a hidden one. Held keys repeat.
+    /// Not in table-group mode, where a row's place is its group.
+    /// </summary>
+    private void HandleReorderKeys(List<Param.Row> displayRows, bool inTableGroupMode)
+    {
+        if (inTableGroupMode || displayRows.Count == 0)
+            return;
+
+        if (!ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows) || ImGui.IsAnyItemActive())
+            return;
+
+        if (ID_EditRow != null || Name_EditRow != null)
+            return;
+
+        var up = InputManager.IsPressedOrRepeated(KeybindID.Reorder_Up);
+        var down = !up && InputManager.IsPressedOrRepeated(KeybindID.Reorder_Down);
+
+        if (!up && !down)
+            return;
+
+        var param = Context.CurParam;
+
+        var selected = ParentView.Selection.GetSelectedRows()?
+            .Where(r => r != null && param.IndexOfRow(r) >= 0)
+            .OrderBy(r => param.IndexOfRow(r))
+            .ToList();
+
+        if (selected == null || selected.Count == 0)
+            return;
+
+        var selectedSet = new HashSet<Param.Row>(selected);
+
+        // Where the selection sits in the shown list
+        var shownIndices = new List<int>();
+
+        for (var i = 0; i < displayRows.Count; i++)
+        {
+            if (selectedSet.Contains(displayRows[i]))
+                shownIndices.Add(i);
+        }
+
+        if (shownIndices.Count == 0)
+            return;
+
+        // The nearest shown row outside the selection, in the direction of the move
+        Param.Row neighbour = null;
+
+        if (up)
+        {
+            for (var i = shownIndices.Min() - 1; i >= 0 && neighbour == null; i--)
+            {
+                if (!selectedSet.Contains(displayRows[i]))
+                    neighbour = displayRows[i];
+            }
+        }
+        else
+        {
+            for (var i = shownIndices.Max() + 1; i < displayRows.Count && neighbour == null; i++)
+            {
+                if (!selectedSet.Contains(displayRows[i]))
+                    neighbour = displayRows[i];
+            }
+        }
+
+        // Already at the top or bottom
+        if (neighbour == null)
+            return;
+
+        var dropIndex = up ? param.IndexOfRow(neighbour) : param.IndexOfRow(neighbour) + 1;
+
+        if (!ReorderRowAction.WouldChangeOrder(param, selected, dropIndex))
+            return;
+
+        ParentView.Editor.ActionManager.ExecuteAction(new ReorderRowAction(param, selected, dropIndex));
+
+        // Keep the moved rows in view, with keyboard focus on the active one
+        _keyFocusRow = ParentView.Selection.GetActiveRow() ?? selected[0];
+    }
+
     private void HandlePageKeys(List<Param.Row> displayRows)
     {
         if (displayRows.Count == 0)
@@ -869,13 +952,26 @@ public class ParamRowWindow
             {
                 unsafe
                 {
-                    var payload = ImGui.AcceptDragDropPayload("PARAM_ROW");
+                    // Accepted on every hovered frame, so the drop position can be drawn; acted on only when the
+                    // mouse is released (delivery)
+                    var payload = ImGui.AcceptDragDropPayload("PARAM_ROW",
+                        ImGuiDragDropFlags.AcceptBeforeDelivery | ImGuiDragDropFlags.AcceptNoDrawDefaultRect);
+
                     if (!payload.IsNull && DragSourceRow != null && DragSourceRow != r)
                     {
-                        int dropTargetIndex = Context.CurParam.IndexOfRow(r);
+                        // The upper half of the row drops above it, the lower half below it
+                        var rowMin = ImGui.GetItemRectMin();
+                        var rowMax = ImGui.GetItemRectMax();
+                        var dropBelow = ImGui.GetMousePos().Y > (rowMin.Y + rowMax.Y) * 0.5f;
 
-                        if (dropTargetIndex >= 0)
+                        DrawDropLine(dropBelow ? rowMax.Y : rowMin.Y);
+
+                        int targetRowIndex = payload.IsDelivery() ? Context.CurParam.IndexOfRow(r) : -1;
+
+                        if (targetRowIndex >= 0)
                         {
+                            int dropTargetIndex = dropBelow ? targetRowIndex + 1 : targetRowIndex;
+
                             List<Param.Row> rowsToMove;
                             var selectedRows = ParentView.Selection.GetSelectedRows();
 
@@ -890,24 +986,14 @@ public class ParamRowWindow
                                 rowsToMove = new List<Param.Row> { DragSourceRow };
                             }
 
-                            // Rows dragged down go below the target row, rows dragged up go above it. Always
-                            // inserting above meant a row dropped on the row below it didn't move, and no row
-                            // could be dragged to the end of the param.
-                            var sourceIndex = Context.CurParam.IndexOfRow(DragSourceRow);
-
-                            if (sourceIndex >= 0 && sourceIndex < dropTargetIndex)
-                            {
-                                dropTargetIndex++;
-                            }
-
                             if (ReorderRowAction.WouldChangeOrder(Context.CurParam, rowsToMove, dropTargetIndex))
                             {
                                 var action = new ReorderRowAction(Context.CurParam, rowsToMove, dropTargetIndex);
                                 ParentView.Editor.ActionManager.ExecuteAction(action);
                             }
-                        }
 
-                        DragSourceRow = null;
+                            DragSourceRow = null;
+                        }
                     }
                 }
                 ImGui.EndDragDropTarget();
@@ -940,6 +1026,22 @@ public class ParamRowWindow
                 ClearEditRows();
             }
         }
+    }
+
+    /// <summary>
+    /// A line across the row list at <paramref name="y"/>, where dragged rows will go. Drawn over all columns (the
+    /// row's own column would clip it), but kept inside the row list.
+    /// </summary>
+    private static void DrawDropLine(float y)
+    {
+        var drawList = ImGui.GetWindowDrawList();
+        var windowPos = ImGui.GetWindowPos();
+        var windowSize = ImGui.GetWindowSize();
+
+        drawList.PushClipRect(windowPos, windowPos + windowSize, false);
+        drawList.AddLine(new Vector2(windowPos.X, y), new Vector2(windowPos.X + windowSize.X, y),
+            ImGui.GetColorU32(ImGuiCol.DragDropTarget), 2.0f * DPI.UIScale());
+        drawList.PopClipRect();
     }
 
     /// <summary>

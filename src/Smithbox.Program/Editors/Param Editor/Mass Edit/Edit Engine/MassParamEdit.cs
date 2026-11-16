@@ -12,6 +12,37 @@ public static class MassParamEdit
 {
     public static Dictionary<string, object> massEditVars = new();
 
+    // "\;" and "\:" in a script stand for a literal ; or : (which otherwise separate commands and stages). They are
+    // swapped for these private-use characters before the script is split, and swapped back where a value is used
+    // (selectors and operation arguments). In a regex, \; and \: already meant a literal ; and :, so the meaning
+    // there is unchanged.
+    private const char EscapedSemicolon = '';
+    private const char EscapedColon = '';
+
+    /// <summary>
+    /// Hides escaped separators from the script splitter. Call on the whole script before splitting it.
+    /// </summary>
+    public static string EscapeScript(string script)
+    {
+        return script?.Replace("\\;", EscapedSemicolon.ToString()).Replace("\\:", EscapedColon.ToString());
+    }
+
+    /// <summary>
+    /// Turns hidden separators back into ; and : (for a selector or argument about to be used)
+    /// </summary>
+    public static string Unescape(string text)
+    {
+        return text?.Replace(EscapedSemicolon, ';').Replace(EscapedColon, ':');
+    }
+
+    /// <summary>
+    /// Shows hidden separators as the user typed them (\; and \:), for messages
+    /// </summary>
+    public static string Reescape(string text)
+    {
+        return text?.Replace(EscapedSemicolon.ToString(), "\\;").Replace(EscapedColon.ToString(), "\\:");
+    }
+
     internal static object WithDynamicOf(object instance, Func<dynamic, object> dynamicFunc)
     {
         try

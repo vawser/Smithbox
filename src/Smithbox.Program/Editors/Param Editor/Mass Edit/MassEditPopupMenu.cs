@@ -110,7 +110,12 @@ public class MassEditPopupMenu
             "submitMassEdit", 
             LOC.Get("PARAM_MassEdit_Action_Submit"),
             LOC.Get("PARAM_MassEdit_Action_Submit_TT"),
-            SubmitMassEdit);
+            SubmitMassEdit,
+
+            "previewMassEdit",
+            LOC.Get("PARAM_MassEdit_Action_Preview_Script"),
+            LOC.Get("PARAM_MassEdit_Action_Preview_Script_TT"),
+            () => Parent.PreviewMassEdit(Parent.State.CurrentMenuInput));
     }
 
     public void SubmitMassEdit()

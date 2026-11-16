@@ -477,6 +477,14 @@
       "Text": "Display Traditional Percentages"
     },
     {
+      "Key": "PREF_ParamEditor_Field_Input_Clamp_Out_Of_Range",
+      "Text": "Clamp Out-of-Range Numbers"
+    },
+    {
+      "Key": "PREF_ParamEditor_Field_Input_Clamp_Out_Of_Range_TT",
+      "Text": "If enabled, a number outside a whole-number field's range (for example 300 in a 0 to 255 field, or 5 in a 2-bit field) is set to the nearest allowed value when you leave the field. If disabled, the field keeps its current value."
+    },
+    {
       "Key": "PREF_ParamEditor_Field_Input_Display_Traditional_Percentage_TT",
       "Text": "If enabled, fields that represent a percentage will be displayed in a normal fashion, with the value representing the percentage. Typically, the value in represented as 1 - <value>."
     },

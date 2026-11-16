@@ -75,11 +75,19 @@ public class ActionManager
         return true;
     }
 
-    public void PushSubManager(ActionManager child)
+    /// <summary>
+    /// Records everything the child manager did as one undo step. A child with nothing to undo adds no step.
+    /// </summary>
+    public void PushSubManager(ActionManager child, string displayName = null, string details = null)
     {
+        if (child.UndoStack.Count == 0)
+        {
+            return;
+        }
+
         List<EditorAction> childList = child.UndoStack.ToList();
         childList.Reverse();
-        UndoStack.Push(new CompoundAction(childList));
+        UndoStack.Push(new CompoundAction(childList) { DisplayName = displayName, Details = details });
         ActionPerformed?.Invoke();
         RedoStack.Clear();
         CacheBank.ClearCaches();
@@ -106,6 +114,24 @@ public class ActionManager
     }
 
     public int UndoCount => UndoStack.Count;
+
+    public int RedoCount => RedoStack.Count;
+
+    /// <summary>
+    /// The actions that can be undone, most recent first
+    /// </summary>
+    public IReadOnlyList<EditorAction> GetUndoHistory()
+    {
+        return UndoStack.ToList();
+    }
+
+    /// <summary>
+    /// The actions that can be redone, the next one to redo first
+    /// </summary>
+    public IReadOnlyList<EditorAction> GetRedoHistory()
+    {
+        return RedoStack.ToList();
+    }
 
     /// <summary>
     /// Every action that can still be undone or redone

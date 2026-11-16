@@ -1174,7 +1174,7 @@ public class ParamFieldWindow
             }
 
             // Property Editor UI
-            ParentView.FieldInputHandler.DisplayFieldInput(metaContext, propType, oldval, ref newval);
+            ParentView.FieldInputHandler.DisplayFieldInput(metaContext, propType, oldval, ref newval, col?.Def.BitSize ?? -1);
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {

@@ -200,6 +200,12 @@ public class ParamEditorScreen : EditorScreen
     /// </summary>
     public static string GetActionDisplayName(EditorAction action)
     {
+        // Actions that carry their own name (e.g. a mass edit, named by its script)
+        if (!string.IsNullOrEmpty(action?.DisplayName))
+        {
+            return action.DisplayName;
+        }
+
         return action switch
         {
             null => "",
@@ -207,6 +213,7 @@ public class ParamEditorScreen : EditorScreen
             AddParamsAction => LOC.Get("PARAM_Action_Name_Add_Rows"),
             DeleteParamsAction => LOC.Get("PARAM_Action_Name_Delete_Rows"),
             ReorderRowAction => LOC.Get("PARAM_Action_Name_Reorder_Rows"),
+            ResetParamToVanillaAction => LOC.Get("PARAM_Action_Name_Reset_Param"),
             AddRowsToTableGroup => LOC.Get("PARAM_Action_Name_Add_Rows"),
             CompoundAction c when c.ContainsOnly<PropertiesChangedAction>() => LOC.Get("PARAM_Action_Name_Edit_Values"),
             CompoundAction => LOC.Get("PARAM_Action_Name_Multiple"),
@@ -296,6 +303,18 @@ public class ParamEditorScreen : EditorScreen
             {
                 Redo();
             }
+
+            // History: opens the Edit History tool (Tools window, General)
+            if (ImGui.MenuItem($"{LOC.Get("PARAM_EditHistory_Menu")}##historyAction"))
+            {
+                CFG.Current.Interface_ParamEditor_ToolWindow = true;
+
+                if (activeView != null)
+                {
+                    activeView.ToolMenu.EditHistory.FocusOnNextDraw = true;
+                }
+            }
+            GUI.Tooltip(LOC.Get("PARAM_EditHistory_Menu_TT"));
 
             // Row actions are only available while the row list is shown (not with a stay param open), and the
             // selection-based ones need a selection. Disabled items explain themselves better than a no-op or a crash.

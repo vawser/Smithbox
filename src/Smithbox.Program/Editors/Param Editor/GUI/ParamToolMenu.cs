@@ -35,6 +35,7 @@ public class ParamToolMenu
     public ParamRowNameManipulationTool RowNameManipulationTool;
     public ProjectileSimulatorTool ProjectileSimulator;
     public ParamModifiedFilter ModifiedFilter;
+    public ParamEditHistoryTool EditHistory;
 
     private ToolSections Sections = new();
 
@@ -42,6 +43,8 @@ public class ParamToolMenu
     {
         View = view;
         Project = project;
+
+        EditHistory = new(view);
 
         FieldNameFinder = new(view, project);
         FieldValueFinder = new(view, project);
@@ -120,6 +123,11 @@ public class ParamToolMenu
     public void Draw()
     {
         Sections.Begin();
+
+        // General
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_General"));
+
+        EditHistory.OnToolWindow();
 
         // Search & Edit
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Search"));

@@ -555,6 +555,9 @@ public class MEOperationArgument
     internal Func<int, Param, Func<int, Param.Row, Func<int, (ParamEditorPseudoColumn, Param.Column), string>>>
         getContextualArgument(string opArg)
     {
+        // The arguments were split on ':' already, so \; and \: can become ; and : now
+        opArg = MassParamEdit.Unescape(opArg);
+
         if (opArg.StartsWith('"') && opArg.EndsWith('"'))
         {
             return (i, p) => (j, r) => (k, c) => opArg.Substring(1, opArg.Length - 2);

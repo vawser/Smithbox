@@ -79,6 +79,11 @@ public class MassEditToolMenu
             LOC.Get("PARAM_MassEdit_Action_Apply_Script_TT"),
             ApplyMassEditAction,
 
+            "massEditPreview",
+            LOC.Get("PARAM_MassEdit_Action_Preview_Script"),
+            LOC.Get("PARAM_MassEdit_Action_Preview_Script_TT"),
+            () => Parent.PreviewMassEdit(Parent.State.CurrentMenuInput),
+
             "massEditClear",
             LOC.Get("PARAM_MassEdit_Action_Clear_Script"),
             LOC.Get("PARAM_MassEdit_Action_Clear_Script_TT"),

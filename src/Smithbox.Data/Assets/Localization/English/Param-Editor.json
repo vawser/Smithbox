@@ -133,6 +133,114 @@
       "Text": "Not a valid {0} value (allowed: {1} to {2}). Leaving the field keeps the current value."
     },
     {
+      "Key": "PARAM_Action_Name_Edit_Field",
+      "Text": "Edit {0} (row {1})"
+    },
+    {
+      "Key": "PARAM_Action_Name_Mass_Edit",
+      "Text": "Mass Edit: {0}"
+    },
+    {
+      "Key": "PARAM_EditHistory_Header",
+      "Text": "Edit History"
+    },
+    {
+      "Key": "PARAM_EditHistory_Hint",
+      "Text": "The undo history of the Param Editor, oldest first. Click a step to go back to before it, or click a greyed (undone) step to redo up to it. Undone steps can be redone until you make a new edit."
+    },
+    {
+      "Key": "PARAM_EditHistory_Steps_Header",
+      "Text": "Steps ({0} of {1})"
+    },
+    {
+      "Key": "PARAM_EditHistory_Steps_Header_TT",
+      "Text": "Every step that can be undone or redone. The highlighted step is the current state; greyed steps were undone."
+    },
+    {
+      "Key": "PARAM_EditHistory_Empty",
+      "Text": "No edits yet."
+    },
+    {
+      "Key": "PARAM_EditHistory_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_EditHistory_Actions_Header_TT",
+      "Text": "Undo or redo one step."
+    },
+    {
+      "Key": "PARAM_EditHistory_Undo",
+      "Text": "Undo"
+    },
+    {
+      "Key": "PARAM_EditHistory_Redo",
+      "Text": "Redo"
+    },
+    {
+      "Key": "PARAM_EditHistory_Undo_TT",
+      "Text": "Undo: {0}"
+    },
+    {
+      "Key": "PARAM_EditHistory_Redo_TT",
+      "Text": "Redo: {0}"
+    },
+    {
+      "Key": "PARAM_EditHistory_Nothing_TT",
+      "Text": "Nothing to do."
+    },
+    {
+      "Key": "PARAM_EditHistory_Step_Undo_TT",
+      "Text": "Click to go back to before this step (undoes {0} step(s))."
+    },
+    {
+      "Key": "PARAM_EditHistory_Step_Redo_TT",
+      "Text": "Click to redo up to this step ({0} step(s))."
+    },
+    {
+      "Key": "PARAM_EditHistory_Menu",
+      "Text": "History"
+    },
+    {
+      "Key": "PARAM_EditHistory_Menu_TT",
+      "Text": "Open the Edit History tool (Tools window, General)."
+    },
+    {
+      "Key": "PARAM_Action_Name_Reset_Param",
+      "Text": "Reset Param to Vanilla"
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla",
+      "Text": "Reset to Vanilla..."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_TT",
+      "Text": "Make this param the same as vanilla: modified rows get their vanilla values (keeping their names), added rows are removed, deleted rows come back, and the vanilla row order is restored. Says what will change and asks first. Can be undone."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_No_Vanilla_TT",
+      "Text": "Not available: vanilla has no param with this name."
+    },
+    {
+      "Key": "PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_Incompatible_TT",
+      "Text": "Not available: this param's layout differs from vanilla's (a different param type or row size, for example from another regulation version)."
+    },
+    {
+      "Key": "PARAM_Reset_Param_Dialog_Prompt",
+      "Text": "Reset {0} to vanilla?\n\n{1} modified row(s) will get their vanilla values (names are kept)\n{2} added row(s) will be removed\n{3} deleted row(s) will be restored\nThe vanilla row order will be restored.\n\nThis can be undone."
+    },
+    {
+      "Key": "PARAM_Reset_Param_Already_Vanilla",
+      "Text": "{0} already matches vanilla, so nothing was reset."
+    },
+    {
+      "Key": "PARAM_FieldInput_Bitfield_Type",
+      "Text": "{0}-bit field"
+    },
+    {
+      "Key": "PARAM_FieldInput_Clamped_Value_TT",
+      "Text": "Out of range for a {1} (allowed: {2} to {3}). Leaving the field sets it to {0}."
+    },
+    {
       "Key": "PARAM_FieldInput_Invalid_Value_Rejected",
       "Text": "\"{0}\" isn't a valid value for this field, so it was left at {1}."
     },
@@ -163,6 +271,26 @@
     {
       "Key": "PARAM_MassEdit_Result_Search_Warnings",
       "Text": "Some searches failed and matched nothing:"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Preview_Script",
+      "Text": "Preview"
+    },
+    {
+      "Key": "PARAM_MassEdit_Action_Preview_Script_TT",
+      "Text": "Run the script and show what it would change, without changing anything."
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Preview_Header",
+      "Text": "Preview only, nothing was changed:"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Param_Stats",
+      "Text": "{0}: {2} field(s) in {1} row(s)"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Param_Stats_Added",
+      "Text": "{0}: {2} field(s) in {1} row(s), {3} row(s) added"
     },
     {
       "Key": "PARAM_CSV_Import_Failed",

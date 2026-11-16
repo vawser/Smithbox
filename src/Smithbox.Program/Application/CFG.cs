@@ -923,6 +923,10 @@ public class CFG
 
     public bool ParamEditor_Field_Input_Display_Traditional_Percentage = false;
 
+    // Integer fields: a number outside the field's range (type or bitfield) is clamped to the nearest limit when the
+    // field is left, instead of being rejected
+    public bool ParamEditor_Field_Input_Clamp_Out_Of_Range = false;
+
     public bool Param_MassEdit_ShowAddButtons = true;
 
     public bool ParamEditor_Row_Context_Display_Row_Name_Input = true;

@@ -10,4 +10,15 @@ public abstract class EditorAction
 {
     public abstract ActionEvent Execute();
     public abstract ActionEvent Undo();
+
+    /// <summary>
+    /// Optional name for undo labels and history lists (e.g. "Mass Edit: selection: weight: * 2"). When null, an
+    /// editor names the action from its type.
+    /// </summary>
+    public string DisplayName { get; set; }
+
+    /// <summary>
+    /// Optional longer text for a tooltip in a history list (e.g. a mass edit's full script)
+    /// </summary>
+    public string Details { get; set; }
 }

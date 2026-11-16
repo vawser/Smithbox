@@ -65,15 +65,18 @@ public class MassParamEditRegex
         // the field. They are listed under the result, so "0 changed" comes with a reason.
         using var searchErrors = SearchErrors.Begin();
 
+        ChangeStats.Clear();
+
         try
         {
-            var commands = commandsString.Split(';');
+            // \; and \: are hidden from the splitting here, and turned back into ; and : where values are used
+            var commands = MassParamEdit.EscapeScript(commandsString).Split(';');
             var changeCount = 0;
             foreach (var cmd in commands)
             {
                 currentLine++;
                 var command = cmd;
-                currentCommand = cmd;
+                currentCommand = MassParamEdit.Reescape(cmd);
 
                 // Ignore comments
                 if (command.StartsWith("##") || string.IsNullOrWhiteSpace(command))
@@ -115,10 +118,22 @@ public class MassParamEditRegex
                 }
 
                 changeCount += actions.Count;
-                childManager.ExecuteAction(new CompoundAction(actions));
+
+                // A command that changed nothing adds no undo step (a script that changes nothing then adds none)
+                if (actions.Count > 0)
+                {
+                    childManager.ExecuteAction(new CompoundAction(actions));
+                }
             }
 
             var resultText = LOC.Get("PARAM_MassEdit_Result_Success_Cells_Affected", changeCount);
+
+            var summary = FormatChangeStats();
+
+            if (summary != null)
+            {
+                resultText += $"\n{summary}";
+            }
 
             if (searchErrors.Errors.Count > 0)
             {
@@ -146,6 +161,62 @@ public class MassParamEditRegex
 
             return (RollBack(childManager, WithFailingCommand(finalResult, currentLine, currentCommand)), null);
         }
+    }
+
+    /// <summary>
+    /// What a run changed in one param
+    /// </summary>
+    public sealed class ParamChangeStats
+    {
+        public readonly HashSet<Param.Row> Rows = new();
+        public int Fields;
+        public int RowsAdded;
+    }
+
+    /// <summary>
+    /// What the last run changed, by param name (filled as each change is recorded)
+    /// </summary>
+    public Dictionary<string, ParamChangeStats> ChangeStats { get; } = new();
+
+    private ParamChangeStats StatsFor(string paramName)
+    {
+        paramName ??= "?";
+
+        if (!ChangeStats.TryGetValue(paramName, out var stats))
+        {
+            stats = new ParamChangeStats();
+            ChangeStats[paramName] = stats;
+        }
+
+        return stats;
+    }
+
+    /// <summary>
+    /// One line per changed param ("EquipParamWeapon: 40 rows, 900 fields"), most changed first, or null when
+    /// nothing changed
+    /// </summary>
+    private string FormatChangeStats()
+    {
+        if (ChangeStats.Count == 0)
+            return null;
+
+        const int maxShown = 8;
+
+        var lines = ChangeStats
+            .OrderByDescending(e => e.Value.Fields + e.Value.RowsAdded)
+            .ThenBy(e => e.Key)
+            .Take(maxShown)
+            .Select(e => e.Value.RowsAdded > 0
+                ? LOC.Get("PARAM_MassEdit_Result_Param_Stats_Added", e.Key, e.Value.Rows.Count, e.Value.Fields, e.Value.RowsAdded)
+                : LOC.Get("PARAM_MassEdit_Result_Param_Stats", e.Key, e.Value.Rows.Count, e.Value.Fields))
+            .ToList();
+
+        if (ChangeStats.Count > maxShown)
+        {
+            lines.Add($"... (+{ChangeStats.Count - maxShown})");
+        }
+
+        return string.Join("\n", lines.Select(l => $"  {l}"));
     }
 
     /// <summary>
@@ -256,7 +327,7 @@ public class MassParamEditRegex
     private (MassEditResult, List<EditorAction>) ParseVarStep(int currentLine, string restOfStages)
     {
         var varstage = restOfStages.Split(":", 2);
-        varSelector = varstage[0].Trim();
+        varSelector = MassParamEdit.Unescape(varstage[0].Trim());
         if (varSelector.Equals(""))
         {
             var helpText = String.Join(", ", CurrentView.MassEdit.VSE.AvailableCommandsForHelpText());
@@ -310,7 +381,7 @@ public class MassParamEditRegex
     private (MassEditResult, List<EditorAction>) ParseParamRowStep(int currentLine, string restOfStages)
     {
         var paramrowstage = restOfStages.Split(":", 2);
-        paramRowSelector = paramrowstage[0].Trim();
+        paramRowSelector = MassParamEdit.Unescape(paramrowstage[0].Trim());
         if (paramRowSelector.Equals(""))
         {
             var helpText = String.Join(", ", CurrentView.MassEdit.PARSE.AvailableCommandsForHelpText());
@@ -341,7 +412,7 @@ public class MassParamEditRegex
     private (MassEditResult, List<EditorAction>) ParseParamStep(int currentLine, string restOfStages)
     {
         var paramstage = restOfStages.Split(":", 2);
-        paramSelector = paramstage[0].Trim();
+        paramSelector = MassParamEdit.Unescape(paramstage[0].Trim());
         if (paramSelector.Equals(""))
         {
             var helpText = String.Join(", ", CurrentView.MassEdit.PSE.AvailableCommandsForHelpText());
@@ -367,7 +438,7 @@ public class MassParamEditRegex
     private (MassEditResult, List<EditorAction>) ParseRowStep(int currentLine, string restOfStages)
     {
         var rowstage = restOfStages.Split(":", 2);
-        rowSelector = rowstage[0].Trim();
+        rowSelector = MassParamEdit.Unescape(rowstage[0].Trim());
         if (rowSelector.Equals(""))
         {
             var helpText = String.Join(", ", CurrentView.MassEdit.RSE.AvailableCommandsForHelpText());
@@ -398,7 +469,7 @@ public class MassParamEditRegex
     private (MassEditResult, List<EditorAction>) ParseCellStep(int currentLine, string restOfStages)
     {
         var cellstage = restOfStages.Split(":", 2);
-        cellSelector = cellstage[0].Trim();
+        cellSelector = MassParamEdit.Unescape(cellstage[0].Trim());
         if (cellSelector.Equals(""))
         {
             var helpText = String.Join(", ", CurrentView.MassEdit.CSE.AvailableCommandsForHelpText());
@@ -659,6 +730,7 @@ public class MassParamEditRegex
         if (rs != null)
         {
             partialActions.Add(new AddParamsAction(CurrentView.Editor, p2, "FromMassEdit", new List<Param.Row> { rs }, false, true));
+            StatsFor(bank?.GetKeyForParam(p2) ?? paramname).RowsAdded++;
         }
 
         return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
@@ -735,7 +807,17 @@ public class MassParamEditRegex
             return finalResult;
         }
 
+        // Only changed values add an action, so only those count
+        var actionsBefore = partialActions.Count;
         partialActions.AppendParamEditAction(row, col, res);
+
+        if (partialActions.Count > actionsBefore)
+        {
+            var stats = StatsFor(paramname);
+            stats.Fields++;
+            stats.Rows.Add(row);
+        }
+
         return new MassEditResult(ParamMassEditResultType.SUCCESS, "");
     }
 }

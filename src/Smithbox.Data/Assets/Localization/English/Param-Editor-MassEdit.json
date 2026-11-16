@@ -82,7 +82,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Menu_Input_TT",
-      "Text": "Type in the mass edit commands you wish to apply here."
+      "Text": "Type in the mass edit commands you wish to apply here. Commands are separated by ; and stages by :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
     },
     {
       "Key": "PARAM_MassEdit_Header_Output",
@@ -214,7 +214,7 @@
     },
     {
       "Key": "PARAM_MassEdit_Header_Input_TT",
-      "Text": "Type in the mass edit commands you wish to apply here."
+      "Text": "Type in the mass edit commands you wish to apply here. Commands are separated by ; and stages by :. Write \\; or \\: for a literal ; or : in a value or search (e.g. selection: Name: = Sword\\; Fire)."
     },
     {
       "Key": "PARAM_MassEdit_Action_Apply_Script",

@@ -1462,6 +1462,25 @@ public class ParamEditorPrefs
             }
         };
     }
+
+    public static PreferenceItem ParamEditor_Field_Input_Clamp_Out_Of_Range()
+    {
+        return new PreferenceItem
+        {
+            OrderID = 1,
+            Category = PreferenceCategory.ParamEditor,
+            Spacer = true,
+
+            Section = SectionCategory.ParamEditor_Field_Input,
+
+            Title = "PREF_ParamEditor_Field_Input_Clamp_Out_Of_Range",
+            Description = "PREF_ParamEditor_Field_Input_Clamp_Out_Of_Range_TT",
+
+            Draw = () => {
+                ImGui.Checkbox("##inputValue", ref CFG.Current.ParamEditor_Field_Input_Clamp_Out_Of_Range);
+            }
+        };
+    }
     #endregion
 
     #region Row Context Menu

@@ -514,6 +514,31 @@ public class ParamListWindow
     }
 
     /// <summary>
+    /// Resets the whole param to vanilla, after saying what will change and asking. Undoable.
+    /// </summary>
+    private void ResetParamToVanilla(Param param, string paramKey, Param vanillaParam)
+    {
+        var action = ResetParamToVanillaAction.Create(Editor, param, vanillaParam);
+
+        if (!action.HasChanges)
+        {
+            Smithbox.Log(this, LOC.Get("PARAM_Reset_Param_Already_Vanilla", paramKey));
+            return;
+        }
+
+        var dialog = PlatformUtils.Instance.MessageBox(
+            LOC.Get("PARAM_Reset_Param_Dialog_Prompt", paramKey,
+                action.ResetRowCount, action.RemovedRowCount, action.RestoredRowCount),
+            LOC.Get("SYS_Warning_Header"),
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+        if (dialog is not DialogResult.OK)
+            return;
+
+        Editor.ActionManager.ExecuteAction(action);
+    }
+
+    /// <summary>
     /// The context menu for a Param entry.
     /// </summary>
     /// <param name="param"></param>
@@ -589,6 +614,27 @@ public class ParamListWindow
                 GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Context_Action_Export_Loose_Param_TT"));
 
                 ImGui.EndMenu();
+            }
+
+            // Reset to Vanilla (asks first)
+            var vanillaParam = Editor.Project.Handler.ParamData.VanillaBank?.Params?.GetValueOrDefault(paramKey);
+            var canReset = ResetParamToVanillaAction.CanReset(param, vanillaParam);
+
+            if (ImGui.Selectable($"{LOC.Get("PARAM_ParamWindow_Context_Action_Reset_To_Vanilla")}##resetParamToVanilla",
+                false, canReset ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+            {
+                ResetParamToVanilla(param, paramKey, vanillaParam);
+            }
+
+            if (canReset)
+            {
+                GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_TT"));
+            }
+            else if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            {
+                ImGui.SetTooltip(vanillaParam == null
+                    ? LOC.Get("PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_No_Vanilla_TT")
+                    : LOC.Get("PARAM_ParamWindow_Context_Action_Reset_To_Vanilla_Incompatible_TT"));
             }
 
             // Wiki

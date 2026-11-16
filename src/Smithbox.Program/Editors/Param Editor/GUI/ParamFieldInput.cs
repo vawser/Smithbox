@@ -4,6 +4,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System;
+using System.Globalization;
 using System.Numerics;
 using System.Reflection;
 
@@ -24,8 +25,6 @@ public class ParamFieldInput
     public ProjectEntry Project;
     public ParamEditorView ParentView;
 
-    private delegate bool TryParseValue<T>(string text, out T value);
-
     // The edit in progress: the value typed so far, and the object and property it belongs to
     private object _editedPropCache;
     private object _editedTypeCache;
@@ -34,6 +33,9 @@ public class ParamFieldInput
     // The text in the field being edited, while it doesn't parse as the field's type (null while it does).
     // Leaving the field with such text keeps the current value instead of committing the last value that parsed.
     private string _invalidTextCache;
+
+    // The value an out-of-range number will be clamped to, while "Clamp Out-of-Range Numbers" is on (for the tooltip)
+    private string _clampedTextCache;
 
     // Per drawn field: it changed this frame, it was left after an edit (not by Escape), it was left at all
     private bool _changedCache;
@@ -47,7 +49,9 @@ public class ParamFieldInput
         ParentView = curView;
     }
 
-    public unsafe void DisplayFieldInput(FieldMetaContext metaContext, Type typ, object oldval, ref object newval)
+    /// <param name="bitSize">The field's bit count if it is a bitfield (PARAMDEF BitSize), otherwise -1</param>
+    public unsafe void DisplayFieldInput(FieldMetaContext metaContext, Type typ, object oldval, ref object newval,
+        int bitSize = -1)
     {
         _changedCache = false;
         _committedCache = false;
@@ -78,31 +82,31 @@ public class ParamFieldInput
 
         if (typ == typeof(long))
         {
-            IntegerInput<long>(oldval, ref newval, long.TryParse);
+            IntegerInput<long>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(int))
         {
-            IntegerInput<int>(oldval, ref newval, int.TryParse);
+            IntegerInput<int>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(uint))
         {
-            IntegerInput<uint>(oldval, ref newval, uint.TryParse);
+            IntegerInput<uint>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(short))
         {
-            IntegerInput<short>(oldval, ref newval, short.TryParse);
+            IntegerInput<short>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(ushort))
         {
-            IntegerInput<ushort>(oldval, ref newval, ushort.TryParse);
+            IntegerInput<ushort>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(sbyte))
         {
-            IntegerInput<sbyte>(oldval, ref newval, sbyte.TryParse);
+            IntegerInput<sbyte>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(byte))
         {
-            IntegerInput<byte>(oldval, ref newval, byte.TryParse);
+            IntegerInput<byte>(oldval, ref newval, bitSize);
         }
         else if (typ == typeof(bool))
         {
@@ -224,12 +228,20 @@ public class ParamFieldInput
     }
 
     /// <summary>
-    /// A text input for an integer field. Each keystroke that parses becomes the pending value. While the text
-    /// doesn't parse (letters, or a number outside the type's range), the field is outlined, and leaving it keeps
-    /// the current value: committing the last value that did parse would turn "300" in a byte field into 30.
+    /// A text input for an integer field. Each keystroke that gives a whole number within the field's range becomes
+    /// the pending value. The range is the type's, or 0 to 2^bits - 1 for a bitfield: Andre masks a bitfield value
+    /// to its bits, so 5 typed into a 2-bit field used to be stored as 1.
+    /// <para>
+    /// While the text isn't a whole number, the field is outlined and leaving it keeps the current value
+    /// (committing the last value that parsed would turn "300" in a byte field into 30). A whole number outside the
+    /// range is treated the same, unless "Clamp Out-of-Range Numbers" is on: then it is set to the nearest limit,
+    /// and the tooltip says so while typing.
+    /// </para>
     /// </summary>
-    private void IntegerInput<T>(object oldval, ref object newval, TryParseValue<T> tryParse) where T : struct
+    private void IntegerInput<T>(object oldval, ref object newval, int bitSize) where T : struct
     {
+        var (min, max) = GetIntegerRange<T>(bitSize);
+
         var input = new InputTextHandler($@"{oldval}");
 
         if (input.Draw("##value", out string newValue))
@@ -239,12 +251,25 @@ public class ParamFieldInput
                 newValue = ParamUtils.GetFxrId(newValue);
             }
 
-            if (tryParse(newValue, out T val))
+            _clampedTextCache = null;
+
+            // As decimal, which holds every integer type, so an out-of-range number is still recognised as a number
+            if (decimal.TryParse(newValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out var number))
             {
-                newval = val;
-                _editedPropCache = newval;
-                _changedCache = true;
-                _invalidTextCache = null;
+                if (number >= min && number <= max)
+                {
+                    SetPendingInteger<T>(number, ref newval);
+                }
+                else if (CFG.Current.ParamEditor_Field_Input_Clamp_Out_Of_Range)
+                {
+                    var clamped = Math.Clamp(number, min, max);
+                    SetPendingInteger<T>(clamped, ref newval);
+                    _clampedTextCache = clamped.ToString(CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    _invalidTextCache = newValue;
+                }
             }
             else
             {
@@ -252,19 +277,49 @@ public class ParamFieldInput
             }
         }
 
-        if (_invalidTextCache != null && ImGui.IsItemActive())
+        if (!ImGui.IsItemActive())
+            return;
+
+        var typeName = bitSize > 0 ? LOC.Get("PARAM_FieldInput_Bitfield_Type", bitSize) : typeof(T).Name;
+        var minText = min.ToString(CultureInfo.InvariantCulture);
+        var maxText = max.ToString(CultureInfo.InvariantCulture);
+
+        if (_invalidTextCache != null)
         {
             ImGui.GetWindowDrawList().AddRect(ImGui.GetItemRectMin(), ImGui.GetItemRectMax(),
                 ImGui.GetColorU32(UI.Current.ImGui_Invalid_Text_Color));
 
-            ImGui.SetTooltip(LOC.Get("PARAM_FieldInput_Invalid_Value_TT",
-                typeof(T).Name, GetTypeBound<T>("MinValue"), GetTypeBound<T>("MaxValue")));
+            ImGui.SetTooltip(LOC.Get("PARAM_FieldInput_Invalid_Value_TT", typeName, minText, maxText));
+        }
+        else if (_clampedTextCache != null)
+        {
+            ImGui.SetTooltip(LOC.Get("PARAM_FieldInput_Clamped_Value_TT", _clampedTextCache, typeName, minText, maxText));
         }
     }
 
-    private static string GetTypeBound<T>(string fieldName)
+    private void SetPendingInteger<T>(decimal number, ref object newval)
     {
-        return typeof(T).GetField(fieldName)?.GetValue(null)?.ToString() ?? "";
+        newval = Convert.ChangeType(number, typeof(T), CultureInfo.InvariantCulture);
+        _editedPropCache = newval;
+        _changedCache = true;
+        _invalidTextCache = null;
+    }
+
+    /// <summary>
+    /// The values an integer field can hold: its type's range, narrowed to 0 to 2^bits - 1 for a bitfield
+    /// </summary>
+    private static (decimal Min, decimal Max) GetIntegerRange<T>(int bitSize)
+    {
+        var min = Convert.ToDecimal(typeof(T).GetField("MinValue")!.GetValue(null));
+        var max = Convert.ToDecimal(typeof(T).GetField("MaxValue")!.GetValue(null));
+
+        if (bitSize > 0 && bitSize < 64)
+        {
+            min = 0;
+            max = Math.Min(max, (decimal)((1UL << bitSize) - 1));
+        }
+
+        return (min, max);
     }
 
     /// <summary>
@@ -323,6 +378,7 @@ public class ParamFieldInput
         _editedObjCache = null;
         _editedTypeCache = null;
         _invalidTextCache = null;
+        _clampedTextCache = null;
     }
 
     /// <summary>
@@ -352,6 +408,9 @@ public class ParamFieldInput
             action = new PropertiesChangedAction(propInfo, obj, newval);
         }
 
+        // "Edit weight (row 100000)" in the Edit menu and the History window, rather than just "Edit Value"
+        action.DisplayName = GetEditDisplayName(obj, propInfo);
+
         action.SetPostExecutionAction(undo =>
         {
             var curParam = ParentView.Selection.GetActiveParam();
@@ -366,6 +425,24 @@ public class ParamFieldInput
         ParentView.Editor.ActionManager.ExecuteAction(action);
 
         return true;
+    }
+
+    /// <summary>
+    /// The field and row an edit changed, or null for anything else (the editor then names it by type)
+    /// </summary>
+    private static string GetEditDisplayName(object obj, PropertyInfo prop)
+    {
+        switch (obj)
+        {
+            case Andre.Formats.Param.Cell cell:
+                return LOC.Get("PARAM_Action_Name_Edit_Field", cell.Def.InternalName, cell.GetRow().ID);
+
+            case Andre.Formats.Param.Row row:
+                return LOC.Get("PARAM_Action_Name_Edit_Field", prop.Name, row.ID);
+
+            default:
+                return null;
+        }
     }
 
     private static object GetCurrentValue(PropertyInfo prop, object obj, int arrayindex)

@@ -65,6 +65,90 @@ public class MassEdit
         ExecuteMassEdit(commandString, CurrentView.GetPrimaryBank(), CurrentView.Selection);
     }
 
+    /// <summary>
+    /// Runs the script and reports what it would change, then undoes it, so nothing is changed.
+    /// <para>
+    /// The script really runs (later commands can depend on earlier ones, so it can't be predicted), into a
+    /// separate undo history that is then undone. What undo doesn't restore is put back by hand: the params'
+    /// modified (*) marks, the row clipboard (copy, clear), and mass edit variables (newvar, clearvars).
+    /// </para>
+    /// </summary>
+    public void PreviewMassEdit(string commandString)
+    {
+        var targetBank = CurrentView.GetPrimaryBank();
+        var context = CurrentView.Selection;
+
+        if (CurrentView.Editor.IsSaving)
+        {
+            var reason = LOC.Get("PARAM_Action_Blocked_During_Save");
+            Smithbox.Log(this, reason, Microsoft.Extensions.Logging.LogLevel.Warning);
+            State.MassEditResult = reason;
+            return;
+        }
+
+        var cleanParams = targetBank.Params.Values.Where(p => !ParamDirtyTracker.IsDirty(p)).ToList();
+        var clipboardParam = targetBank.ClipboardParam;
+        var clipboardRows = targetBank.ClipboardRows.ToList();
+        var variables = new Dictionary<string, object>(MassParamEdit.massEditVars);
+
+        MassEditResult r;
+
+        try
+        {
+            CurrentView.Selection.SortSelection();
+
+            MassParamEditRegex = new MassParamEditRegex(CurrentView);
+
+            ActionManager child;
+            (r, child) = MassParamEditRegex.PerformMassEdit(targetBank, commandString, context);
+
+            // A failed run has already rolled itself back
+            if (child != null && child.CanUndo())
+            {
+                child.UndoAllAction();
+            }
+        }
+        finally
+        {
+            foreach (var param in cleanParams)
+            {
+                ParamDirtyTracker.ClearDirty(param);
+            }
+
+            targetBank.ClipboardParam = clipboardParam;
+            targetBank.ClipboardRows.Clear();
+            targetBank.ClipboardRows.AddRange(clipboardRows);
+
+            MassParamEdit.massEditVars.Clear();
+
+            foreach (var (name, value) in variables)
+            {
+                MassParamEdit.massEditVars[name] = value;
+            }
+        }
+
+        State.MassEditResult = r.Type == ParamMassEditResultType.SUCCESS
+            ? $"{LOC.Get("PARAM_MassEdit_Result_Preview_Header")}\n{r.Information}"
+            : r.Information;
+    }
+
+    /// <summary>
+    /// "Mass Edit: " and the script on one line, shortened
+    /// </summary>
+    private static string GetMassEditLabel(string script)
+    {
+        var text = (script ?? "").ReplaceLineEndings(" ").Trim();
+
+        const int maxLength = 60;
+
+        if (text.Length > maxLength)
+        {
+            text = text[..maxLength] + "...";
+        }
+
+        return LOC.Get("PARAM_Action_Name_Mass_Edit", text);
+    }
+
     public void ExecuteMassEdit(string commandString, ParamBank targetBank, ParamSelection context)
     {
         // Mass edits apply their changes directly (through a child ActionManager), so the save guard on the
@@ -85,7 +169,8 @@ public class MassEdit
 
         if (child != null)
         {
-            CurrentView.Editor.ActionManager.PushSubManager(child);
+            // Named by its script in the Edit menu and the History window (the full script in the tooltip)
+            CurrentView.Editor.ActionManager.PushSubManager(child, GetMassEditLabel(commandString), commandString?.Trim());
         }
 
         if (r.Type == ParamMassEditResultType.SUCCESS)
