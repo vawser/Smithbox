@@ -92,6 +92,10 @@
         {
           "Meaning": "Description",
           "FmgID": 61
+        },
+        {
+          "Meaning": "Location",
+          "FmgID": 63
         }
       ]
     },
@@ -118,6 +122,23 @@
         {
           "Meaning": "Description",
           "FmgID": 74
+        }
+      ]
+    },
+    {
+      "Name": "Menu Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 200
+        },
+        {
+          "Meaning": "Help",
+          "FmgID": 201
+        },
+        {
+          "Meaning": "Details",
+          "FmgID": 205
         }
       ]
     }

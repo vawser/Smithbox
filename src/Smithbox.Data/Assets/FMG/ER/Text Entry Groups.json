@@ -434,6 +434,45 @@
           "FmgID": 476
         }
       ]
+    },
+    {
+      "Name": "Menu Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 200
+        },
+        {
+          "Meaning": "Help",
+          "FmgID": 201
+        }
+      ]
+    },
+    {
+      "Name": "Menu Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 368
+        },
+        {
+          "Meaning": "Help",
+          "FmgID": 369
+        }
+      ]
+    },
+    {
+      "Name": "Menu Text",
+      "Slots": [
+        {
+          "Meaning": "Title",
+          "FmgID": 468
+        },
+        {
+          "Meaning": "Help",
+          "FmgID": 469
+        }
+      ]
     }
   ]
 }
