@@ -165,17 +165,114 @@ public class TextEntryList
         // adds, deletes, reorders, undo or a save re-sorting the list.
         Parent.Selection.RevalidateEntrySelection();
 
-        for (int i = 0; i < Parent.Selection.SelectedFmgWrapper.File.Entries.Count; i++)
+        var fmg = Parent.Selection.SelectedFmgWrapper.File;
+
+        RefreshVisibleRows(fmg);
+
+        // With truncated names every row is one line high, so only the rows in view are drawn.
+        // Untruncated multi-line names make rows uneven, which the clipper can't handle.
+        if (!CFG.Current.TextEditor_Text_Entry_List_Truncate_Name)
         {
-            var entry = Parent.Selection.SelectedFmgWrapper.File.Entries[i];
-            var id = entry.ID;
-            var contents = entry.Text;
+            foreach (var (index, entry) in _visibleRows)
+            {
+                DisplayEntryRow(entry, entry.ID, entry.Text, index);
+            }
+
+            return;
+        }
+
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(_visibleRows.Count);
+
+        // Make sure the row being scrolled to is drawn, so its SetScrollHereY runs
+        if (FocusSelection)
+        {
+            var target = _visibleRows.FindIndex(r => Parent.Selection.IsFmgEntrySelected(r.Index));
+
+            if (target != -1)
+                clipper.IncludeItemByIndex(target);
+            else
+                FocusSelection = false; // Not listed (filtered out): nothing to scroll to
+        }
+
+        while (clipper.Step())
+        {
+            for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++)
+            {
+                var (index, entry) = _visibleRows[row];
+
+                DisplayEntryRow(entry, entry.ID, entry.Text, index);
+            }
+        }
+
+        clipper.End();
+    }
+
+    /// <summary>
+    /// The listed rows (index in the FMG, entry), in list order. Filtering ran IsEntryVisible
+    /// (text matching) on every entry every frame; it now reruns only when something it depends on changes.
+    /// </summary>
+    private List<(int Index, FMG.Entry Entry)> _visibleRows = new();
+
+    private FMG _rowsFmg;
+    private int _rowsEntryCount = -1;
+    private string _rowsFilter;
+    private bool _rowsExact;
+    private bool _rowsShowNull;
+    private int _rowsDataVersion = -1;
+    private int _rowsDiffVersion = -1;
+
+    private void RefreshVisibleRows(FMG fmg)
+    {
+        var dataVersion = TextFinder.CurrentDataVersion;
+        var diffVersion = Parent.DifferenceManager.Version;
+        var showNull = CFG.Current.TextEditor_Text_Entry_List_Display_Null_Entries;
+
+        var stale = _rowsFmg != fmg ||
+            _rowsEntryCount != fmg.Entries.Count ||
+            _rowsFilter != EntryListFilter ||
+            _rowsExact != ExactEntryListFilter ||
+            _rowsShowNull != showNull ||
+            _rowsDataVersion != dataVersion ||
+            _rowsDiffVersion != diffVersion;
+
+        // Reorders that don't go through an action (the save sorts each FMG in place, Sort FMG)
+        // change no version: catch them by checking each cached row is still where it was.
+        // Reference compares only, far cheaper than the filter itself.
+        if (!stale)
+        {
+            foreach (var (index, entry) in _visibleRows)
+            {
+                if (index >= fmg.Entries.Count || fmg.Entries[index] != entry)
+                {
+                    stale = true;
+                    break;
+                }
+            }
+        }
+
+        if (!stale)
+            return;
+
+        _visibleRows.Clear();
+
+        for (int i = 0; i < fmg.Entries.Count; i++)
+        {
+            var entry = fmg.Entries[i];
 
             if (IsEntryVisible(entry))
             {
-                DisplayEntryRow(entry, id, contents, i);
+                _visibleRows.Add((i, entry));
             }
         }
+
+        _rowsFmg = fmg;
+        _rowsEntryCount = fmg.Entries.Count;
+        _rowsFilter = EntryListFilter;
+        _rowsExact = ExactEntryListFilter;
+        _rowsShowNull = showNull;
+        _rowsDataVersion = dataVersion;
+        _rowsDiffVersion = diffVersion;
     }
 
     /// <summary>

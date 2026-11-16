@@ -28,7 +28,12 @@ public class TextData : IDisposable
         Project = project;
     }
 
-    public async Task<bool> Setup()
+    /// <param name="preloadOtherLanguages">
+    /// Load the other languages' text on a worker thread once setup is done (see
+    /// TextBank.PreloadOtherLanguages). For the main project only: auxiliary projects
+    /// just supply text for comparison and transfer, so it would only cost memory.
+    /// </param>
+    public async Task<bool> Setup(bool preloadOtherLanguages = false)
     {
         await Task.Yield();
 
@@ -85,6 +90,13 @@ public class TextData : IDisposable
         else
         {
             Smithbox.Log(this, LOC.Get("TEXT_Data_Vanilla_Bank_Setup_PASS"));
+        }
+
+        // Not awaited: the project opens without waiting for it
+        if (preloadOtherLanguages && primaryBankTaskResult)
+        {
+            var bank = PrimaryBank;
+            _ = Task.Run(() => bank.PreloadOtherLanguages());
         }
 
         return true;

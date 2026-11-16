@@ -258,6 +258,10 @@ public class FmgExporter
             }
         }
 
+        // ProcessFmg points the diff cache at each exported FMG in turn; point it back at the
+        // selected FMG, or the entry list's modified/unique colours showed the last exported one
+        View.DifferenceManager.TrackFmgDifferences();
+
         return storedFmgContainer;
     }
 

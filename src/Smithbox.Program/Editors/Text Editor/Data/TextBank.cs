@@ -103,7 +103,7 @@ public class TextBank : IDisposable
                 {
                     // Leave a container that can't be read out of the bank, as before
                     // (LoadFmgWrappers logs why)
-                    if (!LoadFmgWrappers(containerWrapper))
+                    if (!LoadFmgWrappers(containerWrapper, containerBytes))
                         return;
                 }
 
@@ -161,11 +161,18 @@ public class TextBank : IDisposable
     /// container, Search/Replace, Language Sync, changing the primary language) didn't catch it,
     /// so one corrupt file broke the editor.
     /// </summary>
-    public bool LoadFmgWrappers(TextContainerWrapper container)
+    /// <remarks>
+    /// Locked per container, as the background preload (PreloadOtherLanguages) can be loading the
+    /// same container when a tool asks for it.
+    /// </remarks>
+    public bool LoadFmgWrappers(TextContainerWrapper container, Memory<byte>? preloadedBytes = null)
     {
         try
         {
-            return ReadFmgWrappers(container);
+            lock (container)
+            {
+                return ReadFmgWrappers(container, preloadedBytes);
+            }
         }
         catch (Exception e)
         {
@@ -178,11 +185,12 @@ public class TextBank : IDisposable
         }
     }
 
-    private bool ReadFmgWrappers(TextContainerWrapper container)
+    private bool ReadFmgWrappers(TextContainerWrapper container, Memory<byte>? preloadedBytes)
     {
-        if (TargetFS.FileExists(container.FileEntry.Path))
+        if (preloadedBytes != null || TargetFS.FileExists(container.FileEntry.Path))
         {
-            var containerBytes = TargetFS.ReadFile(container.FileEntry.Path);
+            // Startup passes the bytes it already read for the compression type (the file was read twice)
+            var containerBytes = preloadedBytes ?? TargetFS.ReadFile(container.FileEntry.Path);
 
             // Populate the Text Fmg wrappers with their contents
             List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
@@ -248,6 +256,63 @@ public class TextBank : IDisposable
             Smithbox.LogError(this, LOC.Get("TEXT_Data_Find_FMG_Wrapper_FAIL", container.FileEntry.Path));
 
             return false;
+        }
+    }
+
+    private volatile bool _disposed;
+
+    /// <summary>
+    /// Load every container whose FMGs aren't loaded yet (the languages other than the primary
+    /// one), for a worker thread after startup. Replace/Search over all categories and Language
+    /// Sync loaded them on the UI thread the first time, freezing the editor for seconds.
+    /// </summary>
+    /// <remarks>
+    /// Never replaces loaded FMGs: a container is only filled if it is still empty once its lock
+    /// is held, so text loaded and edited in the meantime is never overwritten.
+    /// Skips the containers the game doesn't use (e.g. ER base and DLC1); tools still load those
+    /// on demand. Sequential, to keep the load light while the user works.
+    /// </remarks>
+    public void PreloadOtherLanguages()
+    {
+        var containers = Containers?.Values.ToList();
+
+        if (containers == null)
+            return;
+
+        var loaded = 0;
+
+        foreach (var container in containers)
+        {
+            if (_disposed)
+                return;
+
+            if (container.FmgWrappers?.Count > 0 || container.IsContainerUnused())
+                continue;
+
+            try
+            {
+                lock (container)
+                {
+                    // Filled by a tool while this waited for the lock
+                    if (container.FmgWrappers?.Count > 0)
+                        continue;
+
+                    if (ReadFmgWrappers(container, null))
+                        loaded++;
+                }
+            }
+            catch (Exception e)
+            {
+                var filename = Path.GetFileNameWithoutExtension(container.FileEntry.Path);
+
+                Smithbox.LogError(this,
+                    LOC.Get("TEXT_Data_Load_FMG_Container_FAIL", filename, container.FileEntry.Path, Name), e);
+            }
+        }
+
+        if (loaded > 0)
+        {
+            Smithbox.Log(this, LOC.Get("TEXT_Data_Other_Languages_Preloaded", loaded));
         }
     }
 
@@ -578,6 +643,9 @@ public class TextBank : IDisposable
     #region Dispose
     public void Dispose()
     {
+        // Stops a background preload that is still running
+        _disposed = true;
+
         Containers.Clear();
 
         Containers = null;

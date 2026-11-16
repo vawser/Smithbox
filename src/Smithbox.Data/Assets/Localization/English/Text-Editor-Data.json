@@ -45,6 +45,10 @@
       "Text": "Failed to deserialize incremental template: {0}"
     },
     {
+      "Key": "TEXT_Data_Other_Languages_Preloaded",
+      "Text": "Loaded the text of {0} other-language files in the background."
+    },
+    {
       "Key": "TEXT_Data_Incremental_Template_Folder_Missing",
       "Text": "Incremental template folder not found, so no templates are available: {0}"
     },

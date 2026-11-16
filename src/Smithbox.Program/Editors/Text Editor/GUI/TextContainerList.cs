@@ -58,6 +58,8 @@ public class TextContainerList
 
         ImGui.BeginChild("CategoryList", new Vector2(width, height), ImGuiChildFlags.Borders);
 
+        RefreshContainerCache();
+
         // Categories
         foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
         {
@@ -69,7 +71,7 @@ public class TextContainerList
             }
 
             // Only display if the category contains something
-            if (Project.Handler.TextData.PrimaryBank.Containers.Any(e => e.Value.ContainerDisplayCategory == category))
+            if (_presentCategories.Contains(category))
             {
                 if (AllowedCategory(category))
                 {
@@ -82,6 +84,30 @@ public class TextContainerList
     }
 
     /// <summary>
+    /// The bank's containers sorted by file entry, and the categories that have any. The sort
+    /// ran once per category every frame (plus a scan per category for the presence check).
+    /// The bank only gains containers while loading, so it's rebuilt when the bank or its count changes.
+    /// </summary>
+    private List<KeyValuePair<FileDictionaryEntry, TextContainerWrapper>> _orderedContainers = new();
+    private HashSet<TextContainerCategory> _presentCategories = new();
+    private TextBank _cachedBank;
+    private int _cachedContainerCount = -1;
+
+    private void RefreshContainerCache()
+    {
+        var bank = Project.Handler.TextData.PrimaryBank;
+
+        if (bank == _cachedBank && bank.Containers.Count == _cachedContainerCount)
+            return;
+
+        _orderedContainers = bank.Containers.OrderBy(e => e.Key).ToList();
+        _presentCategories = _orderedContainers.Select(e => e.Value.ContainerDisplayCategory).ToHashSet();
+
+        _cachedBank = bank;
+        _cachedContainerCount = bank.Containers.Count;
+    }
+
+    /// <summary>
     /// Display the sub-categories if applicable (DS2 only)
     /// </summary>
     private void DisplaySubCategories(TextContainerCategory category, ImGuiTreeNodeFlags flags, int index)
@@ -89,7 +115,7 @@ public class TextContainerList
         // DS2 
         if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
+            var orderedList = _orderedContainers;
             // GetDisplayName is the loc key (this showed e.g. "TEXT_Language_English")
             var name = LOC.Get(category.GetDisplayName());
 
@@ -161,7 +187,7 @@ public class TextContainerList
         // Normal
         else
         {
-            var orderedList = Project.Handler.TextData.PrimaryBank.Containers.OrderBy(e => e.Key);
+            var orderedList = _orderedContainers;
 
             var displayName = LOC.Get(category.GetDisplayName());
 

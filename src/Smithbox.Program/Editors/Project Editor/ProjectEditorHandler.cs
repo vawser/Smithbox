@@ -243,7 +243,8 @@ public class ProjectEditorHandler : IDisposable
             initType is ProjectInitType.ProjectDefined or ProjectInitType.TextEditorOnly)
         {
             TextData = new(Project);
-            _textDataTask = TextData.Setup();
+            // Auxiliary projects (TextEditorOnly) skip the background load of the other languages
+            _textDataTask = TextData.Setup(preloadOtherLanguages: initType is ProjectInitType.ProjectDefined);
             tasks.Add(_textDataTask);
         }
 

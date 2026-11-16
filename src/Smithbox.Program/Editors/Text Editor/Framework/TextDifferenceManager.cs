@@ -18,16 +18,28 @@ public class TextDifferenceManager
     }
 
     /// <summary>
-    /// Holds the row IDs for the current FMG where the row is unique to the project.
+    /// Entries of the compared FMG that are unique to the project (no vanilla entry with their ID).
     /// </summary>
-    private Dictionary<string, bool> AdditionCache = new();
+    /// <remarks>
+    /// Keyed by the entry object. These were string-keyed by ID ($"{entry.ID}", plus the FMG
+    /// name and sub-category for DS2), which allocated a string for every lookup: several per
+    /// row per frame in the entry list. The cache only ever describes one FMG, so the entry
+    /// itself is enough, and a duplicate-ID entry no longer shares its twin's colour.
+    /// </remarks>
+    private HashSet<FMG.Entry> AdditionCache = new(ReferenceEqualityComparer.Instance);
 
     /// <summary>
-    /// Holds the row IDs for the current FMG where the row text is different to vanilla.
+    /// Entries of the compared FMG whose text differs from vanilla (unique entries included).
     /// </summary>
-    private Dictionary<string, bool> DifferenceCache = new();
+    private HashSet<FMG.Entry> DifferenceCache = new(ReferenceEqualityComparer.Instance);
 
     private bool CacheFilled = false;
+
+    /// <summary>
+    /// Changes on every rebuild, so caches built from the 'modified' / 'unique' state
+    /// (the entry list's filtered rows) know when to rebuild too.
+    /// </summary>
+    public int Version { get; private set; }
 
     // Batching: inside a grouped action every sub-action called TrackFmgDifferences,
     // rebuilding the whole cache each time (5k duplicated entries = 5k full rebuilds).
@@ -73,11 +85,15 @@ public class TextDifferenceManager
             return;
         }
 
-        CacheFilled = false;
-        AdditionCache = new();
-        DifferenceCache = new();
+        Version++;
 
-        if (Parent.Selection.SelectedContainerWrapper == null)
+        CacheFilled = false;
+        AdditionCache = new(ReferenceEqualityComparer.Instance);
+        DifferenceCache = new(ReferenceEqualityComparer.Instance);
+
+        var selectedContainer = Parent.Selection.SelectedContainerWrapper;
+
+        if (selectedContainer == null)
             return;
 
         // No FMG selected (and none passed in): nothing to compare.
@@ -91,9 +107,9 @@ public class TextDifferenceManager
             return;
         }
 
-        var containerCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplayCategory;
-        var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-        var containerName = Parent.Selection.SelectedContainerWrapper.FileEntry.Filename;
+        var containerCategory = selectedContainer.ContainerDisplayCategory;
+        var containerSubCategory = selectedContainer.ContainerDisplaySubCategory;
+        var containerName = selectedContainer.FileEntry.Filename;
 
         // Fmg ID for comparison is selected FMG
         var fmgID = Parent.Selection.SelectedFmgWrapper?.ID ?? -1;
@@ -105,176 +121,55 @@ public class TextDifferenceManager
         }
 
         // Get vanilla container and entries
+        var isDS2 = Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S;
+
         var vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
+            .Where(e => !isDS2 || e.Value.ContainerDisplaySubCategory == containerSubCategory)
             .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
 
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            vanillaContainer = Project.Handler.TextData.VanillaBank.Containers
-            .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
-            .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
-            .Where(e => e.Value.FileEntry.Filename == containerName)
-            .FirstOrDefault();
-        }
-
-        if (vanillaContainer.Value == null)
+        if (vanillaContainer.Value?.FmgWrappers == null)
             return;
 
         var vanillaFmg = vanillaContainer.Value.FmgWrappers
-        .Where(e => e.ID == fmgID).FirstOrDefault();
+            .FirstOrDefault(e => e.ID == fmgID);
 
         if (vanillaFmg == null)
             return;
 
-        Dictionary<string, string> vanillaEntries = new();
+        // Vanilla text by ID (the last entry wins if vanilla repeats an ID, as before)
+        var vanillaEntries = new Dictionary<int, string>(vanillaFmg.File.Entries.Count);
 
-        foreach(var entry in vanillaFmg.File.Entries)
+        foreach (var entry in vanillaFmg.File.Entries)
         {
-            // DS2
-            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            {
-                var key = $"{entry.ID}{entry.Parent.Name}{containerSubCategory}";
-                if(vanillaEntries.ContainsKey(key))
-                {
-                    vanillaEntries[key] = entry.Text;
-                }
-                else
-                {
-                    vanillaEntries.Add(key, entry.Text);
-                }
-            }
-            // Other
-            else
-            {
-                var key = $"{entry.ID}";
-                if (vanillaEntries.ContainsKey(key))
-                {
-                    vanillaEntries[key] = entry.Text;
-                }
-                else
-                {
-                    vanillaEntries.Add(key, entry.Text);
-                }
-            }
+            vanillaEntries[entry.ID] = entry.Text;
         }
 
-        // Get primary container and enetries
-        var primaryContainer = Project.Handler.TextData.PrimaryBank.Containers
-            .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
-            .Where(e => e.Value.FileEntry.Filename == containerName)
-            .FirstOrDefault();
-
-        if (primaryContainer.Value == null)
-            return;
-
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            primaryContainer = Project.Handler.TextData.PrimaryBank.Containers
-            .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
-            .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
-            .Where(e => e.Value.FileEntry.Filename == containerName)
-            .FirstOrDefault();
-        }
-
-        var primaryFmg = primaryContainer.Value.FmgWrappers
-        .Where(e => e.ID == fmgID).FirstOrDefault();
+        // The primary side is the selected container itself. It used to be looked up again by
+        // category and filename, which for DES (compressed and uncompressed copies share a
+        // filename) could compare a different container than the one on screen.
+        var primaryFmg = selectedContainer.FmgWrappers?
+            .FirstOrDefault(e => e.ID == fmgID);
 
         if (primaryFmg == null)
             return;
 
         foreach (var entry in primaryFmg.File.Entries)
         {
-            string entryId = $"{entry.ID}";
-
-            // DS2
-            if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (vanillaEntries.TryGetValue(entry.ID, out var vanillaText))
             {
-                entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
-
-                if (vanillaEntries.ContainsKey($"{entryId}"))
+                // A null vanilla entry with project text counts as different
+                if (vanillaText != null ? !vanillaText.Equals(entry.Text) : entry.Text != null)
                 {
-                    var vanillaText = vanillaEntries[$"{entryId}"];
-
-                    if (vanillaText != null)
-                    {
-                        if (!vanillaText.Equals(entry.Text))
-                        {
-                            if (!DifferenceCache.ContainsKey($"{entryId}"))
-                            {
-                                DifferenceCache.Add($"{entryId}", true);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // If project entry is not null, we can assume that it is different
-                        if(entry.Text != null)
-                        {
-                            if (!DifferenceCache.ContainsKey($"{entryId}"))
-                            {
-                                DifferenceCache.Add($"{entryId}", true);
-                            }
-                        }
-                    }
-                }
-                // Is a mod-unique row, there it is a difference
-                else
-                {
-                    if (!AdditionCache.ContainsKey($"{entryId}"))
-                    {
-                        AdditionCache.Add($"{entryId}", true);
-                    }
-
-                    if (!DifferenceCache.ContainsKey($"{entryId}"))
-                    {
-                        DifferenceCache.Add($"{entryId}", true);
-                    }
+                    DifferenceCache.Add(entry);
                 }
             }
-            // Other
+            // Is a mod-unique row, there it is a difference
             else
             {
-                if (vanillaEntries.ContainsKey($"{entry.ID}"))
-                {
-                    var vanillaText = vanillaEntries[$"{entry.ID}"];
-
-                    if (vanillaText != null)
-                    {
-                        if (!vanillaText.Equals(entry.Text))
-                        {
-                            if (!DifferenceCache.ContainsKey($"{entryId}"))
-                            {
-                                DifferenceCache.Add($"{entryId}", true);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // If project entry is not null, we can assume that it is different
-                        if (entry.Text != null)
-                        {
-                            if (!DifferenceCache.ContainsKey($"{entryId}"))
-                            {
-                                DifferenceCache.Add($"{entryId}", true);
-                            }
-                        }
-                    }
-                }
-                // Is a mod-unique row, there it is a difference
-                else
-                {
-                    if (!AdditionCache.ContainsKey($"{entryId}"))
-                    {
-                        AdditionCache.Add($"{entryId}", true);
-                    }
-
-                    if (!DifferenceCache.ContainsKey($"{entryId}"))
-                    {
-                        DifferenceCache.Add($"{entryId}", true);
-                    }
-                }
+                AdditionCache.Add(entry);
+                DifferenceCache.Add(entry);
             }
         }
 
@@ -284,75 +179,18 @@ public class TextDifferenceManager
     public bool IsDifferentToVanilla(FMG.Entry entry)
     {
         // Ignore if the cache is being filled, or the bank isn't loaded
-        if (!CacheFilled)
+        if (!CacheFilled || entry == null)
             return false;
 
-        if (entry == null)
-            return false;
-
-        var entryId = $"{entry.ID}";
-
-        // DS2
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            if (Parent.Selection.SelectedContainerWrapper == null)
-                return false;
-
-            var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-
-            entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
-
-            if (DifferenceCache.ContainsKey(entryId))
-            {
-                return DifferenceCache[entryId];
-            }
-        }
-        else
-        {
-            if (DifferenceCache.ContainsKey(entryId))
-            {
-                return DifferenceCache[entryId];
-            }
-        }
-
-        return false;
+        return DifferenceCache.Contains(entry);
     }
 
     public bool IsUniqueToProject(FMG.Entry entry)
     {
         // Ignore if the cache is being filled, or the bank isn't loaded
-        if (!CacheFilled)
+        if (!CacheFilled || entry == null)
             return false;
 
-        if (entry == null)
-            return false;
-
-        var entryId = $"{entry.ID}";
-
-        // DS2
-        if (Project.Descriptor.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            if (Parent.Selection.SelectedContainerWrapper == null)
-                return false;
-
-            var containerSubCategory = Parent.Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-
-            entryId = $"{entryId}{entry.Parent.Name}{containerSubCategory}";
-
-            if (AdditionCache.ContainsKey(entryId))
-            {
-                return AdditionCache[entryId];
-            }
-        }
-        // Other
-        else
-        {
-            if (AdditionCache.ContainsKey(entryId))
-            {
-                return AdditionCache[entryId];
-            }
-        }
-
-        return false;
+        return AdditionCache.Contains(entry);
     }
 }
