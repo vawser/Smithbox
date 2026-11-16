@@ -98,8 +98,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row => true;
                 }
 
-                Param vanilParam = vBank.Params[paramName];
-                return row => vanilParam[row.ID] == null;
+                // One ID set per search, instead of scanning the vanilla param for every row
+                var vanillaIds = IdSet(vBank.Params[paramName]?.Rows);
+                return row => !vanillaIds.Contains(row.ID);
             }
             )));
 
@@ -117,12 +118,13 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 // respectively, while row may come from any bank in the unpacked stream, so
                 // these have to stay ID-based cross-bank comparisons rather than reference
                 // lookups.
-                HashSet<Param.Row> pCache = pBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<Param.Row>, HashSet<Param.Row>)> auxCaches = auxBanks.Select(x =>
-                    (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
+                // ID sets built once per search (a scan of each cache per row was rows x diff rows x banks)
+                HashSet<int> pIds = IdSet(pBank.GetVanillaDiffRows(paramName));
+                List<(HashSet<int> Primary, HashSet<int> Vanilla)> auxIds = auxBanks.Select(x =>
+                    (IdSet(x.Value.GetPrimaryDiffRows(paramName)), IdSet(x.Value.GetVanillaDiffRows(paramName)))).ToList();
                 return row =>
-                    !pCache.Any(r => r.ID == row.ID) &&
-                    auxCaches.Where(x => x.Item2.Any(r => r.ID == row.ID) && x.Item1.Any(r => r.ID == row.ID)).Count() == 1;
+                    !pIds.Contains(row.ID) &&
+                    auxIds.Count(x => x.Vanilla.Contains(row.ID) && x.Primary.Contains(row.ID)) == 1;
             }
             ), () => auxBanks.Count > 0));
 
@@ -132,12 +134,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
                 // Cross-bank ID-based comparison - see the "mergeable" filter above.
-                HashSet<Param.Row> pCache = pBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<Param.Row>, HashSet<Param.Row>)> auxCaches = auxBanks.Select(x =>
-                    (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
+                HashSet<int> pIds = IdSet(pBank.GetVanillaDiffRows(paramName));
+                List<(HashSet<int> Primary, HashSet<int> Vanilla)> auxIds = auxBanks.Select(x =>
+                    (IdSet(x.Value.GetPrimaryDiffRows(paramName)), IdSet(x.Value.GetVanillaDiffRows(paramName)))).ToList();
                 return row =>
-                    (pCache.Any(r => r.ID == row.ID) ? 1 : 0) + auxCaches
-                        .Where(x => x.Item2.Any(r => r.ID == row.ID) && x.Item1.Any(r => r.ID == row.ID)).Count() > 1;
+                    (pIds.Contains(row.ID) ? 1 : 0)
+                        + auxIds.Count(x => x.Vanilla.Contains(row.ID) && x.Primary.Contains(row.ID)) > 1;
             }
             ), () => auxBanks.Count > 0));
 
@@ -183,7 +185,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param.Cell? cq = row[field];
                     if (cq == null)
                     {
-                        throw new Exception();
+                        throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                     }
 
                     Param.Cell c = cq.Value;
@@ -207,7 +209,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param.Cell? c = row[field];
                     if (c == null)
                     {
-                        throw new Exception();
+                        throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                     }
 
                     return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
@@ -228,7 +230,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param.Cell? c = row[field];
                     if (c == null)
                     {
-                        throw new Exception();
+                        throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                     }
 
                     return Convert.ToDouble(c.Value.Value) > 0 && Convert.ToDouble(c.Value.Value) <= ceil;
@@ -249,7 +251,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param.Cell? c = row[field];
                     if (c == null)
                     {
-                        throw new Exception();
+                        throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                     }
 
                     return Convert.ToDouble(c.Value.Value) < 0 && Convert.ToDouble(c.Value.Value) >= floor;
@@ -266,25 +268,35 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[0];
                 return context =>
                 {
-                    var paramMeta = meta[context.Item2.AppliedParamdef];
+                    // A param without meta, or a field without references, has nothing to match
+                    meta.TryGetValue(context.Item2.AppliedParamdef, out var paramMeta);
+                    var fieldDef = context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field));
+                    var refTypes = fieldDef != null ? paramMeta?.GetField(fieldDef)?.RefTypes : null;
 
-                    List<ParamRef> validFields = paramMeta
-                        .GetField(context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
-                        .FindAll(p => pBank.Params.ContainsKey(p.ParamName));
+                    // Each referenced param's rows by ID, built once per search instead of a scan per row
+                    List<Dictionary<int, Param.Row>> referencedRows = (refTypes ?? new List<ParamRef>())
+                        .Where(p => pBank.Params.ContainsKey(p.ParamName))
+                        .Select(p => FirstRowById(pBank.Params[p.ParamName]))
+                        .ToList();
 
                     return row =>
                     {
                         Param.Cell? c = row[field];
                         if (c == null)
                         {
-                            throw new Exception();
+                            throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                         }
 
-                        var val = (int)c.Value.Value;
-                        foreach (ParamRef rt in validFields)
+                        // Reference fields aren't always int (uint, short...): convert rather than unbox
+                        long val = Convert.ToInt64(c.Value.Value);
+                        if (val < int.MinValue || val > int.MaxValue)
                         {
-                            Param.Row r = pBank.Params[rt.ParamName][val];
-                            if (r != null && rx.IsMatch(r.Name ?? ""))
+                            return false;
+                        }
+
+                        foreach (var rowsById in referencedRows)
+                        {
+                            if (rowsById.TryGetValue((int)val, out var r) && rx.IsMatch(r.Name ?? ""))
                             {
                                 return true;
                             }
@@ -359,10 +371,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[0];
                 return param =>
                 {
-                    Param vparam = vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    // The other bank's rows by ID, built once per search (was a scan per row). A param the other bank
+                    // doesn't have matches nothing, instead of failing the whole search.
+                    Dictionary<int, Param.Row> otherRows = FirstRowById(vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2)));
                     return row =>
                     {
-                        Param.Row vrow = vparam[row.ID];
+                        otherRows.TryGetValue(row.ID, out Param.Row vrow);
                         if (vrow == null)
                         {
                             return false;
@@ -371,7 +385,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
                         {
-                            throw new Exception();
+                            throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                         }
 
                         Param.Cell c = cq.Value;
@@ -393,10 +407,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[2]);
                 return param =>
                 {
-                    Param vparam = vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    // The other bank's rows by ID, built once per search (was a scan per row). A param the other bank
+                    // doesn't have matches nothing, instead of failing the whole search.
+                    Dictionary<int, Param.Row> otherRows = FirstRowById(vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2)));
                     return row =>
                     {
-                        Param.Row vrow = vparam[row.ID];
+                        otherRows.TryGetValue(row.ID, out Param.Row vrow);
                         if (vrow == null)
                         {
                             return false;
@@ -405,7 +421,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Cell? c = vrow[field];
                         if (c == null)
                         {
-                            throw new Exception();
+                            throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                         }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
@@ -431,10 +447,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 
                 return param =>
                 {
-                    Param vparam = bank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    // The other bank's rows by ID, built once per search (was a scan per row). A param the other bank
+                    // doesn't have matches nothing, instead of failing the whole search.
+                    Dictionary<int, Param.Row> otherRows = FirstRowById(bank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2)));
                     return row =>
                     {
-                        Param.Row vrow = vparam[row.ID];
+                        otherRows.TryGetValue(row.ID, out Param.Row vrow);
                         if (vrow == null)
                         {
                             return false;
@@ -443,7 +461,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
                         {
-                            throw new Exception();
+                            throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                         }
 
                         Param.Cell c = cq.Value;
@@ -475,11 +493,12 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 
                 return param =>
                 {
-                    Param vparam = bank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    // The aux bank's rows by ID, built once per search (was a scan per row)
+                    Dictionary<int, Param.Row> otherRows = FirstRowById(bank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2)));
                     return row =>
                     {
                         // As in auxprop: a row the aux bank doesn't have doesn't match
-                        Param.Row vrow = vparam?[row.ID];
+                        otherRows.TryGetValue(row.ID, out Param.Row vrow);
                         if (vrow == null)
                         {
                             return false;
@@ -488,7 +507,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Cell? c = vrow[field];
                         if (c == null)
                         {
-                            throw new Exception();
+                            throw new Exception(LOC.Get("PARAM_SE_Error_Unknown_Field", field));
                         }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
@@ -623,5 +642,32 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     }
                 };
             });
+    }
+
+    /// <summary>
+    /// The IDs of the rows, for per-row membership tests (null gives an empty set)
+    /// </summary>
+    private static HashSet<int> IdSet(IEnumerable<Param.Row> rows)
+    {
+        return rows == null ? new HashSet<int>() : rows.Select(r => r.ID).ToHashSet();
+    }
+
+    /// <summary>
+    /// The param's rows by ID, keeping the first row of each ID (what <c>param[id]</c> returns). A null param gives
+    /// an empty lookup.
+    /// </summary>
+    private static Dictionary<int, Param.Row> FirstRowById(Param param)
+    {
+        var rows = new Dictionary<int, Param.Row>();
+
+        if (param == null)
+            return rows;
+
+        foreach (var row in param.Rows)
+        {
+            rows.TryAdd(row.ID, row);
+        }
+
+        return rows;
     }
 }

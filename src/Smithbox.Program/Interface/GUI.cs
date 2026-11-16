@@ -1,4 +1,4 @@
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
 using StudioCore.Utilities;
 using System.Numerics;
@@ -1379,8 +1379,19 @@ public class InputTextHandler
 
     public void Update(string value)
     {
+        value ??= "";
+
+        // Grow the buffer for long values (a long Japanese row name is over 512 bytes in UTF-8), keeping room to
+        // type. Writing a value larger than the buffer used to throw.
+        var needed = Encoding.UTF8.GetByteCount(value) + 1;
+
+        if (needed > _buffer.Length)
+        {
+            _buffer = new byte[needed + 256];
+        }
+
         Array.Clear(_buffer, 0, _buffer.Length);
-        Encoding.UTF8.GetBytes(value ?? "", 0, value?.Length ?? 0, _buffer, 0);
+        Encoding.UTF8.GetBytes(value, 0, value.Length, _buffer, 0);
     }
 
     public bool Draw(string label, out string result)
@@ -1422,8 +1433,19 @@ public class DelayedInputTextHandler
 
     public void Update(string value)
     {
+        value ??= "";
+
+        // Grow the buffer for long values (a long Japanese row name is over 512 bytes in UTF-8), keeping room to
+        // type. Writing a value larger than the buffer used to throw.
+        var needed = Encoding.UTF8.GetByteCount(value) + 1;
+
+        if (needed > _buffer.Length)
+        {
+            _buffer = new byte[needed + 256];
+        }
+
         Array.Clear(_buffer, 0, _buffer.Length);
-        Encoding.UTF8.GetBytes(value ?? "", 0, value?.Length ?? 0, _buffer, 0);
+        Encoding.UTF8.GetBytes(value, 0, value.Length, _buffer, 0);
     }
 
     public bool Draw(string label, out string result)

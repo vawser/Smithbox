@@ -151,13 +151,7 @@ public class DeleteParamsAction : EditorAction
 
     private void RefreshTableGroups()
     {
-        var curParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-
-        if (Editor.ViewHandler.ActiveView.ParamTableWindow.IsInTableGroupMode(curParam))
-        {
-            var curGroup = Editor.ViewHandler.ActiveView.ParamTableWindow.CurrentTableGroupID;
-            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableGroupSelection(curGroup);
-            Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection();
-        }
+        // Every view showing this param, not the active view (which may show another param)
+        Editor.ViewHandler.RefreshTableGroupsFor(Param, refreshGroupRows: true);
     }
 }

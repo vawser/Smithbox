@@ -2759,67 +2759,59 @@ public class ParamBank : IDisposable
         }
     }
 
-    public void RefreshPrimaryDiffCaches(bool checkVanillaDiff)
+    /// <summary>
+    /// Replaces diff cache entries with freshly computed ones. The caches are read by the UI every frame while the
+    /// diff runs on a worker, so each cache is copied, updated, and swapped in by reference rather than changed in
+    /// place. <paramref name="replaceAll"/> starts from an empty cache (a full refresh) instead of a copy.
+    /// A null update leaves that cache as it is.
+    /// </summary>
+    internal void PublishDiffCaches(Dictionary<string, HashSet<Param.Row>> vanillaUpdates,
+        Dictionary<string, HashSet<Param.Row>> primaryUpdates, bool replaceAll)
     {
-        if (checkVanillaDiff)
+        if (vanillaUpdates != null)
         {
-            _vanillaDiffCache = GetParamDiff(Project.Handler.ParamData.VanillaBank);
+            Volatile.Write(ref _vanillaDiffCache, MergeDiffCache(Volatile.Read(ref _vanillaDiffCache), vanillaUpdates, replaceAll));
         }
 
-        CacheBank.ClearCaches();
+        if (primaryUpdates != null)
+        {
+            Volatile.Write(ref _primaryDiffCache, MergeDiffCache(Volatile.Read(ref _primaryDiffCache), primaryUpdates, replaceAll));
+        }
     }
 
-    public void RefreshVanillaDiffCaches()
+    private static Dictionary<string, HashSet<Param.Row>> MergeDiffCache(Dictionary<string, HashSet<Param.Row>> existing,
+        Dictionary<string, HashSet<Param.Row>> updates, bool replaceAll)
     {
-        if (Project.Handler.ParamData.PrimaryBank._vanillaDiffCache != null)
+        var result = replaceAll || existing == null
+            ? new Dictionary<string, HashSet<Param.Row>>()
+            : new Dictionary<string, HashSet<Param.Row>>(existing);
+
+        foreach (var (key, rows) in updates)
         {
-            _primaryDiffCache = Project.Handler.ParamData.PrimaryBank._vanillaDiffCache;
+            result[key] = rows;
         }
 
-        _primaryDiffCache = GetParamDiff(Project.Handler.ParamData.PrimaryBank);
-
-        CacheBank.ClearCaches();
+        return result;
     }
 
-    public void RefreshAuxDiffCaches(bool checkVanillaDiff)
+    /// <summary>
+    /// The rows of <paramref name="rowArray"/> that have no identical row with the same ID in
+    /// <paramref name="otherRowArray"/>. Both are snapshots taken on the UI thread, so the worker never enumerates
+    /// a live row list. A null <paramref name="otherRowArray"/> means the other bank doesn't have the param, which
+    /// gives an empty set (as before).
+    /// </summary>
+    internal static HashSet<Param.Row> ComputeParamDiff(Param.Row[] rowArray, Param.Row[] otherRowArray)
     {
-        if (checkVanillaDiff)
+        HashSet<Param.Row> cache = new();
+
+        if (rowArray == null || otherRowArray == null)
         {
-            _vanillaDiffCache = GetParamDiff(Project.Handler.ParamData.VanillaBank);
+            return cache;
         }
 
-        _primaryDiffCache = GetParamDiff(Project.Handler.ParamData.PrimaryBank);
-
-        CacheBank.ClearCaches();
-    }
-
-    private Dictionary<string, HashSet<Param.Row>> GetParamDiff(ParamBank otherBank)
-    {
-        if (otherBank == null)
         {
-            return null;
-        }
-
-        if (_params == null)
-        {
-            return null;
-        }
-
-        Dictionary<string, HashSet<Param.Row>> newCache = new();
-        foreach (var param in _params.Keys)
-        {
-            HashSet<Param.Row> cache = new();
-            newCache.Add(param, cache);
-            Param p = _params[param];
-
-            if (!otherBank._params.ContainsKey(param))
-            {
-                Smithbox.Log(this, LOC.Get("PARAM_Data_GetParamDiff_Missing_Vanilla_Param", param), LogLevel.Debug);
-                continue;
-            }
-
-            Param.Row[] rows = _params[param].Rows.OrderBy(r => r.ID).ToArray();
-            Param.Row[] vrows = otherBank._params[param].Rows.OrderBy(r => r.ID).ToArray();
+            Param.Row[] rows = rowArray.OrderBy(r => r.ID).ToArray();
+            Param.Row[] vrows = otherRowArray.OrderBy(r => r.ID).ToArray();
 
             var vanillaIndex = 0;
             var lastID = -1;
@@ -2860,10 +2852,10 @@ public class ParamBank : IDisposable
             }
         }
 
-        return newCache;
+        return cache;
     }
 
-    private void RefreshParamRowDiffCache(Param.Row row, ReadOnlySpan<Param.Row> otherBankRows,
+    private static void RefreshParamRowDiffCache(Param.Row row, ReadOnlySpan<Param.Row> otherBankRows,
         HashSet<Param.Row> cache)
     {
         // Keyed by the row instance rather than row.ID: rows can legitimately share an ID

@@ -239,7 +239,8 @@ public class Param : SoulsFile<Param>
             if (value == null)
                 throw new ArgumentNullException();
 
-            if (Rows.Any(r => r.Parent != this))
+            // Check the new rows (this used to check the old ones, so the guard never caught anything)
+            if (value.Any(r => r.Parent != this))
             {
                 throw new ArgumentException("Attempting to add rows created from another Param");
             }

@@ -230,7 +230,7 @@ public class ParamDeltaExporter
             {
                 if (vRow.ID == row.ID)
                 {
-                    if (vanillaDiffCache.Any(e => e == row))
+                    if (vanillaDiffCache.Contains(row))
                     {
                         var fieldDeltas = HandleFields(row, vRow);
                         foreach (var entry in fieldDeltas)

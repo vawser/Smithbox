@@ -21,6 +21,32 @@ public class ParamViewHandler
     public bool AddNewView = false;
     public ParamEditorView ViewToClose = null;
 
+    /// <summary>
+    /// After an action added or removed rows of <paramref name="param"/>: rebuild the table group list of every
+    /// view showing that param (not just the active view, with whatever param it happens to show).
+    /// With <paramref name="refreshGroupRows"/>, also refresh the current group's rows and chances.
+    /// </summary>
+    public void RefreshTableGroupsFor(Andre.Formats.Param param, bool refreshGroupRows = false)
+    {
+        var paramKey = Project.Handler.ParamData.PrimaryBank.GetKeyForParam(param);
+
+        if (paramKey == null)
+            return;
+
+        foreach (var view in ParamEditorViews)
+        {
+            if (view == null || view.Selection.GetActiveParam() != paramKey)
+                continue;
+
+            if (refreshGroupRows && view.ParamTableWindow.IsInTableGroupMode(paramKey))
+            {
+                view.ParamTableWindow.UpdateTableGroupSelection(view.ParamTableWindow.CurrentTableGroupID);
+            }
+
+            view.ParamTableWindow.UpdateTableSelection(paramKey);
+        }
+    }
+
     public ParamViewHandler(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;

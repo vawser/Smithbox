@@ -16,7 +16,22 @@ public static class MassParamEdit
     {
         try
         {
-            return Convert.ChangeType(dynamicFunc(instance), instance.GetType());
+            object result = dynamicFunc(instance);
+
+            // Integer fields round fractional results half away from zero (2.5 -> 3, -2.5 -> -3).
+            // Convert.ChangeType alone used banker's rounding, so 7 / 2 gave 4 but 5 / 2 gave 2.
+            if (IsIntegerType(instance.GetType()))
+            {
+                result = result switch
+                {
+                    double d => Math.Round(d, MidpointRounding.AwayFromZero),
+                    float f => Math.Round((double)f, MidpointRounding.AwayFromZero),
+                    decimal m => Math.Round(m, MidpointRounding.AwayFromZero),
+                    _ => result
+                };
+            }
+
+            return Convert.ChangeType(result, instance.GetType());
         }
         catch
         {
@@ -29,6 +44,14 @@ public static class MassParamEdit
 
             return Convert.ChangeType(ret, instance.GetType());
         }
+    }
+
+    private static bool IsIntegerType(Type type)
+    {
+        return type == typeof(byte) || type == typeof(sbyte)
+            || type == typeof(short) || type == typeof(ushort)
+            || type == typeof(int) || type == typeof(uint)
+            || type == typeof(long) || type == typeof(ulong);
     }
 
     public static void AppendParamEditAction(this List<EditorAction> actions, Param.Row row,

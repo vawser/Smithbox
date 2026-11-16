@@ -41,7 +41,8 @@ public class ParamDeltaImporter
 
             Smithbox.Log(this, LOC.Get("PARAM_DeltaPatcher_Importer_Finished_Import", filename));
 
-            Patcher.Project.Handler.ParamData.PrimaryBank.RefreshPrimaryDiffCaches(true);
+            // Re-diff everything on the next frame (the import may not go through actions for every change)
+            Patcher.Project.Handler.ParamData.RequestFullDiffRefresh(false);
         }
         catch (Exception ex)
         {

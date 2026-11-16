@@ -50,13 +50,17 @@ public class ParamEditorScreen : EditorScreen
         PasteMenu = new(this, project);
         FindMenu = new(this, project);
 
-        Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
+        // The first diff refresh covers every param; UpdateDiffRefresh starts it on the first frame
+        Project.Handler.ParamData.RequestFullDiffRefresh(false);
     }
 
     public void OnGUI(string[] commands)
     {
         var scale = DPI.UIScale();
         var activeView = ViewHandler.ActiveView;
+
+        // Re-diff the params edited since the last frame (on a worker), for the modified-row colours
+        Project.Handler.ParamData.UpdateDiffRefresh();
 
         if (!ImportRowNamesPrompted)
         {

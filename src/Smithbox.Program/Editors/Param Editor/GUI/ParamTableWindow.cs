@@ -126,6 +126,19 @@ public class ParamTableWindow
             ImGui.TableSetupColumn("ID", ImGuiTableColumnFlags.WidthStretch, 0.2f);
             ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
 
+            // The IDs of the modified rows, once per frame (cached against the diff set), instead of scanning the
+            // diff set for every group
+            HashSet<int> modifiedGroupIds = null;
+            var activeParam = ParentView.Selection.GetActiveParam();
+
+            if (activeParam != null)
+            {
+                var vanillaDiffCache = Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
+
+                modifiedGroupIds = CacheBank.GetCached(ParentView.Editor, vanillaDiffCache, "tableModifiedGroupIds",
+                    () => vanillaDiffCache.Select(e => e.ID).ToHashSet());
+            }
+
             for (int i = 0; i < CurrentTableGroupIDs.Count; i++)
             {
                 var curTableID = CurrentTableGroupIDs[i];
@@ -134,17 +147,7 @@ public class ParamTableWindow
                 if (!IsValidMatch(curTableID, filterText))
                     continue;
 
-                bool applyDiffColoring = false;
-
-                var activeParam = ParentView.Selection.GetActiveParam();
-                if (activeParam != null)
-                {
-                    var vanillaDiffCache = Project.Handler.ParamData.PrimaryBank
-                        .GetVanillaDiffRows(activeParam);
-
-                    if (vanillaDiffCache.Any(e => e.ID == curTableID))
-                        applyDiffColoring = true;
-                }
+                bool applyDiffColoring = modifiedGroupIds != null && modifiedGroupIds.Contains(curTableID);
 
                 if(applyDiffColoring)
                 {

@@ -74,8 +74,7 @@ public class AddParamsAction : EditorAction
 
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
+        Editor.ViewHandler.RefreshTableGroupsFor(Param);
 
         return ActionEvent.NoEvent;
     }
@@ -110,6 +109,19 @@ public class AddParamsAction : EditorAction
     /// </summary>
     private void FirstExecute()
     {
+        // How many rows have each ID, kept up to date as rows go in and out, so finding a free ID doesn't scan the
+        // whole param for every candidate (Param[id] is a linear search)
+        var idCounts = new Dictionary<int, int>();
+
+        foreach (var r in Param.Rows)
+        {
+            idCounts[r.ID] = idCounts.GetValueOrDefault(r.ID) + 1;
+        }
+
+        bool HasId(int id) => idCounts.GetValueOrDefault(id) > 0;
+        void AddId(int id) => idCounts[id] = idCounts.GetValueOrDefault(id) + 1;
+        void RemoveId(int id) => idCounts[id] = Math.Max(0, idCounts.GetValueOrDefault(id) - 1);
+
         foreach (Param.Row row in Clonables)
         {
             var newrow = new Param.Row(row);
@@ -121,10 +133,11 @@ public class AddParamsAction : EditorAction
             {
                 newrow.Name = row.Name != null ? row.Name + "_1" : "";
                 Param.InsertRow(InsertIndex, newrow);
+                AddId(newrow.ID);
             }
             else
             {
-                if (Param[row.ID] != null)
+                if (HasId(row.ID))
                 {
                     if (replParams)
                     {
@@ -132,6 +145,7 @@ public class AddParamsAction : EditorAction
                         step.Replaced = existing;
                         step.ReplacedIndex = Param.IndexOfRow(existing);
                         Param.RemoveRow(existing);
+                        RemoveId(existing.ID);
                     }
                     else
                     {
@@ -141,17 +155,18 @@ public class AddParamsAction : EditorAction
 
                         newrow.Name = row.Name != null ? row.Name + "_1" : "";
                         var newID = row.ID + rowIdOffset;
-                        while (Param[newID] != null)
+                        while (HasId(newID))
                         {
                             newID += rowIdOffset;
                         }
 
                         newrow.ID = newID;
                         Param.InsertRow(Param.IndexOfRow(Param[newID - rowIdOffset]) + 1, newrow);
+                        AddId(newID);
                     }
                 }
 
-                if (Param[row.ID] == null)
+                if (!HasId(row.ID))
                 {
                     newrow.Name = row.Name != null ? row.Name : "";
                     if (appOnly)
@@ -173,6 +188,8 @@ public class AddParamsAction : EditorAction
 
                         Param.InsertRow(index, newrow);
                     }
+
+                    AddId(newrow.ID);
                 }
             }
 
@@ -303,8 +320,7 @@ public class AddParamsAction : EditorAction
         // Same as Execute, so the modified-row colours update when undoing from anywhere (e.g. a mass edit rollback)
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
+        Editor.ViewHandler.RefreshTableGroupsFor(Param);
 
         return ActionEvent.NoEvent;
     }

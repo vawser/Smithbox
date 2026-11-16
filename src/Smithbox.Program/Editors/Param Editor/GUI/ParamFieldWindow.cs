@@ -311,8 +311,16 @@ public class ParamFieldWindow
         var search = propSearchString;
         var viewIndex = ParentView.ViewIndex;
 
-        var cols = CacheBank.GetCached(Editor, curRow, $"fieldFilter_{viewIndex}",
-            () => ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true));
+        // The matching fields and why the search failed, if it did (shown at the search box next frame)
+        var (cols, searchError) = CacheBank.GetCached(Editor, curRow, $"fieldFilter_{viewIndex}",
+            () =>
+            {
+                using var errors = SearchErrors.Begin();
+                var result = ParentView.MassEdit.CSE.Search((activeParam, curRow), search, true, true);
+                return (result, errors.FirstError);
+            });
+
+        _fieldSearchError = searchError;
 
         var vcols = CacheBank.GetCached(Editor, curRow, $"vFieldFilter_{viewIndex}",
             () => cols.Select((x, i) => x.GetAs(ParentView.GetVanillaBank().GetParamFromName(activeParam))).ToList());
@@ -329,6 +337,9 @@ public class ParamFieldWindow
 
         return (cols, vcols, auxCols);
     }
+
+    // Why the field search didn't apply (from the previous frame), or null
+    private string _fieldSearchError;
 
     private int _shownFieldCount = -1;
     private int _totalFieldCount = -1;
@@ -375,7 +386,7 @@ public class ParamFieldWindow
                 if (resAutoCol != null)
                 {
                     propSearchString = resAutoCol;
-                    CacheBank.ClearCaches();
+                    CacheBank.RemoveCache(Editor);
                 }
             }
 
@@ -388,9 +399,12 @@ public class ParamFieldWindow
             GUI.Tooltip(
                 LOC.Get("PARAM_FieldWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
 
+            ParamFieldUtils.OutlineSearchBoxOnError(_fieldSearchError);
+
             if (ImGui.IsItemEdited())
             {
-                CacheBank.ClearCaches();
+                // Only the Param Editor's cached lists depend on the search
+                CacheBank.RemoveCache(Editor);
             }
 
             // Toggle Community Field Names
@@ -469,6 +483,8 @@ public class ParamFieldWindow
                 ImGui.TextDisabled(LOC.Get("PARAM_FieldWindow_Search_Match_Count",
                     _shownFieldCount.ToString("N0"), _totalFieldCount.ToString("N0")));
             }
+
+            ParamFieldUtils.DisplaySearchError(_fieldSearchError);
         }
 
         ImGui.EndChild();

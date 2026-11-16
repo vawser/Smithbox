@@ -60,6 +60,11 @@ public class MassParamEditRegex
         // If a later command fails, it is used to roll the earlier ones back.
         ActionManager childManager = new();
 
+        // Search failures inside the commands (an unknown field, a bad regex...). A failed search matches nothing
+        // rather than failing the script, since a script over several params can legitimately hit params without
+        // the field. They are listed under the result, so "0 changed" comes with a reason.
+        using var searchErrors = SearchErrors.Begin();
+
         try
         {
             var commands = commandsString.Split(';');
@@ -113,9 +118,23 @@ public class MassParamEditRegex
                 childManager.ExecuteAction(new CompoundAction(actions));
             }
 
-            var finalResult = new MassEditResult(
-                ParamMassEditResultType.SUCCESS,
-                LOC.Get("PARAM_MassEdit_Result_Success_Cells_Affected", changeCount));
+            var resultText = LOC.Get("PARAM_MassEdit_Result_Success_Cells_Affected", changeCount);
+
+            if (searchErrors.Errors.Count > 0)
+            {
+                // A few are enough to see what's wrong
+                const int maxShown = 5;
+                var shown = searchErrors.Errors.Take(maxShown).Select(e => $"- {e}");
+
+                resultText += $"\n{LOC.Get("PARAM_MassEdit_Result_Search_Warnings")}\n{string.Join("\n", shown)}";
+
+                if (searchErrors.Errors.Count > maxShown)
+                {
+                    resultText += $"\n- ... (+{searchErrors.Errors.Count - maxShown})";
+                }
+            }
+
+            var finalResult = new MassEditResult(ParamMassEditResultType.SUCCESS, resultText);
 
             return (finalResult, childManager);
         }

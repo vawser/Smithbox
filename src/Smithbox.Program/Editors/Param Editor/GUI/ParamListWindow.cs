@@ -107,10 +107,12 @@ public class ParamListWindow
 
         GUI.Tooltip(LOC.Get("PARAM_ParamWindow_Search_Hint_TT",
             InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
+        ParamFieldUtils.OutlineSearchBoxOnError(_paramSearchError);
 
         if (!currentParamSearchString.Equals(lastParamSearch))
         {
-            CacheBank.ClearCaches();
+            // Only the Param Editor's cached lists depend on the search (this used to clear every editor's caches)
+            CacheBank.RemoveCache(Editor);
             lastParamSearch = currentParamSearchString;
         }
 
@@ -167,6 +169,8 @@ public class ParamListWindow
                 _shownParamCount.ToString("N0"), _totalParamCount.ToString("N0")));
         }
 
+        ParamFieldUtils.DisplaySearchError(_paramSearchError);
+
         ImGui.EndChild();
     }
 
@@ -220,7 +224,28 @@ public class ParamListWindow
     {
         ImGui.BeginChild("ParamFileParamSection", ImGuiChildFlags.Borders);
 
-        List<string> paramKeyList = CacheBank.GetCached(Editor, ParentView.ViewIndex, () =>
+        // The matching params and why the search failed, if it did (shown at the search box next frame)
+        (List<string> paramKeyList, string searchError) = CacheBank.GetCached(Editor, ParentView.ViewIndex, "paramSearchResult", () =>
+        {
+            using var errors = SearchErrors.Begin();
+            var keys = GetSearchedParamKeys();
+            return (keys, errors.FirstError);
+        });
+
+        _paramSearchError = searchError;
+
+        // Count for the search bar (U6), shown in the header next frame
+        _shownParamCount = paramKeyList.Count;
+        _totalParamCount = Editor.Project.Handler.ParamData.PrimaryBank.Params.Count;
+
+        DisplayParamsFromKeys(paramKeyList, doFocus, scrollTo);
+    }
+
+    // Why the param search didn't apply (from the previous frame's list), or null
+    private string _paramSearchError;
+
+    private List<string> GetSearchedParamKeys()
+    {
         {
             var primaryBank = Editor.Project.Handler.ParamData.PrimaryBank;
 
@@ -249,12 +274,14 @@ public class ParamListWindow
 
                 return keyList;
             }
-        });
+        }
+    }
 
-        // Count for the search bar (U6), shown in the header next frame
-        _shownParamCount = paramKeyList.Count;
-        _totalParamCount = Editor.Project.Handler.ParamData.PrimaryBank.Params.Count;
-
+    /// <summary>
+    /// The rest of <see cref="DisplayParams"/>, inside its child window (which it ends)
+    /// </summary>
+    private void DisplayParamsFromKeys(List<string> paramKeyList, bool doFocus, float scrollTo)
+    {
         // SDT Far Model Params are shown in their own section instead of the main list
         var farModelParams = Project.Handler.ParamData.PrimaryBank.FarModelParams;
         List<string> farModelKeyList = new();
@@ -599,7 +626,8 @@ public class ParamListWindow
 
         ParentView.ParamTableWindow.UpdateTableSelection(paramKey);
 
-        Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask(true);
+        // No diff refresh here: edits are re-diffed as they happen, and an aux bank load asks for its own full
+        // refresh. This used to re-diff every param of every bank on each param click.
 
         ParentView.RowDecorators.RefreshFmgDecorator(paramKey);
 
@@ -661,7 +689,11 @@ public class ParamListWindow
             ImGui.Indent(15.0f);
 
             var vanilla = Project.Handler.ParamData.VanillaBank?.StayParams.GetValueOrDefault(paramKey);
-            var hasVanillaDiff = vanilla != null && !param.Value.Write().SequenceEqual(vanilla.Write());
+            // Serialising both stay params to compare them was done twice per stay param every frame. The result
+            // only changes when the stay param is edited, so it is cached against its edit count.
+            var editCount = ParamDirtyTracker.GetEditCount(param.Value);
+            var hasVanillaDiff = vanilla != null && CacheBank.GetCached(Editor, (param.Value, editCount), "stayParamVanillaDiff",
+                () => !param.Value.Write().SequenceEqual(vanilla.Write()));
 
             if (hasVanillaDiff)
             {

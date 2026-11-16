@@ -141,6 +141,30 @@
       "Text": "Line {0}: \"{1}\" isn't a valid row ID. Nothing was imported."
     },
     {
+      "Key": "PARAM_SE_Error_Condition",
+      "Text": "\"{0}\": {1}"
+    },
+    {
+      "Key": "PARAM_SE_Error_Unknown_Field",
+      "Text": "there is no field named \"{0}\" (use \\s for spaces)"
+    },
+    {
+      "Key": "PARAM_SE_Error_Missing_Args",
+      "Text": "\"{0}\" needs {1} argument(s): {2}"
+    },
+    {
+      "Key": "PARAM_SE_Error_Unknown_Variable",
+      "Text": "there is no mass edit variable named \"${0}\""
+    },
+    {
+      "Key": "PARAM_SE_Error_Search_Header",
+      "Text": "Search not applied, so nothing is filtered out:"
+    },
+    {
+      "Key": "PARAM_MassEdit_Result_Search_Warnings",
+      "Text": "Some searches failed and matched nothing:"
+    },
+    {
       "Key": "PARAM_CSV_Import_Failed",
       "Text": "The CSV couldn't be imported, and nothing was changed: {0}"
     }

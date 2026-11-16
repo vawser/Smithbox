@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
@@ -370,6 +371,10 @@ public class ParamData : IDisposable
             AuxBanks.Add(targetProject.Descriptor.ProjectName, newAuxBank);
         }
 
+        // The new bank has no diffs yet (against primary or vanilla). Callers used to rely on the next param click,
+        // which re-diffed everything.
+        RequestFullDiffRefresh(true);
+
         Smithbox.Log(this, LOC.Get("PARAM_Data_Setup_AuxBank_PASS", targetProject.Descriptor.ProjectName));
 
         return true;
@@ -454,36 +459,291 @@ public class ParamData : IDisposable
         }
     }
 
+    #region Diff Refresh
+    // The diff caches drive the modified-row colours and the "modified" searches.
+    //
+    // Edits mark their params in ParamDirtyTracker. Once a frame, UpdateDiffRefresh (UI thread) takes those marks,
+    // snapshots the rows of just those params, and re-diffs them on a worker. Everything is re-diffed only on the
+    // first refresh, when a bank has been replaced, or when asked for (an aux bank load, a merge, a delta import).
+    // This used to re-diff every param of every bank, twice, after each undo, redo, paste or param click, and the
+    // worker enumerated live row lists the UI thread was changing.
+
+    private readonly object _diffRequestLock = new();
+    private bool _diffFullRequested = true;
+    private bool _diffAuxVanillaRequested = false;
+    private ParamBank _diffBaselinePrimary;
+    private ParamBank _diffBaselineVanilla;
+    private int _diffTaskRunning = 0;
+
+    /// <summary>
+    /// One param of one bank to re-diff, with row snapshots taken on the UI thread
+    /// </summary>
+    private sealed class DiffItem
+    {
+        public ParamBank Bank;
+        public string Key;
+        public bool IntoVanillaCache;
+        public Param.Row[] Rows;
+        public Param.Row[] OtherRows;
+        public HashSet<Param.Row> Result;
+    }
+
+    private sealed class DiffJob
+    {
+        public bool Full;
+        public List<DiffItem> Items = new();
+    }
+
+    /// <summary>
+    /// Kept for the existing callers. Edits are picked up by <see cref="UpdateDiffRefresh"/> from their dirty marks,
+    /// so a plain call needs nothing more. <paramref name="checkAuxVanillaDiff"/> asks for a full refresh, including
+    /// the aux banks' own diffs against vanilla (used after an aux bank load or a merge).
+    /// </summary>
     public void RefreshParamDifferenceCacheTask(bool checkAuxVanillaDiff = false)
     {
-        // Refresh diff cache
-        TaskManager.LiveTask task = new(
-            "paramEditor_refreshDifferenceCache",
-            LOC.Get("SYS_Header"),
-            LOC.Get("PARAM_Data_Task_Refresh_Diff_Cache_PASS"),
-            LOC.Get("PARAM_Data_Task_Refresh_Diff_Cache_FAIL"),
-            TaskManager.RequeueType.Repeat,
-            true,
-            LogPriority.Low,
-            () => RefreshAllParamDiffCaches(checkAuxVanillaDiff)
-        );
-
-        TaskManager.Run(task);
+        if (checkAuxVanillaDiff)
+        {
+            RequestFullDiffRefresh(true);
+        }
     }
 
-
-    public void RefreshAllParamDiffCaches(bool checkAuxVanillaDiff)
+    /// <summary>
+    /// Re-diff every param on the next frame. Safe to call from any thread.
+    /// </summary>
+    public void RequestFullDiffRefresh(bool includeAuxVanillaDiff)
     {
-        PrimaryBank.RefreshPrimaryDiffCaches(true);
-        VanillaBank.RefreshVanillaDiffCaches();
-
-        foreach (KeyValuePair<string, ParamBank> bank in AuxBanks)
+        lock (_diffRequestLock)
         {
-            bank.Value.RefreshAuxDiffCaches(checkAuxVanillaDiff);
+            _diffFullRequested = true;
+            _diffAuxVanillaRequested |= includeAuxVanillaDiff;
+        }
+    }
+
+    /// <summary>
+    /// Called once a frame from the Param Editor (UI thread). Starts a refresh for the params changed since the
+    /// last one, or a full refresh if one is due. Does nothing while a refresh is still running: the marks wait
+    /// for the next frame after it.
+    /// </summary>
+    public void UpdateDiffRefresh()
+    {
+        if (PrimaryBank?.Params == null || VanillaBank?.Params == null)
+            return;
+
+        if (Volatile.Read(ref _diffTaskRunning) == 1)
+            return;
+
+        bool full;
+        bool auxVanilla;
+
+        lock (_diffRequestLock)
+        {
+            full = _diffFullRequested
+                || _diffBaselinePrimary != PrimaryBank
+                || _diffBaselineVanilla != VanillaBank;
+
+            auxVanilla = _diffAuxVanillaRequested;
         }
 
-        CacheBank.ClearCaches();
+        // Taken either way: a full refresh covers them too
+        var stale = ParamDirtyTracker.TakeDiffStaleParams();
+
+        List<string> keys = null;
+
+        if (!full)
+        {
+            if (stale.Count == 0)
+                return;
+
+            keys = stale
+                .Select(p => PrimaryBank.GetKeyForParam(p))
+                .Where(k => k != null)
+                .Distinct()
+                .ToList();
+
+            if (keys.Count == 0)
+                return;
+        }
+
+        lock (_diffRequestLock)
+        {
+            if (full)
+            {
+                _diffFullRequested = false;
+                _diffAuxVanillaRequested = false;
+                _diffBaselinePrimary = PrimaryBank;
+                _diffBaselineVanilla = VanillaBank;
+            }
+        }
+
+        var job = BuildDiffJob(full, auxVanilla, keys);
+
+        Volatile.Write(ref _diffTaskRunning, 1);
+
+        Task.Run(() =>
+        {
+            try
+            {
+                RunDiffJob(job);
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, $"{LOC.Get("SYS_Header")} {LOC.Get("PARAM_Data_Task_Refresh_Diff_Cache_FAIL")}", e);
+
+                // Try again from scratch next frame
+                RequestFullDiffRefresh(auxVanilla);
+            }
+            finally
+            {
+                Volatile.Write(ref _diffTaskRunning, 0);
+            }
+        });
     }
+
+    /// <summary>
+    /// Re-diffs every param now, on the calling thread (used by the param upgrader, which needs the result
+    /// straight away)
+    /// </summary>
+    public void RefreshAllParamDiffCaches(bool checkAuxVanillaDiff)
+    {
+        if (PrimaryBank?.Params == null || VanillaBank?.Params == null)
+            return;
+
+        ParamDirtyTracker.TakeDiffStaleParams();
+
+        lock (_diffRequestLock)
+        {
+            _diffFullRequested = false;
+            _diffBaselinePrimary = PrimaryBank;
+            _diffBaselineVanilla = VanillaBank;
+        }
+
+        RunDiffJob(BuildDiffJob(true, checkAuxVanillaDiff, null));
+    }
+
+    /// <summary>
+    /// Lists the param diffs to compute, with row snapshots. Call on the UI thread (or while nothing edits the
+    /// params). <paramref name="keys"/> is the changed params; null with <paramref name="full"/> means every param.
+    /// <list type="bullet">
+    /// <item>primary bank, vanilla cache: primary rows that differ from vanilla</item>
+    /// <item>vanilla bank, primary cache: vanilla rows that differ from primary</item>
+    /// <item>each aux bank, primary cache: aux rows that differ from primary</item>
+    /// <item>each aux bank, vanilla cache (only when asked for): aux rows that differ from vanilla. Edits to the
+    /// primary bank don't change these, so a normal refresh leaves them alone.</item>
+    /// </list>
+    /// </summary>
+    private DiffJob BuildDiffJob(bool full, bool auxVanilla, List<string> keys)
+    {
+        var job = new DiffJob { Full = full };
+        var snapshots = new Dictionary<(ParamBank, string), Param.Row[]>();
+
+        Param.Row[] Snapshot(ParamBank bank, string key)
+        {
+            if (bank?.Params == null || !bank.Params.TryGetValue(key, out var param) || param == null)
+                return null;
+
+            if (!snapshots.TryGetValue((bank, key), out var rows))
+            {
+                rows = param.Rows.ToArray();
+                snapshots[(bank, key)] = rows;
+            }
+
+            return rows;
+        }
+
+        void Add(ParamBank bank, string key, bool intoVanillaCache, ParamBank otherBank)
+        {
+            var rows = Snapshot(bank, key);
+
+            if (rows == null)
+                return;
+
+            job.Items.Add(new DiffItem
+            {
+                Bank = bank,
+                Key = key,
+                IntoVanillaCache = intoVanillaCache,
+                Rows = rows,
+                OtherRows = Snapshot(otherBank, key)
+            });
+        }
+
+        var primaryKeys = full ? PrimaryBank.Params.Keys.ToList() : keys;
+
+        foreach (var key in primaryKeys)
+        {
+            Add(PrimaryBank, key, true, VanillaBank);
+        }
+
+        foreach (var key in full ? VanillaBank.Params.Keys.ToList() : primaryKeys)
+        {
+            Add(VanillaBank, key, false, PrimaryBank);
+        }
+
+        foreach (var aux in AuxBanks.Values.ToList())
+        {
+            if (aux?.Params == null)
+                continue;
+
+            foreach (var key in full ? aux.Params.Keys.ToList() : primaryKeys)
+            {
+                Add(aux, key, false, PrimaryBank);
+
+                if (auxVanilla)
+                {
+                    Add(aux, key, true, VanillaBank);
+                }
+            }
+        }
+
+        return job;
+    }
+
+    /// <summary>
+    /// Computes the job's diffs (in parallel; each only reads its snapshots) and publishes them, one cache swap per
+    /// bank and cache
+    /// </summary>
+    private void RunDiffJob(DiffJob job)
+    {
+        Parallel.ForEach(job.Items, item =>
+        {
+            item.Result = ParamBank.ComputeParamDiff(item.Rows, item.OtherRows);
+        });
+
+        foreach (var bankItems in job.Items.GroupBy(i => i.Bank))
+        {
+            Dictionary<string, HashSet<Param.Row>> vanillaUpdates = null;
+            Dictionary<string, HashSet<Param.Row>> primaryUpdates = null;
+
+            foreach (var item in bankItems)
+            {
+                if (item.IntoVanillaCache)
+                {
+                    vanillaUpdates ??= new();
+                    vanillaUpdates[item.Key] = item.Result;
+                }
+                else
+                {
+                    primaryUpdates ??= new();
+                    primaryUpdates[item.Key] = item.Result;
+                }
+            }
+
+            bankItems.Key.PublishDiffCaches(vanillaUpdates, primaryUpdates, job.Full);
+        }
+
+        // Only the Param Editor's cached lists depend on the diffs, so leave the other editors' caches alone
+        var paramEditor = Project.Handler.ParamEditor;
+
+        if (paramEditor != null)
+        {
+            CacheBank.RemoveCache(paramEditor);
+        }
+        else
+        {
+            CacheBank.ClearCaches();
+        }
+    }
+    #endregion
 
     public ParamMeta GetParamMeta(PARAMDEF def)
     {

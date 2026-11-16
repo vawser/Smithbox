@@ -33,7 +33,11 @@ public class RowListContext
     public PropertyInfo CompareColumnProperty { get; set; }
 
     public HashSet<Param.Row> VanillaDiffCache { get; set; }
-    public List<(HashSet<Param.Row>, HashSet<Param.Row>)> AuxDiffCaches { get; set; }
+    /// <summary>
+    /// Per aux bank, the IDs of its rows that differ from vanilla and from primary. The aux caches hold the aux
+    /// bank's own row objects, so primary rows are matched to them by ID.
+    /// </summary>
+    public List<(HashSet<int> VanillaDiffIds, HashSet<int> PrimaryDiffIds)> AuxDiffCaches { get; set; }
 
     public FmgRowDecorator FmgRowDecorator { get; set; }
 
@@ -75,6 +79,9 @@ public class ParamRowWindow
     private int _shownRowCount = -1;
     private int _totalRowCount = -1;
 
+    // Why the row search didn't apply (from the previous frame's list), or null
+    private string _rowSearchError;
+
 
     public ParamRowWindow(ParamEditorScreen editor, ProjectEntry project, ParamEditorView curView)
     {
@@ -113,9 +120,11 @@ public class ParamRowWindow
 
             Context.VanillaDiffCache = Editor.Project.Handler.ParamData.PrimaryBank
                 .GetVanillaDiffRows(activeParam);
+            // ID sets, cached per diff set (cleared when the diffs are refreshed), so each row's test is a lookup.
+            // Each row used to scan every aux diff set, every frame.
             Context.AuxDiffCaches = Editor.Project.Handler.ParamData.AuxBanks
-                .Select((bank, i) => (bank.Value.GetVanillaDiffRows(activeParam),
-                bank.Value.GetPrimaryDiffRows(activeParam))).ToList();
+                .Select(bank => (GetDiffIds(bank.Value.GetVanillaDiffRows(activeParam)),
+                    GetDiffIds(bank.Value.GetPrimaryDiffRows(activeParam)))).ToList();
 
             Context.CompareColumn = ParentView.Selection.GetCompareCol();
             Context.CompareColumnProperty = typeof(Param.Cell).GetProperty("Value");
@@ -164,11 +173,13 @@ public class ParamRowWindow
             ref ParentView.Selection.GetCurrentRowSearchString(), 256);
 
         GUI.Tooltip(LOC.Get("PARAM_RowWindow_Search_TT", InputManager.GetHint(KeybindID.ParamEditor_Focus_Searchbar)));
+        ParamFieldUtils.OutlineSearchBoxOnError(_rowSearchError);
 
         if (!lastRowSearch.ContainsKey(ParentView.Selection.GetActiveParam())
             || !lastRowSearch[ParentView.Selection.GetActiveParam()].Equals(ParentView.Selection.GetCurrentRowSearchString()))
         {
-            CacheBank.ClearCaches();
+            // Only the Param Editor's cached lists depend on the search (this used to clear every editor's caches)
+            CacheBank.RemoveCache(Editor);
             lastRowSearch[ParentView.Selection.GetActiveParam()] = ParentView.Selection.GetCurrentRowSearchString();
 
             Context.DoFocus = true;
@@ -244,6 +255,8 @@ public class ParamRowWindow
             ImGui.TextDisabled(LOC.Get("PARAM_RowWindow_Search_Match_Count",
                 _shownRowCount.ToString("N0"), _totalRowCount.ToString("N0")));
         }
+
+        ParamFieldUtils.DisplaySearchError(_rowSearchError);
 
         ImGui.EndChild();
     }
@@ -414,12 +427,21 @@ public class ParamRowWindow
             // All Rows
             var curSearchTerm = ParentView.Selection.GetCurrentRowSearchString();
 
-            List<Param.Row> rows = CacheBank.GetCached(
-                Editor, (ParentView.ViewIndex, Context.ActiveParam),
-                () => ParentView.MassEdit.RSE.Search(
-                    (Editor.Project.Handler.ParamData.PrimaryBank, Context.CurParam),
-                   curSearchTerm, true, true)
-                );
+            // The search result and why it failed, if it did (shown at the search box next frame)
+            (List<Param.Row> rows, string searchError) = CacheBank.GetCached(
+                Editor, (ParentView.ViewIndex, Context.ActiveParam), "rowSearchResult",
+                () =>
+                {
+                    using var errors = SearchErrors.Begin();
+
+                    var result = ParentView.MassEdit.RSE.Search(
+                        (Editor.Project.Handler.ParamData.PrimaryBank, Context.CurParam),
+                        curSearchTerm, true, true);
+
+                    return (result, errors.FirstError);
+                });
+
+            _rowSearchError = searchError;
 
             var enableGrouping = false;
 
@@ -920,6 +942,20 @@ public class ParamRowWindow
         }
     }
 
+    /// <summary>
+    /// The IDs in a diff set, cached against that set object. A diff refresh publishes new set objects and clears
+    /// the Param Editor's caches, so the IDs are rebuilt then.
+    /// </summary>
+    private HashSet<int> GetDiffIds(HashSet<Param.Row> diffRows)
+    {
+        if (diffRows == null || diffRows.Count == 0)
+            return EmptyIds;
+
+        return CacheBank.GetCached(Editor, diffRows, "auxDiffIds", () => diffRows.Select(r => r.ID).ToHashSet());
+    }
+
+    private static readonly HashSet<int> EmptyIds = new();
+
     private void DisplayRow(bool[] selectionCache, int selectionCacheIndex,
         List<Param.Row> p, Param.Row r, bool isPinned)
     {
@@ -935,7 +971,7 @@ public class ParamRowWindow
         // The aux caches hold row instances that belong to the aux ParamBank, not the
         // primary bank, so r will never be reference-equal to any entry in them - these
         // have to keep comparing by ID.
-        var auxDiffVanilla = Context.AuxDiffCaches.Where(cache => cache.Item1.Any(row => row.ID == r.ID)).Count() > 0;
+        var auxDiffVanilla = Context.AuxDiffCaches.Any(cache => cache.VanillaDiffIds.Contains(r.ID));
 
         var popColor = true;
 
@@ -943,7 +979,7 @@ public class ParamRowWindow
         {
             // If the auxes are changed 
             var auxDiffPrimaryAndVanilla = (auxDiffVanilla ? 1 : 0) + Context.AuxDiffCaches
-                .Where(cache => cache.Item1.Any(row => row.ID == r.ID) && cache.Item2.Any(row => row.ID == r.ID)).Count() > 1;
+                .Count(cache => cache.VanillaDiffIds.Contains(r.ID) && cache.PrimaryDiffIds.Contains(r.ID)) > 1;
 
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
@@ -1459,9 +1495,19 @@ public class ParamRowWindow
 
         var activeParam = ParentView.Selection.GetActiveParam();
 
-        foreach (Param.Row row in CacheBank.GetCached(Editor, (ParentView.ViewIndex, ParentView.Selection.GetActiveParam()),
-            () => ParentView.MassEdit.RSE.Search((ParentView.GetPrimaryBank(), ParentView.GetPrimaryBank().Params[ParentView.Selection.GetActiveParam()]),
-            ParentView.Selection.GetCurrentRowSearchString(), true, true)))
+        // The same cached search result the row list shows
+        (List<Param.Row> searchRows, string _) = CacheBank.GetCached(Editor, (ParentView.ViewIndex, activeParam), "rowSearchResult",
+            () =>
+            {
+                using var errors = SearchErrors.Begin();
+
+                var result = ParentView.MassEdit.RSE.Search((ParentView.GetPrimaryBank(), ParentView.GetPrimaryBank().Params[activeParam]),
+                    ParentView.Selection.GetCurrentRowSearchString(), true, true);
+
+                return (result, errors.FirstError);
+            });
+
+        foreach (Param.Row row in searchRows)
         {
             if (ParentView.ParamTableWindow.IsInTableGroupMode(activeParam))
             {

@@ -59,8 +59,7 @@ public class AddRowsToTableGroup : EditorAction
 
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
+        Editor.ViewHandler.RefreshTableGroupsFor(Param);
 
         return ActionEvent.NoEvent;
     }
@@ -138,8 +137,7 @@ public class AddRowsToTableGroup : EditorAction
 
         ParamDirtyTracker.MarkDirty(Param);
 
-        var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
-        Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
+        Editor.ViewHandler.RefreshTableGroupsFor(Param);
 
         return ActionEvent.NoEvent;
     }

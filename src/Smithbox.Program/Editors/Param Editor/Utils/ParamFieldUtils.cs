@@ -12,11 +12,68 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.ParamEditor;
 public static class ParamFieldUtils
 {
-    public static string ImGui_InputFloatFormat(float f, int min = 3, int max = 6)
+    /// <summary>
+    /// The ImGui format for showing <paramref name="f"/> with as many decimals as it has (at least
+    /// <paramref name="min"/>, at most <paramref name="max"/>). The default cap was 6 decimals, which shows values
+    /// such as 0.0000005 as 0.000, and editing any digit then wrote the rounded value back. A float only carries
+    /// about 7 significant digits, so 10 decimals covers every value a param is likely to hold.
+    /// </summary>
+    public static string ImGui_InputFloatFormat(float f, int min = 3, int max = 10)
     {
-        var split = f.ToString("F6").TrimEnd('0').Split('.');
-        return $"%.{Math.Clamp(split.Last().Length, min, max)}f";
+        // Huge values have no decimals worth showing (and don't fit in a decimal)
+        if (float.IsNaN(f) || float.IsInfinity(f) || Math.Abs(f) >= 1e15f)
+            return $"%.{min}f";
+
+        // The shortest text that reads back as the same float ("0.1", "5E-07"), then written out without an
+        // exponent ("0.0000005"). Going through double instead would show 0.1f as 0.1000000015.
+        var invariant = System.Globalization.CultureInfo.InvariantCulture;
+        var shortest = f.ToString("R", invariant);
+        if (!decimal.TryParse(shortest, System.Globalization.NumberStyles.Float, invariant, out var exact))
+            return $"%.{max}f";
+
+        var text = exact.ToString(invariant);
+
+        var decimals = 0;
+        var point = text.IndexOf('.');
+
+        if (point >= 0)
+        {
+            decimals = text.TrimEnd('0').Length - point - 1;
+        }
+
+        return $"%.{Math.Clamp(decimals, min, max)}f";
     }
+    /// <summary>
+    /// After a search box: outline it in the error colour while its search failed
+    /// </summary>
+    public static void OutlineSearchBoxOnError(string searchError)
+    {
+        if (string.IsNullOrEmpty(searchError))
+            return;
+
+        ImGui.GetWindowDrawList().AddRect(ImGui.GetItemRectMin(), ImGui.GetItemRectMax(),
+            ImGui.GetColorU32(UI.Current.ImGui_Invalid_Text_Color));
+    }
+
+    /// <summary>
+    /// A warning icon on the same line, with the search failure in its tooltip. The search headers have a fixed
+    /// height, so the message lives in the tooltip rather than on a line of its own.
+    /// </summary>
+    public static void DisplaySearchError(string searchError)
+    {
+        if (string.IsNullOrEmpty(searchError))
+            return;
+
+        ImGui.SameLine();
+        ImGui.AlignTextToFramePadding();
+        ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, Icons.ExclamationTriangle);
+
+        if (ImGui.IsItemHovered())
+        {
+            ImGui.SetTooltip($"{LOC.Get("PARAM_SE_Error_Search_Header")}\n{searchError}");
+        }
+    }
+
     public static void ImGui_DisplayPropertyInfo(PropertyInfo prop)
     {
         ImGui_DisplayPropertyInfo(prop.PropertyType, prop.Name, true, true);

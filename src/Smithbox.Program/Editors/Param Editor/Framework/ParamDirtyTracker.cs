@@ -24,9 +24,44 @@ public static class ParamDirtyTracker
 
     private static readonly ConditionalWeakTable<object, DirtyState> DirtyParams = new();
 
+    // Params changed since their diff caches (modified-row colours, "modified" search) were last refreshed.
+    // Separate from the dirty state, which a save clears while the diffs still need refreshing. Weak keys, so a
+    // closed project's params aren't kept alive by marks nobody will take.
+    private static readonly ConditionalWeakTable<Param, object> DiffStaleParams = new();
+    private static readonly object DiffStaleLock = new();
+
     public static void MarkDirty(Param param)
     {
         MarkDirtyInternal(param);
+
+        if (param != null)
+        {
+            lock (DiffStaleLock)
+            {
+                DiffStaleParams.AddOrUpdate(param, null);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Returns the params changed since the last call, and clears the list. Used by the diff refresh, which then
+    /// re-diffs only these params.
+    /// </summary>
+    public static List<Param> TakeDiffStaleParams()
+    {
+        lock (DiffStaleLock)
+        {
+            var result = new List<Param>();
+
+            foreach (var entry in DiffStaleParams)
+            {
+                result.Add(entry.Key);
+            }
+
+            DiffStaleParams.Clear();
+
+            return result;
+        }
     }
 
     public static void MarkDirty(StructParam stayParam)
@@ -76,6 +111,10 @@ public static class ParamDirtyTracker
         }
     }
 
+    // Counts every change to a param, and unlike the dirty version is never reset by a save, so it can key caches
+    // of anything computed from the param's contents
+    private static readonly ConditionalWeakTable<object, DirtyState> EditCounts = new();
+
     private static void MarkDirtyInternal(object param)
     {
         if (param == null)
@@ -83,6 +122,21 @@ public static class ParamDirtyTracker
 
         var state = DirtyParams.GetValue(param, _ => new DirtyState());
         Interlocked.Increment(ref state.Version);
+
+        var count = EditCounts.GetValue(param, _ => new DirtyState());
+        Interlocked.Increment(ref count.Version);
+    }
+
+    /// <summary>
+    /// How many changes the param (or stay param) has had since it was loaded. Goes up on every edit, undo and
+    /// redo, and isn't reset by a save.
+    /// </summary>
+    public static long GetEditCount(object param)
+    {
+        if (param == null)
+            return 0;
+
+        return EditCounts.TryGetValue(param, out var state) ? Interlocked.Read(ref state.Version) : 0;
     }
 
     public static bool IsDirty(object param)
