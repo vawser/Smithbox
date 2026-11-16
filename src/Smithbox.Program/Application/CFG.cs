@@ -244,6 +244,16 @@ public class CFG
     public bool MapEditor_Enable_Character_Composition = true;
     public bool MapEditor_Hold_Idle_Poses_On_Load = false;
 
+    // Map element effect playback (SFX, WindSFX and Message regions), shown from Viewport Filters
+    public bool MapEditor_Display_Effects = false;
+    public bool MapEditor_Effects_Sfx = true;
+    public bool MapEditor_Effects_WindSfx = true;
+    public bool MapEditor_Effects_MessageSfx = false;
+    public bool MapEditor_Effects_Assets = true;
+    public bool MapEditor_Effects_Selected_Only = false;
+    public float MapEditor_Effects_Max_Distance = 150.0f;
+    public int MapEditor_Effects_Max_Count = 48;
+
     public bool MapEditor_Selection_Group_Frame_Selection_On_Use = true;
     public bool MapEditor_Selection_Group_Enable_Quick_Creation = false;
     public bool MapEditor_Selection_Group_Confirm_Delete = true;

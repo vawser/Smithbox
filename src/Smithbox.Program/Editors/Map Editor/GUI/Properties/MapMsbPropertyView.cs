@@ -512,6 +512,9 @@ public class MapMsbPropertyView
             committed = true;
         }
 
+        // FX Links: effect ids, and the effects an asset's SFX relative id selects
+        MapEditorDecorations.FxRefRow(View, fieldMeta, entSelection, prop, oldval);
+
         // ER: Mask List - TODO: this still uses the C# attribute method, change to MSBMETA
         if (prop.GetCustomAttribute<EldenRingAssetMask>() != null)
         {

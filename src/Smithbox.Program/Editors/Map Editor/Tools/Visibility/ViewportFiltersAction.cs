@@ -142,6 +142,11 @@ public class ViewportFiltersAction
             }
         }
 
+        if (View.EffectPlayback.IsSupportedGame)
+        {
+            DisplayEffectPlayback();
+        }
+
         GUI.Spacer();
         GUI.ConditionalHeader("Region Filters", "Toggle individual region types.", ref DisplayRegionFilters);
 
@@ -163,6 +168,124 @@ public class ViewportFiltersAction
             scene.SetDrawFilter(filter, enabled);
             View.BasicFilters.StoreFilterState();
             View.DelayPicking();
+        }
+    }
+
+    /// <summary>
+    /// The effects of SFX, WindSFX and Message regions: whether they are shown, which, and playback
+    /// </summary>
+    private void DisplayEffectPlayback()
+    {
+        var playback = View.EffectPlayback;
+        var cfg = CFG.Current;
+
+        GUI.Spacer();
+        GUI.SimpleHeader("Effects", "Play the particle effects that map elements place, such as SFX and WindSFX regions.");
+
+        var enabled = cfg.MapEditor_Display_Effects;
+        if (ImGui.Checkbox("Display Effects##mapEffectsDisplay", ref enabled))
+        {
+            cfg.MapEditor_Display_Effects = enabled;
+
+            if (enabled)
+                playback.Play();
+        }
+        GUI.Tooltip("Play the effects of the map elements in range of the camera. This is drawn with the FX Editor's renderer, so the FX Editor must be enabled for the project.");
+
+        if (!cfg.MapEditor_Display_Effects)
+            return;
+
+        if (!playback.IsAvailable)
+        {
+            GUI.WrappedText("Effects are not available: enable the FX Editor for this project to play them.");
+            return;
+        }
+
+        // Start / stop
+        if (playback.IsPlaying)
+        {
+            if (ImGui.Button("Pause##mapEffectsPause"))
+                playback.Pause();
+            GUI.Tooltip("Freeze the effects where they are.");
+        }
+        else
+        {
+            if (ImGui.Button($"{(playback.IsStopped ? "Start" : "Play")}##mapEffectsPlay"))
+                playback.Play();
+            GUI.Tooltip("Start the effects playing.");
+        }
+
+        ImGui.SameLine();
+        ImGui.BeginDisabled(playback.IsStopped);
+        if (ImGui.Button("Stop##mapEffectsStop"))
+            playback.Stop();
+        ImGui.EndDisabled();
+        GUI.Tooltip("Stop the effects and remove them from the viewport.");
+
+        ImGui.SameLine();
+        if (ImGui.Button("Restart##mapEffectsRestart"))
+            playback.Restart();
+        GUI.Tooltip("Start every effect in range again from its beginning.");
+
+        GUI.SetInputWidth();
+        ImGui.SliderFloat("Speed##mapEffectsSpeed", ref playback.Speed, 0.1f, 4.0f, "%.2fx");
+        GUI.Tooltip("The playback speed of the effects. 1 is the game's speed.");
+
+        // Which elements
+        if (ImGui.Checkbox("SFX##mapEffectsSfx", ref cfg.MapEditor_Effects_Sfx))
+            playback.Invalidate();
+        GUI.Tooltip("Play the effects of SFX regions.");
+
+        if (ImGui.Checkbox("Wind SFX##mapEffectsWindSfx", ref cfg.MapEditor_Effects_WindSfx))
+            playback.Invalidate();
+        GUI.Tooltip("Play the effects of WindSFX regions.");
+
+        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            if (ImGui.Checkbox("Message Sign##mapEffectsMessageSfx", ref cfg.MapEditor_Effects_MessageSfx))
+                playback.Invalidate();
+            GUI.Tooltip("Play the sign effect of Message regions that set one.");
+        }
+
+        if (playback.SupportsAssetEffects)
+        {
+            var assetName = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT ? "Object" : "Asset";
+            var paramName = Project.Descriptor.ProjectType is ProjectType.DS3 or ProjectType.SDT ? "ModelSfxParam" : "AssetModelSfxParam";
+
+            if (ImGui.Checkbox($"{assetName} Effects##mapEffectsAssets", ref cfg.MapEditor_Effects_Assets))
+                playback.Invalidate();
+            GUI.Tooltip($"Play the effects a {assetName.ToLower()} places on its dummy polys through {paramName} (the row of its model, plus its SFX relative ID). A relative ID of -1 places none.");
+        }
+
+        if (ImGui.Checkbox("Selected Only##mapEffectsSelectedOnly", ref cfg.MapEditor_Effects_Selected_Only))
+            playback.Invalidate();
+        GUI.Tooltip("Play only the effects of the selected map elements, whatever their distance from the camera.");
+
+        // Limits, as a map can place hundreds of effects
+        GUI.SetInputWidth();
+        ImGui.DragFloat("Max Distance##mapEffectsMaxDistance", ref cfg.MapEditor_Effects_Max_Distance, 1.0f, 1.0f, 5000.0f, "%.0f");
+        GUI.Tooltip("Only effects within this distance of the camera are played.");
+
+        GUI.SetInputWidth();
+        ImGui.SliderInt("Max Effects##mapEffectsMaxCount", ref cfg.MapEditor_Effects_Max_Count, 1, 256);
+        GUI.Tooltip("The most effects played at once; the nearest to the camera are played first.");
+
+        // Status
+        if (playback.Bank is { IsIndexing: true } bank)
+        {
+            GUI.WrappedText($"Indexing effects: {bank.IndexedBinders} / {bank.TotalBinders}");
+        }
+        else if (playback.SourceCount == 0)
+        {
+            GUI.WrappedText("No effect elements in the loaded maps.");
+        }
+        else
+        {
+            var status = $"{playback.SourceCount} effect elements, {playback.RunningCount} playing, {playback.ParticleCount} particles";
+            if (playback.MissingCount > 0)
+                status += $", {playback.MissingCount} not in the FX bank";
+
+            GUI.WrappedText(status);
         }
     }
 

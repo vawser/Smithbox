@@ -1060,6 +1060,132 @@ public static class MapEditorDecorations
     /// <summary>
     /// Model Link Button
     /// </summary>
+    /// <summary>
+    /// FX Links: under a field holding an effect id (tagged ParticleAlias), a button that opens the effect in the FX
+    /// Editor. Under an asset's SFX relative id, the model SFX param row it selects, with a button for each effect
+    /// the row places and one for the row itself.
+    /// </summary>
+    public static void FxRefRow(
+        MapEditorView view,
+        MapEntityPropertyFieldMeta meta,
+        IEnumerable<Entity> entSelection,
+        PropertyInfo propinfo,
+        object value)
+    {
+        var project = view.Project;
+
+        if (!FxReferenceHelper.IsAvailable(project))
+            return;
+
+        var isEffect = meta != null && meta.ShowParticleList;
+        var isRelative = MapEffectPlayback.IsRelativeSfxField(propinfo.Name) && MapEffectPlayback.SupportsAssetEffectsFor(project);
+
+        if (!isEffect && !isRelative)
+            return;
+
+        // The links of a relative id: the row, then its effects
+        int? rowId = null;
+        MapEffectPlayback.ModelSfx[] effects = null;
+
+        if (isRelative)
+        {
+            var obj = entSelection?.FirstOrDefault()?.WrappedObject;
+
+            if (obj?.GetType().GetProperty("ModelName")?.GetValue(obj) is not string modelName ||
+                value is not IConvertible number ||
+                MapEffectPlayback.GetModelSfxRowId(project, modelName, number.ToInt32(null)) is not { } id)
+            {
+                return;
+            }
+
+            rowId = id;
+            effects = MapEffectPlayback.ReadModelSfx(project, id);
+        }
+        else if (!FxReferenceHelper.TryGetId(value, out _))
+        {
+            return;
+        }
+
+        ImGui.NextColumn();
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.TextUnformatted(@$"");
+        ImGui.PopStyleColor();
+        ImGui.PopStyleVar();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginGroup();
+
+        var width = ImGui.GetColumnWidth() * 0.95f;
+
+        if (isEffect)
+        {
+            FxLinkButton(project, Convert.ToInt32(value), "", width, "fxLink");
+        }
+        else
+        {
+            var paramName = MapEffectPlayback.ModelSfxParamName(project);
+
+            if (effects == null)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+                ImGui.TextUnformatted($"{paramName} {rowId}: no such row");
+                ImGui.PopStyleColor();
+            }
+            else
+            {
+                if (project.Handler.ParamEditor != null)
+                {
+                    if (ImGui.Button($"Go to {paramName} {rowId}##fxParamRowLink", DPI.WholeWidthButton(width, 24)))
+                        EditorCommandQueue.AddCommand($"param/select/-1/{paramName}/{rowId}");
+                    GUI.Tooltip($"View the param row this asset's effects come from: its model's number × {MapEffectPlayback.ModelSfxRowStride(project)}, plus this relative ID.");
+                }
+
+                if (effects.Length == 0)
+                    ImGui.TextDisabled("The row places no effects.");
+
+                foreach (var sfx in effects)
+                {
+                    var dummy = sfx.DummyId >= 0 ? $"dummy poly {sfx.DummyId}" : "the model's origin";
+                    FxLinkButton(project, sfx.EffectId, $"Slot {sfx.Slot}: on {dummy}.", width, $"fxSlotLink{sfx.Slot}");
+                }
+            }
+        }
+
+        ImGui.EndGroup();
+    }
+
+    /// <summary>
+    /// A button opening an effect in the FX Editor, named by its alias when it has one; once the FX Editor has indexed
+    /// the project's effects, an effect no sfx binder holds is said to be missing instead.
+    /// </summary>
+    private static void FxLinkButton(ProjectEntry project, int id, string detail, float width, string imguiId)
+    {
+        var stem = $"f{id:D9}";
+        var alias = project.GetAliasName(ProjectAliasType.Particles, $"{id}");
+        var label = string.IsNullOrEmpty(alias) ? stem : $"{stem}: {alias}";
+
+        var bank = project.Handler.FxData?.Bank;
+        if (bank != null && bank.IsIndexed && !bank.Entries.ContainsKey(id))
+        {
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+            ImGui.TextUnformatted(LOC.Get("FX_Reference_Missing", stem));
+            ImGui.PopStyleColor();
+
+            if (detail != "")
+                GUI.Tooltip(detail);
+
+            return;
+        }
+
+        if (ImGui.Button($"Go to {label}##{imguiId}", DPI.WholeWidthButton(width, 24)))
+            FxReferenceHelper.JumpTo(id);
+
+        GUI.Tooltip(detail == "" ? LOC.Get("FX_Reference_Go_To_TT") : $"{detail}\n{LOC.Get("FX_Reference_Go_To_TT")}");
+    }
+
     public static void ModelNameRow(
         MapEditorView view,
         MapEntityPropertyFieldMeta meta,

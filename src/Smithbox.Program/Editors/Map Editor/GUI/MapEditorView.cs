@@ -130,6 +130,7 @@ public class MapEditorView : IEditorView
     public MapModelInsightHelper ModelInsightTool;
     public AutomaticPreviewTool AutomaticPreviewTool;
     public PatrolDrawManager PatrolDrawManager;
+    public MapEffectPlayback EffectPlayback;
     public CompassTool CompassTool;
     public EnemyAIVisualizationTool EnemyAIVisualizationTool;
     public WallPaintTool WallPaintTool;
@@ -244,6 +245,7 @@ public class MapEditorView : IEditorView
         MapModelInsightTool = new MapModelInsightView(this, project);
         ModelInsightTool = new MapModelInsightHelper(this, project);
         PatrolDrawManager = new PatrolDrawManager(this);
+        EffectPlayback = new MapEffectPlayback(this, project);
         CompassTool = new CompassTool(this, project);
         EnemyAIVisualizationTool = new EnemyAIVisualizationTool(this, project);
         WallPaintTool = new WallPaintTool(this, project);
@@ -289,6 +291,7 @@ public class MapEditorView : IEditorView
 
         MapListFilterTool.Update();
         MapAnimationTool.Update();
+        EffectPlayback.Update();
 
         // Group shortcuts, so they work while the Tools window section is hidden
         SelectionGroupsTool.Update();
@@ -545,6 +548,7 @@ public class MapEditorView : IEditorView
         ViewportActionManager.Clear();
 
         PatrolDrawManager.Clear();
+        EffectPlayback.Dispose();
 
         ViewportWindow.PlacementOrb?.Dispose();
         ViewportWindow.PlacementOrb = null;

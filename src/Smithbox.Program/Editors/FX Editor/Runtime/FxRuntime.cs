@@ -357,16 +357,25 @@ public sealed class FxNodeInstance
                 yield return n;
     }
 
-    /// <summary>As <see cref="Descendants"/>, stopping at hidden nodes (see <see cref="FxRuntimeContext.IsHidden"/>).</summary>
+    /// <summary>
+    /// As <see cref="Descendants"/>, stopping at hidden nodes (see <see cref="FxRuntimeContext.IsHidden"/>), and
+    /// leaving out the children of a LevelsOfDetail node other than the one the camera distance picks: they're paused,
+    /// and drawing them would leave their particles frozen in the air once the camera moves to another detail level.
+    /// </summary>
     public IEnumerable<FxNodeInstance> VisibleDescendants()
     {
         if (Def.Source != null && Effect.Context.IsHidden?.Invoke(Def.Source) == true)
             yield break;
 
         yield return this;
-        foreach (var child in Children)
-            foreach (var n in child.VisibleDescendants())
+        for (int i = 0; i < Children.Count; i++)
+        {
+            if (Def.Kind == FxNodeKind.LevelsOfDetail && i != LodChild)
+                continue;
+
+            foreach (var n in Children[i].VisibleDescendants())
                 yield return n;
+        }
         if (Proxy != null)
             foreach (var n in Proxy.Root.VisibleDescendants())
                 yield return n;
@@ -1176,17 +1185,23 @@ public sealed class FxNodeInstance
         }
     }
 
-    /// <summary>The first child whose distance threshold the camera is within, -1 if it's beyond them all.</summary>
+    /// <summary>
+    /// The child for the camera's distance. Each threshold is where a band starts, not where it ends: threshold0 is
+    /// always 1 in the game data, and child 0 holds the full effect while child 1 is often empty, so child i covers
+    /// threshold[i] to threshold[i + 1]. Closer than threshold0 still shows child 0, and the last child runs on past
+    /// its threshold.
+    /// </summary>
     private int PickLod()
     {
         var thresholds = Config?.LodThresholds;
-        if (thresholds == null)
+        if (thresholds == null || Children.Count == 0)
             return 0;
         float d = Vector3.Distance(Effect.Context.CameraPosition, World.Translation);
-        for (int i = 0; i < Math.Min(thresholds.Length, Children.Count); i++)
-            if (d < thresholds[i])
+        int count = Math.Min(thresholds.Length, Children.Count);
+        for (int i = 0; i < count - 1; i++)
+            if (d < thresholds[i + 1])
                 return i;
-        return -1;
+        return count - 1;
     }
 
     /// <summary>
