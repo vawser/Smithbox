@@ -13,6 +13,18 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
 {
     public ParamEditorView CurrentView;
 
+    // Whether the current command's copy has already cleared the clipboard. A copy runs once per matched row, so the
+    // clipboard is cleared by the first row only. Reset by BeginCommand before each mass-edit command.
+    private bool _clipboardStartedForCommand;
+
+    /// <summary>
+    /// Called before each mass-edit command, so a copy command starts a new clipboard instead of adding to it
+    /// </summary>
+    public void BeginCommand()
+    {
+        _clipboardStartedForCommand = false;
+    }
+
     public MERowOperation(ParamEditorView curView)
     {
         CurrentView = curView;
@@ -43,11 +55,13 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                 }
 
                 Param p = bank.Params[paramKey];
-                // Only supporting single param in clipboard
-                if (bank.ClipboardParam != paramKey)
+                // Only supporting single param in clipboard. Each copy command starts a new clipboard, as Ctrl+C does
+                // (it used to add to the rows already there when the param was the same).
+                if (!_clipboardStartedForCommand || bank.ClipboardParam != paramKey)
                 {
                     bank.ClipboardParam = paramKey;
                     bank.ClipboardRows.Clear();
+                    _clipboardStartedForCommand = true;
                 }
 
                 bank.ClipboardRows.Add(new Param.Row(row, p));
@@ -78,11 +92,13 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
 
                 var count = uint.Parse(args[0]);
                 Param p = bank.Params[paramKey];
-                // Only supporting single param in clipboard
-                if (bank.ClipboardParam != paramKey)
+                // Only supporting single param in clipboard. Each copy command starts a new clipboard, as Ctrl+C does
+                // (it used to add to the rows already there when the param was the same).
+                if (!_clipboardStartedForCommand || bank.ClipboardParam != paramKey)
                 {
                     bank.ClipboardParam = paramKey;
                     bank.ClipboardRows.Clear();
+                    _clipboardStartedForCommand = true;
                 }
 
                 for (var i = 0; i < count; i++)

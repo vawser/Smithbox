@@ -44,6 +44,29 @@ public class ReorderRowAction : EditorAction
         DropTargetIndex = -1;
     }
 
+    /// <summary>
+    /// Whether moving <paramref name="rowsToMove"/> (in param order) to <paramref name="dropTargetIndex"/> would
+    /// change the row order. Dropping rows back where they already are adds no undo entry and no dirty mark.
+    /// </summary>
+    public static bool WouldChangeOrder(Param param, List<Param.Row> rowsToMove, int dropTargetIndex)
+    {
+        var indices = rowsToMove.Select(r => param.IndexOfRow(r)).ToList();
+
+        if (indices.Count == 0 || indices.Any(i => i < 0))
+            return false;
+
+        var resolved = dropTargetIndex - indices.Count(idx => idx < dropTargetIndex);
+
+        // Unchanged only if the rows are already consecutive, in this order, starting at the resolved index
+        for (var i = 0; i < indices.Count; i++)
+        {
+            if (indices[i] != resolved + i)
+                return true;
+        }
+
+        return false;
+    }
+
     public override ActionEvent Execute()
     {
         ParamDirtyTracker.MarkDirty(TargetParam);

@@ -1270,6 +1270,30 @@ public static class TextReferenceHelper
         ImGui.PopStyleVar();
     }
 
+    /// <summary>
+    /// The current values of the row fields that the FMG references are conditional on, joined into one string,
+    /// so the cached text is looked up again when one of them changes
+    /// </summary>
+    private static string GetFmgConditionKey(List<FMGRef> fmgNames, Param.Row context)
+    {
+        if (fmgNames == null || context == null)
+            return "";
+
+        var key = "";
+
+        foreach (var entry in fmgNames)
+        {
+            if (string.IsNullOrEmpty(entry.conditionField))
+                continue;
+
+            var cell = context[entry.conditionField];
+
+            key += cell != null ? $"{cell.Value.Value};" : "-;";
+        }
+
+        return key;
+    }
+
     public static void Hint(ParamEditorView curView, List<FMGRef> fmgNames, Param.Row context, dynamic oldval)
     {
         if (!CFG.Current.ParamEditor_Field_List_Display_References)
@@ -1277,7 +1301,13 @@ public static class TextReferenceHelper
 
         List<string> textsToPrint = new List<string>();
 
-        textsToPrint = CacheBank.GetCached(curView.Editor, (int)oldval, "PARAM META FMGREF", () =>
+        // The resolved text depends on the field's FMG list and, for conditional references, on other fields of the
+        // row (e.g. ShopLineupParam's equipType picks the FMG for equipId), not only on this field's value. Keying
+        // on the value alone shared one entry between every field and row with that value.
+        long value = Convert.ToInt64((object)oldval);
+        var cacheKey = (context, fmgNames, value, GetFmgConditionKey(fmgNames, context));
+
+        textsToPrint = CacheBank.GetCached(curView.Editor, cacheKey, "PARAM META FMGREF", () =>
         {
             List<TextResult> refs = ParamReferenceResolver.ResolveTextReferences(curView, fmgNames, context, oldval);
             return refs.Where(x => x.Entry != null)

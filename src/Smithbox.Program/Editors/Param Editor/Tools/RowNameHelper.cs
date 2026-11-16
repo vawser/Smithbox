@@ -346,7 +346,64 @@ public static class RowNameHelper
     #endregion
 
     #region Row Name Strip / Restore
-    public static void RowNameStrip(ProjectEntry project)
+    /// <summary>
+    /// Strips the bank's row names for a save, and puts them back when the returned scope is disposed.
+    /// <para>
+    /// The names are written to the "Stripped Row Names" folder first (the load-time restore reads them from there),
+    /// and only then cleared, so a failure writing them leaves every name in place. The restore uses the names kept
+    /// in memory, not the files, so it can't fail on IO and runs even when the save throws or returns early.
+    /// </para>
+    /// </summary>
+    public static IDisposable BeginRowNameStrip(ProjectEntry project, ParamBank bank)
+    {
+        WriteStrippedRowNames(project, bank);
+
+        return new RowNameStripScope(bank);
+    }
+
+    /// <summary>
+    /// Keeps each row's name while the names are stripped, and restores them on dispose
+    /// </summary>
+    private sealed class RowNameStripScope : IDisposable
+    {
+        private readonly List<(Param.Row Row, string Name)> _names = new();
+        private bool _disposed;
+
+        public RowNameStripScope(ParamBank bank)
+        {
+            foreach (var param in bank.Params.Values)
+            {
+                foreach (var row in param.Rows)
+                {
+                    _names.Add((row, row.Name));
+                    row.Name = "";
+                }
+            }
+        }
+
+        public void Dispose()
+        {
+            if (_disposed)
+                return;
+
+            _disposed = true;
+
+            foreach (var (row, name) in _names)
+            {
+                // Field edits (renames included) are allowed while a save runs. A row renamed during the save
+                // keeps its new name, rather than being overwritten with the one from before the save.
+                if (row.Name == "")
+                {
+                    row.Name = name;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Writes each param's row names to the "Stripped Row Names" folder, for the load-time restore
+    /// </summary>
+    private static void WriteStrippedRowNames(ProjectEntry project, ParamBank bank)
     {
         var exportDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(project), "Stripped Row Names");
 
@@ -355,10 +412,7 @@ public static class RowNameHelper
             Directory.CreateDirectory(exportDir);
         }
 
-        var store = new RowNameStore();
-        store.Params = new();
-
-        foreach (KeyValuePair<string, Param> p in project.Handler.ParamData.PrimaryBank.Params)
+        foreach (KeyValuePair<string, Param> p in bank.Params)
         {
             var paramEntry = new RowNameParam();
             paramEntry.Name = p.Key;
@@ -385,16 +439,7 @@ public static class RowNameHelper
             var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
 
             File.WriteAllText(fullPath, json);
-
-            for (int i = 0; i < p.Value.Rows.Count; i++)
-            {
-                // Strip
-                p.Value.Rows[i].Name = "";
-            }
-
-            //Smithbox.Log(this, $"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {fullPath}");
         }
-
     }
 
     public static void RowNameRestore(ProjectEntry project)

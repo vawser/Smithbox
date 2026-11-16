@@ -69,12 +69,40 @@ public class AddParamsAction : EditorAction
 
         ParamDirtyTracker.MarkDirty(Param);
 
+        // Replaced rows are out of the param now: views that had them selected follow their replacements
+        SwapReplacedRowsInSelections(toClones: true);
+
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();
 
         var activeParam = Editor.ViewHandler.ActiveView.Selection.GetActiveParam();
         Editor.ViewHandler.ActiveView.ParamTableWindow.UpdateTableSelection(activeParam);
 
         return ActionEvent.NoEvent;
+    }
+
+    /// <summary>
+    /// In replace mode a clone takes the place of an existing row object. Move every view's selection, active row
+    /// and compare row from the replaced row to its clone (or back again on undo), so the Fields window doesn't keep
+    /// showing, and editing, a row that is no longer in the param.
+    /// </summary>
+    private void SwapReplacedRowsInSelections(bool toClones)
+    {
+        foreach (var view in Editor.ViewHandler.ParamEditorViews)
+        {
+            if (view == null)
+                continue;
+
+            foreach (var step in Steps)
+            {
+                if (step.Replaced == null || step.InsertIndex < 0)
+                    continue;
+
+                if (toClones)
+                    view.Selection.ReplaceRowInAllSelections(step.Replaced, step.Clone);
+                else
+                    view.Selection.ReplaceRowInAllSelections(step.Clone, step.Replaced);
+            }
+        }
     }
 
     /// <summary>
@@ -88,12 +116,6 @@ public class AddParamsAction : EditorAction
             var step = new RowInsertStep { Clone = newrow };
 
             var paramMeta = Editor.Project.Handler.ParamData.GetParamMeta(row.Def);
-
-            // Only apply for Duplicate action
-            if (IsDuplicate)
-            {
-                ApplyDeepCopyOffset(newrow, paramMeta);
-            }
 
             if (InsertIndex > -1)
             {
@@ -154,6 +176,14 @@ public class AddParamsAction : EditorAction
                 }
             }
 
+            // Only for Duplicate: offset the copy's reference fields by how far its ID actually moved. That is the
+            // offset for the first copy, but twice the offset for a second copy, or more when ID + offset was taken,
+            // so each copy points at its own set of referenced copies.
+            if (IsDuplicate)
+            {
+                ApplyDeepCopyOffset(newrow, paramMeta, (long)newrow.ID - row.ID);
+            }
+
             // Where the clone ended up (-1 if no branch inserted it, e.g. replace mode with a second row
             // still holding the ID)
             step.InsertIndex = Param.IndexOfRow(newrow);
@@ -169,7 +199,7 @@ public class AddParamsAction : EditorAction
     /// kind of reference it is (Attack, Bullet, Behavior, SpEffect or Source), and only the kinds whose
     /// option is ticked are changed.
     /// </summary>
-    private void ApplyDeepCopyOffset(Param.Row newrow, ParamMeta paramMeta)
+    private void ApplyDeepCopyOffset(Param.Row newrow, ParamMeta paramMeta, long idShift)
     {
         // Params without meta have no reference information, so there's nothing to offset
         if (paramMeta == null)
@@ -178,7 +208,7 @@ public class AddParamsAction : EditorAction
         // Same list the Duplicate menu shows its options and preview from
         var enabledTargets = ParamRowDuplicate.GetEnabledDeepCopyTargets();
 
-        if (enabledTargets.Count == 0 || IdOffset == 0)
+        if (enabledTargets.Count == 0 || idShift == 0)
             return;
 
         foreach (var cell in newrow.Cells)
@@ -215,7 +245,7 @@ public class AddParamsAction : EditorAction
             try
             {
                 // Write back in the field's own type. Skip the field if the offset ID doesn't fit.
-                cell.Value = Convert.ChangeType(id + IdOffset, value.GetType());
+                cell.Value = Convert.ChangeType(id + idShift, value.GetType());
             }
             catch (OverflowException)
             {
@@ -267,6 +297,8 @@ public class AddParamsAction : EditorAction
         }
 
         ParamDirtyTracker.MarkDirty(Param);
+
+        SwapReplacedRowsInSelections(toClones: false);
 
         // Same as Execute, so the modified-row colours update when undoing from anywhere (e.g. a mass edit rollback)
         Editor.Project.Handler.ParamData.RefreshParamDifferenceCacheTask();

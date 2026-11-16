@@ -127,6 +127,22 @@
     {
       "Key": "PARAM_Action_Blocked_During_Save",
       "Text": "Params are being saved. Adding, removing or reordering rows, undo/redo and mass edits are disabled until the save finishes."
+    },
+    {
+      "Key": "PARAM_FieldInput_Invalid_Value_TT",
+      "Text": "Not a valid {0} value (allowed: {1} to {2}). Leaving the field keeps the current value."
+    },
+    {
+      "Key": "PARAM_FieldInput_Invalid_Value_Rejected",
+      "Text": "\"{0}\" isn't a valid value for this field, so it was left at {1}."
+    },
+    {
+      "Key": "PARAM_CSV_Invalid_Row_ID",
+      "Text": "Line {0}: \"{1}\" isn't a valid row ID. Nothing was imported."
+    },
+    {
+      "Key": "PARAM_CSV_Import_Failed",
+      "Text": "The CSV couldn't be imported, and nothing was changed: {0}"
     }
   ]
 }

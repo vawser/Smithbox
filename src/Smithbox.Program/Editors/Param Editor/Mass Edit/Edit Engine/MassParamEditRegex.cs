@@ -81,6 +81,10 @@ public class MassParamEditRegex
                 this.bank = bank;
                 this.context = context;
 
+                // Each command parses into these fields. Clear them first, so nothing carries over from the
+                // previous command: a leftover paramRowSelector sent "param X: id Y: ..." to the selection.
+                ResetCommandState();
+
                 var primaryFilter = command.Split(':', 2)[0].Trim();
 
                 if (CurrentView.MassEdit.GlobalOps.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
@@ -123,6 +127,35 @@ public class MassParamEditRegex
 
             return (RollBack(childManager, WithFailingCommand(finalResult, currentLine, currentCommand)), null);
         }
+    }
+
+    /// <summary>
+    /// Clears everything one command's parse sets, so each command starts from nothing
+    /// </summary>
+    private void ResetCommandState()
+    {
+        argc = 0;
+        argNames = null;
+        paramArgFuncs = null;
+
+        globalOperation = null;
+        globalFunc = null;
+
+        varSelector = null;
+        varOperation = null;
+
+        paramRowSelector = null;
+        paramSelector = null;
+        rowSelector = null;
+        cellSelector = null;
+
+        rowOperation = null;
+        rowFunc = null;
+        cellOperation = null;
+        genericFunc = null;
+        rowOpOrCellStageFunc = null;
+
+        CurrentView.MassEdit.RowOps.BeginCommand();
     }
 
     /// <summary>

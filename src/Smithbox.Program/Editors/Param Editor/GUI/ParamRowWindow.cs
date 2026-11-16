@@ -868,8 +868,21 @@ public class ParamRowWindow
                                 rowsToMove = new List<Param.Row> { DragSourceRow };
                             }
 
-                            var action = new ReorderRowAction(Context.CurParam, rowsToMove, dropTargetIndex);
-                            ParentView.Editor.ActionManager.ExecuteAction(action);
+                            // Rows dragged down go below the target row, rows dragged up go above it. Always
+                            // inserting above meant a row dropped on the row below it didn't move, and no row
+                            // could be dragged to the end of the param.
+                            var sourceIndex = Context.CurParam.IndexOfRow(DragSourceRow);
+
+                            if (sourceIndex >= 0 && sourceIndex < dropTargetIndex)
+                            {
+                                dropTargetIndex++;
+                            }
+
+                            if (ReorderRowAction.WouldChangeOrder(Context.CurParam, rowsToMove, dropTargetIndex))
+                            {
+                                var action = new ReorderRowAction(Context.CurParam, rowsToMove, dropTargetIndex);
+                                ParentView.Editor.ActionManager.ExecuteAction(action);
+                            }
                         }
 
                         DragSourceRow = null;

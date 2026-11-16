@@ -324,6 +324,46 @@ public class ParamSelection
         }
     }
 
+    /// <summary>
+    /// Points every selection, active row and compare row that holds <paramref name="oldRow"/> at
+    /// <paramref name="newRow"/> instead. Used when an action swaps a row object for another (replace-mode paste or
+    /// import), so the views keep showing and editing the row that is actually in the param.
+    /// </summary>
+    public void ReplaceRowInAllSelections(Param.Row oldRow, Param.Row newRow)
+    {
+        if (oldRow == null || newRow == null || oldRow == newRow)
+            return;
+
+        foreach (ParamSelectionState state in _paramStates.Values)
+        {
+            var index = state.selectionRows.IndexOf(oldRow);
+
+            if (index >= 0)
+            {
+                if (state.selectionRows.Contains(newRow))
+                {
+                    state.selectionRows.RemoveAt(index);
+                }
+                else
+                {
+                    state.selectionRows[index] = newRow;
+                }
+
+                state.selectionCacheDirty = true;
+            }
+
+            if (state.activeRow == oldRow)
+            {
+                state.activeRow = newRow;
+            }
+
+            if (state.compareRow == oldRow)
+            {
+                state.compareRow = newRow;
+            }
+        }
+    }
+
     public List<Param.Row> GetSelectedRows()
     {
         if (_activeParam == null)

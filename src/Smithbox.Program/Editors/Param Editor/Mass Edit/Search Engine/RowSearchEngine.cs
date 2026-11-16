@@ -76,7 +76,8 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         filterList.Add("named", newCmd(new string[0],
             LOC.Get("PARAM_RSE_Named_TT"), (args, lenient) =>
             {
-                return noContext(row => row.Name != null || row.Name != "");
+                // Was "Name != null || Name != \"\"", which is true for every row
+                return noContext(row => !string.IsNullOrEmpty(row.Name));
             }));
 
         filterList.Add("selected", newCmd(new string[0],
@@ -460,9 +461,11 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             LOC.Get("PARAM_RSE_AuxPropRange_TT"),
             (args, lenient) =>
             {
-                var field = args[0];
-                var floor = double.Parse(args[1]);
-                var ceil = double.Parse(args[2]);
+                // Arguments: aux bank, field, min, max (the code used to read the bank name as the field name too,
+                // and the field name as the minimum, so the filter always failed)
+                var field = args[1];
+                var floor = double.Parse(args[2]);
+                var ceil = double.Parse(args[3]);
                 ParamBank bank;
                 if (!auxBanks.TryGetValue(args[0], out bank))
                 {
@@ -475,7 +478,13 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     Param vparam = bank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
                     return row =>
                     {
-                        Param.Row vrow = vparam[row.ID];
+                        // As in auxprop: a row the aux bank doesn't have doesn't match
+                        Param.Row vrow = vparam?[row.ID];
+                        if (vrow == null)
+                        {
+                            return false;
+                        }
+
                         Param.Cell? c = vrow[field];
                         if (c == null)
                         {

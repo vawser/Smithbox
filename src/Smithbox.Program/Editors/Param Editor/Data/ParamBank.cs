@@ -143,6 +143,10 @@ public class ParamBank : IDisposable
 
         var successfulSave = false;
 
+        // Row names are stripped for the whole write and put back in the finally, so a failed write or an early
+        // return can't leave the rows nameless (the next save would then store the empty names as the backup)
+        using var rowNameStrip = ShouldStripRowNames() ? RowNameHelper.BeginRowNameStrip(Project, this) : null;
+
         switch (Project.Descriptor.ProjectType)
         {
             case ProjectType.DES:
@@ -181,6 +185,28 @@ public class ParamBank : IDisposable
         }
 
         return successfulSave;
+    }
+
+    /// <summary>
+    /// Whether the "strip row names on save" option is on for this project's game
+    /// </summary>
+    private bool ShouldStripRowNames()
+    {
+        return Project.Descriptor.ProjectType switch
+        {
+            ProjectType.DES => CFG.Current.ParamEditor_Row_Name_Strip_DES,
+            ProjectType.DS1 or ProjectType.DS1R => CFG.Current.ParamEditor_Row_Name_Strip_DS1,
+            ProjectType.DS2 or ProjectType.DS2S => CFG.Current.ParamEditor_Row_Name_Strip_DS2,
+            ProjectType.DS3 => CFG.Current.ParamEditor_Row_Name_Strip_DS3,
+            ProjectType.BB => CFG.Current.ParamEditor_Row_Name_Strip_BB,
+            ProjectType.SDT => CFG.Current.ParamEditor_Row_Name_Strip_SDT,
+            ProjectType.ER => CFG.Current.ParamEditor_Row_Name_Strip_ER,
+            ProjectType.AC6 => CFG.Current.ParamEditor_Row_Name_Strip_AC6,
+            ProjectType.NR => CFG.Current.ParamEditor_Row_Name_Strip_NR,
+            // DB_NT and DB never stripped (their strip calls are commented out). They used to restore names from
+            // disk on every save, which overwrote renames made since the last strip, so they now do neither.
+            _ => false
+        };
     }
 
     /// <summary>
@@ -566,10 +592,6 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(paramPath).GetData());
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(paramBnd))
         {
@@ -633,10 +655,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DES)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -755,10 +773,6 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(paramBnd))
         {
@@ -794,10 +808,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -894,10 +904,6 @@ public class ParamBank : IDisposable
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(paramBnd))
         {
@@ -934,10 +940,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS1)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -1280,50 +1282,29 @@ public class ParamBank : IDisposable
                 }
             }
 
-            try
+            // Row names are stripped for the whole save by Save() (too many row names can cause DS2 to crash)
+            writeRegulation = ShouldWriteBinder(paramBnd);
+
+            foreach (KeyValuePair<string, Param> p in Params)
             {
-                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                BinderFile bnd = paramBnd.Files.Find(e => Path.GetFileNameWithoutExtension(e.Name) == p.Key);
+
+                if (bnd != null)
                 {
-                    RowNameHelper.RowNameStrip(Project);
-                }
-
-                writeRegulation = ShouldWriteBinder(paramBnd);
-
-                foreach (KeyValuePair<string, Param> p in Params)
-                {
-                    BinderFile bnd = paramBnd.Files.Find(e => Path.GetFileNameWithoutExtension(e.Name) == p.Key);
-
-                    if (bnd != null)
+                    // Regulation contains this param, overwrite it.
+                    if (writeRegulation)
                     {
-                        // Regulation contains this param, overwrite it.
-                        if (writeRegulation)
-                        {
-                            bnd.Bytes = p.Value.Write();
-                        }
-                    }
-                    else
-                    {
-                        // Regulation does not contain this param, write param loosely.
-                        if (ShouldWriteLooseParam(p.Key))
-                        {
-                            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
-                        }
+                        bnd.Bytes = p.Value.Write();
                     }
                 }
-            }
-            catch
-            {
-                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                else
                 {
-                    RowNameHelper.RowNameRestore(Project);
+                    // Regulation does not contain this param, write param loosely.
+                    if (ShouldWriteLooseParam(p.Key))
+                    {
+                        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
+                    }
                 }
-                throw;
-            }
-
-            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
-            {
-                RowNameHelper.RowNameRestore(Project);
             }
         }
         else if (CFG.Current.ParamEditor_Loose_Param_Mode_DS2)
@@ -1342,36 +1323,13 @@ public class ParamBank : IDisposable
 
             paramBnd.Files = newFiles;
 
-            try
+            // Write params to loose files. Row names are stripped for the whole save by Save().
+            foreach (KeyValuePair<string, Param> p in Params)
             {
-                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
+                if (ShouldWriteLooseParam(p.Key))
                 {
-                    RowNameHelper.RowNameStrip(Project);
+                    ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
                 }
-
-                // Write params to loose files.
-                foreach (KeyValuePair<string, Param> p in Params)
-                {
-                    if (ShouldWriteLooseParam(p.Key))
-                    {
-                        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
-                    }
-                }
-            }
-            catch
-            {
-                if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
-                {
-                    RowNameHelper.RowNameRestore(Project);
-                }
-
-                throw;
-            }
-
-            if (CFG.Current.ParamEditor_Row_Name_Strip_DS2)
-            {
-                RowNameHelper.RowNameRestore(Project);
             }
         }
 
@@ -1513,10 +1471,6 @@ public class ParamBank : IDisposable
 
         BND4 paramBnd = SFUtil.DecryptDS3Regulation(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
@@ -1570,10 +1524,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DS3)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -1633,10 +1583,6 @@ public class ParamBank : IDisposable
 
         var paramBnd = BND4.Read(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(paramBnd))
         {
@@ -1652,10 +1598,6 @@ public class ParamBank : IDisposable
             ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_BB)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -1757,10 +1699,6 @@ public class ParamBank : IDisposable
 
         var paramBnd = BND4.Read(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(paramBnd))
         {
@@ -1804,10 +1742,6 @@ public class ParamBank : IDisposable
             ProjectUtils.WriteWithBackup(Project, fs, toFs, paramPath, farModelParam);
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_SDT)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -1916,10 +1850,6 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptERRegulation(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(regParams))
         {
@@ -1947,11 +1877,6 @@ public class ParamBank : IDisposable
                 OverwriteParamsER(sysParams);
                 ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
             }
-        }
-        if (CFG.Current.ParamEditor_Row_Name_Strip_ER)
-        {
-
-            RowNameHelper.RowNameRestore(Project);
         }
 
         return successfulSave;
@@ -2129,10 +2054,6 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptAC6Regulation(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(regParams))
         {
@@ -2203,10 +2124,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_AC6)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -2340,10 +2257,6 @@ public class ParamBank : IDisposable
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
-        {
-            RowNameHelper.RowNameStrip(Project);
-        }
 
         if (ShouldWriteBinder(regParams))
         {
@@ -2394,10 +2307,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_NR)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -2614,10 +2523,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DB)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }
@@ -2835,10 +2740,6 @@ public class ParamBank : IDisposable
             }
         }
 
-        if (CFG.Current.ParamEditor_Row_Name_Strip_DB)
-        {
-            RowNameHelper.RowNameRestore(Project);
-        }
 
         return successfulSave;
     }

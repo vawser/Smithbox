@@ -19,4 +19,4 @@
     - Look into RE needed to expand Param Reloader support to unsupported games
     - Look into RE needed to expand ItemGib support to unsupported games
     
-    
+- Move Bullet Simulator into its own editor: Param bullet row will provide quick-link

@@ -66,39 +66,93 @@ public static class ParamRowOperations
         if (curParamKey == null)
             return;
 
-        Param baseParam = curView.GetPrimaryBank().Params[curParamKey];
-        Param vanillaParam = curView.GetVanillaBank().Params[curParamKey];
-
-        if (baseParam == null)
+        if (!curView.GetPrimaryBank().Params.TryGetValue(curParamKey, out Param baseParam) || baseParam == null)
             return;
 
-        if (vanillaParam == null)
+        if (!curView.GetVanillaBank().Params.TryGetValue(curParamKey, out Param vanillaParam) || vanillaParam == null)
             return;
 
-        List<Param.Row> rows = curView.Selection.GetSelectedRows();
+        var rows = curView.Selection.GetSelectedRows()?.Where(r => r != null).ToList();
 
-        List<Param.Row> rowsToInsert = new();
+        if (rows == null || rows.Count == 0)
+            return;
+
+        // Vanilla columns by field name, in case the two params' column lists differ
+        var vanillaColumns = new Dictionary<string, Param.Column>();
+
+        foreach (var vCol in vanillaParam.Columns)
+        {
+            vanillaColumns.TryAdd(vCol.Def.InternalName, vCol);
+        }
+
+        // Each row's values are set back to vanilla in place (the row keeps its name, its position and its object),
+        // so the selection, the Fields window and earlier undo steps all still refer to the row in the param.
+        // Replacing the row object instead left the selection holding a row that was no longer in the param.
+        List<EditorAction> actions = new();
 
         foreach (Param.Row bRow in rows)
         {
-            foreach (var vRow in vanillaParam.Rows)
+            var vRow = FindMatchingVanillaRow(baseParam, vanillaParam, bRow);
+
+            if (vRow == null)
+                continue;
+
+            foreach (var col in baseParam.Columns)
             {
-                if (vRow.ID == bRow.ID)
-                {
-                    Param.Row newrow = new(vRow, baseParam);
-                    newrow.Name = bRow.Name; // Keep the current name
-                    rowsToInsert.Add(newrow);
-                }
+                if (!vanillaColumns.TryGetValue(col.Def.InternalName, out var vCol))
+                    continue;
+
+                var vanillaValue = vRow[vCol].Value;
+
+                if (vanillaValue == null || vanillaValue.GetType() != col.ValueType)
+                    continue;
+
+                actions.AppendParamEditAction(bRow, (ParamEditorPseudoColumn.None, col), vanillaValue);
             }
         }
 
-        List<EditorAction> actions = new List<EditorAction>();
+        if (actions.Count == 0)
+            return;
 
-        actions.Add(new AddParamsAction(curView.Editor, baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
+        curView.Editor.ActionManager.ExecuteAction(new CompoundAction(actions));
+        curView.GetParamData().RefreshParamDifferenceCacheTask();
+    }
 
-        var compoundAction = new CompoundAction(actions);
+    /// <summary>
+    /// The vanilla row for <paramref name="row"/>: the vanilla row with the same ID, matched by occurrence when the
+    /// ID appears more than once (the second row with ID 100 matches the second vanilla row with ID 100).
+    /// </summary>
+    private static Param.Row FindMatchingVanillaRow(Param baseParam, Param vanillaParam, Param.Row row)
+    {
+        var occurrence = 0;
 
-        curView.Editor.ActionManager.ExecuteAction(compoundAction);
+        foreach (var r in baseParam.Rows)
+        {
+            if (r == row)
+                break;
+
+            if (r.ID == row.ID)
+                occurrence++;
+        }
+
+        Param.Row first = null;
+        var seen = 0;
+
+        foreach (var vRow in vanillaParam.Rows)
+        {
+            if (vRow.ID != row.ID)
+                continue;
+
+            first ??= vRow;
+
+            if (seen == occurrence)
+                return vRow;
+
+            seen++;
+        }
+
+        // Fewer vanilla rows with this ID than in the mod: fall back to the first one
+        return first;
     }
     #endregion
 

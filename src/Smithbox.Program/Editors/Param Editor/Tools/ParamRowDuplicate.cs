@@ -21,50 +21,46 @@ public static class ParamRowDuplicate
             return;
 
         Param param = curView.GetPrimaryBank().Params[curParamKey];
-        List<Param.Row> rows = curView.Selection.GetSelectedRows().Where(r => r != null).ToList();
+
+        // In param order (the selection is in click order), so the copies keep the rows' order and "after the
+        // selection" means after the bottom-most selected row
+        List<Param.Row> rows = curView.Selection.GetSelectedRows()
+            .Where(r => r != null && param.IndexOfRow(r) >= 0)
+            .OrderBy(r => param.IndexOfRow(r))
+            .ToList();
 
         if (rows.Count == 0)
         {
             return;
         }
 
-        List<Param.Row> rowsToInsert = new();
         int insertIndex = -1;
-
-        foreach (Param.Row r in rows)
-        {
-            Param.Row newrow = new(r);
-            rowsToInsert.Add(newrow);
-        }
+        var offset = CFG.Current.Param_Toolbar_Duplicate_Offset;
+        var amount = CFG.Current.Param_Toolbar_Duplicate_Amount;
 
         var IsInTableGroupMode = curView.ParamTableWindow.IsInTableGroupMode(curParamKey);
 
         // Default Behavior
         if (!IsInTableGroupMode)
         {
-            if (CFG.Current.Param_Toolbar_Duplicate_Offset == 0)
+            // AddParamsAction clones the rows itself, so the selected rows are passed as they are
+            List<Param.Row> rowsToInsert = new(rows);
+
+            if (offset == 0)
             {
-                var lastRow = rows.Last();
+                insertIndex = param.IndexOfRow(rows.Last()) + 1;
 
-                for (int i = 0; i < param.Rows.Count; i++)
-                {
-                    var curRow = param.Rows[i];
-
-                    if (lastRow == curRow)
-                    {
-                        insertIndex = i + 1;
-                        break;
-                    }
-                }
-
+                // Each row is inserted at the same index, so insert the last one first
                 rowsToInsert.Reverse();
             }
 
             List<EditorAction> actions = new List<EditorAction>();
 
-            for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
+            // Each copy finds the next free ID after the previous copies (ID + offset, ID + 2 * offset, ...), and
+            // AddParamsAction offsets the copy's reference fields by the same amount its ID moved
+            for (int i = 0; i < amount; i++)
             {
-                var dupeAction = new AddParamsAction(curView.Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true);
+                var dupeAction = new AddParamsAction(curView.Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, offset, true);
                 actions.Add(dupeAction);
             }
 
@@ -85,34 +81,33 @@ public static class ParamRowDuplicate
         // Row Group Mode behavior
         else
         {
-            var lastRow = rows.Last();
-
-            for (int i = 0; i < param.Rows.Count; i++)
-            {
-                var curRow = param.Rows[i];
-
-                if (lastRow == curRow)
-                {
-                    insertIndex = i + 1;
-                    break;
-                }
-            }
-
-            rowsToInsert.Reverse();
-
-            if (wholeTableGroupDuplicate)
-            {
-                foreach (var row in rowsToInsert)
-                {
-                    row.ID = row.ID + CFG.Current.Param_Toolbar_Duplicate_Offset;
-                }
-            }
+            insertIndex = param.IndexOfRow(rows.Last()) + 1;
 
             List<EditorAction> actions = new List<EditorAction>();
 
-            for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
+            for (int i = 0; i < amount; i++)
             {
-                var dupeAction = new AddRowsToTableGroup(curView.Editor, param, rowsToInsert, insertIndex, false, true);
+                // Copy i of a whole group gets the group ID + (i + 1) * offset, so each copy is its own group
+                // (adding the offset once gave every copy the same group ID). Rows duplicated within a group
+                // keep the group ID.
+                var idShift = wholeTableGroupDuplicate ? (i + 1) * offset : 0;
+
+                List<Param.Row> rowsToInsert = new();
+
+                foreach (Param.Row r in rows)
+                {
+                    Param.Row newrow = new(r);
+                    newrow.ID = r.ID + idShift;
+                    rowsToInsert.Add(newrow);
+                }
+
+                // Each row is inserted at the same index, so insert the last one first
+                rowsToInsert.Reverse();
+
+                // Each copy goes after the previous ones, so the groups appear in order
+                var copyIndex = insertIndex + i * rows.Count;
+
+                var dupeAction = new AddRowsToTableGroup(curView.Editor, param, rowsToInsert, copyIndex, false, true);
 
                 actions.Add(dupeAction);
             }
@@ -344,9 +339,9 @@ public static class ParamRowDuplicate
         if (targetParam == null)
             return;
 
-        List<Param.Row> selectedRows = curView.Selection.GetSelectedRows();
+        List<Param.Row> selectedRows = curView.Selection.GetSelectedRows()?.Where(r => r != null).ToList();
 
-        if (selectedRows.Count == 0)
+        if (selectedRows == null || selectedRows.Count == 0)
         {
             return;
         }
@@ -359,25 +354,11 @@ public static class ParamRowDuplicate
             rowsToInsert.Add(newrow);
         }
 
+        // The copies always go into the target by ID (-1 = no fixed index). An index taken from the source param
+        // meant nothing in the target, and threw when the target had fewer rows. With offset 0 the copy keeps its
+        // ID: an existing row with that ID is replaced if "Replace existing rows" is on, otherwise the copy takes
+        // the next free ID after it.
         int insertIndex = -1;
-
-        if (CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset == 0)
-        {
-            var lastRow = selectedRows.Last();
-
-            for (int i = 0; i < currentParam.Rows.Count; i++)
-            {
-                var curRow = currentParam.Rows[i];
-
-                if (lastRow == curRow)
-                {
-                    insertIndex = i + 1;
-                    break;
-                }
-            }
-
-            rowsToInsert.Reverse();
-        }
 
         List<EditorAction> actions = new List<EditorAction>();
 
