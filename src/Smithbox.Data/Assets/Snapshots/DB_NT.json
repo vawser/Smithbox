@@ -23,9 +23,9 @@
       "Shows": "parts: P[ChrCustomize][Eye], C[EyeAO], P[ChrCustomize][Hair], C[DetailBlend]_SSS (+1 more)"
     },
     {
-      "Container": "m80_00_00_00_000000",
-      "Model": "m80_00_00_00_000000",
-      "Shows": "map: M[AMSN_V][Mb3][3Mask_ch18][Ov_N][Wet], M[AMSN_V][Array_Mb4][HeightMask]"
+      "Container": "aeg100_210",
+      "Model": "AEG100_210",
+      "Shows": "asset: M[AMSN_V][Array_Mb4][HeightMask] (in place of map piece m80_00_00_00_000000, which hung; DB_NT's two map pieces are near empty. aeg101_356 covers M[AMSN_V][Mb3][3Mask_ch18][Ov_N][Wet])"
     },
     {
       "Container": "aeg107_105",
