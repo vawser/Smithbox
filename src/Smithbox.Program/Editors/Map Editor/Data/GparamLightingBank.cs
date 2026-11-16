@@ -385,6 +385,12 @@ public class GparamLightingBank
             .OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase)
             .FirstOrDefault(m => files.Any(e => e.Filename.Equals(GetDefaultFile(m.Name), StringComparison.OrdinalIgnoreCase)));
 
+        // A map without a GPARAM of its own (e.g. a new map number) is lit with the chosen file, if the project has it
+        var chosen = CFG.Current.Viewport_Map_Lighting_File;
+
+        if (map == null && !string.IsNullOrEmpty(chosen) && HasFile(chosen))
+            map = maps.OrderBy(m => m.Name, StringComparer.OrdinalIgnoreCase).FirstOrDefault();
+
         if (map == null)
             return null;
 
