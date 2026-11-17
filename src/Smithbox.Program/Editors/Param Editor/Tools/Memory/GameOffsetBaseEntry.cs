@@ -204,6 +204,7 @@ public class GameOffsetBaseEntry
                 ChrManager = ItemGiveAddress.Parse(sp.chrManagerAob, sp.chrManagerAobRelativeOffset, sp.chrManagerOffset),
                 PlayerPath = string.IsNullOrEmpty(sp.playerPath) ? Array.Empty<int>() : ParsePath(sp.playerPath),
                 Flag = string.IsNullOrEmpty(sp.flag) ? 0 : Utils.ParseHexFromString(sp.flag),
+                Xmm2 = float.TryParse(sp.xmm2, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var f) ? f : null,
             };
             if (give.IsSupported)
                 SpEffectGive = give;
@@ -282,6 +283,7 @@ public class SpEffectGive
     public ItemGiveAddress ChrManager = new();
     public int[] PlayerPath = Array.Empty<int>();
     public int Flag;
+    public float? Xmm2;
 
     public bool IsSupported => !string.IsNullOrEmpty(Param) && Func.IsSet && ChrManager.IsSet;
 }

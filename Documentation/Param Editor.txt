@@ -2,6 +2,4 @@
 # Param Editor TODO
 #----------------------------------------------------
 
-- External:
-    - Look into RE needed to expand ItemGib support to unsupported games
-    
+- Add ItemGib for AC6

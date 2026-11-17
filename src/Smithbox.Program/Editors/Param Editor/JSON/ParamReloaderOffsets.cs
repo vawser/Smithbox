@@ -84,6 +84,8 @@ public class SpEffectGiveData
     public string playerPath { get; set; }
     // Third argument (r8), e.g. "0x0".
     public string flag { get; set; }
+    // Optional float in xmm2 (third argument as a float), e.g. "1.0" for DS3's duration scale.
+    public string xmm2 { get; set; }
 }
 
 public class ItemGivePrepareData

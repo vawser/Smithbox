@@ -364,7 +364,7 @@ public class SoulsMemoryHandler
     /// <summary>
     /// Calls the game's apply-SpEffect function: func(chr, spEffectId, flag).
     /// </summary>
-    internal void PlayerSpEffectGive(int funcOffset, nint chr, int spEffectId, int flag)
+    internal void PlayerSpEffectGive(int funcOffset, nint chr, int spEffectId, int flag, float? xmm2 = null)
     {
         var func = (long)(GetBaseAddress() + funcOffset);
 
@@ -375,6 +375,11 @@ public class SoulsMemoryHandler
         code.AddRange(new byte[] { 0x48, 0xB9 }); Imm64(chr);                   // mov rcx, chr
         code.Add(0xBA); code.AddRange(BitConverter.GetBytes(spEffectId));       // mov edx, spEffectId
         code.AddRange(new byte[] { 0x41, 0xB8 }); code.AddRange(BitConverter.GetBytes(flag)); // mov r8d, flag
+        if (xmm2 is { } f)
+        {
+            code.Add(0xB8); code.AddRange(BitConverter.GetBytes(f));            // mov eax, float bits
+            code.AddRange(new byte[] { 0x66, 0x0F, 0x6E, 0xD0 });               // movd xmm2, eax
+        }
         code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(func);                  // mov rax, func
         code.AddRange(new byte[] { 0xFF, 0xD0 });                               // call rax
         code.AddRange(new byte[] { 0x48, 0x83, 0xC4, 0x28 });                   // add rsp, 28h

@@ -138,7 +138,7 @@ public class SpEffectGib
                 return;
             }
 
-            memoryHandler.PlayerSpEffectGive(funcOffset, player, spEffectId, give.Flag);
+            memoryHandler.PlayerSpEffectGive(funcOffset, player, spEffectId, give.Flag, give.Xmm2);
             Smithbox.Log(this, LOC.Get("PARAM_Tools_SpEffectGib_Given", spEffectId));
         }
         finally
