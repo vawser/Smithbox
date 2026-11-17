@@ -35,6 +35,7 @@ public class ParamToolMenu
     public ParamRowNameManipulationTool RowNameManipulationTool;
     public ParamModifiedFilter ModifiedFilter;
     public ParamEditHistoryTool EditHistory;
+    public ParamWeaponGenerator WeaponGenerator;
 
     private ToolSections Sections = new();
 
@@ -66,6 +67,7 @@ public class ParamToolMenu
         DeltaPatcher = new(view, project);
         RowNameManipulationTool = new(view, project);
         ModifiedFilter = new(view, project);
+        WeaponGenerator = new(view, project);
     }
 
     public void DisplayMenu()
@@ -152,6 +154,8 @@ public class ParamToolMenu
 
             ImGui.EndChild();
         }
+
+        WeaponGenerator.Display();
 
         // Data
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Data"));

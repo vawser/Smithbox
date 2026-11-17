@@ -3,15 +3,6 @@
 #----------------------------------------------------
 - Look into making row merges for tabulated params functional and simple
 
-- Params:
-    - Improve how Table params are handled
-   
-- Tools:
-    - Weapon Generator:
-        - Allow for easy generation of infusion weapon sets
-        - Include configurable sets of rules for each infusion
-        - Include option to auto-generate FMG entries
-        
 - External:
     - Look into RE needed to expand Param Reloader support to unsupported games
     - Look into RE needed to expand ItemGib support to unsupported games
