@@ -69,12 +69,15 @@ public class GparamReloader
     private Layout L;
     private GparamReloadCode.Addresses Addr;
 
+    /// <summary>One active-ID list: DLFixedVector&lt;u32, Capacity&gt; at Offset, its count (u64) at Offset + CountOffset</summary>
+    private record IdList(int Offset, int CountOffset, int Capacity);
+
     /// <summary>The map and ResCap layout, parsed from the offset group</summary>
     private record Layout(int Map, int BucketCount, int Buckets, int Name, int NameLength, int NameCapacity, int Next,
-        int Id, int IdOverride, int Handle, int Active, int Slot, int[] Lists, int ListCount, int ListCapacity)
+        int Id, int IdOverride, int Handle, int Active, int Slot, IdList[] Lists)
     {
         public int NodeSize => new[] { Name + 16, NameLength + 8, NameCapacity + 8, Next + 8, Id + 4, IdOverride + 4,
-            Handle + 8, Active + 1, Slot + 4 }.Concat(Lists.Select(l => l + ListCount + 8)).Max();
+            Handle + 8, Active + 1, Slot + 4 }.Concat(Lists.Select(l => l.Offset + l.CountOffset + 8)).Max();
 
         public static Layout Parse(GparamReloaderOffsetEntry g)
         {
@@ -88,16 +91,32 @@ public class GparamReloader
                 H(g.idListCountOffset)
             };
 
-            var lists = (g.resIdListOffsets ?? "").Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                .Select(H).ToList();
-
-            if (values.Any(v => v == null) || lists.Count == 0 || lists.Any(v => v == null) ||
-                !int.TryParse(g.idListCapacity, out var capacity))
+            if (values.Any(v => v == null) || !int.TryParse(g.idListCapacity, out var capacity))
                 return null;
 
             var v = values.Select(x => x.Value).ToArray();
-            return new Layout(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8], v[9], v[10], v[11],
-                lists.Select(x => x.Value).ToArray(), v[12], capacity);
+
+            // "offset" uses idListCountOffset and idListCapacity; "offset/countOffset/capacity" sets its own
+            // (SDT's fourth list holds 20 IDs, count at +50)
+            var lists = new List<IdList>();
+
+            foreach (var entry in (g.resIdListOffsets ?? "").Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            {
+                var parts = entry.Split('/', StringSplitOptions.TrimEntries);
+                var offset = H(parts[0]);
+                var countOffset = parts.Length > 1 ? H(parts[1]) : v[12];
+                int? listCapacity = parts.Length > 2 ? (int.TryParse(parts[2], out var c) ? c : null) : capacity;
+
+                if (offset == null || countOffset == null || listCapacity == null || parts.Length == 2 || parts.Length > 3)
+                    return null;
+
+                lists.Add(new IdList(offset.Value, countOffset.Value, listCapacity.Value));
+            }
+
+            if (lists.Count == 0)
+                return null;
+
+            return new Layout(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8], v[9], v[10], v[11], lists.ToArray());
         }
     }
 
@@ -401,12 +420,12 @@ public class GparamReloader
 
         foreach (var list in L.Lists)
         {
-            var count = BitConverter.ToInt64(bytes, list + L.ListCount);
-            if (count < 0 || count > L.ListCapacity)
+            var count = BitConverter.ToInt64(bytes, list.Offset + list.CountOffset);
+            if (count < 0 || count > list.Capacity)
                 return null;
 
             // DLFixedVector<u32>: elements start at the list, rounded up to 4 bytes
-            var start = list + (int)(-(node + list) & 3);
+            var start = list.Offset + (int)(-(node + list.Offset) & 3);
             for (var i = 0; i < count; i++)
                 ids.Add(BitConverter.ToInt32(bytes, start + i * 4));
         }

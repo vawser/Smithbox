@@ -108,8 +108,9 @@ public class GparamReloaderOffsetEntry
     public string nodeNextOffset { get; set; }
 
     // CSGparamResCap fields: the GPARAM's own ID (override used when not -1), GX handle (-1 = none), active flag,
-    // blend slot, Activate's parameter block, the three active-ID lists (DLFixedVector<u32>: count at
-    // idListCountOffset, at most idListCapacity), and the kept copy of the file bytes and its size
+    // blend slot, Activate's parameter block, the active-ID lists (DLFixedVector<u32>: count at idListCountOffset,
+    // at most idListCapacity; an entry "offset/countOffset/capacity" sets its own), and the kept copy of the file
+    // bytes and its size
     public string resIdOffset { get; set; }
     public string resIdOverrideOffset { get; set; }
     public string resHandleOffset { get; set; }
