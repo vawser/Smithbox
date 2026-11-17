@@ -81,15 +81,17 @@ public class GparamReloaderOffsetEntry
     public string releaseAobRelativeOffset { get; set; }
 
     // The start of the ResCap destructor: the byte copy is freed through allocator = GetAllocator(ptr);
-    // allocator->vtable[allocatorFreeOffset](allocator, ptr)
+    // allocator->vtable[allocatorFreeOffset](allocator, ptr). Without allocatorFreeOffset (AC6), the call in the AOB
+    // is a direct free(ptr).
     public string freeAob { get; set; }
     public string allocatorAobRelativeOffset { get; set; }
     public string allocatorFreeOffset { get; set; }
 
-    // The ResCap's own activation (called by Init): ... call Activate(gx + gxGparamOffset, handle, id, slot,
-    // rc + activateParams, fade, instant)
+    // A ResCap activation: ... call Activate(gx + gxGparamOffset, handle, id, slot, rc + activateParams, fade, flag).
+    // activateFlag is the last argument as the game passes it with fade 0 (ER 1, NR and AC6 0).
     public string activateAob { get; set; }
     public string activateAobRelativeOffset { get; set; }
+    public string activateFlag { get; set; }
 
     // [gx] + gxGparamOffset is the first argument of Activate / Deactivate; [[gx] + gxManagerOffset] is the GX gparam
     // manager that Init parses into and Release frees from

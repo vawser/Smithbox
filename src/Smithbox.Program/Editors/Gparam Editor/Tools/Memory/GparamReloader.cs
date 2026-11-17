@@ -5,7 +5,7 @@ using System.Text;
 namespace StudioCore.Editors.GparamEditor;
 
 /// <summary>
-/// The Gparam Reloader's work in the running game (ER), over the project's shared GameLink: lists the GPARAMs the game
+/// The Gparam Reloader's work in the running game (ER, NR, AC6), over the project's shared GameLink: lists the GPARAMs the game
 /// has loaded, and replaces one with new bytes. See Claude/Documentation/Gparam Reloader Analysis.md.
 /// The AOBs and offsets come from Assets/Gparam Reloader/{game}/*.json (GparamReloaderOffsets).
 ///
@@ -216,7 +216,9 @@ public class GparamReloader
         var releaseRel = R(g.releaseAobRelativeOffset);
         var allocRel = R(g.allocatorAobRelativeOffset);
         var activateRel = R(g.activateAobRelativeOffset);
-        var allocFree = H(g.allocatorFreeOffset);
+        // Empty: the call is a direct free(ptr)
+        var allocFree = string.IsNullOrWhiteSpace(g.allocatorFreeOffset) ? -1 : H(g.allocatorFreeOffset);
+        var activateFlag = string.IsNullOrWhiteSpace(g.activateFlag) ? 1 : H(g.activateFlag);
         var gxGparam = H(g.gxGparamOffset);
         var gxManager = H(g.gxManagerOffset);
         var paramsOffset = H(g.resActivateParamsOffset);
@@ -226,6 +228,7 @@ public class GparamReloader
 
         if (layout == null || repoRel == null || findRel == null || initRel == null || gxRel == null ||
             deactivateRel == null || releaseRel == null || allocRel == null || activateRel == null || allocFree == null ||
+            activateFlag is null or < 0 or > 1 ||
             gxGparam == null || gxManager == null || paramsOffset == null || bytesOffset == null ||
             aobs.Any(string.IsNullOrWhiteSpace))
         {
@@ -271,7 +274,8 @@ public class GparamReloader
             ActiveOffset: layout.Active,
             SlotOffset: layout.Slot,
             ActivateParamsOffset: paramsOffset.Value,
-            BytesOffset: bytesOffset.Value);
+            BytesOffset: bytesOffset.Value,
+            ActivateFlag: (byte)activateFlag.Value);
 
         return true;
     }

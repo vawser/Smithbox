@@ -52,7 +52,7 @@
 # Graphics Param Editor TODO
 #----------------------------------------------------
 
-- Add GPARAM Reloader: add support for DS2S/DS3/SDT/ER/NR/AC6
+- GPARAM Reloader: add support for DS2S/DS3/SDT/ER/NR/AC6
 - Expand the amount of GPARAM elements considered by the renderer
 
 #----------------------------------------------------

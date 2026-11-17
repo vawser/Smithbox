@@ -16,10 +16,14 @@ namespace StudioCore.Editors.GparamEditor;
 public static class GparamReloadCode
 {
     /// <summary>Game addresses (absolute, in the running game) and ResCap field offsets</summary>
+    /// <param name="GetAllocator">ER, NR: GetAllocator(ptr), then allocator->vtable[AllocatorFree](allocator, ptr).
+    /// AC6: a direct free(ptr), with AllocatorFree -1.</param>
+    /// <param name="ActivateFlag">Activate's last argument, as the game's own calls pass it with fade 0
+    /// (ER 1, NR and AC6 0)</param>
     public record Addresses(
         long RepositoryPointer, long Find, long Init, long GxGlobal, long Activate, long Deactivate, long Release,
         long GetAllocator, int AllocatorFree, int GxGparamOffset, int GxManagerOffset,
-        int HandleOffset, int ActiveOffset, int SlotOffset, int ActivateParamsOffset, int BytesOffset);
+        int HandleOffset, int ActiveOffset, int SlotOffset, int ActivateParamsOffset, int BytesOffset, byte ActivateFlag);
 
     /// <summary>What Smithbox read from the ResCap just before the reload</summary>
     public record Snapshot(long ResCap, long Handle, bool Active, int Slot, int MainId, IReadOnlyList<int> ListIds);
@@ -92,15 +96,18 @@ public static class GparamReloadCode
         e.B(0x4C, 0x89, 0xEA);                        // mov rdx,r13
         e.CallAbs(a.Release);
 
-        // Free the old kept copy of the bytes: allocator = GetAllocator(p); allocator->Free(p)
+        // Free the old kept copy of the bytes: allocator = GetAllocator(p); allocator->Free(p), or free(p)
         e.B(0x4D, 0x85, 0xF6);                        // test r14,r14
         e.Jcc(0x84, "noBytes");                       // je noBytes
         e.B(0x4C, 0x89, 0xF1);                        // mov rcx,r14
         e.CallAbs(a.GetAllocator);
-        e.B(0x48, 0x89, 0xC1);                        // mov rcx,rax
-        e.B(0x4C, 0x89, 0xF2);                        // mov rdx,r14
-        e.B(0x4C, 0x8B, 0x00);                        // mov r8,[rax]
-        e.B(0x41, 0xFF, 0x90); e.I32(a.AllocatorFree); // call [r8+free]
+        if (a.AllocatorFree >= 0)
+        {
+            e.B(0x48, 0x89, 0xC1);                    // mov rcx,rax
+            e.B(0x4C, 0x89, 0xF2);                    // mov rdx,r14
+            e.B(0x4C, 0x8B, 0x00);                    // mov r8,[rax]
+            e.B(0x41, 0xFF, 0x90); e.I32(a.AllocatorFree); // call [r8+free]
+        }
         e.Label("noBytes");
 
         e.B(0x49, 0x83, 0xFF, 0xFF);                  // cmp r15,-1
@@ -147,13 +154,13 @@ public static class GparamReloadCode
         e.CallAbs(a.Deactivate);
     }
 
-    /// <summary>Activate(r12, r13, id, slot, rc + params, fade 0.0, instant)</summary>
+    /// <summary>Activate(r12, r13, id, slot, rc + params, fade 0.0, flag)</summary>
     private static void Activate(Emitter e, Addresses a, Snapshot s, int id)
     {
         e.B(0x48, 0x8D, 0x83); e.I32(a.ActivateParamsOffset); // lea rax,[rbx+params]
         e.B(0x48, 0x89, 0x44, 0x24, 0x20);            // mov [rsp+20h],rax
         e.B(0xC7, 0x44, 0x24, 0x28); e.I32(0);        // mov dword [rsp+28h],0 (0.0f)
-        e.B(0xC6, 0x44, 0x24, 0x30, 0x01);            // mov byte [rsp+30h],1
+        e.B(0xC6, 0x44, 0x24, 0x30, a.ActivateFlag);  // mov byte [rsp+30h],flag
         e.B(0x4C, 0x89, 0xE1);                        // mov rcx,r12
         e.B(0x4C, 0x89, 0xEA);                        // mov rdx,r13
         e.B(0x41, 0xB8); e.I32(id);                   // mov r8d,id
