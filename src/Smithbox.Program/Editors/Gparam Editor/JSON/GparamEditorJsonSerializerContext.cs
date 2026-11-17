@@ -28,6 +28,9 @@ namespace StudioCore.Editors.GparamEditor;
 [JsonSerializable(typeof(GparamEnumOption))]
 [JsonSerializable(typeof(GparamCategoryTextEntry))]
 
+// Gparam Reloader
+[JsonSerializable(typeof(GparamReloaderOffsetEntry))]
+
 internal partial class GparamEditorJsonSerializerContext : JsonSerializerContext
 {
 }

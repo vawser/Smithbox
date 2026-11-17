@@ -1,0 +1,51 @@
+{
+  "Entries": [
+    { "Key": "GPARAM_Reloader_Header", "Text": "Gparam Reloader" },
+    { "Key": "GPARAM_Reloader_Game_Not_Supported", "Text": "The Gparam Reloader isn't available for this game." },
+    { "Key": "GPARAM_Reloader_Hint", "Text": "Replaces a GPARAM in the running game with the editor's copy, so lighting and post-process edits show without restarting. The game must be running." },
+
+    { "Key": "GPARAM_Reloader_Game_Header", "Text": "Game" },
+    { "Key": "GPARAM_Reloader_Game_Header_TT", "Text": "The connection to the running game, shared with the other reloaders." },
+    { "Key": "GPARAM_Reloader_Auto_Refresh", "Text": "Auto refresh" },
+    { "Key": "GPARAM_Reloader_Auto_Refresh_TT", "Text": "Refresh the list of loaded GPARAMs every {0} seconds while this tool is open." },
+    { "Key": "GPARAM_Reloader_Refresh", "Text": "Refresh" },
+    { "Key": "GPARAM_Reloader_Refresh_TT", "Text": "Connect to the game if needed, and read which GPARAMs it has loaded." },
+    { "Key": "GPARAM_Reloader_Detach", "Text": "Disconnect" },
+    { "Key": "GPARAM_Reloader_Detach_TT", "Text": "Disconnect from the game. This also disconnects the other reloaders." },
+
+    { "Key": "GPARAM_Reloader_Push_Header", "Text": "Push" },
+    { "Key": "GPARAM_Reloader_Push_Header_TT", "Text": "Send the selected GPARAM, as it is in the editor (saved or not), to the game." },
+    { "Key": "GPARAM_Reloader_No_Selection", "Text": "Select a GPARAM file to push it." },
+    { "Key": "GPARAM_Reloader_Selected", "Text": "Selected: {0}" },
+    { "Key": "GPARAM_Reloader_Selected_Loaded", "Text": "Loaded in the game." },
+    { "Key": "GPARAM_Reloader_Selected_Not_Loaded", "Text": "Not loaded in the game right now. Go to an area that uses it first." },
+    { "Key": "GPARAM_Reloader_Push", "Text": "Push Selected GPARAM" },
+    { "Key": "GPARAM_Reloader_Push_TT", "Text": "Replace the game's copy of the selected GPARAM with the editor's copy." },
+    { "Key": "GPARAM_Reloader_Running", "Text": "Pushing..." },
+    { "Key": "GPARAM_Reloader_Write_Failed", "Text": "[Gparam Editor] Couldn't write {0} to push it to the game." },
+
+    { "Key": "GPARAM_Reloader_Loaded_Header", "Text": "Loaded in game" },
+    { "Key": "GPARAM_Reloader_Loaded_Header_TT", "Text": "The GPARAMs the game has loaded. Click one to select it in the editor." },
+    { "Key": "GPARAM_Reloader_Loaded_None", "Text": "None read yet." },
+    { "Key": "GPARAM_Reloader_Loaded_Entry_Active", "Text": "{0} (in use)" },
+    { "Key": "GPARAM_Reloader_Loaded_Entry_TT", "Text": "Select this GPARAM in the editor." },
+
+    { "Key": "GPARAM_Reloader_State_Version", "Text": "The Gparam Reloader doesn't support this game version ({0}): {1}" },
+    { "Key": "GPARAM_Reloader_State_Read_Failed", "Text": "Couldn't read the game's GPARAMs: {0}" },
+    { "Key": "GPARAM_Reloader_State_Not_Loaded", "Text": "The game hasn't loaded any GPARAMs yet." },
+    { "Key": "GPARAM_Reloader_State_Bad_Map", "Text": "The game's GPARAM list doesn't look valid ({0} buckets)." },
+
+    { "Key": "GPARAM_Reloader_Busy", "Text": "[Gparam Editor] A push is already running; {0} wasn't sent." },
+    { "Key": "GPARAM_Reloader_Not_Found", "Text": "{0} isn't loaded in the game." },
+    { "Key": "GPARAM_Reloader_No_Handle", "Text": "{0} is loaded, but the game has no data for it (a previous push may have failed). Leave the area and come back." },
+    { "Key": "GPARAM_Reloader_Compressed", "Text": "{0} was written compressed; the game needs it uncompressed. Nothing was sent." },
+    { "Key": "GPARAM_Reloader_Alloc_Failed", "Text": "Couldn't allocate memory in the game." },
+    { "Key": "GPARAM_Reloader_Thread_Failed", "Text": "Couldn't start the reload in the game (error {0})." },
+    { "Key": "GPARAM_Reloader_Timeout", "Text": "The game didn't finish the reload in time." },
+    { "Key": "GPARAM_Reloader_Done", "Text": "Pushed {0}." },
+    { "Key": "GPARAM_Reloader_Parse_Failed", "Text": "The game couldn't read the pushed {0}; it now has no data for it. Push a valid copy, or leave the area and come back." },
+    { "Key": "GPARAM_Reloader_Changed", "Text": "{0} changed in the game while pushing (the area may have changed). Nothing was done; push again." },
+
+    { "Key": "GPARAM_Data_Deserialize_Reloader_Offsets_FAIL", "Text": "[Gparam Editor] Failed to read the Gparam Reloader offsets: {0}" }
+  ]
+}

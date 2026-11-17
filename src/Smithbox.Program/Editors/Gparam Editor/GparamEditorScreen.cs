@@ -24,10 +24,14 @@ public class GparamEditorScreen : EditorScreen
     public GparamShortcuts Shortcuts;
     public GparamCommandQueue CommandQueue;
 
+    /// <summary>The Gparam Reloader (ER) over the project's GameLink, shared by every view</summary>
+    public GparamReloader Reloader;
 
     public GparamEditorScreen(ProjectEntry project)
     {
         Project = project;
+
+        Reloader = new GparamReloader(project);
 
         ViewHandler = new GparamViewHandler(this, project);
 

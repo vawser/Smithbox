@@ -40,6 +40,8 @@
 # Param Editor TODO
 #----------------------------------------------------
 
+- Add Event Flag memory tool: allow user to check flag state, and change to ON/OFF
+
 #----------------------------------------------------
 # Text Editor TODO
 #----------------------------------------------------
@@ -57,7 +59,6 @@
 # Material Editor TODO
 #----------------------------------------------------
 
-- Material Reloader: extend to NR/AC6
 - Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
 
 #----------------------------------------------------

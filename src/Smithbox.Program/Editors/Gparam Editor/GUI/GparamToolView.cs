@@ -14,6 +14,7 @@ public class GparamToolView
     public GparamSearchTool GlobalSearchTool;
     public GparamMassEditTool MassEditTool;
     public GparamDataTransferTool DataTransferTool;
+    public GparamReloaderTool ReloaderTool;
 
     private ToolSections Sections = new();
 
@@ -26,6 +27,7 @@ public class GparamToolView
         GlobalSearchTool = new(view, project, GparamSearchMode.Global);
         MassEditTool = new(view, project);
         DataTransferTool = new(view, project);
+        ReloaderTool = new(view, project);
     }
 
     public void Display()
@@ -61,6 +63,12 @@ public class GparamToolView
 
         // Rendering: sets its own category, so it comes after the Viewport tools
         View.RenderingTool.OnToolWindow();
+
+        // Game Memory
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+        // Gparam Reloader
+        ReloaderTool.OnToolWindow();
 
         Sections.End();
     }
