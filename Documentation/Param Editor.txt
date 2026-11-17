@@ -1,7 +1,6 @@
 #----------------------------------------------------
 # Param Editor TODO
 #----------------------------------------------------
-- Look into making row merges for tabulated params functional and simple
 
 - External:
     - Look into RE needed to expand Param Reloader support to unsupported games

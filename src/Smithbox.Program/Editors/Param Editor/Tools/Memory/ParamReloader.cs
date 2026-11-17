@@ -219,7 +219,9 @@ public class ParamReloader
                     nint paramRepositoryPtr = handler.GetBaseAddress();
                     if (paramRepo.ParamBaseAobPattern != null)
                     {
-                        if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
+                        // Key the cache by pattern: games with several bases (NR) have one AOB per base,
+                        // and a shared key would return the first base's offset for all of them.
+                        if (!handler.TryFindOffsetFromAOB($"ParamBase_{paramRepo.ParamBaseAobPattern}", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
                         {
                             Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_AOB", param));
                             continue;
@@ -234,8 +236,10 @@ public class ParamReloader
 
                     if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
                     {
-                        // DS1 ThrowParam requires an additional offset.
-                        paramRepositoryPtr += 0x10;
+                        // DS1 ThrowParam sits in a separate repository, whose pointer is stored after
+                        // the main one: +0x10 in PTDE, +0x1E0 in DS1R (module+0x1C7E1E0, found by
+                        // Claude/Tools/Ds1rThrowParamProbe on 1.3.1.0).
+                        paramRepositoryPtr += offsets.type is ProjectType.DS1R ? 0x1E0 : 0x10;
                     }
 
                     tasks.Add(new Task(() =>
@@ -660,11 +664,17 @@ public class ParamReloader
         var canHotReload = CanReloadMemoryParams(activeView.GetPrimaryBank());
         if (canHotReload)
         {
-            // Far model params are loose map files, not part of the in-memory regulation
+            var bank = activeView.GetPrimaryBank();
+
+            // Only params with an offset entry: the rest (far model params, draw param banks
+            // such as m10_FogBank) are not in the mapped repository, and would each log a
+            // missing-offset error. Reloading one of them individually still reports it.
+            var reloadable = GetReloadableParams().ToHashSet();
+
             ReloadMemoryParams(
-                activeView.GetPrimaryBank(),
-                activeView.GetPrimaryBank().Params.Keys
-                    .Where(e => !activeView.GetPrimaryBank().FarModelParams.ContainsKey(e)).ToArray());
+                bank,
+                bank.Params.Keys
+                    .Where(e => !bank.FarModelParams.ContainsKey(e) && reloadable.Contains(e)).ToArray());
         }
         else
         {

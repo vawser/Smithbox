@@ -188,9 +188,7 @@ public class ParamShortcuts
         // Reload All Params
         if (InputManager.IsPressed(KeybindID.ParamEditor_Reload_All_Params))
         {
-            Editor.ViewHandler.ActiveView.ToolMenu.ParamReloader.ReloadMemoryParams(
-                activeView.GetPrimaryBank(),
-                activeView.GetPrimaryBank().Params.Keys.ToArray());
+            Editor.ViewHandler.ActiveView.ToolMenu.ParamReloader.ReloadAllParams();
         }
 
         // Reload Current Param
