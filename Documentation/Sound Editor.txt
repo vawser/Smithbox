@@ -1,6 +1,0 @@
-#----------------------------------------------------
-# Sound Editor TODO
-#----------------------------------------------------
-
-- Verify WEM replace functionality with test mod
-- Add support for FMOD replace

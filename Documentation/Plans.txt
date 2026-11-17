@@ -1,0 +1,186 @@
+#-------------
+# Blue Sky
+#-------------
+- Game Porter
+    - Port assets from X game to Y game
+
+- HKS intepreter (to link with behaviors and animation playback)
+    - Work allow for powerful visualization of movesets
+
+- FaceGen Editor
+
+- Scaleform Editor
+
+- Icon Builder
+    - Preview a model with adjustable bones so it can be placed in a specific way
+    - Include consistent camera angles
+    - Automatic icon capture
+    
+#----------------------------------------------------
+# Map Editor TODO
+#----------------------------------------------------
+
+- DB_NT MSB: research/sync with ER
+- NR MSB: research/sync with ER
+- AC MSB: research
+- ONAV v2 for AC6
+
+- Improve Map Data view: mainly properties
+
+#----------------------------------------------------
+# Model Editor TODO
+#----------------------------------------------------
+
+- Support Cloth
+- External Model Import (transform into FLVER)
+
+#----------------------------------------------------
+# Param Editor TODO
+#----------------------------------------------------
+
+
+#----------------------------------------------------
+# Text Editor TODO
+#----------------------------------------------------
+
+#----------------------------------------------------
+# Graphics Param Editor TODO
+#----------------------------------------------------
+
+- Add GPARAM Reloader
+- Expand the amount of GPARAM elements considered by the renderer
+
+#----------------------------------------------------
+# Material Editor TODO
+#----------------------------------------------------
+
+- Material Reloader: extend to NR/AC6
+
+#----------------------------------------------------
+# Texture Editor TODO
+#----------------------------------------------------
+
+#----------------------------------------------------
+# Time Act Editor TODO
+#----------------------------------------------------
+
+- Event Graph
+    - Read-only graph for imported animations
+
+- Playback:
+    - Animation blending between animations
+    - Throw hitboxes
+    - Weapon style simulation
+    - Weapon location overrides
+    - Additive animation playback
+    - Character turning / tracking
+    - Animation speed events
+    - Model opacity / model masks
+    - Rumble cam
+    - StateInfo markers
+    - Root Motion multipliers
+    
+- Tools:
+    - NPC Param Selector
+    - Behavior / Hit Source Selector
+    - Scan for unused animations
+    - Animation Builder: builds new animation from combo of animations
+    - FBX to HKX
+    - TAE Reload (is HKS Reload)
+
+#----------------------------------------------------
+# Havok Editor TODO
+#----------------------------------------------------
+
+- Adjustments:
+    - DES displays duplicate entries (due to the odd arrangement the game data has)
+    - Should should hide categories with no members
+
+- Improve Collision Generator:
+    - Add support for DES/DS1/DS2
+ 
+- Add Behavior Merge tool
+- Add Behavior templates
+
+#----------------------------------------------------
+# Cutscene Editor
+#----------------------------------------------------
+
+- Support playback for:
+    - Point Lights
+    - Map GPARAM
+    - DOF
+    
+- Links:
+    - Light Set
+    - Rumble
+    - Movie
+    - Gparam
+    
+- Subtitles:
+    - Need timing cuts as some sounds play partial in cut X and then continue in cut Y
+    
+- Editor:
+    - Actor animation edit
+    - Actor add/remove
+    
+- Tweaks:
+    - Improve presentation of properties
+    
+#----------------------------------------------------
+# FX Editor TODO
+#----------------------------------------------------
+
+- FX offset seems incorrectly applied (noticable in Map Editor playback)
+
+- FFX Older Games Plan.md
+
+#----------------------------------------------------
+# EMEVD Editor TODO
+#----------------------------------------------------
+
+- Aliases for ID references within Script graph
+- UX for properties
+- Add user-defined templates + auto-fill value ranges (i.e. disable enemies with entity IDs between X and Y)
+
+#----------------------------------------------------
+# ESD Editor TODO
+#----------------------------------------------------
+
+- UX for Properties
+- Aliases for ID references within States graph
+
+#----------------------------------------------------
+# Sound Editor TODO
+#----------------------------------------------------
+
+- Verify WEM replace functionality with test mod
+- Add support for FMOD replace
+
+#----------------------------------------------------
+# Rendering
+#----------------------------------------------------
+
+- DS3: some chrs missing textures: c1280
+- DS3: non-map external resource usage: m903400
+- SDT: regression for some objects/mappieces, pink multi-color, flame shader related?: m504040, m002679
+- SDT: water shader doesn't exist: m800003
+- SDT: non-map external resource usage: m902000
+- ER: Waterfall textures look a bit simple
+- AC6 chrs missing textures
+- NR: various assets missing textures (AEG576_127, AEG576_111)
+- ER: AEG007_183: extremely bright glow
+
+- Small issues:
+ - ER: z-fighting on m004500 for decal textures
+ - ER: Rat skin messed up for c4080 / c4090 (rats)
+ - ER: Messed up texturing for c4640 (ulcerated)
+ - ER: Messed up texturing for c3320 (blob)
+ - ER: Flame asset doesn't look correct (AEG094_111), multi-colored with incorrect alpha
+ - ER: Multi-colored mesh (m400000)
+ - ER: Strange light white rock (AEG230_921 / AEG230_835 / m100056) 
+ - ER: Strange white trunk (AEG232_478 / AEG232_474)
+ - AC6: AEG410_184 uncolored
+ - AC6: AEG410_180 uncolored (crystal)
+ - AC6: AEG300_860 untextured
+ - AC6: AEG300_891 uncolored

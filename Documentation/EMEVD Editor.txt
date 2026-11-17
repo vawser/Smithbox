@@ -1,7 +1,0 @@
-#----------------------------------------------------
-# EMEVD Editor TODO
-#----------------------------------------------------
-
-- Aliases for ID references within Script graph
-- UX for properties
-- Add user-defined templates + auto-fill value ranges (i.e. disable enemies with entity IDs between X and Y)

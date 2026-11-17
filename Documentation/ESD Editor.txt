@@ -1,6 +1,0 @@
-#----------------------------------------------------
-# ESD Editor TODO
-#----------------------------------------------------
-
-- UX for Properties
-- Aliases for ID references within States graph

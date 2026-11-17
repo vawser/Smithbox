@@ -1,9 +1,0 @@
-#----------------------------------------------------
-# Map Editor TODO
-#----------------------------------------------------
-
-- DB_NT MSB: research/sync with ER
-- NR MSB: research/sync with ER
-- AC MSB: research
-- ONAV v2 for AC6
-

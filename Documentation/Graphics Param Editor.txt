@@ -1,5 +1,0 @@
-#----------------------------------------------------
-# Graphics Param Editor TODO
-#----------------------------------------------------
-
-- Expand the amount of GPARAM elements considered by the renderer

@@ -1,7 +1,0 @@
-#----------------------------------------------------
-# FX Editor TODO
-#----------------------------------------------------
-
-- FX offset seems incorrectly applied (noticable in Map Editor playback)
-
-- FFX Older Games Plan.md
