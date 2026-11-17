@@ -35,7 +35,7 @@ public class SoulsMemoryHandler
         this.gameProcess = gameProcess;
         memoryHandle = NativeWrapper.OpenProcess(
             ProcessAccessFlags.CreateThread | ProcessAccessFlags.ReadWrite | ProcessAccessFlags.Execute |
-            ProcessAccessFlags.VirtualMemoryOperation, gameProcess.Id);
+            ProcessAccessFlags.VirtualMemoryOperation | ProcessAccessFlags.QueryInformation, gameProcess.Id);
 
         if (!ProcessOffsetBank.TryGetValue(gameProcess.Id, out _processOffsets))
         {
@@ -104,9 +104,11 @@ public class SoulsMemoryHandler
 
         var memSize = gameProcess.MainModule.ModuleMemorySize;
         var memFindLength = memSize - pattern.Length;
-        var mem = new byte[memSize];
 
-        ReadProcessMemory(gameProcess.MainModule.BaseAddress, ref mem, memSize);
+        // Read only committed, readable pages that are not guard pages. A cross-process read of a PAGE_GUARD
+        // page clears its guard flag, which breaks games that use guard pages for their own protection
+        // (Sekiro's Arxan); unreadable ranges stay zero and simply never match.
+        var mem = ReadModuleSafely(gameProcess.MainModule.BaseAddress, memSize, out _);
 
         for (var offset = 0; offset < memFindLength; offset++)
         {
@@ -142,6 +144,76 @@ public class SoulsMemoryHandler
 
         Smithbox.LogError(this, LOC.Get("PARAM_Tools_Memory_Missing_AOB", offsetName));
         return false;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct MEMORY_BASIC_INFORMATION
+    {
+        public nint BaseAddress;
+        public nint AllocationBase;
+        public uint AllocationProtect;
+        public ushort PartitionId;
+        public nint RegionSize;
+        public uint State;
+        public uint Protect;
+        public uint Type;
+    }
+
+    [DllImport("kernel32", SetLastError = true)]
+    private static extern nint VirtualQueryEx(nint process, nint address, out MEMORY_BASIC_INFORMATION info, nint length);
+
+    private const uint MEM_COMMIT = 0x1000;
+    private const uint PAGE_NOACCESS = 0x01;
+    private const uint PAGE_GUARD = 0x100;
+
+    /// <summary>
+    /// A copy of [baseAddress, baseAddress + size) with only committed, readable, non-guard regions read.
+    /// </summary>
+    private byte[] ReadModuleSafely(nint baseAddress, int size, out long skippedBytes)
+    {
+        var mem = new byte[size];
+        skippedBytes = 0;
+
+        var end = baseAddress + size;
+        var address = baseAddress;
+        var infoSize = Marshal.SizeOf<MEMORY_BASIC_INFORMATION>();
+
+        while (address < end)
+        {
+            if (VirtualQueryEx(memoryHandle, address, out var info, infoSize) == 0)
+            {
+                skippedBytes += end - address;
+                break;
+            }
+
+            var regionStart = Math.Max((long)address, (long)info.BaseAddress);
+            var regionEnd = Math.Min((long)end, (long)info.BaseAddress + (long)info.RegionSize);
+            var length = (int)(regionEnd - regionStart);
+
+            var readable = info.State == MEM_COMMIT
+                && (info.Protect & PAGE_GUARD) == 0
+                && (info.Protect & PAGE_NOACCESS) == 0
+                && info.Protect != 0;
+
+            if (readable && length > 0)
+            {
+                var chunk = new byte[length];
+                if (ReadProcessMemory(memoryHandle, (nint)regionStart, chunk, length, out _))
+                    Buffer.BlockCopy(chunk, 0, mem, (int)(regionStart - baseAddress), length);
+                else
+                    skippedBytes += length;
+            }
+            else
+            {
+                skippedBytes += Math.Max(length, 0);
+            }
+
+            if (regionEnd <= (long)address)
+                break;
+            address = (nint)regionEnd;
+        }
+
+        return mem;
     }
 
     private void GenerateAobPattern(string str, out byte[] pattern, out bool[] wildcard)
