@@ -28,103 +28,101 @@ public static class CharacterReloadMemory
 
     public static System.Diagnostics.Process AttachedProcess = null;
 
-    public static IntPtr EldenRing_CrashFixPtr = IntPtr.Zero;
-    public static IntPtr EldenRing_WorldChrManPtr = IntPtr.Zero;
-
-    private static IntPtr ScanRelativeAob(CharacterReloadAobScanner aobScanner, string aob, int addrOffset, int endOfRelJumpInstr)
-    {
-        var aobLocation = aobScanner.Scan(CharacterReloadAobScanner.StringToAOB(aob));
-        if (aobLocation == IntPtr.Zero)
-            return IntPtr.Zero;
-        // rel32 is signed: the target can be before the instruction
-        int relAddr = (int)CharacterReloadKernel32.ReadUInt32(ProcessHandle, aobLocation + addrOffset);
-        return aobLocation + endOfRelJumpInstr + relAddr;
-    }
+    // Name of the attached process, so a reload for another game attaches again
+    private static string AttachedProcessName = null;
 
     /// <summary>
-    /// Find WorldChrMan and the crash patch site with the AOBs of an offsets group.
-    /// A pointer is left as zero when its AOB isn't found (or the group's values can't be parsed),
-    /// so the reload can stop instead of writing to a bad address.
+    /// Resolve a rel32 inside an AOB match: relSpec is "start/end" of the rel32 within the AOB ("0x3/0x7"),
+    /// and the target is the end + rel32 (rel32 is signed). Zero if the AOB isn't found or relSpec can't be read.
     /// </summary>
-    public static void UpdateEldenRingAobs(CharacterReloaderOffsetEntry offsets)
+    public static IntPtr ResolveRelative(CharacterReloadAobScanner scanner, string aob, string relSpec)
     {
-        EldenRing_WorldChrManPtr = IntPtr.Zero;
-        EldenRing_CrashFixPtr = IntPtr.Zero;
+        if (string.IsNullOrWhiteSpace(aob))
+            return IntPtr.Zero;
 
-        var aob = new CharacterReloadAobScanner(AttachedProcess);
-
-        // "start/end" of the rel32 in the AOB
-        var relParts = (offsets.worldChrManAobRelativeOffset ?? "").Split('/');
+        var relParts = (relSpec ?? "").Split('/');
         var relStart = relParts.Length == 2 ? CharacterReloaderOffsets.ParseHex(relParts[0]) : null;
         var relEnd = relParts.Length == 2 ? CharacterReloaderOffsets.ParseHex(relParts[1]) : null;
 
-        if (!string.IsNullOrWhiteSpace(offsets.worldChrManAob) && relStart is int start && relEnd is int end)
-        {
-            var global = ScanRelativeAob(aob, offsets.worldChrManAob, start, end);
+        if (relStart is not int start || relEnd is not int end)
+            return IntPtr.Zero;
 
-            if (global != IntPtr.Zero)
-            {
-                EldenRing_WorldChrManPtr = CharacterReloadKernel32.ReadIntPtr(ProcessHandle, global, true);
-            }
-        }
+        var aobLocation = scanner.Scan(CharacterReloadAobScanner.StringToAOB(aob));
+        if (aobLocation == IntPtr.Zero)
+            return IntPtr.Zero;
 
-        var distFromEnd = CharacterReloaderOffsets.ParseHex(offsets.crashPatchDistFromEndOfAob);
-
-        if (!string.IsNullOrWhiteSpace(offsets.crashPatchAob) && distFromEnd is int dist)
-        {
-            var crashPatchAob = CharacterReloadAobScanner.StringToAOB(offsets.crashPatchAob);
-            var crashPatchAobStart = aob.Scan(crashPatchAob);
-
-            if (crashPatchAobStart != IntPtr.Zero)
-            {
-                EldenRing_CrashFixPtr = crashPatchAobStart + crashPatchAob.Length - dist;
-            }
-        }
+        int relAddr = (int)CharacterReloadKernel32.ReadUInt32(ProcessHandle, aobLocation + start);
+        return aobLocation + end + relAddr;
     }
 
-    public static void AttachProc(ProjectEntry project, string procName)
+    /// <summary>
+    /// The address an AOB match ends at, less a distance. Zero if the AOB isn't found or the distance can't be read.
+    /// </summary>
+    public static IntPtr ResolveFromEnd(CharacterReloadAobScanner scanner, string aob, string distFromEnd)
     {
-        if (AttachedProcess != null && AttachedProcess?.HasExited != true)
-            return;
+        var dist = CharacterReloaderOffsets.ParseHex(distFromEnd);
 
-        if (!CharacterReloadKernel32.GetHandleInformation(ProcessHandle, out _))
+        if (string.IsNullOrWhiteSpace(aob) || dist is not int d)
+            return IntPtr.Zero;
+
+        var pattern = CharacterReloadAobScanner.StringToAOB(aob);
+        var aobLocation = scanner.Scan(pattern);
+
+        return aobLocation == IntPtr.Zero ? IntPtr.Zero : aobLocation + pattern.Length - d;
+    }
+
+    /// <summary>
+    /// Attach to the first process with this name (no extension). Keeps the current attachment when it is to
+    /// the same, still running, process. False if there is no such process or it can't be opened.
+    /// </summary>
+    public static bool AttachProc(string procName)
+    {
+        if (AttachedProcess != null)
         {
-            CloseHandle(handleInvalid: true);
+            var exited = true;
+            try { exited = AttachedProcess.HasExited; } catch { }
+
+            if (!exited && string.Equals(AttachedProcessName, procName, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            CloseHandle();
         }
 
-        //CloseHandle();
         var processes = System.Diagnostics.Process.GetProcessesByName(procName);
-        if (processes.Length > 0)
-        {
-            var Process = processes[0];
-            BaseAddress = Process.MainModule.BaseAddress;
-            try
-            {
-                ProcessHandle = CharacterReloadKernel32.OpenProcess(0x2 | 0x8 | 0x10 | 0x20 | 0x400, false, Process.Id);
-                AttachedProcess = Process;
-                AttachedProcess.Exited += AttachedProcess_Exited;
-            }
-            catch
-            {
-                CloseHandle();
-            }
-        }
-        else
-        {
-            Smithbox.LogError(typeof(CharacterReloadMemory), LOC.Get("COMMON_CharacterReloader_Error_Failed_Game_Attach"));
-        }
-    }
+        if (processes.Length == 0)
+            return false;
 
-    private static void AttachedProcess_Exited(object sender, EventArgs e)
-    {
-        CloseHandle();
+        var process = processes[0];
+
+        try
+        {
+            BaseAddress = process.MainModule.BaseAddress;
+            ProcessHandle = CharacterReloadKernel32.OpenProcess(0x2 | 0x8 | 0x10 | 0x20 | 0x400, false, process.Id);
+
+            if (ProcessHandle == IntPtr.Zero)
+            {
+                process.Dispose();
+                return false;
+            }
+
+            AttachedProcess = process;
+            AttachedProcessName = procName;
+            return true;
+        }
+        catch
+        {
+            process.Dispose();
+            CloseHandle();
+            return false;
+        }
     }
 
     public static void CloseHandle(bool handleInvalid = false)
     {
+        AttachedProcessName = null;
+
         if (AttachedProcess != null)
         {
-            AttachedProcess.Exited -= AttachedProcess_Exited;
             AttachedProcess.Dispose();
             AttachedProcess = null;
         }
@@ -144,9 +142,6 @@ public static class CharacterReloadMemory
 
             ProcessHandle = IntPtr.Zero;
         }
-
-        EldenRing_CrashFixPtr = IntPtr.Zero;
-        EldenRing_WorldChrManPtr = IntPtr.Zero;
     }
 
     // read address

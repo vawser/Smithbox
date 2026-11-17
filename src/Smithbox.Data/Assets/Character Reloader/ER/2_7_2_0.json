@@ -1,6 +1,7 @@
 {
   "exeName": "eldenring.exe",
   "exeVersion": "2.7.2.0",
+  "method": "Queue",
   "worldChrManAob": "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 0F 48 39 88 ?? ?? ?? ?? 75 06 89 B1",
   "worldChrManAobRelativeOffset": "0x3/0x7",
   "reloadListOffset": "0x1E678",

@@ -65,12 +65,24 @@
       "Text": "Failed to create file watcher."
     },
     {
-      "Key": "COMMON_CharacterReloader_Error_Failed_Game_Attach",
-      "Text": "Failed to attach to game."
+      "Key": "COMMON_CharacterReloader_Error_Failed_Game_Process",
+      "Text": "Failed to reload character: the game isn't running, or Smithbox can't open its process."
     },
     {
-      "Key": "COMMON_CharacterReloader_Error_Failed_Game_Process",
-      "Text": "Failed to find game process."
+      "Key": "COMMON_CharacterReloader_Error_WorldChrMan_Not_Loaded",
+      "Text": "Failed to reload character: the game hasn't loaded into the world yet."
+    },
+    {
+      "Key": "COMMON_CharacterReloader_Error_Request_Function_Not_Found",
+      "Text": "Failed to reload character: the RequestReloadChr pattern was not found in the game. The game version may not be supported."
+    },
+    {
+      "Key": "COMMON_CharacterReloader_Warning_Player_Flag_Not_Found",
+      "Text": "The player reload flag pattern was not found in the game, so player characters may not reload."
+    },
+    {
+      "Key": "COMMON_CharacterReloader_Log_Resolved",
+      "Text": "Character Reloader offsets {0}: WorldChrMan global {1}, RequestReloadChr {2}, player flag {3}, crash patch {4}"
     },
     {
       "Key": "COMMON_CharacterReloader_Error_Failed_Hot_Reload",
@@ -106,11 +118,7 @@
     },
     {
       "Key": "COMMON_CharacterReloader_Log_Reloaded_Character",
-      "Text": "Reloaded character {0}"
-    },
-    {
-      "Key": "COMMON_CharacterReloader_Log_Reload_for_Old_DS3",
-      "Text": "Character reload only works for the DarkSoulsIII executable 1.15.0"
+      "Text": "Requested reload of character {0}"
     }
   ]
 }

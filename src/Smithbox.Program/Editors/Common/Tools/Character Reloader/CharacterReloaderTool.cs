@@ -69,12 +69,12 @@ public class CharacterReloaderTool : IDisposable
         }
     }
 
+    /// <summary>
+    /// Supported when the game has Character Reloader offsets (Assets/Character Reloader/{game})
+    /// </summary>
     public bool SupportsReloader()
     {
-        if (Project.Descriptor.ProjectType is ProjectType.ER or ProjectType.DS3)
-            return true;
-
-        return false;
+        return CharacterReload.IsSupported(Project);
     }
 
     public void DisplayReloader()

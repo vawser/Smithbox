@@ -83,18 +83,33 @@ public class CharacterReloaderOffsetEntry
     public string exeName { get; set; }
     public string exeVersion { get; set; }
 
-    // Instruction that loads the WorldChrMan global (space-separated bytes, ?? = any byte)
+    // How the reload is requested:
+    // "Call"  - call the game's own RequestReloadChr(WorldChrMan, name), which queues the request itself
+    // "Queue" - append a request node to WorldChrMan's reload list (for games where that function was stripped)
+    public string method { get; set; }
+
+    // Instruction(s) that load the WorldChrMan global (space-separated bytes, ?? = any byte)
     public string worldChrManAob { get; set; }
 
     // Start and end of the rel32 in the AOB ("0x3/0x7"): the global is at end + rel32
     public string worldChrManAobRelativeOffset { get; set; }
 
-    // WorldChrMan fields of the reload request list
+    // Call: the game's RequestReloadChr, found through a call to it. The AOB defaults to worldChrManAob
+    // (a call site that also loads WorldChrMan), with the call's rel32 at requestFunctionAobRelativeOffset.
+    public string requestFunctionAob { get; set; }
+    public string requestFunctionAobRelativeOffset { get; set; }
+
+    // Call, optional: byte flag the game requires for player characters (c0000) to be reloaded.
+    // Set around the call, then restored.
+    public string playerReloadFlagAob { get; set; }
+    public string playerReloadFlagAobRelativeOffset { get; set; }
+
+    // Queue: WorldChrMan fields of the reload request list
     public string reloadListOffset { get; set; }
     public string reloadCountOffset { get; set; }
     public string reloadTimerOffset { get; set; }
 
-    // Instruction that hands the processed request node to the game's allocator to be freed;
+    // Queue: instruction that hands the processed request node to the game's allocator to be freed;
     // patched so the game doesn't free the node, which Smithbox allocated
     public string crashPatchAob { get; set; }
 

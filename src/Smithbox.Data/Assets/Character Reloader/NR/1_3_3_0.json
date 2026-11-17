@@ -1,0 +1,8 @@
+{
+  "exeName": "nightreign.exe",
+  "exeVersion": "1.3.3.0",
+  "method": "Call",
+  "worldChrManAob": "48 8B 0D ?? ?? ?? ?? 48 8B 13 E8 ?? ?? ?? ?? 90",
+  "worldChrManAobRelativeOffset": "0x3/0x7",
+  "requestFunctionAobRelativeOffset": "0xB/0xF"
+}
