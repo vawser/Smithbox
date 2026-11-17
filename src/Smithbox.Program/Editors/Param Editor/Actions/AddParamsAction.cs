@@ -146,6 +146,13 @@ public class AddParamsAction : EditorAction
                         step.ReplacedIndex = Param.IndexOfRow(existing);
                         Param.RemoveRow(existing);
                         RemoveId(existing.ID);
+
+                        // The clone takes the replaced row's place. It used to be inserted below only once no
+                        // row held the ID, so when other rows shared the ID the clone was left out and each
+                        // replace deleted a row of the group.
+                        newrow.Name = row.Name != null ? row.Name : "";
+                        Param.InsertRow(step.ReplacedIndex, newrow);
+                        AddId(newrow.ID);
                     }
                     else
                     {
@@ -201,8 +208,7 @@ public class AddParamsAction : EditorAction
                 ApplyDeepCopyOffset(newrow, paramMeta, (long)newrow.ID - row.ID);
             }
 
-            // Where the clone ended up (-1 if no branch inserted it, e.g. replace mode with a second row
-            // still holding the ID)
+            // Where the clone ended up (-1 if no branch inserted it)
             step.InsertIndex = Param.IndexOfRow(newrow);
 
             Steps.Add(step);

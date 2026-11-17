@@ -301,6 +301,18 @@
       "Text": "{0} ID={1} ({2})"
     },
     {
+      "Key": "PARAM_DeltaPatcher_Preview_Group_Display_Name",
+      "Text": "{0} Group ID={1} ({2} rows)"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Group_Row_Display_Name",
+      "Text": "Row {0} ({1})"
+    },
+    {
+      "Key": "PARAM_DeltaPatcher_Preview_Group_Toggle_TT",
+      "Text": "A row table group is applied as a whole: all of its rows replace the group with the same ID, or none of them do."
+    },
+    {
       "Key": "PARAM_DeltaPatcher_Preview_Action_Import",
       "Text": "Import"
     },

@@ -307,6 +307,10 @@
     {
       "Key": "PARAM_AutoMerge_Error_Row_Delta_Failed_Add",
       "Text": "Cannot add a row to empty parameter {0}; no template row exists."
+    },
+    {
+      "Key": "PARAM_RowGroups_Error_No_Template",
+      "Text": "Cannot create the rows of group {0}: the param has no row to use as a template."
     }
   ]
 }

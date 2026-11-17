@@ -20,6 +20,25 @@ public class ParamDelta
 {
     public string Name { get; set; }
     public List<RowDelta> Rows { get; set; } = new();
+
+    /// <summary>
+    /// Row table params (rows sharing an ID, see Table Params.json) are stored as whole groups instead of as
+    /// rows, so an insert or delete inside a group can't shift the identity of the other rows in it.
+    /// Older patches have no Groups and still load.
+    /// </summary>
+    public List<RowGroupDelta> Groups { get; set; } = new();
+}
+
+/// <summary>
+/// The full contents of one row table group (all rows with one ID, in order).
+/// Added: the ID isn't in vanilla. Modified: the group replaces the existing one. Deleted: the ID is removed (no rows).
+/// Each row holds every field, so applying a group doesn't depend on the rows it replaces.
+/// </summary>
+public class RowGroupDelta
+{
+    public int ID { get; set; }
+    public RowDeltaState State { get; set; } = RowDeltaState.Modified;
+    public List<RowDelta> Rows { get; set; } = new();
 }
 
 public class RowDelta

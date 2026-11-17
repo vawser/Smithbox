@@ -19,7 +19,12 @@ public enum ParamDeltaConflictStrategy
 public enum ParamDeltaMergeConflictType
 {
     FieldValue = 0,
-    RowState = 1
+    RowState = 1,
+
+    /// <summary>
+    /// Two sources changed the same row table group differently. Resolved by picking one side's whole group.
+    /// </summary>
+    RowGroup = 2
 }
 
 public enum ParamDeltaConflictResolution
@@ -49,6 +54,9 @@ public sealed class ParamDeltaMergeConflict
     internal RowDelta ExistingRowSnapshot { get; init; }
     internal RowDelta IncomingRowSnapshot { get; init; }
 
+    internal RowGroupDelta ExistingGroupSnapshot { get; init; }
+    internal RowGroupDelta IncomingGroupSnapshot { get; init; }
+
     public bool IsResolved => Resolution != ParamDeltaConflictResolution.Unresolved;
 }
 
@@ -61,6 +69,8 @@ public sealed class ParamDeltaAutoMergeResult
     public int SafeRows { get; set; }
     public int SafeFields { get; set; }
     public int IdenticalFields { get; set; }
+    public int SafeGroups { get; set; }
+    public int IdenticalGroups { get; set; }
     public ParamDeltaConflictStrategy Strategy { get; set; }
 
     public int ResolvedConflicts => Conflicts.Count(e => e.IsResolved);
@@ -80,7 +90,14 @@ public sealed class ParamDeltaAutoMergeEngine
         public Dictionary<string, string> FieldSources { get; } = new(StringComparer.Ordinal);
     }
 
+    private sealed class MergedGroup
+    {
+        public RowGroupDelta Group { get; set; } = new();
+        public string Source { get; set; } = "";
+    }
+
     private readonly record struct RowKey(string ParamName, int ID, int Index);
+    private readonly record struct GroupKey(string ParamName, int ID);
 
     public ParamDeltaAutoMergeEngine(ParamDeltaPatcher patcher)
     {
@@ -110,6 +127,27 @@ public sealed class ParamDeltaAutoMergeEngine
             var param = result.Patch.Params.FirstOrDefault(e => e.Name == conflict.ParamName);
             if (param == null)
                 continue;
+
+            // Called every frame by the conflict editor, so each branch replaces in place (idempotent)
+            if (conflict.Type == ParamDeltaMergeConflictType.RowGroup)
+            {
+                var selectedGroup = conflict.Resolution == ParamDeltaConflictResolution.UseLater
+                    ? conflict.IncomingGroupSnapshot
+                    : conflict.ExistingGroupSnapshot;
+
+                if (selectedGroup == null)
+                    continue;
+
+                var groupIndex = param.Groups.FindIndex(e => e.ID == conflict.RowID);
+                var clone = ParamRowGroups.CloneGroup(selectedGroup);
+
+                if (groupIndex >= 0)
+                    param.Groups[groupIndex] = clone;
+                else
+                    param.Groups.Add(clone);
+
+                continue;
+            }
 
             var row = param.Rows.FirstOrDefault(e => e.ID == conflict.RowID && e.Index == conflict.RowIndex);
 
@@ -142,10 +180,12 @@ public sealed class ParamDeltaAutoMergeEngine
             if (selected == null)
                 continue;
 
-            if (row != null)
-                param.Rows.Remove(row);
+            var rowIndex = row != null ? param.Rows.IndexOf(row) : -1;
 
-            param.Rows.Add(CloneRow(selected));
+            if (rowIndex >= 0)
+                param.Rows[rowIndex] = CloneRow(selected);
+            else
+                param.Rows.Add(CloneRow(selected));
         }
     }
 
@@ -176,11 +216,20 @@ public sealed class ParamDeltaAutoMergeEngine
             return result;
 
         var mergedRows = new Dictionary<RowKey, MergedRow>();
+        var mergedGroups = new Dictionary<GroupKey, MergedGroup>();
+        var vanillaGroups = new Dictionary<string, Dictionary<int, RowGroupDelta>>(StringComparer.Ordinal);
 
         foreach (var source in sources)
         {
-            foreach (var paramDelta in source.Delta.Params)
+            foreach (var sourceParamDelta in source.Delta.Params)
             {
+                var paramDelta = PrepareParamDelta(sourceParamDelta);
+
+                foreach (var incomingGroup in paramDelta.Groups)
+                {
+                    MergeGroup(paramDelta.Name, incomingGroup, source.Filename, strategy, result, mergedGroups, vanillaGroups);
+                }
+
                 foreach (var originalRow in paramDelta.Rows)
                 {
                     var incoming = NormalizeRow(paramDelta.Name, originalRow);
@@ -209,15 +258,19 @@ public sealed class ParamDeltaAutoMergeEngine
             }
         }
 
-        foreach (var paramGroup in mergedRows
-                     .OrderBy(e => e.Key.ParamName, StringComparer.Ordinal)
-                     .ThenBy(e => e.Key.ID)
-                     .ThenBy(e => e.Key.Index)
-                     .GroupBy(e => e.Key.ParamName, StringComparer.Ordinal))
-        {
-            var paramDelta = new ParamDelta { Name = paramGroup.Key };
+        var paramNames = mergedRows.Keys.Select(e => e.ParamName)
+            .Concat(mergedGroups.Keys.Select(e => e.ParamName))
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(e => e, StringComparer.Ordinal);
 
-            foreach (var row in paramGroup)
+        foreach (var paramName in paramNames)
+        {
+            var paramDelta = new ParamDelta { Name = paramName };
+
+            foreach (var row in mergedRows
+                         .Where(e => e.Key.ParamName == paramName)
+                         .OrderBy(e => e.Key.ID)
+                         .ThenBy(e => e.Key.Index))
             {
                 if (row.Value.Row.State == RowDeltaState.Modified && row.Value.Row.Fields.Count == 0)
                     continue;
@@ -225,11 +278,147 @@ public sealed class ParamDeltaAutoMergeEngine
                 paramDelta.Rows.Add(CloneRow(row.Value.Row));
             }
 
-            if (paramDelta.Rows.Count > 0)
+            foreach (var group in mergedGroups
+                         .Where(e => e.Key.ParamName == paramName)
+                         .OrderBy(e => e.Key.ID))
+            {
+                paramDelta.Groups.Add(ParamRowGroups.CloneGroup(group.Value.Group));
+            }
+
+            if (paramDelta.Rows.Count > 0 || paramDelta.Groups.Count > 0)
                 result.Patch.Params.Add(paramDelta);
         }
 
         return result;
+    }
+
+    /// <summary>
+    /// A copy of a source's param delta. For a row table param, rows from patches written before groups existed
+    /// are turned into whole groups (positions counted against vanilla, which is what those patches were built
+    /// against), so every table param change is merged as groups.
+    /// </summary>
+    private ParamDelta PrepareParamDelta(ParamDelta source)
+    {
+        var copy = new ParamDelta
+        {
+            Name = source.Name,
+            Rows = source.Rows.ToList(),
+            Groups = source.Groups.ToList()
+        };
+
+        if (copy.Rows.Count > 0 && ParamRowGroups.IsTableParam(Patcher.Project, source.Name))
+        {
+            Patcher.Project.Handler.ParamData.VanillaBank.Params.TryGetValue(source.Name, out var vanillaParam);
+
+            copy.Rows = copy.Rows.Select(CloneRow).ToList();
+            ParamRowGroups.ConvertPositionRows(copy, vanillaParam);
+        }
+
+        return copy;
+    }
+
+    /// <summary>
+    /// Three-way merge of one row table group: vanilla is the base, and a source that leaves the group as it is
+    /// in vanilla doesn't count as a change. The first change is taken; a later, different change is one
+    /// RowGroup conflict holding both whole groups.
+    /// </summary>
+    private void MergeGroup(
+        string paramName,
+        RowGroupDelta source,
+        string sourceName,
+        ParamDeltaConflictStrategy strategy,
+        ParamDeltaAutoMergeResult result,
+        Dictionary<GroupKey, MergedGroup> mergedGroups,
+        Dictionary<string, Dictionary<int, RowGroupDelta>> vanillaGroupCache)
+    {
+        var vanillaGroup = GetVanillaGroup(paramName, source.ID, vanillaGroupCache);
+        var incoming = ParamRowGroups.CloneGroup(source);
+
+        // The state comes from vanilla, not the source (a Selected/All export writes every group it holds)
+        if (incoming.State == RowDeltaState.Deleted || incoming.Rows.Count == 0)
+        {
+            if (vanillaGroup == null)
+                return;
+
+            incoming.State = RowDeltaState.Deleted;
+            incoming.Rows.Clear();
+        }
+        else if (vanillaGroup == null)
+        {
+            incoming.State = RowDeltaState.Added;
+        }
+        else
+        {
+            if (ParamRowGroups.GroupContentEquals(incoming, vanillaGroup))
+                return;
+
+            incoming.State = RowDeltaState.Modified;
+        }
+
+        var key = new GroupKey(paramName, source.ID);
+
+        if (!mergedGroups.TryGetValue(key, out var current))
+        {
+            mergedGroups.Add(key, new MergedGroup { Group = incoming, Source = sourceName });
+            result.SafeGroups++;
+            return;
+        }
+
+        if (ParamRowGroups.GroupContentEquals(current.Group, incoming))
+        {
+            result.IdenticalGroups++;
+            return;
+        }
+
+        result.Conflicts.Add(new ParamDeltaMergeConflict
+        {
+            Type = ParamDeltaMergeConflictType.RowGroup,
+            ParamName = paramName,
+            RowID = source.ID,
+            ExistingSource = current.Source,
+            IncomingSource = sourceName,
+            ExistingValue = DescribeGroup(current.Group),
+            IncomingValue = DescribeGroup(incoming),
+            ExistingState = current.Group.State,
+            IncomingState = incoming.State,
+            Resolution = ResolutionFromStrategy(strategy),
+            ExistingGroupSnapshot = ParamRowGroups.CloneGroup(current.Group),
+            IncomingGroupSnapshot = ParamRowGroups.CloneGroup(incoming)
+        });
+
+        if (strategy == ParamDeltaConflictStrategy.PreferLast)
+        {
+            current.Group = incoming;
+            current.Source = sourceName;
+        }
+    }
+
+    private static string DescribeGroup(RowGroupDelta group)
+    {
+        return group.State == RowDeltaState.Deleted
+            ? LOC.Get("PARAM_AutoMerge_Group_Description_Deleted")
+            : LOC.Get("PARAM_AutoMerge_Group_Description", group.State, group.Rows.Count);
+    }
+
+    private RowGroupDelta GetVanillaGroup(string paramName, int id,
+        Dictionary<string, Dictionary<int, RowGroupDelta>> cache)
+    {
+        if (!cache.TryGetValue(paramName, out var groups))
+        {
+            groups = new Dictionary<int, RowGroupDelta>();
+
+            if (Patcher.Project.Handler.ParamData.VanillaBank.Params.TryGetValue(paramName, out var vanillaParam))
+            {
+                foreach (var (groupID, rows) in ParamRowGroups.Build(vanillaParam))
+                {
+                    groups[groupID] = ParamRowGroups.SerializeGroup(groupID, rows, RowDeltaState.Modified);
+                }
+            }
+
+            cache[paramName] = groups;
+        }
+
+        return groups.GetValueOrDefault(id);
     }
 
     private void ValidateSources(IReadOnlyList<DeltaImportEntry> sources, ParamDeltaAutoMergeResult result)
@@ -768,7 +957,10 @@ public sealed class ParamDeltaAutoMergeTool
 
                 GUI.WrappedText(
                     $"• {source.Filename} | {versionText} | " +
-                    $"{source.ParsedParamCount} {LOC.Get("PARAM_DirectMerge_Loaded_Params")} | {source.Delta.Params.Sum(e => e.Rows.Count)} {LOC.Get("PARAM_DirectMerge_Loaded_Changed_Rows")}");
+                    $"{source.ParsedParamCount} {LOC.Get("PARAM_DirectMerge_Loaded_Params")} | {source.Delta.Params.Sum(e => e.Rows.Count)} {LOC.Get("PARAM_DirectMerge_Loaded_Changed_Rows")}" +
+                    (source.Delta.Params.Any(e => e.Groups.Count > 0)
+                        ? $" | {source.Delta.Params.Sum(e => e.Groups.Count)} {LOC.Get("PARAM_DirectMerge_Loaded_Changed_Groups")}"
+                        : ""));
             }
         }
 
@@ -1404,6 +1596,12 @@ public sealed class ParamDeltaAutoMergeTool
 
         ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Sources", result.SourceCount));
         ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Rows_Merged", result.Patch.Params.Sum(e => e.Rows.Count)));
+
+        if (result.Patch.Params.Any(e => e.Groups.Count > 0) || result.IdenticalGroups > 0)
+        {
+            ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Groups_Merged",
+                result.Patch.Params.Sum(e => e.Groups.Count), result.IdenticalGroups));
+        }
         ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Safe_Field_Changes", result.SafeFields));
         ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Identical_Fields", result.IdenticalFields));
         ImGui.Text(LOC.Get("PARAM_AutoMerge_Summary_Conflicts_Resolved_Unresolved", result.Conflicts.Count, result.ResolvedConflicts, result.UnresolvedConflicts));
@@ -1504,19 +1702,28 @@ public sealed class ParamDeltaAutoMergeTool
                     {
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        GUI.WrappedText(conflict.Type == ParamDeltaMergeConflictType.FieldValue
-                            ? $"{conflict.ParamName} / {conflict.RowID}:{conflict.RowIndex} / {conflict.Field}"
-                            : $"{conflict.ParamName} / {conflict.RowID}:{conflict.RowIndex}");
+                        GUI.WrappedText(conflict.Type switch
+                        {
+                            ParamDeltaMergeConflictType.FieldValue => $"{conflict.ParamName} / {conflict.RowID}:{conflict.RowIndex} / {conflict.Field}",
+                            ParamDeltaMergeConflictType.RowGroup => LOC.Get("PARAM_AutoMerge_ConflictEditor_Group_Path", conflict.ParamName, conflict.RowID),
+                            _ => $"{conflict.ParamName} / {conflict.RowID}:{conflict.RowIndex}"
+                        });
 
                         ImGui.TableSetColumnIndex(1);
-                        GUI.WrappedText(conflict.Type == ParamDeltaMergeConflictType.FieldValue
-                            ? $"{conflict.ExistingSource}: {conflict.ExistingValue}"
-                            : $"{conflict.ExistingSource}: {conflict.ExistingState}");
+                        GUI.WrappedText(conflict.Type == ParamDeltaMergeConflictType.RowState
+                            ? $"{conflict.ExistingSource}: {conflict.ExistingState}"
+                            : $"{conflict.ExistingSource}: {conflict.ExistingValue}");
+
+                        if (conflict.Type == ParamDeltaMergeConflictType.RowGroup)
+                            DisplayGroupSnapshotTooltip(conflict.ExistingGroupSnapshot, conflict.IncomingGroupSnapshot);
 
                         ImGui.TableSetColumnIndex(2);
-                        GUI.WrappedText(conflict.Type == ParamDeltaMergeConflictType.FieldValue
-                            ? $"{conflict.IncomingSource}: {conflict.IncomingValue}"
-                            : $"{conflict.IncomingSource}: {conflict.IncomingState}");
+                        GUI.WrappedText(conflict.Type == ParamDeltaMergeConflictType.RowState
+                            ? $"{conflict.IncomingSource}: {conflict.IncomingState}"
+                            : $"{conflict.IncomingSource}: {conflict.IncomingValue}");
+
+                        if (conflict.Type == ParamDeltaMergeConflictType.RowGroup)
+                            DisplayGroupSnapshotTooltip(conflict.IncomingGroupSnapshot, conflict.ExistingGroupSnapshot);
 
                         ImGui.TableSetColumnIndex(3);
                         var resolutionLabel = GetParamResolutionName(conflict.Resolution);
@@ -1524,7 +1731,7 @@ public sealed class ParamDeltaAutoMergeTool
                         {
                             foreach (ParamDeltaConflictResolution resolution in Enum.GetValues(typeof(ParamDeltaConflictResolution)))
                             {
-                                if (conflict.Type == ParamDeltaMergeConflictType.RowState && resolution == ParamDeltaConflictResolution.Manual)
+                                if (conflict.Type != ParamDeltaMergeConflictType.FieldValue && resolution == ParamDeltaConflictResolution.Manual)
                                     continue;
 
                                 if (ImGui.Selectable(GetParamResolutionName(resolution), conflict.Resolution == resolution))
@@ -1554,7 +1761,12 @@ public sealed class ParamDeltaAutoMergeTool
                         }
 
                         ImGui.TableSetColumnIndex(5);
-                        ImGui.Text(conflict.Type == ParamDeltaMergeConflictType.FieldValue ? LOC.Get("PARAM_AutoMerge_ConflictEditor_Field") : LOC.Get("PARAM_AutoMerge_ConflictEditor_RowState"));
+                        ImGui.Text(conflict.Type switch
+                        {
+                            ParamDeltaMergeConflictType.FieldValue => LOC.Get("PARAM_AutoMerge_ConflictEditor_Field"),
+                            ParamDeltaMergeConflictType.RowGroup => LOC.Get("PARAM_AutoMerge_ConflictEditor_RowGroup"),
+                            _ => LOC.Get("PARAM_AutoMerge_ConflictEditor_RowState")
+                        });
                         index++;
                     }
 
@@ -1570,6 +1782,44 @@ public sealed class ParamDeltaAutoMergeTool
             GUI.Spacer();
             GUI.WrappedText(LOC.Get("PARAM_AutoMerge_ConflictEditor_Cannot_Apply_Hint"));
         }
+    }
+
+    /// <summary>
+    /// Hovering a group conflict side lists that side's rows, with the rows that the other side doesn't have at
+    /// the same position marked
+    /// </summary>
+    private static void DisplayGroupSnapshotTooltip(RowGroupDelta group, RowGroupDelta other)
+    {
+        if (group == null || !ImGui.IsItemHovered())
+            return;
+
+        ImGui.BeginTooltip();
+
+        if (group.State == RowDeltaState.Deleted)
+        {
+            ImGui.Text(LOC.Get("PARAM_AutoMerge_Group_Description_Deleted"));
+        }
+        else
+        {
+            const int maxRows = 40;
+
+            for (var i = 0; i < group.Rows.Count && i < maxRows; i++)
+            {
+                var row = group.Rows[i];
+                var same = other != null && i < other.Rows.Count && ParamRowGroups.RowFieldsEqual(row, other.Rows[i]);
+                var label = LOC.Get("PARAM_DeltaPatcher_Preview_Group_Row_Display_Name", i, row.Name);
+
+                if (same)
+                    ImGui.TextDisabled(label);
+                else
+                    ImGui.Text($"* {label}");
+            }
+
+            if (group.Rows.Count > maxRows)
+                ImGui.TextDisabled(LOC.Get("PARAM_AutoMerge_Group_More_Rows", group.Rows.Count - maxRows));
+        }
+
+        ImGui.EndTooltip();
     }
 
     private static string GetParamResolutionName(ParamDeltaConflictResolution resolution)

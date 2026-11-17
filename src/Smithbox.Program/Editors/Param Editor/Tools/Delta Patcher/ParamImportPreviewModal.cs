@@ -14,9 +14,7 @@ public class ParamImportPreviewModal
     public ParamDeltaPatch PatchForImport = null;
 
     // Selection State
-    private Dictionary<string, bool> ParamEnabled = new();
-    private Dictionary<(string param, int rowId), bool> RowEnabled = new();
-    private Dictionary<(string param, int rowId, string field), bool> FieldEnabled = new();
+    private readonly ParamDeltaPatchTree Tree = new();
 
     public ParamImportPreviewModal(ParamDeltaPatcher patcher)
     {
@@ -28,24 +26,7 @@ public class ParamImportPreviewModal
         Filename = filename;
         PatchForImport = patch;
 
-        ParamEnabled.Clear();
-        RowEnabled.Clear();
-        FieldEnabled.Clear();
-
-        foreach (var param in PatchForImport.Params)
-        {
-            ParamEnabled[param.Name] = true;
-
-            foreach (var row in param.Rows)
-            {
-                RowEnabled[(param.Name, row.ID)] = true;
-
-                foreach (var field in row.Fields)
-                {
-                    FieldEnabled[(param.Name, row.ID, field.Field)] = true;
-                }
-            }
-        }
+        Tree.Reset(patch);
 
         DisplayModal = true;
         InitialLayout = false;
@@ -54,6 +35,7 @@ public class ParamImportPreviewModal
     public void Hide()
     {
         PatchForImport = null;
+        Tree.Reset(null);
         DisplayModal = false;
     }
 
@@ -79,7 +61,9 @@ public class ParamImportPreviewModal
 
             ImGui.Separator();
 
-            DrawPatchContents();
+            ImGui.BeginChild("##import_preview_scroll", new Vector2(600, 400) * DPI.UIScale());
+            Tree.Draw(null);
+            ImGui.EndChild();
 
             ImGui.Separator();
 
@@ -99,110 +83,17 @@ public class ParamImportPreviewModal
 
         if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Enable_All")}##enableAllAction"))
         {
-            SetAllToggles(true);
+            Tree.SetAll(true);
         }
 
         ImGui.SameLine();
 
         if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Disable_All")}##disableAllAction"))
         {
-            SetAllToggles(false);
+            Tree.SetAll(false);
         }
 
         ImGui.Spacing();
-    }
-
-    private void DrawPatchContents()
-    {
-        ImGui.BeginChild("##import_preview_scroll", new Vector2(600, 400) * DPI.UIScale());
-
-        foreach (var param in PatchForImport.Params)
-        {
-            bool enabled = ParamEnabled[param.Name];
-
-            if (ImGui.Checkbox($"##param_{param.Name}", ref enabled))
-            {
-                ParamEnabled[param.Name] = enabled;
-                SetParamChildren(param.Name, enabled);
-            }
-
-            ImGui.SameLine();
-
-            if (IsParamMixed(param.Name))
-            {
-                ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
-                ImGui.SameLine();
-            }
-
-            if (ImGui.TreeNode($"{param.Name}##paramnode"))
-            {
-                foreach (var row in param.Rows)
-                {
-                    DrawRow(param.Name, row);
-                }
-
-                ImGui.TreePop();
-            }
-        }
-
-        ImGui.EndChild();
-    }
-
-    private void DrawRow(string paramName, RowDelta row)
-    {
-        var rowKey = (paramName, row.ID);
-        bool rowEnabled = RowEnabled[rowKey];
-
-        if (ImGui.Checkbox($"##row_{paramName}_{row.ID}", ref rowEnabled))
-        {
-            RowEnabled[rowKey] = rowEnabled;
-
-            SetRowChildren(paramName, row, rowEnabled);
-            UpdateParamFromRows(paramName);
-        }
-
-        ImGui.SameLine();
-
-        if (IsRowMixed(paramName, row))
-        {
-            ImGui.TextColored(new Vector4(1f, 0.8f, 0.3f, 1f), LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Mixed"));
-            ImGui.SameLine();
-        }
-
-        string stateLabel = row.State switch
-        {
-            RowDeltaState.Added => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Added"),
-            RowDeltaState.Modified => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Modified"),
-            RowDeltaState.Deleted => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Deleted"),
-            _ => LOC.Get("PARAM_DeltaPatcher_Preview_Row_State_Unknown")
-        };
-
-        var displayName = LOC.Get("PARAM_DeltaPatcher_Preview_Row_Display_Name", stateLabel, row.ID, row.Name);
-
-        if (ImGui.TreeNode($"{displayName}##rownode"))
-        {
-            foreach (var field in row.Fields)
-                DrawField(paramName, row.ID, field);
-
-            ImGui.TreePop();
-        }
-    }
-
-    private void DrawField(string paramName, int rowId, FieldDelta field)
-    {
-        var fieldKey = (paramName, rowId, field.Field);
-        bool fieldEnabled = FieldEnabled[fieldKey];
-
-        if (ImGui.Checkbox($"##field_{paramName}_{rowId}_{field.Field}", ref fieldEnabled))
-        {
-            FieldEnabled[fieldKey] = fieldEnabled;
-
-            UpdateRowFromFields(paramName, rowId);
-            UpdateParamFromRows(paramName);
-        }
-
-        ImGui.SameLine();
-        ImGui.Text($"{field.Field}: {field.Value}");
     }
 
     private void DrawFooterButtons()
@@ -210,7 +101,7 @@ public class ParamImportPreviewModal
         // Import
         if (ImGui.Button($"{LOC.Get("PARAM_DeltaPatcher_Preview_Action_Import")}##importAction", new Vector2(120 * DPI.UIScale(), 0)))
         {
-            var filtered = BuildFilteredPatch();
+            var filtered = Tree.BuildFilteredPatch();
 
             Patcher.Importer.ImportDelta(Filename, filtered);
 
@@ -226,140 +117,5 @@ public class ParamImportPreviewModal
         {
             Hide();
         }
-    }
-
-    private void SetAllToggles(bool enabled)
-    {
-        foreach (var key in ParamEnabled.Keys.ToList())
-        {
-            ParamEnabled[key] = enabled;
-        }
-
-        foreach (var key in RowEnabled.Keys.ToList())
-        {
-            RowEnabled[key] = enabled;
-        }
-
-        foreach (var key in FieldEnabled.Keys.ToList())
-        {
-            FieldEnabled[key] = enabled;
-        }
-    }
-
-    private void SetParamChildren(string paramName, bool enabled)
-    {
-        var param = PatchForImport.Params.First(p => p.Name == paramName);
-
-        foreach (var row in param.Rows)
-        {
-            RowEnabled[(paramName, row.ID)] = enabled;
-
-            foreach (var field in row.Fields)
-            {
-                FieldEnabled[(paramName, row.ID, field.Field)] = enabled;
-            }
-        }
-    }
-
-    private void SetRowChildren(string paramName, RowDelta row, bool enabled)
-    {
-        foreach (var field in row.Fields)
-        {
-            FieldEnabled[(paramName, row.ID, field.Field)] = enabled;
-        }
-    }
-
-    private void UpdateRowFromFields(string paramName, int rowId)
-    {
-        var param = PatchForImport.Params.First(p => p.Name == paramName);
-        var row = param.Rows.First(r => r.ID == rowId);
-
-        bool anyEnabled = row.Fields.Any(f =>
-            FieldEnabled[(paramName, rowId, f.Field)]);
-
-        RowEnabled[(paramName, rowId)] = anyEnabled;
-    }
-
-    private void UpdateParamFromRows(string paramName)
-    {
-        var param = PatchForImport.Params.First(p => p.Name == paramName);
-
-        bool anyEnabled = param.Rows.Any(r =>
-            RowEnabled[(paramName, r.ID)]);
-
-        ParamEnabled[paramName] = anyEnabled;
-    }
-
-    private bool IsParamMixed(string paramName)
-    {
-        var param = PatchForImport.Params.First(p => p.Name == paramName);
-
-        bool anyOn = param.Rows.Any(r => RowEnabled[(paramName, r.ID)]);
-        bool anyOff = param.Rows.Any(r => !RowEnabled[(paramName, r.ID)]);
-
-        return anyOn && anyOff;
-    }
-
-    private bool IsRowMixed(string paramName, RowDelta row)
-    {
-        bool anyOn = row.Fields.Any(f =>
-            FieldEnabled[(paramName, row.ID, f.Field)]);
-
-        bool anyOff = row.Fields.Any(f =>
-            !FieldEnabled[(paramName, row.ID, f.Field)]);
-
-        return anyOn && anyOff;
-    }
-
-    private ParamDeltaPatch BuildFilteredPatch()
-    {
-        var result = new ParamDeltaPatch
-        {
-            ProjectType = PatchForImport.ProjectType,
-            ParamVersion = PatchForImport.ParamVersion,
-            Tag = PatchForImport.Tag
-        };
-
-        foreach (var param in PatchForImport.Params)
-        {
-            if (!ParamEnabled[param.Name])
-                continue;
-
-            var newParam = new ParamDelta { Name = param.Name };
-
-            foreach (var row in param.Rows)
-            {
-                if (!RowEnabled[(param.Name, row.ID)])
-                    continue;
-
-                var newRow = new RowDelta
-                {
-                    ID = row.ID,
-                    Index = row.Index,
-                    Name = row.Name,
-                    State = row.State
-                };
-
-                foreach (var field in row.Fields)
-                {
-                    if (!FieldEnabled[(param.Name, row.ID, field.Field)])
-                        continue;
-
-                    newRow.Fields.Add(new FieldDelta
-                    {
-                        Field = field.Field,
-                        Value = field.Value
-                    });
-                }
-
-                if (newRow.Fields.Count > 0)
-                    newParam.Rows.Add(newRow);
-            }
-
-            if (newParam.Rows.Count > 0)
-                result.Params.Add(newParam);
-        }
-
-        return result;
     }
 }

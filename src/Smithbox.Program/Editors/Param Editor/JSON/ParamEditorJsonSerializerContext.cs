@@ -79,6 +79,7 @@ namespace StudioCore.Editors.ParamEditor;
 [JsonSerializable(typeof(ParamDeltaPatch))]
 [JsonSerializable(typeof(ParamDelta))]
 [JsonSerializable(typeof(RowDelta))]
+[JsonSerializable(typeof(RowGroupDelta))]
 [JsonSerializable(typeof(FieldDelta))]
 
 // Group References

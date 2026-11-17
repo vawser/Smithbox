@@ -66,6 +66,12 @@ public class ParamDeltaImporter
 
         foreach (var curParam in primaryBank.Params)
         {
+            var pDelta = patch.Params.FirstOrDefault(
+                e => e.Name == curParam.Key);
+
+            if (pDelta == null)
+                continue;
+
             processed++;
 
             Patcher.ImportProgressModal.ReportProgress?.Invoke(new()
@@ -75,235 +81,213 @@ public class ParamDeltaImporter
                 Percent = processed / (float)total
             });
 
-            var pDelta = patch.Params.FirstOrDefault(
-                e => e.Name == curParam.Key);
-
-            if (pDelta == null)
-                continue;
-
             var param = curParam.Value;
 
-            // Store this to use in the Row Import section as a template for additions.
-            var srcRow = param.Rows.First();
+            if (param.Rows.Count == 0)
+                continue;
 
-            var vanillaParam = vanillaBank.Params.FirstOrDefault(e => e.Key == curParam.Key);
+            vanillaBank.Params.TryGetValue(curParam.Key, out var vanillaParam);
 
-            // Swap orientation to delta first now as the delta is the 'truth'
-            foreach (var rDelta in pDelta.Rows)
+            // Work on a copy, so converting older rows to groups doesn't change the caller's patch
+            var work = new ParamDelta
             {
-                HandleRowImport(curParam.Key, param, vanillaParam.Value, srcRow, rDelta);
+                Name = pDelta.Name,
+                Rows = pDelta.Rows.Select(ParamRowGroups.CloneRow).ToList(),
+                Groups = pDelta.Groups.Select(ParamRowGroups.CloneGroup).ToList()
+            };
+
+            // Patches from before groups existed hold table params as rows, numbered in the project they came
+            // from: apply them to the project's groups by position
+            if (ParamRowGroups.IsTableParam(Patcher.Project, curParam.Key))
+            {
+                ParamRowGroups.ConvertPositionRows(work, param);
             }
 
-            if (pDelta.Rows.Any())
+            var changed = false;
+
+            changed |= HandleGroupImport(curParam.Key, param, vanillaParam, work.Groups);
+            changed |= HandleRowsImport(curParam.Key, param, work.Rows);
+
+            if (changed)
             {
                 ParamDirtyTracker.MarkDirty(param);
             }
-
-            //Thread.Sleep(1000);
         }
 
         return true;
     }
 
-    public void HandleRowImport(string paramName, Param srcParam, Param vanillaParam, Param.Row srcRow, RowDelta rowDelta)
+    #region Row Table Groups
+    /// <summary>
+    /// Each group replaces the project's group of the same ID in one step, honouring the Added / Modified /
+    /// Deleted import options
+    /// </summary>
+    public bool HandleGroupImport(string paramName, Param param, Param vanillaParam, List<RowGroupDelta> groups)
     {
+        if (groups.Count == 0)
+            return false;
+
         var addRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows;
         var modRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows;
         var delRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
 
         var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
         var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
+        var allowOverwrite = CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
 
-        // Rows can share an ID under this row-index-based usage pattern, so the diff cache
-        // (keyed by row instance) can only tell us whether a *specific* row differs from
-        // vanilla once we know which row that is. rowDelta.ID alone isn't enough to look
-        // that up - it has to be paired with rowDelta.Index against the matching row found
-        // below, the same way that row is located for modification/deletion.
-        HashSet<Param.Row> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
+        var fallbackTemplate = vanillaParam?.Rows.FirstOrDefault() ?? param.Rows.FirstOrDefault();
+        var changed = false;
 
-        var rowStateIsAdded = rowDelta.State is RowDeltaState.Added;
-
-        if (Patcher.ImportMode is DeltaImportMode.Simple)
-            rowStateIsAdded = true;
-
-        if (addRows && rowStateIsAdded)
+        foreach (var group in groups)
         {
-            var newRow = new Param.Row(srcRow);
+            var oldRows = ParamRowGroups.GetGroup(param, group.ID);
 
-            newRow.ID = rowDelta.ID;
-            newRow.Name = rowDelta.Name;
-
-            // Apply the fields from the delta to the new row
-            HandleFieldImport(newRow, rowDelta);
-
-            if (CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite)
+            if (group.State == RowDeltaState.Deleted)
             {
-                var matchRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
-                if (matchRow != null)
+                if (delRows && oldRows.Count > 0)
                 {
-                    var insertIndex = srcParam.Rows.ToList().IndexOf(matchRow);
+                    ParamRowGroups.ReplaceGroup(param, group.ID, new List<Param.Row>());
+                    changed = true;
+                }
 
-                    srcParam.InsertRow(insertIndex, newRow);
-                    srcParam.RemoveRow(matchRow);
-                }
-                else
-                {
-                    srcParam.AddRow(newRow);
-                }
+                continue;
+            }
+
+            var state = Patcher.ImportMode is DeltaImportMode.Simple ? RowDeltaState.Added : group.State;
+
+            if (state == RowDeltaState.Added)
+            {
+                if (!addRows)
+                    continue;
+
+                // A group replaces the existing one rather than being added beside it (two copies of a
+                // group would merge into one group of doubled rows)
+                if (oldRows.Count > 0 && restrictRowAdd && !allowOverwrite)
+                    continue;
             }
             else
             {
-                var insertRow = srcParam.Rows.FirstOrDefault(e => e.ID == rowDelta.ID);
-                if (insertRow != null)
+                if (!modRows)
+                    continue;
+
+                if (restrictRowMod && oldRows.Count > 0)
                 {
-                    if (!restrictRowAdd)
-                    {
-                        var insertIndex = srcParam.Rows.ToList().IndexOf(insertRow);
-                        srcParam.InsertRow(insertIndex, newRow);
-                    }
-                }
-                else
-                {
-                    srcParam.AddRow(newRow);
+                    var vanillaRows = ParamRowGroups.GetGroup(vanillaParam, group.ID);
+
+                    if (!ParamRowGroups.GroupEquals(oldRows, vanillaRows))
+                        continue;
                 }
             }
+
+            var templates = oldRows.Count > 0 ? oldRows : ParamRowGroups.GetGroup(vanillaParam, group.ID);
+            var newRows = ParamRowGroups.CreateGroupRows(param, group, templates, fallbackTemplate);
+
+            ParamRowGroups.ReplaceGroup(param, group.ID, newRows);
+            changed = true;
         }
-        else if (rowDelta.State is RowDeltaState.Deleted or RowDeltaState.Modified)
+
+        return changed;
+    }
+    #endregion
+
+    #region Rows
+    /// <summary>
+    /// Rows keyed by (ID, Index). Every key is matched to its row before anything changes, so a delete or insert
+    /// can't move a later delta onto another row with the same ID.
+    /// </summary>
+    public bool HandleRowsImport(string paramName, Param srcParam, List<RowDelta> rowDeltas)
+    {
+        if (rowDeltas.Count == 0)
+            return false;
+
+        var addRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Added_Rows;
+        var modRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Modified_Rows;
+        var delRows = CFG.Current.ParamEditor_DeltaPatcher_Import_Deleted_Rows;
+
+        var restrictRowAdd = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Add;
+        var restrictRowMod = CFG.Current.ParamEditor_DeltaPatcher_Import_Restrict_Row_Modify;
+        var allowOverwrite = CFG.Current.ParamEditor_DeltaPatcher_Import_Allow_Row_Overwrite;
+
+        // Keyed by row instance, so it tells apart rows that share an ID
+        HashSet<Param.Row> vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
+
+        // Template for added rows
+        var srcRow = srcParam.Rows.First();
+
+        var positions = ParamRowGroups.BuildPositionMap(srcParam);
+        var targets = rowDeltas
+            .Select(rd => (Delta: rd, Target: positions.GetValueOrDefault((rd.ID, rd.Index))))
+            .ToList();
+
+        var toDelete = new List<Param.Row>();
+        var changed = false;
+
+        foreach (var (rowDelta, target) in targets)
         {
-            var curRowID = 0;
-            int internalIndex = 0;
+            var rowStateIsAdded = rowDelta.State is RowDeltaState.Added;
 
-            Param.Row rowToDelete = null;
+            if (Patcher.ImportMode is DeltaImportMode.Simple)
+                rowStateIsAdded = true;
 
-            foreach (var row in srcParam.Rows)
+            if (rowStateIsAdded)
             {
-                // Handle the indexing of rows with the same ID
-                if (row.ID == curRowID)
+                if (!addRows)
+                    continue;
+
+                var newRow = new Param.Row(target ?? srcRow);
+
+                newRow.ID = rowDelta.ID;
+                newRow.Name = rowDelta.Name;
+
+                // Apply the fields from the delta to the new row
+                HandleFieldImport(newRow, rowDelta);
+
+                var idExists = target != null || srcParam.Rows.Any(e => e.ID == rowDelta.ID);
+
+                if (allowOverwrite && target != null)
                 {
-                    internalIndex++;
+                    var insertIndex = srcParam.IndexOfRow(target);
+
+                    srcParam.InsertRow(insertIndex, newRow);
+                    srcParam.RemoveRow(target);
+                    changed = true;
                 }
-                else
+                else if (!idExists || !restrictRowAdd)
                 {
-                    internalIndex = 0;
+                    ParamRowGroups.InsertRowAtPosition(srcParam, newRow, rowDelta.ID, rowDelta.Index);
+                    changed = true;
                 }
-
-                if (rowDelta.ID == row.ID && rowDelta.Index == internalIndex)
-                {
-                    if (modRows &&
-                        rowDelta.State is RowDeltaState.Modified)
-                    {
-                        var proceed = true;
-
-                        // If row modification is restricted, and this row is already modified, then ignore.
-                        if (restrictRowMod && vanillaDiffCache.Contains(row))
-                        {
-                            proceed = false;
-                        }
-
-                        if (proceed)
-                        {
-                            HandleFieldImport(row, rowDelta);
-                        }
-                    }
-                    else if (delRows &&
-                        rowDelta.State is RowDeltaState.Deleted)
-                    {
-                        rowToDelete = row;
-                    }
-                }
-
-                curRowID = row.ID;
             }
-
-            if (rowToDelete != null)
+            else if (rowDelta.State is RowDeltaState.Modified)
             {
-                srcParam.RemoveRow(rowToDelete);
+                if (!modRows || target == null)
+                    continue;
+
+                // If row modification is restricted, and this row is already modified, then ignore.
+                if (restrictRowMod && vanillaDiffCache.Contains(target))
+                    continue;
+
+                HandleFieldImport(target, rowDelta);
+                changed = true;
+            }
+            else if (rowDelta.State is RowDeltaState.Deleted)
+            {
+                if (delRows && target != null)
+                    toDelete.Add(target);
             }
         }
+
+        foreach (var row in toDelete)
+        {
+            changed |= srcParam.RemoveRow(row);
+        }
+
+        return changed;
     }
 
     public void HandleFieldImport(Param.Row curRow, RowDelta rowDelta)
     {
-        foreach (var field in rowDelta.Fields)
-        {
-            var curFieldDef = curRow.Def.Fields.FirstOrDefault(e => e.InternalName == field.Field);
-
-            if (curFieldDef == null)
-                continue;
-
-            var curCol = curRow.Columns.FirstOrDefault(e => e.Def == curFieldDef);
-
-            if (curCol == null)
-                continue;
-
-            // We have to re-cast the string here to the correct type
-            // since the SetValue method assumes an object, so passing a string fails
-            switch (curFieldDef.DisplayType)
-            {
-                case PARAMDEF.DefType.s8:
-                    if (sbyte.TryParse(field.Value, out var sbyteVal))
-                    {
-                        curCol.SetValue(curRow, sbyteVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.s16:
-                    if (short.TryParse(field.Value, out var shortVal))
-                    {
-                        curCol.SetValue(curRow, shortVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.s32:
-                case PARAMDEF.DefType.b32:
-                    if (int.TryParse(field.Value, out var intVal))
-                    {
-                        curCol.SetValue(curRow, intVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.f32:
-                case PARAMDEF.DefType.angle32:
-                    if (float.TryParse(field.Value, out var floatVal))
-                    {
-                        curCol.SetValue(curRow, floatVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.f64:
-                    if (double.TryParse(field.Value, out var doubleVal))
-                    {
-                        curCol.SetValue(curRow, doubleVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.u8:
-                case PARAMDEF.DefType.dummy8:
-                    if (curCol.Def.ArrayLength > 1)
-                    {
-                        byte[] val = ParamUtils.Dummy8Read(field.Value, curCol.Def.ArrayLength);
-                        curCol.SetValue(curRow, val);
-                    }
-                    else
-                    {
-                        if (byte.TryParse(field.Value, out var byteVal))
-                        {
-                            curCol.SetValue(curRow, byteVal);
-                        }
-                    }
-                    break;
-                case PARAMDEF.DefType.u16:
-                    if (ushort.TryParse(field.Value, out var ushortVal))
-                    {
-                        curCol.SetValue(curRow, ushortVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.u32:
-                    if (uint.TryParse(field.Value, out var uintVal))
-                    {
-                        curCol.SetValue(curRow, uintVal);
-                    }
-                    break;
-                case PARAMDEF.DefType.fixstr:
-                case PARAMDEF.DefType.fixstrW:
-                    curCol.SetValue(curRow, field.Value);
-                    break;
-            }
-        }
+        ParamRowGroups.ApplyFields(curRow, rowDelta.Fields);
     }
+    #endregion
 }

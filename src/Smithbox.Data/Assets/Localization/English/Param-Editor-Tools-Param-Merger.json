@@ -97,6 +97,14 @@
       "Text": "Merged target project rows: {0} into this project."
     },
     {
+      "Key": "PARAM_Merger_Log_Merged_Groups",
+      "Text": "Merged {0} row table groups of {1} as whole groups."
+    },
+    {
+      "Key": "PARAM_Merger_Action_Merge_Groups",
+      "Text": "Merge {0} row table groups"
+    },
+    {
       "Key": "PARAM_Merger_MassEdit_Merger_Header",
       "Text": "Mass Edit"
     },

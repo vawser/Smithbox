@@ -202,7 +202,7 @@
     },
     {
       "Key": "PARAM_AutoMerge_ConflictEditor_Cannot_Apply_Hint",
-      "Text": "Resolve every conflict in the table before building/importing. Field conflicts support Earlier, Later, or a manually edited value. Row-state conflicts support Earlier or Later."
+      "Text": "Resolve every conflict in the table before building/importing. Field conflicts support Earlier, Later, or a manually edited value. Row-state and row group conflicts support Earlier or Later. Hover a row group conflict to see its rows; rows marked * differ from the other side."
     },
     {
       "Key": "PARAM_AutoMerge_ConflictResolution_UseEarlier",
@@ -611,6 +611,34 @@
     {
       "Key": "PARAM_ProjectMerge_Merged_Mod_Failed",
       "Text": "Build failed: {0}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Summary_Groups_Merged",
+      "Text": "Row table groups merged: {0} (same change in several sources: {1})"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_Group_Path",
+      "Text": "{0} / group {1}"
+    },
+    {
+      "Key": "PARAM_AutoMerge_ConflictEditor_RowGroup",
+      "Text": "Row group"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Group_Description",
+      "Text": "{0}, {1} rows"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Group_Description_Deleted",
+      "Text": "Group deleted"
+    },
+    {
+      "Key": "PARAM_AutoMerge_Group_More_Rows",
+      "Text": "... and {0} more rows"
+    },
+    {
+      "Key": "PARAM_DirectMerge_Loaded_Changed_Groups",
+      "Text": "changed row table groups"
     }
   ]
 }

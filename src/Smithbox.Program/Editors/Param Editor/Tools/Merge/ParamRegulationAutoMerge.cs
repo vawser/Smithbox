@@ -489,7 +489,9 @@ public sealed class ParamRegulationAutoMerge
                 .Select(column => column.Def.InternalName)
                 .ToHashSet(StringComparer.Ordinal);
 
-            foreach (var row in paramDelta.Rows)
+            // Group rows lose the same fields; a field the current version added keeps the value of the
+            // template row when the group is applied
+            foreach (var row in paramDelta.Rows.Concat(paramDelta.Groups.SelectMany(g => g.Rows)))
             {
                 for (var fieldIndex = row.Fields.Count - 1; fieldIndex >= 0; fieldIndex--)
                 {
@@ -506,7 +508,7 @@ public sealed class ParamRegulationAutoMerge
                 row.Fields.Count == 0 &&
                 string.IsNullOrWhiteSpace(row.Name));
 
-            if (paramDelta.Rows.Count == 0)
+            if (paramDelta.Rows.Count == 0 && paramDelta.Groups.Count == 0)
                 patch.Params.RemoveAt(paramIndex);
         }
 
@@ -552,6 +554,14 @@ public sealed class ParamRegulationAutoMerge
     private ParamDelta CompareParam(string paramName, Param source, Param vanilla)
     {
         var result = new ParamDelta { Name = paramName };
+
+        // Row table params: whole groups, so an insert or delete inside a group stays one change
+        if (ParamRowGroups.IsTableParam(Patcher.Project, paramName))
+        {
+            result.Groups = ParamRowGroups.DiffGroups(source, vanilla);
+            return result;
+        }
+
         var sourceRows = BuildRowMap(source);
         var vanillaRows = BuildRowMap(vanilla);
 
@@ -587,22 +597,8 @@ public sealed class ParamRegulationAutoMerge
 
     private Dictionary<RowKey, Param.Row> BuildRowMap(Param param)
     {
-        var result = new Dictionary<RowKey, Param.Row>();
-        var currentRowID = 0;
-        var internalIndex = 0;
-
-        foreach (var row in param.Rows)
-        {
-            if (row.ID == currentRowID)
-                internalIndex++;
-            else
-                internalIndex = 0;
-
-            result[new RowKey(row.ID, internalIndex)] = row;
-            currentRowID = row.ID;
-        }
-
-        return result;
+        return ParamRowGroups.BuildPositionMap(param)
+            .ToDictionary(e => new RowKey(e.Key.ID, e.Key.Index), e => e.Value);
     }
 
     private RowDelta CreateAddedRow(RowKey key, Param.Row row)
@@ -678,6 +674,8 @@ public sealed class ParamRegulationAutoMerge
 
     private void ApplyMergedPatch(Dictionary<string, Param> paramsByName, ParamDeltaPatch patch)
     {
+        var vanillaParams = Patcher.Project.Handler.ParamData.VanillaBank.Params;
+
         foreach (var paramDelta in patch.Params)
         {
             if (!paramsByName.TryGetValue(paramDelta.Name, out var param))
@@ -686,31 +684,71 @@ public sealed class ParamRegulationAutoMerge
                     LOC.Get("PARAM_AutoMerge_Error_Base_Reg_Missing_Param", paramDelta.Name));
             }
 
-            foreach (var rowDelta in paramDelta.Rows)
-            {
-                ApplyRowDelta(paramDelta.Name, param, rowDelta);
-            }
+            vanillaParams.TryGetValue(paramDelta.Name, out var vanillaParam);
+
+            ApplyGroupDeltas(paramDelta.Name, param, vanillaParam, paramDelta.Groups);
+            ApplyRowDeltas(paramDelta.Name, param, vanillaParam, paramDelta.Rows);
         }
     }
 
-    private void ApplyRowDelta(string paramName, Param param, RowDelta rowDelta)
+    /// <summary>
+    /// Each row table group replaces the base regulation's group of the same ID in one step
+    /// </summary>
+    private static void ApplyGroupDeltas(string paramName, Param param, Param vanillaParam, List<RowGroupDelta> groups)
     {
-        var existing = FindRow(param, rowDelta.ID, rowDelta.Index);
+        var fallbackTemplate = param.Rows.FirstOrDefault() ?? vanillaParam?.Rows.FirstOrDefault();
 
-        if (rowDelta.State == RowDeltaState.Deleted)
+        foreach (var group in groups)
         {
-            if (existing != null)
-                param.RemoveRow(existing);
-            return;
+            var oldRows = ParamRowGroups.GetGroup(param, group.ID);
+            var templates = oldRows.Count > 0 ? oldRows : ParamRowGroups.GetGroup(vanillaParam, group.ID);
+            var newRows = ParamRowGroups.CreateGroupRows(param, group, templates, fallbackTemplate);
+
+            ParamRowGroups.ReplaceGroup(param, group.ID, newRows);
         }
+    }
 
-        if (existing == null)
+    /// <summary>
+    /// Every (ID, Index) is matched to its row before anything changes, so deleting or adding a row can't move a
+    /// later delta onto another row with the same ID
+    /// </summary>
+    private void ApplyRowDeltas(string paramName, Param param, Param vanillaParam, List<RowDelta> rowDeltas)
+    {
+        if (rowDeltas.Count == 0)
+            return;
+
+        var positions = ParamRowGroups.BuildPositionMap(param);
+        var targets = rowDeltas
+            .Select(rd => (Delta: rd, Existing: positions.GetValueOrDefault((rd.ID, rd.Index))))
+            .ToList();
+
+        var toDelete = new List<Param.Row>();
+        var toAdd = new List<(RowDelta Delta, Param.Row Row)>();
+
+        foreach (var (rowDelta, existing) in targets)
         {
+            if (rowDelta.State == RowDeltaState.Deleted)
+            {
+                if (existing != null)
+                    toDelete.Add(existing);
+
+                continue;
+            }
+
+            if (existing != null)
+            {
+                if (!string.IsNullOrWhiteSpace(rowDelta.Name))
+                    existing.Name = rowDelta.Name;
+
+                Patcher.Importer.HandleFieldImport(existing, rowDelta);
+                continue;
+            }
+
             Param.Row template;
 
             if (rowDelta.State == RowDeltaState.Modified)
             {
-                template = FindVanillaRow(paramName, rowDelta.ID, rowDelta.Index);
+                template = ParamRowGroups.FindRowAtPosition(vanillaParam, rowDelta.ID, rowDelta.Index);
                 if (template == null)
                 {
                     throw new InvalidDataException(
@@ -720,8 +758,7 @@ public sealed class ParamRegulationAutoMerge
             }
             else
             {
-                template = param.Rows.FirstOrDefault() ??
-                    Patcher.Project.Handler.ParamData.VanillaBank.Params[paramName].Rows.FirstOrDefault();
+                template = param.Rows.FirstOrDefault() ?? vanillaParam?.Rows.FirstOrDefault();
 
                 if (template == null)
                 {
@@ -730,73 +767,25 @@ public sealed class ParamRegulationAutoMerge
                 }
             }
 
-            existing = new Param.Row(template, param)
+            var newRow = new Param.Row(template, param)
             {
                 ID = rowDelta.ID,
                 Name = rowDelta.Name
             };
 
-            InsertRowAtIdentity(param, existing, rowDelta.ID, rowDelta.Index);
+            Patcher.Importer.HandleFieldImport(newRow, rowDelta);
+            toAdd.Add((rowDelta, newRow));
         }
-        else if (!string.IsNullOrWhiteSpace(rowDelta.Name))
+
+        foreach (var row in toDelete)
         {
-            existing.Name = rowDelta.Name;
+            param.RemoveRow(row);
         }
 
-        Patcher.Importer.HandleFieldImport(existing, rowDelta);
-    }
-
-    private Param.Row FindVanillaRow(string paramName, int id, int index)
-    {
-        if (!Patcher.Project.Handler.ParamData.VanillaBank.Params.TryGetValue(paramName, out var vanillaParam))
-            return null;
-
-        return FindRow(vanillaParam, id, index);
-    }
-
-    private static Param.Row FindRow(Param param, int id, int index)
-    {
-        var currentRowID = 0;
-        var internalIndex = 0;
-
-        foreach (var row in param.Rows)
+        foreach (var (rowDelta, row) in toAdd)
         {
-            if (row.ID == currentRowID)
-                internalIndex++;
-            else
-                internalIndex = 0;
-
-            if (row.ID == id && internalIndex == index)
-                return row;
-
-            currentRowID = row.ID;
+            ParamRowGroups.InsertRowAtPosition(param, row, rowDelta.ID, rowDelta.Index);
         }
-
-        return null;
-    }
-
-    private static void InsertRowAtIdentity(Param param, Param.Row newRow, int id, int index)
-    {
-        var rows = param.Rows.ToList();
-        var matchingPositions = rows
-            .Select((row, position) => new { row, position })
-            .Where(e => e.row.ID == id)
-            .Select(e => e.position)
-            .ToList();
-
-        if (matchingPositions.Count == 0)
-        {
-            param.AddRow(newRow);
-            return;
-        }
-
-        if (index < matchingPositions.Count)
-        {
-            param.InsertRow(matchingPositions[index], newRow);
-            return;
-        }
-
-        param.InsertRow(matchingPositions[^1] + 1, newRow);
     }
 
     private static string NormalizeUserPath(string path)

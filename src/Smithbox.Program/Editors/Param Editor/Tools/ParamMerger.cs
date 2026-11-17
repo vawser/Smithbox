@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.GparamEditor;
 using System;
 using System.Collections.Generic;
@@ -307,6 +308,15 @@ public class ParamMerger
 
         ParamMerge_InProgress = true;
 
+        // Row table params are merged as whole groups: pasting rows one at a time replaces the first row with
+        // the ID each time, which can't tell apart rows that share an ID
+        var tableParams = TargetParams
+            .Where(e => e.Value && ParamRowGroups.IsTableParam(Project, e.Key))
+            .Select(e => e.Key)
+            .ToHashSet();
+
+        MergeTableParams(auxBank, tableParams);
+
         // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
         // RowSearchEngine: modified && unique ID:
         // MERowOperation: paste
@@ -316,7 +326,7 @@ public class ParamMerger
         {
             foreach (var entry in TargetParams)
             {
-                if (entry.Value)
+                if (entry.Value && !tableParams.Contains(entry.Key))
                 {
                     var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: added: paste;";
 
@@ -328,7 +338,7 @@ public class ParamMerger
         {
             foreach (var entry in TargetParams)
             {
-                if (entry.Value)
+                if (entry.Value && !tableParams.Contains(entry.Key))
                 {
                     var command = $"auxparam {ParamMerge_TargetProject.Descriptor.ProjectName} {entry.Key}: auxmodified: paste;";
 
@@ -345,5 +355,65 @@ public class ParamMerger
         ParamMerge_InProgress = false;
 
         Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Merged_Project", ParamMerge_TargetProject.Descriptor.ProjectName));
+    }
+
+    /// <summary>
+    /// Copies each changed group of the target project into this project, as one undoable action.
+    /// Added: the ID isn't in vanilla. Modified: the target's group differs from vanilla.
+    /// A group already equal to this project's group is skipped. Deleted groups aren't merged, the same as
+    /// rows in the Mass Edit merge.
+    /// </summary>
+    private void MergeTableParams(ParamBank auxBank, HashSet<string> tableParams)
+    {
+        var paramData = View.Project.Handler.ParamData;
+        var actions = new List<EditorAction>();
+        var groupCount = 0;
+
+        foreach (var paramKey in tableParams)
+        {
+            if (!auxBank.Params.TryGetValue(paramKey, out var auxParam) ||
+                !paramData.PrimaryBank.Params.TryGetValue(paramKey, out var primaryParam))
+                continue;
+
+            paramData.VanillaBank.Params.TryGetValue(paramKey, out var vanillaParam);
+
+            var vanillaGroups = ParamRowGroups.Build(vanillaParam);
+            var primaryGroups = ParamRowGroups.Build(primaryParam);
+            var changes = new List<(int ID, List<Param.Row> NewRows)>();
+
+            foreach (var (id, auxRows) in ParamRowGroups.Build(auxParam))
+            {
+                if (vanillaGroups.TryGetValue(id, out var vanillaRows))
+                {
+                    if (!ParamMerge_IncludeModified || ParamRowGroups.GroupEquals(auxRows, vanillaRows))
+                        continue;
+                }
+                else if (!ParamMerge_IncludeAdded)
+                {
+                    continue;
+                }
+
+                if (primaryGroups.TryGetValue(id, out var primaryRows) && ParamRowGroups.GroupEquals(auxRows, primaryRows))
+                    continue;
+
+                changes.Add((id, auxRows.Select(r => new Param.Row(r, primaryParam)).ToList()));
+            }
+
+            if (changes.Count == 0)
+                continue;
+
+            actions.Add(new ReplaceRowGroupsAction(View.Editor, primaryParam, changes));
+            groupCount += changes.Count;
+
+            Smithbox.Log<ParamMerger>(LOC.Get("PARAM_Merger_Log_Merged_Groups", changes.Count, paramKey));
+        }
+
+        if (actions.Count == 0)
+            return;
+
+        var compound = new CompoundAction(actions);
+        compound.DisplayName = LOC.Get("PARAM_Merger_Action_Merge_Groups", groupCount);
+
+        View.Editor.ActionManager.ExecuteAction(compound);
     }
 }

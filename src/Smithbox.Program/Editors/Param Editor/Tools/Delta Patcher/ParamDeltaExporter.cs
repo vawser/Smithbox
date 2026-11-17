@@ -61,18 +61,6 @@ public class ParamDeltaExporter
 
             // Display the export preview modal, actual save only occurs within the modal
             Patcher.ExportPreviewModal.Show(patch);
-
-            //if (patch.Params.Count > 0)
-            //{
-            //    Patcher.WriteDeltaPatch(patch, Patcher.Selection.ExportName);
-            //    Smithbox.Log(this, $"Saved param delta: {Patcher.Selection.ExportName}.json");
-
-            //    Patcher.Selection.RefreshImportList();
-            //}
-            //else
-            //{
-            //    Smithbox.Log(this, "Aborted param delta as no changes were detected.");
-            //}
         }
         catch (Exception ex)
         {
@@ -98,6 +86,8 @@ public class ParamDeltaExporter
         int total = primaryBank.Params.Count;
         int processed = 0;
 
+        var selectedRows = Patcher.View.Selection.GetSelectedRows();
+
         foreach (var primaryParam in primaryBank.Params)
         {
             processed++;
@@ -112,14 +102,11 @@ public class ParamDeltaExporter
             if (!vanillaBank.Params.ContainsKey(primaryParam.Key))
                 continue;
 
+            var isTableParam = ParamRowGroups.IsTableParam(Patcher.Project, primaryParam.Key);
+
             // Skip indexed params if the option is enabled
-            if (CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows)
-            {
-                if (Patcher.Project.Handler.ParamData.TableParamList.Params.Contains(primaryParam.Key))
-                {
-                    continue;
-                }
-            }
+            if (CFG.Current.ParamEditor_DeltaPatcher_Export_Ignore_Indexed_Rows && isTableParam)
+                continue;
 
             if (Patcher.Selection.CurrentParamMode is DeltaExportMode.Selected)
             {
@@ -134,29 +121,29 @@ public class ParamDeltaExporter
 
             var vanillaParam = vanillaBank.Params[primaryParam.Key];
 
-            List<RowDelta> rowDeltas = new List<RowDelta>();
-
-            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Modified)
+            if (isTableParam)
             {
-                rowDeltas = HandleRows(primaryParam.Key, primaryParam.Value, vanillaParam);
+                paramDelta.Groups = Patcher.Selection.CurrentRowMode switch
+                {
+                    DeltaSelectionMode.Modified => ParamRowGroups.DiffGroups(primaryParam.Value, vanillaParam),
+                    DeltaSelectionMode.Selected => HandleGroups(primaryParam.Value, vanillaParam,
+                        selectedRows.Where(r => r.GetParentParam() == primaryParam.Value).Select(r => r.ID).ToHashSet()),
+                    DeltaSelectionMode.All => HandleGroups(primaryParam.Value, vanillaParam, null),
+                    _ => new List<RowGroupDelta>()
+                };
+            }
+            else
+            {
+                paramDelta.Rows = Patcher.Selection.CurrentRowMode switch
+                {
+                    DeltaSelectionMode.Modified => HandleRows(primaryParam.Value, vanillaParam),
+                    DeltaSelectionMode.Selected => HandleSelectedRows(primaryParam.Value, selectedRows),
+                    DeltaSelectionMode.All => HandleSelectedRows(primaryParam.Value, null),
+                    _ => new List<RowDelta>()
+                };
             }
 
-            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.Selected)
-            {
-                rowDeltas = HandleSelectedRows(primaryParam.Value, vanillaParam);
-            }
-
-            if (Patcher.Selection.CurrentRowMode is DeltaSelectionMode.All)
-            {
-                rowDeltas = HandleAllRows(primaryParam.Value, vanillaParam);
-            }
-
-            foreach (var entry in rowDeltas)
-            {
-                paramDelta.Rows.Add(entry);
-            }
-
-            if (paramDelta.Rows.Count > 0)
+            if (paramDelta.Rows.Count > 0 || paramDelta.Groups.Count > 0)
             {
                 patch.Params.Add(paramDelta);
             }
@@ -165,139 +152,80 @@ public class ParamDeltaExporter
         return patch;
     }
 
+    #region Row Table Groups
+    /// <summary>
+    /// Whole groups for the Selected and All modes: the groups of <paramref name="ids"/>, or every group if null
+    /// </summary>
+    public List<RowGroupDelta> HandleGroups(Param primaryParam, Param vanillaParam, HashSet<int> ids)
+    {
+        var result = new List<RowGroupDelta>();
+        var vanillaIds = vanillaParam.Rows.Select(r => r.ID).ToHashSet();
+
+        foreach (var (id, rows) in ParamRowGroups.Build(primaryParam))
+        {
+            if (ids != null && !ids.Contains(id))
+                continue;
+
+            var state = vanillaIds.Contains(id) ? RowDeltaState.Modified : RowDeltaState.Added;
+            result.Add(ParamRowGroups.SerializeGroup(id, rows, state));
+        }
+
+        return result;
+    }
+    #endregion
+
     #region Modified Export
-    public List<RowDelta> HandleRows(string primaryKey, Param primaryParam, Param vanillaParam)
+    /// <summary>
+    /// Rows that differ from vanilla, keyed by (ID, Index). A row with no vanilla row at its key is Added, and a
+    /// vanilla row with no project row at its key is Deleted.
+    /// </summary>
+    public List<RowDelta> HandleRows(Param primaryParam, Param vanillaParam)
     {
         var rowDeltas = new List<RowDelta>();
 
-        var curRowID = 0;
-        var internalIndex = 0;
+        var primaryRows = ParamRowGroups.BuildPositionMap(primaryParam);
+        var vanillaRows = ParamRowGroups.BuildPositionMap(vanillaParam);
 
-        for (int i = 0; i < primaryParam.Rows.Count; i++)
+        // Built from param order, with no removals, so this enumerates in param order
+        foreach (var (key, row) in primaryRows)
         {
-            Param.Row row = primaryParam.Rows[i];
-
-            var (add, rowDelta) = HandleRowComparison(primaryKey, primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
-            if (add)
+            if (vanillaRows.TryGetValue(key, out var vanillaRow))
             {
-                rowDeltas.Add(rowDelta);
+                var fieldDeltas = HandleFields(row, vanillaRow);
+
+                if (fieldDeltas.Count > 0)
+                {
+                    rowDeltas.Add(new RowDelta
+                    {
+                        ID = row.ID,
+                        Index = key.Index,
+                        Name = row.Name,
+                        State = RowDeltaState.Modified,
+                        Fields = fieldDeltas
+                    });
+                }
+            }
+            else
+            {
+                rowDeltas.Add(ParamRowGroups.SerializeRow(row, key.Index, RowDeltaState.Added));
             }
         }
 
-        // Determine deleted rows
-        for (int i = 0; i < vanillaParam.Rows.Count; i++)
+        foreach (var (key, vanillaRow) in vanillaRows)
         {
-            Param.Row row = vanillaParam.Rows[i];
+            if (primaryRows.ContainsKey(key))
+                continue;
 
-            // Indexed Row
-            if (row.ID == curRowID)
+            rowDeltas.Add(new RowDelta
             {
-                // TODO: currently we don't add indexed row deletions since it is a thorny thing to detect
-            }
-            // Individual Row
-            else
-            {
-                var primaryRow = primaryParam.Rows.FirstOrDefault(e => e.ID == row.ID);
-                if (primaryRow == null)
-                {
-                    var rowDelta = new RowDelta();
-                    rowDelta.ID = row.ID;
-                    rowDelta.Name = row.Name;
-                    rowDelta.State = RowDeltaState.Deleted;
-                }
-            }
-
-            curRowID = row.ID;
+                ID = key.ID,
+                Index = key.Index,
+                Name = vanillaRow.Name,
+                State = RowDeltaState.Deleted
+            });
         }
 
         return rowDeltas;
-    }
-
-    public (bool, RowDelta) HandleRowComparison(string primaryKey, Param primaryParam, Param vanillaParam, Param.Row row, ref int curRowID, ref int internalIndex)
-    {
-        var rowDelta = new RowDelta();
-        rowDelta.ID = row.ID;
-        rowDelta.Name = row.Name;
-        rowDelta.State = RowDeltaState.Modified;
-
-        var vanillaDiffCache = Patcher.Project.Handler.ParamData.PrimaryBank
-            .GetVanillaDiffRows(primaryKey);
-
-        // Indexed Row
-        if (row.ID == curRowID)
-        {
-            foreach (var vRow in vanillaParam.Rows)
-            {
-                if (vRow.ID == row.ID)
-                {
-                    if (vanillaDiffCache.Contains(row))
-                    {
-                        var fieldDeltas = HandleFields(row, vRow);
-                        foreach (var entry in fieldDeltas)
-                        {
-                            rowDelta.Fields.Add(entry);
-                        }
-                    }
-                }
-            }
-
-            internalIndex++;
-        }
-        // Individual Row
-        else
-        {
-            internalIndex = 0;
-
-            var vanillaRow = vanillaParam.Rows.FirstOrDefault(e => e.ID == row.ID);
-            if (vanillaRow != null)
-            {
-                var fieldDeltas = HandleFields(row, vanillaRow);
-                foreach (var entry in fieldDeltas)
-                {
-                    rowDelta.Fields.Add(entry);
-                }
-            }
-            else
-            {
-                rowDelta.State = RowDeltaState.Added;
-
-                // If the row is unique to the project, add all fields to the delta for the row entry
-                foreach (var primaryCol in row.Columns)
-                {
-                    var fieldDelta = new FieldDelta();
-
-                    var curField = primaryCol.Def.InternalName;
-                    var curValue = primaryCol.GetValue(row);
-
-                    fieldDelta.Field = curField;
-                    fieldDelta.Value = curValue.ToString();
-
-                    // For the dummy8 values with more than 1 byte, do this
-                    if (primaryCol.Def.InternalType == "dummy8")
-                    {
-                        if (primaryCol.Def.ArrayLength > 1)
-                        {
-                            fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
-                        }
-                    }
-
-                    rowDelta.Fields.Add(fieldDelta);
-                }
-            }
-        }
-
-        rowDelta.Index = internalIndex;
-
-        curRowID = row.ID;
-
-        if (rowDelta.Fields.Count > 0)
-        {
-            return (true, rowDelta);
-        }
-        else
-        {
-            return (false, null);
-        }
     }
 
     public List<FieldDelta> HandleFields(Param.Row primaryRow, Param.Row vanillaRow)
@@ -316,122 +244,40 @@ public class ParamDeltaExporter
             if (vanillaCol == null)
                 continue;
 
-            var (add, fieldDelta) = HandleFieldComparison(primaryRow, vanillaRow, primaryCol, vanillaCol);
-            if (add)
+            var value = ParamRowGroups.SerializeValue(primaryCol, primaryRow);
+
+            if (value != ParamRowGroups.SerializeValue(vanillaCol, vanillaRow))
             {
-                fieldDeltas.Add(fieldDelta);
+                fieldDeltas.Add(new FieldDelta
+                {
+                    Field = primaryCol.Def.InternalName,
+                    Value = value
+                });
             }
         }
 
         return fieldDeltas;
     }
-
-    public (bool, FieldDelta) HandleFieldComparison(Param.Row primaryRow, Param.Row vanillaRow, Param.Column primaryCol, Param.Column vanillaCol)
-    {
-        var fieldDelta = new FieldDelta();
-
-        var curField = primaryCol.Def.InternalName;
-        var curValue = primaryCol.GetValue(primaryRow);
-
-        fieldDelta.Field = curField;
-        fieldDelta.Value = curValue.ToString();
-
-        if (primaryCol.Def.InternalType == "dummy8")
-        {
-            if (primaryCol.Def.ArrayLength > 1)
-            {
-                fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
-            }
-        }
-
-        var vanillaValue = vanillaCol.GetValue(vanillaRow);
-        if (vanillaValue.ToString() != curValue.ToString())
-        {
-            return (true, fieldDelta);
-        }
-
-        return (false, null);
-    }
     #endregion
 
-    #region Selected Export
-    public List<RowDelta> HandleSelectedRows(Param primaryParam, Param vanillaParam)
+    #region Selected / All Export
+    /// <summary>
+    /// Full rows, as Added, for the rows in <paramref name="rows"/> (every row if null)
+    /// </summary>
+    public List<RowDelta> HandleSelectedRows(Param primaryParam, IEnumerable<Param.Row> rows)
     {
         var rowDeltas = new List<RowDelta>();
+        var included = rows?.ToHashSet();
 
-        var curRowID = 0;
-        var internalIndex = 0;
-
-        var selectedRows = Patcher.View.Selection.GetSelectedRows();
-
-        for (int i = 0; i < primaryParam.Rows.Count; i++)
+        foreach (var (key, row) in ParamRowGroups.BuildPositionMap(primaryParam))
         {
-            Param.Row row = primaryParam.Rows[i];
+            if (included != null && !included.Contains(row))
+                continue;
 
-            if (selectedRows.Contains(row))
-            {
-                var rowDelta = HandleSelectedRow(primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
-                rowDeltas.Add(rowDelta);
-            }
+            rowDeltas.Add(ParamRowGroups.SerializeRow(row, key.Index, RowDeltaState.Added));
         }
 
         return rowDeltas;
     }
-
-    public RowDelta HandleSelectedRow(Param primaryParam, Param vanillaParam, Param.Row row, ref int curRowID, ref int internalIndex)
-    {
-        var rowDelta = new RowDelta();
-        rowDelta.ID = row.ID;
-        rowDelta.Name = row.Name;
-        rowDelta.State = RowDeltaState.Added;
-        rowDelta.Fields = new List<FieldDelta>();
-
-        foreach (var primaryCol in row.Columns)
-        {
-            var fieldDelta = new FieldDelta();
-
-            var curField = primaryCol.Def.InternalName;
-            var curValue = primaryCol.GetValue(row);
-
-            fieldDelta.Field = curField;
-            fieldDelta.Value = curValue.ToString();
-
-            if (primaryCol.Def.InternalType == "dummy8")
-            {
-                if (primaryCol.Def.ArrayLength > 1)
-                {
-                    fieldDelta.Value = ParamUtils.Dummy8Write((byte[])curValue);
-                }
-            }
-
-            rowDelta.Fields.Add(fieldDelta);
-        }
-
-        return rowDelta;
-    }
-
-    #endregion
-
-    #region All Export
-    public List<RowDelta> HandleAllRows(Param primaryParam, Param vanillaParam)
-    {
-        var rowDeltas = new List<RowDelta>();
-
-        var curRowID = 0;
-        var internalIndex = 0;
-
-        var selectedRows = Patcher.View.Selection.GetSelectedRows();
-
-        for (int i = 0; i < primaryParam.Rows.Count; i++)
-        {
-            Param.Row row = primaryParam.Rows[i];
-
-            var rowDelta = HandleSelectedRow(primaryParam, vanillaParam, row, ref curRowID, ref internalIndex);
-            rowDeltas.Add(rowDelta);
-        }
-
-        return rowDeltas;
-    }
-
     #endregion
 }
