@@ -1,0 +1,21 @@
+{
+  "exeName": "eldenring.exe",
+  "exeVersion": "2.7.2.0",
+  "quitOutAob": "48 8B 40 08 C6 40 5D 01 48 83 C4 28 E9",
+  "quitOutAobOffset": "0x3E",
+  "quitOutPrologue": "48 83 EC 28 48 8B 05",
+  "quitOutMenuManRelativeOffset": "0x7/0xB",
+  "quitOutMenuOffset": "0x8",
+  "quitOutFlagOffset": "0x5D",
+  "worldReloadMethod": "EldenRing",
+  "worldSaveRequestAob": "48 8B 05 ?? ?? ?? ?? 0F B6 98 ?? ?? ?? ?? E8 ?? ?? ?? ?? 33 FF 84 C0 0F 45 DF",
+  "worldSaveRequestGameManRelativeOffset": "0x3/0x7",
+  "worldSaveRequestFieldOffset": "0xA",
+  "worldLoadSlotBeforeSave": "0x1A",
+  "worldLoadSlotPrologue": "48 8B 05 ?? ?? ?? ?? 8B 80 ?? ?? ?? ?? C3",
+  "worldLoadSlotGameManRelativeOffset": "0x3/0x7",
+  "worldLoadSlotFieldOffset": "0x9",
+  "worldCurrentSlotAob": "48 8B 05 ?? ?? ?? ?? 8B 80 C0 0A 00 00 C3",
+  "worldCurrentSlotGameManRelativeOffset": "0x3/0x7",
+  "worldCurrentSlotFieldOffset": "0x9"
+}

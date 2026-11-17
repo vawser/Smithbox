@@ -1,0 +1,104 @@
+{
+  "Entries": [
+    {
+      "Key": "GAMELINK_Offsets_Read_Failed",
+      "Text": "Failed to read the Game Link offsets: {0}"
+    },
+    {
+      "Key": "GAMELINK_State_Waiting",
+      "Text": "Not connected yet."
+    },
+    {
+      "Key": "GAMELINK_State_Not_Supported",
+      "Text": "Connecting to the running game isn't supported for this game."
+    },
+    {
+      "Key": "GAMELINK_State_Not_Running",
+      "Text": "The game ({0}) isn't running."
+    },
+    {
+      "Key": "GAMELINK_State_Attached",
+      "Text": "Connected to {0} (process {1})."
+    },
+    {
+      "Key": "GAMELINK_State_Open_Failed",
+      "Text": "Couldn't open the game process (error {0}). EAC may be running, or Smithbox may need the same rights as the game."
+    },
+    {
+      "Key": "GAMELINK_World_Header",
+      "Text": "World"
+    },
+    {
+      "Key": "GAMELINK_World_Reload",
+      "Text": "Reload World"
+    },
+    {
+      "Key": "GAMELINK_World_Reload_TT",
+      "Text": "Save, then load the same save again without going to the title screen."
+    },
+    {
+      "Key": "GAMELINK_World_Running",
+      "Text": "Reloading the world..."
+    },
+    {
+      "Key": "GAMELINK_World_Done",
+      "Text": "{0}  Saved and reloading the world."
+    },
+    {
+      "Key": "GAMELINK_World_Unavailable",
+      "Text": "Couldn't reload the world: the game's load request wasn't found in this version."
+    },
+    {
+      "Key": "GAMELINK_World_No_Save",
+      "Text": "Couldn't reload the world: no save is loaded."
+    },
+    {
+      "Key": "GAMELINK_World_Busy",
+      "Text": "Couldn't reload the world: a load is already pending."
+    },
+    {
+      "Key": "GAMELINK_World_Save_Not_Taken",
+      "Text": "The game didn't save within 10 seconds, so the world wasn't reloaded. Is a world loaded?"
+    },
+    {
+      "Key": "GAMELINK_World_Load_Not_Taken",
+      "Text": "The game didn't start the load within 10 seconds, so the request was withdrawn."
+    },
+    {
+      "Key": "GAMELINK_World_Failed",
+      "Text": "Reload world failed: {0}"
+    },
+    {
+      "Key": "GAMELINK_QuitOut",
+      "Text": "Quit Out"
+    },
+    {
+      "Key": "GAMELINK_QuitOut_TT",
+      "Text": "Quit to the title screen now. Then choose Continue to load back in."
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Running",
+      "Text": "Quitting out..."
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Done",
+      "Text": "{0}  Quitting to the title screen. Choose Continue to load back in."
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Not_Taken",
+      "Text": "The game didn't act on the quit request within 5 seconds, so it was withdrawn. Is a world loaded?"
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Not_In_World",
+      "Text": "Couldn't quit out: the game's menu isn't set up yet."
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Unavailable",
+      "Text": "Couldn't quit out: the game's quit request wasn't found in this version."
+    },
+    {
+      "Key": "GAMELINK_QuitOut_Failed",
+      "Text": "Quit out failed: {0}"
+    }
+  ]
+}

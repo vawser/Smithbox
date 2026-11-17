@@ -4,22 +4,21 @@ namespace StudioCore.Memory;
 
 /// <summary>
 /// Reload World for a running eldenring.exe: saves, then loads the same save slot again without the title screen.
-/// Used by the Material Editor's Material Reloader and the Map Editor's World Reloader, through their game link.
+/// Owned by GameLink, so the Material Reloader and the Map Editor's World Reloader share it.
+/// The AOBs come from the Game Link offsets (worldReloadMethod "EldenRing"; GameLinkOffsetEntry.world*).
 ///
 /// MoveMapStep's save/load handler (0x140AFD060 in the 1.16 Steam build) loads the save slot in GameMan +LoadSlot when
 /// it isn't -1, through RequestLoad (0x14067C500) and LoadGame (0x14067C590), which restarts the world from that save.
 /// The game only ever resets that field, so this looks like a leftover developer path.
 /// Before it, a save request (GameMan +SaveRequest) writes the current state, so the reload loses nothing.
+///
+/// ER's AOBs: the save request getter (mov rax,[GameMan]; movzx ebx,byte ptr [rax+SaveRequest]; call; xor edi,edi;
+/// test al,al; cmovne ebx,edi); the load slot getter (mov rax,[GameMan]; mov eax,[rax+LoadSlot]; ret) 0x1A before it;
+/// the current slot getter (mov rax,[GameMan]; mov eax,[rax+0AC0h]; ret; the 0x0AC0 pins it among such getters).
 /// </summary>
 public class EldenRingWorldReload
 {
-    // mov rax,[GameMan]; mov eax,[rax+CurrentSlot]; ret (AC0 in 1.16; the 0x0AC0 pins it among the many such getters)
-    private const string CurrentSlotAob = "48 8B 05 ?? ?? ?? ?? 8B 80 C0 0A 00 00 C3";
-    // the save request getter: mov rax,[GameMan]; movzx ebx,byte ptr [rax+SaveRequest]; call; xor edi,edi; test al,al; cmovne ebx,edi
-    private const string SaveRequestAob = "48 8B 05 ?? ?? ?? ?? 0F B6 98 ?? ?? ?? ?? E8 ?? ?? ?? ?? 33 FF 84 C0 0F 45 DF";
-    // the load slot getter (mov rax,[GameMan]; mov eax,[rax+LoadSlot]; ret) sits just before the save request getter:
-    // 0x14067A6C0 vs the save AOB match at 0x14067A6DA
-    private const int LoadSlotBeforeSave = 0x1A;
+    public const string Method = "EldenRing";
 
     private const int TimeoutMs = 10000;
 
@@ -45,48 +44,67 @@ public class EldenRingWorldReload
     }
 
     /// <summary>
-    /// Finds GameMan and its save request, load slot and current slot fields. Optional for the caller: without them,
-    /// <see cref="CanReload"/> is false. Called with the game's lock held.
+    /// Finds GameMan and its save request, load slot and current slot fields with one offset group. Optional for the
+    /// caller: without them, <see cref="CanReload"/> is false. Called with the game's lock held.
+    /// The problem is for the log.
     /// </summary>
-    public void Resolve(IGameProcess game)
+    public bool Resolve(IGameProcess game, GameLinkOffsetEntry g, out string problem)
     {
         GameManGlobal = 0;
+        problem = "";
 
-        var saves = game.Scan(SaveRequestAob);
-        var currents = game.Scan(CurrentSlotAob);
+        var saveRel = GameLinkOffsets.ParseRelative(g.worldSaveRequestGameManRelativeOffset);
+        var saveField = GameLinkOffsets.ParseHex(g.worldSaveRequestFieldOffset);
+        var loadBefore = GameLinkOffsets.ParseHex(g.worldLoadSlotBeforeSave);
+        var loadRel = GameLinkOffsets.ParseRelative(g.worldLoadSlotGameManRelativeOffset);
+        var loadField = GameLinkOffsets.ParseHex(g.worldLoadSlotFieldOffset);
+        var currentRel = GameLinkOffsets.ParseRelative(g.worldCurrentSlotGameManRelativeOffset);
+        var currentField = GameLinkOffsets.ParseHex(g.worldCurrentSlotFieldOffset);
+
+        if (saveRel == null || saveField == null || loadBefore == null || loadRel == null || loadField == null ||
+            currentRel == null || currentField == null || string.IsNullOrWhiteSpace(g.worldSaveRequestAob) ||
+            string.IsNullOrWhiteSpace(g.worldCurrentSlotAob) || string.IsNullOrWhiteSpace(g.worldLoadSlotPrologue))
+        {
+            problem = "incomplete offsets";
+            return false;
+        }
+
+        var saves = game.Scan(g.worldSaveRequestAob);
+        var currents = game.Scan(g.worldCurrentSlotAob);
 
         if (saves.Count != 1 || currents.Count != 1)
         {
-            Smithbox.Log(typeof(EldenRingWorldReload), $"[World Reload] Unavailable: save request {saves.Count}, current slot {currents.Count} match(es).");
-            return;
+            problem = $"save request {saves.Count}, current slot {currents.Count} match(es)";
+            return false;
         }
 
         var save = saves[0];
-        var load = save - LoadSlotBeforeSave;
-        var loadBytes = game.ReadBytes(load, 14);
+        var load = save - loadBefore.Value;
 
-        if (loadBytes[0] != 0x48 || loadBytes[1] != 0x8B || loadBytes[2] != 0x05 || loadBytes[7] != 0x8B || loadBytes[8] != 0x80 || loadBytes[13] != 0xC3)
+        if (!GameLink.Matches(game, load, g.worldLoadSlotPrologue))
         {
-            Smithbox.Log(typeof(EldenRingWorldReload), $"[World Reload] Unavailable: unexpected load slot getter {Convert.ToHexString(loadBytes)}.");
-            return;
+            problem = "unexpected load slot getter";
+            return false;
         }
 
-        var gameMan = save + 7 + ReadI32(game, save + 3);
+        var gameMan = GameLink.Relative(game, save, saveRel.Value);
 
         // All three must read the same GameMan
-        if (load + 7 + ReadI32(game, load + 3) != gameMan || currents[0] + 7 + ReadI32(game, currents[0] + 3) != gameMan)
+        if (GameLink.Relative(game, load, loadRel.Value) != gameMan || GameLink.Relative(game, currents[0], currentRel.Value) != gameMan)
         {
-            Smithbox.Log(typeof(EldenRingWorldReload), "[World Reload] Unavailable: the getters read different globals.");
-            return;
+            problem = "the getters read different globals";
+            return false;
         }
 
         GameManGlobal = gameMan;
-        SaveRequestOffset = ReadI32(game, save + 10);
-        LoadSlotOffset = BitConverter.ToInt32(loadBytes, 9);
-        CurrentSlotOffset = ReadI32(game, currents[0] + 9);
+        SaveRequestOffset = ReadI32(game, save + saveField.Value);
+        LoadSlotOffset = ReadI32(game, load + loadField.Value);
+        CurrentSlotOffset = ReadI32(game, currents[0] + currentField.Value);
 
         Smithbox.Log(typeof(EldenRingWorldReload),
             $"[World Reload] GameMan global 0x{GameManGlobal:X}, save request +0x{SaveRequestOffset:X}, load slot +0x{LoadSlotOffset:X}, current slot +0x{CurrentSlotOffset:X}");
+
+        return true;
     }
 
     /// <summary>
@@ -107,7 +125,7 @@ public class EldenRingWorldReload
             {
                 if (!CanReload)
                 {
-                    LastMessage = LOC.Get("MAT_InGameTool_World_Unavailable");
+                    LastMessage = LOC.Get("GAMELINK_World_Unavailable");
                     return;
                 }
 
@@ -116,13 +134,13 @@ public class EldenRingWorldReload
 
                 if (slot < 0 || slot > 9)
                 {
-                    LastMessage = LOC.Get("MAT_InGameTool_World_No_Save");
+                    LastMessage = LOC.Get("GAMELINK_World_No_Save");
                     return;
                 }
 
                 if (ReadI32(game, gameMan + LoadSlotOffset) != -1)
                 {
-                    LastMessage = LOC.Get("MAT_InGameTool_World_Busy");
+                    LastMessage = LOC.Get("GAMELINK_World_Busy");
                     return;
                 }
 
@@ -144,7 +162,7 @@ public class EldenRingWorldReload
                         game.WriteBytes(gameMan + SaveRequestOffset, new byte[] { 0 });
                 }
 
-                LastMessage = LOC.Get("MAT_InGameTool_World_Save_Not_Taken");
+                LastMessage = LOC.Get("GAMELINK_World_Save_Not_Taken");
                 Smithbox.Log(typeof(EldenRingWorldReload), "[World Reload] Save not taken within 10 s; nothing reloaded.");
                 return;
             }
@@ -172,12 +190,12 @@ public class EldenRingWorldReload
                         game.WriteBytes(gameMan + LoadSlotOffset, BitConverter.GetBytes(-1));
                 }
 
-                LastMessage = LOC.Get("MAT_InGameTool_World_Load_Not_Taken");
+                LastMessage = LOC.Get("GAMELINK_World_Load_Not_Taken");
                 Smithbox.Log(typeof(EldenRingWorldReload), "[World Reload] Load not taken within 10 s; request withdrawn.");
                 return;
             }
 
-            LastMessage = LOC.Get("MAT_InGameTool_World_Done", DateTime.Now.ToString("T"));
+            LastMessage = LOC.Get("GAMELINK_World_Done", DateTime.Now.ToString("T"));
             Smithbox.Log(typeof(EldenRingWorldReload), "[World Reload] Load accepted.");
         }
         finally

@@ -2,12 +2,13 @@ using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.MetadataEditor;
+using StudioCore.Memory;
 using System.Numerics;
 
 namespace StudioCore.Editors.MaterialEditor;
 
 /// <summary>
-/// Material Reloader (ER): lists the running game's loaded models and the materials they use, refreshed every few
+/// Material Reloader (ER, NR, AC6): lists the running game's loaded models and the materials they use, refreshed every few
 /// seconds, newest first if asked, with a click selecting the material here; reloads the selected material in the
 /// game from the editor's copy, then optionally reloads the world. See Claude/Documentation/Material Reloader UX Analysis.md.
 /// </summary>
@@ -17,7 +18,8 @@ public class MatInGameTool
     public ProjectEntry Project;
 
     // Shared by every view, and by Save for "send on save"
-    private MatGameLink Link => View.Editor.GameLink;
+    private MatReloader Reloader => View.Editor.Reloader;
+    private GameLink Link => Reloader.Link;
 
     private bool ShowHistory = true;
 
@@ -47,7 +49,8 @@ public class MatInGameTool
 
     private void Display()
     {
-        if (Project.Descriptor.ProjectType is not ProjectType.ER)
+        // Games with Material Reloader offsets (Assets/Material Reloader)
+        if (!Reloader.IsSupported)
         {
             GUI.WrappedText(LOC.Get("MAT_InGameTool_Game_Not_Supported"));
             return;
@@ -60,9 +63,9 @@ public class MatInGameTool
 
         // Polls only while the tool is shown
         if (CFG.Current.MaterialEditor_InGame_AutoRefresh &&
-            (Link.LastPoll == null || (DateTime.Now - Link.LastPoll.Value).TotalSeconds >= RefreshSeconds))
+            (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
-            Link.RequestPoll();
+            Reloader.RequestPoll();
         }
 
         DisplayConnection();
@@ -76,11 +79,11 @@ public class MatInGameTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAT_InGameTool_Game_Header"), LOC.Get("MAT_InGameTool_Game_Header_TT"));
 
-        var message = Link.StateMessage;
+        var message = Reloader.StateMessage;
         if (string.IsNullOrEmpty(message))
-            message = LOC.Get("MAT_InGameTool_State_Waiting");
+            message = LOC.Get("GAMELINK_State_Waiting");
 
-        if (Link.State is MatGameLink.LinkState.Failed)
+        if (Reloader.State is GameLink.LinkState.Failed)
             GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, message);
         else
             GUI.WrappedText(message);
@@ -90,12 +93,12 @@ public class MatInGameTool
 
         GUI.MultiButtonInput("materialInGameRefreshActions",
             "materialInGameRefresh", LOC.Get("MAT_InGameTool_Refresh"), LOC.Get("MAT_InGameTool_Refresh_TT"),
-            Link.RequestPoll,
+            Reloader.RequestPoll,
             "materialInGameDetach", LOC.Get("MAT_InGameTool_Detach"), LOC.Get("MAT_InGameTool_Detach_TT"),
             () =>
             {
                 CFG.Current.MaterialEditor_InGame_AutoRefresh = false;
-                Link.Detach();
+                Reloader.Detach();
             });
     }
 
@@ -114,9 +117,13 @@ public class MatInGameTool
         };
         CFG.Current.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor_InGame_AfterReload, 0, afterLabels.Length - 1);
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.Combo("##materialInGameAfterReload", ref CFG.Current.MaterialEditor_InGame_AfterReload, afterLabels, afterLabels.Length);
-        GUI.Tooltip(LOC.Get("MAT_InGameTool_After_TT"));
+        // Games without world actions (NR, AC6) skip the setting; the link ignores it there
+        if (Link.OffersWorldActions)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.Combo("##materialInGameAfterReload", ref CFG.Current.MaterialEditor_InGame_AfterReload, afterLabels, afterLabels.Length);
+            GUI.Tooltip(LOC.Get("MAT_InGameTool_After_TT"));
+        }
 
         // Selected
         var file = View.Selection.SelectedFileWrapper as MATBINFileWrapper;
@@ -127,13 +134,13 @@ public class MatInGameTool
         }
         else
         {
-            var gameName = MatGameLink.GameNameOf(file.Key);
+            var gameName = MatReloader.GameNameOf(file.Key);
             GUI.WrappedText(LOC.Get("MAT_InGameTool_Reload_Selected", gameName));
 
-            if (Link.State is MatGameLink.LinkState.Attached)
+            if (Reloader.IsReady)
                 DisplaySelectedInGame(gameName);
 
-            if (Link.IsReloading)
+            if (Reloader.IsReloading)
             {
                 GUI.WrappedText(LOC.Get("MAT_InGameTool_Reload_Running"));
             }
@@ -141,9 +148,9 @@ public class MatInGameTool
             {
                 GUI.MultiButtonInput("materialInGameReloadActions",
                     "materialInGameReload", LOC.Get("MAT_InGameTool_Reload"), LOC.Get("MAT_InGameTool_Reload_TT"),
-                    () => Send(MatReloadSource.FromEditor(Bank, View.Selection.SelectedBinder, file, View.Editor), MatGameLink.SendSource.Selected),
+                    () => Send(MatReloadSource.FromEditor(Bank, View.Selection.SelectedBinder, file, View.Editor), MatReloader.SendSource.Selected),
                     "materialInGameSendVanilla", LOC.Get("MAT_InGameTool_Send_Vanilla"), LOC.Get("MAT_InGameTool_Send_Vanilla_TT"),
-                    () => Send(MatReloadSource.FromVanilla(View.Selection.SelectedBinder, file, View.Editor), MatGameLink.SendSource.Vanilla));
+                    () => Send(MatReloadSource.FromVanilla(View.Selection.SelectedBinder, file, View.Editor), MatReloader.SendSource.Vanilla));
             }
         }
 
@@ -154,7 +161,7 @@ public class MatInGameTool
         var dirty = MatReloadSource.CountDirty(Bank);
         GUI.WrappedText(LOC.Get("MAT_InGameTool_Modified_Count", dirty));
 
-        if (dirty > 0 && !Link.IsReloading)
+        if (dirty > 0 && !Reloader.IsReloading)
         {
             GUI.MultiButtonInput("materialInGameModifiedActions",
                 "materialInGameReloadModified", LOC.Get("MAT_InGameTool_Modified_Reload"), LOC.Get("MAT_InGameTool_Modified_Reload_TT"),
@@ -162,44 +169,51 @@ public class MatInGameTool
                 {
                     var items = MatReloadSource.Dirty(Bank, View.Editor);
                     if (items.Count > 0)
-                        Link.RequestReloadMany(items, (MatGameLink.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatGameLink.SendSource.Modified);
+                        Reloader.RequestReloadMany(items, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Modified);
                 });
         }
 
         ImGui.Checkbox($"{LOC.Get("MAT_InGameTool_Send_On_Save")}##materialInGameSendOnSave", ref CFG.Current.MaterialEditor_InGame_SendOnSave);
         GUI.Tooltip(LOC.Get("MAT_InGameTool_Send_On_Save_TT"));
 
-        var last = Link.LastReload;
+        var last = Reloader.LastReload;
         if (last != null)
         {
             var text = $"{last.At:T}  {last.Message}";
 
-            if (last.Outcome is MatGameLink.ReloadOutcome.Reloaded)
+            if (last.Outcome is MatReloader.ReloadOutcome.Reloaded)
                 GUI.WrappedText(text);
             else
                 GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, text);
+        }
+
+        if (!Link.OffersWorldActions)
+        {
+            GUI.WrappedText(LOC.Get("MAT_InGameTool_Reload_Note_No_World"));
+            DisplayHistory();
+            return;
         }
 
         GUI.WrappedText(LOC.Get("MAT_InGameTool_Reload_Note"));
 
         // World
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAT_InGameTool_World_Header"), LOC.Get("MAT_InGameTool_World_Header_TT"));
+        GUI.SimpleHeader(LOC.Get("GAMELINK_World_Header"), LOC.Get("MAT_InGameTool_World_Header_TT"));
 
         if (Link.IsReloadingWorld)
         {
-            GUI.WrappedText(LOC.Get("MAT_InGameTool_World_Running"));
+            GUI.WrappedText(LOC.Get("GAMELINK_World_Running"));
         }
         else if (Link.IsQuittingOut)
         {
-            GUI.WrappedText(LOC.Get("MAT_InGameTool_QuitOut_Running"));
+            GUI.WrappedText(LOC.Get("GAMELINK_QuitOut_Running"));
         }
         else
         {
             GUI.MultiButtonInput("materialInGameWorldActions",
-                "materialInGameReloadWorld", LOC.Get("MAT_InGameTool_World_Reload"), LOC.Get("MAT_InGameTool_World_Reload_TT"),
+                "materialInGameReloadWorld", LOC.Get("GAMELINK_World_Reload"), LOC.Get("GAMELINK_World_Reload_TT"),
                 Link.RequestReloadWorld,
-                "materialInGameQuitOut", LOC.Get("MAT_InGameTool_QuitOut"), LOC.Get("MAT_InGameTool_QuitOut_TT"),
+                "materialInGameQuitOut", LOC.Get("GAMELINK_QuitOut"), LOC.Get("GAMELINK_QuitOut_TT"),
                 Link.RequestQuitOut);
         }
 
@@ -217,10 +231,10 @@ public class MatInGameTool
     /// <summary>
     /// Sends one prepared material with the chosen "after" action; a null item was refused and already logged
     /// </summary>
-    private void Send(MatGameLink.SendItem item, MatGameLink.SendSource source)
+    private void Send(MatReloader.SendItem item, MatReloader.SendSource source)
     {
         if (item != null)
-            Link.RequestReload(item.Name, item.Bytes, (MatGameLink.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, source);
+            Reloader.RequestReload(item.Name, item.Bytes, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, source);
     }
 
     // History
@@ -229,7 +243,7 @@ public class MatInGameTool
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("MAT_InGameTool_History_Header"), LOC.Get("MAT_InGameTool_History_Header_TT"), ref ShowHistory);
 
-        var history = Link.History;
+        var history = Reloader.History;
 
         if (history.Count == 0)
         {
@@ -259,7 +273,7 @@ public class MatInGameTool
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                var failed = entry.Outcome is not MatGameLink.ReloadOutcome.Reloaded;
+                var failed = entry.Outcome is not MatReloader.ReloadOutcome.Reloaded;
                 if (failed)
                     ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Invalid_Text_Color);
 
@@ -279,17 +293,17 @@ public class MatInGameTool
                 ImGui.TableSetColumnIndex(1);
                 ImGui.TextUnformatted($"{entry.At:T} {LOC.Get($"MAT_InGameTool_Source_{entry.Source}")}");
 
-                if (file == null || Link.IsReloading)
+                if (file == null || Reloader.IsReloading)
                     continue;
 
                 ImGui.TableSetColumnIndex(2);
                 if (ImGui.SmallButton($"{LOC.Get("MAT_InGameTool_History_Send")}##materialInGameHistorySend_{entry.Name}"))
-                    Send(MatReloadSource.FromEditor(Bank, binder, file, View.Editor), MatGameLink.SendSource.History);
+                    Send(MatReloadSource.FromEditor(Bank, binder, file, View.Editor), MatReloader.SendSource.History);
                 GUI.Tooltip(LOC.Get("MAT_InGameTool_History_Send_TT"));
 
                 ImGui.TableSetColumnIndex(3);
                 if (ImGui.SmallButton($"{LOC.Get("MAT_InGameTool_History_Vanilla")}##materialInGameHistoryVanilla_{entry.Name}"))
-                    Send(MatReloadSource.FromVanilla(binder, file, View.Editor), MatGameLink.SendSource.Vanilla);
+                    Send(MatReloadSource.FromVanilla(binder, file, View.Editor), MatReloader.SendSource.Vanilla);
                 GUI.Tooltip(LOC.Get("MAT_InGameTool_Send_Vanilla_TT"));
             }
 
@@ -298,7 +312,7 @@ public class MatInGameTool
 
         GUI.MultiButtonInput("materialInGameHistoryActions",
             "materialInGameHistoryClear", LOC.Get("MAT_InGameTool_History_Clear"), LOC.Get("MAT_InGameTool_History_Clear_TT"),
-            Link.ClearHistory);
+            Reloader.ClearHistory);
     }
 
     #region Browse
@@ -327,13 +341,13 @@ public class MatInGameTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAT_InGameTool_Browse_Header"), LOC.Get("MAT_InGameTool_Browse_Header_TT"));
 
-        if (Link.State is not MatGameLink.LinkState.Attached)
+        if (!Reloader.IsReady)
         {
             GUI.WrappedText(LOC.Get("MAT_InGameTool_List_Not_Attached"));
             return;
         }
 
-        GUI.WrappedText(LOC.Get("MAT_InGameTool_Browse_Count", Link.Models.Count, Link.InUse.Count, Link.TotalMaterials));
+        GUI.WrappedText(LOC.Get("MAT_InGameTool_Browse_Count", Reloader.Models.Count, Reloader.InUse.Count, Reloader.TotalMaterials));
 
         // Filters
         ImGui.SetNextItemWidth(-1);
@@ -375,7 +389,7 @@ public class MatInGameTool
 
     private void DisplayModelsTab()
     {
-        if (!Link.CanListModels)
+        if (!Reloader.CanListModels)
         {
             GUI.WrappedText(LOC.Get("MAT_InGameTool_Models_Unavailable"));
             return;
@@ -401,7 +415,7 @@ public class MatInGameTool
     private void DisplayRows(List<Row> rows, string tableId)
     {
         var selectedName = View.Selection.SelectedFileWrapper is MATBINFileWrapper selected
-            ? MatGameLink.GameNameOf(selected.Key)
+            ? MatReloader.GameNameOf(selected.Key)
             : null;
 
         var flags = ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.ScrollY | ImGuiTableFlags.SizingStretchProp;
@@ -489,8 +503,8 @@ public class MatInGameTool
     /// </summary>
     private List<Row> BuildRows(bool models)
     {
-        var inUse = Link.InUse;
-        var loaded = Link.Models;
+        var inUse = Reloader.InUse;
+        var loaded = Reloader.Models;
         var filter = Filter.Trim();
 
         var key = (models, inUse, loaded, filter, Kind, CFG.Current.MaterialEditor_InGame_SortRecent, ExpandedVersion,
@@ -503,7 +517,7 @@ public class MatInGameTool
 
         if (models)
         {
-            var shown = new List<(MatGameLink.InGameModel Model, string Kind, string Label, List<MatGameLink.InGameMaterial> Materials, bool MatchedByMaterial)>();
+            var shown = new List<(MatReloader.InGameModel Model, string Kind, string Label, List<MatReloader.InGameMaterial> Materials, bool MatchedByMaterial)>();
 
             foreach (var model in loaded)
             {
@@ -552,7 +566,7 @@ public class MatInGameTool
         }
         else
         {
-            var shown = new List<(MatGameLink.InGameMaterial Material, string Kinds)>();
+            var shown = new List<(MatReloader.InGameMaterial Material, string Kinds)>();
 
             foreach (var material in inUse)
             {
@@ -666,7 +680,7 @@ public class MatInGameTool
     /// </summary>
     private void DisplaySelectedInGame(string gameName)
     {
-        var material = Link.InUse.FirstOrDefault(m => string.Equals(m.Name, gameName, StringComparison.OrdinalIgnoreCase));
+        var material = Reloader.InUse.FirstOrDefault(m => string.Equals(m.Name, gameName, StringComparison.OrdinalIgnoreCase));
 
         if (material == null)
         {
@@ -674,9 +688,9 @@ public class MatInGameTool
             return;
         }
 
-        var loaded = Link.Models.Select(m => m.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var loaded = Reloader.Models.Select(m => m.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
         var models = Usage.HasScan
-            ? Usage.UsesOf(gameName).Select(u => MatGameLink.GameNameOf(u.Flver)).Where(loaded.Contains)
+            ? Usage.UsesOf(gameName).Select(u => MatReloader.GameNameOf(u.Flver)).Where(loaded.Contains)
                 .Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(n => n, StringComparer.OrdinalIgnoreCase).ToList()
             : new List<string>();
 

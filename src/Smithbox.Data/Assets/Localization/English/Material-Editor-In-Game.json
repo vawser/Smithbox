@@ -10,7 +10,7 @@
     },
     {
       "Key": "MAT_InGameTool_Game_Not_Supported",
-      "Text": "The Material Reloader works with Elden Ring only."
+      "Text": "The Material Reloader works with Elden Ring, Elden Ring Nightreign and Armored Core VI."
     },
     {
       "Key": "MAT_InGameTool_Hint",
@@ -25,24 +25,8 @@
       "Text": "The connection to eldenring.exe."
     },
     {
-      "Key": "MAT_InGameTool_State_Waiting",
-      "Text": "Not connected yet."
-    },
-    {
-      "Key": "MAT_InGameTool_State_Not_Running",
-      "Text": "Elden Ring isn't running."
-    },
-    {
-      "Key": "MAT_InGameTool_State_Attached",
-      "Text": "Connected to Elden Ring (process {0})."
-    },
-    {
-      "Key": "MAT_InGameTool_State_Open_Failed",
-      "Text": "Couldn't open the game process (error {0}). EAC may be running, or Smithbox may need the same rights as the game."
-    },
-    {
       "Key": "MAT_InGameTool_State_Version",
-      "Text": "Couldn't find the game's material functions (matches: {0}, {1}). This game version may not be supported."
+      "Text": "Couldn't find the game's material functions in version {0} ({1}). This game version may not be supported."
     },
     {
       "Key": "MAT_InGameTool_State_Not_Loaded",
@@ -111,6 +95,10 @@
     {
       "Key": "MAT_InGameTool_Reload_Note",
       "Text": "Models already loaded keep the old material until they load again. Reload the world (below) to rebuild every model with the new material."
+    },
+    {
+      "Key": "MAT_InGameTool_Reload_Note_No_World",
+      "Text": "Models already loaded keep the old material until they load again, for example on the next mission or expedition, or after returning to the title screen."
     },
     {
       "Key": "MAT_InGameTool_Send_Vanilla",
@@ -253,84 +241,8 @@
       "Text": "What happens after the material reloads. Reloading the world saves and loads your save again, so every model is rebuilt with the new material."
     },
     {
-      "Key": "MAT_InGameTool_World_Header",
-      "Text": "World"
-    },
-    {
       "Key": "MAT_InGameTool_World_Header_TT",
       "Text": "Reload the world from your save, or quit to the title screen. Loading the world again rebuilds every model, so all of them use the materials reloaded here."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Reload",
-      "Text": "Reload World"
-    },
-    {
-      "Key": "MAT_InGameTool_World_Reload_TT",
-      "Text": "Save, then load the same save again without going to the title screen."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Running",
-      "Text": "Reloading the world..."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Done",
-      "Text": "{0}  Saved and reloading the world."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Unavailable",
-      "Text": "Couldn't reload the world: the game's load request wasn't found in this version."
-    },
-    {
-      "Key": "MAT_InGameTool_World_No_Save",
-      "Text": "Couldn't reload the world: no save is loaded."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Busy",
-      "Text": "Couldn't reload the world: a load is already pending."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Save_Not_Taken",
-      "Text": "The game didn't save within 10 seconds, so the world wasn't reloaded. Is a world loaded?"
-    },
-    {
-      "Key": "MAT_InGameTool_World_Load_Not_Taken",
-      "Text": "The game didn't start the load within 10 seconds, so the request was withdrawn."
-    },
-    {
-      "Key": "MAT_InGameTool_World_Failed",
-      "Text": "Reload world failed: {0}"
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut",
-      "Text": "Quit Out"
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_TT",
-      "Text": "Quit to the title screen now. Then choose Continue to load back in."
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Running",
-      "Text": "Quitting out..."
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Done",
-      "Text": "{0}  Quitting to the title screen. Choose Continue to load back in."
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Not_Taken",
-      "Text": "The game didn't act on the quit request within 5 seconds, so it was withdrawn. Is a world loaded?"
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Not_In_World",
-      "Text": "Couldn't quit out: the game's menu isn't set up yet."
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Unavailable",
-      "Text": "Couldn't quit out: the game's quit request wasn't found in this version."
-    },
-    {
-      "Key": "MAT_InGameTool_QuitOut_Failed",
-      "Text": "Quit out failed: {0}"
     },
     {
       "Key": "MAT_InGameTool_Reload_Done",

@@ -18,12 +18,12 @@ public class TextEditorScreen : EditorScreen
     public TextShortcuts Shortcuts;
 
     /// <summary>The FMG Reloader's link to the running game, shared by every view and by Save</summary>
-    public TextGameLink GameLink;
+    public FmgReloader Reloader;
 
     public TextEditorScreen(ProjectEntry project)
     {
         Project = project;
-        GameLink = new TextGameLink(project.Descriptor.ProjectType);
+        Reloader = new FmgReloader(project);
 
         ViewHandler = new TextViewHandler(this, project);
 
@@ -341,13 +341,13 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     private List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> FmgsForGame(bool autoSave, TextContainerWrapper onlyContainer)
     {
-        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || GameLink.Profile == null ||
-            GameLink.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(GameLink.Language))
+        if (autoSave || !CFG.Current.TextEditor_FmgReloader_SendOnSave || Reloader.Profile == null ||
+            !Reloader.IsReady || string.IsNullOrEmpty(Reloader.Language))
             return null;
 
-        return FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, GameLink)
+        return FmgReloadSource.DirtyFmgs(Project.Handler.TextData?.PrimaryBank, Reloader)
             .Where(p => onlyContainer == null || p.Container == onlyContainer)
-            .Where(p => GameLink.Fmgs.Any(f => f.Id == p.Fmg.ID))
+            .Where(p => Reloader.Fmgs.Any(f => f.Id == p.Fmg.ID))
             .ToList();
     }
 
@@ -374,7 +374,7 @@ public class TextEditorScreen : EditorScreen
             .ToList();
 
         if (toGame.Count > 0)
-            GameLink.RequestReloadMany(toGame, TextGameLink.SendSource.Save);
+            Reloader.RequestReloadMany(toGame, FmgReloader.SendSource.Save);
     }
 
     public void RefreshFmgTextCache()

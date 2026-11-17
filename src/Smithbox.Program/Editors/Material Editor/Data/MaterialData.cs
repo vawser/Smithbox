@@ -39,6 +39,8 @@ public class MaterialData : IDisposable
                 LOC.Get("MAT_Data_Setup_Material_Meta_FAIL", Project.Descriptor.ProjectName));
         }
 
+        await SetupReloaderOffsets();
+
         PrimaryBank = new("Primary", Project, Project.VFS.FS);
         PrimaryBank.ShaderTable = await LoadShaderTable();
         //VanillaBank = new("Vanilla", Project, Project.VFS.VanillaFS);
@@ -55,6 +57,20 @@ public class MaterialData : IDisposable
         {
             Smithbox.Log(this, LOC.Get("MAT_Data_Setup_Primary_Bank_PASS"));
         }
+
+        return true;
+    }
+
+    public MaterialReloaderOffsets ReloaderOffsets = new();
+
+    /// <summary>
+    /// Read the Material Reloader offsets (Assets/Material Reloader/{game})
+    /// </summary>
+    public async Task<bool> SetupReloaderOffsets()
+    {
+        await Task.Yield();
+
+        ReloaderOffsets = MaterialReloaderOffsets.Load(Project);
 
         return true;
     }

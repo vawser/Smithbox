@@ -1297,7 +1297,7 @@ public class CFG
     public bool MaterialEditor_InGame_AutoRefresh = true;
     public bool MaterialEditor_InGame_SortRecent = true;
     public bool MaterialEditor_InGame_SendOnSave = false;
-    public int MaterialEditor_InGame_AfterReload = 1; // MatGameLink.AfterReload: 0 nothing, 1 reload world, 2 quit out
+    public int MaterialEditor_InGame_AfterReload = 1; // MatReloader.AfterReload: 0 nothing, 1 reload world, 2 quit out
 
     public bool MaterialEditor_Textures_Display_Preview = true;
 

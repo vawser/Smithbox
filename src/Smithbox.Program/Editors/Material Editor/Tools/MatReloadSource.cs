@@ -12,9 +12,9 @@ public static class MatReloadSource
     /// The editor's copy of a material, including unsaved changes. Null (with an error logged) when the material has
     /// check errors, the same rule as saving, or can't be written.
     /// </summary>
-    public static MatGameLink.SendItem FromEditor(MaterialBank bank, IMaterialBinder binder, MATBINFileWrapper file, MaterialEditorScreen editor)
+    public static MatReloader.SendItem FromEditor(MaterialBank bank, IMaterialBinder binder, MATBINFileWrapper file, MaterialEditorScreen editor)
     {
-        var name = MatGameLink.GameNameOf(file.Key);
+        var name = MatReloader.GameNameOf(file.Key);
 
         var findings = MaterialEditorChecks.CheckFile(bank, binder, file, editor);
         if (findings.Any(f => f.Severity is MaterialCheckSeverity.Error))
@@ -30,9 +30,9 @@ public static class MatReloadSource
     /// The vanilla copy of a material, for undoing edits in the game. Null when the vanilla materials aren't loaded
     /// yet or the material isn't vanilla (both logged).
     /// </summary>
-    public static MatGameLink.SendItem FromVanilla(IMaterialBinder binder, MATBINFileWrapper file, MaterialEditorScreen editor)
+    public static MatReloader.SendItem FromVanilla(IMaterialBinder binder, MATBINFileWrapper file, MaterialEditorScreen editor)
     {
-        var name = MatGameLink.GameNameOf(file.Key);
+        var name = MatReloader.GameNameOf(file.Key);
 
         editor.Vanilla.EnsureLoading();
         if (!editor.Vanilla.IsReady)
@@ -65,9 +65,9 @@ public static class MatReloadSource
     /// <summary>
     /// Every MATBIN with unsaved changes, ready to send; files with check errors are left out (and logged)
     /// </summary>
-    public static List<MatGameLink.SendItem> Dirty(MaterialBank bank, MaterialEditorScreen editor)
+    public static List<MatReloader.SendItem> Dirty(MaterialBank bank, MaterialEditorScreen editor)
     {
-        var items = new List<MatGameLink.SendItem>();
+        var items = new List<MatReloader.SendItem>();
 
         foreach (var binder in bank?.MATBINs.Values ?? Enumerable.Empty<MATBINWrapper>())
         {
@@ -88,11 +88,11 @@ public static class MatReloadSource
     public static int CountDirty(MaterialBank bank) =>
         bank?.MATBINs.Values.Sum(b => b.GetFiles().Count(f => f.IsDirty)) ?? 0;
 
-    private static MatGameLink.SendItem Write(string name, SoulsFormats.MATBIN matbin)
+    private static MatReloader.SendItem Write(string name, SoulsFormats.MATBIN matbin)
     {
         try
         {
-            return new MatGameLink.SendItem(name, matbin.Write());
+            return new MatReloader.SendItem(name, matbin.Write());
         }
         catch (Exception e)
         {

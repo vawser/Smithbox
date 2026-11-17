@@ -26,12 +26,14 @@ public class MaterialEditorScreen : EditorScreen
     /// <summary>Textures loaded only for the Textures window's previews, when no viewport has them</summary>
     public MaterialTexturePreviews TexturePreviews;
 
-    /// <summary>The Material Reloader's link to the running game (ER), shared by every view and by Save</summary>
-    public MatGameLink GameLink = new();
+    /// <summary>The Material Reloader (ER, NR, AC6) over the project's GameLink, shared by every view and by Save</summary>
+    public MatReloader Reloader;
 
     public MaterialEditorScreen(ProjectEntry project)
     {
         Project = project;
+
+        Reloader = new MatReloader(project);
 
         Usage = new MaterialUsage(project);
         Vanilla = new MaterialVanilla(project);
@@ -234,14 +236,14 @@ public class MaterialEditorScreen : EditorScreen
             {
                 // Material Reloader: what this save writes also goes to the running game, if asked
                 var toGame = !autoSave && CFG.Current.MaterialEditor_InGame_SendOnSave
-                    && GameLink.State is MatGameLink.LinkState.Attached
+                    && Reloader.IsReady
                     ? MatReloadSource.Dirty(bank, this)
                     : null;
 
                 bank.SaveAllDirty();
 
                 if (toGame?.Count > 0)
-                    GameLink.RequestReloadMany(toGame, (MatGameLink.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatGameLink.SendSource.Save);
+                    Reloader.RequestReloadMany(toGame, (MatReloader.AfterReload)CFG.Current.MaterialEditor_InGame_AfterReload, MatReloader.SendSource.Save);
             }
 
             // With live preview off, saving is when the viewports catch up

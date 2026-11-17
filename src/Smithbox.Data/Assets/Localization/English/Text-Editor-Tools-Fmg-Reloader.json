@@ -8,10 +8,6 @@
 
     { "Key": "TEXT_FmgReloader_Game_Header", "Text": "Game" },
     { "Key": "TEXT_FmgReloader_Game_Header_TT", "Text": "The connection to the running game." },
-    { "Key": "TEXT_FmgReloader_State_Waiting", "Text": "Not connected yet." },
-    { "Key": "TEXT_FmgReloader_State_Not_Running", "Text": "{0} isn't running." },
-    { "Key": "TEXT_FmgReloader_State_Open_Failed", "Text": "Couldn't open the game process (error {0}). Try running Smithbox as administrator." },
-    { "Key": "TEXT_FmgReloader_State_Attached", "Text": "Connected to {1} (process {0})." },
     { "Key": "TEXT_FmgReloader_State_Version", "Text": "Couldn't find the game's text functions ({0}). This game version may not be supported." },
     { "Key": "TEXT_FmgReloader_State_Not_Loaded", "Text": "The game hasn't loaded its text yet." },
     { "Key": "TEXT_FmgReloader_State_Read_Failed", "Text": "Couldn't read the game's text: {0}" },

@@ -1,19 +1,17 @@
 using StudioCore.Application;
-using StudioCore.Editors.MaterialEditor;
+using StudioCore.Memory;
 
 namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-/// World Reloader (ER): asks the running game to save and load the same save again, so map changes written to the
-/// game files show without going to the title screen. Uses the Material Editor's game link when it exists, so both
-/// tools share one connection and one "busy" state; otherwise keeps its own.
+/// World Reloader: asks the running game to save and load the same save again, so map changes written to the
+/// game files show without going to the title screen. Uses the project's shared GameLink, so it shares one
+/// connection and one "busy" state with the other live tools (the Material Reloader).
 /// </summary>
 public class WorldReloaderTool
 {
     private MapEditorView View;
     private ProjectEntry Project;
-
-    private MatGameLink OwnLink;
 
     public WorldReloaderTool(MapEditorView view, ProjectEntry project)
     {
@@ -21,9 +19,10 @@ public class WorldReloaderTool
         Project = project;
     }
 
-    private MatGameLink Link => Project.Handler.MaterialEditor?.GameLink ?? (OwnLink ??= new MatGameLink());
+    private GameLink Link => Project.Handler.GameLink;
 
-    public bool CanUse() => Project.Descriptor.ProjectType is ProjectType.ER;
+    /// <summary>Games whose Game Link offsets offer a world reload (Assets/Game Link)</summary>
+    public bool CanUse() => Link.OffersWorldReload;
 
     public void OnToolWindow()
     {
@@ -35,29 +34,29 @@ public class WorldReloaderTool
 
         var message = Link.StateMessage;
         if (string.IsNullOrEmpty(message))
-            message = LOC.Get("MAT_InGameTool_State_Waiting");
+            message = LOC.Get("GAMELINK_State_Waiting");
 
-        if (Link.State is MatGameLink.LinkState.Failed)
+        if (Link.State is GameLink.LinkState.Failed)
             GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, message);
         else
             GUI.WrappedText(message);
 
         // World
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("MAT_InGameTool_World_Header"), LOC.Get("MAP_WorldReloader_World_Header_TT"));
+        GUI.SimpleHeader(LOC.Get("GAMELINK_World_Header"), LOC.Get("MAP_WorldReloader_World_Header_TT"));
 
         if (Link.IsReloadingWorld)
         {
-            GUI.WrappedText(LOC.Get("MAT_InGameTool_World_Running"));
+            GUI.WrappedText(LOC.Get("GAMELINK_World_Running"));
         }
-        else if (Link.IsReloading || Link.IsQuittingOut)
+        else if (Link.IsBusy)
         {
             GUI.WrappedText(LOC.Get("MAP_WorldReloader_Busy"));
         }
         else
         {
             GUI.MultiButtonInput("mapWorldReloaderActions",
-                "mapWorldReloaderReloadWorld", LOC.Get("MAT_InGameTool_World_Reload"), LOC.Get("MAT_InGameTool_World_Reload_TT"),
+                "mapWorldReloaderReloadWorld", LOC.Get("GAMELINK_World_Reload"), LOC.Get("GAMELINK_World_Reload_TT"),
                 Link.RequestReloadWorld);
         }
 

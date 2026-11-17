@@ -29,6 +29,10 @@
       "Text": "Failed to read the material shader table: {0}"
     },
     {
+      "Key": "MAT_Data_Deserialize_Reloader_Offsets_FAIL",
+      "Text": "Failed to read the Material Reloader offsets: {0}"
+    },
+    {
       "Key": "MAT_Data_Log_Failed_to_Find_File",
       "Text": "Failed to find file: {0}"
     },

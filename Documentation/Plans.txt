@@ -22,10 +22,12 @@
 
 - DB_NT MSB: research/sync with ER
 - NR MSB: research/sync with ER
-- AC MSB: research
+- AC6 MSB: research
 - ONAV v2 for AC6
 
 - Improve Map Data view: mainly properties
+- Toggle option: clickable icon at centre of unselected wireframe regions
+- Model Browser: allow for all browsing with nothing selected, double-click creates new entity with said model
 
 #----------------------------------------------------
 # Model Editor TODO
@@ -38,16 +40,17 @@
 # Param Editor TODO
 #----------------------------------------------------
 
-
 #----------------------------------------------------
 # Text Editor TODO
 #----------------------------------------------------
+
+- FMG Reloader: add support for DS2S / DS1R
 
 #----------------------------------------------------
 # Graphics Param Editor TODO
 #----------------------------------------------------
 
-- Add GPARAM Reloader
+- Add GPARAM Reloader: add support for DS2S/DS3/SDT/ER/NR/AC6
 - Expand the amount of GPARAM elements considered by the renderer
 
 #----------------------------------------------------
@@ -55,6 +58,7 @@
 #----------------------------------------------------
 
 - Material Reloader: extend to NR/AC6
+- Material Reloader: add reload support for MTD (DS1R/DS2S/DS3/SDT)
 
 #----------------------------------------------------
 # Texture Editor TODO
@@ -63,7 +67,6 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
-
 - Event Graph
     - Read-only graph for imported animations
 
@@ -91,21 +94,16 @@
 #----------------------------------------------------
 # Havok Editor TODO
 #----------------------------------------------------
-
-- Adjustments:
-    - DES displays duplicate entries (due to the odd arrangement the game data has)
-    - Should should hide categories with no members
-
-- Improve Collision Generator:
-    - Add support for DES/DS1/DS2
- 
 - Add Behavior Merge tool
 - Add Behavior templates
+
+- Improve Collision Generator: add support for DES / DS1R / DS2S
+ 
+- Character Reloader: add support for DS2S / DS1R
 
 #----------------------------------------------------
 # Cutscene Editor
 #----------------------------------------------------
-
 - Support playback for:
     - Point Lights
     - Map GPARAM
@@ -130,10 +128,11 @@
 #----------------------------------------------------
 # FX Editor TODO
 #----------------------------------------------------
+- Continue FFX Older Games Plan.md
 
-- FX offset seems incorrectly applied (noticable in Map Editor playback)
+- FX placement in map seems slightly off (candle flames too high), missing factor that positions them properly?
 
-- FFX Older Games Plan.md
+- Add FX Reloader: support for DES/SDT/ER/NR/AC6
 
 #----------------------------------------------------
 # EMEVD Editor TODO
@@ -141,7 +140,7 @@
 
 - Aliases for ID references within Script graph
 - UX for properties
-- Add user-defined templates + auto-fill value ranges (i.e. disable enemies with entity IDs between X and Y)
+- Add auto-fill value ranges for templates (i.e. disable enemies with entity IDs between X and Y)
 
 #----------------------------------------------------
 # ESD Editor TODO
@@ -160,6 +159,7 @@
 #----------------------------------------------------
 # Rendering
 #----------------------------------------------------
+- DS3: texture UVs messed up on quite a few meshes
 
 - DS3: some chrs missing textures: c1280
 - DS3: non-map external resource usage: m903400

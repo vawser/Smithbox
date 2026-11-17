@@ -14,7 +14,7 @@ public static class FmgReloadSource
     /// <summary>
     /// One FMG as the game would load it. Null (and logged) when it can't be written.
     /// </summary>
-    public static TextGameLink.SendItem FromEditor(TextContainerWrapper container, TextFmgWrapper fmg)
+    public static FmgReloader.SendItem FromEditor(TextContainerWrapper container, TextFmgWrapper fmg)
     {
         if (container?.FileEntry == null || fmg?.File == null)
             return null;
@@ -25,7 +25,7 @@ public static class FmgReloadSource
             var min = entries.Count > 0 ? entries.Min(e => e.ID) : 0;
             var max = entries.Count > 0 ? entries.Max(e => e.ID) : -1;
 
-            return new TextGameLink.SendItem(fmg.ID, LabelOf(container, fmg), fmg.File.Write(), container.FileEntry.Path, min, max);
+            return new FmgReloader.SendItem(fmg.ID, LabelOf(container, fmg), fmg.File.Write(), container.FileEntry.Path, min, max);
         }
         catch (Exception e)
         {
@@ -37,7 +37,7 @@ public static class FmgReloadSource
     /// <summary>
     /// Every FMG of a container
     /// </summary>
-    public static List<TextGameLink.SendItem> FromContainer(TextContainerWrapper container)
+    public static List<FmgReloader.SendItem> FromContainer(TextContainerWrapper container)
     {
         if (container?.FmgWrappers == null)
             return new();
@@ -54,7 +54,7 @@ public static class FmgReloadSource
     /// FMG IDs are all filled in the game's slot table (DS3: item/menu_dlc2 when both DLCs are owned, else _dlc1).
     /// A project with an FMG the game doesn't have still matches if at least 90% of its IDs are filled.
     /// </summary>
-    public static List<TextContainerWrapper> Resident(TextBank bank, TextGameLink link)
+    public static List<TextContainerWrapper> Resident(TextBank bank, FmgReloader link)
     {
         var fmgs = link.Fmgs;
 
@@ -117,7 +117,7 @@ public static class FmgReloadSource
     /// <summary>
     /// For a candidate container the game didn't load: the one it loaded instead from the same group, if any
     /// </summary>
-    public static TextContainerWrapper LoadedInstead(TextBank bank, TextGameLink link, TextContainerWrapper container)
+    public static TextContainerWrapper LoadedInstead(TextBank bank, FmgReloader link, TextContainerWrapper container)
     {
         var group = link.Profile?.Groups.FirstOrDefault(g => g.Contains(container.FileEntry.Filename, StringComparer.OrdinalIgnoreCase));
         if (group == null)
@@ -129,13 +129,13 @@ public static class FmgReloadSource
     /// <summary>
     /// Modified FMGs in the containers the game loaded (modified since the last save)
     /// </summary>
-    public static List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> DirtyFmgs(TextBank bank, TextGameLink link) =>
+    public static List<(TextContainerWrapper Container, TextFmgWrapper Fmg)> DirtyFmgs(TextBank bank, FmgReloader link) =>
         Resident(bank, link)
             .Where(c => c.FmgWrappers != null)
             .SelectMany(c => c.FmgWrappers.Where(f => f.IsDirty).Select(f => (c, f)))
             .ToList();
 
-    public static List<TextGameLink.SendItem> Dirty(TextBank bank, TextGameLink link) =>
+    public static List<FmgReloader.SendItem> Dirty(TextBank bank, FmgReloader link) =>
         DirtyFmgs(bank, link).Select(p => FromEditor(p.Container, p.Fmg)).Where(i => i != null).ToList();
 
     /// <summary>

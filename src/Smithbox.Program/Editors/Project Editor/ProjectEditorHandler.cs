@@ -17,6 +17,7 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.Viewport;
+using StudioCore.Memory;
 using StudioCore.Renderer;
 
 namespace StudioCore.Application;
@@ -29,6 +30,10 @@ public class ProjectEditorHandler : IDisposable
 
     // Common Data
     public CommonData CommonData;
+
+    // The connection to the running game, shared by the live tools (Material Reloader, World Reloader)
+    private GameLink _gameLink;
+    public GameLink GameLink => _gameLink ??= new GameLink(Project);
 
     // Project Data
     public ProjectData ProjectData;
@@ -517,6 +522,9 @@ public class ProjectEditorHandler : IDisposable
         GparamEditor?.ViewHandler?.DisposeViews();
 
         ModelPreviewCache.Release(Project);
+
+        _gameLink?.Detach();
+        _gameLink = null;
 
         CommonData?.Dispose();
         ProjectData?.Dispose();

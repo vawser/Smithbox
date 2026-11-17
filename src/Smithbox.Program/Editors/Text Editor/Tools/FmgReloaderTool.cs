@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Memory;
 using System.Numerics;
 
 namespace StudioCore.Editors.TextEditor;
@@ -16,7 +17,7 @@ public class FmgReloaderTool
     public ProjectEntry Project;
 
     // Shared by every view, and by Save for "send on save"
-    private TextGameLink Link => View.Editor.GameLink;
+    private FmgReloader Reloader => View.Editor.Reloader;
 
     private TextBank Bank => Project.Handler.TextData?.PrimaryBank;
 
@@ -46,7 +47,7 @@ public class FmgReloaderTool
 
     private void Display()
     {
-        if (Link.Profile == null)
+        if (!Reloader.IsSupported)
         {
             GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Game_Not_Supported"));
             return;
@@ -56,9 +57,9 @@ public class FmgReloaderTool
 
         // Polls only while the tool is shown
         if (CFG.Current.TextEditor_FmgReloader_AutoRefresh &&
-            (Link.LastPoll == null || (DateTime.Now - Link.LastPoll.Value).TotalSeconds >= RefreshSeconds))
+            (Reloader.LastPoll == null || (DateTime.Now - Reloader.LastPoll.Value).TotalSeconds >= RefreshSeconds))
         {
-            Link.RequestPoll();
+            Reloader.RequestPoll();
         }
 
         DisplayConnection();
@@ -73,21 +74,21 @@ public class FmgReloaderTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TEXT_FmgReloader_Game_Header"), LOC.Get("TEXT_FmgReloader_Game_Header_TT"));
 
-        var message = Link.StateMessage;
+        var message = Reloader.StateMessage;
         if (string.IsNullOrEmpty(message))
-            message = LOC.Get("TEXT_FmgReloader_State_Waiting");
+            message = LOC.Get("GAMELINK_State_Waiting");
 
-        if (Link.State is TextGameLink.LinkState.Failed)
+        if (Reloader.State is GameLink.LinkState.Failed)
             GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, message);
         else
             GUI.WrappedText(message);
 
-        if (Link.State is TextGameLink.LinkState.Attached && !string.IsNullOrEmpty(Link.Language))
+        if (Reloader.IsReady && !string.IsNullOrEmpty(Reloader.Language))
         {
-            GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Language", Link.Language));
+            GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Language", Reloader.Language));
 
-            if (Link.KeptBytes > 0)
-                GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Kept", $"{Link.KeptBytes / 1024.0:0.#}"));
+            if (Reloader.KeptBytes > 0)
+                GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Kept", $"{Reloader.KeptBytes / 1024.0:0.#}"));
         }
 
         ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Auto_Refresh")}##fmgReloaderAutoRefresh", ref CFG.Current.TextEditor_FmgReloader_AutoRefresh);
@@ -95,12 +96,12 @@ public class FmgReloaderTool
 
         GUI.MultiButtonInput("fmgReloaderRefreshActions",
             "fmgReloaderRefresh", LOC.Get("TEXT_FmgReloader_Refresh"), LOC.Get("TEXT_FmgReloader_Refresh_TT"),
-            Link.RequestPoll,
+            Reloader.RequestPoll,
             "fmgReloaderDetach", LOC.Get("TEXT_FmgReloader_Detach"), LOC.Get("TEXT_FmgReloader_Detach_TT"),
             () =>
             {
                 CFG.Current.TextEditor_FmgReloader_AutoRefresh = false;
-                Link.Detach();
+                Reloader.Detach();
             });
     }
 
@@ -127,7 +128,7 @@ public class FmgReloaderTool
             {
                 GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, problem);
             }
-            else if (Link.IsReloading)
+            else if (Reloader.IsReloading)
             {
                 GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Reload_Running"));
             }
@@ -135,9 +136,9 @@ public class FmgReloaderTool
             {
                 GUI.MultiButtonInput("fmgReloaderReloadActions",
                     "fmgReloaderReloadFmg", LOC.Get("TEXT_FmgReloader_Reload_Fmg"), LOC.Get("TEXT_FmgReloader_Reload_Fmg_TT"),
-                    () => Send(new[] { FmgReloadSource.FromEditor(container, fmg) }, TextGameLink.SendSource.Selected),
+                    () => Send(new[] { FmgReloadSource.FromEditor(container, fmg) }, FmgReloader.SendSource.Selected),
                     "fmgReloaderReloadContainer", LOC.Get("TEXT_FmgReloader_Reload_Container"), LOC.Get("TEXT_FmgReloader_Reload_Container_TT"),
-                    () => Send(FmgReloadSource.FromContainer(container).Where(i => InGame(i.Id)).ToList(), TextGameLink.SendSource.Container));
+                    () => Send(FmgReloadSource.FromContainer(container).Where(i => InGame(i.Id)).ToList(), FmgReloader.SendSource.Container));
             }
         }
 
@@ -145,32 +146,32 @@ public class FmgReloaderTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("TEXT_FmgReloader_Modified_Header"), LOC.Get("TEXT_FmgReloader_Modified_Header_TT"));
 
-        if (string.IsNullOrEmpty(Link.Language))
+        if (string.IsNullOrEmpty(Reloader.Language))
         {
             GUI.WrappedText(LOC.Get("TEXT_FmgReloader_List_Not_Attached"));
         }
         else
         {
-            var dirty = FmgReloadSource.DirtyFmgs(Bank, Link);
-            GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Modified_Count", dirty.Count, Link.Language));
+            var dirty = FmgReloadSource.DirtyFmgs(Bank, Reloader);
+            GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Modified_Count", dirty.Count, Reloader.Language));
 
-            if (dirty.Count > 0 && !Link.IsReloading)
+            if (dirty.Count > 0 && !Reloader.IsReloading)
             {
                 GUI.MultiButtonInput("fmgReloaderModifiedActions",
                     "fmgReloaderReloadModified", LOC.Get("TEXT_FmgReloader_Modified_Reload"), LOC.Get("TEXT_FmgReloader_Modified_Reload_TT"),
-                    () => Send(FmgReloadSource.Dirty(Bank, Link), TextGameLink.SendSource.Modified));
+                    () => Send(FmgReloadSource.Dirty(Bank, Reloader), FmgReloader.SendSource.Modified));
             }
         }
 
         ImGui.Checkbox($"{LOC.Get("TEXT_FmgReloader_Send_On_Save")}##fmgReloaderSendOnSave", ref CFG.Current.TextEditor_FmgReloader_SendOnSave);
         GUI.Tooltip(LOC.Get("TEXT_FmgReloader_Send_On_Save_TT"));
 
-        var last = Link.LastReload;
+        var last = Reloader.LastReload;
         if (last != null)
         {
             var text = $"{last.At:T}  {last.Message}";
 
-            if (last.Outcome is TextGameLink.ReloadOutcome.Reloaded)
+            if (last.Outcome is FmgReloader.ReloadOutcome.Reloaded)
                 GUI.WrappedText(text);
             else
                 GUI.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, text);
@@ -184,26 +185,26 @@ public class FmgReloaderTool
     /// </summary>
     private string SelectionProblem(TextContainerWrapper container, TextFmgWrapper fmg)
     {
-        if (!Link.IsCandidate(container))
+        if (!Reloader.IsCandidate(container))
         {
-            var names = string.Join(", ", Link.Profile.Groups.SelectMany(g => g));
+            var names = string.Join(", ", Reloader.Profile.Groups.SelectMany(g => g));
             return LOC.Get("TEXT_FmgReloader_Problem_Not_Resident", container.FileEntry.Filename, names);
         }
 
-        if (Link.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(Link.Language))
+        if (!Reloader.IsReady || string.IsNullOrEmpty(Reloader.Language))
             return LOC.Get("TEXT_FmgReloader_List_Not_Attached");
 
-        var language = TextGameLink.LanguageOf(container);
-        if (!Link.IsInGameLanguage(container))
-            return LOC.Get("TEXT_FmgReloader_Problem_Language", language, Link.Language);
+        var language = FmgReloader.LanguageOf(container);
+        if (!Reloader.IsInGameLanguage(container))
+            return LOC.Get("TEXT_FmgReloader_Problem_Language", language, Reloader.Language);
 
-        if (Link.Fmgs.Count == 0)
+        if (Reloader.Fmgs.Count == 0)
             return LOC.Get("TEXT_FmgReloader_State_Not_Loaded");
 
         // DS3 loads one of item/menu_dlc2 or _dlc1, depending on DLC ownership
-        if (!FmgReloadSource.Resident(Bank, Link).Contains(container))
+        if (!FmgReloadSource.Resident(Bank, Reloader).Contains(container))
         {
-            var instead = FmgReloadSource.LoadedInstead(Bank, Link, container);
+            var instead = FmgReloadSource.LoadedInstead(Bank, Reloader, container);
             return instead != null
                 ? LOC.Get("TEXT_FmgReloader_Problem_Loaded_Instead", container.FileEntry.Filename, instead.FileEntry.Filename)
                 : LOC.Get("TEXT_FmgReloader_Problem_Not_Matched", container.FileEntry.Filename);
@@ -215,13 +216,13 @@ public class FmgReloaderTool
         return null;
     }
 
-    private bool InGame(int id) => Link.Fmgs.Any(f => f.Id == id);
+    private bool InGame(int id) => Reloader.Fmgs.Any(f => f.Id == id);
 
-    private void Send(IReadOnlyList<TextGameLink.SendItem> items, TextGameLink.SendSource source)
+    private void Send(IReadOnlyList<FmgReloader.SendItem> items, FmgReloader.SendSource source)
     {
         var list = items.Where(i => i != null).ToList();
         if (list.Count > 0)
-            Link.RequestReloadMany(list, source);
+            Reloader.RequestReloadMany(list, source);
     }
 
     // History
@@ -230,7 +231,7 @@ public class FmgReloaderTool
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("TEXT_FmgReloader_History_Header"), LOC.Get("TEXT_FmgReloader_History_Header_TT"), ref ShowHistory);
 
-        var history = Link.History;
+        var history = Reloader.History;
 
         if (history.Count == 0)
         {
@@ -259,7 +260,7 @@ public class FmgReloaderTool
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
 
-                    var failed = entry.Outcome is not TextGameLink.ReloadOutcome.Reloaded;
+                    var failed = entry.Outcome is not FmgReloader.ReloadOutcome.Reloaded;
                     if (failed)
                         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Invalid_Text_Color);
 
@@ -274,12 +275,12 @@ public class FmgReloaderTool
                     ImGui.TableSetColumnIndex(1);
                     ImGui.TextUnformatted($"{entry.At:T} {source}");
 
-                    if (fmg == null || Link.IsReloading)
+                    if (fmg == null || Reloader.IsReloading)
                         continue;
 
                     ImGui.TableSetColumnIndex(2);
                     if (ImGui.SmallButton($"{LOC.Get("TEXT_FmgReloader_History_Send")}##fmgReloaderHistorySend_{entry.ContainerPath}_{entry.Id}"))
-                        Send(new[] { FmgReloadSource.FromEditor(container, fmg) }, TextGameLink.SendSource.History);
+                        Send(new[] { FmgReloadSource.FromEditor(container, fmg) }, FmgReloader.SendSource.History);
                     GUI.Tooltip(LOC.Get("TEXT_FmgReloader_History_Send_TT"));
                 }
 
@@ -289,7 +290,7 @@ public class FmgReloaderTool
 
         GUI.MultiButtonInput("fmgReloaderHistoryActions",
             "fmgReloaderHistoryClear", LOC.Get("TEXT_FmgReloader_History_Clear"), LOC.Get("TEXT_FmgReloader_History_Clear_TT"),
-            Link.ClearHistory);
+            Reloader.ClearHistory);
     }
 
     // Game FMGs
@@ -298,13 +299,13 @@ public class FmgReloaderTool
         GUI.Spacer();
         GUI.ConditionalHeader(LOC.Get("TEXT_FmgReloader_Game_Fmgs_Header"), LOC.Get("TEXT_FmgReloader_Game_Fmgs_Header_TT"), ref ShowGameFmgs);
 
-        if (Link.State is not TextGameLink.LinkState.Attached || string.IsNullOrEmpty(Link.Language))
+        if (!Reloader.IsReady || string.IsNullOrEmpty(Reloader.Language))
         {
             GUI.WrappedText(LOC.Get("TEXT_FmgReloader_List_Not_Attached"));
             return;
         }
 
-        var fmgs = Link.Fmgs;
+        var fmgs = Reloader.Fmgs;
         GUI.WrappedText(LOC.Get("TEXT_FmgReloader_Game_Fmgs_Count", fmgs.Count, fmgs.Count(f => f.Replaced)));
 
         if (!ShowGameFmgs || fmgs.Count == 0)
@@ -373,7 +374,7 @@ public class FmgReloaderTool
     {
         var map = new Dictionary<int, (TextContainerWrapper, TextFmgWrapper)>();
 
-        foreach (var container in FmgReloadSource.Resident(Bank, Link))
+        foreach (var container in FmgReloadSource.Resident(Bank, Reloader))
         {
             if (container.FmgWrappers == null)
                 continue;

@@ -1,13 +1,13 @@
 using StudioCore.Application;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+using StudioCore.Memory;
 using System.Text;
 
 namespace StudioCore.Editors.TextEditor;
 
 /// <summary>
-/// The link to a running game used by the FMG Reloader (ER, NR, AC6, DS3): reads which FMGs the game holds, and replaces
-/// one with the editor's copy. See Claude/Documentation/FMG Live Reload Analysis.md and FMG Reloader Other Games.md.
+/// The FMG Reloader's work in a running game (ER, NR, AC6, DS3), over the project's shared GameLink: reads which FMGs
+/// the game holds, and replaces one with the editor's copy. See Claude/Documentation/FMG Live Reload Analysis.md and
+/// FMG Reloader Other Games.md. The connection itself (which exe, the process handle) is GameLink's.
 ///
 /// How the games hold text (the same FD4 message repository in all of them; found at runtime by game-independent code
 /// shapes, checked on every exe by Claude/Tools/FmgReloadAob probe):
@@ -20,10 +20,8 @@ namespace StudioCore.Editors.TextEditor;
 /// one store, on a thread in the game. The old block is kept (not freed): text the game already fetched may still point
 /// into it.
 /// </summary>
-public class TextGameLink
+public class FmgReloader
 {
-    public enum LinkState { NotRunning, Attached, Failed }
-
     public enum ReloadOutcome { Reloaded, NotFound, Failed }
 
     public record ReloadResult(string Label, ReloadOutcome Outcome, string Message, DateTime At);
@@ -41,8 +39,6 @@ public class TextGameLink
     public enum SendSource { Selected, Container, Modified, Save, History }
 
     // Updated by the background tasks, read by the UI
-    public volatile LinkState State = LinkState.NotRunning;
-    public volatile string StateMessage = "";
     public volatile string Language = "";
     public volatile IReadOnlyList<GameFmg> Fmgs = Array.Empty<GameFmg>();
     public volatile bool IsPolling;
@@ -55,12 +51,13 @@ public class TextGameLink
     private long keptBytes;
 
     /// <summary>
-    /// What differs per game: the process, and the binders the reloader may send. Each group lists the candidates for
-    /// one binder, most complete first. The one the game loaded is told apart by which slots are filled (DS3 loads
-    /// item/menu_dlc2 or _dlc1 depending on DLC ownership). ngword and sellregion are left out everywhere: ngword's only
-    /// FMG has binder ID 1, the same as menu's first FMG, and it doesn't go through the message repository.
+    /// What differs per game: the binders the reloader may send. Each group lists the candidates for one binder, most
+    /// complete first. The one the game loaded is told apart by which slots are filled (DS3 loads item/menu_dlc2 or
+    /// _dlc1 depending on DLC ownership). ngword and sellregion are left out everywhere: ngword's only FMG has binder
+    /// ID 1, the same as menu's first FMG, and it doesn't go through the message repository.
+    /// The executable to attach to is GameLink's (Assets/Game Link).
     /// </summary>
-    public record GameProfile(ProjectType Type, string ProcessName, string GameName, string[][] Groups)
+    public record GameProfile(ProjectType Type, string[][] Groups)
     {
         public bool IsCandidate(string containerName) =>
             Groups.Any(g => g.Contains(containerName, StringComparer.OrdinalIgnoreCase));
@@ -68,27 +65,52 @@ public class TextGameLink
 
     public static readonly GameProfile[] Profiles =
     {
-        new(ProjectType.ER, "eldenring", "Elden Ring", new[] { new[] { "item_dlc02" }, new[] { "menu_dlc02" } }),
-        new(ProjectType.NR, "nightreign", "Nightreign", new[] { new[] { "item_dlc01" }, new[] { "menu_dlc01" } }),
-        new(ProjectType.AC6, "armoredcore6", "Armored Core VI", new[] { new[] { "item" }, new[] { "menu" } }),
-        new(ProjectType.DS3, "DarkSoulsIII", "Dark Souls III", new[] { new[] { "item_dlc2", "item_dlc1" }, new[] { "menu_dlc2", "menu_dlc1" } }),
+        new(ProjectType.ER, new[] { new[] { "item_dlc02" }, new[] { "menu_dlc02" } }),
+        new(ProjectType.NR, new[] { new[] { "item_dlc01" }, new[] { "menu_dlc01" } }),
+        new(ProjectType.AC6, new[] { new[] { "item" }, new[] { "menu" } }),
+        new(ProjectType.DS3, new[] { new[] { "item_dlc2", "item_dlc1" }, new[] { "menu_dlc2", "menu_dlc1" } }),
     };
 
     public static GameProfile ProfileFor(ProjectType type) => Profiles.FirstOrDefault(p => p.Type == type);
 
+    /// <summary>The game's binders, or null when the FMG Reloader doesn't support this game</summary>
     public readonly GameProfile Profile;
 
-    public TextGameLink(ProjectType type)
+    private readonly ProjectEntry Project;
+
+    public FmgReloader(ProjectEntry project)
     {
-        Profile = ProfileFor(type);
+        Project = project;
+        Profile = ProfileFor(project.Descriptor.ProjectType);
     }
 
-    private readonly object GameLock = new();
-    private Process GameProcess;
-    private nint Handle;
+    /// <summary>The project's connection to the game, shared with the other live tools</summary>
+    public GameLink Link => Project.Handler.GameLink;
+
+    /// <summary>Whether this game has binders here and a game link</summary>
+    public bool IsSupported => Profile != null && Link.IsSupported;
+
+    // Found for one attach of the link
+    private int ResolvedFor = -1;
     private nint RepoGlobal, LanguageIndexAddr, LanguageTableAddr;
     private int LanguageCount;      // 0 when the getter has no bounds check (AC6): read until an entry isn't a language code
     private int AllocatorOffset;    // +30, or +38 in DS3: read from the insert's code
+
+    // Why the text can't be read while the link is attached (not found in this version, not loaded yet), or null
+    private volatile string Problem;
+    private volatile bool ProblemIsFailure;
+
+    /// <summary>
+    /// The state to show: the link's, or the reloader's own when the link is attached but the text can't be read
+    /// </summary>
+    public GameLink.LinkState State =>
+        Link.State is GameLink.LinkState.Attached && Problem != null && ProblemIsFailure ? GameLink.LinkState.Failed : Link.State;
+
+    public string StateMessage =>
+        Link.State is GameLink.LinkState.Attached && Problem != null ? Problem : Link.StateMessage;
+
+    /// <summary>Whether the link is attached and the message repository was found</summary>
+    public bool IsReady => Link.State is GameLink.LinkState.Attached && ResolvedFor == Link.AttachId && RepoGlobal != 0;
 
     // Slot pointers this session wrote, so the list can mark them
     private readonly Dictionary<int, nint> Replaced = new();
@@ -128,15 +150,19 @@ public class TextGameLink
         {
             try
             {
-                lock (GameLock)
+                lock (Link.Lock)
                 {
-                    if (EnsureAttached())
+                    if (EnsureReady())
                         Poll();
                 }
             }
             catch (Exception e)
             {
-                Fail(LOC.Get("TEXT_FmgReloader_State_Read_Failed", e.Message));
+                lock (Link.Lock)
+                {
+                    Link.Fail(LOC.Get("TEXT_FmgReloader_State_Read_Failed", e.Message));
+                    Forget();
+                }
             }
             finally
             {
@@ -156,11 +182,12 @@ public class TextGameLink
 
         if (IsReloading)
         {
-            Smithbox.LogError(typeof(TextGameLink), LOC.Get("TEXT_FmgReloader_Reload_Busy", items.Count));
+            Smithbox.LogError(typeof(FmgReloader), LOC.Get("TEXT_FmgReloader_Reload_Busy", items.Count));
             return;
         }
 
         IsReloading = true;
+        var operation = Link.BeginOperation();
         var label = items.Count == 1 ? items[0].Label : LOC.Get("TEXT_FmgReloader_Reload_Many_Name", items.Count);
 
         Task.Run(() =>
@@ -169,9 +196,9 @@ public class TextGameLink
             {
                 var results = new List<ReloadResult>();
 
-                lock (GameLock)
+                lock (Link.Lock)
                 {
-                    if (!EnsureAttached())
+                    if (!EnsureReady())
                     {
                         LastReload = new(label, ReloadOutcome.Failed, StateMessage, DateTime.Now);
                         return;
@@ -192,10 +219,11 @@ public class TextGameLink
             catch (Exception e)
             {
                 LastReload = new(label, ReloadOutcome.Failed, e.Message, DateTime.Now);
-                Smithbox.LogError(typeof(TextGameLink), $"[Text Editor] In-game reload of {label} failed.", e);
+                Smithbox.LogError(typeof(FmgReloader), $"[Text Editor] In-game reload of {label} failed.", e);
             }
             finally
             {
+                operation.Dispose();
                 IsReloading = false;
             }
         });
@@ -269,84 +297,65 @@ public class TextGameLink
 
     #endregion
 
+    /// <summary>
+    /// Disconnects the shared link (other live tools too) and clears what was read
+    /// </summary>
     public void Detach()
     {
-        lock (GameLock)
-        {
-            Close();
-            State = LinkState.NotRunning;
-            StateMessage = "";
-        }
+        Link.Detach();
+
+        lock (Link.Lock)
+            Forget();
     }
 
     #region Attach
 
-    private bool EnsureAttached()
+    /// <summary>
+    /// Connects the link and finds the message repository for this attach. Call with the link's lock held.
+    /// </summary>
+    private bool EnsureReady()
     {
-        if (GameProcess != null && !GameProcess.HasExited && Handle != 0 && RepoGlobal != 0)
-            return true;
-
-        Close();
-
-        if (Profile == null)
+        if (!Link.EnsureAttached())
         {
-            State = LinkState.Failed;
-            StateMessage = LOC.Get("TEXT_FmgReloader_Game_Not_Supported");
+            Forget();
             return false;
         }
 
-        var processes = Process.GetProcessesByName(Profile.ProcessName);
-        if (processes.Length == 0)
-        {
-            State = LinkState.NotRunning;
-            StateMessage = LOC.Get("TEXT_FmgReloader_State_Not_Running", Profile.GameName);
-            return false;
-        }
+        if (ResolvedFor == Link.AttachId)
+            return RepoGlobal != 0;
 
-        GameProcess = processes[0];
-        Handle = OpenProcess(PROCESS_CREATE_THREAD | PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_QUERY_INFORMATION,
-            false, GameProcess.Id);
-
-        if (Handle == 0)
-        {
-            Fail(LOC.Get("TEXT_FmgReloader_State_Open_Failed", Marshal.GetLastWin32Error()));
-            return false;
-        }
+        Forget();
+        ResolvedFor = Link.AttachId;
 
         if (!Resolve(out var error))
         {
-            Fail(error);
+            SetProblem(error, true);
             return false;
         }
 
-        State = LinkState.Attached;
-        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id, Profile.GameName);
-
-        Smithbox.Log(typeof(TextGameLink),
-            $"[Text Editor] FMG Reloader link ({Profile.ProcessName}): pid {GameProcess.Id}, MsgRepository global 0x{RepoGlobal:X}, allocator +0x{AllocatorOffset:X}, " +
+        Smithbox.Log(typeof(FmgReloader),
+            $"[Text Editor] FMG Reloader ({Link.ExeName}): MsgRepository global 0x{RepoGlobal:X}, allocator +0x{AllocatorOffset:X}, " +
             $"language index 0x{LanguageIndexAddr:X}, table 0x{LanguageTableAddr:X} ({(LanguageCount == 0 ? "unbounded" : LanguageCount)})");
 
         return true;
     }
 
-    private void Fail(string message)
+    private void SetProblem(string message, bool failure)
     {
-        State = LinkState.Failed;
-        StateMessage = message;
-        Close();
+        ProblemIsFailure = failure;
+        Problem = message;
     }
 
-    private void Close()
+    /// <summary>
+    /// Forgets what was found for the last attach, and what was read
+    /// </summary>
+    private void Forget()
     {
-        if (Handle != 0)
-            CloseHandle(Handle);
-
-        Handle = 0;
-        GameProcess?.Dispose();
-        GameProcess = null;
+        ResolvedFor = -1;
         RepoGlobal = LanguageIndexAddr = LanguageTableAddr = 0;
         LanguageCount = 0;
         AllocatorOffset = 0;
+        Problem = null;
         Replaced.Clear();
         Fmgs = Array.Empty<GameFmg>();
         Language = "";
@@ -361,10 +370,10 @@ public class TextGameLink
         error = "";
 
         // Repository: the singleton checks whose lea r9 names "MsgRepository" must all read one global
-        var names = FindInData(RepositoryName).ToHashSet();
+        var names = Link.FindInData(RepositoryName).ToHashSet();
         var globals = new HashSet<nint>();
 
-        foreach (var (at, bytes) in ScanWith(SingletonCheckAob))
+        foreach (var (at, bytes) in Link.ScanWith(SingletonCheckAob))
         {
             if ((bytes[2] & 0xC7) != 0x05)                       // mov reg,[rip+x]
                 continue;
@@ -383,12 +392,12 @@ public class TextGameLink
         nint insert = 0;
         foreach (var aob in InsertWrapperAobs)
         {
-            var hits = Scan(aob);
+            var hits = Link.Scan(aob);
             if (hits.Count != 1)
                 continue;
 
             var call = hits[0] + aob.Split(' ').Length - 1;
-            insert = call + 5 + ReadI32(call + 1);
+            insert = call + 5 + Link.ReadI32(call + 1);
             break;
         }
 
@@ -398,7 +407,7 @@ public class TextGameLink
             return false;
         }
 
-        var code = ReadBytes(insert, 0x400);
+        var code = Link.ReadBytes(insert, 0x400);
 
         // mov rcx,[reg+30h|38h] (ModRM mod=01, reg=rcx), then call [rax+50h]
         var allocAt = -1;
@@ -408,7 +417,7 @@ public class TextGameLink
                 allocAt = i;
         }
 
-        if (allocAt < 0 || IndexOf(code, "FF 50 50", allocAt, 0x40) < 0 || IndexOf(code, InsertFixupAob, 0, code.Length - 16) < 0)
+        if (allocAt < 0 || GameLink.IndexOf(code, "FF 50 50", allocAt, 0x40) < 0 || GameLink.IndexOf(code, InsertFixupAob, 0, code.Length - 16) < 0)
         {
             error = LOC.Get("TEXT_FmgReloader_State_Version", "insert layout");
             return false;
@@ -416,9 +425,9 @@ public class TextGameLink
 
         // Language: the first msgbnd path build that isn't sellregion's
         nint languageSite = 0;
-        foreach (var (at, bytes) in ScanWith(LanguageSiteAob))
+        foreach (var (at, bytes) in Link.ScanWith(LanguageSiteAob))
         {
-            var path = ReadUnicode(at + 21 + BitConverter.ToInt32(bytes, 17), 80);
+            var path = Link.ReadUnicode(at + 21 + BitConverter.ToInt32(bytes, 17), 80);
             if (path.Contains(".msgbnd", StringComparison.OrdinalIgnoreCase) && !path.Contains("sellregion", StringComparison.OrdinalIgnoreCase))
             {
                 languageSite = at;
@@ -432,13 +441,13 @@ public class TextGameLink
             return false;
         }
 
-        var getter = languageSite + 11 + ReadI32(languageSite + 7);
-        var getterBytes = ReadBytes(getter, 0x50);
+        var getter = languageSite + 11 + Link.ReadI32(languageSite + 7);
+        var getterBytes = Link.ReadBytes(getter, 0x50);
 
         // lea rcx,[table]; mov rax,[rcx+rbx*8] (ER, NR, DS3) or [rcx+rax*8] (AC6, no bounds check)
-        var lea = IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 D9", 0, 0x40);
+        var lea = GameLink.IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 D9", 0, 0x40);
         if (lea < 0)
-            lea = IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 C1", 0, 0x40);
+            lea = GameLink.IndexOf(getterBytes, "48 8D 0D ?? ?? ?? ?? 48 8B 04 C1", 0, 0x40);
 
         if (lea < 0)
         {
@@ -446,137 +455,20 @@ public class TextGameLink
             return false;
         }
 
-        var bound = IndexOf(getterBytes, "83 F9 ??", 0, 0x10);
+        var bound = GameLink.IndexOf(getterBytes, "83 F9 ??", 0, 0x10);
 
         RepoGlobal = globals.First();
         AllocatorOffset = code[allocAt + 3];
-        LanguageIndexAddr = languageSite + 6 + ReadI32(languageSite + 2);
+        LanguageIndexAddr = languageSite + 6 + Link.ReadI32(languageSite + 2);
         LanguageTableAddr = getter + lea + 7 + BitConverter.ToInt32(getterBytes, lea + 3);
         LanguageCount = bound >= 0 ? getterBytes[bound + 2] : 0;
 
         return true;
     }
 
-    /// <summary>First match of a pattern in bytes[from, from+length), or -1</summary>
-    private static int IndexOf(byte[] bytes, string aob, int from, int length)
-    {
-        var pattern = aob.Split(' ').Select(t => t.StartsWith('?') ? -1 : Convert.ToInt32(t, 16)).ToArray();
-
-        for (var i = from; i < from + length && i + pattern.Length <= bytes.Length; i++)
-        {
-            var match = true;
-            for (var j = 0; j < pattern.Length && match; j++)
-                match = pattern[j] < 0 || bytes[i + j] == pattern[j];
-
-            if (match)
-                return i;
-        }
-
-        return -1;
-    }
-
     /// <summary>A language code as the games name their msg folders: three lower-case letters, two upper-case (engUS)</summary>
     private static bool IsLanguageCode(string s) =>
         s.Length == 5 && s.Take(3).All(char.IsAsciiLetterLower) && s.Skip(3).All(char.IsAsciiLetterUpper);
-
-    private record Section(nint Start, int Size, bool Executable);
-
-    private List<Section> Sections()
-    {
-        var module = GameProcess.MainModule.BaseAddress;
-        var header = ReadBytes(module, 0x1000);
-        var peOff = BitConverter.ToInt32(header, 0x3C);
-        var sectionCount = BitConverter.ToUInt16(header, peOff + 6);
-        var optSize = BitConverter.ToUInt16(header, peOff + 20);
-        var sec = peOff + 24 + optSize;
-        var list = new List<Section>();
-
-        for (var s = 0; s < sectionCount; s++, sec += 40)
-        {
-            var virtualSize = BitConverter.ToInt32(header, sec + 8);
-            var rva = BitConverter.ToInt32(header, sec + 12);
-            var characteristics = BitConverter.ToUInt32(header, sec + 36);
-            list.Add(new Section(module + rva, virtualSize, (characteristics & 0x20000000) != 0)); // IMAGE_SCN_MEM_EXECUTE
-        }
-
-        return list;
-    }
-
-    /// <summary>
-    /// Every start of these bytes in the module's data sections, preceded by a 0 byte (a whole C string)
-    /// </summary>
-    private List<nint> FindInData(byte[] needle)
-    {
-        var hits = new List<nint>();
-
-        foreach (var section in Sections().Where(s => !s.Executable))
-        {
-            const int chunk = 0x100000;
-            for (var offset = 0; offset < section.Size; offset += chunk)
-            {
-                var length = Math.Min(chunk + needle.Length, section.Size - offset);
-                var start = section.Start + offset;
-                var bytes = new byte[length];
-
-                if (!ReadProcessMemory(Handle, start, bytes, length, out _))
-                    continue;
-
-                for (var i = 1; i <= length - needle.Length && i < chunk; i++)
-                {
-                    if (bytes[i - 1] == 0 && bytes.AsSpan(i, needle.Length).SequenceEqual(needle))
-                        hits.Add(start + i);
-                }
-            }
-        }
-
-        return hits;
-    }
-
-    /// <summary>
-    /// Every match of an AOB in the executable sections of the main module
-    /// </summary>
-    private List<nint> Scan(string aob) => ScanWith(aob).Select(h => h.At).ToList();
-
-    /// <summary>
-    /// Every match of an AOB in the executable sections of the main module, with the matched bytes
-    /// </summary>
-    private List<(nint At, byte[] Bytes)> ScanWith(string aob)
-    {
-        var pattern = aob.Split(' ').Select(t => t.StartsWith('?') ? -1 : Convert.ToInt32(t, 16)).ToArray();
-        var hits = new List<(nint, byte[])>();
-
-        foreach (var section in Sections().Where(s => s.Executable))
-        {
-            const int chunk = 0x100000;
-            for (var offset = 0; offset < section.Size; offset += chunk)
-            {
-                var length = Math.Min(chunk + pattern.Length, section.Size - offset);
-                var start = section.Start + offset;
-                var bytes = new byte[length];
-
-                if (!ReadProcessMemory(Handle, start, bytes, length, out _))
-                    continue;
-
-                for (var i = 0; i <= length - pattern.Length && i < chunk; i++)
-                {
-                    var match = true;
-                    for (var j = 0; j < pattern.Length; j++)
-                    {
-                        if (pattern[j] >= 0 && bytes[i + j] != pattern[j])
-                        {
-                            match = false;
-                            break;
-                        }
-                    }
-
-                    if (match)
-                        hits.Add((start + i, bytes.AsSpan(i, pattern.Length).ToArray()));
-                }
-            }
-        }
-
-        return hits;
-    }
 
     #endregion
 
@@ -588,18 +480,18 @@ public class TextGameLink
     private nint SlotArray(out nint repo, out int slotCount)
     {
         slotCount = 0;
-        repo = ReadPtr(RepoGlobal);
+        repo = Link.ReadPtr(RepoGlobal);
         if (repo == 0)
             return 0;
 
-        var versions = ReadPtr(repo + VersionArrayOffset);
-        var versionCount = ReadI32(repo + VersionCountOffset);
-        slotCount = ReadI32(repo + SlotCountOffset);
+        var versions = Link.ReadPtr(repo + VersionArrayOffset);
+        var versionCount = Link.ReadI32(repo + VersionCountOffset);
+        slotCount = Link.ReadI32(repo + SlotCountOffset);
 
         if (versions == 0 || versionCount < 1 || slotCount <= 0 || slotCount > 0x10000)
             return 0;
 
-        return ReadPtr(versions);
+        return Link.ReadPtr(versions);
     }
 
     /// <summary>
@@ -608,19 +500,19 @@ public class TextGameLink
     private void Poll()
     {
         // AC6's table has no bound (14 languages, then font names), so an entry counts only if it looks like a code
-        var index = ReadI32(LanguageIndexAddr);
-        var language = index >= 0 && index < (LanguageCount > 0 ? LanguageCount : 32) ? ReadUnicode(ReadPtr(LanguageTableAddr + index * 8), 32) : "";
+        var index = Link.ReadI32(LanguageIndexAddr);
+        var language = index >= 0 && index < (LanguageCount > 0 ? LanguageCount : 32) ? Link.ReadUnicode(Link.ReadPtr(LanguageTableAddr + index * 8), 32) : "";
         Language = IsLanguageCode(language) ? language : "";
 
         var slots = SlotArray(out _, out var slotCount);
         if (slots == 0)
         {
             Fmgs = Array.Empty<GameFmg>();
-            StateMessage = LOC.Get("TEXT_FmgReloader_State_Not_Loaded");
+            SetProblem(LOC.Get("TEXT_FmgReloader_State_Not_Loaded"), false);
             return;
         }
 
-        var pointers = ReadBytes(slots, slotCount * 8);
+        var pointers = Link.ReadBytes(slots, slotCount * 8);
         var fmgs = new List<GameFmg>();
 
         for (var id = 0; id < slotCount; id++)
@@ -629,13 +521,13 @@ public class TextGameLink
             if (fmg == 0)
                 continue;
 
-            var header = ReadBytes(fmg, 0x14);
+            var header = Link.ReadBytes(fmg, 0x14);
             var replaced = Replaced.TryGetValue(id, out var ours) && ours == fmg;
             fmgs.Add(new GameFmg(id, BitConverter.ToInt32(header, 0x10), replaced));
         }
 
         Fmgs = fmgs;
-        StateMessage = LOC.Get("TEXT_FmgReloader_State_Attached", GameProcess.Id, Profile.GameName);
+        Problem = null;
     }
 
     /// <summary>
@@ -644,12 +536,12 @@ public class TextGameLink
     /// </summary>
     private (int Min, int Max)? IdRangeOf(nint fmg)
     {
-        var groupCount = ReadI32(fmg + 0xC);
+        var groupCount = Link.ReadI32(fmg + 0xC);
         if (groupCount <= 0 || groupCount > 0x100000)
             return null;
 
-        var first = ReadI32(fmg + 0x28 + 4);
-        var last = ReadI32(fmg + 0x28 + (groupCount - 1) * 0x10 + 8);
+        var first = Link.ReadI32(fmg + 0x28 + 4);
+        var last = Link.ReadI32(fmg + 0x28 + (groupCount - 1) * 0x10 + 8);
         return (first, last);
     }
 
@@ -673,13 +565,13 @@ public class TextGameLink
             return new(item.Label, ReloadOutcome.NotFound, LOC.Get("TEXT_FmgReloader_Reload_Out_Of_Range", item.Label, item.Id, slotCount), DateTime.Now);
 
         var slot = slots + item.Id * 8;
-        var old = ReadPtr(slot);
+        var old = Link.ReadPtr(slot);
 
         // Only FMGs the game loaded are replaced: an empty slot means nothing reads this ID
         if (old == 0)
             return new(item.Label, ReloadOutcome.NotFound, LOC.Get("TEXT_FmgReloader_Reload_Not_Found", item.Label, item.Id), DateTime.Now);
 
-        var oldHeader = ReadBytes(old, 0x8);
+        var oldHeader = Link.ReadBytes(old, 0x8);
         if (oldHeader[2] != 2)
             return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Bad_Slot", item.Label, item.Id), DateTime.Now);
 
@@ -698,12 +590,12 @@ public class TextGameLink
             }
         }
 
-        var allocator = ReadPtr(repo + AllocatorOffset);
+        var allocator = Link.ReadPtr(repo + AllocatorOffset);
         if (allocator == 0)
             return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_No_Allocator"), DateTime.Now);
 
-        var staging = VirtualAllocEx(Handle, 0, bytes.Length, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-        var codeBuffer = VirtualAllocEx(Handle, 0, 0x100, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
+        var staging = Link.Alloc(bytes.Length);
+        var codeBuffer = Link.Alloc(0x100, executable: true);
 
         // Freed only once the game's thread is done with them
         var finished = true;
@@ -713,33 +605,26 @@ public class TextGameLink
             if (staging == 0 || codeBuffer == 0)
                 return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Alloc_Failed"), DateTime.Now);
 
-            WriteBytes(staging, bytes);
-            WriteBytes(codeBuffer, BuildSwapCode(allocator, staging, bytes.Length, slot));
+            Link.WriteBytes(staging, bytes);
+            Link.WriteBytes(codeBuffer, BuildSwapCode(allocator, staging, bytes.Length, slot));
 
-            var thread = CreateRemoteThread(Handle, 0, 0, codeBuffer, 0, 0, out _);
-            if (thread == 0)
-                return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Thread_Failed", Marshal.GetLastWin32Error()), DateTime.Now);
+            var outcome = Link.RunThread(codeBuffer, 10000, out var exitCode, out var error);
 
-            try
+            if (outcome is GameLink.ThreadOutcome.NotStarted)
+                return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Thread_Failed", error), DateTime.Now);
+
+            if (outcome is GameLink.ThreadOutcome.TimedOut)
             {
-                finished = WaitForSingleObject(thread, 10000) == 0;
-
-                if (!finished)
-                    return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Timeout"), DateTime.Now);
-
-                GetExitCodeThread(thread, out var exitCode);
-
-                if (exitCode == 0)
-                    return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Game_Alloc_Failed", bytes.Length), DateTime.Now);
+                finished = false;
+                return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Timeout"), DateTime.Now);
             }
-            finally
-            {
-                CloseHandle(thread);
-            }
+
+            if (exitCode == 0)
+                return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Game_Alloc_Failed", bytes.Length), DateTime.Now);
 
             // Read back: the slot holds a new block that starts with the bytes sent (+18 is now a pointer)
-            var current = ReadPtr(slot);
-            var check = current != 0 && current != old ? ReadBytes(current, 0x18) : null;
+            var current = Link.ReadPtr(slot);
+            var check = current != 0 && current != old ? Link.ReadBytes(current, 0x18) : null;
 
             if (check == null || !check.AsSpan().SequenceEqual(bytes.AsSpan(0, 0x18)))
                 return new(item.Label, ReloadOutcome.Failed, LOC.Get("TEXT_FmgReloader_Reload_Check_Failed", item.Label), DateTime.Now);
@@ -747,15 +632,15 @@ public class TextGameLink
             Replaced[item.Id] = current;
             Interlocked.Add(ref keptBytes, Math.Max(0, oldSize));
 
-            Smithbox.Log(typeof(TextGameLink), $"[Text Editor] Reloaded FMG {item.Id} ({item.Label}) in game: {bytes.Length} bytes at 0x{current:X}; kept old block 0x{old:X} ({oldSize} bytes).");
+            Smithbox.Log(typeof(FmgReloader), $"[Text Editor] Reloaded FMG {item.Id} ({item.Label}) in game: {bytes.Length} bytes at 0x{current:X}; kept old block 0x{old:X} ({oldSize} bytes).");
             return new(item.Label, ReloadOutcome.Reloaded, LOC.Get("TEXT_FmgReloader_Reload_Done", item.Label), DateTime.Now);
         }
         finally
         {
             if (finished)
             {
-                if (staging != 0) VirtualFreeEx(Handle, staging, 0, MEM_RELEASE);
-                if (codeBuffer != 0) VirtualFreeEx(Handle, codeBuffer, 0, MEM_RELEASE);
+                Link.Free(staging);
+                Link.Free(codeBuffer);
             }
         }
     }
@@ -801,74 +686,6 @@ public class TextGameLink
         B(0xC3);                                   // ret
         return code.ToArray();
     }
-
-    #endregion
-
-    #region Memory
-
-    private byte[] ReadBytes(nint address, int length)
-    {
-        var buffer = new byte[length];
-        if (!ReadProcessMemory(Handle, address, buffer, length, out _))
-            throw new InvalidOperationException($"Could not read {length} bytes at 0x{address:X}");
-        return buffer;
-    }
-
-    private int ReadI32(nint address) => BitConverter.ToInt32(ReadBytes(address, 4), 0);
-
-    private nint ReadPtr(nint address) => (nint)BitConverter.ToInt64(ReadBytes(address, 8), 0);
-
-    private string ReadUnicode(nint address, int maxBytes)
-    {
-        var s = Encoding.Unicode.GetString(ReadBytes(address, maxBytes));
-        var end = s.IndexOf('\0');
-        return end >= 0 ? s[..end] : s;
-    }
-
-    private string ReadAscii(nint address, int maxBytes)
-    {
-        var s = Encoding.ASCII.GetString(ReadBytes(address, maxBytes));
-        var end = s.IndexOf('\0');
-        return end >= 0 ? s[..end] : s;
-    }
-
-    private void WriteBytes(nint address, byte[] bytes)
-    {
-        if (!WriteProcessMemory(Handle, address, bytes, bytes.Length, out _))
-            throw new InvalidOperationException($"Could not write {bytes.Length} bytes at 0x{address:X}");
-    }
-
-    private const int PROCESS_CREATE_THREAD = 0x2, PROCESS_VM_OPERATION = 0x8, PROCESS_VM_READ = 0x10,
-        PROCESS_VM_WRITE = 0x20, PROCESS_QUERY_INFORMATION = 0x400;
-    private const uint MEM_COMMIT = 0x1000, MEM_RESERVE = 0x2000, MEM_RELEASE = 0x8000;
-    private const uint PAGE_READWRITE = 0x04, PAGE_EXECUTE_READWRITE = 0x40;
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern nint OpenProcess(int access, bool inherit, int processId);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern bool CloseHandle(nint handle);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern bool ReadProcessMemory(nint process, nint address, byte[] buffer, nint size, out nint read);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern bool WriteProcessMemory(nint process, nint address, byte[] buffer, nint size, out nint written);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern nint VirtualAllocEx(nint process, nint address, nint size, uint type, uint protect);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern bool VirtualFreeEx(nint process, nint address, nint size, uint type);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern nint CreateRemoteThread(nint process, nint attributes, nint stackSize, nint start, nint parameter, uint flags, out uint threadId);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern uint WaitForSingleObject(nint handle, uint milliseconds);
-
-    [DllImport("kernel32.dll", SetLastError = true)]
-    private static extern bool GetExitCodeThread(nint thread, out uint exitCode);
 
     #endregion
 }
