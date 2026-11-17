@@ -44,10 +44,21 @@ public class GameLink : IGameProcess
     public int AttachId { get; private set; }
 
     /// <summary>Whether this game's offsets offer any world action (reload world, quit out), attached or not</summary>
-    public bool OffersWorldActions => OffersWorldReload || Offsets.Groups.Any(g => !string.IsNullOrWhiteSpace(g.quitOutAob));
+    public bool OffersWorldActions => OffersWorldReload || OffersQuitOut;
 
     /// <summary>Whether this game's offsets offer reloading the world, attached or not</summary>
     public bool OffersWorldReload => Offsets.Groups.Any(g => !string.IsNullOrWhiteSpace(g.worldReloadMethod));
+
+    /// <summary>Whether this game's offsets offer quitting to the title screen, attached or not</summary>
+    public bool OffersQuitOut => Offsets.Groups.Any(g => !string.IsNullOrWhiteSpace(g.quitOutAob));
+
+    /// <summary>
+    /// Whether Reload World saves first (ER, NR), or loads the last save as it is (AC6): what was found when attached,
+    /// else what the offsets say
+    /// </summary>
+    public bool WorldReloadSavesFirst => CanReloadWorld
+        ? WorldReload.SavesFirst
+        : Offsets.Groups.Any(g => !string.IsNullOrWhiteSpace(g.worldReloadMethod) && !string.IsNullOrWhiteSpace(g.worldSaveRequestAob));
 
     // Updated by background tasks, read by the UI
     public volatile LinkState State = LinkState.NotRunning;
@@ -359,7 +370,7 @@ public class GameLink : IGameProcess
 
     #region Reload World
 
-    private readonly EldenRingWorldReload WorldReload = new();
+    private readonly WorldReload WorldReload = new();
 
     /// <summary>Whether the world reload request was found in the attached game</summary>
     public bool CanReloadWorld => WorldReload.CanReload;
@@ -382,7 +393,7 @@ public class GameLink : IGameProcess
 
         foreach (var g in Offsets.GroupsFor(ExeVersion).Where(g => !string.IsNullOrWhiteSpace(g.worldReloadMethod)))
         {
-            if (!string.Equals(g.worldReloadMethod, EldenRingWorldReload.Method, StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(g.worldReloadMethod, WorldReload.Method, StringComparison.OrdinalIgnoreCase))
             {
                 Smithbox.Log(typeof(GameLink), $"[Game Link] Reload world: unknown method {g.worldReloadMethod} in the {g.exeVersion} offsets.");
                 continue;
@@ -433,7 +444,7 @@ public class GameLink : IGameProcess
     }
 
     /// <summary>
-    /// Saves, then asks the world step to load the current save slot again (Memory/EldenRingWorldReload).
+    /// Saves (where the game can), then asks the world step to load the save slot again (Memory/WorldReload).
     /// Blocks for up to 20 s, so call it from a background task, without <see cref="Lock"/> held.
     /// </summary>
     public void ReloadWorld() => WorldReload.Run(this);

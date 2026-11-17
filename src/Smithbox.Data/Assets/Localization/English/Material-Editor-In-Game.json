@@ -233,6 +233,10 @@
       "Text": "Then: reload the world"
     },
     {
+      "Key": "MAT_InGameTool_After_Load_Save",
+      "Text": "Then: load the last save"
+    },
+    {
       "Key": "MAT_InGameTool_After_Quit_Out",
       "Text": "Then: quit to the title screen"
     },

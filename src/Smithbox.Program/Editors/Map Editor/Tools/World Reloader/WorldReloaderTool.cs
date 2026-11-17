@@ -43,7 +43,14 @@ public class WorldReloaderTool
 
         // World
         GUI.Spacer();
-        GUI.SimpleHeader(LOC.Get("GAMELINK_World_Header"), LOC.Get("MAP_WorldReloader_World_Header_TT"));
+        // ER and NR save first; AC6 loads the last save as it is
+        var savesFirst = Link.WorldReloadSavesFirst;
+
+        GUI.SimpleHeader(LOC.Get("GAMELINK_World_Header"),
+            LOC.Get(savesFirst ? "MAP_WorldReloader_World_Header_TT" : "MAP_WorldReloader_World_Header_No_Save_TT"));
+
+        if (!savesFirst)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("GAMELINK_World_No_Save_Warning"));
 
         if (Link.IsReloadingWorld)
         {
@@ -56,7 +63,8 @@ public class WorldReloaderTool
         else
         {
             GUI.MultiButtonInput("mapWorldReloaderActions",
-                "mapWorldReloaderReloadWorld", LOC.Get("GAMELINK_World_Reload"), LOC.Get("GAMELINK_World_Reload_TT"),
+                "mapWorldReloaderReloadWorld", LOC.Get("GAMELINK_World_Reload"),
+                LOC.Get(savesFirst ? "GAMELINK_World_Reload_TT" : "GAMELINK_World_Reload_No_Save_TT"),
                 Link.RequestReloadWorld);
         }
 

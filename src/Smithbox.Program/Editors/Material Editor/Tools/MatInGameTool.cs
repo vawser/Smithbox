@@ -108,20 +108,26 @@ public class MatInGameTool
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("MAT_InGameTool_Reload_Header"), LOC.Get("MAT_InGameTool_Reload_Header_TT"));
 
-        // Afterwards: applies to every send below, and to send on save
-        var afterLabels = new[]
-        {
-            LOC.Get("MAT_InGameTool_After_Nothing"),
-            LOC.Get("MAT_InGameTool_After_Reload_World"),
-            LOC.Get("MAT_InGameTool_After_Quit_Out")
-        };
-        CFG.Current.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor_InGame_AfterReload, 0, afterLabels.Length - 1);
+        // Afterwards: applies to every send below, and to send on save. Only the actions this game offers are listed
+        // (ER: both; NR, AC6: reload world). The setting is shared by every game, so a choice this game doesn't have
+        // is shown as "Nothing" without being changed, and the reloader skips it.
+        CFG.Current.MaterialEditor_InGame_AfterReload = Math.Clamp(CFG.Current.MaterialEditor_InGame_AfterReload, 0, 2);
 
-        // Games without world actions (NR, AC6) skip the setting; the link ignores it there
         if (Link.OffersWorldActions)
         {
+            var choices = new List<(MatReloader.AfterReload Value, string Label)> { (MatReloader.AfterReload.Nothing, LOC.Get("MAT_InGameTool_After_Nothing")) };
+
+            if (Link.OffersWorldReload)
+                choices.Add((MatReloader.AfterReload.ReloadWorld, LOC.Get(Link.WorldReloadSavesFirst ? "MAT_InGameTool_After_Reload_World" : "MAT_InGameTool_After_Load_Save")));
+            if (Link.OffersQuitOut)
+                choices.Add((MatReloader.AfterReload.QuitOut, LOC.Get("MAT_InGameTool_After_Quit_Out")));
+
+            var labels = choices.Select(c => c.Label).ToArray();
+            var index = Math.Max(0, choices.FindIndex(c => (int)c.Value == CFG.Current.MaterialEditor_InGame_AfterReload));
+
             ImGui.SetNextItemWidth(-1);
-            ImGui.Combo("##materialInGameAfterReload", ref CFG.Current.MaterialEditor_InGame_AfterReload, afterLabels, afterLabels.Length);
+            if (ImGui.Combo("##materialInGameAfterReload", ref index, labels, labels.Length))
+                CFG.Current.MaterialEditor_InGame_AfterReload = (int)choices[index].Value;
             GUI.Tooltip(LOC.Get("MAT_InGameTool_After_TT"));
         }
 
@@ -196,9 +202,16 @@ public class MatInGameTool
 
         GUI.WrappedText(LOC.Get("MAT_InGameTool_Reload_Note"));
 
-        // World
+        // World: the actions this game offers (ER: reload world and quit out; NR, AC6: reload world)
         GUI.Spacer();
         GUI.SimpleHeader(LOC.Get("GAMELINK_World_Header"), LOC.Get("MAT_InGameTool_World_Header_TT"));
+
+        // ER and NR save first; AC6 loads the last save as it is
+        var savesFirst = Link.WorldReloadSavesFirst;
+        var reloadTip = LOC.Get(savesFirst ? "GAMELINK_World_Reload_TT" : "GAMELINK_World_Reload_No_Save_TT");
+
+        if (Link.OffersWorldReload && !savesFirst)
+            GUI.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, LOC.Get("GAMELINK_World_No_Save_Warning"));
 
         if (Link.IsReloadingWorld)
         {
@@ -208,11 +221,23 @@ public class MatInGameTool
         {
             GUI.WrappedText(LOC.Get("GAMELINK_QuitOut_Running"));
         }
+        else if (Link.OffersWorldReload && Link.OffersQuitOut)
+        {
+            GUI.MultiButtonInput("materialInGameWorldActions",
+                "materialInGameReloadWorld", LOC.Get("GAMELINK_World_Reload"), reloadTip,
+                Link.RequestReloadWorld,
+                "materialInGameQuitOut", LOC.Get("GAMELINK_QuitOut"), LOC.Get("GAMELINK_QuitOut_TT"),
+                Link.RequestQuitOut);
+        }
+        else if (Link.OffersWorldReload)
+        {
+            GUI.MultiButtonInput("materialInGameWorldActions",
+                "materialInGameReloadWorld", LOC.Get("GAMELINK_World_Reload"), reloadTip,
+                Link.RequestReloadWorld);
+        }
         else
         {
             GUI.MultiButtonInput("materialInGameWorldActions",
-                "materialInGameReloadWorld", LOC.Get("GAMELINK_World_Reload"), LOC.Get("GAMELINK_World_Reload_TT"),
-                Link.RequestReloadWorld,
                 "materialInGameQuitOut", LOC.Get("GAMELINK_QuitOut"), LOC.Get("GAMELINK_QuitOut_TT"),
                 Link.RequestQuitOut);
         }

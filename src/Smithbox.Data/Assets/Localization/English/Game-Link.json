@@ -37,12 +37,24 @@
       "Text": "Save, then load the same save again without going to the title screen."
     },
     {
+      "Key": "GAMELINK_World_Reload_No_Save_TT",
+      "Text": "Load the game's last save again without going to the title screen. The game isn't saved first."
+    },
+    {
+      "Key": "GAMELINK_World_No_Save_Warning",
+      "Text": "This game can't be saved from here: Reload World loads its last save, so progress since then is lost."
+    },
+    {
       "Key": "GAMELINK_World_Running",
       "Text": "Reloading the world..."
     },
     {
       "Key": "GAMELINK_World_Done",
       "Text": "{0}  Saved and reloading the world."
+    },
+    {
+      "Key": "GAMELINK_World_Done_No_Save",
+      "Text": "{0}  Loading the last save."
     },
     {
       "Key": "GAMELINK_World_Unavailable",

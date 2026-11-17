@@ -1,4 +1,9 @@
 {
   "exeName": "armoredcore6.exe",
-  "exeVersion": "1.9.0.0"
+  "exeVersion": "1.9.0.0",
+  "worldReloadMethod": "LoadSlot",
+  "worldLoadSlotAob": "48 8B 05 ?? ?? ?? ?? 8B 80 BC 0C 00 00 C3",
+  "worldLoadSlotGameManRelativeOffset": "0x3/0x7",
+  "worldLoadSlotFieldOffset": "0x9",
+  "worldFixedSlot": "0x0"
 }

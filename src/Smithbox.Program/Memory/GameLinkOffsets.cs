@@ -118,27 +118,29 @@ public class GameLinkOffsetEntry
     public string quitOutMenuOffset { get; set; }
     public string quitOutFlagOffset { get; set; }
 
-    // Optional: reload the world from the save (Memory/EldenRingWorldReload). "EldenRing" = save request, then the
-    // world step's load-slot request. Empty = not available.
+    // Optional: reload the world from the save (Memory/WorldReload). "LoadSlot" = (save request, then) the world
+    // step's load-slot request. Empty = not available.
+    // Each field is found by a GameMan getter AOB: GameMan's rel32 ("start/end") and where the i32 field offset sits
+    // in the match.
     public string worldReloadMethod { get; set; }
 
-    // The save request getter: mov rax,[GameMan]; movzx ebx,byte ptr [rax+SaveRequest]; ...
-    // GameMan's rel32, and where the i32 field offset sits in the AOB
+    // The load slot getter: mov rax,[GameMan]; mov eax,[rax+LoadSlot]; ret. Required.
+    public string worldLoadSlotAob { get; set; }
+    public string worldLoadSlotGameManRelativeOffset { get; set; }
+    public string worldLoadSlotFieldOffset { get; set; }
+
+    // Optional: the save request getter (mov rax,[GameMan]; movzx ebx,byte ptr [rax+SaveRequest]; ...). With it the
+    // reload saves first; without it (AC6) it loads the last save as it is.
     public string worldSaveRequestAob { get; set; }
     public string worldSaveRequestGameManRelativeOffset { get; set; }
     public string worldSaveRequestFieldOffset { get; set; }
 
-    // The load slot getter, worldLoadSlotBeforeSave bytes before the save request match; its shape (an AOB) is
-    // checked, then GameMan's rel32 and the field offset are read from it like the others
-    public string worldLoadSlotBeforeSave { get; set; }
-    public string worldLoadSlotPrologue { get; set; }
-    public string worldLoadSlotGameManRelativeOffset { get; set; }
-    public string worldLoadSlotFieldOffset { get; set; }
-
-    // The current save slot getter: mov rax,[GameMan]; mov eax,[rax+CurrentSlot]; ret
+    // The slot to load: the current save slot getter (mov rax,[GameMan]; mov eax,[rax+CurrentSlot]; ret), or else
+    // worldFixedSlot (AC6: 0, the only slot its RequestLoad accepts)
     public string worldCurrentSlotAob { get; set; }
     public string worldCurrentSlotGameManRelativeOffset { get; set; }
     public string worldCurrentSlotFieldOffset { get; set; }
+    public string worldFixedSlot { get; set; }
 }
 
 [JsonSourceGenerationOptions(WriteIndented = true, GenerationMode = JsonSourceGenerationMode.Metadata)]
