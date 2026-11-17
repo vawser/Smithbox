@@ -24,8 +24,17 @@ public class GameOffsetBaseEntry
 
     public int rowPointerOffset;
     public int rowHeaderSize;
-    public int? ERItemGiveFuncOffset = null;
-    public int? ERMapItemManOffset = null;
+    // Item Gib. Null layout = this base has no give-item function.
+    public ItemGiveLayout? ItemGiveLayout = null;
+    public int ItemGiveMaxEntries = 1;
+    public int ItemGiveSource = 0;
+    public ItemGiveArg ItemGiveR9 = new(false, 0);
+    public ItemGiveArg[] ItemGiveStackArgs = Array.Empty<ItemGiveArg>();
+    public ItemGiveAddress ItemGiveFunc = new();
+    public ItemGiveAddress ItemGiveManager = new();
+    public List<ItemGivePrepare> ItemGivePrepares = new();
+
+    public bool SupportsItemGive => ItemGiveLayout != null && ItemGiveFunc.IsSet && ItemGiveManager.IsSet;
 
     // Hops after [paramBase] and before the per-param offset. Empty for most games.
     public int[] paramOuterPath = Array.Empty<int>();
@@ -96,14 +105,7 @@ public class GameOffsetBaseEntry
             ParamBaseAobPattern = data.paramBaseAob;
         }
 
-        if (!string.IsNullOrEmpty(data.paramBaseAobRelativeOffset))
-        {
-            foreach (var relativeOffset in data.paramBaseAobRelativeOffset.Split(','))
-            {
-                var split = relativeOffset.Split('/');
-                ParamBaseAobRelativeOffsets.Add(new(Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
-            }
-        }
+        ParamBaseAobRelativeOffsets = ParseRelativeOffsets(data.paramBaseAobRelativeOffset);
 
         if (!string.IsNullOrEmpty(data.paramInnerPath))
         {
@@ -162,13 +164,140 @@ public class GameOffsetBaseEntry
             itemIDCategories.Add(name, Utils.ParseHexFromString(address));
         }
 
-        if (!string.IsNullOrEmpty(data.ERItemGiveFuncOffset))
+        if (Enum.TryParse<ItemGiveLayout>(data.itemGiveLayout, true, out var layout))
         {
-            ERItemGiveFuncOffset = Utils.ParseHexFromString(data.ERItemGiveFuncOffset);
+            ItemGiveLayout = layout;
         }
-        if (!string.IsNullOrEmpty(data.ERMapItemManOffset))
+
+        if (!string.IsNullOrEmpty(data.itemGiveMaxEntries))
         {
-            ERMapItemManOffset = Utils.ParseHexFromString(data.ERMapItemManOffset);
+            ItemGiveMaxEntries = Math.Max(1, int.Parse(data.itemGiveMaxEntries));
         }
+
+        if (!string.IsNullOrEmpty(data.itemGiveSource))
+        {
+            ItemGiveSource = Utils.ParseHexFromString(data.itemGiveSource);
+        }
+
+        if (!string.IsNullOrEmpty(data.itemGiveR9))
+        {
+            ItemGiveR9 = ItemGiveArg.Parse(data.itemGiveR9);
+        }
+
+        if (!string.IsNullOrEmpty(data.itemGiveStackArgs))
+        {
+            ItemGiveStackArgs = data.itemGiveStackArgs.Split(',').Select(ItemGiveArg.Parse).ToArray();
+        }
+
+        ItemGiveFunc = ItemGiveAddress.Parse(data.itemGiveFuncAob, data.itemGiveFuncAobRelativeOffset, data.itemGiveFuncOffset);
+        ItemGiveManager = ItemGiveAddress.Parse(data.itemGiveManagerAob, data.itemGiveManagerAobRelativeOffset, data.itemGiveManagerOffset);
+
+        foreach (var p in data.itemGivePrepare ?? new())
+        {
+            ItemGivePrepares.Add(new ItemGivePrepare
+            {
+                Param = p.param,
+                Lookup = ItemGiveAddress.Parse(p.lookupFuncAob, p.lookupFuncAobRelativeOffset, p.lookupFuncOffset),
+                Prepare = ItemGiveAddress.Parse(p.prepareFuncAob, p.prepareFuncAobRelativeOffset, p.prepareFuncOffset),
+                Slots = (p.slots ?? new()).Select(s => s.Split(':')).Select(s => new ItemGiveSlot(
+                    s[0], Utils.ParseHexFromString(s[1]), s.Length > 2 ? s[2] : null, s.Length > 3 ? s[3] : null)).ToList(),
+                SlotPoolParam = p.slotPoolParam,
+                SlotPoolField = p.slotPoolField,
+                SlotPoolWeightField = p.slotPoolWeightField,
+                SlotValueParam = p.slotValueParam,
+            });
+        }
+    }
+
+    /// <summary>
+    /// "0x03/0x07,..." → [(start, end)]: each pair reads a rel32 at match+start and resolves it against match+end.
+    /// </summary>
+    public static List<(int, int)> ParseRelativeOffsets(string str)
+    {
+        var result = new List<(int, int)>();
+        if (string.IsNullOrEmpty(str))
+            return result;
+
+        foreach (var relativeOffset in str.Split(','))
+        {
+            var split = relativeOffset.Split('/');
+            result.Add((Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
+        }
+        return result;
+    }
+}
+
+public enum ItemGiveLayout
+{
+    // int count; { int id; int quantity; int durability; }[count]. Status: 16 zero bytes. (DS3)
+    Durability,
+    // int count; { int id; int quantity; int -1; int gemId; }[maxEntries]. Status: { -1, 0, 0 }. (ER)
+    Gem,
+    // int count; { int id; int quantity; int -1; int itemGiveSource; }[maxEntries]. Status: 16 zero bytes. (SDT)
+    Source,
+    // byte count; pad[7]; ItemDescriptor[maxEntries] (0x50 bytes: id at +0, u16 quantity at +0x48,
+    // the other fields at their constructor defaults). Status: { -1, 0, 0 }. (NR)
+    Descriptor,
+}
+
+/// <summary>
+/// A register / stack argument of the give-item call: an immediate, or a pointer to a scratch block.
+/// </summary>
+public readonly record struct ItemGiveArg(bool Scratch, long Value)
+{
+    public static ItemGiveArg Parse(string str)
+    {
+        str = str.Trim();
+        if (str.Equals("scratch", StringComparison.OrdinalIgnoreCase))
+            return new ItemGiveArg(true, 0);
+
+        return new ItemGiveArg(false, Utils.ParseHexFromString(str));
+    }
+}
+
+/// <summary>
+/// Calls made for each item of Param before the give: Lookup(&rowRef, rowId), then Prepare(&rowRef, &descriptor).
+/// </summary>
+public class ItemGivePrepare
+{
+    public string Param;
+    public ItemGiveAddress Lookup = new();
+    public ItemGiveAddress Prepare = new();
+
+    // Designer slots: the row field holding the pool ID, and the descriptor offset the chosen value is written to.
+    public List<ItemGiveSlot> Slots = new();
+    public string SlotPoolParam;
+    public string SlotPoolField;
+    public string SlotPoolWeightField;
+    public string SlotValueParam;
+
+    public bool HasSlots => Slots.Count > 0 && SlotPoolParam != null && SlotPoolField != null && SlotValueParam != null;
+}
+
+/// <summary>
+/// A designer slot, from "field:offset:kind:number". Kind and number label it in the UI
+/// (PARAM_Tools_ItemGib_Slot_{Kind} with {0} = number); without them the field name is shown.
+/// </summary>
+public record ItemGiveSlot(string Field, int Offset, string Kind, string Number);
+
+/// <summary>
+/// A module-relative address found by AOB (preferred) or given as a hard offset.
+/// </summary>
+public class ItemGiveAddress
+{
+    public string Aob;
+    public List<(int, int)> AobRelativeOffsets = new();
+    public int? Offset;
+
+    public bool IsSet => !string.IsNullOrEmpty(Aob) || Offset != null;
+
+    public static ItemGiveAddress Parse(string aob, string relativeOffsets, string offset)
+    {
+        return new ItemGiveAddress
+        {
+            Aob = string.IsNullOrEmpty(aob) ? null : aob,
+            AobRelativeOffsets = GameOffsetBaseEntry.ParseRelativeOffsets(relativeOffsets),
+            Offset = string.IsNullOrEmpty(offset) ? null : Utils.ParseHexFromString(offset),
+        };
     }
 }

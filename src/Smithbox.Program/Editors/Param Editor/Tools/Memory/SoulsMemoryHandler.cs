@@ -317,128 +317,250 @@ public class SoulsMemoryHandler
         NativeWrapper.VirtualFreeEx(memoryHandle, argAddress, 0, FreeType.Release);
     }
 
-    internal void PlayerItemGive_DS3(List<int> itemIds, int itemQuantity = 1, int itemDurability = -1)
+    /// <summary>
+    /// Module-relative offset of an Item Gib address: by AOB when one is set, else the hard offset.
+    /// </summary>
+    internal bool TryResolveItemGiveAddress(string name, ItemGiveAddress address, out int offset, out bool fromAob)
     {
-        if (Editor.Project.Descriptor.ProjectType is not ProjectType.DS3 || !itemIds.Any())
-            return;
-
-        var intListProcessing = new List<int> { 0, 0, 0, 0, itemIds.Count };
-        foreach (var itemId in itemIds)
+        fromAob = false;
+        if (address.Aob != null && TryFindOffsetFromAOB($"ItemGive_{name}_{address.Aob}", address.Aob, address.AobRelativeOffsets, out offset))
         {
-            intListProcessing.Add(itemId);
-            intListProcessing.Add(itemQuantity);
-            intListProcessing.Add(itemDurability);
+            fromAob = true;
+            return true;
         }
 
-        var itemGibArgumentsByteArray = new byte[Buffer.ByteLength(intListProcessing.ToArray())];
-        Buffer.BlockCopy(intListProcessing.ToArray(), 0, itemGibArgumentsByteArray, 0, itemGibArgumentsByteArray.Length);
-
-        var argAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, itemGibArgumentsByteArray.Length,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
-
-        if (argAddress == nint.Zero) return;
-
-        WriteProcessMemoryArray(argAddress, itemGibArgumentsByteArray);
-
-        byte[] code =
-        {
-            0x48, 0x83, 0xEC, 0x48, // sub rsp, 48h
-            0x48, 0xB9, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // mov rcx, p_arg_struct
-            0x48, 0x8B, 0x09, // mov rcx, [rcx]
-            0x48, 0x8D, 0x51, 0x10, // lea rdx, [rcx+10h]
-            0x48, 0xB8, 0x78, 0x55, 0x9A, 0x42, 0x01, 0x00, 0x00, 0x00, // mov rax, [GAME.EXE+29A5578]
-            0x48, 0x8B, 0x00, // mov rax, [rax]
-            0xFF, 0x15, 0x02, 0x00, 0x00, 0x00, 0xEB, 0x08, 0x90, 0x36, // call qword ptr [rip+8] | jmp over address
-            0x85, 0x40, 0x01, 0x00, 0x00, 0x00, // address of ItemGibFunc
-            0x48, 0x83, 0xC4, 0x48, // add rsp, 48h
-            0xC3 // ret
-        };
-
-        var addrBytes = BitConverter.GetBytes((long)argAddress);
-        Buffer.BlockCopy(addrBytes, 0, code, 6, addrBytes.Length);
-
-        ExecuteCode(code);
-
-        NativeWrapper.VirtualFreeEx(memoryHandle, argAddress, 0, FreeType.Release);
+        offset = address.Offset ?? 0;
+        return address.Offset != null;
     }
 
-    internal void PlayerItemGive_ER(GameOffsetBaseEntry entry, List<int> itemIds, int itemQuantity = 1, int gemId = -1)
+    /// <summary>
+    /// The value of the manager singleton (0 while the game has not created it).
+    /// </summary>
+    internal nint ReadManager(int managerOffset)
     {
-        if (Editor.Project.Descriptor.ProjectType is not ProjectType.ER || !itemIds.Any())
-            return;
-
-        const int maxItems = 10;
-        var itemCount = Math.Min(itemIds.Count, maxItems);
-
-        var itemTable = new byte[4 + maxItems * 16];
-        BitConverter.GetBytes(itemCount).CopyTo(itemTable, 0);
-        for (var i = 0; i < itemCount; i++)
-        {
-            var itemId = itemIds[i];
-            BitConverter.GetBytes(itemId).CopyTo(itemTable, 4 + i * 16 + 0);
-            BitConverter.GetBytes(itemQuantity).CopyTo(itemTable, 4 + i * 16 + 4);
-            BitConverter.GetBytes(-1).CopyTo(itemTable, 4 + i * 16 + 8);
-            BitConverter.GetBytes(gemId).CopyTo(itemTable, 4 + i * 16 + 12);
-        }
-
-        var itemTablePtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0, itemTable.Length,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
-        if (itemTablePtr == nint.Zero) return;
-        WriteProcessMemoryArray(itemTablePtr, itemTable);
-
-        var statusStruct = new int[3] { -1, 0, 0 };
-        var statusStructBytes = new byte[12];
-        Buffer.BlockCopy(statusStruct, 0, statusStructBytes, 0, 12);
-        var statusStructPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0, 12,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
-        if (statusStructPtr == nint.Zero)
-        {
-            NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
-            return;
-        }
-        WriteProcessMemoryArray(statusStructPtr, statusStructBytes);
-
-        var itemGiveFuncPtr = GetBaseAddress() + entry.ERItemGiveFuncOffset ?? throw new InvalidOperationException(LOC.Get("PARAM_Tools_Memory_ERItemGiveFuncOffset_Missing"));
-        var mapItemManPtr = GetBaseAddress() + entry.ERMapItemManOffset ?? throw new InvalidOperationException(LOC.Get("PARAM_Tools_Memory_ERMapItemManOffset_Missing"));
-
-        var argBuffer = new byte[32];
-        BitConverter.GetBytes((long)mapItemManPtr).CopyTo(argBuffer, 0);
-        BitConverter.GetBytes((long)itemTablePtr).CopyTo(argBuffer, 8);
-        BitConverter.GetBytes((long)statusStructPtr).CopyTo(argBuffer, 16);
-        BitConverter.GetBytes((long)itemGiveFuncPtr).CopyTo(argBuffer, 24);
-
-        var argBufferPtr = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, argBuffer.Length,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
-        if (argBufferPtr == nint.Zero)
-        {
-            NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
-            NativeWrapper.VirtualFreeEx(memoryHandle, statusStructPtr, 0, FreeType.Release);
-            return;
-        }
-        WriteProcessMemoryArray(argBufferPtr, argBuffer);
-
-        byte[] code =
-        {
-            0x48, 0x83, 0xEC, 0x28,                                     // sub rsp, 28h
-            0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // mov rax, p_arg_struct
-            0x48, 0x8B, 0x48, 0x00,                                     // mov rcx, [rax+0]
-            0x48, 0x8B, 0x09,                                           // mov rcx, [rcx]
-            0x48, 0x8B, 0x50, 0x08,                                     // mov rdx, [rax+8]
-            0x4C, 0x8B, 0x40, 0x10,                                     // mov r8, [rax+16]
-            0x4D, 0x31, 0xC9,                                           // xor r9, r9
-            0x48, 0x8B, 0x40, 0x18,                                     // mov rax, [rax+24]
-            0xFF, 0xD0,                                                 // call rax
-            0x48, 0x83, 0xC4, 0x28,                                     // add rsp, 28h
-            0xC3                                                        // ret
-        };
-
-        var addrBytes = BitConverter.GetBytes((long)argBufferPtr);
-        Buffer.BlockCopy(addrBytes, 0, code, 6, addrBytes.Length);
-
-        ExecuteCode(code);
-
-        NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
-        NativeWrapper.VirtualFreeEx(memoryHandle, statusStructPtr, 0, FreeType.Release);
-        NativeWrapper.VirtualFreeEx(memoryHandle, argBufferPtr, 0, FreeType.Release);
+        nint manager = 0;
+        ReadProcessMemory(GetBaseAddress() + managerOffset, ref manager);
+        return manager;
     }
+
+    /// <summary>
+    /// Calls the game's give-item function: func([manager], itemTable, status, r9, stack args...).
+    /// Items beyond the function's per-call limit are given in further calls.
+    /// </summary>
+    /// <param name="prepares">Per param: module offsets of the lookup and prepare functions (Descriptor layout only).</param>
+    internal void PlayerItemGive(GameOffsetBaseEntry entry, int funcOffset, int managerOffset, List<ItemGiveEntry> items,
+        Dictionary<string, (int Lookup, int Prepare)> prepares = null)
+    {
+        if (entry.ItemGiveLayout is not { } layout || !items.Any())
+            return;
+
+        prepares ??= new();
+        const int descriptorSize = 0x50;
+        const int rowRefSize = 0x20;
+
+        var funcPtr = GetBaseAddress() + funcOffset;
+        var managerPtr = GetBaseAddress() + managerOffset;
+
+        // Arguments marked "scratch" each get a 0x40-byte block whose first int is -1.
+        const int scratchSize = 0x40;
+        var scratchArgs = new[] { entry.ItemGiveR9 }.Concat(entry.ItemGiveStackArgs).Count(a => a.Scratch);
+
+        foreach (var batch in items.Chunk(entry.ItemGiveMaxEntries))
+        {
+            var itemTable = BuildItemTable(layout, entry.ItemGiveMaxEntries, entry.ItemGiveSource, batch);
+            var status = layout is ItemGiveLayout.Gem or ItemGiveLayout.Descriptor
+                ? new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } // { -1, 0, 0 }
+                : new byte[16];                                                             // zeros
+
+            var scratch = new byte[Math.Max(1, scratchArgs) * scratchSize];
+            for (var i = 0; i < scratchArgs; i++)
+                BitConverter.GetBytes(-1).CopyTo(scratch, i * scratchSize);
+
+            var itemTablePtr = AllocAndWrite(itemTable);
+            var statusPtr = AllocAndWrite(status);
+            var scratchPtr = AllocAndWrite(scratch);
+            var rowRefPtr = AllocAndWrite(new byte[batch.Length * rowRefSize]);
+
+            if (itemTablePtr != nint.Zero && statusPtr != nint.Zero && scratchPtr != nint.Zero && rowRefPtr != nint.Zero)
+            {
+                var nextScratch = 0;
+                long Resolve(ItemGiveArg a) => a.Scratch ? (long)scratchPtr + scratchSize * nextScratch++ : a.Value;
+
+                // Prepare steps, per descriptor: lookup(&rowRef, rowId); prepare(&rowRef, &descriptor);
+                // then the designer's chosen values written into the prepared descriptor.
+                var preSteps = new List<ItemGiveStep>();
+                if (layout == ItemGiveLayout.Descriptor)
+                {
+                    for (var i = 0; i < batch.Length; i++)
+                    {
+                        if (batch[i].Param == null || !prepares.TryGetValue(batch[i].Param, out var p))
+                            continue;
+
+                        var rowRef = (long)rowRefPtr + i * rowRefSize;
+                        var descriptor = (long)itemTablePtr + 8 + i * descriptorSize;
+                        preSteps.Add(ItemGiveStep.Call((long)GetBaseAddress() + p.Lookup, rowRef, batch[i].Id & 0x0FFFFFFF));
+                        preSteps.Add(ItemGiveStep.Call((long)GetBaseAddress() + p.Prepare, rowRef, descriptor));
+
+                        foreach (var (offset, value) in batch[i].Overrides ?? Array.Empty<(int, int)>())
+                        {
+                            if (offset >= 0 && offset + 4 <= descriptorSize)
+                                preSteps.Add(ItemGiveStep.Write(descriptor + offset, value));
+                        }
+                    }
+                }
+
+                var r9 = Resolve(entry.ItemGiveR9);
+                var stackArgs = entry.ItemGiveStackArgs.Select(Resolve).ToArray();
+                ExecuteCode(BuildCallStub(funcPtr, managerPtr, itemTablePtr, statusPtr, r9, stackArgs, preSteps));
+            }
+
+            if (itemTablePtr != nint.Zero) NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
+            if (statusPtr != nint.Zero) NativeWrapper.VirtualFreeEx(memoryHandle, statusPtr, 0, FreeType.Release);
+            if (scratchPtr != nint.Zero) NativeWrapper.VirtualFreeEx(memoryHandle, scratchPtr, 0, FreeType.Release);
+            if (rowRefPtr != nint.Zero) NativeWrapper.VirtualFreeEx(memoryHandle, rowRefPtr, 0, FreeType.Release);
+        }
+    }
+
+    private static byte[] BuildItemTable(ItemGiveLayout layout, int maxEntries, int source, ItemGiveEntry[] batch)
+    {
+        if (layout == ItemGiveLayout.Descriptor)
+            return BuildDescriptorTable(maxEntries, batch);
+
+        // Durability: { int count; { id, quantity, durability }[count] }
+        // Gem:        { int count; { id, quantity, -1, gemId }[maxEntries] }
+        // Source:     { int count; { id, quantity, -1, source }[maxEntries] }
+        var wide = layout != ItemGiveLayout.Durability;
+        var entrySize = wide ? 16 : 12;
+        var tableEntries = wide ? maxEntries : batch.Length;
+        var table = new byte[4 + tableEntries * entrySize];
+
+        BitConverter.GetBytes(batch.Length).CopyTo(table, 0);
+        for (var i = 0; i < batch.Length; i++)
+        {
+            var o = 4 + i * entrySize;
+            BitConverter.GetBytes(batch[i].Id).CopyTo(table, o);
+            BitConverter.GetBytes(batch[i].Quantity).CopyTo(table, o + 4);
+            if (wide)
+            {
+                BitConverter.GetBytes(-1).CopyTo(table, o + 8);
+                BitConverter.GetBytes(layout == ItemGiveLayout.Gem ? batch[i].GemId : source).CopyTo(table, o + 12);
+            }
+            else
+            {
+                BitConverter.GetBytes(batch[i].Durability).CopyTo(table, o + 8);
+            }
+        }
+        return table;
+    }
+
+    /// <summary>
+    /// NR: { byte count; pad[7]; ItemDescriptor[] } with each 0x50-byte descriptor at its constructor defaults
+    /// (nightreign.exe 1406C0C10 + 14056DED0), then the ID and u16 quantity. The table is padded to 0x100
+    /// so the fields after the descriptor array stay zero.
+    /// </summary>
+    private static byte[] BuildDescriptorTable(int maxEntries, ItemGiveEntry[] batch)
+    {
+        const int descriptorSize = 0x50;
+        var table = new byte[Math.Max(0x100, 8 + maxEntries * descriptorSize)];
+        table[0] = (byte)batch.Length;
+
+        for (var i = 0; i < batch.Length; i++)
+        {
+            var d = 8 + i * descriptorSize;
+            void I32(int o, int v) => BitConverter.GetBytes(v).CopyTo(table, d + o);
+            void I64(int o, long v) => BitConverter.GetBytes(v).CopyTo(table, d + o);
+
+            I64(0x00, -1);
+            I64(0x08, -1);
+            I32(0x10, -1);
+            I64(0x14, -1);
+            table[d + 0x1F] = 0xFF;   // +1C word 0, +1E flags 0
+            I64(0x28, -1);
+            I64(0x30, -1);
+            I64(0x38, -1);
+            I32(0x48, unchecked((int)0xFFFF0000));
+
+            I32(0x00, batch[i].Id);
+            BitConverter.GetBytes((ushort)Math.Clamp(batch[i].Quantity, 0, ushort.MaxValue)).CopyTo(table, d + 0x48);
+        }
+        return table;
+    }
+
+    private static byte[] BuildCallStub(nint funcPtr, nint managerPtr, nint itemTablePtr, nint statusPtr, long r9, long[] stackArgs,
+        List<ItemGiveStep> preSteps = null)
+    {
+        // Shadow space + stack arguments, keeping rsp 16-byte aligned at the call
+        // (the thread starts with rsp = 16n + 8).
+        var frame = 0x20 + 8 * stackArgs.Length;
+        if ((frame + 8) % 16 != 0)
+            frame += 8;
+
+        var code = new List<byte>();
+        void Imm64(long v) => code.AddRange(BitConverter.GetBytes(v));
+
+        code.AddRange(new byte[] { 0x48, 0x83, 0xEC, (byte)frame });           // sub rsp, frame
+
+        // Prepare steps first: the stack arguments are written after them, so a callee using its
+        // home space cannot overwrite them.
+        foreach (var step in preSteps ?? new())
+        {
+            if (step.IsWrite)
+            {
+                code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(step.A);        // mov rax, address
+                code.AddRange(new byte[] { 0xC7, 0x00 });                       // mov dword ptr [rax], imm32
+                code.AddRange(BitConverter.GetBytes((int)step.B));
+                continue;
+            }
+
+            code.AddRange(new byte[] { 0x48, 0xB9 }); Imm64(step.B);            // mov rcx, imm64
+            code.AddRange(new byte[] { 0x48, 0xBA }); Imm64(step.C);            // mov rdx, imm64
+            code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(step.A);            // mov rax, func
+            code.AddRange(new byte[] { 0xFF, 0xD0 });                           // call rax
+        }
+
+        for (var i = 0; i < stackArgs.Length; i++)
+        {
+            code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(stackArgs[i]);      // mov rax, arg
+            code.AddRange(new byte[] { 0x48, 0x89, 0x44, 0x24, (byte)(0x20 + 8 * i) }); // mov [rsp+20h+8i], rax
+        }
+        code.AddRange(new byte[] { 0x48, 0xB9 }); Imm64(managerPtr);            // mov rcx, &manager
+        code.AddRange(new byte[] { 0x48, 0x8B, 0x09 });                         // mov rcx, [rcx]
+        code.AddRange(new byte[] { 0x48, 0xBA }); Imm64(itemTablePtr);          // mov rdx, itemTable
+        code.AddRange(new byte[] { 0x49, 0xB8 }); Imm64(statusPtr);             // mov r8, status
+        if (r9 == 0)
+            code.AddRange(new byte[] { 0x45, 0x31, 0xC9 });                     // xor r9d, r9d
+        else
+        {
+            code.AddRange(new byte[] { 0x49, 0xB9 }); Imm64(r9);                // mov r9, imm64
+        }
+        code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(funcPtr);               // mov rax, func
+        code.AddRange(new byte[] { 0xFF, 0xD0 });                               // call rax
+        code.AddRange(new byte[] { 0x48, 0x83, 0xC4, (byte)frame });           // add rsp, frame
+        code.Add(0xC3);                                                         // ret
+        return code.ToArray();
+    }
+
+    private nint AllocAndWrite(byte[] data)
+    {
+        var ptr = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, data.Length,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
+        if (ptr != nint.Zero)
+        {
+            WriteProcessMemoryArray(ptr, data);
+        }
+        return ptr;
+    }
+}
+
+/// <param name="Overrides">Values written into the prepared descriptor: (descriptor offset, int value).</param>
+public record struct ItemGiveEntry(int Id, int Quantity, int Durability, int GemId, string Param = null,
+    (int Offset, int Value)[] Overrides = null);
+
+/// <summary>
+/// A step of the injected code before the give: a call func(rcx, rdx), or an int write to an address.
+/// </summary>
+public readonly record struct ItemGiveStep(bool IsWrite, long A, long B, long C)
+{
+    public static ItemGiveStep Call(long func, long rcx, long rdx) => new(false, func, rcx, rdx);
+    public static ItemGiveStep Write(long address, int value) => new(true, address, value, 0);
 }

@@ -10,6 +10,7 @@ public class GameOffsetsEntry
     internal static Dictionary<ProjectType, GameOffsetsEntry> GameOffsetBank = new();
 
     internal string exeName;
+    internal string exeVersion;
     internal bool Is64Bit;
     internal ProjectType type;
 
@@ -33,6 +34,7 @@ public class GameOffsetsEntry
 
         type = project.Descriptor.ProjectType;
         exeName = data.exeName;
+        exeVersion = data.exeVersion;
         Is64Bit = type != ProjectType.DS1;
 
         foreach (var entry in data.bases)

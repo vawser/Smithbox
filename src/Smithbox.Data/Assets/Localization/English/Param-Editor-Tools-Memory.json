@@ -5,14 +5,6 @@
       "Text": "Unable to find AOB in memory for {0}."
     },
     {
-      "Key": "PARAM_Tools_Memory_ERItemGiveFuncOffset_Missing",
-      "Text": "ERItemGiveFuncOffset is not set in GameOffsetBaseEntry."
-    },
-    {
-      "Key": "PARAM_Tools_Memory_ERMapItemManOffset_Missing",
-      "Text": "ERMapItemManOffset is not set in GameOffsetBaseEntry."
-    },
-    {
       "Key": "PARAM_Tools_Memory_No_Game_Process",
       "Text": "No game process found for {0}. Please start the game first."
     },
@@ -26,7 +18,139 @@
     },
     {
       "Key": "PARAM_Tools_ItemGib_Hint",
-      "Text": "Use this tool to spawn an item in-game."
+      "Text": "Gives the selected item to the player in the running game. Load a character first."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Unsupported_Param",
+      "Text": "Select a row in one of these params: {0}."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Item_Header",
+      "Text": "Item"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Item_Header_TT",
+      "Text": "The row that is given. For stackable items, every selected row is given."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Item_Selected_Count",
+      "Text": "{0} rows selected: all of them are given."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Item_Designer_Active_Only",
+      "Text": "{0} rows selected: with designer choices set, only the active row is given."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Number_of_Spawned_Items_TT",
+      "Text": "How many of the item to give."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Quantity_Input_TT",
+      "Text": "Number of items to give, from 1 to 999."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Reinforcement_Level_TT",
+      "Text": "The upgrade level of the weapon."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Reinforce_Input_TT",
+      "Text": "Upgrade level, from 0 to {0}."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Gem_Header_TT",
+      "Text": "The Ash of War mounted on the weapon. Right-click the field to pick a row."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Gem_Input_TT",
+      "Text": "EquipParamGem row ID, or -1 for none."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Durability_TT",
+      "Text": "The durability the item is given with."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Durability_Input_TT",
+      "Text": "Durability, or -1 for full durability."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Actions_Header_TT",
+      "Text": "Give the item to the player in the running game."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Action_Give_Item_TT",
+      "Text": "Give the item now. The game must be running with a character loaded."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Action_Reset_Designer",
+      "Text": "Reset Designer"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Action_Reset_Designer_TT",
+      "Text": "Set every slot back to Random."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Header",
+      "Text": "Relic Designer"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Header_TT",
+      "Text": "Choose what goes in each slot. Slots left on Random keep the game's roll."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Missing_Params",
+      "Text": "The designer needs the {0} and {1} params, which are not loaded."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_No_Slots",
+      "Text": "This row has no slots to design."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Allow_Any",
+      "Text": "Allow any effect"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Allow_Any_TT",
+      "Text": "List every effect for each slot, not only the effects the slot can roll."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Slot_TT",
+      "Text": "The effects this slot can roll come from table {0}."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Slot_Combo_TT",
+      "Text": "The effect for this slot. Random keeps the game's roll; None leaves the slot empty."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Random",
+      "Text": "Random"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Random_TT",
+      "Text": "Keep the effect the game rolls for this slot."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_None",
+      "Text": "None"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_None_TT",
+      "Text": "Leave this slot empty."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Designer_Option_Weighted",
+      "Text": "{0} (weight {1})"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Slot_Effect",
+      "Text": "Effect {0}"
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Slot_Curse",
+      "Text": "Curse {0}"
     },
     {
       "Key": "PARAM_Tools_ItemGib_No_Active_Row",
@@ -71,6 +195,18 @@
     {
       "Key": "PARAM_Tools_ItemGib_No_Game_Offset",
       "Text": "No GameOffset exist for Item Gib."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Unresolved",
+      "Text": "Unable to locate the game's item give function. This game version may not be supported yet."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_Version_Mismatch",
+      "Text": "The running game is version {0}, but the selected Param Reloader offsets are for {1}. Select the matching offsets in the Param Editor preferences."
+    },
+    {
+      "Key": "PARAM_Tools_ItemGib_No_Manager",
+      "Text": "The game's item manager is not ready yet. Load a character, then try again."
     },
     {
       "Key": "PARAM_Tools_Reloader_Header",
