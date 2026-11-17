@@ -12,6 +12,9 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(HavokAliasFileEntry))]
 [JsonSerializable(typeof(HavokAliasEntry))]
 
+[JsonSerializable(typeof(StudioCore.Editors.HavokEditor.HavokCharacterReloaderOffsets))]
+[JsonSerializable(typeof(StudioCore.Editors.HavokEditor.HavokCharacterReloaderOffsetEntry))]
+
 internal partial class HavokJsonSerializerContext : JsonSerializerContext
 {
 }

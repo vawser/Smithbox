@@ -81,7 +81,7 @@ public class HavokViewHandler
         Views[view.ViewIndex] = null;
 
         // Stop the closed view's script file watchers
-        view.Tools.HavokScriptReloader.Dispose();
+        view.Tools.HavokCharacterReloader.Dispose();
 
         // and let go of its collision preview
         view.Tools.CollisionGeneratorTool.Dispose();

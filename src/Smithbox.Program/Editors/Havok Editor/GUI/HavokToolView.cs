@@ -9,7 +9,7 @@ public class HavokToolView
 
     public CollisionGeneratorTool CollisionGeneratorTool;
 
-    public HavokScriptReloader HavokScriptReloader;
+    public HavokCharacterReloader HavokCharacterReloader;
 
     private ToolSections Sections = new();
 
@@ -19,7 +19,7 @@ public class HavokToolView
         Project = project;
 
         CollisionGeneratorTool = new(view, project);
-        HavokScriptReloader = new(view, project);
+        HavokCharacterReloader = new(view, project);
     }
 
     public void Draw()
@@ -30,9 +30,9 @@ public class HavokToolView
 
         CollisionGeneratorTool.Display();
 
-        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Behavior"));
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
 
-        HavokScriptReloader.Display();
+        HavokCharacterReloader.Display();
 
         Sections.End();
     }

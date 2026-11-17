@@ -36,40 +36,50 @@ public static class Memory
         var aobLocation = aobScanner.Scan(AOBScanner.StringToAOB(aob));
         if (aobLocation == IntPtr.Zero)
             return IntPtr.Zero;
-        uint relAddr = Kernel32.ReadUInt32(ProcessHandle, aobLocation + addrOffset);
-        return (IntPtr)((ulong)(aobLocation + endOfRelJumpInstr) + relAddr);
+        // rel32 is signed: the target can be before the instruction
+        int relAddr = (int)Kernel32.ReadUInt32(ProcessHandle, aobLocation + addrOffset);
+        return aobLocation + endOfRelJumpInstr + relAddr;
     }
 
-    public static void UpdateEldenRingAobs()
+    /// <summary>
+    /// Find WorldChrMan and the crash patch site with the AOBs of an offsets group.
+    /// A pointer is left as zero when its AOB isn't found (or the group's values can't be parsed),
+    /// so the reload can stop instead of writing to a bad address.
+    /// </summary>
+    public static void UpdateEldenRingAobs(HavokCharacterReloaderOffsetEntry offsets)
     {
+        EldenRing_WorldChrManPtr = IntPtr.Zero;
+        EldenRing_CrashFixPtr = IntPtr.Zero;
+
         var aob = new AOBScanner(AttachedProcess);
-        EldenRing_WorldChrManPtr = Memory.ScanRelativeAob(
-            aob,
-            HavokMemoryConsts.EldenRing_WorldChrManPtr_AOB,
-            HavokMemoryConsts.EldenRing_WorldChrManPtr_JumpInstr_StartOffsetInAOB,
-            HavokMemoryConsts.EldenRing_WorldChrManPtr_JumpInstr_EndOffsetInAOB);
-        /*
-		if( EldenRing_WorldChrManPtr == IntPtr.Zero ) {
-			NotificationManager.PushNotification( "Live reload WARNING - Could not find Elden Ring WorldChrMan AOB" );
-		}
-		*/
-        EldenRing_WorldChrManPtr = Kernel32.ReadIntPtr(ProcessHandle, EldenRing_WorldChrManPtr, true);
 
-        var crashPatchOffsetAob = AOBScanner.StringToAOB(
-            HavokMemoryConsts.EldenRing_CrashPatchOffset_AOB);
+        // "start/end" of the rel32 in the AOB
+        var relParts = (offsets.worldChrManAobRelativeOffset ?? "").Split('/');
+        var relStart = relParts.Length == 2 ? HavokCharacterReloaderOffsets.ParseHex(relParts[0]) : null;
+        var relEnd = relParts.Length == 2 ? HavokCharacterReloaderOffsets.ParseHex(relParts[1]) : null;
 
-        IntPtr crashPatchOffset = aob.Scan(crashPatchOffsetAob);
+        if (!string.IsNullOrWhiteSpace(offsets.worldChrManAob) && relStart is int start && relEnd is int end)
+        {
+            var global = ScanRelativeAob(aob, offsets.worldChrManAob, start, end);
 
-        /*
-		if( crashPatchOffset == IntPtr.Zero ) {
-			NotificationManager.PushNotification( "Live reload WARNING - Could not find Elden Ring crash patch AOB" );
-		}
-		*/
+            if (global != IntPtr.Zero)
+            {
+                EldenRing_WorldChrManPtr = Kernel32.ReadIntPtr(ProcessHandle, global, true);
+            }
+        }
 
-        crashPatchOffset = crashPatchOffset + crashPatchOffsetAob.Length - (
-            HavokMemoryConsts.EldenRing_CrashPatchOffset_DistFromEndOfAOB);
+        var distFromEnd = HavokCharacterReloaderOffsets.ParseHex(offsets.crashPatchDistFromEndOfAob);
 
-        EldenRing_CrashFixPtr = crashPatchOffset;
+        if (!string.IsNullOrWhiteSpace(offsets.crashPatchAob) && distFromEnd is int dist)
+        {
+            var crashPatchAob = AOBScanner.StringToAOB(offsets.crashPatchAob);
+            var crashPatchAobStart = aob.Scan(crashPatchAob);
+
+            if (crashPatchAobStart != IntPtr.Zero)
+            {
+                EldenRing_CrashFixPtr = crashPatchAobStart + crashPatchAob.Length - dist;
+            }
+        }
     }
 
     public static void AttachProc(ProjectEntry project, string procName)
@@ -93,11 +103,6 @@ public static class Memory
                 ProcessHandle = Kernel32.OpenProcess(0x2 | 0x8 | 0x10 | 0x20 | 0x400, false, Process.Id);
                 AttachedProcess = Process;
                 AttachedProcess.Exited += AttachedProcess_Exited;
-
-                if (project.Descriptor.ProjectType is ProjectType.ER)
-                {
-                    UpdateEldenRingAobs();
-                }
             }
             catch
             {
@@ -106,7 +111,7 @@ public static class Memory
         }
         else
         {
-            Smithbox.LogError(typeof(Memory), LOC.Get("HAVOK_ScriptReloader_Error_Failed_Game_Attach"));
+            Smithbox.LogError(typeof(Memory), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Game_Attach"));
         }
     }
 

@@ -1,15 +1,18 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.Common;
-using StudioCore.Editors.HavokEditor;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
-using System.Text;
 
 namespace StudioCore.Editors.HavokEditor;
 
-public class HavokScriptReloader : IDisposable
+/// <summary>
+/// Reloads characters in the running game, so changes to their files (behavior, animations, scripts, etc.)
+/// can be seen without restarting.
+/// </summary>
+public class HavokCharacterReloader : IDisposable
 {
     public HavokEditorView View;
     public ProjectEntry Project;
@@ -19,12 +22,11 @@ public class HavokScriptReloader : IDisposable
 
     private bool DetectFileChanges = false;
     private bool WatchersDirty = false;
-    private Dictionary<FileDictionaryEntry, FileSystemWatcher> Watchers = new();
+    private Dictionary<FileDictionaryEntry, List<FileSystemWatcher>> Watchers = new();
     private ConcurrentDictionary<FileDictionaryEntry, DateTime> PendingReloads = new();
     private static readonly TimeSpan ReloadDebounce = TimeSpan.FromMilliseconds(300);
 
-
-    public HavokScriptReloader(HavokEditorView view, ProjectEntry project)
+    public HavokCharacterReloader(HavokEditorView view, ProjectEntry project)
     {
         View = view;
         Project = project;
@@ -34,11 +36,11 @@ public class HavokScriptReloader : IDisposable
     {
         UpdateFileChangeDetection();
 
-        if (ToolSections.Header($"{LOC.Get("HAVOK_ScriptReloader_Title")}##scriptReloaderTool"))
+        if (ToolSections.Header($"{LOC.Get("HAVOK_CharacterReloader_Title")}##characterReloaderTool"))
         {
-            ImGui.BeginChild("ScriptReloaderSection", ImGuiChildFlags.Borders);
+            ImGui.BeginChild("CharacterReloaderSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText(LOC.Get("HAVOK_ScriptReloader_Hint"));
+            GUI.WrappedText(LOC.Get("HAVOK_CharacterReloader_Hint"));
 
             if (SupportsReloader())
             {
@@ -47,15 +49,19 @@ public class HavokScriptReloader : IDisposable
             else
             {
                 GUI.Spacer();
-                GUI.WrappedText(LOC.Get("HAVOK_ScriptReloader_Not_Supported"));
+                GUI.WrappedText(LOC.Get("HAVOK_CharacterReloader_Not_Supported"));
             }
 
             ImGui.EndChild();
         }
 
-        if(BuildInclusionCache)
+        if (BuildInclusionCache)
         {
-            foreach(var entry in Project.Locator.HavokScriptFiles.Entries)
+            // A character can appear more than once (e.g. in a DLC folder), but it is reloaded by name
+            foreach (var entry in Project.Locator.ChrFiles.Entries
+                .GroupBy(e => e.Filename)
+                .Select(g => g.First())
+                .OrderBy(e => e.Filename))
             {
                 InclusionCache.Add(entry, false);
             }
@@ -76,33 +82,32 @@ public class HavokScriptReloader : IDisposable
     {
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_ScriptReloader_Inclusion_List_Header"),
-            LOC.Get("HAVOK_ScriptReloader_Inclusion_List_Header_TT"));
+            LOC.Get("HAVOK_CharacterReloader_Inclusion_List_Header"),
+            LOC.Get("HAVOK_CharacterReloader_Inclusion_List_Header_TT"));
 
         DisplayInclusionList();
 
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_ScriptReloader_Actions_Header"),
-            LOC.Get("HAVOK_ScriptReloader_Actions_Header_TT"));
+            LOC.Get("HAVOK_CharacterReloader_Actions_Header"),
+            LOC.Get("HAVOK_CharacterReloader_Actions_Header_TT"));
 
         GUI.MultiButtonInput("directActions",
             "reloadSelected",
-            LOC.Get("HAVOK_ScriptReloader_Reload_Scripts"),
-            LOC.Get("HAVOK_ScriptReloader_Reload_Scripts_TT"),
-            ReloadIncludedScripts);
+            LOC.Get("HAVOK_CharacterReloader_Reload_Characters"),
+            LOC.Get("HAVOK_CharacterReloader_Reload_Characters_TT"),
+            ReloadIncludedCharacters);
 
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_ScriptReloader_Options_Header"),
-            LOC.Get("HAVOK_ScriptReloader_Options_Header_TT"));
+            LOC.Get("HAVOK_CharacterReloader_Options_Header"),
+            LOC.Get("HAVOK_CharacterReloader_Options_Header_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("HAVOK_ScriptReloader_Detect_File_Changes")}##detectFileChanges", ref DetectFileChanges))
+        if (ImGui.Checkbox($"{LOC.Get("HAVOK_CharacterReloader_Detect_File_Changes")}##detectFileChanges", ref DetectFileChanges))
         {
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_ScriptReloader_Detect_File_Changes_TT"));
-
+        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Detect_File_Changes_TT"));
     }
 
     private string ListFilter = "";
@@ -127,7 +132,7 @@ public class HavokScriptReloader : IDisposable
 
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_ScriptReloader_Inclusion_Toggle_All_TT"));
+        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Inclusion_Toggle_All_TT"));
 
         ImGui.SameLine();
 
@@ -141,7 +146,7 @@ public class HavokScriptReloader : IDisposable
 
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_ScriptReloader_Inclusion_Clear_All_TT"));
+        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Inclusion_Clear_All_TT"));
 
         ImGui.EndChild();
 
@@ -171,39 +176,33 @@ public class HavokScriptReloader : IDisposable
         ImGui.EndChild();
     }
 
-    private void ReloadIncludedScripts()
+    private void ReloadIncludedCharacters()
     {
         var anySelected = false;
 
-        foreach(var entry in InclusionCache)
+        foreach (var entry in InclusionCache)
         {
-            if(entry.Value)
+            if (entry.Value)
             {
                 anySelected = true;
-                var name = entry.Key.Filename;
-                var success = HavokReload.RequestReloadChr(Project, name);
-
-                if (success)
-                {
-                    Smithbox.Log(this, LOC.Get("HAVOK_ScriptReloader_Log_Reloaded_Script", name));
-                }
+                ReloadCharacter(entry.Key);
             }
         }
 
-        if(!anySelected)
+        if (!anySelected)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_ScriptReloader_Error_No_Scripts_Enabled"));
+            Smithbox.LogError(this, LOC.Get("HAVOK_CharacterReloader_Error_No_Characters_Enabled"));
         }
     }
 
-    private void ReloadScript(FileDictionaryEntry entry)
+    private void ReloadCharacter(FileDictionaryEntry entry)
     {
         var name = entry.Filename;
         var success = HavokReload.RequestReloadChr(Project, name);
 
         if (success)
         {
-            Smithbox.Log(this, LOC.Get("HAVOK_ScriptReloader_Log_Reloaded_Script", name));
+            Smithbox.Log(this, LOC.Get("HAVOK_CharacterReloader_Log_Reloaded_Character", name));
         }
     }
 
@@ -232,7 +231,11 @@ public class HavokScriptReloader : IDisposable
 
         foreach (var entry in stale)
         {
-            Watchers[entry].Dispose();
+            foreach (var watcher in Watchers[entry])
+            {
+                watcher.Dispose();
+            }
+
             Watchers.Remove(entry);
             PendingReloads.TryRemove(entry, out _);
         }
@@ -245,26 +248,58 @@ public class HavokScriptReloader : IDisposable
             if (!kvp.Value || Watchers.ContainsKey(kvp.Key))
                 continue;
 
-            var watcher = CreateWatcher(kvp.Key);
-            if (watcher != null)
+            var watchers = CreateWatchers(kvp.Key);
+            if (watchers.Count > 0)
             {
-                Watchers.Add(kvp.Key, watcher);
+                Watchers.Add(kvp.Key, watchers);
             }
         }
     }
 
-    private FileSystemWatcher CreateWatcher(FileDictionaryEntry entry)
+    /// <summary>
+    /// Watch every file of the character in the project: the files beside its chrbnd that start with
+    /// its name (chrbnd, anibnd, behbnd, texbnd, etc.) and its Havok script.
+    /// </summary>
+    private List<FileSystemWatcher> CreateWatchers(FileDictionaryEntry entry)
+    {
+        var watchers = new List<FileSystemWatcher>();
+
+        var chrWatcher = CreateWatcher(entry, entry.Path, $"{entry.Filename}*");
+        if (chrWatcher != null)
+        {
+            watchers.Add(chrWatcher);
+        }
+
+        var scriptEntry = Project.Locator.HavokScriptFiles.Entries
+            .FirstOrDefault(e => string.Equals(e.Filename, entry.Filename, StringComparison.OrdinalIgnoreCase));
+
+        if (scriptEntry != null)
+        {
+            var scriptWatcher = CreateWatcher(entry, scriptEntry.Path, null);
+            if (scriptWatcher != null)
+            {
+                watchers.Add(scriptWatcher);
+            }
+        }
+
+        return watchers;
+    }
+
+    /// <summary>
+    /// Watch the project's copy of a file. The filter defaults to the file's own name.
+    /// </summary>
+    private FileSystemWatcher CreateWatcher(FileDictionaryEntry entry, string path, string filter)
     {
         try
         {
-            var relativePath = entry.Path.TrimStart('/', '\\');
+            var relativePath = path.TrimStart('/', '\\');
             var fullPath = Path.GetFullPath(Path.Combine(Project.Descriptor.ProjectPath, relativePath));
 
             var directory = Path.GetDirectoryName(fullPath);
             if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
                 return null;
 
-            var watcher = new FileSystemWatcher(directory, Path.GetFileName(fullPath))
+            var watcher = new FileSystemWatcher(directory, filter ?? Path.GetFileName(fullPath))
             {
                 NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.FileName,
                 IncludeSubdirectories = false
@@ -277,14 +312,7 @@ public class HavokScriptReloader : IDisposable
 
             watcher.Changed += OnChanged;
             watcher.Created += OnChanged;
-
-            watcher.Renamed += (sender, e) =>
-            {
-                if (string.Equals(e.FullPath, fullPath, StringComparison.OrdinalIgnoreCase))
-                {
-                    PendingReloads[entry] = DateTime.UtcNow;
-                }
-            };
+            watcher.Renamed += (sender, e) => OnChanged(sender, e);
 
             watcher.EnableRaisingEvents = true;
 
@@ -292,7 +320,7 @@ public class HavokScriptReloader : IDisposable
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_ScriptReloader_Error_Failed_Create_Watcher"), ex);
+            Smithbox.LogError(this, LOC.Get("HAVOK_CharacterReloader_Error_Failed_Create_Watcher"), ex);
             return null;
         }
     }
@@ -314,16 +342,19 @@ public class HavokScriptReloader : IDisposable
 
             if (DetectFileChanges && InclusionCache.TryGetValue(pending.Key, out var included) && included)
             {
-                ReloadScript(pending.Key);
+                ReloadCharacter(pending.Key);
             }
         }
     }
 
     public void Dispose()
     {
-        foreach (var watcher in Watchers.Values)
+        foreach (var watchers in Watchers.Values)
         {
-            watcher.Dispose();
+            foreach (var watcher in watchers)
+            {
+                watcher.Dispose();
+            }
         }
 
         Watchers.Clear();

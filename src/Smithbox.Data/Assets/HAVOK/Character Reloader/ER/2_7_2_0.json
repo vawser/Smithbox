@@ -1,0 +1,12 @@
+{
+  "exeName": "eldenring.exe",
+  "exeVersion": "2.7.2.0",
+  "worldChrManAob": "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 0F 48 39 88 ?? ?? ?? ?? 75 06 89 B1",
+  "worldChrManAobRelativeOffset": "0x3/0x7",
+  "reloadListOffset": "0x1E678",
+  "reloadCountOffset": "0x1E680",
+  "reloadTimerOffset": "0x1E688",
+  "crashPatchAob": "80 65 ?? FD 48 C7 45 ?? 07 00 00 00 ?? 8D 45 48 4C 89 60 ?? 48 83 78 ?? 08 72 03 48 8B 00 66 44 89 20 49 8B 8F ?? ?? ?? ?? 48 8B 01 48 ?? ??",
+  "crashPatchDistFromEndOfAob": "0x3",
+  "crashPatchBytes": "48 31 D2"
+}
