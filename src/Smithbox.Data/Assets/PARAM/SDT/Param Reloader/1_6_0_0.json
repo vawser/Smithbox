@@ -142,7 +142,8 @@
         "MapPartsParam:0x2550",
         "SkillParam:0x2598",
         "MenuTutorialParam:0x25e0",
-        "RematchWarpParam:0x2628"
+        "RematchWarpParam:0x2628",
+        "MenuColorTableParam:0x588"
       ],
       "itemIDCategories": []
     }

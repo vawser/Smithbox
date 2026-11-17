@@ -197,7 +197,15 @@
         "MimicryEstablishmentTexParam:0x33B8",
         "SfxBlockResShareParam:0x3400",
         "FinalDamageRateParam:0x3448",
-        "HitEffectSeParam:0x3490"
+        "HitEffectSeParam:0x36D0",
+        "SignPuddleTabParam:0x3490",
+        "SignPuddleSubCategoryParam:0x34D8",
+        "MapGridCreateHeightDetailLimitInfo:0x3520",
+        "MapPieceTexParam_m61:0x3568",
+        "MapNameTexParam_m61:0x35B0",
+        "WeatherLotTexParam_m61:0x35F8",
+        "MimicryEstablishmentTexParam_m61:0x3640",
+        "ChrEquipModelParam:0x3688"
       ],
       "itemIDCategories": [
         "EquipParamWeapon:0x0",
@@ -208,6 +216,24 @@
       ],
       "ERItemGiveFuncOffset": "0x5618b0",
       "ERMapItemManOffset": "0x3d6eae0"
+    },
+    {
+      "paramBaseAob": "0x48,0x8B,0x0D,0x??,0x??,0x??,0x??,0xBA,0x01,0x00,0x00,0x00,0x48,0x83,0xC4,0x28",
+      "paramBaseAobRelativeOffset": "0x03/0x07",
+      "paramBase": "",
+      "paramInnerPath": "0x80/0x80",
+      "paramCountOffset": "0xA",
+      "paramDataOffset": "0x40",
+      "rowPointerOffset": "0x8",
+      "rowHeaderSize": "0x18",
+      "paramOffsets": [
+        "DefaultKeyAssign:0x78",
+        "CameraFadeParam:0x80",
+        "SoundCommonSystemParam:0x88",
+        "ReverbAuxSendBusParam:0x90",
+        "CommonSystemParam:0x98"
+      ],
+      "itemIDCategories": []
     }
   ]
 }

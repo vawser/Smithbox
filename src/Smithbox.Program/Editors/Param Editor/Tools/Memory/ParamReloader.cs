@@ -203,13 +203,6 @@ public class ParamReloader
 
         foreach (string param in paramNames)
         {
-            // Skip these for now: cause it to CTD due to type issue
-            if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
-            {
-                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Invalid_Param", param));
-                continue;
-            }
-
             bool paramFound = false;
             foreach (GameOffsetBaseEntry paramRepo in offsets.Bases)
             {
@@ -536,18 +529,23 @@ public class ParamReloader
                 throw new ArgumentException();
             }
 
+            // The value is boxed as its own type (byte, sbyte, short, ...): an unboxing cast such as
+            // (byte)(object)sbyte throws, so convert it, then use its two's complement bits. Only the
+            // field's BitSize bits are copied below, so a negative value (s8 x:2 = -1) writes 0b11.
+            var raw = unchecked((ulong)Convert.ToInt64(cell.Value.Value)) << bitFieldPos;
+
             BitArray cellValueBitArray = null;
             if (bits.Count == 8)
             {
-                cellValueBitArray = new BitArray(BitConverter.GetBytes((byte)cell.Value.Value << bitFieldPos));
+                cellValueBitArray = new BitArray(new[] { (byte)raw });
             }
             else if (bits.Count == 16)
             {
-                cellValueBitArray = new BitArray(BitConverter.GetBytes((ushort)cell.Value.Value << bitFieldPos));
+                cellValueBitArray = new BitArray(BitConverter.GetBytes((ushort)raw));
             }
             else if (bits.Count == 32)
             {
-                cellValueBitArray = new BitArray(BitConverter.GetBytes((uint)cell.Value.Value << bitFieldPos));
+                cellValueBitArray = new BitArray(BitConverter.GetBytes((uint)raw));
             }
             else
             {
@@ -563,12 +561,13 @@ public class ParamReloader
 
         if (bitFieldPos == bits.Count || flushBits)
         {
-            byte valueRead = 0;
-            memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
             var bitField = new byte[bits.Count / 8];
             bits.CopyTo(bitField, 0);
+            // Compare with the storage unit at its own width (it used to read one byte for all widths)
             if (bits.Count == 8)
             {
+                byte valueRead = 0;
+                memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
                 var bitbuffer = bitField[0];
                 if (valueRead != bitbuffer)
                 {
@@ -577,6 +576,8 @@ public class ParamReloader
             }
             else if (bits.Count == 16)
             {
+                ushort valueRead = 0;
+                memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
                 var bitbuffer = BitConverter.ToUInt16(bitField, 0);
                 if (valueRead != bitbuffer)
                 {
@@ -585,6 +586,8 @@ public class ParamReloader
             }
             else if (bits.Count == 32)
             {
+                uint valueRead = 0;
+                memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
                 var bitbuffer = BitConverter.ToUInt32(bitField, 0);
                 if (valueRead != bitbuffer)
                 {
