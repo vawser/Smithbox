@@ -28,6 +28,7 @@ public class ParamToolMenu
     public ParamReloader ParamReloader;
     public ParamMerger ParamMerger;
     public ItemGib ItemGib;
+    public SpEffectGib SpEffectGib;
     public ParamUpgrader ParamUpgrader;
     public ParamListCategories ParamListCategories;
     public ParamPinGroups PinGroups;
@@ -61,6 +62,7 @@ public class ParamToolMenu
         ParamReloader = new(view, project);
         ParamMerger = new(view, project);
         ItemGib = new(view, project);
+        SpEffectGib = new(view, project, ItemGib);
         ParamUpgrader = new(view, project);
         ParamListCategories = new(view, project);
         PinGroups = new(view, project);
@@ -187,6 +189,8 @@ public class ParamToolMenu
         ParamReloader.Display();
 
         ItemGib.Display();
+
+        SpEffectGib.Display();
 
         Sections.End();
     }

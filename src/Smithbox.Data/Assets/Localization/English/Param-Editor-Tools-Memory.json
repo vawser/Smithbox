@@ -197,6 +197,58 @@
       "Text": "No GameOffset exist for Item Gib."
     },
     {
+      "Key": "PARAM_Tools_SpEffectGib_Header",
+      "Text": "SpEffect Gib"
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Hint",
+      "Text": "Applies the selected SpEffect to the player in the running game, for example a Nightreign dormant power. Load a character first."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Select_Param",
+      "Text": "Select a row in {0}."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_No_Active_Row",
+      "Text": "No active row selected. Select the SpEffect to apply."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_SpEffect_Header",
+      "Text": "SpEffect"
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_SpEffect_Header_TT",
+      "Text": "The SpEffect that is applied: the active row."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Actions_Header",
+      "Text": "Actions"
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Actions_Header_TT",
+      "Text": "Apply the SpEffect to the player in the running game."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Action_Give",
+      "Text": "Give SpEffect"
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Action_Give_TT",
+      "Text": "Apply the SpEffect to the player now. The game must be running with a character loaded."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Unresolved",
+      "Text": "Unable to locate the game's apply SpEffect function. This game version may not be supported yet."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_No_Player",
+      "Text": "The player character is not loaded yet. Load a character, then try again."
+    },
+    {
+      "Key": "PARAM_Tools_SpEffectGib_Given",
+      "Text": "Applied SpEffect {0} to the player."
+    },
+    {
       "Key": "PARAM_Tools_ItemGib_Unresolved",
       "Text": "Unable to locate the game's item give function. This game version may not be supported yet."
     },

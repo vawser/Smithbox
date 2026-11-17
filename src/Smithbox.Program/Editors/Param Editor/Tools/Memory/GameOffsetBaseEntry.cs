@@ -34,6 +34,9 @@ public class GameOffsetBaseEntry
     public ItemGiveAddress ItemGiveManager = new();
     public List<ItemGivePrepare> ItemGivePrepares = new();
 
+    // SpEffect Gib. Null = not supported by this base.
+    public SpEffectGive SpEffectGive = null;
+
     public bool SupportsItemGive => ItemGiveLayout != null && ItemGiveFunc.IsSet && ItemGiveManager.IsSet;
 
     // Hops after [paramBase] and before the per-param offset. Empty for most games.
@@ -192,6 +195,20 @@ public class GameOffsetBaseEntry
         ItemGiveFunc = ItemGiveAddress.Parse(data.itemGiveFuncAob, data.itemGiveFuncAobRelativeOffset, data.itemGiveFuncOffset);
         ItemGiveManager = ItemGiveAddress.Parse(data.itemGiveManagerAob, data.itemGiveManagerAobRelativeOffset, data.itemGiveManagerOffset);
 
+        if (data.spEffectGive is { } sp)
+        {
+            var give = new SpEffectGive
+            {
+                Param = sp.param,
+                Func = ItemGiveAddress.Parse(sp.funcAob, sp.funcAobRelativeOffset, sp.funcOffset),
+                ChrManager = ItemGiveAddress.Parse(sp.chrManagerAob, sp.chrManagerAobRelativeOffset, sp.chrManagerOffset),
+                PlayerPath = string.IsNullOrEmpty(sp.playerPath) ? Array.Empty<int>() : ParsePath(sp.playerPath),
+                Flag = string.IsNullOrEmpty(sp.flag) ? 0 : Utils.ParseHexFromString(sp.flag),
+            };
+            if (give.IsSupported)
+                SpEffectGive = give;
+        }
+
         foreach (var p in data.itemGivePrepare ?? new())
         {
             ItemGivePrepares.Add(new ItemGivePrepare
@@ -253,6 +270,20 @@ public readonly record struct ItemGiveArg(bool Scratch, long Value)
 
         return new ItemGiveArg(false, Utils.ParseHexFromString(str));
     }
+}
+
+/// <summary>
+/// SpEffect Gib: Func(player ChrIns*, spEffectId, Flag), the player being [ChrManager] followed through PlayerPath.
+/// </summary>
+public class SpEffectGive
+{
+    public string Param;
+    public ItemGiveAddress Func = new();
+    public ItemGiveAddress ChrManager = new();
+    public int[] PlayerPath = Array.Empty<int>();
+    public int Flag;
+
+    public bool IsSupported => !string.IsNullOrEmpty(Param) && Func.IsSet && ChrManager.IsSet;
 }
 
 /// <summary>

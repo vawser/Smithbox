@@ -344,6 +344,46 @@ public class SoulsMemoryHandler
     }
 
     /// <summary>
+    /// [module + managerOffset], then each hop of path (add, read a pointer). 0 when any step is null.
+    /// </summary>
+    internal nint ReadPointerPath(int managerOffset, int[] path)
+    {
+        var ptr = ReadManager(managerOffset);
+        foreach (var hop in path)
+        {
+            if (ptr == 0)
+                return 0;
+
+            nint next = 0;
+            ReadProcessMemory(ptr + hop, ref next);
+            ptr = next;
+        }
+        return ptr;
+    }
+
+    /// <summary>
+    /// Calls the game's apply-SpEffect function: func(chr, spEffectId, flag).
+    /// </summary>
+    internal void PlayerSpEffectGive(int funcOffset, nint chr, int spEffectId, int flag)
+    {
+        var func = (long)(GetBaseAddress() + funcOffset);
+
+        var code = new List<byte>();
+        void Imm64(long v) => code.AddRange(BitConverter.GetBytes(v));
+
+        code.AddRange(new byte[] { 0x48, 0x83, 0xEC, 0x28 });                   // sub rsp, 28h
+        code.AddRange(new byte[] { 0x48, 0xB9 }); Imm64(chr);                   // mov rcx, chr
+        code.Add(0xBA); code.AddRange(BitConverter.GetBytes(spEffectId));       // mov edx, spEffectId
+        code.AddRange(new byte[] { 0x41, 0xB8 }); code.AddRange(BitConverter.GetBytes(flag)); // mov r8d, flag
+        code.AddRange(new byte[] { 0x48, 0xB8 }); Imm64(func);                  // mov rax, func
+        code.AddRange(new byte[] { 0xFF, 0xD0 });                               // call rax
+        code.AddRange(new byte[] { 0x48, 0x83, 0xC4, 0x28 });                   // add rsp, 28h
+        code.Add(0xC3);                                                         // ret
+
+        ExecuteCode(code.ToArray());
+    }
+
+    /// <summary>
     /// Calls the game's give-item function: func([manager], itemTable, status, r9, stack args...).
     /// Items beyond the function's per-call limit are given in further calls.
     /// </summary>

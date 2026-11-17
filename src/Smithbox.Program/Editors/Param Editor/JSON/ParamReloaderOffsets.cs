@@ -62,8 +62,28 @@ public class GameOffsetBase
     // lookup(&rowRef, rowId) then prepare(&rowRef, &descriptor). Used for NR relics (rolls their effects).
     public List<ItemGivePrepareData> itemGivePrepare { get; set; }
 
+    // Optional: SpEffect Gib. func(player ChrIns*, spEffectId, flag), with the player found at
+    // [chrManager] followed through playerPath.
+    public SpEffectGiveData spEffectGive { get; set; }
+
     public List<string> paramOffsets { get; set; }
     public List<string> itemIDCategories { get; set; }
+}
+
+public class SpEffectGiveData
+{
+    // The param whose active row is given (e.g. "SpEffectParam").
+    public string param { get; set; }
+    public string funcAob { get; set; }
+    public string funcAobRelativeOffset { get; set; }
+    public string funcOffset { get; set; }
+    public string chrManagerAob { get; set; }
+    public string chrManagerAobRelativeOffset { get; set; }
+    public string chrManagerOffset { get; set; }
+    // Hops from [chrManager] to the player ChrIns, e.g. "0x174E8" (each hop: add, then read a pointer).
+    public string playerPath { get; set; }
+    // Third argument (r8), e.g. "0x0".
+    public string flag { get; set; }
 }
 
 public class ItemGivePrepareData
