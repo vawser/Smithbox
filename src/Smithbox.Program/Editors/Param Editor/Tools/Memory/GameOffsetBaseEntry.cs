@@ -256,6 +256,8 @@ public enum ItemGiveLayout
     // byte count; pad[7]; ItemDescriptor[maxEntries] (0x50 bytes: id at +0, u16 quantity at +0x48,
     // the other fields at their constructor defaults). Status: { -1, 0, 0 }. (NR)
     Descriptor,
+    // int count; { int id; int quantity; int -1; }[maxEntries]. Status: 16 zero bytes (unread). (AC6)
+    Basic,
 }
 
 /// <summary>

@@ -544,11 +544,12 @@ public class SoulsMemoryHandler
             return BuildDescriptorTable(maxEntries, batch);
 
         // Durability: { int count; { id, quantity, durability }[count] }
+        // Basic:      { int count; { id, quantity, -1 }[maxEntries] }
         // Gem:        { int count; { id, quantity, -1, gemId }[maxEntries] }
         // Source:     { int count; { id, quantity, -1, source }[maxEntries] }
-        var wide = layout != ItemGiveLayout.Durability;
+        var wide = layout is ItemGiveLayout.Gem or ItemGiveLayout.Source;
         var entrySize = wide ? 16 : 12;
-        var tableEntries = wide ? maxEntries : batch.Length;
+        var tableEntries = layout == ItemGiveLayout.Durability ? batch.Length : maxEntries;
         var table = new byte[4 + tableEntries * entrySize];
 
         BitConverter.GetBytes(batch.Length).CopyTo(table, 0);
@@ -564,7 +565,7 @@ public class SoulsMemoryHandler
             }
             else
             {
-                BitConverter.GetBytes(batch[i].Durability).CopyTo(table, o + 8);
+                BitConverter.GetBytes(layout == ItemGiveLayout.Basic ? -1 : batch[i].Durability).CopyTo(table, o + 8);
             }
         }
         return table;
