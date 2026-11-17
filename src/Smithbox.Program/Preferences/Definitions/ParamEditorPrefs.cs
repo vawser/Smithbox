@@ -708,6 +708,7 @@ public class ParamEditorPrefs
             {
                 ProjectType.DS1,
                 ProjectType.DS1R,
+                ProjectType.DS2S,
                 ProjectType.DS3,
                 ProjectType.SDT,
                 ProjectType.ER,
@@ -738,6 +739,7 @@ public class ParamEditorPrefs
             {
                 ProjectType.DS1,
                 ProjectType.DS1R,
+                ProjectType.DS2S,
                 ProjectType.DS3,
                 ProjectType.SDT,
                 ProjectType.ER,

@@ -175,10 +175,36 @@ public class SoulsMemoryHandler
         return GetParamPtr32Bit(paramRepoPtr, entry, pOffset);
     }
 
+    /// <summary>
+    /// The object the per-param offsets apply to: [paramRepoPtr], followed through paramOuterPath.
+    /// </summary>
+    internal nint GetOuterPtr(bool is64Bit, nint paramRepoPtr, GameOffsetBaseEntry entry)
+    {
+        if (is64Bit)
+        {
+            var ptr = paramRepoPtr;
+            NativeWrapper.ReadProcessMemory(memoryHandle, ptr, ref ptr);
+            foreach (var outerPathPart in entry.paramOuterPath)
+            {
+                ptr = nint.Add(ptr, outerPathPart);
+                NativeWrapper.ReadProcessMemory(memoryHandle, ptr, ref ptr);
+            }
+            return ptr;
+        }
+
+        var ptr32 = (int)paramRepoPtr;
+        NativeWrapper.ReadProcessMemory(memoryHandle, ptr32, ref ptr32);
+        foreach (var outerPathPart in entry.paramOuterPath)
+        {
+            ptr32 = ptr32 + outerPathPart;
+            NativeWrapper.ReadProcessMemory(memoryHandle, ptr32, ref ptr32);
+        }
+        return ptr32;
+    }
+
     private nint GetParamPtr64Bit(nint paramRepoPtr, GameOffsetBaseEntry entry, int pOffset)
     {
-        var paramPtr = paramRepoPtr;
-        NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
+        var paramPtr = GetOuterPtr(true, paramRepoPtr, entry);
         paramPtr = nint.Add(paramPtr, pOffset);
         NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
         foreach (var innerPathPart in entry.paramInnerPath)
@@ -192,8 +218,7 @@ public class SoulsMemoryHandler
 
     private nint GetParamPtr32Bit(nint paramRepoPtr, GameOffsetBaseEntry entry, int pOffset)
     {
-        var ParamPtr = (int)paramRepoPtr;
-        NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
+        var ParamPtr = (int)GetOuterPtr(false, paramRepoPtr, entry);
         ParamPtr = ParamPtr + pOffset;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
         foreach (var innerPathPart in entry.paramInnerPath)

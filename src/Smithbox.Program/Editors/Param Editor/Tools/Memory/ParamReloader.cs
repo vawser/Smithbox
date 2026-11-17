@@ -53,6 +53,7 @@ public class ParamReloader
     {
         ProjectType.DS1,
         ProjectType.DS1R,
+        ProjectType.DS2S,
         ProjectType.SDT,
         ProjectType.DS3,
         ProjectType.ER,
@@ -195,6 +196,11 @@ public class ParamReloader
     {
 
         List<Task> tasks = new();
+
+        // Per-map params of maps that are not loaded: reported once when reloading several params.
+        var skippedMapParams = 0;
+        string loadedMap = null;
+
         foreach (string param in paramNames)
         {
             // Skip these for now: cause it to CTD due to type issue
@@ -207,7 +213,7 @@ public class ParamReloader
             bool paramFound = false;
             foreach (GameOffsetBaseEntry paramRepo in offsets.Bases)
             {
-                if (!paramRepo.paramOffsets.TryGetValue(param, out int paramOffset) || param == null)
+                if (!paramRepo.TryGetParamOffset(param, out int paramOffset, out uint? paramMapId))
                 {
                     continue;
                 }
@@ -242,6 +248,24 @@ public class ParamReloader
                         paramRepositoryPtr += offsets.type is ProjectType.DS1R ? 0x1E0 : 0x10;
                     }
 
+                    // Per-map param: only write it into the game when its map is the loaded one.
+                    if (paramMapId != null && paramRepo.MapIdOffset != null)
+                    {
+                        var mapObject = handler.GetOuterPtr(offsets.Is64Bit, paramRepositoryPtr, paramRepo);
+                        uint loadedMapId = 0;
+                        handler.ReadProcessMemory(mapObject + paramRepo.MapIdOffset.Value, ref loadedMapId);
+                        loadedMap = GameOffsetBaseEntry.FormatMapId(loadedMapId);
+
+                        if (loadedMapId != paramMapId.Value)
+                        {
+                            if (paramNames.Length > 1)
+                                skippedMapParams++;
+                            else
+                                Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Map_Not_Loaded", param, loadedMap));
+                            continue;
+                        }
+                    }
+
                     tasks.Add(new Task(() =>
                         WriteMemoryPARAM(offsets.type, offsets.Is64Bit, paramRepo, bank.Params[param], paramOffset, handler, paramRepositoryPtr)));
                 }
@@ -255,6 +279,11 @@ public class ParamReloader
             {
                 Smithbox.LogError(this, LOC.Get("PARAM_Tools_Reloader_Missing_Param_Offset", param));
             }
+        }
+
+        if (skippedMapParams > 0)
+        {
+            Smithbox.Log(this, LOC.Get("PARAM_Tools_Reloader_Map_Params_Skipped", skippedMapParams, loadedMap));
         }
 
         foreach (Task task in tasks)
@@ -666,15 +695,17 @@ public class ParamReloader
         {
             var bank = activeView.GetPrimaryBank();
 
-            // Only params with an offset entry: the rest (far model params, draw param banks
-            // such as m10_FogBank) are not in the mapped repository, and would each log a
-            // missing-offset error. Reloading one of them individually still reports it.
-            var reloadable = GetReloadableParams().ToHashSet();
+            // Only params with an offset entry: the rest (far model params, params outside the
+            // mapped repositories) would each log a missing-offset error. Reloading one of them
+            // individually still reports it.
+            // Per-map params (DS2S) match by prefix; the ones of maps that are not loaded are skipped at write time.
+            var offsets = GetGameOffsets();
+            bool Reloadable(string name) => offsets != null && offsets.Bases.Any(b => b.TryGetParamOffset(name, out _, out _));
 
             ReloadMemoryParams(
                 bank,
                 bank.Params.Keys
-                    .Where(e => !bank.FarModelParams.ContainsKey(e) && reloadable.Contains(e)).ToArray());
+                    .Where(e => !bank.FarModelParams.ContainsKey(e) && Reloadable(e)).ToArray());
         }
         else
         {

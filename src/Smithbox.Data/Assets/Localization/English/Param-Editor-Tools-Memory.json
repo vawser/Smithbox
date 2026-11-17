@@ -183,6 +183,14 @@
     {
       "Key": "PARAM_Tools_Reloader_Cannot_Reload",
       "Text": "Param Reloader cannot reload for this project."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Map_Not_Loaded",
+      "Text": "{0} was not reloaded: the game has map {1} loaded."
+    },
+    {
+      "Key": "PARAM_Tools_Reloader_Map_Params_Skipped",
+      "Text": "Skipped {0} map params of maps that are not loaded (the game has map {1} loaded)."
     }
   ]
 }
