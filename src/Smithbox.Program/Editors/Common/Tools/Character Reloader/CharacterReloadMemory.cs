@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
-public static class Memory
+public static class CharacterReloadMemory
 {
     public enum Startbit : byte
     {
@@ -19,7 +19,7 @@ public static class Memory
         Bit7 = 7
     }
 
-    //Memory Stuff
+    // Memory
     public static bool Is64Bit => IntPtr.Size == 8;
 
     public static IntPtr ProcessHandle { get; set; }
@@ -31,13 +31,13 @@ public static class Memory
     public static IntPtr EldenRing_CrashFixPtr = IntPtr.Zero;
     public static IntPtr EldenRing_WorldChrManPtr = IntPtr.Zero;
 
-    private static IntPtr ScanRelativeAob(AOBScanner aobScanner, string aob, int addrOffset, int endOfRelJumpInstr)
+    private static IntPtr ScanRelativeAob(CharacterReloadAobScanner aobScanner, string aob, int addrOffset, int endOfRelJumpInstr)
     {
-        var aobLocation = aobScanner.Scan(AOBScanner.StringToAOB(aob));
+        var aobLocation = aobScanner.Scan(CharacterReloadAobScanner.StringToAOB(aob));
         if (aobLocation == IntPtr.Zero)
             return IntPtr.Zero;
         // rel32 is signed: the target can be before the instruction
-        int relAddr = (int)Kernel32.ReadUInt32(ProcessHandle, aobLocation + addrOffset);
+        int relAddr = (int)CharacterReloadKernel32.ReadUInt32(ProcessHandle, aobLocation + addrOffset);
         return aobLocation + endOfRelJumpInstr + relAddr;
     }
 
@@ -46,17 +46,17 @@ public static class Memory
     /// A pointer is left as zero when its AOB isn't found (or the group's values can't be parsed),
     /// so the reload can stop instead of writing to a bad address.
     /// </summary>
-    public static void UpdateEldenRingAobs(HavokCharacterReloaderOffsetEntry offsets)
+    public static void UpdateEldenRingAobs(CharacterReloaderOffsetEntry offsets)
     {
         EldenRing_WorldChrManPtr = IntPtr.Zero;
         EldenRing_CrashFixPtr = IntPtr.Zero;
 
-        var aob = new AOBScanner(AttachedProcess);
+        var aob = new CharacterReloadAobScanner(AttachedProcess);
 
         // "start/end" of the rel32 in the AOB
         var relParts = (offsets.worldChrManAobRelativeOffset ?? "").Split('/');
-        var relStart = relParts.Length == 2 ? HavokCharacterReloaderOffsets.ParseHex(relParts[0]) : null;
-        var relEnd = relParts.Length == 2 ? HavokCharacterReloaderOffsets.ParseHex(relParts[1]) : null;
+        var relStart = relParts.Length == 2 ? CharacterReloaderOffsets.ParseHex(relParts[0]) : null;
+        var relEnd = relParts.Length == 2 ? CharacterReloaderOffsets.ParseHex(relParts[1]) : null;
 
         if (!string.IsNullOrWhiteSpace(offsets.worldChrManAob) && relStart is int start && relEnd is int end)
         {
@@ -64,15 +64,15 @@ public static class Memory
 
             if (global != IntPtr.Zero)
             {
-                EldenRing_WorldChrManPtr = Kernel32.ReadIntPtr(ProcessHandle, global, true);
+                EldenRing_WorldChrManPtr = CharacterReloadKernel32.ReadIntPtr(ProcessHandle, global, true);
             }
         }
 
-        var distFromEnd = HavokCharacterReloaderOffsets.ParseHex(offsets.crashPatchDistFromEndOfAob);
+        var distFromEnd = CharacterReloaderOffsets.ParseHex(offsets.crashPatchDistFromEndOfAob);
 
         if (!string.IsNullOrWhiteSpace(offsets.crashPatchAob) && distFromEnd is int dist)
         {
-            var crashPatchAob = AOBScanner.StringToAOB(offsets.crashPatchAob);
+            var crashPatchAob = CharacterReloadAobScanner.StringToAOB(offsets.crashPatchAob);
             var crashPatchAobStart = aob.Scan(crashPatchAob);
 
             if (crashPatchAobStart != IntPtr.Zero)
@@ -87,7 +87,7 @@ public static class Memory
         if (AttachedProcess != null && AttachedProcess?.HasExited != true)
             return;
 
-        if (!Kernel32.GetHandleInformation(ProcessHandle, out _))
+        if (!CharacterReloadKernel32.GetHandleInformation(ProcessHandle, out _))
         {
             CloseHandle(handleInvalid: true);
         }
@@ -100,7 +100,7 @@ public static class Memory
             BaseAddress = Process.MainModule.BaseAddress;
             try
             {
-                ProcessHandle = Kernel32.OpenProcess(0x2 | 0x8 | 0x10 | 0x20 | 0x400, false, Process.Id);
+                ProcessHandle = CharacterReloadKernel32.OpenProcess(0x2 | 0x8 | 0x10 | 0x20 | 0x400, false, Process.Id);
                 AttachedProcess = Process;
                 AttachedProcess.Exited += AttachedProcess_Exited;
             }
@@ -111,7 +111,7 @@ public static class Memory
         }
         else
         {
-            Smithbox.LogError(typeof(Memory), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Game_Attach"));
+            Smithbox.LogError(typeof(CharacterReloadMemory), LOC.Get("COMMON_CharacterReloader_Error_Failed_Game_Attach"));
         }
     }
 
@@ -135,7 +135,7 @@ public static class Memory
             {
                 try
                 {
-                    Kernel32.CloseHandle(ProcessHandle);
+                    CharacterReloadKernel32.CloseHandle(ProcessHandle);
                 }
                 catch
                 {
@@ -154,7 +154,7 @@ public static class Memory
     public static bool ReadBoolean(IntPtr address)
     {
         var readBuffer = new byte[sizeof(byte)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)1, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)1, UIntPtr.Zero);
         byte value = readBuffer[0];
         var boolRet = Convert.ToBoolean(value);
         return boolRet;
@@ -163,7 +163,7 @@ public static class Memory
     public static byte ReadInt8(IntPtr address)
     {
         var readBuffer = new byte[sizeof(byte)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)1, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)1, UIntPtr.Zero);
         var value = readBuffer[0];
         return value;
     }
@@ -171,7 +171,7 @@ public static class Memory
     public static short ReadInt16(IntPtr address)
     {
         var readBuffer = new byte[sizeof(short)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)2, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)2, UIntPtr.Zero);
         var value = BitConverter.ToInt16(readBuffer, 0);
         return value;
     }
@@ -179,7 +179,7 @@ public static class Memory
     public static int ReadInt32(IntPtr address)
     {
         var readBuffer = new byte[sizeof(int)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
         var value = BitConverter.ToInt32(readBuffer, 0);
         return value;
     }
@@ -187,7 +187,7 @@ public static class Memory
     public static long ReadInt64(IntPtr address)
     {
         var readBuffer = new byte[sizeof(long)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
         var value = BitConverter.ToInt64(readBuffer, 0);
         return value;
     }
@@ -195,7 +195,7 @@ public static class Memory
     public static float ReadFloat(IntPtr address)
     {
         var readBuffer = new byte[sizeof(float)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
         var value = BitConverter.ToSingle(readBuffer, 0);
         return value;
     }
@@ -203,7 +203,7 @@ public static class Memory
     public static double ReadDouble(IntPtr address)
     {
         var readBuffer = new byte[sizeof(double)];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
         var value = BitConverter.ToDouble(readBuffer, 0);
         return value;
     }
@@ -211,7 +211,7 @@ public static class Memory
     public static string ReadString(IntPtr address, int length, string encodingName)
     {
         var readBuffer = new byte[length];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
         var encodingType = System.Text.Encoding.GetEncoding(encodingName);
         string value = encodingType.GetString(readBuffer, 0, readBuffer.Length);
 
@@ -221,7 +221,7 @@ public static class Memory
     public static string ReadUnicodeString(IntPtr address, int length)
     {
         var readBuffer = new byte[length];
-        var success = Kernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
+        var success = CharacterReloadKernel32.ReadProcessMemory(ProcessHandle, address, readBuffer, (UIntPtr)readBuffer.Length, UIntPtr.Zero);
 
         for (int i = 0; i < readBuffer.Length; i++)
         {
@@ -245,79 +245,79 @@ public static class Memory
         var WriteBit_ = (byte)WriteBit;
 
 
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes((short)WriteBit_), (UIntPtr)1, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes((short)WriteBit_), (UIntPtr)1, UIntPtr.Zero);
     }
 
     public static bool WriteBoolean(IntPtr address, bool value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)1, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)1, UIntPtr.Zero);
     }
 
     public static bool WriteInt8(IntPtr address, byte value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes((short)value), (UIntPtr)1, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes((short)value), (UIntPtr)1, UIntPtr.Zero);
     }
 
     public static bool WriteInt16(IntPtr address, short value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)2, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)2, UIntPtr.Zero);
     }
 
     public static bool WriteInt32(IntPtr address, int value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)4, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)4, UIntPtr.Zero);
     }
 
     public static bool WriteInt64(IntPtr address, long value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)8, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)8, UIntPtr.Zero);
     }
 
     public static bool WriteFloat(IntPtr address, float value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)4, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)4, UIntPtr.Zero);
     }
 
     public static bool WriteDouble(IntPtr address, double value)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)8, UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, BitConverter.GetBytes(value), (UIntPtr)8, UIntPtr.Zero);
     }
 
     public static bool WriteBytes(IntPtr address, Byte[] val)
     {
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
     }
 
     public static bool WriteUnicodeString(IntPtr address, string String)
     {
         byte[] val = Encoding.Unicode.GetBytes(String);
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
     }
 
     public static bool WriteASCIIString(IntPtr address, string String)
     {
         byte[] val = Encoding.ASCII.GetBytes(String);
-        return Kernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
+        return CharacterReloadKernel32.WriteProcessMemory(ProcessHandle, address, val, new UIntPtr((uint)val.Length), UIntPtr.Zero);
     }
 
     public static void ExecuteFunction(byte[] array)
     {
         var buffer = 0x100;
 
-        var address = Kernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, buffer, 0x1000 | 0x2000, 0X40);
+        var address = CharacterReloadKernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, buffer, 0x1000 | 0x2000, 0X40);
 
         if (address != IntPtr.Zero)
         {
             if (WriteBytes(address, array))
             {
-                var threadHandle = Kernel32.CreateRemoteThread(ProcessHandle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, out var threadId);
+                var threadHandle = CharacterReloadKernel32.CreateRemoteThread(ProcessHandle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, out var threadId);
                 if (threadHandle != IntPtr.Zero)
                 {
-                    Kernel32.WaitForSingleObject(threadHandle, 30000);
+                    CharacterReloadKernel32.WaitForSingleObject(threadHandle, 30000);
                 }
             }
 
-            Kernel32.VirtualFreeEx(ProcessHandle, address, buffer, 2);
+            CharacterReloadKernel32.VirtualFreeEx(ProcessHandle, address, buffer, 2);
         }
     }
 
@@ -326,8 +326,8 @@ public static class Memory
         var Size1 = 0x100;
         var Size2 = 0x100;
 
-        var address = Kernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, Size1, 0x1000 | 0x2000, 0X40);
-        var bufferAddress = Kernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, Size2, 0x1000 | 0x2000, 0X40);
+        var address = CharacterReloadKernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, Size1, 0x1000 | 0x2000, 0X40);
+        var bufferAddress = CharacterReloadKernel32.VirtualAllocEx(ProcessHandle, IntPtr.Zero, Size2, 0x1000 | 0x2000, 0X40);
 
         var bytjmp = 0x2;
         var bytjmpAr = new byte[7];
@@ -341,15 +341,15 @@ public static class Memory
         {
             if (WriteBytes(address, array))
             {
-                var threadHandle = Kernel32.CreateRemoteThread(ProcessHandle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, out var threadId);
+                var threadHandle = CharacterReloadKernel32.CreateRemoteThread(ProcessHandle, IntPtr.Zero, 0, address, IntPtr.Zero, 0, out var threadId);
                 if (threadHandle != IntPtr.Zero)
                 {
-                    Kernel32.WaitForSingleObject(threadHandle, 30000);
+                    CharacterReloadKernel32.WaitForSingleObject(threadHandle, 30000);
                 }
             }
 
-            Kernel32.VirtualFreeEx(ProcessHandle, address, Size1, 2);
-            Kernel32.VirtualFreeEx(ProcessHandle, bufferAddress, Size2, 2);
+            CharacterReloadKernel32.VirtualFreeEx(ProcessHandle, address, Size1, 2);
+            CharacterReloadKernel32.VirtualFreeEx(ProcessHandle, bufferAddress, Size2, 2);
         }
     }
 }

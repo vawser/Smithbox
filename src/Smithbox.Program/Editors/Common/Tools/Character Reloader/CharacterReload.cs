@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
-public static class HavokReload
+public static class CharacterReload
 {
     private const uint MEM_RELEASE = 0x8000;
     private const uint WAIT_OBJECT_0 = 0;
@@ -29,56 +29,56 @@ public static class HavokReload
 
         try
         {
-            Memory.AttachProc(project, "eldenring");
-            if (Memory.ProcessHandle == IntPtr.Zero)
-                Memory.AttachProc(project, "start_protected_game");
+            CharacterReloadMemory.AttachProc(project, "eldenring");
+            if (CharacterReloadMemory.ProcessHandle == IntPtr.Zero)
+                CharacterReloadMemory.AttachProc(project, "start_protected_game");
 
-            if (Memory.ProcessHandle != IntPtr.Zero)
+            if (CharacterReloadMemory.ProcessHandle != IntPtr.Zero)
             {
-                var fileInfo = Memory.AttachedProcess.MainModule.FileVersionInfo;
+                var fileInfo = CharacterReloadMemory.AttachedProcess.MainModule.FileVersionInfo;
                 var exeVersion = $"{fileInfo.FileMajorPart}.{fileInfo.FileMinorPart}.{fileInfo.FileBuildPart}.{fileInfo.FilePrivatePart}";
 
                 var exactMatch = false;
-                var offsets = project.Handler.HavokData?.CharacterReloaderOffsets?.GetGroup(exeVersion, out exactMatch);
+                var offsets = project.Handler.CommonData?.CharacterReloaderOffsets?.GetGroup(exeVersion, out exactMatch);
 
                 if (offsets == null)
                 {
-                    Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_No_Offsets"));
+                    Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_No_Offsets"));
                     return false;
                 }
 
                 if (!exactMatch)
                 {
-                    Smithbox.LogWarning(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Warning_Version_Not_Listed", exeVersion, offsets.exeVersion));
+                    Smithbox.LogWarning(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Warning_Version_Not_Listed", exeVersion, offsets.exeVersion));
                 }
 
-                var listOffset = HavokCharacterReloaderOffsets.ParseHex(offsets.reloadListOffset);
-                var countOffset = HavokCharacterReloaderOffsets.ParseHex(offsets.reloadCountOffset);
-                var timerOffset = HavokCharacterReloaderOffsets.ParseHex(offsets.reloadTimerOffset);
-                var writeBytes = HavokCharacterReloaderOffsets.ParseBytes(offsets.crashPatchBytes);
+                var listOffset = CharacterReloaderOffsets.ParseHex(offsets.reloadListOffset);
+                var countOffset = CharacterReloaderOffsets.ParseHex(offsets.reloadCountOffset);
+                var timerOffset = CharacterReloaderOffsets.ParseHex(offsets.reloadTimerOffset);
+                var writeBytes = CharacterReloaderOffsets.ParseBytes(offsets.crashPatchBytes);
 
                 if (listOffset == null || countOffset == null || timerOffset == null || writeBytes == null)
                 {
-                    Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Invalid_Offsets", offsets.exeVersion));
+                    Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Invalid_Offsets", offsets.exeVersion));
                     return false;
                 }
 
-                Memory.UpdateEldenRingAobs(offsets);
+                CharacterReloadMemory.UpdateEldenRingAobs(offsets);
 
-                if (Memory.EldenRing_WorldChrManPtr == IntPtr.Zero)
+                if (CharacterReloadMemory.EldenRing_WorldChrManPtr == IntPtr.Zero)
                 {
-                    Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_WorldChrMan_Not_Found"));
+                    Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_WorldChrMan_Not_Found"));
                     return false;
                 }
 
-                if (Memory.EldenRing_CrashFixPtr == IntPtr.Zero)
+                if (CharacterReloadMemory.EldenRing_CrashFixPtr == IntPtr.Zero)
                 {
-                    Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Crash_Patch_Not_Found"));
+                    Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Crash_Patch_Not_Found"));
                     return false;
                 }
 
-                var chrReload = Kernel32.VirtualAllocEx(Memory.ProcessHandle, IntPtr.Zero, 256, 0x1000 | 0x2000, 0x40);
-                var chrReload_DataSetup = Kernel32.VirtualAllocEx(Memory.ProcessHandle, IntPtr.Zero, 256, 0x1000 | 0x2000, 0x40);
+                var chrReload = CharacterReloadKernel32.VirtualAllocEx(CharacterReloadMemory.ProcessHandle, IntPtr.Zero, 256, 0x1000 | 0x2000, 0x40);
+                var chrReload_DataSetup = CharacterReloadKernel32.VirtualAllocEx(CharacterReloadMemory.ProcessHandle, IntPtr.Zero, 256, 0x1000 | 0x2000, 0x40);
 
                 if (chrReload != IntPtr.Zero && chrReload_DataSetup != IntPtr.Zero)
                 {
@@ -93,13 +93,13 @@ public static class HavokReload
                         // Request node (a list node): next +0x0, prev +0x8 (both set by the code below),
                         // name string +0x58 (pointer; capacity at +0x70 must be 8..0x1F, so the pointer is used).
                         // The game compares the name as a null-terminated wide string; the allocation is zeroed.
-                        Memory.WriteInt64(chrReload_DataSetup + 0x58, (chrReload_DataSetup + 0x100).ToInt64()); // Pointer to string
-                        Memory.WriteInt8(chrReload_DataSetup + 0x70, 0x1F); // String capacity
-                        Memory.WriteBytes(chrReload_DataSetup + 0x100, chrNameBytes);
+                        CharacterReloadMemory.WriteInt64(chrReload_DataSetup + 0x58, (chrReload_DataSetup + 0x100).ToInt64()); // Pointer to string
+                        CharacterReloadMemory.WriteInt8(chrReload_DataSetup + 0x70, 0x1F); // String capacity
+                        CharacterReloadMemory.WriteBytes(chrReload_DataSetup + 0x100, chrNameBytes);
 
                         // Once the reload is done the game frees the node through its own allocator; the node is
                         // ours, so this patch makes it free null instead (mov rdx,rbx -> xor rdx,rdx)
-                        Memory.WriteBytes(Memory.EldenRing_CrashFixPtr, writeBytes);
+                        CharacterReloadMemory.WriteBytes(CharacterReloadMemory.EldenRing_CrashFixPtr, writeBytes);
 
                         // Appends the node to WorldChrMan's reload list (std::list push_back), so requests for
                         // several characters queue up, then bumps the request count and sets the reload timer.
@@ -119,19 +119,19 @@ public static class HavokReload
                         };
 
                         Array.Copy(BitConverter.GetBytes(chrReload_DataSetup.ToInt64()), 0, buffer, 2, 8);
-                        Array.Copy(BitConverter.GetBytes(Memory.EldenRing_WorldChrManPtr.ToInt64()), 0, buffer, 12, 8);
+                        Array.Copy(BitConverter.GetBytes(CharacterReloadMemory.EldenRing_WorldChrManPtr.ToInt64()), 0, buffer, 12, 8);
                         Array.Copy(BitConverter.GetBytes(listOffset.Value), 0, buffer, 23, 4);
                         Array.Copy(BitConverter.GetBytes(countOffset.Value), 0, buffer, 48, 4);
                         Array.Copy(BitConverter.GetBytes(timerOffset.Value), 0, buffer, 54, 4);
 
-                        Memory.WriteBytes(chrReload, buffer);
+                        CharacterReloadMemory.WriteBytes(chrReload, buffer);
 
-                        var threadHandle = Kernel32.CreateRemoteThread(Memory.ProcessHandle, IntPtr.Zero, 0, chrReload, IntPtr.Zero, 0, out var threadId);
+                        var threadHandle = CharacterReloadKernel32.CreateRemoteThread(CharacterReloadMemory.ProcessHandle, IntPtr.Zero, 0, chrReload, IntPtr.Zero, 0, out var threadId);
                         if (threadHandle != IntPtr.Zero)
                         {
                             nodeQueued = true;
-                            threadFinished = Kernel32.WaitForSingleObject(threadHandle, 30000) == WAIT_OBJECT_0;
-                            Kernel32.CloseHandle(threadHandle);
+                            threadFinished = CharacterReloadKernel32.WaitForSingleObject(threadHandle, 30000) == WAIT_OBJECT_0;
+                            CharacterReloadKernel32.CloseHandle(threadHandle);
                         }
                         else
                         {
@@ -147,7 +147,7 @@ public static class HavokReload
                         // be running it). MEM_RELEASE needs a size of 0.
                         if (threadFinished)
                         {
-                            Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload, 0, MEM_RELEASE);
+                            CharacterReloadKernel32.VirtualFreeEx(CharacterReloadMemory.ProcessHandle, chrReload, 0, MEM_RELEASE);
                         }
 
                         // The node is only read by the game when the reload timer runs out, well after the thread
@@ -155,19 +155,19 @@ public static class HavokReload
                         // (one page per reload). Freeing it here crashes the game.
                         if (!nodeQueued)
                         {
-                            Kernel32.VirtualFreeEx(Memory.ProcessHandle, chrReload_DataSetup, 0, MEM_RELEASE);
+                            CharacterReloadKernel32.VirtualFreeEx(CharacterReloadMemory.ProcessHandle, chrReload_DataSetup, 0, MEM_RELEASE);
                         }
                     }
                 }
             }
             else
             {
-                Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Game_Process"));
+                Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Failed_Game_Process"));
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Hot_Reload"), e);
+            Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Failed_Hot_Reload"), e);
         }
 
         return false;
@@ -179,11 +179,11 @@ public static class HavokReload
 
         try
         {
-            Memory.AttachProc(project, "DarkSoulsIII");
+            CharacterReloadMemory.AttachProc(project, "DarkSoulsIII");
 
-            if (Memory.ProcessHandle != IntPtr.Zero)
+            if (CharacterReloadMemory.ProcessHandle != IntPtr.Zero)
             {
-                var fileInfo = Memory.AttachedProcess.MainModule.FileVersionInfo;
+                var fileInfo = CharacterReloadMemory.AttachedProcess.MainModule.FileVersionInfo;
                 int gameVersion = fileInfo.FileMajorPart * 1_00_00_00
                                   + fileInfo.FileMinorPart * 1_00_00
                                   + fileInfo.FileBuildPart * 1_00
@@ -191,7 +191,7 @@ public static class HavokReload
 
                 if (gameVersion == 1150000)
                 {
-                    Memory.WriteBoolean(Memory.BaseAddress + 0x4768F7F, true);
+                    CharacterReloadMemory.WriteBoolean(CharacterReloadMemory.BaseAddress + 0x4768F7F, true);
 
                     byte[] buffer =
                     {
@@ -205,21 +205,21 @@ public static class HavokReload
                         0xC3 //ret
                     };
 
-                    Memory.ExecuteBufferFunction(buffer, chrNameBytes);
+                    CharacterReloadMemory.ExecuteBufferFunction(buffer, chrNameBytes);
                 }
                 else
                 {
-                    Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Log_Reload_for_Old_DS3"));
+                    Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Log_Reload_for_Old_DS3"));
                 }
             }
             else
             {
-                Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Game_Process"));
+                Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Failed_Game_Process"));
             }
         }
         catch (Exception e)
         {
-            Smithbox.LogError(typeof(HavokReload), LOC.Get("HAVOK_CharacterReloader_Error_Failed_Hot_Reload"), e);
+            Smithbox.LogError(typeof(CharacterReload), LOC.Get("COMMON_CharacterReloader_Error_Failed_Hot_Reload"), e);
         }
 
         return false;

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.Common;
 
 namespace StudioCore.Editors.HavokEditor;
 
@@ -9,7 +10,7 @@ public class HavokToolView
 
     public CollisionGeneratorTool CollisionGeneratorTool;
 
-    public HavokCharacterReloader HavokCharacterReloader;
+    public CharacterReloaderTool CharacterReloader;
 
     private ToolSections Sections = new();
 
@@ -19,7 +20,7 @@ public class HavokToolView
         Project = project;
 
         CollisionGeneratorTool = new(view, project);
-        HavokCharacterReloader = new(view, project);
+        CharacterReloader = new(project);
     }
 
     public void Draw()
@@ -32,7 +33,7 @@ public class HavokToolView
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
 
-        HavokCharacterReloader.Display();
+        CharacterReloader.Display();
 
         Sections.End();
     }

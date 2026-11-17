@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
 // Known credits for original research used for character reloading:
 // - horkrux
@@ -13,14 +13,14 @@ namespace StudioCore.Editors.HavokEditor;
 /// The memory offsets used by the Character Reloader, one group per game executable version.
 /// Read from Assets/HAVOK/Character Reloader/{game}/*.json.
 /// </summary>
-public class HavokCharacterReloaderOffsets
+public class CharacterReloaderOffsets
 {
-    public List<HavokCharacterReloaderOffsetEntry> Groups { get; set; } = new();
+    public List<CharacterReloaderOffsetEntry> Groups { get; set; } = new();
 
     /// <summary>
     /// The group for this executable version, or else the newest group (null if there are none).
     /// </summary>
-    public HavokCharacterReloaderOffsetEntry GetGroup(string exeVersion, out bool exactMatch)
+    public CharacterReloaderOffsetEntry GetGroup(string exeVersion, out bool exactMatch)
     {
         var match = Groups.FirstOrDefault(e => e.exeVersion == exeVersion);
         exactMatch = match != null;
@@ -78,7 +78,7 @@ public class HavokCharacterReloaderOffsets
     }
 }
 
-public class HavokCharacterReloaderOffsetEntry
+public class CharacterReloaderOffsetEntry
 {
     public string exeName { get; set; }
     public string exeVersion { get; set; }

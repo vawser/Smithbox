@@ -1,115 +1,115 @@
 {
   "Entries": [
     {
-      "Key": "HAVOK_CharacterReloader_Title",
+      "Key": "COMMON_CharacterReloader_Title",
       "Text": "Character Reloader"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Hint",
+      "Key": "COMMON_CharacterReloader_Hint",
       "Text": "Use this tool to reload characters in the running game, so changes to their files (behaviors, animations, Havok scripts, etc.) are applied without restarting."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Not_Supported",
+      "Key": "COMMON_CharacterReloader_Not_Supported",
       "Text": "The character reloader is not supported for this project type."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Inclusion_Toggle_All_TT",
+      "Key": "COMMON_CharacterReloader_Inclusion_Toggle_All_TT",
       "Text": "Add all characters to reload list."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Inclusion_Clear_All_TT",
+      "Key": "COMMON_CharacterReloader_Inclusion_Clear_All_TT",
       "Text": "Clear all characters from reload list."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Inclusion_List_Header",
+      "Key": "COMMON_CharacterReloader_Inclusion_List_Header",
       "Text": "Characters to Reload"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Inclusion_List_Header_TT",
+      "Key": "COMMON_CharacterReloader_Inclusion_List_Header_TT",
       "Text": "If a character is included below, then it will be reloaded."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Actions_Header",
+      "Key": "COMMON_CharacterReloader_Actions_Header",
       "Text": "Actions"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Actions_Header_TT",
+      "Key": "COMMON_CharacterReloader_Actions_Header_TT",
       "Text": ""
     },
     {
-      "Key": "HAVOK_CharacterReloader_Reload_Characters",
+      "Key": "COMMON_CharacterReloader_Reload_Characters",
       "Text": "Reload Characters"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Reload_Characters_TT",
+      "Key": "COMMON_CharacterReloader_Reload_Characters_TT",
       "Text": "Reload all of the characters included above."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Options_Header",
+      "Key": "COMMON_CharacterReloader_Options_Header",
       "Text": "Options"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Options_Header_TT",
+      "Key": "COMMON_CharacterReloader_Options_Header_TT",
       "Text": ""
     },
     {
-      "Key": "HAVOK_CharacterReloader_Detect_File_Changes",
+      "Key": "COMMON_CharacterReloader_Detect_File_Changes",
       "Text": "Enable File Watcher"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Detect_File_Changes_TT",
+      "Key": "COMMON_CharacterReloader_Detect_File_Changes_TT",
       "Text": "If enabled, an included character is automatically reloaded when one of its files in the project is saved externally."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Failed_Create_Watcher",
+      "Key": "COMMON_CharacterReloader_Error_Failed_Create_Watcher",
       "Text": "Failed to create file watcher."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Failed_Game_Attach",
+      "Key": "COMMON_CharacterReloader_Error_Failed_Game_Attach",
       "Text": "Failed to attach to game."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Failed_Game_Process",
+      "Key": "COMMON_CharacterReloader_Error_Failed_Game_Process",
       "Text": "Failed to find game process."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Failed_Hot_Reload",
+      "Key": "COMMON_CharacterReloader_Error_Failed_Hot_Reload",
       "Text": "Failed to reload character."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_WorldChrMan_Not_Found",
+      "Key": "COMMON_CharacterReloader_Error_WorldChrMan_Not_Found",
       "Text": "Failed to reload character: the WorldChrMan pattern was not found in the game. The game version may not be supported."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Crash_Patch_Not_Found",
+      "Key": "COMMON_CharacterReloader_Error_Crash_Patch_Not_Found",
       "Text": "Failed to reload character: the crash patch pattern was not found in the game. The game version may not be supported."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_No_Offsets",
+      "Key": "COMMON_CharacterReloader_Error_No_Offsets",
       "Text": "Failed to reload character: no Character Reloader offsets were found for this game."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Invalid_Offsets",
+      "Key": "COMMON_CharacterReloader_Error_Invalid_Offsets",
       "Text": "Failed to reload character: the Character Reloader offsets for {0} are missing values or can't be read."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_Failed_Read_Offsets",
+      "Key": "COMMON_CharacterReloader_Error_Failed_Read_Offsets",
       "Text": "Failed to read Character Reloader offsets: {0}"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Warning_Version_Not_Listed",
+      "Key": "COMMON_CharacterReloader_Warning_Version_Not_Listed",
       "Text": "No Character Reloader offsets for game version {0}; using the offsets for {1}."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Error_No_Characters_Enabled",
+      "Key": "COMMON_CharacterReloader_Error_No_Characters_Enabled",
       "Text": "No characters have been included."
     },
     {
-      "Key": "HAVOK_CharacterReloader_Log_Reloaded_Character",
+      "Key": "COMMON_CharacterReloader_Log_Reloaded_Character",
       "Text": "Reloaded character {0}"
     },
     {
-      "Key": "HAVOK_CharacterReloader_Log_Reload_for_Old_DS3",
+      "Key": "COMMON_CharacterReloader_Log_Reload_for_Old_DS3",
       "Text": "Character reload only works for the DarkSoulsIII executable 1.15.0"
     }
   ]

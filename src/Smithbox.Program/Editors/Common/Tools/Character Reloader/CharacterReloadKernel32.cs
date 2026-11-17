@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
 
-public static class Kernel32
+public static class CharacterReloadKernel32
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     #region Constants from winnt.h

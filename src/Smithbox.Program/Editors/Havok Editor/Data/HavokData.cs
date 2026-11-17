@@ -32,46 +32,6 @@ public class HavokData : IDisposable
             Smithbox.Log(this, LOC.Get("HAVOK_Data_Havok_Object_Aliases_PASS"));
         }
 
-        await SetupCharacterReloaderOffsets();
-
-        return true;
-    }
-
-    public HavokCharacterReloaderOffsets CharacterReloaderOffsets = new();
-
-    /// <summary>
-    /// Read the Character Reloader offsets, one file per game executable version.
-    /// </summary>
-    public async Task<bool> SetupCharacterReloaderOffsets()
-    {
-        await Task.Yield();
-
-        CharacterReloaderOffsets = new();
-
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "HAVOK", "Character Reloader", ProjectUtils.GetGameDirectory(Project));
-
-        if (!Directory.Exists(srcDir))
-            return true;
-
-        foreach (var filepath in Directory.EnumerateFiles(srcDir, "*.json"))
-        {
-            try
-            {
-                var filestring = await File.ReadAllTextAsync(filepath);
-
-                var item = JsonSerializer.Deserialize(filestring, HavokJsonSerializerContext.Default.HavokCharacterReloaderOffsetEntry);
-
-                if (item != null && !CharacterReloaderOffsets.Groups.Any(e => e.exeVersion == item.exeVersion))
-                {
-                    CharacterReloaderOffsets.Groups.Add(item);
-                }
-            }
-            catch (Exception e)
-            {
-                Smithbox.LogError(this, LOC.Get("HAVOK_CharacterReloader_Error_Failed_Read_Offsets", filepath), e);
-            }
-        }
-
         return true;
     }
 
@@ -257,7 +217,7 @@ public class HavokData : IDisposable
         {
             foreach (var view in Project.Handler.HavokEditor.ViewHandler.Views)
             {
-                view?.Tools.HavokCharacterReloader.Dispose();
+                view?.Tools.CharacterReloader.Dispose();
                 view?.Tools.CollisionGeneratorTool.Dispose();
             }
         }

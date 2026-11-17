@@ -63,6 +63,7 @@ public class TimeActEditorView : IEditorView
     public TimeActComboBuilderTool ComboBuilderTool;
     public TimeActHistoryTool HistoryTool;
     public TimeActFiltersTool FiltersTool;
+    public CharacterReloaderTool CharacterReloader;
 
     public TimeActEditorView(TimeActEditorScreen editor, ProjectEntry project, int imguiId)
     {
@@ -108,6 +109,7 @@ public class TimeActEditorView : IEditorView
         ComboBuilderTool = new TimeActComboBuilderTool(this, project);
         HistoryTool = new TimeActHistoryTool(this, project);
         FiltersTool = new TimeActFiltersTool(this, project);
+        CharacterReloader = new CharacterReloaderTool(project);
     }
 
     private ModelMaskTarget GetModelMaskTarget()
@@ -146,6 +148,9 @@ public class TimeActEditorView : IEditorView
     {
         ViewportSelection.ClearSelection();
         ViewportActionManager.Clear();
+
+        // Its file watchers
+        CharacterReloader.Dispose();
 
         // Before the viewport, as its drawables are in the view's scene
         Playback.Effects.Dispose();

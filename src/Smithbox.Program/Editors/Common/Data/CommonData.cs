@@ -32,6 +32,46 @@ public class CommonData : IDisposable
                 LOC.Get("COMMON_Data_Setup_Havok_Meta_FAIL", Project.Descriptor.ProjectName));
         }
 
+        await SetupCharacterReloaderOffsets();
+
+        return true;
+    }
+
+    public CharacterReloaderOffsets CharacterReloaderOffsets = new();
+
+    /// <summary>
+    /// Read the Character Reloader offsets, one file per game executable version.
+    /// </summary>
+    public async Task<bool> SetupCharacterReloaderOffsets()
+    {
+        await Task.Yield();
+
+        CharacterReloaderOffsets = new();
+
+        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "Character Reloader", ProjectUtils.GetGameDirectory(Project));
+
+        if (!Directory.Exists(srcDir))
+            return true;
+
+        foreach (var filepath in Directory.EnumerateFiles(srcDir, "*.json"))
+        {
+            try
+            {
+                var filestring = await File.ReadAllTextAsync(filepath);
+
+                var item = JsonSerializer.Deserialize(filestring, CommonJsonSerializerContext.Default.CharacterReloaderOffsetEntry);
+
+                if (item != null && !CharacterReloaderOffsets.Groups.Any(e => e.exeVersion == item.exeVersion))
+                {
+                    CharacterReloaderOffsets.Groups.Add(item);
+                }
+            }
+            catch (Exception e)
+            {
+                Smithbox.LogError(this, LOC.Get("COMMON_CharacterReloader_Error_Failed_Read_Offsets", filepath), e);
+            }
+        }
+
         return true;
     }
 

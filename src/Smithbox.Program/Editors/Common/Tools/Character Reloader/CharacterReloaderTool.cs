@@ -6,15 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
 /// <summary>
 /// Reloads characters in the running game, so changes to their files (behavior, animations, scripts, etc.)
-/// can be seen without restarting.
+/// can be seen without restarting. Editor-agnostic: each editor view that shows it owns an instance (and its
+/// file watchers), and disposes it with the view.
 /// </summary>
-public class HavokCharacterReloader : IDisposable
+public class CharacterReloaderTool : IDisposable
 {
-    public HavokEditorView View;
     public ProjectEntry Project;
 
     private Dictionary<FileDictionaryEntry, bool> InclusionCache = new();
@@ -26,9 +26,8 @@ public class HavokCharacterReloader : IDisposable
     private ConcurrentDictionary<FileDictionaryEntry, DateTime> PendingReloads = new();
     private static readonly TimeSpan ReloadDebounce = TimeSpan.FromMilliseconds(300);
 
-    public HavokCharacterReloader(HavokEditorView view, ProjectEntry project)
+    public CharacterReloaderTool(ProjectEntry project)
     {
-        View = view;
         Project = project;
     }
 
@@ -36,11 +35,11 @@ public class HavokCharacterReloader : IDisposable
     {
         UpdateFileChangeDetection();
 
-        if (ToolSections.Header($"{LOC.Get("HAVOK_CharacterReloader_Title")}##characterReloaderTool"))
+        if (ToolSections.Header($"{LOC.Get("COMMON_CharacterReloader_Title")}##characterReloaderTool"))
         {
             ImGui.BeginChild("CharacterReloaderSection", ImGuiChildFlags.Borders);
 
-            GUI.WrappedText(LOC.Get("HAVOK_CharacterReloader_Hint"));
+            GUI.WrappedText(LOC.Get("COMMON_CharacterReloader_Hint"));
 
             if (SupportsReloader())
             {
@@ -49,7 +48,7 @@ public class HavokCharacterReloader : IDisposable
             else
             {
                 GUI.Spacer();
-                GUI.WrappedText(LOC.Get("HAVOK_CharacterReloader_Not_Supported"));
+                GUI.WrappedText(LOC.Get("COMMON_CharacterReloader_Not_Supported"));
             }
 
             ImGui.EndChild();
@@ -82,32 +81,32 @@ public class HavokCharacterReloader : IDisposable
     {
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_CharacterReloader_Inclusion_List_Header"),
-            LOC.Get("HAVOK_CharacterReloader_Inclusion_List_Header_TT"));
+            LOC.Get("COMMON_CharacterReloader_Inclusion_List_Header"),
+            LOC.Get("COMMON_CharacterReloader_Inclusion_List_Header_TT"));
 
         DisplayInclusionList();
 
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_CharacterReloader_Actions_Header"),
-            LOC.Get("HAVOK_CharacterReloader_Actions_Header_TT"));
+            LOC.Get("COMMON_CharacterReloader_Actions_Header"),
+            LOC.Get("COMMON_CharacterReloader_Actions_Header_TT"));
 
         GUI.MultiButtonInput("directActions",
             "reloadSelected",
-            LOC.Get("HAVOK_CharacterReloader_Reload_Characters"),
-            LOC.Get("HAVOK_CharacterReloader_Reload_Characters_TT"),
+            LOC.Get("COMMON_CharacterReloader_Reload_Characters"),
+            LOC.Get("COMMON_CharacterReloader_Reload_Characters_TT"),
             ReloadIncludedCharacters);
 
         GUI.Spacer();
         GUI.SimpleHeader(
-            LOC.Get("HAVOK_CharacterReloader_Options_Header"),
-            LOC.Get("HAVOK_CharacterReloader_Options_Header_TT"));
+            LOC.Get("COMMON_CharacterReloader_Options_Header"),
+            LOC.Get("COMMON_CharacterReloader_Options_Header_TT"));
 
-        if (ImGui.Checkbox($"{LOC.Get("HAVOK_CharacterReloader_Detect_File_Changes")}##detectFileChanges", ref DetectFileChanges))
+        if (ImGui.Checkbox($"{LOC.Get("COMMON_CharacterReloader_Detect_File_Changes")}##detectFileChanges", ref DetectFileChanges))
         {
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Detect_File_Changes_TT"));
+        GUI.Tooltip(LOC.Get("COMMON_CharacterReloader_Detect_File_Changes_TT"));
     }
 
     private string ListFilter = "";
@@ -132,7 +131,7 @@ public class HavokCharacterReloader : IDisposable
 
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Inclusion_Toggle_All_TT"));
+        GUI.Tooltip(LOC.Get("COMMON_CharacterReloader_Inclusion_Toggle_All_TT"));
 
         ImGui.SameLine();
 
@@ -146,7 +145,7 @@ public class HavokCharacterReloader : IDisposable
 
             WatchersDirty = true;
         }
-        GUI.Tooltip(LOC.Get("HAVOK_CharacterReloader_Inclusion_Clear_All_TT"));
+        GUI.Tooltip(LOC.Get("COMMON_CharacterReloader_Inclusion_Clear_All_TT"));
 
         ImGui.EndChild();
 
@@ -191,18 +190,18 @@ public class HavokCharacterReloader : IDisposable
 
         if (!anySelected)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_CharacterReloader_Error_No_Characters_Enabled"));
+            Smithbox.LogError(this, LOC.Get("COMMON_CharacterReloader_Error_No_Characters_Enabled"));
         }
     }
 
     private void ReloadCharacter(FileDictionaryEntry entry)
     {
         var name = entry.Filename;
-        var success = HavokReload.RequestReloadChr(Project, name);
+        var success = CharacterReload.RequestReloadChr(Project, name);
 
         if (success)
         {
-            Smithbox.Log(this, LOC.Get("HAVOK_CharacterReloader_Log_Reloaded_Character", name));
+            Smithbox.Log(this, LOC.Get("COMMON_CharacterReloader_Log_Reloaded_Character", name));
         }
     }
 
@@ -320,7 +319,7 @@ public class HavokCharacterReloader : IDisposable
         }
         catch (Exception ex)
         {
-            Smithbox.LogError(this, LOC.Get("HAVOK_CharacterReloader_Error_Failed_Create_Watcher"), ex);
+            Smithbox.LogError(this, LOC.Get("COMMON_CharacterReloader_Error_Failed_Create_Watcher"), ex);
             return null;
         }
     }

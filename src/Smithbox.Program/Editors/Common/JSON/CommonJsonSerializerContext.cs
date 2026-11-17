@@ -12,6 +12,9 @@ namespace StudioCore.Application;
 [JsonSerializable(typeof(HavokClass))]
 [JsonSerializable(typeof(HavokField))]
 
+[JsonSerializable(typeof(StudioCore.Editors.Common.CharacterReloaderOffsets))]
+[JsonSerializable(typeof(StudioCore.Editors.Common.CharacterReloaderOffsetEntry))]
+
 internal partial class CommonJsonSerializerContext : JsonSerializerContext
 {
 }

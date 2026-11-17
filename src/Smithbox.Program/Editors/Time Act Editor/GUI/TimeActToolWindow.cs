@@ -64,6 +64,13 @@ public class TimeActToolWindow
             View.MaskToggler.OnToolWindow();
         }
 
+        // Game Memory
+
+        ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Game_Memory"));
+
+
+        View.CharacterReloader.Display();
+
         // Viewport
 
         ToolSections.Category(LOC.Get("EDITOR_ToolCategory_Viewport"));

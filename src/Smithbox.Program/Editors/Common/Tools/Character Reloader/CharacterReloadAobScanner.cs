@@ -4,38 +4,38 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace StudioCore.Editors.HavokEditor;
+namespace StudioCore.Editors.Common;
 
-public class AOBScanner
+public class CharacterReloadAobScanner
 {
-    private const uint PAGE_EXECUTE_ANY = Kernel32.PAGE_EXECUTE | Kernel32.PAGE_EXECUTE_READ | Kernel32.PAGE_EXECUTE_READWRITE | Kernel32.PAGE_EXECUTE_WRITECOPY;
+    private const uint PAGE_EXECUTE_ANY = CharacterReloadKernel32.PAGE_EXECUTE | CharacterReloadKernel32.PAGE_EXECUTE_READ | CharacterReloadKernel32.PAGE_EXECUTE_READWRITE | CharacterReloadKernel32.PAGE_EXECUTE_WRITECOPY;
 
-    private List<Kernel32.MEMORY_BASIC_INFORMATION> MemRegions;
+    private List<CharacterReloadKernel32.MEMORY_BASIC_INFORMATION> MemRegions;
 
     private Dictionary<IntPtr, byte[]> ReadMemory;
 
-    public AOBScanner(Process process)
+    public CharacterReloadAobScanner(Process process)
     {
-        MemRegions = new List<Kernel32.MEMORY_BASIC_INFORMATION>();
+        MemRegions = new List<CharacterReloadKernel32.MEMORY_BASIC_INFORMATION>();
         IntPtr memRegionAddr = process.MainModule.BaseAddress;
         IntPtr mainModuleEnd = process.MainModule.BaseAddress + process.MainModule.ModuleMemorySize;
         uint queryResult;
 
         do
         {
-            var memInfo = new Kernel32.MEMORY_BASIC_INFORMATION();
-            queryResult = Kernel32.VirtualQueryEx(process.Handle, memRegionAddr, out memInfo, (IntPtr)Marshal.SizeOf(memInfo));
+            var memInfo = new CharacterReloadKernel32.MEMORY_BASIC_INFORMATION();
+            queryResult = CharacterReloadKernel32.VirtualQueryEx(process.Handle, memRegionAddr, out memInfo, (IntPtr)Marshal.SizeOf(memInfo));
             if (queryResult != 0)
             {
-                if ((memInfo.State & Kernel32.MEM_COMMIT) != 0 && (memInfo.Protect & Kernel32.PAGE_GUARD) == 0 && (memInfo.Protect & PAGE_EXECUTE_ANY) != 0)
+                if ((memInfo.State & CharacterReloadKernel32.MEM_COMMIT) != 0 && (memInfo.Protect & CharacterReloadKernel32.PAGE_GUARD) == 0 && (memInfo.Protect & PAGE_EXECUTE_ANY) != 0)
                     MemRegions.Add(memInfo);
                 memRegionAddr = memInfo.BaseAddress + (int)memInfo.RegionSize;
             }
         } while (queryResult != 0 && (ulong)memRegionAddr < (ulong)mainModuleEnd);
 
         ReadMemory = new Dictionary<IntPtr, byte[]>();
-        foreach (Kernel32.MEMORY_BASIC_INFORMATION memRegion in MemRegions)
-            ReadMemory[memRegion.BaseAddress] = Kernel32.ReadBytes(process.Handle, memRegion.BaseAddress, (uint)memRegion.RegionSize);
+        foreach (CharacterReloadKernel32.MEMORY_BASIC_INFORMATION memRegion in MemRegions)
+            ReadMemory[memRegion.BaseAddress] = CharacterReloadKernel32.ReadBytes(process.Handle, memRegion.BaseAddress, (uint)memRegion.RegionSize);
     }
 
     public IntPtr Scan(byte?[] aob)
