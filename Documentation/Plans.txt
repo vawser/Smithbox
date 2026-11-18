@@ -1,3 +1,19 @@
+- Editors:
+    - Map Editor
+    - Model Editor
+    - Param Editor
+    - Text Editor
+    - Gparam Editor
+    - FX Editor
+    - Havok Editor
+    - Material Editor
+    - Texture Editor
+    - EMEVD Editor
+    - ESD Editor
+    - File Browser
+    - Projectile Editor
+    - FaceGen Editor
+    
 #-------------
 # Blue Sky
 #-------------
@@ -15,6 +31,9 @@
     - Preview a model with adjustable bones so it can be placed in a specific way
     - Include consistent camera angles
     - Automatic icon capture
+    
+- Unknown formats:
+    bsipwv
     
 #----------------------------------------------------
 # Map Editor TODO
@@ -162,7 +181,6 @@
 #----------------------------------------------------
 - Implement
 - Add support for face in c0000 usage instances
-- Add support for copying in-game player's face into editor
 
 #----------------------------------------------------
 # Rendering

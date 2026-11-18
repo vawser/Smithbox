@@ -98,5 +98,7 @@
     229, 228, 225, 226, 227
   ],
   "ShapeClamp": 7.142857552,
-  "TextureClamp": 17.8571434
+  "TextureClamp": 17.8571434,
+  "FacePartsNameBody": true,
+  "TextureBase": "face.bmp"
 }

@@ -44,6 +44,9 @@ public sealed record FacePartChoice(int Value, string Model);
 /// (<see cref="FaceGenEditor.FaceGenSliderTable.FacePartsNameBody"/>, DS3), the value is also the body fc_&lt;sex&gt;_NNNN
 /// (hundreds the musculature, tens the body hair, ones the age type: 110 is muscular, hairy and young), and the head is
 /// fg_a_01NN by the last two digits, else by the ones digit (fg_a_0100 young, 0101 mature, 0102 aged, 0103 none).
+/// BB takes the same rule: its values are the age type (0-2: fc_&lt;sex&gt;_000N + fg_a_010N) and 100
+/// (fc_m_0100 + fg_a_0200), which the first candidate, fg_a_(0100 + value), names directly. The heads' own
+/// g_DiffuseTexture2 (the body skin they blend into) confirms each pairing.
 /// </para>
 /// </summary>
 public static class FaceComposition
