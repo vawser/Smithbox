@@ -21,22 +21,48 @@ public static class FaceGenEdits
     /// out, and nothing is done if none change. False if nothing changed.
     /// </summary>
     public static bool SetFields(ParamEditorScreen editor, string paramName, Param.Row row,
+        IReadOnlyList<(string Field, object Value)> values, string displayName) =>
+        SetFieldsOnRows(editor, paramName, new[] { row }, values, displayName);
+
+    /// <summary>
+    /// Sets the same fields on several rows in one undo step (e.g. a group pasted onto every selected face). Fields a
+    /// row doesn't have, and values that can't be converted to the field's type, are left out. False if nothing changed.
+    /// </summary>
+    public static bool SetFieldsOnRows(ParamEditorScreen editor, string paramName, IReadOnlyList<Param.Row> rows,
         IReadOnlyList<(string Field, object Value)> values, string displayName)
     {
         var actions = new List<EditorAction>();
+        var changedRows = new List<Param.Row>();
 
-        foreach (var (field, value) in values)
+        foreach (var row in rows)
         {
-            if (row[field] is not { } cell)
-                continue;
+            var before = actions.Count;
 
-            var current = cell.Value;
-            var converted = Convert.ChangeType(value, current.GetType());
+            foreach (var (field, value) in values)
+            {
+                if (row[field] is not { } cell)
+                    continue;
 
-            if (Equals(current, converted))
-                continue;
+                var current = cell.Value;
+                object converted;
 
-            actions.Add(new PropertiesChangedAction(CellValue, cell, converted) { DisplayName = displayName });
+                try
+                {
+                    converted = Convert.ChangeType(value, current.GetType());
+                }
+                catch (Exception e) when (e is InvalidCastException or FormatException or OverflowException)
+                {
+                    continue;
+                }
+
+                if (Equals(current, converted))
+                    continue;
+
+                actions.Add(new PropertiesChangedAction(CellValue, cell, converted) { DisplayName = displayName });
+            }
+
+            if (actions.Count > before)
+                changedRows.Add(row);
         }
 
         if (actions.Count == 0)
@@ -45,7 +71,10 @@ public static class FaceGenEdits
         EditorAction action = actions.Count == 1 ? actions[0] : new CompoundAction(actions) { DisplayName = displayName };
 
         editor.ActionManager.ExecuteAction(action);
-        editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(editor, row, paramName);
+
+        foreach (var row in changedRows)
+            editor.Project.Handler.ParamData.PrimaryBank.RefreshParamRowDiffs(editor, row, paramName);
+
         return true;
     }
 

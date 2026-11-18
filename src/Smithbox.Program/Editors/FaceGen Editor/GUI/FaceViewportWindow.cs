@@ -125,8 +125,7 @@ public class FaceViewportWindow
         var wearer = FaceGenParams.GetUsers(Project).Get(row.ID).FirstOrDefault();
 
         // npcPlayerSex: 0 female, 1 male
-        return wearer != null && wearer.Row.Cells.FirstOrDefault(c =>
-            c.Def.InternalName.Equals("npcPlayerSex", StringComparison.OrdinalIgnoreCase)).Value is IConvertible sex &&
+        return wearer != null && FaceGenParams.CellValue(wearer.Row, "npcPlayerSex") is IConvertible sex &&
             sex.ToInt32(null) == 0;
     }
 
@@ -138,33 +137,101 @@ public class FaceViewportWindow
 
     // ---- camera
 
+    /// <summary>The angles the camera presets look at the character from, as a turn about the vertical axis</summary>
+    public enum CameraAngle
+    {
+        Front,
+        ThreeQuarter,
+        Profile,
+        Back
+    }
+
+    private static float AngleYaw(CameraAngle angle) => angle switch
+    {
+        CameraAngle.ThreeQuarter => MathF.PI / 4,
+        CameraAngle.Profile => MathF.PI / 2,
+        CameraAngle.Back => MathF.PI,
+        _ => 0
+    };
+
+    // What was last framed (the head or the body), which the presets and the turntable turn about
+    private bool FramingBody;
+    private float Yaw;
+
+    /// <summary>Whether the camera turns slowly about what was last framed. It owns the camera while on.</summary>
+    public bool Turntable;
+
+    /// <summary>The turntable's speed, in degrees per second</summary>
+    public float TurntableSpeed = 20f;
+
     /// <summary>Frames the head, from the front</summary>
     public void FrameFace()
     {
-        if (Viewport is VulkanViewport vk)
-            vk.ViewportCamera.CameraTransform.Rotation = FrontRotation;
-
-        if (HeadBounds() is { } bounds)
-            FrameSphere((bounds.Min + bounds.Max) * 0.5f, MathF.Max(Vector3.Distance(bounds.Min, bounds.Max) * 0.5f, HeadRadius * 0.5f));
-        else
-            FrameSphere(DefaultHeadCenter, HeadRadius);
+        FramingBody = false;
+        Yaw = 0;
+        Frame();
     }
 
     /// <summary>Frames the whole character, from the front</summary>
     public void FrameBody()
     {
-        if (Viewport is VulkanViewport vk)
-            vk.ViewportCamera.CameraTransform.Rotation = FrontRotation;
+        FramingBody = true;
+        Yaw = 0;
+        Frame();
+    }
 
-        if (Mesh != null && Mesh.HasRenderableGeometry())
+    /// <summary>Looks at what was last framed (the head or the body) from one of the preset angles</summary>
+    public void SetCameraAngle(CameraAngle angle)
+    {
+        Yaw = AngleYaw(angle);
+        Frame();
+    }
+
+    /// <summary>Frames the head or the body, as last chosen, from the current turn</summary>
+    private void Frame()
+    {
+        if (Viewport is VulkanViewport vk)
+            vk.ViewportCamera.CameraTransform.Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitY, Yaw) * FrontRotation;
+
+        var (center, radius) = FramingTarget();
+        FrameSphere(center, radius);
+    }
+
+    /// <summary>The sphere around the head (once it has loaded) or the body</summary>
+    private (Vector3 Center, float Radius) FramingTarget()
+    {
+        if (FramingBody)
         {
-            var bounds = Mesh.GetBounds();
-            FrameSphere((bounds.Min + bounds.Max) * 0.5f, MathF.Max(Vector3.Distance(bounds.Min, bounds.Max) * 0.5f, 0.5f));
+            if (Mesh != null && Mesh.HasRenderableGeometry())
+            {
+                var body = Mesh.GetBounds();
+                return ((body.Min + body.Max) * 0.5f, MathF.Max(Vector3.Distance(body.Min, body.Max) * 0.5f, 0.5f));
+            }
+
+            return (new Vector3(0, 0.9f, 0), 1.1f);
         }
-        else
-        {
-            FrameSphere(new Vector3(0, 0.9f, 0), 1.1f);
-        }
+
+        if (HeadBounds() is { } bounds)
+            return ((bounds.Min + bounds.Max) * 0.5f, MathF.Max(Vector3.Distance(bounds.Min, bounds.Max) * 0.5f, HeadRadius * 0.5f));
+
+        return (DefaultHeadCenter, HeadRadius);
+    }
+
+    /// <summary>Turns the camera about what was last framed, keeping its distance</summary>
+    private void UpdateTurntable(float deltatime)
+    {
+        if (!Turntable || Viewport is not VulkanViewport vk)
+            return;
+
+        Yaw = (Yaw + float.DegreesToRadians(TurntableSpeed) * deltatime) % (MathF.PI * 2);
+
+        var camera = vk.ViewportCamera;
+        var (center, _) = FramingTarget();
+        var distance = Vector3.Distance(camera.CameraTransform.Position, center);
+        var rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitY, Yaw) * FrontRotation;
+
+        camera.CameraTransform.Rotation = rotation;
+        camera.CameraTransform.Position = center - Vector3.Transform(Vector3.UnitZ, rotation) * distance;
     }
 
     /// <summary>The bounds of the head part, once it has loaded</summary>
@@ -218,6 +285,8 @@ public class FaceViewportWindow
             FrameFace();
             FramePending = false;
         }
+
+        UpdateTurntable(deltatime);
     }
 
     private void UpdateMesh()

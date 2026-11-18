@@ -45,9 +45,6 @@ public sealed class FaceTinter
     /// <summary>The <see cref="MaterialSlotRecipe.CharacterColor"/> for the colour of the part the material is on</summary>
     public const string PartColor = "part";
 
-    private const string RangeParamName = "FaceRangeParam";
-    private const int RangeMinRow = 1;
-    private const int RangeMaxRow = 2;
 
     private readonly ProjectEntry Project;
 
@@ -590,8 +587,7 @@ public sealed class FaceTinter
         if (overrides != null && overrides.TryGetValue(field, out var value))
             return value;
 
-        return row.Cells.FirstOrDefault(c => c.Def.InternalName.Equals(field, StringComparison.OrdinalIgnoreCase)).Value
-            is IConvertible stored ? stored.ToInt32(null) : FaceGenParams.Neutral;
+        return FaceGenParams.CellValue(row, field) is IConvertible stored ? stored.ToInt32(null) : FaceGenParams.Neutral;
     }
 
     /// <summary>A byte as the shader's value: across FaceRangeParam's range for the field, else 0 to 1</summary>
@@ -599,20 +595,9 @@ public sealed class FaceTinter
     {
         var t = Math.Clamp(value, 0, 255) / 255f;
 
-        if (FaceGenParams.GetParam(Project, RangeParamName) is { } ranges &&
-            RangeValue(ranges, RangeMinRow, field) is { } min && RangeValue(ranges, RangeMaxRow, field) is { } max)
-        {
-            return min + (max - min) * t;
-        }
+        if (FaceGenParams.Range(Project, field) is { } range)
+            return range.Min + (range.Max - range.Min) * t;
 
         return t;
-    }
-
-    private static float? RangeValue(Param ranges, int rowId, string field)
-    {
-        var row = ranges.Rows.FirstOrDefault(r => r.ID == rowId);
-
-        return row?.Cells.FirstOrDefault(c => c.Def.InternalName.Equals(field, StringComparison.OrdinalIgnoreCase)).Value
-            is IConvertible value ? value.ToSingle(null) : null;
     }
 }

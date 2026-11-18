@@ -5,6 +5,7 @@ using StudioCore.Application;
 using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Keybinds;
+using System;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -158,6 +159,21 @@ public class FaceGenEditorScreen : EditorScreen
 
         if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Menu_Frame_Body")}##faceGenFrameBody"))
             View.ViewportWindow.FrameBody();
+
+        if (ImGui.BeginMenu($"{LOC.Get("FACEGEN_Camera_Angle")}##faceGenCameraAngleMenu"))
+        {
+            foreach (var angle in Enum.GetValues<FaceViewportWindow.CameraAngle>())
+            {
+                if (ImGui.MenuItem($"{LOC.Get($"FACEGEN_Camera_{angle}")}##faceGenCamera{angle}"))
+                    View.ViewportWindow.SetCameraAngle(angle);
+            }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Camera_Turntable")}##faceGenTurntable"))
+            View.ViewportWindow.Turntable = !View.ViewportWindow.Turntable;
+        GUI.ShowActiveStatus(View.ViewportWindow.Turntable);
 
         ImGui.EndMenu();
     }

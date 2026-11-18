@@ -67,6 +67,10 @@ public class FaceListView
 
     public void ClearSelection() => Selected.Clear();
 
+    /// <summary>The selected rows of the shown param, in param order (or the active row, if none are selected)</summary>
+    public List<Param.Row> GetSelectedRows() =>
+        View.ActiveParam is { } param ? GetSelectedRows(param) : new List<Param.Row>();
+
     /// <summary>Makes <paramref name="row"/> the only selected row (it has just been shown)</summary>
     public void SelectOnly(Param.Row row)
     {

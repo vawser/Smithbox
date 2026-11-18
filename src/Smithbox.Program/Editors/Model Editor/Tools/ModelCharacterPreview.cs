@@ -55,6 +55,9 @@ public class ModelCharacterPreview
     // The CharaInitParam row characters are dressed from. Anything negative leaves them with a bare body.
     private int _selectedCharaInitId = -1;
 
+    // Set by DressFromCharaInit, so the tab bar shows the CharaInitParam tab on its next draw
+    private bool _selectCharaInitTab;
+
     private Dictionary<string, string> _partAliases;
 
     private string _filter = "";
@@ -153,8 +156,13 @@ public class ModelCharacterPreview
 
         if (ImGui.BeginTabBar("characterPreviewTabs"))
         {
-            if (ImGui.BeginTabItem("CharaInitParam##characterPreviewCharaInit"))
+            // Opened from outside (DressFromCharaInit): the CharaInitParam tab is brought forward. ImGui switches
+            // tabs a frame later, so until it does the other tab must not take the source back.
+            var charaInitFlags = _selectCharaInitTab ? ImGuiTabItemFlags.SetSelected : ImGuiTabItemFlags.None;
+
+            if (ImGui.BeginTabItem("CharaInitParam##characterPreviewCharaInit", charaInitFlags))
             {
+                _selectCharaInitTab = false;
                 SetSource(target, PreviewSource.CharaInit);
                 DisplayCharaInitList(target);
                 ImGui.EndTabItem();
@@ -162,7 +170,11 @@ public class ModelCharacterPreview
 
             if (ImGui.BeginTabItem("Individual Parts##characterPreviewLoadout"))
             {
-                SetSource(target, PreviewSource.Loadout);
+                if (!_selectCharaInitTab)
+                {
+                    SetSource(target, PreviewSource.Loadout);
+                }
+
                 DisplayLoadout(target);
                 ImGui.EndTabItem();
             }
@@ -228,6 +240,25 @@ public class ModelCharacterPreview
 
         Apply(target);
     }
+
+    /// <summary>
+    ///     Dresses the character in a CharaInitParam row from outside the tool (the FaceGen Editor's References
+    ///     window), and opens the tool's CharaInitParam tab so the choice stays when the tool is next shown.
+    /// </summary>
+    public void DressFromCharaInit(int charaInitId)
+    {
+        _source = PreviewSource.CharaInit;
+        _selectedCharaInitId = charaInitId;
+        _selectCharaInitTab = true;
+
+        if (_getTarget() is { } target)
+        {
+            Apply(target);
+        }
+    }
+
+    /// <summary>The CharaInitParam row the character is dressed from, or -1 for none (or another tab)</summary>
+    public int DressedCharaInitId => _source is PreviewSource.CharaInit ? _selectedCharaInitId : -1;
 
     private void DisplayLoadout(CharacterPreviewTarget target)
     {

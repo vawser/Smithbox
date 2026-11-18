@@ -23,8 +23,6 @@
 - HKS intepreter (to link with behaviors and animation playback)
     - Work allow for powerful visualization of movesets
 
-- FaceGen Editor
-
 - Scaleform Editor
 
 - Icon Builder
@@ -179,7 +177,6 @@
 #----------------------------------------------------
 # FaceGen Editor TODO
 #----------------------------------------------------
-- Add support for face in c0000 usage instances
 
 #----------------------------------------------------
 # Rendering

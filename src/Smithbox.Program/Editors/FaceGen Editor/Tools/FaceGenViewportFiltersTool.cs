@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using System;
 
 namespace StudioCore.Editors.FaceGenEditor;
 
@@ -30,9 +31,45 @@ public class FaceGenViewportFiltersTool
         ImGui.EndChild();
     }
 
-    private static void Display()
+    private void Display()
     {
         var cfg = CFG.Current;
+        var viewport = View.ViewportWindow;
+
+        // Camera: framing, preset angles and the turntable
+        GUI.SimpleHeader(LOC.Get("FACEGEN_Camera_Header"), LOC.Get("FACEGEN_Camera_Header_TT"));
+
+        if (ImGui.Button($"{LOC.Get("FACEGEN_Menu_Frame_Face")}##faceGenToolFrameFace"))
+            viewport.FrameFace();
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{LOC.Get("FACEGEN_Menu_Frame_Body")}##faceGenToolFrameBody"))
+            viewport.FrameBody();
+
+        var first = true;
+
+        foreach (var angle in Enum.GetValues<FaceViewportWindow.CameraAngle>())
+        {
+            if (!first)
+                ImGui.SameLine();
+            first = false;
+
+            if (ImGui.Button($"{LOC.Get($"FACEGEN_Camera_{angle}")}##faceGenToolCamera{angle}"))
+                viewport.SetCameraAngle(angle);
+        }
+
+        ImGui.Checkbox($"{LOC.Get("FACEGEN_Camera_Turntable")}##faceGenToolTurntable", ref viewport.Turntable);
+        GUI.Tooltip(LOC.Get("FACEGEN_Camera_Turntable_TT"));
+
+        if (viewport.Turntable)
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderFloat("##faceGenToolTurntableSpeed", ref viewport.TurntableSpeed, 5f, 90f,
+                LOC.Get("FACEGEN_Camera_Turntable_Speed"));
+        }
+
+        GUI.Spacer();
 
         GUI.WrappedText(LOC.Get("FACEGEN_ViewportFilters_Hint"));
 

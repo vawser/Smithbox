@@ -101,6 +101,75 @@ public static class FaceGenParams
     public static string RowLabel(int id, string? name) =>
         string.IsNullOrEmpty(name) ? id.ToString() : $"{id} {name}";
 
+    // ---- FaceRangeParam: the value range of FaceParam's non-FaceGen bytes
+
+    public const string RangeParamName = "FaceRangeParam";
+    private const int RangeMinRow = 1;
+    private const int RangeMaxRow = 2;
+
+    /// <summary>
+    /// The values a FaceParam field's byte spans (0 → Min, 255 → Max), from FaceRangeParam's minimum and maximum rows,
+    /// or null if the game has no FaceRangeParam or it has no field of that name
+    /// </summary>
+    public static (float Min, float Max)? Range(ProjectEntry project, string field)
+    {
+        if (GetParam(project, RangeParamName) is not { } ranges)
+            return null;
+
+        return RangeValue(ranges, RangeMinRow, field) is { } min && RangeValue(ranges, RangeMaxRow, field) is { } max
+            ? (min, max)
+            : null;
+    }
+
+    private static float? RangeValue(Param ranges, int rowId, string field)
+    {
+        var row = ranges.Rows.FirstOrDefault(r => r.ID == rowId);
+
+        return CellValue(row, field) is IConvertible value ? value.ToSingle(null) : null;
+    }
+
+    /// <summary>
+    /// A field's value, its name matched whatever its case, or null if the row has no such field.
+    /// <para>
+    /// <see cref="Param.Cell"/> is a struct, so <c>Cells.FirstOrDefault(...)</c> gives a default cell (no Def) when
+    /// nothing matches, and reading its Value throws. This looks the field up without making one.
+    /// </para>
+    /// </summary>
+    public static object? CellValue(Param.Row? row, string field)
+    {
+        if (row == null)
+            return null;
+
+        foreach (var cell in row.Cells)
+        {
+            if (cell.Def.InternalName.Equals(field, StringComparison.OrdinalIgnoreCase))
+                return cell.Value;
+        }
+
+        return null;
+    }
+
+    // ---- vanilla
+
+    /// <summary>The vanilla bank's row of the same param and ID, or null if vanilla has none (a new face)</summary>
+    public static Param.Row? GetVanillaRow(ProjectEntry project, string paramName, Param.Row row)
+    {
+        var vanilla = project.Handler?.ParamData?.VanillaBank?.Params;
+
+        if (vanilla == null)
+            return null;
+
+        var param = vanilla.TryGetValue(paramName, out var p)
+            ? p
+            : vanilla.FirstOrDefault(kv => kv.Key.Equals(paramName, StringComparison.OrdinalIgnoreCase)).Value;
+
+        return param?[row.ID];
+    }
+
+    /// <summary>Whether a field differs from the vanilla row's. False when there is no vanilla row.</summary>
+    public static bool DiffersFromVanilla(Param.Row row, Param.Row? vanilla, string field) =>
+        vanilla != null && vanilla[field]?.Value is { } original && row[field]?.Value is { } current && !Equals(original, current);
+
     // ---- the rows that point at faces
 
     /// <summary>The rows that point at faces, by face ID, and the rows that point at a face that isn't there</summary>

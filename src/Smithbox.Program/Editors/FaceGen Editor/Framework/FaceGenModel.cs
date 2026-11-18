@@ -24,6 +24,13 @@ public sealed class FaceGenSliderTable
         public int Id { get; set; }
         public float Min { get; set; }
         public float Max { get; set; }
+
+        /// <summary>
+        /// The slider's slot in the character creator's menu: CharMakeMenuTopParam's faceParamId on the slider's row
+        /// (ER: 0–86 for the shape controls, 96 age, 97 gender, 99 caricature). Null where the table doesn't say.
+        /// Used for the slider's in-game caption (<see cref="FaceGenMenu"/>).
+        /// </summary>
+        public int? Slot { get; set; }
     }
 
     public List<Slider> Sliders { get; set; } = new();
@@ -287,19 +294,54 @@ public static class FaceGenModel
         if (FaceGenSliderTable.Get(project) is not { } table)
             return null;
 
-        var id = field switch
-        {
-            "age" => AgeSlider,
-            "gender" => GenderSlider,
-            "caricatureGeometry" => CaricatureSlider,
-            _ => FaceGenParams.ParseFaceGenField(field) is { } f ? (f.IsGeometry ? 100 : 200) + f.Index : -1
-        };
+        var id = SliderId(field);
 
         if (id < 0 || !table.Sequence.Contains(id))
             return null;
 
         return table.Get(id) is { } slider ? slider.Min + (slider.Max - slider.Min) * b / 255f : 0f;
     }
+
+    /// <summary>
+    /// The slider table's ID for a FaceParam field: 10 age, 20 gender, 30 caricature, 1NN / 2NN the shape / texture
+    /// control NN. −1 for any other field.
+    /// </summary>
+    public static int SliderId(string field) => field switch
+    {
+        "age" => AgeSlider,
+        "gender" => GenderSlider,
+        "caricatureGeometry" => CaricatureSlider,
+        _ => FaceGenParams.ParseFaceGenField(field) is { } f ? (f.IsGeometry ? 100 : 200) + f.Index : -1
+    };
+
+    /// <summary>
+    /// The range of game values a field's byte spans (0 to 255 → Min to Max; Min may be the larger, as the game's
+    /// inverted sliders are), or null if the field has none, so its byte is all there is to show:
+    /// <list type="bullet">
+    /// <item>FaceGenParam shape and texture fields: the mode coefficient, −10 to 10.</item>
+    /// <item>FaceParam sliders in the game's slider table (age in years, controls ±10 or ±5). Hidden sliders have none.</item>
+    /// <item>Other FaceParam amounts (gloss, root darkness, makeup): FaceRangeParam's range for the field.</item>
+    /// </list>
+    /// </summary>
+    public static (float Min, float Max)? GameRange(ProjectEntry project, Param param, string field)
+    {
+        if (FaceGenParams.StoresModes(param))
+            return FaceGenParams.ParseFaceGenField(field) != null ? (-10f, 10f) : null;
+
+        var id = SliderId(field);
+
+        if (id >= 0 && FaceGenSliderTable.Get(project) is { } table && table.Sequence.Contains(id))
+            return table.Get(id) is { } slider ? (slider.Min, slider.Max) : null;
+
+        return FaceGenParams.Range(project, field) is { } range && range.Min != range.Max ? range : null;
+    }
+
+    /// <summary>A byte as its game value across <paramref name="range"/></summary>
+    public static float ToGameValue((float Min, float Max) range, int b) => range.Min + (range.Max - range.Min) * b / 255f;
+
+    /// <summary>A game value across <paramref name="range"/> as the nearest byte</summary>
+    public static int ToByte((float Min, float Max) range, float value) =>
+        range.Max == range.Min ? FaceGenParams.Neutral : Math.Clamp((int)MathF.Round((value - range.Min) / (range.Max - range.Min) * 255f), 0, 255);
 
     private static float Dot(float[] a, float[] b)
     {

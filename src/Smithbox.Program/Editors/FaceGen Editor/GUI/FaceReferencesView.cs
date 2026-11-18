@@ -64,9 +64,10 @@ public class FaceReferencesView
         }
     }
 
-    private static void UserLinks(IReadOnlyList<FaceGenParams.FaceUser> users, string id)
+    private void UserLinks(IReadOnlyList<FaceGenParams.FaceUser> users, string id)
     {
         var index = 0;
+        var dressed = View.CharacterPreview.DressedCharaInitId;
 
         foreach (var user in users.OrderBy(u => u.ParamName).ThenBy(u => u.Row.ID))
         {
@@ -75,13 +76,45 @@ public class FaceReferencesView
             if (id == "missing")
                 label += $"  → {user.FaceId}";
 
+            // The viewport's outfit only comes from CharaInitParam, as the Character Preview tool dresses it
+            var canDress = id != "missing" && user.ParamName == CharaInitParamName;
+            var isDressed = canDress && user.Row.ID == dressed;
+
+            if (isDressed)
+                label += $"  {LOC.Get("FACEGEN_References_Dressed")}";
+
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
 
-            if (ImGui.Selectable($"{label}##faceGenUser_{id}_{index++}"))
+            if (ImGui.Selectable($"{label}##faceGenUser_{id}_{index}", isDressed))
                 EditorCommandQueue.AddCommand($"param/select/-1/{user.ParamName}/{user.Row.ID}");
 
             ImGui.PopStyleColor();
-            GUI.Tooltip(LOC.Get("FACEGEN_References_Link_TT"));
+            GUI.Tooltip(LOC.Get(canDress ? "FACEGEN_References_Link_Dress_TT" : "FACEGEN_References_Link_TT"));
+
+            if (ImGui.BeginPopupContextItem($"faceGenUserContext_{id}_{index}"))
+            {
+                if (ImGui.Selectable($"{LOC.Get("FACEGEN_References_Dress")}##faceGenDress", false,
+                        canDress ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                {
+                    View.CharacterPreview.DressFromCharaInit(user.Row.ID);
+                }
+                GUI.Tooltip(LOC.Get("FACEGEN_References_Dress_TT"));
+
+                if (ImGui.Selectable($"{LOC.Get("FACEGEN_References_Undress")}##faceGenUndress", false,
+                        dressed >= 0 ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                {
+                    View.CharacterPreview.DressFromCharaInit(-1);
+                }
+
+                if (ImGui.Selectable($"{LOC.Get("FACEGEN_Open_In_Param_Editor")}##openInParamEditor"))
+                    EditorCommandQueue.AddCommand($"param/select/-1/{user.ParamName}/{user.Row.ID}");
+
+                ImGui.EndPopup();
+            }
+
+            index++;
         }
     }
+
+    private const string CharaInitParamName = "CharaInitParam";
 }

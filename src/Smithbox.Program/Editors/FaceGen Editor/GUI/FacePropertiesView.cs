@@ -13,12 +13,17 @@ using System.Reflection;
 namespace StudioCore.Editors.FaceGenEditor;
 
 /// <summary>
-/// The active face, as groups of sliders (the FaceGen controls and amounts, 0 to 255), colours (each R/G/B triplet as
-/// one colour) and fields (part IDs and flags, edited as the Param Editor edits them).
+/// The active face, as groups of sliders (the FaceGen controls and amounts), colours (each R/G/B triplet as one
+/// colour) and fields (part IDs and flags, edited as the Param Editor edits them).
 /// <para>
-/// A slider or colour only writes its row when it is let go, as one undo step; while it is dragged the window shows
-/// the value being dragged. Shape and texture fields are named by the game's FaceGen controls (si.ctl) when the
-/// param's annotations have no better name.
+/// A slider shows the game's value where the byte has one (the creator's slider value, a mode coefficient, or
+/// FaceRangeParam's value), with the stored byte beside it. A slider or colour only writes its row when it is let go,
+/// as one undo step; while it is dragged the window shows the value being dragged.
+/// </para>
+/// <para>
+/// Fields that differ from the vanilla row are drawn in the Param Editor's modified colour, and can be put back from
+/// their right-click menu. A group's header copies the group's values, and pastes them onto this face or onto every
+/// face selected in the list.
 /// </para>
 /// </summary>
 public class FacePropertiesView
@@ -42,10 +47,19 @@ public class FacePropertiesView
     private int EditingValue;
     private Vector3 EditingColor;
 
+    // The vanilla row of the active face, found once per frame (null for a face vanilla doesn't have)
+    private Param.Row? VanillaRow;
+
     // The Param Editor's field decorators and inputs, for the fields that aren't sliders or colours
     private ParamEditorView? FieldView;
     private ParamFieldDecorators? Decorators;
     private ParamFieldInput? FieldInput;
+
+    /// <summary>A copied group: its title, the param it came from, and every field's value by name</summary>
+    private sealed record GroupCopy(string Title, string ParamName, List<(string Field, object Value)> Values);
+
+    // Shared by every face, so a group can be copied from one face and pasted onto another
+    private static GroupCopy? GroupClipboard;
 
     public FacePropertiesView(FaceGenEditorView view)
     {
@@ -79,6 +93,8 @@ public class FacePropertiesView
             GroupsFor = param;
         }
 
+        VanillaRow = FaceGenParams.GetVanillaRow(Project, paramName, row);
+
         DisplayHeader(editor, paramName, param, row);
 
         ImGui.BeginChild("faceGenPropertiesHeader", EditorFilters.GetHeaderSize(), ImGuiChildFlags.Borders);
@@ -109,7 +125,12 @@ public class FacePropertiesView
                 if (fields.Count == 0)
                     continue;
 
-                if (!ImGui.CollapsingHeader($"{group.Title}##faceGenGroup{g}", ImGuiTreeNodeFlags.DefaultOpen))
+                var open = ImGui.CollapsingHeader($"{group.Title}##faceGenGroup{g}", ImGuiTreeNodeFlags.DefaultOpen);
+
+                // On the whole group, whatever the filter shows
+                GroupMenu(editor, paramName, param, row, group, g);
+
+                if (!open)
                     continue;
 
                 DisplayGroup(editor, paramName, param, row, fields, storesModes, model, g);
@@ -177,18 +198,29 @@ public class FacePropertiesView
             ? LOC.Get("FACEGEN_Properties_Stores_Modes")
             : LOC.Get("FACEGEN_Properties_Stores_Controls"));
         GUI.Tooltip(LOC.Get("FACEGEN_Properties_Stores_TT"));
+
+        // A face vanilla doesn't have can't be compared or reverted
+        if (VanillaRow == null)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(LOC.Get("FACEGEN_Properties_No_Vanilla"));
+            GUI.Tooltip(LOC.Get("FACEGEN_Properties_No_Vanilla_TT"));
+        }
     }
 
     // ---- names
 
     /// <summary>
-    /// The name a field is shown with: its annotation's name, unless that is only a placeholder; else the FaceGen
-    /// control's label for a shape or texture field; else the internal name
+    /// The name a field is shown with: the character creator's caption (ER), else its annotation's name unless that is
+    /// only a placeholder, else the FaceGen control's label for a shape or texture field, else the internal name
     /// </summary>
     private string DisplayName(Param param, string internalName, bool storesModes, FaceGenModelData model)
     {
         if (CFG.Current.FaceGenEditor_Show_Internal_Names)
             return internalName;
+
+        if (!storesModes && FaceGenMenu.Caption(Project, internalName) is { } caption)
+            return caption;
 
         var annotation = Project.Handler.ParamData.GetFieldAnnotation(
             Project.Handler.ParamData.GetParamAnnotations(param.ParamType), internalName);
@@ -225,12 +257,15 @@ public class FacePropertiesView
             rawSecondaryText: FaceGenLabel(field.Name, storesModes, model) ?? "");
     }
 
-    private void NameTooltip(Param param, FaceField field, bool storesModes, FaceGenModelData model)
+    private void NameTooltip(Param param, Param.Row row, FaceField field, bool storesModes, FaceGenModelData model)
     {
         if (!ImGui.IsItemHovered())
             return;
 
         var lines = new List<string> { field.Kind == FaceFieldKind.Color ? $"{field.Name}, {field.Green}, {field.Blue}" : field.Name };
+
+        if (!storesModes && FaceGenMenu.Caption(Project, field.Name) is { } caption)
+            lines.Add(LOC.Get("FACEGEN_Field_Creator_Caption", caption));
 
         if (FaceGenLabel(field.Name, storesModes, model) is { } label)
             lines.Add(LOC.Get("FACEGEN_Field_FaceGen_Label", label));
@@ -241,7 +276,58 @@ public class FacePropertiesView
         if (!string.IsNullOrWhiteSpace(annotation?.Description))
             lines.Add(annotation.Description);
 
+        if (IsModified(row, field))
+            lines.Add(LOC.Get("FACEGEN_Field_Vanilla_Value", VanillaText(field)));
+
         GUI.Tooltip(string.Join("\n", lines));
+    }
+
+    /// <summary>The field's name in the first column, in the modified colour when it differs from vanilla</summary>
+    private void NameCell(Param param, Param.Row row, FaceField field, bool storesModes, FaceGenModelData model)
+    {
+        ImGui.TableSetColumnIndex(0);
+        ImGui.AlignTextToFramePadding();
+
+        var modified = IsModified(row, field);
+
+        if (modified)
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_PrimaryChanged_Text);
+
+        ImGui.TextUnformatted(DisplayName(param, field.Name, storesModes, model));
+
+        if (modified)
+            ImGui.PopStyleColor();
+
+        NameTooltip(param, row, field, storesModes, model);
+    }
+
+    // ---- vanilla
+
+    /// <summary>A field's fields: the one, or a colour's three</summary>
+    private static string[] FieldNames(FaceField field) =>
+        field.Kind == FaceFieldKind.Color ? new[] { field.Name, field.Green!, field.Blue! } : new[] { field.Name };
+
+    private bool IsModified(Param.Row row, FaceField field) =>
+        FieldNames(field).Any(f => FaceGenParams.DiffersFromVanilla(row, VanillaRow, f));
+
+    private string VanillaText(FaceField field) =>
+        string.Join(", ", FieldNames(field).Select(f => VanillaRow?[f]?.Value?.ToString() ?? "?"));
+
+    /// <summary>The vanilla values of fields, for writing back; empty with no vanilla row</summary>
+    private List<(string Field, object Value)> VanillaValues(IEnumerable<string> fields)
+    {
+        var values = new List<(string, object)>();
+
+        if (VanillaRow == null)
+            return values;
+
+        foreach (var field in fields)
+        {
+            if (VanillaRow[field]?.Value is { } value)
+                values.Add((field, value));
+        }
+
+        return values;
     }
 
     // ---- a group: a table of name and widget
@@ -271,19 +357,16 @@ public class FacePropertiesView
             }
             else if (field.Kind == FaceFieldKind.Field)
             {
-                FieldRow(paramName, param, row, cell, field, storesModes, model);
+                FieldRow(editor, paramName, param, row, cell, field, storesModes, model);
             }
             else
             {
-                ImGui.TableSetColumnIndex(0);
-                ImGui.AlignTextToFramePadding();
-                ImGui.TextUnformatted(DisplayName(param, field.Name, storesModes, model));
-                NameTooltip(param, field, storesModes, model);
+                NameCell(param, row, field, storesModes, model);
 
                 ImGui.TableSetColumnIndex(1);
 
                 if (field.Kind == FaceFieldKind.Slider)
-                    SliderRow(editor, paramName, row, field, storesModes);
+                    SliderRow(editor, paramName, param, row, field);
                 else
                     ColorRow(editor, paramName, row, field);
             }
@@ -297,15 +380,100 @@ public class FacePropertiesView
     private static int GetInt(Param.Row row, string field) =>
         row[field]?.Value is IConvertible value ? value.ToInt32(null) : 0;
 
-    // ---- slider: one byte
+    // ---- a group's header menu: copy, paste and revert the whole group
 
-    private void SliderRow(ParamEditorScreen editor, string paramName, Param.Row row, FaceField field, bool storesModes)
+    private void GroupMenu(ParamEditorScreen editor, string paramName, Param param, Param.Row row, FaceFieldGroup group, int groupIndex)
+    {
+        if (!ImGui.BeginPopupContextItem($"faceGenGroupContext{groupIndex}"))
+            return;
+
+        var fields = group.Fields.SelectMany(FieldNames).ToList();
+
+        if (ImGui.Selectable($"{LOC.Get("FACEGEN_Group_Copy")}##faceGenGroupCopy"))
+        {
+            var values = fields
+                .Select(f => (Field: f, Value: row[f]?.Value))
+                .Where(v => v.Value != null)
+                .Select(v => (v.Field, v.Value!))
+                .ToList();
+
+            GroupClipboard = new GroupCopy(group.Title, paramName, values);
+        }
+        GUI.Tooltip(LOC.Get("FACEGEN_Group_Copy_TT"));
+
+        var clipboard = GroupClipboard;
+        var pasteFlags = clipboard != null ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled;
+        var pasteTitle = clipboard?.Title ?? "";
+
+        if (ImGui.Selectable($"{LOC.Get("FACEGEN_Group_Paste", pasteTitle)}##faceGenGroupPaste", false, pasteFlags))
+            PasteGroup(editor, paramName, new[] { row }, clipboard!);
+        GUI.Tooltip(clipboard != null && clipboard.ParamName != paramName
+            ? LOC.Get("FACEGEN_Group_Paste_Other_Param_TT", clipboard.ParamName)
+            : LOC.Get("FACEGEN_Group_Paste_TT"));
+
+        // Onto every face selected in the list, when there are several
+        var selected = View.ListView.GetSelectedRows();
+
+        if (selected.Count > 1 &&
+            ImGui.Selectable($"{LOC.Get("FACEGEN_Group_Paste_Selected", pasteTitle, selected.Count)}##faceGenGroupPasteSelected", false, pasteFlags))
+        {
+            PasteGroup(editor, paramName, selected, clipboard!);
+        }
+
+        ImGui.Separator();
+
+        var modified = VanillaRow != null && fields.Any(f => FaceGenParams.DiffersFromVanilla(row, VanillaRow, f));
+
+        if (ImGui.Selectable($"{LOC.Get("FACEGEN_Group_Revert")}##faceGenGroupRevert", false,
+                modified ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            FaceGenEdits.SetFields(editor, paramName, row, VanillaValues(fields),
+                LOC.Get("FACEGEN_Action_Revert_Group", group.Title, row.ID));
+        }
+        GUI.Tooltip(LOC.Get("FACEGEN_Group_Revert_TT"));
+
+        ImGui.EndPopup();
+    }
+
+    /// <summary>
+    /// Writes a copied group onto rows, as one undo step. Only the fields the rows' param has are written, so a group
+    /// copied from the other face param pastes what the two share.
+    /// </summary>
+    private static void PasteGroup(ParamEditorScreen editor, string paramName, IReadOnlyList<Param.Row> rows, GroupCopy copy)
+    {
+        var name = rows.Count == 1
+            ? LOC.Get("FACEGEN_Action_Paste_Group", copy.Title, rows[0].ID)
+            : LOC.Get("FACEGEN_Action_Paste_Group_Rows", copy.Title, rows.Count);
+
+        FaceGenEdits.SetFieldsOnRows(editor, paramName, rows, copy.Values, name);
+    }
+
+    // ---- slider: one byte, shown as its game value where it has one
+
+    private void SliderRow(ParamEditorScreen editor, string paramName, Param param, Param.Row row, FaceField field)
     {
         var key = $"{row.ID}/{field.Name}";
         var value = EditingKey == key ? EditingValue : GetInt(row, field.Name);
+        var range = FaceGenModel.GameRange(Project, param, field.Name);
 
-        ImGui.SetNextItemWidth(-1);
-        ImGui.SliderInt("##slider", ref value, 0, 255);
+        if (range is { } r)
+        {
+            // The game's value, with the stored byte beside it. An inverted range (10 to −10) is drawn as given, so
+            // the slider moves the way the byte does, as in the game's menu.
+            var byteWidth = ImGui.CalcTextSize("255").X + ImGui.GetStyle().ItemSpacing.X;
+            var gameValue = FaceGenModel.ToGameValue(r, value);
+
+            ImGui.SetNextItemWidth(-byteWidth);
+            ImGui.SliderFloat("##slider", ref gameValue, r.Min, r.Max, GameValueFormat(r), ImGuiSliderFlags.AlwaysClamp);
+
+            // Snapped to what a byte can hold
+            value = FaceGenModel.ToByte(r, gameValue);
+        }
+        else
+        {
+            ImGui.SetNextItemWidth(-1);
+            ImGui.SliderInt("##slider", ref value, 0, 255);
+        }
 
         DrawNeutralMark();
 
@@ -331,16 +499,29 @@ public class FacePropertiesView
             View.PreviewOverrides.Clear();
         }
 
-        // What the byte stands for in the game: a mode coefficient, or the slider's own value
         if (ImGui.IsItemHovered())
         {
-            if (storesModes && FaceGenParams.ParseFaceGenField(field.Name) != null)
-                GUI.Tooltip(LOC.Get("FACEGEN_Field_Coefficient", FaceGenParams.ByteToCoefficient(value).ToString("0.00")));
-            else if (!storesModes && FaceGenModel.SliderValue(Project, field.Name, value) is { } sliderValue)
-                GUI.Tooltip(LOC.Get("FACEGEN_Field_Slider_Value", sliderValue.ToString("0.00")));
+            GUI.Tooltip(range is { } tr
+                ? LOC.Get("FACEGEN_Field_Game_Value", FaceGenModel.ToGameValue(tr, value).ToString("0.00"), value,
+                    tr.Min.ToString("0.##"), tr.Max.ToString("0.##"))
+                : LOC.Get("FACEGEN_Field_Byte_Value", value));
         }
 
-        ValueMenu(editor, paramName, row, new[] { field.Name }, FaceGenParams.Neutral);
+        ValueMenu(editor, paramName, row, field, FaceGenParams.Neutral);
+
+        if (range != null)
+        {
+            ImGui.SameLine();
+            ImGui.TextDisabled(value.ToString());
+        }
+    }
+
+    /// <summary>Enough decimals to tell neighbouring bytes apart: about 1/255 of the range</summary>
+    private static string GameValueFormat((float Min, float Max) range)
+    {
+        var step = MathF.Abs(range.Max - range.Min) / 255f;
+
+        return step >= 0.1f ? "%.1f" : step >= 0.01f ? "%.2f" : "%.3f";
     }
 
     /// <summary>A tick on the slider where the neutral value (128) is</summary>
@@ -383,7 +564,6 @@ public class FacePropertiesView
 
         if (GUI.InputCommitted())
         {
-
             FaceGenEdits.SetFields(editor, paramName, row, new (string, object)[]
             {
                 (field.Name, (int)MathF.Round(bytes.X)),
@@ -400,14 +580,19 @@ public class FacePropertiesView
             View.PreviewOverrides.Clear();
         }
 
-        ValueMenu(editor, paramName, row, new[] { field.Name, field.Green!, field.Blue! }, null);
+        ValueMenu(editor, paramName, row, field, null);
     }
 
-    /// <summary>A slider's or colour's right-click menu: back to neutral, and the row in the Param Editor</summary>
-    private void ValueMenu(ParamEditorScreen editor, string paramName, Param.Row row, string[] fields, int? neutral)
+    /// <summary>
+    /// A slider's, colour's or part's right-click menu: back to neutral, back to vanilla, and the row in the Param
+    /// Editor
+    /// </summary>
+    private void ValueMenu(ParamEditorScreen editor, string paramName, Param.Row row, FaceField field, int? neutral)
     {
         if (!ImGui.BeginPopupContextItem("faceGenValueMenu"))
             return;
+
+        var fields = FieldNames(field);
 
         if (neutral is { } value &&
             ImGui.Selectable($"{LOC.Get("FACEGEN_Value_Reset_Neutral", value)}##faceGenResetNeutral"))
@@ -416,10 +601,28 @@ public class FacePropertiesView
                 LOC.Get("FACEGEN_Action_Edit_Field", fields[0], row.ID));
         }
 
+        RevertItem(editor, paramName, row, field);
+
         if (ImGui.Selectable($"{LOC.Get("FACEGEN_Open_In_Param_Editor")}##openInParamEditor"))
             EditorCommandQueue.AddCommand($"param/select/-1/{paramName}/{row.ID}");
 
         ImGui.EndPopup();
+    }
+
+    /// <summary>"Revert to vanilla (value)", enabled when the field differs from vanilla</summary>
+    private void RevertItem(ParamEditorScreen editor, string paramName, Param.Row row, FaceField field)
+    {
+        var modified = IsModified(row, field);
+        var label = VanillaRow != null
+            ? LOC.Get("FACEGEN_Value_Revert_Vanilla", VanillaText(field))
+            : LOC.Get("FACEGEN_Value_Revert_Vanilla_None");
+
+        if (ImGui.Selectable($"{label}##faceGenRevertVanilla", false,
+                modified ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            FaceGenEdits.SetFields(editor, paramName, row, VanillaValues(FieldNames(field)),
+                LOC.Get("FACEGEN_Action_Revert_Field", field.Name, row.ID));
+        }
     }
 
     // ---- part: a picker of the models the field can name
@@ -427,10 +630,7 @@ public class FacePropertiesView
     private void PartRow(ParamEditorScreen editor, string paramName, Param param, Param.Row row, FaceField field,
         bool storesModes, FaceGenModelData model)
     {
-        ImGui.TableSetColumnIndex(0);
-        ImGui.AlignTextToFramePadding();
-        ImGui.TextUnformatted(DisplayName(param, field.Name, storesModes, model));
-        NameTooltip(param, field, storesModes, model);
+        NameCell(param, row, field, storesModes, model);
 
         ImGui.TableSetColumnIndex(1);
 
@@ -466,14 +666,14 @@ public class FacePropertiesView
             ? LOC.Get("FACEGEN_Part_Fallback", value, part.Model)
             : LOC.Get("FACEGEN_Part_Picker_TT"));
 
-        ValueMenu(editor, paramName, row, new[] { field.Name }, null);
+        ValueMenu(editor, paramName, row, field, null);
     }
 
     // ---- field: as the Param Editor draws it
 
     /// <summary>One field, as the Param Editor draws it: name, labels, input, hints, clicks and context menu</summary>
-    private void FieldRow(string paramName, Param param, Param.Row row, Param.Cell cell, FaceField faceField,
-        bool storesModes, FaceGenModelData model)
+    private void FieldRow(ParamEditorScreen editor, string paramName, Param param, Param.Row row, Param.Cell cell,
+        FaceField faceField, bool storesModes, FaceGenModelData model)
     {
         var decorators = Decorators!;
         var input = FieldInput!;
@@ -486,10 +686,7 @@ public class FacePropertiesView
         var oldval = cell.Value;
         object newval = null!;
 
-        ImGui.TableSetColumnIndex(0);
-        ImGui.AlignTextToFramePadding();
-        ImGui.TextUnformatted(DisplayName(param, field.InternalName, storesModes, model));
-        NameTooltip(param, faceField, storesModes, model);
+        NameCell(param, row, faceField, storesModes, model);
 
         decorators.HandleCache(context, row, oldval);
         decorators.HandleLabels(context, row, oldval);
@@ -524,6 +721,8 @@ public class FacePropertiesView
         {
             if (context.HasAnyDisplayedElements() && decorators.HandleContextMenu(context, row, oldval, ref newval))
                 input.SetLastPropertyManual(newval);
+
+            RevertItem(editor, paramName, row, faceField);
 
             if (ImGui.Selectable($"{LOC.Get("FACEGEN_Open_In_Param_Editor")}##openInParamEditor"))
                 EditorCommandQueue.AddCommand($"param/select/-1/{paramName}/{row.ID}");
