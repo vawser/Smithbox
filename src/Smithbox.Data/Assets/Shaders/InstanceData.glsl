@@ -13,7 +13,8 @@ struct instanceData
 	// w: the entity id, for picking
 	uvec4 materialID;
 
-	// x: the lighting set the instance is lit by (SceneLighting.glsl), 0 for the view's own; yzw reserved
+	// x: the lighting set the instance is lit by (SceneLighting.glsl), 0 for the view's own
+	// y: how faded the instance is, 1 - opacity, as float bits (0, the default, is fully opaque); zw reserved
 	uvec4 lighting;
 };
 

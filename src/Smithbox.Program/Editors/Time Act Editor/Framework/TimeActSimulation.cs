@@ -73,7 +73,12 @@ public enum TimeActSimulationRole
     AdditiveAnim,
 
     /// <summary>The animation crossfades from the one before it over the length of the event</summary>
-    Blend
+    Blend,
+
+    /// <summary>
+    /// The model fades from OpacityAtEventStart to OpacityAtEventEnd over the event, and stays at the end value after it
+    /// </summary>
+    Opacity
 }
 
 /// <summary>
@@ -167,6 +172,11 @@ public class TimeActSimulation
 
     private readonly Dictionary<long, (long AnimationId, float Weight, float Time)> _additiveByType = new();
 
+    /// <summary>
+    /// How opaque the model is at the current time, from the opacity events: 1 is as it is
+    /// </summary>
+    public float Opacity { get; private set; } = 1;
+
     public void Update(TAE.Animation? animation, float time, float playbackEnd)
     {
         SpeedMultiplier = 1;
@@ -180,6 +190,7 @@ public class TimeActSimulation
         HasTurnEvents = false;
         AdditiveLayers.Clear();
         _additiveByType.Clear();
+        Opacity = 1;
 
         if (animation == null)
             return;
@@ -189,6 +200,7 @@ public class TimeActSimulation
         var masks = CFG.Current.TimeActEditor_Sim_Model_Masks;
         var weapons = CFG.Current.TimeActEditor_Sim_Weapons;
         var additive = CFG.Current.TimeActEditor_Sim_Additive_Anims;
+        var opacity = CFG.Current.TimeActEditor_Sim_Opacity;
 
         if (CFG.Current.TimeActEditor_Sim_Turning)
         {
@@ -237,6 +249,16 @@ public class TimeActSimulation
 
                 case TimeActSimulationRole.WeaponLocation when weapons && active:
                     WeaponLocationEvents.Add(ev);
+                    break;
+
+                // Stays at the end value after it ends, until the animation starts over
+                case TimeActSimulationRole.Opacity when opacity:
+                    if (GetFloat(ev, "OpacityAtEventStart") is { } from && GetFloat(ev, "OpacityAtEventEnd") is { } to)
+                    {
+                        var length = Math.Min(ev.MemeEndTime, Math.Max(playbackEnd, ev.StartTime)) - ev.StartTime;
+                        var progress = length > 0 ? Math.Clamp((time - ev.StartTime) / length, 0, 1) : 1;
+                        Opacity = Math.Clamp(from + (to - from) * progress, 0, 1);
+                    }
                     break;
 
                 case TimeActSimulationRole.AdditiveAnim when additive && active:

@@ -394,6 +394,12 @@
       ]
     },
     {
+      "ID": 193,
+      "Event": "SetOpacityKeyframe",
+      "Simulation": "Opacity",
+      "Fields": []
+    },
+    {
       "ID": 224,
       "Event": "SetTurnSpeed",
       "Simulation": "TurnSpeed",

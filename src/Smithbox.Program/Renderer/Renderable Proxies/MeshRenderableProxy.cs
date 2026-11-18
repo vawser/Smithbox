@@ -383,7 +383,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
             if (_renderable != -1 && old != value)
             {
-                _renderablesSet.cShadowPipelines[_renderable] = value ? _shadowPipeline : null;
+                _renderablesSet.cShadowPipelines[_renderable] = value && !IsFading ? _shadowPipeline : null;
             }
 
             foreach (MeshRenderableProxy child in SnapshotSubmeshes())
@@ -425,6 +425,41 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public const uint NoShadowMaterialFlag = 0x80000000u;
 
     private byte _lightSet;
+
+    private float _opacity = 1;
+
+    /// <summary>
+    ///     How opaque the mesh is drawn, from 0 to 1, on top of its material (a character fading out). Below 1 an opaque
+    ///     material is drawn blended, back to front and without writing depth, the surface targets or shadows, as a
+    ///     transparent one is; going below 1 or back to 1 rebuilds the pipeline, and any other change only the
+    ///     instance. Only the flver shader reads it.
+    /// </summary>
+    public float Opacity
+    {
+        get => _opacity;
+        set
+        {
+            value = Math.Clamp(value, 0, 1);
+
+            if (_opacity == value)
+                return;
+
+            var fadingChanged = _opacity < 1 != value < 1;
+            _opacity = value;
+
+            if (fadingChanged)
+                ScheduleRenderableConstruction();
+            else
+                ScheduleRenderableUpdate();
+
+            foreach (MeshRenderableProxy sm in SnapshotSubmeshes())
+            {
+                sm.Opacity = value;
+            }
+        }
+    }
+
+    private bool IsFading => _opacity < 1 && UsesFlverShader;
 
     /// <summary>
     ///     The lighting set this mesh is lit by: an entry of its view's
@@ -846,9 +881,11 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         GraphicsPipelineDescription pipelineDescription = new();
 
         // Opaque flvers write the normal, roughness and indirect light beside the color, for the screen space effects
-        pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet, _meshProvider.BlendState,
-            UsesFlverShader && !_meshProvider.IsTransparent);
-        pipelineDescription.DepthStencilState = _meshProvider.DepthWrite
+        // A fading opaque one is blended by its alpha, which the shader multiplies by the opacity
+        pipelineDescription.BlendState = SceneTarget.BlendFor(_renderablesSet,
+            IsFading && !_meshProvider.IsTransparent ? BlendStateDescription.SingleAlphaBlend : _meshProvider.BlendState,
+            UsesFlverShader && !_meshProvider.IsTransparent && !IsFading);
+        pipelineDescription.DepthStencilState = _meshProvider.DepthWrite && !IsFading
             ? DepthStencilStateDescription.DepthOnlyGreaterEqual
             : DepthStencilStateDescription.DepthOnlyGreaterEqualRead;
         pipelineDescription.RasterizerState = WithDecalBias(new RasterizerStateDescription(
@@ -942,12 +979,12 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         BoundingBox bounds = GetWorldBounds();
         _renderable = _renderablesSet.CreateMesh(ref bounds, ref meshcomp);
         _renderablesSet.cRenderKeys[_renderable] = GetRenderKey(0.0f);
-        _renderablesSet.cBackToFront[_renderable] = _meshProvider.IsTransparent;
+        _renderablesSet.cBackToFront[_renderable] = _meshProvider.IsTransparent || IsFading;
 
         // Pipelines
         _renderablesSet.cPipelines[_renderable] = _pipeline;
         _renderablesSet.cSelectionPipelines[_renderable] = _pickingPipeline;
-        _renderablesSet.cShadowPipelines[_renderable] = _castsShadow ? _shadowPipeline : null;
+        _renderablesSet.cShadowPipelines[_renderable] = _castsShadow && !IsFading ? _shadowPipeline : null;
         _renderablesSet.cDepthPipelines[_renderable] = _shadowPipeline;
 
         if (wireframeDescription is GraphicsPipelineDescription wireDescription)
@@ -1094,6 +1131,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
 
         // The lighting set has a lane of its own; only the flver shader reads it
         dat.LightingSet = UsesFlverShader ? _lightSet : 0u;
+        dat.Fade = UsesFlverShader ? BitConverter.SingleToUInt32Bits(1 - _opacity) : 0u;
 
         if (_meshProvider.BoneBuffer != null)
         {

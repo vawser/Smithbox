@@ -112,7 +112,7 @@ layout(location = 12) flat in uint fsin_flags;
 	layout(location = 14) flat in mat3 fsin_modelToWorld;
 #endif
 // The lighting set the instance is lit by, see g_lightingSet
-layout(location = 17) flat in uint fsin_lightingSet;
+layout(location = 17) flat in uvec2 fsin_lightingSet; // x: the lighting set, y: the fade (InstanceData.glsl)
 #ifdef MATERIAL_UV3
 	// The third UV set, a DES multi texture material's lightmap UV (FlverResource.LookupDesLightmap)
 	layout(location = 19) in vec2 fsin_texcoord3;
@@ -2194,6 +2194,9 @@ void WritePixel(vec3 litColor, float alpha, vec3 glow, vec3 N, float roughness, 
 		finalColor *= finalColor;
 	}
 
+	// A fading instance (a character's SetOpacityKeyframe) is drawn blended, so its alpha takes the fade
+	alpha *= 1.0 - uintBitsToFloat(fsin_lightingSet.y);
+
 	fsout_color = vec4(finalColor, alpha);
 
 	// Unlit surfaces take no ambient light, so ambient occlusion has nothing to take from them
@@ -2256,7 +2259,7 @@ void main()
 
 	g_mat = fsin_mat;
 	// The instance's own lighting set only exists under map lighting; it is 0 (the view's own) otherwise
-	g_lightingSet = MapLighting() ? fsin_lightingSet : 0u;
+	g_lightingSet = MapLighting() ? fsin_lightingSet.x : 0u;
 	g_modelLit = ModelLit();
 	g_envLit = !g_modelLit && EnvLit();
 

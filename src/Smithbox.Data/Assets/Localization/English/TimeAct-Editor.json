@@ -3320,6 +3320,18 @@
     {
       "Key": "TAE_SimulationTool_Additive_Status",
       "Text": "Additive animations playing: {0}"
+    },
+    {
+      "Key": "TAE_SimulationTool_Opacity",
+      "Text": "Opacity"
+    },
+    {
+      "Key": "TAE_SimulationTool_Opacity_TT",
+      "Text": "If enabled, SetOpacityKeyframe events fade the model from the event's start opacity to its end opacity, and it stays at the end opacity after the event until the animation starts over. A faded model is drawn blended, so it casts no shadow and screen space effects leave it out."
+    },
+    {
+      "Key": "TAE_SimulationTool_Opacity_Status",
+      "Text": "The model is at {0}% opacity at the current time."
     }
   ]
 }

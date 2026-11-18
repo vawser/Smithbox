@@ -73,6 +73,7 @@ public class TimeActPlayback
 
         Simulation = new TimeActSimulation(view, project);
         MaskDisplay = new TimeActMaskDisplay(view);
+        OpacityDisplay = new TimeActOpacityDisplay(view);
         WeaponDisplay = new TimeActWeaponDisplay(view, project, _panel);
         EventDisplay = new TimeActEventDisplay(view, project);
         RootMotionDisplay = new TimeActRootMotionDisplay(view);
@@ -104,6 +105,8 @@ public class TimeActPlayback
     public TimeActSimulation Simulation { get; }
 
     public TimeActMaskDisplay MaskDisplay { get; }
+
+    public TimeActOpacityDisplay OpacityDisplay { get; }
 
     public TimeActWeaponDisplay WeaponDisplay { get; }
 
@@ -157,6 +160,7 @@ public class TimeActPlayback
         // From the time the last frame ended at, which is where the clock is about to move on from
         Simulation.Update(View.Selection.SelectedAnimation, _time, PlaybackDuration);
         MaskDisplay.Update(Simulation.MaskOverrides);
+        OpacityDisplay.Update(Simulation.Opacity);
         WeaponDisplay.Update(_target, Simulation);
 
         if (animator != null)

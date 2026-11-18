@@ -480,6 +480,12 @@
       ]
     },
     {
+      "ID": 193,
+      "Event": "SetOpacityKeyframe",
+      "Simulation": "Opacity",
+      "Fields": []
+    },
+    {
       "ID": 198,
       "Event": "ModelParamModifier",
       "Fields": [

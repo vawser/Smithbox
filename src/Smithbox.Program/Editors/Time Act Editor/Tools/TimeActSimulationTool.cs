@@ -70,6 +70,14 @@ public class TimeActSimulationTool
         }
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Rumble_Cam_TT"));
 
+        ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Opacity")}##timeActSimOpacity", ref CFG.Current.TimeActEditor_Sim_Opacity);
+        GUI.Tooltip(LOC.Get("TAE_SimulationTool_Opacity_TT"));
+
+        if (simulation.Opacity < 1)
+        {
+            GUI.WrappedText(LOC.Get("TAE_SimulationTool_Opacity_Status", (simulation.Opacity * 100).ToString("0")));
+        }
+
         ImGui.Checkbox($"{LOC.Get("TAE_SimulationTool_Additive_Anims")}##timeActSimAdditive", ref CFG.Current.TimeActEditor_Sim_Additive_Anims);
         GUI.Tooltip(LOC.Get("TAE_SimulationTool_Additive_Anims_TT"));
 

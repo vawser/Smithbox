@@ -41,8 +41,13 @@ public struct InstanceData
     /// </summary>
     public uint LightingSet;
 
+    /// <summary>
+    ///     How faded the instance is, 1 - opacity, as the bits of a float: 0, the default, is fully opaque. Only read by
+    ///     the flver shader, which multiplies its alpha by the opacity (<see cref="MeshRenderableProxy.Opacity" />).
+    /// </summary>
+    public uint Fade;
+
     // Reserved: fills the 16 byte row
-    public uint LightingPad0;
     public uint LightingPad1;
     public uint LightingPad2;
 }

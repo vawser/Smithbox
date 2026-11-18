@@ -118,7 +118,7 @@ layout(location = 12) flat out uint fsin_flags;
 	layout(location = 14) flat out mat3 fsin_modelToWorld;
 #endif
 // The lighting set the instance is lit by (instanceData.lighting.x, SceneLighting.glsl), 0 for the view's own
-layout(location = 17) flat out uint fsin_lightingSet;
+layout(location = 17) flat out uvec2 fsin_lightingSet; // x: lighting set, y: fade (InstanceData.glsl)
 #ifdef MATERIAL_UV3
 	// The third UV set: a DES multi texture material's lightmap UV (18 is the wireframe's barycentrics)
 	layout(location = 19) out vec2 fsin_texcoord3;
@@ -539,7 +539,7 @@ void main()
 	// bit 0: no shadows
 	fsin_flags = (idata[gl_InstanceIndex].materialID.x & MATERIAL_NO_SHADOW) != 0u ? 1u : 0u;
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
-	fsin_lightingSet = idata[gl_InstanceIndex].lighting.x;
+	fsin_lightingSet = idata[gl_InstanceIndex].lighting.xy;
 
 #ifdef MATERIAL_BLEND
 	uint skinKind = idata[gl_InstanceIndex].materialID.z;
