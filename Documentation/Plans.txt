@@ -53,10 +53,8 @@
 # Graphics Param Editor TODO
 #----------------------------------------------------
 
-- GPARAM Reloader: add support for DS2S
+- GPARAM Reloader: add full support for DS2S
 - Expand the amount of GPARAM elements considered by the renderer
-
-- Properties: DS2 color picker doesn't work, color input properties 
 
 #----------------------------------------------------
 # Material Editor TODO
@@ -158,6 +156,13 @@
 
 - Verify WEM replace functionality with test mod
 - Add support for FMOD replace
+
+#----------------------------------------------------
+# FaceGen Editor TODO
+#----------------------------------------------------
+- Implement
+- Add support for face in c0000 usage instances
+- Add support for copying in-game player's face into editor
 
 #----------------------------------------------------
 # Rendering
