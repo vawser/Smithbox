@@ -84,9 +84,6 @@
 #----------------------------------------------------
 # Time Act Editor TODO
 #----------------------------------------------------
-- Event Graph
-    - Read-only graph for imported animations
-
 - Playback:
     - Animation blending between animations
     - Throw hitboxes

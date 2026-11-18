@@ -917,6 +917,34 @@
       "Text": "Read only: time acts can't be saved for this game."
     },
     {
+      "Key": "TAE_GraphWindow_Imported_Read_Only",
+      "Text": "Read only: events imported from {0}."
+    },
+    {
+      "Key": "TAE_GraphWindow_Imported_Missing",
+      "Text": "Read only: events imported from {0}, which isn't in this source."
+    },
+    {
+      "Key": "TAE_GraphWindow_Go_To_Source",
+      "Text": "Go to Source Animation ({0})"
+    },
+    {
+      "Key": "TAE_GraphWindow_Go_To_Source_TT",
+      "Text": "Opens the animation these events belong to, in {0}, where they can be edited."
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_Source_Link",
+      "Text": "Source Animation"
+    },
+    {
+      "Key": "TAE_PropertiesWindow_Animation_Import_Source_Missing",
+      "Text": "{0} (not in this source)"
+    },
+    {
+      "Key": "TAE_GraphWindow_Imported_Read_Only_TT",
+      "Text": "This animation's mini header is Import Other Anim, so it plays the events of the animation it imports.\nEdit them in that animation, or change the mini header to Standard to give this one events of its own."
+    },
+    {
       "Key": "TAE_GraphWindow_No_Templates",
       "Text": "No event templates are available for this game."
     },

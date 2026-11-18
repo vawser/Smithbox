@@ -54,6 +54,12 @@ public class TimeActGraphWindow
 
     private static readonly Vector4 OutsidePlaybackTint = new(0.35f, 0.35f, 0.35f, 0.55f);
 
+    // Laid over the tracks when the events on show belong to the animation this one imports
+    private static readonly Vector4 ImportedTint = new(0.45f, 0.45f, 0.45f, 0.45f);
+
+    // How many Import Other Anim links are followed to find the events, which also stops a loop of them
+    private const int MaxImportDepth = 8;
+
     // New events start out this long
     private const int DefaultEventFrames = 10;
 
@@ -146,8 +152,30 @@ public class TimeActGraphWindow
 
     private bool CanEdit => Project.Handler.TimeActData.CanSaveTimeActs;
 
+    // An animation with the Import Other Anim mini header plays the events of the one it imports. The graph shows
+    // those, but they belong to the other animation, so they can't be selected or edited from here.
+    private bool IsImportedSource;
+    private long ImportedFromID;
+
+    // The events on show: the selected animation's own, those of the animation it imports, or none if that is missing
+    private List<TAE.Event> GraphEvents = new();
+
+    // Finding the imported animation searches every time act, so it is only done again after a change
+    private TAE.Animation ImportCacheAnimation;
+    private long ImportCacheID;
+    private int ImportCacheVersion = -1;
+    private TAE.Animation ImportCacheResult;
+    private TimeActEntry ImportCacheResultEntry;
+
+    /// <summary>
+    /// Whether the events on show can be edited: the time acts can be saved, and the events are the animation's own
+    /// </summary>
+    private bool CanEditGraph => CanEdit && !IsImportedSource;
+
     public void Display(float width, float height)
     {
+        UpdateEventSource();
+
         DisplayToolbar();
         DisplayEventFilter();
 
@@ -159,6 +187,98 @@ public class TimeActGraphWindow
         DisplayEventGraph();
 
         ImGui.EndChild();
+    }
+
+    /// <summary>
+    /// Works out whose events the graph shows. An imported animation's events are those of the animation it
+    /// imports, following further imports from there.
+    /// </summary>
+    private void UpdateEventSource()
+    {
+        var animation = View.Selection.SelectedAnimation;
+
+        if (animation?.MiniHeader is not TAE.Animation.AnimMiniHeader.ImportOtherAnim import)
+        {
+            IsImportedSource = false;
+            GraphEvents = animation?.Events ?? new List<TAE.Event>();
+            return;
+        }
+
+        IsImportedSource = true;
+        ImportedFromID = import.ImportFromAnimID;
+
+        if (animation != ImportCacheAnimation || ImportedFromID != ImportCacheID ||
+            ImportCacheVersion != TimeActEntry.EditVersion)
+        {
+            ImportCacheAnimation = animation;
+            ImportCacheID = ImportedFromID;
+            ImportCacheVersion = TimeActEntry.EditVersion;
+            ImportCacheResult = FindImportedAnimation(animation, out ImportCacheResultEntry);
+        }
+
+        GraphEvents = ImportCacheResult?.Events ?? new List<TAE.Event>();
+    }
+
+    /// <summary>
+    /// Follows the Import Other Anim links of an animation to the first that has events of its own, or null if
+    /// one of them is missing or they loop
+    /// </summary>
+    private TAE.Animation FindImportedAnimation(TAE.Animation animation, out TimeActEntry entry)
+    {
+        entry = null;
+
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (source == null)
+            return null;
+
+        var current = animation;
+        var currentEntry = View.Selection.SelectedTimeAct;
+
+        for (var depth = 0; depth < MaxImportDepth; depth++)
+        {
+            if (current.MiniHeader is not TAE.Animation.AnimMiniHeader.ImportOtherAnim import)
+            {
+                entry = currentEntry;
+                return current;
+            }
+
+            if (!source.TryFindAnimation(import.ImportFromAnimID, out currentEntry, out var next) || next == current)
+                return null;
+
+            current = next;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// The menu of the tinted tracks of imported events, which goes to the animation they belong to
+    /// </summary>
+    private void DisplayImportedMenu()
+    {
+        if (!ImGui.BeginPopup("##graphImportedMenu"))
+            return;
+
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (ImportCacheResult != null && ImportCacheResultEntry != null && source != null)
+        {
+            var name = source.GetAnimationName(ImportCacheResultEntry, ImportCacheResult);
+
+            if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Go_To_Source", name)}##graphGoToSource"))
+            {
+                View.PropertiesWindow.GoToLink(ImportCacheResultEntry, ImportCacheResult);
+            }
+            GUI.Tooltip(LOC.Get("TAE_GraphWindow_Go_To_Source_TT", ImportCacheResultEntry.Name));
+        }
+        else
+        {
+            ImGui.TextDisabled(LOC.Get("TAE_GraphWindow_Imported_Missing",
+                source?.FormatAnimationName(ImportedFromID) ?? $"{ImportedFromID}"));
+        }
+
+        ImGui.EndPopup();
     }
 
     private void DisplayToolbar()
@@ -243,7 +363,7 @@ public class TimeActGraphWindow
         GUI.Tooltip(LOC.Get("TAE_GraphWindow_Zoom_Selection_TT"));
 
         ImGui.SameLine();
-        ImGui.BeginDisabled(!CanEdit || View.Selection.SelectedAnimation == null);
+        ImGui.BeginDisabled(!CanEditGraph || View.Selection.SelectedAnimation == null);
         if (ImGui.Button($"{LOC.Get("TAE_GraphWindow_Add_Event")}##graphAddEvent"))
         {
             AddEventTime = Snap(playback.Time);
@@ -265,6 +385,17 @@ public class TimeActGraphWindow
         {
             ImGui.SameLine();
             ImGui.TextDisabled(LOC.Get("TAE_GraphWindow_Read_Only"));
+        }
+        else if (IsImportedSource && View.Selection.SelectedAnimation != null)
+        {
+            var importedName = View.Selection.SelectedTimeActContainerWrapper?.FormatAnimationName(ImportedFromID)
+                ?? $"{ImportedFromID}";
+
+            ImGui.SameLine();
+            ImGui.TextDisabled(LOC.Get(ImportCacheResult != null
+                ? "TAE_GraphWindow_Imported_Read_Only"
+                : "TAE_GraphWindow_Imported_Missing", importedName));
+            GUI.Tooltip(LOC.Get("TAE_GraphWindow_Imported_Read_Only_TT"));
         }
 
         // Tracks that are off the graph, which is easy to forget once another animation is picked
@@ -329,9 +460,9 @@ public class TimeActGraphWindow
         // The rows hold still during a drag, so that the event stays under the cursor
         if (DragEvent == null)
         {
-            LayoutPlacements = LayoutEvents(animation, template, frameDuration, out LayoutRowLabels);
+            LayoutPlacements = LayoutEvents(GraphEvents, template, frameDuration, out LayoutRowLabels);
 
-            LayoutTimeline(animation, frameDuration);
+            LayoutTimeline(GraphEvents, frameDuration);
 
             // Hidden events can't be acted on unseen, so they leave the selection
             if (HiddenTypes.Count > 0 || SoloType != null)
@@ -396,7 +527,7 @@ public class TimeActGraphWindow
         var overRuler = mouse.Y < viewPos.Y + ruler;
         var overGutter = mouse.X < viewPos.X + gutter;
 
-        if (hovered && !overRuler && !overGutter && hoveredEvent != null && CanEdit &&
+        if (hovered && !overRuler && !overGutter && hoveredEvent != null && CanEditGraph &&
             (mouse.X - TimeToX(hoveredEvent.StartTime) < EdgeGrabWidth || GetBarEnd(hoveredEvent) - mouse.X < EdgeGrabWidth))
         {
             ImGui.SetMouseCursor(ImGuiMouseCursor.ResizeEw);
@@ -410,7 +541,8 @@ public class TimeActGraphWindow
                 Drag = DragMode.Playhead;
                 View.Playback.Pause();
             }
-            else
+            // Imported events belong to another animation, so they can't be selected here
+            else if (!IsImportedSource)
             {
                 var io = ImGui.GetIO();
                 var selection = View.Selection;
@@ -452,7 +584,7 @@ public class TimeActGraphWindow
                     }
                     else if (!io.KeyShift && selection.SelectedEvents.Count > 1)
                     {
-                        if (CanEdit)
+                        if (CanEditGraph)
                         {
                             ClickCollapseEvent = hoveredEvent;
                         }
@@ -462,7 +594,7 @@ public class TimeActGraphWindow
                         }
                     }
 
-                    if (CanEdit)
+                    if (CanEditGraph)
                     {
                         Drag = mouse.X - TimeToX(hoveredEvent.StartTime) < EdgeGrabWidth ? DragMode.ResizeStart
                             : GetBarEnd(hoveredEvent) - mouse.X < EdgeGrabWidth && !IsOpenEnded(hoveredEvent) ? DragMode.ResizeEnd
@@ -499,7 +631,13 @@ public class TimeActGraphWindow
             }
         }
 
-        if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && !overGutter)
+        // Right-clicking the tinted tracks of imported events offers to go to the animation they belong to
+        if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && !overGutter && IsImportedSource)
+        {
+            ImGui.OpenPopup("##graphImportedMenu");
+        }
+
+        if (hovered && ImGui.IsMouseClicked(ImGuiMouseButton.Right) && !overRuler && !overGutter && !IsImportedSource)
         {
             // Right-clicking one of the selected events keeps the selection, so the menu acts on all of them
             if (hoveredEvent == null || !View.Selection.IsEventSelected(hoveredEvent))
@@ -511,7 +649,7 @@ public class TimeActGraphWindow
             {
                 ImGui.OpenPopup("##graphEventMenu");
             }
-            else if (CanEdit)
+            else if (CanEditGraph)
             {
                 AddEventTime = Math.Max(Snap(XToTime(mouse.X)), 0);
                 OpenAddEventMenu = true;
@@ -547,6 +685,7 @@ public class TimeActGraphWindow
         KeepPlayheadInView(viewSize, gutter, frameWidth, frameDuration, firstFrame);
 
         DisplayEventMenu();
+        DisplayImportedMenu();
         DisplayAddEventMenu(template);
         DisplayTrackMenu(placements, template);
     }
@@ -568,7 +707,8 @@ public class TimeActGraphWindow
         ImGui.Separator();
 
         // Select All of Type
-        if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Track_Select_All", events.Count)}##trackSelectAll"))
+        if (ImGui.MenuItem($"{LOC.Get("TAE_GraphWindow_Track_Select_All", events.Count)}##trackSelectAll", "", false,
+            !IsImportedSource))
         {
             View.Selection.SelectedEvents.Clear();
             View.Selection.SelectedEvents.AddRange(events);
@@ -698,7 +838,7 @@ public class TimeActGraphWindow
     /// Events can start before the animation and run past its end, so the
     /// timeline reaches far enough either side of playback to show all of them.
     /// </summary>
-    private void LayoutTimeline(TAE.Animation animation, float frameDuration)
+    private void LayoutTimeline(List<TAE.Event> events, float frameDuration)
     {
         if (!CFG.Current.TimeActEditor_Graph_Display_Outside_Playback)
         {
@@ -707,9 +847,15 @@ public class TimeActGraphWindow
             return;
         }
 
-        var earliest = animation.Events.Count > 0 ? Math.Min(animation.Events.Min(e => e.StartTime), 0) : 0;
+        var earliest = events.Count > 0 ? Math.Min(events.Min(e => e.StartTime), 0) : 0;
 
         var latest = Math.Max(Math.Max(View.Playback.PlaybackDuration, View.Playback.GetEventDuration()), View.Playback.Time);
+
+        // The playback only goes by the animation's own events, so imported ones are reached for here
+        if (IsImportedSource && events.Count > 0)
+        {
+            latest = Math.Max(latest, events.Max(e => IsOpenEnded(e) ? e.StartTime : e.EndTime));
+        }
 
         LayoutFirstFrame = (int)MathF.Floor(earliest / frameDuration) - TimelinePaddingFrames;
         LayoutLastFrame = (int)MathF.Ceiling(latest / frameDuration) + TimelinePaddingFrames;
@@ -727,14 +873,14 @@ public class TimeActGraphWindow
     /// Sorts the events into rows. Rows are worked out each frame, as events
     /// can be moved over each other, and an animation only has so many of them.
     /// </summary>
-    private List<Placement> LayoutEvents(TAE.Animation animation, TAE.Template.BankTemplate template, float frameDuration,
+    private List<Placement> LayoutEvents(List<TAE.Event> events, TAE.Template.BankTemplate template, float frameDuration,
         out List<string> rowLabels)
     {
-        var placements = new List<Placement>(animation.Events.Count);
+        var placements = new List<Placement>(events.Count);
         var labels = new List<string>();
         var rowTypes = new List<int>();
 
-        foreach (var track in animation.Events.GroupBy(e => e.Type).OrderBy(e => e.Key))
+        foreach (var track in events.GroupBy(e => e.Type).OrderBy(e => e.Key))
         {
             if (!IsTypeVisible(track.Key))
                 continue;
@@ -1088,7 +1234,7 @@ public class TimeActGraphWindow
     {
         var selection = View.Selection;
 
-        if (!CanEdit || selection.SelectedEvents.Count == 0 || selection.SelectedTimeAct == null)
+        if (!CanEditGraph || selection.SelectedEvents.Count == 0 || selection.SelectedTimeAct == null)
             return;
 
         var offset = frames * View.Playback.FrameDuration;
@@ -1106,7 +1252,7 @@ public class TimeActGraphWindow
     /// </summary>
     private void SelectAllEvents()
     {
-        if (LayoutPlacements == null)
+        if (LayoutPlacements == null || IsImportedSource)
             return;
 
         View.Selection.SelectedEvents.Clear();
@@ -1117,7 +1263,7 @@ public class TimeActGraphWindow
     {
         var selection = View.Selection;
 
-        if (selection.SelectedEvents.Count == 0 || !CanEdit || Drag != DragMode.None)
+        if (selection.SelectedEvents.Count == 0 || !CanEditGraph || Drag != DragMode.None)
             return;
 
         View.ViewportActionManager.ExecuteAction(new TimeActDeleteEventsAction(selection, selection.SelectedTimeAct,
@@ -1221,6 +1367,12 @@ public class TimeActGraphWindow
         // This goes over the events, so that the parts of them outside of playback are tinted as well
         DrawOutsidePlayback(drawList, FrameToX(firstFrame), playbackStartX, playbackEndX, FrameToX(lastFrame),
             tracksMin.Y, viewMax.Y, outsideColor, textColor);
+
+        // Greys out the tracks of imported events, which are only on show and are edited in their own animation
+        if (IsImportedSource)
+        {
+            drawList.AddRectFilled(tracksMin, viewMax, ImGui.ColorConvertFloat4ToU32(ImportedTint));
+        }
 
         drawList.PopClipRect();
 
@@ -1396,7 +1548,7 @@ public class TimeActGraphWindow
 
     private void AddCopiesOfEvents(IReadOnlyList<TAE.Event> sources, float offset)
     {
-        if (!CanEdit)
+        if (!CanEditGraph)
             return;
 
         var selection = View.Selection;
@@ -1432,7 +1584,7 @@ public class TimeActGraphWindow
                 CopySelectedEvent();
             }
 
-            ImGui.BeginDisabled(!CanEdit);
+            ImGui.BeginDisabled(!CanEditGraph);
 
             if (ImGui.MenuItem($"{GetCountLabel("TAE_GraphWindow_Duplicate_Event", selectedCount)}##duplicateEvent",
                 InputManager.GetHint(KeybindID.Duplicate)))

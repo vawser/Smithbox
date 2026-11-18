@@ -1092,6 +1092,8 @@ public class TimeActPropertiesWindow
                     value => $"{value}", int.TryParse, value => import.ImportFromAnimID = value,
                     onChanged: () => OnAnimationMotionChanged(animation));
 
+                DisplayImportFromLink(animation, import);
+
                 DisplayTimeActField(entry, "TAE_PropertiesWindow_Animation_Import_Unknown", import.Unknown,
                     value => $"{value}", int.TryParse, value => import.Unknown = value);
                 break;
@@ -1238,7 +1240,7 @@ public class TimeActPropertiesWindow
     /// <summary>
     /// Opens the time act and animation of a link in this view, and selects its event
     /// </summary>
-    private void GoToLink(TimeActEntry entry, TAE.Animation animation, TAE.Event ev)
+    public void GoToLink(TimeActEntry entry, TAE.Animation animation, TAE.Event ev = null)
     {
         var selection = View.Selection;
 
@@ -1264,6 +1266,67 @@ public class TimeActPropertiesWindow
         }
     }
     #endregion
+
+    // Finding the animation an import points at searches every time act, so it is only done again after a change
+    private TAE.Animation ImportLinkAnimation;
+    private long ImportLinkID;
+    private int ImportLinkVersion = -1;
+    private TimeActEntry ImportLinkTargetEntry;
+    private TAE.Animation ImportLinkTarget;
+
+    /// <summary>
+    /// A link under Import From to the animation it names. Going there is not an edit, so it stays usable when
+    /// the time acts are read-only.
+    /// </summary>
+    private void DisplayImportFromLink(TAE.Animation animation, TAE.Animation.AnimMiniHeader.ImportOtherAnim import)
+    {
+        var source = View.Selection.SelectedTimeActContainerWrapper;
+
+        if (source == null)
+            return;
+
+        var name = LOC.Get("TAE_PropertiesWindow_Animation_Import_Source_Link");
+
+        if (!EditorFilters.IsMatch(PropertiesFilter, name, ExactPropertiesFilter))
+            return;
+
+        if (animation != ImportLinkAnimation || import.ImportFromAnimID != ImportLinkID ||
+            ImportLinkVersion != TimeActEntry.EditVersion)
+        {
+            ImportLinkAnimation = animation;
+            ImportLinkID = import.ImportFromAnimID;
+            ImportLinkVersion = TimeActEntry.EditVersion;
+
+            if (!source.TryFindAnimation(ImportLinkID, out ImportLinkTargetEntry, out ImportLinkTarget))
+            {
+                ImportLinkTargetEntry = null;
+                ImportLinkTarget = null;
+            }
+        }
+
+        // The table is disabled when the time acts can't be saved, which would stop the link too
+        ImGui.EndDisabled();
+
+        BeginRow(name);
+
+        var label = source.FormatAnimationName(ImportLinkID);
+
+        if (ImportLinkTarget == null)
+        {
+            ImGui.TextDisabled(LOC.Get("TAE_PropertiesWindow_Animation_Import_Source_Missing", label));
+        }
+        else
+        {
+            if (ImGui.Selectable($"{Icons.Link} {label}##importSourceLink"))
+            {
+                GoToLink(ImportLinkTargetEntry, ImportLinkTarget);
+            }
+
+            GUI.Tooltip(LOC.Get("TAE_PropertiesWindow_Link_TT", ImportLinkTargetEntry.Name));
+        }
+
+        ImGui.BeginDisabled(!Project.Handler.TimeActData.CanSaveTimeActs);
+    }
 
     // The animation whose tab is being drawn, which its property edits belong to; null in the time act tab
     private TAE.Animation PropertyAnimation;
