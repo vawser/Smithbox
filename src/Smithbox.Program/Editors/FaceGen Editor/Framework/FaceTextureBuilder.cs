@@ -71,20 +71,11 @@ public sealed class FaceTextureBuilder : IDisposable
             Ready = true;
         });
 
-        // TEMPORARY (DS3 colour check): on the first build and when the base image changes, not while a slider is dragged
-        if (BuiltBase != baseImage || Built == null)
-        {
-            Smithbox.Log(this, $"[FaceGen texture] built on {baseImage} ({egt.Width}x{egt.Height}), " +
-                               $"{coefficients.Length} coefficients {MinOf(coefficients):0.00}..{MaxOf(coefficients):0.00}, pool index {handle.TexHandle}");
-        }
-
         Built = (float[])coefficients.Clone();
         BuiltBase = baseImage;
         return true;
     }
 
-    private static float MinOf(float[] v) { var m = float.MaxValue; foreach (var x in v) m = Math.Min(m, x); return m; }
-    private static float MaxOf(float[] v) { var m = float.MinValue; foreach (var x in v) m = Math.Max(m, x); return m; }
 
     private static byte[] Build(EGT egt, byte[] rgb, int texels, float[] coefficients)
     {

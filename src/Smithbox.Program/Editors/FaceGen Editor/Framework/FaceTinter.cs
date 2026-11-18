@@ -188,7 +188,7 @@ public sealed class FaceTinter
             faceTexture = 0;
 
             if (param != null && FaceGenSliderTable.Get(Project) is { } table &&
-                (FaceGenTuning.BaseImage ?? table.TextureBase) is { } baseImage &&
+                table.TextureBase is { } baseImage &&
                 FaceGenModel.TextureCoefficients(Project, param, row, overrides) is { } coefficients)
             {
                 FaceTextureBuilder ??= new FaceTextureBuilder(Project);
@@ -268,18 +268,10 @@ public sealed class FaceTinter
                     }
                     else if (FlverResource.CustomizeMode(material.Definition) is MaterialCustomize.ModeFaceGen or MaterialCustomize.ModeHairTint)
                     {
-                        // DS3: the colour is the part model's FC_SkinMatchColor (Params.x, the eye's alpha mask, is kept).
-                        // TEMPORARY (DS3 skin tuning): how the game turns skinColor into it isn't known, so the skin's
-                        // is scaled and offset by View → DS3 Skin Tuning until it is matched against the game
-                        var color = look.Color;
-
-                        if (FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeFaceGen &&
-                            colorName.Equals("skin", StringComparison.OrdinalIgnoreCase))
-                        {
-                            color = color * FaceGenTuning.SkinScale + new Vector3(FaceGenTuning.SkinOffset);
-                        }
-
-                        wanted.Color = new Vector4(color, customize.Color.W);
+                        // DS3: the colour is the part model's FC_SkinMatchColor, the field's FaceRangeParam value as it
+                        // stands (skin −1…1 added, eyes added on the iris, hair multiplied). Params.x, the eye's alpha
+                        // mask, is kept
+                        wanted.Color = new Vector4(look.Color, customize.Color.W);
                     }
                     else
                     {

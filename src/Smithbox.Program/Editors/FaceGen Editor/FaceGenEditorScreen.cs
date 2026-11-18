@@ -163,31 +163,6 @@ public class FaceGenEditorScreen : EditorScreen
         Toggle("FACEGEN_Menu_Apply_Shape", ref CFG.Current.FaceGenEditor_Apply_Shape);
         GUI.Tooltip(LOC.Get("FACEGEN_Menu_Apply_Shape_TT"));
 
-        // TEMPORARY (DS3 skin tuning): only for games that draw FaceGen textures
-        if (FaceGenSliderTable.Get(Project)?.TextureBase is { } tableBase && ImGui.BeginMenu("DS3 Skin Tuning (temporary)##faceGenTuning"))
-        {
-            var current = FaceGenTuning.BaseImage ?? tableBase;
-
-            foreach (var image in new[] { "face_M.bmp", "face.bmp" })
-            {
-                if (ImGui.MenuItem($"Face texture on {image}##faceGenBase{image}", "", current == image))
-                    FaceGenTuning.BaseImage = image;
-            }
-
-            ImGui.SetNextItemWidth(200);
-            ImGui.SliderFloat("Skin colour scale##faceGenSkinScale", ref FaceGenTuning.SkinScale, 0, 3);
-            ImGui.SetNextItemWidth(200);
-            ImGui.SliderFloat("Skin colour offset##faceGenSkinOffset", ref FaceGenTuning.SkinOffset, -1, 1);
-
-            if (ImGui.MenuItem("Reset##faceGenTuningReset"))
-            {
-                FaceGenTuning.BaseImage = null;
-                FaceGenTuning.SkinScale = 1;
-                FaceGenTuning.SkinOffset = 0;
-            }
-
-            ImGui.EndMenu();
-        }
 
         if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Menu_Frame_Face")}##faceGenFrameFace"))
             View.ViewportWindow.FrameFace();
