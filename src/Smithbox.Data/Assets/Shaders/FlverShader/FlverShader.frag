@@ -52,6 +52,8 @@ layout (constant_id = 13) const bool c_alphaFromNormal = false;
 // A ChrCustomize colouring (MaterialCustomize): 0 none, 1 hair (root darkness, white hairs), 2 skin (re-tinted)
 layout (constant_id = 14) const int c_customize = 0;
 #define BLENDING_ALPHA 1
+// MaterialBlending.Multiply: the scene is multiplied by the unlit albedo
+#define BLENDING_MULTIPLY 4
 layout (constant_id = 8) const bool c_detail = false;
 layout (constant_id = 9) const bool c_magma = false;
 layout (constant_id = 10) const int c_surface = 0;
@@ -238,15 +240,29 @@ layout(set = 4, binding = 0, std140) buffer materialShading
 struct customizeData
 {
 	vec4 color;      // rgb: the colour, w: hair's root darkness
-	vec4 params;     // x: hair's white density, y: root mask channel (1 y, 2 z), z: 1 if the root is masked
+	vec4 params;     // hair: x white density, y root mask channel (1 y, 2 z), z 1 if the root is masked;
+	                 // skin: x stubble amount, yz stubble tiling
 	vec2 maskTiling;
 	uint maskTex;    // 0 until it loads, read as white
-	uint pad;
+	uint pad;        // skin: the stubble texture, 0 for none
 };
 
 layout(set = 4, binding = 0, std140) buffer materialCustomize
 {
     readonly customizeData customizedata[];
+};
+
+// Four entries after a material, after customizeData (MaterialCustomizeExtra)
+struct customizeExtraData
+{
+	vec4 a; // eye: rgb the cataract colour, w the iris scale
+	vec4 b;
+	vec4 c;
+};
+
+layout(set = 4, binding = 0, std140) buffer materialCustomizeExtra
+{
+    readonly customizeExtraData customizeextradata[];
 };
 
 // Eight entries after a material, for materials with an overlay
@@ -547,7 +563,9 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 void ApplyCustomize(inout vec4 diffuseColor)
 {
 	customizeData cz = customizedata[g_mat + 3u];
-	vec4 mask = cz.maskTex != 0u ? SampleAt(cz.maskTex, 0, cz.maskTiling, vec2(0.0)) : vec4(1.0);
+
+	// Until the mask loads: no roots, white hair or tint (white), and for an eye no pupil or sclera (black)
+	vec4 mask = cz.maskTex != 0u ? SampleAt(cz.maskTex, 0, cz.maskTiling, vec2(0.0)) : vec4(c_customize == 3 ? 0.0 : 1.0);
 
 	if (c_customize == 1)
 	{
@@ -562,7 +580,31 @@ void ApplyCustomize(inout vec4 diffuseColor)
 	{
 		// Skin: the texture's skin tone (0.2234, 0.1276, 0.0892) is made the colour, where the mask's z is 0
 		vec3 tinted = diffuseColor.rgb * cz.color.rgb * vec3(4.476997, 7.839386, 11.208877);
-		diffuseColor.rgb = clamp(mix(tinted, diffuseColor.rgb, mask.z), 0.0, 1.0);
+		vec3 skin = mix(tinted, diffuseColor.rgb, mask.z);
+
+		// Beard stubble, where the mask's y says, as much as the amount says (twice it, saturated)
+		if (cz.pad != 0u)
+		{
+			vec3 stubble = SampleAt(cz.pad, 0, cz.params.yz, vec2(0.0)).rgb;
+			skin *= mix(vec3(1.0), stubble, clamp(cz.params.x * 2.0, 0.0, 1.0) * mask.y);
+		}
+
+		diffuseColor.rgb = clamp(skin, 0.0, 1.0);
+	}
+	else if (c_customize == 3)
+	{
+		// Eye: the texture times the sclera colour, the pupil (mask y) its value, the iris (mask x) its colour, and
+		// the cataract over the pupil. The UVs were scaled by the iris scale in main
+		vec3 eye = diffuseColor.rgb * cz.color.rgb;
+		eye = mix(eye, vec3(cz.params.w), mask.y);
+		eye = mix(eye, cz.params.rgb, mask.x);
+		eye = mix(eye, customizeextradata[g_mat + 4u].a.rgb, cz.color.w * mask.y);
+		diffuseColor.rgb = clamp(eye, 0.0, 1.0);
+	}
+	else if (c_customize == 4)
+	{
+		// Shade (the eyes' [EyeAO]): a multiplier from the colour (its darkest) up to 1, by the texture
+		diffuseColor.rgb = mix(cz.color.rgb, vec3(1.0), diffuseColor.rgb);
 	}
 }
 
@@ -1975,6 +2017,17 @@ void main()
 #else
 	g_uv[1] = fsin_texcoord;
 #endif
+
+	// An eye's iris scale scales all its UVs about the centre, clamped as the game's clamp sampler does
+	if (c_customize == 3)
+	{
+		float irisScale = customizeextradata[g_mat + 4u].a.w;
+		for (int i = 0; i < 2; i++)
+		{
+			g_uv[i] = clamp(irisScale * (g_uv[i] - 0.5) + 0.5, 0.0, 1.0);
+		}
+	}
+
 	for (int i = 0; i < 2; i++)
 	{
 		g_dx[i] = dFdx(g_uv[i]);
@@ -2132,6 +2185,15 @@ void main()
 		discard;
 	}
 #endif
+
+	// A multiplying material (MaterialBlending.Multiply) is unlit: the scene is multiplied by its albedo. In the
+	// display-space target the scene's color is the square root of the light, so the multiplier is too
+	if (c_blending == BLENDING_MULTIPLY)
+	{
+		vec3 multiplier = clamp(diffuseColor.rgb * diffuseAlpha.rgb, 0.0, 1.0);
+		fsout_color = vec4(c_linearOutput ? multiplier : sqrt(multiplier), 1.0);
+		return;
+	}
 
 	// Editor mode's lighting, see RenderMode: the whole surface (normal maps, specular, metallic), lit by the view's
 	// sun and the environment map alone, without shadows or the light loops

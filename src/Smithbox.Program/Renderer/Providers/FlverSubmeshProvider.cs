@@ -13,6 +13,12 @@ public unsafe class FlverSubmeshProvider : MeshProvider
         VkBlendFactor.SrcAlpha, VkBlendFactor.One, VkBlendOp.ReverseSubtract,
         VkBlendFactor.Zero, VkBlendFactor.One, VkBlendOp.Add));
 
+    // The scene's color times the material's (MaterialBlending.Multiply); the alpha is kept
+    private static readonly BlendStateDescription MultiplyBlend = new(RgbaFloat.Black, new BlendAttachmentDescription(
+        true,
+        VkBlendFactor.DstColor, VkBlendFactor.Zero, VkBlendOp.Add,
+        VkBlendFactor.Zero, VkBlendFactor.One, VkBlendOp.Add));
+
     private readonly int _meshIndex;
 
     private readonly ResourceHandle<FlverResource> _resource;
@@ -60,6 +66,7 @@ public unsafe class FlverSubmeshProvider : MeshProvider
             MaterialBlending.Alpha => BlendStateDescription.SingleAlphaBlend,
             MaterialBlending.Add => BlendStateDescription.SingleAdditiveBlend,
             MaterialBlending.Subtract => SubtractBlend,
+            MaterialBlending.Multiply => MultiplyBlend,
             _ => BlendStateDescription.SingleOverrideBlend
         };
 

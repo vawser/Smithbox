@@ -413,6 +413,10 @@ public static class CharacterComposition
 
         List<MeshProvider> providers = new();
 
+        // With face parts (fg_), the body's head is the skull they sit on: in ER a face part is only the front of the
+        // head, and the body's head mesh (mask 3) is the back of it. Without them the head is left out (see HideHead)
+        var hasFace = appearance.Parts.Any(p => p.Name.StartsWith("fg_", StringComparison.OrdinalIgnoreCase));
+
         foreach (CharacterPart part in appearance.Parts)
         {
             ResourceDescriptor asset = ModelLocator.GetPartsModel(project, part.Name, part.Name);
@@ -426,7 +430,10 @@ public static class CharacterComposition
             var isBody = part.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase);
 
             provider.HideBodyHair = isBody;
-            provider.HideHead = isBody && project.Descriptor.ProjectType is ProjectType.ER;
+            // The body's own default face (fc_m_0100's P[FG_A_0100] mesh) is never wanted: a face part replaces it,
+            // and without one the head is left out with it
+            provider.HideHead = isBody && !hasFace && project.Descriptor.ProjectType is ProjectType.ER;
+            provider.HideFace = isBody && project.Descriptor.ProjectType is ProjectType.ER;
 
             providers.Add(provider);
 

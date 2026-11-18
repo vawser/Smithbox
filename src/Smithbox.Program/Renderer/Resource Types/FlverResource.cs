@@ -485,6 +485,11 @@ public class FlverResource : IResource, IDisposable
             {
                 LookupTexture(FlverMaterial.TextureType.CustomizeMaskTextureResource, dest, slots.MaskType, "", mtd);
             }
+
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin && slots.StubbleType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.StubbleType, "", mtd);
+            }
         }
 
         if (dest.Definition?.SurfaceType != null)
@@ -742,12 +747,33 @@ public class FlverResource : IResource, IDisposable
             // A ChrCustomize colouring: the shader makes the albedo from the colour (hair) or re-tints the texture to it
             // (skin), so the colour goes in the customize entry, not the tint
             dest.AlbedoFromColor = !hasAlbedo;
-            dest.Customize = new MaterialCustomize
+            dest.Customize = mode switch
             {
-                Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], customize.RootBlack),
-                Params = new Vector4(customize.WhiteDensity, customize.RootChannel, customize.RootMasked ? 1 : 0, mode),
-                MaskTiling = dest.CustomizeMaskTiling
+                MaterialCustomize.ModeEye => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], customize.Cataract),
+                    Params = new Vector4(customize.Iris[0], customize.Iris[1], customize.Iris[2], customize.Pupil),
+                    MaskTiling = dest.CustomizeMaskTiling
+                },
+                MaterialCustomize.ModeSkin => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], 0),
+                    Params = new Vector4(customize.StubbleAmount, 1, 1, mode),
+                    MaskTiling = dest.CustomizeMaskTiling
+                },
+                _ => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], customize.RootBlack),
+                    Params = new Vector4(customize.WhiteDensity, customize.RootChannel, customize.RootMasked ? 1 : 0, mode),
+                    MaskTiling = dest.CustomizeMaskTiling
+                }
             };
+            dest.CustomizeExtra = mode == MaterialCustomize.ModeEye
+                ? new MaterialCustomizeExtra
+                {
+                    A = new Vector4(customize.CataractColor[0], customize.CataractColor[1], customize.CataractColor[2], customize.IrisScale)
+                }
+                : MaterialCustomizeExtra.Default;
         }
         else if (!hasAlbedo && definition.Slots?.Color is { } slotColor)
         {
@@ -774,6 +800,12 @@ public class FlverResource : IResource, IDisposable
             MaterialDefinition.BlendModeSubtract => MaterialBlending.Subtract,
             _ => MaterialBlending.Opaque
         };
+
+        // A recipe that knows the shader's blending better than its g_BlendMode says (ER's [EyeAO]: multiply)
+        if (definition.Slots?.Blending is { } recipeBlending)
+        {
+            dest.Blending = recipeBlending;
+        }
 
         dest.DepthWrite = dest.Blending == MaterialBlending.Opaque && !definition.DisableDepthWrite;
         dest.MeshDecal = definition.MeshDecal;
@@ -4212,6 +4244,8 @@ public class FlverResource : IResource, IDisposable
             DetailStackBackNormalTextureResource,
             // The mask of a ChrCustomize colouring (MaterialCustomize): root and white hair, or where skin is tinted
             CustomizeMaskTextureResource,
+            // The skin's beard stubble (MaterialCustomize.SecondTex)
+            CustomizeStubbleTextureResource,
             TextureResourceCount
         }
 
@@ -4307,8 +4341,14 @@ public class FlverResource : IResource, IDisposable
         /// </summary>
         public MaterialCustomize? Customize;
 
+        /// <summary>Uploaded straight after <see cref="Customize"/> (the eye's further values)</summary>
+        public MaterialCustomizeExtra CustomizeExtra = MaterialCustomizeExtra.Default;
+
         /// <summary>The tiling of the customize mask, from its sampler</summary>
         public Vector2 CustomizeMaskTiling = Vector2.One;
+
+        /// <summary>The tiling of the skin's stubble texture, from its sampler</summary>
+        public Vector2 CustomizeStubbleTiling = Vector2.One;
 
         /// <summary>Tiling and scroll of the layers past the second, gathered as textures are found</summary>
         public MaterialLayerTiling LayerTiling = MaterialLayerTiling.Default;
@@ -4601,6 +4641,9 @@ public class FlverResource : IResource, IDisposable
                 case TextureType.CustomizeMaskTextureResource:
                     CustomizeMaskTiling = new Vector2(tiling[0], tiling[1]);
                     break;
+                case TextureType.CustomizeStubbleTextureResource:
+                    CustomizeStubbleTiling = new Vector2(tiling[0], tiling[1]);
+                    break;
                 case TextureType.DetailAlbedoTextureResource:
                     DetailTiling.X = tiling[0];
                     DetailTiling.Y = tiling[1];
@@ -4849,7 +4892,21 @@ public class FlverResource : IResource, IDisposable
                 SetMaterialTexture(TextureType.CustomizeMaskTextureResource, ref mask, 0);
                 customize.MaskTex = mask;
                 customize.MaskTiling = CustomizeMaskTiling;
-                customized = new MaterialWithCustomize { Material = MaterialData, Shading = Shading, Effects = Effects, Customize = customize };
+
+                // The skin's stubble texture and its tiling (Params.yz)
+                if (CustomizeMode(Definition) == MaterialCustomize.ModeSkin)
+                {
+                    ushort stubble = 0;
+                    SetMaterialTexture(TextureType.CustomizeStubbleTextureResource, ref stubble, 0);
+                    customize.SecondTex = stubble;
+                    customize.Params.Y = CustomizeStubbleTiling.X;
+                    customize.Params.Z = CustomizeStubbleTiling.Y;
+                }
+
+                customized = new MaterialWithCustomize
+                {
+                    Material = MaterialData, Shading = Shading, Effects = Effects, Customize = customize, Extra = CustomizeExtra
+                };
             }
 
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>

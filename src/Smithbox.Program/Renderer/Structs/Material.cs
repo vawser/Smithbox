@@ -213,7 +213,8 @@ public unsafe struct MaterialDeform
 ///     <item>Hair: the albedo is <c>sat(1 + root · vertex colour − Color.w) · Color.rgb</c>, lerped to a grey-white by
 ///     <c>sat(pow(Params.x · 2.5 · mask.x, 5))</c>. root is the mask's y (Params.y 1) or z (2), or 1 if Params.z is 0</item>
 ///     <item>Skin: the albedo texture is re-tinted to Color.rgb (divided by the texture's own skin tone) where the
-///     mask's z is 0</item>
+///     mask's z is 0, then darkened by the beard stubble: <c>mix(1, stubble.rgb, sat(2 · Params.x) · mask.y)</c>, the
+///     stubble texture (<see cref="SecondTex" />) tiled by Params.yz</item>
 ///     </list>
 ///     A face's own colours are written here by the FaceGen Editor's FaceTinter.
 /// </summary>
@@ -223,7 +224,10 @@ public struct MaterialCustomize
     /// <summary>rgb: the colour (hair color_4, skin color_3); w: the hair's root darkness (float_14)</summary>
     public Vector4 Color;
 
-    /// <summary>x: the hair's white density (float_0), y: the root mask channel (1 y, 2 z), z: 1 if the root is masked</summary>
+    /// <summary>
+    ///     Hair: x the white density (float_0), y the root mask channel (1 y, 2 z), z 1 if the root is masked.
+    ///     Skin: x the stubble amount (float_14), yz the stubble texture's tiling. w: the mode
+    /// </summary>
     public Vector4 Params;
 
     /// <summary>The tiling of the mask (Mask3Map)</summary>
@@ -232,10 +236,37 @@ public struct MaterialCustomize
     /// <summary>The mask's texture index, 0 until it loads (then read as white)</summary>
     public uint MaskTex;
 
-    public uint Pad;
+    /// <summary>Skin: the stubble texture's index, 0 until it loads (then no stubble)</summary>
+    public uint SecondTex;
 
     public const uint ModeHair = 1;
     public const uint ModeSkin = 2;
+
+    /// <summary>
+    ///     Eye (ER's [Eye]): Color.rgb the sclera colour (multiplies the texture), Color.w the cataract amount, Params.rgb
+    ///     the iris colour (where the mask's x is), Params.w the pupil's value (where the mask's y is), and in
+    ///     <see cref="MaterialCustomizeExtra" /> the cataract colour (A.rgb, over the pupil) and the iris scale (A.w,
+    ///     scaling every UV about the centre)
+    /// </summary>
+    public const uint ModeEye = 3;
+
+    /// <summary>Shade (ER's [EyeAO]): the albedo becomes mix(Color.rgb, 1, albedo), a multiplier no darker than Color</summary>
+    public const uint ModeShade = 4;
+}
+
+/// <summary>
+///     What doesn't fit in <see cref="MaterialCustomize" />, the entry after it (in the blend tiling entry's place)
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialCustomizeExtra
+{
+    /// <summary>Eye: rgb the cataract colour, w the iris scale</summary>
+    public Vector4 A;
+
+    public Vector4 B;
+    public Vector4 C;
+
+    public static MaterialCustomizeExtra Default => new() { A = new Vector4(1, 1, 1, 1) };
 }
 
 /// <summary>
@@ -248,6 +279,7 @@ public struct MaterialWithCustomize
     public MaterialShading Shading;
     public MaterialEffects Effects;
     public MaterialCustomize Customize;
+    public MaterialCustomizeExtra Extra;
 }
 
 /// <summary>

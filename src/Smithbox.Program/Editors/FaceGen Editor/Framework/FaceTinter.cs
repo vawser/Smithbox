@@ -52,8 +52,75 @@ public sealed class FaceTinter
     private readonly ProjectEntry Project;
 
     // The materials that have been coloured, with their own values
-    private sealed record Own(Vector4 DiffuseAlpha, MaterialCustomize? Customize);
+    private sealed record Own(Vector4 DiffuseAlpha, MaterialCustomize? Customize, MaterialCustomizeExtra Extra);
     private readonly Dictionary<FlverResource.FlverMaterial, Own> Tinted = new();
+
+    private Own OwnOf(FlverResource.FlverMaterial material)
+    {
+        if (!Tinted.TryGetValue(material, out var own))
+            Tinted[material] = own = new Own(material.Shading.DiffuseAlpha, material.Customize, material.CustomizeExtra);
+
+        return own;
+    }
+
+    /// <summary>
+    /// An eye material's iris colour, sclera colour, cataract and its colour, and iris scale, from the side's fields
+    /// (eyeR_irisColor_R, eyeR_scleraColor_R, eyeR_cataract, eyeR_cataractColor_R, eyeR_irisScale; or eyeL_). Fields
+    /// the row doesn't have keep the material's own values. Null if the row has no fields for the side.
+    /// </summary>
+    private string? TintEye(FlverResource.FlverMaterial material, Param.Row row, IReadOnlyDictionary<string, int>? overrides)
+    {
+        var name = $"{material.MaterialName} {material.FlverMaterialName}";
+        var side = name.Contains("Left", StringComparison.OrdinalIgnoreCase) ? "eyeL"
+            : name.Contains("Right", StringComparison.OrdinalIgnoreCase) ? "eyeR"
+            : null;
+
+        if (side == null || OwnOf(material) is not { Customize: { } own } original)
+            return null;
+
+        Vector3? ColorOf(string snake, string pascal) =>
+            FindField(row, side, snake + "_R", pascal + "_R") is { } red ? new Vector3(
+                ToValue(red, Byte(row, red, overrides)),
+                ToValue(red[..^1] + "G", Byte(row, red[..^1] + "G", overrides)),
+                ToValue(red[..^1] + "B", Byte(row, red[..^1] + "B", overrides))) : null;
+
+        float? ValueOf(string snake, string pascal) =>
+            FindField(row, side, snake, pascal) is { } field ? ToValue(field, Byte(row, field, overrides)) : null;
+
+        var iris = ColorOf("irisColor", "IrisColor");
+        var sclera = ColorOf("scleraColor", "ScleraColor");
+        var cataractColor = ColorOf("cataractColor", "CataractColor");
+        var cataract = ValueOf("cataract", "Cataract");
+        var irisScale = ValueOf("irisScale", "IrisScale");
+
+        if (iris == null && sclera == null && cataract == null)
+            return null;
+
+        // The sclera multiplies the whole eye texture (Color.rgb, float3_5); the iris colour is laid over the mask's x
+        // (Params.rgb, float3_0)
+        var wanted = own;
+        var ownSclera = new Vector3(own.Color.X, own.Color.Y, own.Color.Z);
+        var ownIris = new Vector3(own.Params.X, own.Params.Y, own.Params.Z);
+        wanted.Color = new Vector4(sclera ?? ownSclera, cataract ?? own.Color.W);
+        wanted.Params = new Vector4(iris ?? ownIris, own.Params.W);
+
+        var extra = original.Extra;
+        extra.A = new Vector4(cataractColor ?? new Vector3(extra.A.X, extra.A.Y, extra.A.Z), irisScale ?? extra.A.W);
+
+        var report = $"{material.FlverMaterialName} {side} sclera {wanted.Color.X:0.00} {wanted.Color.Y:0.00} {wanted.Color.Z:0.00} " +
+                     $"iris {wanted.Params.X:0.00} {wanted.Params.Y:0.00} {wanted.Params.Z:0.00} cataract {wanted.Color.W:0.00} scale {extra.A.W:0.00}";
+
+        if (material.Customize is { } current && current.Color == wanted.Color && current.Params == wanted.Params &&
+            material.CustomizeExtra.A == extra.A)
+        {
+            return report;
+        }
+
+        material.Customize = wanted;
+        material.CustomizeExtra = extra;
+        material.UpdateMaterial();
+        return report;
+    }
 
     public FaceTinter(ProjectEntry project)
     {
@@ -121,20 +188,38 @@ public sealed class FaceTinter
                 if (material.Definition?.Slots is not { CharacterColor: { } wants } slots)
                     continue;
 
+                // Eyes: by the side the material is (P[FG_A_1500]_eye_Right / _eye_Left), from eyeR_* / eyeL_*
+                if (FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeEye)
+                {
+                    if (TintEye(material, row, overrides) is { } eyeReport)
+                        tinted.Add(eyeReport);
+
+                    continue;
+                }
+
                 var colorName = wants.Equals(PartColor, StringComparison.OrdinalIgnoreCase) ? partColorName : wants;
 
                 if (colorName == null || LookOf(colorName) is not { } look)
                     continue;
 
-                if (!Tinted.TryGetValue(material, out var own))
-                    Tinted[material] = own = new Own(material.Shading.DiffuseAlpha, material.Customize);
+                var own = OwnOf(material);
 
                 if (own.Customize is { } customize)
                 {
                     // The colour, and for hair the root darkness and white density where the face has them
                     var wanted = customize;
-                    wanted.Color = new Vector4(look.Color, look.RootBlack ?? customize.Color.W);
-                    wanted.Params.X = look.WhiteDensity ?? customize.Params.X;
+
+                    if (FlverResource.CustomizeMode(material.Definition) == MaterialCustomize.ModeSkin)
+                    {
+                        // Skin: the colour, and the beard stubble (face_beard / faceBeard)
+                        wanted.Color = new Vector4(look.Color, customize.Color.W);
+                        wanted.Params.X = StubbleOf(row, overrides) ?? customize.Params.X;
+                    }
+                    else
+                    {
+                        wanted.Color = new Vector4(look.Color, look.RootBlack ?? customize.Color.W);
+                        wanted.Params.X = look.WhiteDensity ?? customize.Params.X;
+                    }
 
                     tinted.Add($"{material.FlverMaterialName} {colorName} {Describe(wanted)}");
 
@@ -179,6 +264,7 @@ public sealed class FaceTinter
         {
             material.Shading.DiffuseAlpha = own.DiffuseAlpha;
             material.Customize = own.Customize;
+            material.CustomizeExtra = own.Extra;
             material.UpdateMaterial();
         }
 
@@ -223,11 +309,16 @@ public sealed class FaceTinter
         return null;
     }
 
+    /// <summary>The face's beard stubble on the skin (face_beard, faceBeard), or null if the row has none</summary>
+    private float? StubbleOf(Param.Row row, IReadOnlyDictionary<string, int>? overrides) =>
+        FindField(row, "face", "beard", "Beard") is { } field ? ToValue(field, Byte(row, field, overrides)) : null;
+
     private static float Ratio(float wanted, float own) => own > 1e-4f ? wanted / own : wanted;
 
     private static string Describe(MaterialCustomize c) =>
         $"{c.Color.X:0.00} {c.Color.Y:0.00} {c.Color.Z:0.00}" +
-        (c.Params.W == MaterialCustomize.ModeHair ? $" root {c.Color.W:0.00} white {c.Params.X:0.00}" : "");
+        (c.Params.W == MaterialCustomize.ModeHair ? $" root {c.Color.W:0.00} white {c.Params.X:0.00}"
+            : c.Params.W == MaterialCustomize.ModeSkin ? $" stubble {c.Params.X:0.00}" : "");
 
     private static int Byte(Param.Row row, string field, IReadOnlyDictionary<string, int>? overrides)
     {

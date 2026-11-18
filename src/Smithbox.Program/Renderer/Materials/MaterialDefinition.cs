@@ -92,7 +92,13 @@ public enum MaterialBlending
     Opaque,
     Alpha,
     Add,
-    Subtract
+    Subtract,
+
+    /// <summary>
+    /// The scene behind is multiplied by the material's unlit albedo (ER's [EyeAO], the shade over the eyes). Set by a
+    /// recipe's <see cref="MaterialSlotRecipe.Blend"/>, as its g_BlendMode (3) means water in the older games
+    /// </summary>
+    Multiply
 }
 
 /// <summary>
@@ -356,6 +362,24 @@ public class MaterialSlotRecipe
 
     /// <summary>Hair: the bool param that turns the root mask on (else the root is 1) (snp_0_bool_2)</summary>
     public string? RootMasked { get; set; }
+
+    /// <summary>Skin: the texture slot of the beard stubble ([Skin] 3, AAT500_Beard_01_a)</summary>
+    public int? Stubble { get; set; }
+
+    /// <summary>Skin: the param of the stubble amount (snp_0_float_14, FaceParam face_beard)</summary>
+    public string? StubbleAmount { get; set; }
+
+    /// <summary>Eye: the params of the iris colour (snp_0_float3_0, over the mask's x), the cataract amount
+    /// (snp_0_float_30) and colour (snp_0_float3_2), the pupil's value (snp_0_float_32) and the iris scale
+    /// (snp_0_float_12). <see cref="Color"/> is the sclera colour (snp_0_float3_5, multiplying the texture)</summary>
+    public string? Iris { get; set; }
+    public string? Cataract { get; set; }
+    public string? CataractColor { get; set; }
+    public string? Pupil { get; set; }
+    public string? IrisScale { get; set; }
+
+    /// <summary>How the material blends, in place of its g_BlendMode: "Multiply" (<see cref="MaterialBlending.Multiply"/>)</summary>
+    public string? Blend { get; set; }
 }
 
 /// <summary>A <see cref="MaterialSlotRecipe"/> with the sampler types and values of one material filled in</summary>
@@ -387,6 +411,20 @@ public class MaterialResolvedSlots
     public int RootChannel { get; set; } = 2;
 
     public bool RootMasked { get; set; }
+
+    /// <summary>The sampler type of the skin's stubble texture, and the material's own amount</summary>
+    public string? StubbleType { get; set; }
+    public float StubbleAmount { get; set; }
+
+    /// <summary>The eye's own values, see <see cref="MaterialSlotRecipe.Iris"/></summary>
+    public float[] Iris { get; set; } = [1, 1, 1];
+    public float Cataract { get; set; }
+    public float[] CataractColor { get; set; } = [1, 1, 1];
+    public float Pupil { get; set; }
+    public float IrisScale { get; set; } = 1;
+
+    /// <summary>The recipe's blending, in place of the material's own, or null</summary>
+    public MaterialBlending? Blending { get; set; }
 }
 
 /// <summary>A <see cref="MaterialFurRecipe"/> with the textures of one material filled in</summary>
@@ -1246,9 +1284,17 @@ public class MaterialDefinition
             {
                 "hair" => MaterialCustomize.ModeHair,
                 "skin" => MaterialCustomize.ModeSkin,
+                "eye" => MaterialCustomize.ModeEye,
+                "shade" => MaterialCustomize.ModeShade,
                 _ => 0
             },
-            MaskType = TypeOf(recipe.Mask)
+            Blending = recipe.Blend?.ToLowerInvariant() switch
+            {
+                "multiply" => MaterialBlending.Multiply,
+                _ => null
+            },
+            MaskType = TypeOf(recipe.Mask),
+            StubbleType = TypeOf(recipe.Stubble)
         };
 
         float ParamOf(string? name, float fallback) =>
@@ -1258,6 +1304,16 @@ public class MaterialDefinition
         resolved.WhiteDensity = ParamOf(recipe.WhiteDensity, 0);
         resolved.RootChannel = ParamOf(recipe.RootChannel, 0) != 0 ? 1 : 2;
         resolved.RootMasked = ParamOf(recipe.RootMasked, 0) != 0;
+        resolved.StubbleAmount = ParamOf(recipe.StubbleAmount, 0);
+
+        float[] ColorOf(string? name, float[] fallback) =>
+            name != null && Params.TryGetValue(name, out var value) && value.Length >= 3 ? value[..3] : fallback;
+
+        resolved.Iris = ColorOf(recipe.Iris, resolved.Iris);
+        resolved.Cataract = ParamOf(recipe.Cataract, 0);
+        resolved.CataractColor = ColorOf(recipe.CataractColor, resolved.CataractColor);
+        resolved.Pupil = ParamOf(recipe.Pupil, 0);
+        resolved.IrisScale = ParamOf(recipe.IrisScale, 1);
 
         // A colouring needs its colour: without it the material is drawn as before
         if (resolved.Customize != 0 && resolved.Color == null)
@@ -1266,7 +1322,7 @@ public class MaterialDefinition
         }
 
         if (resolved.AlbedoType != null || resolved.NormalType != null || resolved.Color != null || resolved.AlphaFromNormal ||
-            resolved.CharacterColor != null || resolved.Customize != 0)
+            resolved.CharacterColor != null || resolved.Customize != 0 || resolved.Blending != null)
         {
             Slots = resolved;
         }

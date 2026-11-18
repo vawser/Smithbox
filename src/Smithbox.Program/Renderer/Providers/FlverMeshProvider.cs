@@ -23,9 +23,15 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     public bool HideBodyHair = false;
 
     /// <summary>
-    /// Leaves out the head of a body model, along with any face mesh that sits on it
+    /// Leaves out the head of a body model (its mask 3 mesh: in ER the skull a face part sits on)
     /// </summary>
     public bool HideHead = false;
+
+    /// <summary>
+    /// Leaves out a face mesh a body model carries itself (ER's fc_m_0100: a default face with a P[FG_...] material),
+    /// which a face part replaces
+    /// </summary>
+    public bool HideFace = false;
 
     // Every mesh of an Elden Ring body model has its part of the body as its mask, and this one is the head
     private const int HeadMask = 3;
@@ -44,7 +50,7 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     }
     private void UpdateModelMasks()
     {
-        if (!ModelMasks.Any() && !HideBodyHair && !HideHead)
+        if (!ModelMasks.Any() && !HideBodyHair && !HideHead && !HideFace)
         {
             _activeSubmeshes = _allSubmeshes;
             return;
@@ -63,8 +69,12 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
                     return false;
                 }
 
-                if (HideHead && (material.MaterialMask == HeadMask ||
-                    material.MaterialName?.StartsWith(FaceMaterialPrefix, StringComparison.OrdinalIgnoreCase) == true))
+                if (HideHead && material.MaterialMask == HeadMask)
+                {
+                    return false;
+                }
+
+                if (HideFace && material.MaterialName?.StartsWith(FaceMaterialPrefix, StringComparison.OrdinalIgnoreCase) == true)
                 {
                     return false;
                 }
