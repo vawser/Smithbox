@@ -44,7 +44,6 @@
 
 - Improve Map Data view: mainly properties
 - Toggle option: clickable icon at centre of unselected wireframe regions
-- Model Browser: allow for all browsing with nothing selected, double-click creates new entity with said model
 
 #----------------------------------------------------
 # Model Editor TODO

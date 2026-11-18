@@ -287,6 +287,7 @@ public class CFG
     public bool MapEditor_Model_Selector_Show_Other_Maps = true;
     public bool MapEditor_Model_Selector_Prompt_Map_Piece_Port = true;
     public bool MapEditor_Model_Selector_Port_Textures = true;
+    public bool MapEditor_Model_Selector_Load_Textures_On_Create = true;
 
     public MapObjectNameDisplayType MapEditor_MapObjectName_DisplayType = MapObjectNameDisplayType.Internal_Community_FMG;
 

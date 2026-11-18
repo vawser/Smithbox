@@ -38,6 +38,12 @@ public class EntAddAction : ViewportAction, IMapHistoryItem
     /// </summary>
     public IReadOnlyList<MsbEntity> Entities => Added;
 
+    /// <summary>
+    /// Whether executing selects the added objects (in place of the current selection). The Model Browser turns this
+    /// off, so that nothing stays selected and each double-click creates another object.
+    /// </summary>
+    public bool SelectAdded { get; init; } = true;
+
     public EntAddAction(MapEditorView view, MapContainer map, List<MsbEntity> objects, Entity parent)
     {
         View = view;
@@ -97,7 +103,8 @@ public class EntAddAction : ViewportAction, IMapHistoryItem
 
             if (msbEnt.RenderSceneMesh != null)
             {
-                msbEnt.RenderSceneMesh.RenderSelectionOutline = true;
+                // Only outlined when Execute selects it
+                msbEnt.RenderSceneMesh.RenderSelectionOutline = SelectAdded;
                 msbEnt.RenderSceneMesh.SetSelectable(msbEnt);
                 msbEnt.RenderSceneMesh.AutoRegister = true;
                 msbEnt.RenderSceneMesh.Register();
@@ -146,10 +153,13 @@ public class EntAddAction : ViewportAction, IMapHistoryItem
             AtlasEdit.Redo();
         }
 
-        View.ViewportSelection.ClearSelection();
-        foreach (MsbEntity c in Added)
+        if (SelectAdded)
         {
-            View.ViewportSelection.AddSelection(c);
+            View.ViewportSelection.ClearSelection();
+            foreach (MsbEntity c in Added)
+            {
+                View.ViewportSelection.AddSelection(c);
+            }
         }
 
         return ActionEvent.ObjectAddedRemoved;

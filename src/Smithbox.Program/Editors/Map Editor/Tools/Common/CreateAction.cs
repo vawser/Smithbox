@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
+using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -395,9 +396,154 @@ public class CreateAction
         View.DelayPicking();
     }
 
-    private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)
+    /// <summary>
+    /// The first of the named part classes the game's MSB can save (e.g. "Asset", then "Object"), or null.
+    /// </summary>
+    public Type GetPartClass(params string[] names)
+    {
+        foreach (var name in names)
+        {
+            var type = PartsClasses.FirstOrDefault(p => p.Item2.Name == name).Item2;
+
+            if (type != null)
+                return type;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Creates a part of the given class using the given model, in the Create tool's target map, at the placement
+    /// orb. Used by the Model Browser when nothing is selected.
+    /// </summary>
+    public void ApplyModelCreation(Type partType, string modelName)
+    {
+        if (!View.Selection.IsAnyMapLoaded())
+        {
+            Smithbox.LogError<CreateAction>("No map has been loaded.");
+            return;
+        }
+
+        var map = View.Selection.ResolveTargetMap(TargetMap);
+
+        if (map == null)
+        {
+            Smithbox.LogError<CreateAction>("No loaded map has been targeted. Pick one in the Create tool first.");
+            return;
+        }
+
+        if (partType == null)
+        {
+            Smithbox.LogError<CreateAction>("This game has no part type for that kind of model.");
+            return;
+        }
+
+        // TEMP diagnostic: remove once placement is confirmed
+        var orbBefore = GetOrbPosition();
+        var cameraBefore = GetCameraPosition();
+
+        // Not selected, so the browser stays in create mode for quick creation: the camera frames it instead
+        var created = AddNewEntity(partType, MsbEntityType.Part, map, select: false, setup: entry =>
+        {
+            var prop = entry.GetType().GetProperty("ModelName");
+
+            if (prop != null && prop.CanWrite && prop.PropertyType == typeof(string))
+                prop.SetValue(entry, modelName);
+        });
+
+        // The model's own container holds its mesh, but its textures can be in another the map load didn't request
+        if (CFG.Current.MapEditor_Model_Selector_Load_Textures_On_Create)
+        {
+            if (string.IsNullOrEmpty(created.ModelName))
+                created.ModelName = modelName;
+
+            created.LoadModelTextures();
+        }
+
+        // TEMP diagnostic: remove once placement is confirmed
+        Smithbox.Log(this, $"[Model Browser Create] {created.Name}: orb {orbBefore}, camera {cameraBefore}, " +
+            $"part position {created.GetPropertyValue<Vector3>("Position")}, entity world {created.GetWorldMatrix().Translation}");
+
+        // The mesh loads asynchronously, so its bounds aren't known yet: framed by Update once they are
+        PendingFrame = (created, DateTime.UtcNow);
+
+        Smithbox.Log(this, $"Created {created.Name} in {map.Name}.");
+
+        View.DelayPicking();
+    }
+
+    // The object created by the Model Browser, waiting for its mesh so it can be framed
+    private (MsbEntity Entity, DateTime Created)? PendingFrame;
+
+    // How long to wait for the mesh before framing the object's position instead
+    private static readonly TimeSpan PendingFrameTimeout = TimeSpan.FromSeconds(3);
+
+    private Vector3 GetOrbPosition()
+        => View.ViewportHandler.ActiveViewport?.Viewport is global::StudioCore.Editors.Viewport.VulkanViewport
+            ? View.ViewportWindow.GetPlacementPosition() : Vector3.Zero;
+
+    private Vector3 GetCameraPosition()
+        => View.ViewportHandler.ActiveViewport?.Viewport?.ViewportCamera?.CameraTransform.Position ?? Vector3.Zero;
+
+    /// <summary>
+    /// Frames the object the Model Browser created once its mesh has loaded. Runs once per frame.
+    /// </summary>
+    public void Update()
+    {
+        if (PendingFrame is not var (ent, created))
+            return;
+
+        // Undone, or the map unloaded, before it was framed
+        if (ent.Container is not MapContainer map || map.LoadState is not MapContentLoadState.Loaded || !map.Objects.Contains(ent))
+        {
+            PendingFrame = null;
+            return;
+        }
+
+        if (View.ViewportHandler.ActiveViewport?.Viewport is not global::StudioCore.Editors.Viewport.VulkanViewport)
+            return;
+
+        var position = ent.GetWorldMatrix().Translation;
+        BoundingBox box;
+
+        var bounds = ent.RenderSceneMesh != null ? BoundingBoxHelper.GetDerivedBoundingBox(ent) : default;
+        var loaded = Vector3.Distance(bounds.Min, bounds.Max) > 0.001f;
+
+        if (loaded)
+        {
+            box = bounds;
+        }
+        else if (DateTime.UtcNow - created > PendingFrameTimeout)
+        {
+            // No mesh came: a small box around where it was placed
+            var pad = new Vector3(2.0f);
+            box = new BoundingBox(position - pad, position + pad);
+        }
+        else
+        {
+            return;
+        }
+
+        PendingFrame = null;
+
+        // TEMP diagnostic: remove once placement is confirmed
+        var cameraBefore = GetCameraPosition();
+
+        View.FrameAction.ApplyViewportFrameWithBox(box);
+
+        // TEMP diagnostic: remove once placement is confirmed
+        Smithbox.Log(this, $"[Model Browser Create] framed {ent.Name}: mesh loaded {loaded}, entity world {position}, " +
+            $"box {box.Min} - {box.Max}, camera {cameraBefore} -> {GetCameraPosition()}");
+    }
+
+    private MsbEntity AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null, Action<object> setup = null,
+        bool select = true)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
+
+        // Set before the entity is made, so the name below is built from it
+        setup?.Invoke(newent);
+
         MsbEntity obj = new(View.Universe, map, newent, etype);
 
         // The type's default name is a placeholder (ER assets are all "AEGxxx_xxx_xxxx"), or empty, so each new
@@ -423,8 +569,10 @@ public class CreateAction
 
         PlaceAtPlacementOrb(newent, parent);
 
-        EntAddAction act = new(View, map, new List<MsbEntity> { obj }, parent);
+        EntAddAction act = new(View, map, new List<MsbEntity> { obj }, parent) { SelectAdded = select };
         View.ViewportActionManager.ExecuteAction(act);
+
+        return obj;
     }
 
     /// <summary>

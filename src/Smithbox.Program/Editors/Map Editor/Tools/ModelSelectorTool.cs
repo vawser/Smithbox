@@ -67,10 +67,14 @@ public class ModelSelectorTool
 
         GUI.Spacer();
 
-        GUI.WrappedText("Use this to switch a selected map object to a different model.");
+        GUI.WrappedText("Use this to switch a selected map object to a different model. " +
+            "With nothing selected, double-click a model to create a new map object with it.");
 
         GUI.Spacer();
         GUI.SimpleHeader("Options", "");
+
+        ImGui.Checkbox("Load Textures on Create##modelSelectorLoadTexturesOnCreate", ref CFG.Current.MapEditor_Model_Selector_Load_Textures_On_Create);
+        GUI.Tooltip("When a map object is created from a model (with nothing selected), load that model's textures, which may be in a texture file the map didn't load.");
 
         ImGui.Checkbox("Update Name on Switch", ref CFG.Current.MapEditor_Model_Selector_Update_Name);
         GUI.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
@@ -116,10 +120,16 @@ public class ModelSelectorTool
             PreviewBrowser.DisplayOptions();
         }
 
-        EditorFilters.DisplayFramedListFilter("modelSelector", ref ModelFilter, ref ExactModelFilter);
-
         // The selection can hold non-entities (a reference to an unloaded map), which have no model
         var firstSelection = View.ViewportSelection.GetSelection().OfType<Entity>().FirstOrDefault();
+
+        // Nothing selected: browse a category of models, and create a new object from one
+        if (firstSelection == null)
+        {
+            DisplayCreateCategoryPicker();
+        }
+
+        EditorFilters.DisplayFramedListFilter("modelSelector", ref ModelFilter, ref ExactModelFilter);
 
         if (firstSelection != null)
         {
@@ -161,10 +171,96 @@ public class ModelSelectorTool
         }
         else
         {
-            ImGui.Text("You must select a valid map object first.");
+            DisplayCreateModels(usePreviews);
         }
 
         ImGui.EndChild();
+    }
+
+    // The category browsed when nothing is selected
+    private ModelPreviewKind CreateCategory = ModelPreviewKind.Character;
+
+    private static string GetCategoryName(ModelPreviewKind kind) => kind switch
+    {
+        ModelPreviewKind.Character => "Characters",
+        ModelPreviewKind.Asset => "Assets",
+        _ => "Map Pieces"
+    };
+
+    private void DisplayCreateCategoryPicker()
+    {
+        GUI.Spacer();
+        GUI.SimpleHeader("Category", "The kind of model to browse. Double-click one to create a new map object with it.");
+
+        ImGui.SetNextItemWidth(-1);
+
+        if (ImGui.BeginCombo("##modelSelectorCreateCategory", GetCategoryName(CreateCategory)))
+        {
+            foreach (ModelPreviewKind kind in Enum.GetValues(typeof(ModelPreviewKind)))
+            {
+                if (ImGui.Selectable($"{GetCategoryName(kind)}##modelSelectorCreateCategory_{kind}", kind == CreateCategory))
+                {
+                    CreateCategory = kind;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        GUI.Tooltip("The kind of model to browse. Double-click one to create a new map object with it.");
+    }
+
+    /// <summary>
+    /// The part class a model of the category is created as: Enemy for characters, Asset (or Object before Elden Ring)
+    /// for assets, and MapPiece for map pieces. Null if the game's MSB has no such part it can save.
+    /// </summary>
+    private Type GetCreatePartType(ModelPreviewKind kind) => kind switch
+    {
+        ModelPreviewKind.Character => View.CreateAction.GetPartClass("Enemy"),
+        ModelPreviewKind.Asset => View.CreateAction.GetPartClass("Asset", "Object"),
+        _ => View.CreateAction.GetPartClass("MapPiece")
+    };
+
+    /// <summary>
+    /// The models of the chosen category, for when nothing is selected: double-clicking one creates a new part with it
+    /// in the Create tool's target map, at the placement orb.
+    /// </summary>
+    private void DisplayCreateModels(bool usePreviews)
+    {
+        var map = View.Selection.ResolveTargetMap(View.CreateAction.TargetMap);
+
+        if (map == null)
+        {
+            GUI.WrappedText("Load a map (or pick a target map in the Create tool) to create new map objects from these models.");
+            return;
+        }
+
+        if (GetCreatePartType(CreateCategory) == null)
+        {
+            GUI.WrappedText($"This game has no part type that uses {GetCategoryName(CreateCategory).ToLowerInvariant()}.");
+            return;
+        }
+
+        GUI.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color,
+            $"Double-click a model to create it in {map.Name}, at the placement orb.");
+
+        // Map pieces are specific to a map: those of the target map are offered
+        var mapId = CreateCategory is ModelPreviewKind.MapPiece ? map.Name : "";
+
+        // The selection type is unused when creating
+        DisplayModels(CreateCategory, default, mapId, usePreviews, create: true);
+    }
+
+    private void CreateFromChoice(ModelChoice choice, ModelPreviewKind kind)
+    {
+        if (choice == null)
+            return;
+
+        // The asset files are lower case, but the MSBs name them in upper case
+        var modelName = choice.ModelName;
+        if (modelName.StartsWith("aeg", StringComparison.OrdinalIgnoreCase))
+            modelName = modelName.ToUpperInvariant();
+
+        View.CreateAction.ApplyModelCreation(GetCreatePartType(kind), modelName);
     }
 
     // The models on offer, read from the project's files (see ModelFileChoices); rebuilt when the list or filter changes
@@ -295,10 +391,20 @@ public class ModelSelectorTool
         return MapPieceSourceMap;
     }
 
+    /// <param name="create">Nothing is selected: a double-click creates a new object with the model, rather than
+    /// switching the selection to it</param>
     private void DisplayModels(ModelPreviewKind kind, FileSelectionType selectionType, string mapId, bool usePreviews,
-        string portTargetMap = null)
+        string portTargetMap = null, bool create = false)
     {
         var choices = GetChoices(kind, mapId);
+
+        void Activate(ModelChoice choice)
+        {
+            if (create)
+                CreateFromChoice(choice, kind);
+            else
+                ApplyChoice(choice, selectionType, mapId, portTargetMap);
+        }
 
         if (choices.Count == 0)
         {
@@ -313,7 +419,7 @@ public class ModelSelectorTool
             PreviewBrowser.SelectedID = _selectedEntry;
 
             PreviewBrowser.Display("modelSelector", PreviewEntries, e =>
-                ApplyChoice(choices.FirstOrDefault(c => c.ID == e.ID), selectionType, mapId, portTargetMap));
+                Activate(choices.FirstOrDefault(c => c.ID == e.ID)));
 
             _selectedEntry = PreviewBrowser.SelectedID;
             return;
@@ -342,17 +448,18 @@ public class ModelSelectorTool
 
                     if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        ApplyChoice(choice, selectionType, mapId, portTargetMap);
+                        Activate(choice);
                     }
                 }
 
-                // Arrow Selection: not for another map's pieces while they are ported, where each pick would prompt
+                // Arrow Selection: not for another map's pieces while they are ported, where each pick would prompt,
+                // nor when creating, where each step would create an object
                 if (ImGui.IsItemHovered() && SelectNextEntry)
                 {
                     SelectNextEntry = false;
                     _selectedEntry = choice.ID;
 
-                    if (portTargetMap == null || !CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port)
+                    if (!create && (portTargetMap == null || !CFG.Current.MapEditor_Model_Selector_Prompt_Map_Piece_Port))
                         ApplyChoice(choice, selectionType, mapId, portTargetMap);
                 }
 

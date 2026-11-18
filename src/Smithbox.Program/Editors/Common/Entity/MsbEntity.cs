@@ -1682,7 +1682,7 @@ public class MsbEntity : Entity
     /// Requests the textures of the current model. Models only load their own container, whereas the
     /// textures of a newly assigned model can be in a separate one that the map load didn't know about.
     /// </summary>
-    private void LoadModelTextures()
+    public void LoadModelTextures()
     {
         if (!CFG.Current.Viewport_Enable_Texturing || string.IsNullOrEmpty(ModelName))
             return;
