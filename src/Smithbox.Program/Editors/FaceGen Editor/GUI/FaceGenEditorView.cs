@@ -1,0 +1,128 @@
+#nullable enable
+using Andre.Formats;
+using Hexa.NET.ImGui;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
+using System;
+
+namespace StudioCore.Editors.FaceGenEditor;
+
+/// <summary>
+/// The FaceGen Editor's one view: the face list, the properties of the active face, and the rows that use it. The
+/// active face (the one last clicked in the list) is held here, so every window shows the same one.
+/// </summary>
+public class FaceGenEditorView
+{
+    public FaceGenEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public FaceListView ListView;
+    public FacePropertiesView PropertiesView;
+    public FaceReferencesView ReferencesView;
+
+    /// <summary>The face param shown, and its active row</summary>
+    public string? ParamName { get; private set; }
+
+    public Param.Row? ActiveRow { get; private set; }
+
+    public FaceGenEditorView(FaceGenEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+
+        ListView = new FaceListView(this);
+        PropertiesView = new FacePropertiesView(this);
+        ReferencesView = new FaceReferencesView(this);
+    }
+
+    public Param? ActiveParam => ParamName != null ? FaceGenParams.GetParam(Project, ParamName) : null;
+
+    /// <summary>Shows a face param, without a row until one is picked</summary>
+    public void ShowParam(string paramName)
+    {
+        if (ParamName == paramName)
+            return;
+
+        ParamName = paramName;
+        ActiveRow = null;
+        ListView.ClearSelection();
+    }
+
+    /// <summary>Shows a row of a face param. False if there is no such row.</summary>
+    public bool Select(string paramName, int rowId)
+    {
+        if (!FaceGenParams.IsFaceParam(Project, paramName))
+            return false;
+
+        if (FaceGenParams.GetParam(Project, paramName)?[rowId] is not { } row)
+            return false;
+
+        Select(paramName, row);
+        return true;
+    }
+
+    public void Select(string paramName, Param.Row row)
+    {
+        ShowParam(paramName);
+        ActiveRow = row;
+        ListView.SelectOnly(row);
+        ListView.ScrollToSelection = true;
+    }
+
+    /// <summary>
+    /// Keeps the active row valid: a reload of the params replaces every row, so the active one is taken again by
+    /// its ID, and a deleted one is dropped
+    /// </summary>
+    private void Revalidate()
+    {
+        var param = ActiveParam;
+
+        if (param == null)
+        {
+            ActiveRow = null;
+            return;
+        }
+
+        if (ActiveRow != null && param.IndexOfRow(ActiveRow) < 0)
+            ActiveRow = param[ActiveRow.ID];
+    }
+
+    // ---- windows
+
+    public void Display(uint dockspaceId)
+    {
+        Revalidate();
+
+        if (CFG.Current.Interface_FaceGenEditor_List)
+            Window($"{LOC.Get("FACEGEN_Window_List")}{ListWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_List, ListView.Display);
+
+        if (CFG.Current.Interface_FaceGenEditor_Properties)
+            Window($"{LOC.Get("FACEGEN_Window_Properties")}{PropertiesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_Properties, PropertiesView.Display);
+
+        if (CFG.Current.Interface_FaceGenEditor_References)
+            Window($"{LOC.Get("FACEGEN_Window_References")}{ReferencesWindowId}", dockspaceId, EditorFocusContext.FaceGenEditor_References, ReferencesView.Display);
+    }
+
+    public const string ListWindowId = "###faceGenEditor_List";
+    public const string PropertiesWindowId = "###faceGenEditor_Properties";
+    public const string ReferencesWindowId = "###faceGenEditor_References";
+
+    private static void Window(string title, uint dockspace, EditorFocusContext focus, Action draw)
+    {
+        ImGui.SetNextWindowDockID(dockspace, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowClass(ref GUI.DockGroup_FaceGenEditorView);
+
+        if (ImGui.Begin(title, GUI.GetInnerWindowFlags()))
+        {
+            if (ImGui.IsWindowFocused(ImGuiFocusedFlags.ChildWindows) ||
+                ImGui.IsWindowHovered(ImGuiHoveredFlags.ChildWindows) && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
+            {
+                FocusManager.SetFocus(focus);
+            }
+
+            draw();
+        }
+
+        ImGui.End();
+    }
+}

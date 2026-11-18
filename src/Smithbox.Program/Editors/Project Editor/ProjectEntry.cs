@@ -346,6 +346,7 @@ public class ProjectEntry
             Handler.FxEditor,
             Handler.CutsceneEditor,
             Handler.ProjectileEditor,
+            Handler.FaceGenEditor,
             Handler.BehaviorEditor,
             Handler.EmevdEditor,
             Handler.EsdEditor,
@@ -479,9 +480,12 @@ public class ProjectEntry
                         }
                     }
 
-                    // The Projectile Editor edits the Param Editor's params, so they are saved while it is shown too
+                    // The Projectile and FaceGen Editors edit the Param Editor's params, so they are saved while
+                    // either is shown too
                     if (CFG.Current.Project_Automatic_Save_Include_Param_Editor &&
-                        Handler.FocusedEditor is ParamEditorScreen or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen)
+                        Handler.FocusedEditor is ParamEditorScreen
+                            or StudioCore.Editors.ProjectileEditor.ProjectileEditorScreen
+                            or StudioCore.Editors.FaceGenEditor.FaceGenEditorScreen)
                     {
                         if (Handler.ParamEditor != null)
                         {

@@ -1,0 +1,65 @@
+{
+  "Entries": [
+    { "Key": "FACEGEN_Window_FaceGen_Editor", "Text": "FaceGen Editor" },
+    { "Key": "FACEGEN_Window_List", "Text": "Faces" },
+    { "Key": "FACEGEN_Window_Properties", "Text": "Properties" },
+    { "Key": "FACEGEN_Window_References", "Text": "References" },
+
+    { "Key": "FACEGEN_Menu_Save_Params", "Text": "Save Params" },
+    { "Key": "FACEGEN_Menu_Save_Params_TT", "Text": "Saves the params. The FaceGen Editor edits the Param Editor's params, so this is the Param Editor's save." },
+    { "Key": "FACEGEN_Menu_Show_Internal_Names", "Text": "Show Internal Names" },
+    { "Key": "FACEGEN_Menu_Show_Internal_Names_TT", "Text": "Names each field by its internal name (faceGeoData19 and the like) instead of its community name or FaceGen label." },
+
+    { "Key": "FACEGEN_Select_Missing_Row", "Text": "FaceGen Editor: {0} has no row {1}, or isn't a face param." },
+    { "Key": "FACEGEN_Model_Read_Failed", "Text": "FaceGen Editor: could not read the FaceGen model from {0}. Shape and texture fields are shown by their internal names." },
+    { "Key": "FACEGEN_Open_In_Param_Editor", "Text": "Open in Param Editor" },
+
+    { "Key": "FACEGEN_List_No_Params", "Text": "This project has no face params (FaceParam or FaceGenParam), or the Param Editor hasn't loaded them yet." },
+    { "Key": "FACEGEN_List_Param_TT", "Text": "The face param shown. FaceParam is the one the game's characters use; FaceGenParam is the older kind, kept by this game from its predecessors." },
+    { "Key": "FACEGEN_List_Filter_Hint", "Text": "Filter by ID or name" },
+    { "Key": "FACEGEN_List_Usage_All", "Text": "All faces" },
+    { "Key": "FACEGEN_List_Usage_Used", "Text": "Faces worn by a character" },
+    { "Key": "FACEGEN_List_Usage_Unused", "Text": "Faces no character wears" },
+    { "Key": "FACEGEN_List_Usage_TT", "Text": "Filters the faces by whether a character row (CharaInitParam's npcPlayerFaceGenId) points at them." },
+    { "Key": "FACEGEN_List_New_Face", "Text": "New Face" },
+    { "Key": "FACEGEN_List_New_Face_TT", "Text": "Adds a copy of the shown face (or of the first face) and shows it. It is placed as the Param Editor's duplicate options say (Duplicate in the context menu)." },
+    { "Key": "FACEGEN_List_Count", "Text": "{0} of {1} faces" },
+    { "Key": "FACEGEN_List_User_Count", "Text": "x{0}" },
+
+    { "Key": "FACEGEN_Properties_No_Face", "Text": "Select a face in the Faces window." },
+    { "Key": "FACEGEN_Properties_No_Param_Editor", "Text": "The Param Editor isn't loaded, and the FaceGen Editor edits its params." },
+    { "Key": "FACEGEN_Properties_Row_TT", "Text": "The face shown. Right-click to open it in the Param Editor." },
+    { "Key": "FACEGEN_Properties_Name_Hint", "Text": "Name" },
+    { "Key": "FACEGEN_Properties_Filter_Hint", "Text": "Filter fields" },
+    { "Key": "FACEGEN_Properties_Stores_Controls", "Text": "Shape and texture values are FaceGen sliders." },
+    { "Key": "FACEGEN_Properties_Stores_Modes", "Text": "Shape and texture values are FaceGen mode coefficients." },
+    { "Key": "FACEGEN_Properties_Stores_TT", "Text": "FaceParam stores the value of each FaceGen slider (control), and the game builds the face from them in the character creator's order. FaceGenParam stores the 50 coefficients of the FaceGen model directly. In both, 128 is neutral." },
+
+    { "Key": "FACEGEN_Group_Template", "Text": "Face Template" },
+    { "Key": "FACEGEN_Group_Shape", "Text": "Shape" },
+    { "Key": "FACEGEN_Group_Texture", "Text": "Texture" },
+    { "Key": "FACEGEN_Group_Eyes", "Text": "Eyes" },
+    { "Key": "FACEGEN_Group_Hair", "Text": "Hair" },
+    { "Key": "FACEGEN_Group_Skin", "Text": "Skin & Makeup" },
+    { "Key": "FACEGEN_Group_Accessories", "Text": "Accessories & Decals" },
+    { "Key": "FACEGEN_Group_Body", "Text": "Body" },
+    { "Key": "FACEGEN_Group_Other", "Text": "Other" },
+
+    { "Key": "FACEGEN_Field_Shape_Mode", "Text": "Shape Mode {0}" },
+    { "Key": "FACEGEN_Field_Texture_Mode", "Text": "Texture Mode {0}" },
+    { "Key": "FACEGEN_Field_FaceGen_Label", "Text": "FaceGen: {0}" },
+    { "Key": "FACEGEN_Field_Coefficient", "Text": "Coefficient: {0}" },
+    { "Key": "FACEGEN_Value_Reset_Neutral", "Text": "Reset to Neutral ({0})" },
+
+    { "Key": "FACEGEN_Action_Edit_Field", "Text": "Edit {0} (face {1})" },
+    { "Key": "FACEGEN_Action_Edit_Color", "Text": "Edit colour {0} (face {1})" },
+
+    { "Key": "FACEGEN_References_Users", "Text": "Worn by {0}" },
+    { "Key": "FACEGEN_References_Users_TT", "Text": "The character rows that point at this face (CharaInitParam's npcPlayerFaceGenId): NPC players, invaders and the like." },
+    { "Key": "FACEGEN_References_None", "Text": "No character wears this face." },
+    { "Key": "FACEGEN_References_Link_TT", "Text": "Shows the row in the Param Editor." },
+    { "Key": "FACEGEN_References_Other_Param", "Text": "Characters point at {0}, so no rows use the faces of this param." },
+    { "Key": "FACEGEN_References_Missing", "Text": "Missing faces ({0})" },
+    { "Key": "FACEGEN_References_Missing_TT", "Text": "These rows point at a face that doesn't exist. The arrow shows the face ID they name." }
+  ]
+}

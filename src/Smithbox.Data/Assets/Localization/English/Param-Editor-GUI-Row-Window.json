@@ -409,6 +409,14 @@
       "Text": "Shows this row in the Projectile Editor, which simulates what it fires in a 3D viewport, with its effects."
     },
     {
+      "Key": "PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor",
+      "Text": "Open in FaceGen Editor"
+    },
+    {
+      "Key": "PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor_TT",
+      "Text": "Shows this face in the FaceGen Editor, or for a character row the face it wears."
+    },
+    {
       "Key": "PARAM_RowWindow_Context_Action_Copy_ID_TT",
       "Text": "Copy the row IDs for the currently selected rows to clipboard. Split by new lines."
     },

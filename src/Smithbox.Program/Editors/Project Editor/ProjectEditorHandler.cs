@@ -103,6 +103,10 @@ public class ProjectEditorHandler : IDisposable
     public ProjectileEditorScreen ProjectileEditor;
     public ProjectileEditorStub ProjectileEditorStub;
 
+    // FaceGen Editor (reads and edits the Param Editor's face params)
+    public StudioCore.Editors.FaceGenEditor.FaceGenEditorScreen FaceGenEditor;
+    public StudioCore.Editors.FaceGenEditor.FaceGenEditorStub FaceGenEditorStub;
+
     // Behavior Editor (AC6 .bhv)
     public BhvData BehaviorData;
     public BehaviorEditorScreen BehaviorEditor;
@@ -170,6 +174,7 @@ public class ProjectEditorHandler : IDisposable
         FxEditorStub = new(Project);
         CutsceneEditorStub = new(Project);
         ProjectileEditorStub = new(Project);
+        FaceGenEditorStub = new(Project);
         BehaviorEditorStub = new(Project);
         EmevdEditorStub = new(Project);
         EsdEditorStub = new(Project);
@@ -423,6 +428,16 @@ public class ProjectEditorHandler : IDisposable
         {
             ProjectileEditor = new ProjectileEditorScreen(Project);
             firstEditor ??= ProjectileEditor;
+        }
+
+        // The same: the Param Editor's face params
+        if (ParamData != null && ParamEditor != null &&
+            Project.Descriptor.EnableFaceGenEditor &&
+            EditorConditions.SupportsFaceGenEditor(Project.Descriptor.ProjectType) &&
+            initType is ProjectInitType.ProjectDefined)
+        {
+            FaceGenEditor = new StudioCore.Editors.FaceGenEditor.FaceGenEditorScreen(Project);
+            firstEditor ??= FaceGenEditor;
         }
 
         if (TextData != null)

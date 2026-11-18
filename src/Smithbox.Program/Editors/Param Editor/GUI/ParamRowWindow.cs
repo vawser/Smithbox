@@ -1396,6 +1396,18 @@ public class ParamRowWindow
                         GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Open_In_Projectile_Editor_TT"));
                     }
 
+                    // Face rows, and the face a character row points at, in the FaceGen Editor
+                    if (GetFaceGenEditorLink(r) is { } faceGenCommand)
+                    {
+                        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_AliasName_Text);
+                        if (ImGui.Selectable($"{LOC.Get("PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor")}##openInFaceGenEditor"))
+                        {
+                            EditorCommandQueue.AddCommand(faceGenCommand);
+                        }
+                        ImGui.PopStyleColor();
+                        GUI.Tooltip(LOC.Get("PARAM_RowWindow_Context_Action_Open_In_FaceGen_Editor_TT"));
+                    }
+
                     ImGui.EndMenu();
                 }
             }
@@ -1613,7 +1625,54 @@ public class ParamRowWindow
         if (HasProjectileEditorLink())
             return true;
 
+        if (HasFaceGenEditorLink())
+            return true;
+
         return false;
+    }
+
+    /// <summary>
+    /// Whether the active param's rows lead to the FaceGen Editor: a face param, or a param whose rows point at a
+    /// face (CharaInitParam), in a project that has the editor
+    /// </summary>
+    private bool HasFaceGenEditorLink()
+    {
+        var project = Editor.Project;
+
+        if (project.Handler?.FaceGenEditor == null || Context.ActiveParam == null)
+            return false;
+
+        if (StudioCore.Editors.FaceGenEditor.FaceGenParams.IsFaceParam(project, Context.ActiveParam))
+            return true;
+
+        var param = StudioCore.Editors.FaceGenEditor.FaceGenParams.GetParam(project, Context.ActiveParam);
+
+        return param?.AppliedParamdef?.Fields.Any(f =>
+            f.InternalName == StudioCore.Editors.FaceGenEditor.FaceGenParams.FaceReferenceField) == true;
+    }
+
+    /// <summary>The command that shows a row's face in the FaceGen Editor, or null if it has none</summary>
+    private string GetFaceGenEditorLink(Param.Row row)
+    {
+        if (!HasFaceGenEditorLink())
+            return null;
+
+        var project = Editor.Project;
+
+        if (StudioCore.Editors.FaceGenEditor.FaceGenParams.IsFaceParam(project, Context.ActiveParam))
+            return $"facegen/select/{Context.ActiveParam}/{row.ID}";
+
+        var faceParam = StudioCore.Editors.FaceGenEditor.FaceGenParams.GetReferencedFaceParam(project);
+
+        if (faceParam == null ||
+            row[StudioCore.Editors.FaceGenEditor.FaceGenParams.FaceReferenceField]?.Value is not IConvertible value)
+        {
+            return null;
+        }
+
+        var faceId = value.ToInt32(null);
+
+        return faceId >= 0 ? $"facegen/select/{faceParam}/{faceId}" : null;
     }
 
     /// <summary>

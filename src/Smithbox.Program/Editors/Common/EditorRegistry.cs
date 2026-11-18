@@ -184,6 +184,16 @@ public static class EditorRegistry
         },
         new()
         {
+            Id = "facegen", LabelKey = "FACEGEN_Window_FaceGen_Editor", Icon = Icons.User, Category = EditorCategory.Data,
+            IsAvailable = p => p.Descriptor.EnableFaceGenEditor &&
+                               p.Descriptor.EnableParamEditor &&
+                               EditorConditions.SupportsFaceGenEditor(p.Descriptor.ProjectType) &&
+                               p.Handler?.FaceGenEditorStub != null,
+            Screen = h => h.FaceGenEditor,
+            Display = (h, dt, c) => h.FaceGenEditorStub.Display(dt, c)
+        },
+        new()
+        {
             Id = "text", LabelKey = "TEXT_Window_TextEditor", Icon = Icons.Font, Category = EditorCategory.Data,
             IsAvailable = p => p.Descriptor.EnableTextEditor &&
                                EditorConditions.SupportsTextEditor(p.Descriptor.ProjectType) &&

@@ -28,6 +28,7 @@ public static class GUI
     public static uint CUTSCENE_EDITOR_DOCK_GROUP = 1020;
     public static uint SETTINGS_EDITOR_DOCK_GROUP = 1021;
     public static uint PROJECTILE_EDITOR_DOCK_GROUP = 1022;
+    public static uint FACEGEN_EDITOR_DOCK_GROUP = 1023;
 
     public static uint MAP_EDITOR_VIEW_DOCK_GROUP = 1100;
     public static uint MODEL_EDITOR_VIEW_DOCK_GROUP = 1101;
@@ -48,6 +49,7 @@ public static class GUI
     public static uint FX_EDITOR_VIEW_DOCK_GROUP = 1118;
     public static uint CUTSCENE_EDITOR_VIEW_DOCK_GROUP = 1119;
     public static uint PROJECTILE_EDITOR_VIEW_DOCK_GROUP = 1120;
+    public static uint FACEGEN_EDITOR_VIEW_DOCK_GROUP = 1121;
 
     public static ImGuiWindowClass DockGroup_EditorView = new(
         classId: EDITOR_DOCK_GROUP, 
@@ -115,6 +117,10 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectileEditor = new(
         classId: PROJECTILE_EDITOR_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_FaceGenEditor = new(
+        classId: FACEGEN_EDITOR_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static ImGuiWindowClass DockGroup_MapEditorView = new(
@@ -207,6 +213,10 @@ public static class GUI
 
     public static ImGuiWindowClass DockGroup_ProjectileEditorView = new(
         classId: PROJECTILE_EDITOR_VIEW_DOCK_GROUP,
+        dockingAllowUnclassed: false);
+
+    public static ImGuiWindowClass DockGroup_FaceGenEditorView = new(
+        classId: FACEGEN_EDITOR_VIEW_DOCK_GROUP,
         dockingAllowUnclassed: false);
 
     public static void ApplyBaseStyle()

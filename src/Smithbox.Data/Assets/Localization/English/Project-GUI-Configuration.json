@@ -153,6 +153,14 @@
       "Text": "If enabled, the Projectile Editor (bullet and spell rows simulated in a 3D viewport, with their effects) will be initialized for this project. It edits the Param Editor's params, so it needs the Param Editor too."
     },
     {
+      "Key": "PROJECT_Configuration_Checkbox_FaceGen_Editor",
+      "Text": "FaceGen Editor"
+    },
+    {
+      "Key": "PROJECT_Configuration_Checkbox_FaceGen_Editor_TT",
+      "Text": "If enabled, the FaceGen Editor (the faces of player-like characters, as sliders, colours and parts) will be initialized for this project. It edits the Param Editor's face params, so it needs the Param Editor too."
+    },
+    {
       "Key": "PROJECT_Configuration_Checkbox_Behavior_Editor",
       "Text": "Behavior Editor"
     },

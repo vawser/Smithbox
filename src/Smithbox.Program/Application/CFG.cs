@@ -1047,6 +1047,12 @@ public class CFG
     public bool Interface_ProjectileEditor_Tool_Playback = true;
     public bool Interface_ProjectileEditor_Tool_SimulationFilters = true;
 
+    // FaceGen Editor
+    public bool Interface_FaceGenEditor_List = true;
+    public bool Interface_FaceGenEditor_Properties = true;
+    public bool Interface_FaceGenEditor_References = true;
+    public bool FaceGenEditor_Show_Internal_Names = false;
+
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;
 

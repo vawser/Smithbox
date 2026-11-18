@@ -164,6 +164,14 @@ public static class FocusManager
             or EditorFocusContext.ProjectileEditor_Viewport;
     }
 
+    public static bool IsInFaceGenEditor()
+    {
+        return Focus is EditorFocusContext.FaceGenEditor_None
+            or EditorFocusContext.FaceGenEditor_List
+            or EditorFocusContext.FaceGenEditor_Properties
+            or EditorFocusContext.FaceGenEditor_References;
+    }
+
     public static bool IsInFxEditor()
     {
         return Focus is EditorFocusContext.FxEditor_None
@@ -375,5 +383,10 @@ public enum EditorFocusContext
     TimeActEditor_GraphWindow,
     TimeActEditor_Viewport,
     TimeActEditor_PropertiesWindow,
-    TimeActEditor_ToolWindow
+    TimeActEditor_ToolWindow,
+
+    FaceGenEditor_None,
+    FaceGenEditor_List,
+    FaceGenEditor_Properties,
+    FaceGenEditor_References
 }

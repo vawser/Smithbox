@@ -63,6 +63,16 @@ public static class EditorConditions
             or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR;
     }
 
+    /// <summary>
+    /// The FaceGen Editor: the games with face params (FaceGenParam or FaceParam). Within them, what it shows is
+    /// decided by which of the params the game has.
+    /// </summary>
+    public static bool SupportsFaceGenEditor(ProjectType curType)
+    {
+        return curType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3
+            or ProjectType.SDT or ProjectType.ER or ProjectType.NR;
+    }
+
     /// <summary>The Behavior Editor: AC6 .bhv state machines in chr behbnds</summary>
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {
