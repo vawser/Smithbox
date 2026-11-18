@@ -43,7 +43,6 @@
 - ONAV v2 for AC6
 
 - Improve Map Data view: mainly properties
-- Toggle option: clickable icon at centre of unselected wireframe regions
 
 #----------------------------------------------------
 # Model Editor TODO

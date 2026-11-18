@@ -147,7 +147,7 @@ public static class RowNameHelper
         return true;
     }
 
-    private static void SetParamNames(Param param, RowNameParam rowNames)
+    private static void SetParamNames(Param param, RowNameParam rowNames, bool markDirty = true)
     {
         if (rowNames == null)
             return;
@@ -179,12 +179,12 @@ public static class RowNameHelper
                         {
                             if (row.Name == null || row.Name == "")
                             {
-                                SetRowName(row, nameEntry.Entries[index]);
+                                SetRowName(row, nameEntry.Entries[index], markDirty);
                             }
                         }
                         else
                         {
-                            SetRowName(row, nameEntry.Entries[index]);
+                            SetRowName(row, nameEntry.Entries[index], markDirty);
                         }
                     }
                 }
@@ -192,7 +192,7 @@ public static class RowNameHelper
         }
     }
 
-    private static void SetParamNamesLegacy(Param param, RowNameParamLegacy rowNames)
+    private static void SetParamNamesLegacy(Param param, RowNameParamLegacy rowNames, bool markDirty = true)
     {
         var rowsByID = param.Rows.ToLookup(e => e.ID);
         var rowNamesByID = rowNames.Entries.ToLookup(e => e.ID);
@@ -205,28 +205,33 @@ public static class RowNameHelper
                 {
                     if (row.Name == null || row.Name == "")
                     {
-                        SetRowName(row, nameEntry.Name);
+                        SetRowName(row, nameEntry.Name, markDirty);
                     }
                 }
                 else
                 {
-                    SetRowName(row, nameEntry.Name);
+                    SetRowName(row, nameEntry.Name, markDirty);
                 }
             }
         }
     }
 
     /// <summary>
-    /// Set the row name, marking the param as modified if the name changed
+    /// Set the row name, marking the param as modified if the name changed.
+    /// <paramref name="markDirty"/> is false when restoring stripped row names on load: the names were only
+    /// removed from the files on disk, so putting them back is not an edit (the next save strips them again).
     /// </summary>
-    private static void SetRowName(Param.Row row, string name)
+    private static void SetRowName(Param.Row row, string name, bool markDirty = true)
     {
         if (row.Name == name)
             return;
 
         row.Name = name;
 
-        ParamDirtyTracker.MarkDirty(row);
+        if (markDirty)
+        {
+            ParamDirtyTracker.MarkDirty(row);
+        }
     }
 
     #endregion
@@ -481,7 +486,8 @@ public static class RowNameHelper
 
                         SetParamNamesLegacy(
                             p.Value,
-                            storeDict[p.Key]
+                            storeDict[p.Key],
+                            markDirty: false
                         );
                     }
 
@@ -525,7 +531,8 @@ public static class RowNameHelper
 
                 SetParamNames(
                     p.Value,
-                    storeDict[p.Key]
+                    storeDict[p.Key],
+                    markDirty: false
                 );
             }
 
