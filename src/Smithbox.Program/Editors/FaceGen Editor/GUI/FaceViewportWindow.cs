@@ -54,6 +54,10 @@ public class FaceViewportWindow
     private float[]? AppliedShape;
     private bool MorphPending;
 
+    // The face's hair, beard, brow and lash colours on their parts' materials
+    private readonly FaceTinter Tinter;
+    private string? LastColorReportKey;
+
     private static int Serial;
 
     /// <summary>The parts of the shown face, as last resolved (for the Properties window's part pickers)</summary>
@@ -64,6 +68,7 @@ public class FaceViewportWindow
         View = view;
         Project = project;
         Morpher = new FaceMorpher(project);
+        Tinter = new FaceTinter(project);
 
         var window = Smithbox.Instance._context.Window;
         Rect = window.Bounds;
@@ -186,6 +191,7 @@ public class FaceViewportWindow
 
         UpdateMesh();
         UpdateShape();
+        UpdateColors();
 
         // The head is framed once its geometry is in, which is a few frames after the mesh is made
         if (FramePending && HeadBounds() != null)
@@ -274,10 +280,33 @@ public class FaceViewportWindow
 
     private string? LastReportKey;
 
+    /// <summary>
+    /// Colours the hair-type parts by the face's colour fields, with a colour being edited in place of its stored
+    /// value. Called every frame: only materials whose colour differs are written.
+    /// </summary>
+    private void UpdateColors()
+    {
+        if (Mesh == null || Appearance == null || View.ActiveRow is not { } row)
+            return;
+
+        var done = Tinter.Apply(Mesh, Appearance, row, Parts, View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
+
+        // TEMPORARY (FaceGen colour check): once per face shown, when every coloured part has loaded
+        var reportKey = $"{View.ParamName}/{row.ID}/{MeshKey}";
+
+        if (done && reportKey != LastColorReportKey && View.PreviewOverrides.Count == 0)
+        {
+            LastColorReportKey = reportKey;
+            Smithbox.Log(this, $"[FaceGen colours] {View.ParamName} {row.ID}: " +
+                               $"{(Tinter.LastReport.Length > 0 ? Tinter.LastReport : "no coloured parts")}");
+        }
+    }
+
     private void ClearMesh()
     {
-        // The parts are shared with anything else that shows them, so their own shape goes back first
+        // The parts are shared with anything else that shows them, so their own shape and colours go back first
         Morpher.Restore();
+        Tinter.Restore();
         AppliedShape = null;
         MorphPending = false;
 

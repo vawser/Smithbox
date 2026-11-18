@@ -480,6 +480,11 @@ public class FlverResource : IResource, IDisposable
             {
                 LookupTexture(FlverMaterial.TextureType.NormalTextureResource, dest, slots.NormalType, "", mtd);
             }
+
+            if (CustomizeMode(dest.Definition) != 0 && slots.MaskType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeMaskTextureResource, dest, slots.MaskType, "", mtd);
+            }
         }
 
         if (dest.Definition?.SurfaceType != null)
@@ -732,6 +737,18 @@ public class FlverResource : IResource, IDisposable
             dest.AlbedoFromColor = true;
             dest.AlbedoTint = Vector3.Min(new Vector3(baseColor[0], baseColor[1], baseColor[2]), Vector3.One);
         }
+        else if (CustomizeMode(definition) is var mode and not 0 && definition.Slots is { Color: { } customizeColor } customize)
+        {
+            // A ChrCustomize colouring: the shader makes the albedo from the colour (hair) or re-tints the texture to it
+            // (skin), so the colour goes in the customize entry, not the tint
+            dest.AlbedoFromColor = !hasAlbedo;
+            dest.Customize = new MaterialCustomize
+            {
+                Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], customize.RootBlack),
+                Params = new Vector4(customize.WhiteDensity, customize.RootChannel, customize.RootMasked ? 1 : 0, mode),
+                MaskTiling = dest.CustomizeMaskTiling
+            };
+        }
         else if (!hasAlbedo && definition.Slots?.Color is { } slotColor)
         {
             // ChrCustomize hair-type shaders: the albedo is a material color (MaterialSlotRecipe.Color)
@@ -866,6 +883,8 @@ public class FlverResource : IResource, IDisposable
         // The cut-out from the normal map's alpha (MaterialSlotRecipe.AlphaFromNormal), only where a normal is bound
         specConstants.Add(new SpecializationConstant(13, dest.Definition?.Slots?.AlphaFromNormal == true &&
             dest.TextureResourceFilled[(int)FlverMaterial.TextureType.NormalTextureResource]));
+        // A ChrCustomize colouring (MaterialCustomize), read from the entry after the effects
+        specConstants.Add(new SpecializationConstant(14, dest.Customize != null ? CustomizeMode(dest.Definition) : 0u));
         specConstants.Add(new SpecializationConstant(60, (uint)deformer));
 
         dest.SpecializationConstants ??= new List<SpecializationConstant>();
@@ -948,6 +967,24 @@ public class FlverResource : IResource, IDisposable
     }
 
     /// <summary>
+    /// The ChrCustomize colouring a material is drawn with (<see cref="MaterialCustomize.ModeHair"/>,
+    /// <see cref="MaterialCustomize.ModeSkin"/>), or 0. Its entry sits where a deform entry would, and before the blend,
+    /// overlay, glow and water entries, so a material with any of those (none of the ChrCustomize shaders) has none.
+    /// </summary>
+    public static uint CustomizeMode(MaterialDefinition? definition)
+    {
+        if (definition?.Slots is not { Customize: not 0 and var mode } ||
+            definition.Deformer != MaterialDeformer.None ||
+            definition.Blend != null || definition.Detail != null || definition.Magma != null ||
+            definition.Water != null || definition.Fur != null)
+        {
+            return 0;
+        }
+
+        return mode;
+    }
+
+    /// <summary>
     /// The resolved form of the MTD or MATBIN a FLVER material points at, if the project has it
     /// </summary>
     private static MaterialDefinition? GetMaterialDefinition(string mtd)
@@ -966,6 +1003,12 @@ public class FlverResource : IResource, IDisposable
         var size = dest.Definition?.Deformer is null or MaterialDeformer.None
             ? sizeof(MaterialWithShading)
             : sizeof(MaterialWithDeform);
+
+        // The customize entry takes the deform entry's place (CustomizeMode rules out the materials that have one)
+        if (CustomizeMode(dest.Definition) != 0)
+        {
+            size = sizeof(MaterialWithCustomize);
+        }
 
         if (dest.Definition?.Blend != null)
         {
@@ -4167,6 +4210,8 @@ public class FlverResource : IResource, IDisposable
             // What back faces of a stacked detail are drawn with
             DetailStackBackAlbedoTextureResource,
             DetailStackBackNormalTextureResource,
+            // The mask of a ChrCustomize colouring (MaterialCustomize): root and white hair, or where skin is tinted
+            CustomizeMaskTextureResource,
             TextureResourceCount
         }
 
@@ -4255,6 +4300,15 @@ public class FlverResource : IResource, IDisposable
 
         /// <summary>Set for water, and uploaded straight after the glow</summary>
         public MaterialWater? Water;
+
+        /// <summary>
+        ///     Set for ChrCustomize colourings (<see cref="CustomizeMode"/>), and uploaded straight after the effects, in
+        ///     the deform entry's place. The FaceGen Editor writes a face's colours into it.
+        /// </summary>
+        public MaterialCustomize? Customize;
+
+        /// <summary>The tiling of the customize mask, from its sampler</summary>
+        public Vector2 CustomizeMaskTiling = Vector2.One;
 
         /// <summary>Tiling and scroll of the layers past the second, gathered as textures are found</summary>
         public MaterialLayerTiling LayerTiling = MaterialLayerTiling.Default;
@@ -4544,6 +4598,9 @@ public class FlverResource : IResource, IDisposable
                     MagmaTiling.X = tiling[0];
                     MagmaTiling.Y = tiling[1];
                     break;
+                case TextureType.CustomizeMaskTextureResource:
+                    CustomizeMaskTiling = new Vector2(tiling[0], tiling[1]);
+                    break;
                 case TextureType.DetailAlbedoTextureResource:
                     DetailTiling.X = tiling[0];
                     DetailTiling.Y = tiling[1];
@@ -4783,6 +4840,18 @@ public class FlverResource : IResource, IDisposable
 
             MaterialWithShading shaded = new() { Material = MaterialData, Shading = Shading, Effects = Effects };
 
+            // A ChrCustomize colouring, in the deform entry's place (CustomizeMode rules out materials with a deformer)
+            MaterialWithCustomize? customized = null;
+
+            if (Customize is MaterialCustomize customize)
+            {
+                ushort mask = 0;
+                SetMaterialTexture(TextureType.CustomizeMaskTextureResource, ref mask, 0);
+                customize.MaskTex = mask;
+                customize.MaskTiling = CustomizeMaskTiling;
+                customized = new MaterialWithCustomize { Material = MaterialData, Shading = Shading, Effects = Effects, Customize = customize };
+            }
+
             SceneRenderer.AddBackgroundUploadTask((d, cl) =>
             {
                 Profiler.___tracy_c_zone_context ctx = Profiler.TracyCZoneN(1, @"Material upload");
@@ -4811,6 +4880,10 @@ public class FlverResource : IResource, IDisposable
                     else if (blended is MaterialWithBlend blendData)
                     {
                         MaterialBuffer.FillBuffer(d, cl, ref blendData);
+                    }
+                    else if (customized is MaterialWithCustomize customizedData)
+                    {
+                        MaterialBuffer.FillBuffer(d, cl, ref customizedData);
                     }
                     else if (deformed is MaterialWithDeform data)
                     {

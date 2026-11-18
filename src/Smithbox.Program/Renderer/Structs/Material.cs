@@ -206,6 +206,51 @@ public unsafe struct MaterialDeform
 }
 
 /// <summary>
+///     The character-creator colouring of a ChrCustomize material (ER's hair-type and skin shaders), read by the flver
+///     fragment shader as the entry straight after <see cref="MaterialEffects" />, in the deform entry's place: these
+///     shaders never deform. Its meaning depends on <see cref="MaterialSlotRecipe.Customize" />:
+///     <list type="bullet">
+///     <item>Hair: the albedo is <c>sat(1 + root · vertex colour − Color.w) · Color.rgb</c>, lerped to a grey-white by
+///     <c>sat(pow(Params.x · 2.5 · mask.x, 5))</c>. root is the mask's y (Params.y 1) or z (2), or 1 if Params.z is 0</item>
+///     <item>Skin: the albedo texture is re-tinted to Color.rgb (divided by the texture's own skin tone) where the
+///     mask's z is 0</item>
+///     </list>
+///     A face's own colours are written here by the FaceGen Editor's FaceTinter.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialCustomize
+{
+    /// <summary>rgb: the colour (hair color_4, skin color_3); w: the hair's root darkness (float_14)</summary>
+    public Vector4 Color;
+
+    /// <summary>x: the hair's white density (float_0), y: the root mask channel (1 y, 2 z), z: 1 if the root is masked</summary>
+    public Vector4 Params;
+
+    /// <summary>The tiling of the mask (Mask3Map)</summary>
+    public Vector2 MaskTiling;
+
+    /// <summary>The mask's texture index, 0 until it loads (then read as white)</summary>
+    public uint MaskTex;
+
+    public uint Pad;
+
+    public const uint ModeHair = 1;
+    public const uint ModeSkin = 2;
+}
+
+/// <summary>
+///     What is uploaded for a material with a <see cref="MaterialCustomize" /> entry
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialWithCustomize
+{
+    public Material Material;
+    public MaterialShading Shading;
+    public MaterialEffects Effects;
+    public MaterialCustomize Customize;
+}
+
+/// <summary>
 ///     What is uploaded for a material
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]

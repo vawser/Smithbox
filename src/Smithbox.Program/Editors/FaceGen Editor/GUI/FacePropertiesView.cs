@@ -357,15 +357,22 @@ public class FacePropertiesView
         ImGui.SetNextItemWidth(-1);
         ImGui.ColorEdit3("##color", ref color, ImGuiColorEditFlags.Uint8 | ImGuiColorEditFlags.DisplayRgb);
 
+        var bytes = Vector3.Clamp(color * 255f, Vector3.Zero, new Vector3(255f));
+
         if (ImGui.IsItemActive())
         {
             EditingKey = key;
             EditingColor = color;
+
+            // The viewport shows the colour being picked before it is written
+            View.PreviewOverrides.Clear();
+            View.PreviewOverrides[field.Name] = (int)MathF.Round(bytes.X);
+            View.PreviewOverrides[field.Green!] = (int)MathF.Round(bytes.Y);
+            View.PreviewOverrides[field.Blue!] = (int)MathF.Round(bytes.Z);
         }
 
         if (GUI.InputCommitted())
         {
-            var bytes = Vector3.Clamp(color * 255f, Vector3.Zero, new Vector3(255f));
 
             FaceGenEdits.SetFields(editor, paramName, row, new (string, object)[]
             {
@@ -375,10 +382,12 @@ public class FacePropertiesView
             }, LOC.Get("FACEGEN_Action_Edit_Color", field.Name, row.ID));
 
             EditingKey = null;
+            View.PreviewOverrides.Clear();
         }
         else if (ImGui.IsItemDeactivated() && EditingKey == key)
         {
             EditingKey = null;
+            View.PreviewOverrides.Clear();
         }
 
         ValueMenu(editor, paramName, row, new[] { field.Name, field.Green!, field.Blue! }, null);

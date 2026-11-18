@@ -327,6 +327,35 @@ public class MaterialSlotRecipe
 
     /// <summary>The alpha test (0 to 1) where the material sets none</summary>
     public float? AlphaRef { get; set; }
+
+    /// <summary>
+    /// The character colour the game multiplies the shader's albedo by (its instance colour slot, FC_ColorSlotNo), for
+    /// previews of a face: "part" for the colour of the face part the material is on (hair, beard, brows, lashes),
+    /// or the name of a face colour, e.g. "skin" (skin_color_R/G/B, skinColor_R/G/B) on heads and bodies alike
+    /// </summary>
+    public string? CharacterColor { get; set; }
+
+    /// <summary>
+    /// The shader's character-creator colouring, drawn as the game's shader does (see <see cref="MaterialCustomize"/>):
+    /// "Hair" (ER's [Hair] and [FaceHair]: root darkness and white hairs over <see cref="Color"/>) or "Skin" (ER's
+    /// [Skin]: the albedo re-tinted to <see cref="Color"/> where <see cref="Mask"/>'s z is 0). Null for none.
+    /// </summary>
+    public string? Customize { get; set; }
+
+    /// <summary>The texture slot of the customize mask (Mask3Map: [Hair] 4, [Skin] 2)</summary>
+    public int? Mask { get; set; }
+
+    /// <summary>Hair: the param of the root darkness (snp_0_float_14, FaceParam hair_rootBlack)</summary>
+    public string? RootBlack { get; set; }
+
+    /// <summary>Hair: the param of the white density (snp_0_float_0, FaceParam hair_whiteDensity)</summary>
+    public string? WhiteDensity { get; set; }
+
+    /// <summary>Hair: the bool param that picks the mask's y for the root (else its z) (snp_0_bool_1)</summary>
+    public string? RootChannel { get; set; }
+
+    /// <summary>Hair: the bool param that turns the root mask on (else the root is 1) (snp_0_bool_2)</summary>
+    public string? RootMasked { get; set; }
 }
 
 /// <summary>A <see cref="MaterialSlotRecipe"/> with the sampler types and values of one material filled in</summary>
@@ -340,6 +369,24 @@ public class MaterialResolvedSlots
 
     public bool AlphaFromNormal { get; set; }
     public float? AlphaRef { get; set; }
+
+    /// <summary>See <see cref="MaterialSlotRecipe.CharacterColor"/></summary>
+    public string? CharacterColor { get; set; }
+
+    /// <summary><see cref="MaterialCustomize.ModeHair"/>, <see cref="MaterialCustomize.ModeSkin"/>, or 0</summary>
+    public uint Customize { get; set; }
+
+    /// <summary>The sampler type of the customize mask</summary>
+    public string? MaskType { get; set; }
+
+    /// <summary>The material's own values: the colour of <see cref="MaterialSlotRecipe.Color"/>, root darkness, white density</summary>
+    public float RootBlack { get; set; }
+    public float WhiteDensity { get; set; }
+
+    /// <summary>1 for the mask's y, 2 for its z</summary>
+    public int RootChannel { get; set; } = 2;
+
+    public bool RootMasked { get; set; }
 }
 
 /// <summary>A <see cref="MaterialFurRecipe"/> with the textures of one material filled in</summary>
@@ -1193,10 +1240,33 @@ public class MaterialDefinition
             NormalType = TypeOf(recipe.Normal),
             Color = recipe.Color != null && Params.TryGetValue(recipe.Color, out var color) && color.Length >= 3 ? color : null,
             AlphaFromNormal = recipe.AlphaFromNormal,
-            AlphaRef = recipe.AlphaRef
+            AlphaRef = recipe.AlphaRef,
+            CharacterColor = recipe.CharacterColor,
+            Customize = recipe.Customize?.ToLowerInvariant() switch
+            {
+                "hair" => MaterialCustomize.ModeHair,
+                "skin" => MaterialCustomize.ModeSkin,
+                _ => 0
+            },
+            MaskType = TypeOf(recipe.Mask)
         };
 
-        if (resolved.AlbedoType != null || resolved.NormalType != null || resolved.Color != null || resolved.AlphaFromNormal)
+        float ParamOf(string? name, float fallback) =>
+            name != null && Params.TryGetValue(name, out var value) && value.Length > 0 ? value[0] : fallback;
+
+        resolved.RootBlack = ParamOf(recipe.RootBlack, 0);
+        resolved.WhiteDensity = ParamOf(recipe.WhiteDensity, 0);
+        resolved.RootChannel = ParamOf(recipe.RootChannel, 0) != 0 ? 1 : 2;
+        resolved.RootMasked = ParamOf(recipe.RootMasked, 0) != 0;
+
+        // A colouring needs its colour: without it the material is drawn as before
+        if (resolved.Customize != 0 && resolved.Color == null)
+        {
+            resolved.Customize = 0;
+        }
+
+        if (resolved.AlbedoType != null || resolved.NormalType != null || resolved.Color != null || resolved.AlphaFromNormal ||
+            resolved.CharacterColor != null || resolved.Customize != 0)
         {
             Slots = resolved;
         }

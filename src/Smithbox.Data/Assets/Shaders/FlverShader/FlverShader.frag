@@ -49,6 +49,8 @@ layout (constant_id = 11) const int c_blending = 0;
 layout (constant_id = 12) const bool c_metallic = false;
 // ER's ChrCustomize hair, beards, brows and lashes: the cut-out is the normal map's alpha, see MaterialSlotRecipe
 layout (constant_id = 13) const bool c_alphaFromNormal = false;
+// A ChrCustomize colouring (MaterialCustomize): 0 none, 1 hair (root darkness, white hairs), 2 skin (re-tinted)
+layout (constant_id = 14) const int c_customize = 0;
 #define BLENDING_ALPHA 1
 layout (constant_id = 8) const bool c_detail = false;
 layout (constant_id = 9) const bool c_magma = false;
@@ -230,6 +232,21 @@ struct shadingData
 layout(set = 4, binding = 0, std140) buffer materialShading
 {
     readonly shadingData shadingdata[];
+};
+
+// Three entries after a material, in the deform entry's place, for ChrCustomize colourings (c_customize)
+struct customizeData
+{
+	vec4 color;      // rgb: the colour, w: hair's root darkness
+	vec4 params;     // x: hair's white density, y: root mask channel (1 y, 2 z), z: 1 if the root is masked
+	vec2 maskTiling;
+	uint maskTex;    // 0 until it loads, read as white
+	uint pad;
+};
+
+layout(set = 4, binding = 0, std140) buffer materialCustomize
+{
+    readonly customizeData customizedata[];
 };
 
 // Eight entries after a material, for materials with an overlay
@@ -524,6 +541,29 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 	return textureGrad(
 		sampler2D(globalTextures[nonuniformEXT(TextureIndex(tex))], anisoLinearSampler),
 		(g_uv[uvSet] + (HasFeature(FEATURE_UV_SCROLL) ? scroll * sceneparam.materialTime : vec2(0.0))) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
+}
+
+// The game's ChrCustomize colourings (ER's P[ChrCustomize] _Gbuf shaders), over the sampled albedo
+void ApplyCustomize(inout vec4 diffuseColor)
+{
+	customizeData cz = customizedata[g_mat + 3u];
+	vec4 mask = cz.maskTex != 0u ? SampleAt(cz.maskTex, 0, cz.maskTiling, vec2(0.0)) : vec4(1.0);
+
+	if (c_customize == 1)
+	{
+		// Hair: darker towards the roots (the mask's y or z, times the vertex colour), and white hairs where the
+		// mask's x and the density say
+		float root = cz.params.z != 0.0 ? (cz.params.y < 1.5 ? mask.y : mask.z) : 1.0;
+		vec3 base = clamp(root * fsin_color.rgb + 1.0 - cz.color.w, 0.0, 1.0) * cz.color.rgb;
+		float white = clamp(pow(max(cz.params.x * 2.5 * mask.x, 0.0), 5.0), 0.0, 1.0);
+		diffuseColor.rgb = clamp(mix(base, vec3(0.797109, 0.759483, 0.722847), white), 0.0, 1.0);
+	}
+	else if (c_customize == 2)
+	{
+		// Skin: the texture's skin tone (0.2234, 0.1276, 0.0892) is made the colour, where the mask's z is 0
+		vec3 tinted = diffuseColor.rgb * cz.color.rgb * vec3(4.476997, 7.839386, 11.208877);
+		diffuseColor.rgb = clamp(mix(tinted, diffuseColor.rgb, mask.z), 0.0, 1.0);
+	}
 }
 
 // The number of details stacked over the first, 0 for none
@@ -1950,6 +1990,11 @@ void main()
 
 	// Legacy: DES's vertex color
 	FamilyAlbedo(diffuseColor);
+
+	if (c_customize != 0)
+	{
+		ApplyCustomize(diffuseColor);
+	}
 
 	vec4 diffuseAlpha = shadingdata[g_mat + 1u].diffuseAlpha;
 
