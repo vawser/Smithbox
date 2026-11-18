@@ -252,6 +252,12 @@ public struct MaterialCustomize
 
     /// <summary>Shade (ER's [EyeAO]): the albedo becomes mix(Color.rgb, 1, albedo), a multiplier no darker than Color</summary>
     public const uint ModeShade = 4;
+
+    /// <summary>
+    ///     Body hair (ER's [BodyHair_Base], [BodyHair]): the albedo is Color.rgb, and the cut-out the normal map's alpha
+    ///     times a density from the mask's x and Params.x (the body_hair amount): m·(1 + 4f) below 0, m + f above
+    /// </summary>
+    public const uint ModeBodyHair = 5;
 }
 
 /// <summary>
@@ -260,13 +266,86 @@ public struct MaterialCustomize
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct MaterialCustomizeExtra
 {
-    /// <summary>Eye: rgb the cataract colour, w the iris scale</summary>
+    /// <summary>Eye: rgb the cataract colour, w the iris scale. Skin: rgb the decal's colour, w its scale</summary>
     public Vector4 A;
 
+    /// <summary>
+    ///     Hair: x the shininess, the gloss the mask allows (float_23, FaceParam hair_shininess); below 0 for none.
+    ///     Eye: y the iris parallax depth, zw its height map's tiling. Skin: xy the decal's offset, z its angle, w -1 if
+    ///     mirrored (else 1)
+    /// </summary>
     public Vector4 B;
+
+    /// <summary>
+    ///     Skin: xy the decal mask's tiling, zw the decal's. A skin with a burn scar instead (the body, which has no
+    ///     decal): B.y its amount, C.xy its albedo's tiling, C.zw its normal's
+    /// </summary>
     public Vector4 C;
 
-    public static MaterialCustomizeExtra Default => new() { A = new Vector4(1, 1, 1, 1) };
+    public static MaterialCustomizeExtra Default => new() { A = new Vector4(1, 1, 1, 1), B = new Vector4(-1, 0, 0, 0) };
+}
+
+/// <summary>
+///     The makeup of a skin colouring (ER's [Skin] face permutation), entries 5 to 7 after the material (in the blend
+///     entries' places). Up to six layers, applied in order over the re-tinted skin, each weighed by a channel of one of
+///     two masks (Texture2D_13, Texture2D_15) times its amount: multiplied (<see cref="KindMultiply" />, around the eyes
+///     and the cheeks), mixed (<see cref="KindMix" />, eye shadows and lips) or mixed by the eighth power
+///     (<see cref="KindLine" />, the eyeliner).
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct MaterialMakeup
+{
+    public const int MaxLayers = 6;
+
+    public const uint KindMultiply = 0;
+    public const uint KindMix = 1;
+    public const uint KindLine = 2;
+
+    /// <summary>Each layer: rgb its colour, w its amount</summary>
+    public Vector4 Layer0, Layer1, Layer2, Layer3, Layer4, Layer5;
+
+    /// <summary>The two masks' texture indices, 0 until they load (then no makeup)</summary>
+    public uint MaskTex0, MaskTex1;
+
+    /// <summary>Per layer, 5 bits from bit 5·i: bit 0 the mask (0 or 1), bits 1-2 the channel, bits 3-4 the kind</summary>
+    public uint Layout;
+
+    /// <summary>The number of layers</summary>
+    public uint Count;
+
+    /// <summary>xy the first mask's tiling, zw the second's</summary>
+    public Vector4 MaskTiling;
+
+    /// <summary>
+    ///     The decal (a fg_a_60NN part's texture, set at run time: alpha its shape) and its mask (Mask1Map's x), 0 for
+    ///     none. Placed on the second UV set by <see cref="MaterialCustomizeExtra" /> A, B and C
+    /// </summary>
+    public uint DecalTex, DecalMaskTex;
+
+    /// <summary>
+    ///     The body's burn scar (ER's [Skin] body permutation): its albedo and the normal map whose alpha is its shape,
+    ///     both on the second UV set, 0 for none. Its amount is <see cref="MaterialCustomizeExtra" /> B.y, the tilings C
+    /// </summary>
+    public uint BurnTex, BurnNormalTex;
+
+    public Vector4 this[int i]
+    {
+        get => i switch { 0 => Layer0, 1 => Layer1, 2 => Layer2, 3 => Layer3, 4 => Layer4, _ => Layer5 };
+        set
+        {
+            switch (i)
+            {
+                case 0: Layer0 = value; break;
+                case 1: Layer1 = value; break;
+                case 2: Layer2 = value; break;
+                case 3: Layer3 = value; break;
+                case 4: Layer4 = value; break;
+                default: Layer5 = value; break;
+            }
+        }
+    }
+
+    public static MaterialMakeup Default => new() { MaskTiling = Vector4.One };
 }
 
 /// <summary>
@@ -280,6 +359,7 @@ public struct MaterialWithCustomize
     public MaterialEffects Effects;
     public MaterialCustomize Customize;
     public MaterialCustomizeExtra Extra;
+    public MaterialMakeup Makeup;
 }
 
 /// <summary>

@@ -429,7 +429,8 @@ public static class CharacterComposition
             // The fur on armor is left alone, as only the body models have meshes marked as body hair
             var isBody = part.Name.StartsWith(BodyPartPrefix, StringComparison.OrdinalIgnoreCase);
 
-            provider.HideBodyHair = isBody;
+            // With a face, its body_hair fields colour and thin the body hair (ER's [BodyHair] shaders), so it is shown
+            provider.HideBodyHair = isBody && !(hasFace && project.Descriptor.ProjectType is ProjectType.ER);
             // The body's own default face (fc_m_0100's P[FG_A_0100] mesh) is never wanted: a face part replaces it,
             // and without one the head is left out with it
             provider.HideHead = isBody && !hasFace && project.Descriptor.ProjectType is ProjectType.ER;

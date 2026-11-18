@@ -245,22 +245,15 @@ public class FaceViewportWindow
         if (Mesh == null || Appearance == null || View.ActiveRow is not { } row || View.ActiveParam is not { } param)
             return;
 
-        if (!CFG.Current.FaceGenEditor_Apply_Shape)
-        {
-            if (AppliedShape != null)
-            {
-                Morpher.Restore();
-                AppliedShape = null;
-            }
-
-            return;
-        }
-
         var shape = FaceGenModel.ShapeCoefficients(Project, param, row,
             View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
 
         if (shape == null)
             return;
+
+        // Without the shape, the base head: still written, so its edge stays pulled onto the body (FaceMorpher's seam)
+        if (!CFG.Current.FaceGenEditor_Apply_Shape)
+            shape = new float[shape.Length];
 
         if (!MorphPending && AppliedShape != null && shape.AsSpan().SequenceEqual(AppliedShape))
             return;
@@ -366,6 +359,15 @@ public class FaceViewportWindow
 
                     lines.Add($"    {material.FlverMaterialName} | {material.MaterialName} | shader {material.ShaderName} | " +
                               $"definition {(material.Definition != null ? "yes" : "NO")} | matbin {(matbin != null ? $"{matbin.Samplers.Count} samplers" : "NOT FOUND")}");
+
+                    // TEMPORARY (FaceGen body hair check): how the material is coloured and cut out
+                    var slots = material.Definition?.Slots;
+                    lines.Add($"      shader key {material.Definition?.ShaderName} | slots {(slots != null ? "yes" : "none")} | " +
+                              $"customize {FlverResource.CustomizeMode(material.Definition)} (recipe {slots?.Customize ?? 0}, colour {(slots?.Color != null ? "yes" : "no")}) | " +
+                              $"deformer {material.Definition?.Deformer} blend {(material.Definition?.Blend != null)} detail {(material.Definition?.Detail != null)} " +
+                              $"fur {(material.Definition?.Fur != null)} | blending {material.Blending} | alpha ref {material.Shading.DiffuseAlpha.W:0.000} | " +
+                              $"from colour {material.AlbedoFromColor} | body hair {material.IsBodyHair} | " +
+                              $"customize data {(material.Customize is { } c ? $"colour {c.Color} params {c.Params}" : "none")}");
 
                     for (var t = 0; t < material.TextureResources.Length; t++)
                     {

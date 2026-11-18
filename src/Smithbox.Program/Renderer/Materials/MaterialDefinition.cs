@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
@@ -380,6 +381,120 @@ public class MaterialSlotRecipe
 
     /// <summary>How the material blends, in place of its g_BlendMode: "Multiply" (<see cref="MaterialBlending.Multiply"/>)</summary>
     public string? Blend { get; set; }
+
+    /// <summary>Body hair: the param of the density (snp_0_float_36 / snp_0_float_35, FaceParam body_hair)</summary>
+    public string? Density { get; set; }
+
+    /// <summary>Hair: the param of the shininess, the gloss the mask allows (snp_0_float_23, FaceParam hair_shininess)</summary>
+    public string? Gloss { get; set; }
+
+    /// <summary>Skin: the makeup layers, see <see cref="MaterialMakeup"/></summary>
+    public MaterialMakeupRecipe? Makeup { get; set; }
+
+    /// <summary>Eye: the texture slot of the iris's height (ER's [Eye] 4: 0.8·r + 0.05·a), for its parallax</summary>
+    public int? Height { get; set; }
+
+    /// <summary>Eye: the param of the parallax depth (snp_0_float_46)</summary>
+    public string? HeightDepth { get; set; }
+
+    /// <summary>Skin: the decal, see <see cref="MaterialDecalRecipe"/></summary>
+    public MaterialDecalRecipe? Decal { get; set; }
+
+    /// <summary>Skin: the burn scar, see <see cref="MaterialBurnRecipe"/></summary>
+    public MaterialBurnRecipe? Burn { get; set; }
+}
+
+/// <summary>
+/// A skin's burn scar (ER's [Skin] body permutation): the skin mixed to the burn albedo where the burn normal map's
+/// alpha times the amount says, both on the second UV set. Only where the material gives both slots a texture.
+/// </summary>
+public class MaterialBurnRecipe
+{
+    /// <summary>The texture slots of the burn albedo and normal (ER: 8, 10)</summary>
+    public int? Albedo { get; set; }
+    public int? Normal { get; set; }
+
+    /// <summary>
+    /// The param of the amount (snp_0_float_12, FaceParam burn_scar). ER's recipe leaves it out, so a body without a
+    /// face shows no burn (its MATBIN's own value is 0 or 1 by body); a face's burn_scar sets it
+    /// </summary>
+    public string? Amount { get; set; }
+}
+
+/// <summary>A <see cref="MaterialBurnRecipe"/> with one material's sampler types and own amount</summary>
+public class MaterialResolvedBurn
+{
+    public string? AlbedoType { get; set; }
+    public string? NormalType { get; set; }
+    public float Amount { get; set; }
+}
+
+/// <summary>
+/// A skin's decal (ER's [Skin] face permutation): a texture set at run time (a fg_a_60NN part's, its alpha the shape),
+/// placed on the second UV set, rotated and scaled about its centre, and mixed to a colour where its alpha and the
+/// mask's x say. The texture slot is the shader's (for its tiling); the material leaves it empty.
+/// </summary>
+public class MaterialDecalRecipe
+{
+    public int? Texture { get; set; }
+    public int? Mask { get; set; }
+
+    /// <summary>The params of its colour, offset (float2), angle (radians), scale and mirror (bool)</summary>
+    public string? Color { get; set; }
+    public string? Offset { get; set; }
+    public string? Angle { get; set; }
+    public string? Scale { get; set; }
+    public string? Mirror { get; set; }
+}
+
+/// <summary>A <see cref="MaterialDecalRecipe"/> with one material's sampler types and own values</summary>
+public class MaterialResolvedDecal
+{
+    public string? TextureType { get; set; }
+    public string? MaskType { get; set; }
+    public float[] Color { get; set; } = [1, 1, 1];
+    public float[] Offset { get; set; } = [0, 0];
+    public float Angle { get; set; }
+    public float Scale { get; set; } = 1;
+    public bool Mirror { get; set; }
+}
+
+/// <summary>The makeup of a skin colouring: its two masks' texture slots, and its layers in the order they apply</summary>
+public class MaterialMakeupRecipe
+{
+    /// <summary>The texture slots of the two masks (ER's [Skin]: 13, 15)</summary>
+    public int[] Masks { get; set; } = [];
+
+    public List<MaterialMakeupLayerRecipe> Layers { get; set; } = new();
+}
+
+/// <summary>One makeup layer</summary>
+public class MaterialMakeupLayerRecipe
+{
+    /// <summary>The face param field of its amount; its colour is the field + "Color_R/G/B" (ER: face_cheek)</summary>
+    public string? Field { get; set; }
+
+    /// <summary>The material params of its colour and amount</summary>
+    public string? Color { get; set; }
+    public string? Amount { get; set; }
+
+    /// <summary>Which of <see cref="MaterialMakeupRecipe.Masks"/> weighs it (0 or 1), and its channel (0-3)</summary>
+    public int Mask { get; set; }
+    public int Channel { get; set; }
+
+    /// <summary>"Multiply", "Mix" or "Line" (see <see cref="MaterialMakeup"/>)</summary>
+    public string? Kind { get; set; }
+}
+
+/// <summary>A <see cref="MaterialMakeupRecipe"/> with one material's mask sampler types and own values</summary>
+public class MaterialResolvedMakeup
+{
+    public string?[] MaskTypes { get; set; } = new string?[2];
+
+    /// <summary>Each layer's face field (or null), and its uploaded form</summary>
+    public string?[] Fields { get; set; } = new string?[MaterialMakeup.MaxLayers];
+
+    public MaterialMakeup Data { get; set; } = MaterialMakeup.Default;
 }
 
 /// <summary>A <see cref="MaterialSlotRecipe"/> with the sampler types and values of one material filled in</summary>
@@ -425,6 +540,25 @@ public class MaterialResolvedSlots
 
     /// <summary>The recipe's blending, in place of the material's own, or null</summary>
     public MaterialBlending? Blending { get; set; }
+
+    /// <summary>Body hair: the material's own density</summary>
+    public float Density { get; set; }
+
+    /// <summary>Hair: the material's own shininess, or -1 if the recipe names none</summary>
+    public float Gloss { get; set; } = -1;
+
+    /// <summary>Skin: its makeup, or null</summary>
+    public MaterialResolvedMakeup? Makeup { get; set; }
+
+    /// <summary>Eye: the sampler type of the iris height, and the parallax depth (0 for none)</summary>
+    public string? HeightType { get; set; }
+    public float HeightDepth { get; set; }
+
+    /// <summary>Skin: its decal, or null</summary>
+    public MaterialResolvedDecal? Decal { get; set; }
+
+    /// <summary>Skin: its burn scar, or null (never with a decal: they share the extra entry)</summary>
+    public MaterialResolvedBurn? Burn { get; set; }
 }
 
 /// <summary>A <see cref="MaterialFurRecipe"/> with the textures of one material filled in</summary>
@@ -1286,6 +1420,7 @@ public class MaterialDefinition
                 "skin" => MaterialCustomize.ModeSkin,
                 "eye" => MaterialCustomize.ModeEye,
                 "shade" => MaterialCustomize.ModeShade,
+                "bodyhair" => MaterialCustomize.ModeBodyHair,
                 _ => 0
             },
             Blending = recipe.Blend?.ToLowerInvariant() switch
@@ -1294,7 +1429,8 @@ public class MaterialDefinition
                 _ => null
             },
             MaskType = TypeOf(recipe.Mask),
-            StubbleType = TypeOf(recipe.Stubble)
+            StubbleType = TypeOf(recipe.Stubble),
+            HeightType = TypeOf(recipe.Height)
         };
 
         float ParamOf(string? name, float fallback) =>
@@ -1314,6 +1450,72 @@ public class MaterialDefinition
         resolved.CataractColor = ColorOf(recipe.CataractColor, resolved.CataractColor);
         resolved.Pupil = ParamOf(recipe.Pupil, 0);
         resolved.IrisScale = ParamOf(recipe.IrisScale, 1);
+        resolved.Density = ParamOf(recipe.Density, 0);
+        resolved.Gloss = ParamOf(recipe.Gloss, -1);
+        resolved.HeightDepth = ParamOf(recipe.HeightDepth, 0);
+
+        // The decal: its slots, and the material's own placement and colour. Only where the material has the decal's
+        // mask: in ER the face's [Skin] has it (AAT500_DecalMask_1m) and the body's has none, as its permutation has no
+        // decal. Both lay UV 1 over the whole square, so without this the face's decal would land on the body too
+        if (recipe.Decal is { } decal && (decal.Mask == null || TypeOf(decal.Mask) != null))
+        {
+            resolved.Decal = new MaterialResolvedDecal
+            {
+                TextureType = decal.Texture is { } textureSlot ? Samplers.Find(x => x.Slot == textureSlot)?.Type : null,
+                MaskType = TypeOf(decal.Mask),
+                Color = ColorOf(decal.Color, [1, 1, 1]),
+                Offset = decal.Offset != null && Params.TryGetValue(decal.Offset, out var offset) && offset.Length >= 2 ? offset[..2] : [0, 0],
+                Angle = ParamOf(decal.Angle, 0),
+                Scale = ParamOf(decal.Scale, 1),
+                Mirror = ParamOf(decal.Mirror, 0) != 0
+            };
+        }
+
+        // The burn scar: only where the material has both its textures (ER's body, not its face) and no decal
+        if (recipe.Burn is { } burn && resolved.Decal == null &&
+            TypeOf(burn.Albedo) is { } burnAlbedo && TypeOf(burn.Normal) is { } burnNormal)
+        {
+            resolved.Burn = new MaterialResolvedBurn
+            {
+                AlbedoType = burnAlbedo,
+                NormalType = burnNormal,
+                Amount = ParamOf(burn.Amount, 0)
+            };
+        }
+
+        // The makeup layers, with the material's own colours and amounts
+        if (recipe.Makeup is { Layers.Count: > 0 } makeup)
+        {
+            var result = new MaterialResolvedMakeup();
+            var data = MaterialMakeup.Default;
+
+            for (var m = 0; m < 2 && m < makeup.Masks.Length; m++)
+            {
+                result.MaskTypes[m] = TypeOf(makeup.Masks[m]);
+            }
+
+            var count = Math.Min(makeup.Layers.Count, MaterialMakeup.MaxLayers);
+
+            for (var i = 0; i < count; i++)
+            {
+                var layer = makeup.Layers[i];
+                var layerColor = ColorOf(layer.Color, [1, 1, 1]);
+                data[i] = new Vector4(layerColor[0], layerColor[1], layerColor[2], ParamOf(layer.Amount, 0));
+
+                var kind = layer.Kind?.ToLowerInvariant() switch
+                {
+                    "mix" => MaterialMakeup.KindMix,
+                    "line" => MaterialMakeup.KindLine,
+                    _ => MaterialMakeup.KindMultiply
+                };
+                data.Layout |= ((uint)(layer.Mask & 1) | ((uint)(layer.Channel & 3) << 1) | (kind << 3)) << (5 * i);
+                result.Fields[i] = layer.Field;
+            }
+
+            data.Count = (uint)count;
+            result.Data = data;
+            resolved.Makeup = result;
+        }
 
         // A colouring needs its colour: without it the material is drawn as before
         if (resolved.Customize != 0 && resolved.Color == null)

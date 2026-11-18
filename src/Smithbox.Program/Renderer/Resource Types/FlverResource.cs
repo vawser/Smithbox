@@ -490,6 +490,37 @@ public class FlverResource : IResource, IDisposable
             {
                 LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.StubbleType, "", mtd);
             }
+
+            // The same slot holds an eye's iris height, for its parallax
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeEye && slots.HeightType != null)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeStubbleTextureResource, dest, slots.HeightType, "", mtd);
+            }
+
+            // The decal's mask, and the decal's tiling (its texture is set at run time, SetCustomizeDecal)
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin && slots.Decal is { } decal)
+            {
+                if (decal.MaskType != null)
+                    LookupTexture(FlverMaterial.TextureType.CustomizeDecalMaskTextureResource, dest, decal.MaskType, "", mtd);
+
+                dest.ApplySampler(FlverMaterial.TextureType.CustomizeDecalTextureResource, decal.TextureType);
+            }
+
+            // The burn scar's textures (the body's: the shared AAT500_PCBurn maps)
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin && slots.Burn is { } burn)
+            {
+                LookupTexture(FlverMaterial.TextureType.CustomizeBurnTextureResource, dest, burn.AlbedoType, "", mtd);
+                LookupTexture(FlverMaterial.TextureType.CustomizeBurnNormalTextureResource, dest, burn.NormalType, "", mtd);
+            }
+
+            if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin && slots.Makeup is { } makeup)
+            {
+                if (makeup.MaskTypes[0] != null)
+                    LookupTexture(FlverMaterial.TextureType.CustomizeMakeupMaskTextureResource0, dest, makeup.MaskTypes[0], "", mtd);
+
+                if (makeup.MaskTypes[1] != null)
+                    LookupTexture(FlverMaterial.TextureType.CustomizeMakeupMaskTextureResource1, dest, makeup.MaskTypes[1], "", mtd);
+            }
         }
 
         if (dest.Definition?.SurfaceType != null)
@@ -755,6 +786,12 @@ public class FlverResource : IResource, IDisposable
                     Params = new Vector4(customize.Iris[0], customize.Iris[1], customize.Iris[2], customize.Pupil),
                     MaskTiling = dest.CustomizeMaskTiling
                 },
+                MaterialCustomize.ModeBodyHair => new MaterialCustomize
+                {
+                    Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], 0),
+                    Params = new Vector4(customize.Density, 0, 0, mode),
+                    MaskTiling = dest.CustomizeMaskTiling
+                },
                 MaterialCustomize.ModeSkin => new MaterialCustomize
                 {
                     Color = new Vector4(customizeColor[0], customizeColor[1], customizeColor[2], 0),
@@ -771,9 +808,23 @@ public class FlverResource : IResource, IDisposable
             dest.CustomizeExtra = mode == MaterialCustomize.ModeEye
                 ? new MaterialCustomizeExtra
                 {
-                    A = new Vector4(customize.CataractColor[0], customize.CataractColor[1], customize.CataractColor[2], customize.IrisScale)
+                    A = new Vector4(customize.CataractColor[0], customize.CataractColor[1], customize.CataractColor[2], customize.IrisScale),
+                    // y the iris parallax depth; zw its height map's tiling, filled in by the upload
+                    B = new Vector4(-1, customize.HeightDepth, 1, 1)
                 }
-                : MaterialCustomizeExtra.Default;
+                : mode == MaterialCustomize.ModeSkin && customize.Decal is { } decal
+                    ? new MaterialCustomizeExtra
+                    {
+                        // The decal: colour and scale, offset, angle and mirror; C (the tilings) is filled in by the upload
+                        A = new Vector4(decal.Color[0], decal.Color[1], decal.Color[2], decal.Scale),
+                        B = new Vector4(decal.Offset[0], decal.Offset[1], decal.Angle, decal.Mirror ? -1 : 1),
+                        C = Vector4.One
+                    }
+                    : mode == MaterialCustomize.ModeSkin && customize.Burn is { } burn
+                        // The burn scar's amount (B.y); C (the tilings) is filled in by the upload
+                        ? MaterialCustomizeExtra.Default with { B = new Vector4(-1, burn.Amount, 0, 0), C = Vector4.One }
+                        : MaterialCustomizeExtra.Default with { B = new Vector4(customize.Gloss, 0, 0, 0) };
+            dest.CustomizeMakeup = customize.Makeup?.Data ?? MaterialMakeup.Default;
         }
         else if (!hasAlbedo && definition.Slots?.Color is { } slotColor)
         {
@@ -867,6 +918,13 @@ public class FlverResource : IResource, IDisposable
         }
         else if (layers.IsBlended)
         {
+            dest.ShaderName = @"FlverShader\FlverShader_blend";
+            dest.LayoutType = MeshLayoutType.LayoutUV2;
+        }
+        else if (CustomizeMode(dest.Definition) == MaterialCustomize.ModeSkin &&
+                 dest.Definition?.Slots is { Decal: not null } or { Burn: not null })
+        {
+            // A skin's decal or burn scar is on the second UV set: the blend variant for it, with one layer (as a lightmap)
             dest.ShaderName = @"FlverShader\FlverShader_blend";
             dest.LayoutType = MeshLayoutType.LayoutUV2;
         }
@@ -4246,6 +4304,15 @@ public class FlverResource : IResource, IDisposable
             CustomizeMaskTextureResource,
             // The skin's beard stubble (MaterialCustomize.SecondTex)
             CustomizeStubbleTextureResource,
+            // The skin's two makeup masks (MaterialMakeup)
+            CustomizeMakeupMaskTextureResource0,
+            CustomizeMakeupMaskTextureResource1,
+            // The skin's decal (set at run time, SetCustomizeDecal) and its mask
+            CustomizeDecalTextureResource,
+            CustomizeDecalMaskTextureResource,
+            // The body's burn scar: its albedo, and the normal map whose alpha is its shape
+            CustomizeBurnTextureResource,
+            CustomizeBurnNormalTextureResource,
             TextureResourceCount
         }
 
@@ -4349,6 +4416,38 @@ public class FlverResource : IResource, IDisposable
 
         /// <summary>The tiling of the skin's stubble texture, from its sampler</summary>
         public Vector2 CustomizeStubbleTiling = Vector2.One;
+
+        /// <summary>Uploaded after <see cref="CustomizeExtra"/>: the skin's makeup layers. The FaceGen Editor writes a face's into it</summary>
+        public MaterialMakeup CustomizeMakeup = MaterialMakeup.Default;
+
+        /// <summary>The tilings of the two makeup masks, from their samplers</summary>
+        public Vector4 CustomizeMakeupTiling = Vector4.One;
+
+        /// <summary>xy the decal mask's tiling, zw the decal's, from their samplers</summary>
+        public Vector4 CustomizeDecalTiling = Vector4.One;
+
+        /// <summary>xy the burn albedo's tiling, zw the burn normal's, from their samplers</summary>
+        public Vector4 CustomizeBurnTiling = Vector4.One;
+
+        /// <summary>
+        /// Sets a skin's decal texture (a fg_a_60NN part's, which no material names), or none. The FaceGen Editor
+        /// sets it from the face's decal_partsId once the part's textures have loaded.
+        /// </summary>
+        public void SetCustomizeDecal(ResourceHandle<TextureResource>? handle)
+        {
+            var slot = (int)TextureType.CustomizeDecalTextureResource;
+
+            if (ReferenceEquals(TextureResources[slot], handle))
+                return;
+
+            handle?.Acquire();
+            TextureResources[slot]?.Release();
+            TextureResources[slot] = handle;
+            UpdateMaterial();
+        }
+
+        /// <summary>The decal texture set by <see cref="SetCustomizeDecal"/>, or null</summary>
+        public ResourceHandle<TextureResource>? CustomizeDecal => TextureResources[(int)TextureType.CustomizeDecalTextureResource];
 
         /// <summary>Tiling and scroll of the layers past the second, gathered as textures are found</summary>
         public MaterialLayerTiling LayerTiling = MaterialLayerTiling.Default;
@@ -4644,6 +4743,30 @@ public class FlverResource : IResource, IDisposable
                 case TextureType.CustomizeStubbleTextureResource:
                     CustomizeStubbleTiling = new Vector2(tiling[0], tiling[1]);
                     break;
+                case TextureType.CustomizeMakeupMaskTextureResource0:
+                    CustomizeMakeupTiling.X = tiling[0];
+                    CustomizeMakeupTiling.Y = tiling[1];
+                    break;
+                case TextureType.CustomizeMakeupMaskTextureResource1:
+                    CustomizeMakeupTiling.Z = tiling[0];
+                    CustomizeMakeupTiling.W = tiling[1];
+                    break;
+                case TextureType.CustomizeDecalMaskTextureResource:
+                    CustomizeDecalTiling.X = tiling[0];
+                    CustomizeDecalTiling.Y = tiling[1];
+                    break;
+                case TextureType.CustomizeDecalTextureResource:
+                    CustomizeDecalTiling.Z = tiling[0];
+                    CustomizeDecalTiling.W = tiling[1];
+                    break;
+                case TextureType.CustomizeBurnTextureResource:
+                    CustomizeBurnTiling.X = tiling[0];
+                    CustomizeBurnTiling.Y = tiling[1];
+                    break;
+                case TextureType.CustomizeBurnNormalTextureResource:
+                    CustomizeBurnTiling.Z = tiling[0];
+                    CustomizeBurnTiling.W = tiling[1];
+                    break;
                 case TextureType.DetailAlbedoTextureResource:
                     DetailTiling.X = tiling[0];
                     DetailTiling.Y = tiling[1];
@@ -4903,9 +5026,53 @@ public class FlverResource : IResource, IDisposable
                     customize.Params.Z = CustomizeStubbleTiling.Y;
                 }
 
+                // The makeup masks and their tilings
+                var makeup = CustomizeMakeup;
+                ushort makeupMask0 = 0, makeupMask1 = 0;
+                SetMaterialTexture(TextureType.CustomizeMakeupMaskTextureResource0, ref makeupMask0, 0);
+                SetMaterialTexture(TextureType.CustomizeMakeupMaskTextureResource1, ref makeupMask1, 0);
+                makeup.MaskTex0 = makeupMask0;
+                makeup.MaskTex1 = makeupMask1;
+                makeup.MaskTiling = CustomizeMakeupTiling;
+
+                // The decal (set at run time) and its mask
+                ushort decal = 0, decalMask = 0;
+                SetMaterialTexture(TextureType.CustomizeDecalTextureResource, ref decal, 0);
+                SetMaterialTexture(TextureType.CustomizeDecalMaskTextureResource, ref decalMask, 0);
+                makeup.DecalTex = decal;
+                makeup.DecalMaskTex = decalMask;
+
+                // The burn scar's albedo and normal
+                ushort burnAlbedo = 0, burnNormal = 0;
+                SetMaterialTexture(TextureType.CustomizeBurnTextureResource, ref burnAlbedo, 0);
+                SetMaterialTexture(TextureType.CustomizeBurnNormalTextureResource, ref burnNormal, 0);
+                makeup.BurnTex = burnAlbedo;
+                makeup.BurnNormalTex = burnNormal;
+
+                // An eye's iris height (the second texture) and its tiling (Extra.B.zw)
+                var extra = CustomizeExtra;
+                if (CustomizeMode(Definition) == MaterialCustomize.ModeSkin && Definition?.Slots?.Decal != null)
+                {
+                    extra.C = CustomizeDecalTiling;
+                }
+                else if (CustomizeMode(Definition) == MaterialCustomize.ModeSkin && Definition?.Slots?.Burn != null)
+                {
+                    extra.C = CustomizeBurnTiling;
+                }
+
+                if (CustomizeMode(Definition) == MaterialCustomize.ModeEye)
+                {
+                    ushort height = 0;
+                    SetMaterialTexture(TextureType.CustomizeStubbleTextureResource, ref height, 0);
+                    customize.SecondTex = height;
+                    extra.B.Z = CustomizeStubbleTiling.X;
+                    extra.B.W = CustomizeStubbleTiling.Y;
+                }
+
                 customized = new MaterialWithCustomize
                 {
-                    Material = MaterialData, Shading = Shading, Effects = Effects, Customize = customize, Extra = CustomizeExtra
+                    Material = MaterialData, Shading = Shading, Effects = Effects, Customize = customize, Extra = extra,
+                    Makeup = makeup
                 };
             }
 

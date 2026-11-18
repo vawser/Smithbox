@@ -1,9 +1,20 @@
 {
-  "P[ChrCustomize][Skin]": { "Albedo": 7, "Normal": 0, "CharacterColor": "skin", "Customize": "Skin", "Color": "snp_0_color_3", "Mask": 2, "Stubble": 3, "StubbleAmount": "snp_0_float_14" },
-  "P[ChrCustomize][Hair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2" },
-  "P[ChrCustomize][Hair]_cloth": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2" },
-  "P[ChrCustomize][FaceHair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2" },
-  "P[ChrCustomize][Eye]": { "CharacterColor": "eye", "Customize": "Eye", "Color": "snp_0_float3_5", "Mask": 6, "Iris": "snp_0_float3_0", "Cataract": "snp_0_float_30", "CataractColor": "snp_0_float3_2", "Pupil": "snp_0_float_32", "IrisScale": "snp_0_float_12" },
+  "P[ChrCustomize][Skin]": { "Albedo": 7, "Normal": 0, "CharacterColor": "skin", "Customize": "Skin", "Color": "snp_0_color_3", "Mask": 2, "Stubble": 3, "StubbleAmount": "snp_0_float_2",
+    "Burn": { "Albedo": 8, "Normal": 10 },
+    "Decal": { "Texture": 1, "Mask": 5, "Color": "snp_0_color_1", "Offset": "snp_0_float2_0", "Angle": "snp_0_float_8", "Scale": "snp_0_float_9", "Mirror": "snp_0_bool_0" },
+    "Makeup": { "Masks": [13, 15], "Layers": [
+      { "Field": "face_aroundEye", "Color": "snp_0_float3_3", "Amount": "snp_0_float_23", "Mask": 0, "Channel": 1, "Kind": "Multiply" },
+      { "Field": "face_cheek", "Color": "snp_0_float3_1", "Amount": "snp_0_float_22", "Mask": 0, "Channel": 0, "Kind": "Multiply" },
+      { "Field": "face_eyeShadowUp", "Color": "snp_0_float3_2", "Amount": "snp_0_float_21", "Mask": 0, "Channel": 2, "Kind": "Mix" },
+      { "Field": "face_lip", "Color": "snp_0_float3_9", "Amount": "snp_0_float_25", "Mask": 1, "Channel": 0, "Kind": "Mix" },
+      { "Field": "face_eyeLine", "Color": "snp_0_float3_8", "Amount": "snp_0_float_24", "Mask": 1, "Channel": 1, "Kind": "Line" },
+      { "Field": "face_eyeShadowDown", "Color": "snp_0_float3_7", "Amount": "snp_0_float_26", "Mask": 1, "Channel": 2, "Kind": "Mix" } ] } },
+  "P[ChrCustomize][Hair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2", "Gloss": "snp_0_float_23" },
+  "P[ChrCustomize][Hair]_cloth": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2", "Gloss": "snp_0_float_23" },
+  "P[ChrCustomize][FaceHair]": { "Normal": 0, "Color": "snp_0_color_4", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part", "Customize": "Hair", "Mask": 4, "RootBlack": "snp_0_float_14", "WhiteDensity": "snp_0_float_0", "RootChannel": "snp_0_bool_1", "RootMasked": "snp_0_bool_2", "Gloss": "snp_0_float_23" },
+  "P[ChrCustomize][Eye]": { "CharacterColor": "eye", "Customize": "Eye", "Color": "snp_0_float3_5", "Mask": 6, "Iris": "snp_0_float3_0", "Cataract": "snp_0_float_30", "CataractColor": "snp_0_float3_2", "Pupil": "snp_0_float_32", "IrisScale": "snp_0_float_12", "Height": 4, "HeightDepth": "snp_0_float_46" },
   "P[ChrCustomize][EyeAO]": { "Customize": "Shade", "Color": "snp_0_color_0", "Blend": "Multiply" },
+  "P[ChrCustomize][BodyHair_Base]": { "Normal": 0, "Color": "snp_0_color_4", "CharacterColor": "body_hair", "Customize": "BodyHair", "Mask": 4, "Density": "snp_0_float_36" },
+  "P[ChrCustomize][BodyHair]": { "Normal": 0, "Color": "snp_0_color_4", "CharacterColor": "body_hair", "Customize": "BodyHair", "Mask": 4, "Density": "snp_0_float_35" },
   "P[ChrCustomize][EyeLash]": { "Normal": 7, "Color": "snp_0_color_1", "AlphaFromNormal": true, "AlphaRef": 0.5, "CharacterColor": "part" }
 }

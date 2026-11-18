@@ -256,13 +256,27 @@ layout(set = 4, binding = 0, std140) buffer materialCustomize
 struct customizeExtraData
 {
 	vec4 a; // eye: rgb the cataract colour, w the iris scale
-	vec4 b;
+	vec4 b; // hair: x the shininess (gloss scale), below 0 for none
 	vec4 c;
 };
 
 layout(set = 4, binding = 0, std140) buffer materialCustomizeExtra
 {
     readonly customizeExtraData customizeextradata[];
+};
+
+// Seven entries after a material: the makeup's masks and layout (MaterialMakeup). Its six layers (rgb colour, w amount)
+// are entries five and six, read as customizeExtraData
+struct makeupInfoData
+{
+	uvec4 info;    // x, y: the two masks' textures (0 until loaded); z: 5 bits a layer (mask, channel, kind); w: layers
+	vec4 tiling;   // xy: the first mask's tiling, zw: the second's
+	uvec4 decal;   // x: the decal's texture (set at run time, 0 for none), y: its mask's; z, w: the burn scar's albedo, normal
+};
+
+layout(set = 4, binding = 0, std140) buffer materialMakeupInfo
+{
+    readonly makeupInfoData makeupinfodata[];
 };
 
 // Eight entries after a material, for materials with an overlay
@@ -559,6 +573,139 @@ vec4 SampleAt(uint tex, int uvSet, vec2 tiling, vec2 scroll)
 		(g_uv[uvSet] + (HasFeature(FEATURE_UV_SCROLL) ? scroll * sceneparam.materialTime : vec2(0.0))) * tiling, g_dx[uvSet] * tiling, g_dy[uvSet] * tiling);
 }
 
+// One makeup layer of a material: rgb its colour, w its amount
+vec4 MakeupLayer(uint i)
+{
+	customizeExtraData entry = customizeextradata[g_mat + 5u + i / 3u];
+	uint k = i % 3u;
+	return k == 0u ? entry.a : k == 1u ? entry.b : entry.c;
+}
+
+// The eye's iris parallax (ER's [Eye]): the iris sits below the cornea by its height map (0.8·r + 0.05·a of the
+// second texture), so the UVs move back along the view, 32 steps through the depth, to where the height rises above
+// the ray, refined between the last two steps. The offset at full depth is depth · (V·B, V·T) / (V·N), u along the
+// bitangent as the game has it. The derivatives stay those of the surface, as the game's
+void ApplyIrisParallax(vec3 viewVec)
+{
+	customizeData cz = customizedata[g_mat + 3u];
+	vec4 b = customizeextradata[g_mat + 4u].b;
+	float depth = b.y;
+
+	if (cz.pad == 0u || depth <= 0.0)
+	{
+		return;
+	}
+
+	vec3 T = normalize(fsin_worldToTangent[0]);
+	vec3 B = normalize(fsin_worldToTangent[1]);
+	vec3 N = normalize(fsin_worldToTangent[2]);
+	float vn = max(dot(viewVec, N), 0.05);
+	vec2 offset = depth * vec2(dot(viewVec, B), dot(viewVec, T)) / vn;
+	vec2 tiling = b.zw;
+
+	float layer = 1.0;
+	float height = 1.0;
+	float previousLayer = 1.0;
+	float previousHeight = 1.0;
+	vec2 uv = g_uv[0];
+
+	for (int i = 1; i <= 32; i++)
+	{
+		previousLayer = layer;
+		previousHeight = height;
+		layer = 1.0 - float(i) / 32.0;
+		uv = g_uv[0] - offset * (float(i) / 32.0);
+		vec4 h = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(cz.pad))], anisoLinearSampler),
+			clamp(uv, 0.0, 1.0) * tiling, g_dx[0] * tiling, g_dy[0] * tiling);
+		height = 0.8 * h.r + 0.05 * h.a;
+		if (height > layer)
+		{
+			break;
+		}
+	}
+
+	// Where the ray met the height, between the last two steps
+	float before = previousHeight - previousLayer;
+	float after = height - layer;
+	float t = abs(after - before) > 1e-5 ? clamp(before / (before - after), 0.0, 1.0) : 1.0;
+	float travelled = (1.0 - previousLayer) + t * (previousLayer - layer);
+	vec2 parallaxUv = clamp(g_uv[0] - offset * travelled, 0.0, 1.0);
+
+	g_uv[0] = parallaxUv;
+	g_uv[1] = parallaxUv;
+}
+
+// A skin's scars (c_customize 2): the burn's normal mixed in by its shape times its amount, and the decal's added where
+// it is. Both are on the second UV set, whose tangent frame no vertex carries (the game's TANGENT_2), so it is made
+// from the screen derivatives of the position and that UV set (a cotangent frame). The decal's normal is turned back
+// from its rotated, mirrored space into the UV set's
+vec3 SkinRelief(vec3 N)
+{
+	makeupInfoData mk = makeupinfodata[g_mat + 7u];
+	customizeExtraData place = customizeextradata[g_mat + 4u];
+	bool hasDecal = mk.decal.x != 0u;
+	bool hasBurn = mk.decal.z != 0u && mk.decal.w != 0u;
+
+	if (!hasDecal && !hasBurn)
+	{
+		return N;
+	}
+
+	vec3 dp1 = dFdx(fsin_worldpos);
+	vec3 dp2 = dFdy(fsin_worldpos);
+	vec3 dp2perp = cross(dp2, N);
+	vec3 dp1perp = cross(N, dp1);
+	vec3 T = dp2perp * g_dx[1].x + dp1perp * g_dy[1].x;
+	vec3 B = dp2perp * g_dx[1].y + dp1perp * g_dy[1].y;
+	float lengthSq = max(dot(T, T), dot(B, B));
+
+	if (lengthSq <= 1e-20)
+	{
+		return N;
+	}
+
+	float inverseLength = inversesqrt(lengthSq);
+	T *= inverseLength;
+	B *= inverseLength;
+
+	if (hasBurn)
+	{
+		vec4 burn = SampleAt(mk.decal.w, 1, place.c.zw, vec2(0.0));
+		vec2 xy = burn.xy * 2.0 - 1.0;
+		vec3 burnNormal = normalize(xy.x * T + xy.y * B + sqrt(max(1.0 - dot(xy, xy), 0.0)) * N);
+		N = normalize(mix(N, burnNormal, clamp(burn.a * place.b.y, 0.0, 1.0)));
+	}
+
+	if (hasDecal)
+	{
+		// The decal's placement, as for its albedo (ApplyCustomize)
+		float scale = place.a.w;
+		float mirror = place.b.w;
+		float s = sin(place.b.z);
+		float c = cos(place.b.z);
+		mat2 rotate = mat2(c, s, -s, c);
+		vec2 p = vec2(mirror * scale * (g_uv[1].x - 0.5 + place.b.x), scale * (g_uv[1].y - 0.5 + place.b.y));
+		vec2 decalUv = clamp(rotate * p + 0.5, 0.0, 1.0) * place.c.zw;
+		vec2 dx = rotate * (vec2(mirror * scale, scale) * g_dx[1]) * place.c.zw;
+		vec2 dy = rotate * (vec2(mirror * scale, scale) * g_dy[1]) * place.c.zw;
+		vec4 decal = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(mk.decal.x))], anisoLinearSampler),
+			decalUv, dx, dy);
+
+		vec2 xy = transpose(rotate) * (decal.xy * 2.0 - 1.0);
+		xy.x *= mirror;
+		float decalMask = mk.decal.y != 0u ? SampleAt(mk.decal.y, 0, place.c.xy, vec2(0.0)).x : 1.0;
+		N = normalize(N + clamp(decalMask * decal.a, 0.0, 1.0) * (xy.x * T + xy.y * B));
+	}
+
+	return N;
+}
+
+// Body hair's density (c_customize 5), for its cut-out after the albedo
+float g_customizeDensity = 1.0;
+
+// The customize mask as sampled for the albedo, for the hair's gloss later
+vec4 g_customizeMask = vec4(1.0);
+
 // The game's ChrCustomize colourings (ER's P[ChrCustomize] _Gbuf shaders), over the sampled albedo
 void ApplyCustomize(inout vec4 diffuseColor)
 {
@@ -566,6 +713,7 @@ void ApplyCustomize(inout vec4 diffuseColor)
 
 	// Until the mask loads: no roots, white hair or tint (white), and for an eye no pupil or sclera (black)
 	vec4 mask = cz.maskTex != 0u ? SampleAt(cz.maskTex, 0, cz.maskTiling, vec2(0.0)) : vec4(c_customize == 3 ? 0.0 : 1.0);
+	g_customizeMask = mask;
 
 	if (c_customize == 1)
 	{
@@ -582,12 +730,74 @@ void ApplyCustomize(inout vec4 diffuseColor)
 		vec3 tinted = diffuseColor.rgb * cz.color.rgb * vec3(4.476997, 7.839386, 11.208877);
 		vec3 skin = mix(tinted, diffuseColor.rgb, mask.z);
 
-		// Beard stubble, where the mask's y says, as much as the amount says (twice it, saturated)
+		// The makeup, layer by layer: multiplied, mixed, or mixed by the eighth power (the eyeliner), each weighed by its
+		// mask channel times its amount. No layer shows until its mask loads
+		makeupInfoData mk = makeupinfodata[g_mat + 7u];
+		vec4 masks[2];
+		masks[0] = mk.info.x != 0u ? SampleAt(mk.info.x, 0, mk.tiling.xy, vec2(0.0)) : vec4(0.0);
+		masks[1] = mk.info.y != 0u ? SampleAt(mk.info.y, 0, mk.tiling.zw, vec2(0.0)) : vec4(0.0);
+
+		for (uint i = 0u; i < min(mk.info.w, 6u); i++)
+		{
+			uint bits = (mk.info.z >> (5u * i)) & 31u;
+			float weight = masks[bits & 1u][(bits >> 1u) & 3u];
+			uint kind = (bits >> 3u) & 3u;
+			vec4 layer = MakeupLayer(i);
+
+			if (kind == 0u)
+			{
+				skin *= mix(vec3(1.0), layer.rgb, clamp(layer.w * weight, 0.0, 1.0));
+			}
+			else if (kind == 1u)
+			{
+				skin = mix(skin, layer.rgb, clamp(layer.w * weight, 0.0, 1.0));
+			}
+			else
+			{
+				skin = mix(skin, layer.rgb, clamp(pow(max(layer.w * weight, 0.0), 8.0), 0.0, 1.0));
+			}
+		}
+
+		// Beard stubble, where the mask's y says, as much as the amount says
 		if (cz.pad != 0u)
 		{
 			vec3 stubble = SampleAt(cz.pad, 0, cz.params.yz, vec2(0.0)).rgb;
-			skin *= mix(vec3(1.0), stubble, clamp(cz.params.x * 2.0, 0.0, 1.0) * mask.y);
+			skin *= mix(vec3(1.0), stubble, clamp(cz.params.x, 0.0, 1.0) * mask.y);
 		}
+
+		// The decal: placed on the second UV set (offset, mirrored, scaled, then rotated about its centre), its alpha
+		// times the mask's x mixing the skin to its colour. Only the blend variant has the second UV set
+#ifdef MATERIAL_BLEND
+		if (mk.decal.x != 0u)
+		{
+			customizeExtraData place = customizeextradata[g_mat + 4u];
+			float scale = place.a.w;
+			float mirror = place.b.w;
+			float s = sin(place.b.z);
+			float c = cos(place.b.z);
+			mat2 rotate = mat2(c, s, -s, c);
+
+			vec2 p = vec2(mirror * scale * (g_uv[1].x - 0.5 + place.b.x), scale * (g_uv[1].y - 0.5 + place.b.y));
+			vec2 decalUv = clamp(rotate * p + 0.5, 0.0, 1.0) * place.c.zw;
+			vec2 dx = rotate * (vec2(mirror * scale, scale) * g_dx[1]) * place.c.zw;
+			vec2 dy = rotate * (vec2(mirror * scale, scale) * g_dy[1]) * place.c.zw;
+			float shape = textureGrad(sampler2D(globalTextures[nonuniformEXT(TextureIndex(mk.decal.x))], anisoLinearSampler),
+				decalUv, dx, dy).a;
+
+			float decalMask = mk.decal.y != 0u ? SampleAt(mk.decal.y, 0, place.c.xy, vec2(0.0)).x : 1.0;
+			skin = mix(skin, place.a.rgb, clamp(decalMask * shape, 0.0, 1.0));
+		}
+
+		// The burn scar (the body's): its albedo where its normal map's alpha times the amount says, on the second UV
+		// set. No burn until both textures load
+		if (mk.decal.z != 0u && mk.decal.w != 0u)
+		{
+			customizeExtraData burn = customizeextradata[g_mat + 4u];
+			vec3 burnAlbedo = SampleAt(mk.decal.z, 1, burn.c.xy, vec2(0.0)).rgb;
+			float burnShape = SampleAt(mk.decal.w, 1, burn.c.zw, vec2(0.0)).a;
+			skin = mix(skin, burnAlbedo, clamp(burnShape * burn.b.y, 0.0, 1.0));
+		}
+#endif
 
 		diffuseColor.rgb = clamp(skin, 0.0, 1.0);
 	}
@@ -600,6 +810,13 @@ void ApplyCustomize(inout vec4 diffuseColor)
 		eye = mix(eye, cz.params.rgb, mask.x);
 		eye = mix(eye, customizeextradata[g_mat + 4u].a.rgb, cz.color.w * mask.y);
 		diffuseColor.rgb = clamp(eye, 0.0, 1.0);
+	}
+	else if (c_customize == 5)
+	{
+		// Body hair: a flat colour, its density from the mask's x and the amount (below 0 it thins, above it thickens)
+		diffuseColor.rgb = cz.color.rgb;
+		float amount = cz.params.x;
+		g_customizeDensity = amount < 0.0 ? mask.x * (1.0 + 4.0 * amount) : mask.x + amount;
 	}
 	else if (c_customize == 4)
 	{
@@ -2034,6 +2251,12 @@ void main()
 		g_dy[i] = dFdy(g_uv[i]);
 	}
 
+	// An eye's iris, below its cornea (after the derivatives, which stay the surface's)
+	if (c_customize == 3)
+	{
+		ApplyIrisParallax(viewVec);
+	}
+
 #ifdef MATERIAL_BLEND
 	ComputeLayerWeights();
 	vec4 diffuseColor = SampleLayered(ROW_ALBEDO, true);
@@ -2149,6 +2372,12 @@ void main()
 		diffuseColor.w = SampleLayer(ROW_NORMAL, 0).w;
 	}
 
+	// Body hair: the normal map's alpha, thinned or thickened by the density (c_customize 5)
+	if (c_customize == 5)
+	{
+		diffuseColor.w = clamp(SampleLayer(ROW_NORMAL, 0).w * g_customizeDensity, 0.0, 1.0);
+	}
+
 	if (diffuseColor.w < diffuseAlpha.w)
 	{
 		discard;
@@ -2249,6 +2478,16 @@ void main()
 	{
 		roughness = 1.0 - normalColor.z;
 	}
+
+	// Hair (c_customize 1): the game's gloss, sat(k·(1 − mask.z))·shininess, k 2 or 5 by the root channel switch
+	if (c_customize == 1)
+	{
+		float shininess = customizeextradata[g_mat + 4u].b.x;
+		if (shininess >= 0.0)
+		{
+			roughness = 1.0 - clamp((customizedata[g_mat + 3u].params.y < 1.5 ? 2.0 : 5.0) * (1.0 - g_customizeMask.z), 0.0, 1.0) * shininess;
+		}
+	}
 	roughness = clamp(roughness, 0.0, 1.0);
 
 	vec3 normalMap;
@@ -2290,6 +2529,14 @@ void main()
 	normalMap = normalize(normalMap);
 	FamilyTangentNormal(normalMap);
 	normalMap = normalize(fsin_worldToTangent * normalMap);
+
+	// A skin's scars: the burn's and the decal's normals, on the second UV set (c_customize 2)
+#ifdef MATERIAL_BLEND
+	if (c_customize == 2)
+	{
+		normalMap = SkinRelief(normalMap);
+	}
+#endif
 
 	// In rain, what faces the sky darkens and turns glossier, walls half as much, and what faces down not at all.
 	// What is under a roof stays dry, by the rain map.
