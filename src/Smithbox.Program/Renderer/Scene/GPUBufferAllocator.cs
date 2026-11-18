@@ -1080,6 +1080,37 @@ public class VertexIndexBufferAllocator
             });
         }
 
+        /// <summary>
+        ///     Rewrites this allocation's vertices once its buffer is on the GPU (resident): for meshes whose vertices
+        ///     change after loading, such as the FaceGen Editor's morphed faces. <paramref name="data" /> is the whole
+        ///     allocation. Done on the render thread; ignored if the buffer isn't resident, or the handle is gone.
+        /// </summary>
+        public void UpdateResidentVertices(byte[] data)
+        {
+            if (data.Length > VAllocationSize)
+            {
+                return;
+            }
+
+            SceneRenderer.AddBackgroundUploadTask((device, cl) =>
+            {
+                VertexIndexBuffer buffer = _buffer;
+
+                if (buffer == null || buffer.AllocStatus != VertexIndexBuffer.Status.Resident ||
+                    buffer._backingVertBuffer == null)
+                {
+                    return;
+                }
+
+                cl.UpdateBuffer(buffer._backingVertBuffer, VAllocationStart, data);
+                cl.BufferBarrier(buffer._backingVertBuffer,
+                    VkPipelineStageFlags2.Transfer,
+                    VkAccessFlags2.TransferWrite,
+                    VkPipelineStageFlags2.AllGraphics,
+                    VkAccessFlags2.VertexAttributeRead);
+            });
+        }
+
         public unsafe IntPtr MapVBuffer()
         {
             if (_buffer == null || _buffer.AllocStatus != VertexIndexBuffer.Status.Staging)

@@ -1056,6 +1056,9 @@ public class CFG
     /// <summary>The body the face is shown on: 0 as the first character wearing it, 1 male, 2 female</summary>
     public int FaceGenEditor_Body = 0;
 
+    /// <summary>Whether the viewport shapes the face parts by the face's sliders (off: the parts' base shapes)</summary>
+    public bool FaceGenEditor_Apply_Shape = true;
+
     // Saving
     public bool Project_Automatic_Save_Include_Param_Editor = true;
 

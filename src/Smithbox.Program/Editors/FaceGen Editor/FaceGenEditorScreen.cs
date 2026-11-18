@@ -29,6 +29,9 @@ public class FaceGenEditorScreen : EditorScreen
     {
         Project = project;
 
+        // Before the viewport loads any face part, so they keep the vertices their shape is written over
+        FaceMorpher.RetainFaceParts();
+
         View = new FaceGenEditorView(this, project);
     }
 
@@ -156,6 +159,9 @@ public class FaceGenEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
         GUI.Tooltip(LOC.Get("FACEGEN_Menu_Body_TT"));
+
+        Toggle("FACEGEN_Menu_Apply_Shape", ref CFG.Current.FaceGenEditor_Apply_Shape);
+        GUI.Tooltip(LOC.Get("FACEGEN_Menu_Apply_Shape_TT"));
 
         if (ImGui.MenuItem($"{LOC.Get("FACEGEN_Menu_Frame_Face")}##faceGenFrameFace"))
             View.ViewportWindow.FrameFace();

@@ -18,6 +18,10 @@
     { "Key": "FACEGEN_Menu_Frame_Face", "Text": "Frame Face" },
     { "Key": "FACEGEN_Menu_Frame_Body", "Text": "Frame Body" },
     { "Key": "FACEGEN_Load_Job_Parts", "Text": "Face Parts" },
+    { "Key": "FACEGEN_Menu_Apply_Shape", "Text": "Apply Shape" },
+    { "Key": "FACEGEN_Menu_Apply_Shape_TT", "Text": "Shapes the head, eyes, brows and beard by the face's sliders, as the game does. Off: the parts' base shapes." },
+    { "Key": "FACEGEN_Slider_Table_Failed", "Text": "FaceGen Editor: could not read the slider table {0}. Faces are shown in their base shape." },
+    { "Key": "FACEGEN_Part_Read_Failed", "Text": "FaceGen Editor: could not read the FaceGen files of {0}. It is shown in its base shape." },
 
     { "Key": "FACEGEN_Part_None", "Text": "{0} (no model)" },
     { "Key": "FACEGEN_Part_Fallback", "Text": "{0} names no model, so {1} is shown." },
@@ -62,6 +66,7 @@
     { "Key": "FACEGEN_Field_Texture_Mode", "Text": "Texture Mode {0}" },
     { "Key": "FACEGEN_Field_FaceGen_Label", "Text": "FaceGen: {0}" },
     { "Key": "FACEGEN_Field_Coefficient", "Text": "Coefficient: {0}" },
+    { "Key": "FACEGEN_Field_Slider_Value", "Text": "Value: {0} (hidden sliders are applied at 0)" },
     { "Key": "FACEGEN_Value_Reset_Neutral", "Text": "Reset to Neutral ({0})" },
 
     { "Key": "FACEGEN_Action_Edit_Field", "Text": "Edit {0} (face {1})" },

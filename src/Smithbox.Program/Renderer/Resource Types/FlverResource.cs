@@ -3159,6 +3159,7 @@ public class FlverResource : IResource, IDisposable
 
         SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
+        RetainVertices(dest, meshVertices, vbuffersize, vSize);
 
         dest.GeomBuffer.UnmapVBuffer();
         dest.GeomBuffer.UnmapIBuffer();
@@ -3330,6 +3331,7 @@ public class FlverResource : IResource, IDisposable
 
         SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
+        RetainVertices(dest, meshVertices, vbuffersize, vSize);
 
         dest.GeomBuffer.UnmapVBuffer();
         dest.GeomBuffer.UnmapIBuffer();
@@ -3381,6 +3383,25 @@ public class FlverResource : IResource, IDisposable
         }
 
         return matrix;
+    }
+
+    /// <summary>
+    /// Which models keep a copy of their vertices as they were sent to the GPU, by lookup name (e.g. "fg_a_0100"),
+    /// so their positions can be rewritten later (the FaceGen Editor's morphs, through
+    /// <see cref="FlverSubmesh.RetainedVertices"/>). Null: none do.
+    /// </summary>
+    public static Func<string, bool>? RetainVerticesFor;
+
+    private unsafe void RetainVertices(FlverSubmesh dest, nint meshVertices, uint size, uint stride)
+    {
+        if (RetainVerticesFor == null || Context == null || !RetainVerticesFor(Context.Name) || size == 0)
+            return;
+
+        var copy = new byte[size];
+        Marshal.Copy(meshVertices, copy, 0, (int)size);
+
+        dest.RetainedVertices = copy;
+        dest.VertexStride = stride;
     }
 
     private unsafe void ProcessMesh(ref FlverMesh mesh, BinaryReaderEx br, int version,
@@ -3648,6 +3669,7 @@ public class FlverResource : IResource, IDisposable
 
         SanitizeIndices(dest, fs16, fs32);
         AddDetailStats(dest, pvhandle, fs16, fs32);
+        RetainVertices(dest, meshVertices, vbuffersize, vSize);
 
         dest.GeomBuffer.UnmapIBuffer();
         dest.GeomBuffer.UnmapVBuffer();
@@ -4818,6 +4840,14 @@ public class FlverResource : IResource, IDisposable
         public int DefaultBoneIndex { get; set; } = -1;
 
         public FlverMaterial? Material { get; set; }
+
+        /// <summary>
+        /// The vertices as they were sent to the GPU, for models <see cref="RetainVerticesFor"/> names; else null.
+        /// Every vertex layout starts with its position (a Vector3), <see cref="VertexStride"/> bytes apart.
+        /// </summary>
+        public byte[]? RetainedVertices { get; set; }
+
+        public uint VertexStride { get; set; }
 
         public struct FlverSubmeshFaceSet
         {

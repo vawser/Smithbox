@@ -303,21 +303,32 @@ public class FacePropertiesView
         {
             EditingKey = key;
             EditingValue = value;
+
+            // The viewport shows the value being dragged before it is written
+            View.PreviewOverrides.Clear();
+            View.PreviewOverrides[field.Name] = value;
         }
 
         if (GUI.InputCommitted())
         {
             FaceGenEdits.SetField(editor, paramName, row, field.Name, value, LOC.Get("FACEGEN_Action_Edit_Field", field.Name, row.ID));
             EditingKey = null;
+            View.PreviewOverrides.Clear();
         }
         else if (ImGui.IsItemDeactivated() && EditingKey == key)
         {
             EditingKey = null;
+            View.PreviewOverrides.Clear();
         }
 
-        // A mode coefficient is what the game uses, so it is worth seeing
-        if (storesModes && FaceGenParams.ParseFaceGenField(field.Name) != null && ImGui.IsItemHovered())
-            GUI.Tooltip(LOC.Get("FACEGEN_Field_Coefficient", FaceGenParams.ByteToCoefficient(value).ToString("0.00")));
+        // What the byte stands for in the game: a mode coefficient, or the slider's own value
+        if (ImGui.IsItemHovered())
+        {
+            if (storesModes && FaceGenParams.ParseFaceGenField(field.Name) != null)
+                GUI.Tooltip(LOC.Get("FACEGEN_Field_Coefficient", FaceGenParams.ByteToCoefficient(value).ToString("0.00")));
+            else if (!storesModes && FaceGenModel.SliderValue(Project, field.Name, value) is { } sliderValue)
+                GUI.Tooltip(LOC.Get("FACEGEN_Field_Slider_Value", sliderValue.ToString("0.00")));
+        }
 
         ValueMenu(editor, paramName, row, new[] { field.Name }, FaceGenParams.Neutral);
     }

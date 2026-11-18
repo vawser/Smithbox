@@ -6,6 +6,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using System;
+using System.Collections.Generic;
 using Veldrid;
 using Veldrid.Sdl2;
 
@@ -34,6 +35,9 @@ public class FaceGenEditorView
     public string? ParamName { get; private set; }
 
     public Param.Row? ActiveRow { get; private set; }
+
+    /// <summary>Field values being dragged in the Properties window, not written yet, for the viewport to show</summary>
+    public Dictionary<string, int> PreviewOverrides { get; } = new();
 
     public FaceGenEditorView(FaceGenEditorScreen editor, ProjectEntry project)
     {

@@ -49,6 +49,11 @@ public class FaceViewportWindow
     private string? MeshUid;
     private bool FramePending = true;
 
+    // The face's shape on its parts: what was last written, and whether a part was still loading then
+    private readonly FaceMorpher Morpher;
+    private float[]? AppliedShape;
+    private bool MorphPending;
+
     private static int Serial;
 
     /// <summary>The parts of the shown face, as last resolved (for the Properties window's part pickers)</summary>
@@ -58,6 +63,7 @@ public class FaceViewportWindow
     {
         View = view;
         Project = project;
+        Morpher = new FaceMorpher(project);
 
         var window = Smithbox.Instance._context.Window;
         Rect = window.Bounds;
@@ -179,6 +185,7 @@ public class FaceViewportWindow
             ViewportUsingKeyboard = Viewport.Update(Smithbox.Instance._context.Window, deltatime);
 
         UpdateMesh();
+        UpdateShape();
 
         // The head is framed once its geometry is in, which is a few frames after the mesh is made
         if (FramePending && HeadBounds() != null)
@@ -211,11 +218,6 @@ public class FaceViewportWindow
             return;
 
         Appearance = CharacterComposition.Resolve(Project, isFemale, models);
-
-        // TEMPORARY (FaceGen Phase 3 check): which models each part field resolved to, to confirm the part mapping
-        Smithbox.Log(this, $"[FaceGen] {View.ParamName} {row!.ID}: body {(isFemale ? "female" : "male")}; " +
-            string.Join("; ", Parts.Select(p => $"{p.Field}={p.Value} -> {p.Model ?? "none"}{(p.IsFallback ? " (fallback)" : "")}")) +
-            $"; shown: {string.Join(", ", Appearance.Parts.Select(p => p.Name))}");
         MeshUid = $"FaceGenPreview_{System.Threading.Interlocked.Increment(ref Serial)}";
         Mesh = CharacterComposition.CreateMesh(Project, View.RenderScene, Appearance, MeshUid, LOC.Get("FACEGEN_Load_Job_Parts"));
 
@@ -226,8 +228,57 @@ public class FaceViewportWindow
         ResourceManager.SchedulePostTextureRefresh();
     }
 
+    /// <summary>
+    /// Shapes the face parts by the face's shape, with the slider being dragged in place of its stored value. The
+    /// shape is worked out every frame (it is cheap), and only written when it changes or a part was still loading.
+    /// </summary>
+    private void UpdateShape()
+    {
+        if (Mesh == null || Appearance == null || View.ActiveRow is not { } row || View.ActiveParam is not { } param)
+            return;
+
+        if (!CFG.Current.FaceGenEditor_Apply_Shape)
+        {
+            if (AppliedShape != null)
+            {
+                Morpher.Restore();
+                AppliedShape = null;
+            }
+
+            return;
+        }
+
+        var shape = FaceGenModel.ShapeCoefficients(Project, param, row,
+            View.PreviewOverrides.Count > 0 ? View.PreviewOverrides : null);
+
+        if (shape == null)
+            return;
+
+        if (!MorphPending && AppliedShape != null && shape.AsSpan().SequenceEqual(AppliedShape))
+            return;
+
+        MorphPending = !Morpher.Apply(Mesh, Appearance, shape);
+        AppliedShape = shape;
+
+        // TEMPORARY (FaceGen Phase 4 check): once per face shown, when every part has been written
+        var reportKey = $"{View.ParamName}/{row.ID}/{MeshKey}";
+
+        if (!MorphPending && reportKey != LastReportKey && View.PreviewOverrides.Count == 0)
+        {
+            LastReportKey = reportKey;
+            Smithbox.Log(this, $"[FaceGen] {View.ParamName} {row.ID}: {Morpher.LastReport}");
+        }
+    }
+
+    private string? LastReportKey;
+
     private void ClearMesh()
     {
+        // The parts are shared with anything else that shows them, so their own shape goes back first
+        Morpher.Restore();
+        AppliedShape = null;
+        MorphPending = false;
+
         Mesh?.Dispose();
         Mesh = null;
         Appearance = null;
