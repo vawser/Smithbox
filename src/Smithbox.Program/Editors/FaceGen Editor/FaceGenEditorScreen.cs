@@ -149,6 +149,9 @@ public class FaceGenEditorScreen : EditorScreen
 
         // The Tools window's tools
         Toggle("FACEGEN_Tool_Viewport_Filters", ref CFG.Current.Interface_FaceGenEditor_Tool_ViewportFilters);
+        Toggle("FACEGEN_Tool_Randomise", ref CFG.Current.Interface_FaceGenEditor_Tool_Randomise);
+        Toggle("FACEGEN_Tool_Face_Check", ref CFG.Current.Interface_FaceGenEditor_Tool_FaceCheck);
+        Toggle("FACEGEN_Tool_Face_Library", ref CFG.Current.Interface_FaceGenEditor_Tool_FaceLibrary);
         Toggle("FACEGEN_Tool_Character_Preview", ref CFG.Current.Interface_FaceGenEditor_Tool_CharacterPreview);
         Toggle("FACEGEN_Tool_Animation_Browser", ref CFG.Current.Interface_FaceGenEditor_Tool_AnimationBrowser);
 

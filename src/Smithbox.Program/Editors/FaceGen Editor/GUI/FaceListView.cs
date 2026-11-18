@@ -56,9 +56,13 @@ public class FaceListView
 
     private const string PastePopupId = "faceGenPastePopup";
 
+    // "Assign to Characters": gives the face to character rows
+    private readonly FaceAssignDialog AssignDialog;
+
     public FaceListView(FaceGenEditorView view)
     {
         View = view;
+        AssignDialog = new FaceAssignDialog(view);
     }
 
     private ParamEditorScreen? ParamEditor => View.Editor.ParamEditor;
@@ -66,6 +70,16 @@ public class FaceListView
     private string? ParamName => View.ParamName;
 
     public void ClearSelection() => Selected.Clear();
+
+    /// <summary>Adds rows to the selection (e.g. the variations just made), keeping the active row</summary>
+    public void SelectMany(IEnumerable<Param.Row> rows) => Selected.UnionWith(rows);
+
+    /// <summary>Shows only the faces no character wears (the Face Check tool's link)</summary>
+    public void ShowUnused()
+    {
+        Usage = UsageFilter.Unused;
+        ScrollToSelection = true;
+    }
 
     /// <summary>The selected rows of the shown param, in param order (or the active row, if none are selected)</summary>
     public List<Param.Row> GetSelectedRows() =>
@@ -155,6 +169,7 @@ public class FaceListView
         ImGui.EndChild();
 
         DisplayPasteMenu();
+        AssignDialog.Display();
     }
 
     private static string UsageLabel(UsageFilter usage) => usage switch
@@ -432,6 +447,16 @@ public class FaceListView
 
         ImGui.Separator();
 
+        // Only the face param characters point at can be worn
+        var canAssign = editor != null && ParamName == FaceGenParams.GetReferencedFaceParam(View.Project);
+
+        if (ImGui.Selectable($"{LOC.Get("FACEGEN_Assign_Menu")}##faceGenAssign", false,
+                canAssign ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+        {
+            AssignDialog.Open(row.ID);
+        }
+        GUI.Tooltip(LOC.Get(canAssign ? "FACEGEN_Assign_Menu_TT" : "FACEGEN_Assign_Menu_Other_Param_TT"));
+
         if (ImGui.Selectable($"{LOC.Get("FACEGEN_Open_In_Param_Editor")}##openInParamEditor"))
             EditorCommandQueue.AddCommand($"param/select/-1/{ParamName}/{row.ID}");
 
@@ -595,7 +620,7 @@ public class FaceListView
     public void Shortcuts()
     {
         // The paste menu's own keys are its fields'
-        if (PasteMenuOpen || View.ActiveParam is not { } param)
+        if (PasteMenuOpen || AssignDialog.IsOpen || View.ActiveParam is not { } param)
             return;
 
         if (GUI.ListStepKey() is not 0 and var step)

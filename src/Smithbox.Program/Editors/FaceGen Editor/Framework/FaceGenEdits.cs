@@ -4,6 +4,7 @@ using StudioCore.Editors.Common;
 using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace StudioCore.Editors.FaceGenEditor;
@@ -29,12 +30,20 @@ public static class FaceGenEdits
     /// row doesn't have, and values that can't be converted to the field's type, are left out. False if nothing changed.
     /// </summary>
     public static bool SetFieldsOnRows(ParamEditorScreen editor, string paramName, IReadOnlyList<Param.Row> rows,
-        IReadOnlyList<(string Field, object Value)> values, string displayName)
+        IReadOnlyList<(string Field, object Value)> values, string displayName) =>
+        SetFieldsPerRow(editor, paramName, rows.Select(row => (row, values)).ToList(), displayName);
+
+    /// <summary>
+    /// Sets each row's own fields, all in one undo step (e.g. a different random face on each selected row). As
+    /// <see cref="SetFieldsOnRows"/> otherwise.
+    /// </summary>
+    public static bool SetFieldsPerRow(ParamEditorScreen editor, string paramName,
+        IReadOnlyList<(Param.Row Row, IReadOnlyList<(string Field, object Value)> Values)> edits, string displayName)
     {
         var actions = new List<EditorAction>();
         var changedRows = new List<Param.Row>();
 
-        foreach (var row in rows)
+        foreach (var (row, values) in edits)
         {
             var before = actions.Count;
 
@@ -81,4 +90,63 @@ public static class FaceGenEdits
     public static bool SetField(ParamEditorScreen editor, string paramName, Param.Row row, string field, object value,
         string displayName) =>
         SetFields(editor, paramName, row, new[] { (field, value) }, displayName);
+
+    /// <summary>
+    /// Adds a new face: a copy of <paramref name="template"/> with <paramref name="values"/> written into it, at the
+    /// next free ID after the template, as one undo step. Returns the new row, or null.
+    /// </summary>
+    public static Param.Row? AddFace(ParamEditorScreen editor, Param param, Param.Row template,
+        IReadOnlyList<(string Field, object Value)> values, string? name)
+    {
+        // Edited before it goes in, so the add is the only step
+        var face = new Param.Row(template);
+
+        foreach (var (field, value) in values)
+        {
+            if (face[field] is not { } cell)
+                continue;
+
+            try
+            {
+                CellValue.SetValue(cell, Convert.ChangeType(value, cell.Value.GetType()));
+            }
+            catch (Exception e) when (e is InvalidCastException or FormatException or OverflowException)
+            {
+            }
+        }
+
+        return AddCopies(editor, param, face, 1, null, name).FirstOrDefault();
+    }
+
+    /// <summary>
+    /// Adds copies of a face, as one undo step: each at <paramref name="ids"/>' ID if given (a missing face made at the
+    /// ID characters point at), else at the next free IDs after the source (variations). Returns the new rows.
+    /// </summary>
+    public static List<Param.Row> AddCopies(ParamEditorScreen editor, Param param, Param.Row source, int count,
+        IReadOnlyList<int>? ids = null, string? name = null)
+    {
+        var clones = new List<Param.Row>();
+
+        for (var i = 0; i < count; i++)
+        {
+            var clone = new Param.Row(source);
+
+            if (ids != null)
+                clone.ID = ids[i];
+
+            if (name != null)
+                clone.Name = name;
+
+            clones.Add(clone);
+        }
+
+        // With given IDs nothing holds them, so each copy goes in at its ID's place; otherwise each copy takes the
+        // next free ID after the source, as the Param Editor's duplicate does
+        var action = new AddParamsAction(editor, param, "legacystring", clones, false, false, -1, 1, ids == null);
+
+        if (!editor.ActionManager.ExecuteAction(action))
+            return new List<Param.Row>();
+
+        return action.GetResultantRows().Where(r => param.IndexOfRow(r) >= 0).ToList();
+    }
 }
