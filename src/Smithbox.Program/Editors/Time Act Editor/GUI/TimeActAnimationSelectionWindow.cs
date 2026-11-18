@@ -407,6 +407,17 @@ public class TimeActAnimationSelectionWindow
         }
         GUI.Tooltip(LOC.Get("TAE_AnimationWindow_Context_Add_To_Combo_TT"));
 
+        // Register in Behavior
+        var canRegister = TimeActBehaviorRegistration.CanRegister(Project, source, out var registerReason);
+
+        if (ImGui.MenuItem($"{LOC.Get("TAE_AnimationWindow_Context_Register")}##registerAnimation", "", false, canRegister))
+        {
+            TimeActBehaviorRegistration.Register(source, entry, [animation]);
+        }
+        // Also shown while disabled, to say why
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(canRegister ? LOC.Get("TAE_AnimationWindow_Context_Register_TT") : registerReason);
+
         ImGui.Separator();
 
         ListActions(source, entry, animation);

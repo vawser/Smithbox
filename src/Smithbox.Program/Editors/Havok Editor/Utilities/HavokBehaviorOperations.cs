@@ -364,6 +364,13 @@ public static partial class HavokBehaviorOperations
         {
             internalIdField.SetValue(clip, HavokBehaviorSymbols.GetValue(sameAnimation, "m_animationInternalId"));
         }
+        else if (FindAnimationNameIndex(animationNames, animationName) is var existing and >= 0)
+        {
+            // An entry no clip of the file had when its symbols were built: one added by an earlier step of
+            // the same edit (Register in Behavior adds an animation to every selector with the ID).
+            // There's one entry per distinct animation, so it's shared rather than added again.
+            internalIdField.SetValue(clip, Convert.ChangeType(existing, internalIdField.FieldType));
+        }
         else if (animationNames != null && animationNames.Count > 0)
         {
             var path = MakeAnimationPath(animationNames, animationName, category, categorySize);
@@ -382,6 +389,26 @@ public static partial class HavokBehaviorOperations
         newClip = clip;
 
         return Wrap(context, steps);
+    }
+
+    /// <summary>
+    /// The index of the m_animationNames entry for an animation (its file name without extension, e.g. a000_003000), or -1
+    /// </summary>
+    private static int FindAnimationNameIndex(IList animationNames, string animationName)
+    {
+        if (animationNames == null)
+            return -1;
+
+        for (var i = 0; i < animationNames.Count; i++)
+        {
+            var path = (animationNames[i] as string ?? "").Replace('\\', '/');
+            var stem = Path.GetFileNameWithoutExtension(path);
+
+            if (string.Equals(stem, animationName, StringComparison.OrdinalIgnoreCase))
+                return i;
+        }
+
+        return -1;
     }
 
     /// <summary>

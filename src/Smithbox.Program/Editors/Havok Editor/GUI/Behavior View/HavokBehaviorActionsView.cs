@@ -11,7 +11,7 @@ namespace StudioCore.Editors.HavokEditor;
 /// Add Variable, Unlink): the Outline's right-click menu, and the dialog for each.
 /// Each edit is one undo step (<see cref="HavokCompoundAction"/>).
 /// </summary>
-public class HavokBehaviorActionsView
+public partial class HavokBehaviorActionsView
 {
     private HavokEditorView View;
     private ProjectEntry Project;
@@ -20,7 +20,7 @@ public class HavokBehaviorActionsView
     private enum Dialog
     {
         None, AddAnimation, CloneState, AddTransition, AddVariable,
-        BindVariable, DuplicateGenerator, DeleteGenerator, DuplicateVariable, DeleteVariable, DuplicateClip
+        BindVariable, DuplicateGenerator, DeleteGenerator, DuplicateVariable, DeleteVariable, DuplicateClip, Register
     }
 
     // Duplicate clip / Delete (several)
@@ -637,6 +637,9 @@ public class HavokBehaviorActionsView
     /// </summary>
     public void DisplayDialogs()
     {
+        // Register in Behavior (sent by the Time Act Editor) waits for its file's symbols
+        UpdatePendingRegister();
+
         if (PendingDialog != Dialog.None)
         {
             OpenDialog = PendingDialog;
@@ -666,6 +669,7 @@ public class HavokBehaviorActionsView
             Dialog.DuplicateClip => LOC.Get("HAVOK_BehaviorActions_Duplicate_Clip"),
             Dialog.DuplicateVariable => LOC.Get("HAVOK_BehaviorActions_Duplicate_Variable"),
             Dialog.DeleteVariable => LOC.Get("HAVOK_BehaviorActions_Delete_Variable"),
+            Dialog.Register => LOC.Get("HAVOK_Register_Title"),
             _ => ""
         };
 
@@ -692,6 +696,17 @@ public class HavokBehaviorActionsView
             case Dialog.DuplicateVariable: apply = DisplayDuplicateVariable(); break;
             case Dialog.DeleteVariable: DisplayDeleteVariable(); break;
             case Dialog.DuplicateClip: DisplayDuplicateClip(out canApply); break;
+            case Dialog.Register: DisplayRegister(out canApply); break;
+        }
+
+        // The Register dialog closes itself to switch file (it reopens once the other file is shown)
+        if (CloseDialogRequested)
+        {
+            CloseDialogRequested = false;
+            OpenDialog = Dialog.None;
+            ImGui.CloseCurrentPopup();
+            ImGui.EndPopup();
+            return;
         }
 
         if (LastError != null)
@@ -1304,6 +1319,10 @@ public class HavokBehaviorActionsView
 
                 if (action != null)
                     Owner.VariableView.ResetSelection();
+                break;
+
+            case Dialog.Register:
+                action = ApplyRegister(context, out error);
                 break;
         }
 

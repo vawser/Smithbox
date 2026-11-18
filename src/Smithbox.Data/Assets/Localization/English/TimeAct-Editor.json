@@ -3080,6 +3080,15 @@
       "Key": "TAE_AnimationWindow_Context_Add_To_Combo_TT",
       "Text": "Adds this animation to the end of the combo in the Combo Builder tool."
     },
+    { "Key": "TAE_AnimationWindow_Context_Register", "Text": "Register in Behavior..." },
+    { "Key": "TAE_AnimationWindow_Context_Register_TT", "Text": "Opens the character's behavior in the Havok Editor and previews the clips this animation needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
+    { "Key": "TAE_SelectionWindow_Context_Register", "Text": "Register Time Act in Behavior..." },
+    { "Key": "TAE_SelectionWindow_Context_Register_TT", "Text": "Opens the character's behavior in the Havok Editor and previews the clips every animation of this time act needs in the selectors (CMSGs) with its ID. Nothing changes until you apply it there." },
+    { "Key": "TAE_Register_Not_Character", "Text": "Only a character's time acts have a behavior." },
+    { "Key": "TAE_Register_No_Havok_Editor", "Text": "Needs the Havok Editor (enable it in the project settings)." },
+    { "Key": "TAE_Register_Unsupported_Game", "Text": "Register in Behavior supports Elden Ring, Nightreign, Dark Souls III and Sekiro." },
+    { "Key": "TAE_Register_No_Behavior", "Text": "{0} has no behbnd." },
+    { "Key": "TAE_Register_Load_Failed", "Text": "Register in Behavior: time act {0} couldn't be read." },
     {
       "Key": "TAE_Command_Select_Source_Scanning",
       "Text": "{0} isn't listed in the Time Act Editor yet, as its sources are still being found. Try again in a moment."

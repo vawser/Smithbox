@@ -241,6 +241,19 @@ public class TimeActSelectionWindow
 
         ImGui.Separator();
 
+        // Register in Behavior: every animation of the time act
+        var canRegister = TimeActBehaviorRegistration.CanRegister(Project, source, out var registerReason);
+
+        if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Register")}##registerTimeAct", "", false, canRegister))
+        {
+            TimeActBehaviorRegistration.Register(source, entry);
+        }
+        // Also shown while disabled, to say why
+        if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
+            ImGui.SetTooltip(canRegister ? LOC.Get("TAE_SelectionWindow_Context_Register_TT") : registerReason);
+
+        ImGui.Separator();
+
         // Import
         if (ImGui.MenuItem($"{LOC.Get("TAE_SelectionWindow_Context_Import")}##importTimeAct", "", false, canEdit))
         {
